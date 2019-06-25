@@ -1,0 +1,176 @@
+{
+	"stations": [{
+		"name": "osaki",
+		"alias": "_tokyo",
+		"coords": [139.7282, 35.6200]
+	}, {
+		"name": "gotanda",
+		"coords": [139.7234, 35.6265]
+	}, {
+		"name": "meguro",
+		"coords": [139.7160, 35.6326]
+	}, {
+		"name": "ebisu",
+		"coords": [139.7102, 35.6465]
+	}, {
+		"name": "shibuya",
+		"coords": [139.7016, 35.6583]
+	}, {
+		"name": "harajuku",
+		"coords": [139.7027, 35.6713]
+	}, {
+		"name": "yoyogi",
+		"coords": [139.7021, 35.6841],
+		"angle": -13,
+		"span": [0, 1],
+		"labelOffset": 8,
+		"labelAngle": -15
+	}, {
+		"name": "shinjuku",
+		"coords": [139.7006, 35.6898],
+		"angle": -10,
+		"span": [0, 1],
+		"labelOffset": 8
+	}, {
+		"name": "shinokubo",
+		"coords": [139.7002, 35.7009]
+	}, {
+		"name": "takadanobaba",
+		"coords": [139.7037, 35.7130]
+	}, {
+		"name": "mejiro",
+		"coords": [139.7062, 35.7205]
+	}, {
+		"name": "ikebukuro",
+		"coords": [139.7112, 35.7301]
+	}, {
+		"name": "otsuka",
+		"coords": [139.7282, 35.7317],
+		"labelAngle": -75
+	}, {
+		"name": "sugamo",
+		"coords": [139.7403, 35.7337],
+		"labelAngle": 75
+	}, {
+		"name": "komagome",
+		"coords": [139.7480, 35.7368],
+		"labelAngle": 75
+	}, {
+		"name": "tabata",
+		"coords": [139.7616, 35.7374],
+		"angle": 136,
+		"span": [-1, 0],
+		"labelOffset": 8,
+		"labelAngle": -15
+	}, {
+		"name": "nishinippori",
+		"coords": [139.7666, 35.7322],
+		"angle": 146,
+		"span": [-1, 0],
+		"labelOffset": 8,
+		"labelAngle": -15
+	}, {
+		"name": "nippori",
+		"coords": [139.7706, 35.7281],
+		"angle": 138,
+		"span": [-1, 0],
+		"labelOffset": 8,
+		"labelAngle": -15
+	}, {
+		"name": "uguisudani",
+		"coords": [139.7793, 35.7206],
+		"angle": 142,
+		"span": [-1, 0],
+		"labelOffset": 8
+	}, {
+		"name": "ueno",
+		"coords": [139.7763, 35.7136],
+		"angle": -146,
+		"span": [-1, 0],
+		"labelOffset": 8,
+		"labelAngle": 15
+	}, {
+		"name": "okachimachi",
+		"coords": [139.7748, 35.7074],
+		"angle": -172,
+		"span": [-1, 0],
+		"labelOffset": 8
+	}, {
+		"name": "akihabara",
+		"coords": [139.7731, 35.6983],
+		"angle": -172,
+		"span": [-1, 0],
+		"labelOffset": 8
+	}, {
+		"name": "kanda",
+		"coords": [139.7710, 35.6918],
+		"angle": -162,
+		"span": [-1, 1],
+		"labelOffset": 8
+	}, {
+		"name": "tokyo",
+		"coords": [139.7670, 35.6814],
+		"angle": -163,
+		"span": [-1, 1],
+		"labelOffset": 8
+	}, {
+		"name": "yurakucho",
+		"coords": [139.7631, 35.6750],
+		"angle": -134,
+		"span": [-1, 0],
+		"labelOffset": 8,
+		"labelAngle": 15
+	}, {
+		"name": "shimbashi",
+		"coords": [139.7582, 35.6665],
+		"angle": 177,
+		"span": [-1, 0],
+		"labelOffset": 8
+	}, {
+		"name": "hamamatsucho",
+		"coords": [139.7571, 35.6554],
+		"angle": -168,
+		"span": [-1, 0],
+		"labelOffset": 8
+	}, {
+		"name": "tamachi",
+		"coords": [139.7476, 35.6457],
+		"angle": -122,
+		"span": [-1, 0],
+		"labelOffset": 8,
+		"labelAngle": 30
+	}, {
+		"name": "shinagawa",
+		"coords": [139.7389, 35.6284],
+		"angle": 176,
+		"span": [-1, 0],
+		"labelOffset": 8
+	}, {
+		"name": "ochanomizu",
+		"coords": [139.7645, 35.6997],
+		"labelAngle": 105
+	}, {
+		"name": "suidobashi",
+		"coords": [139.7536, 35.7020],
+		"labelAngle": -90
+	}, {
+		"name": "iidabashi",
+		"coords": [139.7445, 35.7015],
+		"labelAngle": -165
+	}, {
+		"name": "ichigaya",
+		"coords": [139.7359, 35.6915],
+		"labelAngle": 15
+	}, {
+		"name": "yotsuya",
+		"coords": [139.7305, 35.6857]
+	}, {
+		"name": "shinanomachi",
+		"coords": [139.7205, 35.6801],
+		"labelAngle": 90
+	}, {
+		"name": "sendagaya",
+		"coords": [139.7113, 35.6813],
+		"labelAngle": -75
+	}]
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja_JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/loaders.css/0.1.2/loaders.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0-beta.1/mapbox-gl.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>Mini Tokyo 3D</title>
+	<meta name="description" content="A real-time 3D digital map of Tokyo's public transport system. This data visualization was produced by Akihiko Kusanagi." />
+	<meta name="viewport" content="user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1" />
+	<meta property="og:title" content="Mini Tokyo 3D" />
+	<meta property="og:description" content="A real-time 3D digital map of Tokyo's public transport system. This data visualization was produced by Akihiko Kusanagi." />
+	<meta property="og:locale" content="ja_JP" />
+	<link rel="canonical" href="https://nagix.github.io/mini-tokyo-3d" />
+	<meta property="og:url" content="https://nagix.github.io/mini-tokyo-3d" />
+	<meta property="og:site_name" content="Mini Tokyo 3D" />
+	<meta property="og:image" content="https://nagix.github.io/mini-tokyo-3d/images/screenshot.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@nagix" />
+	<script type="text/javascript" src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0-beta.1/mapbox-gl.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.5/turf.min.js"></script>
+</head>
+<body>
+	<div id="map"></div>
+	<div id="loader" class="loader-inner ball-pulse">
+		<div></div><div></div><div></div>
+	</div>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
