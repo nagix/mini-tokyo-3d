@@ -6,10 +6,15 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    height: 21px;
     transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #eee;
+    opacity: .9;
 }
 .ball-pulse > div {
-	background-color: #aaa;
+	background-color: #777;
 }
 #map {
 	position: absolute;

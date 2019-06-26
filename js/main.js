@@ -157,16 +157,16 @@ var lineCollection = turf.featureCollection(lineData.lines.map(function(line) {
 
 var carCollection = turf.featureCollection([]);
 
-map.on('styledata', function () {
+map.once('load', function () {
+	document.getElementById('loader').style.display = 'none';
+});
+
+map.once('styledata', function () {
 	map.getStyle().layers.forEach(function(layer) {
 		if (layer.type === 'symbol') {
 			map.setLayoutProperty(layer.id, 'visibility', 'none');
 		}
 	});
-});
-
-map.on('load', function () {
-	document.getElementById('loader').style.display = 'none';
 	map.addLayer({
 	    id: 'lines',
 	    type: 'line',
