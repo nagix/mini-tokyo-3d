@@ -168,52 +168,52 @@ map.once('styledata', function () {
 		}
 	});
 	map.addLayer({
-	    id: 'lines',
-	    type: 'line',
-	    source: {
-	        type: 'geojson',
-	        data: lineCollection
-	    },
-	    paint: {
-	    	'line-color': ['get', 'color'],
-	    	'line-width': ['get', 'width']
+		id: 'lines',
+		type: 'line',
+		source: {
+			type: 'geojson',
+			data: lineCollection
+		},
+		paint: {
+			'line-color': ['get', 'color'],
+			'line-width': ['get', 'width']
 		},
 	});
 	map.addLayer({
-	    id: 'stations',
-	    type: 'fill',
-	    source: {
-	        type: 'geojson',
-	        data: stationCollection
-	    },
-	    paint: {
-	    	'fill-color': ['get', 'color'],
-	    	'fill-opacity': .7
+		id: 'stations',
+		type: 'fill',
+		source: {
+			type: 'geojson',
+			data: stationCollection
+		},
+		paint: {
+			'fill-color': ['get', 'color'],
+			'fill-opacity': .7
 		},
 	});
 	map.addLayer({
-	    id: 'stations-outline',
-	    type: 'line',
-	    source: {
-	        type: 'geojson',
-	        data: stationCollection
-	    },
-	    paint: {
-	    	'line-color': ['get', 'outlineColor'],
-	    	'line-width': ['get', 'width']
+		id: 'stations-outline',
+		type: 'line',
+		source: {
+			type: 'geojson',
+			data: stationCollection
+		},
+		paint: {
+			'line-color': ['get', 'outlineColor'],
+			'line-width': ['get', 'width']
 		},
 	});
 	map.addLayer({
-	    id: 'cars',
-	    type: 'fill-extrusion',
-	    source: {
-	        type: 'geojson',
-	        data: carCollection
-	    },
-	    paint: {
-	    	'fill-extrusion-color': ['get', 'color'],
-	    	'fill-extrusion-height': 100,
-	    	'fill-extrusion-opacity': .9
+		id: 'cars',
+		type: 'fill-extrusion',
+		source: {
+			type: 'geojson',
+			data: carCollection
+		},
+		paint: {
+			'fill-extrusion-color': ['get', 'color'],
+			'fill-extrusion-height': 100,
+			'fill-extrusion-opacity': .9
 		},
 	});
 
@@ -247,7 +247,7 @@ map.once('styledata', function () {
 				length = stationOffsets[sectionIndex + direction] - offset;
 
 				// Stop at station
-				setTimeout(repeat, 1000);
+				delay(repeat, 1000);
 			}, 5000 * Math.abs(length));
 		}
 		repeat();
@@ -290,14 +290,20 @@ function animate(callback, endCallback, duration) {
 
 		start = start || now;
 		t = Math.min((now - start) / duration, 1);
-		callback(easeSin(t));
+		if (callback) {
+			callback(easeSin(t));
+		}
 		if (t < 1) {
 			requestAnimationFrame(frameRefresh);
-		} else {
+		} else if (endCallback) {
 			endCallback();
 		}
 	};
 	requestAnimationFrame(frameRefresh);
+}
+
+function delay(callback, duration) {
+	animate(null, callback, duration);
 }
 
 function concat(arr) {
