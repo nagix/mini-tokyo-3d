@@ -87,50 +87,72 @@ var lineCollection = turf.featureCollection(lineData.lines.map(function(line) {
 	// Build line loopup dictionary
 	lineLookup[line.name] = line;
 
-	line.feature = turf.lineString(concat(line.sublines.map(function(subline, i, sublines) {
-		var overlap = subline.line;
-		var start, end, stations, startIndex, endIndex, direction, result;
+	line.feature = turf.lineString(concat(line.sublines.map(function(subline) {
+		var overlap = lineLookup[subline.line];
+		var start, end, stations;
 
 		if (overlap) {
-			start = stationLookup[subline.start];
-			end = stationLookup[subline.end];
-			stations = lineLookup[overlap].stations;
-			startIndex = stations.indexOf(subline.start);
-			endIndex = stations.indexOf(subline.end);
-			direction = startIndex < endIndex ? 1 : -1;
-
-			// Extend subline
-			if (i > 0 && inRange(startIndex - direction, 0, stations.length)) {
-				startIndex -= direction;
-				start = stationLookup[stations[startIndex]];
-			}
-			if (i < sublines.length - 1 && inRange(endIndex + direction, 0, stations.length)) {
-				endIndex += direction;
-				end = stationLookup[stations[endIndex]];
-			}
-
-			result = turf.lineOffset(turf.lineSlice(
-				turf.point(start.coords),
-				turf.point(end.coords),
-				lineLookup[overlap].feature
+			start = subline.start;
+			end = subline.end;
+			subline.feature = turf.lineOffset(turf.lineSlice(
+				turf.point(stationLookup[start].coords),
+				turf.point(stationLookup[end].coords),
+				overlap.feature
 			), subline.offset * .125);
-
-			if (direction < 0) {
-				turf.rewind(result, {mutate: true});
+			stations = overlap.stations;
+			if (stations.indexOf(start) > stations.indexOf(end)) {
+				turf.rewind(subline.feature, {mutate: true});
 			}
-		} else {
-			result = turf.bezierSpline(turf.lineString(subline.coordinates), {sharpness: .4})
 		}
-		return result;
+
+		return subline;
 	}).map(function(subline, i, sublines) {
-		// Connect sublines
-		if (i > 0) {
-			subline = turf.lineSplit(subline, sublines[i - 1]).features[1] || subline;
+		var coordinates, nextSubline;
+
+		function smoothCoords(reverse) {
+			var start = !reverse ? 0 : coordinates.length - 1;
+			var end = !reverse ? coordinates.length - 1 : 0;
+			var step = !reverse ? 1 : -1;
+			var stationName = !reverse ? nextSubline.end : nextSubline.start;
+			var nextCoordinates = turf.getCoords(nextSubline.feature);
+			var CoordsIndex = !reverse ? nextCoordinates.length - 1 : 0;
+			var feature = lineLookup[nextSubline.line].feature;
+			var offset = turf.distance(
+				turf.point(stationLookup[stationName].coords),
+				turf.point(nextCoordinates[CoordsIndex])
+			);
+			var j, p1, p2, distance;
+
+			for (j = start; j !== end; j += step) {
+				p1 = turf.point(coordinates[j]);
+				p2 = turf.nearestPointOnLine(feature, p1);
+				distance = p2.properties.dist;
+				if (distance > offset * 5) {
+					break;
+				}
+				coordinates[j] = turf.getCoord(turf.transformTranslate(
+					p1,
+					distance <= offset ? offset : offset - (distance - offset) / 4,
+					turf.bearing(p2, p1) + (nextSubline.offset < 0 ? 180 : 0)
+				));
+			}
+			coordinates[start] = nextCoordinates[CoordsIndex];
 		}
-		if (i < sublines.length - 1) {
-			subline = turf.lineSplit(subline, sublines[i + 1]).features[0] || subline;
+
+		if (!subline.line) {
+			coordinates = subline.coordinates;
+			nextSubline = sublines[i - 1];
+			if (nextSubline && nextSubline.line) {
+				smoothCoords();
+			}
+			nextSubline = sublines[i + 1];
+			if (nextSubline && nextSubline.line) {
+				smoothCoords(true);
+			}
+			subline.feature = turf.bezierSpline(turf.lineString(coordinates), {sharpness: .4});
 		}
-		return turf.getCoords(subline)
+
+		return turf.getCoords(subline.feature);
 	})), {color: line.color, width: 8});
 
 	// Make sure the last and first coords are equal if loop is true
@@ -212,7 +234,7 @@ map.once('styledata', function () {
 		},
 		paint: {
 			'fill-extrusion-color': ['get', 'color'],
-			'fill-extrusion-height': 100,
+			'fill-extrusion-height': ['interpolate', ['exponential', 0.5], ['zoom'], 0, 1638400, 19, 3.125],
 			'fill-extrusion-opacity': .9
 		},
 	});
@@ -229,12 +251,13 @@ map.once('styledata', function () {
 		function repeat() {
 			animate(function(t) {
 				var p = getPointAndBearing(line.feature, offset + t * length, direction);
+				var size = Math.pow(2, 14 - map.getZoom()) * .1;
 				feature.geometry = turf.getGeom(turf.transformRotate(turf.polygon([[
-					turf.getCoord(turf.transformTranslate(p.point, .1, -150)),
-					turf.getCoord(turf.transformTranslate(p.point, .1, -30)),
-					turf.getCoord(turf.transformTranslate(p.point, .1, 30)),
-					turf.getCoord(turf.transformTranslate(p.point, .1, 150)),
-					turf.getCoord(turf.transformTranslate(p.point, .1, -150))
+					turf.getCoord(turf.transformTranslate(p.point, size, -150)),
+					turf.getCoord(turf.transformTranslate(p.point, size, -30)),
+					turf.getCoord(turf.transformTranslate(p.point, size, 30)),
+					turf.getCoord(turf.transformTranslate(p.point, size, 150)),
+					turf.getCoord(turf.transformTranslate(p.point, size, -150))
 				]]), p.bearing, {pivot: p.point}));
 				car.coords = turf.getCoord(p.point);
 				car.bearing = p.bearing;
