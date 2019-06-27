@@ -110,19 +110,10 @@
 		],
 		"loop": true
 	}, {
-		"name": "chuo",
+		"name": "sobu",
 		"sublines": [{
-			"line": "yamanote",
-			"start": "tokyo",
-			"end": "kanda",
-			"offset": 1
-		}, {
 			"coordinates": [
-				[139.7710, 35.6918],
-				[139.7716, 35.6939],
-				[139.7716, 35.6954],
-				[139.7708, 35.6967],
-				[139.7680, 35.6986],
+				[139.7731, 35.6983],
 				[139.7645, 35.6997],
 				[139.7634, 35.7000],
 				[139.7611, 35.7013],
@@ -149,12 +140,11 @@
 			"start": "yoyogi",
 			"end": "shinjuku",
 			"reverse": true,
-			"offset": -1
+			"offset": 1
 		}],
-		"color": "#CA6840",
+		"color": "#FDBC00",
 		"stations": [
-			"tokyo",
-			"kanda",
+			"akihabara",
 			"ochanomizu",
 			"suidobashi",
 			"iidabashi",
@@ -163,6 +153,37 @@
 			"shinanomachi",
 			"sendagaya",
 			"yoyogi",
+			"shinjuku"
+		]
+	}, {
+		"name": "chuo",
+		"sublines": [{
+			"line": "yamanote",
+			"start": "tokyo",
+			"end": "kanda",
+			"offset": 1
+		}, {
+			"coordinates": [
+				[139.7710, 35.6918],
+				[139.7716, 35.6939],
+				[139.7716, 35.6954],
+				[139.7708, 35.6967],
+				[139.7680, 35.6986],
+				[139.7645, 35.6997]
+			]
+		}, {
+			"line": "sobu",
+			"start": "ochanomizu",
+			"end": "shinjuku",
+			"reverse": true,
+			"offset": 1
+		}],
+		"color": "#CA6840",
+		"stations": [
+			"tokyo",
+			"kanda",
+			"ochanomizu",
+			"yotsuya",
 			"shinjuku"
 		]
 	}, {
