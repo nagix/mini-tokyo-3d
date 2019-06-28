@@ -1,3 +1,4 @@
+var isRealtime = false;
 var stationLookup = {};
 var lineLookup = {};
 var trackedCar;
@@ -31,6 +32,13 @@ MapboxGLButtonControl.prototype.onRemove = function() {
 	this._map = undefined;
 };
 
+Promise.all([
+	loadJSON('data/dictionary-' + getLang() + '.json'),
+	loadJSON('data/lines.json'),
+	loadJSON('data/stations.json'),
+	loadJSON('data/cars.json')
+]).then(function([dict, lineData, stationData, carData]) {
+
 var map = new mapboxgl.Map({
 	container: 'map',
 	style: 'data/osm-liberty.json',
@@ -40,29 +48,56 @@ var map = new mapboxgl.Map({
 	zoom: 14,
 	pitch: 60
 });
-map.addControl(new mapboxgl.NavigationControl());
-map.addControl(new mapboxgl.FullscreenControl());
+
+var control = new mapboxgl.NavigationControl();
+control._zoomInButton.title = dict['zoom-in'];
+control._zoomOutButton.title = dict['zoom-out'];
+control._compass.title = dict['compass'];
+map.addControl(control);
+
+control = new mapboxgl.FullscreenControl();
+control._updateTitle = function() {
+	mapboxgl.FullscreenControl.prototype._updateTitle.apply(this,arguments);
+    this._fullscreenButton.title = dict[(this._isFullscreen() ? 'exit' : 'enter') + '-fullscreen'];
+}
+map.addControl(control);
+
 map.addControl(new MapboxGLButtonControl({
-	className: 'mapbox-gl-track',
-	title: '追跡',
+	className: 'mapbox-ctrl-track',
+	title: dict['track'],
 	eventHandler: function() {
-		trackedCar = trackedCar === undefined ? 0 : trackedCar === 11 ? undefined : trackedCar + 1;
+		trackedCar = trackedCar === undefined ? 0 : trackedCar === carData.cars.length - 1 ? undefined : trackedCar + 1;
+		if (trackedCar !== undefined) {
+			this.classList.add('mapbox-ctrl-realtime-active');
+		} else {
+			this.classList.remove('mapbox-ctrl-realtime-active');
+		}
 	}
 }), 'top-right');
+
+/*
 map.addControl(new MapboxGLButtonControl({
-	className: 'mapbox-gl-github',
-	title: 'GitHub',
+	className: 'mapbox-ctrl-realtime',
+	title: dict['enter-realtime'],
+	eventHandler: function() {
+		isRealtime = !isRealtime;
+		this.title = dict[(isRealtime ? 'exit' : 'enter') + '-realtime'];
+		if (isRealtime) {
+			this.classList.add('mapbox-ctrl-realtime-active');
+		} else {
+			this.classList.remove('mapbox-ctrl-realtime-active');
+		}
+	}
+}), 'top-right');
+*/
+
+map.addControl(new MapboxGLButtonControl({
+	className: 'mapbox-ctrl-github',
+	title: dict['github'],
 	eventHandler: function() {
 		window.open('https://github.com/nagix/mini-tokyo-3d');
 	}
 }), 'top-right');
-
-Promise.all([
-	loadJSON('data/dictionary-' + getLang() + '.json'),
-	loadJSON('data/lines.json'),
-	loadJSON('data/stations.json'),
-	loadJSON('data/cars.json')
-]).then(function([dict, lineData, stationData, carData]) {
 
 var stationCollection = turf.featureCollection(stationData.stations.map(function(station) {
 	var span = station.span;

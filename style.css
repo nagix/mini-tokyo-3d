@@ -22,10 +22,10 @@ body {
 	bottom: 0;
 	width: 100%;
 }
-.mapbox-gl-track:before {
+.mapbox-ctrl-track:before {
 	content: '\f238';
 	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
+	font-weight: 400;
 	position: absolute;
 	top: 5px;
 	left: 5px;
@@ -34,10 +34,28 @@ body {
 	color: black;
 	font-size: 21px;
 }
-.mapbox-gl-github:before {
+.mapbox-ctrl-track-active:before {
+	color: #33B5E5;
+}
+.mapbox-ctrl-realtime:before {
+	content: '\f017';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 400;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 20px;
+	height: 20px;
+	color: black;
+	font-size: 21px;
+}
+.mapbox-ctrl-realtime-active:before {
+	color: #33B5E5;
+}
+.mapbox-ctrl-github:before {
 	content: '\f09b';
 	font-family: 'Font Awesome 5 Brands';
-	font-weight: 900;
+	font-weight: 400;
 	position: absolute;
 	top: 5px;
 	left: 5px;
