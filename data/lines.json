@@ -1,6 +1,6 @@
 {
 	"lines": [{
-		"name": "yamanote",
+		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
 		"sublines": [{
 			"coordinates": [
 				[139.7282, 35.6200],
@@ -76,41 +76,9 @@
 			]
 		}],
 		"color": "#7BAB4F",
-		"stations": [
-			"osaki",
-			"gotanda",
-			"meguro",
-			"ebisu",
-			"shibuya",
-			"harajuku",
-			"yoyogi",
-			"shinjuku",
-			"shinokubo",
-			"takadanobaba",
-			"mejiro",
-			"ikebukuro",
-			"otsuka",
-			"sugamo",
-			"komagome",
-			"tabata",
-			"nishinippori",
-			"nippori",
-			"uguisudani",
-			"ueno",
-			"okachimachi",
-			"akihabara",
-			"kanda",
-			"tokyo",
-			"yurakucho",
-			"shimbashi",
-			"hamamatsucho",
-			"tamachi",
-			"shinagawa",
-			"_osaki"
-		],
 		"loop": true
 	}, {
-		"name": "sobu",
+		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
 		"sublines": [{
 			"coordinates": [
 				[139.7731, 35.6983],
@@ -136,31 +104,18 @@
 				[139.7021, 35.6841]
 			]
 		}, {
-			"line": "yamanote",
-			"start": "yoyogi",
-			"end": "shinjuku",
-			"reverse": true,
+			"odpt:railway": "odpt.Railway:JR-East.Yamanote",
+			"start": "odpt.Station:JR-East.Yamanote.Yoyogi",
+			"end": "odpt.Station:JR-East.Yamanote.Shinjuku",
 			"offset": 1
 		}],
-		"color": "#FDBC00",
-		"stations": [
-			"akihabara",
-			"ochanomizu",
-			"suidobashi",
-			"iidabashi",
-			"ichigaya",
-			"yotsuya",
-			"shinanomachi",
-			"sendagaya",
-			"yoyogi",
-			"shinjuku"
-		]
+		"color": "#FDBC00"
 	}, {
-		"name": "chuo",
+		"odpt:railway": "odpt.Railway:JR-East.ChuoRapid",
 		"sublines": [{
-			"line": "yamanote",
-			"start": "tokyo",
-			"end": "kanda",
+			"odpt:railway": "odpt.Railway:JR-East.Yamanote",
+			"start": "odpt.Station:JR-East.Yamanote.Tokyo",
+			"end": "odpt.Station:JR-East.Yamanote.Kanda",
 			"offset": 1
 		}, {
 			"coordinates": [
@@ -172,44 +127,21 @@
 				[139.7645, 35.6997]
 			]
 		}, {
-			"line": "sobu",
-			"start": "ochanomizu",
-			"end": "shinjuku",
+			"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
+			"start": "odpt.Station:JR-East.ChuoSobuLocal.Ochanomizu",
+			"end": "odpt.Station:JR-East.ChuoSobuLocal.Shinjuku",
 			"reverse": true,
 			"offset": 1
 		}],
-		"color": "#CA6840",
-		"stations": [
-			"tokyo",
-			"kanda",
-			"ochanomizu",
-			"yotsuya",
-			"shinjuku"
-		]
+		"color": "#CA6840"
 	}, {
-		"name": "keihintohoku",
+		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
 		"sublines": [{
-			"line": "yamanote",
-			"start": "shinagawa",
-			"end": "tabata",
+			"odpt:railway": "odpt.Railway:JR-East.Yamanote",
+			"start": "odpt.Station:JR-East.Yamanote.Tabata",
+			"end": "odpt.Station:JR-East.Yamanote.Shinagawa",
 			"offset": -1
 		}],
-		"color": "#00B2E5",
-		"stations": [
-			"shinagawa",
-			"tamachi",
-			"hamamatsucho",
-			"shimbashi",
-			"yurakucho",
-			"tokyo",
-			"kanda",
-			"akihabara",
-			"okachimachi",
-			"ueno",
-			"uguisudani",
-			"nippori",
-			"nishinippori",
-			"tabata"
-		]
+		"color": "#00B2E5"
 	}]
 }

@@ -1,179 +1,236 @@
 {
 	"stations": [{
-		"name": "osaki",
-		"alias": "_osaki",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Osaki",
 		"coords": [139.7282, 35.6200]
 	}, {
-		"name": "gotanda",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Gotanda",
 		"coords": [139.7234, 35.6265]
 	}, {
-		"name": "meguro",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Meguro",
 		"coords": [139.7160, 35.6326]
 	}, {
-		"name": "ebisu",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Ebisu",
 		"coords": [139.7102, 35.6465]
 	}, {
-		"name": "shibuya",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Shibuya",
 		"coords": [139.7016, 35.6583]
 	}, {
-		"name": "harajuku",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Harajuku",
 		"coords": [139.7027, 35.6713]
 	}, {
-		"name": "yoyogi",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Yoyogi",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoSobuLocal.Yoyogi"
+		],
 		"coords": [139.7021, 35.6841],
 		"angle": -13,
 		"span": [0, 1],
 		"labelOffset": 8,
 		"labelAngle": -15
 	}, {
-		"name": "shinjuku",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Shinjuku",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoSobuLocal.Shinjuku",
+			"odpt.Station:JR-East.ChuoRapid.Shinjuku"
+		],
 		"coords": [139.7006, 35.6898],
 		"angle": -10,
 		"span": [0, 2],
 		"labelOffset": 8
 	}, {
-		"name": "shinokubo",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.ShinOkubo",
 		"coords": [139.7002, 35.7009]
 	}, {
-		"name": "takadanobaba",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Takadanobaba",
 		"coords": [139.7037, 35.7130]
 	}, {
-		"name": "mejiro",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Mejiro",
 		"coords": [139.7062, 35.7205]
 	}, {
-		"name": "ikebukuro",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Ikebukuro",
 		"coords": [139.7112, 35.7301]
 	}, {
-		"name": "otsuka",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Otsuka",
 		"coords": [139.7282, 35.7317],
 		"labelAngle": -75
 	}, {
-		"name": "sugamo",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Sugamo",
 		"coords": [139.7403, 35.7337],
 		"labelAngle": 75
 	}, {
-		"name": "komagome",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Komagome",
 		"coords": [139.7480, 35.7368],
 		"labelAngle": 75
 	}, {
-		"name": "tabata",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Tabata",
+		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Tabata"
+		],
 		"coords": [139.7616, 35.7374],
 		"angle": 136,
 		"span": [-1, 0],
 		"labelOffset": 8,
 		"labelAngle": -15
 	}, {
-		"name": "nishinippori",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.NishiNippori",
+		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.NishiNippori"
+		],
 		"coords": [139.7666, 35.7322],
 		"angle": 146,
 		"span": [-1, 0],
 		"labelOffset": 8,
 		"labelAngle": -15
 	}, {
-		"name": "nippori",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Nippori",
+		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Nippori"
+		],
 		"coords": [139.7706, 35.7281],
 		"angle": 138,
 		"span": [-1, 0],
 		"labelOffset": 8,
 		"labelAngle": -15
 	}, {
-		"name": "uguisudani",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Uguisudani",
+		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Uguisudani"
+		],
 		"coords": [139.7793, 35.7206],
 		"angle": 142,
 		"span": [-1, 0],
 		"labelOffset": 8
 	}, {
-		"name": "ueno",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Ueno",
+		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Ueno"
+		],
 		"coords": [139.7763, 35.7136],
 		"angle": -146,
 		"span": [-1, 0],
 		"labelOffset": 8,
 		"labelAngle": 15
 	}, {
-		"name": "okachimachi",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Okachimachi",
+		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Okachimachi"
+		],
 		"coords": [139.7748, 35.7074],
 		"angle": -172,
 		"span": [-1, 0],
 		"labelOffset": 8
 	}, {
-		"name": "akihabara",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Akihabara",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoSobuLocal.Akihabara",
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Akihabara"
+		],
 		"coords": [139.7731, 35.6983],
 		"angle": -172,
 		"span": [-1, 0],
 		"labelOffset": 8
 	}, {
-		"name": "kanda",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Kanda",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Kanda",
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Kanda"
+		],
 		"coords": [139.7710, 35.6918],
 		"angle": -162,
 		"span": [-1, 1],
 		"labelOffset": 8
 	}, {
-		"name": "tokyo",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Tokyo",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Tokyo",
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Tokyo"
+		],
 		"coords": [139.7670, 35.6814],
 		"angle": -163,
 		"span": [-1, 1],
 		"labelOffset": 8
 	}, {
-		"name": "yurakucho",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Yurakucho",
+		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Yurakucho"
+		],
 		"coords": [139.7631, 35.6750],
 		"angle": -134,
 		"span": [-1, 0],
 		"labelOffset": 8,
 		"labelAngle": 15
 	}, {
-		"name": "shimbashi",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Shimbashi",
+		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Shimbashi"
+		],
 		"coords": [139.7582, 35.6665],
 		"angle": 177,
 		"span": [-1, 0],
 		"labelOffset": 8
 	}, {
-		"name": "hamamatsucho",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Hamamatsucho",
+		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Hamamatsucho"
+		],
 		"coords": [139.7571, 35.6554],
 		"angle": -168,
 		"span": [-1, 0],
 		"labelOffset": 8
 	}, {
-		"name": "tamachi",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Tamachi",
+		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Tamachi"
+		],
 		"coords": [139.7476, 35.6457],
 		"angle": -122,
 		"span": [-1, 0],
 		"labelOffset": 8,
 		"labelAngle": 30
 	}, {
-		"name": "shinagawa",
+		"odpt:station": "odpt.Station:JR-East.Yamanote.Shinagawa",
+		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Shinagawa"
+		],
 		"coords": [139.7389, 35.6284],
 		"angle": 176,
 		"span": [-1, 0],
 		"labelOffset": 8
 	}, {
-		"name": "ochanomizu",
+		"odpt:station": "odpt.Station:JR-East.ChuoSobuLocal.Ochanomizu",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Ochanomizu"
+		],
 		"coords": [139.7645, 35.6997],
 		"angle": -78,
 		"span": [0, 1],
 		"labelAngle": 105
 	}, {
-		"name": "suidobashi",
+		"odpt:station": "odpt.Station:JR-East.ChuoSobuLocal.Suidobashi",
 		"coords": [139.7536, 35.7020],
 		"labelAngle": -90
 	}, {
-		"name": "iidabashi",
+		"odpt:station": "odpt.Station:JR-East.ChuoSobuLocal.Iidabashi",
 		"coords": [139.7445, 35.7015],
 		"labelAngle": -165
 	}, {
-		"name": "ichigaya",
+		"odpt:station": "odpt.Station:JR-East.ChuoSobuLocal.Ichigaya",
 		"coords": [139.7359, 35.6915],
 		"labelAngle": 15
 	}, {
-		"name": "yotsuya",
+		"odpt:station": "odpt.Station:JR-East.ChuoSobuLocal.Yotsuya",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Yotsuya"
+		],
 		"coords": [139.7305, 35.6857],
 		"angle": -161,
 		"span": [0, 1]
 	}, {
-		"name": "shinanomachi",
+		"odpt:station": "odpt.Station:JR-East.ChuoSobuLocal.Shinanomachi",
 		"coords": [139.7205, 35.6801],
 		"labelAngle": 90
 	}, {
-		"name": "sendagaya",
+		"odpt:station": "odpt.Station:JR-East.ChuoSobuLocal.Sendagaya",
 		"coords": [139.7113, 35.6813],
 		"labelAngle": -75
 	}]

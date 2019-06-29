@@ -16,6 +16,19 @@ body {
 .ball-pulse > div {
 	background-color: #777;
 }
+#loading-error {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 21px;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	border-radius: 10px;
+	color: #333;
+	background-color: #eee;
+	opacity: .9;
+	display: none;
+}
 #map {
 	position: absolute;
 	top: 0;
@@ -63,4 +76,32 @@ body {
 	height: 20px;
 	color: black;
 	font-size: 21px;
+}
+.mapboxgl-popup-content {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+	border-bottom-color: rgba(0, 0, 0, 0.7)
+}
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip {
+	border-bottom-color: rgba(0, 0, 0, 0.7)
+}
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+	border-bottom-color: rgba(0, 0, 0, 0.7)
+}
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+	border-top-color: rgba(0, 0, 0, 0.7)
+}
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip {
+	border-top-color: rgba(0, 0, 0, 0.7)
+}
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+	border-top-color: rgba(0, 0, 0, 0.7)
+}
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+	border-right-color: rgba(0, 0, 0, 0.7)
+}
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+	border-left-color: rgba(0, 0, 0, 0.7)
 }

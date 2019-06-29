@@ -1,7 +1,14 @@
-var isRealtime = false;
+var apiUrl = 'https://api-tokyochallenge.odpt.org/api/v4/';
+var apiToken = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
+var today = new Date();
+var isRealtime = true;
+var calendarLookup = {};
 var stationLookup = {};
+var stationLookup2 = {};
 var lineLookup = {};
-var trackedCar;
+var railwayLookup = {};
+var trainLookup = {};
+var trackedCar, markedCar, trainLastRefresh;
 
 var MapboxGLButtonControl = function(options) {
 	this.initialize(options);
@@ -32,12 +39,28 @@ MapboxGLButtonControl.prototype.onRemove = function() {
 	this._map = undefined;
 };
 
+var calendar = JapaneseHolidays.isHoliday(today) || today.getDay() == 6 || today.getDay() == 0
+	? 'SaturdayHoliday' : 'Weekday';
+
+var lang = getLang();
+
 Promise.all([
-	loadJSON('data/dictionary-' + getLang() + '.json'),
+	loadJSON('data/dictionary-' + lang + '.json'),
 	loadJSON('data/lines.json'),
 	loadJSON('data/stations.json'),
-	loadJSON('data/cars.json')
-]).then(function([dict, lineData, stationData, carData]) {
+	loadJSON('data/cars.json'),
+	loadJSON(apiUrl + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East&' + apiToken),
+	loadJSON(apiUrl + 'odpt:Station?odpt:operator=odpt.Operator:JR-East&' + apiToken),
+	loadJSON(apiUrl + 'odpt:TrainTimetable?odpt:operator=odpt.Operator:JR-East&odpt:railway=odpt.Railway:JR-East.Yamanote&odpt:calendar=odpt.Calendar:' + calendar + '&' + apiToken),
+	loadJSON(apiUrl + 'odpt:TrainTimetable?odpt:operator=odpt.Operator:JR-East&odpt:railway=odpt.Railway:JR-East.ChuoSobuLocal&odpt:calendar=odpt.Calendar:Weekday&' + apiToken),
+	loadJSON(apiUrl + 'odpt:TrainTimetable?odpt:operator=odpt.Operator:JR-East&odpt:railway=odpt.Railway:JR-East.ChuoRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + apiToken),
+	loadJSON(apiUrl + 'odpt:TrainTimetable?odpt:operator=odpt.Operator:JR-East&odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + apiToken)
+]).then(function([
+	dict, lineData, stationData, carData, railwayData, stationData2,
+	timetableData1, timetableData2, timetableData3, timetableData4
+]) {
+
+var timetableData = timetableData1.concat(timetableData2, timetableData3, timetableData4);
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -49,55 +72,9 @@ var map = new mapboxgl.Map({
 	pitch: 60
 });
 
-var control = new mapboxgl.NavigationControl();
-control._zoomInButton.title = dict['zoom-in'];
-control._zoomOutButton.title = dict['zoom-out'];
-control._compass.title = dict['compass'];
-map.addControl(control);
-
-control = new mapboxgl.FullscreenControl();
-control._updateTitle = function() {
-	mapboxgl.FullscreenControl.prototype._updateTitle.apply(this,arguments);
-    this._fullscreenButton.title = dict[(this._isFullscreen() ? 'exit' : 'enter') + '-fullscreen'];
-}
-map.addControl(control);
-
-map.addControl(new MapboxGLButtonControl({
-	className: 'mapbox-ctrl-track',
-	title: dict['track'],
-	eventHandler: function() {
-		trackedCar = trackedCar === undefined ? 0 : trackedCar === carData.cars.length - 1 ? undefined : trackedCar + 1;
-		if (trackedCar !== undefined) {
-			this.classList.add('mapbox-ctrl-realtime-active');
-		} else {
-			this.classList.remove('mapbox-ctrl-realtime-active');
-		}
-	}
-}), 'top-right');
-
-/*
-map.addControl(new MapboxGLButtonControl({
-	className: 'mapbox-ctrl-realtime',
-	title: dict['enter-realtime'],
-	eventHandler: function() {
-		isRealtime = !isRealtime;
-		this.title = dict[(isRealtime ? 'exit' : 'enter') + '-realtime'];
-		if (isRealtime) {
-			this.classList.add('mapbox-ctrl-realtime-active');
-		} else {
-			this.classList.remove('mapbox-ctrl-realtime-active');
-		}
-	}
-}), 'top-right');
-*/
-
-map.addControl(new MapboxGLButtonControl({
-	className: 'mapbox-ctrl-github',
-	title: dict['github'],
-	eventHandler: function() {
-		window.open('https://github.com/nagix/mini-tokyo-3d');
-	}
-}), 'top-right');
+stationData2.forEach(function(station) {
+	stationLookup2[station['owl:sameAs']] = station;
+});
 
 var stationCollection = turf.featureCollection(stationData.stations.map(function(station) {
 	var span = station.span;
@@ -105,9 +82,11 @@ var stationCollection = turf.featureCollection(stationData.stations.map(function
 	var point = turf.point(station.coords, properties);
 
 	// Build station loopup dictionary
-	stationLookup[station.name] = station;
-	if (station.alias) {
-		stationLookup[station.alias] = station;
+	stationLookup[station['odpt:station']] = station;
+	if (station.aliases) {
+		station.aliases.forEach(function(alias) {
+			stationLookup[alias] = station;
+		});
 	}
 
 	return turf.transformRotate(turf.buffer(span ? turf.lineString([
@@ -116,14 +95,30 @@ var stationCollection = turf.featureCollection(stationData.stations.map(function
 	], properties) : point, .1), station.angle || 0, {pivot: station.coords, mutate: true});
 }));
 
+railwayData.forEach(function(railway) {
+	railwayLookup[railway['owl:sameAs']] = railway;
+});
+
 var lineCollection = turf.featureCollection(lineData.lines.map(function(line) {
-	var stations = line.stations;
+	var stationOrder, stations;
 
 	// Build line loopup dictionary
-	lineLookup[line.name] = line;
+	lineLookup[line['odpt:railway']] = line;
+
+	stationOrder = railwayLookup[line['odpt:railway']]['odpt:stationOrder'];
+	if (line['odpt:railway'] === 'odpt.Railway:JR-East.ChuoSobuLocal') {
+		stationOrder = stationOrder.slice(20, 30);
+	} else if (line['odpt:railway'] === 'odpt.Railway:JR-East.ChuoRapid') {
+		stationOrder = stationOrder.slice(0, 5);
+	} else if (line['odpt:railway'] === 'odpt.Railway:JR-East.KeihinTohokuNegishi') {
+		stationOrder = stationOrder.slice(13, 27);
+	}
+	stations = line.stations = stationOrder.map(function(station) {
+		return station['odpt:station'];
+	});
 
 	line.feature = turf.lineString(concat(line.sublines.map(function(subline) {
-		var overlap = lineLookup[subline.line];
+		var overlap = lineLookup[subline['odpt:railway']];
 		var start, end, stations;
 
 		if (overlap) {
@@ -158,7 +153,7 @@ var lineCollection = turf.featureCollection(lineData.lines.map(function(line) {
 			var stationName = !reverse ? nextSubline.end : nextSubline.start;
 			var nextCoordinates = turf.getCoords(nextSubline.feature);
 			var CoordsIndex = !reverse ? nextCoordinates.length - 1 : 0;
-			var feature = lineLookup[nextSubline.line].feature;
+			var feature = lineLookup[nextSubline['odpt:railway']].feature;
 			var offset = turf.distance(
 				turf.point(stationLookup[stationName].coords),
 				turf.point(nextCoordinates[CoordsIndex])
@@ -187,14 +182,14 @@ var lineCollection = turf.featureCollection(lineData.lines.map(function(line) {
 			coordinates[start] = nextCoordinates[CoordsIndex];
 		}
 
-		if (!subline.line) {
+		if (!subline['odpt:railway']) {
 			coordinates = subline.coordinates;
 			nextSubline = sublines[i - 1];
-			if (nextSubline && nextSubline.line) {
+			if (nextSubline && nextSubline['odpt:railway']) {
 				smoothCoords();
 			}
 			nextSubline = sublines[i + 1];
-			if (nextSubline && nextSubline.line) {
+			if (nextSubline && nextSubline['odpt:railway']) {
 				smoothCoords(true);
 			}
 			subline.feature = turf.bezierSpline(turf.lineString(coordinates), {sharpness: .4});
@@ -214,7 +209,7 @@ var lineCollection = turf.featureCollection(lineData.lines.map(function(line) {
 	line.stationOffsets = stations.slice(0, -1).map(function(station) {
 
 		/* For development
-		if (line.name === 'sobu') {
+		if (line['odpt:railway'] === 'odpt.Railway:JR-East.ChuoSobuLocal') {
 			console.log(station, getPointAndBearing(line.feature, turf.length(turf.lineSlice(
 				turf.point(start.coords),
 				turf.point(stationLookup[station].coords),
@@ -235,6 +230,21 @@ var lineCollection = turf.featureCollection(lineData.lines.map(function(line) {
 	return line.feature;
 }));
 
+timetableData.forEach(function(train) {
+	var line = lineLookup[train['odpt:railway']];
+	var railway = railwayLookup[train['odpt:railway']];
+	var direction = train['odpt:railDirection'] === railway['odpt:ascendingRailDirection'] ? 1 : -1;
+	var table = train['odpt:trainTimetableObject'];
+
+	// Build train timetable loopup dictionary
+	trainLookup[train['owl:sameAs']] = train;
+
+	train.start = getTime(table[0]['odpt:departureTime']);
+	train.end = getTime(table[table.length - 1]['odpt:arrivalTime']
+		|| table[table.length - 1]['odpt:departureTime']
+		|| table[Math.max(table.length - 2, 0)]['odpt:departureTime']);
+	train.direction = direction;
+});
 
 var carCollection = turf.featureCollection([]);
 
@@ -248,6 +258,7 @@ map.once('styledata', function () {
 			map.setLayoutProperty(layer.id, 'visibility', 'none');
 		}
 	});
+
 	map.addLayer({
 		id: 'lines',
 		type: 'line',
@@ -298,55 +309,258 @@ map.once('styledata', function () {
 		},
 	});
 
-	carCollection = turf.featureCollection(carData.cars.map(function(car) {
-		var line = lineLookup[car.line];
-		var stationOffsets = line.stationOffsets;
-		var sectionIndex = car.sectionIndex;
-		var direction = car.direction;
-		var offset = stationOffsets[sectionIndex];
-		var length = stationOffsets[sectionIndex + direction] - offset;
-		var feature = turf.polygon([[[0,0],[1,0],[1,1],[0,0]]], {color: line.color});
+	var control = new mapboxgl.NavigationControl();
+	control._zoomInButton.title = dict['zoom-in'];
+	control._zoomOutButton.title = dict['zoom-out'];
+	control._compass.title = dict['compass'];
+	map.addControl(control);
 
-		function repeat() {
-			animate(function(t) {
-				var p = getPointAndBearing(line.feature, offset + t * length, direction);
-				var size = Math.pow(2, 14 - map.getZoom()) * .1;
-				feature.geometry = turf.getGeom(turf.transformRotate(turf.polygon([[
-					turf.getCoord(turf.transformTranslate(p.point, size, -150)),
-					turf.getCoord(turf.transformTranslate(p.point, size, -30)),
-					turf.getCoord(turf.transformTranslate(p.point, size, 30)),
-					turf.getCoord(turf.transformTranslate(p.point, size, 150)),
-					turf.getCoord(turf.transformTranslate(p.point, size, -150))
-				]]), p.bearing, {pivot: p.point}));
-				car.coords = turf.getCoord(p.point);
-				car.bearing = p.bearing;
-			}, function() {
-				sectionIndex = sectionIndex + direction;
-				if (sectionIndex <= 0 || sectionIndex >= stationOffsets.length - 1) {
-					direction = -direction;
-				}
-				offset = stationOffsets[sectionIndex];
-				length = stationOffsets[sectionIndex + direction] - offset;
+	control = new mapboxgl.FullscreenControl();
+	control._updateTitle = function() {
+		mapboxgl.FullscreenControl.prototype._updateTitle.apply(this,arguments);
+	    this._fullscreenButton.title = dict[(this._isFullscreen() ? 'exit' : 'enter') + '-fullscreen'];
+	}
+	map.addControl(control);
 
-				// Stop at station
-				delay(repeat, 1000);
-			}, 5000 * Math.abs(length));
+	map.addControl(new MapboxGLButtonControl({
+		className: 'mapbox-ctrl-track',
+		title: dict['track'],
+		eventHandler: function() {
+			if (trackedCar) {
+				trackedCar = undefined;
+				this.classList.remove('mapbox-ctrl-track-active');
+			}
 		}
-		repeat();
-		return feature;
-	}));
+	}), 'top-right');
+
+	map.addControl(new MapboxGLButtonControl({
+		className: 'mapbox-ctrl-realtime',
+		title: dict['enter-realtime'],
+		eventHandler: function() {
+			isRealtime = !isRealtime;
+			this.title = dict[(isRealtime ? 'exit' : 'enter') + '-realtime'];
+			carCollection.features = [];
+			trackedCar = undefined;
+			document.getElementsByClassName('mapbox-ctrl-track')[0].classList.remove('mapbox-ctrl-track-active');
+			if (isRealtime) {
+				this.classList.add('mapbox-ctrl-realtime-active');
+				trainLastRefresh = undefined;
+				timetableData.forEach(function(train) {
+					train.active = undefined;
+				});
+			} else {
+				this.classList.remove('mapbox-ctrl-realtime-active');
+				initModelTrains();
+			}
+		}
+	}), 'top-right');
+
+	map.addControl(new MapboxGLButtonControl({
+		className: 'mapbox-ctrl-github',
+		title: dict['github'],
+		eventHandler: function() {
+			window.open('https://github.com/nagix/mini-tokyo-3d');
+		}
+	}), 'top-right');
+
+	var popup = new mapboxgl.Popup({
+		closeButton: false,
+		closeOnClick: false,
+		offset: {
+			'top': [0, 10],
+			'bottom': [0, -30],
+		}
+	});
+
+	map.on('mouseenter', 'cars', function(e) {
+		map.getCanvas().style.cursor = 'pointer';
+		if (isRealtime) {
+			markedCar = getCar(e);
+			popup.setLngLat([markedCar.properties.lat, markedCar.properties.lng])
+				.setHTML(markedCar.properties.description)
+				.addTo(map);
+		}
+	});
+
+	map.on('mouseleave', 'cars', function(e) {
+		map.getCanvas().style.cursor = '';
+		if (isRealtime) {
+			markedCar = undefined;
+			popup.remove();
+		}
+	});
+
+	map.on('click', 'cars', function(e) {
+		trackedCar = getCar(e);
+		document.getElementsByClassName('mapbox-ctrl-track')[0].classList.add('mapbox-ctrl-track-active');
+	});
+
+	map.on('zoom', function() {
+		var size = Math.pow(2, 14 - map.getZoom()) * .1;
+		var properties;
+
+		carCollection.features.forEach(function(feature) {
+			properties = feature.properties;
+			feature.geometry = generateCarGeometry(
+				turf.point([properties.lat, properties.lng]), size, properties.bearing);
+		});
+	});
+
+	function getCar(event) {
+		var i, feature;
+		for (var i = 0; i < carCollection.features.length; ++i) {
+			feature = carCollection.features[i];
+			if (feature.properties['odpt:train'] === event.features[0].properties['odpt:train']) {
+				return feature;
+			}
+		}
+	}
+
+	function initModelTrains() {
+		carCollection = turf.featureCollection(carData.cars.map(function(car, i) {
+			var line = lineLookup[car['odpt:railway']];
+			var sectionIndex = car.sectionIndex;
+			var direction = car.direction;
+			var stationOffsets = line.stationOffsets;
+			var offset = stationOffsets[sectionIndex];
+			var length = stationOffsets[sectionIndex + direction] - offset;
+			var feature = turf.polygon([[[0,0],[1,0],[1,1],[0,0]]], {color: line.color});
+
+			function repeat() {
+				animate(function(t) {
+					var p = getPointAndBearing(line.feature, offset + t * length, direction);
+					var size = Math.pow(2, 14 - map.getZoom()) * .1;
+					var properties = feature.properties;
+
+					feature.geometry = generateCarGeometry(p.point, size, p.bearing);
+					properties['odpt:train'] = i;
+					properties.lat = turf.getCoord(p.point)[0];
+					properties.lng = turf.getCoord(p.point)[1];
+					properties.bearing = p.bearing;
+				}, function() {
+					sectionIndex = sectionIndex + direction;
+					if (sectionIndex <= 0 || sectionIndex >= stationOffsets.length - 1) {
+						direction = -direction;
+					}
+					offset = stationOffsets[sectionIndex];
+					length = stationOffsets[sectionIndex + direction] - offset;
+
+					if (!isRealtime) {
+						// Stop and go
+						delay(repeat, 1000);
+					}
+				}, 5000 * Math.abs(length));
+			}
+			repeat();
+			return feature;
+		}));
+	}
+	if (!isRealtime) {
+		initModelTrains();
+	}
 
 	function refresh(timestamp) {
+		var properties;
+
+		if (isRealtime) {
+			refreshTrains(timestamp);
+			if (markedCar) {
+				properties = markedCar.properties;
+				popup.setLngLat([properties.lat, properties.lng]).setHTML(properties.description);
+			}
+		}
 		map.getSource('cars').setData(carCollection);
-		if (trackedCar !== undefined) {
-			map.panTo(carData.cars[trackedCar].coords, {animate: false});
+		if (trackedCar) {
+			properties = trackedCar.properties;
+			map.panTo([properties.lat, properties.lng], {animate: false});
 			map.rotateTo((timestamp / 100) % 360, {animate: false});
 		}
 		requestAnimationFrame(refresh);
 	}
 	refresh(0);
+
+	function refreshTrains() {
+		var now = Date.now();
+
+		if (parseInt(now / 60000) !== parseInt(trainLastRefresh / 60000)) {
+			trainLastRefresh = now;
+			timetableData.forEach(function(train) {
+				if (train.start <= now && now <= train.end && !train.active) {
+					train.active = true;
+
+					var line = lineLookup[train['odpt:railway']];
+					var table = train['odpt:trainTimetableObject'];
+					var timetableIndex = table.reduce(function(acc, cur, i) {
+						return getTime(cur['odpt:departureTime']) <= now ? i : acc;
+					}, 0);
+					var direction = train.direction;
+					var departureStation = table[timetableIndex]['odpt:departureStation'];
+					var sectionIndex = direction > 0
+						? line.stations.indexOf(departureStation)
+						: line.stations.lastIndexOf(departureStation);
+					var stationOffsets = line.stationOffsets;
+					var offset = stationOffsets[sectionIndex];
+					var length = stationOffsets[sectionIndex + direction] - offset;
+					var feature = turf.polygon([[[0,0],[1,0],[1,1],[0,0]]], {color: line.color});
+
+					// Out of range
+					if (isNaN(offset) || isNaN(length)) {
+						return;
+					}
+
+					function repeat() {
+						animate(function(t) {
+							var p = getPointAndBearing(line.feature, offset + t * length, direction);
+							var size = Math.pow(2, 14 - map.getZoom()) * .1;
+							var properties = feature.properties;
+
+							feature.geometry = generateCarGeometry(p.point, size, p.bearing);
+							properties['odpt:train'] = train['odpt:train'];
+							properties.lat = turf.getCoord(p.point)[0];
+							properties.lng = turf.getCoord(p.point)[1];
+							properties.bearing = p.bearing;
+							properties.description = '<strong>' + dict['train-number'] +':</strong> '
+								+ train['odpt:trainNumber']
+								+ '<br><strong>' + dict['destination'] +':</strong> '
+								+ (train['odpt:destinationStation'] ? stationLookup2[train['odpt:destinationStation'][0]]['odpt:stationTitle'][lang === 'ja' ? 'ja' : 'en'] : 'N/A')
+								+ '<br><strong>' + dict['previous-stop'] +':</strong> '
+								+ stationLookup2[table[timetableIndex]['odpt:departureStation']]['odpt:stationTitle'][lang === 'ja' ? 'ja' : 'en'] + ' ' + table[timetableIndex]['odpt:departureTime']
+								+ '<br><strong>' + dict['next-stop'] +':</strong> '
+								+ stationLookup2[(table[timetableIndex + 1]['odpt:arrivalStation'] || table[timetableIndex + 1]['odpt:departureStation'])]['odpt:stationTitle'][lang === 'ja' ? 'ja' : 'en'] + ' ' + (table[timetableIndex + 1]['odpt:arrivalTime'] || table[timetableIndex + 1]['odpt:departureTime']);
+
+							//car.coords = turf.getCoord(p.point);
+							//car.bearing = p.bearing;
+						}, function() {
+							timetableIndex++;
+							sectionIndex = sectionIndex + direction;
+							if (timetableIndex >= table.length - 1 || sectionIndex <= 0 || sectionIndex >= stationOffsets.length - 1) {
+								carCollection.features.splice(carCollection.features.indexOf(feature), 1);
+								train.active = undefined;
+							} else {
+								offset = stationOffsets[sectionIndex];
+								length = stationOffsets[sectionIndex + direction] - offset;
+
+								if (isRealtime) {
+									// Stop at station
+									delay(repeat, Math.max(getTime(table[timetableIndex]['odpt:departureTime']) - Date.now(), 30000));
+								}
+							}
+						}, 60000 * Math.abs(length));
+					}
+					repeat();
+					carCollection.features.push(feature);
+
+				}
+			});
+		}
+	}
 });
 
+}).catch(function(error) {
+	document.getElementById('loader').style.display = 'none';
+	document.getElementById('loading-error').innerHTML = 'Loading failed. Please reload the page.';
+	document.getElementById('loading-error').style.display = 'block';
+	throw error;
 });
 
 function getPointAndBearing(line, distance, direction) {
@@ -358,6 +572,16 @@ function getPointAndBearing(line, distance, direction) {
 		point: p1,
 		bearing: direction * delta > 0 ? turf.bearing(p1, p2) : turf.bearing(p2, p1)
 	};
+}
+
+function generateCarGeometry(point, size, bearing) {
+	return turf.getGeom(turf.transformRotate(turf.polygon([[
+		turf.getCoord(turf.transformTranslate(point, size, -150)),
+		turf.getCoord(turf.transformTranslate(point, size, -30)),
+		turf.getCoord(turf.transformTranslate(point, size, 30)),
+		turf.getCoord(turf.transformTranslate(point, size, 150)),
+		turf.getCoord(turf.transformTranslate(point, size, -150))
+	]]), bearing, {pivot: point}));
 }
 
 function easeSin(t) {
@@ -412,6 +636,14 @@ function loadJSON(url) {
 		}
 		request.send();
 	});
+}
+
+function getTime(timeString) {
+	var date = new Date();
+	var timeStrings = (timeString || '').split(':');
+
+	date.setHours(+timeStrings[0], +timeStrings[1], 0, 0);
+	return date.getTime();
 }
 
 function getLang() {
