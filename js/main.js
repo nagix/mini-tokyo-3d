@@ -334,7 +334,7 @@ map.once('styledata', function () {
 	}), 'top-right');
 
 	map.addControl(new MapboxGLButtonControl({
-		className: 'mapbox-ctrl-realtime',
+		className: 'mapbox-ctrl-realtime mapbox-ctrl-realtime-active',
 		title: dict['enter-realtime'],
 		eventHandler: function() {
 			isRealtime = !isRealtime;
