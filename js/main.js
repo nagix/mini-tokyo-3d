@@ -8,6 +8,7 @@ var stationLookup2 = {};
 var lineLookup = {};
 var railwayLookup = {};
 var trainLookup = {};
+var trackingMode = 'helicopter';
 var trackedCar, markedCar, trainLastRefresh;
 
 var MapboxGLButtonControl = function(options) {
@@ -323,13 +324,19 @@ map.once('styledata', function () {
 	map.addControl(control);
 
 	map.addControl(new MapboxGLButtonControl({
-		className: 'mapbox-ctrl-track',
+		className: 'mapbox-ctrl-track mapbox-ctrl-track-helicopter',
 		title: dict['track'],
-		eventHandler: function() {
-			if (trackedCar) {
-				trackedCar = undefined;
-				this.classList.remove('mapbox-ctrl-track-active');
+		eventHandler: function(event) {
+			if (trackingMode === 'helicopter') {
+				trackingMode = 'train';
+				this.classList.remove('mapbox-ctrl-track-helicopter');
+				this.classList.add('mapbox-ctrl-track-train');
+			} else {
+				trackingMode = 'helicopter';
+				this.classList.remove('mapbox-ctrl-track-train');
+				this.classList.add('mapbox-ctrl-track-helicopter');
 			}
+			event.stopPropagation();
 		}
 	}), 'top-right');
 
@@ -382,7 +389,14 @@ map.once('styledata', function () {
 		}
 	});
 
-	map.on('mouseleave', 'cars', function(e) {
+	map.on('mousemove', 'cars', function(e) {
+		if (isRealtime) {
+			markedCar = getCar(e);
+			popup.setLngLat([markedCar.properties.lat, markedCar.properties.lng])
+				.setHTML(markedCar.properties.description)
+		}
+	});
+	map.on('mouseleave', 'cars', function() {
 		map.getCanvas().style.cursor = '';
 		if (isRealtime) {
 			markedCar = undefined;
@@ -392,7 +406,17 @@ map.once('styledata', function () {
 
 	map.on('click', 'cars', function(e) {
 		trackedCar = getCar(e);
-		document.getElementsByClassName('mapbox-ctrl-track')[0].classList.add('mapbox-ctrl-track-active');
+		document.getElementsByClassName('mapbox-ctrl-track')[0]
+			.classList.add('mapbox-ctrl-track-active');
+		e.originalEvent.cancelBubble = true;
+	});
+
+	map.on('click', function(e) {
+		if (trackedCar && !e.originalEvent.cancelBubble) {
+			trackedCar = undefined;
+			document.getElementsByClassName('mapbox-ctrl-track')[0]
+				.classList.remove('mapbox-ctrl-track-active');
+		}
 	});
 
 	map.on('zoom', function() {
@@ -472,8 +496,19 @@ map.once('styledata', function () {
 		map.getSource('cars').setData(carCollection);
 		if (trackedCar) {
 			properties = trackedCar.properties;
-			map.panTo([properties.lat, properties.lng], {animate: false});
-			map.rotateTo((timestamp / 100) % 360, {animate: false});
+			if (trackingMode === 'helicopter') {
+				map.easeTo({
+					center: [properties.lat, properties.lng],
+					bearing: (timestamp / 100) % 360,
+					duration: 0
+				});
+			} else {
+				map.easeTo({
+					center: [properties.lat, properties.lng],
+					bearing: properties.bearing,
+					duration: 0
+				});
+			}
 		}
 		requestAnimationFrame(refresh);
 	}
@@ -527,9 +562,6 @@ map.once('styledata', function () {
 								+ stationLookup2[table[timetableIndex]['odpt:departureStation']]['odpt:stationTitle'][lang === 'ja' ? 'ja' : 'en'] + ' ' + table[timetableIndex]['odpt:departureTime']
 								+ '<br><strong>' + dict['next-stop'] +':</strong> '
 								+ stationLookup2[(table[timetableIndex + 1]['odpt:arrivalStation'] || table[timetableIndex + 1]['odpt:departureStation'])]['odpt:stationTitle'][lang === 'ja' ? 'ja' : 'en'] + ' ' + (table[timetableIndex + 1]['odpt:arrivalTime'] || table[timetableIndex + 1]['odpt:departureTime']);
-
-							//car.coords = turf.getCoord(p.point);
-							//car.bearing = p.bearing;
 						}, function() {
 							timetableIndex++;
 							sectionIndex = sectionIndex + direction;

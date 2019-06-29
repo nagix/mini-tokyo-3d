@@ -36,9 +36,8 @@ body {
 	width: 100%;
 }
 .mapbox-ctrl-track:before {
-	content: '\f238';
 	font-family: 'Font Awesome 5 Free';
-	font-weight: 400;
+	font-weight: 900;
 	position: absolute;
 	top: 5px;
 	left: 5px;
@@ -47,13 +46,21 @@ body {
 	color: black;
 	font-size: 21px;
 }
+.mapbox-ctrl-track-helicopter:before {
+	content: '\f533';
+	font-size: 17px;
+	top: 7px;
+}
+.mapbox-ctrl-track-train:before {
+	content: '\f238';
+}
 .mapbox-ctrl-track-active:before {
 	color: #33B5E5;
 }
 .mapbox-ctrl-realtime:before {
 	content: '\f017';
 	font-family: 'Font Awesome 5 Free';
-	font-weight: 400;
+	font-weight: 900;
 	position: absolute;
 	top: 5px;
 	left: 5px;
@@ -68,7 +75,7 @@ body {
 .mapbox-ctrl-github:before {
 	content: '\f09b';
 	font-family: 'Font Awesome 5 Brands';
-	font-weight: 400;
+	font-weight: 900;
 	position: absolute;
 	top: 5px;
 	left: 5px;
