@@ -1,10 +1,40 @@
-var apiUrl = 'https://api-tokyochallenge.odpt.org/api/v4/';
-var apiToken = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
+/*
+ * Copyright 2019 Akihiko Kusanagi
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ *
+ * More information about this project is available at:
+ *
+ *    https://github.com/nagix/mini-tokyo-3d
+ */
+
+ // Minimum stop duration in milliseconds
+var MIN_STOP_DURATION = 30000;
+
+// Average train speed in km/h
+var SPEED = 60;
+
+// API URL
+var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
+
+// API Token
+var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
+
+var lang = getLang();
 var today = new Date();
 var isRealtime = true;
 var calendarLookup = {};
 var stationLookup = {};
-var stationLookup2 = {};
 var lineLookup = {};
 var railwayLookup = {};
 var trainLookup = {};
@@ -43,19 +73,17 @@ MapboxGLButtonControl.prototype.onRemove = function() {
 var calendar = JapaneseHolidays.isHoliday(today) || today.getDay() == 6 || today.getDay() == 0
 	? 'SaturdayHoliday' : 'Weekday';
 
-var lang = getLang();
-
 Promise.all([
 	loadJSON('data/dictionary-' + lang + '.json'),
 	loadJSON('data/lines.json'),
 	loadJSON('data/stations.json'),
 	loadJSON('data/cars.json'),
-	loadJSON(apiUrl + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East&' + apiToken),
-	loadJSON(apiUrl + 'odpt:Station?odpt:operator=odpt.Operator:JR-East&' + apiToken),
-	loadJSON(apiUrl + 'odpt:TrainTimetable?odpt:operator=odpt.Operator:JR-East&odpt:railway=odpt.Railway:JR-East.Yamanote&odpt:calendar=odpt.Calendar:' + calendar + '&' + apiToken),
-	loadJSON(apiUrl + 'odpt:TrainTimetable?odpt:operator=odpt.Operator:JR-East&odpt:railway=odpt.Railway:JR-East.ChuoSobuLocal&odpt:calendar=odpt.Calendar:Weekday&' + apiToken),
-	loadJSON(apiUrl + 'odpt:TrainTimetable?odpt:operator=odpt.Operator:JR-East&odpt:railway=odpt.Railway:JR-East.ChuoRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + apiToken),
-	loadJSON(apiUrl + 'odpt:TrainTimetable?odpt:operator=odpt.Operator:JR-East&odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + apiToken)
+	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Yamanote&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoSobuLocal&odpt:calendar=odpt.Calendar:Weekday&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN)
 ]).then(function([
 	dict, lineData, stationData, carData, railwayData, stationData2,
 	timetableData1, timetableData2, timetableData3, timetableData4
@@ -73,22 +101,25 @@ var map = new mapboxgl.Map({
 	pitch: 60
 });
 
+// Build station loopup dictionary
 stationData2.forEach(function(station) {
-	stationLookup2[station['owl:sameAs']] = station;
+	stationLookup[station['owl:sameAs']] = station;
 });
 
 var stationCollection = turf.featureCollection(stationData.stations.map(function(station) {
 	var span = station.span;
 	var properties = {outlineColor: '#000000', width: 4, color: '#FFFFFF'};
 	var point = turf.point(station.coords, properties);
+	var stationTitle;
 
-	// Build station loopup dictionary
-	stationLookup[station['odpt:station']] = station;
-	if (station.aliases) {
-		station.aliases.forEach(function(alias) {
-			stationLookup[alias] = station;
+	// Update station loopup dictionary
+	station.aliases.forEach(function(alias) {
+		stationLookup[alias]._coords = station.coords;
+		stationTitle = station['odpt:stationTitle'];
+		Object.keys(stationTitle).forEach(function(lang) {
+			stationLookup[alias]['odpt:stationTitle'][lang] = stationTitle[lang];
 		});
-	}
+	});
 
 	return turf.transformRotate(turf.buffer(span ? turf.lineString([
 		turf.getCoord(turf.transformTranslate(point, span[0] * .1, 90)),
@@ -126,8 +157,8 @@ var lineCollection = turf.featureCollection(lineData.lines.map(function(line) {
 			start = subline.start;
 			end = subline.end;
 			subline.feature = turf.lineOffset(turf.lineSlice(
-				turf.point(stationLookup[start].coords),
-				turf.point(stationLookup[end].coords),
+				turf.point(stationLookup[start]._coords),
+				turf.point(stationLookup[end]._coords),
 				overlap.feature
 			), subline.offset * .125);
 			stations = overlap.stations;
@@ -156,7 +187,7 @@ var lineCollection = turf.featureCollection(lineData.lines.map(function(line) {
 			var CoordsIndex = !reverse ? nextCoordinates.length - 1 : 0;
 			var feature = lineLookup[nextSubline['odpt:railway']].feature;
 			var offset = turf.distance(
-				turf.point(stationLookup[stationName].coords),
+				turf.point(stationLookup[stationName]._coords),
 				turf.point(nextCoordinates[CoordsIndex])
 			);
 			var j, p1, p2, distance, bearing, lineBearing, angle;
@@ -213,14 +244,14 @@ var lineCollection = turf.featureCollection(lineData.lines.map(function(line) {
 		if (line['odpt:railway'] === 'odpt.Railway:JR-East.ChuoSobuLocal') {
 			console.log(station, getPointAndBearing(line.feature, turf.length(turf.lineSlice(
 				turf.point(start.coords),
-				turf.point(stationLookup[station].coords),
+				turf.point(stationLookup[station]._coords),
 				line.feature)
 			), 1).bearing);
 		} */
 
 		return turf.length(turf.lineSlice(
-			turf.point(start.coords),
-			turf.point(stationLookup[station].coords),
+			turf.point(start._coords),
+			turf.point(stationLookup[station]._coords),
 			line.feature
 		));
 	});
@@ -240,11 +271,11 @@ timetableData.forEach(function(train) {
 	// Build train timetable loopup dictionary
 	trainLookup[train['owl:sameAs']] = train;
 
-	train.start = getTime(table[0]['odpt:departureTime']);
-	train.end = getTime(table[table.length - 1]['odpt:arrivalTime']
+	train._start = getTime(table[0]['odpt:departureTime']);
+	train._end = getTime(table[table.length - 1]['odpt:arrivalTime']
 		|| table[table.length - 1]['odpt:departureTime']
 		|| table[Math.max(table.length - 2, 0)]['odpt:departureTime']);
-	train.direction = direction;
+	train._direction = direction;
 });
 
 var carCollection = turf.featureCollection([]);
@@ -353,7 +384,7 @@ map.once('styledata', function () {
 				this.classList.add('mapbox-ctrl-realtime-active');
 				trainLastRefresh = undefined;
 				timetableData.forEach(function(train) {
-					train.active = undefined;
+					train._active = undefined;
 				});
 			} else {
 				this.classList.remove('mapbox-ctrl-realtime-active');
@@ -520,15 +551,15 @@ map.once('styledata', function () {
 		if (parseInt(now / 60000) !== parseInt(trainLastRefresh / 60000)) {
 			trainLastRefresh = now;
 			timetableData.forEach(function(train) {
-				if (train.start <= now && now <= train.end && !train.active) {
-					train.active = true;
+				if (train._start <= now && now <= train._end && !train._active) {
+					train._active = true;
 
 					var line = lineLookup[train['odpt:railway']];
 					var table = train['odpt:trainTimetableObject'];
 					var timetableIndex = table.reduce(function(acc, cur, i) {
 						return getTime(cur['odpt:departureTime']) <= now ? i : acc;
 					}, 0);
-					var direction = train.direction;
+					var direction = train._direction;
 					var departureStation = table[timetableIndex]['odpt:departureStation'];
 					var sectionIndex = direction > 0
 						? line.stations.indexOf(departureStation)
@@ -536,54 +567,74 @@ map.once('styledata', function () {
 					var stationOffsets = line.stationOffsets;
 					var offset = stationOffsets[sectionIndex];
 					var length = stationOffsets[sectionIndex + direction] - offset;
-					var feature = turf.polygon([[[0,0],[1,0],[1,1],[0,0]]], {color: line.color});
 
 					// Out of range
 					if (isNaN(offset) || isNaN(length)) {
 						return;
 					}
 
+					var feature = turf.polygon([[[0,0],[1,0],[1,1],[0,0]]], {color: line.color});
+					var properties = feature.properties;
+
+					properties['odpt:train'] = train['odpt:train'];
+					properties.description = getTrainDescription(train, timetableIndex);
+
 					function repeat() {
 						animate(function(t) {
 							var p = getPointAndBearing(line.feature, offset + t * length, direction);
 							var size = Math.pow(2, 14 - map.getZoom()) * .1;
-							var properties = feature.properties;
 
 							feature.geometry = generateCarGeometry(p.point, size, p.bearing);
-							properties['odpt:train'] = train['odpt:train'];
 							properties.lat = turf.getCoord(p.point)[0];
 							properties.lng = turf.getCoord(p.point)[1];
 							properties.bearing = p.bearing;
-							properties.description = '<strong>' + dict['train-number'] +':</strong> '
-								+ train['odpt:trainNumber']
-								+ '<br><strong>' + dict['destination'] +':</strong> '
-								+ (train['odpt:destinationStation'] ? stationLookup2[train['odpt:destinationStation'][0]]['odpt:stationTitle'][lang === 'ja' ? 'ja' : 'en'] : 'N/A')
-								+ '<br><strong>' + dict['previous-stop'] +':</strong> '
-								+ stationLookup2[table[timetableIndex]['odpt:departureStation']]['odpt:stationTitle'][lang === 'ja' ? 'ja' : 'en'] + ' ' + table[timetableIndex]['odpt:departureTime']
-								+ '<br><strong>' + dict['next-stop'] +':</strong> '
-								+ stationLookup2[(table[timetableIndex + 1]['odpt:arrivalStation'] || table[timetableIndex + 1]['odpt:departureStation'])]['odpt:stationTitle'][lang === 'ja' ? 'ja' : 'en'] + ' ' + (table[timetableIndex + 1]['odpt:arrivalTime'] || table[timetableIndex + 1]['odpt:departureTime']);
 						}, function() {
 							timetableIndex++;
 							sectionIndex = sectionIndex + direction;
 							if (timetableIndex >= table.length - 1 || sectionIndex <= 0 || sectionIndex >= stationOffsets.length - 1) {
 								carCollection.features.splice(carCollection.features.indexOf(feature), 1);
-								train.active = undefined;
+								train._active = undefined;
 							} else {
 								offset = stationOffsets[sectionIndex];
 								length = stationOffsets[sectionIndex + direction] - offset;
+								properties.description = getTrainDescription(train, timetableIndex);
 
 								if (isRealtime) {
 									// Stop at station
-									delay(repeat, Math.max(getTime(table[timetableIndex]['odpt:departureTime']) - Date.now(), 30000));
+									delay(repeat, Math.max(getTime(table[timetableIndex]['odpt:departureTime']) - Date.now(), MIN_STOP_DURATION));
 								}
 							}
-						}, 60000 * Math.abs(length));
+						}, Math.abs(length) * 3600000 / SPEED);
 					}
 					repeat();
 					carCollection.features.push(feature);
 
 				}
 			});
+		}
+
+		function getTrainDescription(train, timetableIndex) {
+			var table = train['odpt:trainTimetableObject'];
+			var destination = train['odpt:destinationStation'];
+			var current = table[timetableIndex];
+			var next = table[timetableIndex + 1];
+
+			function getLocalizedStationTitle(station) {
+				station = Array.isArray(station) ? station[0] : station;
+				title = stationLookup[station]['odpt:stationTitle'];
+				return title[lang] || title['en'];
+			}
+
+			return '<strong>' + dict['train-number'] +':</strong> '
+				+ train['odpt:trainNumber']
+				+ '<br><strong>' + dict['destination'] +':</strong> '
+				+ (destination ? getLocalizedStationTitle(destination) : 'N/A')
+				+ '<br><strong>' + dict['previous-stop'] +':</strong> '
+				+ getLocalizedStationTitle(current['odpt:departureStation'])
+				+ ' ' + current['odpt:departureTime']
+				+ '<br><strong>' + dict['next-stop'] +':</strong> '
+				+ getLocalizedStationTitle(next['odpt:arrivalStation'] || next['odpt:departureStation'])
+				+ ' ' + (next['odpt:arrivalTime'] || next['odpt:departureTime']);
 		}
 	}
 });
