@@ -724,9 +724,10 @@ function loadJSON(url) {
 function getTime(timeString) {
 	var date = new Date();
 	var timeStrings = (timeString || '').split(':');
+	var hours = +timeStrings[0];
+	var hoursOffset = (date.getHours() < 3 ? -24 : 0) + (hours < 3 ? 24 : 0);
 
-	date.setHours(+timeStrings[0], +timeStrings[1], 0, 0);
-	return date.getTime();
+	return date.setHours(hours + hoursOffset, +timeStrings[1], 0, 0);
 }
 
 function getLang() {
