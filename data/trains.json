@@ -1,51 +1,51 @@
 {
-	"cars": [{
+	"trains": [{
 		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
-		"direction": 1,
-		"sectionIndex": 0
+		"_direction": 1,
+		"_sectionIndex": 0
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
-		"direction": 1,
-		"sectionIndex": 10
+		"_direction": 1,
+		"_sectionIndex": 10
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
-		"direction": 1,
-		"sectionIndex": 20
+		"_direction": 1,
+		"_sectionIndex": 20
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
-		"direction": -1,
-		"sectionIndex": 29
+		"_direction": -1,
+		"_sectionIndex": 29
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
-		"direction": -1,
-		"sectionIndex": 19
+		"_direction": -1,
+		"_sectionIndex": 19
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
-		"direction": -1,
-		"sectionIndex": 9
+		"_direction": -1,
+		"_sectionIndex": 9
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
-		"direction": 1,
-		"sectionIndex": 0
+		"_direction": 1,
+		"_sectionIndex": 0
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
-		"direction": -1,
-		"sectionIndex": 9
+		"_direction": -1,
+		"_sectionIndex": 9
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoRapid",
-		"direction": 1,
-		"sectionIndex": 0
+		"_direction": 1,
+		"_sectionIndex": 0
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoRapid",
-		"direction": -1,
-		"sectionIndex": 4
+		"_direction": -1,
+		"_sectionIndex": 4
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
-		"direction": 1,
-		"sectionIndex": 0
+		"_direction": 1,
+		"_sectionIndex": 0
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
-		"direction": -1,
-		"sectionIndex": 13
+		"_direction": -1,
+		"_sectionIndex": 13
 	}]
 }
