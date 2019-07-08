@@ -37,7 +37,9 @@ var calendarLookup = {};
 var stationLookup = {};
 var lineLookup = {};
 var railwayLookup = {};
+var railDirectionLookup = {};
 var trainLookup = {};
+var trainTypeLookup = {};
 var trackingMode = 'helicopter';
 var trackedTrain, markedTrain, trainLastRefresh;
 
@@ -53,7 +55,7 @@ MapboxGLButtonControl.prototype.initialize = function(options) {
 
 MapboxGLButtonControl.prototype.onAdd = function(map) {
 	this._btn = document.createElement('button');
-	this._btn.className = "mapboxgl-ctrl-icon" + ' ' + this._className;
+	this._btn.className = 'mapboxgl-ctrl-icon ' + this._className;
 	this._btn.type = 'button';
 	this._btn.title = this._title;
 	this._btn.onclick = this._eventHandler;
@@ -79,14 +81,16 @@ Promise.all([
 	loadJSON('data/stations.json'),
 	loadJSON('data/trains.json'),
 	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:RailDirection?' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Yamanote&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoSobuLocal&odpt:calendar=odpt.Calendar:Weekday&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN)
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East&' + API_TOKEN)
 ]).then(function([
-	dict, lineData, stationData, trainData, railwayData, stationData2,
-	timetableData1, timetableData2, timetableData3, timetableData4
+	dict, lineData, stationData, trainData, railwayData, railDirectionData, stationData2,
+	timetableData1, timetableData2, timetableData3, timetableData4, trainTypeData
 ]) {
 
 var timetableData = timetableData1.concat(timetableData2, timetableData3, timetableData4);
@@ -101,7 +105,7 @@ var map = new mapboxgl.Map({
 	pitch: 60
 });
 
-// Build station loopup dictionary
+// Build station lookup dictionary
 stationData2.forEach(function(station) {
 	stationLookup[station['owl:sameAs']] = station;
 });
@@ -109,7 +113,7 @@ stationData2.forEach(function(station) {
 stationData.stations.forEach(function(station) {
 	var stationTitle;
 
-	// Update station loopup dictionary
+	// Update station lookup dictionary
 	station.aliases.forEach(function(alias) {
 		stationLookup[alias]._coords = station.coords;
 		stationTitle = station['odpt:stationTitle'];
@@ -119,14 +123,27 @@ stationData.stations.forEach(function(station) {
 	});
 });
 
+// Build railway lookup dictionary
 railwayData.forEach(function(railway) {
 	railwayLookup[railway['owl:sameAs']] = railway;
 });
 
-lineData.lines.map(function(line) {
-	var stationOrder, stations;
+// Build rail direction lookup dictionary
+railDirectionData.forEach(function(direction) {
+	railDirectionLookup[direction['owl:sameAs']] = direction;
+});
 
-	// Build line loopup dictionary
+trainData.railDirections.map(function(type) {
+	var railDirectionTitle = type['odpt:railDirectionTitle'];
+	Object.keys(railDirectionTitle).forEach(function(lang) {
+		railDirectionLookup[type['odpt:railDirection']]['odpt:railDirectionTitle'][lang] = railDirectionTitle[lang];
+	});
+});
+
+lineData.railways.map(function(line) {
+	var stationOrder, stations, railwayTitle;
+
+	// Build line lookup dictionary
 	lineLookup[line['odpt:railway']] = line;
 
 	stationOrder = railwayLookup[line['odpt:railway']]['odpt:stationOrder'];
@@ -139,6 +156,11 @@ lineData.lines.map(function(line) {
 	}
 	stations = line.stations = stationOrder.map(function(station) {
 		return station['odpt:station'];
+	});
+
+	railwayTitle = line['odpt:railwayTitle'];
+	Object.keys(railwayTitle).forEach(function(lang) {
+		railwayLookup[line['odpt:railway']]['odpt:railwayTitle'][lang] = railwayTitle[lang];
 	});
 });
 
@@ -154,7 +176,7 @@ var railwayLayers = [13, 14, 15, 16, 17, 18].map(function(zoom) {
 		], properties) : point, Math.pow(2, 14 - zoom) * .1), station.angle || 0, {pivot: station.coords, mutate: true});
 	}));
 
-	var railwayCollection = turf.featureCollection(lineData.lines.map(function(line) {
+	var railwayCollection = turf.featureCollection(lineData.railways.map(function(line) {
 		var railwayFeature = line.feature = line.feature || {};
 
 		railwayFeature[zoom] = turf.lineString(concat(line.sublines.map(function(subline) {
@@ -290,6 +312,18 @@ timetableData.forEach(function(train) {
 		|| table[table.length - 1]['odpt:departureTime']
 		|| table[Math.max(table.length - 2, 0)]['odpt:departureTime']);
 	train._direction = direction;
+});
+
+// Build train type lookup dictionary
+trainTypeData.forEach(function(type) {
+	trainTypeLookup[type['owl:sameAs']] = type;
+});
+
+trainData.types.map(function(type) {
+	var trainTypeTitle = type['odpt:trainTypeTitle'];
+	Object.keys(trainTypeTitle).forEach(function(lang) {
+		trainTypeLookup[type['odpt:trainType']]['odpt:trainTypeTitle'][lang] = trainTypeTitle[lang];
+	});
 });
 
 var trainCollection = turf.featureCollection([]);
@@ -638,20 +672,37 @@ map.once('styledata', function () {
 			var current = table[timetableIndex];
 			var next = table[timetableIndex + 1];
 
+			function getLocalizedRailwayTitle(railway) {
+				title = (railwayLookup[railway] || {})['odpt:railwayTitle'] || {};
+				return title[lang] || title['en'];
+			}
+
+			function getLocalizedRailDirectionTitle(direction) {
+				title = (railDirectionLookup[direction] || {})['odpt:railDirectionTitle'] || {};
+				return title[lang] || title['en'];
+			}
+
+			function getLocalizedTrainTypeTitle(type) {
+				title = (trainTypeLookup[type] || {})['odpt:trainTypeTitle'] || {};
+				return title[lang] || title['en'];
+			}
+
 			function getLocalizedStationTitle(station) {
 				station = Array.isArray(station) ? station[0] : station;
 				title = (stationLookup[station] || {})['odpt:stationTitle'] || {};
 				return title[lang] || title['en'];
 			}
 
-			return '<strong>' + dict['train-number'] +':</strong> '
+			return '<span style="background-color: ' + lineLookup[train['odpt:railway']].color + ';"></span> '
+				+ '<strong>' + getLocalizedRailwayTitle(train['odpt:railway']) + '</strong>'
+				+ '<br>' + getLocalizedTrainTypeTitle(train['odpt:trainType']) + ' '
+				+ (destination ? dict['to'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train['odpt:railDirection']))
+				+ '<br><strong>' + dict['train-number'] + ':</strong> '
 				+ train['odpt:trainNumber']
-				+ '<br><strong>' + dict['destination'] +':</strong> '
-				+ (destination ? getLocalizedStationTitle(destination) : 'N/A')
-				+ '<br><strong>' + dict['previous-stop'] +':</strong> '
+				+ '<br><strong>' + dict['previous-stop'] + ':</strong> '
 				+ getLocalizedStationTitle(current['odpt:departureStation'])
 				+ ' ' + current['odpt:departureTime']
-				+ '<br><strong>' + dict['next-stop'] +':</strong> '
+				+ '<br><strong>' + dict['next-stop'] + ':</strong> '
 				+ getLocalizedStationTitle(next['odpt:arrivalStation'] || next['odpt:departureStation'])
 				+ ' ' + (next['odpt:arrivalTime'] || next['odpt:departureTime']);
 		}
@@ -737,7 +788,7 @@ function loadJSON(url) {
 	return new Promise(function(resolve, reject) {
 		var request = new XMLHttpRequest();
 
-		request.open("GET", url);
+		request.open('GET', url);
 		request.onreadystatechange = function() {
 			if (request.readyState === 4) {
 				if (request.status === 200) {

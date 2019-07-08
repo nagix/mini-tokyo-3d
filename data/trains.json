@@ -47,5 +47,55 @@
 		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
 		"_direction": -1,
 		"_sectionIndex": 13
+	}],
+	"railDirections": [{
+		"odpt:railDirection": "odpt.RailDirection:InnerLoop",
+		"odpt:railDirectionTitle": {
+			"ko": "내선 순환",
+			"zh": "內環"
+		}
+	}, {
+		"odpt:railDirection": "odpt.RailDirection:OuterLoop",
+		"odpt:railDirectionTitle": {
+			"ko": "외선 순환",
+			"zh": "外環"
+		}
+	}],
+	"types": [{
+		"odpt:trainType": "odpt.TrainType:JR-East.ChuoSpecialRapid",
+		"odpt:trainTypeTitle": {
+			"ko": "주오 특별쾌속",
+			"zh": "中央特快"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:JR-East.CommuterRapid",
+		"odpt:trainTypeTitle": {
+			"ko": "통근쾌속",
+			"zh": "通勤快速"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:JR-East.CommuterSpecialRapid",
+		"odpt:trainTypeTitle": {
+			"ko": "통근 특별쾌속",
+			"zh": "通勤特快"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:JR-East.Local",
+		"odpt:trainTypeTitle": {
+			"ko": "각역정차",
+			"zh": "各站停車"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:JR-East.OmeSpecialRapid",
+		"odpt:trainTypeTitle": {
+			"ko": "오메 특별쾌속",
+			"zh": "青梅特快"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:JR-East.Rapid",
+		"odpt:trainTypeTitle": {
+			"ko": "쾌속",
+			"zh": "快速"
+		}
 	}]
 }
