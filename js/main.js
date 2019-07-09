@@ -658,7 +658,7 @@ map.once('styledata', function () {
 								// Stop at station
 								train._stop = delay(repeat, Math.max(getTime(table[timetableIndex]['odpt:departureTime']) - Date.now(), MIN_STOP_DURATION));
 							}
-						}, Math.abs(train._length) * 3600000 / SPEED);
+						}, Math.abs(train._length) * 3600000 / SPEED, Date.now() - getTime(table[timetableIndex]['odpt:departureTime']));
 					}
 					repeat();
 					trainCollection.features.push(feature);
@@ -749,7 +749,7 @@ function easeSin(t) {
 	return -(Math.cos(Math.PI * t) - 1) / 2;
 }
 
-function animate(callback, endCallback, duration) {
+function animate(callback, endCallback, duration, elapsed) {
 	var start, requestID;
 	var frameRefresh = function() {
 		var now = performance.now();
@@ -766,6 +766,9 @@ function animate(callback, endCallback, duration) {
 			endCallback();
 		}
 	};
+	if (elapsed > 0) {
+		start = performance.now() - elapsed;
+	}
 	requestID = requestAnimationFrame(frameRefresh);
 	return function() {
 		cancelAnimationFrame(requestID);
