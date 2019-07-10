@@ -1,6 +1,6 @@
 {
 	"railways": [{
-		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
+		"owl:sameAs": "odpt.Railway:JR-East.Yamanote",
 		"odpt:railwayTitle": {
 			"ko": "야마노테 선",
 			"zh": "山手線"
@@ -82,7 +82,7 @@
 		"color": "#7BAB4F",
 		"loop": true
 	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
+		"owl:sameAs": "odpt.Railway:JR-East.ChuoSobuLocal",
 		"odpt:railwayTitle": {
 			"ko": "주오·소부 각역정차",
 			"zh": "中央·總武各站停車"
@@ -119,7 +119,7 @@
 		}],
 		"color": "#FDBC00"
 	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoRapid",
+		"owl:sameAs": "odpt.Railway:JR-East.ChuoRapid",
 		"odpt:railwayTitle": {
 			"ko": "주오 쾌속선",
 			"zh": "中央線快速"
@@ -147,7 +147,7 @@
 		}],
 		"color": "#CA6840"
 	}, {
-		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
+		"owl:sameAs": "odpt.Railway:JR-East.KeihinTohokuNegishi",
 		"odpt:railwayTitle": {
 			"ko": "게이힌 도호쿠 선·네기시 선",
 			"zh": "京濱東北線·根岸線"

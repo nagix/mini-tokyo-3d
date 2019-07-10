@@ -104,10 +104,13 @@ body {
 .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
 	border-left-color: rgba(0, 0, 0, 0.7)
 }
-.mapboxgl-popup-content span {
+.desc-box {
 	display: inline-block;
 	width: 10px;
 	height: 36px;
 	margin-right: 6px;
 	float: left;
+}
+.desc-delay {
+	color: #f90;
 }

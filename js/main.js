@@ -21,6 +21,9 @@
  // Minimum stop duration in milliseconds
 var MIN_STOP_DURATION = 30000;
 
+// Interval of refreshing train positions in milliseconds
+var TRAIN_REFRESH_INTERVAL = 60000;
+
 // Average train speed in km/h
 var SPEED = 60;
 
@@ -33,14 +36,9 @@ var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe
 var lang = getLang();
 var today = new Date();
 var isRealtime = true;
-var calendarLookup = {};
-var stationLookup = {};
-var lineLookup = {};
-var railwayLookup = {};
-var railDirectionLookup = {};
-var trainLookup = {};
-var trainTypeLookup = {};
 var trackingMode = 'helicopter';
+var trainLookup = {};
+var stationLookup, railwayLookup, lineLookup, railDirectionLookup, trainTypeLookup;
 var trackedTrain, markedTrain, trainLastRefresh;
 
 var MapboxGLButtonControl = function(options) {
@@ -77,7 +75,7 @@ var calendar = JapaneseHolidays.isHoliday(today) || today.getDay() == 6 || today
 
 Promise.all([
 	loadJSON('data/dictionary-' + lang + '.json'),
-	loadJSON('data/lines.json'),
+	loadJSON('data/railways.json'),
 	loadJSON('data/stations.json'),
 	loadJSON('data/trains.json'),
 	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East&' + API_TOKEN),
@@ -89,11 +87,11 @@ Promise.all([
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East&' + API_TOKEN)
 ]).then(function([
-	dict, lineData, stationData, trainData, railwayData, railDirectionData, stationData2,
-	timetableData1, timetableData2, timetableData3, timetableData4, trainTypeData
+	dict, railwayData, stationData, trainData, railwayRefData, railDirectionRefData, stationRefData,
+	timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4, trainTypeRefData
 ]) {
 
-var timetableData = timetableData1.concat(timetableData2, timetableData3, timetableData4);
+var timetableRefData = timetableRefData1.concat(timetableRefData2, timetableRefData3, timetableRefData4);
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -105,63 +103,36 @@ var map = new mapboxgl.Map({
 	pitch: 60
 });
 
-// Build station lookup dictionary
-stationData2.forEach(function(station) {
-	stationLookup[station['owl:sameAs']] = station;
-});
+stationLookup = buildLookup(stationRefData);
 
+// Update station lookup dictionary
 stationData.stations.forEach(function(station) {
-	var stationTitle;
-
-	// Update station lookup dictionary
 	station.aliases.forEach(function(alias) {
-		stationLookup[alias]._coords = station.coords;
-		stationTitle = station['odpt:stationTitle'];
-		Object.keys(stationTitle).forEach(function(lang) {
-			stationLookup[alias]['odpt:stationTitle'][lang] = stationTitle[lang];
-		});
+		var stationRef = stationLookup[alias];
+		stationRef._coords = station.coords;
+		merge(stationRef['odpt:stationTitle'], station['odpt:stationTitle']);
 	});
 });
 
-// Build railway lookup dictionary
-railwayData.forEach(function(railway) {
-	railwayLookup[railway['owl:sameAs']] = railway;
-});
+railwayLookup = buildLookup(railwayRefData);
+lineLookup = buildLookup(railwayData.railways);
 
-// Build rail direction lookup dictionary
-railDirectionData.forEach(function(direction) {
-	railDirectionLookup[direction['owl:sameAs']] = direction;
-});
+railwayData.railways.forEach(function(railway) {
+	var id = railway['owl:sameAs'];
+	var railwayRef = railwayLookup[id];
+	var stationOrder = railwayRef['odpt:stationOrder'];
 
-trainData.railDirections.map(function(type) {
-	var railDirectionTitle = type['odpt:railDirectionTitle'];
-	Object.keys(railDirectionTitle).forEach(function(lang) {
-		railDirectionLookup[type['odpt:railDirection']]['odpt:railDirectionTitle'][lang] = railDirectionTitle[lang];
-	});
-});
-
-lineData.railways.map(function(line) {
-	var stationOrder, stations, railwayTitle;
-
-	// Build line lookup dictionary
-	lineLookup[line['odpt:railway']] = line;
-
-	stationOrder = railwayLookup[line['odpt:railway']]['odpt:stationOrder'];
-	if (line['odpt:railway'] === 'odpt.Railway:JR-East.ChuoSobuLocal') {
+	if (id === 'odpt.Railway:JR-East.ChuoSobuLocal') {
 		stationOrder = stationOrder.slice(20, 30);
-	} else if (line['odpt:railway'] === 'odpt.Railway:JR-East.ChuoRapid') {
+	} else if (id === 'odpt.Railway:JR-East.ChuoRapid') {
 		stationOrder = stationOrder.slice(0, 5);
-	} else if (line['odpt:railway'] === 'odpt.Railway:JR-East.KeihinTohokuNegishi') {
+	} else if (id === 'odpt.Railway:JR-East.KeihinTohokuNegishi') {
 		stationOrder = stationOrder.slice(13, 27);
 	}
-	stations = line.stations = stationOrder.map(function(station) {
+	railway.stations = stationOrder.map(function(station) {
 		return station['odpt:station'];
 	});
-
-	railwayTitle = line['odpt:railwayTitle'];
-	Object.keys(railwayTitle).forEach(function(lang) {
-		railwayLookup[line['odpt:railway']]['odpt:railwayTitle'][lang] = railwayTitle[lang];
-	});
+	merge(railwayRef['odpt:railwayTitle'], railway['odpt:railwayTitle']);
 });
 
 var railwayLayers = [13, 14, 15, 16, 17, 18].map(function(zoom) {
@@ -176,7 +147,7 @@ var railwayLayers = [13, 14, 15, 16, 17, 18].map(function(zoom) {
 		], properties) : point, Math.pow(2, 14 - zoom) * .1), station.angle || 0, {pivot: station.coords, mutate: true});
 	}));
 
-	var railwayCollection = turf.featureCollection(lineData.railways.map(function(line) {
+	var railwayCollection = turf.featureCollection(railwayData.railways.map(function(line) {
 		var railwayFeature = line.feature = line.feature || {};
 
 		railwayFeature[zoom] = turf.lineString(concat(line.sublines.map(function(subline) {
@@ -301,7 +272,14 @@ var railwayLayers = [13, 14, 15, 16, 17, 18].map(function(zoom) {
 	};
 });
 
-timetableData.forEach(function(train) {
+railDirectionLookup = buildLookup(railDirectionRefData);
+
+// Update rail direction lookup dictionary
+trainData.railDirections.forEach(function(direction) {
+	merge(railDirectionLookup[direction['odpt:railDirection']]['odpt:railDirectionTitle'], direction['odpt:railDirectionTitle']);
+});
+
+timetableRefData.forEach(function(train) {
 	var line = lineLookup[train['odpt:railway']];
 	var railway = railwayLookup[train['odpt:railway']];
 	var direction = train['odpt:railDirection'] === railway['odpt:ascendingRailDirection'] ? 1 : -1;
@@ -314,16 +292,11 @@ timetableData.forEach(function(train) {
 	train._direction = direction;
 });
 
-// Build train type lookup dictionary
-trainTypeData.forEach(function(type) {
-	trainTypeLookup[type['owl:sameAs']] = type;
-});
+trainTypeLookup = buildLookup(trainTypeRefData);
 
+// Update train type lookup dictionary
 trainData.types.map(function(type) {
-	var trainTypeTitle = type['odpt:trainTypeTitle'];
-	Object.keys(trainTypeTitle).forEach(function(lang) {
-		trainTypeLookup[type['odpt:trainType']]['odpt:trainTypeTitle'][lang] = trainTypeTitle[lang];
-	});
+	merge(trainTypeLookup[type['odpt:trainType']]['odpt:trainTypeTitle'], type['odpt:trainTypeTitle']);
 });
 
 var trainCollection = turf.featureCollection([]);
@@ -614,14 +587,15 @@ map.once('styledata', function () {
 	function refreshTrains() {
 		var now = Date.now();
 
-		if (parseInt(now / 60000) !== parseInt(trainLastRefresh / 60000)) {
+		if (Math.floor(now / TRAIN_REFRESH_INTERVAL) !== Math.floor(trainLastRefresh / TRAIN_REFRESH_INTERVAL)) {
 			trainLastRefresh = now;
-			timetableData.forEach(function(train) {
-				if (train._start <= now && now <= train._end && !trainLookup[train['odpt:train']]) {
+			timetableRefData.forEach(function(train) {
+				var d = train._delay || 0;
+				if (train._start + d <= now && now <= train._end + d && !trainLookup[train['odpt:train']]) {
 					var line = lineLookup[train['odpt:railway']];
 					var table = train['odpt:trainTimetableObject'];
 					var timetableIndex = table.reduce(function(acc, cur, i) {
-						return getTime(cur['odpt:departureTime']) <= now ? i : acc;
+						return getTime(cur['odpt:departureTime']) + d <= now ? i : acc;
 					}, 0);
 					var direction = train._direction;
 					var departureStation = table[timetableIndex]['odpt:departureStation'];
@@ -656,56 +630,60 @@ map.once('styledata', function () {
 								updateTrainShape(train, {t: 0, reset: true});
 
 								// Stop at station
-								train._stop = delay(repeat, Math.max(getTime(table[timetableIndex]['odpt:departureTime']) - Date.now(), MIN_STOP_DURATION));
+								train._stop = delay(repeat, Math.max((getTime(table[timetableIndex]['odpt:departureTime']) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION));
 							}
-						}, Math.abs(train._length) * 3600000 / SPEED, Date.now() - getTime(table[timetableIndex]['odpt:departureTime']));
+						}, Math.abs(train._length) * 3600000 / SPEED, Date.now() - (getTime(table[timetableIndex]['odpt:departureTime']) + (train._delay || 0)));
 					}
 					repeat();
 					trainCollection.features.push(feature);
 				}
 			});
+			updateDelays();
 		}
+	}
 
-		function getTrainDescription(train, timetableIndex) {
-			var table = train['odpt:trainTimetableObject'];
-			var destination = train['odpt:destinationStation'];
-			var current = table[timetableIndex];
-			var next = table[timetableIndex + 1];
+	function getLocalizedRailwayTitle(railway) {
+		title = (railwayLookup[railway] || {})['odpt:railwayTitle'] || {};
+		return title[lang] || title['en'];
+	}
 
-			function getLocalizedRailwayTitle(railway) {
-				title = (railwayLookup[railway] || {})['odpt:railwayTitle'] || {};
-				return title[lang] || title['en'];
-			}
+	function getLocalizedRailDirectionTitle(direction) {
+		title = (railDirectionLookup[direction] || {})['odpt:railDirectionTitle'] || {};
+		return title[lang] || title['en'];
+	}
 
-			function getLocalizedRailDirectionTitle(direction) {
-				title = (railDirectionLookup[direction] || {})['odpt:railDirectionTitle'] || {};
-				return title[lang] || title['en'];
-			}
+	function getLocalizedTrainTypeTitle(type) {
+		title = (trainTypeLookup[type] || {})['odpt:trainTypeTitle'] || {};
+		return title[lang] || title['en'];
+	}
 
-			function getLocalizedTrainTypeTitle(type) {
-				title = (trainTypeLookup[type] || {})['odpt:trainTypeTitle'] || {};
-				return title[lang] || title['en'];
-			}
+	function getLocalizedStationTitle(station) {
+		station = Array.isArray(station) ? station[0] : station;
+		title = (stationLookup[station] || {})['odpt:stationTitle'] || {};
+		return title[lang] || title['en'];
+	}
 
-			function getLocalizedStationTitle(station) {
-				station = Array.isArray(station) ? station[0] : station;
-				title = (stationLookup[station] || {})['odpt:stationTitle'] || {};
-				return title[lang] || title['en'];
-			}
+	function getTrainDescription(train, timetableIndex) {
+		var table = train['odpt:trainTimetableObject'];
+		var destination = train['odpt:destinationStation'];
+		var current = table[timetableIndex];
+		var next = table[timetableIndex + 1];
+		var delay = train._delay || 0;
 
-			return '<span style="background-color: ' + lineLookup[train['odpt:railway']].color + ';"></span> '
-				+ '<strong>' + getLocalizedRailwayTitle(train['odpt:railway']) + '</strong>'
-				+ '<br>' + getLocalizedTrainTypeTitle(train['odpt:trainType']) + ' '
-				+ (destination ? dict['to'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train['odpt:railDirection']))
-				+ '<br><strong>' + dict['train-number'] + ':</strong> '
-				+ train['odpt:trainNumber']
-				+ '<br><strong>' + dict['previous-stop'] + ':</strong> '
-				+ getLocalizedStationTitle(current['odpt:departureStation'])
-				+ ' ' + current['odpt:departureTime']
-				+ '<br><strong>' + dict['next-stop'] + ':</strong> '
-				+ getLocalizedStationTitle(next['odpt:arrivalStation'] || next['odpt:departureStation'])
-				+ ' ' + (next['odpt:arrivalTime'] || next['odpt:departureTime']);
-		}
+		return '<span class="desc-box" style="background-color: ' + lineLookup[train['odpt:railway']].color + ';"></span> '
+			+ '<strong>' + getLocalizedRailwayTitle(train['odpt:railway']) + '</strong>'
+			+ '<br>' + getLocalizedTrainTypeTitle(train['odpt:trainType']) + ' '
+			+ (destination ? dict['to'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train['odpt:railDirection']))
+			+ '<br><strong>' + dict['train-number'] + ':</strong> '
+			+ train['odpt:trainNumber']
+			+ '<br>' + (delay >= 60000 ? '<span class="desc-delay">' : '')
+			+ '<strong>' + dict['previous-stop'] + ':</strong> '
+			+ getLocalizedStationTitle(current['odpt:departureStation'])
+			+ ' ' + getTimeString(getTime(current['odpt:departureTime']) + delay)
+			+ '<br><strong>' + dict['next-stop'] + ':</strong> '
+			+ getLocalizedStationTitle(next['odpt:arrivalStation'] || next['odpt:departureStation'])
+			+ ' ' + getTimeString(getTime(next['odpt:arrivalTime'] || next['odpt:departureTime']) + delay)
+			+ (delay >= 60000 ? '<br>' + dict['delay'].replace('$1', Math.floor(delay / 60000)) + '</span>' : '');
 	}
 
 	function stopTrain(train) {
@@ -714,6 +692,21 @@ map.once('styledata', function () {
 		delete train._feature;
 		delete train._stop;
 		delete trainLookup[train['odpt:train']];
+	}
+
+	function updateDelays() {
+		loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East&' + API_TOKEN).then(function(trainRefData) {
+			trainRefData.forEach(function(trainRef) {
+				var delay = (trainRef['odpt:delay'] || 0) * 1000;
+				var train = trainLookup[trainRef['owl:sameAs']];
+
+				if (delay && train && train._delay !== delay) {
+					stopTrain(train);
+					train._delay = delay;
+					trainLastRefresh = undefined;
+				}
+			});
+		});
 	}
 });
 
@@ -783,6 +776,16 @@ function concat(arr) {
 	return Array.prototype.concat.apply([], arr);
 }
 
+function merge(target, source) {
+	if (target === undefined || source === undefined) {
+		return;
+	}
+	Object.keys(source).forEach(function(key) {
+		target[key] = source[key];
+	});
+	return target;
+}
+
 function inRange(value, start, end) {
 	return value >= start && value < end;
 }
@@ -805,13 +808,40 @@ function loadJSON(url) {
 	});
 }
 
+function buildLookup(array, key) {
+	var lookup = {};
+
+	key = key || 'owl:sameAs';
+	array.forEach(function(element) {
+		lookup[element[key]] = element;
+	});
+	return lookup;
+}
+
 function getTime(timeString) {
 	var date = new Date();
 	var timeStrings = (timeString || '').split(':');
 	var hours = +timeStrings[0];
-	var hoursOffset = (date.getHours() < 3 ? -24 : 0) + (hours < 3 ? 24 : 0);
+	var tzDiff = date.getTimezoneOffset() + 540; // Difference between local time to JST
 
-	return date.setHours(hours + hoursOffset, +timeStrings[1], 0, 0);
+	// Adjust local time to JST (UTC+9)
+	date.setMinutes(date.getMinutes() + tzDiff);
+
+	// Special handling of time between midnight and 3am
+	hours += (date.getHours() < 3 ? -24 : 0) + (hours < 3 ? 24 : 0);
+
+	// Adjust JST back to local time
+	return date.setHours(hours, +timeStrings[1] - tzDiff, 0, 0);
+}
+
+function getTimeString(time) {
+	var date = new Date(time);
+	var tzDiff = date.getTimezoneOffset() + 540; // Difference between local time to JST
+
+	// Adjust local time to JST (UTC+9)
+	date.setMinutes(date.getMinutes() + tzDiff);
+
+	return ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2);
 }
 
 function getLang() {
