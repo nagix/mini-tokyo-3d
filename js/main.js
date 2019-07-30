@@ -136,7 +136,7 @@ railwayData.railways.forEach(function(railway) {
 	} else if (id === 'odpt.Railway:JR-East.ChuoRapid') {
 		stationOrder = stationOrder.slice(0, 5);
 	} else if (id === 'odpt.Railway:JR-East.KeihinTohokuNegishi') {
-		stationOrder = stationOrder.slice(13, 27);
+		stationOrder = stationOrder.slice(0, 35);
 	}
 	railway.stations = stationOrder.map(function(station) {
 		return station['odpt:station'];
@@ -157,9 +157,10 @@ var railwayLayers = [13, 14, 15, 16, 17, 18].map(function(zoom) {
 	}));
 
 	var railwayCollection = turf.featureCollection(railwayData.railways.map(function(line) {
-		var railwayFeature = line.feature = line.feature || {};
+		var railwayFeatures = line.features = line.features || {};
+		var sublines = line.sublines;
 
-		railwayFeature[zoom] = turf.lineString(concat(line.sublines.map(function(subline) {
+		var railwayFeature = railwayFeatures[zoom] = turf.lineString(concat(sublines.map(function(subline) {
 			var overlap = lineLookup[subline['odpt:railway']];
 			var start, end, stations;
 
@@ -169,7 +170,7 @@ var railwayLayers = [13, 14, 15, 16, 17, 18].map(function(zoom) {
 				subline.feature = turf.lineOffset(turf.lineSlice(
 					turf.point(stationLookup[start]._coords),
 					turf.point(stationLookup[end]._coords),
-					overlap.feature[zoom]
+					overlap.features[zoom]
 				), subline.offset * Math.pow(2, 14 - zoom) * .125);
 				stations = overlap.stations;
 
@@ -185,21 +186,17 @@ var railwayLayers = [13, 14, 15, 16, 17, 18].map(function(zoom) {
 			}
 
 			return subline;
-		}).map(function(subline, i, sublines) {
+		}).map(function(subline, i) {
 			var coordinates, nextSubline;
 
 			function smoothCoords(reverse) {
 				var start = !reverse ? 0 : coordinates.length - 1;
 				var end = !reverse ? coordinates.length - 1 : 0;
 				var step = !reverse ? 1 : -1;
-				var stationName = !reverse ? nextSubline.end : nextSubline.start;
 				var nextCoordinates = turf.getCoords(nextSubline.feature);
 				var coordsIndex = !reverse ? nextCoordinates.length - 1 : 0;
-				var feature = lineLookup[nextSubline['odpt:railway']].feature[zoom];
-				var offset = turf.distance(
-					turf.point(stationLookup[stationName]._coords),
-					turf.point(nextCoordinates[coordsIndex])
-				);
+				var feature = lineLookup[nextSubline['odpt:railway']].features[zoom];
+				var offset = Math.abs(nextSubline.offset * Math.pow(2, 14 - zoom) * .1);
 				var j, p1, p2, distance, bearing, lineBearing, angle;
 
 				for (j = start; j !== end; j += step) {
@@ -224,7 +221,7 @@ var railwayLayers = [13, 14, 15, 16, 17, 18].map(function(zoom) {
 				coordinates[start] = nextCoordinates[coordsIndex];
 			}
 
-			if (!subline['odpt:railway']) {
+			if (subline.coordinates) {
 				coordinates = subline.coordinates.slice();
 				nextSubline = sublines[i - 1];
 				if (nextSubline && nextSubline['odpt:railway']) {
@@ -240,10 +237,10 @@ var railwayLayers = [13, 14, 15, 16, 17, 18].map(function(zoom) {
 			return turf.getCoords(subline.feature);
 		})), {color: line.color, width: 8});
 
-		// Make sure the last and first coords are equal if loop is true
-		if (line.loop) {
-			var coords = turf.getCoords(railwayFeature[zoom]);
-			coords.push(coords[0]);
+		// Make sure the last point is in the right coords
+		var coordinates = sublines[sublines.length - 1].coordinates;
+		if (coordinates) {
+			turf.getCoords(railwayFeature).push(coordinates[coordinates.length - 1]);
 		}
 
 		// Set station offsets
@@ -253,24 +250,24 @@ var railwayLayers = [13, 14, 15, 16, 17, 18].map(function(zoom) {
 
 			/* For development
 			if (line['odpt:railway'] === 'odpt.Railway:JR-East.ChuoSobuLocal') {
-				console.log(station, getPointAndBearing(railwayFeature[zoom], turf.length(turf.lineSlice(
+				console.log(station, getPointAndBearing(railwayFeature, turf.length(turf.lineSlice(
 					turf.point(start.coords),
 					turf.point(stationLookup[station]._coords),
-					railwayFeature[zoom])
+					railwayFeature)
 				), 1).bearing);
 			} */
 
 			return turf.length(turf.lineSlice(
 				turf.point(start._coords),
 				turf.point(stationLookup[station]._coords),
-				railwayFeature[zoom]
+				railwayFeature
 			));
 		});
 
 		// Make sure the last offset is equal to the length
-		stationOffsets[zoom].push(turf.length(railwayFeature[zoom]));
+		stationOffsets[zoom].push(turf.length(railwayFeature));
 
-		return railwayFeature[zoom];
+		return railwayFeature;
 	}));
 
 	return {
@@ -507,6 +504,9 @@ map.once('styledata', function () {
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.remove('mapbox-ctrl-track-active');
 		}
+
+		/* For development
+		console.log(e.lngLat); */
 	});
 
 	map.on('zoom', function() {
@@ -550,7 +550,7 @@ map.once('styledata', function () {
 			stationOffsets = line.stationOffsets[layerZoom];
 			offset = train._offset = stationOffsets[sectionIndex];
 			train._length = stationOffsets[sectionIndex + direction] - offset;
-			train._lineFeature = line.feature[layerZoom];
+			train._lineFeature = line.features[layerZoom];
 		}
 
 		p = getPointAndBearing(train._lineFeature, train._offset + train._t * train._length, direction);
@@ -785,16 +785,6 @@ function getPointAndBearing(line, distance, direction) {
 		point: p1,
 		bearing: direction * delta > 0 ? turf.bearing(p1, p2) : turf.bearing(p2, p1)
 	};
-}
-
-function generateTrainGeometry(point, size, bearing) {
-	return turf.getGeom(turf.transformRotate(turf.polygon([[
-		turf.getCoord(turf.transformTranslate(point, size, -150)),
-		turf.getCoord(turf.transformTranslate(point, size, -30)),
-		turf.getCoord(turf.transformTranslate(point, size, 30)),
-		turf.getCoord(turf.transformTranslate(point, size, 150)),
-		turf.getCoord(turf.transformTranslate(point, size, -150))
-	]]), bearing, {pivot: point}));
 }
 
 function easeSin(t) {
