@@ -33,6 +33,11 @@ var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
 // API Token
 var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
 
+var SQRT3 = Math.sqrt(3);
+
+var modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat([139.7670, 35.6814]);
+var modelScale = 2.709216101694915e-6;
+
 var lang = getLang();
 var today = new Date();
 var isRealtime = true;
@@ -102,6 +107,10 @@ var map = new mapboxgl.Map({
 	zoom: 14,
 	pitch: 60
 });
+
+var camera = new THREE.PerspectiveCamera(map.transform._fov * 180 / Math.PI, window.innerWidth / window.innerHeight);
+var scene = new THREE.Scene();
+var raycaster = new THREE.Raycaster();
 
 stationLookup = buildLookup(stationRefData);
 
@@ -299,8 +308,6 @@ trainData.types.map(function(type) {
 	merge(trainTypeLookup[type['odpt:trainType']]['odpt:trainTypeTitle'], type['odpt:trainTypeTitle']);
 });
 
-var trainCollection = turf.featureCollection([]);
-
 map.once('load', function () {
 	document.getElementById('loader').style.display = 'none';
 });
@@ -359,15 +366,52 @@ map.once('styledata', function () {
 
 	map.addLayer({
 		id: 'trains',
-		type: 'fill-extrusion',
-		source: {
-			type: 'geojson',
-			data: trainCollection
+		type: 'custom',
+		renderingMode: '3d',
+		onAdd: function(map, gl) {
+			var light = this.light = new THREE.DirectionalLight(0xffffff, .8);
+			scene.add(light);
+			scene.add(new THREE.AmbientLight(0xffffff, .4));
+
+			// use the Mapbox GL JS map canvas for three.js
+			var renderer = this.renderer = new THREE.WebGLRenderer({
+				canvas: map.getCanvas(),
+				context: gl
+			});
+
+			renderer.autoClear = false;
 		},
-		paint: {
-			'fill-extrusion-color': ['get', 'color'],
-			'fill-extrusion-height': ['interpolate', ['exponential', 0.5], ['zoom'], 13, 200, 19, 3.125],
-			'fill-extrusion-opacity': .9
+		render: function(gl, matrix) {
+			var transform = map.transform;
+			var halfFov = transform._fov / 2;
+			var halfHeight = Math.tan(halfFov);
+			var halfWidth = halfHeight * transform.width / transform.height;
+			var cameraToCenterDistance = transform.cameraToCenterDistance;
+			var angle = Math.PI / 2 - transform._pitch;
+			var topHalfSurfaceDistance = Math.sin(halfFov) * cameraToCenterDistance / Math.sin(angle - halfFov);
+			var furthestDistance = Math.cos(angle) * topHalfSurfaceDistance + cameraToCenterDistance;
+
+			var scale = Math.pow(2, 14 - Math.min(Math.max(map.getZoom(), 13), 19)) * modelScale;
+
+			var m = new THREE.Matrix4().fromArray(matrix);
+			var l = new THREE.Matrix4()
+				.makeTranslation(modelOrigin.x, modelOrigin.y, scale / 2)
+				.scale(new THREE.Vector3(1, -1, 1));
+
+			var projectionMatrixI = new THREE.Matrix4();
+
+			camera.projectionMatrix = new THREE.Matrix4().makePerspective(
+				-halfWidth, halfWidth, halfHeight, -halfHeight, 1, furthestDistance * 1.01);
+			projectionMatrixI.getInverse(camera.projectionMatrix)
+			camera.matrix.getInverse(projectionMatrixI.multiply(m).multiply(l));
+			camera.matrix.decompose(camera.position, camera.quaternion, camera.scale);
+
+			var rad = (map.getBearing() + 30) * Math.PI / 180;
+			this.light.position.set(-Math.sin(rad), -Math.cos(rad), SQRT3).normalize();
+
+			this.renderer.state.reset();
+			this.renderer.render(scene, camera);
+			map.triggerRepaint();
 		}
 	});
 
@@ -380,7 +424,7 @@ map.once('styledata', function () {
 	control = new mapboxgl.FullscreenControl();
 	control._updateTitle = function() {
 		mapboxgl.FullscreenControl.prototype._updateTitle.apply(this,arguments);
-	    this._fullscreenButton.title = dict[(this._isFullscreen() ? 'exit' : 'enter') + '-fullscreen'];
+		this._fullscreenButton.title = dict[(this._isFullscreen() ? 'exit' : 'enter') + '-fullscreen'];
 	}
 	map.addControl(control);
 
@@ -439,41 +483,27 @@ map.once('styledata', function () {
 		}
 	});
 
-	map.on('mouseenter', 'trains', function(e) {
-		map.getCanvas().style.cursor = 'pointer';
+	map.on('mousemove', function(e) {
 		if (isRealtime) {
 			markedTrain = getTrain(e);
-			popup.setLngLat([markedTrain.properties.lat, markedTrain.properties.lng])
-				.setHTML(markedTrain.properties.description)
-				.addTo(map);
+			if (markedTrain) {
+				map.getCanvas().style.cursor = 'pointer';
+				popup.setLngLat(markedTrain.userData.lngLat)
+					.setHTML(markedTrain.userData.description)
+					.addTo(map);
+			} else {
+				map.getCanvas().style.cursor = '';
+				popup.remove();
+			}
 		}
-	});
-
-	map.on('mousemove', 'trains', function(e) {
-		if (isRealtime) {
-			markedTrain = getTrain(e);
-			popup.setLngLat([markedTrain.properties.lat, markedTrain.properties.lng])
-				.setHTML(markedTrain.properties.description)
-		}
-	});
-	map.on('mouseleave', 'trains', function() {
-		map.getCanvas().style.cursor = '';
-		if (isRealtime) {
-			markedTrain = undefined;
-			popup.remove();
-		}
-	});
-
-	map.on('click', 'trains', function(e) {
-		trackedTrain = getTrain(e);
-		document.getElementsByClassName('mapbox-ctrl-track')[0]
-			.classList.add('mapbox-ctrl-track-active');
-		e.originalEvent.cancelBubble = true;
 	});
 
 	map.on('click', function(e) {
-		if (trackedTrain && !e.originalEvent.cancelBubble) {
-			trackedTrain = undefined;
+		trackedTrain = getTrain(e);
+		if (trackedTrain) {
+			document.getElementsByClassName('mapbox-ctrl-track')[0]
+				.classList.add('mapbox-ctrl-track-active');
+		} else {
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.remove('mapbox-ctrl-track-active');
 		}
@@ -485,8 +515,23 @@ map.once('styledata', function () {
 		});
 	});
 
+	map.on('resize', function() {
+		camera.aspect = window.innerWidth / window.innerHeight;
+		camera.updateProjectionMatrix();
+	});
+
 	function getTrain(event) {
-		return trainLookup[event.features[0].properties['odpt:train']]._feature;
+		var mouse = new THREE.Vector2(
+			(event.point.x / window.innerWidth) * 2 - 1,
+			-(event.point.y / window.innerHeight) * 2 + 1
+		);
+		var intersects;
+
+		raycaster.setFromCamera(mouse, camera);
+		intersects = raycaster.intersectObjects(scene.children);
+		if (intersects.length > 0) {
+			return intersects[0].object;
+		}
 	}
 
 	function updateTrainShape(train, options) {
@@ -494,9 +539,7 @@ map.once('styledata', function () {
 		var line = lineLookup[train['odpt:railway']];
 		var direction = train._direction;
 		var sectionIndex = train._sectionIndex;
-		var feature = train._feature;
-		var properties = feature.properties;
-		var layerZoom, stationOffsets, offset, p, size;
+		var layerZoom, stationOffsets, offset, p, s, lngLat, bearing, coord, cube, position, scale;
 
 		if (options.t !== undefined) {
 			train._t = options.t;
@@ -511,20 +554,34 @@ map.once('styledata', function () {
 		}
 
 		p = getPointAndBearing(train._lineFeature, train._offset + train._t * train._length, direction);
-		size = Math.pow(2, 14 - Math.min(Math.max(zoom, 13), 19)) * .1;
+		s = Math.pow(2, 14 - Math.min(Math.max(zoom, 13), 19)) * modelScale;
 
-		feature.geometry = generateTrainGeometry(p.point, size, p.bearing);
-		properties.lat = turf.getCoord(p.point)[0];
-		properties.lng = turf.getCoord(p.point)[1];
-		properties.bearing = p.bearing;
+		cube = train._cube;
+		lngLat = cube.userData.lngLat = turf.getCoord(p.point);
+		bearing = cube.userData.bearing = p.bearing;
+		coord = mapboxgl.MercatorCoordinate.fromLngLat(lngLat);
+		position = cube.position;
+		scale = cube.scale;
+
+		position.x = coord.x - modelOrigin.x;
+		position.y = -(coord.y - modelOrigin.y);
+		scale.x = scale.y = scale.z = s;
+		cube.rotation.z = -bearing * Math.PI / 180;
 	}
 
 	function initModelTrains() {
-		trainCollection = turf.featureCollection(trainData.trains.map(function(train, i) {
+		trainData.trains.forEach(function(train, i) {
 			var line = lineLookup[train['odpt:railway']];
-			var feature = train._feature = turf.polygon([[[0,0],[1,0],[1,1],[0,0]]], {color: line.color});
+			var geometry = new THREE.BoxGeometry(1, 2, 1);
+			var material = new THREE.MeshLambertMaterial({
+				color: parseInt(line.color.replace('#', ''), 16),
+				transparent: true,
+				opacity: .9
+			});
+			var cube = train._cube = new THREE.Mesh(geometry, material);
+			scene.add(cube);
 
-			feature.properties['odpt:train'] = train['odpt:train'] = i;
+			train['odpt:train'] = i;
 
 			trainLookup[train['odpt:train']] = train;
 			updateTrainShape(train, {t: 0, reset: true});
@@ -546,36 +603,34 @@ map.once('styledata', function () {
 				}, 5000 * Math.abs(train._length));
 			}
 			repeat();
-			return feature;
-		}));
+		});
 	}
 	if (!isRealtime) {
 		initModelTrains();
 	}
 
 	function refresh(timestamp) {
-		var properties;
+		var userData;
 
 		if (isRealtime) {
 			refreshTrains(timestamp);
 			if (markedTrain) {
-				properties = markedTrain.properties;
-				popup.setLngLat([properties.lat, properties.lng]).setHTML(properties.description);
+				userData = markedTrain.userData;
+				popup.setLngLat(userData.lngLat).setHTML(userData.description);
 			}
 		}
-		map.getSource('trains').setData(trainCollection);
 		if (trackedTrain) {
-			properties = trackedTrain.properties;
+			userData = trackedTrain.userData;
 			if (trackingMode === 'helicopter') {
 				map.easeTo({
-					center: [properties.lat, properties.lng],
+					center: userData.lngLat,
 					bearing: (timestamp / 100) % 360,
 					duration: 0
 				});
 			} else {
 				map.easeTo({
-					center: [properties.lat, properties.lng],
-					bearing: properties.bearing,
+					center: userData.lngLat,
+					bearing: userData.bearing,
 					duration: 0
 				});
 			}
@@ -608,11 +663,16 @@ map.once('styledata', function () {
 						return;
 					}
 
-					var feature = train._feature = turf.polygon([[[0,0],[1,0],[1,1],[0,0]]], {color: line.color});
-					var properties = feature.properties;
+					var geometry = new THREE.BoxGeometry(1, 2, 1);
+					var material = new THREE.MeshLambertMaterial({
+						color: parseInt(line.color.replace('#', ''), 16),
+						transparent: true,
+						opacity: .9
+					});
+					var cube = train._cube = new THREE.Mesh(geometry, material);
+					scene.add(cube);
 
-					properties['odpt:train'] = train['odpt:train'];
-					properties.description = getTrainDescription(train, timetableIndex);
+					cube.userData.description = getTrainDescription(train, timetableIndex);
 
 					trainLookup[train['odpt:train']] = train;
 					updateTrainShape(train, {t: 0, reset: true});
@@ -626,7 +686,7 @@ map.once('styledata', function () {
 							if (timetableIndex >= table.length - 1 || sectionIndex <= 0 || sectionIndex >= line.stations.length - 1) {
 								stopTrain(train);
 							} else {
-								properties.description = getTrainDescription(train, timetableIndex);
+								cube.userData.description = getTrainDescription(train, timetableIndex);
 								updateTrainShape(train, {t: 0, reset: true});
 
 								// Stop at station
@@ -635,7 +695,6 @@ map.once('styledata', function () {
 						}, Math.abs(train._length) * 3600000 / SPEED, Date.now() - (getTime(table[timetableIndex]['odpt:departureTime']) + (train._delay || 0)));
 					}
 					repeat();
-					trainCollection.features.push(feature);
 				}
 			});
 			updateDelays();
@@ -688,8 +747,8 @@ map.once('styledata', function () {
 
 	function stopTrain(train) {
 		train._stop();
-		trainCollection.features.splice(trainCollection.features.indexOf(train._feature), 1);
-		delete train._feature;
+		scene.remove(train._cube);
+		delete train._cube;
 		delete train._stop;
 		delete trainLookup[train['odpt:train']];
 	}
