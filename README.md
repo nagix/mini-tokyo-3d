@@ -6,6 +6,29 @@ A real-time 3D digital map of Tokyo's public transport system.
 
 See a [Live Demo](https://nagix.github.io/mini-tokyo-3d).
 
+## Usage
+
+Operation | Description
+--- | ---
+Mouse drag or swipe | Pan
+Mouse wheel rotation | Zoom in/out
+Right click + mouse drag | Tilt up/down and rotate
+Pinch in/out | Zoom in/out and rotate
+Double-click or double-tap | Zoom in
+Click or tap +/- buttons | Zoom in/out
+Click or tap the compass button | Reset bearing to north
+Click or tap the compass button + mouse drag or swipe | Tilt up/down and rotate
+Click or tap the train/helicopter button | Switch the tracking mode
+Click or tap the clock button | Toggle the real-time mode
+Click or tap the GitHub button | Open the GitHub project page
+Click or tap a train | Enable tracking
+Click or tap the map | Disable tracking
+Hover a train | Show the train information
+
+## About Data
+
+The data for this visualization are sourced from [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/), which includes station information and train timetables as well as real-time data such as train location information and status information of multiple railway lines in the Greater Tokyo area.
+
 ## License
 
 Mini Tokyo 3D is available under the [Apache license 2.0](opensource.org/licenses/Apache-2.0).
