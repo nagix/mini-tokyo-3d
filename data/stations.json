@@ -450,6 +450,117 @@
 		"coords": [139.7113, 35.6813],
 		"labelAngle": -75
 	}, {
+		"name": "okubo",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoSobuLocal.Okubo"
+		],
+		"odpt:stationTitle": {
+			"ko": "오쿠보",
+			"zh": "大久保"
+		},
+		"coords": [139.6975, 35.7006]
+	}, {
+		"name": "higashi-nakano",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoSobuLocal.HigashiNakano"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시나카노",
+			"zh": "東中野"
+		},
+		"coords": [139.6848, 35.7063]
+	}, {
+		"name": "nakano",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoSobuLocal.Nakano",
+			"odpt.Station:JR-East.ChuoRapid.Nakano"
+		],
+		"odpt:stationTitle": {
+			"ko": "나카노",
+			"zh": "中野"
+		},
+		"coords": [139.6656, 35.7057],
+		"angle": -92,
+		"span": [0, 1]
+	}, {
+		"name": "koenji",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoSobuLocal.Koenji",
+			"odpt.Station:JR-East.ChuoRapid.Koenji"
+		],
+		"odpt:stationTitle": {
+			"ko": "고엔지",
+			"zh": "高圓寺"
+		},
+		"coords": [139.6498, 35.7053],
+		"angle": -92,
+		"span": [0, 1]
+	}, {
+		"name": "asagaya",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoSobuLocal.Asagaya",
+			"odpt.Station:JR-East.ChuoRapid.Asagaya"
+		],
+		"odpt:stationTitle": {
+			"ko": "아사가야",
+			"zh": "阿佐谷"
+		},
+		"coords": [139.6364, 35.7049],
+		"angle": -92,
+		"span": [0, 1]
+	}, {
+		"name": "ogikubo",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoSobuLocal.Ogikubo",
+			"odpt.Station:JR-East.ChuoRapid.Ogikubo"
+		],
+		"odpt:stationTitle": {
+			"ko": "오기쿠보",
+			"zh": "荻窪"
+		},
+		"coords": [139.6202, 35.7044],
+		"angle": -92,
+		"span": [0, 1]
+	}, {
+		"name": "nishi-ogikubo",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoSobuLocal.NishiOgikubo",
+			"odpt.Station:JR-East.ChuoRapid.NishiOgikubo"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시오기쿠보",
+			"zh": "西荻窪"
+		},
+		"coords": [139.5995, 35.7038],
+		"angle": -92,
+		"span": [0, 1]
+	}, {
+		"name": "kichijoji",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoSobuLocal.Kichijoji",
+			"odpt.Station:JR-East.ChuoRapid.Kichijoji"
+		],
+		"odpt:stationTitle": {
+			"ko": "기치조지",
+			"zh": "吉祥寺"
+		},
+		"coords": [139.5799, 35.7032],
+		"angle": -92,
+		"span": [0, 1]
+	}, {
+		"name": "mitaka",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoSobuLocal.Mitaka",
+			"odpt.Station:JR-East.ChuoRapid.Mitaka"
+		],
+		"odpt:stationTitle": {
+			"ko": "미타카",
+			"zh": "三鷹"
+		},
+		"coords": [139.5609, 35.7027],
+		"angle": -92,
+		"span": [0, 1]
+	}, {
 		"name": "omiya",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Omiya"

@@ -116,6 +116,23 @@
 			"start": "odpt.Station:JR-East.Yamanote.Yoyogi",
 			"end": "odpt.Station:JR-East.Yamanote.Shinjuku",
 			"offset": 1
+		}, {
+			"coordinates": [
+				[139.7006, 35.6898],
+				[139.6989, 35.6980],
+				[139.6975, 35.7006],
+				[139.6953, 35.7031],
+				[139.6926, 35.7049],
+				[139.6885, 35.7061],
+				[139.6848, 35.7063],
+				[139.6656, 35.7057],
+				[139.6498, 35.7053],
+				[139.6364, 35.7049],
+				[139.6202, 35.7044],
+				[139.5995, 35.7038],
+				[139.5799, 35.7032],
+				[139.5609, 35.7027]
+			]
 		}],
 		"color": "#FDBC00"
 	}, {
@@ -141,7 +158,7 @@
 		}, {
 			"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
 			"start": "odpt.Station:JR-East.ChuoSobuLocal.Ochanomizu",
-			"end": "odpt.Station:JR-East.ChuoSobuLocal.Shinjuku",
+			"end": "odpt.Station:JR-East.ChuoSobuLocal.Mitaka",
 			"reverse": true,
 			"offset": 1
 		}],
