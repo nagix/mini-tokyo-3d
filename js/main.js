@@ -689,7 +689,7 @@ map.once('styledata', function () {
 					cube.userData.description = getTrainDescription(train, section);
 					updateTrainShape(train, {t: 0, reset: true});
 
-					function repeat() {
+					function repeat(elapsed) {
 						train._stop = animate(function(t) {
 							updateTrainShape(train, {t: t});
 						}, function() {
@@ -705,9 +705,9 @@ map.once('styledata', function () {
 								// Stop at station
 								train._stop = delay(repeat, Math.max((getTime(section.departureTime) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION));
 							}
-						}, Math.abs(train._interval), 1, Date.now() - (getTime(section.departureTime) + (train._delay || 0)));
+						}, Math.abs(train._interval), 1, elapsed);
 					}
-					repeat();
+					repeat(now - (getTime(section.departureTime) + d));
 				}
 			});
 			updateDelays();
