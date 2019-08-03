@@ -584,13 +584,7 @@ map.once('styledata', function () {
 	function initModelTrains() {
 		trainData.trains.forEach(function(train, i) {
 			var line = lineLookup[train['odpt:railway']];
-			var geometry = new THREE.BoxGeometry(1, 2, 1);
-			var material = new THREE.MeshLambertMaterial({
-				color: parseInt(line.color.replace('#', ''), 16),
-				transparent: true,
-				opacity: .9
-			});
-			var cube = train._cube = new THREE.Mesh(geometry, material);
+			var cube = train._cube = createCube(line.color);
 			scene.add(cube);
 
 			train['odpt:train'] = i;
@@ -660,54 +654,38 @@ map.once('styledata', function () {
 			timetableRefData.forEach(function(train) {
 				var d = train._delay || 0;
 				if (train._start + d <= now && now <= train._end + d && !trainLookup[train['odpt:train']]) {
-					var line = lineLookup[train['odpt:railway']];
-					var table = train['odpt:trainTimetableObject'];
-					var timetableIndex = table.reduce(function(acc, cur, i) {
-						return getTime(cur['odpt:departureTime']) + d <= now ? i : acc;
-					}, 0);
-					var direction = train._direction;
-					var section = getSectionData(line, table, timetableIndex, direction);
-
-					// Out of range
-					if (!section) {
-						return;
+					if (!setSectionData(train, now)) {
+						return; // Out of range
 					}
 
-					var geometry = new THREE.BoxGeometry(1, 2, 1);
-					var material = new THREE.MeshLambertMaterial({
-						color: parseInt(line.color.replace('#', ''), 16),
-						transparent: true,
-						opacity: .9
-					});
-					var cube = train._cube = new THREE.Mesh(geometry, material);
+					var line = lineLookup[train['odpt:railway']];
+					var cube = train._cube = createCube(line.color);
 					scene.add(cube);
 
 					trainLookup[train['odpt:train']] = train;
 
-					train._sectionIndex = section.index;
-					train._sectionLength = section.length;
-					cube.userData.description = getTrainDescription(train, section);
 					updateTrainShape(train, {t: 0, reset: true});
 
 					function repeat(elapsed) {
+						train._standing = false;
+						cube.userData.description = getTrainDescription(train);
 						train._stop = animate(function(t) {
 							updateTrainShape(train, {t: t});
 						}, function() {
-							section = getSectionData(line, table, ++timetableIndex, direction);
-							if (!section) {
+							train._timetableIndex++;
+							if (!setSectionData(train)) {
 								stopTrain(train);
 							} else {
-								train._sectionIndex = section.index;
-								train._sectionLength = section.length;
-								cube.userData.description = getTrainDescription(train, section);
 								updateTrainShape(train, {t: 0, reset: true});
+								train._standing = true;
+								cube.userData.description = getTrainDescription(train);
 
 								// Stop at station
-								train._stop = delay(repeat, Math.max((getTime(section.departureTime) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION));
+								train._stop = delay(repeat, Math.max((getTime(train._departureTime) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION));
 							}
 						}, Math.abs(train._interval), 1, elapsed);
 					}
-					repeat(now - (getTime(section.departureTime) + d));
+					repeat(now - (getTime(train._departureTime) + d));
 				}
 			});
 			updateDelays();
@@ -735,7 +713,7 @@ map.once('styledata', function () {
 		return title[lang] || title['en'];
 	}
 
-	function getTrainDescription(train, section) {
+	function getTrainDescription(train) {
 		var destination = train['odpt:destinationStation'];
 		var delay = train._delay || 0;
 
@@ -746,12 +724,12 @@ map.once('styledata', function () {
 			+ '<br><strong>' + dict['train-number'] + ':</strong> '
 			+ train['odpt:trainNumber']
 			+ '<br>' + (delay >= 60000 ? '<span class="desc-delay">' : '')
-			+ '<strong>' + dict['previous-stop'] + ':</strong> '
-			+ getLocalizedStationTitle(section.departureStation)
-			+ ' ' + getTimeString(getTime(section.departureTime) + delay)
+			+ '<strong>' + dict[train._standing ? 'standing-at' : 'previous-stop'] + ':</strong> '
+			+ getLocalizedStationTitle(train._departureStation)
+			+ ' ' + getTimeString(getTime(train._departureTime) + delay)
 			+ '<br><strong>' + dict['next-stop'] + ':</strong> '
-			+ getLocalizedStationTitle(section.arrivalStation)
-			+ ' ' + getTimeString(getTime(section.arrivalTime) + delay)
+			+ getLocalizedStationTitle(train._arrivalStation)
+			+ ' ' + getTimeString(getTime(train._arrivalTime) + delay)
 			+ (delay >= 60000 ? '<br>' + dict['delay'].replace('$1', Math.floor(delay / 60000)) + '</span>' : '');
 	}
 
@@ -926,32 +904,50 @@ function getTimeString(time) {
 	return ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2);
 }
 
-function getSectionData(line, timeTable, index, direction) {
-	var current = timeTable[index];
-	var next = timeTable[index + 1];
+function createCube(color) {
+	var geometry = new THREE.BoxGeometry(1, 2, 1);
+	var material = new THREE.MeshLambertMaterial({
+		color: parseInt(color.replace('#', ''), 16),
+		transparent: true,
+		opacity: .9
+	});
+	return new THREE.Mesh(geometry, material);
+}
+
+function setSectionData(train, now) {
+	var table = train['odpt:trainTimetableObject'];
+	var delay = train._delay || 0;
+	var index = now ?
+		table.reduce(function(acc, cur, i) {
+			return getTime(cur['odpt:departureTime']) + delay <= now ? i : acc;
+		}, 0) :
+		train._timetableIndex;
+	var current = table[index];
+	var next = table[index + 1];
+	var stations = lineLookup[train['odpt:railway']].stations;
 	var departureStation = current['odpt:departureStation'];
 	var arrivalStation = next && (next['odpt:arrivalStation'] || next['odpt:departureStation']);
 	var currentSection, nextSection;
 
-	if (direction > 0) {
-		currentSection = line.stations.indexOf(departureStation);
-		nextSection = line.stations.indexOf(arrivalStation, currentSection);
+	if (train._direction > 0) {
+		currentSection = stations.indexOf(departureStation);
+		nextSection = stations.indexOf(arrivalStation, currentSection);
 	} else {
-		currentSection = line.stations.lastIndexOf(departureStation);
-		nextSection = line.stations.lastIndexOf(arrivalStation, currentSection);
+		currentSection = stations.lastIndexOf(departureStation);
+		nextSection = stations.lastIndexOf(arrivalStation, currentSection);
 	}
 
 	if (currentSection >= 0 && nextSection >= 0) {
-		return {
-			index: currentSection,
-			length: nextSection - currentSection,
-			departureStation: departureStation,
-			departureTime: current['odpt:departureTime'],
-			arrivalStation: arrivalStation,
-			arrivalTime: next['odpt:arrivalTime'] || next['odpt:departureTime']
-		};
-	}
+		train._timetableIndex = index;
+		train._sectionIndex = currentSection;
+		train._sectionLength = nextSection - currentSection;
+		train._departureStation = departureStation;
+		train._departureTime = current['odpt:departureTime'];
+		train._arrivalStation = arrivalStation;
+		train._arrivalTime = next['odpt:arrivalTime'] || next['odpt:departureTime'];
 
+		return true;
+	}
 }
 
 function getLang() {
