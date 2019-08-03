@@ -24,8 +24,19 @@ var MIN_STOP_DURATION = 30000;
 // Interval of refreshing train positions in milliseconds
 var TRAIN_REFRESH_INTERVAL = 60000;
 
-// Average train speed in km/h
-var SPEED = 60;
+// Maximum train speed in km/h
+var MAX_SPEED_KMPH = 90;
+
+// Train acceleration in km/h/s
+var ACCELERATION_KMPHPS = 3;
+
+// Time factor for the non-real-time mode
+var TIME_FACTOR = 12;
+
+var MAX_SPEED = MAX_SPEED_KMPH / 3600000;
+var ACCELERATION = ACCELERATION_KMPHPS / 3600000000;
+var ACCELERATION_TIME = MAX_SPEED / ACCELERATION;
+var ACC_DISTANCE = ACCELERATION_TIME * MAX_SPEED / 2;
 
 // API URL
 var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
@@ -602,7 +613,7 @@ map.once('styledata', function () {
 
 					// Stop and go
 					train._stop = delay(repeat, 1000);
-				}, 5000 * Math.abs(train._interval));
+				}, Math.abs(train._interval), TIME_FACTOR);
 			}
 			repeat();
 		});
@@ -694,7 +705,7 @@ map.once('styledata', function () {
 								// Stop at station
 								train._stop = delay(repeat, Math.max((getTime(section.departureTime) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION));
 							}
-						}, Math.abs(train._interval) * 3600000 / SPEED, Date.now() - (getTime(section.departureTime) + (train._delay || 0)));
+						}, Math.abs(train._interval), 1, Date.now() - (getTime(section.departureTime) + (train._delay || 0)));
 					}
 					repeat();
 				}
@@ -786,22 +797,31 @@ function getPointAndBearing(line, distance, direction) {
 	};
 }
 
-function easeSin(t) {
-	return -(Math.cos(Math.PI * t) - 1) / 2;
-}
-
-function animate(callback, endCallback, duration, elapsed) {
+function animate(callback, endCallback, distance, timeFactor, elapsed) {
+	var maxSpeed = MAX_SPEED * timeFactor;
+	var acceleration = ACCELERATION * Math.pow(timeFactor, 2);
+	var accelerationTime = ACCELERATION_TIME / timeFactor;
+	var duration = distance < ACC_DISTANCE * 2 ?
+		Math.sqrt(distance / acceleration) * 2 :
+		accelerationTime * 2 + (distance - ACC_DISTANCE * 2) / maxSpeed;
 	var start, requestID;
 	var frameRefresh = function() {
 		var now = performance.now();
-		var t;
+		var t, u;
 
 		start = start || now;
-		t = Math.min((now - start) / duration, 1);
-		if (callback) {
-			callback(easeSin(t));
+		t = Math.min((now - start), duration);
+		if (t <= Math.min(accelerationTime, duration / 2)) {
+			u = acceleration / 2 * Math.pow(t, 2) / distance;
+		} else if (duration - t <= Math.min(accelerationTime, duration / 2)) {
+			u = 1 - acceleration / 2 * Math.pow(duration - t, 2) / distance;
+		} else {
+			u = ACC_DISTANCE / distance + (1 - ACC_DISTANCE / distance * 2) / (duration - accelerationTime * 2) * (t - accelerationTime);
 		}
-		if (t < 1) {
+		if (callback) {
+			callback(u);
+		}
+		if (t < duration) {
 			requestID = requestAnimationFrame(frameRefresh);
 		} else if (endCallback) {
 			endCallback();
@@ -817,7 +837,21 @@ function animate(callback, endCallback, duration, elapsed) {
 }
 
 function delay(callback, duration) {
-	return animate(null, callback, duration);
+	var start, requestID;
+	var frameRefresh = function() {
+		var now = performance.now();
+
+		start = start || now;
+		if (now - start < duration) {
+			requestID = requestAnimationFrame(frameRefresh);
+		} else if (callback) {
+			callback();
+		}
+	};
+	requestID = requestAnimationFrame(frameRefresh);
+	return function() {
+		cancelAnimationFrame(requestID);
+	};
 }
 
 function concat(arr) {
