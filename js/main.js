@@ -142,9 +142,7 @@ railwayData.railways.forEach(function(railway) {
 	var railwayRef = railwayLookup[id];
 	var stationOrder = railwayRef['odpt:stationOrder'];
 
-	if (id === 'odpt.Railway:JR-East.ChuoSobuLocal') {
-		stationOrder = stationOrder.slice(20);
-	} else if (id === 'odpt.Railway:JR-East.ChuoRapid') {
+	if (id === 'odpt.Railway:JR-East.ChuoRapid') {
 		stationOrder = stationOrder.slice(0, 12);
 	} else if (id === 'odpt.Railway:JR-East.KeihinTohokuNegishi') {
 		stationOrder = stationOrder.slice(0, 35);
