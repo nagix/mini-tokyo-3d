@@ -30,6 +30,30 @@
 	</div>
 	<div id="loading-error"></div>
 
+	<script type="x-shader/x-vertex" id="vertexShader">
+		varying float intensity;
+
+		void main() {
+			vec3 vNormal = normalize( normalMatrix * normal );
+			vec3 vNormel = normalize( vec3( modelViewMatrix * vec4( position, 1.0 ) ) );
+			intensity = -dot( vNormal, vNormel );
+
+			gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+		}
+	</script>
+
+	<script type="x-shader/x-fragment" id="fragmentShader">
+		uniform vec3 glowColor;
+		varying float intensity;
+
+		void main() {
+			float r = glowColor.r + ( 1.0 - glowColor.r ) * intensity;
+			float g = glowColor.g + ( 1.0 - glowColor.g ) * intensity;
+			float b = glowColor.b + ( 1.0 - glowColor.b ) * intensity;
+			gl_FragColor = vec4( r, g, b, 1.0 );
+		}
+	</script>
+
 	<script type="text/javascript" src="js/main.js"></script>
 
 	<script type="text/javascript">

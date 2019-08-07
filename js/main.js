@@ -644,12 +644,14 @@ map.once('styledata', function () {
 			(event.point.x / window.innerWidth) * 2 - 1,
 			-(event.point.y / window.innerHeight) * 2 + 1
 		);
-		var intersects;
+		var intersects, i;
 
 		raycaster.setFromCamera(mouse, camera);
 		intersects = raycaster.intersectObjects(scene.children);
-		if (intersects.length > 0) {
-			return intersects[0].object;
+		for (i = 0; i < intersects.length; i++) {
+			if (intersects[i].object.userData.lngLat) {
+				return intersects[i].object;
+			}
 		}
 	}
 
@@ -687,6 +689,24 @@ map.once('styledata', function () {
 		position.y = -(coord.y - modelOrigin.y);
 		scale.x = scale.y = scale.z = s;
 		cube.rotation.z = -bearing * Math.PI / 180;
+
+		if (train._delay) {
+			var delayMarker = train._delayMarker;
+
+			if (!delayMarker) {
+				delayMarker = train._delayMarker = createDelayMarker();
+				scene.add(delayMarker);
+			}
+
+			position = delayMarker.position;
+			scale = delayMarker.scale;
+			position.x = coord.x - modelOrigin.x;
+			position.y = -(coord.y - modelOrigin.y);
+			scale.x = scale.y = scale.z = s;
+		} else if (train._delayMarker) {
+			scene.remove(train._delayMarker);
+			delete train._delayMarker;
+		}
 	}
 
 	function initModelTrains() {
@@ -847,6 +867,11 @@ map.once('styledata', function () {
 		delete train._cube;
 		delete train._stop;
 		delete trainLookup[train['odpt:train']];
+		if (train._delayMarker) {
+			scene.remove(train._delayMarker);
+			delete train._delayMarker;
+			delete train._delay;
+		}
 	}
 
 	function updateDelays() {
@@ -1013,11 +1038,23 @@ function getTimeString(time) {
 }
 
 function createCube(color) {
-	var geometry = new THREE.BoxGeometry(1, 2, 1);
+	var geometry = new THREE.BoxBufferGeometry(1, 2, 1);
 	var material = new THREE.MeshLambertMaterial({
 		color: parseInt(color.replace('#', ''), 16),
 		transparent: true,
 		opacity: .9
+	});
+	return new THREE.Mesh(geometry, material);
+}
+
+function createDelayMarker() {
+	var geometry = new THREE.SphereBufferGeometry(1.8, 32, 32);
+	var material = new THREE.ShaderMaterial({
+		uniforms: {glowColor: {type: "c", value: new THREE.Color(0xff9900)}},
+		vertexShader: document.getElementById('vertexShader').textContent,
+		fragmentShader: document.getElementById('fragmentShader').textContent,
+		blending: THREE.MultiplyBlending,
+		depthWrite: false
 	});
 	return new THREE.Mesh(geometry, material);
 }
