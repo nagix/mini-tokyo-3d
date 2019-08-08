@@ -144,8 +144,6 @@ railwayData.railways.forEach(function(railway) {
 
 	if (id === 'odpt.Railway:JR-East.ChuoRapid') {
 		stationOrder = stationOrder.slice(0, 12);
-	} else if (id === 'odpt.Railway:JR-East.KeihinTohokuNegishi') {
-		stationOrder = stationOrder.slice(0, 35);
 	}
 	railway.stations = stationOrder.map(function(station) {
 		return station['odpt:station'];
@@ -199,7 +197,7 @@ function generateRailwayLayers() {
 
 				return subline;
 			}).map(function(subline, i) {
-				var coordinates, nextSubline;
+				var coordinates, nextSubline, baseFeature;
 
 				function smoothCoords(reverse) {
 					var start = !reverse ? 0 : coordinates.length - 1;
@@ -243,7 +241,12 @@ function generateRailwayLayers() {
 					if (nextSubline && nextSubline['odpt:railway']) {
 						smoothCoords(true);
 					}
-					subline.feature = turf.bezierSpline(turf.lineString(coordinates), {sharpness: .4});
+					baseFeature = turf.lineString(coordinates);
+					// Generating 28 points per kilometer
+					subline.feature = turf.bezierSpline(baseFeature, {
+						resolution: turf.length(baseFeature) * 560,
+						sharpness: .4
+					});
 				}
 
 				return turf.getCoords(subline.feature);
