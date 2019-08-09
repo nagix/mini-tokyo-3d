@@ -368,7 +368,7 @@ map.once('styledata', function () {
 			},
 			minzoom: layer.minzoom,
 			maxzoom: layer.maxzoom
-		});
+		}, 'building-3d');
 		map.addLayer({
 			id: 'stations-' + layer.zoom,
 			type: 'fill',
@@ -382,7 +382,7 @@ map.once('styledata', function () {
 			},
 			minzoom: layer.minzoom,
 			maxzoom: layer.maxzoom
-		});
+		}, 'building-3d');
 		map.addLayer({
 			id: 'stations-outline-' + layer.zoom,
 			type: 'line',
@@ -396,7 +396,7 @@ map.once('styledata', function () {
 			},
 			minzoom: layer.minzoom,
 			maxzoom: layer.maxzoom
-		});
+		}, 'building-3d');
 	});
 
 	if (location.search.match(/edit/)) {
@@ -415,7 +415,7 @@ map.once('styledata', function () {
 					'#000000'
 				]
 			}
-		});
+		}, 'building-3d');
 	}
 
 	map.addLayer({
@@ -467,7 +467,7 @@ map.once('styledata', function () {
 			this.renderer.render(scene, camera);
 			map.triggerRepaint();
 		}
-	});
+	}, 'building-3d');
 
 	var control = new mapboxgl.NavigationControl();
 	control._zoomInButton.title = dict['zoom-in'];
