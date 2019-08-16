@@ -111,6 +111,26 @@
 		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
 		"_direction": -1,
 		"_sectionIndex": 9
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Ginza",
+		"_direction": 1,
+		"_sectionIndex": 0,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Ginza",
+		"_direction": 1,
+		"_sectionIndex": 9,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Ginza",
+		"_direction": -1,
+		"_sectionIndex": 18,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Ginza",
+		"_direction": -1,
+		"_sectionIndex": 9,
+		"_altitude": -1
 	}],
 	"railDirections": [{
 		"odpt:railDirection": "odpt.RailDirection:InnerLoop",
@@ -160,6 +180,12 @@
 		"odpt:trainTypeTitle": {
 			"ko": "쾌속",
 			"zh": "快速"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
+		"odpt:trainTypeTitle": {
+			"ko": "보통",
+			"zh": "普通"
 		}
 	}]
 }
