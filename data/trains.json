@@ -112,6 +112,22 @@
 		"_direction": -1,
 		"_sectionIndex": 9
 	}, {
+		"odpt:railway": "odpt.Railway:JR-East.JobanRapid",
+		"_direction": 1,
+		"_sectionIndex": 0
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.JobanRapid",
+		"_direction": 1,
+		"_sectionIndex": 6
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.JobanRapid",
+		"_direction": -1,
+		"_sectionIndex": 12
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.JobanRapid",
+		"_direction": -1,
+		"_sectionIndex": 6
+	}, {
 		"odpt:railway": "odpt.Railway:TokyoMetro.Ginza",
 		"_direction": 1,
 		"_sectionIndex": 0,
@@ -146,6 +162,18 @@
 		}
 	}],
 	"types": [{
+		"odpt:trainType": "odpt.TrainType:JR-East.LimitedExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "특급",
+			"zh": "特急"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:JR-East.SpecialRapid",
+		"odpt:trainTypeTitle": {
+			"ko": "특별쾌속",
+			"zh": "特別快速"
+		}
+	}, {
 		"odpt:trainType": "odpt.TrainType:JR-East.ChuoSpecialRapid",
 		"odpt:trainTypeTitle": {
 			"ko": "주오 특별쾌속",

@@ -226,15 +226,16 @@ Promise.all([
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoSobuLocal&odpt:calendar=odpt.Calendar:Weekday&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.JobanRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Ginza&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro&' + API_TOKEN)
 ]).then(function([
 	dict, railwayData, stationData, trainData, railwayRefData, railDirectionRefData, stationRefData1, stationRefData2,
-	timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, trainTypeRefData
+	timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, trainTypeRefData
 ]) {
 
 var stationRefData = stationRefData1.concat(stationRefData2);
-var timetableRefData = timetableRefData1.concat(timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5);
+var timetableRefData = timetableRefData1.concat(timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6);
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -299,7 +300,7 @@ function generateRailwayLayers() {
 
 					// Rewind if the overlap line is in opposite direction
 					if (stations.indexOf(start) > stations.indexOf(end)) {
-						turf.rewind(subline.feature, {mutate: true});
+						turf.getCoords(subline.feature).reverse();
 					}
 				}
 
@@ -389,7 +390,7 @@ function generateRailwayLayers() {
 
 			feature.properties = {outlineColor: '#000000', width: 4, color: '#FFFFFF'};
 
-			if (station.coords[2] < 0) {
+			if (station.altitude < 0) {
 				setAltitude(feature, -Math.pow(2, 14 - zoom) * 100);
 				stationsUnderground.push(feature);
 			} else {
