@@ -7,8 +7,7 @@
 		"odpt:stationTitle": {
 			"ko": "오사키",
 			"zh": "大崎"
-		},
-		"coords": [139.7282, 35.6200]
+		}
 	}, {
 		"name": "gotanda",
 		"aliases": [
@@ -17,8 +16,7 @@
 		"odpt:stationTitle": {
 			"ko": "고탄다",
 			"zh": "五反田"
-		},
-		"coords": [139.7234, 35.6265]
+		}
 	}, {
 		"name": "meguro",
 		"aliases": [
@@ -27,8 +25,7 @@
 		"odpt:stationTitle": {
 			"ko": "메구로",
 			"zh": "目黑"
-		},
-		"coords": [139.7160, 35.6326]
+		}
 	}, {
 		"name": "ebisu",
 		"aliases": [
@@ -37,8 +34,7 @@
 		"odpt:stationTitle": {
 			"ko": "에비스",
 			"zh": "惠比壽"
-		},
-		"coords": [139.7102, 35.6465]
+		}
 	}, {
 		"name": "shibuya",
 		"aliases": [
@@ -47,8 +43,7 @@
 		"odpt:stationTitle": {
 			"ko": "시부야",
 			"zh": "澀谷"
-		},
-		"coords": [139.7016, 35.6583]
+		}
 	}, {
 		"name": "harajuku",
 		"aliases": [
@@ -57,8 +52,7 @@
 		"odpt:stationTitle": {
 			"ko": "하라주쿠",
 			"zh": "原宿"
-		},
-		"coords": [139.7027, 35.6713]
+		}
 	}, {
 		"name": "yoyogi",
 		"aliases": [
@@ -69,7 +63,6 @@
 			"ko": "요요기",
 			"zh": "代代木"
 		},
-		"coords": [139.7021, 35.6841],
 		"angle": -13,
 		"span": [0, 1],
 		"labelOffset": 8,
@@ -85,7 +78,6 @@
 			"ko": "신주쿠",
 			"zh": "新宿"
 		},
-		"coords": [139.7006, 35.6898],
 		"angle": -10,
 		"span": [0, 2],
 		"labelOffset": 8
@@ -97,8 +89,7 @@
 		"odpt:stationTitle": {
 			"ko": "신오쿠보",
 			"zh": "新大久保"
-		},
-		"coords": [139.7002, 35.7009]
+		}
 	}, {
 		"name": "takadanobaba",
 		"aliases": [
@@ -107,8 +98,7 @@
 		"odpt:stationTitle": {
 			"ko": "다카다노바바",
 			"zh": "高田馬場"
-		},
-		"coords": [139.7037, 35.7130]
+		}
 	}, {
 		"name": "mejiro",
 		"aliases": [
@@ -117,8 +107,7 @@
 		"odpt:stationTitle": {
 			"ko": "메지로",
 			"zh": "目白"
-		},
-		"coords": [139.7062, 35.7205]
+		}
 	}, {
 		"name": "ikebukuro",
 		"aliases": [
@@ -127,8 +116,7 @@
 		"odpt:stationTitle": {
 			"ko": "이케부쿠로",
 			"zh": "池袋"
-		},
-		"coords": [139.7112, 35.7301]
+		}
 	}, {
 		"name": "otsuka",
 		"aliases": [
@@ -138,7 +126,6 @@
 			"ko": "오쓰카",
 			"zh": "大塚"
 		},
-		"coords": [139.7282, 35.7317],
 		"labelAngle": -75
 	}, {
 		"name": "sugamo",
@@ -149,7 +136,6 @@
 			"ko": "스가모",
 			"zh": "巢鴨"
 		},
-		"coords": [139.7403, 35.7337],
 		"labelAngle": 75
 	}, {
 		"name": "komagome",
@@ -160,7 +146,6 @@
 			"ko": "고마고메",
 			"zh": "駒込"
 		},
-		"coords": [139.7480, 35.7368],
 		"labelAngle": 75
 	}, {
 		"name": "tabata",
@@ -172,7 +157,6 @@
 			"ko": "다바타",
 			"zh": "田端"
 		},
-		"coords": [139.7616, 35.7374],
 		"angle": 136,
 		"span": [-1, 0],
 		"labelOffset": 8,
@@ -187,7 +171,6 @@
 			"ko": "니시닛포리",
 			"zh": "西日暮里"
 		},
-		"coords": [139.7666, 35.7322],
 		"angle": 146,
 		"span": [-1, 0],
 		"labelOffset": 8,
@@ -203,7 +186,6 @@
 			"ko": "닛포리",
 			"zh": "日暮里"
 		},
-		"coords": [139.7706, 35.7281],
 		"angle": 138,
 		"span": [-2, 0],
 		"labelOffset": 8,
@@ -218,7 +200,6 @@
 			"ko": "우구이스다니",
 			"zh": "鶯谷"
 		},
-		"coords": [139.7793, 35.7206],
 		"angle": 142,
 		"span": [-1, 0],
 		"labelOffset": 8
@@ -233,7 +214,6 @@
 			"ko": "우에노",
 			"zh": "上野"
 		},
-		"coords": [139.7763, 35.7136],
 		"angle": -146,
 		"span": [-2, 0],
 		"labelOffset": 8,
@@ -248,7 +228,6 @@
 			"ko": "오카치마치",
 			"zh": "御徒町"
 		},
-		"coords": [139.7748, 35.7074],
 		"angle": -172,
 		"span": [-1, 0],
 		"labelOffset": 8
@@ -263,7 +242,6 @@
 			"ko": "아키하바라",
 			"zh": "秋葉原"
 		},
-		"coords": [139.7731, 35.6983],
 		"angle": -172,
 		"span": [-1, 0],
 		"labelOffset": 8
@@ -278,7 +256,6 @@
 			"ko": "간다",
 			"zh": "神田"
 		},
-		"coords": [139.7710, 35.6918],
 		"angle": -162,
 		"span": [-1, 1],
 		"labelOffset": 8
@@ -294,7 +271,6 @@
 			"ko": "도쿄",
 			"zh": "東京"
 		},
-		"coords": [139.7670, 35.6814],
 		"angle": -163,
 		"span": [-2, 1],
 		"labelOffset": 8
@@ -308,7 +284,6 @@
 			"ko": "유라쿠초",
 			"zh": "有樂町"
 		},
-		"coords": [139.7631, 35.6750],
 		"angle": -134,
 		"span": [-1, 0],
 		"labelOffset": 8,
@@ -324,7 +299,6 @@
 			"ko": "신바시",
 			"zh": "新橋"
 		},
-		"coords": [139.7582, 35.6665],
 		"angle": 177,
 		"span": [-2, 0],
 		"labelOffset": 8
@@ -338,7 +312,6 @@
 			"ko": "하마마쓰초",
 			"zh": "濱松町"
 		},
-		"coords": [139.7571, 35.6554],
 		"angle": -168,
 		"span": [-1, 0],
 		"labelOffset": 8
@@ -352,7 +325,6 @@
 			"ko": "다마치",
 			"zh": "田町"
 		},
-		"coords": [139.7476, 35.6457],
 		"angle": -122,
 		"span": [-1, 0],
 		"labelOffset": 8,
@@ -368,24 +340,226 @@
 			"ko": "시나가와",
 			"zh": "品川"
 		},
-		"coords": [139.7389, 35.6284],
 		"angle": 176,
 		"span": [-2, 0],
 		"labelOffset": 8
 	}, {
 		"name": "ochanomizu",
 		"aliases": [
-			"odpt.Station:JR-East.ChuoSobuLocal.Ochanomizu",
-			"odpt.Station:JR-East.ChuoRapid.Ochanomizu"
+			"odpt.Station:JR-East.ChuoRapid.Ochanomizu",
+			"odpt.Station:JR-East.ChuoSobuLocal.Ochanomizu"
 		],
 		"odpt:stationTitle": {
 			"ko": "오차노미즈",
 			"zh": "御荼之水"
 		},
-		"coords": [139.7645, 35.6997],
 		"angle": -78,
-		"span": [0, 1],
+		"span": [-1, 0],
 		"labelAngle": 105
+	}, {
+		"name": "yotsuya",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Yotsuya",
+			"odpt.Station:JR-East.ChuoSobuLocal.Yotsuya"
+		],
+		"odpt:stationTitle": {
+			"ko": "요쓰야",
+			"zh": "四谷"
+		},
+		"angle": -161,
+		"span": [-1, 0]
+	}, {
+		"name": "nakano",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Nakano",
+			"odpt.Station:JR-East.ChuoSobuLocal.Nakano"
+		],
+		"odpt:stationTitle": {
+			"ko": "나카노",
+			"zh": "中野"
+		},
+		"angle": -92,
+		"span": [-1, 0]
+	}, {
+		"name": "koenji",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Koenji",
+			"odpt.Station:JR-East.ChuoSobuLocal.Koenji"
+		],
+		"odpt:stationTitle": {
+			"ko": "고엔지",
+			"zh": "高圓寺"
+		},
+		"angle": -92,
+		"span": [-1, 0]
+	}, {
+		"name": "asagaya",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Asagaya",
+			"odpt.Station:JR-East.ChuoSobuLocal.Asagaya"
+		],
+		"odpt:stationTitle": {
+			"ko": "아사가야",
+			"zh": "阿佐谷"
+		},
+		"angle": -92,
+		"span": [-1, 0]
+	}, {
+		"name": "ogikubo",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Ogikubo",
+			"odpt.Station:JR-East.ChuoSobuLocal.Ogikubo"
+		],
+		"odpt:stationTitle": {
+			"ko": "오기쿠보",
+			"zh": "荻窪"
+		},
+		"angle": -92,
+		"span": [-1, 0]
+	}, {
+		"name": "nishi-ogikubo",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.NishiOgikubo",
+			"odpt.Station:JR-East.ChuoSobuLocal.NishiOgikubo"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시오기쿠보",
+			"zh": "西荻窪"
+		},
+		"angle": -92,
+		"span": [-1, 0]
+	}, {
+		"name": "kichijoji",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Kichijoji",
+			"odpt.Station:JR-East.ChuoSobuLocal.Kichijoji"
+		],
+		"odpt:stationTitle": {
+			"ko": "기치조지",
+			"zh": "吉祥寺"
+		},
+		"angle": -92,
+		"span": [-1, 0]
+	}, {
+		"name": "mitaka",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Mitaka",
+			"odpt.Station:JR-East.ChuoSobuLocal.Mitaka"
+		],
+		"odpt:stationTitle": {
+			"ko": "미타카",
+			"zh": "三鷹"
+		},
+		"angle": -92,
+		"span": [-1, 0]
+	}, {
+		"name": "musashi-sakai",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.MusashiSakai"
+		],
+		"odpt:stationTitle": {
+			"ko": "무사시사카이",
+			"zh": "武藏境"
+		}
+	}, {
+		"name": "higashi-koganei",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.HigashiKoganei"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시코가네이",
+			"zh": "東小金井"
+		}
+	}, {
+		"name": "musashi-koganei",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.MusashiKoganei"
+		],
+		"odpt:stationTitle": {
+			"ko": "무사시코가네이",
+			"zh": "武藏小金井"
+		}
+	}, {
+		"name": "kokubunji",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Kokubunji"
+		],
+		"odpt:stationTitle": {
+			"ko": "고쿠분지",
+			"zh": "國分寺"
+		}
+	}, {
+		"name": "nishi-kokubunji",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.NishiKokubunji"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시코쿠분지",
+			"zh": "西國分寺"
+		}
+	}, {
+		"name": "kunitachi",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Kunitachi"
+		],
+		"odpt:stationTitle": {
+			"ko": "구니타치",
+			"zh": "國立"
+		}
+	}, {
+		"name": "tachikawa",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Tachikawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "다치카와",
+			"zh": "立川"
+		}
+	}, {
+		"name": "hino",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Hino"
+		],
+		"odpt:stationTitle": {
+			"ko": "히노",
+			"zh": "日野"
+		}
+	}, {
+		"name": "toyoda",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Toyoda"
+		],
+		"odpt:stationTitle": {
+			"ko": "도요다",
+			"zh": "豐田"
+		}
+	}, {
+		"name": "hachioji",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Hachioji"
+		],
+		"odpt:stationTitle": {
+			"ko": "하치오지",
+			"zh": "八王子"
+		}
+	}, {
+		"name": "nishi-hachioji",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.NishiHachioji"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시하치오지",
+			"zh": "西八王子"
+		}
+	}, {
+		"name": "takao",
+		"aliases": [
+			"odpt.Station:JR-East.ChuoRapid.Takao"
+		],
+		"odpt:stationTitle": {
+			"ko": "다카오",
+			"zh": "高尾"
+		}
 	}, {
 		"name": "chiba",
 		"aliases": [
@@ -394,8 +568,7 @@
 		"odpt:stationTitle": {
 			"ko": "지바",
 			"zh": "千葉"
-		},
-		"coords": [140.1130, 35.6130]
+		}
 	}, {
 		"name": "nishi-chiba",
 		"aliases": [
@@ -404,8 +577,7 @@
 		"odpt:stationTitle": {
 			"ko": "니시치바",
 			"zh": "西千葉"
-		},
-		"coords": [140.1035, 35.6223]
+		}
 	}, {
 		"name": "inage",
 		"aliases": [
@@ -414,8 +586,7 @@
 		"odpt:stationTitle": {
 			"ko": "이나게",
 			"zh": "稻毛"
-		},
-		"coords": [140.0925, 35.6371]
+		}
 	}, {
 		"name": "shin-kemigawa",
 		"aliases": [
@@ -424,8 +595,7 @@
 		"odpt:stationTitle": {
 			"ko": "신케미가와",
 			"zh": "新檢見川"
-		},
-		"coords": [140.0731, 35.6518]
+		}
 	}, {
 		"name": "makuhari",
 		"aliases": [
@@ -434,8 +604,7 @@
 		"odpt:stationTitle": {
 			"ko": "마쿠하리",
 			"zh": "幕張"
-		},
-		"coords": [140.0579, 35.6594]
+		}
 	}, {
 		"name": "makuharihongo",
 		"aliases": [
@@ -444,8 +613,7 @@
 		"odpt:stationTitle": {
 			"ko": "마쿠하리혼고",
 			"zh": "幕張本鄉"
-		},
-		"coords": [140.0421, 35.6727]
+		}
 	}, {
 		"name": "tsudanuma",
 		"aliases": [
@@ -454,8 +622,7 @@
 		"odpt:stationTitle": {
 			"ko": "쓰다누마",
 			"zh": "津田沼"
-		},
-		"coords": [140.0200, 35.6914]
+		}
 	}, {
 		"name": "higashi-funabashi",
 		"aliases": [
@@ -464,8 +631,7 @@
 		"odpt:stationTitle": {
 			"ko": "히가시후나바시",
 			"zh": "東船橋"
-		},
-		"coords": [140.0041, 35.6998]
+		}
 	}, {
 		"name": "funabashi",
 		"aliases": [
@@ -474,8 +640,7 @@
 		"odpt:stationTitle": {
 			"ko": "후나바시",
 			"zh": "船橋"
-		},
-		"coords": [139.9849, 35.7017]
+		}
 	}, {
 		"name": "nishi-funabashi",
 		"aliases": [
@@ -484,8 +649,7 @@
 		"odpt:stationTitle": {
 			"ko": "니시후나바시",
 			"zh": "西船橋"
-		},
-		"coords": [139.9595, 35.7072]
+		}
 	}, {
 		"name": "shimosa-nakayama",
 		"aliases": [
@@ -494,8 +658,7 @@
 		"odpt:stationTitle": {
 			"ko": "시모사나카야마",
 			"zh": "下總中山"
-		},
-		"coords": [139.9429, 35.7144]
+		}
 	}, {
 		"name": "moto-yawata",
 		"aliases": [
@@ -504,8 +667,7 @@
 		"odpt:stationTitle": {
 			"ko": "모토야와타",
 			"zh": "本八幡"
-		},
-		"coords": [139.9273, 35.7209]
+		}
 	}, {
 		"name": "ichikawa",
 		"aliases": [
@@ -514,8 +676,7 @@
 		"odpt:stationTitle": {
 			"ko": "이치카와",
 			"zh": "市川"
-		},
-		"coords": [139.9080, 35.7289]
+		}
 	}, {
 		"name": "koiwa",
 		"aliases": [
@@ -524,8 +685,7 @@
 		"odpt:stationTitle": {
 			"ko": "고이와",
 			"zh": "小岩"
-		},
-		"coords": [139.8818, 35.7332]
+		}
 	}, {
 		"name": "shin-koiwa",
 		"aliases": [
@@ -534,8 +694,7 @@
 		"odpt:stationTitle": {
 			"ko": "신코이와",
 			"zh": "新小岩"
-		},
-		"coords": [139.8581, 35.7170]
+		}
 	}, {
 		"name": "hirai",
 		"aliases": [
@@ -544,8 +703,7 @@
 		"odpt:stationTitle": {
 			"ko": "히라이",
 			"zh": "平井"
-		},
-		"coords": [139.8425, 35.7064]
+		}
 	}, {
 		"name": "kameido",
 		"aliases": [
@@ -554,8 +712,7 @@
 		"odpt:stationTitle": {
 			"ko": "가메이도",
 			"zh": "龜戶"
-		},
-		"coords": [139.8268, 35.6973]
+		}
 	}, {
 		"name": "kinshicho",
 		"aliases": [
@@ -564,8 +721,7 @@
 		"odpt:stationTitle": {
 			"ko": "긴시초",
 			"zh": "錦糸町"
-		},
-		"coords": [139.8142, 35.6967]
+		}
 	}, {
 		"name": "ryogoku",
 		"aliases": [
@@ -574,8 +730,7 @@
 		"odpt:stationTitle": {
 			"ko": "료고쿠",
 			"zh": "兩國"
-		},
-		"coords": [139.7931, 35.6958]
+		}
 	}, {
 		"name": "asakusabashi",
 		"aliases": [
@@ -584,8 +739,7 @@
 		"odpt:stationTitle": {
 			"ko": "아사쿠사바시",
 			"zh": "淺草橋"
-		},
-		"coords": [139.7846, 35.6974]
+		}
 	}, {
 		"name": "suidobashi",
 		"aliases": [
@@ -595,7 +749,6 @@
 			"ko": "스이도바시",
 			"zh": "水道橋"
 		},
-		"coords": [139.7536, 35.7020],
 		"labelAngle": -90
 	}, {
 		"name": "iidabashi",
@@ -606,7 +759,6 @@
 			"ko": "이다바시",
 			"zh": "飯田橋"
 		},
-		"coords": [139.7445, 35.7015],
 		"labelAngle": -165
 	}, {
 		"name": "ichigaya",
@@ -617,21 +769,7 @@
 			"ko": "이치가야",
 			"zh": "市谷"
 		},
-		"coords": [139.7359, 35.6915],
 		"labelAngle": 15
-	}, {
-		"name": "yotsuya",
-		"aliases": [
-			"odpt.Station:JR-East.ChuoSobuLocal.Yotsuya",
-			"odpt.Station:JR-East.ChuoRapid.Yotsuya"
-		],
-		"odpt:stationTitle": {
-			"ko": "요쓰야",
-			"zh": "四谷"
-		},
-		"coords": [139.7305, 35.6857],
-		"angle": -161,
-		"span": [0, 1]
 	}, {
 		"name": "shinanomachi",
 		"aliases": [
@@ -641,7 +779,6 @@
 			"ko": "시나노마치",
 			"zh": "信濃町"
 		},
-		"coords": [139.7205, 35.6801],
 		"labelAngle": 90
 	}, {
 		"name": "sendagaya",
@@ -652,7 +789,6 @@
 			"ko": "센다가야",
 			"zh": "千駄谷"
 		},
-		"coords": [139.7113, 35.6813],
 		"labelAngle": -75
 	}, {
 		"name": "okubo",
@@ -662,8 +798,7 @@
 		"odpt:stationTitle": {
 			"ko": "오쿠보",
 			"zh": "大久保"
-		},
-		"coords": [139.6975, 35.7006]
+		}
 	}, {
 		"name": "higashi-nakano",
 		"aliases": [
@@ -672,99 +807,7 @@
 		"odpt:stationTitle": {
 			"ko": "히가시나카노",
 			"zh": "東中野"
-		},
-		"coords": [139.6848, 35.7063]
-	}, {
-		"name": "nakano",
-		"aliases": [
-			"odpt.Station:JR-East.ChuoSobuLocal.Nakano",
-			"odpt.Station:JR-East.ChuoRapid.Nakano"
-		],
-		"odpt:stationTitle": {
-			"ko": "나카노",
-			"zh": "中野"
-		},
-		"coords": [139.6656, 35.7057],
-		"angle": -92,
-		"span": [0, 1]
-	}, {
-		"name": "koenji",
-		"aliases": [
-			"odpt.Station:JR-East.ChuoSobuLocal.Koenji",
-			"odpt.Station:JR-East.ChuoRapid.Koenji"
-		],
-		"odpt:stationTitle": {
-			"ko": "고엔지",
-			"zh": "高圓寺"
-		},
-		"coords": [139.6498, 35.7053],
-		"angle": -92,
-		"span": [0, 1]
-	}, {
-		"name": "asagaya",
-		"aliases": [
-			"odpt.Station:JR-East.ChuoSobuLocal.Asagaya",
-			"odpt.Station:JR-East.ChuoRapid.Asagaya"
-		],
-		"odpt:stationTitle": {
-			"ko": "아사가야",
-			"zh": "阿佐谷"
-		},
-		"coords": [139.6364, 35.7049],
-		"angle": -92,
-		"span": [0, 1]
-	}, {
-		"name": "ogikubo",
-		"aliases": [
-			"odpt.Station:JR-East.ChuoSobuLocal.Ogikubo",
-			"odpt.Station:JR-East.ChuoRapid.Ogikubo"
-		],
-		"odpt:stationTitle": {
-			"ko": "오기쿠보",
-			"zh": "荻窪"
-		},
-		"coords": [139.6202, 35.7044],
-		"angle": -92,
-		"span": [0, 1]
-	}, {
-		"name": "nishi-ogikubo",
-		"aliases": [
-			"odpt.Station:JR-East.ChuoSobuLocal.NishiOgikubo",
-			"odpt.Station:JR-East.ChuoRapid.NishiOgikubo"
-		],
-		"odpt:stationTitle": {
-			"ko": "니시오기쿠보",
-			"zh": "西荻窪"
-		},
-		"coords": [139.5995, 35.7038],
-		"angle": -92,
-		"span": [0, 1]
-	}, {
-		"name": "kichijoji",
-		"aliases": [
-			"odpt.Station:JR-East.ChuoSobuLocal.Kichijoji",
-			"odpt.Station:JR-East.ChuoRapid.Kichijoji"
-		],
-		"odpt:stationTitle": {
-			"ko": "기치조지",
-			"zh": "吉祥寺"
-		},
-		"coords": [139.5799, 35.7032],
-		"angle": -92,
-		"span": [0, 1]
-	}, {
-		"name": "mitaka",
-		"aliases": [
-			"odpt.Station:JR-East.ChuoSobuLocal.Mitaka",
-			"odpt.Station:JR-East.ChuoRapid.Mitaka"
-		],
-		"odpt:stationTitle": {
-			"ko": "미타카",
-			"zh": "三鷹"
-		},
-		"coords": [139.5609, 35.7027],
-		"angle": -92,
-		"span": [0, 1]
+		}
 	}, {
 		"name": "omiya",
 		"aliases": [
@@ -773,8 +816,7 @@
 		"odpt:stationTitle": {
 			"ko": "오미야",
 			"zh": "大宮"
-		},
-		"coords": [139.6247, 35.9065]
+		}
 	}, {
 		"name": "saitama-shintoshin",
 		"aliases": [
@@ -783,8 +825,7 @@
 		"odpt:stationTitle": {
 			"ko": "사이타마 신도심",
 			"zh": "埼玉新都心"
-		},
-		"coords": [139.6341, 35.8936]
+		}
 	}, {
 		"name": "yono",
 		"aliases": [
@@ -793,8 +834,7 @@
 		"odpt:stationTitle": {
 			"ko": "요노",
 			"zh": "與野"
-		},
-		"coords": [139.6391, 35.8844]
+		}
 	}, {
 		"name": "kita-urawa",
 		"aliases": [
@@ -803,8 +843,7 @@
 		"odpt:stationTitle": {
 			"ko": "기타우라와",
 			"zh": "北浦和"
-		},
-		"coords": [139.6461, 35.8722]
+		}
 	}, {
 		"name": "urawa",
 		"aliases": [
@@ -813,8 +852,7 @@
 		"odpt:stationTitle": {
 			"ko": "우라와",
 			"zh": "浦和"
-		},
-		"coords": [139.6573, 35.8591]
+		}
 	}, {
 		"name": "minami-urawa",
 		"aliases": [
@@ -823,8 +861,7 @@
 		"odpt:stationTitle": {
 			"ko": "미나미우라와",
 			"zh": "南浦和"
-		},
-		"coords": [139.6691, 35.8477]
+		}
 	}, {
 		"name": "warabi",
 		"aliases": [
@@ -833,8 +870,7 @@
 		"odpt:stationTitle": {
 			"ko": "와라비",
 			"zh": "蕨"
-		},
-		"coords": [139.6905, 35.8280]
+		}
 	}, {
 		"name": "nishi-kawaguchi",
 		"aliases": [
@@ -843,8 +879,7 @@
 		"odpt:stationTitle": {
 			"ko": "니시카와구치",
 			"zh": "西川口"
-		},
-		"coords": [139.7045, 35.8156]
+		}
 	}, {
 		"name": "kawaguchi",
 		"aliases": [
@@ -853,8 +888,7 @@
 		"odpt:stationTitle": {
 			"ko": "가와구치",
 			"zh": "川口"
-		},
-		"coords": [139.7175, 35.8019]
+		}
 	}, {
 		"name": "akabane",
 		"aliases": [
@@ -863,8 +897,7 @@
 		"odpt:stationTitle": {
 			"ko": "아카바네",
 			"zh": "赤羽"
-		},
-		"coords": [139.7212, 35.7779]
+		}
 	}, {
 		"name": "higashi-jujo",
 		"aliases": [
@@ -873,8 +906,7 @@
 		"odpt:stationTitle": {
 			"ko": "히가시주조",
 			"zh": "東十條"
-		},
-		"coords": [139.7269, 35.7639]
+		}
 	}, {
 		"name": "oji",
 		"aliases": [
@@ -883,8 +915,7 @@
 		"odpt:stationTitle": {
 			"ko": "오지",
 			"zh": "王子"
-		},
-		"coords": [139.7382, 35.7524]
+		}
 	}, {
 		"name": "kaminakazato",
 		"aliases": [
@@ -893,8 +924,7 @@
 		"odpt:stationTitle": {
 			"ko": "가미나카자토",
 			"zh": "上中里"
-		},
-		"coords": [139.7459, 35.7472]
+		}
 	}, {
 		"name": "oimachi",
 		"aliases": [
@@ -903,8 +933,7 @@
 		"odpt:stationTitle": {
 			"ko": "오이마치",
 			"zh": "大井町"
-		},
-		"coords": [139.7349, 35.6063]
+		}
 	}, {
 		"name": "omori",
 		"aliases": [
@@ -913,8 +942,7 @@
 		"odpt:stationTitle": {
 			"ko": "오모리",
 			"zh": "大森"
-		},
-		"coords": [139.7281, 35.5889]
+		}
 	}, {
 		"name": "kamata",
 		"aliases": [
@@ -923,8 +951,7 @@
 		"odpt:stationTitle": {
 			"ko": "가마타",
 			"zh": "蒲田"
-		},
-		"coords": [139.7160, 35.5625]
+		}
 	}, {
 		"name": "kawasaki",
 		"aliases": [
@@ -933,8 +960,7 @@
 		"odpt:stationTitle": {
 			"ko": "가와사키",
 			"zh": "川崎"
-		},
-		"coords": [139.6969, 35.5316]
+		}
 	}, {
 		"name": "tsurumi",
 		"aliases": [
@@ -943,8 +969,7 @@
 		"odpt:stationTitle": {
 			"ko": "쓰루미",
 			"zh": "鶴見"
-		},
-		"coords": [139.6763, 35.5087]
+		}
 	}, {
 		"name": "shin-koyasu",
 		"aliases": [
@@ -953,8 +978,7 @@
 		"odpt:stationTitle": {
 			"ko": "신코야스",
 			"zh": "新子安"
-		},
-		"coords": [139.6539, 35.4867]
+		}
 	}, {
 		"name": "higashi-kanagawa",
 		"aliases": [
@@ -963,8 +987,7 @@
 		"odpt:stationTitle": {
 			"ko": "히가시카나가와",
 			"zh": "東神奈川"
-		},
-		"coords": [139.6332, 35.4779]
+		}
 	}, {
 		"name": "yokohama",
 		"aliases": [
@@ -973,8 +996,7 @@
 		"odpt:stationTitle": {
 			"ko": "요코하마",
 			"zh": "橫濱"
-		},
-		"coords": [139.6226, 35.4658]
+		}
 	}, {
 		"name": "sakuragicho",
 		"aliases": [
@@ -983,8 +1005,7 @@
 		"odpt:stationTitle": {
 			"ko": "사쿠라기초",
 			"zh": "櫻木町"
-		},
-		"coords": [139.6310, 35.4510]
+		}
 	}, {
 		"name": "kannai",
 		"aliases": [
@@ -993,8 +1014,7 @@
 		"odpt:stationTitle": {
 			"ko": "간나이",
 			"zh": "關內"
-		},
-		"coords": [139.6360, 35.4441]
+		}
 	}, {
 		"name": "ishikawacho",
 		"aliases": [
@@ -1003,8 +1023,7 @@
 		"odpt:stationTitle": {
 			"ko": "이시카와초",
 			"zh": "石川町"
-		},
-		"coords": [139.6430, 35.4388]
+		}
 	}, {
 		"name": "yamate",
 		"aliases": [
@@ -1013,8 +1032,7 @@
 		"odpt:stationTitle": {
 			"ko": "야마테",
 			"zh": "山手"
-		},
-		"coords": [139.6465, 35.4268]
+		}
 	}, {
 		"name": "negishi",
 		"aliases": [
@@ -1023,8 +1041,7 @@
 		"odpt:stationTitle": {
 			"ko": "네기시",
 			"zh": "根岸"
-		},
-		"coords": [139.6360, 35.4159]
+		}
 	}, {
 		"name": "isogo",
 		"aliases": [
@@ -1033,8 +1050,7 @@
 		"odpt:stationTitle": {
 			"ko": "이소고",
 			"zh": "磯子"
-		},
-		"coords": [139.6184, 35.4005]
+		}
 	}, {
 		"name": "shin-sugita",
 		"aliases": [
@@ -1043,8 +1059,7 @@
 		"odpt:stationTitle": {
 			"ko": "신스기타",
 			"zh": "新杉田"
-		},
-		"coords": [139.6195, 35.3866]
+		}
 	}, {
 		"name": "yokodai",
 		"aliases": [
@@ -1053,8 +1068,7 @@
 		"odpt:stationTitle": {
 			"ko": "요코다이",
 			"zh": "洋光台"
-		},
-		"coords": [139.5968, 35.3788]
+		}
 	}, {
 		"name": "konandai",
 		"aliases": [
@@ -1063,8 +1077,7 @@
 		"odpt:stationTitle": {
 			"ko": "고난다이",
 			"zh": "港南台"
-		},
-		"coords": [139.5768, 35.3753]
+		}
 	}, {
 		"name": "hongodai",
 		"aliases": [
@@ -1073,8 +1086,7 @@
 		"odpt:stationTitle": {
 			"ko": "혼고다이",
 			"zh": "本郷台"
-		},
-		"coords": [139.5498, 35.3678]
+		}
 	}, {
 		"name": "ofuna",
 		"aliases": [
@@ -1083,8 +1095,7 @@
 		"odpt:stationTitle": {
 			"ko": "오후나",
 			"zh": "大船"
-		},
-		"coords": [139.5315, 35.3539]
+		}
 	}, {
 		"name": "mikawashima",
 		"aliases": [

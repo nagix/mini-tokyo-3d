@@ -265,9 +265,9 @@ railwayData.railways.forEach(function(railway) {
 	var railwayRef = railwayLookup[id];
 	var stationOrder = railwayRef['odpt:stationOrder'];
 
-	if (id === 'odpt.Railway:JR-East.ChuoRapid') {
-		stationOrder = stationOrder.slice(0, 12);
-	}
+//	if (id === 'odpt.Railway:JR-East.ChuoRapid') {
+//		stationOrder = stationOrder.slice(0, 12);
+//	}
 	railway.stations = stationOrder.map(function(station) {
 		return station['odpt:station'];
 	});
@@ -360,10 +360,15 @@ function generateRailwayLayers() {
 
 			// Set station offsets
 			var stationOffsets = line.stationOffsets = line.stationOffsets || {};
-			stationOffsets[zoom] = line.stations.map(function(station) {
+			stationOffsets[zoom] = line.stations.map(function(station, i, stations) {
 				var stationRef = stationLookup[station];
 				var point = turf.nearestPointOnLine(railwayFeature, [stationRef['geo:long'], stationRef['geo:lat']]);
-				return point.properties.location;
+
+				// If the line has a loop, the last offset must be set explicitly
+				// Otherwise, the location of the last station goes wrong
+				return line.loop && i === stations.length - 1 ?
+					turf.length(railwayFeature) :
+					point.properties.location;
 			});
 
 			if (line.altitude < 0) {
