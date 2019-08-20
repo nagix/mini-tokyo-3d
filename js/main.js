@@ -52,12 +52,13 @@ var modelScale = 1 / 2 / Math.PI / 6378137 / Math.cos(35.6814 * Math.PI / 180);
 var lang = getLang();
 var today = new Date();
 var isUndergroundVisible = false;
+var isAnimating = false;
 var isRealtime = true;
 var trackingMode = 'helicopter';
 var opacityStore = {};
 var trainLookup = {};
 var stationLookup, railwayLookup, lineLookup, railDirectionLookup, trainTypeLookup;
-var trackedTrain, markedTrain, trainLastRefresh;
+var trackedTrain, markedTrain, trainLastRefresh, trackingBaseBearing;
 
 // Replace MapboxLayer.render to support underground rendering
 var render = deck.MapboxLayer.prototype.render;
@@ -674,6 +675,7 @@ map.once('styledata', function () {
 				this.classList.remove('mapbox-ctrl-track-train');
 				this.classList.add('mapbox-ctrl-track-helicopter');
 			}
+			startAnimation();
 			event.stopPropagation();
 		}
 	}), 'top-right');
@@ -737,6 +739,7 @@ map.once('styledata', function () {
 	map.on('click', function(e) {
 		trackedTrain = trainLayers.pickObject(e.point);
 		if (trackedTrain) {
+			startAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.add('mapbox-ctrl-track-active');
 		} else {
@@ -913,7 +916,7 @@ map.once('styledata', function () {
 	}
 
 	function refresh(timestamp) {
-		var userData;
+		var userData, bearing;
 
 		if (isRealtime) {
 			refreshTrains(timestamp);
@@ -922,21 +925,16 @@ map.once('styledata', function () {
 				popup.setLngLat(userData.lngLat).setHTML(userData.description);
 			}
 		}
-		if (trackedTrain) {
+		if (trackedTrain && !isAnimating) {
 			userData = trackedTrain.userData;
-			if (trackingMode === 'helicopter') {
-				map.easeTo({
-					center: userData.lngLat,
-					bearing: (timestamp / 100) % 360,
-					duration: 0
-				});
-			} else {
-				map.easeTo({
-					center: userData.lngLat,
-					bearing: userData.bearing,
-					duration: 0
-				});
-			}
+			bearing = map.getBearing();
+			map.easeTo({
+				center: userData.lngLat,
+				bearing: trackingMode === 'helicopter' ?
+					(trackingBaseBearing + timestamp / 100) % 360 :
+					bearing + ((userData.bearing - bearing + 540) % 360 - 180) * .02,
+				duration: 0
+			});
 		}
 		requestAnimationFrame(refresh);
 	}
@@ -987,6 +985,46 @@ map.once('styledata', function () {
 			});
 			updateDelays();
 		}
+	}
+
+	function startAnimation() {
+		var t2 = 0;
+		var start;
+		var frameRefresh = function() {
+			var now = performance.now();
+			var t, t1, factor, userData, lngLat, lng, lat, center, bearing;
+
+			start = start || now;
+			t = Math.min((now - start) / 1000, 1);
+			t1 = -((t - 1) * (t - 1) * (t - 1) * (t - 1) - 1);
+
+			factor = (1 - t1) / (1 - t2);
+			userData = trackedTrain.userData;
+			lngLat = userData.lngLat;
+			lng = lngLat[0];
+			lat = lngLat[1];
+			center = map.getCenter();
+			bearing = userData.bearing;
+
+			map.easeTo({
+				center: [lng - (lng - center.lng) * factor, lat - (lat - center.lat) * factor],
+				bearing: trackingMode === 'helicopter' ?
+					(trackingBaseBearing + now / 100) % 360 :
+					bearing - ((bearing - map.getBearing() + 540) % 360 - 180) * factor,
+				duration: 0
+			});
+			t2 = t1;
+
+			if (t < 1) {
+				requestAnimationFrame(frameRefresh);
+			} else {
+				isAnimating = false;
+			}
+		};
+
+		trackingBaseBearing = map.getBearing() - performance.now() / 100;
+		isAnimating = true;
+		requestAnimationFrame(frameRefresh);
 	}
 
 	function getLocalizedRailwayTitle(railway) {
