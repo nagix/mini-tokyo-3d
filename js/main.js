@@ -229,14 +229,16 @@ Promise.all([
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.JobanRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Ginza&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Marunouchi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.MarunouchiBranch&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro&' + API_TOKEN)
 ]).then(function([
 	dict, railwayData, stationData, trainData, railwayRefData, railDirectionRefData, stationRefData1, stationRefData2,
-	timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, trainTypeRefData
+	timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, trainTypeRefData
 ]) {
 
 var stationRefData = stationRefData1.concat(stationRefData2);
-var timetableRefData = timetableRefData1.concat(timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6);
+var timetableRefData = timetableRefData1.concat(timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8);
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -383,18 +385,16 @@ function generateRailwayLayers() {
 		var stationsUnderground = [];
 		var stationsOverground = [];
 		stationData.stations.forEach(function(station) {
-			var stationRef = stationLookup[station.aliases[0]];
-			var line = lineLookup[stationRef['odpt:railway']];
-			var point = turf.nearestPointOnLine(line.features[zoom], [stationRef['geo:long'], stationRef['geo:lat']]);
-			var bearing = getPointAndBearing(line.features[zoom], point.properties.location, 1).bearing;
-			var span = station.span;
-			var size = Math.pow(2, 14 - zoom) * .1;
-			var feature = turf.transformRotate(turf.buffer(span ? turf.lineString([
-				turf.getCoord(turf.transformTranslate(point, span[0] * size, 90)),
-				turf.getCoord(turf.transformTranslate(point, span[1] * size, 90))
-			]) : point, size), bearing, {pivot: turf.getCoord(point), mutate: true});
-
-			feature.properties = {outlineColor: '#000000', width: 4, color: '#FFFFFF'};
+			var coords = station.aliases.map(function(s) {
+				var stationRef = stationLookup[s];
+				var line = lineLookup[stationRef['odpt:railway']];
+				return turf.getCoord(turf.nearestPointOnLine(line.features[zoom], [stationRef['geo:long'], stationRef['geo:lat']]));
+			});
+			var properties = {outlineColor: '#000000', width: 4, color: '#FFFFFF'};
+			var feature = turf.buffer(
+				coords.length === 1 ? turf.point(coords[0], properties) : turf.lineString(coords, properties),
+				Math.pow(2, 14 - zoom) * .1
+			);
 
 			if (station.altitude < 0) {
 				setAltitude(feature, -Math.pow(2, 14 - zoom) * 100);
@@ -746,6 +746,10 @@ map.once('styledata', function () {
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.remove('mapbox-ctrl-track-active');
 		}
+
+		/* For development
+		console.log(e.lngLat);
+		*/
 	});
 
 	var hoveredMarkerId;

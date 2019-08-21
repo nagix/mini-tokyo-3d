@@ -63,8 +63,6 @@
 			"ko": "요요기",
 			"zh": "代代木"
 		},
-		"angle": -13,
-		"span": [0, 1],
 		"labelOffset": 8,
 		"labelAngle": -15
 	}, {
@@ -78,8 +76,6 @@
 			"ko": "신주쿠",
 			"zh": "新宿"
 		},
-		"angle": -10,
-		"span": [0, 2],
 		"labelOffset": 8
 	}, {
 		"name": "shin-okubo",
@@ -157,8 +153,6 @@
 			"ko": "다바타",
 			"zh": "田端"
 		},
-		"angle": 136,
-		"span": [-1, 0],
 		"labelOffset": 8,
 		"labelAngle": -15
 	}, {
@@ -171,8 +165,6 @@
 			"ko": "니시닛포리",
 			"zh": "西日暮里"
 		},
-		"angle": 146,
-		"span": [-1, 0],
 		"labelOffset": 8,
 		"labelAngle": -15
 	}, {
@@ -186,8 +178,6 @@
 			"ko": "닛포리",
 			"zh": "日暮里"
 		},
-		"angle": 138,
-		"span": [-2, 0],
 		"labelOffset": 8,
 		"labelAngle": -15
 	}, {
@@ -200,8 +190,6 @@
 			"ko": "우구이스다니",
 			"zh": "鶯谷"
 		},
-		"angle": 142,
-		"span": [-1, 0],
 		"labelOffset": 8
 	}, {
 		"name": "ueno",
@@ -214,8 +202,6 @@
 			"ko": "우에노",
 			"zh": "上野"
 		},
-		"angle": -146,
-		"span": [-2, 0],
 		"labelOffset": 8,
 		"labelAngle": 15
 	}, {
@@ -228,22 +214,18 @@
 			"ko": "오카치마치",
 			"zh": "御徒町"
 		},
-		"angle": -172,
-		"span": [-1, 0],
 		"labelOffset": 8
 	}, {
 		"name": "akihabara",
 		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Akihabara",
 			"odpt.Station:JR-East.Yamanote.Akihabara",
-			"odpt.Station:JR-East.ChuoSobuLocal.Akihabara",
-			"odpt.Station:JR-East.KeihinTohokuNegishi.Akihabara"
+			"odpt.Station:JR-East.ChuoSobuLocal.Akihabara"
 		],
 		"odpt:stationTitle": {
 			"ko": "아키하바라",
 			"zh": "秋葉原"
 		},
-		"angle": -172,
-		"span": [-1, 0],
 		"labelOffset": 8
 	}, {
 		"name": "kanda",
@@ -256,8 +238,6 @@
 			"ko": "간다",
 			"zh": "神田"
 		},
-		"angle": -162,
-		"span": [-1, 1],
 		"labelOffset": 8
 	}, {
 		"name": "tokyo",
@@ -271,8 +251,6 @@
 			"ko": "도쿄",
 			"zh": "東京"
 		},
-		"angle": -163,
-		"span": [-2, 1],
 		"labelOffset": 8
 	}, {
 		"name": "yurakucho",
@@ -284,8 +262,6 @@
 			"ko": "유라쿠초",
 			"zh": "有樂町"
 		},
-		"angle": -134,
-		"span": [-1, 0],
 		"labelOffset": 8,
 		"labelAngle": 15
 	}, {
@@ -299,8 +275,6 @@
 			"ko": "신바시",
 			"zh": "新橋"
 		},
-		"angle": 177,
-		"span": [-2, 0],
 		"labelOffset": 8
 	}, {
 		"name": "hamamatsucho",
@@ -312,8 +286,6 @@
 			"ko": "하마마쓰초",
 			"zh": "濱松町"
 		},
-		"angle": -168,
-		"span": [-1, 0],
 		"labelOffset": 8
 	}, {
 		"name": "tamachi",
@@ -325,8 +297,6 @@
 			"ko": "다마치",
 			"zh": "田町"
 		},
-		"angle": -122,
-		"span": [-1, 0],
 		"labelOffset": 8,
 		"labelAngle": 30
 	}, {
@@ -340,8 +310,6 @@
 			"ko": "시나가와",
 			"zh": "品川"
 		},
-		"angle": 176,
-		"span": [-2, 0],
 		"labelOffset": 8
 	}, {
 		"name": "ochanomizu",
@@ -353,8 +321,6 @@
 			"ko": "오차노미즈",
 			"zh": "御荼之水"
 		},
-		"angle": -78,
-		"span": [-1, 0],
 		"labelAngle": 105
 	}, {
 		"name": "yotsuya",
@@ -365,9 +331,7 @@
 		"odpt:stationTitle": {
 			"ko": "요쓰야",
 			"zh": "四谷"
-		},
-		"angle": -161,
-		"span": [-1, 0]
+		}
 	}, {
 		"name": "nakano",
 		"aliases": [
@@ -377,9 +341,7 @@
 		"odpt:stationTitle": {
 			"ko": "나카노",
 			"zh": "中野"
-		},
-		"angle": -92,
-		"span": [-1, 0]
+		}
 	}, {
 		"name": "koenji",
 		"aliases": [
@@ -389,9 +351,7 @@
 		"odpt:stationTitle": {
 			"ko": "고엔지",
 			"zh": "高圓寺"
-		},
-		"angle": -92,
-		"span": [-1, 0]
+		}
 	}, {
 		"name": "asagaya",
 		"aliases": [
@@ -401,9 +361,7 @@
 		"odpt:stationTitle": {
 			"ko": "아사가야",
 			"zh": "阿佐谷"
-		},
-		"angle": -92,
-		"span": [-1, 0]
+		}
 	}, {
 		"name": "ogikubo",
 		"aliases": [
@@ -413,9 +371,7 @@
 		"odpt:stationTitle": {
 			"ko": "오기쿠보",
 			"zh": "荻窪"
-		},
-		"angle": -92,
-		"span": [-1, 0]
+		}
 	}, {
 		"name": "nishi-ogikubo",
 		"aliases": [
@@ -425,9 +381,7 @@
 		"odpt:stationTitle": {
 			"ko": "니시오기쿠보",
 			"zh": "西荻窪"
-		},
-		"angle": -92,
-		"span": [-1, 0]
+		}
 	}, {
 		"name": "kichijoji",
 		"aliases": [
@@ -437,9 +391,7 @@
 		"odpt:stationTitle": {
 			"ko": "기치조지",
 			"zh": "吉祥寺"
-		},
-		"angle": -92,
-		"span": [-1, 0]
+		}
 	}, {
 		"name": "mitaka",
 		"aliases": [
@@ -449,9 +401,7 @@
 		"odpt:stationTitle": {
 			"ko": "미타카",
 			"zh": "三鷹"
-		},
-		"angle": -92,
-		"span": [-1, 0]
+		}
 	}, {
 		"name": "musashi-sakai",
 		"aliases": [
@@ -1211,7 +1161,8 @@
 	}, {
 		"name": "akasaka-mitsuke",
 		"aliases": [
-			"odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke"
+			"odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke",
+			"odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke"
 		],
 		"odpt:stationTitle": {
 			"ko": "아카사카미쓰케",
@@ -1251,7 +1202,8 @@
 	}, {
 		"name": "ginza",
 		"aliases": [
-			"odpt.Station:TokyoMetro.Ginza.Ginza"
+			"odpt.Station:TokyoMetro.Ginza.Ginza",
+			"odpt.Station:TokyoMetro.Marunouchi.Ginza"
 		],
 		"odpt:stationTitle": {
 			"ko": "긴자",
@@ -1356,6 +1308,267 @@
 		"odpt:stationTitle": {
 			"ko": "아사쿠사",
 			"zh": "淺草"
+		},
+		"altitude": -1
+	}, {
+		"name": "ogikubo-ug",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.Ogikubo"
+		],
+		"odpt:stationTitle": {
+			"ko": "오기쿠보",
+			"zh": "荻窪"
+		},
+		"altitude": -1
+	}, {
+		"name": "minami-asagaya",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.MinamiAsagaya"
+		],
+		"odpt:stationTitle": {
+			"ko": "미나미아사가야",
+			"zh": "南阿佐谷"
+		},
+		"altitude": -1
+	}, {
+		"name": "shin-koenji",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.ShinKoenji"
+		],
+		"odpt:stationTitle": {
+			"ko": "신코엔지",
+			"zh": "新高圓寺"
+		},
+		"altitude": -1
+	}, {
+		"name": "higashi-koenji",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.HigashiKoenji"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시코엔지",
+			"zh": "東高圓寺"
+		},
+		"altitude": -1
+	}, {
+		"name": "shin-nakano",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.ShinNakano"
+		],
+		"odpt:stationTitle": {
+			"ko": "신나카노",
+			"zh": "新中野"
+		},
+		"altitude": -1
+	}, {
+		"name": "nakano-sakaue",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue",
+			"odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue"
+		],
+		"odpt:stationTitle": {
+			"ko": "나카노사카우에",
+			"zh": "中野坂上"
+		},
+		"altitude": -1
+	}, {
+		"name": "nishi-shinjuku",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.NishiShinjuku"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시신주쿠",
+			"zh": "西新宿"
+		},
+		"altitude": -1
+	}, {
+		"name": "shinjuku-ug",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku"
+		],
+		"odpt:stationTitle": {
+			"ko": "신주쿠",
+			"zh": "新宿"
+		},
+		"altitude": -1
+	}, {
+		"name": "shinjuku-sanchome",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome"
+		],
+		"odpt:stationTitle": {
+			"ko": "신주쿠 3초메",
+			"zh": "新宿三丁目"
+		},
+		"altitude": -1
+	}, {
+		"name": "shinjuku-gyoemmae",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.ShinjukuGyoemmae"
+		],
+		"odpt:stationTitle": {
+			"ko": "신주쿠교엔마에",
+			"zh": "新宿御苑前"
+		},
+		"altitude": -1
+	}, {
+		"name": "yotsuya-sanchome",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.YotsuyaSanchome"
+		],
+		"odpt:stationTitle": {
+			"ko": "요쓰야 3초메",
+			"zh": "四谷三丁目"
+		},
+		"altitude": -1
+	}, {
+		"name": "yotsuya-ug",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.Yotsuya"
+		],
+		"odpt:stationTitle": {
+			"ko": "요쓰야",
+			"zh": "四谷"
+		},
+		"altitude": -1
+	}, {
+		"name": "kokkai-gijidomae",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.KokkaiGijidomae"
+		],
+		"odpt:stationTitle": {
+			"ko": "곳카이기지도마에",
+			"zh": "國會議事堂前"
+		},
+		"altitude": -1
+	}, {
+		"name": "kasumigaseki",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.Kasumigaseki"
+		],
+		"odpt:stationTitle": {
+			"ko": "가스미가세키",
+			"zh": "霞關"
+		},
+		"altitude": -1
+	}, {
+		"name": "tokyo-ug",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.Tokyo"
+		],
+		"odpt:stationTitle": {
+			"ko": "도쿄",
+			"zh": "東京"
+		},
+		"altitude": -1
+	}, {
+		"name": "otemachi",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.Otemachi"
+		],
+		"odpt:stationTitle": {
+			"ko": "오테마치",
+			"zh": "大手町"
+		},
+		"altitude": -1
+	}, {
+		"name": "awajicho",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.Awajicho"
+		],
+		"odpt:stationTitle": {
+			"ko": "아와지초",
+			"zh": "淡路町"
+		},
+		"altitude": -1
+	}, {
+		"name": "ochanomizu-ug",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.Ochanomizu"
+		],
+		"odpt:stationTitle": {
+			"ko": "오차노미즈",
+			"zh": "御茶之水"
+		},
+		"altitude": -1
+	}, {
+		"name": "hongo-sanchome",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.HongoSanchome"
+		],
+		"odpt:stationTitle": {
+			"ko": "혼고 3초메",
+			"zh": "本鄉三丁目"
+		},
+		"altitude": -1
+	}, {
+		"name": "korakuen",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.Korakuen"
+		],
+		"odpt:stationTitle": {
+			"ko": "고라쿠엔",
+			"zh": "後樂園"
+		},
+		"altitude": -1
+	}, {
+		"name": "myogadani",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.Myogadani"
+		],
+		"odpt:stationTitle": {
+			"ko": "묘가다니",
+			"zh": "茗荷谷"
+		},
+		"altitude": -1
+	}, {
+		"name": "shin-otsuka",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.ShinOtsuka"
+		],
+		"odpt:stationTitle": {
+			"ko": "신오쓰카",
+			"zh": "新大塚"
+		},
+		"altitude": -1
+	}, {
+		"name": "ikebukuro-ug",
+		"aliases": [
+			"odpt.Station:TokyoMetro.Marunouchi.Ikebukuro"
+		],
+		"odpt:stationTitle": {
+			"ko": "이케부쿠로",
+			"zh": "池袋"
+		},
+		"altitude": -1
+	}, {
+		"name": "honancho",
+		"aliases": [
+			"odpt.Station:TokyoMetro.MarunouchiBranch.Honancho"
+		],
+		"odpt:stationTitle": {
+			"ko": "호난초",
+			"zh": "方南町"
+		},
+		"altitude": -1
+	}, {
+		"name": "nakano-fujimicho",
+		"aliases": [
+			"odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho"
+		],
+		"odpt:stationTitle": {
+			"ko": "나카노후지미초",
+			"zh": "中野富士見町"
+		},
+		"altitude": -1
+	}, {
+		"name": "nakano-shimbashi",
+		"aliases": [
+			"odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi"
+		],
+		"odpt:stationTitle": {
+			"ko": "나카노신바시",
+			"zh": "中野新橋"
 		},
 		"altitude": -1
 	}]
