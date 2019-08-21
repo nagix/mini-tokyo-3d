@@ -439,25 +439,6 @@ var trainLayers = {
 	}
 };
 
-var markerCollection = turf.featureCollection([]);
-
-if (location.search.match(/edit/)) {
-	railwayData.railways.forEach(function(line, i) {
-		line.sublines.forEach(function(subline, j) {
-			(subline.coordinates || []).forEach(function(coord, k) {
-				markerCollection.features.push(turf.point(coord, {
-					lineID: line['owl:sameAs'],
-					line: i,
-					subline: j,
-					index: k
-				}, {
-					id: (i * 1000 + j) * 1000 + k
-				}));
-			});
-		});
-	});
-}
-
 railDirectionLookup = buildLookup(railDirectionRefData);
 
 // Update rail direction lookup dictionary
@@ -576,25 +557,6 @@ map.once('styledata', function () {
 			maxzoom: layer.maxzoom
 		}, 'building-3d');
 	});
-
-	if (location.search.match(/edit/)) {
-		map.addLayer({
-			id: 'markers',
-			type: 'circle',
-			source: {
-				type: 'geojson',
-				data: markerCollection
-			},
-			paint: {
-				'circle-radius': 5,
-				'circle-color': ["case",
-					["boolean", ["feature-state", "hover"], false],
-					'#FF0000',
-					'#000000'
-				]
-			}
-		}, 'building-3d');
-	}
 
 	map.addLayer(trainLayers.og, 'building-3d');
 
@@ -750,72 +712,6 @@ map.once('styledata', function () {
 		/* For development
 		console.log(e.lngLat);
 		*/
-	});
-
-	var hoveredMarkerId;
-	map.on('mouseenter', 'markers', function(e) {
-		map.getCanvas().style.cursor = 'pointer';
-		hoveredMarkerId = e.features[0].id;
-		map.setFeatureState({source: 'markers', id: hoveredMarkerId}, {hover: true});
-	});
-
-	map.on('mousedown', 'markers', function(e) {
-		var properties = e.features[0].properties;
-		var coordinates = railwayData.railways[properties.line].sublines[properties.subline].coordinates;
-		function onMove(e) {
-			var lngLat = e.lngLat;
-			var coord = turf.featureReduce(markerCollection, function(pre, cur) {
-				return cur.id === hoveredMarkerId ? turf.getCoord(cur) : pre;
-			});
-			coord[0] = +lngLat.lng.toFixed(4);
-			coord[1] = +lngLat.lat.toFixed(4);
-			map.getSource('markers').setData(markerCollection);
-		}
-		e.preventDefault();
-		if (e.originalEvent.shiftKey || e.originalEvent.ctrlKey) {
-			var features = markerCollection.features;
-			var index = turf.featureReduce(markerCollection, function(pre, cur, i) {
-				return cur.id === hoveredMarkerId ? i : pre;
-			});
-			if (e.originalEvent.shiftKey) {
-				var lngLat = e.lngLat;
-				var coord = [+lngLat.lng.toFixed(4) + .0003, +lngLat.lat.toFixed(4) + .0003];
-				var point = turf.clone(e.features[0]);
-				turf.getGeom(point).coordinates = coord;
-				coordinates.splice(properties.index, 0, coord);
-				features.splice(index, 0, point);
-			} else {
-				coordinates.splice(properties.index, 1);
-				features.splice(index, 1);
-			}
-			index = 0;
-			turf.featureEach(markerCollection, function(feature) {
-				if (feature.properties.line === properties.line && feature.properties.subline === properties.subline) {
-					feature.properties.index = index;
-					feature.id = (properties.line * 1000 + properties.subline) * 1000 + index;
-					index++;
-				}
-			});
-			map.getSource('markers').setData(markerCollection);
-		} else {
-			map.on('mousemove', onMove);
-		}
-		map.once('mouseup', function(e) {
-			console.log(coordinates.map(function(coord) {
-				return '\t\t\t\t[' + coord[0].toFixed(4) + ', ' + coord[1].toFixed(4) + '],';
-			}).join('\n'));
-			if (!e.originalEvent.shiftKey) {
-				generateRailwayLayers().forEach(function(layer) {
-					map.getSource('railways-og-' + layer.zoom).setData(layer.railwaysOverground);
-				});
-			}
-			map.off('mousemove', onMove);
-		});
-	});
-
-	map.on('mouseleave', 'markers', function(e) {
-		map.getCanvas().style.cursor = '';
-		map.setFeatureState({source: 'markers', id: hoveredMarkerId}, {hover: false});
 	});
 
 	map.on('zoom', function() {
