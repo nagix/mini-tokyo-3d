@@ -287,22 +287,16 @@ function generateRailwayLayers() {
 
 			var railwayFeature = railwayFeatures[zoom] = turf.lineString(concat(sublines.map(function(subline) {
 				var overlap = lineLookup[subline['odpt:railway']];
-				var start, end, startStationRef, endStationRef, stations;
 
 				if (overlap) {
-					start = subline.start;
-					end = subline.end;
-					startStationRef = stationLookup[start];
-					endStationRef = stationLookup[end];
 					subline.feature = lineOffset(turf.lineSlice(
-						[startStationRef['geo:long'], startStationRef['geo:lat']],
-						[endStationRef['geo:long'], endStationRef['geo:lat']],
+						subline.start,
+						subline.end,
 						overlap.features[zoom]
-					), subline.offset * Math.pow(2, 14 - zoom) * .125);
-					stations = overlap.stations;
+					), subline.offset * Math.pow(2, 14 - zoom) * .1235);
 
 					// Rewind if the overlap line is in opposite direction
-					if (stations.indexOf(start) > stations.indexOf(end)) {
+					if (subline.reverse) {
 						turf.getCoords(subline.feature).reverse();
 					}
 				}
@@ -316,31 +310,30 @@ function generateRailwayLayers() {
 					var end = !reverse ? coordinates.length - 1 : 0;
 					var step = !reverse ? 1 : -1;
 					var feature = lineLookup[nextSubline['odpt:railway']].features[zoom];
-					var offset = Math.abs(nextSubline.offset * Math.pow(2, 14 - zoom) * .1);
-					var baseDistance = turf.nearestPointOnLine(feature, coordinates[start]).properties.dist;
-					var j, p1, p2, distance, bearing, lineBearing, shift, angle;
+					var nearestPoint = turf.nearestPointOnLine(feature, coordinates[start]);
+                    var baseOffset = Math.abs(nextSubline.offset * Math.pow(2, 14 - zoom) * .1) - nearestPoint.properties.dist;
+					var bearing = turf.bearing(nearestPoint, coordinates[start]);
+					var baseFeature = turf.lineString(coordinates);
+					var baseLocation = getLocationAlongLine(baseFeature, coordinates[start]);
+					var distances = [];
+					var j, distance, offset;
 
 					for (j = start; j !== end; j += step) {
-						p1 = turf.point(coordinates[j]);
-						p2 = turf.nearestPointOnLine(feature, p1);
-						distance = p2.properties.dist;
-						if (distance >= offset * 4) {
+						distance = Math.abs(getLocationAlongLine(baseFeature, coordinates[j]) - baseLocation);
+						if (distance > 1) {
 							break;
 						}
-						if (distance < baseDistance) {
-							baseDistance = distance;
+						distances[j] = distance;
+					}
+					for (j = start; j !== end; j += step) {
+						if (isNaN(distances[j])) {
+							break;
 						}
-						bearing = turf.bearing(p2, p1);
-						lineBearing = turf.bearing(
-							turf.getCoords(feature)[p2.properties.index],
-							turf.getCoords(feature)[p2.properties.index + 1]
-						);
-						shift = (offset * 4 - distance) / (offset * 4 - baseDistance) * (offset - baseDistance);
-						angle = (bearing - lineBearing + 540) % 360 - 180;
-						coordinates[j] = turf.getCoord(turf.transformTranslate(
-							p1,
-							Math.abs(shift),
-							bearing + (nextSubline.offset * angle * shift < 0 ? 180 : 0)
+                        offset = baseOffset * easeInOutQuad(1 - distances[j] / 1);
+						coordinates[j] = turf.getCoord(turf.destination(
+							coordinates[j],
+							Math.abs(offset),
+							bearing + (offset < 0 ? 180 : 0)
 						));
 					}
 				}
@@ -365,13 +358,12 @@ function generateRailwayLayers() {
 			var stationOffsets = line.stationOffsets = line.stationOffsets || {};
 			stationOffsets[zoom] = line.stations.map(function(station, i, stations) {
 				var stationRef = stationLookup[station];
-				var point = turf.nearestPointOnLine(railwayFeature, [stationRef['geo:long'], stationRef['geo:lat']]);
 
 				// If the line has a loop, the last offset must be set explicitly
 				// Otherwise, the location of the last station goes wrong
 				return line.loop && i === stations.length - 1 ?
 					turf.length(railwayFeature) :
-					point.properties.location;
+					getLocationAlongLine(railwayFeature, [stationRef['geo:long'], stationRef['geo:lat']]);
 			});
 
 			if (line.altitude < 0) {
@@ -1026,11 +1018,16 @@ function getPointAndBearing(line, distance, direction) {
 	};
 }
 
+function getLocationAlongLine(line, point) {
+	var nearestPoint = turf.nearestPointOnLine(line, point);
+	return nearestPoint.properties.location;
+}
+
 // Better version of turf.lineOffset
 function lineOffset(geojson, distance) {
 	var coords = turf.getCoords(geojson);
 	var coordsLen = coords.length;
-	var start = turf.point(coords[0]);
+	var start = coords[0];
 	var startBearing = turf.bearing(start, coords[2] || coords[1]);
 	var end = turf.point(coords[coordsLen - 1]);
 	var endBearing = turf.bearing(coords[coordsLen - 3] || coords[coordsLen - 2], end);
@@ -1042,7 +1039,7 @@ function lineOffset(geojson, distance) {
 	);
 	var polygonLineCoords = turf.getCoords(polygonLine);
 	var length = polygonLineCoords.length;
-	var p0 = turf.nearestPointOnLine(polygonLine, turf.transformTranslate(start, dist, startBearing + 180));
+	var p0 = turf.nearestPointOnLine(polygonLine, turf.destination(start, dist, startBearing + 180));
 	var tempCoords = [];
 	var step = distance > 0 ? -1 : 1;
 	var i;
@@ -1053,8 +1050,8 @@ function lineOffset(geojson, distance) {
 	}
 
 	// Then, slice the line
-	var p1 = turf.nearestPointOnLine(polygonLine, turf.transformTranslate(start, dist, startBearing + bearingOffset));
-	var p2 = turf.nearestPointOnLine(polygonLine, turf.transformTranslate(end, dist, endBearing + bearingOffset));
+	var p1 = turf.nearestPointOnLine(polygonLine, turf.destination(start, dist, startBearing + bearingOffset));
+	var p2 = turf.nearestPointOnLine(polygonLine, turf.destination(end, dist, endBearing + bearingOffset));
 
 	return turf.lineSlice(p1, p2, turf.lineString(tempCoords));
 }
@@ -1114,6 +1111,13 @@ function delay(callback, duration) {
 	return function() {
 		cancelAnimationFrame(requestID);
 	};
+}
+
+function easeInOutQuad(t) {
+    if ((t /= 0.5) < 1) {
+        return 0.5 * t * t;
+    }
+    return -0.5 * ((--t) * (t - 2) - 1);
 }
 
 function concat(arr) {

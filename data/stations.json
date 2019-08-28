@@ -146,8 +146,8 @@
 	}, {
 		"name": "tabata",
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Tabata",
-			"odpt.Station:JR-East.KeihinTohokuNegishi.Tabata"
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Tabata",
+			"odpt.Station:JR-East.Yamanote.Tabata"
 		],
 		"odpt:stationTitle": {
 			"ko": "다바타",
@@ -158,8 +158,8 @@
 	}, {
 		"name": "nishi-nippori",
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.NishiNippori",
-			"odpt.Station:JR-East.KeihinTohokuNegishi.NishiNippori"
+			"odpt.Station:JR-East.KeihinTohokuNegishi.NishiNippori",
+			"odpt.Station:JR-East.Yamanote.NishiNippori"
 		],
 		"odpt:stationTitle": {
 			"ko": "니시닛포리",
@@ -170,9 +170,9 @@
 	}, {
 		"name": "nippori",
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Nippori",
+			"odpt.Station:JR-East.JobanRapid.Nippori",
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Nippori",
-			"odpt.Station:JR-East.JobanRapid.Nippori"
+			"odpt.Station:JR-East.Yamanote.Nippori"
 		],
 		"odpt:stationTitle": {
 			"ko": "닛포리",
@@ -183,8 +183,8 @@
 	}, {
 		"name": "uguisudani",
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Uguisudani",
-			"odpt.Station:JR-East.KeihinTohokuNegishi.Uguisudani"
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Uguisudani",
+			"odpt.Station:JR-East.Yamanote.Uguisudani"
 		],
 		"odpt:stationTitle": {
 			"ko": "우구이스다니",
@@ -194,9 +194,9 @@
 	}, {
 		"name": "ueno",
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Ueno",
+			"odpt.Station:JR-East.JobanRapid.Ueno",
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Ueno",
-			"odpt.Station:JR-East.JobanRapid.Ueno"
+			"odpt.Station:JR-East.Yamanote.Ueno"
 		],
 		"odpt:stationTitle": {
 			"ko": "우에노",
@@ -207,8 +207,8 @@
 	}, {
 		"name": "okachimachi",
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Okachimachi",
-			"odpt.Station:JR-East.KeihinTohokuNegishi.Okachimachi"
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Okachimachi",
+			"odpt.Station:JR-East.Yamanote.Okachimachi"
 		],
 		"odpt:stationTitle": {
 			"ko": "오카치마치",
@@ -230,9 +230,9 @@
 	}, {
 		"name": "kanda",
 		"aliases": [
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Kanda",
 			"odpt.Station:JR-East.Yamanote.Kanda",
-			"odpt.Station:JR-East.ChuoRapid.Kanda",
-			"odpt.Station:JR-East.KeihinTohokuNegishi.Kanda"
+			"odpt.Station:JR-East.ChuoRapid.Kanda"
 		],
 		"odpt:stationTitle": {
 			"ko": "간다",
@@ -242,10 +242,10 @@
 	}, {
 		"name": "tokyo",
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Tokyo",
-			"odpt.Station:JR-East.ChuoRapid.Tokyo",
+			"odpt.Station:JR-East.JobanRapid.Tokyo",
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Tokyo",
-			"odpt.Station:JR-East.JobanRapid.Tokyo"
+			"odpt.Station:JR-East.Yamanote.Tokyo",
+			"odpt.Station:JR-East.ChuoRapid.Tokyo"
 		],
 		"odpt:stationTitle": {
 			"ko": "도쿄",
@@ -255,8 +255,8 @@
 	}, {
 		"name": "yurakucho",
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Yurakucho",
-			"odpt.Station:JR-East.KeihinTohokuNegishi.Yurakucho"
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Yurakucho",
+			"odpt.Station:JR-East.Yamanote.Yurakucho"
 		],
 		"odpt:stationTitle": {
 			"ko": "유라쿠초",
@@ -267,9 +267,9 @@
 	}, {
 		"name": "shimbashi",
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Shimbashi",
+			"odpt.Station:JR-East.JobanRapid.Shimbashi",
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Shimbashi",
-			"odpt.Station:JR-East.JobanRapid.Shimbashi"
+			"odpt.Station:JR-East.Yamanote.Shimbashi"
 		],
 		"odpt:stationTitle": {
 			"ko": "신바시",
@@ -279,8 +279,8 @@
 	}, {
 		"name": "hamamatsucho",
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Hamamatsucho",
-			"odpt.Station:JR-East.KeihinTohokuNegishi.Hamamatsucho"
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Hamamatsucho",
+			"odpt.Station:JR-East.Yamanote.Hamamatsucho"
 		],
 		"odpt:stationTitle": {
 			"ko": "하마마쓰초",
@@ -290,8 +290,8 @@
 	}, {
 		"name": "tamachi",
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Tamachi",
-			"odpt.Station:JR-East.KeihinTohokuNegishi.Tamachi"
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Tamachi",
+			"odpt.Station:JR-East.Yamanote.Tamachi"
 		],
 		"odpt:stationTitle": {
 			"ko": "다마치",
@@ -302,9 +302,9 @@
 	}, {
 		"name": "shinagawa",
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Shinagawa",
+			"odpt.Station:JR-East.JobanRapid.Shinagawa",
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Shinagawa",
-			"odpt.Station:JR-East.JobanRapid.Shinagawa"
+			"odpt.Station:JR-East.Yamanote.Shinagawa"
 		],
 		"odpt:stationTitle": {
 			"ko": "시나가와",
