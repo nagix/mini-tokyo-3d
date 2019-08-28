@@ -231,14 +231,16 @@ Promise.all([
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Ginza&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Marunouchi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.MarunouchiBranch&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Hibiya&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Tozai&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro&' + API_TOKEN)
 ]).then(function([
 	dict, railwayData, stationData, trainData, railwayRefData, railDirectionRefData, stationRefData1, stationRefData2,
-	timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, trainTypeRefData
+	timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10, trainTypeRefData
 ]) {
 
 var stationRefData = stationRefData1.concat(stationRefData2);
-var timetableRefData = timetableRefData1.concat(timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8);
+var timetableRefData = timetableRefData1.concat(timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10);
 
 var map = new mapboxgl.Map({
 	container: 'map',
