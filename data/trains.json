@@ -250,13 +250,13 @@
 		"odpt:railDirection": "odpt.RailDirection:InnerLoop",
 		"odpt:railDirectionTitle": {
 			"ko": "내선 순환",
-			"zh": "內環"
+			"zh": "内环"
 		}
 	}, {
 		"odpt:railDirection": "odpt.RailDirection:OuterLoop",
 		"odpt:railDirectionTitle": {
 			"ko": "외선 순환",
-			"zh": "外環"
+			"zh": "外环"
 		}
 	}],
 	"types": [{
@@ -293,7 +293,7 @@
 		"odpt:trainType": "odpt.TrainType:JR-East.Liner",
 		"odpt:trainTypeTitle": {
 			"ko": "라이너",
-			"zh": "專線"
+			"zh": "Liner"
 		}
 	}, {
 		"odpt:trainType": "odpt.TrainType:JR-East.Local",
@@ -383,7 +383,7 @@
 		"odpt:trainType": "odpt.TrainType:TokyoMetro.SemiExpress",
 		"odpt:trainTypeTitle": {
 			"ko": "준급",
-			"zh": "準急"
+			"zh": "准急"
 		}
 	}, {
 		"odpt:trainType": "odpt.TrainType:Toei.AccessExpress",
