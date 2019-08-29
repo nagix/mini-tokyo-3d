@@ -369,6 +369,8 @@ function generateRailwayLayers() {
 					getLocationAlongLine(railwayFeature, [stationRef['geo:long'], stationRef['geo:lat']]);
 			});
 
+			updateDistances(railwayFeature);
+
 			if (line.altitude < 0) {
 				setAltitude(railwayFeature, -Math.pow(2, 14 - zoom) * 100);
 				railwaysUnderground.push(railwayFeature);
@@ -723,7 +725,6 @@ map.once('styledata', function () {
 		var zoom = map.getZoom();
 		var line = lineLookup[train['odpt:railway']];
 		var offset = train._offset;
-		var direction = train._direction;
 		var sectionIndex = train._sectionIndex;
 		var layerZoom = Math.min(Math.max(Math.floor(zoom), 13), 18);
 		var stationOffsets, p, s, lngLat, bearing, coord, cube, position, scale;
@@ -739,12 +740,12 @@ map.once('styledata', function () {
 			train._lineFeature = line.features[layerZoom];
 		}
 
-		p = getPointAndBearing(train._lineFeature, offset + train._t * train._interval, direction);
+		p = getPointAndBearing(train._lineFeature, offset + train._t * train._interval);
 		s = Math.pow(2, 14 - Math.min(Math.max(zoom, 13), 19)) * modelScale * 100;
 
 		cube = train._cube;
 		lngLat = cube.userData.lngLat = turf.getCoord(p.point);
-		bearing = cube.userData.bearing = p.bearing;
+		bearing = cube.userData.bearing = p.bearing + (train._direction < 0 ? 180 : 0);
 		coord = mapboxgl.MercatorCoordinate.fromLngLat(lngLat);
 		position = cube.position;
 		scale = cube.scale;
@@ -1010,15 +1011,49 @@ function setAltitude(geojson, altitude) {
 	});
 }
 
-function getPointAndBearing(line, distance, direction) {
-	var p1 = turf.along(line, distance);
-	var delta = distance >= 1e-6 ? -1e-6 : 1e-6;
-	var p2 = turf.along(line, distance + delta);
+function updateDistances(line) {
+	var coords = turf.getCoords(line);
+	var travelled = 0;
+	var distances = [];
+	var i;
 
-	return {
-		point: p1,
-		bearing: direction * delta > 0 ? turf.bearing(p1, p2) : turf.bearing(p2, p1)
-	};
+	for (i = 0; i < coords.length; i++) {
+		if (i > 0) {
+			travelled += turf.distance(coords[i - 1], coords[i]);
+		}
+		distances.push(travelled);
+	}
+	line.properties.distances = distances;
+}
+
+function getPointAndBearing(line, distance) {
+	var coords = turf.getCoords(line);
+	var distances = line.properties.distances;
+	var length = coords.length;
+	var i, overshot, bearing;
+
+	if (distance >= distances[distances.length - 1]) {
+		return {
+			point: turf.point(coords[length - 1]),
+			bearing: turf.bearing(coords[length - 2], coords[length - 1])
+		};
+	}
+
+	for (i = 0; i < length; i++) {
+		overshot = distance - distances[i];
+		if (overshot === 0) {
+			return {
+				point: turf.point(coords[i]),
+				bearing: turf.bearing(coords[Math.max(i - 1, 0)], coords[Math.max(i, 1)])
+			};
+		} else if (overshot < 0) {
+			bearing = turf.bearing(coords[i - 1], coords[i]);
+			return {
+				point: turf.destination(coords[i], overshot, bearing),
+				bearing: bearing
+			};
+		}
+	}
 }
 
 function getLocationAlongLine(line, point) {
