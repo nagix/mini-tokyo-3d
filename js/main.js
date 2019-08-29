@@ -767,7 +767,7 @@ map.once('styledata', function () {
 			scale = delayMarker.scale;
 			position.x = coord.x - modelOrigin.x;
 			position.y = -(coord.y - modelOrigin.y);
-			position.z = (train._altitude || 0) * Math.pow(2, 14 - layerZoom) * 100 + s / 2;
+			position.z = (train._altitude || 0) * Math.pow(2, 14 - layerZoom) * modelScale * 100 + s / 2;
 			scale.x = scale.y = scale.z = s;
 		} else if (train._delayMarker) {
 			trainLayers.removeObject(train._delayMarker, train);
