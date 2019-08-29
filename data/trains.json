@@ -225,6 +225,26 @@
 		"_direction": -1,
 		"_sectionIndex": 11,
 		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Asakusa",
+		"_direction": 1,
+		"_sectionIndex": 0,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Asakusa",
+		"_direction": 1,
+		"_sectionIndex": 10,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Asakusa",
+		"_direction": -1,
+		"_sectionIndex": 19,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Asakusa",
+		"_direction": -1,
+		"_sectionIndex": 9,
+		"_altitude": -1
 	}],
 	"railDirections": [{
 		"odpt:railDirection": "odpt.RailDirection:InnerLoop",
@@ -240,18 +260,6 @@
 		}
 	}],
 	"types": [{
-		"odpt:trainType": "odpt.TrainType:JR-East.LimitedExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "특급",
-			"zh": "特急"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:JR-East.SpecialRapid",
-		"odpt:trainTypeTitle": {
-			"ko": "특별쾌속",
-			"zh": "特別快速"
-		}
-	}, {
 		"odpt:trainType": "odpt.TrainType:JR-East.ChuoSpecialRapid",
 		"odpt:trainTypeTitle": {
 			"ko": "주오 특별쾌속",
@@ -270,10 +278,28 @@
 			"zh": "通勤特快"
 		}
 	}, {
+		"odpt:trainType": "odpt.TrainType:JR-East.Express",
+		"odpt:trainTypeTitle": {
+			"ko": "급행",
+			"zh": "急行"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:JR-East.LimitedExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "특급",
+			"zh": "特急"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:JR-East.Liner",
+		"odpt:trainTypeTitle": {
+			"ko": "라이너",
+			"zh": "專線"
+		}
+	}, {
 		"odpt:trainType": "odpt.TrainType:JR-East.Local",
 		"odpt:trainTypeTitle": {
-			"ko": "각역정차",
-			"zh": "各站停車"
+			"ko": "보통",
+			"zh": "普通"
 		}
 	}, {
 		"odpt:trainType": "odpt.TrainType:JR-East.OmeSpecialRapid",
@@ -288,10 +314,124 @@
 			"zh": "快速"
 		}
 	}, {
+		"odpt:trainType": "odpt.TrainType:JR-East.SpecialRapid",
+		"odpt:trainTypeTitle": {
+			"ko": "특별쾌속",
+			"zh": "特別快速"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TokyoMetro.CommuterExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "통근급행",
+			"zh": "通勤急行"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TokyoMetro.CommuterLimitedExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "통근특급",
+			"zh": "通勤特急"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TokyoMetro.CommuterRapid",
+		"odpt:trainTypeTitle": {
+			"ko": "통근쾌속",
+			"zh": "通勤快速"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TokyoMetro.Express",
+		"odpt:trainTypeTitle": {
+			"ko": "급행",
+			"zh": "急行"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TokyoMetro.F-Liner",
+		"odpt:trainTypeTitle": {
+			"ko": "F-라이너",
+			"zh": "F-Liner"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TokyoMetro.LimitedExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "특급",
+			"zh": "特急"
+		}
+	}, {
 		"odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
 		"odpt:trainTypeTitle": {
 			"ko": "보통",
 			"zh": "普通"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TokyoMetro.RapidExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "쾌속급행",
+			"zh": "快速急行"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TokyoMetro.Rapid",
+		"odpt:trainTypeTitle": {
+			"ko": "쾌속",
+			"zh": "快速"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TokyoMetro.S-TRAIN",
+		"odpt:trainTypeTitle": {
+			"ko": "S-트레인",
+			"zh": "S-TRAIN"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TokyoMetro.SemiExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "준급",
+			"zh": "準急"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Toei.AccessExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "엑세스특급",
+			"zh": "Access特急"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Toei.AirportRapidLimitedExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "에어포트 쾌속특급",
+			"zh": "机场快特"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Toei.CommuterLimitedExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "통근특급",
+			"zh": "通勤特急"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Toei.Express",
+		"odpt:trainTypeTitle": {
+			"ko": "급행",
+			"zh": "急行"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Toei.LimitedExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "특급",
+			"zh": "特急"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Toei.Local",
+		"odpt:trainTypeTitle": {
+			"ko": "보통",
+			"zh": "普通"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Toei.RapidLimitedExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "쾌속특급",
+			"zh": "快特"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Toei.Rapid",
+		"odpt:trainTypeTitle": {
+			"ko": "쾌속",
+			"zh": "快速"
 		}
 	}]
 }

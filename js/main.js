@@ -219,10 +219,10 @@ Promise.all([
 	loadJSON('data/railways.json'),
 	loadJSON('data/stations.json'),
 	loadJSON('data/trains.json'),
-	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:RailDirection?' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Yamanote&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoSobuLocal&odpt:calendar=odpt.Calendar:Weekday&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
@@ -233,14 +233,15 @@ Promise.all([
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.MarunouchiBranch&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Hibiya&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Tozai&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro&' + API_TOKEN)
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Toei.Asakusa&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN)
 ]).then(function([
 	dict, railwayData, stationData, trainData, railwayRefData, railDirectionRefData, stationRefData1, stationRefData2,
-	timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10, trainTypeRefData
+	timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11, trainTypeRefData
 ]) {
 
 var stationRefData = stationRefData1.concat(stationRefData2);
-var timetableRefData = timetableRefData1.concat(timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10);
+var timetableRefData = timetableRefData1.concat(timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11);
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -313,7 +314,7 @@ function generateRailwayLayers() {
 					var step = !reverse ? 1 : -1;
 					var feature = lineLookup[nextSubline['odpt:railway']].features[zoom];
 					var nearestPoint = turf.nearestPointOnLine(feature, coordinates[start]);
-                    var baseOffset = Math.abs(nextSubline.offset * Math.pow(2, 14 - zoom) * .1) - nearestPoint.properties.dist;
+					var baseOffset = Math.abs(nextSubline.offset * Math.pow(2, 14 - zoom) * .1) - nearestPoint.properties.dist;
 					var bearing = turf.bearing(nearestPoint, coordinates[start]);
 					var baseFeature = turf.lineString(coordinates);
 					var baseLocation = getLocationAlongLine(baseFeature, coordinates[start]);
@@ -331,7 +332,7 @@ function generateRailwayLayers() {
 						if (isNaN(distances[j])) {
 							break;
 						}
-                        offset = baseOffset * easeInOutQuad(1 - distances[j] / 1);
+						offset = baseOffset * easeInOutQuad(1 - distances[j] / 1);
 						coordinates[j] = turf.getCoord(turf.destination(
 							coordinates[j],
 							Math.abs(offset),
@@ -976,7 +977,7 @@ map.once('styledata', function () {
 	}
 
 	function updateDelays() {
-		loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro&' + API_TOKEN).then(function(trainRefData) {
+		loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN).then(function(trainRefData) {
 			trainRefData.forEach(function(trainRef) {
 				var delay = (trainRef['odpt:delay'] || 0) * 1000;
 				var train = trainLookup[trainRef['owl:sameAs']];
@@ -1116,10 +1117,10 @@ function delay(callback, duration) {
 }
 
 function easeInOutQuad(t) {
-    if ((t /= 0.5) < 1) {
-        return 0.5 * t * t;
-    }
-    return -0.5 * ((--t) * (t - 2) - 1);
+	if ((t /= 0.5) < 1) {
+		return 0.5 * t * t;
+	}
+	return -0.5 * ((--t) * (t - 2) - 1);
 }
 
 function concat(arr) {
