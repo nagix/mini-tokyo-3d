@@ -57,7 +57,7 @@ var isRealtime = true;
 var trackingMode = 'helicopter';
 var opacityStore = {};
 var trainLookup = {};
-var stationLookup, railwayLookup, lineLookup, railDirectionLookup, trainTypeLookup;
+var stationLookup, railwayLookup, lineLookup, railDirectionLookup, trainTypeLookup, timetableLookup;
 var trackedTrain, markedTrain, trainLastRefresh, trackingBaseBearing;
 
 // Replace MapboxLayer.render to support underground rendering
@@ -221,13 +221,15 @@ Promise.all([
 	loadJSON('data/trains.json'),
 	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:RailDirection?' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Tobu,odpt.Operator:ToyoRapid,odpt.Operator:Keikyu,odpt.Operator:Keisei,odpt.Operator:Hokuso,odpt.Operator:Shibayama&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Yamanote&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoSobuLocal&odpt:calendar=odpt.Calendar:Weekday&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Tokaido&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.JobanRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.SobuRapid,odpt.Railway:JR-East.Yokosuka&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Ginza&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Marunouchi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.MarunouchiBranch&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
@@ -237,11 +239,11 @@ Promise.all([
 	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN)
 ]).then(function([
 	dict, railwayData, stationData, trainData, railwayRefData, railDirectionRefData, stationRefData1, stationRefData2,
-	timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11, trainTypeRefData
+	timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13, trainTypeRefData
 ]) {
 
 var stationRefData = stationRefData1.concat(stationRefData2);
-var timetableRefData = timetableRefData1.concat(timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11);
+var timetableRefData = timetableRefData1.concat(timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13);
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -271,9 +273,11 @@ railwayData.railways.forEach(function(railway) {
 	var railwayRef = railwayLookup[id];
 	var stationOrder = railwayRef['odpt:stationOrder'];
 
-//	if (id === 'odpt.Railway:JR-East.ChuoRapid') {
-//		stationOrder = stationOrder.slice(0, 12);
-//	}
+	if (id === 'odpt.Railway:JR-East.Tokaido') {
+		stationOrder = stationOrder.slice(0, 7);
+	} else if (id === 'odpt.Railway:JR-East.Yokosuka') {
+		stationOrder = stationOrder.slice(0, 11);
+	}
 	railway.stations = stationOrder.map(function(station) {
 		return station['odpt:station'];
 	});
@@ -296,7 +300,7 @@ function generateRailwayLayers() {
 						subline.start,
 						subline.end,
 						overlap.features[zoom]
-					), subline.offset * Math.pow(2, 14 - zoom) * .1235);
+					), subline.offset * Math.pow(2, 14 - zoom) * .1);
 
 					// Rewind if the overlap line is in opposite direction
 					if (subline.reverse) {
@@ -306,50 +310,68 @@ function generateRailwayLayers() {
 
 				return subline;
 			}).map(function(subline, i) {
-				var coordinates, nextSubline;
+				var coordinates, feature1, feature2, length, coord1, coord2, f, nextSubline;
 
 				function smoothCoords(reverse) {
 					var start = !reverse ? 0 : coordinates.length - 1;
 					var end = !reverse ? coordinates.length - 1 : 0;
 					var step = !reverse ? 1 : -1;
 					var feature = lineLookup[nextSubline['odpt:railway']].features[zoom];
-					var nearestPoint = turf.nearestPointOnLine(feature, coordinates[start]);
-					var baseOffset = Math.abs(nextSubline.offset * Math.pow(2, 14 - zoom) * .1) - nearestPoint.properties.dist;
-					var bearing = turf.bearing(nearestPoint, coordinates[start]);
+					var nearest = getNearestPointProperties(feature, coordinates[start]);
+					var baseOffset = nextSubline.offset * Math.pow(2, 14 - zoom) * .1 - nearest.distance;
 					var baseFeature = turf.lineString(coordinates);
 					var baseLocation = getLocationAlongLine(baseFeature, coordinates[start]);
-					var distances = [];
-					var j, distance, offset;
+					var transition = subline.transition && (!reverse ? subline.transition.start : subline.transition.end) || 1;
+					var factors = [];
+					var j, distance;
 
 					for (j = start; j !== end; j += step) {
 						distance = Math.abs(getLocationAlongLine(baseFeature, coordinates[j]) - baseLocation);
-						if (distance > 1) {
+						if (distance > transition) {
 							break;
 						}
-						distances[j] = distance;
+						factors[j] = easeInOutQuad(1 - distance / transition);
 					}
-					for (j = start; j !== end; j += step) {
-						if (isNaN(distances[j])) {
-							break;
-						}
-						offset = baseOffset * easeInOutQuad(1 - distances[j] / 1);
+					for (j = start; j !== end && factors[j] > 0; j += step) {
 						coordinates[j] = turf.getCoord(turf.destination(
-							coordinates[j],
-							Math.abs(offset),
-							bearing + (offset < 0 ? 180 : 0)
+							coordinates[j], baseOffset * factors[j], nearest.bearing
 						));
 					}
 				}
 
-				if (subline.coordinates) {
-					coordinates = subline.coordinates.map(function(d) { return d.slice(); });
-					nextSubline = sublines[i - 1];
-					if (nextSubline && nextSubline['odpt:railway']) {
-						smoothCoords();
-					}
-					nextSubline = sublines[i + 1];
-					if (nextSubline && nextSubline['odpt:railway']) {
-						smoothCoords(true);
+				if (!subline['odpt:railway']) {
+					if (!subline.coordinates) {
+						coordinates = [];
+						feature1 = lineOffset(turf.lineSlice(
+							subline.start,
+							subline.end,
+							lineLookup[sublines[i - 1]['odpt:railway']].features[zoom]
+						), sublines[i - 1].offset * Math.pow(2, 14 - zoom) * .1);
+						feature2 = lineOffset(turf.lineSlice(
+							subline.start,
+							subline.end,
+							lineLookup[sublines[i + 1]['odpt:railway']].features[zoom]
+						), sublines[i + 1].offset * Math.pow(2, 14 - zoom) * .1);
+						length = turf.length(feature1);
+						for (j = 0; j < 20; j++) {
+							coord1 = turf.getCoord(turf.along(feature1, length * j / 19));
+							coord2 = turf.getCoord(turf.nearestPointOnLine(feature2, coord1));
+							f = easeInOutQuad(j / 19);
+							coordinates.push([
+								coord1[0] * (1 - f) + coord2[0] * f,
+								coord1[1] * (1 - f) + coord2[1] * f
+							]);
+						}
+					} else {
+						coordinates = subline.coordinates.map(function(d) { return d.slice(); });
+						nextSubline = sublines[i - 1];
+						if (nextSubline && nextSubline['odpt:railway']) {
+							smoothCoords();
+						}
+						nextSubline = sublines[i + 1];
+						if (nextSubline && nextSubline['odpt:railway']) {
+							smoothCoords(true);
+						}
 					}
 					subline.feature = turf.lineString(coordinates);
 				}
@@ -443,16 +465,29 @@ trainData.railDirections.forEach(function(direction) {
 	merge(railDirectionLookup[direction['odpt:railDirection']]['odpt:railDirectionTitle'], direction['odpt:railDirectionTitle']);
 });
 
+timetableLookup = buildLookup(timetableRefData);
+
 timetableRefData.forEach(function(train) {
 	var line = lineLookup[train['odpt:railway']];
 	var railway = railwayLookup[train['odpt:railway']];
 	var direction = train['odpt:railDirection'] === railway['odpt:ascendingRailDirection'] ? 1 : -1;
 	var table = train['odpt:trainTimetableObject'];
+	var length = table.length;
+	var nextTrainID = train['odpt:nextTrainTimetable'];
+	var nextTrain, nextTable;
+
+	if (nextTrainID) {
+		nextTrain = timetableLookup[nextTrainID];
+		if (nextTrain) {
+			nextTable = nextTrain['odpt:trainTimetableObject'];
+			table[length - 1]['odpt:departureTime'] = nextTable[0]['odpt:departureTime'];
+		}
+	}
 
 	train._start = getTime(table[0]['odpt:departureTime']);
-	train._end = getTime(table[table.length - 1]['odpt:arrivalTime']
-		|| table[table.length - 1]['odpt:departureTime']
-		|| table[Math.max(table.length - 2, 0)]['odpt:departureTime']);
+	train._end = getTime(table[length - 1]['odpt:departureTime']
+		|| table[length - 1]['odpt:arrivalTime']
+		|| table[Math.max(length - 2, 0)]['odpt:departureTime']);
 	train._direction = direction;
 	train._altitude = line.altitude;
 });
@@ -847,29 +882,43 @@ map.once('styledata', function () {
 					if (!setSectionData(train, now)) {
 						return; // Out of range
 					}
-
-					var line = lineLookup[train['odpt:railway']];
-					var cube = train._cube = createCube(line.color);
-					trainLayers.addObject(cube, train);
-
-					trainLookup[train['odpt:train']] = train;
-
-					updateTrainShape(train, {t: 0, reset: true});
+					startTrain(train);
 
 					function repeat(elapsed) {
-						train._standing = false;
-						cube.userData.description = getTrainDescription(train);
-						cube.userData.altitude = train._altitude;
+						setTrainStandingStatus(train, false);
 						train._stop = animate(function(t) {
 							updateTrainShape(train, {t: t});
 						}, function() {
+							var nextTrainID, isMarked, isTracked;
+
 							train._timetableIndex++;
 							if (!setSectionData(train)) {
+								isMarked = markedTrain === train._cube;
+								isTracked = trackedTrain === train._cube;
 								stopTrain(train);
+
+								nextTrainID = train['odpt:nextTrainTimetable'];
+								if (nextTrainID) {
+									train = timetableLookup[nextTrainID];
+									if (train && !trainLookup[train['odpt:train']]) {
+										train._timetableIndex = 0;
+										if (!setSectionData(train)) {
+											return;
+										}
+										startTrain(train);
+										if (isMarked) {
+											markedTrain = train._cube;
+										}
+										if (isTracked) {
+											trackedTrain = train._cube;
+										}
+										setTrainStandingStatus(train, true);
+										train._stop = delay(repeat, Math.max((getTime(train._departureTime) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION));
+									}
+								}
 							} else {
 								updateTrainShape(train, {t: 0, reset: true});
-								train._standing = true;
-								cube.userData.description = getTrainDescription(train);
+								setTrainStandingStatus(train, true);
 
 								// Stop at station
 								train._stop = delay(repeat, Math.max((getTime(train._departureTime) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION));
@@ -944,24 +993,36 @@ map.once('styledata', function () {
 		return title[lang] || title['en'];
 	}
 
-	function getTrainDescription(train) {
+	function setTrainStandingStatus(train, standing) {
 		var destination = train['odpt:destinationStation'];
 		var delay = train._delay || 0;
 
-		return '<span class="desc-box" style="background-color: ' + lineLookup[train['odpt:railway']].color + ';"></span> '
-			+ '<strong>' + getLocalizedRailwayTitle(train['odpt:railway']) + '</strong>'
-			+ '<br>' + getLocalizedTrainTypeTitle(train['odpt:trainType']) + ' '
-			+ (destination ? dict['to'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train['odpt:railDirection']))
-			+ '<br><strong>' + dict['train-number'] + ':</strong> '
-			+ train['odpt:trainNumber']
-			+ '<br>' + (delay >= 60000 ? '<span class="desc-delay">' : '')
-			+ '<strong>' + dict[train._standing ? 'standing-at' : 'previous-stop'] + ':</strong> '
-			+ getLocalizedStationTitle(train._departureStation)
-			+ ' ' + getTimeString(getTime(train._departureTime) + delay)
-			+ '<br><strong>' + dict['next-stop'] + ':</strong> '
-			+ getLocalizedStationTitle(train._arrivalStation)
-			+ ' ' + getTimeString(getTime(train._arrivalTime) + delay)
-			+ (delay >= 60000 ? '<br>' + dict['delay'].replace('$1', Math.floor(delay / 60000)) + '</span>' : '');
+		train._standing = standing;
+		train._cube.userData.description =
+			'<span class="desc-box" style="background-color: ' + lineLookup[train['odpt:railway']].color + ';"></span> ' +
+			'<strong>' + getLocalizedRailwayTitle(train['odpt:railway']) + '</strong>' +
+			'<br>' + getLocalizedTrainTypeTitle(train['odpt:trainType']) + ' ' +
+			(destination ? dict['to'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train['odpt:railDirection'])) +
+			'<br><strong>' + dict['train-number'] + ':</strong> ' +
+			train['odpt:trainNumber'] +
+			'<br>' + (delay >= 60000 ? '<span class="desc-delay">' : '') +
+			'<strong>' + dict[train._standing ? 'standing-at' : 'previous-stop'] + ':</strong> ' +
+			getLocalizedStationTitle(train._departureStation) +
+			' ' + getTimeString(getTime(train._departureTime) + delay) +
+			'<br><strong>' + dict['next-stop'] + ':</strong> ' +
+			getLocalizedStationTitle(train._arrivalStation) +
+			' ' + getTimeString(getTime(train._arrivalTime) + delay) +
+			(delay >= 60000 ? '<br>' + dict['delay'].replace('$1', Math.floor(delay / 60000)) + '</span>' : '');
+	}
+
+	function startTrain(train) {
+		var line = lineLookup[train['odpt:railway']];
+		var cube = train._cube = createCube(line.color);
+
+		trainLayers.addObject(cube, train);
+		trainLookup[train['odpt:train']] = train;
+		updateTrainShape(train, {t: 0, reset: true});
+		cube.userData.altitude = train._altitude;
 	}
 
 	function stopTrain(train) {
@@ -1056,9 +1117,36 @@ function getPointAndBearing(line, distance) {
 	}
 }
 
+function getNearestPointProperties(line, point) {
+	var nearestPoint = turf.nearestPointOnLine(line, point);
+	var properties = nearestPoint.properties;
+	var coords = turf.getCoords(line);
+	var index = Math.min(properties.index, coords.length - 2);
+	var lineBearing = turf.bearing(coords[index], coords[index + 1]);
+	var bearing = turf.bearing(nearestPoint, point);
+	var sign = getAngle(lineBearing, bearing) >= 0 ? 1 : -1;
+
+	return {
+		point: nearestPoint,
+		bearing: bearing + (1 - sign) * 90,
+		distance: properties.dist * sign
+	}
+}
+
 function getLocationAlongLine(line, point) {
 	var nearestPoint = turf.nearestPointOnLine(line, point);
 	return nearestPoint.properties.location;
+}
+
+function getAngle(bearing1, bearing2) {
+    var angle = bearing2 - bearing1;
+
+    if (angle > 180) {
+        angle -= 360;
+    } else if (angle < -180) {
+        angle += 360;
+    }
+    return angle;
 }
 
 // Better version of turf.lineOffset
@@ -1071,7 +1159,7 @@ function lineOffset(geojson, distance) {
 	var endBearing = turf.bearing(coords[coordsLen - 3] || coords[coordsLen - 2], end);
 	var bearingOffset = distance > 0 ? 90 : -90;
 
-	var dist = Math.abs(distance);
+	var dist = Math.abs(distance * 1.235);
 	var polygonLine = turf.polygonToLine(
 		turf.buffer(geojson, dist, {step: coordsLen * 2 + 64})
 	);
