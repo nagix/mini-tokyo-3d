@@ -152,12 +152,13 @@ TrainLayer.prototype.render = function(gl, matrix) {
 	var camera = this.camera;
 	var transform = map.transform;
 	var halfFov = transform._fov / 2;
-	var halfHeight = Math.tan(halfFov);
-	var halfWidth = halfHeight * transform.width / transform.height;
 	var cameraToCenterDistance = transform.cameraToCenterDistance;
 	var angle = Math.PI / 2 - transform._pitch;
 	var topHalfSurfaceDistance = Math.sin(halfFov) * cameraToCenterDistance / Math.sin(angle - halfFov);
 	var furthestDistance = Math.cos(angle) * topHalfSurfaceDistance + cameraToCenterDistance;
+	var nearZ = transform.height / 50;
+	var halfHeight = Math.tan(halfFov) * nearZ;
+	var halfWidth = halfHeight * transform.width / transform.height;
 
 	var m = new THREE.Matrix4().fromArray(matrix);
 	var l = new THREE.Matrix4()
@@ -167,7 +168,7 @@ TrainLayer.prototype.render = function(gl, matrix) {
 	var projectionMatrixI = new THREE.Matrix4();
 
 	camera.projectionMatrix = new THREE.Matrix4().makePerspective(
-		-halfWidth, halfWidth, halfHeight, -halfHeight, 1, furthestDistance * 1.01);
+		-halfWidth, halfWidth, halfHeight, -halfHeight, nearZ, furthestDistance * 1.01);
 	projectionMatrixI.getInverse(camera.projectionMatrix);
 	camera.matrix.getInverse(projectionMatrixI.multiply(m).multiply(l));
 	camera.matrix.decompose(camera.position, camera.quaternion, camera.scale);
@@ -175,7 +176,7 @@ TrainLayer.prototype.render = function(gl, matrix) {
 	if (id.indexOf('-ug', id.length - 3) !== -1 && isUndergroundVisible) {
 		// Recalculate the projection matrix to replace the far plane
 		camera.projectionMatrix = new THREE.Matrix4().makePerspective(
-			-halfWidth, halfWidth, halfHeight, -halfHeight, 1, furthestDistance * 2.5);
+			-halfWidth, halfWidth, halfHeight, -halfHeight, nearZ, furthestDistance * 2.5);
 	}
 
 	var rad = (map.getBearing() + 30) * Math.PI / 180;
@@ -450,7 +451,11 @@ var trainLayers = {
 		layer.scene.remove(object);
 	},
 	pickObject: function(point) {
-		return this.og.pickObject(point) || this.ug.pickObject(point);
+		if (isUndergroundVisible) {
+			return this.ug.pickObject(point) || this.og.pickObject(point);
+		} else {
+			return this.og.pickObject(point) || this.ug.pickObject(point);
+		}
 	},
 	onResize: function(event) {
 		this.ug.onResize(event);
