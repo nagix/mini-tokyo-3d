@@ -514,20 +514,33 @@ map.once('styledata', function () {
 					map.setPaintProperty(id, layer.type + '-opacity', opacity);
 				}
 			});
-			[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
-				var opacity = isUndergroundVisible ? 1 : .0625;
-				map.getLayer('stations-ug-' + zoom).implementation.setProps({opacity: opacity});
-				map.getLayer('railways-ug-' + zoom).implementation.setProps({opacity: opacity});
-			});
-			Object.keys(trainLookup).forEach(function(key) {
-				var train = trainLookup[key];
-				var opacity = getTrainOpacity(train);
 
-				train._cube.material.opacity = opacity;
-				if (train._delayMarker) {
-					train._delayMarker.material.opacity = opacity;
+			var start = performance.now();
+			function repeat() {
+				var t = Math.min((performance.now() - start) / 300, 1);
+				[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
+					var opacity = isUndergroundVisible ?
+						1 * t + .0625 * (1 - t) : 1 * (1 - t) + .0625 * t;
+
+					map.getLayer('stations-ug-' + zoom).implementation.setProps({opacity: opacity});
+					map.getLayer('railways-ug-' + zoom).implementation.setProps({opacity: opacity});
+				});
+				Object.keys(trainLookup).forEach(function(key) {
+					var train = trainLookup[key];
+					var opacity = isUndergroundVisible === (train._altitude < 0) ?
+						.9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
+
+					train._cube.material.opacity = opacity;
+					if (train._delayMarker) {
+						train._delayMarker.material.opacity = opacity;
+					}
+				});
+				if (t < 1) {
+					requestAnimationFrame(repeat);
 				}
-			});
+			}
+			repeat();
+
 		}
 	}), 'top-right');
 
