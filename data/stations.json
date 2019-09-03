@@ -1,6 +1,5 @@
 {
 	"stations": [{
-		"name": "osaki",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Osaki"
 		],
@@ -9,7 +8,6 @@
 			"zh": "大崎"
 		}
 	}, {
-		"name": "gotanda",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Gotanda"
 		],
@@ -18,7 +16,6 @@
 			"zh": "五反田"
 		}
 	}, {
-		"name": "meguro",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Meguro"
 		],
@@ -27,7 +24,6 @@
 			"zh": "目黑"
 		}
 	}, {
-		"name": "ebisu",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Ebisu"
 		],
@@ -36,7 +32,6 @@
 			"zh": "惠比寿"
 		}
 	}, {
-		"name": "shibuya",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Shibuya"
 		],
@@ -45,7 +40,6 @@
 			"zh": "涩谷"
 		}
 	}, {
-		"name": "harajuku",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Harajuku"
 		],
@@ -54,7 +48,6 @@
 			"zh": "原宿"
 		}
 	}, {
-		"name": "yoyogi",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Yoyogi",
 			"odpt.Station:JR-East.ChuoSobuLocal.Yoyogi"
@@ -66,7 +59,6 @@
 		"labelOffset": 8,
 		"labelAngle": -15
 	}, {
-		"name": "shinjuku",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Shinjuku",
 			"odpt.Station:JR-East.ChuoSobuLocal.Shinjuku",
@@ -78,7 +70,6 @@
 		},
 		"labelOffset": 8
 	}, {
-		"name": "shin-okubo",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.ShinOkubo"
 		],
@@ -87,7 +78,6 @@
 			"zh": "新大久保"
 		}
 	}, {
-		"name": "takadanobaba",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Takadanobaba"
 		],
@@ -96,7 +86,6 @@
 			"zh": "高田马场"
 		}
 	}, {
-		"name": "mejiro",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Mejiro"
 		],
@@ -105,7 +94,6 @@
 			"zh": "目白"
 		}
 	}, {
-		"name": "ikebukuro",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Ikebukuro"
 		],
@@ -114,7 +102,6 @@
 			"zh": "池袋"
 		}
 	}, {
-		"name": "otsuka",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Otsuka"
 		],
@@ -124,7 +111,6 @@
 		},
 		"labelAngle": -75
 	}, {
-		"name": "sugamo",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Sugamo"
 		],
@@ -134,7 +120,6 @@
 		},
 		"labelAngle": 75
 	}, {
-		"name": "komagome",
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Komagome"
 		],
@@ -144,7 +129,6 @@
 		},
 		"labelAngle": 75
 	}, {
-		"name": "tabata",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Tabata",
 			"odpt.Station:JR-East.Yamanote.Tabata"
@@ -156,7 +140,6 @@
 		"labelOffset": 8,
 		"labelAngle": -15
 	}, {
-		"name": "nishi-nippori",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.NishiNippori",
 			"odpt.Station:JR-East.Yamanote.NishiNippori"
@@ -168,7 +151,6 @@
 		"labelOffset": 8,
 		"labelAngle": -15
 	}, {
-		"name": "nippori",
 		"aliases": [
 			"odpt.Station:JR-East.JobanRapid.Nippori",
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Nippori",
@@ -181,7 +163,6 @@
 		"labelOffset": 8,
 		"labelAngle": -15
 	}, {
-		"name": "uguisudani",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Uguisudani",
 			"odpt.Station:JR-East.Yamanote.Uguisudani"
@@ -192,7 +173,6 @@
 		},
 		"labelOffset": 8
 	}, {
-		"name": "ueno",
 		"aliases": [
 			"odpt.Station:JR-East.JobanRapid.Ueno",
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Ueno",
@@ -205,7 +185,6 @@
 		"labelOffset": 8,
 		"labelAngle": 15
 	}, {
-		"name": "okachimachi",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Okachimachi",
 			"odpt.Station:JR-East.Yamanote.Okachimachi"
@@ -216,7 +195,6 @@
 		},
 		"labelOffset": 8
 	}, {
-		"name": "akihabara",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Akihabara",
 			"odpt.Station:JR-East.Yamanote.Akihabara",
@@ -228,7 +206,6 @@
 		},
 		"labelOffset": 8
 	}, {
-		"name": "kanda",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Kanda",
 			"odpt.Station:JR-East.Yamanote.Kanda",
@@ -240,7 +217,6 @@
 		},
 		"labelOffset": 8
 	}, {
-		"name": "tokyo",
 		"aliases": [
 			"odpt.Station:JR-East.SobuRapid.Tokyo",
 			"odpt.Station:JR-East.Yokosuka.Tokyo",
@@ -256,7 +232,6 @@
 		},
 		"labelOffset": 8
 	}, {
-		"name": "yurakucho",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Yurakucho",
 			"odpt.Station:JR-East.Yamanote.Yurakucho"
@@ -268,7 +243,6 @@
 		"labelOffset": 8,
 		"labelAngle": 15
 	}, {
-		"name": "shimbashi",
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.Shimbashi",
 			"odpt.Station:JR-East.Tokaido.Shimbashi",
@@ -282,7 +256,6 @@
 		},
 		"labelOffset": 8
 	}, {
-		"name": "hamamatsucho",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Hamamatsucho",
 			"odpt.Station:JR-East.Yamanote.Hamamatsucho"
@@ -293,7 +266,6 @@
 		},
 		"labelOffset": 8
 	}, {
-		"name": "tamachi",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Tamachi",
 			"odpt.Station:JR-East.Yamanote.Tamachi"
@@ -305,7 +277,6 @@
 		"labelOffset": 8,
 		"labelAngle": 30
 	}, {
-		"name": "shinagawa",
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.Shinagawa",
 			"odpt.Station:JR-East.Tokaido.Shinagawa",
@@ -319,7 +290,6 @@
 		},
 		"labelOffset": 8
 	}, {
-		"name": "ochanomizu",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Ochanomizu",
 			"odpt.Station:JR-East.ChuoSobuLocal.Ochanomizu"
@@ -330,7 +300,6 @@
 		},
 		"labelAngle": 105
 	}, {
-		"name": "yotsuya",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Yotsuya",
 			"odpt.Station:JR-East.ChuoSobuLocal.Yotsuya"
@@ -340,7 +309,6 @@
 			"zh": "四谷"
 		}
 	}, {
-		"name": "nakano",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Nakano",
 			"odpt.Station:JR-East.ChuoSobuLocal.Nakano"
@@ -350,7 +318,6 @@
 			"zh": "中野"
 		}
 	}, {
-		"name": "koenji",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Koenji",
 			"odpt.Station:JR-East.ChuoSobuLocal.Koenji"
@@ -360,7 +327,6 @@
 			"zh": "高圆寺"
 		}
 	}, {
-		"name": "asagaya",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Asagaya",
 			"odpt.Station:JR-East.ChuoSobuLocal.Asagaya"
@@ -370,7 +336,6 @@
 			"zh": "阿佐谷"
 		}
 	}, {
-		"name": "ogikubo",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Ogikubo",
 			"odpt.Station:JR-East.ChuoSobuLocal.Ogikubo"
@@ -380,7 +345,6 @@
 			"zh": "荻洼"
 		}
 	}, {
-		"name": "nishi-ogikubo",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.NishiOgikubo",
 			"odpt.Station:JR-East.ChuoSobuLocal.NishiOgikubo"
@@ -390,7 +354,6 @@
 			"zh": "西荻洼"
 		}
 	}, {
-		"name": "kichijoji",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Kichijoji",
 			"odpt.Station:JR-East.ChuoSobuLocal.Kichijoji"
@@ -400,7 +363,6 @@
 			"zh": "吉祥寺"
 		}
 	}, {
-		"name": "mitaka",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Mitaka",
 			"odpt.Station:JR-East.ChuoSobuLocal.Mitaka"
@@ -410,7 +372,6 @@
 			"zh": "三鷹"
 		}
 	}, {
-		"name": "musashi-sakai",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.MusashiSakai"
 		],
@@ -419,7 +380,6 @@
 			"zh": "武藏境"
 		}
 	}, {
-		"name": "higashi-koganei",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.HigashiKoganei"
 		],
@@ -428,7 +388,6 @@
 			"zh": "东小金井"
 		}
 	}, {
-		"name": "musashi-koganei",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.MusashiKoganei"
 		],
@@ -437,7 +396,6 @@
 			"zh": "武藏小金井"
 		}
 	}, {
-		"name": "kokubunji",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Kokubunji"
 		],
@@ -446,7 +404,6 @@
 			"zh": "国分寺"
 		}
 	}, {
-		"name": "nishi-kokubunji",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.NishiKokubunji"
 		],
@@ -455,7 +412,6 @@
 			"zh": "西国分寺"
 		}
 	}, {
-		"name": "kunitachi",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Kunitachi"
 		],
@@ -464,7 +420,6 @@
 			"zh": "国立"
 		}
 	}, {
-		"name": "tachikawa",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Tachikawa"
 		],
@@ -473,7 +428,6 @@
 			"zh": "立川"
 		}
 	}, {
-		"name": "hino",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Hino"
 		],
@@ -482,7 +436,6 @@
 			"zh": "日野"
 		}
 	}, {
-		"name": "toyoda",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Toyoda"
 		],
@@ -491,7 +444,6 @@
 			"zh": "丰田"
 		}
 	}, {
-		"name": "hachioji",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Hachioji"
 		],
@@ -500,7 +452,6 @@
 			"zh": "八王子"
 		}
 	}, {
-		"name": "nishi-hachioji",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.NishiHachioji"
 		],
@@ -509,7 +460,6 @@
 			"zh": "西八王子"
 		}
 	}, {
-		"name": "takao",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Takao"
 		],
@@ -518,7 +468,6 @@
 			"zh": "高尾"
 		}
 	}, {
-		"name": "chiba",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Chiba",
 			"odpt.Station:JR-East.SobuRapid.Chiba"
@@ -528,7 +477,6 @@
 			"zh": "千叶"
 		}
 	}, {
-		"name": "nishi-chiba",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.NishiChiba"
 		],
@@ -537,7 +485,6 @@
 			"zh": "西千叶"
 		}
 	}, {
-		"name": "inage",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Inage",
 			"odpt.Station:JR-East.SobuRapid.Inage"
@@ -547,7 +494,6 @@
 			"zh": "稻毛"
 		}
 	}, {
-		"name": "shin-kemigawa",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.ShinKemigawa"
 		],
@@ -556,7 +502,6 @@
 			"zh": "新检见川"
 		}
 	}, {
-		"name": "makuhari",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Makuhari"
 		],
@@ -565,7 +510,6 @@
 			"zh": "幕张"
 		}
 	}, {
-		"name": "makuharihongo",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Makuharihongo"
 		],
@@ -574,7 +518,6 @@
 			"zh": "幕张本乡"
 		}
 	}, {
-		"name": "tsudanuma",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Tsudanuma",
 			"odpt.Station:JR-East.SobuRapid.Tsudanuma"
@@ -584,7 +527,6 @@
 			"zh": "津田沼"
 		}
 	}, {
-		"name": "higashi-funabashi",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.HigashiFunabashi"
 		],
@@ -593,7 +535,6 @@
 			"zh": "东船桥"
 		}
 	}, {
-		"name": "funabashi",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Funabashi",
 			"odpt.Station:JR-East.SobuRapid.Funabashi"
@@ -603,7 +544,6 @@
 			"zh": "船桥"
 		}
 	}, {
-		"name": "nishi-funabashi",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.NishiFunabashi"
 		],
@@ -612,7 +552,6 @@
 			"zh": "西船桥"
 		}
 	}, {
-		"name": "shimosa-nakayama",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.ShimosaNakayama"
 		],
@@ -621,7 +560,6 @@
 			"zh": "下总中山"
 		}
 	}, {
-		"name": "moto-yawata",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.MotoYawata"
 		],
@@ -630,7 +568,6 @@
 			"zh": "本八幡"
 		}
 	}, {
-		"name": "ichikawa",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Ichikawa",
 			"odpt.Station:JR-East.SobuRapid.Ichikawa"
@@ -640,7 +577,6 @@
 			"zh": "市川"
 		}
 	}, {
-		"name": "koiwa",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Koiwa"
 		],
@@ -649,7 +585,6 @@
 			"zh": "小岩"
 		}
 	}, {
-		"name": "shin-koiwa",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.ShinKoiwa",
 			"odpt.Station:JR-East.SobuRapid.ShinKoiwa"
@@ -659,7 +594,6 @@
 			"zh": "新小岩"
 		}
 	}, {
-		"name": "hirai",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Hirai"
 		],
@@ -668,7 +602,6 @@
 			"zh": "平井"
 		}
 	}, {
-		"name": "kameido",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Kameido"
 		],
@@ -677,7 +610,6 @@
 			"zh": "龟户"
 		}
 	}, {
-		"name": "kinshicho",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Kinshicho",
 			"odpt.Station:JR-East.SobuRapid.Kinshicho"
@@ -687,7 +619,6 @@
 			"zh": "锦糸町"
 		}
 	}, {
-		"name": "ryogoku",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Ryogoku"
 		],
@@ -696,7 +627,6 @@
 			"zh": "两国"
 		}
 	}, {
-		"name": "asakusabashi",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Asakusabashi"
 		],
@@ -705,7 +635,6 @@
 			"zh": "浅草桥"
 		}
 	}, {
-		"name": "suidobashi",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Suidobashi"
 		],
@@ -715,7 +644,6 @@
 		},
 		"labelAngle": -90
 	}, {
-		"name": "iidabashi",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Iidabashi"
 		],
@@ -725,7 +653,6 @@
 		},
 		"labelAngle": -165
 	}, {
-		"name": "ichigaya",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Ichigaya"
 		],
@@ -735,7 +662,6 @@
 		},
 		"labelAngle": 15
 	}, {
-		"name": "shinanomachi",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Shinanomachi"
 		],
@@ -745,7 +671,6 @@
 		},
 		"labelAngle": 90
 	}, {
-		"name": "sendagaya",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Sendagaya"
 		],
@@ -755,7 +680,6 @@
 		},
 		"labelAngle": -75
 	}, {
-		"name": "okubo",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.Okubo"
 		],
@@ -764,7 +688,6 @@
 			"zh": "大久保"
 		}
 	}, {
-		"name": "higashi-nakano",
 		"aliases": [
 			"odpt.Station:JR-East.ChuoSobuLocal.HigashiNakano"
 		],
@@ -773,7 +696,6 @@
 			"zh": "东中野"
 		}
 	}, {
-		"name": "kawasaki",
 		"aliases": [
 			"odpt.Station:JR-East.Tokaido.Kawasaki",
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Kawasaki"
@@ -783,7 +705,6 @@
 			"zh": "川崎"
 		}
 	}, {
-		"name": "yokohama",
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.Yokohama",
 			"odpt.Station:JR-East.Tokaido.Yokohama",
@@ -794,7 +715,6 @@
 			"zh": "横滨"
 		}
 	}, {
-		"name": "totsuka",
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.Totsuka",
 			"odpt.Station:JR-East.Tokaido.Totsuka"
@@ -804,7 +724,6 @@
 			"zh": "户冢"
 		}
 	}, {
-		"name": "ofuna",
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.Ofuna",
 			"odpt.Station:JR-East.Tokaido.Ofuna",
@@ -815,7 +734,6 @@
 			"zh": "大船"
 		}
 	}, {
-		"name": "omiya",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Omiya"
 		],
@@ -824,7 +742,6 @@
 			"zh": "大宮"
 		}
 	}, {
-		"name": "saitama-shintoshin",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.SaitamaShintoshin"
 		],
@@ -833,7 +750,6 @@
 			"zh": "埼玉新都心"
 		}
 	}, {
-		"name": "yono",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Yono"
 		],
@@ -842,7 +758,6 @@
 			"zh": "与野"
 		}
 	}, {
-		"name": "kita-urawa",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.KitaUrawa"
 		],
@@ -851,7 +766,6 @@
 			"zh": "北浦和"
 		}
 	}, {
-		"name": "urawa",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Urawa"
 		],
@@ -860,7 +774,6 @@
 			"zh": "浦和"
 		}
 	}, {
-		"name": "minami-urawa",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.MinamiUrawa"
 		],
@@ -869,7 +782,6 @@
 			"zh": "南浦和"
 		}
 	}, {
-		"name": "warabi",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Warabi"
 		],
@@ -878,7 +790,6 @@
 			"zh": "蕨"
 		}
 	}, {
-		"name": "nishi-kawaguchi",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.NishiKawaguchi"
 		],
@@ -887,7 +798,6 @@
 			"zh": "西川口"
 		}
 	}, {
-		"name": "kawaguchi",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Kawaguchi"
 		],
@@ -896,7 +806,6 @@
 			"zh": "川口"
 		}
 	}, {
-		"name": "akabane",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Akabane"
 		],
@@ -905,7 +814,6 @@
 			"zh": "赤羽"
 		}
 	}, {
-		"name": "higashi-jujo",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.HigashiJujo"
 		],
@@ -914,7 +822,6 @@
 			"zh": "东十条"
 		}
 	}, {
-		"name": "oji",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Oji"
 		],
@@ -923,7 +830,6 @@
 			"zh": "王子"
 		}
 	}, {
-		"name": "kaminakazato",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.KamiNakazato"
 		],
@@ -932,7 +838,6 @@
 			"zh": "上中里"
 		}
 	}, {
-		"name": "oimachi",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Oimachi"
 		],
@@ -941,7 +846,6 @@
 			"zh": "大井町"
 		}
 	}, {
-		"name": "omori",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Omori"
 		],
@@ -950,7 +854,6 @@
 			"zh": "大森"
 		}
 	}, {
-		"name": "kamata",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Kamata"
 		],
@@ -959,7 +862,6 @@
 			"zh": "蒲田"
 		}
 	}, {
-		"name": "tsurumi",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Tsurumi"
 		],
@@ -968,7 +870,6 @@
 			"zh": "鹤见"
 		}
 	}, {
-		"name": "shin-koyasu",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.ShinKoyasu"
 		],
@@ -977,7 +878,6 @@
 			"zh": "新子安"
 		}
 	}, {
-		"name": "higashi-kanagawa",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.HigashiKanagawa"
 		],
@@ -986,7 +886,6 @@
 			"zh": "东神奈川"
 		}
 	}, {
-		"name": "sakuragicho",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Sakuragicho"
 		],
@@ -995,7 +894,6 @@
 			"zh": "樱木町"
 		}
 	}, {
-		"name": "kannai",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Kannai"
 		],
@@ -1004,7 +902,6 @@
 			"zh": "关内"
 		}
 	}, {
-		"name": "ishikawacho",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Ishikawacho"
 		],
@@ -1013,7 +910,6 @@
 			"zh": "石川町"
 		}
 	}, {
-		"name": "yamate",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Yamate"
 		],
@@ -1022,7 +918,6 @@
 			"zh": "山手"
 		}
 	}, {
-		"name": "negishi",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Negishi"
 		],
@@ -1031,7 +926,6 @@
 			"zh": "根岸"
 		}
 	}, {
-		"name": "isogo",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Isogo"
 		],
@@ -1040,7 +934,6 @@
 			"zh": "矶子"
 		}
 	}, {
-		"name": "shin-sugita",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.ShinSugita"
 		],
@@ -1049,7 +942,6 @@
 			"zh": "新杉田"
 		}
 	}, {
-		"name": "yokodai",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Yokodai"
 		],
@@ -1058,7 +950,6 @@
 			"zh": "洋光台"
 		}
 	}, {
-		"name": "konandai",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Konandai"
 		],
@@ -1067,7 +958,6 @@
 			"zh": "港南台"
 		}
 	}, {
-		"name": "hongodai",
 		"aliases": [
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Hongodai"
 		],
@@ -1076,7 +966,6 @@
 			"zh": "本乡台"
 		}
 	}, {
-		"name": "mikawashima",
 		"aliases": [
 			"odpt.Station:JR-East.JobanRapid.Mikawashima"
 		],
@@ -1085,7 +974,6 @@
 			"zh": "三河岛"
 		}
 	}, {
-		"name": "minami-senju",
 		"aliases": [
 			"odpt.Station:JR-East.JobanRapid.MinamiSenju"
 		],
@@ -1094,7 +982,6 @@
 			"zh": "南千住"
 		}
 	}, {
-		"name": "kita-senju",
 		"aliases": [
 			"odpt.Station:JR-East.JobanRapid.KitaSenju"
 		],
@@ -1103,7 +990,6 @@
 			"zh": "北千住"
 		}
 	}, {
-		"name": "matsudo",
 		"aliases": [
 			"odpt.Station:JR-East.JobanRapid.Matsudo"
 		],
@@ -1112,7 +998,6 @@
 			"zh": "松户"
 		}
 	}, {
-		"name": "kashiwa",
 		"aliases": [
 			"odpt.Station:JR-East.JobanRapid.Kashiwa"
 		],
@@ -1121,7 +1006,6 @@
 			"zh": "柏"
 		}
 	}, {
-		"name": "abiko",
 		"aliases": [
 			"odpt.Station:JR-East.JobanRapid.Abiko"
 		],
@@ -1130,7 +1014,6 @@
 			"zh": "我孙子"
 		}
 	}, {
-		"name": "tennodai",
 		"aliases": [
 			"odpt.Station:JR-East.JobanRapid.Tennodai"
 		],
@@ -1139,7 +1022,6 @@
 			"zh": "天王台"
 		}
 	}, {
-		"name": "toride",
 		"aliases": [
 			"odpt.Station:JR-East.JobanRapid.Toride"
 		],
@@ -1148,7 +1030,6 @@
 			"zh": "取手"
 		}
 	}, {
-		"name": "shin-nihombashi",
 		"aliases": [
 			"odpt.Station:JR-East.SobuRapid.ShinNihombashi"
 		],
@@ -1157,7 +1038,6 @@
 			"zh": "新日本桥"
 		}
 	}, {
-		"name": "bakurocho",
 		"aliases": [
 			"odpt.Station:JR-East.SobuRapid.Bakurocho"
 		],
@@ -1166,7 +1046,6 @@
 			"zh": "马喰町"
 		}
 	}, {
-		"name": "nishi-oi",
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.NishiOi"
 		],
@@ -1175,7 +1054,6 @@
 			"zh": "西大井"
 		}
 	}, {
-		"name": "musashi-kosugi",
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.MusashiKosugi"
 		],
@@ -1184,7 +1062,6 @@
 			"zh": "武藏小杉"
 		}
 	}, {
-		"name": "shin-kawasaki",
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.ShinKawasaki"
 		],
@@ -1193,7 +1070,6 @@
 			"zh": "新川崎"
 		}
 	}, {
-		"name": "hodogaya",
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.Hodogaya"
 		],
@@ -1202,7 +1078,6 @@
 			"zh": "保土谷"
 		}
 	}, {
-		"name": "higashi-totsuka",
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.HigashiTotsuka"
 		],
@@ -1211,7 +1086,6 @@
 			"zh": "东户冢"
 		}
 	}, {
-		"name": "shibuya-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Shibuya"
 		],
@@ -1221,7 +1095,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "omote-sando",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.OmoteSando"
 		],
@@ -1231,7 +1104,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "gaiemmae",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Gaiemmae"
 		],
@@ -1241,7 +1113,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "aoyama-itchome",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.AoyamaItchome"
 		],
@@ -1251,7 +1122,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "akasaka-mitsuke",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke",
 			"odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke"
@@ -1262,7 +1132,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "tameike-sanno",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.TameikeSanno"
 		],
@@ -1272,7 +1141,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "toranomon",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Toranomon"
 		],
@@ -1282,7 +1150,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "shimbashi-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Shimbashi",
 			"odpt.Station:Toei.Asakusa.Shimbashi"
@@ -1293,7 +1160,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "ginza",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Ginza",
 			"odpt.Station:TokyoMetro.Hibiya.Ginza",
@@ -1305,7 +1171,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kyobashi",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Kyobashi"
 		],
@@ -1315,7 +1180,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "nihombashi",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Nihombashi",
 			"odpt.Station:TokyoMetro.Tozai.Nihombashi",
@@ -1327,7 +1191,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "mitsukoshimae",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Mitsukoshimae"
 		],
@@ -1337,7 +1200,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kanda-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Kanda"
 		],
@@ -1347,7 +1209,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "suehirocho",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Suehirocho"
 		],
@@ -1357,7 +1218,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "ueno-hirokoji",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.UenoHirokoji"
 		],
@@ -1367,7 +1227,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "ueno-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Ueno",
 			"odpt.Station:TokyoMetro.Hibiya.Ueno"
@@ -1378,7 +1237,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "inaricho",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Inaricho"
 		],
@@ -1388,7 +1246,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "tawaramachi",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Tawaramachi"
 		],
@@ -1398,7 +1255,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "asakusa",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.Asakusa",
 			"odpt.Station:Toei.Asakusa.Asakusa"
@@ -1409,7 +1265,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "ogikubo-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.Ogikubo"
 		],
@@ -1419,7 +1274,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "minami-asagaya",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.MinamiAsagaya"
 		],
@@ -1429,7 +1283,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "shin-koenji",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.ShinKoenji"
 		],
@@ -1439,7 +1292,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "higashi-koenji",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.HigashiKoenji"
 		],
@@ -1449,7 +1301,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "shin-nakano",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.ShinNakano"
 		],
@@ -1459,7 +1310,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "nakano-sakaue",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue",
 			"odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue"
@@ -1470,7 +1320,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "nishi-shinjuku",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.NishiShinjuku"
 		],
@@ -1480,7 +1329,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "shinjuku-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku"
 		],
@@ -1490,7 +1338,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "shinjuku-sanchome",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome"
 		],
@@ -1500,7 +1347,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "shinjuku-gyoemmae",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.ShinjukuGyoemmae"
 		],
@@ -1510,7 +1356,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "yotsuya-sanchome",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.YotsuyaSanchome"
 		],
@@ -1520,7 +1365,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "yotsuya-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.Yotsuya"
 		],
@@ -1530,7 +1374,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kokkai-gijidomae",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.KokkaiGijidomae"
 		],
@@ -1540,7 +1383,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kasumigaseki",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.Kasumigaseki",
 			"odpt.Station:TokyoMetro.Hibiya.Kasumigaseki"
@@ -1551,7 +1393,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "tokyo-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.Tokyo"
 		],
@@ -1561,7 +1402,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "otemachi",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.Otemachi",
 			"odpt.Station:TokyoMetro.Tozai.Otemachi"
@@ -1572,7 +1412,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "awajicho",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.Awajicho"
 		],
@@ -1582,7 +1421,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "ochanomizu-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.Ochanomizu"
 		],
@@ -1592,7 +1430,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "hongo-sanchome",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.HongoSanchome"
 		],
@@ -1602,7 +1439,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "korakuen",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.Korakuen"
 		],
@@ -1612,7 +1448,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "myogadani",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.Myogadani"
 		],
@@ -1622,7 +1457,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "shin-otsuka",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.ShinOtsuka"
 		],
@@ -1632,7 +1466,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "ikebukuro-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.Ikebukuro"
 		],
@@ -1642,7 +1475,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "honancho",
 		"aliases": [
 			"odpt.Station:TokyoMetro.MarunouchiBranch.Honancho"
 		],
@@ -1652,7 +1484,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "nakano-fujimicho",
 		"aliases": [
 			"odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho"
 		],
@@ -1662,7 +1493,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "nakano-shimbashi",
 		"aliases": [
 			"odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi"
 		],
@@ -1672,7 +1502,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "naka-meguro",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.NakaMeguro"
 		],
@@ -1682,7 +1511,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "ebisu-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Ebisu"
 		],
@@ -1692,7 +1520,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "hiro-o",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.HiroO"
 		],
@@ -1702,7 +1529,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "roppongi",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Roppongi"
 		],
@@ -1712,7 +1538,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kamiyacho",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Kamiyacho"
 		],
@@ -1722,7 +1547,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "hibiya",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Hibiya"
 		],
@@ -1732,7 +1556,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "higashi-ginza",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.HigashiGinza",
 			"odpt.Station:Toei.Asakusa.HigashiGinza"
@@ -1743,7 +1566,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "tsukiji",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Tsukiji"
 		],
@@ -1753,7 +1575,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "hatchobori",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Hatchobori"
 		],
@@ -1763,7 +1584,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kayabacho",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Kayabacho",
 			"odpt.Station:TokyoMetro.Tozai.Kayabacho"
@@ -1774,7 +1594,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "ningyocho",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Ningyocho",
 			"odpt.Station:Toei.Asakusa.Ningyocho"
@@ -1785,7 +1604,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kodemmacho",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Kodemmacho"
 		],
@@ -1795,7 +1613,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "akihabara-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Akihabara"
 		],
@@ -1805,7 +1622,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "naka-okachimachi",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.NakaOkachimachi"
 		],
@@ -1815,7 +1631,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "iriya",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Iriya"
 		],
@@ -1825,7 +1640,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "minowa",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Minowa"
 		],
@@ -1835,7 +1649,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "minami-senju-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.MinamiSenju"
 		],
@@ -1845,7 +1658,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kita-senju-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.KitaSenju"
 		],
@@ -1855,7 +1667,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "nakano-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Nakano"
 		],
@@ -1865,7 +1676,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "ochiai",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Ochiai"
 		],
@@ -1875,7 +1685,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "takadanobaba-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Takadanobaba"
 		],
@@ -1885,7 +1694,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "waseda",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Waseda"
 		],
@@ -1895,7 +1703,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kagurazaka",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Kagurazaka"
 		],
@@ -1905,7 +1712,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "iidabashi-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Iidabashi"
 		],
@@ -1915,7 +1721,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kudanshita",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Kudanshita"
 		],
@@ -1925,7 +1730,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "takebashi",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Takebashi"
 		],
@@ -1935,7 +1739,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "monzen-nakacho",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.MonzenNakacho"
 		],
@@ -1945,7 +1748,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kiba",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Kiba"
 		],
@@ -1955,7 +1757,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "toyocho",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Toyocho"
 		],
@@ -1965,7 +1766,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "minami-sunamachi",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.MinamiSunamachi"
 		],
@@ -1975,7 +1775,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "nishi-kasai",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.NishiKasai"
 		],
@@ -1985,7 +1784,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kasai",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Kasai"
 		],
@@ -1995,7 +1793,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "urayasu",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Urayasu"
 		],
@@ -2005,7 +1802,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "minami-gyotoku",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.MinamiGyotoku"
 		],
@@ -2015,7 +1811,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "gyotoku",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Gyotoku"
 		],
@@ -2025,7 +1820,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "myoden",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.Myoden"
 		],
@@ -2035,7 +1829,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "baraki-nakayama",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.BarakiNakayama"
 		],
@@ -2045,7 +1838,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "nishi-funabashi-ug",
 		"aliases": [
 			"odpt.Station:TokyoMetro.Tozai.NishiFunabashi"
 		],
@@ -2055,7 +1847,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "nishi-magome",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.NishiMagome"
 		],
@@ -2065,7 +1856,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "magome",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.Magome"
 		],
@@ -2075,7 +1865,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "nakanobu",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.Nakanobu"
 		],
@@ -2085,7 +1874,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "togoshi",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.Togoshi"
 		],
@@ -2095,7 +1883,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "gotanda-ug",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.Gotanda"
 		],
@@ -2105,7 +1892,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "takanawadai",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.Takanawadai"
 		],
@@ -2115,7 +1901,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "sengakuji",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.Sengakuji"
 		],
@@ -2125,7 +1910,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "mita",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.Mita"
 		],
@@ -2135,7 +1919,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "daimon",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.Daimon"
 		],
@@ -2145,7 +1928,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "takaracho",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.Takaracho"
 		],
@@ -2155,7 +1937,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "higashi-nihombashi",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.HigashiNihombashi"
 		],
@@ -2165,7 +1946,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "asakusabashi-ug",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.Asakusabashi"
 		],
@@ -2175,7 +1955,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "kuramae",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.Kuramae"
 		],
@@ -2185,7 +1964,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "honjo-azumabashi",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.HonjoAzumabashi"
 		],
@@ -2195,7 +1973,6 @@
 		},
 		"altitude": -1
 	}, {
-		"name": "oshiage",
 		"aliases": [
 			"odpt.Station:Toei.Asakusa.Oshiage"
 		],
