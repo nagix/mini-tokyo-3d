@@ -377,6 +377,7 @@ map.once('styledata', function () {
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
 		var maxzoom = zoom >= 18 ? 24 : zoom + 1;
+		var lineWidthScale = zoom === 13 ? clamp(Math.pow(2, map.getZoom() - 12), .125, 1) : 1;
 
 		map.addLayer(new MapboxLayer({
 			id: 'railways-ug-' + zoom,
@@ -393,6 +394,7 @@ map.once('styledata', function () {
 				return colorToRGBArray(d.properties.color);
 			},
 			lineWidthUnits: 'pixels',
+			lineWidthScale: lineWidthScale,
 			lineJointRounded: true,
 			opacity: .0625
 		}), 'building-3d');
@@ -408,6 +410,7 @@ map.once('styledata', function () {
 			getLineWidth: 4,
 			getLineColor: [0, 0, 0],
 			lineWidthUnits: 'pixels',
+			lineWidthScale: lineWidthScale,
 			getFillColor: [255, 255, 255, 179],
 			opacity: .0625
 		}), 'building-3d');
@@ -419,6 +422,9 @@ map.once('styledata', function () {
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
 		var maxzoom = zoom >= 18 ? 24 : zoom + 1;
+		var getWidth = ['get', 'width'];
+		var lineWidth = zoom === 13 ?
+			['interpolate', ['exponential', 2], ['zoom'], 9, ['/', getWidth, 8], 12, getWidth] : getWidth;
 
 		map.addLayer({
 			id: 'railways-og-' + zoom,
@@ -431,7 +437,7 @@ map.once('styledata', function () {
 			},
 			paint: {
 				'line-color': ['get', 'color'],
-				'line-width': ['get', 'width']
+				'line-width': lineWidth
 			},
 			minzoom: minzoom,
 			maxzoom: maxzoom
@@ -463,7 +469,7 @@ map.once('styledata', function () {
 			},
 			paint: {
 				'line-color': ['get', 'outlineColor'],
-				'line-width': ['get', 'width']
+				'line-width': lineWidth
 			},
 			minzoom: minzoom,
 			maxzoom: maxzoom
@@ -522,8 +528,8 @@ map.once('styledata', function () {
 					var opacity = isUndergroundVisible ?
 						1 * t + .0625 * (1 - t) : 1 * (1 - t) + .0625 * t;
 
-					map.getLayer('stations-ug-' + zoom).implementation.setProps({opacity: opacity});
-					map.getLayer('railways-ug-' + zoom).implementation.setProps({opacity: opacity});
+					setLayerProps(map, 'railways-ug-' + zoom, {opacity: opacity});
+					setLayerProps(map, 'stations-ug-' + zoom, {opacity: opacity});
 				});
 				Object.keys(trainLookup).forEach(function(key) {
 					var train = trainLookup[key];
@@ -540,7 +546,6 @@ map.once('styledata', function () {
 				}
 			}
 			repeat();
-
 		}
 	}), 'top-right');
 
@@ -635,6 +640,11 @@ map.once('styledata', function () {
 	});
 
 	map.on('zoom', function() {
+		var lineWidthScale = clamp(Math.pow(2, map.getZoom() - 12), .125, 1);
+
+		setLayerProps(map, 'railways-ug-13', {lineWidthScale: lineWidthScale});
+		setLayerProps(map, 'stations-ug-13', {lineWidthScale: lineWidthScale});
+
 		Object.keys(trainLookup).forEach(function(key) {
 			updateTrainShape(trainLookup[key], {reset: true});
 		});
@@ -1005,6 +1015,10 @@ function filterFeatures(featureCollection, fn) {
 	return turf.featureCollection(featureCollection.features.filter(function(feature) {
 		return fn(feature.properties);
 	}));
+}
+
+function setLayerProps(map, id, props) {
+	map.getLayer(id).implementation.setProps(props);
 }
 
 function animate(callback, endCallback, distance, timeFactor, elapsed) {

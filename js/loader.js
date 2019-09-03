@@ -291,6 +291,7 @@ map.once('styledata', function () {
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
 		var maxzoom = zoom >= 18 ? 24 : zoom + 1;
+		var lineWidthScale = zoom === 13 ? clamp(Math.pow(2, map.getZoom() - 12), .125, 1) : 1;
 
 		map.addLayer(new MapboxLayer({
 			id: 'railways-ug-' + zoom,
@@ -307,6 +308,7 @@ map.once('styledata', function () {
 				return colorToRGBArray(d.properties.color);
 			},
 			lineWidthUnits: 'pixels',
+			lineWidthScale: lineWidthScale,
 			lineJointRounded: true,
 			opacity: .0625
 		}), 'building-3d');
@@ -322,6 +324,7 @@ map.once('styledata', function () {
 			getLineWidth: 4,
 			getLineColor: [0, 0, 0],
 			lineWidthUnits: 'pixels',
+			lineWidthScale: lineWidthScale,
 			getFillColor: [255, 255, 255, 179],
 			opacity: .0625
 		}), 'building-3d');
@@ -331,6 +334,9 @@ map.once('styledata', function () {
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
 		var maxzoom = zoom >= 18 ? 24 : zoom + 1;
+		var getWidth = ['get', 'width'];
+		var lineWidth = zoom === 13 ?
+			['interpolate', ['exponential', 2], ['zoom'], 9, ['/', getWidth, 8], 12, getWidth] : getWidth;
 
 		map.addLayer({
 			id: 'railways-og-' + zoom,
@@ -343,7 +349,7 @@ map.once('styledata', function () {
 			},
 			paint: {
 				'line-color': ['get', 'color'],
-				'line-width': ['get', 'width']
+				'line-width': lineWidth
 			},
 			minzoom: minzoom,
 			maxzoom: maxzoom
@@ -375,7 +381,7 @@ map.once('styledata', function () {
 			},
 			paint: {
 				'line-color': ['get', 'outlineColor'],
-				'line-width': ['get', 'width']
+				'line-width': lineWidth
 			},
 			minzoom: minzoom,
 			maxzoom: maxzoom
@@ -420,11 +426,22 @@ map.once('styledata', function () {
 					map.setPaintProperty(id, layer.type + '-opacity', opacity);
 				}
 			});
-			[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
-				var opacity = isUndergroundVisible ? .8 : .0625;
-				map.getLayer('stations-ug-' + zoom).implementation.setProps({opacity: opacity});
-				map.getLayer('railways-ug-' + zoom).implementation.setProps({opacity: opacity});
-			});
+
+			var start = performance.now();
+			function repeat() {
+				var t = Math.min((performance.now() - start) / 300, 1);
+				[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
+					var opacity = isUndergroundVisible ?
+						1 * t + .0625 * (1 - t) : 1 * (1 - t) + .0625 * t;
+
+					setLayerProps(map, 'stations-ug-' + zoom, {opacity: opacity});
+					setLayerProps(map, 'railways-ug-' + zoom, {opacity: opacity});
+				});
+				if (t < 1) {
+					requestAnimationFrame(repeat);
+				}
+			}
+			repeat();
 		}
 	}), 'top-right');
 
@@ -441,6 +458,13 @@ map.once('styledata', function () {
 
 	map.on('click', function(e) {
 		console.log(e.lngLat);
+	});
+
+	map.on('zoom', function() {
+		var lineWidthScale = clamp(Math.pow(2, map.getZoom() - 12), .125, 1);
+
+		setLayerProps(map, 'railways-ug-13', {lineWidthScale: lineWidthScale});
+		setLayerProps(map, 'stations-ug-13', {lineWidthScale: lineWidthScale});
 	});
 });
 
@@ -529,6 +553,10 @@ function filterFeatures(featureCollection, fn) {
 	}));
 }
 
+function setLayerProps(map, id, props) {
+	map.getLayer(id).implementation.setProps(props);
+}
+
 function easeInOutQuad(t) {
 	if ((t /= 0.5) < 1) {
 		return 0.5 * t * t;
@@ -548,6 +576,10 @@ function merge(target, source) {
 		target[key] = source[key];
 	});
 	return target;
+}
+
+function clamp(value, lower, upper) {
+	return Math.min(Math.max(value, lower), upper);
 }
 
 function loadJSON(url) {
