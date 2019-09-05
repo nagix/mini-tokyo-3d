@@ -24,11 +24,6 @@ var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
 // API Token
 var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
 
-var SQRT3 = Math.sqrt(3);
-
-var modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat([139.7670, 35.6814]);
-var modelScale = 1 / 2 / Math.PI / 6378137 / Math.cos(35.6814 * Math.PI / 180);
-
 var isUndergroundVisible = false;
 var opacityStore = {};
 var featureLookup = {};
