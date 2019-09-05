@@ -52,14 +52,13 @@ var modelScale = 1 / 2 / Math.PI / 6378137 / Math.cos(35.6814 * Math.PI / 180);
 var lang = getLang();
 var today = new Date();
 var isUndergroundVisible = false;
-var isAnimating = false;
 var isRealtime = true;
 var trackingMode = 'helicopter';
 var opacityStore = {};
 var featureLookup = {};
 var trainLookup = {};
 var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, timetableLookup;
-var trackedTrain, markedTrain, trainLastRefresh, trackingBaseBearing;
+var trackedTrain, markedTrain, trainLastRefresh, trackingBaseBearing, viewAnimationID;
 
 // Replace MapboxLayer.render to support underground rendering
 var render = MapboxLayer.prototype.render;
@@ -224,15 +223,17 @@ Promise.all([
 	loadJSON('data/features.json'),
 	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:RailDirection?' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central,odpt.Operator:TWR&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Tobu,odpt.Operator:ToyoRapid,odpt.Operator:Keikyu,odpt.Operator:Keisei,odpt.Operator:Hokuso,odpt.Operator:Shibayama&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Yamanote&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoSobuLocal&odpt:calendar=odpt.Calendar:Weekday&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Tokaido&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Utsunomiya,odpt.Railway:JR-East.Takasaki&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.JobanRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.SobuRapid,odpt.Railway:JR-East.Yokosuka&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.SaikyoKawagoe,odpt.Railway:JR-East.ShonanShinjuku&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Ginza&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Marunouchi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.MarunouchiBranch&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
@@ -241,12 +242,18 @@ Promise.all([
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Toei.Asakusa&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN)
 ]).then(function([
-	dict, railwayData, stationData, trainData, railwayFeatureCollection, railwayRefData, railDirectionRefData, stationRefData1, stationRefData2,
-	timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13, trainTypeRefData
+	dict, railwayData, stationData, trainData, railwayFeatureCollection, railwayRefData, railDirectionRefData,
+	stationRefData1, stationRefData2, timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4,
+	timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10,
+	timetableRefData11, timetableRefData12, timetableRefData13, timetableRefData14, timetableRefData15, trainTypeRefData
 ]) {
 
 var stationRefData = stationRefData1.concat(stationRefData2);
-var timetableRefData = timetableRefData1.concat(timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13);
+var timetableRefData = timetableRefData1.concat(
+	timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7,
+	timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13,
+	timetableRefData14, timetableRefData15
+);
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -278,6 +285,10 @@ railwayData.railways.forEach(function(railway) {
 
 	if (id === 'odpt.Railway:JR-East.Tokaido') {
 		stationOrder = stationOrder.slice(0, 7);
+	} else if (id === 'odpt.Railway:JR-East.Utsunomiya') {
+		stationOrder = stationOrder.slice(0, 13);
+	} else if (id === 'odpt.Railway:JR-East.Takasaki') {
+		stationOrder = stationOrder.slice(0, 13);
 	} else if (id === 'odpt.Railway:JR-East.Yokosuka') {
 		stationOrder = stationOrder.slice(0, 11);
 	}
@@ -562,7 +573,7 @@ map.once('styledata', function () {
 				this.classList.remove('mapbox-ctrl-track-train');
 				this.classList.add('mapbox-ctrl-track-helicopter');
 			}
-			startAnimation();
+			startViewAnimation();
 			event.stopPropagation();
 		}
 	}), 'top-right');
@@ -577,6 +588,7 @@ map.once('styledata', function () {
 				stopTrain(trainLookup[key]);
 			});
 			trackedTrain = undefined;
+			stopViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0].classList.remove('mapbox-ctrl-track-active');
 			if (isRealtime) {
 				this.classList.add('mapbox-ctrl-realtime-active');
@@ -626,10 +638,11 @@ map.once('styledata', function () {
 	map.on('click', function(e) {
 		trackedTrain = trainLayers.pickObject(e.point);
 		if (trackedTrain) {
-			startAnimation();
+			startViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.add('mapbox-ctrl-track-active');
 		} else {
+			stopViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.remove('mapbox-ctrl-track-active');
 		}
@@ -750,7 +763,7 @@ map.once('styledata', function () {
 				popup.setLngLat(userData.lngLat).setHTML(userData.description);
 			}
 		}
-		if (trackedTrain && !isAnimating) {
+		if (trackedTrain && !viewAnimationID) {
 			userData = trackedTrain.userData;
 			bearing = map.getBearing();
 			map.easeTo({
@@ -826,7 +839,7 @@ map.once('styledata', function () {
 		}
 	}
 
-	function startAnimation() {
+	function startViewAnimation() {
 		var t2 = 0;
 		var start;
 		var frameRefresh = function() {
@@ -855,15 +868,19 @@ map.once('styledata', function () {
 			t2 = t1;
 
 			if (t < 1) {
-				requestAnimationFrame(frameRefresh);
+				viewAnimationID = requestAnimationFrame(frameRefresh);
 			} else {
-				isAnimating = false;
+				viewAnimationID = undefined;
 			}
 		};
 
 		trackingBaseBearing = map.getBearing() - performance.now() / 100;
-		isAnimating = true;
-		requestAnimationFrame(frameRefresh);
+		viewAnimationID = requestAnimationFrame(frameRefresh);
+	}
+
+	function stopViewAnimation() {
+		cancelAnimationFrame(viewAnimationID);
+		viewAnimationID = undefined;
 	}
 
 	function getLocalizedRailwayTitle(railway) {

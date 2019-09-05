@@ -1,7 +1,9 @@
 {
 	"stations": [{
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Osaki"
+			"odpt.Station:JR-East.Yamanote.Osaki",
+			"odpt.Station:JR-East.SaikyoKawagoe.Osaki",
+			"odpt.Station:JR-East.ShonanShinjuku.Osaki"
 		],
 		"odpt:stationTitle": {
 			"ko": "오사키",
@@ -25,7 +27,9 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Ebisu"
+			"odpt.Station:JR-East.Yamanote.Ebisu",
+			"odpt.Station:JR-East.SaikyoKawagoe.Ebisu",
+			"odpt.Station:JR-East.ShonanShinjuku.Ebisu"
 		],
 		"odpt:stationTitle": {
 			"ko": "에비스",
@@ -33,7 +37,9 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Shibuya"
+			"odpt.Station:JR-East.Yamanote.Shibuya",
+			"odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
+			"odpt.Station:JR-East.ShonanShinjuku.Shibuya"
 		],
 		"odpt:stationTitle": {
 			"ko": "시부야",
@@ -62,7 +68,9 @@
 		"aliases": [
 			"odpt.Station:JR-East.Yamanote.Shinjuku",
 			"odpt.Station:JR-East.ChuoSobuLocal.Shinjuku",
-			"odpt.Station:JR-East.ChuoRapid.Shinjuku"
+			"odpt.Station:JR-East.ChuoRapid.Shinjuku",
+			"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
+			"odpt.Station:JR-East.ShonanShinjuku.Shinjuku"
 		],
 		"odpt:stationTitle": {
 			"ko": "신주쿠",
@@ -95,7 +103,9 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Ikebukuro"
+			"odpt.Station:JR-East.Yamanote.Ikebukuro",
+			"odpt.Station:JR-East.SaikyoKawagoe.Ikebukuro",
+			"odpt.Station:JR-East.ShonanShinjuku.Ikebukuro"
 		],
 		"odpt:stationTitle": {
 			"ko": "이케부쿠로",
@@ -174,6 +184,7 @@
 		"labelOffset": 8
 	}, {
 		"aliases": [
+			"odpt.Station:JR-East.Utsunomiya.Ueno",
 			"odpt.Station:JR-East.JobanRapid.Ueno",
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Ueno",
 			"odpt.Station:JR-East.Yamanote.Ueno"
@@ -707,6 +718,7 @@
 	}, {
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.Yokohama",
+			"odpt.Station:JR-East.ShonanShinjuku.Yokohama",
 			"odpt.Station:JR-East.Tokaido.Yokohama",
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Yokohama"
 		],
@@ -717,6 +729,7 @@
 	}, {
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.Totsuka",
+			"odpt.Station:JR-East.ShonanShinjuku.Totsuka",
 			"odpt.Station:JR-East.Tokaido.Totsuka"
 		],
 		"odpt:stationTitle": {
@@ -726,6 +739,7 @@
 	}, {
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.Ofuna",
+			"odpt.Station:JR-East.ShonanShinjuku.Ofuna",
 			"odpt.Station:JR-East.Tokaido.Ofuna",
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Ofuna"
 		],
@@ -735,6 +749,47 @@
 		}
 	}, {
 		"aliases": [
+			"odpt.Station:JR-East.Utsunomiya.Oku"
+		],
+		"odpt:stationTitle": {
+			"ko": "오쿠",
+			"zh": "尾久"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Akabane",
+			"odpt.Station:JR-East.ShonanShinjuku.Akabane",
+			"odpt.Station:JR-East.Utsunomiya.Akabane",
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Akabane"
+		],
+		"odpt:stationTitle": {
+			"ko": "아카바네",
+			"zh": "赤羽"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.ShonanShinjuku.Urawa",
+			"odpt.Station:JR-East.Utsunomiya.Urawa",
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Urawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "우라와",
+			"zh": "浦和"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Utsunomiya.SaitamaShintoshin",
+			"odpt.Station:JR-East.KeihinTohokuNegishi.SaitamaShintoshin"
+		],
+		"odpt:stationTitle": {
+			"ko": "사이타마 신도심",
+			"zh": "埼玉新都心"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Omiya",
+			"odpt.Station:JR-East.ShonanShinjuku.Omiya",
+			"odpt.Station:JR-East.Utsunomiya.Omiya",
 			"odpt.Station:JR-East.KeihinTohokuNegishi.Omiya"
 		],
 		"odpt:stationTitle": {
@@ -743,11 +798,99 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.KeihinTohokuNegishi.SaitamaShintoshin"
+			"odpt.Station:JR-East.Utsunomiya.Toro"
 		],
 		"odpt:stationTitle": {
-			"ko": "사이타마 신도심",
-			"zh": "埼玉新都心"
+			"ko": "도로",
+			"zh": "土呂"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Utsunomiya.HigashiOmiya"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시오미야",
+			"zh": "东大宫"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Utsunomiya.Hasuda"
+		],
+		"odpt:stationTitle": {
+			"ko": "하스다",
+			"zh": "莲田"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Utsunomiya.Shiraoka"
+		],
+		"odpt:stationTitle": {
+			"ko": "시라오카",
+			"zh": "白冈"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Utsunomiya.ShinShiraoka"
+		],
+		"odpt:stationTitle": {
+			"ko": "신시라오카",
+			"zh": "新白冈"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Utsunomiya.Kuki"
+		],
+		"odpt:stationTitle": {
+			"ko": "구키",
+			"zh": "久喜"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Takasaki.Miyahara"
+		],
+		"odpt:stationTitle": {
+			"ko": "미야하라",
+			"zh": "宮原"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Takasaki.Ageo"
+		],
+		"odpt:stationTitle": {
+			"ko": "아게오",
+			"zh": "上尾"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Takasaki.KitaAgeo"
+		],
+		"odpt:stationTitle": {
+			"ko": "기타아게오",
+			"zh": "北上尾"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Takasaki.Okegawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "오케가와",
+			"zh": "桶川"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Takasaki.Kitamoto"
+		],
+		"odpt:stationTitle": {
+			"ko": "기타모토",
+			"zh": "北本"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Takasaki.Konosu"
+		],
+		"odpt:stationTitle": {
+			"ko": "고노스",
+			"zh": "鸿巢"
 		}
 	}, {
 		"aliases": [
@@ -764,14 +907,6 @@
 		"odpt:stationTitle": {
 			"ko": "기타우라와",
 			"zh": "北浦和"
-		}
-	}, {
-		"aliases": [
-			"odpt.Station:JR-East.KeihinTohokuNegishi.Urawa"
-		],
-		"odpt:stationTitle": {
-			"ko": "우라와",
-			"zh": "浦和"
 		}
 	}, {
 		"aliases": [
@@ -804,14 +939,6 @@
 		"odpt:stationTitle": {
 			"ko": "가와구치",
 			"zh": "川口"
-		}
-	}, {
-		"aliases": [
-			"odpt.Station:JR-East.KeihinTohokuNegishi.Akabane"
-		],
-		"odpt:stationTitle": {
-			"ko": "아카바네",
-			"zh": "赤羽"
 		}
 	}, {
 		"aliases": [
@@ -1047,7 +1174,8 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.Yokosuka.NishiOi"
+			"odpt.Station:JR-East.Yokosuka.NishiOi",
+			"odpt.Station:JR-East.ShonanShinjuku.NishiOi"
 		],
 		"odpt:stationTitle": {
 			"ko": "니시오이",
@@ -1055,7 +1183,8 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.Yokosuka.MusashiKosugi"
+			"odpt.Station:JR-East.Yokosuka.MusashiKosugi",
+			"odpt.Station:JR-East.ShonanShinjuku.MusashiKosugi"
 		],
 		"odpt:stationTitle": {
 			"ko": "무사시코스기",
@@ -1063,7 +1192,8 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.Yokosuka.ShinKawasaki"
+			"odpt.Station:JR-East.Yokosuka.ShinKawasaki",
+			"odpt.Station:JR-East.ShonanShinjuku.ShinKawasaki"
 		],
 		"odpt:stationTitle": {
 			"ko": "신카와사키",
@@ -1071,7 +1201,8 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.Yokosuka.Hodogaya"
+			"odpt.Station:JR-East.Yokosuka.Hodogaya",
+			"odpt.Station:JR-East.ShonanShinjuku.Hodogaya"
 		],
 		"odpt:stationTitle": {
 			"ko": "호도가야",
@@ -1079,11 +1210,148 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.Yokosuka.HigashiTotsuka"
+			"odpt.Station:JR-East.Yokosuka.HigashiTotsuka",
+			"odpt.Station:JR-East.ShonanShinjuku.HigashiTotsuka"
 		],
 		"odpt:stationTitle": {
 			"ko": "히가시토쓰카",
 			"zh": "东户冢"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Itabashi"
+		],
+		"odpt:stationTitle": {
+			"ko": "이타바시",
+			"zh": "板桥"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Jujo"
+		],
+		"odpt:stationTitle": {
+			"ko": "주조",
+			"zh": "十条"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.KitaAkabane"
+		],
+		"odpt:stationTitle": {
+			"ko": "기타아카바네",
+			"zh": "北赤羽"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Ukimafunado"
+		],
+		"odpt:stationTitle": {
+			"ko": "우키마후나도",
+			"zh": "浮间舟渡"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.TodaKoen"
+		],
+		"odpt:stationTitle": {
+			"ko": "도다 공원",
+			"zh": "户田公园"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Toda"
+		],
+		"odpt:stationTitle": {
+			"ko": "도다",
+			"zh": "户田"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.KitaToda"
+		],
+		"odpt:stationTitle": {
+			"ko": "기타토다",
+			"zh": "北户田"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.MusashiUrawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "무사시우라와",
+			"zh": "武藏浦和"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.NakaUrawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "나카우라와",
+			"zh": "中浦和"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.MinamiYono"
+		],
+		"odpt:stationTitle": {
+			"ko": "미나미요노",
+			"zh": "南与野"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.YonoHommachi"
+		],
+		"odpt:stationTitle": {
+			"ko": "요노혼마치",
+			"zh": "与野本町"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.KitaYono"
+		],
+		"odpt:stationTitle": {
+			"ko": "기타요노",
+			"zh": "北与野"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Nisshin"
+		],
+		"odpt:stationTitle": {
+			"ko": "닛신",
+			"zh": "日进"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.NishiOmiya"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시오미야",
+			"zh": "西大宮"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Sashiogi"
+		],
+		"odpt:stationTitle": {
+			"ko": "사시오기",
+			"zh": "指扇"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.MinamiFuruya"
+		],
+		"odpt:stationTitle": {
+			"ko": "미나미후루야",
+			"zh": "南古谷"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.SaikyoKawagoe.Kawagoe"
+		],
+		"odpt:stationTitle": {
+			"ko": "가와고에",
+			"zh": "川越"
 		}
 	}, {
 		"aliases": [

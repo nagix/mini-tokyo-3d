@@ -92,7 +92,7 @@ Promise.all([
 	loadJSON('data/railways-coordinates.json'),
 	loadJSON('data/stations.json'),
 	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central,odpt.Operator:TWR&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Tobu,odpt.Operator:ToyoRapid,odpt.Operator:Keikyu,odpt.Operator:Keisei,odpt.Operator:Hokuso,odpt.Operator:Shibayama&' + API_TOKEN)
 ]).then(function([
 	railwayData, stationData, railwayRefData, stationRefData1, stationRefData2
@@ -121,6 +121,10 @@ railwayData.railways.forEach(function(railway) {
 
 	if (id === 'odpt.Railway:JR-East.Tokaido') {
 		stationOrder = stationOrder.slice(0, 7);
+	} else if (id === 'odpt.Railway:JR-East.Utsunomiya') {
+		stationOrder = stationOrder.slice(0, 13);
+	} else if (id === 'odpt.Railway:JR-East.Takasaki') {
+		stationOrder = stationOrder.slice(0, 13);
 	} else if (id === 'odpt.Railway:JR-East.Yokosuka') {
 		stationOrder = stationOrder.slice(0, 11);
 	}
@@ -142,23 +146,27 @@ var railwayFeatureArray = [];
 		var sublines = railway._sublines;
 		var railwayFeature = turf.lineString(concat(sublines.map(function(subline) {
 			var overlap = subline['odpt:railway'];
+			var feature, offset;
 
 			if (overlap) {
-				subline.feature = lineOffset(turf.lineSlice(
-					subline.start,
-					subline.end,
-					featureLookup[overlap + '.' + zoom]
-				), subline.offset * unit);
+				feature = turf.lineSlice(subline.start, subline.end, featureLookup[overlap + '.' + zoom]);
+				offset = subline.offset;
+
+				if (offset) {
+					feature = lineOffset(feature, offset * unit);
+				}
 
 				// Rewind if the overlap line is in opposite direction
 				if (subline.reverse) {
-					turf.getCoords(subline.feature).reverse();
+					turf.getCoords(feature).reverse();
 				}
+
+				subline.feature = feature;
 			}
 
 			return subline;
 		}).map(function(subline, i) {
-			var coordinates, feature1, feature2, length, coord1, coord2, f, nextSubline;
+			var interpolate, coordinates, feature1, feature2, length1, length2, coord1, coord2, f, nextSubline;
 
 			function smoothCoords(reverse) {
 				var start = !reverse ? 0 : coordinates.length - 1;
@@ -169,7 +177,7 @@ var railwayFeatureArray = [];
 				var baseOffset = nextSubline.offset * unit - nearest.distance;
 				var baseFeature = turf.lineString(coordinates);
 				var baseLocation = getLocationAlongLine(baseFeature, coordinates[start]);
-				var transition = subline.transition && (!reverse ? subline.transition.start : subline.transition.end) || 1;
+				var transition = Math.abs(nextSubline.offset) * .5 + .5;
 				var factors = [];
 				var j, distance;
 
@@ -188,23 +196,25 @@ var railwayFeatureArray = [];
 			}
 
 			if (!subline['odpt:railway']) {
-				if (!subline.coordinates) {
+				interpolate = subline.interpolate;
+				if (interpolate) {
 					coordinates = [];
 					feature1 = lineOffset(turf.lineSlice(
-						subline.start,
-						subline.end,
+						sublines[i - 1].end,
+						sublines[i + 1].start,
 						featureLookup[sublines[i - 1]['odpt:railway'] + '.' + zoom]
 					), sublines[i - 1].offset * unit);
 					feature2 = lineOffset(turf.lineSlice(
-						subline.start,
-						subline.end,
+						sublines[i - 1].end,
+						sublines[i + 1].start,
 						featureLookup[sublines[i + 1]['odpt:railway'] + '.' + zoom]
 					), sublines[i + 1].offset * unit);
-					length = turf.length(feature1);
-					for (j = 0; j < 20; j++) {
-						coord1 = turf.getCoord(turf.along(feature1, length * j / 19));
-						coord2 = turf.getCoord(turf.nearestPointOnLine(feature2, coord1));
-						f = easeInOutQuad(j / 19);
+					length1 = turf.length(feature1);
+					length2 = turf.length(feature2);
+					for (j = 1; j < interpolate; j++) {
+						coord1 = turf.getCoord(turf.along(feature1, length1 * (!sublines[i - 1].reverse ? j : interpolate - j) / interpolate));
+						coord2 = turf.getCoord(turf.along(feature2, length2 * (!sublines[i + 1].reverse ? j : interpolate - j) / interpolate));
+						f = easeInOutQuad(j / interpolate);
 						coordinates.push([
 							coord1[0] * (1 - f) + coord2[0] * f,
 							coord1[1] * (1 - f) + coord2[1] * f
