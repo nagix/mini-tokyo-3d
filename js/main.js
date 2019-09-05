@@ -428,6 +428,11 @@ map.once('styledata', function () {
 		map.setLayerZoomRange('stations-ug-' + zoom, minzoom, maxzoom);
 	});
 
+	// Workaround for deck.gl #3522
+	map.__deck.props.getCursor = function() {
+		return map.getCanvas().style.cursor;
+	};
+
 	map.addLayer(trainLayers.ug, 'building-3d');
 
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
