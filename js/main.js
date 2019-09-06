@@ -35,8 +35,8 @@ var TIME_FACTOR = 12;
 
 var MAX_SPEED = MAX_SPEED_KMPH / 3600000;
 var ACCELERATION = ACCELERATION_KMPHPS / 3600000000;
-var ACCELERATION_TIME = MAX_SPEED / ACCELERATION;
-var ACC_DISTANCE = ACCELERATION_TIME * MAX_SPEED / 2;
+var MAX_ACCELERATION_TIME = MAX_SPEED / ACCELERATION;
+var MAX_ACC_DISTANCE = MAX_ACCELERATION_TIME * MAX_SPEED / 2;
 
 // API URL
 var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
@@ -55,8 +55,10 @@ var isUndergroundVisible = false;
 var isRealtime = true;
 var trackingMode = 'helicopter';
 var opacityStore = {};
+var animations = {};
 var featureLookup = {};
 var trainLookup = {};
+var animationID = 0;
 var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, timetableLookup;
 var trackedTrain, markedTrain, trainLastRefresh, trackingBaseBearing, viewAnimationID;
 
@@ -539,31 +541,30 @@ map.once('styledata', function () {
 				}
 			});
 
-			var start = performance.now();
-			function repeat() {
-				var t = Math.min((performance.now() - start) / 300, 1);
-				[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
-					var opacity = isUndergroundVisible ?
-						1 * t + .0625 * (1 - t) : 1 * (1 - t) + .0625 * t;
+			startAnimation({
+				callback: function(elapsed) {
+					var t = elapsed / 300;
 
-					setLayerProps(map, 'railways-ug-' + zoom, {opacity: opacity});
-					setLayerProps(map, 'stations-ug-' + zoom, {opacity: opacity});
-				});
-				Object.keys(trainLookup).forEach(function(key) {
-					var train = trainLookup[key];
-					var opacity = isUndergroundVisible === (train._altitude < 0) ?
-						.9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
+					[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
+						var opacity = isUndergroundVisible ?
+							1 * t + .0625 * (1 - t) : 1 * (1 - t) + .0625 * t;
 
-					train._cube.material.opacity = opacity;
-					if (train._delayMarker) {
-						train._delayMarker.material.opacity = opacity;
-					}
-				});
-				if (t < 1) {
-					requestAnimationFrame(repeat);
-				}
-			}
-			repeat();
+						setLayerProps(map, 'railways-ug-' + zoom, {opacity: opacity});
+						setLayerProps(map, 'stations-ug-' + zoom, {opacity: opacity});
+					});
+					Object.keys(trainLookup).forEach(function(key) {
+						var train = trainLookup[key];
+						var opacity = isUndergroundVisible === (train._altitude < 0) ?
+							.9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
+
+						train._cube.material.opacity = opacity;
+						if (train._delayMarker) {
+							train._delayMarker.material.opacity = opacity;
+						}
+					});
+				},
+				duration: 300
+			});
 		}
 	}), 'top-right');
 
@@ -580,7 +581,9 @@ map.once('styledata', function () {
 				this.classList.remove('mapbox-ctrl-track-train');
 				this.classList.add('mapbox-ctrl-track-helicopter');
 			}
-			startViewAnimation();
+			if (trackedTrain) {
+				startViewAnimation();
+			}
 			event.stopPropagation();
 		}
 	}), 'top-right');
@@ -674,6 +677,35 @@ map.once('styledata', function () {
 		trainLayers.onResize(e);
 	});
 
+	repeat();
+
+	if (!isRealtime) {
+		initModelTrains();
+	}
+
+	startAnimation({
+		callback: function() {
+			if (isRealtime) {
+				refreshTrains();
+				if (markedTrain) {
+					userData = markedTrain.userData;
+					popup.setLngLat(userData.coord).setHTML(userData.description);
+				}
+			}
+			if (trackedTrain && !viewAnimationID) {
+				userData = trackedTrain.userData;
+				bearing = map.getBearing();
+				map.easeTo({
+					center: userData.coord,
+					bearing: trackingMode === 'helicopter' ?
+						(trackingBaseBearing + performance.now() / 100) % 360 :
+						bearing + ((userData.bearing - bearing + 540) % 360 - 180) * .02,
+					duration: 0
+				});
+			}
+		}
+	});
+
 	function updateTrainShape(train, options) {
 		var zoom = map.getZoom();
 		var offset = train._offset;
@@ -738,7 +770,7 @@ map.once('styledata', function () {
 			updateTrainShape(train, {t: 0, reset: true});
 
 			function repeat() {
-				train._stop = animate(function(t) {
+				train._animationID = startTrainAnimation(function(t) {
 					updateTrainShape(train, {t: t});
 				}, function() {
 					var direction = train._direction;
@@ -750,40 +782,12 @@ map.once('styledata', function () {
 					updateTrainShape(train, {t: 0, reset: true});
 
 					// Stop and go
-					train._stop = delay(repeat, 1000);
+					train._animationID = startAnimation({complete: repeat, duration: 1000});
 				}, Math.abs(train._interval), TIME_FACTOR);
 			}
 			repeat();
 		});
 	}
-	if (!isRealtime) {
-		initModelTrains();
-	}
-
-	function refresh(timestamp) {
-		var userData, bearing;
-
-		if (isRealtime) {
-			refreshTrains(timestamp);
-			if (markedTrain) {
-				userData = markedTrain.userData;
-				popup.setLngLat(userData.coord).setHTML(userData.description);
-			}
-		}
-		if (trackedTrain && !viewAnimationID) {
-			userData = trackedTrain.userData;
-			bearing = map.getBearing();
-			map.easeTo({
-				center: userData.coord,
-				bearing: trackingMode === 'helicopter' ?
-					(trackingBaseBearing + timestamp / 100) % 360 :
-					bearing + ((userData.bearing - bearing + 540) % 360 - 180) * .02,
-				duration: 0
-			});
-		}
-		requestAnimationFrame(refresh);
-	}
-	refresh(0);
 
 	function refreshTrains() {
 		var now = Date.now();
@@ -800,7 +804,7 @@ map.once('styledata', function () {
 
 					function repeat(elapsed) {
 						setTrainStandingStatus(train, false);
-						train._stop = animate(function(t) {
+						train._animationID = startTrainAnimation(function(t) {
 							updateTrainShape(train, {t: t});
 						}, function() {
 							var nextTrainID, isMarked, isTracked;
@@ -827,7 +831,10 @@ map.once('styledata', function () {
 											trackedTrain = train._cube;
 										}
 										setTrainStandingStatus(train, true);
-										train._stop = delay(repeat, Math.max((getTime(train._departureTime) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION));
+										train._animationID = startAnimation({
+											complete: repeat,
+											duration: Math.max((getTime(train._departureTime) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION)
+										});
 									}
 								}
 							} else {
@@ -835,7 +842,10 @@ map.once('styledata', function () {
 								setTrainStandingStatus(train, true);
 
 								// Stop at station
-								train._stop = delay(repeat, Math.max((getTime(train._departureTime) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION));
+								train._animationID = startAnimation({
+									complete: repeat,
+									duration: Math.max((getTime(train._departureTime) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION)
+								});
 							}
 						}, Math.abs(train._interval), 1, elapsed);
 					}
@@ -848,45 +858,37 @@ map.once('styledata', function () {
 
 	function startViewAnimation() {
 		var t2 = 0;
-		var start;
-		var frameRefresh = function() {
-			var now = performance.now();
-			var t, t1, factor, userData, coord, lng, lat, center, bearing;
-
-			start = start || now;
-			t = Math.min((now - start) / 1000, 1);
-			t1 = -((t - 1) * (t - 1) * (t - 1) * (t - 1) - 1);
-
-			factor = (1 - t1) / (1 - t2);
-			userData = trackedTrain.userData;
-			coord = userData.coord;
-			lng = coord[0];
-			lat = coord[1];
-			center = map.getCenter();
-			bearing = userData.bearing;
-
-			map.easeTo({
-				center: [lng - (lng - center.lng) * factor, lat - (lat - center.lat) * factor],
-				bearing: trackingMode === 'helicopter' ?
-					(trackingBaseBearing + now / 100) % 360 :
-					bearing - ((bearing - map.getBearing() + 540) % 360 - 180) * factor,
-				duration: 0
-			});
-			t2 = t1;
-
-			if (t < 1) {
-				viewAnimationID = requestAnimationFrame(frameRefresh);
-			} else {
-				viewAnimationID = undefined;
-			}
-		};
 
 		trackingBaseBearing = map.getBearing() - performance.now() / 100;
-		viewAnimationID = requestAnimationFrame(frameRefresh);
+		viewAnimationID = startAnimation({
+			callback: function(elapsed) {
+				var t1 = easeOutQuart(elapsed / 1000);
+				var factor = (1 - t1) / (1 - t2);
+				var userData = trackedTrain.userData;
+				var coord = userData.coord;
+				var lng = coord[0];
+				var lat = coord[1];
+				var center = map.getCenter();
+				var bearing = userData.bearing;
+
+				map.easeTo({
+					center: [lng - (lng - center.lng) * factor, lat - (lat - center.lat) * factor],
+					bearing: trackingMode === 'helicopter' ?
+						(trackingBaseBearing + performance.now() / 100) % 360 :
+						bearing - ((bearing - map.getBearing() + 540) % 360 - 180) * factor,
+					duration: 0
+				});
+				t2 = t1;
+			},
+			complete: function() {
+				viewAnimationID = undefined;
+			},
+			duration: 1000
+		});
 	}
 
 	function stopViewAnimation() {
-		cancelAnimationFrame(viewAnimationID);
+		stopAnimation(viewAnimationID);
 		viewAnimationID = undefined;
 	}
 
@@ -945,10 +947,9 @@ map.once('styledata', function () {
 	}
 
 	function stopTrain(train) {
-		train._stop();
+		stopAnimation(train._animationID);
 		trainLayers.removeObject(train._cube, train);
 		delete train._cube;
-		delete train._stop;
 		delete trainLookup[train['odpt:train']];
 		if (train._delayMarker) {
 			trainLayers.removeObject(train._delayMarker, train);
@@ -1051,61 +1052,77 @@ function setLayerProps(map, id, props) {
 	map.getLayer(id).implementation.setProps(props);
 }
 
-function animate(callback, endCallback, distance, timeFactor, elapsed) {
-	var maxSpeed = MAX_SPEED * timeFactor;
-	var acceleration = ACCELERATION * Math.pow(timeFactor, 2);
-	var accelerationTime = ACCELERATION_TIME / timeFactor;
-	var duration = distance < ACC_DISTANCE * 2 ?
-		Math.sqrt(distance / acceleration) * 2 :
-		accelerationTime * 2 + (distance - ACC_DISTANCE * 2) / maxSpeed;
-	var start, requestID;
-	var frameRefresh = function() {
-		var now = performance.now();
-		var t, u;
+function repeat() {
+	var ids = Object.keys(animations);
+	var now = performance.now();
+	var i, ilen, id, animation, start, duration, elapsed, callback;
 
-		start = start || now;
-		t = Math.min((now - start), duration);
-		if (t <= Math.min(accelerationTime, duration / 2)) {
-			u = acceleration / 2 * Math.pow(t, 2) / distance;
-		} else if (duration - t <= Math.min(accelerationTime, duration / 2)) {
-			u = 1 - acceleration / 2 * Math.pow(duration - t, 2) / distance;
-		} else {
-			u = ACC_DISTANCE / distance + (1 - ACC_DISTANCE / distance * 2) / (duration - accelerationTime * 2) * (t - accelerationTime);
-		}
+	for (i = 0, ilen = ids.length; i < ilen; i++) {
+		id = ids[i];
+		animation = animations[id];
+		start = animation.start = animation.start || now;
+		duration = animation.duration;
+		elapsed = now - start;
+		callback = animation.callback;
 		if (callback) {
-			callback(u);
+			callback(Math.min(elapsed, duration), duration);
 		}
-		if (t < duration) {
-			requestID = requestAnimationFrame(frameRefresh);
-		} else if (endCallback) {
-			endCallback();
+		if (elapsed >= duration) {
+			callback = animation.complete;
+			if (callback) {
+				callback();
+			}
+			stopAnimation(id);
 		}
-	};
-	if (elapsed > 0) {
-		start = performance.now() - elapsed;
 	}
-	requestID = requestAnimationFrame(frameRefresh);
-	return function() {
-		cancelAnimationFrame(requestID);
-	};
+	requestAnimationFrame(repeat);
 }
 
-function delay(callback, duration) {
-	var start, requestID;
-	var frameRefresh = function() {
-		var now = performance.now();
+function startAnimation(options) {
+	if (!options.duration) {
+		options.duration = Infinity;
+	}
+	animations[animationID] = options;
+	return animationID++;
+}
 
-		start = start || now;
-		if (now - start < duration) {
-			requestID = requestAnimationFrame(frameRefresh);
-		} else if (callback) {
-			callback();
-		}
-	};
-	requestID = requestAnimationFrame(frameRefresh);
-	return function() {
-		cancelAnimationFrame(requestID);
-	};
+function stopAnimation(id) {
+	if (animations[id]) {
+		delete animations[id];
+	}
+}
+
+function startTrainAnimation(callback, endCallback, distance, timeFactor, start) {
+	var maxSpeed = MAX_SPEED * timeFactor;
+	var acceleration = ACCELERATION * timeFactor * timeFactor;
+	var maxAccelerationTime = MAX_ACCELERATION_TIME / timeFactor;
+	var duration = distance < MAX_ACC_DISTANCE * 2 ?
+		Math.sqrt(distance / acceleration) * 2 :
+		maxAccelerationTime * 2 + (distance - MAX_ACC_DISTANCE * 2) / maxSpeed;
+	var accelerationTime = Math.min(maxAccelerationTime, duration / 2);
+
+	return startAnimation({
+		callback: function(elapsed) {
+			var left = duration - elapsed;
+			var d;
+
+			if (elapsed <= accelerationTime) {
+				d = acceleration / 2 * elapsed * elapsed;
+			} else if (left <= accelerationTime) {
+				d = distance - acceleration / 2 * left * left;
+			} else {
+				d = MAX_ACC_DISTANCE + maxSpeed * (elapsed - maxAccelerationTime);
+			}
+			callback(d / distance);
+		},
+		complete: endCallback,
+		duration: duration,
+		start: start > 0 ? performance.now() - start : undefined
+	});
+}
+
+function easeOutQuart(t) {
+	return -((t = t - 1) * t * t * t - 1);
 }
 
 function concat(arr) {

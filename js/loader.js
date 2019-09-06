@@ -26,7 +26,9 @@ var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe
 
 var isUndergroundVisible = false;
 var opacityStore = {};
+var animations = {};
 var featureLookup = {};
+var animationID = 0;
 var stationLookup, railwayLookup;
 
 // Replace MapboxLayer.render to support underground rendering
@@ -432,21 +434,20 @@ map.once('styledata', function () {
 				}
 			});
 
-			var start = performance.now();
-			function repeat() {
-				var t = Math.min((performance.now() - start) / 300, 1);
-				[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
-					var opacity = isUndergroundVisible ?
-						1 * t + .0625 * (1 - t) : 1 * (1 - t) + .0625 * t;
+			startAnimation({
+				callback: function(elapsed) {
+					var t = elapsed / 300;
 
-					setLayerProps(map, 'stations-ug-' + zoom, {opacity: opacity});
-					setLayerProps(map, 'railways-ug-' + zoom, {opacity: opacity});
-				});
-				if (t < 1) {
-					requestAnimationFrame(repeat);
-				}
-			}
-			repeat();
+					[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
+						var opacity = isUndergroundVisible ?
+							1 * t + .0625 * (1 - t) : 1 * (1 - t) + .0625 * t;
+
+						setLayerProps(map, 'railways-ug-' + zoom, {opacity: opacity});
+						setLayerProps(map, 'stations-ug-' + zoom, {opacity: opacity});
+					});
+				},
+				duration: 300
+			});
 		}
 	}), 'top-right');
 
@@ -471,6 +472,8 @@ map.once('styledata', function () {
 		setLayerProps(map, 'railways-ug-13', {lineWidthScale: lineWidthScale});
 		setLayerProps(map, 'stations-ug-13', {lineWidthScale: lineWidthScale});
 	});
+
+	repeat();
 });
 
 });
@@ -560,6 +563,46 @@ function filterFeatures(featureCollection, fn) {
 
 function setLayerProps(map, id, props) {
 	map.getLayer(id).implementation.setProps(props);
+}
+
+function repeat() {
+	var ids = Object.keys(animations);
+	var now = performance.now();
+	var i, ilen, id, animation, start, duration, elapsed, callback;
+
+	for (i = 0, ilen = ids.length; i < ilen; i++) {
+		id = ids[i];
+		animation = animations[id];
+		start = animation.start = animation.start || now;
+		duration = animation.duration;
+		elapsed = now - start;
+		callback = animation.callback;
+		if (callback) {
+			callback(Math.min(elapsed, duration), duration);
+		}
+		if (elapsed >= duration) {
+			callback = animation.complete;
+			if (callback) {
+				callback();
+			}
+			stopAnimation(id);
+		}
+	}
+	requestAnimationFrame(repeat);
+}
+
+function startAnimation(options) {
+	if (!options.duration) {
+		options.duration = Infinity;
+	}
+	animations[animationID] = options;
+	return animationID++;
+}
+
+function stopAnimation(id) {
+	if (animations[id]) {
+		delete animations[id];
+	}
 }
 
 function easeInOutQuad(t) {
