@@ -184,6 +184,22 @@
 		"_direction": -1,
 		"_sectionIndex": 6
 	}, {
+		"odpt:railway": "odpt.Railway:JR-East.JobanLocal",
+		"_direction": 1,
+		"_sectionIndex": 0
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.JobanLocal",
+		"_direction": 1,
+		"_sectionIndex": 6
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.JobanLocal",
+		"_direction": -1,
+		"_sectionIndex": 13
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.JobanLocal",
+		"_direction": -1,
+		"_sectionIndex": 7
+	}, {
 		"odpt:railway": "odpt.Railway:JR-East.SobuRapid",
 		"_direction": 1,
 		"_sectionIndex": 0
@@ -215,6 +231,22 @@
 		"odpt:railway": "odpt.Railway:JR-East.Yokosuka",
 		"_direction": -1,
 		"_sectionIndex": 5
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.Keiyo",
+		"_direction": 1,
+		"_sectionIndex": 0
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.Keiyo",
+		"_direction": 1,
+		"_sectionIndex": 8
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.Keiyo",
+		"_direction": -1,
+		"_sectionIndex": 16
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.Keiyo",
+		"_direction": -1,
+		"_sectionIndex": 8
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.SaikyoKawagoe",
 		"_direction": 1,
@@ -263,6 +295,16 @@
 		"odpt:railway": "odpt.Railway:JR-East.ShonanShinjuku",
 		"_direction": -1,
 		"_sectionIndex": 5
+	}, {
+		"odpt:railway": "odpt.Railway:TWR.Rinkai",
+		"_direction": 1,
+		"_sectionIndex": 0,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TWR.Rinkai",
+		"_direction": -1,
+		"_sectionIndex": 7,
+		"_altitude": -1
 	}, {
 		"odpt:railway": "odpt.Railway:TokyoMetro.Ginza",
 		"_direction": 1,
@@ -352,6 +394,26 @@
 		"odpt:railway": "odpt.Railway:TokyoMetro.Tozai",
 		"_direction": -1,
 		"_sectionIndex": 11,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+		"_direction": 1,
+		"_sectionIndex": 0,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+		"_direction": 1,
+		"_sectionIndex": 9,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+		"_direction": -1,
+		"_sectionIndex": 19,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+		"_direction": -1,
+		"_sectionIndex": 10,
 		"_altitude": -1
 	}, {
 		"odpt:railway": "odpt.Railway:Toei.Asakusa",
@@ -512,6 +574,24 @@
 		"odpt:trainTypeTitle": {
 			"ko": "준급",
 			"zh": "准急"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
+		"odpt:trainTypeTitle": {
+			"ko": "통근쾌속",
+			"zh": "通勤快速"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TWR.Local",
+		"odpt:trainTypeTitle": {
+			"ko": "보통",
+			"zh": "普通"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:TWR.Rapid",
+		"odpt:trainTypeTitle": {
+			"ko": "쾌속",
+			"zh": "快速"
 		}
 	}, {
 		"odpt:trainType": "odpt.TrainType:Toei.AccessExpress",

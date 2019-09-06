@@ -86,9 +86,9 @@ MapboxGLButtonControl.prototype.onRemove = function() {
 Promise.all([
 	loadJSON('data/railways-coordinates.json'),
 	loadJSON('data/stations.json'),
-	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central,odpt.Operator:TWR&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Tobu,odpt.Operator:ToyoRapid,odpt.Operator:Keikyu,odpt.Operator:Keisei,odpt.Operator:Hokuso,odpt.Operator:Shibayama&' + API_TOKEN)
+	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Tobu,odpt.Operator:ToyoRapid,odpt.Operator:Odakyu,odpt.Operator:Keikyu,odpt.Operator:Keisei,odpt.Operator:Hokuso,odpt.Operator:Shibayama&' + API_TOKEN)
 ]).then(function([
 	railwayData, stationData, railwayRefData, stationRefData1, stationRefData2
 ]) {

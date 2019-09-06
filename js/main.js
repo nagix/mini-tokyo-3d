@@ -221,38 +221,40 @@ Promise.all([
 	loadJSON('data/stations.json'),
 	loadJSON('data/trains.json'),
 	loadJSON('data/features.json'),
-	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:RailDirection?' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central,odpt.Operator:TWR&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Tobu,odpt.Operator:ToyoRapid,odpt.Operator:Keikyu,odpt.Operator:Keisei,odpt.Operator:Hokuso,odpt.Operator:Shibayama&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Tobu,odpt.Operator:ToyoRapid,odpt.Operator:Odakyu,odpt.Operator:Keikyu,odpt.Operator:Keisei,odpt.Operator:Hokuso,odpt.Operator:Shibayama&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Yamanote&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoSobuLocal&odpt:calendar=odpt.Calendar:Weekday&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Tokaido&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Utsunomiya,odpt.Railway:JR-East.Takasaki&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoSobuLocal&odpt:calendar=odpt.Calendar:Weekday&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Tokaido,odpt.Railway:JR-East.Utsunomiya,odpt.Railway:JR-East.Takasaki&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.JobanRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.JobanRapid,odpt.Railway:JR-East.JobanLocal&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.SobuRapid,odpt.Railway:JR-East.Yokosuka&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.SaikyoKawagoe,odpt.Railway:JR-East.ShonanShinjuku&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Keiyo&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.SaikyoKawagoe,odpt.Railway:TWR.Rinkai,odpt.Railway:JR-East.ShonanShinjuku&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Ginza&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Marunouchi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.MarunouchiBranch&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Hibiya&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Tozai&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Chiyoda&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Toei.Asakusa&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN)
+	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN)
 ]).then(function([
 	dict, railwayData, stationData, trainData, railwayFeatureCollection, railwayRefData, railDirectionRefData,
 	stationRefData1, stationRefData2, timetableRefData1, timetableRefData2, timetableRefData3, timetableRefData4,
 	timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9, timetableRefData10,
-	timetableRefData11, timetableRefData12, timetableRefData13, timetableRefData14, timetableRefData15, trainTypeRefData
+	timetableRefData11, timetableRefData12, timetableRefData13, timetableRefData14, timetableRefData15, timetableRefData16,
+	trainTypeRefData
 ]) {
 
 var stationRefData = stationRefData1.concat(stationRefData2);
 var timetableRefData = timetableRefData1.concat(
 	timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7,
 	timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13,
-	timetableRefData14, timetableRefData15
+	timetableRefData14, timetableRefData15, timetableRefData16
 );
 
 var map = new mapboxgl.Map({
@@ -585,7 +587,7 @@ map.once('styledata', function () {
 
 	map.addControl(new MapboxGLButtonControl({
 		className: 'mapbox-ctrl-realtime mapbox-ctrl-realtime-active',
-		title: dict['enter-realtime'],
+		title: dict['exit-realtime'],
 		eventHandler: function() {
 			isRealtime = !isRealtime;
 			this.title = dict[(isRealtime ? 'exit' : 'enter') + '-realtime'];
@@ -956,7 +958,7 @@ map.once('styledata', function () {
 	}
 
 	function updateDelays() {
-		loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN).then(function(trainRefData) {
+		loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN).then(function(trainRefData) {
 			trainRefData.forEach(function(trainRef) {
 				var delay = (trainRef['odpt:delay'] || 0) * 1000;
 				var train = trainLookup[trainRef['owl:sameAs']];

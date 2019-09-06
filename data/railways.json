@@ -56,6 +56,13 @@
 		},
 		"_color": "#00B261"
 	}, {
+		"odpt:railway": "odpt.Railway:JR-East.JobanLocal",
+		"odpt:railwayTitle": {
+			"ko": "조반 선 각역정차",
+			"zh": "常磐线各站停车"
+		},
+		"_color": "#A8A39D"
+	}, {
 		"odpt:railway": "odpt.Railway:JR-East.SobuRapid",
 		"odpt:railwayTitle": {
 			"ko": "소부 쾌속선",
@@ -70,6 +77,13 @@
 		},
 		"_color": "#007AC1"
 	}, {
+		"odpt:railway": "odpt.Railway:JR-East.Keiyo",
+		"odpt:railwayTitle": {
+			"ko": "게이요 선",
+			"zh": "京叶线"
+		},
+		"_color": "#C9252F"
+	}, {
 		"odpt:railway": "odpt.Railway:JR-East.SaikyoKawagoe",
 		"odpt:railwayTitle": {
 			"ko": "사이쿄 선·가와고에 선",
@@ -83,6 +97,14 @@
 			"zh": "湘南新宿线"
 		},
 		"_color": "#E31F26"
+	}, {
+		"odpt:railway": "odpt.Railway:TWR.Rinkai",
+		"odpt:railwayTitle": {
+			"ko": "린카이 선",
+			"zh": "临海线"
+		},
+		"_altitude": -1,
+		"_color": "#00418E"
 	}, {
 		"odpt:railway": "odpt.Railway:TokyoMetro.Ginza",
 		"odpt:railwayTitle": {
@@ -123,6 +145,14 @@
 		},
 		"_altitude": -1,
 		"_color": "#009BBF"
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
+		"odpt:railwayTitle": {
+			"ko": "지요다 선",
+			"zh": "千代田线"
+		},
+		"_altitude": -1,
+		"_color": "#00BB85"
 	}, {
 		"odpt:railway": "odpt.Railway:Toei.Asakusa",
 		"odpt:railwayTitle": {
