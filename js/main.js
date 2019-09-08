@@ -38,6 +38,9 @@ var ACCELERATION = ACCELERATION_KMPHPS / 3600000000;
 var MAX_ACCELERATION_TIME = MAX_SPEED / ACCELERATION;
 var MAX_ACC_DISTANCE = MAX_ACCELERATION_TIME * MAX_SPEED / 2;
 
+// Delay for precision error
+var MIN_DELAY = 25000;
+
 // API URL
 var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
 
@@ -850,7 +853,7 @@ map.once('styledata', function () {
 		if (Math.floor(now / TRAIN_REFRESH_INTERVAL) !== Math.floor(trainLastRefresh / TRAIN_REFRESH_INTERVAL)) {
 			trainLastRefresh = now;
 			timetableRefData.forEach(function(train) {
-				var d = train._delay || 0;
+				var d = (train._delay || 0) + MIN_DELAY;
 				if (train._start + d <= now && now <= train._end + d && !trainLookup[train['odpt:train']]) {
 					if (!setSectionData(train, now)) {
 						return; // Out of range
@@ -888,7 +891,7 @@ map.once('styledata', function () {
 										setTrainStandingStatus(train, true);
 										train._animationID = startAnimation({
 											complete: repeat,
-											duration: Math.max((getTime(train._departureTime) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION)
+											duration: Math.max(getTime(train._departureTime) + (train._delay || 0) + MIN_DELAY - Date.now(), MIN_STOP_DURATION)
 										});
 									}
 								}
@@ -899,7 +902,7 @@ map.once('styledata', function () {
 								// Stop at station
 								train._animationID = startAnimation({
 									complete: repeat,
-									duration: Math.max((getTime(train._departureTime) + (train._delay || 0)) - Date.now(), MIN_STOP_DURATION)
+									duration: Math.max(getTime(train._departureTime) + (train._delay || 0) + MIN_DELAY - Date.now(), MIN_STOP_DURATION)
 								});
 							}
 						}, Math.abs(train._interval), 1, elapsed);
