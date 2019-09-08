@@ -25,7 +25,7 @@ var MIN_STOP_DURATION = 30000;
 var TRAIN_REFRESH_INTERVAL = 60000;
 
 // Maximum train speed in km/h
-var MAX_SPEED_KMPH = 90;
+var MAX_SPEED_KMPH = 80;
 
 // Train acceleration in km/h/s
 var ACCELERATION_KMPHPS = 3;
@@ -45,9 +45,10 @@ var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
 var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
 
 var SQRT3 = Math.sqrt(3);
+var DEGREE_TO_RADIAN = Math.PI / 180;
 
 var modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat([139.7670, 35.6814]);
-var modelScale = 1 / 2 / Math.PI / 6378137 / Math.cos(35.6814 * Math.PI / 180);
+var modelScale = 1 / 2 / Math.PI / 6378137 / Math.cos(35.6814 * DEGREE_TO_RADIAN);
 
 var lang = getLang();
 var today = new Date();
@@ -60,7 +61,7 @@ var featureLookup = {};
 var trainLookup = {};
 var animationID = 0;
 var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, timetableLookup;
-var trackedTrain, markedTrain, trainLastRefresh, trackingBaseBearing, viewAnimationID;
+var trackedCar, markedCar, trainLastRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, carUnit, carScaleXZ, carScaleY;
 
 // Replace MapboxLayer.render to support underground rendering
 var render = MapboxLayer.prototype.render;
@@ -143,7 +144,7 @@ TrainLayer.prototype.onAdd = function(map, gl) {
 	scene.add(new THREE.Mesh());
 
 	this.map = map;
-	this.camera = new THREE.PerspectiveCamera(map.transform._fov * 180 / Math.PI, window.innerWidth / window.innerHeight);
+	this.camera = new THREE.PerspectiveCamera(map.transform._fov / DEGREE_TO_RADIAN, window.innerWidth / window.innerHeight);
 	this.raycaster = new THREE.Raycaster();
 };
 
@@ -181,7 +182,7 @@ TrainLayer.prototype.render = function(gl, matrix) {
 			-halfWidth, halfWidth, halfHeight, -halfHeight, nearZ, furthestDistance * 2.5);
 	}
 
-	var rad = (map.getBearing() + 30) * Math.PI / 180;
+	var rad = (map.getBearing() + 30) * DEGREE_TO_RADIAN;
 	this.light.position.set(-Math.sin(rad), -Math.cos(rad), SQRT3).normalize();
 
 	renderer.state.reset();
@@ -269,6 +270,14 @@ var map = new mapboxgl.Map({
 	pitch: 60
 });
 
+var unit = Math.pow(2, 14 - clamp(map.getZoom(), 13, 19));
+
+layerZoom = clamp(Math.floor(map.getZoom()), 13, 18);
+altitudeUnit = Math.pow(2, 14 - layerZoom) * modelScale * 100;
+carUnit = Math.max(unit * .19, .02);
+carScaleXZ = unit * modelScale * 100;
+carScaleY = Math.max(.02 / .19, unit) * modelScale * 100;
+
 stationLookup = buildLookup(stationRefData);
 
 // Update station lookup dictionary
@@ -302,6 +311,7 @@ railwayData.railways.forEach(function(railway) {
 	merge(railwayRef['odpt:railwayTitle'], railway['odpt:railwayTitle']);
 	railwayRef._color = railway._color;
 	railwayRef._altitude = railway._altitude;
+	railwayRef._carComposition = railway._carComposition;
 });
 
 // Build feature lookup dictionary and update feature properties
@@ -347,6 +357,7 @@ trainData.railDirections.forEach(function(direction) {
 
 timetableLookup = buildLookup(timetableRefData);
 
+// Update timetable lookup dictionary
 timetableRefData.forEach(function(train) {
 	var railway = railwayLookup[train['odpt:railway']];
 	var direction = train['odpt:railDirection'] === railway['odpt:ascendingRailDirection'] ? 1 : -1;
@@ -369,6 +380,7 @@ timetableRefData.forEach(function(train) {
 		|| table[Math.max(length - 2, 0)]['odpt:departureTime']);
 	train._direction = direction;
 	train._altitude = railway._altitude;
+	train._carComposition = railway._carComposition;
 });
 
 trainTypeLookup = buildLookup(trainTypeRefData);
@@ -557,7 +569,9 @@ map.once('styledata', function () {
 						var opacity = isUndergroundVisible === (train._altitude < 0) ?
 							.9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
 
-						train._cube.material.opacity = opacity;
+						train._cars.forEach(function(car) {
+							car.material.opacity = opacity;
+						});
 						if (train._delayMarker) {
 							train._delayMarker.material.opacity = opacity;
 						}
@@ -581,7 +595,7 @@ map.once('styledata', function () {
 				this.classList.remove('mapbox-ctrl-track-train');
 				this.classList.add('mapbox-ctrl-track-helicopter');
 			}
-			if (trackedTrain) {
+			if (trackedCar) {
 				startViewAnimation();
 			}
 			event.stopPropagation();
@@ -597,7 +611,7 @@ map.once('styledata', function () {
 			Object.keys(trainLookup).forEach(function(key) {
 				stopTrain(trainLookup[key]);
 			});
-			trackedTrain = undefined;
+			trackedCar = undefined;
 			stopViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0].classList.remove('mapbox-ctrl-track-active');
 			if (isRealtime) {
@@ -627,16 +641,16 @@ map.once('styledata', function () {
 		var userData, offset;
 
 		if (isRealtime) {
-			markedTrain = trainLayers.pickObject(e.point);
-			if (markedTrain) {
+			markedCar = trainLayers.pickObject(e.point);
+			if (markedCar) {
 				map.getCanvas().style.cursor = 'pointer';
-				userData = markedTrain.userData;
-				offset = Math.sin(map.getPitch() * Math.PI / 180) * 25;
+				userData = markedCar.userData;
+				offset = Math.sin(map.getPitch() * DEGREE_TO_RADIAN) * 25;
 				popup.options.offset = userData.altitude < 0 ?
 					{'top': [0, 10 + offset], 'bottom': [0, -30 + offset]} :
 					{'top': [0, 10], 'bottom': [0, -30]}
 				popup.setLngLat(userData.coord)
-					.setHTML(userData.description)
+					.setHTML(userData.train._description)
 					.addTo(map);
 			} else if (popup.isOpen()) {
 				map.getCanvas().style.cursor = '';
@@ -646,8 +660,8 @@ map.once('styledata', function () {
 	});
 
 	map.on('click', function(e) {
-		trackedTrain = trainLayers.pickObject(e.point);
-		if (trackedTrain) {
+		trackedCar = trainLayers.pickObject(e.point);
+		if (trackedCar) {
 			startViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.add('mapbox-ctrl-track-active');
@@ -663,14 +677,23 @@ map.once('styledata', function () {
 	});
 
 	map.on('zoom', function() {
-		var lineWidthScale = clamp(Math.pow(2, map.getZoom() - 12), .125, 1);
+		var zoom = map.getZoom();
+		var unit = Math.pow(2, 14 - clamp(zoom, 13, 19));
+		var lineWidthScale = clamp(Math.pow(2, zoom - 12), .125, 1);
 
 		setLayerProps(map, 'railways-ug-13', {lineWidthScale: lineWidthScale});
 		setLayerProps(map, 'stations-ug-13', {lineWidthScale: lineWidthScale});
 
+		layerZoom = clamp(Math.floor(zoom), 13, 18);
+		altitudeUnit = Math.pow(2, 14 - layerZoom) * modelScale * 100;
+		carUnit = Math.max(unit * .19, .02);
+		carScaleXZ = unit * modelScale * 100;
+		carScaleY = Math.max(.02 / .19, unit) * modelScale * 100;
+
 		Object.keys(trainLookup).forEach(function(key) {
 			updateTrainShape(trainLookup[key], {reset: true});
 		});
+
 	});
 
 	map.on('resize', function(e) {
@@ -687,13 +710,13 @@ map.once('styledata', function () {
 		callback: function() {
 			if (isRealtime) {
 				refreshTrains();
-				if (markedTrain) {
-					userData = markedTrain.userData;
-					popup.setLngLat(userData.coord).setHTML(userData.description);
+				if (markedCar) {
+					userData = markedCar.userData;
+					popup.setLngLat(userData.coord).setHTML(userData.train._description);
 				}
 			}
-			if (trackedTrain && !viewAnimationID) {
-				userData = trackedTrain.userData;
+			if (trackedCar && !viewAnimationID) {
+				userData = trackedCar.userData;
 				bearing = map.getBearing();
 				map.easeTo({
 					center: userData.coord,
@@ -709,14 +732,12 @@ map.once('styledata', function () {
 	function updateTrainShape(train, options) {
 		var zoom = map.getZoom();
 		var offset = train._offset;
-		var layerZoom = clamp(Math.floor(zoom), 13, 18);
 		var feature = train._railwayFeature;
-		var cube = train._cube;
-		var position = cube.position;
-		var scale = cube.scale;
-		var userData = cube.userData;
+		var cars = train._cars;
+		var carComposition = clamp(Math.floor(train._carComposition * .02 / carUnit), 1, train._carComposition);
+		var compositionChanged = cars.length !== carComposition;
 		var delayMarker = train._delayMarker;
-		var stationOffsets, sectionIndex, p, s, coord, bearing, mCoord;
+		var markedCarIndex, trackedCarIndex, stationOffsets, sectionIndex, i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord;
 
 		if (options.t !== undefined) {
 			train._t = options.t;
@@ -730,18 +751,50 @@ map.once('styledata', function () {
 			train._interval = stationOffsets[sectionIndex + train._sectionLength] - offset;
 		}
 
-		p = getCoordAndBearing(feature, offset + train._t * train._interval);
-		s = Math.pow(2, 14 - clamp(zoom, 13, 19)) * modelScale * 100;
+		if (compositionChanged) {
+			markedCarIndex = cars.indexOf(markedCar);
+			trackedCarIndex = cars.indexOf(trackedCar);
+		}
+		for (i = cars.length - 1; i >= carComposition; i--) {
+			trainLayers.removeObject(cars.pop(), train);
+		}
+		for (i = cars.length; i < carComposition; i++) {
+			railway = railway || railwayLookup[train['odpt:railway']];
+			car = createCube(railway._color);
+			userData = car.userData;
+			userData.train = train;
+			userData.altitude = train._altitude;
+			cars.push(car);
+			trainLayers.addObject(car, train);
+		}
+		if (compositionChanged) {
+			if (markedCarIndex >= 0) {
+				markedCar = cars[Math.floor(carComposition / 2)];
+			}
+			if (trackedCarIndex >= 0) {
+				trackedCar = cars[Math.floor(carComposition / 2)];
+			}
+		}
 
-		coord = userData.coord = p.coord;
-		bearing = userData.bearing = p.bearing + (train._direction < 0 ? 180 : 0);
-		mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
+		for (i = 0, ilen = cars.length; i < ilen; i++) {
+			car = cars[i];
+			position = car.position;
+			scale = car.scale;
+			userData = car.userData;
 
-		position.x = mCoord.x - modelOrigin.x;
-		position.y = -(mCoord.y - modelOrigin.y);
-		position.z = (train._altitude || 0) * Math.pow(2, 14 - layerZoom) * modelScale * 100 + s / 2;
-		scale.x = scale.y = scale.z = s;
-		cube.rotation.z = -bearing * Math.PI / 180;
+			p = getCoordAndBearing(feature, offset + train._t * train._interval + (i - (carComposition - 1) / 2) * carUnit);
+
+			coord = userData.coord = p.coord;
+			bearing = userData.bearing = p.bearing + (train._direction < 0 ? 180 : 0);
+			mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
+
+			position.x = mCoord.x - modelOrigin.x;
+			position.y = -(mCoord.y - modelOrigin.y);
+			position.z = (train._altitude || 0) * altitudeUnit + carScaleXZ / 2;
+			scale.x = scale.z = carScaleXZ;
+			scale.y = carScaleY;
+			car.rotation.z = -bearing * DEGREE_TO_RADIAN;
+		}
 
 		if (train._delay) {
 			if (!delayMarker) {
@@ -749,8 +802,10 @@ map.once('styledata', function () {
 				trainLayers.addObject(delayMarker, train);
 			}
 
-			merge(delayMarker.position, position);
-			merge(delayMarker.scale, scale);
+			car = cars[Math.floor(carComposition / 2)];
+			merge(delayMarker.position, car.position);
+			scale = delayMarker.scale;
+			scale.x = scale.y = scale.z = carScaleY;
 		} else if (delayMarker) {
 			trainLayers.removeObject(delayMarker, train);
 			delete train._delayMarker;
@@ -760,13 +815,13 @@ map.once('styledata', function () {
 	function initModelTrains() {
 		trainData.trains.forEach(function(train, i) {
 			var railway = railwayLookup[train['odpt:railway']];
-			var cube = train._cube = createCube(railway._color);
-			trainLayers.addObject(cube, train);
 
 			train['odpt:train'] = i;
 			trainLookup[train['odpt:train']] = train;
 
 			train._sectionLength = train._direction;
+			train._carComposition = railway._carComposition;
+			train._cars = [];
 			updateTrainShape(train, {t: 0, reset: true});
 
 			function repeat() {
@@ -807,12 +862,12 @@ map.once('styledata', function () {
 						train._animationID = startTrainAnimation(function(t) {
 							updateTrainShape(train, {t: t});
 						}, function() {
-							var nextTrainID, isMarked, isTracked;
+							var nextTrainID, markedCarIndex, trackedCarIndex;
 
 							train._timetableIndex++;
 							if (!setSectionData(train)) {
-								isMarked = markedTrain === train._cube;
-								isTracked = trackedTrain === train._cube;
+								markedCarIndex = train._cars.indexOf(markedCar);
+								trackedCarIndex = train._cars.indexOf(trackedCar);
 								stopTrain(train);
 
 								nextTrainID = train['odpt:nextTrainTimetable'];
@@ -824,11 +879,11 @@ map.once('styledata', function () {
 											return;
 										}
 										startTrain(train);
-										if (isMarked) {
-											markedTrain = train._cube;
+										if (markedCarIndex !== -1) {
+											markedCar = train._cars[markedCarIndex];
 										}
-										if (isTracked) {
-											trackedTrain = train._cube;
+										if (trackedCarIndex !== -1) {
+											trackedCar = train._cars[trackedCarIndex];
 										}
 										setTrainStandingStatus(train, true);
 										train._animationID = startAnimation({
@@ -864,7 +919,7 @@ map.once('styledata', function () {
 			callback: function(elapsed) {
 				var t1 = easeOutQuart(elapsed / 1000);
 				var factor = (1 - t1) / (1 - t2);
-				var userData = trackedTrain.userData;
+				var userData = trackedCar.userData;
 				var coord = userData.coord;
 				var lng = coord[0];
 				var lat = coord[1];
@@ -919,7 +974,7 @@ map.once('styledata', function () {
 		var delay = train._delay || 0;
 
 		train._standing = standing;
-		train._cube.userData.description =
+		train._description =
 			'<span class="desc-box" style="background-color: ' + railwayLookup[railwayID]._color + ';"></span> ' +
 			'<strong>' + getLocalizedRailwayTitle(railwayID) + '</strong>' +
 			'<br>' + getLocalizedTrainTypeTitle(train['odpt:trainType']) + ' ' +
@@ -937,19 +992,17 @@ map.once('styledata', function () {
 	}
 
 	function startTrain(train) {
-		var railway = railwayLookup[train['odpt:railway']];
-		var cube = train._cube = createCube(railway._color);
-
-		trainLayers.addObject(cube, train);
 		trainLookup[train['odpt:train']] = train;
+		train._cars = [];
 		updateTrainShape(train, {t: 0, reset: true});
-		cube.userData.altitude = train._altitude;
 	}
 
 	function stopTrain(train) {
 		stopAnimation(train._animationID);
-		trainLayers.removeObject(train._cube, train);
-		delete train._cube;
+		train._cars.forEach(function(car) {
+			trainLayers.removeObject(car, train);
+		});
+		delete train._cars;
 		delete trainLookup[train['odpt:train']];
 		if (train._delayMarker) {
 			trainLayers.removeObject(train._delayMarker, train);
@@ -961,13 +1014,19 @@ map.once('styledata', function () {
 	function updateDelays() {
 		loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN).then(function(trainRefData) {
 			trainRefData.forEach(function(trainRef) {
-				var delay = (trainRef['odpt:delay'] || 0) * 1000;
+				var delay = trainRef['odpt:delay'] * 1000;
+				var carComposition = trainRef['odpt:carComposition'];
 				var train = trainLookup[trainRef['owl:sameAs']];
 
-				if (delay && train && train._delay !== delay) {
-					stopTrain(train);
-					train._delay = delay;
-					trainLastRefresh = undefined;
+				if (train) {
+					if (delay && train._delay !== delay) {
+						stopTrain(train);
+						train._delay = delay;
+						trainLastRefresh = undefined;
+					}
+					if (carComposition) {
+						train._carComposition = trainRef['odpt:carComposition'];
+					}
 				}
 			});
 		});

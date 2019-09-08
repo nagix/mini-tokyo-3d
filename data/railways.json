@@ -5,98 +5,112 @@
 			"ko": "야마노테 선",
 			"zh": "山手线"
 		},
-		"_color": "#80C342"
+		"_color": "#80C342",
+		"_carComposition": 11
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoRapid",
 		"odpt:railwayTitle": {
 			"ko": "주오 선 쾌속",
 			"zh": "中央线快速"
 		},
-		"_color": "#F15A22"
+		"_color": "#F15A22",
+		"_carComposition": 10
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
 		"odpt:railwayTitle": {
 			"ko": "주오·소부 각역정차",
 			"zh": "中央·总武各站停车"
 		},
-		"_color": "#FFD400"
+		"_color": "#FFD400",
+		"_carComposition": 10
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Tokaido",
 		"odpt:railwayTitle": {
 			"ko": "도카이도 선",
 			"zh": "东海道线"
 		},
-		"_color": "#F68B1E"
+		"_color": "#F68B1E",
+		"_carComposition": 15
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Utsunomiya",
 		"odpt:railwayTitle": {
 			"ko": "우쓰노미야 선",
 			"zh": "宇都宫线"
 		},
-		"_color": "#F68B1E"
+		"_color": "#F68B1E",
+		"_carComposition": 15
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Takasaki",
 		"odpt:railwayTitle": {
 			"ko": "다카사키 선",
 			"zh": "高崎线"
 		},
-		"_color": "#F68B1E"
+		"_color": "#F68B1E",
+		"_carComposition": 15
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
 		"odpt:railwayTitle": {
 			"ko": "게이힌 도호쿠 선·네기시 선",
 			"zh": "京滨东北线·根岸线"
 		},
-		"_color": "#00B2E5"
+		"_color": "#00B2E5",
+		"_carComposition": 10
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.JobanRapid",
 		"odpt:railwayTitle": {
 			"ko": "조반 선 쾌속",
 			"zh": "常磐线快速"
 		},
-		"_color": "#00B261"
+		"_color": "#00B261",
+		"_carComposition": 15
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.JobanLocal",
 		"odpt:railwayTitle": {
 			"ko": "조반 선 각역정차",
 			"zh": "常磐线各站停车"
 		},
-		"_color": "#A8A39D"
+		"_color": "#A8A39D",
+		"_carComposition": 10
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.SobuRapid",
 		"odpt:railwayTitle": {
 			"ko": "소부 쾌속선",
 			"zh": "总武快速线"
 		},
-		"_color": "#007AC1"
+		"_color": "#007AC1",
+		"_carComposition": 15
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Yokosuka",
 		"odpt:railwayTitle": {
 			"ko": "요코스카 선",
 			"zh": "横须贺线"
 		},
-		"_color": "#007AC1"
+		"_color": "#007AC1",
+		"_carComposition": 15
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Keiyo",
 		"odpt:railwayTitle": {
 			"ko": "게이요 선",
 			"zh": "京叶线"
 		},
-		"_color": "#C9252F"
+		"_color": "#C9252F",
+		"_carComposition": 10
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.SaikyoKawagoe",
 		"odpt:railwayTitle": {
 			"ko": "사이쿄 선·가와고에 선",
 			"zh": "埼京线·川越线"
 		},
-		"_color": "#00B48D"
+		"_color": "#00B48D",
+		"_carComposition": 10
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ShonanShinjuku",
 		"odpt:railwayTitle": {
 			"ko": "쇼난 신주쿠 라인",
 			"zh": "湘南新宿线"
 		},
-		"_color": "#E31F26"
+		"_color": "#E31F26",
+		"_carComposition": 15
 	}, {
 		"odpt:railway": "odpt.Railway:TWR.Rinkai",
 		"odpt:railwayTitle": {
@@ -104,7 +118,8 @@
 			"zh": "临海线"
 		},
 		"_altitude": -1,
-		"_color": "#00418E"
+		"_color": "#00418E",
+		"_carComposition": 10
 	}, {
 		"odpt:railway": "odpt.Railway:TokyoMetro.Ginza",
 		"odpt:railwayTitle": {
@@ -112,7 +127,8 @@
 			"zh": "银座线"
 		},
 		"_altitude": -1,
-		"_color": "#FF9500"
+		"_color": "#FF9500",
+		"_carComposition": 6
 	}, {
 		"odpt:railway": "odpt.Railway:TokyoMetro.Marunouchi",
 		"odpt:railwayTitle": {
@@ -120,7 +136,8 @@
 			"zh": "丸之内线"
 		},
 		"_altitude": -1,
-		"_color": "#F62E36"
+		"_color": "#F62E36",
+		"_carComposition": 6
 	}, {
 		"odpt:railway": "odpt.Railway:TokyoMetro.MarunouchiBranch",
 		"odpt:railwayTitle": {
@@ -128,7 +145,8 @@
 			"zh": "丸之内线支线"
 		},
 		"_altitude": -1,
-		"_color": "#F62E36"
+		"_color": "#F62E36",
+		"_carComposition": 6
 	}, {
 		"odpt:railway": "odpt.Railway:TokyoMetro.Hibiya",
 		"odpt:railwayTitle": {
@@ -136,7 +154,8 @@
 			"zh": "日比谷线"
 		},
 		"_altitude": -1,
-		"_color": "#B5B5AC"
+		"_color": "#B5B5AC",
+		"_carComposition": 7
 	}, {
 		"odpt:railway": "odpt.Railway:TokyoMetro.Tozai",
 		"odpt:railwayTitle": {
@@ -144,7 +163,8 @@
 			"zh": "东西线"
 		},
 		"_altitude": -1,
-		"_color": "#009BBF"
+		"_color": "#009BBF",
+		"_carComposition": 10
 	}, {
 		"odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
 		"odpt:railwayTitle": {
@@ -152,7 +172,8 @@
 			"zh": "千代田线"
 		},
 		"_altitude": -1,
-		"_color": "#00BB85"
+		"_color": "#00BB85",
+		"_carComposition": 10
 	}, {
 		"odpt:railway": "odpt.Railway:Toei.Asakusa",
 		"odpt:railwayTitle": {
@@ -160,6 +181,7 @@
 			"zh": "浅草线"
 		},
 		"_altitude": -1,
-		"_color": "#DC435F"
+		"_color": "#DC435F",
+		"_carComposition": 8
 	}]
 }
