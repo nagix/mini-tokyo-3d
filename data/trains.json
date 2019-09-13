@@ -22,7 +22,7 @@
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
 		"_direction": -1,
-		"_sectionIndex": 9
+		"_sectionIndex": 10
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoRapid",
 		"_direction": 1,
@@ -58,11 +58,11 @@
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
 		"_direction": 1,
-		"_sectionIndex": 20
+		"_sectionIndex": 19
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
 		"_direction": 1,
-		"_sectionIndex": 30
+		"_sectionIndex": 29
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
 		"_direction": -1,
@@ -74,11 +74,11 @@
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
 		"_direction": -1,
-		"_sectionIndex": 18
+		"_sectionIndex": 19
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
 		"_direction": -1,
-		"_sectionIndex": 8
+		"_sectionIndex": 9
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Tokaido",
 		"_direction": 1,
@@ -416,6 +416,86 @@
 		"_sectionIndex": 10,
 		"_altitude": -1
 	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Yurakucho",
+		"_direction": 1,
+		"_sectionIndex": 0,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Yurakucho",
+		"_direction": 1,
+		"_sectionIndex": 11,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Yurakucho",
+		"_direction": -1,
+		"_sectionIndex": 23,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Yurakucho",
+		"_direction": -1,
+		"_sectionIndex": 12,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Hanzomon",
+		"_direction": 1,
+		"_sectionIndex": 0,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Hanzomon",
+		"_direction": 1,
+		"_sectionIndex": 6,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Hanzomon",
+		"_direction": -1,
+		"_sectionIndex": 13,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Hanzomon",
+		"_direction": -1,
+		"_sectionIndex": 7,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Namboku",
+		"_direction": 1,
+		"_sectionIndex": 0,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Namboku",
+		"_direction": 1,
+		"_sectionIndex": 9,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Namboku",
+		"_direction": -1,
+		"_sectionIndex": 18,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Namboku",
+		"_direction": -1,
+		"_sectionIndex": 9,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Fukutoshin",
+		"_direction": 1,
+		"_sectionIndex": 0,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Fukutoshin",
+		"_direction": 1,
+		"_sectionIndex": 7,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Fukutoshin",
+		"_direction": -1,
+		"_sectionIndex": 15,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Fukutoshin",
+		"_direction": -1,
+		"_sectionIndex": 8,
+		"_altitude": -1
+	}, {
 		"odpt:railway": "odpt.Railway:Toei.Asakusa",
 		"_direction": 1,
 		"_sectionIndex": 0,
@@ -434,6 +514,96 @@
 		"odpt:railway": "odpt.Railway:Toei.Asakusa",
 		"_direction": -1,
 		"_sectionIndex": 9,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Mita",
+		"_direction": 1,
+		"_sectionIndex": 0,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Mita",
+		"_direction": 1,
+		"_sectionIndex": 9,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Mita",
+		"_direction": 1,
+		"_sectionIndex": 18,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Mita",
+		"_direction": -1,
+		"_sectionIndex": 26,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Mita",
+		"_direction": 1,
+		"_sectionIndex": 17,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Mita",
+		"_direction": -1,
+		"_sectionIndex": 8,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Shinjuku",
+		"_direction": 1,
+		"_sectionIndex": 0,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Shinjuku",
+		"_direction": 1,
+		"_sectionIndex": 10,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Shinjuku",
+		"_direction": -1,
+		"_sectionIndex": 20,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Shinjuku",
+		"_direction": 1,
+		"_sectionIndex": 10,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Oedo",
+		"_direction": 1,
+		"_sectionIndex": 0,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Oedo",
+		"_direction": 1,
+		"_sectionIndex": 9,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Oedo",
+		"_direction": 1,
+		"_sectionIndex": 19,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Oedo",
+		"_direction": 1,
+		"_sectionIndex": 28,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Oedo",
+		"_direction": -1,
+		"_sectionIndex": 38,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Oedo",
+		"_direction": -1,
+		"_sectionIndex": 29,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Oedo",
+		"_direction": -1,
+		"_sectionIndex": 19,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Oedo",
+		"_direction": -1,
+		"_sectionIndex": 10,
 		"_altitude": -1
 	}],
 	"railDirections": [{

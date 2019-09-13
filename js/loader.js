@@ -90,12 +90,13 @@ Promise.all([
 	loadJSON('data/stations.json'),
 	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central,odpt.Operator:TWR&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Tobu,odpt.Operator:ToyoRapid,odpt.Operator:Odakyu,odpt.Operator:Keikyu,odpt.Operator:Keisei,odpt.Operator:Hokuso,odpt.Operator:Shibayama&' + API_TOKEN)
+	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:Tobu,odpt.Operator:Seibu,odpt.Operator:Tokyu,odpt.Operator:SaitamaRailway,odpt.Operator:Minatomirai,odpt.Operator:Keio&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Tobu,odpt.Operator:ToyoRapid,odpt.Operator:Odakyu,odpt.Operator:Keikyu,odpt.Operator:Keisei,odpt.Operator:Hokuso,odpt.Operator:Shibayama&' + API_TOKEN),
 ]).then(function([
-	railwayData, stationData, railwayRefData, stationRefData1, stationRefData2
+	railwayData, stationData, railwayRefData, stationRefData1, stationRefData2, stationRefData3
 ]) {
 
-var stationRefData = stationRefData1.concat(stationRefData2);
+var stationRefData = stationRefData1.concat(stationRefData2, stationRefData3);
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -142,12 +143,14 @@ var railwayFeatureArray = [];
 		var id = railway['odpt:railway'];
 		var sublines = railway._sublines;
 		var railwayFeature = turf.lineString(concat(sublines.map(function(subline) {
-			var overlap = subline['odpt:railway'];
+			var start = subline.start;
+			var end = subline.end;
+			var coords = subline.coordinates;
 			var feature, offset;
 
-			if (overlap) {
-				feature = turf.lineSlice(subline.start, subline.end, featureLookup[overlap + '.' + zoom]);
-				offset = subline.offset;
+			if (subline.type === 'sub') {
+				feature = turf.lineSlice(coords[0], coords[coords.length - 1], featureLookup[start['odpt:railway'] + '.' + zoom]);
+				offset = start.offset;
 
 				if (offset) {
 					feature = lineOffset(feature, offset * unit);
@@ -192,41 +195,40 @@ var railwayFeatureArray = [];
 				}
 			}
 
-			if (!subline['odpt:railway']) {
+			if (subline.type === 'interpolate') {
 				interpolate = subline.interpolate;
-				if (interpolate) {
-					coordinates = [];
-					feature1 = lineOffset(turf.lineSlice(
-						sublines[i - 1].end,
-						sublines[i + 1].start,
-						featureLookup[sublines[i - 1]['odpt:railway'] + '.' + zoom]
-					), sublines[i - 1].offset * unit);
-					feature2 = lineOffset(turf.lineSlice(
-						sublines[i - 1].end,
-						sublines[i + 1].start,
-						featureLookup[sublines[i + 1]['odpt:railway'] + '.' + zoom]
-					), sublines[i + 1].offset * unit);
-					length1 = turf.length(feature1);
-					length2 = turf.length(feature2);
-					for (j = 1; j < interpolate; j++) {
-						coord1 = turf.getCoord(turf.along(feature1, length1 * (!sublines[i - 1].reverse ? j : interpolate - j) / interpolate));
-						coord2 = turf.getCoord(turf.along(feature2, length2 * (!sublines[i + 1].reverse ? j : interpolate - j) / interpolate));
-						f = easeInOutQuad(j / interpolate);
-						coordinates.push([
-							coord1[0] * (1 - f) + coord2[0] * f,
-							coord1[1] * (1 - f) + coord2[1] * f
-						]);
-					}
-				} else {
-					coordinates = subline.coordinates.map(function(d) { return d.slice(); });
-					nextSubline = sublines[i - 1];
-					if (nextSubline && nextSubline['odpt:railway']) {
-						smoothCoords();
-					}
-					nextSubline = sublines[i + 1];
-					if (nextSubline && nextSubline['odpt:railway']) {
-						smoothCoords(true);
-					}
+				coordinates = [];
+				feature1 = lineOffset(turf.lineSlice(
+					sublines[i - 1].coordinates[sublines[i - 1].coordinates.length - 1],
+					sublines[i + 1].coordinates[0],
+					featureLookup[sublines[i - 1].end['odpt:railway'] + '.' + zoom]
+				), sublines[i - 1].end.offset * unit);
+				feature2 = lineOffset(turf.lineSlice(
+					sublines[i - 1].coordinates[sublines[i - 1].coordinates.length - 1],
+					sublines[i + 1].coordinates[0],
+					featureLookup[sublines[i + 1].start['odpt:railway'] + '.' + zoom]
+				), sublines[i + 1].start.offset * unit);
+				length1 = turf.length(feature1);
+				length2 = turf.length(feature2);
+				for (j = 1; j < interpolate; j++) {
+					coord1 = turf.getCoord(turf.along(feature1, length1 * (!sublines[i - 1].reverse ? j : interpolate - j) / interpolate));
+					coord2 = turf.getCoord(turf.along(feature2, length2 * (!sublines[i + 1].reverse ? j : interpolate - j) / interpolate));
+					f = easeInOutQuad(j / interpolate);
+					coordinates.push([
+						coord1[0] * (1 - f) + coord2[0] * f,
+						coord1[1] * (1 - f) + coord2[1] * f
+					]);
+				}
+				subline.feature = turf.lineString(coordinates);
+			} else if (subline.type === 'main') {
+				coordinates = subline.coordinates.map(function(d) { return d.slice(); });
+				nextSubline = subline.start;
+				if (nextSubline) {
+					smoothCoords();
+				}
+				nextSubline = subline.end;
+				if (nextSubline) {
+					smoothCoords(true);
 				}
 				subline.feature = turf.lineString(coordinates);
 			}

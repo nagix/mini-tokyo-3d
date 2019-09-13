@@ -1561,7 +1561,8 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:TWR.Rinkai.ShinKiba"
+			"odpt.Station:TWR.Rinkai.ShinKiba",
+			"odpt.Station:TokyoMetro.Yurakucho.ShinKiba"
 		],
 		"odpt:stationTitle": {
 			"ko": "신키바",
@@ -1633,7 +1634,9 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Ginza.Shibuya"
+			"odpt.Station:TokyoMetro.Ginza.Shibuya",
+			"odpt.Station:TokyoMetro.Fukutoshin.Shibuya",
+			"odpt.Station:TokyoMetro.Hanzomon.Shibuya"
 		],
 		"odpt:stationTitle": {
 			"ko": "시부야",
@@ -1643,6 +1646,7 @@
 	}, {
 		"aliases": [
 			"odpt.Station:TokyoMetro.Ginza.OmoteSando",
+			"odpt.Station:TokyoMetro.Hanzomon.OmoteSando",
 			"odpt.Station:TokyoMetro.Chiyoda.OmoteSando"
 		],
 		"odpt:stationTitle": {
@@ -1661,7 +1665,9 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Ginza.AoyamaItchome"
+			"odpt.Station:TokyoMetro.Ginza.AoyamaItchome",
+			"odpt.Station:TokyoMetro.Hanzomon.AoyamaItchome",
+			"odpt.Station:Toei.Oedo.AoyamaItchome"
 		],
 		"odpt:stationTitle": {
 			"ko": "아오야마 1초메",
@@ -1680,7 +1686,8 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Ginza.TameikeSanno"
+			"odpt.Station:TokyoMetro.Ginza.TameikeSanno",
+			"odpt.Station:TokyoMetro.Namboku.TameikeSanno"
 		],
 		"odpt:stationTitle": {
 			"ko": "다메이케산노",
@@ -1739,7 +1746,8 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Ginza.Mitsukoshimae"
+			"odpt.Station:TokyoMetro.Ginza.Mitsukoshimae",
+			"odpt.Station:TokyoMetro.Hanzomon.Mitsukoshimae"
 		],
 		"odpt:stationTitle": {
 			"ko": "미쓰코시마에",
@@ -1859,7 +1867,8 @@
 	}, {
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue",
-			"odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue"
+			"odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue",
+			"odpt.Station:Toei.Oedo.NakanoSakaue"
 		],
 		"odpt:stationTitle": {
 			"ko": "나카노사카우에",
@@ -1877,7 +1886,9 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku"
+			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku",
+			"odpt.Station:Toei.Shinjuku.Shinjuku",
+			"odpt.Station:Toei.Oedo.Shinjuku"
 		],
 		"odpt:stationTitle": {
 			"ko": "신주쿠",
@@ -1886,7 +1897,9 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome"
+			"odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome",
+			"odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome",
+			"odpt.Station:Toei.Shinjuku.ShinjukuSanchome"
 		],
 		"odpt:stationTitle": {
 			"ko": "신주쿠 3초메",
@@ -1913,7 +1926,8 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Marunouchi.Yotsuya"
+			"odpt.Station:TokyoMetro.Marunouchi.Yotsuya",
+			"odpt.Station:TokyoMetro.Namboku.Yotsuya"
 		],
 		"odpt:stationTitle": {
 			"ko": "요쓰야",
@@ -1952,9 +1966,11 @@
 		"altitude": -1
 	}, {
 		"aliases": [
+			"odpt.Station:TokyoMetro.Hanzomon.Otemachi",
 			"odpt.Station:TokyoMetro.Marunouchi.Otemachi",
 			"odpt.Station:TokyoMetro.Tozai.Otemachi",
-			"odpt.Station:TokyoMetro.Chiyoda.Otemachi"
+			"odpt.Station:TokyoMetro.Chiyoda.Otemachi",
+			"odpt.Station:Toei.Mita.Otemachi"
 		],
 		"odpt:stationTitle": {
 			"ko": "오테마치",
@@ -1981,7 +1997,8 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Marunouchi.HongoSanchome"
+			"odpt.Station:TokyoMetro.Marunouchi.HongoSanchome",
+			"odpt.Station:Toei.Oedo.HongoSanchome"
 		],
 		"odpt:stationTitle": {
 			"ko": "혼고 3초메",
@@ -1990,7 +2007,8 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Marunouchi.Korakuen"
+			"odpt.Station:TokyoMetro.Marunouchi.Korakuen",
+			"odpt.Station:TokyoMetro.Namboku.Korakuen"
 		],
 		"odpt:stationTitle": {
 			"ko": "고라쿠엔",
@@ -2017,7 +2035,9 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Marunouchi.Ikebukuro"
+			"odpt.Station:TokyoMetro.Marunouchi.Ikebukuro",
+			"odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro",
+			"odpt.Station:TokyoMetro.Yurakucho.Ikebukuro"
 		],
 		"odpt:stationTitle": {
 			"ko": "이케부쿠로",
@@ -2080,7 +2100,8 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Hibiya.Roppongi"
+			"odpt.Station:TokyoMetro.Hibiya.Roppongi",
+			"odpt.Station:Toei.Oedo.Roppongi"
 		],
 		"odpt:stationTitle": {
 			"ko": "롯폰기",
@@ -2099,7 +2120,8 @@
 	}, {
 		"aliases": [
 			"odpt.Station:TokyoMetro.Hibiya.Hibiya",
-			"odpt.Station:TokyoMetro.Chiyoda.Hibiya"
+			"odpt.Station:TokyoMetro.Chiyoda.Hibiya",
+			"odpt.Station:Toei.Mita.Hibiya"
 		],
 		"odpt:stationTitle": {
 			"ko": "히비야",
@@ -2265,7 +2287,10 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Tozai.Iidabashi"
+			"odpt.Station:TokyoMetro.Yurakucho.Iidabashi",
+			"odpt.Station:TokyoMetro.Namboku.Iidabashi",
+			"odpt.Station:TokyoMetro.Tozai.Iidabashi",
+			"odpt.Station:Toei.Oedo.Iidabashi"
 		],
 		"odpt:stationTitle": {
 			"ko": "이다바시",
@@ -2274,7 +2299,9 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Tozai.Kudanshita"
+			"odpt.Station:TokyoMetro.Tozai.Kudanshita",
+			"odpt.Station:Toei.Shinjuku.Kudanshita",
+			"odpt.Station:TokyoMetro.Hanzomon.Kudanshita"
 		],
 		"odpt:stationTitle": {
 			"ko": "구단시타",
@@ -2292,7 +2319,8 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Tozai.MonzenNakacho"
+			"odpt.Station:TokyoMetro.Tozai.MonzenNakacho",
+			"odpt.Station:Toei.Oedo.MonzenNakacho"
 		],
 		"odpt:stationTitle": {
 			"ko": "몬젠나카초",
@@ -2418,7 +2446,8 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae"
+			"odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae",
+			"odpt.Station:TokyoMetro.Fukutoshin.MeijiJingumae"
 		],
 		"odpt:stationTitle": {
 			"ko": "메이지진구마에",
@@ -2526,6 +2555,434 @@
 		"altitude": -1
 	}, {
 		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Wakoshi",
+			"odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
+		],
+		"odpt:stationTitle": {
+			"ko": "와코시",
+			"zh": "和光市"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.ChikatetsuNarimasu",
+			"odpt.Station:TokyoMetro.Fukutoshin.ChikatetsuNarimasu"
+		],
+		"odpt:stationTitle": {
+			"ko": "지카테쓰나리마스",
+			"zh": "地铁成增"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
+			"odpt.Station:TokyoMetro.Fukutoshin.ChikatetsuAkatsuka"
+		],
+		"odpt:stationTitle": {
+			"ko": "지카테쓰아카쓰카",
+			"zh": "地铁赤冢"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Heiwadai",
+			"odpt.Station:TokyoMetro.Fukutoshin.Heiwadai"
+		],
+		"odpt:stationTitle": {
+			"ko": "헤이와다이",
+			"zh": "平和台"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Hikawadai",
+			"odpt.Station:TokyoMetro.Fukutoshin.Hikawadai"
+		],
+		"odpt:stationTitle": {
+			"ko": "히카와다이",
+			"zh": "冰川台"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.KotakeMukaihara",
+			"odpt.Station:TokyoMetro.Fukutoshin.KotakeMukaihara"
+		],
+		"odpt:stationTitle": {
+			"ko": "고타케무카이하라",
+			"zh": "小竹向原"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Senkawa",
+			"odpt.Station:TokyoMetro.Fukutoshin.Senkawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "센카와",
+			"zh": "千川"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Kanamecho",
+			"odpt.Station:TokyoMetro.Fukutoshin.Kanamecho"
+		],
+		"odpt:stationTitle": {
+			"ko": "가나메초",
+			"zh": "要町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.HigashiIkebukuro"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시이케부쿠로",
+			"zh": "东池袋"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Gokokuji"
+		],
+		"odpt:stationTitle": {
+			"ko": "고코쿠지",
+			"zh": "护国寺"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Edogawabashi"
+		],
+		"odpt:stationTitle": {
+			"ko": "에도가와바시",
+			"zh": "江户川桥"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.Ichigaya",
+			"odpt.Station:TokyoMetro.Yurakucho.Ichigaya",
+			"odpt.Station:Toei.Shinjuku.Ichigaya"
+		],
+		"odpt:stationTitle": {
+			"ko": "이치가야",
+			"zh": "市谷"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Kojimachi"
+		],
+		"odpt:stationTitle": {
+			"ko": "고지마치",
+			"zh": "麹町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Nagatacho",
+			"odpt.Station:TokyoMetro.Namboku.Nagatacho",
+			"odpt.Station:TokyoMetro.Hanzomon.Nagatacho"
+		],
+		"odpt:stationTitle": {
+			"ko": "나가타초",
+			"zh": "永田町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Sakuradamon"
+		],
+		"odpt:stationTitle": {
+			"ko": "사쿠라다몬",
+			"zh": "樱田门"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Yurakucho"
+		],
+		"odpt:stationTitle": {
+			"ko": "유라쿠초",
+			"zh": "有乐町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.GinzaItchome"
+		],
+		"odpt:stationTitle": {
+			"ko": "긴자 1초메",
+			"zh": "银座一丁目"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Shintomicho"
+		],
+		"odpt:stationTitle": {
+			"ko": "신토미초",
+			"zh": "新富町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Tsukishima",
+			"odpt.Station:Toei.Oedo.Tsukishima"
+		],
+		"odpt:stationTitle": {
+			"ko": "쓰키시마",
+			"zh": "月岛"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Toyosu"
+		],
+		"odpt:stationTitle": {
+			"ko": "도요스",
+			"zh": "丰洲"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Yurakucho.Tatsumi"
+		],
+		"odpt:stationTitle": {
+			"ko": "다쓰미",
+			"zh": "辰巳"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Hanzomon.Hanzomon"
+		],
+		"odpt:stationTitle": {
+			"ko": "한조몬",
+			"zh": "半藏门"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Jimbocho",
+			"odpt.Station:TokyoMetro.Hanzomon.Jimbocho",
+			"odpt.Station:Toei.Shinjuku.Jimbocho"
+		],
+		"odpt:stationTitle": {
+			"ko": "진보초",
+			"zh": "神保町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Hanzomon.Suitengumae"
+		],
+		"odpt:stationTitle": {
+			"ko": "스이텐구마에",
+			"zh": "水天宮前"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Hanzomon.KiyosumiShirakawa",
+			"odpt.Station:Toei.Oedo.KiyosumiShirakawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "기요스미시라카와",
+			"zh": "清澄白河"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Hanzomon.Sumiyoshi",
+			"odpt.Station:Toei.Shinjuku.Sumiyoshi"
+		],
+		"odpt:stationTitle": {
+			"ko": "스미요시",
+			"zh": "住吉"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Hanzomon.Kinshicho"
+		],
+		"odpt:stationTitle": {
+			"ko": "긴시초",
+			"zh": "锦糸町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Hanzomon.Oshiage",
+			"odpt.Station:Toei.Asakusa.Oshiage"
+		],
+		"odpt:stationTitle": {
+			"ko": "오시아게",
+			"zh": "押上"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.Meguro",
+			"odpt.Station:Toei.Mita.Meguro"
+		],
+		"odpt:stationTitle": {
+			"ko": "메구로",
+			"zh": "目黑"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.Shirokanedai",
+			"odpt.Station:Toei.Mita.Shirokanedai"
+		],
+		"odpt:stationTitle": {
+			"ko": "시로카네다이",
+			"zh": "白金台"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.ShirokaneTakanawa",
+			"odpt.Station:Toei.Mita.ShirokaneTakanawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "시로카네타카나와",
+			"zh": "白金高轮"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.AzabuJuban",
+			"odpt.Station:Toei.Oedo.AzabuJuban"
+		],
+		"odpt:stationTitle": {
+			"ko": "아자부주반",
+			"zh": "麻布十番"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.RoppongiItchome"
+		],
+		"odpt:stationTitle": {
+			"ko": "롯폰기 1초메",
+			"zh": "六本木一丁目"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.Todaimae"
+		],
+		"odpt:stationTitle": {
+			"ko": "도다이 앞",
+			"zh": "东大前"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.HonKomagome"
+		],
+		"odpt:stationTitle": {
+			"ko": "혼코마고메",
+			"zh": "本驹込"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.Komagome"
+		],
+		"odpt:stationTitle": {
+			"ko": "고마고메",
+			"zh": "驹込"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.Nishigahara"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시가하라",
+			"zh": "西原"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.Oji"
+		],
+		"odpt:stationTitle": {
+			"ko": "오지",
+			"zh": "王子"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.OjiKamiya"
+		],
+		"odpt:stationTitle": {
+			"ko": "오지카미야",
+			"zh": "王子神谷"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.Shimo"
+		],
+		"odpt:stationTitle": {
+			"ko": "시모",
+			"zh": "志茂"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Namboku.AkabaneIwabuchi"
+		],
+		"odpt:stationTitle": {
+			"ko": "아카바네이와부치",
+			"zh": "赤羽岩渊"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Fukutoshin.Zoshigaya"
+		],
+		"odpt:stationTitle": {
+			"ko": "조시가야",
+			"zh": "杂司谷"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Fukutoshin.NishiWaseda"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시와세다",
+			"zh": "西早稻田"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Fukutoshin.HigashiShinjuku",
+			"odpt.Station:Toei.Oedo.HigashiShinjuku"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시신주쿠",
+			"zh": "东新宿"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:TokyoMetro.Fukutoshin.KitaSando"
+		],
+		"odpt:stationTitle": {
+			"ko": "기타산도",
+			"zh": "北参道"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
 			"odpt.Station:Toei.Asakusa.NishiMagome"
 		],
 		"odpt:stationTitle": {
@@ -2589,7 +3046,8 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:Toei.Asakusa.Mita"
+			"odpt.Station:Toei.Asakusa.Mita",
+			"odpt.Station:Toei.Mita.Mita"
 		],
 		"odpt:stationTitle": {
 			"ko": "미타",
@@ -2598,7 +3056,8 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:Toei.Asakusa.Daimon"
+			"odpt.Station:Toei.Asakusa.Daimon",
+			"odpt.Station:Toei.Oedo.Daimon"
 		],
 		"odpt:stationTitle": {
 			"ko": "다이몬",
@@ -2634,7 +3093,8 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:Toei.Asakusa.Kuramae"
+			"odpt.Station:Toei.Asakusa.Kuramae",
+			"odpt.Station:Toei.Oedo.Kuramae"
 		],
 		"odpt:stationTitle": {
 			"ko": "구라마에",
@@ -2652,11 +3112,526 @@
 		"altitude": -1
 	}, {
 		"aliases": [
-			"odpt.Station:Toei.Asakusa.Oshiage"
+			"odpt.Station:Toei.Mita.Shibakoen"
 		],
 		"odpt:stationTitle": {
-			"ko": "오시아게",
-			"zh": "押上"
+			"ko": "시바코엔",
+			"zh": "芝公园"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Onarimon"
+		],
+		"odpt:stationTitle": {
+			"ko": "오나리몬",
+			"zh": "御成门"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Uchisaiwaicho"
+		],
+		"odpt:stationTitle": {
+			"ko": "우치사이와이초",
+			"zh": "内幸町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Suidobashi"
+		],
+		"odpt:stationTitle": {
+			"ko": "스이도바시",
+			"zh": "水道桥"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Kasuga",
+			"odpt.Station:Toei.Oedo.Kasuga"
+		],
+		"odpt:stationTitle": {
+			"ko": "가스가",
+			"zh": "春日"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Hakusan"
+		],
+		"odpt:stationTitle": {
+			"ko": "하쿠산",
+			"zh": "白山"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Sengoku"
+		],
+		"odpt:stationTitle": {
+			"ko": "센고쿠",
+			"zh": "千石"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Sugamo"
+		],
+		"odpt:stationTitle": {
+			"ko": "스가모",
+			"zh": "巢鸭"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.NishiSugamo"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시스가모",
+			"zh": "西巢鸭"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.ShinItabashi"
+		],
+		"odpt:stationTitle": {
+			"ko": "신이타바시",
+			"zh": "新板桥"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.ItabashiKuyakushomae"
+		],
+		"odpt:stationTitle": {
+			"ko": "이타바시쿠야쿠쇼마에",
+			"zh": "板桥区役所前"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Itabashihoncho"
+		],
+		"odpt:stationTitle": {
+			"ko": "이타바시혼초",
+			"zh": "板桥本町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Motohasunuma"
+		],
+		"odpt:stationTitle": {
+			"ko": "모토하스누마",
+			"zh": "本莲沼"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.ShimuraSakaue"
+		],
+		"odpt:stationTitle": {
+			"ko": "시무라사카우에",
+			"zh": "志村坂上"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.ShimuraSanchome"
+		],
+		"odpt:stationTitle": {
+			"ko": "시무라 3초메",
+			"zh": "志村三丁目"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Hasune"
+		],
+		"odpt:stationTitle": {
+			"ko": "하스네",
+			"zh": "莲根"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Nishidai"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시다이",
+			"zh": "西台"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.Takashimadaira"
+		],
+		"odpt:stationTitle": {
+			"ko": "다카시마다이라",
+			"zh": "高岛平"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.ShinTakashimadaira"
+		],
+		"odpt:stationTitle": {
+			"ko": "신타카시마다이라",
+			"zh": "新高岛平"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Mita.NishiTakashimadaira"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시타카시마다이라",
+			"zh": "西高岛平"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.Akebonobashi"
+		],
+		"odpt:stationTitle": {
+			"ko": "아케보노바시",
+			"zh": "曙桥"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.Ogawamachi"
+		],
+		"odpt:stationTitle": {
+			"ko": "오가와마치",
+			"zh": "小川町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.Iwamotocho"
+		],
+		"odpt:stationTitle": {
+			"ko": "이와모토초",
+			"zh": "岩本町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.BakuroYokoyama"
+		],
+		"odpt:stationTitle": {
+			"ko": "바쿠로요코야마",
+			"zh": "马喰横山"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.Hamacho"
+		],
+		"odpt:stationTitle": {
+			"ko": "하마초",
+			"zh": "滨町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.Morishita",
+			"odpt.Station:Toei.Oedo.Morishita"
+		],
+		"odpt:stationTitle": {
+			"ko": "모리시타",
+			"zh": "森下"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.Kikukawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "기쿠카와",
+			"zh": "菊川"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.NishiOjima"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시오지마",
+			"zh": "西大岛"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.Ojima"
+		],
+		"odpt:stationTitle": {
+			"ko": "오지마",
+			"zh": "大岛"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.HigashiOjima"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시오지마",
+			"zh": "东大岛"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.Funabori"
+		],
+		"odpt:stationTitle": {
+			"ko": "후나보리",
+			"zh": "船堀"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.Ichinoe"
+		],
+		"odpt:stationTitle": {
+			"ko": "이치노에",
+			"zh": "一之江"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.Mizue"
+		],
+		"odpt:stationTitle": {
+			"ko": "미즈에",
+			"zh": "瑞江"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.Shinozaki"
+		],
+		"odpt:stationTitle": {
+			"ko": "시노자키",
+			"zh": "篠崎"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Shinjuku.Motoyawata"
+		],
+		"odpt:stationTitle": {
+			"ko": "모토야와타",
+			"zh": "本八幡"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.Tochomae"
+		],
+		"odpt:stationTitle": {
+			"ko": "도초마에",
+			"zh": "都庁前"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.ShinjukuNishiguchi"
+		],
+		"odpt:stationTitle": {
+			"ko": "신주쿠니시구치",
+			"zh": "新宿西口"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.WakamatsuKawada"
+		],
+		"odpt:stationTitle": {
+			"ko": "와카마쓰카와다",
+			"zh": "若松河田"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.UshigomeYanagicho"
+		],
+		"odpt:stationTitle": {
+			"ko": "우시고메야나기초",
+			"zh": "牛込柳町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.UshigomeKagurazaka"
+		],
+		"odpt:stationTitle": {
+			"ko": "우시고메카구라자카",
+			"zh": "牛込神乐坂"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.UenoOkachimachi"
+		],
+		"odpt:stationTitle": {
+			"ko": "우에노오카치마치",
+			"zh": "上野御徒町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.ShinOkachimachi"
+		],
+		"odpt:stationTitle": {
+			"ko": "신오카치마치",
+			"zh": "新御徒町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.Ryogoku"
+		],
+		"odpt:stationTitle": {
+			"ko": "료고쿠",
+			"zh": "两国"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.Kachidoki"
+		],
+		"odpt:stationTitle": {
+			"ko": "가치도키",
+			"zh": "胜哄"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.Tsukijishijo"
+		],
+		"odpt:stationTitle": {
+			"ko": "쓰키지 시장",
+			"zh": "筑地市场"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.Shiodome"
+		],
+		"odpt:stationTitle": {
+			"ko": "시오도메",
+			"zh": "汐留"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.Akabanebashi"
+		],
+		"odpt:stationTitle": {
+			"ko": "아카바네바시",
+			"zh": "赤羽桥"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.KokuritsuKyogijo"
+		],
+		"odpt:stationTitle": {
+			"ko": "고쿠리쓰쿄지조",
+			"zh": "国立竞技场"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.Yoyogi"
+		],
+		"odpt:stationTitle": {
+			"ko": "요요기",
+			"zh": "代代木"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.NishiShinjukuGochome"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시신주쿠 5초메",
+			"zh": "西新宿五丁目"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.HigashiNakano"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시나카노",
+			"zh": "东中野"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.Nakai"
+		],
+		"odpt:stationTitle": {
+			"ko": "나카이",
+			"zh": "中井"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.OchiaiMinamiNagasaki"
+		],
+		"odpt:stationTitle": {
+			"ko": "오치아이미나미나가사키",
+			"zh": "落合南长崎"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.ShinEgota"
+		],
+		"odpt:stationTitle": {
+			"ko": "신에고타",
+			"zh": "新江古田"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.Nerima"
+		],
+		"odpt:stationTitle": {
+			"ko": "네리마",
+			"zh": "练马"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.Toshimaen"
+		],
+		"odpt:stationTitle": {
+			"ko": "도시마엔",
+			"zh": "丰岛园"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.NerimaKasugacho"
+		],
+		"odpt:stationTitle": {
+			"ko": "네리마카스가초",
+			"zh": "练马春日町"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Toei.Oedo.Hikarigaoka"
+		],
+		"odpt:stationTitle": {
+			"ko": "히카리가오카",
+			"zh": "光丘"
 		},
 		"altitude": -1
 	}]

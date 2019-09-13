@@ -175,6 +175,42 @@
 		"_color": "#00BB85",
 		"_carComposition": 10
 	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Yurakucho",
+		"odpt:railwayTitle": {
+			"ko": "유라쿠초 선",
+			"zh": "有乐町线"
+		},
+		"_altitude": -1,
+		"_color": "#C1A470",
+		"_carComposition": 10
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Hanzomon",
+		"odpt:railwayTitle": {
+			"ko": "한조몬 선",
+			"zh": "半藏门线"
+		},
+		"_altitude": -1,
+		"_color": "#8F76D6",
+		"_carComposition": 10
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Namboku",
+		"odpt:railwayTitle": {
+			"ko": "난보쿠 선",
+			"zh": "南北线"
+		},
+		"_altitude": -1,
+		"_color": "#00AC9B",
+		"_carComposition": 6
+	}, {
+		"odpt:railway": "odpt.Railway:TokyoMetro.Fukutoshin",
+		"odpt:railwayTitle": {
+			"ko": "후쿠토신 선",
+			"zh": "副都心线"
+		},
+		"_altitude": -1,
+		"_color": "#9C5E31",
+		"_carComposition": 10
+	}, {
 		"odpt:railway": "odpt.Railway:Toei.Asakusa",
 		"odpt:railwayTitle": {
 			"ko": "아사쿠사 선",
@@ -182,6 +218,33 @@
 		},
 		"_altitude": -1,
 		"_color": "#DC435F",
+		"_carComposition": 8
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Mita",
+		"odpt:railwayTitle": {
+			"ko": "미타 선",
+			"zh": "三田线"
+		},
+		"_altitude": -1,
+		"_color": "#006AB8",
+		"_carComposition": 6
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Shinjuku",
+		"odpt:railwayTitle": {
+			"ko": "신주쿠 선",
+			"zh": "新宿线"
+		},
+		"_altitude": -1,
+		"_color": "#B0BF1E",
+		"_carComposition": 10
+	}, {
+		"odpt:railway": "odpt.Railway:Toei.Oedo",
+		"odpt:railwayTitle": {
+			"ko": "오에도 선",
+			"zh": "大江户线"
+		},
+		"_altitude": -1,
+		"_color": "#CE045B",
 		"_carComposition": 8
 	}]
 }
