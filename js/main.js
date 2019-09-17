@@ -227,7 +227,7 @@ Promise.all([
 	loadJSON('data/stations.json'),
 	loadJSON('data/trains.json'),
 	loadJSON('data/features.json'),
-	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:RailDirection?' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central,odpt.Operator:TWR&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:Tobu,odpt.Operator:Seibu,odpt.Operator:Tokyu,odpt.Operator:SaitamaRailway,odpt.Operator:Minatomirai,odpt.Operator:Keio&' + API_TOKEN),
@@ -255,14 +255,19 @@ Promise.all([
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Toei.Mita&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Toei.Shinjuku&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Toei.Oedo&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN)
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Keio.Keio&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Keio.KeioNew&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Keio.Sagamihara,odpt.Railway:Keio.Keibajo,odpt.Railway:Keio.Dobutsuen,odpt.Railway:Keio.Takao&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Keio.Inokashira&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN)
 ]).then(function([
 	dict, railwayData, stationData, trainData, railwayFeatureCollection, railwayRefData, railDirectionRefData,
 	stationRefData1, stationRefData2, stationRefData3, timetableRefData1, timetableRefData2, timetableRefData3,
 	timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9,
 	timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13, timetableRefData14, timetableRefData15,
 	timetableRefData16,timetableRefData17, timetableRefData18, timetableRefData19, timetableRefData20, timetableRefData21,
-	timetableRefData22, timetableRefData23, trainTypeRefData
+	timetableRefData22, timetableRefData23, timetableRefData24, timetableRefData25, timetableRefData26, timetableRefData27,
+	trainTypeRefData
 ]) {
 
 var stationRefData = stationRefData1.concat(stationRefData2, stationRefData3);
@@ -270,7 +275,8 @@ var timetableRefData = timetableRefData1.concat(
 	timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7,
 	timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13,
 	timetableRefData14, timetableRefData15, timetableRefData16, timetableRefData17, timetableRefData18, timetableRefData19,
-	timetableRefData20, timetableRefData21, timetableRefData22, timetableRefData23
+	timetableRefData20, timetableRefData21, timetableRefData22, timetableRefData23, timetableRefData24, timetableRefData25,
+	timetableRefData26, timetableRefData27
 );
 
 var map = new mapboxgl.Map({
@@ -1025,7 +1031,7 @@ map.once('styledata', function () {
 	}
 
 	function updateDelays() {
-		loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN).then(function(trainRefData) {
+		loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN).then(function(trainRefData) {
 			trainRefData.forEach(function(trainRef) {
 				var delay = trainRef['odpt:delay'] * 1000;
 				var carComposition = trainRef['odpt:carComposition'];

@@ -605,6 +605,75 @@
 		"_direction": -1,
 		"_sectionIndex": 10,
 		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Keio",
+		"_direction": 1,
+		"_sectionIndex": 0
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Keio",
+		"_direction": 1,
+		"_sectionIndex": 10
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Keio",
+		"_direction": 1,
+		"_sectionIndex": 20
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Keio",
+		"_direction": -1,
+		"_sectionIndex": 31
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Keio",
+		"_direction": -1,
+		"_sectionIndex": 21
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Keio",
+		"_direction": -1,
+		"_sectionIndex": 11
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.KeioNew",
+		"_direction": 1,
+		"_sectionIndex": 0,
+		"_altitude": -1
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Sagamihara",
+		"_direction": 1,
+		"_sectionIndex": 0
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Sagamihara",
+		"_direction": -1,
+		"_sectionIndex": 11
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Keibajo",
+		"_direction": 1,
+		"_sectionIndex": 0
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Dobutsuen",
+		"_direction": 1,
+		"_sectionIndex": 0
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Takao",
+		"_direction": 1,
+		"_sectionIndex": 0
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Takao",
+		"_direction": -1,
+		"_sectionIndex": 6
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Inokashira",
+		"_direction": 1,
+		"_sectionIndex": 0
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Inokashira",
+		"_direction": 1,
+		"_sectionIndex": 8
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Inokashira",
+		"_direction": -1,
+		"_sectionIndex": 16
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Inokashira",
+		"_direction": -1,
+		"_sectionIndex": 8
 	}],
 	"railDirections": [{
 		"odpt:railDirection": "odpt.RailDirection:InnerLoop",
@@ -810,6 +879,48 @@
 		"odpt:trainTypeTitle": {
 			"ko": "쾌속",
 			"zh": "快速"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Keio.Express",
+		"odpt:trainTypeTitle": {
+			"ko": "급행",
+			"zh": "急行"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Keio.KeioLiner",
+		"odpt:trainTypeTitle": {
+			"ko": "케이오 라이너",
+			"zh": "Keio Liner"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Keio.LimitedExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "특급",
+			"zh": "特急"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Keio.Local",
+		"odpt:trainTypeTitle": {
+			"ko": "보통",
+			"zh": "普通"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Keio.Rapid",
+		"odpt:trainTypeTitle": {
+			"ko": "쾌속",
+			"zh": "快速"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Keio.SemiExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "구간급행",
+			"zh": "区间急行"
+		}
+	}, {
+		"odpt:trainType": "odpt.TrainType:Keio.SemiLimitedExpress",
+		"odpt:trainTypeTitle": {
+			"ko": "준특급",
+			"zh": "准特急"
 		}
 	}]
 }

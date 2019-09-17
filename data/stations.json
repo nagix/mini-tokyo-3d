@@ -37,6 +37,7 @@
 		}
 	}, {
 		"aliases": [
+			"odpt.Station:Keio.Inokashira.Shibuya",
 			"odpt.Station:JR-East.Yamanote.Shibuya",
 			"odpt.Station:JR-East.SaikyoKawagoe.Shibuya",
 			"odpt.Station:JR-East.ShonanShinjuku.Shibuya"
@@ -66,8 +67,9 @@
 		"labelAngle": -15
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.Yamanote.Shinjuku",
+			"odpt.Station:Keio.Keio.Shinjuku",
 			"odpt.Station:JR-East.ChuoSobuLocal.Shinjuku",
+			"odpt.Station:JR-East.Yamanote.Shinjuku",
 			"odpt.Station:JR-East.ChuoRapid.Shinjuku",
 			"odpt.Station:JR-East.SaikyoKawagoe.Shinjuku",
 			"odpt.Station:JR-East.ShonanShinjuku.Shinjuku"
@@ -368,7 +370,8 @@
 	}, {
 		"aliases": [
 			"odpt.Station:JR-East.ChuoRapid.Kichijoji",
-			"odpt.Station:JR-East.ChuoSobuLocal.Kichijoji"
+			"odpt.Station:JR-East.ChuoSobuLocal.Kichijoji",
+			"odpt.Station:Keio.Inokashira.Kichijoji"
 		],
 		"odpt:stationTitle": {
 			"ko": "기치조지",
@@ -473,7 +476,8 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.ChuoRapid.Takao"
+			"odpt.Station:JR-East.ChuoRapid.Takao",
+			"odpt.Station:Keio.Takao.Takao"
 		],
 		"odpt:stationTitle": {
 			"ko": "다카오",
@@ -1887,8 +1891,9 @@
 	}, {
 		"aliases": [
 			"odpt.Station:TokyoMetro.Marunouchi.Shinjuku",
-			"odpt.Station:Toei.Shinjuku.Shinjuku",
-			"odpt.Station:Toei.Oedo.Shinjuku"
+			"odpt.Station:Toei.Oedo.Shinjuku",
+			"odpt.Station:Keio.KeioNew.Shinjuku",
+			"odpt.Station:Toei.Shinjuku.Shinjuku"
 		],
 		"odpt:stationTitle": {
 			"ko": "신주쿠",
@@ -3634,5 +3639,541 @@
 			"zh": "光丘"
 		},
 		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Sasazuka"
+		],
+		"odpt:stationTitle": {
+			"ko": "사사즈카",
+			"zh": "笹冢"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Daitabashi"
+		],
+		"odpt:stationTitle": {
+			"ko": "다이타바시",
+			"zh": "代田桥"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Meidaimae",
+			"odpt.Station:Keio.Inokashira.Meidaimae"
+		],
+		"odpt:stationTitle": {
+			"ko": "메이다이 앞",
+			"zh": "明大前"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.ShimoTakaido"
+		],
+		"odpt:stationTitle": {
+			"ko": "시모타카이도",
+			"zh": "下高井户"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Sakurajosui"
+		],
+		"odpt:stationTitle": {
+			"ko": "사쿠라조스이",
+			"zh": "樱上水"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.KamiKitazawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "가미키타자와",
+			"zh": "上北泽"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.HachimanYama"
+		],
+		"odpt:stationTitle": {
+			"ko": "하치만야마",
+			"zh": "八幡山"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.RokaKoen"
+		],
+		"odpt:stationTitle": {
+			"ko": "로카 공원",
+			"zh": "芦花公园"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.ChitoseKarasuyama"
+		],
+		"odpt:stationTitle": {
+			"ko": "지토세 가라스야마",
+			"zh": "千岁乌山"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Sengawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "센가와",
+			"zh": "仙川"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Tsutsujigaoka"
+		],
+		"odpt:stationTitle": {
+			"ko": "쓰쓰지가오카",
+			"zh": "杜鹃丘"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Shibasaki"
+		],
+		"odpt:stationTitle": {
+			"ko": "시바사키",
+			"zh": "柴崎"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Kokuryo"
+		],
+		"odpt:stationTitle": {
+			"ko": "고쿠료",
+			"zh": "国领"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Fuda"
+		],
+		"odpt:stationTitle": {
+			"ko": "후다",
+			"zh": "布田"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Chofu",
+			"odpt.Station:Keio.Sagamihara.Chofu"
+		],
+		"odpt:stationTitle": {
+			"ko": "조후",
+			"zh": "调布"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.NishiChofu"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시초후",
+			"zh": "西调布"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Tobitakyu"
+		],
+		"odpt:stationTitle": {
+			"ko": "도비다큐",
+			"zh": "飞田给"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Musashinodai"
+		],
+		"odpt:stationTitle": {
+			"ko": "무사시노다이",
+			"zh": "武藏野台"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.TamaReien"
+		],
+		"odpt:stationTitle": {
+			"ko": "다마레이엔",
+			"zh": "多磨灵园"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.HigashiFuchu",
+			"odpt.Station:Keio.Keibajo.HigashiFuchu"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시후추",
+			"zh": "东府中"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Fuchu"
+		],
+		"odpt:stationTitle": {
+			"ko": "후추",
+			"zh": "府中"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Bubaigawara"
+		],
+		"odpt:stationTitle": {
+			"ko": "부바이가와라",
+			"zh": "分倍河原"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Nakagawara"
+		],
+		"odpt:stationTitle": {
+			"ko": "나카가와라",
+			"zh": "中河原"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.SeisekiSakuragaoka"
+		],
+		"odpt:stationTitle": {
+			"ko": "세이세키사쿠라가오카",
+			"zh": "圣迹樱丘"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Mogusaen"
+		],
+		"odpt:stationTitle": {
+			"ko": "모구사엔",
+			"zh": "百草园"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Takahatafudo",
+			"odpt.Station:Keio.Dobutsuen.Takahatafudo"
+		],
+		"odpt:stationTitle": {
+			"ko": "다카하타후도",
+			"zh": "高幡不动"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Minamidaira"
+		],
+		"odpt:stationTitle": {
+			"ko": "미나미다이라",
+			"zh": "南平"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.HirayamajoshiKoen"
+		],
+		"odpt:stationTitle": {
+			"ko": "히라야마 성지공원",
+			"zh": "平山城址公园"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Naganuma"
+		],
+		"odpt:stationTitle": {
+			"ko": "나가누마",
+			"zh": "长沼"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.Kitano",
+			"odpt.Station:Keio.Takao.Kitano"
+		],
+		"odpt:stationTitle": {
+			"ko": "기타노",
+			"zh": "北野"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keio.KeioHachioji"
+		],
+		"odpt:stationTitle": {
+			"ko": "게이오 하치오지",
+			"zh": "京王八王子"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.KeioNew.Hatsudai"
+		],
+		"odpt:stationTitle": {
+			"ko": "하쓰다이",
+			"zh": "初台"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.KeioNew.Hatagaya"
+		],
+		"odpt:stationTitle": {
+			"ko": "하타가야",
+			"zh": "幡谷"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.KeioNew.Sasazuka"
+		],
+		"odpt:stationTitle": {
+			"ko": "사사즈카",
+			"zh": "笹冢"
+		},
+		"altitude": -1
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Sagamihara.KeioTamagawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "게이오 다마가와",
+			"zh": "京王多摩川"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Sagamihara.KeioInadazutsumi"
+		],
+		"odpt:stationTitle": {
+			"ko": "게이오 이나다즈쓰미",
+			"zh": "京王稻田堤"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Sagamihara.KeioYomiuriLand"
+		],
+		"odpt:stationTitle": {
+			"ko": "게이오 요미우리 랜드",
+			"zh": "京王读卖乐园"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Sagamihara.Inagi"
+		],
+		"odpt:stationTitle": {
+			"ko": "이나기",
+			"zh": "稻城"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Sagamihara.Wakabadai"
+		],
+		"odpt:stationTitle": {
+			"ko": "와카바다이",
+			"zh": "若叶台"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Sagamihara.KeioNagayama"
+		],
+		"odpt:stationTitle": {
+			"ko": "게이오 나가야마",
+			"zh": "京王永山"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Sagamihara.KeioTamaCenter"
+		],
+		"odpt:stationTitle": {
+			"ko": "게이오 다마 센터",
+			"zh": "京王多摩中心"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Sagamihara.KeioHorinouchi"
+		],
+		"odpt:stationTitle": {
+			"ko": "게이오 호리노우치",
+			"zh": "京王堀之内"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Sagamihara.MinamiOsawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "미나미오사와",
+			"zh": "南大泽"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Sagamihara.Tamasakai"
+		],
+		"odpt:stationTitle": {
+			"ko": "다마사카이",
+			"zh": "多摩境"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Sagamihara.Hashimoto"
+		],
+		"odpt:stationTitle": {
+			"ko": "하시모토",
+			"zh": "桥本"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Keibajo.FuchukeibaSeimommae"
+		],
+		"odpt:stationTitle": {
+			"ko": "후추케이바세이몬마에",
+			"zh": "府中竞马正门前"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Dobutsuen.TamaDobutsukoen"
+		],
+		"odpt:stationTitle": {
+			"ko": "다마도부쓰코엔",
+			"zh": "多摩动物公园"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Takao.KeioKatakura"
+		],
+		"odpt:stationTitle": {
+			"ko": "게이오 가타쿠라",
+			"zh": "京王片仓"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Takao.Yamada"
+		],
+		"odpt:stationTitle": {
+			"ko": "야마다",
+			"zh": "山田"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Takao.Mejirodai"
+		],
+		"odpt:stationTitle": {
+			"ko": "메지로다이",
+			"zh": "目白台"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Takao.Hazama"
+		],
+		"odpt:stationTitle": {
+			"ko": "하자마",
+			"zh": "狭间"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Takao.Takaosanguchi"
+		],
+		"odpt:stationTitle": {
+			"ko": "다카오산구치",
+			"zh": "高尾山口"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.Shinsen"
+		],
+		"odpt:stationTitle": {
+			"ko": "신센",
+			"zh": "神泉"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.KomabaTodaimae"
+		],
+		"odpt:stationTitle": {
+			"ko": "고마바 도다이 마에",
+			"zh": "驹场东大前"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.Ikenoue"
+		],
+		"odpt:stationTitle": {
+			"ko": "이케노우에",
+			"zh": "池之上"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.ShimoKitazawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "시모키타자와",
+			"zh": "下北泽"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.Shindaita"
+		],
+		"odpt:stationTitle": {
+			"ko": "신다이타",
+			"zh": "新代田"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.HigashiMatsubara"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시마쓰바라",
+			"zh": "东松原"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.Eifukucho"
+		],
+		"odpt:stationTitle": {
+			"ko": "에이후쿠초",
+			"zh": "永福町"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.NishiEifuku"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시에이후쿠",
+			"zh": "西永福"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.Hamadayama"
+		],
+		"odpt:stationTitle": {
+			"ko": "하마다야먀",
+			"zh": "滨田山"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.Takaido"
+		],
+		"odpt:stationTitle": {
+			"ko": "다카이도",
+			"zh": "高井户"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.Fujimigaoka"
+		],
+		"odpt:stationTitle": {
+			"ko": "후지미가오카",
+			"zh": "富士见丘"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.Kugayama"
+		],
+		"odpt:stationTitle": {
+			"ko": "구가야마",
+			"zh": "久我山"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.Mitakadai"
+		],
+		"odpt:stationTitle": {
+			"ko": "미타카다이",
+			"zh": "三鹰台"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:Keio.Inokashira.InokashiraKoen"
+		],
+		"odpt:stationTitle": {
+			"ko": "이노카시라 코엔",
+			"zh": "井之头公园"
+		}
 	}]
 }

@@ -246,5 +246,62 @@
 		"_altitude": -1,
 		"_color": "#CE045B",
 		"_carComposition": 8
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Keio",
+		"odpt:railwayTitle": {
+			"ko": "게이오 선",
+			"zh": "京王线"
+		},
+		"_color": "#DD0077",
+		"_carComposition": 10
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.KeioNew",
+		"odpt:railwayTitle": {
+			"ko": "게이오 신선",
+			"zh": "京王新线"
+		},
+		"_altitude": -1,
+		"_color": "#DD0077",
+		"_carComposition": 10
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Sagamihara",
+		"odpt:railwayTitle": {
+			"ko": "사가미하라 선",
+			"zh": "相模原线"
+		},
+		"_color": "#DD0077",
+		"_carComposition": 10
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Keibajo",
+		"odpt:railwayTitle": {
+			"ko": "경마장선",
+			"zh": "竞马场线"
+		},
+		"_color": "#DD0077",
+		"_carComposition": 2
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Dobutsuen",
+		"odpt:railwayTitle": {
+			"ko": "동물원선",
+			"zh": "动物园线"
+		},
+		"_color": "#DD0077",
+		"_carComposition": 4
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Takao",
+		"odpt:railwayTitle": {
+			"ko": "다카오 선",
+			"zh": "高尾线"
+		},
+		"_color": "#DD0077",
+		"_carComposition": 10
+	}, {
+		"odpt:railway": "odpt.Railway:Keio.Inokashira",
+		"odpt:railwayTitle": {
+			"ko": "이노카시라 선",
+			"zh": "井之头线"
+		},
+		"_color": "#000088",
+		"_carComposition": 5
 	}]
 }
