@@ -67,7 +67,7 @@ var featureLookup = {};
 var trainLookup = {};
 var animationID = 0;
 var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, timetableLookup;
-var trackedCar, markedCar, trainLastRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, carUnit, carScaleXZ, carScaleY;
+var trackedCar, markedCar, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, carUnit, carScaleXZ, carScaleY;
 
 // Replace MapboxLayer.render to support underground rendering
 var render = MapboxLayer.prototype.render;
@@ -658,15 +658,12 @@ map.once('styledata', function () {
 		eventHandler: function() {
 			isRealtime = !isRealtime;
 			this.title = dict[(isRealtime ? 'exit' : 'enter') + '-realtime'];
-			Object.keys(trainLookup).forEach(function(key) {
-				stopTrain(trainLookup[key]);
-			});
+			stopAllTrains();
 			trackedCar = undefined;
 			stopViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0].classList.remove('mapbox-ctrl-track-active');
 			if (isRealtime) {
 				this.classList.add('mapbox-ctrl-realtime-active');
-				trainLastRefresh = undefined;
 			} else {
 				this.classList.remove('mapbox-ctrl-realtime-active');
 				initModelTrains();
@@ -897,8 +894,14 @@ map.once('styledata', function () {
 	function refreshTrains() {
 		var now = Date.now();
 
-		if (Math.floor((now - MIN_DELAY) / TRAIN_REFRESH_INTERVAL) !== Math.floor(trainLastRefresh / TRAIN_REFRESH_INTERVAL)) {
-			trainLastRefresh = now - MIN_DELAY;
+		// Remove all trains if the page has been invisible for more than ten seconds
+		if (now - lastFrameRefresh >= 10000) {
+			stopAllTrains();
+		}
+		lastFrameRefresh = now;
+
+		if (Math.floor((now - MIN_DELAY) / TRAIN_REFRESH_INTERVAL) !== Math.floor(lastTrainRefresh / TRAIN_REFRESH_INTERVAL)) {
+			lastTrainRefresh = now - MIN_DELAY;
 			timetableRefData.forEach(function(train) {
 				var d = train._delay || 0;
 				if (train._start + d <= now && now <= train._end + d && !trainLookup[train['odpt:train']] && (!train._previousTrain || !trainLookup[train._previousTrain['odpt:train']])) {
@@ -1076,6 +1079,13 @@ map.once('styledata', function () {
 		}
 	}
 
+	function stopAllTrains() {
+		Object.keys(trainLookup).forEach(function(key) {
+			stopTrain(trainLookup[key]);
+		});
+		lastTrainRefresh = undefined;
+	}
+
 	function updateDelays() {
 		loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN).then(function(trainRefData) {
 			trainRefData.forEach(function(trainRef) {
@@ -1087,7 +1097,7 @@ map.once('styledata', function () {
 					if (delay && train._delay !== delay) {
 						stopTrain(train);
 						train._delay = delay;
-						trainLastRefresh = undefined;
+						lastTrainRefresh = undefined;
 					}
 					if (carComposition) {
 						train._carComposition = trainRef['odpt:carComposition'];
@@ -1184,19 +1194,21 @@ function repeat() {
 	for (i = 0, ilen = ids.length; i < ilen; i++) {
 		id = ids[i];
 		animation = animations[id];
-		start = animation.start = animation.start || now;
-		duration = animation.duration;
-		elapsed = now - start;
-		callback = animation.callback;
-		if (callback) {
-			callback(Math.min(elapsed, duration), duration);
-		}
-		if (elapsed >= duration) {
-			callback = animation.complete;
+		if (animation) {
+			start = animation.start = animation.start || now;
+			duration = animation.duration;
+			elapsed = now - start;
+			callback = animation.callback;
 			if (callback) {
-				callback();
+				callback(Math.min(elapsed, duration), duration);
 			}
-			stopAnimation(id);
+			if (elapsed >= duration) {
+				callback = animation.complete;
+				if (callback) {
+					callback();
+				}
+				stopAnimation(id);
+			}
 		}
 	}
 	requestAnimationFrame(repeat);
