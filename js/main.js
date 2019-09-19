@@ -64,9 +64,9 @@ var trackingMode = 'helicopter';
 var opacityStore = {};
 var animations = {};
 var featureLookup = {};
-var trainLookup = {};
+var activeTrainLookup = {};
 var animationID = 0;
-var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, timetableLookup;
+var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, timetableLookup;
 var trackedCar, markedCar, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, carUnit, carScaleXZ, carScaleY;
 
 // Replace MapboxLayer.render to support underground rendering
@@ -409,6 +409,7 @@ trainData.railDirections.forEach(function(direction) {
 	merge(railDirectionLookup[direction['odpt:railDirection']]['odpt:railDirectionTitle'], direction['odpt:railDirectionTitle']);
 });
 
+trainLookup = buildLookup(timetableRefData, 'odpt:train');
 timetableLookup = buildLookup(timetableRefData);
 
 // Update timetable lookup dictionary
@@ -624,8 +625,8 @@ map.once('styledata', function () {
 						setLayerProps(map, 'railways-ug-' + zoom, {opacity: opacity});
 						setLayerProps(map, 'stations-ug-' + zoom, {opacity: opacity});
 					});
-					Object.keys(trainLookup).forEach(function(key) {
-						var train = trainLookup[key];
+					Object.keys(activeTrainLookup).forEach(function(key) {
+						var train = activeTrainLookup[key];
 						var opacity = isUndergroundVisible === (train._altitude < 0) ?
 							.9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
 
@@ -747,8 +748,8 @@ map.once('styledata', function () {
 		carScaleXZ = unit * modelScale * 100;
 		carScaleY = Math.max(.02 / .19, unit) * modelScale * 100;
 
-		Object.keys(trainLookup).forEach(function(key) {
-			updateTrainShape(trainLookup[key], {reset: true});
+		Object.keys(activeTrainLookup).forEach(function(key) {
+			updateTrainShape(activeTrainLookup[key], {reset: true});
 		});
 
 	});
@@ -874,7 +875,7 @@ map.once('styledata', function () {
 			var railway = railwayLookup[train['odpt:railway']];
 
 			train['odpt:train'] = i;
-			trainLookup[train['odpt:train']] = train;
+			activeTrainLookup[train['odpt:train']] = train;
 
 			train._sectionLength = train._direction;
 			train._carComposition = railway._carComposition;
@@ -914,7 +915,7 @@ map.once('styledata', function () {
 			lastTrainRefresh = now - MIN_DELAY;
 			timetableRefData.forEach(function(train) {
 				var d = train._delay || 0;
-				if (train._start + d <= now && now <= train._end + d && !trainLookup[train['odpt:train']] && (!train._previousTrain || !trainLookup[train._previousTrain['odpt:train']])) {
+				if (train._start + d <= now && now <= train._end + d && !activeTrainLookup[train['odpt:train']] && (!train._previousTrain || !activeTrainLookup[train._previousTrain['odpt:train']])) {
 					function start(index) {
 						var now = Date.now();
 						var departureTime;
@@ -948,7 +949,7 @@ map.once('styledata', function () {
 								if (train._nextTrain) {
 									stopTrain(train);
 									train = train._nextTrain;
-									if (!trainLookup[train['odpt:train']]) {
+									if (!activeTrainLookup[train['odpt:train']]) {
 										start(0);
 										if (train._cars) {
 											if (markedCarIndex !== -1) {
@@ -1070,7 +1071,7 @@ map.once('styledata', function () {
 	}
 
 	function startTrain(train) {
-		trainLookup[train['odpt:train']] = train;
+		activeTrainLookup[train['odpt:train']] = train;
 		train._cars = [];
 		updateTrainShape(train, {t: 0, reset: true});
 	}
@@ -1081,7 +1082,7 @@ map.once('styledata', function () {
 			trainLayers.removeObject(car, train, 1000);
 		});
 		delete train._cars;
-		delete trainLookup[train['odpt:train']];
+		delete activeTrainLookup[train['odpt:train']];
 		if (train._delayMarker) {
 			trainLayers.removeObject(train._delayMarker, train, 1000);
 			delete train._delayMarker;
@@ -1090,8 +1091,8 @@ map.once('styledata', function () {
 	}
 
 	function stopAllTrains() {
-		Object.keys(trainLookup).forEach(function(key) {
-			stopTrain(trainLookup[key]);
+		Object.keys(activeTrainLookup).forEach(function(key) {
+			stopTrain(activeTrainLookup[key]);
 		});
 		lastTrainRefresh = undefined;
 	}
@@ -1101,16 +1102,20 @@ map.once('styledata', function () {
 			trainRefData.forEach(function(trainRef) {
 				var delay = trainRef['odpt:delay'] * 1000;
 				var carComposition = trainRef['odpt:carComposition'];
-				var train = trainLookup[trainRef['owl:sameAs']];
+				var id = trainRef['owl:sameAs'];
+				var train = trainLookup[id];
+				var activeTrain = activeTrainLookup[id];
 
 				if (train) {
 					if (delay && train._delay !== delay) {
-						stopTrain(train);
+						if (activeTrainLookup[id]) {
+							stopTrain(train);
+						}
 						train._delay = delay;
 						lastTrainRefresh = undefined;
 					}
 					if (carComposition) {
-						train._carComposition = trainRef['odpt:carComposition'];
+						train._carComposition = carComposition;
 					}
 				}
 			});
