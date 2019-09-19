@@ -242,8 +242,12 @@ Promise.all([
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.JobanRapid,odpt.Railway:JR-East.JobanLocal&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.SobuRapid,odpt.Railway:JR-East.Yokosuka&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Sobu,odpt.Railway:JR-East.Narita,odpt.Railway:JR-East.NaritaAirportBranch&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Uchibo,odpt.Railway:JR-East.Sotobo&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Keiyo&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.SaikyoKawagoe,odpt.Railway:TWR.Rinkai,odpt.Railway:JR-East.ShonanShinjuku&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Nambu&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Yokohama&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Ginza&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Marunouchi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.MarunouchiBranch&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
@@ -270,7 +274,7 @@ Promise.all([
 	timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13, timetableRefData14, timetableRefData15,
 	timetableRefData16,timetableRefData17, timetableRefData18, timetableRefData19, timetableRefData20, timetableRefData21,
 	timetableRefData22, timetableRefData23, timetableRefData24, timetableRefData25, timetableRefData26, timetableRefData27,
-	trainTypeRefData
+	timetableRefData28, timetableRefData29, timetableRefData30, timetableRefData31,trainTypeRefData
 ]) {
 
 var stationRefData = stationRefData1.concat(stationRefData2, stationRefData3);
@@ -279,7 +283,7 @@ var timetableRefData = timetableRefData1.concat(
 	timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13,
 	timetableRefData14, timetableRefData15, timetableRefData16, timetableRefData17, timetableRefData18, timetableRefData19,
 	timetableRefData20, timetableRefData21, timetableRefData22, timetableRefData23, timetableRefData24, timetableRefData25,
-	timetableRefData26, timetableRefData27
+	timetableRefData26, timetableRefData27, timetableRefData28, timetableRefData29, timetableRefData30, timetableRefData31
 );
 
 var map = new mapboxgl.Map({
@@ -324,6 +328,12 @@ railwayData.railways.forEach(function(railway) {
 		stationOrder = stationOrder.slice(0, 13);
 	} else if (id === 'odpt.Railway:JR-East.Takasaki') {
 		stationOrder = stationOrder.slice(0, 13);
+	} else if (id === 'odpt.Railway:JR-East.Sobu') {
+		stationOrder = stationOrder.slice(0, 6);
+	} else if (id === 'odpt.Railway:JR-East.Narita') {
+		stationOrder = stationOrder.slice(0, 3);
+	} else if (id === 'odpt.Railway:JR-East.Uchibo' || id === 'odpt.Railway:JR-East.Sotobo') {
+		stationOrder = stationOrder.slice(0, 3);
 	} else if (id === 'odpt.Railway:JR-East.Yokosuka') {
 		stationOrder = stationOrder.slice(0, 11);
 	}

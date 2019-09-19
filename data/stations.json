@@ -436,7 +436,8 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.ChuoRapid.Tachikawa"
+			"odpt.Station:JR-East.ChuoRapid.Tachikawa",
+			"odpt.Station:JR-East.Nambu.Tachikawa"
 		],
 		"odpt:stationTitle": {
 			"ko": "다치카와",
@@ -460,7 +461,8 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.ChuoRapid.Hachioji"
+			"odpt.Station:JR-East.ChuoRapid.Hachioji",
+			"odpt.Station:JR-East.Yokohama.Hachioji"
 		],
 		"odpt:stationTitle": {
 			"ko": "하치오지",
@@ -485,8 +487,11 @@
 		}
 	}, {
 		"aliases": [
+			"odpt.Station:JR-East.Uchibo.Chiba",
+			"odpt.Station:JR-East.Sotobo.Chiba",
 			"odpt.Station:JR-East.ChuoSobuLocal.Chiba",
-			"odpt.Station:JR-East.SobuRapid.Chiba"
+			"odpt.Station:JR-East.SobuRapid.Chiba",
+			"odpt.Station:JR-East.Sobu.Chiba"
 		],
 		"odpt:stationTitle": {
 			"ko": "지바",
@@ -714,7 +719,8 @@
 	}, {
 		"aliases": [
 			"odpt.Station:JR-East.Tokaido.Kawasaki",
-			"odpt.Station:JR-East.KeihinTohokuNegishi.Kawasaki"
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Kawasaki",
+			"odpt.Station:JR-East.Nambu.Kawasaki"
 		],
 		"odpt:stationTitle": {
 			"ko": "가와사키",
@@ -1011,7 +1017,8 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.KeihinTohokuNegishi.HigashiKanagawa"
+			"odpt.Station:JR-East.KeihinTohokuNegishi.HigashiKanagawa",
+			"odpt.Station:JR-East.Yokohama.HigashiKanagawa"
 		],
 		"odpt:stationTitle": {
 			"ko": "히가시카나가와",
@@ -1256,6 +1263,99 @@
 		}
 	}, {
 		"aliases": [
+			"odpt.Station:JR-East.Sobu.HigashiChiba"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시치바",
+			"zh": "东千叶"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Sobu.Tsuga"
+		],
+		"odpt:stationTitle": {
+			"ko": "쓰가",
+			"zh": "都贺"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Sobu.Yotsukaido"
+		],
+		"odpt:stationTitle": {
+			"ko": "요쓰카이도",
+			"zh": "四街道"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Sobu.Monoi"
+		],
+		"odpt:stationTitle": {
+			"ko": "모노이",
+			"zh": "物井"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Sobu.Sakura",
+			"odpt.Station:JR-East.Narita.Sakura"
+		],
+		"odpt:stationTitle": {
+			"ko": "사쿠라",
+			"zh": "佐仓"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Narita.Shisui"
+		],
+		"odpt:stationTitle": {
+			"ko": "시스이",
+			"zh": "酒酒井"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Narita.Narita",
+			"odpt.Station:JR-East.NaritaAirportBranch.Narita"
+		],
+		"odpt:stationTitle": {
+			"ko": "나리타",
+			"zh": "成田"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3"
+		],
+		"odpt:stationTitle": {
+			"ko": "공항 제2빌딩",
+			"zh": "机场第2候机楼"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+		],
+		"odpt:stationTitle": {
+			"ko": "나리타 공항",
+			"zh": "成田机场"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Uchibo.HonChiba",
+			"odpt.Station:JR-East.Sotobo.HonChiba"
+		],
+		"odpt:stationTitle": {
+			"ko": "혼치바",
+			"zh": "本千叶"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Keiyo.Soga",
+			"odpt.Station:JR-East.Uchibo.Soga",
+			"odpt.Station:JR-East.Sotobo.Soga"
+		],
+		"odpt:stationTitle": {
+			"ko": "소가",
+			"zh": "苏我"
+		}
+	}, {
+		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.NishiOi",
 			"odpt.Station:JR-East.ShonanShinjuku.NishiOi"
 		],
@@ -1266,7 +1366,8 @@
 	}, {
 		"aliases": [
 			"odpt.Station:JR-East.Yokosuka.MusashiKosugi",
-			"odpt.Station:JR-East.ShonanShinjuku.MusashiKosugi"
+			"odpt.Station:JR-East.ShonanShinjuku.MusashiKosugi",
+			"odpt.Station:JR-East.Nambu.MusashiKosugi"
 		],
 		"odpt:stationTitle": {
 			"ko": "무사시코스기",
@@ -1421,14 +1522,6 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.Keiyo.Soga"
-		],
-		"odpt:stationTitle": {
-			"ko": "소가",
-			"zh": "苏我"
-		}
-	}, {
-		"aliases": [
 			"odpt.Station:JR-East.SaikyoKawagoe.Itabashi"
 		],
 		"odpt:stationTitle": {
@@ -1562,6 +1655,336 @@
 		"odpt:stationTitle": {
 			"ko": "가와고에",
 			"zh": "川越"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Shitte"
+		],
+		"odpt:stationTitle": {
+			"ko": "싯테",
+			"zh": "尻手"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Yako"
+		],
+		"odpt:stationTitle": {
+			"ko": "야코",
+			"zh": "矢向"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Kashimada"
+		],
+		"odpt:stationTitle": {
+			"ko": "가시마다",
+			"zh": "鹿岛田"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Hirama"
+		],
+		"odpt:stationTitle": {
+			"ko": "히라마",
+			"zh": "平间"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Mukaigawara"
+		],
+		"odpt:stationTitle": {
+			"ko": "무카이가와라",
+			"zh": "向河原"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.MusashiNakahara"
+		],
+		"odpt:stationTitle": {
+			"ko": "무사시나카하라",
+			"zh": "武藏中原"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.MusashiShinjo"
+		],
+		"odpt:stationTitle": {
+			"ko": "무사시신조",
+			"zh": "武藏新城"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.MusashiMizonokuchi"
+		],
+		"odpt:stationTitle": {
+			"ko": "무사시미조노쿠치",
+			"zh": "武藏沟之口"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Tsudayama"
+		],
+		"odpt:stationTitle": {
+			"ko": "쓰다야마",
+			"zh": "津田山"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Kuji"
+		],
+		"odpt:stationTitle": {
+			"ko": "구지",
+			"zh": "久地"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Shukugawara"
+		],
+		"odpt:stationTitle": {
+			"ko": "구지",
+			"zh": "宿河原"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Noborito"
+		],
+		"odpt:stationTitle": {
+			"ko": "노보리토",
+			"zh": "登户"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Nakanoshima"
+		],
+		"odpt:stationTitle": {
+			"ko": "나카노시마",
+			"zh": "中野岛"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Inadazutsumi"
+		],
+		"odpt:stationTitle": {
+			"ko": "이나다즈쓰미",
+			"zh": "稻田堤"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Yanokuchi"
+		],
+		"odpt:stationTitle": {
+			"ko": "야노쿠치",
+			"zh": "矢野口"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Inaginaganuma"
+		],
+		"odpt:stationTitle": {
+			"ko": "이나기나가누마",
+			"zh": "稻城长沼"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.MinamiTama"
+		],
+		"odpt:stationTitle": {
+			"ko": "미나미타마",
+			"zh": "南多摩"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Fuchuhommachi"
+		],
+		"odpt:stationTitle": {
+			"ko": "후추혼마치",
+			"zh": "府中本町"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Bubaigawara",
+			"odpt.Station:Keio.Keio.Bubaigawara"
+		],
+		"odpt:stationTitle": {
+			"ko": "부바이가와라",
+			"zh": "分倍河原"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Nishifu"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시후",
+			"zh": "西府"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Yaho"
+		],
+		"odpt:stationTitle": {
+			"ko": "야호",
+			"zh": "谷保"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Yagawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "야가와",
+			"zh": "矢川"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.NishiKunitachi"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시쿠니타치",
+			"zh": "西国立"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Oguchi"
+		],
+		"odpt:stationTitle": {
+			"ko": "오구치",
+			"zh": "大口"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Kikuna"
+		],
+		"odpt:stationTitle": {
+			"ko": "기쿠나",
+			"zh": "菊名"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.ShinYokohama"
+		],
+		"odpt:stationTitle": {
+			"ko": "신요코하마",
+			"zh": "新横滨"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Kozukue"
+		],
+		"odpt:stationTitle": {
+			"ko": "고즈쿠에",
+			"zh": "小机"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Kamoi"
+		],
+		"odpt:stationTitle": {
+			"ko": "가모이",
+			"zh": "鸭居"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Nakayama"
+		],
+		"odpt:stationTitle": {
+			"ko": "나카야마",
+			"zh": "中山"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Tokaichiba"
+		],
+		"odpt:stationTitle": {
+			"ko": "도카이치바",
+			"zh": "十日市场"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Nagatsuta"
+		],
+		"odpt:stationTitle": {
+			"ko": "나가쓰타",
+			"zh": "长津田"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Naruse"
+		],
+		"odpt:stationTitle": {
+			"ko": "나루세",
+			"zh": "成濑"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Machida"
+		],
+		"odpt:stationTitle": {
+			"ko": "마치다",
+			"zh": "町田"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Kobuchi"
+		],
+		"odpt:stationTitle": {
+			"ko": "고부치",
+			"zh": "古渊"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Fuchinobe"
+		],
+		"odpt:stationTitle": {
+			"ko": "후치노베",
+			"zh": "渊野边"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Yabe"
+		],
+		"odpt:stationTitle": {
+			"ko": "야베",
+			"zh": "矢部"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Sagamihara"
+		],
+		"odpt:stationTitle": {
+			"ko": "사가미하라",
+			"zh": "相模原"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Hashimoto",
+			"odpt.Station:Keio.Sagamihara.Hashimoto"
+		],
+		"odpt:stationTitle": {
+			"ko": "하시모토",
+			"zh": "桥本"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Aihara"
+		],
+		"odpt:stationTitle": {
+			"ko": "아이하라",
+			"zh": "相原"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Hachiojiminamino"
+		],
+		"odpt:stationTitle": {
+			"ko": "하치오지미나미노",
+			"zh": "八王子南野"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Yokohama.Katakura"
+		],
+		"odpt:stationTitle": {
+			"ko": "가타쿠라",
+			"zh": "片仓"
 		}
 	}, {
 		"aliases": [
@@ -3812,14 +4235,6 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:Keio.Keio.Bubaigawara"
-		],
-		"odpt:stationTitle": {
-			"ko": "부바이가와라",
-			"zh": "分倍河原"
-		}
-	}, {
-		"aliases": [
 			"odpt.Station:Keio.Keio.Nakagawara"
 		],
 		"odpt:stationTitle": {
@@ -3998,14 +4413,6 @@
 		"odpt:stationTitle": {
 			"ko": "다마사카이",
 			"zh": "多摩境"
-		}
-	}, {
-		"aliases": [
-			"odpt.Station:Keio.Sagamihara.Hashimoto"
-		],
-		"odpt:stationTitle": {
-			"ko": "하시모토",
-			"zh": "桥本"
 		}
 	}, {
 		"aliases": [
