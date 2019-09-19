@@ -792,10 +792,11 @@ map.once('styledata', function () {
 		var offset = train._offset;
 		var feature = train._railwayFeature;
 		var cars = train._cars;
+		var length = cars.length;
 		var carComposition = clamp(Math.floor(train._carComposition * .02 / carUnit), 1, train._carComposition);
-		var compositionChanged = cars.length !== carComposition;
+		var compositionChanged = length !== carComposition;
 		var delayMarker = train._delayMarker;
-		var markedCarIndex, trackedCarIndex, stationOffsets, sectionIndex, i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord;
+		var stationOffsets, sectionIndex, i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord;
 
 		if (options.t !== undefined) {
 			train._t = options.t;
@@ -809,14 +810,10 @@ map.once('styledata', function () {
 			train._interval = stationOffsets[sectionIndex + train._sectionLength] - offset;
 		}
 
-		if (compositionChanged) {
-			markedCarIndex = cars.indexOf(markedCar);
-			trackedCarIndex = cars.indexOf(trackedCar);
-		}
-		for (i = cars.length - 1; i >= carComposition; i--) {
+		for (i = length - 1; i >= carComposition; i--) {
 			trainLayers.removeObject(cars.pop(), train);
 		}
-		for (i = cars.length; i < carComposition; i++) {
+		for (i = length; i < carComposition; i++) {
 			railway = railway || railwayLookup[train['odpt:railway']];
 			car = createCube(railway._color);
 			userData = car.userData;
@@ -826,10 +823,10 @@ map.once('styledata', function () {
 			trainLayers.addObject(car, train, 1000);
 		}
 		if (compositionChanged) {
-			if (markedCarIndex >= 0) {
+			if (markedCar && markedCar.userData.train === train) {
 				markedCar = cars[Math.floor(carComposition / 2)];
 			}
-			if (trackedCarIndex >= 0) {
+			if (trackedCar && trackedCar.userData.train === train) {
 				trackedCar = cars[Math.floor(carComposition / 2)];
 			}
 		}
@@ -941,7 +938,7 @@ map.once('styledata', function () {
 						train._animationID = startTrainAnimation(function(t) {
 							updateTrainShape(train, {t: t});
 						}, function() {
-							var nextTrain, markedCarIndex, trackedCarIndex;
+							var markedCarIndex, trackedCarIndex;
 
 							if (!setSectionData(train, train._timetableIndex + 1)) {
 								markedCarIndex = train._cars.indexOf(markedCar);
