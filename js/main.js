@@ -692,22 +692,22 @@ map.once('styledata', function () {
 
 	var popup = new mapboxgl.Popup({
 		closeButton: false,
-		closeOnClick: false
+		closeOnClick: false,
+		offset: {
+			top: [0, 10],
+			bottom: [0, -30]
+		}
 	});
 
 	map.on('mousemove', function(e) {
-		var userData, offset;
+		var userData;
 
 		if (isRealtime) {
 			markedCar = trainLayers.pickObject(e.point);
 			if (markedCar) {
 				map.getCanvas().style.cursor = 'pointer';
 				userData = markedCar.userData;
-				offset = Math.sin(map.getPitch() * DEGREE_TO_RADIAN) * 25;
-				popup.options.offset = userData.altitude < 0 ?
-					{'top': [0, 10 + offset], 'bottom': [0, -30 + offset]} :
-					{'top': [0, 10], 'bottom': [0, -30]}
-				popup.setLngLat(userData.coord)
+				popup.setLngLat(adjustCoord(userData.coord, userData.train._altitude))
 					.setHTML(userData.train._description)
 					.addTo(map);
 			} else if (popup.isOpen()) {
@@ -769,18 +769,21 @@ map.once('styledata', function () {
 
 	startAnimation({
 		callback: function() {
+			var userData, train, bearing;
+
 			if (isRealtime) {
 				refreshTrains();
 				if (markedCar) {
 					userData = markedCar.userData;
-					popup.setLngLat(userData.coord).setHTML(userData.train._description);
+					popup.setLngLat(adjustCoord(userData.coord, userData.train._altitude))
+						.setHTML(userData.train._description);
 				}
 			}
 			if (trackedCar && !viewAnimationID) {
 				userData = trackedCar.userData;
 				bearing = map.getBearing();
 				map.easeTo({
-					center: userData.coord,
+					center: adjustCoord(userData.coord, userData.train._altitude),
 					bearing: trackingMode === 'helicopter' ?
 						(trackingBaseBearing + performance.now() / 100) % 360 :
 						bearing + ((userData.bearing - bearing + 540) % 360 - 180) * .02,
@@ -1000,7 +1003,7 @@ map.once('styledata', function () {
 				var t1 = easeOutQuart(elapsed / 1000);
 				var factor = (1 - t1) / (1 - t2);
 				var userData = trackedCar.userData;
-				var coord = userData.coord;
+				var coord = adjustCoord(userData.coord, userData.train._altitude);
 				var lng = coord[0];
 				var lat = coord[1];
 				var center = map.getCenter();
@@ -1027,6 +1030,18 @@ map.once('styledata', function () {
 			stopAnimation(viewAnimationID);
 			viewAnimationID = undefined;
 		}
+	}
+
+	function adjustCoord(coord, altitude) {
+		var mCoord, pos, world;
+
+		if (!altitude) {
+			return coord;
+		}
+		mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
+		pos = new THREE.Vector3(mCoord.x - modelOrigin.x, -(mCoord.y - modelOrigin.y), altitude * altitudeUnit).project(trainLayers.ug.camera);
+		world = map.unproject([(pos.x + 1) / 2 * map.transform.width, (1 - pos.y) / 2 * map.transform.height]);
+		return [world.lng, world.lat];
 	}
 
 	function getLocalizedRailwayTitle(railway) {
