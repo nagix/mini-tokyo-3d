@@ -718,13 +718,13 @@ map.once('styledata', function () {
 	});
 
 	map.on('click', function(e) {
+		stopViewAnimation();
 		trackedCar = trainLayers.pickObject(e.point);
 		if (trackedCar) {
 			startViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.add('mapbox-ctrl-track-active');
 		} else {
-			stopViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.remove('mapbox-ctrl-track-active');
 		}
@@ -1018,8 +1018,10 @@ map.once('styledata', function () {
 	}
 
 	function stopViewAnimation() {
-		stopAnimation(viewAnimationID);
-		viewAnimationID = undefined;
+		if (viewAnimationID) {
+			stopAnimation(viewAnimationID);
+			viewAnimationID = undefined;
+		}
 	}
 
 	function getLocalizedRailwayTitle(railway) {
@@ -1226,6 +1228,15 @@ function repeat() {
 	requestAnimationFrame(repeat);
 }
 
+/**
+  * Starts a new animation.
+  * @param {object} options - Animation options
+  * @param {function} options.callback - Function called on every frame
+  * @param {function} options.complete - Function called when the animation completes
+  * @param {number} options.duration - Animation duration. Default is Infinity
+  * @param {number} options.start - Animation start time (same timestamp as performance.now())
+  * @returns {number} Animation ID which can be used to stop
+  */
 function startAnimation(options) {
 	if (options.duration === undefined) {
 		options.duration = Infinity;
@@ -1234,6 +1245,10 @@ function startAnimation(options) {
 	return animationID++;
 }
 
+/**
+  * Stops an animation
+  * @param {number} id - Animation ID to stop
+  */
 function stopAnimation(id) {
 	if (animations[id]) {
 		delete animations[id];
