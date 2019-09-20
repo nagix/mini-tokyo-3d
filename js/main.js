@@ -749,7 +749,10 @@ map.once('styledata', function () {
 		carScaleY = Math.max(.02 / .19, unit) * modelScale * 100;
 
 		Object.keys(activeTrainLookup).forEach(function(key) {
-			updateTrainShape(activeTrainLookup[key], {reset: true});
+			var train = activeTrainLookup[key];
+
+			updateTrainProps(train);
+			updateTrainShape(train);
 		});
 
 	});
@@ -787,27 +790,27 @@ map.once('styledata', function () {
 		}
 	});
 
-	function updateTrainShape(train, options) {
-		var zoom = map.getZoom();
-		var offset = train._offset;
+	function updateTrainProps(train) {
+		var feature = train._railwayFeature = featureLookup[train['odpt:railway'] + '.' + layerZoom];
+		var stationOffsets = feature.properties['station-offsets'];
+		var sectionIndex = train._sectionIndex;
+		var offset = train._offset = stationOffsets[sectionIndex];
+
+		train._interval = stationOffsets[sectionIndex + train._sectionLength] - offset;
+	}
+
+	function updateTrainShape(train, t) {
 		var feature = train._railwayFeature;
+		var offset = train._offset;
 		var cars = train._cars;
 		var length = cars.length;
 		var carComposition = clamp(Math.floor(train._carComposition * .02 / carUnit), 1, train._carComposition);
 		var compositionChanged = length !== carComposition;
 		var delayMarker = train._delayMarker;
-		var stationOffsets, sectionIndex, i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord;
+		var i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord;
 
-		if (options.t !== undefined) {
-			train._t = options.t;
-		}
-
-		if (options.reset) {
-			feature = train._railwayFeature = featureLookup[train['odpt:railway'] + '.' + layerZoom];
-			stationOffsets = feature.properties['station-offsets'];
-			sectionIndex = train._sectionIndex;
-			offset = train._offset = stationOffsets[sectionIndex];
-			train._interval = stationOffsets[sectionIndex + train._sectionLength] - offset;
+		if (t !== undefined) {
+			train._t = t;
 		}
 
 		for (i = length - 1; i >= carComposition; i--) {
@@ -877,11 +880,11 @@ map.once('styledata', function () {
 			train._sectionLength = train._direction;
 			train._carComposition = railway._carComposition;
 			train._cars = [];
-			updateTrainShape(train, {t: 0, reset: true});
+			updateTrainProps(train);
 
 			function repeat() {
 				train._animationID = startTrainAnimation(function(t) {
-					updateTrainShape(train, {t: t});
+					updateTrainShape(train, t);
 				}, function() {
 					var direction = train._direction;
 					var sectionIndex = train._sectionIndex = train._sectionIndex + direction;
@@ -889,7 +892,8 @@ map.once('styledata', function () {
 					if (sectionIndex <= 0 || sectionIndex >= railway._stations.length - 1) {
 						train._direction = train._sectionLength = -direction;
 					}
-					updateTrainShape(train, {t: 0, reset: true});
+					updateTrainProps(train);
+					updateTrainShape(train, 0);
 
 					// Stop and go
 					train._animationID = startAnimation({complete: repeat, duration: 1000});
@@ -920,23 +924,37 @@ map.once('styledata', function () {
 						if (!setSectionData(train, index)) {
 							return; // Out of range
 						}
-						startTrain(train);
+						activeTrainLookup[train['odpt:train']] = train;
+						train._cars = [];
 						departureTime = getTime(train._departureTime) + (train._delay || 0);
 						if (now >= departureTime) {
+							updateTrainProps(train);
 							repeat(now - departureTime);
 						} else {
-							setTrainStandingStatus(train, true);
-							train._animationID = startAnimation({
-								complete: repeat,
-								duration: Math.max(departureTime - now, MIN_STANDING_DURATION)
-							});
+							stand();
 						}
+					}
+
+					function stand(final) {
+						var departureTime = getTime(train._departureTime) + (train._delay || 0);
+
+						if (!final) {
+							updateTrainProps(train);
+							updateTrainShape(train, 0);
+						}
+						setTrainStandingStatus(train, true);
+						train._animationID = startAnimation({
+							complete: !final ? repeat : function() {
+								stopTrain(train);
+							},
+							duration: Math.max(departureTime - Date.now(), MIN_STANDING_DURATION)
+						});
 					}
 
 					function repeat(elapsed) {
 						setTrainStandingStatus(train, false);
 						train._animationID = startTrainAnimation(function(t) {
-							updateTrainShape(train, {t: t});
+							updateTrainShape(train, t);
 						}, function() {
 							var markedCarIndex, trackedCarIndex;
 
@@ -959,22 +977,9 @@ map.once('styledata', function () {
 									}
 									return;
 								}
-								setTrainStandingStatus(train, true);
-								train._animationID = startAnimation({
-									complete: function() {
-										stopTrain(train);
-									},
-									duration: Math.max(getTime(train._departureTime) + (train._delay || 0) - Date.now(), MIN_STANDING_DURATION)
-								});
+								stand(true);
 							} else {
-								updateTrainShape(train, {t: 0, reset: true});
-								setTrainStandingStatus(train, true);
-
-								// Stop at station
-								train._animationID = startAnimation({
-									complete: repeat,
-									duration: Math.max(getTime(train._departureTime) + (train._delay || 0) - Date.now(), MIN_STANDING_DURATION)
-								});
+								stand();
 							}
 						}, Math.abs(train._interval), 1, elapsed);
 					}
@@ -1069,12 +1074,6 @@ map.once('styledata', function () {
 			(delay >= 60000 ? '<br>' + dict['delay'].replace('$1', Math.floor(delay / 60000)) + '</span>' : '');
 	}
 
-	function startTrain(train) {
-		activeTrainLookup[train['odpt:train']] = train;
-		train._cars = [];
-		updateTrainShape(train, {t: 0, reset: true});
-	}
-
 	function stopTrain(train) {
 		stopAnimation(train._animationID);
 		train._cars.forEach(function(car) {
@@ -1085,7 +1084,6 @@ map.once('styledata', function () {
 		if (train._delayMarker) {
 			trainLayers.removeObject(train._delayMarker, train, 1000);
 			delete train._delayMarker;
-			delete train._delay;
 		}
 	}
 
