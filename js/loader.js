@@ -89,7 +89,7 @@ Promise.all([
 	loadJSON('data/railways-coordinates.json'),
 	loadJSON('data/stations.json'),
 	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central,odpt.Operator:TWR&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central,odpt.Operator:TWR,odpt.Operator:Izukyu&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:Tobu,odpt.Operator:Seibu,odpt.Operator:Tokyu,odpt.Operator:SaitamaRailway,odpt.Operator:Minatomirai,odpt.Operator:Keio&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Tobu,odpt.Operator:ToyoRapid,odpt.Operator:Odakyu,odpt.Operator:Keikyu,odpt.Operator:Keisei,odpt.Operator:Hokuso,odpt.Operator:Shibayama&' + API_TOKEN),
 ]).then(function([
@@ -123,6 +123,12 @@ railwayData.railways.forEach(function(railway) {
 		stationOrder = stationOrder.slice(0, 13);
 	} else if (id === 'odpt.Railway:JR-East.Takasaki') {
 		stationOrder = stationOrder.slice(0, 13);
+	} else if (id === 'odpt.Railway:JR-East.Sobu') {
+		stationOrder = stationOrder.slice(0, 6);
+	} else if (id === 'odpt.Railway:JR-East.Narita') {
+		stationOrder = stationOrder.slice(0, 3);
+	} else if (id === 'odpt.Railway:JR-East.Uchibo' || id === 'odpt.Railway:JR-East.Sotobo') {
+		stationOrder = stationOrder.slice(0, 3);
 	} else if (id === 'odpt.Railway:JR-East.Yokosuka') {
 		stationOrder = stationOrder.slice(0, 11);
 	}
@@ -237,13 +243,13 @@ var railwayFeatureArray = [];
 		})), {color: railway._color, width: 8});
 
 		if (railway._altitude < 0) {
-			setAltitude(railwayFeature, -unit);
+			setAltitude(railwayFeature, railway._altitude * unit * 1000);
 		}
 
 		railwayFeature.properties.id = id + '.' + zoom;
 		railwayFeature.properties.zoom = zoom;
 		railwayFeature.properties.type = 0;
-		railwayFeature.properties.altitude = railway._altitude || 0;
+		railwayFeature.properties.altitude = (railway._altitude || 0) * unit * 1000;
 
 		// Set station offsets
 		railwayFeature.properties['station-offsets'] = railwayLookup[id]._stations.map(function(station, i, stations) {
@@ -273,15 +279,28 @@ var railwayFeatureArray = [];
 		);
 
 		if (station.altitude < 0) {
-			setAltitude(feature, -unit);
+			setAltitude(feature, station.altitude * unit * 1000);
 		}
 
 		feature.properties.zoom = zoom;
 		feature.properties.type = 1;
-		feature.properties.altitude = station.altitude || 0;
+		feature.properties.altitude = (station.altitude || 0) * unit * 1000;
 
 		railwayFeatureArray.push(feature);
 	});
+});
+
+railwayData.airways.forEach(function(airway) {
+	var id = airway.id;
+	var airwayFeature = turf.lineString(airway.coordinates, {color: airway._color, width: 8});
+
+	airwayFeature.properties.id = id;
+	airwayFeature.properties.type = 0;
+	airwayFeature.properties.altitude = 1;
+	airwayFeature.properties.length = turf.length(airwayFeature);
+
+	railwayFeatureArray.push(airwayFeature);
+	featureLookup[id] = airwayFeature;
 });
 
 var railwayFeatureCollection = turf.featureCollection(railwayFeatureArray);
@@ -306,7 +325,7 @@ map.once('styledata', function () {
 			id: 'railways-ug-' + zoom,
 			type: GeoJsonLayer,
 			data: filterFeatures(railwayFeatureCollection, function(p) {
-				return p.zoom === zoom && p.type === 0 && p.altitude === -1;
+				return p.zoom === zoom && p.type === 0 && p.altitude < 0;
 			}),
 			filled: false,
 			stroked: true,
@@ -326,7 +345,7 @@ map.once('styledata', function () {
 			id: 'stations-ug-' + zoom,
 			type: GeoJsonLayer,
 			data: filterFeatures(railwayFeatureCollection, function(p) {
-				return p.zoom === zoom && p.type === 1 && p.altitude === -1;
+				return p.zoom === zoom && p.type === 1 && p.altitude < 0;
 			}),
 			filled: true,
 			stroked: true,
@@ -339,6 +358,25 @@ map.once('styledata', function () {
 		}), 'building-3d');
 		map.setLayerZoomRange('stations-ug-' + zoom, minzoom, maxzoom);
 	});
+
+	map.addLayer(new MapboxLayer({
+		id: 'airways',
+		type: GeoJsonLayer,
+		data: filterFeatures(railwayFeatureCollection, function(p) {
+			return p.type === 0 && p.altitude > 0;
+		}),
+		filled: false,
+		stroked: true,
+		getLineWidth: function(d) {
+			return d.properties.width;
+		},
+		getLineColor: function(d) {
+			return colorToRGBArray(d.properties.color);
+		},
+		lineWidthUnits: 'pixels',
+		lineWidthScale: clamp(Math.pow(2, map.getZoom() - 12), .125, 1),
+		lineJointRounded: true
+	}), 'building-3d');
 
 	// Workaround for deck.gl #3522
 	map.__deck.props.getCursor = function() {
@@ -478,6 +516,7 @@ map.once('styledata', function () {
 
 		setLayerProps(map, 'railways-ug-13', {lineWidthScale: lineWidthScale});
 		setLayerProps(map, 'stations-ug-13', {lineWidthScale: lineWidthScale});
+		setLayerProps(map, 'airways', {lineWidthScale: lineWidthScale});
 	});
 
 	repeat();
@@ -492,7 +531,7 @@ function colorToRGBArray(color) {
 
 function setAltitude(geojson, altitude) {
 	turf.coordEach(geojson, function(coord) {
-		coord[2] = altitude * 1000;
+		coord[2] = altitude;
 	});
 }
 

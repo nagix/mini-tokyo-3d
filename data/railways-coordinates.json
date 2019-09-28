@@ -1,4 +1,21 @@
 {
+	"airways": [{
+		"id": "odpt.Airport:NRT.34L.Dep",
+		"coordinates": [
+			[140.3906381, 35.7434466, 0],
+			[140.3764929, 35.7630409, 0],
+			[140.2846110, 35.8911574, 1000]
+		],
+		"_color": "#FF0000"
+	}, {
+		"id": "odpt.Airport:NRT.34R.Arr",
+		"coordinates": [
+			[140.5259005, 35.6030338, 1000],
+			[140.3920612, 35.7858963, 0],
+			[140.3781927, 35.8050754, 0]
+		],
+		"_color": "#0000FF"
+	}],
 	"railways": [{
 		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
 		"_sublines": [{

@@ -41,8 +41,20 @@ var ACCELERATION = ACCELERATION_KMPHPS / 3600000000;
 var MAX_ACCELERATION_TIME = MAX_SPEED / ACCELERATION;
 var MAX_ACC_DISTANCE = MAX_ACCELERATION_TIME * MAX_SPEED / 2;
 
+// Maximum flight speed in km/h
+var MAX_FLIGHT_SPEED_KMPH = 500;
+
+// Flight acceleration in km/h/s
+var FLIGHT_ACCELERATION_KMPHPS = 12;
+
+var MAX_FLIGHT_SPEED = MAX_FLIGHT_SPEED_KMPH / 3600000;
+var FLIGHT_ACCELERATION = FLIGHT_ACCELERATION_KMPHPS / 3600000000;
+
 // Delay in milliseconds for precision error
 var MIN_DELAY = 25000;
+
+// Minimum flight interval in milliseconds
+var MIN_FLIGHT_INTERVAL = 75000;
 
 // API URL
 var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
@@ -65,9 +77,11 @@ var opacityStore = {};
 var animations = {};
 var featureLookup = {};
 var activeTrainLookup = {};
+var flightLookup = {};
+var activeFlightLookup = {};
 var animationID = 0;
-var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, timetableLookup;
-var trackedCar, markedCar, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, carUnit, carScaleXZ, carScaleY;
+var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, timetableLookup, operatorLookup, airportLookup;
+var trackedObject, markedObject, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
 
 // Replace MapboxLayer.render to support underground rendering
 var render = MapboxLayer.prototype.render;
@@ -229,6 +243,7 @@ Promise.all([
 	loadJSON('data/railways.json'),
 	loadJSON('data/stations.json'),
 	loadJSON('data/trains.json'),
+	loadJSON('data/flights.json'),
 	loadJSON('data/features.json'),
 	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:RailDirection?' + API_TOKEN),
@@ -266,15 +281,19 @@ Promise.all([
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Keio.KeioNew&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Keio.Sagamihara,odpt.Railway:Keio.Keibajo,odpt.Railway:Keio.Dobutsuen,odpt.Railway:Keio.Takao&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Keio.Inokashira&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN)
+	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Operator?' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:Airport?' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:FlightStatus?' + API_TOKEN)
 ]).then(function([
-	dict, railwayData, stationData, trainData, railwayFeatureCollection, railwayRefData, railDirectionRefData,
+	dict, railwayData, stationData, trainData, flightData, railwayFeatureCollection, railwayRefData, railDirectionRefData,
 	stationRefData1, stationRefData2, stationRefData3, timetableRefData1, timetableRefData2, timetableRefData3,
 	timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9,
 	timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13, timetableRefData14, timetableRefData15,
 	timetableRefData16,timetableRefData17, timetableRefData18, timetableRefData19, timetableRefData20, timetableRefData21,
 	timetableRefData22, timetableRefData23, timetableRefData24, timetableRefData25, timetableRefData26, timetableRefData27,
-	timetableRefData28, timetableRefData29, timetableRefData30, timetableRefData31,trainTypeRefData
+	timetableRefData28, timetableRefData29, timetableRefData30, timetableRefData31, trainTypeRefData,
+	operatorRefData, airportRefData, flightStatusRefData
 ]) {
 
 var stationRefData = stationRefData1.concat(stationRefData2, stationRefData3);
@@ -300,9 +319,10 @@ var unit = Math.pow(2, 14 - clamp(map.getZoom(), 13, 19));
 
 layerZoom = clamp(Math.floor(map.getZoom()), 13, 18);
 altitudeUnit = Math.pow(2, 14 - layerZoom) * modelScale * 100;
-carUnit = Math.max(unit * .19, .02);
-carScaleXZ = unit * modelScale * 100;
-carScaleY = Math.max(.02 / .19, unit) * modelScale * 100;
+objectUnit = Math.max(unit * .19, .02);
+objectScale = unit * modelScale * 100;
+carScale = Math.max(.02 / .19, unit) * modelScale * 100;
+aircraftScale = Math.max(.06 / .285, unit) * modelScale * 100;
 
 stationLookup = buildLookup(stationRefData);
 
@@ -445,6 +465,21 @@ timetableRefData.forEach(function(train) {
 });
 
 trainTypeLookup = buildLookup(trainTypeRefData);
+
+operatorLookup = buildLookup(operatorRefData);
+
+// Update operator lookup dictionary
+flightData.operators.forEach(function(operator) {
+	var operatorRef = operatorLookup[operator['odpt:operator']];
+
+	merge(operatorRef['odpt:operatorTitle'], operator['odpt:operatorTitle']);
+	operatorRef._color = operator._color;
+	operatorRef._tailColor = operator._tailColor;
+});
+
+airportLookup = buildLookup(airportRefData);
+
+flightStatusLookup = buildLookup(flightStatusRefData);
 
 // Update train type lookup dictionary
 trainData.types.map(function(type) {
@@ -637,6 +672,13 @@ map.once('styledata', function () {
 							train._delayMarker.material.opacity = opacity;
 						}
 					});
+					Object.keys(activeFlightLookup).forEach(function(key) {
+						var flight = activeFlightLookup[key];
+						var opacity = !isUndergroundVisible ?
+							.9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
+
+						flight._body.material.opacity = flight._wing.material.opacity = flight._vTail.material.opacity = opacity;
+					});
 				},
 				duration: 300
 			});
@@ -656,7 +698,7 @@ map.once('styledata', function () {
 				this.classList.remove('mapbox-ctrl-track-train');
 				this.classList.add('mapbox-ctrl-track-helicopter');
 			}
-			if (trackedCar) {
+			if (trackedObject) {
 				startViewAnimation();
 			}
 			event.stopPropagation();
@@ -670,7 +712,7 @@ map.once('styledata', function () {
 			isRealtime = !isRealtime;
 			this.title = dict[(isRealtime ? 'exit' : 'enter') + '-realtime'];
 			stopAllTrains();
-			trackedCar = undefined;
+			trackedObject = undefined;
 			stopViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0].classList.remove('mapbox-ctrl-track-active');
 			if (isRealtime) {
@@ -703,11 +745,11 @@ map.once('styledata', function () {
 		var userData;
 
 		if (isRealtime) {
-			markedCar = trainLayers.pickObject(e.point);
-			if (markedCar) {
+			markedObject = trainLayers.pickObject(e.point);
+			if (markedObject) {
 				map.getCanvas().style.cursor = 'pointer';
-				userData = markedCar.userData;
-				popup.setLngLat(adjustCoord(userData.coord, userData.train._altitude))
+				userData = markedObject.userData;
+				popup.setLngLat(adjustCoord(userData.coord, userData.altitude))
 					.setHTML(userData.train._description)
 					.addTo(map);
 			} else if (popup.isOpen()) {
@@ -719,8 +761,8 @@ map.once('styledata', function () {
 
 	map.on('click', function(e) {
 		stopViewAnimation();
-		trackedCar = trainLayers.pickObject(e.point);
-		if (trackedCar) {
+		trackedObject = trainLayers.pickObject(e.point);
+		if (trackedObject) {
 			startViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.add('mapbox-ctrl-track-active');
@@ -735,6 +777,14 @@ map.once('styledata', function () {
 	});
 
 	map.on('zoom', function() {
+		if (trackedObject) {
+			altitude = trackedObject.userData.altitude;
+			// Keep camera off from the tracked aircraft
+			if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
+				map.setZoom(22 - Math.log2(altitude * .5));
+			}
+		}
+
 		var zoom = map.getZoom();
 		var unit = Math.pow(2, 14 - clamp(zoom, 13, 19));
 		var lineWidthScale = clamp(Math.pow(2, zoom - 12), .125, 1);
@@ -744,15 +794,19 @@ map.once('styledata', function () {
 
 		layerZoom = clamp(Math.floor(zoom), 13, 18);
 		altitudeUnit = Math.pow(2, 14 - layerZoom) * modelScale * 100;
-		carUnit = Math.max(unit * .19, .02);
-		carScaleXZ = unit * modelScale * 100;
-		carScaleY = Math.max(.02 / .19, unit) * modelScale * 100;
+		objectUnit = Math.max(unit * .19, .02);
+		objectScale = unit * modelScale * 100;
+		carScale = Math.max(.02 / .19, unit) * modelScale * 100;
+		aircraftScale = Math.max(.06 / .285, unit) * modelScale * 100;
 
 		Object.keys(activeTrainLookup).forEach(function(key) {
 			var train = activeTrainLookup[key];
 
 			updateTrainProps(train);
 			updateTrainShape(train);
+		});
+		Object.keys(activeFlightLookup).forEach(function(key) {
+			updateFlightShape(activeFlightLookup[key]);
 		});
 
 	});
@@ -769,21 +823,41 @@ map.once('styledata', function () {
 
 	startAnimation({
 		callback: function() {
-			var userData, train, bearing;
+			var now = Date.now();
+			var userData, altitude, bearing;
 
 			if (isRealtime) {
-				refreshTrains();
-				if (markedCar) {
-					userData = markedCar.userData;
-					popup.setLngLat(adjustCoord(userData.coord, userData.train._altitude))
+				// Remove all trains if the page has been invisible for more than ten seconds
+				if (now - lastFrameRefresh >= 10000) {
+					stopAllTrains();
+				}
+				lastFrameRefresh = now;
+
+				if (Math.floor((now - MIN_DELAY) / TRAIN_REFRESH_INTERVAL) !== Math.floor(lastTrainRefresh / TRAIN_REFRESH_INTERVAL)) {
+					refreshTrains();
+					refreshFlights();
+					updateDelays();
+					updateFlights();
+					lastTrainRefresh = now - MIN_DELAY;
+				}
+				if (markedObject) {
+					userData = markedObject.userData;
+					popup.setLngLat(adjustCoord(userData.coord, userData.altitude))
 						.setHTML(userData.train._description);
 				}
 			}
-			if (trackedCar && !viewAnimationID) {
-				userData = trackedCar.userData;
+			if (trackedObject) {
+				altitude = trackedObject.userData.altitude;
+				// Keep camera off from the tracked aircraft
+				if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
+					map.setZoom(22 - Math.log2(altitude * .5));
+				}
+			}
+			if (trackedObject && !viewAnimationID) {
+				userData = trackedObject.userData;
 				bearing = map.getBearing();
 				map.easeTo({
-					center: adjustCoord(userData.coord, userData.train._altitude),
+					center: adjustCoord(userData.coord, userData.altitude),
 					bearing: trackingMode === 'helicopter' ?
 						(trackingBaseBearing + performance.now() / 100) % 360 :
 						bearing + ((userData.bearing - bearing + 540) % 360 - 180) * .02,
@@ -807,7 +881,7 @@ map.once('styledata', function () {
 		var offset = train._offset;
 		var cars = train._cars;
 		var length = cars.length;
-		var carComposition = clamp(Math.floor(train._carComposition * .02 / carUnit), 1, train._carComposition);
+		var carComposition = clamp(Math.floor(train._carComposition * .02 / objectUnit), 1, train._carComposition);
 		var compositionChanged = length !== carComposition;
 		var delayMarker = train._delayMarker;
 		var i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord;
@@ -815,25 +889,28 @@ map.once('styledata', function () {
 		if (t !== undefined) {
 			train._t = t;
 		}
+		if (train._t === undefined) {
+			return;
+		}
 
 		for (i = length - 1; i >= carComposition; i--) {
 			trainLayers.removeObject(cars.pop(), train);
 		}
 		for (i = length; i < carComposition; i++) {
 			railway = railway || railwayLookup[train['odpt:railway']];
-			car = createCube(railway._color);
+			car = createCube(.88, 1.76, .88, railway._color);
 			userData = car.userData;
 			userData.train = train;
-			userData.altitude = train._altitude;
+			userData.altitude = (train._altitude || 0) * Math.pow(2, 14 - layerZoom) * 100;
 			cars.push(car);
 			trainLayers.addObject(car, train, 1000);
 		}
 		if (compositionChanged) {
-			if (markedCar && markedCar.userData.train === train) {
-				markedCar = cars[Math.floor(carComposition / 2)];
+			if (markedObject && markedObject.userData.train === train) {
+				markedObject = cars[Math.floor(carComposition / 2)];
 			}
-			if (trackedCar && trackedCar.userData.train === train) {
-				trackedCar = cars[Math.floor(carComposition / 2)];
+			if (trackedObject && trackedObject.userData.train === train) {
+				trackedObject = cars[Math.floor(carComposition / 2)];
 			}
 		}
 
@@ -843,7 +920,7 @@ map.once('styledata', function () {
 			scale = car.scale;
 			userData = car.userData;
 
-			p = getCoordAndBearing(feature, offset + train._t * train._interval + (i - (carComposition - 1) / 2) * carUnit);
+			p = getCoordAndBearing(feature, offset + train._t * train._interval + (i - (carComposition - 1) / 2) * objectUnit);
 
 			coord = userData.coord = p.coord;
 			bearing = userData.bearing = p.bearing + (train._direction < 0 ? 180 : 0);
@@ -851,9 +928,9 @@ map.once('styledata', function () {
 
 			position.x = mCoord.x - modelOrigin.x;
 			position.y = -(mCoord.y - modelOrigin.y);
-			position.z = (train._altitude || 0) * altitudeUnit + carScaleXZ / 2;
-			scale.x = scale.z = carScaleXZ;
-			scale.y = carScaleY;
+			position.z = (train._altitude || 0) * altitudeUnit + objectScale / 2;
+			scale.x = scale.z = objectScale;
+			scale.y = carScale;
 			car.rotation.z = -bearing * DEGREE_TO_RADIAN;
 		}
 
@@ -866,11 +943,64 @@ map.once('styledata', function () {
 			car = cars[Math.floor(carComposition / 2)];
 			merge(delayMarker.position, car.position);
 			scale = delayMarker.scale;
-			scale.x = scale.y = scale.z = carScaleY;
+			scale.x = scale.y = scale.z = carScale;
 		} else if (delayMarker) {
 			trainLayers.removeObject(delayMarker, train);
 			delete train._delayMarker;
 		}
+	}
+
+	function updateFlightShape(flight, t) {
+		var body = flight._body;
+		var wing = flight._wing;
+		var vTail = flight._vTail;
+		var operator, p, coord, bearing, mCoord;
+
+		if (t !== undefined) {
+			flight._t = t;
+		}
+		if (flight._t === undefined) {
+			return;
+		}
+		if (!body) {
+			operator = operatorLookup[flight['odpt:airline']];
+			body = flight._body = createCube(.88, 2.64, .88, operator._color || '#FFFFFF');
+			wing = flight._wing = createCube(2.64, .88, .1, operator._color || '#FFFFFF');
+			vTail = flight._vTail = createCube(.1, .88, .88, operator._tailColor || '#FFFFFF');
+			vTail.geometry.translate(0, -.88, .88);
+			body.userData.train = wing.userData.train = vTail.userData.train = flight;
+			trainLayers.addObject(body, flight, 1000);
+			trainLayers.addObject(wing, flight, 1000);
+			trainLayers.addObject(vTail, flight, 1000);
+		}
+
+		p = getCoordAndBearing(flight._feature, flight._t * flight._feature.properties.length);
+
+		coord = body.userData.coord = wing.userData.coord = vTail.userData.coord = p.coord;
+		body.userData.altitude = wing.userData.altitude = vTail.userData.altitude = p.altitude;
+		bearing = body.userData.bearing = wing.userData.bearing = vTail.userData.bearing = p.bearing;
+		mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
+
+		position = body.position;
+		position.x = mCoord.x - modelOrigin.x;
+		position.y = -(mCoord.y - modelOrigin.y);
+		position.z = p.altitude * modelScale + objectScale / 2;
+		scale = body.scale;
+		scale.x = scale.z = objectScale;
+		scale.y = aircraftScale;
+		body.rotation.z = -bearing * DEGREE_TO_RADIAN;
+
+		merge(wing.position, body.position);
+		scale = wing.scale;
+		scale.x = aircraftScale;
+		scale.y = scale.z = objectScale;
+		wing.rotation.z = body.rotation.z;
+
+		merge(vTail.position, body.position);
+		scale = vTail.scale
+		scale.x = scale.z = objectScale;
+		scale.y = aircraftScale;
+		vTail.rotation.z = body.rotation.z;
 	}
 
 	function initModelTrains() {
@@ -909,89 +1039,119 @@ map.once('styledata', function () {
 	function refreshTrains() {
 		var now = Date.now();
 
-		// Remove all trains if the page has been invisible for more than ten seconds
-		if (now - lastFrameRefresh >= 10000) {
-			stopAllTrains();
-		}
-		lastFrameRefresh = now;
+		timetableRefData.forEach(function(train) {
+			var d = train._delay || 0;
+			if (train._start + d <= now && now <= train._end + d &&
+				!activeTrainLookup[train['odpt:train']] &&
+				(!train._previousTrain || !activeTrainLookup[train._previousTrain['odpt:train']]) &&
+				(!train._nextTrain || !activeTrainLookup[train._nextTrain['odpt:train']])) {
+				function start(index) {
+					var now = Date.now();
+					var departureTime;
 
-		if (Math.floor((now - MIN_DELAY) / TRAIN_REFRESH_INTERVAL) !== Math.floor(lastTrainRefresh / TRAIN_REFRESH_INTERVAL)) {
-			lastTrainRefresh = now - MIN_DELAY;
-			timetableRefData.forEach(function(train) {
-				var d = train._delay || 0;
-				if (train._start + d <= now && now <= train._end + d && !activeTrainLookup[train['odpt:train']] && (!train._previousTrain || !activeTrainLookup[train._previousTrain['odpt:train']])) {
-					function start(index) {
-						var now = Date.now();
-						var departureTime;
+					if (!setSectionData(train, index)) {
+						return; // Out of range
+					}
+					activeTrainLookup[train['odpt:train']] = train;
+					train._cars = [];
+					departureTime = getTime(train._departureTime) + (train._delay || 0);
+					if (now >= departureTime) {
+						updateTrainProps(train);
+						repeat(now - departureTime);
+					} else {
+						stand();
+					}
+				}
 
-						if (!setSectionData(train, index)) {
-							return; // Out of range
-						}
-						activeTrainLookup[train['odpt:train']] = train;
-						train._cars = [];
-						departureTime = getTime(train._departureTime) + (train._delay || 0);
-						if (now >= departureTime) {
-							updateTrainProps(train);
-							repeat(now - departureTime);
+				function stand(final) {
+					var departureTime = getTime(train._departureTime) + (train._delay || 0);
+
+					if (!final) {
+						updateTrainProps(train);
+						updateTrainShape(train, 0);
+					}
+					setTrainStandingStatus(train, true);
+					train._animationID = startAnimation({
+						complete: !final ? repeat : function() {
+							stopTrain(train);
+						},
+						duration: Math.max(departureTime - Date.now(), MIN_STANDING_DURATION)
+					});
+				}
+
+				function repeat(elapsed) {
+					setTrainStandingStatus(train, false);
+					train._animationID = startTrainAnimation(function(t) {
+						updateTrainShape(train, t);
+					}, function() {
+						var markedObjectIndex, trackedObjectIndex;
+
+						if (!setSectionData(train, train._timetableIndex + 1)) {
+							markedObjectIndex = train._cars.indexOf(markedObject);
+							trackedObjectIndex = train._cars.indexOf(trackedObject);
+							if (train._nextTrain) {
+								stopTrain(train);
+								train = train._nextTrain;
+								if (!activeTrainLookup[train['odpt:train']]) {
+									start(0);
+									if (train._cars) {
+										if (markedObjectIndex !== -1) {
+											markedObject = train._cars[markedObjectIndex];
+										}
+										if (trackedObjectIndex !== -1) {
+											trackedObject = train._cars[trackedObjectIndex];
+										}
+									}
+								}
+								return;
+							}
+							stand(true);
 						} else {
 							stand();
 						}
-					}
-
-					function stand(final) {
-						var departureTime = getTime(train._departureTime) + (train._delay || 0);
-
-						if (!final) {
-							updateTrainProps(train);
-							updateTrainShape(train, 0);
-						}
-						setTrainStandingStatus(train, true);
-						train._animationID = startAnimation({
-							complete: !final ? repeat : function() {
-								stopTrain(train);
-							},
-							duration: Math.max(departureTime - Date.now(), MIN_STANDING_DURATION)
-						});
-					}
-
-					function repeat(elapsed) {
-						setTrainStandingStatus(train, false);
-						train._animationID = startTrainAnimation(function(t) {
-							updateTrainShape(train, t);
-						}, function() {
-							var markedCarIndex, trackedCarIndex;
-
-							if (!setSectionData(train, train._timetableIndex + 1)) {
-								markedCarIndex = train._cars.indexOf(markedCar);
-								trackedCarIndex = train._cars.indexOf(trackedCar);
-								if (train._nextTrain) {
-									stopTrain(train);
-									train = train._nextTrain;
-									if (!activeTrainLookup[train['odpt:train']]) {
-										start(0);
-										if (train._cars) {
-											if (markedCarIndex !== -1) {
-												markedCar = train._cars[markedCarIndex];
-											}
-											if (trackedCarIndex !== -1) {
-												trackedCar = train._cars[trackedCarIndex];
-											}
-										}
-									}
-									return;
-								}
-								stand(true);
-							} else {
-								stand();
-							}
-						}, Math.abs(train._interval), 1, elapsed);
-					}
-
-					start();
+					}, Math.abs(train._interval), 1, elapsed);
 				}
-			});
-			updateDelays();
-		}
+
+				start();
+			}
+		});
+	}
+
+	function refreshFlights() {
+		var now = Date.now();
+
+		Object.keys(flightLookup).forEach(function(key) {
+			var flight = flightLookup[key];
+
+			if (flight._standing <= now && now <= flight._end && !activeFlightLookup[flight['owl:sameAs']]) {
+				activeFlightLookup[flight['owl:sameAs']] = flight;
+				if (now >= flight._start) {
+					repeat(now - flight._start);
+				} else {
+					updateFlightShape(flight, 0);
+					setFlightStandingStatus(flight, true);
+					flight._animationID = startAnimation({
+						complete: repeat,
+						duration: flight._start - now
+					});
+				}
+
+				function repeat(elapsed) {
+					setFlightStandingStatus(flight, false);
+					flight._animationID = startFlightAnimation(function(t) {
+						updateFlightShape(flight, t);
+					}, function() {
+						setFlightStandingStatus(flight, true);
+						flight._animationID = startAnimation({
+							complete: function() {
+								stopFlight(flight);
+							},
+							duration: Math.max(flight._end - Date.now(), 0)
+						});
+					}, flight._feature.properties.length, flight._maxSpeed, flight._acceleration, elapsed);
+				}
+			}
+		});
 	}
 
 	function startViewAnimation() {
@@ -1002,8 +1162,8 @@ map.once('styledata', function () {
 			callback: function(elapsed) {
 				var t1 = easeOutQuart(elapsed / 1000);
 				var factor = (1 - t1) / (1 - t2);
-				var userData = trackedCar.userData;
-				var coord = adjustCoord(userData.coord, userData.train._altitude);
+				var userData = trackedObject.userData;
+				var coord = adjustCoord(userData.coord, userData.altitude);
 				var lng = coord[0];
 				var lat = coord[1];
 				var center = map.getCenter();
@@ -1039,7 +1199,7 @@ map.once('styledata', function () {
 			return coord;
 		}
 		mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
-		pos = new THREE.Vector3(mCoord.x - modelOrigin.x, -(mCoord.y - modelOrigin.y), altitude * altitudeUnit).project(trainLayers.ug.camera);
+		pos = new THREE.Vector3(mCoord.x - modelOrigin.x, -(mCoord.y - modelOrigin.y), altitude * modelScale).project(trainLayers.ug.camera);
 		world = map.unproject([(pos.x + 1) / 2 * map.transform.width, (1 - pos.y) / 2 * map.transform.height]);
 		return [world.lng, world.lat];
 	}
@@ -1065,6 +1225,21 @@ map.once('styledata', function () {
 		return title[lang] || title['en'];
 	}
 
+	function getLocalizedOperatorTitle(operator) {
+		title = (operatorLookup[operator] || {})['odpt:operatorTitle'] || {};
+		return title[lang] || title['en'];
+	}
+
+	function getLocalizedAirportTitle(airport) {
+		title = (airportLookup[airport] || {})['odpt:airportTitle'] || {};
+		return title[lang] || title['en'];
+	}
+
+	function getLocalizedFlightStatusTitle(status) {
+		title = (flightStatusLookup[status] || {})['odpt:flightStatusTitle'] || {};
+		return title[lang] || title['en'];
+	}
+
 	function setTrainStandingStatus(train, standing) {
 		var railwayID = train['odpt:railway'];
 		var destination = train['odpt:destinationStation'];
@@ -1075,7 +1250,7 @@ map.once('styledata', function () {
 			'<span class="desc-box" style="background-color: ' + railwayLookup[railwayID]._color + ';"></span> ' +
 			'<strong>' + getLocalizedRailwayTitle(railwayID) + '</strong>' +
 			'<br>' + getLocalizedTrainTypeTitle(train['odpt:trainType']) + ' ' +
-			(destination ? dict['to'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train['odpt:railDirection'])) +
+			(destination ? dict['for'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train['odpt:railDirection'])) +
 			'<br><strong>' + dict['train-number'] + ':</strong> ' +
 			train['odpt:trainNumber'] +
 			'<br>' + (delay >= 60000 ? '<span class="desc-delay">' : '') +
@@ -1087,6 +1262,31 @@ map.once('styledata', function () {
 				getLocalizedStationTitle(train._arrivalStation) +
 				' ' + getTimeString(getTime(train._arrivalTime) + delay) : '') +
 			(delay >= 60000 ? '<br>' + dict['delay'].replace('$1', Math.floor(delay / 60000)) + '</span>' : '');
+	}
+
+	function setFlightStandingStatus(flight, standing) {
+		var airlineID = flight['odpt:airline'];
+		var flightNumber = flight['odpt:flightNumber'];
+		var destination = flight['odpt:destinationAirport'];
+		var origin = flight['odpt:originAirport'];
+		var scheduledTime = flight['odpt:scheduledDepartureTime'] || flight['odpt:scheduledArrivalTime'];
+		var estimatedTime = flight['odpt:estimatedDepartureTime'] || flight['odpt:estimatedArrivalTime'];
+		var actualTime = flight['odpt:actualDepartureTime'] || flight['odpt:actualArrivalTime'];
+		var delayed = (estimatedTime || actualTime) && scheduledTime !== (estimatedTime || actualTime);
+
+		flight._description =
+			'<span class="desc-box" style="background-color: ' + (operatorLookup[airlineID]._tailColor || '#FFFFFF') + ';"></span> ' +
+			'<strong>' + getLocalizedOperatorTitle(airlineID) + '</strong>' +
+			'<br>' + flightNumber[0] + ' ' +
+			dict[destination ? 'to' : 'from'].replace('$1', getLocalizedAirportTitle(destination || origin)) +
+			'<br><strong>' + dict['status'] + ':</strong> ' + getLocalizedFlightStatusTitle(flight['odpt:flightStatus']) +
+			'<br><strong>' + dict['scheduled-' + (destination ? 'departure' : 'arrival') + '-time'] + ':</strong> ' + scheduledTime +
+			(delayed ? '<span class="desc-delay">' : '') +
+			(estimatedTime || actualTime ? '<br><strong>' + (estimatedTime ?
+				dict['estimated-' + (destination ? 'departure' : 'arrival') + '-time'] + ':</strong> ' + estimatedTime :
+				dict['actual-' + (destination ? 'departure' : 'arrival') + '-time'] + ':</strong> ' + actualTime) : '') +
+			(delayed ? '</span>' : '') +
+			(flightNumber.length > 1 ? '<br><strong>' + dict['code-share'] + ':</strong> ' + flightNumber.slice(1).join(' ') : '');
 	}
 
 	function stopTrain(train) {
@@ -1102,9 +1302,23 @@ map.once('styledata', function () {
 		}
 	}
 
+	function stopFlight(flight) {
+		stopAnimation(flight._animationID);
+		trainLayers.removeObject(flight._body, flight, 1000);
+		trainLayers.removeObject(flight._wing, flight, 1000);
+		trainLayers.removeObject(flight._vTail, flight, 1000);
+		delete flight._body;
+		delete flight._wing;
+		delete flight._vTail;
+		delete activeFlightLookup[flight['owl:sameAs']];
+	}
+
 	function stopAllTrains() {
 		Object.keys(activeTrainLookup).forEach(function(key) {
 			stopTrain(activeTrainLookup[key]);
+		});
+		Object.keys(activeFlightLookup).forEach(function(key) {
+			stopFlight(activeFlightLookup[key]);
 		});
 		lastTrainRefresh = undefined;
 	}
@@ -1124,13 +1338,96 @@ map.once('styledata', function () {
 							stopTrain(train);
 						}
 						train._delay = delay;
-						lastTrainRefresh = undefined;
 					}
 					if (carComposition) {
 						train._carComposition = carComposition;
 					}
 				}
 			});
+			refreshTrains();
+		});
+	}
+
+	function updateFlights() {
+		Promise.all([
+			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=odpt.Operator:NAA&' + API_TOKEN),
+			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=odpt.Operator:HND-JAT,odpt.Operator:HND-TIAT&' + API_TOKEN),
+			loadJSON(API_URL + 'odpt:FlightInformationDeparture?odpt:operator=odpt.Operator:NAA&' + API_TOKEN),
+			loadJSON(API_URL + 'odpt:FlightInformationDeparture?odpt:operator=odpt.Operator:HND-JAT,odpt.Operator:HND-TIAT&' + API_TOKEN)
+		]).then(function(flightRefData) {
+			var flightQueue = {};
+
+			concat(flightRefData).forEach(function(flightRef) {
+				var flight = flightLookup[flightRef['owl:sameAs']];
+				var maxSpeed = MAX_FLIGHT_SPEED;
+				var acceleration = FLIGHT_ACCELERATION;
+				var departureAirport, arrivalAirport, runway, feature, departureTime, arrivalTime, duration;
+
+				if (!flight) {
+					if (flightRef['odpt:flightStatus'] === 'odpt.FlightStatus:Cancelled') {
+						return;
+					}
+					departureAirport = flightRef['odpt:departureAirport'];
+					arrivalAirport = flightRef['odpt:arrivalAirport'];
+					runway = departureAirport === 'odpt.Airport:NRT' ? departureAirport + '.34L.Dep' :
+						arrivalAirport === 'odpt.Airport:NRT' ? arrivalAirport + '.34R.Arr' : undefined;
+					feature = featureLookup[runway];
+					if (feature) {
+						flight = flightLookup[flightRef['owl:sameAs']] = {
+							_runway: runway,
+							_feature: feature
+						};
+					} else {
+						return;
+					}
+				}
+				merge(flight, flightRef);
+
+				departureTime = flight['odpt:estimatedDepartureTime'] || flight['odpt:actualDepartureTime'] || flight['odpt:scheduledDepartureTime'];
+				arrivalTime = flight['odpt:estimatedArrivalTime'] || flight['odpt:actualArrivalTime'] || flight['odpt:scheduledArrivalTime'];
+
+				if (arrivalTime) {
+					maxSpeed /= 2;
+					acceleration /= -2;
+				}
+
+				duration = maxSpeed / Math.abs(acceleration) / 2 + flight._feature.properties.length / maxSpeed;
+
+				if (departureTime) {
+					flight._start = getTime(departureTime);
+					flight._standing = flight._start - STANDING_DURATION;
+					flight._end = flight._start + duration;
+				} else {
+					flight._start = flight._standing = getTime(arrivalTime) - duration;
+					flight._end = flight._start + duration + STANDING_DURATION;
+				}
+				flight._maxSpeed = maxSpeed;
+				flight._acceleration = acceleration;
+
+				queue = flightQueue[flight._runway] = flightQueue[flight._runway] || [];
+				queue.push(flight);
+			});
+
+			Object.keys(flightQueue).forEach(function(key) {
+				var queue = flightQueue[key];
+				var latest = 0;
+
+				queue.sort(function(a, b) {
+					return a._start - b._start;
+				});
+				queue.forEach(function(flight) {
+					var delay = Math.max(flight._start, latest + MIN_FLIGHT_INTERVAL) - flight._start;
+
+					if (delay) {
+						flight._start += delay;
+						flight._standing += delay;
+						flight._end += delay;
+					}
+					latest = flight._start;
+				});
+			});
+
+			refreshFlights();
 		});
 	}
 });
@@ -1162,15 +1459,22 @@ function updateDistances(line) {
 	line.properties.distances = distances;
 }
 
+/**
+  * Returns coordinates, altitude and bearing of the train from its distance
+  * @param {object} line - lineString of the railway
+  * @param {number} distance - Distance from the beginning of the lineString
+  * @returns {object} coord, altitude and bearing
+  */
 function getCoordAndBearing(line, distance) {
 	var coords = turf.getCoords(line);
 	var distances = line.properties.distances;
 	var length = coords.length;
-	var index, coord, overshot, bearing;
+	var index, coord, overshot, altitude, bearing;
 
 	if (distance >= distances[length - 1]) {
 		return {
 			coord: coords[length - 1],
+			altitude: coords[length - 1][2] || 0,
 			bearing: turf.bearing(coords[length - 2], coords[length - 1])
 		};
 	}
@@ -1191,9 +1495,11 @@ function getCoordAndBearing(line, distance) {
 	index = findPoint(0, length - 1);
 	coord = coords[index];
 	overshot = distance - distances[index];
+	altitude = coord[2] || 0;
 	bearing = turf.bearing(coord, coords[index + 1]);
 	return {
 		coord: overshot === 0 ? coord : turf.getCoord(turf.destination(coord, overshot, bearing)),
+		altitude: altitude + ((coords[index + 1][2] || 0) - altitude) * overshot / (distances[index + 1] - distances[index]),
 		bearing: bearing
 	};
 }
@@ -1297,6 +1603,36 @@ function startTrainAnimation(callback, endCallback, distance, timeFactor, start)
 	});
 }
 
+function startFlightAnimation(callback, endCallback, distance, maxSpeed, acceleration, start) {
+	var accelerationTime = maxSpeed / Math.abs(acceleration);
+	var duration = accelerationTime / 2 + distance / maxSpeed;
+
+	return startAnimation({
+		callback: function(elapsed) {
+			var left = duration - elapsed;
+			var d;
+
+			if (acceleration > 0) {
+				if (elapsed <= accelerationTime) {
+					d = acceleration / 2 * elapsed * elapsed;
+				} else {
+					d = maxSpeed * (elapsed - accelerationTime / 2);
+				}
+			} else {
+				if (left <= accelerationTime) {
+					d = distance + acceleration / 2 * left * left;
+				} else {
+					d = maxSpeed * elapsed;
+				}
+			}
+			callback(d / distance);
+		},
+		complete: endCallback,
+		duration: duration,
+		start: start > 0 ? performance.now() - start : undefined
+	});
+}
+
 function easeOutQuart(t) {
 	return -((t = t - 1) * t * t * t - 1);
 }
@@ -1377,8 +1713,8 @@ function getTimeString(time) {
 	return ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2);
 }
 
-function createCube(color) {
-	var geometry = new THREE.BoxBufferGeometry(.88, 1.76, .88);
+function createCube(x, y, z, color) {
+	var geometry = new THREE.BoxBufferGeometry(x, y, z);
 	var material = new THREE.MeshLambertMaterial({
 		color: parseInt(color.replace('#', ''), 16),
 		transparent: true

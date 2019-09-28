@@ -13,11 +13,21 @@
 	"exit-realtime": "リアルタイムモードを解除",
 	"github": "Github",
 
-	"to": "$1行",
+	"for": "$1行",
 	"train-number": "列車番号",
 	"destination": "行先",
 	"previous-stop": "前駅",
 	"standing-at": "停車中",
 	"next-stop": "次駅",
-	"delay": "$1分遅れ"
+	"delay": "$1分遅れ",
+	"to": "$1行",
+	"from": "$1発",
+	"status": "状況",
+	"scheduled-departure-time": "定刻出発時刻",
+	"estimated-departure-time": "予定出発時刻",
+	"actual-departure-time": "出発済み",
+	"scheduled-arrival-time": "定刻到着時刻",
+	"estimated-arrival-time": "予定到着時刻",
+	"actual-arrival-time": "到着済み",
+	"code-share": "コードシェア"
 }
