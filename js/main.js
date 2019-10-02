@@ -1370,7 +1370,9 @@ map.once('styledata', function () {
 					departureAirport = flightRef['odpt:departureAirport'];
 					arrivalAirport = flightRef['odpt:arrivalAirport'];
 					runway = departureAirport === 'odpt.Airport:NRT' ? departureAirport + '.34L.Dep' :
-						arrivalAirport === 'odpt.Airport:NRT' ? arrivalAirport + '.34R.Arr' : undefined;
+						arrivalAirport === 'odpt.Airport:NRT' ? arrivalAirport + '.34R.Arr' :
+						departureAirport === 'odpt.Airport:HND' ? departureAirport + '.05.Dep' :
+						arrivalAirport === 'odpt.Airport:HND' ? arrivalAirport + '.34L.Arr' : undefined;
 					feature = featureLookup[runway];
 					if (feature) {
 						flight = flightLookup[flightRef['owl:sameAs']] = {
