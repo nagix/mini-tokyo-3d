@@ -6,6 +6,8 @@ A real-time 3D digital map of Tokyo's public transport system.
 
 ![Screenshot](https://nagix.github.io/mini-tokyo-3d/images/screenshot2.jpg)
 
+![Screenshot](https://nagix.github.io/mini-tokyo-3d/images/screenshot3.jpg)
+
 See a [Live Demo](https://nagix.github.io/mini-tokyo-3d).
 
 ## Usage
