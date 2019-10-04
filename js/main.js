@@ -395,6 +395,9 @@ var trainLayers = {
 	removeObject: function(object, train, duration) {
 		var layer = train._altitude < 0 ? this.ug : this.og;
 
+		if (!object) {
+			return;
+		}
 		if (duration > 0) {
 			startAnimation({
 				callback: function(elapsed) {
@@ -506,7 +509,7 @@ map.once('styledata', function () {
 			id: 'railways-ug-' + zoom,
 			type: GeoJsonLayer,
 			data: filterFeatures(railwayFeatureCollection, function(p) {
-				return p.zoom === zoom && p.type === 0 && p.altitude === -1;
+				return p.zoom === zoom && p.type === 0 && p.altitude < 0;
 			}),
 			filled: false,
 			stroked: true,
@@ -526,7 +529,7 @@ map.once('styledata', function () {
 			id: 'stations-ug-' + zoom,
 			type: GeoJsonLayer,
 			data: filterFeatures(railwayFeatureCollection, function(p) {
-				return p.zoom === zoom && p.type === 1 && p.altitude === -1;
+				return p.zoom === zoom && p.type === 1 && p.altitude < 0;
 			}),
 			filled: true,
 			stroked: true,
