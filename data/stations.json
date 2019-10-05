@@ -436,6 +436,7 @@
 		}
 	}, {
 		"aliases": [
+			"odpt.Station:JR-East.Ome.Tachikawa",
 			"odpt.Station:JR-East.ChuoRapid.Tachikawa",
 			"odpt.Station:JR-East.Nambu.Tachikawa"
 		],
@@ -484,6 +485,151 @@
 		"odpt:stationTitle": {
 			"ko": "다카오",
 			"zh": "高尾"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Ome.NishiTachikawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "니시타치카와",
+			"zh": "西立川"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Ome.HigashiNakagami"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시나카가미",
+			"zh": "东中神"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Ome.Nakagami"
+		],
+		"odpt:stationTitle": {
+			"ko": "나카가미",
+			"zh": "中神"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Ome.Akishima"
+		],
+		"odpt:stationTitle": {
+			"ko": "아키시마",
+			"zh": "昭岛"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Ome.Haijima",
+			"odpt.Station:JR-East.Itsukaichi.Haijima"
+		],
+		"odpt:stationTitle": {
+			"ko": "하이지마",
+			"zh": "拜岛"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Ome.Ushihama"
+		],
+		"odpt:stationTitle": {
+			"ko": "우시하마",
+			"zh": "牛滨"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Ome.Fussa"
+		],
+		"odpt:stationTitle": {
+			"ko": "훗사",
+			"zh": "福生"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Ome.Hamura"
+		],
+		"odpt:stationTitle": {
+			"ko": "하무라",
+			"zh": "羽村"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Ome.Ozaku"
+		],
+		"odpt:stationTitle": {
+			"ko": "오자쿠",
+			"zh": "小作"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Ome.Kabe"
+		],
+		"odpt:stationTitle": {
+			"ko": "가베",
+			"zh": "河边"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Ome.HigashiOme"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시오메",
+			"zh": "东青梅"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Ome.Ome"
+		],
+		"odpt:stationTitle": {
+			"ko": "오메",
+			"zh": "青梅"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Itsukaichi.Kumagawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "구마가와",
+			"zh": "熊川"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Itsukaichi.HigashiAkiru"
+		],
+		"odpt:stationTitle": {
+			"ko": "히가시아키루",
+			"zh": "东秋留"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Itsukaichi.Akigawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "아키가와",
+			"zh": "秋川"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Itsukaichi.MusashiHikida"
+		],
+		"odpt:stationTitle": {
+			"ko": "무사시히키다",
+			"zh": "武藏引田"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Itsukaichi.MusashiMasuko"
+		],
+		"odpt:stationTitle": {
+			"ko": "무사시마스코",
+			"zh": "武藏增户"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Itsukaichi.MusashiItsukaichi"
+		],
+		"odpt:stationTitle": {
+			"ko": "무사시이쓰카이치",
+			"zh": "武藏五日市"
 		}
 	}, {
 		"aliases": [
@@ -1001,7 +1147,8 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.KeihinTohokuNegishi.Tsurumi"
+			"odpt.Station:JR-East.KeihinTohokuNegishi.Tsurumi",
+			"odpt.Station:JR-East.Tsurumi.Tsurumi"
 		],
 		"odpt:stationTitle": {
 			"ko": "쓰루미",
@@ -1658,7 +1805,107 @@
 		}
 	}, {
 		"aliases": [
-			"odpt.Station:JR-East.Nambu.Shitte"
+			"odpt.Station:JR-East.Tsurumi.Kokudo"
+		],
+		"odpt:stationTitle": {
+			"ko": "고쿠도",
+			"zh": "国道"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Tsurumi.Tsurumiono"
+		],
+		"odpt:stationTitle": {
+			"ko": "쓰루미오노",
+			"zh": "鹤见小野"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Tsurumi.Bentembashi"
+		],
+		"odpt:stationTitle": {
+			"ko": "벤텐바시",
+			"zh": "弁天桥"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Tsurumi.Asano",
+			"odpt.Station:JR-East.TsurumiUmiShibauraBranch.Asano"
+		],
+		"odpt:stationTitle": {
+			"ko": "아사노",
+			"zh": "浅野"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Tsurumi.Anzen",
+			"odpt.Station:JR-East.TsurumiOkawaBranch.Anzen"
+		],
+		"odpt:stationTitle": {
+			"ko": "안젠",
+			"zh": "安善"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Tsurumi.MusashiShiraishi"
+		],
+		"odpt:stationTitle": {
+			"ko": "무사시시라이시",
+			"zh": "武藏白石"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Tsurumi.HamaKawasaki",
+			"odpt.Station:JR-East.NambuBranch.HamaKawasaki"
+		],
+		"odpt:stationTitle": {
+			"ko": "하마카와사키",
+			"zh": "滨川崎"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Tsurumi.Showa"
+		],
+		"odpt:stationTitle": {
+			"ko": "쇼와",
+			"zh": "昭和"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Tsurumi.Ogimachi"
+		],
+		"odpt:stationTitle": {
+			"ko": "오기마치",
+			"zh": "扇町"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.TsurumiUmiShibauraBranch.ShinShibaura"
+		],
+		"odpt:stationTitle": {
+			"ko": "Shin-Shibaura",
+			"zh": "新芝浦"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.TsurumiUmiShibauraBranch.UmiShibaura"
+		],
+		"odpt:stationTitle": {
+			"ko": "Umi-Shibaura",
+			"zh": "海芝浦"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.TsurumiOkawaBranch.Okawa"
+		],
+		"odpt:stationTitle": {
+			"ko": "오카와",
+			"zh": "大川"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.Nambu.Shitte",
+			"odpt.Station:JR-East.NambuBranch.Shitte"
 		],
 		"odpt:stationTitle": {
 			"ko": "싯테",
@@ -1840,6 +2087,30 @@
 		"odpt:stationTitle": {
 			"ko": "니시쿠니타치",
 			"zh": "西国立"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.NambuBranch.Odasakae"
+		],
+		"odpt:stationTitle": {
+			"ko": "오다사카에",
+			"zh": "小田荣"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.NambuBranch.Kawasakishimmachi"
+		],
+		"odpt:stationTitle": {
+			"ko": "가와사키신마치",
+			"zh": "川崎新町"
+		}
+	}, {
+		"aliases": [
+			"odpt.Station:JR-East.NambuBranch.Hatchonawate"
+		],
+		"odpt:stationTitle": {
+			"ko": "핫초나와테",
+			"zh": "八丁畷"
 		}
 	}, {
 		"aliases": [

@@ -16,6 +16,22 @@
 		"_color": "#F15A22",
 		"_carComposition": 10
 	}, {
+		"odpt:railway": "odpt.Railway:JR-East.Ome",
+		"odpt:railwayTitle": {
+			"ko": "오메 선",
+			"zh": "青梅线"
+		},
+		"_color": "#F15A22",
+		"_carComposition": 10
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.Itsukaichi",
+		"odpt:railwayTitle": {
+			"ko": "이쓰카이치 선",
+			"zh": "五日市线"
+		},
+		"_color": "#F15A22",
+		"_carComposition": 6
+	}, {
 		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
 		"odpt:railwayTitle": {
 			"ko": "주오·소부 각역정차",
@@ -152,6 +168,30 @@
 		"_color": "#E31F26",
 		"_carComposition": 15
 	}, {
+		"odpt:railway": "odpt.Railway:JR-East.Tsurumi",
+		"odpt:railwayTitle": {
+			"ko": "쓰루미 선",
+			"zh": "鹤见线"
+		},
+		"_color": "#FFD400",
+		"_carComposition": 3
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.TsurumiUmiShibauraBranch",
+		"odpt:railwayTitle": {
+			"ko": "쓰루미 선 우미시바우라 지선",
+			"zh": "鹤见线海芝浦支线"
+		},
+		"_color": "#FFD400",
+		"_carComposition": 3
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.TsurumiOkawaBranch",
+		"odpt:railwayTitle": {
+			"ko": "쓰루미 선 오카와 지선",
+			"zh": "鹤见线大川支线"
+		},
+		"_color": "#FFD400",
+		"_carComposition": 3
+	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Nambu",
 		"odpt:railwayTitle": {
 			"ko": "난부 선",
@@ -159,6 +199,14 @@
 		},
 		"_color": "#FFD400",
 		"_carComposition": 6
+	}, {
+		"odpt:railway": "odpt.Railway:JR-East.NambuBranch",
+		"odpt:railwayTitle": {
+			"ko": "난부 선 하마카와사키 지선",
+			"zh": "南武线滨川崎支线"
+		},
+		"_color": "#FFD400",
+		"_carComposition": 2
 	}, {
 		"odpt:railway": "odpt.Railway:JR-East.Yokohama",
 		"odpt:railwayTitle": {

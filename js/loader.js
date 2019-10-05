@@ -117,7 +117,9 @@ railwayData.railways.forEach(function(railway) {
 	var railwayRef = railwayLookup[id];
 	var stationOrder = railwayRef['odpt:stationOrder'];
 
-	if (id === 'odpt.Railway:JR-East.Tokaido') {
+	if (id === 'odpt.Railway:JR-East.Ome') {
+		stationOrder = stationOrder.slice(0, 13);
+	} else if (id === 'odpt.Railway:JR-East.Tokaido') {
 		stationOrder = stationOrder.slice(0, 7);
 	} else if (id === 'odpt.Railway:JR-East.Utsunomiya') {
 		stationOrder = stationOrder.slice(0, 13);
