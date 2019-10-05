@@ -268,25 +268,46 @@ var railwayFeatureArray = [];
 		featureLookup[id + '.' + zoom] = railwayFeature;
 	});
 
-	stationData.stations.forEach(function(station) {
-		var coords = station.aliases.map(function(s) {
-			var stationRef = stationLookup[s];
-			var feature = featureLookup[stationRef['odpt:railway'] + '.' + zoom];
-			return turf.getCoord(turf.nearestPointOnLine(feature, [stationRef['geo:long'], stationRef['geo:lat']]));
-		});
-		var properties = {outlineColor: '#000000', width: 4, color: '#FFFFFF'};
-		var feature = turf.buffer(
-			coords.length === 1 ? turf.point(coords[0], properties) : turf.lineString(coords, properties),
-			unit
-		);
+	stationData.stations.forEach(function(stations) {
+		var features = [];
+		var connectionCoords = [];
+		var feature;
 
-		if (station.altitude < 0) {
-			setAltitude(feature, station.altitude * unit * 1000);
+		if (!Array.isArray(stations)) {
+			stations = [stations];
 		}
 
-		feature.properties.zoom = zoom;
-		feature.properties.type = 1;
-		feature.properties.altitude = (station.altitude || 0) * unit * 1000;
+		stations.forEach(function(station) {
+			var coords = station.aliases.map(function(s) {
+				var stationRef = stationLookup[s];
+				var feature = featureLookup[stationRef['odpt:railway'] + '.' + zoom];
+				return turf.getCoord(turf.nearestPointOnLine(feature, [stationRef['geo:long'], stationRef['geo:lat']]));
+			});
+			var feature = coords.length === 1 ? turf.point(coords[0]) : turf.lineString(coords);
+
+			features.push(turf.buffer(feature, unit));
+			connectionCoords.push(coords[0]);
+		});
+
+		// If there are connections, add extra features
+		if (connectionCoords.length > 1) {
+			features.push(turf.buffer(turf.lineString(connectionCoords), unit / 4));
+		}
+
+		feature = turf.union.apply(this, features);
+
+		if (stations[0].altitude < 0) {
+			setAltitude(feature, stations[0].altitude * unit * 1000);
+		}
+
+		feature.properties = {
+			outlineColor: '#000000',
+			width: 4,
+			color: '#FFFFFF',
+			zoom: zoom,
+			type: 1,
+			altitude: (stations[0].altitude || 0) * unit * 1000
+		};
 
 		railwayFeatureArray.push(feature);
 	});
@@ -452,7 +473,7 @@ map.once('styledata', function () {
 
 	control = new mapboxgl.FullscreenControl();
 	control._updateTitle = function() {
-		mapboxgl.FullscreenControl.prototype._updateTitle.apply(this,arguments);
+		mapboxgl.FullscreenControl.prototype._updateTitle.apply(this, arguments);
 		this._fullscreenButton.title = (this._isFullscreen() ? 'Exit' : 'Enter') + ' fullscreen';
 	}
 	map.addControl(control);

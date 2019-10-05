@@ -330,10 +330,15 @@ aircraftScale = Math.max(.06 / .285, unit) * modelScale * 100;
 stationLookup = buildLookup(stationRefData);
 
 // Update station lookup dictionary
-stationData.stations.forEach(function(station) {
-	station.aliases.forEach(function(alias) {
-		var stationRef = stationLookup[alias];
-		merge(stationRef['odpt:stationTitle'], station['odpt:stationTitle']);
+stationData.stations.forEach(function(stations) {
+	if (!Array.isArray(stations)) {
+		stations = [stations];
+	}
+	stations.forEach(function(station) {
+		station.aliases.forEach(function(alias) {
+			var stationRef = stationLookup[alias];
+			merge(stationRef['odpt:stationTitle'], station['odpt:stationTitle']);
+		});
 	});
 });
 
@@ -931,6 +936,7 @@ map.once('styledata', function () {
 			p = getCoordAndBearing(feature, offset + train._t * train._interval + (i - (carComposition - 1) / 2) * objectUnit);
 
 			coord = userData.coord = p.coord;
+			userData.altitude = p.altitude;
 			bearing = userData.bearing = p.bearing + (train._direction < 0 ? 180 : 0);
 			mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
 
