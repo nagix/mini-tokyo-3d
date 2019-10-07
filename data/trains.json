@@ -1,1026 +1,776 @@
-{
-	"trains": [{
-		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
-		"_direction": 1,
-		"_sectionIndex": 10
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
-		"_direction": 1,
-		"_sectionIndex": 20
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
-		"_direction": -1,
-		"_sectionIndex": 29
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
-		"_direction": -1,
-		"_sectionIndex": 19
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yamanote",
-		"_direction": -1,
-		"_sectionIndex": 10
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoRapid",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoRapid",
-		"_direction": 1,
-		"_sectionIndex": 8
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoRapid",
-		"_direction": 1,
-		"_sectionIndex": 16
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoRapid",
-		"_direction": -1,
-		"_sectionIndex": 23
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoRapid",
-		"_direction": -1,
-		"_sectionIndex": 15
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoRapid",
-		"_direction": -1,
-		"_sectionIndex": 7
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Ome",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Ome",
-		"_direction": -1,
-		"_sectionIndex": 12
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Itsukaichi",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Itsukaichi",
-		"_direction": -1,
-		"_sectionIndex": 6
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
-		"_direction": 1,
-		"_sectionIndex": 10
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
-		"_direction": 1,
-		"_sectionIndex": 19
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
-		"_direction": 1,
-		"_sectionIndex": 29
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
-		"_direction": -1,
-		"_sectionIndex": 38
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
-		"_direction": -1,
-		"_sectionIndex": 28
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
-		"_direction": -1,
-		"_sectionIndex": 19
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ChuoSobuLocal",
-		"_direction": -1,
-		"_sectionIndex": 9
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Tokaido",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Tokaido",
-		"_direction": 1,
-		"_sectionIndex": 3
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Tokaido",
-		"_direction": -1,
-		"_sectionIndex": 6
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Tokaido",
-		"_direction": -1,
-		"_sectionIndex": 3
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Utsunomiya",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Utsunomiya",
-		"_direction": 1,
-		"_sectionIndex": 6
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Utsunomiya",
-		"_direction": -1,
-		"_sectionIndex": 12
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Utsunomiya",
-		"_direction": -1,
-		"_sectionIndex": 6
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Takasaki",
-		"_direction": 1,
-		"_sectionIndex": 3
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Takasaki",
-		"_direction": 1,
-		"_sectionIndex": 9
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Takasaki",
-		"_direction": -1,
-		"_sectionIndex": 9
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Takasaki",
-		"_direction": -1,
-		"_sectionIndex": 3
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
-		"_direction": 1,
-		"_sectionIndex": 9
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
-		"_direction": 1,
-		"_sectionIndex": 18
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
-		"_direction": 1,
-		"_sectionIndex": 27
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
-		"_direction": 1,
-		"_sectionIndex": 36
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
-		"_direction": -1,
-		"_sectionIndex": 45
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
-		"_direction": -1,
-		"_sectionIndex": 36
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
-		"_direction": -1,
-		"_sectionIndex": 27
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
-		"_direction": -1,
-		"_sectionIndex": 18
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.KeihinTohokuNegishi",
-		"_direction": -1,
-		"_sectionIndex": 9
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.JobanRapid",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.JobanRapid",
-		"_direction": 1,
-		"_sectionIndex": 6
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.JobanRapid",
-		"_direction": -1,
-		"_sectionIndex": 12
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.JobanRapid",
-		"_direction": -1,
-		"_sectionIndex": 6
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.JobanLocal",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.JobanLocal",
-		"_direction": 1,
-		"_sectionIndex": 6
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.JobanLocal",
-		"_direction": -1,
-		"_sectionIndex": 13
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.JobanLocal",
-		"_direction": -1,
-		"_sectionIndex": 7
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.SobuRapid",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.SobuRapid",
-		"_direction": 1,
-		"_sectionIndex": 4
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.SobuRapid",
-		"_direction": -1,
-		"_sectionIndex": 9
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.SobuRapid",
-		"_direction": -1,
-		"_sectionIndex": 5
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Sobu",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Sobu",
-		"_direction": -1,
-		"_sectionIndex": 5
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Narita",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.NaritaAirportBranch",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Uchibo",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Sotobo",
-		"_direction": -1,
-		"_sectionIndex": 2
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yokosuka",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yokosuka",
-		"_direction": 1,
-		"_sectionIndex": 5
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yokosuka",
-		"_direction": -1,
-		"_sectionIndex": 10
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yokosuka",
-		"_direction": -1,
-		"_sectionIndex": 5
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Keiyo",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Keiyo",
-		"_direction": 1,
-		"_sectionIndex": 8
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Keiyo",
-		"_direction": -1,
-		"_sectionIndex": 16
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Keiyo",
-		"_direction": -1,
-		"_sectionIndex": 8
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.SaikyoKawagoe",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.SaikyoKawagoe",
-		"_direction": 1,
-		"_sectionIndex": 8
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.SaikyoKawagoe",
-		"_direction": 1,
-		"_sectionIndex": 16
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.SaikyoKawagoe",
-		"_direction": -1,
-		"_sectionIndex": 23
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.SaikyoKawagoe",
-		"_direction": -1,
-		"_sectionIndex": 15
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.SaikyoKawagoe",
-		"_direction": -1,
-		"_sectionIndex": 7
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ShonanShinjuku",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ShonanShinjuku",
-		"_direction": 1,
-		"_sectionIndex": 5
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ShonanShinjuku",
-		"_direction": 1,
-		"_sectionIndex": 10
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ShonanShinjuku",
-		"_direction": -1,
-		"_sectionIndex": 15
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ShonanShinjuku",
-		"_direction": -1,
-		"_sectionIndex": 10
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.ShonanShinjuku",
-		"_direction": -1,
-		"_sectionIndex": 5
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Tsurumi",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Tsurumi",
-		"_direction": -1,
-		"_sectionIndex": 9
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.TsurumiUmiShibauraBranch",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.TsurumiOkawaBranch",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Nambu",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Nambu",
-		"_direction": 1,
-		"_sectionIndex": 8
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Nambu",
-		"_direction": 1,
-		"_sectionIndex": 16
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Nambu",
-		"_direction": -1,
-		"_sectionIndex": 25
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Nambu",
-		"_direction": -1,
-		"_sectionIndex": 17
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Nambu",
-		"_direction": -1,
-		"_sectionIndex": 9
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.NambuBranch",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yokohama",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yokohama",
-		"_direction": 1,
-		"_sectionIndex": 10
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yokohama",
-		"_direction": -1,
-		"_sectionIndex": 19
-	}, {
-		"odpt:railway": "odpt.Railway:JR-East.Yokohama",
-		"_direction": -1,
-		"_sectionIndex": 9
-	}, {
-		"odpt:railway": "odpt.Railway:TWR.Rinkai",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TWR.Rinkai",
-		"_direction": -1,
-		"_sectionIndex": 7,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Ginza",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Ginza",
-		"_direction": 1,
-		"_sectionIndex": 9,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Ginza",
-		"_direction": -1,
-		"_sectionIndex": 18,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Ginza",
-		"_direction": -1,
-		"_sectionIndex": 9,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Marunouchi",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Marunouchi",
-		"_direction": 1,
-		"_sectionIndex": 12,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Marunouchi",
-		"_direction": -1,
-		"_sectionIndex": 24,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Marunouchi",
-		"_direction": -1,
-		"_sectionIndex": 12,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.MarunouchiBranch",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.MarunouchiBranch",
-		"_direction": -1,
-		"_sectionIndex": 3,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Hibiya",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Hibiya",
-		"_direction": 1,
-		"_sectionIndex": 10,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Hibiya",
-		"_direction": -1,
-		"_sectionIndex": 20,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Hibiya",
-		"_direction": -1,
-		"_sectionIndex": 10,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Tozai",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Tozai",
-		"_direction": 1,
-		"_sectionIndex": 11,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Tozai",
-		"_direction": -1,
-		"_sectionIndex": 22,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Tozai",
-		"_direction": -1,
-		"_sectionIndex": 11,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-		"_direction": 1,
-		"_sectionIndex": 9,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-		"_direction": -1,
-		"_sectionIndex": 19,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Chiyoda",
-		"_direction": -1,
-		"_sectionIndex": 10,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Yurakucho",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Yurakucho",
-		"_direction": 1,
-		"_sectionIndex": 11,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Yurakucho",
-		"_direction": -1,
-		"_sectionIndex": 23,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Yurakucho",
-		"_direction": -1,
-		"_sectionIndex": 12,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Hanzomon",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Hanzomon",
-		"_direction": 1,
-		"_sectionIndex": 6,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Hanzomon",
-		"_direction": -1,
-		"_sectionIndex": 13,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Hanzomon",
-		"_direction": -1,
-		"_sectionIndex": 7,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Namboku",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Namboku",
-		"_direction": 1,
-		"_sectionIndex": 9,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Namboku",
-		"_direction": -1,
-		"_sectionIndex": 18,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Namboku",
-		"_direction": -1,
-		"_sectionIndex": 9,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Fukutoshin",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Fukutoshin",
-		"_direction": 1,
-		"_sectionIndex": 7,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Fukutoshin",
-		"_direction": -1,
-		"_sectionIndex": 15,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:TokyoMetro.Fukutoshin",
-		"_direction": -1,
-		"_sectionIndex": 8,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Asakusa",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Asakusa",
-		"_direction": 1,
-		"_sectionIndex": 10,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Asakusa",
-		"_direction": -1,
-		"_sectionIndex": 19,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Asakusa",
-		"_direction": -1,
-		"_sectionIndex": 9,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Mita",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Mita",
-		"_direction": 1,
-		"_sectionIndex": 9,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Mita",
-		"_direction": 1,
-		"_sectionIndex": 18,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Mita",
-		"_direction": -1,
-		"_sectionIndex": 26,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Mita",
-		"_direction": 1,
-		"_sectionIndex": 17,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Mita",
-		"_direction": -1,
-		"_sectionIndex": 8,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Shinjuku",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Shinjuku",
-		"_direction": 1,
-		"_sectionIndex": 10,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Shinjuku",
-		"_direction": -1,
-		"_sectionIndex": 20,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Shinjuku",
-		"_direction": 1,
-		"_sectionIndex": 10,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Oedo",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Oedo",
-		"_direction": 1,
-		"_sectionIndex": 9,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Oedo",
-		"_direction": 1,
-		"_sectionIndex": 19,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Oedo",
-		"_direction": 1,
-		"_sectionIndex": 28,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Oedo",
-		"_direction": -1,
-		"_sectionIndex": 38,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Oedo",
-		"_direction": -1,
-		"_sectionIndex": 29,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Oedo",
-		"_direction": -1,
-		"_sectionIndex": 19,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Toei.Oedo",
-		"_direction": -1,
-		"_sectionIndex": 10,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Keio",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Keio",
-		"_direction": 1,
-		"_sectionIndex": 10
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Keio",
-		"_direction": 1,
-		"_sectionIndex": 20
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Keio",
-		"_direction": -1,
-		"_sectionIndex": 31
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Keio",
-		"_direction": -1,
-		"_sectionIndex": 21
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Keio",
-		"_direction": -1,
-		"_sectionIndex": 11
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.KeioNew",
-		"_direction": 1,
-		"_sectionIndex": 0,
-		"_altitude": -1
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Sagamihara",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Sagamihara",
-		"_direction": -1,
-		"_sectionIndex": 11
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Keibajo",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Dobutsuen",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Takao",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Takao",
-		"_direction": -1,
-		"_sectionIndex": 6
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Inokashira",
-		"_direction": 1,
-		"_sectionIndex": 0
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Inokashira",
-		"_direction": 1,
-		"_sectionIndex": 8
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Inokashira",
-		"_direction": -1,
-		"_sectionIndex": 16
-	}, {
-		"odpt:railway": "odpt.Railway:Keio.Inokashira",
-		"_direction": -1,
-		"_sectionIndex": 8
-	}],
-	"railDirections": [{
-		"odpt:railDirection": "odpt.RailDirection:InnerLoop",
-		"odpt:railDirectionTitle": {
-			"ko": "내선 순환",
-			"zh": "内环"
-		}
-	}, {
-		"odpt:railDirection": "odpt.RailDirection:OuterLoop",
-		"odpt:railDirectionTitle": {
-			"ko": "외선 순환",
-			"zh": "外环"
-		}
-	}],
-	"types": [{
-		"odpt:trainType": "odpt.TrainType:JR-East.ChuoSpecialRapid",
-		"odpt:trainTypeTitle": {
-			"ko": "주오 특별쾌속",
-			"zh": "中央特快"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:JR-East.CommuterRapid",
-		"odpt:trainTypeTitle": {
-			"ko": "통근쾌속",
-			"zh": "通勤快速"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:JR-East.CommuterSpecialRapid",
-		"odpt:trainTypeTitle": {
-			"ko": "통근 특별쾌속",
-			"zh": "通勤特快"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:JR-East.Express",
-		"odpt:trainTypeTitle": {
-			"ko": "급행",
-			"zh": "急行"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:JR-East.LimitedExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "특급",
-			"zh": "特急"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:JR-East.Liner",
-		"odpt:trainTypeTitle": {
-			"ko": "라이너",
-			"zh": "Liner"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:JR-East.Local",
-		"odpt:trainTypeTitle": {
-			"ko": "보통",
-			"zh": "普通"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:JR-East.OmeSpecialRapid",
-		"odpt:trainTypeTitle": {
-			"ko": "오메 특별쾌속",
-			"zh": "青梅特快"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:JR-East.Rapid",
-		"odpt:trainTypeTitle": {
-			"ko": "쾌속",
-			"zh": "快速"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:JR-East.SpecialRapid",
-		"odpt:trainTypeTitle": {
-			"ko": "특별쾌속",
-			"zh": "特別快速"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TokyoMetro.CommuterExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "통근급행",
-			"zh": "通勤急行"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TokyoMetro.CommuterLimitedExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "통근특급",
-			"zh": "通勤特急"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TokyoMetro.CommuterRapid",
-		"odpt:trainTypeTitle": {
-			"ko": "통근쾌속",
-			"zh": "通勤快速"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TokyoMetro.Express",
-		"odpt:trainTypeTitle": {
-			"ko": "급행",
-			"zh": "急行"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TokyoMetro.F-Liner",
-		"odpt:trainTypeTitle": {
-			"ko": "F-라이너",
-			"zh": "F-Liner"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TokyoMetro.LimitedExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "특급",
-			"zh": "特急"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TokyoMetro.Local",
-		"odpt:trainTypeTitle": {
-			"ko": "보통",
-			"zh": "普通"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TokyoMetro.RapidExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "쾌속급행",
-			"zh": "快速急行"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TokyoMetro.Rapid",
-		"odpt:trainTypeTitle": {
-			"ko": "쾌속",
-			"zh": "快速"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TokyoMetro.S-TRAIN",
-		"odpt:trainTypeTitle": {
-			"ko": "S-트레인",
-			"zh": "S-TRAIN"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TokyoMetro.SemiExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "준급",
-			"zh": "准急"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TWR.CommuterRapid",
-		"odpt:trainTypeTitle": {
-			"ko": "통근쾌속",
-			"zh": "通勤快速"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TWR.Local",
-		"odpt:trainTypeTitle": {
-			"ko": "보통",
-			"zh": "普通"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:TWR.Rapid",
-		"odpt:trainTypeTitle": {
-			"ko": "쾌속",
-			"zh": "快速"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Toei.AccessExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "엑세스특급",
-			"zh": "Access特急"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Toei.AirportRapidLimitedExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "에어포트 쾌속특급",
-			"zh": "机场快特"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Toei.CommuterLimitedExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "통근특급",
-			"zh": "通勤特急"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Toei.Express",
-		"odpt:trainTypeTitle": {
-			"ko": "급행",
-			"zh": "急行"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Toei.LimitedExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "특급",
-			"zh": "特急"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Toei.Local",
-		"odpt:trainTypeTitle": {
-			"ko": "보통",
-			"zh": "普通"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Toei.RapidLimitedExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "쾌속특급",
-			"zh": "快特"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Toei.Rapid",
-		"odpt:trainTypeTitle": {
-			"ko": "쾌속",
-			"zh": "快速"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Keio.Express",
-		"odpt:trainTypeTitle": {
-			"ko": "급행",
-			"zh": "急行"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Keio.KeioLiner",
-		"odpt:trainTypeTitle": {
-			"ko": "케이오 라이너",
-			"zh": "Keio Liner"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Keio.LimitedExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "특급",
-			"zh": "特急"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Keio.Local",
-		"odpt:trainTypeTitle": {
-			"ko": "보통",
-			"zh": "普通"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Keio.Rapid",
-		"odpt:trainTypeTitle": {
-			"ko": "쾌속",
-			"zh": "快速"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Keio.SemiExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "구간급행",
-			"zh": "区间急行"
-		}
-	}, {
-		"odpt:trainType": "odpt.TrainType:Keio.SemiLimitedExpress",
-		"odpt:trainTypeTitle": {
-			"ko": "준특급",
-			"zh": "准特急"
-		}
-	}]
-}
+[{
+	"r": "JR-East.Yamanote",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Yamanote",
+	"_direction": 1,
+	"_sectionIndex": 10
+}, {
+	"r": "JR-East.Yamanote",
+	"_direction": 1,
+	"_sectionIndex": 20
+}, {
+	"r": "JR-East.Yamanote",
+	"_direction": -1,
+	"_sectionIndex": 29
+}, {
+	"r": "JR-East.Yamanote",
+	"_direction": -1,
+	"_sectionIndex": 19
+}, {
+	"r": "JR-East.Yamanote",
+	"_direction": -1,
+	"_sectionIndex": 10
+}, {
+	"r": "JR-East.ChuoRapid",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.ChuoRapid",
+	"_direction": 1,
+	"_sectionIndex": 8
+}, {
+	"r": "JR-East.ChuoRapid",
+	"_direction": 1,
+	"_sectionIndex": 16
+}, {
+	"r": "JR-East.ChuoRapid",
+	"_direction": -1,
+	"_sectionIndex": 23
+}, {
+	"r": "JR-East.ChuoRapid",
+	"_direction": -1,
+	"_sectionIndex": 15
+}, {
+	"r": "JR-East.ChuoRapid",
+	"_direction": -1,
+	"_sectionIndex": 7
+}, {
+	"r": "JR-East.Ome",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Ome",
+	"_direction": -1,
+	"_sectionIndex": 12
+}, {
+	"r": "JR-East.Itsukaichi",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Itsukaichi",
+	"_direction": -1,
+	"_sectionIndex": 6
+}, {
+	"r": "JR-East.ChuoSobuLocal",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.ChuoSobuLocal",
+	"_direction": 1,
+	"_sectionIndex": 10
+}, {
+	"r": "JR-East.ChuoSobuLocal",
+	"_direction": 1,
+	"_sectionIndex": 19
+}, {
+	"r": "JR-East.ChuoSobuLocal",
+	"_direction": 1,
+	"_sectionIndex": 29
+}, {
+	"r": "JR-East.ChuoSobuLocal",
+	"_direction": -1,
+	"_sectionIndex": 38
+}, {
+	"r": "JR-East.ChuoSobuLocal",
+	"_direction": -1,
+	"_sectionIndex": 28
+}, {
+	"r": "JR-East.ChuoSobuLocal",
+	"_direction": -1,
+	"_sectionIndex": 19
+}, {
+	"r": "JR-East.ChuoSobuLocal",
+	"_direction": -1,
+	"_sectionIndex": 9
+}, {
+	"r": "JR-East.Tokaido",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Tokaido",
+	"_direction": 1,
+	"_sectionIndex": 3
+}, {
+	"r": "JR-East.Tokaido",
+	"_direction": -1,
+	"_sectionIndex": 6
+}, {
+	"r": "JR-East.Tokaido",
+	"_direction": -1,
+	"_sectionIndex": 3
+}, {
+	"r": "JR-East.Utsunomiya",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Utsunomiya",
+	"_direction": 1,
+	"_sectionIndex": 6
+}, {
+	"r": "JR-East.Utsunomiya",
+	"_direction": -1,
+	"_sectionIndex": 12
+}, {
+	"r": "JR-East.Utsunomiya",
+	"_direction": -1,
+	"_sectionIndex": 6
+}, {
+	"r": "JR-East.Takasaki",
+	"_direction": 1,
+	"_sectionIndex": 3
+}, {
+	"r": "JR-East.Takasaki",
+	"_direction": 1,
+	"_sectionIndex": 9
+}, {
+	"r": "JR-East.Takasaki",
+	"_direction": -1,
+	"_sectionIndex": 9
+}, {
+	"r": "JR-East.Takasaki",
+	"_direction": -1,
+	"_sectionIndex": 3
+}, {
+	"r": "JR-East.KeihinTohokuNegishi",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.KeihinTohokuNegishi",
+	"_direction": 1,
+	"_sectionIndex": 9
+}, {
+	"r": "JR-East.KeihinTohokuNegishi",
+	"_direction": 1,
+	"_sectionIndex": 18
+}, {
+	"r": "JR-East.KeihinTohokuNegishi",
+	"_direction": 1,
+	"_sectionIndex": 27
+}, {
+	"r": "JR-East.KeihinTohokuNegishi",
+	"_direction": 1,
+	"_sectionIndex": 36
+}, {
+	"r": "JR-East.KeihinTohokuNegishi",
+	"_direction": -1,
+	"_sectionIndex": 45
+}, {
+	"r": "JR-East.KeihinTohokuNegishi",
+	"_direction": -1,
+	"_sectionIndex": 36
+}, {
+	"r": "JR-East.KeihinTohokuNegishi",
+	"_direction": -1,
+	"_sectionIndex": 27
+}, {
+	"r": "JR-East.KeihinTohokuNegishi",
+	"_direction": -1,
+	"_sectionIndex": 18
+}, {
+	"r": "JR-East.KeihinTohokuNegishi",
+	"_direction": -1,
+	"_sectionIndex": 9
+}, {
+	"r": "JR-East.JobanRapid",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.JobanRapid",
+	"_direction": 1,
+	"_sectionIndex": 6
+}, {
+	"r": "JR-East.JobanRapid",
+	"_direction": -1,
+	"_sectionIndex": 12
+}, {
+	"r": "JR-East.JobanRapid",
+	"_direction": -1,
+	"_sectionIndex": 6
+}, {
+	"r": "JR-East.JobanLocal",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.JobanLocal",
+	"_direction": 1,
+	"_sectionIndex": 6
+}, {
+	"r": "JR-East.JobanLocal",
+	"_direction": -1,
+	"_sectionIndex": 13
+}, {
+	"r": "JR-East.JobanLocal",
+	"_direction": -1,
+	"_sectionIndex": 7
+}, {
+	"r": "JR-East.SobuRapid",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.SobuRapid",
+	"_direction": 1,
+	"_sectionIndex": 4
+}, {
+	"r": "JR-East.SobuRapid",
+	"_direction": -1,
+	"_sectionIndex": 9
+}, {
+	"r": "JR-East.SobuRapid",
+	"_direction": -1,
+	"_sectionIndex": 5
+}, {
+	"r": "JR-East.Sobu",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Sobu",
+	"_direction": -1,
+	"_sectionIndex": 5
+}, {
+	"r": "JR-East.Narita",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.NaritaAirportBranch",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Uchibo",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Sotobo",
+	"_direction": -1,
+	"_sectionIndex": 2
+}, {
+	"r": "JR-East.Yokosuka",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Yokosuka",
+	"_direction": 1,
+	"_sectionIndex": 5
+}, {
+	"r": "JR-East.Yokosuka",
+	"_direction": -1,
+	"_sectionIndex": 10
+}, {
+	"r": "JR-East.Yokosuka",
+	"_direction": -1,
+	"_sectionIndex": 5
+}, {
+	"r": "JR-East.Keiyo",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Keiyo",
+	"_direction": 1,
+	"_sectionIndex": 8
+}, {
+	"r": "JR-East.Keiyo",
+	"_direction": -1,
+	"_sectionIndex": 16
+}, {
+	"r": "JR-East.Keiyo",
+	"_direction": -1,
+	"_sectionIndex": 8
+}, {
+	"r": "JR-East.SaikyoKawagoe",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.SaikyoKawagoe",
+	"_direction": 1,
+	"_sectionIndex": 8
+}, {
+	"r": "JR-East.SaikyoKawagoe",
+	"_direction": 1,
+	"_sectionIndex": 16
+}, {
+	"r": "JR-East.SaikyoKawagoe",
+	"_direction": -1,
+	"_sectionIndex": 23
+}, {
+	"r": "JR-East.SaikyoKawagoe",
+	"_direction": -1,
+	"_sectionIndex": 15
+}, {
+	"r": "JR-East.SaikyoKawagoe",
+	"_direction": -1,
+	"_sectionIndex": 7
+}, {
+	"r": "JR-East.ShonanShinjuku",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.ShonanShinjuku",
+	"_direction": 1,
+	"_sectionIndex": 5
+}, {
+	"r": "JR-East.ShonanShinjuku",
+	"_direction": 1,
+	"_sectionIndex": 10
+}, {
+	"r": "JR-East.ShonanShinjuku",
+	"_direction": -1,
+	"_sectionIndex": 15
+}, {
+	"r": "JR-East.ShonanShinjuku",
+	"_direction": -1,
+	"_sectionIndex": 10
+}, {
+	"r": "JR-East.ShonanShinjuku",
+	"_direction": -1,
+	"_sectionIndex": 5
+}, {
+	"r": "JR-East.Tsurumi",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Tsurumi",
+	"_direction": -1,
+	"_sectionIndex": 9
+}, {
+	"r": "JR-East.TsurumiUmiShibauraBranch",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.TsurumiOkawaBranch",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Nambu",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Nambu",
+	"_direction": 1,
+	"_sectionIndex": 8
+}, {
+	"r": "JR-East.Nambu",
+	"_direction": 1,
+	"_sectionIndex": 16
+}, {
+	"r": "JR-East.Nambu",
+	"_direction": -1,
+	"_sectionIndex": 25
+}, {
+	"r": "JR-East.Nambu",
+	"_direction": -1,
+	"_sectionIndex": 17
+}, {
+	"r": "JR-East.Nambu",
+	"_direction": -1,
+	"_sectionIndex": 9
+}, {
+	"r": "JR-East.NambuBranch",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Yokohama",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "JR-East.Yokohama",
+	"_direction": 1,
+	"_sectionIndex": 10
+}, {
+	"r": "JR-East.Yokohama",
+	"_direction": -1,
+	"_sectionIndex": 19
+}, {
+	"r": "JR-East.Yokohama",
+	"_direction": -1,
+	"_sectionIndex": 9
+}, {
+	"r": "TWR.Rinkai",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "TWR.Rinkai",
+	"_direction": -1,
+	"_sectionIndex": 7,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Ginza",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Ginza",
+	"_direction": 1,
+	"_sectionIndex": 9,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Ginza",
+	"_direction": -1,
+	"_sectionIndex": 18,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Ginza",
+	"_direction": -1,
+	"_sectionIndex": 9,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Marunouchi",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Marunouchi",
+	"_direction": 1,
+	"_sectionIndex": 12,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Marunouchi",
+	"_direction": -1,
+	"_sectionIndex": 24,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Marunouchi",
+	"_direction": -1,
+	"_sectionIndex": 12,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.MarunouchiBranch",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.MarunouchiBranch",
+	"_direction": -1,
+	"_sectionIndex": 3,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Hibiya",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Hibiya",
+	"_direction": 1,
+	"_sectionIndex": 10,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Hibiya",
+	"_direction": -1,
+	"_sectionIndex": 20,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Hibiya",
+	"_direction": -1,
+	"_sectionIndex": 10,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Tozai",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Tozai",
+	"_direction": 1,
+	"_sectionIndex": 11,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Tozai",
+	"_direction": -1,
+	"_sectionIndex": 22,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Tozai",
+	"_direction": -1,
+	"_sectionIndex": 11,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Chiyoda",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Chiyoda",
+	"_direction": 1,
+	"_sectionIndex": 9,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Chiyoda",
+	"_direction": -1,
+	"_sectionIndex": 19,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Chiyoda",
+	"_direction": -1,
+	"_sectionIndex": 10,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Yurakucho",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Yurakucho",
+	"_direction": 1,
+	"_sectionIndex": 11,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Yurakucho",
+	"_direction": -1,
+	"_sectionIndex": 23,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Yurakucho",
+	"_direction": -1,
+	"_sectionIndex": 12,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Hanzomon",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Hanzomon",
+	"_direction": 1,
+	"_sectionIndex": 6,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Hanzomon",
+	"_direction": -1,
+	"_sectionIndex": 13,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Hanzomon",
+	"_direction": -1,
+	"_sectionIndex": 7,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Namboku",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Namboku",
+	"_direction": 1,
+	"_sectionIndex": 9,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Namboku",
+	"_direction": -1,
+	"_sectionIndex": 18,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Namboku",
+	"_direction": -1,
+	"_sectionIndex": 9,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Fukutoshin",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Fukutoshin",
+	"_direction": 1,
+	"_sectionIndex": 7,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Fukutoshin",
+	"_direction": -1,
+	"_sectionIndex": 15,
+	"_altitude": -1
+}, {
+	"r": "TokyoMetro.Fukutoshin",
+	"_direction": -1,
+	"_sectionIndex": 8,
+	"_altitude": -1
+}, {
+	"r": "Toei.Asakusa",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "Toei.Asakusa",
+	"_direction": 1,
+	"_sectionIndex": 10,
+	"_altitude": -1
+}, {
+	"r": "Toei.Asakusa",
+	"_direction": -1,
+	"_sectionIndex": 19,
+	"_altitude": -1
+}, {
+	"r": "Toei.Asakusa",
+	"_direction": -1,
+	"_sectionIndex": 9,
+	"_altitude": -1
+}, {
+	"r": "Toei.Mita",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "Toei.Mita",
+	"_direction": 1,
+	"_sectionIndex": 9,
+	"_altitude": -1
+}, {
+	"r": "Toei.Mita",
+	"_direction": 1,
+	"_sectionIndex": 18,
+	"_altitude": -1
+}, {
+	"r": "Toei.Mita",
+	"_direction": -1,
+	"_sectionIndex": 26,
+	"_altitude": -1
+}, {
+	"r": "Toei.Mita",
+	"_direction": 1,
+	"_sectionIndex": 17,
+	"_altitude": -1
+}, {
+	"r": "Toei.Mita",
+	"_direction": -1,
+	"_sectionIndex": 8,
+	"_altitude": -1
+}, {
+	"r": "Toei.Shinjuku",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "Toei.Shinjuku",
+	"_direction": 1,
+	"_sectionIndex": 10,
+	"_altitude": -1
+}, {
+	"r": "Toei.Shinjuku",
+	"_direction": -1,
+	"_sectionIndex": 20,
+	"_altitude": -1
+}, {
+	"r": "Toei.Shinjuku",
+	"_direction": 1,
+	"_sectionIndex": 10,
+	"_altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"_direction": 1,
+	"_sectionIndex": 9,
+	"_altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"_direction": 1,
+	"_sectionIndex": 19,
+	"_altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"_direction": 1,
+	"_sectionIndex": 28,
+	"_altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"_direction": -1,
+	"_sectionIndex": 38,
+	"_altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"_direction": -1,
+	"_sectionIndex": 29,
+	"_altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"_direction": -1,
+	"_sectionIndex": 19,
+	"_altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"_direction": -1,
+	"_sectionIndex": 10,
+	"_altitude": -1
+}, {
+	"r": "Keio.Keio",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "Keio.Keio",
+	"_direction": 1,
+	"_sectionIndex": 10
+}, {
+	"r": "Keio.Keio",
+	"_direction": 1,
+	"_sectionIndex": 20
+}, {
+	"r": "Keio.Keio",
+	"_direction": -1,
+	"_sectionIndex": 31
+}, {
+	"r": "Keio.Keio",
+	"_direction": -1,
+	"_sectionIndex": 21
+}, {
+	"r": "Keio.Keio",
+	"_direction": -1,
+	"_sectionIndex": 11
+}, {
+	"r": "Keio.KeioNew",
+	"_direction": 1,
+	"_sectionIndex": 0,
+	"_altitude": -1
+}, {
+	"r": "Keio.Sagamihara",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "Keio.Sagamihara",
+	"_direction": -1,
+	"_sectionIndex": 11
+}, {
+	"r": "Keio.Keibajo",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "Keio.Dobutsuen",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "Keio.Takao",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "Keio.Takao",
+	"_direction": -1,
+	"_sectionIndex": 6
+}, {
+	"r": "Keio.Inokashira",
+	"_direction": 1,
+	"_sectionIndex": 0
+}, {
+	"r": "Keio.Inokashira",
+	"_direction": 1,
+	"_sectionIndex": 8
+}, {
+	"r": "Keio.Inokashira",
+	"_direction": -1,
+	"_sectionIndex": 16
+}, {
+	"r": "Keio.Inokashira",
+	"_direction": -1,
+	"_sectionIndex": 8
+}]

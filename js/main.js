@@ -236,77 +236,25 @@ TrainLayer.prototype.pickObject = function(point) {
 };
 
 var calendar = JapaneseHolidays.isHoliday(today) || today.getDay() == 6 || today.getDay() == 0
-	? 'SaturdayHoliday' : 'Weekday';
+	? 'holiday' : 'weekday';
 
 Promise.all([
 	loadJSON('data/dictionary-' + lang + '.json'),
-	loadJSON('data/railways.json'),
 	loadJSON('data/stations.json'),
+	loadJSON('data/railways.json'),
 	loadJSON('data/trains.json'),
 	loadJSON('data/flights.json'),
 	loadJSON('data/features.json'),
-	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:RailDirection?' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central,odpt.Operator:TWR,odpt.Operator:Izukyu&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:Tobu,odpt.Operator:Seibu,odpt.Operator:Tokyu,odpt.Operator:SaitamaRailway,odpt.Operator:Minatomirai,odpt.Operator:Keio&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Tobu,odpt.Operator:ToyoRapid,odpt.Operator:Odakyu,odpt.Operator:Keikyu,odpt.Operator:Keisei,odpt.Operator:Hokuso,odpt.Operator:Shibayama&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Yamanote&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoRapid&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Ome,odpt.Railway:JR-East.Itsukaichi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.ChuoSobuLocal&odpt:calendar=odpt.Calendar:Weekday&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Tokaido,odpt.Railway:JR-East.Utsunomiya,odpt.Railway:JR-East.Takasaki&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.KeihinTohokuNegishi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.JobanRapid,odpt.Railway:JR-East.JobanLocal&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.SobuRapid,odpt.Railway:JR-East.Yokosuka&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Sobu,odpt.Railway:JR-East.Narita,odpt.Railway:JR-East.NaritaAirportBranch&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Uchibo,odpt.Railway:JR-East.Sotobo&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Keiyo&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.SaikyoKawagoe,odpt.Railway:TWR.Rinkai,odpt.Railway:JR-East.ShonanShinjuku&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Tsurumi,odpt.Railway:JR-East.TsurumiUmiShibauraBranch,odpt.Railway:JR-East.TsurumiOkawaBranch&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Nambu,odpt.Railway:JR-East.NambuBranch&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:JR-East.Yokohama&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Ginza&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Marunouchi&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.MarunouchiBranch&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Hibiya&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Tozai&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Chiyoda&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Yurakucho&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Hanzomon&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Namboku&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:TokyoMetro.Fukutoshin&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Toei.Asakusa&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Toei.Mita&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Toei.Shinjuku&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Toei.Oedo&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Keio.Keio&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Keio.KeioNew&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Keio.Sagamihara,odpt.Railway:Keio.Keibajo,odpt.Railway:Keio.Dobutsuen,odpt.Railway:Keio.Takao&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:Keio.Inokashira&odpt:calendar=odpt.Calendar:' + calendar + '&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN),
+	loadJSON('data/timetable-' + calendar + '.json'),
+	loadJSON('data/rail-directions.json'),
+	loadJSON('data/train-types.json'),
 	loadJSON(API_URL + 'odpt:Operator?' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:Airport?' + API_TOKEN),
 	loadJSON(API_URL + 'odpt:FlightStatus?' + API_TOKEN)
 ]).then(function([
-	dict, railwayData, stationData, trainData, flightData, railwayFeatureCollection, railwayRefData, railDirectionRefData,
-	stationRefData1, stationRefData2, stationRefData3, timetableRefData1, timetableRefData2, timetableRefData3,
-	timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7, timetableRefData8, timetableRefData9,
-	timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13, timetableRefData14, timetableRefData15,
-	timetableRefData16,timetableRefData17, timetableRefData18, timetableRefData19, timetableRefData20, timetableRefData21,
-	timetableRefData22, timetableRefData23, timetableRefData24, timetableRefData25, timetableRefData26, timetableRefData27,
-	timetableRefData28, timetableRefData29, timetableRefData30, timetableRefData31, timetableRefData32, timetableRefData33,
-	trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData
+	dict, stationRefData, railwayRefData, trainData, flightData, railwayFeatureCollection, timetableRefData,
+	railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData
 ]) {
-
-var stationRefData = stationRefData1.concat(stationRefData2, stationRefData3);
-var timetableRefData = timetableRefData1.concat(
-	timetableRefData2, timetableRefData3, timetableRefData4, timetableRefData5, timetableRefData6, timetableRefData7,
-	timetableRefData8, timetableRefData9, timetableRefData10, timetableRefData11, timetableRefData12, timetableRefData13,
-	timetableRefData14, timetableRefData15, timetableRefData16, timetableRefData17, timetableRefData18, timetableRefData19,
-	timetableRefData20, timetableRefData21, timetableRefData22, timetableRefData23, timetableRefData24, timetableRefData25,
-	timetableRefData26, timetableRefData27, timetableRefData28, timetableRefData29, timetableRefData30, timetableRefData31,
-	timetableRefData32, timetableRefData33
-);
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -327,54 +275,8 @@ objectScale = unit * modelScale * 100;
 carScale = Math.max(.02 / .19, unit) * modelScale * 100;
 aircraftScale = Math.max(.06 / .285, unit) * modelScale * 100;
 
-stationLookup = buildLookup(stationRefData);
-
-// Update station lookup dictionary
-stationData.stations.forEach(function(stations) {
-	if (!Array.isArray(stations)) {
-		stations = [stations];
-	}
-	stations.forEach(function(station) {
-		station.aliases.forEach(function(alias) {
-			var stationRef = stationLookup[alias];
-			merge(stationRef['odpt:stationTitle'], station['odpt:stationTitle']);
-		});
-	});
-});
-
-railwayLookup = buildLookup(railwayRefData);
-
-// Update railway lookup dictionary
-railwayData.railways.forEach(function(railway) {
-	var id = railway['odpt:railway'];
-	var railwayRef = railwayLookup[id];
-	var stationOrder = railwayRef['odpt:stationOrder'];
-
-	if (id === 'odpt.Railway:JR-East.Ome') {
-		stationOrder = stationOrder.slice(0, 13);
-	} else if (id === 'odpt.Railway:JR-East.Tokaido') {
-		stationOrder = stationOrder.slice(0, 7);
-	} else if (id === 'odpt.Railway:JR-East.Utsunomiya') {
-		stationOrder = stationOrder.slice(0, 13);
-	} else if (id === 'odpt.Railway:JR-East.Takasaki') {
-		stationOrder = stationOrder.slice(0, 13);
-	} else if (id === 'odpt.Railway:JR-East.Sobu') {
-		stationOrder = stationOrder.slice(0, 6);
-	} else if (id === 'odpt.Railway:JR-East.Narita') {
-		stationOrder = stationOrder.slice(0, 3);
-	} else if (id === 'odpt.Railway:JR-East.Uchibo' || id === 'odpt.Railway:JR-East.Sotobo') {
-		stationOrder = stationOrder.slice(0, 3);
-	} else if (id === 'odpt.Railway:JR-East.Yokosuka') {
-		stationOrder = stationOrder.slice(0, 11);
-	}
-	railwayRef._stations = stationOrder.map(function(station) {
-		return station['odpt:station'];
-	});
-	merge(railwayRef['odpt:railwayTitle'], railway['odpt:railwayTitle']);
-	railwayRef._color = railway._color;
-	railwayRef._altitude = railway._altitude;
-	railwayRef._carComposition = railway._carComposition;
-});
+stationLookup = buildLookup(stationRefData, 'id');
+railwayLookup = buildLookup(railwayRefData, 'id');
 
 // Build feature lookup dictionary and update feature properties
 turf.featureEach(railwayFeatureCollection, function(feature) {
@@ -435,24 +337,17 @@ var trainLayers = {
 	}
 };
 
-railDirectionLookup = buildLookup(railDirectionRefData);
-
-// Update rail direction lookup dictionary
-trainData.railDirections.forEach(function(direction) {
-	merge(railDirectionLookup[direction['odpt:railDirection']]['odpt:railDirectionTitle'], direction['odpt:railDirectionTitle']);
-});
-
-trainLookup = buildLookup(timetableRefData, 'odpt:train');
-timetableLookup = buildLookup(timetableRefData);
+trainLookup = buildLookup(timetableRefData, 't');
+timetableLookup = buildLookup(timetableRefData, 'id');
 
 // Update timetable lookup dictionary
 timetableRefData.forEach(function(train) {
-	var railway = railwayLookup[train['odpt:railway']];
-	var direction = train['odpt:railDirection'] === railway['odpt:ascendingRailDirection'] ? 1 : -1;
-	var table = train['odpt:trainTimetableObject'];
+	var railway = railwayLookup[train.r];
+	var direction = train.d === railway.ascending ? 1 : -1;
+	var table = train.tt;
 	var length = table.length;
-	var previousTableIDs = train['odpt:previousTrainTimetable'];
-	var nextTableIDs = train['odpt:nextTrainTimetable'];
+	var previousTableIDs = train.pt;
+	var nextTableIDs = train.nt;
 	var previousTrain, nextTrain, nextTable;
 
 	if (previousTableIDs) {
@@ -461,23 +356,24 @@ timetableRefData.forEach(function(train) {
 	if (nextTableIDs) {
 		nextTrain = timetableLookup[nextTableIDs[0]];
 		if (nextTrain) {
-			nextTable = nextTrain['odpt:trainTimetableObject'];
-			table[length - 1]['odpt:departureTime'] = nextTable[0]['odpt:departureTime'];
+			nextTable = nextTrain.tt;
+			table[length - 1].dt = nextTable[0].dt;
 		}
 	}
 
-	train._start = getTime(table[0]['odpt:departureTime']) - STANDING_DURATION;
-	train._end = getTime(table[length - 1]['odpt:departureTime']
-		|| table[length - 1]['odpt:arrivalTime']
-		|| table[Math.max(length - 2, 0)]['odpt:departureTime']);
+	train._start = getTime(table[0].dt) - STANDING_DURATION;
+	train._end = getTime(table[length - 1].dt
+		|| table[length - 1].at
+		|| table[Math.max(length - 2, 0)].dt);
 	train._direction = direction;
-	train._altitude = railway._altitude;
-	train._carComposition = railway._carComposition;
+	train._altitude = railway.altitude;
+	train._carComposition = railway.carComposition;
 	train._previousTrain = previousTrain;
 	train._nextTrain = nextTrain;
 });
 
-trainTypeLookup = buildLookup(trainTypeRefData);
+railDirectionLookup = buildLookup(railDirectionRefData, 'id');
+trainTypeLookup = buildLookup(trainTypeRefData, 'id');
 
 operatorLookup = buildLookup(operatorRefData);
 
@@ -493,11 +389,6 @@ flightData.operators.forEach(function(operator) {
 airportLookup = buildLookup(airportRefData);
 
 flightStatusLookup = buildLookup(flightStatusRefData);
-
-// Update train type lookup dictionary
-trainData.types.map(function(type) {
-	merge(trainTypeLookup[type['odpt:trainType']]['odpt:trainTypeTitle'], type['odpt:trainTypeTitle']);
-});
 
 map.once('load', function () {
 	document.getElementById('loader').style.display = 'none';
@@ -881,7 +772,7 @@ map.once('styledata', function () {
 	});
 
 	function updateTrainProps(train) {
-		var feature = train._railwayFeature = featureLookup[train['odpt:railway'] + '.' + layerZoom];
+		var feature = train._railwayFeature = featureLookup[train.r + '.' + layerZoom];
 		var stationOffsets = feature.properties['station-offsets'];
 		var sectionIndex = train._sectionIndex;
 		var offset = train._offset = stationOffsets[sectionIndex];
@@ -910,8 +801,8 @@ map.once('styledata', function () {
 			trainLayers.removeObject(cars.pop(), train);
 		}
 		for (i = length; i < carComposition; i++) {
-			railway = railway || railwayLookup[train['odpt:railway']];
-			car = createCube(.88, 1.76, .88, railway._color);
+			railway = railway || railwayLookup[train.r];
+			car = createCube(.88, 1.76, .88, railway.color);
 			userData = car.userData;
 			userData.train = train;
 			userData.altitude = (train._altitude || 0) * Math.pow(2, 14 - layerZoom) * 100;
@@ -1018,14 +909,14 @@ map.once('styledata', function () {
 	}
 
 	function initModelTrains() {
-		trainData.trains.forEach(function(train, i) {
-			var railway = railwayLookup[train['odpt:railway']];
+		trainData.forEach(function(train, i) {
+			var railway = railwayLookup[train.r];
 
-			train['odpt:train'] = i;
-			activeTrainLookup[train['odpt:train']] = train;
+			train.t = i;
+			activeTrainLookup[train.t] = train;
 
 			train._sectionLength = train._direction;
-			train._carComposition = railway._carComposition;
+			train._carComposition = railway.carComposition;
 			train._cars = [];
 			updateTrainProps(train);
 
@@ -1036,7 +927,7 @@ map.once('styledata', function () {
 					var direction = train._direction;
 					var sectionIndex = train._sectionIndex = train._sectionIndex + direction;
 
-					if (sectionIndex <= 0 || sectionIndex >= railway._stations.length - 1) {
+					if (sectionIndex <= 0 || sectionIndex >= railway.stations.length - 1) {
 						train._direction = train._sectionLength = -direction;
 					}
 					updateTrainProps(train);
@@ -1056,9 +947,9 @@ map.once('styledata', function () {
 		timetableRefData.forEach(function(train) {
 			var d = train._delay || 0;
 			if (train._start + d <= now && now <= train._end + d &&
-				!activeTrainLookup[train['odpt:train']] &&
-				(!train._previousTrain || !activeTrainLookup[train._previousTrain['odpt:train']]) &&
-				(!train._nextTrain || !activeTrainLookup[train._nextTrain['odpt:train']])) {
+				!activeTrainLookup[train.t] &&
+				(!train._previousTrain || !activeTrainLookup[train._previousTrain.t]) &&
+				(!train._nextTrain || !activeTrainLookup[train._nextTrain.t])) {
 				function start(index) {
 					var now = Date.now();
 					var departureTime;
@@ -1066,7 +957,7 @@ map.once('styledata', function () {
 					if (!setSectionData(train, index)) {
 						return; // Out of range
 					}
-					activeTrainLookup[train['odpt:train']] = train;
+					activeTrainLookup[train.t] = train;
 					train._cars = [];
 					departureTime = getTime(train._departureTime) + (train._delay || 0);
 					if (now >= departureTime) {
@@ -1106,7 +997,7 @@ map.once('styledata', function () {
 							if (train._nextTrain) {
 								stopTrain(train);
 								train = train._nextTrain;
-								if (!activeTrainLookup[train['odpt:train']]) {
+								if (!activeTrainLookup[train.t]) {
 									start(0);
 									if (train._cars) {
 										if (markedObjectIndex !== -1) {
@@ -1219,23 +1110,23 @@ map.once('styledata', function () {
 	}
 
 	function getLocalizedRailwayTitle(railway) {
-		title = (railwayLookup[railway] || {})['odpt:railwayTitle'] || {};
+		title = (railwayLookup[railway] || {}).title || {};
 		return title[lang] || title['en'];
 	}
 
 	function getLocalizedRailDirectionTitle(direction) {
-		title = (railDirectionLookup[direction] || {})['odpt:railDirectionTitle'] || {};
+		title = (railDirectionLookup[direction] || {}).title || {};
 		return title[lang] || title['en'];
 	}
 
 	function getLocalizedTrainTypeTitle(type) {
-		title = (trainTypeLookup[type] || {})['odpt:trainTypeTitle'] || {};
+		title = (trainTypeLookup[type] || {}).title || {};
 		return title[lang] || title['en'];
 	}
 
 	function getLocalizedStationTitle(station) {
 		station = Array.isArray(station) ? station[0] : station;
-		title = (stationLookup[station] || {})['odpt:stationTitle'] || {};
+		title = (stationLookup[station] || {}).title || {};
 		return title[lang] || title['en'];
 	}
 
@@ -1255,18 +1146,17 @@ map.once('styledata', function () {
 	}
 
 	function setTrainStandingStatus(train, standing) {
-		var railwayID = train['odpt:railway'];
-		var destination = train['odpt:destinationStation'];
+		var railwayID = train.r;
+		var destination = train.ds;
 		var delay = train._delay || 0;
 
 		train._standing = standing;
 		train._description =
-			'<span class="desc-box" style="background-color: ' + railwayLookup[railwayID]._color + ';"></span> ' +
+			'<span class="desc-box" style="background-color: ' + railwayLookup[railwayID].color + ';"></span> ' +
 			'<strong>' + getLocalizedRailwayTitle(railwayID) + '</strong>' +
-			'<br>' + getLocalizedTrainTypeTitle(train['odpt:trainType']) + ' ' +
-			(destination ? dict['for'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train['odpt:railDirection'])) +
-			'<br><strong>' + dict['train-number'] + ':</strong> ' +
-			train['odpt:trainNumber'] +
+			'<br>' + getLocalizedTrainTypeTitle(train.y) + ' ' +
+			(destination ? dict['for'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train.d)) +
+			'<br><strong>' + dict['train-number'] + ':</strong> ' + train.n +
 			'<br>' + (delay >= 60000 ? '<span class="desc-delay">' : '') +
 			'<strong>' + dict[train._standing ? 'standing-at' : 'previous-stop'] + ':</strong> ' +
 			getLocalizedStationTitle(train._departureStation) +
@@ -1309,7 +1199,7 @@ map.once('styledata', function () {
 			trainLayers.removeObject(car, train, 1000);
 		});
 		delete train._cars;
-		delete activeTrainLookup[train['odpt:train']];
+		delete activeTrainLookup[train.t];
 		if (train._delayMarker) {
 			trainLayers.removeObject(train._delayMarker, train, 1000);
 			delete train._delayMarker;
@@ -1342,7 +1232,7 @@ map.once('styledata', function () {
 			trainRefData.forEach(function(trainRef) {
 				var delay = trainRef['odpt:delay'] * 1000;
 				var carComposition = trainRef['odpt:carComposition'];
-				var id = trainRef['owl:sameAs'];
+				var id = removePrefix(trainRef['owl:sameAs']);
 				var train = trainLookup[id];
 				var activeTrain = activeTrainLookup[id];
 
@@ -1675,6 +1565,16 @@ function inRange(value, start, end) {
 	return value >= start && value < end;
 }
 
+function removePrefix(value) {
+	if (typeof value === 'string') {
+		return value.replace(/.*:/, '');
+	}
+	if (Array.isArray(value)) {
+		return value.map(removePrefix);
+	}
+	return value;
+}
+
 function loadJSON(url) {
 	return new Promise(function(resolve, reject) {
 		var request = new XMLHttpRequest();
@@ -1755,18 +1655,18 @@ function getTrainOpacity(train) {
 }
 
 function setSectionData(train, index) {
-	var table = train['odpt:trainTimetableObject'];
+	var table = train.tt;
 	var delay = train._delay || 0;
 	var now = Date.now();
 	var index = index !== undefined ? index :
 		table.reduce(function(acc, cur, i) {
-			return getTime(cur['odpt:departureTime']) + delay <= now ? i : acc;
+			return getTime(cur.dt) + delay <= now ? i : acc;
 		}, 0);
 	var current = table[index];
 	var next = table[index + 1];
-	var stations = railwayLookup[train['odpt:railway']]._stations;
-	var departureStation = current['odpt:departureStation'] || current['odpt:arrivalStation'];
-	var arrivalStation = next && (next['odpt:arrivalStation'] || next['odpt:departureStation']);
+	var stations = railwayLookup[train.r].stations;
+	var departureStation = current.ds || current.as;
+	var arrivalStation = next && (next.as || next.ds);
 	var currentSection, nextSection;
 
 	if (train._direction > 0) {
@@ -1779,13 +1679,13 @@ function setSectionData(train, index) {
 
 	train._timetableIndex = index;
 	train._departureStation = departureStation;
-	train._departureTime = current['odpt:departureTime'] || current['odpt:arrivalTime'];
+	train._departureTime = current.dt || current.at;
 
 	if (currentSection >= 0 && nextSection >= 0) {
 		train._sectionIndex = currentSection;
 		train._sectionLength = nextSection - currentSection;
 		train._arrivalStation = arrivalStation;
-		train._arrivalTime = next['odpt:arrivalTime'] || next['odpt:departureTime'];
+		train._arrivalTime = next.at || next.dt;
 
 		return true;
 	}

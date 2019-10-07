@@ -24,6 +24,7 @@ var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
 // API Token
 var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
 
+var timetables = {};
 var isUndergroundVisible = false;
 var opacityStore = {};
 var animations = {};
@@ -85,18 +86,55 @@ MapboxGLButtonControl.prototype.onRemove = function() {
 	this._map = undefined;
 };
 
-Promise.all([
-	loadJSON('data/railways-coordinates.json'),
-	loadJSON('data/stations.json'),
-	loadJSON(API_URL + 'odpt:Railway?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:JR-East,odpt.Operator:JR-Central,odpt.Operator:TWR,odpt.Operator:Izukyu&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:Tobu,odpt.Operator:Seibu,odpt.Operator:Tokyu,odpt.Operator:SaitamaRailway,odpt.Operator:Minatomirai,odpt.Operator:Keio&' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Tobu,odpt.Operator:ToyoRapid,odpt.Operator:Odakyu,odpt.Operator:Keikyu,odpt.Operator:Keisei,odpt.Operator:Hokuso,odpt.Operator:Shibayama&' + API_TOKEN),
-]).then(function([
-	railwayData, stationData, railwayRefData, stationRefData1, stationRefData2, stationRefData3
-]) {
+loadJSON('data-extra/railways.json').then(function(railwayData) {
+	['Weekday', 'SaturdayHoliday'].forEach(function(calendar) {
+		Promise.all(railwayData.map(function(railway) {
+			var id = railway.id;
+			return loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:' + id +
+				(id === 'JR-East.ChuoSobuLocal' ? '' : '&odpt:calendar=odpt.Calendar:' + calendar) +
+				'&' + API_TOKEN);
+		})).then(function(timetableRefData) {
+			timetables[calendar] = concat(timetableRefData).map(function(table) {
+				return {
+					t: removePrefix(table['odpt:train']),
+					id: removePrefix(table['owl:sameAs']),
+					r: removePrefix(table['odpt:railway']),
+					y: removePrefix(table['odpt:trainType']),
+					n: table['odpt:trainNumber'],
+					d: removePrefix(table['odpt:railDirection']),
+					ds: removePrefix(table['odpt:destinationStation']),
+					nt: removePrefix(table['odpt:nextTrainTimetable']),
+					tt: table['odpt:trainTimetableObject'].map(function(obj) {
+						return {
+							at: obj['odpt:arrivalTime'],
+							dt: obj['odpt:departureTime'],
+							as: removePrefix(obj['odpt:arrivalStation']),
+							ds: removePrefix(obj['odpt:departureStation'])
+						};
+					}),
+					pt: removePrefix(table['odpt:previousTrainTimetable'])
+				};
+			});
+		});
+	});
+});
 
-var stationRefData = stationRefData1.concat(stationRefData2, stationRefData3);
+Promise.all([
+	loadJSON('data-extra/coordinates.json'),
+	loadJSON('data-extra/stations.json'),
+	loadJSON('data-extra/railways.json'),
+	loadJSON('data-extra/rail-directions.json'),
+	loadJSON('data-extra/train-types.json'),
+	loadStationRefData(),
+	loadRailwayRefData(),
+	loadJSON(API_URL + 'odpt:RailDirection?' + API_TOKEN),
+	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'Keio'].map(function(operator) {
+		return 'odpt.Operator:' + operator;
+	}).join(',') + '&' + API_TOKEN)
+]).then(function([
+	coordinateData, stationData, railwayData, railDirectionData, trainTypeData,
+	stationRefData, railwayRefData, railDirectionRefData, trainTypeRefData
+]) {
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -108,38 +146,52 @@ var map = new mapboxgl.Map({
 	pitch: 60
 });
 
-stationLookup = buildLookup(stationRefData);
-railwayLookup = buildLookup(railwayRefData);
+stationLookup = buildLookup(stationRefData, 'id');
+
+// Update station lookup dictionary
+stationData.forEach(function(stations) {
+	if (!Array.isArray(stations)) {
+		stations = [stations];
+	}
+	stations.forEach(function(station) {
+		station.aliases.forEach(function(alias) {
+			merge(stationLookup[alias].title, station.title);
+		});
+	});
+});
+
+railwayLookup = buildLookup(railwayRefData, 'id');
 
 // Update railway lookup dictionary
-railwayData.railways.forEach(function(railway) {
-	var id = railway['odpt:railway'];
+railwayData.forEach(function(railway) {
+	var id = railway.id;
 	var railwayRef = railwayLookup[id];
-	var stationOrder = railwayRef['odpt:stationOrder'];
+	var stationOrder = railwayRef.order;
 
-	if (id === 'odpt.Railway:JR-East.Ome') {
+	if (id === 'JR-East.Ome') {
 		stationOrder = stationOrder.slice(0, 13);
-	} else if (id === 'odpt.Railway:JR-East.Tokaido') {
+	} else if (id === 'JR-East.Tokaido') {
 		stationOrder = stationOrder.slice(0, 7);
-	} else if (id === 'odpt.Railway:JR-East.Utsunomiya') {
+	} else if (id === 'JR-East.Utsunomiya') {
 		stationOrder = stationOrder.slice(0, 13);
-	} else if (id === 'odpt.Railway:JR-East.Takasaki') {
+	} else if (id === 'JR-East.Takasaki') {
 		stationOrder = stationOrder.slice(0, 13);
-	} else if (id === 'odpt.Railway:JR-East.Sobu') {
+	} else if (id === 'JR-East.Sobu') {
 		stationOrder = stationOrder.slice(0, 6);
-	} else if (id === 'odpt.Railway:JR-East.Narita') {
+	} else if (id === 'JR-East.Narita') {
 		stationOrder = stationOrder.slice(0, 3);
-	} else if (id === 'odpt.Railway:JR-East.Uchibo' || id === 'odpt.Railway:JR-East.Sotobo') {
+	} else if (id === 'JR-East.Uchibo' || id === 'JR-East.Sotobo') {
 		stationOrder = stationOrder.slice(0, 3);
-	} else if (id === 'odpt.Railway:JR-East.Yokosuka') {
+	} else if (id === 'JR-East.Yokosuka') {
 		stationOrder = stationOrder.slice(0, 11);
 	}
-	railwayRef._stations = stationOrder.map(function(station) {
-		return station['odpt:station'];
+	railwayRef.stations = stationOrder.map(function(station) {
+		return station.s;
 	});
-	merge(railwayRef['odpt:railwayTitle'], railway['odpt:railwayTitle']);
-	railwayRef._color = railway._color;
-	railwayRef._altitude = railway._altitude;
+	merge(railwayRef.title, railway.title);
+	railwayRef.color = railway.color;
+	railwayRef.altitude = railway.altitude;
+	railwayRef.carComposition = railway.carComposition;
 });
 
 var railwayFeatureArray = [];
@@ -147,17 +199,17 @@ var railwayFeatureArray = [];
 [13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 	var unit = Math.pow(2, 14 - zoom) * .1;
 
-	railwayData.railways.forEach(function(railway) {
-		var id = railway['odpt:railway'];
-		var sublines = railway._sublines;
+	coordinateData.railways.forEach(function(railway) {
+		var id = railway.id;
+		var sublines = railway.sublines;
 		var railwayFeature = turf.lineString(concat(sublines.map(function(subline) {
 			var start = subline.start;
 			var end = subline.end;
-			var coords = subline.coordinates;
+			var coords = subline.coords;
 			var feature, offset;
 
 			if (subline.type === 'sub') {
-				feature = turf.lineSlice(coords[0], coords[coords.length - 1], featureLookup[start['odpt:railway'] + '.' + zoom]);
+				feature = turf.lineSlice(coords[0], coords[coords.length - 1], featureLookup[start.railway + '.' + zoom]);
 				offset = start.offset;
 
 				if (offset) {
@@ -180,7 +232,7 @@ var railwayFeatureArray = [];
 				var start = !reverse ? 0 : coordinates.length - 1;
 				var end = !reverse ? coordinates.length - 1 : 0;
 				var step = !reverse ? 1 : -1;
-				var feature = featureLookup[nextSubline['odpt:railway'] + '.' + zoom];
+				var feature = featureLookup[nextSubline.railway + '.' + zoom];
 				var nearest = getNearestPointProperties(feature, coordinates[start]);
 				var baseOffset = nextSubline.offset * unit - nearest.distance;
 				var baseFeature = turf.lineString(coordinates);
@@ -207,14 +259,14 @@ var railwayFeatureArray = [];
 				interpolate = subline.interpolate;
 				coordinates = [];
 				feature1 = lineOffset(turf.lineSlice(
-					sublines[i - 1].coordinates[sublines[i - 1].coordinates.length - 1],
-					sublines[i + 1].coordinates[0],
-					featureLookup[sublines[i - 1].end['odpt:railway'] + '.' + zoom]
+					sublines[i - 1].coords[sublines[i - 1].coords.length - 1],
+					sublines[i + 1].coords[0],
+					featureLookup[sublines[i - 1].end.railway + '.' + zoom]
 				), sublines[i - 1].end.offset * unit);
 				feature2 = lineOffset(turf.lineSlice(
-					sublines[i - 1].coordinates[sublines[i - 1].coordinates.length - 1],
-					sublines[i + 1].coordinates[0],
-					featureLookup[sublines[i + 1].start['odpt:railway'] + '.' + zoom]
+					sublines[i - 1].coords[sublines[i - 1].coords.length - 1],
+					sublines[i + 1].coords[0],
+					featureLookup[sublines[i + 1].start.railway + '.' + zoom]
 				), sublines[i + 1].start.offset * unit);
 				length1 = turf.length(feature1);
 				length2 = turf.length(feature2);
@@ -229,7 +281,7 @@ var railwayFeatureArray = [];
 				}
 				subline.feature = turf.lineString(coordinates);
 			} else if (subline.type === 'main') {
-				coordinates = subline.coordinates.map(function(d) { return d.slice(); });
+				coordinates = subline.coords.map(function(d) { return d.slice(); });
 				nextSubline = subline.start;
 				if (nextSubline) {
 					smoothCoords();
@@ -242,33 +294,31 @@ var railwayFeatureArray = [];
 			}
 
 			return turf.getCoords(subline.feature);
-		})), {color: railway._color, width: 8});
+		})), {color: railway.color, width: 8});
 
-		if (railway._altitude < 0) {
-			setAltitude(railwayFeature, railway._altitude * unit * 1000);
+		if (railway.altitude < 0) {
+			setAltitude(railwayFeature, railway.altitude * unit * 1000);
 		}
 
 		railwayFeature.properties.id = id + '.' + zoom;
 		railwayFeature.properties.zoom = zoom;
 		railwayFeature.properties.type = 0;
-		railwayFeature.properties.altitude = (railway._altitude || 0) * unit * 1000;
+		railwayFeature.properties.altitude = (railway.altitude || 0) * unit * 1000;
 
 		// Set station offsets
-		railwayFeature.properties['station-offsets'] = railwayLookup[id]._stations.map(function(station, i, stations) {
-			var stationRef = stationLookup[station];
-
+		railwayFeature.properties['station-offsets'] = railwayLookup[id].stations.map(function(station, i, stations) {
 			// If the line has a loop, the last offset must be set explicitly
 			// Otherwise, the location of the last station goes wrong
-			return railway._loop && i === stations.length - 1 ?
+			return railway.loop && i === stations.length - 1 ?
 				turf.length(railwayFeature) :
-				getLocationAlongLine(railwayFeature, [stationRef['geo:long'], stationRef['geo:lat']]);
+				getLocationAlongLine(railwayFeature, stationLookup[station].coord);
 		});
 
 		railwayFeatureArray.push(railwayFeature);
 		featureLookup[id + '.' + zoom] = railwayFeature;
 	});
 
-	stationData.stations.forEach(function(stations) {
+	stationData.forEach(function(stations) {
 		var features = [];
 		var connectionCoords = [];
 		var feature;
@@ -280,8 +330,8 @@ var railwayFeatureArray = [];
 		stations.forEach(function(station) {
 			var coords = station.aliases.map(function(s) {
 				var stationRef = stationLookup[s];
-				var feature = featureLookup[stationRef['odpt:railway'] + '.' + zoom];
-				return turf.getCoord(turf.nearestPointOnLine(feature, [stationRef['geo:long'], stationRef['geo:lat']]));
+				var feature = featureLookup[stationRef.railway + '.' + zoom];
+				return turf.getCoord(turf.nearestPointOnLine(feature, stationRef.coord));
 			});
 			var feature = coords.length === 1 ? turf.point(coords[0]) : turf.lineString(coords);
 
@@ -313,9 +363,9 @@ var railwayFeatureArray = [];
 	});
 });
 
-railwayData.airways.forEach(function(airway) {
+coordinateData.airways.forEach(function(airway) {
 	var id = airway.id;
-	var airwayFeature = turf.lineString(airway.coordinates, {color: airway._color, width: 8});
+	var airwayFeature = turf.lineString(airway.coords, {color: airway.color, width: 8});
 
 	airwayFeature.properties.id = id;
 	airwayFeature.properties.type = 0;
@@ -327,6 +377,34 @@ railwayData.airways.forEach(function(airway) {
 });
 
 var railwayFeatureCollection = turf.featureCollection(railwayFeatureArray);
+
+railDirectionRefData = railDirectionRefData.map(function(direction) {
+	return {
+		id: removePrefix(direction['owl:sameAs']),
+		title: direction['odpt:railDirectionTitle']
+	};
+});
+
+railDirectionLookup = buildLookup(railDirectionRefData, 'id');
+
+// Update rail direction lookup dictionary
+railDirectionData.forEach(function(direction) {
+	merge(railDirectionLookup[direction.id].title, direction.title);
+});
+
+trainTypeRefData = trainTypeRefData.map(function(type) {
+	return {
+		id: removePrefix(type['owl:sameAs']),
+		title: type['odpt:trainTypeTitle']
+	};
+});
+
+trainTypeLookup = buildLookup(trainTypeRefData, 'id');
+
+// Update train type lookup dictionary
+trainTypeData.map(function(type) {
+	merge(trainTypeLookup[type.id].title, type.title);
+});
 
 map.once('load', function () {
 	document.getElementById('loader').style.display = 'none';
@@ -523,10 +601,13 @@ map.once('styledata', function () {
 		className: 'mapbox-ctrl-export',
 		title: 'Export',
 		eventHandler: function() {
-			var link = document.createElement('a');
-			link.download = 'features.json';
-			link.href = 'data:application/json,' + encodeURIComponent(JSON.stringify(turf.truncate(railwayFeatureCollection, {precision: 7})));
-			link.dispatchEvent(new MouseEvent('click'));
+			exportJSON(turf.truncate(railwayFeatureCollection, {precision: 7}), 'features.json', 0);
+			exportJSON(timetables.Weekday, 'timetable-weekday.json', 5000);
+			exportJSON(timetables.SaturdayHoliday, 'timetable-holiday.json', 10000);
+			exportJSON(stationRefData, 'stations.json', 15000);
+			exportJSON(railwayRefData, 'railways.json', 20000);
+			exportJSON(railDirectionRefData, 'rail-directions.json', 25000);
+			exportJSON(trainTypeRefData, 'train-types.json', 30000);
 		}
 	}), 'top-right');
 
@@ -580,14 +661,14 @@ function getLocationAlongLine(line, point) {
 }
 
 function getAngle(bearing1, bearing2) {
-    var angle = bearing2 - bearing1;
+	var angle = bearing2 - bearing1;
 
-    if (angle > 180) {
-        angle -= 360;
-    } else if (angle < -180) {
-        angle += 360;
-    }
-    return angle;
+	if (angle > 180) {
+		angle -= 360;
+	} else if (angle < -180) {
+		angle += 360;
+	}
+	return angle;
 }
 
 // Better version of turf.lineOffset
@@ -699,6 +780,16 @@ function clamp(value, lower, upper) {
 	return Math.min(Math.max(value, lower), upper);
 }
 
+function removePrefix(value) {
+	if (typeof value === 'string') {
+		return value.replace(/.*:/, '');
+	}
+	if (Array.isArray(value)) {
+		return value.map(removePrefix);
+	}
+	return value;
+}
+
 function loadJSON(url) {
 	return new Promise(function(resolve, reject) {
 		var request = new XMLHttpRequest();
@@ -714,6 +805,53 @@ function loadJSON(url) {
 			}
 		}
 		request.send();
+	});
+}
+
+function exportJSON(obj, fileName, delay) {
+	setTimeout(function() {
+		var link = document.createElement('a');
+		link.download = fileName;
+		link.href = 'data:application/json,' + encodeURIComponent(JSON.stringify(obj));
+		link.dispatchEvent(new MouseEvent('click'));
+	}, delay);
+}
+
+function loadStationRefData() {
+	return Promise.all([
+		'JR-East', 'JR-Central', 'TWR', 'Izukyu', 'Tobu', 'Seibu', 'Tokyu',
+		'SaitamaRailway', 'Minatomirai', 'Keio', 'TokyoMetro', 'Toei', 'Tobu',
+		'ToyoRapid', 'Odakyu', 'Keikyu', 'Keisei', 'Hokuso', 'Shibayama'
+	].map(function(operator) {
+		return loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:' + operator + '&' + API_TOKEN);
+	})).then(function(stationRefData) {
+		return concat(stationRefData).map(function(station) {
+			return {
+				coord: [station['geo:long'], station['geo:lat']],
+				id: removePrefix(station['owl:sameAs']),
+				railway: removePrefix(station['odpt:railway']),
+				title: station['odpt:stationTitle']
+			};
+		});
+	});
+}
+
+function loadRailwayRefData() {
+	return loadJSON(API_URL + 'odpt:Railway?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'Keio'].map(function(operator) {
+		return 'odpt.Operator:' + operator;
+	}).join(',') + '&' + API_TOKEN).then(function(railwayRefData) {
+		return railwayRefData.map(function(railway) {
+			return {
+				id: removePrefix(railway['owl:sameAs']),
+				title: railway['odpt:railwayTitle'],
+				order: railway['odpt:stationOrder'].map(function(obj) {
+					return {
+						s: removePrefix(obj['odpt:station'])
+					};
+				}),
+				ascending: removePrefix(railway['odpt:ascendingRailDirection'])
+			};
+		});
 	});
 }
 

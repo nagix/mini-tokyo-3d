@@ -1,0 +1,409 @@
+[{
+	"id": "JR-East.Yamanote",
+	"title": {
+		"ko": "야마노테 선",
+		"zh": "山手线"
+	},
+	"color": "#80C342",
+	"carComposition": 11
+}, {
+	"id": "JR-East.ChuoRapid",
+	"title": {
+		"ko": "주오 선 쾌속",
+		"zh": "中央线快速"
+	},
+	"color": "#F15A22",
+	"carComposition": 10
+}, {
+	"id": "JR-East.Ome",
+	"title": {
+		"ko": "오메 선",
+		"zh": "青梅线"
+	},
+	"color": "#F15A22",
+	"carComposition": 10
+}, {
+	"id": "JR-East.Itsukaichi",
+	"title": {
+		"ko": "이쓰카이치 선",
+		"zh": "五日市线"
+	},
+	"color": "#F15A22",
+	"carComposition": 6
+}, {
+	"id": "JR-East.ChuoSobuLocal",
+	"title": {
+		"ko": "주오·소부 각역정차",
+		"zh": "中央·总武各站停车"
+	},
+	"color": "#FFD400",
+	"carComposition": 10
+}, {
+	"id": "JR-East.Tokaido",
+	"title": {
+		"ko": "도카이도 선",
+		"zh": "东海道线"
+	},
+	"color": "#F68B1E",
+	"carComposition": 15
+}, {
+	"id": "JR-East.Utsunomiya",
+	"title": {
+		"ko": "우쓰노미야 선",
+		"zh": "宇都宫线"
+	},
+	"color": "#F68B1E",
+	"carComposition": 15
+}, {
+	"id": "JR-East.Takasaki",
+	"title": {
+		"ko": "다카사키 선",
+		"zh": "高崎线"
+	},
+	"color": "#F68B1E",
+	"carComposition": 15
+}, {
+	"id": "JR-East.KeihinTohokuNegishi",
+	"title": {
+		"ko": "게이힌 도호쿠 선·네기시 선",
+		"zh": "京滨东北线·根岸线"
+	},
+	"color": "#00B2E5",
+	"carComposition": 10
+}, {
+	"id": "JR-East.JobanRapid",
+	"title": {
+		"ko": "조반 선 쾌속",
+		"zh": "常磐线快速"
+	},
+	"color": "#00B261",
+	"carComposition": 15
+}, {
+	"id": "JR-East.JobanLocal",
+	"title": {
+		"ko": "조반 선 각역정차",
+		"zh": "常磐线各站停车"
+	},
+	"color": "#A8A39D",
+	"carComposition": 10
+}, {
+	"id": "JR-East.SobuRapid",
+	"title": {
+		"ko": "소부 쾌속선",
+		"zh": "总武快速线"
+	},
+	"color": "#007AC1",
+	"carComposition": 15
+}, {
+	"id": "JR-East.Sobu",
+	"title": {
+		"ko": "소부 본선",
+		"zh": "总武本线"
+	},
+	"color": "#A8A39D",
+	"carComposition": 15
+}, {
+	"id": "JR-East.Narita",
+	"title": {
+		"ko": "나리타 선",
+		"zh": "成田线"
+	},
+	"color": "#00B261",
+	"carComposition": 15
+}, {
+	"id": "JR-East.NaritaAirportBranch",
+	"title": {
+		"ko": "나리타 선 공항 지선",
+		"zh": "成田线机场支线"
+	},
+	"color": "#00B261",
+	"carComposition": 15
+}, {
+	"id": "JR-East.Uchibo",
+	"title": {
+		"ko": "우치보 선",
+		"zh": "内房线"
+	},
+	"color": "#DCAF27",
+	"carComposition": 15
+}, {
+	"id": "JR-East.Sotobo",
+	"title": {
+		"ko": "소토보 선",
+		"zh": "外房线"
+	},
+	"color": "#008848",
+	"carComposition": 15
+}, {
+	"id": "JR-East.Yokosuka",
+	"title": {
+		"ko": "요코스카 선",
+		"zh": "横须贺线"
+	},
+	"color": "#007AC1",
+	"carComposition": 15
+}, {
+	"id": "JR-East.Keiyo",
+	"title": {
+		"ko": "게이요 선",
+		"zh": "京叶线"
+	},
+	"color": "#C9252F",
+	"carComposition": 10
+}, {
+	"id": "JR-East.SaikyoKawagoe",
+	"title": {
+		"ko": "사이쿄 선·가와고에 선",
+		"zh": "埼京线·川越线"
+	},
+	"color": "#00B48D",
+	"carComposition": 10
+}, {
+	"id": "JR-East.ShonanShinjuku",
+	"title": {
+		"ko": "쇼난 신주쿠 라인",
+		"zh": "湘南新宿线"
+	},
+	"color": "#E31F26",
+	"carComposition": 15
+}, {
+	"id": "JR-East.Tsurumi",
+	"title": {
+		"ko": "쓰루미 선",
+		"zh": "鹤见线"
+	},
+	"color": "#FFD400",
+	"carComposition": 3
+}, {
+	"id": "JR-East.TsurumiUmiShibauraBranch",
+	"title": {
+		"ko": "쓰루미 선 우미시바우라 지선",
+		"zh": "鹤见线海芝浦支线"
+	},
+	"color": "#FFD400",
+	"carComposition": 3
+}, {
+	"id": "JR-East.TsurumiOkawaBranch",
+	"title": {
+		"ko": "쓰루미 선 오카와 지선",
+		"zh": "鹤见线大川支线"
+	},
+	"color": "#FFD400",
+	"carComposition": 3
+}, {
+	"id": "JR-East.Nambu",
+	"title": {
+		"ko": "난부 선",
+		"zh": "南武线"
+	},
+	"color": "#FFD400",
+	"carComposition": 6
+}, {
+	"id": "JR-East.NambuBranch",
+	"title": {
+		"ko": "난부 선 하마카와사키 지선",
+		"zh": "南武线滨川崎支线"
+	},
+	"color": "#FFD400",
+	"carComposition": 2
+}, {
+	"id": "JR-East.Yokohama",
+	"title": {
+		"ko": "요코하마 선",
+		"zh": "横滨线"
+	},
+	"color": "#80C342",
+	"carComposition": 8
+}, {
+	"id": "TWR.Rinkai",
+	"title": {
+		"ko": "린카이 선",
+		"zh": "临海线"
+	},
+	"altitude": -1,
+	"color": "#00418E",
+	"carComposition": 10
+}, {
+	"id": "TokyoMetro.Ginza",
+	"title": {
+		"ko": "긴자 선",
+		"zh": "银座线"
+	},
+	"altitude": -1,
+	"color": "#FF9500",
+	"carComposition": 6
+}, {
+	"id": "TokyoMetro.Marunouchi",
+	"title": {
+		"ko": "마루노우치 선",
+		"zh": "丸之内线"
+	},
+	"altitude": -1,
+	"color": "#F62E36",
+	"carComposition": 6
+}, {
+	"id": "TokyoMetro.MarunouchiBranch",
+	"title": {
+		"ko": "마루노우치 지선",
+		"zh": "丸之内线支线"
+	},
+	"altitude": -1,
+	"color": "#F62E36",
+	"carComposition": 6
+}, {
+	"id": "TokyoMetro.Hibiya",
+	"title": {
+		"ko": "히비야 선",
+		"zh": "日比谷线"
+	},
+	"altitude": -1,
+	"color": "#B5B5AC",
+	"carComposition": 7
+}, {
+	"id": "TokyoMetro.Tozai",
+	"title": {
+		"ko": "도자이 선",
+		"zh": "东西线"
+	},
+	"altitude": -1,
+	"color": "#009BBF",
+	"carComposition": 10
+}, {
+	"id": "TokyoMetro.Chiyoda",
+	"title": {
+		"ko": "지요다 선",
+		"zh": "千代田线"
+	},
+	"altitude": -1,
+	"color": "#00BB85",
+	"carComposition": 10
+}, {
+	"id": "TokyoMetro.Yurakucho",
+	"title": {
+		"ko": "유라쿠초 선",
+		"zh": "有乐町线"
+	},
+	"altitude": -1,
+	"color": "#C1A470",
+	"carComposition": 10
+}, {
+	"id": "TokyoMetro.Hanzomon",
+	"title": {
+		"ko": "한조몬 선",
+		"zh": "半藏门线"
+	},
+	"altitude": -1,
+	"color": "#8F76D6",
+	"carComposition": 10
+}, {
+	"id": "TokyoMetro.Namboku",
+	"title": {
+		"ko": "난보쿠 선",
+		"zh": "南北线"
+	},
+	"altitude": -1,
+	"color": "#00AC9B",
+	"carComposition": 6
+}, {
+	"id": "TokyoMetro.Fukutoshin",
+	"title": {
+		"ko": "후쿠토신 선",
+		"zh": "副都心线"
+	},
+	"altitude": -1,
+	"color": "#9C5E31",
+	"carComposition": 10
+}, {
+	"id": "Toei.Asakusa",
+	"title": {
+		"ko": "아사쿠사 선",
+		"zh": "浅草线"
+	},
+	"altitude": -1,
+	"color": "#DC435F",
+	"carComposition": 8
+}, {
+	"id": "Toei.Mita",
+	"title": {
+		"ko": "미타 선",
+		"zh": "三田线"
+	},
+	"altitude": -1,
+	"color": "#006AB8",
+	"carComposition": 6
+}, {
+	"id": "Toei.Shinjuku",
+	"title": {
+		"ko": "신주쿠 선",
+		"zh": "新宿线"
+	},
+	"altitude": -1,
+	"color": "#B0BF1E",
+	"carComposition": 10
+}, {
+	"id": "Toei.Oedo",
+	"title": {
+		"ko": "오에도 선",
+		"zh": "大江户线"
+	},
+	"altitude": -1,
+	"color": "#CE045B",
+	"carComposition": 8
+}, {
+	"id": "Keio.Keio",
+	"title": {
+		"ko": "게이오 선",
+		"zh": "京王线"
+	},
+	"color": "#DD0077",
+	"carComposition": 10
+}, {
+	"id": "Keio.KeioNew",
+	"title": {
+		"ko": "게이오 신선",
+		"zh": "京王新线"
+	},
+	"altitude": -1,
+	"color": "#DD0077",
+	"carComposition": 10
+}, {
+	"id": "Keio.Sagamihara",
+	"title": {
+		"ko": "사가미하라 선",
+		"zh": "相模原线"
+	},
+	"color": "#DD0077",
+	"carComposition": 10
+}, {
+	"id": "Keio.Keibajo",
+	"title": {
+		"ko": "경마장선",
+		"zh": "竞马场线"
+	},
+	"color": "#DD0077",
+	"carComposition": 2
+}, {
+	"id": "Keio.Dobutsuen",
+	"title": {
+		"ko": "동물원선",
+		"zh": "动物园线"
+	},
+	"color": "#DD0077",
+	"carComposition": 4
+}, {
+	"id": "Keio.Takao",
+	"title": {
+		"ko": "다카오 선",
+		"zh": "高尾线"
+	},
+	"color": "#DD0077",
+	"carComposition": 10
+}, {
+	"id": "Keio.Inokashira",
+	"title": {
+		"ko": "이노카시라 선",
+		"zh": "井之头线"
+	},
+	"color": "#000088",
+	"carComposition": 5
+}]
