@@ -90,6 +90,11 @@ MapboxLayer.prototype.render = function(gl, matrix) {
 	var map = this.map;
 	var center = map.getCenter();
 
+	if (!deck.layerManager) {
+		// Not yet initialized
+		return;
+	}
+
 	if (!deck.props.userData.currentViewport) {
 		deck.props.userData.currentViewport = new WebMercatorViewport({
 			x: 0,
@@ -395,11 +400,7 @@ map.once('load', function () {
 });
 
 map.once('styledata', function () {
-	map.getStyle().layers.forEach(function(layer) {
-		if (layer.type === 'symbol') {
-			map.setLayoutProperty(layer.id, 'visibility', 'none');
-		}
-	});
+	map.setLayoutProperty('poi', 'text-field', '{name' + (lang === 'en' ? ':en}' : lang === 'ko' ? ':ko}' : '}'));
 
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
