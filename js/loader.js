@@ -18,11 +18,13 @@
  *    https://github.com/nagix/mini-tokyo-3d
  */
 
+require('dotenv').config();
+
 // API URL
-var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
+var API_URL = process.env.API_URL;
 
 // API Token
-var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
+var API_TOKEN = process.env.API_TOKEN;
 
 var timetables = {};
 var isUndergroundVisible = false;

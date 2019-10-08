@@ -18,6 +18,8 @@
  *    https://github.com/nagix/mini-tokyo-3d
  */
 
+require('dotenv').config();
+
 // Standing duration at origin in milliseconds
 var STANDING_DURATION = 60000;
 
@@ -57,10 +59,10 @@ var MIN_DELAY = 25000;
 var MIN_FLIGHT_INTERVAL = 75000;
 
 // API URL
-var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
+var API_URL = process.env.API_URL;
 
 // API Token
-var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
+var API_TOKEN = process.env.API_TOKEN;
 
 var SQRT3 = Math.sqrt(3);
 var DEGREE_TO_RADIAN = Math.PI / 180;
