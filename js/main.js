@@ -261,6 +261,8 @@ Promise.all([
 	railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData
 ]) {
 
+mapboxgl.accessToken = 'pk.eyJ1IjoibmFnaXgiLCJhIjoiY2sxaTZxY2gxMDM2MDNjbW5nZ2h4aHB6ZyJ9.npSnxvMC4r5S74l8A9Hrzw';
+
 var map = new mapboxgl.Map({
 	container: 'map',
 	style: 'data/osm-liberty.json',
@@ -400,7 +402,7 @@ map.once('load', function () {
 });
 
 map.once('styledata', function () {
-	map.setLayoutProperty('poi', 'text-field', '{name' + (lang === 'en' ? ':en}' : lang === 'ko' ? ':ko}' : '}'));
+	map.setLayoutProperty('poi', 'text-field', '{name' + (lang === 'en' ? '_en}' : lang === 'ko' ? '_ko}' : '}'));
 
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
@@ -1196,9 +1198,11 @@ map.once('styledata', function () {
 
 	function stopTrain(train) {
 		stopAnimation(train._animationID);
-		train._cars.forEach(function(car) {
-			trainLayers.removeObject(car, train, 1000);
-		});
+		if (train._cars) {
+			train._cars.forEach(function(car) {
+				trainLayers.removeObject(car, train, 1000);
+			});
+		}
 		delete train._cars;
 		delete activeTrainLookup[train.t];
 		if (train._delayMarker) {
