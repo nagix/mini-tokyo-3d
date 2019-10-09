@@ -24,6 +24,7 @@ var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
 // API Token
 var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
 
+var lang = getLang();
 var timetables = {};
 var isUndergroundVisible = false;
 var opacityStore = {};
@@ -136,6 +137,8 @@ Promise.all([
 	stationRefData, railwayRefData, railDirectionRefData, trainTypeRefData
 ]) {
 
+mapboxgl.accessToken = 'pk.eyJ1IjoibmFnaXgiLCJhIjoiY2sxaTZxY2gxMDM2MDNjbW5nZ2h4aHB6ZyJ9.npSnxvMC4r5S74l8A9Hrzw';
+
 var map = new mapboxgl.Map({
 	container: 'map',
 	style: 'data/osm-liberty.json',
@@ -159,6 +162,9 @@ stationData.forEach(function(stations) {
 		});
 	});
 });
+
+// Fix the coordinates of Keio Shinjuku station
+stationLookup['Keio.Keio.Shinjuku'].coord = [139.69916, 35.69019];
 
 railwayLookup = buildLookup(railwayRefData, 'id');
 
@@ -411,11 +417,7 @@ map.once('load', function () {
 });
 
 map.once('styledata', function () {
-	map.getStyle().layers.forEach(function(layer) {
-		if (layer.type === 'symbol') {
-			map.setLayoutProperty(layer.id, 'visibility', 'none');
-		}
-	});
+	map.setLayoutProperty('poi', 'text-field', '{name' + (lang === 'en' ? '_en}' : lang === 'ko' ? '_ko}' : '}'));
 
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
@@ -863,4 +865,21 @@ function buildLookup(array, key) {
 		lookup[element[key]] = element;
 	});
 	return lookup;
+}
+
+function getLang() {
+	var match = location.search.match(/lang=(.*?)(&|$)/);
+	var lang = match ? decodeURIComponent(match[1]).substring(0, 2) : '';
+
+	if (lang.match(/ja|en|ko|zh/)) {
+		return lang;
+	}
+
+	lang = (window.navigator.languages && window.navigator.languages[0]) ||
+		window.navigator.language ||
+		window.navigator.userLanguage ||
+		window.navigator.browserLanguage || '';
+	lang = lang.substring(0, 2);
+
+	return lang.match(/ja|en|ko|zh/) ? lang : 'en';
 }
