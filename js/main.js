@@ -402,7 +402,7 @@ map.once('load', function () {
 });
 
 map.once('styledata', function () {
-	map.setLayoutProperty('poi', 'text-field', '{name' + (lang === 'en' ? '_en}' : lang === 'ko' ? '_ko}' : '}'));
+	map.setLayoutProperty('poi', 'text-field', '{name' + (lang === 'en' ? '_en}' : lang === 'ko' ? '_ko}' : lang === 'zh' ? '_zh-Hans}' : '}'));
 
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
