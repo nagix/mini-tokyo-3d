@@ -1670,7 +1670,7 @@ function setSectionData(train, index) {
 	var current = table[index];
 	var next = table[index + 1];
 	var stations = railwayLookup[train.r].stations;
-	var departureStation = current && (current.ds || current.as);
+	var departureStation = current.ds || current.as;
 	var arrivalStation = next && (next.as || next.ds);
 	var currentSection, nextSection;
 
@@ -1682,12 +1682,13 @@ function setSectionData(train, index) {
 		nextSection = stations.lastIndexOf(arrivalStation, currentSection);
 	}
 
+	train._timetableIndex = index;
+	train._departureStation = departureStation;
+	train._departureTime = current.dt || current.at;
+
 	if (currentSection >= 0 && nextSection >= 0) {
-		train._timetableIndex = index;
 		train._sectionIndex = currentSection;
 		train._sectionLength = nextSection - currentSection;
-		train._departureStation = departureStation;
-		train._departureTime = current.dt || current.at;
 		train._arrivalStation = arrivalStation;
 		train._arrivalTime = next.at || next.dt;
 
