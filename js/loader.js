@@ -115,6 +115,24 @@ loadJSON('data-extra/railways.json').then(function(railwayData) {
 					}),
 					pt: removePrefix(table['odpt:previousTrainTimetable'])
 				};
+			}).map(function(table) {
+				// Add a postfix to Toei Oedo Tochomae station
+				var tt = table.tt;
+				tt.forEach(function(obj, i) {
+					var prev = tt[i - 1] || {};
+					var next = tt[i + 1] || {};
+					if ((obj.as || obj.ds) === 'Toei.Oedo.Tochomae' &&
+						(prev.as || prev.ds) !== 'Toei.Oedo.ShinjukuNishiguchi' &&
+						(next.as || next.ds) !== 'Toei.Oedo.ShinjukuNishiguchi') {
+						if (obj.as) {
+							obj.as += '.1';
+						}
+						if (obj.ds) {
+							obj.ds += '.1';
+						}
+					}
+				})
+				return table;
 			});
 		});
 	});
@@ -147,6 +165,17 @@ var map = new mapboxgl.Map({
 	center: [139.7670, 35.6814],
 	zoom: 14,
 	pitch: 60
+});
+
+// Add another instance of Toei Oedo Tochomae station
+stationRefData.push({
+	coord: [139.692691, 35.690551],
+	railway: 'Toei.Oedo',
+	id: 'Toei.Oedo.Tochomae.1',
+	title: {
+		ja: '都庁前',
+		en: 'Tochomae'
+	}
 });
 
 stationLookup = buildLookup(stationRefData, 'id');
@@ -199,6 +228,10 @@ railwayData.forEach(function(railway) {
 	railwayRef.altitude = railway.altitude;
 	railwayRef.carComposition = railway.carComposition;
 });
+
+// Add a postfix to Toei Oedo Tochomae station
+railwayLookup['Toei.Oedo'].order[28].s += '.1';
+railwayLookup['Toei.Oedo'].stations[28] += '.1';
 
 var railwayFeatureArray = [];
 
