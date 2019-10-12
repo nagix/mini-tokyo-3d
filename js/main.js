@@ -1281,20 +1281,33 @@ map.once('styledata', function () {
 			trainRefData.forEach(function(trainRef) {
 				var delay = trainRef['odpt:delay'] * 1000;
 				var carComposition = trainRef['odpt:carComposition'];
+				var trainType = removePrefix(trainRef['odpt:trainType']);
+				var destination = removePrefix(trainRef['odpt:destinationStation']);
 				var id = removePrefix(trainRef['owl:sameAs']);
 				var train = trainLookup[id];
 				var activeTrain = activeTrainLookup[id];
+				var changed = false;
 
 				if (train) {
 					realtimeTrainLookup[id] = train;
 					if (delay && train._delay !== delay) {
-						if (activeTrainLookup[id]) {
-							stopTrain(train);
-						}
 						train._delay = delay;
+						changed = true;
 					}
-					if (carComposition) {
+					if (carComposition && train._carComposition !== carComposition) {
 						train._carComposition = carComposition;
+						changed = true;
+					}
+					if (trainType && train.y !== trainType) {
+						train.y = trainType;
+						changed = true;
+					}
+					if (destination && train.ds[0] !== destination[0]) {
+						train.ds = destination;
+						changed = true;
+					}
+					if (changed && activeTrainLookup[id]) {
+						stopTrain(train);
 					}
 				}
 			});
