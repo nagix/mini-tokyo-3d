@@ -1247,21 +1247,28 @@ map.once('styledata', function () {
 			});
 
 			trainInfoRefData.forEach(function(trainInfoRef) {
+				var operatorID = removePrefix(trainInfoRef['odpt:operator']);
 				var railwayID = removePrefix(trainInfoRef['odpt:railway']);
 				var status = trainInfoRef['odpt:trainInformationStatus'];
 				var text = trainInfoRef['odpt:trainInformationText'];
-				var railway;
+				var railways;
 
 				// Train information text is provided in Japanese only
-				if (railwayID && status && status.en && status.en.indexOf('suspended') !== -1) {
-					railway = railwayLookup[railwayID];
-					railway.status = status.ja;
-					railway.text = text.ja;
-					Object.keys(activeTrainLookup).forEach(function(key) {
-						var train = activeTrainLookup[key];
-						if (train.r === railwayID) {
-							stopTrain(train);
-						}
+				if (status && status.ja &&
+					(status.ja.indexOf('運転見合わせ') !== -1 || status.ja.indexOf('運行情報あり') !== -1)) {
+					railways = railwayID ? [railwayLookup[railwayID]] :
+						railwayRefData.filter(function(railway) {
+							return railway.id.indexOf(operatorID) === 0;
+						});
+					railways.forEach(function(railway) {
+						railway.status = status.ja;
+						railway.text = text.ja;
+						Object.keys(activeTrainLookup).forEach(function(key) {
+							var train = activeTrainLookup[key];
+							if (train.r === railwayID || (!railwayID && train.r.indexOf(operatorID) === 0)) {
+								stopTrain(train);
+							}
+						});
 					});
 				}
 			});
