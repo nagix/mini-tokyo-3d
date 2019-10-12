@@ -77,6 +77,7 @@ var opacityStore = {};
 var animations = {};
 var featureLookup = {};
 var activeTrainLookup = {};
+var realtimeTrainLookup = {};
 var flightLookup = {};
 var activeFlightLookup = {};
 var animationID = 0;
@@ -743,8 +744,8 @@ map.once('styledata', function () {
 				if (Math.floor((now - MIN_DELAY) / TRAIN_REFRESH_INTERVAL) !== Math.floor(lastTrainRefresh / TRAIN_REFRESH_INTERVAL)) {
 					refreshTrains();
 					refreshFlights();
-					updateDelays();
-					updateFlights();
+					loadRealtimeTrainData();
+					loadRealtimeFlightData();
 					lastTrainRefresh = now - MIN_DELAY;
 				}
 				if (markedObject) {
@@ -952,7 +953,8 @@ map.once('styledata', function () {
 			if (train._start + d <= now && now <= train._end + d &&
 				!activeTrainLookup[train.t] &&
 				(!train._previousTrain || !activeTrainLookup[train._previousTrain.t]) &&
-				(!train._nextTrain || !activeTrainLookup[train._nextTrain.t])) {
+				(!train._nextTrain || !activeTrainLookup[train._nextTrain.t]) &&
+				(!railwayLookup[train.r].status || realtimeTrainLookup[train.t])) {
 				function start(index) {
 					var now = Date.now();
 					var departureTime;
@@ -1150,17 +1152,18 @@ map.once('styledata', function () {
 
 	function setTrainStandingStatus(train, standing) {
 		var railwayID = train.r;
+		var railway = railwayLookup[railwayID];
 		var destination = train.ds;
 		var delay = train._delay || 0;
 
 		train._standing = standing;
 		train._description =
-			'<span class="desc-box" style="background-color: ' + railwayLookup[railwayID].color + ';"></span> ' +
+			'<span class="desc-box" style="background-color: ' + railway.color + ';"></span> ' +
 			'<strong>' + getLocalizedRailwayTitle(railwayID) + '</strong>' +
 			'<br>' + getLocalizedTrainTypeTitle(train.y) + ' ' +
 			(destination ? dict['for'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train.d)) +
 			'<br><strong>' + dict['train-number'] + ':</strong> ' + train.n +
-			'<br>' + (delay >= 60000 ? '<span class="desc-delay">' : '') +
+			'<br>' + (delay >= 60000 ? '<span class="desc-caution">' : '') +
 			'<strong>' + dict[train._standing ? 'standing-at' : 'previous-stop'] + ':</strong> ' +
 			getLocalizedStationTitle(train._departureStation) +
 			' ' + getTimeString(getTime(train._departureTime) + delay) +
@@ -1168,7 +1171,8 @@ map.once('styledata', function () {
 				'<br><strong>' + dict['next-stop'] + ':</strong> ' +
 				getLocalizedStationTitle(train._arrivalStation) +
 				' ' + getTimeString(getTime(train._arrivalTime) + delay) : '') +
-			(delay >= 60000 ? '<br>' + dict['delay'].replace('$1', Math.floor(delay / 60000)) + '</span>' : '');
+			(delay >= 60000 ? '<br>' + dict['delay'].replace('$1', Math.floor(delay / 60000)) + '</span>' : '') +
+			(railway.status ? '<br><span class="desc-caution"><strong>' + railway.status + ':</strong> ' + railway.text + '</span>' : '');
 	}
 
 	function setFlightStandingStatus(flight, standing) {
@@ -1188,7 +1192,7 @@ map.once('styledata', function () {
 			dict[destination ? 'to' : 'from'].replace('$1', getLocalizedAirportTitle(destination || origin)) +
 			'<br><strong>' + dict['status'] + ':</strong> ' + getLocalizedFlightStatusTitle(flight['odpt:flightStatus']) +
 			'<br><strong>' + dict['scheduled-' + (destination ? 'departure' : 'arrival') + '-time'] + ':</strong> ' + scheduledTime +
-			(delayed ? '<span class="desc-delay">' : '') +
+			(delayed ? '<span class="desc-caution">' : '') +
 			(estimatedTime || actualTime ? '<br><strong>' + (estimatedTime ?
 				dict['estimated-' + (destination ? 'departure' : 'arrival') + '-time'] + ':</strong> ' + estimatedTime :
 				dict['actual-' + (destination ? 'departure' : 'arrival') + '-time'] + ':</strong> ' + actualTime) : '') +
@@ -1232,8 +1236,38 @@ map.once('styledata', function () {
 		lastTrainRefresh = undefined;
 	}
 
-	function updateDelays() {
-		loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN).then(function(trainRefData) {
+	function loadRealtimeTrainData() {
+		Promise.all([
+			loadJSON(API_URL + 'odpt:TrainInformation?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN),
+			loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN)
+		]).then(function([trainInfoRefData, trainRefData]) {
+			// Reset railway information text
+			railwayRefData.forEach(function(railway) {
+				railway.status = railway.text = undefined;
+			});
+
+			trainInfoRefData.forEach(function(trainInfoRef) {
+				var railwayID = removePrefix(trainInfoRef['odpt:railway']);
+				var status = trainInfoRef['odpt:trainInformationStatus'];
+				var text = trainInfoRef['odpt:trainInformationText'];
+				var railway;
+
+				// Train information text is provided in Japanese only
+				if (railwayID && status && status.en && status.en.indexOf('suspended') !== -1 && lang === 'ja') {
+					railway = railwayLookup[railwayID];
+					railway.status = status.ja;
+					railway.text = text.ja;
+					Object.keys(activeTrainLookup).forEach(function(key) {
+						var train = activeTrainLookup[key];
+						if (train.r === railwayID) {
+							stopTrain(train);
+						}
+					});
+				}
+			});
+
+			realtimeTrainLookup = {};
+
 			trainRefData.forEach(function(trainRef) {
 				var delay = trainRef['odpt:delay'] * 1000;
 				var carComposition = trainRef['odpt:carComposition'];
@@ -1242,6 +1276,7 @@ map.once('styledata', function () {
 				var activeTrain = activeTrainLookup[id];
 
 				if (train) {
+					realtimeTrainLookup[id] = train;
 					if (delay && train._delay !== delay) {
 						if (activeTrainLookup[id]) {
 							stopTrain(train);
@@ -1257,7 +1292,7 @@ map.once('styledata', function () {
 		});
 	}
 
-	function updateFlights() {
+	function loadRealtimeFlightData() {
 		Promise.all([
 			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=odpt.Operator:NAA&' + API_TOKEN),
 			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=odpt.Operator:HND-JAT,odpt.Operator:HND-TIAT&' + API_TOKEN),
