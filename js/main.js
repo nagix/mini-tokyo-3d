@@ -1172,7 +1172,7 @@ map.once('styledata', function () {
 				getLocalizedStationTitle(train._arrivalStation) +
 				' ' + getTimeString(getTime(train._arrivalTime) + delay) : '') +
 			(delay >= 60000 ? '<br>' + dict['delay'].replace('$1', Math.floor(delay / 60000)) + '</span>' : '') +
-			(railway.status ? '<br><span class="desc-caution"><strong>' + railway.status + ':</strong> ' + railway.text + '</span>' : '');
+			(railway.status && lang === 'ja' ? '<br><span class="desc-caution"><strong>' + railway.status + ':</strong> ' + railway.text + '</span>' : '');
 	}
 
 	function setFlightStandingStatus(flight, standing) {
@@ -1253,7 +1253,7 @@ map.once('styledata', function () {
 				var railway;
 
 				// Train information text is provided in Japanese only
-				if (railwayID && status && status.en && status.en.indexOf('suspended') !== -1 && lang === 'ja') {
+				if (railwayID && status && status.en && status.en.indexOf('suspended') !== -1) {
 					railway = railwayLookup[railwayID];
 					railway.status = status.ja;
 					railway.text = text.ja;
