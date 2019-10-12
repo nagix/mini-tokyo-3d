@@ -1255,7 +1255,10 @@ map.once('styledata', function () {
 
 				// Train information text is provided in Japanese only
 				if (status && status.ja &&
-					(status.ja.indexOf('運転見合わせ') !== -1 || status.ja.indexOf('運行情報あり') !== -1)) {
+					(status.ja.indexOf('見合わせ') !== -1 ||
+					status.ja.indexOf('折返し運転') !== -1 ||
+					status.ja.indexOf('運休') !== -1 ||
+					status.ja.indexOf('運行情報あり') !== -1)) {
 					railways = railwayID ? [railwayLookup[railwayID]] :
 						railwayRefData.filter(function(railway) {
 							return railway.id.indexOf(operatorID) === 0;
