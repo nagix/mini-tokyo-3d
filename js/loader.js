@@ -24,7 +24,7 @@ var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
 // API Token
 var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
 
-var lang = getLang();
+var lang = ();
 var timetables = {};
 var isUndergroundVisible = false;
 var opacityStore = {};
@@ -904,7 +904,7 @@ function getLang() {
 	var match = location.search.match(/lang=(.*?)(&|$)/);
 	var lang = match ? decodeURIComponent(match[1]).substring(0, 2) : '';
 
-	if (lang.match(/ja|en|ko|zh/)) {
+	if (lang.match(/ja|en|ko|zh|th/)) {
 		return lang;
 	}
 
@@ -914,5 +914,5 @@ function getLang() {
 		window.navigator.browserLanguage || '';
 	lang = lang.substring(0, 2);
 
-	return lang.match(/ja|en|ko|zh/) ? lang : 'en';
+	return lang.match(/ja|en|ko|zh|th/) ? lang : 'en';
 }
