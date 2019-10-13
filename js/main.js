@@ -1239,11 +1239,12 @@ map.once('styledata', function () {
 	function loadRealtimeTrainData() {
 		Promise.all([
 			loadJSON(API_URL + 'odpt:TrainInformation?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN),
-			loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN)
+			loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN)
 		]).then(function([trainInfoRefData, trainRefData]) {
 			// Reset railway information text
 			railwayRefData.forEach(function(railway) {
-				railway.status = railway.text = undefined;
+				delete railway.status;
+				delete railway.text;
 			});
 
 			trainInfoRefData.forEach(function(trainInfoRef) {
@@ -1254,24 +1255,20 @@ map.once('styledata', function () {
 				var railways;
 
 				// Train information text is provided in Japanese only
-				if (status && status.ja &&
+				if (railwayID && status && status.ja &&
+					(operatorID === 'JR-East' || operatorID === 'TokyoMetro' || operatorID === 'Toei') &&
 					(status.ja.indexOf('見合わせ') !== -1 ||
 					status.ja.indexOf('折返し運転') !== -1 ||
 					status.ja.indexOf('運休') !== -1 ||
-					status.ja.indexOf('運行情報あり') !== -1)) {
-					railways = railwayID ? [railwayLookup[railwayID]] :
-						railwayRefData.filter(function(railway) {
-							return railway.id.indexOf(operatorID) === 0;
-						});
-					railways.forEach(function(railway) {
-						railway.status = status.ja;
-						railway.text = text.ja;
-						Object.keys(activeTrainLookup).forEach(function(key) {
-							var train = activeTrainLookup[key];
-							if (train.r === railwayID || (!railwayID && train.r.indexOf(operatorID) === 0)) {
-								stopTrain(train);
-							}
-						});
+					status.ja.indexOf('遅延') !== -1)) {
+					railway = railwayLookup[railwayID];
+					railway.status = status.ja;
+					railway.text = text.ja;
+					Object.keys(activeTrainLookup).forEach(function(key) {
+						var train = activeTrainLookup[key];
+						if (train.r === railwayID) {
+							stopTrain(train);
+						}
 					});
 				}
 			});
