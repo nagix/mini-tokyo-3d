@@ -31,7 +31,7 @@ var opacityStore = {};
 var animations = {};
 var featureLookup = {};
 var animationID = 0;
-var stationLookup, railwayLookup;
+var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, operatorLookup, airportLookup, flightStatusLookup;
 
 // Replace MapboxLayer.render to support underground rendering
 var render = MapboxLayer.prototype.render;
@@ -94,8 +94,8 @@ loadJSON('data-extra/railways.json').then(function(railwayData) {
 			return loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:' + id +
 				(id === 'JR-East.ChuoSobuLocal' ? '' : '&odpt:calendar=odpt.Calendar:' + calendar) +
 				'&' + API_TOKEN);
-		})).then(function(timetableRefData) {
-			timetables[calendar] = concat(timetableRefData).map(function(table) {
+		})).then(function(data) {
+			timetables[calendar] = concat(data).map(function(table) {
 				return {
 					t: removePrefix(table['odpt:train']),
 					id: removePrefix(table['owl:sameAs']),
@@ -144,15 +144,19 @@ Promise.all([
 	loadJSON('data-extra/railways.json'),
 	loadJSON('data-extra/rail-directions.json'),
 	loadJSON('data-extra/train-types.json'),
+	loadJSON('data-extra/operators.json'),
+	loadJSON('data-extra/airports.json'),
+	loadJSON('data-extra/flight-status.json'),
 	loadStationRefData(),
 	loadRailwayRefData(),
-	loadJSON(API_URL + 'odpt:RailDirection?' + API_TOKEN),
-	loadJSON(API_URL + 'odpt:TrainType?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'Keio'].map(function(operator) {
-		return 'odpt.Operator:' + operator;
-	}).join(',') + '&' + API_TOKEN)
+	loadRailDirectionRefData(),
+	loadTrainTypeRefData(),
+	loadOperatorRefData(),
+	loadAirportRefData(),
+	loadFlightStatusRefData()
 ]).then(function([
-	coordinateData, stationData, railwayData, railDirectionData, trainTypeData,
-	stationRefData, railwayRefData, railDirectionRefData, trainTypeRefData
+	coordinateData, stationData, railwayData, railDirectionData, trainTypeData, operatorData, airportData, flightStatusData,
+	stationRefData, railwayRefData, railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData
 ]) {
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibmFnaXgiLCJhIjoiY2sxaTZxY2gxMDM2MDNjbW5nZ2h4aHB6ZyJ9.npSnxvMC4r5S74l8A9Hrzw';
@@ -178,9 +182,8 @@ stationRefData.push({
 	}
 });
 
-stationLookup = buildLookup(stationRefData, 'id');
-
-// Update station lookup dictionary
+// Build station data
+stationLookup = buildLookup(stationRefData);
 stationData.forEach(function(stations) {
 	if (!Array.isArray(stations)) {
 		stations = [stations];
@@ -195,9 +198,8 @@ stationData.forEach(function(stations) {
 // Fix the coordinates of Keio Shinjuku station
 stationLookup['Keio.Keio.Shinjuku'].coord = [139.69916, 35.69019];
 
-railwayLookup = buildLookup(railwayRefData, 'id');
-
-// Update railway lookup dictionary
+// Build railway data
+railwayLookup = buildLookup(railwayRefData);
 railwayData.forEach(function(railway) {
 	var id = railway.id;
 	var railwayRef = railwayLookup[id];
@@ -417,32 +419,38 @@ coordinateData.airways.forEach(function(airway) {
 
 var railwayFeatureCollection = turf.featureCollection(railwayFeatureArray);
 
-railDirectionRefData = railDirectionRefData.map(function(direction) {
-	return {
-		id: removePrefix(direction['owl:sameAs']),
-		title: direction['odpt:railDirectionTitle']
-	};
-});
-
-railDirectionLookup = buildLookup(railDirectionRefData, 'id');
-
-// Update rail direction lookup dictionary
+// Build rail direction data
+railDirectionLookup = buildLookup(railDirectionRefData);
 railDirectionData.forEach(function(direction) {
 	merge(railDirectionLookup[direction.id].title, direction.title);
 });
 
-trainTypeRefData = trainTypeRefData.map(function(type) {
-	return {
-		id: removePrefix(type['owl:sameAs']),
-		title: type['odpt:trainTypeTitle']
-	};
-});
-
-trainTypeLookup = buildLookup(trainTypeRefData, 'id');
-
-// Update train type lookup dictionary
+// Build train type data
+trainTypeLookup = buildLookup(trainTypeRefData);
 trainTypeData.map(function(type) {
 	merge(trainTypeLookup[type.id].title, type.title);
+});
+
+// Build operator data
+operatorLookup = buildLookup(operatorRefData);
+operatorData.forEach(function(operator) {
+	var operatorRef = operatorLookup[operator.id];
+
+	merge(operatorRef.title, operator.title);
+	operatorRef.color = operator.color;
+	operatorRef.tailcolor = operator.tailcolor;
+});
+
+// Build airport data
+airportLookup = buildLookup(airportRefData);
+airportData.forEach(function(airport) {
+	merge(airportLookup[airport.id].title, airport.title);
+});
+
+// Build flight status data
+flightStatusLookup = buildLookup(flightStatusRefData);
+flightStatusData.forEach(function(status) {
+	merge(flightStatusLookup[status.id].title, status.title);
 });
 
 map.once('load', function () {
@@ -637,12 +645,15 @@ map.once('styledata', function () {
 		title: 'Export',
 		eventHandler: function() {
 			exportJSON(turf.truncate(railwayFeatureCollection, {precision: 7}), 'features.json', 0);
-			exportJSON(timetables.Weekday, 'timetable-weekday.json', 5000);
-			exportJSON(timetables.SaturdayHoliday, 'timetable-holiday.json', 10000);
-			exportJSON(stationRefData, 'stations.json', 15000);
-			exportJSON(railwayRefData, 'railways.json', 20000);
-			exportJSON(railDirectionRefData, 'rail-directions.json', 25000);
-			exportJSON(trainTypeRefData, 'train-types.json', 30000);
+			exportJSON(timetables.Weekday, 'timetable-weekday.json', 1000);
+			exportJSON(timetables.SaturdayHoliday, 'timetable-holiday.json', 6000);
+			exportJSON(stationRefData, 'stations.json', 11000);
+			exportJSON(railwayRefData, 'railways.json', 11500);
+			exportJSON(railDirectionRefData, 'rail-directions.json', 12000);
+			exportJSON(trainTypeRefData, 'train-types.json', 12500);
+			exportJSON(operatorRefData, 'operators.json', 13000);
+			exportJSON(airportRefData, 'airports.json', 13500);
+			exportJSON(flightStatusRefData, 'flight-status.json', 14000);
 		}
 	}), 'top-right');
 
@@ -859,8 +870,8 @@ function loadStationRefData() {
 		'ToyoRapid', 'Odakyu', 'Keikyu', 'Keisei', 'Hokuso', 'Shibayama'
 	].map(function(operator) {
 		return loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:' + operator + '&' + API_TOKEN);
-	})).then(function(stationRefData) {
-		return concat(stationRefData).map(function(station) {
+	})).then(function(data) {
+		return concat(data).map(function(station) {
 			return {
 				coord: [station['geo:long'], station['geo:lat']],
 				id: removePrefix(station['owl:sameAs']),
@@ -874,8 +885,8 @@ function loadStationRefData() {
 function loadRailwayRefData() {
 	return loadJSON(API_URL + 'odpt:Railway?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'Keio'].map(function(operator) {
 		return 'odpt.Operator:' + operator;
-	}).join(',') + '&' + API_TOKEN).then(function(railwayRefData) {
-		return railwayRefData.map(function(railway) {
+	}).join(',') + '&' + API_TOKEN).then(function(data) {
+		return data.map(function(railway) {
 			return {
 				id: removePrefix(railway['owl:sameAs']),
 				title: railway['odpt:railwayTitle'],
@@ -890,10 +901,67 @@ function loadRailwayRefData() {
 	});
 }
 
+function loadRailDirectionRefData() {
+	return loadJSON(API_URL + 'odpt:RailDirection?' + API_TOKEN).then(function(data) {
+		return data.map(function(direction) {
+			return {
+				id: removePrefix(direction['owl:sameAs']),
+				title: direction['odpt:railDirectionTitle']
+			};
+		});
+	});
+}
+
+function loadTrainTypeRefData() {
+	return loadJSON(API_URL + 'odpt:TrainType?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'Keio'].map(function(operator) {
+		return 'odpt.Operator:' + operator;
+	}).join(',') + '&' + API_TOKEN).then(function(data) {
+		return data.map(function(type) {
+			return {
+				id: removePrefix(type['owl:sameAs']),
+				title: type['odpt:trainTypeTitle']
+			};
+		});
+	});
+}
+
+function loadOperatorRefData() {
+	return loadJSON(API_URL + 'odpt:Operator?' + API_TOKEN).then(function(data) {
+		return data.map(function(operator) {
+			return {
+				id: removePrefix(operator['owl:sameAs']),
+				title: operator['odpt:operatorTitle']
+			};
+		});
+	});
+}
+
+function loadAirportRefData() {
+	return loadJSON(API_URL + 'odpt:Airport?' + API_TOKEN).then(function(data) {
+		return data.map(function(airport) {
+			return {
+				id: removePrefix(airport['owl:sameAs']),
+				title: airport['odpt:airportTitle']
+			};
+		});
+	});
+}
+
+function loadFlightStatusRefData() {
+	return loadJSON(API_URL + 'odpt:FlightStatus?' + API_TOKEN).then(function(data) {
+		return data.map(function(status) {
+			return {
+				id: removePrefix(status['owl:sameAs']),
+				title: status['odpt:flightStatusTitle']
+			};
+		});
+	});
+}
+
 function buildLookup(array, key) {
 	var lookup = {};
 
-	key = key || 'owl:sameAs';
+	key = key || 'id';
 	array.forEach(function(element) {
 		lookup[element[key]] = element;
 	});
