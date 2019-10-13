@@ -1302,7 +1302,7 @@ map.once('styledata', function () {
 						train.y = trainType;
 						changed = true;
 					}
-					if (destination && train.ds[0] !== destination[0]) {
+					if (train.ds && destination && train.ds[0] !== destination[0]) {
 						train.ds = destination;
 						changed = true;
 					}
