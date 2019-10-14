@@ -972,7 +972,7 @@ function getLang() {
 	var match = location.search.match(/lang=(.*?)(&|$)/);
 	var lang = match ? decodeURIComponent(match[1]).substring(0, 2) : '';
 
-	if (lang.match(/ja|en|ko|zh/)) {
+	if (lang.match(/ja|en|ko|zh|th/)) {
 		return lang;
 	}
 
@@ -982,5 +982,5 @@ function getLang() {
 		window.navigator.browserLanguage || '';
 	lang = lang.substring(0, 2);
 
-	return lang.match(/ja|en|ko|zh/) ? lang : 'en';
+	return lang.match(/ja|en|ko|zh|th/) ? lang : 'en';
 }
