@@ -22,7 +22,7 @@
 var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
 
 // API Token
-var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
+var API_TOKEN = '';
 
 var lang = getLang();
 var timetables = {};

@@ -59,9 +59,6 @@ var MIN_FLIGHT_INTERVAL = 75000;
 // API URL
 var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
 
-// API Token
-var API_TOKEN = 'acl:consumerKey=772cd76134e664fb9ee7dbf0f99ae25998834efee29febe782b459f48003d090';
-
 var SQRT3 = Math.sqrt(3);
 var DEGREE_TO_RADIAN = Math.PI / 180;
 
@@ -81,7 +78,7 @@ var realtimeTrainLookup = {};
 var flightLookup = {};
 var activeFlightLookup = {};
 var animationID = 0;
-var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, timetableLookup, operatorLookup, airportLookup;
+var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, timetableLookup, operatorLookup, airportLookup, a;
 var trackedObject, markedObject, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
 
 // Replace MapboxLayer.render to support underground rendering
@@ -256,10 +253,11 @@ Promise.all([
 	loadJSON('data/train-types.json'),
 	loadJSON('data/operators.json'),
 	loadJSON('data/airports.json'),
-	loadJSON('data/flight-status.json')
+	loadJSON('data/flight-status.json'),
+	loadJSON('https://mini-tokyo.appspot.com/e')
 ]).then(function([
 	dict, stationRefData, railwayRefData, trainData, flightData, railwayFeatureCollection, timetableRefData,
-	railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData
+	railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData, e
 ]) {
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibmFnaXgiLCJhIjoiY2sxaTZxY2gxMDM2MDNjbW5nZ2h4aHB6ZyJ9.npSnxvMC4r5S74l8A9Hrzw';
@@ -716,6 +714,8 @@ map.once('styledata', function () {
 	if (!isRealtime) {
 		initModelTrains();
 	}
+
+	a = e[0];
 
 	startAnimation({
 		callback: function() {
@@ -1226,8 +1226,8 @@ map.once('styledata', function () {
 
 	function loadRealtimeTrainData() {
 		Promise.all([
-			loadJSON(API_URL + 'odpt:TrainInformation?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio&' + API_TOKEN),
-			loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei&' + API_TOKEN)
+			loadJSON(API_URL + 'odpt:TrainInformation?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio'),
+			loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei')
 		]).then(function([trainInfoRefData, trainRefData]) {
 			// Reset railway information text
 			railwayRefData.forEach(function(railway) {
@@ -1302,10 +1302,10 @@ map.once('styledata', function () {
 
 	function loadRealtimeFlightData() {
 		Promise.all([
-			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=odpt.Operator:NAA&' + API_TOKEN),
-			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=odpt.Operator:HND-JAT,odpt.Operator:HND-TIAT&' + API_TOKEN),
-			loadJSON(API_URL + 'odpt:FlightInformationDeparture?odpt:operator=odpt.Operator:NAA&' + API_TOKEN),
-			loadJSON(API_URL + 'odpt:FlightInformationDeparture?odpt:operator=odpt.Operator:HND-JAT,odpt.Operator:HND-TIAT&' + API_TOKEN)
+			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=odpt.Operator:NAA'),
+			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=odpt.Operator:HND-JAT,odpt.Operator:HND-TIAT'),
+			loadJSON(API_URL + 'odpt:FlightInformationDeparture?odpt:operator=odpt.Operator:NAA'),
+			loadJSON(API_URL + 'odpt:FlightInformationDeparture?odpt:operator=odpt.Operator:HND-JAT,odpt.Operator:HND-TIAT')
 		]).then(function(flightRefData) {
 			var flightQueue = {};
 
@@ -1644,6 +1644,9 @@ function loadJSON(url) {
 	return new Promise(function(resolve, reject) {
 		var request = new XMLHttpRequest();
 
+		if (url.indexOf(API_URL) === 0) {
+			url += a;
+		}
 		request.open('GET', url);
 		request.onreadystatechange = function() {
 			if (request.readyState === 4) {
