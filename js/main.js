@@ -1302,10 +1302,8 @@ map.once('styledata', function () {
 
 	function loadRealtimeFlightData() {
 		Promise.all([
-			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=odpt.Operator:NAA'),
-			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=odpt.Operator:HND-JAT,odpt.Operator:HND-TIAT'),
-			loadJSON(API_URL + 'odpt:FlightInformationDeparture?odpt:operator=odpt.Operator:NAA'),
-			loadJSON(API_URL + 'odpt:FlightInformationDeparture?odpt:operator=odpt.Operator:HND-JAT,odpt.Operator:HND-TIAT')
+			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=odpt.Operator:NAA,odpt.Operator:HND-JAT,odpt.Operator:HND-TIAT'),
+			loadJSON(API_URL + 'odpt:FlightInformationDeparture?odpt:operator=odpt.Operator:NAA,odpt.Operator:HND-JAT,odpt.Operator:HND-TIAT')
 		]).then(function(flightRefData) {
 			var flightQueue = {};
 
