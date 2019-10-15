@@ -1701,7 +1701,9 @@ function createCube(x, y, z, color) {
 	var geometry = new THREE.BoxBufferGeometry(x, y, z);
 	var material = new THREE.MeshLambertMaterial({
 		color: parseInt(color.replace('#', ''), 16),
-		transparent: true
+		transparent: true,
+		polygonOffset: true,
+		polygonOffsetFactor: Math.random()
 	});
 	return new THREE.Mesh(geometry, material);
 }
