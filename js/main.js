@@ -1437,38 +1437,38 @@ function updateDistances(line) {
 function getCoordAndBearing(line, distance) {
 	var coords = turf.getCoords(line);
 	var distances = line.properties.distances;
-	var length = coords.length;
-	var index, coord, overshot, altitude, bearing;
+	var start = 0;
+	var end = coords.length - 1;
+	var center, index, coord, nextCoord, baseDistance, overshot, altitude, bearing;
 
-	if (distance >= distances[length - 1]) {
+	if (distance >= distances[end]) {
+		coord = coords[end];
 		return {
-			coord: coords[length - 1],
-			altitude: coords[length - 1][2] || 0,
-			bearing: turf.bearing(coords[length - 2], coords[length - 1])
+			coord: coord,
+			altitude: coord[2] || 0,
+			bearing: turf.bearing(coords[end - 1], coord)
 		};
 	}
 
-	function findPoint(start, end) {
-		var center;
-		if (start === end - 1) {
-			return start;
-		}
+	while (start !== end - 1) {
 		center = Math.floor((start + end) / 2);
 		if (distance < distances[center]) {
-			return findPoint(start, center);
+			end = center;
 		} else {
-			return findPoint(center, end);
+			start = center;
 		}
 	}
+	index = start;
 
-	index = findPoint(0, length - 1);
 	coord = coords[index];
-	overshot = distance - distances[index];
+	nextCoord = coords[index + 1];
+	baseDistance = distances[index];
+	overshot = distance - baseDistance;
 	altitude = coord[2] || 0;
-	bearing = turf.bearing(coord, coords[index + 1]);
+	bearing = turf.bearing(coord, nextCoord);
 	return {
 		coord: overshot === 0 ? coord : turf.getCoord(turf.destination(coord, overshot, bearing)),
-		altitude: altitude + ((coords[index + 1][2] || 0) - altitude) * overshot / (distances[index + 1] - distances[index]),
+		altitude: altitude + ((nextCoord[2] || 0) - altitude) * overshot / (distances[index + 1] - baseDistance),
 		bearing: bearing
 	};
 }
