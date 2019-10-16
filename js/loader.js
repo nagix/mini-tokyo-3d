@@ -87,57 +87,6 @@ MapboxGLButtonControl.prototype.onRemove = function() {
 	this._map = undefined;
 };
 
-loadJSON('data-extra/railways.json').then(function(railwayData) {
-	['Weekday', 'SaturdayHoliday'].forEach(function(calendar) {
-		Promise.all(railwayData.map(function(railway) {
-			var id = railway.id;
-			return loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:' + id +
-				(id === 'JR-East.ChuoSobuLocal' ? '' : '&odpt:calendar=odpt.Calendar:' + calendar) +
-				'&' + API_TOKEN);
-		})).then(function(data) {
-			timetables[calendar] = concat(data).map(function(table) {
-				return {
-					t: removePrefix(table['odpt:train']),
-					id: removePrefix(table['owl:sameAs']),
-					r: removePrefix(table['odpt:railway']),
-					y: removePrefix(table['odpt:trainType']),
-					n: table['odpt:trainNumber'],
-					d: removePrefix(table['odpt:railDirection']),
-					ds: removePrefix(table['odpt:destinationStation']),
-					nt: removePrefix(table['odpt:nextTrainTimetable']),
-					tt: table['odpt:trainTimetableObject'].map(function(obj) {
-						return {
-							at: obj['odpt:arrivalTime'],
-							dt: obj['odpt:departureTime'],
-							as: removePrefix(obj['odpt:arrivalStation']),
-							ds: removePrefix(obj['odpt:departureStation'])
-						};
-					}),
-					pt: removePrefix(table['odpt:previousTrainTimetable'])
-				};
-			}).map(function(table) {
-				// Add a postfix to Toei Oedo Tochomae station
-				var tt = table.tt;
-				tt.forEach(function(obj, i) {
-					var prev = tt[i - 1] || {};
-					var next = tt[i + 1] || {};
-					if ((obj.as || obj.ds) === 'Toei.Oedo.Tochomae' &&
-						(prev.as || prev.ds) !== 'Toei.Oedo.ShinjukuNishiguchi' &&
-						(next.as || next.ds) !== 'Toei.Oedo.ShinjukuNishiguchi') {
-						if (obj.as) {
-							obj.as += '.1';
-						}
-						if (obj.ds) {
-							obj.ds += '.1';
-						}
-					}
-				})
-				return table;
-			});
-		});
-	});
-});
-
 Promise.all([
 	loadJSON('data-extra/coordinates.json'),
 	loadJSON('data-extra/stations.json'),
@@ -149,6 +98,7 @@ Promise.all([
 	loadJSON('data-extra/flight-status.json'),
 	loadStationRefData(),
 	loadRailwayRefData(),
+	loadTrainTimetableRefData(),
 	loadRailDirectionRefData(),
 	loadTrainTypeRefData(),
 	loadOperatorRefData(),
@@ -156,7 +106,7 @@ Promise.all([
 	loadFlightStatusRefData()
 ]).then(function([
 	coordinateData, stationData, railwayData, railDirectionData, trainTypeData, operatorData, airportData, flightStatusData,
-	stationRefData, railwayRefData, railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData
+	stationRefData, railwayRefData, trainTimetableRefData, railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData
 ]) {
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibmFnaXgiLCJhIjoiY2sxaTZxY2gxMDM2MDNjbW5nZ2h4aHB6ZyJ9.npSnxvMC4r5S74l8A9Hrzw';
@@ -171,19 +121,117 @@ var map = new mapboxgl.Map({
 	pitch: 60
 });
 
-// Add another instance of Toei Oedo Tochomae station
-stationRefData.push({
-	coord: [139.692691, 35.690551],
-	railway: 'Toei.Oedo',
-	id: 'Toei.Oedo.Tochomae.1',
-	title: {
-		ja: '都庁前',
-		en: 'Tochomae'
-	}
+stationLookup = buildLookup(stationRefData);
+railwayLookup = buildLookup(railwayRefData);
+
+// Add Keiyo branch lines and stations
+[{
+	railway: 'JR-East.KeiyoKoyaBranch',
+	stationNames: ['NishiFunabashi', 'MinamiFunabashi', 'ShinNarashino', 'Kaihimmakuhari']
+}, {
+	railway: 'JR-East.KeiyoFutamataBranch',
+	stationNames: ['Tokyo', 'Hatchobori', 'Etchujima', 'Shiomi', 'ShinKiba', 'Kasairinkaikoen', 'Maihama', 'ShinUrayasu', 'Ichikawashiohama', 'NishiFunabashi']
+}].forEach(function(data) {
+	var railwayID = data.railway;
+	var stationNames = data.stationNames;
+	var railway = {
+		id: railwayID,
+		title: merge({}, railwayLookup['JR-East.Musashino'].title),
+		order: stationNames.map(function(name) {
+			return {s: railwayID + '.' + name};
+		}),
+		ascending: "Outbound"
+	};
+
+	railwayRefData.push(railway);
+	railwayLookup[railwayID] = railway;
+
+	stationNames.forEach(function(name) {
+		var stationRef = stationLookup['JR-East.Keiyo.' + name];
+		var stationID = railwayID + '.' + name;
+		var station = {
+			coord: stationRef.coord,
+			railway: railwayID,
+			id: stationID,
+			title: merge({}, stationRef.title)
+		};
+
+		stationRefData.push(station);
+		stationLookup[stationID] = station;
+	});
 });
 
+// Remove Keiyo NishiFunabashi station
+railwayLookup['JR-East.Keiyo'].order.pop();
+
+// Modify Keiyo branch timetables
+Object.keys(trainTimetableRefData).forEach(function(key) {
+	trainTimetableRefData[key].filter(function(table) {
+		return table.r === 'JR-East.Keiyo' &&
+			(table.tt[0].ds === 'JR-East.Keiyo.NishiFunabashi' ||
+			table.tt[table.tt.length - 1].as === 'JR-East.Keiyo.NishiFunabashi');
+	}).forEach(function(table) {
+		var startFromNishiFunabashi = table.tt[0].ds === 'JR-East.Keiyo.NishiFunabashi';
+		var direction = table.d;
+		var branchName = (startFromNishiFunabashi && direction === 'Outbound') ||
+			(!startFromNishiFunabashi && direction === 'Inbound') ?
+			'KoyaBranch' : 'FutamataBranch';
+
+		table.r = 'JR-East.Keiyo' + branchName;
+		table.ds = table.ds.map(function(station) {
+			return station.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
+		});
+		table.tt.forEach(function(obj, i) {
+			if (obj.as) {
+				obj.as = obj.as.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
+			}
+			if (obj.ds) {
+				obj.ds = obj.ds.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
+			}
+		});
+	});
+});
+
+// Add another instance of Toei Oedo Tochomae station
+railwayLookup['Toei.Oedo'].order[28].s += '.1';
+var stationID = 'Toei.Oedo.Tochomae.1';
+var station = {
+	coord: [139.692691, 35.690551],
+	railway: 'Toei.Oedo',
+	id: stationID,
+	title: merge({}, stationLookup['Toei.Oedo.Tochomae'].title)
+};
+stationRefData.push(station);
+stationLookup[stationID] = station;
+
+// Modify Toei Oedo timetables
+Object.keys(trainTimetableRefData).forEach(function(key) {
+	trainTimetableRefData[key].filter(function(table) {
+		return table.r === 'Toei.Oedo';
+	}).forEach(function(table) {
+		var tt = table.tt;
+
+		tt.forEach(function(obj, i) {
+			var prev = tt[i - 1] || {};
+			var next = tt[i + 1] || {};
+			if ((obj.as || obj.ds) === 'Toei.Oedo.Tochomae' &&
+				(prev.as || prev.ds) !== 'Toei.Oedo.ShinjukuNishiguchi' &&
+				(next.as || next.ds) !== 'Toei.Oedo.ShinjukuNishiguchi') {
+				if (obj.as) {
+					obj.as += '.1';
+				}
+				if (obj.ds) {
+					obj.ds += '.1';
+				}
+			}
+		})
+	});
+});
+
+// Fix the coordinates of Keio Shinjuku station
+stationLookup['Keio.Keio.Shinjuku'].coord = [139.69916, 35.69019];
+
 // Build station data
-stationLookup = buildLookup(stationRefData);
 stationData.forEach(function(stations) {
 	if (!Array.isArray(stations)) {
 		stations = [stations];
@@ -195,11 +243,7 @@ stationData.forEach(function(stations) {
 	});
 });
 
-// Fix the coordinates of Keio Shinjuku station
-stationLookup['Keio.Keio.Shinjuku'].coord = [139.69916, 35.69019];
-
 // Build railway data
-railwayLookup = buildLookup(railwayRefData);
 railwayData.forEach(function(railway) {
 	var id = railway.id;
 	var railwayRef = railwayLookup[id];
@@ -230,10 +274,6 @@ railwayData.forEach(function(railway) {
 	railwayRef.altitude = railway.altitude;
 	railwayRef.carComposition = railway.carComposition;
 });
-
-// Add a postfix to Toei Oedo Tochomae station
-railwayLookup['Toei.Oedo'].order[28].s += '.1';
-railwayLookup['Toei.Oedo'].stations[28] += '.1';
 
 var railwayFeatureArray = [];
 
@@ -645,8 +685,8 @@ map.once('styledata', function () {
 		title: 'Export',
 		eventHandler: function() {
 			exportJSON(turf.truncate(railwayFeatureCollection, {precision: 7}), 'features.json', 0);
-			exportJSON(timetables.Weekday, 'timetable-weekday.json', 1000);
-			exportJSON(timetables.SaturdayHoliday, 'timetable-holiday.json', 6000);
+			exportJSON(trainTimetableRefData.weekday, 'timetable-weekday.json', 1000);
+			exportJSON(trainTimetableRefData.holiday, 'timetable-holiday.json', 6000);
 			exportJSON(stationRefData, 'stations.json', 11000);
 			exportJSON(railwayRefData, 'railways.json', 11500);
 			exportJSON(railDirectionRefData, 'rail-directions.json', 12000);
@@ -896,6 +936,46 @@ function loadRailwayRefData() {
 					};
 				}),
 				ascending: removePrefix(railway['odpt:ascendingRailDirection'])
+			};
+		});
+	});
+}
+
+function loadTrainTimetableRefData() {
+	return loadJSON('data-extra/railways.json').then(function(railwayData) {
+		return Promise.all(['Weekday', 'SaturdayHoliday'].map(function(calendar) {
+			return Promise.all(railwayData.map(function(railway) {
+				var id = railway.id;
+				return loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:' + id +
+					(id === 'JR-East.ChuoSobuLocal' ? '' : '&odpt:calendar=odpt.Calendar:' + calendar) +
+					'&' + API_TOKEN);
+			})).then(function(data) {
+				return concat(data).map(function(table) {
+					return {
+						t: removePrefix(table['odpt:train']),
+						id: removePrefix(table['owl:sameAs']),
+						r: removePrefix(table['odpt:railway']),
+						y: removePrefix(table['odpt:trainType']),
+						n: table['odpt:trainNumber'],
+						d: removePrefix(table['odpt:railDirection']),
+						ds: removePrefix(table['odpt:destinationStation']),
+						nt: removePrefix(table['odpt:nextTrainTimetable']),
+						tt: table['odpt:trainTimetableObject'].map(function(obj) {
+							return {
+								at: obj['odpt:arrivalTime'],
+								dt: obj['odpt:departureTime'],
+								as: removePrefix(obj['odpt:arrivalStation']),
+								ds: removePrefix(obj['odpt:departureStation'])
+							};
+						}),
+						pt: removePrefix(table['odpt:previousTrainTimetable'])
+					};
+				});
+			});
+		})).then(function(data) {
+			return {
+				weekday: data[0],
+				holiday: data[1]
 			};
 		});
 	});

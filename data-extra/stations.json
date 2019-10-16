@@ -219,6 +219,7 @@
 		"JR-East.JobanRapid.Tokyo",
 		"JR-East.KeihinTohokuNegishi.Tokyo",
 		"JR-East.Yamanote.Tokyo",
+		"JR-East.KeiyoFutamataBranch.Tokyo",
 		"JR-East.Keiyo.Tokyo"
 	],
 	"title": {
@@ -392,7 +393,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.ChuoRapid.NishiKokubunji"
+		"JR-East.ChuoRapid.NishiKokubunji",
+		"JR-East.Musashino.NishiKokubunji"
 	],
 	"title": {
 		"ko": "니시코쿠분지",
@@ -684,7 +686,10 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.ChuoSobuLocal.NishiFunabashi"
+		"JR-East.ChuoSobuLocal.NishiFunabashi",
+		"JR-East.KeiyoFutamataBranch.NishiFunabashi",
+		"JR-East.KeiyoKoyaBranch.NishiFunabashi",
+		"JR-East.Musashino.NishiFunabashi"
 	],
 	"title": {
 		"ko": "니시후나바시",
@@ -1034,7 +1039,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.KeihinTohokuNegishi.MinamiUrawa"
+		"JR-East.KeihinTohokuNegishi.MinamiUrawa",
+		"JR-East.Musashino.MinamiUrawa"
 	],
 	"title": {
 		"ko": "미나미우라와",
@@ -1329,7 +1335,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.JobanLocal.ShimMatsudo"
+		"JR-East.JobanLocal.ShimMatsudo",
+		"JR-East.Musashino.ShimMatsudo"
 	],
 	"title": {
 		"ko": "신마쓰도",
@@ -1516,7 +1523,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.Keiyo.Hatchobori"
+		"JR-East.Keiyo.Hatchobori",
+		"JR-East.KeiyoFutamataBranch.Hatchobori"
 	],
 	"title": {
 		"ko": "핫초보리",
@@ -1524,7 +1532,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.Keiyo.Etchujima"
+		"JR-East.Keiyo.Etchujima",
+		"JR-East.KeiyoFutamataBranch.Etchujima"
 	],
 	"title": {
 		"ko": "엣추지마",
@@ -1532,7 +1541,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.Keiyo.Shiomi"
+		"JR-East.Keiyo.Shiomi",
+		"JR-East.KeiyoFutamataBranch.Shiomi"
 	],
 	"title": {
 		"ko": "시오미",
@@ -1540,7 +1550,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.Keiyo.ShinKiba"
+		"JR-East.Keiyo.ShinKiba",
+		"JR-East.KeiyoFutamataBranch.ShinKiba"
 	],
 	"title": {
 		"ko": "신키바",
@@ -1548,7 +1559,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.Keiyo.Kasairinkaikoen"
+		"JR-East.Keiyo.Kasairinkaikoen",
+		"JR-East.KeiyoFutamataBranch.Kasairinkaikoen"
 	],
 	"title": {
 		"ko": "가사이 임해공원",
@@ -1556,7 +1568,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.Keiyo.Maihama"
+		"JR-East.Keiyo.Maihama",
+		"JR-East.KeiyoFutamataBranch.Maihama"
 	],
 	"title": {
 		"ko": "마이하마",
@@ -1564,7 +1577,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.Keiyo.ShinUrayasu"
+		"JR-East.Keiyo.ShinUrayasu",
+		"JR-East.KeiyoFutamataBranch.ShinUrayasu"
 	],
 	"title": {
 		"ko": "신우라야스",
@@ -1572,7 +1586,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.Keiyo.Ichikawashiohama"
+		"JR-East.Keiyo.Ichikawashiohama",
+		"JR-East.KeiyoFutamataBranch.Ichikawashiohama"
 	],
 	"title": {
 		"ko": "이치카와시오하마",
@@ -1588,7 +1603,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.Keiyo.MinamiFunabashi"
+		"JR-East.Keiyo.MinamiFunabashi",
+		"JR-East.KeiyoKoyaBranch.MinamiFunabashi"
 	],
 	"title": {
 		"ko": "미나미후나바시",
@@ -1596,7 +1612,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.Keiyo.ShinNarashino"
+		"JR-East.Keiyo.ShinNarashino",
+		"JR-East.KeiyoKoyaBranch.ShinNarashino"
 	],
 	"title": {
 		"ko": "신나라시노",
@@ -1604,7 +1621,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.Keiyo.Kaihimmakuhari"
+		"JR-East.Keiyo.Kaihimmakuhari",
+		"JR-East.KeiyoKoyaBranch.Kaihimmakuhari"
 	],
 	"title": {
 		"ko": "가이힌마쿠하리",
@@ -1692,7 +1710,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.SaikyoKawagoe.MusashiUrawa"
+		"JR-East.SaikyoKawagoe.MusashiUrawa",
+		"JR-East.Musashino.MusashiUrawa"
 	],
 	"title": {
 		"ko": "무사시우라와",
@@ -2008,7 +2027,8 @@
 	}
 }, {
 	"aliases": [
-		"JR-East.Nambu.Fuchuhommachi"
+		"JR-East.Nambu.Fuchuhommachi",
+		"JR-East.Musashino.Fuchuhommachi"
 	],
 	"title": {
 		"ko": "후추혼마치",
@@ -2078,6 +2098,166 @@
 	"title": {
 		"ko": "핫초나와테",
 		"zh": "八丁畷"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.KitaFuchu"
+	],
+	"title": {
+		"ko": "기타후추",
+		"zh": "北府中"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.ShinKodaira"
+	],
+	"title": {
+		"ko": "신코다이라",
+		"zh": "新小平"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.ShinAkitsu"
+	],
+	"title": {
+		"ko": "신아키쓰",
+		"zh": "新秋津"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.HigashiTokorozawa"
+	],
+	"title": {
+		"ko": "히가시토코로자와",
+		"zh": "东所泽"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.Niiza"
+	],
+	"title": {
+		"ko": "니자",
+		"zh": "新座"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.KitaAsaka"
+	],
+	"title": {
+		"ko": "기타아사카",
+		"zh": "北朝霞"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.NishiUrawa"
+	],
+	"title": {
+		"ko": "니시우라와",
+		"zh": "西浦和"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.HigashiUrawa"
+	],
+	"title": {
+		"ko": "히가시우라와",
+		"zh": "东浦和"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.HigashiKawaguchi"
+	],
+	"title": {
+		"ko": "히가시카와구치",
+		"zh": "东川口"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.MinamiKoshigaya"
+	],
+	"title": {
+		"ko": "미나미코시가야",
+		"zh": "南越谷"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.KoshigayaLaketown"
+	],
+	"title": {
+		"ko": "고시가야 레이크타운",
+		"zh": "越谷湖城"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.Yoshikawa"
+	],
+	"title": {
+		"ko": "요시카와",
+		"zh": "吉川"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.Yoshikawaminami"
+	],
+	"title": {
+		"ko": "요시카와미나미",
+		"zh": "吉川美南"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.ShimMisato"
+	],
+	"title": {
+		"ko": "신미사토",
+		"zh": "新三乡"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.Misato"
+	],
+	"title": {
+		"ko": "미사토",
+		"zh": "三乡"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.MinamiNagareyama"
+	],
+	"title": {
+		"ko": "미나미나가레야마",
+		"zh": "南流山"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.ShinYahashira"
+	],
+	"title": {
+		"ko": "신야하시라",
+		"zh": "新八柱"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.HigashiMatsudo"
+	],
+	"title": {
+		"ko": "히가시마쓰도",
+		"zh": "东松户"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.Ichikawaono"
+	],
+	"title": {
+		"ko": "이치카와오노",
+		"zh": "市川大野"
+	}
+}, {
+	"aliases": [
+		"JR-East.Musashino.Funabashihoten"
+	],
+	"title": {
+		"ko": "후나바시호텐",
+		"zh": "船桥法典"
 	}
 }, {
 	"aliases": [
