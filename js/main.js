@@ -129,7 +129,7 @@ MapboxGLButtonControl.prototype.onAdd = function(map) {
 	this._btn.onclick = this._eventHandler;
 
 	this._container = document.createElement('div');
-	this._container.className = 'mapboxgl-ctrl-group mapboxgl-ctrl';
+	this._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group';
 	this._container.appendChild(this._btn);
 
 	return this._container;
@@ -389,7 +389,7 @@ map.once('load', function () {
 });
 
 map.once('styledata', function () {
-	map.setLayoutProperty('poi', 'text-field', '{name' + (lang === 'en' ? '_en}' : lang === 'ko' ? '_ko}' : lang === 'zh' ? '_zh-Hans}' : '}'));
+	map.setLayoutProperty('poi', 'text-field', '{name_' + (lang === 'ja' || lang === 'ko' ? lang : lang === 'zh' ? 'zh-Hans' : 'en') + '}');
 
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
