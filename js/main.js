@@ -115,29 +115,45 @@ var MapboxGLButtonControl = function(options) {
 	this.initialize(options);
 };
 
-MapboxGLButtonControl.prototype.initialize = function(options) {
-	this._className = options.className || '';
-	this._title = options.title || '';
-	this._eventHandler = options.eventHandler;
+MapboxGLButtonControl.prototype.initialize = function(optionArray) {
+	this._options = optionArray.map(function(options) {
+		return {
+			className: options.className || '',
+			title: options.title || '',
+			eventHandler: options.eventHandler
+		};
+	});
 };
 
 MapboxGLButtonControl.prototype.onAdd = function(map) {
-	this._btn = document.createElement('button');
-	this._btn.className = 'mapboxgl-ctrl-icon ' + this._className;
-	this._btn.type = 'button';
-	this._btn.title = this._title;
-	this._btn.onclick = this._eventHandler;
+	var me = this;
 
-	this._container = document.createElement('div');
-	this._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group';
-	this._container.appendChild(this._btn);
+	me._map = map;
 
-	return this._container;
+	me._container = document.createElement('div');
+	me._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group';
+
+	me._buttons = me._options.map(function(options) {
+		var button = document.createElement('button');
+
+		button.className = 'mapboxgl-ctrl-icon ' + options.className;
+		button.type = 'button';
+		button.title = options.title;
+		button.onclick = options.eventHandler;
+
+		me._container.appendChild(button);
+
+		return button;
+	});
+
+	return me._container;
 };
 
 MapboxGLButtonControl.prototype.onRemove = function() {
-	this._container.parentNode.removeChild(this._container);
-	this._map = undefined;
+	var me = this;
+
+	me._container.parentNode.removeChild(me._container);
+	me._map = undefined;
 };
 
 var TrainLayer = function(id) {
@@ -519,7 +535,7 @@ map.once('styledata', function () {
 	}
 	map.addControl(control);
 
-	map.addControl(new MapboxGLButtonControl({
+	map.addControl(new MapboxGLButtonControl([{
 		className: 'mapbox-ctrl-underground',
 		title: dict['enter-underground'],
 		eventHandler: function(event) {
@@ -577,9 +593,7 @@ map.once('styledata', function () {
 				duration: 300
 			});
 		}
-	}), 'top-right');
-
-	map.addControl(new MapboxGLButtonControl({
+	}, {
 		className: 'mapbox-ctrl-track mapbox-ctrl-track-helicopter',
 		title: dict['track'],
 		eventHandler: function(event) {
@@ -597,9 +611,7 @@ map.once('styledata', function () {
 			}
 			event.stopPropagation();
 		}
-	}), 'top-right');
-
-	map.addControl(new MapboxGLButtonControl({
+	}, {
 		className: 'mapbox-ctrl-realtime mapbox-ctrl-realtime-active',
 		title: dict['exit-realtime'],
 		eventHandler: function() {
@@ -616,15 +628,15 @@ map.once('styledata', function () {
 				initModelTrains();
 			}
 		}
-	}), 'top-right');
+	}]), 'top-right');
 
-	map.addControl(new MapboxGLButtonControl({
+	map.addControl(new MapboxGLButtonControl([{
 		className: 'mapbox-ctrl-github',
 		title: dict['github'],
 		eventHandler: function() {
 			window.open('https://github.com/nagix/mini-tokyo-3d');
 		}
-	}), 'top-right');
+	}]), 'top-right');
 
 	var popup = new mapboxgl.Popup({
 		closeButton: false,

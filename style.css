@@ -35,71 +35,68 @@ body {
 	bottom: 0;
 	width: 100%;
 }
-.mapbox-ctrl-underground:before {
+.mapbox-ctrl-underground::before {
 	content: '\f06e';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
-	position: absolute;
-	top: 5px;
-	left: 4px;
+	position: relative;
+	top: 1px;
+	left: 1px;
 	width: 20px;
 	height: 20px;
 	color: black;
 	font-size: 21px;
 }
-.mapbox-ctrl-underground-visible:before {
+.mapbox-ctrl-underground-visible::before {
 	color: #33B5E5;
 }
-.mapbox-ctrl-track:before {
+.mapbox-ctrl-track::before {
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
-	position: absolute;
-	top: 5px;
-	left: 5px;
+	position: relative;
+	left: 1px;
 	width: 20px;
 	height: 20px;
 	color: black;
 	font-size: 21px;
 }
-.mapbox-ctrl-track-helicopter:before {
+.mapbox-ctrl-track-helicopter::before {
 	content: '\f533';
 	font-size: 17px;
-	top: 7px;
+	top: 1px;
 }
-.mapbox-ctrl-track-train:before {
+.mapbox-ctrl-track-train::before {
 	content: '\f238';
 }
-.mapbox-ctrl-track-active:before {
+.mapbox-ctrl-track-active::before {
 	color: #33B5E5;
 }
-.mapbox-ctrl-realtime:before {
+.mapbox-ctrl-realtime::before {
 	content: '\f017';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
-	position: absolute;
-	top: 5px;
-	left: 5px;
+	position: relative;
 	width: 20px;
 	height: 20px;
 	color: black;
 	font-size: 21px;
 }
-.mapbox-ctrl-realtime-active:before {
+.mapbox-ctrl-realtime-active::before {
 	color: #33B5E5;
 }
-.mapbox-ctrl-github:before {
+.mapbox-ctrl-github::before {
 	content: '\f09b';
 	font-family: 'Font Awesome 5 Brands';
 	font-weight: 900;
-	position: absolute;
-	top: 5px;
-	left: 5px;
+	position: relative;
+	top: 0px;
+	left: 1px;
 	width: 20px;
 	height: 20px;
 	color: black;
 	font-size: 21px;
 }
-.mapbox-ctrl-export:before {
+.mapbox-ctrl-export::before {
 	content: '\f56d';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
