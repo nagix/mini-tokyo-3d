@@ -1033,7 +1033,7 @@ map.once('styledata', function () {
 
 	function initModelPackmans() {
 		trainData.forEach(function(packman, i) {
-			var railway = railwayLookup[train.r];
+			var railway = railwayLookup[packman.r];
 
 			packman.t = i;
 			activeTrainLookup[packman.t] = packman;
