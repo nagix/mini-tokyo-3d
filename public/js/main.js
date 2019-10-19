@@ -625,7 +625,8 @@ map.once('styledata', function () {
 				this.classList.add('mapbox-ctrl-realtime-active');
 			} else {
 				this.classList.remove('mapbox-ctrl-realtime-active');
-				initModelTrains();
+				//initModelTrains();
+				initModelPackmans();
 			}
 		}
 	}]), 'top-right');
@@ -709,7 +710,8 @@ map.once('styledata', function () {
 			var train = activeTrainLookup[key];
 
 			updateTrainProps(train);
-			updateTrainShape(train);
+			//updateTrainShape(train);
+			updatePackmanShape(train);
 		});
 		Object.keys(activeFlightLookup).forEach(function(key) {
 			updateFlightShape(activeFlightLookup[key]);
@@ -724,7 +726,8 @@ map.once('styledata', function () {
 	repeat();
 
 	if (!isRealtime) {
-		initModelTrains();
+		//initModelTrains();
+		initModelPackmans();
 	}
 
 	a = e[0];
@@ -806,7 +809,8 @@ map.once('styledata', function () {
 		}
 		for (i = length; i < carComposition; i++) {
 			railway = railway || railwayLookup[train.r];
-			car = createCube(.88, 1.76, .88, railway.color);
+//			car = createCube(.88, 1.76, .88, railway.color);
+			car = createPackman();
 			userData = car.userData;
 			userData.object = train;
 			userData.altitude = (train.altitude || 0) * Math.pow(2, 14 - layerZoom) * 100;
@@ -858,6 +862,84 @@ map.once('styledata', function () {
 			delete train.delayMarker;
 		}
 	}
+
+	function updatePackmanShape(packman, t) {
+		var feature = packman.railwayFeature;
+		var offset = packman.offset;
+		var cars = packman.cars;
+		var length = cars.length;
+		var carComposition = clamp(Math.floor(packman.carComposition * .02 / objectUnit), 1, packman.carComposition);
+		var compositionChanged = length !== carComposition;
+		var delayMarker = packman.delayMarker;
+		var i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord;
+
+		if (t !== undefined) {
+			packman._t = t;
+		}
+		if (packman._t === undefined) {
+			return;
+		}
+
+		for (i = length - 1; i >= carComposition; i--) {
+			trainLayers.removeObject(cars.pop(), packman);
+		}
+		for (i = length; i < carComposition; i++) {
+			railway = railway || railwayLookup[packman.r];
+//			car = createCube(.88, 1.76, .88, railway.color);
+			car = createPackman();
+			userData = car.userData;
+			userData.object = packman;
+			userData.altitude = (packman.altitude || 0) * Math.pow(2, 14 - layerZoom) * 100;
+			cars.push(car);
+			trainLayers.addObject(car, packman, 1000);
+		}
+		if (compositionChanged) {
+			if (markedObject && markedObject.userData.object === packman) {
+				markedObject = cars[Math.floor(carComposition / 2)];
+			}
+			if (trackedObject && trackedObject.userData.object === packman) {
+				trackedObject = cars[Math.floor(carComposition / 2)];
+			}
+		}
+
+		for (i = 0, ilen = cars.length; i < ilen; i++) {
+			car = cars[i];
+			position = car.position;
+			scale = car.scale;
+			userData = car.userData;
+
+			p = getCoordAndBearing(feature, offset + packman._t * packman.interval + (i - (carComposition - 1) / 2) * objectUnit);
+
+			coord = userData.coord = p.coord;
+			userData.altitude = p.altitude;
+			bearing = userData.bearing = p.bearing + (packman.direction < 0 ? 180 : 0);
+			mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
+
+			position.x = mCoord.x - modelOrigin.x;
+			position.y = -(mCoord.y - modelOrigin.y);
+			position.z = (packman.altitude || 0) * altitudeUnit + objectScale / 2;
+			scale.x = scale.z = objectScale;
+			scale.y = carScale;
+			car.rotation.z = -bearing * DEGREE_TO_RADIAN;
+		}
+
+		if (packman.delay) {
+			if (!delayMarker) {
+				delayMarker = packman.delayMarker = createDelayMarker();
+				trainLayers.addObject(delayMarker, packman, 1000);
+			}
+
+			car = cars[Math.floor(carComposition / 2)];
+			merge(delayMarker.position, car.position);
+			scale = delayMarker.scale;
+			scale.x = scale.y = scale.z = carScale;
+		} else if (delayMarker) {
+			trainLayers.removeObject(delayMarker, packman);
+			delete packman.delayMarker;
+		}
+	}
+
+
 
 	function updateFlightShape(flight, t) {
 		var body = flight.body;
@@ -926,7 +1008,8 @@ map.once('styledata', function () {
 
 			function repeat() {
 				train.animationID = startTrainAnimation(function(t) {
-					updateTrainShape(train, t);
+					//updateTrainShape(train, t);
+					updatePackmanShape(train, t);
 				}, function() {
 					var direction = train.direction;
 					var sectionIndex = train.sectionIndex = train.sectionIndex + direction;
@@ -935,11 +1018,50 @@ map.once('styledata', function () {
 						train.direction = train.sectionLength = -direction;
 					}
 					updateTrainProps(train);
-					updateTrainShape(train, 0);
+					//updateTrainShape(train, 0);
+
+					updatePackmanShape(train, 0);
 
 					// Stop and go
 					train.animationID = startAnimation({complete: repeat, duration: 1000});
 				}, Math.abs(train.interval), TIME_FACTOR);
+			}
+			repeat();
+		});
+	}
+
+
+	function initModelPackmans() {
+		trainData.forEach(function(packman, i) {
+			var railway = railwayLookup[train.r];
+
+			packman.t = i;
+			activeTrainLookup[packman.t] = packman;
+
+			packman.sectionLength = packman.direction;
+			packman.carComposition = railway.carComposition;
+			packman.cars = [];
+			updateTrainProps(packman);
+
+			function repeat() {
+				packman.animationID = startTrainAnimation(function(t) {
+					//updateTrainShape(train, t);
+					updatePackmanShape(packman, t);
+				}, function() {
+					var direction = packman.direction;
+					var sectionIndex = packman.sectionIndex = packman.sectionIndex + direction;
+
+					if (sectionIndex <= 0 || sectionIndex >= railway.stations.length - 1) {
+						packman.direction = packman.sectionLength = -direction;
+					}
+					updateTrainProps(packman);
+					//updateTrainShape(train, 0);
+
+					updatePackmanShape(packman, 0);
+
+					// Stop and go
+					packman.animationID = startAnimation({complete: repeat, duration: 1000});
+				}, Math.abs(packman.interval), TIME_FACTOR);
 			}
 			repeat();
 		});
@@ -978,7 +1100,8 @@ map.once('styledata', function () {
 
 					if (!final) {
 						updateTrainProps(train);
-						updateTrainShape(train, 0);
+						//updateTrainShape(train, 0);
+						updatePackmanShape(train, 0);
 					}
 					setTrainStandingStatus(train, true);
 					train.animationID = startAnimation({
@@ -992,7 +1115,8 @@ map.once('styledata', function () {
 				function repeat(elapsed) {
 					setTrainStandingStatus(train, false);
 					train.animationID = startTrainAnimation(function(t) {
-						updateTrainShape(train, t);
+						// updateTrainShape(train, t);
+						updatePackmanShape(train, t);
 					}, function() {
 						var markedObjectIndex, trackedObjectIndex;
 
@@ -1715,21 +1839,23 @@ function createCube(x, y, z, color) {
 		polygonOffset: true,
 		polygonOffsetFactor: Math.random()
 	});
-	//return new THREE.Mesh(geometry, material);
+	return new THREE.Mesh(geometry, material);
+}
 
+
+function createPackman() {
 	let textuerLoader = new THREE.TextureLoader();
 	let mat = new THREE.MeshPhongMaterial();
-	let geom = new THREE.BoxGeometry(3, 3, 3);
+	//let geom = new THREE.CircleGeometry( 1, 1 );
+	let geom = new THREE.BoxGeometry(2, 2, 2);
 
 	textuerLoader.load('../images/pac-man.jpg', function (textuer) {
 		mat.map = textuer;
-		let mesh = new THREE.Mesh(geom, mat);
-		scene.add(mesh);
 	});
 
 	return new THREE.Mesh(geom, mat);
-
 }
+
 
 function createDelayMarker() {
 	var geometry = new THREE.SphereBufferGeometry(1.8, 32, 32);
