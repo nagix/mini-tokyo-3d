@@ -1715,7 +1715,20 @@ function createCube(x, y, z, color) {
 		polygonOffset: true,
 		polygonOffsetFactor: Math.random()
 	});
-	return new THREE.Mesh(geometry, material);
+	//return new THREE.Mesh(geometry, material);
+
+	let textuerLoader = new THREE.TextureLoader();
+	let mat = new THREE.MeshPhongMaterial();
+	let geom = new THREE.BoxGeometry(3, 3, 3);
+
+	textuerLoader.load('../images/pac-man.jpg', function (textuer) {
+		mat.map = textuer;
+		let mesh = new THREE.Mesh(geom, mat);
+		scene.add(mesh);
+	});
+
+	return new THREE.Mesh(geom, mat);
+
 }
 
 function createDelayMarker() {
