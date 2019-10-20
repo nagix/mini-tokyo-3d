@@ -1070,12 +1070,17 @@ map.once('styledata', function () {
 		});
 	}
 
+	let train_data;
+
 	function refreshTrains() {
 		var now = new Date(2019,9,19,12,00);
 		now.setTime(now.getTime() + Date.now() - currentTime);
-		console.log(now);
 
-		timetableRefData.forEach(function(train) {
+		for (i = 0;i < timetableRefData.length; i++) {
+			if(train_data){
+				break;
+			}
+			let train = timetableRefData[i];
 			var d = train.delay || 0;
 			if (train.start + d <= now && now <= train.end + d &&
 				!activeTrainLookup[train.t] &&
@@ -1153,8 +1158,10 @@ map.once('styledata', function () {
 				}
 
 				start();
+				train_data = train;
+				break;
 			}
-		});
+		}
 	}
 
 	function refreshFlights() {
