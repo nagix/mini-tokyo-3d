@@ -641,14 +641,6 @@ map.once('styledata', function () {
 		}
 	}]), 'top-right');
 
-	map.addControl(new MapboxGLButtonControl([{
-		className: 'mapbox-ctrl-direction',
-		title: dict['direction'],
-		eventHandler: function() {
-			changeTrain();
-		}
-	}]), 'top-right');
-
 	var popup = new mapboxgl.Popup({
 		closeButton: false,
 		closeOnClick: false,
@@ -953,9 +945,6 @@ map.once('styledata', function () {
 	}
 
 
-	function changeTrain(){
-		window.open('https://www.sejuku.net/blog/30171');
-	}
 
 
 	function updateFlightShape(flight, t) {
