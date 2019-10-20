@@ -348,7 +348,7 @@ Promise.all([
 	railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData, e
 ]) {
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibmFnaXgiLCJhIjoiY2sxaTZxY2gxMDM2MDNjbW5nZ2h4aHB6ZyJ9.npSnxvMC4r5S74l8A9Hrzw';
+mapboxgl.accessToken = 'pk.eyJ1IjoidGFwdGFwcHVuIiwiYSI6ImNrMXlmYm5wNDBtbXYzaHBpa2lvNGtqN2IifQ.ptcQL38Jnzl53W22zgpM-A';
 
 var map = new mapboxgl.Map({
 	container: 'map',
