@@ -711,14 +711,6 @@ map.once('styledata', function () {
 		}
 	}]), 'top-right');
 
-	map.addControl(new MapboxGLButtonControl([{
-		className: 'mapbox-ctrl-direction',
-		title: dict['direction'],
-		eventHandler: function() {
-			changeTrain();
-		}
-	}]), 'top-right');
-
 	var popup = new mapboxgl.Popup({
 		closeButton: false,
 		closeOnClick: false,
@@ -814,10 +806,8 @@ map.once('styledata', function () {
 
 	startAnimation({
 		callback: function() {
-			//var now = new Date(2019,9,19,12,00);
 			var now = new Date(2019,9,19,12,00);
 			now.setTime(now.getTime() + Date.now() - currentTime);
-			//console.log(now);
 			var userData, altitude, bearing;
 
 			if (isRealtime) {
@@ -966,7 +956,7 @@ map.once('styledata', function () {
 		for (i = length - 1; i >= carComposition; i--) {
 			trainLayers.removeObject(cars.pop(), packman);
 		}
-		for (i = 0; i < carComposition; i++) {
+		for (i = length; i < carComposition; i++) {
 			railway = railway || railwayLookup[packman.r];
 //			car = createCube(.88, 1.76, .88, railway.color);
 			car = createPackman();
@@ -985,7 +975,7 @@ map.once('styledata', function () {
 			}
 		}
 
-		for (i = 0, ilen = cars.length; i < 1; i++) {
+		for (i = 0, ilen = cars.length; i < ilen; i++) {
 			car = cars[i];
 			position = car.position;
 			scale = car.scale;
@@ -1022,10 +1012,6 @@ map.once('styledata', function () {
 		}
 	}
 
-
-	function changeTrain(){
-		window.open('https://www.sejuku.net/blog/30171');
-	}
 
 
 	function updateFlightShape(flight, t) {
@@ -1096,7 +1082,7 @@ map.once('styledata', function () {
 			function repeat() {
 				train.animationID = startTrainAnimation(function(t) {
 					//updateTrainShape(train, t);
-					
+					updatePackmanShape(train, t);
 				}, function() {
 					var direction = train.direction;
 					var sectionIndex = train.sectionIndex = train.sectionIndex + direction;
@@ -1106,6 +1092,8 @@ map.once('styledata', function () {
 					}
 					updateTrainProps(train);
 					//updateTrainShape(train, 0);
+
+					updatePackmanShape(train, 0);
 
 					// Stop and go
 					train.animationID = startAnimation({complete: repeat, duration: 1000});
@@ -1117,51 +1105,47 @@ map.once('styledata', function () {
 
 
 	function initModelPackmans() {
-		console.log("-----------------------------------------------------------");
-		// trainData.forEach(function(packman, i) {
-		// 	var railway = railwayLookup[packman.r];
+		trainData.forEach(function(packman, i) {
+			var railway = railwayLookup[packman.r];
 
-		// 	packman.t = i;
-		// 	activeTrainLookup[packman.t] = packman;
+			packman.t = i;
+			activeTrainLookup[packman.t] = packman;
 
-		// 	packman.sectionLength = packman.direction;
-		// 	packman.carComposition = railway.carComposition;
-		// 	packman.cars = [];
-		// 	updateTrainProps(packman);
+			packman.sectionLength = packman.direction;
+			packman.carComposition = railway.carComposition;
+			packman.cars = [];
+			updateTrainProps(packman);
 
-		// 	function repeat() {
-		// 		packman.animationID = startTrainAnimation(function(t) {
-		// 			//updateTrainShape(train, t);
-		// 			updatePackmanShape(packman, t);
-		// 		}, function() {
-		// 			var direction = packman.direction;
-		// 			var sectionIndex = packman.sectionIndex = packman.sectionIndex + direction;
+			function repeat() {
+				packman.animationID = startTrainAnimation(function(t) {
+					//updateTrainShape(train, t);
+					updatePackmanShape(packman, t);
+				}, function() {
+					var direction = packman.direction;
+					var sectionIndex = packman.sectionIndex = packman.sectionIndex + direction;
 
-		// 			if (sectionIndex <= 0 || sectionIndex >= railway.stations.length - 1) {
-		// 				packman.direction = packman.sectionLength = -direction;
-		// 			}
-		// 			updateTrainProps(packman);
-		// 			//updateTrainShape(train, 0);
+					if (sectionIndex <= 0 || sectionIndex >= railway.stations.length - 1) {
+						packman.direction = packman.sectionLength = -direction;
+					}
+					updateTrainProps(packman);
+					//updateTrainShape(train, 0);
 
-		// 			updatePackmanShape(packman, 0);
+					updatePackmanShape(packman, 0);
 
-		// 			// Stop and go
-		// 			packman.animationID = startAnimation({complete: repeat, duration: 1000});
-		// 		}, Math.abs(packman.interval), TIME_FACTOR);
-		// 	}
-		// 	repeat();
-		// });
+					// Stop and go
+					packman.animationID = startAnimation({complete: repeat, duration: 1000});
+				}, Math.abs(packman.interval), TIME_FACTOR);
+			}
+			repeat();
+		});
 	}
-
 
 	let train_data;
 
 	function refreshTrains() {
 		var now = new Date(2019,9,19,12,00);
 		now.setTime(now.getTime() + Date.now() - currentTime);
-		//console.log(now);
 
-		console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		for (i = 0;i < timetableRefData.length; i++) {
 			if(train_data){
 				break;
@@ -1176,8 +1160,6 @@ map.once('styledata', function () {
 				function start(index) {
 					var now = new Date(2019,9,19,12,00);
 					now.setTime(now.getTime() + Date.now() - currentTime);
-					//console.log(now);
-					//var now = new Date(2019,9,19,12,00);
 					var departureTime;
 
 					if (!setSectionData(train, index)) {
@@ -1203,16 +1185,11 @@ map.once('styledata', function () {
 						updatePackmanShape(train, 0);
 					}
 					setTrainStandingStatus(train, true);
-					
-					let now = new Date(2019,9,19,12,00);
-					now.setTime(now.getTime() + Date.now() - currentTime);
-					//console.log(now);
-					
 					train.animationID = startAnimation({
 						complete: !final ? repeat : function() {
 							stopTrain(train);
 						},
-						duration: Math.max(departureTime - now, MIN_STANDING_DURATION)
+						duration: Math.max(departureTime - Date.now(), MIN_STANDING_DURATION)
 					});
 				}
 
@@ -1250,11 +1227,9 @@ map.once('styledata', function () {
 					}, Math.abs(train.interval), 1, elapsed);
 				}
 
-				
 				start();
 				train_data = train;
-				// console.log("arrival_station: " + train_data.arrivalStation);
-				 break;
+				break;
 			}
 		}
 	}
@@ -1262,7 +1237,6 @@ map.once('styledata', function () {
 	function refreshFlights() {
 		var now = new Date(2019,9,19,12,00);
 		now.setTime(now.getTime() + Date.now() - currentTime);
-		//console.log(now);
 
 		Object.keys(flightLookup).forEach(function(key) {
 			var flight = flightLookup[key];
@@ -1288,7 +1262,6 @@ map.once('styledata', function () {
 						setFlightStandingStatus(flight, true);
 						let now = new Date(2019,9,19,12,00);
 						now.setTime(now.getTime() + Date.now() - currentTime);
-						//console.log(now);
 						flight.animationID = startAnimation({
 							complete: function() {
 								stopFlight(flight);
@@ -1919,7 +1892,8 @@ function buildLookup(array, key) {
 }
 
 function getTime(timeString) {
-	var date = new Date();
+	var date = new Date(2019,9,19,12,00);
+	date.setTime(date.getTime() + Date.now() - currentTime);
 	var timeStrings = (timeString || '').split(':');
 	var hours = +timeStrings[0];
 	var tzDiff = date.getTimezoneOffset() + 540; // Difference between local time to JST
@@ -1991,9 +1965,6 @@ function setSectionData(train, index) {
 	var delay = train.delay || 0;
 	var now = new Date(2019,9,19,12,00);
 	now.setTime(now.getTime() + Date.now() - currentTime);
-	
-	//console.log(now);
-	//var now = new Date(2019,9,19,12,00);
 	var index = index !== undefined ? index :
 		table.reduce(function(acc, cur, i) {
 			return getTime(cur.dt) + delay <= now ? i : acc;
