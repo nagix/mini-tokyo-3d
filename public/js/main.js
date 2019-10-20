@@ -745,7 +745,7 @@ map.once('styledata', function () {
 	startAnimation({
 		callback: function() {
 			//var now = new Date(2019,9,19,12,00);
-			var now = new Date(2019,9,19,12,00);
+			let now = new Date(2019,9,19,12,00);
 			now.setTime(now.getTime() + Date.now() - currentTime);
 			//console.log(now);
 			var userData, altitude, bearing;
@@ -1087,11 +1087,10 @@ map.once('styledata', function () {
 	let train_data;
 
 	function refreshTrains() {
-		var now = new Date(2019,9,19,12,00);
+		let now = new Date(2019,9,19,12,00);
 		now.setTime(now.getTime() + Date.now() - currentTime);
 		//console.log(now);
 
-		console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		for (i = 0;i < timetableRefData.length; i++) {
 			if(train_data){
 				break;
@@ -1104,7 +1103,7 @@ map.once('styledata', function () {
 				(!train.nextTrain || !activeTrainLookup[train.nextTrain.t]) &&
 				(!railwayLookup[train.r].status || realtimeTrainLookup[train.t])) {
 				function start(index) {
-					var now = new Date(2019,9,19,12,00);
+					let now = new Date(2019,9,19,12,00);
 					now.setTime(now.getTime() + Date.now() - currentTime);
 					//console.log(now);
 					//var now = new Date(2019,9,19,12,00);
@@ -1190,7 +1189,7 @@ map.once('styledata', function () {
 	}
 
 	function refreshFlights() {
-		var now = new Date(2019,9,19,12,00);
+		let now = new Date(2019,9,19,12,00);
 		now.setTime(now.getTime() + Date.now() - currentTime);
 		//console.log(now);
 
@@ -1919,7 +1918,7 @@ function getTrainOpacity(train) {
 function setSectionData(train, index) {
 	var table = train.tt;
 	var delay = train.delay || 0;
-	var now = new Date(2019,9,19,12,00);
+	let now = new Date(2019,9,19,12,00);
 	now.setTime(now.getTime() + Date.now() - currentTime);
 	
 	//console.log(now);
