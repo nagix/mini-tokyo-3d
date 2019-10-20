@@ -1015,7 +1015,6 @@ map.once('styledata', function () {
 			function repeat() {
 				train.animationID = startTrainAnimation(function(t) {
 					//updateTrainShape(train, t);
-					
 				}, function() {
 					var direction = train.direction;
 					var sectionIndex = train.sectionIndex = train.sectionIndex + direction;
