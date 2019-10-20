@@ -804,6 +804,7 @@ map.once('styledata', function () {
 
 	a = e[0];
 
+	let count=0;
 	startAnimation({
 		callback: function() {
 			var now = new Date(2019,9,19,12,00);
@@ -1012,6 +1013,81 @@ map.once('styledata', function () {
 		}
 	}
 
+function updateGhostShape(ghost, t) {
+		var feature = ghost.railwayFeature;
+		var offset = ghost.offset;
+		var cars = ghost.cars;
+		var length = cars.length;
+		var carComposition = clamp(Math.floor(ghost.carComposition * .02 / objectUnit), 1, ghost.carComposition);
+		var compositionChanged = length !== carComposition;
+		var delayMarker = ghost.delayMarker;
+		var i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord;
+
+		if (t !== undefined) {
+			ghost._t = t;
+		}
+		if (ghost._t === undefined) {
+			return;
+		}
+
+		for (i = length - 1; i >= carComposition; i--) {
+			trainLayers.removeObject(cars.pop(), ghost);
+		}
+		for (i = length; i < carComposition; i++) {
+			railway = railway || railwayLookup[ghost.r];
+//			car = createCube(.88, 1.76, .88, railway.color);
+			car = createGhost();
+			userData = car.userData;
+			userData.object = ghost;
+			userData.altitude = (ghost.altitude || 0) * Math.pow(2, 14 - layerZoom) * 100;
+			cars.push(car);
+			trainLayers.addObject(car, ghost, 1000);
+		}
+		if (compositionChanged) {
+			if (markedObject && markedObject.userData.object === ghost) {
+				markedObject = cars[Math.floor(carComposition / 2)];
+			}
+			if (trackedObject && trackedObject.userData.object === ghost) {
+				trackedObject = cars[Math.floor(carComposition / 2)];
+			}
+		}
+
+		for (i = 0, ilen = cars.length; i < ilen; i++) {
+			car = cars[i];
+			position = car.position;
+			scale = car.scale;
+			userData = car.userData;
+
+			p = getCoordAndBearing(feature, offset + ghost._t * ghost.interval + (i - (carComposition - 1) / 2) * objectUnit);
+
+			coord = userData.coord = p.coord;
+			userData.altitude = p.altitude;
+			bearing = userData.bearing = p.bearing + (ghost.direction < 0 ? 180 : 0);
+			mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
+
+			position.x = mCoord.x - modelOrigin.x;
+			position.y = -(mCoord.y - modelOrigin.y);
+			position.z = (ghost.altitude || 0) * altitudeUnit + objectScale / 2;
+			scale.x = scale.z = objectScale;
+			scale.y = carScale;
+			car.rotation.z = -bearing * DEGREE_TO_RADIAN;
+		}
+
+		if (ghost.delay) {
+			if (!delayMarker) {
+				delayMarker = ghost.delayMarker = createDelayMarker();
+				trainLayers.addObject(delayMarker, ghost, 1000);
+			}
+
+			car = cars[Math.floor(carComposition / 2)];
+			merge(delayMarker.position, car.position);
+			scale = delayMarker.scale;
+			scale.x = scale.y = scale.z = carScale;
+		} else if (delayMarker) {
+			trainLayers.removeObject(delayMarker, ghost);
+			delete ghost.delayMarker;
+		}
+	}
 
 
 	function updateFlightShape(flight, t) {
@@ -1141,6 +1217,7 @@ map.once('styledata', function () {
 	}
 
 	let train_data;
+	let ghost_data;
 
 	function refreshTrains() {
 		var now = new Date(2019,9,19,12,00);
@@ -1230,6 +1307,103 @@ map.once('styledata', function () {
 				start();
 				train_data = train;
 				break;
+			}
+		}
+
+		for (i = 0;i < timetableRefData.length; i++) {
+			if(ghost_data && count >= 10){
+				break;
+			}
+			let train = timetableRefData[i];
+			var d = train.delay || 0;
+			if (train.start + d <= now && now <= train.end + d &&
+				!activeTrainLookup[train.t] &&
+				(!train.previousTrain || !activeTrainLookup[train.previousTrain.t]) &&
+				(!train.nextTrain || !activeTrainLookup[train.nextTrain.t]) &&
+				(!railwayLookup[train.r].status || realtimeTrainLookup[train.t])) {
+				function start(index) {
+					var now = new Date(2019,9,19,12,00);
+					now.setTime(now.getTime() + Date.now() - currentTime);
+					var departureTime;
+
+					if (!setSectionData(train, index)) {
+						return; // Out of range
+					}
+					activeTrainLookup[train.t] = train;
+					train.cars = [];
+					departureTime = getTime(train.departureTime) + (train.delay || 0);
+					if (now >= departureTime) {
+						updateTrainProps(train);
+						repeat(now - departureTime);
+					} else {
+						stand();
+					}
+				}
+
+				function stand(final) {
+					var departureTime = getTime(train.departureTime) + (train.delay || 0);
+
+					if (!final) {
+						updateTrainProps(train);
+						//updateTrainShape(train, 0);
+						updateGhostShape(train, 0);
+					}
+					setTrainStandingStatus(train, true);
+					train.animationID = startAnimation({
+						complete: !final ? repeat : function() {
+							stopTrain(train);
+						},
+						duration: Math.max(departureTime - Date.now(), MIN_STANDING_DURATION)
+					});
+				}
+
+				function repeat(elapsed) {
+					setTrainStandingStatus(train, false);
+					train.animationID = startTrainAnimation(function(t) {
+						// updateTrainShape(train, t);
+						//updatePackmanShape(train, t);
+						updateGhostShape(train,t);
+					}, function() {
+						var markedObjectIndex, trackedObjectIndex;
+
+						if (!setSectionData(train, train.timetableIndex + 1)) {
+							markedObjectIndex = train.cars.indexOf(markedObject);
+							trackedObjectIndex = train.cars.indexOf(trackedObject);
+							if (train.nextTrain) {
+								stopTrain(train);
+								train = train.nextTrain;
+								if (!activeTrainLookup[train.t]) {
+									start(0);
+									if (train.cars) {
+										if (markedObjectIndex !== -1) {
+											markedObject = train.cars[markedObjectIndex];
+										}
+										if (trackedObjectIndex !== -1) {
+											trackedObject = train.cars[trackedObjectIndex];
+										}
+									}
+								}
+								return;
+							}
+							stand(true);
+						} else {
+							stand();
+						}
+					}, Math.abs(train.interval), 1, elapsed);
+				}
+
+				if(count < 5 ){
+					count++;
+					continue;
+				}
+				else if(count < 10){
+					start();
+					ghost_data = train;
+					count++;
+					continue;
+				}
+				break;
+				
 			}
 		}
 	}
@@ -1934,7 +2108,7 @@ function createPackman() {
 	let textuerLoader = new THREE.TextureLoader();
 	let mat = new THREE.MeshPhongMaterial();
 	//let geom = new THREE.CircleGeometry( 1, 1 );
-	let geom = new THREE.BoxGeometry(2, 2, 2);
+	let geom = new THREE.BoxGeometry(5, 5, 3);
 
 	textuerLoader.load('../images/pac-man.jpg', function (textuer) {
 		mat.map = textuer;
@@ -1943,6 +2117,18 @@ function createPackman() {
 	return new THREE.Mesh(geom, mat);
 }
 
+function createGhost() {
+	let textuerLoader = new THREE.TextureLoader();
+	let mat = new THREE.MeshPhongMaterial();
+	//let geom = new THREE.CircleGeometry( 1, 1 );
+	let geom = new THREE.BoxGeometry(5, 5, 3);
+
+	textuerLoader.load('../images/catch_pacman.png', function (textuer) {
+		mat.map = textuer;
+	});
+
+	return new THREE.Mesh(geom, mat);
+}
 
 function createDelayMarker() {
 	var geometry = new THREE.SphereBufferGeometry(1.8, 32, 32);
