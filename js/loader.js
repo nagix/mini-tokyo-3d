@@ -21,9 +21,7 @@
 // API URL
 var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
 
-// API Token
-var API_TOKEN = '';
-
+var a = '';
 var lang = getLang();
 var timetables = {};
 var isUndergroundVisible = false;
@@ -62,29 +60,45 @@ var MapboxGLButtonControl = function(options) {
 	this.initialize(options);
 };
 
-MapboxGLButtonControl.prototype.initialize = function(options) {
-	this._className = options.className || '';
-	this._title = options.title || '';
-	this._eventHandler = options.eventHandler;
+MapboxGLButtonControl.prototype.initialize = function(optionArray) {
+	this._options = optionArray.map(function(options) {
+		return {
+			className: options.className || '',
+			title: options.title || '',
+			eventHandler: options.eventHandler
+		};
+	});
 };
 
 MapboxGLButtonControl.prototype.onAdd = function(map) {
-	this._btn = document.createElement('button');
-	this._btn.className = 'mapboxgl-ctrl-icon ' + this._className;
-	this._btn.type = 'button';
-	this._btn.title = this._title;
-	this._btn.onclick = this._eventHandler;
+	var me = this;
 
-	this._container = document.createElement('div');
-	this._container.className = 'mapboxgl-ctrl-group mapboxgl-ctrl';
-	this._container.appendChild(this._btn);
+	me._map = map;
 
-	return this._container;
+	me._container = document.createElement('div');
+	me._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group';
+
+	me._buttons = me._options.map(function(options) {
+		var button = document.createElement('button');
+
+		button.className = 'mapboxgl-ctrl-icon ' + options.className;
+		button.type = 'button';
+		button.title = options.title;
+		button.onclick = options.eventHandler;
+
+		me._container.appendChild(button);
+
+		return button;
+	});
+
+	return me._container;
 };
 
 MapboxGLButtonControl.prototype.onRemove = function() {
-	this._container.parentNode.removeChild(this._container);
-	this._map = undefined;
+	var me = this;
+
+	me._container.parentNode.removeChild(me._container);
+	me._map = undefined;
 };
 
 Promise.all([
@@ -121,159 +135,77 @@ var map = new mapboxgl.Map({
 	pitch: 60
 });
 
-stationLookup = buildLookup(stationRefData);
+// Build railway data
 railwayLookup = buildLookup(railwayRefData);
+railwayData.forEach(function(railway) {
+	var railwayID = railway.id;
+	var splice = railway.splice;
+	var railwayRef = railwayLookup[railwayID];
+	var stations;
 
-// Add Keiyo branch lines and stations
-[{
-	railway: 'JR-East.KeiyoKoyaBranch',
-	stationNames: ['NishiFunabashi', 'MinamiFunabashi', 'ShinNarashino', 'Kaihimmakuhari']
-}, {
-	railway: 'JR-East.KeiyoFutamataBranch',
-	stationNames: ['Tokyo', 'Hatchobori', 'Etchujima', 'Shiomi', 'ShinKiba', 'Kasairinkaikoen', 'Maihama', 'ShinUrayasu', 'Ichikawashiohama', 'NishiFunabashi']
-}].forEach(function(data) {
-	var railwayID = data.railway;
-	var stationNames = data.stationNames;
-	var railway = {
-		id: railwayID,
-		title: merge({}, railwayLookup['JR-East.Musashino'].title),
-		order: stationNames.map(function(name) {
-			return {s: railwayID + '.' + name};
-		}),
-		ascending: "Outbound"
-	};
-
-	railwayRefData.push(railway);
-	railwayLookup[railwayID] = railway;
-
-	stationNames.forEach(function(name) {
-		var stationRef = stationLookup['JR-East.Keiyo.' + name];
-		var stationID = railwayID + '.' + name;
-		var station = {
-			coord: stationRef.coord,
-			railway: railwayID,
-			id: stationID,
-			title: merge({}, stationRef.title)
+	if (!railwayRef) {
+		stations = railway.stations.slice();
+		railwayRef = railwayLookup[railwayID] = {
+			id: railwayID,
+			title: {},
+			stations: stations,
+			ascending: railway.ascending
 		};
+		railwayRefData.push(railwayRef);
 
-		stationRefData.push(station);
-		stationLookup[stationID] = station;
-	});
-});
-
-// Remove Keiyo NishiFunabashi station
-railwayLookup['JR-East.Keiyo'].order.pop();
-
-// Modify Keiyo branch timetables
-Object.keys(trainTimetableRefData).forEach(function(key) {
-	trainTimetableRefData[key].filter(function(table) {
-		return table.r === 'JR-East.Keiyo' &&
-			(table.tt[0].ds === 'JR-East.Keiyo.NishiFunabashi' ||
-			table.tt[table.tt.length - 1].as === 'JR-East.Keiyo.NishiFunabashi');
-	}).forEach(function(table) {
-		var startFromNishiFunabashi = table.tt[0].ds === 'JR-East.Keiyo.NishiFunabashi';
-		var direction = table.d;
-		var branchName = (startFromNishiFunabashi && direction === 'Outbound') ||
-			(!startFromNishiFunabashi && direction === 'Inbound') ?
-			'KoyaBranch' : 'FutamataBranch';
-
-		table.r = 'JR-East.Keiyo' + branchName;
-		table.ds = table.ds.map(function(station) {
-			return station.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
+		stations.forEach(function(id) {
+			stationRefData.push({
+				id: id,
+				railway: railwayID
+			});
 		});
-		table.tt.forEach(function(obj, i) {
-			if (obj.as) {
-				obj.as = obj.as.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
-			}
-			if (obj.ds) {
-				obj.ds = obj.ds.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
-			}
-		});
-	});
+	}
+
+	merge(railwayRef.title, railway.title);
+	if (splice) {
+		if (splice.station) {
+			railwayRef.stations.splice(splice.start, splice.length, splice.station);
+			stationRefData.push({
+				id: splice.station,
+				railway: railwayID
+			});
+		} else {
+			railwayRef.stations.splice(splice.start, splice.length);
+		}
+	}
+	railwayRef.color = railway.color;
+	railwayRef.altitude = railway.altitude;
+	railwayRef.carComposition = railway.carComposition;
 });
-
-// Add another instance of Toei Oedo Tochomae station
-railwayLookup['Toei.Oedo'].order[28].s += '.1';
-var stationID = 'Toei.Oedo.Tochomae.1';
-var station = {
-	coord: [139.692691, 35.690551],
-	railway: 'Toei.Oedo',
-	id: stationID,
-	title: merge({}, stationLookup['Toei.Oedo.Tochomae'].title)
-};
-stationRefData.push(station);
-stationLookup[stationID] = station;
-
-// Modify Toei Oedo timetables
-Object.keys(trainTimetableRefData).forEach(function(key) {
-	trainTimetableRefData[key].filter(function(table) {
-		return table.r === 'Toei.Oedo';
-	}).forEach(function(table) {
-		var tt = table.tt;
-
-		tt.forEach(function(obj, i) {
-			var prev = tt[i - 1] || {};
-			var next = tt[i + 1] || {};
-			if ((obj.as || obj.ds) === 'Toei.Oedo.Tochomae' &&
-				(prev.as || prev.ds) !== 'Toei.Oedo.ShinjukuNishiguchi' &&
-				(next.as || next.ds) !== 'Toei.Oedo.ShinjukuNishiguchi') {
-				if (obj.as) {
-					obj.as += '.1';
-				}
-				if (obj.ds) {
-					obj.ds += '.1';
-				}
-			}
-		})
-	});
-});
-
-// Fix the coordinates of Keio Shinjuku station
-stationLookup['Keio.Keio.Shinjuku'].coord = [139.69916, 35.69019];
 
 // Build station data
+stationLookup = buildLookup(stationRefData);
 stationData.forEach(function(stations) {
 	if (!Array.isArray(stations)) {
 		stations = [stations];
 	}
 	stations.forEach(function(station) {
-		station.aliases.forEach(function(alias) {
-			merge(stationLookup[alias].title, station.title);
+		var primaryStationRef = stationLookup[station.ids[0]];
+
+		station.ids.forEach(function(id) {
+			var stationRef = stationLookup[id];
+
+			if (!stationRef.title) {
+				stationRef.title = merge({}, primaryStationRef.title);
+			}
+			if (!stationRef.coord) {
+				stationRef.coord = primaryStationRef.coord;
+			}
+			merge(stationRef.title, station.title);
 		});
 	});
 });
 
-// Build railway data
-railwayData.forEach(function(railway) {
-	var id = railway.id;
-	var railwayRef = railwayLookup[id];
-	var stationOrder = railwayRef.order;
+// Fix the coordinates of Toei Oedo Tochomae station
+stationLookup['Toei.Oedo.Tochomae.1'].coord = [139.692691, 35.690551];
 
-	if (id === 'JR-East.Ome') {
-		stationOrder = stationOrder.slice(0, 13);
-	} else if (id === 'JR-East.Tokaido') {
-		stationOrder = stationOrder.slice(0, 7);
-	} else if (id === 'JR-East.Utsunomiya') {
-		stationOrder = stationOrder.slice(0, 13);
-	} else if (id === 'JR-East.Takasaki') {
-		stationOrder = stationOrder.slice(0, 13);
-	} else if (id === 'JR-East.Sobu') {
-		stationOrder = stationOrder.slice(0, 6);
-	} else if (id === 'JR-East.Narita') {
-		stationOrder = stationOrder.slice(0, 3);
-	} else if (id === 'JR-East.Uchibo' || id === 'JR-East.Sotobo') {
-		stationOrder = stationOrder.slice(0, 3);
-	} else if (id === 'JR-East.Yokosuka') {
-		stationOrder = stationOrder.slice(0, 11);
-	}
-	railwayRef.stations = stationOrder.map(function(station) {
-		return station.s;
-	});
-	merge(railwayRef.title, railway.title);
-	railwayRef.color = railway.color;
-	railwayRef.altitude = railway.altitude;
-	railwayRef.carComposition = railway.carComposition;
-});
+// Fix the coordinates of Keio Shinjuku station
+stationLookup['Keio.Keio.Shinjuku'].coord = [139.69916, 35.69019];
 
 var railwayFeatureArray = [];
 
@@ -409,7 +341,7 @@ var railwayFeatureArray = [];
 		}
 
 		stations.forEach(function(station) {
-			var coords = station.aliases.map(function(s) {
+			var coords = station.ids.map(function(s) {
 				var stationRef = stationLookup[s];
 				var feature = featureLookup[stationRef.railway + '.' + zoom];
 				return turf.getCoord(turf.nearestPointOnLine(feature, stationRef.coord));
@@ -458,6 +390,60 @@ coordinateData.airways.forEach(function(airway) {
 });
 
 var railwayFeatureCollection = turf.featureCollection(railwayFeatureArray);
+
+// Modify Keiyo branch timetables
+Object.keys(trainTimetableRefData).forEach(function(key) {
+	trainTimetableRefData[key].filter(function(table) {
+		var tt = table.tt;
+		return table.r === 'JR-East.Keiyo' &&
+			(tt[0].ds === 'JR-East.Keiyo.NishiFunabashi' ||
+			tt[tt.length - 1].as === 'JR-East.Keiyo.NishiFunabashi');
+	}).forEach(function(table) {
+		var tt = table.tt;
+		var startFromNishiFunabashi = tt[0].ds === 'JR-East.Keiyo.NishiFunabashi';
+		var direction = table.d;
+		var branchName = (startFromNishiFunabashi && direction === 'Outbound') ||
+			(!startFromNishiFunabashi && direction === 'Inbound') ?
+			'KoyaBranch' : 'FutamataBranch';
+
+		table.r = 'JR-East.Keiyo' + branchName;
+		table.ds = table.ds.map(function(station) {
+			return station.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
+		});
+		tt.forEach(function(obj, i) {
+			if (obj.as) {
+				obj.as = obj.as.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
+			}
+			if (obj.ds) {
+				obj.ds = obj.ds.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
+			}
+		});
+	});
+});
+
+// Modify Toei Oedo timetables
+Object.keys(trainTimetableRefData).forEach(function(key) {
+	trainTimetableRefData[key].filter(function(table) {
+		return table.r === 'Toei.Oedo';
+	}).forEach(function(table) {
+		var tt = table.tt;
+
+		tt.forEach(function(obj, i) {
+			var prev = tt[i - 1] || {};
+			var next = tt[i + 1] || {};
+			if ((obj.as || obj.ds) === 'Toei.Oedo.Tochomae' &&
+				(prev.as || prev.ds) !== 'Toei.Oedo.ShinjukuNishiguchi' &&
+				(next.as || next.ds) !== 'Toei.Oedo.ShinjukuNishiguchi') {
+				if (obj.as) {
+					obj.as += '.1';
+				}
+				if (obj.ds) {
+					obj.ds += '.1';
+				}
+			}
+		})
+	});
+});
 
 // Build rail direction data
 railDirectionLookup = buildLookup(railDirectionRefData);
@@ -639,7 +625,7 @@ map.once('styledata', function () {
 	}
 	map.addControl(control);
 
-	map.addControl(new MapboxGLButtonControl({
+	map.addControl(new MapboxGLButtonControl([{
 		className: 'mapbox-ctrl-underground',
 		title: 'Enter underground',
 		eventHandler: function(event) {
@@ -678,9 +664,9 @@ map.once('styledata', function () {
 				duration: 300
 			});
 		}
-	}), 'top-right');
+	}]), 'top-right');
 
-	map.addControl(new MapboxGLButtonControl({
+	map.addControl(new MapboxGLButtonControl([{
 		className: 'mapbox-ctrl-export',
 		title: 'Export',
 		eventHandler: function() {
@@ -695,7 +681,7 @@ map.once('styledata', function () {
 			exportJSON(airportRefData, 'airports.json', 13500);
 			exportJSON(flightStatusRefData, 'flight-status.json', 14000);
 		}
-	}), 'top-right');
+	}]), 'top-right');
 
 	map.on('click', function(e) {
 		console.log(e.lngLat);
@@ -809,19 +795,21 @@ function repeat() {
 	for (i = 0, ilen = ids.length; i < ilen; i++) {
 		id = ids[i];
 		animation = animations[id];
-		start = animation.start = animation.start || now;
-		duration = animation.duration;
-		elapsed = now - start;
-		callback = animation.callback;
-		if (callback) {
-			callback(Math.min(elapsed, duration), duration);
-		}
-		if (elapsed >= duration) {
-			callback = animation.complete;
+		if (animation) {
+			start = animation.start = animation.start || now;
+			duration = animation.duration;
+			elapsed = now - start;
+			callback = animation.callback;
 			if (callback) {
-				callback();
+				callback(Math.min(elapsed, duration), duration);
 			}
-			stopAnimation(id);
+			if (elapsed >= duration) {
+				callback = animation.complete;
+				if (callback) {
+					callback();
+				}
+				stopAnimation(id);
+			}
 		}
 	}
 	requestAnimationFrame(repeat);
@@ -880,6 +868,9 @@ function loadJSON(url) {
 	return new Promise(function(resolve, reject) {
 		var request = new XMLHttpRequest();
 
+		if (url.indexOf(API_URL) === 0) {
+			url += a;
+		}
 		request.open('GET', url);
 		request.onreadystatechange = function() {
 			if (request.readyState === 4) {
@@ -909,7 +900,7 @@ function loadStationRefData() {
 		'SaitamaRailway', 'Minatomirai', 'Keio', 'TokyoMetro', 'Toei', 'Tobu',
 		'ToyoRapid', 'Odakyu', 'Keikyu', 'Keisei', 'Hokuso', 'Shibayama'
 	].map(function(operator) {
-		return loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:' + operator + '&' + API_TOKEN);
+		return loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:' + operator);
 	})).then(function(data) {
 		return concat(data).map(function(station) {
 			return {
@@ -925,15 +916,13 @@ function loadStationRefData() {
 function loadRailwayRefData() {
 	return loadJSON(API_URL + 'odpt:Railway?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'Keio'].map(function(operator) {
 		return 'odpt.Operator:' + operator;
-	}).join(',') + '&' + API_TOKEN).then(function(data) {
+	}).join(',')).then(function(data) {
 		return data.map(function(railway) {
 			return {
 				id: removePrefix(railway['owl:sameAs']),
 				title: railway['odpt:railwayTitle'],
-				order: railway['odpt:stationOrder'].map(function(obj) {
-					return {
-						s: removePrefix(obj['odpt:station'])
-					};
+				stations: railway['odpt:stationOrder'].map(function(obj) {
+					return removePrefix(obj['odpt:station'])
 				}),
 				ascending: removePrefix(railway['odpt:ascendingRailDirection'])
 			};
@@ -947,8 +936,7 @@ function loadTrainTimetableRefData() {
 			return Promise.all(railwayData.map(function(railway) {
 				var id = railway.id;
 				return loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:' + id +
-					(id === 'JR-East.ChuoSobuLocal' ? '' : '&odpt:calendar=odpt.Calendar:' + calendar) +
-					'&' + API_TOKEN);
+					(id === 'JR-East.ChuoSobuLocal' ? '' : '&odpt:calendar=odpt.Calendar:' + calendar));
 			})).then(function(data) {
 				return concat(data).map(function(table) {
 					return {
@@ -982,7 +970,7 @@ function loadTrainTimetableRefData() {
 }
 
 function loadRailDirectionRefData() {
-	return loadJSON(API_URL + 'odpt:RailDirection?' + API_TOKEN).then(function(data) {
+	return loadJSON(API_URL + 'odpt:RailDirection?').then(function(data) {
 		return data.map(function(direction) {
 			return {
 				id: removePrefix(direction['owl:sameAs']),
@@ -995,7 +983,7 @@ function loadRailDirectionRefData() {
 function loadTrainTypeRefData() {
 	return loadJSON(API_URL + 'odpt:TrainType?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'Keio'].map(function(operator) {
 		return 'odpt.Operator:' + operator;
-	}).join(',') + '&' + API_TOKEN).then(function(data) {
+	}).join(',')).then(function(data) {
 		return data.map(function(type) {
 			return {
 				id: removePrefix(type['owl:sameAs']),
@@ -1006,7 +994,7 @@ function loadTrainTypeRefData() {
 }
 
 function loadOperatorRefData() {
-	return loadJSON(API_URL + 'odpt:Operator?' + API_TOKEN).then(function(data) {
+	return loadJSON(API_URL + 'odpt:Operator?').then(function(data) {
 		return data.map(function(operator) {
 			return {
 				id: removePrefix(operator['owl:sameAs']),
@@ -1017,7 +1005,7 @@ function loadOperatorRefData() {
 }
 
 function loadAirportRefData() {
-	return loadJSON(API_URL + 'odpt:Airport?' + API_TOKEN).then(function(data) {
+	return loadJSON(API_URL + 'odpt:Airport?').then(function(data) {
 		return data.map(function(airport) {
 			return {
 				id: removePrefix(airport['owl:sameAs']),
@@ -1028,7 +1016,7 @@ function loadAirportRefData() {
 }
 
 function loadFlightStatusRefData() {
-	return loadJSON(API_URL + 'odpt:FlightStatus?' + API_TOKEN).then(function(data) {
+	return loadJSON(API_URL + 'odpt:FlightStatus?').then(function(data) {
 		return data.map(function(status) {
 			return {
 				id: removePrefix(status['owl:sameAs']),
