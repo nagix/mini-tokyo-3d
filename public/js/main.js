@@ -83,6 +83,76 @@ var trackedObject, markedObject, lastTrainRefresh, lastFrameRefresh, trackingBas
 
 var currentTime = Date.now();
 
+let watch_id = null;
+let webSocketConnection = null;
+
+const watchLocation = function(){
+	if(navigator.geolocation){
+		watch_id = navigator.geolocation.watchPosition(position => {
+			console.log(position);
+			if(webSocketConnection){
+				webSocketConnection.send(
+					JSON.stringify({
+						action: 'location',
+						value: {
+					    lat: position.coords.latitude,
+					    lon: position.coords.longitude,
+						}
+					})
+				);
+			}
+		},
+		e => {
+			console.log(e);
+		},
+		{
+			enableHighAccuracy: true,
+			timeout: 20000,
+			maximumAge: 2000
+		})
+	} else {
+		console.log("error");
+	}
+}
+watchLocation();
+
+const clearLocation = function(){
+	if(watch_id){
+		navigator.geolocation.clearWatch(watch_id);
+	}
+}
+
+const setupWebsocket = function(){
+  const sock = new WebSocket('wss://tokyo-packman.us-south.cf.appdomain.cloud/');
+
+  // 接続
+  sock.addEventListener('open', e => {
+		if(!watch_id){
+			watchLocation();
+		}
+	  console.log('Socket 接続成功');
+  });
+
+  // サーバーからデータを受け取る
+  sock.addEventListener('message', e => {
+	  console.log(e);
+	  const data = JSON.parse(e.data);
+	  if (Object.keys(data).length > 0) {
+		  return
+  	}
+	  const value = data.value;
+	  console.log(value);
+  });
+
+  // 断線
+  sock.addEventListener('close', e => {
+		console.log("close");
+		clearLocation();
+	});
+	return sock;
+}
+webSocketConnection = setupWebsocket();
+
 // Replace MapboxLayer.render to support underground rendering
 var render = MapboxLayer.prototype.render;
 MapboxLayer.prototype.render = function(gl, matrix) {
