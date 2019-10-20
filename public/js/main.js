@@ -81,6 +81,78 @@ var animationID = 0;
 var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, timetableLookup, operatorLookup, airportLookup, a;
 var trackedObject, markedObject, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
 
+var currentTime = Date.now();
+
+let watch_id = null;
+let webSocketConnection = null;
+
+const watchLocation = function(){
+	if(navigator.geolocation){
+		watch_id = navigator.geolocation.watchPosition(position => {
+			console.log(position);
+			if(webSocketConnection){
+				webSocketConnection.send(
+					JSON.stringify({
+						action: 'location',
+						value: {
+					    lat: position.coords.latitude,
+					    lon: position.coords.longitude,
+						}
+					})
+				);
+			}
+		},
+		e => {
+			console.log(e);
+		},
+		{
+			enableHighAccuracy: true,
+			timeout: 20000,
+			maximumAge: 2000
+		})
+	} else {
+		console.log("error");
+	}
+}
+watchLocation();
+
+const clearLocation = function(){
+	if(watch_id){
+		navigator.geolocation.clearWatch(watch_id);
+	}
+}
+
+const setupWebsocket = function(){
+  const sock = new WebSocket('wss://tokyo-packman.us-south.cf.appdomain.cloud/');
+
+  // 接続
+  sock.addEventListener('open', e => {
+		if(!watch_id){
+			watchLocation();
+		}
+	  console.log('Socket 接続成功');
+  });
+
+  // サーバーからデータを受け取る
+  sock.addEventListener('message', e => {
+	  console.log(e);
+	  const data = JSON.parse(e.data);
+	  if (Object.keys(data).length > 0) {
+		  return
+  	}
+	  const value = data.value;
+	  console.log(value);
+  });
+
+  // 断線
+  sock.addEventListener('close', e => {
+		console.log("close");
+		clearLocation();
+	});
+	return sock;
+}
+webSocketConnection = setupWebsocket();
+
 // Replace MapboxLayer.render to support underground rendering
 var render = MapboxLayer.prototype.render;
 MapboxLayer.prototype.render = function(gl, matrix) {
@@ -276,7 +348,7 @@ Promise.all([
 	railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData, e
 ]) {
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibmFnaXgiLCJhIjoiY2sxaTZxY2gxMDM2MDNjbW5nZ2h4aHB6ZyJ9.npSnxvMC4r5S74l8A9Hrzw';
+mapboxgl.accessToken = 'pk.eyJ1IjoidGFwdGFwcHVuIiwiYSI6ImNrMXlmYm5wNDBtbXYzaHBpa2lvNGtqN2IifQ.ptcQL38Jnzl53W22zgpM-A';
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -625,7 +697,8 @@ map.once('styledata', function () {
 				this.classList.add('mapbox-ctrl-realtime-active');
 			} else {
 				this.classList.remove('mapbox-ctrl-realtime-active');
-				initModelTrains();
+				//initModelTrains();
+				initModelPackmans();
 			}
 		}
 	}]), 'top-right');
@@ -709,7 +782,8 @@ map.once('styledata', function () {
 			var train = activeTrainLookup[key];
 
 			updateTrainProps(train);
-			updateTrainShape(train);
+			//updateTrainShape(train);
+			updatePackmanShape(train);
 		});
 		Object.keys(activeFlightLookup).forEach(function(key) {
 			updateFlightShape(activeFlightLookup[key]);
@@ -724,14 +798,17 @@ map.once('styledata', function () {
 	repeat();
 
 	if (!isRealtime) {
-		initModelTrains();
+		//initModelTrains();
+		initModelPackmans();
 	}
 
 	a = e[0];
 
+	let count=0;
 	startAnimation({
 		callback: function() {
-			var now = Date.now();
+			var now = new Date(2019,9,19,12,00);
+			now.setTime(now.getTime() + Date.now() - currentTime);
 			var userData, altitude, bearing;
 
 			if (isRealtime) {
@@ -806,7 +883,8 @@ map.once('styledata', function () {
 		}
 		for (i = length; i < carComposition; i++) {
 			railway = railway || railwayLookup[train.r];
-			car = createCube(.88, 1.76, .88, railway.color);
+//			car = createCube(.88, 1.76, .88, railway.color);
+			car = createPackman();
 			userData = car.userData;
 			userData.object = train;
 			userData.altitude = (train.altitude || 0) * Math.pow(2, 14 - layerZoom) * 100;
@@ -858,6 +936,159 @@ map.once('styledata', function () {
 			delete train.delayMarker;
 		}
 	}
+
+	function updatePackmanShape(packman, t) {
+		var feature = packman.railwayFeature;
+		var offset = packman.offset;
+		var cars = packman.cars;
+		var length = cars.length;
+		var carComposition = clamp(Math.floor(packman.carComposition * .02 / objectUnit), 1, packman.carComposition);
+		var compositionChanged = length !== carComposition;
+		var delayMarker = packman.delayMarker;
+		var i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord;
+
+		if (t !== undefined) {
+			packman._t = t;
+		}
+		if (packman._t === undefined) {
+			return;
+		}
+
+		for (i = length - 1; i >= carComposition; i--) {
+			trainLayers.removeObject(cars.pop(), packman);
+		}
+		for (i = length; i < carComposition; i++) {
+			railway = railway || railwayLookup[packman.r];
+//			car = createCube(.88, 1.76, .88, railway.color);
+			car = createPackman();
+			userData = car.userData;
+			userData.object = packman;
+			userData.altitude = (packman.altitude || 0) * Math.pow(2, 14 - layerZoom) * 100;
+			cars.push(car);
+			trainLayers.addObject(car, packman, 1000);
+		}
+		if (compositionChanged) {
+			if (markedObject && markedObject.userData.object === packman) {
+				markedObject = cars[Math.floor(carComposition / 2)];
+			}
+			if (trackedObject && trackedObject.userData.object === packman) {
+				trackedObject = cars[Math.floor(carComposition / 2)];
+			}
+		}
+
+		for (i = 0, ilen = cars.length; i < ilen; i++) {
+			car = cars[i];
+			position = car.position;
+			scale = car.scale;
+			userData = car.userData;
+
+			p = getCoordAndBearing(feature, offset + packman._t * packman.interval + (i - (carComposition - 1) / 2) * objectUnit);
+
+			coord = userData.coord = p.coord;
+			userData.altitude = p.altitude;
+			bearing = userData.bearing = p.bearing + (packman.direction < 0 ? 180 : 0);
+			mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
+
+			position.x = mCoord.x - modelOrigin.x;
+			position.y = -(mCoord.y - modelOrigin.y);
+			position.z = (packman.altitude || 0) * altitudeUnit + objectScale / 2;
+			scale.x = scale.z = objectScale;
+			scale.y = carScale;
+			car.rotation.z = -bearing * DEGREE_TO_RADIAN;
+		}
+
+		if (packman.delay) {
+			if (!delayMarker) {
+				delayMarker = packman.delayMarker = createDelayMarker();
+				trainLayers.addObject(delayMarker, packman, 1000);
+			}
+
+			car = cars[Math.floor(carComposition / 2)];
+			merge(delayMarker.position, car.position);
+			scale = delayMarker.scale;
+			scale.x = scale.y = scale.z = carScale;
+		} else if (delayMarker) {
+			trainLayers.removeObject(delayMarker, packman);
+			delete packman.delayMarker;
+		}
+	}
+
+function updateGhostShape(ghost, t) {
+		var feature = ghost.railwayFeature;
+		var offset = ghost.offset;
+		var cars = ghost.cars;
+		var length = cars.length;
+		var carComposition = clamp(Math.floor(ghost.carComposition * .02 / objectUnit), 1, ghost.carComposition);
+		var compositionChanged = length !== carComposition;
+		var delayMarker = ghost.delayMarker;
+		var i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord;
+
+		if (t !== undefined) {
+			ghost._t = t;
+		}
+		if (ghost._t === undefined) {
+			return;
+		}
+
+		for (i = length - 1; i >= carComposition; i--) {
+			trainLayers.removeObject(cars.pop(), ghost);
+		}
+		for (i = length; i < carComposition; i++) {
+			railway = railway || railwayLookup[ghost.r];
+//			car = createCube(.88, 1.76, .88, railway.color);
+			car = createGhost();
+			userData = car.userData;
+			userData.object = ghost;
+			userData.altitude = (ghost.altitude || 0) * Math.pow(2, 14 - layerZoom) * 100;
+			cars.push(car);
+			trainLayers.addObject(car, ghost, 1000);
+		}
+		if (compositionChanged) {
+			if (markedObject && markedObject.userData.object === ghost) {
+				markedObject = cars[Math.floor(carComposition / 2)];
+			}
+			if (trackedObject && trackedObject.userData.object === ghost) {
+				trackedObject = cars[Math.floor(carComposition / 2)];
+			}
+		}
+
+		for (i = 0, ilen = cars.length; i < ilen; i++) {
+			car = cars[i];
+			position = car.position;
+			scale = car.scale;
+			userData = car.userData;
+
+			p = getCoordAndBearing(feature, offset + ghost._t * ghost.interval + (i - (carComposition - 1) / 2) * objectUnit);
+
+			coord = userData.coord = p.coord;
+			userData.altitude = p.altitude;
+			bearing = userData.bearing = p.bearing + (ghost.direction < 0 ? 180 : 0);
+			mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
+
+			position.x = mCoord.x - modelOrigin.x;
+			position.y = -(mCoord.y - modelOrigin.y);
+			position.z = (ghost.altitude || 0) * altitudeUnit + objectScale / 2;
+			scale.x = scale.z = objectScale;
+			scale.y = carScale;
+			car.rotation.z = -bearing * DEGREE_TO_RADIAN;
+		}
+
+		if (ghost.delay) {
+			if (!delayMarker) {
+				delayMarker = ghost.delayMarker = createDelayMarker();
+				trainLayers.addObject(delayMarker, ghost, 1000);
+			}
+
+			car = cars[Math.floor(carComposition / 2)];
+			merge(delayMarker.position, car.position);
+			scale = delayMarker.scale;
+			scale.x = scale.y = scale.z = carScale;
+		} else if (delayMarker) {
+			trainLayers.removeObject(delayMarker, ghost);
+			delete ghost.delayMarker;
+		}
+	}
+
 
 	function updateFlightShape(flight, t) {
 		var body = flight.body;
@@ -926,7 +1157,8 @@ map.once('styledata', function () {
 
 			function repeat() {
 				train.animationID = startTrainAnimation(function(t) {
-					updateTrainShape(train, t);
+					//updateTrainShape(train, t);
+					updatePackmanShape(train, t);
 				}, function() {
 					var direction = train.direction;
 					var sectionIndex = train.sectionIndex = train.sectionIndex + direction;
@@ -935,7 +1167,9 @@ map.once('styledata', function () {
 						train.direction = train.sectionLength = -direction;
 					}
 					updateTrainProps(train);
-					updateTrainShape(train, 0);
+					//updateTrainShape(train, 0);
+
+					updatePackmanShape(train, 0);
 
 					// Stop and go
 					train.animationID = startAnimation({complete: repeat, duration: 1000});
@@ -945,10 +1179,55 @@ map.once('styledata', function () {
 		});
 	}
 
-	function refreshTrains() {
-		var now = Date.now();
 
-		timetableRefData.forEach(function(train) {
+	function initModelPackmans() {
+		trainData.forEach(function(packman, i) {
+			var railway = railwayLookup[packman.r];
+
+			packman.t = i;
+			activeTrainLookup[packman.t] = packman;
+
+			packman.sectionLength = packman.direction;
+			packman.carComposition = railway.carComposition;
+			packman.cars = [];
+			updateTrainProps(packman);
+
+			function repeat() {
+				packman.animationID = startTrainAnimation(function(t) {
+					//updateTrainShape(train, t);
+					updatePackmanShape(packman, t);
+				}, function() {
+					var direction = packman.direction;
+					var sectionIndex = packman.sectionIndex = packman.sectionIndex + direction;
+
+					if (sectionIndex <= 0 || sectionIndex >= railway.stations.length - 1) {
+						packman.direction = packman.sectionLength = -direction;
+					}
+					updateTrainProps(packman);
+					//updateTrainShape(train, 0);
+
+					updatePackmanShape(packman, 0);
+
+					// Stop and go
+					packman.animationID = startAnimation({complete: repeat, duration: 1000});
+				}, Math.abs(packman.interval), TIME_FACTOR);
+			}
+			repeat();
+		});
+	}
+
+	let train_data;
+	let ghost_data;
+
+	function refreshTrains() {
+		var now = new Date(2019,9,19,12,00);
+		now.setTime(now.getTime() + Date.now() - currentTime);
+
+		for (i = 0;i < timetableRefData.length; i++) {
+			if(train_data){
+				break;
+			}
+			let train = timetableRefData[i];
 			var d = train.delay || 0;
 			if (train.start + d <= now && now <= train.end + d &&
 				!activeTrainLookup[train.t] &&
@@ -956,7 +1235,8 @@ map.once('styledata', function () {
 				(!train.nextTrain || !activeTrainLookup[train.nextTrain.t]) &&
 				(!railwayLookup[train.r].status || realtimeTrainLookup[train.t])) {
 				function start(index) {
-					var now = Date.now();
+					var now = new Date(2019,9,19,12,00);
+					now.setTime(now.getTime() + Date.now() - currentTime);
 					var departureTime;
 
 					if (!setSectionData(train, index)) {
@@ -978,7 +1258,8 @@ map.once('styledata', function () {
 
 					if (!final) {
 						updateTrainProps(train);
-						updateTrainShape(train, 0);
+						//updateTrainShape(train, 0);
+						updatePackmanShape(train, 0);
 					}
 					setTrainStandingStatus(train, true);
 					train.animationID = startAnimation({
@@ -992,7 +1273,8 @@ map.once('styledata', function () {
 				function repeat(elapsed) {
 					setTrainStandingStatus(train, false);
 					train.animationID = startTrainAnimation(function(t) {
-						updateTrainShape(train, t);
+						// updateTrainShape(train, t);
+						updatePackmanShape(train, t);
 					}, function() {
 						var markedObjectIndex, trackedObjectIndex;
 
@@ -1023,12 +1305,112 @@ map.once('styledata', function () {
 				}
 
 				start();
+				train_data = train;
+				break;
 			}
-		});
+		}
+
+		for (i = 0;i < timetableRefData.length; i++) {
+			if(ghost_data && count >= 10){
+				break;
+			}
+			let train = timetableRefData[i];
+			var d = train.delay || 0;
+			if (train.start + d <= now && now <= train.end + d &&
+				!activeTrainLookup[train.t] &&
+				(!train.previousTrain || !activeTrainLookup[train.previousTrain.t]) &&
+				(!train.nextTrain || !activeTrainLookup[train.nextTrain.t]) &&
+				(!railwayLookup[train.r].status || realtimeTrainLookup[train.t])) {
+				function start(index) {
+					var now = new Date(2019,9,19,12,00);
+					now.setTime(now.getTime() + Date.now() - currentTime);
+					var departureTime;
+
+					if (!setSectionData(train, index)) {
+						return; // Out of range
+					}
+					activeTrainLookup[train.t] = train;
+					train.cars = [];
+					departureTime = getTime(train.departureTime) + (train.delay || 0);
+					if (now >= departureTime) {
+						updateTrainProps(train);
+						repeat(now - departureTime);
+					} else {
+						stand();
+					}
+				}
+
+				function stand(final) {
+					var departureTime = getTime(train.departureTime) + (train.delay || 0);
+
+					if (!final) {
+						updateTrainProps(train);
+						//updateTrainShape(train, 0);
+						updateGhostShape(train, 0);
+					}
+					setTrainStandingStatus(train, true);
+					train.animationID = startAnimation({
+						complete: !final ? repeat : function() {
+							stopTrain(train);
+						},
+						duration: Math.max(departureTime - Date.now(), MIN_STANDING_DURATION)
+					});
+				}
+
+				function repeat(elapsed) {
+					setTrainStandingStatus(train, false);
+					train.animationID = startTrainAnimation(function(t) {
+						// updateTrainShape(train, t);
+						//updatePackmanShape(train, t);
+						updateGhostShape(train,t);
+					}, function() {
+						var markedObjectIndex, trackedObjectIndex;
+
+						if (!setSectionData(train, train.timetableIndex + 1)) {
+							markedObjectIndex = train.cars.indexOf(markedObject);
+							trackedObjectIndex = train.cars.indexOf(trackedObject);
+							if (train.nextTrain) {
+								stopTrain(train);
+								train = train.nextTrain;
+								if (!activeTrainLookup[train.t]) {
+									start(0);
+									if (train.cars) {
+										if (markedObjectIndex !== -1) {
+											markedObject = train.cars[markedObjectIndex];
+										}
+										if (trackedObjectIndex !== -1) {
+											trackedObject = train.cars[trackedObjectIndex];
+										}
+									}
+								}
+								return;
+							}
+							stand(true);
+						} else {
+							stand();
+						}
+					}, Math.abs(train.interval), 1, elapsed);
+				}
+
+				if(count < 5 ){
+					count++;
+					continue;
+				}
+				else if(count < 10){
+					start();
+					ghost_data = train;
+					count++;
+					continue;
+				}
+				break;
+				
+			}
+		}
 	}
 
 	function refreshFlights() {
-		var now = Date.now();
+		var now = new Date(2019,9,19,12,00);
+		now.setTime(now.getTime() + Date.now() - currentTime);
 
 		Object.keys(flightLookup).forEach(function(key) {
 			var flight = flightLookup[key];
@@ -1052,11 +1434,13 @@ map.once('styledata', function () {
 						updateFlightShape(flight, t);
 					}, function() {
 						setFlightStandingStatus(flight, true);
+						let now = new Date(2019,9,19,12,00);
+						now.setTime(now.getTime() + Date.now() - currentTime);
 						flight.animationID = startAnimation({
 							complete: function() {
 								stopFlight(flight);
 							},
-							duration: Math.max(flight.end - Date.now(), 0)
+							duration: Math.max(flight.end - now, 0)
 						});
 					}, flight.feature.properties.length, flight.maxSpeed, flight.acceleration, elapsed);
 				}
@@ -1682,7 +2066,8 @@ function buildLookup(array, key) {
 }
 
 function getTime(timeString) {
-	var date = new Date();
+	var date = new Date(2019,9,19,12,00);
+	date.setTime(date.getTime() + Date.now() - currentTime);
 	var timeStrings = (timeString || '').split(':');
 	var hours = +timeStrings[0];
 	var tzDiff = date.getTimezoneOffset() + 540; // Difference between local time to JST
@@ -1718,6 +2103,33 @@ function createCube(x, y, z, color) {
 	return new THREE.Mesh(geometry, material);
 }
 
+
+function createPackman() {
+	let textuerLoader = new THREE.TextureLoader();
+	let mat = new THREE.MeshPhongMaterial();
+	//let geom = new THREE.CircleGeometry( 1, 1 );
+	let geom = new THREE.BoxGeometry(5, 5, 3);
+
+	textuerLoader.load('../images/pac-man.jpg', function (textuer) {
+		mat.map = textuer;
+	});
+
+	return new THREE.Mesh(geom, mat);
+}
+
+function createGhost() {
+	let textuerLoader = new THREE.TextureLoader();
+	let mat = new THREE.MeshPhongMaterial();
+	//let geom = new THREE.CircleGeometry( 1, 1 );
+	let geom = new THREE.BoxGeometry(5, 5, 3);
+
+	textuerLoader.load('../images/catch_pacman.png', function (textuer) {
+		mat.map = textuer;
+	});
+
+	return new THREE.Mesh(geom, mat);
+}
+
 function createDelayMarker() {
 	var geometry = new THREE.SphereBufferGeometry(1.8, 32, 32);
 	var material = new THREE.ShaderMaterial({
@@ -1737,7 +2149,8 @@ function getTrainOpacity(train) {
 function setSectionData(train, index) {
 	var table = train.tt;
 	var delay = train.delay || 0;
-	var now = Date.now();
+	var now = new Date(2019,9,19,12,00);
+	now.setTime(now.getTime() + Date.now() - currentTime);
 	var index = index !== undefined ? index :
 		table.reduce(function(acc, cur, i) {
 			return getTime(cur.dt) + delay <= now ? i : acc;
