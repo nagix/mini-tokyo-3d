@@ -29,7 +29,7 @@ var opacityStore = {};
 var animations = {};
 var featureLookup = {};
 var animationID = 0;
-var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, operatorLookup, airportLookup, flightStatusLookup;
+var stationLookup, railwayLookup, timetableLookup, railDirectionLookup, trainTypeLookup, operatorLookup, airportLookup, flightStatusLookup;
 
 // Replace MapboxLayer.render to support underground rendering
 var render = MapboxLayer.prototype.render;
@@ -139,39 +139,30 @@ var map = new mapboxgl.Map({
 railwayLookup = buildLookup(railwayRefData);
 railwayData.forEach(function(railway) {
 	var railwayID = railway.id;
-	var splice = railway.splice;
+	var stations = railway.stations;
 	var railwayRef = railwayLookup[railwayID];
-	var stations;
+	var insert;
 
 	if (!railwayRef) {
-		stations = railway.stations.slice();
 		railwayRef = railwayLookup[railwayID] = {
 			id: railwayID,
 			title: {},
-			stations: stations,
+			stations: [],
 			ascending: railway.ascending
 		};
 		railwayRefData.push(railwayRef);
+	}
 
-		stations.forEach(function(id) {
+	merge(railwayRef.title, railway.title);
+	if (stations) {
+		insert = stations.insert || [];
+		Array.prototype.splice.apply(railwayRef.stations, [stations.index, stations.delete].concat(insert));
+		insert.forEach(function(id) {
 			stationRefData.push({
 				id: id,
 				railway: railwayID
 			});
 		});
-	}
-
-	merge(railwayRef.title, railway.title);
-	if (splice) {
-		if (splice.station) {
-			railwayRef.stations.splice(splice.start, splice.length, splice.station);
-			stationRefData.push({
-				id: splice.station,
-				railway: railwayID
-			});
-		} else {
-			railwayRef.stations.splice(splice.start, splice.length);
-		}
 	}
 	railwayRef.color = railway.color;
 	railwayRef.altitude = railway.altitude;
@@ -391,6 +382,57 @@ coordinateData.airways.forEach(function(airway) {
 
 var railwayFeatureCollection = turf.featureCollection(railwayFeatureArray);
 
+// Build timetable data
+timetableLookup = buildLookup(concat([trainTimetableRefData.weekday, trainTimetableRefData.holiday]));
+
+// Modify SobuRapid, Sobu, Narita and Narita Airport branch timetables
+Object.keys(trainTimetableRefData).forEach(function(key) {
+	['JR-East.NaritaAirportBranch', 'JR-East.Narita', 'JR-East.Sobu'].forEach(function(railwayID) {
+		trainTimetableRefData[key].filter(function(table) {
+			return table.r === railwayID && (table.y === 'JR-East.Rapid' || table.y === 'JR-East.LimitedExpress');
+		}).forEach(function(table) {
+			var tt = table.tt;
+			var nextTable, prevTable, r, ntt, ptt;
+
+			if (table.nt) {
+				nextTable = timetableLookup[table.nt[0]];
+			}
+			if (table.pt) {
+				prevTable = timetableLookup[table.pt[0]];
+			}
+			if (nextTable || prevTable) {
+				r = (nextTable || prevTable).r;
+				tt.forEach(function(obj) {
+					if (obj.as) {
+						obj.as = obj.as.replace(/(JR-East\.[^\.]+)/, r);
+					}
+					if (obj.ds) {
+						obj.ds = obj.ds.replace(/(JR-East\.[^\.]+)/, r);
+					}
+				});
+			}
+
+			if (nextTable) {
+				ntt = nextTable.tt;
+				if (!tt[tt.length - 1].ds && !ntt[0].as) {
+					merge(ntt[0], tt.pop());
+				}
+				Array.prototype.splice.apply(ntt, [0, 0].concat(tt));
+				delete nextTable.pt;
+			} else if (prevTable) {
+				ptt = prevTable.tt;
+				if (!tt[0].as && !ptt[ptt.length - 1].ds) {
+					merge(ptt[ptt.length - 1], tt.shift());
+				}
+				Array.prototype.splice.apply(ptt, [ptt.length, 0].concat(tt));
+				delete prevTable.nt;
+			}
+			trainTimetableRefData[key].splice(trainTimetableRefData[key].indexOf(table), 1);
+			delete timetableLookup[table.id];
+		});
+	});
+});
+
 // Modify Keiyo branch timetables
 Object.keys(trainTimetableRefData).forEach(function(key) {
 	trainTimetableRefData[key].filter(function(table) {
@@ -410,7 +452,7 @@ Object.keys(trainTimetableRefData).forEach(function(key) {
 		table.ds = table.ds.map(function(station) {
 			return station.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
 		});
-		tt.forEach(function(obj, i) {
+		tt.forEach(function(obj) {
 			if (obj.as) {
 				obj.as = obj.as.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
 			}
@@ -864,6 +906,15 @@ function removePrefix(value) {
 	return value;
 }
 
+function cleanKeys(obj) {
+	Object.keys(obj).forEach(function(key) {
+		if (obj[key] === undefined) {
+			delete obj[key];
+		}
+	});
+	return obj;
+}
+
 function loadJSON(url) {
 	return new Promise(function(resolve, reject) {
 		var request = new XMLHttpRequest();
@@ -949,12 +1000,12 @@ function loadTrainTimetableRefData() {
 						ds: removePrefix(table['odpt:destinationStation']),
 						nt: removePrefix(table['odpt:nextTrainTimetable']),
 						tt: table['odpt:trainTimetableObject'].map(function(obj) {
-							return {
+							return cleanKeys({
 								at: obj['odpt:arrivalTime'],
 								dt: obj['odpt:departureTime'],
 								as: removePrefix(obj['odpt:arrivalStation']),
 								ds: removePrefix(obj['odpt:departureStation'])
-							};
+							});
 						}),
 						pt: removePrefix(table['odpt:previousTrainTimetable'])
 					};

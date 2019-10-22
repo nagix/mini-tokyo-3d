@@ -20,9 +20,9 @@
 		"ko": "오메 선",
 		"zh": "青梅线"
 	},
-	"splice": {
-		"start": 13,
-		"length": 12
+	"stations": {
+		"index": 13,
+		"delete": 12
 	},
 	"color": "#F15A22",
 	"carComposition": 10
@@ -48,9 +48,9 @@
 		"ko": "도카이도 선",
 		"zh": "东海道线"
 	},
-	"splice": {
-		"start": 7,
-		"length": 14
+	"stations": {
+		"index": 7,
+		"delete": 14
 	},
 	"color": "#F68B1E",
 	"carComposition": 15
@@ -60,9 +60,9 @@
 		"ko": "우쓰노미야 선",
 		"zh": "宇都宫线"
 	},
-	"splice": {
-		"start": 13,
-		"length": 21
+	"stations": {
+		"index": 13,
+		"delete": 21
 	},
 	"color": "#F68B1E",
 	"carComposition": 15
@@ -72,9 +72,9 @@
 		"ko": "다카사키 선",
 		"zh": "高崎线"
 	},
-	"splice": {
-		"start": 13,
-		"length": 12
+	"stations": {
+		"index": 13,
+		"delete": 12
 	},
 	"color": "#F68B1E",
 	"carComposition": 15
@@ -108,6 +108,20 @@
 		"ko": "소부 쾌속선",
 		"zh": "总武快速线"
 	},
+	"stations": {
+		"index": 10,
+		"delete": 0,
+		"insert": [
+			"JR-East.SobuRapid.Tsuga",
+			"JR-East.SobuRapid.Yotsukaido",
+			"JR-East.SobuRapid.Monoi",
+			"JR-East.SobuRapid.Sakura",
+			"JR-East.SobuRapid.Shisui",
+			"JR-East.SobuRapid.Narita",
+			"JR-East.SobuRapid.NaritaAirportTerminal2and3",
+			"JR-East.SobuRapid.NaritaAirportTerminal1"
+		]
+	},
 	"color": "#007AC1",
 	"carComposition": 15
 }, {
@@ -116,9 +130,9 @@
 		"ko": "소부 본선",
 		"zh": "总武本线"
 	},
-	"splice": {
-		"start": 6,
-		"length": 16
+	"stations": {
+		"index": 6,
+		"delete": 16
 	},
 	"color": "#A8A39D",
 	"carComposition": 15
@@ -128,9 +142,9 @@
 		"ko": "나리타 선",
 		"zh": "成田线"
 	},
-	"splice": {
-		"start": 3,
-		"length": 14
+	"stations": {
+		"index": 3,
+		"delete": 14
 	},
 	"color": "#00B261",
 	"carComposition": 15
@@ -148,9 +162,9 @@
 		"ko": "우치보 선",
 		"zh": "内房线"
 	},
-	"splice": {
-		"start": 3,
-		"length": 29
+	"stations": {
+		"index": 3,
+		"delete": 29
 	},
 	"color": "#DCAF27",
 	"carComposition": 15
@@ -160,9 +174,9 @@
 		"ko": "소토보 선",
 		"zh": "外房线"
 	},
-	"splice": {
-		"start": 3,
-		"length": 24
+	"stations": {
+		"index": 3,
+		"delete": 24
 	},
 	"color": "#008848",
 	"carComposition": 15
@@ -172,9 +186,9 @@
 		"ko": "요코스카 선",
 		"zh": "横须贺线"
 	},
-	"splice": {
-		"start": 11,
-		"length": 8
+	"stations": {
+		"index": 11,
+		"delete": 8
 	},
 	"color": "#007AC1",
 	"carComposition": 15
@@ -184,9 +198,9 @@
 		"ko": "게이요 선",
 		"zh": "京叶线"
 	},
-	"splice": {
-		"start": 17,
-		"length": 1
+	"stations": {
+		"index": 17,
+		"delete": 1
 	},
 	"color": "#C9252F",
 	"carComposition": 10
@@ -198,12 +212,16 @@
 		"ko": "무사시노 선",
 		"zh": "武藏野线"
 	},
-	"stations": [
-		"JR-East.KeiyoKoyaBranch.NishiFunabashi",
-		"JR-East.KeiyoKoyaBranch.MinamiFunabashi",
-		"JR-East.KeiyoKoyaBranch.ShinNarashino",
-		"JR-East.KeiyoKoyaBranch.Kaihimmakuhari"
-	],
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"JR-East.KeiyoKoyaBranch.NishiFunabashi",
+			"JR-East.KeiyoKoyaBranch.MinamiFunabashi",
+			"JR-East.KeiyoKoyaBranch.ShinNarashino",
+			"JR-East.KeiyoKoyaBranch.Kaihimmakuhari"
+		]
+	},
 	"ascending": "Outbound",
 	"color": "#F15A22",
 	"carComposition": 8
@@ -215,18 +233,22 @@
 		"ko": "무사시노 선",
 		"zh": "武藏野线"
 	},
-	"stations": [
-		"JR-East.KeiyoFutamataBranch.Tokyo",
-		"JR-East.KeiyoFutamataBranch.Hatchobori",
-		"JR-East.KeiyoFutamataBranch.Etchujima",
-		"JR-East.KeiyoFutamataBranch.Shiomi",
-		"JR-East.KeiyoFutamataBranch.ShinKiba",
-		"JR-East.KeiyoFutamataBranch.Kasairinkaikoen",
-		"JR-East.KeiyoFutamataBranch.Maihama",
-		"JR-East.KeiyoFutamataBranch.ShinUrayasu",
-		"JR-East.KeiyoFutamataBranch.Ichikawashiohama",
-		"JR-East.KeiyoFutamataBranch.NishiFunabashi"
-	],
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"JR-East.KeiyoFutamataBranch.Tokyo",
+			"JR-East.KeiyoFutamataBranch.Hatchobori",
+			"JR-East.KeiyoFutamataBranch.Etchujima",
+			"JR-East.KeiyoFutamataBranch.Shiomi",
+			"JR-East.KeiyoFutamataBranch.ShinKiba",
+			"JR-East.KeiyoFutamataBranch.Kasairinkaikoen",
+			"JR-East.KeiyoFutamataBranch.Maihama",
+			"JR-East.KeiyoFutamataBranch.ShinUrayasu",
+			"JR-East.KeiyoFutamataBranch.Ichikawashiohama",
+			"JR-East.KeiyoFutamataBranch.NishiFunabashi"
+		]
+	},
 	"ascending": "Outbound",
 	"color": "#F15A22",
 	"carComposition": 8
@@ -434,10 +456,12 @@
 		"ko": "오에도 선",
 		"zh": "大江户线"
 	},
-	"splice": {
-		"start": 28,
-		"length": 1,
-		"station": "Toei.Oedo.Tochomae.1"
+	"stations": {
+		"index": 28,
+		"delete": 1,
+		"insert": [
+			"Toei.Oedo.Tochomae.1"
+		]
 	},
 	"altitude": -1,
 	"color": "#CE045B",
