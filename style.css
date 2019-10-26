@@ -96,6 +96,19 @@ body {
 	color: black;
 	font-size: 21px;
 }
+.mapbox-ctrl-weather::before {
+	content: '\f740';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	color: black;
+	font-size: 21px;
+}
+.mapbox-ctrl-weather-active::before {
+	color: #33B5E5;
+}
 .mapbox-ctrl-export::before {
 	content: '\f56d';
 	font-family: 'Font Awesome 5 Free';

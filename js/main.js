@@ -69,8 +69,12 @@ var lang = getLang();
 var today = new Date();
 var isUndergroundVisible = false;
 var isRealtime = true;
+var isWeatherVisible = false;
+var rainTexture = new THREE.TextureLoader().load('images/raindrop.png');
 var trackingMode = 'helicopter';
 var opacityStore = {};
+var emitterBounds = {};
+var emitterQueue = [];
 var animations = {};
 var featureLookup = {};
 var activeTrainLookup = {};
@@ -80,6 +84,7 @@ var activeFlightLookup = {};
 var animationID = 0;
 var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, timetableLookup, operatorLookup, airportLookup, a;
 var trackedObject, markedObject, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
+var lastNowCastRefresh, nowCastData, fgGroup, imGroup, bgGroup;
 
 // Replace MapboxLayer.render to support underground rendering
 var render = MapboxLayer.prototype.render;
@@ -156,17 +161,17 @@ MapboxGLButtonControl.prototype.onRemove = function() {
 	me._map = undefined;
 };
 
-var TrainLayer = function(id) {
+var ThreeLayer = function(id) {
 	this.initialize(id);
 }
 
-TrainLayer.prototype.initialize = function(id) {
+ThreeLayer.prototype.initialize = function(id) {
 	this.id = id;
 	this.type = 'custom';
 	this.renderingMode = '3d';
 };
 
-TrainLayer.prototype.onAdd = function(map, gl) {
+ThreeLayer.prototype.onAdd = function(map, gl) {
 	var renderer = this.renderer = new THREE.WebGLRenderer({
 		canvas: map.getCanvas(),
 		context: gl
@@ -187,7 +192,7 @@ TrainLayer.prototype.onAdd = function(map, gl) {
 	this.raycaster = new THREE.Raycaster();
 };
 
-TrainLayer.prototype.render = function(gl, matrix) {
+ThreeLayer.prototype.render = function(gl, matrix) {
 	var id = this.id;
 	var map = this.map;
 	var renderer = this.renderer;
@@ -229,7 +234,7 @@ TrainLayer.prototype.render = function(gl, matrix) {
 	map.triggerRepaint();
 };
 
-TrainLayer.prototype.onResize = function(event) {
+ThreeLayer.prototype.onResize = function(event) {
 	var camera = this.camera;
 	var transform = event.target.transform;
 
@@ -237,7 +242,7 @@ TrainLayer.prototype.onResize = function(event) {
 	camera.updateProjectionMatrix();
 };
 
-TrainLayer.prototype.pickObject = function(point) {
+ThreeLayer.prototype.pickObject = function(point) {
 	var mouse = new THREE.Vector2(
 		(point.x / window.innerWidth) * 2 - 1,
 		-(point.y / window.innerHeight) * 2 + 1
@@ -310,8 +315,8 @@ turf.featureEach(railwayFeatureCollection, function(feature) {
 });
 
 var trainLayers = {
-	ug: new TrainLayer('trains-ug'),
-	og: new TrainLayer('trains-og'),
+	ug: new ThreeLayer('trains-ug'),
+	og: new ThreeLayer('trains-og'),
 	addObject: function(object, train, duration) {
 		var layer = train.altitude < 0 ? this.ug : this.og;
 
@@ -358,6 +363,8 @@ var trainLayers = {
 		this.og.onResize(event);
 	}
 };
+
+var rainLayer = new ThreeLayer('rain');
 
 trainLookup = buildLookup(timetableRefData, 't');
 timetableLookup = buildLookup(timetableRefData);
@@ -516,6 +523,8 @@ map.once('styledata', function () {
 
 	map.addLayer(trainLayers.og, 'building-3d');
 
+	map.addLayer(rainLayer, 'poi');
+
 	map.getStyle().layers.filter(function(layer) {
 		return layer.type === 'line' || layer.type.lastIndexOf('fill', 0) !== -1;
 	}).forEach(function(layer) {
@@ -628,6 +637,24 @@ map.once('styledata', function () {
 				initModelTrains();
 			}
 		}
+	}, {
+		className: 'mapbox-ctrl-weather',
+		title: dict['show-weather'],
+		eventHandler: function() {
+			isWeatherVisible = !isWeatherVisible;
+			this.title = dict[(isWeatherVisible ? 'hide' : 'show') + '-weather'];
+			if (isWeatherVisible) {
+				this.classList.add('mapbox-ctrl-weather-active');
+				loadNowCastData();
+			} else {
+				this.classList.remove('mapbox-ctrl-weather-active');
+				if (fgGroup) {
+					rainLayer.scene.remove(fgGroup.mesh);
+	//				fgGroup.dispose();
+					imGroup = undefined;
+				}
+			}
+		}
 	}]), 'top-right');
 
 	map.addControl(new MapboxGLButtonControl([{
@@ -714,7 +741,12 @@ map.once('styledata', function () {
 		Object.keys(activeFlightLookup).forEach(function(key) {
 			updateFlightShape(activeFlightLookup[key]);
 		});
+	});
 
+	map.on('move', function() {
+		if (isWeatherVisible) {
+			updateEmitterQueue();
+		}
 	});
 
 	map.on('resize', function(e) {
@@ -771,6 +803,13 @@ map.once('styledata', function () {
 						bearing + ((userData.bearing - bearing + 540) % 360 - 180) * .02,
 					duration: 0
 				});
+			}
+			if (isWeatherVisible) {
+				if (now - (lastNowCastRefresh || 0) >= 60000) {
+					loadNowCastData();
+					lastNowCastRefresh = now;
+				}
+				refreshEmitter();
 			}
 		}
 	});
@@ -1417,6 +1456,125 @@ map.once('styledata', function () {
 
 			refreshFlights();
 		});
+	}
+
+	function loadNowCastData() {
+		loadJSON('https://mini-tokyo.appspot.com/nowcast').then(function(data) {
+			nowCastData = data;
+			emitterBounds = {};
+			updateEmitterQueue();
+		});
+	}
+
+	function updateEmitterQueue() {
+		var bounds = map.getBounds();
+		var ne = mapboxgl.MercatorCoordinate.fromLngLat(bounds.getNorthEast());
+		var sw = mapboxgl.MercatorCoordinate.fromLngLat(bounds.getSouthWest());
+		var resolution = clamp(Math.pow(2, Math.floor(17 - map.getZoom())), 0, 1) * 1088;
+		var currBounds = {
+			left: Math.floor(clamp((sw.x - modelOrigin.x) / modelScale + 50000, 0, 108800) / resolution) * resolution,
+			right: Math.ceil(clamp((ne.x - modelOrigin.x) / modelScale + 50000, 0, 108800) / resolution) * resolution,
+			top: Math.floor(clamp((ne.y - modelOrigin.y) / modelScale + 42500 + 0, 0, 78336) / resolution) * resolution,
+			bottom: Math.ceil(clamp((sw.y - modelOrigin.y) / modelScale + 42500 + 0, 0, 78336) / resolution) * resolution
+		};
+
+		if (currBounds.left !== emitterBounds.left ||
+			currBounds.right !== emitterBounds.right ||
+			currBounds.top !== emitterBounds.top ||
+			currBounds.bottom !== emitterBounds.bottom) {
+			bgGroup = new SPE.Group({
+				texture: {
+					value: rainTexture
+				},
+				blending: THREE.NormalBlending,
+				transparent: true,
+				maxParticleCount: 100000
+			});
+			emitterQueue = [];
+			for (var y = currBounds.top; y < currBounds.bottom; y += resolution) {
+				for (var x = currBounds.left; x < currBounds.right; x += resolution) {
+					emitterQueue.push({
+						index: {
+							x: Math.floor(x / 1088),
+							y: Math.floor(y / 1088)
+						},
+						rect: {
+							x: x,
+							y: y,
+							w: resolution,
+							h: resolution
+						}
+					});
+				}
+			}
+		}
+		emitterBounds = currBounds;
+	}
+
+	function refreshEmitter() {
+		if (bgGroup) {
+			var zoom = map.getZoom();
+			var n = clamp(Math.floor(Math.pow(3, zoom - 13)), 3, 10000000);
+			var h = clamp(Math.pow(2, 14 - zoom), 0, 1) * 1000;
+			var v = clamp(Math.pow(1.7, 14 - zoom), 0, 1) * 2000;
+			var s = clamp(Math.pow(1.2, zoom - 14.5) * map.transform.cameraToCenterDistance / 800, 0, 1);
+			var emitterCount = 10;
+			while (emitterCount > 0) {
+				var e = emitterQueue.shift();
+				if (!e) {
+					imGroup = bgGroup;
+					bgGroup = undefined;
+					timeoutID = setTimeout(function() {
+						if (imGroup) {
+							if (fgGroup) {
+								rainLayer.scene.remove(fgGroup.mesh);
+//									fgGroup.dispose();
+							}
+							fgGroup = imGroup;
+							imGroup = undefined;
+							rainLayer.scene.add(fgGroup.mesh);
+						}
+					}, 500);
+					break;
+				}
+				if (!nowCastData || !nowCastData[e.index.y][e.index.x]) {
+					continue;
+				}
+				n = zoom >= 17 ? 20 : n;
+				var emitter = new SPE.Emitter({
+					maxAge: {
+					    value: h / v
+					},
+					position: {
+					    value: new THREE.Vector3((e.rect.x - 50000 + e.rect.w / 2) * modelScale, (42500 - e.rect.h / 2 - e.rect.y) * modelScale, h * modelScale),
+					    spread: new THREE.Vector3(e.rect.w * modelScale, e.rect.h * modelScale, 0)
+					},
+					acceleration: {
+					    value: new THREE.Vector3(0, 0, 0),
+					    spread: new THREE.Vector3(v / 20 * modelScale, 0, 0)
+					},
+					velocity: {
+					    value: new THREE.Vector3(0, 0, -v * modelScale),
+					    spread: new THREE.Vector3(v / 200 * modelScale, v / 200 * modelScale)
+					},
+					color: {
+					    value: new THREE.Color('blue')
+					},
+					size: {
+					    value: .000001 / modelScale * s
+					},
+					particleCount: Math.pow(nowCastData[e.index.y][e.index.x], 2) * n
+				});
+				bgGroup.addEmitter(emitter);
+				emitterCount--;
+			}
+		}
+		if (fgGroup) {
+			fgGroup.tick();
+		}
+		if (imGroup) {
+			imGroup.tick();
+		}
 	}
 });
 
