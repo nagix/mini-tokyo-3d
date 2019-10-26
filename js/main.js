@@ -1236,43 +1236,18 @@ map.once('styledata', function () {
 		lastTrainRefresh = undefined;
 	}
 
+	function adjustTrainID(id, type) {
+		if (type === 'JR-East.Rapid' || type === 'JR-East.LimitedExpress') {
+			return id.replace(/JR-East\.(NaritaAirportBranch|Narita|Sobu)/, 'JR-East.SobuRapid');
+		}
+		return id;
+	}
+
 	function loadRealtimeTrainData() {
 		Promise.all([
 			loadJSON(API_URL + 'odpt:TrainInformation?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio'),
 			loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei')
 		]).then(function([trainInfoRefData, trainRefData]) {
-			// Reset railway information text
-			railwayRefData.forEach(function(railway) {
-				delete railway.status;
-				delete railway.text;
-			});
-
-			trainInfoRefData.forEach(function(trainInfoRef) {
-				var operatorID = removePrefix(trainInfoRef['odpt:operator']);
-				var railwayID = removePrefix(trainInfoRef['odpt:railway']);
-				var status = trainInfoRef['odpt:trainInformationStatus'];
-				var text = trainInfoRef['odpt:trainInformationText'];
-				var railways;
-
-				// Train information text is provided in Japanese only
-				if (railwayID && status && status.ja &&
-					(operatorID === 'JR-East' || operatorID === 'TokyoMetro' || operatorID === 'Toei') &&
-					(status.ja.indexOf('見合わせ') !== -1 ||
-					status.ja.indexOf('折返し運転') !== -1 ||
-					status.ja.indexOf('運休') !== -1 ||
-					status.ja.indexOf('遅延') !== -1)) {
-					railway = railwayLookup[railwayID];
-					railway.status = status.ja;
-					railway.text = text.ja;
-					Object.keys(activeTrainLookup).forEach(function(key) {
-						var train = activeTrainLookup[key];
-						if (train.r === railwayID) {
-							stopTrain(train);
-						}
-					});
-				}
-			});
-
 			realtimeTrainLookup = {};
 
 			trainRefData.forEach(function(trainRef) {
@@ -1280,7 +1255,7 @@ map.once('styledata', function () {
 				var carComposition = trainRef['odpt:carComposition'];
 				var trainType = removePrefix(trainRef['odpt:trainType']);
 				var destination = removePrefix(trainRef['odpt:destinationStation']);
-				var id = removePrefix(trainRef['owl:sameAs']);
+				var id = adjustTrainID(removePrefix(trainRef['owl:sameAs']));
 				var train = trainLookup[id];
 				var activeTrain = activeTrainLookup[id];
 				var changed = false;
@@ -1308,6 +1283,38 @@ map.once('styledata', function () {
 					}
 				}
 			});
+
+			// Reset railway information text
+			railwayRefData.forEach(function(railway) {
+				delete railway.status;
+				delete railway.text;
+			});
+
+			trainInfoRefData.forEach(function(trainInfoRef) {
+				var operatorID = removePrefix(trainInfoRef['odpt:operator']);
+				var railwayID = removePrefix(trainInfoRef['odpt:railway']);
+				var status = trainInfoRef['odpt:trainInformationStatus'];
+				var text = trainInfoRef['odpt:trainInformationText'];
+
+				// Train information text is provided in Japanese only
+				if (railwayID && status && status.ja &&
+					(operatorID === 'JR-East' || operatorID === 'TokyoMetro' || operatorID === 'Toei') &&
+					(status.ja.indexOf('見合わせ') !== -1 ||
+					status.ja.indexOf('折返し運転') !== -1 ||
+					status.ja.indexOf('運休') !== -1 ||
+					status.ja.indexOf('遅延') !== -1)) {
+					railway = railwayLookup[railwayID];
+					railway.status = status.ja;
+					railway.text = text.ja;
+					Object.keys(activeTrainLookup).forEach(function(key) {
+						var train = activeTrainLookup[key];
+						if (train.r === railwayID && !realtimeTrainLookup[train.t]) {
+							stopTrain(train);
+						}
+					});
+				}
+			});
+
 			refreshTrains();
 		});
 	}
