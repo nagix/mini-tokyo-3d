@@ -2701,7 +2701,7 @@
 				"offset": -1
 			}
 		}, {
-			"type": "interpolate",
+			"type": "sub",
 			"start": {
 				"railway": "JR-East.ChuoRapid",
 				"offset": -1
@@ -2730,7 +2730,7 @@
 				"offset": -2
 			}
 		}, {
-			"type": "interpolate",
+			"type": "sub",
 			"start": {
 				"railway": "JR-East.ChuoRapid",
 				"offset": -2
@@ -2777,7 +2777,7 @@
 				"offset": -3
 			}
 		}, {
-			"type": "interpolate",
+			"type": "sub",
 			"start": {
 				"railway": "JR-East.Yamanote",
 				"offset": -3
@@ -5486,10 +5486,11 @@
 			},
 			"reverse": 1
 		}, {
-			"type": "interpolate",
+			"type": "sub",
 			"start": {
 				"railway": "JR-East.ChuoSobuLocal",
-				"offset": 1
+				"offset": 1,
+				"reverse": 1
 			},
 			"coords": [
 				[140.1065006, 35.6191115],
@@ -5497,7 +5498,8 @@
 			],
 			"end": {
 				"railway": "JR-East.ChuoSobuLocal",
-				"offset": 2
+				"offset": 2,
+				"reverse": 1
 			},
 			"interpolate": 20
 		}, {
@@ -6309,7 +6311,7 @@
 				"offset": -3
 			}
 		}, {
-			"type": "interpolate",
+			"type": "sub",
 			"start": {
 				"railway": "JR-East.Yamanote",
 				"offset": -3
@@ -7391,7 +7393,7 @@
 				"offset": 1
 			}
 		}, {
-			"type": "interpolate",
+			"type": "sub",
 			"start": {
 				"railway": "JR-East.Yamanote",
 				"offset": 1
@@ -7420,7 +7422,7 @@
 				"offset": 2
 			}
 		}, {
-			"type": "interpolate",
+			"type": "sub",
 			"start": {
 				"railway": "JR-East.Yamanote",
 				"offset": 2
@@ -7792,7 +7794,7 @@
 				"offset": -2
 			}
 		}, {
-			"type": "interpolate",
+			"type": "sub",
 			"start": {
 				"railway": "JR-East.Takasaki",
 				"offset": -2
@@ -8107,7 +8109,7 @@
 				"offset": 2
 			}
 		}, {
-			"type": "interpolate",
+			"type": "sub",
 			"start": {
 				"railway": "JR-East.Yamanote",
 				"offset": 2
@@ -8196,18 +8198,20 @@
 			},
 			"reverse": 1
 		}, {
-			"type": "interpolate",
+			"type": "sub",
 			"start": {
 				"railway": "JR-East.KeihinTohokuNegishi",
-				"offset": 1
+				"offset": 1,
+				"reverse": 1
 			},
 			"coords": [
-				[139.7386629, 35.7515608],
+				[139.7465263, 35.7469807],
 				[139.7389383, 35.7513324]
 			],
 			"end": {
 				"railway": "JR-East.KeihinTohokuNegishi",
-				"offset": 2
+				"offset": 2,
+				"reverse": 1
 			},
 			"interpolate": 20
 		}, {

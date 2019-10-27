@@ -205,34 +205,14 @@ var railwayFeatureArray = [];
 
 	coordinateData.railways.forEach(function(railway) {
 		var id = railway.id;
-		var sublines = railway.sublines;
-		var railwayFeature = turf.lineString(concat(sublines.map(function(subline) {
+		var railwayFeature = turf.lineString(concat(railway.sublines.map(function(subline) {
+			var type = subline.type;
 			var start = subline.start;
 			var end = subline.end;
 			var coords = subline.coords;
-			var feature, offset;
+			var coordinates, feature, offset, interpolate, feature1, feature2, length1, length2, i, coord1, coord2, f;
 
-			if (subline.type === 'sub') {
-				feature = turf.lineSlice(coords[0], coords[coords.length - 1], featureLookup[start.railway + '.' + zoom]);
-				offset = start.offset;
-
-				if (offset) {
-					feature = lineOffset(feature, offset * unit);
-				}
-
-				// Rewind if the overlap line is in opposite direction
-				if (subline.reverse) {
-					turf.getCoords(feature).reverse();
-				}
-
-				subline.feature = feature;
-			}
-
-			return subline;
-		}).map(function(subline, i) {
-			var interpolate, coordinates, feature1, feature2, length1, length2, coord1, coord2, f, nextSubline;
-
-			function smoothCoords(reverse) {
+			function smoothCoords(nextSubline, reverse) {
 				var start = !reverse ? 0 : coordinates.length - 1;
 				var end = !reverse ? coordinates.length - 1 : 0;
 				var step = !reverse ? 1 : -1;
@@ -243,61 +223,68 @@ var railwayFeatureArray = [];
 				var baseLocation = getLocationAlongLine(baseFeature, coordinates[start]);
 				var transition = Math.abs(nextSubline.offset) * .5 + .5;
 				var factors = [];
-				var j, distance;
+				var i, distance;
 
-				for (j = start; j !== end; j += step) {
-					distance = Math.abs(getLocationAlongLine(baseFeature, coordinates[j]) - baseLocation);
+				for (i = start; i !== end; i += step) {
+					distance = Math.abs(getLocationAlongLine(baseFeature, coordinates[i]) - baseLocation);
 					if (distance > transition) {
 						break;
 					}
-					factors[j] = easeInOutQuad(1 - distance / transition);
+					factors[i] = easeInOutQuad(1 - distance / transition);
 				}
-				for (j = start; j !== end && factors[j] > 0; j += step) {
-					coordinates[j] = turf.getCoord(turf.destination(
-						coordinates[j], baseOffset * factors[j], nearest.bearing
+				for (i = start; i !== end && factors[i] > 0; i += step) {
+					coordinates[i] = turf.getCoord(turf.destination(
+						coordinates[i], baseOffset * factors[i], nearest.bearing
 					));
 				}
 			}
 
-			if (subline.type === 'interpolate') {
-				interpolate = subline.interpolate;
-				coordinates = [];
-				feature1 = lineOffset(turf.lineSlice(
-					sublines[i - 1].coords[sublines[i - 1].coords.length - 1],
-					sublines[i + 1].coords[0],
-					featureLookup[sublines[i - 1].end.railway + '.' + zoom]
-				), sublines[i - 1].end.offset * unit);
-				feature2 = lineOffset(turf.lineSlice(
-					sublines[i - 1].coords[sublines[i - 1].coords.length - 1],
-					sublines[i + 1].coords[0],
-					featureLookup[sublines[i + 1].start.railway + '.' + zoom]
-				), sublines[i + 1].start.offset * unit);
-				length1 = turf.length(feature1);
-				length2 = turf.length(feature2);
-				for (j = 1; j < interpolate; j++) {
-					coord1 = turf.getCoord(turf.along(feature1, length1 * (!sublines[i - 1].reverse ? j : interpolate - j) / interpolate));
-					coord2 = turf.getCoord(turf.along(feature2, length2 * (!sublines[i + 1].reverse ? j : interpolate - j) / interpolate));
-					f = easeInOutQuad(j / interpolate);
-					coordinates.push([
-						coord1[0] * (1 - f) + coord2[0] * f,
-						coord1[1] * (1 - f) + coord2[1] * f
-					]);
+			if (type === 'main') {
+				coordinates = coords.map(function(d) { return d.slice(); });
+				if (start) {
+					smoothCoords(start);
 				}
-				subline.feature = turf.lineString(coordinates);
-			} else if (subline.type === 'main') {
-				coordinates = subline.coords.map(function(d) { return d.slice(); });
-				nextSubline = subline.start;
-				if (nextSubline) {
-					smoothCoords();
+				if (end) {
+					smoothCoords(end, true);
 				}
-				nextSubline = subline.end;
-				if (nextSubline) {
-					smoothCoords(true);
+			} else if (type === 'sub') {
+				if (start.railway === end.railway && start.offset === end.offset) {
+					feature = turf.lineSlice(coords[0], coords[coords.length - 1], featureLookup[start.railway + '.' + zoom]);
+					offset = start.offset;
+					coordinates = turf.getCoords(offset ? lineOffset(feature, offset * unit) : feature);
+
+					// Rewind if the overlap line is in opposite direction
+					if (subline.reverse) {
+						coordinates.reverse();
+					}
+				} else {
+					interpolate = subline.interpolate;
+					coordinates = [];
+					feature1 = lineOffset(turf.lineSlice(
+						coords[0],
+						coords[coords.length - 1],
+						featureLookup[start.railway + '.' + zoom]
+					), start.offset * unit);
+					feature2 = lineOffset(turf.lineSlice(
+						coords[0],
+						coords[coords.length - 1],
+						featureLookup[end.railway + '.' + zoom]
+					), end.offset * unit);
+					length1 = turf.length(feature1);
+					length2 = turf.length(feature2);
+					for (i = 1; i < interpolate; i++) {
+						coord1 = turf.getCoord(turf.along(feature1, length1 * (!start.reverse ? i : interpolate - i) / interpolate));
+						coord2 = turf.getCoord(turf.along(feature2, length2 * (!end.reverse ? i : interpolate - i) / interpolate));
+						f = easeInOutQuad(i / interpolate);
+						coordinates.push([
+							coord1[0] * (1 - f) + coord2[0] * f,
+							coord1[1] * (1 - f) + coord2[1] * f
+						]);
+					}
 				}
-				subline.feature = turf.lineString(coordinates);
 			}
 
-			return turf.getCoords(subline.feature);
+			return coordinates;
 		})), {color: railway.color, width: 8});
 
 		if (railway.altitude < 0) {
