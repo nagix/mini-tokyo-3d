@@ -699,6 +699,10 @@ map.once('styledata', function () {
 			startViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.add('mapbox-ctrl-track-active');
+			if (isUndergroundVisible !== (trackedObject.userData.altitude < 0)) {
+				document.getElementsByClassName('mapbox-ctrl-underground')[0]
+					.dispatchEvent(new MouseEvent('click'));
+			}
 		} else {
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.remove('mapbox-ctrl-track-active');
