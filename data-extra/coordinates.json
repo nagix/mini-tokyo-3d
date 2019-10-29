@@ -922,8 +922,7 @@
 			"end": {
 				"railway": "JR-East.Yamanote",
 				"offset": 1
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "main",
 			"start": {
@@ -3410,8 +3409,7 @@
 			"end": {
 				"railway": "JR-East.Yamanote",
 				"offset": -3
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "main",
 			"start": {
@@ -4340,8 +4338,7 @@
 			"end": {
 				"railway": "JR-East.Utsunomiya",
 				"offset": 1
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "main",
 			"start": {
@@ -4862,8 +4859,7 @@
 			"end": {
 				"railway": "JR-East.Yamanote",
 				"offset": -2
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "main",
 			"start": {
@@ -5436,8 +5432,7 @@
 			"end": {
 				"railway": "JR-East.Yamanote",
 				"offset": -4
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "main",
 			"start": {
@@ -5483,14 +5478,12 @@
 			"end": {
 				"railway": "JR-East.ChuoSobuLocal",
 				"offset": 1
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "sub",
 			"start": {
 				"railway": "JR-East.ChuoSobuLocal",
-				"offset": 1,
-				"reverse": 1
+				"offset": 1
 			},
 			"coords": [
 				[140.1065006, 35.6191115],
@@ -5498,8 +5491,7 @@
 			],
 			"end": {
 				"railway": "JR-East.ChuoSobuLocal",
-				"offset": 2,
-				"reverse": 1
+				"offset": 2
 			},
 			"interpolate": 20
 		}, {
@@ -5515,8 +5507,7 @@
 			"end": {
 				"railway": "JR-East.ChuoSobuLocal",
 				"offset": 2
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "main",
 			"start": {
@@ -6201,8 +6192,7 @@
 			"end": {
 				"railway": "JR-East.ChuoSobuLocal",
 				"offset": -2
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "main",
 			"start": {
@@ -7998,8 +7988,7 @@
 			"end": {
 				"railway": "JR-East.Yokosuka",
 				"offset": 1
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "main",
 			"start": {
@@ -8195,14 +8184,12 @@
 			"end": {
 				"railway": "JR-East.KeihinTohokuNegishi",
 				"offset": 1
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "sub",
 			"start": {
 				"railway": "JR-East.KeihinTohokuNegishi",
-				"offset": 1,
-				"reverse": 1
+				"offset": 1
 			},
 			"coords": [
 				[139.7465263, 35.7469807],
@@ -8210,8 +8197,7 @@
 			],
 			"end": {
 				"railway": "JR-East.KeihinTohokuNegishi",
-				"offset": 2,
-				"reverse": 1
+				"offset": 2
 			},
 			"interpolate": 20
 		}, {
@@ -8227,8 +8213,7 @@
 			"end": {
 				"railway": "JR-East.KeihinTohokuNegishi",
 				"offset": 2
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "sub",
 			"start": {
@@ -10427,8 +10412,7 @@
 			"end": {
 				"railway": "JR-East.KeihinTohokuNegishi",
 				"offset": 1
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "main",
 			"start": {
@@ -13043,8 +13027,7 @@
 			"end": {
 				"railway": "TWR.Rinkai",
 				"offset": -1
-			},
-			"reverse": 1
+			}
 		}],
 		"altitude": -1,
 		"color": "#C1A470"
@@ -13394,8 +13377,7 @@
 			"end": {
 				"railway": "TokyoMetro.Yurakucho",
 				"offset": -1
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "main",
 			"start": {
@@ -14604,8 +14586,7 @@
 			"end": {
 				"railway": "TokyoMetro.Marunouchi",
 				"offset": 1
-			},
-			"reverse": 1
+			}
 		}, {				
 			"type": "main",
 			"start": {
@@ -15136,8 +15117,7 @@
 			"end": {
 				"railway": "JR-East.Yamanote",
 				"offset": -2
-			},
-			"reverse": 1
+			}
 		}, {
 			"type": "main",
 			"start": {

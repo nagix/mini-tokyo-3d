@@ -239,6 +239,18 @@ var railwayFeatureArray = [];
 				}
 			}
 
+			function alignDirection(feature, coords) {
+				var coordinates = turf.getCoords(feature);
+				var start = coordinates[0];
+
+				// Rewind if the line string is in opposite direction
+				if (turf.distance(coords[0], start) > turf.distance(coords[coords.length - 1], start)) {
+					coordinates.reverse();
+				}
+
+				return coordinates;
+			}
+
 			if (type === 'main') {
 				coordinates = coords.map(function(d) { return d.slice(); });
 				if (start) {
@@ -251,12 +263,7 @@ var railwayFeatureArray = [];
 				if (start.railway === end.railway && start.offset === end.offset) {
 					feature = turf.lineSlice(coords[0], coords[coords.length - 1], featureLookup[start.railway + '.' + zoom]);
 					offset = start.offset;
-					coordinates = turf.getCoords(offset ? lineOffset(feature, offset * unit) : feature);
-
-					// Rewind if the overlap line is in opposite direction
-					if (subline.reverse) {
-						coordinates.reverse();
-					}
+					coordinates = alignDirection(offset ? lineOffset(feature, offset * unit) : feature, coords);
 				} else {
 					interpolate = subline.interpolate;
 					coordinates = [];
@@ -265,16 +272,18 @@ var railwayFeatureArray = [];
 						coords[coords.length - 1],
 						featureLookup[start.railway + '.' + zoom]
 					), start.offset * unit);
+					alignDirection(feature1, coords);
 					feature2 = lineOffset(turf.lineSlice(
 						coords[0],
 						coords[coords.length - 1],
 						featureLookup[end.railway + '.' + zoom]
 					), end.offset * unit);
+					alignDirection(feature2, coords);
 					length1 = turf.length(feature1);
 					length2 = turf.length(feature2);
 					for (i = 1; i < interpolate; i++) {
-						coord1 = turf.getCoord(turf.along(feature1, length1 * (!start.reverse ? i : interpolate - i) / interpolate));
-						coord2 = turf.getCoord(turf.along(feature2, length2 * (!end.reverse ? i : interpolate - i) / interpolate));
+						coord1 = turf.getCoord(turf.along(feature1, length1 * i / interpolate));
+						coord2 = turf.getCoord(turf.along(feature2, length2 * i / interpolate));
 						f = easeInOutQuad(i / interpolate);
 						coordinates.push([
 							coord1[0] * (1 - f) + coord2[0] * f,
@@ -902,7 +911,7 @@ function cleanKeys(obj) {
 	return obj;
 }
 
-function loadJSON(url) {
+function loadJSON(url, delay) {
 	return new Promise(function(resolve, reject) {
 		var request = new XMLHttpRequest();
 
@@ -919,7 +928,9 @@ function loadJSON(url) {
 				}
 			}
 		}
-		request.send();
+		setTimeout(function() {
+			request.send();
+		}, delay || 0);
 	});
 }
 
@@ -970,11 +981,11 @@ function loadRailwayRefData() {
 
 function loadTrainTimetableRefData() {
 	return loadJSON('data-extra/railways.json').then(function(railwayData) {
-		return Promise.all(['Weekday', 'SaturdayHoliday'].map(function(calendar) {
+		return Promise.all(['Weekday', 'SaturdayHoliday'].map(function(calendar, i) {
 			return Promise.all(railwayData.map(function(railway) {
 				var id = railway.id;
 				return loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:' + id +
-					(id === 'JR-East.ChuoSobuLocal' ? '' : '&odpt:calendar=odpt.Calendar:' + calendar));
+					(id === 'JR-East.ChuoSobuLocal' ? '' : '&odpt:calendar=odpt.Calendar:' + calendar), i * 60000);
 			})).then(function(data) {
 				return concat(data).map(function(table) {
 					return {
