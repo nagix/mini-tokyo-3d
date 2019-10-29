@@ -628,12 +628,15 @@ map.once('styledata', function () {
 			this.title = dict[(isRealtime ? 'exit' : 'enter') + '-realtime'];
 			stopAllTrains();
 			trackedObject = undefined;
+			popup.remove();
 			stopViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0].classList.remove('mapbox-ctrl-track-active');
 			if (isRealtime) {
 				this.classList.add('mapbox-ctrl-realtime-active');
+				document.getElementById('clock').style.display = 'block';
 			} else {
 				this.classList.remove('mapbox-ctrl-realtime-active');
+				document.getElementById('clock').style.display = 'none';
 				initModelTrains();
 			}
 		}
@@ -664,6 +667,8 @@ map.once('styledata', function () {
 			window.open('https://github.com/nagix/mini-tokyo-3d');
 		}
 	}]), 'top-right');
+
+	document.getElementById('clock').style.display = 'block';
 
 	var popup = new mapboxgl.Popup({
 		closeButton: false,
@@ -771,6 +776,21 @@ map.once('styledata', function () {
 			var userData, altitude, bearing;
 
 			if (isRealtime) {
+				if (Math.floor(now / 1000) !== Math.floor(lastFrameRefresh / 1000)) {
+					var date = getJSTDate();
+					var dateString = date.toLocaleDateString(lang, {
+						year: 'numeric',
+						month: 'short',
+						day: 'numeric',
+						weekday: 'short'
+					});
+					if (lang === 'ja' && JapaneseHolidays.isHoliday(date)) {
+						dateString = dateString.replace(/\(.+\)/, '(祝)');
+					}
+					document.getElementById('date').innerHTML = dateString;
+					document.getElementById('time').innerHTML = date.toLocaleTimeString(lang);
+				}
+
 				// Remove all trains if the page has been invisible for more than ten seconds
 				if (now - lastFrameRefresh >= 10000) {
 					stopAllTrains();
@@ -1850,28 +1870,33 @@ function buildLookup(array, key) {
 	return lookup;
 }
 
-function getTime(timeString) {
-	var date = new Date();
-	var timeStrings = (timeString || '').split(':');
-	var hours = +timeStrings[0];
-	var tzDiff = date.getTimezoneOffset() + 540; // Difference between local time to JST
+function getJSTDate(time) {
+	var date = time ? new Date(time) : new Date();
 
 	// Adjust local time to JST (UTC+9)
-	date.setMinutes(date.getMinutes() + tzDiff);
+	date.setMinutes(date.getMinutes() + date.getTimezoneOffset() + 540);
+
+	return date;
+}
+
+function getTime(timeString) {
+	var date = getJSTDate();
+	var timeStrings = (timeString || '').split(':');
+	var hours = +timeStrings[0];
 
 	// Special handling of time between midnight and 3am
 	hours += (date.getHours() < 3 ? -24 : 0) + (hours < 3 ? 24 : 0);
 
 	// Adjust JST back to local time
-	return date.setHours(hours, +timeStrings[1] - tzDiff, Math.floor(MIN_DELAY / 1000), MIN_DELAY % 1000);
+	return date.setHours(
+		hours,
+		+timeStrings[1] - (date.getTimezoneOffset() + 540),
+		Math.floor(MIN_DELAY / 1000), MIN_DELAY % 1000
+	);
 }
 
 function getTimeString(time) {
-	var date = new Date(time);
-	var tzDiff = date.getTimezoneOffset() + 540; // Difference between local time to JST
-
-	// Adjust local time to JST (UTC+9)
-	date.setMinutes(date.getMinutes() + tzDiff);
+	var date = getJSTDate(time);
 
 	return ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2);
 }
