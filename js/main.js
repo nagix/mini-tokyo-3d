@@ -308,7 +308,7 @@ railwayLookup = buildLookup(railwayRefData);
 // Build feature lookup dictionary and update feature properties
 turf.featureEach(railwayFeatureCollection, function(feature) {
 	var id = feature.properties.id;
-	if (id) {
+	if (id && !id.match(/\.(ug|og)\./)) {
 		featureLookup[id] = feature;
 		updateDistances(feature);
 	}
@@ -317,22 +317,27 @@ turf.featureEach(railwayFeatureCollection, function(feature) {
 var trainLayers = {
 	ug: new ThreeLayer('trains-ug'),
 	og: new ThreeLayer('trains-og'),
-	addObject: function(object, train, duration) {
-		var layer = train.altitude < 0 ? this.ug : this.og;
+	addObject: function(object, duration) {
+		var layer = object.userData.altitude < 0 ? this.ug : this.og;
 
 		object.material.opacity = 0;
 		layer.scene.add(object);
 		if (duration > 0) {
 			startAnimation({
 				callback: function(elapsed) {
-					object.material.opacity = getTrainOpacity(train) * elapsed / duration;
+					object.material.opacity = getObjectOpacity(object) * elapsed / duration;
 				},
 				duration: duration
 			});
 		}
 	},
-	removeObject: function(object, train, duration) {
-		var layer = train.altitude < 0 ? this.ug : this.og;
+	updateObject: function(object) {
+		var layer = object.userData.altitude < 0 ? this.ug : this.og;
+
+		layer.scene.add(object);
+	},
+	removeObject: function(object, duration) {
+		var layer = object.userData.altitude < 0 ? this.ug : this.og;
 
 		if (!object) {
 			return;
@@ -340,7 +345,7 @@ var trainLayers = {
 		if (duration > 0) {
 			startAnimation({
 				callback: function(elapsed) {
-					object.material.opacity = getTrainOpacity(train) * (1 - elapsed / duration);
+					object.material.opacity = getObjectOpacity(object) * (1 - elapsed / duration);
 				},
 				complete: function() {
 					layer.scene.remove(object);
@@ -569,8 +574,8 @@ map.once('styledata', function () {
 			});
 
 			startAnimation({
-				callback: function(elapsed) {
-					var t = elapsed / 300;
+				callback: function(elapsed, duration) {
+					var t = elapsed / duration;
 
 					[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 						var opacity = isUndergroundVisible ?
@@ -581,22 +586,19 @@ map.once('styledata', function () {
 					});
 					Object.keys(activeTrainLookup).forEach(function(key) {
 						var train = activeTrainLookup[key];
-						var opacity = isUndergroundVisible === (train.altitude < 0) ?
-							.9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
+						var delayMarker = train.delayMarker;
 
 						train.cars.forEach(function(car) {
-							car.material.opacity = opacity;
+							car.material.opacity = getObjectOpacity(car, t);
 						});
-						if (train.delayMarker) {
-							train.delayMarker.material.opacity = opacity;
+						if (delayMarker) {
+							delayMarker.material.opacity = getObjectOpacity(delayMarker, t);
 						}
 					});
 					Object.keys(activeFlightLookup).forEach(function(key) {
 						var flight = activeFlightLookup[key];
-						var opacity = !isUndergroundVisible ?
-							.9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
 
-						flight.body.material.opacity = flight.wing.material.opacity = flight.vTail.material.opacity = opacity;
+						flight.body.material.opacity = flight.wing.material.opacity = flight.vTail.material.opacity = getObjectOpacity(flight.body, t);
 					});
 				},
 				duration: 300
@@ -855,7 +857,7 @@ map.once('styledata', function () {
 		var carComposition = clamp(Math.floor(train.carComposition * .02 / objectUnit), 1, train.carComposition);
 		var compositionChanged = length !== carComposition;
 		var delayMarker = train.delayMarker;
-		var i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord;
+		var i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord, altitudeChanged;
 
 		if (t !== undefined) {
 			train._t = t;
@@ -865,16 +867,15 @@ map.once('styledata', function () {
 		}
 
 		for (i = length - 1; i >= carComposition; i--) {
-			trainLayers.removeObject(cars.pop(), train);
+			trainLayers.removeObject(cars.pop());
 		}
 		for (i = length; i < carComposition; i++) {
 			railway = railway || railwayLookup[train.r];
 			car = createCube(.88, 1.76, .88, railway.color);
+			car.rotation.order = 'ZYX';
 			userData = car.userData;
 			userData.object = train;
-			userData.altitude = (train.altitude || 0) * Math.pow(2, 14 - layerZoom) * 100;
 			cars.push(car);
-			trainLayers.addObject(car, train, 1000);
 		}
 		if (compositionChanged) {
 			if (markedObject && markedObject.userData.object === train) {
@@ -894,30 +895,66 @@ map.once('styledata', function () {
 			p = getCoordAndBearing(feature, offset + train._t * train.interval + (i - (carComposition - 1) / 2) * objectUnit);
 
 			coord = userData.coord = p.coord;
+			altitudeChanged = (userData.altitude < 0 && p.altitude >= 0) || (userData.altitude >= 0 && p.altitude < 0);
 			userData.altitude = p.altitude;
 			bearing = userData.bearing = p.bearing + (train.direction < 0 ? 180 : 0);
 			mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
 
 			position.x = mCoord.x - modelOrigin.x;
 			position.y = -(mCoord.y - modelOrigin.y);
-			position.z = (train.altitude || 0) * altitudeUnit + objectScale / 2;
+			position.z = p.altitude * modelScale + objectScale / 2;
 			scale.x = scale.z = objectScale;
 			scale.y = carScale;
+			car.rotation.x = p.pitch * train.direction;
 			car.rotation.z = -bearing * DEGREE_TO_RADIAN;
+
+			if (!car.parent) {
+				trainLayers.addObject(car, 1000);
+			}
+			if (altitudeChanged) {
+				trainLayers.updateObject(car);
+				startAnimation({
+					callback: function(elapsed, duration, object) {
+						object.material.opacity = getObjectOpacity(object, elapsed / duration);
+					},
+					duration: 1000,
+					userData: car
+				});
+				if (trackedObject === car) {
+					document.getElementsByClassName('mapbox-ctrl-underground')[0]
+						.dispatchEvent(new MouseEvent('click'));
+				}
+			}
 		}
 
 		if (train.delay) {
 			if (!delayMarker) {
 				delayMarker = train.delayMarker = createDelayMarker();
-				trainLayers.addObject(delayMarker, train, 1000);
 			}
 
 			car = cars[Math.floor(carComposition / 2)];
+			userData = delayMarker.userData;
+			altitudeChanged = (userData.altitude < 0 && car.userData.altitude >= 0) || (userData.altitude >= 0 && car.userData.altitude < 0);
+			userData.altitude = car.userData.altitude;
 			merge(delayMarker.position, car.position);
 			scale = delayMarker.scale;
 			scale.x = scale.y = scale.z = carScale;
+
+			if (!delayMarker.parent) {
+				trainLayers.addObject(delayMarker, 1000);
+			}
+			if (altitudeChanged) {
+				trainLayers.updateObject(delayMarker);
+				startAnimation({
+					callback: function(elapsed, duration, object) {
+						object.material.opacity = getObjectOpacity(object, elapsed / duration);
+					},
+					duration: 1000,
+					userData: delayMarker
+				});
+			}
 		} else if (delayMarker) {
-			trainLayers.removeObject(delayMarker, train);
+			trainLayers.removeObject(delayMarker);
 			delete train.delayMarker;
 		}
 	}
@@ -940,10 +977,11 @@ map.once('styledata', function () {
 			wing = flight.wing = createCube(2.64, .88, .1, operator.color || '#FFFFFF');
 			vTail = flight.vTail = createCube(.1, .88, .88, operator.tailcolor || '#FFFFFF');
 			vTail.geometry.translate(0, -.88, .88);
+			body.rotation.order = wing.rotation.order = vTail.rotation.order = 'ZYX';
 			body.userData.object = wing.userData.object = vTail.userData.object = flight;
-			trainLayers.addObject(body, flight, 1000);
-			trainLayers.addObject(wing, flight, 1000);
-			trainLayers.addObject(vTail, flight, 1000);
+			trainLayers.addObject(body, 1000);
+			trainLayers.addObject(wing, 1000);
+			trainLayers.addObject(vTail, 1000);
 		}
 
 		p = getCoordAndBearing(flight.feature, flight._t * flight.feature.properties.length);
@@ -960,18 +998,21 @@ map.once('styledata', function () {
 		scale = body.scale;
 		scale.x = scale.z = objectScale;
 		scale.y = aircraftScale;
+		body.rotation.x = p.pitch;
 		body.rotation.z = -bearing * DEGREE_TO_RADIAN;
 
 		merge(wing.position, body.position);
 		scale = wing.scale;
 		scale.x = aircraftScale;
 		scale.y = scale.z = objectScale;
+		wing.rotation.x = body.rotation.x;
 		wing.rotation.z = body.rotation.z;
 
 		merge(vTail.position, body.position);
 		scale = vTail.scale
 		scale.x = scale.z = objectScale;
 		scale.y = aircraftScale;
+		vTail.rotation.x = body.rotation.x;
 		vTail.rotation.z = body.rotation.z;
 	}
 
@@ -1132,8 +1173,8 @@ map.once('styledata', function () {
 
 		trackingBaseBearing = map.getBearing() - performance.now() / 100;
 		viewAnimationID = startAnimation({
-			callback: function(elapsed) {
-				var t1 = easeOutQuart(elapsed / 1000);
+			callback: function(elapsed, duration) {
+				var t1 = easeOutQuart(elapsed / duration);
 				var factor = (1 - t1) / (1 - t2);
 				var userData = trackedObject.userData;
 				var coord = adjustCoord(userData.coord, userData.altitude);
@@ -1267,22 +1308,22 @@ map.once('styledata', function () {
 		stopAnimation(train.animationID);
 		if (train.cars) {
 			train.cars.forEach(function(car) {
-				trainLayers.removeObject(car, train, 1000);
+				trainLayers.removeObject(car, 1000);
 			});
 		}
 		delete train.cars;
 		delete activeTrainLookup[train.t];
 		if (train.delayMarker) {
-			trainLayers.removeObject(train.delayMarker, train, 1000);
+			trainLayers.removeObject(train.delayMarker, 1000);
 			delete train.delayMarker;
 		}
 	}
 
 	function stopFlight(flight) {
 		stopAnimation(flight.animationID);
-		trainLayers.removeObject(flight.body, flight, 1000);
-		trainLayers.removeObject(flight.wing, flight, 1000);
-		trainLayers.removeObject(flight.vTail, flight, 1000);
+		trainLayers.removeObject(flight.body, 1000);
+		trainLayers.removeObject(flight.wing, 1000);
+		trainLayers.removeObject(flight.vTail, 1000);
 		delete flight.body;
 		delete flight.wing;
 		delete flight.vTail;
@@ -1630,17 +1671,17 @@ function updateDistances(line) {
 }
 
 /**
-  * Returns coordinates, altitude and bearing of the train from its distance
+  * Returns coordinates, altitude, bearing and patch of the train from its distance
   * @param {object} line - lineString of the railway
   * @param {number} distance - Distance from the beginning of the lineString
-  * @returns {object} coord, altitude and bearing
+  * @returns {object} coord, altitude, bearing and pitch
   */
 function getCoordAndBearing(line, distance) {
 	var coords = turf.getCoords(line);
 	var distances = line.properties.distances;
 	var start = 0;
 	var end = coords.length - 1;
-	var center, index, coord, nextCoord, baseDistance, overshot, altitude, bearing;
+	var center, index, coord, nextCoord, baseDistance, overshot, altitude, bearing, slope;
 
 	if (distance >= distances[end]) {
 		coord = coords[end];
@@ -1667,10 +1708,12 @@ function getCoordAndBearing(line, distance) {
 	overshot = distance - baseDistance;
 	altitude = coord[2] || 0;
 	bearing = turf.bearing(coord, nextCoord);
+	slope = ((nextCoord[2] || 0) - altitude) / (distances[index + 1] - baseDistance);
 	return {
 		coord: overshot === 0 ? coord : turf.getCoord(turf.destination(coord, overshot, bearing)),
-		altitude: altitude + ((nextCoord[2] || 0) - altitude) * overshot / (distances[index + 1] - baseDistance),
-		bearing: bearing
+		altitude: altitude + slope * overshot,
+		bearing: bearing,
+		pitch: Math.atan(slope / 1000)
 	};
 }
 
@@ -1702,13 +1745,14 @@ function repeat() {
 			duration = animation.duration;
 			elapsed = now - start;
 			callback = animation.callback;
+			userData = animation.userData;
 			if (callback) {
-				callback(Math.min(elapsed, duration), duration);
+				callback(Math.min(elapsed, duration), duration, userData);
 			}
 			if (elapsed >= duration) {
 				callback = animation.complete;
 				if (callback) {
-					callback();
+					callback(userData);
 				}
 				stopAnimation(id);
 			}
@@ -1724,12 +1768,11 @@ function repeat() {
   * @param {function} options.complete - Function called when the animation completes
   * @param {number} options.duration - Animation duration. Default is Infinity
   * @param {number} options.start - Animation start time (same timestamp as performance.now())
+  * @param {number} options.userData - User data that is available in the callback function
   * @returns {number} Animation ID which can be used to stop
   */
 function startAnimation(options) {
-	if (options.duration === undefined) {
-		options.duration = Infinity;
-	}
+	options.duration === valueOrDefault(options.duration, Infinity);
 	animations[animationID] = options;
 	return animationID++;
 }
@@ -1825,8 +1868,8 @@ function clamp(value, lower, upper) {
 	return Math.min(Math.max(value, lower), upper);
 }
 
-function inRange(value, start, end) {
-	return value >= start && value < end;
+function valueOrDefault(value, defaultValue) {
+	return value === undefined ? defaultValue : value;
 }
 
 function removePrefix(value) {
@@ -1924,18 +1967,19 @@ function createDelayMarker() {
 	return new THREE.Mesh(geometry, material);
 }
 
-function getTrainOpacity(train) {
-	return isUndergroundVisible === (train.altitude < 0) ? .9 : .225;
+function getObjectOpacity(object, t) {
+	t = valueOrDefault(t, 1);
+	return isUndergroundVisible === (object.userData.altitude < 0) ?
+		.9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
 }
 
 function setSectionData(train, index) {
 	var table = train.tt;
 	var delay = train.delay || 0;
 	var now = Date.now();
-	var index = index !== undefined ? index :
-		table.reduce(function(acc, cur, i) {
-			return getTime(cur.dt) + delay <= now ? i : acc;
-		}, 0);
+	var index = valueOrDefault(index, table.reduce(function(acc, cur, i) {
+		return getTime(cur.dt) + delay <= now ? i : acc;
+	}, 0));
 	var current = table[index];
 	var next = table[index + 1];
 	var stations = railwayLookup[train.r].stations;

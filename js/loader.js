@@ -176,18 +176,19 @@ stationData.forEach(function(stations) {
 		stations = [stations];
 	}
 	stations.forEach(function(station) {
-		var primaryStationRef = stationLookup[station.ids[0]];
+		var previousStationRef;
 
 		station.ids.forEach(function(id) {
 			var stationRef = stationLookup[id];
 
 			if (!stationRef.title) {
-				stationRef.title = merge({}, primaryStationRef.title);
+				stationRef.title = merge({}, previousStationRef.title);
 			}
 			if (!stationRef.coord) {
-				stationRef.coord = primaryStationRef.coord;
+				stationRef.coord = previousStationRef.coord;
 			}
 			merge(stationRef.title, station.title);
+			previousStationRef = stationRef;
 		});
 	});
 });
@@ -205,11 +206,13 @@ var railwayFeatureArray = [];
 
 	coordinateData.railways.forEach(function(railway) {
 		var id = railway.id;
+		var mixed = false;
 		var railwayFeature = turf.lineString(concat(railway.sublines.map(function(subline) {
 			var type = subline.type;
 			var start = subline.start;
 			var end = subline.end;
 			var coords = subline.coords;
+			var altitude = valueOrDefault(subline.altitude, railway.altitude) || 0;
 			var coordinates, feature, offset, interpolate, feature1, feature2, length1, length2, i, coord1, coord2, f;
 
 			function smoothCoords(nextSubline, reverse) {
@@ -221,7 +224,7 @@ var railwayFeatureArray = [];
 				var baseOffset = nextSubline.offset * unit - nearest.distance;
 				var baseFeature = turf.lineString(coordinates);
 				var baseLocation = getLocationAlongLine(baseFeature, coordinates[start]);
-				var transition = Math.abs(nextSubline.offset) * .5 + .5;
+				var transition = Math.min(Math.abs(nextSubline.offset) * .5 + .5, turf.length(baseFeature));
 				var factors = [];
 				var i, distance;
 
@@ -239,6 +242,23 @@ var railwayFeatureArray = [];
 				}
 			}
 
+			function smoothAltitude(baseAltitude, reverse) {
+				var start = !reverse ? 0 : coordinates.length - 1;
+				var end = !reverse ? coordinates.length - 1 : 0;
+				var step = !reverse ? 1 : -1;
+				var baseFeature = turf.lineString(coordinates);
+				var baseLocation = getLocationAlongLine(baseFeature, coordinates[start]);
+				var i, distance;
+
+				for (i = start; i !== end; i += step) {
+					distance = Math.abs(getLocationAlongLine(baseFeature, coordinates[i]) - baseLocation);
+					if (distance > .4) {
+						break;
+					}
+					coordinates[i][2] = (baseAltitude + (altitude - baseAltitude) * easeInOutQuad(distance / .4)) * unit * 1000;
+				}
+			}
+
 			function alignDirection(feature, coords) {
 				var coordinates = turf.getCoords(feature);
 				var start = coordinates[0];
@@ -253,10 +273,10 @@ var railwayFeatureArray = [];
 
 			if (type === 'main') {
 				coordinates = coords.map(function(d) { return d.slice(); });
-				if (start) {
+				if (start && start.railway) {
 					smoothCoords(start);
 				}
-				if (end) {
+				if (end && end.railway) {
 					smoothCoords(end, true);
 				}
 			} else if (type === 'sub') {
@@ -292,18 +312,30 @@ var railwayFeatureArray = [];
 					}
 				}
 			}
+			if (altitude) {
+				coordinates.forEach(function(coord) {
+					coord[2] = altitude * unit * 1000;
+				});
+			}
+			if (start && start.altitude !== undefined) {
+				smoothAltitude(start.altitude);
+				mixed = true;
+			}
+			if (end && end.altitude !== undefined) {
+				smoothAltitude(end.altitude, true);
+				mixed = true;
+			}
 
 			return coordinates;
-		})), {color: railway.color, width: 8});
+		})), {
+			id: id + '.' + zoom,
+			type: 0,
+			color: railway.color,
+			width: 8,
+			zoom: zoom
+		});
 
-		if (railway.altitude < 0) {
-			setAltitude(railwayFeature, railway.altitude * unit * 1000);
-		}
-
-		railwayFeature.properties.id = id + '.' + zoom;
-		railwayFeature.properties.zoom = zoom;
-		railwayFeature.properties.type = 0;
-		railwayFeature.properties.altitude = (railway.altitude || 0) * unit * 1000;
+		railwayFeature.properties.altitude = mixed ? undefined : (railway.altitude || 0) * unit * 1000;
 
 		// Set station offsets
 		railwayFeature.properties['station-offsets'] = railwayLookup[id].stations.map(function(station, i, stations) {
@@ -316,6 +348,48 @@ var railwayFeatureArray = [];
 
 		railwayFeatureArray.push(railwayFeature);
 		featureLookup[id + '.' + zoom] = railwayFeature;
+
+		if (mixed) {
+			var ugCoords = [[]];
+			var ogCoords = [[]];
+
+			turf.getCoords(railwayFeature).forEach(function(coord, i, coords) {
+				if (coord[2] < 0 || (coords[i - 1] && coords[i - 1][2] < 0) || (coords[i + 1] && coords[i + 1][2] < 0)) {
+					ugCoords[ugCoords.length - 1].push(coord);
+					if (!(coord[2] < 0) && (coords[i - 1] && coords[i - 1][2] < 0)) {
+						ugCoords.push([]);
+					}
+				}
+				if (!(coord[2] < 0)) {
+					ogCoords[ogCoords.length - 1].push(coord);
+					if (coords[i + 1] && coords[i + 1][2] < 0) {
+						ogCoords.push([]);
+					}
+				}
+			});
+			if (ugCoords[ugCoords.length - 1].length === 0) {
+				ugCoords.pop();
+			}
+			if (ogCoords[ogCoords.length - 1].length === 0) {
+				ogCoords.pop();
+			}
+			railwayFeatureArray.push(turf.multiLineString(ugCoords, {
+				id: id + '.ug.' + zoom,
+				type: 0,
+				color: railway.color,
+				width: 8,
+				zoom: zoom,
+				altitude: -unit * 1000
+			}));
+			railwayFeatureArray.push(turf.multiLineString(ogCoords, {
+				id: id + '.og.' + zoom,
+				type: 0,
+				color: railway.color,
+				width: 8,
+				zoom: zoom,
+				altitude: 0
+			}));
+		}
 	});
 
 	stationData.forEach(function(stations) {
@@ -351,11 +425,11 @@ var railwayFeatureArray = [];
 		}
 
 		feature.properties = {
+			type: 1,
 			outlineColor: '#000000',
 			width: 4,
 			color: '#FFFFFF',
 			zoom: zoom,
-			type: 1,
 			altitude: (stations[0].altitude || 0) * unit * 1000
 		};
 
@@ -365,11 +439,14 @@ var railwayFeatureArray = [];
 
 coordinateData.airways.forEach(function(airway) {
 	var id = airway.id;
-	var airwayFeature = turf.lineString(airway.coords, {color: airway.color, width: 8});
+	var airwayFeature = turf.lineString(airway.coords, {
+		id: id,
+		type: 0,
+		color: airway.color,
+		width: 8,
+		altitude: 1
+	});
 
-	airwayFeature.properties.id = id;
-	airwayFeature.properties.type = 0;
-	airwayFeature.properties.altitude = 1;
 	airwayFeature.properties.length = turf.length(airwayFeature);
 
 	railwayFeatureArray.push(airwayFeature);
@@ -890,6 +967,10 @@ function merge(target, source) {
 
 function clamp(value, lower, upper) {
 	return Math.min(Math.max(value, lower), upper);
+}
+
+function valueOrDefault(value, defaultValue) {
+	return value === undefined ? defaultValue : value;
 }
 
 function removePrefix(value) {

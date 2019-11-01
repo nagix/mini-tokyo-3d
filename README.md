@@ -27,6 +27,7 @@ Click or tap the fullscreen button | Toggle the fullscreen mode
 Click or tap the eye button | Toggle the underground mode
 Click or tap the train/helicopter button | Switch the tracking mode
 Click or tap the clock button | Toggle the real-time mode
+Click or tap the weather button | Show/hide the weather
 Click or tap the GitHub button | Open the GitHub project page
 Click or tap a train | Enable tracking
 Click or tap the map | Disable tracking

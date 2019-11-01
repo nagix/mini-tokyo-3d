@@ -2,7 +2,8 @@
 	"ids": [
 		"JR-East.Yamanote.Osaki",
 		"JR-East.SaikyoKawagoe.Osaki",
-		"JR-East.ShonanShinjuku.Osaki"
+		"JR-East.ShonanShinjuku.Osaki",
+		"TWR.Rinkai.Osaki"
 	],
 	"title": {
 		"ko": "오사키",
@@ -39,7 +40,8 @@
 		"Keio.Inokashira.Shibuya",
 		"JR-East.Yamanote.Shibuya",
 		"JR-East.SaikyoKawagoe.Shibuya",
-		"JR-East.ShonanShinjuku.Shibuya"
+		"JR-East.ShonanShinjuku.Shibuya",
+		"TokyoMetro.Ginza.Shibuya"
 	],
 	"title": {
 		"ko": "시부야",
@@ -64,7 +66,6 @@
 	}
 }, {
 	"ids": [
-		"Keio.Keio.Shinjuku",
 		"JR-East.ChuoSobuLocal.Shinjuku",
 		"JR-East.Yamanote.Shinjuku",
 		"JR-East.ChuoRapid.Shinjuku",
@@ -213,14 +214,10 @@
 }, {
 	"ids": [
 		"JR-East.ChuoRapid.Tokyo",
-		"JR-East.SobuRapid.Tokyo",
-		"JR-East.Yokosuka.Tokyo",
 		"JR-East.Tokaido.Tokyo",
 		"JR-East.JobanRapid.Tokyo",
 		"JR-East.KeihinTohokuNegishi.Tokyo",
-		"JR-East.Yamanote.Tokyo",
-		"JR-East.KeiyoFutamataBranch.Tokyo",
-		"JR-East.Keiyo.Tokyo"
+		"JR-East.Yamanote.Tokyo"
 	],
 	"title": {
 		"ko": "도쿄",
@@ -237,7 +234,6 @@
 	}
 }, {
 	"ids": [
-		"JR-East.Yokosuka.Shimbashi",
 		"JR-East.Tokaido.Shimbashi",
 		"JR-East.JobanRapid.Shimbashi",
 		"JR-East.KeihinTohokuNegishi.Shimbashi",
@@ -298,7 +294,8 @@
 }, {
 	"ids": [
 		"JR-East.ChuoRapid.Nakano",
-		"JR-East.ChuoSobuLocal.Nakano"
+		"JR-East.ChuoSobuLocal.Nakano",
+		"TokyoMetro.Tozai.Nakano"
 	],
 	"title": {
 		"ko": "나카노",
@@ -686,10 +683,11 @@
 	}
 }, {
 	"ids": [
-		"JR-East.ChuoSobuLocal.NishiFunabashi",
-		"JR-East.KeiyoFutamataBranch.NishiFunabashi",
+		"JR-East.Musashino.NishiFunabashi",
 		"JR-East.KeiyoKoyaBranch.NishiFunabashi",
-		"JR-East.Musashino.NishiFunabashi"
+		"JR-East.KeiyoFutamataBranch.NishiFunabashi",
+		"JR-East.ChuoSobuLocal.NishiFunabashi",
+		"TokyoMetro.Tozai.NishiFunabashi"
 	],
 	"title": {
 		"ko": "니시후나바시",
@@ -1234,7 +1232,8 @@
 	}
 }, {
 	"ids": [
-		"JR-East.JobanRapid.MinamiSenju"
+		"JR-East.JobanRapid.MinamiSenju",
+		"TokyoMetro.Hibiya.MinamiSenju"
 	],
 	"title": {
 		"ko": "미나미센주",
@@ -1242,7 +1241,8 @@
 	}
 }, {
 	"ids": [
-		"JR-East.JobanRapid.KitaSenju"
+		"JR-East.JobanRapid.KitaSenju",
+		"TokyoMetro.Hibiya.KitaSenju"
 	],
 	"title": {
 		"ko": "기타센주",
@@ -1295,7 +1295,8 @@
 	}
 }, {
 	"ids": [
-		"JR-East.JobanLocal.Ayase"
+		"JR-East.JobanLocal.Ayase",
+		"TokyoMetro.Chiyoda.Ayase"
 	],
 	"title": {
 		"ko": "아야세",
@@ -1368,21 +1369,68 @@
 	}
 }, {
 	"ids": [
-		"JR-East.SobuRapid.ShinNihombashi"
+		"JR-East.Keiyo.Tokyo",
+		"JR-East.KeiyoFutamataBranch.Tokyo",
+		"JR-East.SobuRapid.Tokyo",
+		"JR-East.Yokosuka.Tokyo",
+		"TokyoMetro.Marunouchi.Tokyo"
 	],
 	"title": {
-		"ko": "신니혼바시",
-		"zh": "新日本桥"
+		"ko": "도쿄",
+		"zh": "东京"
+	},
+	"altitude": -1
+}, [
+	{
+		"ids": [
+			"JR-East.SobuRapid.ShinNihombashi"
+		],
+		"title": {
+			"ko": "신니혼바시",
+			"zh": "新日本桥"
+		},
+		"altitude": -1
+	}, {
+		"ids": [
+			"TokyoMetro.Ginza.Mitsukoshimae",
+			"TokyoMetro.Hanzomon.Mitsukoshimae"
+		],
+		"title": {
+			"ko": "미쓰코시마에",
+			"zh": "三越前"
+		},
+		"altitude": -1
 	}
-}, {
-	"ids": [
-		"JR-East.SobuRapid.Bakurocho"
-	],
-	"title": {
-		"ko": "바쿠로초",
-		"zh": "马喰町"
+], [
+		{
+		"ids": [
+			"JR-East.SobuRapid.Bakurocho"
+		],
+		"title": {
+			"ko": "바쿠로초",
+			"zh": "马喰町"
+		},
+		"altitude": -1
+	}, {
+		"ids": [
+			"Toei.Shinjuku.BakuroYokoyama"
+		],
+		"title": {
+			"ko": "바쿠로요코야마",
+			"zh": "马喰横山"
+		},
+		"altitude": -1
+	}, {
+		"ids": [
+			"Toei.Asakusa.HigashiNihombashi"
+		],
+		"title": {
+			"ko": "히가시니혼바시",
+			"zh": "东日本桥"
+		},
+		"altitude": -1
 	}
-}, {
+], {
 	"ids": [
 		"JR-East.Sobu.HigashiChiba"
 	],
@@ -1454,7 +1502,8 @@
 	"title": {
 		"ko": "공항 제2빌딩",
 		"zh": "机场第2候机楼"
-	}
+	},
+	"altitude": -1
 }, {
 	"ids": [
 		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
@@ -1463,7 +1512,8 @@
 	"title": {
 		"ko": "나리타 공항",
 		"zh": "成田机场"
-	}
+	},
+	"altitude": -1
 }, {
 	"ids": [
 		"JR-East.Uchibo.HonChiba",
@@ -1483,6 +1533,17 @@
 		"ko": "소가",
 		"zh": "苏我"
 	}
+}, {
+	"ids": [
+		"TokyoMetro.Ginza.Shimbashi",
+		"JR-East.Yokosuka.Shimbashi",
+		"Toei.Asakusa.Shimbashi"
+	],
+	"title": {
+		"ko": "신바시",
+		"zh": "新桥"
+	},
+	"altitude": -1
 }, {
 	"ids": [
 		"JR-East.Yokosuka.NishiOi",
@@ -1532,12 +1593,14 @@
 }, {
 	"ids": [
 		"JR-East.Keiyo.Hatchobori",
-		"JR-East.KeiyoFutamataBranch.Hatchobori"
+		"JR-East.KeiyoFutamataBranch.Hatchobori",
+		"TokyoMetro.Hibiya.Hatchobori"
 	],
 	"title": {
 		"ko": "핫초보리",
 		"zh": "八丁堀"
-	}
+	},
+	"altitude": -1
 }, {
 	"ids": [
 		"JR-East.Keiyo.Etchujima",
@@ -1546,7 +1609,8 @@
 	"title": {
 		"ko": "엣추지마",
 		"zh": "越中岛"
-	}
+	},
+	"altitude": -1
 }, {
 	"ids": [
 		"JR-East.Keiyo.Shiomi",
@@ -1558,6 +1622,8 @@
 	}
 }, {
 	"ids": [
+		"TWR.Rinkai.ShinKiba",
+		"TokyoMetro.Yurakucho.ShinKiba",
 		"JR-East.Keiyo.ShinKiba",
 		"JR-East.KeiyoFutamataBranch.ShinKiba"
 	],
@@ -2122,7 +2188,8 @@
 	"title": {
 		"ko": "신코다이라",
 		"zh": "新小平"
-	}
+	},
+	"altitude": -1
 }, {
 	"ids": [
 		"JR-East.Musashino.ShinAkitsu"
@@ -2414,23 +2481,12 @@
 	}
 }, {
 	"ids": [
-		"TWR.Rinkai.ShinKiba",
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"title": {
-		"ko": "신키바",
-		"zh": "新木场"
-	},
-	"altitude": -1
-}, {
-	"ids": [
 		"TWR.Rinkai.Shinonome"
 	],
 	"title": {
 		"ko": "시노노메",
 		"zh": "东云"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"TWR.Rinkai.KokusaiTenjijo"
@@ -2474,26 +2530,6 @@
 	"title": {
 		"ko": "오이마치",
 		"zh": "大井町"
-	},
-	"altitude": -1
-}, {
-	"ids": [
-		"TWR.Rinkai.Osaki"
-	],
-	"title": {
-		"ko": "오사키",
-		"zh": "大崎"
-	},
-	"altitude": -1
-}, {
-	"ids": [
-		"TokyoMetro.Ginza.Shibuya",
-		"TokyoMetro.Fukutoshin.Shibuya",
-		"TokyoMetro.Hanzomon.Shibuya"
-	],
-	"title": {
-		"ko": "시부야",
-		"zh": "涩谷"
 	},
 	"altitude": -1
 }, {
@@ -2583,16 +2619,6 @@
 	"altitude": -1
 }, {
 	"ids": [
-		"TokyoMetro.Ginza.Shimbashi",
-		"Toei.Asakusa.Shimbashi"
-	],
-	"title": {
-		"ko": "신바시",
-		"zh": "新桥"
-	},
-	"altitude": -1
-}, {
-	"ids": [
 		"TokyoMetro.Ginza.Ginza",
 		"TokyoMetro.Hibiya.Ginza",
 		"TokyoMetro.Marunouchi.Ginza"
@@ -2620,16 +2646,6 @@
 	"title": {
 		"ko": "니혼바시",
 		"zh": "日本桥"
-	},
-	"altitude": -1
-}, {
-	"ids": [
-		"TokyoMetro.Ginza.Mitsukoshimae",
-		"TokyoMetro.Hanzomon.Mitsukoshimae"
-	],
-	"title": {
-		"ko": "미쓰코시마에",
-		"zh": "三越前"
 	},
 	"altitude": -1
 }, {
@@ -2786,6 +2802,7 @@
 	{
 		"ids": [
 			"TokyoMetro.Marunouchi.Shinjuku",
+			"Keio.Keio.Shinjuku",
 			"Toei.Oedo.Shinjuku",
 			"Keio.KeioNew.Shinjuku",
 			"Toei.Shinjuku.Shinjuku"
@@ -2853,15 +2870,6 @@
 	"title": {
 		"ko": "가스미가세키",
 		"zh": "霞关"
-	},
-	"altitude": -1
-}, {
-	"ids": [
-		"TokyoMetro.Marunouchi.Tokyo"
-	],
-	"title": {
-		"ko": "도쿄",
-		"zh": "东京"
 	},
 	"altitude": -1
 }, {
@@ -3010,8 +3018,7 @@
 	"title": {
 		"ko": "나카메구로",
 		"zh": "中目黑"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"TokyoMetro.Hibiya.Ebisu"
@@ -3092,15 +3099,6 @@
 	"altitude": -1
 }, {
 	"ids": [
-		"TokyoMetro.Hibiya.Hatchobori"
-	],
-	"title": {
-		"ko": "핫초보리",
-		"zh": "八丁堀"
-	},
-	"altitude": -1
-}, {
-	"ids": [
 		"TokyoMetro.Hibiya.Kayabacho",
 		"TokyoMetro.Tozai.Kayabacho"
 	],
@@ -3168,30 +3166,11 @@
 	"altitude": -1
 }, {
 	"ids": [
-		"TokyoMetro.Hibiya.MinamiSenju"
-	],
-	"title": {
-		"ko": "미나미센주",
-		"zh": "南千住"
-	},
-	"altitude": -1
-}, {
-	"ids": [
-		"TokyoMetro.Hibiya.KitaSenju",
 		"TokyoMetro.Chiyoda.KitaSenju"
 	],
 	"title": {
 		"ko": "기타센주",
 		"zh": "北千住"
-	},
-	"altitude": -1
-}, {
-	"ids": [
-		"TokyoMetro.Tozai.Nakano"
-	],
-	"title": {
-		"ko": "나카노",
-		"zh": "中野"
 	},
 	"altitude": -1
 }, {
@@ -3306,8 +3285,7 @@
 	"title": {
 		"ko": "니시카사이",
 		"zh": "西葛西"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"TokyoMetro.Tozai.Kasai"
@@ -3315,8 +3293,7 @@
 	"title": {
 		"ko": "가사이",
 		"zh": "葛西"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"TokyoMetro.Tozai.Urayasu"
@@ -3324,8 +3301,7 @@
 	"title": {
 		"ko": "우라야스",
 		"zh": "浦安"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"TokyoMetro.Tozai.MinamiGyotoku"
@@ -3333,8 +3309,7 @@
 	"title": {
 		"ko": "미나미교토쿠",
 		"zh": "南行德"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"TokyoMetro.Tozai.Gyotoku"
@@ -3342,8 +3317,7 @@
 	"title": {
 		"ko": "교토쿠",
 		"zh": "行德"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"TokyoMetro.Tozai.Myoden"
@@ -3351,8 +3325,7 @@
 	"title": {
 		"ko": "묘덴",
 		"zh": "妙典"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"TokyoMetro.Tozai.BarakiNakayama"
@@ -3360,17 +3333,7 @@
 	"title": {
 		"ko": "바라키나카야마",
 		"zh": "原木中山"
-	},
-	"altitude": -1
-}, {
-	"ids": [
-		"TokyoMetro.Tozai.NishiFunabashi"
-	],
-	"title": {
-		"ko": "니시후나바시",
-		"zh": "西船桥"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"TokyoMetro.Chiyoda.YoyogiUehara"
@@ -3378,8 +3341,7 @@
 	"title": {
 		"ko": "요요기우에하라",
 		"zh": "代代木上原"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"TokyoMetro.Chiyoda.YoyogiKoen"
@@ -3473,22 +3435,12 @@
 	"altitude": -1
 }, {
 	"ids": [
-		"TokyoMetro.Chiyoda.Ayase"
-	],
-	"title": {
-		"ko": "아야세",
-		"zh": "绫濑"
-	},
-	"altitude": -1
-}, {
-	"ids": [
 		"TokyoMetro.Chiyoda.KitaAyase"
 	],
 	"title": {
 		"ko": "기타아야세",
 		"zh": "北绫濑"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"TokyoMetro.Yurakucho.Wakoshi",
@@ -3497,8 +3449,7 @@
 	"title": {
 		"ko": "와코시",
 		"zh": "和光市"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"TokyoMetro.Yurakucho.ChikatetsuNarimasu",
@@ -3669,6 +3620,16 @@
 	"title": {
 		"ko": "다쓰미",
 		"zh": "辰巳"
+	},
+	"altitude": -1
+}, {
+	"ids": [
+		"TokyoMetro.Hanzomon.Shibuya",
+		"TokyoMetro.Fukutoshin.Shibuya"
+	],
+	"title": {
+		"ko": "시부야",
+		"zh": "涩谷"
 	},
 	"altitude": -1
 }, {
@@ -3989,27 +3950,7 @@
 		"zh": "宝町"
 	},
 	"altitude": -1
-}, [
-	{
-		"ids": [
-			"Toei.Asakusa.HigashiNihombashi"
-		],
-		"title": {
-			"ko": "히가시니혼바시",
-			"zh": "东日本桥"
-		},
-		"altitude": -1
-	}, {
-		"ids": [
-			"Toei.Shinjuku.BakuroYokoyama"
-		],
-		"title": {
-			"ko": "바쿠로요코야마",
-			"zh": "马喰横山"
-		},
-		"altitude": -1
-	}
-], {
+}, {
 	"ids": [
 		"Toei.Asakusa.Asakusabashi"
 	],
@@ -4161,8 +4102,7 @@
 	"title": {
 		"ko": "시무라 3초메",
 		"zh": "志村三丁目"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"Toei.Mita.Hasune"
@@ -4170,8 +4110,7 @@
 	"title": {
 		"ko": "하스네",
 		"zh": "莲根"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"Toei.Mita.Nishidai"
@@ -4179,8 +4118,7 @@
 	"title": {
 		"ko": "니시다이",
 		"zh": "西台"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"Toei.Mita.Takashimadaira"
@@ -4188,8 +4126,7 @@
 	"title": {
 		"ko": "다카시마다이라",
 		"zh": "高岛平"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"Toei.Mita.ShinTakashimadaira"
@@ -4197,8 +4134,7 @@
 	"title": {
 		"ko": "신타카시마다이라",
 		"zh": "新高岛平"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"Toei.Mita.NishiTakashimadaira"
@@ -4206,8 +4142,7 @@
 	"title": {
 		"ko": "니시타카시마다이라",
 		"zh": "西高岛平"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"Toei.Shinjuku.Akebonobashi"
@@ -4270,8 +4205,7 @@
 	"title": {
 		"ko": "히가시오지마",
 		"zh": "东大岛"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"Toei.Shinjuku.Funabori"
@@ -4279,8 +4213,7 @@
 	"title": {
 		"ko": "후나보리",
 		"zh": "船堀"
-	},
-	"altitude": -1
+	}
 }, {
 	"ids": [
 		"Toei.Shinjuku.Ichinoe"
@@ -4509,6 +4442,7 @@
 	"altitude": -1
 }, {
 	"ids": [
+		"Keio.KeioNew.Sasazuka",
 		"Keio.Keio.Sasazuka"
 	],
 	"title": {
@@ -4768,15 +4702,6 @@
 	"title": {
 		"ko": "하타가야",
 		"zh": "幡谷"
-	},
-	"altitude": -1
-}, {
-	"ids": [
-		"Keio.KeioNew.Sasazuka"
-	],
-	"title": {
-		"ko": "사사즈카",
-		"zh": "笹冢"
 	},
 	"altitude": -1
 }, {
