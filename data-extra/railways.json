@@ -523,4 +523,31 @@
 	},
 	"color": "#000088",
 	"carComposition": 5
+}, {
+	"id": "TokyoMonorail.HanedaAirport",
+	"title": {
+		"ja": "羽田空港線",
+		"en": "Haneda Airport Line",
+		"ko": "하네다 공항선",
+		"zh": "羽田机场线"
+	},
+	"stations": {
+		"index": 0,
+		"insert": [
+			"TokyoMonorail.HanedaAirport.Hamamatsucho",
+			"TokyoMonorail.HanedaAirport.TennozuIsle",
+			"TokyoMonorail.HanedaAirport.OiKeibajomae",
+			"TokyoMonorail.HanedaAirport.RyutsuCenter",
+			"TokyoMonorail.HanedaAirport.Showajima",
+			"TokyoMonorail.HanedaAirport.Seibijo",
+			"TokyoMonorail.HanedaAirport.Tenkubashi",
+			"TokyoMonorail.HanedaAirport.HanedaAirportInternationalTerminal",
+			"TokyoMonorail.HanedaAirport.ShinSeibijo",
+			"TokyoMonorail.HanedaAirport.HanedaAirportTerminal1",
+			"TokyoMonorail.HanedaAirport.HanedaAirportTerminal2"
+		]
+	},
+	"ascending": "Outbound",
+	"color": "#003686",
+	"carComposition": 6
 }]

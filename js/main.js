@@ -264,8 +264,8 @@ var calendar = JapaneseHolidays.isHoliday(today) || today.getDay() == 6 || today
 
 Promise.all([
 	loadJSON('data/dictionary-' + lang + '.json'),
-	loadJSON('data/stations.json'),
 	loadJSON('data/railways.json'),
+	loadJSON('data/stations.json'),
 	loadJSON('data/trains.json'),
 	loadJSON('data/flights.json'),
 	loadJSON('data/features.json'),
@@ -277,7 +277,7 @@ Promise.all([
 	loadJSON('data/flight-status.json'),
 	loadJSON('https://mini-tokyo.appspot.com/e')
 ]).then(function([
-	dict, stationRefData, railwayRefData, trainData, flightData, railwayFeatureCollection, timetableRefData,
+	dict, railwayRefData, stationRefData, trainData, flightData, railwayFeatureCollection, timetableRefData,
 	railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData, e
 ]) {
 
@@ -302,8 +302,8 @@ objectScale = unit * modelScale * 100;
 carScale = Math.max(.02 / .19, unit) * modelScale * 100;
 aircraftScale = Math.max(.06 / .285, unit) * modelScale * 100;
 
-stationLookup = buildLookup(stationRefData);
 railwayLookup = buildLookup(railwayRefData);
+stationLookup = buildLookup(stationRefData);
 
 // Build feature lookup dictionary and update feature properties
 turf.featureEach(railwayFeatureCollection, function(feature) {
