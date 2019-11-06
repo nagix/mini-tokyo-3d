@@ -66,7 +66,6 @@ var modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat([139.7670, 35.6814]);
 var modelScale = 1 / 2 / Math.PI / 6378137 / Math.cos(35.6814 * DEGREE_TO_RADIAN);
 
 var lang = getLang();
-var today = new Date();
 var isUndergroundVisible = false;
 var isRealtime = true;
 var isWeatherVisible = false;
@@ -82,8 +81,8 @@ var realtimeTrainLookup = {};
 var flightLookup = {};
 var activeFlightLookup = {};
 var animationID = 0;
-var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, timetableLookup, operatorLookup, airportLookup, a;
-var trackedObject, markedObject, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
+var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, operatorLookup, airportLookup, a;
+var trackedObject, markedObject, lastTimetableRefresh, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
 var lastNowCastRefresh, nowCastData, fgGroup, imGroup, bgGroup;
 
 // Replace MapboxLayer.render to support underground rendering
@@ -259,17 +258,13 @@ ThreeLayer.prototype.pickObject = function(point) {
 	}
 };
 
-var calendar = JapaneseHolidays.isHoliday(today) || today.getDay() == 6 || today.getDay() == 0
-	? 'holiday' : 'weekday';
-
 Promise.all([
 	loadJSON('data/dictionary-' + lang + '.json'),
 	loadJSON('data/railways.json'),
 	loadJSON('data/stations.json'),
-	loadJSON('data/trains.json'),
-	loadJSON('data/flights.json'),
 	loadJSON('data/features.json'),
-	loadJSON('data/timetable-' + calendar + '.json'),
+	loadJSON('data/' + getTimetableFileName()),
+	loadJSON('data/trains.json'),
 	loadJSON('data/rail-directions.json'),
 	loadJSON('data/train-types.json'),
 	loadJSON('data/operators.json'),
@@ -277,7 +272,7 @@ Promise.all([
 	loadJSON('data/flight-status.json'),
 	loadJSON('https://mini-tokyo.appspot.com/e')
 ]).then(function([
-	dict, railwayRefData, stationRefData, trainData, flightData, railwayFeatureCollection, timetableRefData,
+	dict, railwayRefData, stationRefData, railwayFeatureCollection, timetableRefData, trainData,
 	railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData, e
 ]) {
 
@@ -301,18 +296,6 @@ objectUnit = Math.max(unit * .19, .02);
 objectScale = unit * modelScale * 100;
 carScale = Math.max(.02 / .19, unit) * modelScale * 100;
 aircraftScale = Math.max(.06 / .285, unit) * modelScale * 100;
-
-railwayLookup = buildLookup(railwayRefData);
-stationLookup = buildLookup(stationRefData);
-
-// Build feature lookup dictionary and update feature properties
-turf.featureEach(railwayFeatureCollection, function(feature) {
-	var id = feature.properties.id;
-	if (id && !id.match(/\.(ug|og)\./)) {
-		featureLookup[id] = feature;
-		updateDistances(feature);
-	}
-});
 
 var trainLayers = {
 	ug: new ThreeLayer('trains-ug'),
@@ -371,40 +354,21 @@ var trainLayers = {
 
 var rainLayer = new ThreeLayer('rain');
 
-trainLookup = buildLookup(timetableRefData, 't');
-timetableLookup = buildLookup(timetableRefData);
+railwayLookup = buildLookup(railwayRefData);
+stationLookup = buildLookup(stationRefData);
 
-// Update timetable lookup dictionary
-timetableRefData.forEach(function(train) {
-	var railway = railwayLookup[train.r];
-	var direction = train.d === railway.ascending ? 1 : -1;
-	var table = train.tt;
-	var length = table.length;
-	var previousTableIDs = train.pt;
-	var nextTableIDs = train.nt;
-	var previousTrain, nextTrain, nextTable;
-
-	if (previousTableIDs) {
-		previousTrain = timetableLookup[previousTableIDs[0]];
+// Build feature lookup dictionary and update feature properties
+turf.featureEach(railwayFeatureCollection, function(feature) {
+	var id = feature.properties.id;
+	if (id && !id.match(/\.(ug|og)\./)) {
+		featureLookup[id] = feature;
+		updateDistances(feature);
 	}
-	if (nextTableIDs) {
-		nextTrain = timetableLookup[nextTableIDs[0]];
-		if (nextTrain) {
-			nextTable = nextTrain.tt;
-			table[length - 1].dt = nextTable[0].dt;
-		}
-	}
-
-	train.start = getTime(table[0].dt) - STANDING_DURATION;
-	train.end = getTime(table[length - 1].dt
-		|| table[length - 1].at
-		|| table[Math.max(length - 2, 0)].dt);
-	train.direction = direction;
-	train.altitude = railway.altitude;
-	train.carComposition = railway.carComposition;
-	train.previousTrain = previousTrain;
-	train.nextTrain = nextTrain;
 });
+
+lastTimetableRefresh = getTime('03:00');
+updateTimetableRefData(timetableRefData);
+trainLookup = buildLookup(timetableRefData, 't');
 
 railDirectionLookup = buildLookup(railDirectionRefData);
 trainTypeLookup = buildLookup(trainTypeRefData);
@@ -777,6 +741,10 @@ map.once('styledata', function () {
 			var now = Date.now();
 			var userData, altitude, bearing;
 
+			if (now - lastTimetableRefresh >= 86400000) {
+				loadTimetableData();
+				lastTimetableRefresh = getTime('03:00');
+			}
 			if (isRealtime) {
 				if (Math.floor(now / 1000) !== Math.floor(lastFrameRefresh / 1000)) {
 					var date = getJSTDate();
@@ -1347,6 +1315,14 @@ map.once('styledata', function () {
 		return id;
 	}
 
+	function loadTimetableData() {
+		loadJSON('data/' + getTimetableFileName()).then(function(data) {
+			timetableRefData = data;
+			updateTimetableRefData(timetableRefData);
+			trainLookup = buildLookup(timetableRefData, 't');
+		});
+	}
+
 	function loadRealtimeTrainData() {
 		Promise.all([
 			loadJSON(API_URL + 'odpt:TrainInformation?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio'),
@@ -1642,6 +1618,41 @@ map.once('styledata', function () {
 		}
 	}
 });
+
+function updateTimetableRefData(data) {
+	var lookup = buildLookup(data);
+
+	data.forEach(function(train) {
+		var railway = railwayLookup[train.r];
+		var direction = train.d === railway.ascending ? 1 : -1;
+		var table = train.tt;
+		var length = table.length;
+		var previousTableIDs = train.pt;
+		var nextTableIDs = train.nt;
+		var previousTrain, nextTrain, nextTable;
+
+		if (previousTableIDs) {
+			previousTrain = lookup[previousTableIDs[0]];
+		}
+		if (nextTableIDs) {
+			nextTrain = lookup[nextTableIDs[0]];
+			if (nextTrain) {
+				nextTable = nextTrain.tt;
+				table[length - 1].dt = nextTable[0].dt;
+			}
+		}
+
+		train.start = getTime(table[0].dt) - STANDING_DURATION;
+		train.end = getTime(table[length - 1].dt
+			|| table[length - 1].at
+			|| table[Math.max(length - 2, 0)].dt);
+		train.direction = direction;
+		train.altitude = railway.altitude;
+		train.carComposition = railway.carComposition;
+		train.previousTrain = previousTrain;
+		train.nextTrain = nextTrain;
+	});
+}
 
 }).catch(function(error) {
 	document.getElementById('loader').style.display = 'none';
@@ -1971,6 +1982,19 @@ function getObjectOpacity(object, t) {
 	t = valueOrDefault(t, 1);
 	return isUndergroundVisible === (object.userData.altitude < 0) ?
 		.9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
+}
+
+function getTimetableFileName() {
+	var date = getJSTDate();
+	var hours = date.getHours();
+
+	if (hours < 3) {
+		date.setHours(hours - 24);
+	}
+
+	return 'timetable-' +
+		(JapaneseHolidays.isHoliday(date) || date.getDay() == 6 || date.getDay() == 0 ? 'holiday' : 'weekday') +
+		'.json';
 }
 
 function setSectionData(train, index) {
