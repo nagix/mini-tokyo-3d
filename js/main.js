@@ -1442,7 +1442,6 @@ map.once('styledata', function () {
 					}
 				}
 				merge(flight, {
-					s: status,
 					edt: flightRef['odpt:estimatedDepartureTime'],
 					adt: flightRef['odpt:actualDepartureTime'],
 					sdt: flightRef['odpt:scheduledDepartureTime'],
@@ -1453,6 +1452,25 @@ map.once('styledata', function () {
 
 				departureTime = flight.edt || flight.adt || flight.sdt;
 				arrivalTime = flight.eat || flight.aat || flight.sat;
+
+				if (!status) {
+					if (arrivalTime < flight.sat) {
+						status = 'NewTime';
+					} else if (arrivalTime > flight.sat) {
+						status = 'Delayed';
+					} else if (arrivalTime === flight.sat) {
+						status = 'OnTime';
+					}
+				} else if (status === 'CheckIn' || status === 'NowBoarding' || status === 'BoardingComplete' || status === 'Departed') {
+					if (departureTime < flight.sdt) {
+						status = 'NewTime';
+					} else if (departureTime > flight.sdt) {
+						status = 'Delayed';
+					} else if (departureTime === flight.sdt) {
+						status = 'OnTime';
+					}
+				}
+				flight.s = status;
 
 				if (arrivalTime) {
 					maxSpeed /= 2;
