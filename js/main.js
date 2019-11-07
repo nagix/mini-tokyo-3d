@@ -66,6 +66,7 @@ var modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat([139.7670, 35.6814]);
 var modelScale = 1 / 2 / Math.PI / 6378137 / Math.cos(35.6814 * DEGREE_TO_RADIAN);
 
 var lang = getLang();
+var isEdge = navigator.userAgent.indexOf('Edge') !== -1;
 var isUndergroundVisible = false;
 var isRealtime = true;
 var isWeatherVisible = false;
@@ -521,8 +522,7 @@ map.once('styledata', function () {
 	document.body.appendChild(datalist);
 
 	var searchBox = document.getElementById('search-box');
-	searchBox.placeholder = dict['station-name'];
-	searchBox.addEventListener('change', function(event) {
+	var searchListener = function(event) {
 		var station = stationTitleLookup[event.target.value.toUpperCase()];
 
 		if (station && station.coord) {
@@ -545,7 +545,18 @@ map.once('styledata', function () {
 				zoom: Math.max(map.getZoom(), 15)
 			});
 		}
-	});
+	};
+	searchBox.placeholder = dict['station-name'];
+	searchBox.addEventListener(isEdge ? 'blur' : 'change', searchListener);
+
+	// Workaround for Edge
+	if (isEdge) {
+		searchBox.addEventListener('keydown', function(event) {
+			if (event.key === 'Enter') {
+				searchListener(event);
+			}
+		});
+	}
 
 	var control = new MapboxGLButtonControl([{
 		className: 'mapbox-ctrl-search',
