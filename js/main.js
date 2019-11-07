@@ -81,7 +81,7 @@ var realtimeTrainLookup = {};
 var flightLookup = {};
 var activeFlightLookup = {};
 var animationID = 0;
-var stationLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, operatorLookup, airportLookup, a;
+var stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, operatorLookup, airportLookup, a;
 var trackedObject, markedObject, lastTimetableRefresh, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
 var lastNowCastRefresh, nowCastData, fgGroup, imGroup, bgGroup;
 
@@ -320,11 +320,12 @@ var trainLayers = {
 		layer.scene.add(object);
 	},
 	removeObject: function(object, duration) {
-		var layer = object.userData.altitude < 0 ? this.ug : this.og;
+		var layer;
 
 		if (!object) {
 			return;
 		}
+		layer = object.userData.altitude < 0 ? this.ug : this.og;
 		if (duration > 0) {
 			startAnimation({
 				callback: function(elapsed) {
@@ -500,7 +501,74 @@ map.once('styledata', function () {
 		opacityStore[layer.id] = map.getPaintProperty(layer.id, layer.type + '-opacity') || 1;
 	});
 
-	var control = new mapboxgl.NavigationControl();
+	var datalist = document.createElement('datalist');
+	datalist.id = 'stations';
+	stationTitleLookup = {};
+	[lang, 'en'].forEach(function(l) {
+		stationRefData.forEach(function(station) {
+			var title = station.title[l];
+			var coord = station.coord;
+			var option;
+
+			if (title && !stationTitleLookup[title.toUpperCase()] && coord[0] && coord[1]) {
+				option = document.createElement('option');
+				option.value = title;
+				datalist.appendChild(option);
+				stationTitleLookup[title.toUpperCase()] = station;
+			}
+		});
+	});
+	document.body.appendChild(datalist);
+
+	var searchBox = document.getElementById('search-box');
+	searchBox.placeholder = dict['station-name'];
+	searchBox.addEventListener('change', function(event) {
+		var station = stationTitleLookup[event.target.value.toUpperCase()];
+
+		if (station && station.coord) {
+			trackedObject = undefined;
+			popup.remove();
+			stopViewAnimation();
+			document.getElementsByClassName('mapbox-ctrl-track')[0].classList.remove('mapbox-ctrl-track-active');
+			if (isUndergroundVisible && !(station.altitude < 0)) {
+				document.getElementsByClassName('mapbox-ctrl-underground')[0]
+					.dispatchEvent(new MouseEvent('click'));
+			}
+			if (!isUndergroundVisible && (station.altitude < 0)) {
+				map.once('moveend', function() {
+					document.getElementsByClassName('mapbox-ctrl-underground')[0]
+						.dispatchEvent(new MouseEvent('click'));
+				});
+			}
+			map.flyTo({
+				center: station.coord,
+				zoom: Math.max(map.getZoom(), 15)
+			});
+		}
+	});
+
+	var control = new MapboxGLButtonControl([{
+		className: 'mapbox-ctrl-search',
+		title: dict['search'],
+		eventHandler: function(event) {
+			if (this.style.width !== '240px') {
+				this.style.width = '240px';
+				searchBox.style.display = 'block';
+				searchBox.value = '';
+				searchBox.focus();
+				setTimeout(function() {
+					searchBox.style.opacity = 1;
+				}, 300);
+			} else {
+				this.style.width = '30px';
+				searchBox.style.display = 'none';
+				searchBox.style.opacity = 0;
+			}
+		}
+	}]);
+	map.addControl(control);
+
+	control = new mapboxgl.NavigationControl();
 	control._zoomInButton.title = dict['zoom-in'];
 	control._zoomOutButton.title = dict['zoom-out'];
 	control._compass.title = dict['compass'];

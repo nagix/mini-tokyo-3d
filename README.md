@@ -20,6 +20,7 @@ Right click or Ctrl key + mouse drag | Tilt up/down and rotate
 Shift key + mouse drag | Box zoom
 Pinch in/out | Zoom in/out and rotate
 Double-click or double-tap | Zoom in
+Click or tap the search button | Show/hide the station search window
 Click or tap +/- buttons | Zoom in/out
 Click or tap the compass button | Reset bearing to north
 Click or tap the compass button + mouse drag or swipe | Tilt up/down and rotate
