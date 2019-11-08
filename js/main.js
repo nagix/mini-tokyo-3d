@@ -82,6 +82,8 @@ var realtimeTrainLookup = {};
 var flightLookup = {};
 var activeFlightLookup = {};
 var animationID = 0;
+var lastStaticUpdate = '2019-11-08 23:46:29';
+var lastDynamicUpdate = {};
 var stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, operatorLookup, airportLookup, a;
 var trackedObject, markedObject, lastTimetableRefresh, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
 var lastNowCastRefresh, nowCastData, fgGroup, imGroup, bgGroup;
@@ -705,13 +707,25 @@ map.once('styledata', function () {
 		}
 	}]), 'top-right');
 
+	var aboutPopup = new mapboxgl.Popup({
+		closeButton: false,
+		closeOnClick: false,
+		anchor: 'right',
+		maxWidth: '300px'
+	});
+
 	map.addControl(new MapboxGLButtonControl([{
-		className: 'mapbox-ctrl-github',
-		title: dict['github'],
+		className: 'mapbox-ctrl-about',
+		title: dict['about'],
 		eventHandler: function() {
-			window.open('https://github.com/nagix/mini-tokyo-3d');
+			if (!aboutPopup.isOpen()) {
+				updateAboutPopup();
+				aboutPopup.addTo(map);
+			} else {
+				aboutPopup.remove();
+			}
 		}
-	}]), 'top-right');
+	}]));
 
 	document.getElementById('clock').style.display = 'block';
 
@@ -800,6 +814,9 @@ map.once('styledata', function () {
 	map.on('move', function() {
 		if (isWeatherVisible) {
 			updateEmitterQueue();
+		}
+		if (aboutPopup.isOpen()) {
+			updateAboutPopup();
 		}
 	});
 
@@ -1441,6 +1458,7 @@ map.once('styledata', function () {
 						stopTrain(train);
 					}
 				}
+				lastDynamicUpdate[removePrefix(trainRef['odpt:operator'])] = trainRef['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2');
 			});
 
 			// Reset railway information text
@@ -1475,6 +1493,7 @@ map.once('styledata', function () {
 			});
 
 			refreshTrains();
+			updateAboutPopup();
 		});
 	}
 
@@ -1571,6 +1590,8 @@ map.once('styledata', function () {
 
 				queue = flightQueue[flight.runway] = flightQueue[flight.runway] || [];
 				queue.push(flight);
+
+				lastDynamicUpdate[removePrefix(flightRef['odpt:operator'])] = flightRef['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2');
 			});
 
 			Object.keys(flightQueue).forEach(function(key) {
@@ -1681,25 +1702,25 @@ map.once('styledata', function () {
 				n = zoom >= 17 ? 20 : n;
 				var emitter = new SPE.Emitter({
 					maxAge: {
-					    value: h / v
+						value: h / v
 					},
 					position: {
-					    value: new THREE.Vector3((e.rect.x - 50000 + e.rect.w / 2) * modelScale, (42500 - e.rect.h / 2 - e.rect.y) * modelScale, h * modelScale),
-					    spread: new THREE.Vector3(e.rect.w * modelScale, e.rect.h * modelScale, 0)
+						value: new THREE.Vector3((e.rect.x - 50000 + e.rect.w / 2) * modelScale, (42500 - e.rect.h / 2 - e.rect.y) * modelScale, h * modelScale),
+						spread: new THREE.Vector3(e.rect.w * modelScale, e.rect.h * modelScale, 0)
 					},
 					acceleration: {
-					    value: new THREE.Vector3(0, 0, 0),
-					    spread: new THREE.Vector3(v / 20 * modelScale, 0, 0)
+						value: new THREE.Vector3(0, 0, 0),
+						spread: new THREE.Vector3(v / 20 * modelScale, 0, 0)
 					},
 					velocity: {
-					    value: new THREE.Vector3(0, 0, -v * modelScale),
-					    spread: new THREE.Vector3(v / 200 * modelScale, v / 200 * modelScale)
+						value: new THREE.Vector3(0, 0, -v * modelScale),
+						spread: new THREE.Vector3(v / 200 * modelScale, v / 200 * modelScale)
 					},
 					color: {
-					    value: new THREE.Color('blue')
+						value: new THREE.Color('blue')
 					},
 					size: {
-					    value: .000001 / modelScale * s
+						value: .000001 / modelScale * s
 					},
 					particleCount: Math.pow(nowCastData[e.index.y][e.index.x], 2) * n
 				});
@@ -1713,6 +1734,27 @@ map.once('styledata', function () {
 		if (imGroup) {
 			imGroup.tick();
 		}
+	}
+
+	function updateAboutPopup() {
+		var r = document.getElementsByClassName('mapbox-ctrl-about')[0].getBoundingClientRect();
+		var staticCheck = document.getElementById('acd-static');
+		var dynamicCheck = document.getElementById('acd-dynamic');
+		var html = dict['description'] +
+			'<input id="acd-static" class="acd-check" type="checkbox"' + (staticCheck && staticCheck.checked ? ' checked' : '') + '>' +
+			'<label class="acd-label" for="acd-static">' + dict['static-update'] + '</label>' +
+			'<div class="acd-content">' + lastStaticUpdate + '</div>' +
+			'<input id="acd-dynamic" class="acd-check" type="checkbox"' + (dynamicCheck && dynamicCheck.checked ? ' checked' : '') + '>' +
+			'<label class="acd-label" for="acd-dynamic">' + dict['dynamic-update'] + '</label>' +
+			'<div class="acd-content">' +
+			(lastDynamicUpdate['JR-East'] || 'N/A') + ' (' + dict['jr-east'] + ')<br>' +
+			(lastDynamicUpdate['TokyoMetro'] || 'N/A') + ' (' + dict['tokyo-metro'] + ')<br>' +
+			(lastDynamicUpdate['Toei'] || 'N/A') + ' (' + dict['toei'] + ')<br>' +
+			(lastDynamicUpdate['HND-JAT'] || 'N/A') + ' (' + dict['hnd-jat'] + ')<br>' +
+			(lastDynamicUpdate['HND-TIAT'] || 'N/A') + ' (' + dict['hnd-tiat'] + ')<br>' +
+			(lastDynamicUpdate['NAA'] || 'N/A') + ' (' + dict['naa'] + ')</div>';
+
+		aboutPopup.setLngLat(map.unproject([r.left - 5, r.top + 15])).setHTML(html);
 	}
 });
 

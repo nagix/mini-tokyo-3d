@@ -14,7 +14,7 @@
 	"exit-realtime": "リアルタイムモードを解除",
 	"show-weather": "天気を表示",
 	"hide-weather": "天気を隠す",
-	"github": "GitHub",
+	"about": "Mini Tokyo 3Dについて",
 
 	"for": "$1行",
 	"train-number": "列車番号",
@@ -32,5 +32,15 @@
 	"scheduled-arrival-time": "定刻到着時刻",
 	"estimated-arrival-time": "予定到着時刻",
 	"actual-arrival-time": "到着済み",
-	"code-share": "コードシェア"
+	"code-share": "コードシェア",
+
+	"description": "<h3>Mini Tokyo 3D について</h3><p>このデータビジュアライゼーションは <a href=\"https://nagix.github.io\" target=\"_blank\">草薙 昭彦</a> により作成されました。本アプリケーションが利用する公共交通データは、<a href=\"https://tokyochallenge.odpt.org/\" target=\"_blank\">東京公共交通オープンデータチャレンジ</a> において提供されるものです。公共交通事業者により提供されたデータを元にしていますが、必ずしも正確・完全なものとは限りません。本アプリケーションの表示内容について、公共交通事業者への直接の問合せは行わないでください。</p><p>より詳しい情報は <a href=\"https://github.com/nagix/mini-tokyo-3d/blob/master/USER_GUIDE-ja.md\" target=\"_blank\">Mini Tokyo 3D ユーザーガイド</a> をご覧ください。ソースコードは <a href=\"https://github.com/nagix/mini-tokyo-3d\" target=\"_blank\">GitHub リポジトリ</a> にて公開されています。</p>",
+	"static-update": "静的データ最終更新日時",
+	"dynamic-update": "動的データ最終更新日時",
+	"jr-east": "JR東日本",
+	"tokyo-metro": "東京メトロ",
+	"toei": "東京都交通局",
+	"hnd-jat": "日本空港ビルデング",
+	"hnd-tiat": "東京国際空港ターミナル",
+	"naa": "成田国際空港"
 }

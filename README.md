@@ -10,7 +10,12 @@ A real-time 3D digital map of Tokyo's public transport system.
 
 See a [Live Demo](https://nagix.github.io/mini-tokyo-3d).
 
-## Usage
+## User Guide
+
+- [User Guide (English)](https://github.com/nagix/mini-tokyo-3d/blob/master/USER_GUIDE-en.md)
+- [User Guide (Japanese)](https://github.com/nagix/mini-tokyo-3d/blob/master/USER_GUIDE-ja.md)
+
+## Cheat Sheet
 
 Operation | Description
 --- | ---
@@ -29,7 +34,7 @@ Click or tap the eye button | Toggle the underground mode
 Click or tap the train/helicopter button | Switch the tracking mode
 Click or tap the clock button | Toggle the real-time mode
 Click or tap the weather button | Show/hide the weather
-Click or tap the GitHub button | Open the GitHub project page
+Click or tap the info button | Show/hide the app info dialog
 Click or tap a train | Enable tracking
 Click or tap the map | Disable tracking
 Hover a train | Show the train information
