@@ -72,7 +72,8 @@ var isRealtime = true;
 var isWeatherVisible = false;
 var rainTexture = new THREE.TextureLoader().load('images/raindrop.png');
 var trackingMode = 'helicopter';
-var opacityStore = {};
+var styleColors = [];
+var styleOpacities = [];
 var emitterBounds = {};
 var emitterQueue = [];
 var animations = {};
@@ -499,9 +500,49 @@ map.once('styledata', function () {
 	map.addLayer(rainLayer, 'poi');
 
 	map.getStyle().layers.filter(function(layer) {
-		return layer.type === 'line' || layer.type.lastIndexOf('fill', 0) !== -1;
+		return (layer.type === 'background' || layer.type === 'line' || layer.type.indexOf('fill') === 0) &&
+			layer.id.indexOf('-og-') === -1 && layer.id.indexOf('-ug-') === -1;
 	}).forEach(function(layer) {
-		opacityStore[layer.id] = map.getPaintProperty(layer.id, layer.type + '-opacity') || 1;
+		var id = layer.id;
+		var keys = [];
+
+		switch (layer.type) {
+			case 'background':
+				keys = ['background-color'];
+				break;
+			case 'line':
+				keys = ['line-color'];
+				break;
+			case 'fill':
+				keys = ['fill-color', 'fill-outline-color'];
+				break;
+			case 'fill-extrusion':
+				keys = ['fill-extrusion-color'];
+				break;
+		}
+		keys.forEach(function(key) {
+			var prop = map.getPaintProperty(id, key);
+			var c;
+
+			if (typeof prop === 'string') {
+				c = prop.match(/rgba\((\d+),(\d+),(\d+),([\d\.]+)\)/);
+				styleColors.push({id: id, key: key, r: c[1], g: c[2], b: c[3], a: c[4]});
+			} else if (typeof prop === 'object') {
+				prop.stops.forEach(function(item, i) {
+					c = item[1].match(/rgba\((\d+),(\d+),(\d+),([\d\.]+)\)/);
+					styleColors.push({id: id, key: key, stops: i, r: c[1], g: c[2], b: c[3], a: c[4]});
+				});
+			}
+		});
+	});
+
+	map.getStyle().layers.filter(function(layer) {
+		return layer.type === 'line' || layer.type.indexOf('fill') === 0;
+	}).forEach(function(layer) {
+		var id = layer.id;
+		var key = layer.type + '-opacity';
+
+		styleOpacities.push({id: id, key: key, opacity: map.getPaintProperty(id, key) || 1});
 	});
 
 	var datalist = document.createElement('datalist');
@@ -605,17 +646,16 @@ map.once('styledata', function () {
 				map.setPaintProperty('background', 'background-color', 'rgb(16,16,16)');
 			} else {
 				this.classList.remove('mapbox-ctrl-underground-visible');
-				map.setPaintProperty('background', 'background-color', 'rgb(239,239,239)');
+				map.setPaintProperty('background', 'background-color', getStyleColor(styleColors[0], isRealtime));
 			}
-			map.getStyle().layers.forEach(function(layer) {
-				var id = layer.id;
-				var opacity = opacityStore[id];
-				if (opacity !== undefined) {
-					if (isUndergroundVisible) {
-						opacity *= id.indexOf('-og-') !== -1 ? .25 : .0625;
-					}
-					map.setPaintProperty(id, layer.type + '-opacity', opacity);
+			styleOpacities.forEach(function(item) {
+				var id = item.id;
+				var opacity = item.opacity;
+
+				if (isUndergroundVisible) {
+					opacity *= id.indexOf('-og-') !== -1 ? .25 : .0625;
 				}
+				map.setPaintProperty(id, item.key, opacity);
 			});
 
 			startAnimation({
@@ -686,6 +726,7 @@ map.once('styledata', function () {
 				document.getElementById('clock').style.display = 'none';
 				initModelTrains();
 			}
+			refreshStyleColors();
 		}
 	}, {
 		className: 'mapbox-ctrl-weather',
@@ -868,6 +909,7 @@ map.once('styledata', function () {
 					refreshFlights();
 					loadRealtimeTrainData();
 					loadRealtimeFlightData();
+					refreshStyleColors();
 					lastTrainRefresh = now - MIN_DELAY;
 				}
 				if (markedObject) {
@@ -1736,6 +1778,18 @@ map.once('styledata', function () {
 		}
 	}
 
+	function refreshStyleColors() {
+		styleColors.forEach(function(item) {
+			if (item.stops === undefined) {
+				map.setPaintProperty(item.id, item.key, getStyleColor(item, isRealtime));
+			} else {
+				var prop = map.getPaintProperty(item.id, item.key);
+				prop.stops[item.stops][1] = getStyleColor(item, isRealtime);
+				map.setPaintProperty(item.id, item.key, prop);
+			}
+		});
+	}
+
 	function updateAboutPopup() {
 		var r = document.getElementsByClassName('mapbox-ctrl-about')[0].getBoundingClientRect();
 		var staticCheck = document.getElementById('acd-static');
@@ -2092,6 +2146,53 @@ function getTimeString(time) {
 	var date = getJSTDate(time);
 
 	return ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2);
+}
+
+function getStyleColor(color, isRealtime) {
+	var times = SunCalc.getTimes(new Date(), 35.6814, 139.7670);
+	var sunrise = getJSTDate(times.sunrise.getTime()).getTime();
+	var sunset = getJSTDate(times.sunset.getTime()).getTime();
+	var now = getJSTDate().getTime();
+	var t, r, g, b;
+
+	if (!isRealtime) {
+		sunrise = 0;
+		sunset = 1e+14;
+	}
+
+	if (now >= sunrise - 3600000 && now < sunrise) {
+		// Night to sunrise
+		t = (now - sunrise) / 3600000 + 1;
+		r = .4 * (1 - t) + .8 * t;
+		g = .4 * (1 - t) + .9 * t;
+		b = .5 * (1 - t) + t;
+	} else if (now >= sunrise && now < sunrise + 3600000) {
+		// Sunrise to day
+		t = (now - sunrise) / 3600000;
+		r = .8 * (1 - t) + t;
+		g = .9 * (1 - t) + t;
+		b = 1;
+	} else if (now >= sunrise + 3600000 && now < sunset - 3600000) {
+		// Day
+		r = g = b = 1;
+	} else if (now >= sunset - 3600000 && now < sunset) {
+		// Day to sunset
+		t = (now - sunset) / 3600000 + 1;
+		r = 1;
+		g = (1 - t) + .9 * t;
+		b = (1 - t) + .8 * t;
+	} else if (now >= sunset && now < sunset + 3600000) {
+		// Sunset to night
+		t = (now - sunset) / 3600000;
+		r = (1 - t) + .4 * t;
+		g = .9 * (1 - t) + .4 * t;
+		b = .8 * (1 - t) + .5 * t;
+	} else {
+		// Night
+		r = g = .4;
+		b = .5;
+	}
+	return 'rgba(' + [color.r * r, color.g * g, color.b * b, color.a].join(',') + ')';
 }
 
 function createCube(x, y, z, color) {

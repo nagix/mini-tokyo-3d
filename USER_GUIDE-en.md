@@ -18,7 +18,7 @@ The features of Mini Tokyo 3D are as follows.
 
 ### All in Real-Time
 
-You can view trains and airplanes that operate according to actual timetables and real-time delay information from your favorite point of view. A rain animation based on real-time weather information is displayed, so you can enjoy more realistic scenery.
+You can view trains and airplanes that operate according to actual timetables and real-time delay information from your favorite point of view. The color of the scenery changes according to the sunrise and sunset times in Tokyo, and the sunset glow can be seen. In addition, a rain animation based on real-time weather information is displayed, so you can enjoy more realistic scenery.
 
 ### Easy-To-Read Railroad Map
 
