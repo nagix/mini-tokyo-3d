@@ -83,7 +83,7 @@ var realtimeTrainLookup = {};
 var flightLookup = {};
 var activeFlightLookup = {};
 var animationID = 0;
-var lastStaticUpdate = '2019-11-12 14:33:19';
+var lastStaticUpdate = '2019-11-13 02:22:08';
 var lastDynamicUpdate = {};
 var stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, operatorLookup, airportLookup, a;
 var trackedObject, markedObject, lastTimetableRefresh, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
@@ -966,7 +966,7 @@ map.once('styledata', function () {
 		var carComposition = clamp(Math.floor(train.carComposition * .02 / objectUnit), 1, train.carComposition);
 		var compositionChanged = length !== carComposition;
 		var delayMarker = train.delayMarker;
-		var i, ilen, railway, car, position, scale, userData, p, coord, bearing, mCoord, altitudeChanged;
+		var i, ilen, railway, car, position, scale, userData, pArr, p, coord, bearing, mCoord, altitudeChanged;
 
 		if (t !== undefined) {
 			train._t = t;
@@ -995,14 +995,14 @@ map.once('styledata', function () {
 			}
 		}
 
+		pArr = getCoordAndBearing(feature, offset + train._t * train.interval, carComposition, objectUnit);
 		for (i = 0, ilen = cars.length; i < ilen; i++) {
 			car = cars[i];
 			position = car.position;
 			scale = car.scale;
 			userData = car.userData;
 
-			p = getCoordAndBearing(feature, offset + train._t * train.interval + (i - (carComposition - 1) / 2) * objectUnit);
-
+			p = pArr[i];
 			coord = userData.coord = p.coord;
 			altitudeChanged = (userData.altitude < 0 && p.altitude >= 0) || (userData.altitude >= 0 && p.altitude < 0);
 			userData.altitude = p.altitude;
@@ -1093,7 +1093,7 @@ map.once('styledata', function () {
 			trainLayers.addObject(vTail, 1000);
 		}
 
-		p = getCoordAndBearing(flight.feature, flight._t * flight.feature.properties.length);
+		p = getCoordAndBearing(flight.feature, flight._t * flight.feature.properties.length, 1, 0)[0];
 
 		coord = body.userData.coord = wing.userData.coord = vTail.userData.coord = p.coord;
 		body.userData.altitude = wing.userData.altitude = vTail.userData.altitude = p.altitude;
@@ -1783,7 +1783,9 @@ map.once('styledata', function () {
 
 	function refreshStyleColors() {
 		styleColors.forEach(function(item) {
-			if (item.stops === undefined) {
+			if (item.id === 'background' && isUndergroundVisible) {
+				map.setPaintProperty(item.id, item.key, 'rgb(16,16,16)');
+			} else if (item.stops === undefined) {
 				map.setPaintProperty(item.id, item.key, getStyleColor(item, isRealtime));
 			} else {
 				var prop = map.getPaintProperty(item.id, item.key);
@@ -1866,14 +1868,21 @@ function updateDistances(line) {
 	var coords = turf.getCoords(line);
 	var travelled = 0;
 	var distances = [];
-	var i;
+	var nextCoord = coords[0];
+	var i, currCoord, distance, bearing, slope, pitch;
 
-	for (i = 0; i < coords.length; i++) {
-		if (i > 0) {
-			travelled += turf.distance(coords[i - 1], coords[i]);
-		}
-		distances.push(travelled);
+	for (i = 0; i < coords.length - 1; i++) {
+		currCoord = nextCoord;
+		nextCoord = coords[i + 1];
+		distance = turf.distance(currCoord, nextCoord);
+		bearing = turf.bearing(currCoord, nextCoord);
+		slope = ((nextCoord[2] || 0) - (currCoord[2] || 0)) / distance;
+		pitch = Math.atan(slope / 1000);
+		distances.push([travelled, bearing, slope, pitch]);
+		travelled += distance;
 	}
+
+	distances.push([travelled, bearing, slope, pitch]);
 	line.properties.distances = distances;
 }
 
@@ -1881,27 +1890,24 @@ function updateDistances(line) {
   * Returns coordinates, altitude, bearing and patch of the train from its distance
   * @param {object} line - lineString of the railway
   * @param {number} distance - Distance from the beginning of the lineString
-  * @returns {object} coord, altitude, bearing and pitch
+  * @param {number} composition - Number of cars
+  * @param {number} unit - Unit of car length
+  * @returns {Array} Array of coord, altitude, bearing and pitch for cars
   */
-function getCoordAndBearing(line, distance) {
+function getCoordAndBearing(line, distance, composition, unit) {
 	var coords = turf.getCoords(line);
 	var distances = line.properties.distances;
 	var start = 0;
-	var end = coords.length - 1;
-	var center, index, coord, nextCoord, baseDistance, overshot, altitude, bearing, slope;
+	var length = coords.length;
+	var end = length - 1;
+	var result = [];
+	var center, index, i, coord, baseDistance, overshot, bearing, slope, pitch;
 
-	if (distance >= distances[end]) {
-		coord = coords[end];
-		return {
-			coord: coord,
-			altitude: coord[2] || 0,
-			bearing: turf.bearing(coords[end - 1], coord)
-		};
-	}
+	distance -= unit * (composition - 1) / 2;
 
 	while (start !== end - 1) {
 		center = Math.floor((start + end) / 2);
-		if (distance < distances[center]) {
+		if (distance < distances[center][0]) {
 			end = center;
 		} else {
 			start = center;
@@ -1909,19 +1915,21 @@ function getCoordAndBearing(line, distance) {
 	}
 	index = start;
 
-	coord = coords[index];
-	nextCoord = coords[index + 1];
-	baseDistance = distances[index];
-	overshot = distance - baseDistance;
-	altitude = coord[2] || 0;
-	bearing = turf.bearing(coord, nextCoord);
-	slope = ((nextCoord[2] || 0) - altitude) / (distances[index + 1] - baseDistance);
-	return {
-		coord: overshot === 0 ? coord : turf.getCoord(turf.destination(coord, overshot, bearing)),
-		altitude: altitude + slope * overshot,
-		bearing: bearing,
-		pitch: Math.atan(slope / 1000)
-	};
+	for (i = 0; i < composition; distance += unit, i++) {
+		while (distance > distances[index + 1][0] && index < length - 2) {
+			index++;
+		}
+		[baseDistance, bearing, slope, pitch] = distances[index];
+		coord = coords[index];
+		overshot = distance - baseDistance;
+		result.push({
+			coord: turf.getCoord(turf.destination(coord, overshot, bearing)),
+			altitude: (coord[2] || 0) + slope * overshot,
+			bearing: bearing,
+			pitch: pitch
+		});
+	}
+	return result;
 }
 
 function filterFeatures(featureCollection, fn) {
