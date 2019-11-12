@@ -83,7 +83,7 @@ var realtimeTrainLookup = {};
 var flightLookup = {};
 var activeFlightLookup = {};
 var animationID = 0;
-var lastStaticUpdate = '2019-11-12 10:59:02';
+var lastStaticUpdate = '2019-11-12 14:33:19';
 var lastDynamicUpdate = {};
 var stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, operatorLookup, airportLookup, a;
 var trackedObject, markedObject, lastTimetableRefresh, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
@@ -1466,7 +1466,7 @@ map.once('styledata', function () {
 
 	function loadRealtimeTrainData() {
 		Promise.all([
-			loadJSON(API_URL + 'odpt:TrainInformation?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:Keio'),
+			loadJSON(API_URL + 'odpt:TrainInformation?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:YokohamaMunicipal,odpt.Operator:Keio'),
 			loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei')
 		]).then(function([trainInfoRefData, trainRefData]) {
 			realtimeTrainLookup = {};

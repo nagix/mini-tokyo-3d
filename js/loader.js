@@ -419,11 +419,11 @@ var railwayFeatureArray = [];
 			var feature = coords.length === 1 ? turf.point(coords[0]) : turf.lineString(coords);
 
 			features.push(turf.buffer(feature, unit));
-			connectionCoords.push(coords[0]);
+			connectionCoords = connectionCoords.concat(coords);
 		});
 
 		// If there are connections, add extra features
-		if (connectionCoords.length > 1) {
+		if (group.length > 1) {
 			features.push(turf.buffer(turf.lineString(connectionCoords), unit / 4));
 		}
 
@@ -1061,7 +1061,7 @@ function exportJSON(obj, fileName, delay) {
 }
 
 function loadRailwayRefData() {
-	return loadJSON(API_URL + 'odpt:Railway?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'Keio'].map(function(operator) {
+	return loadJSON(API_URL + 'odpt:Railway?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'YokohamaMunicipal', 'Keio'].map(function(operator) {
 		return 'odpt.Operator:' + operator;
 	}).join(',')).then(function(data) {
 		return data.map(function(railway) {
@@ -1080,8 +1080,8 @@ function loadRailwayRefData() {
 function loadStationRefData() {
 	return Promise.all([
 		'JR-East', 'JR-Central', 'TWR', 'Izukyu', 'Tobu', 'Seibu', 'Tokyu',
-		'SaitamaRailway', 'Minatomirai', 'Keio', 'TokyoMetro', 'Toei', 'Tobu',
-		'ToyoRapid', 'Odakyu', 'Keikyu', 'Keisei', 'Hokuso', 'Shibayama'
+		'SaitamaRailway', 'Minatomirai', 'Keio', 'TokyoMetro', 'Toei', 'YokohamaMunicipal',
+		'Tobu', 'ToyoRapid', 'Odakyu', 'Keikyu', 'Keisei', 'Hokuso', 'Shibayama'
 	].map(function(operator) {
 		return loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:' + operator);
 	})).then(function(data) {
@@ -1147,7 +1147,7 @@ function loadRailDirectionRefData() {
 }
 
 function loadTrainTypeRefData() {
-	return loadJSON(API_URL + 'odpt:TrainType?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'Keio'].map(function(operator) {
+	return loadJSON(API_URL + 'odpt:TrainType?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'YokohamaMunicipal', 'Keio'].map(function(operator) {
 		return 'odpt.Operator:' + operator;
 	}).join(',')).then(function(data) {
 		return data.map(function(type) {
