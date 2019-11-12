@@ -13,6 +13,7 @@ body {
 	border-radius: 10px;
 	background-color: #eee;
 	opacity: .9;
+	transition: opacity 1s linear;
 }
 .ball-pulse > div {
 	background-color: #777;

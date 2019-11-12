@@ -234,7 +234,7 @@ var railwayFeatureArray = [];
 				var baseOffset = nextSubline.offset * unit - nearest.distance;
 				var baseFeature = turf.lineString(coordinates);
 				var baseLocation = getLocationAlongLine(baseFeature, coordinates[start]);
-				var transition = Math.min(Math.abs(nextSubline.offset) * .5 + .5, turf.length(baseFeature));
+				var transition = Math.min(Math.abs(nextSubline.offset) * .75 + .75, turf.length(baseFeature));
 				var factors = [];
 				var i, distance;
 
@@ -281,29 +281,31 @@ var railwayFeatureArray = [];
 				return coordinates;
 			}
 
-			if (type === 'main') {
+			if (type === 'main' || (type === 'hybrid' && zoom >= subline.zoom)) {
 				coordinates = coords.map(function(d) { return d.slice(); });
-				if (start && start.railway) {
-					smoothCoords(start);
+				if (type === 'main') {
+					if (start && start.railway && !(zoom >= start.zoom)) {
+						smoothCoords(start);
+					}
+					if (end && end.railway && !(zoom >= end.zoom)) {
+						smoothCoords(end, true);
+					}
 				}
-				if (end && end.railway) {
-					smoothCoords(end, true);
-				}
-			} else if (type === 'sub') {
+			} else if (type === 'sub' || (type === 'hybrid' && zoom < subline.zoom)) {
 				if (start.railway === end.railway && start.offset === end.offset) {
-					feature = turf.lineSlice(coords[0], coords[coords.length - 1], featureLookup[start.railway + '.' + zoom]);
+					feature = lineSlice(coords[0], coords[coords.length - 1], featureLookup[start.railway + '.' + zoom]);
 					offset = start.offset;
 					coordinates = alignDirection(offset ? lineOffset(feature, offset * unit) : feature, coords);
 				} else {
 					interpolate = subline.interpolate;
 					coordinates = [];
-					feature1 = lineOffset(turf.lineSlice(
+					feature1 = lineOffset(lineSlice(
 						coords[0],
 						coords[coords.length - 1],
 						featureLookup[start.railway + '.' + zoom]
 					), start.offset * unit);
 					alignDirection(feature1, coords);
-					feature2 = lineOffset(turf.lineSlice(
+					feature2 = lineOffset(lineSlice(
 						coords[0],
 						coords[coords.length - 1],
 						featureLookup[end.railway + '.' + zoom]
@@ -877,6 +879,21 @@ function getAngle(bearing1, bearing2) {
 	return angle;
 }
 
+// Better version of turf.lineSlice
+function lineSlice(startPt, stopPt, line) {
+	var feature = turf.lineSlice(startPt, stopPt, line);
+	var p1 = turf.nearestPointOnLine(line, startPt);
+	var p2 = turf.nearestPointOnLine(line, stopPt);
+	var start = turf.getCoords(line)[p1.properties.index];
+
+	// Rewind if the line string is in opposite direction
+	if (p1.properties.index === p2.properties.index && turf.distance(p1, start) > turf.distance(p2, start)) {
+		turf.getCoords(feature).reverse();
+	}
+
+	return feature;
+}
+
 // Better version of turf.lineOffset
 function lineOffset(geojson, distance) {
 	var coords = turf.getCoords(geojson);
@@ -908,7 +925,7 @@ function lineOffset(geojson, distance) {
 	var p1 = turf.nearestPointOnLine(polygonLine, turf.destination(start, dist, startBearing + bearingOffset));
 	var p2 = turf.nearestPointOnLine(polygonLine, turf.destination(end, dist, endBearing + bearingOffset));
 
-	return turf.lineSlice(p1, p2, turf.lineString(tempCoords));
+	return lineSlice(p1, p2, turf.lineString(tempCoords));
 }
 
 function filterFeatures(featureCollection, fn) {

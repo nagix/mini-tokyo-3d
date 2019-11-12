@@ -83,7 +83,7 @@ var realtimeTrainLookup = {};
 var flightLookup = {};
 var activeFlightLookup = {};
 var animationID = 0;
-var lastStaticUpdate = '2019-11-11 10:28:16';
+var lastStaticUpdate = '2019-11-12 10:59:02';
 var lastDynamicUpdate = {};
 var stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, operatorLookup, airportLookup, a;
 var trackedObject, markedObject, lastTimetableRefresh, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
@@ -382,7 +382,10 @@ airportLookup = buildLookup(airportRefData);
 flightStatusLookup = buildLookup(flightStatusRefData);
 
 map.once('load', function () {
-	document.getElementById('loader').style.display = 'none';
+	document.getElementById('loader').style.opacity = 0;
+	setTimeout(function() {
+		document.getElementById('loader').style.display = 'none';
+	}, 1000);
 });
 
 map.once('styledata', function () {
@@ -1919,11 +1922,6 @@ function getCoordAndBearing(line, distance) {
 		bearing: bearing,
 		pitch: Math.atan(slope / 1000)
 	};
-}
-
-function getLocationAlongLine(line, point) {
-	var nearestPoint = turf.nearestPointOnLine(line, point);
-	return nearestPoint.properties.location;
 }
 
 function filterFeatures(featureCollection, fn) {
