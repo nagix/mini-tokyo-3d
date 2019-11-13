@@ -18,6 +18,8 @@ The features of Mini Tokyo 3D are as follows.
 
 ### All in Real-Time
 
+<img src="images/day-night.jpg" width="640">
+
 You can view trains and airplanes that operate according to actual timetables and real-time delay information from your favorite point of view. The color of the scenery changes according to the sunrise and sunset times in Tokyo, and the sunset glow can be seen. In addition, a rain animation based on real-time weather information is displayed, so you can enjoy more realistic scenery.
 
 ### Easy-To-Read Railroad Map
@@ -64,11 +66,14 @@ The railway network in Tokyo is one of the most complex in the world. Mini Tokyo
 
 ### Panning
 
+<img src="images/pan.jpg" width="244">
+
 You can move your location by panning the map with mouse drag or swipe on the screen. You can also pan the map with the arrow keys on your keyboard.
 
 ### Zooming-In/Out
 
-<img src="images/zoom-icon.jpg" width="50">
+<img src="images/zoom.jpg" width="244"> <img src="images/zoom-icon.jpg" width="50" align="top">
+"50">
 
 Click or tap the “+” or “−” icon button to zoom in or out the map. You can also zoom in or out by rotating the mouse wheel or pinching in or out of the screen.
 
@@ -78,7 +83,7 @@ A box zoom can be used by dragging the mouse while holding down the Shift key on
 
 ### Rotation and Tilting
 
-<img src="images/compass-icon.jpg" width="50">
+<img src="images/rotate-tilt.jpg" width="244"> <img src="images/compass-icon.jpg" width="50" align="top">
 
 The compass icon represents the orientation of the map. If you press the compass icon button and drag or swipe, you can rotate the map by moving left and right, and change the tilt of the map by moving up and down. You can also change the rotation and tilt of the map by dragging with the right mouse button, or by dragging with the left mouse button while holding down the Ctrl key on the keyboard.
 
