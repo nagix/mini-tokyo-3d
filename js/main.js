@@ -54,7 +54,7 @@ var FLIGHT_ACCELERATION = FLIGHT_ACCELERATION_KMPHPS / 3600000000;
 var MIN_DELAY = 25000;
 
 // Minimum flight interval in milliseconds
-var MIN_FLIGHT_INTERVAL = 75000;
+var MIN_FLIGHT_INTERVAL = 90000;
 
 // API URL
 var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
@@ -1555,7 +1555,7 @@ map.once('styledata', function () {
 				var status = removePrefix(flightRef['odpt:flightStatus']);
 				var maxSpeed = MAX_FLIGHT_SPEED;
 				var acceleration = FLIGHT_ACCELERATION;
-				var departureAirport, arrivalAirport, runway, feature, departureTime, arrivalTime, duration;
+				var departureAirport, arrivalAirport, destinationAirport, originAirport, direction, runway, feature, departureTime, arrivalTime, duration;
 
 				if (!flight) {
 					if (status === 'Cancelled') {
@@ -1563,11 +1563,16 @@ map.once('styledata', function () {
 					}
 					departureAirport = removePrefix(flightRef['odpt:departureAirport']);
 					arrivalAirport = removePrefix(flightRef['odpt:arrivalAirport']);
-					runway = departureAirport === 'NRT' ? departureAirport + '.34L.Dep' :
-						arrivalAirport === 'NRT' ? arrivalAirport + '.34R.Arr' :
-						departureAirport === 'HND' ? departureAirport + '.05.Dep' :
-						arrivalAirport === 'HND' ? arrivalAirport + '.34L.Arr' : undefined;
-					feature = featureLookup[runway];
+					destinationAirport = removePrefix(flightRef['odpt:destinationAirport']);
+					originAirport = removePrefix(flightRef['odpt:originAirport']);
+					direction = airportLookup[destinationAirport || originAirport].direction;
+					runway = departureAirport === 'NRT' ? departureAirport + '.34L' :
+						arrivalAirport === 'NRT' ? arrivalAirport + '.34R' :
+						departureAirport === 'HND' && direction === 'S' ? departureAirport + '.05' :
+						departureAirport === 'HND' && direction === 'N' ? departureAirport + '.34R' :
+						arrivalAirport === 'HND' && direction === 'S' ? arrivalAirport + '.34L' :
+						arrivalAirport === 'HND' && direction === 'N' ? arrivalAirport + '.34R' : undefined;
+					feature = featureLookup[runway + (departureAirport ? '.Dep' : '.Arr')];
 					if (feature) {
 						flight = flightLookup[id] = {
 							id: id,
@@ -1575,8 +1580,8 @@ map.once('styledata', function () {
 							a: removePrefix(flightRef['odpt:airline']),
 							dp: departureAirport,
 							ar: arrivalAirport,
-							ds: removePrefix(flightRef['odpt:destinationAirport']),
-							or: removePrefix(flightRef['odpt:originAirport']),
+							ds: destinationAirport,
+							or: originAirport,
 							runway: runway,
 							feature: feature
 						};
@@ -1623,11 +1628,12 @@ map.once('styledata', function () {
 				duration = maxSpeed / Math.abs(acceleration) / 2 + flight.feature.properties.length / maxSpeed;
 
 				if (departureTime) {
-					flight.start = getTime(departureTime);
+					flight.start = flight.base = getTime(departureTime);
 					flight.standing = flight.start - STANDING_DURATION;
 					flight.end = flight.start + duration;
 				} else {
 					flight.start = flight.standing = getTime(arrivalTime) - duration;
+					flight.base = flight.start + duration - STANDING_DURATION;
 					flight.end = flight.start + duration + STANDING_DURATION;
 				}
 				flight.maxSpeed = maxSpeed;
@@ -1644,17 +1650,18 @@ map.once('styledata', function () {
 				var latest = 0;
 
 				queue.sort(function(a, b) {
-					return a.start - b.start;
+					return a.base - b.base;
 				});
 				queue.forEach(function(flight) {
-					var delay = Math.max(flight.start, latest + MIN_FLIGHT_INTERVAL) - flight.start;
+					var delay = Math.max(flight.base, latest + MIN_FLIGHT_INTERVAL) - flight.base;
 
 					if (delay) {
 						flight.start += delay;
+						flight.base += delay;
 						flight.standing += delay;
 						flight.end += delay;
 					}
-					latest = flight.start;
+					latest = flight.base;
 				});
 			});
 
@@ -1722,7 +1729,7 @@ map.once('styledata', function () {
 			var h = clamp(Math.pow(2, 14 - zoom), 0, 1) * 1000;
 			var v = clamp(Math.pow(1.7, 14 - zoom), 0, 1) * 2000;
 			var s = clamp(Math.pow(1.2, zoom - 14.5) * map.transform.cameraToCenterDistance / 800, 0, 1);
-			var emitterCount = 10;
+			var emitterCount = 30;
 			while (emitterCount > 0) {
 				var e = emitterQueue.shift();
 				if (!e) {

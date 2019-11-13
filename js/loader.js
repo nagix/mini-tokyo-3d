@@ -606,7 +606,10 @@ operatorData.forEach(function(operator) {
 // Build airport data
 airportLookup = buildLookup(airportRefData);
 airportData.forEach(function(airport) {
-	merge(airportLookup[airport.id].title, airport.title);
+	var airportRef = airportLookup[airport.id];
+
+	merge(airportRef.title, airport.title);
+	airportRef.direction = airport.direction;
 });
 
 // Build flight status data
