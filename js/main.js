@@ -966,7 +966,7 @@ map.once('styledata', function () {
 		var carComposition = clamp(Math.floor(train.carComposition * .02 / objectUnit), 1, train.carComposition);
 		var compositionChanged = length !== carComposition;
 		var delayMarker = train.delayMarker;
-		var i, ilen, railway, car, position, scale, userData, pArr, p, coord, bearing, mCoord, altitudeChanged;
+		var i, ilen, railway, car, position, scale, userData, pArr, p, coord, bearing, mCoord, altitudeChanged, animation, bounds;
 
 		if (t !== undefined) {
 			train._t = t;
@@ -1008,6 +1008,19 @@ map.once('styledata', function () {
 			userData.altitude = p.altitude;
 			bearing = userData.bearing = p.bearing + (train.direction < 0 ? 180 : 0);
 			mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
+
+			animation = animations[train.animationID];
+			if (animation) {
+				bounds = map.getBounds();
+				if (coord[0] >= bounds.getWest() - .005 &&
+					coord[0] <= bounds.getEast() + .005 &&
+					coord[1] >= bounds.getSouth() - .005 &&
+					coord[1] <= bounds.getNorth() + .005) {
+					delete animation.frameRate;
+				} else {
+					animation.frameRate = 1;
+				}
+			}
 
 			position.x = mCoord.x - modelOrigin.x;
 			position.y = -(mCoord.y - modelOrigin.y);
@@ -1099,6 +1112,19 @@ map.once('styledata', function () {
 		body.userData.altitude = wing.userData.altitude = vTail.userData.altitude = p.altitude;
 		bearing = body.userData.bearing = wing.userData.bearing = vTail.userData.bearing = p.bearing;
 		mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
+
+		animation = animations[flight.animationID];
+		if (animation) {
+			bounds = map.getBounds();
+			if (coord[0] >= bounds.getWest() - .005 &&
+				coord[0] <= bounds.getEast() + .005 &&
+				coord[1] >= bounds.getSouth() - .005 &&
+				coord[1] <= bounds.getNorth() + .005) {
+				delete animation.frameRate;
+			} else {
+				animation.frameRate = 1;
+			}
+		}
 
 		position = body.position;
 		position.x = mCoord.x - modelOrigin.x;
@@ -1952,12 +1978,16 @@ function setLayerProps(map, id, props) {
 function repeat() {
 	var ids = Object.keys(animations);
 	var now = performance.now();
-	var i, ilen, id, animation, start, duration, elapsed, callback;
+	var i, ilen, id, animation, nextFrame, start, duration, elapsed, callback;
 
 	for (i = 0, ilen = ids.length; i < ilen; i++) {
 		id = ids[i];
 		animation = animations[id];
 		if (animation) {
+			nextFrame = animation.nextFrame;
+			if (nextFrame > now) {
+				continue;
+			}
 			start = animation.start = animation.start || now;
 			duration = animation.duration;
 			elapsed = now - start;
@@ -1966,6 +1996,7 @@ function repeat() {
 			if (callback) {
 				callback(Math.min(elapsed, duration), duration, userData);
 			}
+			animation.nextFrame = Math.max((nextFrame || 0) + 1000 / (animation.frameRate || 120), now);
 			if (elapsed >= duration) {
 				callback = animation.complete;
 				if (callback) {
