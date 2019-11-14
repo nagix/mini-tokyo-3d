@@ -707,12 +707,10 @@ map.once('styledata', function () {
 							car.material.opacity = getObjectOpacity(car, t);
 						});
 						if (delayMarker) {
-							material = delayMarker.material
-							material.uniforms.base.value = isUndergroundVisible === (t > .5) ? 0 : 1;
-							material.uniforms.opacity.value = getObjectOpacity(delayMarker, t);
-							material.blending = isUndergroundVisible === (t > .5) ? THREE.AdditiveBlending : THREE.MultiplyBlending;
+							delayMarker.material.uniforms.opacity.value = getObjectOpacity(delayMarker, t);
 						}
 					});
+					refreshDelayMarkers();
 					Object.keys(activeFlightLookup).forEach(function(key) {
 						var flight = activeFlightLookup[key];
 
@@ -943,6 +941,9 @@ map.once('styledata', function () {
 					loadRealtimeTrainData();
 					loadRealtimeFlightData();
 					refreshStyleColors();
+					setInterval(function() {
+						refreshDelayMarkers();
+					}, 500);
 					lastTrainRefresh = now - MIN_DELAY;
 				}
 				if (markedObject) {
@@ -1074,7 +1075,7 @@ map.once('styledata', function () {
 
 		if (train.delay) {
 			if (!delayMarker) {
-				delayMarker = train.delayMarker = createDelayMarker();
+				delayMarker = train.delayMarker = createDelayMarker(isDarkBackground());
 			}
 
 			car = cars[Math.floor(carComposition / 2)];
@@ -1844,6 +1845,28 @@ map.once('styledata', function () {
 		});
 	}
 
+	function isDarkBackground() {
+		var bgColor = map.getLayer('background').paint._values['background-color'];
+		return 0.2126 * bgColor.r + 0.7152 * bgColor.b + 0.0722 * bgColor.b < .5;
+	}
+
+	function refreshDelayMarkers() {
+		var dark = isDarkBackground();
+		var base = dark ? 0 : 1;
+		var blending = dark ? THREE.AdditiveBlending : THREE.MultiplyBlending;
+
+		Object.keys(activeTrainLookup).forEach(function(key) {
+			var delayMarker = activeTrainLookup[key].delayMarker;
+			var material;
+
+			if (delayMarker) {
+				material = delayMarker.material;
+				material.uniforms.base.value = base;
+				material.blending = blending;
+			}
+		});
+	}
+
 	function updateAboutPopup() {
 		var r = document.getElementsByClassName('mapbox-ctrl-about')[0].getBoundingClientRect();
 		var staticCheck = document.getElementById('acd-static');
@@ -2265,17 +2288,17 @@ function createCube(x, y, z, color) {
 	return new THREE.Mesh(geometry, material);
 }
 
-function createDelayMarker() {
+function createDelayMarker(dark) {
 	var geometry = new THREE.SphereBufferGeometry(1.8, 32, 32);
 	var material = new THREE.ShaderMaterial({
 		uniforms: {
 			glowColor: {type: 'c', value: new THREE.Color(0xff9900)},
-			base: {type: 'f', value: isUndergroundVisible ? 0 : 1},
+			base: {type: 'f', value: dark ? 0 : 1},
 			opacity: {type: 'f'}
 		},
 		vertexShader: document.getElementById('vertexShader').textContent,
 		fragmentShader: document.getElementById('fragmentShader').textContent,
-		blending: isUndergroundVisible ? THREE.AdditiveBlending : THREE.MultiplyBlending,
+		blending: dark ? THREE.AdditiveBlending : THREE.MultiplyBlending,
 		depthWrite: false
 	});
 	return new THREE.Mesh(geometry, material);
