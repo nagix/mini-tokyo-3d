@@ -306,34 +306,61 @@ var trainLayers = {
 	og: new ThreeLayer('trains-og'),
 	addObject: function(object, duration) {
 		var layer = object.userData.altitude < 0 ? this.ug : this.og;
+		var material = object.material;
 
-		object.material.opacity = 0;
+		if (material.uniforms) {
+			material.uniforms.opacity.value = 0;
+		} else {
+			material.opacity = 0;
+		}
 		layer.scene.add(object);
 		if (duration > 0) {
 			startAnimation({
 				callback: function(elapsed) {
-					object.material.opacity = getObjectOpacity(object) * elapsed / duration;
+					if (material.uniforms) {
+						material.uniforms.opacity.value = getObjectOpacity(object) * elapsed / duration;
+					} else {
+						material.opacity = getObjectOpacity(object) * elapsed / duration;
+					}
 				},
 				duration: duration
 			});
 		}
 	},
-	updateObject: function(object) {
+	updateObject: function(object, duration) {
 		var layer = object.userData.altitude < 0 ? this.ug : this.og;
+		var material = object.material;
 
 		layer.scene.add(object);
+		if (duration > 0) {
+			startAnimation({
+				callback: function(elapsed) {
+					if (material.uniforms) {
+						material.uniforms.opacity.value = getObjectOpacity(object, elapsed / duration);
+					} else {
+						material.opacity = getObjectOpacity(object, elapsed / duration);
+					}
+				},
+				duration: duration
+			});
+		}
 	},
 	removeObject: function(object, duration) {
-		var layer;
+		var layer, material;
 
 		if (!object) {
 			return;
 		}
 		layer = object.userData.altitude < 0 ? this.ug : this.og;
+		material = object.material;
 		if (duration > 0) {
 			startAnimation({
 				callback: function(elapsed) {
-					object.material.opacity = getObjectOpacity(object) * (1 - elapsed / duration);
+					if (material.uniforms) {
+						material.uniforms.opacity.value = getObjectOpacity(object) * (1 - elapsed / duration);
+					} else {
+						object.material.opacity = getObjectOpacity(object) * (1 - elapsed / duration);
+					}
 				},
 				complete: function() {
 					layer.scene.remove(object);
@@ -680,7 +707,10 @@ map.once('styledata', function () {
 							car.material.opacity = getObjectOpacity(car, t);
 						});
 						if (delayMarker) {
-							delayMarker.material.opacity = getObjectOpacity(delayMarker, t);
+							material = delayMarker.material
+							material.uniforms.base.value = isUndergroundVisible === (t > .5) ? 0 : 1;
+							material.uniforms.opacity.value = getObjectOpacity(delayMarker, t);
+							material.blending = isUndergroundVisible === (t > .5) ? THREE.AdditiveBlending : THREE.MultiplyBlending;
 						}
 					});
 					Object.keys(activeFlightLookup).forEach(function(key) {
@@ -1034,14 +1064,7 @@ map.once('styledata', function () {
 				trainLayers.addObject(car, 1000);
 			}
 			if (altitudeChanged) {
-				trainLayers.updateObject(car);
-				startAnimation({
-					callback: function(elapsed, duration, object) {
-						object.material.opacity = getObjectOpacity(object, elapsed / duration);
-					},
-					duration: 1000,
-					userData: car
-				});
+				trainLayers.updateObject(car, 1000);
 				if (trackedObject === car) {
 					document.getElementsByClassName('mapbox-ctrl-underground')[0]
 						.dispatchEvent(new MouseEvent('click'));
@@ -1066,14 +1089,7 @@ map.once('styledata', function () {
 				trainLayers.addObject(delayMarker, 1000);
 			}
 			if (altitudeChanged) {
-				trainLayers.updateObject(delayMarker);
-				startAnimation({
-					callback: function(elapsed, duration, object) {
-						object.material.opacity = getObjectOpacity(object, elapsed / duration);
-					},
-					duration: 1000,
-					userData: delayMarker
-				});
+				trainLayers.updateObject(delayMarker, 1000);
 			}
 		} else if (delayMarker) {
 			trainLayers.removeObject(delayMarker);
@@ -1992,15 +2008,14 @@ function repeat() {
 			duration = animation.duration;
 			elapsed = now - start;
 			callback = animation.callback;
-			userData = animation.userData;
 			if (callback) {
-				callback(Math.min(elapsed, duration), duration, userData);
+				callback(Math.min(elapsed, duration), duration);
 			}
 			animation.nextFrame = Math.max((nextFrame || 0) + 1000 / (animation.frameRate || 120), now);
 			if (elapsed >= duration) {
 				callback = animation.complete;
 				if (callback) {
-					callback(userData);
+					callback();
 				}
 				stopAnimation(id);
 			}
@@ -2016,7 +2031,7 @@ function repeat() {
   * @param {function} options.complete - Function called when the animation completes
   * @param {number} options.duration - Animation duration. Default is Infinity
   * @param {number} options.start - Animation start time (same timestamp as performance.now())
-  * @param {number} options.userData - User data that is available in the callback function
+  * @param {number} options.frameRate - Animation frames per second
   * @returns {number} Animation ID which can be used to stop
   */
 function startAnimation(options) {
@@ -2253,10 +2268,14 @@ function createCube(x, y, z, color) {
 function createDelayMarker() {
 	var geometry = new THREE.SphereBufferGeometry(1.8, 32, 32);
 	var material = new THREE.ShaderMaterial({
-		uniforms: {glowColor: {type: "c", value: new THREE.Color(0xff9900)}},
+		uniforms: {
+			glowColor: {type: 'c', value: new THREE.Color(0xff9900)},
+			base: {type: 'f', value: isUndergroundVisible ? 0 : 1},
+			opacity: {type: 'f'}
+		},
 		vertexShader: document.getElementById('vertexShader').textContent,
 		fragmentShader: document.getElementById('fragmentShader').textContent,
-		blending: THREE.MultiplyBlending,
+		blending: isUndergroundVisible ? THREE.AdditiveBlending : THREE.MultiplyBlending,
 		depthWrite: false
 	});
 	return new THREE.Mesh(geometry, material);

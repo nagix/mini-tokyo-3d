@@ -53,12 +53,14 @@
 
 	<script type="x-shader/x-fragment" id="fragmentShader">
 		uniform vec3 glowColor;
+		uniform float base;
+		uniform float opacity;
 		varying float intensity;
 
 		void main() {
-			float r = glowColor.r + ( 1.0 - glowColor.r ) * intensity;
-			float g = glowColor.g + ( 1.0 - glowColor.g ) * intensity;
-			float b = glowColor.b + ( 1.0 - glowColor.b ) * intensity;
+			float r = base - ( base - glowColor.r ) * (1.0 - intensity) * opacity;
+			float g = base - ( base - glowColor.g ) * (1.0 - intensity) * opacity;
+			float b = base - ( base - glowColor.b ) * (1.0 - intensity) * opacity;
 			gl_FragColor = vec4( r, g, b, 1.0 );
 		}
 	</script>
