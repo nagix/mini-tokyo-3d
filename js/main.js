@@ -1248,9 +1248,23 @@ map.once('styledata', function () {
 				function repeat(elapsed) {
 					setTrainStandingStatus(train, false);
 					train.animationID = startTrainAnimation(function(t) {
+						// Guard for an unexpected error
+						// Probably a bug due to duplicate train IDs in timetable lookup
+						if (!train.cars) {
+							stopTrain(train);
+							return;
+						}
+
 						updateTrainShape(train, t);
 					}, function() {
 						var markedObjectIndex, trackedObjectIndex;
+
+						// Guard for an unexpected error
+						// Probably a bug due to duplicate train IDs in timetable lookup
+						if (train.timetableIndex + 1 >= train.tt.length) {
+							stopTrain(train);
+							return;
+						}
 
 						if (!setSectionData(train, train.timetableIndex + 1)) {
 							markedObjectIndex = train.cars.indexOf(markedObject);
