@@ -175,7 +175,7 @@ When the real-time mode is off, you can enjoy the operation of the trains going 
 
 ### Precipitation Display
 
-<img src="images/weather-icon.jpg" width="50">
+<img src="images/weather.jpg" width="580"> <img src="images/weather-icon.jpg" width="50" align="top">
 
 Click or tap the rain cloud icon button to switch the rain animation display on or off (the icon is in light blue when it is on).
 

@@ -174,7 +174,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 降水表示
 
-<img src="images/weather-icon.jpg" width="50">
+<img src="images/weather.jpg" width="580"> <img src="images/weather-icon.jpg" width="50" align="top">
 
 雨雲アイコンボタンをクリックまたはタップすると、降水アニメーションの表示のオン・オフを切り替えることができます（オンの状態でアイコンは水色で表示されます）。
 
