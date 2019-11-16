@@ -10,7 +10,12 @@ A real-time 3D digital map of Tokyo's public transport system.
 
 See a [Live Demo](https://nagix.github.io/mini-tokyo-3d).
 
-## User Guide
+## Demo Videos
+
+- [Demo Video (English)](https://youtu.be/sxFEwj0sBJk)
+- [Demo Video (Japanese)](https://youtu.be/_3N651UnxDA)
+
+## User Guides
 
 - [User Guide (English)](https://github.com/nagix/mini-tokyo-3d/blob/master/USER_GUIDE-en.md)
 - [User Guide (Japanese)](https://github.com/nagix/mini-tokyo-3d/blob/master/USER_GUIDE-ja.md)
