@@ -1261,7 +1261,7 @@ map.once('styledata', function () {
 
 						// Guard for an unexpected error
 						// Probably a bug due to duplicate train IDs in timetable lookup
-						if (train.timetableIndex + 1 >= train.tt.length) {
+						if (!train.cars || train.timetableIndex + 1 >= train.tt.length) {
 							stopTrain(train);
 							return;
 						}
