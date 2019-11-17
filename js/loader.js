@@ -21,11 +21,82 @@
 // API URL
 var API_URL = 'https://api-tokyochallenge.odpt.org/api/v4/';
 
+var OPERATORS_FOR_RAILWAYS = [
+	'JR-East',
+	'TWR',
+	'TokyoMetro',
+	'Toei',
+	'YokohamaMunicipal',
+	'Keio',
+	'Yurikamome',
+	'TokyoMonorail'
+];
+
+var OPERATORS_FOR_STATIONS = [
+	'JR-East',
+	'TWR',
+	'TokyoMetro',
+	'Toei',
+	'YokohamaMunicipal',
+	'Keio',
+	'Yurikamome',
+	'JR-Central',
+	'Izukyu',
+	'Tobu',
+	'Seibu',
+	'Tokyu',
+	'SaitamaRailway',
+	'Minatomirai',
+	'Tobu',
+	'ToyoRapid',
+	'Odakyu',
+	'Keikyu',
+	'Keisei',
+	'Hokuso',
+	'Shibayama'
+];
+
+var CALENDARS = [
+	'Weekday',
+	'SaturdayHoliday'
+];
+
+var OPERATORS_FOR_TRAINTYPES = [
+	'JR-East',
+	'TWR',
+	'TokyoMetro',
+	'Toei',
+	'YokohamaMunicipal',
+	'Keio',
+	'Yurikamome'
+];
+
+var RAILWAY_CHUOSOBULOCAL = 'JR-East.ChuoSobuLocal';
+var RAILWAY_KEIYO = 'JR-East.Keiyo';
+var RAILWAY_KEIYOKOYABRANCH = 'JR-East.KeiyoKoyaBranch';
+var RAILWAY_KEIYOFUTAMATABRANCH = 'JR-East.KeiyoFutamataBranch';
+var RAILWAY_OEDO = 'Toei.Oedo';
+
+var RAILWAYS_FOR_SOBURAPID = [
+	'JR-East.NaritaAirportBranch',
+	'JR-East.Narita',
+	'JR-East.Sobu'
+];
+
+var STATION_KEIYO_NISHIFUNABASHI = 'JR-East.Keiyo.NishiFunabashi';
+var STATION_OEDO_TOCHOMAE = 'Toei.Oedo.Tochomae';
+var STATION_OEDO_SHINJUKUNISHIGUCHI = 'Toei.Oedo.ShinjukuNishiguchi';
+
+var TRAINTYPES_FOR_SOBURAPID = [
+	'JR-East.Rapid',
+	'JR-East.LimitedExpress'
+];
+
 var a = '';
 var lang = getLang();
 var timetables = {};
 var isUndergroundVisible = false;
-var opacityStore = {};
+var styleOpacities = [];
 var animations = {};
 var featureLookup = {};
 var animationID = 0;
@@ -185,7 +256,7 @@ stationData.forEach(function(station) {
 		};
 		stationRefData.push(stationRef);
 	}
-	if (coord !== undefined) {
+	if (coord) {
 		stationRef.coord = coord;
 	}
 	merge(stationRef.title, station.title);
@@ -474,27 +545,32 @@ timetableLookup = buildLookup(concat([trainTimetableRefData.weekday, trainTimeta
 
 // Modify SobuRapid, Sobu, Narita and Narita Airport branch timetables
 Object.keys(trainTimetableRefData).forEach(function(key) {
-	['JR-East.NaritaAirportBranch', 'JR-East.Narita', 'JR-East.Sobu'].forEach(function(railwayID) {
+	RAILWAYS_FOR_SOBURAPID.forEach(function(railwayID) {
 		trainTimetableRefData[key].filter(function(table) {
-			return table.r === railwayID && (table.y === 'JR-East.Rapid' || table.y === 'JR-East.LimitedExpress');
+			return table.r === railwayID && TRAINTYPES_FOR_SOBURAPID.indexOf(table.y) !== -1;
 		}).forEach(function(table) {
 			var tt = table.tt;
+			var nt = table.nt;
+			var pt = table.pt;
 			var nextTable, prevTable, r, ntt, ptt;
 
-			if (table.nt) {
-				nextTable = timetableLookup[table.nt[0]];
+			if (nt) {
+				nextTable = timetableLookup[nt[0]];
 			}
-			if (table.pt) {
-				prevTable = timetableLookup[table.pt[0]];
+			if (pt) {
+				prevTable = timetableLookup[pt[0]];
 			}
 			if (nextTable || prevTable) {
 				r = (nextTable || prevTable).r;
 				tt.forEach(function(obj) {
-					if (obj.as) {
-						obj.as = obj.as.replace(/(JR-East\.[^\.]+)/, r);
+					var as = obj.as;
+					var ds = obj.ds;
+
+					if (as) {
+						obj.as = as.replace(railwayID, r);
 					}
-					if (obj.ds) {
-						obj.ds = obj.ds.replace(/(JR-East\.[^\.]+)/, r);
+					if (ds) {
+						obj.ds = ds.replace(railwayID, r);
 					}
 				});
 			}
@@ -524,27 +600,29 @@ Object.keys(trainTimetableRefData).forEach(function(key) {
 Object.keys(trainTimetableRefData).forEach(function(key) {
 	trainTimetableRefData[key].filter(function(table) {
 		var tt = table.tt;
-		return table.r === 'JR-East.Keiyo' &&
-			(tt[0].ds === 'JR-East.Keiyo.NishiFunabashi' ||
-			tt[tt.length - 1].as === 'JR-East.Keiyo.NishiFunabashi');
+		return table.r === RAILWAY_KEIYO &&
+			(tt[0].ds === STATION_KEIYO_NISHIFUNABASHI ||
+			tt[tt.length - 1].as === STATION_KEIYO_NISHIFUNABASHI);
 	}).forEach(function(table) {
 		var tt = table.tt;
-		var startFromNishiFunabashi = tt[0].ds === 'JR-East.Keiyo.NishiFunabashi';
+		var startFromNishiFunabashi = tt[0].ds === STATION_KEIYO_NISHIFUNABASHI;
 		var direction = table.d;
-		var branchName = (startFromNishiFunabashi && direction === 'Outbound') ||
+		var railwayID = table.r = (startFromNishiFunabashi && direction === 'Outbound') ||
 			(!startFromNishiFunabashi && direction === 'Inbound') ?
-			'KoyaBranch' : 'FutamataBranch';
+			RAILWAY_KEIYOKOYABRANCH : RAILWAY_KEIYOFUTAMATABRANCH;
 
-		table.r = 'JR-East.Keiyo' + branchName;
 		table.ds = table.ds.map(function(station) {
-			return station.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
+			return station.replace(RAILWAY_KEIYO, railwayID);
 		});
 		tt.forEach(function(obj) {
-			if (obj.as) {
-				obj.as = obj.as.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
+			var as = obj.as;
+			var ds = obj.ds;
+
+			if (as) {
+				obj.as = as.replace(RAILWAY_KEIYO, railwayID);
 			}
-			if (obj.ds) {
-				obj.ds = obj.ds.replace(/(JR-East\.Keiyo)/, '$1' + branchName);
+			if (ds) {
+				obj.ds = ds.replace(RAILWAY_KEIYO, railwayID);
 			}
 		});
 	});
@@ -553,20 +631,23 @@ Object.keys(trainTimetableRefData).forEach(function(key) {
 // Modify Toei Oedo timetables
 Object.keys(trainTimetableRefData).forEach(function(key) {
 	trainTimetableRefData[key].filter(function(table) {
-		return table.r === 'Toei.Oedo';
+		return table.r === RAILWAY_OEDO;
 	}).forEach(function(table) {
 		var tt = table.tt;
 
 		tt.forEach(function(obj, i) {
+			var as = obj.as;
+			var ds = obj.ds;
 			var prev = tt[i - 1] || {};
 			var next = tt[i + 1] || {};
-			if ((obj.as || obj.ds) === 'Toei.Oedo.Tochomae' &&
-				(prev.as || prev.ds) !== 'Toei.Oedo.ShinjukuNishiguchi' &&
-				(next.as || next.ds) !== 'Toei.Oedo.ShinjukuNishiguchi') {
-				if (obj.as) {
+
+			if ((as || ds) === STATION_OEDO_TOCHOMAE &&
+				(prev.as || prev.ds) !== STATION_OEDO_SHINJUKUNISHIGUCHI &&
+				(next.as || next.ds) !== STATION_OEDO_SHINJUKUNISHIGUCHI) {
+				if (as) {
 					obj.as += '.1';
 				}
-				if (obj.ds) {
+				if (ds) {
 					obj.ds += '.1';
 				}
 			}
@@ -753,9 +834,12 @@ map.once('styledata', function () {
 	});
 
 	map.getStyle().layers.filter(function(layer) {
-		return layer.type === 'line' || layer.type.lastIndexOf('fill', 0) !== -1;
+		return layer.type === 'line' || layer.type.indexOf('fill') === 0;
 	}).forEach(function(layer) {
-		opacityStore[layer.id] = map.getPaintProperty(layer.id, layer.type + '-opacity') || 1;
+		var id = layer.id;
+		var key = layer.type + '-opacity';
+
+		styleOpacities.push({id: id, key: key, opacity: map.getPaintProperty(id, key) || 1});
 	});
 
 	map.addControl(new mapboxgl.NavigationControl());
@@ -780,15 +864,14 @@ map.once('styledata', function () {
 				this.classList.remove('mapbox-ctrl-underground-visible');
 				map.setPaintProperty('background', 'background-color', 'rgb(239,239,239)');
 			}
-			map.getStyle().layers.forEach(function(layer) {
-				var id = layer.id;
-				var opacity = opacityStore[id];
-				if (opacity !== undefined) {
-					if (isUndergroundVisible) {
-						opacity *= id.indexOf('-og-') !== -1 ? .25 : .0625;
-					}
-					map.setPaintProperty(id, layer.type + '-opacity', opacity);
+			styleOpacities.forEach(function(item) {
+				var id = item.id;
+				var opacity = item.opacity;
+
+				if (isUndergroundVisible) {
+					opacity *= id.indexOf('-og-') !== -1 ? .25 : .0625;
 				}
+				map.setPaintProperty(id, item.key, opacity);
 			});
 
 			startAnimation({
@@ -814,14 +897,14 @@ map.once('styledata', function () {
 		eventHandler: function() {
 			exportJSON(turf.truncate(railwayFeatureCollection, {precision: 7}), 'features.json', 0);
 			exportJSON(trainTimetableRefData.weekday, 'timetable-weekday.json', 1000);
-			exportJSON(trainTimetableRefData.holiday, 'timetable-holiday.json', 6000);
-			exportJSON(stationRefData, 'stations.json', 11000);
-			exportJSON(railwayRefData, 'railways.json', 11500);
-			exportJSON(railDirectionRefData, 'rail-directions.json', 12000);
-			exportJSON(trainTypeRefData, 'train-types.json', 12500);
-			exportJSON(operatorRefData, 'operators.json', 13000);
-			exportJSON(airportRefData, 'airports.json', 13500);
-			exportJSON(flightStatusRefData, 'flight-status.json', 14000);
+			exportJSON(trainTimetableRefData.holiday, 'timetable-holiday.json', 7000);
+			exportJSON(stationRefData, 'stations.json', 13000);
+			exportJSON(railwayRefData, 'railways.json', 13500);
+			exportJSON(railDirectionRefData, 'rail-directions.json', 14000);
+			exportJSON(trainTypeRefData, 'train-types.json', 14500);
+			exportJSON(operatorRefData, 'operators.json', 15000);
+			exportJSON(airportRefData, 'airports.json', 15500);
+			exportJSON(flightStatusRefData, 'flight-status.json', 16000);
 		}
 	}]), 'top-right');
 
@@ -947,12 +1030,16 @@ function setLayerProps(map, id, props) {
 function repeat() {
 	var ids = Object.keys(animations);
 	var now = performance.now();
-	var i, ilen, id, animation, start, duration, elapsed, callback;
+	var i, ilen, id, animation, nextFrame, start, duration, elapsed, callback;
 
 	for (i = 0, ilen = ids.length; i < ilen; i++) {
 		id = ids[i];
 		animation = animations[id];
 		if (animation) {
+			nextFrame = animation.nextFrame;
+			if (nextFrame > now) {
+				continue;
+			}
 			start = animation.start = animation.start || now;
 			duration = animation.duration;
 			elapsed = now - start;
@@ -960,6 +1047,7 @@ function repeat() {
 			if (callback) {
 				callback(Math.min(elapsed, duration), duration);
 			}
+			animation.nextFrame = Math.max((nextFrame || 0) + 1000 / (animation.frameRate || 120), now);
 			if (elapsed >= duration) {
 				callback = animation.complete;
 				if (callback) {
@@ -981,7 +1069,7 @@ function startAnimation(options) {
 }
 
 function stopAnimation(id) {
-	if (animations[id]) {
+	if (id in animations) {
 		delete animations[id];
 	}
 }
@@ -1067,7 +1155,7 @@ function exportJSON(obj, fileName, delay) {
 }
 
 function loadRailwayRefData() {
-	return loadJSON(API_URL + 'odpt:Railway?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'YokohamaMunicipal', 'Keio'].map(function(operator) {
+	return loadJSON(API_URL + 'odpt:Railway?odpt:operator=' + OPERATORS_FOR_RAILWAYS.map(function(operator) {
 		return 'odpt.Operator:' + operator;
 	}).join(',')).then(function(data) {
 		return data.map(function(railway) {
@@ -1084,11 +1172,7 @@ function loadRailwayRefData() {
 }
 
 function loadStationRefData() {
-	return Promise.all([
-		'JR-East', 'JR-Central', 'TWR', 'Izukyu', 'Tobu', 'Seibu', 'Tokyu',
-		'SaitamaRailway', 'Minatomirai', 'Keio', 'TokyoMetro', 'Toei', 'YokohamaMunicipal',
-		'Tobu', 'ToyoRapid', 'Odakyu', 'Keikyu', 'Keisei', 'Hokuso', 'Shibayama'
-	].map(function(operator) {
+	return Promise.all(OPERATORS_FOR_STATIONS.map(function(operator) {
 		return loadJSON(API_URL + 'odpt:Station?odpt:operator=odpt.Operator:' + operator);
 	})).then(function(data) {
 		return concat(data).map(function(station) {
@@ -1104,11 +1188,11 @@ function loadStationRefData() {
 
 function loadTrainTimetableRefData() {
 	return loadJSON('data-extra/railways.json').then(function(railwayData) {
-		return Promise.all(['Weekday', 'SaturdayHoliday'].map(function(calendar, i) {
+		return Promise.all(CALENDARS.map(function(calendar, i) {
 			return Promise.all(railwayData.map(function(railway) {
 				var id = railway.id;
 				return loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:' + id +
-					(id === 'JR-East.ChuoSobuLocal' ? '' : '&odpt:calendar=odpt.Calendar:' + calendar), i * 60000);
+					(id === RAILWAY_CHUOSOBULOCAL ? '' : '&odpt:calendar=odpt.Calendar:' + calendar), i * 60000);
 			})).then(function(data) {
 				return concat(data).map(function(table) {
 					return {
@@ -1153,7 +1237,7 @@ function loadRailDirectionRefData() {
 }
 
 function loadTrainTypeRefData() {
-	return loadJSON(API_URL + 'odpt:TrainType?odpt:operator=' + ['JR-East', 'TWR', 'TokyoMetro', 'Toei', 'YokohamaMunicipal', 'Keio'].map(function(operator) {
+	return loadJSON(API_URL + 'odpt:TrainType?odpt:operator=' + OPERATORS_FOR_TRAINTYPES.map(function(operator) {
 		return 'odpt.Operator:' + operator;
 	}).join(',')).then(function(data) {
 		return data.map(function(type) {
