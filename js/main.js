@@ -1612,7 +1612,7 @@ map.once('styledata', function () {
 				var status = removePrefix(flightRef['odpt:flightStatus']);
 				var maxSpeed = MAX_FLIGHT_SPEED;
 				var acceleration = FLIGHT_ACCELERATION;
-				var departureAirport, arrivalAirport, destinationAirport, originAirport, direction, runway, feature, departureTime, arrivalTime, duration;
+				var departureAirport, arrivalAirport, destinationAirport, originAirport, airport, direction, runway, feature, departureTime, arrivalTime, duration;
 
 				if (!flight) {
 					if (status === 'Cancelled') {
@@ -1622,7 +1622,8 @@ map.once('styledata', function () {
 					arrivalAirport = removePrefix(flightRef['odpt:arrivalAirport']);
 					destinationAirport = removePrefix(flightRef['odpt:destinationAirport']);
 					originAirport = removePrefix(flightRef['odpt:originAirport']);
-					direction = airportLookup[destinationAirport || originAirport].direction;
+					airport = airportLookup[destinationAirport || originAirport];
+					direction = airport ? airport.direction : 'S';
 					runway = departureAirport === 'NRT' ? departureAirport + '.34L' :
 						arrivalAirport === 'NRT' ? arrivalAirport + '.34R' :
 						departureAirport === 'HND' && direction === 'S' ? departureAirport + '.05' :
