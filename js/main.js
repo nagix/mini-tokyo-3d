@@ -89,9 +89,11 @@ var TRAINTYPES_FOR_SOBURAPID = [
 
 var SQRT3 = Math.sqrt(3);
 var DEGREE_TO_RADIAN = Math.PI / 180;
+var MEAN_EARTH_RADIUS = 6371008.8;
+var EQUATOR_EARTH_RADIUS = 6378137;
 
 var modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat([139.7670, 35.6814]);
-var modelScale = 1 / 2 / Math.PI / 6378137 / Math.cos(35.6814 * DEGREE_TO_RADIAN);
+var modelScale = 1 / 2 / Math.PI / EQUATOR_EARTH_RADIUS / Math.cos(35.6814 * DEGREE_TO_RADIAN);
 
 var lang = getLang();
 var isEdge = navigator.userAgent.indexOf('Edge') !== -1;
@@ -2039,13 +2041,39 @@ function getCoordAndBearing(line, distance, composition, unit) {
 		coord = coords[index];
 		overshot = distance - baseDistance;
 		result.push({
-			coord: turf.getCoord(turf.destination(coord, overshot, bearing)),
+			coord: destination(coord, overshot, bearing),
 			altitude: (coord[2] || 0) + slope * overshot,
 			bearing: bearing,
 			pitch: pitch
 		});
 	}
 	return result;
+}
+
+// Better version of turf.destination
+function destination(origin, distance, bearing) {
+	var coordinates1 = turf.getCoord(origin);
+	var longitude1 = coordinates1[0] * DEGREE_TO_RADIAN;
+	var latitude1 = coordinates1[1] * DEGREE_TO_RADIAN;
+	var bearingRad = bearing * DEGREE_TO_RADIAN;
+	var radians = distance / MEAN_EARTH_RADIUS * 1000;
+
+	var sinLatitude1 = Math.sin(latitude1);
+	var cosLatitude1 = Math.cos(latitude1);
+	var sinRadians = Math.sin(radians);
+	var cosRadians = Math.cos(radians);
+	var sinBearingRad = Math.sin(bearingRad);
+	var cosBearingRad = Math.cos(bearingRad);
+
+	var latitude2 = Math.asin(sinLatitude1 * cosRadians + cosLatitude1 * sinRadians * cosBearingRad);
+	var longitude2 = longitude1 + Math.atan2(
+		sinBearingRad * sinRadians * cosLatitude1,
+		cosRadians - sinLatitude1 * Math.sin(latitude2));
+
+	return [
+		longitude2 % (2 * Math.PI) / DEGREE_TO_RADIAN,
+		latitude2 % (2 * Math.PI) / DEGREE_TO_RADIAN
+	];
 }
 
 function filterFeatures(featureCollection, fn) {
