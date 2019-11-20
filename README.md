@@ -44,6 +44,23 @@ Click or tap a train | Enable tracking
 Click or tap the map | Disable tracking
 Hover a train | Show the train information
 
+## Language Support
+
+Currently, the following languages are supported. Any help or contribution with translations and additional language support is always greatly appreciated.
+
+Language | User Interface | Map Labels | Stations, Railways, Airlines, etc. | User Guide
+--- | --- | --- | --- | ---
+English | Yes | Yes | Yes | Yes
+Japanese | Yes | Yes | Yes | Yes
+Chinese (Simplified) | Yes | Yes | Yes | -
+Korean | Yes | Yes | Yes | -
+Thai | Yes | - | - | -
+Nepali | Yes | - | - | -
+
+If you want to contribute, please start with translating the UI messages in the `dictionary-<ISO 639-1 code>.json` file in the [`data`](https://github.com/nagix/mini-tokyo-3d/tree/v2/data) directory. Then, if you have extra energy, add the title of each item in your language to [`airport.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/airports.json), [`flight-status.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/flight-status.json), [`operators.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/operators.json), [`rail-directions.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/rail-directions.json), [`railways.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/railways.json), [`stations.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/stations.json), [`train-types.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/train-types.json) in the [`data-extra`](https://github.com/nagix/mini-tokyo-3d/tree/v2/data-extra) directory.
+
+**Note that the `v2` branch is currently active and the target for your pull request while the `master` branch is only for minor maintenance.**
+
 ## About Data
 
 The data for this visualization are sourced from [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/), which includes station information and train timetables as well as real-time data such as train location information and status information of multiple railway lines in the Greater Tokyo area.
