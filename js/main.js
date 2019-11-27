@@ -65,7 +65,8 @@ var OPERATORS_FOR_TRAININFORMATION = [
 	'TokyoMetro',
 	'Toei',
 	'YokohamaMunicipal',
-	'Keio'
+	'Keio',
+	'Keikyu'
 ];
 
 var OPERATORS_FOR_TRAINS = [

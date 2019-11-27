@@ -28,6 +28,7 @@ var OPERATORS_FOR_RAILWAYS = [
 	'Toei',
 	'YokohamaMunicipal',
 	'Keio',
+	'Keikyu',
 	'Yurikamome',
 	'TokyoMonorail'
 ];
@@ -39,6 +40,7 @@ var OPERATORS_FOR_STATIONS = [
 	'Toei',
 	'YokohamaMunicipal',
 	'Keio',
+	'Keikyu',
 	'Yurikamome',
 	'JR-Central',
 	'Izukyu',
@@ -50,7 +52,6 @@ var OPERATORS_FOR_STATIONS = [
 	'Tobu',
 	'ToyoRapid',
 	'Odakyu',
-	'Keikyu',
 	'Keisei',
 	'Hokuso',
 	'Shibayama'
@@ -68,6 +69,7 @@ var OPERATORS_FOR_TRAINTYPES = [
 	'Toei',
 	'YokohamaMunicipal',
 	'Keio',
+	'Keikyu',
 	'Yurikamome'
 ];
 
@@ -357,13 +359,11 @@ var railwayFeatureArray = [];
 
 			if (type === 'main' || (type === 'hybrid' && zoom >= subline.zoom)) {
 				coordinates = coords.map(function(d) { return d.slice(); });
-				if (type === 'main') {
-					if (start && start.railway && !(zoom >= start.zoom)) {
-						smoothCoords(start);
-					}
-					if (end && end.railway && !(zoom >= end.zoom)) {
-						smoothCoords(end, true);
-					}
+				if (start && start.railway && !(zoom >= start.zoom)) {
+					smoothCoords(start);
+				}
+				if (end && end.railway && !(zoom >= end.zoom)) {
+					smoothCoords(end, true);
 				}
 			} else if (type === 'sub' || (type === 'hybrid' && zoom < subline.zoom)) {
 				if (start.railway === end.railway && start.offset === end.offset) {
@@ -539,9 +539,33 @@ coordinateData.airways.forEach(function(airway) {
 var railwayFeatureCollection = turf.featureCollection(railwayFeatureArray);
 
 // Build timetable data
-trainTimetableRefData.weekday = trainTimetableRefData.weekday.concat(timetableWeekdayData);
-trainTimetableRefData.holiday = trainTimetableRefData.holiday.concat(timetableHolidayData);
 timetableLookup = buildLookup(concat([trainTimetableRefData.weekday, trainTimetableRefData.holiday]));
+[{
+	data: timetableWeekdayData,
+	refData: trainTimetableRefData.weekday
+}, {
+	data: timetableHolidayData,
+	refData: trainTimetableRefData.holiday
+}].forEach(function(tCalendar) {
+	tCalendar.data.forEach(function(timetable) {
+		var id = timetable.id;
+		var pt = timetable.pt;
+		var nt = timetable.nt;
+		var timetableRef = timetableLookup[id];
+
+		if (!timetableRef) {
+			timetableLookup[id] = timetable;
+			tCalendar.refData.push(timetable);
+		} else {
+			if (pt) {
+				timetableRef.pt = pt;
+			}
+			if (nt) {
+				timetableRef.nt = nt;
+			}
+		}
+	});
+});
 
 // Modify SobuRapid, Sobu, Narita and Narita Airport branch timetables
 Object.keys(trainTimetableRefData).forEach(function(key) {
