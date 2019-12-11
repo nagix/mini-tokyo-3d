@@ -994,8 +994,6 @@ map.once('styledata', function () {
 		var offset = train.offset;
 		var cars = train.cars;
 		var length = cars.length;
-		var carComposition = clamp(Math.floor(train.carComposition * .02 / objectUnit), 1, train.carComposition);
-		var compositionChanged = length !== carComposition;
 		var delayMarker = train.delayMarker;
 		var i, ilen, railway, car, position, scale, userData, pArr, p, coord, bearing, mCoord, altitudeChanged, animation, bounds;
 
@@ -1006,10 +1004,7 @@ map.once('styledata', function () {
 			return;
 		}
 
-		for (i = length - 1; i >= carComposition; i--) {
-			trainLayers.removeObject(cars.pop());
-		}
-		for (i = length; i < carComposition; i++) {
+		if (length === 0) {
 			railway = railway || railwayLookup[train.r];
 			car = createCube(.88, 1.76, .88, railway.color);
 			car.rotation.order = 'ZYX';
@@ -1017,16 +1012,8 @@ map.once('styledata', function () {
 			userData.object = train;
 			cars.push(car);
 		}
-		if (compositionChanged) {
-			if (markedObject && markedObject.userData.object === train) {
-				markedObject = cars[Math.floor(carComposition / 2)];
-			}
-			if (trackedObject && trackedObject.userData.object === train) {
-				trackedObject = cars[Math.floor(carComposition / 2)];
-			}
-		}
 
-		pArr = getCoordAndBearing(feature, offset + train._t * train.interval, carComposition, objectUnit);
+		pArr = getCoordAndBearing(feature, offset + train._t * train.interval, 1, objectUnit);
 		for (i = 0, ilen = cars.length; i < ilen; i++) {
 			car = cars[i];
 			position = car.position;
@@ -1056,8 +1043,7 @@ map.once('styledata', function () {
 			position.x = mCoord.x - modelOrigin.x;
 			position.y = -(mCoord.y - modelOrigin.y);
 			position.z = p.altitude * modelScale + objectScale / 2;
-			scale.x = scale.z = objectScale;
-			scale.y = carScale;
+			scale.x = scale.y = scale.z = objectScale;
 			car.rotation.x = p.pitch * train.direction;
 			car.rotation.z = -bearing * DEGREE_TO_RADIAN;
 
@@ -1078,13 +1064,13 @@ map.once('styledata', function () {
 				delayMarker = train.delayMarker = createDelayMarker(isDarkBackground());
 			}
 
-			car = cars[Math.floor(carComposition / 2)];
+			car = cars[0];
 			userData = delayMarker.userData;
 			altitudeChanged = (userData.altitude < 0 && car.userData.altitude >= 0) || (userData.altitude >= 0 && car.userData.altitude < 0);
 			userData.altitude = car.userData.altitude;
 			merge(delayMarker.position, car.position);
 			scale = delayMarker.scale;
-			scale.x = scale.y = scale.z = carScale;
+			scale.x = scale.y = scale.z = objectScale;
 
 			if (!delayMarker.parent) {
 				trainLayers.addObject(delayMarker, 1000);
