@@ -299,6 +299,7 @@ var railwayFeatureArray = [];
 			var end = subline.end;
 			var coords = subline.coords;
 			var altitude = valueOrDefault(subline.altitude, railway.altitude) || 0;
+			var opacity = subline.opacity;
 			var coordinates, feature, offset, interpolate, feature1, feature2, length1, length2, i, coord1, coord2, f;
 
 			function smoothCoords(nextSubline, reverse) {
@@ -411,6 +412,12 @@ var railwayFeatureArray = [];
 				smoothAltitude(end.altitude, true);
 				mixed = true;
 			}
+			if (opacity !== undefined) {
+				coordinates.forEach(function(coord) {
+					coord[3] = opacity;
+				});
+				mixed = true;
+			}
 
 			return coordinates;
 		})), {
@@ -440,16 +447,20 @@ var railwayFeatureArray = [];
 			var ogCoords = [[]];
 
 			turf.getCoords(railwayFeature).forEach(function(coord, i, coords) {
-				if (coord[2] < 0 || (coords[i - 1] && coords[i - 1][2] < 0) || (coords[i + 1] && coords[i + 1][2] < 0)) {
-					ugCoords[ugCoords.length - 1].push(coord);
-					if (!(coord[2] < 0) && (coords[i - 1] && coords[i - 1][2] < 0)) {
-						ugCoords.push([]);
+				if (coord[3] !== undefined) {
+					coord.pop();
+				} else {
+					if (coord[2] < 0 || (coords[i - 1] && coords[i - 1][2] < 0) || (coords[i + 1] && coords[i + 1][2] < 0)) {
+						ugCoords[ugCoords.length - 1].push(coord);
+						if (!(coord[2] < 0) && (coords[i - 1] && coords[i - 1][2] < 0)) {
+							ugCoords.push([]);
+						}
 					}
-				}
-				if (!(coord[2] < 0)) {
-					ogCoords[ogCoords.length - 1].push(coord);
-					if (coords[i + 1] && coords[i + 1][2] < 0) {
-						ogCoords.push([]);
+					if (!(coord[2] < 0)) {
+						ogCoords[ogCoords.length - 1].push(coord);
+						if (coords[i + 1] && coords[i + 1][2] < 0) {
+							ogCoords.push([]);
+						}
 					}
 				}
 			});
@@ -994,7 +1005,7 @@ function getAngle(bearing1, bearing2) {
 
 // Better version of turf.lineSlice
 function lineSlice(startPt, stopPt, line) {
-	var feature = turf.lineSlice(startPt, stopPt, line);
+	var feature = turf.cleanCoords(turf.lineSlice(startPt, stopPt, line));
 	var p1 = turf.nearestPointOnLine(line, startPt);
 	var p2 = turf.nearestPointOnLine(line, stopPt);
 	var start = turf.getCoords(line)[p1.properties.index];

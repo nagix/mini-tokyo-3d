@@ -562,6 +562,20 @@
 	"color": "#33C2E4",
 	"carComposition": 8
 }, {
+	"id": "Keikyu.Airport",
+	"title": {
+		"ko": "공항선",
+		"zh": "机场线"
+	},
+	"stations": {
+		"index": 0,
+		"insert": [
+			"Keikyu.Airport.Shinagawa"
+		]
+	},
+	"color": "#33C2E4",
+	"carComposition": 8
+}, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {
 		"ko": "유리카모메",
