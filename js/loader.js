@@ -143,6 +143,7 @@ railwayLookup = buildLookup(railwayRefData);
 railwayData.forEach(function(railway) {
 	var id = railway.id;
 	var stations = railway.stations;
+	var ascending = railway.ascending;
 	var railwayRef = railwayLookup[id];
 	var insert;
 
@@ -150,8 +151,7 @@ railwayData.forEach(function(railway) {
 		railwayRef = railwayLookup[id] = {
 			id: id,
 			title: {},
-			stations: [],
-			ascending: railway.ascending
+			stations: []
 		};
 		railwayRefData.push(railwayRef);
 	}
@@ -160,6 +160,9 @@ railwayData.forEach(function(railway) {
 	if (stations) {
 		insert = stations.insert || [];
 		Array.prototype.splice.apply(railwayRef.stations, [stations.index, stations.delete].concat(insert));
+	}
+	if (ascending !== undefined) {
+		railwayRef.ascending = ascending;
 	}
 	railwayRef.color = railway.color;
 	railwayRef.altitude = railway.altitude;
