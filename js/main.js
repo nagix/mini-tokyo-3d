@@ -1504,6 +1504,7 @@ map.once('styledata', function () {
 			timetableRefData = data;
 			updateTimetableRefData(timetableRefData);
 			trainLookup = buildLookup(timetableRefData, 't');
+			lastTrainRefresh = undefined;
 		});
 	}
 
