@@ -29,6 +29,7 @@ var OPERATORS_FOR_RAILWAYS = [
 	'YokohamaMunicipal',
 	'Keio',
 	'Keikyu',
+	'Keisei',
 	'Yurikamome',
 	'TokyoMonorail'
 ];
@@ -41,6 +42,7 @@ var OPERATORS_FOR_STATIONS = [
 	'YokohamaMunicipal',
 	'Keio',
 	'Keikyu',
+	'Keisei',
 	'Yurikamome',
 	'JR-Central',
 	'Izukyu',
@@ -70,6 +72,7 @@ var OPERATORS_FOR_TRAINTYPES = [
 	'YokohamaMunicipal',
 	'Keio',
 	'Keikyu',
+	'Keisei',
 	'Yurikamome'
 ];
 
@@ -428,6 +431,11 @@ var railwayFeatureArray = [];
 			zoom: zoom
 		});
 
+		featureLookup[id + '.' + zoom] = railwayFeature;
+		if (id.indexOf('Base.') === 0) {
+			return;
+		}
+
 		railwayFeature.properties.altitude = mixed ? undefined : (railway.altitude || 0) * unit * 1000;
 
 		// Set station offsets
@@ -440,7 +448,6 @@ var railwayFeatureArray = [];
 		});
 
 		railwayFeatureArray.push(railwayFeature);
-		featureLookup[id + '.' + zoom] = railwayFeature;
 
 		if (mixed) {
 			var ugCoords = [[]];

@@ -39,15 +39,18 @@
 ]], [[
 	"Toei.NipporiToneri.Nippori"
 ], [
-	"JR-East.JobanRapid.Nippori",
+	"Keisei.Main.Nippori"
+], [
+	"JR-East.JobanRapid.Nippori"
+], [
 	"JR-East.KeihinTohokuNegishi.Nippori",
 	"JR-East.Yamanote.Nippori"
 ]], [[
 	"JR-East.KeihinTohokuNegishi.Uguisudani",
 	"JR-East.Yamanote.Uguisudani"
 ]], [[
-	"JR-East.Utsunomiya.Ueno",
 	"JR-East.JobanRapid.Ueno",
+	"JR-East.Utsunomiya.Ueno",
 	"JR-East.KeihinTohokuNegishi.Ueno",
 	"JR-East.Yamanote.Ueno"
 ]], [[
@@ -63,19 +66,19 @@
 	"JR-East.Yamanote.Kanda",
 	"JR-East.ChuoRapid.Kanda"
 ]], [[
-	"JR-East.ChuoRapid.Tokyo",
-	"JR-East.Tokaido.Tokyo",
 	"JR-East.JobanRapid.Tokyo",
+	"JR-East.Tokaido.Tokyo",
 	"JR-East.KeihinTohokuNegishi.Tokyo",
-	"JR-East.Yamanote.Tokyo"
+	"JR-East.Yamanote.Tokyo",
+	"JR-East.ChuoRapid.Tokyo"
 ]], [[
 	"JR-East.KeihinTohokuNegishi.Yurakucho",
 	"JR-East.Yamanote.Yurakucho"
 ]], [[
 	"Yurikamome.Yurikamome.Shimbashi"
 ], [
-	"JR-East.Tokaido.Shimbashi",
 	"JR-East.JobanRapid.Shimbashi",
+	"JR-East.Tokaido.Shimbashi",
 	"JR-East.KeihinTohokuNegishi.Shimbashi",
 	"JR-East.Yamanote.Shimbashi"
 ]], [[
@@ -87,12 +90,13 @@
 	"JR-East.Yamanote.Tamachi"
 ]], [[
 	"JR-East.Yokosuka.Shinagawa",
-	"JR-East.Tokaido.Shinagawa",
 	"JR-East.JobanRapid.Shinagawa",
+	"JR-East.Tokaido.Shinagawa",
 	"JR-East.KeihinTohokuNegishi.Shinagawa",
 	"JR-East.Yamanote.Shinagawa"
 ], [
-	"Keikyu.Main.Shinagawa"
+	"Keikyu.Main.Shinagawa",
+	"Keikyu.Airport.Shinagawa"
 ]], [[
 	"JR-East.ChuoRapid.Ochanomizu",
 	"JR-East.ChuoSobuLocal.Ochanomizu"
@@ -296,9 +300,13 @@
 ]], [[
 	"JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
 	"JR-East.SobuRapid.NaritaAirportTerminal2and3"
+], [
+	"Keisei.Main.NaritaAirportTerminal2and3"
 ]], [[
 	"JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
 	"JR-East.SobuRapid.NaritaAirportTerminal1"
+], [
+	"Keisei.Main.NaritaAirportTerminal1"
 ]], [[
 	"JR-East.Uchibo.HonChiba",
 	"JR-East.Sotobo.HonChiba"
@@ -448,6 +456,8 @@
 ], [
 	"TokyoMetro.Hibiya.NakaOkachimachi"
 ]], [[
+	"Keisei.Main.KeiseiUeno"
+], [
 	"TokyoMetro.Ginza.Ueno"
 ], [
 	"TokyoMetro.Hibiya.Ueno"
