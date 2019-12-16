@@ -46,6 +46,8 @@ In addition to Japanese, Mini Tokyo 3D supports English, Chinese and Korean, whi
 
 Fine tuning of the starting acceleration and maximum speed of the trains was done repeatedly by getting on them, so that they would move in the same way as the actual trains. A train composition changes according to the scale of the map so that it matches the actual train length, and if the scale is above a certain level, the actual number of vehicles obtained from real-time data feed is displayed. The underground tunnel sections of the overground railways and the overground sections of the subways are also completely reproduced.
 
+**[Updated on December 16, 2019]** As there was a possibility of conflict with existing patents, we disabled displaying of vehicles corresponding to the train length.
+
 ### Switching Views Between Overground and Underground
 
 <img src="images/shinjuku-overground.jpg" width="300"> <img src="images/shinjuku-underground.jpg" width="300">
@@ -108,6 +110,8 @@ When [Real-Time Mode](#real-time-mode) is on, the current data and time is displ
 <img src="images/train-short.jpg" width="200"> <img src="images/train-long.jpg" width="600">
 
 As you zoom in on the map, you will see a number of connected vehicles based on the actual train vehicle composition. For example, the Yamanote Line has 11 vehicles and the Tokaido Line has 11 or 15 vehicles depending on the train. The number of vehicles is obtained from real-time data.
+
+**[Updated on December 16, 2019]** As there was a possibility of conflict with existing patents, we disabled displaying of vehicles corresponding to the train vehicle composition.
 
 ### Delayed Train
 
