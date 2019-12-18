@@ -39,6 +39,7 @@
 ]], [[
 	"Toei.NipporiToneri.Nippori"
 ], [
+	"Keisei.NaritaSkyAccess.Nippori",
 	"Keisei.Main.Nippori"
 ], [
 	"JR-East.JobanRapid.Nippori"
@@ -301,11 +302,13 @@
 	"JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
 	"JR-East.SobuRapid.NaritaAirportTerminal2and3"
 ], [
+	"Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 	"Keisei.Main.NaritaAirportTerminal2and3"
 ]], [[
 	"JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
 	"JR-East.SobuRapid.NaritaAirportTerminal1"
 ], [
+	"Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
 	"Keisei.Main.NaritaAirportTerminal1"
 ]], [[
 	"JR-East.Uchibo.HonChiba",
@@ -405,6 +408,11 @@
 ], [
 	"Keikyu.Main.HatchoNawate"
 ]], [[
+	"JR-East.Musashino.HigashiMatsudo"
+], [
+	"Keisei.NaritaSkyAccess.HigashiMatsudo",
+	"Hokuso.Hokuso.HigashiMatsudo"
+]], [[
 	"JR-East.Yokohama.Hashimoto"
 ], [
 	"Keio.Sagamihara.Hashimoto"
@@ -456,7 +464,8 @@
 ], [
 	"TokyoMetro.Hibiya.NakaOkachimachi"
 ]], [[
-	"Keisei.Main.KeiseiUeno"
+	"Keisei.Main.KeiseiUeno",
+	"Keisei.NaritaSkyAccess.KeiseiUeno"
 ], [
 	"TokyoMetro.Ginza.Ueno"
 ], [
@@ -715,6 +724,20 @@
 	"Keikyu.Main.KeikyuKawasaki",
 	"Keikyu.Daishi.KeikyuKawasaki"
 ]], [[
+	"Keisei.Oshiage.Aoto",
 	"Keisei.Main.Aoto",
-	"Keisei.Oshiage.Aoto"
+	"Keisei.NaritaSkyAccess.Aoto"
+]], [[
+	"Keisei.Main.KeiseiTakasago",
+	"Keisei.NaritaSkyAccess.KeiseiTakasago",
+	"Hokuso.Hokuso.KeiseiTakasago"
+]], [[
+	"Keisei.NaritaSkyAccess.ShinKamagaya",
+	"Hokuso.Hokuso.ShinKamagaya"
+]], [[
+	"Keisei.NaritaSkyAccess.ChibaNewTownChuo",
+	"Hokuso.Hokuso.ChibaNewTownChuo"
+]], [[
+	"Keisei.NaritaSkyAccess.ImbaNihonIdai",
+	"Hokuso.Hokuso.ImbaNihonIdai"
 ]]]

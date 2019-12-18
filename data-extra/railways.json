@@ -569,6 +569,7 @@
 	},
 	"stations": {
 		"index": 0,
+		"delete": 0,
 		"insert": [
 			"Keikyu.Airport.Shinagawa"
 		]
@@ -600,6 +601,50 @@
 	"color": "#005AAA",
 	"carComposition": 8
 }, {
+	"id": "Keisei.NaritaSkyAccess",
+	"title": {
+		"ko": "오시아게 선",
+		"zh": "成田Sky Access线"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"Keisei.NaritaSkyAccess.KeiseiUeno",
+			"Keisei.NaritaSkyAccess.Nippori",
+			"Keisei.NaritaSkyAccess.Aoto"
+		]
+	},
+	"color": "#FF8620",
+	"carComposition": 8
+}, {
+	"id": "Hokuso.Hokuso",
+	"title": {
+		"ko": "호쿠소 선",
+		"zh": "北总线"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 1,
+		"insert": [
+			"Hokuso.Hokuso.KeiseiTakasago",
+			"Hokuso.Hokuso.ShinShibamata",
+			"Hokuso.Hokuso.Yagiri",
+			"Hokuso.Hokuso.KitaKokubun",
+			"Hokuso.Hokuso.Akiyama",
+			"Hokuso.Hokuso.HigashiMatsudo",
+			"Hokuso.Hokuso.Matsuhidai",
+			"Hokuso.Hokuso.Omachi",
+			"Hokuso.Hokuso.ShinKamagaya",
+			"Hokuso.Hokuso.NishiShiroi",
+			"Hokuso.Hokuso.Shiroi",
+			"Hokuso.Hokuso.Komuro",
+			"Hokuso.Hokuso.ChibaNewTownChuo"
+		]
+	},
+	"color": "#00BDF2",
+	"carComposition": 8
+}, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {
 		"ko": "유리카모메",
@@ -615,6 +660,7 @@
 	},
 	"stations": {
 		"index": 0,
+		"delete": 0,
 		"insert": [
 			"TokyoMonorail.HanedaAirport.Hamamatsucho",
 			"TokyoMonorail.HanedaAirport.TennozuIsle",
