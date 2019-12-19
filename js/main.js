@@ -389,6 +389,12 @@ var rainLayer = new ThreeLayer('rain');
 railwayLookup = buildLookup(railwayRefData);
 stationLookup = buildLookup(stationRefData);
 
+stationRefData.forEach(function(stationRef) {
+	if (!dict[stationRef.title.ja]) {
+		dict[stationRef.title.ja] = stationRef.title[lang] || '';
+	}
+});
+
 // Build feature lookup dictionary and update feature properties
 turf.featureEach(railwayFeatureCollection, function(feature) {
 	var id = feature.properties.id;
@@ -416,7 +422,7 @@ map.once('load', function () {
 });
 
 map.once('styledata', function () {
-	map.setLayoutProperty('poi', 'text-field', '{name_' + (lang === 'ja' || lang === 'ko' ? lang : lang === 'zh' ? 'zh-Hans' : 'en') + '}');
+	map.setLayoutProperty('poi', 'text-field', lang === 'ja' ? '{name_ja}' : ['get', ['get', 'name_ja'], ['literal', dict]]);
 
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
