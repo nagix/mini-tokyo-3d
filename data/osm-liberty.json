@@ -3191,6 +3191,19 @@
       "metadata": {},
       "source": "openmaptiles",
       "source-layer": "building",
+      "filter": [
+        "all",
+        [
+          "!=",
+          ["get", "type"],
+          "building:part"
+        ],
+        [
+          "==",
+          ["get", "underground"],
+          "false"
+        ]
+      ],
       "minzoom": 13,
       "maxzoom": 14,
       "layout": {
@@ -3219,6 +3232,19 @@
       "metadata": {},
       "source": "openmaptiles",
       "source-layer": "building",
+      "filter": [
+        "all",
+        [
+          "!=",
+          ["get", "type"],
+          "building:part"
+        ],
+        [
+          "==",
+          ["get", "underground"],
+          "false"
+        ]
+      ],
       "minzoom": 14,
       "layout": {
         "visibility": "visible"

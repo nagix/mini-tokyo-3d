@@ -391,7 +391,7 @@ stationLookup = buildLookup(stationRefData);
 
 stationRefData.forEach(function(stationRef) {
 	if (!dict[stationRef.title.ja]) {
-		dict[stationRef.title.ja] = stationRef.title[lang] || '';
+		dict[stationRef.title.ja] = stationRef.title[lang] || stationRef.title.en || '';
 	}
 });
 
