@@ -45,6 +45,7 @@ var OPERATORS_FOR_STATIONS = [
 	'Keikyu',
 	'Keisei',
 	'Hokuso',
+	'Shibayama'
 	'Yurikamome',
 	'JR-Central',
 	'Izukyu',
@@ -55,10 +56,7 @@ var OPERATORS_FOR_STATIONS = [
 	'Minatomirai',
 	'Tobu',
 	'ToyoRapid',
-	'Odakyu',
-	'Keisei',
-	'Hokuso',
-	'Shibayama'
+	'Odakyu'
 ];
 
 var CALENDARS = [
