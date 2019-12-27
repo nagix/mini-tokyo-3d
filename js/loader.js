@@ -45,7 +45,7 @@ var OPERATORS_FOR_STATIONS = [
 	'Keikyu',
 	'Keisei',
 	'Hokuso',
-	'Shibayama'
+	'Shibayama',
 	'Yurikamome',
 	'JR-Central',
 	'Izukyu',
@@ -940,14 +940,14 @@ map.once('styledata', function () {
 		eventHandler: function() {
 			exportJSON(turf.truncate(railwayFeatureCollection, {precision: 7}), 'features.json', 0);
 			exportJSON(trainTimetableRefData.weekday, 'timetable-weekday.json', 2000);
-			exportJSON(trainTimetableRefData.holiday, 'timetable-holiday.json', 8000);
-			exportJSON(stationRefData, 'stations.json', 14000);
-			exportJSON(railwayRefData, 'railways.json', 14500);
-			exportJSON(railDirectionRefData, 'rail-directions.json', 15000);
-			exportJSON(trainTypeRefData, 'train-types.json', 15500);
-			exportJSON(operatorRefData, 'operators.json', 16000);
-			exportJSON(airportRefData, 'airports.json', 16500);
-			exportJSON(flightStatusRefData, 'flight-status.json', 17000);
+			exportJSON(trainTimetableRefData.holiday, 'timetable-holiday.json', 9000);
+			exportJSON(stationRefData, 'stations.json', 16000);
+			exportJSON(railwayRefData, 'railways.json', 16500);
+			exportJSON(railDirectionRefData, 'rail-directions.json', 17000);
+			exportJSON(trainTypeRefData, 'train-types.json', 17500);
+			exportJSON(operatorRefData, 'operators.json', 18000);
+			exportJSON(airportRefData, 'airports.json', 18500);
+			exportJSON(flightStatusRefData, 'flight-status.json', 19000);
 		}
 	}]), 'top-right');
 
