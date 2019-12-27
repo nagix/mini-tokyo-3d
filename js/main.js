@@ -1267,6 +1267,12 @@ map.once('styledata', function () {
 				}
 
 				function repeat(elapsed) {
+					var arrivalTime = train.arrivalTime;
+					var duration;
+
+					if (arrivalTime) {
+						duration = getTime(arrivalTime) - getTime(train.departureTime);
+					}
 					setTrainStandingStatus(train, false);
 					train.animationID = startTrainAnimation(function(t) {
 						// Guard for an unexpected error
@@ -1310,7 +1316,7 @@ map.once('styledata', function () {
 						} else {
 							stand();
 						}
-					}, Math.abs(train.interval), 1, elapsed);
+					}, Math.abs(train.interval), 1, duration, elapsed);
 				}
 
 				start();
@@ -1792,7 +1798,7 @@ map.once('styledata', function () {
 				},
 				blending: THREE.NormalBlending,
 				transparent: true,
-				maxParticleCount: 100000
+				maxParticleCount: 500000
 			});
 			emitterQueue = [];
 			for (var y = currBounds.top; y < currBounds.bottom; y += resolution) {
@@ -2149,14 +2155,22 @@ function stopAnimation(id) {
 	}
 }
 
-function startTrainAnimation(callback, endCallback, distance, timeFactor, start) {
+function startTrainAnimation(callback, endCallback, distance, timeFactor, baseDuration, start) {
 	var maxSpeed = MAX_SPEED * timeFactor;
 	var acceleration = ACCELERATION * timeFactor * timeFactor;
 	var maxAccelerationTime = MAX_ACCELERATION_TIME / timeFactor;
-	var duration = distance < MAX_ACC_DISTANCE * 2 ?
-		Math.sqrt(distance / acceleration) * 2 :
-		maxAccelerationTime * 2 + (distance - MAX_ACC_DISTANCE * 2) / maxSpeed;
-	var accelerationTime = Math.min(maxAccelerationTime, duration / 2);
+	var duration, accelerationTime;
+
+	if (distance < MAX_ACC_DISTANCE * 2) {
+		duration = Math.sqrt(distance / acceleration) * 2;
+	} else {
+		duration = maxAccelerationTime * 2 + (distance - MAX_ACC_DISTANCE * 2) / maxSpeed;
+		if (baseDuration !== undefined) {
+			duration = clamp(duration, baseDuration - MIN_DELAY, baseDuration + 60000 - MIN_DELAY);
+			maxSpeed = (distance - MAX_ACC_DISTANCE * 2) / (duration - maxAccelerationTime * 2);
+		}
+	}
+	accelerationTime = Math.min(maxAccelerationTime, duration / 2);
 
 	return startAnimation({
 		callback: function(elapsed) {
