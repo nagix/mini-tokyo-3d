@@ -109,18 +109,23 @@ var animationID = 0;
 var stationLookup, railwayLookup, timetableLookup, railDirectionLookup, trainTypeLookup, operatorLookup, airportLookup, flightStatusLookup;
 
 // Replace MapboxLayer.render to support underground rendering
-var render = MapboxLayer.prototype.render;
-MapboxLayer.prototype.render = function(gl, matrix) {
-	var deck = this.deck;
+var render = deck.MapboxLayer.prototype.render;
+deck.MapboxLayer.prototype.render = function(gl, matrix) {
+	var _deck = this.deck;
 	var map = this.map;
 	var center = map.getCenter();
 
-	if (!deck.props.userData.currentViewport) {
-		deck.props.userData.currentViewport = new WebMercatorViewport({
+	if (!_deck.layerManager) {
+		// Not yet initialized
+		return;
+	}
+
+	if (!_deck.props.userData.currentViewport) {
+		_deck.props.userData.currentViewport = new deck.WebMercatorViewport({
 			x: 0,
 			y: 0,
-			width: deck.width,
-			height: deck.height,
+			width: _deck.width,
+			height: _deck.height,
 			longitude: center.lng,
 			latitude: center.lat,
 			zoom: map.getZoom(),
@@ -757,9 +762,9 @@ map.once('styledata', function () {
 		var maxzoom = zoom >= 18 ? 24 : zoom + 1;
 		var lineWidthScale = zoom === 13 ? clamp(Math.pow(2, map.getZoom() - 12), .125, 1) : 1;
 
-		map.addLayer(new MapboxLayer({
+		map.addLayer(new deck.MapboxLayer({
 			id: 'railways-ug-' + zoom,
-			type: GeoJsonLayer,
+			type: deck.GeoJsonLayer,
 			data: filterFeatures(railwayFeatureCollection, function(p) {
 				return p.zoom === zoom && p.type === 0 && p.altitude < 0;
 			}),
@@ -777,9 +782,9 @@ map.once('styledata', function () {
 			opacity: .0625
 		}), 'building-3d');
 		map.setLayerZoomRange('railways-ug-' + zoom, minzoom, maxzoom);
-		map.addLayer(new MapboxLayer({
+		map.addLayer(new deck.MapboxLayer({
 			id: 'stations-ug-' + zoom,
-			type: GeoJsonLayer,
+			type: deck.GeoJsonLayer,
 			data: filterFeatures(railwayFeatureCollection, function(p) {
 				return p.zoom === zoom && p.type === 1 && p.altitude < 0;
 			}),
@@ -912,7 +917,7 @@ map.once('styledata', function () {
 				var opacity = item.opacity;
 
 				if (isUndergroundVisible) {
-					opacity *= id.indexOf('-og-') !== -1 ? .25 : .0625;
+					opacity = scaleValues(opacity, id.indexOf('-og-') !== -1 ? .25 : .0625);
 				}
 				map.setPaintProperty(id, item.key, opacity);
 			});
@@ -1144,6 +1149,26 @@ function clamp(value, lower, upper) {
 
 function valueOrDefault(value, defaultValue) {
 	return value === undefined ? defaultValue : value;
+}
+
+function scaleValues(obj, value) {
+	var result;
+
+	if (!isNaN(obj)) {
+		return obj * value;
+	}
+
+	result = {};
+	Object.keys(obj).forEach(function(key) {
+		if (key === 'stops') {
+			result[key] = obj[key].map(function(element) {
+				return [element[0], element[1] * value];
+			});
+		} else {
+			result[key] = obj[key];
+		}
+	});
+	return result;
 }
 
 function removePrefix(value) {
