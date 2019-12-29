@@ -146,11 +146,24 @@
       "source": "openmaptiles",
       "source-layer": "landuse",
       "filter": [
-        "all",
+        "any",
         [
           "==",
           "class",
           "grass"
+        ],
+        [
+          "all",
+          [
+            "==",
+            "class",
+            "airport"
+          ],
+          [
+            "==",
+            "type",
+            "airport"
+          ]
         ]
       ],
       "paint": {
@@ -305,12 +318,20 @@
       "type": "fill",
       "metadata": {},
       "source": "openmaptiles",
-      "source-layer": "aeroway",
+      "source-layer": "landuse",
       "minzoom": 11,
       "filter": [
-        "==",
-        "$type",
-        "Polygon"
+        "all",
+        [
+          "==",
+          "class",
+          "airport"
+        ],
+        [
+          "==",
+          "type",
+          "runway"
+        ]
       ],
       "paint": {
         "fill-color": "rgba(229,228,224,1)",
@@ -323,7 +344,7 @@
       "metadata": {},
       "source": "openmaptiles",
       "source-layer": "aeroway",
-      "minzoom": 11,
+      "minzoom": 9,
       "filter": [
         "all",
         [
@@ -339,19 +360,15 @@
       ],
       "paint": {
         "line-color": "rgba(240,237,233,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              11,
-              3
-            ],
-            [
-              20,
-              16
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.5],
+          ["zoom"],
+          9,
+          1,
+          18,
+          80
+        ]
       }
     },
     {
@@ -360,7 +377,7 @@
       "metadata": {},
       "source": "openmaptiles",
       "source-layer": "aeroway",
-      "minzoom": 11,
+      "minzoom": 9,
       "filter": [
         "all",
         [
@@ -376,19 +393,15 @@
       ],
       "paint": {
         "line-color": "rgba(240,237,233,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              11,
-              0.5
-            ],
-            [
-              20,
-              6
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.5],
+          ["zoom"],
+          9,
+          0.5,
+          18,
+          20
+        ]
       }
     },
     {
@@ -3233,17 +3246,9 @@
       "source": "openmaptiles",
       "source-layer": "building",
       "filter": [
-        "all",
-        [
-          "!=",
-          ["get", "type"],
-          "building:part"
-        ],
-        [
-          "==",
-          ["get", "underground"],
-          "false"
-        ]
+        "==",
+        ["get", "underground"],
+        "false"
       ],
       "minzoom": 14,
       "layout": {
