@@ -344,6 +344,7 @@ var railwayFeatureArray = [];
 				var step = !reverse ? 1 : -1;
 				var baseFeature = turf.lineString(coordinates);
 				var baseLocation = getLocationAlongLine(baseFeature, coordinates[start]);
+				var baseAltitudeMeter = baseAltitude * unit * 1000;
 				var i, distance;
 
 				for (i = start; i !== end; i += step) {
@@ -351,7 +352,7 @@ var railwayFeatureArray = [];
 					if (distance > .4) {
 						break;
 					}
-					coordinates[i][2] = (baseAltitude + (altitude - baseAltitude) * easeInOutQuad(distance / .4)) * unit * 1000;
+					coordinates[i][2] = (baseAltitudeMeter + ((coordinates[i][2] || 0) - baseAltitudeMeter) * easeInOutQuad(distance / .4));
 				}
 			}
 
@@ -408,6 +409,9 @@ var railwayFeatureArray = [];
 					}
 				}
 			}
+			interpolateCoordinates(coordinates,
+				start && start.altitude !== undefined ? .4 : 0,
+				end && end.altitude !== undefined ? .4 : 0);
 			if (altitude) {
 				coordinates.forEach(function(coord) {
 					coord[2] = altitude * unit * 1000;
@@ -1069,6 +1073,43 @@ function filterFeatures(featureCollection, fn) {
 	return turf.featureCollection(featureCollection.features.filter(function(feature) {
 		return fn(feature.properties);
 	}));
+}
+
+function interpolateCoordinates(coords, start, end) {
+	var feature = turf.lineString(coords);
+	var length = turf.length(feature);
+	var interpolatedCoords, d, i;
+
+	if (start) {
+		interpolatedCoords = [];
+		for (d = 0; d <= start; d += .05) {
+			interpolatedCoords.push(turf.getCoord(turf.along(feature, Math.min(d, length))));
+			if (d >= length) {
+				break;
+			}
+		}
+		for (i = 0; i < coords.length; i++) {
+			if (getLocationAlongLine(feature, coords[i]) > start) {
+				break;
+			}
+		}
+		Array.prototype.splice.apply(coords, [0, i].concat(interpolatedCoords));
+	}
+	if (end) {
+		interpolatedCoords = [];
+		for (d = length; d >= length - end; d -= .05) {
+			interpolatedCoords.unshift(turf.getCoord(turf.along(feature, Math.max(d, 0))));
+			if (d <= 0) {
+				break;
+			}
+		}
+		for (i = coords.length; i > 0; i--) {
+			if (getLocationAlongLine(feature, coords[i - 1]) < length - end) {
+				break;
+			}
+		}
+		Array.prototype.splice.apply(coords, [i, coords.length - i].concat(interpolatedCoords));
+	}
 }
 
 function setLayerProps(map, id, props) {
