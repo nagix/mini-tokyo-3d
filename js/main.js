@@ -2332,7 +2332,7 @@ function getTimetableFileName() {
 	}
 
 	return 'timetable-' +
-		(JapaneseHolidays.isHoliday(date) || date.getDay() == 6 || date.getDay() == 0 ? 'holiday' : 'weekday') +
+		(JapaneseHolidays.isHoliday(date) || (date.getFullYear() === 2019 && date.getMonth() === 11 && date.getDate() >= 28) || (date.getFullYear() === 2020 && date.getMonth() === 0 && date.getDate() <= 5) || date.getDay() == 6 || date.getDay() == 0 ? 'holiday' : 'weekday') +
 		'.json';
 }
 
