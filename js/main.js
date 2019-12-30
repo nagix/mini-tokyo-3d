@@ -1060,6 +1060,9 @@ map.once('styledata', function () {
 			altitudeChanged = (userData.altitude < 0 && p.altitude >= 0) || (userData.altitude >= 0 && p.altitude < 0);
 			userData.altitude = p.altitude;
 			bearing = userData.bearing = p.bearing + (train.direction < 0 ? 180 : 0);
+if (isNaN(coord[0]) || isNaN(coord[1])) {
+	console.log(train)
+}
 			mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
 
 			animation = animations[train.animationID];
@@ -1241,9 +1244,11 @@ map.once('styledata', function () {
 					}
 					activeTrainLookup[train.t] = train;
 					train.cars = [];
+					updateTrainProps(train);
 					departureTime = getTime(train.departureTime) + (train.delay || 0);
-					if (now >= departureTime) {
-						updateTrainProps(train);
+					if (!train.tt && train.sectionLength !== 0) {
+						repeat();
+					} else if (now >= departureTime) {
 						repeat(now - departureTime);
 					} else {
 						stand();
@@ -1253,17 +1258,26 @@ map.once('styledata', function () {
 				function stand(final) {
 					var departureTime = getTime(train.departureTime) + (train.delay || 0);
 
+					if (!train.tt) {
+						final = !setSectionData(train, undefined, !realtimeTrainLookup[train.t]);
+					}
+
 					if (!final) {
 						updateTrainProps(train);
 						updateTrainShape(train, 0);
 					}
-					setTrainStandingStatus(train, true);
-					train.animationID = startAnimation({
-						complete: !final ? repeat : function() {
-							stopTrain(train);
-						},
-						duration: Math.max(departureTime - Date.now(), MIN_STANDING_DURATION)
-					});
+
+					if (!train.tt && train.sectionLength !== 0) {
+						repeat();
+					} else {
+						setTrainStandingStatus(train, true);
+						train.animationID = startAnimation({
+							complete: final ? function() {
+								stopTrain(train);
+							} : train.tt ? repeat : stand,
+							duration: train.tt ? Math.max(departureTime - Date.now(), MIN_STANDING_DURATION) : final ? MIN_STANDING_DURATION : 15000
+						});
+					}
 				}
 
 				function repeat(elapsed) {
@@ -1288,7 +1302,7 @@ map.once('styledata', function () {
 
 						// Guard for an unexpected error
 						// Probably a bug due to duplicate train IDs in timetable lookup
-						if (!train.cars || train.timetableIndex + 1 >= train.tt.length) {
+						if (!train.cars || train.tt && train.timetableIndex + 1 >= train.tt.length) {
 							stopTrain(train);
 							return;
 						}
@@ -1460,14 +1474,15 @@ map.once('styledata', function () {
 			'<br>' + getLocalizedTrainTypeTitle(train.y) + ' ' +
 			(destination ? dict['for'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train.d)) +
 			'<br><strong>' + dict['train-number'] + ':</strong> ' + train.n +
+			(!train.tt ? ' <span class="desc-caution">' + dict['special'] + '</span>' : '') +
 			'<br>' + (delay >= 60000 ? '<span class="desc-caution">' : '') +
 			'<strong>' + dict[train.standing ? 'standing-at' : 'previous-stop'] + ':</strong> ' +
 			getLocalizedStationTitle(train.departureStation) +
-			' ' + getTimeString(getTime(train.departureTime) + delay) +
+			(train.departureTime ? ' ' + getTimeString(getTime(train.departureTime) + delay) : '') +
 			(train.arrivalStation ?
 				'<br><strong>' + dict['next-stop'] + ':</strong> ' +
 				getLocalizedStationTitle(train.arrivalStation) +
-				' ' + getTimeString(getTime(train.arrivalTime) + delay) : '') +
+				(train.arrivalTime ? ' ' + getTimeString(getTime(train.arrivalTime) + delay) : '') : '') +
 			(delay >= 60000 ? '<br>' + dict['delay'].replace('$1', Math.floor(delay / 60000)) + '</span>' : '') +
 			(railway.status && lang === 'ja' ? '<br><span class="desc-caution"><strong>' + railway.status + ':</strong> ' + railway.text + '</span>' : '');
 	}
@@ -1509,6 +1524,9 @@ map.once('styledata', function () {
 		if (train.delayMarker) {
 			trainLayers.removeObject(train.delayMarker, 1000);
 			delete train.delayMarker;
+		}
+		if (!train.tt) {
+			delete timetableRefData.splice(timetableRefData.indexOf(train), 1);
 		}
 	}
 
@@ -1564,11 +1582,16 @@ map.once('styledata', function () {
 				var delay = trainRef['odpt:delay'] * 1000;
 				var carComposition = trainRef['odpt:carComposition'];
 				var trainType = removePrefix(trainRef['odpt:trainType']);
+				var origin = removePrefix(trainRef['odpt:originStation']);
 				var destination = removePrefix(trainRef['odpt:destinationStation']);
 				var id = adjustTrainID(removePrefix(trainRef['owl:sameAs']));
-				var train = trainLookup[id];
+				var toStation = removePrefix(trainRef['odpt:toStation']);
+				var fromStation = removePrefix(trainRef['odpt:fromStation']);
+				// Retry lookup replacing Marunouchi line with MarunouchiBranch line
+				var train = trainLookup[id] || trainLookup[id.replace('.Marunouchi.', '.MarunouchiBranch.')];
 				var activeTrain = activeTrainLookup[id];
 				var changed = false;
+				var railway, railwayRef, direction;
 
 				if (train) {
 					realtimeTrainLookup[id] = train;
@@ -1584,12 +1607,45 @@ map.once('styledata', function () {
 						train.y = trainType;
 						changed = true;
 					}
-					if (train.ds && destination && train.ds[0] !== destination[0]) {
-						train.ds = destination;
+					if (truncateTrainTimetable(train, origin, destination)) {
 						changed = true;
+					}
+					if (!train.tt) {
+						train.ts = toStation;
+						train.fs = fromStation;
 					}
 					if (changed && activeTrainLookup[id]) {
 						stopTrain(train);
+					}
+				} else {
+					railway = removePrefix(trainRef['odpt:railway']);
+					// Exclude Namboku line trains that connect to/from Mita line
+					if (railway === 'TokyoMetro.Namboku' && (origin[0].indexOf('Toei.Mita') === 0 || destination[0].indexOf('Toei.Mita') === 0)) {
+						return;
+					}
+					railwayRef = railwayLookup[railway];
+					direction = removePrefix(trainRef['odpt:railDirection']);
+					if (railwayRef.color) {
+						train = {
+							t: id,
+							id: id + '.Today',
+							r: railway,
+							y: trainType,
+							n: trainRef['odpt:trainNumber'],
+							os: origin,
+							d: direction,
+							ds: destination,
+							ts: toStation,
+							fs: fromStation,
+							start: Date.now(),
+							end: Date.now() + 86400000,
+							delay: delay,
+							direction: direction === railwayRef.ascending ? 1 : -1,
+							altitude: railwayRef.altitude,
+							carComposition: carComposition || railwayRef.carComposition
+						};
+						timetableRefData.push(train);
+						realtimeTrainLookup[id] = trainLookup[id] = train;
 					}
 				}
 				lastDynamicUpdate[removePrefix(trainRef['odpt:operator'])] = trainRef['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2');
@@ -1955,7 +2011,7 @@ function updateTimetableRefData(data) {
 		var length = table.length;
 		var previousTableIDs = train.pt;
 		var nextTableIDs = train.nt;
-		var previousTrain, nextTrain, nextTable;
+		var previousTrain, nextTrain;
 
 		if (previousTableIDs) {
 			previousTrain = lookup[previousTableIDs[0]];
@@ -1963,15 +2019,14 @@ function updateTimetableRefData(data) {
 		if (nextTableIDs) {
 			nextTrain = lookup[nextTableIDs[0]];
 			if (nextTrain) {
-				nextTable = nextTrain.tt;
-				table[length - 1].dt = nextTable[0].dt;
+				table[length - 1].d = nextTrain.tt[0].d;
 			}
 		}
 
-		train.start = getTime(table[0].dt) - STANDING_DURATION;
-		train.end = getTime(table[length - 1].dt
-			|| table[length - 1].at
-			|| table[Math.max(length - 2, 0)].dt);
+		train.start = getTime(table[0].d) - STANDING_DURATION;
+		train.end = getTime(table[length - 1].a
+			|| table[length - 1].d
+			|| table[Math.max(length - 2, 0)].d);
 		train.direction = direction;
 		train.altitude = railway.altitude;
 		train.carComposition = railway.carComposition;
@@ -2248,6 +2303,10 @@ function valueOrDefault(value, defaultValue) {
 	return value === undefined ? defaultValue : value;
 }
 
+function numberOrDefault(value, defaultValue) {
+	return isNaN(value) ? defaultValue : value;
+}
+
 function scaleValues(obj, value) {
 	var result;
 
@@ -2307,6 +2366,45 @@ function buildLookup(array, key) {
 		lookup[element[key]] = element;
 	});
 	return lookup;
+}
+
+function truncateTrainTimetable(train, origin, destination) {
+	var tt = train.tt;
+	var os = train.os;
+	var ds = train.ds;
+	var changed = false;
+	var i, ilen, item;
+
+	if (os && origin && os[0] !== origin[0]) {
+		train.os = origin;
+		if (tt) {
+			for (i = 0, ilen = tt.length; i < ilen; i++) {
+				item = tt[i];
+				if (item.s === origin[0]) {
+					delete item.a;
+					tt.splice(0, i);
+					break;
+				}
+			}
+		}
+		changed = true;
+	}
+	if (ds && destination && ds[0] !== destination[0]) {
+		train.ds = destination;
+		if (tt) {
+			for (i = 0, ilen = tt.length; i < ilen; i++) {
+				item = tt[i];
+				if (item.s === destination[0]) {
+					item.a = item.a || item.d;
+					delete item.d;
+					tt.splice(i + 1);
+					break;
+				}
+			}
+		}
+		changed = true;
+	}
+	return changed;
 }
 
 function getJSTDate(time) {
@@ -2433,39 +2531,63 @@ function getTimetableFileName() {
 		'.json';
 }
 
-function setSectionData(train, index) {
+function setSectionData(train, index, final) {
+	var stations = railwayLookup[train.r].stations;
+	var direction = train.direction;
+	var destination = (train.ds || [])[0];
 	var table = train.tt;
 	var delay = train.delay || 0;
 	var now = Date.now();
-	var index = valueOrDefault(index, table.reduce(function(acc, cur, i) {
-		return getTime(cur.dt) + delay <= now ? i : acc;
-	}, 0));
-	var current = table[index];
-	var next = table[index + 1];
-	var stations = railwayLookup[train.r].stations;
-	var departureStation = current.ds || current.as;
-	var arrivalStation = next && (next.as || next.ds);
-	var currentSection, nextSection;
+	var ttIndex, current, next, departureStation, arrivalStation, currentSection, nextSection, actualSection, finalSection;
 
-	if (train.direction > 0) {
+	if (table) {
+		ttIndex = valueOrDefault(index, table.reduce(function(acc, cur, i) {
+			return getTime(cur.d) + delay <= now ? i : acc;
+		}, 0));
+		current = table[ttIndex];
+		next = table[ttIndex + 1];
+		departureStation = current.s;
+		arrivalStation = next && next.s;
+	} else {
+		departureStation = train.fs || train.ts;
+		arrivalStation = train.ts || train.fs;
+	}
+
+	if (direction > 0) {
 		currentSection = stations.indexOf(departureStation);
 		nextSection = stations.indexOf(arrivalStation, currentSection);
+		finalSection = stations.indexOf(destination, currentSection);
 	} else {
 		currentSection = stations.lastIndexOf(departureStation);
 		nextSection = stations.lastIndexOf(arrivalStation, currentSection);
+		finalSection = stations.lastIndexOf(destination, currentSection);
 	}
 
-	train.timetableIndex = index;
-	train.departureStation = departureStation;
-	train.departureTime = current.dt || current.at;
+	if (table) {
+		train.timetableIndex = ttIndex;
+		train.departureStation = departureStation;
+		train.departureTime = current.d || current.a;
 
-	if (currentSection >= 0 && nextSection >= 0) {
-		train.sectionIndex = currentSection;
-		train.sectionLength = nextSection - currentSection;
-		train.arrivalStation = arrivalStation;
-		train.arrivalTime = next.at || next.dt;
+		if (currentSection >= 0 && nextSection >= 0) {
+			train.sectionIndex = currentSection;
+			train.sectionLength = nextSection - currentSection;
+			train.arrivalStation = arrivalStation;
+			train.arrivalTime = next.a || next.d;
 
-		return true;
+			return true;
+		}
+
+	} else {
+		actualSection = numberOrDefault(train.sectionIndex + train.sectionLength, currentSection);
+		train.departureStation = departureStation;
+
+		if (currentSection !== finalSection && ((!final && nextSection >= 0) || (final && finalSection >= 0))) {
+			train.sectionIndex = actualSection;
+			train.sectionLength = (final ? finalSection : nextSection) - actualSection;
+			train.arrivalStation = arrivalStation === departureStation ? stations[currentSection + direction] : arrivalStation;
+
+			return true;
+		}
 	}
 
 	train.arrivalStation = undefined;

@@ -615,28 +615,20 @@ Object.keys(trainTimetableRefData).forEach(function(key) {
 			if (nextTable || prevTable) {
 				r = (nextTable || prevTable).r;
 				tt.forEach(function(obj) {
-					var as = obj.as;
-					var ds = obj.ds;
-
-					if (as) {
-						obj.as = as.replace(railwayID, r);
-					}
-					if (ds) {
-						obj.ds = ds.replace(railwayID, r);
-					}
+					obj.s = obj.s.replace(railwayID, r);
 				});
 			}
 
 			if (nextTable) {
 				ntt = nextTable.tt;
-				if (!tt[tt.length - 1].ds && !ntt[0].as) {
+				if (!tt[tt.length - 1].d && !ntt[0].a) {
 					merge(ntt[0], tt.pop());
 				}
 				Array.prototype.splice.apply(ntt, [0, 0].concat(tt));
 				delete nextTable.pt;
 			} else if (prevTable) {
 				ptt = prevTable.tt;
-				if (!tt[0].as && !ptt[ptt.length - 1].ds) {
+				if (!tt[0].a && !ptt[ptt.length - 1].d) {
 					merge(ptt[ptt.length - 1], tt.shift());
 				}
 				Array.prototype.splice.apply(ptt, [ptt.length, 0].concat(tt));
@@ -653,29 +645,23 @@ Object.keys(trainTimetableRefData).forEach(function(key) {
 	trainTimetableRefData[key].filter(function(table) {
 		var tt = table.tt;
 		return table.r === RAILWAY_KEIYO &&
-			(tt[0].ds === STATION_KEIYO_NISHIFUNABASHI ||
-			tt[tt.length - 1].as === STATION_KEIYO_NISHIFUNABASHI);
+			(tt[0].s === STATION_KEIYO_NISHIFUNABASHI ||
+			tt[tt.length - 1].s === STATION_KEIYO_NISHIFUNABASHI);
 	}).forEach(function(table) {
 		var tt = table.tt;
-		var startFromNishiFunabashi = tt[0].ds === STATION_KEIYO_NISHIFUNABASHI;
+		var startFromNishiFunabashi = tt[0].s === STATION_KEIYO_NISHIFUNABASHI;
 		var direction = table.d;
 		var railwayID = table.r = (startFromNishiFunabashi && direction === 'Outbound') ||
 			(!startFromNishiFunabashi && direction === 'Inbound') ?
 			RAILWAY_KEIYOKOYABRANCH : RAILWAY_KEIYOFUTAMATABRANCH;
 
-		table.ds = table.ds.map(function(station) {
-			return station.replace(RAILWAY_KEIYO, railwayID);
+		[table.os, table.ds].forEach(function(stations) {
+			stations.forEach(function(station, i) {
+				stations[i] = station.replace(RAILWAY_KEIYO, railwayID);
+			});
 		});
 		tt.forEach(function(obj) {
-			var as = obj.as;
-			var ds = obj.ds;
-
-			if (as) {
-				obj.as = as.replace(RAILWAY_KEIYO, railwayID);
-			}
-			if (ds) {
-				obj.ds = ds.replace(RAILWAY_KEIYO, railwayID);
-			}
+			obj.s = obj.s.replace(RAILWAY_KEIYO, railwayID);
 		});
 	});
 });
@@ -688,20 +674,13 @@ Object.keys(trainTimetableRefData).forEach(function(key) {
 		var tt = table.tt;
 
 		tt.forEach(function(obj, i) {
-			var as = obj.as;
-			var ds = obj.ds;
 			var prev = tt[i - 1] || {};
 			var next = tt[i + 1] || {};
 
-			if ((as || ds) === STATION_OEDO_TOCHOMAE &&
-				(prev.as || prev.ds) !== STATION_OEDO_SHINJUKUNISHIGUCHI &&
-				(next.as || next.ds) !== STATION_OEDO_SHINJUKUNISHIGUCHI) {
-				if (as) {
-					obj.as += '.1';
-				}
-				if (ds) {
-					obj.ds += '.1';
-				}
+			if (obj.s === STATION_OEDO_TOCHOMAE &&
+				prev.s !== STATION_OEDO_SHINJUKUNISHIGUCHI &&
+				next.s !== STATION_OEDO_SHINJUKUNISHIGUCHI) {
+				obj.s += '.1';
 			}
 		})
 	});
@@ -1310,15 +1289,21 @@ function loadTrainTimetableRefData() {
 						r: removePrefix(table['odpt:railway']),
 						y: removePrefix(table['odpt:trainType']),
 						n: table['odpt:trainNumber'],
+						os: removePrefix(table['odpt:originStation']),
 						d: removePrefix(table['odpt:railDirection']),
 						ds: removePrefix(table['odpt:destinationStation']),
 						nt: removePrefix(table['odpt:nextTrainTimetable']),
 						tt: table['odpt:trainTimetableObject'].map(function(obj) {
+							var as = removePrefix(obj['odpt:arrivalStation']);
+							var ds = removePrefix(obj['odpt:departureStation']);
+
+							if (as && ds && as !== ds) {
+								console.log('Error: ' + as + ' != ' + ds);
+							}
 							return cleanKeys({
-								at: obj['odpt:arrivalTime'],
-								dt: obj['odpt:departureTime'],
-								as: removePrefix(obj['odpt:arrivalStation']),
-								ds: removePrefix(obj['odpt:departureStation'])
+								a: obj['odpt:arrivalTime'],
+								d: obj['odpt:departureTime'],
+								s: as || ds
 							});
 						}),
 						pt: removePrefix(table['odpt:previousTrainTimetable'])
