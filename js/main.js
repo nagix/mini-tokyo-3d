@@ -1692,22 +1692,68 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 
 	function loadRealtimeFlightData() {
 		Promise.all([
+			loadJSON('https://mini-tokyo.appspot.com/atisinfo'),
 			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=' + OPERATORS_FOR_FLIGHTINFORMATION.map(function(operator) {
 				return 'odpt.Operator:' + operator;
 			}).join(',')),
 			loadJSON(API_URL + 'odpt:FlightInformationDeparture?odpt:operator=' + OPERATORS_FOR_FLIGHTINFORMATION.map(function(operator) {
 				return 'odpt.Operator:' + operator;
 			}).join(','))
-		]).then(function(flightRefData) {
+		]).then(function([atisData, arrivalData, departureData]) {
+			var landing = atisData.landing;
+			var departure = atisData.departure;
+			var arr = {};
+			var depRoutes = {};
+			var north = true;
 			var flightQueue = {};
 
-			concat(flightRefData).forEach(function(flightRef) {
+			if (includes(landing, ['L22', 'L23'])) { // South wind, good weather
+				arrRoutes = {S: 'L23', N: 'L22'};
+				depRoutes = {S: '16R', N: '16L'};
+				north = false;
+			} else if (includes(landing, ['I22', 'I23'])) { // South wind, bad weather
+				arrRoutes = {S: 'I23', N: 'I22'};
+				depRoutes = {S: '16R', N: '16L'};
+				north = false;
+			} else if (includes(landing, ['I34L', 'H34R'])) { // North wind, good weather
+				arrRoutes = {S: 'IX34L', N: 'H34R'};
+				depRoutes = {S: '05', N: '34R'};
+				north = true;
+			} else if (includes(landing, ['I34L', 'I34R'])) { // North wind, bad weather
+				arrRoutes = {S: 'IZ34L', N: 'H34R'};
+				depRoutes = {S: '05', N: '34R'};
+				north = true;
+			} else if (landing.length !== 1) {
+				console.log('Unexpected RWY: ' + landing);
+			} else { // Midnight
+				if (includes(landing, 'I23')) {
+					arrRoutes = {S: 'I23.N', N: 'I23.N'};
+					north = false;
+				} else if (includes(landing, 'L23')) {
+					arrRoutes = {S: 'L23.N', N: 'L23.N'};
+					north = false;
+				} else if (includes(landing, 'I34R')) {
+					arrRoutes = {S: 'I34R.N', N: 'I34R.N'};
+					north = true;
+				} else {
+					console.log('Unexpected LDG RWY: ' + landing[0]);
+				}
+				if (includes(departure, '16L')) {
+					depRoutes = {S: '16L.N', N: '16L.N'};
+				} else if (includes(departure, '05')) {
+					depRoutes = {S: '05.N', N: '05.N'};
+				} else {
+					console.log('Unexpected DEP RWY: ' + departure[0]);
+				}
+			}
+
+			arrivalData.concat(departureData).forEach(function(flightRef) {
 				var id = removePrefix(flightRef['owl:sameAs']);
 				var flight = flightLookup[id];
 				var status = removePrefix(flightRef['odpt:flightStatus']);
 				var maxSpeed = MAX_FLIGHT_SPEED;
 				var acceleration = FLIGHT_ACCELERATION;
-				var departureAirport, arrivalAirport, destinationAirport, originAirport, airport, direction, runway, feature, departureTime, arrivalTime, duration;
+				var departureAirport, arrivalAirport, destinationAirport, originAirport, airport, direction, route, feature, departureTime, arrivalTime, duration;
 
 				if (!flight) {
 					if (status === 'Cancelled') {
@@ -1719,13 +1765,11 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 					originAirport = removePrefix(flightRef['odpt:originAirport']);
 					airport = airportLookup[destinationAirport || originAirport];
 					direction = airport ? airport.direction : 'S';
-					runway = departureAirport === 'NRT' ? departureAirport + '.34L' :
-						arrivalAirport === 'NRT' ? arrivalAirport + '.34R' :
-						departureAirport === 'HND' && direction === 'S' ? departureAirport + '.05' :
-						departureAirport === 'HND' && direction === 'N' ? departureAirport + '.34R' :
-						arrivalAirport === 'HND' && direction === 'S' ? arrivalAirport + '.34L' :
-						arrivalAirport === 'HND' && direction === 'N' ? arrivalAirport + '.34R' : undefined;
-					feature = featureLookup[runway + (departureAirport ? '.Dep' : '.Arr')];
+					route = departureAirport === 'NRT' ? 'NRT.' + (north ? '34L' : '16R') + '.Dep' :
+						arrivalAirport === 'NRT' ? 'NRT.' + (north ? '34R' : '16L') + '.Arr' :
+						departureAirport === 'HND' ? 'HND.' + depRoutes[direction] + '.Dep' :
+						arrivalAirport === 'HND' ? 'HND.' + arrRoutes[direction] + '.Arr' : undefined;
+					feature = featureLookup[route];
 					if (feature) {
 						flight = flightLookup[id] = {
 							id: id,
@@ -1735,7 +1779,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 							ar: arrivalAirport,
 							ds: destinationAirport,
 							or: originAirport,
-							runway: runway,
+							runway: route.replace(/^([^.]+\.)[A-Z]*([^.]+).+/, '$1$2'),
 							feature: feature
 						};
 					} else {
@@ -2297,6 +2341,20 @@ function merge(target, source) {
 
 function clamp(value, lower, upper) {
 	return Math.min(Math.max(value, lower), upper);
+}
+
+function includes(array, value) {
+	var i, ilen;
+
+	if (!Array.isArray(value)) {
+		return array.indexOf(value) !== -1;
+	}
+	for (i = 0, ilen = value.length; i < ilen; i++) {
+		if (array.indexOf(value[i]) === -1) {
+			return false;
+		}
+	}
+	return true;
 }
 
 function valueOrDefault(value, defaultValue) {
