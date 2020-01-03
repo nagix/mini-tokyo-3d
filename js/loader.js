@@ -599,7 +599,7 @@ timetableLookup = buildLookup(concat([trainTimetableRefData.weekday, trainTimeta
 Object.keys(trainTimetableRefData).forEach(function(key) {
 	RAILWAYS_FOR_SOBURAPID.forEach(function(railwayID) {
 		trainTimetableRefData[key].filter(function(table) {
-			return table.r === railwayID && TRAINTYPES_FOR_SOBURAPID.indexOf(table.y) !== -1;
+			return table.r === railwayID && includes(TRAINTYPES_FOR_SOBURAPID, table.y);
 		}).forEach(function(table) {
 			var tt = table.tt;
 			var nt = table.nt;
@@ -682,7 +682,7 @@ Object.keys(trainTimetableRefData).forEach(function(key) {
 				next.s !== STATION_OEDO_SHINJUKUNISHIGUCHI) {
 				obj.s += '.1';
 			}
-		})
+		});
 	});
 });
 
@@ -879,7 +879,7 @@ map.once('styledata', function () {
 	control._updateTitle = function() {
 		mapboxgl.FullscreenControl.prototype._updateTitle.apply(this, arguments);
 		this._fullscreenButton.title = (this._isFullscreen() ? 'Exit' : 'Enter') + ' fullscreen';
-	}
+	};
 	map.addControl(control);
 
 	map.addControl(new MapboxGLButtonControl([{
@@ -900,14 +900,14 @@ map.once('styledata', function () {
 				var opacity = item.opacity;
 
 				if (isUndergroundVisible) {
-					opacity = scaleValues(opacity, id.indexOf('-og-') !== -1 ? .25 : .0625);
+					opacity = scaleValues(opacity, includes(id, '-og-') ? .25 : .0625);
 				}
 				map.setPaintProperty(id, item.key, opacity);
 			});
 
 			startAnimation({
-				callback: function(elapsed) {
-					var t = elapsed / 300;
+				callback: function(elapsed, duration) {
+					var t = elapsed / duration;
 
 					[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 						var opacity = isUndergroundVisible ?
@@ -980,7 +980,7 @@ function getNearestPointProperties(line, point) {
 		point: nearestPoint,
 		bearing: bearing + (1 - sign) * 90,
 		distance: properties.dist * sign
-	}
+	};
 }
 
 function getLocationAlongLine(line, point) {
@@ -1167,6 +1167,20 @@ function clamp(value, lower, upper) {
 	return Math.min(Math.max(value, lower), upper);
 }
 
+function includes(array, value) {
+	var i, ilen;
+
+	if (!Array.isArray(value)) {
+		return array.indexOf(value) !== -1;
+	}
+	for (i = 0, ilen = value.length; i < ilen; i++) {
+		if (array.indexOf(value[i]) === -1) {
+			return false;
+		}
+	}
+	return true;
+}
+
 function valueOrDefault(value, defaultValue) {
 	return value === undefined ? defaultValue : value;
 }
@@ -1226,7 +1240,7 @@ function loadJSON(url, delay) {
 					reject(Error(request.statusText));
 				}
 			}
-		}
+		};
 		setTimeout(function() {
 			request.send();
 		}, delay || 0);

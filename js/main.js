@@ -89,6 +89,13 @@ var TRAINTYPES_FOR_SOBURAPID = [
 	'JR-East.LimitedExpress'
 ];
 
+var DATE_FORMAT = {
+	year: 'numeric',
+	month: 'short',
+	day: 'numeric',
+	weekday: 'short'
+};
+
 var SQRT3 = Math.sqrt(3);
 var DEGREE_TO_RADIAN = Math.PI / 180;
 var MEAN_EARTH_RADIUS = 6371008.8;
@@ -98,7 +105,7 @@ var modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat([139.7670, 35.6814]);
 var modelScale = 1 / 2 / Math.PI / EQUATOR_EARTH_RADIUS / Math.cos(35.6814 * DEGREE_TO_RADIAN);
 
 var lang = getLang();
-var isEdge = navigator.userAgent.indexOf('Edge') !== -1;
+var isEdge = includes(navigator.userAgent, 'Edge');
 var isUndergroundVisible = false;
 var isRealtime = true;
 var isWeatherVisible = false;
@@ -199,7 +206,7 @@ MapboxGLButtonControl.prototype.onRemove = function() {
 
 var ThreeLayer = function(id) {
 	this.initialize(id);
-}
+};
 
 ThreeLayer.prototype.initialize = function(id) {
 	this.id = id;
@@ -572,7 +579,7 @@ map.once('styledata', function () {
 
 	map.getStyle().layers.filter(function(layer) {
 		return (layer.type === 'background' || layer.type === 'line' || layer.type.indexOf('fill') === 0) &&
-			layer.id.indexOf('-og-') === -1 && layer.id.indexOf('-ug-') === -1;
+			!includes(layer.id, '-og-') && !includes(layer.id, '-ug-');
 	}).forEach(function(layer) {
 		var id = layer.id;
 		var keys = [];
@@ -645,13 +652,11 @@ map.once('styledata', function () {
 			stopViewAnimation();
 			document.getElementsByClassName('mapbox-ctrl-track')[0].classList.remove('mapbox-ctrl-track-active');
 			if (isUndergroundVisible && !(station.altitude < 0)) {
-				document.getElementsByClassName('mapbox-ctrl-underground')[0]
-					.dispatchEvent(new MouseEvent('click'));
+				dispatchClickEvent('mapbox-ctrl-underground');
 			}
 			if (!isUndergroundVisible && (station.altitude < 0)) {
 				map.once('moveend', function() {
-					document.getElementsByClassName('mapbox-ctrl-underground')[0]
-						.dispatchEvent(new MouseEvent('click'));
+					dispatchClickEvent('mapbox-ctrl-underground');
 				});
 			}
 			map.flyTo({
@@ -701,9 +706,9 @@ map.once('styledata', function () {
 
 	control = new mapboxgl.FullscreenControl();
 	control._updateTitle = function() {
-		mapboxgl.FullscreenControl.prototype._updateTitle.apply(this,arguments);
+		mapboxgl.FullscreenControl.prototype._updateTitle.apply(this, arguments);
 		this._fullscreenButton.title = dict[(this._isFullscreen() ? 'exit' : 'enter') + '-fullscreen'];
-	}
+	};
 	map.addControl(control);
 
 	map.addControl(new MapboxGLButtonControl([{
@@ -724,7 +729,7 @@ map.once('styledata', function () {
 				var opacity = item.opacity;
 
 				if (isUndergroundVisible) {
-					opacity = scaleValues(opacity, id.indexOf('-og-') !== -1 ? .25 : .0625);
+					opacity = scaleValues(opacity, includes(id, '-og-') ? .25 : .0625);
 				}
 				map.setPaintProperty(id, item.key, opacity);
 			});
@@ -877,8 +882,7 @@ map.once('styledata', function () {
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
 				.classList.add('mapbox-ctrl-track-active');
 			if (isUndergroundVisible !== (trackedObject.userData.altitude < 0)) {
-				document.getElementsByClassName('mapbox-ctrl-underground')[0]
-					.dispatchEvent(new MouseEvent('click'));
+				dispatchClickEvent('mapbox-ctrl-underground');
 			}
 		} else {
 			document.getElementsByClassName('mapbox-ctrl-track')[0]
@@ -957,12 +961,7 @@ map.once('styledata', function () {
 			if (isRealtime) {
 				if (Math.floor(now / 1000) !== Math.floor(lastFrameRefresh / 1000)) {
 					var date = getJSTDate();
-					var dateString = date.toLocaleDateString(lang, {
-						year: 'numeric',
-						month: 'short',
-						day: 'numeric',
-						weekday: 'short'
-					});
+					var dateString = date.toLocaleDateString(lang, DATE_FORMAT);
 					if (lang === 'ja' && JapaneseHolidays.isHoliday(date)) {
 						dateString = dateString.replace(/\(.+\)/, '(祝)');
 					}
@@ -1092,8 +1091,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 			if (altitudeChanged) {
 				trainLayers.updateObject(car, 1000);
 				if (trackedObject === car) {
-					document.getElementsByClassName('mapbox-ctrl-underground')[0]
-						.dispatchEvent(new MouseEvent('click'));
+					dispatchClickEvent('mapbox-ctrl-underground');
 				}
 			}
 		}
@@ -1186,7 +1184,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 		wing.rotation.z = body.rotation.z;
 
 		merge(vTail.position, body.position);
-		scale = vTail.scale
+		scale = vTail.scale;
 		scale.x = scale.z = objectScale;
 		scale.y = aircraftScale;
 		vTail.rotation.x = body.rotation.x;
@@ -1553,7 +1551,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 	}
 
 	function adjustTrainID(id, type) {
-		if (TRAINTYPES_FOR_SOBURAPID.indexOf(type) !== -1) {
+		if (includes(TRAINTYPES_FOR_SOBURAPID, type)) {
 			return id.replace(/JR-East\.(NaritaAirportBranch|Narita|Sobu)/, RAILWAY_SOBURAPID);
 		}
 		return id;
@@ -1666,11 +1664,8 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 
 				// Train information text is provided in Japanese only
 				if (railwayID && status && status.ja &&
-					OPERATORS_FOR_TRAINS.indexOf(operatorID) !== -1 &&
-					(status.ja.indexOf('見合わせ') !== -1 ||
-					status.ja.indexOf('折返し運転') !== -1 ||
-					status.ja.indexOf('運休') !== -1 ||
-					status.ja.indexOf('遅延') !== -1)) {
+					includes(OPERATORS_FOR_TRAINS, operatorID) &&
+					status.ja.match(/見合わせ|折返し運転|運休|遅延/)) {
 					railway = railwayLookup[railwayID];
 					railway.status = status.ja;
 					railway.text = text.ja;
@@ -2425,7 +2420,7 @@ function loadJSON(url) {
 					reject(Error(request.statusText));
 				}
 			}
-		}
+		};
 		request.send();
 	});
 }
@@ -2664,6 +2659,11 @@ function setSectionData(train, index, final) {
 
 	train.arrivalStation = undefined;
 	train.arrivalTime = undefined;
+}
+
+function dispatchClickEvent(className) {
+	document.getElementsByClassName(className)[0]
+		.dispatchEvent(new MouseEvent('click'));
 }
 
 function getLang() {
