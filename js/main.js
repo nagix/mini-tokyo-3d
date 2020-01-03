@@ -2271,14 +2271,15 @@ function startTrainAnimation(callback, endCallback, distance, timeFactor, baseDu
 
 	if (distance < MAX_ACC_DISTANCE * 2) {
 		duration = Math.sqrt(distance / acceleration) * 2;
+		accelerationTime = duration / 2;
 	} else {
 		duration = maxAccelerationTime * 2 + (distance - MAX_ACC_DISTANCE * 2) / maxSpeed;
 		if (baseDuration !== undefined) {
 			duration = clamp(duration, baseDuration - MIN_DELAY, baseDuration + 60000 - MIN_DELAY);
-			maxSpeed = (distance - MAX_ACC_DISTANCE * 2) / (duration - maxAccelerationTime * 2);
+			maxSpeed = (acceleration * duration - Math.sqrt(acceleration * (acceleration * duration * duration - 4 * distance))) / 2;
 		}
+		accelerationTime = maxSpeed / acceleration;
 	}
-	accelerationTime = Math.min(maxAccelerationTime, duration / 2);
 
 	return startAnimation({
 		callback: function(elapsed) {
@@ -2290,7 +2291,7 @@ function startTrainAnimation(callback, endCallback, distance, timeFactor, baseDu
 			} else if (left <= accelerationTime) {
 				d = distance - acceleration / 2 * left * left;
 			} else {
-				d = MAX_ACC_DISTANCE + maxSpeed * (elapsed - maxAccelerationTime);
+				d = maxSpeed * (elapsed - accelerationTime / 2);
 			}
 			callback(d / distance);
 		},
