@@ -1284,7 +1284,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 					var duration;
 
 					if (arrivalTime) {
-						duration = getTime(arrivalTime) - getTime(train.departureTime);
+						duration = getTime(arrivalTime) - Date.now() + (elapsed || 0);
 						if (!(duration > 0)) {
 							duration = undefined;
 						}
@@ -2273,16 +2273,22 @@ function startTrainAnimation(callback, endCallback, distance, timeFactor, baseDu
 	var maxSpeed = MAX_SPEED * timeFactor;
 	var acceleration = ACCELERATION * timeFactor * timeFactor;
 	var maxAccelerationTime = MAX_ACCELERATION_TIME / timeFactor;
+	var maxAccDistance = MAX_ACC_DISTANCE;
 	var duration, accelerationTime;
 
-	if (distance < MAX_ACC_DISTANCE * 2) {
+	if (distance <= maxAccDistance * 2) {
 		duration = Math.sqrt(distance / acceleration) * 2;
 		accelerationTime = duration / 2;
 	} else {
-		duration = maxAccelerationTime * 2 + (distance - MAX_ACC_DISTANCE * 2) / maxSpeed;
+		duration = maxAccelerationTime * 2 + (distance - maxAccDistance * 2) / maxSpeed;
 		if (baseDuration !== undefined) {
 			duration = clamp(duration, baseDuration - MIN_DELAY, baseDuration + 60000 - MIN_DELAY);
-			maxSpeed = (acceleration * duration - Math.sqrt(acceleration * (acceleration * duration * duration - 4 * distance))) / 2;
+			maxAccDistance = acceleration * duration * duration / 8;
+			if (distance >= maxAccDistance * 2) {
+				maxSpeed = acceleration * duration / 2;
+			} else {
+				maxSpeed = acceleration * duration / 2 - Math.sqrt(acceleration * (maxAccDistance * 2 - distance));
+			}
 		}
 		accelerationTime = maxSpeed / acceleration;
 	}
