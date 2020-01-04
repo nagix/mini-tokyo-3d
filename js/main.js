@@ -1732,21 +1732,24 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 				console.log('Unexpected RWY: ' + landing);
 			} else { // Midnight
 				if (includes(landing, 'I23')) {
-					arrRoutes = {S: 'I23.N', N: 'I23.N'};
+					arrRoutes = {S: 'IY23', N: 'IY23'};
 					north = false;
 				} else if (includes(landing, 'L23')) {
-					arrRoutes = {S: 'L23.N', N: 'L23.N'};
+					arrRoutes = {S: 'LY23', N: 'LY23'};
 					north = false;
+				} else if (includes(landing, 'I34L')) {
+					arrRoutes = {S: 'IX34L', N: 'IX34L'};
+					north = true;
 				} else if (includes(landing, 'I34R')) {
-					arrRoutes = {S: 'I34R.N', N: 'I34R.N'};
+					arrRoutes = {S: 'IY34R', N: 'IY34R'};
 					north = true;
 				} else {
 					console.log('Unexpected LDG RWY: ' + landing[0]);
 				}
 				if (includes(departure, '16L')) {
-					depRoutes = {S: '16L.N', N: '16L.N'};
+					depRoutes = {S: 'N16L', N: 'N16L'};
 				} else if (includes(departure, '05')) {
-					depRoutes = {S: '05.N', N: '05.N'};
+					depRoutes = {S: 'N05', N: 'N05'};
 				} else {
 					console.log('Unexpected DEP RWY: ' + departure[0]);
 				}
