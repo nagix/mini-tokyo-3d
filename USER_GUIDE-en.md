@@ -44,9 +44,7 @@ In addition to Japanese, Mini Tokyo 3D supports English, Chinese and Korean, whi
 
 <img src="images/reality.jpg" width="604">
 
-Fine tuning of the starting acceleration and maximum speed of the trains was done repeatedly by getting on them, so that they would move in the same way as the actual trains. A train composition changes according to the scale of the map so that it matches the actual train length, and if the scale is above a certain level, the actual number of vehicles obtained from real-time data feed is displayed. The underground tunnel sections of the overground railways and the overground sections of the subways are also completely reproduced.
-
-**[Updated on December 16, 2019]** As there was a possibility of conflict with existing patents, we disabled displaying of vehicles corresponding to the train length.
+Fine tuning of the starting acceleration and maximum speed of the trains was done repeatedly by getting on them, so that they would move in the same way as the actual trains. The underground tunnel sections of the overground railways and the overground sections of the subways are also completely reproduced.
 
 ### Switching Views Between Overground and Underground
 
@@ -75,7 +73,6 @@ You can move your location by panning the map with mouse drag or swipe on the sc
 ### Zooming-In/Out
 
 <img src="images/zoom.jpg" width="244"> <img src="images/zoom-icon.jpg" width="50" align="top">
-"50">
 
 Click or tap the “+” or “−” icon button to zoom in or out the map. You can also zoom in or out by rotating the mouse wheel or pinching in or out of the screen.
 
@@ -104,14 +101,6 @@ See [here](#tracking-mode) for details on tracking modes.
 <img src="images/clock.jpg" width="141">
 
 When [Real-Time Mode](#real-time-mode) is on, the current data and time is displayed at the top left of the screen. It is convenient when accessing from overseas because Japan standard time is always displayed.
-
-### Displaying Vehicle Composition by Zooming-In
-
-<img src="images/train-short.jpg" width="200"> <img src="images/train-long.jpg" width="600">
-
-As you zoom in on the map, you will see a number of connected vehicles based on the actual train vehicle composition. For example, the Yamanote Line has 11 vehicles and the Tokaido Line has 11 or 15 vehicles depending on the train. The number of vehicles is obtained from real-time data.
-
-**[Updated on December 16, 2019]** As there was a possibility of conflict with existing patents, we disabled displaying of vehicles corresponding to the train vehicle composition.
 
 ### Delayed Train
 
@@ -190,6 +179,7 @@ Based on real-time weather information, 8 levels of precipitation intensity are 
 This application uses the following data.
 
 - [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/)
+- [Mapbox](https://www.mapbox.com)
 - [OpenStreetMap](https://www.openstreetmap.org)
 - [Japan Meteorological Agency Precipitation Nowcast](https://www.jma.go.jp/en/radnowc/)
 
@@ -199,8 +189,8 @@ The source of the public transportation data in this application is the Open Dat
 
 This application has been tested with the following browsers. Chrome is recommended. Internet Explorer is not supported.
 
-- Chrome 78 (Mac OS, Windows)
-- FireFox 70 (Mac OS, Windows)
+- Chrome 79 (Mac OS, Windows)
+- FireFox 71 (Mac OS, Windows, iOS)
 - Safari 13 (Mac OS, iOS)
 - Edge 44 (Windows)
 
