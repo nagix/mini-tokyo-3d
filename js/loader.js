@@ -926,16 +926,16 @@ map.once('styledata', function () {
 		className: 'mapbox-ctrl-export',
 		title: 'Export',
 		eventHandler: function() {
-			exportJSON(turf.truncate(railwayFeatureCollection, {precision: 7}), 'features.json', 0);
-			exportJSON(trainTimetableRefData.weekday, 'timetable-weekday.json', 2000);
-			exportJSON(trainTimetableRefData.holiday, 'timetable-holiday.json', 9000);
-			exportJSON(stationRefData, 'stations.json', 16000);
-			exportJSON(railwayRefData, 'railways.json', 16500);
-			exportJSON(railDirectionRefData, 'rail-directions.json', 17000);
-			exportJSON(trainTypeRefData, 'train-types.json', 17500);
-			exportJSON(operatorRefData, 'operators.json', 18000);
-			exportJSON(airportRefData, 'airports.json', 18500);
-			exportJSON(flightStatusRefData, 'flight-status.json', 19000);
+			exportJSON(turf.truncate(railwayFeatureCollection, {precision: 7}), 'features.json.gz', 0);
+			exportJSON(trainTimetableRefData.weekday, 'timetable-weekday.json.gz', 4000);
+			exportJSON(trainTimetableRefData.holiday, 'timetable-holiday.json.gz', 11000);
+			exportJSON(stationRefData, 'stations.json.gz', 18000);
+			exportJSON(railwayRefData, 'railways.json.gz', 18500);
+			exportJSON(railDirectionRefData, 'rail-directions.json.gz', 19000);
+			exportJSON(trainTypeRefData, 'train-types.json.gz', 19500);
+			exportJSON(operatorRefData, 'operators.json.gz', 20000);
+			exportJSON(airportRefData, 'airports.json.gz', 20500);
+			exportJSON(flightStatusRefData, 'flight-status.json.gz', 21000);
 		}
 	}]), 'top-right');
 
@@ -1251,7 +1251,7 @@ function exportJSON(obj, fileName, delay) {
 	setTimeout(function() {
 		var link = document.createElement('a');
 		link.download = fileName;
-		link.href = 'data:application/json,' + encodeURIComponent(JSON.stringify(obj));
+		link.href = 'data:application/gzip;base64,' + btoa(pako.gzip(JSON.stringify(obj), {level: 9, to: 'string'}));
 		link.dispatchEvent(new MouseEvent('click'));
 	}, delay);
 }

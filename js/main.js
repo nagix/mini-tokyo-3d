@@ -304,16 +304,16 @@ ThreeLayer.prototype.pickObject = function(point) {
 
 Promise.all([
 	loadJSON('data/dictionary-' + lang + '.json'),
-	loadJSON('data/railways.json'),
-	loadJSON('data/stations.json'),
-	loadJSON('data/features.json'),
+	loadJSON('data/railways.json.gz'),
+	loadJSON('data/stations.json.gz'),
+	loadJSON('data/features.json.gz'),
 	loadJSON('data/' + getTimetableFileName()),
 	loadJSON('data/trains.json'),
-	loadJSON('data/rail-directions.json'),
-	loadJSON('data/train-types.json'),
-	loadJSON('data/operators.json'),
-	loadJSON('data/airports.json'),
-	loadJSON('data/flight-status.json'),
+	loadJSON('data/rail-directions.json.gz'),
+	loadJSON('data/train-types.json.gz'),
+	loadJSON('data/operators.json.gz'),
+	loadJSON('data/airports.json.gz'),
+	loadJSON('data/flight-status.json.gz'),
 	loadJSON('https://mini-tokyo.appspot.com/e')
 ]).then(function([
 	dict, railwayRefData, stationRefData, railwayFeatureCollection, timetableRefData, trainData,
@@ -2419,16 +2419,18 @@ function removePrefix(value) {
 
 function loadJSON(url) {
 	return new Promise(function(resolve, reject) {
+		var gz = url.match(/\.gz$/);
 		var request = new XMLHttpRequest();
 
 		if (url.indexOf(API_URL) === 0) {
 			url += a;
 		}
 		request.open('GET', url);
+		request.responseType = gz ? 'arraybuffer' : 'text';
 		request.onreadystatechange = function() {
 			if (request.readyState === 4) {
 				if (request.status === 200) {
-					resolve(JSON.parse(request.response));
+					resolve(JSON.parse(gz ? pako.inflate(new Uint8Array(request.response), {to: 'string'}) : request.response));
 				} else {
 					reject(Error(request.statusText));
 				}
@@ -2608,7 +2610,7 @@ function getTimetableFileName() {
 
 	return 'timetable-' +
 		(JapaneseHolidays.isHoliday(date) || (date.getFullYear() === 2019 && date.getMonth() === 11 && date.getDate() >= 28) || (date.getFullYear() === 2020 && date.getMonth() === 0 && date.getDate() <= 5) || date.getDay() == 6 || date.getDay() == 0 ? 'holiday' : 'weekday') +
-		'.json';
+		'.json.gz';
 }
 
 function setSectionData(train, index, final) {
