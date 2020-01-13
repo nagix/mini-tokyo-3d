@@ -31,12 +31,14 @@ var OPERATORS_FOR_RAILWAYS = [
 	'Keikyu',
 	'Keisei',
 	'Hokuso',
+	'Tobu',
 	'Yurikamome',
 	'TokyoMonorail'
 ];
 
 var OPERATORS_FOR_STATIONS = [
 	'JR-East',
+	'JR-Central',
 	'TWR',
 	'TokyoMetro',
 	'Toei',
@@ -46,17 +48,16 @@ var OPERATORS_FOR_STATIONS = [
 	'Keisei',
 	'Hokuso',
 	'Shibayama',
-	'Yurikamome',
-	'JR-Central',
-	'Izukyu',
 	'Tobu',
+	'Aizu',
 	'Seibu',
 	'Tokyu',
 	'SaitamaRailway',
 	'Minatomirai',
-	'Tobu',
 	'ToyoRapid',
-	'Odakyu'
+	'Odakyu',
+	'Yurikamome',
+	'Izukyu'
 ];
 
 var CALENDARS = [
@@ -74,6 +75,7 @@ var OPERATORS_FOR_TRAINTYPES = [
 	'Keikyu',
 	'Keisei',
 	'Hokuso',
+	'Tobu',
 	'Yurikamome'
 ];
 
