@@ -39,6 +39,8 @@ var OPERATORS_FOR_RAILWAYS = [
 var OPERATORS_FOR_STATIONS = [
 	'JR-East',
 	'JR-Central',
+	'JR-West',
+	'JR-Shikoku',
 	'TWR',
 	'TokyoMetro',
 	'Toei',
