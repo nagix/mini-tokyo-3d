@@ -86,7 +86,7 @@
 	"id": "TokyoMetro.F-Liner",
 	"title": {
 		"ko": "F-라이너",
-		"zh": "F-Liner"
+		"zh": "F-liner"
 	}
 }, {
 	"id": "TokyoMetro.LimitedExpress",
@@ -116,7 +116,7 @@
 	"id": "TokyoMetro.S-TRAIN",
 	"title": {
 		"ko": "S-트레인",
-		"zh": "S-TRAIN"
+		"zh": "S-Train"
 	}
 }, {
 	"id": "TokyoMetro.SemiExpress",
@@ -223,8 +223,8 @@
 }, {
 	"id": "Keio.Local",
 	"title": {
-		"ko": "보통",
-		"zh": "普通"
+		"ko": "각역정차",
+		"zh": "各站停车"
 	}
 }, {
 	"id": "Keio.Rapid",
@@ -459,6 +459,72 @@
     "title": {
 		"ko": "TJ 라이너",
 		"zh": "TJ Liner"
+	}
+}, {
+	"id": "Seibu.CommuterExpress",
+    "title": {
+		"ko": "통근 급행",
+		"zh": "通勤急行"
+	}
+}, {
+	"id": "Seibu.CommuterSemiExpress",
+    "title": {
+		"ko": "통근 준급",
+		"zh": "通勤准急"
+	}
+}, {
+	"id": "Seibu.Express",
+    "title": {
+		"ko": "급행",
+		"zh": "急行"
+	}
+}, {
+	"id": "Seibu.F-Liner",
+    "title": {
+		"ko": "F-라이너",
+		"zh": "F-liner"
+	}
+}, {
+	"id": "Seibu.HaijimaLiner",
+    "title": {
+		"ko": "하이지마 라이너",
+		"zh": "拜岛Liner"
+	}
+}, {
+	"id": "Seibu.LimitedExpress",
+    "title": {
+		"ko": "특급",
+		"zh": "特急"
+	}
+}, {
+	"id": "Seibu.Local",
+    "title": {
+		"ko": "각역정차",
+		"zh": "各站停车"
+	}
+}, {
+	"id": "Seibu.RapidExpress",
+    "title": {
+		"ko": "쾌속 급행",
+		"zh": "快速急行"
+	}
+}, {
+	"id": "Seibu.Rapid",
+    "title": {
+		"ko": "쾌속",
+		"zh": "快速"
+	}
+}, {
+	"id": "Seibu.S-TRAIN",
+    "title": {
+		"ko": "S-트레인",
+		"zh": "S-Train"
+	}
+}, {
+	"id": "Seibu.SemiExpress",
+    "title": {
+		"ko": "준급",
+		"zh": "准急"
 	}
 }, {
 	"id": "Yurikamome.Local",

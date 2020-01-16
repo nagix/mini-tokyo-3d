@@ -690,7 +690,39 @@
 		"ko": "도조 선",
 		"zh": "东上线"
 	},
+	"stations": {
+		"index": 22,
+		"delete": 16
+	},
 	"color": "#000099",
+	"carComposition": 10
+}, {
+	"id": "Seibu.Ikebukuro",
+	"title": {
+		"ko": "이케부쿠로 선",
+		"zh": "池袋线"
+	},
+	"stations": {
+		"index": 26,
+		"delete": 5
+	},
+	"color": "#FF6600",
+	"carComposition": 10
+}, {
+	"id": "Seibu.Toshima",
+	"title": {
+		"ko": "도시마 선",
+		"zh": "丰岛线"
+	},
+	"color": "#FF6600",
+	"carComposition": 8
+}, {
+	"id": "Seibu.SeibuYurakucho",
+	"title": {
+		"ko": "세이부 유라쿠초 선",
+		"zh": "西武有乐町线"
+	},
+	"color": "#FF6600",
 	"carComposition": 10
 }, {
 	"id": "Yurikamome.Yurikamome",

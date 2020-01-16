@@ -32,6 +32,7 @@ var OPERATORS_FOR_RAILWAYS = [
 	'Keisei',
 	'Hokuso',
 	'Tobu',
+	'Seibu',
 	'Yurikamome',
 	'TokyoMonorail'
 ];
@@ -78,6 +79,7 @@ var OPERATORS_FOR_TRAINTYPES = [
 	'Keisei',
 	'Hokuso',
 	'Tobu',
+	'Seibu',
 	'Yurikamome'
 ];
 
@@ -931,15 +933,15 @@ map.once('styledata', function () {
 		title: 'Export',
 		eventHandler: function() {
 			exportJSON(turf.truncate(railwayFeatureCollection, {precision: 7}), 'features.json.gz', 0);
-			exportJSON(trainTimetableRefData.weekday, 'timetable-weekday.json.gz', 4000);
-			exportJSON(trainTimetableRefData.holiday, 'timetable-holiday.json.gz', 11000);
-			exportJSON(stationRefData, 'stations.json.gz', 18000);
-			exportJSON(railwayRefData, 'railways.json.gz', 18500);
-			exportJSON(railDirectionRefData, 'rail-directions.json.gz', 19000);
-			exportJSON(trainTypeRefData, 'train-types.json.gz', 19500);
-			exportJSON(operatorRefData, 'operators.json.gz', 20000);
-			exportJSON(airportRefData, 'airports.json.gz', 20500);
-			exportJSON(flightStatusRefData, 'flight-status.json.gz', 21000);
+			exportJSON(trainTimetableRefData.weekday, 'timetable-weekday.json.gz', 5000);
+			exportJSON(trainTimetableRefData.holiday, 'timetable-holiday.json.gz', 12000);
+			exportJSON(stationRefData, 'stations.json.gz', 19000);
+			exportJSON(railwayRefData, 'railways.json.gz', 19500);
+			exportJSON(railDirectionRefData, 'rail-directions.json.gz', 20000);
+			exportJSON(trainTypeRefData, 'train-types.json.gz', 20500);
+			exportJSON(operatorRefData, 'operators.json.gz', 21000);
+			exportJSON(airportRefData, 'airports.json.gz', 21500);
+			exportJSON(flightStatusRefData, 'flight-status.json.gz', 22000);
 		}
 	}]), 'top-right');
 
