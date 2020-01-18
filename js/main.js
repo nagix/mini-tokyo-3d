@@ -648,10 +648,11 @@ map.once('styledata', function () {
 		var station = stationTitleLookup[event.target.value.toUpperCase()];
 
 		if (station && station.coord) {
-			trackedObject = undefined;
+			markedObject = trackedObject = undefined;
 			popup.remove();
+			hideTimetable();
 			stopViewAnimation();
-			document.getElementsByClassName('mapbox-ctrl-track')[0].classList.remove('mapbox-ctrl-track-active');
+			disableTracking();
 			if (isUndergroundVisible && !(station.altitude < 0)) {
 				dispatchClickEvent('mapbox-ctrl-underground');
 			}
@@ -792,10 +793,11 @@ map.once('styledata', function () {
 			isRealtime = !isRealtime;
 			this.title = dict[(isRealtime ? 'exit' : 'enter') + '-realtime'];
 			stopAll();
-			trackedObject = undefined;
+			markedObject = trackedObject = undefined;
 			popup.remove();
+			hideTimetable();
 			stopViewAnimation();
-			document.getElementsByClassName('mapbox-ctrl-track')[0].classList.remove('mapbox-ctrl-track-active');
+			disableTracking();
 			if (isRealtime) {
 				this.classList.add('mapbox-ctrl-realtime-active');
 				document.getElementById('clock').style.display = 'block';
@@ -851,9 +853,25 @@ map.once('styledata', function () {
 	var popup = new mapboxgl.Popup({
 		closeButton: false,
 		closeOnClick: false,
+		maxWidth: '300px',
 		offset: {
 			top: [0, 10],
 			bottom: [0, -30]
+		}
+	});
+
+	document.getElementById('timetable-header').addEventListener('click', function(e) {
+		var timetableElement = document.getElementById('timetable');
+		var timetableButtonElement = document.getElementById('timetable-button');
+
+		if (timetableElement.style.height !== '68px') {
+			timetableElement.style.height = '68px';
+			timetableButtonElement.classList.remove('slide-down');
+			timetableButtonElement.classList.add('slide-up');
+		} else {
+			timetableElement.style.height = '33%';
+			timetableButtonElement.classList.remove('slide-up');
+			timetableButtonElement.classList.add('slide-down');
 		}
 	});
 
@@ -880,14 +898,19 @@ map.once('styledata', function () {
 		trackedObject = trainLayers.pickObject(e.point);
 		if (trackedObject) {
 			startViewAnimation();
-			document.getElementsByClassName('mapbox-ctrl-track')[0]
-				.classList.add('mapbox-ctrl-track-active');
+			enableTracking();
 			if (isUndergroundVisible !== (trackedObject.userData.altitude < 0)) {
 				dispatchClickEvent('mapbox-ctrl-underground');
 			}
+			if (isRealtime && trackedObject.userData.object.tt) {
+				showTimetable();
+				setTrainTimetableText(trackedObject.userData.object);
+			} else {
+				hideTimetable();
+			}
 		} else {
-			document.getElementsByClassName('mapbox-ctrl-track')[0]
-				.classList.remove('mapbox-ctrl-track-active');
+			disableTracking();
+			hideTimetable();
 		}
 
 		/* For development
@@ -987,6 +1010,9 @@ map.once('styledata', function () {
 					popup.setLngLat(adjustCoord(userData.coord, userData.altitude))
 						.setHTML(userData.object.description);
 				}
+				if (trackedObject && trackedObject.userData.object.timetableOffsets) {
+					setTrainTimetableMark(trackedObject.userData.object);
+				}
 			}
 			if (trackedObject) {
 				altitude = trackedObject.userData.altitude;
@@ -1047,6 +1073,17 @@ map.once('styledata', function () {
 			userData = car.userData;
 			userData.object = train;
 			cars.push(car);
+
+			// Reset marked/tracked object if it was marked/tracked before
+			if (markedObject && markedObject.userData.object === train) {
+				markedObject = cars[0];
+			}
+			if (trackedObject && trackedObject.userData.object === train) {
+				trackedObject = cars[0];
+				if (train.tt) {
+					setTrainTimetableText(train);
+				}
+			}
 		}
 
 		pArr = getCoordAndBearing(feature, offset + train._t * train.interval, 1, objectUnit);
@@ -1314,7 +1351,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 							markedObjectIndex = train.cars.indexOf(markedObject);
 							trackedObjectIndex = train.cars.indexOf(trackedObject);
 							if (train.nextTrain) {
-								stopTrain(train);
+								stopTrain(train, true);
 								train = train.nextTrain;
 								if (!activeTrainLookup[train.t]) {
 									start(0);
@@ -1324,6 +1361,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 										}
 										if (trackedObjectIndex !== -1) {
 											trackedObject = train.cars[trackedObjectIndex];
+											setTrainTimetableText(train);
 										}
 									}
 								}
@@ -1472,11 +1510,11 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 
 		train.standing = standing;
 		train.description =
-			'<span class="desc-box" style="background-color: ' + railway.color + ';"></span> ' +
-			'<strong>' + getLocalizedRailwayTitle(railwayID) + '</strong>' +
+			'<div class="desc-header"><div style="background-color: ' + railway.color + ';"></div>' +
+			'<div><strong>' + getLocalizedRailwayTitle(railwayID) + '</strong>' +
 			'<br>' + getLocalizedTrainTypeTitle(train.y) + ' ' +
-			(destination ? dict['for'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train.d)) +
-			'<br><strong>' + dict['train-number'] + ':</strong> ' + train.n +
+			(destination ? dict['for'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train.d)) + '</div></div>' +
+			'<strong>' + dict['train-number'] + ':</strong> ' + train.n +
 			(!train.tt ? ' <span class="desc-caution">' + dict['special'] + '</span>' : '') +
 			'<br>' + (delay >= 60000 ? '<span class="desc-caution">' : '') +
 			'<strong>' + dict[train.standing ? 'standing-at' : 'previous-stop'] + ':</strong> ' +
@@ -1501,11 +1539,11 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 		var delayed = (estimatedTime || actualTime) && scheduledTime !== (estimatedTime || actualTime);
 
 		flight.description =
-			'<span class="desc-box" style="background-color: ' + (operatorLookup[airlineID].tailcolor || '#FFFFFF') + ';"></span> ' +
-			'<strong>' + getLocalizedOperatorTitle(airlineID) + '</strong>' +
+			'<div class="desc-header"><div style="background-color: ' + (operatorLookup[airlineID].tailcolor || '#FFFFFF') + ';"></div>' +
+			'<div><strong>' + getLocalizedOperatorTitle(airlineID) + '</strong>' +
 			'<br>' + flightNumber[0] + ' ' +
-			dict[destination ? 'to' : 'from'].replace('$1', getLocalizedAirportTitle(destination || origin)) +
-			'<br><strong>' + dict['status'] + ':</strong> ' + getLocalizedFlightStatusTitle(flight.s) +
+			dict[destination ? 'to' : 'from'].replace('$1', getLocalizedAirportTitle(destination || origin)) + '</div></div>' +
+			'<strong>' + dict['status'] + ':</strong> ' + getLocalizedFlightStatusTitle(flight.s) +
 			'<br><strong>' + dict['scheduled-' + (destination ? 'departure' : 'arrival') + '-time'] + ':</strong> ' + scheduledTime +
 			(delayed ? '<span class="desc-caution">' : '') +
 			(estimatedTime || actualTime ? '<br><strong>' + (estimatedTime ?
@@ -1515,11 +1553,97 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 			(flightNumber.length > 1 ? '<br><strong>' + dict['code-share'] + ':</strong> ' + flightNumber.slice(1).join(' ') : '');
 	}
 
-	function stopTrain(train) {
+	function setTrainTimetableText(train) {
+		var contentElement = document.getElementById('timetable-content');
+		var sections = [];
+		var stations = [];
+		var offsets = [];
+		var curr = train;
+		var railwayID = train.r;
+		var railway = railwayLookup[railwayID];
+		var destination = train.ds;
+		var delay = train.delay || 0;
+		var section, currSection, i, children, child;
+
+		document.getElementById('timetable-header').innerHTML =
+			'<div class="desc-header"><div style="background-color: ' + railway.color + ';"></div>' +
+			'<div><strong>' + getLocalizedRailwayTitle(railwayID) + '</strong>' +
+			'<br>' + getLocalizedTrainTypeTitle(train.y) + ' ' +
+			(destination ? dict['for'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train.d)) + '</div></div>';
+
+		while (curr.previousTrain) {
+			curr = curr.previousTrain;
+		}
+		while (curr) {
+			section = {};
+			section.start = Math.max(stations.length - 1, 0);
+			curr.tt.forEach(function(s, index) {
+				if (index > 0 || !curr.previousTrain) {
+					stations.push('<div class="station-row">' +
+						'<div class="station-title-box">' + getLocalizedStationTitle(s.s) + '</div>' +
+						'<div class="station-time-box' + (delay >= 60000 ? ' desc-caution' : '') + '">' +
+						(s.a ? getTimeString(getTime(s.a) + delay) : '') + (s.a && s.d ? '<br>' : '') +
+						(s.d ? getTimeString(getTime(s.d) + delay) : '') + '</div></div>');
+				}
+			});
+			section.end = stations.length - 1;
+			section.color = railwayLookup[curr.r].color;
+			sections.push(section);
+			if (curr === train) {
+				currSection = section;
+			}
+			curr = curr.nextTrain;
+		}
+		contentElement.innerHTML = stations.join('');
+
+		children = contentElement.children;
+		for (i = 0; i < children.length; i++) {
+			child = children[i];
+			offsets.push(child.offsetTop + child.getBoundingClientRect().height / 2);
+		}
+		document.getElementById('railway-mark').innerHTML = sections.map(function(section) {
+			return '<line stroke="' + section.color + '" stroke-width="10" x1="12" y1="' + offsets[section.start] + '" x2="12" y2="' + offsets[section.end] + '" stroke-linecap="round" />';
+		}).concat(offsets.map(function(offset) {
+			return '<circle cx="12" cy="' + offset + '" r="3" fill="#ffffff" />';
+		})).join('');
+		train.timetableOffsets = offsets.slice(currSection.start, currSection.end + 1);
+		train.scrollTop = document.getElementById('timetable-body').scrollTop;
+	}
+
+	function setTrainTimetableMark(train) {
+		var bodyElement = document.getElementById('timetable-body');
+		var height = bodyElement.getBoundingClientRect().height;
+		var offsets = train.timetableOffsets;
+		var index = train.timetableIndex;
+		var curr = offsets[index];
+		var next = train.arrivalStation ? offsets[index + 1] : curr;
+		var y = curr + (next - curr) * train._t;
+		var p = Date.now() % 1500 / 1500;
+
+		document.getElementById('train-mark').innerHTML =
+			'<circle cx="22" cy="' + (y + 10) + '" r="' + (7 + p * 15)  + '" fill="#ffffff" opacity="' + (1 - p) + '" />' +
+			'<circle cx="22" cy="' + (y + 10) + '" r="7" fill="#ffffff" />';
+		if (bodyElement.scrollTop === train.scrollTop) {
+			bodyElement.scrollTop = y - height / 2 + 4;
+			train.scrollTop = bodyElement.scrollTop;
+		} else {
+			delete train.scrollTop;
+		}
+	}
+
+	function stopTrain(train, keep) {
 		stopAnimation(train.animationID);
 		if (train.cars) {
 			train.cars.forEach(function(car) {
 				trainLayers.removeObject(car, 1000);
+				if (car === markedObject && !keep) {
+					markedObject = undefined;
+					popup.remove();
+				}
+				if (car === trackedObject && !keep) {
+					trackedObject = undefined;
+					hideTimetable();
+				}
 			});
 		}
 		delete train.cars;
@@ -1618,7 +1742,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 						train.fs = fromStation;
 					}
 					if (changed && activeTrainLookup[id]) {
-						stopTrain(train);
+						stopTrain(train, true);
 					}
 				} else {
 					railway = removePrefix(trainRef['odpt:railway']);
@@ -2101,6 +2225,30 @@ function updateTimetableRefData(data) {
 	document.getElementById('loading-error').style.display = 'block';
 	throw error;
 });
+
+function enableTracking() {
+	document.getElementsByClassName('mapbox-ctrl-track')[0]
+		.classList.add('mapbox-ctrl-track-active');
+}
+
+function disableTracking() {
+	document.getElementsByClassName('mapbox-ctrl-track')[0]
+		.classList.remove('mapbox-ctrl-track-active');
+}
+
+function showTimetable() {
+	var timetableElement = document.getElementById('timetable');
+	var timetableButtonElement = document.getElementById('timetable-button');
+
+	timetableElement.style.display = 'block';
+	timetableElement.style.height = '33%';
+	timetableButtonElement.classList.remove('slide-up');
+	timetableButtonElement.classList.add('slide-down');
+}
+
+function hideTimetable() {
+	document.getElementById('timetable').style.display = 'none';
+}
 
 function colorToRGBArray(color) {
 	var c = parseInt(color.replace('#', ''), 16);

@@ -47,6 +47,7 @@ body {
 	background-color: rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 	display: none;
+	pointer-events: none;
 }
 #date {
 	color: #fff;
@@ -54,6 +55,102 @@ body {
 #time {
 	font-size: 150%;
 	color: #fff;
+}
+#timetable {
+	position: absolute;
+	z-index: 3;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: calc(100% - 20px);
+	max-width: 380px;
+	height: 33%;
+	margin: auto;
+	border-radius: 3px 3px 0 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	display: none;
+	font-size: 130%;
+	color: #fff;
+	transition: height 300ms ease;
+}
+#timetable>div {
+	margin: 10px 0;
+	padding: 0 10px;
+}
+#timetable-header {
+	height: 48px;
+	overflow: hidden;
+	line-height: 150%;
+	cursor: pointer;
+}
+#timetable-body {
+	height: calc(100% - 68px);
+	overflow: auto;
+	line-height: 130%;
+}
+.scroll-box {
+	position: relative;
+}
+#railway-mark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 24px;
+	height: 100%;
+}
+#train-mark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 44px;
+	height: calc(100% + 20px);
+	margin: -10px;
+}
+.station-row {
+	margin: 4px 0;
+}
+.station-row:hover {
+	background-color: rgba(102, 102, 102, 0.7);
+}
+.station-row>div {
+	display: inline-block;
+	vertical-align: middle;
+}
+.station-title-box {
+	margin-left: 30px;
+	width: calc(100% - 72px);
+}
+.station-time-box {
+	width: 42px;
+	text-align: right;
+}
+#timetable-button {
+	pointer-events: none;
+}
+.slide-down::before {
+	content: '\f107';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	position: absolute;
+	top: 24px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+	color: #ffffff;
+	font-size: 21px;
+}
+.slide-up::before {
+	content: '\f106';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	position: absolute;
+	top: 24px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+	color: #ffffff;
+	font-size: 21px;
 }
 .mapbox-ctrl-search {
 	display: inline-flex;
@@ -234,12 +331,17 @@ body {
 	opacity: 1;
 	visibility: visible;
 }
-.desc-box {
-	display: inline-block;
+.desc-header {
+	display: table;
+}
+.desc-header > div {
+	display: table-cell;
+}
+.desc-header > div:first-child {
 	width: 10px;
-	height: 36px;
-	margin-right: 6px;
-	float: left;
+}
+.desc-header > div:last-child {
+	padding-left: 8px;
 }
 .desc-caution {
 	color: #f90;
