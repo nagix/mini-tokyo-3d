@@ -6920,36 +6920,259 @@
 		"zh": "饭能"
 	}
 }, {
+	"id": "Seibu.Toshima.Nerima",
+	"title": {
+		"ko": "네리마",
+		"zh": "练马"
+	}
+}, {
+	"id": "Seibu.Toshima.Toshimaen",
+	"title": {
+		"ko": "도시마엔",
+		"zh": "丰岛园"
+	}
+}, {
 	"id": "Seibu.SeibuYurakucho.KotakeMukaihara",
-    "title": {
+	"title": {
 		"ko": "고타케무카이하라",
 		"zh": "小竹向原"
 	},
 	"altitude": -1
 }, {
 	"id": "Seibu.SeibuYurakucho.ShinSakuradai",
-    "title": {
+	"title": {
 		"ko": "신사쿠라다이",
 		"zh": "新樱台"
 	},
 	"altitude": -1
 }, {
 	"id": "Seibu.SeibuYurakucho.Nerima",
-    "title": {
+	"title": {
 		"ko": "네리마",
 		"zh": "练马"
 	}
 }, {
-	"id": "Seibu.Toshima.Nerima",
-    "title": {
-		"ko": "네리마",
-		"zh": "练马"
+	"id": "Seibu.Shinjuku.SeibuShinjuku",
+	"title": {
+		"ko": "세이부 신주쿠",
+		"zh": "西武新宿"
 	}
 }, {
-	"id": "Seibu.Toshima.Toshimaen",
-    "title": {
-		"ko": "도시마엔",
-		"zh": "丰岛园"
+	"id": "Seibu.Shinjuku.Takadanobaba",
+	"coord": [139.706768, 35.7121216],
+	"title": {
+		"ko": "다카다노바바",
+		"zh": "高田马场"
+	}
+}, {
+	"id": "Seibu.Shinjuku.ShimoOchiai",
+	"title": {
+		"ko": "시모오치아이",
+		"zh": "下落合"
+	}
+}, {
+	"id": "Seibu.Shinjuku.Nakai",
+	"title": {
+		"ko": "나카이",
+		"zh": "中井"
+	}
+}, {
+	"id": "Seibu.Shinjuku.AraiyakushiMae",
+	"title": {
+		"ko": "아라이야쿠시 앞",
+		"zh": "新井药师前"
+	}
+}, {
+	"id": "Seibu.Shinjuku.Numabukuro",
+	"title": {
+		"ko": "누마부쿠로",
+		"zh": "沼袋"
+	}
+}, {
+	"id": "Seibu.Shinjuku.Nogata",
+	"title": {
+		"ko": "노가타",
+		"zh": "野方"
+	}
+}, {
+	"id": "Seibu.Shinjuku.ToritsuKasei",
+	"title": {
+		"ko": "도리쓰카세이",
+		"zh": "都立家政"
+	}
+}, {
+	"id": "Seibu.Shinjuku.Saginomiya",
+	"title": {
+		"ko": "사기노미야",
+		"zh": "鹭之宫"
+	}
+}, {
+	"id": "Seibu.Shinjuku.ShimoIgusa",
+	"title": {
+		"ko": "시모이구사",
+		"zh": "下井草"
+	}
+}, {
+	"id": "Seibu.Shinjuku.Iogi",
+	"title": {
+		"ko": "이오기",
+		"zh": "井荻"
+	}
+}, {
+	"id": "Seibu.Shinjuku.KamiIgusa",
+	"title": {
+		"ko": "가미이구사",
+		"zh": "上井草"
+	}
+}, {
+	"id": "Seibu.Shinjuku.KamiShakujii",
+	"title": {
+		"ko": "가미샤쿠지이",
+		"zh": "上石神井"
+	}
+}, {
+	"id": "Seibu.Shinjuku.MusashiSeki",
+	"title": {
+		"ko": "무사시세키",
+		"zh": "武藏关"
+	}
+}, {
+	"id": "Seibu.Shinjuku.HigashiFushimi",
+	"title": {
+		"ko": "히가시후시미",
+		"zh": "东伏见"
+	}
+}, {
+	"id": "Seibu.Shinjuku.SeibuYagisawa",
+	"title": {
+		"ko": "세이부 야기사와",
+		"zh": "西武柳泽"
+	}
+}, {
+	"id": "Seibu.Shinjuku.Tanashi",
+	"title": {
+		"ko": "다나시",
+		"zh": "田无"
+	}
+}, {
+	"id": "Seibu.Shinjuku.HanaKoganei",
+	"title": {
+		"ko": "하나코가네이",
+		"zh": "花小金井"
+	}
+}, {
+	"id": "Seibu.Shinjuku.Kodaira",
+	"title": {
+		"ko": "고다이라",
+		"zh": "小平"
+	}
+}, {
+	"id": "Seibu.Shinjuku.Kumegawa",
+	"title": {
+		"ko": "구메가와",
+		"zh": "久米川"
+	}
+}, {
+	"id": "Seibu.Shinjuku.HigashiMurayama",
+	"title": {
+		"ko": "히가시무라야마",
+		"zh": "东村山"
+	}
+}, {
+	"id": "Seibu.Shinjuku.Tokorozawa",
+	"title": {
+		"ko": "도코로자와",
+		"zh": "所泽"
+	}
+}, {
+	"id": "Seibu.Shinjuku.KokuKoen",
+	"title": {
+		"ko": "항공공원",
+		"zh": "航空公园"
+	}
+}, {
+	"id": "Seibu.Shinjuku.ShinTokorozawa",
+	"title": {
+		"ko": "신토코로자와",
+		"zh": "新所泽"
+	}
+}, {
+	"id": "Seibu.Shinjuku.Iriso",
+	"title": {
+		"ko": "이리소",
+		"zh": "入曾"
+	}
+}, {
+	"id": "Seibu.Shinjuku.Sayamashi",
+	"title": {
+		"ko": "사야마 시",
+		"zh": "狭山市"
+	}
+}, {
+	"id": "Seibu.Shinjuku.ShinSayama",
+	"title": {
+		"ko": "신사야마",
+		"zh": "新狭山"
+	}
+}, {
+	"id": "Seibu.Shinjuku.MinamiOtsuka",
+	"title": {
+		"ko": "미나미오쓰카",
+		"zh": "南大冢"
+	}
+}, {
+	"id": "Seibu.Shinjuku.HonKawagoe",
+	"title": {
+		"ko": "혼카와고에",
+		"zh": "本川越"
+	}
+}, {
+	"id": "Seibu.Haijima.Kodaira",
+	"title": {
+		"ko": "고다이라",
+		"zh": "小平"
+	}
+}, {
+	"id": "Seibu.Haijima.Hagiyama",
+	"title": {
+		"ko": "하기야마",
+		"zh": "萩山"
+	}
+}, {
+	"id": "Seibu.Haijima.Ogawa",
+	"title": {
+		"ko": "오가와",
+		"zh": "小川"
+	}
+}, {
+	"id": "Seibu.Haijima.HigashiYamatoshi",
+	"title": {
+		"ko": "히가시야마토 시",
+		"zh": "东大和市"
+	}
+}, {
+	"id": "Seibu.Haijima.TamagawaJosui",
+	"title": {
+		"ko": "다마가와조스이",
+		"zh": "玉川上水"
+	}
+}, {
+	"id": "Seibu.Haijima.MusashiSunagawa",
+	"title": {
+		"ko": "무사시스나가와",
+		"zh": "武藏砂川"
+	}
+}, {
+	"id": "Seibu.Haijima.SeibuTachikawa",
+	"title": {
+		"ko": "세이부 다치카와",
+		"zh": "西武立川"
+	}
+}, {
+	"id": "Seibu.Haijima.Haijima",
+	"title": {
+		"ko": "하이지마",
+		"zh": "拜岛"
 	}
 }, {
 	"id": "Yurikamome.Yurikamome.Shimbashi",
