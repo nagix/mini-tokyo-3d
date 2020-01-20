@@ -89,6 +89,19 @@ body {
 	overflow: auto;
 	line-height: 130%;
 }
+.windows {
+	scrollbar-width: thin;
+	scrollbar-color: #ccc transparent;
+}
+.windows::-webkit-scrollbar {
+	width: 10px;
+}
+.windows::-webkit-scrollbar-thumb {
+    background: #ccc;
+    background-clip: content-box;
+	border-radius: 6px;
+    border: solid 2px transparent;
+}
 .scroll-box {
 	position: relative;
 }

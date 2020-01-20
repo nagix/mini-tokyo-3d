@@ -106,6 +106,7 @@ var modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat([139.7670, 35.6814]);
 var modelScale = 1 / 2 / Math.PI / EQUATOR_EARTH_RADIUS / Math.cos(35.6814 * DEGREE_TO_RADIAN);
 
 var lang = getLang();
+var isWindows = includes(navigator.userAgent, 'Windows');
 var isEdge = includes(navigator.userAgent, 'Edge');
 var isUndergroundVisible = false;
 var isRealtime = true;
@@ -874,6 +875,10 @@ map.once('styledata', function () {
 			timetableButtonElement.classList.add('slide-down');
 		}
 	});
+
+	if (isWindows) {
+		document.getElementById('timetable-body').classList.add('windows');
+	}
 
 	map.on('mousemove', function(e) {
 		var userData;
