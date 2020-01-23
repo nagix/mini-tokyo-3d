@@ -1291,7 +1291,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 					departureTime = getTime(train.departureTime) + (train.delay || 0);
 					if (!train.tt && train.sectionLength !== 0) {
 						repeat();
-					} else if (now >= departureTime) {
+					} else if (train.tt && now >= departureTime) {
 						repeat(now - departureTime);
 					} else {
 						stand();
