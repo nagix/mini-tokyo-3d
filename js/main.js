@@ -2818,7 +2818,7 @@ function setSectionData(train, index, final) {
 		actualSection = numberOrDefault(train.sectionIndex + train.sectionLength, currentSection);
 		train.departureStation = departureStation;
 
-		if (currentSection !== finalSection && ((!final && nextSection >= 0) || (final && finalSection >= 0))) {
+		if (actualSection >= 0 && actualSection !== finalSection && ((!final && nextSection >= 0) || (final && finalSection >= 0))) {
 			train.sectionIndex = actualSection;
 			train.sectionLength = (final ? finalSection : nextSection) - actualSection;
 			train.arrivalStation = arrivalStation === departureStation ? stations[currentSection + direction] : arrivalStation;
