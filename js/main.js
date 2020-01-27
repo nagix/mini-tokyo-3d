@@ -1517,9 +1517,7 @@ map.once('styledata', function () {
 	function loadRealtimeTrainData() {
 		Promise.all([
 			loadJSON(API_URL + 'odpt:TrainInformation?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TWR,odpt.Operator:TokyoMetro,odpt.Operator:Toei,odpt.Operator:YokohamaMunicipal,odpt.Operator:Keio'),
-// Data is unavailable between December 24 and late January
-//			loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei')
-			loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:TokyoMetro,odpt.Operator:Toei')
+			loadJSON(API_URL + 'odpt:Train?odpt:operator=odpt.Operator:JR-East,odpt.Operator:TokyoMetro,odpt.Operator:Toei')
 		]).then(function([trainInfoRefData, trainRefData]) {
 			realtimeTrainLookup = {};
 
@@ -1572,9 +1570,7 @@ map.once('styledata', function () {
 
 				// Train information text is provided in Japanese only
 				if (railwayID && status && status.ja &&
-// Data is unavailable between December 24 and late January
-//					(operatorID === 'JR-East' || operatorID === 'TokyoMetro' || operatorID === 'Toei') &&
-					(operatorID === 'TokyoMetro' || operatorID === 'Toei') &&
+					(operatorID === 'JR-East' || operatorID === 'TokyoMetro' || operatorID === 'Toei') &&
 					(status.ja.indexOf('見合わせ') !== -1 ||
 					status.ja.indexOf('折返し運転') !== -1 ||
 					status.ja.indexOf('運休') !== -1 ||
@@ -1890,8 +1886,7 @@ map.once('styledata', function () {
 			'<input id="acd-dynamic" class="acd-check" type="checkbox"' + (dynamicCheck && dynamicCheck.checked ? ' checked' : '') + '>' +
 			'<label class="acd-label" for="acd-dynamic">' + dict['dynamic-update'] + '</label>' +
 			'<div class="acd-content">' +
-// Data is unavailable between December 24 and late January
-//			(lastDynamicUpdate['JR-East'] || 'N/A') + ' (' + dict['jr-east'] + ')<br>' +
+			(lastDynamicUpdate['JR-East'] || 'N/A') + ' (' + dict['jr-east'] + ')<br>' +
 			(lastDynamicUpdate['TokyoMetro'] || 'N/A') + ' (' + dict['tokyo-metro'] + ')<br>' +
 			(lastDynamicUpdate['Toei'] || 'N/A') + ' (' + dict['toei'] + ')<br>' +
 			(lastDynamicUpdate['HND-JAT'] || 'N/A') + ' (' + dict['hnd-jat'] + ')<br>' +
