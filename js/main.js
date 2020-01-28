@@ -69,7 +69,8 @@ var OPERATORS_FOR_TRAININFORMATION = [
 	'Keikyu',
 	'Keisei',
 	'Tobu',
-	'Seibu'
+	'Seibu',
+	'Odakyu'
 ];
 
 var OPERATORS_FOR_TRAINS = [

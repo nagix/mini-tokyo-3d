@@ -33,6 +33,7 @@ var OPERATORS_FOR_RAILWAYS = [
 	'Hokuso',
 	'Tobu',
 	'Seibu',
+	'Odakyu',
 	'Yurikamome',
 	'TokyoMonorail'
 ];
@@ -54,11 +55,12 @@ var OPERATORS_FOR_STATIONS = [
 	'Tobu',
 	'Aizu',
 	'Seibu',
+	'Odakyu',
+	'HakoneTozan',
 	'Tokyu',
 	'SaitamaRailway',
 	'Minatomirai',
 	'ToyoRapid',
-	'Odakyu',
 	'Yurikamome',
 	'Izukyu'
 ];
@@ -80,6 +82,7 @@ var OPERATORS_FOR_TRAINTYPES = [
 	'Hokuso',
 	'Tobu',
 	'Seibu',
+	'Odakyu',
 	'Yurikamome'
 ];
 
