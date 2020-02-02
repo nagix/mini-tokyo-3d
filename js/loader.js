@@ -34,6 +34,7 @@ var OPERATORS_FOR_RAILWAYS = [
 	'Tobu',
 	'Seibu',
 	'Odakyu',
+	'Tokyu',
 	'Yurikamome',
 	'TokyoMonorail'
 ];
@@ -83,6 +84,7 @@ var OPERATORS_FOR_TRAINTYPES = [
 	'Tobu',
 	'Seibu',
 	'Odakyu',
+	'Tokyu',
 	'Yurikamome'
 ];
 
@@ -1299,11 +1301,11 @@ function loadStationRefData() {
 
 function loadTrainTimetableRefData() {
 	return loadJSON('data-extra/railways.json').then(function(railwayData) {
-		return Promise.all(CALENDARS.map(function(calendar, i) {
-			return Promise.all(railwayData.map(function(railway) {
+		return Promise.all(CALENDARS.map(function(calendar) {
+			return Promise.all(railwayData.map(function(railway, i) {
 				var id = railway.id;
 				return loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:' + id +
-					(id === RAILWAY_CHUOSOBULOCAL ? '' : '&odpt:calendar=odpt.Calendar:' + calendar), i * 60000);
+					(id === RAILWAY_CHUOSOBULOCAL ? '' : '&odpt:calendar=odpt.Calendar:' + calendar), i * 2500);
 			})).then(function(data) {
 				return concat(data).map(function(table) {
 					return {

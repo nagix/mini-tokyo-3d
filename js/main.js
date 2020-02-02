@@ -70,7 +70,8 @@ var OPERATORS_FOR_TRAININFORMATION = [
 	'Keisei',
 	'Tobu',
 	'Seibu',
-	'Odakyu'
+	'Odakyu',
+	'Tokyu'
 ];
 
 var OPERATORS_FOR_TRAINS = [
