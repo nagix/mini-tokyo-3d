@@ -344,10 +344,12 @@
 	"JR-East.Yokosuka.NishiOi",
 	"JR-East.ShonanShinjuku.NishiOi"
 ]], [[
-	"JR-East.ShonanShinjuku.MusashiKosugi",
-	"JR-East.Yokosuka.MusashiKosugi"
+	"JR-East.Yokosuka.MusashiKosugi",
+	"JR-East.ShonanShinjuku.MusashiKosugi"
 ], [
 	"JR-East.Nambu.MusashiKosugi"
+], [
+	"Tokyu.Toyoko.MusashiKosugi"
 ]], [[
 	"JR-East.Yokosuka.ShinKawasaki",
 	"JR-East.ShonanShinjuku.ShinKawasaki"
@@ -449,6 +451,10 @@
 ], [
 	"Keisei.NaritaSkyAccess.HigashiMatsudo",
 	"Hokuso.Hokuso.HigashiMatsudo"
+]], [[
+	"JR-East.Yokohama.Kikuna"
+], [
+	"Tokyu.Toyoko.Kikuna"
 ]], [[
 	"JR-East.Yokohama.Machida"
 ], [
@@ -676,7 +682,8 @@
 	"TokyoMetro.Hanzomon.Shibuya",
 	"Tokyu.DenEnToshi.Shibuya"
 ], [
-	"TokyoMetro.Fukutoshin.Shibuya"
+	"TokyoMetro.Fukutoshin.Shibuya",
+	"Tokyu.Toyoko.Shibuya"
 ]], [[
 	"TokyoMetro.Hanzomon.Jimbocho"
 ], [
@@ -739,6 +746,11 @@
 ]], [[
 	"Toei.Oedo.Tochomae",
 	"Toei.Oedo.Tochomae.1"
+]], [[
+	"YokohamaMunicipal.Blue.Yokohama"
+], [
+	"Tokyu.Toyoko.Yokohama",
+	"Minatomirai.Minatomirai.Yokohama"
 ]], [[
 	"YokohamaMunicipal.Blue.CenterMinami",
 	"YokohamaMunicipal.Green.CenterMinami"
@@ -828,4 +840,8 @@
 ]], [[
 	"Odakyu.Odawara.SagamiOno",
 	"Odakyu.Enoshima.SagamiOno"
+]], [[
+	"Tokyu.Toyoko.NakaMeguro"
+], [
+	"TokyoMetro.Hibiya.NakaMeguro"
 ]]]

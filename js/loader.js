@@ -35,6 +35,7 @@ var OPERATORS_FOR_RAILWAYS = [
 	'Seibu',
 	'Odakyu',
 	'Tokyu',
+	'Minatomirai',
 	'Yurikamome',
 	'TokyoMonorail'
 ];
@@ -59,8 +60,8 @@ var OPERATORS_FOR_STATIONS = [
 	'Odakyu',
 	'HakoneTozan',
 	'Tokyu',
-	'SaitamaRailway',
 	'Minatomirai',
+	'SaitamaRailway',
 	'ToyoRapid',
 	'Yurikamome',
 	'Izukyu'
@@ -69,6 +70,15 @@ var OPERATORS_FOR_STATIONS = [
 var CALENDARS = [
 	'Weekday',
 	'SaturdayHoliday'
+];
+
+var OPERATORS_FOR_TRAINTIMETABLES = [
+	'JR-East',
+	'TWR',
+	'TokyoMetro',
+	'Toei',
+	'YokohamaMunicipal',
+	'Keio'
 ];
 
 var OPERATORS_FOR_TRAINTYPES = [
@@ -80,7 +90,6 @@ var OPERATORS_FOR_TRAINTYPES = [
 	'Keio',
 	'Keikyu',
 	'Keisei',
-	'Hokuso',
 	'Tobu',
 	'Seibu',
 	'Odakyu',
@@ -1301,11 +1310,13 @@ function loadStationRefData() {
 
 function loadTrainTimetableRefData() {
 	return loadJSON('data-extra/railways.json').then(function(railwayData) {
-		return Promise.all(CALENDARS.map(function(calendar) {
-			return Promise.all(railwayData.map(function(railway, i) {
+		return Promise.all(CALENDARS.map(function(calendar, i) {
+			return Promise.all(railwayData.filter(function(railway) {
+				return includes(OPERATORS_FOR_TRAINTIMETABLES, railway.id.replace(/\.\w+$/, ''));
+			}).map(function(railway) {
 				var id = railway.id;
 				return loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:' + id +
-					(id === RAILWAY_CHUOSOBULOCAL ? '' : '&odpt:calendar=odpt.Calendar:' + calendar), i * 2500);
+					(id === RAILWAY_CHUOSOBULOCAL ? '' : '&odpt:calendar=odpt.Calendar:' + calendar), i * 60000);
 			})).then(function(data) {
 				return concat(data).map(function(table) {
 					return {

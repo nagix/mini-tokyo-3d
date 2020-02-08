@@ -781,6 +781,35 @@
 	"color": "#20A288",
 	"carComposition": 10
 }, {
+	"id": "Tokyu.Toyoko",
+	"title": {
+		"ko": "도요코 선",
+		"zh": "东横线"
+	},
+	"color": "#DA0442",
+	"carComposition": 10
+}, {
+	"id": "Minatomirai.Minatomirai",
+	"title": {
+		"ko": "미나토미라이 선",
+		"zh": "港未来线"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"Minatomirai.Minatomirai.Yokohama",
+			"Minatomirai.Minatomirai.ShinTakashima",
+			"Minatomirai.Minatomirai.Minatomirai",
+			"Minatomirai.Minatomirai.Bashamichi",
+			"Minatomirai.Minatomirai.NihonOdori"
+		]
+	},
+	"altitude": -1,
+	"color": "#09357F",
+	"carComposition": 10
+
+}, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {
 		"ko": "유리카모메",
