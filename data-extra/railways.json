@@ -810,7 +810,29 @@
 	"altitude": -1,
 	"color": "#09357F",
 	"carComposition": 10
-
+}, {
+	"id": "SaitamaRailway.SaitamaRailway",
+	"title": {
+		"ko": "사이타마 고속 철도선",
+		"zh": "埼玉高速铁道线"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 1,
+		"insert": [
+			"SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
+			"SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
+			"SaitamaRailway.SaitamaRailway.MinamiHatogaya",
+			"SaitamaRailway.SaitamaRailway.Hatogaya",
+			"SaitamaRailway.SaitamaRailway.Araijuku",
+			"SaitamaRailway.SaitamaRailway.TozukaAngyo",
+			"SaitamaRailway.SaitamaRailway.HigashiKawaguchi"
+		]
+	},
+	"ascending": "Outbound",
+	"altitude": -1,
+	"color": "#2351A5",
+	"carComposition": 6
 }, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {

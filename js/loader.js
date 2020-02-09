@@ -36,6 +36,7 @@ var OPERATORS_FOR_RAILWAYS = [
 	'Odakyu',
 	'Tokyu',
 	'Minatomirai',
+	'SaitamaRailway',
 	'Yurikamome',
 	'TokyoMonorail'
 ];
