@@ -112,10 +112,14 @@ var lang = getLang();
 var isWindows = includes(navigator.userAgent, 'Windows');
 var isEdge = includes(navigator.userAgent, 'Edge');
 var isUndergroundVisible = false;
-var isRealtime = true;
+var isPlayback = false;
+var isEditingTime = false;
 var isWeatherVisible = false;
 var rainTexture = new THREE.TextureLoader().load('images/raindrop.png');
 var trackingMode = 'helicopter';
+var clockSpeed = 1;
+var baseTime = 0;
+var basePerfTime = 0;
 var styleColors = [];
 var styleOpacities = [];
 var emitterBounds = {};
@@ -130,7 +134,7 @@ var animationID = 0;
 var lastStaticUpdate = '2020-01-06 10:00:00';
 var lastDynamicUpdate = {};
 var stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, operatorLookup, airportLookup, a;
-var trackedObject, markedObject, lastTimetableRefresh, lastTrainRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
+var trackedObject, markedObject, tempDate, lastTimetableRefresh, lastTrainRefresh, lastClockRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
 var flightPattern, lastFlightPatternChanged;
 var lastNowCastRefresh, nowCastData, fgGroup, imGroup, bgGroup;
 
@@ -313,7 +317,6 @@ Promise.all([
 	loadJSON('data/stations.json.gz'),
 	loadJSON('data/features.json.gz'),
 	loadJSON('data/' + getTimetableFileName()),
-	loadJSON('data/trains.json'),
 	loadJSON('data/rail-directions.json.gz'),
 	loadJSON('data/train-types.json.gz'),
 	loadJSON('data/operators.json.gz'),
@@ -321,7 +324,7 @@ Promise.all([
 	loadJSON('data/flight-status.json.gz'),
 	loadJSON('https://mini-tokyo.appspot.com/e')
 ]).then(function([
-	dict, railwayRefData, stationRefData, railwayFeatureCollection, timetableRefData, trainData,
+	dict, railwayRefData, stationRefData, railwayFeatureCollection, timetableRefData,
 	railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData, e
 ]) {
 
@@ -705,16 +708,21 @@ map.once('styledata', function () {
 	map.addControl(control);
 
 	control = new mapboxgl.NavigationControl();
-	control._zoomInButton.title = dict['zoom-in'];
-	control._zoomOutButton.title = dict['zoom-out'];
-	control._compass.title = dict['compass'];
+	control._setButtonTitle = function(button) {
+		var title = button === this._zoomInButton ? dict['zoom-in'] :
+			button === this._zoomOutButton ? dict['zoom-out'] :
+			button === this._compass ? dict['compass'] : '';
+        button.title = title;
+        button.setAttribute('aria-label', title);
+	};
 	map.addControl(control);
 
 	control = new mapboxgl.FullscreenControl();
 	control._updateTitle = function() {
-		mapboxgl.FullscreenControl.prototype._updateTitle.apply(this, arguments);
-		this._fullscreenButton.title = dict[(this._isFullscreen() ? 'exit' : 'enter') + '-fullscreen'];
-	};
+		var title = dict[(this._isFullscreen() ? 'exit' : 'enter') + '-fullscreen'];
+		this._fullscreenButton.title = title;
+        this._fullscreenButton.setAttribute('aria-label', title);
+    };
 	map.addControl(control);
 
 	map.addControl(new MapboxGLButtonControl([{
@@ -728,7 +736,7 @@ map.once('styledata', function () {
 				map.setPaintProperty('background', 'background-color', 'rgb(16,16,16)');
 			} else {
 				this.classList.remove('mapbox-ctrl-underground-visible');
-				map.setPaintProperty('background', 'background-color', getStyleColor(styleColors[0], isRealtime));
+				map.setPaintProperty('background', 'background-color', getStyleColor(styleColors[0]));
 			}
 			styleOpacities.forEach(function(item) {
 				var id = item.id;
@@ -791,25 +799,26 @@ map.once('styledata', function () {
 			event.stopPropagation();
 		}
 	}, {
-		className: 'mapbox-ctrl-realtime mapbox-ctrl-realtime-active',
-		title: dict['exit-realtime'],
+		className: 'mapbox-ctrl-playback',
+		title: dict['enter-playback'],
 		eventHandler: function() {
-			isRealtime = !isRealtime;
-			this.title = dict[(isRealtime ? 'exit' : 'enter') + '-realtime'];
+			isPlayback = !isPlayback;
+			this.title = dict[(isPlayback ? 'exit' : 'enter') + '-playback'];
 			stopAll();
 			markedObject = trackedObject = undefined;
 			popup.remove();
 			hideTimetable();
 			stopViewAnimation();
 			disableTracking();
-			if (isRealtime) {
-				this.classList.add('mapbox-ctrl-realtime-active');
-				document.getElementById('clock').style.display = 'block';
+			if (isPlayback) {
+				this.classList.add('mapbox-ctrl-playback-active');
 			} else {
-				this.classList.remove('mapbox-ctrl-realtime-active');
-				document.getElementById('clock').style.display = 'none';
-				initModelTrains();
+				this.classList.remove('mapbox-ctrl-playback-active');
 			}
+			isEditingTime = false;
+			clockSpeed = 1;
+			baseTime = basePerfTime = 0;
+			updateClock();
 			refreshStyleColors();
 		}
 	}, {
@@ -852,7 +861,7 @@ map.once('styledata', function () {
 		}
 	}]));
 
-	document.getElementById('clock').style.display = 'block';
+	updateClock();
 
 	var popup = new mapboxgl.Popup({
 		closeButton: false,
@@ -886,18 +895,16 @@ map.once('styledata', function () {
 	map.on('mousemove', function(e) {
 		var userData;
 
-		if (isRealtime) {
-			markedObject = trainLayers.pickObject(e.point);
-			if (markedObject) {
-				map.getCanvas().style.cursor = 'pointer';
-				userData = markedObject.userData;
-				popup.setLngLat(adjustCoord(userData.coord, userData.altitude))
-					.setHTML(userData.object.description)
-					.addTo(map);
-			} else if (popup.isOpen()) {
-				map.getCanvas().style.cursor = '';
-				popup.remove();
-			}
+		markedObject = trainLayers.pickObject(e.point);
+		if (markedObject) {
+			map.getCanvas().style.cursor = 'pointer';
+			userData = markedObject.userData;
+			popup.setLngLat(adjustCoord(userData.coord, userData.altitude))
+				.setHTML(userData.object.description)
+				.addTo(map);
+		} else if (popup.isOpen()) {
+			map.getCanvas().style.cursor = '';
+			popup.remove();
 		}
 	});
 
@@ -910,7 +917,7 @@ map.once('styledata', function () {
 			if (isUndergroundVisible !== (trackedObject.userData.altitude < 0)) {
 				dispatchClickEvent('mapbox-ctrl-underground');
 			}
-			if (isRealtime && trackedObject.userData.object.tt) {
+			if (trackedObject.userData.object.tt) {
 				showTimetable();
 				setTrainTimetableText(trackedObject.userData.object);
 			} else {
@@ -975,52 +982,46 @@ map.once('styledata', function () {
 
 	repeat();
 
-	if (!isRealtime) {
-		initModelTrains();
-	}
-
 	a = e[0];
 
 	startAnimation({
 		callback: function() {
-			var now = Date.now();
+			var now = getTime();
 			var userData, altitude, bearing;
 
 			if (now - lastTimetableRefresh >= 86400000) {
 				loadTimetableData();
 				lastTimetableRefresh = getTime('03:00');
 			}
-			if (isRealtime) {
-				if (Math.floor(now / 1000) !== Math.floor(lastFrameRefresh / 1000)) {
-					var date = getJSTDate();
-					var dateString = date.toLocaleDateString(lang, DATE_FORMAT);
-					if (lang === 'ja' && JapaneseHolidays.isHoliday(date)) {
-						dateString = dateString.replace(/\(.+\)/, '(祝)');
-					}
-					document.getElementById('date').innerHTML = dateString;
-					document.getElementById('time').innerHTML = date.toLocaleTimeString(lang);
-				}
+			if (Math.floor(now / 1000) !== Math.floor(lastClockRefresh / 1000)) {
+				refreshClock();
+				lastClockRefresh = now;
+			}
 
-				// Remove all trains if the page has been invisible for more than ten seconds
-				if (now - lastFrameRefresh >= 10000) {
-					stopAll();
-				}
-				lastFrameRefresh = now;
+			// Remove all trains if the page has been invisible for more than ten seconds
+			if (Date.now() - lastFrameRefresh >= 10000) {
+				stopAll();
+			}
+			lastFrameRefresh = Date.now();
 
-				if (Math.floor((now - MIN_DELAY) / TRAIN_REFRESH_INTERVAL) !== Math.floor(lastTrainRefresh / TRAIN_REFRESH_INTERVAL)) {
+			if (Math.floor((now - MIN_DELAY) / TRAIN_REFRESH_INTERVAL) !== Math.floor(lastTrainRefresh / TRAIN_REFRESH_INTERVAL)) {
+				if (isPlayback) {
+					refreshTrains();
+//					refreshFlights();
+				} else {
 					loadRealtimeTrainData();
 					loadRealtimeFlightData();
-					refreshStyleColors();
-					lastTrainRefresh = now - MIN_DELAY;
 				}
-				if (markedObject) {
-					userData = markedObject.userData;
-					popup.setLngLat(adjustCoord(userData.coord, userData.altitude))
-						.setHTML(userData.object.description);
-				}
-				if (trackedObject && trackedObject.userData.object.timetableOffsets) {
-					setTrainTimetableMark(trackedObject.userData.object);
-				}
+				refreshStyleColors();
+				lastTrainRefresh = now - MIN_DELAY;
+			}
+			if (markedObject) {
+				userData = markedObject.userData;
+				popup.setLngLat(adjustCoord(userData.coord, userData.altitude))
+					.setHTML(userData.object.description);
+			}
+			if (trackedObject && trackedObject.userData.object.timetableOffsets) {
+				setTrainTimetableMark(trackedObject.userData.object);
 			}
 			if (trackedObject) {
 				altitude = trackedObject.userData.altitude;
@@ -1040,7 +1041,7 @@ map.once('styledata', function () {
 					duration: 0
 				});
 			}
-			if (isWeatherVisible) {
+			if (!isPlayback && isWeatherVisible) {
 				if (now - (lastNowCastRefresh || 0) >= 60000) {
 					loadNowCastData();
 					lastNowCastRefresh = now;
@@ -1237,51 +1238,16 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 		vTail.rotation.z = body.rotation.z;
 	}
 
-	function initModelTrains() {
-		trainData.forEach(function(train, i) {
-			var railway = railwayLookup[train.r];
-
-			train.t = i;
-			activeTrainLookup[train.t] = train;
-
-			train.sectionLength = train.direction;
-			train.carComposition = railway.carComposition;
-			train.cars = [];
-			updateTrainProps(train);
-
-			function repeat() {
-				train.animationID = startTrainAnimation(function(t) {
-					updateTrainShape(train, t);
-				}, function() {
-					var direction = train.direction;
-					var sectionIndex = train.sectionIndex = train.sectionIndex + direction;
-
-					if (sectionIndex <= 0 || sectionIndex >= railway.stations.length - 1) {
-						train.direction = train.sectionLength = -direction;
-					}
-					updateTrainProps(train);
-					updateTrainShape(train, 0);
-
-					// Stop and go
-					train.animationID = startAnimation({complete: repeat, duration: 1000});
-				}, Math.abs(train.interval), TIME_FACTOR);
-			}
-			repeat();
-		});
-	}
-
 	function refreshTrains() {
-		var now = Date.now();
+		var now = getTime();
 
 		timetableRefData.forEach(function(train) {
 			var d = train.delay || 0;
 			if (train.start + d <= now && now <= train.end + d &&
-				!activeTrainLookup[train.t] &&
-				(!train.previousTrain || !activeTrainLookup[train.previousTrain.t]) &&
-				(!train.nextTrain || !activeTrainLookup[train.nextTrain.t]) &&
+				!checkActiveTrains(train, true) &&
 				(!railwayLookup[train.r].status || realtimeTrainLookup[train.t])) {
 				function start(index) {
-					var now = Date.now();
+					var now = getTime();
 					var departureTime;
 
 					if (!setSectionData(train, index)) {
@@ -1320,19 +1286,24 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 							complete: final ? function() {
 								stopTrain(train);
 							} : train.tt ? repeat : stand,
-							duration: train.tt ? Math.max(departureTime - Date.now(), MIN_STANDING_DURATION) : final ? MIN_STANDING_DURATION : 15000
+							duration: train.tt ? Math.max(departureTime - getTime(), clockSpeed === 1 ? MIN_STANDING_DURATION : 0) : final ? MIN_STANDING_DURATION : 15000,
+							variable: true
 						});
 					}
 				}
 
 				function repeat(elapsed) {
 					var arrivalTime = train.arrivalTime;
-					var duration;
+					var nextDepartureTime = train.nextDepartureTime;
+					var minDuration, maxDuration;
 
+					if (nextDepartureTime) {
+						maxDuration = getTime(nextDepartureTime) - getTime() + (elapsed || 0) - MIN_DELAY + 60000 - MIN_STANDING_DURATION;
+					}
 					if (arrivalTime) {
-						duration = getTime(arrivalTime) - Date.now() + (elapsed || 0);
-						if (!(duration > 0)) {
-							duration = undefined;
+						minDuration = getTime(arrivalTime) - getTime() + (elapsed || 0) - MIN_DELAY;
+						if (!(maxDuration < minDuration + 60000)) {
+							maxDuration = minDuration + 60000;
 						}
 					}
 					setTrainStandingStatus(train, false);
@@ -1364,6 +1335,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 								if (!activeTrainLookup[train.t]) {
 									start(0);
 									if (train.cars) {
+										updateTrainShape(train, 0);
 										if (markedObjectIndex !== -1) {
 											markedObject = train.cars[markedObjectIndex];
 										}
@@ -1379,7 +1351,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 						} else {
 							stand();
 						}
-					}, Math.abs(train.interval), 1, duration, elapsed);
+					}, Math.abs(train.interval), minDuration, maxDuration, elapsed);
 				}
 
 				start();
@@ -1388,7 +1360,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 	}
 
 	function refreshFlights() {
-		var now = Date.now();
+		var now = getTime();
 
 		Object.keys(flightLookup).forEach(function(key) {
 			var flight = flightLookup[key];
@@ -1416,7 +1388,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 							complete: function() {
 								stopFlight(flight);
 							},
-							duration: Math.max(flight.end - Date.now(), 0)
+							duration: Math.max(flight.end - getTime(), 0)
 						});
 					}, flight.feature.properties.length, flight.maxSpeed, flight.acceleration, elapsed);
 				}
@@ -1531,7 +1503,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 			(train.arrivalStation ?
 				'<br><strong>' + dict['next-stop'] + ':</strong> ' +
 				getLocalizedStationTitle(train.arrivalStation) +
-				(train.arrivalTime ? ' ' + getTimeString(getTime(train.arrivalTime) + delay) : '') : '') +
+				(train.arrivalTime || train.nextDepartureTime ? ' ' + getTimeString(getTime(train.arrivalTime || train.nextDepartureTime) + delay) : '') : '') +
 			(delay >= 60000 ? '<br>' + dict['delay'].replace('$1', Math.floor(delay / 60000)) + '</span>' : '') +
 			(railway.status && lang === 'ja' ? '<br><span class="desc-caution"><strong>' + railway.status + ':</strong> ' + railway.text + '</span>' : '');
 	}
@@ -1639,6 +1611,27 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 		}
 	}
 
+	/**
+	  * Check if any of connecting trains is active
+	  * @param {object} train - train to check
+	  * @returns {boolean} True if any of connecting trains is active
+	 */
+	function checkActiveTrains(train) {
+		var curr;
+
+		for (curr = train; curr; curr = curr.previousTrain) {
+			if (activeTrainLookup[curr.t]) {
+				return true;
+			}
+		}
+		for (curr = train.nextTrain; curr; curr = curr.nextTrain) {
+			if (activeTrainLookup[curr.t]) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	function stopTrain(train, keep) {
 		stopAnimation(train.animationID);
 		if (train.cars) {
@@ -1660,6 +1653,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 			trainLayers.removeObject(train.delayMarker, 1000);
 			delete train.delayMarker;
 		}
+		delete train.delay;
 		if (!train.tt) {
 			delete timetableRefData.splice(timetableRefData.indexOf(train), 1);
 		}
@@ -1724,7 +1718,6 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 				var fromStation = removePrefix(trainRef['odpt:fromStation']);
 				// Retry lookup replacing Marunouchi line with MarunouchiBranch line
 				var train = trainLookup[id] || trainLookup[id.replace('.Marunouchi.', '.MarunouchiBranch.')];
-				var activeTrain = activeTrainLookup[id];
 				var changed = false;
 				var railway, railwayRef, direction;
 
@@ -2140,10 +2133,10 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 			if (item.id === 'background' && isUndergroundVisible) {
 				map.setPaintProperty(item.id, item.key, 'rgb(16,16,16)');
 			} else if (item.stops === undefined) {
-				map.setPaintProperty(item.id, item.key, getStyleColor(item, isRealtime));
+				map.setPaintProperty(item.id, item.key, getStyleColor(item));
 			} else {
 				var prop = map.getPaintProperty(item.id, item.key);
-				prop.stops[item.stops][1] = getStyleColor(item, isRealtime);
+				prop.stops[item.stops][1] = getStyleColor(item);
 				map.setPaintProperty(item.id, item.key, prop);
 			}
 		});
@@ -2169,6 +2162,162 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 				material.blending = blending;
 			}
 		});
+	}
+
+	var dateComponents = [
+		{id: 'year', fn: 'FullYear', digits: 4, extra: 0},
+		{id: 'month', fn: 'Month', digits: 2, extra: 1},
+		{id: 'day', fn: 'Date', digits: 2, extra: 0},
+		{id: 'hour', fn: 'Hours', digits: 2, extra: 0},
+		{id: 'minute', fn: 'Minutes', digits: 2, extra: 0},
+		{id: 'second', fn: 'Seconds', digits: 2, extra: 0}
+	];
+
+	function refreshClock() {
+		var date = getJSTDate();
+		var dateString = date.toLocaleDateString(lang, DATE_FORMAT);
+		if (lang === 'ja' && JapaneseHolidays.isHoliday(date)) {
+			dateString = dateString.replace(/\(.+\)/, '(祝)');
+		}
+		if (!isEditingTime) {
+			document.getElementById('date').innerHTML = dateString;
+			document.getElementById('time').innerHTML = date.toLocaleTimeString(lang);
+		} else {
+			if (tempDate) {
+				date = tempDate;
+				dateComponents.forEach(function(component) {
+					document.getElementById(component.id).classList.add('desc-caution');
+				});
+				document.getElementById('edit-time-ok-button').disabled = false;
+			}
+			dateComponents.forEach(function(component) {
+				document.getElementById(component.id).innerHTML =
+					('0' + (date['get' + component.fn]() + component.extra)).slice(-component.digits);
+			});
+		}
+	}
+
+	function updateClock() {
+		document.getElementById('clock').innerHTML =
+			(!isPlayback || !isEditingTime ?
+				'<span id="date"></span><br>' +
+				'<span id="time"></span><br>' : '') +
+			(isPlayback && !isEditingTime ?
+				'<div class="clock-button">' +
+				'<span><button id="edit-time-button">' + dict['edit-date-time'] + '</button></span>' +
+				'</div>' : '') +
+			(isPlayback && isEditingTime ?
+				'<div class="clock-controller">' +
+				dateComponents.slice(0, 3).map(function(component) {
+					return '<span class="spin-box">' +
+						'<div><button id="' + component.id + '-increase-button"><span class="increase-icon"></span></button></div>' +
+						'<div id="' + component.id + '"></div>' +
+						'<div><button id="' + component.id + '-decrease-button"><span class="decrease-icon"></span></button></div>' +
+						'</span>';
+				}).join('<span class="clock-controller-separator">-</span>') +
+				'<span class="clock-controller-separator"></span>' +
+				dateComponents.slice(-3).map(function(component) {
+					return '<span class="spin-box">' +
+						'<div><button id="' + component.id + '-increase-button"><span class="increase-icon"></span></button></div>' +
+						'<div id="' + component.id + '"></div>' +
+						'<div><button id="' + component.id + '-decrease-button"><span class="decrease-icon"></span></button></div>' +
+						'</span>';
+				}).join('<span class="clock-controller-separator">:</span>') +
+				'</div>' +
+				'<div class="clock-button">' +
+				'<span><button id="edit-time-cancel-button">' + dict['cancel'] + '</button></span>' +
+				'<span class="clock-controller-separator"></span>' +
+				'<span><button id="edit-time-ok-button" disabled>' + dict['ok'] + '</button></span>' +
+				'</div>' : '') +
+			(isPlayback ?
+				'<div class="speed-controller">' +
+				'<span><button id="decrease-button"' + (clockSpeed === 1 ? ' disabled' : '') + '><span class="decrease-icon"></span></button></span>' +
+				'<span id="clock-speed">' + clockSpeed + dict['x-speed'] + '</span>' +
+				'<span><button id="increase-button"' + (clockSpeed === 600 ? ' disabled' : '') + '><span class="increase-icon"></span></button></span>' +
+				'</div>' : '');
+
+		refreshClock();
+		document.getElementById('clock').style.display = 'block';
+
+		if (isPlayback && isEditingTime) {
+			document.getElementById('edit-time-cancel-button').addEventListener('click', function(e) {
+				tempDate = undefined;
+				isEditingTime = false;
+				updateClock();
+			});
+			document.getElementById('edit-time-ok-button').addEventListener('click', function(e) {
+				var oldBaseTime = baseTime;
+
+				if (tempDate) {
+					stopAll();
+					markedObject = trackedObject = undefined;
+					popup.remove();
+					hideTimetable();
+					stopViewAnimation();
+					disableTracking();
+
+					baseTime = tempDate.setMinutes(tempDate.getMinutes()
+						- (tempDate.getTimezoneOffset() + 540)) - Date.now() * clockSpeed;
+					basePerfTime += baseTime - oldBaseTime;
+					tempDate = undefined;
+
+					if (lastTimetableRefresh !== getTime('03:00')) {
+						loadTimetableData();
+						lastTimetableRefresh = getTime('03:00');
+					}
+				}
+
+				isEditingTime = false;
+				updateClock();
+			});
+		}
+
+		if (isPlayback && !isEditingTime) {
+			document.getElementById('edit-time-button').addEventListener('click', function(e) {
+				isEditingTime = true;
+				updateClock();
+			});
+		}
+
+		if (isPlayback && isEditingTime) {
+			dateComponents.forEach(function(component) {
+				document.getElementById(component.id + '-increase-button').addEventListener('click', function(e) {
+					tempDate = tempDate || getJSTDate();
+					tempDate['set' + component.fn](tempDate['get' + component.fn]() + 1);
+					refreshClock();
+				});
+				document.getElementById(component.id + '-decrease-button').addEventListener('click', function(e) {
+					tempDate = tempDate || getJSTDate();
+					tempDate['set' + component.fn](tempDate['get' + component.fn]() - 1);
+					refreshClock();
+				});
+			});
+		}
+
+		if (isPlayback) {
+			document.getElementById('increase-button').addEventListener('click', function(e) {
+				var now = getTime();
+				var perfNow = getPerformanceTime();
+
+				clockSpeed += clockSpeed < 10 ? 1 : clockSpeed < 100 ? 10 : 100;
+				baseTime = now - Date.now() * clockSpeed;
+				basePerfTime = perfNow - performance.now() * clockSpeed;
+				this.disabled = clockSpeed === 600;
+				document.getElementById('decrease-button').disabled = false;
+				document.getElementById('clock-speed').innerHTML = clockSpeed + dict['x-speed'];
+			});
+			document.getElementById('decrease-button').addEventListener('click', function(e) {
+				var now = getTime();
+				var perfNow = getPerformanceTime();
+
+				clockSpeed -= clockSpeed <= 10 ? 1 : clockSpeed <= 100 ? 10 : 100;
+				baseTime = now - Date.now() * clockSpeed;
+				basePerfTime = perfNow - performance.now() * clockSpeed;
+				this.disabled = clockSpeed === 1;
+				document.getElementById('increase-button').disabled = false;
+				document.getElementById('clock-speed').innerHTML = clockSpeed + dict['x-speed'];
+			});
+		}
 	}
 
 	function updateAboutPopup() {
@@ -2380,9 +2529,9 @@ function repeat() {
 			if (nextFrame > now) {
 				continue;
 			}
-			start = animation.start = animation.start || now;
+			start = animation.start = animation.start || (animation.variable ? getPerformanceTime() : now);
 			duration = animation.duration;
-			elapsed = now - start;
+			elapsed = (animation.variable ? getPerformanceTime() : now) - start;
 			callback = animation.callback;
 			if (callback) {
 				callback(Math.min(elapsed, duration), duration);
@@ -2408,10 +2557,11 @@ function repeat() {
   * @param {number} options.duration - Animation duration. Default is Infinity
   * @param {number} options.start - Animation start time (same timestamp as performance.now())
   * @param {number} options.frameRate - Animation frames per second
+  * @param {boolean} options.variable - If true, animation speed will be affected by clock speed
   * @returns {number} Animation ID which can be used to stop
   */
 function startAnimation(options) {
-	options.duration === valueOrDefault(options.duration, Infinity);
+	options.duration = valueOrDefault(options.duration, Infinity);
 	animations[animationID] = options;
 	return animationID++;
 }
@@ -2426,23 +2576,22 @@ function stopAnimation(id) {
 	}
 }
 
-function startTrainAnimation(callback, endCallback, distance, timeFactor, baseDuration, start) {
-	var maxSpeed = MAX_SPEED * timeFactor;
-	var acceleration = ACCELERATION * timeFactor * timeFactor;
-	var maxAccelerationTime = MAX_ACCELERATION_TIME / timeFactor;
-	var maxAccDistance = MAX_ACC_DISTANCE;
-	var duration, accelerationTime;
+function startTrainAnimation(callback, endCallback, distance, minDuration, maxDuration, start) {
+	var maxSpeed = MAX_SPEED;
+	var acceleration = ACCELERATION;
+	var maxAccDistance, duration, accelerationTime;
 
-	if (distance <= maxAccDistance * 2) {
+	if (distance <= MAX_ACC_DISTANCE * 2) {
 		duration = Math.sqrt(distance / acceleration) * 2;
 		accelerationTime = duration / 2;
 	} else {
-		duration = maxAccelerationTime * 2 + (distance - maxAccDistance * 2) / maxSpeed;
-		if (baseDuration !== undefined) {
-			duration = clamp(duration, baseDuration - MIN_DELAY, baseDuration + 60000 - MIN_DELAY);
+		duration = MAX_ACCELERATION_TIME * 2 + (distance - MAX_ACC_DISTANCE * 2) / maxSpeed;
+		if (maxDuration > 0) {
+			duration = clamp(duration, minDuration || 0, maxDuration);
 			maxAccDistance = acceleration * duration * duration / 8;
 			if (distance >= maxAccDistance * 2) {
-				maxSpeed = acceleration * duration / 2;
+				maxSpeed = distance * 2 / duration;
+				acceleration = maxSpeed * 2 / duration;
 			} else {
 				maxSpeed = acceleration * duration / 2 - Math.sqrt(acceleration * (maxAccDistance * 2 - distance));
 			}
@@ -2466,7 +2615,8 @@ function startTrainAnimation(callback, endCallback, distance, timeFactor, baseDu
 		},
 		complete: endCallback,
 		duration: duration,
-		start: start > 0 ? performance.now() - start : undefined
+		start: start > 0 ? getPerformanceTime() - start : undefined,
+		variable: true
 	});
 }
 
@@ -2646,8 +2796,15 @@ function truncateTrainTimetable(train, origin, destination) {
 	return changed;
 }
 
+/**
+  * Returns the date object in JST.
+  * If the time is not specified, it returns that at the current time.
+  * In the playback mode, the time in the simulation clock is used.
+  * @param {number} time - The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
+  * @returns {Date} Date object that represents the specified time in JST
+  */
 function getJSTDate(time) {
-	var date = time ? new Date(time) : new Date();
+	var date = new Date(valueOrDefault(time, getTime()));
 
 	// Adjust local time to JST (UTC+9)
 	date.setMinutes(date.getMinutes() + date.getTimezoneOffset() + 540);
@@ -2655,10 +2812,24 @@ function getJSTDate(time) {
 	return date;
 }
 
+/**
+  * Returns the number of milliseconds since the Unix Epoch at the specified time.
+  * If the time is not specified, it returns that at the current time.
+  * In the playback mode, the time in the simulation clock is used.
+  * @param {string} timeString - Time expression in JST in "hh:mm" format
+  * @returns {number} The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
+  */
 function getTime(timeString) {
-	var date = getJSTDate();
-	var timeStrings = (timeString || '').split(':');
-	var hours = +timeStrings[0];
+	var now = Date.now();
+	var date, timeStrings, hours;
+
+	if (!timeString) {
+		return isPlayback ? baseTime + now * clockSpeed : now;
+	}
+
+	date = getJSTDate();
+	timeStrings = timeString.split(':');
+	hours = +timeStrings[0];
 
 	// Special handling of time between midnight and 3am
 	hours += (date.getHours() < 3 ? -24 : 0) + (hours < 3 ? 24 : 0);
@@ -2671,23 +2842,36 @@ function getTime(timeString) {
 	);
 }
 
+/**
+  * Returns the time expression in JST.
+  * If the time is not specified, it returns that at the current time.
+  * In the playback mode, the time in the simulation clock is used.
+  * @param {number} time - The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
+  * @returns {number} Time expression in JST in "hh:mm" format
+  */
 function getTimeString(time) {
 	var date = getJSTDate(time);
 
 	return ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2);
 }
 
-function getStyleColor(color, isRealtime) {
-	var times = SunCalc.getTimes(new Date(), 35.6814, 139.7670);
+/**
+  * Returns the number of milliseconds since the time origin.
+  * In the playback mode, the time in the simulation clock is used.
+  * @returns {number} The number of milliseconds elapsed since the time origin
+  */
+function getPerformanceTime() {
+	var now = performance.now();
+
+	return isPlayback ? basePerfTime + now * clockSpeed : now;
+}
+
+function getStyleColor(color) {
+	var times = SunCalc.getTimes(new Date(getTime()), 35.6814, 139.7670);
 	var sunrise = getJSTDate(times.sunrise.getTime()).getTime();
 	var sunset = getJSTDate(times.sunset.getTime()).getTime();
 	var now = getJSTDate().getTime();
 	var t, r, g, b;
-
-	if (!isRealtime) {
-		sunrise = 0;
-		sunset = 1e+14;
-	}
 
 	if (now >= sunrise - 3600000 && now < sunrise) {
 		// Night to sunrise
@@ -2776,12 +2960,12 @@ function setSectionData(train, index, final) {
 	var destination = (train.ds || [])[0];
 	var table = train.tt;
 	var delay = train.delay || 0;
-	var now = Date.now();
+	var now = getTime();
 	var ttIndex, current, next, departureStation, arrivalStation, currentSection, nextSection, actualSection, finalSection;
 
 	if (table) {
 		ttIndex = valueOrDefault(index, table.reduce(function(acc, cur, i) {
-			return getTime(cur.d) + delay <= now ? i : acc;
+			return cur.d && getTime(cur.d) + delay <= now ? i : acc;
 		}, 0));
 		current = table[ttIndex];
 		next = table[ttIndex + 1];
@@ -2811,7 +2995,8 @@ function setSectionData(train, index, final) {
 			train.sectionIndex = currentSection;
 			train.sectionLength = nextSection - currentSection;
 			train.arrivalStation = arrivalStation;
-			train.arrivalTime = next.a || next.d;
+			train.arrivalTime = next.a;
+			train.nextDepartureTime = next.d;
 
 			return true;
 		}
@@ -2829,8 +3014,7 @@ function setSectionData(train, index, final) {
 		}
 	}
 
-	train.arrivalStation = undefined;
-	train.arrivalTime = undefined;
+	train.arrivalStation = train.arrivalTime = train.nextDepartureTime = undefined;
 }
 
 function dispatchClickEvent(className) {

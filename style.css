@@ -2,6 +2,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	touch-action: none;
 }
 .loader-inner {
 	position: absolute;
@@ -14,6 +15,7 @@ body {
 	background-color: #eee;
 	opacity: .9;
 	transition: opacity 1s linear;
+	box-sizing: initial;
 }
 .ball-pulse > div {
 	background-color: #777;
@@ -46,15 +48,136 @@ body {
 	border-radius: 3px;
 	background-color: rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-	display: none;
-	pointer-events: none;
-}
-#date {
 	color: #fff;
+	display: none;
 }
 #time {
 	font-size: 150%;
+}
+.clock-controller {
+	width: 100%;
+	margin-top: 4px;
+	margin-bottom: 10px;
+	display: table;
+	font-size: 150%;
+}
+.clock-controller>span {
+	vertical-align: middle;
+	text-align: center;
+	display: table-cell;
+}
+.clock-controller-separator {
+	width: 10px;
+}
+.spin-box {
+	width: 30px;
+	border-collapse: collapse;
+	border-radius: 4px;
+	box-shadow:0 0 0 1px #777;
+}
+.spin-box:first-child {
+	width: 52px;
+}
+.spin-box>div {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.spin-box>div:first-child {
+	border-bottom: solid 1px #777;
+}
+.spin-box>div:last-child {
+	border-top: solid 1px #777;
+}
+.spin-box button {
+	width: 100%;
+	height: 30px;
+	border: 0;
 	color: #fff;
+	background-color: transparent;
+	cursor: pointer;
+}
+.clock-button {
+	width: 100%;
+	margin-top: 4px;
+	margin-bottom: 10px;
+	display: table;
+}
+.clock-button>span {
+	height: 30px;
+	vertical-align: middle;
+	text-align: center;
+	display: table-cell;
+}
+.clock-button button {
+	width: 100%;
+	height: 30px;
+	border: 0;
+	border-collapse: collapse;
+	border-radius: 4px;
+	box-shadow:0 0 0 1px #777;
+	color: #fff;
+	background-color: transparent;
+	cursor: pointer;
+}
+.speed-controller {
+	width: 100%;
+	margin-top: 4;
+	display: table;
+	border-collapse: collapse;
+	border-radius: 4px;
+	box-shadow:0 0 0 1px #777;
+}
+.speed-controller>span {
+	height: 30px;
+	vertical-align: middle;
+	text-align: center;
+	display: table-cell;
+}
+.speed-controller>span:first-child {
+	width: 30px;
+	border-right: solid 1px #777;
+}
+.speed-controller>span:last-child {
+	width: 30px;
+	border-left: solid 1px #777;
+}
+.speed-controller button {
+	width: 100%;
+	height: 30px;
+	border: 0;
+	color: #fff;
+	background-color: transparent;
+	cursor: pointer;
+}
+#decrease-button {
+	border-radius: 4px 0 0 4px;
+}
+.decrease-icon::before {
+	content: '\f068';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	width: 14px;
+	height: 14px;
+	font-size: 14px;
+}
+#increase-button {
+	border-radius: 0 4px 4px 0;
+}
+#clock button:disabled {
+	color: #777;
+}
+#clock button:not(:disabled):hover {
+	background-color: rgba(51, 51, 51, 0.7);
+}
+.increase-icon::before {
+	content: '\f067';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	width: 14px;
+	height: 14px;
+	font-size: 14px;
 }
 #timetable {
 	position: absolute;
@@ -87,6 +210,7 @@ body {
 #timetable-body {
 	height: calc(100% - 68px);
 	overflow: auto;
+	overscroll-behavior: contain;
 	line-height: 130%;
 }
 .windows {
@@ -219,8 +343,8 @@ body {
 .mapbox-ctrl-track-active::before {
 	color: #33B5E5;
 }
-.mapbox-ctrl-realtime::before {
-	content: '\f017';
+.mapbox-ctrl-playback::before {
+	content: '\f144';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
 	position: relative;
@@ -229,7 +353,7 @@ body {
 	color: black;
 	font-size: 21px;
 }
-.mapbox-ctrl-realtime-active::before {
+.mapbox-ctrl-playback-active::before {
 	color: #33B5E5;
 }
 .mapbox-ctrl-about::before {
