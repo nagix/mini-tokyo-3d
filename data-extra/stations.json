@@ -6129,6 +6129,19 @@
 	},
 	"altitude": -1
 }, {
+	"id": "Keisei.HigashiNarita.KeiseiNarita",
+	"title": {
+		"ko": "게이세이나리타",
+		"zh": "京成成田"
+	}
+}, {
+	"id": "Keisei.HigashiNarita.HigashiNarita",
+	"title": {
+		"ko": "히가시나리타",
+		"zh": "东成田"
+	},
+	"altitude": -1
+}, {
 	"id": "Keisei.Oshiage.Oshiage",
 	"title": {
 		"ko": "오시아게",
@@ -6404,6 +6417,24 @@
 	"title": {
 		"ko": "인바니혼이다이",
 		"zh": "印旛日本医大"
+	}
+}, {
+	"id": "Shibayama.Shibayama.HigashiNarita",
+	"railway": "Shibayama.Shibayama",
+	"coord": [140.387182, 35.769718],
+	"title": {
+		"ja": "東成田",
+		"en": "Higashi-Narita",
+		"ko": "히가시나리타",
+		"zh": "东成田"
+	},
+	"altitude": -1
+}, {
+	"id": "Shibayama.Shibayama.ShibayamaChiyoda",
+	"coord": [140.3995062, 35.7540717],
+	"title": {
+		"ko": "시바야마치요다",
+		"zh": "芝山千代田"
 	}
 }, {
 	"id": "Tobu.TobuSkytree.Asakusa",
@@ -8129,6 +8160,94 @@
 		"ko": "우라와미소노",
 		"zh": "浦和美园"
 	}
+}, {
+	"id": "ToyoRapid.ToyoRapid.NishiFunabashi",
+	"railway": "ToyoRapid.ToyoRapid",
+	"coord": [139.958767, 35.707174],
+	"title": {
+		"ja": "西船橋",
+		"en": "Nishi-Funabashi",
+		"ko": "니시후나바시",
+		"zh": "西船桥"
+	}
+}, {
+	"id": "ToyoRapid.ToyoRapid.HigashiKaijin",
+	"railway": "ToyoRapid.ToyoRapid",
+	"coord": [139.98055, 35.7059603],
+	"title": {
+		"ja": "東海神",
+		"en": "Higashi-Kaijin",
+		"ko": "히가시카이진",
+		"zh": "东海神"
+	},
+	"altitude": -1
+}, {
+	"id": "ToyoRapid.ToyoRapid.Hasama",
+	"railway": "ToyoRapid.ToyoRapid",
+	"coord": [140.0221125, 35.7140071],
+	"title": {
+		"ja": "飯山満",
+		"en": "Hasama",
+		"ko": "하사마",
+		"zh": "饭山满"
+	}
+}, {
+	"id": "ToyoRapid.ToyoRapid.KitaNarashino",
+	"railway": "ToyoRapid.ToyoRapid",
+	"coord": [140.0418585, 35.721562],
+	"title": {
+		"ja": "北習志野",
+		"en": "Kita-Narashino",
+		"ko": "기타나라시노",
+		"zh": "北习志野"
+	},
+	"altitude": -1
+}, {
+	"id": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+	"railway": "ToyoRapid.ToyoRapid",
+	"coord": [140.058801, 35.7268699],
+	"title": {
+		"ja": "船橋日大前",
+		"en": "Funabashi-Nichidaimae",
+		"ko": "후나바시니치다이마에",
+		"zh": "船桥日大前"
+	},
+	"altitude": -1
+}, {
+	"id": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+	"coord": [140.0730046, 35.7288488],
+	"title": {
+		"ko": "야치요미도리가오카",
+		"zh": "八千代绿丘"
+	}
+}, {
+	"id": "ToyoRapid.ToyoRapid.YachiyoChuo",
+	"railway": "ToyoRapid.ToyoRapid",
+	"coord": [140.1033477, 35.7278692],
+	"title": {
+		"ja": "八千代中央",
+		"en": "Yachiyo-Chuo",
+		"ko": "야치요 중앙",
+		"zh": "八千代中央"
+	}
+}, {
+	"id": "ToyoRapid.ToyoRapid.Murakami",
+	"railway": "ToyoRapid.ToyoRapid",
+	"coord": [140.1184205, 35.7237785],
+	"title": {
+		"ja": "村上",
+		"en": "Murakami",
+		"ko": "무라카미",
+		"zh": "村上"
+	}
+}, {
+	"id": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
+	"coord": [140.1261716, 35.7158063],
+	"title": {
+		"ko": "도요 가쓰타다이",
+		"zh": "东叶胜田台"
+	},
+	"altitude": -1
 }, {
 	"id": "Yurikamome.Yurikamome.Shimbashi",
 	"title": {

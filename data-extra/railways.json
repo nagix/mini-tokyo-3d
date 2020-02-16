@@ -593,6 +593,14 @@
 	"color": "#005AAA",
 	"carComposition": 6
 }, {
+	"id": "Keisei.HigashiNarita",
+	"title": {
+		"ko": "히가시나리타 선",
+		"zh": "东成田线"
+	},
+	"color": "#005AAA",
+	"carComposition": 6
+}, {
 	"id": "Keisei.Oshiage",
 	"title": {
 		"ko": "오시아게 선",
@@ -653,6 +661,22 @@
 	"ascending": "Outbound",
 	"color": "#00BDF2",
 	"carComposition": 8
+}, {
+	"id": "Shibayama.Shibayama",
+	"title": {
+		"ko": "시바야마 철도선",
+		"zh": "芝山铁道线"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"Shibayama.Shibayama.HigashiNarita"
+		]
+	},
+	"ascending": "Outbound",
+	"color": "#00A650",
+	"carComposition": 6
 }, {
 	"id": "Tobu.TobuSkytree",
 	"title": {
@@ -849,6 +873,29 @@
 	"altitude": -1,
 	"color": "#2351A5",
 	"carComposition": 6
+}, {
+	"id": "ToyoRapid.ToyoRapid",
+	"title": {
+		"ko": "도요 고속선",
+		"zh": "东叶高速线"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 1,
+		"insert": [
+			"ToyoRapid.ToyoRapid.NishiFunabashi",
+			"ToyoRapid.ToyoRapid.HigashiKaijin",
+			"ToyoRapid.ToyoRapid.Hasama",
+			"ToyoRapid.ToyoRapid.KitaNarashino",
+			"ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+			"ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+			"ToyoRapid.ToyoRapid.YachiyoChuo",
+			"ToyoRapid.ToyoRapid.Murakami"
+		]
+	},
+	"ascending": "Outbound",
+	"color": "#3FB036",
+	"carComposition": 10
 }, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {

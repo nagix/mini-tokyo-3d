@@ -31,12 +31,14 @@ var OPERATORS_FOR_RAILWAYS = [
 	'Keikyu',
 	'Keisei',
 	'Hokuso',
+	'Shibayama',
 	'Tobu',
 	'Seibu',
 	'Odakyu',
 	'Tokyu',
 	'Minatomirai',
 	'SaitamaRailway',
+	'ToyoRapid',
 	'Yurikamome',
 	'TokyoMonorail'
 ];
