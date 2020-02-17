@@ -470,9 +470,7 @@ map.once('load', function () {
 });
 
 map.once('styledata', function () {
-	map.setLayoutProperty('poi', 'text-field', lang === 'ja' ?
-		['case', ['all', ['==', ['get', 'mode'], 'rail'], ['==', ['get', 'name_ja'], '上大岡']], 'たぴおおおか', ['get', 'name_ja']] :
-		['get', ['get', 'name_ja'], ['literal', dict]]);
+	map.setLayoutProperty('poi', 'text-field', lang === 'ja' ? '{name_ja}' : ['get', ['get', 'name_ja'], ['literal', dict]]);
 
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
