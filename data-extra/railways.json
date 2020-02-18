@@ -822,6 +822,22 @@
 	"color": "#009CD2",
 	"carComposition": 6
 }, {
+	"id": "Tokyu.Oimachi",
+	"title": {
+		"ko": "오이마치 선",
+		"zh": "大井町线"
+	},
+	"stations": {
+		"index": 15,
+		"delete": 0,
+		"insert": [
+			"Tokyu.Oimachi.FutakoShinchi",
+			"Tokyu.Oimachi.Takatsu"
+		]
+	},
+	"color": "#F18C43",
+	"carComposition": 5
+}, {
 	"id": "Tokyu.Ikegami",
 	"title": {
 		"ko": "이케가미 선",
@@ -829,6 +845,30 @@
 	},
 	"color": "#EE86A7",
 	"carComposition": 3
+}, {
+	"id": "Tokyu.TokyuTamagawa",
+	"title": {
+		"ko": "도큐 다마가와 선",
+		"zh": "东急多摩川线"
+	},
+	"color": "#AE0378",
+	"carComposition": 3
+}, {
+	"id": "Tokyu.Kodomonokuni",
+	"title": {
+		"ko": "고도모노쿠니 선",
+		"zh": "儿童王国线"
+	},
+	"color": "#0068B7",
+	"carComposition": 2
+}, {
+	"id": "Tokyu.Setagaya",
+	"title": {
+		"ko": "세타가야 선",
+		"zh": "世田谷线"
+	},
+	"color": "#FCC70D",
+	"carComposition": 2
 }, {
 	"id": "Minatomirai.Minatomirai",
 	"title": {

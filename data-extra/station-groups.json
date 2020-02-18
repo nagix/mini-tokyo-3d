@@ -241,9 +241,14 @@
 ], [
 	"JR-East.Musashino.MinamiUrawa"
 ]], [[
+	"JR-East.KeihinTohokuNegishi.Oimachi"
+], [
+	"Tokyu.Oimachi.Oimachi"
+]], [[
 	"JR-East.KeihinTohokuNegishi.Kamata"
 ], [
-	"Tokyu.Ikegami.Kamata"
+	"Tokyu.Ikegami.Kamata",
+	"Tokyu.TokyuTamagawa.Kamata"
 ]], [[
 	"JR-East.KeihinTohokuNegishi.Tsurumi"
 ], [
@@ -432,6 +437,7 @@
 ]], [[
 	"JR-East.Nambu.MusashiMizonokuchi"
 ], [
+	"Tokyu.Oimachi.Mizonokuchi",
 	"Tokyu.DenEnToshi.Mizonokuchi"
 ]], [[
 	"JR-East.Nambu.Noborito"
@@ -472,7 +478,8 @@
 ]], [[
 	"JR-East.Yokohama.Nagatsuta"
 ], [
-	"Tokyu.DenEnToshi.Nagatsuta"
+	"Tokyu.DenEnToshi.Nagatsuta",
+	"Tokyu.Kodomonokuni.Nagatsuta"
 ]], [[
 	"JR-East.Yokohama.Hashimoto"
 ], [
@@ -779,6 +786,10 @@
 ], [
 	"Keio.Inokashira.Meidaimae"
 ]], [[
+	"Keio.Keio.ShimoTakaido"
+], [
+	"Tokyu.Setagaya.ShimoTakaido"
+]], [[
 	"Keio.Keio.Chofu",
 	"Keio.Sagamihara.Chofu"
 ]], [[
@@ -855,15 +866,32 @@
 ], [
 	"TokyoMetro.Chiyoda.YoyogiUehara"
 ]], [[
+	"Odakyu.Odawara.Gotokuji"
+], [
+	"Tokyu.Setagaya.Yamashita"
+]], [[
 	"Odakyu.Odawara.ShinYurigaoka",
 	"Odakyu.Tama.ShinYurigaoka"
 ]], [[
 	"Odakyu.Odawara.SagamiOno",
 	"Odakyu.Enoshima.SagamiOno"
 ]], [[
+	"Tokyu.DenEnToshi.FutakoTamagawa",
+	"Tokyu.Oimachi.FutakoTamagawa"
+]], [[
+	"Tokyu.DenEnToshi.FutakoShinchi",
+	"Tokyu.Oimachi.FutakoShinchi"
+]], [[
+	"Tokyu.DenEnToshi.Takatsu",
+	"Tokyu.Oimachi.Takatsu"
+]], [[
 	"Tokyu.Toyoko.NakaMeguro"
 ], [
 	"TokyoMetro.Hibiya.NakaMeguro"
+]], [[
+	"Tokyu.Toyoko.Jiyugaoka"
+], [
+	"Tokyu.Oimachi.Jiyugaoka"
 ]], [[
 	"Tokyu.Toyoko.DenEnChofu",
 	"Tokyu.Meguro.DenEnChofu"
@@ -879,4 +907,11 @@
 ]], [[
 	"Tokyu.Toyoko.Hiyoshi",
 	"Tokyu.Meguro.Hiyoshi"
+]], [[
+	"Tokyu.Meguro.Ookayama",
+	"Tokyu.Oimachi.Ookayama"
+]], [[
+	"Tokyu.Oimachi.Hatanodai"
+], [
+	"Tokyu.Ikegami.Hatanodai"
 ]]]
