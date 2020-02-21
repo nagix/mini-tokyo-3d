@@ -914,6 +914,41 @@
 	"color": "#2351A5",
 	"carComposition": 6
 }, {
+	"id": "MIR.TsukubaExpress",
+	"title": {
+		"ko": "쓰쿠바 익스프레스",
+		"zh": "筑波快线"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"MIR.TsukubaExpress.Akihabara",
+			"MIR.TsukubaExpress.ShinOkachimachi",
+			"MIR.TsukubaExpress.Asakusa",
+			"MIR.TsukubaExpress.MinamiSenju",
+			"MIR.TsukubaExpress.KitaSenju",
+			"MIR.TsukubaExpress.Aoi",
+			"MIR.TsukubaExpress.Rokucho",
+			"MIR.TsukubaExpress.Yashio",
+			"MIR.TsukubaExpress.MisatoChuo",
+			"MIR.TsukubaExpress.MinamiNagareyama",
+			"MIR.TsukubaExpress.NagareyamaCentralpark",
+			"MIR.TsukubaExpress.NagareyamaOtakanomori",
+			"MIR.TsukubaExpress.KashiwanohaCampus",
+			"MIR.TsukubaExpress.KashiwaTanaka",
+			"MIR.TsukubaExpress.Moriya",
+			"MIR.TsukubaExpress.Miraidaira",
+			"MIR.TsukubaExpress.Midorino",
+			"MIR.TsukubaExpress.BampakuKinenkoen",
+			"MIR.TsukubaExpress.KenkyuGakuen",
+			"MIR.TsukubaExpress.Tsukuba"
+		]
+	},
+	"ascending": "Outbound",
+	"color": "#000084",
+	"carComposition": 6
+}, {
 	"id": "ToyoRapid.ToyoRapid",
 	"title": {
 		"ko": "도요 고속선",

@@ -38,6 +38,7 @@ var OPERATORS_FOR_RAILWAYS = [
 	'Tokyu',
 	'Minatomirai',
 	'SaitamaRailway',
+	'MIR',
 	'ToyoRapid',
 	'Yurikamome',
 	'TokyoMonorail'
@@ -65,6 +66,7 @@ var OPERATORS_FOR_STATIONS = [
 	'Tokyu',
 	'Minatomirai',
 	'SaitamaRailway',
+	'MIR',
 	'ToyoRapid',
 	'Yurikamome',
 	'Izukyu'
