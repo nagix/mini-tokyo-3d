@@ -816,6 +816,11 @@ map.once('styledata', function () {
 			isEditingTime = false;
 			clockSpeed = 1;
 			baseTime = basePerfTime = 0;
+			tempDate = undefined;
+			if (lastTimetableRefresh !== getTime('03:00')) {
+				loadTimetableData();
+				lastTimetableRefresh = getTime('03:00');
+			}
 			updateClock();
 			refreshStyleColors();
 		}
@@ -1283,7 +1288,9 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 						train.animationID = startAnimation({
 							complete: final ? function() {
 								stopTrain(train);
-							} : train.tt ? repeat : stand,
+							} : train.tt ? function() {
+								repeat(clockSpeed === 1 ? undefined : getTime() - departureTime);
+							} : stand,
 							duration: train.tt ? Math.max(departureTime - getTime(), clockSpeed === 1 ? MIN_STANDING_DURATION : 0) : final ? MIN_STANDING_DURATION : 15000,
 							variable: true
 						});
