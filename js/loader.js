@@ -61,6 +61,7 @@ var OPERATORS_FOR_STATIONS = [
 	'Tobu',
 	'Aizu',
 	'Seibu',
+	'Chichibu',
 	'Odakyu',
 	'HakoneTozan',
 	'Tokyu',
@@ -69,7 +70,9 @@ var OPERATORS_FOR_STATIONS = [
 	'MIR',
 	'ToyoRapid',
 	'Yurikamome',
-	'Izukyu'
+	'Izukyu',
+	'IzuHakone',
+	'Fujikyu'
 ];
 
 var CALENDARS = [
@@ -302,9 +305,9 @@ stationData.forEach(function(station) {
 });
 
 // Build station group data
-var nonTransitStations = stationData.map(function(station) {
-	return station.id;
-});
+var nonTransitStations = concat(railwayData.map(function(railway) {
+	return railwayLookup[railway.id].stations;
+}));
 stationGroupData.forEach(function(group) {
 	group.forEach(function(stations) {
 		stations.forEach(function(station) {
