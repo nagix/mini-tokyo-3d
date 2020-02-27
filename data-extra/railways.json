@@ -269,6 +269,24 @@
 	"color": "#E31F26",
 	"carComposition": 15
 }, {
+	"id": "JR-East.YamanoteFreight",
+	"title": {
+		"ja": "横須賀線",
+		"en": "Yokosuka Line",
+		"ko": "요코스카 선",
+		"zh": "横须贺线"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"JR-East.YamanoteFreight.Tokyo",
+			"JR-East.YamanoteFreight.Shibuya"
+		]
+	},
+	"color": "#007AC1",
+	"carComposition": 6
+}, {
 	"id": "JR-East.Tsurumi",
 	"title": {
 		"ko": "쓰루미 선",

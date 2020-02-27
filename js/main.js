@@ -131,7 +131,7 @@ var realtimeTrainLookup = {};
 var flightLookup = {};
 var activeFlightLookup = {};
 var animationID = 0;
-var lastStaticUpdate = '2020-01-06 10:00:00';
+var lastStaticUpdate = '2020-02-21 16:00:00';
 var lastDynamicUpdate = {};
 var stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, operatorLookup, airportLookup, a;
 var trackedObject, markedObject, tempDate, lastTimetableRefresh, lastTrainRefresh, lastClockRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;

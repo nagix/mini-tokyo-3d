@@ -2327,6 +2327,27 @@
 		"zh": "大宫"
 	}
 }, {
+	"id": "JR-East.YamanoteFreight.Tokyo",
+	"railway": "JR-East.YamanoteFreight",
+	"coord": [139.76704, 35.6813],
+	"title": {
+		"ja": "東京",
+		"en": "Tokyo",
+		"ko": "도쿄",
+		"zh": "东京"
+	},
+	"altitude": -1
+}, {
+	"id": "JR-East.YamanoteFreight.Shibuya",
+	"railway": "JR-East.YamanoteFreight",
+	"coord": [139.70149, 35.65796],
+	"title": {
+		"ja": "渋谷",
+		"en": "Shibuya",
+		"ko": "시부야",
+		"zh": "涩谷"
+	}
+}, {
 	"id": "JR-East.Tsurumi.Tsurumi",
 	"title": {
 		"ko": "쓰루미",
@@ -2932,6 +2953,7 @@
 	"altitude": -1
 }, {
 	"id": "TWR.Rinkai.Osaki",
+	"coord": [139.72816, 35.62019],
 	"title": {
 		"ko": "오사키",
 		"zh": "大崎"
@@ -5236,7 +5258,7 @@
 	"title": {
 		"ko": "센터 미나미",
 		"zh": "中心南"
-	} 
+	}
 }, {
 	"id": "YokohamaMunicipal.Blue.CenterKita",
 	"title": {
@@ -8701,6 +8723,7 @@
 	}
 }, {
 	"id": "Tokyu.Ikegami.Gotanda",
+	"coord": [139.726306, 35.626249],
 	"title": {
 		"ko": "고탄다",
 		"zh": "五反田"

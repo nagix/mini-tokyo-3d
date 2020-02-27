@@ -312,8 +312,9 @@ stationGroupData.forEach(function(group) {
 	group.forEach(function(stations) {
 		stations.forEach(function(station) {
 			var index = nonTransitStations.indexOf(station);
-			if (index !== -1) {
+			while (index !== - 1) {
 				delete nonTransitStations[index];
+				index = nonTransitStations.indexOf(station, index);
 			}
 		});
 	});
@@ -412,17 +413,17 @@ var railwayFeatureArray = [];
 				} else {
 					interpolate = subline.interpolate;
 					coordinates = [];
-					feature1 = lineOffset(lineSlice(
-						coords[0],
-						coords[coords.length - 1],
-						featureLookup[start.railway + '.' + zoom]
-					), start.offset * unit);
+					feature1 = lineSlice(coords[0], coords[coords.length - 1], featureLookup[start.railway + '.' + zoom]);
+					offset = start.offset;
+					if (offset) {
+						feature1 = lineOffset(feature1, offset * unit);
+					}
 					alignDirection(feature1, coords);
-					feature2 = lineOffset(lineSlice(
-						coords[0],
-						coords[coords.length - 1],
-						featureLookup[end.railway + '.' + zoom]
-					), end.offset * unit);
+					feature2 = lineSlice(coords[0], coords[coords.length - 1], featureLookup[end.railway + '.' + zoom]);
+					offset = end.offset;
+					if (offset) {
+						feature2 = lineOffset(feature2, offset * unit);
+					}
 					alignDirection(feature2, coords);
 					length1 = turf.length(feature1);
 					length2 = turf.length(feature2);
@@ -955,15 +956,15 @@ map.once('styledata', function () {
 		title: 'Export',
 		eventHandler: function() {
 			exportJSON(turf.truncate(railwayFeatureCollection, {precision: 7}), 'features.json.gz', 0);
-			exportJSON(trainTimetableRefData.weekday, 'timetable-weekday.json.gz', 5000);
-			exportJSON(trainTimetableRefData.holiday, 'timetable-holiday.json.gz', 12000);
-			exportJSON(stationRefData, 'stations.json.gz', 19000);
-			exportJSON(railwayRefData, 'railways.json.gz', 19500);
-			exportJSON(railDirectionRefData, 'rail-directions.json.gz', 20000);
-			exportJSON(trainTypeRefData, 'train-types.json.gz', 20500);
-			exportJSON(operatorRefData, 'operators.json.gz', 21000);
-			exportJSON(airportRefData, 'airports.json.gz', 21500);
-			exportJSON(flightStatusRefData, 'flight-status.json.gz', 22000);
+			exportJSON(trainTimetableRefData.weekday, 'timetable-weekday.json.gz', 6000);
+			exportJSON(trainTimetableRefData.holiday, 'timetable-holiday.json.gz', 13000);
+			exportJSON(stationRefData, 'stations.json.gz', 20000);
+			exportJSON(railwayRefData, 'railways.json.gz', 20500);
+			exportJSON(railDirectionRefData, 'rail-directions.json.gz', 21000);
+			exportJSON(trainTypeRefData, 'train-types.json.gz', 21500);
+			exportJSON(operatorRefData, 'operators.json.gz', 22000);
+			exportJSON(airportRefData, 'airports.json.gz', 22500);
+			exportJSON(flightStatusRefData, 'flight-status.json.gz', 23000);
 		}
 	}]), 'top-right');
 
@@ -1054,9 +1055,17 @@ function lineOffset(geojson, distance) {
 
 	// Converting meters to Mercator meters
 	var dist = Math.abs(distance / Math.cos((start[1] + end[1]) * Math.PI / 360));
+
 	var polygonLine = turf.polygonToLine(
 		turf.buffer(geojson, dist, {step: coordsLen * 2 + 64})
 	);
+
+	// If MultiLineString is generated, pick the first LineString
+	if (polygonLine.geometry.type === 'MultiLineString') {
+		polygonLine.geometry.type = 'LineString';
+		polygonLine.geometry.coordinates = polygonLine.geometry.coordinates[0];
+	}
+
 	var polygonLineCoords = turf.getCoords(polygonLine);
 	var length = polygonLineCoords.length;
 	var p0 = turf.nearestPointOnLine(polygonLine, turf.destination(start, dist, startBearing + 180));
