@@ -1322,7 +1322,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 
 						updateTrainShape(train, t);
 					}, function() {
-						var markedObjectIndex, trackedObjectIndex;
+						var markedObjectIndex, trackedObjectIndex, nextTrains;
 
 						// Guard for an unexpected error
 						// Probably a bug due to duplicate train IDs in timetable lookup
@@ -1334,9 +1334,10 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 						if (!setSectionData(train, train.timetableIndex + 1)) {
 							markedObjectIndex = train.cars.indexOf(markedObject);
 							trackedObjectIndex = train.cars.indexOf(trackedObject);
-							if (train.nextTrain) {
+							nextTrains = train.nextTrains;
+							if (nextTrains) {
 								stopTrain(train, true);
-								train = train.nextTrain;
+								train = nextTrains[0];
 								if (!activeTrainLookup[train.t]) {
 									start(0);
 								}
@@ -1559,10 +1560,10 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 			'<br>' + getLocalizedTrainTypeTitle(train.y) + ' ' +
 			(destination ? dict['for'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train.d)) + '</div></div>';
 
-		for (curr = train; curr; curr = curr.previousTrain) {
+		for (curr = train; curr; curr = curr.previousTrains && curr.previousTrains[0]) {
 			trains.unshift(curr);
 		}
-		for (curr = train.nextTrain; curr; curr = curr.nextTrain) {
+		for (curr = train.nextTrains && train.nextTrains[0]; curr; curr = curr.nextTrains && curr.nextTrains[0]) {
 			trains.push(curr);
 		}
 		trains.forEach(function(curr) {
@@ -1570,7 +1571,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 
 			section.start = Math.max(stations.length - 1, 0);
 			curr.tt.forEach(function(s, index) {
-				if (index > 0 || !curr.previousTrain) {
+				if (index > 0 || !curr.previousTrains) {
 					stations.push('<div class="station-row">' +
 						'<div class="station-title-box">' + getLocalizedStationTitle(s.s) + '</div>' +
 						'<div class="station-time-box' + (delay >= 60000 ? ' desc-caution' : '') + '">' +
@@ -1628,19 +1629,24 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 	  * @returns {boolean} True if any of connecting trains is active
 	 */
 	function checkActiveTrains(train) {
-		var curr;
+		function check(curr, prop) {
+			var trains, i;
 
-		for (curr = train; curr; curr = curr.previousTrain) {
 			if (activeTrainLookup[curr.t]) {
 				return true;
 			}
-		}
-		for (curr = train.nextTrain; curr; curr = curr.nextTrain) {
-			if (activeTrainLookup[curr.t]) {
-				return true;
+			trains = curr[prop];
+			if (trains) {
+				for (i = 0; i < trains.length; i++) {
+					if (check(trains[i], prop)) {
+						return true;
+					}
+				}
 			}
+			return false;
 		}
-		return false;
+
+		return check(train, 'previousTrains') || check(train, 'nextTrains');
 	}
 
 	function stopTrain(train, keep) {
@@ -2363,27 +2369,43 @@ function updateTimetableRefData(data) {
 		var length = table.length;
 		var previousTableIDs = train.pt;
 		var nextTableIDs = train.nt;
-		var previousTrain, nextTrain;
+		var start = Infinity;
+		var previousTrains, nextTrains;
 
 		if (previousTableIDs) {
-			previousTrain = lookup[previousTableIDs[0]];
+			previousTableIDs.forEach(function(id) {
+				var previousTrain = lookup[id];
+				var tt;
+				if (previousTrain) {
+					tt = previousTrain.tt;
+					start = Math.min(start, getTime(tt[tt.length - 1].a || tt[tt.length - 1].d));
+					previousTrains = previousTrains || [];
+					previousTrains.push(previousTrain);
+				}
+			});
 		}
 		if (nextTableIDs) {
-			nextTrain = lookup[nextTableIDs[0]];
-			if (nextTrain) {
-				table[length - 1].d = nextTrain.tt[0].d;
+			nextTableIDs.forEach(function(id) {
+				var nextTrain = lookup[id];
+				if (nextTrain) {
+					nextTrains = nextTrains || [];
+					nextTrains.push(nextTrain);
+				}
+			});
+			if (nextTrains) {
+				table[length - 1].d = nextTrains[0].tt[0].d;
 			}
 		}
 
-		train.start = getTime(table[0].d) - STANDING_DURATION;
+		train.start = Math.min(start, getTime(table[0].d) - STANDING_DURATION);
 		train.end = getTime(table[length - 1].a
 			|| table[length - 1].d
 			|| table[Math.max(length - 2, 0)].d);
 		train.direction = direction;
 		train.altitude = railway.altitude;
 		train.carComposition = railway.carComposition;
-		train.previousTrain = previousTrain;
-		train.nextTrain = nextTrain;
+		train.previousTrains = previousTrains;
+		train.nextTrains = nextTrains;
 	});
 }
 
