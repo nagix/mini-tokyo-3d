@@ -1339,15 +1339,15 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 								train = train.nextTrain;
 								if (!activeTrainLookup[train.t]) {
 									start(0);
-									if (train.cars) {
-										updateTrainShape(train, 0);
-										if (markedObjectIndex !== -1) {
-											markedObject = train.cars[markedObjectIndex];
-										}
-										if (trackedObjectIndex !== -1) {
-											trackedObject = train.cars[trackedObjectIndex];
-											setTrainTimetableText(train);
-										}
+								}
+								if (train.cars) {
+									updateTrainShape(train, 0);
+									if (markedObjectIndex !== -1) {
+										markedObject = train.cars[markedObjectIndex];
+									}
+									if (trackedObjectIndex !== -1) {
+										trackedObject = train.cars[trackedObjectIndex];
+										setTrainTimetableText(train);
 									}
 								}
 								return;
@@ -1466,10 +1466,13 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 		return title[lang] || title['en'];
 	}
 
-	function getLocalizedStationTitle(station) {
-		station = Array.isArray(station) ? station[0] : station;
-		title = (stationLookup[station] || {}).title || {};
-		return title[lang] || title['en'];
+	function getLocalizedStationTitle(array) {
+		var stations = Array.isArray(array) ? array : [array];
+
+		return stations.map(function(station) {
+			title = (stationLookup[station] || {}).title || {};
+			return title[lang] || title['en'];
+		}).join(dict['and']);
 	}
 
 	function getLocalizedOperatorTitle(operator) {
@@ -1540,15 +1543,15 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 
 	function setTrainTimetableText(train) {
 		var contentElement = document.getElementById('timetable-content');
+		var trains = [];
 		var sections = [];
 		var stations = [];
 		var offsets = [];
-		var curr = train;
 		var railwayID = train.r;
 		var railway = railwayLookup[railwayID];
 		var destination = train.ds;
 		var delay = train.delay || 0;
-		var section, currSection, i, children, child;
+		var curr, currSection, i, children, child;
 
 		document.getElementById('timetable-header').innerHTML =
 			'<div class="desc-header"><div style="background-color: ' + railway.color + ';"></div>' +
@@ -1556,11 +1559,15 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 			'<br>' + getLocalizedTrainTypeTitle(train.y) + ' ' +
 			(destination ? dict['for'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train.d)) + '</div></div>';
 
-		while (curr.previousTrain) {
-			curr = curr.previousTrain;
+		for (curr = train; curr; curr = curr.previousTrain) {
+			trains.unshift(curr);
 		}
-		while (curr) {
-			section = {};
+		for (curr = train.nextTrain; curr; curr = curr.nextTrain) {
+			trains.push(curr);
+		}
+		trains.forEach(function(curr) {
+			var section = {};
+
 			section.start = Math.max(stations.length - 1, 0);
 			curr.tt.forEach(function(s, index) {
 				if (index > 0 || !curr.previousTrain) {
@@ -1577,8 +1584,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 			if (curr === train) {
 				currSection = section;
 			}
-			curr = curr.nextTrain;
-		}
+		});
 		contentElement.innerHTML = stations.join('');
 
 		children = contentElement.children;

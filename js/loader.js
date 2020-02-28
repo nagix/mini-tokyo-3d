@@ -106,6 +106,9 @@ var OPERATORS_FOR_TRAINTYPES = [
 ];
 
 var RAILWAY_CHUOSOBULOCAL = 'JR-East.ChuoSobuLocal';
+var RAILWAY_YOKOSUKA = 'JR-East.Yokosuka';
+var RAILWAY_SHONANSHINJUKU = 'JR-East.ShonanShinjuku';
+var RAILWAY_YAMANOTEFREIGHT = 'JR-East.YamanoteFreight';
 var RAILWAY_KEIYO = 'JR-East.Keiyo';
 var RAILWAY_KEIYOKOYABRANCH = 'JR-East.KeiyoKoyaBranch';
 var RAILWAY_KEIYOFUTAMATABRANCH = 'JR-East.KeiyoFutamataBranch';
@@ -624,7 +627,7 @@ timetableLookup = buildLookup(concat([trainTimetableRefData.weekday, trainTimeta
 	});
 });
 
-// Modify SobuRapid, Sobu, Narita and Narita Airport branch timetables
+// Modify Sobu Rapid, Sobu, Narita and Narita Airport branch timetables
 Object.keys(trainTimetableRefData).forEach(function(key) {
 	RAILWAYS_FOR_SOBURAPID.forEach(function(railwayID) {
 		trainTimetableRefData[key].filter(function(table) {
@@ -666,6 +669,45 @@ Object.keys(trainTimetableRefData).forEach(function(key) {
 			trainTimetableRefData[key].splice(trainTimetableRefData[key].indexOf(table), 1);
 			delete timetableLookup[table.id];
 		});
+	});
+});
+
+// Modify Yokosuka, Shonan Shinjuku and Yamanote Freight timetables
+Object.keys(trainTimetableRefData).forEach(function(key) {
+	trainTimetableRefData[key].filter(function(table) {
+		return table.r === RAILWAY_YOKOSUKA &&
+			((table.pt && table.pt[0].indexOf(RAILWAY_SHONANSHINJUKU) === 0) ||
+			(table.nt && table.nt[0].indexOf(RAILWAY_SHONANSHINJUKU) === 0));
+	}).forEach(function(table) {
+		table.tt.forEach(function(obj) {
+			obj.s = obj.s.replace(table.r, RAILWAY_YAMANOTEFREIGHT);
+		});
+		table.r = RAILWAY_YAMANOTEFREIGHT;
+	});
+	trainTimetableRefData[key].filter(function(table) {
+		return table.r === RAILWAY_SHONANSHINJUKU &&
+			((table.nt && table.nt[0].indexOf(RAILWAY_YOKOSUKA) === 0) ||
+			(table.pt && table.pt[0].indexOf(RAILWAY_YOKOSUKA) === 0));
+	}).forEach(function(table) {
+		var railwayID = table.r
+		var tt = table.tt;
+		var station;
+
+		if (table.nt && table.nt[0].indexOf(RAILWAY_YOKOSUKA) === 0) {
+			station = tt[tt.length - 1];
+			timetableLookup[table.nt[0]].tt.unshift({
+				d: station.d,
+				s: station.s.replace(railwayID, RAILWAY_YAMANOTEFREIGHT)
+			});
+			delete station.d;
+		} else if (table.pt && table.pt[0].indexOf(RAILWAY_YOKOSUKA) === 0) {
+			station = tt[0];
+			timetableLookup[table.pt[0]].tt.push({
+				a: station.a,
+				s: station.s.replace(railwayID, RAILWAY_YAMANOTEFREIGHT)
+			});
+			delete station.a;
+		}
 	});
 });
 
