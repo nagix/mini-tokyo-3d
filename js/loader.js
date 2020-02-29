@@ -474,7 +474,7 @@ var railwayFeatureArray = [];
 		});
 
 		featureLookup[id + '.' + zoom] = railwayFeature;
-		if (id.indexOf('Base.') === 0) {
+		if (startsWith(id, 'Base.')) {
 			return;
 		}
 
@@ -881,21 +881,30 @@ map.once('styledata', function () {
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
 		var maxzoom = zoom >= 18 ? 24 : zoom + 1;
-		var getWidth = ['get', 'width'];
+		var width = ['get', 'width'];
+		var color = ['get', 'color'];
+		var outlineColor = ['get', 'outlineColor'];
 		var lineWidth = zoom === 13 ?
-			['interpolate', ['exponential', 2], ['zoom'], 9, ['/', getWidth, 8], 12, getWidth] : getWidth;
+			['interpolate', ['exponential', 2], ['zoom'], 9, ['/', width, 8], 12, width] : width;
+		var railwaySource = {
+			type: 'geojson',
+			data: filterFeatures(railwayFeatureCollection, function(p) {
+				return p.zoom === zoom && p.type === 0 && p.altitude === 0;
+			})
+		};
+		var stationSource = {
+			type: 'geojson',
+			data: filterFeatures(railwayFeatureCollection, function(p) {
+				return p.zoom === zoom && p.type === 1 && p.altitude === 0;
+			})
+		};
 
 		map.addLayer({
 			id: 'railways-og-' + zoom,
 			type: 'line',
-			source: {
-				type: 'geojson',
-				data: filterFeatures(railwayFeatureCollection, function(p) {
-					return p.zoom === zoom && p.type === 0 && p.altitude === 0;
-				})
-			},
+			source: railwaySource,
 			paint: {
-				'line-color': ['get', 'color'],
+				'line-color': color,
 				'line-width': lineWidth
 			},
 			minzoom: minzoom,
@@ -904,14 +913,9 @@ map.once('styledata', function () {
 		map.addLayer({
 			id: 'stations-og-' + zoom,
 			type: 'fill',
-			source: {
-				type: 'geojson',
-				data: filterFeatures(railwayFeatureCollection, function(p) {
-					return p.zoom === zoom && p.type === 1 && p.altitude === 0;
-				})
-			},
+			source: stationSource,
 			paint: {
-				'fill-color': ['get', 'color'],
+				'fill-color': color,
 				'fill-opacity': .7
 			},
 			minzoom: minzoom,
@@ -920,14 +924,9 @@ map.once('styledata', function () {
 		map.addLayer({
 			id: 'stations-outline-og-' + zoom,
 			type: 'line',
-			source: {
-				type: 'geojson',
-				data: filterFeatures(railwayFeatureCollection, function(p) {
-					return p.zoom === zoom && p.type === 1 && p.altitude === 0;
-				})
-			},
+			source: stationSource,
 			paint: {
-				'line-color': ['get', 'outlineColor'],
+				'line-color': outlineColor,
 				'line-width': lineWidth
 			},
 			minzoom: minzoom,
@@ -935,14 +934,7 @@ map.once('styledata', function () {
 		}, 'building-3d');
 	});
 
-	map.getStyle().layers.filter(function(layer) {
-		return layer.type === 'line' || layer.type.indexOf('fill') === 0;
-	}).forEach(function(layer) {
-		var id = layer.id;
-		var key = layer.type + '-opacity';
-
-		styleOpacities.push({id: id, key: key, opacity: map.getPaintProperty(id, key) || 1});
-	});
+	styleOpacities = getStyleOpacities(map);
 
 	map.addControl(new mapboxgl.NavigationControl());
 
@@ -957,13 +949,15 @@ map.once('styledata', function () {
 		className: 'mapbox-ctrl-underground',
 		title: 'Enter underground',
 		eventHandler: function(event) {
+			var classList = this.classList;
+
 			isUndergroundVisible = !isUndergroundVisible;
 			this.title = (isUndergroundVisible ? 'Exit' : 'Enter') + ' underground';
 			if (isUndergroundVisible) {
-				this.classList.add('mapbox-ctrl-underground-visible');
+				classList.add('mapbox-ctrl-underground-visible');
 				map.setPaintProperty('background', 'background-color', 'rgb(16,16,16)');
 			} else {
-				this.classList.remove('mapbox-ctrl-underground-visible');
+				classList.remove('mapbox-ctrl-underground-visible');
 				map.setPaintProperty('background', 'background-color', 'rgb(239,239,239)');
 			}
 			styleOpacities.forEach(function(item) {
@@ -1260,6 +1254,14 @@ function includes(array, value) {
 	return true;
 }
 
+function startsWith(str, search) {
+	return str.substring(0, search.length) === search;
+}
+
+function endsWith(str, search) {
+	return str.substring(str.length - search.length) === search;
+}
+
 function valueOrDefault(value, defaultValue) {
 	return value === undefined ? defaultValue : value;
 }
@@ -1307,7 +1309,7 @@ function loadJSON(url, delay) {
 	return new Promise(function(resolve, reject) {
 		var request = new XMLHttpRequest();
 
-		if (url.indexOf(API_URL) === 0) {
+		if (startsWith(url, API_URL)) {
 			url += a;
 		}
 		request.open('GET', url);
@@ -1479,6 +1481,26 @@ function buildLookup(array, key) {
 		lookup[element[key]] = element;
 	});
 	return lookup;
+}
+
+/**
+  * Returns an array of the style opacity information retrieved from map layers.
+  * @param {object} map - Mapbox's Map object
+  * @returns {Array} Array of the style opacity objects
+  */
+function getStyleOpacities(map) {
+	var layerTypes = ['line', 'fill', 'fill-extrusion'];
+	var opacities = [];
+
+	map.getStyle().layers.filter(function(layer) {
+		return includes(layerTypes, layer.type);
+	}).forEach(function(layer) {
+		var id = layer.id;
+		var key = layer.type + '-opacity';
+
+		opacities.push({id: id, key: key, opacity: map.getPaintProperty(id, key) || 1});
+	});
+	return opacities;
 }
 
 function getLang() {

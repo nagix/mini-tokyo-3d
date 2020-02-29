@@ -87,6 +87,8 @@ var OPERATORS_FOR_FLIGHTINFORMATION = [
 ];
 
 var RAILWAY_SOBURAPID = 'JR-East.SobuRapid';
+var RAILWAY_NAMBOKU = 'TokyoMetro.Namboku';
+var RAILWAY_MITA = 'Toei.Mita';
 
 var TRAINTYPES_FOR_SOBURAPID = [
 	'JR-East.Rapid',
@@ -272,7 +274,7 @@ ThreeLayer.prototype.render = function(gl, matrix) {
 	camera.matrix.getInverse(projectionMatrixI.multiply(m).multiply(l));
 	camera.matrix.decompose(camera.position, camera.quaternion, camera.scale);
 
-	if (id.indexOf('-ug', id.length - 3) !== -1 && isUndergroundVisible) {
+	if (endsWith(id, '-ug') && isUndergroundVisible) {
 		// Recalculate the projection matrix to replace the far plane
 		camera.projectionMatrix = new THREE.Matrix4().makePerspective(
 			-halfWidth, halfWidth, halfHeight, -halfHeight, nearZ, furthestDistance * 2.5);
@@ -525,21 +527,30 @@ map.once('styledata', function () {
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;
 		var maxzoom = zoom >= 18 ? 24 : zoom + 1;
-		var getWidth = ['get', 'width'];
+		var width = ['get', 'width'];
+		var color = ['get', 'color'];
+		var outlineColor = ['get', 'outlineColor'];
 		var lineWidth = zoom === 13 ?
-			['interpolate', ['exponential', 2], ['zoom'], 9, ['/', getWidth, 8], 12, getWidth] : getWidth;
+			['interpolate', ['exponential', 2], ['zoom'], 9, ['/', width, 8], 12, width] : width;
+		var railwaySource = {
+			type: 'geojson',
+			data: filterFeatures(railwayFeatureCollection, function(p) {
+				return p.zoom === zoom && p.type === 0 && p.altitude === 0;
+			})
+		};
+		var stationSource = {
+			type: 'geojson',
+			data: filterFeatures(railwayFeatureCollection, function(p) {
+				return p.zoom === zoom && p.type === 1 && p.altitude === 0;
+			})
+		};
 
 		map.addLayer({
 			id: 'railways-og-' + zoom,
 			type: 'line',
-			source: {
-				type: 'geojson',
-				data: filterFeatures(railwayFeatureCollection, function(p) {
-					return p.zoom === zoom && p.type === 0 && p.altitude === 0;
-				})
-			},
+			source: railwaySource,
 			paint: {
-				'line-color': ['get', 'color'],
+				'line-color': color,
 				'line-width': lineWidth
 			},
 			minzoom: minzoom,
@@ -548,14 +559,9 @@ map.once('styledata', function () {
 		map.addLayer({
 			id: 'stations-og-' + zoom,
 			type: 'fill',
-			source: {
-				type: 'geojson',
-				data: filterFeatures(railwayFeatureCollection, function(p) {
-					return p.zoom === zoom && p.type === 1 && p.altitude === 0;
-				})
-			},
+			source: stationSource,
 			paint: {
-				'fill-color': ['get', 'color'],
+				'fill-color': color,
 				'fill-opacity': .7
 			},
 			minzoom: minzoom,
@@ -564,14 +570,9 @@ map.once('styledata', function () {
 		map.addLayer({
 			id: 'stations-outline-og-' + zoom,
 			type: 'line',
-			source: {
-				type: 'geojson',
-				data: filterFeatures(railwayFeatureCollection, function(p) {
-					return p.zoom === zoom && p.type === 1 && p.altitude === 0;
-				})
-			},
+			source: stationSource,
 			paint: {
-				'line-color': ['get', 'outlineColor'],
+				'line-color': outlineColor,
 				'line-width': lineWidth
 			},
 			minzoom: minzoom,
@@ -583,51 +584,8 @@ map.once('styledata', function () {
 
 	map.addLayer(rainLayer, 'poi');
 
-	map.getStyle().layers.filter(function(layer) {
-		return (layer.type === 'background' || layer.type === 'line' || layer.type.indexOf('fill') === 0) &&
-			!includes(layer.id, '-og-') && !includes(layer.id, '-ug-');
-	}).forEach(function(layer) {
-		var id = layer.id;
-		var keys = [];
-
-		switch (layer.type) {
-			case 'background':
-				keys = ['background-color'];
-				break;
-			case 'line':
-				keys = ['line-color'];
-				break;
-			case 'fill':
-				keys = ['fill-color', 'fill-outline-color'];
-				break;
-			case 'fill-extrusion':
-				keys = ['fill-extrusion-color'];
-				break;
-		}
-		keys.forEach(function(key) {
-			var prop = map.getPaintProperty(id, key);
-			var c;
-
-			if (typeof prop === 'string') {
-				c = prop.match(/rgba\((\d+),(\d+),(\d+),([\d\.]+)\)/);
-				styleColors.push({id: id, key: key, r: c[1], g: c[2], b: c[3], a: c[4]});
-			} else if (typeof prop === 'object') {
-				prop.stops.forEach(function(item, i) {
-					c = item[1].match(/rgba\((\d+),(\d+),(\d+),([\d\.]+)\)/);
-					styleColors.push({id: id, key: key, stops: i, r: c[1], g: c[2], b: c[3], a: c[4]});
-				});
-			}
-		});
-	});
-
-	map.getStyle().layers.filter(function(layer) {
-		return layer.type === 'line' || layer.type.indexOf('fill') === 0;
-	}).forEach(function(layer) {
-		var id = layer.id;
-		var key = layer.type + '-opacity';
-
-		styleOpacities.push({id: id, key: key, opacity: map.getPaintProperty(id, key) || 1});
-	});
+	styleColors = getStyleColors(map);
+	styleOpacities = getStyleOpacities(map);
 
 	var datalist = document.createElement('datalist');
 	datalist.id = 'stations';
@@ -727,14 +685,16 @@ map.once('styledata', function () {
 		className: 'mapbox-ctrl-underground',
 		title: dict['enter-underground'],
 		eventHandler: function(event) {
+			var classList = this.classList;
+
 			isUndergroundVisible = !isUndergroundVisible;
 			this.title = dict[(isUndergroundVisible ? 'exit' : 'enter') + '-underground'];
 			if (isUndergroundVisible) {
-				this.classList.add('mapbox-ctrl-underground-visible');
+				classList.add('mapbox-ctrl-underground-visible');
 				map.setPaintProperty('background', 'background-color', 'rgb(16,16,16)');
 			} else {
-				this.classList.remove('mapbox-ctrl-underground-visible');
-				map.setPaintProperty('background', 'background-color', getStyleColor(styleColors[0]));
+				classList.remove('mapbox-ctrl-underground-visible');
+				map.setPaintProperty('background', 'background-color', getStyleColorString(styleColors[0]));
 			}
 			styleOpacities.forEach(function(item) {
 				var id = item.id;
@@ -782,14 +742,16 @@ map.once('styledata', function () {
 		className: 'mapbox-ctrl-track mapbox-ctrl-track-helicopter',
 		title: dict['track'],
 		eventHandler: function(event) {
+			var classList = this.classList;
+
 			if (trackingMode === 'helicopter') {
 				trackingMode = 'train';
-				this.classList.remove('mapbox-ctrl-track-helicopter');
-				this.classList.add('mapbox-ctrl-track-train');
+				classList.remove('mapbox-ctrl-track-helicopter');
+				classList.add('mapbox-ctrl-track-train');
 			} else {
 				trackingMode = 'helicopter';
-				this.classList.remove('mapbox-ctrl-track-train');
-				this.classList.add('mapbox-ctrl-track-helicopter');
+				classList.remove('mapbox-ctrl-track-train');
+				classList.add('mapbox-ctrl-track-helicopter');
 			}
 			if (trackedObject) {
 				startViewAnimation();
@@ -800,6 +762,8 @@ map.once('styledata', function () {
 		className: 'mapbox-ctrl-playback',
 		title: dict['enter-playback'],
 		eventHandler: function() {
+			var classList = this.classList;
+
 			isPlayback = !isPlayback;
 			this.title = dict[(isPlayback ? 'exit' : 'enter') + '-playback'];
 			stopAll();
@@ -809,9 +773,9 @@ map.once('styledata', function () {
 			stopViewAnimation();
 			disableTracking();
 			if (isPlayback) {
-				this.classList.add('mapbox-ctrl-playback-active');
+				classList.add('mapbox-ctrl-playback-active');
 			} else {
-				this.classList.remove('mapbox-ctrl-playback-active');
+				classList.remove('mapbox-ctrl-playback-active');
 			}
 			isEditingTime = false;
 			clockSpeed = 1;
@@ -828,13 +792,15 @@ map.once('styledata', function () {
 		className: 'mapbox-ctrl-weather',
 		title: dict['show-weather'],
 		eventHandler: function() {
+			var classList = this.classList;
+
 			isWeatherVisible = !isWeatherVisible;
 			this.title = dict[(isWeatherVisible ? 'hide' : 'show') + '-weather'];
 			if (isWeatherVisible) {
-				this.classList.add('mapbox-ctrl-weather-active');
+				classList.add('mapbox-ctrl-weather-active');
 				loadNowCastData();
 			} else {
-				this.classList.remove('mapbox-ctrl-weather-active');
+				classList.remove('mapbox-ctrl-weather-active');
 				if (fgGroup) {
 					rainLayer.scene.remove(fgGroup.mesh);
 	//				fgGroup.dispose();
@@ -877,17 +843,17 @@ map.once('styledata', function () {
 	});
 
 	document.getElementById('timetable-header').addEventListener('click', function(e) {
-		var timetableElement = document.getElementById('timetable');
-		var timetableButtonElement = document.getElementById('timetable-button');
+		var style = document.getElementById('timetable').style;
+		var classList = document.getElementById('timetable-button').classList;
 
-		if (timetableElement.style.height !== '68px') {
-			timetableElement.style.height = '68px';
-			timetableButtonElement.classList.remove('slide-down');
-			timetableButtonElement.classList.add('slide-up');
+		if (style.height !== '68px') {
+			style.height = '68px';
+			classList.remove('slide-down');
+			classList.add('slide-up');
 		} else {
-			timetableElement.style.height = '33%';
-			timetableButtonElement.classList.remove('slide-up');
-			timetableButtonElement.classList.add('slide-down');
+			style.height = '33%';
+			classList.remove('slide-up');
+			classList.add('slide-down');
 		}
 	});
 
@@ -1736,7 +1702,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 				// Retry lookup replacing Marunouchi line with MarunouchiBranch line
 				var train = trainLookup[id] || trainLookup[id.replace('.Marunouchi.', '.MarunouchiBranch.')];
 				var changed = false;
-				var railway, railwayRef, direction;
+				var railwayID, railwayRef, direction;
 
 				if (train) {
 					realtimeTrainLookup[id] = train;
@@ -1763,18 +1729,18 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 						stopTrain(train, true);
 					}
 				} else {
-					railway = removePrefix(trainRef['odpt:railway']);
+					railwayID = removePrefix(trainRef['odpt:railway']);
 					// Exclude Namboku line trains that connect to/from Mita line
-					if (railway === 'TokyoMetro.Namboku' && (origin[0].indexOf('Toei.Mita') === 0 || destination[0].indexOf('Toei.Mita') === 0)) {
+					if (railwayID === RAILWAY_NAMBOKU && (startsWith(origin[0], RAILWAY_MITA) || startsWith(destination[0], RAILWAY_MITA))) {
 						return;
 					}
-					railwayRef = railwayLookup[railway];
+					railwayRef = railwayLookup[railwayID];
 					direction = removePrefix(trainRef['odpt:railDirection']);
 					if (railwayRef.color) {
 						train = {
 							t: id,
 							id: id + '.Today',
-							r: railway,
+							r: railwayID,
 							y: trainType,
 							n: trainRef['odpt:trainNumber'],
 							os: origin,
@@ -2150,10 +2116,10 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 			if (item.id === 'background' && isUndergroundVisible) {
 				map.setPaintProperty(item.id, item.key, 'rgb(16,16,16)');
 			} else if (item.stops === undefined) {
-				map.setPaintProperty(item.id, item.key, getStyleColor(item));
+				map.setPaintProperty(item.id, item.key, getStyleColorString(item));
 			} else {
 				var prop = map.getPaintProperty(item.id, item.key);
-				prop.stops[item.stops][1] = getStyleColor(item);
+				prop.stops[item.stops][1] = getStyleColorString(item);
 				map.setPaintProperty(item.id, item.key, prop);
 			}
 		});
@@ -2427,13 +2393,13 @@ function disableTracking() {
 }
 
 function showTimetable() {
-	var timetableElement = document.getElementById('timetable');
-	var timetableButtonElement = document.getElementById('timetable-button');
+	var style = document.getElementById('timetable').style;
+	var classList = document.getElementById('timetable-button').classList;
 
-	timetableElement.style.display = 'block';
-	timetableElement.style.height = '33%';
-	timetableButtonElement.classList.remove('slide-up');
-	timetableButtonElement.classList.add('slide-down');
+	style.display = 'block';
+	style.height = '33%';
+	classList.remove('slide-up');
+	classList.add('slide-down');
 }
 
 function hideTimetable() {
@@ -2719,6 +2685,14 @@ function includes(array, value) {
 	return true;
 }
 
+function startsWith(str, search) {
+	return str.substring(0, search.length) === search;
+}
+
+function endsWith(str, search) {
+	return str.substring(str.length - search.length) === search;
+}
+
 function valueOrDefault(value, defaultValue) {
 	return value === undefined ? defaultValue : value;
 }
@@ -2759,10 +2733,10 @@ function removePrefix(value) {
 
 function loadJSON(url) {
 	return new Promise(function(resolve, reject) {
-		var gz = url.match(/\.gz$/);
+		var gz = endsWith(url, '.gz');
 		var request = new XMLHttpRequest();
 
-		if (url.indexOf(API_URL) === 0) {
+		if (startsWith(url, API_URL)) {
 			url += a;
 		}
 		request.open('GET', url);
@@ -2899,7 +2873,73 @@ function getPerformanceTime() {
 	return isPlayback ? basePerfTime + now * clockSpeed : now;
 }
 
-function getStyleColor(color) {
+/**
+  * Returns an array of the style color information retrieved from map layers.
+  * @param {object} map - Mapbox's Map object
+  * @returns {Array} Array of the style color objects
+  */
+function getStyleColors(map) {
+	// Layer type -> paint property key mapping
+	var paintPropertyKeys = {
+		'background': ['background-color'],
+		'line': ['line-color'],
+		'fill': ['fill-color', 'fill-outline-color'],
+		'fill-extrusion': ['fill-extrusion-color']
+	};
+	var layerTypes = Object.keys(paintPropertyKeys);
+	var rgbaPattern = /rgba\((?<r>\d+),(?<g>\d+),(?<b>\d+),(?<a>[\d\.]+)\)/;
+	var colors = [];
+
+	map.getStyle().layers.filter(function(layer) {
+		return includes(layerTypes, layer.type) && !layer.id.match(/-(og|ug)-/);
+	}).forEach(function(layer) {
+		var id = layer.id;
+
+		paintPropertyKeys[layer.type].forEach(function(key) {
+			var prop = map.getPaintProperty(id, key);
+			var color;
+
+			if (typeof prop === 'string') {
+				color = prop.match(rgbaPattern);
+				colors.push(merge({id: id, key: key}, color.groups));
+			} else if (typeof prop === 'object') {
+				prop.stops.forEach(function(item, i) {
+					color = item[1].match(rgbaPattern);
+					colors.push(merge({id: id, key: key, stops: i}, color.groups));
+				});
+			}
+		});
+	});
+	return colors;
+}
+
+/**
+  * Returns an array of the style opacity information retrieved from map layers.
+  * @param {object} map - Mapbox's Map object
+  * @returns {Array} Array of the style opacity objects
+  */
+function getStyleOpacities(map) {
+	var layerTypes = ['line', 'fill', 'fill-extrusion'];
+	var opacities = [];
+
+	map.getStyle().layers.filter(function(layer) {
+		return includes(layerTypes, layer.type);
+	}).forEach(function(layer) {
+		var id = layer.id;
+		var key = layer.type + '-opacity';
+
+		opacities.push({id: id, key: key, opacity: map.getPaintProperty(id, key) || 1});
+	});
+	return opacities;
+}
+
+/**
+  * Returns the modified style color based on the current date and time.
+  * In the playback mode, the time in the simulation clock is used.
+  * @param {object} color - Style color object
+  * @return {string} Modified style color string
+  */
+function getStyleColorString(color) {
 	var times = SunCalc.getTimes(new Date(getTime()), 35.6814, 139.7670);
 	var sunrise = getJSTDate(times.sunrise.getTime()).getTime();
 	var sunset = getJSTDate(times.sunset.getTime()).getTime();
