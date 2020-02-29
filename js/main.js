@@ -357,6 +357,7 @@ var trainLayers = {
 	addObject: function(object, duration) {
 		var layer = object.userData.altitude < 0 ? this.ug : this.og;
 		var material = object.material;
+		var uniforms = material.uniforms;
 
 		if (material.uniforms) {
 			material.uniforms.opacity.value = 0;
@@ -367,10 +368,12 @@ var trainLayers = {
 		if (duration > 0) {
 			startAnimation({
 				callback: function(elapsed) {
-					if (material.uniforms) {
-						material.uniforms.opacity.value = getObjectOpacity(object) * elapsed / duration;
+					var opacity = getObjectOpacity(object) * elapsed / duration;
+
+					if (uniforms) {
+						uniforms.opacity.value = opacity;
 					} else {
-						material.opacity = getObjectOpacity(object) * elapsed / duration;
+						material.opacity = opacity;
 					}
 				},
 				duration: duration
@@ -380,15 +383,18 @@ var trainLayers = {
 	updateObject: function(object, duration) {
 		var layer = object.userData.altitude < 0 ? this.ug : this.og;
 		var material = object.material;
+		var uniforms = material.uniforms;
 
 		layer.scene.add(object);
 		if (duration > 0) {
 			startAnimation({
 				callback: function(elapsed) {
-					if (material.uniforms) {
-						material.uniforms.opacity.value = getObjectOpacity(object, elapsed / duration);
+					var opacity = getObjectOpacity(object, elapsed / duration);
+
+					if (uniforms) {
+						uniforms.opacity.value = opacity;
 					} else {
-						material.opacity = getObjectOpacity(object, elapsed / duration);
+						material.opacity = opacity;
 					}
 				},
 				duration: duration
@@ -396,20 +402,25 @@ var trainLayers = {
 		}
 	},
 	removeObject: function(object, duration) {
-		var layer, material;
+		var layer, material, uniforms;
 
 		if (!object) {
 			return;
 		}
 		layer = object.userData.altitude < 0 ? this.ug : this.og;
 		material = object.material;
+		uniforms = material.uniforms;
+		material.polygonOffsetFactor = 0;
+		object.renderOrder = 1;
 		if (duration > 0) {
 			startAnimation({
 				callback: function(elapsed) {
-					if (material.uniforms) {
-						material.uniforms.opacity.value = getObjectOpacity(object) * (1 - elapsed / duration);
+					var opacity = getObjectOpacity(object) * (1 - elapsed / duration);
+
+					if (uniforms) {
+						uniforms.opacity.value = opacity;
 					} else {
-						object.material.opacity = getObjectOpacity(object) * (1 - elapsed / duration);
+						material.opacity = opacity;
 					}
 				},
 				complete: function() {
