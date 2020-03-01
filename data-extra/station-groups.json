@@ -102,7 +102,8 @@
 	"JR-East.Yamanote.Shimbashi"
 ]], [[
 	"JR-East.KeihinTohokuNegishi.Hamamatsucho",
-	"JR-East.Yamanote.Hamamatsucho",
+	"JR-East.Yamanote.Hamamatsucho"
+], [
 	"TokyoMonorail.HanedaAirport.Hamamatsucho"
 ]], [[
 	"JR-East.KeihinTohokuNegishi.Tamachi",
@@ -125,8 +126,7 @@
 	"JR-East.ChuoSobuLocal.Yotsuya"
 ]], [[
 	"JR-East.ChuoRapid.Nakano",
-	"JR-East.ChuoSobuLocal.Nakano"
-], [
+	"JR-East.ChuoSobuLocal.Nakano",
 	"TokyoMetro.Tozai.Nakano"
 ]], [[
 	"JR-East.ChuoRapid.Koenji",
@@ -196,14 +196,13 @@
 ], [
 	"Tobu.TobuUrbanPark.Funabashi"
 ]], [[
-	"JR-East.Musashino.NishiFunabashi",
-	"JR-East.KeiyoKoyaBranch.NishiFunabashi",
-	"JR-East.KeiyoFutamataBranch.NishiFunabashi"
-], [
-	"JR-East.ChuoSobuLocal.NishiFunabashi"
-], [
+	"JR-East.ChuoSobuLocal.NishiFunabashi",
 	"TokyoMetro.Tozai.NishiFunabashi",
 	"ToyoRapid.ToyoRapid.NishiFunabashi"
+], [
+	"JR-East.KeiyoFutamataBranch.NishiFunabashi",
+	"JR-East.Musashino.NishiFunabashi",
+	"JR-East.KeiyoKoyaBranch.NishiFunabashi"
 ]], [[
 	"JR-East.ChuoSobuLocal.Ichikawa",
 	"JR-East.SobuRapid.Ichikawa"
@@ -291,8 +290,7 @@
 ], [
 	"MIR.TsukubaExpress.KitaSenju"
 ], [
-	"Tobu.TobuSkytree.KitaSenju"
-], [
+	"Tobu.TobuSkytree.KitaSenju",
 	"TokyoMetro.Hibiya.KitaSenju"
 ]], [[
 	"JR-East.JobanRapid.Matsudo",
@@ -312,8 +310,7 @@
 	"JR-East.JobanRapid.Toride",
 	"JR-East.JobanLocal.Toride"
 ]], [[
-	"JR-East.JobanLocal.Ayase"
-], [
+	"JR-East.JobanLocal.Ayase",
 	"TokyoMetro.Chiyoda.Ayase"
 ]], [[
 	"JR-East.JobanLocal.Kanamachi"
@@ -520,14 +517,12 @@
 ], [
 	"Keio.Sagamihara.Hashimoto"
 ]], [[
-	"TokyoMetro.Ginza.OmoteSando"
-], [
+	"TokyoMetro.Ginza.OmoteSando",
 	"TokyoMetro.Hanzomon.OmoteSando"
 ], [
 	"TokyoMetro.Chiyoda.OmoteSando"
 ]], [[
-	"TokyoMetro.Ginza.AoyamaItchome"
-], [
+	"TokyoMetro.Ginza.AoyamaItchome",
 	"TokyoMetro.Hanzomon.AoyamaItchome"
 ], [
 	"Toei.Oedo.AoyamaItchome"
@@ -712,8 +707,7 @@
 	"TokyoMetro.Yurakucho.Hikawadai",
 	"TokyoMetro.Fukutoshin.Hikawadai"
 ]], [[
-	"Seibu.SeibuYurakucho.KotakeMukaihara"
-], [
+	"Seibu.SeibuYurakucho.KotakeMukaihara",
 	"TokyoMetro.Yurakucho.KotakeMukaihara",
 	"TokyoMetro.Fukutoshin.KotakeMukaihara"
 ]], [[
@@ -782,8 +776,7 @@
 ], [
 	"Toei.Oedo.HigashiShinjuku"
 ]], [[
-	"Toei.Asakusa.Sengakuji"
-], [
+	"Toei.Asakusa.Sengakuji",
 	"Keikyu.Main.Sengakuji"
 ]], [[
 	"Toei.Asakusa.Mita"
@@ -925,8 +918,7 @@
 	"Seibu.Haijima.Ogawa",
 	"Seibu.Kokubunji.Ogawa"
 ]], [[
-	"Odakyu.Odawara.YoyogiUehara"
-], [
+	"Odakyu.Odawara.YoyogiUehara",
 	"TokyoMetro.Chiyoda.YoyogiUehara"
 ]], [[
 	"Odakyu.Odawara.Gotokuji"
@@ -948,8 +940,7 @@
 	"Tokyu.DenEnToshi.Takatsu",
 	"Tokyu.Oimachi.Takatsu"
 ]], [[
-	"Tokyu.Toyoko.NakaMeguro"
-], [
+	"Tokyu.Toyoko.NakaMeguro",
 	"TokyoMetro.Hibiya.NakaMeguro"
 ]], [[
 	"Tokyu.Toyoko.Jiyugaoka"
