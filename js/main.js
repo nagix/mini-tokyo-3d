@@ -135,7 +135,7 @@ var activeFlightLookup = {};
 var animationID = 0;
 var lastStaticUpdate = '2020-02-21 16:00:00';
 var lastDynamicUpdate = {};
-var stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, operatorLookup, airportLookup, a;
+var stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainVehicleLookup, trainLookup, operatorLookup, airportLookup, a;
 var trackedObject, markedObject, tempDate, lastTimetableRefresh, lastTrainRefresh, lastClockRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
 var flightPattern, lastFlightPatternChanged;
 var lastNowCastRefresh, nowCastData, fgGroup, imGroup, bgGroup;
@@ -321,13 +321,14 @@ Promise.all([
 	loadJSON('data/' + getTimetableFileName()),
 	loadJSON('data/rail-directions.json.gz'),
 	loadJSON('data/train-types.json.gz'),
+	loadJSON('data/train-vehicles.json'),
 	loadJSON('data/operators.json.gz'),
 	loadJSON('data/airports.json.gz'),
 	loadJSON('data/flight-status.json.gz'),
 	loadJSON('https://mini-tokyo.appspot.com/e')
 ]).then(function([
-	dict, railwayRefData, stationRefData, railwayFeatureCollection, timetableRefData,
-	railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData, e
+	dict, railwayRefData, stationRefData, railwayFeatureCollection, timetableRefData, railDirectionRefData,
+	trainTypeRefData, trainVehicleRefData, operatorRefData, airportRefData, flightStatusRefData, e
 ]) {
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibmFnaXgiLCJhIjoiY2sxaTZxY2gxMDM2MDNjbW5nZ2h4aHB6ZyJ9.npSnxvMC4r5S74l8A9Hrzw';
@@ -356,25 +357,13 @@ var trainLayers = {
 	og: new ThreeLayer('trains-og'),
 	addObject: function(object, duration) {
 		var layer = object.userData.altitude < 0 ? this.ug : this.og;
-		var material = object.material;
-		var uniforms = material.uniforms;
 
-		if (material.uniforms) {
-			material.uniforms.opacity.value = 0;
-		} else {
-			material.opacity = 0;
-		}
+		setOpacity(object, 0);
 		layer.scene.add(object);
 		if (duration > 0) {
 			startAnimation({
 				callback: function(elapsed) {
-					var opacity = getObjectOpacity(object) * elapsed / duration;
-
-					if (uniforms) {
-						uniforms.opacity.value = opacity;
-					} else {
-						material.opacity = opacity;
-					}
+					setOpacity(object, getObjectOpacity(object) * elapsed / duration);
 				},
 				duration: duration
 			});
@@ -382,46 +371,30 @@ var trainLayers = {
 	},
 	updateObject: function(object, duration) {
 		var layer = object.userData.altitude < 0 ? this.ug : this.og;
-		var material = object.material;
-		var uniforms = material.uniforms;
 
 		layer.scene.add(object);
 		if (duration > 0) {
 			startAnimation({
 				callback: function(elapsed) {
-					var opacity = getObjectOpacity(object, elapsed / duration);
-
-					if (uniforms) {
-						uniforms.opacity.value = opacity;
-					} else {
-						material.opacity = opacity;
-					}
+					setOpacity(object, getObjectOpacity(object, elapsed / duration));
 				},
 				duration: duration
 			});
 		}
 	},
 	removeObject: function(object, duration) {
-		var layer, material, uniforms;
+		var layer;
 
 		if (!object) {
 			return;
 		}
 		layer = object.userData.altitude < 0 ? this.ug : this.og;
-		material = object.material;
-		uniforms = material.uniforms;
-		material.polygonOffsetFactor = 0;
+		object.material.polygonOffsetFactor = 0;
 		object.renderOrder = 1;
 		if (duration > 0) {
 			startAnimation({
 				callback: function(elapsed) {
-					var opacity = getObjectOpacity(object) * (1 - elapsed / duration);
-
-					if (uniforms) {
-						uniforms.opacity.value = opacity;
-					} else {
-						material.opacity = opacity;
-					}
+					setOpacity(object, getObjectOpacity(object) * (1 - elapsed / duration));
 				},
 				complete: function() {
 					layer.scene.remove(object);
@@ -471,6 +444,7 @@ trainLookup = buildLookup(timetableRefData, 't');
 
 railDirectionLookup = buildLookup(railDirectionRefData);
 trainTypeLookup = buildLookup(trainTypeRefData);
+trainVehicleLookup = buildLookup(trainVehicleRefData);
 operatorLookup = buildLookup(operatorRefData);
 airportLookup = buildLookup(airportRefData);
 flightStatusLookup = buildLookup(flightStatusRefData);
@@ -733,17 +707,20 @@ map.once('styledata', function () {
 						var delayMarker = train.delayMarker;
 
 						train.cars.forEach(function(car) {
-							car.material.opacity = getObjectOpacity(car, t);
+							setOpacity(car, getObjectOpacity(car, t));
 						});
 						if (delayMarker) {
-							delayMarker.material.uniforms.opacity.value = getObjectOpacity(delayMarker, t);
+							setOpacity(delayMarker, getObjectOpacity(delayMarker, t));
 						}
 					});
 					refreshDelayMarkers();
 					Object.keys(activeFlightLookup).forEach(function(key) {
 						var flight = activeFlightLookup[key];
+						var opacity = getObjectOpacity(flight.body, t);
 
-						flight.body.material.opacity = flight.wing.material.opacity = flight.vTail.material.opacity = getObjectOpacity(flight.body, t);
+						setOpacity(flight.body, opacity);
+						setOpacity(flight.wing, opacity);
+						setOpacity(flight.vTail, opacity);
 					});
 				},
 				duration: 300
@@ -1057,7 +1034,7 @@ map.once('styledata', function () {
 
 		if (length === 0) {
 			railway = railway || railwayLookup[train.r];
-			car = createCube(.88, 1.76, .88, railway.color);
+			car = createCube(.88, 1.76, .88, train.v ? trainVehicleLookup[train.v].color : railway.color);
 			car.rotation.order = 'ZYX';
 			userData = car.userData;
 			userData.object = train;
@@ -1471,13 +1448,19 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 	function setTrainStandingStatus(train, standing) {
 		var railwayID = train.r;
 		var railway = railwayLookup[railwayID];
+		var vehicle = train.v;
+		var color = vehicle ? trainVehicleLookup[vehicle].color : railway.color;
 		var destination = train.ds;
 		var delay = train.delay || 0;
 
 		train.standing = standing;
 		train.description =
-			'<div class="desc-header"><div style="background-color: ' + railway.color + ';"></div>' +
-			'<div><strong>' + getLocalizedRailwayTitle(railwayID) + '</strong>' +
+			'<div class="desc-header">' + (Array.isArray(color) ?
+				'<div>' + color.slice(0, 3).map(function(c) {
+					return '<div class="line-strip" style="background-color: ' + c + ';"></div>';
+				}).join('') + '</div>' :
+				'<div style="background-color: ' + color + ';"></div>') +
+			'<div><strong>' + (train.nm ? train.nm[0][lang] : getLocalizedRailwayTitle(railwayID)) + '</strong>' +
 			'<br>' + getLocalizedTrainTypeTitle(train.y) + ' ' +
 			(destination ? dict['for'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train.d)) + '</div></div>' +
 			'<strong>' + dict['train-number'] + ':</strong> ' + train.n +
@@ -1527,13 +1510,19 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 		var offsets = [];
 		var railwayID = train.r;
 		var railway = railwayLookup[railwayID];
+		var vehicle = train.v;
+		var color = vehicle ? trainVehicleLookup[vehicle].color : railway.color;
 		var destination = train.ds;
 		var delay = train.delay || 0;
 		var curr, currSection, i, children, child;
 
 		document.getElementById('timetable-header').innerHTML =
-			'<div class="desc-header"><div style="background-color: ' + railway.color + ';"></div>' +
-			'<div><strong>' + getLocalizedRailwayTitle(railwayID) + '</strong>' +
+			'<div class="desc-header">' + (Array.isArray(color) ?
+				'<div>' + color.slice(0, 3).map(function(c) {
+					return '<div class="line-strip-long" style="background-color: ' + c + ';"></div>';
+				}).join('') + '</div>' :
+				'<div style="background-color: ' + color + ';"></div>') +
+			'<div><strong>' + (train.nm ? train.nm[0][lang] : getLocalizedRailwayTitle(railwayID)) + '</strong>' +
 			'<br>' + getLocalizedTrainTypeTitle(train.y) + ' ' +
 			(destination ? dict['for'].replace('$1', getLocalizedStationTitle(destination)) : getLocalizedRailDirectionTitle(train.d)) + '</div></div>';
 
@@ -2992,15 +2981,64 @@ function getStyleColorString(color) {
 	return 'rgba(' + [color.r * r, color.g * g, color.b * b, color.a].join(',') + ')';
 }
 
+/**
+  * Returns a cube mesh object.
+  * @param {number} x - Length of the edges parallel to the X axis
+  * @param {number} y - Length of the edges parallel to the Y axis
+  * @param {number} z - Length of the edges parallel to the Z axis
+  * @param {string|Array} color - Cube color. If it is an array, the first three colors
+  *     will be used on the side surface, the fourth color will be used on the front surface
+  * @returns {Mesh} Cube mesh object
+  */
 function createCube(x, y, z, color) {
-	var geometry = new THREE.BoxBufferGeometry(x, y, z);
-	var material = new THREE.MeshLambertMaterial({
-		color: parseInt(color.replace('#', ''), 16),
+	var materialParams = {
 		transparent: true,
 		polygonOffset: true,
 		polygonOffsetFactor: Math.random()
-	});
+	};
+	var hasFaceColor, geometry, material;
+
+	if (Array.isArray(color)) {
+		hasFaceColor = color.length > 3;
+		geometry = new THREE.BoxBufferGeometry(x, y, z, 1, 1, 3);
+		geometry.clearGroups();
+		[0, 1, 2, 2, 1, 0, 2, 1, 0, 0, 1, 2, 0].forEach(function(index, i) {
+			geometry.addGroup(i * 6, 6, i >= 6 && i < 12 && hasFaceColor ? 3 : index);
+		});
+		material = color.map(function(c) {
+			return new THREE.MeshLambertMaterial(merge({
+				color: c
+			}, materialParams));
+		});
+	} else {
+		geometry = new THREE.BoxBufferGeometry(x, y, z);
+		material = new THREE.MeshLambertMaterial(merge({
+			color: color
+		}, materialParams));
+	}
+
 	return new THREE.Mesh(geometry, material);
+}
+
+/**
+  * Sets the opacity of a mesh object.
+  * @param {Mesh} object - Mesh object
+  * @param {number} opacity - Float in the range of 0.0 - 1.0 indicating how
+  *     transparent the material is
+  */
+function setOpacity(object, opacity) {
+	var materials = object.material;
+	var uniforms = materials.uniforms;
+
+	if (Array.isArray(materials)) {
+		materials.forEach(function(material) {
+			material.opacity = opacity;
+		});
+	} else if (uniforms) {
+		uniforms.opacity.value = opacity;
+	} else {
+		materials.opacity = opacity;
+	}
 }
 
 function createDelayMarker(dark) {

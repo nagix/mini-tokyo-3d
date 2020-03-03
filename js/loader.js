@@ -623,6 +623,8 @@ timetableLookup = buildLookup(concat([trainTimetableRefData.weekday, trainTimeta
 			if (nt) {
 				timetableRef.nt = nt;
 			}
+			timetableRef.nm = timetable.nm;
+			timetableRef.v = timetable.v;
 		}
 	});
 });
@@ -1403,7 +1405,8 @@ function loadTrainTimetableRefData() {
 								s: as || ds
 							});
 						}),
-						pt: removePrefix(table['odpt:previousTrainTimetable'])
+						pt: removePrefix(table['odpt:previousTrainTimetable']),
+						nm: table['odpt:trainName']
 					};
 				});
 			});

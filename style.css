@@ -61,7 +61,7 @@ body {
 	display: table;
 	font-size: 150%;
 }
-.clock-controller>span {
+.clock-controller > span {
 	vertical-align: middle;
 	text-align: center;
 	display: table-cell;
@@ -78,16 +78,16 @@ body {
 .spin-box:first-child {
 	width: 52px;
 }
-.spin-box>div {
+.spin-box > div {
 	width: 100%;
 	height: 30px;
 	line-height: 30px;
 	text-align: center;
 }
-.spin-box>div:first-child {
+.spin-box > div:first-child {
 	border-bottom: solid 1px #777;
 }
-.spin-box>div:last-child {
+.spin-box > div:last-child {
 	border-top: solid 1px #777;
 }
 .spin-box button {
@@ -104,7 +104,7 @@ body {
 	margin-bottom: 10px;
 	display: table;
 }
-.clock-button>span {
+.clock-button > span {
 	height: 30px;
 	vertical-align: middle;
 	text-align: center;
@@ -129,17 +129,17 @@ body {
 	border-radius: 4px;
 	box-shadow:0 0 0 1px #777;
 }
-.speed-controller>span {
+.speed-controller > span {
 	height: 30px;
 	vertical-align: middle;
 	text-align: center;
 	display: table-cell;
 }
-.speed-controller>span:first-child {
+.speed-controller > span:first-child {
 	width: 30px;
 	border-right: solid 1px #777;
 }
-.speed-controller>span:last-child {
+.speed-controller > span:last-child {
 	width: 30px;
 	border-left: solid 1px #777;
 }
@@ -197,7 +197,7 @@ body {
 	color: #fff;
 	transition: height 300ms ease;
 }
-#timetable>div {
+#timetable > div {
 	margin: 10px 0;
 	padding: 0 10px;
 }
@@ -250,7 +250,7 @@ body {
 .station-row:hover {
 	background-color: rgba(102, 102, 102, 0.7);
 }
-.station-row>div {
+.station-row > div {
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -473,6 +473,7 @@ body {
 }
 .desc-header > div {
 	display: table-cell;
+	vertical-align: top;
 }
 .desc-header > div:first-child {
 	width: 10px;
@@ -482,4 +483,12 @@ body {
 }
 .desc-caution {
 	color: #f90;
+}
+.line-strip {
+	width: 10px;
+	height: 13px;
+}
+.line-strip-long {
+	width: 10px;
+	height: 16px;
 }
