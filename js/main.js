@@ -1199,8 +1199,9 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 		var now = getTime();
 
 		timetableRefData.forEach(function(train) {
-			var d = train.delay || 0;
-			if (train.start + d <= now && now <= train.end + d &&
+			var delay = train.delay || 0;
+
+			if (train.start + delay <= now && now <= train.end + delay &&
 				!checkActiveTrains(train, true) &&
 				(!railwayLookup[train.r].status || realtimeTrainLookup[train.t])) {
 				function start(index) {
@@ -1252,15 +1253,16 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 				}
 
 				function repeat(elapsed) {
+					var delay = train.delay || 0;
 					var arrivalTime = train.arrivalTime;
 					var nextDepartureTime = train.nextDepartureTime;
 					var minDuration, maxDuration;
 
 					if (nextDepartureTime) {
-						maxDuration = getTime(nextDepartureTime) - getTime() + (elapsed || 0) - MIN_DELAY + 60000 - MIN_STANDING_DURATION;
+						maxDuration = getTime(nextDepartureTime) + delay - getTime() + (elapsed || 0) - MIN_DELAY + 60000 - MIN_STANDING_DURATION;
 					}
 					if (arrivalTime) {
-						minDuration = getTime(arrivalTime) - getTime() + (elapsed || 0) - MIN_DELAY;
+						minDuration = getTime(arrivalTime) + delay - getTime() + (elapsed || 0) - MIN_DELAY;
 						if (!(maxDuration < minDuration + 60000)) {
 							maxDuration = minDuration + 60000;
 						}
