@@ -179,6 +179,8 @@
 	"JR-East.Ome.Haijima",
 	"JR-East.Itsukaichi.Haijima"
 ]], [[
+	"Keisei.Chiba.KeiseiChiba"
+], [
 	"JR-East.Uchibo.Chiba",
 	"JR-East.Sotobo.Chiba",
 	"JR-East.ChuoSobuLocal.Chiba",
@@ -187,6 +189,10 @@
 ]], [[
 	"JR-East.ChuoSobuLocal.Inage",
 	"JR-East.SobuRapid.Inage"
+]], [[
+	"JR-East.ChuoSobuLocal.Makuharihongo"
+], [
+	"Keisei.Chiba.KeiseiMakuharihongo"
 ]], [[
 	"JR-East.ChuoSobuLocal.Tsudanuma",
 	"JR-East.SobuRapid.Tsudanuma"
@@ -295,6 +301,8 @@
 ]], [[
 	"JR-East.JobanRapid.Matsudo",
 	"JR-East.JobanLocal.Matsudo"
+], [
+	"ShinKeisei.ShinKeisei.Matsudo"
 ]], [[
 	"Tobu.TobuUrbanPark.Kashiwa"
 ], [
@@ -490,6 +498,10 @@
 	"JR-East.Musashino.KitaAsaka"
 ], [
 	"Tobu.Tojo.Asakadai"
+]], [[
+	"JR-East.Musashino.ShinYahashira"
+], [
+	"ShinKeisei.ShinKeisei.Yabashira"
 ]], [[
 	"JR-East.Musashino.MinamiKoshigaya"
 ], [
@@ -864,14 +876,22 @@
 	"Keisei.NaritaSkyAccess.KeiseiTakasago",
 	"Hokuso.Hokuso.KeiseiTakasago"
 ]], [[
+	"Keisei.Main.KeiseiTsudanuma",
+	"Keisei.Chiba.KeiseiTsudanuma",
+	"ShinKeisei.ShinKeisei.KeiseiTsudanuma"
+]], [[
 	"Keisei.Main.KeiseiNarita",
 	"Keisei.HigashiNarita.KeiseiNarita"
 ]], [[
 	"Keisei.HigashiNarita.HigashiNarita",
 	"Shibayama.Shibayama.HigashiNarita"
 ]], [[
+	"Keisei.Chiba.ChibaChuo",
+	"Keisei.Chihara.ChibaChuo"
+]], [[
 	"Keisei.NaritaSkyAccess.ShinKamagaya",
-	"Hokuso.Hokuso.ShinKamagaya"
+	"Hokuso.Hokuso.ShinKamagaya",
+	"ShinKeisei.ShinKeisei.ShinKamagaya"
 ], [
 	"Tobu.TobuUrbanPark.ShinKamagaya"
 ]], [[

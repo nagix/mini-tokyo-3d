@@ -629,6 +629,22 @@
 	"color": "#005AAA",
 	"carComposition": 8
 }, {
+	"id": "Keisei.Chiba",
+	"title": {
+		"ko": "지바 선",
+		"zh": "千叶线"
+	},
+	"color": "#005AAA",
+	"carComposition": 6
+}, {
+	"id": "Keisei.Chihara",
+	"title": {
+		"ko": "지하라 선",
+		"zh": "千原线"
+	},
+	"color": "#005AAA",
+	"carComposition": 6
+}, {
 	"id": "Keisei.NaritaSkyAccess",
 	"title": {
 		"ko": "나리타 스카이액세스선",
@@ -1039,6 +1055,44 @@
 	"ascending": "Outbound",
 	"color": "#3FB036",
 	"carComposition": 10
+}, {
+	"id": "ShinKeisei.ShinKeisei",
+	"title": {
+		"ko": "신케이세이 선",
+		"zh": "新京成线"
+	},
+	"stations": {
+		"index": 1,
+		"delete": 0,
+		"insert": [
+			"ShinKeisei.ShinKeisei.Kamihongo",
+			"ShinKeisei.ShinKeisei.MatsudoShinden",
+			"ShinKeisei.ShinKeisei.Minoridai",
+			"ShinKeisei.ShinKeisei.Yabashira",
+			"ShinKeisei.ShinKeisei.Tokiwadaira",
+			"ShinKeisei.ShinKeisei.Goko",
+			"ShinKeisei.ShinKeisei.Motoyama",
+			"ShinKeisei.ShinKeisei.Kunugiyama",
+			"ShinKeisei.ShinKeisei.KitaHatsutomi",
+			"ShinKeisei.ShinKeisei.ShinKamagaya",
+			"ShinKeisei.ShinKeisei.Hatsutomi",
+			"ShinKeisei.ShinKeisei.KamagayaDaibutsu",
+			"ShinKeisei.ShinKeisei.Futawamukodai",
+			"ShinKeisei.ShinKeisei.Misaki",
+			"ShinKeisei.ShinKeisei.Takifudo",
+			"ShinKeisei.ShinKeisei.Takanekodan",
+			"ShinKeisei.ShinKeisei.Takanekido",
+			"ShinKeisei.ShinKeisei.KitaNarashino",
+			"ShinKeisei.ShinKeisei.Narashino",
+			"ShinKeisei.ShinKeisei.Yakuendai",
+			"ShinKeisei.ShinKeisei.Maebara",
+			"ShinKeisei.ShinKeisei.ShinTsudanuma",
+			"ShinKeisei.ShinKeisei.KeiseiTsudanuma"
+		]
+	},
+	"ascending": "Outbound",
+	"color": "#EF59A1",
+	"carComposition": 6
 }, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {
