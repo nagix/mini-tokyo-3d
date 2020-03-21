@@ -16,6 +16,104 @@
         "https://klokantech.github.io/naturalearthtiles/tiles/natural_earth_2_shaded_relief.raster/{z}/{x}/{y}.png"
       ],
       "type": "raster"
+    },
+    "poi_extra": {
+      "type": "geojson",
+      "data": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "name_ja": "高輪ゲートウェイ"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [139.7406575, 35.6353954]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name_ja": "花月総持寺"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [139.6730074, 35.5004279]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name_ja": "京急東神奈川"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [139.6345514, 35.4772681]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name_ja": "羽田空港第３ターミナル"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [139.7675139, 35.5449446]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name_ja": "羽田空港第１・２ターミナル"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [139.7859760, 35.549783]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name_ja": "大師橋"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [139.7399952, 35.5366108]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name_ja": "羽田空港第3ターミナル"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [139.7685994, 35.543893]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name_ja": "羽田空港第1ターミナル"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [139.7845835, 35.5491518]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name_ja": "羽田空港第2ターミナル"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [139.7881123, 35.5508303]
+            }
+          }
+        ]
+      }
     }
   },
   "sprite": "mapbox://sprites/mapbox/streets-v8",
@@ -3295,6 +3393,28 @@
           "tram"
         ]
       ],
+      "layout": {
+        "text-font": [
+          "Open Sans Bold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-max-width": 9,
+        "text-padding": 2,
+        "text-size": 12
+      },
+      "paint": {
+        "text-color": "rgba(102,102,102,1)",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "rgba(255,255,255,1)",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "poi_extra",
+      "type": "symbol",
+      "metadata": {},
+      "source": "poi_extra",
+      "minzoom": 11,
       "layout": {
         "text-font": [
           "Open Sans Bold",

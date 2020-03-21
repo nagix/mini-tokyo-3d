@@ -425,7 +425,7 @@ stationLookup = buildLookup(stationRefData);
 
 stationRefData.forEach(function(stationRef) {
 	if (!dict[stationRef.title.ja]) {
-		dict[stationRef.title.ja] = stationRef.title[lang] || stationRef.title.en || '';
+		dict[stationRef.title.ja] = stationRef.title[lang] || '';
 	}
 });
 
@@ -457,7 +457,9 @@ map.once('load', function () {
 });
 
 map.once('styledata', function () {
-	map.setLayoutProperty('poi', 'text-field', lang === 'ja' ? '{name_ja}' : ['get', ['get', 'name_ja'], ['literal', dict]]);
+	['poi', 'poi_extra'].forEach(function(id) {
+		map.setLayoutProperty(id, 'text-field', lang === 'ja' ? '{name_ja}' : ['get', ['get', 'name_ja'], ['literal', dict]]);
+	});
 
 	[13, 14, 15, 16, 17, 18].forEach(function(zoom) {
 		var minzoom = zoom <= 13 ? 0 : zoom;

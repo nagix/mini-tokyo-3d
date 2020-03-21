@@ -167,6 +167,13 @@
 		"zh": "田町"
 	}
 }, {
+	"id": "JR-East.Yamanote.TakanawaGateway",
+	"coord": [139.7406575, 35.6353954],
+	"title": {
+		"ko": "다카나와게이트웨이",
+		"zh": "高轮Gateway"
+	}
+}, {
 	"id": "JR-East.Yamanote.Shinagawa",
 	"title": {
 		"ko": "시나가와",
@@ -1098,6 +1105,13 @@
 	"title": {
 		"ko": "다마치",
 		"zh": "田町"
+	}
+}, {
+	"id": "JR-East.KeihinTohokuNegishi.TakanawaGateway",
+	"coord": [139.7406575, 35.6353954],
+	"title": {
+		"ko": "다카나와게이트웨이",
+		"zh": "高轮Gateway"
 	}
 }, {
 	"id": "JR-East.KeihinTohokuNegishi.Shinagawa",
@@ -5944,10 +5958,10 @@
 		"zh": "京急鹤见"
 	}
 }, {
-	"id": "Keikyu.Main.KagetsuenMae",
+	"id": "Keikyu.Main.Kagetsusojiji",
 	"title": {
-		"ko": "가게쓰엔마에",
-		"zh": "花月园前"
+		"ko": "카게츠소지지",
+		"zh": "花月总持寺"
 	}
 }, {
 	"id": "Keikyu.Main.Namamugi",
@@ -5974,10 +5988,10 @@
 		"zh": "神奈川新町"
 	}
 }, {
-	"id": "Keikyu.Main.Nakakido",
+	"id": "Keikyu.Main.KeikyuHigashikanagawa",
 	"title": {
-		"ko": "나카키도",
-		"zh": "仲木户"
+		"ko": "게이큐히가시카나가와",
+		"zh": "京急东神奈川"
 	}
 }, {
 	"id": "Keikyu.Main.Kanagawa",
@@ -6124,18 +6138,18 @@
 	},
 	"altitude": -1
 }, {
-	"id": "Keikyu.Airport.HanedaAirportInternationalTerminal",
+	"id": "Keikyu.Airport.HanedaAirportTerminal3",
 	"title": {
-		"ko": "하네다 공항 국제선 터미널",
-		"zh": "羽田机场国际线航站楼"
+		"ko": "하네다 공항 제3 터미널",
+		"zh": "羽田机场第3航站楼"
 	},
 	"altitude": -1
 }, {
-	"id": "Keikyu.Airport.HanedaAirportDomesticTerminal",
+	"id": "Keikyu.Airport.HanedaAirportTerminal1and2",
 	"coord": [139.785976, 35.549783],
 	"title": {
-		"ko": "하네다 공항 국내선 터미널",
-		"zh": "羽田机场国内线航站楼"
+		"ko": "하네다 공항 제1·제2 터미널",
+		"zh": "羽田机场第1、第2航站楼"
 	},
 	"altitude": -1
 }, {
@@ -6169,10 +6183,10 @@
 		"zh": "东门前"
 	}
 }, {
-	"id": "Keikyu.Daishi.Sangyodoro",
+	"id": "Keikyu.Daishi.Daishibashi",
 	"title": {
-		"ko": "산교도로",
-		"zh": "产业道路"
+		"ko": "다이시바시",
+		"zh": "大师桥"
 	},
 	"altitude": -1
 }, {
@@ -9907,14 +9921,14 @@
 	},
 	"altitude": -1
 }, {
-	"id": "TokyoMonorail.HanedaAirport.HanedaAirportInternationalTerminal",
+	"id": "TokyoMonorail.HanedaAirport.HanedaAirportTerminal3",
 	"railway": "TokyoMonorail.HanedaAirport",
 	"coord": [139.768215, 35.544265],
 	"title": {
-		"ja": "羽田空港​国際線​ビル",
-		"en": "Haneda Airport International Terminal",
-		"ko": "하네다 공항 국제선 빌딩",
-		"zh": "羽田机场国际线大楼"
+		"ja": "羽田空港第3ターミナル",
+		"en": "Haneda Airport Terminal 3",
+		"ko": "하네다 공항 제3 터미널",
+		"zh": "羽田机场第3航站楼"
 	}
 }, {
 	"id": "TokyoMonorail.HanedaAirport.ShinSeibijo",
@@ -9932,10 +9946,10 @@
 	"railway": "TokyoMonorail.HanedaAirport",
 	"coord": [139.784712, 35.549142],
 	"title": {
-		"ja": "羽田空港​第1​ビル",
+		"ja": "羽田空港第1ターミナル",
 		"en": "Haneda Airport Terminal 1",
-		"ko": "하네다 공항 제1빌딩",
-		"zh": "羽田机场第1大楼"
+		"ko": "하네다 공항 제1 터미널",
+		"zh": "羽田机场第1航站楼"
 	},
 	"altitude": -1
 }, {
@@ -9943,10 +9957,10 @@
 	"railway": "TokyoMonorail.HanedaAirport",
 	"coord": [139.787996, 35.550703],
 	"title": {
-		"ja": "羽田空港​第2​ビル",
+		"ja": "羽田空港第2ターミナル",
 		"en": "Haneda Airport Terminal 2",
-		"ko": "하네다 공항 제2빌딩",
-		"zh": "羽田机场第2大楼"
+		"ko": "하네다 공항 제2 터미널",
+		"zh": "羽田机场第2航站楼"
 	},
 	"altitude": -1
 }, {
@@ -10118,10 +10132,10 @@
 		"zh": "修善寺"
 	}
 }, {
-	"id": "Keikyu.Zushi.Shinzushi",
+	"id": "Keikyu.Zushi.ZushiHayama",
 	"title": {
-		"ko": "신즈시",
-		"zh": "新逗子"
+		"ko": "즈시·하야마",
+		"zh": "逗子·葉山"
 	}
 }, {
 	"id": "Keikyu.Kurihama.KeikyuKurihama",

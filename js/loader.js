@@ -616,8 +616,12 @@ timetableLookup = buildLookup(concat([trainTimetableRefData.weekday, trainTimeta
 		var timetableRef = timetableLookup[id];
 
 		if (!timetableRef) {
-			timetableLookup[id] = timetable;
-			tCalendar.refData.push(timetable);
+			if (timetable.tt) {
+				timetableLookup[id] = timetable;
+				tCalendar.refData.push(timetable);
+			} else {
+				console.log('No connecting train', timetable);
+			}
 		} else {
 			if (pt) {
 				timetableRef.pt = pt;
