@@ -133,7 +133,7 @@ var realtimeTrainLookup = {};
 var flightLookup = {};
 var activeFlightLookup = {};
 var animationID = 0;
-var lastStaticUpdate = '2020-03-06 14:00:00';
+var lastStaticUpdate = '2020-03-30 11:00:00';
 var lastDynamicUpdate = {};
 var stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainVehicleLookup, trainLookup, operatorLookup, airportLookup, a;
 var trackedObject, markedObject, tempDate, lastTimetableRefresh, lastTrainRefresh, lastClockRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
@@ -583,7 +583,7 @@ map.once('styledata', function () {
 			var coord = station.coord;
 			var option;
 
-			if (title && !stationTitleLookup[title.toUpperCase()] && coord[0] && coord[1]) {
+			if (title && !stationTitleLookup[title.toUpperCase()] && coord && coord[0] && coord[1]) {
 				option = document.createElement('option');
 				option.value = title;
 				datalist.appendChild(option);
@@ -763,6 +763,7 @@ map.once('styledata', function () {
 			stopViewAnimation();
 			disableTracking();
 			if (isPlayback) {
+				resetRailwayStatus();
 				classList.add('mapbox-ctrl-playback-active');
 			} else {
 				classList.remove('mapbox-ctrl-playback-active');
@@ -1667,6 +1668,13 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 		lastTrainRefresh = undefined;
 	}
 
+	function resetRailwayStatus() {
+		railwayRefData.forEach(function(railway) {
+			delete railway.status;
+			delete railway.text;
+		});
+	}
+
 	function adjustTrainID(id, type) {
 		if (includes(TRAINTYPES_FOR_SOBURAPID, type)) {
 			return id.replace(/JR-East\.(NaritaAirportBranch|Narita|Sobu)/, RAILWAY_SOBURAPID);
@@ -1766,11 +1774,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 				lastDynamicUpdate[removePrefix(trainRef['odpt:operator'])] = trainRef['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2');
 			});
 
-			// Reset railway information text
-			railwayRefData.forEach(function(railway) {
-				delete railway.status;
-				delete railway.text;
-			});
+			resetRailwayStatus();
 
 			trainInfoRefData.forEach(function(trainInfoRef) {
 				var operatorID = removePrefix(trainInfoRef['odpt:operator']);
@@ -2348,7 +2352,8 @@ function updateTimetableRefData(data) {
 				var tt;
 				if (previousTrain) {
 					tt = previousTrain.tt;
-					start = Math.min(start, getTime(tt[tt.length - 1].a || tt[tt.length - 1].d));
+					start = Math.min(start,
+						getTime(tt[tt.length - 1].a || tt[tt.length - 1].d || table[0].d) - STANDING_DURATION);
 					previousTrains = previousTrains || [];
 					previousTrains.push(previousTrain);
 				}

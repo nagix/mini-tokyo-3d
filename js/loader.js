@@ -864,9 +864,9 @@ map.once('styledata', function () {
 		map.setLayerZoomRange('stations-ug-' + zoom, minzoom, maxzoom);
 	});
 
-	map.addLayer(new MapboxLayer({
+	map.addLayer(new deck.MapboxLayer({
 		id: 'airways',
-		type: GeoJsonLayer,
+		type: deck.GeoJsonLayer,
 		data: filterFeatures(railwayFeatureCollection, function(p) {
 			return p.type === 0 && p.altitude > 0;
 		}),

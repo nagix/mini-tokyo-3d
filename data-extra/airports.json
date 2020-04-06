@@ -18,7 +18,7 @@
 		"ko": "아부다비",
 		"zh": "阿布扎比"
 	},
-	"direction": "S"
+	"direction": "N"
 }, {
 	"id": "AXJ",
 	"title": {
@@ -95,7 +95,7 @@
 		"ko": "카이로",
 		"zh": "开罗"
 	},
-	"direction": "S"
+	"direction": "N"
 }, {
 	"id": "CAN",
 	"title": {
@@ -263,7 +263,7 @@
 		"ko": "도하",
 		"zh": "多哈"
 	},
-	"direction": "S"
+	"direction": "N"
 }, {
 	"id": "DPS",
 	"title": {
@@ -291,7 +291,7 @@
 		"ko": "두바이",
 		"zh": "迪拜"
 	},
-	"direction": "S"
+	"direction": "N"
 }, {
 	"id": "EWR",
 	"title": {
@@ -1648,17 +1648,41 @@
 	"title": {
 		"ko": "요하네스버그",
 		"zh": "约翰内斯堡"
-	}
+	},
+	"direction": "S"
 }, {
 	"id": "ISB",
 	"title": {
 		"ko": "이슬라마바드",
 		"zh": "伊斯兰堡"
-	}
+	},
+	"direction": "S"
 }, {
 	"id": "RUH",
 	"title": {
 		"ko": "리야드",
 		"zh": "利雅得"
-	}
+	},
+	"direction": "N"
+}, {
+	"id": "ARN",
+	"title": {
+		"ko": "스톡홀름 알란다",
+		"zh": "斯德哥尔摩-阿兰达"
+	},
+	"direction": "N"
+}, {
+	"id": "BLR",
+	"title": {
+		"ko": "벵갈루루",
+		"zh": "班加罗尔"
+	},
+	"direction": "S"
+}, {
+	"id": "PKX",
+	"title": {
+		"ko": "베이징 다싱",
+		"zh": "北京大兴"
+	},
+	"direction": "N"
 }]
