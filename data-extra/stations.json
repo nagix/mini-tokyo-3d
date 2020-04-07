@@ -1773,18 +1773,18 @@
 	},
 	"altitude": -1
 }, {
-	"id": "JR-East.Yokosuka.Shinagawa",
-	"title": {
-		"ko": "시나가와",
-		"zh": "品川"
-	}
-}, {
 	"id": "JR-East.Yokosuka.Shimbashi",
 	"title": {
 		"ko": "신바시",
 		"zh": "新桥"
 	},
 	"altitude": -1
+}, {
+	"id": "JR-East.Yokosuka.Shinagawa",
+	"title": {
+		"ko": "시나가와",
+		"zh": "品川"
+	}
 }, {
 	"id": "JR-East.Yokosuka.NishiOi",
 	"title": {
@@ -2371,6 +2371,47 @@
 		"ko": "시부야",
 		"zh": "涩谷"
 	}
+}, {
+	"id": "JR-East.SotetsuDirect.Osaki",
+	"railway": "JR-East.SotetsuDirect",
+	"coord": [139.72816, 35.62019],
+	"title": {
+		"ja": "大崎",
+		"en": "Osaki",
+		"ko": "오사키",
+		"zh": "大崎"
+	}
+}, {
+	"id": "JR-East.SotetsuDirect.NishiOi",
+	"railway": "JR-East.SotetsuDirect",
+	"coord": [139.72122, 35.60075],
+	"title": {
+		"ja": "西大井",
+		"en": "Nishi-Oi",
+		"ko": "니시오이",
+		"zh": "西大井"
+	}
+}, {
+	"id": "JR-East.SotetsuDirect.MusashiKosugi",
+	"railway": "JR-East.SotetsuDirect",
+	"coord": [139.66194, 35.57562],
+	"title": {
+		"ja": "武蔵小杉",
+		"en": "Musashi-Kosugi",
+		"ko": "무사시코스기",
+		"zh": "武藏小杉"
+	}
+}, {
+	"id": "JR-East.SotetsuDirect.HazawaYokohamaKokudai",
+	"railway": "JR-East.SotetsuDirect",
+	"coord": [139.58614, 35.48102],
+	"title": {
+		"ja": "羽沢横浜国大",
+		"en": "Hazawa-Yokohama-Kokudai",
+		"ko": "하자와요코하마코쿠다이",
+		"zh": "羽泽横滨国大"
+	},
+	"altitude": -1
 }, {
 	"id": "JR-East.Tsurumi.Tsurumi",
 	"title": {

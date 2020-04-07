@@ -289,6 +289,27 @@
 	"color": "#007AC1",
 	"carComposition": 6
 }, {
+	"id": "JR-East.SotetsuDirect",
+	"title": {
+		"ja": "相鉄線直通",
+		"en": "Through service to Sotetsu Line",
+		"ko": "소테쓰 선 직통",
+		"zh": "相铁线直通"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"JR-East.SotetsuDirect.Osaki",
+			"JR-East.SotetsuDirect.NishiOi",
+			"JR-East.SotetsuDirect.MusashiKosugi",
+			"JR-East.SotetsuDirect.HazawaYokohamaKokudai"
+		]
+	},
+	"ascending": "Outbound",
+	"color": "#00B48D",
+	"carComposition": 10
+}, {
 	"id": "JR-East.Tsurumi",
 	"title": {
 		"ko": "쓰루미 선",
