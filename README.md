@@ -2,13 +2,13 @@
 
 A real-time 3D digital map of Tokyo's public transport system.
 
-![Screenshot](https://nagix.github.io/mini-tokyo-3d/images/screenshot1.jpg)
+![Screenshot](https://minitokyo3d.com/images/screenshot1.jpg)
 
-![Screenshot](https://nagix.github.io/mini-tokyo-3d/images/screenshot2.jpg)
+![Screenshot](https://minitokyo3d.com/images/screenshot2.jpg)
 
-![Screenshot](https://nagix.github.io/mini-tokyo-3d/images/screenshot3.jpg)
+![Screenshot](https://minitokyo3d.com/images/screenshot3.jpg)
 
-See a [Live Demo](https://nagix.github.io/mini-tokyo-3d). You can also try the [latest preview version](https://nagix.github.io/mini-tokyo-3d-preview) (v2 branch).
+See a [Live Demo](https://minitokyo3d.com).
 
 ## Demo Videos
 
@@ -37,12 +37,12 @@ Click or tap the compass button + mouse drag or swipe | Tilt up/down and rotate
 Click or tap the fullscreen button | Toggle the fullscreen mode
 Click or tap the eye button | Toggle the underground mode
 Click or tap the train/helicopter button | Switch the tracking mode
-Click or tap the clock button | Toggle the real-time mode
+Click or tap the playback button | Toggle the playback mode
 Click or tap the weather button | Show/hide the weather
 Click or tap the info button | Show/hide the app info dialog
-Click or tap a train | Enable tracking
+Click or tap a train/aircraft | Enable tracking
 Click or tap the map | Disable tracking
-Hover a train | Show the train information
+Hover a train/aircraft | Show the train/aircraft information
 
 ## Language Support
 
@@ -57,9 +57,7 @@ Korean | Yes | Yes | Yes | -
 Thai | Yes | - | - | -
 Nepali | Yes | - | - | -
 
-If you want to contribute, please start with translating the UI messages in the `dictionary-<ISO 639-1 code>.json` file in the [`data`](https://github.com/nagix/mini-tokyo-3d/tree/v2/data) directory. Then, if you have extra energy, add the title of each item in your language to [`airport.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/airports.json), [`flight-status.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/flight-status.json), [`operators.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/operators.json), [`rail-directions.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/rail-directions.json), [`railways.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/railways.json), [`stations.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/stations.json), [`train-types.json`](https://github.com/nagix/mini-tokyo-3d/blob/v2/data-extra/train-types.json) in the [`data-extra`](https://github.com/nagix/mini-tokyo-3d/tree/v2/data-extra) directory.
-
-**Note that the `v2` branch is currently active and the target for your pull request while the `master` branch is only for minor maintenance.**
+If you want to contribute, please start with translating the UI messages in the `dictionary-<ISO 639-1 code>.json` file in the [`data`](https://github.com/nagix/mini-tokyo-3d/tree/master/data) directory. Then, if you have extra energy, add the title of each item in your language to [`airport.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/airports.json), [`flight-status.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/flight-status.json), [`operators.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/operators.json), [`rail-directions.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/rail-directions.json), [`railways.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/railways.json), [`stations.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/stations.json), [`train-types.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/train-types.json) in the [`data-extra`](https://github.com/nagix/mini-tokyo-3d/tree/master/data-extra) directory.
 
 ## About Data
 
