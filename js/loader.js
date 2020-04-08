@@ -39,7 +39,6 @@ var OPERATORS_FOR_RAILWAYS = [
 	'Minatomirai',
 	'Sotetsu',
 	'SaitamaRailway',
-	'MIR',
 	'ToyoRapid',
 	'ShinKeisei',
 	'Yurikamome',
@@ -70,7 +69,6 @@ var OPERATORS_FOR_STATIONS = [
 	'Minatomirai',
 	'Sotetsu',
 	'SaitamaRailway',
-	'MIR',
 	'ToyoRapid',
 	'ShinKeisei',
 	'Yurikamome',
@@ -89,8 +87,7 @@ var OPERATORS_FOR_TRAINTIMETABLES = [
 	'TWR',
 	'TokyoMetro',
 	'Toei',
-	'YokohamaMunicipal',
-	'Keio'
+	'YokohamaMunicipal'
 ];
 
 var OPERATORS_FOR_TRAINTYPES = [
@@ -101,10 +98,7 @@ var OPERATORS_FOR_TRAINTYPES = [
 	'YokohamaMunicipal',
 	'Keio',
 	'Keikyu',
-	'Keisei',
-	'Tobu',
 	'Seibu',
-	'Odakyu',
 	'Tokyu',
 	'Yurikamome'
 ];

@@ -67,10 +67,8 @@ var OPERATORS_FOR_TRAININFORMATION = [
 	'YokohamaMunicipal',
 	'Keio',
 	'Keikyu',
-	'Keisei',
 	'Tobu',
 	'Seibu',
-	'Odakyu',
 	'Tokyu'
 ];
 
