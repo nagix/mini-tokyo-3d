@@ -103,10 +103,11 @@ var OPERATORS_FOR_TRAINTYPES = [
 	'Yurikamome'
 ];
 
-var RAILWAY_CHUOSOBULOCAL = 'JR-East.ChuoSobuLocal';
+/*
 var RAILWAY_YOKOSUKA = 'JR-East.Yokosuka';
 var RAILWAY_SHONANSHINJUKU = 'JR-East.ShonanShinjuku';
 var RAILWAY_YAMANOTEFREIGHT = 'JR-East.YamanoteFreight';
+*/
 var RAILWAY_KEIYO = 'JR-East.Keiyo';
 var RAILWAY_KEIYOKOYABRANCH = 'JR-East.KeiyoKoyaBranch';
 var RAILWAY_KEIYOFUTAMATABRANCH = 'JR-East.KeiyoFutamataBranch';
@@ -126,6 +127,9 @@ var TRAINTYPES_FOR_SOBURAPID = [
 	'JR-East.Rapid',
 	'JR-East.LimitedExpress'
 ];
+/*
+var TRAINTYPE_FOR_YAMANOTEFREIGHT = 'JR-East.LimitedExpress';
+*/
 
 var a = '';
 var lang = getLang();
@@ -677,9 +681,11 @@ Object.keys(trainTimetableRefData).forEach(function(key) {
 });
 
 // Modify Yokosuka, Shonan Shinjuku and Yamanote Freight timetables
+/*
 Object.keys(trainTimetableRefData).forEach(function(key) {
 	trainTimetableRefData[key].filter(function(table) {
 		return table.r === RAILWAY_YOKOSUKA &&
+			table.y === TRAINTYPE_FOR_YAMANOTEFREIGHT &&
 			((table.pt && table.pt[0].indexOf(RAILWAY_SHONANSHINJUKU) === 0) ||
 			(table.nt && table.nt[0].indexOf(RAILWAY_SHONANSHINJUKU) === 0));
 	}).forEach(function(table) {
@@ -690,10 +696,11 @@ Object.keys(trainTimetableRefData).forEach(function(key) {
 	});
 	trainTimetableRefData[key].filter(function(table) {
 		return table.r === RAILWAY_SHONANSHINJUKU &&
+			table.y === TRAINTYPE_FOR_YAMANOTEFREIGHT &&
 			((table.nt && table.nt[0].indexOf(RAILWAY_YOKOSUKA) === 0) ||
 			(table.pt && table.pt[0].indexOf(RAILWAY_YOKOSUKA) === 0));
 	}).forEach(function(table) {
-		var railwayID = table.r
+		var railwayID = table.r;
 		var tt = table.tt;
 		var station;
 
@@ -714,6 +721,7 @@ Object.keys(trainTimetableRefData).forEach(function(key) {
 		}
 	});
 });
+*/
 
 // Modify Keiyo branch timetables
 Object.keys(trainTimetableRefData).forEach(function(key) {
@@ -1381,7 +1389,7 @@ function loadTrainTimetableRefData() {
 			}).map(function(railway) {
 				var id = railway.id;
 				return loadJSON(API_URL + 'odpt:TrainTimetable?odpt:railway=odpt.Railway:' + id +
-					(id === RAILWAY_CHUOSOBULOCAL ? '' : '&odpt:calendar=odpt.Calendar:' + calendar), i * 60000);
+					'&odpt:calendar=odpt.Calendar:' + calendar, i * 60000);
 			})).then(function(data) {
 				return concat(data).map(function(table) {
 					return {

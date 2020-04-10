@@ -653,8 +653,8 @@ map.once('styledata', function () {
 		var title = button === this._zoomInButton ? dict['zoom-in'] :
 			button === this._zoomOutButton ? dict['zoom-out'] :
 			button === this._compass ? dict['compass'] : '';
-        button.title = title;
-        button.setAttribute('aria-label', title);
+		button.title = title;
+		button.setAttribute('aria-label', title);
 	};
 	map.addControl(control);
 
@@ -662,8 +662,8 @@ map.once('styledata', function () {
 	control._updateTitle = function() {
 		var title = dict[(this._isFullscreen() ? 'exit' : 'enter') + '-fullscreen'];
 		this._fullscreenButton.title = title;
-        this._fullscreenButton.setAttribute('aria-label', title);
-    };
+		this._fullscreenButton.setAttribute('aria-label', title);
+	};
 	map.addControl(control);
 
 	map.addControl(new MapboxGLButtonControl([{
@@ -1582,7 +1582,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 		var p = Date.now() % 1500 / 1500;
 
 		document.getElementById('train-mark').innerHTML =
-			'<circle cx="22" cy="' + (y + 10) + '" r="' + (7 + p * 15)  + '" fill="#ffffff" opacity="' + (1 - p) + '" />' +
+			'<circle cx="22" cy="' + (y + 10) + '" r="' + (7 + p * 15) + '" fill="#ffffff" opacity="' + (1 - p) + '" />' +
 			'<circle cx="22" cy="' + (y + 10) + '" r="7" fill="#ffffff" />';
 		if (bodyElement.scrollTop === train.scrollTop) {
 			bodyElement.scrollTop = y - height / 2 + 4;
@@ -1663,6 +1663,7 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 		Object.keys(activeFlightLookup).forEach(function(key) {
 			stopFlight(activeFlightLookup[key]);
 		});
+		realtimeTrainLookup = {};
 		lastTrainRefresh = undefined;
 	}
 
