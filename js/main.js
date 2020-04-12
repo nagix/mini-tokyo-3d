@@ -2895,7 +2895,7 @@ function getStyleColors(map) {
 		'fill-extrusion': ['fill-extrusion-color']
 	};
 	var layerTypes = Object.keys(paintPropertyKeys);
-	var rgbaPattern = /rgba\((?<r>\d+),(?<g>\d+),(?<b>\d+),(?<a>[\d\.]+)\)/;
+	var rgbaPattern = /rgba\((\d+),(\d+),(\d+),([\d\.]+)\)/;
 	var colors = [];
 
 	map.getStyle().layers.filter(function(layer) {
@@ -2909,11 +2909,11 @@ function getStyleColors(map) {
 
 			if (typeof prop === 'string') {
 				color = prop.match(rgbaPattern);
-				colors.push(merge({id: id, key: key}, color.groups));
+				colors.push({id: id, key: key, r: color[1], g: color[2], b: color[3], a: color[4]});
 			} else if (typeof prop === 'object') {
 				prop.stops.forEach(function(item, i) {
 					color = item[1].match(rgbaPattern);
-					colors.push(merge({id: id, key: key, stops: i}, color.groups));
+					colors.push({id: id, key: key, stops: i, r: color[1], g: color[2], b: color[3], a: color[4]});
 				});
 			}
 		});
