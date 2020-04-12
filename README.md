@@ -53,6 +53,7 @@ Language | User Interface | Map Labels | Stations, Railways, Airlines, etc. | Us
 English | Yes | Yes | Yes | Yes
 Japanese | Yes | Yes | Yes | Yes
 Chinese (Simplified) | Yes | Yes | Yes | -
+Chinese (Traditional) | Yes | Yes | Yes | -
 Korean | Yes | Yes | Yes | -
 Thai | Yes | - | - | -
 Nepali | Yes | - | - | -

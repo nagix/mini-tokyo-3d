@@ -1518,17 +1518,22 @@ function getStyleOpacities(map) {
 
 function getLang() {
 	var match = location.search.match(/lang=(.*?)(&|$)/);
-	var lang = match ? decodeURIComponent(match[1]).substring(0, 2) : '';
+	var lang = match ? decodeURIComponent(match[1]) : '';
 
-	if (lang.match(/ja|en|ko|zh|th|ne/)) {
-		return lang;
+	if (!lang.match(/ja|en|ko|zh-Han[st]|th|ne/)) {
+		lang = (window.navigator.languages && window.navigator.languages[0]) ||
+			window.navigator.language ||
+			window.navigator.userLanguage ||
+			window.navigator.browserLanguage || '';
 	}
 
-	lang = (window.navigator.languages && window.navigator.languages[0]) ||
-		window.navigator.language ||
-		window.navigator.userLanguage ||
-		window.navigator.browserLanguage || '';
-	lang = lang.substring(0, 2);
+	if (lang.match(/zh-(Hant|TW|HK|MO)/)) {
+		lang = 'zh-Hant';
+	} else if (lang.match(/zh/)) {
+		lang = 'zh-Hans';
+	} else {
+		lang = lang.substring(0, 2);
+	}
 
-	return lang.match(/ja|en|ko|zh|th|ne/) ? lang : 'en';
+	return lang.match(/ja|en|ko|zh-Han[st]|th|ne/) ? lang : 'en';
 }
