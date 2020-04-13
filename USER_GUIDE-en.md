@@ -12,7 +12,7 @@ Users can freely move around on the 3D map and zoom in on the places they want t
 
 Mini Tokyo 3D is a web application that you can run in any web browser, regardless of device, such as PCs, smartphones, tablets, and set-top boxes. Please use the following URL to access.
 
-[https://nagix.github.io/mini-tokyo-3d/](https://nagix.github.io/mini-tokyo-3d/)
+[https://minitokyo3d.com](https://minitokyo3d.com)
 
 The features of Mini Tokyo 3D are as follows.
 
@@ -32,13 +32,13 @@ Mini Tokyo 3D is using the same line colors used in official route maps and guid
 
 <img src="images/performance.jpg" width="537">
 
-Over 1,100 trains run at the same time during the rush hour, but with the optimized data structure and processing logic, a very smooth operation animation is realized even on smartphones. Smooth animation of 60 frames per second is used everywhere, including viewpoint movement, switching between overground and underground views, and fading in and out of trains and airplanes.
+Over 1,200 trains run at the same time during the rush hour, but with the optimized data structure and processing logic, a very smooth operation animation is realized even on smartphones. Smooth animation of 60 frames per second is used everywhere, including viewpoint movement, switching between overground and underground views, and fading in and out of trains and airplanes.
 
 ### Support for 4 Languages
 
 <img src="images/multilanguage.jpg" width="219">
 
-In addition to Japanese, Mini Tokyo 3D supports English, Chinese and Korean, which are popular with tourists visiting Japan. Not only the user interface texts but also railway names, station names, train types, airport names and airline names are also multilingualized. For the user interface texts, Thai and Nepali are also supported.
+In addition to Japanese, Mini Tokyo 3D supports English, Chinese (Simplified and Traditional) and Korean, which are popular with tourists visiting Japan. Not only the user interface texts but also railway names, station names, train types, airport names and airline names are also multilingualized. For the user interface texts, Thai and Nepali are also supported.
 
 ### Train Operation and Display as Close as Possible to Reality
 
@@ -92,27 +92,29 @@ Click or tap the compass icon button and the bearing will be reset to true north
 
 ### Tracking Trains and Airplanes
 
-Clicking or tapping on a train or airplane will turn on [Tracking Mode](#tracking-mode) and the screen will automatically move following the movement of the train or airplane. There are two types of tracking modes, the “Helicopter Tracking Mode” and the “Rear Tracking Mode”, and you can enjoy the scenery along the railway in your favorite tracking mode. When the tracking mode is on, the map panning and rotating operations are disabled (you can zoom in/out and change the tilt). Clicking on a map with no trains or airplanes turns the tracking mode off.
+Clicking or tapping on a train or airplane will turn on [Tracking Mode](#tracking-mode) and the screen will automatically move following the movement of the train or airplane. There are two types of Tracking Modes, the “Helicopter Tracking Mode” and the “Rear Tracking Mode”, and you can enjoy the scenery along the railway in your favorite Tracking Mode. When Tracking Mode is on, the map panning and rotating operations are disabled (you can zoom in/out and change the tilt). Clicking on a map with no trains or airplanes turns Tracking Mode off.
 
-See [here](#tracking-mode) for details on tracking modes.
+See [here](#tracking-mode) for details on Tracking Modes.
 
 ### Date and Time
 
 <img src="images/clock.jpg" width="141">
 
-When [Real-Time Mode](#real-time-mode) is on, the current data and time is displayed at the top left of the screen. It is convenient when accessing from overseas because Japan standard time is always displayed.
+The current data and time is displayed at the top left of the screen. It is convenient when accessing from overseas because Japan standard time is always displayed. When [Playback Mode](#playback-mode) is on, additional buttons appear below the the current time to change the time and the speed at which the time progresses.
+
+See [here](#playback-mode) for details on Playback Mode.
 
 ### Delayed Train
 
 <img src="images/delay-marker.jpg" width="185">
 
-When [Real-Time Mode](#real-time-mode) is on, orange spheres are displayed around trains that are delayed for more than 1 minute. It is easy to see which sections on the map have the delay.
+When [Playback Mode](#playback-mode) is off, orange spheres are displayed around trains that are delayed for more than 1 minute. It is easy to see which sections on the map have the delay.
 
 ### Displaying Detailed Information on Trains and Airplanes
 
 <img src="images/train-details.jpg" width="216"> <img src="images/flight-details.jpg" width="216">
 
-When [Real-Time Mode](#real-time-mode) is on, place the mouse pointer or tap on the train or airplane to display detailed information about the train or airplane. Detailed train information includes railway name, train type, destination, train number, previous or standing station and departure time, next station and arrival time, delay time, and operation information. Flight details include airline name, flight number, departure or arrival location, status, departure or arrival time, and code-share information. If there is a train delay or a flight schedule change, the change will be highlighted in orange.
+Place the mouse pointer or tap on the train or airplane to display detailed information about the train or airplane. Detailed train information includes railway name, train type, destination, train number, previous or standing station and departure time, next station and arrival time, delay time, and operation information. Flight details include airline name, flight number, departure or arrival location, status, departure or arrival time, and code-share information. If there is a train delay or a flight schedule change, the change will be highlighted in orange.
 
 ### Station Search
 
@@ -126,45 +128,49 @@ When you click or tap the search icon button, a search window appears and you ca
 
 Click or tap the information icon button to show application and data information. The last update time of static data and dynamic data is also displayed.
 
-## Display modes
+## Display Modes
 
 ### Full Screen Mode
 
 <img src="images/fullscreen-icon.jpg" width="50">
 
-Click or tap the screen zoom icon to toggle full screen mode on or off.
+Click or tap the screen zoom icon to toggle Full Screen Mode on or off.
 
-When full-screen mode is on, you can cancel full-screen mode by pressing Esc key instead of clicking / tapping the button.
+When Full Screen Mode is on, you can cancel Full Screen Mode by pressing Esc key instead of clicking / tapping the button.
 
 ### Underground Mode
 
 <img src="images/underground.jpg" width="662"> <img src="images/eye-icon.jpg" width="50" align="top">
 
-Click or tap the eye icon button to turn the underground mode on or off (the icon is in light blue when it is on).
+Click or tap the eye icon button to turn Underground Mode on or off (the icon is in light blue when it is on).
 
-When underground mode is on, the map will turn dark and the overground railways, stations, trains and airplanes will be translucent, while the underground railways, stations and trains will appear brighter.
+When Underground Mode is on, the map will turn dark and overground railways, stations, trains and airplanes will be translucent, while underground railways, stations and trains will appear brighter.
 
-When underground mode is off, the map will return to normal, overground railways, stations, trains and airplanes will be displayed brightly, and underground railways, stations and trains will be translucent.
+When Underground Mode is off, the map will return to normal, overground railways, stations, trains and airplanes will be displayed brightly, and underground railways, stations and trains will be translucent.
 
-You can also switch modes by clicking or tapping underground trains with underground mode off, or clicking or tapping overground trains with underground mode on. In addition, the mode is automatically switched when the train being tracked enters the underground from the ground or exits from the underground to the ground.
+You can also switch modes by clicking or tapping underground trains with Underground Mode off, or clicking or tapping overground trains with Underground Mode on. In addition, the mode is automatically switched when the train being tracked enters the underground from the ground or exits from the underground to the ground.
 
 ### Tracking Mode
 
-<img src="images/helicopter-tracking.jpg" width="244"> <img src="images/helicopter-icon.jpg" width="50" align="top"> <img src="images/rear-tracking.jpg" width="244"> <img src="images/train-icon.jpg" width="50" align="top">
+<img src="images/helicopter-tracking.jpg" width="400"> <img src="images/helicopter-icon.jpg" width="50" align="top"> <img src="images/rear-tracking.jpg" width="400"> <img src="images/train-icon.jpg" width="50" align="top">
 
-Click or tap on a train or airplane to turn tracking mode on and the screen will automatically follow the movement of the train or airplane (the icon will appear in light blue when it is on). Clicking on a map with no trains or airplanes turns tracking mode off.
+Click or tap on a train or airplane to turn Tracking Mode on and the screen will automatically follow the movement of the train or airplane (the icon will appear in light blue when it is on). Clicking on a map with no trains or airplanes turns Tracking Mode off.
 
 The helicopter icon indicates the “Helicopter Tracking Mode”, and it makes a 360 degree turn around the target train or airplane. The train icon indicates the “Rear Tracking Mode”, and it tracks the direction of travel from diagonally behind the target train or airplane. Click or tap the icon button to toggle between the “Helicopter Tracking Mode” and the “Rear Tracking Mode”.
 
-### Real-Time Mode
+### Playback Mode
 
-<img src="images/clock-icon.jpg" width="50">
+<img src="images/playback-icon.jpg" width="50">
 
-Click or tap the clock icon button to switch the real-time mode on or off (the icon is in light blue when it is on).
+Click or tap the playback icon button to switch Playback Mode on or off (the icon is in light blue when it is on).
 
-When real-time mode is on, trains and airplanes are displayed on the map according to the actual operation at the current time. Because it uses real-time information, the location on the map will change accordingly if there is a train delay or flight schedule change.
+When Playback Mode is on, you can change the date and time and the speed at which time progresses, so you can check the operation of a train on a specific date and time, or enjoy the train operation throughout the entire day as if you were watching model trains in motion. In this state, trains will run according to the timetables and no real-time information will be reflected.
 
-When the real-time mode is off, you can enjoy the operation of the trains going back and forth on each route as if you were watching the movement of the model trains.
+When Playback Mode is off, trains and airplanes are displayed on the map according to the actual operation at the current time. Because it uses real-time information, the location on the map will change accordingly if there is a train delay or flight schedule change.
+
+When Playback Mode is turned on, the “Edit date & time” button and the “+” and “-” buttons to change the playback speed appear just below the time display. If you click or tap the “Edit date & time” button, you will enter the date/time editing mode. The “+” and “-” buttons appear above and below the year, month, day, hour, minute, and second numbers. Use these buttons to change the date and time, and click or tap the "OK" button to confirm the change. Clicking or tapping the "Cancel" button will cancel the change and return to the original setting time. You can also change the playback speed by clicking or tapping the “+” and “-” buttons on the left and right of the number that indicates the speed. It can be set to between 1x (the same speed as real time) and 600x, in increments of 1 from 1x to 10x, 10 from 10x to 100x, and 100 from 100x to 600x.
+
+<img src="images/clock-playback.jpg" width="141"> <img src="images/clock-edit.jpg" width="292" align="top">
 
 ### Precipitation Display
 
@@ -182,6 +188,7 @@ This application uses the following data.
 - [Mapbox](https://www.mapbox.com)
 - [OpenStreetMap](https://www.openstreetmap.org)
 - [Japan Meteorological Agency Precipitation Nowcast](https://www.jma.go.jp/en/radnowc/)
+- [Haneda Airport Flight Course](https://www.ntrack.mlit.go.jp)
 
 The source of the public transportation data in this application is the Open Data Challenge for Public Transportation in Tokyo. They are based on the data provided by the public transportation operators. The accuracy and integrity of the data are not guaranteed. Please do not contact the public transportation operators directly regarding the content of this application.
 
@@ -189,8 +196,8 @@ The source of the public transportation data in this application is the Open Dat
 
 This application has been tested with the following browsers. Chrome is recommended. Internet Explorer is not supported.
 
-- Chrome 79 (Mac OS, Windows)
-- FireFox 71 (Mac OS, Windows, iOS)
+- Chrome 81 (Mac OS, Windows, iOS)
+- FireFox 75 (Mac OS, Windows, iOS)
 - Safari 13 (Mac OS, iOS)
 - Edge 44 (Windows)
 
