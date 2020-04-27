@@ -58,12 +58,28 @@ Korean | Yes | Yes | Yes | -
 Thai | Yes | - | - | -
 Nepali | Yes | - | - | -
 
-If you want to contribute, please start with translating the UI messages in the `dictionary-<ISO 639-1 code>.json` file in the [`data`](https://github.com/nagix/mini-tokyo-3d/tree/master/data) directory. Then, if you have extra energy, add the title of each item in your language to [`airport.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/airports.json), [`flight-status.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/flight-status.json), [`operators.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/operators.json), [`rail-directions.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/rail-directions.json), [`railways.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/railways.json), [`stations.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/stations.json), [`train-types.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data-extra/train-types.json) in the [`data-extra`](https://github.com/nagix/mini-tokyo-3d/tree/master/data-extra) directory.
+If you want to contribute, please start with translating the UI messages in the `dictionary-<ISO 639-1 code>.json` file in the [`data`](https://github.com/nagix/mini-tokyo-3d/tree/master/data) directory. Then, if you have extra energy, add the title of each item in your language to [`airports.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/airports.json), [`flight-statuses.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/flight-statuses.json), [`operators.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/operators.json), [`rail-directions.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/rail-directions.json), [`railways.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/railways.json), [`stations.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/stations.json), [`train-types.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/train-types.json) in the [`data`](https://github.com/nagix/mini-tokyo-3d/tree/master/data) directory.
 
 ## About Data
 
 The data for this visualization are sourced from [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/), which includes station information and train timetables as well as real-time data such as train location information and status information of multiple railway lines in the Greater Tokyo area.
 
+## How to Build
+
+First, get access tokens for the public transportation data and map tiles by signing up at [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/index.html#entry) and [Mapbox](https://account.mapbox.com/auth/signup/). Then, create a file named `secret` in the following format in the root directory of the application.
+```
+{
+    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "mapbox": "pk.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxx"
+}
+```
+
+The latest version of Node.js is required. Move to the root directory of the application, run the following commands, then the script, dataset and static web page will be generated in the `build` directory.
+```
+npm install
+npm run build-all
+```
+
 ## License
 
-Mini Tokyo 3D is available under the [Apache license 2.0](opensource.org/licenses/Apache-2.0).
+Mini Tokyo 3D is available under the [MIT license](https://opensource.org/licenses/MIT).

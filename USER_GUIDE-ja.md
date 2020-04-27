@@ -4,7 +4,7 @@ English version is available [here](USER_GUIDE-en.md).
 
 ## Mini Tokyo 3D 概要
 
-![Screenshot](images/screenshot1.jpg)
+![Screenshot](public/images/screenshot1.jpg)
 
 Mini Tokyo 3D は東京の公共交通のリアルタイム3Dマップです。今、実際に動いている列車や発着している旅客機をリアルな3Dマップ上に滑らかなアニメーションで表現します。これは、現実世界とそっくりな双子をデジタルの世界に表現した「デジタルツイン」です。
 
@@ -18,37 +18,37 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 全てがリアルタイム
 
-<img src="images/day-night.jpg" width="640">
+<img src="public/images/day-night.jpg" width="640">
 
 現実の時刻表、さらにはリアルタイムの遅延情報に従って運行する列車や旅客機を上空の好きな視点から観覧できます。東京の日の出・日の入り時刻に合わせて景色の明るさが変わり、夕焼けも見られます。また、リアルタイムの気象情報を基にした降水アニメーションが表示されるため、よりリアルな風景を楽しめます。
 
 ### 鉄道路線図の見やすさをそのままに
 
-<img src="images/transit.jpg" width="328">
+<img src="public/images/transit.jpg" width="328">
 
 路線図や案内で使われているものと同じラインカラーを使用し、地図の縮尺に合わせて各路線を適切な間隔で配置してルートを見やすい形で表現します。駅名が異なっていても乗り換え駅である場合には駅間の接続を表示して、スムーズな乗り換えをサポートします。列車の形はあえてシンプルな単色の直方体にして、シンボル性を高めています。
 
 ### 操作性とパフォーマンス
 
-<img src="images/performance.jpg" width="537">
+<img src="public/images/performance.jpg" width="537">
 
 ラッシュ時には1,200を超える列車が同時に走りますが、最適化されたデータ構造と計算処理により、スマートフォンでも非常にスムーズな運行アニメーションを実現。視点移動や地上・地下表示の切り替え、列車・旅客機のフェードイン・アウトなど、60フレーム/秒のスムーズなアニメーションを随所に利用しています。
 
 ### 4ヶ国語対応
 
-<img src="images/multilanguage.jpg" width="219">
+<img src="public/images/multilanguage.jpg" width="219">
 
 日本語以外に、訪日観光客の多い英語・中国語（簡体字・繁体字）・韓国語に対応。ユーザーインターフェース表示だけではなく、路線名、駅名、列車種別、空港名、航空会社名なども多言語化。ユーザーインターフェース表示に限り、タイ語・ネパール語にも対応しています。
 
 ### 現実に限りなく近づけた列車運行と表示
 
-<img src="images/reality.jpg" width="604">
+<img src="public/images/reality.jpg" width="604">
 
 実際の列車と同じ動きになるように、乗車しながら列車の起動加速度や最高速度の微調整を繰り返しました。地上を走る列車の地下トンネル部分、地下鉄の地上走行区間も完全に再現しています。
 
 ### 地上・地下の表示切り替え
 
-<img src="images/shinjuku-overground.jpg" width="300"> <img src="images/shinjuku-underground.jpg" width="300">
+<img src="public/images/shinjuku-overground.jpg" width="300"> <img src="public/images/shinjuku-underground.jpg" width="300">
 
 東京の鉄道ネットワークは世界有数の複雑度。地上と地下の路線網を切り替えて表示することで見やすさを追求するとともに、地下鉄路線の現実には見えない列車の運行をわかりやすく表現します。
 
@@ -56,7 +56,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 画面の説明
 
-<img src="images/screen.jpg" width="660">
+<img src="public/images/screen.jpg" width="660">
 
 1. **時刻表示**: [時刻表示](#%E6%99%82%E5%88%BB%E8%A1%A8%E7%A4%BA)をご覧ください
 2. **検索ボタン**: [駅名検索](#%E9%A7%85%E5%90%8D%E6%A4%9C%E7%B4%A2)をご覧ください 
@@ -66,13 +66,13 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 地図のスクロール
 
-<img src="images/pan.jpg" width="244">
+<img src="public/images/pan.jpg" width="244">
 
 マウスドラッグまたは画面のスワイプで地図をスクロールして場所を移動することができます。また、キーボードの方向キーでも地図をスクロールすることができます。
 
 ### 地図の拡大・縮小
 
-<img src="images/zoom.jpg" width="244"> <img src="images/zoom-icon.jpg" width="50" align="top">
+<img src="public/images/zoom.jpg" width="244"> <img src="public/images/zoom-icon.jpg" width="50" align="top">
 
 「＋」「−」アイコンボタンをクリックまたはタップすると、地図を拡大・縮小することができます。また、マウスホイールの回転または画面のピンチイン・アウトで地図を拡大・縮小することができます。
 
@@ -82,7 +82,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 地図の回転と傾きの変更
 
-<img src="images/rotate-tilt.jpg" width="244"> <img src="images/compass-icon.jpg" width="50" align="top">
+<img src="public/images/rotate-tilt.jpg" width="244"> <img src="public/images/compass-icon.jpg" width="50" align="top">
 
 コンパスアイコンは、地図の向きを表しています。コンパスアイコンボタンを押してドラッグまたはスワイプすると、左右方向の動きで地図の回転、上下方向の動きで地図の傾きを変更することができます。また、マウスの右ボタンを押してドラッグ、またはキーボードの Ctrl キーを押しながらマウスの左ボタンを押してドラッグすることで地図の回転と傾きを変更することができます。
 
@@ -98,7 +98,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 時刻表示
 
-<img src="images/clock.jpg" width="141">
+<img src="public/images/clock.jpg" width="141">
 
 画面左上に現在時刻が表示されます。常に日本時間が表示されるため、海外からのアクセス時に便利です。[再生モード](#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%89)がオンの状態では、現在時刻の他に時刻や時間の経過速度を変更するためのボタンが表示されます。
 
@@ -106,25 +106,25 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 遅延列車の表示
 
-<img src="images/delay-marker.jpg" width="185">
+<img src="public/images/delay-marker.jpg" width="185">
 
 [再生モード](#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%89)がオフの状態では、1分以上遅延している列車には周囲にオレンジ色の球が表示されます。地図上のどの区間で遅れがあるかが一目瞭然です。
 
 ### 列車・旅客機の詳細情報の表示
 
-<img src="images/train-details.jpg" width="216"> <img src="images/flight-details.jpg" width="216">
+<img src="public/images/train-details.jpg" width="216"> <img src="public/images/flight-details.jpg" width="216">
 
 列車や旅客機にマウスポインタを合わせたり、タップをすると列車や旅客機の詳細情報が表示されます。列車の詳細情報は、路線名、列車種別、行先、列車番号、前駅または停車駅と発車時刻、次駅と到着時刻、遅延時間、運行情報を含みます。旅客機の詳細情報は、航空会社名、便名、出発地または到着地、状況、出発時刻または到着時刻、コードシェアを含みます。列車の遅延もしくは旅客機のスケジュール変更がある場合は、変更部分がオレンジ色でハイライトされます。
 
 ### 駅名検索
 
-<img src="images/station-search.jpg" width="260">
+<img src="public/images/station-search.jpg" width="260">
 
 検索アイコンボタンをクリックまたはタップすると、検索ウインドウが現れてテキスト入力が可能になります。駅名を入力して Enter キーを押すか、検索アイコンボタンをクリックまたはタップすると、マップ上の対象の駅に移動します。駅名の一部を入力すると候補の一覧が表示されるため、その中から選択して入力を補完することもできます。日本語・韓国語・中国語の環境では、英語名での検索も可能です。
 
 ### アプリ情報の表示
 
-<img src="images/info-icon.jpg" width="355">
+<img src="public/images/info-icon.jpg" width="355">
 
 情報アイコンボタンをクリックまたはタップすると、アプリおよびデータの情報が表示されます。静的データ・動的データの最終更新日時も表示されます。
 
@@ -132,7 +132,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### フルスクリーンモード
 
-<img src="images/fullscreen-icon.jpg" width="50">
+<img src="public/images/fullscreen-icon.jpg" width="50">
 
 画面拡大・縮小アイコンボタンをクリックまたはタップすると、フルスクリーンモードのオン・オフを切り替えることができます。
 
@@ -140,7 +140,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 地下モード
 
-<img src="images/underground.jpg" width="662"> <img src="images/eye-icon.jpg" width="50" align="top">
+<img src="public/images/underground.jpg" width="662"> <img src="public/images/eye-icon.jpg" width="50" align="top">
 
 眼アイコンボタンをクリックまたはタップすると、地下モードのオン・オフを切り替えることができます（オンの状態でアイコンは水色で表示されます）。
 
@@ -152,7 +152,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 追跡モード
 
-<img src="images/helicopter-tracking.jpg" width="400"> <img src="images/helicopter-icon.jpg" width="50" align="top"> <img src="images/rear-tracking.jpg" width="400"> <img src="images/train-icon.jpg" width="50" align="top">
+<img src="public/images/helicopter-tracking.jpg" width="400"> <img src="public/images/helicopter-icon.jpg" width="50" align="top"> <img src="public/images/rear-tracking.jpg" width="400"> <img src="public/images/train-icon.jpg" width="50" align="top">
 
 列車や旅客機をクリックまたはタップすると、追跡モードがオンに切り替わり、列車や旅客機の動きに追随して画面が自動的に移動します（オンの状態でアイコンは水色で表示されます）。列車や旅客機が存在しない地図上をクリックすると、追跡モードがオフに切り替わります。
 
@@ -162,7 +162,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 再生モード
 
-<img src="images/playback-icon.jpg" width="50">
+<img src="public/images/playback-icon.jpg" width="50">
 
 再生アイコンボタンをクリックまたはタップすると、再生モードのオン・オフを切り替えることができます（オンの状態でアイコンは水色で表示されます）。
 
@@ -173,11 +173,11 @@ Mini Tokyo 3D の特徴は次の通りです。
 再生モードをオンにすると、時刻表示のすぐ下に「日付時刻を変更」ボタンと再生速度を変更するための
 「＋」「−」ボタンが現れます。ここで「日付時刻を変更」ボタンを押すと、日付時刻編集モードに入ります。年・月・日・時・分・秒を表す数字の上下に「＋」「−」ボタンが現れるので、このボタンを使用して日付時刻を変更し、「OK」ボタンを押すと変更が確定されます。「キャンセル」ボタンを押すと、変更がキャンセルされて元の設定時刻に戻ります。また、再生速度を表す数字の左右にある「＋」「−」ボタンを押すと、再生速度が変わります。1倍速(現実の時間の流れと同じ速度)〜600倍速の間で設定することが可能です。1〜10倍速の間は1刻み、10〜100倍速の間は10刻み、100〜600倍速の間は100刻みになります。
 
-<img src="images/clock-playback.jpg" width="141"> <img src="images/clock-edit.jpg" width="292" align="top">
+<img src="public/images/clock-playback.jpg" width="141"> <img src="public/images/clock-edit.jpg" width="292" align="top">
 
 ### 降水表示
 
-<img src="images/weather.jpg" width="580"> <img src="images/weather-icon.jpg" width="50" align="top">
+<img src="public/images/weather.jpg" width="580"> <img src="public/images/weather-icon.jpg" width="50" align="top">
 
 雨雲アイコンボタンをクリックまたはタップすると、降水アニメーションの表示のオン・オフを切り替えることができます（オンの状態でアイコンは水色で表示されます）。
 

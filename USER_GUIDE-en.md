@@ -4,7 +4,7 @@
 
 ## Mini Tokyo 3D Overview
 
-![Screenshot](images/screenshot1.jpg)
+![Screenshot](public/images/screenshot1.jpg)
 
 Mini Tokyo 3D is a real-time 3D map of public transportation in Tokyo. Trains in operation and airplanes that are arriving or departing are represented on a realistic 3D map with smooth animation. This is a “digital twin” that looks exactly like the real world in the digital world.
 
@@ -18,37 +18,37 @@ The features of Mini Tokyo 3D are as follows.
 
 ### All in Real-Time
 
-<img src="images/day-night.jpg" width="640">
+<img src="public/images/day-night.jpg" width="640">
 
 You can view trains and airplanes that operate according to actual timetables and real-time delay information from your favorite point of view. The color of the scenery changes according to the sunrise and sunset times in Tokyo, and the sunset glow can be seen. In addition, a rain animation based on real-time weather information is displayed, so you can enjoy more realistic scenery.
 
 ### Easy-To-Read Railroad Map
 
-<img src="images/transit.jpg" width="328">
+<img src="public/images/transit.jpg" width="328">
 
 Mini Tokyo 3D is using the same line colors used in official route maps and guidance, and arranges each railway at an appropriate interval according to the scale of the map to display the route in an easy-to-read form. If the names of two or more stations are different, but passengers can transfer from one to others, the connections between the stations are displayed to support smooth transfer. The shape of the train is a simple solid color cuboid that enhances symbolism.
 
 ### Operability and Performance
 
-<img src="images/performance.jpg" width="537">
+<img src="public/images/performance.jpg" width="537">
 
 Over 1,200 trains run at the same time during the rush hour, but with the optimized data structure and processing logic, a very smooth operation animation is realized even on smartphones. Smooth animation of 60 frames per second is used everywhere, including viewpoint movement, switching between overground and underground views, and fading in and out of trains and airplanes.
 
 ### Support for 4 Languages
 
-<img src="images/multilanguage.jpg" width="219">
+<img src="public/images/multilanguage.jpg" width="219">
 
 In addition to Japanese, Mini Tokyo 3D supports English, Chinese (Simplified and Traditional) and Korean, which are popular with tourists visiting Japan. Not only the user interface texts but also railway names, station names, train types, airport names and airline names are also multilingualized. For the user interface texts, Thai and Nepali are also supported.
 
 ### Train Operation and Display as Close as Possible to Reality
 
-<img src="images/reality.jpg" width="604">
+<img src="public/images/reality.jpg" width="604">
 
 Fine tuning of the starting acceleration and maximum speed of the trains was done repeatedly by getting on them, so that they would move in the same way as the actual trains. The underground tunnel sections of the overground railways and the overground sections of the subways are also completely reproduced.
 
 ### Switching Views Between Overground and Underground
 
-<img src="images/shinjuku-overground.jpg" width="300"> <img src="images/shinjuku-underground.jpg" width="300">
+<img src="public/images/shinjuku-overground.jpg" width="300"> <img src="public/images/shinjuku-underground.jpg" width="300">
 
 The railway network in Tokyo is one of the most complex in the world. Mini Tokyo 3D is pursuing ease of viewing by switching between the overground and underground railway networks as well as clearly expressing subway train operations that are invisible in reality.
 
@@ -56,7 +56,7 @@ The railway network in Tokyo is one of the most complex in the world. Mini Tokyo
 
 ### Screen Description
 
-<img src="images/screen.jpg" width="659">
+<img src="public/images/screen.jpg" width="659">
 
 1. **Date and Time**: See [Date and Time](#date-and-time)
 2. **Search Button**: See [Station Search](#station-search)
@@ -66,13 +66,13 @@ The railway network in Tokyo is one of the most complex in the world. Mini Tokyo
 
 ### Panning
 
-<img src="images/pan.jpg" width="244">
+<img src="public/images/pan.jpg" width="244">
 
 You can move your location by panning the map with mouse drag or swipe on the screen. You can also pan the map with the arrow keys on your keyboard.
 
 ### Zooming-In/Out
 
-<img src="images/zoom.jpg" width="244"> <img src="images/zoom-icon.jpg" width="50" align="top">
+<img src="public/images/zoom.jpg" width="244"> <img src="public/images/zoom-icon.jpg" width="50" align="top">
 
 Click or tap the “+” or “−” icon button to zoom in or out the map. You can also zoom in or out by rotating the mouse wheel or pinching in or out of the screen.
 
@@ -82,7 +82,7 @@ A box zoom can be used by dragging the mouse while holding down the Shift key on
 
 ### Rotation and Tilting
 
-<img src="images/rotate-tilt.jpg" width="244"> <img src="images/compass-icon.jpg" width="50" align="top">
+<img src="public/images/rotate-tilt.jpg" width="244"> <img src="public/images/compass-icon.jpg" width="50" align="top">
 
 The compass icon represents the orientation of the map. If you press the compass icon button and drag or swipe, you can rotate the map by moving left and right, and change the tilt of the map by moving up and down. You can also change the rotation and tilt of the map by dragging with the right mouse button, or by dragging with the left mouse button while holding down the Ctrl key on the keyboard.
 
@@ -98,7 +98,7 @@ See [here](#tracking-mode) for details on Tracking Modes.
 
 ### Date and Time
 
-<img src="images/clock.jpg" width="141">
+<img src="public/images/clock.jpg" width="141">
 
 The current data and time is displayed at the top left of the screen. It is convenient when accessing from overseas because Japan standard time is always displayed. When [Playback Mode](#playback-mode) is on, additional buttons appear below the the current time to change the time and the speed at which the time progresses.
 
@@ -106,25 +106,25 @@ See [here](#playback-mode) for details on Playback Mode.
 
 ### Delayed Train
 
-<img src="images/delay-marker.jpg" width="185">
+<img src="public/images/delay-marker.jpg" width="185">
 
 When [Playback Mode](#playback-mode) is off, orange spheres are displayed around trains that are delayed for more than 1 minute. It is easy to see which sections on the map have the delay.
 
 ### Displaying Detailed Information on Trains and Airplanes
 
-<img src="images/train-details.jpg" width="216"> <img src="images/flight-details.jpg" width="216">
+<img src="public/images/train-details.jpg" width="216"> <img src="public/images/flight-details.jpg" width="216">
 
 Place the mouse pointer or tap on the train or airplane to display detailed information about the train or airplane. Detailed train information includes railway name, train type, destination, train number, previous or standing station and departure time, next station and arrival time, delay time, and operation information. Flight details include airline name, flight number, departure or arrival location, status, departure or arrival time, and code-share information. If there is a train delay or a flight schedule change, the change will be highlighted in orange.
 
 ### Station Search
 
-<img src="images/station-search.jpg" width="260">
+<img src="public/images/station-search.jpg" width="260">
 
 When you click or tap the search icon button, a search window appears and you can enter text. Enter a station name and press Enter key, or click or tap the search icon button to move to the target station on the map. Once you enter a part of the station name, a list of candidates will be displayed. In Japanese, Korean, and Chinese environments, you can also search by English name.
 
 ### Showing Application Information
 
-<img src="images/info-icon.jpg" width="355">
+<img src="public/images/info-icon.jpg" width="355">
 
 Click or tap the information icon button to show application and data information. The last update time of static data and dynamic data is also displayed.
 
@@ -132,7 +132,7 @@ Click or tap the information icon button to show application and data informatio
 
 ### Full Screen Mode
 
-<img src="images/fullscreen-icon.jpg" width="50">
+<img src="public/images/fullscreen-icon.jpg" width="50">
 
 Click or tap the screen zoom icon to toggle Full Screen Mode on or off.
 
@@ -140,7 +140,7 @@ When Full Screen Mode is on, you can cancel Full Screen Mode by pressing Esc key
 
 ### Underground Mode
 
-<img src="images/underground.jpg" width="662"> <img src="images/eye-icon.jpg" width="50" align="top">
+<img src="public/images/underground.jpg" width="662"> <img src="public/images/eye-icon.jpg" width="50" align="top">
 
 Click or tap the eye icon button to turn Underground Mode on or off (the icon is in light blue when it is on).
 
@@ -152,7 +152,7 @@ You can also switch modes by clicking or tapping underground trains with Undergr
 
 ### Tracking Mode
 
-<img src="images/helicopter-tracking.jpg" width="400"> <img src="images/helicopter-icon.jpg" width="50" align="top"> <img src="images/rear-tracking.jpg" width="400"> <img src="images/train-icon.jpg" width="50" align="top">
+<img src="public/images/helicopter-tracking.jpg" width="400"> <img src="public/images/helicopter-icon.jpg" width="50" align="top"> <img src="public/images/rear-tracking.jpg" width="400"> <img src="public/images/train-icon.jpg" width="50" align="top">
 
 Click or tap on a train or airplane to turn Tracking Mode on and the screen will automatically follow the movement of the train or airplane (the icon will appear in light blue when it is on). Clicking on a map with no trains or airplanes turns Tracking Mode off.
 
@@ -160,7 +160,7 @@ The helicopter icon indicates the “Helicopter Tracking Mode”, and it makes a
 
 ### Playback Mode
 
-<img src="images/playback-icon.jpg" width="50">
+<img src="public/images/playback-icon.jpg" width="50">
 
 Click or tap the playback icon button to switch Playback Mode on or off (the icon is in light blue when it is on).
 
@@ -170,11 +170,11 @@ When Playback Mode is off, trains and airplanes are displayed on the map accordi
 
 When Playback Mode is turned on, the “Edit date & time” button and the “+” and “-” buttons to change the playback speed appear just below the time display. If you click or tap the “Edit date & time” button, you will enter the date/time editing mode. The “+” and “-” buttons appear above and below the year, month, day, hour, minute, and second numbers. Use these buttons to change the date and time, and click or tap the "OK" button to confirm the change. Clicking or tapping the "Cancel" button will cancel the change and return to the original setting time. You can also change the playback speed by clicking or tapping the “+” and “-” buttons on the left and right of the number that indicates the speed. It can be set to between 1x (the same speed as real time) and 600x, in increments of 1 from 1x to 10x, 10 from 10x to 100x, and 100 from 100x to 600x.
 
-<img src="images/clock-playback.jpg" width="141"> <img src="images/clock-edit.jpg" width="292" align="top">
+<img src="public/images/clock-playback.jpg" width="141"> <img src="public/images/clock-edit.jpg" width="292" align="top">
 
 ### Precipitation Display
 
-<img src="images/weather.jpg" width="580"> <img src="images/weather-icon.jpg" width="50" align="top">
+<img src="public/images/weather.jpg" width="580"> <img src="public/images/weather-icon.jpg" width="50" align="top">
 
 Click or tap the rain cloud icon button to switch the rain animation display on or off (the icon is in light blue when it is on).
 
