@@ -66,7 +66,7 @@ The data for this visualization are sourced from [Open Data Challenge for Public
 
 ## How to Build
 
-First, get access tokens for the public transportation data and map tiles by signing up at [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/index.html#entry) and [Mapbox](https://account.mapbox.com/auth/signup/). Then, create a file named `secret` in the following format in the root directory of the application.
+First, get access tokens for the public transportation data and map tiles by signing up at [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/index.html#entry) and [Mapbox](https://account.mapbox.com/auth/signup/). Then, create a file named `secrets` in the following format in the root directory of the application.
 ```
 {
     "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",

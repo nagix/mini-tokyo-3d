@@ -97,13 +97,13 @@ export default class {
 
         raycaster.setFromCamera(mouse, camera);
 
-        const intersects = raycaster.intersectObjects(scene.children);
+        const intersects = raycaster.intersectObjects(scene.children, true);
 
         for (let i = 0, ilen = intersects.length; i < ilen; i++) {
-            const {object} = intersects[i];
+            const {name, parent} = intersects[i].object;
 
-            if (object.userData.coord) {
-                return object;
+            if (name === 'cube' && parent.userData.coord) {
+                return parent;
             }
         }
     }

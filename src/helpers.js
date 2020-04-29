@@ -1,6 +1,6 @@
 import pako from 'pako';
 
-export function loadJSON(url, fallbackURL) {
+export function loadJSON(url) {
     return new Promise((resolve, reject) => {
         const gz = url.endsWith('.gz'),
             request = new XMLHttpRequest();
@@ -10,19 +10,13 @@ export function loadJSON(url, fallbackURL) {
         request.onreadystatechange = () => {
             if (request.readyState === 4) {
                 if (request.status === 200) {
-                    console.log('success');
                     resolve(JSON.parse(gz ? pako.inflate(new Uint8Array(request.response), {to: 'string'}) : request.response));
-                } else if (fallbackURL) {
-                    console.log('error1');
-                    loadJSON(fallbackURL).then(resolve).catch(reject);
                 } else {
-                    console.log('error2');
                     reject(Error(request.statusText));
                 }
             }
         };
         request.send();
-        console.log(url);
     });
 }
 

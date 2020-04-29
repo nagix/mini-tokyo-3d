@@ -85,7 +85,7 @@ let realtimeTrainLookup = {};
 const flightLookup = {};
 const activeFlightLookup = {};
 const lastDynamicUpdate = {};
-let stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainVehicleLookup, trainLookup, operatorLookup, airportLookup, flightStatusLookup, a;
+let stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainVehicleLookup, trainLookup, operatorLookup, airportLookup, flightStatusLookup;
 let trackedObject, markedObject, tempDate, lastTimetableRefresh, lastTrainRefresh, lastClockRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, objectUnit, objectScale, /*carScale, */aircraftScale;
 let flightPattern, lastFlightPatternChanged;
 let lastNowCastRefresh, nowCastData, fgGroup, imGroup, bgGroup;
@@ -154,8 +154,8 @@ Promise.all([
     layerZoom = helpers.clamp(Math.floor(map.getZoom()), 13, 18);
     objectUnit = Math.max(unit * .19, .02);
     objectScale = unit * modelScale * 100;
-    // carScale = Math.max(.02 / .19, unit) * modelScale * 100;
-    aircraftScale = Math.max(.06 / .285, unit) * modelScale * 100;
+    // carScale = Math.max(.02 / .19 / unit, 1);
+    aircraftScale = Math.max(.06 / .285 / unit, 1);
 
     const trainLayers = {
         ug: new ThreeLayer('trains-ug', modelOrigin, true, true),
@@ -192,7 +192,11 @@ Promise.all([
 
             const layer = object.userData.altitude < 0 ? this.ug : this.og;
 
-            object.material.polygonOffsetFactor = 0;
+            object.traverse(descendant => {
+                if (descendant.material) {
+                    descendant.material.polygonOffsetFactor = 0;
+                }
+            });
             object.renderOrder = 1;
             if (duration > 0) {
                 animation.start({
@@ -511,24 +515,14 @@ Promise.all([
                             helpers.setLayerProps(map, `stations-ug-${zoom}`, {opacity});
                         });
                         Object.keys(activeTrainLookup).forEach(key => {
-                            const train = activeTrainLookup[key],
-                                {cars, delayMarker} = train;
-
-                            cars.forEach(car => {
+                            activeTrainLookup[key].cars.forEach(car => {
                                 setOpacity(car, getObjectOpacity(car, t));
                             });
-                            if (delayMarker) {
-                                setOpacity(delayMarker, getObjectOpacity(delayMarker, t));
-                            }
                         });
                         refreshDelayMarkers();
                         Object.keys(activeFlightLookup).forEach(key => {
-                            const flight = activeFlightLookup[key],
-                                opacity = getObjectOpacity(flight.body, t);
-
-                            setOpacity(flight.body, opacity);
-                            setOpacity(flight.wing, opacity);
-                            setOpacity(flight.vTail, opacity);
+                            const aircraft = activeFlightLookup[key].aircraft;
+                            setOpacity(aircraft, getObjectOpacity(aircraft, t));
                         });
                     },
                     duration: 300
@@ -660,6 +654,8 @@ Promise.all([
         }
 
         map.on('mousemove', e => {
+            const prevMarkedObject = markedObject;
+
             markedObject = trainLayers.pickObject(e.point);
             if (markedObject) {
                 const {coord, altitude, object} = markedObject.userData;
@@ -668,9 +664,25 @@ Promise.all([
                 popup.setLngLat(adjustCoord(coord, altitude))
                     .setHTML(object.description)
                     .addTo(map);
+
+                if (!markedObject.getObjectByName('outline')) {
+                    markedObject.traverse(descendant => {
+                        if (descendant.name === 'cube') {
+                            descendant.add(createOutline(descendant));
+                        }
+                    });
+                }
             } else if (popup.isOpen()) {
                 map.getCanvas().style.cursor = '';
                 popup.remove();
+            }
+
+            if (markedObject !== prevMarkedObject && prevMarkedObject) {
+                prevMarkedObject.traverse(descendant => {
+                    if (descendant.name === 'cube') {
+                        descendant.remove(...descendant.children);
+                    }
+                });
             }
         });
 
@@ -719,8 +731,8 @@ Promise.all([
             layerZoom = helpers.clamp(Math.floor(zoom), 13, 18);
             objectUnit = Math.max(unit * .19, .02);
             objectScale = unit * modelScale * 100;
-            // carScale = Math.max(.02 / .19, unit) * modelScale * 100;
-            aircraftScale = Math.max(.06 / .285, unit) * modelScale * 100;
+            // carScale = Math.max(.02 / .19 / unit, 1);
+            aircraftScale = Math.max(.06 / .285 / unit, 1);
 
             Object.keys(activeTrainLookup).forEach(key => {
                 const train = activeTrainLookup[key];
@@ -831,8 +843,7 @@ Promise.all([
         function updateTrainShape(train, t) {
             const {railwayFeature: feature, offset, interval, direction, cars, delay} = train,
                 length = cars.length;
-            let delayMarker = train.delayMarker,
-                altitudeChanged;
+            let altitudeChanged;
 
             if (t !== undefined) {
                 train._t = t;
@@ -844,10 +855,12 @@ Promise.all([
             if (length === 0) {
                 const railway = railwayLookup[train.r],
                     {v: vehicle, tt: table} = train,
-                    car = createCube(.88, 1.76, .88, vehicle ? trainVehicleLookup[vehicle].color : railway.color);
+                    car = new THREE.Group();
 
+                car.add(createCube(.88, 1.76, .88, vehicle ? trainVehicleLookup[vehicle].color : railway.color));
                 car.rotation.order = 'ZYX';
                 car.userData.object = train;
+
                 cars.push(car);
 
                 // Reset marked/tracked object if it was marked/tracked before
@@ -912,34 +925,19 @@ Promise.all([
                 }
             }
 
+            const delayMarker = cars[0].getObjectByName('marker');
+
             if (delay) {
                 if (!delayMarker) {
-                    delayMarker = train.delayMarker = createDelayMarker(helpers.isDarkBackground(map));
-                }
-
-                const car = cars[0],
-                    {position, scale, userData} = delayMarker,
-                    altitude = car.userData.altitude;
-
-                altitudeChanged = (userData.altitude < 0 && altitude >= 0) || (userData.altitude >= 0 && altitude < 0);
-                userData.altitude = altitude;
-                Object.assign(position, car.position);
-                scale.x = scale.y = scale.z = objectScale;
-
-                if (!delayMarker.parent) {
-                    trainLayers.addObject(delayMarker, 1000);
-                }
-                if (altitudeChanged) {
-                    trainLayers.updateObject(delayMarker, 1000);
+                    cars[0].add(createDelayMarker(helpers.isDarkBackground(map)));
                 }
             } else if (delayMarker) {
-                trainLayers.removeObject(delayMarker);
-                delete train.delayMarker;
+                cars[0].remove(delayMarker);
             }
         }
 
         function updateFlightShape(flight, t) {
-            let {body, wing, vTail} = flight;
+            let {aircraft, body, wing, vTail} = flight;
 
             if (t !== undefined) {
                 flight._t = t;
@@ -948,25 +946,27 @@ Promise.all([
                 return;
             }
             if (!body) {
-                const operator = operatorLookup[flight.a];
+                const {color, tailcolor} = operatorLookup[flight.a];
 
-                body = flight.body = createCube(.88, 2.64, .88, operator.color || '#FFFFFF');
-                wing = flight.wing = createCube(2.64, .88, .1, operator.color || '#FFFFFF');
-                vTail = flight.vTail = createCube(.1, .88, .88, operator.tailcolor || '#FFFFFF');
+                aircraft = flight.aircraft = new THREE.Group();
+                body = flight.body = createCube(.88, 2.64, .88, color || '#FFFFFF');
+                wing = flight.wing = createCube(2.64, .88, .1, color || '#FFFFFF');
+                vTail = flight.vTail = createCube(.1, .88, .88, tailcolor || '#FFFFFF');
                 vTail.geometry.translate(0, -.88, .88);
-                body.rotation.order = wing.rotation.order = vTail.rotation.order = 'ZYX';
-                body.userData.object = wing.userData.object = vTail.userData.object = flight;
-                trainLayers.addObject(body, 1000);
-                trainLayers.addObject(wing, 1000);
-                trainLayers.addObject(vTail, 1000);
+                vTail.geometry.userData.translate = {x: 0, y: -.88, z: .88};
+                aircraft.add(body, wing, vTail);
+                aircraft.rotation.order = 'ZYX';
+                aircraft.userData.object = flight;
+
+                trainLayers.addObject(aircraft, 1000);
             }
 
-            const {position, scale, rotation} = body,
+            const {position, scale, rotation} = aircraft,
                 p = getCoordAndBearing(flight.feature, flight._t * flight.feature.properties.length, 1, 0)[0],
-                coord = body.userData.coord = wing.userData.coord = vTail.userData.coord = p.coord,
-                altitude = body.userData.altitude = wing.userData.altitude = vTail.userData.altitude = p.altitude,
+                coord = aircraft.userData.coord = p.coord,
+                altitude = aircraft.userData.altitude = p.altitude,
                 mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude),
-                bearing = body.userData.bearing = wing.userData.bearing = vTail.userData.bearing = p.bearing;
+                bearing = aircraft.userData.bearing = p.bearing;
 
             if (animation.isActive(flight.animationID)) {
                 const bounds = map.getBounds(),
@@ -986,21 +986,11 @@ Promise.all([
             position.x = mCoord.x - modelOrigin.x;
             position.y = -(mCoord.y - modelOrigin.y);
             position.z = mCoord.z + objectScale / 2;
-            scale.x = scale.z = objectScale;
-            scale.y = aircraftScale;
+            scale.x = scale.y = scale.z = objectScale;
             rotation.x = p.pitch;
             rotation.z = -bearing * DEGREE_TO_RADIAN;
 
-            Object.assign(wing.position, position);
-            wing.scale.x = aircraftScale;
-            wing.scale.y = wing.scale.z = objectScale;
-            wing.rotation.x = rotation.x;
-            wing.rotation.z = rotation.z;
-
-            Object.assign(vTail.position, position);
-            Object.assign(vTail.scale, scale);
-            vTail.rotation.x = rotation.x;
-            vTail.rotation.z = rotation.z;
+            body.scale.y = wing.scale.x = vTail.scale.y = aircraftScale;
         }
 
         function refreshTrains() {
@@ -1468,9 +1458,11 @@ Promise.all([
         }
 
         function stopTrain(train, keep) {
-            animation.stop(train.animationID);
-            if (train.cars) {
-                train.cars.forEach(car => {
+            const {cars, animationID, t, tt} = train;
+
+            animation.stop(animationID);
+            if (cars) {
+                cars.forEach(car => {
                     trainLayers.removeObject(car, 1000);
                     if (car === markedObject && !keep) {
                         markedObject = undefined;
@@ -1483,26 +1475,30 @@ Promise.all([
                 });
             }
             delete train.cars;
-            delete activeTrainLookup[train.t];
-            if (train.delayMarker) {
-                trainLayers.removeObject(train.delayMarker, 1000);
-                delete train.delayMarker;
-            }
+            delete activeTrainLookup[t];
             delete train.delay;
-            if (!train.tt) {
+            if (!tt) {
                 delete timetableRefData.splice(timetableRefData.indexOf(train), 1);
             }
         }
 
         function stopFlight(flight) {
-            animation.stop(flight.animationID);
-            trainLayers.removeObject(flight.body, 1000);
-            trainLayers.removeObject(flight.wing, 1000);
-            trainLayers.removeObject(flight.vTail, 1000);
+            const {id, animationID, aircraft} = flight;
+
+            animation.stop(animationID);
+            trainLayers.removeObject(aircraft, 1000);
+            if (aircraft === markedObject) {
+                markedObject = undefined;
+                popup.remove();
+            }
+            if (aircraft === trackedObject) {
+                trackedObject = undefined;
+            }
+            delete flight.aircraft;
             delete flight.body;
             delete flight.wing;
             delete flight.vTail;
-            delete activeFlightLookup[flight.id];
+            delete activeFlightLookup[id];
         }
 
         function stopAll() {
@@ -1997,7 +1993,8 @@ Promise.all([
                 blending = dark ? THREE.AdditiveBlending : THREE.MultiplyBlending;
 
             Object.keys(activeTrainLookup).forEach(key => {
-                const delayMarker = activeTrainLookup[key].delayMarker;
+                const car = activeTrainLookup[key].cars[0],
+                    delayMarker = car && car.getObjectByName('marker');
 
                 if (delayMarker) {
                     const {material} = delayMarker;
@@ -2547,28 +2544,36 @@ function createCube(x, y, z, color) {
         material = new THREE.MeshLambertMaterial(Object.assign({color}, materialParams));
     }
 
-    return new THREE.Mesh(geometry, material);
+    const mesh = new THREE.Mesh(geometry, material);
+
+    mesh.name = 'cube';
+    return mesh;
 }
 
 /**
-  * Sets the opacity of a mesh object.
-  * @param {Mesh} object - Mesh object
+  * Sets the opacity of an object and its decendants.
+  * @param {Object3D} object - Target object
   * @param {number} opacity - Float in the range of 0.0 - 1.0 indicating how
   *     transparent the material is
   */
 function setOpacity(object, opacity) {
-    const materials = object.material,
-        uniforms = materials.uniforms;
+    object.traverse(descendant => {
+        const materials = descendant.material;
 
-    if (Array.isArray(materials)) {
-        materials.forEach(material => {
-            material.opacity = opacity;
-        });
-    } else if (uniforms) {
-        uniforms.opacity.value = opacity;
-    } else {
-        materials.opacity = opacity;
-    }
+        if (materials) {
+            const uniforms = materials.uniforms;
+
+            if (uniforms) {
+                uniforms.opacity.value = opacity;
+            } else if (Array.isArray(materials)) {
+                materials.forEach(material => {
+                    material.opacity = opacity;
+                });
+            } else {
+                materials.opacity = opacity;
+            }
+        }
+    });
 }
 
 function createDelayMarker(dark) {
@@ -2605,9 +2610,26 @@ function createDelayMarker(dark) {
             `,
             blending: dark ? THREE.AdditiveBlending : THREE.MultiplyBlending,
             depthWrite: false
-        });
+        }),
+        mesh = new THREE.Mesh(geometry, material);
 
-    return new THREE.Mesh(geometry, material);
+    mesh.name = 'marker';
+    return mesh;
+}
+
+function createOutline(object) {
+    const {width, height, depth} = object.geometry.parameters,
+        {translate} = object.geometry.userData,
+        outline = new THREE.Mesh(
+            new THREE.BoxBufferGeometry(width + .2, height + .2, depth + .2),
+            new THREE.MeshBasicMaterial({color: '#FFFFFF', side: THREE.BackSide})
+        );
+
+    outline.name = 'outline';
+    if (translate) {
+        outline.geometry.translate(translate.x, translate.y, translate.z);
+    }
+    return outline;
 }
 
 function getObjectOpacity(object, t) {
