@@ -88,7 +88,7 @@ const configs = {
     secretsURL: 'secrets',
 
     // Timestamp when the static data was last updated
-    lastStaticUpdate: '2020-04-22 09:00:00'
+    lastStaticUpdate: '2020-05-01 15:00:00'
 
 };
 
