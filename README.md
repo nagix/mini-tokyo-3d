@@ -28,7 +28,8 @@ Mouse drag or swipe | Pan
 Mouse wheel rotation | Zoom in/out
 Right click or Ctrl key + mouse drag | Tilt up/down and rotate
 Shift key + mouse drag | Box zoom
-Pinch in/out | Zoom in/out and rotate
+Pinch in/out | Zoom in/out
+Two-finger swipe | Tilt up/down and rotate
 Double-click or double-tap | Zoom in
 Click or tap the search button | Show/hide the station search window
 Click or tap +/- buttons | Zoom in/out

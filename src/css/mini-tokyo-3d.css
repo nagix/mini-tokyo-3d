@@ -1,3 +1,5 @@
+@import 'mapbox-gl/src/css/mapbox-gl.css';
+
 body {
 	margin: 0;
 	padding: 0;
@@ -91,12 +93,20 @@ body {
 	border-top: solid 1px #777;
 }
 .spin-box button {
+	display: block;
 	width: 100%;
-	height: 30px;
+	height: 100%;
+	padding: 0;
 	border: 0;
 	color: #fff;
 	background-color: transparent;
 	cursor: pointer;
+}
+.spin-box .top-button {
+	border-radius: 4px 4px 0 0;
+}
+.spin-box .bottom-button {
+	border-radius: 0 0 4px 4px;
 }
 .clock-button {
 	width: 100%;
@@ -106,13 +116,13 @@ body {
 }
 .clock-button > span {
 	height: 30px;
-	vertical-align: middle;
 	text-align: center;
 	display: table-cell;
 }
 .clock-button button {
 	width: 100%;
-	height: 30px;
+	height: 100%;
+	padding: 0;
 	border: 0;
 	border-collapse: collapse;
 	border-radius: 4px;
@@ -144,26 +154,29 @@ body {
 	border-left: solid 1px #777;
 }
 .speed-controller button {
+	display: block;
 	width: 100%;
-	height: 30px;
+	height: 100%;
+	padding: 0;
 	border: 0;
 	color: #fff;
 	background-color: transparent;
 	cursor: pointer;
 }
-#decrease-button {
+.speed-controller .left-button {
 	border-radius: 4px 0 0 4px;
 }
-.decrease-icon::before {
-	content: '\f068';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
-	width: 14px;
-	height: 14px;
-	font-size: 14px;
-}
-#increase-button {
+.speed-controller .right-button {
 	border-radius: 0 4px 4px 0;
+}
+.decrease-icon {
+	display: block;
+	width: 100%;
+	height: 12px;
+	background: no-repeat center/12px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/minus.svg', fill: #fff);
+}
+button:disabled .decrease-icon {
+	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/minus.svg', fill: #7f7f7f);
 }
 #clock button:disabled {
 	color: #777;
@@ -171,13 +184,17 @@ body {
 #clock button:not(:disabled):hover {
 	background-color: rgba(51, 51, 51, 0.7);
 }
-.increase-icon::before {
-	content: '\f067';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
-	width: 14px;
-	height: 14px;
-	font-size: 14px;
+.increase-icon {
+	display: block;
+	width: 100%;
+	height: 12px;
+	background: no-repeat center/12px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/plus.svg', fill: #fff);
+}
+button:disabled .increase-icon {
+	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/plus.svg', fill: #7f7f7f);
+}
+#clock-speed {
+	padding: 0 6px;
 }
 #timetable {
 	position: absolute;
@@ -197,18 +214,18 @@ body {
 	color: #fff;
 	transition: height 300ms ease;
 }
-#timetable > div {
-	margin: 10px 0;
-	padding: 0 10px;
-}
 #timetable-header {
 	height: 48px;
+	margin: 10px 0;
+	padding: 0 10px;
 	overflow: hidden;
 	line-height: 150%;
 	cursor: pointer;
 }
 #timetable-body {
 	height: calc(100% - 68px);
+	margin: 10px 0;
+	padding: 0 10px;
 	overflow: auto;
 	overscroll-behavior: contain;
 	line-height: 130%;
@@ -265,131 +282,60 @@ body {
 #timetable-button {
 	pointer-events: none;
 }
-.slide-down::before {
-	content: '\f107';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
+.slide-down {
 	position: absolute;
 	top: 24px;
 	right: 10px;
 	width: 20px;
 	height: 20px;
-	color: #ffffff;
-	font-size: 21px;
+	background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-down.svg', fill: #fff);
 }
-.slide-up::before {
-	content: '\f106';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
+.slide-up {
 	position: absolute;
 	top: 24px;
 	right: 10px;
 	width: 20px;
 	height: 20px;
-	color: #ffffff;
-	font-size: 21px;
+	background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-up.svg', fill: #fff);
 }
-.mapbox-ctrl-search {
-	display: inline-flex;
-	align-items: center;
+.mapboxgl-ctrl-search {
 	transition: width 300ms ease;
 }
-.mapbox-ctrl-search::before {
-	content: '\f002';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
-	position: absolute;
-	top: 5px;
-	right: 5px;
-	width: 20px;
-	height: 20px;
-	color: black;
-	font-size: 21px;
-	float: right;
+.mapboxgl-ctrl button.mapboxgl-ctrl-search .mapboxgl-ctrl-icon {
+	background: no-repeat right 5px center/19px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/search.svg', fill: #333);
 }
-.mapbox-ctrl-underground::before {
-	content: '\f06e';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
-	position: relative;
-	top: 1px;
-	left: 1px;
-	width: 20px;
-	height: 20px;
-	color: black;
-	font-size: 21px;
+.mapboxgl-ctrl button.mapboxgl-ctrl-underground .mapboxgl-ctrl-icon {
+	background: no-repeat center/23px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/eye.svg', fill: #333);
 }
-.mapbox-ctrl-underground-visible::before {
-	color: #33B5E5;
+.mapboxgl-ctrl button.mapboxgl-ctrl-underground-visible .mapboxgl-ctrl-icon {
+	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/eye.svg', fill: #33B5E5);
 }
-.mapbox-ctrl-track::before {
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
-	position: relative;
-	left: 1px;
-	width: 20px;
-	height: 20px;
-	color: black;
-	font-size: 21px;
+.mapboxgl-ctrl button.mapboxgl-ctrl-track-helicopter .mapboxgl-ctrl-icon {
+	background: no-repeat center/23px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/helicopter.svg', fill: #333);
 }
-.mapbox-ctrl-track-helicopter::before {
-	content: '\f533';
-	font-size: 17px;
-	top: 1px;
+.mapboxgl-ctrl button.mapboxgl-ctrl-track-helicopter.mapboxgl-ctrl-track-active .mapboxgl-ctrl-icon {
+	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/helicopter.svg', fill: #33B5E5);
 }
-.mapbox-ctrl-track-train::before {
-	content: '\f238';
+.mapboxgl-ctrl button.mapboxgl-ctrl-track-train .mapboxgl-ctrl-icon {
+	background: no-repeat center/19px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/train.svg', fill: #333);
 }
-.mapbox-ctrl-track-active::before {
-	color: #33B5E5;
+.mapboxgl-ctrl button.mapboxgl-ctrl-track-train.mapboxgl-ctrl-track-active .mapboxgl-ctrl-icon {
+	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/train.svg', fill: #33B5E5);
 }
-.mapbox-ctrl-playback::before {
-	content: '\f144';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
-	position: relative;
-	width: 20px;
-	height: 20px;
-	color: black;
-	font-size: 21px;
+.mapboxgl-ctrl button.mapboxgl-ctrl-playback .mapboxgl-ctrl-icon {
+	background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/play-circle.svg', fill: #333);
 }
-.mapbox-ctrl-playback-active::before {
-	color: #33B5E5;
+.mapboxgl-ctrl button.mapboxgl-ctrl-playback-active .mapboxgl-ctrl-icon {
+	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/play-circle.svg', fill: #33B5E5);
 }
-.mapbox-ctrl-about::before {
-	content: '\f05a';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
-	position: relative;
-	width: 20px;
-	height: 20px;
-	color: black;
-	font-size: 21px;
+.mapboxgl-ctrl button.mapboxgl-ctrl-weather .mapboxgl-ctrl-icon {
+	background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/cloud-showers-heavy.svg', fill: #333);
 }
-.mapbox-ctrl-weather::before {
-	content: '\f740';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
-	position: relative;
-	width: 20px;
-	height: 20px;
-	color: black;
-	font-size: 21px;
+.mapboxgl-ctrl button.mapboxgl-ctrl-weather-active .mapboxgl-ctrl-icon {
+	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/cloud-showers-heavy.svg', fill: #33B5E5);
 }
-.mapbox-ctrl-weather-active::before {
-	color: #33B5E5;
-}
-.mapbox-ctrl-export::before {
-	content: '\f56d';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
-	position: absolute;
-	top: 5px;
-	left: 6px;
-	width: 20px;
-	height: 20px;
-	color: black;
-	font-size: 21px;
+.mapboxgl-ctrl button.mapboxgl-ctrl-about .mapboxgl-ctrl-icon {
+	background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/info-circle.svg', fill: #333);
 }
 .mapboxgl-popup-content {
 	color: #fff;
@@ -446,14 +392,16 @@ body {
 	padding: 4px;
 	cursor: pointer;
 }
-.acd-label::before {
-	content: '\f0fe';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
+.acd-label .acd-icon {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
 	margin-right: 4px;
+	margin-bottom: -2px;
+	background: no-repeat center/12px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/plus-square.svg', fill: #fff);
 }
-.acd-check:checked + .acd-label::before {
-	content: '\f146';
+.acd-check:checked + .acd-label .acd-icon {
+	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/minus-square.svg', fill: #fff);
 }
 .acd-content {
 	border: 1px solid rgba(51, 51, 51, 0.7);

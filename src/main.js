@@ -407,11 +407,11 @@ Promise.all([
                 stopViewAnimation();
                 disableTracking();
                 if (isUndergroundVisible && !(station.altitude < 0)) {
-                    helpers.dispatchClickEvent('mapbox-ctrl-underground');
+                    helpers.dispatchClickEvent('mapboxgl-ctrl-underground');
                 }
                 if (!isUndergroundVisible && (station.altitude < 0)) {
                     map.once('moveend', () => {
-                        helpers.dispatchClickEvent('mapbox-ctrl-underground');
+                        helpers.dispatchClickEvent('mapboxgl-ctrl-underground');
                     });
                 }
                 map.flyTo({
@@ -433,7 +433,7 @@ Promise.all([
         }
 
         let control = new MapboxGLButtonControl([{
-            className: 'mapbox-ctrl-search',
+            className: 'mapboxgl-ctrl-search',
             title: dict['search'],
             eventHandler() {
                 const me = this,
@@ -448,7 +448,7 @@ Promise.all([
                         searchBox.style.opacity = 1;
                     }, 300);
                 } else {
-                    style.width = '30px';
+                    style.width = '29px';
                     searchBox.style.display = 'none';
                     searchBox.style.opacity = 0;
                 }
@@ -479,7 +479,7 @@ Promise.all([
         map.addControl(control);
 
         map.addControl(new MapboxGLButtonControl([{
-            className: 'mapbox-ctrl-underground',
+            className: 'mapboxgl-ctrl-underground',
             title: dict['enter-underground'],
             eventHandler() {
                 const me = this,
@@ -490,10 +490,10 @@ Promise.all([
                 trainLayers.ug.setSemitransparent(!isUndergroundVisible);
                 trainLayers.og.setSemitransparent(isUndergroundVisible);
                 if (isUndergroundVisible) {
-                    classList.add('mapbox-ctrl-underground-visible');
+                    classList.add('mapboxgl-ctrl-underground-visible');
                     map.setPaintProperty('background', 'background-color', 'rgb(16,16,16)');
                 } else {
-                    classList.remove('mapbox-ctrl-underground-visible');
+                    classList.remove('mapboxgl-ctrl-underground-visible');
                     map.setPaintProperty('background', 'background-color', getStyleColorString(styleColors[0]));
                 }
                 styleOpacities.forEach(({id, key, opacity}) => {
@@ -529,19 +529,19 @@ Promise.all([
                 });
             }
         }, {
-            className: 'mapbox-ctrl-track mapbox-ctrl-track-helicopter',
+            className: 'mapboxgl-ctrl-track mapboxgl-ctrl-track-helicopter',
             title: dict['track'],
             eventHandler(event) {
                 const {classList} = this;
 
                 if (trackingMode === 'helicopter') {
                     trackingMode = 'train';
-                    classList.remove('mapbox-ctrl-track-helicopter');
-                    classList.add('mapbox-ctrl-track-train');
+                    classList.remove('mapboxgl-ctrl-track-helicopter');
+                    classList.add('mapboxgl-ctrl-track-train');
                 } else {
                     trackingMode = 'helicopter';
-                    classList.remove('mapbox-ctrl-track-train');
-                    classList.add('mapbox-ctrl-track-helicopter');
+                    classList.remove('mapboxgl-ctrl-track-train');
+                    classList.add('mapboxgl-ctrl-track-helicopter');
                 }
                 if (trackedObject) {
                     startViewAnimation();
@@ -549,7 +549,7 @@ Promise.all([
                 event.stopPropagation();
             }
         }, {
-            className: 'mapbox-ctrl-playback',
+            className: 'mapboxgl-ctrl-playback',
             title: dict['enter-playback'],
             eventHandler() {
                 const me = this,
@@ -565,9 +565,9 @@ Promise.all([
                 disableTracking();
                 if (isPlayback) {
                     resetRailwayStatus();
-                    classList.add('mapbox-ctrl-playback-active');
+                    classList.add('mapboxgl-ctrl-playback-active');
                 } else {
-                    classList.remove('mapbox-ctrl-playback-active');
+                    classList.remove('mapboxgl-ctrl-playback-active');
                 }
                 isEditingTime = false;
                 clock.reset();
@@ -580,7 +580,7 @@ Promise.all([
                 refreshStyleColors();
             }
         }, {
-            className: 'mapbox-ctrl-weather',
+            className: 'mapboxgl-ctrl-weather',
             title: dict['show-weather'],
             eventHandler() {
                 const me = this,
@@ -589,10 +589,10 @@ Promise.all([
                 isWeatherVisible = !isWeatherVisible;
                 me.title = dict[isWeatherVisible ? 'hide-weather' : 'show-weather'];
                 if (isWeatherVisible) {
-                    classList.add('mapbox-ctrl-weather-active');
+                    classList.add('mapboxgl-ctrl-weather-active');
                     loadNowCastData();
                 } else {
-                    classList.remove('mapbox-ctrl-weather-active');
+                    classList.remove('mapboxgl-ctrl-weather-active');
                     if (fgGroup) {
                         rainLayer.scene.remove(fgGroup.mesh);
                         // fgGroup.dispose();
@@ -610,7 +610,7 @@ Promise.all([
         });
 
         map.addControl(new MapboxGLButtonControl([{
-            className: 'mapbox-ctrl-about',
+            className: 'mapboxgl-ctrl-about',
             title: dict['about'],
             eventHandler() {
                 if (!aboutPopup.isOpen()) {
@@ -695,7 +695,7 @@ Promise.all([
                 startViewAnimation();
                 enableTracking();
                 if (isUndergroundVisible !== (altitude < 0)) {
-                    helpers.dispatchClickEvent('mapbox-ctrl-underground');
+                    helpers.dispatchClickEvent('mapboxgl-ctrl-underground');
                 }
                 if (object.tt) {
                     showTimetable();
@@ -920,7 +920,7 @@ Promise.all([
                 if (altitudeChanged) {
                     trainLayers.updateObject(car, 1000);
                     if (trackedObject === car) {
-                        helpers.dispatchClickEvent('mapbox-ctrl-underground');
+                        helpers.dispatchClickEvent('mapboxgl-ctrl-underground');
                     }
                 }
             }
@@ -2052,17 +2052,17 @@ Promise.all([
                     '<div class="clock-controller">',
                     dateComponents.slice(0, 3).map(({id}) => [
                         '<span class="spin-box">',
-                        `<div><button id="${id}-increase-button"><span class="increase-icon"></span></button></div>`,
+                        `<div><button id="${id}-increase-button" class="top-button"><span class="increase-icon"></span></button></div>`,
                         `<div id="${id}"></div>`,
-                        `<div><button id="${id}-decrease-button"><span class="decrease-icon"></span></button></div>`,
+                        `<div><button id="${id}-decrease-button" class="bottom-button"><span class="decrease-icon"></span></button></div>`,
                         '</span>'
                     ].join('')).join('<span class="clock-controller-separator">-</span>'),
                     '<span class="clock-controller-separator"></span>',
                     dateComponents.slice(-3).map(({id}) => [
                         '<span class="spin-box">',
-                        `<div><button id="${id}-increase-button"><span class="increase-icon"></span></button></div>`,
+                        `<div><button id="${id}-increase-button" class="top-button"><span class="increase-icon"></span></button></div>`,
                         `<div id="${id}"></div>`,
-                        `<div><button id="${id}-decrease-button"><span class="decrease-icon"></span></button></div>`,
+                        `<div><button id="${id}-decrease-button" class="bottom-button"><span class="decrease-icon"></span></button></div>`,
                         '</span>'
                     ].join('')).join('<span class="clock-controller-separator">:</span>'),
                     '</div>',
@@ -2074,11 +2074,11 @@ Promise.all([
                 ].join('') : '',
                 isPlayback ? [
                     '<div class="speed-controller">',
-                    '<span><button id="decrease-button"',
+                    '<span><button id="speed-decrease-button" class="left-button"',
                     clock.speed === 1 ? ' disabled' : '',
                     '><span class="decrease-icon"></span></button></span>',
                     `<span id="clock-speed">${clock.speed}${dict['x-speed']}</span>`,
-                    '<span><button id="increase-button"',
+                    '<span><button id="speed-increase-button" class="right-button"',
                     clock.speed === 600 ? ' disabled' : '',
                     '><span class="increase-icon"></span></button></span>',
                     '</div>'
@@ -2140,23 +2140,23 @@ Promise.all([
             }
 
             if (isPlayback) {
-                document.getElementById('increase-button').addEventListener('click', function() {
+                document.getElementById('speed-increase-button').addEventListener('click', function() {
                     clock.setSpeed(clock.speed + (clock.speed < 10 ? 1 : clock.speed < 100 ? 10 : 100));
                     this.disabled = clock.speed === 600;
-                    document.getElementById('decrease-button').disabled = false;
+                    document.getElementById('speed-decrease-button').disabled = false;
                     document.getElementById('clock-speed').innerHTML = clock.speed + dict['x-speed'];
                 });
-                document.getElementById('decrease-button').addEventListener('click', function() {
+                document.getElementById('speed-decrease-button').addEventListener('click', function() {
                     clock.setSpeed(clock.speed - (clock.speed <= 10 ? 1 : clock.speed <= 100 ? 10 : 100));
                     this.disabled = clock.speed === 1;
-                    document.getElementById('increase-button').disabled = false;
+                    document.getElementById('speed-increase-button').disabled = false;
                     document.getElementById('clock-speed').innerHTML = clock.speed + dict['x-speed'];
                 });
             }
         }
 
         function updateAboutPopup() {
-            const r = document.getElementsByClassName('mapbox-ctrl-about')[0].getBoundingClientRect(),
+            const r = document.getElementsByClassName('mapboxgl-ctrl-about')[0].getBoundingClientRect(),
                 staticCheck = document.getElementById('acd-static'),
                 dynamicCheck = document.getElementById('acd-dynamic'),
                 html = [
@@ -2164,12 +2164,12 @@ Promise.all([
                     '<input id="acd-static" class="acd-check" type="checkbox"',
                     staticCheck && staticCheck.checked ? ' checked' : '',
                     '>',
-                    `<label class="acd-label" for="acd-static">${dict['static-update']}</label>`,
+                    `<label class="acd-label" for="acd-static"><span class="acd-icon"></span>${dict['static-update']}</label>`,
                     `<div class="acd-content">${configs.lastStaticUpdate}</div>`,
                     '<input id="acd-dynamic" class="acd-check" type="checkbox"',
                     dynamicCheck && dynamicCheck.checked ? ' checked' : '',
                     '>',
-                    `<label class="acd-label" for="acd-dynamic">${dict['dynamic-update']}</label>`,
+                    `<label class="acd-label" for="acd-dynamic"><span class="acd-icon"></span>${dict['dynamic-update']}</label>`,
                     '<div class="acd-content">',
                     lastDynamicUpdate['JR-East'] || 'N/A',
                     ` (${dict['jr-east']})<br>`,
@@ -2247,13 +2247,13 @@ Promise.all([
 });
 
 function enableTracking() {
-    document.getElementsByClassName('mapbox-ctrl-track')[0]
-        .classList.add('mapbox-ctrl-track-active');
+    document.getElementsByClassName('mapboxgl-ctrl-track')[0]
+        .classList.add('mapboxgl-ctrl-track-active');
 }
 
 function disableTracking() {
-    document.getElementsByClassName('mapbox-ctrl-track')[0]
-        .classList.remove('mapbox-ctrl-track-active');
+    document.getElementsByClassName('mapboxgl-ctrl-track')[0]
+        .classList.remove('mapboxgl-ctrl-track-active');
 }
 
 function showTimetable() {

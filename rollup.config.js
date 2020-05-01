@@ -3,6 +3,10 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import {terser} from 'rollup-plugin-terser';
+import sass from 'node-sass';
+import postcss from 'rollup-plugin-postcss';
+import cssimport from 'postcss-import';
+import inlinesvg from 'postcss-inline-svg';
 import strip from '@rollup/plugin-strip';
 
 const pkg = JSON.parse(fs.readFileSync('package.json'));
@@ -15,6 +19,10 @@ const banner = `/*!
 const extraReplacement = process.env.SECRETS ? {
 	secrets: process.env.SECRETS
 } : {};
+const sassRender = (content, id) => new Promise((resolve, reject) => {
+	const result = sass.renderSync({file: id});
+	resolve({code: result.css.toString()});
+});
 
 export default [{
 	input: 'src/loader/index.js',
@@ -41,6 +49,14 @@ export default [{
 	},
 	plugins: [
 		resolve(),
+		postcss({
+			preprocessor: sassRender,
+			plugins: [
+				cssimport(),
+				inlinesvg()
+			],
+			extract: 'mini-tokyo-3d.css'
+		}),
 		commonjs({
 			namedExports: {
 				'probe.gl/env': ['global', 'isBrowser', 'getBrowser']
@@ -62,6 +78,15 @@ export default [{
 	},
 	plugins: [
 		resolve(),
+		postcss({
+			preprocessor: sassRender,
+			plugins: [
+				cssimport(),
+				inlinesvg()
+			],
+			extract: 'mini-tokyo-3d.min.css',
+			minimize: true
+		}),
 		commonjs({
 			namedExports: {
 				'probe.gl/env': ['global', 'isBrowser', 'getBrowser']

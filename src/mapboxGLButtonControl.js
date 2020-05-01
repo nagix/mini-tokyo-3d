@@ -18,12 +18,18 @@ export default class {
 
         me._buttons = me._options.map(options => {
             const button = document.createElement('button'),
+                icon = document.createElement('span'),
                 {className, title, eventHandler} = options;
 
-            button.className = `mapboxgl-ctrl-icon ${className}`;
+            button.className = className;
             button.type = 'button';
             button.title = title;
+            button.setAttribute('aria-label', title);
             button.onclick = eventHandler;
+
+            icon.className = 'mapboxgl-ctrl-icon';
+            icon.setAttribute('aria-hidden', true);
+            button.appendChild(icon);
 
             me._container.appendChild(button);
 
