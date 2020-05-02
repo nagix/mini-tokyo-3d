@@ -2156,7 +2156,8 @@ Promise.all([
         }
 
         function updateAboutPopup() {
-            const r = document.getElementsByClassName('mapboxgl-ctrl-about')[0].getBoundingClientRect(),
+            const r1 = document.getElementById('map').getBoundingClientRect(),
+                r2 = document.getElementsByClassName('mapboxgl-ctrl-about')[0].getBoundingClientRect(),
                 staticCheck = document.getElementById('acd-static'),
                 dynamicCheck = document.getElementById('acd-dynamic'),
                 html = [
@@ -2185,7 +2186,7 @@ Promise.all([
                     ` (${dict['naa']})</div>`
                 ].join('');
 
-            aboutPopup.setLngLat(map.unproject([r.left - 5, r.top + 15])).setHTML(html);
+            aboutPopup.setLngLat(map.unproject([r2.left - r1.left - 5, r2.top - r1.top + 15])).setHTML(html);
         }
     });
 

@@ -21,6 +21,7 @@ export default class {
 
     onAdd(map, gl) {
         const me = this,
+            {_fov, width, height} = map.transform,
             renderer = me.renderer = new THREE.WebGLRenderer({
                 canvas: map.getCanvas(),
                 context: gl
@@ -37,21 +38,20 @@ export default class {
         scene.add(new THREE.Mesh());
 
         me.map = map;
-        me.camera = new THREE.PerspectiveCamera(THREE.MathUtils.radToDeg(map.transform._fov), window.innerWidth / window.innerHeight);
+        me.camera = new THREE.PerspectiveCamera(THREE.MathUtils.radToDeg(_fov), width / height);
         me.raycaster = new THREE.Raycaster();
     }
 
     render(gl, matrix) {
         const {modelOrigin, underground, semitransparent, map, renderer, camera, light, scene} = this,
-            transform = map.transform,
-            halfFov = transform._fov / 2,
-            cameraToCenterDistance = transform.cameraToCenterDistance,
-            angle = Math.PI / 2 - transform._pitch,
+            {_fov, cameraToCenterDistance, _pitch, width, height} = map.transform,
+            halfFov = _fov / 2,
+            angle = Math.PI / 2 - _pitch,
             topHalfSurfaceDistance = Math.sin(halfFov) * cameraToCenterDistance / Math.sin(angle - halfFov),
             furthestDistance = Math.cos(angle) * topHalfSurfaceDistance + cameraToCenterDistance,
-            nearZ = transform.height / 50,
+            nearZ = height / 50,
             halfHeight = Math.tan(halfFov) * nearZ,
-            halfWidth = halfHeight * transform.width / transform.height,
+            halfWidth = halfHeight * width / height,
 
             m = new THREE.Matrix4().fromArray(matrix),
             l = new THREE.Matrix4()
@@ -82,18 +82,16 @@ export default class {
 
     onResize(event) {
         const {camera} = this,
-            {transform} = event.target;
+            {width, height} = event.target.transform;
 
-        camera.aspect = transform.width / transform.height;
+        camera.aspect = width / height;
         camera.updateProjectionMatrix();
     }
 
     pickObject(point) {
-        const {raycaster, camera, scene} = this,
-            mouse = new THREE.Vector2(
-                (point.x / window.innerWidth) * 2 - 1,
-                -(point.y / window.innerHeight) * 2 + 1
-            );
+        const {map, raycaster, camera, scene} = this,
+            {width, height} = map.transform,
+            mouse = new THREE.Vector2(point.x / width * 2 - 1, -point.y / height * 2 + 1);
 
         raycaster.setFromCamera(mouse, camera);
 
