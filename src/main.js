@@ -875,6 +875,12 @@ Promise.all([
                 }
             }
 
+            if (delay) {
+                if (!cars[0].getObjectByName('marker')) {
+                    cars[0].add(createDelayMarker(helpers.isDarkBackground(map)));
+                }
+            }
+
             const pArr = getCoordAndBearing(feature, offset + train._t * interval, 1, objectUnit);
             for (let i = 0, ilen = cars.length; i < ilen; i++) {
                 const car = cars[i],
@@ -923,16 +929,6 @@ Promise.all([
                         helpers.dispatchClickEvent('mapboxgl-ctrl-underground');
                     }
                 }
-            }
-
-            const delayMarker = cars[0].getObjectByName('marker');
-
-            if (delay) {
-                if (!delayMarker) {
-                    cars[0].add(createDelayMarker(helpers.isDarkBackground(map)));
-                }
-            } else if (delayMarker) {
-                cars[0].remove(delayMarker);
             }
         }
 
@@ -1550,7 +1546,7 @@ Promise.all([
                 realtimeTrainLookup = {};
 
                 trainRefData.forEach(trainRef => {
-                    const delay = trainRef['odpt:delay'] * 1000,
+                    const delay = (trainRef['odpt:delay'] || 0) * 1000,
                         carComposition = trainRef['odpt:carComposition'],
                         trainType = helpers.removePrefix(trainRef['odpt:trainType']),
                         origin = helpers.removePrefix(trainRef['odpt:originStation']),
@@ -1564,7 +1560,7 @@ Promise.all([
 
                     if (train) {
                         realtimeTrainLookup[id] = train;
-                        if (delay && train.delay !== delay) {
+                        if (train.delay !== delay) {
                             train.delay = delay;
                             changed = true;
                         }
