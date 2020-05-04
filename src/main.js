@@ -120,6 +120,26 @@ MapboxLayer.prototype.render = function(...args) {
     render.apply(me, args);
 };
 
+document.getElementById('map').innerHTML = `
+    <div id="clock"></div>
+    <input id="search-box" type="text" list="stations">
+    <div id="timetable">
+        <div id="timetable-header"></div>
+        <div id="timetable-body">
+            <div class="scroll-box">
+                <div id="timetable-content"></div>
+                <svg id="railway-mark"></svg>
+                <svg id="train-mark"></svg>
+            </div>
+        </div>
+        <div id="timetable-button" class="slide-down"></div>
+    </div>
+    <div id="loader" class="loader-inner ball-pulse">
+        <div></div><div></div><div></div>
+    </div>
+    <div id="loading-error"></div>
+`;
+
 Promise.all([
     helpers.loadJSON(`data/dictionary-${lang}.json`),
     helpers.loadJSON('data/railways.json.gz'),
@@ -372,10 +392,6 @@ Promise.all([
 
         styleColors = helpers.getStyleColors(map);
         styleOpacities = helpers.getStyleOpacities(map);
-
-        const clockElement = document.createElement('div');
-        clockElement.id = 'clock';
-        document.getElementById('map').appendChild(clockElement);
 
         const datalist = document.createElement('datalist');
         datalist.id = 'stations';
