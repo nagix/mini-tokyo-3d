@@ -1694,7 +1694,7 @@ Promise.all([
                     });
                 }
 
-                if (helpers.includes(landing, ['L22', 'L23'])) { // South wind, good weather
+                if (helpers.includes(landing, ['L22', 'L23']) || helpers.includes(landing, ['R16L', 'R16R'])) { // South wind, good weather
                     arrRoutes = {S: 'L23', N: 'L22'};
                     depRoutes = {S: '16R', N: '16L'};
                     north = false;
