@@ -388,6 +388,23 @@ Promise.all([
 
         map.addLayer(trainLayers.og, 'building-3d');
 
+        /* For development
+        map.addLayer(new MapboxLayer({
+            id: `airway-og-`,
+            type: GeoJsonLayer,
+            data: featureFilter(railwayFeatureCollection, p =>
+                p.type === 0 && p.altitude > 0
+            ),
+            filled: false,
+            stroked: true,
+            getLineWidth: d => d.properties.width,
+            getLineColor: d => helpers.colorToRGBArray(d.properties.color),
+            lineWidthUnits: 'pixels',
+            lineWidthScale: 1,
+            opacity: .0625
+        }), 'poi');
+        */
+
         map.addLayer(rainLayer, 'poi');
 
         styleColors = helpers.getStyleColors(map);
@@ -1694,9 +1711,17 @@ Promise.all([
                     });
                 }
 
-                if (helpers.includes(landing, ['L22', 'L23']) || helpers.includes(landing, ['R16L', 'R16R'])) { // South wind, good weather
+                if (helpers.includes(landing, ['R16L', 'R16R'])) { // South wind, good weather, rush hour
+                    arrRoutes = {S: 'R16L', N: 'R16R'};
+                    depRoutes = {S: '22', N: '16R'};
+                    north = false;
+                } else if (helpers.includes(landing, ['L22', 'L23'])) { // South wind, good weather
                     arrRoutes = {S: 'L23', N: 'L22'};
-                    depRoutes = {S: '16R', N: '16L'};
+                    depRoutes = {S: 'O16R', N: '16L'};
+                    north = false;
+                } else if (helpers.includes(landing, ['I16L', 'I16R'])) { // South wind, bad weather, rush hour
+                    arrRoutes = {S: 'I16L', N: 'I16R'};
+                    depRoutes = {S: '22', N: '16R'};
                     north = false;
                 } else if (helpers.includes(landing, ['I22', 'I23'])) { // South wind, bad weather
                     arrRoutes = {S: 'I23', N: 'I22'};
