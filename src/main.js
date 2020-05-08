@@ -1500,6 +1500,8 @@ Promise.all([
                     if (car === trackedObject && !keep) {
                         trackedObject = undefined;
                         hideTimetable();
+                        stopViewAnimation();
+                        disableTracking();
                     }
                 });
             }
@@ -1522,6 +1524,8 @@ Promise.all([
             }
             if (aircraft === trackedObject) {
                 trackedObject = undefined;
+                stopViewAnimation();
+                disableTracking();
             }
             delete flight.aircraft;
             delete flight.body;
