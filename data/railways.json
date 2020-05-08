@@ -315,23 +315,10 @@
 }, {
 	"id": "JR-East.SotetsuDirect",
 	"title": {
-		"ja": "相鉄線直通",
-		"en": "Through service to Sotetsu Line",
-		"ko": "소테쓰 선 직통",
-		"zh-Hans": "相铁线直通",
-		"zh-Hant": "相鐵線直通"
+		"ko": "소테쓰 직통 선",
+		"zh-Hans": "相铁直通线",
+		"zh-Hant": "相鐵直通線"
 	},
-	"stations": {
-		"index": 0,
-		"delete": 0,
-		"insert": [
-			"JR-East.SotetsuDirect.Osaki",
-			"JR-East.SotetsuDirect.NishiOi",
-			"JR-East.SotetsuDirect.MusashiKosugi",
-			"JR-East.SotetsuDirect.HazawaYokohamaKokudai"
-		]
-	},
-	"ascending": "Outbound",
 	"color": "#00B48D",
 	"carComposition": 10
 }, {

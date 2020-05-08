@@ -22,7 +22,7 @@ const RAILWAYS_FOR_TRAINTIMETABLES = [
     ['JR-East.SobuRapid', 'JR-East.Sobu', 'JR-East.Narita', 'JR-East.NaritaAirportBranch'],
     ['JR-East.Uchibo', 'JR-East.Sotobo'],
     ['JR-East.Yokosuka', 'JR-East.Keiyo'],
-    ['JR-East.SaikyoKawagoe', 'JR-East.ShonanShinjuku'],
+    ['JR-East.SaikyoKawagoe', 'JR-East.ShonanShinjuku', 'JR-East.SotetsuDirect'],
     ['JR-East.Tsurumi', 'JR-East.TsurumiUmiShibauraBranch', 'JR-East.TsurumiOkawaBranch', 'JR-East.Nambu', 'JR-East.NambuBranch'],
     ['JR-East.Musashino', 'JR-East.Yokohama', 'TWR.Rinkai'],
     ['TokyoMetro.Ginza'],
