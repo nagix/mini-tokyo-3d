@@ -33,6 +33,7 @@ export default [{
 		indent: false,
 		sourcemap: true
 	},
+	external: ['fs', 'worker_threads', 'https'],
 	plugins: [
 		resolve(),
 		commonjs()
@@ -47,6 +48,7 @@ export default [{
 		sourcemap: true,
 		banner
 	},
+	external: ['fs', 'util', 'module', 'path'],
 	plugins: [
 		resolve(),
 		postcss({
@@ -76,6 +78,7 @@ export default [{
 		sourcemap: true,
 		banner
 	},
+	external: ['fs', 'util', 'module', 'path'],
 	plugins: [
 		resolve(),
 		postcss({

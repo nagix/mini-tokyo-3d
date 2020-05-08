@@ -40,12 +40,10 @@ const RAILWAYS_FOR_TRAINTIMETABLES = [
     ['YokohamaMunicipal.Blue', 'YokohamaMunicipal.Green']
 ];
 
-/*
 const RAILWAY_YOKOSUKA = 'JR-East.Yokosuka',
     RAILWAY_SHONANSHINJUKU = 'JR-East.ShonanShinjuku',
-    RAILWAY_YAMANOTEFREIGHT = 'JR-East.YamanoteFreight';
-*/
-const RAILWAY_KEIYO = 'JR-East.Keiyo',
+    RAILWAY_YAMANOTEFREIGHT = 'JR-East.YamanoteFreight',
+    RAILWAY_KEIYO = 'JR-East.Keiyo',
     RAILWAY_KEIYOKOYABRANCH = 'JR-East.KeiyoKoyaBranch',
     RAILWAY_KEIYOFUTAMATABRANCH = 'JR-East.KeiyoFutamataBranch',
     RAILWAY_OEDO = 'Toei.Oedo';
@@ -60,9 +58,8 @@ const TRAINTYPES_FOR_SOBURAPID = [
     'JR-East.Rapid',
     'JR-East.LimitedExpress'
 ];
-/*
+
 const TRAINTYPE_FOR_YAMANOTEFREIGHT = 'JR-East.LimitedExpress';
-*/
 
 const STATION_KEIYO_NISHIFUNABASHI = 'JR-East.Keiyo.NishiFunabashi',
     STATION_OEDO_TOCHOMAE = 'Toei.Oedo.Tochomae',
@@ -179,7 +176,6 @@ export default async function(url, key) {
         });
 
         // Modify Yokosuka, Shonan Shinjuku and Yamanote Freight timetables
-        /*
         data.filter(timetable =>
             timetable.r === RAILWAY_YOKOSUKA &&
             timetable.y === TRAINTYPE_FOR_YAMANOTEFREIGHT &&
@@ -217,7 +213,6 @@ export default async function(url, key) {
                 delete station.a;
             }
         });
-        */
 
         // Modify Keiyo branch timetables
         data.filter(timetable => {
