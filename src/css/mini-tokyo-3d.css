@@ -1,9 +1,18 @@
 @import 'mapbox-gl/src/css/mapbox-gl.css';
 
-body {
+#map {
+	width: 380px;
+	height: 380px;
 	margin: 0;
 	padding: 0;
+	position: relative;
 	font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	cursor: default;
+	-webkit-touch-callout: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 	touch-action: none;
 }
 .loader-inner {
@@ -34,12 +43,6 @@ body {
 	background-color: #eee;
 	opacity: .9;
 	display: none;
-}
-#map {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	width: 100%;
 }
 #clock {
 	position: absolute;

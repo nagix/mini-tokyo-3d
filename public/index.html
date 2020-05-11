@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="mini-tokyo-3d.min.css" />
 	<title>Mini Tokyo 3D</title>
 	<meta name="description" content="A real-time 3D digital map of Tokyo's public transport system. This data visualization was produced by Akihiko Kusanagi." />
-	<meta name="viewport" content="user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1" />
+	<meta name="viewport" content="user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, width=device-width, height=device-height, initial-scale=1" />
 	<meta property="og:title" content="Mini Tokyo 3D" />
 	<meta property="og:description" content="A real-time 3D digital map of Tokyo's public transport system. This data visualization was produced by Akihiko Kusanagi." />
 	<meta property="og:locale" content="ja_JP" />
@@ -23,8 +23,8 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@nagix" />
 </head>
-<body>
-	<div id="map"></div>
+<body style="width: 100%; height: 100%; margin: 0; padding: 0; position: absolute;">
+	<div id="map" style="width: 100%; height: 100%;"></div>
 
 	<script type="text/javascript" src="mini-tokyo-3d.min.js"></script>
 </body>
