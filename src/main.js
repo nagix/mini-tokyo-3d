@@ -697,14 +697,7 @@ Promise.all([
                 popup.setLngLat(adjustCoord(coord, altitude))
                     .setHTML(object.description)
                     .addTo(map);
-
-                if (!markedObject.getObjectByName('outline')) {
-                    markedObject.traverse(descendant => {
-                        if (descendant.name === 'cube') {
-                            descendant.add(createOutline(descendant));
-                        }
-                    });
-                }
+                updateOutline();
             } else if (popup.isOpen()) {
                 map.getCanvas().style.cursor = '';
                 popup.remove();
@@ -899,6 +892,7 @@ Promise.all([
                 // Reset marked/tracked object if it was marked/tracked before
                 if (markedObject && markedObject.userData.object === train) {
                     markedObject = cars[0];
+                    updateOutline();
                 }
                 if (trackedObject && trackedObject.userData.object === train) {
                     trackedObject = cars[0];
@@ -1138,6 +1132,7 @@ Promise.all([
                             updateTrainShape(train, 0);
                             if (markedObjectIndex !== -1) {
                                 markedObject = train.cars[markedObjectIndex];
+                                updateOutline();
                             }
                             if (trackedObjectIndex !== -1) {
                                 trackedObject = train.cars[trackedObjectIndex];
@@ -2044,6 +2039,16 @@ Promise.all([
                     material.blending = blending;
                 }
             });
+        }
+
+        function updateOutline() {
+            if (!markedObject.getObjectByName('outline')) {
+                markedObject.traverse(descendant => {
+                    if (descendant.name === 'cube') {
+                        descendant.add(createOutline(descendant));
+                    }
+                });
+            }
         }
 
         const dateComponents = [

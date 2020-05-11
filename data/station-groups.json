@@ -167,6 +167,9 @@
 ], [
 	"JR-East.Musashino.NishiKokubunji"
 ]], [[
+	"JR-East.ChuoRapid.Kunitachi",
+	"JR-East.MusashinoKunitachiBranch.Kunitachi"
+]], [[
 	"JR-East.Ome.Tachikawa",
 	"JR-East.ChuoRapid.Tachikawa",
 	"JR-East.Nambu.Tachikawa"
@@ -268,6 +271,8 @@
 	"JR-East.KeihinTohokuNegishi.SaitamaShintoshin"
 ]], [[
 	"JR-East.ShonanShinjuku.Omiya",
+	"JR-East.MusashinoOmiyaBranch.Omiya",
+	"JR-East.MusashinoNishiUrawaBranch.Omiya",
 	"JR-East.Utsunomiya.Omiya",
 	"JR-East.Takasaki.Omiya",
 	"JR-East.KeihinTohokuNegishi.Omiya"
@@ -464,7 +469,8 @@
 ]], [[
 	"JR-East.SaikyoKawagoe.MusashiUrawa"
 ], [
-	"JR-East.Musashino.MusashiUrawa"
+	"JR-East.Musashino.MusashiUrawa",
+	"JR-East.MusashinoNishiUrawaBranch.MusashiUrawa"
 ]], [[
 	"JR-East.SaikyoKawagoe.Kawagoe"
 ], [
@@ -506,7 +512,11 @@
 ], [
 	"Keikyu.Main.HatchoNawate"
 ]], [[
-	"JR-East.Musashino.KitaAsaka"
+	"JR-East.Musashino.ShinKodaira",
+	"JR-East.MusashinoKunitachiBranch.ShinKodaira"
+]], [[
+	"JR-East.Musashino.KitaAsaka",
+	"JR-East.MusashinoOmiyaBranch.KitaAsaka"
 ], [
 	"Tobu.Tojo.Asakadai"
 ]], [[

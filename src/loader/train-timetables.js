@@ -46,6 +46,11 @@ const RAILWAY_YOKOSUKA = 'JR-East.Yokosuka',
     RAILWAY_KEIYO = 'JR-East.Keiyo',
     RAILWAY_KEIYOKOYABRANCH = 'JR-East.KeiyoKoyaBranch',
     RAILWAY_KEIYOFUTAMATABRANCH = 'JR-East.KeiyoFutamataBranch',
+    RAILWAY_MUSASHINO = 'JR-East.Musashino',
+    RAILWAY_MUSASHINOKUNITACHIBRANCH = 'JR-East.MusashinoKunitachiBranch',
+    RAILWAY_MUSASHINOOMIYABRANCH = 'JR-East.MusashinoOmiyaBranch',
+    RAILWAY_MUSASHINONISHIURAWABRANCH = 'JR-East.MusashinoNishiUrawaBranch',
+    RAILWAY_CHUORAPID = 'JR-East.ChuoRapid',
     RAILWAY_OEDO = 'Toei.Oedo';
 
 const RAILWAYS_FOR_SOBURAPID = [
@@ -53,6 +58,9 @@ const RAILWAYS_FOR_SOBURAPID = [
     'JR-East.Narita',
     'JR-East.Sobu'
 ];
+
+const RAIL_DIRECTION_OUTBOUND = 'Outbound',
+    RAIL_DIRECTION_INBOUND = 'Inbound';
 
 const TRAINTYPES_FOR_SOBURAPID = [
     'JR-East.Rapid',
@@ -62,6 +70,8 @@ const TRAINTYPES_FOR_SOBURAPID = [
 const TRAINTYPE_FOR_YAMANOTEFREIGHT = 'JR-East.LimitedExpress';
 
 const STATION_KEIYO_NISHIFUNABASHI = 'JR-East.Keiyo.NishiFunabashi',
+    STATION_MUSASHINO_FUCHUHONMACHI = 'JR-East.Musashino.Fuchuhommachi',
+    STATION_CHUORAPID_HACHIOJI = 'JR-East.ChuoRapid.Hachioji',
     STATION_OEDO_TOCHOMAE = 'Toei.Oedo.Tochomae',
     STATION_OEDO_SHINJUKUNISHIGUCHI = 'Toei.Oedo.ShinjukuNishiguchi';
 
@@ -159,7 +169,7 @@ export default async function(url, key) {
                     if (!tt[tt.length - 1].d && !ntt[0].a) {
                         Object.assign(ntt[0], tt.pop());
                     }
-                    Array.prototype.splice.apply(ntt, [0, 0].concat(tt));
+                    ntt.splice(0, 0, ...tt);
                     delete nextTable.pt;
                 } else if (prevTable) {
                     const ptt = prevTable.tt;
@@ -167,7 +177,7 @@ export default async function(url, key) {
                     if (!tt[0].a && !ptt[ptt.length - 1].d) {
                         Object.assign(ptt[ptt.length - 1], tt.shift());
                     }
-                    Array.prototype.splice.apply(ptt, [ptt.length, 0].concat(tt));
+                    ptt.splice(ptt.length, 0, ...tt);
                     delete prevTable.nt;
                 }
                 data.splice(data.indexOf(timetable), 1);
@@ -175,67 +185,163 @@ export default async function(url, key) {
             });
         });
 
-        // Modify Yokosuka, Shonan Shinjuku and Yamanote Freight timetables
+        // Modify Yamanote Freight timetables
         data.filter(timetable =>
             timetable.r === RAILWAY_YOKOSUKA &&
             timetable.y === TRAINTYPE_FOR_YAMANOTEFREIGHT &&
-            ((timetable.pt && timetable.pt[0].indexOf(RAILWAY_SHONANSHINJUKU) === 0) ||
-            (timetable.nt && timetable.nt[0].indexOf(RAILWAY_SHONANSHINJUKU) === 0))
+            ((timetable.pt && timetable.pt[0].startsWith(RAILWAY_SHONANSHINJUKU)) ||
+            (timetable.nt && timetable.nt[0].startsWith(RAILWAY_SHONANSHINJUKU)))
         ).forEach(timetable => {
-            timetable.tt.forEach(obj => {
-                obj.s = obj.s.replace(timetable.r, RAILWAY_YAMANOTEFREIGHT);
+            const {tt, nt, pt} = timetable;
+
+            tt.forEach(obj => {
+                obj.s = obj.s.replace(RAILWAY_YOKOSUKA, RAILWAY_YAMANOTEFREIGHT);
             });
             timetable.r = RAILWAY_YAMANOTEFREIGHT;
-        });
-        data.filter(timetable =>
-            timetable.r === RAILWAY_SHONANSHINJUKU &&
-            timetable.y === TRAINTYPE_FOR_YAMANOTEFREIGHT &&
-            ((timetable.nt && timetable.nt[0].indexOf(RAILWAY_YOKOSUKA) === 0) ||
-            (timetable.pt && timetable.pt[0].indexOf(RAILWAY_YOKOSUKA) === 0))
-        ).forEach(timetable => {
-            const {r: railwayID, tt, nt, pt} = timetable;
+            if (pt && pt[0].startsWith(RAILWAY_SHONANSHINJUKU)) {
+                const ptt = lookup[pt[0]].tt,
+                    station = ptt[ptt.length - 1];
 
-            if (nt && nt[0].indexOf(RAILWAY_YOKOSUKA) === 0) {
-                const station = tt[tt.length - 1];
-
-                lookup[nt[0]].tt.unshift({
+                tt.unshift({
                     d: station.d,
-                    s: station.s.replace(railwayID, RAILWAY_YAMANOTEFREIGHT)
+                    s: station.s.replace(RAILWAY_SHONANSHINJUKU, RAILWAY_YAMANOTEFREIGHT)
                 });
                 delete station.d;
-            } else if (pt && pt[0].indexOf(RAILWAY_YOKOSUKA) === 0) {
-                const station = tt[0];
+            } else if (nt && nt[0].startsWith(RAILWAY_SHONANSHINJUKU)) {
+                const ntt = lookup[nt[0]].tt,
+                    station = ntt[0];
 
-                lookup[pt[0]].tt.push({
+                tt.push({
                     a: station.a,
-                    s: station.s.replace(railwayID, RAILWAY_YAMANOTEFREIGHT)
+                    s: station.s.replace(RAILWAY_SHONANSHINJUKU, RAILWAY_YAMANOTEFREIGHT)
                 });
                 delete station.a;
             }
         });
 
         // Modify Keiyo branch timetables
-        data.filter(timetable => {
-            const {r, tt} = timetable;
-
-            return r === RAILWAY_KEIYO &&
-                (tt[0].s === STATION_KEIYO_NISHIFUNABASHI ||
-                tt[tt.length - 1].s === STATION_KEIYO_NISHIFUNABASHI);
-        }).forEach(timetable => {
+        data.filter(timetable =>
+            timetable.r === RAILWAY_KEIYO &&
+            (timetable.tt[0].s === STATION_KEIYO_NISHIFUNABASHI ||
+            timetable.tt[timetable.tt.length - 1].s === STATION_KEIYO_NISHIFUNABASHI)
+        ).forEach(timetable => {
             const {tt, d: direction, os, ds} = timetable,
                 startFromNishiFunabashi = tt[0].s === STATION_KEIYO_NISHIFUNABASHI,
-                railwayID = timetable.r = (startFromNishiFunabashi && direction === 'Outbound') ||
-                    (!startFromNishiFunabashi && direction === 'Inbound') ?
+                railwayID = timetable.r = (startFromNishiFunabashi && direction === RAIL_DIRECTION_OUTBOUND) ||
+                    (!startFromNishiFunabashi && direction === RAIL_DIRECTION_INBOUND) ?
                     RAILWAY_KEIYOKOYABRANCH : RAILWAY_KEIYOFUTAMATABRANCH;
 
-            [os, ds].forEach(stations =>
+            [os, ds].forEach(stations => {
                 stations.forEach((station, i) => {
                     stations[i] = station.replace(RAILWAY_KEIYO, railwayID);
-                })
-            );
+                });
+            });
             tt.forEach(obj => {
                 obj.s = obj.s.replace(RAILWAY_KEIYO, railwayID);
             });
+        });
+
+        // Modify Musashino branch timeseries
+        data.filter(timetable =>
+            timetable.r === RAILWAY_MUSASHINO &&
+            ((timetable.pt && timetable.pt[0].startsWith(RAILWAY_CHUORAPID)) ||
+            (timetable.nt && timetable.nt[0].startsWith(RAILWAY_CHUORAPID)))
+        ).forEach(timetable => {
+            const {t, id, tt, nt, pt} = timetable,
+                newTimetable = Object.assign({}, timetable);
+
+            newTimetable.t = t.replace(RAILWAY_MUSASHINO, RAILWAY_MUSASHINOKUNITACHIBRANCH);
+            newTimetable.id = id.replace(RAILWAY_MUSASHINO, RAILWAY_MUSASHINOKUNITACHIBRANCH);
+            newTimetable.r = RAILWAY_MUSASHINOKUNITACHIBRANCH;
+
+            if (pt && pt[0].startsWith(RAILWAY_CHUORAPID)) {
+                const prevTable = lookup[pt[0]],
+                    ptt = prevTable.tt,
+                    station1 = ptt[ptt.length - 1],
+                    station2 = tt[0];
+
+                pt[0] = prevTable.nt[0] = newTimetable.id;
+                newTimetable.pt = [prevTable.id];
+                newTimetable.nt = [id];
+                newTimetable.tt = [{
+                    d: station1.d,
+                    s: station1.s.replace(RAILWAY_CHUORAPID, RAILWAY_MUSASHINOKUNITACHIBRANCH)
+                }, {
+                    a: station2.a,
+                    s: station2.s.replace(RAILWAY_MUSASHINO, RAILWAY_MUSASHINOKUNITACHIBRANCH)
+                }];
+                delete station1.d;
+                delete station2.a;
+            } else if (nt && nt[0].startsWith(RAILWAY_CHUORAPID)) {
+                const nextTable = lookup[nt[0]],
+                    ntt = nextTable.tt,
+                    station1 = tt[tt.length - 1],
+                    station2 = ntt[0];
+
+                nt[0] = nextTable.pt[0] = newTimetable.id;
+                newTimetable.pt = [id];
+                newTimetable.nt = [nextTable.id];
+                newTimetable.tt = [{
+                    d: station1.d,
+                    s: station1.s.replace(RAILWAY_MUSASHINO, RAILWAY_MUSASHINOKUNITACHIBRANCH)
+                }, {
+                    a: station2.a,
+                    s: station2.s.replace(RAILWAY_CHUORAPID, RAILWAY_MUSASHINOKUNITACHIBRANCH)
+                }];
+                delete station1.d;
+                delete station2.a;
+            }
+            data.push(newTimetable);
+        });
+        data.filter(timetable =>
+            timetable.r === RAILWAY_SHONANSHINJUKU &&
+            ((timetable.pt && timetable.pt[0].startsWith(RAILWAY_MUSASHINO)) ||
+            (timetable.nt && timetable.nt[0].startsWith(RAILWAY_MUSASHINO)))
+        ).forEach(timetable => {
+            const {tt, os, ds, nt, pt} = timetable,
+                railwayID = timetable.r = os[0] === STATION_MUSASHINO_FUCHUHONMACHI ||
+                    os[0] === STATION_CHUORAPID_HACHIOJI ||
+                    ds[0] === STATION_MUSASHINO_FUCHUHONMACHI ||
+                    ds[0] === STATION_CHUORAPID_HACHIOJI ?
+                    RAILWAY_MUSASHINOOMIYABRANCH : RAILWAY_MUSASHINONISHIURAWABRANCH;
+
+            [os, ds].forEach(stations => {
+                stations.forEach((station, i) => {
+                    stations[i] = station.replace(RAILWAY_SHONANSHINJUKU, railwayID);
+                });
+            });
+            tt.forEach(obj => {
+                obj.s = obj.s.replace(RAILWAY_SHONANSHINJUKU, railwayID);
+            });
+            if (pt && pt[0].startsWith(RAILWAY_MUSASHINO)) {
+                const prevTable = lookup[pt[0]],
+                    ptt = prevTable.tt,
+                    station = ptt[ptt.length - 1];
+
+                if (ptt.length === 1) {
+                    lookup[prevTable.pt[0]].nt = prevTable.nt;
+                    timetable.pt = prevTable.pt;
+                }
+                tt.unshift({
+                    d: station.d,
+                    s: station.s.replace(RAILWAY_MUSASHINO, railwayID)
+                });
+                delete station.d;
+            } else if (nt && nt[0].startsWith(RAILWAY_MUSASHINO)) {
+                const nextTable = lookup[nt[0]],
+                    ntt = nextTable.tt,
+                    station = ntt[0];
+
+                if (ntt.length === 1) {
+                    timetable.nt = nextTable.nt;
+                    lookup[nextTable.nt[0]].pt = nextTable.pt;
+                }
+                tt.push({
+                    a: station.a,
+                    s: station.s.replace(RAILWAY_MUSASHINO, railwayID)
+                });
+                delete station.a;
+            }
         });
 
         // Modify Toei Oedo timetables

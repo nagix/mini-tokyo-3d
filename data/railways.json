@@ -376,6 +376,66 @@
 	"color": "#F15A22",
 	"carComposition": 8
 }, {
+	"id": "JR-East.MusashinoKunitachiBranch",
+	"title": {
+		"ja": "武蔵野線",
+		"en": "Musashino Line",
+		"ko": "무사시노 선",
+		"zh-Hans": "武藏野线",
+		"zh-Hant": "武藏野線"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"JR-East.MusashinoKunitachiBranch.Kunitachi",
+			"JR-East.MusashinoKunitachiBranch.ShinKodaira"
+		]
+	},
+	"ascending": "Outbound",
+	"color": "#F15A22",
+	"carComposition": 8
+}, {
+	"id": "JR-East.MusashinoOmiyaBranch",
+	"title": {
+		"ja": "武蔵野線",
+		"en": "Musashino Line",
+		"ko": "무사시노 선",
+		"zh-Hans": "武藏野线",
+		"zh-Hant": "武藏野線"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"JR-East.MusashinoOmiyaBranch.KitaAsaka",
+			"JR-East.MusashinoOmiyaBranch.Omiya"
+		]
+	},
+	"ascending": "Northbound",
+	"color": "#F15A22",
+	"carComposition": 8
+}, {
+	"id": "JR-East.MusashinoNishiUrawaBranch",
+	"title": {
+		"ja": "武蔵野線",
+		"en": "Musashino Line",
+		"ko": "무사시노 선",
+		"zh-Hans": "武藏野线",
+		"zh-Hant": "武藏野線"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"JR-East.MusashinoNishiUrawaBranch.Omiya",
+			"JR-East.MusashinoNishiUrawaBranch.MusashiUrawa"
+		]
+	},
+	"ascending": "Southbound",
+	"color": "#F15A22",
+	"carComposition": 8
+}, {
 	"id": "JR-East.Yokohama",
 	"title": {
 		"ko": "요코하마 선",
