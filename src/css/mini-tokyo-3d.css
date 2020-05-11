@@ -76,7 +76,6 @@
 }
 .spin-box {
 	width: 30px;
-	border-collapse: collapse;
 	border-radius: 4px;
 	box-shadow:0 0 0 1px #777;
 }
@@ -119,6 +118,7 @@
 }
 .clock-button > span {
 	height: 30px;
+	vertical-align: middle;
 	text-align: center;
 	display: table-cell;
 }
@@ -127,7 +127,6 @@
 	height: 100%;
 	padding: 0;
 	border: 0;
-	border-collapse: collapse;
 	border-radius: 4px;
 	box-shadow:0 0 0 1px #777;
 	color: #fff;
@@ -138,7 +137,6 @@
 	width: 100%;
 	margin-top: 4;
 	display: table;
-	border-collapse: collapse;
 	border-radius: 4px;
 	box-shadow:0 0 0 1px #777;
 }
