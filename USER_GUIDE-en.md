@@ -68,7 +68,7 @@ The railway network in Tokyo is one of the most complex in the world. Mini Tokyo
 
 <img src="public/images/pan.jpg" width="244">
 
-You can move your location by panning the map with mouse drag or swipe on the screen. You can also pan the map with the arrow keys on your keyboard.
+You can move your location by panning the map with a mouse or finger drag. You can also pan the map with the arrow keys on your keyboard.
 
 ### Zooming-In/Out
 
@@ -76,7 +76,7 @@ You can move your location by panning the map with mouse drag or swipe on the sc
 
 Click or tap the “+” or “−” icon button to zoom in or out the map. You can also zoom in or out by rotating the mouse wheel or pinching in or out of the screen.
 
-You can also zoom in or out the map by pressing the “=” or “−” key on the keyboard. You can also zoom in the map with a double click of the mouse or double tap on the screen.
+You can zoom in or out the map by pressing the “=” or “−” key on the keyboard. You can also zoom in the map by double-clicking with the mouse or triple-tapping, or zoom out by double-clicking while holding down the Shift key on the keyboard or two-finger tapping.
 
 A box zoom can be used by dragging the mouse while holding down the Shift key on the keyboard and selecting a rectangle on the screen.
 
@@ -84,7 +84,7 @@ A box zoom can be used by dragging the mouse while holding down the Shift key on
 
 <img src="public/images/rotate-tilt.jpg" width="244"> <img src="public/images/compass-icon.jpg" width="50" align="top">
 
-The compass icon represents the orientation of the map. If you press the compass icon button and drag or swipe, you can rotate the map by moving left and right, and change the tilt of the map by moving up and down. You can also change the rotation and tilt of the map by dragging with the right mouse button, or by dragging with the left mouse button while holding down the Ctrl key on the keyboard.
+The compass icon represents the orientation of the map. If you press the compass icon button and drag the mouse or your finger to the left or right, you can rotate the map. You can also change the rotation and tilt of the map by dragging with the right mouse button, or by dragging with the left mouse button while holding down the Ctrl key on the keyboard. You can drag two fingers up and down to change the tilt of the map.
 
 You can also change the rotation and tilt of the map by holding down the Shift key on your keyboard and pressing the arrow keys. You can also rotate the map by pinching the screen.
 
@@ -158,6 +158,8 @@ Click or tap on a train or airplane to turn Tracking Mode on and the screen will
 
 The helicopter icon indicates the “Helicopter Tracking Mode”, and it makes a 360 degree turn around the target train or airplane. The train icon indicates the “Rear Tracking Mode”, and it tracks the direction of travel from diagonally behind the target train or airplane. Click or tap the icon button to toggle between the “Helicopter Tracking Mode” and the “Rear Tracking Mode”.
 
+When the tracking mode is on, the timetable and current position of the train being tracked is displayed at the bottom of the screen. For the train connecting to other lines, the timetables of those lines are also shown. The timetable can be scrolled by using the mouse wheel, dragging the scroll bar, or dragging your finger. Click on the "∨" icon in the upper right corner of the timetable to hide the timetable at the bottom of the screen, or click on the "∧" icon to display it again.
+
 ### Playback Mode
 
 <img src="public/images/playback-icon.jpg" width="50">
@@ -197,7 +199,7 @@ The source of the public transportation data in this application is the Open Dat
 This application has been tested with the following browsers. Chrome is recommended. Internet Explorer is not supported.
 
 - Chrome 81 (Mac OS, Windows, iOS)
-- FireFox 75 (Mac OS, Windows, iOS)
+- FireFox 76 (Mac OS, Windows, iOS)
 - Safari 13 (Mac OS, iOS)
 - Edge 44 (Windows)
 
