@@ -24,17 +24,18 @@ See a [Live Demo](https://minitokyo3d.com).
 
 Operation | Description
 --- | ---
-Mouse drag or swipe | Pan
+Mouse or finger drag | Pan
 Mouse wheel rotation | Zoom in/out
 Right click or Ctrl key + mouse drag | Tilt up/down and rotate
 Shift key + mouse drag | Box zoom
 Pinch in/out | Zoom in/out
-Two-finger swipe | Tilt up/down and rotate
-Double-click or double-tap | Zoom in
+Two-finger drag | Tilt up/down and rotate
+Double-click or triple-tap | Zoom in
+Shift key + Double-click or two-finger tap | Zoom out
 Click or tap the search button | Show/hide the station search window
 Click or tap +/- buttons | Zoom in/out
 Click or tap the compass button | Reset bearing to north
-Click or tap the compass button + mouse drag or swipe | Tilt up/down and rotate
+Click or tap the compass button + mouse or finder drag | Rotate
 Click or tap the fullscreen button | Toggle the fullscreen mode
 Click or tap the eye button | Toggle the underground mode
 Click or tap the train/helicopter button | Switch the tracking mode
