@@ -188,7 +188,7 @@ Promise.all([
             if (duration > 0) {
                 animation.start({
                     callback: elapsed =>
-                        setOpacity(object, getObjectOpacity(object) * elapsed / duration),
+                        setOpacity(object, getObjectOpacity(object), elapsed / duration),
                     duration
                 });
             }
@@ -221,7 +221,7 @@ Promise.all([
             if (duration > 0) {
                 animation.start({
                     callback: elapsed =>
-                        setOpacity(object, getObjectOpacity(object) * (1 - elapsed / duration)),
+                        setOpacity(object, getObjectOpacity(object), 1 - elapsed / duration),
                     complete: () =>
                         layer.scene.remove(object),
                     duration
@@ -2602,22 +2602,25 @@ function createCube(x, y, z, color) {
   * @param {Object3D} object - Target object
   * @param {number} opacity - Float in the range of 0.0 - 1.0 indicating how
   *     transparent the material is
+  * @param {number} factor - Float in the range of 0.0 - 1.0 indicating the
+  *     factor of the opacity when fading in or out
   */
-function setOpacity(object, opacity) {
+function setOpacity(object, opacity, factor) {
     object.traverse(descendant => {
-        const materials = descendant.material;
+        const materials = descendant.material,
+            value = (descendant.name === 'outline' ? 1 : opacity) * helpers.valueOrDefault(factor, 1);
 
         if (materials) {
             const uniforms = materials.uniforms;
 
             if (uniforms) {
-                uniforms.opacity.value = opacity;
+                uniforms.opacity.value = value;
             } else if (Array.isArray(materials)) {
                 materials.forEach(material => {
-                    material.opacity = opacity;
+                    material.opacity = value;
                 });
             } else {
-                materials.opacity = opacity;
+                materials.opacity = value;
             }
         }
     });
@@ -2669,7 +2672,7 @@ function createOutline(object) {
         {translate} = object.geometry.userData,
         outline = new THREE.Mesh(
             new THREE.BoxBufferGeometry(width + .2, height + .2, depth + .2),
-            new THREE.MeshBasicMaterial({color: '#FFFFFF', side: THREE.BackSide})
+            new THREE.MeshBasicMaterial({color: '#FFFFFF', side: THREE.BackSide, transparent: true})
         );
 
     outline.name = 'outline';
