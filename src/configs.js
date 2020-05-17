@@ -76,16 +76,19 @@ const configs = {
     defaultPitch: 60,
 
     // API URL
-    apiURL: 'https://api-tokyochallenge.odpt.org/api/v4/',
+    apiUrl: 'https://api-tokyochallenge.odpt.org/api/v4/',
 
     // ATIS URL
-    atisURL: 'https://mini-tokyo.appspot.com/atisinfo',
+    atisUrl: 'https://mini-tokyo.appspot.com/atisinfo',
 
     // Nowcasts URL
-    nowcastsURL: 'https://mini-tokyo.appspot.com/nowcast',
+    nowcastsUrl: 'https://mini-tokyo.appspot.com/nowcast',
 
     // Secrets URL
-    secretsURL: 'secrets',
+    secretsUrl: 'secrets',
+
+    // Default data URL
+    dataUrl: 'https://minitokyo3d.com/data',
 
     // Timestamp when the static data was last updated
     lastStaticUpdate: '2020-05-07 09:00:00'

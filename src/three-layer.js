@@ -1,16 +1,19 @@
+import mapboxgl from 'mapbox-gl';
 import * as THREE from 'three';
+import configs from './configs';
 
 const SQRT3 = Math.sqrt(3);
 
+const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord);
+
 export default class {
 
-    constructor(id, modelOrigin, underground = false, semitransparent = false) {
+    constructor(id, underground = false, semitransparent = false) {
         const me = this;
 
         me.id = id;
         me.type = 'custom';
         me.renderingMode = '3d';
-        me.modelOrigin = modelOrigin;
         me.underground = underground;
         me.semitransparent = semitransparent;
     }
@@ -43,7 +46,7 @@ export default class {
     }
 
     render(gl, matrix) {
-        const {modelOrigin, underground, semitransparent, map, renderer, camera, light, scene} = this,
+        const {underground, semitransparent, map, renderer, camera, light, scene} = this,
             {_fov, cameraToCenterDistance, _pitch, width, height} = map.transform,
             halfFov = _fov / 2,
             angle = Math.PI / 2 - _pitch,

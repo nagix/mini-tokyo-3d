@@ -2,6 +2,7 @@ import fs from 'fs';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
+import image from '@rollup/plugin-image';
 import {terser} from 'rollup-plugin-terser';
 import sass from 'node-sass';
 import postcss from 'rollup-plugin-postcss';
@@ -27,7 +28,7 @@ const sassRender = (content, id) => new Promise((resolve, reject) => {
 export default [{
 	input: 'src/loader/index.js',
 	output: {
-		name: 'loader',
+		name: 'MiniTokyo3DLoader',
 		file: 'dist/loader.js',
 		format: 'cjs',
 		indent: false,
@@ -41,7 +42,7 @@ export default [{
 }, {
 	input: 'src/index.js',
 	output: {
-		name: 'mini-tokyo-3d',
+		name: 'MiniTokyo3D',
 		file: 'dist/mini-tokyo-3d.js',
 		format: 'umd',
 		indent: false,
@@ -66,12 +67,13 @@ export default [{
 		}),
 		replace(Object.assign({
 			'process.env.NODE_ENV': '\'development\''
-		}, extraReplacement))
+		}, extraReplacement)),
+		image()
 	]
 }, {
 	input: 'src/index.js',
 	output: {
-		name: 'mini-tokyo-3d',
+		name: 'MiniTokyo3D',
 		file: 'dist/mini-tokyo-3d.min.js',
 		format: 'umd',
 		indent: false,
@@ -98,6 +100,7 @@ export default [{
 		replace(Object.assign({
 			'process.env.NODE_ENV': '\'production\''
 		}, extraReplacement)),
+		image(),
 		terser({
 			compress: {
 				pure_getters: true,

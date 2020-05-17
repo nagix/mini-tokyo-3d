@@ -15,9 +15,7 @@ export default async function(url, key) {
 
     const lookup = helpers.buildLookup(data);
 
-    extra.forEach(status => {
-        const {id, title} = status;
-
+    extra.forEach(({id, title}) => {
         Object.assign(lookup[id].title, title);
     });
 

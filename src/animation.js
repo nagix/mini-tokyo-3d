@@ -44,7 +44,14 @@ const animation = {
 
     count: 0,
 
-    init: repeat,
+    initialized: false,
+
+    init() {
+        if (!animation.initialized) {
+            animation.initialized = true;
+            repeat();
+        }
+    },
 
     isActive(id) {
         return id in animation.instances;

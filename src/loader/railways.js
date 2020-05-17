@@ -46,29 +46,28 @@ export default async function(url, key) {
 
     const lookup = helpers.buildLookup(data);
 
-    extra.forEach(railway => {
-        const {id, title, stations, ascending, color, altitude, carComposition} = railway;
-        let railwayRef = lookup[id];
+    extra.forEach(({id, title, stations, ascending, color, altitude, carComposition}) => {
+        let railway = lookup[id];
 
-        if (!railwayRef) {
-            railwayRef = lookup[id] = {
+        if (!railway) {
+            railway = lookup[id] = {
                 id,
                 title: {},
                 stations: []
             };
-            data.push(railwayRef);
+            data.push(railway);
         }
 
-        Object.assign(railwayRef.title, title);
+        Object.assign(railway.title, title);
         if (stations) {
-            railwayRef.stations.splice(stations.index, stations.delete, ...stations.insert || []);
+            railway.stations.splice(stations.index, stations.delete, ...stations.insert || []);
         }
         if (ascending !== undefined) {
-            railwayRef.ascending = ascending;
+            railway.ascending = ascending;
         }
-        railwayRef.color = color;
-        railwayRef.altitude = altitude;
-        railwayRef.carComposition = carComposition;
+        railway.color = color;
+        railway.altitude = altitude;
+        railway.carComposition = carComposition;
     });
 
     loaderHelpers.saveJSON('build/data/railways.json.gz', data);

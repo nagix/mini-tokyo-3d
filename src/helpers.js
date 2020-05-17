@@ -48,7 +48,7 @@ export function includes(array, value) {
     return true;
 }
 
-export function    valueOrDefault(value, defaultValue) {
+export function valueOrDefault(value, defaultValue) {
     return value === undefined ? defaultValue : value;
 }
 
@@ -183,19 +183,19 @@ export function colorToRGBArray(color) {
     return [Math.floor(c / 65536) % 256, Math.floor(c / 256) % 256, c % 256];
 }
 
-export function dispatchClickEvent(className) {
-    document.getElementsByClassName(className)[0]
+export function dispatchClickEvent(container, className) {
+    container.querySelector(`.${className}`)
         .dispatchEvent(new MouseEvent('click'));
 }
 
 /**
   * Returns the language code for user interface. The returned value is
   * ISO 639-1 code, but the exception is Chinese (zh-Hans or zh-Hant).
+  * @param {string} input - Language code to verify
   * @returns {string} Language code for user interface
   */
-export function getLang() {
-    const match = location.search.match(/lang=(.*?)(&|$)/);
-    let lang = match ? decodeURIComponent(match[1]) : '';
+export function getLang(input) {
+    let lang = valueOrDefault(input, '');
 
     if (!lang.match(/ja|en|ko|zh-Han[st]|th|ne/)) {
         lang = (window.navigator.languages && window.navigator.languages[0]) ||

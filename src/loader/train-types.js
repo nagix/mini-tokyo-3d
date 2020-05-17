@@ -32,18 +32,17 @@ export default async function(url, key) {
 
     const lookup = helpers.buildLookup(data);
 
-    extra.forEach(type => {
-        const {id, title} = type;
-        let trainTypeRef = lookup[id];
+    extra.forEach(({id, title}) => {
+        let trainType = lookup[id];
 
-        if (!trainTypeRef) {
-            trainTypeRef = lookup[id] = {
+        if (!trainType) {
+            trainType = lookup[id] = {
                 id,
                 title: {}
             };
-            data.push(trainTypeRef);
+            data.push(trainType);
         }
-        Object.assign(trainTypeRef.title, title);
+        Object.assign(trainType.title, title);
     });
 
     loaderHelpers.saveJSON('build/data/train-types.json.gz', data);

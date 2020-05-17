@@ -7,17 +7,17 @@ import turfBearing from '@turf/bearing';
 import {featureEach} from '@turf/meta';
 import {getCoords} from '@turf/invariant';
 import * as THREE from 'three';
-import SPE from './spe/SPE';
 import JapaneseHolidays from 'japanese-holidays';
 import SunCalc from 'suncalc';
 import animation from './animation';
-import clock from './clock';
+import Clock from './clock';
 import configs from './configs';
 import * as helpers from './helpers';
-import MapboxGLButtonControl from './mapboxGLButtonControl';
-import ThreeLayer from './threeLayer';
+import MapboxGLButtonControl from './mapbox-gl-button-control';
+import ThreeLayer from './three-layer';
+import WeatherLayer from './weather-layer';
 import destination from './turf/destination';
-import featureFilter from './turf/featureFilter';
+import featureFilter from './turf/feature-filter';
 
 const OPERATORS_FOR_TRAININFORMATION = [
     'JR-East',
@@ -45,9 +45,9 @@ const OPERATORS_FOR_FLIGHTINFORMATION = [
     'NAA'
 ];
 
-const RAILWAY_SOBURAPID = 'JR-East.SobuRapid';
-const RAILWAY_NAMBOKU = 'TokyoMetro.Namboku';
-const RAILWAY_MITA = 'Toei.Mita';
+const RAILWAY_SOBURAPID = 'JR-East.SobuRapid',
+    RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
+    RAILWAY_MITA = 'Toei.Mita';
 
 const TRAINTYPES_FOR_SOBURAPID = [
     'JR-East.Rapid',
@@ -63,32 +63,11 @@ const DATE_FORMAT = {
 
 const DEGREE_TO_RADIAN = Math.PI / 180;
 
-const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord);
-const modelScale = modelOrigin.meterInMercatorCoordinateUnits();
+const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord),
+    modelScale = modelOrigin.meterInMercatorCoordinateUnits();
 
-const lang = helpers.getLang();
-const isWindows = helpers.includes(navigator.userAgent, 'Windows');
-const isEdge = helpers.includes(navigator.userAgent, 'Edge');
-let isUndergroundVisible = false;
-let isPlayback = false;
-let isEditingTime = false;
-let isWeatherVisible = false;
-const rainTexture = new THREE.TextureLoader().load('images/raindrop.png');
-let trackingMode = 'helicopter';
-let styleColors = [];
-let styleOpacities = [];
-let emitterBounds = {};
-let emitterQueue = [];
-const featureLookup = {};
-const activeTrainLookup = {};
-let realtimeTrainLookup = {};
-const flightLookup = {};
-const activeFlightLookup = {};
-const lastDynamicUpdate = {};
-let stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainVehicleLookup, trainLookup, operatorLookup, airportLookup, flightStatusLookup;
-let trackedObject, markedObject, tempDate, lastTimetableRefresh, lastTrainRefresh, lastClockRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, objectUnit, objectScale, /*carScale, */aircraftScale;
-let flightPattern, lastFlightPatternChanged;
-let lastNowCastRefresh, nowCastData, fgGroup, imGroup, bgGroup;
+const isWindows = helpers.includes(navigator.userAgent, 'Windows'),
+    isEdge = helpers.includes(navigator.userAgent, 'Edge');
 
 // Replace MapboxLayer.render to support underground rendering
 const render = MapboxLayer.prototype.render;
@@ -120,48 +99,75 @@ MapboxLayer.prototype.render = function(...args) {
     render.apply(me, args);
 };
 
-document.getElementById('map').innerHTML = `
-    <div id="clock"></div>
-    <input id="search-box" type="text" list="stations">
-    <div id="timetable">
-        <div id="timetable-header"></div>
-        <div id="timetable-body">
-            <div class="scroll-box">
-                <div id="timetable-content"></div>
-                <svg id="railway-mark"></svg>
-                <svg id="train-mark"></svg>
-            </div>
-        </div>
-        <div id="timetable-button" class="slide-down"></div>
-    </div>
-    <div id="loader" class="loader-inner ball-pulse">
-        <div></div><div></div><div></div>
-    </div>
-    <div id="loading-error"></div>
-`;
+export default class {
 
-Promise.all([
-    helpers.loadJSON(`data/dictionary-${lang}.json`),
-    helpers.loadJSON('data/railways.json.gz'),
-    helpers.loadJSON('data/stations.json.gz'),
-    helpers.loadJSON('data/features.json.gz'),
-    helpers.loadJSON(`data/${getTimetableFileName()}`),
-    helpers.loadJSON('data/rail-directions.json.gz'),
-    helpers.loadJSON('data/train-types.json.gz'),
-    helpers.loadJSON('data/train-vehicles.json.gz'),
-    helpers.loadJSON('data/operators.json.gz'),
-    helpers.loadJSON('data/airports.json.gz'),
-    helpers.loadJSON('data/flight-statuses.json.gz'),
-    helpers.loadJSON(configs.secretsURL)
-]).then(([
-    dict, railwayRefData, stationRefData, railwayFeatureCollection, timetableRefData, railDirectionRefData,
-    trainTypeRefData, trainVehicleRefData, operatorRefData, airportRefData, flightStatusRefData, e
-]) => {
+    constructor(options) {
+        const me = this;
 
-    mapboxgl.accessToken = e.mapbox;
+        me.lang = helpers.getLang(options.lang);
+        me.dataUrl = options.dataUrl || configs.dataUrl;
+        me.container = typeof options.container === 'string' ?
+            document.getElementById(options.container) : options.container;
+        me.clock = new Clock();
+
+        me.isUndergroundVisible = false;
+        me.trackingMode = 'helicopter';
+        me.isPlayback = false;
+        me.isEditingTime = false;
+        me.isWeatherVisible = false;
+
+        me.lastDynamicUpdate = {};
+
+        me.container.classList.add('mini-tokyo-3d');
+        insertTags(me.container);
+
+        loadData(me.dataUrl, me.lang, me.clock).then(data => {
+            Object.assign(me, data);
+            initialize(me);
+        }).catch(error => {
+            showErrorMessage(me.container);
+            throw error;
+        });
+    }
+
+}
+
+function loadData(dataUrl, lang, clock) {
+    return Promise.all([
+        `${dataUrl}/dictionary-${lang}.json`,
+        `${dataUrl}/railways.json.gz`,
+        `${dataUrl}/stations.json.gz`,
+        `${dataUrl}/features.json.gz`,
+        `${dataUrl}/${getTimetableFileName(clock)}`,
+        `${dataUrl}/rail-directions.json.gz`,
+        `${dataUrl}/train-types.json.gz`,
+        `${dataUrl}/train-vehicles.json.gz`,
+        `${dataUrl}/operators.json.gz`,
+        `${dataUrl}/airports.json.gz`,
+        `${dataUrl}/flight-statuses.json.gz`,
+        configs.secretsUrl
+    ].map(url => helpers.loadJSON(url))).then(data => ({
+        dict: data[0],
+        railwayData: data[1],
+        stationData: data[2],
+        featureCollection: data[3],
+        timetableData: data[4],
+        railDirectionData: data[5],
+        trainTypeData: data[6],
+        trainVehicleData: data[7],
+        operatorData: data[8],
+        airportData: data[9],
+        flightStatusData: data[10],
+        e: data[11]
+    }));
+}
+
+function initialize(mt3d) {
+
+    mapboxgl.accessToken = mt3d.e.mapbox;
     const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'data/osm-liberty.json',
+        container: mt3d.container.querySelector('#map'),
+        style: `${mt3d.dataUrl}/osm-liberty.json`,
         attributionControl: true,
         hash: true,
         center: configs.originCoord,
@@ -171,15 +177,15 @@ Promise.all([
 
     const unit = Math.pow(2, 14 - helpers.clamp(map.getZoom(), 13, 19));
 
-    layerZoom = helpers.clamp(Math.floor(map.getZoom()), 13, 18);
-    objectUnit = Math.max(unit * .19, .02);
-    objectScale = unit * modelScale * 100;
-    // carScale = Math.max(.02 / .19 / unit, 1);
-    aircraftScale = Math.max(.06 / .285 / unit, 1);
+    mt3d.layerZoom = helpers.clamp(Math.floor(map.getZoom()), 13, 18);
+    mt3d.objectUnit = Math.max(unit * .19, .02);
+    mt3d.objectScale = unit * modelScale * 100;
+    // mt3d.carScale = Math.max(.02 / .19 / unit, 1);
+    mt3d.aircraftScale = Math.max(.06 / .285 / unit, 1);
 
     const trainLayers = {
-        ug: new ThreeLayer('trains-ug', modelOrigin, true, true),
-        og: new ThreeLayer('trains-og', modelOrigin),
+        ug: new ThreeLayer('trains-ug', true, true),
+        og: new ThreeLayer('trains-og'),
         addObject(object, duration) {
             const layer = object.userData.altitude < 0 ? this.ug : this.og;
 
@@ -188,7 +194,7 @@ Promise.all([
             if (duration > 0) {
                 animation.start({
                     callback: elapsed =>
-                        setOpacity(object, getObjectOpacity(object), elapsed / duration),
+                        setOpacity(object, getObjectOpacity(object, mt3d.isUndergroundVisible), elapsed / duration),
                     duration
                 });
             }
@@ -200,7 +206,7 @@ Promise.all([
             if (duration > 0) {
                 animation.start({
                     callback: elapsed =>
-                        setOpacity(object, getObjectOpacity(object, elapsed / duration)),
+                        setOpacity(object, getObjectOpacity(object, mt3d.isUndergroundVisible, elapsed / duration)),
                     duration
                 });
             }
@@ -212,16 +218,16 @@ Promise.all([
 
             const layer = object.userData.altitude < 0 ? this.ug : this.og;
 
-            object.traverse(descendant => {
-                if (descendant.material) {
-                    descendant.material.polygonOffsetFactor = 0;
+            object.traverse(({material}) => {
+                if (material) {
+                    material.polygonOffsetFactor = 0;
                 }
             });
             object.renderOrder = 1;
             if (duration > 0) {
                 animation.start({
                     callback: elapsed =>
-                        setOpacity(object, getObjectOpacity(object), 1 - elapsed / duration),
+                        setOpacity(object, getObjectOpacity(object, mt3d.isUndergroundVisible), 1 - elapsed / duration),
                     complete: () =>
                         layer.scene.remove(object),
                     duration
@@ -231,7 +237,7 @@ Promise.all([
             }
         },
         pickObject(point) {
-            if (isUndergroundVisible) {
+            if (mt3d.isUndergroundVisible) {
                 return this.ug.pickObject(point) || this.og.pickObject(point);
             } else {
                 return this.og.pickObject(point) || this.ug.pickObject(point);
@@ -243,47 +249,53 @@ Promise.all([
         }
     };
 
-    const rainLayer = new ThreeLayer('rain', modelOrigin);
+    const weatherLayer = new WeatherLayer('weather');
 
-    railwayLookup = helpers.buildLookup(railwayRefData);
-    stationLookup = helpers.buildLookup(stationRefData);
+    mt3d.railwayLookup = helpers.buildLookup(mt3d.railwayData);
+    mt3d.stationLookup = helpers.buildLookup(mt3d.stationData);
 
-    stationRefData.forEach(({title}) => {
-        if (!dict[title.ja]) {
-            dict[title.ja] = title[lang] || '';
+    mt3d.stationData.forEach(({title}) => {
+        if (!mt3d.dict[title.ja]) {
+            mt3d.dict[title.ja] = title[mt3d.lang] || '';
         }
     });
 
     // Build feature lookup dictionary and update feature properties
-    featureEach(railwayFeatureCollection, feature => {
+    mt3d.featureLookup = {};
+    featureEach(mt3d.featureCollection, feature => {
         const {id} = feature.properties;
         if (id && !id.match(/\.(ug|og)\./)) {
-            featureLookup[id] = feature;
+            mt3d.featureLookup[id] = feature;
             updateDistances(feature);
         }
     });
 
-    lastTimetableRefresh = clock.getTime('03:00');
-    updateTimetableRefData(timetableRefData);
-    trainLookup = helpers.buildLookup(timetableRefData, 't');
+    mt3d.lastTimetableRefresh = mt3d.clock.getTime('03:00');
+    updateTimetableData(mt3d.timetableData);
+    mt3d.trainLookup = helpers.buildLookup(mt3d.timetableData, 't');
 
-    railDirectionLookup = helpers.buildLookup(railDirectionRefData);
-    trainTypeLookup = helpers.buildLookup(trainTypeRefData);
-    trainVehicleLookup = helpers.buildLookup(trainVehicleRefData);
-    operatorLookup = helpers.buildLookup(operatorRefData);
-    airportLookup = helpers.buildLookup(airportRefData);
-    flightStatusLookup = helpers.buildLookup(flightStatusRefData);
+    mt3d.railDirectionLookup = helpers.buildLookup(mt3d.railDirectionData);
+    mt3d.trainTypeLookup = helpers.buildLookup(mt3d.trainTypeData);
+    mt3d.trainVehicleLookup = helpers.buildLookup(mt3d.trainVehicleData);
+    mt3d.operatorLookup = helpers.buildLookup(mt3d.operatorData);
+    mt3d.airportLookup = helpers.buildLookup(mt3d.airportData);
+    mt3d.flightStatusLookup = helpers.buildLookup(mt3d.flightStatusData);
+
+    mt3d.activeTrainLookup = {};
+    mt3d.realtimeTrainLookup = {};
+    mt3d.activeFlightLookup = {};
+    mt3d.flightLookup = {};
 
     map.once('load', () => {
-        document.getElementById('loader').style.opacity = 0;
+        mt3d.container.querySelector('#loader').style.opacity = 0;
         setTimeout(() => {
-            document.getElementById('loader').style.display = 'none';
+            mt3d.container.querySelector('#loader').style.display = 'none';
         }, 1000);
     });
 
     map.once('styledata', () => {
         ['poi', 'poi_extra'].forEach(id => {
-            map.setLayoutProperty(id, 'text-field', lang === 'ja' ? '{name_ja}' : ['get', ['get', 'name_ja'], ['literal', dict]]);
+            map.setLayoutProperty(id, 'text-field', mt3d.lang === 'ja' ? '{name_ja}' : ['get', ['get', 'name_ja'], ['literal', mt3d.dict]]);
         });
 
         [13, 14, 15, 16, 17, 18].forEach(zoom => {
@@ -294,7 +306,7 @@ Promise.all([
             map.addLayer(new MapboxLayer({
                 id: `railways-ug-${zoom}`,
                 type: GeoJsonLayer,
-                data: featureFilter(railwayFeatureCollection, p =>
+                data: featureFilter(mt3d.featureCollection, p =>
                     p.zoom === zoom && p.type === 0 && p.altitude < 0
                 ),
                 filled: false,
@@ -310,7 +322,7 @@ Promise.all([
             map.addLayer(new MapboxLayer({
                 id: `stations-ug-${zoom}`,
                 type: GeoJsonLayer,
-                data: featureFilter(railwayFeatureCollection, p =>
+                data: featureFilter(mt3d.featureCollection, p =>
                     p.zoom === zoom && p.type === 1 && p.altitude < 0
                 ),
                 filled: true,
@@ -340,13 +352,13 @@ Promise.all([
                     ['interpolate', ['exponential', 2], ['zoom'], 9, ['/', width, 8], 12, width] : width,
                 railwaySource = {
                     type: 'geojson',
-                    data: featureFilter(railwayFeatureCollection, p =>
+                    data: featureFilter(mt3d.featureCollection, p =>
                         p.zoom === zoom && p.type === 0 && p.altitude === 0
                     )
                 },
                 stationSource = {
                     type: 'geojson',
-                    data: featureFilter(railwayFeatureCollection, p =>
+                    data: featureFilter(mt3d.featureCollection, p =>
                         p.zoom === zoom && p.type === 1 && p.altitude === 0
                     )
                 };
@@ -392,7 +404,7 @@ Promise.all([
         map.addLayer(new MapboxLayer({
             id: `airway-og-`,
             type: GeoJsonLayer,
-            data: featureFilter(railwayFeatureCollection, p =>
+            data: featureFilter(mt3d.featureCollection, p =>
                 p.type === 0 && p.altitude > 0
             ),
             filled: false,
@@ -405,46 +417,47 @@ Promise.all([
         }), 'poi');
         */
 
-        map.addLayer(rainLayer, 'poi');
+        map.addLayer(weatherLayer, 'poi');
 
-        styleColors = helpers.getStyleColors(map);
-        styleOpacities = helpers.getStyleOpacities(map);
+        mt3d.styleColors = helpers.getStyleColors(map);
+        mt3d.styleOpacities = helpers.getStyleOpacities(map);
 
         const datalist = document.createElement('datalist');
         datalist.id = 'stations';
-        stationTitleLookup = {};
-        [lang, 'en'].forEach(l => {
-            stationRefData.forEach(station => {
+        mt3d.stationTitleLookup = {};
+        [mt3d.lang, 'en'].forEach(l => {
+            mt3d.stationData.forEach(station => {
                 const title = station.title[l],
                     {coord} = station;
 
-                if (title && !stationTitleLookup[title.toUpperCase()] && coord && coord[0] && coord[1]) {
+                if (title && !mt3d.stationTitleLookup[title.toUpperCase()] && coord && coord[0] && coord[1]) {
                     const option = document.createElement('option');
 
                     option.value = title;
                     datalist.appendChild(option);
-                    stationTitleLookup[title.toUpperCase()] = station;
+                    mt3d.stationTitleLookup[title.toUpperCase()] = station;
                 }
             });
         });
         document.body.appendChild(datalist);
 
-        const searchBox = document.getElementById('search-box');
+        const searchBox = mt3d.container.querySelector('#search-box');
         const searchListener = event => {
-            const station = stationTitleLookup[event.target.value.toUpperCase()];
+            const station = mt3d.stationTitleLookup[event.target.value.toUpperCase()];
 
             if (station && station.coord) {
-                markedObject = trackedObject = undefined;
+                delete mt3d.markedObject;
+                delete mt3d.trackedObject;
                 popup.remove();
-                hideTimetable();
+                hideTimetable(mt3d.container);
                 stopViewAnimation();
-                disableTracking();
-                if (isUndergroundVisible && !(station.altitude < 0)) {
-                    helpers.dispatchClickEvent('mapboxgl-ctrl-underground');
+                disableTracking(mt3d.container);
+                if (mt3d.isUndergroundVisible && !(station.altitude < 0)) {
+                    helpers.dispatchClickEvent(mt3d.container, 'mapboxgl-ctrl-underground');
                 }
-                if (!isUndergroundVisible && (station.altitude < 0)) {
+                if (!mt3d.isUndergroundVisible && (station.altitude < 0)) {
                     map.once('moveend', () => {
-                        helpers.dispatchClickEvent('mapboxgl-ctrl-underground');
+                        helpers.dispatchClickEvent(mt3d.container, 'mapboxgl-ctrl-underground');
                     });
                 }
                 map.flyTo({
@@ -453,7 +466,7 @@ Promise.all([
                 });
             }
         };
-        searchBox.placeholder = dict['station-name'];
+        searchBox.placeholder = mt3d.dict['station-name'];
         searchBox.addEventListener(isEdge ? 'blur' : 'change', searchListener);
 
         // Workaround for Edge
@@ -467,7 +480,7 @@ Promise.all([
 
         let control = new MapboxGLButtonControl([{
             className: 'mapboxgl-ctrl-search',
-            title: dict['search'],
+            title: mt3d.dict['search'],
             eventHandler() {
                 const me = this,
                     {style} = me;
@@ -492,9 +505,9 @@ Promise.all([
         control = new mapboxgl.NavigationControl();
         control._setButtonTitle = function(button) {
             const me = this,
-                title = button === me._zoomInButton ? dict['zoom-in'] :
-                button === me._zoomOutButton ? dict['zoom-out'] :
-                button === me._compass ? dict['compass'] : '';
+                title = button === me._zoomInButton ? mt3d.dict['zoom-in'] :
+                button === me._zoomOutButton ? mt3d.dict['zoom-out'] :
+                button === me._compass ? mt3d.dict['compass'] : '';
 
             button.title = title;
             button.setAttribute('aria-label', title);
@@ -504,7 +517,7 @@ Promise.all([
         control = new mapboxgl.FullscreenControl();
         control._updateTitle = function() {
             const me = this,
-                title = dict[me._isFullscreen() ? 'exit-fullscreen' : 'enter-fullscreen'];
+                title = mt3d.dict[me._isFullscreen() ? 'exit-fullscreen' : 'enter-fullscreen'];
 
             me._fullscreenButton.title = title;
             me._fullscreenButton.setAttribute('aria-label', title);
@@ -513,26 +526,26 @@ Promise.all([
 
         map.addControl(new MapboxGLButtonControl([{
             className: 'mapboxgl-ctrl-underground',
-            title: dict['enter-underground'],
+            title: mt3d.dict['enter-underground'],
             eventHandler() {
                 const me = this,
                     {classList} = me;
 
-                isUndergroundVisible = !isUndergroundVisible;
-                me.title = dict[isUndergroundVisible ? 'exit-underground' : 'enter-underground'];
-                trainLayers.ug.setSemitransparent(!isUndergroundVisible);
-                trainLayers.og.setSemitransparent(isUndergroundVisible);
-                if (isUndergroundVisible) {
+                mt3d.isUndergroundVisible = !mt3d.isUndergroundVisible;
+                me.title = mt3d.dict[mt3d.isUndergroundVisible ? 'exit-underground' : 'enter-underground'];
+                trainLayers.ug.setSemitransparent(!mt3d.isUndergroundVisible);
+                trainLayers.og.setSemitransparent(mt3d.isUndergroundVisible);
+                if (mt3d.isUndergroundVisible) {
                     classList.add('mapboxgl-ctrl-underground-visible');
                     map.setPaintProperty('background', 'background-color', 'rgb(16,16,16)');
                 } else {
                     classList.remove('mapboxgl-ctrl-underground-visible');
-                    map.setPaintProperty('background', 'background-color', getStyleColorString(styleColors[0]));
+                    map.setPaintProperty('background', 'background-color', getStyleColorString(mt3d.styleColors[0], mt3d.clock));
                 }
-                styleOpacities.forEach(({id, key, opacity}) => {
+                mt3d.styleOpacities.forEach(({id, key, opacity}) => {
                     const factor = helpers.includes(id, '-og-') ? .25 : .0625;
 
-                    map.setPaintProperty(id, key, isUndergroundVisible ?
+                    map.setPaintProperty(id, key, mt3d.isUndergroundVisible ?
                         helpers.scaleValues(opacity, factor) : opacity);
                 });
 
@@ -541,21 +554,21 @@ Promise.all([
                         const t = elapsed / duration;
 
                         [13, 14, 15, 16, 17, 18].forEach(zoom => {
-                            const opacity = isUndergroundVisible ?
+                            const opacity = mt3d.isUndergroundVisible ?
                                 1 * t + .0625 * (1 - t) : 1 * (1 - t) + .0625 * t;
 
                             helpers.setLayerProps(map, `railways-ug-${zoom}`, {opacity});
                             helpers.setLayerProps(map, `stations-ug-${zoom}`, {opacity});
                         });
-                        Object.keys(activeTrainLookup).forEach(key => {
-                            activeTrainLookup[key].cars.forEach(car => {
-                                setOpacity(car, getObjectOpacity(car, t));
+                        Object.keys(mt3d.activeTrainLookup).forEach(key => {
+                            mt3d.activeTrainLookup[key].cars.forEach(car => {
+                                setOpacity(car, getObjectOpacity(car, mt3d.isUndergroundVisible, t));
                             });
                         });
                         refreshDelayMarkers();
-                        Object.keys(activeFlightLookup).forEach(key => {
-                            const aircraft = activeFlightLookup[key].aircraft;
-                            setOpacity(aircraft, getObjectOpacity(aircraft, t));
+                        Object.keys(mt3d.activeFlightLookup).forEach(key => {
+                            const aircraft = mt3d.activeFlightLookup[key].aircraft;
+                            setOpacity(aircraft, getObjectOpacity(aircraft, mt3d.isUndergroundVisible, t));
                         });
                     },
                     duration: 300
@@ -563,74 +576,71 @@ Promise.all([
             }
         }, {
             className: 'mapboxgl-ctrl-track mapboxgl-ctrl-track-helicopter',
-            title: dict['track'],
+            title: mt3d.dict['track'],
             eventHandler(event) {
                 const {classList} = this;
 
-                if (trackingMode === 'helicopter') {
-                    trackingMode = 'train';
+                if (mt3d.trackingMode === 'helicopter') {
+                    mt3d.trackingMode = 'train';
                     classList.remove('mapboxgl-ctrl-track-helicopter');
                     classList.add('mapboxgl-ctrl-track-train');
                 } else {
-                    trackingMode = 'helicopter';
+                    mt3d.trackingMode = 'helicopter';
                     classList.remove('mapboxgl-ctrl-track-train');
                     classList.add('mapboxgl-ctrl-track-helicopter');
                 }
-                if (trackedObject) {
+                if (mt3d.trackedObject) {
                     startViewAnimation();
                 }
                 event.stopPropagation();
             }
         }, {
             className: 'mapboxgl-ctrl-playback',
-            title: dict['enter-playback'],
+            title: mt3d.dict['enter-playback'],
             eventHandler() {
                 const me = this,
                     {classList} = me;
 
-                isPlayback = !isPlayback;
-                me.title = dict[isPlayback ? 'exit-playback' : 'enter-playback'];
+                mt3d.isPlayback = !mt3d.isPlayback;
+                me.title = mt3d.dict[mt3d.isPlayback ? 'exit-playback' : 'enter-playback'];
                 stopAll();
-                markedObject = trackedObject = undefined;
+                delete mt3d.markedObject;
+                delete mt3d.trackedObject;
                 popup.remove();
-                hideTimetable();
+                hideTimetable(mt3d.container);
                 stopViewAnimation();
-                disableTracking();
-                if (isPlayback) {
+                disableTracking(mt3d.container);
+                if (mt3d.isPlayback) {
                     resetRailwayStatus();
                     classList.add('mapboxgl-ctrl-playback-active');
                 } else {
                     classList.remove('mapboxgl-ctrl-playback-active');
                 }
-                isEditingTime = false;
-                clock.reset();
-                tempDate = undefined;
-                if (lastTimetableRefresh !== clock.getTime('03:00')) {
+                mt3d.isEditingTime = false;
+                mt3d.clock.reset();
+                delete mt3d.tempDate;
+                if (mt3d.lastTimetableRefresh !== mt3d.clock.getTime('03:00')) {
                     loadTimetableData();
-                    lastTimetableRefresh = clock.getTime('03:00');
+                    mt3d.lastTimetableRefresh = mt3d.clock.getTime('03:00');
                 }
                 updateClock();
                 refreshStyleColors();
             }
         }, {
             className: 'mapboxgl-ctrl-weather',
-            title: dict['show-weather'],
+            title: mt3d.dict['show-weather'],
             eventHandler() {
                 const me = this,
                     {classList} = me;
 
-                isWeatherVisible = !isWeatherVisible;
-                me.title = dict[isWeatherVisible ? 'hide-weather' : 'show-weather'];
-                if (isWeatherVisible) {
+                mt3d.isWeatherVisible = !mt3d.isWeatherVisible;
+                me.title = mt3d.dict[mt3d.isWeatherVisible ? 'hide-weather' : 'show-weather'];
+                if (mt3d.isWeatherVisible) {
                     classList.add('mapboxgl-ctrl-weather-active');
-                    loadNowCastData();
+                    loadWeatherData();
                 } else {
                     classList.remove('mapboxgl-ctrl-weather-active');
-                    if (fgGroup) {
-                        rainLayer.scene.remove(fgGroup.mesh);
-                        // fgGroup.dispose();
-                        imGroup = undefined;
-                    }
+                    weatherLayer.clear();
                 }
             }
         }]), 'top-right');
@@ -644,7 +654,7 @@ Promise.all([
 
         map.addControl(new MapboxGLButtonControl([{
             className: 'mapboxgl-ctrl-about',
-            title: dict['about'],
+            title: mt3d.dict['about'],
             eventHandler() {
                 if (!aboutPopup.isOpen()) {
                     updateAboutPopup();
@@ -667,9 +677,9 @@ Promise.all([
             }
         });
 
-        document.getElementById('timetable-header').addEventListener('click', () => {
-            const {style} = document.getElementById('timetable'),
-                {classList} = document.getElementById('timetable-button');
+        mt3d.container.querySelector('#timetable-header').addEventListener('click', () => {
+            const {style} = mt3d.container.querySelector('#timetable'),
+                {classList} = mt3d.container.querySelector('#timetable-button');
 
             if (style.height !== '68px') {
                 style.height = '68px';
@@ -683,15 +693,15 @@ Promise.all([
         });
 
         if (isWindows) {
-            document.getElementById('timetable-body').classList.add('windows');
+            mt3d.container.querySelector('#timetable-body').classList.add('windows');
         }
 
         map.on('mousemove', e => {
-            const prevMarkedObject = markedObject;
+            const prevMarkedObject = mt3d.markedObject;
 
-            markedObject = trainLayers.pickObject(e.point);
-            if (markedObject) {
-                const {coord, altitude, object} = markedObject.userData;
+            mt3d.markedObject = trainLayers.pickObject(e.point);
+            if (mt3d.markedObject) {
+                const {coord, altitude, object} = mt3d.markedObject.userData;
 
                 map.getCanvas().style.cursor = 'pointer';
                 popup.setLngLat(adjustCoord(coord, altitude))
@@ -703,7 +713,7 @@ Promise.all([
                 popup.remove();
             }
 
-            if (markedObject !== prevMarkedObject && prevMarkedObject) {
+            if (mt3d.markedObject !== prevMarkedObject && prevMarkedObject) {
                 prevMarkedObject.traverse(descendant => {
                     if (descendant.name === 'cube') {
                         descendant.remove(...descendant.children);
@@ -714,24 +724,24 @@ Promise.all([
 
         map.on('click', e => {
             stopViewAnimation();
-            trackedObject = trainLayers.pickObject(e.point);
-            if (trackedObject) {
-                const {altitude, object} = trackedObject.userData;
+            mt3d.trackedObject = trainLayers.pickObject(e.point);
+            if (mt3d.trackedObject) {
+                const {altitude, object} = mt3d.trackedObject.userData;
 
                 startViewAnimation();
-                enableTracking();
-                if (isUndergroundVisible !== (altitude < 0)) {
-                    helpers.dispatchClickEvent('mapboxgl-ctrl-underground');
+                enableTracking(mt3d.container);
+                if (mt3d.isUndergroundVisible !== (altitude < 0)) {
+                    helpers.dispatchClickEvent(mt3d.container, 'mapboxgl-ctrl-underground');
                 }
                 if (object.tt) {
-                    showTimetable();
+                    showTimetable(mt3d.container);
                     setTrainTimetableText(object);
                 } else {
-                    hideTimetable();
+                    hideTimetable(mt3d.container);
                 }
             } else {
-                disableTracking();
-                hideTimetable();
+                disableTracking(mt3d.container);
+                hideTimetable(mt3d.container);
             }
 
             // For development
@@ -739,8 +749,8 @@ Promise.all([
         });
 
         map.on('zoom', () => {
-            if (trackedObject) {
-                const {altitude} = trackedObject.userData;
+            if (mt3d.trackedObject) {
+                const {altitude} = mt3d.trackedObject.userData;
                 // Keep camera off from the tracked aircraft
                 if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
                     map.setZoom(22 - Math.log2(altitude * .5));
@@ -754,26 +764,26 @@ Promise.all([
             helpers.setLayerProps(map, 'railways-ug-13', {lineWidthScale});
             helpers.setLayerProps(map, 'stations-ug-13', {lineWidthScale});
 
-            layerZoom = helpers.clamp(Math.floor(zoom), 13, 18);
-            objectUnit = Math.max(unit * .19, .02);
-            objectScale = unit * modelScale * 100;
-            // carScale = Math.max(.02 / .19 / unit, 1);
-            aircraftScale = Math.max(.06 / .285 / unit, 1);
+            mt3d.layerZoom = helpers.clamp(Math.floor(zoom), 13, 18);
+            mt3d.objectUnit = Math.max(unit * .19, .02);
+            mt3d.objectScale = unit * modelScale * 100;
+            // mt3d.carScale = Math.max(.02 / .19 / unit, 1);
+            mt3d.aircraftScale = Math.max(.06 / .285 / unit, 1);
 
-            Object.keys(activeTrainLookup).forEach(key => {
-                const train = activeTrainLookup[key];
+            Object.keys(mt3d.activeTrainLookup).forEach(key => {
+                const train = mt3d.activeTrainLookup[key];
 
                 updateTrainProps(train);
                 updateTrainShape(train);
             });
-            Object.keys(activeFlightLookup).forEach(key => {
-                updateFlightShape(activeFlightLookup[key]);
+            Object.keys(mt3d.activeFlightLookup).forEach(key => {
+                updateFlightShape(mt3d.activeFlightLookup[key]);
             });
         });
 
         map.on('move', () => {
-            if (isWeatherVisible) {
-                updateEmitterQueue();
+            if (mt3d.isWeatherVisible) {
+                weatherLayer.updateEmitterQueue();
             }
             if (aboutPopup.isOpen()) {
                 updateAboutPopup();
@@ -788,25 +798,25 @@ Promise.all([
 
         animation.start({
             callback: () => {
-                const now = clock.getTime();
+                const now = mt3d.clock.getTime();
 
-                if (now - lastTimetableRefresh >= 86400000) {
+                if (now - mt3d.lastTimetableRefresh >= 86400000) {
                     loadTimetableData();
-                    lastTimetableRefresh = clock.getTime('03:00');
+                    mt3d.lastTimetableRefresh = mt3d.clock.getTime('03:00');
                 }
-                if (Math.floor(now / 1000) !== Math.floor(lastClockRefresh / 1000)) {
+                if (Math.floor(now / 1000) !== Math.floor(mt3d.lastClockRefresh / 1000)) {
                     refreshClock();
-                    lastClockRefresh = now;
+                    mt3d.lastClockRefresh = now;
                 }
 
-                // Remove all trains if the page has been invisible for more than ten seconds
-                if (Date.now() - lastFrameRefresh >= configs.refreshTimeout) {
+                // Remove all trains if the page has been invisible for certain amount of time
+                if (Date.now() - mt3d.lastFrameRefresh >= configs.refreshTimeout) {
                     stopAll();
                 }
-                lastFrameRefresh = Date.now();
+                mt3d.lastFrameRefresh = Date.now();
 
-                if (Math.floor((now - configs.minDelay) / configs.trainRefreshInterval) !== Math.floor(lastTrainRefresh / configs.trainRefreshInterval)) {
-                    if (isPlayback) {
+                if (Math.floor((now - configs.minDelay) / configs.trainRefreshInterval) !== Math.floor(mt3d.lastTrainRefresh / configs.trainRefreshInterval)) {
+                    if (mt3d.isPlayback) {
                         refreshTrains();
                         // refreshFlights();
                     } else {
@@ -814,16 +824,16 @@ Promise.all([
                         loadRealtimeFlightData();
                     }
                     refreshStyleColors();
-                    lastTrainRefresh = now - configs.minDelay;
+                    mt3d.lastTrainRefresh = now - configs.minDelay;
                 }
-                if (markedObject) {
-                    const {coord, altitude, object} = markedObject.userData;
+                if (mt3d.markedObject) {
+                    const {coord, altitude, object} = mt3d.markedObject.userData;
 
                     popup.setLngLat(adjustCoord(coord, altitude))
                         .setHTML(object.description);
                 }
-                if (trackedObject) {
-                    const {altitude, object} = trackedObject.userData;
+                if (mt3d.trackedObject) {
+                    const {coord, bearing, altitude, object} = mt3d.trackedObject.userData;
 
                     if (object.timetableOffsets) {
                         setTrainTimetableMark(object);
@@ -834,31 +844,30 @@ Promise.all([
                         map.setZoom(22 - Math.log2(altitude * .5));
                     }
 
-                    if (!viewAnimationID) {
-                        const {coord, bearing} = trackedObject.userData,
-                            mapBearing = map.getBearing();
+                    if (!mt3d.viewAnimationID) {
+                        const mapBearing = map.getBearing();
 
                         map.easeTo({
                             center: adjustCoord(coord, altitude),
-                            bearing: trackingMode === 'helicopter' ?
-                                (trackingBaseBearing + performance.now() / 100) % 360 :
+                            bearing: mt3d.trackingMode === 'helicopter' ?
+                                (mt3d.trackingBaseBearing + performance.now() / 100) % 360 :
                                 mapBearing + ((bearing - mapBearing + 540) % 360 - 180) * .02,
                             duration: 0
                         });
                     }
                 }
-                if (!isPlayback && isWeatherVisible) {
-                    if (now - (lastNowCastRefresh || 0) >= configs.weatherRefreshInterval) {
-                        loadNowCastData();
-                        lastNowCastRefresh = now;
+                if (!mt3d.isPlayback && mt3d.isWeatherVisible) {
+                    if (now - (mt3d.lastWeatherRefresh || 0) >= configs.weatherRefreshInterval) {
+                        loadWeatherData();
+                        mt3d.lastWeatherRefresh = now;
                     }
-                    refreshEmitter();
+                    weatherLayer.refreshEmitter();
                 }
             }
         });
 
         function updateTrainProps(train) {
-            const feature = train.railwayFeature = featureLookup[`${train.r}.${layerZoom}`],
+            const feature = train.railwayFeature = mt3d.featureLookup[`${train.r}.${mt3d.layerZoom}`],
                 stationOffsets = feature.properties['station-offsets'],
                 {sectionIndex, sectionLength} = train,
                 offset = train.offset = stationOffsets[sectionIndex];
@@ -879,23 +888,23 @@ Promise.all([
             }
 
             if (length === 0) {
-                const railway = railwayLookup[train.r],
+                const railway = mt3d.railwayLookup[train.r],
                     {v: vehicle, tt: table} = train,
                     car = new THREE.Group();
 
-                car.add(createCube(.88, 1.76, .88, vehicle ? trainVehicleLookup[vehicle].color : railway.color));
+                car.add(createCube(.88, 1.76, .88, vehicle ? mt3d.trainVehicleLookup[vehicle].color : railway.color));
                 car.rotation.order = 'ZYX';
                 car.userData.object = train;
 
                 cars.push(car);
 
                 // Reset marked/tracked object if it was marked/tracked before
-                if (markedObject && markedObject.userData.object === train) {
-                    markedObject = cars[0];
+                if (mt3d.markedObject && mt3d.markedObject.userData.object === train) {
+                    mt3d.markedObject = cars[0];
                     updateOutline();
                 }
-                if (trackedObject && trackedObject.userData.object === train) {
-                    trackedObject = cars[0];
+                if (mt3d.trackedObject && mt3d.trackedObject.userData.object === train) {
+                    mt3d.trackedObject = cars[0];
                     if (table) {
                         setTrainTimetableText(train);
                     }
@@ -908,7 +917,7 @@ Promise.all([
                 }
             }
 
-            const pArr = getCoordAndBearing(feature, offset + train._t * interval, 1, objectUnit);
+            const pArr = getCoordAndBearing(feature, offset + train._t * interval, 1, mt3d.objectUnit);
             for (let i = 0, ilen = cars.length; i < ilen; i++) {
                 const car = cars[i],
                     {position, scale, rotation, userData} = car,
@@ -942,8 +951,8 @@ Promise.all([
 
                 position.x = mCoord.x - modelOrigin.x;
                 position.y = -(mCoord.y - modelOrigin.y);
-                position.z = mCoord.z + objectScale / 2;
-                scale.x = scale.y = scale.z = objectScale;
+                position.z = mCoord.z + mt3d.objectScale / 2;
+                scale.x = scale.y = scale.z = mt3d.objectScale;
                 rotation.x = p.pitch * direction;
                 rotation.z = -bearing * DEGREE_TO_RADIAN;
 
@@ -952,8 +961,8 @@ Promise.all([
                 }
                 if (altitudeChanged) {
                     trainLayers.updateObject(car, 1000);
-                    if (trackedObject === car) {
-                        helpers.dispatchClickEvent('mapboxgl-ctrl-underground');
+                    if (mt3d.trackedObject === car) {
+                        helpers.dispatchClickEvent(mt3d.container, 'mapboxgl-ctrl-underground');
                     }
                 }
             }
@@ -969,7 +978,7 @@ Promise.all([
                 return;
             }
             if (!body) {
-                const {color, tailcolor} = operatorLookup[flight.a];
+                const {color, tailcolor} = mt3d.operatorLookup[flight.a];
 
                 aircraft = flight.aircraft = new THREE.Group();
                 body = flight.body = createCube(.88, 2.64, .88, color || '#FFFFFF');
@@ -1008,39 +1017,39 @@ Promise.all([
 
             position.x = mCoord.x - modelOrigin.x;
             position.y = -(mCoord.y - modelOrigin.y);
-            position.z = mCoord.z + objectScale / 2;
-            scale.x = scale.y = scale.z = objectScale;
+            position.z = mCoord.z + mt3d.objectScale / 2;
+            scale.x = scale.y = scale.z = mt3d.objectScale;
             rotation.x = p.pitch;
             rotation.z = -bearing * DEGREE_TO_RADIAN;
 
-            body.scale.y = wing.scale.x = vTail.scale.y = aircraftScale;
+            body.scale.y = wing.scale.x = vTail.scale.y = mt3d.aircraftScale;
         }
 
         function refreshTrains() {
-            const now = clock.getTime();
+            const now = mt3d.clock.getTime();
 
-            timetableRefData.forEach(train => {
+            mt3d.timetableData.forEach(train => {
                 const delay = train.delay || 0;
 
                 if (train.start + delay <= now && now <= train.end + delay &&
                     !checkActiveTrains(train, true) &&
-                    (!railwayLookup[train.r].status || realtimeTrainLookup[train.t])) {
+                    (!mt3d.railwayLookup[train.r].status || mt3d.realtimeTrainLookup[train.t])) {
                     trainStart(train);
                 }
             });
         }
 
         function trainStart(train, index) {
-            const now = clock.getTime();
+            const now = mt3d.clock.getTime();
 
             if (!setSectionData(train, index)) {
                 return; // Out of range
             }
-            activeTrainLookup[train.t] = train;
+            mt3d.activeTrainLookup[train.t] = train;
             train.cars = [];
             updateTrainProps(train);
 
-            const departureTime = clock.getTime(train.departureTime) + (train.delay || 0);
+            const departureTime = mt3d.clock.getTime(train.departureTime) + (train.delay || 0);
 
             if (!train.tt && train.sectionLength !== 0) {
                 trainRepeat(train);
@@ -1052,10 +1061,10 @@ Promise.all([
         }
 
         function trainStand(train, final) {
-            const departureTime = clock.getTime(train.departureTime) + (train.delay || 0);
+            const departureTime = mt3d.clock.getTime(train.departureTime) + (train.delay || 0);
 
             if (!train.tt) {
-                final = !setSectionData(train, undefined, !realtimeTrainLookup[train.t]);
+                final = !setSectionData(train, undefined, !mt3d.realtimeTrainLookup[train.t]);
             }
 
             if (!final) {
@@ -1072,15 +1081,15 @@ Promise.all([
                         if (final) {
                             stopTrain(train);
                         } else if (train.tt) {
-                            trainRepeat(train, clock.speed === 1 ? undefined : clock.getTime() - departureTime);
+                            trainRepeat(train, mt3d.clock.speed === 1 ? undefined : mt3d.clock.getTime() - departureTime);
                         } else {
                             trainStand(train);
                         }
                     },
                     duration: train.tt ?
-                        Math.max(departureTime - clock.getTime(), clock.speed === 1 ? configs.minStandingDuration : 0) :
+                        Math.max(departureTime - mt3d.clock.getTime(), mt3d.clock.speed === 1 ? configs.minStandingDuration : 0) :
                         final ? configs.minStandingDuration : configs.realtimeTrainCheckInterval,
-                    clock
+                    clock: mt3d.clock
                 });
             }
         }
@@ -1091,10 +1100,10 @@ Promise.all([
             let minDuration, maxDuration;
 
             if (nextDepartureTime) {
-                maxDuration = clock.getTime(nextDepartureTime) + delay - clock.getTime() + (elapsed || 0) - configs.minDelay + 60000 - configs.minStandingDuration;
+                maxDuration = mt3d.clock.getTime(nextDepartureTime) + delay - mt3d.clock.getTime() + (elapsed || 0) - configs.minDelay + 60000 - configs.minStandingDuration;
             }
             if (arrivalTime) {
-                minDuration = clock.getTime(arrivalTime) + delay - clock.getTime() + (elapsed || 0) - configs.minDelay;
+                minDuration = mt3d.clock.getTime(arrivalTime) + delay - mt3d.clock.getTime() + (elapsed || 0) - configs.minDelay;
                 if (!(maxDuration < minDuration + 60000)) {
                     maxDuration = minDuration + 60000;
                 }
@@ -1118,24 +1127,24 @@ Promise.all([
                 }
 
                 if (!setSectionData(train, train.timetableIndex + 1)) {
-                    const markedObjectIndex = train.cars.indexOf(markedObject),
-                        trackedObjectIndex = train.cars.indexOf(trackedObject),
+                    const markedObjectIndex = train.cars.indexOf(mt3d.markedObject),
+                        trackedObjectIndex = train.cars.indexOf(mt3d.trackedObject),
                         {nextTrains} = train;
 
                     if (nextTrains) {
                         stopTrain(train, true);
                         train = nextTrains[0];
-                        if (!activeTrainLookup[train.t]) {
+                        if (!mt3d.activeTrainLookup[train.t]) {
                             trainStart(train, 0);
                         }
                         if (train.cars) {
                             updateTrainShape(train, 0);
                             if (markedObjectIndex !== -1) {
-                                markedObject = train.cars[markedObjectIndex];
+                                mt3d.markedObject = train.cars[markedObjectIndex];
                                 updateOutline();
                             }
                             if (trackedObjectIndex !== -1) {
-                                trackedObject = train.cars[trackedObjectIndex];
+                                mt3d.trackedObject = train.cars[trackedObjectIndex];
                                 setTrainTimetableText(train);
                             }
                         }
@@ -1145,17 +1154,17 @@ Promise.all([
                 } else {
                     trainStand(train);
                 }
-            }, Math.abs(train.interval), minDuration, maxDuration, elapsed);
+            }, Math.abs(train.interval), minDuration, maxDuration, elapsed, mt3d.clock);
         }
 
         function refreshFlights() {
-            const now = clock.getTime();
+            const now = mt3d.clock.getTime();
 
-            Object.keys(flightLookup).forEach(key => {
-                const flight = flightLookup[key];
+            Object.keys(mt3d.flightLookup).forEach(key => {
+                const flight = mt3d.flightLookup[key];
 
-                if (flight.standing <= now && now <= flight.end && !activeFlightLookup[flight.id]) {
-                    activeFlightLookup[flight.id] = flight;
+                if (flight.standing <= now && now <= flight.end && !mt3d.activeFlightLookup[flight.id]) {
+                    mt3d.activeFlightLookup[flight.id] = flight;
                     if (now >= flight.start) {
                         flightRepeat(flight, now - flight.start);
                     } else {
@@ -1180,7 +1189,7 @@ Promise.all([
                 setFlightStandingStatus(flight, true);
                 flight.animationID = animation.start({
                     complete: () => stopFlight(flight),
-                    duration: Math.max(flight.end - clock.getTime(), 0)
+                    duration: Math.max(flight.end - mt3d.clock.getTime(), 0)
                 });
             }, flight.feature.properties.length, flight.maxSpeed, flight.acceleration, elapsed);
         }
@@ -1188,101 +1197,102 @@ Promise.all([
         function startViewAnimation() {
             let t2 = 0;
 
-            trackingBaseBearing = map.getBearing() - performance.now() / 100;
-            viewAnimationID = animation.start({
+            mt3d.trackingBaseBearing = map.getBearing() - performance.now() / 100;
+            mt3d.viewAnimationID = animation.start({
                 callback: (elapsed, duration) => {
                     const t1 = easeOutQuart(elapsed / duration),
                         factor = (1 - t1) / (1 - t2),
-                        {coord, altitude, bearing} = trackedObject.userData,
-                        [lng, lat] = adjustCoord(coord, altitude),
+                        {coord, altitude, bearing} = mt3d.trackedObject.userData,
+                        {lng, lat} = adjustCoord(coord, altitude),
                         center = map.getCenter();
 
                     map.easeTo({
                         center: [lng - (lng - center.lng) * factor, lat - (lat - center.lat) * factor],
-                        bearing: trackingMode === 'helicopter' ?
-                            (trackingBaseBearing + performance.now() / 100) % 360 :
+                        bearing: mt3d.trackingMode === 'helicopter' ?
+                            (mt3d.trackingBaseBearing + performance.now() / 100) % 360 :
                             bearing - ((bearing - map.getBearing() + 540) % 360 - 180) * factor,
                         duration: 0
                     });
                     t2 = t1;
                 },
                 complete: () => {
-                    viewAnimationID = undefined;
+                    delete mt3d.viewAnimationID;
                 },
                 duration: 1000
             });
         }
 
         function stopViewAnimation() {
-            if (viewAnimationID) {
-                animation.stop(viewAnimationID);
-                viewAnimationID = undefined;
+            if (mt3d.viewAnimationID) {
+                animation.stop(mt3d.viewAnimationID);
+                delete mt3d.viewAnimationID;
             }
         }
 
         function adjustCoord(coord, altitude) {
             if (!altitude) {
-                return coord;
+                return mapboxgl.LngLat.convert(coord);
             }
 
             const {transform} = map,
+                {width, height} = transform,
                 mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude),
                 pos = new THREE.Vector3(
                     mCoord.x - modelOrigin.x,
                     -(mCoord.y - modelOrigin.y),
                     mCoord.z
-                ).project(trainLayers.ug.camera),
-                world = map.unproject([
-                    (pos.x + 1) / 2 * transform.width,
-                    (1 - pos.y) / 2 * transform.height
-                ]);
+                ).project(trainLayers.ug.camera);
 
-            return [world.lng, world.lat];
+            return map.unproject([
+                (pos.x + 1) / 2 * width,
+                (1 - pos.y) / 2 * height
+            ]);
         }
 
         function getLocalizedRailwayTitle(railway) {
-            const title = (railwayLookup[railway] || {}).title || {};
-            return title[lang] || title['en'];
+            const title = (mt3d.railwayLookup[railway] || {}).title || {};
+            return title[mt3d.lang] || title['en'];
         }
 
         function getLocalizedRailDirectionTitle(direction) {
-            const title = (railDirectionLookup[direction] || {}).title || {};
-            return title[lang] || title['en'];
+            const title = (mt3d.railDirectionLookup[direction] || {}).title || {};
+            return title[mt3d.lang] || title['en'];
         }
 
         function getLocalizedTrainTypeTitle(type) {
-            const title = (trainTypeLookup[type] || {}).title || {};
-            return title[lang] || title['en'];
+            const title = (mt3d.trainTypeLookup[type] || {}).title || {};
+            return title[mt3d.lang] || title['en'];
         }
 
         function getLocalizedStationTitle(array) {
             const stations = Array.isArray(array) ? array : [array];
 
             return stations.map(station => {
-                const title = (stationLookup[station] || {}).title || {};
-                return title[lang] || title['en'];
-            }).join(dict['and']);
+                const title = (mt3d.stationLookup[station] || {}).title || {};
+                return title[mt3d.lang] || title['en'];
+            }).join(mt3d.dict['and']);
         }
 
         function getLocalizedOperatorTitle(operator) {
-            const title = (operatorLookup[operator] || {}).title || {};
-            return title[lang] || title['en'];
+            const title = (mt3d.operatorLookup[operator] || {}).title || {};
+            return title[mt3d.lang] || title['en'];
         }
 
         function getLocalizedAirportTitle(airport) {
-            const title = (airportLookup[airport] || {}).title || {};
-            return title[lang] || title['en'];
+            const title = (mt3d.airportLookup[airport] || {}).title || {};
+            return title[mt3d.lang] || title['en'];
         }
 
         function getLocalizedFlightStatusTitle(status) {
-            const title = (flightStatusLookup[status] || {}).title || {};
-            return title[lang] || title['en'];
+            const title = (mt3d.flightStatusLookup[status] || {}).title || {};
+            return title[mt3d.lang] || title['en'];
         }
 
         function setTrainStandingStatus(train, standing) {
-            const {r: railwayID, nm: name, v: vehicle, ds: destination, departureTime, arrivalStation} = train,
-                railway = railwayLookup[railwayID],
-                color = vehicle ? trainVehicleLookup[vehicle].color : railway.color,
+            const {lang, dict} = mt3d,
+                {r: railwayID, nm: name, v: vehicle, ds: destination, departureTime, arrivalStation} = train,
+                railway = mt3d.railwayLookup[railwayID],
+                color = vehicle ? mt3d.trainVehicleLookup[vehicle].color : railway.color,
                 delay = train.delay || 0,
                 arrivalTime = train.arrivalTime || train.nextDepartureTime,
                 {status, text} = railway;
@@ -1311,11 +1321,11 @@ Promise.all([
                 dict[standing ? 'standing-at' : 'previous-stop'],
                 ':</strong> ',
                 getLocalizedStationTitle(train.departureStation),
-                departureTime ? ` ${clock.getTimeString(clock.getTime(departureTime), delay)}` : '',
+                departureTime ? ` ${mt3d.clock.getTimeString(mt3d.clock.getTime(departureTime), delay)}` : '',
                 arrivalStation ? [
                     `<br><strong>${dict['next-stop']}:</strong> `,
                     getLocalizedStationTitle(arrivalStation),
-                    arrivalTime ? ` ${clock.getTimeString(clock.getTime(arrivalTime) + delay)}` : ''
+                    arrivalTime ? ` ${mt3d.clock.getTimeString(mt3d.clock.getTime(arrivalTime) + delay)}` : ''
                 ].join('') : '',
                 delay >= 60000 ? `<br>${dict['delay'].replace('$1', Math.floor(delay / 60000))}</span>` : '',
                 status && lang === 'ja' ? `<br><span class="desc-caution"><strong>${status}:</strong> ${text}</span>` : ''
@@ -1323,8 +1333,9 @@ Promise.all([
         }
 
         function setFlightStandingStatus(flight) {
-            const {a: airlineID, n: flightNumber, ds: destination, or: origin} = flight,
-                tailcolor = operatorLookup[airlineID].tailcolor || '#FFFFFF',
+            const {dict} = mt3d,
+                {a: airlineID, n: flightNumber, ds: destination, or: origin} = flight,
+                tailcolor = mt3d.operatorLookup[airlineID].tailcolor || '#FFFFFF',
                 scheduledTime = flight.sdt || flight.sat,
                 estimatedTime = flight.edt || flight.eat,
                 actualTime = flight.adt || flight.aat,
@@ -1357,18 +1368,19 @@ Promise.all([
         }
 
         function setTrainTimetableText(train) {
-            const contentElement = document.getElementById('timetable-content'),
+            const {lang, container, dict} = mt3d,
+                contentElement = container.querySelector('#timetable-content'),
                 trains = [],
                 sections = [],
                 stations = [],
                 offsets = [],
                 {r: railwayID, nm: name, v: vehicle, ds: destination, nextTrains} = train,
-                railway = railwayLookup[railwayID],
-                color = vehicle ? trainVehicleLookup[vehicle].color : railway.color,
+                railway = mt3d.railwayLookup[railwayID],
+                color = vehicle ? mt3d.trainVehicleLookup[vehicle].color : railway.color,
                 delay = train.delay || 0;
             let currSection;
 
-            document.getElementById('timetable-header').innerHTML = [
+            container.querySelector('#timetable-header').innerHTML = [
                 '<div class="desc-header">',
                 Array.isArray(color) ? [
                     '<div>',
@@ -1403,15 +1415,15 @@ Promise.all([
                             '<div class="station-time-box',
                             delay >= 60000 ? ' desc-caution' : '',
                             '">',
-                            s.a ? clock.getTimeString(clock.getTime(s.a) + delay) : '',
+                            s.a ? mt3d.clock.getTimeString(mt3d.clock.getTime(s.a) + delay) : '',
                             s.a && s.d ? '<br>' : '',
-                            s.d ? clock.getTimeString(clock.getTime(s.d) + delay) : '',
+                            s.d ? mt3d.clock.getTimeString(mt3d.clock.getTime(s.d) + delay) : '',
                             '</div></div>'
                         ].join(''));
                     }
                 });
                 section.end = stations.length - 1;
-                section.color = railwayLookup[curr.r].color;
+                section.color = mt3d.railwayLookup[curr.r].color;
                 sections.push(section);
                 if (curr === train) {
                     currSection = section;
@@ -1426,17 +1438,18 @@ Promise.all([
 
                 offsets.push(child.offsetTop + child.getBoundingClientRect().height / 2);
             }
-            document.getElementById('railway-mark').innerHTML = sections.map(({color, start, end}) =>
+            container.querySelector('#railway-mark').innerHTML = sections.map(({color, start, end}) =>
                 `<line stroke="${color}" stroke-width="10" x1="12" y1="${offsets[start]}" x2="12" y2="${offsets[end]}" stroke-linecap="round" />`
             ).concat(offsets.map(offset =>
                 `<circle cx="12" cy="${offset}" r="3" fill="#ffffff" />`
             )).join('');
             train.timetableOffsets = offsets.slice(currSection.start, currSection.end + 1);
-            train.scrollTop = document.getElementById('timetable-body').scrollTop;
+            train.scrollTop = container.querySelector('#timetable-body').scrollTop;
         }
 
         function setTrainTimetableMark(train) {
-            const bodyElement = document.getElementById('timetable-body'),
+            const {container} = mt3d,
+                bodyElement = container.querySelector('#timetable-body'),
                 {height} = bodyElement.getBoundingClientRect(),
                 {timetableOffsets: offsets, timetableIndex: index} = train,
                 curr = offsets[index],
@@ -1444,7 +1457,7 @@ Promise.all([
                 y = curr + (next - curr) * train._t,
                 p = performance.now() % 1500 / 1500;
 
-            document.getElementById('train-mark').innerHTML =
+            container.querySelector('#train-mark').innerHTML =
                 `<circle cx="22" cy="${y + 10}" r="${7 + p * 15}" fill="#ffffff" opacity="${1 - p}" />` +
                 `<circle cx="22" cy="${y + 10}" r="7" fill="#ffffff" />`;
             if (bodyElement.scrollTop === train.scrollTop) {
@@ -1462,7 +1475,7 @@ Promise.all([
          */
         function checkActiveTrains(train) {
             function check(curr, prop) {
-                if (activeTrainLookup[curr.t]) {
+                if (mt3d.activeTrainLookup[curr.t]) {
                     return true;
                 }
 
@@ -1488,23 +1501,23 @@ Promise.all([
             if (cars) {
                 cars.forEach(car => {
                     trainLayers.removeObject(car, 1000);
-                    if (car === markedObject && !keep) {
-                        markedObject = undefined;
+                    if (car === mt3d.markedObject && !keep) {
+                        delete mt3d.markedObject;
                         popup.remove();
                     }
-                    if (car === trackedObject && !keep) {
-                        trackedObject = undefined;
-                        hideTimetable();
+                    if (car === mt3d.trackedObject && !keep) {
+                        delete mt3d.trackedObject;
+                        hideTimetable(mt3d.container);
                         stopViewAnimation();
-                        disableTracking();
+                        disableTracking(mt3d.container);
                     }
                 });
             }
             delete train.cars;
-            delete activeTrainLookup[t];
+            delete mt3d.activeTrainLookup[t];
             delete train.delay;
             if (!tt) {
-                delete timetableRefData.splice(timetableRefData.indexOf(train), 1);
+                delete mt3d.timetableData.splice(mt3d.timetableData.indexOf(train), 1);
             }
         }
 
@@ -1513,35 +1526,35 @@ Promise.all([
 
             animation.stop(animationID);
             trainLayers.removeObject(aircraft, 1000);
-            if (aircraft === markedObject) {
-                markedObject = undefined;
+            if (aircraft === mt3d.markedObject) {
+                delete mt3d.markedObject;
                 popup.remove();
             }
-            if (aircraft === trackedObject) {
-                trackedObject = undefined;
+            if (aircraft === mt3d.trackedObject) {
+                delete mt3d.trackedObject;
                 stopViewAnimation();
-                disableTracking();
+                disableTracking(mt3d.container);
             }
             delete flight.aircraft;
             delete flight.body;
             delete flight.wing;
             delete flight.vTail;
-            delete activeFlightLookup[id];
+            delete mt3d.activeFlightLookup[id];
         }
 
         function stopAll() {
-            Object.keys(activeTrainLookup).forEach(key =>
-                stopTrain(activeTrainLookup[key])
+            Object.keys(mt3d.activeTrainLookup).forEach(key =>
+                stopTrain(mt3d.activeTrainLookup[key])
             );
-            Object.keys(activeFlightLookup).forEach(key =>
-                stopFlight(activeFlightLookup[key])
+            Object.keys(mt3d.activeFlightLookup).forEach(key =>
+                stopFlight(mt3d.activeFlightLookup[key])
             );
-            realtimeTrainLookup = {};
-            lastTrainRefresh = undefined;
+            mt3d.realtimeTrainLookup = {};
+            delete mt3d.lastTrainRefresh;
         }
 
         function resetRailwayStatus() {
-            railwayRefData.forEach(railway => {
+            mt3d.railwayData.forEach(railway => {
                 delete railway.status;
                 delete railway.text;
             });
@@ -1555,11 +1568,11 @@ Promise.all([
         }
 
         function loadTimetableData() {
-            helpers.loadJSON(`data/${getTimetableFileName()}`).then(data => {
-                timetableRefData = data;
-                updateTimetableRefData(timetableRefData);
-                trainLookup = helpers.buildLookup(timetableRefData, 't');
-                lastTrainRefresh = undefined;
+            helpers.loadJSON(`${mt3d.dataUrl}/${getTimetableFileName(mt3d.clock)}`).then(data => {
+                mt3d.timetableData = data;
+                updateTimetableData(mt3d.timetableData);
+                mt3d.trainLookup = helpers.buildLookup(mt3d.timetableData, 't');
+                delete mt3d.lastTrainRefresh;
             });
         }
 
@@ -1572,10 +1585,10 @@ Promise.all([
                     .join(',');
 
             Promise.all([
-                helpers.loadJSON(`${configs.apiURL}odpt:TrainInformation?odpt:operator=${operators1}&acl:consumerKey=${e.odpt}`),
-                helpers.loadJSON(`${configs.apiURL}odpt:Train?odpt:operator=${operators2}&acl:consumerKey=${e.odpt}`)
+                helpers.loadJSON(`${configs.apiUrl}odpt:TrainInformation?odpt:operator=${operators1}&acl:consumerKey=${mt3d.e.odpt}`),
+                helpers.loadJSON(`${configs.apiUrl}odpt:Train?odpt:operator=${operators2}&acl:consumerKey=${mt3d.e.odpt}`)
             ]).then(([trainInfoRefData, trainRefData]) => {
-                realtimeTrainLookup = {};
+                mt3d.realtimeTrainLookup = {};
 
                 trainRefData.forEach(trainRef => {
                     const delay = (trainRef['odpt:delay'] || 0) * 1000,
@@ -1587,11 +1600,11 @@ Promise.all([
                         toStation = helpers.removePrefix(trainRef['odpt:toStation']),
                         fromStation = helpers.removePrefix(trainRef['odpt:fromStation']);
                     // Retry lookup replacing Marunouchi line with MarunouchiBranch line
-                    let train = trainLookup[id] || trainLookup[id.replace('.Marunouchi.', '.MarunouchiBranch.')];
+                    let train = mt3d.trainLookup[id] || mt3d.trainLookup[id.replace('.Marunouchi.', '.MarunouchiBranch.')];
                     let changed = false;
 
                     if (train) {
-                        realtimeTrainLookup[id] = train;
+                        mt3d.realtimeTrainLookup[id] = train;
                         if (train.delay !== delay) {
                             train.delay = delay;
                             changed = true;
@@ -1611,7 +1624,7 @@ Promise.all([
                             train.ts = toStation;
                             train.fs = fromStation;
                         }
-                        if (changed && activeTrainLookup[id]) {
+                        if (changed && mt3d.activeTrainLookup[id]) {
                             stopTrain(train, true);
                         }
                     } else {
@@ -1622,7 +1635,7 @@ Promise.all([
                             return;
                         }
 
-                        const railwayRef = railwayLookup[railwayID],
+                        const railwayRef = mt3d.railwayLookup[railwayID],
                             direction = helpers.removePrefix(trainRef['odpt:railDirection']);
 
                         if (railwayRef.color) {
@@ -1644,11 +1657,11 @@ Promise.all([
                                 altitude: railwayRef.altitude,
                                 carComposition: carComposition || railwayRef.carComposition
                             };
-                            timetableRefData.push(train);
-                            realtimeTrainLookup[id] = trainLookup[id] = train;
+                            mt3d.timetableData.push(train);
+                            mt3d.realtimeTrainLookup[id] = mt3d.trainLookup[id] = train;
                         }
                     }
-                    lastDynamicUpdate[helpers.removePrefix(trainRef['odpt:operator'])] = trainRef['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2');
+                    mt3d.lastDynamicUpdate[helpers.removePrefix(trainRef['odpt:operator'])] = trainRef['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2');
                 });
 
                 resetRailwayStatus();
@@ -1663,13 +1676,13 @@ Promise.all([
                     if (railwayID && status && status.ja &&
                         helpers.includes(OPERATORS_FOR_TRAINS, operatorID) &&
                         status.ja.match(/見合わせ|折返し運転|運休|遅延/)) {
-                        const railway = railwayLookup[railwayID];
+                        const railway = mt3d.railwayLookup[railwayID];
 
                         railway.status = status.ja;
                         railway.text = text.ja;
-                        Object.keys(activeTrainLookup).forEach(key => {
-                            const train = activeTrainLookup[key];
-                            if (train.r === railwayID && !realtimeTrainLookup[train.t]) {
+                        Object.keys(mt3d.activeTrainLookup).forEach(key => {
+                            const train = mt3d.activeTrainLookup[key];
+                            if (train.r === railwayID && !mt3d.realtimeTrainLookup[train.t]) {
                                 stopTrain(train);
                             }
                         });
@@ -1691,9 +1704,9 @@ Promise.all([
                 .join(',');
 
             Promise.all([
-                helpers.loadJSON(configs.atisURL)
+                helpers.loadJSON(configs.atisUrl)
             ].concat(['Arrival', 'Departure'].map(type =>
-                helpers.loadJSON(`${configs.apiURL}odpt:FlightInformation${type}?odpt:operator=${operators}&acl:consumerKey=${e.odpt}`)
+                helpers.loadJSON(`${configs.apiUrl}odpt:FlightInformation${type}?odpt:operator=${operators}&acl:consumerKey=${mt3d.e.odpt}`)
             ))).then(([atisData, arrivalData, departureData]) => {
                 const {landing, departure} = atisData,
                     pattern = [landing.join('/'), departure.join('/')].join(' '),
@@ -1702,11 +1715,11 @@ Promise.all([
                     depRoutes = {},
                     north = true;
 
-                if (flightPattern !== pattern) {
-                    flightPattern = pattern;
-                    lastFlightPatternChanged = Date.now();
-                    Object.keys(activeFlightLookup).forEach(key => {
-                        stopFlight(activeFlightLookup[key]);
+                if (mt3d.flightPattern !== pattern) {
+                    mt3d.flightPattern = pattern;
+                    mt3d.lastFlightPatternChanged = Date.now();
+                    Object.keys(mt3d.activeFlightLookup).forEach(key => {
+                        stopFlight(mt3d.activeFlightLookup[key]);
                     });
                 }
 
@@ -1763,7 +1776,7 @@ Promise.all([
 
                 arrivalData.concat(departureData).forEach(flightRef => {
                     const id = helpers.removePrefix(flightRef['owl:sameAs']);
-                    let flight = flightLookup[id],
+                    let flight = mt3d.flightLookup[id],
                         status = helpers.removePrefix(flightRef['odpt:flightStatus']),
                         {maxFlightSpeed: maxSpeed, flightAcceleration: acceleration} = configs;
 
@@ -1775,16 +1788,16 @@ Promise.all([
                             arrivalAirport = helpers.removePrefix(flightRef['odpt:arrivalAirport']),
                             destinationAirport = helpers.removePrefix(flightRef['odpt:destinationAirport']),
                             originAirport = helpers.removePrefix(flightRef['odpt:originAirport']),
-                            airport = airportLookup[destinationAirport || originAirport],
+                            airport = mt3d.airportLookup[destinationAirport || originAirport],
                             direction = airport ? airport.direction : 'S',
                             route = departureAirport === 'NRT' ? `NRT.${north ? '34L' : '16R'}.Dep` :
                             arrivalAirport === 'NRT' ? `NRT.${north ? '34R' : '16L'}.Arr` :
                             departureAirport === 'HND' ? `HND.${depRoutes[direction]}.Dep` :
                             arrivalAirport === 'HND' ? `HND.${arrRoutes[direction]}.Arr` : undefined,
-                            feature = featureLookup[route];
+                            feature = mt3d.featureLookup[route];
 
                         if (feature) {
-                            flight = flightLookup[id] = {
+                            flight = mt3d.flightLookup[id] = {
                                 id,
                                 n: flightRef['odpt:flightNumber'],
                                 a: helpers.removePrefix(flightRef['odpt:airline']),
@@ -1839,25 +1852,25 @@ Promise.all([
                         standingDuration = configs.standingDuration;
 
                     if (departureTime) {
-                        flight.start = flight.base = clock.getTime(departureTime);
+                        flight.start = flight.base = mt3d.clock.getTime(departureTime);
                         flight.standing = flight.start - standingDuration;
                         flight.end = flight.start + duration;
                     } else {
-                        flight.start = flight.standing = clock.getTime(arrivalTime) - duration;
+                        flight.start = flight.standing = mt3d.clock.getTime(arrivalTime) - duration;
                         flight.base = flight.start + duration - standingDuration;
                         flight.end = flight.start + duration + standingDuration;
                     }
                     flight.maxSpeed = maxSpeed;
                     flight.acceleration = acceleration;
 
-                    if (flight.base < lastFlightPatternChanged) {
+                    if (flight.base < mt3d.lastFlightPatternChanged) {
                         return;
                     }
 
                     const queue = flightQueue[flight.runway] = flightQueue[flight.runway] || [];
                     queue.push(flight);
 
-                    lastDynamicUpdate[helpers.removePrefix(flightRef['odpt:operator'])] = flightRef['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2');
+                    mt3d.lastDynamicUpdate[helpers.removePrefix(flightRef['odpt:operator'])] = flightRef['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2');
                 });
 
                 Object.keys(flightQueue).forEach(key => {
@@ -1885,139 +1898,24 @@ Promise.all([
             });
         }
 
-        function loadNowCastData() {
-            helpers.loadJSON(configs.nowcastsURL).then(data => {
-                nowCastData = data;
-                emitterBounds = {};
-                updateEmitterQueue();
+        function loadWeatherData() {
+            helpers.loadJSON(configs.nowcastsUrl).then(data => {
+                weatherLayer.updateEmitterQueue(data);
             });
         }
 
-        function updateEmitterQueue() {
-            const bounds = map.getBounds(),
-                ne = mapboxgl.MercatorCoordinate.fromLngLat(bounds.getNorthEast()),
-                sw = mapboxgl.MercatorCoordinate.fromLngLat(bounds.getSouthWest()),
-                resolution = helpers.clamp(Math.pow(2, Math.floor(17 - map.getZoom())), 0, 1) * 1088,
-                currBounds = {
-                    left: Math.floor(helpers.clamp((sw.x - modelOrigin.x) / modelScale + 50000, 0, 108800) / resolution) * resolution,
-                    right: Math.ceil(helpers.clamp((ne.x - modelOrigin.x) / modelScale + 50000, 0, 108800) / resolution) * resolution,
-                    top: Math.floor(helpers.clamp((ne.y - modelOrigin.y) / modelScale + 42500 + 0, 0, 78336) / resolution) * resolution,
-                    bottom: Math.ceil(helpers.clamp((sw.y - modelOrigin.y) / modelScale + 42500 + 0, 0, 78336) / resolution) * resolution
-                };
-
-            if (currBounds.left !== emitterBounds.left ||
-                currBounds.right !== emitterBounds.right ||
-                currBounds.top !== emitterBounds.top ||
-                currBounds.bottom !== emitterBounds.bottom) {
-                bgGroup = new SPE.Group({
-                    texture: {
-                        value: rainTexture
-                    },
-                    blending: THREE.NormalBlending,
-                    transparent: true,
-                    maxParticleCount: 500000
-                });
-                emitterQueue = [];
-                for (let y = currBounds.top; y < currBounds.bottom; y += resolution) {
-                    for (let x = currBounds.left; x < currBounds.right; x += resolution) {
-                        emitterQueue.push({
-                            index: {
-                                x: Math.floor(x / 1088),
-                                y: Math.floor(y / 1088)
-                            },
-                            rect: {
-                                x,
-                                y,
-                                w: resolution,
-                                h: resolution
-                            }
-                        });
-                    }
-                }
-            }
-            emitterBounds = currBounds;
-        }
-
-        function refreshEmitter() {
-            if (bgGroup) {
-                const zoom = map.getZoom(),
-                    n = zoom >= 17 ? 20 : helpers.clamp(Math.floor(Math.pow(3, zoom - 13)), 3, 10000000),
-                    h = helpers.clamp(Math.pow(2, 14 - zoom), 0, 1) * 1000,
-                    v = helpers.clamp(Math.pow(1.7, 14 - zoom), 0, 1) * 2000,
-                    s = helpers.clamp(Math.pow(1.2, zoom - 14.5) * map.transform.cameraToCenterDistance / 800, 0, 1);
-                let emitterCount = 30;
-
-                while (emitterCount > 0) {
-                    const e = emitterQueue.shift();
-
-                    if (!e) {
-                        imGroup = bgGroup;
-                        bgGroup = undefined;
-                        setTimeout(finalizeEmitterRefresh, 500);
-                        break;
-                    }
-                    if (!nowCastData || !nowCastData[e.index.y][e.index.x]) {
-                        continue;
-                    }
-                    bgGroup.addEmitter(new SPE.Emitter({
-                        maxAge: {
-                            value: h / v
-                        },
-                        position: {
-                            value: new THREE.Vector3((e.rect.x - 50000 + e.rect.w / 2) * modelScale, (42500 - e.rect.h / 2 - e.rect.y) * modelScale, h * modelScale),
-                            spread: new THREE.Vector3(e.rect.w * modelScale, e.rect.h * modelScale, 0)
-                        },
-                        acceleration: {
-                            value: new THREE.Vector3(0, 0, 0),
-                            spread: new THREE.Vector3(v / 20 * modelScale, 0, 0)
-                        },
-                        velocity: {
-                            value: new THREE.Vector3(0, 0, -v * modelScale),
-                            spread: new THREE.Vector3(v / 200 * modelScale, v / 200 * modelScale)
-                        },
-                        color: {
-                            value: new THREE.Color('blue')
-                        },
-                        size: {
-                            value: 1e-6 / modelScale * s
-                        },
-                        particleCount: Math.pow(nowCastData[e.index.y][e.index.x], 2) * n
-                    }));
-                    emitterCount--;
-                }
-            }
-            if (fgGroup) {
-                fgGroup.tick();
-            }
-            if (imGroup) {
-                imGroup.tick();
-            }
-        }
-
-        function finalizeEmitterRefresh() {
-            if (imGroup) {
-                if (fgGroup) {
-                    rainLayer.scene.remove(fgGroup.mesh);
-                    // fgGroup.dispose();
-                }
-                fgGroup = imGroup;
-                imGroup = undefined;
-                rainLayer.scene.add(fgGroup.mesh);
-            }
-        }
-
         function refreshStyleColors() {
-            styleColors.forEach(item => {
+            mt3d.styleColors.forEach(item => {
                 const {id, key, stops} = item;
 
-                if (id === 'background' && isUndergroundVisible) {
+                if (id === 'background' && mt3d.isUndergroundVisible) {
                     map.setPaintProperty(id, key, 'rgb(16,16,16)');
                 } else if (stops === undefined) {
-                    map.setPaintProperty(id, key, getStyleColorString(item));
+                    map.setPaintProperty(id, key, getStyleColorString(item, mt3d.clock));
                 } else {
                     const prop = map.getPaintProperty(id, key);
 
-                    prop.stops[stops][1] = getStyleColorString(item);
+                    prop.stops[stops][1] = getStyleColorString(item, mt3d.clock);
                     map.setPaintProperty(id, key, prop);
                 }
             });
@@ -2028,8 +1926,8 @@ Promise.all([
                 base = dark ? 0 : 1,
                 blending = dark ? THREE.AdditiveBlending : THREE.MultiplyBlending;
 
-            Object.keys(activeTrainLookup).forEach(key => {
-                const car = activeTrainLookup[key].cars[0],
+            Object.keys(mt3d.activeTrainLookup).forEach(key => {
+                const car = mt3d.activeTrainLookup[key].cars[0],
                     delayMarker = car && car.getObjectByName('marker');
 
                 if (delayMarker) {
@@ -2042,8 +1940,8 @@ Promise.all([
         }
 
         function updateOutline() {
-            if (!markedObject.getObjectByName('outline')) {
-                markedObject.traverse(descendant => {
+            if (!mt3d.markedObject.getObjectByName('outline')) {
+                mt3d.markedObject.traverse(descendant => {
                     if (descendant.name === 'cube') {
                         descendant.add(createOutline(descendant));
                     }
@@ -2061,40 +1959,43 @@ Promise.all([
         ];
 
         function refreshClock() {
-            let date = clock.getJSTDate(),
+            const {lang, container} = mt3d;
+            let date = mt3d.clock.getJSTDate(),
                 dateString = date.toLocaleDateString(lang, DATE_FORMAT);
 
             if (lang === 'ja' && JapaneseHolidays.isHoliday(date)) {
                 dateString = dateString.replace(/\(.+\)/, '(祝)');
             }
-            if (!isEditingTime) {
-                document.getElementById('date').innerHTML = dateString;
-                document.getElementById('time').innerHTML = date.toLocaleTimeString(lang);
+            if (!mt3d.isEditingTime) {
+                container.querySelector('#date').innerHTML = dateString;
+                container.querySelector('#time').innerHTML = date.toLocaleTimeString(lang);
             } else {
-                if (tempDate) {
-                    date = tempDate;
+                if (mt3d.tempDate) {
+                    date = mt3d.tempDate;
                     dateComponents.forEach(({id}) => {
-                        document.getElementById(id).classList.add('desc-caution');
+                        container.querySelector(`#${id}`).classList.add('desc-caution');
                     });
-                    document.getElementById('edit-time-ok-button').disabled = false;
+                    container.querySelector('#edit-time-ok-button').disabled = false;
                 }
                 dateComponents.forEach(({id, fn, digits, extra}) => {
-                    document.getElementById(id).innerHTML =
+                    container.querySelector(`#${id}`).innerHTML =
                         `0${date[`get${fn}`]() + extra}`.slice(-digits);
                 });
             }
         }
 
         function updateClock() {
-            document.getElementById('clock').innerHTML = [
-                !isPlayback || !isEditingTime ?
+            const {container, dict} = mt3d;
+
+            container.querySelector('#clock').innerHTML = [
+                !mt3d.isPlayback || !mt3d.isEditingTime ?
                     '<span id="date"></span><br><span id="time"></span><br>' : '',
-                isPlayback && !isEditingTime ? [
+                mt3d.isPlayback && !mt3d.isEditingTime ? [
                     '<div class="clock-button">',
                     `<span><button id="edit-time-button">${dict['edit-date-time']}</button></span>`,
                     '</div>'
                 ].join('') : '',
-                isPlayback && isEditingTime ? [
+                mt3d.isPlayback && mt3d.isEditingTime ? [
                     '<div class="clock-controller">',
                     dateComponents.slice(0, 3).map(({id}) => [
                         '<span class="spin-box">',
@@ -2118,117 +2019,119 @@ Promise.all([
                     `<span><button id="edit-time-ok-button" disabled>${dict['ok']}</button></span>`,
                     '</div>'
                 ].join('') : '',
-                isPlayback ? [
+                mt3d.isPlayback ? [
                     '<div class="speed-controller">',
                     '<span><button id="speed-decrease-button" class="left-button"',
-                    clock.speed === 1 ? ' disabled' : '',
+                    mt3d.clock.speed === 1 ? ' disabled' : '',
                     '><span class="decrease-icon"></span></button></span>',
-                    `<span id="clock-speed">${clock.speed}${dict['x-speed']}</span>`,
+                    `<span id="clock-speed">${mt3d.clock.speed}${dict['x-speed']}</span>`,
                     '<span><button id="speed-increase-button" class="right-button"',
-                    clock.speed === 600 ? ' disabled' : '',
+                    mt3d.clock.speed === 600 ? ' disabled' : '',
                     '><span class="increase-icon"></span></button></span>',
                     '</div>'
                 ].join('') : ''
             ].join('');
 
             refreshClock();
-            document.getElementById('clock').style.display = 'block';
+            container.querySelector('#clock').style.display = 'block';
 
-            if (isPlayback && isEditingTime) {
-                document.getElementById('edit-time-cancel-button').addEventListener('click', () => {
-                    tempDate = undefined;
-                    isEditingTime = false;
+            if (mt3d.isPlayback && mt3d.isEditingTime) {
+                container.querySelector('#edit-time-cancel-button').addEventListener('click', () => {
+                    delete mt3d.tempDate;
+                    mt3d.isEditingTime = false;
                     updateClock();
                 });
-                document.getElementById('edit-time-ok-button').addEventListener('click', () => {
-                    if (tempDate) {
+                container.querySelector('#edit-time-ok-button').addEventListener('click', () => {
+                    if (mt3d.tempDate) {
                         stopAll();
-                        markedObject = trackedObject = undefined;
+                        delete mt3d.markedObject;
+                        delete mt3d.trackedObject;
                         popup.remove();
-                        hideTimetable();
+                        hideTimetable(mt3d.container);
                         stopViewAnimation();
-                        disableTracking();
+                        disableTracking(mt3d.container);
 
-                        clock.setDate(tempDate);
-                        tempDate = undefined;
+                        mt3d.clock.setDate(mt3d.tempDate);
+                        delete mt3d.tempDate;
 
-                        if (lastTimetableRefresh !== clock.getTime('03:00')) {
+                        if (mt3d.lastTimetableRefresh !== mt3d.clock.getTime('03:00')) {
                             loadTimetableData();
-                            lastTimetableRefresh = clock.getTime('03:00');
+                            mt3d.lastTimetableRefresh = mt3d.clock.getTime('03:00');
                         }
                     }
 
-                    isEditingTime = false;
+                    mt3d.isEditingTime = false;
                     updateClock();
                 });
             }
 
-            if (isPlayback && !isEditingTime) {
-                document.getElementById('edit-time-button').addEventListener('click', () => {
-                    isEditingTime = true;
+            if (mt3d.isPlayback && !mt3d.isEditingTime) {
+                container.querySelector('#edit-time-button').addEventListener('click', () => {
+                    mt3d.isEditingTime = true;
                     updateClock();
                 });
             }
 
-            if (isPlayback && isEditingTime) {
+            if (mt3d.isPlayback && mt3d.isEditingTime) {
                 dateComponents.forEach(({id, fn}) => {
-                    document.getElementById(`${id}-increase-button`).addEventListener('click', () => {
-                        tempDate = tempDate || clock.getJSTDate();
-                        tempDate[`set${fn}`](tempDate[`get${fn}`]() + 1);
+                    container.querySelector(`#${id}-increase-button`).addEventListener('click', () => {
+                        mt3d.tempDate = mt3d.tempDate || mt3d.clock.getJSTDate();
+                        mt3d.tempDate[`set${fn}`](mt3d.tempDate[`get${fn}`]() + 1);
                         refreshClock();
                     });
-                    document.getElementById(`${id}-decrease-button`).addEventListener('click', () => {
-                        tempDate = tempDate || clock.getJSTDate();
-                        tempDate[`set${fn}`](tempDate[`get${fn}`]() - 1);
+                    container.querySelector(`#${id}-decrease-button`).addEventListener('click', () => {
+                        mt3d.tempDate = mt3d.tempDate || mt3d.clock.getJSTDate();
+                        mt3d.tempDate[`set${fn}`](mt3d.tempDate[`get${fn}`]() - 1);
                         refreshClock();
                     });
                 });
             }
 
-            if (isPlayback) {
-                document.getElementById('speed-increase-button').addEventListener('click', function() {
-                    clock.setSpeed(clock.speed + (clock.speed < 10 ? 1 : clock.speed < 100 ? 10 : 100));
-                    this.disabled = clock.speed === 600;
-                    document.getElementById('speed-decrease-button').disabled = false;
-                    document.getElementById('clock-speed').innerHTML = clock.speed + dict['x-speed'];
+            if (mt3d.isPlayback) {
+                container.querySelector('#speed-increase-button').addEventListener('click', function() {
+                    mt3d.clock.setSpeed(mt3d.clock.speed + (mt3d.clock.speed < 10 ? 1 : mt3d.clock.speed < 100 ? 10 : 100));
+                    this.disabled = mt3d.clock.speed === 600;
+                    container.querySelector('#speed-decrease-button').disabled = false;
+                    container.querySelector('#clock-speed').innerHTML = mt3d.clock.speed + dict['x-speed'];
                 });
-                document.getElementById('speed-decrease-button').addEventListener('click', function() {
-                    clock.setSpeed(clock.speed - (clock.speed <= 10 ? 1 : clock.speed <= 100 ? 10 : 100));
-                    this.disabled = clock.speed === 1;
-                    document.getElementById('speed-increase-button').disabled = false;
-                    document.getElementById('clock-speed').innerHTML = clock.speed + dict['x-speed'];
+                container.querySelector('#speed-decrease-button').addEventListener('click', function() {
+                    mt3d.clock.setSpeed(mt3d.clock.speed - (mt3d.clock.speed <= 10 ? 1 : mt3d.clock.speed <= 100 ? 10 : 100));
+                    this.disabled = mt3d.clock.speed === 1;
+                    container.querySelector('#speed-increase-button').disabled = false;
+                    container.querySelector('#clock-speed').innerHTML = mt3d.clock.speed + dict['x-speed'];
                 });
             }
         }
 
         function updateAboutPopup() {
-            const r1 = document.getElementById('map').getBoundingClientRect(),
-                r2 = document.getElementsByClassName('mapboxgl-ctrl-about')[0].getBoundingClientRect(),
-                staticCheck = document.getElementById('acd-static'),
-                dynamicCheck = document.getElementById('acd-dynamic'),
+            const {container, dict} = mt3d,
+                r1 = container.querySelector('#map').getBoundingClientRect(),
+                r2 = container.querySelector('.mapboxgl-ctrl-about').getBoundingClientRect(),
+                staticCheck = container.querySelector('#acd-static'),
+                dynamicCheck = container.querySelector('#acd-dynamic'),
                 html = [
                     dict['description'],
-                    '<input id="acd-static" class="acd-check" type="checkbox"',
+                    `<input id="${container.id}-acd-static" class="acd-check" type="checkbox"`,
                     staticCheck && staticCheck.checked ? ' checked' : '',
                     '>',
-                    `<label class="acd-label" for="acd-static"><span class="acd-icon"></span>${dict['static-update']}</label>`,
+                    `<label class="acd-label" for="${container.id}-acd-static"><span class="acd-icon"></span>${dict['static-update']}</label>`,
                     `<div class="acd-content">${configs.lastStaticUpdate}</div>`,
-                    '<input id="acd-dynamic" class="acd-check" type="checkbox"',
+                    `<input id="${container.id}-acd-dynamic" class="acd-check" type="checkbox"`,
                     dynamicCheck && dynamicCheck.checked ? ' checked' : '',
                     '>',
-                    `<label class="acd-label" for="acd-dynamic"><span class="acd-icon"></span>${dict['dynamic-update']}</label>`,
+                    `<label class="acd-label" for="${container.id}-acd-dynamic"><span class="acd-icon"></span>${dict['dynamic-update']}</label>`,
                     '<div class="acd-content">',
-                    lastDynamicUpdate['JR-East'] || 'N/A',
+                    mt3d.lastDynamicUpdate['JR-East'] || 'N/A',
                     ` (${dict['jr-east']})<br>`,
-                    lastDynamicUpdate['TokyoMetro'] || 'N/A',
+                    mt3d.lastDynamicUpdate['TokyoMetro'] || 'N/A',
                     ` (${dict['tokyo-metro']})<br>`,
-                    lastDynamicUpdate['Toei'] || 'N/A',
+                    mt3d.lastDynamicUpdate['Toei'] || 'N/A',
                     ` (${dict['toei']})<br>`,
-                    lastDynamicUpdate['HND-JAT'] || 'N/A',
+                    mt3d.lastDynamicUpdate['HND-JAT'] || 'N/A',
                     ` (${dict['hnd-jat']})<br>`,
-                    lastDynamicUpdate['HND-TIAT'] || 'N/A',
+                    mt3d.lastDynamicUpdate['HND-TIAT'] || 'N/A',
                     ` (${dict['hnd-tiat']})<br>`,
-                    lastDynamicUpdate['NAA'] || 'N/A',
+                    mt3d.lastDynamicUpdate['NAA'] || 'N/A',
                     ` (${dict['naa']})</div>`
                 ].join('');
 
@@ -2236,11 +2139,11 @@ Promise.all([
         }
     });
 
-    function updateTimetableRefData(data) {
+    function updateTimetableData(data) {
         const lookup = helpers.buildLookup(data);
 
         data.forEach(train => {
-            const railway = railwayLookup[train.r],
+            const railway = mt3d.railwayLookup[train.r],
                 direction = train.d === railway.ascending ? 1 : -1,
                 {tt: table, pt: previousTableIDs, nt: nextTableIDs} = train,
                 length = table.length;
@@ -2255,7 +2158,7 @@ Promise.all([
                         const tt = previousTrain.tt;
 
                         start = Math.min(start,
-                            clock.getTime(tt[tt.length - 1].a || tt[tt.length - 1].d || table[0].d) - configs.standingDuration);
+                            mt3d.clock.getTime(tt[tt.length - 1].a || tt[tt.length - 1].d || table[0].d) - configs.standingDuration);
                         previousTrains = previousTrains || [];
                         previousTrains.push(previousTrain);
                     }
@@ -2274,8 +2177,8 @@ Promise.all([
                     table[length - 1].d = nextTrains[0].tt[0].d;
                 }
             }
-            train.start = Math.min(start, clock.getTime(table[0].d) - configs.standingDuration);
-            train.end = clock.getTime(table[length - 1].a ||
+            train.start = Math.min(start, mt3d.clock.getTime(table[0].d) - configs.standingDuration);
+            train.end = mt3d.clock.getTime(table[length - 1].a ||
                 table[length - 1].d ||
                 table[Math.max(length - 2, 0)].d);
             train.direction = direction;
@@ -2286,26 +2189,112 @@ Promise.all([
         });
     }
 
-}).catch(error => {
-    document.getElementById('loader').style.display = 'none';
-    document.getElementById('loading-error').innerHTML = 'Loading failed. Please reload the page.';
-    document.getElementById('loading-error').style.display = 'block';
-    throw error;
-});
+    function setSectionData(train, index, final) {
+        const {stations} = mt3d.railwayLookup[train.r],
+            {direction, tt: table} = train,
+            destination = (train.ds || [])[0],
+            delay = train.delay || 0,
+            now = mt3d.clock.getTime();
+        let ttIndex, current, next, departureStation, arrivalStation, currentSection, nextSection, finalSection;
 
-function enableTracking() {
-    document.getElementsByClassName('mapboxgl-ctrl-track')[0]
+        if (table) {
+            ttIndex = helpers.valueOrDefault(index, table.reduce((acc, cur, i) => {
+                return cur.d && mt3d.clock.getTime(cur.d) + delay <= now ? i : acc;
+            }, 0));
+            current = table[ttIndex];
+            next = table[ttIndex + 1];
+            departureStation = current.s;
+            arrivalStation = next && next.s;
+        } else {
+            departureStation = train.fs || train.ts;
+            arrivalStation = train.ts || train.fs;
+        }
+
+        if (direction > 0) {
+            currentSection = stations.indexOf(departureStation);
+            nextSection = stations.indexOf(arrivalStation, currentSection);
+            finalSection = stations.indexOf(destination, currentSection);
+        } else {
+            currentSection = stations.lastIndexOf(departureStation);
+            nextSection = stations.lastIndexOf(arrivalStation, currentSection);
+            finalSection = stations.lastIndexOf(destination, currentSection);
+        }
+
+        if (table) {
+            train.timetableIndex = ttIndex;
+            train.departureStation = departureStation;
+            train.departureTime = current.d || current.a;
+
+            if (currentSection >= 0 && nextSection >= 0) {
+                train.sectionIndex = currentSection;
+                train.sectionLength = nextSection - currentSection;
+                train.arrivalStation = arrivalStation;
+                train.arrivalTime = next.a;
+                train.nextDepartureTime = next.d;
+
+                return true;
+            }
+
+        } else {
+            const actualSection = helpers.numberOrDefault(train.sectionIndex + train.sectionLength, currentSection);
+
+            train.departureStation = departureStation;
+
+            if (actualSection >= 0 && actualSection !== finalSection && ((!final && nextSection >= 0) || (final && finalSection >= 0))) {
+                train.sectionIndex = actualSection;
+                train.sectionLength = (final ? finalSection : nextSection) - actualSection;
+                train.arrivalStation = arrivalStation === departureStation ? stations[currentSection + direction] : arrivalStation;
+
+                return true;
+            }
+        }
+
+        train.arrivalStation = train.arrivalTime = train.nextDepartureTime = undefined;
+    }
+
+}
+
+function insertTags(container) {
+    container.innerHTML = `
+<div id="map"></div>
+<div id="clock"></div>
+<input id="search-box" type="text" list="stations">
+<div id="timetable">
+    <div id="timetable-header"></div>
+    <div id="timetable-body">
+        <div class="scroll-box">
+            <div id="timetable-content"></div>
+            <svg id="railway-mark"></svg>
+            <svg id="train-mark"></svg>
+        </div>
+    </div>
+    <div id="timetable-button" class="slide-down"></div>
+</div>
+<div id="loader" class="loader-inner ball-pulse">
+    <div></div><div></div><div></div>
+</div>
+<div id="loading-error"></div>`;
+}
+
+function showErrorMessage(container) {
+    container.querySelector('#loader').style.display = 'none';
+    container.querySelector('#loading-error').innerHTML = 'Loading failed. Please reload the page.';
+    container.querySelector('#loading-error').style.display = 'block';
+}
+
+function enableTracking(container) {
+    container.querySelector('.mapboxgl-ctrl-track')
         .classList.add('mapboxgl-ctrl-track-active');
 }
 
-function disableTracking() {
-    document.getElementsByClassName('mapboxgl-ctrl-track')[0]
+function disableTracking(container) {
+    container.querySelector('.mapboxgl-ctrl-track')
         .classList.remove('mapboxgl-ctrl-track-active');
 }
 
-function showTimetable() {
-    const {style} = document.getElementById('timetable'),
-        {classList} = document.getElementById('timetable-button');
+function showTimetable(container) {
+    const {style} = container.querySelector('#timetable'),
+        {classList} = container.querySelector('#timetable-button');
 
     style.display = 'block';
     style.height = '33%';
@@ -2313,8 +2302,8 @@ function showTimetable() {
     classList.add('slide-down');
 }
 
-function hideTimetable() {
-    document.getElementById('timetable').style.display = 'none';
+function hideTimetable(container) {
+    container.querySelector('#timetable').style.display = 'none';
 }
 
 function updateDistances(line) {
@@ -2392,7 +2381,7 @@ function getCoordAndBearing(line, distance, composition, unit) {
     return result;
 }
 
-function startTrainAnimation(callback, endCallback, distance, minDuration, maxDuration, start) {
+function startTrainAnimation(callback, endCallback, distance, minDuration, maxDuration, start, clock) {
     let {maxSpeed, acceleration, maxAccelerationTime, maxAccDistance} = configs,
         duration, accelerationTime;
 
@@ -2511,9 +2500,10 @@ function truncateTrainTimetable(train, origin, destination) {
   * Returns the modified style color based on the current date and time.
   * In the playback mode, the time in the simulation clock is used.
   * @param {object} color - Style color object
+  * @param {object} clock - Clock object
   * @returns {string} Modified style color string
   */
-function getStyleColorString(color) {
+function getStyleColorString(color, clock) {
     const [lng, lat] = configs.originCoord,
         times = SunCalc.getTimes(new Date(clock.getTime()), lat, lng),
         sunrise = clock.getJSTDate(times.sunrise.getTime()).getTime(),
@@ -2606,9 +2596,8 @@ function createCube(x, y, z, color) {
   *     factor of the opacity when fading in or out
   */
 function setOpacity(object, opacity, factor) {
-    object.traverse(descendant => {
-        const materials = descendant.material,
-            value = (descendant.name === 'outline' ? 1 : opacity) * helpers.valueOrDefault(factor, 1);
+    object.traverse(({material: materials, name}) => {
+        const value = (name === 'outline' ? 1 : opacity) * helpers.valueOrDefault(factor, 1);
 
         if (materials) {
             const uniforms = materials.uniforms;
@@ -2682,13 +2671,13 @@ function createOutline(object) {
     return outline;
 }
 
-function getObjectOpacity(object, t) {
+function getObjectOpacity(object, isUndergroundVisible, t) {
     t = helpers.valueOrDefault(t, 1);
     return isUndergroundVisible === (object.userData.altitude < 0) ?
         .9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
 }
 
-function getTimetableFileName() {
+function getTimetableFileName(clock) {
     const date = clock.getJSTDate(),
         hours = date.getHours();
 
@@ -2702,67 +2691,4 @@ function getTimetableFileName() {
         date.getDay() === 6 || date.getDay() === 0 ? 'holiday' : 'weekday';
 
     return `timetable-${calendar}.json.gz`;
-}
-
-function setSectionData(train, index, final) {
-    const {stations} = railwayLookup[train.r],
-        {direction, tt: table} = train,
-        destination = (train.ds || [])[0],
-        delay = train.delay || 0,
-        now = clock.getTime();
-    let ttIndex, current, next, departureStation, arrivalStation, currentSection, nextSection, finalSection;
-
-    if (table) {
-        ttIndex = helpers.valueOrDefault(index, table.reduce((acc, cur, i) => {
-            return cur.d && clock.getTime(cur.d) + delay <= now ? i : acc;
-        }, 0));
-        current = table[ttIndex];
-        next = table[ttIndex + 1];
-        departureStation = current.s;
-        arrivalStation = next && next.s;
-    } else {
-        departureStation = train.fs || train.ts;
-        arrivalStation = train.ts || train.fs;
-    }
-
-    if (direction > 0) {
-        currentSection = stations.indexOf(departureStation);
-        nextSection = stations.indexOf(arrivalStation, currentSection);
-        finalSection = stations.indexOf(destination, currentSection);
-    } else {
-        currentSection = stations.lastIndexOf(departureStation);
-        nextSection = stations.lastIndexOf(arrivalStation, currentSection);
-        finalSection = stations.lastIndexOf(destination, currentSection);
-    }
-
-    if (table) {
-        train.timetableIndex = ttIndex;
-        train.departureStation = departureStation;
-        train.departureTime = current.d || current.a;
-
-        if (currentSection >= 0 && nextSection >= 0) {
-            train.sectionIndex = currentSection;
-            train.sectionLength = nextSection - currentSection;
-            train.arrivalStation = arrivalStation;
-            train.arrivalTime = next.a;
-            train.nextDepartureTime = next.d;
-
-            return true;
-        }
-
-    } else {
-        const actualSection = helpers.numberOrDefault(train.sectionIndex + train.sectionLength, currentSection);
-
-        train.departureStation = departureStation;
-
-        if (actualSection >= 0 && actualSection !== finalSection && ((!final && nextSection >= 0) || (final && finalSection >= 0))) {
-            train.sectionIndex = actualSection;
-            train.sectionLength = (final ? finalSection : nextSection) - actualSection;
-            train.arrivalStation = arrivalStation === departureStation ? stations[currentSection + direction] : arrivalStation;
-
-            return true;
-        }
-    }
-
-    train.arrivalStation = train.arrivalTime = train.nextDepartureTime = undefined;
 }

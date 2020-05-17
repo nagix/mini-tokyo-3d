@@ -10,9 +10,9 @@ import nearestPointOnLine from '@turf/nearest-point-on-line';
 import truncate from '@turf/truncate';
 import union from '@turf/union';
 import destination from '../turf/destination';
-import lineOffset from '../turf/lineOffset';
-import lineSlice from '../turf/lineSlice';
-import nearestPointProps from '../turf/nearestPointProps';
+import lineOffset from '../turf/line-offset';
+import lineSlice from '../turf/line-slice';
+import nearestPointProps from '../turf/nearest-point-props';
 import * as helpers from '../helpers';
 import * as loaderHelpers from './helpers';
 
@@ -97,8 +97,8 @@ export default async function(railwayLookup, stationLookup) {
         group => [].concat(...group)
     ));
 
-    coordinateData.railways.forEach(railway =>
-        ((railwayLookup[railway.id] || {}).stations || [])
+    coordinateData.railways.forEach(({id}) =>
+        ((railwayLookup[id] || {}).stations || [])
             .filter(station => !helpers.includes(transitStations, station))
             .forEach(station => stationGroupData.push([[station]]))
     );
@@ -118,15 +118,14 @@ export default async function(railwayLookup, stationLookup) {
         })
     )));
 
-    coordinateData.airways.forEach(airway => {
-        const {id, coords, color} = airway,
-            airwayFeature = lineString(coords, {
-                id,
-                type: 0,
-                color,
-                width: 8,
-                altitude: 1
-            });
+    coordinateData.airways.forEach(({id, coords, color}) => {
+        const airwayFeature = lineString(coords, {
+            id,
+            type: 0,
+            color,
+            width: 8,
+            altitude: 1
+        });
 
         airwayFeature.properties.length = turfLength(airwayFeature);
 
@@ -147,12 +146,11 @@ export function featureWorker() {
 
     const unit = Math.pow(2, 14 - zoom) * .1;
 
-    railways.forEach(railway => {
+    railways.forEach(({id, sublines, color, altitude, loop}) => {
         let mixed = false;
-        const {id, sublines, color, loop} = railway;
         const railwayFeature = lineString([].concat(...sublines.map(subline => {
             const {type, start, end, coords, opacity} = subline,
-                altitude = helpers.valueOrDefault(subline.altitude, railway.altitude) || 0;
+                sublineAltitude = helpers.valueOrDefault(subline.altitude, altitude) || 0;
             let coordinates;
 
             function smoothCoords(nextSubline, reverse) {
@@ -244,9 +242,9 @@ export function featureWorker() {
             interpolateCoordinates(coordinates,
                 start && start.altitude !== undefined ? .4 : 0,
                 end && end.altitude !== undefined ? .4 : 0);
-            if (altitude) {
+            if (sublineAltitude) {
                 coordinates.forEach(coord => {
-                    coord[2] = altitude * unit * 1000;
+                    coord[2] = sublineAltitude * unit * 1000;
                 });
             }
             if (start && start.altitude !== undefined) {
@@ -278,7 +276,7 @@ export function featureWorker() {
             return;
         }
 
-        railwayFeature.properties.altitude = mixed ? undefined : (railway.altitude || 0) * unit * 1000;
+        railwayFeature.properties.altitude = mixed ? undefined : (altitude || 0) * unit * 1000;
 
         // Set station offsets
         railwayFeature.properties['station-offsets'] = railwayLookup[id].stations.map((station, i, stations) =>
@@ -344,11 +342,11 @@ export function featureWorker() {
         let connectionCoords = [];
 
         group.forEach(stations => {
-            const coords = stations.map(station => {
-                    const stationRef = stationLookup[station],
-                        feature = featureLookup[stationRef.railway];
+            const coords = stations.map(id => {
+                    const {railway, coord} = stationLookup[id],
+                        feature = featureLookup[railway];
 
-                    return getCoord(nearestPointOnLine(feature, stationRef.coord));
+                    return getCoord(nearestPointOnLine(feature, coord));
                 }),
                 feature = coords.length === 1 ? point(coords[0]) : lineString(coords);
 

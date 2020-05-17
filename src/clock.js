@@ -1,35 +1,50 @@
 import configs from './configs';
 import * as helpers from './helpers';
 
-const clock = {
+export default class {
 
-    baseTime: 0,
+    constructor(date, speed) {
+        const me = this;
 
-    baseHighResTime: 0,
-
-    speed: 1,
+        me.reset();
+        me.setDate(date);
+        me.setSpeed(speed);
+    }
 
     reset() {
-        clock.baseTime = 0;
-        clock.baseHighResTime = 0;
-        clock.speed = 1;
-    },
+        const me = this;
+
+        me.baseTime = 0;
+        me.baseHighResTime = 0;
+        me.speed = 1;
+    }
 
     setSpeed(speed) {
-        clock.baseTime = clock.getTime() - Date.now() * speed;
-        clock.baseHighResTime = clock.getHighResTime() - performance.now() * speed;
-        clock.speed = speed;
-    },
+        if (isNaN(speed)) {
+            return;
+        }
+
+        const me = this;
+
+        me.baseTime = me.getTime() - Date.now() * speed;
+        me.baseHighResTime = me.getHighResTime() - performance.now() * speed;
+        me.speed = speed;
+    }
 
     setDate(date) {
-        const baseTime = clock.baseTime;
+        if (!(date instanceof Date)) {
+            return;
+        }
+
+        const me = this,
+            baseTime = me.baseTime;
 
         // Adjust JST back to local time
-        const offset = -clock.getTimezoneOffset();
+        const offset = -me.getTimezoneOffset();
 
-        clock.baseTime = date.getTime() + offset - Date.now() * clock.speed;
-        clock.baseHighResTime += clock.baseTime - baseTime;
-    },
+        me.baseTime = date.getTime() + offset - Date.now() * me.speed;
+        me.baseHighResTime += me.baseTime - baseTime;
+    }
 
     /**
       * Returns the date object in JST.
@@ -39,11 +54,13 @@ const clock = {
       * @returns {Date} Date object that represents the specified time in JST
       */
     getJSTDate(time) {
-        // Adjust local time to JST (UTC+9)
-        const offset = clock.getTimezoneOffset();
+        const me = this,
 
-        return new Date(helpers.valueOrDefault(time, clock.getTime()) + offset);
-    },
+            // Adjust local time to JST (UTC+9)
+            offset = me.getTimezoneOffset();
+
+        return new Date(helpers.valueOrDefault(time, me.getTime()) + offset);
+    }
 
     /**
       * Returns the number of milliseconds since the Unix Epoch at the specified time.
@@ -53,22 +70,24 @@ const clock = {
       * @returns {number} The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
       */
     getTime(timeString) {
+        const me = this;
+
         if (!timeString) {
-            return clock.baseTime + Date.now() * clock.speed;
+            return me.baseTime + Date.now() * me.speed;
         } else {
-            const date = clock.getJSTDate(),
+            const date = me.getJSTDate(),
                 timeStrings = timeString.split(':'),
                 hours = +timeStrings[0],
                 minutes = +timeStrings[1],
 
                 // Adjust JST back to local time
                 // Special handling of time between midnight and 3am
-                offset = -clock.getTimezoneOffset() +
+                offset = -me.getTimezoneOffset() +
                     ((date.getHours() < 3 ? -1 : 0) + (hours < 3 ? 1 : 0)) * 86400000;
 
             return date.setHours(hours, minutes, 0, 0) + offset + configs.minDelay;
         }
-    },
+    }
 
     /**
       * Returns the time expression in JST.
@@ -78,12 +97,12 @@ const clock = {
       * @returns {number} Time expression in JST in "hh:mm" format
       */
     getTimeString(time) {
-        const date = clock.getJSTDate(time),
+        const date = this.getJSTDate(time),
             hours = `0${date.getHours()}`.slice(-2),
             minutes = `'0${date.getMinutes()}`.slice(-2);
 
         return `${hours}:${minutes}`;
-    },
+    }
 
     /**
       * Returns the number of milliseconds since the time origin.
@@ -91,13 +110,13 @@ const clock = {
       * @returns {number} The number of milliseconds elapsed since the time origin
       */
     getHighResTime() {
-        return clock.baseHighResTime + performance.now() * clock.speed;
-    },
+        const me = this;
+
+        return me.baseHighResTime + performance.now() * me.speed;
+    }
 
     getTimezoneOffset() {
         return (new Date().getTimezoneOffset() + 540) * 60000;
     }
 
-};
-
-export default clock;
+}

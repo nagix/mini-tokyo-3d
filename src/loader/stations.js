@@ -59,24 +59,23 @@ export default async function(url, key) {
 
     const lookup = helpers.buildLookup(data);
 
-    extra.forEach(station => {
-        const {id, railway, coord, title, altitude} = station;
-        let stationRef = lookup[id];
+    extra.forEach(({id, railway, coord, title, altitude}) => {
+        let station = lookup[id];
 
-        if (!stationRef) {
-            stationRef = lookup[id] = {
+        if (!station) {
+            station = lookup[id] = {
                 id,
                 railway,
                 title: {}
             };
-            data.push(stationRef);
+            data.push(station);
         }
         if (coord) {
-            stationRef.coord = coord;
+            station.coord = coord;
         }
-        Object.assign(stationRef.title, title);
+        Object.assign(station.title, title);
         if (altitude !== undefined) {
-            stationRef.altitude = altitude;
+            station.altitude = altitude;
         }
     });
 

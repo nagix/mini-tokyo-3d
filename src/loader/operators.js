@@ -15,13 +15,12 @@ export default async function(url, key) {
 
     const lookup = helpers.buildLookup(data);
 
-    extra.forEach(operator => {
-        const {id, title, color, tailcolor} = operator,
-            operatorRef = lookup[id];
+    extra.forEach(({id, title, color, tailcolor}) => {
+        const operator = lookup[id];
 
-        Object.assign(operatorRef.title, title);
-        operatorRef.color = color;
-        operatorRef.tailcolor = tailcolor;
+        Object.assign(operator.title, title);
+        operator.color = color;
+        operator.tailcolor = tailcolor;
     });
 
     loaderHelpers.saveJSON('build/data/operators.json.gz', data);

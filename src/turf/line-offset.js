@@ -5,7 +5,7 @@ import {getCoords} from '@turf/invariant';
 import nearestPointOnLine from '@turf/nearest-point-on-line';
 import polygonToLine from '@turf/polygon-to-line';
 import destination from './destination';
-import lineSlice from './lineSlice';
+import lineSlice from './line-slice';
 
 // Better version of turf.lineOffset
 export default function(geojson, distance) {
