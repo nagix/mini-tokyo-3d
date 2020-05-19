@@ -37,7 +37,9 @@ const RAILWAYS_FOR_TRAINTIMETABLES = [
     ['Toei.Asakusa'],
     ['Toei.Mita', 'Toei.Shinjuku'],
     ['Toei.Oedo', 'Toei.NipporiToneri'],
-    ['YokohamaMunicipal.Blue', 'YokohamaMunicipal.Green']
+    ['YokohamaMunicipal.Blue', 'YokohamaMunicipal.Green'],
+    ['Sotetsu.Main'],
+    ['Sotetsu.Izumino', 'Sotetsu.JRDirect'],
 ];
 
 const RAILWAY_YOKOSUKA = 'JR-East.Yokosuka',

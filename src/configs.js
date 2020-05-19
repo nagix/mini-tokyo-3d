@@ -91,7 +91,7 @@ const configs = {
     dataUrl: 'https://minitokyo3d.com/data',
 
     // Timestamp when the static data was last updated
-    lastStaticUpdate: '2020-05-07 09:00:00'
+    lastStaticUpdate: '2020-05-18 15:00:00'
 
 };
 
