@@ -446,12 +446,8 @@ function initialize(mt3d) {
             const station = mt3d.stationTitleLookup[event.target.value.toUpperCase()];
 
             if (station && station.coord) {
-                delete mt3d.markedObject;
-                delete mt3d.trackedObject;
-                popup.remove();
-                hideTimetable(mt3d.container);
-                stopViewAnimation();
-                disableTracking(mt3d.container);
+                markObject();
+                trackObject();
                 if (mt3d.isUndergroundVisible && !(station.altitude < 0)) {
                     helpers.dispatchClickEvent(mt3d.container, 'mapboxgl-ctrl-underground');
                 }
@@ -604,12 +600,8 @@ function initialize(mt3d) {
                 mt3d.isPlayback = !mt3d.isPlayback;
                 me.title = mt3d.dict[mt3d.isPlayback ? 'exit-playback' : 'enter-playback'];
                 stopAll();
-                delete mt3d.markedObject;
-                delete mt3d.trackedObject;
-                popup.remove();
-                hideTimetable(mt3d.container);
-                stopViewAnimation();
-                disableTracking(mt3d.container);
+                markObject();
+                trackObject();
                 if (mt3d.isPlayback) {
                     resetRailwayStatus();
                     classList.add('mapboxgl-ctrl-playback-active');
@@ -697,52 +689,14 @@ function initialize(mt3d) {
         }
 
         map.on('mousemove', e => {
-            const prevMarkedObject = mt3d.markedObject;
-
-            mt3d.markedObject = trainLayers.pickObject(e.point);
-            if (mt3d.markedObject) {
-                const {coord, altitude, object} = mt3d.markedObject.userData;
-
-                map.getCanvas().style.cursor = 'pointer';
-                popup.setLngLat(adjustCoord(coord, altitude))
-                    .setHTML(object.description)
-                    .addTo(map);
-                updateOutline();
-            } else if (popup.isOpen()) {
-                map.getCanvas().style.cursor = '';
-                popup.remove();
-            }
-
-            if (mt3d.markedObject !== prevMarkedObject && prevMarkedObject) {
-                prevMarkedObject.traverse(descendant => {
-                    if (descendant.name === 'cube') {
-                        descendant.remove(...descendant.children);
-                    }
-                });
-            }
+            markObject(trainLayers.pickObject(e.point));
         });
 
         map.on('click', e => {
-            stopViewAnimation();
-            mt3d.trackedObject = trainLayers.pickObject(e.point);
-            if (mt3d.trackedObject) {
-                const {altitude, object} = mt3d.trackedObject.userData;
+            const object = trainLayers.pickObject(e.point);
 
-                startViewAnimation();
-                enableTracking(mt3d.container);
-                if (mt3d.isUndergroundVisible !== (altitude < 0)) {
-                    helpers.dispatchClickEvent(mt3d.container, 'mapboxgl-ctrl-underground');
-                }
-                if (object.tt) {
-                    showTimetable(mt3d.container);
-                    setTrainTimetableText(object);
-                } else {
-                    hideTimetable(mt3d.container);
-                }
-            } else {
-                disableTracking(mt3d.container);
-                hideTimetable(mt3d.container);
-            }
+            markObject(object);
+            trackObject(object);
 
             // For development
             console.log(e.lngLat);
@@ -835,6 +789,7 @@ function initialize(mt3d) {
                 if (mt3d.trackedObject) {
                     const {coord, bearing, altitude, object} = mt3d.trackedObject.userData;
 
+                    refreshOutline();
                     if (object.timetableOffsets) {
                         setTrainTimetableMark(object);
                     }
@@ -889,7 +844,7 @@ function initialize(mt3d) {
 
             if (length === 0) {
                 const railway = mt3d.railwayLookup[train.r],
-                    {v: vehicle, tt: table} = train,
+                    {v: vehicle} = train,
                     car = new THREE.Group();
 
                 car.add(createCube(.88, 1.76, .88, vehicle ? mt3d.trainVehicleLookup[vehicle].color : railway.color));
@@ -900,14 +855,10 @@ function initialize(mt3d) {
 
                 // Reset marked/tracked object if it was marked/tracked before
                 if (mt3d.markedObject && mt3d.markedObject.userData.object === train) {
-                    mt3d.markedObject = cars[0];
-                    updateOutline();
+                    markObject(cars[0]);
                 }
                 if (mt3d.trackedObject && mt3d.trackedObject.userData.object === train) {
-                    mt3d.trackedObject = cars[0];
-                    if (table) {
-                        setTrainTimetableText(train);
-                    }
+                    trackObject(cars[0]);
                 }
             }
 
@@ -1140,12 +1091,10 @@ function initialize(mt3d) {
                         if (train.cars) {
                             updateTrainShape(train, 0);
                             if (markedObjectIndex !== -1) {
-                                mt3d.markedObject = train.cars[markedObjectIndex];
-                                updateOutline();
+                                markObject(train.cars[markedObjectIndex]);
                             }
                             if (trackedObjectIndex !== -1) {
-                                mt3d.trackedObject = train.cars[trackedObjectIndex];
-                                setTrainTimetableText(train);
+                                trackObject(train.cars[trackedObjectIndex]);
                             }
                         }
                         return;
@@ -1502,14 +1451,10 @@ function initialize(mt3d) {
                 cars.forEach(car => {
                     trainLayers.removeObject(car, 1000);
                     if (car === mt3d.markedObject && !keep) {
-                        delete mt3d.markedObject;
-                        popup.remove();
+                        markObject();
                     }
                     if (car === mt3d.trackedObject && !keep) {
-                        delete mt3d.trackedObject;
-                        hideTimetable(mt3d.container);
-                        stopViewAnimation();
-                        disableTracking(mt3d.container);
+                        trackObject();
                     }
                 });
             }
@@ -1527,13 +1472,10 @@ function initialize(mt3d) {
             animation.stop(animationID);
             trainLayers.removeObject(aircraft, 1000);
             if (aircraft === mt3d.markedObject) {
-                delete mt3d.markedObject;
-                popup.remove();
+                markObject();
             }
             if (aircraft === mt3d.trackedObject) {
-                delete mt3d.trackedObject;
-                stopViewAnimation();
-                disableTracking(mt3d.container);
+                trackObject();
             }
             delete flight.aircraft;
             delete flight.body;
@@ -1939,14 +1881,84 @@ function initialize(mt3d) {
             });
         }
 
-        function updateOutline() {
-            if (!mt3d.markedObject.getObjectByName('outline')) {
-                mt3d.markedObject.traverse(descendant => {
-                    if (descendant.name === 'cube') {
-                        descendant.add(createOutline(descendant));
-                    }
-                });
+        function markObject(object) {
+            if (mt3d.markedObject && mt3d.markedObject !== object) {
+                let outline;
+
+                while (outline = mt3d.markedObject.getObjectByName('outline-marked')) {
+                    outline.parent.remove(outline);
+                }
+                delete mt3d.markedObject;
+                if (popup.isOpen()) {
+                    map.getCanvas().style.cursor = '';
+                    popup.remove();
+                }
             }
+
+            if (object && object !== mt3d.markedObject) {
+                const {coord, altitude, object: trainOrFlight} = object.userData;
+
+                mt3d.markedObject = object;
+                map.getCanvas().style.cursor = 'pointer';
+                popup.setLngLat(adjustCoord(coord, altitude))
+                    .setHTML(trainOrFlight.description)
+                    .addTo(map);
+
+                if (!mt3d.markedObject.getObjectByName('outline-marked')) {
+                    mt3d.markedObject.traverse(descendant => {
+                        if (descendant.name === 'cube') {
+                            descendant.add(createOutline(descendant, 'outline-marked'));
+                        }
+                    });
+                }
+            }
+        }
+
+        function trackObject(object) {
+            if (mt3d.trackedObject) {
+                let outline;
+
+                while (outline = mt3d.trackedObject.getObjectByName('outline-tracked')) {
+                    outline.parent.remove(outline);
+                }
+                delete mt3d.trackedObject;
+                stopViewAnimation();
+                disableTracking(mt3d.container);
+                hideTimetable(mt3d.container);
+            }
+
+            if (object) {
+                const {altitude, object: train} = object.userData;
+
+                mt3d.trackedObject = object;
+                startViewAnimation();
+                enableTracking(mt3d.container);
+                if (mt3d.isUndergroundVisible !== (altitude < 0)) {
+                    helpers.dispatchClickEvent(mt3d.container, 'mapboxgl-ctrl-underground');
+                }
+                if (train.tt) {
+                    showTimetable(mt3d.container);
+                    setTrainTimetableText(train);
+                }
+
+                if (!object.getObjectByName('outline-tracked')) {
+                    object.traverse(descendant => {
+                        if (descendant.name === 'cube') {
+                            descendant.add(createOutline(descendant, 'outline-tracked'));
+                        }
+                    });
+                }
+            }
+        }
+
+        function refreshOutline() {
+            const p = performance.now() % 1500 / 1500 * 2;
+
+            mt3d.trackedObject.traverse(descendant => {
+                if (descendant.name === 'outline-tracked') {
+                    descendant.material.opacity = p < 1 ? p : 2 - p;
+                }
+            });
         }
 
         const dateComponents = [
@@ -2044,12 +2056,8 @@ function initialize(mt3d) {
                 container.querySelector('#edit-time-ok-button').addEventListener('click', () => {
                     if (mt3d.tempDate) {
                         stopAll();
-                        delete mt3d.markedObject;
-                        delete mt3d.trackedObject;
-                        popup.remove();
-                        hideTimetable(mt3d.container);
-                        stopViewAnimation();
-                        disableTracking(mt3d.container);
+                        markObject();
+                        trackObject();
 
                         mt3d.clock.setDate(mt3d.tempDate);
                         delete mt3d.tempDate;
@@ -2597,9 +2605,9 @@ function createCube(x, y, z, color) {
   */
 function setOpacity(object, opacity, factor) {
     object.traverse(({material: materials, name}) => {
-        const value = (name === 'outline' ? 1 : opacity) * helpers.valueOrDefault(factor, 1);
+        const value = (name === 'outline-marked' ? 1 : opacity) * helpers.valueOrDefault(factor, 1);
 
-        if (materials) {
+        if (materials && name !== 'outline-tracked') {
             const uniforms = materials.uniforms;
 
             if (uniforms) {
@@ -2656,7 +2664,7 @@ function createDelayMarker(dark) {
     return mesh;
 }
 
-function createOutline(object) {
+function createOutline(object, name) {
     const {width, height, depth} = object.geometry.parameters,
         {translate} = object.geometry.userData,
         outline = new THREE.Mesh(
@@ -2664,7 +2672,7 @@ function createOutline(object) {
             new THREE.MeshBasicMaterial({color: '#FFFFFF', side: THREE.BackSide, transparent: true})
         );
 
-    outline.name = 'outline';
+    outline.name = name;
     if (translate) {
         outline.geometry.translate(translate.x, translate.y, translate.z);
     }
