@@ -60,11 +60,7 @@ export default [{
 			],
 			extract: 'mini-tokyo-3d.css'
 		}),
-		commonjs({
-			namedExports: {
-				'probe.gl/env': ['global', 'isBrowser', 'getBrowser']
-			}
-		}),
+		commonjs(),
 		replace(Object.assign({
 			'process.env.NODE_ENV': '\'development\''
 		}, extraReplacement)),
@@ -92,11 +88,7 @@ export default [{
 			extract: 'mini-tokyo-3d.min.css',
 			minimize: true
 		}),
-		commonjs({
-			namedExports: {
-				'probe.gl/env': ['global', 'isBrowser', 'getBrowser']
-			}
-		}),
+		commonjs(),
 		replace(Object.assign({
 			'process.env.NODE_ENV': '\'production\''
 		}, extraReplacement)),

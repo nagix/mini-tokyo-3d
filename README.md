@@ -64,13 +64,14 @@ If you want to contribute, please start with translating the UI messages in the 
 
 ## About Data
 
-The data for this visualization are sourced from [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/), which includes station information and train timetables as well as real-time data such as train location information and status information of multiple railway lines in the Greater Tokyo area.
+The data for this visualization are sourced from the [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/) and the [Public Transportation Open Data Center](https://www.odpt.org), which includes station information and train timetables as well as real-time data such as train location information and status information of multiple railway lines in the Greater Tokyo area.
 
 ## How to Build
 
-First, get access tokens for the public transportation data and map tiles by signing up at [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/index.html#entry) and [Mapbox](https://account.mapbox.com/auth/signup/). Then, create a file named `secrets` in the following format in the root directory of the application.
+First, get access tokens for the public transportation data and map tiles by signing up at [Open Data Challenge for Public Transportation in Tokyo](https://developer-tokyochallenge.odpt.org/en/users/sign_up), [Public Transportation Open Data Center](https://developer.odpt.org/en/users/sign_up) and [Mapbox](https://account.mapbox.com/auth/signup/). Then, create a file named `secrets` which has access tokens in the following format in the root directory of the application.
 ```
 {
+    "tokyochallenge": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "mapbox": "pk.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxx"
 }
