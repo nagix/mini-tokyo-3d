@@ -9356,231 +9356,80 @@
 	}
 }, {
 	"id": "MIR.TsukubaExpress.Akihabara",
-	"railway": "MIR.TsukubaExpress",
 	"coord": [139.774255, 35.6987676],
-	"title": {
-		"ja": "秋葉原",
-		"en": "Akihabara",
-		"ko": "아키하바라",
-		"zh-Hans": "秋叶原",
-		"zh-Hant": "秋葉原"
-	},
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.ShinOkachimachi",
-	"railway": "MIR.TsukubaExpress",
 	"coord": [139.7820462, 35.70706],
-	"title": {
-		"ja": "新御徒町",
-		"en": "Shin-Okachimachi",
-		"ko": "신오카치마치",
-		"zh-Hans": "新御徒町",
-		"zh-Hant": "新御徒町"
-	},
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.Asakusa",
-	"railway": "MIR.TsukubaExpress",
 	"coord": [139.7922688, 35.7129624],
-	"title": {
-		"ja": "浅草",
-		"en": "Asakusa",
-		"ko": "아사쿠사",
-		"zh-Hans": "浅草",
-		"zh-Hant": "淺草"
-	},
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.MinamiSenju",
-	"railway": "MIR.TsukubaExpress",
 	"coord": [139.7990695, 35.7331746],
-	"title": {
-		"ja": "南千住",
-		"en": "Minami-Senju",
-		"ko": "미나미센주",
-		"zh-Hans": "南千住",
-		"zh-Hant": "南千住"
-	},
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.KitaSenju",
-	"railway": "MIR.TsukubaExpress",
-	"coord": [139.8051076, 35.7495276],
-	"title": {
-		"ja": "北千住",
-		"en": "Kita-Senju",
-		"ko": "기타센주",
-		"zh-Hans": "北千住",
-		"zh-Hant": "北千住"
-	}
+	"coord": [139.8051076, 35.7495276]
 }, {
 	"id": "MIR.TsukubaExpress.Aoi",
-	"railway": "MIR.TsukubaExpress",
 	"coord": [139.8203272, 35.7717401],
-	"title": {
-		"ja": "青井",
-		"en": "Aoi",
-		"ko": "아오이",
-		"zh-Hans": "青井",
-		"zh-Hant": "青井"
-	},
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.Rokucho",
-	"railway": "MIR.TsukubaExpress",
 	"coord": [139.8218755, 35.784856],
-	"title": {
-		"ja": "六町",
-		"en": "Rokucho",
-		"ko": "로쿠초",
-		"zh-Hans": "六町",
-		"zh-Hant": "六町"
-	},
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.Yashio",
-	"railway": "MIR.TsukubaExpress",
-	"coord": [139.8448300, 35.8078016],
-	"title": {
-		"ja": "八潮",
-		"en": "Yashio",
-		"ko": "야시오",
-		"zh-Hans": "八潮",
-		"zh-Hant": "八潮"
-	}
+	"coord": [139.8448300, 35.8078016]
 }, {
 	"id": "MIR.TsukubaExpress.MisatoChuo",
-	"railway": "MIR.TsukubaExpress",
-	"coord": [139.8783938, 35.8245212],
-	"title": {
-		"ja": "三郷中央",
-		"en": "Misato-chuo",
-		"ko": "미사토추오",
-		"zh-Hans": "三乡中央",
-		"zh-Hant": "三鄉中央"
-	}
+	"coord": [139.8783938, 35.8245212]
 }, {
 	"id": "MIR.TsukubaExpress.MinamiNagareyama",
-	"railway": "MIR.TsukubaExpress",
 	"coord": [139.9030981, 35.8385226],
-	"title": {
-		"ja": "南流山",
-		"en": "Minami-Nagareyama",
-		"ko": "미나미나가레야마",
-		"zh-Hans": "南流山",
-		"zh-Hant": "南流山"
-	},
 	"altitude": -1
 }, {
-	"id": "MIR.TsukubaExpress.NagareyamaCentralpark",
-	"railway": "MIR.TsukubaExpress",
+	"id": "MIR.TsukubaExpress.NagareyamaCentralPark",
 	"coord": [139.9152693, 35.8545821],
 	"title": {
-		"ja": "流山​セントラルパーク",
-		"en": "Nagareyama-centralpark",
-		"ko": "나가레야마 센트럴 파크",
-		"zh-Hans": "流山中央公园",
-		"zh-Hant": "流山中央公園"
+		"ja": "流山​セントラルパーク"
 	}
 }, {
 	"id": "MIR.TsukubaExpress.NagareyamaOtakanomori",
-	"railway": "MIR.TsukubaExpress",
 	"coord": [139.9250718, 35.8718459],
 	"title": {
-		"ja": "流山​おおたか​の​森",
-		"en": "Nagareyama-otakanomori",
-		"ko": "나가레야마오타카노모리",
-		"zh-Hans": "流山大鹰之森",
-		"zh-Hant": "流山大鷹之森"
+		"ja": "流山​おおたか​の​森"
 	}
 }, {
 	"id": "MIR.TsukubaExpress.KashiwanohaCampus",
-	"railway": "MIR.TsukubaExpress",
 	"coord": [139.9525375, 35.8934206],
 	"title": {
-		"ja": "柏​の​葉​キャンパス",
-		"en": "Kashiwanoha-campus",
-		"ko": "가시와노하 캠퍼스",
-		"zh-Hans": "柏之叶校园",
-		"zh-Hant": "柏之葉校園"
+		"ja": "柏​の​葉​キャンパス"
 	}
 }, {
 	"id": "MIR.TsukubaExpress.KashiwaTanaka",
-	"railway": "MIR.TsukubaExpress",
-	"coord": [139.9575869, 35.9109694],
-	"title": {
-		"ja": "柏たなか",
-		"en": "Kashiwa-Tanaka",
-		"ko": "가시와타나카",
-		"zh-Hans": "柏田中",
-		"zh-Hant": "柏田中"
-	}
+	"coord": [139.9575869, 35.9109694]
 }, {
 	"id": "MIR.TsukubaExpress.Moriya",
-	"railway": "MIR.TsukubaExpress",
-	"coord": [139.991923, 35.9500735],
-	"title": {
-		"ja": "守谷",
-		"en": "Moriya",
-		"ko": "모리야",
-		"zh-Hans": "守谷",
-		"zh-Hant": "守谷"
-	}
+	"coord": [139.991923, 35.9500735]
 }, {
 	"id": "MIR.TsukubaExpress.Miraidaira",
-	"railway": "MIR.TsukubaExpress",
-	"coord": [140.0383201, 35.9943497],
-	"title": {
-		"ja": "みらい平",
-		"en": "Miraidaira",
-		"ko": "미라이다이라",
-		"zh-Hans": "未来平",
-		"zh-Hant": "未來平"
-	}
+	"coord": [140.0383201, 35.9943497]
 }, {
 	"id": "MIR.TsukubaExpress.Midorino",
-	"railway": "MIR.TsukubaExpress",
-	"coord": [140.0563392, 36.0298606],
-	"title": {
-		"ja": "みどりの",
-		"en": "Midorino",
-		"ko": "미도리노",
-		"zh-Hans": "绿野",
-		"zh-Hant": "綠野"
-	}
+	"coord": [140.0563392, 36.0298606]
 }, {
-	"id": "MIR.TsukubaExpress.BampakuKinenkoen",
-	"railway": "MIR.TsukubaExpress",
-	"coord": [140.0594905, 36.0583204],
-	"title": {
-		"ja": "万博記念公園",
-		"en": "Bampaku-kinenkoen",
-		"ko": "반파쿠키넨코엔",
-		"zh-Hans": "万博纪念公园",
-		"zh-Hant": "萬博紀念公園"
-	}
+	"id": "MIR.TsukubaExpress.BampakuKinenKoen",
+	"coord": [140.0594905, 36.0583204]
 }, {
 	"id": "MIR.TsukubaExpress.KenkyuGakuen",
-	"railway": "MIR.TsukubaExpress",
-	"coord": [140.0823923, 36.0821361],
-	"title": {
-		"ja": "研究学園",
-		"en": "Kenkyu-gakuen",
-		"ko": "겐큐가쿠엔",
-		"zh-Hans": "研究学园",
-		"zh-Hant": "研究學園"
-	}
+	"coord": [140.0823923, 36.0821361]
 }, {
 	"id": "MIR.TsukubaExpress.Tsukuba",
-	"railway": "MIR.TsukubaExpress",
 	"coord": [140.111247, 36.0825835],
-	"title": {
-		"ja": "つくば",
-		"en": "Tsukuba",
-		"ko": "쓰쿠바",
-		"zh-Hans": "筑波",
-		"zh-Hant": "筑波"
-	},
 	"altitude": -1
 }, {
 	"id": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -10150,6 +9999,158 @@
 		"zh-Hant": "羽田機場第2航廈"
 	},
 	"altitude": -1
+}, {
+	"id": "TamaMonorail.TamaMonorail.TamaCenter",
+	"coord": [139.4228962, 35.6239472],
+	"title": {
+		"ko": "다마 센터",
+		"zh-Hans": "多摩中心",
+		"zh-Hant": "多摩中心"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.Matsugaya",
+	"coord": [139.4220673, 35.6318225],
+	"title": {
+		"ko": "마쓰가야",
+		"zh-Hans": "松谷",
+		"zh-Hant": "松谷"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.OtsukaTeikyoDaigaku",
+	"coord": [139.4164754, 35.6368916],
+	"title": {
+		"ko": "오쓰카·데이쿄 대학",
+		"zh-Hans": "大冢·帝京大学",
+		"zh-Hant": "大塚·帝京大學"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.ChuoDaigakuMeiseiDaigaku",
+	"coord": [139.4087644, 35.6418831],
+	"title": {
+		"ko": "주오 대학·메이세이 대학",
+		"zh-Hans": "中央大学·明星大学",
+		"zh-Hant": "中央大學·明星大學"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.TamaDobutsukoen",
+	"coord": [139.4037336, 35.6486656],
+	"title": {
+		"ko": "다마 동물공원",
+		"zh-Hans": "多摩动物公园",
+		"zh-Hant": "多摩動物公園"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.Hodokubo",
+	"coord": [139.4108303, 35.6552865],
+	"title": {
+		"ko": "호도쿠보",
+		"zh-Hans": "程久保",
+		"zh-Hant": "程久保"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.Takahatafudo",
+	"coord": [139.4152095, 35.6612775],
+	"title": {
+		"ko": "다카하타후도",
+		"zh-Hans": "高幡不动",
+		"zh-Hant": "高幡不動"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.Manganji",
+	"coord": [139.4200659, 35.6712772],
+	"title": {
+		"ko": "만간지",
+		"zh-Hans": "万愿寺",
+		"zh-Hant": "萬願寺"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.Koshukaido",
+	"coord": [139.4091769, 35.6783456],
+	"title": {
+		"ko": "고슈 가도",
+		"zh-Hans": "甲州街道",
+		"zh-Hant": "甲州街道"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.ShibasakiTaiikukan",
+	"coord": [139.4093056, 35.6898136],
+	"title": {
+		"ko": "시바사키 체육관",
+		"zh-Hans": "柴崎体育馆",
+		"zh-Hant": "柴崎體育館"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.TachikawaMinami",
+	"coord": [139.4126058, 35.6961997],
+	"title": {
+		"ko": "다치카와미나미",
+		"zh-Hans": "立川南",
+		"zh-Hant": "立川南"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.TachikawaKita",
+	"coord": [139.4124107, 35.6996479],
+	"title": {
+		"ko": "다치카와키타",
+		"zh-Hans": "立川北",
+		"zh-Hant": "立川北"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.Takamatsu",
+	"coord": [139.4132495, 35.7101506],
+	"title": {
+		"ko": "다카마쓰",
+		"zh-Hans": "高松",
+		"zh-Hant": "高松"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.Tachihi",
+	"coord": [139.4172387, 35.7144873],
+	"title": {
+		"ko": "다치히",
+		"zh-Hans": "立飞",
+		"zh-Hant": "立飛"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.IzumiTaiikukan",
+	"coord": [139.4195719, 35.7187931],
+	"title": {
+		"ko": "이즈미 체육관",
+		"zh-Hans": "泉体育馆",
+		"zh-Hant": "泉體育館"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.SunagawaNanaban",
+	"coord": [139.4181567, 35.7233887],
+	"title": {
+		"ko": "스나가와나나반",
+		"zh-Hans": "砂川七番",
+		"zh-Hant": "砂川七番"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.TamagawaJosui",
+	"coord": [139.4179263, 35.7320261],
+	"title": {
+		"ko": "다마가와조스이",
+		"zh-Hans": "玉川上水",
+		"zh-Hant": "玉川上水"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.Sakurakaido",
+	"coord": [139.4166469, 35.7390836],
+	"title": {
+		"ko": "사쿠라 가도",
+		"zh-Hans": "樱街道",
+		"zh-Hant": "櫻街道"
+	}
+}, {
+	"id": "TamaMonorail.TamaMonorail.Kamikitadai",
+	"coord": [139.4158199, 35.7458297],
+	"title": {
+		"ko": "가미키타다이",
+		"zh-Hans": "上北台",
+		"zh-Hant": "上北台"
+	}
 }, {
 	"id": "JR-East.Hachiko.Hakonegasaki",
 	"title": {

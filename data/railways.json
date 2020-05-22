@@ -1172,40 +1172,6 @@
 	"carComposition": 6
 }, {
 	"id": "MIR.TsukubaExpress",
-	"title": {
-		"ja": "つくばエクスプレス",
-		"en": "Tsukuba Express Line",
-		"ko": "쓰쿠바 익스프레스",
-		"zh-Hans": "筑波快线",
-		"zh-Hant": "筑波快線"
-	},
-	"stations": {
-		"index": 0,
-		"delete": 0,
-		"insert": [
-			"MIR.TsukubaExpress.Akihabara",
-			"MIR.TsukubaExpress.ShinOkachimachi",
-			"MIR.TsukubaExpress.Asakusa",
-			"MIR.TsukubaExpress.MinamiSenju",
-			"MIR.TsukubaExpress.KitaSenju",
-			"MIR.TsukubaExpress.Aoi",
-			"MIR.TsukubaExpress.Rokucho",
-			"MIR.TsukubaExpress.Yashio",
-			"MIR.TsukubaExpress.MisatoChuo",
-			"MIR.TsukubaExpress.MinamiNagareyama",
-			"MIR.TsukubaExpress.NagareyamaCentralpark",
-			"MIR.TsukubaExpress.NagareyamaOtakanomori",
-			"MIR.TsukubaExpress.KashiwanohaCampus",
-			"MIR.TsukubaExpress.KashiwaTanaka",
-			"MIR.TsukubaExpress.Moriya",
-			"MIR.TsukubaExpress.Miraidaira",
-			"MIR.TsukubaExpress.Midorino",
-			"MIR.TsukubaExpress.BampakuKinenkoen",
-			"MIR.TsukubaExpress.KenkyuGakuen",
-			"MIR.TsukubaExpress.Tsukuba"
-		]
-	},
-	"ascending": "Outbound",
 	"color": "#000084",
 	"carComposition": 6
 }, {
@@ -1307,4 +1273,13 @@
 	"ascending": "Outbound",
 	"color": "#003686",
 	"carComposition": 6
+}, {
+	"id": "TamaMonorail.TamaMonorail",
+	"title": {
+		"ko": "다마 모노레일",
+		"zh-Hans": "多摩单轨电车",
+		"zh-Hant": "多摩單軌電車"
+	},
+	"color": "#FF6633",
+	"carComposition": 4
 }]

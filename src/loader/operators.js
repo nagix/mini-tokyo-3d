@@ -1,12 +1,14 @@
 import * as helpers from '../helpers';
 import * as loaderHelpers from './helpers';
 
-export default async function(url, key) {
+export default async function(options) {
+
+    const {url, key} = options.tokyochallenge;
 
     const [original, extra] = await Promise.all([
-        loaderHelpers.loadJSON(`${url}odpt:Operator?acl:consumerKey=${key}`),
-        loaderHelpers.loadJSON('data/operators.json')
-    ]);
+        `${url}odpt:Operator?acl:consumerKey=${key}`,
+        'data/operators.json'
+    ].map(loaderHelpers.loadJSON));
 
     const data = original.map(operator => ({
         id: helpers.removePrefix(operator['owl:sameAs']),

@@ -1,31 +1,47 @@
 import * as helpers from '../helpers';
 import * as loaderHelpers from './helpers';
 
-const OPERATORS_FOR_TRAINTYPES = [
-    'JR-East',
-    'TWR',
-    'TokyoMetro',
-    'Toei',
-    'YokohamaMunicipal',
-    'Keio',
-    'Keikyu',
-    'Keisei',
-    'Seibu',
-    'Tokyu',
-    'Yurikamome'
-];
+const OPERATORS_FOR_TRAINTYPES = {
+    tokyochallenge: [
+        'JR-East',
+        'TWR',
+        'TokyoMetro',
+        'Toei',
+        'YokohamaMunicipal',
+        'Keio',
+        'Keikyu',
+        'Keisei',
+        'Seibu',
+        'Tokyu',
+        'Yurikamome'
+    ],
+    odpt: [
+        'MIR',
+        'TamaMonorail'
+    ]
+};
 
-export default async function(url, key) {
+export default async function(options) {
 
-    const operators = OPERATORS_FOR_TRAINTYPES
-        .map(operator => `odpt.Operator:${operator}`);
+    const urls = [];
 
-    const [original, extra] = await Promise.all([
-        loaderHelpers.loadJSON(`${url}odpt:TrainType?odpt:operator=${operators.join(',')}&acl:consumerKey=${key}`),
-        loaderHelpers.loadJSON('data/train-types.json')
-    ]);
+    Object.keys(OPERATORS_FOR_TRAINTYPES).forEach(source => {
+        const {url, key} = options[source],
+            operators = OPERATORS_FOR_TRAINTYPES[source]
+                .map(operator => `odpt.Operator:${operator}`)
+                .join(',');
 
-    const data = original.map(type => ({
+        urls.push(`${url}odpt:TrainType?odpt:operator=${operators}&acl:consumerKey=${key}`);
+    });
+
+    const original = await Promise.all([
+        ...urls,
+        'data/train-types.json'
+    ].map(loaderHelpers.loadJSON));
+
+    const extra = original.pop();
+
+    const data = [].concat(...original).map(type => ({
         id: helpers.removePrefix(type['owl:sameAs']),
         title: type['odpt:trainTypeTitle']
     }));

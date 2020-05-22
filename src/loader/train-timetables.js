@@ -11,36 +11,91 @@ const CALENDAR_POSTFIXES = [
     'holiday'
 ];
 
-const RAILWAYS_FOR_TRAINTIMETABLES = [
-    ['JR-East.Yamanote'],
-    ['JR-East.ChuoRapid'],
-    ['JR-East.Ome', 'JR-East.Itsukaichi'],
-    ['JR-East.ChuoSobuLocal'],
-    ['JR-East.Tokaido', 'JR-East.Utsunomiya', 'JR-East.Takasaki'],
-    ['JR-East.KeihinTohokuNegishi'],
-    ['JR-East.JobanRapid', 'JR-East.JobanLocal'],
-    ['JR-East.SobuRapid', 'JR-East.Sobu', 'JR-East.Narita', 'JR-East.NaritaAirportBranch'],
-    ['JR-East.Uchibo', 'JR-East.Sotobo'],
-    ['JR-East.Yokosuka', 'JR-East.Keiyo'],
-    ['JR-East.SaikyoKawagoe', 'JR-East.ShonanShinjuku', 'JR-East.SotetsuDirect'],
-    ['JR-East.Tsurumi', 'JR-East.TsurumiUmiShibauraBranch', 'JR-East.TsurumiOkawaBranch', 'JR-East.Nambu', 'JR-East.NambuBranch'],
-    ['JR-East.Musashino', 'JR-East.Yokohama', 'TWR.Rinkai'],
-    ['TokyoMetro.Ginza'],
-    ['TokyoMetro.Marunouchi'],
-    ['TokyoMetro.MarunouchiBranch'],
-    ['TokyoMetro.Hibiya'],
-    ['TokyoMetro.Tozai'],
-    ['TokyoMetro.Chiyoda'],
-    ['TokyoMetro.Yurakucho'],
-    ['TokyoMetro.Hanzomon'],
-    ['TokyoMetro.Namboku', 'TokyoMetro.Fukutoshin'],
-    ['Toei.Asakusa'],
-    ['Toei.Mita', 'Toei.Shinjuku'],
-    ['Toei.Oedo', 'Toei.NipporiToneri'],
-    ['YokohamaMunicipal.Blue', 'YokohamaMunicipal.Green'],
-    ['Sotetsu.Main'],
-    ['Sotetsu.Izumino', 'Sotetsu.JRDirect'],
-];
+const RAILWAYS_FOR_TRAINTIMETABLES = {
+    tokyochallenge: [[
+        'JR-East.Yamanote'
+    ], [
+        'JR-East.ChuoRapid'
+    ], [
+        'JR-East.Ome',
+        'JR-East.Itsukaichi'
+    ], [
+        'JR-East.ChuoSobuLocal'
+    ], [
+        'JR-East.Tokaido',
+        'JR-East.Utsunomiya',
+        'JR-East.Takasaki'
+    ], [
+        'JR-East.KeihinTohokuNegishi'
+    ], [
+        'JR-East.JobanRapid',
+        'JR-East.JobanLocal'
+    ], [
+        'JR-East.SobuRapid',
+        'JR-East.Sobu',
+        'JR-East.Narita',
+        'JR-East.NaritaAirportBranch'
+    ], [
+        'JR-East.Uchibo',
+        'JR-East.Sotobo'
+    ], [
+        'JR-East.Yokosuka',
+        'JR-East.Keiyo'
+    ], [
+        'JR-East.SaikyoKawagoe',
+        'JR-East.ShonanShinjuku',
+        'JR-East.SotetsuDirect'
+    ], [
+        'JR-East.Tsurumi',
+        'JR-East.TsurumiUmiShibauraBranch',
+        'JR-East.TsurumiOkawaBranch',
+        'JR-East.Nambu',
+        'JR-East.NambuBranch'
+    ], [
+        'JR-East.Musashino',
+        'JR-East.Yokohama',
+        'TWR.Rinkai'
+    ], [
+        'TokyoMetro.Ginza'
+    ], [
+        'TokyoMetro.Marunouchi'
+    ], [
+        'TokyoMetro.MarunouchiBranch'
+    ], [
+        'TokyoMetro.Hibiya'
+    ], [
+        'TokyoMetro.Tozai'
+    ], [
+        'TokyoMetro.Chiyoda'
+    ], [
+        'TokyoMetro.Yurakucho'
+    ], [
+        'TokyoMetro.Hanzomon'
+    ], [
+        'TokyoMetro.Namboku',
+        'TokyoMetro.Fukutoshin'
+    ], [
+        'Toei.Asakusa'
+    ], [
+        'Toei.Mita',
+        'Toei.Shinjuku'
+    ], [
+        'Toei.Oedo',
+        'Toei.NipporiToneri'
+    ], [
+        'YokohamaMunicipal.Blue',
+        'YokohamaMunicipal.Green'
+    ], [
+        'Sotetsu.Main'
+    ], [
+        'Sotetsu.Izumino',
+        'Sotetsu.JRDirect'
+    ]],
+    odpt: [[
+        'MIR.TsukubaExpress',
+        'TamaMonorail.TamaMonorail'
+    ]]
+};
 
 const RAILWAY_YOKOSUKA = 'JR-East.Yokosuka',
     RAILWAY_SHONANSHINJUKU = 'JR-East.ShonanShinjuku',
@@ -77,17 +132,26 @@ const STATION_KEIYO_NISHIFUNABASHI = 'JR-East.Keiyo.NishiFunabashi',
     STATION_OEDO_TOCHOMAE = 'Toei.Oedo.Tochomae',
     STATION_OEDO_SHINJUKUNISHIGUCHI = 'Toei.Oedo.ShinjukuNishiguchi';
 
-export default async function(url, key) {
+export default async function(options) {
 
     return Promise.all(CALENDARS.map(async (calendar, i) => {
-        const original = await Promise.all(
-            RAILWAYS_FOR_TRAINTIMETABLES.map(railwayGroup => {
-                const railways = railwayGroup.map(railway => `odpt.Railway:${railway}`);
-                return loaderHelpers.loadJSON(`${url}odpt:TrainTimetable?odpt:railway=${railways.join(',')}&odpt:calendar=odpt.Calendar:${calendar}&acl:consumerKey=${key}`);
-            }).concat(
-                loaderHelpers.loadJSON(`data/timetable-${CALENDAR_POSTFIXES[i]}.json`)
-            )
-        );
+        const urls = [];
+
+        Object.keys(RAILWAYS_FOR_TRAINTIMETABLES).forEach(source => {
+            const {url, key} = options[source];
+            RAILWAYS_FOR_TRAINTIMETABLES[source].forEach(railwayGroup => {
+                const railways = railwayGroup
+                    .map(railway => `odpt.Railway:${railway}`)
+                    .join(',');
+
+                urls.push(`${url}odpt:TrainTimetable?odpt:railway=${railways}&odpt:calendar=odpt.Calendar:${calendar}&acl:consumerKey=${key}`);
+            });
+        });
+
+        const original = await Promise.all([
+            ...urls,
+            `data/timetable-${CALENDAR_POSTFIXES[i]}.json`
+        ].map(loaderHelpers.loadJSON));
 
         const extra = original.pop();
 

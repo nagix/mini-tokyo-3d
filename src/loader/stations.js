@@ -1,47 +1,65 @@
 import * as helpers from '../helpers';
 import * as loaderHelpers from './helpers';
 
-const OPERATORS_FOR_STATIONS = [
-    'JR-East',
-    'JR-Central',
-    'JR-West',
-    'JR-Shikoku',
-    'TWR',
-    'TokyoMetro',
-    'Toei',
-    'YokohamaMunicipal',
-    'Keio',
-    'Keikyu',
-    'Keisei',
-    'Hokuso',
-    'Shibayama',
-    'Tobu',
-    'Aizu',
-    'Seibu',
-    'Chichibu',
-    'Odakyu',
-    'HakoneTozan',
-    'Tokyu',
-    'Minatomirai',
-    'Sotetsu',
-    'SaitamaRailway',
-    'ToyoRapid',
-    'ShinKeisei',
-    'Yurikamome',
-    'Izukyu',
-    'IzuHakone',
-    'Fujikyu'
-];
+const OPERATORS_FOR_STATIONS = {
+    tokyochallenge: [[
+        'JR-East',
+        'JR-Central',
+        'JR-West',
+        'JR-Shikoku',
+    ], [
+        'TWR',
+        'TokyoMetro',
+        'Toei',
+        'YokohamaMunicipal'
+    ], [
+        'Keio',
+        'Keikyu',
+        'Keisei',
+        'Hokuso',
+        'Shibayama',
+        'Tobu',
+        'Aizu',
+        'Seibu',
+        'Chichibu',
+        'Odakyu',
+        'HakoneTozan',
+        'Tokyu',
+        'Minatomirai',
+        'Sotetsu',
+        'SaitamaRailway',
+        'ToyoRapid',
+        'ShinKeisei',
+        'Yurikamome',
+        'Izukyu',
+        'IzuHakone',
+        'Fujikyu'
+    ]],
+    odpt: [[
+        'MIR',
+        'TamaMonorail'
+    ]]
+};
 
-export default async function(url, key) {
+export default async function(options) {
 
-    const original = await Promise.all(
-        OPERATORS_FOR_STATIONS.map(operator =>
-            loaderHelpers.loadJSON(`${url}odpt:Station?odpt:operator=odpt.Operator:${operator}&acl:consumerKey=${key}`)
-        ).concat(
-            loaderHelpers.loadJSON('data/stations.json')
-        )
-    );
+    const urls = [];
+
+    Object.keys(OPERATORS_FOR_STATIONS).forEach(source => {
+        const {url, key} = options[source];
+        OPERATORS_FOR_STATIONS[source].forEach(operatorGroup => {
+            const operators = operatorGroup
+                .map(operator => `odpt.Operator:${operator}`)
+                .join(',');
+
+            urls.push(`${url}odpt:Station?odpt:operator=${operators}&acl:consumerKey=${key}`);
+        });
+    });
+
+    const original = await Promise.all([
+        ...urls,
+        'data/stations.json'
+    ].map(loaderHelpers.loadJSON));
 
     const extra = original.pop();
 

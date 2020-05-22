@@ -89,9 +89,9 @@ function easeInOutQuad(t) {
 export default async function(railwayLookup, stationLookup) {
 
     const [stationGroupData, coordinateData] = await Promise.all([
-        loaderHelpers.loadJSON('data/station-groups.json'),
-        loaderHelpers.loadJSON('data/coordinates.json')
-    ]);
+        'data/station-groups.json',
+        'data/coordinates.json'
+    ].map(loaderHelpers.loadJSON));
 
     const transitStations = [].concat(...stationGroupData.map(
         group => [].concat(...group)

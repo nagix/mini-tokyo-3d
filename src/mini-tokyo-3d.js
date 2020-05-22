@@ -19,19 +19,25 @@ import WeatherLayer from './weather-layer';
 import destination from './turf/destination';
 import featureFilter from './turf/feature-filter';
 
-const OPERATORS_FOR_TRAININFORMATION = [
-    'JR-East',
-    'TWR',
-    'TokyoMetro',
-    'Toei',
-    'YokohamaMunicipal',
-    'Keio',
-    'Keikyu',
-    'Keisei',
-    'Tobu',
-    'Seibu',
-    'Tokyu'
-];
+const OPERATORS_FOR_TRAININFORMATION = {
+    tokyochallenge: [
+        'JR-East',
+        'TWR',
+        'TokyoMetro',
+        'Toei',
+        'YokohamaMunicipal',
+        'Keio',
+        'Keikyu',
+        'Keisei',
+        'Tobu',
+        'Seibu',
+        'Tokyu'
+    ],
+    odpt: [
+        'MIR',
+        'TamaMonorail'
+    ]
+};
 
 const OPERATORS_FOR_TRAINS = [
     'JR-East',
@@ -146,7 +152,7 @@ function loadData(dataUrl, lang, clock) {
         `${dataUrl}/airports.json.gz`,
         `${dataUrl}/flight-statuses.json.gz`,
         configs.secretsUrl
-    ].map(url => helpers.loadJSON(url))).then(data => ({
+    ].map(helpers.loadJSON)).then(data => ({
         dict: data[0],
         railwayData: data[1],
         stationData: data[2],
@@ -1519,20 +1525,30 @@ function initialize(mt3d) {
         }
 
         function loadRealtimeTrainData() {
-            const operators1 = OPERATORS_FOR_TRAININFORMATION
-                    .map(operator => `odpt.Operator:${operator}`)
-                    .join(','),
-                operators2 = OPERATORS_FOR_TRAINS
+            const urls = [];
+
+            Object.keys(OPERATORS_FOR_TRAININFORMATION).forEach(source => {
+                const url = configs.apiUrl[source],
+                    key = mt3d.e[source],
+                    operators = OPERATORS_FOR_TRAININFORMATION[source]
+                        .map(operator => `odpt.Operator:${operator}`)
+                        .join(',');
+
+                urls.push(`${url}odpt:TrainInformation?odpt:operator=${operators}&acl:consumerKey=${key}`);
+            });
+
+            const url = configs.apiUrl.tokyochallenge,
+                key = mt3d.e.tokyochallenge,
+                operators = OPERATORS_FOR_TRAINS
                     .map(operator => `odpt.Operator:${operator}`)
                     .join(',');
 
-            Promise.all([
-                helpers.loadJSON(`${configs.apiUrl}odpt:TrainInformation?odpt:operator=${operators1}&acl:consumerKey=${mt3d.e.odpt}`),
-                helpers.loadJSON(`${configs.apiUrl}odpt:Train?odpt:operator=${operators2}&acl:consumerKey=${mt3d.e.odpt}`)
-            ]).then(([trainInfoRefData, trainRefData]) => {
+            urls.push(`${url}odpt:Train?odpt:operator=${operators}&acl:consumerKey=${key}`);
+
+            Promise.all(urls.map(helpers.loadJSON)).then(trainData => {
                 mt3d.realtimeTrainLookup = {};
 
-                trainRefData.forEach(trainRef => {
+                trainData.pop().forEach(trainRef => {
                     const delay = (trainRef['odpt:delay'] || 0) * 1000,
                         carComposition = trainRef['odpt:carComposition'],
                         trainType = helpers.removePrefix(trainRef['odpt:trainType']),
@@ -1608,7 +1624,7 @@ function initialize(mt3d) {
 
                 resetRailwayStatus();
 
-                trainInfoRefData.forEach(trainInfoRef => {
+                [].concat(...trainData).forEach(trainInfoRef => {
                     const operatorID = helpers.removePrefix(trainInfoRef['odpt:operator']),
                         railwayID = helpers.removePrefix(trainInfoRef['odpt:railway']),
                         status = trainInfoRef['odpt:trainInformationStatus'],
@@ -1641,15 +1657,21 @@ function initialize(mt3d) {
         }
 
         function loadRealtimeFlightData() {
-            const operators = OPERATORS_FOR_FLIGHTINFORMATION
-                .map(operator => `odpt.Operator:${operator}`)
-                .join(',');
+            const urls = [],
+                url = configs.apiUrl.tokyochallenge,
+                key = mt3d.e.tokyochallenge,
+                operators = OPERATORS_FOR_FLIGHTINFORMATION
+                    .map(operator => `odpt.Operator:${operator}`)
+                    .join(',');
+
+            ['Arrival', 'Departure'].forEach(type => {
+                urls.push(`${url}odpt:FlightInformation${type}?odpt:operator=${operators}&acl:consumerKey=${key}`);
+            });
 
             Promise.all([
-                helpers.loadJSON(configs.atisUrl)
-            ].concat(['Arrival', 'Departure'].map(type =>
-                helpers.loadJSON(`${configs.apiUrl}odpt:FlightInformation${type}?odpt:operator=${operators}&acl:consumerKey=${mt3d.e.odpt}`)
-            ))).then(([atisData, arrivalData, departureData]) => {
+                configs.atisUrl,
+                ...urls
+            ].map(helpers.loadJSON)).then(([atisData, arrivalData, departureData]) => {
                 const {landing, departure} = atisData,
                     pattern = [landing.join('/'), departure.join('/')].join(' '),
                     flightQueue = {};
@@ -1885,7 +1907,7 @@ function initialize(mt3d) {
             if (mt3d.markedObject && mt3d.markedObject !== object) {
                 let outline;
 
-                while (outline = mt3d.markedObject.getObjectByName('outline-marked')) {
+                while ((outline = mt3d.markedObject.getObjectByName('outline-marked'))) {
                     outline.parent.remove(outline);
                 }
                 delete mt3d.markedObject;
@@ -1918,7 +1940,7 @@ function initialize(mt3d) {
             if (mt3d.trackedObject) {
                 let outline;
 
-                while (outline = mt3d.trackedObject.getObjectByName('outline-tracked')) {
+                while ((outline = mt3d.trackedObject.getObjectByName('outline-tracked'))) {
                     outline.parent.remove(outline);
                 }
                 delete mt3d.trackedObject;
