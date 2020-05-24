@@ -267,12 +267,6 @@ function initialize(mt3d) {
     mt3d.railwayLookup = helpers.buildLookup(mt3d.railwayData);
     mt3d.stationLookup = helpers.buildLookup(mt3d.stationData);
 
-    mt3d.stationData.forEach(({title}) => {
-        if (!mt3d.dict[title.ja]) {
-            mt3d.dict[title.ja] = title[mt3d.lang] || '';
-        }
-    });
-
     // Build feature lookup dictionary and update feature properties
     mt3d.featureLookup = {};
     featureEach(mt3d.featureCollection, feature => {
@@ -308,7 +302,7 @@ function initialize(mt3d) {
 
     map.once('styledata', () => {
         ['poi', 'poi_extra'].forEach(id => {
-            map.setLayoutProperty(id, 'text-field', mt3d.lang === 'ja' ? '{name_ja}' : ['get', ['get', 'name_ja'], ['literal', mt3d.dict]]);
+            map.setLayoutProperty(id, 'text-field', `{name_${mt3d.lang.match(/ja|ko|zh-Han[st]/) ? mt3d.lang : 'en'}}`);
         });
 
         [13, 14, 15, 16, 17, 18].forEach(zoom => {
