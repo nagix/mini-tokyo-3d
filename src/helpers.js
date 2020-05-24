@@ -1,4 +1,5 @@
 import pako from 'pako';
+import {parseCSSColor} from 'csscolorparser';
 
 export function loadJSON(url) {
     return new Promise((resolve, reject) => {
@@ -80,8 +81,8 @@ export function setLayerProps(map, id, props) {
 }
 
 export function isDarkBackground(map) {
-    const color = map.getLayer('background').paint._values['background-color'];
-    return luminance(color) < .5;
+    const [r, g, b] = parseCSSColor(map.getPaintProperty('background', 'background-color'));
+    return luminance({r, g, b}) < 127.5;
 }
 
 /**
@@ -98,7 +99,6 @@ export function getStyleColors(map) {
             'fill-extrusion': ['fill-extrusion-color']
         },
         layerTypes = Object.keys(paintPropertyKeys),
-        rgbaPattern = /rgba\((\d+),(\d+),(\d+),([\d\.]+)\)/,
         colors = [];
 
     map.getStyle().layers.filter(layer =>
@@ -108,15 +108,14 @@ export function getStyleColors(map) {
 
         paintPropertyKeys[type].forEach(key => {
             const prop = map.getPaintProperty(id, key);
-            let color;
 
             if (typeof prop === 'string') {
-                color = prop.match(rgbaPattern);
-                colors.push({id, key, r: color[1], g: color[2], b: color[3], a: color[4]});
+                const [r, g, b, a] = parseCSSColor(prop);
+                colors.push({id, key, r, g, b, a});
             } else if (typeof prop === 'object') {
                 prop.stops.forEach((item, i) => {
-                    color = item[1].match(rgbaPattern);
-                    colors.push({id, key, stops: i, r: color[1], g: color[2], b: color[3], a: color[4]});
+                    const [r, g, b, a] = parseCSSColor(item[1]);
+                    colors.push({id, key, stops: i, r, g, b, a});
                 });
             }
         });
@@ -166,7 +165,7 @@ export function scaleValues(obj, factor) {
 /**
   * Returns the relative luminance of the color
   * @param {object} color - Color object that has {r, g, b}
-  * @returns {number} Relative luminance betweem 0 and 1
+  * @returns {number} Relative luminance betweem 0 and 255
   */
 export function luminance(color) {
     return .2126 * color.r + .7152 * color.g + .0722 * color.b;
@@ -181,11 +180,6 @@ export function colorToRGBArray(color) {
     const c = parseInt(color.replace('#', ''), 16);
 
     return [Math.floor(c / 65536) % 256, Math.floor(c / 256) % 256, c % 256];
-}
-
-export function dispatchClickEvent(container, className) {
-    container.querySelector(`.${className}`)
-        .dispatchEvent(new MouseEvent('click'));
 }
 
 /**

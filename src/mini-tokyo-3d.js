@@ -110,14 +110,20 @@ export default class {
     constructor(options) {
         const me = this;
 
+        me.options = options;
         me.lang = helpers.getLang(options.lang);
         me.dataUrl = options.dataUrl || configs.dataUrl;
         me.container = typeof options.container === 'string' ?
             document.getElementById(options.container) : options.container;
+        me.searchControl = helpers.valueOrDefault(options.searchControl, true);
+        me.navigationControl = helpers.valueOrDefault(options.navigationControl, true);
+        me.fullscreenControl = helpers.valueOrDefault(options.fullscreenControl, true);
+        me.modeControl = helpers.valueOrDefault(options.modeControl, true);
+        me.infoControl = helpers.valueOrDefault(options.infoControl, true);
         me.clock = new Clock();
 
         me.isUndergroundVisible = false;
-        me.trackingMode = 'helicopter';
+        me.trackingMode = helpers.valueOrDefault(options.trackingMode, configs.defaultTrackingMode);
         me.isPlayback = false;
         me.isEditingTime = false;
         me.isWeatherVisible = false;
@@ -174,11 +180,12 @@ function initialize(mt3d) {
     const map = new mapboxgl.Map({
         container: mt3d.container.querySelector('#map'),
         style: `${mt3d.dataUrl}/osm-liberty.json`,
-        attributionControl: true,
+        customAttribution: mt3d.infoControl ? '' : configs.customAttribution,
         hash: true,
-        center: configs.originCoord,
-        zoom: configs.defaultZoom,
-        pitch: configs.defaultPitch
+        center: helpers.valueOrDefault(mt3d.options.center, configs.originCoord),
+        zoom: helpers.valueOrDefault(mt3d.options.zoom, configs.defaultZoom),
+        bearing: helpers.valueOrDefault(mt3d.options.bearing, configs.defaultBearing),
+        pitch: helpers.valueOrDefault(mt3d.options.pitch, configs.defaultPitch)
     });
 
     const unit = Math.pow(2, 14 - helpers.clamp(map.getZoom(), 13, 19));
@@ -454,12 +461,12 @@ function initialize(mt3d) {
             if (station && station.coord) {
                 markObject();
                 trackObject();
-                if (mt3d.isUndergroundVisible && !(station.altitude < 0)) {
-                    helpers.dispatchClickEvent(mt3d.container, 'mapboxgl-ctrl-underground');
+                if (mt3d.isUndergroundVisible) {
+                    setUndergroundMode(station.altitude < 0);
                 }
-                if (!mt3d.isUndergroundVisible && (station.altitude < 0)) {
+                if (!mt3d.isUndergroundVisible) {
                     map.once('moveend', () => {
-                        helpers.dispatchClickEvent(mt3d.container, 'mapboxgl-ctrl-underground');
+                        setUndergroundMode(station.altitude < 0);
                     });
                 }
                 map.flyTo({
@@ -480,168 +487,89 @@ function initialize(mt3d) {
             });
         }
 
-        let control = new MapboxGLButtonControl([{
-            className: 'mapboxgl-ctrl-search',
-            title: mt3d.dict['search'],
-            eventHandler() {
+        if (mt3d.searchControl) {
+            const control = new MapboxGLButtonControl([{
+                className: 'mapboxgl-ctrl-search',
+                title: mt3d.dict['search'],
+                eventHandler() {
+                    const me = this,
+                        {style} = me;
+
+                    if (style.width !== '240px') {
+                        style.width = '240px';
+                        searchBox.style.display = 'block';
+                        searchBox.value = '';
+                        searchBox.focus();
+                        setTimeout(() => {
+                            searchBox.style.opacity = 1;
+                        }, 300);
+                    } else {
+                        style.width = '29px';
+                        searchBox.style.display = 'none';
+                        searchBox.style.opacity = 0;
+                    }
+                }
+            }]);
+            map.addControl(control);
+        }
+
+        if (mt3d.navigationControl) {
+            const control = new mapboxgl.NavigationControl();
+
+            control._setButtonTitle = function(button) {
                 const me = this,
-                    {style} = me;
+                    title = button === me._zoomInButton ? mt3d.dict['zoom-in'] :
+                    button === me._zoomOutButton ? mt3d.dict['zoom-out'] :
+                    button === me._compass ? mt3d.dict['compass'] : '';
 
-                if (style.width !== '240px') {
-                    style.width = '240px';
-                    searchBox.style.display = 'block';
-                    searchBox.value = '';
-                    searchBox.focus();
-                    setTimeout(() => {
-                        searchBox.style.opacity = 1;
-                    }, 300);
-                } else {
-                    style.width = '29px';
-                    searchBox.style.display = 'none';
-                    searchBox.style.opacity = 0;
-                }
-            }
-        }]);
-        map.addControl(control);
+                button.title = title;
+                button.setAttribute('aria-label', title);
+            };
+            map.addControl(control);
+        }
 
-        control = new mapboxgl.NavigationControl();
-        control._setButtonTitle = function(button) {
-            const me = this,
-                title = button === me._zoomInButton ? mt3d.dict['zoom-in'] :
-                button === me._zoomOutButton ? mt3d.dict['zoom-out'] :
-                button === me._compass ? mt3d.dict['compass'] : '';
+        if (mt3d.fullscreenControl) {
+            const control = new mapboxgl.FullscreenControl();
 
-            button.title = title;
-            button.setAttribute('aria-label', title);
-        };
-        map.addControl(control);
-
-        control = new mapboxgl.FullscreenControl();
-        control._updateTitle = function() {
-            const me = this,
-                title = mt3d.dict[me._isFullscreen() ? 'exit-fullscreen' : 'enter-fullscreen'];
-
-            me._fullscreenButton.title = title;
-            me._fullscreenButton.setAttribute('aria-label', title);
-        };
-        map.addControl(control);
-
-        map.addControl(new MapboxGLButtonControl([{
-            className: 'mapboxgl-ctrl-underground',
-            title: mt3d.dict['enter-underground'],
-            eventHandler() {
+            control._updateTitle = function() {
                 const me = this,
-                    {classList} = me;
+                    title = mt3d.dict[me._isFullscreen() ? 'exit-fullscreen' : 'enter-fullscreen'];
 
-                mt3d.isUndergroundVisible = !mt3d.isUndergroundVisible;
-                me.title = mt3d.dict[mt3d.isUndergroundVisible ? 'exit-underground' : 'enter-underground'];
-                trainLayers.ug.setSemitransparent(!mt3d.isUndergroundVisible);
-                trainLayers.og.setSemitransparent(mt3d.isUndergroundVisible);
-                if (mt3d.isUndergroundVisible) {
-                    classList.add('mapboxgl-ctrl-underground-visible');
-                    map.setPaintProperty('background', 'background-color', 'rgb(16,16,16)');
-                } else {
-                    classList.remove('mapboxgl-ctrl-underground-visible');
-                    map.setPaintProperty('background', 'background-color', getStyleColorString(mt3d.styleColors[0], mt3d.clock));
+                me._fullscreenButton.title = title;
+                me._fullscreenButton.setAttribute('aria-label', title);
+            };
+            map.addControl(control);
+        }
+
+        if (mt3d.modeControl) {
+            const control = new MapboxGLButtonControl([{
+                className: 'mapboxgl-ctrl-underground',
+                title: mt3d.dict['enter-underground'],
+                eventHandler() {
+                    setUndergroundMode(!mt3d.isUndergroundVisible);
                 }
-                mt3d.styleOpacities.forEach(({id, key, opacity}) => {
-                    const factor = helpers.includes(id, '-og-') ? .25 : .0625;
-
-                    map.setPaintProperty(id, key, mt3d.isUndergroundVisible ?
-                        helpers.scaleValues(opacity, factor) : opacity);
-                });
-
-                animation.start({
-                    callback: (elapsed, duration) => {
-                        const t = elapsed / duration;
-
-                        [13, 14, 15, 16, 17, 18].forEach(zoom => {
-                            const opacity = mt3d.isUndergroundVisible ?
-                                1 * t + .0625 * (1 - t) : 1 * (1 - t) + .0625 * t;
-
-                            helpers.setLayerProps(map, `railways-ug-${zoom}`, {opacity});
-                            helpers.setLayerProps(map, `stations-ug-${zoom}`, {opacity});
-                        });
-                        Object.keys(mt3d.activeTrainLookup).forEach(key => {
-                            mt3d.activeTrainLookup[key].cars.forEach(car => {
-                                setOpacity(car, getObjectOpacity(car, mt3d.isUndergroundVisible, t));
-                            });
-                        });
-                        refreshDelayMarkers();
-                        Object.keys(mt3d.activeFlightLookup).forEach(key => {
-                            const aircraft = mt3d.activeFlightLookup[key].aircraft;
-                            setOpacity(aircraft, getObjectOpacity(aircraft, mt3d.isUndergroundVisible, t));
-                        });
-                    },
-                    duration: 300
-                });
-            }
-        }, {
-            className: 'mapboxgl-ctrl-track mapboxgl-ctrl-track-helicopter',
-            title: mt3d.dict['track'],
-            eventHandler(event) {
-                const {classList} = this;
-
-                if (mt3d.trackingMode === 'helicopter') {
-                    mt3d.trackingMode = 'train';
-                    classList.remove('mapboxgl-ctrl-track-helicopter');
-                    classList.add('mapboxgl-ctrl-track-train');
-                } else {
-                    mt3d.trackingMode = 'helicopter';
-                    classList.remove('mapboxgl-ctrl-track-train');
-                    classList.add('mapboxgl-ctrl-track-helicopter');
+            }, {
+                className: `mapboxgl-ctrl-track mapboxgl-ctrl-track-${mt3d.trackingMode}`,
+                title: mt3d.dict['track'],
+                eventHandler(event) {
+                    setTrackingMode(mt3d.trackingMode === 'helicopter' ? 'train' : 'helicopter');
+                    event.stopPropagation();
                 }
-                if (mt3d.trackedObject) {
-                    startViewAnimation();
+            }, {
+                className: 'mapboxgl-ctrl-playback',
+                title: mt3d.dict['enter-playback'],
+                eventHandler() {
+                    setPlaybackMode(!mt3d.isPlayback);
                 }
-                event.stopPropagation();
-            }
-        }, {
-            className: 'mapboxgl-ctrl-playback',
-            title: mt3d.dict['enter-playback'],
-            eventHandler() {
-                const me = this,
-                    {classList} = me;
-
-                mt3d.isPlayback = !mt3d.isPlayback;
-                me.title = mt3d.dict[mt3d.isPlayback ? 'exit-playback' : 'enter-playback'];
-                stopAll();
-                markObject();
-                trackObject();
-                if (mt3d.isPlayback) {
-                    resetRailwayStatus();
-                    classList.add('mapboxgl-ctrl-playback-active');
-                } else {
-                    classList.remove('mapboxgl-ctrl-playback-active');
+            }, {
+                className: 'mapboxgl-ctrl-weather',
+                title: mt3d.dict['show-weather'],
+                eventHandler() {
+                    setWeatherMode(!mt3d.isWeatherVisible);
                 }
-                mt3d.isEditingTime = false;
-                mt3d.clock.reset();
-                delete mt3d.tempDate;
-                if (mt3d.lastTimetableRefresh !== mt3d.clock.getTime('03:00')) {
-                    loadTimetableData();
-                    mt3d.lastTimetableRefresh = mt3d.clock.getTime('03:00');
-                }
-                updateClock();
-                refreshStyleColors();
-            }
-        }, {
-            className: 'mapboxgl-ctrl-weather',
-            title: mt3d.dict['show-weather'],
-            eventHandler() {
-                const me = this,
-                    {classList} = me;
-
-                mt3d.isWeatherVisible = !mt3d.isWeatherVisible;
-                me.title = mt3d.dict[mt3d.isWeatherVisible ? 'hide-weather' : 'show-weather'];
-                if (mt3d.isWeatherVisible) {
-                    classList.add('mapboxgl-ctrl-weather-active');
-                    loadWeatherData();
-                } else {
-                    classList.remove('mapboxgl-ctrl-weather-active');
-                    weatherLayer.clear();
-                }
-            }
-        }]), 'top-right');
+            }]);
+            map.addControl(control, 'top-right');
+        }
 
         const aboutPopup = new mapboxgl.Popup({
             closeButton: false,
@@ -650,18 +578,20 @@ function initialize(mt3d) {
             maxWidth: '300px'
         });
 
-        map.addControl(new MapboxGLButtonControl([{
-            className: 'mapboxgl-ctrl-about',
-            title: mt3d.dict['about'],
-            eventHandler() {
-                if (!aboutPopup.isOpen()) {
-                    updateAboutPopup();
-                    aboutPopup.addTo(map);
-                } else {
-                    aboutPopup.remove();
+        if (mt3d.infoControl) {
+            map.addControl(new MapboxGLButtonControl([{
+                className: 'mapboxgl-ctrl-about',
+                title: mt3d.dict['about'],
+                eventHandler() {
+                    if (!aboutPopup.isOpen()) {
+                        updateAboutPopup();
+                        aboutPopup.addTo(map);
+                    } else {
+                        aboutPopup.remove();
+                    }
                 }
-            }
-        }]));
+            }]));
+        }
 
         updateClock();
 
@@ -776,6 +706,7 @@ function initialize(mt3d) {
                 mt3d.lastFrameRefresh = Date.now();
 
                 if (Math.floor((now - configs.minDelay) / configs.trainRefreshInterval) !== Math.floor(mt3d.lastTrainRefresh / configs.trainRefreshInterval)) {
+                    refreshStyleColors();
                     if (mt3d.isPlayback) {
                         refreshTrains();
                         // refreshFlights();
@@ -783,7 +714,6 @@ function initialize(mt3d) {
                         loadRealtimeTrainData();
                         loadRealtimeFlightData();
                     }
-                    refreshStyleColors();
                     mt3d.lastTrainRefresh = now - configs.minDelay;
                 }
                 if (mt3d.markedObject) {
@@ -919,7 +849,7 @@ function initialize(mt3d) {
                 if (altitudeChanged) {
                     trainLayers.updateObject(car, 1000);
                     if (mt3d.trackedObject === car) {
-                        helpers.dispatchClickEvent(mt3d.container, 'mapboxgl-ctrl-underground');
+                        setUndergroundMode(!mt3d.isUndergroundVisible);
                     }
                 }
             }
@@ -1649,7 +1579,9 @@ function initialize(mt3d) {
 
                 refreshTrains();
                 refreshDelayMarkers();
-                updateAboutPopup();
+                if (aboutPopup.isOpen()) {
+                    updateAboutPopup();
+                }
             }).catch(error => {
                 refreshTrains();
                 console.log(error);
@@ -1868,6 +1800,168 @@ function initialize(mt3d) {
             });
         }
 
+        function updateUndergroundButton(enabled) {
+            const button = mt3d.container.querySelector('.mapboxgl-ctrl-underground');
+
+            if (button) {
+                const {classList} = button;
+
+                if (enabled) {
+                    button.title = mt3d.dict['exit-underground'];
+                    classList.add('mapboxgl-ctrl-underground-visible');
+                } else {
+                    button.title = mt3d.dict['enter-underground'];
+                    classList.remove('mapboxgl-ctrl-underground-visible');
+                }
+            }
+        }
+
+        function updateTrackingButton(mode) {
+            const button = mt3d.container.querySelector('.mapboxgl-ctrl-track');
+
+            if (button) {
+                const {classList} = button;
+
+                if (mode === 'helicopter') {
+                    classList.remove('mapboxgl-ctrl-track-train');
+                    classList.add('mapboxgl-ctrl-track-helicopter');
+                } else if (mode === 'train') {
+                    classList.remove('mapboxgl-ctrl-track-helicopter');
+                    classList.add('mapboxgl-ctrl-track-train');
+                } else if (mode) {
+                    classList.add('mapboxgl-ctrl-track-active');
+                } else {
+                    classList.remove('mapboxgl-ctrl-track-active');
+                }
+            }
+        }
+
+        function updatePlaybackButton(enabled) {
+            const button = mt3d.container.querySelector('.mapboxgl-ctrl-playback');
+
+            if (button) {
+                const {classList} = button;
+
+                if (enabled) {
+                    button.title = mt3d.dict['exit-playback'];
+                    classList.add('mapboxgl-ctrl-playback-active');
+                } else {
+                    button.title = mt3d.dict['enter-playback'];
+                    classList.remove('mapboxgl-ctrl-playback-active');
+                }
+            }
+        }
+
+        function updateWeatherButton(enabled) {
+            const button = mt3d.container.querySelector('.mapboxgl-ctrl-weather');
+
+            if (button) {
+                const {classList} = button;
+
+                if (enabled) {
+                    button.title = mt3d.dict['hide-weather'];
+                    classList.add('mapboxgl-ctrl-weather-active');
+                } else {
+                    button.title = mt3d.dict['show-weather'];
+                    classList.remove('mapboxgl-ctrl-weather-active');
+                }
+            }
+        }
+
+        function setUndergroundMode(enabled) {
+            if (mt3d.isUndergroundVisible === enabled) {
+                return;
+            }
+
+            updateUndergroundButton(enabled);
+            trainLayers.ug.setSemitransparent(!enabled);
+            trainLayers.og.setSemitransparent(enabled);
+            map.setPaintProperty('background', 'background-color',
+                enabled ? 'rgb(16,16,16)' : getStyleColorString(mt3d.styleColors[0], mt3d.clock));
+            mt3d.styleOpacities.forEach(({id, key, opacity}) => {
+                const factor = helpers.includes(id, '-og-') ? .25 : .0625;
+
+                map.setPaintProperty(id, key, enabled ?
+                    helpers.scaleValues(opacity, factor) : opacity);
+            });
+            mt3d.isUndergroundVisible = enabled;
+
+            animation.start({
+                callback: (elapsed, duration) => {
+                    const t = elapsed / duration;
+
+                    [13, 14, 15, 16, 17, 18].forEach(zoom => {
+                        const opacity = mt3d.isUndergroundVisible ?
+                            1 * t + .0625 * (1 - t) : 1 * (1 - t) + .0625 * t;
+
+                        helpers.setLayerProps(map, `railways-ug-${zoom}`, {opacity});
+                        helpers.setLayerProps(map, `stations-ug-${zoom}`, {opacity});
+                    });
+                    Object.keys(mt3d.activeTrainLookup).forEach(key => {
+                        mt3d.activeTrainLookup[key].cars.forEach(car => {
+                            setOpacity(car, getObjectOpacity(car, mt3d.isUndergroundVisible, t));
+                        });
+                    });
+                    refreshDelayMarkers();
+                    Object.keys(mt3d.activeFlightLookup).forEach(key => {
+                        const aircraft = mt3d.activeFlightLookup[key].aircraft;
+                        setOpacity(aircraft, getObjectOpacity(aircraft, mt3d.isUndergroundVisible, t));
+                    });
+                },
+                duration: 300
+            });
+        }
+
+        function setTrackingMode(mode) {
+            if (mt3d.trackingMode === mode) {
+                return;
+            }
+
+            updateTrackingButton(mode);
+            mt3d.trackingMode = mode;
+            if (mt3d.trackedObject) {
+                startViewAnimation();
+            }
+        }
+
+        function setPlaybackMode(enabled) {
+            if (mt3d.isPlayback === enabled) {
+                return;
+            }
+
+            updatePlaybackButton(enabled);
+            stopAll();
+            markObject();
+            trackObject();
+            if (enabled) {
+                resetRailwayStatus();
+            }
+            mt3d.isEditingTime = false;
+            mt3d.clock.reset();
+            delete mt3d.tempDate;
+            if (mt3d.lastTimetableRefresh !== mt3d.clock.getTime('03:00')) {
+                loadTimetableData();
+                mt3d.lastTimetableRefresh = mt3d.clock.getTime('03:00');
+            }
+            mt3d.isPlayback = enabled;
+            updateClock();
+            refreshStyleColors();
+        }
+
+        function setWeatherMode(enabled) {
+            if (mt3d.isWeatherVisible === enabled) {
+                return;
+            }
+
+            updateWeatherButton(enabled);
+            if (mt3d.isWeatherVisible) {
+                loadWeatherData();
+            } else {
+                weatherLayer.clear();
+            }
+            mt3d.isWeatherVisible = enabled;
+        }
+
         function refreshStyleColors() {
             mt3d.styleColors.forEach(item => {
                 const {id, key, stops} = item;
@@ -1945,7 +2039,7 @@ function initialize(mt3d) {
                 }
                 delete mt3d.trackedObject;
                 stopViewAnimation();
-                disableTracking(mt3d.container);
+                updateTrackingButton(false);
                 hideTimetable(mt3d.container);
             }
 
@@ -1954,10 +2048,8 @@ function initialize(mt3d) {
 
                 mt3d.trackedObject = object;
                 startViewAnimation();
-                enableTracking(mt3d.container);
-                if (mt3d.isUndergroundVisible !== (altitude < 0)) {
-                    helpers.dispatchClickEvent(mt3d.container, 'mapboxgl-ctrl-underground');
-                }
+                updateTrackingButton(true);
+                setUndergroundMode(altitude < 0);
                 if (train.tt) {
                     showTimetable(mt3d.container);
                     setTrainTimetableText(train);
@@ -2310,16 +2402,6 @@ function showErrorMessage(container) {
     container.querySelector('#loader').style.display = 'none';
     container.querySelector('#loading-error').innerHTML = 'Loading failed. Please reload the page.';
     container.querySelector('#loading-error').style.display = 'block';
-}
-
-function enableTracking(container) {
-    container.querySelector('.mapboxgl-ctrl-track')
-        .classList.add('mapboxgl-ctrl-track-active');
-}
-
-function disableTracking(container) {
-    container.querySelector('.mapboxgl-ctrl-track')
-        .classList.remove('mapboxgl-ctrl-track-active');
 }
 
 function showTimetable(container) {
