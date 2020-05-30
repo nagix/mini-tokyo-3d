@@ -861,6 +861,47 @@
 	"color": "#FF6600",
 	"carComposition": 10
 }, {
+	"id": "Seibu.S-Fukutoshin",
+	"title": {
+		"ja": "池袋線",
+		"en": "Ikebukuro Line",
+		"ko": "이케부쿠로 선",
+		"zh-Hans": "池袋线",
+		"zh-Hant": "池袋線"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"Seibu.S-Fukutoshin.Ikebukuro",
+			"Seibu.S-Fukutoshin.ShakujiiKoen"
+		]
+	},
+	"ascending": "Outbound",
+	"color": "#FF6600",
+	"carComposition": 10
+}, {
+	"id": "Seibu.S-Yurakucho",
+	"title": {
+		"ja": "池袋線",
+		"en": "Ikebukuro Line",
+		"ko": "이케부쿠로 선",
+		"zh-Hans": "池袋线",
+		"zh-Hant": "池袋線"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"Seibu.S-Yurakucho.Iidabashi",
+			"Seibu.S-Yurakucho.Nerima",
+			"Seibu.S-Yurakucho.ShakujiiKoen"
+		]
+	},
+	"ascending": "Outbound",
+	"color": "#FF6600",
+	"carComposition": 10
+}, {
 	"id": "Seibu.Shinjuku",
 	"title": {
 		"ko": "신주쿠 선",

@@ -108,6 +108,8 @@ const RAILWAY_YOKOSUKA = 'JR-East.Yokosuka',
     RAILWAY_MUSASHINOOMIYABRANCH = 'JR-East.MusashinoOmiyaBranch',
     RAILWAY_MUSASHINONISHIURAWABRANCH = 'JR-East.MusashinoNishiUrawaBranch',
     RAILWAY_CHUORAPID = 'JR-East.ChuoRapid',
+    RAILWAY_FUKUTOSHIN = 'TokyoMetro.Fukutoshin',
+    RAILWAY_YURAKUCHO = 'TokyoMetro.Yurakucho',
     RAILWAY_OEDO = 'Toei.Oedo';
 
 const RAILWAYS_FOR_SOBURAPID = [
@@ -119,6 +121,8 @@ const RAILWAYS_FOR_SOBURAPID = [
 const RAIL_DIRECTION_OUTBOUND = 'Outbound',
     RAIL_DIRECTION_INBOUND = 'Inbound';
 
+const TRAINTYPE_STRAIN = 'TokyoMetro.S-TRAIN';
+
 const TRAINTYPES_FOR_SOBURAPID = [
     'JR-East.Rapid',
     'JR-East.LimitedExpress'
@@ -129,6 +133,8 @@ const TRAINTYPE_FOR_YAMANOTEFREIGHT = 'JR-East.LimitedExpress';
 const STATION_KEIYO_NISHIFUNABASHI = 'JR-East.Keiyo.NishiFunabashi',
     STATION_MUSASHINO_FUCHUHONMACHI = 'JR-East.Musashino.Fuchuhommachi',
     STATION_CHUORAPID_HACHIOJI = 'JR-East.ChuoRapid.Hachioji',
+    STATION_FUKUTOSHIN_KOTAKEMUKAIHARA = 'TokyoMetro.Fukutoshin.KotakeMukaihara',
+    STATION_YURAKUCHO_KOTAKEMUKAIHARA = 'TokyoMetro.Yurakucho.KotakeMukaihara',
     STATION_OEDO_TOCHOMAE = 'Toei.Oedo.Tochomae',
     STATION_OEDO_SHINJUKUNISHIGUCHI = 'Toei.Oedo.ShinjukuNishiguchi';
 
@@ -195,6 +201,9 @@ export default async function(options) {
                 } else {
                     console.log('No connecting train', timetable);
                 }
+            } else if (tt && tt.length === 0) {
+                data.splice(data.indexOf(timetableRef), 1);
+                delete lookup[id];
             } else {
                 if (pt) {
                     timetableRef.pt = pt;
@@ -407,6 +416,22 @@ export default async function(options) {
                     s: station.s.replace(RAILWAY_MUSASHINO, railwayID)
                 });
                 delete station.a;
+            }
+        });
+
+        // Modify Fukutoshin and Yurakucho timetables
+        data.filter(timetable =>
+            (timetable.r === RAILWAY_FUKUTOSHIN || timetable.r === RAILWAY_YURAKUCHO) &&
+            timetable.y === TRAINTYPE_STRAIN
+        ).forEach(timetable => {
+            const {tt} = timetable;
+
+            if (tt[0].s === STATION_FUKUTOSHIN_KOTAKEMUKAIHARA ||
+                tt[0].s === STATION_YURAKUCHO_KOTAKEMUKAIHARA) {
+                tt.shift();
+            } else if (tt[tt.length - 1].s === STATION_FUKUTOSHIN_KOTAKEMUKAIHARA ||
+                tt[tt.length - 1].s === STATION_YURAKUCHO_KOTAKEMUKAIHARA) {
+                tt.pop();
             }
         });
 
