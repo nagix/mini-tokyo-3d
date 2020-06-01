@@ -591,26 +591,13 @@
 	"carComposition": 10
 }, {
 	"id": "Keio.Sagamihara",
-	"color": "#DD0077",
-	"carComposition": 10
-}, {
-	"id": "Keio.KeioLiner",
-	"title": {
-		"ja": "京王線",
-		"en": "Keiō Line",
-		"ko": "게이오선",
-		"zh-Hans": "京王线",
-		"zh-Hant": "京王線"
-	},
 	"stations": {
 		"index": 0,
 		"delete": 0,
 		"insert": [
-			"Keio.KeioLiner.Shinjuku",
-			"Keio.KeioLiner.KeioNagayama"
+			"Keio.Sagamihara.Shinjuku"
 		]
 	},
-	"ascending": "Outbound",
 	"color": "#DD0077",
 	"carComposition": 10
 }, {

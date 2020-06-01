@@ -5539,6 +5539,18 @@
 	"id": "Keio.Keio.KeioHachioji",
 	"coord": [139.34303, 35.658]
 }, {
+	"id": "Keio.Sagamihara.Shinjuku",
+	"railway": "Keio.Sagamihara",
+	"coord": [139.69916, 35.69019],
+	"title": {
+		"ja": "新宿",
+		"en": "Shinjuku",
+		"ko": "신주쿠",
+		"zh-Hans": "新宿",
+		"zh-Hant": "新宿"
+	},
+	"altitude": -1
+}, {
 	"id": "Keio.Sagamihara.Chofu",
 	"coord": [139.54474, 35.65177]
 }, {
@@ -5580,29 +5592,6 @@
 }, {
 	"id": "Keio.Sagamihara.Hashimoto",
 	"coord": [139.34354, 35.59521]
-}, {
-	"id": "Keio.KeioLiner.Shinjuku",
-	"railway": "Keio.KeioLiner",
-	"coord": [139.69916, 35.69019],
-	"title": {
-		"ja": "新宿",
-		"en": "Shinjuku",
-		"ko": "신주쿠",
-		"zh-Hans": "新宿",
-		"zh-Hant": "新宿"
-	},
-	"altitude": -1
-}, {
-	"id": "Keio.KeioLiner.KeioNagayama",
-	"railway": "Keio.KeioLiner",
-	"coord": [139.44821, 35.63024],
-	"title": {
-		"ja": "京王永山",
-		"en": "Keiō-nagayama",
-		"ko": "게이오나가야마",
-		"zh-Hans": "京王永山",
-		"zh-Hant": "京王永山"
-	}
 }, {
 	"id": "Keio.Keibajo.HigashiFuchu",
 	"coord": [139.4954, 35.66877]
