@@ -1948,7 +1948,7 @@ function initialize(mt3d) {
             }
 
             updateWeatherButton(enabled);
-            if (mt3d.isWeatherVisible) {
+            if (enabled) {
                 loadWeatherData();
             } else {
                 weatherLayer.clear();
