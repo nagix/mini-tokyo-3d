@@ -838,6 +838,15 @@ function initialize(mt3d) {
                     console.log(train);
                 }
 
+                if (mt3d.trackedObject === car && !mt3d.viewAnimationID) {
+                    easeTo({
+                        center: coord,
+                        altitude,
+                        bearing,
+                        bearingFactor: .02
+                    });
+                }
+
                 if (animation.isActive(train.animationID)) {
                     const bounds = map.getBounds(),
                         [lng, lat] = coord,
@@ -870,14 +879,6 @@ function initialize(mt3d) {
                     }
                 }
 
-                if (mt3d.trackedObject === car && !mt3d.viewAnimationID) {
-                    easeTo({
-                        center: coord,
-                        altitude,
-                        bearing,
-                        bearingFactor: .02
-                    });
-                }
                 if (mt3d.markedObject === car) {
                     updatePopup();
                 }
@@ -914,7 +915,18 @@ function initialize(mt3d) {
                 coord = aircraft.userData.coord = p.coord,
                 altitude = aircraft.userData.altitude = p.altitude,
                 mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude),
-                bearing = aircraft.userData.bearing = p.bearing;
+                bearing = aircraft.userData.bearing = p.bearing,
+                cameraZ = trainLayers.og.camera.position.z,
+                aircraftScale = mt3d.aircraftScale * cameraZ / (cameraZ - mCoord.z);
+
+            if (mt3d.trackedObject === aircraft && !mt3d.viewAnimationID) {
+                easeTo({
+                    center: coord,
+                    altitude,
+                    bearing,
+                    bearingFactor: .02
+                });
+            }
 
             if (animation.isActive(flight.animationID)) {
                 const bounds = map.getBounds(),
@@ -938,16 +950,8 @@ function initialize(mt3d) {
             rotation.x = p.pitch;
             rotation.z = -bearing * DEGREE_TO_RADIAN;
 
-            body.scale.y = wing.scale.x = vTail.scale.y = mt3d.aircraftScale;
+            body.scale.y = wing.scale.x = vTail.scale.y = aircraftScale;
 
-            if (mt3d.trackedObject === aircraft && !mt3d.viewAnimationID) {
-                easeTo({
-                    center: coord,
-                    altitude,
-                    bearing,
-                    bearingFactor: .02
-                });
-            }
             if (mt3d.markedObject === aircraft) {
                 updatePopup();
             }
