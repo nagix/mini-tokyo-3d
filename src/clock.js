@@ -1,3 +1,4 @@
+import JapaneseHolidays from 'japanese-holidays';
 import configs from './configs';
 import * as helpers from './helpers';
 
@@ -117,6 +118,20 @@ export default class {
 
     getTimezoneOffset() {
         return (new Date().getTimezoneOffset() + 540) * 60000;
+    }
+
+    getCalendar() {
+        const date = this.getJSTDate(),
+            hours = date.getHours();
+
+        if (hours < 3) {
+            date.setHours(hours - 24);
+        }
+
+        return JapaneseHolidays.isHoliday(date) ||
+            (date.getFullYear() === 2019 && date.getMonth() === 11 && date.getDate() >= 28) ||
+            (date.getFullYear() === 2020 && date.getMonth() === 0 && date.getDate() <= 5) ||
+            date.getDay() === 6 || date.getDay() === 0 ? 'SaturdayHoliday' : 'Weekday';
     }
 
 }

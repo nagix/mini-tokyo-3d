@@ -96,7 +96,7 @@ const animation = {
         const instance = animation.instances[id];
 
         if (instance) {
-            if (frameRate > 0) {
+            if (frameRate > 0 && frameRate < 60) {
                 instance.frameRate = frameRate;
             } else {
                 delete instance.frameRate;

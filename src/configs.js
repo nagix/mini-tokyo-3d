@@ -78,6 +78,9 @@ const configs = {
     // Default pitch in degrees
     defaultPitch: 60,
 
+    // Default frame rate for train and aircraft animations
+    defaultFrameRate: 60,
+
     // Default tracking mode
     defaultTrackingMode: 'helicopter',
 

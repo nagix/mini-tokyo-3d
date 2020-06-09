@@ -128,6 +128,8 @@ export default class {
         me.isEditingTime = false;
         me.isWeatherVisible = false;
 
+        me.frameRate = helpers.valueOrDefault(options.frameRate, configs.defaultFrameRate);
+
         me.lastDynamicUpdate = {};
 
         me.container.classList.add('mini-tokyo-3d');
@@ -170,13 +172,14 @@ function loadData(dataUrl, lang, clock) {
         operatorData: data[8],
         airportData: data[9],
         flightStatusData: data[10],
-        e: data[11]
+        secrets: data[11]
     }));
 }
 
 function initialize(mt3d) {
 
-    mapboxgl.accessToken = mt3d.e.mapbox;
+    Object.assign(mt3d.secrets, mt3d.options.secrets);
+    mapboxgl.accessToken = mt3d.secrets.mapbox;
     const map = new mapboxgl.Map({
         container: mt3d.container.querySelector('#map'),
         style: `${mt3d.dataUrl}/osm-liberty.json`,
@@ -633,6 +636,7 @@ function initialize(mt3d) {
         });
 
         map.on('zoom', () => {
+/*
             if (mt3d.trackedObject) {
                 const {altitude} = mt3d.trackedObject.userData;
                 // Keep camera off from the tracked aircraft
@@ -640,7 +644,7 @@ function initialize(mt3d) {
                     map.setZoom(22 - Math.log2(altitude * .5));
                 }
             }
-
+*/
             const zoom = map.getZoom(),
                 unit = Math.pow(2, 14 - helpers.clamp(zoom, 13, 19)),
                 lineWidthScale = helpers.clamp(Math.pow(2, zoom - 12), .125, 1);
@@ -710,36 +714,30 @@ function initialize(mt3d) {
                     }
                     mt3d.lastTrainRefresh = now - configs.minDelay;
                 }
-                if (mt3d.markedObject) {
-                    const {coord, altitude, object} = mt3d.markedObject.userData;
-
-                    popup.setLngLat(adjustCoord(coord, altitude))
-                        .setHTML(object.description);
-                }
                 if (mt3d.trackedObject) {
-                    const {coord, bearing, altitude, object} = mt3d.trackedObject.userData;
+                    const {coord: center, bearing, altitude, object} = mt3d.trackedObject.userData;
 
                     refreshOutline();
                     if (object.timetableOffsets) {
                         setTrainTimetableMark(object);
                     }
-
+/*
                     // Keep camera off from the tracked aircraft
                     if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
                         map.setZoom(22 - Math.log2(altitude * .5));
                     }
-
+*/
                     if (!mt3d.viewAnimationID) {
-                        const mapBearing = map.getBearing();
-
-                        map.easeTo({
-                            center: adjustCoord(coord, altitude),
-                            bearing: mt3d.trackingMode === 'helicopter' ?
-                                (mt3d.trackingBaseBearing + performance.now() / 100) % 360 :
-                                mapBearing + ((bearing - mapBearing + 540) % 360 - 180) * .02,
-                            duration: 0
+                        easeTo({
+                            center,
+                            altitude,
+                            bearing,
+                            bearingFactor: .02
                         });
                     }
+                }
+                if (mt3d.markedObject) {
+                    updatePopup();
                 }
                 if (!mt3d.isPlayback && mt3d.isWeatherVisible) {
                     if (now - (mt3d.lastWeatherRefresh || 0) >= configs.weatherRefreshInterval) {
@@ -750,6 +748,31 @@ function initialize(mt3d) {
                 }
             }
         });
+
+        function easeTo(options) {
+            let {center, altitude, bearing, centerFactor, bearingFactor} = options;
+
+            if (mt3d.trackingMode === 'helicopter') {
+                bearing = (mt3d.trackingBaseBearing + performance.now() / 100) % 360;
+            } else if (bearingFactor >= 0) {
+                const mapBearing = map.getBearing();
+
+                bearing = mapBearing + ((bearing - mapBearing + 540) % 360 - 180) * bearingFactor;
+            }
+
+            center = adjustCoord(center, altitude, bearing);
+            if (centerFactor >= 0) {
+                const {lng: fromLng, lat: fromLat} = map.getCenter(),
+                    {lng: toLng, lat: toLat} = center;
+
+                center = new mapboxgl.LngLat(
+                    fromLng + (toLng - fromLng) * centerFactor,
+                    fromLat + (toLat - fromLat) * centerFactor
+                );
+            }
+
+            map.easeTo({center, bearing, duration: 0});
+        }
 
         function updateTrainProps(train) {
             const feature = train.railwayFeature = mt3d.featureLookup[`${train.r}.${mt3d.layerZoom}`],
@@ -824,7 +847,7 @@ function initialize(mt3d) {
                         lng <= bounds.getEast() + .005 &&
                         lat >= bounds.getSouth() - .005 &&
                         lat <= bounds.getNorth() + .005) {
-                        animation.setFrameRate(animationID);
+                        animation.setFrameRate(animationID, mt3d.frameRate);
                     } else {
                         animation.setFrameRate(animationID, 1);
                     }
@@ -845,6 +868,18 @@ function initialize(mt3d) {
                     if (mt3d.trackedObject === car) {
                         setUndergroundMode(!mt3d.isUndergroundVisible);
                     }
+                }
+
+                if (mt3d.trackedObject === car && !mt3d.viewAnimationID) {
+                    easeTo({
+                        center: coord,
+                        altitude,
+                        bearing,
+                        bearingFactor: .02
+                    });
+                }
+                if (mt3d.markedObject === car) {
+                    updatePopup();
                 }
             }
         }
@@ -890,7 +925,7 @@ function initialize(mt3d) {
                     lng <= bounds.getEast() + .005 &&
                     lat >= bounds.getSouth() - .005 &&
                     lat <= bounds.getNorth() + .005) {
-                    animation.setFrameRate(animationID);
+                    animation.setFrameRate(animationID, mt3d.frameRate);
                 } else {
                     animation.setFrameRate(animationID, 1);
                 }
@@ -904,6 +939,18 @@ function initialize(mt3d) {
             rotation.z = -bearing * DEGREE_TO_RADIAN;
 
             body.scale.y = wing.scale.x = vTail.scale.y = mt3d.aircraftScale;
+
+            if (mt3d.trackedObject === aircraft && !mt3d.viewAnimationID) {
+                easeTo({
+                    center: coord,
+                    altitude,
+                    bearing,
+                    bearingFactor: .02
+                });
+            }
+            if (mt3d.markedObject === aircraft) {
+                updatePopup();
+            }
         }
 
         function refreshTrains() {
@@ -1080,17 +1127,15 @@ function initialize(mt3d) {
             mt3d.viewAnimationID = animation.start({
                 callback: (elapsed, duration) => {
                     const t1 = easeOutQuart(elapsed / duration),
-                        factor = (1 - t1) / (1 - t2),
-                        {coord, altitude, bearing} = mt3d.trackedObject.userData,
-                        {lng, lat} = adjustCoord(coord, altitude),
-                        center = map.getCenter();
+                        factor = 1 - (1 - t1) / (1 - t2),
+                        {coord: center, altitude, bearing} = mt3d.trackedObject.userData;
 
-                    map.easeTo({
-                        center: [lng - (lng - center.lng) * factor, lat - (lat - center.lat) * factor],
-                        bearing: mt3d.trackingMode === 'helicopter' ?
-                            (mt3d.trackingBaseBearing + performance.now() / 100) % 360 :
-                            bearing - ((bearing - map.getBearing() + 540) % 360 - 180) * factor,
-                        duration: 0
+                    easeTo({
+                        center,
+                        altitude,
+                        bearing,
+                        centerFactor: factor,
+                        bearingFactor: factor
                     });
                     t2 = t1;
                 },
@@ -1108,24 +1153,29 @@ function initialize(mt3d) {
             }
         }
 
-        function adjustCoord(coord, altitude) {
+        function adjustCoord(coord, altitude, bearing) {
             if (!altitude) {
                 return mapboxgl.LngLat.convert(coord);
             }
 
-            const {transform} = map,
-                {width, height} = transform,
-                mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude),
-                pos = new THREE.Vector3(
-                    mCoord.x - modelOrigin.x,
-                    -(mCoord.y - modelOrigin.y),
-                    mCoord.z
-                ).project(trainLayers.ug.camera);
+            const mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude);
 
-            return map.unproject([
-                (pos.x + 1) / 2 * width,
-                (1 - pos.y) / 2 * height
-            ]);
+            if (!isNaN(bearing)) {
+                const offset = mCoord.z * Math.tan(map.getPitch() * DEGREE_TO_RADIAN),
+                    x = mCoord.x + offset * Math.sin(bearing * DEGREE_TO_RADIAN),
+                    y = mCoord.y - offset * Math.cos(bearing * DEGREE_TO_RADIAN);
+
+                return new mapboxgl.MercatorCoordinate(x, y, 0).toLngLat();
+            } else {
+                const {width, height} = map.transform,
+                    {x, y} = new THREE.Vector3(
+                        mCoord.x - modelOrigin.x,
+                        -(mCoord.y - modelOrigin.y),
+                        mCoord.z
+                    ).project(trainLayers.ug.camera);
+
+                return map.unproject([(x + 1) / 2 * width, (1 - y) / 2 * height]);
+            }
         }
 
         function getLocalizedRailwayTitle(railway) {
@@ -1453,7 +1503,7 @@ function initialize(mt3d) {
 
             Object.keys(OPERATORS_FOR_TRAININFORMATION).forEach(source => {
                 const url = configs.apiUrl[source],
-                    key = mt3d.e[source],
+                    key = mt3d.secrets[source],
                     operators = OPERATORS_FOR_TRAININFORMATION[source]
                         .map(operator => `odpt.Operator:${operator}`)
                         .join(',');
@@ -1462,7 +1512,7 @@ function initialize(mt3d) {
             });
 
             const url = configs.apiUrl.tokyochallenge,
-                key = mt3d.e.tokyochallenge,
+                key = mt3d.secrets.tokyochallenge,
                 operators = OPERATORS_FOR_TRAINS
                     .map(operator => `odpt.Operator:${operator}`)
                     .join(',');
@@ -1585,7 +1635,7 @@ function initialize(mt3d) {
         function loadRealtimeFlightData() {
             const urls = [],
                 url = configs.apiUrl.tokyochallenge,
-                key = mt3d.e.tokyochallenge,
+                key = mt3d.secrets.tokyochallenge,
                 operators = OPERATORS_FOR_FLIGHTINFORMATION
                     .map(operator => `odpt.Operator:${operator}`)
                     .join(',');
@@ -2006,16 +2056,12 @@ function initialize(mt3d) {
             }
 
             if (object && object !== mt3d.markedObject) {
-                const {coord, altitude, object: trainOrFlight} = object.userData;
-
                 mt3d.markedObject = object;
                 map.getCanvas().style.cursor = 'pointer';
-                popup.setLngLat(adjustCoord(coord, altitude))
-                    .setHTML(trainOrFlight.description)
-                    .addTo(map);
+                updatePopup().addTo(map);
 
-                if (!mt3d.markedObject.getObjectByName('outline-marked')) {
-                    mt3d.markedObject.traverse(descendant => {
+                if (!object.getObjectByName('outline-marked')) {
+                    object.traverse(descendant => {
                         if (descendant.name === 'cube') {
                             descendant.add(createOutline(descendant, 'outline-marked'));
                         }
@@ -2217,6 +2263,14 @@ function initialize(mt3d) {
                     container.querySelector('#clock-speed').innerHTML = mt3d.clock.speed + dict['x-speed'];
                 });
             }
+        }
+
+        function updatePopup() {
+            const {coord, altitude, object} = mt3d.markedObject.userData,
+                bearing = mt3d.markedObject === mt3d.trackedObject ? map.getBearing() : undefined;
+
+            return popup.setLngLat(adjustCoord(coord, altitude, bearing))
+                .setHTML(object.description);
         }
 
         function updateAboutPopup() {
@@ -2784,17 +2838,7 @@ function getObjectOpacity(object, isUndergroundVisible, t) {
 }
 
 function getTimetableFileName(clock) {
-    const date = clock.getJSTDate(),
-        hours = date.getHours();
-
-    if (hours < 3) {
-        date.setHours(hours - 24);
-    }
-
-    const calendar = JapaneseHolidays.isHoliday(date) ||
-        (date.getFullYear() === 2019 && date.getMonth() === 11 && date.getDate() >= 28) ||
-        (date.getFullYear() === 2020 && date.getMonth() === 0 && date.getDate() <= 5) ||
-        date.getDay() === 6 || date.getDay() === 0 ? 'holiday' : 'weekday';
+    const calendar = clock.getCalendar() === 'Weekday' ? 'weekday' : 'holiday';
 
     return `timetable-${calendar}.json.gz`;
 }
