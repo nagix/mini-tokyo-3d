@@ -786,7 +786,7 @@ function initialize(mt3d) {
         function updateTrainShape(train, t) {
             const {railwayFeature: feature, offset, interval, direction, cars, delay} = train,
                 length = cars.length;
-            let altitudeChanged;
+            let marked, tracked, altitudeChanged;
 
             if (t !== undefined) {
                 train._t = t;
@@ -807,11 +807,12 @@ function initialize(mt3d) {
                 cars.push(car);
 
                 // Reset marked/tracked object if it was marked/tracked before
+                // Delay calling markObject() and trackObject() as they require the object position to be set
                 if (mt3d.markedObject && mt3d.markedObject.userData.object === train) {
-                    markObject(cars[0]);
+                    marked = cars[0];
                 }
                 if (mt3d.trackedObject && mt3d.trackedObject.userData.object === train) {
-                    trackObject(cars[0]);
+                    tracked = cars[0];
                 }
             }
 
@@ -836,6 +837,13 @@ function initialize(mt3d) {
 
                 if (isNaN(coord[0]) || isNaN(coord[1])) {
                     console.log(train);
+                }
+
+                if (marked === car) {
+                    markObject(car);
+                }
+                if (tracked === car) {
+                    trackObject(car);
                 }
 
                 if (mt3d.trackedObject === car && !mt3d.viewAnimationID) {
