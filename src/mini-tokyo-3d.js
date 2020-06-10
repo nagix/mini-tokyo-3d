@@ -115,6 +115,7 @@ export default class {
         me.dataUrl = options.dataUrl || configs.dataUrl;
         me.container = typeof options.container === 'string' ?
             document.getElementById(options.container) : options.container;
+        me.clockControl = helpers.valueOrDefault(options.clockControl, true);
         me.searchControl = helpers.valueOrDefault(options.searchControl, true);
         me.navigationControl = helpers.valueOrDefault(options.navigationControl, true);
         me.fullscreenControl = helpers.valueOrDefault(options.fullscreenControl, true);
@@ -590,6 +591,9 @@ function initialize(mt3d) {
             }]));
         }
 
+        if (!mt3d.clockControl) {
+            mt3d.container.querySelector('#clock').style.visibility = 'hidden';
+        }
         updateClock();
 
         const popup = new mapboxgl.Popup({
@@ -636,7 +640,7 @@ function initialize(mt3d) {
         });
 
         map.on('zoom', () => {
-/*
+            /*
             if (mt3d.trackedObject) {
                 const {altitude} = mt3d.trackedObject.userData;
                 // Keep camera off from the tracked aircraft
@@ -644,7 +648,8 @@ function initialize(mt3d) {
                     map.setZoom(22 - Math.log2(altitude * .5));
                 }
             }
-*/
+            */
+
             const zoom = map.getZoom(),
                 unit = Math.pow(2, 14 - helpers.clamp(zoom, 13, 19)),
                 lineWidthScale = helpers.clamp(Math.pow(2, zoom - 12), .125, 1);
@@ -721,12 +726,14 @@ function initialize(mt3d) {
                     if (object.timetableOffsets) {
                         setTrainTimetableMark(object);
                     }
-/*
+
+                    /*
                     // Keep camera off from the tracked aircraft
                     if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
                         map.setZoom(22 - Math.log2(altitude * .5));
                     }
-*/
+                    */
+
                     if (!mt3d.viewAnimationID) {
                         easeTo({
                             center,
