@@ -115,6 +115,7 @@ export default class {
         me.dataUrl = options.dataUrl || configs.dataUrl;
         me.container = typeof options.container === 'string' ?
             document.getElementById(options.container) : options.container;
+
         me.clockControl = helpers.valueOrDefault(options.clockControl, true);
         me.searchControl = helpers.valueOrDefault(options.searchControl, true);
         me.navigationControl = helpers.valueOrDefault(options.navigationControl, true);
@@ -185,7 +186,7 @@ function initialize(mt3d) {
         container: mt3d.container.querySelector('#map'),
         style: `${mt3d.dataUrl}/osm-liberty.json`,
         customAttribution: mt3d.infoControl ? '' : configs.customAttribution,
-        hash: true,
+        hash: helpers.valueOrDefault(mt3d.options.hash, false),
         center: helpers.valueOrDefault(mt3d.options.center, configs.originCoord),
         zoom: helpers.valueOrDefault(mt3d.options.zoom, configs.defaultZoom),
         bearing: helpers.valueOrDefault(mt3d.options.bearing, configs.defaultBearing),
