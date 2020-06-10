@@ -23991,6 +23991,135 @@
 		}],
 		"color": "#0F6CC3"
 	}, {
+		"id": "Tobu.THLiner",
+		"sublines": [{
+			"type": "main",
+			"coords": [
+				[139.7768055, 35.7111093],
+				[139.7768826, 35.7111791],
+				[139.777153, 35.7113709],
+				[139.7774575, 35.7116213],
+				[139.7776445, 35.7117587],
+				[139.7779855, 35.7120555],
+				[139.7781808, 35.7122265],
+				[139.7784286, 35.712521],
+				[139.7814005, 35.71665],
+				[139.7845632, 35.7207249],
+				[139.7875278, 35.7246007],
+				[139.7902695, 35.7284789],
+				[139.7913323, 35.7295284],
+				[139.7921802, 35.7302035],
+				[139.7923564, 35.7303437],
+				[139.7927422, 35.7305597],
+				[139.7932396, 35.7307561],
+				[139.7935197, 35.7308269],
+				[139.7937877, 35.7308676],
+				[139.7938603, 35.73088],
+				[139.794001, 35.7308892],
+				[139.7941349, 35.7308866],
+				[139.7942942, 35.7308742]
+			],
+			"end": {
+				"railway": "JR-East.JobanRapid",
+				"offset": 1,
+				"altitude": 0
+			},
+			"altitude": -1,
+			"opacity": 0
+		}, {
+			"type": "sub",
+			"start": {
+				"railway": "JR-East.JobanRapid",
+				"offset": 1
+			},
+			"coords": [
+				[139.7944617, 35.730856],
+				[139.8006265, 35.7354131]
+			],
+			"end": {
+				"railway": "JR-East.JobanRapid",
+				"offset": 2
+			},
+			"interpolate": 20,
+			"opacity": 0
+		}, {
+			"type": "sub",
+			"start": {
+				"railway": "Base.MinamiSenjuAoi",
+				"offset": 1
+			},
+			"coords": [
+				[139.8006265, 35.7354131],
+				[139.8030351, 35.7434769]
+			],
+			"end": {
+				"railway": "Base.MinamiSenjuAoi",
+				"offset": 1
+			},
+			"opacity": 0
+		}, {
+			"type": "sub",
+			"start": {
+				"railway": "Base.MinamiSenjuAoi",
+				"offset": 1
+			},
+			"coords": [
+				[139.8030351, 35.7434769],
+				[139.8047777, 35.747641]
+			],
+			"end": {
+				"railway": "Base.MinamiSenjuAoi",
+				"offset": 2
+			},
+			"interpolate": 20,
+			"opacity": 0
+		}, {
+			"type": "sub",
+			"start": {
+				"railway": "Base.MinamiSenjuAoi",
+				"offset": 2
+			},
+			"coords": [
+				[139.8047777, 35.747641],
+				[139.8056615, 35.7507821]
+			],
+			"end": {
+				"railway": "Base.MinamiSenjuAoi",
+				"offset": 2
+			}
+		}, {
+			"type": "sub",
+			"start": {
+				"railway": "Tobu.TobuSkytree",
+				"offset": 1
+			},
+			"coords": [
+				[139.8056615, 35.7507821],
+				[139.8087916, 35.7545836]
+			],
+			"end": {
+				"railway": "Tobu.TobuSkytree",
+				"offset": 0
+			},
+			"interpolate": 20
+		}, {
+			"type": "sub",
+			"start": {
+				"railway": "Tobu.TobuSkytree",
+				"offset": 0
+			},
+			"coords": [
+				[139.8087916, 35.7545836],
+				[139.7895899, 35.8765591]
+			],
+			"end": {
+				"railway": "Tobu.TobuSkytree",
+				"offset": 0
+			},
+			"opacity": 0
+		}],
+		"color": "#0F6CC3"
+	}, {
 		"id": "Tobu.Kameido",
 		"sublines": [{
 			"type": "main",
@@ -26846,7 +26975,7 @@
 				"offset": 1
 			},
 			"coords": [
-				[139.6818909, 35.7422733],
+				[139.6812026, 35.7426139],
 				[139.6765452, 35.7447476]
 			],
 			"end": {
@@ -26947,11 +27076,25 @@
 		}, {
 			"type": "sub",
 			"start": {
+				"railway": "Base.KotakeMukaiharaIkebukuro",
+				"offset": 1
+			},
+			"coords": [
+				[139.6818909, 35.7422733],
+				[139.6812026, 35.7426139]
+			],
+			"end": {
+				"railway": "Base.KotakeMukaiharaIkebukuro",
+				"offset": 1
+			}
+		}, {
+			"type": "sub",
+			"start": {
 				"railway": "Seibu.SeibuYurakucho",
 				"offset": 0
 			},
 			"coords": [
-				[139.6818909, 35.7422733],
+				[139.6765452, 35.7447476],
 				[139.6587691, 35.7383311]
 			],
 			"end": {
@@ -35060,96 +35203,36 @@
 				[139.7763122, 35.707717],
 				[139.7764404, 35.708906],
 				[139.7766814, 35.7108439],
-				[139.776762, 35.7110542],
+				[139.776762, 35.7110542]
+			]
+		}, {
+			"type": "sub",
+			"start": {
+				"railway": "Tobu.THLiner",
+				"offset": 0
+			},
+			"coords": [
 				[139.7768055, 35.7111093],
-				[139.7768826, 35.7111791],
-				[139.777153, 35.7113709],
-				[139.7774575, 35.7116213],
-				[139.7776445, 35.7117587],
-				[139.7779855, 35.7120555],
-				[139.7781808, 35.7122265],
-				[139.7784286, 35.712521],
-				[139.7814005, 35.71665],
-				[139.7845632, 35.7207249],
-				[139.7875278, 35.7246007],
-				[139.7902695, 35.7284789],
-				[139.7913323, 35.7295284],
-				[139.7921802, 35.7302035],
-				[139.7923564, 35.7303437],
-				[139.7927422, 35.7305597],
-				[139.7932396, 35.7307561],
-				[139.7935197, 35.7308269],
-				[139.7937877, 35.7308676],
-				[139.7938603, 35.73088],
-				[139.794001, 35.7308892],
-				[139.7941349, 35.7308866],
 				[139.7942942, 35.7308742]
 			],
 			"end": {
-				"railway": "JR-East.JobanRapid",
-				"offset": 1,
+				"railway": "Tobu.THLiner",
+				"offset": 0,
 				"altitude": 0
 			}
 		}, {
 			"type": "sub",
 			"start": {
-				"railway": "JR-East.JobanRapid",
-				"offset": 1
+				"railway": "Tobu.THLiner",
+				"offset": 0
 			},
 			"coords": [
 				[139.7944617, 35.730856],
-				[139.8006265, 35.7354131]
-			],
-			"end": {
-				"railway": "JR-East.JobanRapid",
-				"offset": 2
-			},
-			"interpolate": 20,
-			"altitude": 0
-		}, {
-			"type": "sub",
-			"start": {
-				"railway": "Base.MinamiSenjuAoi",
-				"offset": 1
-			},
-			"coords": [
-				[139.8006265, 35.7354131],
-				[139.8030351, 35.7434769]
-			],
-			"end": {
-				"railway": "Base.MinamiSenjuAoi",
-				"offset": 1
-			},
-			"altitude": 0
-		}, {
-			"type": "sub",
-			"start": {
-				"railway": "Base.MinamiSenjuAoi",
-				"offset": 1
-			},
-			"coords": [
-				[139.8030351, 35.7434769],
-				[139.8047777, 35.747641]
-			],
-			"end": {
-				"railway": "Base.MinamiSenjuAoi",
-				"offset": 2
-			},
-			"interpolate": 20,
-			"altitude": 0
-		}, {
-			"type": "sub",
-			"start": {
-				"railway": "Base.MinamiSenjuAoi",
-				"offset": 2
-			},
-			"coords": [
-				[139.8047777, 35.747641],
 				[139.8056615, 35.7507821]
 			],
 			"end": {
-				"railway": "Base.MinamiSenjuAoi",
-				"offset": 2
+				"railway": "Tobu.THLiner",
+				"offset": 0
 			},
 			"altitude": 0
 		}],

@@ -108,7 +108,7 @@ const configs = {
     dataUrl: 'https://minitokyo3d.com/data',
 
     // Timestamp when the static data was last updated
-    lastStaticUpdate: '2020-05-21 17:00:00',
+    lastStaticUpdate: '2020-06-09 11:00:00',
 
     // String to show in an Mapbox's AttributionControl
     customAttribution: '<a href="https://github.com/nagix/mini-tokyo-3d">© Akihiko Kusanagi</a>'

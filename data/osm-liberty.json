@@ -53,6 +53,20 @@
           {
             "type": "Feature",
             "properties": {
+              "name_ja": "虎ノ門ヒルズ",
+              "name_en": "Toranomon-hills",
+              "name_ko": "도라노몬힐스",
+              "name_zh-Hans": "虎之门Hills",
+              "name_zh-Hant": "虎之門Hills"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [139.747738, 35.667309]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
               "name_ja": "花月総持寺",
               "name_en": "Kagetsusojiji",
               "name_ko": "카게츠소지지",

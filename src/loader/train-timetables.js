@@ -108,6 +108,7 @@ const RAILWAY_YOKOSUKA = 'JR-East.Yokosuka',
     RAILWAY_MUSASHINOOMIYABRANCH = 'JR-East.MusashinoOmiyaBranch',
     RAILWAY_MUSASHINONISHIURAWABRANCH = 'JR-East.MusashinoNishiUrawaBranch',
     RAILWAY_CHUORAPID = 'JR-East.ChuoRapid',
+    RAILWAY_HIBIYA = 'TokyoMetro.Hibiya',
     RAILWAY_FUKUTOSHIN = 'TokyoMetro.Fukutoshin',
     RAILWAY_YURAKUCHO = 'TokyoMetro.Yurakucho',
     RAILWAY_OEDO = 'Toei.Oedo';
@@ -121,7 +122,8 @@ const RAILWAYS_FOR_SOBURAPID = [
 const RAIL_DIRECTION_OUTBOUND = 'Outbound',
     RAIL_DIRECTION_INBOUND = 'Inbound';
 
-const TRAINTYPE_STRAIN = 'TokyoMetro.S-TRAIN';
+const TRAINTYPE_THLINER = 'TokyoMetro.TH-LINER',
+    TRAINTYPE_STRAIN = 'TokyoMetro.S-TRAIN';
 
 const TRAINTYPES_FOR_SOBURAPID = [
     'JR-East.Rapid',
@@ -133,6 +135,7 @@ const TRAINTYPE_FOR_YAMANOTEFREIGHT = 'JR-East.LimitedExpress';
 const STATION_KEIYO_NISHIFUNABASHI = 'JR-East.Keiyo.NishiFunabashi',
     STATION_MUSASHINO_FUCHUHONMACHI = 'JR-East.Musashino.Fuchuhommachi',
     STATION_CHUORAPID_HACHIOJI = 'JR-East.ChuoRapid.Hachioji',
+    STATION_HIBIYA_KITASENJU = 'TokyoMetro.Hibiya.KitaSenju',
     STATION_FUKUTOSHIN_KOTAKEMUKAIHARA = 'TokyoMetro.Fukutoshin.KotakeMukaihara',
     STATION_YURAKUCHO_KOTAKEMUKAIHARA = 'TokyoMetro.Yurakucho.KotakeMukaihara',
     STATION_OEDO_TOCHOMAE = 'Toei.Oedo.Tochomae',
@@ -416,6 +419,19 @@ export default async function(options) {
                     s: station.s.replace(RAILWAY_MUSASHINO, railwayID)
                 });
                 delete station.a;
+            }
+        });
+
+        // Modify Hibiya timetables
+        data.filter(timetable =>
+            timetable.r === RAILWAY_HIBIYA && timetable.y === TRAINTYPE_THLINER
+        ).forEach(timetable => {
+            const {tt} = timetable;
+
+            if (tt[0].s === STATION_HIBIYA_KITASENJU) {
+                tt.shift();
+            } else if (tt[tt.length - 1].s === STATION_HIBIYA_KITASENJU) {
+                tt.pop();
             }
         });
 

@@ -3783,6 +3783,9 @@
 	"id": "TokyoMetro.Hibiya.Kamiyacho",
 	"altitude": -1
 }, {
+	"id": "TokyoMetro.Hibiya.ToranomonHills",
+	"altitude": -1
+}, {
 	"id": "TokyoMetro.Hibiya.Kasumigaseki",
 	"altitude": -1
 }, {
@@ -6686,6 +6689,29 @@
 }, {
 	"id": "Tobu.TobuSkytreeBranch.Hikifune",
 	"coord": [139.81667, 35.71851]
+}, {
+	"id": "Tobu.THLiner.Ueno",
+	"railway": "Tobu.THLiner",
+	"coord": [139.777061, 35.711558],
+	"title": {
+		"ja": "上野",
+		"en": "Ueno",
+		"ko": "우에노",
+		"zh-Hans": "上野",
+		"zh-Hant": "上野"
+	},
+	"altitude": -1
+}, {
+	"id": "Tobu.THLiner.ShinKoshigaya",
+	"railway": "Tobu.THLiner",
+	"coord": [139.78981, 35.87556],
+	"title": {
+		"ja": "新越谷",
+		"en": "Shin-koshigaya",
+		"ko": "신코시가야",
+		"zh-Hans": "新越谷",
+		"zh-Hant": "新越谷"
+	}
 }, {
 	"id": "Tobu.Kameido.Hikifune",
 	"coord": [139.81667, 35.71851]

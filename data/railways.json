@@ -788,6 +788,19 @@
 	"color": "#0F6CC3",
 	"carComposition": 10
 }, {
+	"id": "Tobu.THLiner",
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"Tobu.THLiner.Ueno",
+			"Tobu.THLiner.ShinKoshigaya"
+		]
+	},
+	"ascending": "Outbound",
+	"color": "#0F6CC3",
+	"carComposition": 10
+}, {
 	"id": "Tobu.Kameido",
 	"color": "#0F6CC3",
 	"carComposition": 2
