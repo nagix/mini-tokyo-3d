@@ -18,7 +18,8 @@ const banner = `/*!
  * Released under the ${pkg.license} license
  */`;
 const extraReplacement = process.env.SECRETS ? {
-	secrets: process.env.SECRETS
+	secrets: process.env.SECRETS,
+	include: 'src/configs.js'
 } : {};
 const sassRender = (content, id) => new Promise((resolve, reject) => {
 	const result = sass.renderSync({file: id});
@@ -61,9 +62,10 @@ export default [{
 			extract: 'mini-tokyo-3d.css'
 		}),
 		commonjs(),
-		replace(Object.assign({
+		replace({
 			'process.env.NODE_ENV': '\'development\''
-		}, extraReplacement)),
+		}),
+		replace(extraReplacement),
 		image()
 	]
 }, {
@@ -89,9 +91,10 @@ export default [{
 			minimize: true
 		}),
 		commonjs(),
-		replace(Object.assign({
+		replace({
 			'process.env.NODE_ENV': '\'production\''
-		}, extraReplacement)),
+		}),
+		replace(extraReplacement),
 		image(),
 		terser({
 			compress: {

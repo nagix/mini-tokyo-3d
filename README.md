@@ -20,6 +20,11 @@ See a [Live Demo](https://minitokyo3d.com).
 - [User Guide (English)](https://github.com/nagix/mini-tokyo-3d/blob/master/USER_GUIDE-en.md)
 - [User Guide (Japanese)](https://github.com/nagix/mini-tokyo-3d/blob/master/USER_GUIDE-ja.md)
 
+## Developer Guides
+
+- [Developer Guide (English)](https://github.com/nagix/mini-tokyo-3d/blob/master/DEVELOPER_GUIDE-en.md)
+- [Developer Guide (Japanese)](https://github.com/nagix/mini-tokyo-3d/blob/master/DEVELOPER_GUIDE-ja.md)
+
 ## Cheat Sheet
 
 Operation | Description
@@ -69,7 +74,7 @@ The data for this visualization are sourced from the [Open Data Challenge for Pu
 ## How to Build
 
 First, get access tokens for the public transportation data and map tiles by signing up at [Open Data Challenge for Public Transportation in Tokyo](https://developer-tokyochallenge.odpt.org/en/users/sign_up), [Public Transportation Open Data Center](https://developer.odpt.org/en/users/sign_up) and [Mapbox](https://account.mapbox.com/auth/signup/). Then, create a file named `secrets` which has access tokens in the following format in the root directory of the application.
-```
+```json
 {
     "tokyochallenge": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -78,11 +83,20 @@ First, get access tokens for the public transportation data and map tiles by sig
 ```
 
 The latest version of Node.js is required. Move to the root directory of the application, run the following commands, then the script, dataset and static web page will be generated in the `build` directory.
-```
+```bash
 npm install
 npm run build-all
 ```
 
+See the [Developer Guides](#developer-guides) for more details.
+
 ## License
 
 Mini Tokyo 3D is available under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Supporting Mini Tokyo 3D
+
+Your support, large or small, helps keep this project strong!
+
+- [Monthly donation through GitHub Sponsors](https://github.com/sponsors/nagix)
+- [One-time donation through PayPal](https://www.paypal.me/akusanagi)
