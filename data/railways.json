@@ -801,6 +801,14 @@
 	"color": "#0F6CC3",
 	"carComposition": 10
 }, {
+	"id": "Tobu.Isesaki",
+	"stations": {
+		"index": 3,
+		"delete": 23
+	},
+	"color": "#FF0000",
+	"carComposition": 10
+}, {
 	"id": "Tobu.Kameido",
 	"color": "#0F6CC3",
 	"carComposition": 2
@@ -815,8 +823,8 @@
 }, {
 	"id": "Tobu.Tojo",
 	"stations": {
-		"index": 22,
-		"delete": 16
+		"index": 33,
+		"delete": 5
 	},
 	"color": "#000099",
 	"carComposition": 10
@@ -999,7 +1007,9 @@
 			"Odakyu.Odawara.Zama",
 			"Odakyu.Odawara.Ebina",
 			"Odakyu.Odawara.Atsugi",
-			"Odakyu.Odawara.HonAtsugi"
+			"Odakyu.Odawara.HonAtsugi",
+			"Odakyu.Odawara.AikoIshida",
+			"Odakyu.Odawara.Isehara"
 		]
 	},
 	"color": "#2288CC",
