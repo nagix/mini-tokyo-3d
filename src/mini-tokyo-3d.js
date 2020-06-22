@@ -4,8 +4,9 @@ import {GeoJsonLayer} from '@deck.gl/layers';
 import mapboxgl from 'mapbox-gl';
 import turfDistance from '@turf/distance';
 import turfBearing from '@turf/bearing';
+import centerOfMass from '@turf/center-of-mass';
 import {featureEach} from '@turf/meta';
-import {getCoords} from '@turf/invariant';
+import {getCoord, getCoords} from '@turf/invariant';
 import * as THREE from 'three';
 import JapaneseHolidays from 'japanese-holidays';
 import SunCalc from 'suncalc';
@@ -328,7 +329,8 @@ function initialize(mt3d) {
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 lineJointRounded: true,
-                opacity: .0625
+                opacity: .0625,
+                pickable: true
             }), 'building-3d');
             map.setLayerZoomRange(`railways-ug-${zoom}`, minzoom, maxzoom);
             map.addLayer(new MapboxLayer({
@@ -344,7 +346,8 @@ function initialize(mt3d) {
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 getFillColor: [255, 255, 255, 179],
-                opacity: .0625
+                opacity: .0625,
+                pickable: true
             }), 'building-3d');
             map.setLayerZoomRange(`stations-ug-${zoom}`, minzoom, maxzoom);
         });
@@ -626,15 +629,29 @@ function initialize(mt3d) {
             mt3d.container.querySelector('#timetable-body').classList.add('windows');
         }
 
+        [13, 14, 15, 16, 17, 18].forEach(zoom => {
+            map.on('mouseenter', `stations-og-${zoom}`, e => {
+                mt3d.pickedFeature = e.features[0];
+            });
+            map.on('click', `stations-og-${zoom}`, e => {
+                mt3d.pickedFeature = e.features[0];
+            });
+            map.on('mouseleave', `stations-og-${zoom}`, () => {
+                delete mt3d.pickedFeature;
+            });
+        });
+
         map.on('mousemove', e => {
-            markObject(trainLayers.pickObject(e.point));
+            markObject(pickObject(e.point));
         });
 
         map.on('click', e => {
-            const object = trainLayers.pickObject(e.point);
+            const object = pickObject(e.point);
 
             markObject(object);
-            trackObject(object);
+            if (!object || object instanceof THREE.Group) {
+                trackObject(object);
+            }
 
             // For development
             console.log(e.lngLat);
@@ -678,6 +695,9 @@ function initialize(mt3d) {
         map.on('move', () => {
             if (mt3d.isWeatherVisible) {
                 weatherLayer.updateEmitterQueue();
+            }
+            if (popup.isOpen()) {
+                updatePopup();
             }
             if (aboutPopup.isOpen()) {
                 updateAboutPopup();
@@ -744,8 +764,8 @@ function initialize(mt3d) {
                         });
                     }
                 }
-                if (mt3d.markedObject) {
-                    updatePopup();
+                if (mt3d.markedObject instanceof THREE.Group) {
+                    updatePopup({setHTML: true});
                 }
                 if (!mt3d.isPlayback && mt3d.isWeatherVisible) {
                     if (now - (mt3d.lastWeatherRefresh || 0) >= configs.weatherRefreshInterval) {
@@ -816,7 +836,7 @@ function initialize(mt3d) {
 
                 // Reset marked/tracked object if it was marked/tracked before
                 // Delay calling markObject() and trackObject() as they require the object position to be set
-                if (mt3d.markedObject && mt3d.markedObject.userData.object === train) {
+                if (mt3d.markedObject instanceof THREE.Group && mt3d.markedObject.userData.object === train) {
                     marked = cars[0];
                 }
                 if (mt3d.trackedObject && mt3d.trackedObject.userData.object === train) {
@@ -2061,12 +2081,41 @@ function initialize(mt3d) {
             });
         }
 
+        function pickObject(point) {
+            const layers = mt3d.isUndergroundVisible ? ['ug', 'og'] : ['og', 'ug'];
+            let object;
+
+            for (const layer of layers) {
+                object = trainLayers[layer].pickObject(point);
+                if (object) {
+                    return object;
+                }
+                if (layer === 'ug') {
+                    if (map.__deck.deckPicker) {
+                        const {x, y} = point,
+                            info = map.__deck.pickObject({x, y, layerIds: [`stations-ug-${mt3d.layerZoom}`]});
+
+                        if (info) {
+                            object = info.object;
+                        }
+                    }
+                } else {
+                    object = mt3d.pickedFeature;
+                }
+                if (object) {
+                    return object;
+                }
+            }
+        }
+
         function markObject(object) {
             if (mt3d.markedObject && mt3d.markedObject !== object) {
                 let outline;
 
-                while ((outline = mt3d.markedObject.getObjectByName('outline-marked'))) {
-                    outline.parent.remove(outline);
+                if (mt3d.markedObject instanceof THREE.Group) {
+                    while ((outline = mt3d.markedObject.getObjectByName('outline-marked'))) {
+                        outline.parent.remove(outline);
+                    }
                 }
                 delete mt3d.markedObject;
                 if (popup.isOpen()) {
@@ -2078,9 +2127,9 @@ function initialize(mt3d) {
             if (object && object !== mt3d.markedObject) {
                 mt3d.markedObject = object;
                 map.getCanvas().style.cursor = 'pointer';
-                updatePopup().addTo(map);
+                updatePopup({setHTML: true, addToMap: true});
 
-                if (!object.getObjectByName('outline-marked')) {
+                if (object instanceof THREE.Group && !object.getObjectByName('outline-marked')) {
                     object.traverse(descendant => {
                         if (descendant.name === 'cube') {
                             descendant.add(createOutline(descendant, 'outline-marked'));
@@ -2285,12 +2334,56 @@ function initialize(mt3d) {
             }
         }
 
-        function updatePopup() {
-            const {coord, altitude, object} = mt3d.markedObject.userData,
-                bearing = mt3d.markedObject === mt3d.trackedObject ? map.getBearing() : undefined;
+        function updatePopup(options) {
+            const {setHTML, addToMap} = options || {};
 
-            return popup.setLngLat(adjustCoord(coord, altitude, bearing))
-                .setHTML(object.description);
+            if (mt3d.markedObject instanceof THREE.Group) {
+                const {coord, altitude, object} = mt3d.markedObject.userData,
+                    bearing = mt3d.markedObject === mt3d.trackedObject ? map.getBearing() : undefined;
+
+                popup.setLngLat(adjustCoord(coord, altitude, bearing));
+                if (setHTML) {
+                    popup.setHTML(object.description);
+                }
+            } else {
+                const coord = getCoord(centerOfMass(mt3d.markedObject)),
+                    altitude = getCoords(mt3d.markedObject)[0][0][2];
+
+                popup.setLngLat(adjustCoord(coord, altitude));
+                if (setHTML) {
+                    let ids = mt3d.markedObject.properties.ids;
+                    const stations = {};
+
+                    if (typeof ids === 'string') {
+                        ids = JSON.parse(ids);
+                    }
+                    ids.forEach(id => {
+                        const title = getLocalizedStationTitle(id),
+                            railwayID = mt3d.stationLookup[id].railway,
+                            railways = stations[title] = stations[title] || {};
+
+                        railways[getLocalizedRailwayTitle(railwayID)] = mt3d.railwayLookup[railwayID].color;
+                    });
+                    popup.setHTML([
+                        '<div class="station-image-container">',
+                        '<div class="ball-pulse"><div></div><div></div><div></div></div>',
+                        `<div class="station-image" style="background-image: url(\'${mt3d.stationLookup[ids[0]].thumbnail}\');"></div>`,
+                        '</div>',
+                        '<div class="railway-list">',
+                        Object.keys(stations).map(station => {
+                            const railways = Object.keys(stations[station])
+                                .map(railway => `<div class="line-strip" style="background-color: ${stations[station][railway]};"></div><span>${railway}</span>`)
+                                .join('<br>');
+
+                            return `<strong>${station}</strong><br>${railways}`;
+                        }).join('<br>'),
+                        '</div>'
+                    ].join(''));
+                }
+            }
+            if (addToMap) {
+                popup.addTo(map);
+            }
         }
 
         function updateAboutPopup() {

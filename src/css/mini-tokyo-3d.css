@@ -446,3 +446,32 @@
 	width: 10px;
 	height: 16px;
 }
+.mini-tokyo-3d .station-image-container {
+	width: 128px;
+	height: 72px;
+	margin-bottom: 4px;
+	position: relative;
+}
+.mini-tokyo-3d .station-image-container > .ball-pulse {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(.5, .5);
+	box-sizing: initial;
+	position: absolute;
+}
+.mini-tokyo-3d .station-image {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+}
+.mini-tokyo-3d .railway-list > * {
+	vertical-align: middle;
+}
+.mini-tokyo-3d .railway-list .line-strip {
+	width: 10px;
+	height: 18px;
+	margin-right: 8px;
+	display: inline-block;
+}

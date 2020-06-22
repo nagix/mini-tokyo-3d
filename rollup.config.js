@@ -63,7 +63,8 @@ export default [{
 		}),
 		commonjs(),
 		replace({
-			'process.env.NODE_ENV': '\'development\''
+			'process.env.NODE_ENV': '\'development\'',
+			'log.error': '//log.error'
 		}),
 		replace(extraReplacement),
 		image()
@@ -92,7 +93,8 @@ export default [{
 		}),
 		commonjs(),
 		replace({
-			'process.env.NODE_ENV': '\'production\''
+			'process.env.NODE_ENV': '\'production\'',
+			'log.error': '//log.error'
 		}),
 		replace(extraReplacement),
 		image(),

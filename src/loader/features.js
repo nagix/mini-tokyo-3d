@@ -16,6 +16,8 @@ import nearestPointProps from '../turf/nearest-point-props';
 import * as helpers from '../helpers';
 import * as loaderHelpers from './helpers';
 
+const HIDDEN_STATIONS = /^(JR-East\.(YamanoteFreight|Musashino\w+Branch)|Keio\.Sagamihara\.Shinjuku|Keikyu\.Airport\.Shinagawa|Tobu\.THLiner|Seibu\.S-)/;
+
 function setAltitude(geojson, altitude) {
     coordEach(geojson, coord => {
         coord[2] = altitude;
@@ -337,44 +339,68 @@ export function featureWorker() {
     });
 
     stationGroupData.forEach(group => {
-        const altitude = stationLookup[group[0][0]].altitude,
-            features = [];
-        let connectionCoords = [];
+        const ug = {features: [], connectionCoords: []},
+            og = {features: [], connectionCoords: []},
+            ids = [];
 
         group.forEach(stations => {
-            const coords = stations.map(id => {
+            const {altitude} = stationLookup[stations[0]] || 0,
+                layer = altitude < 0 ? ug : og,
+                coords = stations.map(id => {
                     const {railway, coord} = stationLookup[id],
                         feature = featureLookup[railway];
 
+                    if (!id.match(HIDDEN_STATIONS)) {
+                        ids.push(id);
+                    }
                     return getCoord(nearestPointOnLine(feature, coord));
                 }),
                 feature = coords.length === 1 ? point(coords[0]) : lineString(coords);
 
-            features.push(buffer(feature, unit));
-            connectionCoords = connectionCoords.concat(coords);
+            layer.features.push(buffer(feature, unit));
+            layer.connectionCoords.push(...coords);
+            layer.altitude = altitude;
         });
 
-        // If there are connections, add extra features
-        if (group.length > 1) {
-            features.push(buffer(lineString(connectionCoords), unit / 4));
+        if (ug.features.length) {
+            // If there are connections, add extra features
+            if (ug.connectionCoords.length > 1) {
+                ug.features.push(buffer(lineString(ug.connectionCoords), unit / 4));
+            }
+
+            const feature = union(...ug.features);
+
+            setAltitude(feature, ug.altitude * unit * 1000);
+            feature.properties = {
+                type: 1,
+                outlineColor: '#000000',
+                width: 4,
+                color: '#FFFFFF',
+                zoom,
+                altitude: ug.altitude * unit * 1000,
+                ids
+            };
+            featureArray.push(feature);
         }
+        if (og.features.length) {
+            // If there are connections, add extra features
+            if (og.connectionCoords.length > 1) {
+                og.features.push(buffer(lineString(og.connectionCoords), unit / 4));
+            }
 
-        const feature = union.apply(this, features);
+            const feature = union(...og.features);
 
-        if (altitude < 0) {
-            setAltitude(feature, altitude * unit * 1000);
+            feature.properties = {
+                type: 1,
+                outlineColor: '#000000',
+                width: 4,
+                color: '#FFFFFF',
+                zoom,
+                altitude: 0,
+                ids
+            };
+            featureArray.push(feature);
         }
-
-        feature.properties = {
-            type: 1,
-            outlineColor: '#000000',
-            width: 4,
-            color: '#FFFFFF',
-            zoom,
-            altitude: (altitude || 0) * unit * 1000
-        };
-
-        featureArray.push(feature);
     });
 
     parentPort.postMessage(featureArray);

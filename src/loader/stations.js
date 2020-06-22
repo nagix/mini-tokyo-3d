@@ -1,6 +1,9 @@
 import * as helpers from '../helpers';
 import * as loaderHelpers from './helpers';
 
+const WIKIPEDIA_URL = 'https://ja.wikipedia.org/w/api.php';
+const WIKIPEDIA_PARAMS = 'format=json&action=query&prop=pageimages&pithumbsize=128';
+
 const OPERATORS_FOR_STATIONS = {
     tokyochallenge: [[
         'JR-East',
@@ -77,7 +80,7 @@ export default async function(options) {
 
     const lookup = helpers.buildLookup(data);
 
-    extra.forEach(({id, railway, coord, title, altitude}) => {
+    extra.forEach(({id, railway, coord, title, thumbnail, altitude}) => {
         let station = lookup[id];
 
         if (!station) {
@@ -92,8 +95,39 @@ export default async function(options) {
             station.coord = coord;
         }
         Object.assign(station.title, title);
+        station.thumbnail = thumbnail;
         if (altitude !== undefined) {
             station.altitude = altitude;
+        }
+    });
+
+    const stationLists = [[]];
+    const stationIDLookup = {};
+
+    data.forEach(({id, title}) => {
+        const stations = stationLists[stationLists.length - 1];
+        const titleJa = title['ja-Wiki'] || `${title['ja']}駅`;
+
+        stationIDLookup[titleJa] = stationIDLookup[titleJa] || [];
+        stationIDLookup[titleJa].push(id);
+        stations.push(titleJa);
+        if (stations.length >= 50) {
+            stationLists.push([]);
+        }
+    });
+    (await Promise.all(stationLists.map(stations =>
+        loaderHelpers.loadJSON(`${WIKIPEDIA_URL}?${WIKIPEDIA_PARAMS}&titles=${stations.join('|')}`)
+    ))).forEach((result) => {
+        const {pages} = result.query;
+
+        for (const id in pages) {
+            const {title, thumbnail} = pages[id];
+
+            if (thumbnail) {
+                stationIDLookup[title].forEach(id => {
+                    lookup[id].thumbnail = thumbnail.source;
+                });
+            }
         }
     });
 

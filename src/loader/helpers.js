@@ -8,6 +8,7 @@ export function loadJSON(url) {
             https.get(url, res => {
                 let body = '';
 
+                res.setEncoding('utf8');
                 res.on('data', chunk => {
                     body += chunk;
                 });
