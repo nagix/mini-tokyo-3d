@@ -11,6 +11,7 @@ import * as THREE from 'three';
 import JapaneseHolidays from 'japanese-holidays';
 import SunCalc from 'suncalc';
 import animation from './animation';
+import AboutPopup from './aboutPopup';
 import Clock from './clock';
 import configs from './configs';
 import * as helpers from './helpers';
@@ -573,12 +574,7 @@ function initialize(mt3d) {
             map.addControl(control, 'top-right');
         }
 
-        const aboutPopup = new mapboxgl.Popup({
-            closeButton: false,
-            closeOnClick: false,
-            anchor: 'right',
-            maxWidth: '300px'
-        });
+        const aboutPopup = new AboutPopup();
 
         if (mt3d.infoControl) {
             map.addControl(new MapboxGLButtonControl([{
@@ -586,8 +582,7 @@ function initialize(mt3d) {
                 title: mt3d.dict['about'],
                 eventHandler() {
                     if (!aboutPopup.isOpen()) {
-                        updateAboutPopup();
-                        aboutPopup.addTo(map);
+                        aboutPopup.updateContent(mt3d.dict, mt3d.lastDynamicUpdate).addTo(map);
                     } else {
                         aboutPopup.remove();
                     }
@@ -698,9 +693,6 @@ function initialize(mt3d) {
             }
             if (popup.isOpen()) {
                 updatePopup();
-            }
-            if (aboutPopup.isOpen()) {
-                updateAboutPopup();
             }
         });
 
@@ -1664,7 +1656,7 @@ function initialize(mt3d) {
                 refreshTrains();
                 refreshDelayMarkers();
                 if (aboutPopup.isOpen()) {
-                    updateAboutPopup();
+                    aboutPopup.updateContent(mt3d.dict, mt3d.lastDynamicUpdate);
                 }
             }).catch(error => {
                 refreshTrains();
@@ -2384,41 +2376,6 @@ function initialize(mt3d) {
             if (addToMap) {
                 popup.addTo(map);
             }
-        }
-
-        function updateAboutPopup() {
-            const {container, dict} = mt3d,
-                r1 = container.querySelector('#map').getBoundingClientRect(),
-                r2 = container.querySelector('.mapboxgl-ctrl-about').getBoundingClientRect(),
-                staticCheck = container.querySelector('#acd-static'),
-                dynamicCheck = container.querySelector('#acd-dynamic'),
-                html = [
-                    dict['description'],
-                    `<input id="${container.id}-acd-static" class="acd-check" type="checkbox"`,
-                    staticCheck && staticCheck.checked ? ' checked' : '',
-                    '>',
-                    `<label class="acd-label" for="${container.id}-acd-static"><span class="acd-icon"></span>${dict['static-update']}</label>`,
-                    `<div class="acd-content">${configs.lastStaticUpdate}</div>`,
-                    `<input id="${container.id}-acd-dynamic" class="acd-check" type="checkbox"`,
-                    dynamicCheck && dynamicCheck.checked ? ' checked' : '',
-                    '>',
-                    `<label class="acd-label" for="${container.id}-acd-dynamic"><span class="acd-icon"></span>${dict['dynamic-update']}</label>`,
-                    '<div class="acd-content">',
-                    mt3d.lastDynamicUpdate['JR-East'] || 'N/A',
-                    ` (${dict['jr-east']})<br>`,
-                    mt3d.lastDynamicUpdate['TokyoMetro'] || 'N/A',
-                    ` (${dict['tokyo-metro']})<br>`,
-                    mt3d.lastDynamicUpdate['Toei'] || 'N/A',
-                    ` (${dict['toei']})<br>`,
-                    mt3d.lastDynamicUpdate['HND-JAT'] || 'N/A',
-                    ` (${dict['hnd-jat']})<br>`,
-                    mt3d.lastDynamicUpdate['HND-TIAT'] || 'N/A',
-                    ` (${dict['hnd-tiat']})<br>`,
-                    mt3d.lastDynamicUpdate['NAA'] || 'N/A',
-                    ` (${dict['naa']})</div>`
-                ].join('');
-
-            aboutPopup.setLngLat(map.unproject([r2.left - r1.left - 5, r2.top - r1.top + 15])).setHTML(html);
         }
     });
 
