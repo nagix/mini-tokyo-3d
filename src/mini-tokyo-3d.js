@@ -125,6 +125,10 @@ export default class {
         me.isEditingTime = false;
         me.isWeatherVisible = false;
 
+        me.initialCenter = helpers.valueOrDefault(options.center, configs.originCoord);
+        me.initialZoom = helpers.valueOrDefault(options.zoom, configs.defaultZoom);
+        me.initialBearing = helpers.valueOrDefault(options.bearing, configs.defaultBearing);
+        me.initialPitch = helpers.valueOrDefault(options.pitch, configs.defaultPitch);
         me.frameRate = helpers.valueOrDefault(options.frameRate, configs.defaultFrameRate);
 
         me.lastDynamicUpdate = {};
@@ -139,6 +143,74 @@ export default class {
             showErrorMessage(me.container);
             throw error;
         });
+    }
+
+    getCenter() {
+        const {map, initialCenter} = this;
+
+        return map ? map.getCenter() : new mapboxgl.LngLat(initialCenter);
+    }
+
+    setCenter(center) {
+        const me = this,
+            {map} = me;
+
+        if (map) {
+            map.setCenter(center);
+        } else {
+            me.initialCenter = center;
+        }
+    }
+
+    getZoom() {
+        const {map, initialZoom} = this;
+
+        return map ? map.getZoom() : initialZoom;
+    }
+
+    setZoom(zoom) {
+        const me = this,
+            {map} = me;
+
+        if (map) {
+            map.setZoom(zoom);
+        } else {
+            me.initialZoom = zoom;
+        }
+    }
+
+    getBearing() {
+        const {map, initialBearing} = this;
+
+        return map ? map.getBearing() : initialBearing;
+    }
+
+    setBearing(bearing) {
+        const me = this,
+            {map} = me;
+
+        if (map) {
+            map.setBearing(bearing);
+        } else {
+            me.initialBearing = bearing;
+        }
+    }
+
+    getPitch() {
+        const {map, initialPitch} = this;
+
+        return map ? map.getPitch() : initialPitch;
+    }
+
+    setPitch(pitch) {
+        const me = this,
+            {map} = me;
+
+        if (map) {
+            map.setPitch(pitch);
+        } else {
+            me.initialPitch = pitch;
+        }
     }
 
 }
@@ -177,15 +249,15 @@ function initialize(mt3d) {
 
     Object.assign(mt3d.secrets, mt3d.options.secrets);
     mapboxgl.accessToken = mt3d.secrets.mapbox;
-    const map = new mapboxgl.Map({
+    const map = mt3d.map = new mapboxgl.Map({
         container: mt3d.container.querySelector('#map'),
         style: `${mt3d.dataUrl}/osm-liberty.json`,
         customAttribution: mt3d.infoControl ? '' : configs.customAttribution,
         hash: helpers.valueOrDefault(mt3d.options.hash, false),
-        center: helpers.valueOrDefault(mt3d.options.center, configs.originCoord),
-        zoom: helpers.valueOrDefault(mt3d.options.zoom, configs.defaultZoom),
-        bearing: helpers.valueOrDefault(mt3d.options.bearing, configs.defaultBearing),
-        pitch: helpers.valueOrDefault(mt3d.options.pitch, configs.defaultPitch)
+        center: mt3d.initialCenter,
+        zoom: mt3d.initialZoom,
+        bearing: mt3d.initialBearing,
+        pitch: mt3d.initialPitch
     });
 
     const unit = Math.pow(2, 14 - helpers.clamp(map.getZoom(), 13, 19));
