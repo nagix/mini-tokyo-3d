@@ -8,11 +8,11 @@ import centerOfMass from '@turf/center-of-mass';
 import {featureEach} from '@turf/meta';
 import {getCoord, getCoords} from '@turf/invariant';
 import * as THREE from 'three';
-import JapaneseHolidays from 'japanese-holidays';
 import SunCalc from 'suncalc';
 import animation from './animation';
-import AboutPopup from './aboutPopup';
+import AboutPopup from './about-popup';
 import Clock from './clock';
+import ClockControl from './clock-control';
 import configs from './configs';
 import * as helpers from './helpers';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
@@ -61,13 +61,6 @@ const TRAINTYPES_FOR_SOBURAPID = [
     'JR-East.Rapid',
     'JR-East.LimitedExpress'
 ];
-
-const DATE_FORMAT = {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    weekday: 'short'
-};
 
 const DEGREE_TO_RADIAN = Math.PI / 180;
 
@@ -590,10 +583,11 @@ function initialize(mt3d) {
             }]));
         }
 
-        if (!mt3d.clockControl) {
-            mt3d.container.querySelector('#clock').style.visibility = 'hidden';
+        if (mt3d.clockControl) {
+            mt3d.clockCtrl = new ClockControl({lang: mt3d.lang, dict: mt3d.dict, clock: mt3d.clock});
+            mt3d.clockCtrl.on('change', onClockChange);
+            map.addControl(mt3d.clockCtrl);
         }
-        updateClock();
 
         const popup = new mapboxgl.Popup({
             closeButton: false,
@@ -709,10 +703,6 @@ function initialize(mt3d) {
                 if (now - mt3d.lastTimetableRefresh >= 86400000) {
                     loadTimetableData();
                     mt3d.lastTimetableRefresh = mt3d.clock.getTime('03:00');
-                }
-                if (Math.floor(now / 1000) !== Math.floor(mt3d.lastClockRefresh / 1000)) {
-                    refreshClock();
-                    mt3d.lastClockRefresh = now;
                 }
 
                 // Remove all trains if the page has been invisible for certain amount of time
@@ -2006,22 +1996,26 @@ function initialize(mt3d) {
             }
 
             updatePlaybackButton(enabled);
-            stopAll();
-            markObject();
-            trackObject();
+            mt3d.isPlayback = enabled;
+            mt3d.clock.reset();
+            onClockChange();
+            if (mt3d.clockControl) {
+                mt3d.clockCtrl.setMode(enabled ? 'playback' : 'realtime');
+            }
             if (enabled) {
                 resetRailwayStatus();
             }
-            mt3d.isEditingTime = false;
-            mt3d.clock.reset();
-            delete mt3d.tempDate;
+        }
+
+        function onClockChange() {
+            stopAll();
+            markObject();
+            trackObject();
+
             if (mt3d.lastTimetableRefresh !== mt3d.clock.getTime('03:00')) {
                 loadTimetableData();
                 mt3d.lastTimetableRefresh = mt3d.clock.getTime('03:00');
             }
-            mt3d.isPlayback = enabled;
-            updateClock();
-            refreshStyleColors();
         }
 
         function setWeatherMode(enabled) {
@@ -2174,156 +2168,6 @@ function initialize(mt3d) {
                     descendant.material.opacity = p < 1 ? p : 2 - p;
                 }
             });
-        }
-
-        const dateComponents = [
-            {id: 'year', fn: 'FullYear', digits: 4, extra: 0},
-            {id: 'month', fn: 'Month', digits: 2, extra: 1},
-            {id: 'day', fn: 'Date', digits: 2, extra: 0},
-            {id: 'hour', fn: 'Hours', digits: 2, extra: 0},
-            {id: 'minute', fn: 'Minutes', digits: 2, extra: 0},
-            {id: 'second', fn: 'Seconds', digits: 2, extra: 0}
-        ];
-
-        function refreshClock() {
-            const {lang, container} = mt3d;
-            let date = mt3d.clock.getJSTDate(),
-                dateString = date.toLocaleDateString(lang, DATE_FORMAT);
-
-            if (lang === 'ja' && JapaneseHolidays.isHoliday(date)) {
-                dateString = dateString.replace(/\(.+\)/, '(祝)');
-            }
-            if (!mt3d.isEditingTime) {
-                container.querySelector('#date').innerHTML = dateString;
-                container.querySelector('#time').innerHTML = date.toLocaleTimeString(lang);
-            } else {
-                if (mt3d.tempDate) {
-                    date = mt3d.tempDate;
-                    dateComponents.forEach(({id}) => {
-                        container.querySelector(`#${id}`).classList.add('desc-caution');
-                    });
-                    container.querySelector('#edit-time-ok-button').disabled = false;
-                }
-                dateComponents.forEach(({id, fn, digits, extra}) => {
-                    container.querySelector(`#${id}`).innerHTML =
-                        `0${date[`get${fn}`]() + extra}`.slice(-digits);
-                });
-            }
-        }
-
-        function updateClock() {
-            const {container, dict} = mt3d;
-
-            container.querySelector('#clock').innerHTML = [
-                !mt3d.isPlayback || !mt3d.isEditingTime ?
-                    '<span id="date"></span><br><span id="time"></span><br>' : '',
-                mt3d.isPlayback && !mt3d.isEditingTime ? [
-                    '<div class="clock-button">',
-                    `<span><button id="edit-time-button">${dict['edit-date-time']}</button></span>`,
-                    '</div>'
-                ].join('') : '',
-                mt3d.isPlayback && mt3d.isEditingTime ? [
-                    '<div class="clock-controller">',
-                    dateComponents.slice(0, 3).map(({id}) => [
-                        '<span class="spin-box">',
-                        `<div><button id="${id}-increase-button" class="top-button"><span class="increase-icon"></span></button></div>`,
-                        `<div id="${id}"></div>`,
-                        `<div><button id="${id}-decrease-button" class="bottom-button"><span class="decrease-icon"></span></button></div>`,
-                        '</span>'
-                    ].join('')).join('<span class="clock-controller-separator">-</span>'),
-                    '<span class="clock-controller-separator"></span>',
-                    dateComponents.slice(-3).map(({id}) => [
-                        '<span class="spin-box">',
-                        `<div><button id="${id}-increase-button" class="top-button"><span class="increase-icon"></span></button></div>`,
-                        `<div id="${id}"></div>`,
-                        `<div><button id="${id}-decrease-button" class="bottom-button"><span class="decrease-icon"></span></button></div>`,
-                        '</span>'
-                    ].join('')).join('<span class="clock-controller-separator">:</span>'),
-                    '</div>',
-                    '<div class="clock-button">',
-                    `<span><button id="edit-time-cancel-button">${dict['cancel']}</button></span>`,
-                    '<span class="clock-controller-separator"></span>',
-                    `<span><button id="edit-time-ok-button" disabled>${dict['ok']}</button></span>`,
-                    '</div>'
-                ].join('') : '',
-                mt3d.isPlayback ? [
-                    '<div class="speed-controller">',
-                    '<span><button id="speed-decrease-button" class="left-button"',
-                    mt3d.clock.speed === 1 ? ' disabled' : '',
-                    '><span class="decrease-icon"></span></button></span>',
-                    `<span id="clock-speed">${mt3d.clock.speed}${dict['x-speed']}</span>`,
-                    '<span><button id="speed-increase-button" class="right-button"',
-                    mt3d.clock.speed === 600 ? ' disabled' : '',
-                    '><span class="increase-icon"></span></button></span>',
-                    '</div>'
-                ].join('') : ''
-            ].join('');
-
-            refreshClock();
-            container.querySelector('#clock').style.display = 'block';
-
-            if (mt3d.isPlayback && mt3d.isEditingTime) {
-                container.querySelector('#edit-time-cancel-button').addEventListener('click', () => {
-                    delete mt3d.tempDate;
-                    mt3d.isEditingTime = false;
-                    updateClock();
-                });
-                container.querySelector('#edit-time-ok-button').addEventListener('click', () => {
-                    if (mt3d.tempDate) {
-                        stopAll();
-                        markObject();
-                        trackObject();
-
-                        mt3d.clock.setDate(mt3d.tempDate);
-                        delete mt3d.tempDate;
-
-                        if (mt3d.lastTimetableRefresh !== mt3d.clock.getTime('03:00')) {
-                            loadTimetableData();
-                            mt3d.lastTimetableRefresh = mt3d.clock.getTime('03:00');
-                        }
-                    }
-
-                    mt3d.isEditingTime = false;
-                    updateClock();
-                });
-            }
-
-            if (mt3d.isPlayback && !mt3d.isEditingTime) {
-                container.querySelector('#edit-time-button').addEventListener('click', () => {
-                    mt3d.isEditingTime = true;
-                    updateClock();
-                });
-            }
-
-            if (mt3d.isPlayback && mt3d.isEditingTime) {
-                dateComponents.forEach(({id, fn}) => {
-                    container.querySelector(`#${id}-increase-button`).addEventListener('click', () => {
-                        mt3d.tempDate = mt3d.tempDate || mt3d.clock.getJSTDate();
-                        mt3d.tempDate[`set${fn}`](mt3d.tempDate[`get${fn}`]() + 1);
-                        refreshClock();
-                    });
-                    container.querySelector(`#${id}-decrease-button`).addEventListener('click', () => {
-                        mt3d.tempDate = mt3d.tempDate || mt3d.clock.getJSTDate();
-                        mt3d.tempDate[`set${fn}`](mt3d.tempDate[`get${fn}`]() - 1);
-                        refreshClock();
-                    });
-                });
-            }
-
-            if (mt3d.isPlayback) {
-                container.querySelector('#speed-increase-button').addEventListener('click', function() {
-                    mt3d.clock.setSpeed(mt3d.clock.speed + (mt3d.clock.speed < 10 ? 1 : mt3d.clock.speed < 100 ? 10 : 100));
-                    this.disabled = mt3d.clock.speed === 600;
-                    container.querySelector('#speed-decrease-button').disabled = false;
-                    container.querySelector('#clock-speed').innerHTML = mt3d.clock.speed + dict['x-speed'];
-                });
-                container.querySelector('#speed-decrease-button').addEventListener('click', function() {
-                    mt3d.clock.setSpeed(mt3d.clock.speed - (mt3d.clock.speed <= 10 ? 1 : mt3d.clock.speed <= 100 ? 10 : 100));
-                    this.disabled = mt3d.clock.speed === 1;
-                    container.querySelector('#speed-increase-button').disabled = false;
-                    container.querySelector('#clock-speed').innerHTML = mt3d.clock.speed + dict['x-speed'];
-                });
-            }
         }
 
         function updatePopup(options) {
@@ -2497,7 +2341,6 @@ function initialize(mt3d) {
 function insertTags(container) {
     container.innerHTML = `
 <div id="map"></div>
-<div id="clock"></div>
 <input id="search-box" type="text" list="stations">
 <div id="timetable">
     <div id="timetable-header"></div>

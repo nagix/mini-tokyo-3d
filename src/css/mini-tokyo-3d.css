@@ -49,17 +49,15 @@
 	opacity: .9;
 	display: none;
 }
-.mini-tokyo-3d #clock {
-	position: absolute;
-	z-index: 1;
-	top: 10px;
-	left: 10px;
+.mini-tokyo-3d .clock-ctrl {
+	margin-top: 10px;
+	margin-left: 10px;
 	padding: 10px;
 	border-radius: 3px;
 	background-color: rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 	color: #fff;
-	display: none;
+	pointer-events: auto;
 }
 .mini-tokyo-3d #time {
 	font-size: 150%;
@@ -184,10 +182,10 @@
 .mini-tokyo-3d button:disabled .decrease-icon {
 	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/minus.svg', fill: #7f7f7f);
 }
-.mini-tokyo-3d #clock button:disabled {
+.mini-tokyo-3d .clock-ctrl button:disabled {
 	color: #777;
 }
-.mini-tokyo-3d #clock button:not(:disabled):hover {
+.mini-tokyo-3d .clock-ctrl button:not(:disabled):hover {
 	background-color: rgba(51, 51, 51, 0.7);
 }
 .mini-tokyo-3d .increase-icon {
