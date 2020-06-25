@@ -809,7 +809,7 @@ function initialize(mt3d) {
                     }
                     */
 
-                    if (!mt3d.viewAnimationID) {
+                    if (!mt3d.viewAnimationID && !map._zooming && !map._pitching) {
                         easeTo({
                             center,
                             altitude,
@@ -928,7 +928,7 @@ function initialize(mt3d) {
                     trackObject(car);
                 }
 
-                if (mt3d.trackedObject === car && !mt3d.viewAnimationID) {
+                if (mt3d.trackedObject === car && !mt3d.viewAnimationID && !map._zooming && !map._pitching) {
                     easeTo({
                         center: coord,
                         altitude,
@@ -1009,7 +1009,7 @@ function initialize(mt3d) {
                 cameraZ = trainLayers.og.camera.position.z,
                 aircraftScale = mt3d.aircraftScale * cameraZ / (cameraZ - mCoord.z);
 
-            if (mt3d.trackedObject === aircraft && !mt3d.viewAnimationID) {
+            if (mt3d.trackedObject === aircraft && !mt3d.viewAnimationID && !map._zooming && !map._pitching) {
                 easeTo({
                     center: coord,
                     altitude,
