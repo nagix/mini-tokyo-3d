@@ -184,6 +184,7 @@
 }
 .mini-tokyo-3d .clock-ctrl button:disabled {
 	color: #777;
+	cursor: not-allowed;
 }
 .mini-tokyo-3d .clock-ctrl button:not(:disabled):hover {
 	background-color: rgba(51, 51, 51, 0.7);
@@ -344,6 +345,10 @@
 .mini-tokyo-3d .mapboxgl-popup-content {
 	color: #fff;
 	background-color: rgba(0, 0, 0, 0.7);
+}
+.mini-tokyo-3d .mapboxgl-popup-content,
+.mini-tokyo-3d .mapboxgl-popup-tip {
+	pointer-events: none;
 }
 .mini-tokyo-3d .mapboxgl-popup-content a:link,
 .mini-tokyo-3d .mapboxgl-popup-content a:visited {
