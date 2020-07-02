@@ -1340,4 +1340,59 @@
 	},
 	"color": "#FF6633",
 	"carComposition": 4
+}, {
+	"id": "ChibaMonorail.Line1",
+	"title": {
+		"ja": "千葉モノレール1号線",
+		"en": "Chiba Monorail Line 1",
+		"ko": "지바 모노레일 1호선",
+		"zh-Hans": "千叶单轨电车1号线",
+		"zh-Hant": "千葉單軌電車1號線"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"ChibaMonorail.Line1.ChibaMinato",
+			"ChibaMonorail.Line1.ShiyakushoMae",
+			"ChibaMonorail.Line1.Chiba",
+			"ChibaMonorail.Line1.Sakaecho",
+			"ChibaMonorail.Line1.YoshikawaKoen",
+			"ChibaMonorail.Line1.KenchoMae"
+		]
+	},
+	"ascending": "Outbound",
+	"color": "#2843BA",
+	"carComposition": 2
+}, {
+	"id": "ChibaMonorail.Line2",
+	"title": {
+		"ja": "千葉モノレール2号線",
+		"en": "Chiba Monorail Line 2",
+		"ko": "지바 모노레일 2호선",
+		"zh-Hans": "千叶单轨电车2号线",
+		"zh-Hant": "千葉單軌電車2號線"
+	},
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"ChibaMonorail.Line2.Chiba",
+			"ChibaMonorail.Line2.ChibaKoen",
+			"ChibaMonorail.Line2.Sakusabe",
+			"ChibaMonorail.Line2.Tendai",
+			"ChibaMonorail.Line2.Anagawa",
+			"ChibaMonorail.Line2.SportsCenter",
+			"ChibaMonorail.Line2.DobutsuKoen",
+			"ChibaMonorail.Line2.Mitsuwadai",
+			"ChibaMonorail.Line2.Tsuga",
+			"ChibaMonorail.Line2.Sakuragi",
+			"ChibaMonorail.Line2.Oguradai",
+			"ChibaMonorail.Line2.ChishirodaiKita",
+			"ChibaMonorail.Line2.Chishirodai"
+		]
+	},
+	"ascending": "Outbound",
+	"color": "#2843BA",
+	"carComposition": 2
 }]
