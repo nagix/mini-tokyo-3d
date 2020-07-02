@@ -182,6 +182,9 @@
 .mini-tokyo-3d button:disabled .decrease-icon {
 	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/minus.svg', fill: #7f7f7f);
 }
+.mini-tokyo-3d .clock-ctrl button {
+	font-size: 12px;
+}
 .mini-tokyo-3d .clock-ctrl button:disabled {
 	color: #777;
 	cursor: not-allowed;
@@ -346,8 +349,8 @@
 	color: #fff;
 	background-color: rgba(0, 0, 0, 0.7);
 }
-.mini-tokyo-3d .mapboxgl-popup-content,
-.mini-tokyo-3d .mapboxgl-popup-tip {
+.mini-tokyo-3d .popup-object .mapboxgl-popup-content,
+.mini-tokyo-3d .popup-object .mapboxgl-popup-tip {
 	pointer-events: none;
 }
 .mini-tokyo-3d .mapboxgl-popup-content a:link,

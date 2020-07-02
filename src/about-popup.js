@@ -7,6 +7,7 @@ export default class extends Popup {
 
     constructor() {
         super({
+            className: 'popup-about',
             closeButton: false,
             closeOnClick: false,
             anchor: 'right',

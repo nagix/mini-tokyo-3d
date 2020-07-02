@@ -662,6 +662,7 @@ function initialize(mt3d) {
         }
 
         const popup = new mapboxgl.Popup({
+            className: 'popup-object',
             closeButton: false,
             closeOnClick: false,
             maxWidth: '300px',
@@ -1274,17 +1275,17 @@ function initialize(mt3d) {
 
         function getLocalizedRailwayTitle(railway) {
             const title = (mt3d.railwayLookup[railway] || {}).title || {};
-            return title[mt3d.lang] || title['en'];
+            return title[mt3d.lang] || title.en;
         }
 
         function getLocalizedRailDirectionTitle(direction) {
             const title = (mt3d.railDirectionLookup[direction] || {}).title || {};
-            return title[mt3d.lang] || title['en'];
+            return title[mt3d.lang] || title.en;
         }
 
         function getLocalizedTrainTypeTitle(type) {
             const title = (mt3d.trainTypeLookup[type] || {}).title || {};
-            return title[mt3d.lang] || title['en'];
+            return title[mt3d.lang] || title.en;
         }
 
         function getLocalizedStationTitle(array) {
@@ -1292,28 +1293,28 @@ function initialize(mt3d) {
 
             return stations.map(station => {
                 const title = (mt3d.stationLookup[station] || {}).title || {};
-                return title[mt3d.lang] || title['en'];
+                return title[mt3d.lang] || title.en;
             }).join(mt3d.dict['and']);
         }
 
         function getLocalizedOperatorTitle(operator) {
             const title = (mt3d.operatorLookup[operator] || {}).title || {};
-            return title[mt3d.lang] || title['en'];
+            return title[mt3d.lang] || title.en;
         }
 
         function getLocalizedAirportTitle(airport) {
             const title = (mt3d.airportLookup[airport] || {}).title || {};
-            return title[mt3d.lang] || title['en'];
+            return title[mt3d.lang] || title.en;
         }
 
         function getLocalizedFlightStatusTitle(status) {
             const title = (mt3d.flightStatusLookup[status] || {}).title || {};
-            return title[mt3d.lang] || title['en'];
+            return title[mt3d.lang] || title.en;
         }
 
         function setTrainStandingStatus(train, standing) {
             const {lang, dict} = mt3d,
-                {r: railwayID, nm: name, v: vehicle, ds: destination, departureTime, arrivalStation} = train,
+                {r: railwayID, nm: names, v: vehicle, ds: destination, departureTime, arrivalStation} = train,
                 railway = mt3d.railwayLookup[railwayID],
                 color = vehicle ? mt3d.trainVehicleLookup[vehicle].color : railway.color,
                 delay = train.delay || 0,
@@ -1329,7 +1330,7 @@ function initialize(mt3d) {
                     '</div>'
                 ].join('') : `<div style="background-color: ${color};"></div>`,
                 '<div><strong>',
-                name ? name[0][lang] : getLocalizedRailwayTitle(railwayID),
+                names ? names.map(name => name[lang] || name.en).join(dict['and']) : getLocalizedRailwayTitle(railwayID),
                 '</strong>',
                 `<br> ${getLocalizedTrainTypeTitle(train.y)} `,
                 destination ?
@@ -1397,7 +1398,7 @@ function initialize(mt3d) {
                 sections = [],
                 stations = [],
                 offsets = [],
-                {r: railwayID, nm: name, v: vehicle, ds: destination, nextTrains} = train,
+                {r: railwayID, nm: names, v: vehicle, ds: destination, nextTrains} = train,
                 railway = mt3d.railwayLookup[railwayID],
                 color = vehicle ? mt3d.trainVehicleLookup[vehicle].color : railway.color,
                 delay = train.delay || 0;
@@ -1411,7 +1412,7 @@ function initialize(mt3d) {
                     '</div>'
                 ].join('') : `<div style="background-color: ${color};"></div>`,
                 '<div><strong>',
-                name ? name[0][lang] : getLocalizedRailwayTitle(railwayID),
+                names ? names.map(name => name[lang] || name.en).join(dict['and']) : getLocalizedRailwayTitle(railwayID),
                 '</strong>',
                 `<br>${getLocalizedTrainTypeTitle(train.y)} `,
                 destination ?
