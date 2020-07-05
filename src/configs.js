@@ -111,8 +111,10 @@ const configs = {
     lastStaticUpdate: '2020-06-09 11:00:00',
 
     // String to show in an Mapbox's AttributionControl
-    customAttribution: '<a href="https://github.com/nagix/mini-tokyo-3d">© Akihiko Kusanagi</a>'
+    customAttribution: '<a href="https://github.com/nagix/mini-tokyo-3d">© Akihiko Kusanagi</a>',
 
+    // Share URL
+    shareUrl: 'https://minitokyo3d.com'
 };
 
 export default configs;

@@ -204,6 +204,58 @@
 .mini-tokyo-3d #clock-speed {
 	padding: 0 6px;
 }
+.mini-tokyo-3d .share-panel {
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	left: 50%;
+	padding: 10px;
+	border-radius: 0 0 3px 3px;
+	background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	color: #fff;
+	transform: translate(-50%, 0);
+}
+.mini-tokyo-3d .share-button {
+	height: 30px;
+	padding: 0 6px;
+	border: 0;
+	border-radius: 4px;
+	box-shadow:0 0 0 1px #777;
+	display: block;
+	color: #fff;
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 12px;
+	line-height: 20px;
+}
+.mini-tokyo-3d .share-button:hover {
+	background-color: rgba(51, 51, 51, 0.7);
+}
+.mini-tokyo-3d .share-button:before {
+    content: "";
+    display: block;
+	background: no-repeat center/20px 20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/share-alt.svg', fill: #fff);
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0 6px 0 0;
+}
+.mini-tokyo-3d .notification {
+	position: absolute;
+	z-index: 3;
+	top: 33%;
+	left: 50%;
+	padding: 20px;
+	border-radius: 0 0 3px 3px;
+	background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	color: #fff;
+	opacity: 1;
+	font-size: 130%;
+	transform: translate(-50%, -50%);
+	transition: opacity 1s linear;
+}
 .mini-tokyo-3d #timetable {
 	position: absolute;
 	z-index: 3;

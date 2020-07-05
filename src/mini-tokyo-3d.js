@@ -16,6 +16,7 @@ import ClockControl from './clock-control';
 import configs from './configs';
 import * as helpers from './helpers';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
+import SharePanel from './share-panel';
 import ThreeLayer from './three-layer';
 import WeatherLayer from './weather-layer';
 import destination from './turf/destination';
@@ -352,6 +353,18 @@ function initialize(mt3d) {
     mt3d.lastTimetableRefresh = mt3d.clock.getTime('03:00');
     updateTimetableData(mt3d.timetableData);
     mt3d.trainLookup = helpers.buildLookup(mt3d.timetableData, 't');
+
+    if (mt3d.options.selection) {
+        const id = helpers.removePrefix(mt3d.options.selection);
+
+        if (!id.match(/NRT|HND/)) {
+            const train = mt3d.trainLookup[id];
+
+            mt3d.selection = train ? getConnectingTrainIds(train) : [id];
+        } else {
+            mt3d.selection = id;
+        }
+    }
 
     mt3d.railDirectionLookup = helpers.buildLookup(mt3d.railDirectionData);
     mt3d.trainTypeLookup = helpers.buildLookup(mt3d.trainTypeData);
@@ -897,6 +910,10 @@ function initialize(mt3d) {
                 if (mt3d.trackedObject && mt3d.trackedObject.userData.object === train) {
                     tracked = cars[0];
                 }
+                if (helpers.includes(mt3d.selection, train.t)) {
+                    tracked = cars[0];
+                    delete mt3d.selection;
+                }
             }
 
             if (delay) {
@@ -977,7 +994,8 @@ function initialize(mt3d) {
         }
 
         function updateFlightShape(flight, t) {
-            let {aircraft, body, wing, vTail} = flight;
+            let {aircraft, body, wing, vTail} = flight,
+                tracked;
 
             if (t !== undefined) {
                 flight._t = t;
@@ -998,6 +1016,13 @@ function initialize(mt3d) {
                 aircraft.rotation.order = 'ZYX';
                 aircraft.userData.object = flight;
 
+                // Set tracked object if the selection is specified
+                // Delay calling trackObject() as they require the object position to be set
+                if (mt3d.selection === flight.id) {
+                    tracked = aircraft;
+                    delete mt3d.selection;
+                }
+
                 trainLayers.addObject(aircraft, 1000);
             }
 
@@ -1009,6 +1034,10 @@ function initialize(mt3d) {
                 bearing = aircraft.userData.bearing = p.bearing,
                 cameraZ = trainLayers.og.camera.position.z,
                 aircraftScale = mt3d.aircraftScale * cameraZ / (cameraZ - mCoord.z);
+
+            if (tracked === aircraft) {
+                trackObject(aircraft);
+            }
 
             if (mt3d.trackedObject === aircraft && !mt3d.viewAnimationID && !map._zooming && !map._pitching) {
                 easeTo({
@@ -1721,6 +1750,14 @@ function initialize(mt3d) {
                 if (aboutPopup.isOpen()) {
                     aboutPopup.updateContent(mt3d.dict, mt3d.lastDynamicUpdate);
                 }
+
+                // Check if the selection are trains and any of them is active
+                if (mt3d.selection && Array.isArray(mt3d.selection)) {
+                    if (mt3d.selection.map(id => !!mt3d.activeTrainLookup[id]).indexOf(true) === -1) {
+                        helpers.showNotification(mt3d.container, mt3d.dict['train-terminated']);
+                        delete mt3d.selection;
+                    }
+                }
             }).catch(error => {
                 refreshTrains();
                 console.log(error);
@@ -1927,6 +1964,14 @@ function initialize(mt3d) {
                 });
 
                 refreshFlights();
+
+                // Check if the selection is a flight and active
+                if (mt3d.selection && !Array.isArray(mt3d.selection)) {
+                    if (!mt3d.activeFlightLookup[mt3d.selection]) {
+                        helpers.showNotification(mt3d.container, mt3d.dict['flight-terminated']);
+                        delete mt3d.selection;
+                    }
+                }
             }).catch(error => {
                 refreshFlights();
                 console.log(error);
@@ -2208,6 +2253,10 @@ function initialize(mt3d) {
                 delete mt3d.trackedObject;
                 stopViewAnimation();
                 updateTrackingButton(false);
+                if (mt3d.sharePanel) {
+                    mt3d.sharePanel.remove();
+                    delete mt3d.sharePanel;
+                }
                 hideTimetable(mt3d.container);
             }
 
@@ -2218,6 +2267,11 @@ function initialize(mt3d) {
                 startViewAnimation();
                 updateTrackingButton(true);
                 setUndergroundMode(altitude < 0);
+
+                if (!mt3d.isPlayback && navigator.share) {
+                    mt3d.sharePanel = new SharePanel({dict: mt3d.dict, object: train});
+                    mt3d.sharePanel.addTo(mt3d);
+                }
                 if (train.tt) {
                     showTimetable(mt3d.container);
                     setTrainTimetableText(train);
@@ -2407,6 +2461,13 @@ function initialize(mt3d) {
         }
 
         train.arrivalStation = train.arrivalTime = train.nextDepartureTime = undefined;
+    }
+
+    function getConnectingTrainIds(train) {
+        const {nextTrains, t: id} = train,
+            ids = id ? [id] : [];
+
+        return nextTrains ? ids.concat(...nextTrains.map(getConnectingTrainIds)) : ids;
     }
 
 }

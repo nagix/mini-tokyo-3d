@@ -38,6 +38,9 @@ export function clamp(value, lower, upper) {
 export function includes(array, value) {
     let i, ilen;
 
+    if (!Array.isArray(array)) {
+        return array === value;
+    }
     if (!Array.isArray(value)) {
         return array.indexOf(value) !== -1;
     }
@@ -180,6 +183,25 @@ export function colorToRGBArray(color) {
     const c = parseInt(color.replace('#', ''), 16);
 
     return [Math.floor(c / 65536) % 256, Math.floor(c / 256) % 256, c % 256];
+}
+
+/**
+  * Show nortification message
+  * @param {Node} container - Node in which the notification panel is shown
+  * @param {string} message - Nortification message
+  */
+export function showNotification(container, message) {
+    const element = document.createElement('div');
+
+    element.className = 'notification';
+    element.innerHTML = message;
+    container.appendChild(element);
+    setTimeout(() => {
+        element.style.opacity = 0;
+    }, 1000);
+    setTimeout(() => {
+        container.removeChild(element);
+    }, 2000);
 }
 
 /**
