@@ -610,7 +610,7 @@ function initialize(mt3d) {
         }
 
         if (mt3d.fullscreenControl) {
-            const control = new mapboxgl.FullscreenControl();
+            const control = new mapboxgl.FullscreenControl({container: mt3d.container});
 
             control._updateTitle = function() {
                 const me = this,
