@@ -25,9 +25,9 @@ export function buildLookup(array, key) {
     const k = key || 'id',
         lookup = {};
 
-    array.forEach(element => {
+    for (const element of array) {
         lookup[element[k]] = element;
-    });
+    }
     return lookup;
 }
 
@@ -71,11 +71,11 @@ export function removePrefix(value) {
 }
 
 export function cleanKeys(obj) {
-    Object.keys(obj).forEach(key => {
+    for (const key of Object.keys(obj)) {
         if (obj[key] === undefined) {
             delete obj[key];
         }
-    });
+    }
     return obj;
 }
 
@@ -109,7 +109,7 @@ export function getStyleColors(map) {
     ).forEach(layer => {
         const {id, type} = layer;
 
-        paintPropertyKeys[type].forEach(key => {
+        for (const key of paintPropertyKeys[type]) {
             const prop = map.getPaintProperty(id, key);
 
             if (typeof prop === 'string') {
@@ -121,7 +121,7 @@ export function getStyleColors(map) {
                     colors.push({id, key, stops: i, r, g, b, a});
                 });
             }
-        });
+        }
     });
     return colors;
 }
@@ -153,7 +153,7 @@ export function scaleValues(obj, factor) {
 
     const result = {};
 
-    Object.keys(obj).forEach(key => {
+    for (const key of Object.keys(obj)) {
         if (key === 'stops') {
             result[key] = obj[key].map(element =>
                 [element[0], element[1] * factor]
@@ -161,14 +161,14 @@ export function scaleValues(obj, factor) {
         } else {
             result[key] = obj[key];
         }
-    });
+    }
     return result;
 }
 
 /**
   * Returns the relative luminance of the color
   * @param {object} color - Color object that has {r, g, b}
-  * @returns {number} Relative luminance betweem 0 and 255
+  * @returns {number} Relative luminance between 0 and 255
   */
 export function luminance(color) {
     return .2126 * color.r + .7152 * color.g + .0722 * color.b;
@@ -186,9 +186,9 @@ export function colorToRGBArray(color) {
 }
 
 /**
-  * Show nortification message
+  * Show notification message
   * @param {Node} container - Node in which the notification panel is shown
-  * @param {string} message - Nortification message
+  * @param {string} message - Notification message
   */
 export function showNotification(container, message) {
     const element = document.createElement('div');

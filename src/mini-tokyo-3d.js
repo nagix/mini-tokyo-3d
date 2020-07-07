@@ -15,6 +15,7 @@ import Clock from './clock';
 import ClockControl from './clock-control';
 import configs from './configs';
 import * as helpers from './helpers';
+import * as helpersThree from './helpers-three';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
 import SharePanel from './share-panel';
 import ThreeLayer from './three-layer';
@@ -246,12 +247,12 @@ export default class {
             addObject(object, duration) {
                 const layer = object.userData.altitude < 0 ? this.ug : this.og;
 
-                setOpacity(object, 0);
+                helpersThree.setOpacity(object, 0);
                 layer.scene.add(object);
                 if (duration > 0) {
                     animation.start({
                         callback: elapsed => {
-                            setOpacity(object, getObjectOpacity(object, me.isUndergroundVisible), elapsed / duration);
+                            helpersThree.setOpacity(object, getObjectOpacity(object, me.isUndergroundVisible), elapsed / duration);
                         },
                         duration
                     });
@@ -264,7 +265,7 @@ export default class {
                 if (duration > 0) {
                     animation.start({
                         callback: elapsed => {
-                            setOpacity(object, getObjectOpacity(object, me.isUndergroundVisible, elapsed / duration));
+                            helpersThree.setOpacity(object, getObjectOpacity(object, me.isUndergroundVisible, elapsed / duration));
                         },
                         duration
                     });
@@ -277,16 +278,12 @@ export default class {
 
                 const layer = object.userData.altitude < 0 ? this.ug : this.og;
 
-                object.traverse(({material}) => {
-                    if (material) {
-                        material.polygonOffsetFactor = 0;
-                    }
-                });
+                helpersThree.resetPolygonOffsetFactor(object);
                 object.renderOrder = 1;
                 if (duration > 0) {
                     animation.start({
                         callback: elapsed => {
-                            setOpacity(object, getObjectOpacity(object, me.isUndergroundVisible), 1 - elapsed / duration);
+                            helpersThree.setOpacity(object, getObjectOpacity(object, me.isUndergroundVisible), 1 - elapsed / duration);
                         },
                         complete: () => {
                             layer.scene.remove(object);
@@ -698,7 +695,7 @@ export default class {
                 const object = me.pickObject(e.point);
 
                 me.markObject(object);
-                if (!object || object instanceof THREE.Group) {
+                if (!object || helpersThree.isObject3D(object)) {
                     me.trackObject(object);
                 }
 
@@ -785,7 +782,7 @@ export default class {
                     if (me.trackedObject) {
                         const {coord: center, bearing, altitude, object} = me.trackedObject.userData;
 
-                        refreshOutline(me.trackedObject);
+                        helpersThree.refreshOutline(me.trackedObject);
                         if (object.timetableOffsets) {
                             me.setTrainTimetableMark(object);
                         }
@@ -806,7 +803,7 @@ export default class {
                             });
                         }
                     }
-                    if (me.markedObject instanceof THREE.Group) {
+                    if (helpersThree.isObject3D(me.markedObject)) {
                         me.updatePopup({setHTML: true});
                     }
                     if (!me.isPlayback && me.isWeatherVisible) {
@@ -876,17 +873,17 @@ export default class {
         if (length === 0) {
             const railway = me.railwayLookup[train.r],
                 {v: vehicle} = train,
-                car = new THREE.Group();
+                car = helpersThree.createGroup(helpersThree.createCube({
+                    dimension: {x: .88, y: 1.76, z: .88},
+                    color: vehicle ? me.trainVehicleLookup[vehicle].color : railway.color
+                }));
 
-            car.add(createCube(.88, 1.76, .88, vehicle ? me.trainVehicleLookup[vehicle].color : railway.color));
-            car.rotation.order = 'ZYX';
             car.userData.object = train;
-
             cars.push(car);
 
             // Reset marked/tracked object if it was marked/tracked before
             // Delay calling markObject() and trackObject() as they require the object position to be set
-            if (me.markedObject instanceof THREE.Group && me.markedObject.userData.object === train) {
+            if (helpersThree.isObject3D(me.markedObject) && me.markedObject.userData.object === train) {
                 marked = cars[0];
             }
             if (me.trackedObject && me.trackedObject.userData.object === train) {
@@ -899,9 +896,7 @@ export default class {
         }
 
         if (delay) {
-            if (!cars[0].getObjectByName('marker')) {
-                cars[0].add(createDelayMarker(helpers.isDarkBackground(map)));
-            }
+            helpersThree.addDelayMarker(cars[0], helpers.isDarkBackground(map));
         }
 
         const pArr = getCoordAndBearing(feature, offset + train._t * interval, 1, objectUnit);
@@ -990,14 +985,20 @@ export default class {
         if (!body) {
             const {color, tailcolor} = me.operatorLookup[flight.a];
 
-            aircraft = flight.aircraft = new THREE.Group();
-            body = flight.body = createCube(.88, 2.64, .88, color || '#FFFFFF');
-            wing = flight.wing = createCube(2.64, .88, .1, color || '#FFFFFF');
-            vTail = flight.vTail = createCube(.1, .88, .88, tailcolor || '#FFFFFF');
-            vTail.geometry.translate(0, -.88, .88);
-            vTail.geometry.userData.translate = {x: 0, y: -.88, z: .88};
-            aircraft.add(body, wing, vTail);
-            aircraft.rotation.order = 'ZYX';
+            body = flight.body = helpersThree.createCube({
+                dimension: {x: .88, y: 2.64, z: .88},
+                color: color || '#FFFFFF'
+            });
+            wing = flight.wing = helpersThree.createCube({
+                dimension: {x: 2.64, y: .88, z: .1},
+                color: color || '#FFFFFF'
+            });
+            vTail = flight.vTail = helpersThree.createCube({
+                dimension: {x: .1, y: .88, z: .88},
+                translate: {x: 0, y: -.88, z: .88},
+                color: tailcolor || '#FFFFFF'
+            });
+            aircraft = flight.aircraft = helpersThree.createGroup(body, wing, vTail);
             aircraft.userData.object = flight;
 
             // Set tracked object if the selection is specified
@@ -2111,13 +2112,13 @@ export default class {
                 });
                 Object.keys(me.activeTrainLookup).forEach(key => {
                     me.activeTrainLookup[key].cars.forEach(car => {
-                        setOpacity(car, getObjectOpacity(car, me.isUndergroundVisible, t));
+                        helpersThree.setOpacity(car, getObjectOpacity(car, me.isUndergroundVisible, t));
                     });
                 });
                 me.refreshDelayMarkers();
                 Object.keys(me.activeFlightLookup).forEach(key => {
                     const aircraft = me.activeFlightLookup[key].aircraft;
-                    setOpacity(aircraft, getObjectOpacity(aircraft, me.isUndergroundVisible, t));
+                    helpersThree.setOpacity(aircraft, getObjectOpacity(aircraft, me.isUndergroundVisible, t));
                 });
             },
             duration: 300
@@ -2209,19 +2210,13 @@ export default class {
 
     refreshDelayMarkers() {
         const me = this,
-            dark = helpers.isDarkBackground(me.map),
-            base = dark ? 0 : 1,
-            blending = dark ? THREE.AdditiveBlending : THREE.MultiplyBlending;
+            dark = helpers.isDarkBackground(me.map);
 
         Object.keys(me.activeTrainLookup).forEach(key => {
-            const car = me.activeTrainLookup[key].cars[0],
-                delayMarker = car && car.getObjectByName('marker');
+            const car = me.activeTrainLookup[key].cars[0];
 
-            if (delayMarker) {
-                const {material} = delayMarker;
-
-                material.uniforms.base.value = base;
-                material.blending = blending;
+            if (car) {
+                helpersThree.refreshDelayMarker(car, dark);
             }
         });
     }
@@ -2260,12 +2255,8 @@ export default class {
             {map, popup} = me;
 
         if (me.markedObject && me.markedObject !== object) {
-            let outline;
-
-            if (me.markedObject instanceof THREE.Group) {
-                while ((outline = me.markedObject.getObjectByName('outline-marked'))) {
-                    outline.parent.remove(outline);
-                }
+            if (helpersThree.isObject3D(me.markedObject)) {
+                helpersThree.removeOutline(me.markedObject, 'outline-marked');
             }
             delete me.markedObject;
             if (popup.isOpen()) {
@@ -2279,12 +2270,8 @@ export default class {
             map.getCanvas().style.cursor = 'pointer';
             me.updatePopup({setHTML: true, addToMap: true});
 
-            if (object instanceof THREE.Group && !object.getObjectByName('outline-marked')) {
-                object.traverse(descendant => {
-                    if (descendant.name === 'cube') {
-                        descendant.add(createOutline(descendant, 'outline-marked'));
-                    }
-                });
+            if (helpersThree.isObject3D(object)) {
+                helpersThree.addOutline(object, 'outline-marked');
             }
         }
     }
@@ -2293,11 +2280,7 @@ export default class {
         const me = this;
 
         if (me.trackedObject) {
-            let outline;
-
-            while ((outline = me.trackedObject.getObjectByName('outline-tracked'))) {
-                outline.parent.remove(outline);
-            }
+            helpersThree.removeOutline(me.trackedObject, 'outline-tracked');
             delete me.trackedObject;
             me.stopViewAnimation();
             me.updateTrackingButton(false);
@@ -2325,13 +2308,7 @@ export default class {
                 me.setTrainTimetableText(train);
             }
 
-            if (!object.getObjectByName('outline-tracked')) {
-                object.traverse(descendant => {
-                    if (descendant.name === 'cube') {
-                        descendant.add(createOutline(descendant, 'outline-tracked'));
-                    }
-                });
-            }
+            helpersThree.addOutline(object, 'outline-tracked');
         }
     }
 
@@ -2340,7 +2317,7 @@ export default class {
             {map, popup} = me,
             {setHTML, addToMap} = options || {};
 
-        if (me.markedObject instanceof THREE.Group) {
+        if (helpersThree.isObject3D(me.markedObject)) {
             const {coord, altitude, object} = me.markedObject.userData,
                 bearing = me.markedObject === me.trackedObject ? map.getBearing() : undefined;
 
@@ -2831,141 +2808,6 @@ function getStyleColorString(color, clock) {
         b = .5;
     }
     return `rgba(${[color.r * r, color.g * g, color.b * b, color.a].join(',')})`;
-}
-
-/**
-  * Returns a cube mesh object.
-  * @param {number} x - Length of the edges parallel to the X axis
-  * @param {number} y - Length of the edges parallel to the Y axis
-  * @param {number} z - Length of the edges parallel to the Z axis
-  * @param {string|Array} color - Cube color. If it is an array, the first three colors
-  *     will be used on the side surface, the fourth color will be used on the front surface
-  * @returns {Mesh} Cube mesh object
-  */
-function createCube(x, y, z, color) {
-    const materialParams = {
-        transparent: true,
-        polygonOffset: true,
-        polygonOffsetFactor: Math.random()
-    };
-    let geometry, material;
-
-    if (Array.isArray(color)) {
-        const hasFaceColor = color.length > 3;
-
-        geometry = new THREE.BoxBufferGeometry(x, y, z, 1, 1, 3);
-        geometry.clearGroups();
-        [0, 1, 2, 2, 1, 0, 2, 1, 0, 0, 1, 2, 0].forEach((index, i) => {
-            geometry.addGroup(i * 6, 6, i >= 6 && i < 12 && hasFaceColor ? 3 : index);
-        });
-        material = color.map(c =>
-            new THREE.MeshLambertMaterial(Object.assign({
-                color: c
-            }, materialParams))
-        );
-    } else {
-        geometry = new THREE.BoxBufferGeometry(x, y, z);
-        material = new THREE.MeshLambertMaterial(Object.assign({color}, materialParams));
-    }
-
-    const mesh = new THREE.Mesh(geometry, material);
-
-    mesh.name = 'cube';
-    return mesh;
-}
-
-/**
-  * Sets the opacity of an object and its decendants.
-  * @param {Object3D} object - Target object
-  * @param {number} opacity - Float in the range of 0.0 - 1.0 indicating how
-  *     transparent the material is
-  * @param {number} factor - Float in the range of 0.0 - 1.0 indicating the
-  *     factor of the opacity when fading in or out
-  */
-function setOpacity(object, opacity, factor) {
-    object.traverse(({material: materials, name}) => {
-        const value = (name === 'outline-marked' ? 1 : opacity) * helpers.valueOrDefault(factor, 1);
-
-        if (materials && name !== 'outline-tracked') {
-            const uniforms = materials.uniforms;
-
-            if (uniforms) {
-                uniforms.opacity.value = value;
-            } else if (Array.isArray(materials)) {
-                materials.forEach(material => {
-                    material.opacity = value;
-                });
-            } else {
-                materials.opacity = value;
-            }
-        }
-    });
-}
-
-function createDelayMarker(dark) {
-    const geometry = new THREE.SphereBufferGeometry(1.8, 32, 32),
-        material = new THREE.ShaderMaterial({
-            uniforms: {
-                glowColor: {type: 'c', value: new THREE.Color(0xff9900)},
-                base: {type: 'f', value: dark ? 0 : 1},
-                opacity: {type: 'f'}
-            },
-            vertexShader: `
-                varying float intensity;
-
-                void main() {
-                    vec3 vNormal = normalize( normalMatrix * normal );
-                    vec3 vNormel = normalize( vec3( modelViewMatrix * vec4( position, 1.0 ) ) );
-                    intensity = -dot( vNormal, vNormel );
-
-                    gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
-                }
-            `,
-            fragmentShader: `
-                uniform vec3 glowColor;
-                uniform float base;
-                uniform float opacity;
-                varying float intensity;
-
-                void main() {
-                    float r = base - ( base - glowColor.r ) * (1.0 - intensity) * opacity;
-                    float g = base - ( base - glowColor.g ) * (1.0 - intensity) * opacity;
-                    float b = base - ( base - glowColor.b ) * (1.0 - intensity) * opacity;
-                    gl_FragColor = vec4( r, g, b, 1.0 );
-                }
-            `,
-            blending: dark ? THREE.AdditiveBlending : THREE.MultiplyBlending,
-            depthWrite: false
-        }),
-        mesh = new THREE.Mesh(geometry, material);
-
-    mesh.name = 'marker';
-    return mesh;
-}
-
-function createOutline(object, name) {
-    const {width, height, depth} = object.geometry.parameters,
-        {translate} = object.geometry.userData,
-        outline = new THREE.Mesh(
-            new THREE.BoxBufferGeometry(width + .2, height + .2, depth + .2),
-            new THREE.MeshBasicMaterial({color: '#FFFFFF', side: THREE.BackSide, transparent: true})
-        );
-
-    outline.name = name;
-    if (translate) {
-        outline.geometry.translate(translate.x, translate.y, translate.z);
-    }
-    return outline;
-}
-
-function refreshOutline(object) {
-    const p = performance.now() % 1500 / 1500 * 2;
-
-    object.traverse(descendant => {
-        if (descendant.name === 'outline-tracked') {
-            descendant.material.opacity = p < 1 ? p : 2 - p;
-        }
-    });
 }
 
 function getObjectOpacity(object, isUndergroundVisible, t) {
