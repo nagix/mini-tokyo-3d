@@ -127,6 +127,8 @@ export default async function(options) {
                 stationIDLookup[title].forEach(id => {
                     lookup[id].thumbnail = thumbnail.source;
                 });
+            } else if (lookup[id] && lookup[id].coord) {
+                console.log(`No thumbnail: ${id}`);
             }
         }
     });
