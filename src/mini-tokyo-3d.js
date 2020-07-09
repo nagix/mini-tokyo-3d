@@ -217,6 +217,45 @@ export default class {
         }
     }
 
+    easeTo(options) {
+        const me = this,
+            {map} = me,
+            {center, bearing} = options;
+
+        if (map) {
+            if (center !== undefined || bearing !== undefined) {
+                me.trackObject();
+            }
+            map.easeTo(options);
+        }
+    }
+
+    flyTo(options) {
+        const me = this,
+            {map} = me,
+            {center, bearing} = options;
+
+        if (map) {
+            if (center !== undefined || bearing !== undefined) {
+                me.trackObject();
+            }
+            map.flyTo(options);
+        }
+    }
+
+    jumpTo(options) {
+        const me = this,
+            {map} = me,
+            {center, bearing} = options;
+
+        if (map) {
+            if (center !== undefined || bearing !== undefined) {
+                me.trackObject();
+            }
+            map.jumpTo(options);
+        }
+    }
+
     initialize() {
         const me = this;
 
@@ -795,7 +834,7 @@ export default class {
                         */
 
                         if (!me.viewAnimationID && !map._zooming && !map._pitching) {
-                            me.easeTo({
+                            me._jumpTo({
                                 center,
                                 altitude,
                                 bearing,
@@ -819,7 +858,7 @@ export default class {
 
     }
 
-    easeTo(options) {
+    _jumpTo(options) {
         const me = this,
             {map, trackingMode, trackingBaseBearing} = me;
         let {center, altitude, bearing, centerFactor, bearingFactor} = options;
@@ -843,7 +882,7 @@ export default class {
             );
         }
 
-        map.easeTo({center, bearing, duration: 0});
+        map.jumpTo({center, bearing});
     }
 
     updateTrainProps(train) {
@@ -924,7 +963,7 @@ export default class {
             }
 
             if (me.trackedObject === car && !me.viewAnimationID && !map._zooming && !map._pitching) {
-                me.easeTo({
+                me._jumpTo({
                     center: coord,
                     altitude,
                     bearing,
@@ -1025,7 +1064,7 @@ export default class {
         }
 
         if (me.trackedObject === aircraft && !me.viewAnimationID && !map._zooming && !map._pitching) {
-            me.easeTo({
+            me._jumpTo({
                 center: coord,
                 altitude,
                 bearing,
@@ -1253,7 +1292,7 @@ export default class {
                     factor = 1 - (1 - t1) / (1 - t2),
                     {coord: center, altitude, bearing} = me.trackedObject.userData;
 
-                me.easeTo({
+                me._jumpTo({
                     center,
                     altitude,
                     bearing,
