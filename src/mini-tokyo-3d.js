@@ -568,14 +568,22 @@ export default class {
                 }
             };
             searchBox.placeholder = me.dict['station-name'];
-            searchBox.addEventListener(isEdge ? 'blur' : 'change', searchListener);
+            searchBox.addEventListener('change', searchListener);
 
             // Workaround for Edge
             if (isEdge) {
                 searchBox.addEventListener('keydown', event => {
                     if (event.key === 'Enter') {
                         searchListener(event);
+                    } else {
+                        me.typing = true;
                     }
+                });
+                searchBox.addEventListener('input', event => {
+                    if (!me.typing) {
+                        searchListener(event);
+                    }
+                    delete me.typing;
                 });
             }
 

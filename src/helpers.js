@@ -38,8 +38,8 @@ export function clamp(value, lower, upper) {
 export function includes(array, value) {
     let i, ilen;
 
-    if (!Array.isArray(array)) {
-        return array === value;
+    if (!Array.isArray(array) && typeof array !== 'string') {
+        return false;
     }
     if (!Array.isArray(value)) {
         return array.indexOf(value) !== -1;
