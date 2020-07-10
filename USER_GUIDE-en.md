@@ -92,11 +92,31 @@ You can also change the rotation and tilt of the map by holding down the Shift k
 
 Click or tap the compass icon button and the bearing will be reset to true north.
 
+### Displaying Detailed Information on Trains and Airplanes
+
+<img src="public/images/train-details.jpg" width="216"> <img src="public/images/flight-details.jpg" width="216">
+
+Place the mouse pointer or tap on the train or airplane to display detailed information about it. Detailed train information includes railway name, train type, destination, train number, previous or standing station and departure time, next station and arrival time, delay time, and operation information. Flight details include airline name, flight number, departure or arrival location, status, departure or arrival time, and code-share information. If there is a train delay or a flight schedule change, the change will be highlighted in orange.
+
+### Displaying Detailed Information on Stations
+
+<img src="public/images/station-details.jpg" width="216">
+
+Place the mouse pointer or tap on the station to display detailed information about it. Detailed information includes station photo, station names, and connecting line names. If a station has different names for different lines but is a single transfer station, the information will be displayed together.
+
 ### Tracking Trains and Airplanes
 
 Clicking or tapping on a train or airplane will turn on [Tracking Mode](#tracking-mode) and the screen will automatically move following the movement of the train or airplane. There are two types of Tracking Modes, the “Helicopter Tracking Mode” and the “Rear Tracking Mode”, and you can enjoy the scenery along the railway in your favorite Tracking Mode. When Tracking Mode is on, the map panning and rotating operations are disabled (you can zoom in/out and change the tilt). Clicking on a map with no trains or airplanes turns Tracking Mode off.
 
 See [here](#tracking-mode) for details on Tracking Modes.
+
+### Sharing Trains and Flights
+
+<img src="public/images/share-button.jpg" width="211">
+
+When [Tracking Mode](#tracking-mode) is on, the “Share this train” or “Share this flight” button will appear at the top of the screen. Clicking the button will bring up an additional menu, depending on the device you are using, and you can send the tracking URLs for the trains or flight and optional messages through messaging apps, email or social networking apps. When the recipient of the information opens the URL in their browser, Mini Tokyo 3D will be launched, and they will be able to track the same train or flight.
+
+This feature is only available in the follwing browsers: Safari (Mac OS and iOS), Chrome (Android), Opera (Android) and Samsung Internet
 
 ### Date and Time
 
@@ -111,12 +131,6 @@ See [here](#playback-mode) for details on Playback Mode.
 <img src="public/images/delay-marker.jpg" width="185">
 
 When [Playback Mode](#playback-mode) is off, orange spheres are displayed around trains that are delayed for more than 1 minute. It is easy to see which sections on the map have the delay.
-
-### Displaying Detailed Information on Trains and Airplanes
-
-<img src="public/images/train-details.jpg" width="216"> <img src="public/images/flight-details.jpg" width="216">
-
-Place the mouse pointer or tap on the train or airplane to display detailed information about the train or airplane. Detailed train information includes railway name, train type, destination, train number, previous or standing station and departure time, next station and arrival time, delay time, and operation information. Flight details include airline name, flight number, departure or arrival location, status, departure or arrival time, and code-share information. If there is a train delay or a flight schedule change, the change will be highlighted in orange.
 
 ### Station Search
 
@@ -160,7 +174,9 @@ Click or tap on a train or airplane to turn Tracking Mode on and the screen will
 
 The helicopter icon indicates the “Helicopter Tracking Mode”, and it makes a 360 degree turn around the target train or airplane. The train icon indicates the “Rear Tracking Mode”, and it tracks the direction of travel from diagonally behind the target train or airplane. Click or tap the icon button to toggle between the “Helicopter Tracking Mode” and the “Rear Tracking Mode”.
 
-When the tracking mode is on, the timetable and current position of the train being tracked is displayed at the bottom of the screen. For the train connecting to other lines, the timetables of those lines are also shown. The timetable can be scrolled by using the mouse wheel, dragging the scroll bar, or dragging your finger. Click on the "∨" icon in the upper right corner of the timetable to hide the timetable at the bottom of the screen, or click on the "∧" icon to display it again.
+When Tracking Mode is on, the timetable and current position of the train being tracked is displayed at the bottom of the screen. For the train connecting to other lines, the timetables of those lines are also shown. The timetable can be scrolled by using the mouse wheel, dragging the scroll bar, or dragging your finger. Click on the "∨" icon in the upper right corner of the timetable to hide the timetable at the bottom of the screen, or click on the "∧" icon to display it again.
+
+Also, when Tracking Mode is on, some devices will display the [share button](#sharing-trains-and-flights) to share the train or flight being tracked.
 
 ### Playback Mode
 
@@ -202,7 +218,7 @@ The source of the public transportation data in this application is the Open Dat
 This application has been tested with the following browsers. Chrome is recommended. Internet Explorer is not supported.
 
 - Chrome 83 (Mac OS, Windows, iOS)
-- FireFox 77 (Mac OS, Windows, iOS)
+- FireFox 78 (Mac OS, Windows, iOS)
 - Safari 13 (Mac OS, iOS)
 - Edge 44 (Windows)
 
