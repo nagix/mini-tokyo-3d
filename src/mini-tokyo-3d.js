@@ -147,12 +147,21 @@ export default class {
         });
     }
 
+    /**
+      * Returns the map's geographical centerpoint.
+      * @returns {LngLat} The map's geographical centerpoint
+      */
     getCenter() {
         const {map, initialCenter} = this;
 
         return map ? map.getCenter() : new mapboxgl.LngLat(initialCenter);
     }
 
+    /**
+      * Sets the map's geographical centerpoint. Equivalent to jumpTo({center: center}).
+      * @param {LngLatLike} center - The centerpoint to set
+      * @returns {MiniTokyo3D} this
+      */
     setCenter(center) {
         const me = this,
             {map} = me;
@@ -163,14 +172,24 @@ export default class {
         } else {
             me.initialCenter = center;
         }
+        return me;
     }
 
+    /**
+      * Returns the map's current zoom level.
+      * @returns {number} The map's current zoom level
+      */
     getZoom() {
         const {map, initialZoom} = this;
 
         return map ? map.getZoom() : initialZoom;
     }
 
+    /**
+      * Sets the map's zoom level. Equivalent to jumpTo({zoom: zoom}).
+      * @param {number} zoom - The zoom level to set (0-20)
+      * @returns {MiniTokyo3D} this
+      */
     setZoom(zoom) {
         const me = this,
             {map} = me;
@@ -180,14 +199,27 @@ export default class {
         } else {
             me.initialZoom = zoom;
         }
+        return me;
     }
 
+    /**
+      * Returns the map's current bearing. The bearing is the compass direction that
+      * is "up"; for example, a bearing of 90° orients the map so that east is up.
+      * @returns {number} The map's current bearing
+      */
     getBearing() {
         const {map, initialBearing} = this;
 
         return map ? map.getBearing() : initialBearing;
     }
 
+    /**
+      * Sets the map's bearing (rotation). The bearing is the compass direction that
+      * is "up"; for example, a bearing of 90° orients the map so that east is up.
+      * Equivalent to jumpTo({bearing: bearing}).
+      * @param {number} bearing - The desired bearing
+      * @returns {MiniTokyo3D} this
+      */
     setBearing(bearing) {
         const me = this,
             {map} = me;
@@ -198,14 +230,26 @@ export default class {
         } else {
             me.initialBearing = bearing;
         }
+        return me;
     }
 
+    /**
+      * Returns the map's current pitch (tilt).
+      * @returns {number} The map's current pitch, measured in degrees away from the
+      *     plane of the screen
+      */
     getPitch() {
         const {map, initialPitch} = this;
 
         return map ? map.getPitch() : initialPitch;
     }
 
+    /**
+      * Sets the map's pitch (tilt). Equivalent to jumpTo({pitch: pitch}).
+      * @param {number} pitch - The pitch to set, measured in degrees away from the
+      *     plane of the screen (0-60)
+      * @returns {MiniTokyo3D} this
+      */
     setPitch(pitch) {
         const me = this,
             {map} = me;
@@ -215,8 +259,17 @@ export default class {
         } else {
             me.initialPitch = pitch;
         }
+        return me;
     }
 
+    /**
+      * Changes any combination of center, zoom, bearing, pitch, and padding with an
+      * animated transition between old and new values. The map will retain its current
+      * values for any details not specified in options.
+      * @param {object} options - Options describing the destination and animation of
+      *     the transition. Accepts CameraOptions and AnimationOptions
+      * @returns {MiniTokyo3D} this
+      */
     easeTo(options) {
         const me = this,
             {map} = me,
@@ -228,8 +281,19 @@ export default class {
             }
             map.easeTo(options);
         }
+        return me;
     }
 
+    /**
+      * Changes any combination of center, zoom, bearing, and pitch, animating the
+      * transition along a curve that evokes flight. The animation seamlessly incorporates
+      * zooming and panning to help the user maintain her bearings even after traversing
+      * a great distance.
+      * @param {object} options - Options describing the destination and animation of
+      *     the transition. Accepts CameraOptions, AnimationOptions, and a few additional
+      *     options
+      * @returns {MiniTokyo3D} this
+      */
     flyTo(options) {
         const me = this,
             {map} = me,
@@ -241,8 +305,16 @@ export default class {
             }
             map.flyTo(options);
         }
+        return me;
     }
 
+    /**
+      * Changes any combination of center, zoom, bearing, and pitch, without an animated
+      * transition. The map will retain its current values for any details not specified
+      * in options.
+      * @param {CameraOptions} options - Options object
+      * @returns {MiniTokyo3D} this
+      */
     jumpTo(options) {
         const me = this,
             {map} = me,
@@ -254,6 +326,7 @@ export default class {
             }
             map.jumpTo(options);
         }
+        return me;
     }
 
     initialize() {
