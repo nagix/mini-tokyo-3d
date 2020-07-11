@@ -48,12 +48,12 @@ export default class {
     }
 
     /**
-      * Returns the date object in JST.
-      * If the time is not specified, it returns that at the current time.
-      * In the playback mode, the time in the simulation clock is used.
-      * @param {number} time - The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
-      * @returns {Date} Date object that represents the specified time in JST
-      */
+     * Returns the date object in JST.
+     * If the time is not specified, it returns that at the current time.
+     * In the playback mode, the time in the simulation clock is used.
+     * @param {number} time - The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
+     * @returns {Date} Date object that represents the specified time in JST
+     */
     getJSTDate(time) {
         const me = this,
 
@@ -64,12 +64,12 @@ export default class {
     }
 
     /**
-      * Returns the number of milliseconds since the Unix Epoch at the specified time.
-      * If the time is not specified, it returns that at the current time.
-      * In the playback mode, the time in the simulation clock is used.
-      * @param {string} timeString - Time expression in JST in "hh:mm" format
-      * @returns {number} The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
-      */
+     * Returns the number of milliseconds since the Unix Epoch at the specified time.
+     * If the time is not specified, it returns that at the current time.
+     * In the playback mode, the time in the simulation clock is used.
+     * @param {string} timeString - Time expression in JST in "hh:mm" format
+     * @returns {number} The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
+     */
     getTime(timeString) {
         const me = this;
 
@@ -91,12 +91,12 @@ export default class {
     }
 
     /**
-      * Returns the time expression in JST.
-      * If the time is not specified, it returns that at the current time.
-      * In the playback mode, the time in the simulation clock is used.
-      * @param {number} time - The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
-      * @returns {number} Time expression in JST in "hh:mm" format
-      */
+     * Returns the time expression in JST.
+     * If the time is not specified, it returns that at the current time.
+     * In the playback mode, the time in the simulation clock is used.
+     * @param {number} time - The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
+     * @returns {number} Time expression in JST in "hh:mm" format
+     */
     getTimeString(time) {
         const date = this.getJSTDate(time),
             hours = `0${date.getHours()}`.slice(-2),
@@ -106,10 +106,10 @@ export default class {
     }
 
     /**
-      * Returns the number of milliseconds since the time origin.
-      * In the playback mode, the time in the simulation clock is used.
-      * @returns {number} The number of milliseconds elapsed since the time origin
-      */
+     * Returns the number of milliseconds since the time origin.
+     * In the playback mode, the time in the simulation clock is used.
+     * @returns {number} The number of milliseconds elapsed since the time origin
+     */
     getHighResTime() {
         const me = this;
 

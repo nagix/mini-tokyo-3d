@@ -2,10 +2,10 @@ import * as THREE from 'three';
 import * as helpers from './helpers';
 
 /**
-  * Returns a group object.
-  * @param {...object} objects - Objects to be added to the group
-  * @returns {Group} Group object
-  */
+ * Returns a group object.
+ * @param {...object} objects - Objects to be added to the group
+ * @returns {Group} Group object
+ */
 export function createGroup(...objects) {
     const group = new THREE.Group();
 
@@ -16,20 +16,20 @@ export function createGroup(...objects) {
 }
 
 /**
-  * Returns a cube mesh object.
-  * @param {object} options - Options
-  * @param {object} options.dimension - Dimension of the cube
-  * @param {number} options.dimension.x - Length of the edges parallel to the X axis
-  * @param {number} options.dimension.y - Length of the edges parallel to the Y axis
-  * @param {number} options.dimension.z - Length of the edges parallel to the Z axis
-  * @param {object} options.translate - Transform offset values
-  * @param {number} options.translate.x - Offset in X axis direction
-  * @param {number} options.translate.y - Offset in Y axis direction
-  * @param {number} options.translate.z - Offset in Z axis direction
-  * @param {string|Array} options.color - Cube color. If it is an array, the first three colors
-  *     will be used on the side surface, the fourth color will be used on the front surface
-  * @returns {Mesh} Cube mesh object
-  */
+ * Returns a cube mesh object.
+ * @param {object} options - Options
+ * @param {object} options.dimension - Dimension of the cube
+ * @param {number} options.dimension.x - Length of the edges parallel to the X axis
+ * @param {number} options.dimension.y - Length of the edges parallel to the Y axis
+ * @param {number} options.dimension.z - Length of the edges parallel to the Z axis
+ * @param {object} options.translate - Transform offset values
+ * @param {number} options.translate.x - Offset in X axis direction
+ * @param {number} options.translate.y - Offset in Y axis direction
+ * @param {number} options.translate.z - Offset in Z axis direction
+ * @param {string|Array} options.color - Cube color. If it is an array, the first three colors
+ *     will be used on the side surface, the fourth color will be used on the front surface
+ * @returns {Mesh} Cube mesh object
+ */
 export function createCube(options) {
     const {dimension, translate, color} = options,
         materialParams = {
@@ -70,13 +70,13 @@ export function createCube(options) {
 }
 
 /**
-  * Sets the opacity of an object and its descendants.
-  * @param {Object3D} object - Target object
-  * @param {number} opacity - Float in the range of 0.0 - 1.0 indicating how
-  *     transparent the material is
-  * @param {number} factor - Float in the range of 0.0 - 1.0 indicating the
-  *     factor of the opacity when fading in or out
-  */
+ * Sets the opacity of an object and its descendants.
+ * @param {Object3D} object - Target object
+ * @param {number} opacity - Float in the range of 0.0 - 1.0 indicating how
+ *     transparent the material is
+ * @param {number} factor - Float in the range of 0.0 - 1.0 indicating the
+ *     factor of the opacity when fading in or out
+ */
 export function setOpacity(object, opacity, factor) {
     object.traverse(({material: materials, name}) => {
         const value = (name === 'outline-marked' ? 1 : opacity) * helpers.valueOrDefault(factor, 1);
@@ -106,10 +106,10 @@ export function resetPolygonOffsetFactor(object) {
 }
 
 /**
-  * Add a delay marker to the object.
-  * @param {Object3D} object - Object to which a delay marker is added
-  * @param {boolean} dark - true if the map background is dark
-  */
+ * Add a delay marker to the object.
+ * @param {Object3D} object - Object to which a delay marker is added
+ * @param {boolean} dark - true if the map background is dark
+ */
 export function addDelayMarker(object, dark) {
     if (object.getObjectByName('marker')) {
         return;

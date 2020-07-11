@@ -89,10 +89,10 @@ export function isDarkBackground(map) {
 }
 
 /**
-  * Returns an array of the style color information retrieved from map layers.
-  * @param {object} map - Mapbox's Map object
-  * @returns {Array} Array of the style color objects
-  */
+ * Returns an array of the style color information retrieved from map layers.
+ * @param {object} map - Mapbox's Map object
+ * @returns {Array} Array of the style color objects
+ */
 export function getStyleColors(map) {
     // Layer type -> paint property key mapping
     const paintPropertyKeys = {
@@ -127,10 +127,10 @@ export function getStyleColors(map) {
 }
 
 /**
-  * Returns an array of the style opacity information retrieved from map layers.
-  * @param {object} map - Mapbox's Map object
-  * @returns {Array} Array of the style opacity objects
-  */
+ * Returns an array of the style opacity information retrieved from map layers.
+ * @param {object} map - Mapbox's Map object
+ * @returns {Array} Array of the style opacity objects
+ */
 export function getStyleOpacities(map) {
     const layerTypes = ['line', 'fill', 'fill-extrusion'],
         opacities = [];
@@ -166,19 +166,19 @@ export function scaleValues(obj, factor) {
 }
 
 /**
-  * Returns the relative luminance of the color
-  * @param {object} color - Color object that has {r, g, b}
-  * @returns {number} Relative luminance between 0 and 255
-  */
+ * Returns the relative luminance of the color
+ * @param {object} color - Color object that has {r, g, b}
+ * @returns {number} Relative luminance between 0 and 255
+ */
 export function luminance(color) {
     return .2126 * color.r + .7152 * color.g + .0722 * color.b;
 }
 
 /**
-  * Convert a hex color code to RGB array
-  * @param {object} color - Hex color code
-  * @returns {Array} RGB array
-  */
+ * Convert a hex color code to RGB array
+ * @param {object} color - Hex color code
+ * @returns {Array} RGB array
+ */
 export function colorToRGBArray(color) {
     const c = parseInt(color.replace('#', ''), 16);
 
@@ -186,10 +186,10 @@ export function colorToRGBArray(color) {
 }
 
 /**
-  * Show notification message
-  * @param {Node} container - Node in which the notification panel is shown
-  * @param {string} message - Notification message
-  */
+ * Show notification message
+ * @param {Node} container - Node in which the notification panel is shown
+ * @param {string} message - Notification message
+ */
 export function showNotification(container, message) {
     const element = document.createElement('div');
 
@@ -205,11 +205,11 @@ export function showNotification(container, message) {
 }
 
 /**
-  * Returns the language code for user interface. The returned value is
-  * ISO 639-1 code, but the exception is Chinese (zh-Hans or zh-Hant).
-  * @param {string} input - Language code to verify
-  * @returns {string} Language code for user interface
-  */
+ * Returns the language code for user interface. The returned value is
+ * ISO 639-1 code, but the exception is Chinese (zh-Hans or zh-Hant).
+ * @param {string} input - Language code to verify
+ * @returns {string} Language code for user interface
+ */
 export function getLang(input) {
     let lang = valueOrDefault(input, '');
 

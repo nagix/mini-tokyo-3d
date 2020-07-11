@@ -58,16 +58,16 @@ const animation = {
     },
 
     /**
-      * Starts a new animation.
-      * @param {object} options - Animation options
-      * @param {function} options.callback - Function called on every frame
-      * @param {function} options.complete - Function called when the animation completes
-      * @param {number} options.duration - Animation duration. Default is Infinity
-      * @param {number} options.start - Animation start time (same timestamp as performance.now())
-      * @param {number} options.frameRate - Animation frames per second
-      * @param {object} options.clock - If specified, animation speed will be affected by its clock speed
-      * @returns {number} Animation ID which can be used to stop
-      */
+     * Starts a new animation.
+     * @param {object} options - Animation options
+     * @param {function} options.callback - Function called on every frame
+     * @param {function} options.complete - Function called when the animation completes
+     * @param {number} options.duration - Animation duration. Default is Infinity
+     * @param {number} options.start - Animation start time (same timestamp as performance.now())
+     * @param {number} options.frameRate - Animation frames per second
+     * @param {object} options.clock - If specified, animation speed will be affected by its clock speed
+     * @returns {number} Animation ID which can be used to stop
+     */
     start(options) {
         options.duration = helpers.valueOrDefault(options.duration, Infinity);
         animation.instances[animation.count] = options;
@@ -75,9 +75,9 @@ const animation = {
     },
 
     /**
-      * Stops an animation
-      * @param {number} id - Animation ID to stop
-      */
+     * Stops an animation
+     * @param {number} id - Animation ID to stop
+     */
     stop(id) {
         const instances = animation.instances;
 
@@ -87,11 +87,11 @@ const animation = {
     },
 
     /**
-      * Set the frame rate to an animation
-      * @param {number} id - Animation ID to set
-      * @param {number} frameRate - Frames per second of the animation. If not specified,
-      *     the default value (60 fps) will be applied.
-      */
+     * Set the frame rate to an animation
+     * @param {number} id - Animation ID to set
+     * @param {number} frameRate - Frames per second of the animation. If not specified,
+     *     the default value (60 fps) will be applied.
+     */
     setFrameRate(id, frameRate) {
         const instance = animation.instances[id];
 
