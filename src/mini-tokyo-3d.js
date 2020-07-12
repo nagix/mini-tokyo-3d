@@ -14,6 +14,7 @@ import AboutPopup from './about-popup';
 import Clock from './clock';
 import ClockControl from './clock-control';
 import configs from './configs';
+import DetailPanel from './detail-panel';
 import * as helpers from './helpers';
 import * as helpersThree from './helpers-three';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
@@ -69,8 +70,7 @@ const DEGREE_TO_RADIAN = Math.PI / 180;
 const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord),
     modelScale = modelOrigin.meterInMercatorCoordinateUnits();
 
-const isWindows = helpers.includes(navigator.userAgent, 'Windows'),
-    isEdge = helpers.includes(navigator.userAgent, 'Edge');
+const isEdge = helpers.includes(navigator.userAgent, 'Edge');
 
 // Replace MapboxLayer.render to support underground rendering
 const render = MapboxLayer.prototype.render;
@@ -776,25 +776,6 @@ export default class {
                 }
             });
 
-            me.container.querySelector('#timetable-header').addEventListener('click', () => {
-                const {style} = me.container.querySelector('#timetable'),
-                    {classList} = me.container.querySelector('#timetable-button');
-
-                if (style.height !== '68px') {
-                    style.height = '68px';
-                    classList.remove('slide-down');
-                    classList.add('slide-up');
-                } else {
-                    style.height = '33%';
-                    classList.remove('slide-up');
-                    classList.add('slide-down');
-                }
-            });
-
-            if (isWindows) {
-                me.container.querySelector('#timetable-body').classList.add('windows');
-            }
-
             [13, 14, 15, 16, 17, 18].forEach(zoom => {
                 map.on('mouseenter', `stations-og-${zoom}`, e => {
                     me.pickedFeature = e.features[0];
@@ -900,12 +881,9 @@ export default class {
                         me.lastTrainRefresh = now - configs.minDelay;
                     }
                     if (me.trackedObject) {
-                        const {coord: center, bearing, altitude, object} = me.trackedObject.userData;
+                        const {coord: center, bearing, altitude} = me.trackedObject.userData;
 
                         helpersThree.refreshOutline(me.trackedObject);
-                        if (object.timetableOffsets) {
-                            me.setTrainTimetableMark(object);
-                        }
 
                         /*
                         // Keep camera off from the tracked aircraft
@@ -1555,108 +1533,6 @@ export default class {
             delayed ? '</span>' : '',
             flightNumber.length > 1 ? `<br><strong>${dict['code-share']}:</strong> ${flightNumber.slice(1).join(' ')}` : ''
         ].join('');
-    }
-
-    setTrainTimetableText(train) {
-        const me = this,
-            {lang, container, dict, clock} = me,
-            contentElement = container.querySelector('#timetable-content'),
-            trains = [],
-            sections = [],
-            stations = [],
-            offsets = [],
-            {r: railwayID, nm: names, v: vehicle, ds: destination, nextTrains} = train,
-            railway = me.railwayLookup[railwayID],
-            color = vehicle ? me.trainVehicleLookup[vehicle].color : railway.color,
-            delay = train.delay || 0;
-        let currSection;
-
-        container.querySelector('#timetable-header').innerHTML = [
-            '<div class="desc-header">',
-            Array.isArray(color) ? [
-                '<div>',
-                ...color.slice(0, 3).map(c => `<div class="line-strip-long" style="background-color: ${c};"></div>`),
-                '</div>'
-            ].join('') : `<div style="background-color: ${color};"></div>`,
-            '<div><strong>',
-            names ? names.map(name => name[lang] || name.en).join(dict['and']) : me.getLocalizedRailwayTitle(railwayID),
-            '</strong>',
-            `<br>${me.getLocalizedTrainTypeTitle(train.y)} `,
-            destination ?
-                dict['for'].replace('$1', me.getLocalizedStationTitle(destination)) :
-                me.getLocalizedRailDirectionTitle(train.d),
-            '</div></div>'
-        ].join('');
-
-        for (let curr = train; curr; curr = curr.previousTrains && curr.previousTrains[0]) {
-            trains.unshift(curr);
-        }
-        for (let curr = nextTrains && nextTrains[0]; curr; curr = curr.nextTrains && curr.nextTrains[0]) {
-            trains.push(curr);
-        }
-        trains.forEach(curr => {
-            const section = {};
-
-            section.start = Math.max(stations.length - 1, 0);
-            curr.tt.forEach((s, index) => {
-                if (index > 0 || !curr.previousTrains) {
-                    stations.push([
-                        '<div class="station-row">',
-                        `<div class="station-title-box">${me.getLocalizedStationTitle(s.s)}</div>`,
-                        '<div class="station-time-box',
-                        delay >= 60000 ? ' desc-caution' : '',
-                        '">',
-                        s.a ? clock.getTimeString(clock.getTime(s.a) + delay) : '',
-                        s.a && s.d ? '<br>' : '',
-                        s.d ? clock.getTimeString(clock.getTime(s.d) + delay) : '',
-                        '</div></div>'
-                    ].join(''));
-                }
-            });
-            section.end = stations.length - 1;
-            section.color = me.railwayLookup[curr.r].color;
-            sections.push(section);
-            if (curr === train) {
-                currSection = section;
-            }
-        });
-        contentElement.innerHTML = stations.join('');
-
-        const {children} = contentElement;
-
-        for (let i = 0, ilen = children.length; i < ilen; i++) {
-            const child = children[i];
-
-            offsets.push(child.offsetTop + child.getBoundingClientRect().height / 2);
-        }
-        container.querySelector('#railway-mark').innerHTML = sections.map(({color, start, end}) =>
-            `<line stroke="${color}" stroke-width="10" x1="12" y1="${offsets[start]}" x2="12" y2="${offsets[end]}" stroke-linecap="round" />`
-        ).concat(offsets.map(offset =>
-            `<circle cx="12" cy="${offset}" r="3" fill="#ffffff" />`
-        )).join('');
-        train.timetableOffsets = offsets.slice(currSection.start, currSection.end + 1);
-        train.scrollTop = container.querySelector('#timetable-body').scrollTop;
-    }
-
-    setTrainTimetableMark(train) {
-        const {container} = this,
-            bodyElement = container.querySelector('#timetable-body'),
-            {height} = bodyElement.getBoundingClientRect(),
-            {timetableOffsets: offsets, timetableIndex: index} = train,
-            curr = offsets[index],
-            next = train.arrivalStation ? offsets[index + 1] : curr,
-            y = curr + (next - curr) * train._t,
-            p = performance.now() % 1500 / 1500;
-
-        container.querySelector('#train-mark').innerHTML =
-            `<circle cx="22" cy="${y + 10}" r="${7 + p * 15}" fill="#ffffff" opacity="${1 - p}" />` +
-            `<circle cx="22" cy="${y + 10}" r="7" fill="#ffffff" />`;
-        if (bodyElement.scrollTop === train.scrollTop) {
-            bodyElement.scrollTop = y - height / 2 + 4;
-            train.scrollTop = bodyElement.scrollTop;
-        } else {
-            delete train.scrollTop;
-        }
     }
 
     /**
@@ -2408,7 +2284,10 @@ export default class {
                 me.sharePanel.remove();
                 delete me.sharePanel;
             }
-            hideTimetable(me.container);
+            if (me.detailPanel) {
+                me.detailPanel.remove();
+                delete me.detailPanel;
+            }
         }
 
         if (object) {
@@ -2420,12 +2299,12 @@ export default class {
             me.setUndergroundMode(altitude < 0);
 
             if (!me.isPlayback && navigator.share) {
-                me.sharePanel = new SharePanel({dict: me.dict, object: train});
+                me.sharePanel = new SharePanel({object: train});
                 me.sharePanel.addTo(me);
             }
             if (train.tt) {
-                showTimetable(me.container);
-                me.setTrainTimetableText(train);
+                me.detailPanel = new DetailPanel({object: train});
+                me.detailPanel.addTo(me);
             }
 
             helpersThree.addOutline(object, 'outline-tracked');
@@ -2639,17 +2518,6 @@ function insertTags(container) {
     container.innerHTML = `
 <div id="map"></div>
 <input id="search-box" type="text" list="stations">
-<div id="timetable">
-    <div id="timetable-header"></div>
-    <div id="timetable-body">
-        <div class="scroll-box">
-            <div id="timetable-content"></div>
-            <svg id="railway-mark"></svg>
-            <svg id="train-mark"></svg>
-        </div>
-    </div>
-    <div id="timetable-button" class="slide-down"></div>
-</div>
 <div id="loader" class="loader-inner ball-pulse">
     <div></div><div></div><div></div>
 </div>
@@ -2660,20 +2528,6 @@ function showErrorMessage(container) {
     container.querySelector('#loader').style.display = 'none';
     container.querySelector('#loading-error').innerHTML = 'Loading failed. Please reload the page.';
     container.querySelector('#loading-error').style.display = 'block';
-}
-
-function showTimetable(container) {
-    const {style} = container.querySelector('#timetable'),
-        {classList} = container.querySelector('#timetable-button');
-
-    style.display = 'block';
-    style.height = '33%';
-    classList.remove('slide-up');
-    classList.add('slide-down');
-}
-
-function hideTimetable(container) {
-    container.querySelector('#timetable').style.display = 'none';
 }
 
 function updateDistances(line) {

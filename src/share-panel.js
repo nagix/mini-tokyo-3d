@@ -4,18 +4,15 @@ import * as helpers from './helpers';
 export default class {
 
     constructor(options) {
-        const me = this;
-
-        me._dict = options.dict;
-        me._object = options.object;
+        this._object = options.object;
     }
 
     addTo(mt3d) {
         const me = this,
-            dict = me._dict,
+            {dict} = me._mt3d = mt3d,
             type = me._object.t ? 'train' : 'flight',
             id = me._object.t || me._object.id,
-            parentContainer = me._parentContainer = mt3d.container,
+            parentNode = mt3d.container,
             container = me._container = document.createElement('div'),
             button = me._button = document.createElement('button');
 
@@ -28,18 +25,24 @@ export default class {
                 text: dict['on-this'].replace('$1', dict[type]),
                 url: `${configs.shareUrl}?selection=${id}`
             }).then(() => {
-                helpers.showNotification(parentContainer, dict['shared']);
-            }).catch(() => {});
+                helpers.showNotification(parentNode, dict['shared']);
+            }).catch(() => {
+                /* noop */
+            });
         };
 
         container.appendChild(button);
-        parentContainer.appendChild(container);
+        parentNode.appendChild(container);
+
+        return me;
     }
 
     remove() {
         const me = this;
 
-        me._parentContainer.removeChild(me._container);
+        me._container.parentNode.removeChild(me._container);
+        delete me._container;
+        delete me._mt3d;
     }
 
 }
