@@ -91,7 +91,7 @@ const mt3d = new MiniTokyo3D(options);
 
 ## Mini Tokyo 3D API
 
-Using Mini Tokyo 3D API in JavaScript, you can customize Mini Tokyo 3D in a variety of ways. As of the version 2.1, only the constructor options of the `MiniTokyo3D` object are supported.
+Using Mini Tokyo 3D API in JavaScript, you can customize Mini Tokyo 3D in a variety of ways.
 
 **Note**: The Mini Tokyo 3D API is currently in beta. Due to the possibility of API changes, compatibility between versions is not guaranteed.
 
@@ -108,7 +108,7 @@ new MiniTokyo3D(options: Object)
 **`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
 
 Name | Description
---- | ---
+:-- | :--
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | The `id` of the HTML element in which Mini Tokyo 3D will render the map
 **`options.secrets`**<br>[`Secrets`](#secrets) | An object to store the access tokens used to retrieve data
 **`options.lang`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the language. If not specified, the browser's default language is used. Currently `'ja'`, `'en'`, `'ko'`, `'zh-Hans'`, `'zh-Hant'`, `'th'` and `'ne'` are supported. If an unsupported language is specified, then 'en' is used.
@@ -125,10 +125,163 @@ Name | Description
 **`options.bearing`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `0` | The initial bearing (rotation) of the map, measured in degrees counter-clockwise from north. If not specified, it will default to the true north (`0`).
 **`options.pitch`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `60` | The initial pitch (tilt) of the map, measured in degrees away from the plane of the screen (0-60). If not specified, it will default to `60`.
 **`options.frameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `60` | Frame rate for train and airplane animations (frames per second). Specify on a scale of 1 to 60. Lower values result in less smoother animations and lower CPU resource usage, thus reducing battery consumption on mobile devices. If not specified, it will default to `60`.
+**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | ID of the train or flight to be tracked. The train ID is a string in the form of `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. The fright ID is a string in the form of `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` or `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. The `'odpt.*:'` part can be omitted. For details, see the [Open Data Challenge for Public Transportation in Tokyo: API Specification](https://developer-tokyochallenge.odpt.org/en/documents).
+
+#### Instance Members
+
+**`easeTo(options)`**
+
+Changes any combination of center, zoom, bearing, pitch, and padding with an animated transition between old and new values. The map will retain its current values for any details not specified in `options`.
+
+Note: The transition will happen instantly if the user has enabled the reduced motion accesibility feature enabled in their operating system, unless `options` includes `essential: true`.
+
+##### Parameters
+
+**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) Options describing the destination and animation of the transition. Accepts [`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions) and [`AnimationOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions).
+
+##### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+**`flyTo(options)`**
+
+Changes any combination of center, zoom, bearing, and pitch, animating the transition along a curve that evokes flight. The animation seamlessly incorporates zooming and panning to help the user maintain her bearings even after traversing a great distance.
+
+Note: The animation will be skipped, and this will behave equivalently to `jumpTo` if the user has the `reduced motion` accesibility feature enabled in their operating system, unless `options` includes `essential: true`.
+
+##### Parameters
+
+**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) Options describing the destination and animation of the transition. Accepts [`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions), [`AnimationOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions), and the following additional options.
+
+Name | Description
+:-- | :--
+**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.42` | The zooming "curve" that will occur along the flight path. A high value maximizes zooming for an exaggerated animation, while a low value minimizes zooming for an effect closer to `MiniTokyo3D#easeTo`. 1.42 is the average value selected by participants in the user study discussed in [van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf). A value of `Math.pow(6, 0.25)` would be equivalent to the root mean squared average velocity. A value of 1 would produce a circular motion.
+**`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The zero-based zoom level at the peak of the flight path. If `options.curve` is specified, this option is ignored.
+**`options.speed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.2` | The average speed of the animation defined in relation to `options.curve`. A speed of 1.2 means that the map appears to move along the flight path by 1.2 times `options.curve` screenfuls every second. A *screenful* is the map's visible span. It does not correspond to a fixed physical distance, but varies by zoom level.
+**`options.screenSpeed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The average speed of the animation measured in screenfuls per second, assuming a linear timing curve. If `options.speed` is specified, this option is ignored.
+**`options.maxDuration`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The animation's maximum duration, measured in milliseconds. If duration exceeds maximum duration, it resets to 0.
+
+##### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+**`getBearing()`**
+
+Returns the map's current bearing. The bearing is the compass direction that is "up"; for example, a bearing of 90° orients the map so that east is up.
+
+##### Returns
+
+[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): The map's current bearing.
+
+---
+
+**`getCenter()`**
+
+Returns the map's geographical centerpoint.
+
+##### Returns
+
+[`LngLat`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglat): The map's geographical centerpoint.
+
+---
+
+**`getPitch()`**
+
+Returns the map's current pitch (tilt).
+
+##### Returns
+
+[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): The map's current pitch, measured in degrees away from the plane of the screen.
+
+---
+
+**`getZoom()`**
+
+Returns the map's current zoom level.
+
+##### Returns
+
+[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): The map's current zoom level.
+
+---
+
+**`jumpTo(options)`**
+
+Changes any combination of center, zoom, bearing, and pitch, without an animated transition. The map will retain its current values for any details not specified in `options`.
+
+##### Parameters
+
+**`options`** ([`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions)) Options object
+
+##### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+**`setBearing(bearing)`**
+
+Sets the map's bearing (rotation). The bearing is the compass direction that is "up"; for example, a bearing of 90° orients the map so that east is up.
+
+Equivalent to `jumpTo({bearing: bearing})`.
+
+##### Parameters
+
+**`bearing`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) The desired bearing.
+
+##### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+**`setCenter(center)`**
+
+Sets the map's geographical centerpoint. Equivalent to `jumpTo({center: center})`.
+
+##### Parameters
+
+**`center`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike)) The centerpoint to set.
+
+##### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+**`setPitch(pitch)`**
+
+Sets the map's pitch (tilt). Equivalent to `jumpTo({pitch: pitch})`.
+
+##### Parameters
+
+**`pitch`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) The pitch to set, measured in degrees away from the plane of the screen (0-60).
+
+##### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+**`setZoom(zoom)`**
+
+Sets the map's zoom level. Equivalent to `jumpTo({zoom: zoom})`.
+
+##### Parameters
+
+**`zoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) The zoom level to set (0-20).
+
+##### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
 
 ### Secrets
 
-The `Secrets` object is an object that stores the access tokens used to retrieve data and is set to the `MiniTokyo3D` constructor option `secrets`.
+The `Secrets` object is an object that stores the access tokens used to retrieve data and is set to the [`MiniTokyo3D`](#minitokyo3d) constructor option `secrets`.
 
 #### Properties
 
@@ -152,7 +305,7 @@ The following software are required.
 Mini Tokyo 3D uses the following data sources and requires an access token for each of them at build time. Follow the instructions below to obtain access tokens.
 
 Data Source | Sign-Up URL | Access Token Format
---- | --- | ---
+:-- | :-- | :--
 [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/) | [Link](https://developer-tokyochallenge.odpt.org/en/users/sign_up) | A string of numbers and lowercase letters
 [Public Transportation Open Data Center](https://www.odpt.org) | [Link](https://developer.odpt.org/en/users/sign_up) | A string of numbers and lowercase letters
 [Mapbox](https://www.mapbox.com) | [Link](https://account.mapbox.com/auth/signup/) | Alphanumeric string containing a period beginning with `pk.`

@@ -91,7 +91,7 @@ const mt3d = new MiniTokyo3D(options);
 
 ## Mini Tokyo 3D API
 
-JavaScript で Mini Tokyo 3D API を使うことで、様々なカスタマイズを行うことが可能です。バージョン 2.1 の時点では、`MiniTokyo3D` オブジェクトのコンストラクタオプションのみがサポートされています。
+JavaScript で Mini Tokyo 3D API を使うことで、様々なカスタマイズを行うことが可能です。
 
 **注意**: 現在 Mini Tokyo 3D API はベータ版です。API の変更の可能性があるため、バージョン間の互換性は保証されません。
 
@@ -108,27 +108,180 @@ new MiniTokyo3D(options: Object)
 **`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
 
 名前 | 説明
---- | ---
+:-- | :--
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D がマップを表示する HTML エレメントの `id`
 **`options.secrets`**<br>[`Secrets`](#secrets) | データ取得に使用するアクセストークンを格納するオブジェクト
 **`options.lang`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | 言語を表す [IETF 言語タグ](https://ja.wikipedia.org/wiki/IETF言語タグ)。未指定の場合は、ブラウザのデフォルト言語が使われる。現在 `'ja'`, `'en'`, `'ko'`, `'zh-Hans'`, `'zh-Hant'`, `'th'`, `'ne'` がサポートされている。サポートしていない言語が指定された場合は `'en'` が使われる
 **`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D のデータ URL。未指定の場合は、`'https://minitokyo3d.com/data'` が使われる
-**`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | `true` の場合、時刻表示をマップに追加する
-**`options.searchControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | `true` の場合、検索ボタンをマップに追加する
-**`options.navigationControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | `true` の場合、ナビゲーションボタンをマップに追加する
-**`options.fullscreenControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | `true` の場合、フルスクリーンボタンをマップに追加する
-**`options.modeControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | `true` の場合、表示モード切り替えボタンをマップに追加する
-**`options.infoControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | `true` の場合、アプリ情報ボタンをマップに追加する
-**`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'helicopter'` | 初期の追跡モードを指定する。`'helicopter'` または `'train'` がサポートされている
-**`options.center`**<br>[`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike)<br>default: `[139.7670, 35.6814]` | 初期のマップ中心点の座標。未指定の場合は、東京駅付近（`[139.7670, 35.6814]`）に設定される。注: Mini Tokyo 3D では、GeoJSON と同様に経度、緯度の順で座標を指定する
-**`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `14` | 初期のマップのズームレベル。未指定の場合は、`14` に設定される
-**`options.bearing`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `0` | 初期のマップの方角。真北から反時計回りの角度で指定する。未指定の場合は、真北（`0`）に設定される
-**`options.pitch`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `60` | 初期のマップの傾き。画面に対する地表面の角度（0〜60）で指定する。未指定の場合は、`60` に設定される
-**`options.frameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `60` | 列車や旅客機のアニメーションのフレームレート（1秒あたりのフレーム数）。1〜60 の間で指定する。数値を小さくすると、アニメーションの滑らかさが減少する一方で CPU リソースの使用も下がるため、モバイルデバイスでのバッテリー消費を抑えることができる。未指定の場合は、`60` に設定される
+**`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、時刻表示をマップに追加する
+**`options.searchControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、検索ボタンをマップに追加する
+**`options.navigationControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、ナビゲーションボタンをマップに追加する
+**`options.fullscreenControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、フルスクリーンボタンをマップに追加する
+**`options.modeControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、表示モード切り替えボタンをマップに追加する
+**`options.infoControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、アプリ情報ボタンをマップに追加する
+**`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>デフォルト: `'helicopter'` | 初期の追跡モードを指定する。`'helicopter'` または `'train'` がサポートされている
+**`options.center`**<br>[`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike)<br>デフォルト: `[139.7670, 35.6814]` | 初期のマップ中心点の座標。未指定の場合は、東京駅付近（`[139.7670, 35.6814]`）に設定される。注: Mini Tokyo 3D では、GeoJSON と同様に経度、緯度の順で座標を指定する
+**`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `14` | 初期のマップのズームレベル。未指定の場合は、`14` に設定される
+**`options.bearing`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `0` | 初期のマップの方角。真北から反時計回りの角度で指定する。未指定の場合は、真北（`0`）に設定される
+**`options.pitch`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `60` | 初期のマップの傾き。画面に対する地表面の角度（0〜60）で指定する。未指定の場合は、`60` に設定される
+**`options.frameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `60` | 列車や旅客機のアニメーションのフレームレート（1秒あたりのフレーム数）。1〜60 の間で指定する。数値を小さくすると、アニメーションの滑らかさが減少する一方で CPU リソースの使用も下がるため、モバイルデバイスでのバッテリー消費を抑えることができる。未指定の場合は、`60` に設定される
+**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | 追跡する列車またはフライトの ID。列車 ID は`'odpt.Train:<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'odpt.FlightInformationArrival:<事業者ID>.<空港ID>.<フライト番号>'`または`'odpt.FlightInformationDeparture:<事業者ID>.<空港ID>.<フライト番号>'`の形式で表される文字列。`'odpt.*:'`の部分は省略可。詳細は[東京公共交通オープンデータチャレンジ API 仕様](https://developer-tokyochallenge.odpt.org/documents)を参照のこと
+
+#### インスタンスメンバ
+
+**`easeTo(options)`**
+
+center、zoom、bearing および pitch の任意の組み合わせを、新旧の値の間のアニメーションによる遷移で変更します。マップは、`options` で指定されていない項目については、現在の値を保持します。
+
+注: ユーザーがオペレーティングシステムで `reduced motion` (動きの抑制) アクセシビリティ機能を有効にしている場合、`options` に `essential:true` が含まれていない限り、遷移は即座に行われます。
+
+##### パラメータ
+
+**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) 遷移先とアニメーションを記述するオプション。[`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions) と [`AnimationOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions) が使用可能
+
+##### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+**`flyTo(options)`**
+
+center、zoom、bearing および pitch の任意の組み合わせを変更し、飛行をイメージした曲線に沿って遷移をアニメーションします。アニメーションにはズームとパンがシームレスに組み込まれており、ユーザーが長距離を移動した後でも方向感を維持できるようになっています。
+
+注: ユーザーがオペレーティングシステムで `reduced motion` (動きの抑制) アクセシビリティ機能を有効にしている場合、`options` に `essential:true` が含まれていない限り、アニメーションはスキップされ `jumpTo` と同じ動作になります。
+
+##### パラメータ
+
+**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) 遷移先とアニメーションを記述するオプション。[`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions)、[`AnimationOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions) に加えて、次に示すオプションが使用可能
+
+名前 | 説明
+:-- | :--
+**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1.42` | 飛行経路に沿って発生するズームの「カーブ」。高い値を設定するとズームのアニメーションの誇張が最大になり、低い値を設定するとズームの効果が最小になって `MiniTokyo3D#easeTo` の動きに近づく。1.42 は、[van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf) で論じられた、ユーザー調査の参加者によって選択された平均値。`Math.pow(6, 0.25)` の値は平均速度の平方根に相当する。1 の値は円運動を生成する
+**`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 飛行経路のピークでのゼロベースのズームレベル。`options.curve` が指定された場合、このオプションは無視される
+**`options.speed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1.2` | `options.curve` と関連して定義されるアニメーションの平均速度。速度が 1.2 の場合、マップが飛行経路に沿って 1 秒ごとに `options.curve` の 1.2 倍のスクリーンフルで移動しているように見えることを意味する。*スクリーンフル*とは、マップの表示部分の幅のこと。これは固定の物理的な距離に対応するものではなく、ズームレベルによって変化する
+**`options.screenSpeed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 直線的なタイミングカーブを想定した場合の、1秒あたりのスクリーンフルで表したアニメーションの平均速度。`options.curve` が指定された場合、このオプションは無視される
+**`options.maxDuration`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | アニメーションの最大継続時間をミリ秒単位で指定。継続時間が最大継続時間を超えると、0 にリセットされる
+
+##### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+**`getBearing()`**
+
+現在のマップの方角を返します。方角は、コンパスの方向を「上」としたものです。例えば、90°の方角は、東が上になるように地図の向きを変えた状態です。
+
+##### 返り値
+
+[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): 現在のマップの方角
+
+---
+
+**`getCenter()`**
+
+マップ中心点の座標を返します。
+
+##### 返り値
+
+[`LngLat`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglat): マップ中心点の座標
+
+---
+
+**`getPitch()`**
+
+現在のマップの傾きを返します。
+
+##### 返り値
+
+[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): 現在のマップの傾き。画面に対する地表面の角度（0〜60）で表される
+
+---
+
+**`getZoom()`**
+
+現在のマップのズームレベルを返します。
+
+##### 返り値
+
+[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): 現在のマップのズームレベル
+
+---
+
+**`jumpTo(options)`**
+
+center、zoom、bearing および pitch の任意の組み合わせを、アニメーションによる遷移なしで変更します。マップは、`options` で指定されていない項目については、現在の値を保持します。
+
+##### パラメータ
+
+**`options`** ([`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions)) オプションのオブジェクト
+
+##### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+**`setBearing(bearing)`**
+
+マップの方角を設定します。方角は、コンパスの方向を「上」としたものです。例えば、90°の方角は、東が上になるように地図の向きを変えた状態です。
+
+`jumpTo({bearing: bearing})` と同じ。
+
+##### パラメータ
+
+**`bearing`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) 設定する方角
+
+##### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+**`setCenter(center)`**
+
+マップ中心点の座標を設定します。`jumpTo({center: center})` と同じです。
+
+##### パラメータ
+
+**`center`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike)) 設定する中心点の座標
+
+##### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+**`setPitch(pitch)`**
+
+マップの傾きを設定します。`jumpTo({pitch: pitch})` と同じです。
+
+##### パラメータ
+
+**`pitch`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) 設定する傾き。画面に対する地表面の角度（0〜60）で指定する
+
+##### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+**`setZoom(zoom)`**
+
+マップのズームレベルを設定します。`jumpTo({zoom: zoom})` と同じです。
+
+##### パラメータ
+
+**`zoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) 設定するズームレベル (0〜20)
+
+##### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
 
 ### Secrets
 
-`Secrets` オブジェクトは、データ取得に使用するアクセストークンを格納するオブジェクトで、`MiniTokyo3D` のコンストラクタオプション `secrets` に指定します。
+`Secrets` オブジェクトは、データ取得に使用するアクセストークンを格納するオブジェクトで、[`MiniTokyo3D`](#minitokyo3d) のコンストラクタオプション `secrets` に指定します。
 
 #### プロパティ
 
@@ -152,7 +305,7 @@ new MiniTokyo3D(options: Object)
 Mini Tokyo 3D は次のデータソースを使用しており、ビルド時にそれぞれのデータソースに対するアクセストークンが必要です。下記の手順に従って、アクセストークンを入手してください。
 
 データソース | サインアップ用 URL | アクセストークンの形式
---- | --- | ---
+:-- | :-- | :--
 [東京公共交通オープンデータチャレンジ](https://tokyochallenge.odpt.org) | [リンク](https://developer-tokyochallenge.odpt.org/users/sign_up) | 数字と英小文字からなる文字列
 [公共交通オープンデータセンター](https://www.odpt.org) | [リンク](https://developer.odpt.org/users/sign_up) | 数字と英小文字からなる文字列
 [Mapbox](https://www.mapbox.com) | [リンク](https://account.mapbox.com/auth/signup/) | `pk.` で始まるピリオドを含む英数字文字列
