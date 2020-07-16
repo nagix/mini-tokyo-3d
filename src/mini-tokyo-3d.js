@@ -2087,10 +2087,12 @@ export default class {
         trainLayers.og.setSemitransparent(enabled);
         map.setPaintProperty('background', 'background-color',
             enabled ? 'rgb(16,16,16)' : getStyleColorString(styleColors[0], clock));
+        map.setPaintProperty('building-underground', 'fill-color',
+            enabled ? 'hsla(268,67%,67%,.5)' : getStyleColorString({r: 167, g: 114, b: 227, a: .25}, clock));
         styleOpacities.forEach(({id, key, opacity}) => {
             const factor = helpers.includes(id, '-og-') ? .25 : .0625;
 
-            map.setPaintProperty(id, key, enabled ?
+            map.setPaintProperty(id, key, enabled && id !== 'building-underground' ?
                 helpers.scaleValues(opacity, factor) : opacity);
         });
         me.isUndergroundVisible = enabled;
@@ -2189,18 +2191,27 @@ export default class {
             {map, clock} = me;
 
         me.styleColors.forEach(item => {
-            const {id, key, stops} = item;
+            const {id, key, stops, _case} = item;
+            let prop;
 
             if (id === 'background' && me.isUndergroundVisible) {
-                map.setPaintProperty(id, key, 'rgb(16,16,16)');
-            } else if (stops === undefined) {
-                map.setPaintProperty(id, key, getStyleColorString(item, clock));
+                prop = 'rgb(16,16,16)';
+            } else if (id === 'building-underground' && me.isUndergroundVisible) {
+                prop = 'hsla(268,67%,67%,.5)';
             } else {
-                const prop = map.getPaintProperty(id, key);
+                const color = getStyleColorString(item, clock);
 
-                prop.stops[stops][1] = getStyleColorString(item, clock);
-                map.setPaintProperty(id, key, prop);
+                if (stops !== undefined) {
+                    prop = map.getPaintProperty(id, key);
+                    prop.stops[stops][1] = color;
+                } else if (_case !== undefined) {
+                    prop = map.getPaintProperty(id, key);
+                    prop[_case] = color;
+                } else {
+                    prop = color;
+                }
             }
+            map.setPaintProperty(id, key, prop);
         });
     }
 

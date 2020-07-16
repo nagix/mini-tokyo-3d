@@ -115,6 +115,13 @@ export function getStyleColors(map) {
             if (typeof prop === 'string') {
                 const [r, g, b, a] = parseCSSColor(prop);
                 colors.push({id, key, r, g, b, a});
+            } else if (Array.isArray(prop) && prop[0] === 'case') {
+                prop.forEach((item, i) => {
+                    if (i >= 1 && typeof item === 'string') {
+                        const [r, g, b, a] = parseCSSColor(item);
+                        colors.push({id, key, _case: i, r, g, b, a});
+                    }
+                });
             } else if (typeof prop === 'object') {
                 prop.stops.forEach((item, i) => {
                     const [r, g, b, a] = parseCSSColor(item[1]);
