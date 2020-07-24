@@ -15,6 +15,7 @@ import Clock from './clock';
 import ClockControl from './clock-control';
 import configs from './configs';
 import DetailPanel from './detail-panel';
+import FireworksLayer from './fireworks-layer';
 import * as helpers from './helpers';
 import * as helpersThree from './helpers-three';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
@@ -594,6 +595,33 @@ export default class {
                 opacity: .0625
             }), 'poi');
             */
+
+            map.addLayer(new FireworksLayer('fireworks', me.clock, [{
+                // Sumidagawa 1 (2020-07-23 19:00 to 20:30)
+                coord: [139.8061467, 35.7168468],
+                start: 1595498400000,
+                end: 1595503800000
+            }, {
+                // Sumidagawa 2 (2020-07-23 19:30 to 20:30)
+                coord: [139.7957901, 35.7053016],
+                start: 1595500200000,
+                end: 1595503800000
+            }, {
+                // Adachi (2020-07-24 19:30 to 20:30)
+                coord: [139.7960082, 35.7596802],
+                start: 1595586600000,
+                end: 1595590200000
+            }, {
+                // Makuhari (2020-07-25 19:00 to 20:20)
+                coord: [140.0265839, 35.6429351],
+                start: 1595671200000,
+                end: 1595676000000
+            }, {
+                // Minatomirai (2020-07-26 19:30 to 19:55)
+                coord: [139.6411158, 35.4606603],
+                start: 1595759400000,
+                end: 1595760900000
+            }]), 'poi');
 
             map.addLayer(weatherLayer, 'poi');
 
