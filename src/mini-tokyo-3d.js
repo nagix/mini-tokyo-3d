@@ -429,6 +429,7 @@ export default class {
         me.featureLookup = {};
         featureEach(me.featureCollection, feature => {
             const {id} = feature.properties;
+
             if (id && !id.match(/\.(ug|og)\./)) {
                 me.featureLookup[id] = feature;
                 updateDistances(feature);
@@ -478,8 +479,23 @@ export default class {
             [13, 14, 15, 16, 17, 18].forEach(zoom => {
                 const minzoom = zoom <= 13 ? 0 : zoom,
                     maxzoom = zoom >= 18 ? 24 : zoom + 1,
-                    lineWidthScale = zoom === 13 ? helpers.clamp(Math.pow(2, map.getZoom() - 12), .125, 1) : 1;
+                    lineWidthScale =
+                        zoom === 13 ? helpers.clamp(Math.pow(2, map.getZoom() - 12), .125, 1) :
+                        zoom === 18 ? helpers.clamp(Math.pow(2, map.getZoom() - 19), 1, 8) : 1;
 
+                map.addLayer(new MapboxLayer({
+                    id: `stations-highlight-${zoom}`,
+                    type: GeoJsonLayer,
+                    filled: true,
+                    stroked: true,
+                    getLineWidth: 12,
+                    getLineColor: [255, 255, 255],
+                    lineWidthUnits: 'pixels',
+                    lineWidthScale,
+                    getFillColor: [255, 255, 255],
+                    visible: false
+                }), 'building-3d');
+                map.setLayerZoomRange(`stations-highlight-${zoom}`, minzoom, maxzoom);
                 map.addLayer(new MapboxLayer({
                     id: `railways-ug-${zoom}`,
                     type: GeoJsonLayer,
@@ -527,8 +543,9 @@ export default class {
                     width = ['get', 'width'],
                     color = ['get', 'color'],
                     outlineColor = ['get', 'outlineColor'],
-                    lineWidth = zoom === 13 ?
-                        ['interpolate', ['exponential', 2], ['zoom'], 9, ['/', width, 8], 12, width] : width,
+                    lineWidth =
+                        zoom === 13 ? ['interpolate', ['exponential', 2], ['zoom'], 9, ['/', width, 8], 12, width] :
+                        zoom === 18 ? ['interpolate', ['exponential', 2], ['zoom'], 19, width, 22, ['*', width, 8]] : width,
                     railwaySource = {
                         type: 'geojson',
                         data: featureFilter(me.featureCollection, p =>
@@ -844,11 +861,21 @@ export default class {
                 */
 
                 const zoom = map.getZoom(),
-                    unit = Math.pow(2, 14 - helpers.clamp(zoom, 13, 19)),
-                    lineWidthScale = helpers.clamp(Math.pow(2, zoom - 12), .125, 1);
+                    unit = Math.pow(2, 14 - helpers.clamp(zoom, 13, 19));
 
-                helpers.setLayerProps(map, 'railways-ug-13', {lineWidthScale});
-                helpers.setLayerProps(map, 'stations-ug-13', {lineWidthScale});
+                if (zoom < 13) {
+                    const lineWidthScale = helpers.clamp(Math.pow(2, zoom - 12), .125, 1);
+
+                    ['stations-highlight-13', 'railways-ug-13', 'stations-ug-13'].forEach(id => {
+                        helpers.setLayerProps(map, id, {lineWidthScale});
+                    });
+                } else if (zoom > 19) {
+                    const lineWidthScale = helpers.clamp(Math.pow(2, zoom - 19), 1, 8);
+
+                    ['stations-highlight-18', 'railways-ug-18', 'stations-ug-18'].forEach(id => {
+                        helpers.setLayerProps(map, id, {lineWidthScale});
+                    });
+                }
 
                 me.layerZoom = helpers.clamp(Math.floor(zoom), 13, 18);
                 me.objectUnit = Math.max(unit * .19, .02);
@@ -2292,6 +2319,12 @@ export default class {
         if (me.markedObject && me.markedObject !== object) {
             if (helpersThree.isObject3D(me.markedObject)) {
                 helpersThree.removeOutline(me.markedObject, 'outline-marked');
+            } else {
+                [13, 14, 15, 16, 17, 18].forEach(zoom => {
+                    helpers.setLayerProps(map, `stations-highlight-${zoom}`, {
+                        visible: false
+                    });
+                });
             }
             delete me.markedObject;
             if (popup.isOpen()) {
@@ -2307,6 +2340,18 @@ export default class {
 
             if (helpersThree.isObject3D(object)) {
                 helpersThree.addOutline(object, 'outline-marked');
+            } else {
+                let ids = object.properties.ids;
+
+                if (typeof ids === 'string') {
+                    ids = JSON.parse(ids);
+                }
+                [13, 14, 15, 16, 17, 18].forEach(zoom => {
+                    helpers.setLayerProps(map, `stations-highlight-${zoom}`, {
+                        data: featureFilter(me.featureCollection, p => p.zoom === zoom && p.ids && p.ids[0] === ids[0]),
+                        visible: true
+                    });
+                });
             }
         }
     }
