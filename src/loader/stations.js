@@ -80,7 +80,7 @@ export default async function(options) {
 
     const lookup = helpers.buildLookup(data);
 
-    extra.forEach(({id, railway, coord, title, thumbnail, altitude}) => {
+    extra.forEach(({id, railway, coord, title, thumbnail, exit, altitude}) => {
         let station = lookup[id];
 
         if (!station) {
@@ -96,6 +96,7 @@ export default async function(options) {
         }
         Object.assign(station.title, title);
         station.thumbnail = thumbnail;
+        station.exit = exit;
         if (altitude !== undefined) {
             station.altitude = altitude;
         }

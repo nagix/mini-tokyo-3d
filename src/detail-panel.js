@@ -32,8 +32,7 @@ export default class {
         <svg id="railway-mark"></svg>
         <svg id="train-mark"></svg>
     </div>
-</div>
-<div id="timetable-button" class="slide-down"></div>`;
+</div>`;
 
         mt3d.container.appendChild(container);
 
@@ -55,12 +54,13 @@ export default class {
             destination ?
                 dict['for'].replace('$1', mt3d.getLocalizedStationTitle(destination)) :
                 mt3d.getLocalizedRailDirectionTitle(train.d),
-            '</div></div>'
+            '</div></div>',
+            '<div id="slide-button" class="slide-down"></div>'
         ].join('');
 
         headerElement.addEventListener('click', () => {
             const {style} = container,
-                {classList} = container.querySelector('#timetable-button');
+                {classList} = container.querySelector('#slide-button');
 
             if (style.height !== '68px') {
                 style.height = '68px';

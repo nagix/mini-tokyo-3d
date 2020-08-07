@@ -289,6 +289,39 @@
 	overscroll-behavior: contain;
 	line-height: 130%;
 }
+.mini-tokyo-3d .station-panel {
+	position: absolute;
+	z-index: 3;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: calc(100% - 20px);
+	max-width: 380px;
+	height: 33%;
+	margin: auto;
+	border-radius: 3px 3px 0 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	font-size: 130%;
+	color: #fff;
+	transition: height 300ms ease;
+}
+.mini-tokyo-3d #station-header {
+	height: 24px;
+	margin: 10px 0;
+	padding: 0 10px;
+	overflow: hidden;
+	line-height: 150%;
+	cursor: pointer;
+}
+.mini-tokyo-3d #station-body {
+	height: calc(100% - 44px);
+	margin: 10px 0;
+	padding: 0 10px;
+	overflow: auto;
+	overscroll-behavior: contain;
+	line-height: 130%;
+}
 .mini-tokyo-3d .windows {
 	scrollbar-width: thin;
 	scrollbar-color: #ccc transparent;
@@ -338,24 +371,54 @@
 	width: 42px;
 	text-align: right;
 }
-.mini-tokyo-3d #timetable-button {
+.mini-tokyo-3d .exit-row {
+	margin: 4px 0;
+}
+.mini-tokyo-3d .exit-row:hover {
+	background-color: rgba(102, 102, 102, 0.7);
+}
+.mini-tokyo-3d .exit-row > div {
+	display: inline-block;
+	vertical-align: middle;
+}
+.mini-tokyo-3d .exit-title-box {
+}
+.mini-tokyo-3d .exit-title-box:before {
+    content: "";
+    display: block;
+	background: no-repeat center/20px 20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/sign-in-alt.svg', fill: #fff);
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0 6px 0 0;
+}
+.mini-tokyo-3d .exit-share-button {
+    height: 30px;
+}
+.mini-tokyo-3d #slide-button {
 	pointer-events: none;
 }
 .mini-tokyo-3d .slide-down {
-	position: absolute;
-	top: 24px;
-	right: 10px;
 	width: 20px;
 	height: 20px;
 	background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-down.svg', fill: #fff);
 }
 .mini-tokyo-3d .slide-up {
-	position: absolute;
-	top: 24px;
-	right: 10px;
 	width: 20px;
 	height: 20px;
 	background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-up.svg', fill: #fff);
+}
+.mini-tokyo-3d .timetable-panel .slide-down,
+.mini-tokyo-3d .timetable-panel .slide-up {
+	position: absolute;
+	top: 24px;
+	right: 10px;
+}
+.mini-tokyo-3d .station-panel .slide-down,
+.mini-tokyo-3d .station-panel .slide-up {
+	position: absolute;
+	top: 12px;
+	right: 10px;
 }
 .mini-tokyo-3d .mapboxgl-ctrl-search {
 	transition: width 300ms ease;
@@ -400,9 +463,17 @@
 	color: #fff;
 	background-color: rgba(0, 0, 0, 0.7);
 }
+.mini-tokyo-3d .highlighted .mapboxgl-popup-content {
+	background-color: rgba(102, 102, 102, 0.7);
+}
 .mini-tokyo-3d .popup-object .mapboxgl-popup-content,
-.mini-tokyo-3d .popup-object .mapboxgl-popup-tip {
+.mini-tokyo-3d .popup-object .mapboxgl-popup-tip,
+.mini-tokyo-3d .popup-station .mapboxgl-popup-content,
+.mini-tokyo-3d .popup-station .mapboxgl-popup-tip {
 	pointer-events: none;
+}
+.mini-tokyo-3d .popup-station .mapboxgl-popup-content {
+	padding: 5px 10px;
 }
 .mini-tokyo-3d .mapboxgl-popup-content a:link,
 .mini-tokyo-3d .mapboxgl-popup-content a:visited {
@@ -429,6 +500,22 @@
 }
 .mini-tokyo-3d .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
 	border-left-color: rgba(0, 0, 0, 0.7);
+}
+.mini-tokyo-3d .mapboxgl-popup-anchor-top.highlighted .mapboxgl-popup-tip,
+.mini-tokyo-3d .mapboxgl-popup-anchor-top-left.highlighted .mapboxgl-popup-tip,
+.mini-tokyo-3d .mapboxgl-popup-anchor-top-right.highlighted .mapboxgl-popup-tip {
+	border-bottom-color: rgba(102, 102, 102, 0.7);
+}
+.mini-tokyo-3d .mapboxgl-popup-anchor-bottom.highlighted .mapboxgl-popup-tip,
+.mini-tokyo-3d .mapboxgl-popup-anchor-bottom-left.highlighted .mapboxgl-popup-tip,
+.mini-tokyo-3d .mapboxgl-popup-anchor-bottom-right.highlighted .mapboxgl-popup-tip {
+	border-top-color: rgba(102, 102, 102, 0.7);
+}
+.mini-tokyo-3d .mapboxgl-popup-anchor-left.highlighted .mapboxgl-popup-tip {
+	border-right-color: rgba(102, 102, 102, 0.7);
+}
+.mini-tokyo-3d .mapboxgl-popup-anchor-right.highlighted .mapboxgl-popup-tip {
+	border-left-color: rgba(102, 102, 102, 0.7);
 }
 .mini-tokyo-3d #search-box {
 	top: 25px;

@@ -20,6 +20,7 @@ import * as helpers from './helpers';
 import * as helpersThree from './helpers-three';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
 import SharePanel from './share-panel';
+import StationPanel from './station-panel';
 import ThreeLayer from './three-layer';
 import WeatherLayer from './weather-layer';
 import destination from './turf/destination';
@@ -458,6 +459,7 @@ export default class {
         me.operatorLookup = helpers.buildLookup(me.operatorData);
         me.airportLookup = helpers.buildLookup(me.airportData);
         me.flightStatusLookup = helpers.buildLookup(me.flightStatusData);
+        me.poiLookup = helpers.buildLookup(me.poiData);
 
         me.activeTrainLookup = {};
         me.realtimeTrainLookup = {};
@@ -484,7 +486,7 @@ export default class {
                         zoom === 18 ? helpers.clamp(Math.pow(2, map.getZoom() - 19), 1, 8) : 1;
 
                 map.addLayer(new MapboxLayer({
-                    id: `stations-highlight-${zoom}`,
+                    id: `stations-marked-${zoom}`,
                     type: GeoJsonLayer,
                     filled: true,
                     stroked: true,
@@ -495,7 +497,20 @@ export default class {
                     getFillColor: [255, 255, 255],
                     visible: false
                 }), 'building-3d');
-                map.setLayerZoomRange(`stations-highlight-${zoom}`, minzoom, maxzoom);
+                map.setLayerZoomRange(`stations-marked-${zoom}`, minzoom, maxzoom);
+                map.addLayer(new MapboxLayer({
+                    id: `stations-selected-${zoom}`,
+                    type: GeoJsonLayer,
+                    filled: true,
+                    stroked: true,
+                    getLineWidth: 12,
+                    getLineColor: [255, 255, 255],
+                    lineWidthUnits: 'pixels',
+                    lineWidthScale,
+                    getFillColor: [255, 255, 255],
+                    visible: false
+                }), 'building-3d');
+                map.setLayerZoomRange(`stations-selected-${zoom}`, minzoom, maxzoom);
                 map.addLayer(new MapboxLayer({
                     id: `railways-ug-${zoom}`,
                     type: GeoJsonLayer,
@@ -841,15 +856,14 @@ export default class {
                 const object = me.pickObject(e.point);
 
                 me.markObject(object);
-                if (!object || helpersThree.isObject3D(object)) {
-                    me.trackObject(object);
-                }
+                me.trackObject(object);
 
                 // For development
                 console.log(e.lngLat);
             });
 
             map.on('zoom', () => {
+                me.markObject();
                 /*
                 if (me.trackedObject) {
                     const {altitude} = me.trackedObject.userData;
@@ -866,13 +880,13 @@ export default class {
                 if (zoom < 13) {
                     const lineWidthScale = helpers.clamp(Math.pow(2, zoom - 12), .125, 1);
 
-                    ['stations-highlight-13', 'railways-ug-13', 'stations-ug-13'].forEach(id => {
+                    ['stations-marked-13', 'stations-selected-13', 'railways-ug-13', 'stations-ug-13'].forEach(id => {
                         helpers.setLayerProps(map, id, {lineWidthScale});
                     });
                 } else if (zoom > 19) {
                     const lineWidthScale = helpers.clamp(Math.pow(2, zoom - 19), 1, 8);
 
-                    ['stations-highlight-18', 'railways-ug-18', 'stations-ug-18'].forEach(id => {
+                    ['stations-marked-18', 'stations-selected-18', 'railways-ug-18', 'stations-ug-18'].forEach(id => {
                         helpers.setLayerProps(map, id, {lineWidthScale});
                     });
                 }
@@ -936,24 +950,28 @@ export default class {
                         me.lastTrainRefresh = now - configs.minDelay;
                     }
                     if (me.trackedObject) {
-                        const {coord: center, bearing, altitude} = me.trackedObject.userData;
+                        if (helpersThree.isObject3D(me.trackedObject)) {
+                            const {coord: center, bearing, altitude} = me.trackedObject.userData;
 
-                        helpersThree.refreshOutline(me.trackedObject);
+                            helpersThree.refreshOutline(me.trackedObject);
 
-                        /*
-                        // Keep camera off from the tracked aircraft
-                        if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
-                            map.setZoom(22 - Math.log2(altitude * .5));
-                        }
-                        */
+                            /*
+                            // Keep camera off from the tracked aircraft
+                            if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
+                                map.setZoom(22 - Math.log2(altitude * .5));
+                            }
+                            */
 
-                        if (!me.viewAnimationID && !map._zooming && !map._pitching) {
-                            me._jumpTo({
-                                center,
-                                altitude,
-                                bearing,
-                                bearingFactor: .02
-                            });
+                            if (!me.viewAnimationID && !map._zooming && !map._pitching) {
+                                me._jumpTo({
+                                    center,
+                                    altitude,
+                                    bearing,
+                                    bearingFactor: .02
+                                });
+                            }
+                        } else {
+                            me.refreshStationOutline();
                         }
                     }
                     if (helpersThree.isObject3D(me.markedObject)) {
@@ -1039,7 +1057,7 @@ export default class {
             if (helpersThree.isObject3D(me.markedObject) && me.markedObject.userData.object === train) {
                 marked = cars[0];
             }
-            if (me.trackedObject && me.trackedObject.userData.object === train) {
+            if (helpersThree.isObject3D(me.trackedObject) && me.trackedObject.userData.object === train) {
                 tracked = cars[0];
             }
             if (helpers.includes(me.selection, train.t)) {
@@ -1507,6 +1525,20 @@ export default class {
             title = (me.flightStatusLookup[status] || {}).title || {};
 
         return title[me.lang] || title.en;
+    }
+
+    getLocalizedPOITitle(poi) {
+        const me = this,
+            title = (me.poiLookup[poi] || {}).title || {};
+
+        return title[me.lang] || title.en;
+    }
+
+    getLocalizedPOIDescription(poi) {
+        const me = this,
+            description = (me.poiLookup[poi] || {}).description || {};
+
+        return description[me.lang] || description.en;
     }
 
     setTrainStandingStatus(train, standing) {
@@ -2187,7 +2219,7 @@ export default class {
 
         me.updateTrackingButton(mode);
         me.trackingMode = mode;
-        if (me.trackedObject) {
+        if (helpersThree.isObject3D(me.trackedObject)) {
             me.startViewAnimation();
         }
     }
@@ -2320,11 +2352,7 @@ export default class {
             if (helpersThree.isObject3D(me.markedObject)) {
                 helpersThree.removeOutline(me.markedObject, 'outline-marked');
             } else {
-                [13, 14, 15, 16, 17, 18].forEach(zoom => {
-                    helpers.setLayerProps(map, `stations-highlight-${zoom}`, {
-                        visible: false
-                    });
-                });
+                me.removeStationOutline('stations-marked');
             }
             delete me.markedObject;
             if (popup.isOpen()) {
@@ -2341,17 +2369,7 @@ export default class {
             if (helpersThree.isObject3D(object)) {
                 helpersThree.addOutline(object, 'outline-marked');
             } else {
-                let ids = object.properties.ids;
-
-                if (typeof ids === 'string') {
-                    ids = JSON.parse(ids);
-                }
-                [13, 14, 15, 16, 17, 18].forEach(zoom => {
-                    helpers.setLayerProps(map, `stations-highlight-${zoom}`, {
-                        data: featureFilter(me.featureCollection, p => p.zoom === zoom && p.ids && p.ids[0] === ids[0]),
-                        visible: true
-                    });
-                });
+                me.addStationOutline(object, 'stations-marked');
             }
         }
     }
@@ -2360,7 +2378,11 @@ export default class {
         const me = this;
 
         if (me.trackedObject) {
-            helpersThree.removeOutline(me.trackedObject, 'outline-tracked');
+            if (helpersThree.isObject3D(me.trackedObject)) {
+                helpersThree.removeOutline(me.trackedObject, 'outline-tracked');
+            } else {
+                me.removeStationOutline('stations-selected');
+            }
             delete me.trackedObject;
             me.stopViewAnimation();
             me.updateTrackingButton(false);
@@ -2375,23 +2397,86 @@ export default class {
         }
 
         if (object) {
-            const {altitude, object: train} = object.userData;
-
             me.trackedObject = object;
-            me.startViewAnimation();
-            me.updateTrackingButton(true);
-            me.setUndergroundMode(altitude < 0);
 
-            if (!me.isPlayback && navigator.share) {
-                me.sharePanel = new SharePanel({object: train});
-                me.sharePanel.addTo(me);
-            }
-            if (train.tt) {
-                me.detailPanel = new DetailPanel({object: train});
-                me.detailPanel.addTo(me);
-            }
+            if (helpersThree.isObject3D(object)) {
+                const {altitude, object: train} = object.userData;
 
-            helpersThree.addOutline(object, 'outline-tracked');
+                me.startViewAnimation();
+                me.updateTrackingButton(true);
+                me.setUndergroundMode(altitude < 0);
+
+                if (!me.isPlayback && navigator.share) {
+                    me.sharePanel = new SharePanel({object: train});
+                    me.sharePanel.addTo(me);
+                }
+                if (train.tt) {
+                    me.detailPanel = new DetailPanel({object: train});
+                    me.detailPanel.addTo(me);
+                }
+
+                helpersThree.addOutline(object, 'outline-tracked');
+            } else {
+                const altitude = getCoords(object)[0][0][2];
+                let ids = object.properties.ids;
+
+                if (typeof ids === 'string') {
+                    ids = JSON.parse(ids);
+                }
+
+                const stations = ids.map(id => me.stationLookup[id]),
+                    exits = [].concat(...stations.map(station => station.exit || []));
+
+                if (exits.length > 0) {
+                    let minLng = 180,
+                        maxLng = -180,
+                        minLat = 90,
+                        maxLat = -90;
+
+                    exits.forEach((id, index) => {
+                        const poi = me.poiLookup[id],
+                            [lng, lat] = poi.coord,
+                            popup = new mapboxgl.Popup({
+                                className: 'popup-station',
+                                closeButton: false
+                            });
+
+                        popup.setLngLat(poi.coord)
+                            .setHTML(me.getLocalizedPOITitle(id))
+                            .addTo(me.map)
+                            .getElement().id = `exit-${index}`;
+
+                        if (minLng > lng) {
+                            minLng = lng;
+                        }
+                        if (maxLng < lng) {
+                            maxLng = lng;
+                        }
+                        if (minLat > lat) {
+                            minLat = lat;
+                        }
+                        if (maxLat < lat) {
+                            maxLat = lat;
+                        }
+                    });
+
+                    me.setUndergroundMode(altitude < 0);
+                    me.map.fitBounds([[minLng, minLat], [maxLng, maxLat]], {
+                        bearing: me.map.getBearing(),
+                        offset: [0, -me.map.transform.height / 12],
+                        padding: {top: 20, bottom:20, left: 20, right: 20},
+                        linear: true,
+                        maxZoom: 18
+                    });
+
+                    me.detailPanel = new StationPanel({object: stations});
+                    me.detailPanel.addTo(me);
+
+                    me.addStationOutline(object, 'stations-selected');
+                } else {
+                    me.trackedObject = undefined;
+                }
+            }
         }
     }
 
@@ -2501,6 +2586,41 @@ export default class {
         });
     }
 
+    addStationOutline(object, name) {
+        const me = this;
+        let ids = object.properties.ids;
+
+        if (typeof ids === 'string') {
+            ids = JSON.parse(ids);
+        }
+        [13, 14, 15, 16, 17, 18].forEach(zoom => {
+            helpers.setLayerProps(me.map, `${name}-${zoom}`, {
+                data: featureFilter(me.featureCollection, p => p.zoom === zoom && p.ids && p.ids[0] === ids[0]),
+                opacity: 1,
+                visible: true
+            });
+        });
+    }
+
+    removeStationOutline(name) {
+        [13, 14, 15, 16, 17, 18].forEach(zoom => {
+            helpers.setLayerProps(this.map, `${name}-${zoom}`, {
+                visible: false
+            });
+        });
+    }
+
+    refreshStationOutline() {
+        const p = performance.now() % 1500 / 1500 * 2;
+
+        [13, 14, 15, 16, 17, 18].forEach(zoom => {
+            helpers.setLayerProps(this.map, `stations-selected-${zoom}`, {
+                opacity: p < 1 ? p : 2 - p,
+                visible: true
+            });
+        });
+    }
+
     setSectionData(train, index, final) {
         const me = this,
             {clock} = me,
@@ -2581,6 +2701,7 @@ function loadData(dataUrl, lang, clock) {
         `${dataUrl}/operators.json.gz`,
         `${dataUrl}/airports.json.gz`,
         `${dataUrl}/flight-statuses.json.gz`,
+        `${dataUrl}/poi.json.gz`,
         configs.secretsUrl
     ].map(helpers.loadJSON)).then(data => ({
         dict: data[0],
@@ -2594,7 +2715,8 @@ function loadData(dataUrl, lang, clock) {
         operatorData: data[8],
         airportData: data[9],
         flightStatusData: data[10],
-        secrets: data[11]
+        poiData: data[11],
+        secrets: data[12]
     }));
 }
 

@@ -10,6 +10,7 @@ import trainVehicles from './train-vehicles';
 import operators from './operators';
 import airports from './airports';
 import flightStatuses from './flight-statuses';
+import poi from './poi';
 
 const TOKYOCHALLENGE_URL = 'https://api-tokyochallenge.odpt.org/api/v4/',
     ODPT_URL = 'https://api.odpt.org/api/v4/',
@@ -42,6 +43,7 @@ async function main() {
     operators(options);
     airports(options);
     flightStatuses(options);
+    poi();
 
 }
 
