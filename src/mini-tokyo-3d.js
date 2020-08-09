@@ -851,6 +851,8 @@ export default class {
                 }
             });
 
+            me.exitPopups = [];
+
             [13, 14, 15, 16, 17, 18].forEach(zoom => {
                 map.on('mouseenter', `stations-og-${zoom}`, e => {
                     me.pickedFeature = e.features[0];
@@ -2409,6 +2411,9 @@ export default class {
                 me.detailPanel.remove();
                 delete me.detailPanel;
             }
+            me.exitPopups.forEach(popup => {
+                popup.remove();
+            });
         }
 
         if (object) {
@@ -2448,7 +2453,7 @@ export default class {
                         minLat = 90,
                         maxLat = -90;
 
-                    exits.forEach((id, index) => {
+                    me.exitPopups = exits.map((id, index) => {
                         const poi = me.poiLookup[id],
                             [lng, lat] = poi.coord,
                             popup = new mapboxgl.Popup({
@@ -2473,6 +2478,8 @@ export default class {
                         if (maxLat < lat) {
                             maxLat = lat;
                         }
+
+                        return popup;
                     });
 
                     me.setUndergroundMode(altitude < 0);
