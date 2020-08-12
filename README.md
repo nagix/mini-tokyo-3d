@@ -47,9 +47,9 @@ Click or tap the train/helicopter button | Switch the tracking mode
 Click or tap the playback button | Toggle the playback mode
 Click or tap the weather button | Show/hide the weather
 Click or tap the info button | Show/hide the app info dialog
-Click or tap a train/aircraft | Enable tracking
-Click or tap the map | Disable tracking
-Hover a train/aircraft | Show the train/aircraft information
+Click or tap a train/aircraft/station | Enable tracking or select station
+Click or tap the map | Disable tracking or deselect station
+Hover a train/aircraft/station | Show the train/aircraft/station information
 
 ## Language Support
 

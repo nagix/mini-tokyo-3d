@@ -92,6 +92,14 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 コンパスアイコンボタンをクリックまたはタップすると、地図が真北を向くように回転します。
 
+### 時刻表示
+
+<img src="public/images/clock.jpg" width="141">
+
+画面左上に現在時刻が表示されます。常に日本時間が表示されるため、海外からのアクセス時に便利です。[再生モード](#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%89)がオンの状態では、現在時刻の他に時刻や時間の経過速度を変更するためのボタンが表示されます。
+
+再生モードの詳細については[こちら](#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%89)をご覧ください。
+
 ### 列車・旅客機の詳細情報の表示
 
 <img src="public/images/train-details.jpg" width="216"> <img src="public/images/flight-details.jpg" width="216">
@@ -118,19 +126,17 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 この機能は Safari (Mac OS、iOS)、Chrome (Android)、Opera (Android)、Samsung Internet の各ブラウザでのみ利用可能です。
 
-### 時刻表示
-
-<img src="public/images/clock.jpg" width="141">
-
-画面左上に現在時刻が表示されます。常に日本時間が表示されるため、海外からのアクセス時に便利です。[再生モード](#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%89)がオンの状態では、現在時刻の他に時刻や時間の経過速度を変更するためのボタンが表示されます。
-
-再生モードの詳細については[こちら](#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%89)をご覧ください。
-
 ### 遅延列車の表示
 
 <img src="public/images/delay-marker.jpg" width="185">
 
 [再生モード](#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%89)がオフの状態では、1分以上遅延している列車には周囲にオレンジ色の球が表示されます。地図上のどの区間で遅れがあるかが一目瞭然です。
+
+### 駅出口情報の表示
+
+<img src="public/images/station-exits.jpg" width="490">
+
+駅をクリックまたはタップすると駅が選択された状態になり、駅周辺の地図が拡大表示されて出口の場所と名前が地図上に表示されます。駅が選択された状態では、出口の一覧が画面下部に表示されます。一覧の中で出口の名前にマウスポインタを合わせたり、タップをすると地図上の出口の名前がハイライトされ、場所の確認をすることができます。駅が存在しない地図上をクリックすると、駅の選択状態が解除されます。
 
 ### 駅名検索
 
@@ -218,10 +224,10 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 次のブラウザで動作を確認しています。推奨は Chrome です。Internet Explorer には非対応です。
 
-- Chrome 83 (Mac OS, Windows, iOS)
-- FireFox 78 (Mac OS, Windows, iOS)
+- Chrome 84 (Mac OS, Windows, iOS)
+- FireFox 79 (Mac OS, Windows, iOS)
 - Safari 13 (Mac OS, iOS)
-- Edge 44 (Windows)
+- Edge 84 (Mac OS, Windows)
 
 ## 開発情報
 
@@ -232,4 +238,3 @@ Mini Tokyo 3D の特徴は次の通りです。
 本アプリケーションに関するお問い合わせは、以下のメールアドレスにお願いします。
 
 mini-tokyo-3d@nagi-p.com
-

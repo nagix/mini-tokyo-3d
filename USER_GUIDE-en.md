@@ -92,6 +92,14 @@ You can also change the rotation and tilt of the map by holding down the Shift k
 
 Click or tap the compass icon button and the bearing will be reset to true north.
 
+### Date and Time
+
+<img src="public/images/clock.jpg" width="141">
+
+The current data and time is displayed at the top left of the screen. It is convenient when accessing from overseas because Japan standard time is always displayed. When [Playback Mode](#playback-mode) is on, additional buttons appear below the the current time to change the time and the speed at which the time progresses.
+
+See [here](#playback-mode) for details on Playback Mode.
+
 ### Displaying Detailed Information on Trains and Airplanes
 
 <img src="public/images/train-details.jpg" width="216"> <img src="public/images/flight-details.jpg" width="216">
@@ -118,19 +126,17 @@ When [Tracking Mode](#tracking-mode) is on, the “Share this train” or “Sha
 
 This feature is only available in the follwing browsers: Safari (Mac OS and iOS), Chrome (Android), Opera (Android) and Samsung Internet
 
-### Date and Time
-
-<img src="public/images/clock.jpg" width="141">
-
-The current data and time is displayed at the top left of the screen. It is convenient when accessing from overseas because Japan standard time is always displayed. When [Playback Mode](#playback-mode) is on, additional buttons appear below the the current time to change the time and the speed at which the time progresses.
-
-See [here](#playback-mode) for details on Playback Mode.
-
 ### Delayed Train
 
 <img src="public/images/delay-marker.jpg" width="185">
 
 When [Playback Mode](#playback-mode) is off, orange spheres are displayed around trains that are delayed for more than 1 minute. It is easy to see which sections on the map have the delay.
+
+### Displaying Station Exit Information
+
+<img src="public/images/station-exits.jpg" width="490">
+
+When you click or tap on a station, the station is selected and the map around the station is enlarged to show the locations and names of the exits on the map. When a station is selected, a list of exits will be displayed at the bottom of the screen. If you move the mouse pointer over the name of the exit in the list or tap it, the name of the exit will be highlighted on the map and you can check the location. Clicking on the map where no station exists will deselect it.
 
 ### Station Search
 
@@ -217,10 +223,10 @@ The source of the public transportation data in this application is the Open Dat
 
 This application has been tested with the following browsers. Chrome is recommended. Internet Explorer is not supported.
 
-- Chrome 83 (Mac OS, Windows, iOS)
-- FireFox 78 (Mac OS, Windows, iOS)
+- Chrome 84 (Mac OS, Windows, iOS)
+- FireFox 79 (Mac OS, Windows, iOS)
 - Safari 13 (Mac OS, iOS)
-- Edge 44 (Windows)
+- Edge 84 (Mac OS, Windows)
 
 ## Development Information
 
