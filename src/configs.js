@@ -114,7 +114,45 @@ const configs = {
     customAttribution: '<a href="https://github.com/nagix/mini-tokyo-3d">© Akihiko Kusanagi</a>',
 
     // Share URL
-    shareUrl: 'https://minitokyo3d.com'
+    shareUrl: 'https://minitokyo3d.com',
+
+    // Supported events
+    events: [
+        'boxzoomcancel',
+        'boxzoomend',
+        'boxzoomstart',
+        'click',
+        'contextmenu',
+        'dblclick',
+        'drag',
+        'dragend',
+        'dragstart',
+        'error',
+        'load',
+        'mousedown',
+        'mousemove',
+        'mouseout',
+        'mouseover',
+        'mouseup',
+        'move',
+        'moveend',
+        'movestart',
+        'pitch',
+        'pitchend',
+        'pitchstart',
+        'resize',
+        'rotate',
+        'rotateend',
+        'rotatestart',
+        'touchcancel',
+        'touchend',
+        'touchmove',
+        'touchstart',
+        'wheel',
+        'zoom',
+        'zoomend',
+        'zoomstart'
+    ]
 };
 
 export default configs;

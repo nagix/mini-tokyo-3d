@@ -104,9 +104,11 @@ MapboxLayer.prototype.render = function(...args) {
     render.apply(me, args);
 };
 
-export default class {
+export default class extends mapboxgl.Evented {
 
     constructor(options) {
+        super();
+
         const me = this;
 
         me.options = options;
@@ -936,6 +938,12 @@ export default class {
 
             map.on('resize', e => {
                 trainLayers.onResize(e);
+            });
+
+            configs.events.forEach(event => {
+                map.on(event, e => {
+                    me.fire(e);
+                });
             });
 
             animation.init();
@@ -2309,6 +2317,7 @@ export default class {
                     prop = map.getPaintProperty(id, key);
                     prop.stops[stops][1] = color;
                 } else if (_case !== undefined) {
+                    // Bug: transition doesn't work (mapbox-gl-js #7121)
                     prop = map.getPaintProperty(id, key);
                     prop[_case] = color;
                 } else {
