@@ -95,6 +95,11 @@ JavaScript で Mini Tokyo 3D API を使うことで、様々なカスタマイ�
 
 **注意**: 現在 Mini Tokyo 3D API はベータ版です。API の変更の可能性があるため、バージョン間の互換性は保証されません。
 
+クラス／オブジェクト | 詳細
+:--|:--
+[`MiniTokyo3D`](#minitokyo3d) | **パラメータ**<br>[`options`](#options-object)<br>**インスタンスメンバ**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getPitch`](#getpitch) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setPitch`](#setpitchpitch) [`setZoom`](#setzoomzoom)<br>**イベント**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
+[`Secrets`](#secrets) |
+
 ### MiniTokyo3D
 
 `MiniTokyo3D` オブジェクトは、Web ページ上の Mini Tokyo 3D マップを表しています。`MiniTokyo3D` を作るには `container` やその他のオプションを指定してコンストラクタを呼び出します。すると、Web ページ上のマップが初期化され、`MiniTokyo3D` が返されます。
@@ -105,7 +110,7 @@ new MiniTokyo3D(options: Object)
 
 #### パラメータ
 
-**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
+##### **`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
 
 名前 | 説明
 :-- | :--
@@ -129,155 +134,477 @@ new MiniTokyo3D(options: Object)
 
 #### インスタンスメンバ
 
-**`easeTo(options)`**
+##### **`easeTo(options)`**
 
 center、zoom、bearing および pitch の任意の組み合わせを、新旧の値の間のアニメーションによる遷移で変更します。マップは、`options` で指定されていない項目については、現在の値を保持します。
 
 注: ユーザーがオペレーティングシステムで `reduced motion` (動きの抑制) アクセシビリティ機能を有効にしている場合、`options` に `essential:true` が含まれていない限り、遷移は即座に行われます。
 
-##### パラメータ
+###### パラメータ
 
 **`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) 遷移先とアニメーションを記述するオプション。[`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions) と [`AnimationOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions) が使用可能
 
-##### 返り値
+###### 返り値
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
 
 ---
 
-**`flyTo(options)`**
+##### **`flyTo(options)`**
 
 center、zoom、bearing および pitch の任意の組み合わせを変更し、飛行をイメージした曲線に沿って遷移をアニメーションします。アニメーションにはズームとパンがシームレスに組み込まれており、ユーザーが長距離を移動した後でも方向感を維持できるようになっています。
 
 注: ユーザーがオペレーティングシステムで `reduced motion` (動きの抑制) アクセシビリティ機能を有効にしている場合、`options` に `essential:true` が含まれていない限り、アニメーションはスキップされ `jumpTo` と同じ動作になります。
 
-##### パラメータ
+###### パラメータ
 
 **`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) 遷移先とアニメーションを記述するオプション。[`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions)、[`AnimationOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions) に加えて、次に示すオプションが使用可能
 
 名前 | 説明
 :-- | :--
-**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1.42` | 飛行経路に沿って発生するズームの「カーブ」。高い値を設定するとズームのアニメーションの誇張が最大になり、低い値を設定するとズームの効果が最小になって `MiniTokyo3D#easeTo` の動きに近づく。1.42 は、[van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf) で論じられた、ユーザー調査の参加者によって選択された平均値。`Math.pow(6, 0.25)` の値は平均速度の平方根に相当する。1 の値は円運動を生成する
+**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1.42` | 飛行経路に沿って発生するズームの「カーブ」。高い値を設定するとズームのアニメーションの誇張が最大になり、低い値を設定するとズームの効果が最小になって [`MiniTokyo3D#easeTo`](#easetooptions) の動きに近づく。1.42 は、[van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf) で論じられた、ユーザー調査の参加者によって選択された平均値。`Math.pow(6, 0.25)` の値は平均速度の平方根に相当する。1 の値は円運動を生成する
 **`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 飛行経路のピークでのゼロベースのズームレベル。`options.curve` が指定された場合、このオプションは無視される
 **`options.speed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1.2` | `options.curve` と関連して定義されるアニメーションの平均速度。速度が 1.2 の場合、マップが飛行経路に沿って 1 秒ごとに `options.curve` の 1.2 倍のスクリーンフルで移動しているように見えることを意味する。*スクリーンフル*とは、マップの表示部分の幅のこと。これは固定の物理的な距離に対応するものではなく、ズームレベルによって変化する
 **`options.screenSpeed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 直線的なタイミングカーブを想定した場合の、1秒あたりのスクリーンフルで表したアニメーションの平均速度。`options.curve` が指定された場合、このオプションは無視される
 **`options.maxDuration`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | アニメーションの最大継続時間をミリ秒単位で指定。継続時間が最大継続時間を超えると、0 にリセットされる
 
-##### 返り値
+###### 返り値
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
 
 ---
 
-**`getBearing()`**
+##### **`getBearing()`**
 
 現在のマップの方角を返します。方角は、コンパスの方向を「上」としたものです。例えば、90°の方角は、東が上になるように地図の向きを変えた状態です。
 
-##### 返り値
+###### 返り値
 
 [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): 現在のマップの方角
 
 ---
 
-**`getCenter()`**
+##### **`getCenter()`**
 
 マップ中心点の座標を返します。
 
-##### 返り値
+###### 返り値
 
 [`LngLat`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglat): マップ中心点の座標
 
 ---
 
-**`getPitch()`**
+##### **`getPitch()`**
 
 現在のマップの傾きを返します。
 
-##### 返り値
+###### 返り値
 
 [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): 現在のマップの傾き。画面に対する地表面の角度（0〜60）で表される
 
 ---
 
-**`getZoom()`**
+##### **`getZoom()`**
 
 現在のマップのズームレベルを返します。
 
-##### 返り値
+###### 返り値
 
 [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): 現在のマップのズームレベル
 
 ---
 
-**`jumpTo(options)`**
+##### **`jumpTo(options)`**
 
 center、zoom、bearing および pitch の任意の組み合わせを、アニメーションによる遷移なしで変更します。マップは、`options` で指定されていない項目については、現在の値を保持します。
 
-##### パラメータ
+###### パラメータ
 
 **`options`** ([`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions)) オプションのオブジェクト
 
-##### 返り値
+###### 返り値
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
 
 ---
 
-**`setBearing(bearing)`**
+##### **`off(type, listener)`**
+
+[`MiniTokyo3D#on`](#ontype-listener) で追加したイベントリスナを削除します。
+
+###### パラメータ
+
+**`type`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) リスナの登録に使用したイベントタイプ
+
+**`listener`** ([`Function`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)) リスナとして登録した関数
+
+###### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+##### **`on(type, listener)`**
+
+指定したタイプのイベントのリスナを追加します。
+
+###### パラメータ
+
+**`type`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) 待ち受けるイベントタイプ
+
+**`listener`** ([`Function`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)) イベントが発生したときに呼び出される関数
+
+###### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+##### **`once(type, listener)`**
+
+指定したイベントタイプに対して一度だけ呼び出されるリスナを追加します。
+
+###### パラメータ
+
+**`type`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) 待ち受けるイベントタイプ
+
+**`listener`** ([`Function`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)) イベントが発生したときに呼び出される関数
+
+###### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+##### **`setBearing(bearing)`**
 
 マップの方角を設定します。方角は、コンパスの方向を「上」としたものです。例えば、90°の方角は、東が上になるように地図の向きを変えた状態です。
 
 `jumpTo({bearing: bearing})` と同じ。
 
-##### パラメータ
+###### パラメータ
 
 **`bearing`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) 設定する方角
 
-##### 返り値
+###### 返り値
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
 
 ---
 
-**`setCenter(center)`**
+##### **`setCenter(center)`**
 
 マップ中心点の座標を設定します。`jumpTo({center: center})` と同じです。
 
-##### パラメータ
+###### パラメータ
 
 **`center`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike)) 設定する中心点の座標
 
-##### 返り値
+###### 返り値
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
 
 ---
 
-**`setPitch(pitch)`**
+##### **`setPitch(pitch)`**
 
 マップの傾きを設定します。`jumpTo({pitch: pitch})` と同じです。
 
-##### パラメータ
+###### パラメータ
 
 **`pitch`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) 設定する傾き。画面に対する地表面の角度（0〜60）で指定する
 
-##### 返り値
+###### 返り値
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
 
 ---
 
-**`setZoom(zoom)`**
+##### **`setZoom(zoom)`**
 
 マップのズームレベルを設定します。`jumpTo({zoom: zoom})` と同じです。
 
-##### パラメータ
+###### パラメータ
 
 **`zoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) 設定するズームレベル (0〜20)
 
-##### 返り値
+###### 返り値
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
+
+#### イベント
+
+##### **`boxzoomcancel`**
+
+ユーザーが「ボックスズーム」操作をキャンセルした場合や、境界ボックスが最小サイズのしきい値を満たしていない場合に発生します。[`BoxZoomHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler) を参照してください。
+
+###### プロパティ
+
+**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent))
+
+---
+
+##### **`boxzoomend`**
+
+「ボックスズーム」操作が終了したときに発生します。[`BoxZoomHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler) を参照してください。
+
+###### プロパティ
+
+**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent))
+
+---
+
+##### **`boxzoomstart`**
+
+「ボックスズーム」操作が開始されたときに発生します。[`BoxZoomHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler) を参照してください。
+
+###### プロパティ
+
+**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent))
+
+---
+
+##### **`click`**
+
+マップ上の同じ場所でポインティングデバイス（通常はマウス）を押して離すと発生します。
+
+###### プロパティ
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`contextmenu`**
+
+マウスの右ボタンがクリックされたとき、またはマップ内でコンテキストメニューキーが押されたときに発生します。
+
+###### プロパティ
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`dblclick`**
+
+マップ上の同じ場所ででポインティングデバイス（通常はマウス）を2回連続して押して離すと発生します。
+
+###### プロパティ
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`drag`**
+
+「移動のためのドラッグ」操作中に繰り返し発生します。[`DragPanHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler) を参照してください。
+
+###### プロパティ
+
+**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+
+---
+
+##### **`dragend`**
+
+「移動のためのドラッグ」操作が終了したときに発生します。[`DragPanHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler) を参照してください。
+
+###### プロパティ
+
+**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+
+---
+
+##### **`dragstart`**
+
+「移動のためのドラッグ」操作が開始されたときに発生します。[`DragPanHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler) を参照してください。
+
+###### プロパティ
+
+**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+
+---
+
+##### **`error`**
+
+エラーが発生したときに発生します。これは Mini Tokyo 3D の主要なエラー報告メカニズムです。throw の代わりにイベントを使用することで、非同期処理に対応できるようにしています。リスナがエラーイベントにバインドされていない場合、エラーはコンソールに出力されます。
+
+###### プロパティ
+
+**`data`** (`{error: {message: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}}`)
+
+---
+
+##### **`load`**
+
+必要なリソースがすべてダウンロードされ、最初の完全なマップの視覚的なレンダリングが行われた後、直ちに発生します。
+
+---
+
+##### **`mousedown`**
+
+マップ内でポインティングデバイス（通常はマウス）が押されたときに発生します。
+
+###### プロパティ
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`mousemove`**
+
+カーソルがマップ内にあるときにポインティングデバイス（通常はマウス）が移動したときに発生します。マップ上でカーソルを移動すると、カーソルがマップ内の位置を変更するたびにイベントが発生します。
+
+###### プロパティ
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`mouseover`**
+
+ポインティングデバイス（通常はマウス）がマップ内で移動したときに発生します。マップを含む Web ページ上でカーソルを移動すると、カーソルがマップまたは子要素に入るたびにイベントが発生します。
+
+###### プロパティ
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`mouseup`**
+
+マップ内でポインティングデバイス（通常はマウス）が離されたときに発生します。
+
+###### プロパティ
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`move`**
+
+ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、あるビューから別のビューへのアニメーション遷移中に繰り返し発生します。
+
+---
+
+##### **`moveend`**
+
+ユーザの操作や [`MiniTokyo3D#jumpTo`](#jumptooptions) などのメソッドの結果として、マップがあるビューから別のビューへの遷移を完了した直後に発生します。
+
+---
+
+##### **`movestart`**
+
+ユーザの操作や [`MiniTokyo3D#jumpTo`](#jumptooptions) などのメソッドの結果として、マップがあるビューから別のビューに遷移する直前に発生します。
+
+---
+
+##### **`pitch`**
+
+ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップの傾きの状態遷移アニメーションの間に繰り返し発生します。
+
+---
+
+##### **`pitchend`**
+
+ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップの傾きが変化し終わった直後に発生します。
+
+---
+
+##### **`pitchstart`**
+
+ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップの傾きが変化し始める直前に発生します。
+
+---
+
+##### **`resize`**
+
+マップのサイズが変更された直後に発生します。
+
+---
+
+##### **`rotate`**
+
+「回転のためのドラッグ」操作中に繰り返し発生します。[`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler) を参照してください。
+
+---
+
+##### **`rotateend`**
+
+「回転のためのドラッグ」操作が終了したときに発生します。[`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler)を参照してください。
+
+---
+
+##### **`rotatestart`**
+
+「回転のためのドラッグ」操作が開始されたときに発生します。[`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler)を参照してください。
+
+---
+
+##### **`touchcancel`**
+
+マップ内で [`touchcancel`](https://developer.mozilla.org/docs/Web/Events/touchcancel) イベントが発生したときに発生します。
+
+###### プロパティ
+
+**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+
+---
+
+##### **`touchend`**
+
+マップ内で [`touchend`](https://developer.mozilla.org/docs/Web/Events/touchend) イベントが発生したときに発生します。
+
+###### プロパティ
+
+**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+
+---
+
+##### **`touchmove`**
+
+マップ内で [`touchmove`](https://developer.mozilla.org/docs/Web/Events/touchmove) イベントが発生したときに発生します。
+
+###### プロパティ
+
+**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+
+---
+
+##### **`touchstart`**
+
+マップ内で [`touchstart`](https://developer.mozilla.org/docs/Web/Events/touchstart) イベントが発生したときに発生します。
+
+###### プロパティ
+
+**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+
+---
+
+##### **`wheel`**
+
+マップ内で [`wheel`](https://developer.mozilla.org/docs/Web/Events/wheel) イベントが発生したときに発生します。
+
+###### プロパティ
+
+**`data`** ([`MapWheelEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapwheelevent))
+
+---
+
+##### **`zoom`**
+
+ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、あるズームレベルから別のズームレベルへのアニメーション遷移中に繰り返し発生します。
+
+---
+
+##### **`zoomend`**
+
+ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を完了した直後に発生します。
+
+---
+
+##### **`zoomstart`**
+
+ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を開始する直前に発生します。
 
 ### Secrets
 

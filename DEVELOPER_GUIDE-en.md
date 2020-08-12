@@ -95,6 +95,11 @@ Using Mini Tokyo 3D API in JavaScript, you can customize Mini Tokyo 3D in a vari
 
 **Note**: The Mini Tokyo 3D API is currently in beta. Due to the possibility of API changes, compatibility between versions is not guaranteed.
 
+Class/Object | Details
+:--|:--
+[`MiniTokyo3D`](#minitokyo3d) | **Parameters**<br>[`options`](#options-object)<br>**Instance Members**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getPitch`](#getpitch) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setPitch`](#setpitchpitch) [`setZoom`](#setzoomzoom)<br>**Events**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
+[`Secrets`](#secrets) |
+
 ### MiniTokyo3D
 
 The `MiniTokyo3D` object represents the Mini Tokyo 3D map on your page. You create a `MiniTokyo3D` by specifying a `container` and other `options`. Then Mini Tokyo 3D initializes the map on the page and returns your `MiniTokyo3D` object.
@@ -105,7 +110,7 @@ new MiniTokyo3D(options: Object)
 
 #### Parameters
 
-**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
+##### **`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
 
 Name | Description
 :-- | :--
@@ -129,155 +134,477 @@ Name | Description
 
 #### Instance Members
 
-**`easeTo(options)`**
+##### **`easeTo(options)`**
 
 Changes any combination of center, zoom, bearing, pitch, and padding with an animated transition between old and new values. The map will retain its current values for any details not specified in `options`.
 
 Note: The transition will happen instantly if the user has enabled the reduced motion accesibility feature enabled in their operating system, unless `options` includes `essential: true`.
 
-##### Parameters
+###### Parameters
 
 **`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) Options describing the destination and animation of the transition. Accepts [`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions) and [`AnimationOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions).
 
-##### Returns
+###### Returns
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
 
 ---
 
-**`flyTo(options)`**
+##### **`flyTo(options)`**
 
 Changes any combination of center, zoom, bearing, and pitch, animating the transition along a curve that evokes flight. The animation seamlessly incorporates zooming and panning to help the user maintain her bearings even after traversing a great distance.
 
 Note: The animation will be skipped, and this will behave equivalently to `jumpTo` if the user has the `reduced motion` accesibility feature enabled in their operating system, unless `options` includes `essential: true`.
 
-##### Parameters
+###### Parameters
 
 **`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) Options describing the destination and animation of the transition. Accepts [`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions), [`AnimationOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions), and the following additional options.
 
 Name | Description
 :-- | :--
-**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.42` | The zooming "curve" that will occur along the flight path. A high value maximizes zooming for an exaggerated animation, while a low value minimizes zooming for an effect closer to `MiniTokyo3D#easeTo`. 1.42 is the average value selected by participants in the user study discussed in [van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf). A value of `Math.pow(6, 0.25)` would be equivalent to the root mean squared average velocity. A value of 1 would produce a circular motion.
+**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.42` | The zooming "curve" that will occur along the flight path. A high value maximizes zooming for an exaggerated animation, while a low value minimizes zooming for an effect closer to [`MiniTokyo3D#easeTo`](#easetooptions). 1.42 is the average value selected by participants in the user study discussed in [van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf). A value of `Math.pow(6, 0.25)` would be equivalent to the root mean squared average velocity. A value of 1 would produce a circular motion.
 **`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The zero-based zoom level at the peak of the flight path. If `options.curve` is specified, this option is ignored.
 **`options.speed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.2` | The average speed of the animation defined in relation to `options.curve`. A speed of 1.2 means that the map appears to move along the flight path by 1.2 times `options.curve` screenfuls every second. A *screenful* is the map's visible span. It does not correspond to a fixed physical distance, but varies by zoom level.
 **`options.screenSpeed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The average speed of the animation measured in screenfuls per second, assuming a linear timing curve. If `options.speed` is specified, this option is ignored.
 **`options.maxDuration`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The animation's maximum duration, measured in milliseconds. If duration exceeds maximum duration, it resets to 0.
 
-##### Returns
+###### Returns
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
 
 ---
 
-**`getBearing()`**
+##### **`getBearing()`**
 
 Returns the map's current bearing. The bearing is the compass direction that is "up"; for example, a bearing of 90° orients the map so that east is up.
 
-##### Returns
+###### Returns
 
 [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): The map's current bearing.
 
 ---
 
-**`getCenter()`**
+##### **`getCenter()`**
 
 Returns the map's geographical centerpoint.
 
-##### Returns
+###### Returns
 
 [`LngLat`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglat): The map's geographical centerpoint.
 
 ---
 
-**`getPitch()`**
+##### **`getPitch()`**
 
 Returns the map's current pitch (tilt).
 
-##### Returns
+###### Returns
 
 [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): The map's current pitch, measured in degrees away from the plane of the screen.
 
 ---
 
-**`getZoom()`**
+##### **`getZoom()`**
 
 Returns the map's current zoom level.
 
-##### Returns
+###### Returns
 
 [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): The map's current zoom level.
 
 ---
 
-**`jumpTo(options)`**
+##### **`jumpTo(options)`**
 
 Changes any combination of center, zoom, bearing, and pitch, without an animated transition. The map will retain its current values for any details not specified in `options`.
 
-##### Parameters
+###### Parameters
 
 **`options`** ([`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions)) Options object
 
-##### Returns
+###### Returns
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
 
 ---
 
-**`setBearing(bearing)`**
+##### **`off(type, listener)`**
+
+Removes an event listener previously added with [`MiniTokyo3D#on`](#ontype-listener).
+
+###### Parameters
+
+**`type`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) The event type previously used to install the listener.
+
+**`listener`** ([`Function`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)) The function previously installed as a listener.
+
+###### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+##### **`on(type, listener)`**
+
+Adds a listener for events of a specified type.
+
+###### Parameters
+
+**`type`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) The event type to listen for.
+
+**`listener`** ([`Function`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)) The function to be called when the event is fired.
+
+###### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+##### **`once(type, listener)`**
+
+Adds a listener that will be called only once to a specified event type.
+
+###### Parameters
+
+**`type`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) The event type to add a listener for.
+
+**`listener`** ([`Function`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)) The function to be called when the event is fired.
+
+###### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+##### **`setBearing(bearing)`**
 
 Sets the map's bearing (rotation). The bearing is the compass direction that is "up"; for example, a bearing of 90° orients the map so that east is up.
 
 Equivalent to `jumpTo({bearing: bearing})`.
 
-##### Parameters
+###### Parameters
 
 **`bearing`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) The desired bearing.
 
-##### Returns
+###### Returns
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
 
 ---
 
-**`setCenter(center)`**
+##### **`setCenter(center)`**
 
 Sets the map's geographical centerpoint. Equivalent to `jumpTo({center: center})`.
 
-##### Parameters
+###### Parameters
 
 **`center`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike)) The centerpoint to set.
 
-##### Returns
+###### Returns
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
 
 ---
 
-**`setPitch(pitch)`**
+##### **`setPitch(pitch)`**
 
 Sets the map's pitch (tilt). Equivalent to `jumpTo({pitch: pitch})`.
 
-##### Parameters
+###### Parameters
 
 **`pitch`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) The pitch to set, measured in degrees away from the plane of the screen (0-60).
 
-##### Returns
+###### Returns
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
 
 ---
 
-**`setZoom(zoom)`**
+##### **`setZoom(zoom)`**
 
 Sets the map's zoom level. Equivalent to `jumpTo({zoom: zoom})`.
 
-##### Parameters
+###### Parameters
 
 **`zoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) The zoom level to set (0-20).
 
-##### Returns
+###### Returns
 
 [`MiniTokyo3D`](#minitokyo3d): `this`
+
+#### Events
+
+##### **`boxzoomcancel`**
+
+Fired when the user cancels a "box zoom" interaction, or when the bounding box does not meet the minimum size threshold. See [`BoxZoomHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
+
+###### Properties
+
+**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent))
+
+---
+
+##### **`boxzoomend`**
+
+Fired when a "box zoom" interaction ends. See [`BoxZoomHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
+
+###### Properties
+
+**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent))
+
+---
+
+##### **`boxzoomstart`**
+
+Fired when a "box zoom" interaction starts. See [`BoxZoomHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
+
+###### Properties
+
+**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent))
+
+---
+
+##### **`click`**
+
+Fired when a pointing device (usually a mouse) is pressed and released at the same point on the map.
+
+###### Properties
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`contextmenu`**
+
+Fired when the right button of the mouse is clicked or the context menu key is pressed within the map.
+
+###### Properties
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`dblclick`**
+
+Fired when a pointing device (usually a mouse) is pressed and released twice at the same point on the map in rapid succession.
+
+###### Properties
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`drag`**
+
+Fired repeatedly during a "drag to pan" interaction. See [`DragPanHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler).
+
+###### Properties
+
+**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+
+---
+
+##### **`dragend`**
+
+Fired when a "drag to pan" interaction ends. See [`DragPanHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler).
+
+###### Properties
+
+**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+
+---
+
+##### **`dragstart`**
+
+Fired when a "drag to pan" interaction starts. See [`DragPanHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler).
+
+###### Properties
+
+**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+
+---
+
+##### **`error`**
+
+Fired when an error occurs. This is Mini Tokyo 3D's primary error reporting mechanism. We use an event instead of throw to better accommodate asyncronous operations. If no listeners are bound to the error event, the error will be printed to the console.
+
+###### Properties
+
+**`data`** (`{error: {message: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}}`)
+
+---
+
+##### **`load`**
+
+Fired immediately after all necessary resources have been downloaded and the first visually complete rendering of the map has occurred.
+
+---
+
+##### **`mousedown`**
+
+Fired when a pointing device (usually a mouse) is pressed within the map.
+
+###### Properties
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`mousemove`**
+
+Fired when a pointing device (usually a mouse) is moved while the cursor is inside the map. As you move the cursor across the map, the event will fire every time the cursor changes position within the map.
+
+###### Properties
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`mouseover`**
+
+Fired when a pointing device (usually a mouse) is moved within the map. As you move the cursor across a web page containing a map, the event will fire each time it enters the map or any child elements.
+
+###### Properties
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`mouseup`**
+
+Fired when a pointing device (usually a mouse) is released within the map.
+
+###### Properties
+
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`move`**
+
+Fired repeatedly during an animated transition from one view to another, as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+
+---
+
+##### **`moveend`**
+
+Fired just after the map completes a transition from one view to another, as the result of either user interaction or methods such as [`MiniTokyo3D#jumpTo`](#jumptooptions).
+
+---
+
+##### **`movestart`**
+
+Fired just before the map begins a transition from one view to another, as the result of either user interaction or methods such as [`MiniTokyo3D#jumpTo`](#jumptooptions).
+
+---
+
+##### **`pitch`**
+
+Fired repeatedly during the map's pitch (tilt) animation between one state and another as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+
+---
+
+##### **`pitchend`**
+
+Fired immediately after the map's pitch (tilt) finishes changing as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+
+---
+
+##### **`pitchstart`**
+
+Fired whenever the map's pitch (tilt) begins a change as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+
+---
+
+##### **`resize`**
+
+Fired immediately after the map has been resized.
+
+---
+
+##### **`rotate`**
+
+Fired repeatedly during a "drag to rotate" interaction. See [`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
+
+---
+
+##### **`rotateend`**
+
+Fired when a "drag to rotate" interaction ends. See [`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
+
+---
+
+##### **`rotatestart`**
+
+Fired when a "drag to rotate" interaction starts. See [`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
+
+---
+
+##### **`touchcancel`**
+
+Fired when a [`touchcancel`](https://developer.mozilla.org/docs/Web/Events/touchcancel) event occurs within the map.
+
+###### Properties
+
+**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+
+---
+
+##### **`touchend`**
+
+Fired when a [`touchend`](https://developer.mozilla.org/docs/Web/Events/touchend) event occurs within the map.
+
+###### Properties
+
+**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+
+---
+
+##### **`touchmove`**
+
+Fired when a [`touchmove`](https://developer.mozilla.org/docs/Web/Events/touchmove) event occurs within the map.
+
+###### Properties
+
+**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+
+---
+
+##### **`touchstart`**
+
+Fired when a [`touchstart`](https://developer.mozilla.org/docs/Web/Events/touchstart) event occurs within the map.
+
+###### Properties
+
+**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+
+---
+
+##### **`wheel`**
+
+Fired when a [`wheel`](https://developer.mozilla.org/docs/Web/Events/wheel) event occurs within the map.
+
+###### Properties
+
+**`data`** ([`MapWheelEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapwheelevent))
+
+---
+
+##### **`zoom`**
+
+Fired repeatedly during an animated transition from one zoom level to another, as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+
+---
+
+##### **`zoomend`**
+
+Fired just after the map completes a transition from one zoom level to another, as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+
+---
+
+##### **`zoomstart`**
+
+Fired just before the map begins a transition from one zoom level to another, as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
 
 ### Secrets
 
