@@ -2874,6 +2874,1127 @@
 		"zh-Hant": "8號出口"
 	}
 }, {
+	"id": "TokyoMetro.Ogikubo.West",
+	"coord": [139.6190201, 35.7041221],
+	"title": {
+		"ja": "西口",
+		"en": "West",
+		"ko": "서쪽",
+		"zh-Hans": "西口",
+		"zh-Hant": "西口"
+	},
+	"description": {
+		"ja": "西口",
+		"en": "West Exit",
+		"ko": "서쪽 출구",
+		"zh-Hans": "西口",
+		"zh-Hant": "西口"
+	}
+}, {
+	"id": "TokyoMetro.Ogikubo.SouthA",
+	"coord": [139.6209472, 35.7043224],
+	"title": {
+		"ja": "南口a",
+		"en": "South a",
+		"ko": "남쪽a",
+		"zh-Hans": "南口a",
+		"zh-Hant": "南口a"
+	},
+	"description": {
+		"ja": "南口a",
+		"en": "South Exit a",
+		"ko": "남쪽 출구 a",
+		"zh-Hans": "南口a",
+		"zh-Hant": "南口a"
+	}
+}, {
+	"id": "TokyoMetro.Ogikubo.SouthB",
+	"coord": [139.621025, 35.7041918],
+	"title": {
+		"ja": "南口b",
+		"en": "South b",
+		"ko": "남쪽b",
+		"zh-Hans": "南口b",
+		"zh-Hant": "南口b"
+	},
+	"description": {
+		"ja": "南口b",
+		"en": "South Exit b",
+		"ko": "남쪽 출구 b",
+		"zh-Hans": "南口b",
+		"zh-Hant": "南口b"
+	}
+}, {
+	"id": "TokyoMetro.Ogikubo.North",
+	"coord": [139.6207032, 35.7048582],
+	"title": {
+		"ja": "北口",
+		"en": "North",
+		"ko": "키타",
+		"zh-Hans": "北口",
+		"zh-Hant": "北口"
+	},
+	"description": {
+		"ja": "北口",
+		"en": "North Exit",
+		"ko": "키타 출구",
+		"zh-Hans": "北口",
+		"zh-Hant": "北口"
+	}
+}, {
+	"id": "TokyoMetro.MinamiAsagaya.1",
+	"coord": [139.6353145, 35.6993803],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.MinamiAsagaya.2a",
+	"coord": [139.6357088, 35.6995523],
+	"title": {
+		"en": "2a"
+	},
+	"description": {
+		"ja": "2a出口",
+		"en": "Exit 2a",
+		"ko": "2a출구",
+		"zh-Hans": "2a出口",
+		"zh-Hant": "2a出口"
+	}
+}, {
+	"id": "TokyoMetro.MinamiAsagaya.2b",
+	"coord": [139.6357302, 35.699683],
+	"title": {
+		"en": "2b"
+	},
+	"description": {
+		"ja": "2b出口",
+		"en": "Exit 2b",
+		"ko": "2b출구",
+		"zh-Hans": "2b出口",
+		"zh-Hant": "2b出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinKoenji.1",
+	"coord": [139.6484774, 35.6976747],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinKoenji.2",
+	"coord": [139.6479866, 35.6979252],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinKoenji.3",
+	"coord": [139.6488301, 35.6979633],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "TokyoMetro.HigashiKoenji.1",
+	"coord": [139.6577311, 35.697825],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.HigashiKoenji.2",
+	"coord": [139.6580301, 35.6981724],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.HigashiKoenji.3",
+	"coord": [139.6582151, 35.6982697],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinNakano.1",
+	"coord": [139.6678551, 35.6973142],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinNakano.2",
+	"coord": [139.6680978, 35.6975745],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinNakano.3",
+	"coord": [139.6701618, 35.6973894],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinNakano.4",
+	"coord": [139.6701001, 35.6976301],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "4番出口",
+		"en": "Exit 4",
+		"ko": "4번출구",
+		"zh-Hans": "4号出口",
+		"zh-Hant": "4號出口"
+	}
+}, {
+	"id": "TokyoMetro.NakanoSakaue.1",
+	"coord": [139.6824503, 35.6969112],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.NakanoSakaue.2",
+	"coord": [139.6823913, 35.6971857],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.NakanoSakaue.3",
+	"coord": [139.6810059, 35.6970528],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "TokyoMetro.NishiShinjuku.1",
+	"coord": [139.6929444, 35.6945304],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.NishiShinjuku.2",
+	"coord": [139.6928304, 35.6941198],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.NishiShinjuku.C7",
+	"coord": [139.6923383, 35.6925884],
+	"title": {
+		"en": "C7"
+	},
+	"description": {
+		"ja": "C7出口",
+		"en": "Exit C7",
+		"ko": "C7출구",
+		"zh-Hans": "C7出口",
+		"zh-Hant": "C7出口"
+	}
+}, {
+	"id": "TokyoMetro.NishiShinjuku.C8",
+	"coord": [139.6919332, 35.6925165],
+	"title": {
+		"en": "C8"
+	},
+	"description": {
+		"ja": "C8出口",
+		"en": "Exit C8",
+		"ko": "C8출구",
+		"zh-Hans": "C8出口",
+		"zh-Hant": "C8出口"
+	}
+}, {
+	"id": "TokyoMetro.NishiShinjuku.C10",
+	"coord": [139.6929914, 35.693842],
+	"title": {
+		"en": "C10"
+	},
+	"description": {
+		"ja": "C10出口",
+		"en": "Exit C10",
+		"ko": "C10출구",
+		"zh-Hans": "C10出口",
+		"zh-Hant": "C10出口"
+	}
+}, {
+	"id": "TokyoMetro.NishiShinjuku.C12",
+	"coord": [139.6932971, 35.6944171],
+	"title": {
+		"en": "C12"
+	},
+	"description": {
+		"ja": "C12出口",
+		"en": "Exit C12",
+		"ko": "C12출구",
+		"zh-Hans": "C12出口",
+		"zh-Hant": "C12出口"
+	}
+}, {
+	"id": "TokyoMetro.NishiShinjuku.C13",
+	"coord": [139.6953113, 35.6934229],
+	"title": {
+		"en": "C13"
+	},
+	"description": {
+		"ja": "C13出口",
+		"en": "Exit C13",
+		"ko": "C13출구",
+		"zh-Hans": "C13出口",
+		"zh-Hant": "C13出口"
+	}
+}, {
+	"id": "TokyoMetro.NishiShinjuku.E5",
+	"coord": [139.692353, 35.6932277],
+	"title": {
+		"en": "E5"
+	},
+	"description": {
+		"ja": "E5出口",
+		"en": "Exit E5",
+		"ko": "E5출구",
+		"zh-Hans": "E5出口",
+		"zh-Hant": "E5出口"
+	}
+}, {
+	"id": "TokyoMetro.NishiShinjuku.E7",
+	"coord": [139.6945806, 35.6936775],
+	"title": {
+		"en": "E7"
+	},
+	"description": {
+		"ja": "E7出口",
+		"en": "Exit E7",
+		"ko": "E7출구",
+		"zh-Hans": "E7出口",
+		"zh-Hant": "E7出口"
+	}
+}, {
+	"id": "TokyoMetro.NishiShinjuku.E8",
+	"coord": [139.6954362, 35.6937222],
+	"title": {
+		"en": "E8"
+	},
+	"description": {
+		"ja": "E8出口",
+		"en": "Exit E8",
+		"ko": "E8출구",
+		"zh-Hans": "E8出口",
+		"zh-Hant": "E8出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A6",
+	"coord": [139.7022504, 35.6919033],
+	"title": {
+		"en": "A6"
+	},
+	"description": {
+		"ja": "A6出口",
+		"en": "Exit A6",
+		"ko": "A6출구",
+		"zh-Hans": "A6出口",
+		"zh-Hant": "A6出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A7",
+	"coord": [139.701958, 35.6920274],
+	"title": {
+		"en": "A7"
+	},
+	"description": {
+		"ja": "A7出口",
+		"en": "Exit A7",
+		"ko": "A7출구",
+		"zh-Hans": "A7出口",
+		"zh-Hant": "A7出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A8",
+	"coord": [139.7014913, 35.6921222],
+	"title": {
+		"en": "A8"
+	},
+	"description": {
+		"ja": "A8出口",
+		"en": "Exit A8",
+		"ko": "A8출구",
+		"zh-Hans": "A8出口",
+		"zh-Hant": "A8出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A9",
+	"coord": [139.7010474, 35.6919893],
+	"title": {
+		"en": "A9"
+	},
+	"description": {
+		"ja": "A9出口",
+		"en": "Exit A9",
+		"ko": "A9출구",
+		"zh-Hans": "A9出口",
+		"zh-Hant": "A9出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A10",
+	"coord": [139.6996526, 35.6921004],
+	"title": {
+		"en": "A10"
+	},
+	"description": {
+		"ja": "A10出口",
+		"en": "Exit A10",
+		"ko": "A10출구",
+		"zh-Hans": "A10出口",
+		"zh-Hant": "A10出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A11",
+	"coord": [139.6997586, 35.6918336],
+	"title": {
+		"en": "A11"
+	},
+	"description": {
+		"ja": "A11出口",
+		"en": "Exit A11",
+		"ko": "A11출구",
+		"zh-Hans": "A11出口",
+		"zh-Hant": "A11出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A12",
+	"coord": [139.6995467, 35.6915613],
+	"title": {
+		"en": "A12"
+	},
+	"description": {
+		"ja": "A12出口",
+		"en": "Exit A12",
+		"ko": "A12출구",
+		"zh-Hans": "A12出口",
+		"zh-Hant": "A12出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A13",
+	"coord": [139.6995479, 35.6918351],
+	"title": {
+		"en": "A13"
+	},
+	"description": {
+		"ja": "A13出口",
+		"en": "Exit A13",
+		"ko": "A13출구",
+		"zh-Hans": "A13出口",
+		"zh-Hant": "A13出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A14",
+	"coord": [139.6995494, 35.6918553],
+	"title": {
+		"en": "A14"
+	},
+	"description": {
+		"ja": "A14出口",
+		"en": "Exit A14",
+		"ko": "A14출구",
+		"zh-Hans": "A14出口",
+		"zh-Hant": "A14出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A15",
+	"coord": [139.6994086, 35.6920416],
+	"title": {
+		"en": "A15"
+	},
+	"description": {
+		"ja": "A15出口",
+		"en": "Exit A15",
+		"ko": "A15출구",
+		"zh-Hans": "A15出口",
+		"zh-Hant": "A15出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A16",
+	"coord": [139.6987237, 35.6920874],
+	"title": {
+		"en": "A16"
+	},
+	"description": {
+		"ja": "A16出口",
+		"en": "Exit A16",
+		"ko": "A16출구",
+		"zh-Hans": "A16出口",
+		"zh-Hant": "A16出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A17",
+	"coord": [139.69792, 35.6921983],
+	"title": {
+		"en": "A17"
+	},
+	"description": {
+		"ja": "A17出口",
+		"en": "Exit A15",
+		"ko": "A17출구",
+		"zh-Hans": "A17出口",
+		"zh-Hant": "A17出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.A18",
+	"coord": [139.6974774, 35.6927027],
+	"title": {
+		"en": "A18"
+	},
+	"description": {
+		"ja": "A18出口",
+		"en": "Exit A18",
+		"ko": "A18출구",
+		"zh-Hans": "A18出口",
+		"zh-Hant": "A18出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.B10",
+	"coord": [139.7022249, 35.6922834],
+	"title": {
+		"en": "B10"
+	},
+	"description": {
+		"ja": "B10出口",
+		"en": "Exit B10",
+		"ko": "B10출구",
+		"zh-Hans": "B10出口",
+		"zh-Hant": "B10出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.B11",
+	"coord": [139.7018078, 35.6924468],
+	"title": {
+		"en": "B11"
+	},
+	"description": {
+		"ja": "B11出口",
+		"en": "Exit B11",
+		"ko": "B11출구",
+		"zh-Hans": "B11出口",
+		"zh-Hant": "B11出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.B12a",
+	"coord": [139.701447, 35.6924751],
+	"title": {
+		"en": "B12a"
+	},
+	"description": {
+		"ja": "B12a出口",
+		"en": "Exit B12a",
+		"ko": "B12a출구",
+		"zh-Hans": "B12a出口",
+		"zh-Hant": "B12a出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.B12b",
+	"coord": [139.7018279, 35.6927419],
+	"title": {
+		"en": "B12b"
+	},
+	"description": {
+		"ja": "B12b出口",
+		"en": "Exit B12b",
+		"ko": "B12b출구",
+		"zh-Hans": "B12b出口",
+		"zh-Hant": "B12b出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.B13",
+	"coord": [139.7010782, 35.6925197],
+	"title": {
+		"en": "B13"
+	},
+	"description": {
+		"ja": "B13出口",
+		"en": "Exit B13",
+		"ko": "B13출구",
+		"zh-Hans": "B13出口",
+		"zh-Hant": "B13出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.B14",
+	"coord": [139.699481, 35.69223],
+	"title": {
+		"en": "B14"
+	},
+	"description": {
+		"ja": "B14出口",
+		"en": "Exit B14",
+		"ko": "B14출구",
+		"zh-Hans": "B14出口",
+		"zh-Hant": "B14出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.B15",
+	"coord": [139.6994635, 35.6923662],
+	"title": {
+		"en": "B15"
+	},
+	"description": {
+		"ja": "B15出口",
+		"en": "Exit B15",
+		"ko": "B15출구",
+		"zh-Hans": "B15出口",
+		"zh-Hant": "B15出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.B16",
+	"coord": [139.6990867, 35.6926385],
+	"title": {
+		"en": "B16"
+	},
+	"description": {
+		"ja": "B16出口",
+		"en": "Exit B16",
+		"ko": "B16출구",
+		"zh-Hans": "B16出口",
+		"zh-Hant": "B16出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.B17",
+	"coord": [139.6989056, 35.692217],
+	"title": {
+		"en": "B17"
+	},
+	"description": {
+		"ja": "B17出口",
+		"en": "Exit B17",
+		"ko": "B17출구",
+		"zh-Hans": "B17出口",
+		"zh-Hant": "B17出口"
+	}
+}, {
+	"id": "TokyoMetro.Shinjuku.B18",
+	"coord": [139.6984389, 35.6923912],
+	"title": {
+		"en": "B18"
+	},
+	"description": {
+		"ja": "B18出口",
+		"en": "Exit B18",
+		"ko": "B18출구",
+		"zh-Hans": "B18出口",
+		"zh-Hant": "B18出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.A1",
+	"coord": [139.7045249, 35.6908533],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.A2",
+	"coord": [139.7044216, 35.6909252],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.A4",
+	"coord": [139.7038302, 35.691192],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.A5",
+	"coord": [139.7034641, 35.6913282],
+	"title": {
+		"en": "A5"
+	},
+	"description": {
+		"ja": "A5出口",
+		"en": "Exit A5",
+		"ko": "A5출구",
+		"zh-Hans": "A5出口",
+		"zh-Hant": "A5出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.B2",
+	"coord": [139.7051673, 35.6910613],
+	"title": {
+		"en": "B2"
+	},
+	"description": {
+		"ja": "B2出口",
+		"en": "Exit B2",
+		"ko": "B2출구",
+		"zh-Hans": "B2出口",
+		"zh-Hant": "B2出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.B3",
+	"coord": [139.7049057, 35.6911866],
+	"title": {
+		"en": "B3"
+	},
+	"description": {
+		"ja": "B3出口",
+		"en": "Exit B3",
+		"ko": "B3출구",
+		"zh-Hans": "B3出口",
+		"zh-Hant": "B3出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.B4",
+	"coord": [139.7043049, 35.6912225],
+	"title": {
+		"en": "B4"
+	},
+	"description": {
+		"ja": "B4出口",
+		"en": "Exit B4",
+		"ko": "B4출구",
+		"zh-Hans": "B4出口",
+		"zh-Hant": "B4出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.B5",
+	"coord": [139.7040166, 35.6917333],
+	"title": {
+		"en": "B5"
+	},
+	"description": {
+		"ja": "B5出口",
+		"en": "Exit B5",
+		"ko": "B5출구",
+		"zh-Hans": "B5出口",
+		"zh-Hant": "B5出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.B6",
+	"coord": [139.703047, 35.6917976],
+	"title": {
+		"en": "B6"
+	},
+	"description": {
+		"ja": "B6出口",
+		"en": "Exit B6",
+		"ko": "B6출구",
+		"zh-Hans": "B6出口",
+		"zh-Hant": "B6出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.B7",
+	"coord": [139.7028606, 35.6918782],
+	"title": {
+		"en": "B7"
+	},
+	"description": {
+		"ja": "B7出口",
+		"en": "Exit B7",
+		"ko": "B7출구",
+		"zh-Hans": "B7出口",
+		"zh-Hant": "B7出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.B8",
+	"coord": [139.7027117, 35.6919588],
+	"title": {
+		"en": "B8"
+	},
+	"description": {
+		"ja": "B8出口",
+		"en": "Exit B8",
+		"ko": "B8출구",
+		"zh-Hans": "B8出口",
+		"zh-Hant": "B8出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.B9",
+	"coord": [139.7026165, 35.6921004],
+	"title": {
+		"en": "B9"
+	},
+	"description": {
+		"ja": "B9出口",
+		"en": "Exit B9",
+		"ko": "B9출구",
+		"zh-Hans": "B9出口",
+		"zh-Hant": "B9出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.E1",
+	"coord": [139.7061355, 35.6937745],
+	"title": {
+		"en": "E1"
+	},
+	"description": {
+		"ja": "E1出口",
+		"en": "Exit E1",
+		"ko": "E1출구",
+		"zh-Hans": "E1出口",
+		"zh-Hant": "E1出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.E2",
+	"coord": [139.7060779, 35.6931722],
+	"title": {
+		"en": "E2"
+	},
+	"description": {
+		"ja": "E2出口",
+		"en": "Exit E2",
+		"ko": "E2출구",
+		"zh-Hans": "E2出口",
+		"zh-Hant": "E2出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.E3",
+	"coord": [139.7054248, 35.6915754],
+	"title": {
+		"en": "E3"
+	},
+	"description": {
+		"ja": "E3出口",
+		"en": "Exit E3",
+		"ko": "E3출구",
+		"zh-Hans": "E3出口",
+		"zh-Hant": "E3出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.E4",
+	"coord": [139.7054087, 35.6915166],
+	"title": {
+		"en": "E4"
+	},
+	"description": {
+		"ja": "E4出口",
+		"en": "Exit E4",
+		"ko": "E4출구",
+		"zh-Hans": "E4出口",
+		"zh-Hant": "E4出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.E5",
+	"coord": [139.7039831, 35.6893055],
+	"title": {
+		"en": "E5"
+	},
+	"description": {
+		"ja": "E5出口",
+		"en": "Exit E5",
+		"ko": "E5출구",
+		"zh-Hans": "E5出口",
+		"zh-Hant": "E5出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.E6",
+	"coord": [139.7031406, 35.6886383],
+	"title": {
+		"en": "E6"
+	},
+	"description": {
+		"ja": "E6出口",
+		"en": "Exit E6",
+		"ko": "E6출구",
+		"zh-Hans": "E6出口",
+		"zh-Hant": "E6出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.E7",
+	"coord": [139.7034144, 35.6884831],
+	"title": {
+		"en": "E7"
+	},
+	"description": {
+		"ja": "E7出口",
+		"en": "Exit E7",
+		"ko": "E7출구",
+		"zh-Hans": "E7出口",
+		"zh-Hant": "E7出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.E8",
+	"coord": [139.7028136, 35.6871281],
+	"title": {
+		"en": "E8"
+	},
+	"description": {
+		"ja": "E8出口",
+		"en": "Exit E8",
+		"ko": "E8출구",
+		"zh-Hans": "E8出口",
+		"zh-Hant": "E8出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.E9",
+	"coord": [139.7033031, 35.6898109],
+	"title": {
+		"en": "E9"
+	},
+	"description": {
+		"ja": "E9出口",
+		"en": "Exit E9",
+		"ko": "E9출구",
+		"zh-Hans": "E9出口",
+		"zh-Hant": "E9出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuSanchome.E10",
+	"coord": [139.7019084, 35.6893774],
+	"title": {
+		"en": "E10"
+	},
+	"description": {
+		"ja": "E10出口",
+		"en": "Exit E10",
+		"ko": "E10출구",
+		"zh-Hans": "E10出口",
+		"zh-Hant": "E10出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuGyoemmae.1",
+	"coord": [139.7097605, 35.6886606],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuGyoemmae.2",
+	"coord": [139.7116086, 35.688506],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinjukuGyoemmae.3",
+	"coord": [139.7105196, 35.6887467],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "TokyoMetro.YotsuyaSanchome.1",
+	"coord": [139.720197, 35.6877446],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.YotsuyaSanchome.2",
+	"coord": [139.7200026, 35.6881356],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.YotsuyaSanchome.3",
+	"coord": [139.720775, 35.6878089],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "TokyoMetro.YotsuyaSanchome.4",
+	"coord": [139.720531, 35.6881585],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "4番出口",
+		"en": "Exit 4",
+		"ko": "4번출구",
+		"zh-Hans": "4号出口",
+		"zh-Hant": "4號出口"
+	}
+}, {
+	"id": "TokyoMetro.Yotsuya.1",
+	"coord": [139.7299495, 35.6852251],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口(赤坂口)",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.Yotsuya.2",
+	"coord": [139.7293527, 35.6861717],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.Yotsuya.3",
+	"coord": [139.7300635, 35.6864059],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口(四ツ谷口)",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
 	"id": "TokyoMetro.KokkaiGijidomae.1",
 	"coord": [139.744703, 35.6741223],
 	"title": {
@@ -2924,6 +4045,2003 @@
 		"ko": "4번출구",
 		"zh-Hans": "4号出口",
 		"zh-Hant": "4號出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A1",
+	"coord": [139.7519195, 35.6749753],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A2",
+	"coord": [139.7515172, 35.6750004],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A3a",
+	"coord": [139.7511081, 35.6749666],
+	"title": {
+		"en": "A3a"
+	},
+	"description": {
+		"ja": "A3a出口",
+		"en": "Exit A3a",
+		"ko": "A3a출구",
+		"zh-Hans": "A3a出口",
+		"zh-Hant": "A3a出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A3b",
+	"coord": [139.7512971, 35.6749672],
+	"title": {
+		"en": "A3b"
+	},
+	"description": {
+		"ja": "A3b出口",
+		"en": "Exit A3b",
+		"ko": "A3b출구",
+		"zh-Hans": "A3b出口",
+		"zh-Hant": "A3b出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A4",
+	"coord": [139.7511229, 35.6744001],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A5",
+	"coord": [139.7519356, 35.6744644],
+	"title": {
+		"en": "A5"
+	},
+	"description": {
+		"ja": "A5出口",
+		"en": "Exit A5",
+		"ko": "A5출구",
+		"zh-Hans": "A5出口",
+		"zh-Hant": "A5出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A6",
+	"coord": [139.7515923, 35.6744448],
+	"title": {
+		"en": "A6"
+	},
+	"description": {
+		"ja": "A6出口",
+		"en": "Exit A6",
+		"ko": "A6출구",
+		"zh-Hans": "A6出口",
+		"zh-Hant": "A6出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A7",
+	"coord": [139.7513589, 35.6740863],
+	"title": {
+		"en": "A7"
+	},
+	"description": {
+		"ja": "A7出口",
+		"en": "Exit A7",
+		"ko": "A7출구",
+		"zh-Hans": "A7出口",
+		"zh-Hant": "A7出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A8",
+	"coord": [139.7505328, 35.6735078],
+	"title": {
+		"en": "A8"
+	},
+	"description": {
+		"ja": "A8出口",
+		"en": "Exit A8",
+		"ko": "A8출구",
+		"zh-Hans": "A8出口",
+		"zh-Hant": "A8出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A9",
+	"coord": [139.7509284, 35.6734305],
+	"title": {
+		"en": "A9"
+	},
+	"description": {
+		"ja": "A9出口",
+		"en": "Exit A9",
+		"ko": "A9출구",
+		"zh-Hans": "A9出口",
+		"zh-Hant": "A9出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A10",
+	"coord": [139.7509137, 35.6730829],
+	"title": {
+		"en": "A10"
+	},
+	"description": {
+		"ja": "A10出口",
+		"en": "Exit A10",
+		"ko": "A10출구",
+		"zh-Hans": "A10出口",
+		"zh-Hant": "A10出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A11a",
+	"coord": [139.7511886, 35.6725251],
+	"title": {
+		"en": "A11a"
+	},
+	"description": {
+		"ja": "A11a出口",
+		"en": "Exit A11a",
+		"ko": "A11a출구",
+		"zh-Hans": "A11a出口",
+		"zh-Hant": "A11a出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A11b",
+	"coord": [139.7508694, 35.6724837],
+	"title": {
+		"en": "A11b"
+	},
+	"description": {
+		"ja": "A11b出口",
+		"en": "Exit A11b",
+		"ko": "A11b출구",
+		"zh-Hans": "A11b出口",
+		"zh-Hant": "A11b出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A12",
+	"coord": [139.7504255, 35.6724587],
+	"title": {
+		"en": "A12"
+	},
+	"description": {
+		"ja": "A12出口",
+		"en": "Exit A12",
+		"ko": "A12출구",
+		"zh-Hans": "A12出口",
+		"zh-Hant": "A12出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.A13",
+	"coord": [139.7500943, 35.6726831],
+	"title": {
+		"en": "A13"
+	},
+	"description": {
+		"ja": "A13出口",
+		"en": "Exit A13",
+		"ko": "A13출구",
+		"zh-Hans": "A13出口",
+		"zh-Hant": "A13出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.B1a",
+	"coord": [139.7537783, 35.6738968],
+	"title": {
+		"en": "B1a"
+	},
+	"description": {
+		"ja": "B1a出口",
+		"en": "Exit B1a",
+		"ko": "B1a출구",
+		"zh-Hans": "B1a出口",
+		"zh-Hant": "B1a出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.B1b",
+	"coord": [139.7536616, 35.6740754],
+	"title": {
+		"en": "B1b"
+	},
+	"description": {
+		"ja": "B1b出口",
+		"en": "Exit B1b",
+		"ko": "B1b출구",
+		"zh-Hans": "B1b出口",
+		"zh-Hant": "B1b出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.B2",
+	"coord": [139.7539526, 35.6735111],
+	"title": {
+		"en": "B2"
+	},
+	"description": {
+		"ja": "B2出口",
+		"en": "Exit B2",
+		"ko": "B2출구",
+		"zh-Hans": "B2出口",
+		"zh-Hant": "B2出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.B3a",
+	"coord": [139.7536173, 35.6737301],
+	"title": {
+		"en": "B3a"
+	},
+	"description": {
+		"ja": "B3a出口",
+		"en": "Exit B3a",
+		"ko": "B3a출구",
+		"zh-Hans": "B3a出口",
+		"zh-Hant": "B3a出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.B3b",
+	"coord": [139.7532995, 35.6735165],
+	"title": {
+		"en": "B3b"
+	},
+	"description": {
+		"ja": "B3b出口",
+		"en": "Exit B3b",
+		"ko": "B3b출구",
+		"zh-Hans": "B3b出口",
+		"zh-Hant": "B3b出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.C1",
+	"coord": [139.7523339, 35.6725197],
+	"title": {
+		"en": "C1"
+	},
+	"description": {
+		"ja": "C1出口",
+		"en": "Exit C1",
+		"ko": "C1출구",
+		"zh-Hans": "C1出口",
+		"zh-Hant": "C1出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.C2",
+	"coord": [139.752586, 35.6717941],
+	"title": {
+		"en": "C2"
+	},
+	"description": {
+		"ja": "C2出口",
+		"en": "Exit C2",
+		"ko": "C2출구",
+		"zh-Hans": "C2出口",
+		"zh-Hant": "C2出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.C3",
+	"coord": [139.7527912, 35.6716721],
+	"title": {
+		"en": "C3"
+	},
+	"description": {
+		"ja": "C3出口",
+		"en": "Exit C3",
+		"ko": "C3출구",
+		"zh-Hans": "C3出口",
+		"zh-Hant": "C3出口"
+	}
+}, {
+	"id": "TokyoMetro.Kasumigaseki.C4",
+	"coord": [139.7531855, 35.6716274],
+	"title": {
+		"en": "C4"
+	},
+	"description": {
+		"ja": "C4出口",
+		"en": "Exit C4",
+		"ko": "C4출구",
+		"zh-Hans": "C4出口",
+		"zh-Hant": "C4出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M1",
+	"coord": [139.7652219, 35.6806336],
+	"title": {
+		"en": "M1"
+	},
+	"description": {
+		"ja": "M1出口",
+		"en": "Exit M1",
+		"ko": "M1출구",
+		"zh-Hans": "M1出口",
+		"zh-Hant": "M1出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M2",
+	"coord": [139.7646385, 35.6805998],
+	"title": {
+		"en": "M2"
+	},
+	"description": {
+		"ja": "M2出口",
+		"en": "Exit M2",
+		"ko": "M2출구",
+		"zh-Hans": "M2出口",
+		"zh-Hant": "M2出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M3",
+	"coord": [139.7638607, 35.6803166],
+	"title": {
+		"en": "M3"
+	},
+	"description": {
+		"ja": "M3出口",
+		"en": "Exit M3",
+		"ko": "M3출구",
+		"zh-Hans": "M3出口",
+		"zh-Hant": "M3出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M4",
+	"coord": [139.7641946, 35.6814637],
+	"title": {
+		"en": "M4"
+	},
+	"description": {
+		"ja": "M4出口",
+		"en": "Exit M4",
+		"ko": "M4출구",
+		"zh-Hans": "M4出口",
+		"zh-Hant": "M4出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M5",
+	"coord": [139.7632612, 35.6818755],
+	"title": {
+		"en": "M5"
+	},
+	"description": {
+		"ja": "M5出口",
+		"en": "Exit M5",
+		"ko": "M5출구",
+		"zh-Hans": "M5出口",
+		"zh-Hant": "M5出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M6",
+	"coord": [139.7636917, 35.6819942],
+	"title": {
+		"en": "M6"
+	},
+	"description": {
+		"ja": "M6出口",
+		"en": "Exit M6",
+		"ko": "M6출구",
+		"zh-Hans": "M6出口",
+		"zh-Hant": "M6出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M7",
+	"coord": [139.7643811, 35.6820421],
+	"title": {
+		"en": "M7"
+	},
+	"description": {
+		"ja": "M7出口",
+		"en": "Exit M7",
+		"ko": "M7출구",
+		"zh-Hans": "M7出口",
+		"zh-Hant": "M7出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M8",
+	"coord": [139.7652581, 35.6826108],
+	"title": {
+		"en": "M8"
+	},
+	"description": {
+		"ja": "M8出口",
+		"en": "Exit M8",
+		"ko": "M8출구",
+		"zh-Hans": "M8出口",
+		"zh-Hant": "M8出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M9",
+	"coord": [139.7647861, 35.6828885],
+	"title": {
+		"en": "M9"
+	},
+	"description": {
+		"ja": "M9出口",
+		"en": "Exit M9",
+		"ko": "M9출구",
+		"zh-Hans": "M9出口",
+		"zh-Hant": "M9出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M10",
+	"coord": [139.7652581, 35.6829996],
+	"title": {
+		"en": "M10"
+	},
+	"description": {
+		"ja": "M10出口",
+		"en": "Exit M10",
+		"ko": "M10출구",
+		"zh-Hans": "M10出口",
+		"zh-Hant": "M10出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M11",
+	"coord": [139.7654888, 35.6826358],
+	"title": {
+		"en": "M11"
+	},
+	"description": {
+		"ja": "M11出口",
+		"en": "Exit M11",
+		"ko": "M11출구",
+		"zh-Hans": "M11出口",
+		"zh-Hant": "M11出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M12",
+	"coord": [139.7661366, 35.6824365],
+	"title": {
+		"en": "M12"
+	},
+	"description": {
+		"ja": "M12出口",
+		"en": "Exit M12",
+		"ko": "M12출구",
+		"zh-Hans": "M12出口",
+		"zh-Hant": "M12出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M13",
+	"coord": [139.7665778, 35.6830247],
+	"title": {
+		"en": "M13"
+	},
+	"description": {
+		"ja": "M13出口",
+		"en": "Exit M13",
+		"ko": "M13출구",
+		"zh-Hans": "M13出口",
+		"zh-Hant": "M13出口"
+	}
+}, {
+	"id": "TokyoMetro.Tokyo.M14",
+	"coord": [139.767078, 35.6835694],
+	"title": {
+		"en": "M14"
+	},
+	"description": {
+		"ja": "M14出口",
+		"en": "Exit M14",
+		"ko": "M14출구",
+		"zh-Hans": "M14出口",
+		"zh-Hant": "M14出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.A1",
+	"coord": [139.7660977, 35.687444],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.A2",
+	"coord": [139.7665695, 35.6876164],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.A4",
+	"coord": [139.7660145, 35.6866662],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.A5",
+	"coord": [139.7663136, 35.6861913],
+	"title": {
+		"en": "A5"
+	},
+	"description": {
+		"ja": "A5出口",
+		"en": "Exit A5",
+		"ko": "A5출구",
+		"zh-Hans": "A5出口",
+		"zh-Hant": "A5出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.B1",
+	"coord": [139.7645916, 35.6846249],
+	"title": {
+		"en": "B1"
+	},
+	"description": {
+		"ja": "B1出口",
+		"en": "Exit B1",
+		"ko": "B1출구",
+		"zh-Hans": "B1出口",
+		"zh-Hant": "B1出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.B2a",
+	"coord": [139.7661446, 35.6848885],
+	"title": {
+		"en": "B2a"
+	},
+	"description": {
+		"ja": "B2a出口",
+		"en": "Exit B2a",
+		"ko": "B2a출구",
+		"zh-Hans": "B2a出口",
+		"zh-Hant": "B2a出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.B2b",
+	"coord": [139.7665671, 35.6844168],
+	"title": {
+		"en": "B2b"
+	},
+	"description": {
+		"ja": "B2b出口",
+		"en": "Exit B2b",
+		"ko": "B2b출구",
+		"zh-Hans": "B2b出口",
+		"zh-Hant": "B2b出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.B2c",
+	"coord": [139.766964, 35.6843057],
+	"title": {
+		"en": "B2c"
+	},
+	"description": {
+		"ja": "B2c出口",
+		"en": "Exit B2c",
+		"ko": "B2c출구",
+		"zh-Hans": "B2c出口",
+		"zh-Hant": "B2c出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.B3",
+	"coord": [139.7670525, 35.6846554],
+	"title": {
+		"en": "B3"
+	},
+	"description": {
+		"ja": "B3出口",
+		"en": "Exit B3",
+		"ko": "B3출구",
+		"zh-Hans": "B3出口",
+		"zh-Hant": "B3出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.B4",
+	"coord": [139.7672725, 35.6839419],
+	"title": {
+		"en": "B4"
+	},
+	"description": {
+		"ja": "B4出口",
+		"en": "Exit B4",
+		"ko": "B4출구",
+		"zh-Hans": "B4出口",
+		"zh-Hant": "B4出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.B5",
+	"coord": [139.7675554, 35.6838635],
+	"title": {
+		"en": "B5"
+	},
+	"description": {
+		"ja": "B5出口",
+		"en": "Exit B5",
+		"ko": "B5출구",
+		"zh-Hans": "B5出口",
+		"zh-Hant": "B5出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.B6",
+	"coord": [139.7685948, 35.6843809],
+	"title": {
+		"en": "B6"
+	},
+	"description": {
+		"ja": "B6出口",
+		"en": "Exit B6",
+		"ko": "B6출구",
+		"zh-Hans": "B6出口",
+		"zh-Hant": "B6出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.B7",
+	"coord": [139.7687557, 35.6839582],
+	"title": {
+		"en": "B7"
+	},
+	"description": {
+		"ja": "B7出口",
+		"en": "Exit B7",
+		"ko": "B7출구",
+		"zh-Hans": "B7出口",
+		"zh-Hant": "B7出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.B8a",
+	"coord": [139.7697495, 35.6842022],
+	"title": {
+		"en": "B8a"
+	},
+	"description": {
+		"ja": "B8a出口",
+		"en": "Exit B8a",
+		"ko": "B8a출구",
+		"zh-Hans": "B8a出口",
+		"zh-Hant": "B8a出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.B8b",
+	"coord": [139.7693317, 35.6837439],
+	"title": {
+		"en": "B8b"
+	},
+	"description": {
+		"ja": "B8b出口",
+		"en": "Exit B8b",
+		"ko": "B8b출구",
+		"zh-Hans": "B8b出口",
+		"zh-Hant": "B8b出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.B10",
+	"coord": [139.7702578, 35.6835171],
+	"title": {
+		"en": "B10"
+	},
+	"description": {
+		"ja": "B10出口",
+		"en": "Exit B10",
+		"ko": "B10출구",
+		"zh-Hans": "B10出口",
+		"zh-Hant": "B10出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C1",
+	"coord": [139.7641665, 35.6876662],
+	"title": {
+		"en": "C1"
+	},
+	"description": {
+		"ja": "C1出口",
+		"en": "Exit C1",
+		"ko": "C1출구",
+		"zh-Hans": "C1出口",
+		"zh-Hant": "C1出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C2a",
+	"coord": [139.7637641, 35.6880278],
+	"title": {
+		"en": "C2a"
+	},
+	"description": {
+		"ja": "C2a出口",
+		"en": "Exit C2a",
+		"ko": "C2a출구",
+		"zh-Hans": "C2a出口",
+		"zh-Hant": "C2a出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C2b",
+	"coord": [139.7637829, 35.6884755],
+	"title": {
+		"en": "C2b"
+	},
+	"description": {
+		"ja": "C2b出口",
+		"en": "Exit C2b",
+		"ko": "C2b출구",
+		"zh-Hans": "C2b出口",
+		"zh-Hant": "C2b出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C2c",
+	"coord": [139.7642894, 35.688276],
+	"title": {
+		"en": "C2c"
+	},
+	"description": {
+		"ja": "C2c出口",
+		"en": "Exit C2c",
+		"ko": "C2c출구",
+		"zh-Hans": "C2c出口",
+		"zh-Hant": "C2c出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C3",
+	"coord": [139.7640082, 35.6872719],
+	"title": {
+		"en": "C3"
+	},
+	"description": {
+		"ja": "C3出口",
+		"en": "Exit C3",
+		"ko": "C3출구",
+		"zh-Hans": "C3出口",
+		"zh-Hant": "C3出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C4",
+	"coord": [139.7634919, 35.6872305],
+	"title": {
+		"en": "C4"
+	},
+	"description": {
+		"ja": "C4出口",
+		"en": "Exit C4",
+		"ko": "C4출구",
+		"zh-Hans": "C4出口",
+		"zh-Hant": "C4出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C5",
+	"coord": [139.762364, 35.6872642],
+	"title": {
+		"en": "C5"
+	},
+	"description": {
+		"ja": "C5出口",
+		"en": "Exit C5",
+		"ko": "C5출구",
+		"zh-Hans": "C5出口",
+		"zh-Hant": "C5出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C6a",
+	"coord": [139.7629863, 35.6868558],
+	"title": {
+		"en": "C6a"
+	},
+	"description": {
+		"ja": "C6a出口",
+		"en": "Exit C6a",
+		"ko": "C6a출구",
+		"zh-Hans": "C6a出口",
+		"zh-Hant": "C6a出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C6b",
+	"coord": [139.7627064, 35.6869253],
+	"title": {
+		"en": "C6b"
+	},
+	"description": {
+		"ja": "C6b出口",
+		"en": "Exit C6b",
+		"ko": "C6b출구",
+		"zh-Hans": "C6b出口",
+		"zh-Hant": "C6b出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C7",
+	"coord": [139.7637776, 35.6865246],
+	"title": {
+		"en": "C7"
+	},
+	"description": {
+		"ja": "C7出口",
+		"en": "Exit C7",
+		"ko": "C7출구",
+		"zh-Hans": "C7出口",
+		"zh-Hant": "C7出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C8",
+	"coord": [139.763567, 35.6859331],
+	"title": {
+		"en": "C8"
+	},
+	"description": {
+		"ja": "C8出口",
+		"en": "Exit C8",
+		"ko": "C8출구",
+		"zh-Hans": "C8出口",
+		"zh-Hant": "C8出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C9",
+	"coord": [139.7629756, 35.6856837],
+	"title": {
+		"en": "C9"
+	},
+	"description": {
+		"ja": "C9出口",
+		"en": "Exit C9",
+		"ko": "C9출구",
+		"zh-Hans": "C9出口",
+		"zh-Hant": "C9出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C10",
+	"coord": [139.7624861, 35.6856358],
+	"title": {
+		"en": "C10"
+	},
+	"description": {
+		"ja": "C10出口",
+		"en": "Exit C10",
+		"ko": "C10출구",
+		"zh-Hans": "C10出口",
+		"zh-Hant": "C10出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C11",
+	"coord": [139.7636032, 35.6854059],
+	"title": {
+		"en": "C11"
+	},
+	"description": {
+		"ja": "C11出口",
+		"en": "Exit C11",
+		"ko": "C11출구",
+		"zh-Hans": "C11出口",
+		"zh-Hant": "C11出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C12",
+	"coord": [139.7637078, 35.6853613],
+	"title": {
+		"en": "C12"
+	},
+	"description": {
+		"ja": "C12出口",
+		"en": "Exit C12",
+		"ko": "C12출구",
+		"zh-Hans": "C12出口",
+		"zh-Hant": "C12出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C13a",
+	"coord": [139.762356, 35.6852338],
+	"title": {
+		"en": "C13a"
+	},
+	"description": {
+		"ja": "C13a出口",
+		"en": "Exit C13a",
+		"ko": "C13a출구",
+		"zh-Hans": "C13a出口",
+		"zh-Hant": "C13a出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C13b",
+	"coord": [139.7616385, 35.685383],
+	"title": {
+		"en": "C13b"
+	},
+	"description": {
+		"ja": "C13b出口",
+		"en": "Exit C13b",
+		"ko": "C13b출구",
+		"zh-Hans": "C13b出口",
+		"zh-Hant": "C13b出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.C14",
+	"coord": [139.7636274, 35.684956],
+	"title": {
+		"en": "C14"
+	},
+	"description": {
+		"ja": "C14出口",
+		"en": "Exit C14",
+		"ko": "C14출구",
+		"zh-Hans": "C14出口",
+		"zh-Hant": "C14出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.E1",
+	"coord": [139.7653694, 35.6868056],
+	"title": {
+		"en": "E1"
+	},
+	"description": {
+		"ja": "E1出口",
+		"en": "Exit E1",
+		"ko": "E1출구",
+		"zh-Hans": "E1出口",
+		"zh-Hant": "E1出口"
+	}
+}, {
+	"id": "TokyoMetro.Otemachi.E2",
+	"coord": [139.7648719, 35.6865976],
+	"title": {
+		"en": "E2"
+	},
+	"description": {
+		"ja": "E2出口",
+		"en": "Exit E2",
+		"ko": "E2출구",
+		"zh-Hans": "E2出口",
+		"zh-Hant": "E2出口"
+	}
+}, {
+	"id": "TokyoMetro.Ochanomizu.1",
+	"coord": [139.764248, 35.7006107],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ochanomizu.2",
+	"coord": [139.7640927, 35.7004457],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.HongoSanchome.1",
+	"coord": [139.7597918, 35.7066279],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口(春日通り方面出口)",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.HongoSanchome.2",
+	"coord": [139.7600359, 35.7067586],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口(本郷通り方面出口)",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.Korakuen.1",
+	"coord": [139.7516245, 35.7070885],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.Korakuen.2",
+	"coord": [139.7516526, 35.707119],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.Korakuen.3",
+	"coord": [139.7516754, 35.7072584],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "TokyoMetro.Korakuen.4a",
+	"coord": [139.7516915, 35.7074893],
+	"title": {
+		"en": "4a"
+	},
+	"description": {
+		"ja": "4a出口",
+		"en": "Exit 4a",
+		"ko": "4a출구",
+		"zh-Hans": "4a出口",
+		"zh-Hant": "4a出口"
+	}
+}, {
+	"id": "TokyoMetro.Korakuen.4b",
+	"coord": [139.7516049, 35.7075657],
+	"title": {
+		"en": "4b"
+	},
+	"description": {
+		"ja": "4b出口",
+		"en": "Exit 4b",
+		"ko": "4b출구",
+		"zh-Hans": "4b出口",
+		"zh-Hant": "4b出口"
+	}
+}, {
+	"id": "TokyoMetro.Korakuen.5",
+	"coord": [139.752, 35.7080054],
+	"title": {
+		"en": "5"
+	},
+	"description": {
+		"ja": "5番出口",
+		"en": "Exit 5",
+		"ko": "5번출구",
+		"zh-Hans": "5号出口",
+		"zh-Hant": "5號出口"
+	}
+}, {
+	"id": "TokyoMetro.Korakuen.6",
+	"coord": [139.7520201, 35.7082309],
+	"title": {
+		"en": "6"
+	},
+	"description": {
+		"ja": "6番出口",
+		"en": "Exit 6",
+		"ko": "6번출구",
+		"zh-Hans": "6号出口",
+		"zh-Hant": "6號出口"
+	}
+}, {
+	"id": "TokyoMetro.Korakuen.8",
+	"coord": [139.7519423, 35.7096422],
+	"title": {
+		"en": "8"
+	},
+	"description": {
+		"ja": "8番出口",
+		"en": "Exit 8",
+		"ko": "8번출구",
+		"zh-Hans": "8号出口",
+		"zh-Hant": "8號出口"
+	}
+}, {
+	"id": "TokyoMetro.Myogadani.1",
+	"coord": [139.7367904, 35.7175978],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.Myogadani.2",
+	"coord": [139.7365463, 35.7173583],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.Myogadani.3",
+	"coord": [139.736866, 35.7171331],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinOtsuka.1",
+	"coord": [139.7297752, 35.7261109],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinOtsuka.2",
+	"coord": [139.7304109, 35.7253858],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.1a",
+	"coord": [139.7072916, 35.7311168],
+	"title": {
+		"en": "1a"
+	},
+	"description": {
+		"ja": "1a出口",
+		"en": "Exit 1a",
+		"ko": "1a출구",
+		"zh-Hans": "1a出口",
+		"zh-Hant": "1a出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.1b",
+	"coord": [139.7078052, 35.7307858],
+	"title": {
+		"en": "1b"
+	},
+	"description": {
+		"ja": "1b出口",
+		"en": "Exit 1b",
+		"ko": "1b출구",
+		"zh-Hans": "1b出口",
+		"zh-Hant": "1b出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.2a",
+	"coord": [139.7081083, 35.7306193],
+	"title": {
+		"en": "2a"
+	},
+	"description": {
+		"ja": "2a出口",
+		"en": "Exit 2a",
+		"ko": "2a출구",
+		"zh-Hans": "2a出口",
+		"zh-Hant": "2a出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.2b",
+	"coord": [139.7083671, 35.7302643],
+	"title": {
+		"en": "2b"
+	},
+	"description": {
+		"ja": "2b出口",
+		"en": "Exit 2b",
+		"ko": "2b출구",
+		"zh-Hans": "2b出口",
+		"zh-Hant": "2b出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.3",
+	"coord": [139.7094615, 35.7296634],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.4",
+	"coord": [139.7099188, 35.729769],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "4番出口",
+		"en": "Exit 4",
+		"ko": "4번출구",
+		"zh-Hans": "4号出口",
+		"zh-Hant": "4號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.5",
+	"coord": [139.7098799, 35.7303275],
+	"title": {
+		"en": "5"
+	},
+	"description": {
+		"ja": "5番出口",
+		"en": "Exit 5",
+		"ko": "5번출구",
+		"zh-Hans": "5号出口",
+		"zh-Hant": "5號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.6",
+	"coord": [139.7100529, 35.7303166],
+	"title": {
+		"en": "6"
+	},
+	"description": {
+		"ja": "6番出口",
+		"en": "Exit 6",
+		"ko": "6번출구",
+		"zh-Hans": "6号出口",
+		"zh-Hant": "6號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.7",
+	"coord": [139.709609, 35.7307194],
+	"title": {
+		"en": "7"
+	},
+	"description": {
+		"ja": "7番出口",
+		"en": "Exit 7",
+		"ko": "7번출구",
+		"zh-Hans": "7号出口",
+		"zh-Hant": "7號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.8",
+	"coord": [139.709314, 35.7308805],
+	"title": {
+		"en": "8"
+	},
+	"description": {
+		"ja": "8番出口",
+		"en": "Exit 8",
+		"ko": "8번출구",
+		"zh-Hans": "8号出口",
+		"zh-Hant": "8號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.9",
+	"coord": [139.7095312, 35.7310525],
+	"title": {
+		"en": "9"
+	},
+	"description": {
+		"ja": "9番出口",
+		"en": "Exit 9",
+		"ko": "9번출구",
+		"zh-Hans": "9号出口",
+		"zh-Hant": "9號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.10",
+	"coord": [139.7096533, 35.7311004],
+	"title": {
+		"en": "10"
+	},
+	"description": {
+		"ja": "10番出口",
+		"en": "Exit 10",
+		"ko": "10번출구",
+		"zh-Hans": "10号出口",
+		"zh-Hant": "10號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.11",
+	"coord": [139.7097887, 35.7313302],
+	"title": {
+		"en": "11"
+	},
+	"description": {
+		"ja": "11番出口",
+		"en": "Exit 11",
+		"ko": "11번출구",
+		"zh-Hans": "11号出口",
+		"zh-Hant": "11號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.12",
+	"coord": [139.7098558, 35.7314662],
+	"title": {
+		"en": "12"
+	},
+	"description": {
+		"ja": "12番出口",
+		"en": "Exit 12",
+		"ko": "12번출구",
+		"zh-Hans": "12号出口",
+		"zh-Hant": "12號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.13",
+	"coord": [139.7098947, 35.7309665],
+	"title": {
+		"en": "13"
+	},
+	"description": {
+		"ja": "13番出口",
+		"en": "Exit 13",
+		"ko": "13번출구",
+		"zh-Hans": "13号出口",
+		"zh-Hant": "13號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.14",
+	"coord": [139.7100663, 35.7309023],
+	"title": {
+		"en": "14"
+	},
+	"description": {
+		"ja": "14番出口",
+		"en": "Exit 14",
+		"ko": "14번출구",
+		"zh-Hans": "14号出口",
+		"zh-Hant": "14號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.15",
+	"coord": [139.7100891, 35.7309557],
+	"title": {
+		"en": "15"
+	},
+	"description": {
+		"ja": "15番出口",
+		"en": "Exit 15",
+		"ko": "15번출구",
+		"zh-Hans": "15号出口",
+		"zh-Hant": "15號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.16",
+	"coord": [139.7100113, 35.7311995],
+	"title": {
+		"en": "16"
+	},
+	"description": {
+		"ja": "16番出口",
+		"en": "Exit 16",
+		"ko": "16번출구",
+		"zh-Hans": "16号出口",
+		"zh-Hant": "16號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.17",
+	"coord": [139.7102004, 35.731169],
+	"title": {
+		"en": "17"
+	},
+	"description": {
+		"ja": "17番出口",
+		"en": "Exit 17",
+		"ko": "17번출구",
+		"zh-Hans": "17号出口",
+		"zh-Hant": "17號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.18",
+	"coord": [139.71025, 35.7310275],
+	"title": {
+		"en": "18"
+	},
+	"description": {
+		"ja": "18番出口",
+		"en": "Exit 18",
+		"ko": "18번출구",
+		"zh-Hans": "18号出口",
+		"zh-Hant": "18號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.19",
+	"coord": [139.7101025, 35.7307303],
+	"title": {
+		"en": "19"
+	},
+	"description": {
+		"ja": "19番出口",
+		"en": "Exit 19",
+		"ko": "19번출구",
+		"zh-Hans": "19号出口",
+		"zh-Hant": "19號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.20a",
+	"coord": [139.7110078, 35.7313421],
+	"title": {
+		"en": "20a"
+	},
+	"description": {
+		"ja": "20a出口",
+		"en": "Exit 20a",
+		"ko": "20a출구",
+		"zh-Hans": "20a出口",
+		"zh-Hant": "20a出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.20b",
+	"coord": [139.7108978, 35.7313857],
+	"title": {
+		"en": "20b"
+	},
+	"description": {
+		"ja": "20b出口",
+		"en": "Exit 20b",
+		"ko": "20b출구",
+		"zh-Hans": "20b出口",
+		"zh-Hant": "20b出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.20c",
+	"coord": [139.7107194, 35.7312191],
+	"title": {
+		"en": "20c"
+	},
+	"description": {
+		"ja": "20c出口",
+		"en": "Exit 20c",
+		"ko": "20c출구",
+		"zh-Hans": "20c出口",
+		"zh-Hant": "20c出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.22",
+	"coord": [139.7122617, 35.7307227],
+	"title": {
+		"en": "22"
+	},
+	"description": {
+		"ja": "22番出口",
+		"en": "Exit 22",
+		"ko": "22번출구",
+		"zh-Hans": "22号出口",
+		"zh-Hant": "22號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.23",
+	"coord": [139.7127338, 35.7311723],
+	"title": {
+		"en": "23"
+	},
+	"description": {
+		"ja": "23番出口",
+		"en": "Exit 23",
+		"ko": "23번출구",
+		"zh-Hans": "23号出口",
+		"zh-Hant": "23號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.24",
+	"coord": [139.7126533, 35.7308914],
+	"title": {
+		"en": "24"
+	},
+	"description": {
+		"ja": "24番出口",
+		"en": "Exit 24",
+		"ko": "24번출구",
+		"zh-Hans": "24号出口",
+		"zh-Hant": "24號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.25",
+	"coord": [139.7126332, 35.7308109],
+	"title": {
+		"en": "25"
+	},
+	"description": {
+		"ja": "25番出口",
+		"en": "Exit 25",
+		"ko": "25번출구",
+		"zh-Hans": "25号出口",
+		"zh-Hant": "25號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.26",
+	"coord": [139.7125165, 35.7305245],
+	"title": {
+		"en": "26"
+	},
+	"description": {
+		"ja": "26番出口",
+		"en": "Exit 26",
+		"ko": "26번출구",
+		"zh-Hans": "26号出口",
+		"zh-Hant": "26號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.27",
+	"coord": [139.7123221, 35.7301392],
+	"title": {
+		"en": "27"
+	},
+	"description": {
+		"ja": "27番出口",
+		"en": "Exit 27",
+		"ko": "27번출구",
+		"zh-Hans": "27号出口",
+		"zh-Hant": "27號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.28",
+	"coord": [139.7128169, 35.7305028],
+	"title": {
+		"en": "28"
+	},
+	"description": {
+		"ja": "28番出口",
+		"en": "Exit 28",
+		"ko": "28번출구",
+		"zh-Hans": "28号出口",
+		"zh-Hant": "28號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.29",
+	"coord": [139.7130556, 35.731169],
+	"title": {
+		"en": "29"
+	},
+	"description": {
+		"ja": "29番出口",
+		"en": "Exit 29",
+		"ko": "29번출구",
+		"zh-Hans": "29号出口",
+		"zh-Hant": "29號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.30",
+	"coord": [139.7131804, 35.7309916],
+	"title": {
+		"en": "30"
+	},
+	"description": {
+		"ja": "30番出口",
+		"en": "Exit 30",
+		"ko": "30번출구",
+		"zh-Hans": "30号出口",
+		"zh-Hant": "30號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.31",
+	"coord": [139.7131106, 35.7308892],
+	"title": {
+		"en": "31"
+	},
+	"description": {
+		"ja": "31番出口",
+		"en": "Exit 31",
+		"ko": "31번출구",
+		"zh-Hans": "31号出口",
+		"zh-Hant": "31號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.32",
+	"coord": [139.7131442, 35.7307303],
+	"title": {
+		"en": "32"
+	},
+	"description": {
+		"ja": "32番出口",
+		"en": "Exit 32",
+		"ko": "32번출구",
+		"zh-Hans": "32号出口",
+		"zh-Hant": "32號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.33",
+	"coord": [139.7130302, 35.7303667],
+	"title": {
+		"en": "33"
+	},
+	"description": {
+		"ja": "33番出口",
+		"en": "Exit 33",
+		"ko": "33번출구",
+		"zh-Hans": "33号出口",
+		"zh-Hant": "33號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.34",
+	"coord": [139.7129698, 35.7301969],
+	"title": {
+		"en": "34"
+	},
+	"description": {
+		"ja": "34番出口",
+		"en": "Exit 34",
+		"ko": "34번출구",
+		"zh-Hans": "34号出口",
+		"zh-Hant": "34號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.35",
+	"coord": [139.7129698, 35.7299192],
+	"title": {
+		"en": "35"
+	},
+	"description": {
+		"ja": "35番出口",
+		"en": "Exit 35",
+		"ko": "35번출구",
+		"zh-Hans": "35号出口",
+		"zh-Hant": "35號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.36",
+	"coord": [139.7120968, 35.7298746],
+	"title": {
+		"en": "36"
+	},
+	"description": {
+		"ja": "36番出口",
+		"en": "Exit 36",
+		"ko": "36번출구",
+		"zh-Hans": "36号出口",
+		"zh-Hant": "36號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.37",
+	"coord": [139.711795, 35.7298833],
+	"title": {
+		"en": "37"
+	},
+	"description": {
+		"ja": "37番出口",
+		"en": "Exit 37",
+		"ko": "37번출구",
+		"zh-Hans": "37号出口",
+		"zh-Hant": "37號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.38",
+	"coord": [139.7119801, 35.7291942],
+	"title": {
+		"en": "38"
+	},
+	"description": {
+		"ja": "38番出口",
+		"en": "Exit 38",
+		"ko": "38번출구",
+		"zh-Hans": "38号出口",
+		"zh-Hant": "38號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.39",
+	"coord": [139.7132635, 35.7280804],
+	"title": {
+		"en": "39"
+	},
+	"description": {
+		"ja": "39番出口",
+		"en": "Exit 39",
+		"ko": "39번출구",
+		"zh-Hans": "39号出口",
+		"zh-Hant": "39號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.40",
+	"coord": [139.7128411, 35.7285333],
+	"title": {
+		"en": "40"
+	},
+	"description": {
+		"ja": "40番出口",
+		"en": "Exit 40",
+		"ko": "40번출구",
+		"zh-Hans": "40号出口",
+		"zh-Hant": "40號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.41",
+	"coord": [139.7123636, 35.7293357],
+	"title": {
+		"en": "41"
+	},
+	"description": {
+		"ja": "41番出口",
+		"en": "Exit 41",
+		"ko": "41번출구",
+		"zh-Hans": "41号出口",
+		"zh-Hant": "41號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.42",
+	"coord": [139.7123945, 35.7293836],
+	"title": {
+		"en": "42"
+	},
+	"description": {
+		"ja": "42番出口",
+		"en": "Exit 42",
+		"ko": "42번출구",
+		"zh-Hans": "42号出口",
+		"zh-Hant": "42號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.43",
+	"coord": [139.7125809, 35.7295828],
+	"title": {
+		"en": "43"
+	},
+	"description": {
+		"ja": "43番出口",
+		"en": "Exit 43",
+		"ko": "43번출구",
+		"zh-Hans": "43号出口",
+		"zh-Hant": "43號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.44",
+	"coord": [139.7126359, 35.7300804],
+	"title": {
+		"en": "44"
+	},
+	"description": {
+		"ja": "44番出口",
+		"en": "Exit 44",
+		"ko": "44번출구",
+		"zh-Hans": "44号出口",
+		"zh-Hant": "44號出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.C1",
+	"coord": [139.7065942, 35.731967],
+	"title": {
+		"en": "C1"
+	},
+	"description": {
+		"ja": "C1出口",
+		"en": "Exit C1",
+		"ko": "C1출구",
+		"zh-Hans": "C1出口",
+		"zh-Hant": "C1出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.C2",
+	"coord": [139.7065245, 35.7317722],
+	"title": {
+		"en": "C2"
+	},
+	"description": {
+		"ja": "C2出口",
+		"en": "Exit C2",
+		"ko": "C2출구",
+		"zh-Hans": "C2出口",
+		"zh-Hant": "C2出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.C3",
+	"coord": [139.7065835, 35.7315838],
+	"title": {
+		"en": "C3"
+	},
+	"description": {
+		"ja": "C3出口",
+		"en": "Exit C3",
+		"ko": "C3출구",
+		"zh-Hans": "C3出口",
+		"zh-Hant": "C3出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.C4",
+	"coord": [139.7076054, 35.7315337],
+	"title": {
+		"en": "C4"
+	},
+	"description": {
+		"ja": "C4出口",
+		"en": "Exit C4",
+		"ko": "C4출구",
+		"zh-Hans": "C4出口",
+		"zh-Hant": "C4出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.C6",
+	"coord": [139.7083162, 35.731758],
+	"title": {
+		"en": "C6"
+	},
+	"description": {
+		"ja": "C6出口",
+		"en": "Exit C6",
+		"ko": "C6출구",
+		"zh-Hans": "C6出口",
+		"zh-Hant": "C6出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.C7",
+	"coord": [139.7080356, 35.7314156],
+	"title": {
+		"en": "C7"
+	},
+	"description": {
+		"ja": "C7出口",
+		"en": "Exit C7",
+		"ko": "C7출구",
+		"zh-Hans": "C7出口",
+		"zh-Hant": "C7出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.C8",
+	"coord": [139.7084449, 35.7312529],
+	"title": {
+		"en": "C8"
+	},
+	"description": {
+		"ja": "C8出口",
+		"en": "Exit C8",
+		"ko": "C8출구",
+		"zh-Hans": "C8出口",
+		"zh-Hant": "C8出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.C9",
+	"coord": [139.7086756, 35.7314445],
+	"title": {
+		"en": "C9"
+	},
+	"description": {
+		"ja": "C9出口",
+		"en": "Exit C9",
+		"ko": "C9출구",
+		"zh-Hans": "C9出口",
+		"zh-Hant": "C9出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.C10",
+	"coord": [139.7090444, 35.7312583],
+	"title": {
+		"en": "C10"
+	},
+	"description": {
+		"ja": "C10出口",
+		"en": "Exit C10",
+		"ko": "C10출구",
+		"zh-Hans": "C10出口",
+		"zh-Hant": "C10出口"
+	}
+}, {
+	"id": "TokyoMetro.Honancho.1",
+	"coord": [139.6565697, 35.6834866],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "TokyoMetro.Honancho.2",
+	"coord": [139.6582367, 35.6835225],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.Honancho.3a",
+	"coord": [139.6566394, 35.6829888],
+	"title": {
+		"en": "3a"
+	},
+	"description": {
+		"ja": "3a出口",
+		"en": "Exit 3a",
+		"ko": "3a출구",
+		"zh-Hans": "3a出口",
+		"zh-Hant": "3a出口"
+	}
+}, {
+	"id": "TokyoMetro.Honancho.3b",
+	"coord": [139.6562867, 35.6829637],
+	"title": {
+		"en": "3b"
+	},
+	"description": {
+		"ja": "3b出口",
+		"en": "Exit 3b",
+		"ko": "3b출구",
+		"zh-Hans": "3b出口",
+		"zh-Hant": "3b出口"
+	}
+}, {
+	"id": "TokyoMetro.NakanoFujimicho.1",
+	"coord": [139.6669508, 35.6906019],
+	"title": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	},
+	"description": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	}
+}, {
+	"id": "TokyoMetro.NakanoShimbashi.1",
+	"coord": [139.6743299, 35.6925252],
+	"title": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	},
+	"description": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
 	}
 }, {
 	"id": "TokyoMetro.NakaOkachimachi.1",
@@ -2977,7 +6095,124 @@
 		"zh-Hans": "4号出口",
 		"zh-Hant": "4號出口"
 	}
-},{
+}, {
+	"id": "TokyoMetro.ShinOchanomizu.B1",
+	"coord": [139.7653413, 35.6990252],
+	"title": {
+		"en": "B1"
+	},
+	"description": {
+		"ja": "B1出口",
+		"en": "Exit B1",
+		"ko": "B1출구",
+		"zh-Hans": "B1出口",
+		"zh-Hant": "B1出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinOchanomizu.B2",
+	"coord": [139.7658911, 35.6987889],
+	"title": {
+		"en": "B2"
+	},
+	"description": {
+		"ja": "B2出口",
+		"en": "Exit B2",
+		"ko": "B2출구",
+		"zh-Hans": "B2出口",
+		"zh-Hant": "B2出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinOchanomizu.B3",
+	"coord": [139.7652394, 35.6957807],
+	"title": {
+		"en": "B3"
+	},
+	"description": {
+		"ja": "B3出口",
+		"en": "Exit B3",
+		"ko": "B3출구",
+		"zh-Hans": "B3出口",
+		"zh-Hant": "B3出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinOchanomizu.B3a",
+	"coord": [139.7652528, 35.6960192],
+	"title": {
+		"en": "B3a"
+	},
+	"description": {
+		"ja": "B3a出口",
+		"en": "Exit B3a",
+		"ko": "B3a출구",
+		"zh-Hans": "B3a出口",
+		"zh-Hant": "B3a出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinOchanomizu.B3b",
+	"coord": [139.7649027, 35.6963972],
+	"title": {
+		"en": "B3b"
+	},
+	"description": {
+		"ja": "B3b出口",
+		"en": "Exit B3b",
+		"ko": "B3b출구",
+		"zh-Hans": "B3b出口",
+		"zh-Hant": "B3b出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinOchanomizu.B4",
+	"coord": [139.7655827, 35.6947918],
+	"title": {
+		"en": "B4"
+	},
+	"description": {
+		"ja": "B4出口",
+		"en": "Exit B4",
+		"ko": "B4출구",
+		"zh-Hans": "B4出口",
+		"zh-Hant": "B4出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinOchanomizu.B5",
+	"coord": [139.7648719, 35.6946306],
+	"title": {
+		"en": "B5"
+	},
+	"description": {
+		"ja": "B5出口",
+		"en": "Exit B5",
+		"ko": "B5출구",
+		"zh-Hans": "B5出口",
+		"zh-Hant": "B5出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinOchanomizu.B6",
+	"coord": [139.7654472, 35.6942472],
+	"title": {
+		"en": "B6"
+	},
+	"description": {
+		"ja": "B6出口",
+		"en": "Exit B6",
+		"ko": "B6출구",
+		"zh-Hans": "B6出口",
+		"zh-Hant": "B6出口"
+	}
+}, {
+	"id": "TokyoMetro.ShinOchanomizu.B7",
+	"coord": [139.7651522, 35.6942385],
+	"title": {
+		"en": "B7"
+	},
+	"description": {
+		"ja": "B7出口",
+		"en": "Exit B7",
+		"ko": "B7출구",
+		"zh-Hans": "B7出口",
+		"zh-Hant": "B7出口"
+	}
+}, {
 	"id": "TokyoMetro.Nagatacho.1",
 	"coord": [139.7429891, 35.6773775],
 	"title": {
@@ -3314,5 +6549,603 @@
 		"ko": "A5출구",
 		"zh-Hans": "A5出口",
 		"zh-Hant": "A5出口"
+	}
+}, {
+	"id": "Toei.Otemachi.D1",
+	"coord": [139.7624968, 35.6824637],
+	"title": {
+		"en": "D1"
+	},
+	"description": {
+		"ja": "D1出口",
+		"en": "Exit D1",
+		"ko": "D1출구",
+		"zh-Hans": "D1出口",
+		"zh-Hant": "D1出口"
+	}
+}, {
+	"id": "Toei.Otemachi.D2",
+	"coord": [139.7620006, 35.6825552],
+	"title": {
+		"en": "D2"
+	},
+	"description": {
+		"ja": "D2出口",
+		"en": "Exit D2",
+		"ko": "D2출구",
+		"zh-Hans": "D2出口",
+		"zh-Hant": "D2出口"
+	}
+}, {
+	"id": "Toei.Otemachi.D3",
+	"coord": [139.7627476, 35.6833003],
+	"title": {
+		"en": "D3"
+	},
+	"description": {
+		"ja": "D3出口",
+		"en": "Exit D3",
+		"ko": "D3출구",
+		"zh-Hans": "D3出口",
+		"zh-Hant": "D3出口"
+	}
+}, {
+	"id": "Toei.Otemachi.D4",
+	"coord": [139.762942, 35.6839169],
+	"title": {
+		"en": "D4"
+	},
+	"description": {
+		"ja": "D4出口",
+		"en": "Exit D4",
+		"ko": "D4출구",
+		"zh-Hans": "D4出口",
+		"zh-Hant": "D4出口"
+	}
+}, {
+	"id": "Toei.Otemachi.D5",
+	"coord": [139.7631057, 35.6845051],
+	"title": {
+		"en": "D5"
+	},
+	"description": {
+		"ja": "D5出口",
+		"en": "Exit D5",
+		"ko": "D5출구",
+		"zh-Hans": "D5出口",
+		"zh-Hant": "D5出口"
+	}
+}, {
+	"id": "Toei.Otemachi.D6",
+	"coord": [139.7626081, 35.6842665],
+	"title": {
+		"en": "D6"
+	},
+	"description": {
+		"ja": "D6出口",
+		"en": "Exit D6",
+		"ko": "D6출구",
+		"zh-Hans": "D6出口",
+		"zh-Hant": "D6出口"
+	}
+}, {
+	"id": "Toei.Kasuga.A1",
+	"coord": [139.7534698, 35.7080588],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.Kasuga.A2",
+	"coord": [139.7538614, 35.7087579],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Kasuga.A3",
+	"coord": [139.7532606, 35.709028],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Kasuga.A4",
+	"coord": [139.7529025, 35.7102139],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "Toei.Kasuga.A5",
+	"coord": [139.7527134, 35.7108803],
+	"title": {
+		"en": "A5"
+	},
+	"description": {
+		"ja": "A5出口",
+		"en": "Exit A5",
+		"ko": "A5출구",
+		"zh-Hans": "A5出口",
+		"zh-Hant": "A5出口"
+	}
+}, {
+	"id": "Toei.Kasuga.A6",
+	"coord": [139.7531641, 35.711122],
+	"title": {
+		"en": "A6"
+	},
+	"description": {
+		"ja": "A6出口",
+		"en": "Exit A6",
+		"ko": "A6출구",
+		"zh-Hans": "A6出口",
+		"zh-Hant": "A6出口"
+	}
+}, {
+	"id": "Toei.Shinjuku.1",
+	"coord": [139.6994756, 35.689031],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "Toei.Shinjuku.2",
+	"coord": [139.6995883, 35.6886225],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "Toei.Shinjuku.3",
+	"coord": [139.6987246, 35.6888273],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "Toei.Shinjuku.4",
+	"coord": [139.6988024, 35.6883306],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "4番出口",
+		"en": "Exit 4",
+		"ko": "4번출구",
+		"zh-Hans": "4号出口",
+		"zh-Hant": "4號出口"
+	}
+}, {
+	"id": "Toei.Shinjuku.5",
+	"coord": [139.6980528, 35.688472],
+	"title": {
+		"en": "5"
+	},
+	"description": {
+		"ja": "5番出口",
+		"en": "Exit 5",
+		"ko": "5번출구",
+		"zh-Hans": "5号出口",
+		"zh-Hant": "5號出口"
+	}
+}, {
+	"id": "Toei.Shinjuku.6",
+	"coord": [139.6967331, 35.6874614],
+	"title": {
+		"en": "6"
+	},
+	"description": {
+		"ja": "6番出口",
+		"en": "Exit 6",
+		"ko": "6번출구",
+		"zh-Hans": "6号出口",
+		"zh-Hant": "6號出口"
+	}
+}, {
+	"id": "Toei.Shinjuku.7",
+	"coord": [139.6966392, 35.6881422],
+	"title": {
+		"en": "7"
+	},
+	"description": {
+		"ja": "7番出口",
+		"en": "Exit 7",
+		"ko": "7번출구",
+		"zh-Hans": "7号出口",
+		"zh-Hant": "7號出口"
+	}
+}, {
+	"id": "Toei.Shinjuku.8",
+	"coord": [139.6965039, 35.6876302],
+	"title": {
+		"en": "8"
+	},
+	"description": {
+		"ja": "8番出口",
+		"en": "Exit 8",
+		"ko": "8번출구",
+		"zh-Hans": "8号出口",
+		"zh-Hant": "8號出口"
+	}
+}, {
+	"id": "Toei.Shinjuku.A1",
+	"coord": [139.699367, 35.6868579],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.ShinjukuSanchome.C1",
+	"coord": [139.70552, 35.6903969],
+	"title": {
+		"en": "C1"
+	},
+	"description": {
+		"ja": "C1出口",
+		"en": "Exit C1",
+		"ko": "C1출구",
+		"zh-Hans": "C1出口",
+		"zh-Hant": "C1出口"
+	}
+}, {
+	"id": "Toei.ShinjukuSanchome.C2",
+	"coord": [139.7053108, 35.6907476],
+	"title": {
+		"en": "C2"
+	},
+	"description": {
+		"ja": "C2出口",
+		"en": "Exit C2",
+		"ko": "C2출구",
+		"zh-Hans": "C2出口",
+		"zh-Hant": "C2出口"
+	}
+}, {
+	"id": "Toei.ShinjukuSanchome.C3",
+	"coord": [139.7056809, 35.6907727],
+	"title": {
+		"en": "C3"
+	},
+	"description": {
+		"ja": "C3出口",
+		"en": "Exit C3",
+		"ko": "C3출구",
+		"zh-Hans": "C3出口",
+		"zh-Hant": "C3出口"
+	}
+}, {
+	"id": "Toei.ShinjukuSanchome.C4",
+	"coord": [139.7058338, 35.6905309],
+	"title": {
+		"en": "C4"
+	},
+	"description": {
+		"ja": "C4出口",
+		"en": "Exit C4",
+		"ko": "C4출구",
+		"zh-Hans": "C4出口",
+		"zh-Hant": "C4出口"
+	}
+}, {
+	"id": "Toei.ShinjukuSanchome.C5",
+	"coord": [139.7067806, 35.6906136],
+	"title": {
+		"en": "C5"
+	},
+	"description": {
+		"ja": "C5出口",
+		"en": "Exit C5",
+		"ko": "C5출구",
+		"zh-Hans": "C5出口",
+		"zh-Hant": "C5出口"
+	}
+}, {
+	"id": "Toei.ShinjukuSanchome.C6",
+	"coord": [139.7068812, 35.6912388],
+	"title": {
+		"en": "C6"
+	},
+	"description": {
+		"ja": "C6出口",
+		"en": "Exit C6",
+		"ko": "C6출구",
+		"zh-Hans": "C6出口",
+		"zh-Hant": "C6出口"
+	}
+}, {
+	"id": "Toei.ShinjukuSanchome.C7",
+	"coord": [139.7072446, 35.6914894],
+	"title": {
+		"en": "C7"
+	},
+	"description": {
+		"ja": "C7出口",
+		"en": "Exit C7",
+		"ko": "C7출구",
+		"zh-Hans": "C7出口",
+		"zh-Hant": "C7出口"
+	}
+}, {
+	"id": "Toei.ShinjukuSanchome.C8",
+	"coord": [139.7073801, 35.6911114],
+	"title": {
+		"en": "C8"
+	},
+	"description": {
+		"ja": "C8出口",
+		"en": "Exit C8",
+		"ko": "C8출구",
+		"zh-Hans": "C8出口",
+		"zh-Hant": "C8出口"
+	}
+}, {
+	"id": "Toei.Ogawamachi.A1",
+	"coord": [139.7681388, 35.6955357],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.Ogawamachi.A2",
+	"coord": [139.7677499, 35.6953745],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Ogawamachi.A3",
+	"coord": [139.7678746, 35.6956914],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Ogawamachi.A4",
+	"coord": [139.7670968, 35.6951109],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "Toei.Ogawamachi.A5",
+	"coord": [139.767141, 35.6953941],
+	"title": {
+		"en": "A5"
+	},
+	"description": {
+		"ja": "A5出口",
+		"en": "Exit A5",
+		"ko": "A5출구",
+		"zh-Hans": "A5出口",
+		"zh-Hant": "A5出口"
+	}
+}, {
+	"id": "Toei.Ogawamachi.A6",
+	"coord": [139.7664249, 35.6948419],
+	"title": {
+		"en": "A6"
+	},
+	"description": {
+		"ja": "A6出口",
+		"en": "Exit A6",
+		"ko": "A6출구",
+		"zh-Hans": "A6出口",
+		"zh-Hant": "A6出口"
+	}
+}, {
+	"id": "Toei.Ogawamachi.A7",
+	"coord": [139.7661245, 35.6950662],
+	"title": {
+		"en": "A7"
+	},
+	"description": {
+		"ja": "A7出口",
+		"en": "Exit A7",
+		"ko": "A7출구",
+		"zh-Hans": "A7出口",
+		"zh-Hant": "A7出口"
+	}
+}, {
+	"id": "Toei.ShinjukuNishiguchi.D1",
+	"coord": [139.6994367, 35.6925916],
+	"title": {
+		"en": "D1"
+	},
+	"description": {
+		"ja": "D1出口",
+		"en": "Exit D1",
+		"ko": "D1출구",
+		"zh-Hans": "D1出口",
+		"zh-Hant": "D1出口"
+	}
+}, {
+	"id": "Toei.ShinjukuNishiguchi.D2",
+	"coord": [139.6990693, 35.6928639],
+	"title": {
+		"en": "D2"
+	},
+	"description": {
+		"ja": "D2出口",
+		"en": "Exit D2",
+		"ko": "D2출구",
+		"zh-Hans": "D2出口",
+		"zh-Hant": "D2出口"
+	}
+}, {
+	"id": "Toei.ShinjukuNishiguchi.D3",
+	"coord": [139.6992946, 35.6932746],
+	"title": {
+		"en": "D3"
+	},
+	"description": {
+		"ja": "D3出口",
+		"en": "Exit D3",
+		"ko": "D3출구",
+		"zh-Hans": "D3出口",
+		"zh-Hant": "D3出口"
+	}
+}, {
+	"id": "Toei.ShinjukuNishiguchi.D4",
+	"coord": [139.6986361, 35.6934608],
+	"title": {
+		"en": "D4"
+	},
+	"description": {
+		"ja": "D4出口",
+		"en": "Exit D4",
+		"ko": "D4출구",
+		"zh-Hans": "D4出口",
+		"zh-Hant": "D4出口"
+	}
+}, {
+	"id": "Toei.ShinjukuNishiguchi.D5",
+	"coord": [139.6990612, 35.6942058],
+	"title": {
+		"en": "D5"
+	},
+	"description": {
+		"ja": "D5出口",
+		"en": "Exit D5",
+		"ko": "D5출구",
+		"zh-Hans": "D5出口",
+		"zh-Hant": "D5出口"
+	}
+}, {
+	"id": "Toei.HongoSanchome.3",
+	"coord": [139.7601284, 35.7072922],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "Toei.HongoSanchome.4",
+	"coord": [139.7611061, 35.7079281],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "4番出口",
+		"en": "Exit 4",
+		"ko": "4번출구",
+		"zh-Hans": "4号出口",
+		"zh-Hant": "4號出口"
+	}
+}, {
+	"id": "Toei.HongoSanchome.5",
+	"coord": [139.7612053, 35.7073194],
+	"title": {
+		"en": "5"
+	},
+	"description": {
+		"ja": "5番出口",
+		"en": "Exit 5",
+		"ko": "5번출구",
+		"zh-Hans": "5号出口",
+		"zh-Hant": "5號出口"
+	}
+}, {
+	"id": "Toei.NakanoSakaue.A1",
+	"coord": [139.683255, 35.6973142],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.NakanoSakaue.A2",
+	"coord": [139.6826085, 35.6979023],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
 	}
 }]
