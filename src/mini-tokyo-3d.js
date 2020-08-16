@@ -681,17 +681,21 @@ export default class extends mapboxgl.Evented {
             datalist.id = 'stations';
             me.stationTitleLookup = {};
             [me.lang, 'en'].forEach(l => {
-                me.stationData.forEach(station => {
-                    const title = station.title[l],
-                        {coord} = station;
+                me.railwayData.forEach(railway => {
+                    railway.stations.forEach(id => {
+                        const station = me.stationLookup[id],
+                            utitle = station.utitle && station.utitle[l],
+                            title = utitle || helpers.normalize(station.title[l]),
+                            key = title.toUpperCase();
 
-                    if (title && !me.stationTitleLookup[title.toUpperCase()] && coord && coord[0] && coord[1]) {
-                        const option = document.createElement('option');
+                        if (!me.stationTitleLookup[key]) {
+                            const option = document.createElement('option');
 
-                        option.value = title;
-                        datalist.appendChild(option);
-                        me.stationTitleLookup[title.toUpperCase()] = station;
-                    }
+                            option.value = title;
+                            datalist.appendChild(option);
+                            me.stationTitleLookup[key] = station;
+                        }
+                    });
                 });
             });
             document.body.appendChild(datalist);
@@ -1822,7 +1826,7 @@ export default class extends mapboxgl.Evented {
                     const railwayRef = me.railwayLookup[railwayID],
                         direction = helpers.removePrefix(trainRef['odpt:railDirection']);
 
-                    if (railwayRef.color) {
+                    if (railwayRef) {
                         train = {
                             t: id,
                             id: `${id}.Today`,

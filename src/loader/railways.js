@@ -57,7 +57,8 @@ export default async function(options) {
         stations: railway['odpt:stationOrder'].map(obj =>
             helpers.removePrefix(obj['odpt:station'])
         ),
-        ascending: helpers.removePrefix(railway['odpt:ascendingRailDirection'])
+        ascending: helpers.removePrefix(railway['odpt:ascendingRailDirection']),
+        del: true
     }));
 
     const lookup = helpers.buildLookup(data);
@@ -84,9 +85,10 @@ export default async function(options) {
         railway.color = color;
         railway.altitude = altitude;
         railway.carComposition = carComposition;
+        delete railway.del;
     });
 
-    loaderHelpers.saveJSON('build/data/railways.json.gz', data);
+    loaderHelpers.saveJSON('build/data/railways.json.gz', data.filter(({del}) => !del));
 
     console.log('Railway data was loaded');
 

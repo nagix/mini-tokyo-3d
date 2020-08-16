@@ -3737,6 +3737,13 @@
 		"zh-Hans": "小川町",
 		"zh-Hant": "小川町",
 		"ja-Wiki": "小川町駅 (埼玉県)"
+	},
+	"utitle": {
+		"ja": "小川町 (埼玉)",
+		"en": "Ogawamachi (Saitama)",
+		"ko": "오가와마치 (사이타마)",
+		"zh-Hans": "小川町 (埼玉)",
+		"zh-Hant": "小川町 (埼玉)"
 	}
 }, {
 	"id": "JR-East.Hachiko.Takasaki",
@@ -4212,6 +4219,13 @@
 	"title": {
 		"ja-Wiki": "霞ケ関駅 (東京都)"
 	},
+	"utitle": {
+		"ja": "霞ケ関 (東京)",
+		"en": "Kasumigaseki (Tokyo)",
+		"ko": "가스미가세키 (도쿄)",
+		"zh-Hans": "霞关 (东京)",
+		"zh-Hant": "霞關 (東京)"
+	},
 	"exit": [
 		"TokyoMetro.Kasumigaseki.B1a",
 		"TokyoMetro.Kasumigaseki.B1b",
@@ -4398,6 +4412,16 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hibiya.Kasumigaseki",
+	"title": {
+		"ja-Wiki": "霞ケ関駅 (東京都)"
+	},
+	"utitle": {
+		"ja": "霞ケ関 (東京)",
+		"en": "Kasumigaseki (Tokyo)",
+		"ko": "가스미가세키 (도쿄)",
+		"zh-Hans": "霞关 (东京)",
+		"zh-Hant": "霞關 (東京)"
+	},
 	"exit": [
 		"TokyoMetro.Kasumigaseki.A1",
 		"TokyoMetro.Kasumigaseki.A2",
@@ -4415,9 +4439,6 @@
 		"TokyoMetro.Kasumigaseki.A12",
 		"TokyoMetro.Kasumigaseki.A13"
 	],
-	"title": {
-		"ja-Wiki": "霞ケ関駅 (東京都)"
-	},
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hibiya.Hibiya",
@@ -4617,6 +4638,13 @@
 	"id": "TokyoMetro.Chiyoda.Kasumigaseki",
 	"title": {
 		"ja-Wiki": "霞ケ関駅 (東京都)"
+	},
+	"utitle": {
+		"ja": "霞ケ関 (東京)",
+		"en": "Kasumigaseki (Tokyo)",
+		"ko": "가스미가세키 (도쿄)",
+		"zh-Hans": "霞关 (东京)",
+		"zh-Hant": "霞關 (東京)"
 	},
 	"exit": [
 		"TokyoMetro.Kasumigaseki.C1",
@@ -5546,6 +5574,13 @@
 		"zh-Hant": "小川町",
 		"ja-Wiki": "小川町駅 (東京都)"
 	},
+	"utitle": {
+		"ja": "小川町 (東京)",
+		"en": "Ogawamachi (Tokyo)",
+		"ko": "오가와마치 (도쿄)",
+		"zh-Hans": "小川町 (东京)",
+		"zh-Hant": "小川町 (東京)"
+	},
 	"exit": [
 		"Toei.Ogawamachi.A1",
 		"Toei.Ogawamachi.A2",
@@ -6196,6 +6231,13 @@
 		"zh-Hans": "弘明寺",
 		"zh-Hant": "弘明寺",
 		"ja-Wiki": "弘明寺駅 (横浜市営地下鉄)"
+	},
+	"utitle": {
+		"ja": "弘明寺 (横浜市営地下鉄)",
+		"en": "Gumyoji (Yokohama Municipal Subway)",
+		"ko": "구묘지 (요코하마 시 교통국)",
+		"zh-Hans": "弘明寺 (横滨市营地下铁)",
+		"zh-Hant": "弘明寺 (橫濱市營地下鐵)"
 	},
 	"altitude": -1
 }, {
@@ -6880,6 +6922,13 @@
 	"title": {
 		"zh-Hant": "弘明寺",
 		"ja-Wiki": "弘明寺駅 (京急)"
+	},
+	"utitle": {
+		"ja": "弘明寺 (京急)",
+		"en": "Gumyoji (Keikyu)",
+		"ko": "구묘지 (게이힌 급행 전철)",
+		"zh-Hans": "弘明寺 (京急)",
+		"zh-Hant": "弘明寺 (京急)"
 	}
 }, {
 	"id": "Keikyu.Main.Kamiooka",
@@ -7997,6 +8046,13 @@
 	"coord": [139.44385, 35.92546],
 	"title": {
 		"ja-Wiki": "霞ヶ関駅 (埼玉県)"
+	},
+	"utitle": {
+		"ja": "霞ヶ関 (埼玉)",
+		"en": "Kasumigaseki (Saitama)",
+		"ko": "가스미가세키 (사이타마)",
+		"zh-Hans": "霞关 (埼玉)",
+		"zh-Hant": "霞關 (埼玉)"
 	}
 }, {
 	"id": "Tobu.Tojo.Tsurugashima",
@@ -8033,6 +8089,13 @@
 	"coord": [139.26065, 36.05873],
 	"title": {
 		"ja-Wiki": "小川町駅 (埼玉県)"
+	},
+	"utitle": {
+		"ja": "小川町 (埼玉)",
+		"en": "Ogawamachi (Saitama)",
+		"ko": "오가와마치 (사이타마)",
+		"zh-Hans": "小川町 (埼玉)",
+		"zh-Hant": "小川町 (埼玉)"
 	}
 }, {
 	"id": "Seibu.Ikebukuro.Ikebukuro",
@@ -10609,6 +10672,13 @@
 	"coord": [139.7922688, 35.7129624],
 	"title": {
 		"ja-Wiki": "浅草駅 (首都圏新都市鉄道)"
+	},
+	"utitle": {
+		"ja": "浅草 (首都圏新都市鉄道)",
+		"en": "Asakusa (Tsukuba Express)",
+		"ko": "아사쿠사 (쓰쿠바 익스프레스)",
+		"zh-Hans": "浅草 (首都圈新都市铁道)",
+		"zh-Hant": "淺草 (首都圈新都市鐵道)"
 	},
 	"altitude": -1
 }, {

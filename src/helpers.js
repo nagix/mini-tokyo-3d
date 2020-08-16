@@ -52,6 +52,10 @@ export function includes(array, value) {
     return true;
 }
 
+export function normalize(value) {
+    return value.normalize("NFD").replace(/\(.*\)|<.*>|〈.*〉|[\u0300-\u036F]/g, '');
+}
+
 export function valueOrDefault(value, defaultValue) {
     return value === undefined ? defaultValue : value;
 }
