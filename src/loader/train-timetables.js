@@ -100,7 +100,8 @@ const RAILWAYS_FOR_TRAINTIMETABLES = {
     ]]
 };
 
-const RAILWAY_YOKOSUKA = 'JR-East.Yokosuka',
+const RAILWAY_SOBURAPID = 'JR-East.SobuRapid',
+    RAILWAY_YOKOSUKA = 'JR-East.Yokosuka',
     RAILWAY_SHONANSHINJUKU = 'JR-East.ShonanShinjuku',
     RAILWAY_YAMANOTEFREIGHT = 'JR-East.YamanoteFreight',
     RAILWAY_KEIYO = 'JR-East.Keiyo',
@@ -125,17 +126,14 @@ const RAILWAYS_FOR_SOBURAPID = [
 const RAIL_DIRECTION_OUTBOUND = 'Outbound',
     RAIL_DIRECTION_INBOUND = 'Inbound';
 
-const TRAINTYPE_THLINER = 'TokyoMetro.TH-LINER',
-    TRAINTYPE_STRAIN = 'TokyoMetro.S-TRAIN';
+const TRAINTYPE_JREAST_RAPID = 'JR-East.Rapid',
+    TRAINTYPE_JREAST_LIMITEDEXPRESS = 'JR-East.LimitedExpress',
+    TRAINTYPE_TOKYOMETRO_THLINER = 'TokyoMetro.TH-LINER',
+    TRAINTYPE_TOKYOMETRO_STRAIN = 'TokyoMetro.S-TRAIN';
 
-const TRAINTYPES_FOR_SOBURAPID = [
-    'JR-East.Rapid',
-    'JR-East.LimitedExpress'
-];
-
-const TRAINTYPE_FOR_YAMANOTEFREIGHT = 'JR-East.LimitedExpress';
-
-const STATION_KEIYO_NISHIFUNABASHI = 'JR-East.Keiyo.NishiFunabashi',
+const STATION_NARITA_AIRPORTTERMINAL1 = 'JR-East.NaritaAirportBranch.NaritaAirportTerminal1',
+    STATION_SOBU_NARUTO = 'JR-East.Sobu.Naruto',
+    STATION_KEIYO_NISHIFUNABASHI = 'JR-East.Keiyo.NishiFunabashi',
     STATION_MUSASHINO_FUCHUHONMACHI = 'JR-East.Musashino.Fuchuhommachi',
     STATION_CHUORAPID_HACHIOJI = 'JR-East.ChuoRapid.Hachioji',
     STATION_HIBIYA_KITASENJU = 'TokyoMetro.Hibiya.KitaSenju',
@@ -225,7 +223,10 @@ export default async function(options) {
         // Modify Sobu Rapid, Sobu, Narita and Narita Airport branch timetables
         RAILWAYS_FOR_SOBURAPID.forEach(railwayID => {
             data.filter(timetable =>
-                timetable.r === railwayID && helpers.includes(TRAINTYPES_FOR_SOBURAPID, timetable.y)
+                timetable.r === railwayID &&
+                timetable.y === TRAINTYPE_JREAST_LIMITEDEXPRESS &&
+                (timetable.os[0] === STATION_NARITA_AIRPORTTERMINAL1 ||
+                timetable.ds[0] === STATION_NARITA_AIRPORTTERMINAL1)
             ).forEach(timetable => {
                 const {id, tt, nt, pt} = timetable;
                 let nextTable, prevTable;
@@ -265,11 +266,23 @@ export default async function(options) {
                 delete lookup[id];
             });
         });
+        data.filter(timetable =>
+            helpers.includes(RAILWAYS_FOR_SOBURAPID, timetable.r) &&
+            timetable.y === TRAINTYPE_JREAST_RAPID &&
+            timetable.os[0] !== STATION_SOBU_NARUTO
+        ).forEach(timetable => {
+            const {r, tt} = timetable;
+
+            tt.forEach(obj => {
+                obj.s = obj.s.replace(r, RAILWAY_SOBURAPID);
+            });
+            timetable.r = RAILWAY_SOBURAPID;
+        });
 
         // Modify Yamanote Freight timetables
         data.filter(timetable =>
             timetable.r === RAILWAY_YOKOSUKA &&
-            timetable.y === TRAINTYPE_FOR_YAMANOTEFREIGHT &&
+            timetable.y === TRAINTYPE_JREAST_LIMITEDEXPRESS &&
             ((timetable.pt && timetable.pt[0].startsWith(RAILWAY_SHONANSHINJUKU)) ||
             (timetable.nt && timetable.nt[0].startsWith(RAILWAY_SHONANSHINJUKU)))
         ).forEach(timetable => {
@@ -427,7 +440,7 @@ export default async function(options) {
 
         // Modify Hibiya timetables
         data.filter(timetable =>
-            timetable.r === RAILWAY_HIBIYA && timetable.y === TRAINTYPE_THLINER
+            timetable.r === RAILWAY_HIBIYA && timetable.y === TRAINTYPE_TOKYOMETRO_THLINER
         ).forEach(timetable => {
             const {tt} = timetable;
 
@@ -441,7 +454,7 @@ export default async function(options) {
         // Modify Fukutoshin and Yurakucho timetables
         data.filter(timetable =>
             (timetable.r === RAILWAY_FUKUTOSHIN || timetable.r === RAILWAY_YURAKUCHO) &&
-            timetable.y === TRAINTYPE_STRAIN
+            timetable.y === TRAINTYPE_TOKYOMETRO_STRAIN
         ).forEach(timetable => {
             const {tt} = timetable;
 

@@ -62,10 +62,9 @@ const RAILWAY_SOBURAPID = 'JR-East.SobuRapid',
     RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
     RAILWAY_MITA = 'Toei.Mita';
 
-const TRAINTYPES_FOR_SOBURAPID = [
-    'JR-East.Rapid',
-    'JR-East.LimitedExpress'
-];
+const TRAINTYPE_JREAST_LIMITEDEXPRESS = 'JR-East.LimitedExpress';
+
+const STATION_NARITA_AIRPORTTERMINAL1 = 'JR-East.NaritaAirportBranch.NaritaAirportTerminal1';
 
 const DEGREE_TO_RADIAN = Math.PI / 180;
 
@@ -1784,7 +1783,7 @@ export default class extends mapboxgl.Evented {
                     trainType = helpers.removePrefix(trainRef['odpt:trainType']),
                     origin = helpers.removePrefix(trainRef['odpt:originStation']),
                     destination = helpers.removePrefix(trainRef['odpt:destinationStation']),
-                    id = adjustTrainID(helpers.removePrefix(trainRef['owl:sameAs'])),
+                    id = adjustTrainID(helpers.removePrefix(trainRef['owl:sameAs']), trainType, origin, destination),
                     toStation = helpers.removePrefix(trainRef['odpt:toStation']),
                     fromStation = helpers.removePrefix(trainRef['odpt:fromStation']);
                 // Retry lookup replacing Marunouchi line with MarunouchiBranch line
@@ -2923,8 +2922,10 @@ function easeOutQuart(t) {
     return -((t = t - 1) * t * t * t - 1);
 }
 
-function adjustTrainID(id, type) {
-    if (helpers.includes(TRAINTYPES_FOR_SOBURAPID, type)) {
+function adjustTrainID(id, type, origin, destination) {
+    if (type === TRAINTYPE_JREAST_LIMITEDEXPRESS &&
+        (origin[0] === STATION_NARITA_AIRPORTTERMINAL1 ||
+        destination[0] === STATION_NARITA_AIRPORTTERMINAL1)) {
         return id.replace(/JR-East\.(NaritaAirportBranch|Narita|Sobu)/, RAILWAY_SOBURAPID);
     }
     return id;
