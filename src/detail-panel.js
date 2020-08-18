@@ -122,8 +122,6 @@ export default class {
 
         const timetableOffsets = offsets.slice(currSection.start, currSection.end + 1);
 
-        scrollTop = bodyElement.scrollTop;
-
         const repeat = () => {
             const {height} = bodyElement.getBoundingClientRect(),
                 {timetableIndex: index} = train,
@@ -135,10 +133,8 @@ export default class {
             container.querySelector('#train-mark').innerHTML =
                 `<circle cx="22" cy="${y + 10}" r="${7 + p * 15}" fill="#ffffff" opacity="${1 - p}" />` +
                 `<circle cx="22" cy="${y + 10}" r="7" fill="#ffffff" />`;
-            if (scrollTop === bodyElement.scrollTop) {
-                scrollTop = bodyElement.scrollTop = y - height / 2 + 4;
-            } else {
-                scrollTop = undefined;
+            if (scrollTop === undefined || scrollTop === bodyElement.scrollTop) {
+                scrollTop = bodyElement.scrollTop = Math.round(y - height / 2 + 4);
             }
             if (me._container) {
                 requestAnimationFrame(repeat);
