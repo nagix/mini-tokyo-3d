@@ -134,7 +134,8 @@ export default class {
                 `<circle cx="22" cy="${y + 10}" r="${7 + p * 15}" fill="#ffffff" opacity="${1 - p}" />` +
                 `<circle cx="22" cy="${y + 10}" r="7" fill="#ffffff" />`;
             if (scrollTop === undefined || scrollTop === bodyElement.scrollTop) {
-                scrollTop = bodyElement.scrollTop = Math.round(y - height / 2 + 4);
+                bodyElement.scrollTop = Math.round(y - height / 2 + 4);
+                scrollTop = bodyElement.scrollTop;
             }
             if (me._container) {
                 requestAnimationFrame(repeat);
