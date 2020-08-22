@@ -1601,7 +1601,7 @@ export default class extends mapboxgl.Evented {
             dict[standing ? 'standing-at' : 'previous-stop'],
             ':</strong> ',
             me.getLocalizedStationTitle(train.departureStation),
-            departureTime ? ` ${clock.getTimeString(clock.getTime(departureTime), delay)}` : '',
+            departureTime ? ` ${clock.getTimeString(clock.getTime(departureTime) + delay)}` : '',
             arrivalStation ? [
                 `<br><strong>${dict['next-stop']}:</strong> `,
                 me.getLocalizedStationTitle(arrivalStation),
