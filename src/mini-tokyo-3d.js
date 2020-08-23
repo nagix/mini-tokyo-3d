@@ -1694,7 +1694,9 @@ export default class extends mapboxgl.Evented {
         }
         delete train.cars;
         delete me.activeTrainLookup[t];
-        delete train.delay;
+        if (!keep) {
+            delete train.delay;
+        }
         if (!tt) {
             delete me.timetableData.splice(me.timetableData.indexOf(train), 1);
         }
