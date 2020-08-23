@@ -1854,15 +1854,14 @@ export default class extends mapboxgl.Evented {
             [].concat(...trainData).forEach(trainInfoRef => {
                 const operatorID = helpers.removePrefix(trainInfoRef['odpt:operator']),
                     railwayID = helpers.removePrefix(trainInfoRef['odpt:railway']),
+                    railway = me.railwayLookup[railwayID],
                     status = trainInfoRef['odpt:trainInformationStatus'],
                     text = trainInfoRef['odpt:trainInformationText'];
 
                 // Train information text is provided in Japanese only
-                if (railwayID && status && status.ja &&
+                if (railway && status && status.ja &&
                     helpers.includes(OPERATORS_FOR_TRAINS, operatorID) &&
                     status.ja.match(/見合わせ|折返し運転|運休|遅延/)) {
-                    const railway = me.railwayLookup[railwayID];
-
                     railway.status = status.ja;
                     railway.text = text.ja;
                     Object.keys(me.activeTrainLookup).forEach(key => {
