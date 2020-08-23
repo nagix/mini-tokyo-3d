@@ -18,6 +18,7 @@ import DetailPanel from './detail-panel';
 import FireworksLayer from './fireworks-layer';
 import * as helpers from './helpers';
 import * as helpersThree from './helpers-three';
+import * as loader from './loader';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
 import SharePanel from './share-panel';
 import StationPanel from './station-panel';
@@ -26,43 +27,14 @@ import WeatherLayer from './weather-layer';
 import destination from './turf/destination';
 import featureFilter from './turf/feature-filter';
 
-const OPERATORS_FOR_TRAININFORMATION = {
-    tokyochallenge: [
-        'JR-East',
-        'TWR',
-        'TokyoMetro',
-        'Toei',
-        'YokohamaMunicipal',
-        'Keio',
-        'Keikyu',
-        'Keisei',
-        'Tobu',
-        'Seibu',
-        'Tokyu'
-    ],
-    odpt: [
-        'MIR',
-        'TamaMonorail'
-    ]
-};
-
-const OPERATORS_FOR_TRAINS = [
+const OPERATORS_FOR_DYNAMIC_TRAIN_DATA = [
     'JR-East',
     'TokyoMetro',
     'Toei'
 ];
 
-const OPERATORS_FOR_FLIGHTINFORMATION = [
-    'HND-JAT',
-    'HND-TIAT',
-    'NAA'
-];
-
-const RAILWAY_SOBURAPID = 'JR-East.SobuRapid',
-    RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
+const RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
     RAILWAY_MITA = 'Toei.Mita';
-
-const TRAINTYPE_JREAST_LIMITEDEXPRESS = 'JR-East.LimitedExpress';
 
 const DEGREE_TO_RADIAN = Math.PI / 180;
 
@@ -139,7 +111,7 @@ export default class extends mapboxgl.Evented {
         me.container.classList.add('mini-tokyo-3d');
         insertTags(me.container);
 
-        loadData(me.dataUrl, me.lang, me.clock).then(data => {
+        loader.loadStaticData(me.dataUrl, me.lang, me.clock).then(data => {
             Object.assign(me, data);
             me.initialize();
         }).catch(error => {
@@ -627,47 +599,7 @@ export default class extends mapboxgl.Evented {
             }), 'poi');
             */
 
-            map.addLayer(new FireworksLayer('fireworks', me.clock, [{
-                // Sumidagawa 1 (2020-07-23 19:00 to 20:30)
-                coord: [139.8061467, 35.7168468],
-                start: 1595498400000,
-                end: 1595503800000
-            }, {
-                // Sumidagawa 2 (2020-07-23 19:30 to 20:30)
-                coord: [139.7957901, 35.7053016],
-                start: 1595500200000,
-                end: 1595503800000
-            }, {
-                // Adachi (2020-07-24 19:30 to 20:30)
-                coord: [139.7960082, 35.7596802],
-                start: 1595586600000,
-                end: 1595590200000
-            }, {
-                // Makuhari (2020-07-25 19:10 to 20:20)
-                coord: [140.0265839, 35.6429351],
-                start: 1595671800000,
-                end: 1595676000000
-            }, {
-                // Minatomirai (2020-07-26 19:30 to 19:55)
-                coord: [139.6411158, 35.4606603],
-                start: 1595759400000,
-                end: 1595760900000
-            }, {
-                // Jingu (2020-08-08 19:30 to 20:30)
-                coord: [139.7186873, 35.6765851],
-                start: 1596882600000,
-                end: 1596886200000
-            }, {
-                // Edogawa (2020-08-09 19:15 to 20:30)
-                coord: [139.9028813, 35.7187124],
-                start: 1596968100000,
-                end: 1596972600000
-            }, {
-                // Itabashi (2020-08-10 19:00 to 20:30)
-                coord: [139.6759402, 35.7988664],
-                start: 1597053600000,
-                end: 1597059000000
-            }]), 'poi');
+            map.addLayer(new FireworksLayer('fireworks', me.clock, configs.fireworksPlans), 'poi');
 
             map.addLayer(weatherLayer, 'poi');
 
@@ -1744,7 +1676,7 @@ export default class extends mapboxgl.Evented {
     loadTimetableData() {
         const me = this;
 
-        helpers.loadJSON(`${me.dataUrl}/${getTimetableFileName(me.clock)}`).then(data => {
+        loader.loadTimetableData(me.dataUrl, me.clock).then(data => {
             me.timetableData = data;
             me.updateTimetableData(me.timetableData);
             me.trainLookup = helpers.buildLookup(me.timetableData, 't');
@@ -1753,125 +1685,94 @@ export default class extends mapboxgl.Evented {
     }
 
     loadRealtimeTrainData() {
-        const me = this,
-            urls = [];
+        const me = this;
 
-        Object.keys(OPERATORS_FOR_TRAININFORMATION).forEach(source => {
-            const url = configs.apiUrl[source],
-                key = me.secrets[source],
-                operators = OPERATORS_FOR_TRAININFORMATION[source]
-                    .map(operator => `odpt.Operator:${operator}`)
-                    .join(',');
-
-            urls.push(`${url}odpt:TrainInformation?odpt:operator=${operators}&acl:consumerKey=${key}`);
-        });
-
-        const url = configs.apiUrl.tokyochallenge,
-            key = me.secrets.tokyochallenge,
-            operators = OPERATORS_FOR_TRAINS
-                .map(operator => `odpt.Operator:${operator}`)
-                .join(',');
-
-        urls.push(`${url}odpt:Train?odpt:operator=${operators}&acl:consumerKey=${key}`);
-
-        Promise.all(urls.map(helpers.loadJSON)).then(trainData => {
+        loader.loadDynamicTrainData(me.secrets).then(({trainData, trainInfoData}) => {
             me.realtimeTrainLookup = {};
 
-            trainData.pop().forEach(trainRef => {
-                const delay = (trainRef['odpt:delay'] || 0) * 1000,
-                    carComposition = trainRef['odpt:carComposition'],
-                    trainType = helpers.removePrefix(trainRef['odpt:trainType']),
-                    origin = helpers.removePrefix(trainRef['odpt:originStation']),
-                    destination = helpers.removePrefix(trainRef['odpt:destinationStation']),
-                    id = adjustTrainID(helpers.removePrefix(trainRef['owl:sameAs']), trainType, destination),
-                    toStation = helpers.removePrefix(trainRef['odpt:toStation']),
-                    fromStation = helpers.removePrefix(trainRef['odpt:fromStation']);
+            trainData.forEach(trainRef => {
+                const {id} = trainRef;
+
                 // Retry lookup replacing Marunouchi line with MarunouchiBranch line
                 let train = me.trainLookup[id] || me.trainLookup[id.replace('.Marunouchi.', '.MarunouchiBranch.')];
                 let changed = false;
 
                 if (train) {
                     me.realtimeTrainLookup[id] = train;
-                    if (train.delay !== delay) {
-                        train.delay = delay;
+                    if (train.delay !== trainRef.delay) {
+                        train.delay = trainRef.delay;
                         changed = true;
                     }
-                    if (carComposition && train.carComposition !== carComposition) {
-                        train.carComposition = carComposition;
+                    if (trainRef.carComposition && train.carComposition !== trainRef.carComposition) {
+                        train.carComposition = trainRef.carComposition;
                         changed = true;
                     }
-                    if (trainType && train.y !== trainType) {
-                        train.y = trainType;
+                    if (trainRef.y && train.y !== trainRef.y) {
+                        train.y = trainRef.y;
                         changed = true;
                     }
-                    if (truncateTrainTimetable(train, origin, destination)) {
+                    if (truncateTrainTimetable(train, trainRef.os, trainRef.ds)) {
                         changed = true;
                     }
                     if (!train.tt) {
-                        train.ts = toStation;
-                        train.fs = fromStation;
+                        train.ts = trainRef.ts;
+                        train.fs = trainRef.fs;
                     }
                     if (changed && me.activeTrainLookup[id]) {
                         me.stopTrain(train, true);
                     }
-                } else {
-                    const railwayID = helpers.removePrefix(trainRef['odpt:railway']);
-
+                } else if (trainRef.r) {
                     // Exclude Namboku line trains that connect to/from Mita line
-                    if (railwayID === RAILWAY_NAMBOKU && (origin[0].startsWith(RAILWAY_MITA) || destination[0].startsWith(RAILWAY_MITA))) {
+                    if (trainRef.r === RAILWAY_NAMBOKU && (trainRef.os[0].startsWith(RAILWAY_MITA) || trainRef.ds[0].startsWith(RAILWAY_MITA))) {
                         return;
                     }
 
-                    const railwayRef = me.railwayLookup[railwayID],
-                        direction = helpers.removePrefix(trainRef['odpt:railDirection']);
+                    const railwayRef = me.railwayLookup[trainRef.r];
 
                     if (railwayRef) {
                         train = {
                             t: id,
                             id: `${id}.Today`,
-                            r: railwayID,
-                            y: trainType,
-                            n: trainRef['odpt:trainNumber'],
-                            os: origin,
-                            d: direction,
-                            ds: destination,
-                            ts: toStation,
-                            fs: fromStation,
+                            r: trainRef.r,
+                            y: trainRef.y,
+                            n: trainRef.n,
+                            os: trainRef.os,
+                            d: trainRef.d,
+                            ds: trainRef.ds,
+                            ts: trainRef.ts,
+                            fs: trainRef.fs,
                             start: Date.now(),
                             end: Date.now() + 86400000,
-                            delay,
-                            direction: direction === railwayRef.ascending ? 1 : -1,
+                            delay: trainRef.delay,
+                            direction: trainRef.d === railwayRef.ascending ? 1 : -1,
                             altitude: railwayRef.altitude,
-                            carComposition: carComposition || railwayRef.carComposition
+                            carComposition: trainRef.carComposition || railwayRef.carComposition
                         };
                         me.timetableData.push(train);
                         me.realtimeTrainLookup[id] = me.trainLookup[id] = train;
                     }
                 }
-                me.lastDynamicUpdate[helpers.removePrefix(trainRef['odpt:operator'])] = trainRef['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2');
+                me.lastDynamicUpdate[trainRef.o] = trainRef.date;
             });
 
             me.resetRailwayStatus();
 
-            [].concat(...trainData).forEach(trainInfoRef => {
-                const operatorID = helpers.removePrefix(trainInfoRef['odpt:operator']),
-                    railwayID = helpers.removePrefix(trainInfoRef['odpt:railway']),
-                    railway = me.railwayLookup[railwayID],
-                    status = trainInfoRef['odpt:trainInformationStatus'],
-                    text = trainInfoRef['odpt:trainInformationText'];
+            trainInfoData.forEach(trainInfoRef => {
+                const railway = me.railwayLookup[trainInfoRef.railway];
 
                 // Train information text is provided in Japanese only
-                if (railway && status && status.ja &&
-                    helpers.includes(OPERATORS_FOR_TRAINS, operatorID) &&
-                    status.ja.match(/見合わせ|折返し運転|運休|遅延/)) {
-                    railway.status = status.ja;
-                    railway.text = text.ja;
-                    Object.keys(me.activeTrainLookup).forEach(key => {
-                        const train = me.activeTrainLookup[key];
-                        if (train.r === railwayID && !me.realtimeTrainLookup[train.t]) {
-                            me.stopTrain(train);
-                        }
-                    });
+                if (railway && trainInfoRef.status && trainInfoRef.status.ja &&
+                    trainInfoRef.status.ja.match(/見合わせ|折返し運転|運休|遅延/)) {
+                    railway.status = trainInfoRef.status.ja;
+                    railway.text = trainInfoRef.text.ja;
+                    if (helpers.includes(OPERATORS_FOR_DYNAMIC_TRAIN_DATA, trainInfoRef.operator)) {
+                        Object.keys(me.activeTrainLookup).forEach(key => {
+                            const train = me.activeTrainLookup[key];
+                            if (train.r === railway.id && !me.realtimeTrainLookup[train.t]) {
+                                me.stopTrain(train);
+                            }
+                        });
+                    }
                 }
             });
 
@@ -1895,22 +1796,9 @@ export default class extends mapboxgl.Evented {
     }
 
     loadRealtimeFlightData() {
-        const me = this,
-            urls = [],
-            url = configs.apiUrl.tokyochallenge,
-            key = me.secrets.tokyochallenge,
-            operators = OPERATORS_FOR_FLIGHTINFORMATION
-                .map(operator => `odpt.Operator:${operator}`)
-                .join(',');
+        const me = this;
 
-        ['Arrival', 'Departure'].forEach(type => {
-            urls.push(`${url}odpt:FlightInformation${type}?odpt:operator=${operators}&acl:consumerKey=${key}`);
-        });
-
-        Promise.all([
-            configs.atisUrl,
-            ...urls
-        ].map(helpers.loadJSON)).then(([atisData, arrivalData, departureData]) => {
+        loader.loadDynamicFlightData(me.secrets).then(({atisData, flightData}) => {
             const {landing, departure} = atisData,
                 pattern = [landing.join('/'), departure.join('/')].join(' '),
                 flightQueue = {};
@@ -1977,37 +1865,33 @@ export default class extends mapboxgl.Evented {
                 }
             }
 
-            arrivalData.concat(departureData).forEach(flightRef => {
-                const id = helpers.removePrefix(flightRef['owl:sameAs']);
+            flightData.forEach(flightRef => {
+                const {id} = flightRef;
                 let flight = me.flightLookup[id],
-                    status = helpers.removePrefix(flightRef['odpt:flightStatus']),
+                    status = flightRef.s,
                     {maxFlightSpeed: maxSpeed, flightAcceleration: acceleration} = configs;
 
                 if (!flight) {
                     if (status === 'Cancelled') {
                         return;
                     }
-                    const departureAirport = helpers.removePrefix(flightRef['odpt:departureAirport']),
-                        arrivalAirport = helpers.removePrefix(flightRef['odpt:arrivalAirport']),
-                        destinationAirport = helpers.removePrefix(flightRef['odpt:destinationAirport']),
-                        originAirport = helpers.removePrefix(flightRef['odpt:originAirport']),
-                        airport = me.airportLookup[destinationAirport || originAirport],
+                    const airport = me.airportLookup[flightRef.ds || flightRef.or],
                         direction = airport ? airport.direction : 'S',
-                        route = departureAirport === 'NRT' ? `NRT.${north ? '34L' : '16R'}.Dep` :
-                        arrivalAirport === 'NRT' ? `NRT.${north ? '34R' : '16L'}.Arr` :
-                        departureAirport === 'HND' ? `HND.${depRoutes[direction]}.Dep` :
-                        arrivalAirport === 'HND' ? `HND.${arrRoutes[direction]}.Arr` : undefined,
+                        route = flightRef.dp === 'NRT' ? `NRT.${north ? '34L' : '16R'}.Dep` :
+                        flightRef.ar === 'NRT' ? `NRT.${north ? '34R' : '16L'}.Arr` :
+                        flightRef.dp === 'HND' ? `HND.${depRoutes[direction]}.Dep` :
+                        flightRef.ar === 'HND' ? `HND.${arrRoutes[direction]}.Arr` : undefined,
                         feature = me.featureLookup[route];
 
                     if (feature) {
                         flight = me.flightLookup[id] = {
                             id,
-                            n: flightRef['odpt:flightNumber'],
-                            a: helpers.removePrefix(flightRef['odpt:airline']),
-                            dp: departureAirport,
-                            ar: arrivalAirport,
-                            ds: destinationAirport,
-                            or: originAirport,
+                            n: flightRef.n,
+                            a: flightRef.a,
+                            dp: flightRef.dp,
+                            ar: flightRef.ar,
+                            ds: flightRef.ds,
+                            or: flightRef.or,
                             runway: route.replace(/^([^.]+\.)[A-Z]*([^.]+).+/, '$1$2'),
                             feature
                         };
@@ -2016,12 +1900,12 @@ export default class extends mapboxgl.Evented {
                     }
                 }
                 Object.assign(flight, {
-                    edt: flightRef['odpt:estimatedDepartureTime'],
-                    adt: flightRef['odpt:actualDepartureTime'],
-                    sdt: flightRef['odpt:scheduledDepartureTime'],
-                    eat: flightRef['odpt:estimatedArrivalTime'],
-                    aat: flightRef['odpt:actualArrivalTime'],
-                    sat: flightRef['odpt:scheduledArrivalTime']
+                    edt: flightRef.edt,
+                    adt: flightRef.adt,
+                    sdt: flightRef.sdt,
+                    eat: flightRef.eat,
+                    aat: flightRef.aat,
+                    sat: flightRef.sat
                 });
 
                 const departureTime = flight.edt || flight.adt || flight.sdt,
@@ -2073,7 +1957,7 @@ export default class extends mapboxgl.Evented {
                 const queue = flightQueue[flight.runway] = flightQueue[flight.runway] || [];
                 queue.push(flight);
 
-                me.lastDynamicUpdate[helpers.removePrefix(flightRef['odpt:operator'])] = flightRef['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2');
+                me.lastDynamicUpdate[flightRef.o] = flightRef.date;
             });
 
             Object.keys(flightQueue).forEach(key => {
@@ -2721,38 +2605,6 @@ export default class extends mapboxgl.Evented {
 
 }
 
-function loadData(dataUrl, lang, clock) {
-    return Promise.all([
-        `${dataUrl}/dictionary-${lang}.json`,
-        `${dataUrl}/railways.json.gz`,
-        `${dataUrl}/stations.json.gz`,
-        `${dataUrl}/features.json.gz`,
-        `${dataUrl}/${getTimetableFileName(clock)}`,
-        `${dataUrl}/rail-directions.json.gz`,
-        `${dataUrl}/train-types.json.gz`,
-        `${dataUrl}/train-vehicles.json.gz`,
-        `${dataUrl}/operators.json.gz`,
-        `${dataUrl}/airports.json.gz`,
-        `${dataUrl}/flight-statuses.json.gz`,
-        `${dataUrl}/poi.json.gz`,
-        configs.secretsUrl
-    ].map(helpers.loadJSON)).then(data => ({
-        dict: data[0],
-        railwayData: data[1],
-        stationData: data[2],
-        featureCollection: data[3],
-        timetableData: data[4],
-        railDirectionData: data[5],
-        trainTypeData: data[6],
-        trainVehicleData: data[7],
-        operatorData: data[8],
-        airportData: data[9],
-        flightStatusData: data[10],
-        poiData: data[11],
-        secrets: data[12]
-    }));
-}
-
 function insertTags(container) {
     container.innerHTML = `
 <div id="map"></div>
@@ -2921,14 +2773,6 @@ function easeOutQuart(t) {
     return -((t = t - 1) * t * t * t - 1);
 }
 
-function adjustTrainID(id, type, destination) {
-    if (type === TRAINTYPE_JREAST_LIMITEDEXPRESS &&
-        destination[0].match(/NaritaAirportTerminal1|Takao|Ofuna|Omiya|Ikebukuro|Shinjuku/)) {
-        return id.replace(/JR-East\.(NaritaAirportBranch|Narita|Sobu)/, RAILWAY_SOBURAPID);
-    }
-    return id;
-}
-
 function truncateTrainTimetable(train, origin, destination) {
     const {tt, os, ds} = train;
     let changed = false;
@@ -3028,10 +2872,4 @@ function getObjectOpacity(object, isUndergroundVisible, t) {
     t = helpers.valueOrDefault(t, 1);
     return isUndergroundVisible === (object.userData.altitude < 0) ?
         .9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
-}
-
-function getTimetableFileName(clock) {
-    const calendar = clock.getCalendar() === 'Weekday' ? 'weekday' : 'holiday';
-
-    return `timetable-${calendar}.json.gz`;
 }

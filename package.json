@@ -5,9 +5,9 @@
   "main": "dist/mini-tokyo-3d.js",
   "style": "dist/mini-tokyo-3d.css",
   "dependencies": {
-    "@deck.gl/core": "^8.2.5",
-    "@deck.gl/layers": "^8.2.5",
-    "@deck.gl/mapbox": "^8.2.5",
+    "@deck.gl/core": "^8.2.6",
+    "@deck.gl/layers": "^8.2.6",
+    "@deck.gl/mapbox": "^8.2.6",
     "@fortawesome/fontawesome-free": "^5.14.0",
     "@turf/along": "^5.1.5",
     "@turf/bearing": "^5.1.5",
@@ -47,7 +47,7 @@
     "postcss-import": "^12.0.1",
     "postcss-inline-svg": "^4.1.0",
     "rollup": "^2.26.5",
-    "rollup-plugin-postcss": "^3.1.5",
+    "rollup-plugin-postcss": "^3.1.6",
     "rollup-plugin-terser": "^7.0.0"
   },
   "scripts": {
