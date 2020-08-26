@@ -115,7 +115,8 @@ export function loadDynamicTrainData(secrets) {
             .join(',');
 
     const urls = [
-        `${url}odpt:Train?odpt:operator=${operators}&acl:consumerKey=${key}`
+        `${url}odpt:Train?odpt:operator=${operators}&acl:consumerKey=${key}`,
+        configs.tidUrl
     ];
 
     Object.keys(OPERATORS_FOR_TRAININFORMATION).forEach(source => {
@@ -149,6 +150,11 @@ export function loadDynamicTrainData(secrets) {
                 carComposition: train['odpt:carComposition'],
                 date: train['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2')
             });
+        });
+
+        // Train data for others
+        data.shift().forEach(train => {
+            trainData.push(train);
         });
 
         // Train information data

@@ -95,6 +95,9 @@ const configs = {
 
     },
 
+    // TID URL
+    tidUrl: 'https://mini-tokyo.appspot.com/tid',
+
     // ATIS URL
     atisUrl: 'https://mini-tokyo.appspot.com/atisinfo',
 
