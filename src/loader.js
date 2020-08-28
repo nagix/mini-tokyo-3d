@@ -158,7 +158,7 @@ export function loadDynamicTrainData(secrets) {
         });
 
         // Train information data
-        data.forEach(trainInfo => {
+        [].concat(...data).forEach(trainInfo => {
             trainInfoData.push({
                 operator: helpers.removePrefix(trainInfo['odpt:operator']),
                 railway: helpers.removePrefix(trainInfo['odpt:railway']),

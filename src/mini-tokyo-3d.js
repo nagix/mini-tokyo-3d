@@ -1762,7 +1762,7 @@ export default class extends mapboxgl.Evented {
 
                 // Train information text is provided in Japanese only
                 if (railway && trainInfoRef.status && trainInfoRef.status.ja &&
-                    trainInfoRef.status.ja.match(/見合わせ|折返し運転|運休|遅延/)) {
+                    trainInfoRef.status.ja.match(/見合わせ|折返し運転|直通運転中止|運休|遅延/)) {
                     railway.status = trainInfoRef.status.ja;
                     railway.text = trainInfoRef.text.ja;
                     if (helpers.includes(OPERATORS_FOR_DYNAMIC_TRAIN_DATA, trainInfoRef.operator)) {
