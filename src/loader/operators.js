@@ -18,7 +18,15 @@ export default async function(options) {
     const lookup = helpers.buildLookup(data);
 
     extra.forEach(({id, title, color, tailcolor}) => {
-        const operator = lookup[id];
+        let operator = lookup[id];
+
+        if (!operator) {
+            operator = lookup[id] = {
+                id,
+                title: {}
+            };
+            data.push(operator);
+        }
 
         Object.assign(operator.title, title);
         operator.color = color;

@@ -900,7 +900,7 @@ export default class extends mapboxgl.Evented {
                         me.refreshStyleColors();
                         if (me.isPlayback) {
                             me.refreshTrains();
-                            // me.refreshFlights();
+                            me.refreshFlights();
                         } else {
                             me.loadRealtimeTrainData();
                             me.loadRealtimeFlightData();
@@ -1331,7 +1331,8 @@ export default class extends mapboxgl.Evented {
 
     refreshFlights() {
         const me = this,
-            now = me.clock.getTime();
+            {clock} = me,
+            now = clock.getTime();
 
         Object.keys(me.flightLookup).forEach(key => {
             const flight = me.flightLookup[key];
@@ -1347,7 +1348,8 @@ export default class extends mapboxgl.Evented {
                         complete: () => {
                             me.flightRepeat(flight);
                         },
-                        duration: flight.start - now
+                        duration: flight.start - now,
+                        clock
                     });
                 }
             }
@@ -1355,7 +1357,8 @@ export default class extends mapboxgl.Evented {
     }
 
     flightRepeat(flight, elapsed) {
-        const me = this;
+        const me = this,
+            {clock} = me;
 
         me.setFlightStandingStatus(flight, false);
         flight.animationID = startFlightAnimation(t => {
@@ -1366,9 +1369,10 @@ export default class extends mapboxgl.Evented {
                 complete: () => {
                     me.stopFlight(flight);
                 },
-                duration: Math.max(flight.end - me.clock.getTime(), 0)
+                duration: Math.max(flight.end - clock.getTime(), 0),
+                clock
             });
-        }, flight.feature.properties.length, flight.maxSpeed, flight.acceleration, elapsed);
+        }, flight.feature.properties.length, flight.maxSpeed, flight.acceleration, elapsed, clock);
     }
 
     startViewAnimation() {
@@ -1949,10 +1953,6 @@ export default class extends mapboxgl.Evented {
                 }
                 flight.maxSpeed = maxSpeed;
                 flight.acceleration = acceleration;
-
-                if (flight.base < me.lastFlightPatternChanged) {
-                    return;
-                }
 
                 const queue = flightQueue[flight.runway] = flightQueue[flight.runway] || [];
                 queue.push(flight);
@@ -2739,7 +2739,7 @@ function startTrainAnimation(callback, endCallback, distance, minDuration, maxDu
     });
 }
 
-function startFlightAnimation(callback, endCallback, distance, maxSpeed, acceleration, start) {
+function startFlightAnimation(callback, endCallback, distance, maxSpeed, acceleration, start, clock) {
     const accelerationTime = maxSpeed / Math.abs(acceleration),
         duration = accelerationTime / 2 + distance / maxSpeed;
 
@@ -2765,7 +2765,8 @@ function startFlightAnimation(callback, endCallback, distance, maxSpeed, acceler
         },
         complete: endCallback,
         duration,
-        start: start > 0 ? performance.now() - start : undefined
+        start: start > 0 ? clock.getHighResTime() - start : undefined,
+        clock
     });
 }
 
