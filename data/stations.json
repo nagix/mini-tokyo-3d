@@ -4858,15 +4858,37 @@
 	]
 }, {
 	"id": "TokyoMetro.Chiyoda.YoyogiUehara",
-	"coord": [139.67968, 35.66906]
+	"coord": [139.67968, 35.66906],
+	"exit": [
+		"TokyoMetro.YoyogiUehara.East",
+		"TokyoMetro.YoyogiUehara.West",
+		"TokyoMetro.YoyogiUehara.South1",
+		"TokyoMetro.YoyogiUehara.South2",
+		"TokyoMetro.YoyogiUehara.North1",
+		"TokyoMetro.YoyogiUehara.North2"
+	]
 }, {
 	"id": "TokyoMetro.Chiyoda.YoyogiKoen",
+	"exit": [
+		"TokyoMetro.YoyogiKoen.1",
+		"TokyoMetro.YoyogiKoen.2",
+		"TokyoMetro.YoyogiKoen.3",
+		"TokyoMetro.YoyogiKoen.4"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.MeijiJingumae",
 	"title": {
 		"ja-Wiki": "明治神宮前駅"
 	},
+	"exit": [
+		"TokyoMetro.MeijiJingumae.1",
+		"TokyoMetro.MeijiJingumae.2",
+		"TokyoMetro.MeijiJingumae.3",
+		"TokyoMetro.MeijiJingumae.4",
+		"TokyoMetro.MeijiJingumae.5",
+		"TokyoMetro.MeijiJingumae.6"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.OmoteSando",
@@ -4880,12 +4902,30 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.Nogizaka",
+	"exit": [
+		"TokyoMetro.Nogizaka.1",
+		"TokyoMetro.Nogizaka.2",
+		"TokyoMetro.Nogizaka.3",
+		"TokyoMetro.Nogizaka.5",
+		"TokyoMetro.Nogizaka.6"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.Akasaka",
 	"title": {
 		"ja-Wiki": "赤坂駅 (東京都)"
 	},
+	"exit": [
+		"TokyoMetro.Akasaka.1",
+		"TokyoMetro.Akasaka.2",
+		"TokyoMetro.Akasaka.3a",
+		"TokyoMetro.Akasaka.3b",
+		"TokyoMetro.Akasaka.4",
+		"TokyoMetro.Akasaka.5a",
+		"TokyoMetro.Akasaka.5b",
+		"TokyoMetro.Akasaka.6",
+		"TokyoMetro.Akasaka.7"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.KokkaiGijidomae",
@@ -4928,6 +4968,16 @@
 	"title": {
 		"ja-Wiki": "二重橋前駅"
 	},
+	"exit": [
+		"TokyoMetro.Nijubashimae.1",
+		"TokyoMetro.Nijubashimae.2",
+		"TokyoMetro.Nijubashimae.3",
+		"TokyoMetro.Nijubashimae.4",
+		"TokyoMetro.Nijubashimae.5a",
+		"TokyoMetro.Nijubashimae.5b",
+		"TokyoMetro.Nijubashimae.6",
+		"TokyoMetro.Nijubashimae.7"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.Otemachi",
@@ -4971,19 +5021,50 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.Yushima",
+	"exit": [
+		"TokyoMetro.Yushima.1",
+		"TokyoMetro.Yushima.2",
+		"TokyoMetro.Yushima.3",
+		"TokyoMetro.Yushima.4",
+		"TokyoMetro.Yushima.5",
+		"TokyoMetro.Yushima.6"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.Nezu",
+	"exit": [
+		"TokyoMetro.Nezu.1",
+		"TokyoMetro.Nezu.2",
+		"TokyoMetro.Nezu.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.Sendagi",
+	"exit": [
+		"TokyoMetro.Sendagi.1",
+		"TokyoMetro.Sendagi.2",
+		"TokyoMetro.Sendagi.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.NishiNippori",
+	"exit": [
+		"TokyoMetro.NishiNippori.1",
+		"TokyoMetro.NishiNippori.2",
+		"TokyoMetro.NishiNippori.3",
+		"TokyoMetro.NishiNippori.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.Machiya",
 	"thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/駅舎(千代田線).jpg/128px-駅舎(千代田線).jpg",
+	"exit": [
+		"TokyoMetro.Machiya.0",
+		"TokyoMetro.Machiya.1",
+		"TokyoMetro.Machiya.2",
+		"TokyoMetro.Machiya.3",
+		"TokyoMetro.Machiya.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.KitaSenju",
@@ -4997,7 +5078,17 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Chiyoda.Ayase",
-	"coord": [139.82481, 35.76212]
+	"coord": [139.82481, 35.76212],
+	"exit": [
+		"TokyoMetro.Ayase.East",
+		"TokyoMetro.Ayase.West"
+	]
+}, {
+	"id": "TokyoMetro.Chiyoda.KitaAyase",
+	"exit": [
+		"TokyoMetro.KitaAyase.Center",
+		"TokyoMetro.KitaAyase.South"
+	]
 }, {
 	"id": "TokyoMetro.Yurakucho.Wakoshi",
 	"coord": [139.61286, 35.78835]
@@ -5365,6 +5456,9 @@
 	"title": {
 		"ja-Wiki": "明治神宮前駅"
 	},
+	"exit": [
+		"TokyoMetro.MeijiJingumae.7"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Fukutoshin.Shibuya",
