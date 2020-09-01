@@ -177,6 +177,78 @@ export function scaleValues(obj, factor) {
 }
 
 /**
+ * Calculates a buffer for input trapezoid for a given distance
+ * @param {Array} trapezoid - Input trapezoid
+ * @param {number} distance - Input distance
+ * @returns {Array} Buffered trapezoid
+ */
+export function bufferTrapezoid(trapezoid, distance) {
+    const [[x0, y0], [x1, y1], [x2, y2], [x3, y3]] = trapezoid,
+        vx0 = x1 - x0,
+        vx1 = x2 - x1,
+        vx2 = x3 - x2,
+        vx3 = x0 - x3,
+        vy0 = y1 - y0,
+        vy1 = y2 - y1,
+        vy2 = y3 - y2,
+        vy3 = y0 - y3,
+        p0 = distance / Math.sqrt(vx0 * vx0 + vy0 * vy0),
+        p1 = distance / Math.sqrt(vx1 * vx1 + vy1 * vy1),
+        p2 = distance / Math.sqrt(vx2 * vx2 + vy2 * vy2),
+        p3 = distance / Math.sqrt(vx3 * vx3 + vy3 * vy3),
+        px0 = x0 - vy0 * p0,
+        px1 = x1 - vy1 * p1,
+        px2 = x2 - vy2 * p2,
+        px3 = x3 - vy3 * p3,
+        py0 = y0 + vx0 * p0,
+        py1 = y1 + vx1 * p1,
+        py2 = y2 + vx2 * p2,
+        py3 = y3 + vx3 * p3,
+        s0 = vx0 * vy1,
+        s1 = vx1 * vy2,
+        s2 = vx2 * vy3,
+        s3 = vx3 * vy0,
+        t0 = vy0 * vx1,
+        t1 = vy1 * vx2,
+        t2 = vy2 * vx3,
+        t3 = vy3 * vx0,
+        q0 = s0 - t0,
+        q1 = s1 - t1,
+        q2 = s2 - t2,
+        q3 = s3 - t3;
+
+    return [[
+        (vx0 * vx1 * (py0 - py1) + s0 * px1 - t0 * px0) / q0,
+        (s0 * py0 - t0 * py1 - vy0 * vy1 * (px0 - px1)) / q0
+    ], [
+        (vx1 * vx2 * (py1 - py2) + s1 * px2 - t1 * px1) / q1,
+        (s1 * py1 - t1 * py2 - vy1 * vy2 * (px1 - px2)) / q1
+    ], [
+        (vx2 * vx3 * (py2 - py3) + s2 * px3 - t2 * px2) / q2,
+        (s2 * py2 - t2 * py3 - vy2 * vy3 * (px2 - px3)) / q2
+    ], [
+        (vx3 * vx0 * (py3 - py0) + s3 * px0 - t3 * px3) / q3,
+        (s3 * py3 - t3 * py0 - vy3 * vy0 * (px3 - px0)) / q3
+    ]];
+}
+
+/**
+ * Determines if the point resides inside the trapezoid
+ * @param {Array} point - Input point
+ * @param {Array} trapezoid - Input trapezoid
+ * @returns {boolean} true if the point resides inside the trapezoid
+ */
+export function pointInTrapezoid(point, trapezoid) {
+    const [x, y] = point,
+        [[x0, y0], [x1, y1], [x2, y2], [x3, y3]] = trapezoid;
+
+    return (x1 - x0) * (y - y0) < (y1 - y0) * (x - x0) &&
+        (x2 - x1) * (y - y1) < (y2 - y1) * (x - x1) &&
+        (x3 - x2) * (y - y2) < (y3 - y2) * (x - x2) &&
+        (x0 - x3) * (y - y3) < (y0 - y3) * (x - x3);
+}
+
+/**
  * Returns the relative luminance of the color
  * @param {object} color - Color object that has {r, g, b}
  * @returns {number} Relative luminance between 0 and 255

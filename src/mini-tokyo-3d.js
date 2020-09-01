@@ -896,6 +896,8 @@ export default class extends mapboxgl.Evented {
                     }
                     me.lastFrameRefresh = Date.now();
 
+                    me.updateVisibleArea();
+
                     if (Math.floor((now - configs.minDelay) / configs.trainRefreshInterval) !== Math.floor(me.lastTrainRefresh / configs.trainRefreshInterval)) {
                         me.refreshStyleColors();
                         if (me.isPlayback) {
@@ -973,6 +975,23 @@ export default class extends mapboxgl.Evented {
         }
 
         map.jumpTo({center, bearing});
+    }
+
+    updateVisibleArea() {
+        const me = this,
+            {map} = me,
+            {width, height} = map.transform,
+            topLeft = mapboxgl.MercatorCoordinate.fromLngLat(map.unproject([0, 0])),
+            topRight = mapboxgl.MercatorCoordinate.fromLngLat(map.unproject([width, 0])),
+            bottomLeft = mapboxgl.MercatorCoordinate.fromLngLat(map.unproject([0, height])),
+            bottomRight = mapboxgl.MercatorCoordinate.fromLngLat(map.unproject([width, height]));
+
+        me.visibleArea = helpers.bufferTrapezoid([
+            [topLeft.x - modelOrigin.x, -(topLeft.y - modelOrigin.y)],
+            [topRight.x - modelOrigin.x, -(topRight.y - modelOrigin.y)],
+            [bottomRight.x - modelOrigin.x, -(bottomRight.y - modelOrigin.y)],
+            [bottomLeft.x - modelOrigin.x, -(bottomLeft.y - modelOrigin.y)]
+        ], Math.max(1.4e-5, 5e-5 * Math.sin(map.getPitch() * DEGREE_TO_RADIAN)));
     }
 
     updateTrainProps(train) {
@@ -1061,27 +1080,20 @@ export default class extends mapboxgl.Evented {
                 });
             }
 
-            if (animation.isActive(train.animationID)) {
-                const bounds = map.getBounds(),
-                    [lng, lat] = coord,
-                    {animationID} = train;
-
-                if (lng >= bounds.getWest() - .005 &&
-                    lng <= bounds.getEast() + .005 &&
-                    lat >= bounds.getSouth() - .005 &&
-                    lat <= bounds.getNorth() + .005) {
-                    animation.setFrameRate(animationID, me.frameRate);
-                } else {
-                    animation.setFrameRate(animationID, 1);
-                }
-            }
-
             position.x = mCoord.x - modelOrigin.x;
             position.y = -(mCoord.y - modelOrigin.y);
             position.z = mCoord.z + objectScale / 2;
             scale.x = scale.y = scale.z = objectScale;
             rotation.x = p.pitch * direction;
             rotation.z = -bearing * DEGREE_TO_RADIAN;
+
+            // Reduce the frame rate of invisible objects for performance optimization
+            if (animation.isActive(train.animationID)) {
+                const point = [position.x, position.y],
+                    frameRate = helpers.pointInTrapezoid(point, me.visibleArea) ? me.frameRate : 1;
+
+                animation.setFrameRate(train.animationID, frameRate);
+            }
 
             if (!car.parent) {
                 trainLayers.addObject(car, 1000);
@@ -1162,21 +1174,6 @@ export default class extends mapboxgl.Evented {
             });
         }
 
-        if (animation.isActive(flight.animationID)) {
-            const bounds = map.getBounds(),
-                [lng, lat] = coord,
-                {animationID} = flight;
-
-            if (lng >= bounds.getWest() - .005 &&
-                lng <= bounds.getEast() + .005 &&
-                lat >= bounds.getSouth() - .005 &&
-                lat <= bounds.getNorth() + .005) {
-                animation.setFrameRate(animationID, me.frameRate);
-            } else {
-                animation.setFrameRate(animationID, 1);
-            }
-        }
-
         position.x = mCoord.x - modelOrigin.x;
         position.y = -(mCoord.y - modelOrigin.y);
         position.z = mCoord.z + objectScale / 2;
@@ -1185,6 +1182,14 @@ export default class extends mapboxgl.Evented {
         rotation.z = -bearing * DEGREE_TO_RADIAN;
 
         body.scale.y = wing.scale.x = vTail.scale.y = aircraftScale;
+
+        // Reduce the frame rate of invisible objects for performance optimization
+        if (animation.isActive(flight.animationID)) {
+            const point = [position.x, position.y],
+                frameRate = helpers.pointInTrapezoid(point, me.visibleArea) ? me.frameRate : 1;
+
+            animation.setFrameRate(flight.animationID, frameRate);
+        }
 
         if (me.markedObject === aircraft) {
             me.updatePopup();

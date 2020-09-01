@@ -19,7 +19,7 @@ export default async function(options) {
 
     extra.forEach(({id, title, direction}) => {
         const airport = lookup[id];
-
+if (!airport) {console.log(id);}
         Object.assign(airport.title, title);
         airport.direction = direction;
     });
