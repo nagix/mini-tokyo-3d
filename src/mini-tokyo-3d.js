@@ -2,11 +2,7 @@ import {WebMercatorViewport} from '@deck.gl/core';
 import {MapboxLayer} from '@deck.gl/mapbox';
 import {GeoJsonLayer} from '@deck.gl/layers';
 import mapboxgl from 'mapbox-gl';
-import turfDistance from '@turf/distance';
-import turfBearing from '@turf/bearing';
-import centerOfMass from '@turf/center-of-mass';
 import {featureEach} from '@turf/meta';
-import {getCoord, getCoords} from '@turf/invariant';
 import * as THREE from 'three';
 import SunCalc from 'suncalc';
 import animation from './animation';
@@ -17,6 +13,7 @@ import configs from './configs';
 import DetailPanel from './detail-panel';
 import FireworksLayer from './fireworks-layer';
 import * as helpers from './helpers';
+import * as helpersGeojson from './helpers-geojson';
 import * as helpersThree from './helpers-three';
 import * as loader from './loader';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
@@ -24,8 +21,6 @@ import SharePanel from './share-panel';
 import StationPanel from './station-panel';
 import ThreeLayer from './three-layer';
 import WeatherLayer from './weather-layer';
-import destination from './turf/destination';
-import featureFilter from './turf/feature-filter';
 
 const OPERATORS_FOR_DYNAMIC_TRAIN_DATA = [
     'JR-East',
@@ -404,7 +399,7 @@ export default class extends mapboxgl.Evented {
 
             if (id && !id.match(/\.(ug|og)\./)) {
                 me.featureLookup[id] = feature;
-                updateDistances(feature);
+                helpersGeojson.updateDistances(feature);
             }
         });
 
@@ -485,7 +480,7 @@ export default class extends mapboxgl.Evented {
                 map.addLayer(new MapboxLayer({
                     id: `railways-ug-${zoom}`,
                     type: GeoJsonLayer,
-                    data: featureFilter(me.featureCollection, p =>
+                    data: helpersGeojson.featureFilter(me.featureCollection, p =>
                         p.zoom === zoom && p.type === 0 && p.altitude < 0
                     ),
                     filled: false,
@@ -502,7 +497,7 @@ export default class extends mapboxgl.Evented {
                 map.addLayer(new MapboxLayer({
                     id: `stations-ug-${zoom}`,
                     type: GeoJsonLayer,
-                    data: featureFilter(me.featureCollection, p =>
+                    data: helpersGeojson.featureFilter(me.featureCollection, p =>
                         p.zoom === zoom && p.type === 1 && p.altitude < 0
                     ),
                     filled: true,
@@ -534,13 +529,13 @@ export default class extends mapboxgl.Evented {
                         zoom === 18 ? ['interpolate', ['exponential', 2], ['zoom'], 19, width, 22, ['*', width, 8]] : width,
                     railwaySource = {
                         type: 'geojson',
-                        data: featureFilter(me.featureCollection, p =>
+                        data: helpersGeojson.featureFilter(me.featureCollection, p =>
                             p.zoom === zoom && p.type === 0 && p.altitude === 0
                         )
                     },
                     stationSource = {
                         type: 'geojson',
-                        data: featureFilter(me.featureCollection, p =>
+                        data: helpersGeojson.featureFilter(me.featureCollection, p =>
                             p.zoom === zoom && p.type === 1 && p.altitude === 0
                         )
                     };
@@ -586,7 +581,7 @@ export default class extends mapboxgl.Evented {
             map.addLayer(new MapboxLayer({
                 id: `airway-og-`,
                 type: GeoJsonLayer,
-                data: featureFilter(me.featureCollection, p =>
+                data: helpersGeojson.featureFilter(me.featureCollection, p =>
                     p.type === 0 && p.altitude > 0
                 ),
                 filled: false,
@@ -1047,7 +1042,7 @@ export default class extends mapboxgl.Evented {
             helpersThree.addDelayMarker(cars[0], helpers.isDarkBackground(map));
         }
 
-        const pArr = getCoordAndBearing(feature, offset + train._t * interval, 1, objectUnit);
+        const pArr = helpersGeojson.getCoordAndBearing(feature, offset + train._t * interval, 1, objectUnit);
         for (let i = 0, ilen = cars.length; i < ilen; i++) {
             const car = cars[i],
                 {position, scale, rotation, userData} = car,
@@ -1153,7 +1148,7 @@ export default class extends mapboxgl.Evented {
         }
 
         const {position, scale, rotation} = aircraft,
-            p = getCoordAndBearing(flight.feature, flight._t * flight.feature.properties.length, 1, 0)[0],
+            p = helpersGeojson.getCoordAndBearing(flight.feature, flight._t * flight.feature.properties.length, 1, 0)[0],
             coord = aircraft.userData.coord = p.coord,
             altitude = aircraft.userData.altitude = p.altitude,
             mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude),
@@ -2337,14 +2332,9 @@ export default class extends mapboxgl.Evented {
 
                 helpersThree.addOutline(object, 'outline-tracked');
             } else {
-                const altitude = getCoords(object)[0][0][2];
-                let ids = object.properties.ids;
-
-                if (typeof ids === 'string') {
-                    ids = JSON.parse(ids);
-                }
-
-                const stations = ids.map(id => me.stationLookup[id]),
+                const altitude = helpersGeojson.getAltitude(object),
+                    ids = helpersGeojson.getIds(object),
+                    stations = ids.map(id => me.stationLookup[id]),
                     exits = [].concat(...stations.map(station => station.exit || []));
 
                 if (exits.length > 0) {
@@ -2416,17 +2406,14 @@ export default class extends mapboxgl.Evented {
                 popup.setHTML(object.description);
             }
         } else {
-            const coord = getCoord(centerOfMass(me.markedObject)),
-                altitude = getCoords(me.markedObject)[0][0][2];
+            const coord = helpersGeojson.getCenterCoord(me.markedObject),
+                altitude = helpersGeojson.getAltitude(me.markedObject);
 
             popup.setLngLat(me.adjustCoord(coord, altitude));
             if (setHTML) {
-                let ids = me.markedObject.properties.ids;
-                const stations = {};
+                const ids = helpersGeojson.getIds(me.markedObject),
+                    stations = {};
 
-                if (typeof ids === 'string') {
-                    ids = JSON.parse(ids);
-                }
                 ids.forEach(id => {
                     const title = me.getLocalizedStationTitle(id),
                         railwayID = me.stationLookup[id].railway,
@@ -2509,15 +2496,12 @@ export default class extends mapboxgl.Evented {
     }
 
     addStationOutline(object, name) {
-        const me = this;
-        let ids = object.properties.ids;
+        const me = this,
+            ids = helpersGeojson.getIds(object);
 
-        if (typeof ids === 'string') {
-            ids = JSON.parse(ids);
-        }
         [13, 14, 15, 16, 17, 18].forEach(zoom => {
             helpers.setLayerProps(me.map, `${name}-${zoom}`, {
-                data: featureFilter(me.featureCollection, p => p.zoom === zoom && p.ids && p.ids[0] === ids[0]),
+                data: helpersGeojson.featureFilter(me.featureCollection, p => p.zoom === zoom && p.ids && p.ids[0] === ids[0]),
                 opacity: 1,
                 visible: true
             });
@@ -2624,81 +2608,6 @@ function showErrorMessage(container) {
     container.querySelector('#loader').style.display = 'none';
     container.querySelector('#loading-error').innerHTML = 'Loading failed. Please reload the page.';
     container.querySelector('#loading-error').style.display = 'block';
-}
-
-function updateDistances(line) {
-    const coords = getCoords(line),
-        distances = [];
-    let travelled = 0,
-        nextCoord = coords[0],
-        bearing, slope, pitch;
-
-    for (let i = 0, ilen = coords.length; i < ilen - 1; i++) {
-        const currCoord = nextCoord;
-
-        nextCoord = coords[i + 1];
-
-        const distance = turfDistance(currCoord, nextCoord);
-
-        bearing = turfBearing(currCoord, nextCoord);
-        slope = ((nextCoord[2] || 0) - (currCoord[2] || 0)) / distance;
-        pitch = Math.atan(slope / 1000);
-
-        distances.push([travelled, bearing, slope, pitch]);
-        travelled += distance;
-    }
-
-    distances.push([travelled, bearing, slope, pitch]);
-    line.properties.distances = distances;
-}
-
-/**
- * Returns coordinates, altitude, bearing and patch of the train from its distance
- * @param {object} line - lineString of the railway
- * @param {number} distance - Distance from the beginning of the lineString
- * @param {number} composition - Number of cars
- * @param {number} unit - Unit of car length
- * @returns {Array} Array of coord, altitude, bearing and pitch for cars
- */
-function getCoordAndBearing(line, distance, composition, unit) {
-    const coords = line.geometry.coordinates,
-        distances = line.properties.distances,
-        length = coords.length,
-        result = [];
-    let start = 0,
-        end = length - 1;
-
-    distance -= unit * (composition - 1) / 2;
-
-    while (start !== end - 1) {
-        const center = Math.floor((start + end) / 2);
-
-        if (distance < distances[center][0]) {
-            end = center;
-        } else {
-            start = center;
-        }
-    }
-
-    let index = start;
-
-    for (let i = 0; i < composition; distance += unit, i++) {
-        while (distance > distances[index + 1][0] && index < length - 2) {
-            index++;
-        }
-
-        const [baseDistance, bearing, slope, pitch] = distances[index],
-            coord = coords[index],
-            overshot = distance - baseDistance;
-
-        result.push({
-            coord: destination(coord, overshot, bearing),
-            altitude: (coord[2] || 0) + slope * overshot,
-            bearing,
-            pitch
-        });
-    }
-    return result;
 }
 
 function startTrainAnimation(callback, endCallback, distance, minDuration, maxDuration, start, clock) {

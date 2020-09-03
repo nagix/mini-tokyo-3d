@@ -36,7 +36,7 @@ const RAILWAYS_FOR_TRAINTIMETABLES = {
         'JR-East.Narita',
         'JR-East.NaritaAirportBranch',
         'JR-East.NaritaAbikoBranch'
-,    ], [
+    ], [
         'JR-East.Uchibo',
         'JR-East.Sotobo'
     ], [
