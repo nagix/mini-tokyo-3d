@@ -81,8 +81,14 @@ const configs = {
     // Default frame rate for train and aircraft animations
     defaultFrameRate: 60,
 
+    // Default view mode
+    defaultViewMode: 'ground',
+
     // Default tracking mode
     defaultTrackingMode: 'helicopter',
+
+    // Default clock mode
+    defaultClockMode: 'realtime',
 
     // API URL
     apiUrl: {

@@ -7,7 +7,7 @@ import {featureEach} from '@turf/meta';
 import destination from './turf/destination';
 
 /**
- * Filter GeoJSON object using a filter function
+ * Filter GeoJSON object using a filter function.
  * @param {object} geojson - GeoJSON object
  * @param {function} fn - Filter function that takes feature properties and returns
  *     a boolean value
@@ -25,7 +25,7 @@ export function featureFilter(geojson, fn) {
 }
 
 /**
- * Takes LineString and update distances property
+ * Takes LineString and update distances property.
  * @param {object} line - LineString of the railway/airway
  */
 export function updateDistances(line) {
@@ -55,7 +55,7 @@ export function updateDistances(line) {
 }
 
 /**
- * Returns coordinates, altitude, bearing and pitch of the object from its distance
+ * Returns coordinates, altitude, bearing and pitch of the object from its distance.
  * @param {object} line - LineString of the railway/airway
  * @param {number} distance - Distance from the beginning of the LineString
  * @param {number} composition - Number of cars
@@ -104,7 +104,7 @@ export function getCoordAndBearing(line, distance, composition, unit) {
 }
 
 /**
- * Takes GeoJSON object and returns IDs in the properties
+ * Takes GeoJSON object and returns IDs in the properties.
  * @param {object} geojson - GeoJSON object
  * @returns {Array} IDs
  */
@@ -115,7 +115,7 @@ export function getIds(geojson) {
 }
 
 /**
- * Takes GeoJSON object and returns the altitude of the first point
+ * Takes GeoJSON object and returns the altitude of the first point.
  * @param {object} geojson - GeoJSON object
  * @returns {number} Altitude of the first point
  */
@@ -124,7 +124,7 @@ export function getAltitude(geojson) {
 }
 
 /**
- * Takes GeoJSON object and returns the coordinates of its center of mass
+ * Takes GeoJSON object and returns the coordinates of its center of mass.
  * @param {object} geojson - GeoJSON object
  * @returns {Array} Coordinates of the center of mass
  */

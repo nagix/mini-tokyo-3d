@@ -177,7 +177,7 @@ export function scaleValues(obj, factor) {
 }
 
 /**
- * Calculates a buffer for input trapezoid for a given distance
+ * Calculates a buffer for input trapezoid for a given distance.
  * @param {Array} trapezoid - Input trapezoid
  * @param {number} distance - Input distance
  * @returns {Array} Buffered trapezoid
@@ -233,7 +233,7 @@ export function bufferTrapezoid(trapezoid, distance) {
 }
 
 /**
- * Determines if the point resides inside the trapezoid
+ * Determines if the point resides inside the trapezoid.
  * @param {Array} point - Input point
  * @param {Array} trapezoid - Input trapezoid
  * @returns {boolean} true if the point resides inside the trapezoid
@@ -249,7 +249,7 @@ export function pointInTrapezoid(point, trapezoid) {
 }
 
 /**
- * Returns the relative luminance of the color
+ * Returns the relative luminance of the color.
  * @param {object} color - Color object that has {r, g, b}
  * @returns {number} Relative luminance between 0 and 255
  */
@@ -258,7 +258,7 @@ export function luminance(color) {
 }
 
 /**
- * Convert a hex color code to RGB array
+ * Convert a hex color code to RGB array.
  * @param {object} color - Hex color code
  * @returns {Array} RGB array
  */
@@ -269,7 +269,7 @@ export function colorToRGBArray(color) {
 }
 
 /**
- * Show notification message
+ * Show notification message.
  * @param {Node} container - Node in which the notification panel is shown
  * @param {string} message - Notification message
  */

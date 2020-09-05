@@ -89,9 +89,10 @@ export default class extends mapboxgl.Evented {
         me.infoControl = helpers.valueOrDefault(options.infoControl, true);
         me.clock = new Clock();
 
-        me.isUndergroundVisible = false;
+        me.viewMode = configs.defaultViewMode;
         me.trackingMode = helpers.valueOrDefault(options.trackingMode, configs.defaultTrackingMode);
-        me.isPlayback = false;
+        me.initialSelection = options.selection;
+        me.clockMode = configs.defaultClockMode;
         me.isEditingTime = false;
         me.isWeatherVisible = false;
 
@@ -297,6 +298,140 @@ export default class extends mapboxgl.Evented {
         return me;
     }
 
+    /**
+     * Returns the current view mode.
+     * @returns {string} Current view mode: 'ground' or 'underground'
+     */
+    getViewMode() {
+        return this.viewMode;
+    }
+
+    /**
+     * Sets the view mode.
+     * @param {string} mode - View mode: 'ground' or 'underground'
+     * @returns {MiniTokyo3D} this
+     */
+    setViewMode(mode) {
+        const me = this;
+
+        if (me.loaded) {
+            me._setViewMode(mode);
+        }
+        return me;
+    }
+
+    /**
+     * Returns the current tracking mode.
+     * @returns {string} Current tracking mode: 'helicopter' or 'travel'
+     */
+    getTrackingMode() {
+        return this.trackingMode;
+    }
+
+    /**
+     * Sets the tracking mode.
+     * @param {string} mode - Tracking mode: 'helicopter' or 'travel'
+     * @returns {MiniTokyo3D} this
+     */
+    setTrackingMode(mode) {
+        const me = this;
+
+        me._setTrackingMode(mode);
+        return me;
+    }
+
+    /**
+     * Returns ID or the selected object.
+     * @returns {string} ID for the selected object
+     */
+    getSelection() {
+        const me = this;
+
+        if (helpersThree.isObject3D(me.trackedObject)) {
+            const object = me.trackedObject.userData.object;
+
+            return object.t || object.id;
+        }
+    }
+
+    /**
+     * Selects a train or flight.
+     * @param {string} id - ID for the object to select
+     * @returns {MiniTokyo3D} this
+     */
+    setSelection(id) {
+        const me = this,
+            selection = helpers.removePrefix(id);
+
+        if (!selection.match(/NRT|HND/)) {
+            if (me.trainLoaded) {
+                const train = me.trainLookup[selection];
+                let activeTrain;
+
+                if (train) {
+                    for (const id of getConnectingTrainIds(train)) {
+                        if ((activeTrain = me.activeTrainLookup[id])) {
+                            break;
+                        }
+                    }
+                }
+                if (activeTrain) {
+                    if (activeTrain.cars[0]) {
+                        me.trackObject(activeTrain.cars[0]);
+                    } else {
+                        me.selection = activeTrain.t;
+                    }
+                } else {
+                    helpers.showNotification(me.container, me.dict['train-terminated']);
+                }
+                delete me.initialSelection;
+            } else {
+                me.initialSelection = selection;
+            }
+        } else {
+            if (me.flightLoaded) {
+                const activeFlight = me.activeFlightLookup[selection];
+
+                if (activeFlight) {
+                    if (activeFlight.aircraft) {
+                        me.trackObject(activeFlight.aircraft);
+                    } else {
+                        me.selection = activeFlight.id;
+                    }
+                } else {
+                    helpers.showNotification(me.container, me.dict['flight-terminated']);
+                }
+                delete me.initialSelection;
+            } else {
+                me.initialSelection = selection;
+            }
+        }
+
+        return me;
+    }
+
+    /**
+     * Returns the current clock mode.
+     * @returns {string} Current clock mode: 'realtime' or 'playback'
+     */
+    getClockMode() {
+        return this.clockMode;
+    }
+
+    /**
+     * Sets the clock mode.
+     * @param {string} mode - Clock mode: 'realtime' or 'playback'
+     * @returns {MiniTokyo3D} this
+     */
+    setClockMode(mode) {
+        const me = this;
+
+        if (me.loaded) {
+            me._setClockMode(mode);
+        }
+        return me;
+    }
+
     initialize() {
         const me = this;
 
@@ -332,7 +467,7 @@ export default class extends mapboxgl.Evented {
                 if (duration > 0) {
                     animation.start({
                         callback: elapsed => {
-                            helpersThree.setOpacity(object, getObjectOpacity(object, me.isUndergroundVisible), elapsed / duration);
+                            helpersThree.setOpacity(object, getObjectOpacity(object, me.viewMode), elapsed / duration);
                         },
                         duration
                     });
@@ -345,7 +480,7 @@ export default class extends mapboxgl.Evented {
                 if (duration > 0) {
                     animation.start({
                         callback: elapsed => {
-                            helpersThree.setOpacity(object, getObjectOpacity(object, me.isUndergroundVisible, elapsed / duration));
+                            helpersThree.setOpacity(object, getObjectOpacity(object, me.viewMode, elapsed / duration));
                         },
                         duration
                     });
@@ -363,7 +498,7 @@ export default class extends mapboxgl.Evented {
                 if (duration > 0) {
                     animation.start({
                         callback: elapsed => {
-                            helpersThree.setOpacity(object, getObjectOpacity(object, me.isUndergroundVisible), 1 - elapsed / duration);
+                            helpersThree.setOpacity(object, getObjectOpacity(object, me.viewMode), 1 - elapsed / duration);
                         },
                         complete: () => {
                             layer.scene.remove(object);
@@ -375,7 +510,7 @@ export default class extends mapboxgl.Evented {
                 }
             },
             pickObject(point) {
-                if (me.isUndergroundVisible) {
+                if (me.viewMode === 'underground') {
                     return this.ug.pickObject(point) || this.og.pickObject(point);
                 } else {
                     return this.og.pickObject(point) || this.ug.pickObject(point);
@@ -406,18 +541,6 @@ export default class extends mapboxgl.Evented {
         me.lastTimetableRefresh = me.clock.getTime('03:00');
         me.updateTimetableData(me.timetableData);
         me.trainLookup = helpers.buildLookup(me.timetableData, 't');
-
-        if (me.options.selection) {
-            const id = helpers.removePrefix(me.options.selection);
-
-            if (!id.match(/NRT|HND/)) {
-                const train = me.trainLookup[id];
-
-                me.selection = train ? getConnectingTrainIds(train) : [id];
-            } else {
-                me.selection = id;
-            }
-        }
 
         me.railDirectionLookup = helpers.buildLookup(me.railDirectionData);
         me.trainTypeLookup = helpers.buildLookup(me.trainTypeData);
@@ -631,12 +754,11 @@ export default class extends mapboxgl.Evented {
                 if (station && station.coord) {
                     me.markObject();
                     me.trackObject();
-                    if (me.isUndergroundVisible) {
-                        me.setUndergroundMode(station.altitude < 0);
-                    }
-                    if (!me.isUndergroundVisible) {
+                    if (me.viewMode === 'underground' && !(station.altitude < 0)) {
+                        me._setViewMode('ground');
+                    } else if (me.viewMode === 'ground' && station.altitude < 0) {
                         map.once('moveend', () => {
-                            me.setUndergroundMode(station.altitude < 0);
+                            me._setViewMode('underground');
                         });
                     }
                     map.flyTo({
@@ -723,20 +845,20 @@ export default class extends mapboxgl.Evented {
                     className: 'mapboxgl-ctrl-underground',
                     title: me.dict['enter-underground'],
                     eventHandler() {
-                        me.setUndergroundMode(!me.isUndergroundVisible);
+                        me._setViewMode(me.viewMode === 'ground' ? 'underground' : 'ground');
                     }
                 }, {
-                    className: `mapboxgl-ctrl-track mapboxgl-ctrl-track-${me.trackingMode}`,
+                    className: `mapboxgl-ctrl-track mapboxgl-ctrl-track-${me.trackingMode === 'helicopter' ? 'helicopter' : 'train'}`,
                     title: me.dict['track'],
                     eventHandler(event) {
-                        me.setTrackingMode(me.trackingMode === 'helicopter' ? 'train' : 'helicopter');
+                        me._setTrackingMode(me.trackingMode === 'helicopter' ? 'travel' : 'helicopter');
                         event.stopPropagation();
                     }
                 }, {
                     className: 'mapboxgl-ctrl-playback',
                     title: me.dict['enter-playback'],
                     eventHandler() {
-                        me.setPlaybackMode(!me.isPlayback);
+                        me._setClockMode(me.clockMode === 'realtime' ? 'playback' : 'realtime');
                     }
                 }, {
                     className: 'mapboxgl-ctrl-weather',
@@ -895,12 +1017,12 @@ export default class extends mapboxgl.Evented {
 
                     if (Math.floor((now - configs.minDelay) / configs.trainRefreshInterval) !== Math.floor(me.lastTrainRefresh / configs.trainRefreshInterval)) {
                         me.refreshStyleColors();
-                        if (me.isPlayback) {
-                            me.refreshTrains();
-                            me.refreshFlights();
-                        } else {
+                        if (me.clockMode === 'realtime') {
                             me.loadRealtimeTrainData();
                             me.loadRealtimeFlightData();
+                        } else {
+                            me.refreshTrains();
+                            me.refreshFlights();
                         }
                         me.lastTrainRefresh = now - configs.minDelay;
                     }
@@ -932,7 +1054,7 @@ export default class extends mapboxgl.Evented {
                     if (helpersThree.isObject3D(me.markedObject)) {
                         me.updatePopup({setHTML: true});
                     }
-                    if (!me.isPlayback && me.isWeatherVisible) {
+                    if (me.clockMode === 'realtime' && me.isWeatherVisible) {
                         if (now - (me.lastWeatherRefresh || 0) >= configs.weatherRefreshInterval) {
                             me.loadWeatherData();
                             me.lastWeatherRefresh = now;
@@ -941,6 +1063,8 @@ export default class extends mapboxgl.Evented {
                     }
                 }
             });
+
+            me.loaded = true;
         });
 
     }
@@ -1004,7 +1128,7 @@ export default class extends mapboxgl.Evented {
             {map, trainLayers, objectUnit, objectScale} = me,
             {railwayFeature: feature, offset, interval, direction, cars, delay} = train,
             length = cars.length;
-        let marked, tracked, altitudeChanged;
+        let marked, tracked, viewMode;
 
         if (t !== undefined) {
             train._t = t;
@@ -1032,7 +1156,7 @@ export default class extends mapboxgl.Evented {
             if (helpersThree.isObject3D(me.trackedObject) && me.trackedObject.userData.object === train) {
                 tracked = cars[0];
             }
-            if (helpers.includes(me.selection, train.t)) {
+            if (me.selection === train.t) {
                 tracked = cars[0];
                 delete me.selection;
             }
@@ -1052,7 +1176,11 @@ export default class extends mapboxgl.Evented {
                 mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude),
                 bearing = userData.bearing = p.bearing + (direction < 0 ? 180 : 0);
 
-            altitudeChanged = (userData.altitude < 0 && altitude >= 0) || (userData.altitude >= 0 && altitude < 0);
+            if (userData.altitude < 0 && altitude >= 0) {
+                viewMode = 'ground';
+            } else if (userData.altitude >= 0 && altitude < 0) {
+                viewMode = 'underground';
+            }
             userData.altitude = altitude;
 
             if (isNaN(coord[0]) || isNaN(coord[1])) {
@@ -1093,10 +1221,10 @@ export default class extends mapboxgl.Evented {
             if (!car.parent) {
                 trainLayers.addObject(car, 1000);
             }
-            if (altitudeChanged) {
+            if (viewMode) {
                 trainLayers.updateObject(car, 1000);
                 if (me.trackedObject === car) {
-                    me.setUndergroundMode(!me.isUndergroundVisible);
+                    me._setViewMode(viewMode);
                 }
             }
 
@@ -1204,6 +1332,11 @@ export default class extends mapboxgl.Evented {
                 me.trainStart(train);
             }
         });
+
+        me.trainLoaded = true;
+        if (me.initialSelection) {
+            me.setSelection(me.initialSelection);
+        }
     }
 
     trainStart(train, index) {
@@ -1354,6 +1487,11 @@ export default class extends mapboxgl.Evented {
                 }
             }
         });
+
+        me.flightLoaded = true;
+        if (me.initialSelection) {
+            me.setSelection(me.initialSelection);
+        }
     }
 
     flightRepeat(flight, elapsed) {
@@ -1785,14 +1923,6 @@ export default class extends mapboxgl.Evented {
             if (me.aboutPopup.isOpen()) {
                 me.aboutPopup.updateContent(me.dict, me.lastDynamicUpdate);
             }
-
-            // Check if the selection are trains and any of them is active
-            if (me.selection && Array.isArray(me.selection)) {
-                if (me.selection.map(id => !!me.activeTrainLookup[id]).indexOf(true) === -1) {
-                    helpers.showNotification(me.container, me.dict['train-terminated']);
-                    delete me.selection;
-                }
-            }
         }).catch(error => {
             me.refreshTrains();
             console.log(error);
@@ -1979,14 +2109,6 @@ export default class extends mapboxgl.Evented {
             });
 
             me.refreshFlights();
-
-            // Check if the selection is a flight and active
-            if (me.selection && !Array.isArray(me.selection)) {
-                if (!me.activeFlightLookup[me.selection]) {
-                    helpers.showNotification(me.container, me.dict['flight-terminated']);
-                    delete me.selection;
-                }
-            }
         }).catch(error => {
             me.refreshFlights();
             console.log(error);
@@ -2001,14 +2123,14 @@ export default class extends mapboxgl.Evented {
         });
     }
 
-    updateUndergroundButton(enabled) {
+    updateUndergroundButton(mode) {
         const {container, dict} = this,
             button = container.querySelector('.mapboxgl-ctrl-underground');
 
         if (button) {
             const {classList} = button;
 
-            if (enabled) {
+            if (mode === 'underground') {
                 button.title = dict['exit-underground'];
                 classList.add('mapboxgl-ctrl-underground-visible');
             } else {
@@ -2027,7 +2149,7 @@ export default class extends mapboxgl.Evented {
             if (mode === 'helicopter') {
                 classList.remove('mapboxgl-ctrl-track-train');
                 classList.add('mapboxgl-ctrl-track-helicopter');
-            } else if (mode === 'train') {
+            } else if (mode === 'travel') {
                 classList.remove('mapboxgl-ctrl-track-helicopter');
                 classList.add('mapboxgl-ctrl-track-train');
             } else if (mode) {
@@ -2038,14 +2160,14 @@ export default class extends mapboxgl.Evented {
         }
     }
 
-    updatePlaybackButton(enabled) {
+    updatePlaybackButton(mode) {
         const {container, dict} = this,
             button = container.querySelector('.mapboxgl-ctrl-playback');
 
         if (button) {
             const {classList} = button;
 
-            if (enabled) {
+            if (mode === 'playback') {
                 button.title = dict['exit-playback'];
                 classList.add('mapboxgl-ctrl-playback-active');
             } else {
@@ -2072,35 +2194,35 @@ export default class extends mapboxgl.Evented {
         }
     }
 
-    setUndergroundMode(enabled) {
+    _setViewMode(mode) {
         const me = this,
             {map, trainLayers, clock, styleColors, styleOpacities} = me;
 
-        if (me.isUndergroundVisible === enabled) {
+        if (me.viewMode === mode) {
             return;
         }
 
-        me.updateUndergroundButton(enabled);
-        trainLayers.ug.setSemitransparent(!enabled);
-        trainLayers.og.setSemitransparent(enabled);
+        me.updateUndergroundButton(mode);
+        trainLayers.ug.setSemitransparent(mode === 'ground');
+        trainLayers.og.setSemitransparent(mode === 'underground');
         map.setPaintProperty('background', 'background-color',
-            enabled ? 'rgb(16,16,16)' : getStyleColorString(styleColors[0], clock));
+            mode === 'underground' ? 'rgb(16,16,16)' : getStyleColorString(styleColors[0], clock));
         map.setPaintProperty('building-underground', 'fill-color',
-            enabled ? 'hsla(268,67%,67%,.5)' : getStyleColorString({r: 167, g: 114, b: 227, a: .25}, clock));
+            mode === 'underground' ? 'hsla(268,67%,67%,.5)' : getStyleColorString({r: 167, g: 114, b: 227, a: .25}, clock));
         styleOpacities.forEach(({id, key, opacity}) => {
             const factor = helpers.includes(id, '-og-') ? .25 : .0625;
 
-            map.setPaintProperty(id, key, enabled && id !== 'building-underground' ?
+            map.setPaintProperty(id, key, mode === 'underground' && id !== 'building-underground' ?
                 helpers.scaleValues(opacity, factor) : opacity);
         });
-        me.isUndergroundVisible = enabled;
+        me.viewMode = mode;
 
         animation.start({
             callback: (elapsed, duration) => {
                 const t = elapsed / duration;
 
                 [13, 14, 15, 16, 17, 18].forEach(zoom => {
-                    const opacity = me.isUndergroundVisible ?
+                    const opacity = me.viewMode === 'underground' ?
                         1 * t + .0625 * (1 - t) : 1 * (1 - t) + .0625 * t;
 
                     helpers.setLayerProps(map, `railways-ug-${zoom}`, {opacity});
@@ -2108,20 +2230,22 @@ export default class extends mapboxgl.Evented {
                 });
                 Object.keys(me.activeTrainLookup).forEach(key => {
                     me.activeTrainLookup[key].cars.forEach(car => {
-                        helpersThree.setOpacity(car, getObjectOpacity(car, me.isUndergroundVisible, t));
+                        helpersThree.setOpacity(car, getObjectOpacity(car, me.viewMode, t));
                     });
                 });
                 me.refreshDelayMarkers();
                 Object.keys(me.activeFlightLookup).forEach(key => {
                     const aircraft = me.activeFlightLookup[key].aircraft;
-                    helpersThree.setOpacity(aircraft, getObjectOpacity(aircraft, me.isUndergroundVisible, t));
+                    if (aircraft) {
+                        helpersThree.setOpacity(aircraft, getObjectOpacity(aircraft, me.viewMode, t));
+                    }
                 });
             },
             duration: 300
         });
     }
 
-    setTrackingMode(mode) {
+    _setTrackingMode(mode) {
         const me = this;
 
         if (me.trackingMode === mode) {
@@ -2135,21 +2259,21 @@ export default class extends mapboxgl.Evented {
         }
     }
 
-    setPlaybackMode(enabled) {
+    _setClockMode(mode) {
         const me = this;
 
-        if (me.isPlayback === enabled) {
+        if (me.clockMode === mode) {
             return;
         }
 
-        me.updatePlaybackButton(enabled);
-        me.isPlayback = enabled;
+        me.updatePlaybackButton(mode);
+        me.clockMode = mode;
         me.clock.reset();
         me.onClockChange();
         if (me.clockControl) {
-            me.clockCtrl.setMode(enabled ? 'playback' : 'realtime');
+            me.clockCtrl.setMode(mode);
         }
-        if (enabled) {
+        if (mode === 'playback') {
             me.resetRailwayStatus();
         }
     }
@@ -2192,9 +2316,9 @@ export default class extends mapboxgl.Evented {
             const {id, key, stops, _case} = item;
             let prop;
 
-            if (id === 'background' && me.isUndergroundVisible) {
+            if (id === 'background' && me.viewMode === 'underground') {
                 prop = 'rgb(16,16,16)';
-            } else if (id === 'building-underground' && me.isUndergroundVisible) {
+            } else if (id === 'building-underground' && me.viewMode === 'underground') {
                 prop = 'hsla(268,67%,67%,.5)';
             } else {
                 const color = getStyleColorString(item, clock);
@@ -2230,7 +2354,7 @@ export default class extends mapboxgl.Evented {
     pickObject(point) {
         const me = this,
             deck = me.map.__deck,
-            layers = me.isUndergroundVisible ? ['ug', 'og'] : ['og', 'ug'];
+            layers = me.viewMode === 'underground' ? ['ug', 'og'] : ['og', 'ug'];
         let object;
 
         for (const layer of layers) {
@@ -2319,9 +2443,9 @@ export default class extends mapboxgl.Evented {
 
                 me.startViewAnimation();
                 me.updateTrackingButton(true);
-                me.setUndergroundMode(altitude < 0);
+                me._setViewMode(altitude < 0 ? 'underground' : 'ground');
 
-                if (!me.isPlayback && navigator.share) {
+                if (me.clockMode === 'realtime' && navigator.share) {
                     me.sharePanel = new SharePanel({object: train});
                     me.sharePanel.addTo(me);
                 }
@@ -2372,7 +2496,7 @@ export default class extends mapboxgl.Evented {
                         return popup;
                     });
 
-                    me.setUndergroundMode(altitude < 0);
+                    me._setViewMode(altitude < 0 ? 'underground' : 'ground');
                     me.map.fitBounds([[minLng, minLat], [maxLng, maxLat]], {
                         bearing: me.map.getBearing(),
                         offset: [0, -me.map.transform.height / 12],
@@ -2783,8 +2907,8 @@ function getStyleColorString(color, clock) {
     return `rgba(${[color.r * r, color.g * g, color.b * b, color.a].join(',')})`;
 }
 
-function getObjectOpacity(object, isUndergroundVisible, t) {
+function getObjectOpacity(object, viewMode, t) {
     t = helpers.valueOrDefault(t, 1);
-    return isUndergroundVisible === (object.userData.altitude < 0) ?
+    return (viewMode === 'underground') === (object.userData.altitude < 0) ?
         .9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
 }

@@ -75,7 +75,7 @@ const animation = {
     },
 
     /**
-     * Stops an animation
+     * Stops an animation.
      * @param {number} id - Animation ID to stop
      */
     stop(id) {
@@ -87,7 +87,7 @@ const animation = {
     },
 
     /**
-     * Set the frame rate to an animation
+     * Set the frame rate to an animation.
      * @param {number} id - Animation ID to set
      * @param {number} frameRate - Frames per second of the animation. If not specified,
      *     the default value (60 fps) will be applied.

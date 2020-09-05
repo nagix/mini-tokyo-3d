@@ -52,7 +52,7 @@ function adjustTrainID(id, type, destination) {
 }
 
 /**
- * Load all the static data
+ * Load all the static data.
  * @param {string} dataUrl - Data URL
  * @param {string} lang - IETF language tag for dictionary
  * @param {Clock} clock - Clock object representing the current time
@@ -91,7 +91,7 @@ export function loadStaticData(dataUrl, lang, clock) {
 }
 
 /**
- * Load the timetable data
+ * Load the timetable data.
  * @param {string} dataUrl - Data URL
  * @param {Clock} clock - Clock object representing the current time
  * @returns {object} Loaded timetable data
@@ -101,7 +101,7 @@ export function loadTimetableData(dataUrl, clock) {
 }
 
 /**
- * Load the dynamic data for trains
+ * Load the dynamic data for trains.
  * @param {object} secrets - Secrets object
  * @returns {object} Loaded data
  */
@@ -172,7 +172,7 @@ export function loadDynamicTrainData(secrets) {
 }
 
 /**
- * Load the dynamic data for flights
+ * Load the dynamic data for flights.
  * @param {object} secrets - Secrets object
  * @returns {object} Loaded data
  */
