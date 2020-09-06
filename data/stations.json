@@ -5477,6 +5477,16 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hanzomon.Hanzomon",
+	"exit": [
+		"TokyoMetro.Hanzomon.1",
+		"TokyoMetro.Hanzomon.2",
+		"TokyoMetro.Hanzomon.3a",
+		"TokyoMetro.Hanzomon.3b",
+		"TokyoMetro.Hanzomon.4",
+		"TokyoMetro.Hanzomon.5",
+		"TokyoMetro.Hanzomon.6",
+		"TokyoMetro.Hanzomon.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hanzomon.Kudanshita",
@@ -5492,6 +5502,10 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hanzomon.Jimbocho",
+	"exit": [
+		"TokyoMetro.Jimbocho.A1",
+		"TokyoMetro.Jimbocho.A2"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hanzomon.Otemachi",
@@ -5516,24 +5530,55 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hanzomon.Suitengumae",
+	"exit": [
+		"TokyoMetro.Suitengumae.1a",
+		"TokyoMetro.Suitengumae.1b",
+		"TokyoMetro.Suitengumae.2",
+		"TokyoMetro.Suitengumae.3",
+		"TokyoMetro.Suitengumae.4",
+		"TokyoMetro.Suitengumae.5",
+		"TokyoMetro.Suitengumae.6",
+		"TokyoMetro.Suitengumae.7",
+		"TokyoMetro.Suitengumae.8"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hanzomon.KiyosumiShirakawa",
+	"exit": [
+		"TokyoMetro.KiyosumiShirakawa.B1",
+		"TokyoMetro.KiyosumiShirakawa.B2"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hanzomon.Sumiyoshi",
 	"title": {
 		"ja-Wiki": "住吉駅 (東京都)"
 	},
+	"exit": [
+		"TokyoMetro.Sumiyoshi.B1",
+		"TokyoMetro.Sumiyoshi.B2"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hanzomon.Kinshicho",
+	"exit": [
+		"TokyoMetro.Kinshicho.1",
+		"TokyoMetro.Kinshicho.2",
+		"TokyoMetro.Kinshicho.3",
+		"TokyoMetro.Kinshicho.4",
+		"TokyoMetro.Kinshicho.5"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hanzomon.Oshiage",
 	"title": {
 		"ja-Wiki": "押上駅"
 	},
+	"exit": [
+		"TokyoMetro.Oshiage.B1",
+		"TokyoMetro.Oshiage.B2",
+		"TokyoMetro.Oshiage.B3"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Namboku.Meguro",
@@ -5907,6 +5952,11 @@
 		"zh-Hant": "押上"
 
 	},
+	"exit": [
+		"Toei.Oshiage.A1",
+		"Toei.Oshiage.A2",
+		"Toei.Oshiage.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.Meguro",
@@ -6007,6 +6057,15 @@
 		"zh-Hans": "神保町",
 		"zh-Hant": "神保町"
 	},
+	"exit": [
+		"Toei.Jimbocho.A3",
+		"Toei.Jimbocho.A4",
+		"Toei.Jimbocho.A5",
+		"Toei.Jimbocho.A6",
+		"Toei.Jimbocho.A7",
+		"Toei.Jimbocho.A8",
+		"Toei.Jimbocho.A9"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.Suidobashi",
@@ -6299,6 +6358,12 @@
 		"zh-Hant": "住吉",
 		"ja-Wiki": "住吉駅 (東京都)"
 	},
+	"exit": [
+		"Toei.Sumiyoshi.A1",
+		"Toei.Sumiyoshi.A2",
+		"Toei.Sumiyoshi.A3",
+		"Toei.Sumiyoshi.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.NishiOjima",
@@ -6501,6 +6566,11 @@
 		"zh-Hans": "清澄白河",
 		"zh-Hant": "清澄白河"
 	},
+	"exit": [
+		"Toei.KiyosumiShirakawa.A1",
+		"Toei.KiyosumiShirakawa.A2",
+		"Toei.KiyosumiShirakawa.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.MonzenNakacho",
