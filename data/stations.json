@@ -4959,7 +4959,8 @@
 		"TokyoMetro.MeijiJingumae.3",
 		"TokyoMetro.MeijiJingumae.4",
 		"TokyoMetro.MeijiJingumae.5",
-		"TokyoMetro.MeijiJingumae.6"
+		"TokyoMetro.MeijiJingumae.6",
+		"TokyoMetro.MeijiJingumae.EV"
 	],
 	"altitude": -1
 }, {
@@ -5705,12 +5706,28 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Fukutoshin.Zoshigaya",
+	"exit": [
+		"TokyoMetro.Zoshigaya.1",
+		"TokyoMetro.Zoshigaya.2",
+		"TokyoMetro.Zoshigaya.3"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Fukutoshin.NishiWaseda",
+	"exit": [
+		"TokyoMetro.NishiWaseda.1",
+		"TokyoMetro.NishiWaseda.2",
+		"TokyoMetro.NishiWaseda.3",
+		"TokyoMetro.NishiWaseda.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Fukutoshin.HigashiShinjuku",
+	"exit": [
+		"TokyoMetro.HigashiShinjuku.B1",
+		"TokyoMetro.HigashiShinjuku.B2",
+		"TokyoMetro.HigashiShinjuku.B3"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Fukutoshin.ShinjukuSanchome",
@@ -5729,6 +5746,11 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Fukutoshin.KitaSando",
+	"exit": [
+		"TokyoMetro.KitaSando.1",
+		"TokyoMetro.KitaSando.2",
+		"TokyoMetro.KitaSando.3"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Fukutoshin.MeijiJingumae",
@@ -6458,6 +6480,11 @@
 		"zh-Hans": "东新宿",
 		"zh-Hant": "東新宿"
 	},
+	"exit": [
+		"Toei.HigashiShinjuku.A1",
+		"Toei.HigashiShinjuku.A2",
+		"Toei.HigashiShinjuku.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.WakamatsuKawada",
