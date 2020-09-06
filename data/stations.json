@@ -5163,30 +5163,80 @@
 	]
 }, {
 	"id": "TokyoMetro.Yurakucho.Wakoshi",
-	"coord": [139.61286, 35.78835]
+	"coord": [139.61286, 35.78835],
+	"exit": [
+		"TokyoMetro.Wakoshi.South",
+		"TokyoMetro.Wakoshi.North"
+	]
 }, {
 	"id": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
+	"exit": [
+		"TokyoMetro.ChikatetsuNarimasu.1",
+		"TokyoMetro.ChikatetsuNarimasu.2",
+		"TokyoMetro.ChikatetsuNarimasu.3",
+		"TokyoMetro.ChikatetsuNarimasu.4",
+		"TokyoMetro.ChikatetsuNarimasu.5",
+		"TokyoMetro.ChikatetsuNarimasu.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
+	"exit": [
+		"TokyoMetro.ChikatetsuAkatsuka.1",
+		"TokyoMetro.ChikatetsuAkatsuka.2",
+		"TokyoMetro.ChikatetsuAkatsuka.3",
+		"TokyoMetro.ChikatetsuAkatsuka.4"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Heiwadai",
 	"title": {
 		"ja-Wiki": "平和台駅 (東京都)"
 	},
+	"exit": [
+		"TokyoMetro.Heiwadai.1",
+		"TokyoMetro.Heiwadai.2",
+		"TokyoMetro.Heiwadai.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Hikawadai",
+	"exit": [
+		"TokyoMetro.Hikawadai.1",
+		"TokyoMetro.Hikawadai.2",
+		"TokyoMetro.Hikawadai.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.KotakeMukaihara",
+	"exit": [
+		"TokyoMetro.KotakeMukaihara.1",
+		"TokyoMetro.KotakeMukaihara.2",
+		"TokyoMetro.KotakeMukaihara.3",
+		"TokyoMetro.KotakeMukaihara.4"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Senkawa",
+	"exit": [
+		"TokyoMetro.Senkawa.1",
+		"TokyoMetro.Senkawa.2",
+		"TokyoMetro.Senkawa.3",
+		"TokyoMetro.Senkawa.4",
+		"TokyoMetro.Senkawa.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Kanamecho",
+	"exit": [
+		"TokyoMetro.Kanamecho.1",
+		"TokyoMetro.Kanamecho.2",
+		"TokyoMetro.Kanamecho.3",
+		"TokyoMetro.Kanamecho.4",
+		"TokyoMetro.Kanamecho.5",
+		"TokyoMetro.Kanamecho.6",
+		"TokyoMetro.Kanamecho.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Ikebukuro",
@@ -5204,12 +5254,40 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+	"exit": [
+		"TokyoMetro.HigashiIkebukuro.1",
+		"TokyoMetro.HigashiIkebukuro.2",
+		"TokyoMetro.HigashiIkebukuro.3",
+		"TokyoMetro.HigashiIkebukuro.4",
+		"TokyoMetro.HigashiIkebukuro.5",
+		"TokyoMetro.HigashiIkebukuro.6",
+		"TokyoMetro.HigashiIkebukuro.7",
+		"TokyoMetro.HigashiIkebukuro.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Gokokuji",
+	"exit": [
+		"TokyoMetro.Gokokuji.1",
+		"TokyoMetro.Gokokuji.2",
+		"TokyoMetro.Gokokuji.3",
+		"TokyoMetro.Gokokuji.4",
+		"TokyoMetro.Gokokuji.5",
+		"TokyoMetro.Gokokuji.6",
+		"TokyoMetro.Gokokuji.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Edogawabashi",
+	"coord": [139.7335743, 35.7095373],
+	"exit": [
+		"TokyoMetro.Edogawabashi.1a",
+		"TokyoMetro.Edogawabashi.1b",
+		"TokyoMetro.Edogawabashi.2",
+		"TokyoMetro.Edogawabashi.3",
+		"TokyoMetro.Edogawabashi.4",
+		"TokyoMetro.Edogawabashi.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Iidabashi",
@@ -5226,12 +5304,28 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Ichigaya",
+	"exit": [
+		"TokyoMetro.Ichigaya.1",
+		"TokyoMetro.Ichigaya.2",
+		"TokyoMetro.Ichigaya.3",
+		"TokyoMetro.Ichigaya.4"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Kojimachi",
 	"title": {
 		"ja-Wiki": "麹町駅"
 	},
+	"exit": [
+		"TokyoMetro.Kojimachi.1",
+		"TokyoMetro.Kojimachi.2",
+		"TokyoMetro.Kojimachi.3",
+		"TokyoMetro.Kojimachi.4",
+		"TokyoMetro.Kojimachi.5",
+		"TokyoMetro.Kojimachi.6",
+		"TokyoMetro.Kojimachi.EV1",
+		"TokyoMetro.Kojimachi.EV2"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Nagatacho",
@@ -5246,6 +5340,13 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Sakuradamon",
+	"exit": [
+		"TokyoMetro.Sakuradamon.1",
+		"TokyoMetro.Sakuradamon.2",
+		"TokyoMetro.Sakuradamon.3",
+		"TokyoMetro.Sakuradamon.4",
+		"TokyoMetro.Sakuradamon.5"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Yurakucho",
@@ -5263,19 +5364,74 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.GinzaItchome",
+	"exit": [
+		"TokyoMetro.GinzaItchome.1",
+		"TokyoMetro.GinzaItchome.2",
+		"TokyoMetro.GinzaItchome.3",
+		"TokyoMetro.GinzaItchome.4",
+		"TokyoMetro.GinzaItchome.5",
+		"TokyoMetro.GinzaItchome.6",
+		"TokyoMetro.GinzaItchome.7",
+		"TokyoMetro.GinzaItchome.8",
+		"TokyoMetro.GinzaItchome.9",
+		"TokyoMetro.GinzaItchome.10",
+		"TokyoMetro.GinzaItchome.11"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Shintomicho",
+	"exit": [
+		"TokyoMetro.Shintomicho.1",
+		"TokyoMetro.Shintomicho.2",
+		"TokyoMetro.Shintomicho.3",
+		"TokyoMetro.Shintomicho.4",
+		"TokyoMetro.Shintomicho.5",
+		"TokyoMetro.Shintomicho.6",
+		"TokyoMetro.Shintomicho.7",
+		"TokyoMetro.Shintomicho.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Tsukishima",
+	"exit": [
+		"TokyoMetro.Tsukishima.1",
+		"TokyoMetro.Tsukishima.2",
+		"TokyoMetro.Tsukishima.3",
+		"TokyoMetro.Tsukishima.4",
+		"TokyoMetro.Tsukishima.5",
+		"TokyoMetro.Tsukishima.6",
+		"TokyoMetro.Tsukishima.7",
+		"TokyoMetro.Tsukishima.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Toyosu",
+	"exit": [
+		"TokyoMetro.Toyosu.1a",
+		"TokyoMetro.Toyosu.1b",
+		"TokyoMetro.Toyosu.1c",
+		"TokyoMetro.Toyosu.2a",
+		"TokyoMetro.Toyosu.2b",
+		"TokyoMetro.Toyosu.3",
+		"TokyoMetro.Toyosu.4",
+		"TokyoMetro.Toyosu.5",
+		"TokyoMetro.Toyosu.6a",
+		"TokyoMetro.Toyosu.6b",
+		"TokyoMetro.Toyosu.7"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Yurakucho.Tatsumi",
+	"exit": [
+		"TokyoMetro.Tatsumi.1",
+		"TokyoMetro.Tatsumi.2"
+	],
 	"altitude": -1
+}, {
+	"id": "TokyoMetro.Yurakucho.ShinKiba",
+	"exit": [
+		"TokyoMetro.ShinKiba.1"
+	]
 }, {
 	"id": "TokyoMetro.Hanzomon.Shibuya",
 	"exit": [
@@ -5418,6 +5574,12 @@
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Namboku.Ichigaya",
+	"exit": [
+		"TokyoMetro.Ichigaya.5",
+		"TokyoMetro.Ichigaya.6",
+		"TokyoMetro.Ichigaya.7",
+		"TokyoMetro.Ichigaya.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Namboku.Iidabashi",
@@ -6038,6 +6200,12 @@
 		"zh-Hant": "市谷",
 		"ja-Wiki": "市ケ谷駅"
 	},
+	"exit": [
+		"Toei.Ichigaya.A1",
+		"Toei.Ichigaya.A2",
+		"Toei.Ichigaya.A3",
+		"Toei.Ichigaya.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.Kudanshita",
@@ -6353,6 +6521,12 @@
 		"zh-Hans": "月岛",
 		"zh-Hant": "月島"
 	},
+	"exit": [
+		"Toei.Tsukishima.8a",
+		"Toei.Tsukishima.8b",
+		"Toei.Tsukishima.9",
+		"Toei.Tsukishima.10"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Kachidoki",
