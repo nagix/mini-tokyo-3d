@@ -216,6 +216,9 @@ export default async function(options) {
                 if (nt) {
                     timetableRef.nt = nt;
                 }
+                if (tt) {
+                    timetableRef.tt = tt;
+                }
                 timetableRef.nm = nm;
                 timetableRef.v = v;
             }
@@ -338,55 +341,40 @@ export default async function(options) {
 
         // Modify Musashino branch timeseries
         data.filter(timetable =>
-            timetable.r === RAILWAY_MUSASHINO &&
-            ((timetable.pt && timetable.pt[0].startsWith(RAILWAY_CHUORAPID)) ||
-            (timetable.nt && timetable.nt[0].startsWith(RAILWAY_CHUORAPID)))
+            timetable.r === RAILWAY_CHUORAPID &&
+            ((timetable.pt && timetable.pt[0].startsWith(RAILWAY_MUSASHINO)) ||
+            (timetable.nt && timetable.nt[0].startsWith(RAILWAY_MUSASHINO)))
         ).forEach(timetable => {
-            const {t, id, tt, nt, pt} = timetable,
-                newTimetable = Object.assign({}, timetable);
+            const {tt, os, ds, nt, pt} = timetable;
 
-            newTimetable.t = t.replace(RAILWAY_MUSASHINO, RAILWAY_MUSASHINOKUNITACHIBRANCH);
-            newTimetable.id = id.replace(RAILWAY_MUSASHINO, RAILWAY_MUSASHINOKUNITACHIBRANCH);
-            newTimetable.r = RAILWAY_MUSASHINOKUNITACHIBRANCH;
+            [os, ds].forEach(stations => {
+                stations.forEach((station, i) => {
+                    stations[i] = station.replace(RAILWAY_CHUORAPID, RAILWAY_MUSASHINOKUNITACHIBRANCH);
+                });
+            });
+            tt.forEach(obj => {
+                obj.s = obj.s.replace(RAILWAY_CHUORAPID, RAILWAY_MUSASHINOKUNITACHIBRANCH);
+            });
+            timetable.r = RAILWAY_MUSASHINOKUNITACHIBRANCH;
+            if (pt && pt[0].startsWith(RAILWAY_MUSASHINO)) {
+                const ptt = lookup[pt[0]].tt,
+                    station = ptt[ptt.length - 1];
 
-            if (pt && pt[0].startsWith(RAILWAY_CHUORAPID)) {
-                const prevTable = lookup[pt[0]],
-                    ptt = prevTable.tt,
-                    station1 = ptt[ptt.length - 1],
-                    station2 = tt[0];
+                tt.unshift({
+                    d: station.d,
+                    s: station.s.replace(RAILWAY_MUSASHINO, RAILWAY_MUSASHINOKUNITACHIBRANCH)
+                });
+                delete station.d;
+            } else if (nt && nt[0].startsWith(RAILWAY_MUSASHINO)) {
+                const ntt = lookup[nt[0]].tt,
+                    station = ntt[0];
 
-                pt[0] = prevTable.nt[0] = newTimetable.id;
-                newTimetable.pt = [prevTable.id];
-                newTimetable.nt = [id];
-                newTimetable.tt = [{
-                    d: station1.d,
-                    s: station1.s.replace(RAILWAY_CHUORAPID, RAILWAY_MUSASHINOKUNITACHIBRANCH)
-                }, {
-                    a: station2.a,
-                    s: station2.s.replace(RAILWAY_MUSASHINO, RAILWAY_MUSASHINOKUNITACHIBRANCH)
-                }];
-                delete station1.d;
-                delete station2.a;
-            } else if (nt && nt[0].startsWith(RAILWAY_CHUORAPID)) {
-                const nextTable = lookup[nt[0]],
-                    ntt = nextTable.tt,
-                    station1 = tt[tt.length - 1],
-                    station2 = ntt[0];
-
-                nt[0] = nextTable.pt[0] = newTimetable.id;
-                newTimetable.pt = [id];
-                newTimetable.nt = [nextTable.id];
-                newTimetable.tt = [{
-                    d: station1.d,
-                    s: station1.s.replace(RAILWAY_MUSASHINO, RAILWAY_MUSASHINOKUNITACHIBRANCH)
-                }, {
-                    a: station2.a,
-                    s: station2.s.replace(RAILWAY_CHUORAPID, RAILWAY_MUSASHINOKUNITACHIBRANCH)
-                }];
-                delete station1.d;
-                delete station2.a;
+                tt.push({
+                    a: station.a,
+                    s: station.s.replace(RAILWAY_MUSASHINO, RAILWAY_MUSASHINOKUNITACHIBRANCH)
+                });
+                delete station.a;
             }
-            data.push(newTimetable);
         });
         data.filter(timetable =>
             timetable.r === RAILWAY_SHONANSHINJUKU &&
