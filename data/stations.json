@@ -4755,6 +4755,17 @@
 		"TokyoMetro.KitaSenju.East"
 	]
 }, {
+	"id": "TokyoMetro.Hibiya.ShinKoshigaya",
+	"railway": "TokyoMetro.Hibiya",
+	"coord": [139.78981, 35.87556],
+	"title": {
+		"ja": "新越谷",
+		"en": "Shin-koshigaya",
+		"ko": "신코시가야",
+		"zh-Hans": "新越谷",
+		"zh-Hant": "新越谷"
+	}
+}, {
 	"id": "TokyoMetro.Tozai.Nakano",
 	"coord": [139.66594, 35.70573],
 	"title": {
@@ -4973,6 +4984,39 @@
 		"TokyoMetro.NishiFunabashi.South",
 		"TokyoMetro.NishiFunabashi.North"
 	]
+}, {
+	"id": "TokyoMetro.Chiyoda.Machida",
+	"railway": "TokyoMetro.Chiyoda",
+	"coord": [139.44517, 35.54394],
+	"title": {
+		"ja": "町田",
+		"en": "Machida",
+		"ko": "마치다",
+		"zh-Hans": "町田",
+		"zh-Hant": "町田"
+	}
+}, {
+	"id": "TokyoMetro.Chiyoda.ShinYurigaoka",
+	"railway": "TokyoMetro.Chiyoda",
+	"coord": [139.50772, 35.60384],
+	"title": {
+		"ja": "新百合ヶ丘",
+		"en": "Shin-Yurigaoka",
+		"ko": "신유리가오카",
+		"zh-Hans": "新百合丘",
+		"zh-Hant": "新百合丘"
+	}
+}, {
+	"id": "TokyoMetro.Chiyoda.SeijogakuenMae",
+	"railway": "TokyoMetro.Chiyoda",
+	"coord": [139.59916, 35.64015],
+	"title": {
+		"ja": "成城学園前",
+		"en": "Seijogakuen-Mae",
+		"ko": "세이조가쿠엔마에",
+		"zh-Hans": "成城学园前",
+		"zh-Hant": "成城學園前"
+	}
 }, {
 	"id": "TokyoMetro.Chiyoda.YoyogiUehara",
 	"coord": [139.67968, 35.66906],
@@ -8698,29 +8742,6 @@
 }, {
 	"id": "Tobu.TobuSkytreeBranch.Hikifune",
 	"coord": [139.81667, 35.71851]
-}, {
-	"id": "Tobu.THLiner.Ueno",
-	"railway": "Tobu.THLiner",
-	"coord": [139.777061, 35.711558],
-	"title": {
-		"ja": "上野",
-		"en": "Ueno",
-		"ko": "우에노",
-		"zh-Hans": "上野",
-		"zh-Hant": "上野"
-	},
-	"altitude": -1
-}, {
-	"id": "Tobu.THLiner.ShinKoshigaya",
-	"railway": "Tobu.THLiner",
-	"coord": [139.78981, 35.87556],
-	"title": {
-		"ja": "新越谷",
-		"en": "Shin-koshigaya",
-		"ko": "신코시가야",
-		"zh-Hans": "新越谷",
-		"zh-Hant": "新越谷"
-	}
 }, {
 	"id": "Tobu.Isesaki.TobuDobutsuKoen",
 	"coord": [139.72689, 36.0247]

@@ -121,8 +121,7 @@
 	"JR-East.KeihinTohokuNegishi.Ueno",
 	"JR-East.Yamanote.Ueno"
 ], [
-	"TokyoMetro.Hibiya.Ueno",
-	"Tobu.THLiner.Ueno"
+	"TokyoMetro.Hibiya.Ueno"
 ], [
 	"TokyoMetro.Ginza.Ueno"
 ], [
@@ -708,7 +707,7 @@
 	"JR-East.Musashino.MinamiKoshigaya"
 ], [
 	"Tobu.TobuSkytree.ShinKoshigaya",
-	"Tobu.THLiner.ShinKoshigaya"
+	"TokyoMetro.Hibiya.ShinKoshigaya"
 ]], [[
 	"JR-East.Musashino.MinamiNagareyama"
 ], [
@@ -733,7 +732,8 @@
 ]], [[
 	"JR-East.Yokohama.Machida"
 ], [
-	"Odakyu.Odawara.Machida"
+	"Odakyu.Odawara.Machida",
+	"TokyoMetro.Chiyoda.Machida"
 ]], [[
 	"JR-East.Yokohama.Nagatsuta"
 ], [
@@ -1158,7 +1158,11 @@
 ], [
 	"Tokyu.Setagaya.Yamashita"
 ]], [[
+	"Odakyu.Odawara.SeijogakuenMae",
+	"TokyoMetro.Chiyoda.SeijogakuenMae"
+]], [[
 	"Odakyu.Odawara.ShinYurigaoka",
+	"TokyoMetro.Chiyoda.ShinYurigaoka",
 	"Odakyu.Tama.ShinYurigaoka"
 ]], [[
 	"Odakyu.Odawara.SagamiOno",

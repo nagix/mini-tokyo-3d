@@ -289,7 +289,7 @@ export function featureWorker() {
                 getLocationAlongLine(railwayFeature, stationLookup[station].coord)
         );
 
-        featureArray.push(railwayFeature);
+        featureArray.unshift(railwayFeature);
 
         if (mixed) {
             const ugCoords = [[]],
@@ -319,7 +319,7 @@ export function featureWorker() {
             if (ogCoords[ogCoords.length - 1].length === 0) {
                 ogCoords.pop();
             }
-            featureArray.push(multiLineString(ugCoords, {
+            featureArray.unshift(multiLineString(ugCoords, {
                 id: `${id}.ug.${zoom}`,
                 type: 0,
                 color,
@@ -327,7 +327,7 @@ export function featureWorker() {
                 zoom,
                 altitude: -unit * 1000
             }));
-            featureArray.push(multiLineString(ogCoords, {
+            featureArray.unshift(multiLineString(ogCoords, {
                 id: `${id}.og.${zoom}`,
                 type: 0,
                 color,

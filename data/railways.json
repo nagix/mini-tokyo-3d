@@ -506,6 +506,13 @@
 	"carComposition": 6
 }, {
 	"id": "TokyoMetro.Hibiya",
+	"stations": {
+		"index": 22,
+		"delete": 0,
+		"insert": [
+			"TokyoMetro.Hibiya.ShinKoshigaya"
+		]
+	},
 	"altitude": -1,
 	"color": "#B5B5AC",
 	"carComposition": 7
@@ -516,6 +523,15 @@
 	"carComposition": 10
 }, {
 	"id": "TokyoMetro.Chiyoda",
+	"stations": {
+		"index": 0,
+		"delete": 0,
+		"insert": [
+			"TokyoMetro.Chiyoda.Machida",
+			"TokyoMetro.Chiyoda.ShinYurigaoka",
+			"TokyoMetro.Chiyoda.SeijogakuenMae"
+		]
+	},
 	"altitude": -1,
 	"color": "#00BB85",
 	"carComposition": 10
@@ -820,26 +836,6 @@
 		"zh-Hans": "东武晴空塔线",
 		"zh-Hant": "東武晴空塔線"
 	},
-	"color": "#0F6CC3",
-	"carComposition": 10
-}, {
-	"id": "Tobu.THLiner",
-	"title": {
-		"ja": "東武スカイツリーライン",
-		"en": "TOBU SKYTREE Line",
-		"ko": "도부 스카이트리 라인",
-		"zh-Hans": "东武晴空塔线",
-		"zh-Hant": "東武晴空塔線"
-	},
-	"stations": {
-		"index": 0,
-		"delete": 0,
-		"insert": [
-			"Tobu.THLiner.Ueno",
-			"Tobu.THLiner.ShinKoshigaya"
-		]
-	},
-	"ascending": "Outbound",
 	"color": "#0F6CC3",
 	"carComposition": 10
 }, {
