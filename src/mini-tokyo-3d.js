@@ -322,7 +322,7 @@ export default class extends mapboxgl.Evented {
 
     /**
      * Returns the current tracking mode.
-     * @returns {string} Current tracking mode: 'helicopter' or 'travel'
+     * @returns {string} Current tracking mode: 'helicopter' or 'heading'
      */
     getTrackingMode() {
         return this.trackingMode;
@@ -330,7 +330,7 @@ export default class extends mapboxgl.Evented {
 
     /**
      * Sets the tracking mode.
-     * @param {string} mode - Tracking mode: 'helicopter' or 'travel'
+     * @param {string} mode - Tracking mode: 'helicopter' or 'heading'
      * @returns {MiniTokyo3D} this
      */
     setTrackingMode(mode) {
@@ -851,7 +851,7 @@ export default class extends mapboxgl.Evented {
                     className: `mapboxgl-ctrl-track mapboxgl-ctrl-track-${me.trackingMode === 'helicopter' ? 'helicopter' : 'train'}`,
                     title: me.dict['track'],
                     eventHandler(event) {
-                        me._setTrackingMode(me.trackingMode === 'helicopter' ? 'travel' : 'helicopter');
+                        me._setTrackingMode(me.trackingMode === 'helicopter' ? 'heading' : 'helicopter');
                         event.stopPropagation();
                     }
                 }, {
@@ -2149,7 +2149,7 @@ export default class extends mapboxgl.Evented {
             if (mode === 'helicopter') {
                 classList.remove('mapboxgl-ctrl-track-train');
                 classList.add('mapboxgl-ctrl-track-helicopter');
-            } else if (mode === 'travel') {
+            } else if (mode === 'heading') {
                 classList.remove('mapboxgl-ctrl-track-helicopter');
                 classList.add('mapboxgl-ctrl-track-train');
             } else if (mode) {

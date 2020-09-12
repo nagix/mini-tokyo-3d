@@ -97,7 +97,7 @@ Using Mini Tokyo 3D API in JavaScript, you can customize Mini Tokyo 3D in a vari
 
 Class/Object | Details
 :--|:--
-[`MiniTokyo3D`](#minitokyo3d) | **Parameters**<br>[`options`](#options-object)<br>**Instance Members**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getPitch`](#getpitch) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setPitch`](#setpitchpitch) [`setZoom`](#setzoomzoom)<br>**Events**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
+[`MiniTokyo3D`](#minitokyo3d) | **Parameters**<br>[`options`](#options-object)<br>**Instance Members**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getClockMode`](#getclockmode) [`getPitch`](#getpitch) [`getSelection`](#getselection) [`getTrackingMode`](#gettrackingmode) [`getViewMode`](#getviewmode) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setClockMode`](#setclockmode) [`setPitch`](#setpitchpitch) [`setSelection`](#setselection) [`setTrackingMode`](#settrackingmode) [`setViewMode`](#setviewmode) [`setZoom`](#setzoomzoom)<br>**Events**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
 [`Secrets`](#secrets) |
 
 ### MiniTokyo3D
@@ -124,7 +124,7 @@ Name | Description
 **`options.fullscreenControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the fullscreen button will be added to the map
 **`options.modeControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the mode switch buttons will be added to the map
 **`options.infoControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the app info button will be added to the map
-**`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'helicopter'` | The initial tracking mode. `'helicopter'` and `'train'` are supported.
+**`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'helicopter'` | The initial tracking mode. `'helicopter'` and `'heading'` are supported.
 **`options.center`**<br>[`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike)<br>default: `[139.7670, 35.6814]` | The initial geographical center point of the map. If not specified, it will default to around Tokyo station (`[139.7670, 35.6814]`). Note: Mini Tokyo 3D uses longitude, latitude coordinate order to match GeoJSON.
 **`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `14` | The initial zoom level of the map. If not specified, it will default to `14`.
 **`options.bearing`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `0` | The initial bearing (rotation) of the map, measured in degrees counter-clockwise from north. If not specified, it will default to the true north (`0`).
@@ -138,7 +138,7 @@ Name | Description
 
 Changes any combination of center, zoom, bearing, pitch, and padding with an animated transition between old and new values. The map will retain its current values for any details not specified in `options`.
 
-Note: The transition will happen instantly if the user has enabled the reduced motion accesibility feature enabled in their operating system, unless `options` includes `essential: true`.
+Note: The transition will happen instantly if the user has enabled the reduced motion accessibility feature enabled in their operating system, unless `options` includes `essential: true`.
 
 ###### Parameters
 
@@ -154,7 +154,7 @@ Note: The transition will happen instantly if the user has enabled the reduced m
 
 Changes any combination of center, zoom, bearing, and pitch, animating the transition along a curve that evokes flight. The animation seamlessly incorporates zooming and panning to help the user maintain her bearings even after traversing a great distance.
 
-Note: The animation will be skipped, and this will behave equivalently to `jumpTo` if the user has the `reduced motion` accesibility feature enabled in their operating system, unless `options` includes `essential: true`.
+Note: The animation will be skipped, and this will behave equivalently to `jumpTo` if the user has the `reduced motion` accessibility feature enabled in their operating system, unless `options` includes `essential: true`.
 
 ###### Parameters
 
@@ -194,6 +194,16 @@ Returns the map's geographical centerpoint.
 
 ---
 
+##### **`getClockMode()`**
+
+Returns the current clock mode.
+
+###### Returns
+
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): A string representing the current clock mode. Either `'realtime'` or `'playback'`.
+
+---
+
 ##### **`getPitch()`**
 
 Returns the map's current pitch (tilt).
@@ -201,6 +211,36 @@ Returns the map's current pitch (tilt).
 ###### Returns
 
 [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): The map's current pitch, measured in degrees away from the plane of the screen.
+
+---
+
+##### **`getSelection()`**
+
+Returns the ID of the train or flight being tracked.
+
+###### Returns
+
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): The ID of the train or flight being tracked. The train ID is a string in the form of `'<operator ID>.<line ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`.
+
+---
+
+##### **`getTrackingMode()`**
+
+Returns the current tracking mode.
+
+###### Returns
+
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): A string representing the current tracking mode. Either `'helicopter'` or `'heading'`.
+
+---
+
+##### **`getViewMode()`**
+
+Returns the current view mode.
+
+###### Returns
+
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): A string representing the current view mode. Either `'ground'` or `'underground'`.
 
 ---
 
@@ -306,6 +346,20 @@ Sets the map's geographical centerpoint. Equivalent to `jumpTo({center: center})
 
 ---
 
+##### **`setClockMode(mode)`**
+
+Sets the clock mode. In the real-time clock mode (`'realtime'`), trains and airplanes are displayed on the map according to the actual operation at the current time. In the playback clock mode (`'playback'`), you can specify the time and the speed of time passing.
+
+###### Parameters
+
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) A string representing the clock mode. Either `'realtime'` or `'playback'`.
+
+###### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
 ##### **`setPitch(pitch)`**
 
 Sets the map's pitch (tilt). Equivalent to `jumpTo({pitch: pitch})`.
@@ -313,6 +367,48 @@ Sets the map's pitch (tilt). Equivalent to `jumpTo({pitch: pitch})`.
 ###### Parameters
 
 **`pitch`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) The pitch to set, measured in degrees away from the plane of the screen (0-60).
+
+###### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+##### **`setSelection(id)`**
+
+Sets the ID of the train or flight you want to track. The train ID is a string in the form of `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. The fright ID is a string in the form of `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` or `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. The `'odpt.*:'` part can be omitted. For details, see the [Open Data Challenge for Public Transportation in Tokyo: API Specification](https://developer-tokyochallenge.odpt.org/en/documents).
+
+###### Parameters
+
+**`id`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) ID of the train or flight to be tracked.
+
+###### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+##### **`setTrackingMode(mode)`**
+
+Sets the tracking mode. In the helicopter tracking mode (`'helicopter'`), it makes a 360 degree turn around the target train or airplane. In the heading tracking mode (`'heading'`), it tracks the target train or airplane from above or diagonally behind in the direction of travel up.
+
+###### Parameters
+
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) A string representing the tracking mode. Either `'helicopter'` or `'heading'`.
+
+###### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+##### **`setViewMode(mode)`**
+
+Sets the view mode. In the ground view mode (`ground'`), ground railways, stations, trains and airplanes will be displayed brightly, and underground railways, stations and trains will be translucent. In the underground view mode (`'underground'`), the map will turn dark and ground railways, stations, trains and airplanes will be translucent, while underground railways, stations and trains will appear brighter.
+
+###### Parameters
+
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) A string representing the view mode. Either `'ground'` or `'underground'`.
 
 ###### Returns
 
@@ -426,7 +522,7 @@ Fired when a "drag to pan" interaction starts. See [`DragPanHandler`](https://do
 
 ##### **`error`**
 
-Fired when an error occurs. This is Mini Tokyo 3D's primary error reporting mechanism. We use an event instead of throw to better accommodate asyncronous operations. If no listeners are bound to the error event, the error will be printed to the console.
+Fired when an error occurs. This is Mini Tokyo 3D's primary error reporting mechanism. We use an event instead of throw to better accommodate asynchronous operations. If no listeners are bound to the error event, the error will be printed to the console.
 
 ###### Properties
 
@@ -714,4 +810,3 @@ When the build completes successfully, the `dist` directory will be created. It 
 #### 3. Deploying on a Web Site
 
 The `index.html` in the `build` directory is for the web page on [https://minitokyo3d.com](http://minitokyo3d.com). Edit it for your web site, and place all the files in the `build` directory in the public directory of your web server.
-

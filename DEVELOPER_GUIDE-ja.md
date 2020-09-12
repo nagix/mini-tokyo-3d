@@ -97,7 +97,7 @@ JavaScript で Mini Tokyo 3D API を使うことで、様々なカスタマイ�
 
 クラス／オブジェクト | 詳細
 :--|:--
-[`MiniTokyo3D`](#minitokyo3d) | **パラメータ**<br>[`options`](#options-object)<br>**インスタンスメンバ**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getPitch`](#getpitch) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setPitch`](#setpitchpitch) [`setZoom`](#setzoomzoom)<br>**イベント**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
+[`MiniTokyo3D`](#minitokyo3d) | **パラメータ**<br>[`options`](#options-object)<br>**インスタンスメンバ**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getClockMode`](#getclockmode) [`getPitch`](#getpitch) [`getSelection`](#getselection) [`getTrackingMode`](#gettrackingmode) [`getViewMode`](#getviewmode) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setClockMode`](#setclockmode) [`setPitch`](#setpitchpitch) [`setSelection`](#setselection) [`setTrackingMode`](#settrackingmode) [`setViewMode`](#setviewmode) [`setZoom`](#setzoomzoom)<br>**イベント**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
 [`Secrets`](#secrets) |
 
 ### MiniTokyo3D
@@ -124,7 +124,7 @@ new MiniTokyo3D(options: Object)
 **`options.fullscreenControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、フルスクリーンボタンをマップに追加する
 **`options.modeControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、表示モード切り替えボタンをマップに追加する
 **`options.infoControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、アプリ情報ボタンをマップに追加する
-**`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>デフォルト: `'helicopter'` | 初期の追跡モードを指定する。`'helicopter'` または `'train'` がサポートされている
+**`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>デフォルト: `'helicopter'` | 初期の追跡モードを指定する。`'helicopter'` または `'heading'` がサポートされている
 **`options.center`**<br>[`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike)<br>デフォルト: `[139.7670, 35.6814]` | 初期のマップ中心点の座標。未指定の場合は、東京駅付近（`[139.7670, 35.6814]`）に設定される。注: Mini Tokyo 3D では、GeoJSON と同様に経度、緯度の順で座標を指定する
 **`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `14` | 初期のマップのズームレベル。未指定の場合は、`14` に設定される
 **`options.bearing`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `0` | 初期のマップの方角。真北から反時計回りの角度で指定する。未指定の場合は、真北（`0`）に設定される
@@ -194,6 +194,16 @@ center、zoom、bearing および pitch の任意の組み合わせを変更し�
 
 ---
 
+##### **`getClockMode()`**
+
+現在のクロックモードを返します。
+
+###### 返り値
+
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): 現在のクロックモードを表す文字列。`'realtime'` または `'playback'` のどちらか
+
+---
+
 ##### **`getPitch()`**
 
 現在のマップの傾きを返します。
@@ -201,6 +211,36 @@ center、zoom、bearing および pitch の任意の組み合わせを変更し�
 ###### 返り値
 
 [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): 現在のマップの傾き。画面に対する地表面の角度（0〜60）で表される
+
+---
+
+##### **`getSelection()`**
+
+追跡中の列車またはフライトの ID を返します。
+
+###### 返り値
+
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): 追跡中の列車またはフライトの ID。列車 ID は`'<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'<事業者ID>.<空港ID>.<フライト番号>'`の形式で表される文字列
+
+---
+
+##### **`getTrackingMode()`**
+
+現在の追跡モードを返します。
+
+###### 返り値
+
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): 現在の追跡モードを表す文字列。`'helicopter'` または `'heading'` のどちらか
+
+---
+
+##### **`getViewMode()`**
+
+現在のビューモードを返します。
+
+###### 返り値
+
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): 現在のビューモードを表す文字列。`'ground'` または `'underground'` のどちらか
 
 ---
 
@@ -306,6 +346,20 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ---
 
+##### **`setClockMode(mode)`**
+
+クロックモードを設定します。リアルタイムクロックモード（`'realtime'`）では、列車や旅客機は現在時刻の実際の運行に合わせて地図上に表示されます。再生クロックモード（`'playback'`）では、時刻や時間の経過速度の指定ができるようになります。
+
+###### パラメータ
+
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) クロックモードを表す文字列。`'realtime'` または `'playback'` のどちらか
+
+###### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
 ##### **`setPitch(pitch)`**
 
 マップの傾きを設定します。`jumpTo({pitch: pitch})` と同じです。
@@ -313,6 +367,48 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 ###### パラメータ
 
 **`pitch`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) 設定する傾き。画面に対する地表面の角度（0〜60）で指定する
+
+###### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+##### **`setSelection(id)`**
+
+追跡する列車またはフライトの ID を設定します。列車 ID は`'odpt.Train:<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'odpt.FlightInformationArrival:<事業者ID>.<空港ID>.<フライト番号>'`または`'odpt.FlightInformationDeparture:<事業者ID>.<空港ID>.<フライト番号>'`の形式で表される文字列です。`'odpt.*:'`の部分は省略可能です。詳細は[東京公共交通オープンデータチャレンジ API 仕様](https://developer-tokyochallenge.odpt.org/documents)を参照してください。
+
+###### パラメータ
+
+**`id`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) 追跡する列車またはフライトの ID
+
+###### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+##### **`setTrackingMode(mode)`**
+
+追跡モードを設定します。ヘリコプター追跡モード（`'helicopter'`）では、対象の列車や旅客機を中心に360度旋回を行います。進行方向追跡モード（`'heading'`）では、対象の列車や旅客機の上空または斜め後方から進行方向を上にして追跡します。
+
+###### パラメータ
+
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) 追跡モードを表す文字列。`'helicopter'` または `'heading'` のどちらか
+
+###### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
+##### **`setViewMode(mode)`**
+
+ビューモードを設定します。地上表示モード（`'ground'`）では、地上の路線や駅、列車や旅客機が明るく表示され、地下の路線、駅、列車は半透明になります。地下表示モード（`'underground'`）では、地図が暗転して地上の路線や駅、列車や旅客機が半透明になる一方で、地下の路線、駅、列車が明るく表示されます。
+
+###### パラメータ
+
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) ビューモードを表す文字列。`'ground'` または `'underground'` のどちらか
 
 ###### 返り値
 

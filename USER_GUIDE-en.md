@@ -114,7 +114,7 @@ Place the mouse pointer or tap on the station to display detailed information ab
 
 ### Tracking Trains and Airplanes
 
-Clicking or tapping on a train or airplane will turn on [Tracking Mode](#tracking-mode) and the screen will automatically move following the movement of the train or airplane. There are two types of Tracking Modes, the “Helicopter Tracking Mode” and the “Rear Tracking Mode”, and you can enjoy the scenery along the railway in your favorite Tracking Mode. When Tracking Mode is on, the map panning and rotating operations are disabled (you can zoom in/out and change the tilt). Clicking on a map with no trains or airplanes turns Tracking Mode off.
+Clicking or tapping on a train or airplane will turn on [Tracking Mode](#tracking-mode) and the screen will automatically move following the movement of the train or airplane. There are two types of Tracking Modes, the “Helicopter Tracking Mode” and the “Heading Tracking Mode”, and you can enjoy the scenery along the railway in your favorite Tracking Mode. When Tracking Mode is on, the map panning and rotating operations are disabled (you can zoom in/out and change the tilt). Clicking on a map with no trains or airplanes turns Tracking Mode off.
 
 See [here](#tracking-mode) for details on Tracking Modes.
 
@@ -124,7 +124,7 @@ See [here](#tracking-mode) for details on Tracking Modes.
 
 When [Tracking Mode](#tracking-mode) is on, the “Share this train” or “Share this flight” button will appear at the top of the screen. Clicking the button will bring up an additional menu, depending on the device you are using, and you can send the tracking URLs for the trains or flight and optional messages through messaging apps, email or social networking apps. When the recipient of the information opens the URL in their browser, Mini Tokyo 3D will be launched, and they will be able to track the same train or flight.
 
-This feature is only available in the follwing browsers: Safari (Mac OS and iOS), Chrome (Android), Opera (Android) and Samsung Internet
+This feature is only available in the following browsers: Safari (Mac OS and iOS), Chrome (Android), Opera (Android) and Samsung Internet
 
 ### Delayed Train
 
@@ -178,7 +178,7 @@ You can also switch modes by clicking or tapping underground trains with Undergr
 
 Click or tap on a train or airplane to turn Tracking Mode on and the screen will automatically follow the movement of the train or airplane (the icon will appear in light blue when it is on). Clicking on a map with no trains or airplanes turns Tracking Mode off.
 
-The helicopter icon indicates the “Helicopter Tracking Mode”, and it makes a 360 degree turn around the target train or airplane. The train icon indicates the “Rear Tracking Mode”, and it tracks the direction of travel from diagonally behind the target train or airplane. Click or tap the icon button to toggle between the “Helicopter Tracking Mode” and the “Rear Tracking Mode”.
+The helicopter icon indicates the “Helicopter Tracking Mode”, and it makes a 360 degree turn around the target train or airplane. The train icon indicates the “Heading Tracking Mode”, and it tracks the target train or airplane from above or diagonally behind in the direction of travel up. Click or tap the icon button to toggle between the “Helicopter Tracking Mode” and the “Heading Tracking Mode”.
 
 When Tracking Mode is on, the timetable and current position of the train being tracked is displayed at the bottom of the screen. For the train connecting to other lines, the timetables of those lines are also shown. The timetable can be scrolled by using the mouse wheel, dragging the scroll bar, or dragging your finger. Click on the "∨" icon in the upper right corner of the timetable to hide the timetable at the bottom of the screen, or click on the "∧" icon to display it again.
 
@@ -190,7 +190,7 @@ Also, when Tracking Mode is on, some devices will display the [share button](#sh
 
 Click or tap the playback icon button to switch Playback Mode on or off (the icon is in light blue when it is on).
 
-When Playback Mode is on, you can change the date and time and the speed at which time progresses, so you can check the operation of a train on a specific date and time, or enjoy the train operation throughout the entire day as if you were watching model trains in motion. In this state, trains will run according to the timetables and no real-time information will be reflected.
+When Playback Mode is on, you can change the date and time and the speed at which time progresses, so you can check the operation of a train on a specific date and time, or enjoy the train operation throughout the entire day as if you were watching model trains in motion. In this state, trains will run according to the timetables and no real-time information will be reflected. For airplanes, only the flights taking off and landing that day will be displayed.
 
 When Playback Mode is off, trains and airplanes are displayed on the map according to the actual operation at the current time. Because it uses real-time information, the location on the map will change accordingly if there is a train delay or flight schedule change.
 
@@ -223,10 +223,10 @@ The source of the public transportation data in this application is the Open Dat
 
 This application has been tested with the following browsers. Chrome is recommended. Internet Explorer is not supported.
 
-- Chrome 84 (Mac OS, Windows, iOS)
-- FireFox 79 (Mac OS, Windows, iOS)
+- Chrome 85 (Mac OS, Windows, iOS, Android)
+- FireFox 80 (Mac OS, Windows, iOS)
 - Safari 13 (Mac OS, iOS)
-- Edge 84 (Mac OS, Windows)
+- Edge 85 (Mac OS, Windows)
 
 ## Development Information
 
