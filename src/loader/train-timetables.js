@@ -196,7 +196,7 @@ export default async function(options) {
         const lookup = helpers.buildLookup(data);
 
         extra.forEach(timetable => {
-            const {id, tt, pt, nt, nm, v} = timetable,
+            const {id, tt, os, ds, pt, nt, nm, v} = timetable,
                 timetableRef = lookup[id];
 
             if (!timetableRef) {
@@ -210,6 +210,12 @@ export default async function(options) {
                 data.splice(data.indexOf(timetableRef), 1);
                 delete lookup[id];
             } else {
+                if (os) {
+                    timetableRef.os = os;
+                }
+                if (ds) {
+                    timetableRef.ds = ds;
+                }
                 if (pt) {
                     timetableRef.pt = pt;
                 }
