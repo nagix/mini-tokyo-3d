@@ -16,7 +16,7 @@ import nearestPointProps from '../turf/nearest-point-props';
 import * as helpers from '../helpers';
 import * as loaderHelpers from './helpers';
 
-const HIDDEN_STATIONS = /^(JR-East\.(YamanoteFreight|Musashino\w+Branch)|Keio\.Sagamihara\.Shinjuku|Keikyu\.Airport\.Shinagawa|Tobu\.THLiner|Seibu\.S-)/;
+const HIDDEN_STATIONS = /^(JR-East\.(YamanoteFreight|Musashino\w+Branch)|TokyoMetro\.(Hibiya\.ShinKoshigaya|Chiyoda\.(Machida|ShinYurigaoka|SeijogakuenMae))|Keio\.Sagamihara\.Shinjuku|Keikyu\.Airport\.Shinagawa|Seibu\.S-)/;
 
 function setAltitude(geojson, altitude) {
     coordEach(geojson, coord => {
