@@ -11,6 +11,7 @@ export function createGroup(...objects) {
 
     group.add(...objects);
     group.rotation.order = 'ZYX';
+    group.matrixAutoUpdate = false;
 
     return group;
 }
@@ -44,7 +45,7 @@ export function createCube(options) {
 
         geometry = new THREE.BoxBufferGeometry(dimension.x, dimension.y, dimension.z, 1, 1, 3);
         geometry.clearGroups();
-        [0, 1, 2, 2, 1, 0, 2, 1, 0, 0, 1, 2, 0].forEach((index, i) => {
+        [0, 1, 2, 2, 1, 0, 2, 1, 0, 0, 1, 2, 0, 2].forEach((index, i) => {
             geometry.addGroup(i * 6, 6, i >= 6 && i < 12 && hasFaceColor ? 3 : index);
         });
         material = color.map(c =>
@@ -65,6 +66,7 @@ export function createCube(options) {
     const mesh = new THREE.Mesh(geometry, material);
 
     mesh.name = 'cube';
+    mesh.matrixAutoUpdate = false;
 
     return mesh;
 }
@@ -152,6 +154,7 @@ export function addDelayMarker(object, dark) {
         mesh = new THREE.Mesh(geometry, material);
 
     mesh.name = 'marker';
+    mesh.matrixAutoUpdate = false;
     object.add(mesh);
 }
 
@@ -192,6 +195,7 @@ export function addOutline(object, name) {
             if (translate) {
                 outline.geometry.translate(translate.x, translate.y, translate.z);
             }
+            outline.matrixAutoUpdate = false;
             descendant.add(outline);
         }
     });

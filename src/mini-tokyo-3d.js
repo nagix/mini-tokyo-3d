@@ -1209,6 +1209,7 @@ export default class extends mapboxgl.Evented {
             scale.x = scale.y = scale.z = objectScale;
             rotation.x = p.pitch * direction;
             rotation.z = -bearing * DEGREE_TO_RADIAN;
+            car.updateMatrix();
 
             // Reduce the frame rate of invisible objects for performance optimization
             if (animation.isActive(train.animationID)) {
@@ -1303,8 +1304,12 @@ export default class extends mapboxgl.Evented {
         scale.x = scale.y = scale.z = objectScale;
         rotation.x = p.pitch;
         rotation.z = -bearing * DEGREE_TO_RADIAN;
+        aircraft.updateMatrix();
 
         body.scale.y = wing.scale.x = vTail.scale.y = aircraftScale;
+        body.updateMatrix();
+        wing.updateMatrix();
+        vTail.updateMatrix();
 
         // Reduce the frame rate of invisible objects for performance optimization
         if (animation.isActive(flight.animationID)) {
