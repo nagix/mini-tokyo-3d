@@ -90,6 +90,84 @@
 		"zh-Hant": "出口8"
 	}
 }, {
+	"id": "JR-East.Bakurocho.1",
+	"coord": [139.7817736, 35.6926815],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "出口1",
+		"en": "Exit 1",
+		"ko": "출구1",
+		"zh-Hans": "出口1",
+		"zh-Hant": "出口1"
+	}
+}, {
+	"id": "JR-East.Bakurocho.2",
+	"coord": [139.7814383, 35.6927552],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "出口2",
+		"en": "Exit 2",
+		"ko": "출구2",
+		"zh-Hans": "出口2",
+		"zh-Hant": "出口2"
+	}
+}, {
+	"id": "JR-East.Bakurocho.3",
+	"coord": [139.7830489, 35.6936765],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "出口3",
+		"en": "Exit 3",
+		"ko": "출구3",
+		"zh-Hans": "出口3",
+		"zh-Hant": "出口3"
+	}
+}, {
+	"id": "JR-East.Bakurocho.4",
+	"coord": [139.782932, 35.6939219],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "出口4",
+		"en": "Exit 4",
+		"ko": "출구4",
+		"zh-Hans": "出口4",
+		"zh-Hant": "出口4"
+	}
+}, {
+	"id": "JR-East.Bakurocho.5",
+	"coord": [139.7843198, 35.6946577],
+	"title": {
+		"en": "5"
+	},
+	"description": {
+		"ja": "出口5",
+		"en": "Exit 5",
+		"ko": "출구5",
+		"zh-Hans": "出口5",
+		"zh-Hant": "出口5"
+	}
+}, {
+	"id": "JR-East.Bakurocho.6",
+	"coord": [139.7841705, 35.6948184],
+	"title": {
+		"en": "6"
+	},
+	"description": {
+		"ja": "出口6",
+		"en": "Exit 6",
+		"ko": "출구6",
+		"zh-Hans": "出口6",
+		"zh-Hant": "出口6"
+	}
+}, {
 	"id": "JR-East.Hatchobori.B1",
 	"coord": [139.777212, 35.6749914],
 	"title": {
@@ -7006,32 +7084,6 @@
 		"zh-Hant": "A2出口"
 	}
 }, {
-	"id": "TokyoMetro.Ningyocho.A3",
-	"coord": [139.7826885, 35.6864135],
-	"title": {
-		"en": "A3"
-	},
-	"description": {
-		"ja": "A3出口",
-		"en": "Exit A3",
-		"ko": "A3출구",
-		"zh-Hans": "A3出口",
-		"zh-Hant": "A3出口"
-	}
-}, {
-	"id": "TokyoMetro.Ningyocho.A4",
-	"coord": [139.782667, 35.6867338],
-	"title": {
-		"en": "A4"
-	},
-	"description": {
-		"ja": "A4出口",
-		"en": "Exit A4",
-		"ko": "A4출구",
-		"zh-Hans": "A4出口",
-		"zh-Hant": "A4出口"
-	}
-}, {
 	"id": "TokyoMetro.Kodemmacho.1",
 	"coord": [139.7788475, 35.6907999],
 	"title": {
@@ -12661,6 +12713,538 @@
 		"zh-Hant": "3號出口"
 	}
 }, {
+	"id": "Toei.NishiMagome.East",
+	"coord": [139.7062588, 35.5870296],
+	"title": {
+		"ja": "東口",
+		"en": "East",
+		"ko": "동쪽",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	},
+	"description": {
+		"ja": "東口",
+		"en": "East Exit",
+		"ko": "동쪽 출구",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	}
+}, {
+	"id": "Toei.NishiMagome.West",
+	"coord": [139.7061194, 35.5873916],
+	"title": {
+		"ja": "西口",
+		"en": "West",
+		"ko": "서쪽",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	},
+	"description": {
+		"ja": "西口",
+		"en": "West Exit",
+		"ko": "서쪽 출구",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	}
+}, {
+	"id": "Toei.NishiMagome.South",
+	"coord": [139.7055495, 35.5860305],
+	"title": {
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"description": {
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	}
+}, {
+	"id": "Toei.Magome.A1",
+	"coord": [139.7116247, 35.5957333],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.Magome.A2",
+	"coord": [139.7121276, 35.5969776],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Magome.A3",
+	"coord": [139.711744, 35.5969558],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Nakanobu.A1",
+	"coord": [139.7133386, 35.6046859],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.Nakanobu.A2",
+	"coord": [139.7138362, 35.6054394],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Nakanobu.A3",
+	"coord": [139.7135505, 35.606122],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Nakanobu.A4",
+	"coord": [139.7133668, 35.6051112],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "Toei.Togoshi.A1",
+	"coord": [139.7163333, 35.6139504],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.Togoshi.A2",
+	"coord": [139.7166418, 35.6147529],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Togoshi.A3",
+	"coord": [139.71645, 35.6152108],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Gotanda.A1",
+	"coord": [139.722847, 35.6260274],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.Gotanda.A2",
+	"coord": [139.7226338, 35.6262476],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Gotanda.A3",
+	"coord": [139.7237496, 35.6264199],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Gotanda.A4",
+	"coord": [139.723708, 35.6269976],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "Toei.Gotanda.A5",
+	"coord": [139.7244363, 35.6269061],
+	"title": {
+		"en": "A5"
+	},
+	"description": {
+		"ja": "A5出口",
+		"en": "Exit A5",
+		"ko": "A5출구",
+		"zh-Hans": "A5出口",
+		"zh-Hant": "A5出口"
+	}
+}, {
+	"id": "Toei.Gotanda.A6",
+	"coord": [139.7247246, 35.6271699],
+	"title": {
+		"en": "A6"
+	},
+	"description": {
+		"ja": "A6出口",
+		"en": "Exit A6",
+		"ko": "A6출구",
+		"zh-Hans": "A6出口",
+		"zh-Hant": "A6出口"
+	}
+}, {
+	"id": "Toei.Gotanda.A7",
+	"coord": [139.7245449, 35.6275165],
+	"title": {
+		"en": "A7"
+	},
+	"description": {
+		"ja": "A7出口",
+		"en": "Exit A7",
+		"ko": "A7출구",
+		"zh-Hans": "A7出口",
+		"zh-Hant": "A7出口"
+	}
+}, {
+	"id": "Toei.Takanawadai.A1",
+	"coord": [139.7305691, 35.6316358],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.Takanawadai.A2",
+	"coord": [139.7304364, 35.63205],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Sengakuji.A1",
+	"coord": [139.7394781, 35.6372198],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.Sengakuji.A2",
+	"coord": [139.7391804, 35.6377495],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Sengakuji.A3",
+	"coord": [139.7402948, 35.6397114],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Sengakuji.A4",
+	"coord": [139.7409587, 35.6399468],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "Toei.Mita.A2",
+	"coord": [139.7462279, 35.6461939],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Mita.A3",
+	"coord": [139.746484, 35.6468358],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Mita.A4",
+	"coord": [139.7469172, 35.6464773],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "Toei.Mita.A6",
+	"coord": [139.7482556, 35.6471638],
+	"title": {
+		"en": "A6"
+	},
+	"description": {
+		"ja": "A6出口",
+		"en": "Exit A6",
+		"ko": "A6출구",
+		"zh-Hans": "A6出口",
+		"zh-Hant": "A6出口"
+	}
+}, {
+	"id": "Toei.Mita.A7",
+	"coord": [139.7482891, 35.6475921],
+	"title": {
+		"en": "A7"
+	},
+	"description": {
+		"ja": "A7出口",
+		"en": "Exit A7",
+		"ko": "A7출구",
+		"zh-Hans": "A7出口",
+		"zh-Hant": "A7出口"
+	}
+}, {
+	"id": "Toei.Mita.A8",
+	"coord": [139.74878, 35.6486362],
+	"title": {
+		"en": "A8"
+	},
+	"description": {
+		"ja": "A8出口",
+		"en": "Exit A8",
+		"ko": "A8출구",
+		"zh-Hans": "A8出口",
+		"zh-Hant": "A8出口"
+	}
+}, {
+	"id": "Toei.Mita.A9",
+	"coord": [139.7491917, 35.6485947],
+	"title": {
+		"en": "A9"
+	},
+	"description": {
+		"ja": "A9出口",
+		"en": "Exit A9",
+		"ko": "A9출구",
+		"zh-Hans": "A9出口",
+		"zh-Hant": "A9出口"
+	}
+}, {
+	"id": "Toei.Mita.A10",
+	"coord": [139.7487974, 35.6488421],
+	"title": {
+		"en": "A10"
+	},
+	"description": {
+		"ja": "A10出口",
+		"en": "Exit A10",
+		"ko": "A10출구",
+		"zh-Hans": "A10出口",
+		"zh-Hant": "A10出口"
+	}
+}, {
+	"id": "Toei.Daimon.A1",
+	"coord": [139.7550255, 35.6565836],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.Daimon.A2",
+	"coord": [139.7549558, 35.6570968],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Daimon.A3",
+	"coord": [139.7544166, 35.6565607],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Daimon.A4",
+	"coord": [139.7545105, 35.65722],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "Toei.Daimon.A5",
+	"coord": [139.7542638, 35.6572134],
+	"title": {
+		"en": "A5"
+	},
+	"description": {
+		"ja": "A5出口",
+		"en": "Exit A5",
+		"ko": "A5출구",
+		"zh-Hans": "A5出口",
+		"zh-Hant": "A5出口"
+	}
+}, {
+	"id": "Toei.Daimon.A6",
+	"coord": [139.7539338, 35.6569639],
+	"title": {
+		"en": "A6"
+	},
+	"description": {
+		"ja": "A6出口",
+		"en": "Exit A6",
+		"ko": "A6출구",
+		"zh-Hans": "A6出口",
+		"zh-Hant": "A6出口"
+	}
+}, {
 	"id": "Toei.Shimbashi.A1",
 	"coord": [139.7585754, 35.6648615],
 	"title": {
@@ -12791,6 +13375,110 @@
 		"zh-Hant": "A8出口"
 	}
 }, {
+	"id": "Toei.Takaracho.A1",
+	"coord": [139.7717692, 35.6749197],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.Takaracho.A2",
+	"coord": [139.7721688, 35.6755832],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Takaracho.A3",
+	"coord": [139.7714138, 35.6750668],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Takaracho.A4",
+	"coord": [139.771214, 35.6754754],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "Toei.Takaracho.A5",
+	"coord": [139.771336, 35.6756834],
+	"title": {
+		"en": "A5"
+	},
+	"description": {
+		"ja": "A5出口",
+		"en": "Exit A5",
+		"ko": "A5출구",
+		"zh-Hans": "A5出口",
+		"zh-Hant": "A5出口"
+	}
+}, {
+	"id": "Toei.Takaracho.A6",
+	"coord": [139.7718805, 35.6758142],
+	"title": {
+		"en": "A6"
+	},
+	"description": {
+		"ja": "A6出口",
+		"en": "Exit A6",
+		"ko": "A6출구",
+		"zh-Hans": "A6出口",
+		"zh-Hant": "A6出口"
+	}
+}, {
+	"id": "Toei.Takaracho.A7",
+	"coord": [139.771969, 35.6760135],
+	"title": {
+		"en": "A7"
+	},
+	"description": {
+		"ja": "A7出口",
+		"en": "Exit A7",
+		"ko": "A7출구",
+		"zh-Hans": "A7出口",
+		"zh-Hant": "A7出口"
+	}
+}, {
+	"id": "Toei.Takaracho.A8",
+	"coord": [139.7726771, 35.676214],
+	"title": {
+		"en": "A8"
+	},
+	"description": {
+		"ja": "A8出口",
+		"en": "Exit A8",
+		"ko": "A8출구",
+		"zh-Hans": "A8出口",
+		"zh-Hant": "A8出口"
+	}
+}, {
 	"id": "Toei.Nihombashi.D1",
 	"coord": [139.7757617, 35.6813689],
 	"title": {
@@ -12843,6 +13531,32 @@
 		"zh-Hant": "D4出口"
 	}
 }, {
+	"id": "Toei.Ningyocho.A3",
+	"coord": [139.7826885, 35.6864135],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Ningyocho.A4",
+	"coord": [139.782667, 35.6867338],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
 	"id": "Toei.Ningyocho.A5",
 	"coord": [139.7819227, 35.6862665],
 	"title": {
@@ -12867,6 +13581,253 @@
 		"ko": "A6출구",
 		"zh-Hans": "A6出口",
 		"zh-Hant": "A6出口"
+	}
+}, {
+	"id": "Toei.HigashiNihombashi.B1",
+	"coord": [139.7849549, 35.6916691],
+	"title": {
+		"en": "B1"
+	},
+	"description": {
+		"ja": "B1出口",
+		"en": "Exit B1",
+		"ko": "B1출구",
+		"zh-Hans": "B1出口",
+		"zh-Hant": "B1出口"
+	}
+}, {
+	"id": "Toei.HigashiNihombashi.B2",
+	"coord": [139.7846827, 35.691692],
+	"title": {
+		"en": "B2"
+	},
+	"description": {
+		"ja": "B2出口",
+		"en": "Exit B2",
+		"ko": "B2출구",
+		"zh-Hans": "B2出口",
+		"zh-Hant": "B2出口"
+	}
+}, {
+	"id": "Toei.HigashiNihombashi.B3",
+	"coord": [139.7850448, 35.6922779],
+	"title": {
+		"en": "B3"
+	},
+	"description": {
+		"ja": "B3出口",
+		"en": "Exit B3",
+		"ko": "B3출구",
+		"zh-Hans": "B3出口",
+		"zh-Hant": "B3出口"
+	}
+}, {
+	"id": "Toei.HigashiNihombashi.B4",
+	"coord": [139.7847471, 35.6923052],
+	"title": {
+		"en": "B4"
+	},
+	"description": {
+		"ja": "B4出口",
+		"en": "Exit B4",
+		"ko": "B4출구",
+		"zh-Hans": "B4出口",
+		"zh-Hant": "B4出口"
+	}
+}, {
+	"id": "Toei.Asakusabashi.A1",
+	"coord": [139.7861968, 35.6968503],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.Asakusabashi.A2",
+	"coord": [139.7858642, 35.6969167],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Asakusabashi.A3",
+	"coord": [139.7861727, 35.697519],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Asakusabashi.A4",
+	"coord": [139.7867225, 35.6982781],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "Toei.Asakusabashi.A5",
+	"coord": [139.7870082, 35.698155],
+	"title": {
+		"en": "A5"
+	},
+	"description": {
+		"ja": "A5出口",
+		"en": "Exit A5",
+		"ko": "A5출구",
+		"zh-Hans": "A5出口",
+		"zh-Hant": "A5出口"
+	}
+}, {
+	"id": "Toei.Asakusabashi.A6",
+	"coord": [139.7871061, 35.6983718],
+	"title": {
+		"en": "A6"
+	},
+	"description": {
+		"ja": "A6出口",
+		"en": "Exit A6",
+		"ko": "A6출구",
+		"zh-Hans": "A6出口",
+		"zh-Hant": "A6出口"
+	}
+}, {
+	"id": "Toei.Kuramae.A0",
+	"coord": [139.7909861, 35.7037233],
+	"title": {
+		"en": "A0"
+	},
+	"description": {
+		"ja": "A0出口",
+		"en": "Exit A0",
+		"ko": "A0출구",
+		"zh-Hans": "A0出口",
+		"zh-Hant": "A0出口"
+	}
+}, {
+	"id": "Toei.Kuramae.A1a",
+	"coord": [139.7900136, 35.7021585],
+	"title": {
+		"en": "A1a"
+	},
+	"description": {
+		"ja": "A1a出口",
+		"en": "Exit A1a",
+		"ko": "A1a출구",
+		"zh-Hans": "A1a出口",
+		"zh-Hant": "A1a出口"
+	}
+}, {
+	"id": "Toei.Kuramae.A1b",
+	"coord": [139.7904929, 35.7024642],
+	"title": {
+		"en": "A1b"
+	},
+	"description": {
+		"ja": "A1b出口",
+		"en": "Exit A1b",
+		"ko": "A1b출구",
+		"zh-Hans": "A1b出口",
+		"zh-Hant": "A1b出口"
+	}
+}, {
+	"id": "Toei.Kuramae.A2",
+	"coord": [139.7916001, 35.7035808],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.Kuramae.A3",
+	"coord": [139.7903086, 35.7028773],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.Kuramae.A4",
+	"coord": [139.7914606, 35.7038444],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "Toei.Kuramae.A5",
+	"coord": [139.7921634, 35.7057414],
+	"title": {
+		"en": "A5"
+	},
+	"description": {
+		"ja": "A5出口",
+		"en": "Exit A5",
+		"ko": "A5출구",
+		"zh-Hans": "A5出口",
+		"zh-Hant": "A5出口"
+	}
+}, {
+	"id": "Toei.Kuramae.A6",
+	"coord": [139.7928245, 35.7052753],
+	"title": {
+		"en": "A6"
+	},
+	"description": {
+		"ja": "A6出口",
+		"en": "Exit A6",
+		"ko": "A6출구",
+		"zh-Hans": "A6出口",
+		"zh-Hant": "A6出口"
+	}
+}, {
+	"id": "Toei.Kuramae.A7",
+	"coord": [139.7937633, 35.7048974],
+	"title": {
+		"en": "A7"
+	},
+	"description": {
+		"ja": "A7出口",
+		"en": "Exit A7",
+		"ko": "A7출구",
+		"zh-Hans": "A7出口",
+		"zh-Hant": "A7出口"
 	}
 }, {
 	"id": "Toei.Asakusa.A1",
@@ -13699,6 +14660,58 @@
 		"ko": "엘리베이터",
 		"zh-Hans": "电梯",
 		"zh-Hant": "電梯"
+	}
+}, {
+	"id": "Toei.BakuroYokoyama.A1",
+	"coord": [139.7828494, 35.692242],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "Toei.BakuroYokoyama.A2",
+	"coord": [139.7828145, 35.6919163],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "Toei.BakuroYokoyama.A3",
+	"coord": [139.7838472, 35.6913031],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "Toei.BakuroYokoyama.A4",
+	"coord": [139.7840081, 35.6918477],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
 	}
 }, {
 	"id": "Toei.Sumiyoshi.A1",

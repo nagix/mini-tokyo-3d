@@ -1674,6 +1674,14 @@
 		"zh-Hans": "马喰町",
 		"zh-Hant": "馬喰町"
 	},
+	"exit": [
+		"JR-East.Bakurocho.1",
+		"JR-East.Bakurocho.2",
+		"JR-East.Bakurocho.3",
+		"JR-East.Bakurocho.4",
+		"JR-East.Bakurocho.5",
+		"JR-East.Bakurocho.6"
+	],
 	"altitude": -1
 }, {
 	"id": "JR-East.SobuRapid.Kinshicho",
@@ -4672,9 +4680,7 @@
 	"id": "TokyoMetro.Hibiya.Ningyocho",
 	"exit": [
 		"TokyoMetro.Ningyocho.A1",
-		"TokyoMetro.Ningyocho.A2",
-		"TokyoMetro.Ningyocho.A3",
-		"TokyoMetro.Ningyocho.A4"
+		"TokyoMetro.Ningyocho.A2"
 	],
 	"altitude": -1
 }, {
@@ -5945,6 +5951,11 @@
 		"zh-Hans": "西马込",
 		"zh-Hant": "西馬込"
 	},
+	"exit": [
+		"Toei.NishiMagome.East",
+		"Toei.NishiMagome.West",
+		"Toei.NishiMagome.South"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Magome",
@@ -5953,6 +5964,11 @@
 		"zh-Hans": "马込",
 		"zh-Hant": "馬込"
 	},
+	"exit": [
+		"Toei.Magome.A1",
+		"Toei.Magome.A2",
+		"Toei.Magome.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Nakanobu",
@@ -5961,6 +5977,12 @@
 		"zh-Hans": "中延",
 		"zh-Hant": "中延"
 	},
+	"exit": [
+		"Toei.Nakanobu.A1",
+		"Toei.Nakanobu.A2",
+		"Toei.Nakanobu.A3",
+		"Toei.Nakanobu.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Togoshi",
@@ -5969,6 +5991,11 @@
 		"zh-Hans": "户越",
 		"zh-Hant": "戶越"
 	},
+	"exit": [
+		"Toei.Togoshi.A1",
+		"Toei.Togoshi.A2",
+		"Toei.Togoshi.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Gotanda",
@@ -5978,6 +6005,15 @@
 		"zh-Hant": "五反田"
 	},
 	"thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Asakusasen_gotanda_eki_1-2.JPG/128px-Asakusasen_gotanda_eki_1-2.JPG",
+	"exit": [
+		"Toei.Gotanda.A1",
+		"Toei.Gotanda.A2",
+		"Toei.Gotanda.A3",
+		"Toei.Gotanda.A4",
+		"Toei.Gotanda.A5",
+		"Toei.Gotanda.A6",
+		"Toei.Gotanda.A7"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Takanawadai",
@@ -5986,6 +6022,10 @@
 		"zh-Hans": "高轮台",
 		"zh-Hant": "高輪台"
 	},
+	"exit": [
+		"Toei.Takanawadai.A1",
+		"Toei.Takanawadai.A2"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Sengakuji",
@@ -5994,6 +6034,12 @@
 		"zh-Hans": "泉岳寺",
 		"zh-Hant": "泉岳寺"
 	},
+	"exit": [
+		"Toei.Sengakuji.A1",
+		"Toei.Sengakuji.A2",
+		"Toei.Sengakuji.A3",
+		"Toei.Sengakuji.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Mita",
@@ -6003,6 +6049,13 @@
 		"zh-Hant": "三田",
 		"ja-Wiki": "三田駅 (東京都)"
 	},
+	"exit": [
+		"Toei.Mita.A2",
+		"Toei.Mita.A3",
+		"Toei.Mita.A4",
+		"Toei.Mita.A6",
+		"Toei.Mita.A7"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Daimon",
@@ -6012,6 +6065,14 @@
 		"zh-Hant": "大門",
 		"ja-Wiki": "大門駅 (東京都)"
 	},
+	"exit": [
+		"Toei.Daimon.A1",
+		"Toei.Daimon.A2",
+		"Toei.Daimon.A3",
+		"Toei.Daimon.A4",
+		"Toei.Daimon.A5",
+		"Toei.Daimon.A6"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Shimbashi",
@@ -6050,6 +6111,16 @@
 		"zh-Hans": "宝町",
 		"zh-Hant": "寶町"
 	},
+	"exit": [
+		"Toei.Takaracho.A1",
+		"Toei.Takaracho.A2",
+		"Toei.Takaracho.A3",
+		"Toei.Takaracho.A4",
+		"Toei.Takaracho.A5",
+		"Toei.Takaracho.A6",
+		"Toei.Takaracho.A7",
+		"Toei.Takaracho.A8"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Nihombashi",
@@ -6074,6 +6145,8 @@
 		"zh-Hant": "人形町"
 	},
 	"exit": [
+		"Toei.Ningyocho.A3",
+		"Toei.Ningyocho.A4",
 		"Toei.Ningyocho.A5",
 		"Toei.Ningyocho.A6"
 	],
@@ -6085,6 +6158,12 @@
 		"zh-Hans": "东日本桥",
 		"zh-Hant": "東日本橋"
 	},
+	"exit": [
+		"Toei.HigashiNihombashi.B1",
+		"Toei.HigashiNihombashi.B2",
+		"Toei.HigashiNihombashi.B3",
+		"Toei.HigashiNihombashi.B4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Asakusabashi",
@@ -6093,6 +6172,14 @@
 		"zh-Hans": "浅草桥",
 		"zh-Hant": "淺草橋"
 	},
+	"exit": [
+		"Toei.Asakusabashi.A1",
+		"Toei.Asakusabashi.A2",
+		"Toei.Asakusabashi.A3",
+		"Toei.Asakusabashi.A4",
+		"Toei.Asakusabashi.A5",
+		"Toei.Asakusabashi.A6"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Kuramae",
@@ -6101,6 +6188,14 @@
 		"zh-Hans": "藏前",
 		"zh-Hant": "藏前"
 	},
+	"exit": [
+		"Toei.Kuramae.A0",
+		"Toei.Kuramae.A1a",
+		"Toei.Kuramae.A1b",
+		"Toei.Kuramae.A2",
+		"Toei.Kuramae.A3",
+		"Toei.Kuramae.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Asakusa",
@@ -6174,6 +6269,11 @@
 		"zh-Hant": "三田",
 		"ja-Wiki": "三田駅 (東京都)"
 	},
+	"exit": [
+		"Toei.Mita.A8",
+		"Toei.Mita.A9",
+		"Toei.Mita.A10"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.Shibakoen",
@@ -6506,6 +6606,12 @@
 		"zh-Hans": "马喰横山",
 		"zh-Hant": "馬喰橫山"
 	},
+	"exit": [
+		"Toei.BakuroYokoyama.A1",
+		"Toei.BakuroYokoyama.A2",
+		"Toei.BakuroYokoyama.A3",
+		"Toei.BakuroYokoyama.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.Hamacho",
@@ -6729,6 +6835,11 @@
 		"zh-Hans": "藏前",
 		"zh-Hant": "藏前"
 	},
+	"exit": [
+		"Toei.Kuramae.A5",
+		"Toei.Kuramae.A6",
+		"Toei.Kuramae.A7"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Ryogoku",
