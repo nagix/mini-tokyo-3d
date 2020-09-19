@@ -6221,6 +6221,14 @@
 		"zh-Hans": "本所吾妻桥",
 		"zh-Hant": "本所吾妻橋"
 	},
+	"exit": [
+		"Toei.HonjoAzumabashi.A0",
+		"Toei.HonjoAzumabashi.A1",
+		"Toei.HonjoAzumabashi.A2",
+		"Toei.HonjoAzumabashi.A3",
+		"Toei.HonjoAzumabashi.A4",
+		"Toei.HonjoAzumabashi.A5"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Asakusa.Oshiage",
@@ -6282,6 +6290,12 @@
 		"zh-Hans": "芝公园",
 		"zh-Hant": "芝公園"
 	},
+	"exit": [
+		"Toei.Shibakoen.A1",
+		"Toei.Shibakoen.A2",
+		"Toei.Shibakoen.A3",
+		"Toei.Shibakoen.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.Onarimon",
@@ -6290,6 +6304,15 @@
 		"zh-Hans": "御成门",
 		"zh-Hant": "御成門"
 	},
+	"exit": [
+		"Toei.Onarimon.A1",
+		"Toei.Onarimon.A2",
+		"Toei.Onarimon.A3a",
+		"Toei.Onarimon.A3b",
+		"Toei.Onarimon.A4",
+		"Toei.Onarimon.A5",
+		"Toei.Onarimon.A6"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.Uchisaiwaicho",
@@ -6298,6 +6321,17 @@
 		"zh-Hans": "内幸町",
 		"zh-Hant": "內幸町"
 	},
+	"exit": [
+		"Toei.Uchisaiwaicho.A1",
+		"Toei.Uchisaiwaicho.A2",
+		"Toei.Uchisaiwaicho.A3",
+		"Toei.Uchisaiwaicho.A4a",
+		"Toei.Uchisaiwaicho.A4b",
+		"Toei.Uchisaiwaicho.A5",
+		"Toei.Uchisaiwaicho.A6",
+		"Toei.Uchisaiwaicho.A7",
+		"Toei.Uchisaiwaicho.A8"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.Hibiya",
@@ -6357,6 +6391,14 @@
 		"zh-Hans": "水道桥",
 		"zh-Hant": "水道橋"
 	},
+	"exit": [
+		"Toei.Suidobashi.A1",
+		"Toei.Suidobashi.A2",
+		"Toei.Suidobashi.A3",
+		"Toei.Suidobashi.A4",
+		"Toei.Suidobashi.A5",
+		"Toei.Suidobashi.A6"
+	],
 	"altitude": -1
 }, {
 	"id":"Toei.Mita.Kasuga",
@@ -6372,7 +6414,8 @@
 		"Toei.Kasuga.A3",
 		"Toei.Kasuga.A4",
 		"Toei.Kasuga.A5",
-		"Toei.Kasuga.A6"
+		"Toei.Kasuga.A6",
+		"Toei.Kasuga.A7"
 	],
 	"altitude": -1
 }, {
@@ -6383,6 +6426,11 @@
 		"zh-Hant": "白山",
 		"ja-Wiki": "白山駅 (東京都)"
 	},
+	"exit": [
+		"Toei.Hakusan.A1",
+		"Toei.Hakusan.A2",
+		"Toei.Hakusan.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.Sengoku",
@@ -6391,6 +6439,13 @@
 		"zh-Hans": "千石",
 		"zh-Hant": "千石"
 	},
+	"exit": [
+		"Toei.Sengoku.A1",
+		"Toei.Sengoku.A2",
+		"Toei.Sengoku.A3",
+		"Toei.Sengoku.A4",
+		"Toei.Sengoku.A5"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.Sugamo",
@@ -6399,6 +6454,12 @@
 		"zh-Hans": "巢鸭",
 		"zh-Hant": "巢鴨"
 	},
+	"exit": [
+		"Toei.Sugamo.A1",
+		"Toei.Sugamo.A2",
+		"Toei.Sugamo.A3",
+		"Toei.Sugamo.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.NishiSugamo",
@@ -6407,6 +6468,12 @@
 		"zh-Hans": "西巢鸭",
 		"zh-Hant": "西巢鴨"
 	},
+	"exit": [
+		"Toei.NishiSugamo.A1",
+		"Toei.NishiSugamo.A2",
+		"Toei.NishiSugamo.A3",
+		"Toei.NishiSugamo.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.ShinItabashi",
@@ -6415,6 +6482,11 @@
 		"zh-Hans": "新板桥",
 		"zh-Hant": "新板橋"
 	},
+	"exit": [
+		"Toei.ShinItabashi.A1",
+		"Toei.ShinItabashi.A2",
+		"Toei.ShinItabashi.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.ItabashiKuyakushomae",
@@ -6423,6 +6495,11 @@
 		"zh-Hans": "板桥区役所前",
 		"zh-Hant": "板橋區役所前"
 	},
+	"exit": [
+		"Toei.ItabashiKuyakushomae.A1",
+		"Toei.ItabashiKuyakushomae.A2",
+		"Toei.ItabashiKuyakushomae.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.Itabashihoncho",
@@ -6431,6 +6508,12 @@
 		"zh-Hans": "板桥本町",
 		"zh-Hant": "板橋本町"
 	},
+	"exit": [
+		"Toei.Itabashihoncho.A1",
+		"Toei.Itabashihoncho.A2",
+		"Toei.Itabashihoncho.A3",
+		"Toei.Itabashihoncho.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.Motohasunuma",
@@ -6439,6 +6522,12 @@
 		"zh-Hans": "本莲沼",
 		"zh-Hant": "本蓮沼"
 	},
+	"exit": [
+		"Toei.Motohasunuma.A1",
+		"Toei.Motohasunuma.A2",
+		"Toei.Motohasunuma.A3",
+		"Toei.Motohasunuma.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.ShimuraSakaue",
@@ -6447,6 +6536,12 @@
 		"zh-Hans": "志村坂上",
 		"zh-Hant": "志村坂上"
 	},
+	"exit": [
+		"Toei.ShimuraSakaue.A1",
+		"Toei.ShimuraSakaue.A2",
+		"Toei.ShimuraSakaue.A3",
+		"Toei.ShimuraSakaue.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Mita.ShimuraSanchome",
@@ -6454,42 +6549,63 @@
 		"ko": "시무라 3초메",
 		"zh-Hans": "志村三丁目",
 		"zh-Hant": "志村三丁目"
-	}
+	},
+	"exit": [
+		"Toei.ShimuraSanchome.1"
+	]
 }, {
 	"id": "Toei.Mita.Hasune",
 	"title": {
 		"ko": "하스네",
 		"zh-Hans": "莲根",
 		"zh-Hant": "蓮根"
-	}
+	},
+	"exit": [
+		"Toei.Hasune.East",
+		"Toei.Hasune.West"
+	]
 }, {
 	"id": "Toei.Mita.Nishidai",
 	"title": {
 		"ko": "니시다이",
 		"zh-Hans": "西台",
 		"zh-Hant": "西台"
-	}
+	},
+	"exit": [
+		"Toei.Nishidai.East",
+		"Toei.Nishidai.West"
+	]
 }, {
 	"id": "Toei.Mita.Takashimadaira",
 	"title": {
 		"ko": "다카시마다이라",
 		"zh-Hans": "高岛平",
 		"zh-Hant": "高島平"
-	}
+	},
+	"exit": [
+		"Toei.Takashimadaira.East",
+		"Toei.Takashimadaira.West"
+	]
 }, {
 	"id": "Toei.Mita.ShinTakashimadaira",
 	"title": {
 		"ko": "신타카시마다이라",
 		"zh-Hans": "新高岛平",
 		"zh-Hant": "新高島平"
-	}
+	},
+	"exit": [
+		"Toei.ShinTakashimadaira.1"
+	]
 }, {
 	"id": "Toei.Mita.NishiTakashimadaira",
 	"title": {
 		"ko": "니시타카시마다이라",
 		"zh-Hans": "西高岛平",
 		"zh-Hant": "西高島平"
-	}
+	},
+	"exit": [
+		"Toei.NishiTakashimadaira.1"
+	]
 }, {
 	"id": "Toei.Shinjuku.Shinjuku",
 	"title": {
