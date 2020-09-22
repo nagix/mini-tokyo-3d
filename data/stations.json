@@ -6649,6 +6649,12 @@
 		"zh-Hans": "曙桥",
 		"zh-Hant": "曙橋"
 	},
+	"exit": [
+		"Toei.Akebonobashi.A1",
+		"Toei.Akebonobashi.A2",
+		"Toei.Akebonobashi.A3",
+		"Toei.Akebonobashi.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.Ichigaya",
@@ -6714,6 +6720,14 @@
 		"zh-Hans": "岩本町",
 		"zh-Hant": "岩本町"
 	},
+	"exit": [
+		"Toei.Iwamotocho.A1",
+		"Toei.Iwamotocho.A2",
+		"Toei.Iwamotocho.A3",
+		"Toei.Iwamotocho.A4",
+		"Toei.Iwamotocho.A5",
+		"Toei.Iwamotocho.A6"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.BakuroYokoyama",
@@ -6736,6 +6750,10 @@
 		"zh-Hans": "滨町",
 		"zh-Hant": "濱町"
 	},
+	"exit": [
+		"Toei.Hamacho.A1",
+		"Toei.Hamacho.A2"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.Morishita",
@@ -6745,6 +6763,12 @@
 		"zh-Hant": "森下",
 		"ja-Wiki": "森下駅 (東京都)"
 	},
+	"exit": [
+		"Toei.Morishita.A1",
+		"Toei.Morishita.A2",
+		"Toei.Morishita.A3",
+		"Toei.Morishita.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.Kikukawa",
@@ -6754,6 +6778,12 @@
 		"zh-Hant": "菊川",
 		"ja-Wiki": "菊川駅 (東京都)"
 	},
+	"exit": [
+		"Toei.Kikukawa.A1",
+		"Toei.Kikukawa.A2",
+		"Toei.Kikukawa.A3",
+		"Toei.Kikukawa.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.Sumiyoshi",
@@ -6777,6 +6807,12 @@
 		"zh-Hans": "西大岛",
 		"zh-Hant": "西大島"
 	},
+	"exit": [
+		"Toei.NishiOjima.A1",
+		"Toei.NishiOjima.A2",
+		"Toei.NishiOjima.A3",
+		"Toei.NishiOjima.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.Ojima",
@@ -6786,6 +6822,14 @@
 		"zh-Hant": "大島",
 		"ja-Wiki": "大島駅 (東京都)"
 	},
+	"exit": [
+		"Toei.Ojima.A1",
+		"Toei.Ojima.A2",
+		"Toei.Ojima.A3",
+		"Toei.Ojima.A4",
+		"Toei.Ojima.A5",
+		"Toei.Ojima.A6"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.HigashiOjima",
@@ -6793,14 +6837,22 @@
 		"ko": "히가시오지마",
 		"zh-Hans": "东大岛",
 		"zh-Hant": "東大島"
-	}
+	},
+	"exit": [
+		"Toei.HigashiOjima.1",
+		"Toei.HigashiOjima.2"
+	]
 }, {
 	"id": "Toei.Shinjuku.Funabori",
 	"title": {
 		"ko": "후나보리",
 		"zh-Hans": "船堀",
 		"zh-Hant": "船堀"
-	}
+	},
+	"exit": [
+		"Toei.Funabori.South",
+		"Toei.Funabori.North"
+	]
 }, {
 	"id": "Toei.Shinjuku.Ichinoe",
 	"title": {
@@ -6808,6 +6860,14 @@
 		"zh-Hans": "一之江",
 		"zh-Hant": "一之江"
 	},
+	"exit": [
+		"Toei.Ichinoe.A0",
+		"Toei.Ichinoe.A1",
+		"Toei.Ichinoe.A2",
+		"Toei.Ichinoe.A3a",
+		"Toei.Ichinoe.A3b",
+		"Toei.Ichinoe.A3c"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.Mizue",
@@ -6816,6 +6876,10 @@
 		"zh-Hans": "瑞江",
 		"zh-Hant": "瑞江"
 	},
+	"exit": [
+		"Toei.Mizue.South",
+		"Toei.Mizue.North"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.Shinozaki",
@@ -6824,6 +6888,11 @@
 		"zh-Hans": "篠崎",
 		"zh-Hant": "篠崎"
 	},
+	"exit": [
+		"Toei.Shinozaki.West",
+		"Toei.Shinozaki.South",
+		"Toei.Shinozaki.North"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Shinjuku.Motoyawata",
@@ -6832,6 +6901,15 @@
 		"zh-Hans": "本八幡",
 		"zh-Hant": "本八幡"
 	},
+	"exit": [
+		"Toei.Motoyawata.A1",
+		"Toei.Motoyawata.A2",
+		"Toei.Motoyawata.A3",
+		"Toei.Motoyawata.A4a",
+		"Toei.Motoyawata.A4b",
+		"Toei.Motoyawata.A5",
+		"Toei.Motoyawata.A6"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Tochomae",
@@ -6973,6 +7051,11 @@
 		"zh-Hant": "森下",
 		"ja-Wiki": "森下駅 (東京都)"
 	},
+	"exit": [
+		"Toei.Morishita.A5",
+		"Toei.Morishita.A6",
+		"Toei.Morishita.A7"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.KiyosumiShirakawa",
