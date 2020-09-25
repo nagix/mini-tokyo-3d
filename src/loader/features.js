@@ -2,7 +2,7 @@ import {Worker, workerData, parentPort} from 'worker_threads';
 import along from '@turf/along';
 import buffer from '@turf/buffer';
 import turfDistance from '@turf/distance';
-import {featureCollection, lineString, multiLineString, point} from '@turf/helpers';
+import {featureCollection, lineString, point} from '@turf/helpers';
 import {getCoord, getCoords} from '@turf/invariant';
 import turfLength from '@turf/length';
 import {coordEach} from '@turf/meta';
@@ -12,6 +12,7 @@ import union from '@turf/union';
 import destination from '../turf/destination';
 import lineOffset from '../turf/line-offset';
 import lineSlice from '../turf/line-slice';
+import lineSliceAlong from '../turf/line-slice-along';
 import nearestPointProps from '../turf/nearest-point-props';
 import * as helpers from '../helpers';
 import * as loaderHelpers from './helpers';
@@ -149,7 +150,6 @@ export function featureWorker() {
     const unit = Math.pow(2, 14 - zoom) * .1;
 
     railways.forEach(({id, sublines, color, altitude, loop}) => {
-        let mixed = false;
         const railwayFeature = lineString([].concat(...sublines.map(subline => {
             const {type, start, end, coords, opacity} = subline,
                 sublineAltitude = helpers.valueOrDefault(subline.altitude, altitude) || 0;
@@ -251,17 +251,14 @@ export function featureWorker() {
             }
             if (start && start.altitude !== undefined) {
                 smoothAltitude(start.altitude);
-                mixed = true;
             }
             if (end && end.altitude !== undefined) {
                 smoothAltitude(end.altitude, true);
-                mixed = true;
             }
             if (opacity !== undefined) {
                 coordinates.forEach(coord => {
                     coord[3] = opacity;
                 });
-                mixed = true;
             }
 
             return coordinates;
@@ -278,24 +275,40 @@ export function featureWorker() {
             return;
         }
 
-        railwayFeature.properties.altitude = mixed ? undefined : (altitude || 0) * unit * 1000;
-
         // Set station offsets
-        railwayFeature.properties['station-offsets'] = railwayLookup[id].stations.map((station, i, stations) =>
+        const stationOffsets = railwayLookup[id].stations.map((station, i, stations) =>
             // If the line has a loop, the last offset must be set explicitly
             // Otherwise, the location of the last station goes wrong
             loop && i === stations.length - 1 ?
                 turfLength(railwayFeature) :
                 getLocationAlongLine(railwayFeature, stationLookup[station].coord)
         );
+        railwayFeature.properties['station-offsets'] = stationOffsets;
 
         featureArray.unshift(railwayFeature);
 
-        if (mixed) {
-            const ugCoords = [[]],
+        // Create railway sections
+        const sectionFeatures = [];
+        [0, ...stationOffsets, turfLength(railwayFeature)].reduce((start, stop) => {
+            if (start < stop) {
+                sectionFeatures.push(lineSliceAlong(railwayFeature, start, stop));
+            } else {
+                sectionFeatures.push(undefined);
+            }
+            return stop;
+        });
+
+        // Split sections into ground and underground parts
+        sectionFeatures.forEach((sectionFeature, index) => {
+            if (!sectionFeature) {
+                return;
+            }
+
+            const section = index > 0 && index < sectionFeatures.length - 1 ? index - 1 : undefined,
+                ugCoords = [[]],
                 ogCoords = [[]];
 
-            getCoords(railwayFeature).forEach((coord, i, coords) => {
+            getCoords(sectionFeature).forEach((coord, i, coords) => {
                 if (coord[3] !== undefined) {
                     coord.pop();
                 } else {
@@ -313,29 +326,36 @@ export function featureWorker() {
                     }
                 }
             });
-            if (ugCoords[ugCoords.length - 1].length === 0) {
-                ugCoords.pop();
-            }
-            if (ogCoords[ogCoords.length - 1].length === 0) {
-                ogCoords.pop();
-            }
-            featureArray.unshift(multiLineString(ugCoords, {
-                id: `${id}.ug.${zoom}`,
-                type: 0,
-                color,
-                width: 8,
-                zoom,
-                altitude: -unit * 1000
-            }));
-            featureArray.unshift(multiLineString(ogCoords, {
-                id: `${id}.og.${zoom}`,
-                type: 0,
-                color,
-                width: 8,
-                zoom,
-                altitude: 0
-            }));
-        }
+
+            ugCoords.forEach((coords, i) => {
+                if (coords.length >= 2) {
+                    featureArray.unshift(lineString(coords, {
+                        id: `${id}.ug.${zoom}.${section}.${i}`,
+                        type: 0,
+                        color,
+                        width: 8,
+                        zoom,
+                        railway: id,
+                        section,
+                        altitude: -unit * 1000
+                    }));
+                }
+            });
+            ogCoords.forEach((coords, i) => {
+                if (coords.length >= 2) {
+                    featureArray.unshift(lineString(coords, {
+                        id: `${id}.og.${zoom}.${section}.${i}`,
+                        type: 0,
+                        color,
+                        width: 8,
+                        zoom,
+                        railway: id,
+                        section,
+                        altitude: 0
+                    }));
+                }
+            });
+        });
     });
 
     stationGroupData.forEach(group => {

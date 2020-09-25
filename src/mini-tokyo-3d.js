@@ -612,7 +612,6 @@ export default class extends mapboxgl.Evented {
                     getLineColor: d => helpers.colorToRGBArray(d.properties.color),
                     lineWidthUnits: 'pixels',
                     lineWidthScale,
-                    lineJointRounded: true,
                     opacity: .0625,
                     pickable: true
                 }), 'building-3d');
