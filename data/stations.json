@@ -4144,10 +4144,7 @@
 		"TokyoMetro.UenoHirokoji.A2",
 		"TokyoMetro.UenoHirokoji.A3",
 		"TokyoMetro.UenoHirokoji.A4",
-		"TokyoMetro.UenoHirokoji.A5",
-		"TokyoMetro.UenoHirokoji.A6",
-		"TokyoMetro.UenoHirokoji.A7",
-		"TokyoMetro.UenoHirokoji.A8"
+		"TokyoMetro.UenoHirokoji.A5"
 	],
 	"altitude": -1
 }, {
@@ -6918,6 +6915,24 @@
 		"zh-Hans": "都庁前",
 		"zh-Hant": "都廳前"
 	},
+	"exit": [
+		"Toei.Tochomae.A1",
+		"Toei.Tochomae.A2",
+		"Toei.Tochomae.A3",
+		"Toei.Tochomae.A4",
+		"Toei.Tochomae.A5",
+		"Toei.Tochomae.A6",
+		"Toei.Tochomae.A7",
+		"Toei.Tochomae.B1",
+		"Toei.Tochomae.B2",
+		"Toei.Tochomae.C4",
+		"Toei.Tochomae.C5",
+		"Toei.Tochomae.C6",
+		"Toei.Tochomae.E1",
+		"Toei.Tochomae.E2",
+		"Toei.Tochomae.E3",
+		"Toei.Tochomae.E4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.ShinjukuNishiguchi",
@@ -6954,6 +6969,10 @@
 		"zh-Hans": "若松河田",
 		"zh-Hant": "若松河田"
 	},
+	"exit": [
+		"Toei.WakamatsuKawada.1",
+		"Toei.WakamatsuKawada.2"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.UshigomeYanagicho",
@@ -6962,6 +6981,11 @@
 		"zh-Hans": "牛込柳町",
 		"zh-Hant": "牛込柳町"
 	},
+	"exit": [
+		"Toei.UshigomeYanagicho.East",
+		"Toei.UshigomeYanagicho.West",
+		"Toei.UshigomeYanagicho.Southeast"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.UshigomeKagurazaka",
@@ -6970,6 +6994,11 @@
 		"zh-Hans": "牛込神乐坂",
 		"zh-Hant": "牛込神樂坂"
 	},
+	"exit": [
+		"Toei.UshigomeKagurazaka.A1",
+		"Toei.UshigomeKagurazaka.A2",
+		"Toei.UshigomeKagurazaka.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Iidabashi",
@@ -7013,6 +7042,11 @@
 		"zh-Hans": "上野御徒町",
 		"zh-Hant": "上野御徒町"
 	},
+	"exit": [
+		"Toei.UenoOkachimachi.A6",
+		"Toei.UenoOkachimachi.A7",
+		"Toei.UenoOkachimachi.A8"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.ShinOkachimachi",
@@ -7021,6 +7055,12 @@
 		"zh-Hans": "新御徒町",
 		"zh-Hant": "新御徒町"
 	},
+	"exit": [
+		"Toei.ShinOkachimachi.A1",
+		"Toei.ShinOkachimachi.A2",
+		"Toei.ShinOkachimachi.A3",
+		"Toei.ShinOkachimachi.A4"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Kuramae",
@@ -7042,6 +7082,13 @@
 		"zh-Hans": "两国",
 		"zh-Hant": "兩國"
 	},
+	"exit": [
+		"Toei.Ryogoku.A1",
+		"Toei.Ryogoku.A2",
+		"Toei.Ryogoku.A3",
+		"Toei.Ryogoku.A4",
+		"Toei.Ryogoku.A5"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Morishita",
@@ -7103,6 +7150,15 @@
 		"zh-Hans": "胜哄",
 		"zh-Hant": "勝鬨"
 	},
+	"exit": [
+		"Toei.Kachidoki.A1",
+		"Toei.Kachidoki.A2a",
+		"Toei.Kachidoki.A2b",
+		"Toei.Kachidoki.A3a",
+		"Toei.Kachidoki.A3b",
+		"Toei.Kachidoki.A4a",
+		"Toei.Kachidoki.A4b"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Tsukijishijo",
@@ -7111,6 +7167,11 @@
 		"zh-Hans": "筑地市场",
 		"zh-Hant": "築地市場"
 	},
+	"exit": [
+		"Toei.Tsukijishijo.A1",
+		"Toei.Tsukijishijo.A2",
+		"Toei.Tsukijishijo.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Shiodome",
@@ -7120,6 +7181,16 @@
 		"zh-Hant": "汐留"
 	},
 	"thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Shiodome_Station_Oedo_Line_Concourse_2015.jpg/128px-Shiodome_Station_Oedo_Line_Concourse_2015.jpg",
+	"exit": [
+		"Toei.Shiodome.3",
+		"Toei.Shiodome.4",
+		"Toei.Shiodome.5",
+		"Toei.Shiodome.6",
+		"Toei.Shiodome.7",
+		"Toei.Shiodome.8",
+		"Toei.Shiodome.9",
+		"Toei.Shiodome.10"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Daimon",
@@ -7129,6 +7200,13 @@
 		"zh-Hant": "大門",
 		"ja-Wiki": "大門駅 (東京都)"
 	},
+	"exit": [
+		"Toei.Daimon.B1",
+		"Toei.Daimon.B2",
+		"Toei.Daimon.B3",
+		"Toei.Daimon.B4",
+		"Toei.Daimon.B5"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Akabanebashi",
@@ -7137,6 +7215,10 @@
 		"zh-Hans": "赤羽桥",
 		"zh-Hant": "赤羽橋"
 	},
+	"exit": [
+		"Toei.Akabanebashi.1",
+		"Toei.Akabanebashi.2"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.AzabuJuban",
@@ -7181,6 +7263,13 @@
 		"zh-Hans": "国立竞技场",
 		"zh-Hant": "國立競技場"
 	},
+	"exit": [
+		"Toei.KokuritsuKyogijo.A1",
+		"Toei.KokuritsuKyogijo.A2",
+		"Toei.KokuritsuKyogijo.A3",
+		"Toei.KokuritsuKyogijo.A4",
+		"Toei.KokuritsuKyogijo.A5"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Yoyogi",
@@ -7189,6 +7278,11 @@
 		"zh-Hans": "代代木",
 		"zh-Hant": "代代木"
 	},
+	"exit": [
+		"Toei.Yoyogi.A1",
+		"Toei.Yoyogi.A2",
+		"Toei.Yoyogi.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Shinjuku",
@@ -7220,6 +7314,10 @@
 		"zh-Hans": "西新宿五丁目",
 		"zh-Hant": "西新宿五丁目"
 	},
+	"exit": [
+		"Toei.NishiShinjukuGochome.A1",
+		"Toei.NishiShinjukuGochome.A2"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.NakanoSakaue",
@@ -7240,6 +7338,11 @@
 		"zh-Hans": "东中野",
 		"zh-Hant": "東中野"
 	},
+	"exit": [
+		"Toei.HigashiNakano.A1",
+		"Toei.HigashiNakano.A2",
+		"Toei.HigashiNakano.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Nakai",
@@ -7248,6 +7351,10 @@
 		"zh-Hans": "中井",
 		"zh-Hant": "中井"
 	},
+	"exit": [
+		"Toei.Nakai.A1",
+		"Toei.Nakai.A2"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.OchiaiMinamiNagasaki",
@@ -7256,6 +7363,11 @@
 		"zh-Hans": "落合南长崎",
 		"zh-Hant": "落合南長崎"
 	},
+	"exit": [
+		"Toei.OchiaiMinamiNagasaki.A1",
+		"Toei.OchiaiMinamiNagasaki.A2",
+		"Toei.OchiaiMinamiNagasaki.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.ShinEgota",
@@ -7264,6 +7376,10 @@
 		"zh-Hans": "新江古田",
 		"zh-Hant": "新江古田"
 	},
+	"exit": [
+		"Toei.ShinEgota.A1",
+		"Toei.ShinEgota.A2"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Nerima",
@@ -7272,6 +7388,10 @@
 		"zh-Hans": "练马",
 		"zh-Hant": "練馬"
 	},
+	"exit": [
+		"Toei.Nerima.A1",
+		"Toei.Nerima.A2"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Toshimaen",
@@ -7280,6 +7400,10 @@
 		"zh-Hans": "丰岛园",
 		"zh-Hant": "豐島園"
 	},
+	"exit": [
+		"Toei.Toshimaen.A1",
+		"Toei.Toshimaen.A2"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.NerimaKasugacho",
@@ -7288,6 +7412,11 @@
 		"zh-Hans": "练马春日町",
 		"zh-Hant": "練馬春日町"
 	},
+	"exit": [
+		"Toei.NerimaKasugacho.A1",
+		"Toei.NerimaKasugacho.A2",
+		"Toei.NerimaKasugacho.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.Hikarigaoka",
@@ -7296,6 +7425,13 @@
 		"zh-Hans": "光丘",
 		"zh-Hant": "光丘"
 	},
+	"exit": [
+		"Toei.Hikarigaoka.A1",
+		"Toei.Hikarigaoka.A2",
+		"Toei.Hikarigaoka.A3",
+		"Toei.Hikarigaoka.A4",
+		"Toei.Hikarigaoka.A5"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.NipporiToneri.Nippori",
