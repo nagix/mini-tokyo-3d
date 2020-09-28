@@ -17,9 +17,9 @@ export default async function(options) {
 
     const lookup = helpers.buildLookup(data);
 
-    extra.forEach(({id, title}) => {
+    for (const {id, title} of extra) {
         Object.assign(lookup[id].title, title);
-    });
+    }
 
     loaderHelpers.saveJSON('build/data/flight-statuses.json.gz', data);
 

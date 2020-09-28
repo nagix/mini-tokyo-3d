@@ -17,7 +17,7 @@ export default async function(options) {
 
     const lookup = helpers.buildLookup(data);
 
-    extra.forEach(({id, title, color, tailcolor}) => {
+    for (const {id, title, color, tailcolor} of extra) {
         let operator = lookup[id];
 
         if (!operator) {
@@ -31,7 +31,7 @@ export default async function(options) {
         Object.assign(operator.title, title);
         operator.color = color;
         operator.tailcolor = tailcolor;
-    });
+    }
 
     loaderHelpers.saveJSON('build/data/operators.json.gz', data);
 

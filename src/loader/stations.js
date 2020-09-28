@@ -48,23 +48,22 @@ export default async function(options) {
 
     const urls = [];
 
-    Object.keys(OPERATORS_FOR_STATIONS).forEach(source => {
+    for (const source of Object.keys(OPERATORS_FOR_STATIONS)) {
         const {url, key} = options[source];
-        OPERATORS_FOR_STATIONS[source].forEach(operatorGroup => {
+        for (const operatorGroup of OPERATORS_FOR_STATIONS[source]) {
             const operators = operatorGroup
                 .map(operator => `odpt.Operator:${operator}`)
                 .join(',');
 
             urls.push(`${url}odpt:Station?odpt:operator=${operators}&acl:consumerKey=${key}`);
-        });
-    });
+        }
+    }
 
-    const original = await Promise.all([
-        ...urls,
-        'data/stations.json'
+    const [stationGroupData, extra, ...original] = await Promise.all([
+        'data/station-groups.json',
+        'data/stations.json',
+        ...urls
     ].map(loaderHelpers.loadJSON));
-
-    const extra = original.pop();
 
     const data = [].concat(...original).map(station => {
         const lon = station['geo:long'];
@@ -80,7 +79,7 @@ export default async function(options) {
 
     const lookup = helpers.buildLookup(data);
 
-    extra.forEach(({id, railway, coord, title, utitle, thumbnail, exit, altitude}) => {
+    for (const {id, railway, coord, title, utitle, thumbnail, exit, altitude} of extra) {
         let station = lookup[id];
 
         if (!station) {
@@ -103,12 +102,26 @@ export default async function(options) {
         if (altitude !== undefined) {
             station.altitude = altitude;
         }
-    });
+    }
+
+    const stationGroupIDLookup = {};
+
+    for (const groups of stationGroupData) {
+        for (const stationID of [].concat(...groups)) {
+            stationGroupIDLookup[stationID] = groups[0][0];
+        }
+    }
+    for (const station of data) {
+        const {id, altitude} = station,
+            stationGroupID = stationGroupIDLookup[id];
+
+        station.group = `${stationGroupID || id}.${altitude < 0 ? 'ug' : 'og'}`;
+    }
 
     const stationLists = [[]];
     const stationIDLookup = {};
 
-    data.forEach(({id, title}) => {
+    for (const {id, title} of data) {
         const stations = stationLists[stationLists.length - 1];
         const titleJa = title['ja-Wiki'] || `${title['ja']}駅`;
 
@@ -118,7 +131,7 @@ export default async function(options) {
         if (stations.length >= 50) {
             stationLists.push([]);
         }
-    });
+    }
     (await Promise.all(stationLists.map(stations =>
         loaderHelpers.loadJSON(`${WIKIPEDIA_URL}?${WIKIPEDIA_PARAMS}&titles=${stations.join('|')}`)
     ))).forEach((result) => {
@@ -128,9 +141,9 @@ export default async function(options) {
             const {title, thumbnail} = pages[id];
 
             if (thumbnail) {
-                stationIDLookup[title].forEach(id => {
+                for (const id of stationIDLookup[title]) {
                     lookup[id].thumbnail = thumbnail.source;
-                });
+                }
             } else if (lookup[id] && lookup[id].coord) {
                 console.log(`No thumbnail: ${id}`);
             }

@@ -17,12 +17,12 @@ export default async function(options) {
 
     const lookup = helpers.buildLookup(data);
 
-    extra.forEach(({id, title, direction}) => {
+    for (const {id, title, direction} of extra) {
         const airport = lookup[id];
 
         Object.assign(airport.title, title);
         airport.direction = direction;
-    });
+    }
 
     loaderHelpers.saveJSON('build/data/airports.json.gz', data);
 

@@ -35,21 +35,19 @@ export default async function(options) {
 
     const urls = [];
 
-    Object.keys(OPERATORS_FOR_RAILWAYS).forEach(source => {
+    for (const source of Object.keys(OPERATORS_FOR_RAILWAYS)) {
         const {url, key} = options[source],
             operators = OPERATORS_FOR_RAILWAYS[source]
                 .map(operator => `odpt.Operator:${operator}`)
                 .join(',');
 
         urls.push(`${url}odpt:Railway?odpt:operator=${operators}&acl:consumerKey=${key}`);
-    });
+    }
 
-    const original = await Promise.all([
-        ...urls,
-        'data/railways.json'
+    const [extra, ...original] = await Promise.all([
+        'data/railways.json',
+        ...urls
     ].map(loaderHelpers.loadJSON));
-
-    const extra = original.pop();
 
     const data = [].concat(...original).map(railway => ({
         id: helpers.removePrefix(railway['owl:sameAs']),
@@ -63,7 +61,7 @@ export default async function(options) {
 
     const lookup = helpers.buildLookup(data);
 
-    extra.forEach(({id, title, stations, ascending, color, altitude, carComposition}) => {
+    for (const {id, title, stations, ascending, color, altitude, carComposition} of extra) {
         let railway = lookup[id];
 
         if (!railway) {
@@ -86,7 +84,7 @@ export default async function(options) {
         railway.altitude = altitude;
         railway.carComposition = carComposition;
         delete railway.del;
-    });
+    }
 
     loaderHelpers.saveJSON('build/data/railways.json.gz', data.filter(({del}) => !del));
 

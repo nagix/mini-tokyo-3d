@@ -148,23 +148,21 @@ export default async function(options) {
     return Promise.all(CALENDARS.map(async (calendar, i) => {
         const urls = [];
 
-        Object.keys(RAILWAYS_FOR_TRAINTIMETABLES).forEach(source => {
+        for (const source of Object.keys(RAILWAYS_FOR_TRAINTIMETABLES)) {
             const {url, key} = options[source];
-            RAILWAYS_FOR_TRAINTIMETABLES[source].forEach(railwayGroup => {
+            for (const railwayGroup of RAILWAYS_FOR_TRAINTIMETABLES[source]) {
                 const railways = railwayGroup
                     .map(railway => `odpt.Railway:${railway}`)
                     .join(',');
 
                 urls.push(`${url}odpt:TrainTimetable?odpt:railway=${railways}&odpt:calendar=odpt.Calendar:${calendar}&acl:consumerKey=${key}`);
-            });
-        });
+            }
+        }
 
-        const original = await Promise.all([
-            ...urls,
-            `data/timetable-${CALENDAR_POSTFIXES[i]}.json`
+        const [extra, ...original] = await Promise.all([
+            `data/timetable-${CALENDAR_POSTFIXES[i]}.json`,
+            ...urls
         ].map(loaderHelpers.loadJSON));
-
-        const extra = original.pop();
 
         const data = [].concat(...original).map(timetable => ({
             t: helpers.removePrefix(timetable['odpt:train']),
@@ -195,7 +193,7 @@ export default async function(options) {
 
         const lookup = helpers.buildLookup(data);
 
-        extra.forEach(timetable => {
+        for (const timetable of extra) {
             const {id, tt, os, ds, pt, nt, nm, v} = timetable,
                 timetableRef = lookup[id];
 
@@ -228,10 +226,10 @@ export default async function(options) {
                 timetableRef.nm = nm;
                 timetableRef.v = v;
             }
-        });
+        }
 
         // Modify Sobu Rapid, Sobu, Narita and Narita Airport branch timetables
-        RAILWAYS_FOR_SOBURAPID.forEach(railwayID => {
+        for (const railwayID of RAILWAYS_FOR_SOBURAPID) {
             data.filter(timetable =>
                 timetable.r === railwayID &&
                 timetable.y === TRAINTYPE_JREAST_LIMITEDEXPRESS &&
@@ -250,9 +248,9 @@ export default async function(options) {
                 if (nextTable || prevTable) {
                     const r = (nextTable || prevTable).r;
 
-                    tt.forEach(obj => {
+                    for (const obj of tt) {
                         obj.s = obj.s.replace(railwayID, r);
-                    });
+                    }
                 }
 
                 if (nextTable) {
@@ -275,7 +273,7 @@ export default async function(options) {
                 data.splice(data.indexOf(timetable), 1);
                 delete lookup[id];
             });
-        });
+        }
         data.filter(timetable =>
             helpers.includes(RAILWAYS_FOR_SOBURAPID, timetable.r) &&
             timetable.y === TRAINTYPE_JREAST_RAPID &&
@@ -283,9 +281,9 @@ export default async function(options) {
         ).forEach(timetable => {
             const {r, tt} = timetable;
 
-            tt.forEach(obj => {
+            for (const obj of tt) {
                 obj.s = obj.s.replace(r, RAILWAY_SOBURAPID);
-            });
+            }
             timetable.r = RAILWAY_SOBURAPID;
         });
 
@@ -298,9 +296,9 @@ export default async function(options) {
         ).forEach(timetable => {
             const {tt, nt, pt} = timetable;
 
-            tt.forEach(obj => {
+            for (const obj of tt) {
                 obj.s = obj.s.replace(RAILWAY_YOKOSUKA, RAILWAY_YAMANOTEFREIGHT);
-            });
+            }
             timetable.r = RAILWAY_YAMANOTEFREIGHT;
             if (pt && pt[0].startsWith(RAILWAY_SHONANSHINJUKU)) {
                 const ptt = lookup[pt[0]].tt,
@@ -335,14 +333,14 @@ export default async function(options) {
                     (!startFromNishiFunabashi && direction === RAIL_DIRECTION_INBOUND) ?
                     RAILWAY_KEIYOKOYABRANCH : RAILWAY_KEIYOFUTAMATABRANCH;
 
-            [os, ds].forEach(stations => {
+            for (const stations of [os, ds]) {
                 stations.forEach((station, i) => {
                     stations[i] = station.replace(RAILWAY_KEIYO, railwayID);
                 });
-            });
-            tt.forEach(obj => {
+            }
+            for (const obj of tt) {
                 obj.s = obj.s.replace(RAILWAY_KEIYO, railwayID);
-            });
+            }
         });
 
         // Modify Musashino branch timeseries
@@ -353,14 +351,14 @@ export default async function(options) {
         ).forEach(timetable => {
             const {tt, os, ds, nt, pt} = timetable;
 
-            [os, ds].forEach(stations => {
+            for (const stations of [os, ds]) {
                 stations.forEach((station, i) => {
                     stations[i] = station.replace(RAILWAY_CHUORAPID, RAILWAY_MUSASHINOKUNITACHIBRANCH);
                 });
-            });
-            tt.forEach(obj => {
+            }
+            for (const obj of tt) {
                 obj.s = obj.s.replace(RAILWAY_CHUORAPID, RAILWAY_MUSASHINOKUNITACHIBRANCH);
-            });
+            }
             timetable.r = RAILWAY_MUSASHINOKUNITACHIBRANCH;
             if (pt && pt[0].startsWith(RAILWAY_MUSASHINO)) {
                 const ptt = lookup[pt[0]].tt,
@@ -394,14 +392,14 @@ export default async function(options) {
                     ds[0] === STATION_CHUORAPID_HACHIOJI ?
                     RAILWAY_MUSASHINOOMIYABRANCH : RAILWAY_MUSASHINONISHIURAWABRANCH;
 
-            [os, ds].forEach(stations => {
+            for (const stations of [os, ds]) {
                 stations.forEach((station, i) => {
                     stations[i] = station.replace(RAILWAY_SHONANSHINJUKU, railwayID);
                 });
-            });
-            tt.forEach(obj => {
+            }
+            for (const obj of tt) {
                 obj.s = obj.s.replace(RAILWAY_SHONANSHINJUKU, railwayID);
-            });
+            }
             if (pt && pt[0].startsWith(RAILWAY_MUSASHINO)) {
                 const prevTable = lookup[pt[0]],
                     ptt = prevTable.tt,

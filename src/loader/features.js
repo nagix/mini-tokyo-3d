@@ -25,6 +25,14 @@ function setAltitude(geojson, altitude) {
     });
 }
 
+function clearOpacity(geojson) {
+    coordEach(geojson, coord => {
+        if (coord[3] !== undefined) {
+            coord.pop();
+        }
+    });
+}
+
 function getLocationAlongLine(line, point) {
     const nearestPoint = nearestPointOnLine(line, point);
     return nearestPoint.properties.location;
@@ -100,11 +108,11 @@ export default async function(railwayLookup, stationLookup) {
         group => [].concat(...group)
     ));
 
-    coordinateData.railways.forEach(({id}) =>
+    for (const {id} of coordinateData.railways) {
         ((railwayLookup[id] || {}).stations || [])
             .filter(station => !helpers.includes(transitStations, station))
-            .forEach(station => stationGroupData.push([[station]]))
-    );
+            .forEach(station => stationGroupData.push([[station]]));
+    }
 
     const featureArray = [].concat(...await Promise.all([13, 14, 15, 16, 17, 18].map(zoom =>
         new Promise(resolve => {
@@ -121,7 +129,7 @@ export default async function(railwayLookup, stationLookup) {
         })
     )));
 
-    coordinateData.airways.forEach(({id, coords, color}) => {
+    for (const {id, coords, color} of coordinateData.airways) {
         const airwayFeature = lineString(coords, {
             id,
             type: 0,
@@ -133,7 +141,7 @@ export default async function(railwayLookup, stationLookup) {
         airwayFeature.properties.length = turfLength(airwayFeature);
 
         featureArray.push(airwayFeature);
-    });
+    }
 
     loaderHelpers.saveJSON('build/data/features.json.gz', truncate(featureCollection(featureArray), {precision: 7}));
 
@@ -149,7 +157,7 @@ export function featureWorker() {
 
     const unit = Math.pow(2, 14 - zoom) * .1;
 
-    railways.forEach(({id, sublines, color, altitude, loop}) => {
+    for (const {id, sublines, color, altitude, loop} of railways) {
         const railwayFeature = lineString([].concat(...sublines.map(subline => {
             const {type, start, end, coords, opacity} = subline,
                 sublineAltitude = helpers.valueOrDefault(subline.altitude, altitude) || 0;
@@ -245,9 +253,9 @@ export function featureWorker() {
                 start && start.altitude !== undefined ? .4 : 0,
                 end && end.altitude !== undefined ? .4 : 0);
             if (sublineAltitude) {
-                coordinates.forEach(coord => {
+                for (const coord of coordinates) {
                     coord[2] = sublineAltitude * unit * 1000;
-                });
+                }
             }
             if (start && start.altitude !== undefined) {
                 smoothAltitude(start.altitude);
@@ -256,9 +264,9 @@ export function featureWorker() {
                 smoothAltitude(end.altitude, true);
             }
             if (opacity !== undefined) {
-                coordinates.forEach(coord => {
+                for (const coord of coordinates) {
                     coord[3] = opacity;
-                });
+                }
             }
 
             return coordinates;
@@ -272,7 +280,7 @@ export function featureWorker() {
 
         featureLookup[id] = railwayFeature;
         if (id.startsWith('Base.')) {
-            return;
+            continue;
         }
 
         // Set station offsets
@@ -303,67 +311,50 @@ export function featureWorker() {
             if (!sectionFeature) {
                 return;
             }
-
-            const section = index > 0 && index < sectionFeatures.length - 1 ? index - 1 : undefined,
-                ugCoords = [[]],
-                ogCoords = [[]];
+            const sections = [{coords: []}];
 
             getCoords(sectionFeature).forEach((coord, i, coords) => {
-                if (coord[3] !== undefined) {
-                    coord.pop();
-                } else {
-                    if (coord[2] < 0 || (coords[i - 1] && coords[i - 1][2] < 0) || (coords[i + 1] && coords[i + 1][2] < 0)) {
-                        ugCoords[ugCoords.length - 1].push(coord);
-                        if (!(coord[2] < 0) && (coords[i - 1] && coords[i - 1][2] < 0)) {
-                            ugCoords.push([]);
-                        }
-                    }
-                    if (!(coord[2] < 0)) {
-                        ogCoords[ogCoords.length - 1].push(coord);
-                        if (coords[i + 1] && coords[i + 1][2] < 0) {
-                            ogCoords.push([]);
-                        }
-                    }
+                const section = sections[sections.length - 1];
+
+                section.coords.push(coord);
+                if ((!(coord[2] < 0) && ((i > 0 && coords[i - 1][2] < 0) || (i < coords.length - 1 && coords[i + 1][2] < 0))) ||
+                    (coord[3] === undefined && ((i > 0 && coords[i - 1][3] !== undefined) || (i < coords.length - 1 && coords[i + 1][3] !== undefined)))) {
+                    sections.push({
+                        coords: [coord]
+                    });
+                }
+                if (section.altitude === undefined && i < coords.length - 1) {
+                    section.altitude = coords[i + 1][2] < 0 ? -unit * 1000 : 0;
+                }
+                if (section.opacity === undefined && i < coords.length - 1) {
+                    section.opacity = coords[i + 1][3] !== undefined ? coords[i + 1][3] : 1;
                 }
             });
 
-            ugCoords.forEach((coords, i) => {
-                if (coords.length >= 2) {
-                    featureArray.unshift(lineString(coords, {
-                        id: `${id}.ug.${zoom}.${section}.${i}`,
-                        type: 0,
+            clearOpacity(sectionFeature);
+
+            sections.forEach((section, i) => {
+                if (section.coords.length >= 2) {
+                    featureArray.unshift(lineString(section.coords, {
+                        id: `${id}.${section.altitude < 0 ? 'ug' : 'og'}.${zoom}.${index}.${i}`,
+                        type: section.opacity === 1 ? 0 : 2,
                         color,
                         width: 8,
                         zoom,
-                        railway: id,
-                        section,
-                        altitude: -unit * 1000
-                    }));
-                }
-            });
-            ogCoords.forEach((coords, i) => {
-                if (coords.length >= 2) {
-                    featureArray.unshift(lineString(coords, {
-                        id: `${id}.og.${zoom}.${section}.${i}`,
-                        type: 0,
-                        color,
-                        width: 8,
-                        zoom,
-                        railway: id,
-                        section,
-                        altitude: 0
+                        section: `${id}.${index}`,
+                        altitude: section.altitude
                     }));
                 }
             });
         });
-    });
+    }
 
-    stationGroupData.forEach(group => {
+    for (const group of stationGroupData) {
         const ug = {features: [], connectionCoords: []},
             og = {features: [], connectionCoords: []},
             ids = [];
 
-        group.forEach(stations => {
+        for (const stations of group) {
             const {altitude} = stationLookup[stations[0]] || 0,
                 layer = altitude < 0 ? ug : og,
                 coords = stations.map(id => {
@@ -380,7 +371,7 @@ export function featureWorker() {
             layer.features.push(buffer(feature, unit));
             layer.connectionCoords.push(...coords);
             layer.altitude = altitude;
-        });
+        }
 
         if (ug.features.length) {
             // If there are connections, add extra features
@@ -397,6 +388,7 @@ export function featureWorker() {
                 width: 4,
                 color: '#FFFFFF',
                 zoom,
+                group: `${ids[0]}.ug`,
                 altitude: ug.altitude * unit * 1000,
                 ids
             };
@@ -416,12 +408,13 @@ export function featureWorker() {
                 width: 4,
                 color: '#FFFFFF',
                 zoom,
+                group: `${ids[0]}.og`,
                 altitude: 0,
                 ids
             };
             featureArray.push(feature);
         }
-    });
+    }
 
     parentPort.postMessage(featureArray);
 
