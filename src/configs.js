@@ -66,6 +66,12 @@ const configs = {
     // Minimum flight interval in milliseconds
     minFlightInterval: 90000,
 
+    // Time allotted for transitions to complete
+    transitionDuration: 300,
+
+    // Fade duration when an object is added or removed
+    fadeDuration: 1000,
+
     // Origin of coordinates (around Tokyo station)
     originCoord: [139.7670, 35.6814],
 

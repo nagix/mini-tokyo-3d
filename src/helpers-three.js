@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import * as helpers from './helpers';
 
 /**
  * Returns a group object.
@@ -76,24 +75,20 @@ export function createCube(options) {
  * @param {Object3D} object - Target object
  * @param {number} opacity - Float in the range of 0.0 - 1.0 indicating how
  *     transparent the material is
- * @param {number} factor - Float in the range of 0.0 - 1.0 indicating the
- *     factor of the opacity when fading in or out
  */
-export function setOpacity(object, opacity, factor) {
+export function setOpacity(object, opacity) {
     object.traverse(({material: materials, name}) => {
-        const value = (name === 'outline-marked' ? 1 : opacity) * helpers.valueOrDefault(factor, 1);
-
-        if (materials && name !== 'outline-tracked') {
+        if (materials && !name.startsWith('outline')) {
             const uniforms = materials.uniforms;
 
             if (uniforms) {
-                uniforms.opacity.value = value;
+                uniforms.opacity.value = opacity;
             } else if (Array.isArray(materials)) {
                 for (const material of materials) {
-                    material.opacity = value;
+                    material.opacity = opacity;
                 }
             } else {
-                materials.opacity = value;
+                materials.opacity = opacity;
             }
         }
     });

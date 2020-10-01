@@ -462,29 +462,15 @@ export default class extends mapboxgl.Evented {
             addObject(object, duration) {
                 const layer = object.userData.altitude < 0 ? this.ug : this.og;
 
-                helpersThree.setOpacity(object, 0);
+                setObjectOpacity(object, 0, 0);
                 layer.scene.add(object);
-                if (duration > 0) {
-                    animation.start({
-                        callback: elapsed => {
-                            helpersThree.setOpacity(object, getObjectOpacity(object, me.viewMode), elapsed / duration);
-                        },
-                        duration
-                    });
-                }
+                setObjectOpacity(object, getObjectOpacity(object, me.viewMode), duration);
             },
             updateObject(object, duration) {
                 const layer = object.userData.altitude < 0 ? this.ug : this.og;
 
                 layer.scene.add(object);
-                if (duration > 0) {
-                    animation.start({
-                        callback: elapsed => {
-                            helpersThree.setOpacity(object, getObjectOpacity(object, me.viewMode, elapsed / duration));
-                        },
-                        duration
-                    });
-                }
+                setObjectOpacity(object, getObjectOpacity(object, me.viewMode), duration);
             },
             removeObject(object, duration) {
                 if (!object) {
@@ -495,19 +481,10 @@ export default class extends mapboxgl.Evented {
 
                 helpersThree.resetPolygonOffsetFactor(object);
                 object.renderOrder = 1;
-                if (duration > 0) {
-                    animation.start({
-                        callback: elapsed => {
-                            helpersThree.setOpacity(object, getObjectOpacity(object, me.viewMode), 1 - elapsed / duration);
-                        },
-                        complete: () => {
-                            layer.scene.remove(object);
-                        },
-                        duration
-                    });
-                } else {
+                setObjectOpacity(object, 0, duration);
+                setTimeout(() => {
                     layer.scene.remove(object);
-                }
+                }, duration);
             },
             pickObject(point) {
                 if (me.viewMode === 'underground') {
@@ -1219,13 +1196,13 @@ export default class extends mapboxgl.Evented {
             }
 
             if (!car.parent) {
-                trainLayers.addObject(car, 1000);
+                trainLayers.addObject(car, configs.fadeDuration);
             }
             if (viewMode) {
-                trainLayers.updateObject(car, 1000);
                 if (me.trackedObject === car) {
                     me._setViewMode(viewMode);
                 }
+                trainLayers.updateObject(car, configs.fadeDuration);
             }
 
             if (me.markedObject === car) {
@@ -1272,7 +1249,7 @@ export default class extends mapboxgl.Evented {
                 delete me.selection;
             }
 
-            trainLayers.addObject(aircraft, 1000);
+            trainLayers.addObject(aircraft, configs.fadeDuration);
         }
 
         const {position, scale, rotation} = aircraft,
@@ -1761,7 +1738,7 @@ export default class extends mapboxgl.Evented {
         animation.stop(animationID);
         if (cars) {
             cars.forEach(car => {
-                me.trainLayers.removeObject(car, 1000);
+                me.trainLayers.removeObject(car, configs.fadeDuration);
                 if (car === me.markedObject && !keep) {
                     me.markObject();
                 }
@@ -1785,7 +1762,7 @@ export default class extends mapboxgl.Evented {
             {id, animationID, aircraft} = flight;
 
         animation.stop(animationID);
-        me.trainLayers.removeObject(aircraft, 1000);
+        me.trainLayers.removeObject(aircraft, configs.fadeDuration);
         if (aircraft === me.markedObject) {
             me.markObject();
         }
@@ -2221,31 +2198,27 @@ export default class extends mapboxgl.Evented {
         });
         me.viewMode = mode;
 
+        [13, 14, 15, 16, 17, 18].forEach(zoom => {
+            setLayerOpacity(map, `railways-ug-${zoom}`, mode === 'underground' ? 1 : .0625);
+            setLayerOpacity(map, `stations-ug-${zoom}`, mode === 'underground' ? 1 : .0625);
+        });
+
+        Object.keys(me.activeTrainLookup).forEach(key => {
+            me.activeTrainLookup[key].cars.forEach(car => {
+                setObjectOpacity(car, getObjectOpacity(car, mode));
+            });
+        });
+
         animation.start({
-            callback: (elapsed, duration) => {
-                const t = elapsed / duration;
+            callback: me.refreshDelayMarkers.bind(me),
+            duration: configs.transitionDuration
+        });
 
-                [13, 14, 15, 16, 17, 18].forEach(zoom => {
-                    const opacity = me.viewMode === 'underground' ?
-                        1 * t + .0625 * (1 - t) : 1 * (1 - t) + .0625 * t;
-
-                    helpers.setLayerProps(map, `railways-ug-${zoom}`, {opacity});
-                    helpers.setLayerProps(map, `stations-ug-${zoom}`, {opacity});
-                });
-                Object.keys(me.activeTrainLookup).forEach(key => {
-                    me.activeTrainLookup[key].cars.forEach(car => {
-                        helpersThree.setOpacity(car, getObjectOpacity(car, me.viewMode, t));
-                    });
-                });
-                me.refreshDelayMarkers();
-                Object.keys(me.activeFlightLookup).forEach(key => {
-                    const aircraft = me.activeFlightLookup[key].aircraft;
-                    if (aircraft) {
-                        helpersThree.setOpacity(aircraft, getObjectOpacity(aircraft, me.viewMode, t));
-                    }
-                });
-            },
-            duration: 300
+        Object.keys(me.activeFlightLookup).forEach(key => {
+            const aircraft = me.activeFlightLookup[key].aircraft;
+            if (aircraft) {
+                setObjectOpacity(aircraft, getObjectOpacity(aircraft, mode));
+            }
         });
     }
 
@@ -2911,8 +2884,39 @@ function getStyleColorString(color, clock) {
     return `rgba(${[color.r * r, color.g * g, color.b * b, color.a].join(',')})`;
 }
 
-function getObjectOpacity(object, viewMode, t) {
-    t = helpers.valueOrDefault(t, 1);
+function setObjectOpacity(object, opacity, duration) {
+    const {userData} = object;
+
+    if (duration === 0) {
+        helpersThree.setOpacity(object, opacity);
+    } else {
+        const current = helpers.valueOrDefault(userData.opacity, 1);
+
+        animation.start({
+            callback: (elapsed, duration) => {
+                helpersThree.setOpacity(object, current + (opacity - current) * elapsed / duration);
+            },
+            duration: helpers.valueOrDefault(duration, configs.transitionDuration)
+        });
+    }
+    userData.opacity = opacity;
+}
+
+function getObjectOpacity(object, viewMode) {
     return (viewMode === 'underground') === (object.userData.altitude < 0) ?
-        .9 * t + .225 * (1 - t) : .9 * (1 - t) + .225 * t;
+        .9 : .225;
+}
+
+function setLayerOpacity(map, id, opacity) {
+    const layer = map.getLayer(id).implementation,
+        current = helpers.valueOrDefault(layer.props.opacity, 1);
+
+    animation.start({
+        callback: (elapsed, duration) => {
+            layer.setProps({
+                opacity: current + (opacity - current) * elapsed / duration
+            });
+        },
+        duration: configs.transitionDuration
+    });
 }
