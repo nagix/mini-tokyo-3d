@@ -708,7 +708,7 @@ export default class extends mapboxgl.Evented {
                     railway.stations.forEach(id => {
                         const station = me.stationLookup[id],
                             utitle = station.utitle && station.utitle[l],
-                            title = utitle || helpers.normalize(station.title[l]),
+                            title = utitle || helpers.normalize(station.title[l] || station.title.en),
                             key = title.toUpperCase();
 
                         if (!me.stationTitleLookup[key]) {
