@@ -131,3 +131,7 @@ export function getAltitude(geojson) {
 export function getCenterCoord(geojson) {
     return getCoord(centerOfMass(geojson));
 }
+
+export function emptyFeatureCollection() {
+    return featureCollection([]);
+}

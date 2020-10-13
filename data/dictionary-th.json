@@ -7,6 +7,8 @@
 	"x-speed": "x ความเร็ว",
 
 	"search": "ค้นหาชื่อสถานี",
+	"enter-search": "ค้นหาเส้นทาง",
+	"exit-search": "ปิดการค้นหาเส้นทาง",
 	"station-name": "ชื่อสถานี",
 	"zoom-in": "ขยาย",
 	"zoom-out": "ย่อ",
@@ -50,6 +52,18 @@
 	"estimated-arrival-time": "เวลาถึง(คาดการ)",
 	"actual-arrival-time": "เวลาถึง(จริง)",
 	"code-share": "Code share",
+
+	"route-search": "ค้นหาเส้นทาง",
+	"from-station": "ออกเดินทาง",
+	"to-station": "มาถึง",
+	"depart-at": "ออกเดินทางเวลา",
+	"arrive-by": "มาถึงก่อน",
+	"minute": "",
+	"search-route": "ค้นหา",
+	"route": "เส้นทาง",
+	"transfers": "โอน: $1",
+	"transfer-and-wait": "โอนเงินและรอ $1 นาที",
+	"cannot-find-train": "ไม่พบรถไฟที่ไปถึงในวันนั้น",
 
 	"description": "<h3>เกี่ยวกับ Mini Tokyo 3D</h3><p>การสร้างภาพข้อมูลนี้จัดทำโดย <a href=\"https://nagix.github.io\" target=\"_blank\">Akihiko Kusanagi</a> แหล่งที่มาของข้อมูลการขนส่งสาธารณะในแอพนี้คือความท้าทายในการ <a href=\"https://tokyochallenge.odpt.org/en/\" target=\"_blank\">ความท้าทายของข้อมูลแบบเปิดสำหรับการขนส่งมวลชนในโตเกียว</a> และ <a href=\"https://www.odpt.org\" target=\"_blank\">การขนส่งสาธารณะเปิดศูนย์ข้อมูล</a> พวกเขาจะขึ้นอยู่กับข้อมูลที่ได้รับจากผู้ประกอบการขนส่งสาธารณะ ความถูกต้องและความสมบูรณ์ของข้อมูลจะไม่รับประกัน กรุณาอย่าติดต่อผู้ประกอบการขนส่งสาธารณะโดยตรงเกี่ยวกับเนื้อหาของแอพ</p><p>สำหรับข้อมูลเพิ่มเติมโปรดดู <a href=\"https://github.com/nagix/mini-tokyo-3d/blob/master/USER_GUIDE-en.md\" target=\"_blank\">คู่มือผู้ใช้ Mini Tokyo 3D</a> ซอร์สโค้ดมีอยู่ที่ <a href=\"https://github.com/nagix/mini-tokyo-3d\" target=\"_blank\">ที่เก็บ GitHub</a></p>",
 	"static-update": "อัพเดทล่าสุดเกี่ยวกับข้อมูลคงที่",

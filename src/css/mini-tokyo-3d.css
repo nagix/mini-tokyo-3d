@@ -204,6 +204,183 @@
 .mini-tokyo-3d #clock-speed {
 	padding: 0 6px;
 }
+.mini-tokyo-3d .search-panel {
+	position: absolute;
+	z-index: 3;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: calc(100% - 20px);
+	max-width: 380px;
+	height: max(33%, 176px);
+	margin: auto;
+	border-radius: 3px 3px 0 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	font-size: 130%;
+	color: #fff;
+	transition: height 300ms ease;
+}
+.mini-tokyo-3d #search-header {
+	height: 30px;
+	margin: 10px 0;
+	padding: 0 10px;
+	overflow: hidden;
+	line-height: 30px;
+	cursor: pointer;
+}
+.mini-tokyo-3d .page-controller {
+	position: absolute;
+	top: 10px;
+	right: 80px;
+	display: table;
+	border-radius: 4px;
+	box-shadow:0 0 0 1px #777;
+}
+.mini-tokyo-3d .page-controller > span {
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	text-align: center;
+	display: table-cell;
+}
+.mini-tokyo-3d .page-controller > span:first-child {
+	margin-right: 1px;
+	border-right: solid 1px #777;
+}
+.mini-tokyo-3d .page-controller button {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	border: 0;
+	color: #fff;
+	background-color: transparent;
+	cursor: pointer;
+}
+.mini-tokyo-3d .page-controller .previous-button {
+	border-radius: 4px 0 0 4px;
+}
+.mini-tokyo-3d .page-controller .next-button {
+	border-radius: 0 4px 4px 0;
+}
+.mini-tokyo-3d .previous-icon {
+	display: block;
+	width: 100%;
+	height: 14px;
+	background: no-repeat center/10px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-left.svg', fill: #fff);
+}
+.mini-tokyo-3d button:disabled .previous-icon {
+	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-left.svg', fill: #7f7f7f);
+}
+.mini-tokyo-3d .page-controller button:disabled {
+	cursor: not-allowed;
+}
+.mini-tokyo-3d .page-controller button:not(:disabled):hover {
+	background-color: rgba(51, 51, 51, 0.7);
+}
+.mini-tokyo-3d .next-icon {
+	display: block;
+	width: 100%;
+	height: 14px;
+	background: no-repeat center/10px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-right.svg', fill: #fff);
+}
+.mini-tokyo-3d button:disabled .next-icon {
+	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-right.svg', fill: #7f7f7f);
+}
+.mini-tokyo-3d .back-button {
+	position: absolute;
+	top: 10px;
+	right: 40px;
+	width: 30px;
+	height: 30px;
+	display: block;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	box-shadow:0 0 0 1px #777;
+	color: #fff;
+	background-color: transparent;
+	cursor: pointer;
+}
+.mini-tokyo-3d .back-button:hover {
+	background-color: rgba(51, 51, 51, 0.7);
+}
+.mini-tokyo-3d .back-icon {
+	display: block;
+	width: 100%;
+	height: 14px;
+	background: no-repeat center/14px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/undo.svg', fill: #fff);
+}
+.mini-tokyo-3d #search-body {
+	height: calc(100% - 50px);
+	margin: 10px 0;
+	padding: 0 10px;
+	overflow: auto;
+	overscroll-behavior: contain;
+	line-height: 130%;
+}
+.mini-tokyo-3d .search-form-element {
+	margin-bottom: 4px;
+}
+.mini-tokyo-3d #search-load {
+	display: none;
+	position: relative;
+}
+.mini-tokyo-3d #search-load > .ball-pulse {
+	top: 63px;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(.5, .5);
+	box-sizing: initial;
+	position: absolute;
+}
+.mini-tokyo-3d .search-input {
+	width: 220px;
+	height: 22px;
+	font-size: 16px;
+	border: 1px solid #777;
+	outline: none;
+	background-color: transparent;
+	color: #fff;
+}
+.mini-tokyo-3d .search-input:hover {
+	background-color: rgba(51, 51, 51, 0.7);
+}
+.mini-tokyo-3d .search-select {
+	-webkit-appearance: none;
+    appearance: none;
+	padding: 3px 10px;
+	margin: 0;
+	border: 1px solid #777;
+	border-radius: 4px;
+	outline: none;
+	background-color: transparent;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+}
+.mini-tokyo-3d .search-select:hover {
+	background-color: rgba(51, 51, 51, 0.7);
+}
+.mini-tokyo-3d .search-button {
+	width: calc(100% - 2px);
+	height: 24px;
+	margin: 1px;
+	border: 0;
+	border-radius: 4px;
+	box-shadow:0 0 0 1px #777;
+	outline: none;
+	background-color: transparent;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+}
+.mini-tokyo-3d .search-button:hover {
+	background-color: rgba(51, 51, 51, 0.7);
+}
+.mini-tokyo-3d #search-result {
+	display: none;
+}
 .mini-tokyo-3d .share-panel {
 	position: absolute;
 	z-index: 3;
@@ -371,6 +548,11 @@
 	width: 42px;
 	text-align: right;
 }
+.mini-tokyo-3d .train-title-box {
+	margin-left: 40px;
+	font-size: 12px;
+	line-height: 20px;
+}
 .mini-tokyo-3d .exit-row {
 	margin: 4px 0;
 }
@@ -408,6 +590,12 @@
 	height: 20px;
 	background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-up.svg', fill: #fff);
 }
+.mini-tokyo-3d .search-panel .slide-down,
+.mini-tokyo-3d .search-panel .slide-up {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+}
 .mini-tokyo-3d .timetable-panel .slide-down,
 .mini-tokyo-3d .timetable-panel .slide-up {
 	position: absolute;
@@ -425,6 +613,9 @@
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-search .mapboxgl-ctrl-icon {
 	background: no-repeat right 5px center/19px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/search.svg', fill: #333);
+}
+.mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-search-active .mapboxgl-ctrl-icon {
+	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/search.svg', fill: #33B5E5);
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-underground .mapboxgl-ctrl-icon {
 	background: no-repeat center/23px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/eye.svg', fill: #333);

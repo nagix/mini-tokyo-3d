@@ -122,6 +122,9 @@ const configs = {
     // Default data URL
     dataUrl: 'https://minitokyo3d.com/data',
 
+    // Route search URL
+    searchUrl: 'https://search.minitokyo3d.com/api/v1/routes',
+
     // Timestamp when the static data was last updated
     lastStaticUpdate: '2020-08-31 13:00:00',
 

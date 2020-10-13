@@ -50,7 +50,7 @@ export default [{
 		sourcemap: true,
 		banner
 	},
-	external: ['fs', 'util', 'module', 'path'],
+	external: ['fs', 'util', 'module', 'path', 'child_process'],
 	plugins: [
 		resolve(),
 		postcss({
@@ -79,7 +79,7 @@ export default [{
 		sourcemap: true,
 		banner
 	},
-	external: ['fs', 'util', 'module', 'path'],
+	external: ['fs', 'util', 'module', 'path', 'child_process'],
 	plugins: [
 		resolve(),
 		postcss({

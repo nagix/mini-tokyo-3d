@@ -7,6 +7,8 @@
 	"x-speed": "x speed",
 
 	"search": "Station search",
+	"enter-search": "Route search",
+	"exit-search": "Close route search",
 	"station-name": "Station name",
 	"zoom-in": "Zoom in",
 	"zoom-out": "Zoom out",
@@ -50,6 +52,18 @@
 	"estimated-arrival-time": "Estimated arrival",
 	"actual-arrival-time": "Actual arrival",
 	"code-share": "Code share",
+
+	"route-search": "Route search",
+	"from-station": "From",
+	"to-station": "To",
+	"depart-at": "Depart at",
+	"arrive-by": "Arrive by",
+	"minute": "",
+	"search-route": "Search",
+	"route": "Route",
+	"transfers": "Transfers: $1",
+	"transfer-and-wait": "Transfer & wait for $1 min",
+	"cannot-find-train": "Cannot find a train that arrives that day",
 
 	"description": "<h3>About Mini Tokyo 3D</h3><p>This data visualization is provided by <a href=\"https://nagix.github.io\" target=\"_blank\">Akihiko Kusanagi</a>. The source of the public transportation data in this app is the <a href=\"https://tokyochallenge.odpt.org/en/\" target=\"_blank\">Open Data Challenge for Public Transportation in Tokyo</a> and the <a href=\"https://www.odpt.org\" target=\"_blank\">Public Transportation Open Data Center</a>. They are based on the data provided by the public transportation operators. The accuracy and integrity of the data are not guaranteed. Please do not contact the public transportation operators directly regarding the content of the app.</p><p>For more info, please see the <a href=\"https://github.com/nagix/mini-tokyo-3d/blob/master/USER_GUIDE-en.md\" target=\"_blank\">Mini Tokyo 3D User Guide</a>. Source code is available at <a href=\"https://github.com/nagix/mini-tokyo-3d\" target=\"_blank\">GitHub repository</a>.</p>",
 	"static-update": "Latest update on static data",

@@ -14,9 +14,11 @@ import DetailPanel from './detail-panel';
 import FireworksLayer from './fireworks-layer';
 import * as helpers from './helpers';
 import * as helpersGeojson from './helpers-geojson';
+import * as helpersMapbox from './helpers-mapbox';
 import * as helpersThree from './helpers-three';
 import * as loader from './loader';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
+import SearchPanel from './search-panel';
 import SharePanel from './share-panel';
 import StationPanel from './station-panel';
 import ThreeLayer from './three-layer';
@@ -35,8 +37,6 @@ const DEGREE_TO_RADIAN = Math.PI / 180;
 
 const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord),
     modelScale = modelOrigin.meterInMercatorCoordinateUnits();
-
-const isEdge = helpers.includes(navigator.userAgent, 'Edge');
 
 // Replace MapboxLayer.render to support underground rendering
 const render = MapboxLayer.prototype.render;
@@ -89,6 +89,7 @@ export default class extends mapboxgl.Evented {
         me.infoControl = helpers.valueOrDefault(options.infoControl, true);
         me.clock = new Clock();
 
+        me.searchMode = 'none';
         me.viewMode = configs.defaultViewMode;
         me.trackingMode = helpers.valueOrDefault(options.trackingMode, configs.defaultTrackingMode);
         me.initialSelection = options.selection;
@@ -464,13 +465,13 @@ export default class extends mapboxgl.Evented {
 
                 setObjectOpacity(object, 0, 0);
                 layer.scene.add(object);
-                setObjectOpacity(object, getObjectOpacity(object, me.viewMode), duration);
+                setObjectOpacity(object, getObjectOpacity(object, me.viewMode, me.searchMode), duration);
             },
             updateObject(object, duration) {
                 const layer = object.userData.altitude < 0 ? this.ug : this.og;
 
                 layer.scene.add(object);
-                setObjectOpacity(object, getObjectOpacity(object, me.viewMode), duration);
+                setObjectOpacity(object, getObjectOpacity(object, me.viewMode, me.searchMode), duration);
             },
             removeObject(object, duration) {
                 if (!object) {
@@ -610,6 +611,58 @@ export default class extends mapboxgl.Evented {
                     pickable: true
                 }), 'building-3d');
                 map.setLayerZoomRange(`stations-ug-${zoom}`, minzoom, maxzoom);
+                map.addLayer(new MapboxLayer({
+                    id: `railways-routeug-${zoom}`,
+                    type: GeoJsonLayer,
+                    data: helpersGeojson.emptyFeatureCollection(),
+                    filled: false,
+                    stroked: true,
+                    getLineWidth: d => d.properties.width,
+                    getLineColor: d => helpers.colorToRGBArray(d.properties.color),
+                    lineWidthUnits: 'pixels',
+                    lineWidthScale,
+                    opacity: .0625
+                }), 'building-3d');
+                map.setLayerZoomRange(`railways-routeug-${zoom}`, minzoom, maxzoom);
+                map.addLayer(new MapboxLayer({
+                    id: `stations-routeug-${zoom}`,
+                    type: GeoJsonLayer,
+                    data: helpersGeojson.emptyFeatureCollection(),
+                    filled: true,
+                    stroked: true,
+                    getLineWidth: 4,
+                    getLineColor: [0, 0, 0],
+                    lineWidthUnits: 'pixels',
+                    lineWidthScale,
+                    getFillColor: [255, 255, 255, 179],
+                    opacity: .0625
+                }), 'building-3d');
+                map.setLayerZoomRange(`stations-routeug-${zoom}`, minzoom, maxzoom);
+                map.addLayer(new MapboxLayer({
+                    id: `railways-routeog-${zoom}`,
+                    type: GeoJsonLayer,
+                    data: helpersGeojson.emptyFeatureCollection(),
+                    filled: false,
+                    stroked: true,
+                    getLineWidth: d => d.properties.width,
+                    getLineColor: d => helpers.colorToRGBArray(d.properties.color),
+                    lineWidthUnits: 'pixels',
+                    lineWidthScale
+                }), 'building-3d');
+                map.setLayerZoomRange(`railways-routeog-${zoom}`, minzoom, maxzoom);
+                map.addLayer(new MapboxLayer({
+                    id: `stations-routeog-${zoom}`,
+                    type: GeoJsonLayer,
+                    data: helpersGeojson.emptyFeatureCollection(),
+                    filled: true,
+                    stroked: true,
+                    getLineWidth: 4,
+                    getLineColor: [0, 0, 0],
+                    lineWidthUnits: 'pixels',
+                    lineWidthScale,
+                    getFillColor: [255, 255, 255, 179]
+                }), 'building-3d');
+                map.setLayerZoomRange(`stations-routeog-${zoom}`, minzoom, maxzoom);
             });
 
             // Workaround for deck.gl #3522
@@ -697,8 +750,8 @@ export default class extends mapboxgl.Evented {
 
             map.addLayer(weatherLayer, 'poi');
 
-            me.styleColors = helpers.getStyleColors(map);
-            me.styleOpacities = helpers.getStyleOpacities(map);
+            me.styleColors = helpersMapbox.getStyleColors(map);
+            me.styleOpacities = helpersMapbox.getStyleOpacities(map);
 
             const datalist = document.createElement('datalist');
             datalist.id = 'stations';
@@ -723,66 +776,12 @@ export default class extends mapboxgl.Evented {
             });
             document.body.appendChild(datalist);
 
-            const searchBox = me.container.querySelector('#search-box');
-            const searchListener = event => {
-                const station = me.stationTitleLookup[event.target.value.toUpperCase()];
-
-                if (station && station.coord) {
-                    me.markObject();
-                    me.trackObject();
-                    if (me.viewMode === 'underground' && !(station.altitude < 0)) {
-                        me._setViewMode('ground');
-                    } else if (me.viewMode === 'ground' && station.altitude < 0) {
-                        map.once('moveend', () => {
-                            me._setViewMode('underground');
-                        });
-                    }
-                    map.flyTo({
-                        center: station.coord,
-                        zoom: Math.max(map.getZoom(), 15)
-                    });
-                }
-            };
-            searchBox.placeholder = me.dict['station-name'];
-            searchBox.addEventListener('change', searchListener);
-
-            // Workaround for Edge
-            if (isEdge) {
-                searchBox.addEventListener('keydown', event => {
-                    if (event.key === 'Enter') {
-                        searchListener(event);
-                    } else {
-                        me.typing = true;
-                    }
-                });
-                searchBox.addEventListener('input', event => {
-                    if (!me.typing) {
-                        searchListener(event);
-                    }
-                    delete me.typing;
-                });
-            }
-
             if (me.searchControl) {
                 const control = new MapboxGLButtonControl([{
                     className: 'mapboxgl-ctrl-search',
-                    title: me.dict['search'],
+                    title: me.dict['enter-search'],
                     eventHandler() {
-                        const {style} = this;
-
-                        if (style.width !== '240px') {
-                            style.width = '240px';
-                            searchBox.style.display = 'block';
-                            searchBox.value = '';
-                            searchBox.focus();
-                            setTimeout(() => {
-                                searchBox.style.opacity = 1;
-                            }, 300);
-                        } else {
-                            style.width = '29px';
-                            searchBox.style.display = 'none';
-                            searchBox.style.opacity = 0;
-                        }
+                        me._setSearchMode(me.searchMode === 'none' ? 'edit' : 'none');
                     }
                 }]);
                 map.addControl(control);
@@ -843,7 +842,7 @@ export default class extends mapboxgl.Evented {
                         me.setWeatherMode(!me.isWeatherVisible);
                     }
                 }]);
-                map.addControl(control, 'top-right');
+                map.addControl(control);
             }
 
             const aboutPopup = me.aboutPopup = new AboutPopup();
@@ -926,13 +925,13 @@ export default class extends mapboxgl.Evented {
                     const lineWidthScale = helpers.clamp(Math.pow(2, zoom - 12), .125, 1);
 
                     ['stations-marked-13', 'stations-selected-13', 'railways-ug-13', 'stations-ug-13'].forEach(id => {
-                        helpers.setLayerProps(map, id, {lineWidthScale});
+                        helpersMapbox.setLayerProps(map, id, {lineWidthScale});
                     });
                 } else if (zoom > 19) {
                     const lineWidthScale = helpers.clamp(Math.pow(2, zoom - 19), 1, 8);
 
-                    ['stations-marked-18', 'stations-selected-18', 'railways-ug-18', 'stations-ug-18'].forEach(id => {
-                        helpers.setLayerProps(map, id, {lineWidthScale});
+                    ['stations-marked-18', 'stations-selected-18', 'railways-ug-18', 'stations-ug-18', 'railways-routeug-18', 'stations-routeug-18', 'railways-routeog-13', 'stations-routeog-13'].forEach(id => {
+                        helpersMapbox.setLayerProps(map, id, {lineWidthScale});
                     });
                 }
 
@@ -1139,7 +1138,7 @@ export default class extends mapboxgl.Evented {
         }
 
         if (delay) {
-            helpersThree.addDelayMarker(cars[0], helpers.isDarkBackground(map));
+            helpersThree.addDelayMarker(cars[0], helpersMapbox.isDarkBackground(map));
         }
 
         const pArr = helpersGeojson.getCoordAndBearing(feature, offset + train._t * interval, 1, objectUnit);
@@ -2104,6 +2103,23 @@ export default class extends mapboxgl.Evented {
         });
     }
 
+    updateSearchButton(mode) {
+        const {container, dict} = this,
+            button = container.querySelector('.mapboxgl-ctrl-search');
+
+        if (button) {
+            const {classList} = button;
+
+            if (mode === 'edit' || mode === 'route' || mode === 'playback') {
+                button.title = dict['exit-search'];
+                classList.add('mapboxgl-ctrl-search-active');
+            } else {
+                button.title = dict['enter-search'];
+                classList.remove('mapboxgl-ctrl-search-active');
+            }
+        }
+    }
+
     updateUndergroundButton(mode) {
         const {container, dict} = this,
             button = container.querySelector('.mapboxgl-ctrl-underground');
@@ -2175,9 +2191,67 @@ export default class extends mapboxgl.Evented {
         }
     }
 
+    refreshMap() {
+        const me = this,
+            {map, clock, viewMode, searchMode, styleColors, styleOpacities} = me;
+
+        map.setPaintProperty('background', 'background-color',
+            viewMode === 'underground' ? 'rgb(16,16,16)' : getStyleColorString(styleColors[0], clock));
+        map.setPaintProperty('building-underground', 'fill-color',
+            viewMode === 'underground' ? 'hsla(268,67%,67%,.5)' : getStyleColorString({r: 167, g: 114, b: 227, a: .25}, clock));
+        for (const {id, key, opacity} of styleOpacities) {
+            const factor = getLayerOpacity(id, viewMode, searchMode);
+
+            map.setPaintProperty(id, key, helpersMapbox.scaleValues(opacity, factor));
+        }
+
+        for (const zoom of [13, 14, 15, 16, 17, 18]) {
+            for (const id of [`railways-ug-${zoom}`, `stations-ug-${zoom}`, `railways-routeug-${zoom}`, `stations-routeug-${zoom}`, `railways-routeog-${zoom}`, `stations-routeog-${zoom}`]) {
+                setLayerOpacity(map, id, getLayerOpacity(id, viewMode, searchMode));
+            }
+        }
+
+        for (const key of Object.keys(me.activeTrainLookup)) {
+            for (const car of me.activeTrainLookup[key].cars) {
+                setObjectOpacity(car, getObjectOpacity(car, viewMode, searchMode));
+            }
+        }
+
+        animation.start({
+            callback: me.refreshDelayMarkers.bind(me),
+            duration: configs.transitionDuration
+        });
+
+        for (const key of Object.keys(me.activeFlightLookup)) {
+            const aircraft = me.activeFlightLookup[key].aircraft;
+            if (aircraft) {
+                setObjectOpacity(aircraft, getObjectOpacity(aircraft, viewMode, searchMode));
+            }
+        }
+    }
+
+    _setSearchMode(mode) {
+        const me = this;
+
+        me.updateSearchButton(mode);
+        if (mode === 'none') {
+            if (me.searchPanel) {
+                me.searchPanel.remove();
+                delete me.searchPanel;
+            }
+        } else {
+            if (!me.searchPanel) {
+                me.searchPanel = new SearchPanel();
+                me.searchPanel.addTo(me);
+            }
+        }
+        me.searchMode = mode;
+        me.refreshMap();
+    }
+
     _setViewMode(mode) {
         const me = this,
-            {map, trainLayers, clock, styleColors, styleOpacities} = me;
+            {trainLayers} = me;
 
         if (me.viewMode === mode) {
             return;
@@ -2186,40 +2260,8 @@ export default class extends mapboxgl.Evented {
         me.updateUndergroundButton(mode);
         trainLayers.ug.setSemitransparent(mode === 'ground');
         trainLayers.og.setSemitransparent(mode === 'underground');
-        map.setPaintProperty('background', 'background-color',
-            mode === 'underground' ? 'rgb(16,16,16)' : getStyleColorString(styleColors[0], clock));
-        map.setPaintProperty('building-underground', 'fill-color',
-            mode === 'underground' ? 'hsla(268,67%,67%,.5)' : getStyleColorString({r: 167, g: 114, b: 227, a: .25}, clock));
-        styleOpacities.forEach(({id, key, opacity}) => {
-            const factor = helpers.includes(id, '-og-') ? .25 : .0625;
-
-            map.setPaintProperty(id, key, mode === 'underground' && id !== 'building-underground' ?
-                helpers.scaleValues(opacity, factor) : opacity);
-        });
         me.viewMode = mode;
-
-        [13, 14, 15, 16, 17, 18].forEach(zoom => {
-            setLayerOpacity(map, `railways-ug-${zoom}`, mode === 'underground' ? 1 : .0625);
-            setLayerOpacity(map, `stations-ug-${zoom}`, mode === 'underground' ? 1 : .0625);
-        });
-
-        Object.keys(me.activeTrainLookup).forEach(key => {
-            me.activeTrainLookup[key].cars.forEach(car => {
-                setObjectOpacity(car, getObjectOpacity(car, mode));
-            });
-        });
-
-        animation.start({
-            callback: me.refreshDelayMarkers.bind(me),
-            duration: configs.transitionDuration
-        });
-
-        Object.keys(me.activeFlightLookup).forEach(key => {
-            const aircraft = me.activeFlightLookup[key].aircraft;
-            if (aircraft) {
-                setObjectOpacity(aircraft, getObjectOpacity(aircraft, mode));
-            }
-        });
+        me.refreshMap();
     }
 
     _setTrackingMode(mode) {
@@ -2317,7 +2359,7 @@ export default class extends mapboxgl.Evented {
 
     refreshDelayMarkers() {
         const me = this,
-            dark = helpers.isDarkBackground(me.map);
+            dark = helpersMapbox.isDarkBackground(me.map);
 
         Object.keys(me.activeTrainLookup).forEach(key => {
             const car = me.activeTrainLookup[key].cars[0];
@@ -2390,6 +2432,10 @@ export default class extends mapboxgl.Evented {
     trackObject(object) {
         const me = this;
 
+        if (me.searchMode !== 'none') {
+            return;
+        }
+
         if (me.trackedObject) {
             if (helpersThree.isObject3D(me.trackedObject)) {
                 helpersThree.removeOutline(me.trackedObject, 'outline-tracked');
@@ -2439,45 +2485,29 @@ export default class extends mapboxgl.Evented {
                     exits = [].concat(...stations.map(station => station.exit || []));
 
                 if (exits.length > 0) {
-                    let minLng = 180,
-                        maxLng = -180,
-                        minLat = 90,
-                        maxLat = -90;
+                    const coords = [];
 
                     me.exitPopups = exits.map((id, index) => {
-                        const poi = me.poiLookup[id],
-                            [lng, lat] = poi.coord,
+                        const coord = me.poiLookup[id].coord,
                             popup = new mapboxgl.Popup({
                                 className: 'popup-station',
                                 closeButton: false
                             });
 
-                        popup.setLngLat(poi.coord)
+                        popup.setLngLat(coord)
                             .setHTML(me.getLocalizedPOITitle(id))
                             .addTo(me.map)
                             .getElement().id = `exit-${index}`;
-
-                        if (minLng > lng) {
-                            minLng = lng;
-                        }
-                        if (maxLng < lng) {
-                            maxLng = lng;
-                        }
-                        if (minLat > lat) {
-                            minLat = lat;
-                        }
-                        if (maxLat < lat) {
-                            maxLat = lat;
-                        }
+                        coords.push(coord);
 
                         return popup;
                     });
 
                     me._setViewMode(altitude < 0 ? 'underground' : 'ground');
-                    me.map.fitBounds([[minLng, minLat], [maxLng, maxLat]], {
+                    me.map.fitBounds(helpersMapbox.getBounds(coords), {
                         bearing: me.map.getBearing(),
                         offset: [0, -me.map.transform.height / 12],
-                        padding: {top: 20, bottom:20, left: 20, right: 20},
+                        padding: {top: 20, bottom:20, left: 10, right: 50},
                         linear: true,
                         maxZoom: 18
                     });
@@ -2601,7 +2631,7 @@ export default class extends mapboxgl.Evented {
             ids = helpersGeojson.getIds(object);
 
         [13, 14, 15, 16, 17, 18].forEach(zoom => {
-            helpers.setLayerProps(me.map, `${name}-${zoom}`, {
+            helpersMapbox.setLayerProps(me.map, `${name}-${zoom}`, {
                 data: helpersGeojson.featureFilter(me.featureCollection, p => p.zoom === zoom && p.ids && p.ids[0] === ids[0]),
                 opacity: 1,
                 visible: true
@@ -2611,7 +2641,7 @@ export default class extends mapboxgl.Evented {
 
     removeStationOutline(name) {
         [13, 14, 15, 16, 17, 18].forEach(zoom => {
-            helpers.setLayerProps(this.map, `${name}-${zoom}`, {
+            helpersMapbox.setLayerProps(this.map, `${name}-${zoom}`, {
                 visible: false
             });
         });
@@ -2621,7 +2651,7 @@ export default class extends mapboxgl.Evented {
         const p = performance.now() % 1500 / 1500 * 2;
 
         [13, 14, 15, 16, 17, 18].forEach(zoom => {
-            helpers.setLayerProps(this.map, `stations-selected-${zoom}`, {
+            helpersMapbox.setLayerProps(this.map, `stations-selected-${zoom}`, {
                 opacity: p < 1 ? p : 2 - p,
                 visible: true
             });
@@ -2698,7 +2728,6 @@ export default class extends mapboxgl.Evented {
 function insertTags(container) {
     container.innerHTML = `
 <div id="map"></div>
-<input id="search-box" type="text" list="stations">
 <div id="loader" class="loader-inner ball-pulse">
     <div></div><div></div><div></div>
 </div>
@@ -2902,9 +2931,12 @@ function setObjectOpacity(object, opacity, duration) {
     userData.opacity = opacity;
 }
 
-function getObjectOpacity(object, viewMode) {
-    return (viewMode === 'underground') === (object.userData.altitude < 0) ?
-        .9 : .225;
+function getObjectOpacity(object, viewMode, searchMode) {
+    if ((viewMode === 'underground') === (object.userData.altitude < 0)) {
+        return searchMode === 'none' || searchMode === 'edit' ? .9 : .1;
+    } else {
+        return searchMode === 'none' || searchMode === 'edit' ? .225 : .1;
+    }
 }
 
 function setLayerOpacity(map, id, opacity) {
@@ -2919,4 +2951,30 @@ function setLayerOpacity(map, id, opacity) {
         },
         duration: configs.transitionDuration
     });
+}
+
+function getLayerOpacity(id, viewMode, searchMode) {
+    if (helpers.includes(id, '-ug-')) {
+        if (viewMode === 'underground') {
+            return searchMode === 'none' || searchMode === 'edit' ? 1 : .005;
+        } else {
+            return searchMode === 'none' || searchMode === 'edit' ? .0625 : .005;
+        }
+    } else if (helpers.includes(id, '-og-')) {
+        if (viewMode === 'underground') {
+            return searchMode === 'none' || searchMode === 'edit' ? .25 : .1;
+        } else {
+            return searchMode === 'none' || searchMode === 'edit' ? 1 : .1;
+        }
+    } else if (helpers.includes(id, '-routeug-')) {
+        return viewMode === 'underground' ? 1 : .125;
+    } else if (helpers.includes(id, '-routeog-')) {
+        return viewMode === 'underground' ? .25 : 1;
+    } else {
+        if (viewMode === 'underground' && id !== 'building-underground') {
+            return searchMode === 'none' || searchMode === 'edit' ? .0625 : .025;
+        } else {
+            return searchMode === 'none' || searchMode === 'edit' ? 1 : .1;
+        }
+    }
 }
