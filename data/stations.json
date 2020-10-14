@@ -4010,7 +4010,8 @@
 	"id": "TokyoMetro.Ginza.Toranomon",
 	"exit": [
 		"TokyoMetro.Toranomon.1",
-		"TokyoMetro.Toranomon.2",
+		"TokyoMetro.Toranomon.2a",
+		"TokyoMetro.Toranomon.2b",
 		"TokyoMetro.Toranomon.3",
 		"TokyoMetro.Toranomon.4",
 		"TokyoMetro.Toranomon.5",
@@ -4019,7 +4020,9 @@
 		"TokyoMetro.Toranomon.8",
 		"TokyoMetro.Toranomon.9",
 		"TokyoMetro.Toranomon.10",
-		"TokyoMetro.Toranomon.11"
+		"TokyoMetro.Toranomon.11",
+		"TokyoMetro.Toranomon.B5",
+		"TokyoMetro.Toranomon.B6"
 	],
 	"altitude": -1
 }, {
@@ -4573,6 +4576,14 @@
 }, {
 	"id": "TokyoMetro.Hibiya.ToranomonHills",
 	"coord": [139.7477648, 35.6674688],
+	"exit": [
+		"TokyoMetro.ToranomonHills.A1",
+		"TokyoMetro.ToranomonHills.A2",
+		"TokyoMetro.ToranomonHills.B1",
+		"TokyoMetro.ToranomonHills.B2",
+		"TokyoMetro.ToranomonHills.B3",
+		"TokyoMetro.ToranomonHills.B4"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hibiya.Kasumigaseki",
