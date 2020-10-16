@@ -61,7 +61,7 @@ The railway network in Tokyo is one of the most complex in the world. Mini Tokyo
 <img src="public/images/screen.jpg" width="659">
 
 1. **Date and Time**: See [Date and Time](#date-and-time)
-2. **Search Button**: See [Station Search](#station-search)
+2. **Search Button**: See [Route Search](#route-search)
 3. **Navigation Buttons**: See [Zooming-In/Out](#zooming-inout) and [Rotation and Tilting](#rotation-and-tilting)
 4. **Display Mode Switching Buttons**: See [Display Modes](#display-modes)
 5. **Application Information Button**: See [Showing Application Information](#showing-application-information)
@@ -96,7 +96,7 @@ Click or tap the compass icon button and the bearing will be reset to true north
 
 <img src="public/images/clock.jpg" width="141">
 
-The current data and time is displayed at the top left of the screen. It is convenient when accessing from overseas because Japan standard time is always displayed. When [Playback Mode](#playback-mode) is on, additional buttons appear below the the current time to change the time and the speed at which the time progresses.
+The current date and time is displayed at the top left of the screen. It is convenient when accessing from overseas because Japan standard time is always displayed. When [Playback Mode](#playback-mode) is on, additional buttons appear below the current time to change the time and the speed at which the time progresses.
 
 See [here](#playback-mode) for details on Playback Mode.
 
@@ -138,11 +138,17 @@ When [Playback Mode](#playback-mode) is off, orange spheres are displayed around
 
 When you click or tap on a station, the station is selected and the map around the station is enlarged to show the locations and names of the exits on the map. When a station is selected, a list of exits will be displayed at the bottom of the screen. If you move the mouse pointer over the name of the exit in the list or tap it, the name of the exit will be highlighted on the map and you can check the location. Clicking on the map where no station exists will deselect it.
 
-### Station Search
+### Route Search
 
-<img src="public/images/station-search.jpg" width="260">
+<img src="public/images/search-form.jpg" width="400"> <img src="public/images/search-route.jpg" width="400"> <img src="public/images/search-icon.jpg" width="49" align="top">
 
-When you click or tap the search icon button, a search window appears and you can enter text. Enter a station name and press Enter key, or click or tap the search icon button to move to the target station on the map. Once you enter a part of the station name, a list of candidates will be displayed. In Japanese, Korean, and Chinese environments, you can also search by English name.
+When you click or tap the search icon button, the search window appears at the bottom of the screen to allow you to search for a route. Enter the departure and arrival station names, select the departure time, and click or tap the search button. Then, a recommended route will be highlighted on the map, and the search window will display information such as the trains to take, arrival and departure times, and transfer stations. Depending on the conditions, more than one recommended route may be displayed, and you can switch between them with the “<” and “>” buttons at the top of the search window. You can also click or tap the “Back” icon button to return to the search criteria.
+
+When you enter a part of the station name, a list of candidates will be displayed, and you can select one from the list to complete your input. In Japanese, Korean, and Chinese environments, you can also search by English name. If you enter an invalid station name and press the search button, the border around the station name field will be highlighted in orange, and you will be prompted to correct the station name.
+
+You cannot select a train, airplane or station while the search window is displayed. To close the search window, click the search icon button again.
+
+**Note**: As of the version 2.5, there are some limitations: you can only specify the time of departure, you can only search for the train of the day, and real-time delays are not reflected in the search.
 
 ### Showing Application Information
 

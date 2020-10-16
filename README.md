@@ -37,7 +37,7 @@ Pinch in/out | Zoom in/out
 Two-finger drag | Tilt up/down and rotate
 Double-click or triple-tap | Zoom in
 Shift key + Double-click or two-finger tap | Zoom out
-Click or tap the search button | Show/hide the station search window
+Click or tap the search button | Show/hide the route search window
 Click or tap +/- buttons | Zoom in/out
 Click or tap the compass button | Reset bearing to north
 Click or tap the compass button + mouse or finder drag | Rotate
