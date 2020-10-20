@@ -162,7 +162,7 @@ export default class {
     showRoutes(result, index) {
         const me = this,
             mt3d = me._mt3d,
-            {lang, dict, map} = mt3d,
+            {lang, dict, clock, map} = mt3d,
             container = me._container,
             headerElement = container.querySelector('#search-header'),
             resultElement = container.querySelector('#search-result'),
@@ -219,7 +219,7 @@ export default class {
             const route = result.routes[index];
             let arrivalTime;
 
-            for (const {r, y, ds, d, tt, nm, transfer} of route.trains) {
+            for (const {r, y, ds, d, tt, nm, transfer, delay} of route.trains) {
                 const railwayTitle = nm ? nm.map(name => name[lang] || name.en).join(dict['and']) : mt3d.getLocalizedRailwayTitle(r),
                     trainTypeTitle = mt3d.getLocalizedTrainTypeTitle(y),
                     destinationTitle = ds ? dict['for'].replace('$1', mt3d.getLocalizedStationTitle(ds)) : mt3d.getLocalizedRailDirectionTitle(d),
@@ -229,14 +229,18 @@ export default class {
                 stations.push([
                     '<div class="station-row">',
                     `<div class="station-title-box">${mt3d.getLocalizedStationTitle(tt[0].s)}</div>`,
-                    '<div class="station-time-box">',
-                    arrivalTime ? `${arrivalTime}<br>` : '',
-                    `${tt[0].d}</div></div>`
+                    '<div class="station-time-box',
+                    delay ? ' desc-caution' : '',
+                    '">',
+                    arrivalTime ? `${clock.getTimeString(clock.getTime(arrivalTime) + delay * 60000)}<br>` : '',
+                    clock.getTimeString(clock.getTime(tt[0].d) + delay * 60000),
+                    '</div></div>'
                 ].join(''));
                 stations.push([
                     '<div class="station-row">',
-                    `<div class="train-title-box">${railwayTitle} ${trainTypeTitle} ${destinationTitle}</div>`,
-                    '</div>'
+                    `<div class="train-title-box">${railwayTitle} ${trainTypeTitle} ${destinationTitle}`,
+                    delay ? ` <span class="desc-caution">${dict['delay'].replace('$1', delay)}</span>` : '',
+                    '</div></div>'
                 ].join(''));
                 section.end = stations.length;
                 section.color = mt3d.railwayLookup[r].color;
@@ -247,8 +251,11 @@ export default class {
                     stations.push([
                         '<div class="station-row">',
                         `<div class="station-title-box">${mt3d.getLocalizedStationTitle(tt[tt.length - 1].s)}</div>`,
-                        `<div class="station-time-box">${tt[tt.length - 1].a || tt[tt.length - 1].d}</div>`,
-                        '</div>'
+                        '<div class="station-time-box',
+                        delay ? ' desc-caution' : '',
+                        '">',
+                        clock.getTimeString(clock.getTime(tt[tt.length - 1].a || tt[tt.length - 1].d) + delay * 60000),
+                        '</div></div>'
                     ].join(''));
                     if (transfer > 0) {
                         const section = {};

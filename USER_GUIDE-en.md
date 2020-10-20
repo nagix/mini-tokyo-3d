@@ -34,7 +34,7 @@ Mini Tokyo 3D is using the same line colors used in official route maps and guid
 
 <img src="public/images/performance.jpg" width="537">
 
-Over 1,200 trains run at the same time during the rush hour, but with the optimized data structure and processing logic, a very smooth operation animation is realized even on smartphones. Smooth animation of 60 frames per second is used everywhere, including viewpoint movement, switching between overground and underground views, and fading in and out of trains and airplanes.
+Over 1,900 trains run at the same time during the rush hour, but with the optimized data structure and processing logic, a very smooth operation animation is realized even on smartphones. Smooth animation of 60 frames per second is used everywhere, including viewpoint movement, switching between overground and underground views, and fading in and out of trains and airplanes.
 
 ### Support for 4 Languages
 
