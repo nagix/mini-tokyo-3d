@@ -11970,6 +11970,10 @@
 		"zh-Hans": "川口元乡",
 		"zh-Hant": "川口元鄉"
 	},
+	"exit": [
+		"SaitamaRailway.KawaguchiMotogo.1",
+		"SaitamaRailway.KawaguchiMotogo.2"
+	],
 	"altitude": -1
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
@@ -11982,6 +11986,10 @@
 		"zh-Hans": "南鸠谷",
 		"zh-Hant": "南鳩谷"
 	},
+	"exit": [
+		"SaitamaRailway.MinamiHatogaya.1",
+		"SaitamaRailway.MinamiHatogaya.2"
+	],
 	"altitude": -1
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.Hatogaya",
@@ -11991,6 +11999,12 @@
 		"zh-Hans": "鸠谷",
 		"zh-Hant": "鳩谷"
 	},
+	"exit": [
+		"SaitamaRailway.Hatogaya.1",
+		"SaitamaRailway.Hatogaya.2a",
+		"SaitamaRailway.Hatogaya.2b",
+		"SaitamaRailway.Hatogaya.3"
+	],
 	"altitude": -1
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.Araijuku",
@@ -12003,6 +12017,10 @@
 		"zh-Hans": "新井宿",
 		"zh-Hant": "新井宿"
 	},
+	"exit": [
+		"SaitamaRailway.Araijuku.1",
+		"SaitamaRailway.Araijuku.2"
+	],
 	"altitude": -1
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
@@ -12015,6 +12033,11 @@
 		"zh-Hans": "户冢安行",
 		"zh-Hant": "戶塚安行"
 	},
+	"exit": [
+		"SaitamaRailway.TozukaAngyo.1",
+		"SaitamaRailway.TozukaAngyo.2",
+		"SaitamaRailway.TozukaAngyo.3"
+	],
 	"altitude": -1
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -12027,6 +12050,11 @@
 		"zh-Hans": "东川口",
 		"zh-Hant": "東川口"
 	},
+	"exit": [
+		"SaitamaRailway.HigashiKawaguchi.1",
+		"SaitamaRailway.HigashiKawaguchi.2",
+		"SaitamaRailway.HigashiKawaguchi.3"
+	],
 	"altitude": -1
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -12035,7 +12063,13 @@
 		"ko": "우라와미소노",
 		"zh-Hans": "浦和美园",
 		"zh-Hant": "浦和美園"
-	}
+	},
+	"exit": [
+		"SaitamaRailway.UrawaMisono.1",
+		"SaitamaRailway.UrawaMisono.2",
+		"SaitamaRailway.UrawaMisono.3",
+		"SaitamaRailway.UrawaMisono.4"
+	]
 }, {
 	"id": "MIR.TsukubaExpress.Akihabara",
 	"coord": [139.774255, 35.6987676],
