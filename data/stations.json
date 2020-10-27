@@ -12174,6 +12174,10 @@
 		"zh-Hans": "东海神",
 		"zh-Hant": "東海神"
 	},
+	"exit": [
+		"ToyoRapid.HigashiKaijin.T1",
+		"ToyoRapid.HigashiKaijin.T4"
+	],
 	"altitude": -1
 }, {
 	"id": "ToyoRapid.ToyoRapid.Hasama",
@@ -12185,7 +12189,11 @@
 		"ko": "하사마",
 		"zh-Hans": "饭山满",
 		"zh-Hant": "飯山滿"
-	}
+	},
+	"exit": [
+		"ToyoRapid.Hasama.1",
+		"ToyoRapid.Hasama.2"
+	]
 }, {
 	"id": "ToyoRapid.ToyoRapid.KitaNarashino",
 	"railway": "ToyoRapid.ToyoRapid",
@@ -12197,6 +12205,13 @@
 		"zh-Hans": "北习志野",
 		"zh-Hant": "北習志野"
 	},
+	"exit": [
+		"ToyoRapid.KitaNarashino.T1",
+		"ToyoRapid.KitaNarashino.T2",
+		"ToyoRapid.KitaNarashino.T3",
+		"ToyoRapid.KitaNarashino.T4",
+		"ToyoRapid.KitaNarashino.T5"
+	],
 	"altitude": -1
 }, {
 	"id": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
@@ -12209,6 +12224,10 @@
 		"zh-Hans": "船桥日大前",
 		"zh-Hant": "船橋日大前"
 	},
+	"exit": [
+		"ToyoRapid.FunabashiNichidaimae.East",
+		"ToyoRapid.FunabashiNichidaimae.West"
+	],
 	"altitude": -1
 }, {
 	"id": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -12217,7 +12236,11 @@
 		"ko": "야치요미도리가오카",
 		"zh-Hans": "八千代绿丘",
 		"zh-Hant": "八千代綠丘"
-	}
+	},
+	"exit": [
+		"ToyoRapid.YachiyoMidorigaoka.South",
+		"ToyoRapid.YachiyoMidorigaoka.North"
+	]
 }, {
 	"id": "ToyoRapid.ToyoRapid.YachiyoChuo",
 	"railway": "ToyoRapid.ToyoRapid",
@@ -12228,7 +12251,10 @@
 		"ko": "야치요 중앙",
 		"zh-Hans": "八千代中央",
 		"zh-Hant": "八千代中央"
-	}
+	},
+	"exit": [
+		"ToyoRapid.YachiyoChuo.1"
+	]
 }, {
 	"id": "ToyoRapid.ToyoRapid.Murakami",
 	"railway": "ToyoRapid.ToyoRapid",
@@ -12240,7 +12266,10 @@
 		"zh-Hans": "村上",
 		"zh-Hant": "村上",
 		"ja-Wiki": "村上駅 (千葉県)"
-	}
+	},
+	"exit": [
+		"ToyoRapid.Murakami.1"
+	]
 }, {
 	"id": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
 	"coord": [140.1261716, 35.7158063],
@@ -12249,6 +12278,11 @@
 		"zh-Hans": "东叶胜田台",
 		"zh-Hant": "東葉勝田台"
 	},
+	"exit": [
+		"ToyoRapid.ToyoKatsutadai.T1",
+		"ToyoRapid.ToyoKatsutadai.T2",
+		"ToyoRapid.ToyoKatsutadai.T3"
+	],
 	"altitude": -1
 }, {
 	"id": "ShinKeisei.ShinKeisei.Matsudo",
