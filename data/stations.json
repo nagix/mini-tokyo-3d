@@ -3928,21 +3928,54 @@
 	"id": "TWR.Rinkai.Shinonome",
 	"title": {
 		"ja-Wiki": "東雲駅 (東京都)"
-	}
+	},
+	"exit": [
+		"TWR.Shinonome.A",
+		"TWR.Shinonome.B"
+	]
 }, {
 	"id": "TWR.Rinkai.KokusaiTenjijo",
+	"exit": [
+		"TWR.KokusaiTenjijo.A",
+		"TWR.KokusaiTenjijo.B",
+		"TWR.KokusaiTenjijo.C"
+	],
 	"altitude": -1
 }, {
 	"id": "TWR.Rinkai.TokyoTeleport",
+	"exit": [
+		"TWR.TokyoTeleport.A",
+		"TWR.TokyoTeleport.B",
+		"TWR.TokyoTeleport.EV1",
+		"TWR.TokyoTeleport.EV2"
+	],
 	"altitude": -1
 }, {
 	"id": "TWR.Rinkai.TennozuIsle",
+	"exit": [
+		"TWR.TennozuIsle.A",
+		"TWR.TennozuIsle.B",
+		"TWR.TennozuIsle.C"
+	],
 	"altitude": -1
 }, {
 	"id": "TWR.Rinkai.ShinagawaSeaside",
+	"exit": [
+		"TWR.ShinagawaSeaside.A",
+		"TWR.ShinagawaSeaside.B",
+		"TWR.ShinagawaSeaside.C",
+		"TWR.ShinagawaSeaside.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TWR.Rinkai.Oimachi",
+	"exit": [
+		"TWR.Oimachi.A1",
+		"TWR.Oimachi.A2",
+		"TWR.Oimachi.B",
+		"TWR.Oimachi.C",
+		"TWR.Oimachi.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "TWR.Rinkai.Osaki",
@@ -12644,7 +12677,7 @@
 }, {
 	"id": "TokyoMonorail.HanedaAirport.TennozuIsle",
 	"railway": "TokyoMonorail.HanedaAirport",
-	"coord": [139.750802, 35.620475],
+	"coord": [139.7507947, 35.6227359],
 	"title": {
 		"ja": "天王洲アイル",
 		"en": "Tennozu Isle",
