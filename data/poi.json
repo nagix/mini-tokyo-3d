@@ -2875,6 +2875,32 @@
 		"zh-Hant": "4號出口"
 	}
 }, {
+	"id": "TokyoMetro.UenoHirokoji.C2",
+	"coord": [139.7733869, 35.7086181],
+	"title": {
+		"en": "C2"
+	},
+	"description": {
+		"ja": "C2出口",
+		"en": "Exit C2",
+		"ko": "C2출구",
+		"zh-Hans": "C2出口",
+		"zh-Hant": "C2出口"
+	}
+}, {
+	"id": "TokyoMetro.UenoHirokoji.C3",
+	"coord": [139.7734729, 35.7089599],
+	"title": {
+		"en": "C3"
+	},
+	"description": {
+		"ja": "C3出口",
+		"en": "Exit C3",
+		"ko": "C3출구",
+		"zh-Hans": "C3出口",
+		"zh-Hant": "C3出口"
+	}
+}, {
 	"id": "TokyoMetro.UenoHirokoji.A1",
 	"coord": [139.7731197, 35.7073161],
 	"title": {
@@ -3019,7 +3045,7 @@
 	}
 }, {
 	"id": "TokyoMetro.Ueno.6",
-	"coord": [139.7739887, 35.7111776],
+	"coord": [139.7753674, 35.7115517],
 	"title": {
 		"en": "6"
 	},
@@ -18558,6 +18584,629 @@
 		"zh-Hant": "A5出口"
 	}
 }, {
+	"id": "Keio.Hatsudai.East",
+	"coord": [139.6872879, 35.6821991],
+	"title": {
+		"ja": "東口",
+		"en": "East",
+		"ko": "동쪽",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	},
+	"description": {
+		"ja": "東口",
+		"en": "East Exit",
+		"ko": "동쪽 출구",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	}
+}, {
+	"id": "Keio.Hatsudai.South",
+	"coord": [139.6865031, 35.6805645],
+	"title": {
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"description": {
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	}
+}, {
+	"id": "Keio.Hatsudai.North",
+	"coord": [139.6858835, 35.6812402],
+	"title": {
+		"ja": "北口",
+		"en": "North",
+		"ko": "키타",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	},
+	"description": {
+		"ja": "北口",
+		"en": "North Exit",
+		"ko": "키타 출구",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	}
+}, {
+	"id": "Keio.Hatagaya.South",
+	"coord": [139.6768378, 35.676935],
+	"title": {
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"description": {
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	}
+}, {
+	"id": "Keio.Hatagaya.North",
+	"coord": [139.6768452, 35.677455],
+	"title": {
+		"ja": "北口",
+		"en": "North",
+		"ko": "키타",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	},
+	"description": {
+		"ja": "北口",
+		"en": "North Exit",
+		"ko": "키타 출구",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	}
+}, {
+	"id": "Keisei.KeiseiUeno.Main",
+	"coord": [139.7739887, 35.7111776],
+	"title": {
+		"ja": "正面口",
+		"en": "Main",
+		"ko": "정면",
+		"zh-Hans": "正面口",
+		"zh-Hant": "正面口"
+	},
+	"description": {
+		"ja": "正面口",
+		"en": "Main Exit",
+		"ko": "정면 출구",
+		"zh-Hans": "正面口",
+		"zh-Hant": "正面口"
+	}
+}, {
+	"id": "Keisei.KeiseiUeno.Ikenohata",
+	"coord": [139.773239, 35.7109968],
+	"title": {
+		"ja": "池の端口",
+		"en": "Ikenohata",
+		"ko": "이케노하타",
+		"zh-Hans": "池之端口",
+		"zh-Hant": "池之端口"
+	},
+	"description": {
+		"ja": "池の端口",
+		"en": "Ikenohata Exit",
+		"ko": "이케노하타 출구",
+		"zh-Hans": "池之端口",
+		"zh-Hant": "池之端口"
+	}
+}, {
+	"id": "Keisei.KeiseiUeno.C4",
+	"coord": [139.7735631, 35.7093496],
+	"title": {
+		"en": "C4"
+	},
+	"description": {
+		"ja": "C4出口",
+		"en": "Exit C4",
+		"ko": "C4출구",
+		"zh-Hans": "C4出口",
+		"zh-Hant": "C4出口"
+	}
+}, {
+	"id": "Keisei.KeiseiUeno.C5",
+	"coord": [139.7732302, 35.7093181],
+	"title": {
+		"en": "C5"
+	},
+	"description": {
+		"ja": "C5出口",
+		"en": "Exit C5",
+		"ko": "C5출구",
+		"zh-Hans": "C5出口",
+		"zh-Hant": "C5出口"
+	}
+}, {
+	"id": "Keisei.KeiseiUeno.C6",
+	"coord": [139.7733901, 35.7100826],
+	"title": {
+		"en": "C6"
+	},
+	"description": {
+		"ja": "C6出口",
+		"en": "Exit C6",
+		"ko": "C6출구",
+		"zh-Hans": "C6出口",
+		"zh-Hant": "C6出口"
+	}
+}, {
+	"id": "Keisei.KeiseiUeno.C7",
+	"coord": [139.7738607, 35.710241],
+	"title": {
+		"en": "C7"
+	},
+	"description": {
+		"ja": "C7出口",
+		"en": "Exit C7",
+		"ko": "C7출구",
+		"zh-Hans": "C7出口",
+		"zh-Hant": "C7出口"
+	}
+}, {
+	"id": "Keisei.KeiseiUeno.C8",
+	"coord": [139.7740389, 35.7106142],
+	"title": {
+		"en": "C8"
+	},
+	"description": {
+		"ja": "C8出口",
+		"en": "Exit C8",
+		"ko": "C8출구",
+		"zh-Hans": "C8出口",
+		"zh-Hant": "C8出口"
+	}
+}, {
+	"id": "Keisei.KeiseiUeno.C9",
+	"coord": [139.7741472, 35.7108236],
+	"title": {
+		"en": "C9"
+	},
+	"description": {
+		"ja": "C9出口",
+		"en": "Exit C9",
+		"ko": "C9출구",
+		"zh-Hans": "C9出口",
+		"zh-Hant": "C9出口"
+	}
+}, {
+	"id": "Seibu.ShinSakuradai.1",
+	"coord": [139.6680663, 139.6680663],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "出口1",
+		"en": "Exit 1",
+		"ko": "출구1",
+		"zh-Hans": "出口1",
+		"zh-Hant": "出口1"
+	}
+}, {
+	"id": "Seibu.ShinSakuradai.2",
+	"coord": [139.6684489, 35.7405664],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "出口2",
+		"en": "Exit 2",
+		"ko": "출구2",
+		"zh-Hans": "出口2",
+		"zh-Hant": "出口2"
+	}
+}, {
+	"id": "Seibu.ShinSakuradai.3",
+	"coord": [139.6689862, 35.7415172],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "出口3",
+		"en": "Exit 3",
+		"ko": "출구3",
+		"zh-Hans": "出口3",
+		"zh-Hant": "出口3"
+	}
+}, {
+	"id": "Seibu.ShinSakuradai.4",
+	"coord": [139.6691814, 35.7413337],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "出口4",
+		"en": "Exit 4",
+		"ko": "출구4",
+		"zh-Hans": "出口4",
+		"zh-Hant": "出口4"
+	}
+}, {
+	"id": "Tokyu.Ikejiriohashi.East",
+	"coord": [139.6848589, 35.6505662],
+	"title": {
+		"ja": "東口",
+		"en": "East",
+		"ko": "동쪽",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	},
+	"description": {
+		"ja": "東口",
+		"en": "East Exit",
+		"ko": "동쪽 출구",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	}
+}, {
+	"id": "Tokyu.Ikejiriohashi.West",
+	"coord": [139.6841227, 35.650661],
+	"title": {
+		"ja": "西口",
+		"en": "West",
+		"ko": "서쪽",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	},
+	"description": {
+		"ja": "西口",
+		"en": "West Exit",
+		"ko": "서쪽 출구",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	}
+}, {
+	"id": "Tokyu.Ikejiriohashi.South",
+	"coord": [139.6842004, 35.6502894],
+	"title": {
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"description": {
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	}
+}, {
+	"id": "Tokyu.Ikejiriohashi.North",
+	"coord": [139.6847744, 35.6509497],
+	"title": {
+		"ja": "北口",
+		"en": "North",
+		"ko": "키타",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	},
+	"description": {
+		"ja": "北口",
+		"en": "North Exit",
+		"ko": "키타 출구",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	}
+}, {
+	"id": "Tokyu.SangenJaya.SouthA",
+	"coord": [139.6715112, 35.6435265],
+	"title": {
+		"ja": "南口A",
+		"en": "South A",
+		"ko": "남쪽A",
+		"zh-Hans": "南出口A",
+		"zh-Hant": "南出口A"
+	},
+	"description": {
+		"ja": "南口A",
+		"en": "South Exit A",
+		"ko": "남쪽 출구 A",
+		"zh-Hans": "南出口A",
+		"zh-Hant": "南出口A"
+	}
+}, {
+	"id": "Tokyu.SangenJaya.SouthB",
+	"coord": [139.6711215, 35.6433408],
+	"title": {
+		"ja": "南口B",
+		"en": "South B",
+		"ko": "남쪽B",
+		"zh-Hans": "南出口B",
+		"zh-Hant": "南出口B"
+	},
+	"description": {
+		"ja": "南口B",
+		"en": "South Exit B",
+		"ko": "남쪽 출구 B",
+		"zh-Hans": "南出口B",
+		"zh-Hant": "南出口B"
+	}
+}, {
+	"id": "Tokyu.SangenJaya.NorthA",
+	"coord": [139.6711415, 35.6437438],
+	"title": {
+		"ja": "北口A",
+		"en": "North A",
+		"ko": "키타A",
+		"zh-Hans": "北出口A",
+		"zh-Hant": "北出口A"
+	},
+	"description": {
+		"ja": "北口A",
+		"en": "North Exit A",
+		"ko": "키타 출구 A",
+		"zh-Hans": "北出口A",
+		"zh-Hant": "北出口A"
+	}
+}, {
+	"id": "Tokyu.SangenJaya.NorthB",
+	"coord": [139.671511, 35.6438738],
+	"title": {
+		"ja": "北口B",
+		"en": "North B",
+		"ko": "키타B",
+		"zh-Hans": "北出口B",
+		"zh-Hant": "北出口B"
+	},
+	"description": {
+		"ja": "北口B",
+		"en": "North Exit B",
+		"ko": "키타 출구 B",
+		"zh-Hans": "北出口B",
+		"zh-Hant": "北出口B"
+	}
+}, {
+	"id": "Tokyu.SangenJaya.SetagayaSt",
+	"coord": [139.6707585, 35.6434246],
+	"title": {
+		"ja": "世田谷通り口",
+		"en": "Setagaya St",
+		"ko": "세타가야 거리",
+		"zh-Hans": "世田谷通出口",
+		"zh-Hant": "世田谷通出口"
+	},
+	"description": {
+		"ja": "世田谷通り口",
+		"en": "Setagaya Street Exit",
+		"ko": "세타가야 거리 출구",
+		"zh-Hans": "世田谷通出口",
+		"zh-Hant": "世田谷通出口"
+	}
+}, {
+	"id": "Tokyu.SangenJaya.SanchaPatio",
+	"coord": [139.6703053, 35.6436644],
+	"title": {
+		"ja": "三茶パティオ口",
+		"en": "Sancha Patio",
+		"ko": "산차파티오",
+		"zh-Hans": "三茶Patio出口",
+		"zh-Hant": "三茶Patio出口"
+	},
+	"description": {
+		"ja": "三茶パティオ口",
+		"en": "Sancha Patio Exit",
+		"ko": "산차파티오 출구",
+		"zh-Hans": "三茶Patio出口",
+		"zh-Hant": "三茶Patio出口"
+	}
+}, {
+	"id": "Tokyu.KomazawaDaigaku.East",
+	"coord": [139.6618352, 35.63339],
+	"title": {
+		"ja": "東口",
+		"en": "East",
+		"ko": "동쪽",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	},
+	"description": {
+		"ja": "東口",
+		"en": "East Exit",
+		"ko": "동쪽 출구",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	}
+}, {
+	"id": "Tokyu.KomazawaDaigaku.West",
+	"coord": [139.6615581, 35.6335876],
+	"title": {
+		"ja": "西口",
+		"en": "West",
+		"ko": "서쪽",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	},
+	"description": {
+		"ja": "西口",
+		"en": "West Exit",
+		"ko": "서쪽 출구",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	}
+}, {
+	"id": "Tokyu.KomazawaDaigaku.KomazawaPark",
+	"coord": [139.6609446, 35.6328905],
+	"title": {
+		"ja": "駒沢公園口",
+		"en": "Komazawa Park",
+		"ko": "코마자와 공원",
+		"zh-Hans": "驹泽公园口",
+		"zh-Hant": "駒澤公園口"
+	},
+	"description": {
+		"ja": "駒沢公園口",
+		"en": "Komazawa Park Exit",
+		"ko": "코마자와 공원 출구",
+		"zh-Hans": "驹泽公园口",
+		"zh-Hant": "駒澤公園口"
+	}
+}, {
+	"id": "Tokyu.SakuraShimmachi.West",
+	"coord": [139.6443724, 35.6316985],
+	"title": {
+		"ja": "西口",
+		"en": "West",
+		"ko": "서쪽",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	},
+	"description": {
+		"ja": "西口",
+		"en": "West Exit",
+		"ko": "서쪽 출구",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	}
+}, {
+	"id": "Tokyu.SakuraShimmachi.South",
+	"coord": [139.644957, 35.6315997],
+	"title": {
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"description": {
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	}
+}, {
+	"id": "Tokyu.SakuraShimmachi.North",
+	"coord": [139.6451823, 35.6317906],
+	"title": {
+		"ja": "北口",
+		"en": "North",
+		"ko": "키타",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	},
+	"description": {
+		"ja": "北口",
+		"en": "North Exit",
+		"ko": "키타 출구",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	}
+}, {
+	"id": "Tokyu.Yoga.East",
+	"coord": [139.6342369, 35.6265908],
+	"title": {
+		"ja": "東口",
+		"en": "East",
+		"ko": "동쪽",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	},
+	"description": {
+		"ja": "東口",
+		"en": "East Exit",
+		"ko": "동쪽 출구",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	}
+}, {
+	"id": "Tokyu.Yoga.South",
+	"coord": [139.6335008, 35.6257533],
+	"title": {
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"description": {
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	}
+}, {
+	"id": "Tokyu.Yoga.North",
+	"coord": [139.6336176, 35.6266754],
+	"title": {
+		"ja": "北口",
+		"en": "North",
+		"ko": "키타",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	},
+	"description": {
+		"ja": "北口",
+		"en": "North Exit",
+		"ko": "키타 출구",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	}
+}, {
+	"id": "Tokyu.MusashiKoyama.East",
+	"coord": [139.7042446, 35.6201996],
+	"title": {
+		"ja": "東口",
+		"en": "East",
+		"ko": "동쪽",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	},
+	"description": {
+		"ja": "東口",
+		"en": "East Exit",
+		"ko": "동쪽 출구",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	}
+}, {
+	"id": "Tokyu.MusashiKoyama.West",
+	"coord": [139.7038865, 35.6203358],
+	"title": {
+		"ja": "西口",
+		"en": "West",
+		"ko": "서쪽",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	},
+	"description": {
+		"ja": "西口",
+		"en": "West Exit",
+		"ko": "서쪽 출구",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	}
+}, {
+	"id": "Tokyu.NishiKoyama.1",
+	"coord": [139.6987341, 35.6154796],
+	"title": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	},
+	"description": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	}
+}, {
 	"id": "SaitamaRailway.KawaguchiMotogo.1",
 	"coord": [139.7296124, 35.799539],
 	"title": {
@@ -18816,6 +19465,389 @@
 		"ko": "출구4",
 		"zh-Hans": "出口4",
 		"zh-Hant": "出口4"
+	}
+}, {
+	"id": "MIR.Akihabara.A1",
+	"coord": [139.773864, 35.6979775],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "MIR.Akihabara.A2",
+	"coord": [139.7738466, 35.6984828],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "MIR.Akihabara.A3",
+	"coord": [139.7744656, 35.6991389],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "MIR.Akihabara.EV",
+	"coord": [139.7741207, 35.6989213],
+	"title": {
+		"en": "EV"
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	}
+}, {
+	"id": "MIR.Asakusa.A1",
+	"coord": [139.7925724, 35.7135667],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "MIR.Asakusa.A2",
+	"coord": [139.7922774, 35.7141057],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "MIR.Asakusa.SouthA",
+	"coord": [139.7923578, 35.7126749],
+	"title": {
+		"ja": "南A",
+		"en": "South A",
+		"ko": "남쪽 A",
+		"zh-Hans": "南A",
+		"zh-Hant": "南A"
+	},
+	"description": {
+		"ja": "南自転車駐車場A",
+		"en": "South Bike Parking A",
+		"ko": "남쪽 자전거 주차장 A",
+		"zh-Hans": "南自行车停车场A",
+		"zh-Hant": "南自行車停車場A"
+	}
+}, {
+	"id": "MIR.Asakusa.SouthB",
+	"coord": [139.7920802, 35.7127108],
+	"title": {
+		"ja": "南B",
+		"en": "South B",
+		"ko": "남쪽 B",
+		"zh-Hans": "南B",
+		"zh-Hant": "南B"
+	},
+	"description": {
+		"ja": "南自転車駐車場B",
+		"en": "South Bike Parking B",
+		"ko": "남쪽 자전거 주차장 B",
+		"zh-Hans": "南自行车停车场B",
+		"zh-Hant": "南自行車停車場B"
+	}
+}, {
+	"id": "MIR.Asakusa.NorthA",
+	"coord": [139.7927403, 35.7158908],
+	"title": {
+		"ja": "北A",
+		"en": "North A",
+		"ko": "키타 A",
+		"zh-Hans": "北A",
+		"zh-Hant": "北A"
+	},
+	"description": {
+		"ja": "北自転車駐車場A",
+		"en": "North Bike Parking A",
+		"ko": "키타 자전거 주차장 A",
+		"zh-Hans": "北自行车停车场A",
+		"zh-Hant": "北自行車停車場A"
+	}
+}, {
+	"id": "MIR.Asakusa.NorthB",
+	"coord": [139.7923417, 35.7151452],
+	"title": {
+		"ja": "北B",
+		"en": "North B",
+		"ko": "키타 B",
+		"zh-Hans": "北B",
+		"zh-Hant": "北B"
+	},
+	"description": {
+		"ja": "北自転車駐車場B",
+		"en": "North Bike Parking B",
+		"ko": "키타 자전거 주차장 B",
+		"zh-Hans": "北自行车停车场B",
+		"zh-Hant": "北自行車停車場B"
+	}
+}, {
+	"id": "MIR.MinamiSenju.East",
+	"coord": [139.7989185, 35.7329904],
+	"title": {
+		"ja": "東口",
+		"en": "East",
+		"ko": "동쪽",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	},
+	"description": {
+		"ja": "東口",
+		"en": "East Exit",
+		"ko": "동쪽 출구",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	}
+}, {
+	"id": "MIR.MinamiSenju.West",
+	"coord": [139.7987252, 35.7330794],
+	"title": {
+		"ja": "西口",
+		"en": "West",
+		"ko": "서쪽",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	},
+	"description": {
+		"ja": "西口",
+		"en": "West Exit",
+		"ko": "서쪽 출구",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	}
+}, {
+	"id": "MIR.KitaSenju.West",
+	"coord": [139.8048214, 35.7500442],
+	"title": {
+		"ja": "西口",
+		"en": "West",
+		"ko": "서쪽",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	},
+	"description": {
+		"ja": "西口",
+		"en": "West Exit",
+		"ko": "서쪽 출구",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	}
+}, {
+	"id": "MIR.KitaSenju.Nakacho",
+	"coord": [139.8045364, 35.7490113],
+	"title": {
+		"ja": "仲町口",
+		"en": "Nakacho",
+		"ko": "나카초",
+		"zh-Hans": "仲町出口",
+		"zh-Hant": "仲町出口"
+	},
+	"description": {
+		"ja": "仲町口",
+		"en": "Nakacho Exit",
+		"ko": "나카초 출구",
+		"zh-Hans": "仲町出口",
+		"zh-Hant": "仲町出口"
+	}
+}, {
+	"id": "MIR.Aoi.A1",
+	"coord": [139.8201847, 35.7725931],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "MIR.Aoi.A2",
+	"coord": [139.8205083, 35.7726832],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "MIR.Rokucho.A1",
+	"coord": [139.8216224, 35.7844218],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "MIR.Rokucho.A2",
+	"coord": [139.8220641, 35.7845832],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "MIR.Rokucho.A3",
+	"coord": [139.8217707, 35.785558],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "MIR.MinamiNagareyama.A1",
+	"coord": [139.9035567, 35.8381753],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "MIR.MinamiNagareyama.A2",
+	"coord": [139.903515, 35.8389129],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "MIR.MinamiNagareyama.A3",
+	"coord": [139.9037905, 35.8384903],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "MIR.Tsukuba.A1",
+	"coord": [140.1111925, 36.0828395],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "A1出口",
+		"en": "Exit A1",
+		"ko": "A1출구",
+		"zh-Hans": "A1出口",
+		"zh-Hant": "A1出口"
+	}
+}, {
+	"id": "MIR.Tsukuba.A2",
+	"coord": [140.1116167, 36.0829876],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "A2出口",
+		"en": "Exit A2",
+		"ko": "A2출구",
+		"zh-Hans": "A2出口",
+		"zh-Hant": "A2出口"
+	}
+}, {
+	"id": "MIR.Tsukuba.A3",
+	"coord": [140.1121255, 36.0827925],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "A3出口",
+		"en": "Exit A3",
+		"ko": "A3출구",
+		"zh-Hans": "A3出口",
+		"zh-Hant": "A3出口"
+	}
+}, {
+	"id": "MIR.Tsukuba.A4",
+	"coord": [140.1120521, 36.0823421],
+	"title": {
+		"en": "A4"
+	},
+	"description": {
+		"ja": "A4出口",
+		"en": "Exit A4",
+		"ko": "A4출구",
+		"zh-Hans": "A4出口",
+		"zh-Hant": "A4出口"
+	}
+}, {
+	"id": "MIR.Tsukuba.A5",
+	"coord": [140.1116504, 36.0823772],
+	"title": {
+		"en": "A5"
+	},
+	"description": {
+		"ja": "A5出口",
+		"en": "Exit A5",
+		"ko": "A5출구",
+		"zh-Hans": "A5出口",
+		"zh-Hant": "A5出口"
 	}
 }, {
 	"id": "ToyoRapid.HigashiKaijin.T1",

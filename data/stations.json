@@ -4176,6 +4176,8 @@
 }, {
 	"id": "TokyoMetro.Ginza.UenoHirokoji",
 	"exit": [
+		"TokyoMetro.UenoHirokoji.C2",
+		"TokyoMetro.UenoHirokoji.C3",
 		"TokyoMetro.UenoHirokoji.A1",
 		"TokyoMetro.UenoHirokoji.A2",
 		"TokyoMetro.UenoHirokoji.A3",
@@ -7916,10 +7918,19 @@
 }, {
 	"id": "Keio.KeioNew.Hatsudai",
 	"coord": [139.68671, 35.68051],
+	"exit": [
+		"Keio.Hatsudai.East",
+		"Keio.Hatsudai.South",
+		"Keio.Hatsudai.North"
+	],
 	"altitude": -1
 }, {
 	"id": "Keio.KeioNew.Hatagaya",
-	"coord": [139.67772, 35.67676],
+	"coord": [139.6768293, 35.6772317],
+	"exit": [
+		"Keio.Hatagaya.South",
+		"Keio.Hatagaya.North"
+	],
 	"altitude": -1
 }, {
 	"id": "Keio.KeioNew.Sasazuka",
@@ -8510,6 +8521,16 @@
 	"title": {
 		"zh-Hant": "京成上野"
 	},
+	"exit": [
+		"Keisei.KeiseiUeno.Main",
+		"Keisei.KeiseiUeno.Ikenohata",
+		"Keisei.KeiseiUeno.C4",
+		"Keisei.KeiseiUeno.C5",
+		"Keisei.KeiseiUeno.C6",
+		"Keisei.KeiseiUeno.C7",
+		"Keisei.KeiseiUeno.C8",
+		"Keisei.KeiseiUeno.C9"
+	],
 	"altitude": -1
 }, {
 	"id": "Keisei.Main.Nippori",
@@ -9741,6 +9762,12 @@
 		"zh-Hans": "新樱台",
 		"zh-Hant": "新櫻台"
 	},
+	"exit": [
+		"Seibu.ShinSakuradai.1",
+		"Seibu.ShinSakuradai.2",
+		"Seibu.ShinSakuradai.3",
+		"Seibu.ShinSakuradai.4"
+	],
 	"altitude": -1
 }, {
 	"id": "Seibu.SeibuYurakucho.Nerima",
@@ -10887,6 +10914,12 @@
 		"zh-Hans": "池尻大桥",
 		"zh-Hant": "池尻大橋"
 	},
+	"exit": [
+		"Tokyu.Ikejiriohashi.East",
+		"Tokyu.Ikejiriohashi.West",
+		"Tokyu.Ikejiriohashi.South",
+		"Tokyu.Ikejiriohashi.North"
+	],
 	"altitude": -1
 }, {
 	"id": "Tokyu.DenEnToshi.SangenJaya",
@@ -10895,6 +10928,14 @@
 		"zh-Hans": "三轩茶屋",
 		"zh-Hant": "三軒茶屋"
 	},
+	"exit": [
+		"Tokyu.SangenJaya.SouthA",
+		"Tokyu.SangenJaya.SouthB",
+		"Tokyu.SangenJaya.NorthA",
+		"Tokyu.SangenJaya.NorthB",
+		"Tokyu.SangenJaya.SetagayaSt",
+		"Tokyu.SangenJaya.SanchaPatio"
+	],
 	"altitude": -1
 }, {
 	"id": "Tokyu.DenEnToshi.KomazawaDaigaku",
@@ -10903,6 +10944,11 @@
 		"zh-Hans": "驹泽大学",
 		"zh-Hant": "駒澤大學"
 	},
+	"exit": [
+		"Tokyu.KomazawaDaigaku.East",
+		"Tokyu.KomazawaDaigaku.West",
+		"Tokyu.KomazawaDaigaku.KomazawaPark"
+	],
 	"altitude": -1
 }, {
 	"id": "Tokyu.DenEnToshi.SakuraShimmachi",
@@ -10911,6 +10957,11 @@
 		"zh-Hans": "樱新町",
 		"zh-Hant": "櫻新町"
 	},
+	"exit": [
+		"Tokyu.SakuraShimmachi.West",
+		"Tokyu.SakuraShimmachi.South",
+		"Tokyu.SakuraShimmachi.North"
+	],
 	"altitude": -1
 }, {
 	"id": "Tokyu.DenEnToshi.Yoga",
@@ -10919,6 +10970,11 @@
 		"zh-Hans": "用贺",
 		"zh-Hant": "用賀"
 	},
+	"exit": [
+		"Tokyu.Yoga.East",
+		"Tokyu.Yoga.South",
+		"Tokyu.Yoga.North"
+	],
 	"altitude": -1
 }, {
 	"id": "Tokyu.DenEnToshi.FutakoTamagawa",
@@ -11247,6 +11303,10 @@
 		"zh-Hans": "武藏小山",
 		"zh-Hant": "武藏小山"
 	},
+	"exit": [
+		"Tokyu.MusashiKoyama.East",
+		"Tokyu.MusashiKoyama.West"
+	],
 	"altitude": -1
 }, {
 	"id": "Tokyu.Meguro.NishiKoyama",
@@ -11255,6 +11315,9 @@
 		"zh-Hans": "西小山",
 		"zh-Hant": "西小山"
 	},
+	"exit": [
+		"Tokyu.NishiKoyama.1"
+	],
 	"altitude": -1
 }, {
 	"id": "Tokyu.Meguro.Senzoku",
@@ -12106,6 +12169,12 @@
 }, {
 	"id": "MIR.TsukubaExpress.Akihabara",
 	"coord": [139.774255, 35.6987676],
+	"exit": [
+		"MIR.Akihabara.A1",
+		"MIR.Akihabara.A2",
+		"MIR.Akihabara.A3",
+		"MIR.Akihabara.EV"
+	],
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.ShinOkachimachi",
@@ -12124,21 +12193,46 @@
 		"zh-Hans": "浅草 (首都圈新都市铁道)",
 		"zh-Hant": "淺草 (首都圈新都市鐵道)"
 	},
+	"exit": [
+		"MIR.Asakusa.A1",
+		"MIR.Asakusa.A2",
+		"MIR.Asakusa.SouthA",
+		"MIR.Asakusa.SouthB",
+		"MIR.Asakusa.NorthA",
+		"MIR.Asakusa.NorthB"
+	],
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.MinamiSenju",
 	"coord": [139.7990695, 35.7331746],
+	"exit": [
+		"MIR.MinamiSenju.East",
+		"MIR.MinamiSenju.West"
+	],
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.KitaSenju",
+	"exit": [
+		"MIR.KitaSenju.West",
+		"MIR.KitaSenju.Nakacho"
+	],
 	"coord": [139.8051076, 35.7495276]
 }, {
 	"id": "MIR.TsukubaExpress.Aoi",
 	"coord": [139.8203272, 35.7717401],
+	"exit": [
+		"MIR.Aoi.A1",
+		"MIR.Aoi.A2"
+	],
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.Rokucho",
 	"coord": [139.8218755, 35.784856],
+	"exit": [
+		"MIR.Rokucho.A1",
+		"MIR.Rokucho.A2",
+		"MIR.Rokucho.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.Yashio",
@@ -12149,6 +12243,11 @@
 }, {
 	"id": "MIR.TsukubaExpress.MinamiNagareyama",
 	"coord": [139.9030981, 35.8385226],
+	"exit": [
+		"MIR.MinamiNagareyama.A1",
+		"MIR.MinamiNagareyama.A2",
+		"MIR.MinamiNagareyama.A3"
+	],
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.NagareyamaCentralPark",
@@ -12184,6 +12283,13 @@
 }, {
 	"id": "MIR.TsukubaExpress.Tsukuba",
 	"coord": [140.111247, 36.0825835],
+	"exit": [
+		"MIR.Tsukuba.A1",
+		"MIR.Tsukuba.A2",
+		"MIR.Tsukuba.A3",
+		"MIR.Tsukuba.A4",
+		"MIR.Tsukuba.A5"
+	],
 	"altitude": -1
 }, {
 	"id": "ToyoRapid.ToyoRapid.NishiFunabashi",
