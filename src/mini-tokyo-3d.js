@@ -533,6 +533,10 @@ export default class extends mapboxgl.Evented {
         me.activeFlightLookup = {};
         me.flightLookup = {};
 
+        me.container.addEventListener('touchstart', () => {
+            me.touchDevice = true;
+        });
+
         map.once('load', () => {
             me.container.querySelector('#loader').style.opacity = 0;
             setTimeout(() => {
@@ -2430,9 +2434,18 @@ export default class extends mapboxgl.Evented {
     }
 
     trackObject(object) {
-        const me = this;
+        const me = this,
+            {lang} = me;
 
         if (me.searchMode !== 'none') {
+            if (me.searchMode === 'edit' && me.searchPanel && object && !helpersThree.isObject3D(object)) {
+                const ids = helpersGeojson.getIds(object),
+                    station = me.stationLookup[ids[0]],
+                    utitle = station.utitle && station.utitle[lang],
+                    title = utitle || helpers.normalize(station.title[lang] || station.title.en);
+
+                me.searchPanel.fillStationName(title);
+            }
             return;
         }
 

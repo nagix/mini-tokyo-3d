@@ -76,14 +76,27 @@ export default class {
             }
         });
 
-        const resetInputBorder = event => {
-            event.target.style.borderColor = '#777';
+        const onInput = ({target}) => {
+            target.style.borderColor = '#777';
+            if (target.value) {
+                delete me.focus;
+                target.classList.remove('search-focus');
+            } else {
+                me.focus = target.id;
+                target.classList.add('search-focus');
+            }
+        };
+        const onFocus = ({target}) => {
+            originElement.classList.remove('search-focus');
+            destinationElement.classList.remove('search-focus');
+            me.focus = target.id;
+            target.classList.add('search-focus');
         };
 
-        originElement.addEventListener('input', resetInputBorder);
-        originElement.addEventListener('focus', resetInputBorder);
-        destinationElement.addEventListener('input', resetInputBorder);
-        destinationElement.addEventListener('focus', resetInputBorder);
+        originElement.addEventListener('input', onInput);
+        originElement.addEventListener('focus', onFocus);
+        destinationElement.addEventListener('input', onInput);
+        destinationElement.addEventListener('focus', onFocus);
 
         originElement.placeholder = dict['station-name'];
         destinationElement.placeholder = dict['station-name'];
@@ -120,11 +133,18 @@ export default class {
                 hours = hoursElement.value,
                 minutes = minutesElement.value;
 
+            delete me.focus;
+            originElement.classList.remove('search-focus');
+            destinationElement.classList.remove('search-focus');
+
             if (!origin || !destination || origin === destination) {
                 originElement.style.borderColor = origin && origin !== destination ? '#777' : '#f90';
                 destinationElement.style.borderColor = destination && origin !== destination ? '#777' : '#f90';
                 return;
             }
+
+            originElement.style.borderColor = '#777';
+            destinationElement.style.borderColor = '#777';
 
             formElement.style.display = 'none';
             loadElement.style.display = 'block';
@@ -138,6 +158,13 @@ export default class {
         mt3d.container.appendChild(container);
 
         me.showForm();
+
+        if (!mt3d.touchDevice) {
+            originElement.focus();
+        } else {
+            me.focus = 'origin';
+            originElement.classList.add('search-focus');
+        }
 
         return me;
     }
@@ -156,7 +183,29 @@ export default class {
         ].join('');
 
         container.querySelector('#search-form').style.display = 'block';
-        container.querySelector('#origin').focus();
+    }
+
+    fillStationName(name) {
+        const me = this;
+
+        if (me.focus) {
+            const container = me._container;
+            let focusedElement = container.querySelector(`#${me.focus}`);
+
+            focusedElement.style.borderColor = '#777';
+            focusedElement.value = name;
+            focusedElement.classList.remove('search-focus');
+            me.focus = me.focus === 'origin' ? 'destination' : 'origin';
+            focusedElement = container.querySelector(`#${me.focus}`);
+            if (!focusedElement.value) {
+                focusedElement.classList.add('search-focus');
+                if (!me._mt3d.touchDevice) {
+                    focusedElement.focus();
+                }
+            } else {
+                delete me.focus;
+            }
+        }
     }
 
     showRoutes(result, index) {

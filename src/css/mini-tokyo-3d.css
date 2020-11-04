@@ -321,7 +321,7 @@
 	line-height: 130%;
 }
 .mini-tokyo-3d .search-form-element {
-	margin-bottom: 4px;
+	margin: 2px 0 4px;
 }
 .mini-tokyo-3d #search-load {
 	display: none;
@@ -345,6 +345,9 @@
 }
 .mini-tokyo-3d .search-input:hover {
 	background-color: rgba(51, 51, 51, 0.7);
+}
+.mini-tokyo-3d .search-focus {
+	outline: 2px solid #33B5E5;
 }
 .mini-tokyo-3d .search-select {
 	-webkit-appearance: none;
