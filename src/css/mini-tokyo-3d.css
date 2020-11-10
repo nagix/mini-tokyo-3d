@@ -14,6 +14,7 @@
 	-ms-user-select: none;
 	user-select: none;
 	touch-action: none;
+	overflow: hidden;
 }
 .mini-tokyo-3d #map {
 	width: 100%;
@@ -669,16 +670,6 @@
 .mini-tokyo-3d .popup-station .mapboxgl-popup-content {
 	padding: 5px 10px;
 }
-.mini-tokyo-3d .mapboxgl-popup-content a:link,
-.mini-tokyo-3d .mapboxgl-popup-content a:visited {
-	color: #f90;
-	text-decoration: none;
-}
-.mini-tokyo-3d .mapboxgl-popup-content a:hover,
-.mini-tokyo-3d .mapboxgl-popup-content a:active {
-	color: #f90;
-	text-decoration: underline;
-}
 .mini-tokyo-3d .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
 .mini-tokyo-3d .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
 .mini-tokyo-3d .mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
@@ -725,40 +716,6 @@
 	display: none;
 	position: absolute;
 	z-index: 3;
-}
-.mini-tokyo-3d .acd-check {
-	display: none;
-}
-.mini-tokyo-3d .acd-label {
-	background: rgba(51, 51, 51, 0.7);
-	color: #fff;
-	display: block;
-	padding: 4px;
-	cursor: pointer;
-}
-.mini-tokyo-3d .acd-label .acd-icon {
-	display: inline-block;
-	width: 12px;
-	height: 12px;
-	margin-right: 4px;
-	margin-bottom: -2px;
-	background: no-repeat center/12px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/plus-square.svg', fill: #fff);
-}
-.mini-tokyo-3d .acd-check:checked + .acd-label .acd-icon {
-	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/minus-square.svg', fill: #fff);
-}
-.mini-tokyo-3d .acd-content {
-	border: 1px solid rgba(51, 51, 51, 0.7);
-	margin-bottom: 1px;
-	height: 0;
-	opacity: 0;
-	padding: 0 4px;
-	visibility: hidden;
-}
-.mini-tokyo-3d .acd-check:checked + .acd-label + .acd-content {
-	height: auto;
-	opacity: 1;
-	visibility: visible;
 }
 .mini-tokyo-3d .desc-header {
 	display: table;
@@ -813,3 +770,75 @@
 	margin-right: 8px;
 	display: inline-block;
 }
+.mini-tokyo-3d .modal-panel-background {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: 3;
+	background-color: #000;
+	opacity: 0;
+	transition: opacity 300ms ease;
+}
+.mini-tokyo-3d .modal-panel {
+	position: absolute;
+	z-index: 3;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: calc(100% - 20px);
+	max-width: 380px;
+	max-height: 0;
+	margin: auto;
+	border-radius: 3px 3px 0 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	color: #fff;
+	transition: max-height 300ms ease;
+}
+.mini-tokyo-3d .modal-panel a:link,
+.mini-tokyo-3d .modal-panel a:visited {
+	color: #f90;
+	text-decoration: none;
+}
+.mini-tokyo-3d .modal-panel a:hover,
+.mini-tokyo-3d .modal-panel a:active {
+	color: #f90;
+	text-decoration: underline;
+}
+.mini-tokyo-3d #modal-panel-header {
+	height: 30px;
+	margin: 10px 0;
+	padding: 0 10px;
+	overflow: hidden;
+	font-size: 130%;
+	line-height: 30px;
+}
+.mini-tokyo-3d #modal-panel-body {
+	margin-top: 10px;
+	padding: 0 10px;
+	overflow: auto;
+	overscroll-behavior: contain;
+}
+.mini-tokyo-3d .close-button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 20px;
+	height: 30px;
+	background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/times.svg', fill: #fff);
+	cursor: pointer;
+}
+.mini-tokyo-3d .card-title {
+	background: rgba(51, 51, 51, 0.7);
+	color: #fff;
+	display: block;
+	padding: 4px;
+}
+.mini-tokyo-3d .card-body {
+	border: 1px solid rgba(51, 51, 51, 0.7);
+	margin-bottom: 10px;
+	padding: 0 4px;
+}
+

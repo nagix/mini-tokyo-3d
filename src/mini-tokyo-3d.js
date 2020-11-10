@@ -6,7 +6,7 @@ import {featureEach} from '@turf/meta';
 import * as THREE from 'three';
 import SunCalc from 'suncalc';
 import animation from './animation';
-import AboutPopup from './about-popup';
+import AboutPanel from './about-panel';
 import Clock from './clock';
 import ClockControl from './clock-control';
 import configs from './configs';
@@ -849,18 +849,17 @@ export default class extends mapboxgl.Evented {
                 map.addControl(control);
             }
 
-            const aboutPopup = me.aboutPopup = new AboutPopup();
+            me.aboutPanel = new AboutPanel({
+                dict: me.dict,
+                lastDynamicUpdate: me.lastDynamicUpdate
+            });
 
             if (me.infoControl) {
                 map.addControl(new MapboxGLButtonControl([{
                     className: 'mapboxgl-ctrl-about',
                     title: me.dict['about'],
                     eventHandler() {
-                        if (!aboutPopup.isOpen()) {
-                            aboutPopup.updateContent(me.dict, me.lastDynamicUpdate).addTo(map);
-                        } else {
-                            aboutPopup.remove();
-                        }
+                        me.aboutPanel.updateContent().addTo(me);
                     }
                 }]));
             }
@@ -1904,8 +1903,8 @@ export default class extends mapboxgl.Evented {
 
             me.refreshTrains();
             me.refreshDelayMarkers();
-            if (me.aboutPopup.isOpen()) {
-                me.aboutPopup.updateContent(me.dict, me.lastDynamicUpdate);
+            if (me.aboutPanel.isOpen()) {
+                me.aboutPanel.updateContent();
             }
         }).catch(error => {
             me.refreshTrains();
