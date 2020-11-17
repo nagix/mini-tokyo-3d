@@ -645,11 +645,8 @@
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-playback-active .mapboxgl-ctrl-icon {
 	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/play-circle.svg', fill: #33B5E5);
 }
-.mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-weather .mapboxgl-ctrl-icon {
-	background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/cloud-showers-heavy.svg', fill: #333);
-}
-.mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-weather-active .mapboxgl-ctrl-icon {
-	background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/cloud-showers-heavy.svg', fill: #33B5E5);
+.mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-layers .mapboxgl-ctrl-icon {
+	background: no-repeat center/19px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/layer-group.svg', fill: #333);
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-about .mapboxgl-ctrl-icon {
 	background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/info-circle.svg', fill: #333);
@@ -841,4 +838,26 @@
 	margin-bottom: 10px;
 	padding: 0 4px;
 }
-
+.mini-tokyo-3d .layer-row {
+	height: 60px;
+}
+.mini-tokyo-3d .layer-row div {
+	display: inline-block;
+	vertical-align: middle;
+}
+.mini-tokyo-3d .layer-icon {
+	width: 48px;
+	height: 48px;
+	margin: 1px 11px 1px 1px;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 4px;
+	border-color: #777;
+	cursor: pointer;
+	background: no-repeat center/32px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/puzzle-piece.svg', fill: #fff);
+}
+.mini-tokyo-3d .layer-icon-enabled {
+	margin: 0 10px 0 0;
+	border-width: 2px;
+	border-color: #33B5E5;
+}

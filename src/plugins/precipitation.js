@@ -1,17 +1,19 @@
 import mapboxgl from 'mapbox-gl';
 import * as THREE from 'three';
-import SPE from './spe/SPE';
-import configs from './configs';
-import * as helpers from './helpers';
-import ThreeLayer from './three-layer';
+import SPE from '../spe/SPE';
+import configs from '../configs';
+import * as helpers from '../helpers';
+import ThreeLayer from '../three-layer';
+import Plugin from './plugin';
 import raindrop from './raindrop.png';
+import precipitationSVG from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/cloud-showers-heavy.svg';
 
 const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord),
     modelScale = modelOrigin.meterInMercatorCoordinateUnits();
 
 const rainTexture = new THREE.TextureLoader().load(raindrop);
 
-export default class extends ThreeLayer {
+class PrecipitationLayer extends ThreeLayer {
 
     constructor(id) {
         super(id);
@@ -152,6 +154,88 @@ export default class extends ThreeLayer {
             // fgGroup.dispose();
         }
         delete me.imGroup;
+    }
+
+}
+
+export default class extends Plugin {
+
+    constructor(options) {
+        super(options);
+
+        const me = this;
+
+        me.id = 'precipitation';
+        me.name = {
+            en: 'Precipitation',
+            ja: '降水',
+            ko: '강수',
+            ne: 'वर्षा',
+            th: 'ฝน',
+            'zh-Hans': '降水',
+            'zh-Hant': '降水'
+        };
+        me.iconStyle = {
+            backgroundSize: '32px',
+            backgroundImage: `url("${precipitationSVG.replace('%3e', ' fill=\'white\'%3e')}")`
+        };
+        me._layer = new PrecipitationLayer(me.id);
+        me._moveEventListener = () => {
+            if (me._mt3d.clockMode === 'realtime') {
+                me._layer.updateEmitterQueue();
+            }
+        };
+    }
+
+    onAdd(mt3d) {
+        mt3d.map.addLayer(this._layer, 'poi');
+    }
+
+    onRemove(mt3d) {
+        mt3d.map.removeLayer(this._layer);
+    }
+
+    onEnabled() {
+        const me = this;
+        let {clockMode} = me._mt3d;
+
+        delete me._lastWeatherRefresh;
+        me._mt3d.map.on('move', me._moveEventListener);
+
+        const repeat = () => {
+            const now = Date.now(),
+                currentClockMode = me._mt3d.clockMode;
+
+            if (clockMode !== currentClockMode) {
+                if (currentClockMode === 'realtime') {
+                    delete me._lastWeatherRefresh;
+                } else {
+                    me._layer.clear();
+                }
+                clockMode = currentClockMode;
+            }
+
+            if (me.enabled) {
+                if (clockMode === 'realtime' && now - (me._lastWeatherRefresh || 0) >= configs.weatherRefreshInterval) {
+                    helpers.loadJSON(configs.nowcastsUrl).then(data => {
+                        me._layer.updateEmitterQueue(data);
+                    });
+                    me._lastWeatherRefresh = now;
+                }
+                me._layer.refreshEmitter();
+                requestAnimationFrame(repeat);
+            }
+
+        };
+
+        repeat();
+    }
+
+    onDisabled() {
+        const me = this;
+
+        me._layer.clear();
+        me._mt3d.map.off('move', me._moveEventListener);
     }
 
 }

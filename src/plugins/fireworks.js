@@ -1,8 +1,10 @@
 import mapboxgl from 'mapbox-gl';
 import * as THREE from 'three';
-import configs from './configs';
-import * as helpers from './helpers';
-import ThreeLayer from './three-layer';
+import configs from '../configs';
+import * as helpers from '../helpers';
+import ThreeLayer from '../three-layer';
+import Plugin from './plugin';
+import fireworksSVG from './fireworks.svg';
 
 const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord);
 const modelScale = modelOrigin.meterInMercatorCoordinateUnits();
@@ -578,39 +580,23 @@ class RichFireWorks extends BasicFireWorks {
 
 }
 
-export default class extends ThreeLayer {
+class FireworksLayer extends ThreeLayer {
 
-    constructor(id, clock, plans) {
+    constructor(id) {
         super(id);
 
-        const me = this;
-
-        me.isAutoLaunch = true;
-        me.clock = clock;
-        me.plans = plans.map(plan => ({
-            location: mapboxgl.MercatorCoordinate.fromLngLat(plan.coord),
-            start: plan.start,
-            end: plan.end,
-            fireworksInstances: []
-        }));
-    }
-
-    onAdd(map, gl) {
-        const me = this;
-
-        super.onAdd(map, gl);
-
-        setInterval(me.autoLaunch.bind(me), 100);
+        this.fireworksInstances = {};
     }
 
     render(gl, matrix) {
-        const me = this;
+        const {fireworksInstances, scene} = this;
 
-        me.plans.forEach(plan => {
+        for (const key of Object.keys(fireworksInstances)) {
+            const instances = fireworksInstances[key];
             const exploadedIndexList = [];
 
-            for (let i = plan.fireworksInstances.length - 1; i >= 0; i--) {
-                const instance = plan.fireworksInstances[i];
+            for (let i = instances.length - 1; i >= 0; i--) {
+                const instance = instances[i];
 
                 instance.update();
                 if (instance.isExplode) {
@@ -620,7 +606,7 @@ export default class extends ThreeLayer {
 
             for (let i = 0, l = exploadedIndexList.length; i < l; i++) {
                 const index = exploadedIndexList[i];
-                const instance = plan.fireworksInstances[index];
+                const instance = instances[index];
 
                 if (!instance) {
                     return;
@@ -634,51 +620,133 @@ export default class extends ThreeLayer {
                 instance.meshGroup.remove(instance.seed.mesh);
                 instance.seed.disposeAll();
                 if (instance.life <= 0) {
-                    me.scene.remove(instance.meshGroup);
+                    scene.remove(instance.meshGroup);
                     if (instance.tailMeshGroup) {
                         instance.tails.forEach(v => {
                             v.disposeAll();
                         });
                     }
                     instance.flower.disposeAll();
-                    plan.fireworksInstances.splice(index, 1);
+                    instances.splice(index, 1);
                 }
             }
-        });
+        }
 
         super.render(gl, matrix);
     }
 
-    launchFireWorks() {
+    launchFireWorks(key, lngLat) {
         const me = this;
-        const now = me.clock.getTime();
+        const {map, scene, fireworksInstances} = me;
+        let instances = fireworksInstances[key];
 
-        me.plans.forEach(plan => {
-            if (now < plan.start || now > plan.end) {
-                return;
-            }
-            if (plan.fireworksInstances.length > 5) {
-                return;
-            }
+        if (!instances) {
+            instances = me.fireworksInstances[key] = [];
+        }
 
-            const scale = Math.pow(2, 17 - helpers.clamp(me.map.getZoom(), 14, 16)) * modelScale;
-            const location = plan.location;
-            const fw = Math.random() > 0.5 ? new BasicFireWorks(scale, location) : new RichFireWorks(scale, location);
-
-            plan.fireworksInstances.push(fw);
-            me.scene.add(fw.meshGroup);
-        });
-    }
-
-    autoLaunch() {
-        const me = this;
-
-        if (!me.isAutoLaunch) {
+        if (instances.length > 5) {
             return;
         }
-        if (Math.random() > 0.7) {
-            me.launchFireWorks();
-        }
+
+        const scale = Math.pow(2, 17 - helpers.clamp(map.getZoom(), 14, 16)) * modelScale;
+        const location = mapboxgl.MercatorCoordinate.fromLngLat(lngLat);
+        const fw = Math.random() > 0.5 ? new BasicFireWorks(scale, location) : new RichFireWorks(scale, location);
+
+        instances.push(fw);
+        scene.add(fw.meshGroup);
+    }
+
+}
+
+export default class extends Plugin {
+
+    constructor(options) {
+        super(options);
+
+        const me = this;
+
+        me.id = 'fireworks';
+        me.name = {
+            en: 'Fireworks',
+            ja: '花火',
+            ko: '불꽃놀이',
+            ne: 'आतिशबाजी',
+            th: 'ดอกไม้ไฟ',
+            'zh-Hans': '烟花',
+            'zh-Hant': '煙花'
+        };
+        me.iconStyle = {
+            backgroundSize: '32px',
+            backgroundImage: `url("${fireworksSVG}")`
+        };
+        me._layer = new FireworksLayer(me.id);
+        me._plans = [{
+            // Sumidagawa 1 (2020-07-23 19:00 to 20:30)
+            coord: [139.8061467, 35.7168468],
+            start: 1595498400000,
+            end: 1595503800000
+        }, {
+            // Sumidagawa 2 (2020-07-23 19:30 to 20:30)
+            coord: [139.7957901, 35.7053016],
+            start: 1595500200000,
+            end: 1595503800000
+        }, {
+            // Adachi (2020-07-24 19:30 to 20:30)
+            coord: [139.7960082, 35.7596802],
+            start: 1595586600000,
+            end: 1595590200000
+        }, {
+            // Makuhari (2020-07-25 19:10 to 20:20)
+            coord: [140.0265839, 35.6429351],
+            start: 1595671800000,
+            end: 1595676000000
+        }, {
+            // Minatomirai (2020-07-26 19:30 to 19:55)
+            coord: [139.6411158, 35.4606603],
+            start: 1595759400000,
+            end: 1595760900000
+        }, {
+            // Jingu (2020-08-08 19:30 to 20:30)
+            coord: [139.7186873, 35.6765851],
+            start: 1596882600000,
+            end: 1596886200000
+        }, {
+            // Edogawa (2020-08-09 19:15 to 20:30)
+            coord: [139.9028813, 35.7187124],
+            start: 1596968100000,
+            end: 1596972600000
+        }, {
+            // Itabashi (2020-08-10 19:00 to 20:30)
+            coord: [139.6759402, 35.7988664],
+            start: 1597053600000,
+            end: 1597059000000
+        }];
+    }
+
+    onAdd(mt3d) {
+        mt3d.map.addLayer(this._layer, 'poi');
+    }
+
+    onRemove(mt3d) {
+        mt3d.map.removeLayer(this._layer);
+    }
+
+    onEnabled() {
+        const me = this;
+
+        me._interval = setInterval(() => {
+            const now = me._mt3d.clock.getTime();
+
+            me._plans.forEach((plan, index) => {
+                if (now >= plan.start && now < plan.end && Math.random() > 0.7) {
+                    me._layer.launchFireWorks(index, plan.coord);
+                }
+            });
+        }, 100);
+    }
+
+    onDisabled() {
+        clearInterval(this._interval);
     }
 
 }

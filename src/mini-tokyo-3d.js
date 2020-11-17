@@ -11,18 +11,19 @@ import Clock from './clock';
 import ClockControl from './clock-control';
 import configs from './configs';
 import DetailPanel from './detail-panel';
-import FireworksLayer from './fireworks-layer';
 import * as helpers from './helpers';
 import * as helpersGeojson from './helpers-geojson';
 import * as helpersMapbox from './helpers-mapbox';
 import * as helpersThree from './helpers-three';
+import LayerPanel from './layer-panel';
 import * as loader from './loader';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
+import FireworksPlugin from './plugins/fireworks.js';
+import PrecipitationPlugin from './plugins/precipitation.js';
 import SearchPanel from './search-panel';
 import SharePanel from './share-panel';
 import StationPanel from './station-panel';
 import ThreeLayer from './three-layer';
-import WeatherLayer from './weather-layer';
 
 const OPERATORS_FOR_DYNAMIC_TRAIN_DATA = [
     'JR-East',
@@ -86,8 +87,14 @@ export default class extends mapboxgl.Evented {
         me.navigationControl = helpers.valueOrDefault(options.navigationControl, true);
         me.fullscreenControl = helpers.valueOrDefault(options.fullscreenControl, true);
         me.modeControl = helpers.valueOrDefault(options.modeControl, true);
-        me.infoControl = helpers.valueOrDefault(options.infoControl, true);
+        me.configControl = helpers.valueOrDefault(options.configControl, true);
         me.clock = new Clock();
+
+        me.plugins = [
+            new PrecipitationPlugin({enabled: false}),
+            new FireworksPlugin({enabled: true}),
+            ...(options.plugins || [])
+        ];
 
         me.searchMode = 'none';
         me.viewMode = configs.defaultViewMode;
@@ -95,7 +102,6 @@ export default class extends mapboxgl.Evented {
         me.initialSelection = options.selection;
         me.clockMode = configs.defaultClockMode;
         me.isEditingTime = false;
-        me.isWeatherVisible = false;
 
         me.initialCenter = helpers.valueOrDefault(options.center, configs.originCoord);
         me.initialZoom = helpers.valueOrDefault(options.zoom, configs.defaultZoom);
@@ -441,7 +447,7 @@ export default class extends mapboxgl.Evented {
         const map = me.map = new mapboxgl.Map({
             container: me.container.querySelector('#map'),
             style: `${me.dataUrl}/osm-liberty.json`,
-            customAttribution: me.infoControl ? '' : configs.customAttribution,
+            customAttribution: me.configControl ? '' : configs.customAttribution,
             hash: helpers.valueOrDefault(me.options.hash, false),
             center: me.initialCenter,
             zoom: me.initialZoom,
@@ -499,8 +505,6 @@ export default class extends mapboxgl.Evented {
                 this.og.onResize(event);
             }
         };
-
-        const weatherLayer = me.weatherLayer = new WeatherLayer('weather');
 
         me.railwayLookup = helpers.buildLookup(me.railwayData);
         me.stationLookup = helpers.buildLookup(me.stationData);
@@ -750,9 +754,9 @@ export default class extends mapboxgl.Evented {
             }), 'poi');
             */
 
-            map.addLayer(new FireworksLayer('fireworks', me.clock, configs.fireworksPlans), 'poi');
-
-            map.addLayer(weatherLayer, 'poi');
+            for (const plugin of me.plugins) {
+                plugin.addTo(me);
+            }
 
             me.styleColors = helpersMapbox.getStyleColors(map);
             me.styleOpacities = helpersMapbox.getStyleOpacities(map);
@@ -839,23 +843,29 @@ export default class extends mapboxgl.Evented {
                     eventHandler() {
                         me._setClockMode(me.clockMode === 'realtime' ? 'playback' : 'realtime');
                     }
-                }, {
-                    className: 'mapboxgl-ctrl-weather',
-                    title: me.dict['show-weather'],
-                    eventHandler() {
-                        me.setWeatherMode(!me.isWeatherVisible);
-                    }
                 }]);
                 map.addControl(control);
             }
+
+            me.layerPanel = new LayerPanel({
+                lang: me.lang,
+                dict: me.dict,
+                layers: me.plugins
+            });
 
             me.aboutPanel = new AboutPanel({
                 dict: me.dict,
                 lastDynamicUpdate: me.lastDynamicUpdate
             });
 
-            if (me.infoControl) {
+            if (me.configControl) {
                 map.addControl(new MapboxGLButtonControl([{
+                    className: 'mapboxgl-ctrl-layers',
+                    title: me.dict['select-layers'],
+                    eventHandler() {
+                        me.layerPanel.addTo(me);
+                    }
+                }, {
                     className: 'mapboxgl-ctrl-about',
                     title: me.dict['about'],
                     eventHandler() {
@@ -956,9 +966,6 @@ export default class extends mapboxgl.Evented {
             });
 
             map.on('move', () => {
-                if (me.isWeatherVisible) {
-                    weatherLayer.updateEmitterQueue();
-                }
                 if (popup.isOpen()) {
                     me.updatePopup();
                 }
@@ -1031,13 +1038,6 @@ export default class extends mapboxgl.Evented {
                     }
                     if (helpersThree.isObject3D(me.markedObject)) {
                         me.updatePopup({setHTML: true});
-                    }
-                    if (me.clockMode === 'realtime' && me.isWeatherVisible) {
-                        if (now - (me.lastWeatherRefresh || 0) >= configs.weatherRefreshInterval) {
-                            me.loadWeatherData();
-                            me.lastWeatherRefresh = now;
-                        }
-                        weatherLayer.refreshEmitter();
                     }
                 }
             });
@@ -2098,14 +2098,6 @@ export default class extends mapboxgl.Evented {
         });
     }
 
-    loadWeatherData() {
-        const me = this;
-
-        helpers.loadJSON(configs.nowcastsUrl).then(data => {
-            me.weatherLayer.updateEmitterQueue(data);
-        });
-    }
-
     updateSearchButton(mode) {
         const {container, dict} = this,
             button = container.querySelector('.mapboxgl-ctrl-search');
@@ -2173,23 +2165,6 @@ export default class extends mapboxgl.Evented {
             } else {
                 button.title = dict['enter-playback'];
                 classList.remove('mapboxgl-ctrl-playback-active');
-            }
-        }
-    }
-
-    updateWeatherButton(enabled) {
-        const {container, dict} = this,
-            button = container.querySelector('.mapboxgl-ctrl-weather');
-
-        if (button) {
-            const {classList} = button;
-
-            if (enabled) {
-                button.title = dict['hide-weather'];
-                classList.add('mapboxgl-ctrl-weather-active');
-            } else {
-                button.title = dict['show-weather'];
-                classList.remove('mapboxgl-ctrl-weather-active');
             }
         }
     }
@@ -2312,22 +2287,6 @@ export default class extends mapboxgl.Evented {
             me.loadTimetableData();
             me.lastTimetableRefresh = baseTime;
         }
-    }
-
-    setWeatherMode(enabled) {
-        const me = this;
-
-        if (me.isWeatherVisible === enabled) {
-            return;
-        }
-
-        me.updateWeatherButton(enabled);
-        if (enabled) {
-            me.loadWeatherData();
-        } else {
-            me.weatherLayer.clear();
-        }
-        me.isWeatherVisible = enabled;
     }
 
     refreshStyleColors() {

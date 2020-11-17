@@ -15,6 +15,7 @@ export default class extends ModalPanel {
 
         return me.setHTML([
             dict['description'].replace(/<h3>.*<\/h3>/, ''),
+            `<p>${configs.copyright}</p>`,
             `<div class="card-title">${dict['static-update']}</div>`,
             `<div class="card-body">${configs.lastStaticUpdate}</div>`,
             `<div class="card-title">${dict['dynamic-update']}</div>`,
