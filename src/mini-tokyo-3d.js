@@ -1,8 +1,9 @@
 import {WebMercatorViewport} from '@deck.gl/core';
 import {MapboxLayer} from '@deck.gl/mapbox';
 import {GeoJsonLayer} from '@deck.gl/layers';
-import mapboxgl from 'mapbox-gl';
 import {featureEach} from '@turf/meta';
+import mapboxgl from 'mapbox-gl';
+import AnimatedPopup from 'mapbox-gl-animated-popup';
 import * as THREE from 'three';
 import SunCalc from 'suncalc';
 import animation from './animation';
@@ -912,7 +913,7 @@ export default class extends mapboxgl.Evented {
             map.on('click', e => {
                 const object = me.pickObject(e.point);
 
-                me.markObject(object);
+                me.markObject();
                 me.trackObject(object);
 
                 // For development
@@ -2425,7 +2426,11 @@ export default class extends mapboxgl.Evented {
                 delete me.detailPanel;
             }
             me.exitPopups.forEach(popup => {
-                popup.remove();
+                if (popup instanceof AnimatedPopup) {
+                    popup.remove();
+                } else {
+                    clearTimeout(popup);
+                }
             });
         }
 
@@ -2459,19 +2464,23 @@ export default class extends mapboxgl.Evented {
                     const coords = [];
 
                     me.exitPopups = exits.map((id, index) => {
-                        const coord = me.poiLookup[id].coord,
-                            popup = new mapboxgl.Popup({
+                        const coord = me.poiLookup[id].coord;
+
+                        coords.push(coord);
+
+                        return setTimeout(() => {
+                            const popup = new AnimatedPopup({
                                 className: 'popup-station',
                                 closeButton: false
                             });
 
-                        popup.setLngLat(coord)
-                            .setHTML(me.getLocalizedPOITitle(id))
-                            .addTo(me.map)
-                            .getElement().id = `exit-${index}`;
-                        coords.push(coord);
+                            popup.setLngLat(coord)
+                                .setHTML(me.getLocalizedPOITitle(id))
+                                .addTo(me.map)
+                                .getElement().id = `exit-${index}`;
 
-                        return popup;
+                            me.exitPopups[index] = popup;
+                        }, index / exits.length * 1000 + 500);
                     });
 
                     me._setViewMode(altitude < 0 ? 'underground' : 'ground');

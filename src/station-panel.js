@@ -77,10 +77,18 @@ export default class {
             const child = children[i];
 
             child.addEventListener('mouseenter', () => {
-                mt3d.container.querySelector(`#exit-${i}`).classList.add('highlighted');
+                const element = mt3d.container.querySelector(`#exit-${i}`);
+
+                if (element) {
+                    element.classList.add('highlighted');
+                }
             });
             child.addEventListener('mouseleave', () => {
-                mt3d.container.querySelector(`#exit-${i}`).classList.remove('highlighted');
+                const element = mt3d.container.querySelector(`#exit-${i}`);
+
+                if (element) {
+                    element.classList.remove('highlighted');
+                }
             });
         }
 
