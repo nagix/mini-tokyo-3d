@@ -82,6 +82,7 @@ export default class extends mapboxgl.Evented {
         me.dataUrl = options.dataUrl || configs.dataUrl;
         me.container = typeof options.container === 'string' ?
             document.getElementById(options.container) : options.container;
+        me.exitPopups = [];
 
         me.clockControl = helpers.valueOrDefault(options.clockControl, true);
         me.searchControl = helpers.valueOrDefault(options.searchControl, true);
@@ -881,19 +882,6 @@ export default class extends mapboxgl.Evented {
                 map.addControl(me.clockCtrl);
             }
 
-            const popup = me.popup = new mapboxgl.Popup({
-                className: 'popup-object',
-                closeButton: false,
-                closeOnClick: false,
-                maxWidth: '300px',
-                offset: {
-                    top: [0, 10],
-                    bottom: [0, -30]
-                }
-            });
-
-            me.exitPopups = [];
-
             [13, 14, 15, 16, 17, 18].forEach(zoom => {
                 map.on('mouseenter', `stations-og-${zoom}`, e => {
                     me.pickedFeature = e.features[0];
@@ -967,7 +955,7 @@ export default class extends mapboxgl.Evented {
             });
 
             map.on('move', () => {
-                if (popup.isOpen()) {
+                if (me.markedObject) {
                     me.updatePopup();
                 }
             });
@@ -2373,7 +2361,7 @@ export default class extends mapboxgl.Evented {
                 me.removeStationOutline('stations-marked');
             }
             delete me.markedObject;
-            if (popup.isOpen()) {
+            if (popup && popup.isOpen()) {
                 map.getCanvas().style.cursor = '';
                 popup.remove();
             }
@@ -2382,6 +2370,21 @@ export default class extends mapboxgl.Evented {
         if (object && object !== me.markedObject) {
             me.markedObject = object;
             map.getCanvas().style.cursor = 'pointer';
+
+            me.popup = new AnimatedPopup({
+                className: 'popup-object',
+                closeButton: false,
+                closeOnClick: false,
+                maxWidth: '300px',
+                offset: {
+                    top: [0, 10],
+                    bottom: [0, -30]
+                },
+                openingAnimation: {
+                    duration: 300,
+                    easing: 'easeOutBack'
+                }
+            });
             me.updatePopup({setHTML: true, addToMap: true});
 
             if (helpersThree.isObject3D(object)) {
