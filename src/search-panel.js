@@ -71,7 +71,7 @@ export default class {
                 classList.remove('slide-down');
                 classList.add('slide-up');
             } else {
-                style.height = 'max(33%, 176px)';
+                style.height = 'max(33%, 194px)';
                 classList.remove('slide-up');
                 classList.add('slide-down');
             }
