@@ -1,3 +1,4 @@
+import AnimatedPopup from 'mapbox-gl-animated-popup';
 import configs from './configs';
 import * as helpers from './helpers';
 import * as helpersGeojson from './helpers-geojson';
@@ -165,6 +166,8 @@ export default class {
             me.focus = 'origin';
             originElement.classList.add('search-focus');
         }
+
+        me.popups = [];
 
         return me;
     }
@@ -412,6 +415,30 @@ export default class {
                 maxZoom: 18
             });
             mt3d.refreshMap();
+
+            const stationIDs = [route.trains[0].tt[0].s];
+
+            for (const train of route.trains) {
+                if (train.transfer > 0 || train === route.trains[route.trains.length - 1]) {
+                    stationIDs.push(train.tt[train.tt.length - 1].s);
+                }
+            }
+
+            me.popups = stationIDs.map((id, index) => {
+                return setTimeout(() => {
+                    const popup = new AnimatedPopup({
+                        className: 'popup-route',
+                        closeButton: false,
+                        closeOnClick: false
+                    });
+
+                    popup.setLngLat(mt3d.stationLookup[id].coord)
+                        .setHTML(index === 0 ? dict['from-station'] : index === stationIDs.length - 1 ? dict['to-station'] : `${dict['transfer']}${index}`)
+                        .addTo(map);
+
+                    me.popups[index] = popup;
+                }, index / stationIDs.length * 1000 + 500);
+            });
         } else {
             resultElement.style.display = 'block';
             routesElement.innerHTML = dict['cannot-find-train'];
@@ -420,13 +447,22 @@ export default class {
     }
 
     hideRoute() {
-        const map = this._mt3d.map;
+        const me = this,
+            map = me._mt3d.map;
 
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
             for (const id of [`railways-routeug-${zoom}`, `stations-routeug-${zoom}`, `railways-routeog-${zoom}`, `stations-routeog-${zoom}`]) {
                 map.getLayer(id).implementation.setProps({
                     data: helpersGeojson.emptyFeatureCollection()
                 });
+            }
+        }
+
+        for (const popup of me.popups) {
+            if (popup instanceof AnimatedPopup) {
+                popup.remove();
+            } else {
+                clearTimeout(popup);
             }
         }
     }
