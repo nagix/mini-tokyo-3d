@@ -64,7 +64,7 @@ The railway network in Tokyo is one of the most complex in the world. Mini Tokyo
 2. **Search Button**: See [Route Search](#route-search)
 3. **Navigation Buttons**: See [Zooming-In/Out](#zooming-inout) and [Rotation and Tilting](#rotation-and-tilting)
 4. **Display Mode Switching Buttons**: See [Display Modes](#display-modes)
-5. **Application Information Button**: See [Showing Application Information](#showing-application-information)
+5. **Configuration Buttons**: See [Configuration](#configuration)
 
 ### Panning
 
@@ -148,13 +148,7 @@ When you enter a part of the station name, a list of candidates will be displaye
 
 You cannot select a train, airplane or station while the search window is displayed. To close the search window, click the search icon button again.
 
-**Note**: As of the version 2.5, there are some limitations: you can only specify the time of departure, you can only search for the train of the day, and real-time delays are not reflected in the search.
-
-### Showing Application Information
-
-<img src="public/images/info-icon.jpg" width="355">
-
-Click or tap the information icon button to show application and data information. The last update time of static data and dynamic data is also displayed.
+**Note**: As of the version 2.6, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
 
 ## Display Modes
 
@@ -168,7 +162,7 @@ When Full Screen Mode is on, you can cancel Full Screen Mode by pressing Esc key
 
 ### Underground Mode
 
-<img src="public/images/underground.jpg" width="662"> <img src="public/images/eye-icon.jpg" width="50" align="top">
+<img src="public/images/underground.jpg" width="662"> <img src="public/images/eye-icon.jpg" width="49" align="top">
 
 Click or tap the eye icon button to turn Underground Mode on or off (the icon is in light blue when it is on).
 
@@ -180,7 +174,7 @@ You can also switch modes by clicking or tapping underground trains with Undergr
 
 ### Tracking Mode
 
-<img src="public/images/helicopter-tracking.jpg" width="400"> <img src="public/images/helicopter-icon.jpg" width="50" align="top"> <img src="public/images/rear-tracking.jpg" width="400"> <img src="public/images/train-icon.jpg" width="50" align="top">
+<img src="public/images/helicopter-tracking.jpg" width="400"> <img src="public/images/helicopter-icon.jpg" width="49" align="top"> <img src="public/images/rear-tracking.jpg" width="400"> <img src="public/images/train-icon.jpg" width="49" align="top">
 
 Click or tap on a train or airplane to turn Tracking Mode on and the screen will automatically follow the movement of the train or airplane (the icon will appear in light blue when it is on). Clicking on a map with no trains or airplanes turns Tracking Mode off.
 
@@ -192,7 +186,7 @@ Also, when Tracking Mode is on, some devices will display the [share button](#sh
 
 ### Playback Mode
 
-<img src="public/images/playback-icon.jpg" width="50">
+<img src="public/images/playback-icon.jpg" width="49">
 
 Click or tap the playback icon button to switch Playback Mode on or off (the icon is in light blue when it is on).
 
@@ -204,13 +198,27 @@ When Playback Mode is turned on, the “Edit date & time” button and the “+�
 
 <img src="public/images/clock-playback.jpg" width="141"> <img src="public/images/clock-edit.jpg" width="292" align="top">
 
-### Precipitation Display
+## Configuration
 
-<img src="public/images/weather.jpg" width="580"> <img src="public/images/weather-icon.jpg" width="50" align="top">
+### Layer Display Settings
 
-Click or tap the rain cloud icon button to switch the rain animation display on or off (the icon is in light blue when it is on).
+<img src="public/images/layer-panel.jpg" width="490"> <img src="public/images/layer-icon.jpg" width="49" align="top">
 
-Based on real-time weather information, 8 levels of precipitation intensity are displayed in 3D animation in 1km mesh units.
+Click or tap the layer icon button to show the Layer Display Settings panel. In the Layer Display Settings panel, you can turn on/off the layer that is superimposed on the map. Precipitation layer and Fireworks layer are available. Click or tap the “x” button in the top right corner of the panel, or click or tap outside the panel to close the panel.
+
+<img src="public/images/weather.jpg" width="580">
+
+Click or tap the Precipitation layer button to turn the precipitation animation on or off (the outer frame of the icon is shown in light blue when it is on). Based on real-time weather information, 8 levels of precipitation intensity are displayed in 3D animation in 1km mesh units.
+
+<img src="public/images/fireworks.jpg" width="580">
+
+Click or tap the Fireworks layer button to turn the fireworks animation on or off (the outer frame of the icon is shown in light blue when it is on). The fireworks animation will appear at a specific location on the map at a scheduled date and time.
+
+### Showing Application Information
+
+<img src="public/images/about-panel.jpg" width="490"> <img src="public/images/info-icon.jpg" width="49" align="top">
+
+Click or tap the information icon button to show application and data information. The last update time of static data and dynamic data is also displayed. Click or tap the “x” button in the top right corner of the panel, or click or tap outside the panel to close the panel.
 
 ## About Data
 
@@ -229,10 +237,10 @@ The source of the public transportation data in this application is the Open Dat
 
 This application has been tested with the following browsers. Chrome is recommended. Internet Explorer is not supported.
 
-- Chrome 86 (Mac OS, Windows, iOS, Android)
-- FireFox 82 (Mac OS, Windows, iOS)
+- Chrome 87 (Mac OS, Windows, iOS, Android)
+- FireFox 83 (Mac OS, Windows, iOS)
 - Safari 14 (Mac OS, iOS)
-- Edge 86 (Mac OS, Windows)
+- Edge 87 (Mac OS, Windows)
 
 ## Development Information
 

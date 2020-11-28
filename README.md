@@ -37,7 +37,7 @@ Pinch in/out | Zoom in/out
 Two-finger drag | Tilt up/down and rotate
 Double-click or triple-tap | Zoom in
 Shift key + Double-click or two-finger tap | Zoom out
-Click or tap the search button | Show/hide the route search window
+Click or tap the search button | Show/hide the route search panel
 Click or tap +/- buttons | Zoom in/out
 Click or tap the compass button | Reset bearing to north
 Click or tap the compass button + mouse or finder drag | Rotate
@@ -45,8 +45,8 @@ Click or tap the fullscreen button | Toggle the fullscreen mode
 Click or tap the eye button | Toggle the underground mode
 Click or tap the train/helicopter button | Switch the tracking mode
 Click or tap the playback button | Toggle the playback mode
-Click or tap the weather button | Show/hide the weather
-Click or tap the info button | Show/hide the app info dialog
+Click or tap the layer button | Show/hide the layer display settings panel
+Click or tap the info button | Show/hide the app info panel
 Click or tap a train/aircraft/station | Enable tracking or select station
 Click or tap the map | Disable tracking or deselect station
 Hover a train/aircraft/station | Show the train/aircraft/station information

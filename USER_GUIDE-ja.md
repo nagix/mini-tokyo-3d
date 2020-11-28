@@ -64,7 +64,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 2. **検索ボタン**: [経路検索](#%E7%B5%8C%E8%B7%AF%E6%A4%9C%E7%B4%A2)をご覧ください
 3. **ナビゲーションボタン**: [地図の拡大・縮小](#%E5%9C%B0%E5%9B%B3%E3%81%AE%E6%8B%A1%E5%A4%A7%E7%B8%AE%E5%B0%8F)、[地図の回転と傾きの変更](#%E5%9C%B0%E5%9B%B3%E3%81%AE%E5%9B%9E%E8%BB%A2%E3%81%A8%E5%82%BE%E3%81%8D%E3%81%AE%E5%A4%89%E6%9B%B4)をご覧ください
 4. **表示モード切り替えボタン**: [表示モード](#%E8%A1%A8%E7%A4%BA%E3%83%A2%E3%83%BC%E3%83%89)をご覧ください
-5. **アプリ情報ボタン**: [アプリ情報の表示](#%E3%82%A2%E3%83%97%E3%83%AA%E6%83%85%E5%A0%B1%E3%81%AE%E8%A1%A8%E7%A4%BA)をご覧ください
+5. **設定ボタン**: [設定](#%E8%A8%AD%E5%AE%9A)をご覧ください
 
 ### 地図のスクロール
 
@@ -148,13 +148,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 検索ウィンドウが表示されている状態では、列車や旅客機、駅の選択を行うことはできません。検索ウィンドウを閉じるには、検索アイコンボタンを再度クリックします。
 
-**注意**: バージョン 2.5 現在、時刻の指定は出発時刻のみ、当日の列車のみ検索可能、リアルタイムの遅延は反映されない、という制限があります。
-
-### アプリ情報の表示
-
-<img src="public/images/info-icon.jpg" width="355">
-
-情報アイコンボタンをクリックまたはタップすると、アプリおよびデータの情報が表示されます。静的データ・動的データの最終更新日時も表示されます。
+**注意**: バージョン 2.6 現在、時刻の指定は出発時刻のみ、当日の列車のみ検索可能、という制限があります。
 
 ## 表示モード
 
@@ -168,7 +162,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 地下モード
 
-<img src="public/images/underground.jpg" width="662"> <img src="public/images/eye-icon.jpg" width="50" align="top">
+<img src="public/images/underground.jpg" width="662"> <img src="public/images/eye-icon.jpg" width="49" align="top">
 
 眼アイコンボタンをクリックまたはタップすると、地下モードのオン・オフを切り替えることができます（オンの状態でアイコンは水色で表示されます）。
 
@@ -180,7 +174,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 追跡モード
 
-<img src="public/images/helicopter-tracking.jpg" width="400"> <img src="public/images/helicopter-icon.jpg" width="50" align="top"> <img src="public/images/rear-tracking.jpg" width="400"> <img src="public/images/train-icon.jpg" width="50" align="top">
+<img src="public/images/helicopter-tracking.jpg" width="400"> <img src="public/images/helicopter-icon.jpg" width="49" align="top"> <img src="public/images/rear-tracking.jpg" width="400"> <img src="public/images/train-icon.jpg" width="49" align="top">
 
 列車や旅客機をクリックまたはタップすると、追跡モードがオンに切り替わり、列車や旅客機の動きに追随して画面が自動的に移動します（オンの状態でアイコンは水色で表示されます）。列車や旅客機が存在しない地図上をクリックすると、追跡モードがオフに切り替わります。
 
@@ -192,7 +186,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 再生モード
 
-<img src="public/images/playback-icon.jpg" width="50">
+<img src="public/images/playback-icon.jpg" width="49">
 
 再生アイコンボタンをクリックまたはタップすると、再生モードのオン・オフを切り替えることができます（オンの状態でアイコンは水色で表示されます）。
 
@@ -204,13 +198,27 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 <img src="public/images/clock-playback.jpg" width="141"> <img src="public/images/clock-edit.jpg" width="292" align="top">
 
-### 降水表示
+## 設定
 
-<img src="public/images/weather.jpg" width="580"> <img src="public/images/weather-icon.jpg" width="50" align="top">
+### レイヤー表示設定
 
-雨雲アイコンボタンをクリックまたはタップすると、降水アニメーションの表示のオン・オフを切り替えることができます（オンの状態でアイコンは水色で表示されます）。
+<img src="public/images/layer-panel.jpg" width="490"> <img src="public/images/layer-icon.jpg" width="49" align="top">
 
-リアルタイムの気象情報を基に、1kmメッシュ単位で8段階の降水強度を 3D アニメーションで表示します。
+レイヤーアイコンボタンをクリックまたはタップすると、レイヤー表示設定パネルが表示されます。レイヤー表示設定パネルでは、地図上に重ねて表示するレイヤーのオン・オフを切り替えることができます。降水レイヤー、花火レイヤーが用意されています。パネル右上の「×」ボタン、またはパネルの外をクリックまたはタップするとパネルが閉じます。
+
+<img src="public/images/weather.jpg" width="580">
+
+降水レイヤーボタンをクリックまたはタップすると、降水アニメーションの表示のオン・オフを切り替えることができます（オンの状態ではアイコンの外枠が水色で表示されます）。リアルタイムの気象情報を基に、1kmメッシュ単位で8段階の降水強度を 3D アニメーションで表示します。
+
+<img src="public/images/fireworks.jpg" width="580">
+
+花火レイヤーボタンをクリックまたはタップすると、花火アニメーションの表示のオン・オフを切り替えることができます（オンの状態ではアイコンの外枠が水色で表示されます）。スケジュールされた日時に特定の場所の地図上で、花火のアニメーションが表示されます。
+
+### アプリ情報の表示
+
+<img src="public/images/about-panel.jpg" width="490"> <img src="public/images/info-icon.jpg" width="49" align="top">
+
+情報アイコンボタンをクリックまたはタップすると、アプリおよびデータの情報が表示されます。静的データ・動的データの最終更新日時も表示されます。パネル右上の「×」ボタン、またはパネルの外をクリックまたはタップするとパネルが閉じます。
 
 ## データについて
 
@@ -229,10 +237,10 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 次のブラウザで動作を確認しています。推奨は Chrome です。Internet Explorer には非対応です。
 
-- Chrome 86 (Mac OS, Windows, iOS, Android)
-- FireFox 82 (Mac OS, Windows, iOS)
+- Chrome 87 (Mac OS, Windows, iOS, Android)
+- FireFox 83 (Mac OS, Windows, iOS)
 - Safari 14 (Mac OS, iOS)
-- Edge 86 (Mac OS, Windows)
+- Edge 87 (Mac OS, Windows)
 
 ## 開発情報
 
