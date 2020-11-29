@@ -901,7 +901,7 @@ export default class extends mapboxgl.Evented {
             map.on('click', e => {
                 const object = me.pickObject(e.point);
 
-                me.markObject();
+                me.markObject(object);
                 me.trackObject(object);
 
                 // For development
