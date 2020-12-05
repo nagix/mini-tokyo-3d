@@ -64,4 +64,8 @@ export default class {
         // noop
     }
 
+    setVisibility(/*visible*/) {
+        // noop
+    }
+
 }

@@ -80,7 +80,6 @@ export default class {
 
         renderer.state.reset();
         renderer.render(scene, camera);
-        map.triggerRepaint();
     }
 
     onResize(event) {

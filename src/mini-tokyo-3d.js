@@ -491,9 +491,15 @@ export default class extends mapboxgl.Evented {
                 helpersThree.resetPolygonOffsetFactor(object);
                 object.renderOrder = 1;
                 setObjectOpacity(object, 0, duration);
-                setTimeout(() => {
-                    layer.scene.remove(object);
-                }, duration);
+                animation.start({
+                    callback: () => {
+                        me.map.triggerRepaint();
+                    },
+                    complete: () => {
+                        layer.scene.remove(object);
+                    },
+                    duration
+                });
             },
             pickObject(point) {
                 if (me.viewMode === 'underground') {
@@ -991,12 +997,14 @@ export default class extends mapboxgl.Evented {
 
                     if (Math.floor((now - configs.minDelay) / configs.trainRefreshInterval) !== Math.floor(me.lastTrainRefresh / configs.trainRefreshInterval)) {
                         me.refreshStyleColors();
-                        if (me.clockMode === 'realtime') {
-                            me.loadRealtimeTrainData();
-                            me.loadRealtimeFlightData();
-                        } else {
-                            me.refreshTrains();
-                            me.refreshFlights();
+                        if (me.searchMode === 'none') {
+                            if (me.clockMode === 'realtime') {
+                                me.loadRealtimeTrainData();
+                                me.loadRealtimeFlightData();
+                            } else {
+                                me.refreshTrains();
+                                me.refreshFlights();
+                            }
                         }
                         me.lastTrainRefresh = now - configs.minDelay;
                     }
@@ -1027,6 +1035,9 @@ export default class extends mapboxgl.Evented {
                     }
                     if (helpersThree.isObject3D(me.markedObject)) {
                         me.updatePopup({setHTML: true});
+                    }
+                    if (me.searchMode === 'none') {
+                        map.triggerRepaint();
                     }
                 }
             });
@@ -2213,6 +2224,10 @@ export default class extends mapboxgl.Evented {
             }
         }
         me.searchMode = mode;
+        me.stopAll();
+        for (const plugin of me.plugins) {
+            plugin.setVisibility(mode === 'none');
+        }
         me.refreshMap();
     }
 

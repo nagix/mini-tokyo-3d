@@ -238,4 +238,10 @@ export default class extends Plugin {
         me._mt3d.map.off('move', me._moveEventListener);
     }
 
+    setVisibility(visible) {
+        const me = this;
+
+        me._mt3d.map.setLayoutProperty(me.id, 'visibility', visible ? 'visible' : 'none');
+    }
+
 }

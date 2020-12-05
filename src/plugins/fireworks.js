@@ -749,4 +749,10 @@ export default class extends Plugin {
         clearInterval(this._interval);
     }
 
+    setVisibility(visible) {
+        const me = this;
+
+        me._mt3d.map.setLayoutProperty(me.id, 'visibility', visible ? 'visible' : 'none');
+    }
+
 }
