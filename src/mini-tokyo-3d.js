@@ -1307,11 +1307,12 @@ export default class extends mapboxgl.Evented {
             now = me.clock.getTime();
 
         me.timetableData.forEach(train => {
-            const delay = train.delay || 0;
+            const delay = train.delay || 0,
+                railway = me.railwayLookup[train.r];
 
             if (train.start + delay <= now && now <= train.end + delay &&
                 !me.checkActiveTrains(train, true) &&
-                (!me.railwayLookup[train.r].status || me.realtimeTrainLookup[train.t])) {
+                (!railway.dynamic || !railway.status || me.realtimeTrainLookup[train.t])) {
                 me.trainStart(train);
             }
         });
@@ -1795,6 +1796,7 @@ export default class extends mapboxgl.Evented {
         this.railwayData.forEach(railway => {
             delete railway.status;
             delete railway.text;
+            delete railway.dynamic;
         });
     }
 
@@ -1886,11 +1888,11 @@ export default class extends mapboxgl.Evented {
                 const railway = me.railwayLookup[trainInfoRef.railway];
 
                 // Train information text is provided in Japanese only
-                if (railway && trainInfoRef.status && trainInfoRef.status.ja &&
-                    trainInfoRef.status.ja.match(/見合わせ|折返し運転|直通運転中止|運休|遅延/)) {
+                if (railway && trainInfoRef.status && trainInfoRef.status.ja) {
                     railway.status = trainInfoRef.status.ja;
                     railway.text = trainInfoRef.text.ja;
                     if (helpers.includes(OPERATORS_FOR_DYNAMIC_TRAIN_DATA, trainInfoRef.operator)) {
+                        railway.dynamic = true;
                         Object.keys(me.activeTrainLookup).forEach(key => {
                             const train = me.activeTrainLookup[key];
                             if (train.r === railway.id && !me.realtimeTrainLookup[train.t]) {
