@@ -17,19 +17,19 @@ export default class {
             titles = {},
             exits = [].concat(...stations.map(station => station.exit || []));
 
-        container.className = 'station-panel';
+        container.className = 'panel';
         container.innerHTML = `
-<div id="station-header"></div>
-<div id="station-body"${isWindows ? ' class="windows"' : ''}>
+<div id="panel-header"></div>
+<div id="panel-body"${isWindows ? ' class="windows"' : ''}>
     <div class="scroll-box">
-        <div id="station-content"></div>
+        <div id="panel-content"></div>
     </div>
 </div>`;
 
         mt3d.container.appendChild(container);
 
-        const headerElement = container.querySelector('#station-header'),
-            contentElement = container.querySelector('#station-content');
+        const headerElement = container.querySelector('#panel-header'),
+            contentElement = container.querySelector('#panel-content');
 
         stations.forEach(station => {
             titles[mt3d.getLocalizedStationTitle(station.id)] = true;

@@ -20,6 +20,7 @@ import LayerPanel from './layer-panel';
 import * as loader from './loader';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
 import FireworksPlugin from './plugins/fireworks.js';
+import LivecamPlugin from './plugins/livecam.js';
 import PrecipitationPlugin from './plugins/precipitation.js';
 import SearchPanel from './search-panel';
 import SharePanel from './share-panel';
@@ -95,6 +96,7 @@ export default class extends mapboxgl.Evented {
         me.plugins = [
             new PrecipitationPlugin({enabled: false}),
             new FireworksPlugin({enabled: true}),
+            new LivecamPlugin({enabled: true}),
             ...(options.plugins || [])
         ];
 
@@ -2553,9 +2555,9 @@ export default class extends mapboxgl.Evented {
                     railways[me.getLocalizedRailwayTitle(railwayID)] = me.railwayLookup[railwayID].color;
                 });
                 popup.setHTML([
-                    '<div class="station-image-container">',
+                    '<div class="thumbnail-image-container">',
                     '<div class="ball-pulse"><div></div><div></div><div></div></div>',
-                    `<div class="station-image" style="background-image: url(\'${me.stationLookup[ids[0]].thumbnail}\');"></div>`,
+                    `<div class="thumbnail-image" style="background-image: url(\'${me.stationLookup[ids[0]].thumbnail}\');"></div>`,
                     '</div>',
                     '<div class="railway-list">',
                     Object.keys(stations).map(station => {

@@ -477,7 +477,7 @@
     overscroll-behavior: contain;
     line-height: 130%;
 }
-.mini-tokyo-3d .station-panel {
+.mini-tokyo-3d .panel {
     position: absolute;
     z-index: 3;
     bottom: 0;
@@ -494,7 +494,7 @@
     color: #fff;
     transition: height 300ms ease;
 }
-.mini-tokyo-3d #station-header {
+.mini-tokyo-3d #panel-header {
     height: 24px;
     margin: 10px 0;
     padding: 0 10px;
@@ -502,7 +502,7 @@
     line-height: 150%;
     cursor: pointer;
 }
-.mini-tokyo-3d #station-body {
+.mini-tokyo-3d #panel-body {
     height: calc(100% - 44px);
     margin: 10px 0;
     padding: 0 10px;
@@ -613,8 +613,8 @@
     top: 24px;
     right: 10px;
 }
-.mini-tokyo-3d .station-panel .slide-down,
-.mini-tokyo-3d .station-panel .slide-up {
+.mini-tokyo-3d .panel .slide-down,
+.mini-tokyo-3d .panel .slide-up {
     position: absolute;
     top: 12px;
     right: 10px;
@@ -745,20 +745,20 @@
     width: 10px;
     height: 16px;
 }
-.mini-tokyo-3d .station-image-container {
+.mini-tokyo-3d .thumbnail-image-container {
     width: 128px;
     height: 72px;
     margin-bottom: 4px;
     position: relative;
 }
-.mini-tokyo-3d .station-image-container > .ball-pulse {
+.mini-tokyo-3d .thumbnail-image-container > .ball-pulse {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(.5, .5);
     box-sizing: initial;
     position: absolute;
 }
-.mini-tokyo-3d .station-image {
+.mini-tokyo-3d .thumbnail-image {
     width: 100%;
     height: 100%;
     background-size: cover;
