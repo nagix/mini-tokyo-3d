@@ -105,7 +105,7 @@ export default class extends Plugin {
                 'zh-Hans': '赤羽实时摄像头',
                 'zh-Hant': '赤羽實時攝像頭'
             },
-            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/WHTcwjwrCyw?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/0IhBsiR27Ko?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             thumbnail: 'https://i.ytimg.com/vi/0IhBsiR27Ko/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDoRiEmIiUmxJH_mOF1-IR-ceInJQ',
             center: [139.7187645, 35.78110601],
             zoom: 17,
@@ -127,6 +127,40 @@ export default class extends Plugin {
             center: [139.7585034, 35.65859265],
             zoom: 17,
             bearing: 160,
+            pitch: 60
+        }, {
+            id: 'Odaiba-Kaihinkoen-1',
+            name: {
+                en: 'Odaiba-Kaihinkoen Live Camera',
+                ja: 'お台場海浜公園ライブカメラ1',
+                ko: '오다이바카이힌코엔 실시간 웹캠 1',
+                ne: 'Odaiba-Kaihinkoen प्रत्यक्ष क्यामेरा 1',
+                th: 'Odaiba-Kaihinkoen กล้องถ่ายทอดสด 1',
+                'zh-Hans': '御台场海滨公园实时摄像头1',
+                'zh-Hant': '御台場海濱公園實時攝像頭1'
+            },
+            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/kdRv0EZ0WdI?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            thumbnail: 'https://i.ytimg.com/vi/kdRv0EZ0WdI/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDZmBjT1ruMxWK28bNLod2PRAbm5A',
+            center: [139.7802499, 35.63243317],
+            zoom: 16,
+            bearing: 120,
+            pitch: 60
+        }, {
+            id: 'Odaiba-Kaihinkoen-2',
+            name: {
+                en: 'Odaiba-Kaihinkoen Live Camera 2',
+                ja: 'お台場海浜公園ライブカメラ2',
+                ko: '오다이바카이힌코엔 실시간 웹캠 2',
+                ne: 'Odaiba-Kaihinkoen प्रत्यक्ष क्यामेरा 2',
+                th: 'Odaiba-Kaihinkoen กล้องถ่ายทอดสด 2',
+                'zh-Hans': '御台场海滨公园实时摄像头2',
+                'zh-Hant': '御台場海濱公園實時攝像頭2'
+            },
+            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/NvJqHpPGGuk?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            thumbnail: 'https://i.ytimg.com/vi/NvJqHpPGGuk/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBrkGZF2oBLyI2STC6xyptpxlanaw',
+            center: [139.7739043, 35.63603721],
+            zoom: 15.5,
+            bearing: -80,
             pitch: 60
         }, {
             id: 'Saitama-Shintoshin',
@@ -163,6 +197,23 @@ export default class extends Plugin {
             bearing: 120,
             pitch: 60
         }, {
+            id: 'Shibuya',
+            name: {
+                en: 'Shibuya Live Camera',
+                ja: '渋谷ライブカメラ',
+                ko: '시부야 실시간 웹캠',
+                ne: 'Shibuya प्रत्यक्ष क्यामेरा',
+                th: 'Shibuya กล้องถ่ายทอดสด',
+                'zh-Hans': '涩谷实时摄像头',
+                'zh-Hant': '澀谷實時攝像頭'
+            },
+            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/lkIJYc4UH60?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            thumbnail: 'https://i.ytimg.com/vi/lkIJYc4UH60/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDLE9DGA7Ep1HyupQLPHndr0za0TQ',
+            center: [139.7007593, 35.6593216],
+            zoom: 17,
+            bearing: 120,
+            pitch: 60
+        }, {
             id: 'Sasazuka',
             name: {
                 en: 'Sasazuka Live Camera',
@@ -173,22 +224,22 @@ export default class extends Plugin {
                 'zh-Hans': '笹冢实时摄像头',
                 'zh-Hant': '笹塚實時攝像頭'
             },
-            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/1hpqAAV6m9A?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-            thumbnail: 'https://i.ytimg.com/vi/cGVd088cyKk/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDF30ouiy4NOGv3E6TPT77jXOocRg',
+            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/CVucbmEz0nA?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            thumbnail: 'https://i.ytimg.com/vi/CVucbmEz0nA/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLA3lwqvJQLiLf7rLUsndRaQMEIUaQ',
             center: [139.6654579, 35.6730154],
             zoom: 17,
             bearing: 90,
             pitch: 60
         }, {
-            id: 'Hino',
+            id: 'Toyoda-1',
             name: {
-                en: 'Hino Live Camera',
-                ja: '日野ライブカメラ',
-                ko: '히노 실시간 웹캠',
-                ne: 'Hino प्रत्यक्ष क्यामेरा',
-                th: 'Hino กล้องถ่ายทอดสด',
-                'zh-Hans': '日野实时摄像头',
-                'zh-Hant': '日野實時攝像頭'
+                en: 'Toyoda Live Camera 1',
+                ja: '豊田ライブカメラ1',
+                ko: '도요다 실시간 웹캠 1',
+                ne: 'Toyoda प्रत्यक्ष क्यामेरा 1',
+                th: 'Toyoda กล้องถ่ายทอดสด 1',
+                'zh-Hans': '丰田实时摄像头1',
+                'zh-Hant': '豐田實時攝像頭1'
             },
             html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/Cxwu7r_qhpk?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             thumbnail: 'https://i.ytimg.com/vi/Cxwu7r_qhpk/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBAWU7MlKGOXyWrXhFcjCFvamSnMQ',
@@ -197,15 +248,15 @@ export default class extends Plugin {
             bearing: -20,
             pitch: 60
         }, {
-            id: 'Toyoda',
+            id: 'Toyoda-2',
             name: {
-                en: 'Toyoda Live Camera',
-                ja: '豊田ライブカメラ',
-                ko: '도요다 실시간 웹캠',
-                ne: 'Toyoda प्रत्यक्ष क्यामेरा',
-                th: 'Toyoda กล้องถ่ายทอดสด',
-                'zh-Hans': '丰田实时摄像头',
-                'zh-Hant': '豐田實時攝像頭'
+                en: 'Toyoda Live Camera 2',
+                ja: '豊田ライブカメラ2',
+                ko: '도요다 실시간 웹캠 2',
+                ne: 'Toyoda प्रत्यक्ष क्यामेरा 2',
+                th: 'Toyoda กล้องถ่ายทอดสด 2',
+                'zh-Hans': '丰田实时摄像头2',
+                'zh-Hant': '豐田實時攝像頭2'
             },
             html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/mqqcUNDrFKw?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
             thumbnail: 'https://i.ytimg.com/vi/mqqcUNDrFKw/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBqjHkEkncDX1do9SyXCOKXvqZxjA',
