@@ -7578,6 +7578,16 @@
 		"zh-Hans": "湘南台",
 		"zh-Hant": "湘南台"
 	},
+	"exit": [
+		"YokohamaMunicipal.Shonandai.A",
+		"YokohamaMunicipal.Shonandai.B",
+		"YokohamaMunicipal.Shonandai.C",
+		"YokohamaMunicipal.Shonandai.D",
+		"YokohamaMunicipal.Shonandai.E",
+		"YokohamaMunicipal.Shonandai.F",
+		"YokohamaMunicipal.Shonandai.G",
+		"YokohamaMunicipal.Shonandai.H"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Shimoiida",
@@ -7586,6 +7596,9 @@
 		"zh-Hans": "下饭田",
 		"zh-Hant": "下飯田"
 	},
+	"exit": [
+		"YokohamaMunicipal.Shimoiida.1"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Tateba",
@@ -7594,6 +7607,11 @@
 		"zh-Hans": "立场",
 		"zh-Hant": "立場"
 	},
+	"exit": [
+		"YokohamaMunicipal.Tateba.1",
+		"YokohamaMunicipal.Tateba.2",
+		"YokohamaMunicipal.Tateba.3"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Nakada",
@@ -7603,6 +7621,12 @@
 		"zh-Hant": "中田",
 		"ja-Wiki": "中田駅 (神奈川県)"
 	},
+	"exit": [
+		"YokohamaMunicipal.Nakada.1",
+		"YokohamaMunicipal.Nakada.2",
+		"YokohamaMunicipal.Nakada.3",
+		"YokohamaMunicipal.Nakada.4"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Odoriba",
@@ -7611,6 +7635,12 @@
 		"zh-Hans": "踊场",
 		"zh-Hant": "踴場"
 	},
+	"exit": [
+		"YokohamaMunicipal.Odoriba.1",
+		"YokohamaMunicipal.Odoriba.2",
+		"YokohamaMunicipal.Odoriba.3",
+		"YokohamaMunicipal.Odoriba.4"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Totsuka",
@@ -7619,6 +7649,14 @@
 		"zh-Hans": "户冢",
 		"zh-Hant": "戶塚"
 	},
+	"exit": [
+		"YokohamaMunicipal.Totsuka.1",
+		"YokohamaMunicipal.Totsuka.2",
+		"YokohamaMunicipal.Totsuka.3",
+		"YokohamaMunicipal.Totsuka.4",
+		"YokohamaMunicipal.Totsuka.5",
+		"YokohamaMunicipal.Totsuka.6"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Maioka",
@@ -7627,6 +7665,10 @@
 		"zh-Hans": "舞冈",
 		"zh-Hant": "舞岡"
 	},
+	"exit": [
+		"YokohamaMunicipal.Maioka.1",
+		"YokohamaMunicipal.Maioka.2"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Shimonagaya",
@@ -7635,6 +7677,9 @@
 		"zh-Hans": "下永谷",
 		"zh-Hant": "下永谷"
 	},
+	"exit": [
+		"YokohamaMunicipal.Shimonagaya.1"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Kaminagaya",
@@ -7642,14 +7687,25 @@
 		"ko": "가미나가야",
 		"zh-Hans": "上永谷",
 		"zh-Hant": "上永谷"
-	}
+	},
+	"exit": [
+		"YokohamaMunicipal.Kaminagaya.1",
+		"YokohamaMunicipal.Kaminagaya.2",
+		"YokohamaMunicipal.Kaminagaya.3",
+		"YokohamaMunicipal.Kaminagaya.4"
+	]
 }, {
 	"id": "YokohamaMunicipal.Blue.KonanChuo",
+	"coord": [139.5911667, 35.4011996],
 	"title": {
 		"ko": "고난추오",
 		"zh-Hans": "港南中央",
 		"zh-Hant": "港南中央"
 	},
+	"exit": [
+		"YokohamaMunicipal.KonanChuo.1",
+		"YokohamaMunicipal.KonanChuo.2"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Kamiooka",
@@ -7658,6 +7714,17 @@
 		"zh-Hans": "上大冈",
 		"zh-Hant": "上大岡"
 	},
+	"exit": [
+		"YokohamaMunicipal.Kamiooka.1",
+		"YokohamaMunicipal.Kamiooka.2",
+		"YokohamaMunicipal.Kamiooka.3",
+		"YokohamaMunicipal.Kamiooka.4",
+		"YokohamaMunicipal.Kamiooka.5",
+		"YokohamaMunicipal.Kamiooka.6",
+		"YokohamaMunicipal.Kamiooka.7",
+		"YokohamaMunicipal.Kamiooka.CamioA",
+		"YokohamaMunicipal.Kamiooka.CamioB"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Gumyoji",
@@ -7674,14 +7741,25 @@
 		"zh-Hans": "弘明寺 (横滨市营地下铁)",
 		"zh-Hant": "弘明寺 (橫濱市營地下鐵)"
 	},
+	"exit": [
+		"YokohamaMunicipal.Gumyoji.1",
+		"YokohamaMunicipal.Gumyoji.2A",
+		"YokohamaMunicipal.Gumyoji.2B"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Maita",
+	"coord": [139.6099757, 35.429909],
 	"title": {
 		"ko": "마이타",
 		"zh-Hans": "莳田",
 		"zh-Hant": "蒔田"
 	},
+	"exit": [
+		"YokohamaMunicipal.Maita.1",
+		"YokohamaMunicipal.Maita.2",
+		"YokohamaMunicipal.Maita.3"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Yoshinocho",
@@ -7690,6 +7768,12 @@
 		"zh-Hans": "吉野町",
 		"zh-Hant": "吉野町"
 	},
+	"exit": [
+		"YokohamaMunicipal.Yoshinocho.1",
+		"YokohamaMunicipal.Yoshinocho.2",
+		"YokohamaMunicipal.Yoshinocho.3",
+		"YokohamaMunicipal.Yoshinocho.4"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Bandobashi",
@@ -7698,6 +7782,15 @@
 		"zh-Hans": "阪东桥",
 		"zh-Hant": "阪東橋"
 	},
+	"exit": [
+		"YokohamaMunicipal.Bandobashi.1A",
+		"YokohamaMunicipal.Bandobashi.1B",
+		"YokohamaMunicipal.Bandobashi.2",
+		"YokohamaMunicipal.Bandobashi.3A",
+		"YokohamaMunicipal.Bandobashi.3B",
+		"YokohamaMunicipal.Bandobashi.4",
+		"YokohamaMunicipal.Bandobashi.5"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.IsezakiChojamachi",
@@ -7706,6 +7799,17 @@
 		"zh-Hans": "伊势佐木长者町",
 		"zh-Hant": "伊勢佐木長者町"
 	},
+	"exit": [
+		"YokohamaMunicipal.IsezakiChojamachi.1",
+		"YokohamaMunicipal.IsezakiChojamachi.2",
+		"YokohamaMunicipal.IsezakiChojamachi.3A",
+		"YokohamaMunicipal.IsezakiChojamachi.3B",
+		"YokohamaMunicipal.IsezakiChojamachi.4A",
+		"YokohamaMunicipal.IsezakiChojamachi.4B",
+		"YokohamaMunicipal.IsezakiChojamachi.5",
+		"YokohamaMunicipal.IsezakiChojamachi.6A",
+		"YokohamaMunicipal.IsezakiChojamachi.6B"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Kannai",
@@ -7714,6 +7818,17 @@
 		"zh-Hans": "关内",
 		"zh-Hant": "關內"
 	},
+	"exit": [
+		"YokohamaMunicipal.Kannai.1",
+		"YokohamaMunicipal.Kannai.2",
+		"YokohamaMunicipal.Kannai.3",
+		"YokohamaMunicipal.Kannai.4",
+		"YokohamaMunicipal.Kannai.5",
+		"YokohamaMunicipal.Kannai.6",
+		"YokohamaMunicipal.Kannai.7",
+		"YokohamaMunicipal.Kannai.8",
+		"YokohamaMunicipal.Kannai.9"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Sakuragicho",
@@ -7722,6 +7837,17 @@
 		"zh-Hans": "樱木町",
 		"zh-Hant": "櫻木町"
 	},
+	"exit": [
+		"YokohamaMunicipal.Sakuragicho.1",
+		"YokohamaMunicipal.Sakuragicho.East",
+		"YokohamaMunicipal.Sakuragicho.West",
+		"YokohamaMunicipal.Sakuragicho.South1",
+		"YokohamaMunicipal.Sakuragicho.South2A",
+		"YokohamaMunicipal.Sakuragicho.South2B",
+		"YokohamaMunicipal.Sakuragicho.North1",
+		"YokohamaMunicipal.Sakuragicho.North2",
+		"YokohamaMunicipal.Sakuragicho.North3"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Takashimacho",
@@ -7730,6 +7856,10 @@
 		"zh-Hans": "高岛町",
 		"zh-Hant": "高島町"
 	},
+	"exit": [
+		"YokohamaMunicipal.Takashimacho.1",
+		"YokohamaMunicipal.Takashimacho.2"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Yokohama",
@@ -7738,6 +7868,18 @@
 		"zh-Hans": "横滨",
 		"zh-Hant": "橫濱"
 	},
+	"exit": [
+		"YokohamaMunicipal.Yokohama.1",
+		"YokohamaMunicipal.Yokohama.2",
+		"YokohamaMunicipal.Yokohama.3",
+		"YokohamaMunicipal.Yokohama.4",
+		"YokohamaMunicipal.Yokohama.5",
+		"YokohamaMunicipal.Yokohama.6",
+		"YokohamaMunicipal.Yokohama.7",
+		"YokohamaMunicipal.Yokohama.8",
+		"YokohamaMunicipal.Yokohama.9",
+		"YokohamaMunicipal.Yokohama.10"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.MitsuzawaShimocho",
@@ -7746,6 +7888,12 @@
 		"zh-Hans": "三泽下町",
 		"zh-Hant": "三澤下町"
 	},
+	"exit": [
+		"YokohamaMunicipal.MitsuzawaShimocho.1",
+		"YokohamaMunicipal.MitsuzawaShimocho.2",
+		"YokohamaMunicipal.MitsuzawaShimocho.3",
+		"YokohamaMunicipal.MitsuzawaShimocho.4"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.MitsuzawaKamicho",
@@ -7754,6 +7902,10 @@
 		"zh-Hans": "三泽上町",
 		"zh-Hant": "三澤上町"
 	},
+	"exit": [
+		"YokohamaMunicipal.MitsuzawaKamicho.1",
+		"YokohamaMunicipal.MitsuzawaKamicho.2"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Katakuracho",
@@ -7762,6 +7914,12 @@
 		"zh-Hans": "片仓町",
 		"zh-Hant": "片倉町"
 	},
+	"exit": [
+		"YokohamaMunicipal.Katakuracho.1",
+		"YokohamaMunicipal.Katakuracho.2",
+		"YokohamaMunicipal.Katakuracho.3",
+		"YokohamaMunicipal.Katakuracho.4"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.KishineKoen",
@@ -7770,6 +7928,12 @@
 		"zh-Hans": "岸根公园",
 		"zh-Hant": "岸根公園"
 	},
+	"exit": [
+		"YokohamaMunicipal.KishineKoen.1",
+		"YokohamaMunicipal.KishineKoen.2",
+		"YokohamaMunicipal.KishineKoen.3",
+		"YokohamaMunicipal.KishineKoen.4"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.ShinYokohama",
@@ -7778,6 +7942,17 @@
 		"zh-Hans": "新横滨",
 		"zh-Hant": "新橫濱"
 	},
+	"exit": [
+		"YokohamaMunicipal.ShinYokohama.1",
+		"YokohamaMunicipal.ShinYokohama.2",
+		"YokohamaMunicipal.ShinYokohama.3",
+		"YokohamaMunicipal.ShinYokohama.3A",
+		"YokohamaMunicipal.ShinYokohama.3B",
+		"YokohamaMunicipal.ShinYokohama.4A",
+		"YokohamaMunicipal.ShinYokohama.4B",
+		"YokohamaMunicipal.ShinYokohama.7",
+		"YokohamaMunicipal.ShinYokohama.8"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.KitaShinYokohama",
@@ -7785,44 +7960,74 @@
 		"ko": "기타신요코하마",
 		"zh-Hans": "北新横滨",
 		"zh-Hant": "北新橫濱"
-	}
+	},
+	"exit": [
+		"YokohamaMunicipal.KitaShinYokohama.1"
+	]
 }, {
 	"id": "YokohamaMunicipal.Blue.Nippa",
+	"coord": [139.6120343, 35.5274961],
 	"title": {
 		"ko": "닛파",
 		"zh-Hans": "新羽",
 		"zh-Hant": "新羽"
-	}
+	},
+	"exit": [
+		"YokohamaMunicipal.Nippa.1",
+		"YokohamaMunicipal.Nippa.2"
+	]
 }, {
 	"id": "YokohamaMunicipal.Blue.Nakamachidai",
 	"title": {
 		"ko": "나카마치다이",
 		"zh-Hans": "仲町台",
 		"zh-Hant": "仲町台"
-	}
+	},
+	"exit": [
+		"YokohamaMunicipal.Nakamachidai.1"
+	]
 }, {
 	"id": "YokohamaMunicipal.Blue.CenterMinami",
 	"title": {
 		"ko": "센터 미나미",
 		"zh-Hans": "中心南",
 		"zh-Hant": "中心南"
-	}
+	},
+	"exit": [
+		"YokohamaMunicipal.CenterMinami.1",
+		"YokohamaMunicipal.CenterMinami.2",
+		"YokohamaMunicipal.CenterMinami.3",
+		"YokohamaMunicipal.CenterMinami.4",
+		"YokohamaMunicipal.CenterMinami.5",
+		"YokohamaMunicipal.CenterMinami.6",
+		"YokohamaMunicipal.CenterMinami.7"
+	]
 }, {
 	"id": "YokohamaMunicipal.Blue.CenterKita",
 	"title": {
 		"ko": "센터 기타",
 		"zh-Hans": "中心北",
 		"zh-Hant": "中心北"
-	}
+	},
+	"exit": [
+		"YokohamaMunicipal.CenterKita.1",
+		"YokohamaMunicipal.CenterKita.2",
+		"YokohamaMunicipal.CenterKita.3"
+	]
 }, {
 	"id": "YokohamaMunicipal.Blue.Nakagawa",
+	"coord": [139.5699517, 35.5629066],
 	"title": {
 		"ko": "나카가와",
 		"zh-Hans": "中川",
 		"zh-Hant": "中川",
 		"ja-Wiki": "中川駅 (神奈川県)"
 	},
-	"altitude": -1
+	"exit": [
+		"YokohamaMunicipal.Nakagawa.1",
+		"YokohamaMunicipal.Nakagawa.2"
+	]
+,	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Blue.Azamino",
 	"title": {
@@ -7830,6 +8035,12 @@
 		"zh-Hans": "蓟野",
 		"zh-Hant": "薊野"
 	},
+	"exit": [
+		"YokohamaMunicipal.Azamino.1",
+		"YokohamaMunicipal.Azamino.2",
+		"YokohamaMunicipal.Azamino.3",
+		"YokohamaMunicipal.Azamino.4"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Green.Nakayama",

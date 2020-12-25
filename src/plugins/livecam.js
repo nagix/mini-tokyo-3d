@@ -105,8 +105,8 @@ export default class extends Plugin {
                 'zh-Hans': '赤羽实时摄像头',
                 'zh-Hant': '赤羽實時攝像頭'
             },
-            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/0IhBsiR27Ko?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-            thumbnail: 'https://i.ytimg.com/vi/0IhBsiR27Ko/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDoRiEmIiUmxJH_mOF1-IR-ceInJQ',
+            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/sZrDzyzIDJM?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            thumbnail: 'https://i.ytimg.com/vi/sZrDzyzIDJM/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLD-wwy8FFa-yYw7QVc7VWf5mR2iFA',
             center: [139.7187645, 35.78110601],
             zoom: 17,
             bearing: -160,
@@ -224,8 +224,8 @@ export default class extends Plugin {
                 'zh-Hans': '笹冢实时摄像头',
                 'zh-Hant': '笹塚實時攝像頭'
             },
-            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/CVucbmEz0nA?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-            thumbnail: 'https://i.ytimg.com/vi/CVucbmEz0nA/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLA3lwqvJQLiLf7rLUsndRaQMEIUaQ',
+            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/BcJOkfacorY?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            thumbnail: 'https://i.ytimg.com/vi/BcJOkfacorY/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAjQuwhjLir8FieBml5JEzLQCwkvw',
             center: [139.6654579, 35.6730154],
             zoom: 17,
             bearing: 90,
@@ -275,8 +275,8 @@ export default class extends Plugin {
                 'zh-Hans': '黄金町实时摄像头',
                 'zh-Hant': '黃金町實時攝像頭'
             },
-            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/_KzI7yjt1bI?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-            thumbnail: 'https://i.ytimg.com/vi/_KzI7yjt1bI/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLC-UeOhSIQPoQHZcFWDpFxQVmMpXg',
+            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/aFhcr5QBKiQ?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            thumbnail: 'https://i.ytimg.com/vi/aFhcr5QBKiQ/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDEyszepS6DbdWduXZd41P95Gqi2A',
             center: [139.6242287, 35.4404758],
             zoom: 17,
             bearing: 0,
@@ -292,8 +292,8 @@ export default class extends Plugin {
                 'zh-Hans': '本厚木实时摄像头',
                 'zh-Hant': '本厚木實時攝像頭'
             },
-            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/s14UTbrV0MY?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-            thumbnail: 'https://i.ytimg.com/vi/s14UTbrV0MY/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDelYZKxhv_k-fB6AoxYX3621uzMA',
+            html: '<iframe width="100%" height="202" src="https://www.youtube.com/embed/YyDjfiigfSc?autoplay=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+            thumbnail: 'https://i.ytimg.com/vi/YyDjfiigfSc/hqdefault_live.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBneyZB3J0YLYoT3df5IPnGA58N4g',
             center: [139.3717856, 35.4418281],
             zoom: 17,
             bearing: 110,
