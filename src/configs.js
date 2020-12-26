@@ -12,9 +12,6 @@ const configs = {
     // All train positions will be refreshed if the screen has been inactive for this duration
     refreshTimeout: 10000,
 
-    // Interval of refreshing weather information in milliseconds
-    weatherRefreshInterval: 60000,
-
     // Interval of checking train positions based on real-time data in milliseconds
     realtimeTrainCheckInterval: 15000,
 
@@ -112,9 +109,6 @@ const configs = {
 
     // ATIS URL
     atisUrl: 'https://mini-tokyo.appspot.com/atisinfo',
-
-    // Nowcasts URL
-    nowcastsUrl: 'https://mini-tokyo.appspot.com/nowcast',
 
     // Secrets URL
     secretsUrl: 'secrets',

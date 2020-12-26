@@ -8,6 +8,12 @@ import Plugin from './plugin';
 import raindrop from './raindrop.png';
 import precipitationSVG from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/cloud-showers-heavy.svg';
 
+// Nowcasts URL
+const NOWCASTS_URL = 'https://mini-tokyo.appspot.com/nowcast';
+
+// Interval of refreshing precipitation information in milliseconds
+const NOWCASTS_REFRESH_INTERVAL = 60000;
+
 const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord),
     modelScale = modelOrigin.meterInMercatorCoordinateUnits();
 
@@ -216,8 +222,8 @@ export default class extends Plugin {
             }
 
             if (me.enabled) {
-                if (clockMode === 'realtime' && now - (me._lastWeatherRefresh || 0) >= configs.weatherRefreshInterval) {
-                    helpers.loadJSON(configs.nowcastsUrl).then(data => {
+                if (clockMode === 'realtime' && now - (me._lastWeatherRefresh || 0) >= NOWCASTS_REFRESH_INTERVAL) {
+                    helpers.loadJSON(NOWCASTS_URL).then(data => {
                         me._layer.updateEmitterQueue(data);
                     });
                     me._lastWeatherRefresh = now;
