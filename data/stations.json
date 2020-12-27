@@ -8050,6 +8050,10 @@
 		"zh-Hant": "中山",
 		"ja-Wiki": "中山駅 (神奈川県)"
 	},
+	"exit": [
+		"YokohamaMunicipal.Nakayama.1",
+		"YokohamaMunicipal.Nakayama.2"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Green.Kawawacho",
@@ -8057,14 +8061,24 @@
 		"ko": "가와와초",
 		"zh-Hans": "川和町",
 		"zh-Hant": "川和町"
-	}
+	},
+	"exit": [
+		"YokohamaMunicipal.Kawawacho.1",
+		"YokohamaMunicipal.Kawawacho.2",
+		"YokohamaMunicipal.Kawawacho.3",
+		"YokohamaMunicipal.Kawawacho.4"
+	]
 }, {
 	"id": "YokohamaMunicipal.Green.TsuzukiFureainooka",
 	"title": {
 		"ko": "쓰즈키후레아이노오카",
 		"zh-Hans": "都筑交流之丘",
 		"zh-Hant": "都筑交流之丘"
-	}
+	},
+	"exit": [
+		"YokohamaMunicipal.TsuzukiFureainooka.1",
+		"YokohamaMunicipal.TsuzukiFureainooka.2"
+	]
 }, {
 	"id": "YokohamaMunicipal.Green.CenterMinami",
 	"title": {
@@ -8087,6 +8101,10 @@
 		"zh-Hant": "北山田",
 		"ja-Wiki": "北山田駅 (神奈川県)"
 	},
+	"exit": [
+		"YokohamaMunicipal.KitaYamata.1",
+		"YokohamaMunicipal.KitaYamata.2"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Green.HigashiYamata",
@@ -8095,6 +8113,11 @@
 		"zh-Hans": "东山田",
 		"zh-Hant": "東山田"
 	},
+	"exit": [
+		"YokohamaMunicipal.HigashiYamata.1",
+		"YokohamaMunicipal.HigashiYamata.2",
+		"YokohamaMunicipal.HigashiYamata.3"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Green.Takata",
@@ -8104,6 +8127,11 @@
 		"zh-Hant": "高田",
 		"ja-Wiki": "高田駅 (神奈川県)"
 	},
+	"exit": [
+		"YokohamaMunicipal.Takata.1",
+		"YokohamaMunicipal.Takata.2",
+		"YokohamaMunicipal.Takata.3"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Green.HiyoshiHoncho",
@@ -8112,6 +8140,9 @@
 		"zh-Hans": "日吉本町",
 		"zh-Hant": "日吉本町"
 	},
+	"exit": [
+		"YokohamaMunicipal.HiyoshiHoncho.1"
+	],
 	"altitude": -1
 }, {
 	"id": "YokohamaMunicipal.Green.Hiyoshi",
@@ -8121,6 +8152,10 @@
 		"zh-Hant": "日吉",
 		"ja-Wiki": "日吉駅 (神奈川県)"
 	},
+	"exit": [
+		"YokohamaMunicipal.Hiyoshi.1",
+		"YokohamaMunicipal.Hiyoshi.2"
+	],
 	"altitude": -1
 }, {
 	"id": "Keio.KeioNew.Shinjuku",
