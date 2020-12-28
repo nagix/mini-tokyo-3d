@@ -841,7 +841,17 @@
 		"ko": "요코하마",
 		"zh-Hans": "横滨",
 		"zh-Hant": "橫濱"
-	}
+	},
+	"exit": [
+		"JR-East.Yokohama.East",
+		"JR-East.Yokohama.West",
+		"JR-East.Yokohama.Southeast",
+		"JR-East.Yokohama.Southwest",
+		"JR-East.Yokohama.NortheastA",
+		"JR-East.Yokohama.NortheastB",
+		"JR-East.Yokohama.NortheastC",
+		"JR-East.Yokohama.Northwest"
+	]
 }, {
 	"id": "JR-East.Tokaido.Totsuka",
 	"title": {
@@ -11518,6 +11528,9 @@
 		"zh-Hans": "反町",
 		"zh-Hant": "反町"
 	},
+	"exit": [
+		"Tokyu.Tammachi.1"
+	],
 	"altitude": -1
 }, {
 	"id": "Tokyu.Toyoko.Yokohama",
@@ -12034,7 +12047,7 @@
 }, {
 	"id": "Minatomirai.Minatomirai.ShinTakashima",
 	"railway": "Minatomirai.Minatomirai",
-	"coord": [139.625671, 35.461957],
+	"coord": [139.6267264, 35.4619383],
 	"title": {
 		"ja": "新高島",
 		"en": "Shin-Takashima",
@@ -12042,11 +12055,17 @@
 		"zh-Hans": "新高岛",
 		"zh-Hant": "新高島"
 	},
+	"exit": [
+		"Minatomirai.ShinTakashima.1",
+		"Minatomirai.ShinTakashima.2",
+		"Minatomirai.ShinTakashima.3",
+		"Minatomirai.ShinTakashima.4"
+	],
 	"altitude": -1
 }, {
 	"id": "Minatomirai.Minatomirai.Minatomirai",
 	"railway": "Minatomirai.Minatomirai",
-	"coord": [139.631829, 35.45847],
+	"coord": [139.6320208, 35.4582162],
 	"title": {
 		"ja": "みなとみらい",
 		"en": "Minatomirai",
@@ -12054,11 +12073,18 @@
 		"zh-Hans": "港未来",
 		"zh-Hant": "港未來"
 	},
+	"exit": [
+		"Minatomirai.Minatomirai.1",
+		"Minatomirai.Minatomirai.2",
+		"Minatomirai.Minatomirai.3",
+		"Minatomirai.Minatomirai.4",
+		"Minatomirai.Minatomirai.5"
+	],
 	"altitude": -1
 }, {
 	"id": "Minatomirai.Minatomirai.Bashamichi",
 	"railway": "Minatomirai.Minatomirai",
-	"coord": [139.635194, 35.450495],
+	"coord": [139.6353943, 35.4505711],
 	"title": {
 		"ja": "馬車道",
 		"en": "Bashamichi",
@@ -12066,11 +12092,22 @@
 		"zh-Hans": "马车道",
 		"zh-Hant": "馬車道"
 	},
+	"exit": [
+		"Minatomirai.Bashamichi.1a",
+		"Minatomirai.Bashamichi.1b",
+		"Minatomirai.Bashamichi.1c",
+		"Minatomirai.Bashamichi.2",
+		"Minatomirai.Bashamichi.3",
+		"Minatomirai.Bashamichi.4",
+		"Minatomirai.Bashamichi.5",
+		"Minatomirai.Bashamichi.6",
+		"Minatomirai.Bashamichi.7"
+	],
 	"altitude": -1
 }, {
 	"id": "Minatomirai.Minatomirai.NihonOdori",
 	"railway": "Minatomirai.Minatomirai",
-	"coord": [139.6420888, 35.4471152],
+	"coord": [139.6426047, 35.4467784],
 	"title": {
 		"ja": "日本大通り",
 		"en": "Nihon-Odori",
@@ -12078,15 +12115,28 @@
 		"zh-Hans": "日本大道",
 		"zh-Hant": "日本大道"
 	},
+	"exit": [
+		"Minatomirai.NihonOdori.1",
+		"Minatomirai.NihonOdori.2",
+		"Minatomirai.NihonOdori.3"
+	],
 	"altitude": -1
 }, {
 	"id": "Minatomirai.Minatomirai.MotomachiChukagai",
-	"coord": [139.6514204, 35.4418342],
+	"coord": [139.6509129, 35.4421165],
 	"title": {
 		"ko": "모토마치·주카가이",
 		"zh-Hans": "元町·中华街",
 		"zh-Hant": "元町·中華街"
 	},
+	"exit": [
+		"Minatomirai.MotomachiChukagai.1",
+		"Minatomirai.MotomachiChukagai.2",
+		"Minatomirai.MotomachiChukagai.3",
+		"Minatomirai.MotomachiChukagai.4",
+		"Minatomirai.MotomachiChukagai.5",
+		"Minatomirai.MotomachiChukagai.6"
+	],
 	"altitude": -1
 }, {
 	"id": "Sotetsu.Main.Yokohama",

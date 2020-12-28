@@ -1,4 +1,140 @@
 [{
+	"id": "JR-East.Yokohama.East",
+	"coord": [139.6228838, 35.4650862],
+	"title": {
+		"ja": "東口",
+		"en": "East",
+		"ko": "동쪽",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	},
+	"description": {
+		"ja": "東口",
+		"en": "East Exit",
+		"ko": "동쪽 출구",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	}
+}, {
+	"id": "JR-East.Yokohama.West",
+	"coord": [139.6220416, 35.4662364],
+	"title": {
+		"ja": "西口",
+		"en": "West",
+		"ko": "서쪽",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	},
+	"description": {
+		"ja": "西口",
+		"en": "West Exit",
+		"ko": "서쪽 출구",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	}
+}, {
+	"id": "JR-East.Yokohama.Southeast",
+	"coord": [139.6226116, 35.4648033],
+	"title": {
+		"ja": "みなみ東口",
+		"en": "Southeast",
+		"ko": "남동",
+		"zh-Hans": "南东出口",
+		"zh-Hant": "南東出口"
+	},
+	"description": {
+		"ja": "みなみ東口",
+		"en": "Southeast Exit",
+		"ko": "남동 출구",
+		"zh-Hans": "南东出口",
+		"zh-Hant": "南東出口"
+	}
+}, {
+	"id": "JR-East.Yokohama.Southwest",
+	"coord": [139.6203395, 35.4647467],
+	"title": {
+		"ja": "みなみ西口",
+		"en": "Southwest",
+		"ko": "남서",
+		"zh-Hans": "南西出口",
+		"zh-Hant": "南西出口"
+	},
+	"description": {
+		"ja": "みなみ西口",
+		"en": "Southwest Exit",
+		"ko": "남서 출구",
+		"zh-Hans": "南西出口",
+		"zh-Hant": "南西出口"
+	}
+}, {
+	"id": "JR-East.Yokohama.NortheastA",
+	"coord": [139.6240747, 35.4670916],
+	"title": {
+		"ja": "きた東口A",
+		"en": "Northeast A",
+		"ko": "북동 A",
+		"zh-Hans": "北东出口A",
+		"zh-Hant": "北東出口A"
+	},
+	"description": {
+		"ja": "きた東口A",
+		"en": "Northeast Exit A",
+		"ko": "북동 출구 A",
+		"zh-Hans": "北东出口A",
+		"zh-Hant": "北東出口A"
+	}
+}, {
+	"id": "JR-East.Yokohama.NortheastB",
+	"coord": [139.6234497, 35.466256],
+	"title": {
+		"ja": "きた東口B",
+		"en": "Northeast B",
+		"ko": "북동 B",
+		"zh-Hans": "北东出口B",
+		"zh-Hant": "北東出口B"
+	},
+	"description": {
+		"ja": "きた東口B",
+		"en": "Northeast Exit B",
+		"ko": "북동 출구 B",
+		"zh-Hans": "北东出口B",
+		"zh-Hant": "北東出口B"
+	}
+}, {
+	"id": "JR-East.Yokohama.NortheastC",
+	"coord": [139.6233585, 35.466031],
+	"title": {
+		"ja": "きた東口C",
+		"en": "Northeast C",
+		"ko": "북동 C",
+		"zh-Hans": "北东出口C",
+		"zh-Hant": "北東出口C"
+	},
+	"description": {
+		"ja": "きた東口C",
+		"en": "Northeast Exit C",
+		"ko": "북동 출구 C",
+		"zh-Hans": "北东出口C",
+		"zh-Hant": "北東出口C"
+	}
+}, {
+	"id": "JR-East.Yokohama.Northwest",
+	"coord": [139.6230729, 35.4673974],
+	"title": {
+		"ja": "きた西口",
+		"en": "Northewest",
+		"ko": "북동",
+		"zh-Hans": "北西出口",
+		"zh-Hant": "北西出口"
+	},
+	"description": {
+		"ja": "きた西口",
+		"en": "Northwest Exit",
+		"ko": "북동 출구",
+		"zh-Hans": "北西出口",
+		"zh-Hant": "北西出口"
+	}
+}, {
 	"id": "JR-East.ShinNihombashi.1",
 	"coord": [139.7732699, 35.68825],
 	"title": {
@@ -21318,6 +21454,23 @@
 		"zh-Hant": "北出口"
 	}
 }, {
+	"id": "Tokyu.Tammachi.1",
+	"coord": [139.6252879, 35.4748196],
+	"title": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	},
+	"description": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	}
+}, {
 	"id": "Tokyu.MusashiKoyama.East",
 	"coord": [139.7042446, 35.6201996],
 	"title": {
@@ -21367,6 +21520,357 @@
 		"ko": "출구",
 		"zh-Hans": "出口",
 		"zh-Hant": "出口"
+	}
+}, {
+	"id": "Minatomirai.ShinTakashima.1",
+	"coord": [139.6256894, 35.4618835],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口(高島口)",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "Minatomirai.ShinTakashima.2",
+	"coord": [139.6261802, 35.4617219],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口(大通り高島口)",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "Minatomirai.ShinTakashima.3",
+	"coord": [139.6267502, 35.4617219],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口(大通り臨港口)",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "Minatomirai.ShinTakashima.4",
+	"coord": [139.6272276, 35.4618278],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "4番出口(臨港パーク口)",
+		"en": "Exit 4",
+		"ko": "4번출구",
+		"zh-Hans": "4号出口",
+		"zh-Hant": "4號出口"
+	}
+}, {
+	"id": "Minatomirai.Minatomirai.1",
+	"coord": [139.6315339, 35.4586338],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口(グランモール口)",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "Minatomirai.Minatomirai.2",
+	"coord": [139.6318504, 35.4587944],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口(いちょう通り口)",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "Minatomirai.Minatomirai.3",
+	"coord": [139.6321642, 35.4577916],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口(美術館口)",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "Minatomirai.Minatomirai.4",
+	"coord": [139.6324888, 35.4579642],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "4番出口(国際大通り口)",
+		"en": "Exit 4",
+		"ko": "4번출구",
+		"zh-Hans": "4号出口",
+		"zh-Hant": "4號出口"
+	}
+}, {
+	"id": "Minatomirai.Minatomirai.5",
+	"coord": [139.632875, 35.4567505],
+	"title": {
+		"en": "5"
+	},
+	"description": {
+		"ja": "5番出口(けやき通り口)",
+		"en": "Exit 5",
+		"ko": "5번출구",
+		"zh-Hans": "5号出口",
+		"zh-Hant": "5號出口"
+	}
+}, {
+	"id": "Minatomirai.Bashamichi.1a",
+	"coord": [139.6349779, 35.450528],
+	"title": {
+		"en": "1a"
+	},
+	"description": {
+		"ja": "1a出口",
+		"en": "Exit 1a",
+		"ko": "1a출구",
+		"zh-Hans": "1a出口",
+		"zh-Hant": "1a出口"
+	}
+}, {
+	"id": "Minatomirai.Bashamichi.1b",
+	"coord": [139.6351388, 35.4504089],
+	"title": {
+		"en": "1b"
+	},
+	"description": {
+		"ja": "1b出口",
+		"en": "Exit 1b",
+		"ko": "1b출구",
+		"zh-Hans": "1b出口",
+		"zh-Hant": "1b出口"
+	}
+}, {
+	"id": "Minatomirai.Bashamichi.1c",
+	"coord": [139.6348222, 35.450396],
+	"title": {
+		"en": "1c"
+	},
+	"description": {
+		"ja": "1c出口",
+		"en": "Exit 1c",
+		"ko": "1c출구",
+		"zh-Hans": "1c出口",
+		"zh-Hant": "1c出口"
+	}
+}, {
+	"id": "Minatomirai.Bashamichi.2",
+	"coord": [139.6360025, 35.4505301],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "Minatomirai.Bashamichi.3",
+	"coord": [139.6361218, 35.449761],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "Minatomirai.Bashamichi.4",
+	"coord": [139.6371196, 35.4499533],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "4番出口",
+		"en": "Exit 4",
+		"ko": "4번출구",
+		"zh-Hans": "4号出口",
+		"zh-Hant": "4號出口"
+	}
+}, {
+	"id": "Minatomirai.Bashamichi.5",
+	"coord": [139.6369506, 35.4493448],
+	"title": {
+		"en": "5"
+	},
+	"description": {
+		"ja": "5番出口",
+		"en": "Exit 5",
+		"ko": "5번출구",
+		"zh-Hans": "5号出口",
+		"zh-Hant": "5號出口"
+	}
+}, {
+	"id": "Minatomirai.Bashamichi.6",
+	"coord": [139.6375394, 35.4498746],
+	"title": {
+		"en": "6"
+	},
+	"description": {
+		"ja": "6番出口",
+		"en": "Exit 6",
+		"ko": "6번출구",
+		"zh-Hans": "6号出口",
+		"zh-Hant": "6號出口"
+	}
+}, {
+	"id": "Minatomirai.Bashamichi.7",
+	"coord": [139.6374026, 35.4494584],
+	"title": {
+		"en": "7"
+	},
+	"description": {
+		"ja": "7番出口",
+		"en": "Exit 7",
+		"ko": "7번출구",
+		"zh-Hans": "7号出口",
+		"zh-Hant": "7號出口"
+	}
+}, {
+	"id": "Minatomirai.NihonOdori.1",
+	"coord": [139.6420106, 35.4473356],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口(県庁口)",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "Minatomirai.NihonOdori.2",
+	"coord": [139.6424612, 35.4467413],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口(スタジアム口)",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "Minatomirai.NihonOdori.3",
+	"coord": [139.6430996, 35.4463698],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口(情文センター口)",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "Minatomirai.MotomachiChukagai.1",
+	"coord": [139.6482588, 35.4442],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "1番出口(山下公園口)",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
+	}
+}, {
+	"id": "Minatomirai.MotomachiChukagai.2",
+	"coord": [139.6484144, 35.4437051],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "2番出口(山下町口)",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "Minatomirai.MotomachiChukagai.3",
+	"coord": [139.6495034, 35.4429501],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口(中華街口)",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "Minatomirai.MotomachiChukagai.4",
+	"coord": [139.6503201, 35.4427469],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "4番出口(マリンタワー口)",
+		"en": "Exit 4",
+		"ko": "4번출구",
+		"zh-Hans": "4号出口",
+		"zh-Hant": "4號出口"
+	}
+}, {
+	"id": "Minatomirai.MotomachiChukagai.5",
+	"coord": [139.6514748, 35.4418302],
+	"title": {
+		"en": "5"
+	},
+	"description": {
+		"ja": "5番出口(元町口)",
+		"en": "Exit 5",
+		"ko": "5번출구",
+		"zh-Hans": "5号出口",
+		"zh-Hant": "5號出口"
+	}
+}, {
+	"id": "Minatomirai.MotomachiChukagai.6",
+	"coord": [139.6515028, 35.4415084],
+	"title": {
+		"en": "6"
+	},
+	"description": {
+		"ja": "6番出口(アメリカ山公園口)",
+		"en": "Exit 6",
+		"ko": "6번출구",
+		"zh-Hans": "6号出口",
+		"zh-Hant": "6號出口"
 	}
 }, {
 	"id": "SaitamaRailway.KawaguchiMotogo.1",
