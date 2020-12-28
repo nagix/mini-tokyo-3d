@@ -3022,6 +3022,9 @@
 		"zh-Hans": "羽泽横滨国大",
 		"zh-Hant": "羽澤橫濱國大"
 	},
+	"exit": [
+		"JR-East.HazawaYokohamaKokudai.1"
+	],
 	"altitude": -1
 }, {
 	"id": "JR-East.Tsurumi.Tsurumi",
@@ -8702,6 +8705,10 @@
 	"title": {
 		"zh-Hant": "大鳥居"
 	},
+	"exit": [
+		"Keikyu.Otorii.East",
+		"Keikyu.Otorii.West"
+	],
 	"altitude": -1
 }, {
 	"id": "Keikyu.Airport.AnamoriInari",
@@ -8713,6 +8720,10 @@
 	"title": {
 		"zh-Hant": "天空橋"
 	},
+	"exit": [
+		"Keikyu.Tenkubashi.A1",
+		"Keikyu.Tenkubashi.A2"
+	],
 	"altitude": -1
 }, {
 	"id": "Keikyu.Airport.HanedaAirportTerminal3",
@@ -13142,6 +13153,10 @@
 		"zh-Hans": "天空桥",
 		"zh-Hant": "天空橋"
 	},
+	"exit": [
+		"TokyoMonorail.Tenkubashi.North",
+		"TokyoMonorail.Tenkubashi.HICity"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMonorail.HanedaAirport.HanedaAirportTerminal3",
@@ -13165,6 +13180,9 @@
 		"zh-Hans": "新整备场",
 		"zh-Hant": "新整備場"
 	},
+	"exit": [
+		"TokyoMonorail.ShinSeibijo.1"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMonorail.HanedaAirport.HanedaAirportTerminal1",
