@@ -1,22 +1,22 @@
 import pako from 'pako';
 
 export function loadJSON(url) {
-    return new Promise((resolve, reject) => {
-        const gz = url.endsWith('.gz'),
-            request = new XMLHttpRequest();
+    return fetch(url).then(async response => {
+        if (url.endsWith('.gz')) {
+            const reader = response.body.getReader(),
+                inflate = new pako.Inflate({to: 'string'});
 
-        request.open('GET', url);
-        request.responseType = gz ? 'arraybuffer' : 'text';
-        request.onreadystatechange = () => {
-            if (request.readyState === 4) {
-                if (request.status === 200) {
-                    resolve(JSON.parse(gz ? pako.inflate(new Uint8Array(request.response), {to: 'string'}) : request.response));
-                } else {
-                    reject(Error(request.statusText));
+            while (true) {
+                const {done, value} = await reader.read();
+
+                if (done) {
+                    return JSON.parse(inflate.result);
                 }
+                inflate.push(value);
             }
-        };
-        request.send();
+        } else {
+            return response.json();
+        }
     });
 }
 
