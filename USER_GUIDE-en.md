@@ -124,7 +124,7 @@ See [here](#tracking-mode) for details on Tracking Modes.
 
 When [Tracking Mode](#tracking-mode) is on, the “Share this train” or “Share this flight” button will appear at the top of the screen. Clicking the button will bring up an additional menu, depending on the device you are using, and you can send the tracking URLs for the trains or flight and optional messages through messaging apps, email or social networking apps. When the recipient of the information opens the URL in their browser, Mini Tokyo 3D will be launched, and they will be able to track the same train or flight.
 
-This feature is only available in the following browsers: Safari (Mac OS and iOS), Chrome (Android), Opera (Android) and Samsung Internet
+This feature is only available in the following browsers: Edge, Safari, Chrome (Android), Opera (Android) and Samsung Internet
 
 ### Delayed Train
 
@@ -238,7 +238,7 @@ The source of the public transportation data in this application is the Open Dat
 This application has been tested with the following browsers. Chrome is recommended. Internet Explorer is not supported.
 
 - Chrome 87 (Mac OS, Windows, iOS, Android)
-- FireFox 83 (Mac OS, Windows, iOS)
+- FireFox 84 (Mac OS, Windows, iOS)
 - Safari 14 (Mac OS, iOS)
 - Edge 87 (Mac OS, Windows)
 

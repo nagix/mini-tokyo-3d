@@ -1,77 +1,24 @@
-import * as helpers from './helpers';
+import Panel from './panel';
 
-const isWindows = helpers.includes(navigator.userAgent, 'Windows');
-
-export default class {
+export default class extends Panel {
 
     constructor(options) {
-        this._object = options.object;
+        super(Object.assign({className: 'train-panel'}, options));
     }
 
     addTo(mt3d) {
         const me = this,
-            {lang, dict, clock} = me._mt3d = mt3d,
-            container = me._container = document.createElement('div'),
+            {lang, dict, clock} = mt3d,
             trains = [],
             sections = [],
-            stations = [],
+            stationHTML = [],
             offsets = [],
-            train = me._object,
+            train = me._options.object,
             {r: railwayID, nm: names, v: vehicle, ds: destination, nextTrains} = train,
             railway = mt3d.railwayLookup[railwayID],
             color = vehicle ? mt3d.trainVehicleLookup[vehicle].color : railway.color,
             delay = train.delay || 0;
         let currSection, scrollTop;
-
-        container.className = 'timetable-panel';
-        container.innerHTML = `
-<div id="timetable-header"></div>
-<div id="timetable-body"${isWindows ? ' class="windows"' : ''}>
-    <div class="scroll-box">
-        <div id="timetable-content"></div>
-        <svg id="railway-mark"></svg>
-        <svg id="train-mark"></svg>
-    </div>
-</div>`;
-
-        mt3d.container.appendChild(container);
-
-        const headerElement = container.querySelector('#timetable-header'),
-            bodyElement = container.querySelector('#timetable-body'),
-            contentElement = container.querySelector('#timetable-content');
-
-        headerElement.innerHTML = [
-            '<div class="desc-header">',
-            Array.isArray(color) ? [
-                '<div>',
-                ...color.slice(0, 3).map(c => `<div class="line-strip-long" style="background-color: ${c};"></div>`),
-                '</div>'
-            ].join('') : `<div style="background-color: ${color};"></div>`,
-            '<div><strong>',
-            names ? names.map(name => name[lang] || name.en).join(dict['and']) : mt3d.getLocalizedRailwayTitle(railwayID),
-            '</strong>',
-            `<br>${mt3d.getLocalizedTrainTypeTitle(train.y)} `,
-            destination ?
-                dict['for'].replace('$1', mt3d.getLocalizedStationTitle(destination)) :
-                mt3d.getLocalizedRailDirectionTitle(train.d),
-            '</div></div>',
-            '<div id="slide-button" class="slide-down"></div>'
-        ].join('');
-
-        headerElement.addEventListener('click', () => {
-            const {style} = container,
-                {classList} = container.querySelector('#slide-button');
-
-            if (style.height !== '68px') {
-                style.height = '68px';
-                classList.remove('slide-down');
-                classList.add('slide-up');
-            } else {
-                style.height = '33%';
-                classList.remove('slide-up');
-                classList.add('slide-down');
-            }
-        });
 
         for (let curr = train; curr; curr = curr.previousTrains && curr.previousTrains[0]) {
             trains.unshift(curr);
@@ -82,10 +29,10 @@ export default class {
         trains.forEach(curr => {
             const section = {};
 
-            section.start = Math.max(stations.length - 1, 0);
+            section.start = Math.max(stationHTML.length - 1, 0);
             curr.tt.forEach((s, index) => {
                 if (index > 0 || !curr.previousTrains) {
-                    stations.push([
+                    stationHTML.push([
                         '<div class="station-row">',
                         `<div class="station-title-box">${mt3d.getLocalizedStationTitle(s.s)}</div>`,
                         '<div class="station-time-box',
@@ -98,16 +45,42 @@ export default class {
                     ].join(''));
                 }
             });
-            section.end = stations.length - 1;
+            section.end = stationHTML.length - 1;
             section.color = mt3d.railwayLookup[curr.r].color;
             sections.push(section);
             if (curr === train) {
                 currSection = section;
             }
         });
-        contentElement.innerHTML = stations.join('');
 
-        const {children} = contentElement;
+        super.addTo(mt3d)
+            .setTitle([
+                '<div class="desc-header">',
+                Array.isArray(color) ? [
+                    '<div>',
+                    ...color.slice(0, 3).map(c => `<div class="line-strip-long" style="background-color: ${c};"></div>`),
+                    '</div>'
+                ].join('') : `<div style="background-color: ${color};"></div>`,
+                '<div>',
+                names ? names.map(name => name[lang] || name.en).join(dict['and']) : mt3d.getLocalizedRailwayTitle(railwayID),
+                '<br><span class="desc-normal-style">',
+                `${mt3d.getLocalizedTrainTypeTitle(train.y)} `,
+                destination ?
+                    dict['for'].replace('$1', mt3d.getLocalizedStationTitle(destination)) :
+                    mt3d.getLocalizedRailDirectionTitle(train.d),
+                '</span></div></div>'
+            ].join(''))
+            .setHTML([
+                '<div id="timetable-content">',
+                ...stationHTML,
+                '</div>',
+                '<svg id="railway-mark"></svg>',
+                '<svg id="train-mark"></svg>'
+            ].join(''));
+
+        const container = me._container,
+            bodyElement = container.querySelector('#panel-body'),
+            {children} = container.querySelector('#timetable-content');
 
         for (let i = 0, ilen = children.length; i < ilen; i++) {
             const child = children[i];
@@ -145,14 +118,6 @@ export default class {
         repeat();
 
         return me;
-    }
-
-    remove() {
-        const me = this;
-
-        me._container.parentNode.removeChild(me._container);
-        delete me._container;
-        delete me._mt3d;
     }
 
 }

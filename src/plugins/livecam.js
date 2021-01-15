@@ -1,79 +1,65 @@
 import mapboxgl from 'mapbox-gl';
 import AnimatedPopup from 'mapbox-gl-animated-popup';
 import * as helpers from '../helpers';
+import Panel from '../panel';
 import Plugin from './plugin';
 import livecamSVG from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/video.svg';
 
 // Live camera URL
 const LIVECAM_URL = 'https://mini-tokyo.appspot.com/livecam';
 
-class LivecamPanel {
+// Add style
+const style = document.createElement('style');
+style.innerHTML = `
+    .livecam-panel {
+        height: 262px !important;
+    }
+    .livecam-panel.collapsed {
+        height: 50px !important;
+    }
+    .livecam-panel.closed {
+        height: 0 !important;
+    }
+    .livecam-marker {
+        width: 40px;
+        height: 40px;
+        border: 2px solid #333;
+        border-radius: 50%;
+        background: white no-repeat center/20px url("${livecamSVG.replace('%3e', ' fill=\'%23333\'%3e')}");
+        cursor: pointer;
+    }
+    .livecam-marker-active {
+        border-color: #33B5E5;
+        background-image: url("${livecamSVG.replace('%3e', ' fill=\'%2333B5E5\'%3e')}");
+    }
+`;
+document.head.appendChild(style);
+
+class LivecamPanel extends Panel {
 
     constructor(options) {
-        this._camera = options.camera;
+        super(Object.assign({className: 'livecam-panel'}, options));
     }
 
     addTo(mt3d) {
         const me = this,
-            container = me._container = document.createElement('div');
+            {name, html} = me._options.camera;
 
-        container.className = 'panel';
-        container.innerHTML = `
-<div id="panel-header"></div>
-<div id="panel-body">
-    <div class="scroll-box">
-        <div id="panel-content"></div>
-    </div>
-</div>`;
-        container.style.height = '256px';
-
-        mt3d.container.appendChild(container);
-
-        const headerElement = container.querySelector('#panel-header'),
-            contentElement = container.querySelector('#panel-content');
-
-        headerElement.innerHTML = [
-            '<div class="desc-header">',
-            `<strong>${this._camera.name[mt3d.lang]}</strong>`,
-            '</div>',
-            '<div id="slide-button" class="slide-down"></div>'
-        ].join('');
-
-        headerElement.addEventListener('click', () => {
-            const {style} = container,
-                {classList} = container.querySelector('#slide-button');
-
-            if (style.height !== '44px') {
-                style.height = '44px';
-                classList.remove('slide-down');
-                classList.add('slide-up');
-            } else {
-                style.height = '256px';
-                classList.remove('slide-up');
-                classList.add('slide-down');
-            }
-        });
-
-        contentElement.innerHTML = this._camera.html;
-
-        return me;
-    }
-
-    remove() {
-        const me = this;
-
-        me._container.parentNode.removeChild(me._container);
-        delete me._container;
-        delete me._mt3d;
+        me.setTitle(name[mt3d.lang])
+            .setHTML(html);
+        return super.addTo(mt3d);
     }
 
 }
 
 function updateMarkerElement(element, highlight) {
-    const color = highlight ? '33B5E5' : '333';
+    const {classList} = element;
 
-    element.style.borderColor = `#${color}`;
-    element.style.backgroundImage = `url("${livecamSVG.replace('%3e', ` fill='%23${color}'%3e`)}")`;
+    if (highlight) {
+        classList.add('livecam-marker-active');
+    } else {
+        classList.remove('livecam-marker-active');
+    }
 }
 
 export default class extends Plugin {
@@ -136,7 +122,8 @@ export default class extends Plugin {
 
     _addMarkers(cameras) {
         const me = this,
-            {map} = me._mt3d;
+            mt3d = me._mt3d,
+            {lang, map} = mt3d;
 
         for (const camera of cameras) {
             const {center, zoom, bearing, pitch, id, name, thumbnail} = camera,
@@ -144,26 +131,15 @@ export default class extends Plugin {
             let popup;
 
             element.id = `camera-${id}`;
-            element.style.width = '40px';
-            element.style.height = '40px';
-            element.style.borderRadius = '50%';
-            element.style.borderStyle = 'solid';
-            element.style.borderWidth = '2px';
-            element.style.borderColor = '#333';
-            element.style.backgroundRepeat = 'no-repeat';
-            element.style.backgroundPosition = 'center';
-            element.style.backgroundSize = '20px';
-            element.style.backgroundColor = 'white';
-            element.style.backgroundImage = `url("${livecamSVG.replace('%3e', ' fill=\'%23333\'%3e')}")`;
-            element.style.cursor = 'pointer';
+            element.className = 'livecam-marker';
             element.addEventListener('click', event => {
                 me._updatePanel(camera);
                 if (popup) {
                     popup.remove();
                     popup = undefined;
                 }
-                me._mt3d.trackObject();
-                me._mt3d._setViewMode('ground');
+                mt3d.trackObject();
+                mt3d._setViewMode('ground');
                 map.easeTo({
                     center,
                     zoom,
@@ -195,7 +171,7 @@ export default class extends Plugin {
                         '<div class="ball-pulse"><div></div><div></div><div></div></div>',
                         `<div class="thumbnail-image" style="background-image: url(\'${thumbnail}\');"></div>`,
                         '</div>',
-                        `<div><strong>${name[me._mt3d.lang]}</strong></div>`
+                        `<div><strong>${name[lang]}</strong></div>`
                     ].join(''))
                     .addTo(map);
             });
@@ -207,7 +183,7 @@ export default class extends Plugin {
                 }
             });
             element.addEventListener('mousemove', event => {
-                me._mt3d.markObject();
+                mt3d.markObject();
                 event.stopPropagation();
             });
 

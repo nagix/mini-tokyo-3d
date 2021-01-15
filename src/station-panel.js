@@ -1,77 +1,38 @@
-import * as helpers from './helpers';
+import Panel from './panel';
 
-const isWindows = helpers.includes(navigator.userAgent, 'Windows');
-
-export default class {
+export default class extends Panel {
 
     constructor(options) {
-        this._object = options.object;
+        super(Object.assign({className: 'station-panel'}, options));
     }
 
     addTo(mt3d) {
         const me = this,
-            {dict} = me._mt3d = mt3d,
-            container = me._container = document.createElement('div'),
             exitHTML = [],
-            stations = me._object,
+            stations = me._options.object,
             titles = {},
             exits = [].concat(...stations.map(station => station.exit || []));
 
-        container.className = 'panel';
-        container.innerHTML = `
-<div id="panel-header"></div>
-<div id="panel-body"${isWindows ? ' class="windows"' : ''}>
-    <div class="scroll-box">
-        <div id="panel-content"></div>
-    </div>
-</div>`;
-
-        mt3d.container.appendChild(container);
-
-        const headerElement = container.querySelector('#panel-header'),
-            contentElement = container.querySelector('#panel-content');
-
-        stations.forEach(station => {
-            titles[mt3d.getLocalizedStationTitle(station.id)] = true;
-        });
-
-        headerElement.innerHTML = [
-            '<div class="desc-header">',
-            `<strong>${Object.keys(titles).join(dict['and'])}</strong>`,
-            '</div>',
-            '<div id="slide-button" class="slide-down"></div>'
-        ].join('');
-
-        headerElement.addEventListener('click', () => {
-            const {style} = container,
-                {classList} = container.querySelector('#slide-button');
-
-            if (style.height !== '44px') {
-                style.height = '44px';
-                classList.remove('slide-down');
-                classList.add('slide-up');
-            } else {
-                style.height = '33%';
-                classList.remove('slide-up');
-                classList.add('slide-down');
-            }
-        });
-
-        if (exits.length > 0) {
-            exits.forEach(id => {
-                exitHTML.push([
-                    '<div class="exit-row">',
-                    '<div class="exit-title-box">',
-                    mt3d.getLocalizedPOIDescription(id),
-                    '</div>',
-                    '<div class="exit-share-button"></div>',
-                    '</div>'
-                ].join(''));
-            });
-            contentElement.innerHTML = exitHTML.join('');
+        for (const {id} of stations) {
+            titles[mt3d.getLocalizedStationTitle(id)] = true;
         }
 
-        const {children} = contentElement;
+        for (const id of exits) {
+            exitHTML.push([
+                '<div class="exit-row">',
+                '<div class="exit-title-box">',
+                mt3d.getLocalizedPOIDescription(id),
+                '</div>',
+                '<div class="exit-share-button"></div>',
+                '</div>'
+            ].join(''));
+        }
+
+        super.addTo(mt3d)
+            .setTitle(Object.keys(titles).join(mt3d.dict['and']))
+            .setHTML(exitHTML.join(''));
+
+        const {children} = me._container.querySelector('#panel-content');
 
         for (let i = 0, ilen = children.length; i < ilen; i++) {
             const child = children[i];
@@ -93,14 +54,6 @@ export default class {
         }
 
         return me;
-    }
-
-    remove() {
-        const me = this;
-
-        me._container.parentNode.removeChild(me._container);
-        delete me._container;
-        delete me._mt3d;
     }
 
 }

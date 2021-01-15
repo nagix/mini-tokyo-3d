@@ -205,7 +205,59 @@
 .mini-tokyo-3d #clock-speed {
     padding: 0 6px;
 }
-.mini-tokyo-3d .search-panel {
+.mini-tokyo-3d .share-panel {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 50%;
+    padding: 10px;
+    border-radius: 0 0 3px 3px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    transform: translate(-50%, 0);
+}
+.mini-tokyo-3d .share-button {
+    height: 30px;
+    padding: 0 6px;
+    border: 0;
+    border-radius: 4px;
+    box-shadow:0 0 0 1px #777;
+    display: block;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 20px;
+}
+.mini-tokyo-3d .share-button:hover {
+    background-color: rgba(51, 51, 51, 0.7);
+}
+.mini-tokyo-3d .share-button:before {
+    content: "";
+    display: block;
+    background: no-repeat center/20px 20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/share-alt.svg', fill: #fff);
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0 6px 0 0;
+}
+.mini-tokyo-3d .notification {
+    position: absolute;
+    z-index: 3;
+    top: 33%;
+    left: 50%;
+    padding: 20px;
+    border-radius: 0 0 3px 3px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    opacity: 1;
+    font-size: 130%;
+    transform: translate(-50%, -50%);
+    transition: opacity 1s linear;
+}
+.mini-tokyo-3d .panel {
     position: absolute;
     z-index: 3;
     bottom: 0;
@@ -213,14 +265,161 @@
     right: 0;
     width: calc(100% - 20px);
     max-width: 380px;
-    height: max(33%, 194px);
+    height: 33%;
     margin: auto;
     border-radius: 3px 3px 0 0;
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     font-size: 130%;
     color: #fff;
-    transition: height 300ms ease;
+    transition: height 300ms;
+}
+.mini-tokyo-3d .panel.collapsed {
+    height: 50px;
+}
+.mini-tokyo-3d #panel-header {
+    position: relative;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    line-height: 30px;
+}
+.mini-tokyo-3d #panel-title {
+    font-weight: bold;
+    overflow: hidden;
+}
+.mini-tokyo-3d #panel-body {
+    height: calc(100% - 50px);
+    margin-top: 10px;
+    padding: 0 10px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    line-height: 130%;
+}
+.mini-tokyo-3d #panel-content{
+    position: relative;
+    overflow: hidden;
+}
+.mini-tokyo-3d .windows {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+.mini-tokyo-3d .windows::-webkit-scrollbar {
+    width: 10px;
+}
+.mini-tokyo-3d .windows::-webkit-scrollbar-thumb {
+    background: #ccc;
+    background-clip: content-box;
+    border-radius: 6px;
+    border: solid 2px transparent;
+}
+.mini-tokyo-3d .train-panel.collapsed {
+    height: 68px;
+}
+.mini-tokyo-3d .train-panel #panel-header {
+    height: 48px;
+    line-height: 24px;
+}
+.mini-tokyo-3d .train-panel #panel-body {
+    height: calc(100% - 68px);
+}
+.mini-tokyo-3d #railway-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 100%;
+}
+.mini-tokyo-3d #train-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 44px;
+    height: calc(100% + 20px);
+    margin: -10px;
+}
+.mini-tokyo-3d .station-row {
+    display: table;
+    width: 100%;
+    margin: 5px 0;
+}
+.mini-tokyo-3d .station-row:last-child {
+    margin-bottom: 10px;
+}
+.mini-tokyo-3d .station-row:hover {
+    background-color: rgba(102, 102, 102, 0.7);
+}
+.mini-tokyo-3d .station-row > div {
+    display: table-cell;
+    vertical-align: middle;
+}
+.mini-tokyo-3d .station-title-box {
+    padding-left: 30px;
+}
+.mini-tokyo-3d .station-time-box {
+    width: 42px;
+    text-align: right;
+}
+.mini-tokyo-3d .train-title-box {
+    padding-left: 40px;
+    font-size: 12px;
+    line-height: 20px;
+}
+.mini-tokyo-3d .exit-row {
+    margin: 4px 0;
+}
+.mini-tokyo-3d .station-row:last-child {
+    margin-bottom: 10px;
+}
+.mini-tokyo-3d .exit-row:hover {
+    background-color: rgba(102, 102, 102, 0.7);
+}
+.mini-tokyo-3d .exit-row > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+.mini-tokyo-3d .exit-title-box:before {
+    content: "";
+    display: block;
+    background: no-repeat center/20px 20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/sign-in-alt.svg', fill: #fff);
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0 6px 0 0;
+}
+.mini-tokyo-3d .exit-share-button {
+    height: 30px;
+}
+.mini-tokyo-3d .panel-button-group {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 100%;
+}
+.mini-tokyo-3d .panel-button-group > * {
+    margin-left: 10px;
+    float: right;
+}
+.mini-tokyo-3d .slide-button {
+    width: 20px;
+    height: 100%;
+    background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-down.svg', fill: #fff);
+    pointer-events: none;
+}
+.mini-tokyo-3d .collapsed .slide-button {
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-up.svg', fill: #fff);
+}
+.mini-tokyo-3d #slide-button {
+    pointer-events: none;
+}
+.mini-tokyo-3d .search-panel {
+    height: 194px;
+}
+.mini-tokyo-3d .search-panel.search-result {
+    height: 33%;
+}
+.mini-tokyo-3d .search-panel.collapsed {
+    height: 50px;
 }
 .mini-tokyo-3d #search-header {
     height: 30px;
@@ -231,9 +430,6 @@
     cursor: pointer;
 }
 .mini-tokyo-3d .page-controller {
-    position: absolute;
-    top: 10px;
-    right: 80px;
     display: table;
     border-radius: 4px;
     box-shadow:0 0 0 1px #777;
@@ -290,9 +486,6 @@
     background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-right.svg', fill: #7f7f7f);
 }
 .mini-tokyo-3d .back-button {
-    position: absolute;
-    top: 10px;
-    right: 40px;
     width: 30px;
     height: 30px;
     display: block;
@@ -321,15 +514,25 @@
     overscroll-behavior: contain;
     line-height: 130%;
 }
+.mini-tokyo-3d #search-form {
+    display: none;
+}
+.mini-tokyo-3d .search-form #search-form {
+    display: block;
+}
 .mini-tokyo-3d .search-form-element {
     margin: 2px 0 4px;
 }
 .mini-tokyo-3d #search-load {
     display: none;
+    height: 134px;
     position: relative;
 }
+.mini-tokyo-3d .search-load #search-load {
+    display: block;
+}
 .mini-tokyo-3d #search-load > .ball-pulse {
-    top: 63px;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(.5, .5);
     box-sizing: initial;
@@ -392,232 +595,8 @@
 .mini-tokyo-3d #search-result {
     display: none;
 }
-.mini-tokyo-3d .share-panel {
-    position: absolute;
-    z-index: 3;
-    top: 0;
-    left: 50%;
-    padding: 10px;
-    border-radius: 0 0 3px 3px;
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    color: #fff;
-    transform: translate(-50%, 0);
-}
-.mini-tokyo-3d .share-button {
-    height: 30px;
-    padding: 0 6px;
-    border: 0;
-    border-radius: 4px;
-    box-shadow:0 0 0 1px #777;
+.mini-tokyo-3d .search-result #search-result {
     display: block;
-    color: #fff;
-    background-color: transparent;
-    cursor: pointer;
-    font-size: 12px;
-    line-height: 20px;
-}
-.mini-tokyo-3d .share-button:hover {
-    background-color: rgba(51, 51, 51, 0.7);
-}
-.mini-tokyo-3d .share-button:before {
-    content: "";
-    display: block;
-    background: no-repeat center/20px 20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/share-alt.svg', fill: #fff);
-    width: 20px;
-    height: 20px;
-    float: left;
-    margin: 0 6px 0 0;
-}
-.mini-tokyo-3d .notification {
-    position: absolute;
-    z-index: 3;
-    top: 33%;
-    left: 50%;
-    padding: 20px;
-    border-radius: 0 0 3px 3px;
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    color: #fff;
-    opacity: 1;
-    font-size: 130%;
-    transform: translate(-50%, -50%);
-    transition: opacity 1s linear;
-}
-.mini-tokyo-3d .timetable-panel {
-    position: absolute;
-    z-index: 3;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: calc(100% - 20px);
-    max-width: 380px;
-    height: 33%;
-    margin: auto;
-    border-radius: 3px 3px 0 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    font-size: 130%;
-    color: #fff;
-    transition: height 300ms ease;
-}
-.mini-tokyo-3d #timetable-header {
-    height: 48px;
-    margin: 10px 0;
-    padding: 0 10px;
-    overflow: hidden;
-    line-height: 150%;
-    cursor: pointer;
-}
-.mini-tokyo-3d #timetable-body {
-    height: calc(100% - 68px);
-    margin: 10px 0;
-    padding: 0 10px;
-    overflow: auto;
-    overscroll-behavior: contain;
-    line-height: 130%;
-}
-.mini-tokyo-3d .panel {
-    position: absolute;
-    z-index: 3;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: calc(100% - 20px);
-    max-width: 380px;
-    height: 33%;
-    margin: auto;
-    border-radius: 3px 3px 0 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    font-size: 130%;
-    color: #fff;
-    transition: height 300ms ease;
-}
-.mini-tokyo-3d #panel-header {
-    height: 24px;
-    margin: 10px 0;
-    padding: 0 10px;
-    overflow: hidden;
-    line-height: 150%;
-    cursor: pointer;
-}
-.mini-tokyo-3d #panel-body {
-    height: calc(100% - 44px);
-    margin: 10px 0;
-    padding: 0 10px;
-    overflow: auto;
-    overscroll-behavior: contain;
-    line-height: 130%;
-}
-.mini-tokyo-3d .windows {
-    scrollbar-width: thin;
-    scrollbar-color: #ccc transparent;
-}
-.mini-tokyo-3d .windows::-webkit-scrollbar {
-    width: 10px;
-}
-.mini-tokyo-3d .windows::-webkit-scrollbar-thumb {
-    background: #ccc;
-    background-clip: content-box;
-    border-radius: 6px;
-    border: solid 2px transparent;
-}
-.mini-tokyo-3d .scroll-box {
-    position: relative;
-}
-.mini-tokyo-3d #railway-mark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 24px;
-    height: 100%;
-}
-.mini-tokyo-3d #train-mark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 44px;
-    height: calc(100% + 20px);
-    margin: -10px;
-}
-.mini-tokyo-3d .station-row {
-    margin: 4px 0;
-}
-.mini-tokyo-3d .station-row:hover {
-    background-color: rgba(102, 102, 102, 0.7);
-}
-.mini-tokyo-3d .station-row > div {
-    display: inline-block;
-    vertical-align: middle;
-}
-.mini-tokyo-3d .station-title-box {
-    margin-left: 30px;
-    width: calc(100% - 72px);
-}
-.mini-tokyo-3d .station-time-box {
-    width: 42px;
-    text-align: right;
-}
-.mini-tokyo-3d .train-title-box {
-    margin-left: 40px;
-    font-size: 12px;
-    line-height: 20px;
-}
-.mini-tokyo-3d .exit-row {
-    margin: 4px 0;
-}
-.mini-tokyo-3d .exit-row:hover {
-    background-color: rgba(102, 102, 102, 0.7);
-}
-.mini-tokyo-3d .exit-row > div {
-    display: inline-block;
-    vertical-align: middle;
-}
-.mini-tokyo-3d .exit-title-box {
-}
-.mini-tokyo-3d .exit-title-box:before {
-    content: "";
-    display: block;
-    background: no-repeat center/20px 20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/sign-in-alt.svg', fill: #fff);
-    width: 20px;
-    height: 20px;
-    float: left;
-    margin: 0 6px 0 0;
-}
-.mini-tokyo-3d .exit-share-button {
-    height: 30px;
-}
-.mini-tokyo-3d #slide-button {
-    pointer-events: none;
-}
-.mini-tokyo-3d .slide-down {
-    width: 20px;
-    height: 20px;
-    background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-down.svg', fill: #fff);
-}
-.mini-tokyo-3d .slide-up {
-    width: 20px;
-    height: 20px;
-    background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-up.svg', fill: #fff);
-}
-.mini-tokyo-3d .search-panel .slide-down,
-.mini-tokyo-3d .search-panel .slide-up {
-    position: absolute;
-    top: 15px;
-    right: 10px;
-}
-.mini-tokyo-3d .timetable-panel .slide-down,
-.mini-tokyo-3d .timetable-panel .slide-up {
-    position: absolute;
-    top: 24px;
-    right: 10px;
-}
-.mini-tokyo-3d .panel .slide-down,
-.mini-tokyo-3d .panel .slide-up {
-    position: absolute;
-    top: 12px;
-    right: 10px;
 }
 .mini-tokyo-3d .mapboxgl-ctrl-search {
     transition: width 300ms ease;
@@ -737,6 +716,9 @@
 .mini-tokyo-3d .desc-caution {
     color: #f90;
 }
+.mini-tokyo-3d .desc-normal-style {
+    font-weight: normal;
+}
 .mini-tokyo-3d .line-strip {
     width: 10px;
     height: 13px;
@@ -782,57 +764,31 @@
     position: absolute;
     z-index: 3;
     background-color: #000;
-    opacity: 0;
+    opacity: 0.5;
     transition: opacity 300ms ease;
 }
-.mini-tokyo-3d .modal-panel {
-    position: absolute;
-    z-index: 3;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: calc(100% - 20px);
-    max-width: 380px;
-    max-height: 0;
-    margin: auto;
-    border-radius: 3px 3px 0 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    color: #fff;
-    transition: max-height 300ms ease;
+.mini-tokyo-3d .modal-panel-background.closed {
+    opacity: 0;
 }
-.mini-tokyo-3d .modal-panel a:link,
-.mini-tokyo-3d .modal-panel a:visited {
+.mini-tokyo-3d .close-button {
+    width: 20px;
+    height: 100%;
+    background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/times.svg', fill: #fff);
+    cursor: pointer;
+}
+.mini-tokyo-3d .about-panel #panel-body{
+    font-size: 12px;
+    line-height: 20px;
+}
+.mini-tokyo-3d .about-panel a:link,
+.mini-tokyo-3d .about-panel a:visited {
     color: #f90;
     text-decoration: none;
 }
-.mini-tokyo-3d .modal-panel a:hover,
-.mini-tokyo-3d .modal-panel a:active {
+.mini-tokyo-3d .about-panel a:hover,
+.mini-tokyo-3d .about-panel a:active {
     color: #f90;
     text-decoration: underline;
-}
-.mini-tokyo-3d #modal-panel-header {
-    height: 30px;
-    margin: 10px 0;
-    padding: 0 10px;
-    overflow: hidden;
-    font-size: 130%;
-    line-height: 30px;
-}
-.mini-tokyo-3d #modal-panel-body {
-    margin-top: 10px;
-    padding: 0 10px;
-    overflow: auto;
-    overscroll-behavior: contain;
-}
-.mini-tokyo-3d .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 30px;
-    background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/times.svg', fill: #fff);
-    cursor: pointer;
 }
 .mini-tokyo-3d .card-title {
     background: rgba(51, 51, 51, 0.7);
@@ -867,4 +823,7 @@
     margin: 0 10px 0 0;
     border-width: 2px;
     border-color: #33B5E5;
+}
+.mini-tokyo-3d .panel.closed {
+    height: 0;
 }

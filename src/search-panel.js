@@ -3,15 +3,17 @@ import configs from './configs';
 import * as helpers from './helpers';
 import * as helpersGeojson from './helpers-geojson';
 import * as helpersMapbox from './helpers-mapbox';
+import Panel from './panel';
 
-const isWindows = helpers.includes(navigator.userAgent, 'Windows');
+export default class extends Panel {
 
-export default class {
+    constructor(options) {
+        super(Object.assign({className: 'search-panel'}, options));
+    }
 
     addTo(mt3d) {
         const me = this,
-            {lang, dict} = me._mt3d = mt3d,
-            container = me._container = document.createElement('div'),
+            {lang, dict} = mt3d,
             date = mt3d.clock.getJSTDate(),
             currMonth = date.getMonth() + 1,
             currDate = date.getDate(),
@@ -20,62 +22,40 @@ export default class {
 
         mt3d.trackObject();
 
-        container.className = 'search-panel';
-        container.innerHTML = `
-<div id="search-header"></div>
-<div id="search-body"${isWindows ? ' class="windows"' : ''}>
-    <div class="scroll-box">
-        <div id="search-form">
-            <div class="search-form-element">${dict['from-station']} <input id="origin" class="search-input" type="text" list="stations"></div>
-            <div class="search-form-element">${dict['to-station']} <input id="destination" class="search-input" type="text" list="stations"></div>
-            <div class="search-form-element">
-                <select id="type" class="search-select">
-                    <option value="departure" selected>${dict['depart-at']}</option>
-                </select>
-                <select id="month" class="search-select">
-                    <option value="${currMonth}" selected>${date.toLocaleDateString(lang, {month: 'short'})}</option>
-                </select>
-                <select id="date" class="search-select">
-                    <option value="${currDate}" selected>${date.toLocaleDateString(lang, {day: 'numeric'})}</option>
-                </select>
-                <select id="hours" class="search-select"></select>
-                <select id="minutes" class="search-select"></select>
-            </div>
-            <div class="search-form-element"><button id="search-button" class="search-button">${dict['search-route']}</button></div>
-        </div>
-        <div id="search-load">
-            <div class="ball-pulse"><div></div><div></div><div></div></div>
-        </div>
-        <div id="search-result">
-            <div id="search-routes"></div>
-            <svg id="railway-mark"></svg>
-        </div>
+        super.addTo(mt3d)
+            .setHTML(`
+<div id="search-form">
+    <div class="search-form-element">${dict['from-station']} <input id="origin" class="search-input" type="text" list="stations"></div>
+    <div class="search-form-element">${dict['to-station']} <input id="destination" class="search-input" type="text" list="stations"></div>
+    <div class="search-form-element">
+        <select id="type" class="search-select">
+            <option value="departure" selected>${dict['depart-at']}</option>
+        </select>
+        <select id="month" class="search-select">
+            <option value="${currMonth}" selected>${date.toLocaleDateString(lang, {month: 'short'})}</option>
+        </select>
+        <select id="date" class="search-select">
+            <option value="${currDate}" selected>${date.toLocaleDateString(lang, {day: 'numeric'})}</option>
+        </select>
+        <select id="hours" class="search-select"></select>
+        <select id="minutes" class="search-select"></select>
     </div>
-</div>`;
+    <div class="search-form-element"><button id="search-button" class="search-button">${dict['search-route']}</button></div>
+</div>
+<div id="search-load">
+    <div class="ball-pulse"><div></div><div></div><div></div></div>
+</div>
+<div id="search-result">
+    <div id="search-routes"></div>
+    <svg id="railway-mark"></svg>
+</div>`);
 
-        const headerElement = container.querySelector('#search-header'),
-            formElement = container.querySelector('#search-form'),
-            loadElement = container.querySelector('#search-load'),
+        const container = me._container,
             originElement = container.querySelector('#origin'),
             destinationElement = container.querySelector('#destination'),
             hoursElement = container.querySelector('#hours'),
             minutesElement = container.querySelector('#minutes'),
             searchButtonElement = container.querySelector('#search-button');
-
-        headerElement.addEventListener('click', () => {
-            const {style} = container,
-                {classList} = container.querySelector('#slide-button');
-
-            if (style.height !== '50px') {
-                style.height = '50px';
-                classList.remove('slide-down');
-                classList.add('slide-up');
-            } else {
-                style.height = 'max(33%, 194px)';
-                classList.remove('slide-up');
-                classList.add('slide-down');
-            }
-        });
 
         const onInput = ({target}) => {
             target.style.borderColor = '#777';
@@ -147,21 +127,22 @@ export default class {
             originElement.style.borderColor = '#777';
             destinationElement.style.borderColor = '#777';
 
-            formElement.style.display = 'none';
-            loadElement.style.display = 'block';
+            container.classList.remove('search-form');
+            container.classList.add('search-load');
 
             helpers.loadJSON(`${configs.searchUrl}?origin=${origin.id}&destination=${destination.id}&type=${type}&month=${month}&date=${date}&hours=${hours}&minutes=${minutes}`).then(data => {
-                loadElement.style.display = 'none';
+                container.classList.remove('search-load');
                 me.showRoutes(data, 0);
             });
         });
 
-        mt3d.container.appendChild(container);
-
         me.showForm();
 
         if (!mt3d.touchDevice) {
-            originElement.focus();
+            // Set focus after transition (workaround for Safari)
+            container.addEventListener('transitionend', () => {
+                originElement.focus();
+            }, {once: true});
         } else {
             me.focus = 'origin';
             originElement.classList.add('search-focus');
@@ -173,19 +154,11 @@ export default class {
     }
 
     showForm() {
-        const me = this,
-            mt3d = me._mt3d,
-            container = me._container,
-            {dict} = mt3d;
+        const me = this;
 
-        container.querySelector('#search-header').innerHTML = [
-            '<div class="desc-header">',
-            `<strong>${dict['route-search']}</strong>`,
-            '</div>',
-            '<div id="slide-button" class="slide-down"></div>'
-        ].join('');
-
-        container.querySelector('#search-form').style.display = 'block';
+        me.setTitle(me._mt3d.dict['route-search'])
+            .setButtons();
+        me._container.classList.add('search-form');
     }
 
     fillStationName(name) {
@@ -216,8 +189,8 @@ export default class {
             mt3d = me._mt3d,
             {lang, dict, clock, map} = mt3d,
             container = me._container,
-            headerElement = container.querySelector('#search-header'),
-            resultElement = container.querySelector('#search-result'),
+            backButton = document.createElement('div'),
+            pageController = document.createElement('div'),
             routesElement = container.querySelector('#search-routes'),
             railwayMarkElement = container.querySelector('#railway-mark'),
             sections = [],
@@ -226,47 +199,54 @@ export default class {
 
         mt3d._setSearchMode('route');
 
-        headerElement.innerHTML = [
-            '<div class="desc-header">',
-            `<strong>${dict['route']}${index + 1}</strong>`,
-            result.routes ? ` ${dict['transfers'].replace('$1', result.routes[index].numTransfers)}` : '',
-            '</div>',
-            '<div class="page-controller">',
+        me.setTitle([
+            `${dict['route']}${index + 1}`,
+            result.routes ? ` ${dict['transfers'].replace('$1', result.routes[index].numTransfers)}` : ''
+        ].join(''));
+
+        backButton.innerHTML = [
+            '<button id="back-button" class="back-button">',
+            '<span class="back-icon"></span>',
+            '</button>'
+        ].join('');
+        backButton.addEventListener('click', event => {
+            event.stopPropagation();
+        });
+
+        pageController.className = 'page-controller';
+        pageController.innerHTML = [
             '<span><button id="previous-button" class="previous-button"',
             !result.routes || index === 0 ? ' disabled' : '',
             '><span class="previous-icon"></span></button></span>',
             '<span><button id="next-button" class="next-button"',
             !result.routes || index === result.routes.length - 1 ? ' disabled' : '',
-            '><span class="next-icon"></span></button></span>',
-            '</div>',
-            '<button id="back-button" class="back-button"><span class="back-icon"></span></button>',
-            '<div id="slide-button" class="slide-down"></div>'
+            '><span class="next-icon"></span></button></span>'
         ].join('');
-
-        container.querySelector('.page-controller').addEventListener('click', event => {
+        pageController.addEventListener('click', event => {
             event.stopPropagation();
         });
-        container.querySelector('#previous-button').addEventListener('click', () => {
-            me.hideRoute();
-            me.showRoutes(result, index - 1);
-        });
-        container.querySelector('#next-button').addEventListener('click', () => {
-            me.hideRoute();
-            me.showRoutes(result, index + 1);
-        });
-        container.querySelector('#back-button').addEventListener('click', event => {
-            resultElement.style.display = 'none';
+
+        me.setButtons([backButton, pageController]);
+
+        backButton.querySelector('#back-button').addEventListener('click', () => {
+            container.classList.remove('search-result');
             me.hideRoute();
             me.showForm();
-            event.stopPropagation();
             mt3d._setSearchMode('edit');
             mt3d.refreshMap();
         });
+        pageController.querySelector('#previous-button').addEventListener('click', () => {
+            me.hideRoute();
+            me.showRoutes(result, index - 1);
+        });
+        pageController.querySelector('#next-button').addEventListener('click', () => {
+            me.hideRoute();
+            me.showRoutes(result, index + 1);
+        });
+
+        container.classList.add('search-result');
 
         if (result.routes) {
-
-            resultElement.style.display = 'block';
-            routesElement.innerHTML = '';
 
             const route = result.routes[index];
             let arrivalTime;
@@ -440,7 +420,6 @@ export default class {
                 }, index / stationIDs.length * 1000 + 500);
             });
         } else {
-            resultElement.style.display = 'block';
             routesElement.innerHTML = dict['cannot-find-train'];
             railwayMarkElement.innerHTML = '';
         }
@@ -468,12 +447,8 @@ export default class {
     }
 
     remove() {
-        const me = this;
-
-        me.hideRoute();
-        me._container.parentNode.removeChild(me._container);
-        delete me._container;
-        delete me._mt3d;
+        this.hideRoute();
+        super.remove();
     }
 
 }

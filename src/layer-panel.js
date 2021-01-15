@@ -1,29 +1,35 @@
-import ModalPanel from './modal-panel';
+import Panel from './panel';
 
-export default class extends ModalPanel {
+export default class extends Panel {
 
     constructor(options) {
-        super(options);
-        this.setTitle(options.dict['layers'])
-            .setHTML(options.layers.map(layer => [
-                `<div id="${layer.id}-layer" class="layer-row">`,
-                `<div class="layer-icon"></div>`,
-                `<div>${layer.name[options.lang]}</div>`,
-                '</div>'
-            ].join('')).join(''));
+        super(Object.assign({
+            className: 'layer-panel',
+            modal: true
+        }, options));
     }
 
     addTo(mt3d) {
-        const me = this;
+        const me = this,
+            {layers} = me._options,
+            {lang, dict} = mt3d;
 
-        super.addTo(mt3d);
+        super.addTo(mt3d)
+            .setTitle(dict['layers'])
+            .setHTML(layers.map(({id, name}) => [
+                `<div id="${id}-layer" class="layer-row">`,
+                `<div class="layer-icon"></div>`,
+                `<div>${name[lang]}</div>`,
+                '</div>'
+            ].join('')).join(''));
 
-        for (const layer of me._options.layers) {
-            const element = me._container.querySelector(`#${layer.id}-layer .layer-icon`),
-                {classList} = element;
+        for (const layer of layers) {
+            const {id, iconStyle, enabled} = layer,
+                element = me._container.querySelector(`#${id}-layer .layer-icon`),
+                {style, classList} = element;
 
-            Object.assign(element.style, layer.iconStyle);
-            if (layer.enabled) {
+            Object.assign(style, iconStyle);
+            if (enabled) {
                 classList.add('layer-icon-enabled');
             }
 

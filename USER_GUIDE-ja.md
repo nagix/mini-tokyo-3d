@@ -124,7 +124,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 [追跡モード](#%E8%BF%BD%E8%B7%A1%E3%83%A2%E3%83%BC%E3%83%89)がオンの状態では、画面上部に「この列車をシェア」または「このフライトをシェア」ボタンが表示されます。ボタンをクリックすると、利用しているデバイスに応じて追加のメニューが表示され、追跡中の列車やフライトを示す URL と任意のメッセージをメッセージアプリやメール、SNSアプリなどで送信することができます。情報を受け取った人がその URL をブラウザで開くと、同じ列車やフライトを追跡した状態で Mini Tokyo 3D が起動します。
 
-この機能は Safari (Mac OS、iOS)、Chrome (Android)、Opera (Android)、Samsung Internet の各ブラウザでのみ利用可能です。
+この機能は Edge、Safari、Chrome (Android)、Opera (Android)、Samsung Internet の各ブラウザでのみ利用可能です。
 
 ### 遅延列車の表示
 
@@ -238,7 +238,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 次のブラウザで動作を確認しています。推奨は Chrome です。Internet Explorer には非対応です。
 
 - Chrome 87 (Mac OS, Windows, iOS, Android)
-- FireFox 83 (Mac OS, Windows, iOS)
+- FireFox 84 (Mac OS, Windows, iOS)
 - Safari 14 (Mac OS, iOS)
 - Edge 87 (Mac OS, Windows)
 

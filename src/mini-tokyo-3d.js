@@ -11,7 +11,7 @@ import AboutPanel from './about-panel';
 import Clock from './clock';
 import ClockControl from './clock-control';
 import configs from './configs';
-import DetailPanel from './detail-panel';
+import TrainPanel from './train-panel';
 import * as helpers from './helpers';
 import * as helpersGeojson from './helpers-geojson';
 import * as helpersMapbox from './helpers-mapbox';
@@ -857,16 +857,8 @@ export default class extends mapboxgl.Evented {
                 map.addControl(control);
             }
 
-            me.layerPanel = new LayerPanel({
-                lang: me.lang,
-                dict: me.dict,
-                layers: me.plugins
-            });
-
-            me.aboutPanel = new AboutPanel({
-                dict: me.dict,
-                lastDynamicUpdate: me.lastDynamicUpdate
-            });
+            me.layerPanel = new LayerPanel({layers: me.plugins});
+            me.aboutPanel = new AboutPanel();
 
             if (me.configControl) {
                 map.addControl(new MapboxGLButtonControl([{
@@ -879,7 +871,7 @@ export default class extends mapboxgl.Evented {
                     className: 'mapboxgl-ctrl-about',
                     title: me.dict['about'],
                     eventHandler() {
-                        me.aboutPanel.updateContent().addTo(me);
+                        me.aboutPanel.addTo(me);
                     }
                 }]));
             }
@@ -1907,9 +1899,7 @@ export default class extends mapboxgl.Evented {
 
             me.refreshTrains();
             me.refreshDelayMarkers();
-            if (me.aboutPanel.isOpen()) {
-                me.aboutPanel.updateContent();
-            }
+            me.aboutPanel.updateContent();
         }).catch(error => {
             me.refreshTrains();
             console.log(error);
@@ -2471,7 +2461,7 @@ export default class extends mapboxgl.Evented {
                     me.sharePanel.addTo(me);
                 }
                 if (train.tt) {
-                    me.detailPanel = new DetailPanel({object: train});
+                    me.detailPanel = new TrainPanel({object: train});
                     me.detailPanel.addTo(me);
                 }
 
