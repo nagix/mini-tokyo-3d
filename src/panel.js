@@ -115,14 +115,14 @@ export default class {
             container.querySelector('#panel-header').style.cursor = 'pointer';
         }
 
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             if (options.modal) {
                 me._background.classList.remove('closed');
                 container.style.height =
                     `min(calc(100% - 10px), ${container.querySelector('#panel-content').offsetHeight + 50}px)`;
             }
             container.classList.remove('closed');
-        }, 0);
+        });
 
         return me;
     }
