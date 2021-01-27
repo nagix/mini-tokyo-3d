@@ -1,4 +1,5 @@
 @import 'mapbox-gl/src/css/mapbox-gl.css';
+@import 'swiper/swiper-bundle.css';
 
 .mini-tokyo-3d {
     width: 380px;
@@ -506,13 +507,8 @@
     height: 14px;
     background: no-repeat center/14px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/undo.svg', fill: #fff);
 }
-.mini-tokyo-3d #search-body {
-    height: calc(100% - 50px);
-    margin: 10px 0;
-    padding: 0 10px;
-    overflow: auto;
-    overscroll-behavior: contain;
-    line-height: 130%;
+.mini-tokyo-3d .search-panel #panel-content {
+    height: 100%;
 }
 .mini-tokyo-3d #search-form {
     display: none;
@@ -594,6 +590,7 @@
 }
 .mini-tokyo-3d #search-result {
     display: none;
+    height: 100%;
 }
 .mini-tokyo-3d .search-result #search-result {
     display: block;
@@ -826,4 +823,23 @@
 }
 .mini-tokyo-3d .panel.closed {
     height: 0;
+}
+.mini-tokyo-3d .search-panel.search-result #panel-body {
+    padding: 0;
+}
+.mini-tokyo-3d .swiper-slide {
+    padding: 0 10px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.mini-tokyo-3d .swiper-slide-content {
+    position: relative;
+    overflow: hidden;
+}
+.mini-tokyo-3d .swiper-pagination {
+    pointer-events: none;
+}
+.mini-tokyo-3d .swiper-pagination-bullet {
+    background-color: #fff;
+    pointer-events: auto;
 }

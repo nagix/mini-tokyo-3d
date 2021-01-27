@@ -1,9 +1,12 @@
 import AnimatedPopup from 'mapbox-gl-animated-popup';
+import Swiper, {Pagination} from 'swiper';
 import configs from './configs';
 import * as helpers from './helpers';
 import * as helpersGeojson from './helpers-geojson';
 import * as helpersMapbox from './helpers-mapbox';
 import Panel from './panel';
+
+Swiper.use([Pagination]);
 
 export default class extends Panel {
 
@@ -45,9 +48,9 @@ export default class extends Panel {
 <div id="search-load">
     <div class="ball-pulse"><div></div><div></div><div></div></div>
 </div>
-<div id="search-result">
-    <div id="search-routes"></div>
-    <svg id="railway-mark"></svg>
+<div id="search-result" class="swiper-container">
+    <div class="swiper-wrapper"></div>
+    <div class="swiper-pagination"></div>
 </div>`);
 
         const container = me._container,
@@ -132,7 +135,7 @@ export default class extends Panel {
 
             helpers.loadJSON(`${configs.searchUrl}?origin=${origin.id}&destination=${destination.id}&type=${type}&month=${month}&date=${date}&hours=${hours}&minutes=${minutes}`).then(data => {
                 container.classList.remove('search-load');
-                me.showRoutes(data, 0);
+                me.showResult(data);
             });
         });
 
@@ -184,25 +187,20 @@ export default class extends Panel {
         }
     }
 
-    showRoutes(result, index) {
+    showResult(result) {
         const me = this,
             mt3d = me._mt3d,
-            {lang, dict, clock, map} = mt3d,
+            {lang, dict, clock} = mt3d,
             container = me._container,
             backButton = document.createElement('div'),
             pageController = document.createElement('div'),
-            routesElement = container.querySelector('#search-routes'),
-            railwayMarkElement = container.querySelector('#railway-mark'),
-            sections = [],
-            stations = [],
-            offsets = [];
+            swiperElement = container.querySelector('.swiper-wrapper');
+
+        me._result = result;
 
         mt3d._setSearchMode('route');
 
-        me.setTitle([
-            `${dict['route']}${index + 1}`,
-            result.routes ? ` ${dict['transfers'].replace('$1', result.routes[index].numTransfers)}` : ''
-        ].join(''));
+        container.classList.add('search-result');
 
         backButton.innerHTML = [
             '<button id="back-button" class="back-button">',
@@ -212,217 +210,267 @@ export default class extends Panel {
         backButton.addEventListener('click', event => {
             event.stopPropagation();
         });
-
-        pageController.className = 'page-controller';
-        pageController.innerHTML = [
-            '<span><button id="previous-button" class="previous-button"',
-            !result.routes || index === 0 ? ' disabled' : '',
-            '><span class="previous-icon"></span></button></span>',
-            '<span><button id="next-button" class="next-button"',
-            !result.routes || index === result.routes.length - 1 ? ' disabled' : '',
-            '><span class="next-icon"></span></button></span>'
-        ].join('');
-        pageController.addEventListener('click', event => {
-            event.stopPropagation();
-        });
-
-        me.setButtons([backButton, pageController]);
-
         backButton.querySelector('#back-button').addEventListener('click', () => {
+            if (me._swiper) {
+                me._swiper.destroy();
+                delete me._swiper;
+                me.hideRoute();
+            }
             container.classList.remove('search-result');
-            me.hideRoute();
             me.showForm();
             mt3d._setSearchMode('edit');
             mt3d.refreshMap();
         });
+
+        pageController.className = 'page-controller';
+        pageController.innerHTML = [
+            '<span><button id="previous-button" class="previous-button">',
+            '<span class="previous-icon"></span>',
+            '</button></span>',
+            '<span><button id="next-button" class="next-button">',
+            '<span class="next-icon"></span>',
+            '</button></span>'
+        ].join('');
+        pageController.addEventListener('click', event => {
+            event.stopPropagation();
+        });
         pageController.querySelector('#previous-button').addEventListener('click', () => {
-            me.hideRoute();
-            me.showRoutes(result, index - 1);
+            me._swiper.slidePrev();
         });
         pageController.querySelector('#next-button').addEventListener('click', () => {
-            me.hideRoute();
-            me.showRoutes(result, index + 1);
+            me._swiper.slideNext();
         });
 
-        container.classList.add('search-result');
+        swiperElement.innerHTML = '';
 
         if (result.routes) {
+            me.setButtons([backButton, pageController]);
 
-            const route = result.routes[index];
-            let arrivalTime;
+            for (const route of result.routes) {
+                const slideElement = document.createElement('div'),
+                    sections = [],
+                    stations = [],
+                    offsets = [];
+                let arrivalTime;
 
-            for (const {r, y, ds, d, tt, nm, transfer, delay} of route.trains) {
-                const railwayTitle = nm ? nm.map(name => name[lang] || name.en).join(dict['and']) : mt3d.getLocalizedRailwayTitle(r),
-                    trainTypeTitle = mt3d.getLocalizedTrainTypeTitle(y),
-                    destinationTitle = ds ? dict['for'].replace('$1', mt3d.getLocalizedStationTitle(ds)) : mt3d.getLocalizedRailDirectionTitle(d),
-                    section = {};
+                slideElement.className = 'swiper-slide';
 
-                section.start = stations.length;
-                stations.push([
-                    '<div class="station-row">',
-                    `<div class="station-title-box">${mt3d.getLocalizedStationTitle(tt[0].s)}</div>`,
-                    '<div class="station-time-box',
-                    delay ? ' desc-caution' : '',
-                    '">',
-                    arrivalTime ? `${clock.getTimeString(clock.getTime(arrivalTime) + delay * 60000)}<br>` : '',
-                    clock.getTimeString(clock.getTime(tt[0].d) + delay * 60000),
-                    '</div></div>'
-                ].join(''));
-                stations.push([
-                    '<div class="station-row">',
-                    `<div class="train-title-box">${railwayTitle} ${trainTypeTitle} ${destinationTitle}`,
-                    delay ? ` <span class="desc-caution">${dict['delay'].replace('$1', delay)}</span>` : '',
-                    '</div></div>'
-                ].join(''));
-                section.end = stations.length;
-                section.color = mt3d.railwayLookup[r].color;
-                sections.push(section);
-                if (transfer === 0) {
-                    arrivalTime = tt[tt.length - 1].a;
-                } else {
+                for (const {r, y, ds, d, tt, nm, transfer, delay} of route.trains) {
+                    const railwayTitle = nm ? nm.map(name => name[lang] || name.en).join(dict['and']) : mt3d.getLocalizedRailwayTitle(r),
+                        trainTypeTitle = mt3d.getLocalizedTrainTypeTitle(y),
+                        destinationTitle = ds ? dict['for'].replace('$1', mt3d.getLocalizedStationTitle(ds)) : mt3d.getLocalizedRailDirectionTitle(d),
+                        section = {};
+
+                    section.start = stations.length;
                     stations.push([
                         '<div class="station-row">',
-                        `<div class="station-title-box">${mt3d.getLocalizedStationTitle(tt[tt.length - 1].s)}</div>`,
-                        '<div class="station-time-box',
-                        delay ? ' desc-caution' : '',
-                        '">',
-                        clock.getTimeString(clock.getTime(tt[tt.length - 1].a || tt[tt.length - 1].d) + delay * 60000),
+                        `<div class="station-title-box">${mt3d.getLocalizedStationTitle(tt[0].s)}</div>`,
+                        `<div class="station-time-box${delay ? ' desc-caution' : ''}">`,
+                        arrivalTime ? `${clock.getTimeString(clock.getTime(arrivalTime) + delay * 60000)}<br>` : '',
+                        clock.getTimeString(clock.getTime(tt[0].d) + delay * 60000),
                         '</div></div>'
                     ].join(''));
-                    if (transfer > 0) {
-                        const section = {};
-
-                        section.start = stations.length - 1;
+                    stations.push([
+                        '<div class="station-row">',
+                        `<div class="train-title-box">${railwayTitle} ${trainTypeTitle} ${destinationTitle}`,
+                        delay ? ` <span class="desc-caution">${dict['delay'].replace('$1', delay)}</span>` : '',
+                        '</div></div>'
+                    ].join(''));
+                    section.end = stations.length;
+                    section.color = mt3d.railwayLookup[r].color;
+                    sections.push(section);
+                    if (transfer === 0) {
+                        arrivalTime = tt[tt.length - 1].a;
+                    } else {
                         stations.push([
                             '<div class="station-row">',
-                            `<div class="train-title-box">${dict['transfer-and-wait'].replace('$1', transfer)}</div>`,
-                            '</div>'
+                            `<div class="station-title-box">${mt3d.getLocalizedStationTitle(tt[tt.length - 1].s)}</div>`,
+                            `<div class="station-time-box${delay ? ' desc-caution' : ''}">`,
+                            clock.getTimeString(clock.getTime(tt[tt.length - 1].a || tt[tt.length - 1].d) + delay * 60000),
+                            '</div></div>'
                         ].join(''));
-                        section.end = stations.length;
-                        sections.push(section);
-                    }
-                    arrivalTime = undefined;
-                }
-            }
+                        if (transfer > 0) {
+                            const section = {};
 
-            routesElement.innerHTML = stations.join('');
-
-            const {children} = routesElement;
-
-            for (let i = 0, ilen = children.length; i < ilen; i++) {
-                const child = children[i];
-
-                offsets.push(child.offsetTop + child.getBoundingClientRect().height / 2);
-            }
-
-            railwayMarkElement.innerHTML = sections.map(({color, start, end}) => color ?
-                `<line stroke="${color}" stroke-width="10" x1="12" y1="${offsets[start]}" x2="12" y2="${offsets[end]}" stroke-linecap="round" />` :
-                `<line stroke="#7f7f7f" stroke-width="4" x1="12" y1="${offsets[start]}" x2="12" y2="${offsets[end]}" stroke-dasharray="4 4" />`
-            ).concat(offsets.map((offset, i) =>
-                i % 2 === 0 ? `<circle cx="12" cy="${offset}" r="3" fill="#ffffff" />` : ''
-            )).join('');
-
-            const railwaySections = [],
-                stationGroups = [],
-                coords = [];
-
-            for (const {r, tt, d} of route.trains) {
-                const {stations, ascending} = mt3d.railwayLookup[r];
-
-                for (const {s} of tt) {
-                    const station = mt3d.stationLookup[s];
-
-                    stationGroups.push(station.group);
-                    coords.push(station.coord);
-                }
-
-                if (d === ascending) {
-                    const start = stations.indexOf(tt[0].s),
-                        end = stations.indexOf(tt[tt.length - 1].s, start);
-
-                    for (let i = start; i < end; i++) {
-                        railwaySections.push(`${r}.${i + 1}`);
-                    }
-                } else {
-                    const start = stations.lastIndexOf(tt[0].s),
-                        end = stations.lastIndexOf(tt[tt.length - 1].s, start);
-
-                    for (let i = start; i > end; i--) {
-                        railwaySections.push(`${r}.${i}`);
+                            section.start = stations.length - 1;
+                            stations.push([
+                                '<div class="station-row">',
+                                `<div class="train-title-box">${dict['transfer-and-wait'].replace('$1', transfer)}</div>`,
+                                '</div>'
+                            ].join(''));
+                            section.end = stations.length;
+                            sections.push(section);
+                        }
+                        arrivalTime = undefined;
                     }
                 }
+
+                slideElement.innerHTML = [
+                    '<div class="swiper-slide-content">',
+                    `<div id="search-routes">${stations.join('')}</div>`,
+                    '<svg id="railway-mark"></svg>',
+                    '</div>'
+                ].join('');
+                swiperElement.appendChild(slideElement);
+
+                const routesElement = slideElement.querySelector('#search-routes'),
+                    railwayMarkElement = slideElement.querySelector('#railway-mark'),
+                    {children} = routesElement;
+
+                for (let i = 0, ilen = children.length; i < ilen; i++) {
+                    const child = children[i];
+
+                    offsets.push(child.offsetTop + child.getBoundingClientRect().height / 2);
+                }
+
+                railwayMarkElement.innerHTML = sections.map(({color, start, end}) => color ?
+                    `<line stroke="${color}" stroke-width="10" x1="12" y1="${offsets[start]}" x2="12" y2="${offsets[end]}" stroke-linecap="round" />` :
+                    `<line stroke="#7f7f7f" stroke-width="4" x1="12" y1="${offsets[start]}" x2="12" y2="${offsets[end]}" stroke-dasharray="4 4" />`
+                ).concat(offsets.map((offset, i) =>
+                    i % 2 === 0 ? `<circle cx="12" cy="${offset}" r="3" fill="#ffffff" />` : ''
+                )).join('');
+
             }
 
-            for (const zoom of [13, 14, 15, 16, 17, 18]) {
-                let layer = map.getLayer(`railways-routeug-${zoom}`).implementation;
-
-                layer.setProps({
-                    data: helpersGeojson.featureFilter(mt3d.featureCollection, p =>
-                        p.zoom === zoom && p.altitude < 0 && helpers.includes(railwaySections, p.section)
-                    )
-                });
-
-                layer = map.getLayer(`stations-routeug-${zoom}`).implementation;
-
-                layer.setProps({
-                    data: helpersGeojson.featureFilter(mt3d.featureCollection, p =>
-                        p.zoom === zoom && p.altitude < 0 && helpers.includes(stationGroups, p.group)
-                    )
-                });
-
-                layer = map.getLayer(`railways-routeog-${zoom}`).implementation;
-
-                layer.setProps({
-                    data: helpersGeojson.featureFilter(mt3d.featureCollection, p =>
-                        p.zoom === zoom && p.altitude === 0 && helpers.includes(railwaySections, p.section)
-                    )
-                });
-
-                layer = map.getLayer(`stations-routeog-${zoom}`).implementation;
-
-                layer.setProps({
-                    data: helpersGeojson.featureFilter(mt3d.featureCollection, p =>
-                        p.zoom === zoom && p.altitude === 0 && helpers.includes(stationGroups, p.group)
-                    )
-                });
-            }
-
-            map.fitBounds(helpersMapbox.getBounds(coords), {
-                bearing: map.getBearing(),
-                offset: [0, -map.transform.height / 12],
-                padding: {top: 20, bottom: 20, left: 10, right: 50},
-                linear: true,
-                maxZoom: 18
+            me._swiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
             });
-            mt3d.refreshMap();
-
-            const stationIDs = [route.trains[0].tt[0].s];
-
-            for (const train of route.trains) {
-                if (train.transfer > 0 || train === route.trains[route.trains.length - 1]) {
-                    stationIDs.push(train.tt[train.tt.length - 1].s);
-                }
-            }
-
-            me.popups = stationIDs.map((id, index) => {
-                return setTimeout(() => {
-                    const popup = new AnimatedPopup({
-                        className: 'popup-route',
-                        closeButton: false,
-                        closeOnClick: false
-                    });
-
-                    popup.setLngLat(mt3d.stationLookup[id].coord)
-                        .setHTML(index === 0 ? dict['from-station'] : index === stationIDs.length - 1 ? dict['to-station'] : `${dict['transfer']}${index}`)
-                        .addTo(map);
-
-                    me.popups[index] = popup;
-                }, index / stationIDs.length * 1000 + 500);
+            me._swiper.on('slideChange', () => {
+                me.hideRoute();
             });
+            me._swiper.on('slideChangeTransitionEnd', () => {
+                me.switchRoute();
+            });
+
+            me.switchRoute();
         } else {
-            routesElement.innerHTML = dict['cannot-find-train'];
-            railwayMarkElement.innerHTML = '';
+            me.setButtons([backButton]);
+
+            swiperElement.innerHTML = [
+                '<div class="swiper-slide">',
+                '<div class="swiper-slide-content">',
+                dict['cannot-find-train'],
+                '</div></div>'
+            ].join('');
         }
+    }
+
+    switchRoute() {
+        const me = this,
+            mt3d = me._mt3d,
+            {dict, map} = mt3d,
+            container = me._container,
+            swiper = me._swiper,
+            index = swiper.activeIndex,
+            route = me._result.routes[index],
+            railwaySections = [],
+            stationGroups = [],
+            coords = [];
+
+        me.setTitle([
+            `${dict['route']}${index + 1} `,
+            dict['transfers'].replace('$1', route.numTransfers)
+        ].join(''));
+
+        container.querySelector('#previous-button').disabled = swiper.isBeginning;
+        container.querySelector('#next-button').disabled = swiper.isEnd;
+
+        for (const {r, tt, d} of route.trains) {
+            const {stations, ascending} = mt3d.railwayLookup[r];
+
+            for (const {s} of tt) {
+                const station = mt3d.stationLookup[s];
+
+                stationGroups.push(station.group);
+                coords.push(station.coord);
+            }
+
+            if (d === ascending) {
+                const start = stations.indexOf(tt[0].s),
+                    end = stations.indexOf(tt[tt.length - 1].s, start);
+
+                for (let i = start; i < end; i++) {
+                    railwaySections.push(`${r}.${i + 1}`);
+                }
+            } else {
+                const start = stations.lastIndexOf(tt[0].s),
+                    end = stations.lastIndexOf(tt[tt.length - 1].s, start);
+
+                for (let i = start; i > end; i--) {
+                    railwaySections.push(`${r}.${i}`);
+                }
+            }
+        }
+
+        for (const zoom of [13, 14, 15, 16, 17, 18]) {
+            let layer = map.getLayer(`railways-routeug-${zoom}`).implementation;
+
+            layer.setProps({
+                data: helpersGeojson.featureFilter(mt3d.featureCollection, p =>
+                    p.zoom === zoom && p.altitude < 0 && helpers.includes(railwaySections, p.section)
+                )
+            });
+
+            layer = map.getLayer(`stations-routeug-${zoom}`).implementation;
+
+            layer.setProps({
+                data: helpersGeojson.featureFilter(mt3d.featureCollection, p =>
+                    p.zoom === zoom && p.altitude < 0 && helpers.includes(stationGroups, p.group)
+                )
+            });
+
+            layer = map.getLayer(`railways-routeog-${zoom}`).implementation;
+
+            layer.setProps({
+                data: helpersGeojson.featureFilter(mt3d.featureCollection, p =>
+                    p.zoom === zoom && p.altitude === 0 && helpers.includes(railwaySections, p.section)
+                )
+            });
+
+            layer = map.getLayer(`stations-routeog-${zoom}`).implementation;
+
+            layer.setProps({
+                data: helpersGeojson.featureFilter(mt3d.featureCollection, p =>
+                    p.zoom === zoom && p.altitude === 0 && helpers.includes(stationGroups, p.group)
+                )
+            });
+        }
+
+        map.fitBounds(helpersMapbox.getBounds(coords), {
+            bearing: map.getBearing(),
+            offset: [0, -map.transform.height / 12],
+            padding: {top: 20, bottom: 20, left: 10, right: 50},
+            linear: true,
+            maxZoom: 18
+        });
+        mt3d.refreshMap();
+
+        const stationIDs = [route.trains[0].tt[0].s];
+
+        for (const train of route.trains) {
+            if (train.transfer > 0 || train === route.trains[route.trains.length - 1]) {
+                stationIDs.push(train.tt[train.tt.length - 1].s);
+            }
+        }
+
+        me.popups = stationIDs.map((id, index) => {
+            return setTimeout(() => {
+                const popup = new AnimatedPopup({
+                    className: 'popup-route',
+                    closeButton: false,
+                    closeOnClick: false
+                });
+
+                popup.setLngLat(mt3d.stationLookup[id].coord)
+                    .setHTML(index === 0 ? dict['from-station'] : index === stationIDs.length - 1 ? dict['to-station'] : `${dict['transfer']}${index}`)
+                    .addTo(map);
+
+                me.popups[index] = popup;
+            }, index / stationIDs.length * 1000 + 500);
+        });
     }
 
     hideRoute() {
