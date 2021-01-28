@@ -898,6 +898,10 @@ export default class extends mapboxgl.Evented {
                 me.markObject(me.pickObject(e.point));
             });
 
+            map.on('mouseout', () => {
+                me.markObject();
+            });
+
             map.on('click', e => {
                 const object = me.pickObject(e.point);
 
