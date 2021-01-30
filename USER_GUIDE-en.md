@@ -142,13 +142,15 @@ When you click or tap on a station, the station is selected and the map around t
 
 <img src="public/images/search-form.jpg" width="400"> <img src="public/images/search-route.jpg" width="400"> <img src="public/images/search-icon.jpg" width="49" align="top">
 
-When you click or tap the search icon button, the search window appears at the bottom of the screen to allow you to search for a route. Enter the departure and arrival station names, select the departure time, and click or tap the search button. Then, a recommended route will be highlighted on the map, and the search window will display information such as the trains to take, arrival and departure times, and transfer stations. Depending on the conditions, more than one recommended route may be displayed, and you can switch between them with the “<” and “>” buttons at the top of the search window. You can also click or tap the “Back” icon button to return to the search criteria.
+When you click or tap the search icon button, the search window appears at the bottom of the screen to allow you to search for a route. Enter the departure and arrival station names, select the departure time, and click or tap the search button. Then, a recommended route will be highlighted on the map, and the search window will display information such as the trains to take, arrival and departure times, and transfer stations. Depending on the conditions, multiple route suggestions may be displayed, and you can switch between routes by pressing the “<” and “>” buttons at the top of the search window or swiping horizontally on the window. You can also click or tap the “Back” icon button to return to the search criteria.
 
 When you enter a part of the station name, a list of candidates will be displayed, and you can select one from the list to complete your input. In Japanese, Korean, and Chinese environments, you can also search by English name. If you enter an invalid station name and press the search button, the border around the station name field will be highlighted in orange, and you will be prompted to correct the station name.
 
-You cannot select a train, airplane or station while the search window is displayed. To close the search window, click the search icon button again.
+You can also enter the departure and arrival stations by clicking or tapping on the stations on the map. When you click or tap on a station name input box in the search window, the focus will move and the border will turn light blue. Then, lick or tap a station on the map to enter the station name in the input box.
 
-**Note**: As of the version 2.6, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
+Trains, airplanes and layers will be temporarily hidden when the search window is displayed. To close the search window, click the search icon button again.
+
+**Note**: As of the version 2.7, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
 
 ## Display Modes
 
@@ -204,7 +206,7 @@ When Playback Mode is turned on, the “Edit date & time” button and the “+�
 
 <img src="public/images/layer-panel.jpg" width="490"> <img src="public/images/layer-icon.jpg" width="49" align="top">
 
-Click or tap the layer icon button to show the Layer Display Settings panel. In the Layer Display Settings panel, you can turn on/off the layer that is superimposed on the map. Precipitation layer and Fireworks layer are available. Click or tap the “x” button in the top right corner of the panel, or click or tap outside the panel to close the panel.
+Click or tap the layer icon button to show the Layer Display Settings panel. In the Layer Display Settings panel, you can turn on/off the layer that is superimposed on the map. Precipitation layer, Fireworks layer and Live Cameras layer are available. Click or tap the “x” button in the top right corner of the panel, or click or tap outside the panel to close the panel.
 
 <img src="public/images/weather.jpg" width="580">
 
@@ -213,6 +215,10 @@ Click or tap the Precipitation layer button to turn the precipitation animation 
 <img src="public/images/fireworks.jpg" width="580">
 
 Click or tap the Fireworks layer button to turn the fireworks animation on or off (the outer frame of the icon is shown in light blue when it is on). The fireworks animation will appear at a specific location on the map at a scheduled date and time.
+
+<img src="public/images/livecam.jpg" width="580">
+
+Click or tap on the Live Cameras layer button to toggle the display of the live camera buttons on and off (the outer frame of the icon is shown in light blue when it is on). Clicking or tapping on the live camera buttons on the map will zoom in on the location and show the live camera video being broadcast from the same viewpoint. The video is transmitted in real time, but there is a delay of a few tens of seconds, so the actual train tends to appear slightly later than the movement of the train on the map. Clicking on a map where there is no live camera button will deselect the live camera.
 
 ### Showing Application Information
 

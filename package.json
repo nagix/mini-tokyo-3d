@@ -1,6 +1,6 @@
 {
   "name": "mini-tokyo-3d",
-  "version": "2.7.0-SNAPSHOT",
+  "version": "2.7.0",
   "description": "A real-time 3D digital map of Tokyo's public transport system",
   "main": "dist/mini-tokyo-3d.js",
   "style": "dist/mini-tokyo-3d.css",
@@ -32,13 +32,13 @@
     "mapbox-gl-animated-popup": "^0.1.4",
     "pako": "^1.0.11",
     "suncalc": "^1.8.0",
-    "swiper": "^6.4.9",
+    "swiper": "^6.4.10",
     "three": "0.117.1"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-image": "^2.0.6",
-    "@rollup/plugin-node-resolve": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^11.1.1",
     "@rollup/plugin-replace": "^2.3.4",
     "@rollup/plugin-strip": "^2.0.0",
     "eslint": "^7.18.0",
