@@ -747,6 +747,26 @@ export default class extends mapboxgl.Evented {
 
             map.addLayer(trainLayers.og, 'building-3d');
 
+            map.addLayer({
+                id: 'sky',
+                type: 'sky',
+                paint: {
+                    'sky-opacity': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        0,
+                        0,
+                        5,
+                        0.3,
+                        8,
+                        1
+                    ],
+                    'sky-type': 'atmosphere',
+                    'sky-atmosphere-sun-intensity': 20
+                }
+            });
+
             /* For development
             map.addLayer(new MapboxLayer({
                 id: `airway-og-`,
@@ -995,6 +1015,7 @@ export default class extends mapboxgl.Evented {
 
                     if (Math.floor((now - configs.minDelay) / configs.trainRefreshInterval) !== Math.floor(me.lastTrainRefresh / configs.trainRefreshInterval)) {
                         me.refreshStyleColors();
+                        me.setSunPosition();
                         if (me.searchMode === 'none') {
                             if (me.clockMode === 'realtime') {
                                 me.loadRealtimeTrainData();
@@ -2319,6 +2340,20 @@ export default class extends mapboxgl.Evented {
             }
             map.setPaintProperty(id, key, prop);
         });
+    }
+
+    setSunPosition() {
+        const {map, clock} = this,
+            center = map.getCenter(),
+            sunPos = SunCalc.getPosition(
+                clock.getTime(),
+                center.lat,
+                center.lng
+            ),
+            sunAzimuth = 180 + (sunPos.azimuth * 180) / Math.PI,
+            sunAltitude = 90 - (sunPos.altitude * 180) / Math.PI;
+
+        map.setPaintProperty('sky', 'sky-atmosphere-sun', [sunAzimuth, sunAltitude]);
     }
 
     refreshDelayMarkers() {

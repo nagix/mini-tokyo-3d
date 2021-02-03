@@ -1,6 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 import * as THREE from 'three';
 import configs from './configs';
+import * as helpers from './helpers';
 
 const SQRT3 = Math.sqrt(3);
 
@@ -47,11 +48,12 @@ export default class {
 
     render(gl, matrix) {
         const {underground, semitransparent, map, renderer, camera, light, scene} = this,
-            {_fov, cameraToCenterDistance, _pitch, width, height} = map.transform,
+            {_fov, _camera, worldSize, fovAboveCenter, _pitch, width, height} = map.transform,
             halfFov = _fov / 2,
             angle = Math.PI / 2 - _pitch,
-            topHalfSurfaceDistance = Math.sin(halfFov) * cameraToCenterDistance / Math.sin(angle - halfFov),
-            furthestDistance = Math.cos(angle) * topHalfSurfaceDistance + cameraToCenterDistance,
+            cameraToSeaLevelDistance = _camera.position[2] * worldSize / Math.cos(_pitch),
+            topHalfSurfaceDistance = Math.sin(fovAboveCenter) * cameraToSeaLevelDistance / Math.sin(helpers.clamp(angle - fovAboveCenter, 0.01, Math.PI - 0.01)),
+            furthestDistance = Math.cos(angle) * topHalfSurfaceDistance + cameraToSeaLevelDistance,
             nearZ = height / 50,
             halfHeight = Math.tan(halfFov) * nearZ,
             halfWidth = halfHeight * width / height,
