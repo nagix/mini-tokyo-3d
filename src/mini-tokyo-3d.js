@@ -2445,7 +2445,7 @@ export default class extends mapboxgl.Evented {
 
     trackObject(object) {
         const me = this,
-            {lang} = me;
+            {lang, map} = me;
 
         if (me.searchMode !== 'none') {
             if (me.searchMode === 'edit' && me.searchPanel && object && !helpersThree.isObject3D(object)) {
@@ -2479,6 +2479,8 @@ export default class extends mapboxgl.Evented {
             me.exitPopups.forEach(popup => {
                 if (popup instanceof AnimatedPopup) {
                     popup.remove();
+                } else if (typeof popup === 'function') {
+                    map.off('moveend', popup);
                 } else {
                     clearTimeout(popup);
                 }
@@ -2515,31 +2517,34 @@ export default class extends mapboxgl.Evented {
                     const coords = [];
 
                     me.exitPopups = exits.map((id, index) => {
-                        const coord = me.poiLookup[id].coord;
+                        const {coord} = me.poiLookup[id],
+                            listener = () => {
+                                me.exitPopups[index] = setTimeout(() => {
+                                    const popup = new AnimatedPopup({
+                                        className: 'popup-station',
+                                        closeButton: false
+                                    });
 
+                                    popup.setLngLat(coord)
+                                        .setHTML(me.getLocalizedPOITitle(id))
+                                        .addTo(map)
+                                        .getElement().id = `exit-${index}`;
+
+                                    me.exitPopups[index] = popup;
+                                }, index / exits.length * 1000);
+                            };
+
+                        map.once('moveend', listener);
                         coords.push(coord);
 
-                        return setTimeout(() => {
-                            const popup = new AnimatedPopup({
-                                className: 'popup-station',
-                                closeButton: false
-                            });
-
-                            popup.setLngLat(coord)
-                                .setHTML(me.getLocalizedPOITitle(id))
-                                .addTo(me.map)
-                                .getElement().id = `exit-${index}`;
-
-                            me.exitPopups[index] = popup;
-                        }, index / exits.length * 1000 + 500);
+                        return listener;
                     });
 
                     me._setViewMode(altitude < 0 ? 'underground' : 'ground');
-                    me.map.fitBounds(helpersMapbox.getBounds(coords), {
-                        bearing: me.map.getBearing(),
-                        offset: [0, -me.map.transform.height / 12],
+                    map.fitBounds(helpersMapbox.getBounds(coords), {
+                        bearing: map.getBearing(),
+                        offset: [0, -map.transform.height / 12],
                         padding: {top: 20, bottom:20, left: 10, right: 50},
-                        linear: true,
                         maxZoom: 18
                     });
 
