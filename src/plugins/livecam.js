@@ -140,7 +140,7 @@ export default class extends Plugin {
                 }
                 mt3d.trackObject();
                 mt3d._setViewMode('ground');
-                map.easeTo({
+                map.flyTo({
                     center,
                     zoom,
                     bearing,
