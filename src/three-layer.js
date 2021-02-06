@@ -48,12 +48,14 @@ export default class {
 
     render(gl, matrix) {
         const {underground, semitransparent, map, renderer, camera, light, scene} = this,
-            {_fov, _camera, worldSize, fovAboveCenter, _pitch, width, height} = map.transform,
+            {_fov, _camera, _horizonShift, worldSize, fovAboveCenter, _pitch, width, height} = map.transform,
             halfFov = _fov / 2,
             angle = Math.PI / 2 - _pitch,
             cameraToSeaLevelDistance = _camera.position[2] * worldSize / Math.cos(_pitch),
             topHalfSurfaceDistance = Math.sin(fovAboveCenter) * cameraToSeaLevelDistance / Math.sin(helpers.clamp(angle - fovAboveCenter, 0.01, Math.PI - 0.01)),
             furthestDistance = Math.cos(angle) * topHalfSurfaceDistance + cameraToSeaLevelDistance,
+            horizonDistance = cameraToSeaLevelDistance / _horizonShift,
+            farZ = Math.min(furthestDistance * 1.01, horizonDistance),
             nearZ = height / 50,
             halfHeight = Math.tan(halfFov) * nearZ,
             halfWidth = halfHeight * width / height,
@@ -66,7 +68,7 @@ export default class {
             projectionMatrixI = new THREE.Matrix4();
 
         camera.projectionMatrix = new THREE.Matrix4().makePerspective(
-            -halfWidth, halfWidth, halfHeight, -halfHeight, nearZ, furthestDistance * 1.01);
+            -halfWidth, halfWidth, halfHeight, -halfHeight, nearZ, farZ);
         projectionMatrixI.getInverse(camera.projectionMatrix);
         camera.matrix.getInverse(projectionMatrixI.multiply(m).multiply(l));
         camera.matrix.decompose(camera.position, camera.quaternion, camera.scale);
