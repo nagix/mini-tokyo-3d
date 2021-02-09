@@ -459,6 +459,9 @@ export default class extends mapboxgl.Evented {
             pitch: me.initialPitch
         });
 
+        // Workaround for mapboxgl #10372
+        const {isHorizonVisible} = map.transform;
+
         const unit = Math.pow(2, 14 - helpers.clamp(map.getZoom(), 13, 19));
 
         me.layerZoom = helpers.clamp(Math.floor(map.getZoom()), 13, 18);
@@ -1026,6 +1029,12 @@ export default class extends mapboxgl.Evented {
                             }
                         }
                         me.lastTrainRefresh = now - configs.minDelay;
+
+                        // Workaround for mapboxgl #10372
+                        map.transform.isHorizonVisible = () => true;
+                    } else {
+                        // Workaround for mapboxgl #10372
+                        map.transform.isHorizonVisible = isHorizonVisible;
                     }
                     if (me.trackedObject) {
                         if (helpersThree.isObject3D(me.trackedObject)) {
