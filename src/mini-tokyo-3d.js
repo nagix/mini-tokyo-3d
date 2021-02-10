@@ -468,7 +468,7 @@ export default class extends mapboxgl.Evented {
         me.objectUnit = Math.max(unit * .19, .02);
         me.objectScale = unit * modelScale * 100;
         // me.carScale = Math.max(.02 / .19 / unit, 1);
-        me.aircraftScale = Math.max(.06 / .285 / unit, 1);
+        // me.aircraftScale = Math.max(.06 / .285 / unit, 1);
 
         const trainLayers = me.trainLayers = {
             ug: new ThreeLayer('trains-ug', true, true),
@@ -935,8 +935,18 @@ export default class extends mapboxgl.Evented {
                 console.log(e.lngLat);
             });
 
-            map.on('zoom', () => {
-                me.markObject();
+            map.on('zoom', e => {
+                if (!e.tracking) {
+                    me.markObject();
+
+                    if (helpersThree.isObject3D(me.trackedObject)) {
+                        const {type, coord, altitude} = me.trackedObject.userData;
+
+                        if (type === 'aircraft') {
+                            me.updateBaseZoom(coord, altitude);
+                        }
+                    }
+                }
                 /*
                 if (me.trackedObject) {
                     const {altitude} = me.trackedObject.userData;
@@ -968,7 +978,7 @@ export default class extends mapboxgl.Evented {
                 me.objectUnit = Math.max(unit * .19, .02);
                 me.objectScale = unit * modelScale * 100;
                 // me.carScale = Math.max(.02 / .19 / unit, 1);
-                me.aircraftScale = Math.max(.06 / .285 / unit, 1);
+                // me.aircraftScale = Math.max(.06 / .285 / unit, 1);
 
                 Object.keys(me.activeTrainLookup).forEach(key => {
                     const train = me.activeTrainLookup[key];
@@ -1056,6 +1066,14 @@ export default class extends mapboxgl.Evented {
                                     bearing,
                                     bearingFactor: .02
                                 });
+
+                                if (!isNaN(me.baseZoom)) {
+                                    const {baseDistance, baseZoom} = me,
+                                        {z} = mapboxgl.MercatorCoordinate.fromLngLat(center, altitude),
+                                        zoom = baseZoom - Math.log2((z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN) + baseDistance) / baseDistance);
+
+                                    map.setZoom(zoom, {tracking: true});
+                                }
                             }
                         } else {
                             me.refreshStationOutline();
@@ -1151,6 +1169,7 @@ export default class extends mapboxgl.Evented {
                     color: vehicle ? me.trainVehicleLookup[vehicle].color : railway.color
                 }));
 
+            car.userData.type = 'train';
             car.userData.object = train;
             cars.push(car);
 
@@ -1243,7 +1262,7 @@ export default class extends mapboxgl.Evented {
 
     updateFlightShape(flight, t) {
         const me = this,
-            {map, trainLayers, objectScale} = me;
+            {map, trainLayers} = me;
         let {aircraft, body, wing, vTail} = flight,
             tracked;
 
@@ -1270,6 +1289,7 @@ export default class extends mapboxgl.Evented {
                 color: tailcolor || '#FFFFFF'
             });
             aircraft = flight.aircraft = helpersThree.createGroup(body, wing, vTail);
+            aircraft.userData.type = 'aircraft';
             aircraft.userData.object = flight;
 
             // Set tracked object if the selection is specified
@@ -1288,8 +1308,11 @@ export default class extends mapboxgl.Evented {
             altitude = aircraft.userData.altitude = p.altitude,
             mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude),
             bearing = aircraft.userData.bearing = p.bearing,
-            cameraZ = trainLayers.og.camera.position.z,
-            aircraftScale = me.aircraftScale * cameraZ / (cameraZ - mCoord.z);
+            {z: cameraZ} = map.getFreeCameraOptions().position,
+            baseZoom = map.getZoom() + Math.log2(cameraZ / Math.abs(cameraZ - mCoord.z)),
+            unit = Math.pow(2, 14 - helpers.clamp(baseZoom, 13, 19)),
+            objectScale = unit * modelScale * 100,
+            aircraftScale = Math.max(.06 / .285 / unit, 1);
 
         if (tracked === aircraft) {
             me.trackObject(aircraft);
@@ -2475,6 +2498,7 @@ export default class extends mapboxgl.Evented {
                 me.removeStationOutline('stations-selected');
             }
             delete me.trackedObject;
+            me.updateBaseZoom();
             me.stopViewAnimation();
             me.updateTrackingButton(false);
             if (me.sharePanel) {
@@ -2500,7 +2524,11 @@ export default class extends mapboxgl.Evented {
             me.trackedObject = object;
 
             if (helpersThree.isObject3D(object)) {
-                const {altitude, object: train} = object.userData;
+                const {type, coord, altitude, object: train} = object.userData;
+
+                if (type === 'aircraft') {
+                    me.updateBaseZoom(coord, altitude);
+                }
 
                 me.startViewAnimation();
                 me.updateTrackingButton(true);
@@ -2565,6 +2593,23 @@ export default class extends mapboxgl.Evented {
                     me.trackedObject = undefined;
                 }
             }
+        }
+    }
+
+    updateBaseZoom(coord, altitude) {
+        const me = this,
+            {map} = me;
+
+        if (coord !== undefined && altitude !== undefined) {
+            const {z: objectZ} = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude),
+                {z: cameraZ} = map.getFreeCameraOptions().position,
+                z = cameraZ - objectZ;
+
+            me.baseDistance = z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN);
+            me.baseZoom = map.getZoom() + Math.log2(cameraZ / z);
+        } else {
+            delete me.baseDistance;
+            delete me.baseZoom;
         }
     }
 
