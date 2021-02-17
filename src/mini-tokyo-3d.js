@@ -106,14 +106,16 @@ export default class extends mapboxgl.Evented {
         me.initialSelection = options.selection;
         me.clockMode = configs.defaultClockMode;
         me.isEditingTime = false;
+        me.ecoMode = helpers.valueOrDefault(options.ecoMode, configs.defaultEcoMode);
 
         me.initialCenter = helpers.valueOrDefault(options.center, configs.originCoord);
         me.initialZoom = helpers.valueOrDefault(options.zoom, configs.defaultZoom);
         me.initialBearing = helpers.valueOrDefault(options.bearing, configs.defaultBearing);
         me.initialPitch = helpers.valueOrDefault(options.pitch, configs.defaultPitch);
-        me.frameRate = helpers.valueOrDefault(options.frameRate, configs.defaultFrameRate);
+        me.ecoFrameRate = helpers.valueOrDefault(options.ecoFrameRate, configs.defaultEcoFrameRate);
 
         me.lastDynamicUpdate = {};
+        me.lastRepaint = 0;
 
         me.container.classList.add('mini-tokyo-3d');
         insertTags(me.container);
@@ -325,7 +327,7 @@ export default class extends mapboxgl.Evented {
     setViewMode(mode) {
         const me = this;
 
-        if (me.loaded) {
+        if (me.styleLoaded) {
             me._setViewMode(mode);
         }
         return me;
@@ -437,7 +439,7 @@ export default class extends mapboxgl.Evented {
     setClockMode(mode) {
         const me = this;
 
-        if (me.loaded) {
+        if (me.styleLoaded) {
             me._setClockMode(mode);
         }
         return me;
@@ -496,15 +498,9 @@ export default class extends mapboxgl.Evented {
                 helpersThree.resetPolygonOffsetFactor(object);
                 object.renderOrder = 1;
                 setObjectOpacity(object, 0, duration);
-                animation.start({
-                    callback: () => {
-                        me.map.triggerRepaint();
-                    },
-                    complete: () => {
-                        layer.scene.remove(object);
-                    },
-                    duration
-                });
+                setTimeout(() => {
+                    layer.scene.remove(object);
+                }, duration);
             },
             pickObject(point) {
                 if (me.viewMode === 'underground') {
@@ -559,6 +555,7 @@ export default class extends mapboxgl.Evented {
             setTimeout(() => {
                 me.container.querySelector('#loader').style.display = 'none';
             }, 1000);
+            me.loaded = true;
         });
 
         map.once('styledata', () => {
@@ -876,6 +873,12 @@ export default class extends mapboxgl.Evented {
                     eventHandler() {
                         me._setClockMode(me.clockMode === 'realtime' ? 'playback' : 'realtime');
                     }
+                }, {
+                    className: 'mapboxgl-ctrl-eco',
+                    title: me.dict['enter-eco'],
+                    eventHandler() {
+                        me._setEcoMode(me.ecoMode === 'eco' ? 'normal' : 'eco');
+                    }
                 }]);
                 map.addControl(control);
             }
@@ -991,9 +994,11 @@ export default class extends mapboxgl.Evented {
                 });
             });
 
-            map.on('move', () => {
-                if (me.markedObject) {
-                    me.updatePopup();
+            map.on('render', () => {
+                if (helpersThree.isObject3D(me.markedObject)) {
+                    // Popup for a 3D object needs to be updated every time
+                    // because the adjustment for altitude is required
+                    me.updatePopup({setHTML: true});
                 }
             });
 
@@ -1046,56 +1051,26 @@ export default class extends mapboxgl.Evented {
                         // Workaround for mapboxgl #10372
                         map.transform.isHorizonVisible = isHorizonVisible;
                     }
-                    if (me.trackedObject) {
-                        if (helpersThree.isObject3D(me.trackedObject)) {
-                            const {coord: center, bearing, altitude} = me.trackedObject.userData;
 
-                            helpersThree.refreshOutline(me.trackedObject);
-
-                            /*
-                            // Keep camera off from the tracked aircraft
-                            if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
-                                map.setZoom(22 - Math.log2(altitude * .5));
-                            }
-                            */
-
-                            if (!me.viewAnimationID && !map._zooming && !map._pitching) {
-                                me._jumpTo({
-                                    center,
-                                    altitude,
-                                    bearing,
-                                    bearingFactor: .02
-                                });
-
-                                if (!isNaN(me.baseZoom)) {
-                                    const {baseDistance, baseZoom} = me,
-                                        {z} = mapboxgl.MercatorCoordinate.fromLngLat(center, altitude),
-                                        zoom = baseZoom - Math.log2((z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN) + baseDistance) / baseDistance);
-
-                                    map.setZoom(zoom, {tracking: true});
-                                }
-                            }
-                        } else {
+                    if (!helpersThree.isObject3D(me.trackedObject) && (me.ecoMode === 'normal' && me.loaded || Date.now() - me.lastRepaint >= 1000 / me.ecoFrameRate)) {
+                        if (me.trackedObject) {
                             me.refreshStationOutline();
                         }
-                    }
-                    if (helpersThree.isObject3D(me.markedObject)) {
-                        me.updatePopup({setHTML: true});
-                    }
-                    if (me.searchMode === 'none') {
                         map.triggerRepaint();
+                        me.lastRepaint = Date.now();
                     }
                 }
             });
 
-            me.loaded = true;
+            me.styleLoaded = true;
         });
 
     }
 
     _jumpTo(options) {
         const me = this,
-            {map, trackingMode, trackingBaseBearing} = me;
+            {map, trackingMode, trackingBaseBearing} = me,
+            scrollZooming = map.scrollZoom._active;
         let {center, altitude, bearing, centerFactor, bearingFactor} = options;
 
         if (trackingMode === 'helicopter') {
@@ -1118,6 +1093,11 @@ export default class extends mapboxgl.Evented {
         }
 
         map.jumpTo({center, bearing});
+
+        // Workaround for the issue of the scroll zoom during tracking
+        if (scrollZooming) {
+            map.scrollZoom._active = true;
+        }
     }
 
     updateVisibleArea() {
@@ -1239,7 +1219,7 @@ export default class extends mapboxgl.Evented {
             // Reduce the frame rate of invisible objects for performance optimization
             if (animation.isActive(train.animationID)) {
                 const point = [position.x, position.y],
-                    frameRate = helpers.pointInTrapezoid(point, me.visibleArea) ? me.frameRate : 1;
+                    frameRate = helpers.pointInTrapezoid(point, me.visibleArea) ? me.ecoMode === 'normal' && me.loaded ? 60 : me.ecoFrameRate : 1;
 
                 animation.setFrameRate(train.animationID, frameRate);
             }
@@ -1254,8 +1234,11 @@ export default class extends mapboxgl.Evented {
                 trainLayers.updateObject(car, configs.fadeDuration);
             }
 
-            if (me.markedObject === car) {
-                me.updatePopup();
+            if (me.trackedObject === car) {
+                helpersThree.refreshOutline(car);
+                if (me.markedObject === car) {
+                    me.updatePopup();
+                }
             }
         }
     }
@@ -1307,12 +1290,7 @@ export default class extends mapboxgl.Evented {
             coord = aircraft.userData.coord = p.coord,
             altitude = aircraft.userData.altitude = p.altitude,
             mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude),
-            bearing = aircraft.userData.bearing = p.bearing,
-            {z: cameraZ} = map.getFreeCameraOptions().position,
-            baseZoom = map.getZoom() + Math.log2(cameraZ / Math.abs(cameraZ - mCoord.z)),
-            unit = Math.pow(2, 14 - helpers.clamp(baseZoom, 13, 19)),
-            objectScale = unit * modelScale * 100,
-            aircraftScale = Math.max(.06 / .285 / unit, 1);
+            bearing = aircraft.userData.bearing = p.bearing;
 
         if (tracked === aircraft) {
             me.trackObject(aircraft);
@@ -1325,7 +1303,27 @@ export default class extends mapboxgl.Evented {
                 bearing,
                 bearingFactor: .02
             });
+
+            /*
+            // Keep camera off from the tracked aircraft
+            if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
+                map.setZoom(22 - Math.log2(altitude * .5));
+            }
+            */
+
+            if (!isNaN(me.baseZoom)) {
+                const {baseDistance, baseZoom} = me,
+                    zoom = baseZoom - Math.log2((mCoord.z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN) + baseDistance) / baseDistance);
+
+                map.setZoom(zoom, {tracking: true});
+            }
         }
+
+        const {z: cameraZ} = map.getFreeCameraOptions().position,
+            baseZoom = map.getZoom() + Math.log2(cameraZ / Math.abs(cameraZ - mCoord.z)),
+            unit = Math.pow(2, 14 - helpers.clamp(baseZoom, 13, 19)),
+            objectScale = unit * modelScale * 100,
+            aircraftScale = Math.max(.06 / .285 / unit, 1);
 
         position.x = mCoord.x - modelOrigin.x;
         position.y = -(mCoord.y - modelOrigin.y);
@@ -1343,13 +1341,16 @@ export default class extends mapboxgl.Evented {
         // Reduce the frame rate of invisible objects for performance optimization
         if (animation.isActive(flight.animationID)) {
             const point = [position.x, position.y],
-                frameRate = helpers.pointInTrapezoid(point, me.visibleArea) ? me.frameRate : 1;
+                frameRate = helpers.pointInTrapezoid(point, me.visibleArea) ? me.ecoMode === 'normal' && me.loaded ? 60 : me.ecoFrameRate : 1;
 
             animation.setFrameRate(flight.animationID, frameRate);
         }
 
-        if (me.markedObject === aircraft) {
-            me.updatePopup();
+        if (me.trackedObject === aircraft) {
+            helpersThree.refreshOutline(aircraft);
+            if (me.markedObject === aircraft) {
+                me.updatePopup();
+            }
         }
     }
 
@@ -1416,6 +1417,11 @@ export default class extends mapboxgl.Evented {
         } else {
             me.setTrainStandingStatus(train, true);
             train.animationID = animation.start({
+                callback: () => {
+                    if (me.trackedObject && me.trackedObject.userData && me.trackedObject.userData.object === train) {
+                        me.updateTrainShape(train);
+                    }
+                },
                 complete: () => {
                     if (final) {
                         me.stopTrain(train);
@@ -1513,6 +1519,11 @@ export default class extends mapboxgl.Evented {
                     me.updateFlightShape(flight, 0);
                     me.setFlightStandingStatus(flight, true);
                     flight.animationID = animation.start({
+                        callback: () => {
+                            if (me.trackedObject && me.trackedObject.userData && me.trackedObject.userData.object === flight) {
+                                me.updateFlightShape(flight);
+                            }
+                        },
                         complete: () => {
                             me.flightRepeat(flight);
                         },
@@ -1539,6 +1550,11 @@ export default class extends mapboxgl.Evented {
         }, () => {
             me.setFlightStandingStatus(flight, true);
             flight.animationID = animation.start({
+                callback: () => {
+                    if (me.trackedObject && me.trackedObject.userData && me.trackedObject.userData.object === flight) {
+                        me.updateFlightShape(flight);
+                    }
+                },
                 complete: () => {
                     me.stopFlight(flight);
                 },
@@ -2220,6 +2236,23 @@ export default class extends mapboxgl.Evented {
         }
     }
 
+    updateEcoButton(mode) {
+        const {container, dict} = this,
+            button = container.querySelector('.mapboxgl-ctrl-eco');
+
+        if (button) {
+            const {classList} = button;
+
+            if (mode === 'eco') {
+                button.title = dict['exit-eco'];
+                classList.add('mapboxgl-ctrl-eco-active');
+            } else {
+                button.title = dict['enter-eco'];
+                classList.remove('mapboxgl-ctrl-eco-active');
+            }
+        }
+    }
+
     refreshMap() {
         const me = this,
             {map, clock, viewMode, searchMode, styleColors, styleOpacities} = me;
@@ -2328,6 +2361,17 @@ export default class extends mapboxgl.Evented {
         if (mode === 'playback') {
             me.resetRailwayStatus();
         }
+    }
+
+    _setEcoMode(mode) {
+        const me = this;
+
+        if (me.ecoMode === mode) {
+            return;
+        }
+
+        me.updateEcoButton(mode);
+        me.ecoMode = mode;
     }
 
     onClockChange() {

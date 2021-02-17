@@ -628,6 +628,12 @@
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-playback-active .mapboxgl-ctrl-icon {
     background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/play-circle.svg', fill: #33B5E5);
 }
+.mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-eco .mapboxgl-ctrl-icon {
+    background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/battery-three-quarters.svg', fill: #333);
+}
+.mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-eco-active .mapboxgl-ctrl-icon {
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/battery-three-quarters.svg', fill: #33B5E5);
+}
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-layers .mapboxgl-ctrl-icon {
     background: no-repeat center/19px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/layer-group.svg', fill: #333);
 }

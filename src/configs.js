@@ -81,8 +81,8 @@ const configs = {
     // Default pitch in degrees
     defaultPitch: 60,
 
-    // Default frame rate for train and aircraft animations
-    defaultFrameRate: 60,
+    // Default frame rate for train and aircraft animations in the Eco mode
+    defaultEcoFrameRate: 1,
 
     // Default view mode
     defaultViewMode: 'ground',
@@ -92,6 +92,9 @@ const configs = {
 
     // Default clock mode
     defaultClockMode: 'realtime',
+
+    // Default clock mode
+    defaultEcoMode: 'normal',
 
     // API URL
     apiUrl: {
