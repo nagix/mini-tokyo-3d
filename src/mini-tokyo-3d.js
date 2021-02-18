@@ -1713,7 +1713,7 @@ export default class extends mapboxgl.Evented {
             '<div><strong>',
             names ? names.map(name => name[lang] || name.en).join(dict['and']) : me.getLocalizedRailwayTitle(railwayID),
             '</strong>',
-            `<br> ${me.getLocalizedTrainTypeTitle(train.y)} `,
+            `<br> <span class="train-type-label">${me.getLocalizedTrainTypeTitle(train.y)}</span> `,
             destination ?
                 dict['for'].replace('$1', me.getLocalizedStationTitle(destination)) :
                 me.getLocalizedRailDirectionTitle(train.d),

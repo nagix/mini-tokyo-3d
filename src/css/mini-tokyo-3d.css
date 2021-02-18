@@ -284,10 +284,10 @@
     margin: 10px 0;
     padding: 0 10px;
     line-height: 30px;
+    overflow: hidden;
 }
 .mini-tokyo-3d #panel-title {
     font-weight: bold;
-    overflow: hidden;
 }
 .mini-tokyo-3d #panel-body {
     height: calc(100% - 50px);
@@ -714,6 +714,12 @@
 .mini-tokyo-3d .line-strip-long {
     width: 10px;
     height: 16px;
+}
+.mini-tokyo-3d .train-type-label {
+    padding: 2px 2px 1px 2px;
+    border-radius: 3px;
+    color: #333;
+    background-color: #fff;
 }
 .mini-tokyo-3d .thumbnail-image-container {
     width: 128px;

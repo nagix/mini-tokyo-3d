@@ -64,7 +64,7 @@ export default class extends Panel {
                 '<div>',
                 names ? names.map(name => name[lang] || name.en).join(dict['and']) : mt3d.getLocalizedRailwayTitle(railwayID),
                 '<br><span class="desc-normal-style">',
-                `${mt3d.getLocalizedTrainTypeTitle(train.y)} `,
+                `<span class="train-type-label">${mt3d.getLocalizedTrainTypeTitle(train.y)}</span> `,
                 destination ?
                     dict['for'].replace('$1', mt3d.getLocalizedStationTitle(destination)) :
                     mt3d.getLocalizedRailDirectionTitle(train.d),
