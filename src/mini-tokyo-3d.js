@@ -445,6 +445,26 @@ export default class extends mapboxgl.Evented {
         return me;
     }
 
+    /**
+     * Returns the current eco mode.
+     * @returns {string} Current eco mode: 'normal' or 'eco'
+     */
+    getEcoMode() {
+        return this.ecoMode;
+    }
+
+    /**
+     * Sets the eco mode.
+     * @param {string} mode - Eco mode: 'normal' or 'eco'
+     * @returns {MiniTokyo3D} this
+     */
+    setEcoMode(mode) {
+        const me = this;
+
+        me._setEcoMode(mode);
+        return me;
+    }
+
     initialize() {
         const me = this;
 
@@ -2328,6 +2348,7 @@ export default class extends mapboxgl.Evented {
         trainLayers.og.setSemitransparent(mode === 'underground');
         me.viewMode = mode;
         me.refreshMap();
+        me.fire({type: 'viewmode', mode});
     }
 
     _setTrackingMode(mode) {
@@ -2342,6 +2363,7 @@ export default class extends mapboxgl.Evented {
         if (helpersThree.isObject3D(me.trackedObject)) {
             me.startViewAnimation();
         }
+        me.fire({type: 'trackingmode', mode});
     }
 
     _setClockMode(mode) {
@@ -2361,6 +2383,7 @@ export default class extends mapboxgl.Evented {
         if (mode === 'playback') {
             me.resetRailwayStatus();
         }
+        me.fire({type: 'clockmode', mode});
     }
 
     _setEcoMode(mode) {
@@ -2372,6 +2395,7 @@ export default class extends mapboxgl.Evented {
 
         me.updateEcoButton(mode);
         me.ecoMode = mode;
+        me.fire({type: 'ecomode', mode});
     }
 
     onClockChange() {
@@ -2537,7 +2561,10 @@ export default class extends mapboxgl.Evented {
 
         if (me.trackedObject) {
             if (helpersThree.isObject3D(me.trackedObject)) {
+                const prevObject = me.trackedObject.userData.object;
+
                 helpersThree.removeOutline(me.trackedObject, 'outline-tracked');
+                me.fire({type: 'deselection', deselection: prevObject.t || prevObject.id});
             } else {
                 me.removeStationOutline('stations-selected');
             }
@@ -2588,6 +2615,7 @@ export default class extends mapboxgl.Evented {
                 }
 
                 helpersThree.addOutline(object, 'outline-tracked');
+                me.fire({type: 'selection', selection: train.t || train.id});
             } else {
                 const altitude = helpersGeojson.getAltitude(object),
                     ids = helpersGeojson.getIds(object),
