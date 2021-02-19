@@ -1333,9 +1333,15 @@ export default class extends mapboxgl.Evented {
 
             if (!isNaN(me.baseZoom)) {
                 const {baseDistance, baseZoom} = me,
-                    zoom = baseZoom - Math.log2((mCoord.z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN) + baseDistance) / baseDistance);
+                    zoom = baseZoom - Math.log2((mCoord.z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN) + baseDistance) / baseDistance),
+                    scrollZooming = map.scrollZoom._active;
 
                 map.setZoom(zoom, {tracking: true});
+
+                // Workaround for the issue of the scroll zoom during tracking
+                if (scrollZooming) {
+                    map.scrollZoom._active = true;
+                }
             }
         }
 
