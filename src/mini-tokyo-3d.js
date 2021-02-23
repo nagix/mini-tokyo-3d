@@ -36,6 +36,8 @@ const OPERATORS_FOR_DYNAMIC_TRAIN_DATA = [
 const RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
     RAILWAY_MITA = 'Toei.Mita';
 
+const AIRLINES_FOR_ANA_CODE_SHARE = ['ADO', 'SFJ', 'SNJ'];
+
 const DEGREE_TO_RADIAN = Math.PI / 180;
 
 const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord),
@@ -2011,6 +2013,7 @@ export default class extends mapboxgl.Evented {
         loader.loadDynamicFlightData(me.secrets).then(({atisData, flightData}) => {
             const {landing, departure} = atisData,
                 pattern = [landing.join('/'), departure.join('/')].join(' '),
+                codeShareFlights = {},
                 flightQueue = {};
             let arrRoutes = {},
                 depRoutes = {},
@@ -2075,15 +2078,37 @@ export default class extends mapboxgl.Evented {
                 }
             }
 
-            flightData.forEach(flightRef => {
+            // Create code share flight lookup
+            for (const flightRef of flightData) {
+                if (helpers.includes(AIRLINES_FOR_ANA_CODE_SHARE, flightRef.a)) {
+                    const {dp, ds, sdt, or, ar, sat} = flightRef,
+                        key = `${dp || or}.${ds || ar}.${sdt || sat}`;
+
+                    codeShareFlights[key] = flightRef;
+                }
+            }
+
+            for (const flightRef of flightData) {
                 const {id} = flightRef;
                 let flight = me.flightLookup[id],
                     status = flightRef.s,
                     {maxFlightSpeed: maxSpeed, flightAcceleration: acceleration} = configs;
 
+                // Check code share flight
+                if (id.match(/NH\d{4}$/)) {
+                    const {dp, ds, sdt, or, ar, sat} = flightRef,
+                        key = `${dp || or}.${ds || ar}.${sdt || sat}`,
+                        codeShareFlight = codeShareFlights[key];
+
+                    if (codeShareFlight) {
+                        codeShareFlight.n.push(...flightRef.n);
+                        continue;
+                    }
+                }
+
                 if (!flight) {
                     if (status === 'Cancelled') {
-                        return;
+                        continue;
                     }
                     const airport = me.airportLookup[flightRef.ds || flightRef.or],
                         direction = airport ? airport.direction : 'S',
@@ -2106,7 +2131,7 @@ export default class extends mapboxgl.Evented {
                             feature
                         };
                     } else {
-                        return;
+                        continue;
                     }
                 }
                 Object.assign(flight, {
@@ -2164,14 +2189,14 @@ export default class extends mapboxgl.Evented {
                 queue.push(flight);
 
                 me.lastDynamicUpdate[flightRef.o] = flightRef.date;
-            });
+            }
 
-            Object.keys(flightQueue).forEach(key => {
+            for (const key of Object.keys(flightQueue)) {
                 const queue = flightQueue[key];
                 let latest = 0;
 
                 queue.sort((a, b) => a.base - b.base);
-                queue.forEach(flight => {
+                for (const flight of queue) {
                     const delay = Math.max(flight.base, latest + configs.minFlightInterval) - flight.base;
 
                     if (delay) {
@@ -2181,8 +2206,8 @@ export default class extends mapboxgl.Evented {
                         flight.end += delay;
                     }
                     latest = flight.base;
-                });
-            });
+                }
+            }
 
             me.refreshFlights();
         }).catch(error => {
