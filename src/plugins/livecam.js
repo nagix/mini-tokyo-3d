@@ -87,20 +87,27 @@ export default class extends Plugin {
         me._clickEventListener = () => {
             me._updatePanel();
         };
+        me._clockModeEventListener = e => {
+            me.setVisibility(e.mode === 'realtime');
+        };
     }
 
     onEnabled() {
-        const me = this;
+        const me = this,
+            mt3d = me._mt3d;
 
-        me._mt3d.on('click', me._clickEventListener);
+        mt3d.on('click', me._clickEventListener);
+        mt3d.on('clockmode', me._clockModeEventListener);
 
         helpers.loadJSON(LIVECAM_URL).then(data => {
             me._addMarkers(data);
+            me.setVisibility(mt3d.getClockMode() === 'realtime');
         });
     }
 
     onDisabled() {
-        const me = this;
+        const me = this,
+            mt3d = me._mt3d;
 
         me._updatePanel();
         for (const marker of me.markers) {
@@ -108,7 +115,8 @@ export default class extends Plugin {
         }
         me.markers = [];
 
-        me._mt3d.map.off('click', me._clickEventListener);
+        mt3d.off('clockmode', me._clockModeEventListener);
+        mt3d.off('click', me._clickEventListener);
     }
 
     setVisibility(visible) {
