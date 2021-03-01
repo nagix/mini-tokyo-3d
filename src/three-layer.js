@@ -69,8 +69,8 @@ export default class {
 
         camera.projectionMatrix = new THREE.Matrix4().makePerspective(
             -halfWidth, halfWidth, halfHeight, -halfHeight, nearZ, farZ);
-        projectionMatrixI.getInverse(camera.projectionMatrix);
-        camera.matrix.getInverse(projectionMatrixI.multiply(m).multiply(l));
+        projectionMatrixI.copy(camera.projectionMatrix).invert();
+        camera.matrix.copy(projectionMatrixI.multiply(m).multiply(l)).invert();
         camera.matrix.decompose(camera.position, camera.quaternion, camera.scale);
 
         if (underground && !semitransparent) {
@@ -82,7 +82,7 @@ export default class {
         const rad = THREE.MathUtils.degToRad(map.getBearing() + 30);
         light.position.set(-Math.sin(rad), -Math.cos(rad), SQRT3).normalize();
 
-        renderer.state.reset();
+        renderer.resetState();
         renderer.render(scene, camera);
     }
 
