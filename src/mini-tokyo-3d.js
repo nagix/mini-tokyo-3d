@@ -1426,7 +1426,7 @@ export default class extends mapboxgl.Evented {
             final = !me.setSectionData(train, undefined, !me.realtimeTrainLookup[train.t]);
         }
 
-        if (!final) {
+        if (!final && train.arrivalStation) {
             me.updateTrainProps(train);
             me.updateTrainShape(train, 0);
         }
@@ -1494,24 +1494,45 @@ export default class extends mapboxgl.Evented {
             }
 
             if (!me.setSectionData(train, train.timetableIndex + 1)) {
-                const markedObjectIndex = train.cars.indexOf(me.markedObject),
-                    trackedObjectIndex = train.cars.indexOf(me.trackedObject),
-                    {nextTrains} = train;
+                const {nextTrains} = train;
 
                 if (nextTrains) {
-                    me.stopTrain(train, true);
-                    train = nextTrains[0];
-                    if (!me.activeTrainLookup[train.t]) {
-                        me.trainStart(train, 0);
+                    let needToStand = false;
+
+                    for (const previousTrain of nextTrains[0].previousTrains) {
+                        if (previousTrain.arrivalStation) {
+                            needToStand = true;
+                        }
                     }
-                    if (train.cars) {
-                        me.updateTrainShape(train, 0);
-                        if (markedObjectIndex !== -1) {
-                            me.markObject(train.cars[markedObjectIndex]);
+                    if (needToStand) {
+                        me.trainStand(train);
+                    } else {
+                        let markedObjectIndex = -1,
+                            trackedObjectIndex = -1;
+
+                        for (const previousTrain of nextTrains[0].previousTrains) {
+                            if (markedObjectIndex === -1 && previousTrain.cars) {
+                                markedObjectIndex = previousTrain.cars.indexOf(me.markedObject);
+                            }
+                            if (trackedObjectIndex === -1 && previousTrain.cars) {
+                                trackedObjectIndex = previousTrain.cars.indexOf(me.trackedObject);
+                            }
+                            me.stopTrain(previousTrain);
                         }
-                        if (trackedObjectIndex !== -1) {
-                            me.trackObject(train.cars[trackedObjectIndex]);
-                        }
+                        nextTrains.forEach((train, index) => {
+                            if (!me.activeTrainLookup[train.t]) {
+                                me.trainStart(train, 0);
+                            }
+                            if (index === 0 && train.cars) {
+                                me.updateTrainShape(train, 0);
+                                if (markedObjectIndex !== -1) {
+                                    me.markObject(train.cars[markedObjectIndex]);
+                                }
+                                if (trackedObjectIndex !== -1) {
+                                    me.trackObject(train.cars[trackedObjectIndex]);
+                                }
+                            }
+                        });
                     }
                     return;
                 }
@@ -1801,7 +1822,9 @@ export default class extends mapboxgl.Evented {
         const me = this;
 
         function check(curr, prop) {
-            if (me.activeTrainLookup[curr.t]) {
+            const activeTrain = me.activeTrainLookup[curr.t];
+
+            if (activeTrain && curr.id === activeTrain.id) {
                 return true;
             }
 
