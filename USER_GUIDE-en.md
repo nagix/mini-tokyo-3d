@@ -84,7 +84,7 @@ A box zoom can be used by dragging the mouse while holding down the Shift key on
 
 ### Rotation and Tilting
 
-<img src="public/images/rotate-tilt.jpg" width="244"> <img src="public/images/compass-icon.jpg" width="50" align="top">
+<img src="public/images/rotate-tilt.jpg" width="244"> <img src="public/images/compass-icon.jpg" width="49" align="top">
 
 The compass icon represents the orientation of the map. If you press the compass icon button and drag the mouse or your finger to the left or right, you can rotate the map. You can also change the rotation and tilt of the map by dragging with the right mouse button, or by dragging with the left mouse button while holding down the Ctrl key on the keyboard. You can drag two fingers up and down to change the tilt of the map.
 
@@ -150,7 +150,7 @@ You can also enter the departure and arrival stations by clicking or tapping on 
 
 Trains, airplanes and layers will be temporarily hidden when the search window is displayed. To close the search window, click the search icon button again.
 
-**Note**: As of the version 2.7, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
+**Note**: As of the version 2.8, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
 
 ## Display Modes
 
@@ -200,6 +200,16 @@ When Playback Mode is turned on, the “Edit date & time” button and the “+�
 
 <img src="public/images/clock-playback.jpg" width="141"> <img src="public/images/clock-edit.jpg" width="292" align="top">
 
+### Eco Mode
+
+Click or tap the battery icon button to turn on or off the Eco Mode (the icon is in light blue when it is on).
+
+When Eco Mode is on, the display interval for trains and airplanes will be increased to reduce power consumption and device heating. This is suitable for use with mobile devices that run on battery power.
+
+When Eco Mode is off, trains and airplanes are animated smoothly at 60 frames per second. Suitable for use on a PC or display device connected to a power source.
+
+<img src="public/images/battery-icon.jpg" width="49" align="top">
+
 ## Configuration
 
 ### Layer Display Settings
@@ -243,10 +253,10 @@ The source of the public transportation data in this application is the Open Dat
 
 This application has been tested with the following browsers. Chrome is recommended. Internet Explorer is not supported.
 
-- Chrome 88 (Mac OS, Windows, iOS, Android)
-- FireFox 85 (Mac OS, Windows, iOS)
+- Chrome 89 (Mac OS, Windows, iOS, Android)
+- FireFox 86 (Mac OS, Windows, iOS)
 - Safari 14 (Mac OS, iOS)
-- Edge 88 (Mac OS, Windows)
+- Edge 89 (Mac OS, Windows)
 
 ## Development Information
 

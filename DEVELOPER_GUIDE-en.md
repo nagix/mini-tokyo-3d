@@ -97,7 +97,7 @@ Using Mini Tokyo 3D API in JavaScript, you can customize Mini Tokyo 3D in a vari
 
 Class/Object | Details
 :--|:--
-[`MiniTokyo3D`](#minitokyo3d) | **Parameters**<br>[`options`](#options-object)<br>**Instance Members**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getClockMode`](#getclockmode) [`getPitch`](#getpitch) [`getSelection`](#getselection) [`getTrackingMode`](#gettrackingmode) [`getViewMode`](#getviewmode) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setClockMode`](#setclockmode) [`setPitch`](#setpitchpitch) [`setSelection`](#setselection) [`setTrackingMode`](#settrackingmode) [`setViewMode`](#setviewmode) [`setZoom`](#setzoomzoom)<br>**Events**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
+[`MiniTokyo3D`](#minitokyo3d) | **Parameters**<br>[`options`](#options-object)<br>**Instance Members**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getClockMode`](#getclockmode) [`getEcoMode`](#getecomode) [`getPitch`](#getpitch) [`getSelection`](#getselection) [`getTrackingMode`](#gettrackingmode) [`getViewMode`](#getviewmode) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setClockMode`](#setclockmode) [`setEcoMode`](#setecomode) [`setPitch`](#setpitchpitch) [`setSelection`](#setselection) [`setTrackingMode`](#settrackingmode) [`setViewMode`](#setviewmode) [`setZoom`](#setzoomzoom)<br>**Events**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`clockmode`](#clockmode) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`deselection`](#deselection) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`ecomode`](#ecomode) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`selection`](#selection) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`trackingmode`](#trackingmode) [`viewmode`](#viewmode) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
 [`Secrets`](#secrets) |
 
 ### MiniTokyo3D
@@ -114,22 +114,23 @@ new MiniTokyo3D(options: Object)
 
 Name | Description
 :-- | :--
-**`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | The `id` of the HTML element in which Mini Tokyo 3D will render the map
-**`options.secrets`**<br>[`Secrets`](#secrets) | An object to store the access tokens used to retrieve data
+**`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | The `id` of the HTML element in which Mini Tokyo 3D will render the map.
+**`options.secrets`**<br>[`Secrets`](#secrets) | An object to store the access tokens used to retrieve data.
 **`options.lang`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the language. If not specified, the browser's default language is used. Currently `'ja'`, `'en'`, `'ko'`, `'zh-Hans'`, `'zh-Hant'`, `'th'` and `'ne'` are supported. If an unsupported language is specified, then 'en' is used.
 **`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D data URL. If not specified, `'https://minitokyo3d.com/data'` will be used.
-**`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the date and time display will be added to the map
-**`options.searchControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the search button will be added to the map
-**`options.navigationControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the navigation buttons will be added to the map
-**`options.fullscreenControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the fullscreen button will be added to the map
-**`options.modeControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the mode switch buttons will be added to the map
-**`options.configControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the configuration buttons will be added to the map
+**`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the date and time display will be added to the map.
+**`options.searchControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the search button will be added to the map.
+**`options.navigationControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the navigation buttons will be added to the map.
+**`options.fullscreenControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the fullscreen button will be added to the map.
+**`options.modeControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the mode switch buttons will be added to the map.
+**`options.configControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the configuration buttons will be added to the map.
 **`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'helicopter'` | The initial tracking mode. `'helicopter'` and `'heading'` are supported.
+**`options.ecoMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'normal'` | The initial eco mode. `'normal'` and `'eco'` are supported.
 **`options.center`**<br>[`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike)<br>default: `[139.7670, 35.6814]` | The initial geographical center point of the map. If not specified, it will default to around Tokyo station (`[139.7670, 35.6814]`). Note: Mini Tokyo 3D uses longitude, latitude coordinate order to match GeoJSON.
 **`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `14` | The initial zoom level of the map. If not specified, it will default to `14`.
 **`options.bearing`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `0` | The initial bearing (rotation) of the map, measured in degrees counter-clockwise from north. If not specified, it will default to the true north (`0`).
-**`options.pitch`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `60` | The initial pitch (tilt) of the map, measured in degrees away from the plane of the screen (0-60). If not specified, it will default to `60`.
-**`options.frameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `60` | Frame rate for train and airplane animations (frames per second). Specify on a scale of 1 to 60. Lower values result in less smoother animations and lower CPU resource usage, thus reducing battery consumption on mobile devices. If not specified, it will default to `60`.
+**`options.pitch`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `60` | The initial pitch (tilt) of the map, measured in degrees away from the plane of the screen (0-85). If not specified, it will default to `60`.
+**`options.ecoFrameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1` | Frame rate for train and airplane animations (frames per second) when Eco Mode is on. Specify on a scale of 1 to 60. Lower values result in less smoother animations and lower CPU resource usage, thus reducing battery consumption on mobile devices. If not specified, it will default to `1`.
 **`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | ID of the train or flight to be tracked. The train ID is a string in the form of `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. The fright ID is a string in the form of `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` or `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. The `'odpt.*:'` part can be omitted. For details, see the [Open Data Challenge for Public Transportation in Tokyo: API Specification](https://developer-tokyochallenge.odpt.org/en/documents).
 
 #### Instance Members
@@ -201,6 +202,16 @@ Returns the current clock mode.
 ###### Returns
 
 [`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): A string representing the current clock mode. Either `'realtime'` or `'playback'`.
+
+---
+
+##### **`getEcoMode()`**
+
+Returns the current eco mode.
+
+###### Returns
+
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): A string representing the current eco mode. Either `'normal'` or `'eco'`.
 
 ---
 
@@ -360,13 +371,27 @@ Sets the clock mode. In the real-time clock mode (`'realtime'`), trains and airp
 
 ---
 
+##### **`setEcoMode(mode)`**
+
+Sets the eco mode. In the normal mode (`'normal'`), the frame rate for train and airplane animations will be set to 60. In the eco mode (`'eco'`), the frame rate will be set to the [`MiniTokyo3D`](#minitokyo3d) constructor option `ecoFrameRate`.
+
+###### Parameters
+
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) A string representing the eco mode. Either `'normal'` or `'eco'`.
+
+###### Returns
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
 ##### **`setPitch(pitch)`**
 
 Sets the map's pitch (tilt). Equivalent to `jumpTo({pitch: pitch})`.
 
 ###### Parameters
 
-**`pitch`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) The pitch to set, measured in degrees away from the plane of the screen (0-60).
+**`pitch`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) The pitch to set, measured in degrees away from the plane of the screen (0-85).
 
 ###### Returns
 
@@ -470,6 +495,16 @@ Fired when a pointing device (usually a mouse) is pressed and released at the sa
 
 ---
 
+##### **`clockmode`**
+
+Fired when the clock mode is changed.
+
+###### Properties
+
+**`data`** (`{mode: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+
+---
+
 ##### **`contextmenu`**
 
 Fired when the right button of the mouse is clicked or the context menu key is pressed within the map.
@@ -487,6 +522,16 @@ Fired when a pointing device (usually a mouse) is pressed and released twice at 
 ###### Properties
 
 **`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`deselection`**
+
+Fired when a train or airplane tracking is canceled.
+
+###### Properties
+
+**`data`** (`{deselection: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
 
 ---
 
@@ -520,9 +565,19 @@ Fired when a "drag to pan" interaction starts. See [`DragPanHandler`](https://do
 
 ---
 
+##### **`ecomode`**
+
+Fired when the eco mode is changed.
+
+###### Properties
+
+**`data`** (`{mode: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+
+---
+
 ##### **`error`**
 
-Fired when an error occurs. This is Mini Tokyo 3D's primary error reporting mechanism. We use an event instead of throw to better accommodate asynchronous operations. If no listeners are bound to the error event, the error will be printed to the console.
+Fired when an error occurs. This is Mini Tokyo 3D's primary error reporting mechanism. We use an event instead of `throw` to better accommodate asynchronous operations. If no listeners are bound to the `error` event, the error will be printed to the console.
 
 ###### Properties
 
@@ -580,11 +635,19 @@ Fired when a pointing device (usually a mouse) is released within the map.
 
 Fired repeatedly during an animated transition from one view to another, as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
 
+###### Properties
+
+**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+
 ---
 
 ##### **`moveend`**
 
 Fired just after the map completes a transition from one view to another, as the result of either user interaction or methods such as [`MiniTokyo3D#jumpTo`](#jumptooptions).
+
+###### Properties
+
+**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
 
 ---
 
@@ -592,11 +655,19 @@ Fired just after the map completes a transition from one view to another, as the
 
 Fired just before the map begins a transition from one view to another, as the result of either user interaction or methods such as [`MiniTokyo3D#jumpTo`](#jumptooptions).
 
+###### Properties
+
+**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+
 ---
 
 ##### **`pitch`**
 
 Fired repeatedly during the map's pitch (tilt) animation between one state and another as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+
+###### Properties
+
+**`data`** (`MapEventData`)
 
 ---
 
@@ -604,11 +675,19 @@ Fired repeatedly during the map's pitch (tilt) animation between one state and a
 
 Fired immediately after the map's pitch (tilt) finishes changing as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
 
+###### Properties
+
+**`data`** (`MapEventData`)
+
 ---
 
 ##### **`pitchstart`**
 
 Fired whenever the map's pitch (tilt) begins a change as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+
+###### Properties
+
+**`data`** (`MapEventData`)
 
 ---
 
@@ -622,17 +701,39 @@ Fired immediately after the map has been resized.
 
 Fired repeatedly during a "drag to rotate" interaction. See [`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
 
+###### Properties
+
+**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+
 ---
 
 ##### **`rotateend`**
 
 Fired when a "drag to rotate" interaction ends. See [`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
 
+###### Properties
+
+**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+
 ---
 
 ##### **`rotatestart`**
 
 Fired when a "drag to rotate" interaction starts. See [`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
+
+###### Properties
+
+**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+
+---
+
+##### **`selection`**
+
+Fired when a train or airplane tracking is initiated.
+
+###### Properties
+
+**`data`** (`{selection: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
 
 ---
 
@@ -676,6 +777,26 @@ Fired when a [`touchstart`](https://developer.mozilla.org/docs/Web/Events/touchs
 
 ---
 
+##### **`trackingmode`**
+
+Fired when the tracking mode is changed.
+
+###### Properties
+
+**`data`** (`{mode: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+
+---
+
+##### **`viewmode`**
+
+Fired when the view mode is changed.
+
+###### Properties
+
+**`data`** (`{mode: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+
+---
+
 ##### **`wheel`**
 
 Fired when a [`wheel`](https://developer.mozilla.org/docs/Web/Events/wheel) event occurs within the map.
@@ -690,17 +811,29 @@ Fired when a [`wheel`](https://developer.mozilla.org/docs/Web/Events/wheel) even
 
 Fired repeatedly during an animated transition from one zoom level to another, as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
 
+###### Properties
+
+**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+
 ---
 
 ##### **`zoomend`**
 
 Fired just after the map completes a transition from one zoom level to another, as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
 
+###### Properties
+
+**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+
 ---
 
 ##### **`zoomstart`**
 
 Fired just before the map begins a transition from one zoom level to another, as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+
+###### Properties
+
+**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
 
 ### Secrets
 

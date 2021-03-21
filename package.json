@@ -1,6 +1,6 @@
 {
   "name": "mini-tokyo-3d",
-  "version": "2.8.0-SNAPSHOT",
+  "version": "2.8.0",
   "description": "A real-time 3D digital map of Tokyo's public transport system",
   "main": "dist/mini-tokyo-3d.js",
   "style": "dist/mini-tokyo-3d.css",
@@ -50,7 +50,7 @@
     "postcss": "^8.2.8",
     "postcss-import": "^14.0.0",
     "postcss-inline-svg": "^5.0.0",
-    "rollup": "^2.41.4",
+    "rollup": "^2.42.1",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2"
   },

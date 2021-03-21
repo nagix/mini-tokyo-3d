@@ -97,7 +97,7 @@ JavaScript で Mini Tokyo 3D API を使うことで、様々なカスタマイ�
 
 クラス／オブジェクト | 詳細
 :--|:--
-[`MiniTokyo3D`](#minitokyo3d) | **パラメータ**<br>[`options`](#options-object)<br>**インスタンスメンバ**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getClockMode`](#getclockmode) [`getPitch`](#getpitch) [`getSelection`](#getselection) [`getTrackingMode`](#gettrackingmode) [`getViewMode`](#getviewmode) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setClockMode`](#setclockmode) [`setPitch`](#setpitchpitch) [`setSelection`](#setselection) [`setTrackingMode`](#settrackingmode) [`setViewMode`](#setviewmode) [`setZoom`](#setzoomzoom)<br>**イベント**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
+[`MiniTokyo3D`](#minitokyo3d) | **パラメータ**<br>[`options`](#options-object)<br>**インスタンスメンバ**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getClockMode`](#getclockmode) [`getEcoMode`](#getecomode) [`getPitch`](#getpitch) [`getSelection`](#getselection) [`getTrackingMode`](#gettrackingmode) [`getViewMode`](#getviewmode) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setClockMode`](#setclockmode) [`setEcoMode`](#setecomode) [`setPitch`](#setpitchpitch) [`setSelection`](#setselection) [`setTrackingMode`](#settrackingmode) [`setViewMode`](#setviewmode) [`setZoom`](#setzoomzoom)<br>**イベント**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`clockmode`](#clockmode) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`deselection`](#deselection) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`ecomode`](#ecomode) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`selection`](#selection) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`trackingmode`](#trackingmode) [`viewmode`](#viewmode) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
 [`Secrets`](#secrets) |
 
 ### MiniTokyo3D
@@ -125,11 +125,12 @@ new MiniTokyo3D(options: Object)
 **`options.modeControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、表示モード切り替えボタンをマップに追加する
 **`options.configControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、設定ボタンをマップに追加する
 **`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>デフォルト: `'helicopter'` | 初期の追跡モードを指定する。`'helicopter'` または `'heading'` がサポートされている
+**`options.ecoMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>デフォルト: `'normal'` | 初期のエコモードを指定する。`'normal'` または `'eco'` がサポートされている
 **`options.center`**<br>[`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike)<br>デフォルト: `[139.7670, 35.6814]` | 初期のマップ中心点の座標。未指定の場合は、東京駅付近（`[139.7670, 35.6814]`）に設定される。注: Mini Tokyo 3D では、GeoJSON と同様に経度、緯度の順で座標を指定する
 **`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `14` | 初期のマップのズームレベル。未指定の場合は、`14` に設定される
 **`options.bearing`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `0` | 初期のマップの方角。真北から反時計回りの角度で指定する。未指定の場合は、真北（`0`）に設定される
-**`options.pitch`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `60` | 初期のマップの傾き。画面に対する地表面の角度（0〜60）で指定する。未指定の場合は、`60` に設定される
-**`options.frameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `60` | 列車や旅客機のアニメーションのフレームレート（1秒あたりのフレーム数）。1〜60 の間で指定する。数値を小さくすると、アニメーションの滑らかさが減少する一方で CPU リソースの使用も下がるため、モバイルデバイスでのバッテリー消費を抑えることができる。未指定の場合は、`60` に設定される
+**`options.pitch`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `60` | 初期のマップの傾き。画面に対する地表面の角度（0〜85）で指定する。未指定の場合は、`60` に設定される
+**`options.ecoFrameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1` | エコモードがオンの場合の、列車や旅客機のアニメーションのフレームレート（1秒あたりのフレーム数）。1〜60 の間で指定する。数値を小さくすると、アニメーションの滑らかさが減少する一方で CPU リソースの使用も下がるため、モバイルデバイスでのバッテリー消費を抑えることができる。未指定の場合は、`1` に設定される
 **`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | 追跡する列車またはフライトの ID。列車 ID は`'odpt.Train:<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'odpt.FlightInformationArrival:<事業者ID>.<空港ID>.<フライト番号>'`または`'odpt.FlightInformationDeparture:<事業者ID>.<空港ID>.<フライト番号>'`の形式で表される文字列。`'odpt.*:'`の部分は省略可。詳細は[東京公共交通オープンデータチャレンジ API 仕様](https://developer-tokyochallenge.odpt.org/documents)を参照のこと
 
 #### インスタンスメンバ
@@ -204,13 +205,23 @@ center、zoom、bearing および pitch の任意の組み合わせを変更し�
 
 ---
 
+##### **`getEcoMode()`**
+
+現在のエコモードを返します。
+
+###### 返り値
+
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): 現在のエコモードを表す文字列。`'normal'` または `'eco'` のどちらか
+
+---
+
 ##### **`getPitch()`**
 
 現在のマップの傾きを返します。
 
 ###### 返り値
 
-[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): 現在のマップの傾き。画面に対する地表面の角度（0〜60）で表される
+[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): 現在のマップの傾き。画面に対する地表面の角度で表される
 
 ---
 
@@ -360,13 +371,27 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ---
 
+##### **`setEcoMode(mode)`**
+
+エコモードを設定します。ノーマルモード（`'normal'`）では、列車や旅客機のアニメーションのフレームレートは60に設定されます。エコモード（`'eco'`）では、フレームレートは [`MiniTokyo3D`](#minitokyo3d) のコンストラクタオプション `ecoFrameRate` で指定された値に設定されます。
+
+###### パラメータ
+
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) エコモードを表す文字列。`'normal'` または `'eco'` のどちらか
+
+###### 返り値
+
+[`MiniTokyo3D`](#minitokyo3d): `this`
+
+---
+
 ##### **`setPitch(pitch)`**
 
 マップの傾きを設定します。`jumpTo({pitch: pitch})` と同じです。
 
 ###### パラメータ
 
-**`pitch`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) 設定する傾き。画面に対する地表面の角度（0〜60）で指定する
+**`pitch`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) 設定する傾き。画面に対する地表面の角度（0〜85）で指定する
 
 ###### 返り値
 
@@ -470,6 +495,16 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ---
 
+##### **`clockmode`**
+
+クロックモードが変更されたときに発生します。
+
+###### プロパティ
+
+**`data`** (`{mode: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+
+---
+
 ##### **`contextmenu`**
 
 マウスの右ボタンがクリックされたとき、またはマップ内でコンテキストメニューキーが押されたときに発生します。
@@ -482,11 +517,21 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ##### **`dblclick`**
 
-マップ上の同じ場所ででポインティングデバイス（通常はマウス）を2回連続して押して離すと発生します。
+マップ上の同じ場所でポインティングデバイス（通常はマウス）を2回連続して押して離すと発生します。
 
 ###### プロパティ
 
 **`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+
+---
+
+##### **`deselection`**
+
+列車または航空機の追跡が解除された時に発生します。
+
+###### プロパティ
+
+**`data`** (`{deselection: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
 
 ---
 
@@ -520,9 +565,19 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ---
 
+##### **`ecomode`**
+
+エコモードが変更されたときに発生します。
+
+###### プロパティ
+
+**`data`** (`{mode: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+
+---
+
 ##### **`error`**
 
-エラーが発生したときに発生します。これは Mini Tokyo 3D の主要なエラー報告メカニズムです。throw の代わりにイベントを使用することで、非同期処理に対応できるようにしています。リスナがエラーイベントにバインドされていない場合、エラーはコンソールに出力されます。
+エラーが発生したときに発生します。これは Mini Tokyo 3D の主要なエラー報告メカニズムです。`throw` の代わりにイベントを使用することで、非同期処理に対応できるようにしています。リスナが `error` イベントにバインドされていない場合、エラーはコンソールに出力されます。
 
 ###### プロパティ
 
@@ -580,11 +635,19 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、あるビューから別のビューへのアニメーション遷移中に繰り返し発生します。
 
+###### プロパティ
+
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
+
 ---
 
 ##### **`moveend`**
 
 ユーザの操作や [`MiniTokyo3D#jumpTo`](#jumptooptions) などのメソッドの結果として、マップがあるビューから別のビューへの遷移を完了した直後に発生します。
+
+###### プロパティ
+
+**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
 
 ---
 
@@ -592,11 +655,19 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ユーザの操作や [`MiniTokyo3D#jumpTo`](#jumptooptions) などのメソッドの結果として、マップがあるビューから別のビューに遷移する直前に発生します。
 
+###### プロパティ
+
+**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+
 ---
 
 ##### **`pitch`**
 
 ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップの傾きの状態遷移アニメーションの間に繰り返し発生します。
+
+###### プロパティ
+
+**`data`** (`MapEventData`)
 
 ---
 
@@ -604,11 +675,19 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップの傾きが変化し終わった直後に発生します。
 
+###### プロパティ
+
+**`data`** (`MapEventData`)
+
 ---
 
 ##### **`pitchstart`**
 
 ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップの傾きが変化し始める直前に発生します。
+
+###### プロパティ
+
+**`data`** (`MapEventData`)
 
 ---
 
@@ -622,17 +701,39 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 「回転のためのドラッグ」操作中に繰り返し発生します。[`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler) を参照してください。
 
+###### プロパティ
+
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
+
 ---
 
 ##### **`rotateend`**
 
 「回転のためのドラッグ」操作が終了したときに発生します。[`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler)を参照してください。
 
+###### プロパティ
+
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
+
 ---
 
 ##### **`rotatestart`**
 
 「回転のためのドラッグ」操作が開始されたときに発生します。[`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler)を参照してください。
+
+###### プロパティ
+
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
+
+---
+
+##### **`selection`**
+
+列車または航空機の追跡が開始された時に発生します。
+
+###### プロパティ
+
+**`data`** (`{selection: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
 
 ---
 
@@ -676,6 +777,26 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ---
 
+##### **`trackingmode`**
+
+追跡モードが変更されたときに発生します。
+
+###### プロパティ
+
+**`data`** (`{mode: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+
+---
+
+##### **`viewmode`**
+
+ビューモードが変更されたときに発生します。
+
+###### プロパティ
+
+**`data`** (`{mode: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+
+---
+
 ##### **`wheel`**
 
 マップ内で [`wheel`](https://developer.mozilla.org/docs/Web/Events/wheel) イベントが発生したときに発生します。
@@ -690,17 +811,29 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、あるズームレベルから別のズームレベルへのアニメーション遷移中に繰り返し発生します。
 
+###### プロパティ
+
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
+
 ---
 
 ##### **`zoomend`**
 
 ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を完了した直後に発生します。
 
+###### プロパティ
+
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
+
 ---
 
 ##### **`zoomstart`**
 
 ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を開始する直前に発生します。
+
+###### プロパティ
+
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
 
 ### Secrets
 

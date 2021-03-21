@@ -84,7 +84,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 ### 地図の回転と傾きの変更
 
-<img src="public/images/rotate-tilt.jpg" width="244"> <img src="public/images/compass-icon.jpg" width="50" align="top">
+<img src="public/images/rotate-tilt.jpg" width="244"> <img src="public/images/compass-icon.jpg" width="49" align="top">
 
 コンパスアイコンは、地図の向きを表しています。コンパスアイコンボタンを押して左右方向にドラッグすると、地図を回転させることができます。また、マウスの右ボタンを押してドラッグ、またはキーボードの Ctrl キーを押しながらマウスの左ボタンを押してドラッグすることで地図の回転と傾きを変更することができます。2本指で上下方向にドラッグして地図の傾きを変更することもできます。
 
@@ -150,7 +150,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 検索ウィンドウが表示されている状態では、列車や旅客機、レイヤーが一時的に非表示になります。検索ウィンドウを閉じるには、検索アイコンボタンを再度クリックします。
 
-**注意**: バージョン 2.7 現在、時刻の指定は出発時刻のみ、当日の列車のみ検索可能、という制限があります。
+**注意**: バージョン 2.8 現在、時刻の指定は出発時刻のみ、当日の列車のみ検索可能、という制限があります。
 
 ## 表示モード
 
@@ -200,6 +200,16 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 <img src="public/images/clock-playback.jpg" width="141"> <img src="public/images/clock-edit.jpg" width="292" align="top">
 
+### エコモード
+
+電池アイコンボタンをクリックまたはタップすると、エコモードのオン・オフを切り替えることができます（オンの状態でアイコンは水色で表示されます）。
+
+エコモードがオンの状態では、列車や航空機の表示間隔が大きくなり、電力の消費とデバイスの発熱を抑えられます。バッテリーで動作するモバイルデバイスでの利用に適しています。
+
+エコモードがオフの状態では、列車や航空機は60フレーム/秒の滑らかなアニメーションで表示されます。電源に繋がったPCや表示端末上での利用に適しています。
+
+<img src="public/images/battery-icon.jpg" width="49" align="top">
+
 ## 設定
 
 ### レイヤー表示設定
@@ -243,10 +253,10 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 次のブラウザで動作を確認しています。推奨は Chrome です。Internet Explorer には非対応です。
 
-- Chrome 88 (Mac OS, Windows, iOS, Android)
-- FireFox 85 (Mac OS, Windows, iOS)
+- Chrome 89 (Mac OS, Windows, iOS, Android)
+- FireFox 86 (Mac OS, Windows, iOS)
 - Safari 14 (Mac OS, iOS)
-- Edge 88 (Mac OS, Windows)
+- Edge 89 (Mac OS, Windows)
 
 ## 開発情報
 

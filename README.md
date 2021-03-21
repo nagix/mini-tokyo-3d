@@ -45,6 +45,7 @@ Click or tap the fullscreen button | Toggle the fullscreen mode
 Click or tap the eye button | Toggle the underground mode
 Click or tap the train/helicopter button | Switch the tracking mode
 Click or tap the playback button | Toggle the playback mode
+Click or tap the battery button | Toggle the eco mode
 Click or tap the layer button | Show/hide the layer display settings panel
 Click or tap the info button | Show/hide the app info panel
 Click or tap a train/aircraft/station | Enable tracking or select station
