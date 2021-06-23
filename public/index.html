@@ -31,7 +31,7 @@
 			matchSelection = location.search.match(/selection=(.*?)(&|$)/),
 			lang = matchLang ? decodeURIComponent(matchLang[1]) : undefined,
 			selection = matchSelection ? decodeURIComponent(matchSelection[1]) : undefined,
-			mt3d = new MiniTokyo3D({lang, container: 'mini-tokyo-3d', selection});
+			map = new mt3d.MiniTokyo3D({lang, container: 'mini-tokyo-3d', selection});
 	</script>
 </body>
 </html>

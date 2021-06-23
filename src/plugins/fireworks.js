@@ -1,4 +1,4 @@
-import mapboxgl from 'mapbox-gl';
+import {MercatorCoordinate} from 'mapbox-gl';
 import * as THREE from 'three';
 import configs from '../configs';
 import * as helpers from '../helpers';
@@ -6,7 +6,7 @@ import ThreeLayer from '../three-layer';
 import Plugin from './plugin';
 import fireworksSVG from './fireworks.svg';
 
-const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord);
+const modelOrigin = MercatorCoordinate.fromLngLat(configs.originCoord);
 const modelScale = modelOrigin.meterInMercatorCoordinateUnits();
 
 const friction = 0.998;
@@ -649,7 +649,7 @@ class FireworksLayer extends ThreeLayer {
         }
 
         const scale = Math.pow(2, 17 - helpers.clamp(map.getZoom(), 14, 16)) * modelScale;
-        const location = mapboxgl.MercatorCoordinate.fromLngLat(lngLat);
+        const location = MercatorCoordinate.fromLngLat(lngLat);
         const fw = Math.random() > 0.5 ? new BasicFireWorks(scale, location) : new RichFireWorks(scale, location);
 
         instances.push(fw);
@@ -658,7 +658,7 @@ class FireworksLayer extends ThreeLayer {
 
 }
 
-export default class extends Plugin {
+class FireworksPlugin extends Plugin {
 
     constructor(options) {
         super(options);
@@ -755,4 +755,8 @@ export default class extends Plugin {
         me._mt3d.map.setLayoutProperty(me.id, 'visibility', visible ? 'visible' : 'none');
     }
 
+}
+
+export default function(options) {
+    return new FireworksPlugin(options);
 }

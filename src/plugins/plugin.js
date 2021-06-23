@@ -1,7 +1,9 @@
+import {valueOrDefault} from '../helpers';
+
 export default class {
 
-    constructor(options) {
-        this.enabled = options.enabled;
+    constructor(options = {}) {
+        this.enabled = valueOrDefault(options.enabled, true);
     }
 
     addTo(mt3d) {

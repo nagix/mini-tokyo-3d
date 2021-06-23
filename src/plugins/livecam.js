@@ -1,4 +1,4 @@
-import mapboxgl from 'mapbox-gl';
+import {Marker} from 'mapbox-gl';
 import AnimatedPopup from 'mapbox-gl-animated-popup';
 import * as helpers from '../helpers';
 import Panel from '../panel';
@@ -62,7 +62,7 @@ function updateMarkerElement(element, highlight) {
     }
 }
 
-export default class extends Plugin {
+class LivecamPlugin extends Plugin {
 
     constructor(options) {
         super(options);
@@ -196,7 +196,7 @@ export default class extends Plugin {
             });
 
             me.markers.push(
-                new mapboxgl.Marker(element)
+                new Marker(element)
                     .setLngLat(center)
                     .addTo(map)
             );
@@ -225,4 +225,8 @@ export default class extends Plugin {
         }
     }
 
+}
+
+export default function(options) {
+    return new LivecamPlugin(options);
 }

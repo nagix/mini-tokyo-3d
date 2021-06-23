@@ -2,7 +2,7 @@ import {WebMercatorViewport} from '@deck.gl/core';
 import {MapboxLayer} from '@deck.gl/mapbox';
 import {GeoJsonLayer} from '@deck.gl/layers';
 import {featureEach} from '@turf/meta';
-import mapboxgl from 'mapbox-gl';
+import {Evented, FullscreenControl, LngLat, Map, MercatorCoordinate, NavigationControl} from 'mapbox-gl';
 import AnimatedPopup from 'mapbox-gl-animated-popup';
 import * as THREE from 'three';
 import SunCalc from 'suncalc';
@@ -19,9 +19,9 @@ import * as helpersThree from './helpers-three';
 import LayerPanel from './layer-panel';
 import * as loader from './loader';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
-import FireworksPlugin from './plugins/fireworks.js';
-import LivecamPlugin from './plugins/livecam.js';
-import PrecipitationPlugin from './plugins/precipitation.js';
+import fireworksPlugin from './plugins/fireworks.js';
+import livecamPlugin from './plugins/livecam.js';
+import precipitationPlugin from './plugins/precipitation.js';
 import SearchPanel from './search-panel';
 import SharePanel from './share-panel';
 import StationPanel from './station-panel';
@@ -40,7 +40,7 @@ const AIRLINES_FOR_ANA_CODE_SHARE = ['ADO', 'SFJ', 'SNJ'];
 
 const DEGREE_TO_RADIAN = Math.PI / 180;
 
-const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord),
+const modelOrigin = MercatorCoordinate.fromLngLat(configs.originCoord),
     modelScale = modelOrigin.meterInMercatorCoordinateUnits();
 
 // Replace MapboxLayer.render to support underground rendering
@@ -73,7 +73,7 @@ MapboxLayer.prototype.render = function(...args) {
     render.apply(me, args);
 };
 
-export default class extends mapboxgl.Evented {
+export default class extends Evented {
 
     constructor(options) {
         super();
@@ -96,9 +96,9 @@ export default class extends mapboxgl.Evented {
         me.clock = new Clock();
 
         me.plugins = [
-            new PrecipitationPlugin({enabled: false}),
-            new FireworksPlugin({enabled: true}),
-            new LivecamPlugin({enabled: true}),
+            precipitationPlugin({enabled: false}),
+            fireworksPlugin(),
+            livecamPlugin(),
             ...(options.plugins || [])
         ];
 
@@ -138,7 +138,7 @@ export default class extends mapboxgl.Evented {
     getCenter() {
         const {map, initialCenter} = this;
 
-        return map ? map.getCenter() : new mapboxgl.LngLat(initialCenter);
+        return map ? map.getCenter() : new LngLat(initialCenter);
     }
 
     /**
@@ -471,8 +471,8 @@ export default class extends mapboxgl.Evented {
         const me = this;
 
         Object.assign(me.secrets, me.options.secrets);
-        mapboxgl.accessToken = me.secrets.mapbox;
-        const map = me.map = new mapboxgl.Map({
+        const map = me.map = new Map({
+            accessToken: me.secrets.mapbox,
             container: me.container.querySelector('#map'),
             style: `${me.dataUrl}/osm-liberty.json`,
             customAttribution: me.configControl ? '' : configs.customAttribution,
@@ -845,7 +845,7 @@ export default class extends mapboxgl.Evented {
             }
 
             if (me.navigationControl) {
-                const control = new mapboxgl.NavigationControl();
+                const control = new NavigationControl();
 
                 control._setButtonTitle = function(button) {
                     const {_zoomInButton, _zoomOutButton, _compass} = this,
@@ -860,7 +860,7 @@ export default class extends mapboxgl.Evented {
             }
 
             if (me.fullscreenControl) {
-                const control = new mapboxgl.FullscreenControl({container: me.container});
+                const control = new FullscreenControl({container: me.container});
 
                 control._updateTitle = function() {
                     const {_fullscreenButton} = this,
@@ -1099,7 +1099,7 @@ export default class extends mapboxgl.Evented {
             const {lng: fromLng, lat: fromLat} = map.getCenter(),
                 {lng: toLng, lat: toLat} = center;
 
-            center = new mapboxgl.LngLat(
+            center = new LngLat(
                 fromLng + (toLng - fromLng) * centerFactor,
                 fromLat + (toLat - fromLat) * centerFactor
             );
@@ -1117,10 +1117,10 @@ export default class extends mapboxgl.Evented {
         const me = this,
             {map} = me,
             {width, height} = map.transform,
-            topLeft = mapboxgl.MercatorCoordinate.fromLngLat(map.unproject([0, 0])),
-            topRight = mapboxgl.MercatorCoordinate.fromLngLat(map.unproject([width, 0])),
-            bottomLeft = mapboxgl.MercatorCoordinate.fromLngLat(map.unproject([0, height])),
-            bottomRight = mapboxgl.MercatorCoordinate.fromLngLat(map.unproject([width, height]));
+            topLeft = MercatorCoordinate.fromLngLat(map.unproject([0, 0])),
+            topRight = MercatorCoordinate.fromLngLat(map.unproject([width, 0])),
+            bottomLeft = MercatorCoordinate.fromLngLat(map.unproject([0, height])),
+            bottomRight = MercatorCoordinate.fromLngLat(map.unproject([width, height]));
 
         me.visibleArea = helpers.bufferTrapezoid([
             [topLeft.x - modelOrigin.x, -(topLeft.y - modelOrigin.y)],
@@ -1191,7 +1191,7 @@ export default class extends mapboxgl.Evented {
                 p = pArr[i],
                 coord = userData.coord = p.coord,
                 altitude = p.altitude,
-                mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude),
+                mCoord = MercatorCoordinate.fromLngLat(coord, altitude),
                 bearing = userData.bearing = p.bearing + (direction < 0 ? 180 : 0);
 
             if (userData.altitude < 0 && altitude >= 0) {
@@ -1302,7 +1302,7 @@ export default class extends mapboxgl.Evented {
             p = helpersGeojson.getCoordAndBearing(flight.feature, flight._t * flight.feature.properties.length, 1, 0)[0],
             coord = aircraft.userData.coord = p.coord,
             altitude = aircraft.userData.altitude = p.altitude,
-            mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude),
+            mCoord = MercatorCoordinate.fromLngLat(coord, altitude),
             bearing = aircraft.userData.bearing = p.bearing;
 
         if (tracked === aircraft) {
@@ -1642,18 +1642,18 @@ export default class extends mapboxgl.Evented {
 
     adjustCoord(coord, altitude, bearing) {
         if (!altitude) {
-            return mapboxgl.LngLat.convert(coord);
+            return LngLat.convert(coord);
         }
 
         const {map, trainLayers} = this,
-            mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude);
+            mCoord = MercatorCoordinate.fromLngLat(coord, altitude);
 
         if (!isNaN(bearing)) {
             const offset = mCoord.z * Math.tan(map.getPitch() * DEGREE_TO_RADIAN),
                 x = mCoord.x + offset * Math.sin(bearing * DEGREE_TO_RADIAN),
                 y = mCoord.y - offset * Math.cos(bearing * DEGREE_TO_RADIAN);
 
-            return new mapboxgl.MercatorCoordinate(x, y, 0).toLngLat();
+            return new MercatorCoordinate(x, y, 0).toLngLat();
         } else {
             const {width, height} = map.transform,
                 {x, y} = new THREE.Vector3(
@@ -2718,7 +2718,7 @@ export default class extends mapboxgl.Evented {
             {map} = me;
 
         if (coord !== undefined && altitude !== undefined) {
-            const {z: objectZ} = mapboxgl.MercatorCoordinate.fromLngLat(coord, altitude),
+            const {z: objectZ} = MercatorCoordinate.fromLngLat(coord, altitude),
                 {z: cameraZ} = map.getFreeCameraOptions().position,
                 z = cameraZ - objectZ;
 

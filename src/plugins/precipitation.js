@@ -1,4 +1,4 @@
-import mapboxgl from 'mapbox-gl';
+import {MercatorCoordinate} from 'mapbox-gl';
 import * as THREE from 'three';
 import SPE from '../spe/SPE';
 import configs from '../configs';
@@ -14,7 +14,7 @@ const NOWCASTS_URL = 'https://mini-tokyo.appspot.com/nowcast';
 // Interval of refreshing precipitation information in milliseconds
 const NOWCASTS_REFRESH_INTERVAL = 60000;
 
-const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord),
+const modelOrigin = MercatorCoordinate.fromLngLat(configs.originCoord),
     modelScale = modelOrigin.meterInMercatorCoordinateUnits();
 
 const rainTexture = new THREE.TextureLoader().load(raindrop);
@@ -34,8 +34,8 @@ class PrecipitationLayer extends ThreeLayer {
         const me = this,
             {map, emitterBounds} = me,
             bounds = map.getBounds(),
-            ne = mapboxgl.MercatorCoordinate.fromLngLat(bounds.getNorthEast()),
-            sw = mapboxgl.MercatorCoordinate.fromLngLat(bounds.getSouthWest()),
+            ne = MercatorCoordinate.fromLngLat(bounds.getNorthEast()),
+            sw = MercatorCoordinate.fromLngLat(bounds.getSouthWest()),
             resolution = helpers.clamp(Math.pow(2, Math.floor(17 - map.getZoom())), 0, 1) * 1088,
             currBounds = {
                 left: Math.floor(helpers.clamp((sw.x - modelOrigin.x) / modelScale + 50000, 0, 108800) / resolution) * resolution,
@@ -164,7 +164,7 @@ class PrecipitationLayer extends ThreeLayer {
 
 }
 
-export default class extends Plugin {
+class PrecipitationPlugin extends Plugin {
 
     constructor(options) {
         super(options);
@@ -250,4 +250,8 @@ export default class extends Plugin {
         me._mt3d.map.setLayoutProperty(me.id, 'visibility', visible ? 'visible' : 'none');
     }
 
+}
+
+export default function(options) {
+    return new PrecipitationPlugin(options);
 }

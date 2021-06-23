@@ -14,7 +14,7 @@ const pkg = JSON.parse(fs.readFileSync('package.json'));
 const banner = `/*!
  * Mini Tokyo 3D v${pkg.version}
  * ${pkg.homepage}
- * (c) ${new Date().getFullYear()} ${pkg.author}
+ * (c) 2019-${new Date().getFullYear()} ${pkg.author}
  * Released under the ${pkg.license} license
  */`;
 const extraReplacement = process.env.SECRETS ? {
@@ -43,8 +43,8 @@ export default [{
 }, {
 	input: 'src/index.js',
 	output: {
-		name: 'MiniTokyo3D',
-		file: 'dist/mini-tokyo-3d.js',
+		name: 'mt3d',
+		file: `dist/${pkg.name}.js`,
 		format: 'umd',
 		indent: false,
 		sourcemap: true,
@@ -59,7 +59,7 @@ export default [{
 				cssimport(),
 				inlinesvg()
 			],
-			extract: 'mini-tokyo-3d.css'
+			extract: `${pkg.name}.css`
 		}),
 		commonjs(),
 		replace({
@@ -72,8 +72,8 @@ export default [{
 }, {
 	input: 'src/index.js',
 	output: {
-		name: 'MiniTokyo3D',
-		file: 'dist/mini-tokyo-3d.min.js',
+		name: 'mt3d',
+		file: `dist/${pkg.name}.min.js`,
 		format: 'umd',
 		indent: false,
 		sourcemap: true,
@@ -88,7 +88,7 @@ export default [{
 				cssimport(),
 				inlinesvg()
 			],
-			extract: 'mini-tokyo-3d.min.css',
+			extract: `${pkg.name}.min.css`,
 			minimize: true
 		}),
 		commonjs(),
@@ -107,5 +107,31 @@ export default [{
 		strip({
 			sourceMap: true
 		})
+	]
+}, {
+	input: 'src/index.esm.js',
+	output: {
+		file: pkg.module,
+		format: 'esm',
+		indent: false,
+		banner
+	},
+	external: ['fs', 'util', 'module', 'path', 'child_process'],
+	plugins: [
+		resolve(),
+		postcss({
+			preprocessor: sassRender,
+			plugins: [
+				cssimport(),
+				inlinesvg()
+			]
+		}),
+		commonjs(),
+		replace({
+			'process.env.NODE_ENV': '\'production\'',
+			'log.error': '//log.error'
+		}),
+		replace(extraReplacement),
+		image()
 	]
 }];

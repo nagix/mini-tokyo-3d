@@ -1,11 +1,11 @@
-import mapboxgl from 'mapbox-gl';
+import {MercatorCoordinate} from 'mapbox-gl';
 import * as THREE from 'three';
 import configs from './configs';
 import * as helpers from './helpers';
 
 const SQRT3 = Math.sqrt(3);
 
-const modelOrigin = mapboxgl.MercatorCoordinate.fromLngLat(configs.originCoord);
+const modelOrigin = MercatorCoordinate.fromLngLat(configs.originCoord);
 
 export default class {
 

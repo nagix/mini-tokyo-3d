@@ -1,9 +1,9 @@
-import mapboxgl from 'mapbox-gl';
+import {LngLatBounds} from 'mapbox-gl';
 import {parseCSSColor} from 'csscolorparser';
 import * as helpers from './helpers';
 
 export function getBounds(coords) {
-    const bounds = new mapboxgl.LngLatBounds();
+    const bounds = new LngLatBounds();
 
     for (const coord of coords) {
         bounds.extend(coord);
