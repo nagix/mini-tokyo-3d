@@ -284,7 +284,6 @@
     margin: 10px 0;
     padding: 0 10px;
     line-height: 30px;
-    overflow: hidden;
 }
 .mini-tokyo-3d #panel-title {
     font-weight: bold;
@@ -320,6 +319,7 @@
 .mini-tokyo-3d .train-panel #panel-header {
     height: 48px;
     line-height: 24px;
+    overflow: hidden;
 }
 .mini-tokyo-3d .train-panel #panel-body {
     height: calc(100% - 68px);
