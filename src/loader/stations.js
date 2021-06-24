@@ -36,8 +36,7 @@ const OPERATORS_FOR_STATIONS = {
         'Yurikamome',
         'Izukyu',
         'IzuHakone',
-        'Fujikyu'
-    ], [
+        'Fujikyu',
         'MIR',
         'TamaMonorail'
     ]],
