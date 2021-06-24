@@ -23,12 +23,11 @@ const OPERATORS_FOR_RAILWAYS = {
         'ToyoRapid',
         'ShinKeisei',
         'Yurikamome',
-        'TokyoMonorail'
-    ],
-    odpt: [
+        'TokyoMonorail',
         'MIR',
         'TamaMonorail'
-    ]
+    ],
+    odpt: []
 };
 
 export default async function(options) {

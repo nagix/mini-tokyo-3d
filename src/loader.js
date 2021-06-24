@@ -19,12 +19,11 @@ const OPERATORS_FOR_TRAININFORMATION = {
         'Keisei',
         'Tobu',
         'Seibu',
-        'Tokyu'
-    ],
-    odpt: [
+        'Tokyu',
         'MIR',
         'TamaMonorail'
-    ]
+    ],
+    odpt: []
 };
 
 const OPERATORS_FOR_FLIGHTINFORMATION = [

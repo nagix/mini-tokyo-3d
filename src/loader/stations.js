@@ -37,11 +37,11 @@ const OPERATORS_FOR_STATIONS = {
         'Izukyu',
         'IzuHakone',
         'Fujikyu'
-    ]],
-    odpt: [[
+    ], [
         'MIR',
         'TamaMonorail'
-    ]]
+    ]],
+    odpt: []
 };
 
 export default async function(options) {

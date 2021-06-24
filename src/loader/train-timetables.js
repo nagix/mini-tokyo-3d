@@ -94,11 +94,11 @@ const RAILWAYS_FOR_TRAINTIMETABLES = {
     ], [
         'Sotetsu.Izumino',
         'Sotetsu.JRDirect'
-    ]],
-    odpt: [[
+    ], [
         'MIR.TsukubaExpress',
         'TamaMonorail.TamaMonorail'
-    ]]
+    ]],
+    odpt: []
 };
 
 const RAILWAY_SOBURAPID = 'JR-East.SobuRapid',

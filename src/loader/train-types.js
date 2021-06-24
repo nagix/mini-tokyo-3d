@@ -13,12 +13,11 @@ const OPERATORS_FOR_TRAINTYPES = {
         'Keisei',
         'Seibu',
         'Tokyu',
-        'Yurikamome'
-    ],
-    odpt: [
+        'Yurikamome',
         'MIR',
         'TamaMonorail'
-    ]
+    ],
+    odpt: []
 };
 
 export default async function(options) {
