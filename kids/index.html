@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="ja_JP">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39988758-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-39988758-3');
+  </script>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://minitokyo3d.com/mini-tokyo-3d.min.css" />
+  <title>Mini Tokyo 3D で学ぶ 〜 今日から君も東京交通エキスパート</title>
+  <meta name="description" content="ここは、東京の近くの町に住んでいる、つばさ君の家。ひまをもてあましたつばさ君が、チュー太先生に教えてもらった電車と飛行機のアプリ「Mini Tokyo 3D」とは・・・！？" />
+  <meta name="viewport" content="user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1" />
+  <meta property="og:title" content="Mini Tokyo 3D で学ぶ 〜 今日から君も東京交通エキスパート" />
+  <meta property="og:description" content="ここは、東京の近くの町に住んでいる、つばさ君の家。ひまをもてあましたつばさ君が、チュー太先生に教えてもらった電車と飛行機のアプリ「Mini Tokyo 3D」とは・・・！？" />
+  <meta property="og:locale" content="ja_JP" />
+  <link rel="canonical" href="https://minitokyo3d.com/kids/" />
+  <meta property="og:url" content="https://minitokyo3d.com/kids/" />
+  <meta property="og:site_name" content="Mini Tokyo 3D で学ぶ 〜 今日から君も東京交通エキスパート" />
+  <meta property="og:image" content="https://minitokyo3d.com/kids/screenshot1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@nagix" />
+  <script type="text/javascript" src="https://minitokyo3d.com/mini-tokyo-3d.min.js"></script>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font: 18px 'M PLUS Rounded 1c', sans-serif;
+      overflow: hidden;
+      overscroll-behavior: none;
+      -webkit-text-size-adjust: 100%;
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 28px;
+      text-shadow: 0 0 5px #fff;
+    }
+    table {
+      font-size: 18px;
+    }
+    td {
+      padding: 10px
+    }
+    .operation-table {
+      margin: 10px 0;
+    }
+    .operation-table th:first-child {
+      border-radius: 10px 0 0 0;
+    }
+    .operation-table th:last-child {
+      border-radius: 0 10px 0 0;
+    }
+    .operation-table tr:last-child td:first-child {
+      border-radius: 0 0 0 10px;
+    }
+    .operation-table tr:last-child td:last-child {
+      border-radius: 0 0 10px 0;
+    }
+    .operation-table th,
+    .operation-table td:first-child {
+      font-weight: 700;
+      background-color: #fbf;
+    }
+    .operation-table td {
+      background-color: #fdf;
+    }
+    .operation-table td {
+      background-color: #fdf;
+    }
+    img {
+      margin: -10px 0;
+    }
+    #dialogue-pane {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      box-sizing: border-box;
+      overflow: auto;
+      transition: top 2s, width 2s, height 2s;
+    }
+    #map-pane {
+      top: -50%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      transition: left 2s, top 2s;
+      visibility: hidden;
+    }
+    #mini-tokyo-3d {
+      width: 100%;
+      height: 100%;
+    }
+    .dialogue-title {
+      width: 100%;
+      height: 200px;
+      padding: 20px;
+      box-sizing: border-box;
+      background: bottom/cover url('title.jpg');
+    }
+    .dialogue-body {
+      padding: 20px;
+    }
+    .authors {
+      text-align: right;
+    }
+    .face {
+      font-size: 14px;
+      text-align: center;
+    }
+    .person {
+      font-weight: 700;
+    }
+    .tsubasa {
+      color: #66f;
+    }
+    .chuta {
+      color: #f90;
+    }
+    .statement {
+    }
+    .center {
+      text-align: center;
+    }
+    .start-button {
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      border-radius: 10px;
+      padding: 30px 20px 10px;
+      color: #fff;
+      background-color: #7c4dff;
+      cursor: pointer;
+    }
+    .start-button:hover {
+      opacity: .7;
+    }
+    .mission {
+      background-color: #ffc;
+      padding: 20px;
+    }
+    .hint {
+      background-color: #eef;
+      padding: 20px;
+    }
+    .image-container {
+      display: inline-block;
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+    .image-caption {
+      display: block;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      font-size: 12px;
+      color: #fff;
+    }
+    @media (min-width: 800px) {
+      html, body, table {
+        font-size: 18px;
+      } 
+      h1 {
+        font-size: 38px;
+      }
+      .face {
+        font-size: 14px;
+      }
+      #map-pane {
+        top: 0;
+        left: 100%;
+        width: 50%;
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+<body onresize="(() => {
+  const body = document.body;
+  const dialogue = document.getElementById('dialogue-pane');
+  const map = document.getElementById('map-pane');
+  const bodyRect = body.getBoundingClientRect();
+  const dialogueRect = dialogue.getBoundingClientRect();
+  const mapRect = map.getBoundingClientRect();
+
+  if (dialogueRect.width === bodyRect.width && dialogueRect.height === bodyRect.height) {
+    if (bodyRect.width < 800) {
+      map.style.left = 0;
+      map.style.top = '-50%';
+      map.style.width = '100%';
+      map.style.height = '50%';
+    } else {
+      map.style.left = '100%';
+      map.style.top = 0;
+      map.style.width = '50%';
+      map.style.height = '100%';
+    }
+  } else {
+    if (bodyRect.width < 800) {
+      map.style.left = 0;
+      map.style.top = 0;
+      map.style.width = '100%';
+      map.style.height = '50%';
+      dialogue.style.top = '50%';
+      dialogue.style.width = '100%';
+      dialogue.style.height = '50%';
+    } else {
+      map.style.left = '50%';
+      map.style.top = 0;
+      map.style.width = '50%';
+      map.style.height = '100%';
+      dialogue.style.top = 0;
+      dialogue.style.width = '50%';
+      dialogue.style.height = '100%';
+    }
+  }
+})()">
+
+<div id="dialogue-pane">
+
+<div class="dialogue-title">
+
+<h1><ruby>Mini Tokyo 3D<rt>ミニとうきょうスリーディー</rt></ruby> で<ruby>学<rt>まな</rt></ruby>ぶ 〜 <ruby>今日<rt>きょう</rt></ruby>から<ruby>君<rt>きみ</rt></ruby>も<ruby>東京交通<rt>とうきょうこうつう</rt></ruby>エキスパート</h1>
+
+</div>
+
+<div class="dialogue-body">
+
+<p class="authors">
+<ruby>文<rt>ぶん</rt></ruby>: <ruby>Mayuko<rt>まゆこ</rt></ruby>／イラスト: <ruby>Yuku<rt>ゆく</rt></ruby>
+</p>
+
+<p>
+ここは、<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>くの<ruby>町<rt>まち</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいる、つばさ<ruby>君<rt>くん</rt></ruby>の<ruby>家<rt>いえ</rt></ruby>・・・
+</p>
+
+<p class="center">
+◇◇◇
+</p>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+チュー<ruby>太先生<rt>たせんせい</rt></ruby>〜、3<ruby>月<rt>がつ</rt></ruby>からず〜〜〜っと<ruby>学校<rt>がっこう</rt></ruby>が<ruby>休<rt>やす</rt></ruby>みになってしまって、たいくつでたいくつでしょうがないよう〜。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+やあ、つばさ<ruby>君<rt>くん</rt></ruby>、ひさしぶり！<ruby>元気<rt>げんき</rt></ruby>かな？こんなに<ruby>長<rt>なが</rt></ruby>いあいだ<ruby>学校<rt>がっこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>けないなんて、<ruby>困<rt>こま</rt></ruby>ったもんだなあ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+そうそう、そうなんだよ、ひまでチュー(笑)。なにかおもしろいことないの〜？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+そうだな・・・それじゃあ、<ruby>今日<rt>きょう</rt></ruby>はおもしろいアプリを<ruby>紹介<rt>しょうかい</rt></ruby>しよう！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+やったー！なになに？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>男<rt>おとこ</rt></ruby>の<ruby>子<rt>こ</rt></ruby>が<ruby>大好<rt>だいす</rt></ruby>きな「<ruby>電車<rt>でんしゃ</rt></ruby>と<ruby>飛行機<rt>ひこうき</rt></ruby>のアプリ」だよ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+おおー、<ruby>好<rt>す</rt></ruby>き<ruby>好<rt>す</rt></ruby>き！やってみたーい！！！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+よし、ではさっそくやってみよう。スタートボタンを<ruby>押<rt>お</rt></ruby>すと<ruby>始<rt>はじ</rt></ruby>まるよ。
+</td>
+</tr></table>
+
+<p class="center">
+<span class="start-button" onclick="(() => {
+  const bodyRect = document.body.getBoundingClientRect();
+  const dialogue = document.getElementById('dialogue-pane');
+  const map = document.getElementById('map-pane');
+
+  map.style.visibility = 'visible';
+  if (bodyRect.width < 800) {
+    dialogue.style.top = '50%';
+    dialogue.style.height = '50%';
+    map.style.top = 0;
+  } else {
+    dialogue.style.width = '50%';
+    map.style.left = '50%';
+  }
+})()">
+<ruby>Mini Tokyo 3D<rt>ミニとうきょうスリーディー</rt></ruby> をスタート
+</span>
+</p>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+よし、<ruby>開<rt>ひら</rt></ruby>けたかな？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+わぁー、カラフルな<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>動<rt>うご</rt></ruby>いてる！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+これは<strong><ruby>「Mini Tokyo 3D」<rt>ミニとうきょうスリーディー</rt></ruby></strong>というアプリだよ。<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>地図<rt>ちず</rt></ruby>と、<ruby>東京<rt>とうきょう</rt></ruby>の近くを<ruby>走<rt>はし</rt></ruby>る<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>見<rt>み</rt></ruby>えているだろう？<ruby>今<rt>いま</rt></ruby>、リアルに<ruby>走<rt>はし</rt></ruby>っている<ruby>電車<rt>でんしゃ</rt></ruby>と<ruby>同<rt>おな</rt></ruby>じように<ruby>動<rt>うご</rt></ruby>いているんだ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+へぇー、すごい！<ruby>未来<rt>みらい</rt></ruby>の<ruby>世界<rt>せかい</rt></ruby>に<ruby>来<rt>き</rt></ruby>たみたい！！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>今日<rt>きょう</rt></ruby>はつばさ<ruby>君<rt>くん</rt></ruby>に、このアプリを<ruby>使<rt>つか</rt></ruby>っていくつかのミッションをクリアしていってもらおう。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+よーし、まかせて！
+</td>
+</tr></table>
+
+<h2>ミッション1: <ruby>新宿駅<rt>しんじゅくえき</rt></ruby>をさがせ！</h2>
+
+<div class="mission">
+<em><ruby>3D地図<rt>スリーディーちず</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<ruby>新宿駅<rt>しんじゅくえき</rt></ruby>がある<ruby>場所<rt>ばしょ</rt></ruby>をみつけて、そこへ<ruby>移動<rt>いどう</rt></ruby>せよ。<ruby>地図<rt>ちず</rt></ruby>の<ruby>動<rt>うご</rt></ruby>かし<ruby>方<rt>かた</rt></ruby>をおぼえること。</em>
+</div>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+<ruby>新宿駅<rt>しんじゅくえき</rt></ruby>の<ruby>場所<rt>ばしょ</rt></ruby>・・・。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>新宿駅<rt>しんじゅくえき</rt></ruby>は、<ruby>日本<rt>にほん</rt></ruby>で<ruby>一番電車<rt>いちばんでんしゃ</rt></ruby>を<ruby>乗<rt>の</rt></ruby>り<ruby>降<rt>お</rt></ruby>りする<ruby>人<rt>ひと</rt></ruby>が<ruby>多<rt>おお</rt></ruby>い<ruby>駅<rt>えき</rt></ruby>だよ。たくさんの<ruby>路線<rt>ろせん</rt></ruby>がつながっているぞ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+へぇー、じゃあ<ruby>電車<rt>でんしゃ</rt></ruby>がたくさんとまっている<ruby>駅<rt>えき</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せばいいんだね。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+まずは<ruby>地図<rt>ちず</rt></ruby>を<ruby>動<rt>うご</rt></ruby>かしてみよう。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+えーと、どうやって<ruby>動<rt>うご</rt></ruby>かすの？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+パソコンとスマートフォンのどちらを<ruby>使<rt>つか</rt></ruby>っているかでやり<ruby>方<rt>かた</rt></ruby>がちょっと<ruby>違<rt>ちが</rt></ruby>うから、<ruby>下<rt>した</rt></ruby>の<ruby>表<rt>ひょう</rt></ruby>を<ruby>見<rt>み</rt></ruby>ながら<ruby>動<rt>うご</rt></ruby>かしてごらん。
+</td>
+</tr></table>
+
+<table class="operation-table">
+<tbody>
+<tr>
+<th><ruby>操作<rt>そうさ</rt></ruby></th>
+<th>パソコン</th>
+<th>スマートフォン</th>
+</tr>
+<tr>
+<td><ruby>移動<rt>いどう</rt></ruby>する</td>
+<td>マウスの<ruby>左<rt>ひだり</rt></ruby>ボタンを<ruby>押<rt>お</rt></ruby>しながら<ruby>動<rt>うご</rt></ruby>かす（<ruby>左<rt>ひだり</rt></ruby>ボタン＋ドラッグ）</td>
+<td><ruby>画面<rt>がめん</rt></ruby>にさわりながら<ruby>指<rt>ゆび</rt></ruby>を<ruby>動<rt>うご</rt></ruby>かす（ドラッグ）</td>
+</tr>
+<tr>
+<td><ruby>方角<rt>ほうがく</rt></ruby>を<ruby>変<rt>か</rt></ruby>える</td>
+<td>マウスの<ruby>右<rt>みぎ</rt></ruby>ボタンを<ruby>押<rt>お</rt></ruby>しながら<ruby>左右<rt>さゆう</rt></ruby>に<ruby>動<rt>うご</rt></ruby>かす（<ruby>右<rt>みぎ</rt></ruby>ボタン＋ドラッグ）</td>
+<td>2<ruby>本指<rt>ほんゆび</rt></ruby>で<ruby>画面<rt>がめん</rt></ruby>をさわってねじるように<ruby>指<rt>ゆび</rt></ruby>を<ruby>動<rt>うご</rt></ruby>かす（ドラッグ）</td>
+</tr>
+<tr>
+<td>かたむきを<ruby>変<rt>か</rt></ruby>える</td>
+<td>マウスの<ruby>右<rt>みぎ</rt></ruby>ボタンを<ruby>押<rt>お</rt></ruby>しながら<ruby>上下<rt>じょうげ</rt></ruby>に<ruby>動<rt>うご</rt></ruby>かす（<ruby>右<rt>みぎ</rt></ruby>ボタン＋ドラッグ）</td>
+<td>2<ruby>本指<rt>ほんゆび</rt></ruby>で<ruby>画面<rt>がめん</rt></ruby>をさわって<ruby>上下<rt>じょうげ</rt></ruby>に<ruby>指<rt>ゆび</rt></ruby>を<ruby>動<rt>うご</rt></ruby>かす（ドラッグ）</td>
+</tr>
+<tr>
+<td><ruby>大<rt>おお</rt></ruby>きくする・<ruby>小<rt>ちい</rt></ruby>さくする</td>
+<td>マウスホイールを<ruby>回<rt>まわ</rt></ruby>す、または「＋」「−」マークを<ruby>押<rt>お</rt></ruby>す（クリック）</td>
+<td>2<ruby>本指<rt>ほんゆび</rt></ruby>で<ruby>画面<rt>がめん</rt></ruby>をさわって<ruby>指<rt>ゆび</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>を<ruby>遠<rt>とお</rt></ruby>ざけたり<ruby>近<rt>ちか</rt></ruby>づけたりする（ピンチイン・ピンチアウト）</td>
+</tr>
+</tbody>
+</table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+おーーーーー、<ruby>動<rt>うご</rt></ruby>き<ruby>出<rt>だ</rt></ruby>したよ！おもしろ〜い。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+そのちょうし！<ruby>動<rt>うご</rt></ruby>かしながら<ruby>探<rt>さが</rt></ruby>してみよう。<ruby>一番<rt>いちばん</rt></ruby>はじめに<ruby>地図<rt>ちず</rt></ruby>に<ruby>出<rt>で</rt></ruby>ているのは<ruby>東京駅<rt>とうきょうえき</rt></ruby>だ。<ruby>新宿駅<rt>しんじゅくえき</rt></ruby>は<ruby>左<rt>ひだり</rt></ruby>のほうに<ruby>移動<rt>いどう</rt></ruby>していくと<ruby>見<rt>み</rt></ruby>えてくるぞ。
+</td>
+</tr></table>
+
+<div class="hint">
+<strong>ヒント</strong>
+<ruby>右上<rt>みぎうえ</rt></ruby>にある<ruby>虫<rt>むし</rt></ruby>メガネマーク <img src="magnifier-icon.jpg" width="33"> を<ruby>押<rt>お</rt></ruby>してごらん（クリック）。すると<ruby>駅名<rt>えきめい</rt></ruby>と<ruby>書<rt>か</rt></ruby>かれた<ruby>白<rt>しろ</rt></ruby>い<ruby>箱<rt>はこ</rt></ruby>が<ruby>出<rt>で</rt></ruby>てきて、たての<ruby>棒<rt>ぼう</rt></ruby>（カーソル）が<ruby>出<rt>で</rt></ruby>たり<ruby>消<rt>き</rt></ruby>えたりし<ruby>始<rt>はじ</rt></ruby>める。そこに<ruby>駅<rt>えき</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>を<ruby>入<rt>い</rt></ruby>れると、<ruby>探<rt>さが</rt></ruby>したい<ruby>駅<rt>えき</rt></ruby>にジャンプできるよ。
+</div>
+
+<p class="center">
+<img src="shinjuku.jpg" width="400">
+</p>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+できたできた。<ruby>新宿駅<rt>しんじゅくえき</rt></ruby>にとうちゃく〜。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+よしよし、よくできました。<ruby>新宿駅<rt>しんじゅくえき</rt></ruby>には<ruby>黄緑色<rt>きみどりいろ</rt></ruby>の<ruby>山手線<rt>やまのてせん</rt></ruby>、オレンジ<ruby>色<rt>いろ</rt></ruby>の<ruby>中央線<rt>ちゅうおうせん</rt></ruby>、<ruby>黄色<rt>きいろ</rt></ruby>の<ruby>総武線<rt>そうぶせん</rt></ruby>など、たくさんの<ruby>路線<rt>ろせん</rt></ruby>がつながっているだろう？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+うん、ほかにも<ruby>赤<rt>あか</rt></ruby>い<ruby>線<rt>せん</rt></ruby>や<ruby>青<rt>あお</rt></ruby>い<ruby>線<rt>せん</rt></ruby>もつながってる！これだけ<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>入<rt>はい</rt></ruby>ってくると、そりゃあ<ruby>混<rt>こ</rt></ruby>むよねえ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+よし、じゃあ、もっと<ruby>近<rt>ちか</rt></ruby>づいて<ruby>見<rt>み</rt></ruby>てみようか。<ruby>右上<rt>みぎうえ</rt></ruby>の＋（プラス）ボタンを<ruby>押<rt>お</rt></ruby>してみて。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+ビルがたくさん<ruby>出<rt>で</rt></ruby>てきた！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+こんなふうに<ruby>町<rt>まち</rt></ruby>の<ruby>中<rt>なか</rt></ruby>を<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>通<rt>とお</rt></ruby>っているんだね。よし、<ruby>次<rt>つぎ</rt></ruby>はミッション２へ、レッツゴー！
+</td>
+</tr></table>
+
+<h2>ミッション2: <ruby>東京<rt>とうきょう</rt></ruby>の<ruby>地面<rt>じめん</rt></ruby>の<ruby>下<rt>した</rt></ruby>をのぞいてみよう</h2>
+
+<div class="mission">
+<em>ふだん<ruby>目<rt>め</rt></ruby>には<ruby>見<rt>み</rt></ruby>えない<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>地下<rt>ちか</rt></ruby>に<ruby>何<rt>なに</rt></ruby>があるかを<ruby>調査<rt>ちょうさ</rt></ruby>せよ。</em>
+</div>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>地面<rt>じめん</rt></ruby>の<ruby>下<rt>した</rt></ruby>にも<ruby>何<rt>なに</rt></ruby>かあるってことだね。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+<ruby>地下<rt>ちか</rt></ruby>ってことでしょ？もしかして<ruby>地下鉄<rt>ちかてつ</rt></ruby>が<ruby>通<rt>とお</rt></ruby>ってるってこと？？？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+さてどうかなー。たしかめしてみよう！<ruby>地下<rt>ちか</rt></ruby>を<ruby>見<rt>み</rt></ruby>るには、<ruby>右側<rt>みぎがわ</rt></ruby>にある<ruby>目<rt>め</rt></ruby>のマーク <img src="eye-icon.jpg" width="33"> をクリック。そうすると<ruby>地下<rt>ちか</rt></ruby>に<ruby>移動<rt>いどう</rt></ruby>するよ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+おー、<ruby>暗<rt>くら</rt></ruby>くなった！これが<ruby>地下<rt>ちか</rt></ruby>？？<ruby>地下鉄<rt>ちかてつ</rt></ruby>が<ruby>走<rt>はし</rt></ruby>ってる！！！<ruby>地下鉄<rt>ちかてつ</rt></ruby>ってこんなふうに<ruby>走<rt>はし</rt></ruby>ってるの。<ruby>見<rt>み</rt></ruby>るの<ruby>初<rt>はじ</rt></ruby>めて。スゴーーーい。　
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>東京<rt>とうきょう</rt></ruby>には<ruby>地下鉄<rt>ちかてつ</rt></ruby>が13<ruby>路線<rt>ろせん</rt></ruby>も<ruby>走<rt>はし</rt></ruby>っているんだ。それから、<ruby>地下鉄<rt>ちかてつ</rt></ruby>だけではなくて、<ruby>地上<rt>ちじょう</rt></ruby>を<ruby>走<rt>はし</rt></ruby>っている<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>地面<rt>じめん</rt></ruby>の<ruby>下<rt>した</rt></ruby>にもぐって<ruby>走<rt>はし</rt></ruby>っているところもある。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+うわー、<ruby>地上<rt>ちじょう</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>と比べると、<ruby>地下鉄<rt>ちかてつ</rt></ruby>の<ruby>線<rt>せん</rt></ruby>ってごちゃごちゃでクモの<ruby>巣<rt>す</rt></ruby>みたい。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+そうだね。<ruby>今度<rt>こんど</rt></ruby>は<ruby>右上<rt>みぎうえ</rt></ruby>の−（マイナス）ボタンを<ruby>何度<rt>なんど</rt></ruby>か<ruby>押<rt>お</rt></ruby>してみると、<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>地下全体<rt>ちかぜんたい</rt></ruby>を<ruby>見<rt>み</rt></ruby>わたせるぞ。
+</td>
+</tr></table>
+
+<p class="center">
+<img src="underground.jpg" width="400">
+</p>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+ほんとうだ、おもしろい。ねえチュー<ruby>太先生<rt>たせんせい</rt></ruby>、どうして<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>真<rt>ま</rt></ruby>ん<ruby>中<rt>なか</rt></ruby>の<ruby>方<rt>ほう</rt></ruby>だけたくさん<ruby>地下鉄<rt>ちかてつ</rt></ruby>が<ruby>通<rt>とお</rt></ruby>っていて、<ruby>真<rt>ま</rt></ruby>ん<ruby>中<rt>なか</rt></ruby>から<ruby>離<rt>はな</rt></ruby>れていくと<ruby>地下鉄<rt>ちかてつ</rt></ruby>がなくなっていくんだろう・・・？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+ふむ。それは、<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>の<ruby>線路<rt>せんろ</rt></ruby>が<ruby>昔<rt>むかし</rt></ruby>から<ruby>長<rt>なが</rt></ruby>い<ruby>時間<rt>じかん</rt></ruby>をかけて<ruby>少<rt>すこ</rt></ruby>しずつ<ruby>作<rt>つく</rt></ruby>られてきたからだよ。<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>地上<rt>ちじょう</rt></ruby>のおもな<ruby>線<rt>せん</rt></ruby>は、100<ruby>年以上<rt>ねんいじょう</rt></ruby>も<ruby>前<rt>まえ</rt></ruby>から<ruby>作<rt>つく</rt></ruby>られているんだ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+ええー、そんな<ruby>前<rt>まえ</rt></ruby>から<ruby>電車<rt>でんしゃ</rt></ruby>って<ruby>走<rt>はし</rt></ruby>っているんだ！。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+そして<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>町<rt>まち</rt></ruby>も、<ruby>時間<rt>じかん</rt></ruby>とともにどんどん<ruby>建物<rt>たてもの</rt></ruby>や<ruby>道路<rt>どうろ</rt></ruby>ができていくんだけど、そうすると<ruby>今度<rt>こんど</rt></ruby>は<ruby>新<rt>あたら</rt></ruby>しく<ruby>電車<rt>でんしゃ</rt></ruby>の<ruby>線路<rt>せんろ</rt></ruby>を<ruby>作<rt>つく</rt></ruby>るための<ruby>場所<rt>ばしょ</rt></ruby>がなくなってしまった。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+ああ、そうか。だから<ruby>地面<rt>じめん</rt></ruby>の<ruby>下<rt>した</rt></ruby>をほって、<ruby>電車<rt>でんしゃ</rt></ruby>を<ruby>走<rt>はし</rt></ruby>らせるようにしたんだ！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+そのとおり。とくに、<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>真<rt>ま</rt></ruby>ん<ruby>中<rt>なか</rt></ruby>はビルとかがたくさんあるので、ほとんどの<ruby>電車<rt>でんしゃ</rt></ruby>は<ruby>地下<rt>ちか</rt></ruby>を<ruby>走<rt>はし</rt></ruby>っているんだね。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+へ〜〜。
+</td>
+</tr></table>
+
+<div class="hint">
+<strong>ヒント</strong>
+<ruby>地上<rt>ちじょう</rt></ruby>のビルが<ruby>表示<rt>ひょうじ</rt></ruby>されるくらいに、「＋」「−」ボタンを<ruby>押<rt>お</rt></ruby>して<ruby>地図<rt>ちず</rt></ruby>を<ruby>大<rt>おお</rt></ruby>きくしてから、<ruby>目<rt>め</rt></ruby>のマークのボタンを<ruby>何度<rt>なんど</rt></ruby>か<ruby>押<rt>お</rt></ruby>して、<ruby>地上<rt>ちじょう</rt></ruby>と<ruby>地下<rt>ちか</rt></ruby>を<ruby>切<rt>き</rt></ruby>りかえてみよう。<ruby>建物<rt>たてもの</rt></ruby>や<ruby>道路<rt>どうろ</rt></ruby>の<ruby>下<rt>した</rt></ruby>を<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>走<rt>はし</rt></ruby>っているようすがわかるぞ。
+</div>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>地下鉄<rt>ちかてつ</rt></ruby>を<ruby>十分楽<rt>じゅうぶんたの</rt></ruby>しんだかな？　
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+うん、<ruby>楽<rt>たの</rt></ruby>しかったー。<ruby>地下鉄<rt>ちかてつ</rt></ruby>ってふつう<ruby>目<rt>め</rt></ruby>に<ruby>見<rt>み</rt></ruby>えないから、こうやって<ruby>見<rt>み</rt></ruby>られるのはすごいね。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+では、<ruby>次<rt>つぎ</rt></ruby>のミッションに<ruby>行<rt>い</rt></ruby>ってみよーう。
+</td>
+</tr></table>
+
+<h2>ミッション3: <ruby>列車<rt>れっしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>って<ruby>旅<rt>たび</rt></ruby>をしよう</h2>
+
+<div class="mission">
+<em><ruby>電車<rt>でんしゃ</rt></ruby>をひとつ<ruby>選<rt>えら</rt></ruby>び、その<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ってまわりの<ruby>町<rt>まち</rt></ruby>のようすや、これから<ruby>止<rt>と</rt></ruby>まる<ruby>駅<rt>えき</rt></ruby>の<ruby>時間<rt>じかん</rt></ruby>を<ruby>調<rt>しら</rt></ruby>べよ。</em>
+</div>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+よし、いよいよ<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ってみるぞ。もう<ruby>一度目<rt>いちどめ</rt></ruby>のボタンを<ruby>押<rt>お</rt></ruby>して、<ruby>地上<rt>ちじょう</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>ろうか。そうしたら、<ruby>好<rt>す</rt></ruby>きな<ruby>路線<rt>ろせん</rt></ruby>と<ruby>駅<rt>えき</rt></ruby>を<ruby>選<rt>えら</rt></ruby>んでみよう。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+わぁー、<ruby>楽<rt>たの</rt></ruby>しみーーー。どれにしようかな。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>何度<rt>なんど</rt></ruby>でも<ruby>乗<rt>の</rt></ruby>り<ruby>降<rt>お</rt></ruby>り<ruby>自由<rt>じゆう</rt></ruby>。まずは<ruby>好<rt>す</rt></ruby>きな<ruby>電車<rt>でんしゃ</rt></ruby>にマウスポインターを<ruby>合<rt>あ</rt></ruby>わせてみよう。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+<ruby>電車<rt>でんしゃ</rt></ruby>の<ruby>紹介<rt>しょうかい</rt></ruby>が<ruby>出<rt>で</rt></ruby>てきた。<ruby>線<rt>せん</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>とか、<ruby>行<rt>い</rt></ruby>き<ruby>先<rt>さき</rt></ruby>とかが<ruby>書<rt>か</rt></ruby>いてある。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+では、その<ruby>上<rt>うえ</rt></ruby>でクリックしてごらん。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+わっ、<ruby>今度<rt>こんど</rt></ruby>は<ruby>地図<rt>ちず</rt></ruby>が<ruby>回<rt>まわ</rt></ruby>り<ruby>始<rt>はじ</rt></ruby>めた。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+これはヘリコプターから<ruby>見<rt>み</rt></ruby>た<ruby>地上<rt>ちじょう</rt></ruby>の<ruby>様子<rt>ようす</rt></ruby>だよ。<ruby>右上<rt>みぎうえ</rt></ruby>にヘリコプターのマーク <img src="helicopter-icon.jpg" width="33"> があるのわかるかな？このマークになっていると<ruby>空<rt>そら</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>から<ruby>電車<rt>でんしゃ</rt></ruby>のまわりを<ruby>回<rt>まわ</rt></ruby>りながら<ruby>見<rt>み</rt></ruby>た<ruby>景色<rt>けしき</rt></ruby>になる。ヘリコプターマークをクリックすると、<ruby>今度<rt>こんど</rt></ruby>は<ruby>電車<rt>でんしゃ</rt></ruby>マーク <img src="train-icon.jpg" width="33"> に<ruby>切<rt>き</rt></ruby>りかわる。すると、<ruby>電車<rt>でんしゃ</rt></ruby>をななめ<ruby>後<rt>うし</rt></ruby>ろから<ruby>見<rt>み</rt></ruby>る<ruby>景色<rt>けしき</rt></ruby>に<ruby>変化<rt>へんか</rt></ruby>するんだ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+いろんな<ruby>角度<rt>かくど</rt></ruby>から<ruby>見<rt>み</rt></ruby>られるんだね！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+そして、<ruby>今乗<rt>いまの</rt></ruby>っている<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>今<rt>いま</rt></ruby>まで<ruby>停<rt>と</rt></ruby>まった<ruby>駅<rt>えき</rt></ruby>と、これから<ruby>進<rt>すす</rt></ruby>んでいく<ruby>先<rt>さき</rt></ruby>の<ruby>駅<rt>えき</rt></ruby>と<ruby>時間<rt>じかん</rt></ruby>が<ruby>正確<rt>せいかく</rt></ruby>に<ruby>出<rt>で</rt></ruby>てきているね。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+わかりやすーい！まるで<ruby>電車<rt>でんしゃ</rt></ruby>の<ruby>運転手<rt>うんてんしゅ</rt></ruby>になった<ruby>気分<rt>きぶん</rt></ruby>。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+いろんな<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>って、<ruby>旅<rt>たび</rt></ruby>をしてみよう！！！
+</td>
+</tr></table>
+
+<div class="hint">
+<strong>ヒント</strong>
+<ruby>品川駅<rt>しながわえき</rt></ruby>につながっている<ruby>水色<rt>みずいろ</rt></ruby>の<ruby>京浜急行<rt>けいひんきゅうこう</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>をクリックしてみよう。<ruby>品川駅<rt>しながわえき</rt></ruby>のほうに<ruby>向<rt>む</rt></ruby>かう<ruby>京浜急行<rt>けいひんきゅうこう</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>は、<ruby>品川駅<rt>しながわえき</rt></ruby>の<ruby>先<rt>さき</rt></ruby>で<ruby>地下<rt>ちか</rt></ruby>にもぐってピンク<ruby>色<rt>いろ</rt></ruby>の<ruby>東京<rt>とうきょう</rt></ruby>メトロ<ruby>浅草線<rt>あさくさせん</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>変<rt>か</rt></ruby>わる。そして、さらに<ruby>進<rt>すす</rt></ruby>むと、<ruby>地上<rt>ちじょう</rt></ruby>にまた<ruby>戻<rt>もど</rt></ruby>って<ruby>京成電鉄<rt>けいせいでんてつ</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>変<rt>か</rt></ruby>わっていく。
+</div>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+チュー<ruby>太先生<rt>たせんせい</rt></ruby>、さっき<ruby>京浜急行<rt>けいひんきゅうこう</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ったんだけど、<ruby>途中<rt>とちゅう</rt></ruby>で<ruby>地下<rt>ちか</rt></ruby>にもぐって<ruby>真<rt>ま</rt></ruby>っ<ruby>暗<rt>くら</rt></ruby>になったと<ruby>思<rt>おも</rt></ruby>ったら、いつのまにか<ruby>浅草線<rt>あさくさせん</rt></ruby>という<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>変<rt>か</rt></ruby>わっちゃってる。
+</td>
+</tr></table>
+
+<p class="center">
+<img src="tracking.jpg" width="320">
+</p>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+それは<ruby>乗<rt>の</rt></ruby>り<ruby>入<rt>い</rt></ruby>れ<ruby>電車<rt>でんしゃ</rt></ruby>というものだね。<ruby>京浜急行<rt>けいひんきゅうこう</rt></ruby>と<ruby>地下鉄<rt>ちかてつ</rt></ruby>の<ruby>浅草線<rt>あさくさせん</rt></ruby>はちがう<ruby>線<rt>せん</rt></ruby>だけれども、<ruby>一<rt>ひと</rt></ruby>つの<ruby>電車<rt>でんしゃ</rt></ruby>がそのまま<ruby>別<rt>べつ</rt></ruby>の<ruby>線<rt>せん</rt></ruby>に<ruby>入<rt>はい</rt></ruby>っていって<ruby>走<rt>はし</rt></ruby>り<ruby>続<rt>つづ</rt></ruby>けることを「<ruby>乗<rt>の</rt></ruby>り<ruby>入<rt>い</rt></ruby>れ<ruby>運転<rt>うんてん</rt></ruby>」というんだ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+と、いうことは・・・、<ruby>乗<rt>の</rt></ruby>り<ruby>入<rt>い</rt></ruby>れ<ruby>運転<rt>うんてん</rt></ruby>をしている<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>っていれば、<ruby>途中<rt>とちゅう</rt></ruby>の<ruby>駅<rt>えき</rt></ruby>で<ruby>別<rt>べつ</rt></ruby>の<ruby>線<rt>せん</rt></ruby>の<ruby>別<rt>べつ</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>り<ruby>換<rt>か</rt></ruby>えなくてもいいってこと？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+そう、そのとおり。<ruby>今<rt>いま</rt></ruby>、つばさ<ruby>君<rt>くん</rt></ruby>が<ruby>乗<rt>の</rt></ruby>っている<ruby>電車<rt>でんしゃ</rt></ruby>は、<ruby>京浜急行<rt>けいひんきゅうこう</rt></ruby>から<ruby>浅草線<rt>あさくさせん</rt></ruby>に<ruby>乗<rt>の</rt></ruby>り<ruby>入<rt>い</rt></ruby>れて、その<ruby>先<rt>さき</rt></ruby>でさらに<ruby>京成電鉄<rt>けいせいでんてつ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>り<ruby>入<rt>い</rt></ruby>れて、そのまた<ruby>先<rt>さき</rt></ruby>で<ruby>北総鉄道<rt>ほくそうてつどう</rt></ruby>にも<ruby>乗<rt>の</rt></ruby>り<ruby>入<rt>い</rt></ruby>れているよ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+へえー、一つの<ruby>電車<rt>でんしゃ</rt></ruby>でそんなに<ruby>遠<rt>とお</rt></ruby>いところまで<ruby>乗<rt>の</rt></ruby>っていけるんだ、<ruby>便利<rt>べんり</rt></ruby>だねえ〜。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+でも<ruby>行<rt>い</rt></ruby>き<ruby>先<rt>さき</rt></ruby>には<ruby>気<rt>き</rt></ruby>をつけて。まちがった<ruby>行<rt>い</rt></ruby>き<ruby>先<rt>さき</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ってしまうと、<ruby>行<rt>い</rt></ruby>きたいところとはまるで<ruby>違<rt>ちが</rt></ruby>う<ruby>場所<rt>ばしょ</rt></ruby>にいってしまうぞ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+うわー、それは大変！このアプリでどこに<ruby>行<rt>い</rt></ruby>くのか<ruby>確<rt>たし</rt></ruby>かめてから、<ruby>本当<rt>ほんとう</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ろうっと。
+</td>
+</tr></table>
+
+<h2>ミッション4: <ruby>飛行機<rt>ひこうき</rt></ruby>の<ruby>行<rt>い</rt></ruby>き<ruby>先<rt>さき</rt></ruby>をしらべよう</h2>
+
+<div class="mission">
+<em><ruby>羽田空港<rt>はねだくうこう</rt></ruby>から<ruby>出発<rt>しゅっぱつ</rt></ruby>する<ruby>飛行機<rt>ひこうき</rt></ruby>はどこに<ruby>向<rt>む</rt></ruby>かうのか<ruby>調査<rt>ちょうさ</rt></ruby>せよ。</em>
+</div>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+さて、つばさ<ruby>君<rt>くん</rt></ruby>は<ruby>飛行機<rt>ひこうき</rt></ruby>にも<ruby>興味<rt>きょうみ</rt></ruby>があるかな？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+うん、もちろん。<ruby>休<rt>やす</rt></ruby>みの<ruby>日<rt>ひ</rt></ruby>にお<ruby>父<rt>とう</rt></ruby>さんと<ruby>空港<rt>くうこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>って、<ruby>順番<rt>じゅんばん</rt></ruby>に<ruby>飛<rt>と</rt></ruby>んでいく<ruby>飛行機<rt>ひこうき</rt></ruby>を<ruby>見<rt>み</rt></ruby>ることもあるよ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>Mini Tokyo 3D<rt>ミニとうきょうスリーディー</rt></ruby> では、<ruby>羽田空港<rt>はねだくうこう</rt></ruby>と<ruby>成田空港<rt>なりたくうこう</rt></ruby>に<ruby>到着<rt>とうちゃく</rt></ruby>したり、<ruby>出発<rt>しゅっぱつ</rt></ruby>する<ruby>飛行機<rt>ひこうき</rt></ruby>をみることもできるんだ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+<ruby>電車<rt>でんしゃ</rt></ruby>だけではなくて、<ruby>飛行機<rt>ひこうき</rt></ruby>も<ruby>見<rt>み</rt></ruby>られるの？すごい！！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+もちろん、<ruby>飛行機<rt>ひこうき</rt></ruby>もリアルタイムの<ruby>動<rt>うご</rt></ruby>きだよ。<ruby>実際<rt>じっさい</rt></ruby>に<ruby>到着<rt>とうちゃく</rt></ruby>が<ruby>遅<rt>おく</rt></ruby>れている<ruby>飛行機<rt>ひこうき</rt></ruby>だったら、<ruby>遅<rt>おく</rt></ruby>れて<ruby>地図<rt>ちず</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>出<rt>で</rt></ruby>てくる。<ruby>今<rt>いま</rt></ruby>は<ruby>新型<rt>しんがた</rt></ruby>コロナウイルスの<ruby>影響<rt>えいきょう</rt></ruby>もあって、<ruby>飛<rt>と</rt></ruby>んでいる<ruby>飛行機<rt>ひこうき</rt></ruby>の<ruby>数<rt>かず</rt></ruby>が<ruby>少<rt>すく</rt></ruby>ないのは<ruby>残念<rt>ざんねん</rt></ruby>だけどね。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+えーっと、<ruby>羽田空港<rt>はねだくうこう</rt></ruby>はどこかな・・・。
+</td>
+</tr></table>
+
+<div class="hint">
+<strong>ヒント</strong>
+<ruby>羽田空港<rt>はねだくうこう</rt></ruby>は、<ruby>地図<rt>ちず</rt></ruby>を下の方向に<ruby>移動<rt>いどう</rt></ruby>していった<ruby>海<rt>うみ</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>くにあるよ。<ruby>右上<rt>みぎうえ</rt></ruby>の<ruby>虫<rt>むし</rt></ruby>めがねマークのボタンをクリックして、「<ruby>羽田空港第<rt>はねだくうこうだい</rt></ruby>1ターミナル」という<ruby>駅<rt>えき</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>で<ruby>探<rt>さが</rt></ruby>してジャンプすることもできる。
+</div>
+
+<p class="center">
+<img src="haneda.jpg" width="400">
+</p>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+・・・<ruby>滑走路<rt>かっそうろ</rt></ruby>があるから、<ruby>羽田空港<rt>はねだくうこう</rt></ruby>はここかな。あ、<ruby>飛行機<rt>ひこうき</rt></ruby>が<ruby>空港<rt>くうこう</rt></ruby>に<ruby>向<rt>む</rt></ruby>かって<ruby>飛<rt>と</rt></ruby>んできているのが<ruby>見<rt>み</rt></ruby>える！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+そうだね、<ruby>羽田空港<rt>はねだくうこう</rt></ruby>には4つの<ruby>滑走路<rt>かっそうろ</rt></ruby>があって、ふつうは2つを<ruby>到着<rt>とうちゃく</rt></ruby>、2つを<ruby>出発<rt>しゅっぱつ</rt></ruby>する<ruby>飛行機<rt>ひこうき</rt></ruby>のために<ruby>使<rt>つか</rt></ruby>っているんだ。<ruby>混<rt>こ</rt></ruby>んでいる<ruby>時間<rt>じかん</rt></ruby>には、<ruby>飛行機<rt>ひこうき</rt></ruby>が<ruby>列<rt>れつ</rt></ruby>になって<ruby>順番<rt>じゅんばん</rt></ruby>に<ruby>飛<rt>と</rt></ruby>んでいるようすが<ruby>見<rt>み</rt></ruby>られるよ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+えーと、ミッションは<ruby>出発<rt>しゅっぱつ</rt></ruby>する<ruby>飛行機<rt>ひこうき</rt></ruby>がどこへ<ruby>行<rt>い</rt></ruby>くかだったっけ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>電車<rt>でんしゃ</rt></ruby>と<ruby>同<rt>おな</rt></ruby>じように、<ruby>飛行機<rt>ひこうき</rt></ruby>もマウスポインターを<ruby>合<rt>あ</rt></ruby>わせてみると、<ruby>行<rt>い</rt></ruby>き<ruby>先<rt>さき</rt></ruby>がわかるぞ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+どれどれ、この<ruby>飛行機<rt>ひこうき</rt></ruby>は<ruby>札幌行<rt>さっぽろい</rt></ruby>き、こっちは<ruby>福岡行<rt>ふくおかい</rt></ruby>き。あ、こちらの<ruby>飛行機<rt>ひこうき</rt></ruby>はサンフランシスコ<ruby>行<rt>い</rt></ruby>きで、こちらは<ruby>北京行<rt>ぺきんい</rt></ruby>きだ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>日本<rt>にほん</rt></ruby>だけではなくて、<ruby>世界<rt>せかい</rt></ruby>の<ruby>都市<rt>とし</rt></ruby>に<ruby>向<rt>む</rt></ruby>けてたくさん<ruby>飛<rt>と</rt></ruby>んでいるのがわかったかな？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+こんなにたくさんの<ruby>都市<rt>とし</rt></ruby>とつながっているなんて<ruby>知<rt>し</rt></ruby>らなかったよ！
+</td>
+</tr></table>
+
+<h2>ミッション5: <ruby>時間<rt>じかん</rt></ruby>をコントロールせよ！</h2>
+
+<div class="mission">
+<em><ruby>時間<rt>じかん</rt></ruby>の進み方をコントロールして、<ruby>朝<rt>あさ</rt></ruby>5<ruby>時<rt>じ</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>の<ruby>動<rt>うご</rt></ruby>きを<ruby>調<rt>しら</rt></ruby>べよ。また、1<ruby>日<rt>にち</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>の<ruby>動<rt>うご</rt></ruby>きを<ruby>早送<rt>はやおく</rt></ruby>りで<ruby>映<rt>うつ</rt></ruby>し<ruby>出<rt>だ</rt></ruby>せ。</em>
+</div>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+チュー<ruby>太先生<rt>たせんせい</rt></ruby>、これ・・・<ruby>時間<rt>じかん</rt></ruby>をコントロールって・・・。<ruby>超能力者<rt>ちょうのうりょくしゃ</rt></ruby>じゃないんだから、ムリだよー。できたらいいなとは<ruby>思<rt>おも</rt></ruby>うけど・・・。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+いやいや、<ruby>Mini Tokyo 3D<rt>ミニとうきょうスリーディー</rt></ruby> ならそれができるんだよ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+えっ、そうなの？ど、ど、どうやって！？。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+まずは<ruby>画面<rt>がめん</rt></ruby>の<ruby>左上<rt>ひだりうえ</rt></ruby>に<ruby>出<rt>で</rt></ruby>ている<ruby>時計<rt>とけい</rt></ruby>を<ruby>見<rt>み</rt></ruby>てみよう。これは<ruby>今<rt>いま</rt></ruby>の<ruby>時間<rt>じかん</rt></ruby>を<ruby>指<rt>さ</rt></ruby>しているよね。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+うん、<ruby>今<rt>いま</rt></ruby>の<ruby>時間<rt>じかん</rt></ruby>だね。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+次に、<ruby>画面右側<rt>がめんみぎがわ</rt></ruby>の<ruby>横向<rt>よこむ</rt></ruby>きの<ruby>三角形<rt>さんかくけい</rt></ruby>が<ruby>描<rt>か</rt></ruby>いてある「<ruby>再生<rt>さいせい</rt></ruby>モード」ボタン <img src="playback-icon.jpg" width="33"> を<ruby>押<rt>お</rt></ruby>してみて。そうすると、<ruby>時計<rt>とけい</rt></ruby>の<ruby>下<rt>した</rt></ruby>に「<ruby>日付時刻<rt>ひづけじこく</rt></ruby>を<ruby>変更<rt>へんこう</rt></ruby>」というボタンと、「−」「1<ruby>倍速<rt>ばいそく</rt></ruby>」「＋」と<ruby>書<rt>か</rt></ruby>かれたボタンが<ruby>出<rt>で</rt></ruby>てくる。
+</td>
+</tr></table>
+
+<p class="center">
+<img src="playback-mode.jpg" width="146">
+</p>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+ほんとうだ、<ruby>出<rt>で</rt></ruby>てきた。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+ここで「<ruby>日付時刻<rt>ひづけじこく</rt></ruby>を<ruby>変更<rt>へんこう</rt></ruby>」ボタンを<ruby>押<rt>お</rt></ruby>すと、<ruby>年<rt>ねん</rt></ruby>・<ruby>月<rt>つき</rt></ruby>・<ruby>日<rt>ひ</rt></ruby>・<ruby>時<rt>じ</rt></ruby>・<ruby>分<rt>ふん</rt></ruby>・<ruby>秒<rt>びょう</rt></ruby>の<ruby>数字<rt>すうじ</rt></ruby>と、それを<ruby>変<rt>か</rt></ruby>えるための「−」「＋」ボタンが<ruby>出<rt>で</rt></ruby>てくる。これを<ruby>操作<rt>そうさ</rt></ruby>して<ruby>好<rt>す</rt></ruby>きな<ruby>時間<rt>じかん</rt></ruby>に<ruby>変<rt>か</rt></ruby>えて、<ruby>最後<rt>さいご</rt></ruby>に「OK」ボタンを<ruby>押<rt>お</rt></ruby>すと、<ruby>地図<rt>ちず</rt></ruby>の<ruby>世界<rt>せかい</rt></ruby>がタイムスリップするんだ。
+</td>
+</tr></table>
+
+<p class="center">
+<img src="clock-edit.jpg" width="282">
+</p>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+ええー、すごい！<ruby>自分<rt>じぶん</rt></ruby>の<ruby>好<rt>す</rt></ruby>きな<ruby>時間<rt>じかん</rt></ruby>に<ruby>行<rt>い</rt></ruby>くことができるってこと？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+そうそう。これでミッションを<ruby>進<rt>すす</rt></ruby>められそうかな？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+やってみる！えーっと、<ruby>朝<rt>あさ</rt></ruby>5<ruby>時<rt>じ</rt></ruby>に<ruby>行<rt>い</rt></ruby>かないといけないから、<ruby>時<rt>じ</rt></ruby>を5、<ruby>分<rt>ふん</rt></ruby>を0、<ruby>秒<rt>びょう</rt></ruby>を0にセットしてと。<ruby>最後<rt>さいご</rt></ruby>に「OK」をクリック、と。おーーーーー、<ruby>地図<rt>ちず</rt></ruby>が<ruby>青<rt>あお</rt></ruby>っぽくなって、<ruby>時計<rt>とけい</rt></ruby>が5<ruby>時<rt>じ</rt></ruby>に<ruby>変<rt>か</rt></ruby>わってる〜。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>町<rt>まち</rt></ruby>のようすはどんな<ruby>感<rt>かん</rt></ruby>じかな？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+この<ruby>時間<rt>じかん</rt></ruby>でも<ruby>電車<rt>でんしゃ</rt></ruby>はもう<ruby>動<rt>うご</rt></ruby>いているけど、<ruby>昼間<rt>ひるま</rt></ruby>と<ruby>比<rt>くら</rt></ruby>べると<ruby>数<rt>かず</rt></ruby>は<ruby>少<rt>すく</rt></ruby>ないかなあ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+よし、じゃあ<ruby>残<rt>のこ</rt></ruby>りのミッション、1<ruby>日<rt>にち</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>の<ruby>動<rt>うご</rt></ruby>きを<ruby>早送<rt>はやおく</rt></ruby>りにするというのもできるかな？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+もしかして、この「1<ruby>倍速<rt>ばいそく</rt></ruby>」と<ruby>書<rt>か</rt></ruby>かれているところのボタンを<ruby>押<rt>お</rt></ruby>すと<ruby>時間<rt>じかん</rt></ruby>が<ruby>速<rt>はや</rt></ruby>くなったりする？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+なかなかするどいね。どうなるかやってごらん？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+よし、「＋」を<ruby>押<rt>お</rt></ruby>して<ruby>速<rt>はや</rt></ruby>くしてみるぞ・・・。わ〜〜、<ruby>時計<rt>とけい</rt></ruby>の<ruby>動<rt>うご</rt></ruby>きが<ruby>速<rt>はや</rt></ruby>くなって、<ruby>電車<rt>でんしゃ</rt></ruby>も<ruby>速<rt>はや</rt></ruby>ーい！！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+もっともっと<ruby>速<rt>はや</rt></ruby>くできるぞ。「300<ruby>倍速<rt>ばいそく</rt></ruby>」くらいまで<ruby>速<rt>はや</rt></ruby>くして、ながめるとおもしろいかもね。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+うわー、こんなにたくさんの<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>動<rt>うご</rt></ruby>いたり<ruby>止<rt>と</rt></ruby>まったり・・・。なんだか、アリの<ruby>巣<rt>す</rt></ruby>を<ruby>観察<rt>かんさつ</rt></ruby>しているみたいな<ruby>気分<rt>きぶん</rt></ruby>になる！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+ははは、たしかにアリの<ruby>動<rt>うご</rt></ruby>きに<ruby>似<rt>に</rt></ruby>ているかも。<ruby>神様<rt>かみさま</rt></ruby>が<ruby>空<rt>そら</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>から<ruby>人間<rt>にんげん</rt></ruby>を<ruby>見<rt>み</rt></ruby>たら、こんなふうに<ruby>見<rt>み</rt></ruby>えているのかもしれないね。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+よ〜し、<ruby>次<rt>つぎ</rt></ruby>は<ruby>最後<rt>さいご</rt></ruby>のミッションだな。
+</td>
+</tr></table>
+
+<h2>ミッション6: <ruby>特急列車<rt>とっきゅうれっしゃ</rt></ruby>をみつけよう</h2>
+
+<div class="mission">
+<em>JRの<ruby>特急成田<rt>とっきゅうなりた</rt></ruby>エクスプレスをみつけよ。また、<ruby>小田急<rt>おだきゅう</rt></ruby>ロマンスカーをみつけよ。</em>
+</div>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+<ruby>特急列車<rt>とっきゅうれっしゃ</rt></ruby>、かっこいいよね！<ruby>速<rt>はや</rt></ruby>いし、<ruby>乗<rt>の</rt></ruby>るとなんだか<ruby>特別<rt>とくべつ</rt></ruby>にえらくなった<ruby>気分<rt>きぶん</rt></ruby>になる。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+ははは、なんでつばさ<ruby>君<rt>くん</rt></ruby>はえらくなった<ruby>気分<rt>きぶん</rt></ruby>になるの？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+だって、<ruby>特急列車<rt>とっきゅうれっしゃ</rt></ruby>ってほかの<ruby>列車<rt>れっしゃ</rt></ruby>を<ruby>途中<rt>とちゅう</rt></ruby>の<ruby>駅<rt>えき</rt></ruby>で<ruby>追<rt>お</rt></ruby>い<ruby>越<rt>こ</rt></ruby>したりするでしょう？<ruby>特急<rt>とっきゅう</rt></ruby>のために、ほかの<ruby>列車<rt>れっしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>っている<ruby>人<rt>ひと</rt></ruby>を<ruby>待<rt>ま</rt></ruby>たせて<ruby>線路<rt>せんろ</rt></ruby>を<ruby>走<rt>はし</rt></ruby>れるようにしているんだよ！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+ははーん、そう<ruby>言<rt>い</rt></ruby>われると、その<ruby>通<rt>とお</rt></ruby>りだなあ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+まずは、<ruby>成田<rt>なりた</rt></ruby>エクスプレス・・・、と。うーん、どこを<ruby>走<rt>はし</rt></ruby>っているかわからないや。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>成田<rt>なりた</rt></ruby>エクスプレスは、<ruby>飛行機<rt>ひこうき</rt></ruby>で<ruby>旅行<rt>りょこう</rt></ruby>する<ruby>人<rt>ひと</rt></ruby>を<ruby>成田空港<rt>なりたくうこう</rt></ruby>まで<ruby>送<rt>おく</rt></ruby>りとどけるために<ruby>運転<rt>うんてん</rt></ruby>されている<ruby>特急列車<rt>とっきゅうれっしゃ</rt></ruby>だよ。<ruby>成田空港<rt>なりたくうこう</rt></ruby>は<ruby>千葉県<rt>ちばけん</rt></ruby>、<ruby>地図<rt>ちず</rt></ruby>のずーっと<ruby>右<rt>みぎ</rt></ruby>のほうにある。<ruby>池袋駅<rt>いけぶくろえき</rt></ruby>や<ruby>大船駅<rt>おおふなえき</rt></ruby>から、<ruby>東京駅<rt>とうきょうえき</rt></ruby>を<ruby>通<rt>とお</rt></ruby>って<ruby>成田空港<rt>なりたくうこう</rt></ruby>に<ruby>走<rt>はし</rt></ruby>っているよ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+あっ、この<ruby>赤<rt>あか</rt></ruby>と<ruby>白<rt>しろ</rt></ruby>と<ruby>黒<rt>くろ</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>、<ruby>見<rt>み</rt></ruby>おぼえがあるかも。これ、もしかして<ruby>成田<rt>なりた</rt></ruby>エクスプレス？
+</td>
+</tr></table>
+
+<p class="center">
+<img src="narita-express1.jpg" width="200">
+<img src="narita-express2.jpg" width="200">
+</p>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+そう、<ruby>大正解<rt>だいせいかい</rt></ruby>！<ruby>普通<rt>ふつう</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>と<ruby>違<rt>ちが</rt></ruby>って、ちゃんと<ruby>特急列車<rt>とっきゅうれっしゃ</rt></ruby>の<ruby>見<rt>み</rt></ruby>た<ruby>目<rt>め</rt></ruby>に<ruby>近<rt>ちか</rt></ruby>い<ruby>色<rt>いろ</rt></ruby>がついているね。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+わー、<ruby>特急列車<rt>とっきゅうれっしゃ</rt></ruby>だから、<ruby>途中<rt>とちゅう</rt></ruby>の<ruby>駅<rt>えき</rt></ruby>で<ruby>普通<rt>ふつう</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>を<ruby>追<rt>お</rt></ruby>い<ruby>越<rt>こ</rt></ruby>してるよ〜。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+<ruby>小田急<rt>おだきゅう</rt></ruby>ロマンスカーはどうかな？ ロマンスカーは、<ruby>新宿<rt>しんじゅく</rt></ruby>から<ruby>出発<rt>しゅっぱつ</rt></ruby>して、<ruby>箱根<rt>はこね</rt></ruby>や<ruby>江ノ島<rt>えのしま</rt></ruby>に向かう<ruby>特急列車<rt>とっきゅうれっしゃ</rt></ruby>だ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+この「はこね5<ruby>号<rt>ごう</rt></ruby>」っていうのがロマンスカーかな？ん、こっちは「えのしま1<ruby>号<rt>ごう</rt></ruby>」っていう<ruby>違<rt>ちが</rt></ruby>う<ruby>色<rt>いろ</rt></ruby>のもあるぞ？
+</td>
+</tr></table>
+
+<p class="center">
+<img src="romance-car1.jpg" width="200">
+<span class="image-container">
+<img src="romance-car2.jpg" width="200">
+<span class="image-caption">
+<a href="https://commons.wikimedia.org/wiki/User:Cfktj1596">Cfktj1596</a> - CC BY-SA 4.0
+</span>
+</span>
+</p>
+<p class="center">
+<img src="romance-car3.jpg" width="200">
+<span class="image-container">
+<img src="romance-car4.jpg" width="200">
+<span class="image-caption">
+星空の川に - CC BY 2.5
+</span>
+</span>
+</p>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+ロマンスカーは、4つのタイプが<ruby>違<rt>ちが</rt></ruby>う<ruby>列車<rt>れっしゃ</rt></ruby>があって、<ruby>色<rt>いろ</rt></ruby>も<ruby>違<rt>ちが</rt></ruby>っているんだ。<ruby>全部見<rt>ぜんぶみ</rt></ruby>つけられるかな？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+へえー、いろんなタイプがあるんだ。そうだ、さっきの<ruby>時間<rt>じかん</rt></ruby>をコントロールするボタンを<ruby>使<rt>つか</rt></ruby>って、<ruby>全部探<rt>ぜんぶさが</rt></ruby>してみるぞー！
+</td>
+</tr></table>
+
+<p class="center">
+◇◇◇
+</p>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+<ruby>今日<rt>きょう</rt></ruby>はすごく<ruby>楽<rt>たの</rt></ruby>しかったよ。チュー<ruby>太先生<rt>たせんせい</rt></ruby>、おもしろいアプリを<ruby>教<rt>おし</rt></ruby>えてくれてありがとう！
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+いやいや、それだけ<ruby>楽<rt>たの</rt></ruby>しんでもらえたのなら<ruby>先生<rt>せんせい</rt></ruby>もうれしいよ。
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="tsubasa_200.png" width="100"><br>
+<span class="person tsubasa">つばさ</span>
+</td>
+<td>
+ところで、チュー<ruby>太先生<rt>たせんせい</rt></ruby>はどうしてそんなに<ruby>電車<rt>でんしゃ</rt></ruby>にくわしいの？
+</td>
+</tr></table>
+
+<table><tr>
+<td class="face">
+<img src="chuta_200.png" width="100"><br>
+<span class="person chuta">チュー<ruby>太先生<rt>たせんせい</rt></ruby></span>
+</td>
+<td>
+おお、よくぞ<ruby>聞<rt>き</rt></ruby>いてくれた！<ruby>実<rt>じつ</rt></ruby>は、<ruby>先生<rt>せんせい</rt></ruby>がまだチュー<ruby>学生<rt>がくせい</rt></ruby>だったとき、チューチュートレインという<ruby>歌<rt>うた</rt></ruby>がはやっていて、それで<ruby>電車<rt>でんしゃ</rt></ruby>にむチューになってしまい、とうとう<ruby>電車<rt>でんしゃ</rt></ruby>の<ruby>運転手<rt>うんてんしゅ</rt></ruby>になったんだ。そしてチューおう<ruby>線<rt>せん</rt></ruby>というオレンジ<ruby>色<rt>いろ</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>を<ruby>毎日運転<rt>まいにちうんてん</rt></ruby>して・・・ってあれ、つばさ<ruby>君<rt>くん</rt></ruby>・・・？
+</td>
+</tr></table>
+
+<div class="hint">
+<strong>ヒント</strong>
+もっとじっくり <ruby>Mini Tokyo 3D<rt>ミニとうきょうスリーディー</rt></ruby> で<ruby>遊<rt>あそ</rt></ruby>んでみたい<ruby>人<rt>ひと</rt></ruby>は、<ruby>下<rt>した</rt></ruby>のリンクをクリックして<ruby>大<rt>おお</rt></ruby>きな<ruby>画面<rt>がめん</rt></ruby>で<ruby>楽<rt>たの</rt></ruby>しもう！
+<h2><a href="https://minitokyo3d.com">https://minitokyo3d.com</a></h2>
+</div>
+
+<p class="center">
+&copy; 2020 Mayuko & Yuku
+</p>
+
+</div>
+
+</div>
+
+<div id="map-pane">
+  <div id="mini-tokyo-3d"></div>
+  <script>
+    const mt3d = new MiniTokyo3D({lang: 'ja', container: 'mini-tokyo-3d', dataUrl: 'https://minitokyo3d.com/data'});
+  </script>
+</div>
+
+</body>
+</html>
