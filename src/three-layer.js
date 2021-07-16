@@ -31,12 +31,13 @@ export default class {
                 context: gl
             }),
             scene = me.scene = new THREE.Scene(),
-            light = me.light = new THREE.DirectionalLight(0xffffff, .8);
+            light = me.light = new THREE.DirectionalLight(0xffffff, .8),
+            ambientLight = me.ambientLight = new THREE.AmbientLight(0xffffff, .4);
 
         renderer.autoClear = false;
 
         scene.add(light);
-        scene.add(new THREE.AmbientLight(0xffffff, .4));
+        scene.add(ambientLight);
 
         // This is needed to avoid a black screen with empty scene
         scene.add(new THREE.Mesh());
