@@ -254,7 +254,7 @@ Mini Tokyo 3D の特徴は次の通りです。
 次のブラウザで動作を確認しています。推奨は Chrome です。Internet Explorer には非対応です。
 
 - Chrome 91 (Mac OS, Windows, iOS, Android)
-- FireFox 89 (Mac OS, Windows, iOS)
+- FireFox 90 (Mac OS, Windows, iOS)
 - Safari 14 (Mac OS, iOS)
 - Edge 91 (Mac OS, Windows, iOS)
 

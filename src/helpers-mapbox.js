@@ -21,6 +21,16 @@ export function isDarkBackground(map) {
 }
 
 /**
+ * Returns the modified style color based on the color factors.
+ * @param {object} color - Style color object
+ * @param {object} colorFactors - Color factors object
+ * @returns {string} Modified style color string
+ */
+export function getScaledColorString(color, colorFactors) {
+    return `rgba(${color.r * colorFactors.r},${color.g * colorFactors.g},${color.b * colorFactors.b},${color.a})`;
+}
+
+/**
  * Returns an array of the style color information retrieved from map layers.
  * @param {object} map - Mapbox's Map object
  * @returns {Array} Array of the style color objects

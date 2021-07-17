@@ -2320,12 +2320,14 @@ export default class extends Evented {
 
     refreshMap() {
         const me = this,
-            {map, clock, viewMode, searchMode, styleColors, styleOpacities} = me;
+            {map, viewMode, searchMode, styleColors, styleOpacities} = me,
+            isUndergroundMode = viewMode === 'underground',
+            lightColor = me.getLightColor();
 
         map.setPaintProperty('background', 'background-color',
-            viewMode === 'underground' ? 'rgb(16,16,16)' : getStyleColorString(styleColors[0], clock));
+            isUndergroundMode ? 'rgb(16,16,16)' : helpersMapbox.getScaledColorString(styleColors[0], lightColor));
         map.setPaintProperty('building-underground', 'fill-color',
-            viewMode === 'underground' ? 'hsla(268,67%,67%,.5)' : getStyleColorString({r: 167, g: 114, b: 227, a: .25}, clock));
+            isUndergroundMode ? 'hsla(268,67%,67%,.5)' : helpersMapbox.getScaledColorString({r: 167, g: 114, b: 227, a: .25}, lightColor));
         for (const {id, key, opacity} of styleOpacities) {
             const factor = getLayerOpacity(id, viewMode, searchMode);
 
@@ -2457,20 +2459,71 @@ export default class extends Evented {
         }
     }
 
+    /**
+     * Returns the color based on the current date and time.
+     * In the playback mode, the time in the simulation clock is used.
+     * @returns {object} Color object
+     */
+    getLightColor() {
+        const [lng, lat] = configs.originCoord,
+            {clock} = this,
+            times = SunCalc.getTimes(new Date(clock.getTime()), lat, lng),
+            sunrise = clock.getJSTDate(times.sunrise.getTime()).getTime(),
+            sunset = clock.getJSTDate(times.sunset.getTime()).getTime(),
+            now = clock.getJSTDate().getTime();
+        let t, r, g, b;
+
+        if (now >= sunrise - 3600000 && now < sunrise) {
+            // Night to sunrise
+            t = (now - sunrise) / 3600000 + 1;
+            r = .4 * (1 - t) + .8 * t;
+            g = .4 * (1 - t) + .9 * t;
+            b = .5 * (1 - t) + t;
+        } else if (now >= sunrise && now < sunrise + 3600000) {
+            // Sunrise to day
+            t = (now - sunrise) / 3600000;
+            r = .8 * (1 - t) + t;
+            g = .9 * (1 - t) + t;
+            b = 1;
+        } else if (now >= sunrise + 3600000 && now < sunset - 3600000) {
+            // Day
+            r = g = b = 1;
+        } else if (now >= sunset - 3600000 && now < sunset) {
+            // Day to sunset
+            t = (now - sunset) / 3600000 + 1;
+            r = 1;
+            g = (1 - t) + .9 * t;
+            b = (1 - t) + .8 * t;
+        } else if (now >= sunset && now < sunset + 3600000) {
+            // Sunset to night
+            t = (now - sunset) / 3600000;
+            r = (1 - t) + .4 * t;
+            g = .9 * (1 - t) + .4 * t;
+            b = .8 * (1 - t) + .5 * t;
+        } else {
+            // Night
+            r = g = .4;
+            b = .5;
+        }
+        return {r, g, b};
+    }
+
     refreshStyleColors() {
         const me = this,
-            {map, clock} = me;
+            {map, viewMode} = me,
+            isUndergroundMode = viewMode === 'underground',
+            lightColor = me.getLightColor();
 
         me.styleColors.forEach(item => {
             const {id, key, stops, _case} = item;
             let prop;
 
-            if (id === 'background' && me.viewMode === 'underground') {
+            if (id === 'background' && isUndergroundMode) {
                 prop = 'rgb(16,16,16)';
-            } else if (id === 'building-underground' && me.viewMode === 'underground') {
+            } else if (id === 'building-underground' && isUndergroundMode) {
                 prop = 'hsla(268,67%,67%,.5)';
             } else {
-                const color = getStyleColorString(item, clock);
+                const color = helpersMapbox.getScaledColorString(item, lightColor);
 
                 if (stops !== undefined) {
                     prop = map.getPaintProperty(id, key);
@@ -3070,56 +3123,6 @@ function getConnectingTrainIds(train) {
     return nextTrains ? ids.concat(...nextTrains.map(getConnectingTrainIds)) : ids;
 }
 
-/**
- * Returns the modified style color based on the current date and time.
- * In the playback mode, the time in the simulation clock is used.
- * @param {object} color - Style color object
- * @param {object} clock - Clock object
- * @returns {string} Modified style color string
- */
-function getStyleColorString(color, clock) {
-    const [lng, lat] = configs.originCoord,
-        times = SunCalc.getTimes(new Date(clock.getTime()), lat, lng),
-        sunrise = clock.getJSTDate(times.sunrise.getTime()).getTime(),
-        sunset = clock.getJSTDate(times.sunset.getTime()).getTime(),
-        now = clock.getJSTDate().getTime();
-    let t, r, g, b;
-
-    if (now >= sunrise - 3600000 && now < sunrise) {
-        // Night to sunrise
-        t = (now - sunrise) / 3600000 + 1;
-        r = .4 * (1 - t) + .8 * t;
-        g = .4 * (1 - t) + .9 * t;
-        b = .5 * (1 - t) + t;
-    } else if (now >= sunrise && now < sunrise + 3600000) {
-        // Sunrise to day
-        t = (now - sunrise) / 3600000;
-        r = .8 * (1 - t) + t;
-        g = .9 * (1 - t) + t;
-        b = 1;
-    } else if (now >= sunrise + 3600000 && now < sunset - 3600000) {
-        // Day
-        r = g = b = 1;
-    } else if (now >= sunset - 3600000 && now < sunset) {
-        // Day to sunset
-        t = (now - sunset) / 3600000 + 1;
-        r = 1;
-        g = (1 - t) + .9 * t;
-        b = (1 - t) + .8 * t;
-    } else if (now >= sunset && now < sunset + 3600000) {
-        // Sunset to night
-        t = (now - sunset) / 3600000;
-        r = (1 - t) + .4 * t;
-        g = .9 * (1 - t) + .4 * t;
-        b = .8 * (1 - t) + .5 * t;
-    } else {
-        // Night
-        r = g = .4;
-        b = .5;
-    }
-    return `rgba(${[color.r * r, color.g * g, color.b * b, color.a].join(',')})`;
-}
-
 function setObjectOpacity(object, opacity, duration) {
     const {userData} = object;
 
@@ -3139,10 +3142,12 @@ function setObjectOpacity(object, opacity, duration) {
 }
 
 function getObjectOpacity(object, viewMode, searchMode) {
+    const isNotSearchResultMode = searchMode === 'none' || searchMode === 'edit';
+
     if ((viewMode === 'underground') === (object.userData.altitude < 0)) {
-        return searchMode === 'none' || searchMode === 'edit' ? .9 : .1;
+        return isNotSearchResultMode ? .9 : .1;
     } else {
-        return searchMode === 'none' || searchMode === 'edit' ? .225 : .1;
+        return isNotSearchResultMode ? .225 : .1;
     }
 }
 
@@ -3161,27 +3166,30 @@ function setLayerOpacity(map, id, opacity) {
 }
 
 function getLayerOpacity(id, viewMode, searchMode) {
+    const isUndergroundMode = viewMode === 'underground',
+        isNotSearchResultMode = searchMode === 'none' || searchMode === 'edit';
+
     if (helpers.includes(id, '-ug-')) {
-        if (viewMode === 'underground') {
-            return searchMode === 'none' || searchMode === 'edit' ? 1 : .005;
+        if (isUndergroundMode) {
+            return isNotSearchResultMode ? 1 : .005;
         } else {
-            return searchMode === 'none' || searchMode === 'edit' ? .0625 : .005;
+            return isNotSearchResultMode ? .0625 : .005;
         }
     } else if (helpers.includes(id, '-og-')) {
-        if (viewMode === 'underground') {
-            return searchMode === 'none' || searchMode === 'edit' ? .25 : .1;
+        if (isUndergroundMode) {
+            return isNotSearchResultMode ? .25 : .1;
         } else {
-            return searchMode === 'none' || searchMode === 'edit' ? 1 : .1;
+            return isNotSearchResultMode ? 1 : .1;
         }
     } else if (helpers.includes(id, '-routeug-')) {
-        return viewMode === 'underground' ? 1 : .125;
+        return isUndergroundMode ? 1 : .125;
     } else if (helpers.includes(id, '-routeog-')) {
-        return viewMode === 'underground' ? .25 : 1;
+        return isUndergroundMode ? .25 : 1;
     } else {
-        if (viewMode === 'underground' && id !== 'building-underground') {
-            return searchMode === 'none' || searchMode === 'edit' ? .0625 : .025;
+        if (isUndergroundMode && id !== 'building-underground') {
+            return isNotSearchResultMode ? .0625 : .025;
         } else {
-            return searchMode === 'none' || searchMode === 'edit' ? 1 : .1;
+            return isNotSearchResultMode ? 1 : .1;
         }
     }
 }
