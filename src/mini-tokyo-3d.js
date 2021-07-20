@@ -803,10 +803,6 @@ export default class extends Evented {
             }), 'poi');
             */
 
-            for (const plugin of me.plugins) {
-                plugin.addTo(me);
-            }
-
             me.styleColors = helpersMapbox.getStyleColors(map);
             me.styleOpacities = helpersMapbox.getStyleOpacities(map);
 
@@ -1030,6 +1026,10 @@ export default class extends Evented {
                     me.fire(e);
                 });
             });
+
+            for (const plugin of me.plugins) {
+                plugin.addTo(me);
+            }
 
             animation.init();
 
