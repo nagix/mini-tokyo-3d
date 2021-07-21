@@ -5,8 +5,6 @@ import * as helpers from './helpers';
 
 const SQRT3 = Math.sqrt(3);
 
-const modelOrigin = MercatorCoordinate.fromLngLat(configs.originCoord);
-
 export default class {
 
     constructor(id, underground = false, semitransparent = false) {
@@ -17,6 +15,8 @@ export default class {
         me.renderingMode = '3d';
         me.underground = underground;
         me.semitransparent = semitransparent;
+        me.modelOrigin = MercatorCoordinate.fromLngLat(configs.originCoord);
+        me.modelScale = me.modelOrigin.meterInMercatorCoordinateUnits();
     }
 
     setSemitransparent(semitransparent) {
@@ -48,7 +48,7 @@ export default class {
     }
 
     render(gl, matrix) {
-        const {underground, semitransparent, map, renderer, camera, light, scene} = this,
+        const {underground, semitransparent, modelOrigin, map, renderer, camera, light, scene} = this,
             {_fov, _camera, _horizonShift, worldSize, fovAboveCenter, _pitch, width, height} = map.transform,
             halfFov = _fov / 2,
             angle = Math.PI / 2 - _pitch,
@@ -111,6 +111,25 @@ export default class {
                 return parent;
             }
         }
+    }
+
+    getModelOrigin() {
+        return this.modelOrigin;
+    }
+
+    getModelScale() {
+        return this.modelScale;
+    }
+
+    getModelPosition(lngLatLike, altitude) {
+        const coord = MercatorCoordinate.fromLngLat(lngLatLike, altitude),
+            origin = this.modelOrigin;
+
+        return {
+            x: coord.x - origin.x,
+            y: -(coord.y - origin.y),
+            z: coord.z - origin.z
+        };
     }
 
 }

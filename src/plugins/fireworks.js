@@ -1,13 +1,8 @@
-import {MercatorCoordinate} from 'mapbox-gl';
 import * as THREE from 'three';
-import configs from '../configs';
 import * as helpers from '../helpers';
 import ThreeLayer from '../three-layer';
 import Plugin from './plugin';
 import fireworksSVG from './fireworks.svg';
-
-const modelOrigin = MercatorCoordinate.fromLngLat(configs.originCoord);
-const modelScale = modelOrigin.meterInMercatorCoordinateUnits();
 
 const friction = 0.998;
 const textureSize = 128.0;
@@ -327,9 +322,9 @@ class ParticleTailMesh extends ParticleMesh {
 
 class BasicFireWorks {
 
-    constructor(scale, location) {
+    constructor(scale, position) {
         this.scale = scale;
-        this.location = location;
+        this.position = position;
         this.gravity = new THREE.Vector3(0, 0, -0.005 * scale);
         this.meshGroup = new THREE.Group();
         this.isExplode = false;
@@ -355,8 +350,8 @@ class BasicFireWorks {
         }
 
         const pm = new ParticleSeedMesh(this.scale, num, vels);
-        const x = this.location.x - modelOrigin.x + (Math.random() * 400 - 200) * modelScale;
-        const y = -(this.location.y - modelOrigin.y) + (Math.random() * 400 - 200) * modelScale;
+        const x = this.position.x;
+        const y = this.position.y;
         const z = 0;
 
         pm.mesh.position.set(x, y, z);
@@ -469,8 +464,8 @@ class BasicFireWorks {
 
 class RichFireWorks extends BasicFireWorks {
 
-    constructor(scale, location) {
-        super(scale, location);
+    constructor(scale, position) {
+        super(scale, position);
 
         const max = 150;
         const min = 100;
@@ -648,9 +643,14 @@ class FireworksLayer extends ThreeLayer {
             return;
         }
 
+        const modelPosition = me.getModelPosition(lngLat);
+        const modelScale = me.getModelScale();
         const scale = Math.pow(2, 17 - helpers.clamp(map.getZoom(), 14, 16)) * modelScale;
-        const location = MercatorCoordinate.fromLngLat(lngLat);
-        const fw = Math.random() > 0.5 ? new BasicFireWorks(scale, location) : new RichFireWorks(scale, location);
+        const position = {
+            x: modelPosition.x + (Math.random() * 400 - 200) * modelScale,
+            y: modelPosition.y + (Math.random() * 400 - 200) * modelScale
+        };
+        const fw = Math.random() > 0.5 ? new BasicFireWorks(scale, position) : new RichFireWorks(scale, position);
 
         instances.push(fw);
         scene.add(fw.meshGroup);

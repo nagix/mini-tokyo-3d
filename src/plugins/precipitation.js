@@ -1,7 +1,5 @@
-import {MercatorCoordinate} from 'mapbox-gl';
 import * as THREE from 'three';
 import SPE from '../spe/SPE';
-import configs from '../configs';
 import * as helpers from '../helpers';
 import ThreeLayer from '../three-layer';
 import Plugin from './plugin';
@@ -13,9 +11,6 @@ const NOWCASTS_URL = 'https://mini-tokyo.appspot.com/nowcast';
 
 // Interval of refreshing precipitation information in milliseconds
 const NOWCASTS_REFRESH_INTERVAL = 60000;
-
-const modelOrigin = MercatorCoordinate.fromLngLat(configs.originCoord),
-    modelScale = modelOrigin.meterInMercatorCoordinateUnits();
 
 const rainTexture = new THREE.TextureLoader().load(raindrop);
 
@@ -34,14 +29,15 @@ class PrecipitationLayer extends ThreeLayer {
         const me = this,
             {map, emitterBounds} = me,
             bounds = map.getBounds(),
-            ne = MercatorCoordinate.fromLngLat(bounds.getNorthEast()),
-            sw = MercatorCoordinate.fromLngLat(bounds.getSouthWest()),
+            ne = me.getModelPosition(bounds.getNorthEast()),
+            sw = me.getModelPosition(bounds.getSouthWest()),
+            modelScale = me.getModelScale(),
             resolution = helpers.clamp(Math.pow(2, Math.floor(17 - map.getZoom())), 0, 1) * 1088,
             currBounds = {
-                left: Math.floor(helpers.clamp((sw.x - modelOrigin.x) / modelScale + 50000, 0, 108800) / resolution) * resolution,
-                right: Math.ceil(helpers.clamp((ne.x - modelOrigin.x) / modelScale + 50000, 0, 108800) / resolution) * resolution,
-                top: Math.floor(helpers.clamp((ne.y - modelOrigin.y) / modelScale + 42500 + 0, 0, 78336) / resolution) * resolution,
-                bottom: Math.ceil(helpers.clamp((sw.y - modelOrigin.y) / modelScale + 42500 + 0, 0, 78336) / resolution) * resolution
+                left: Math.floor(helpers.clamp(sw.x / modelScale + 50000, 0, 108800) / resolution) * resolution,
+                right: Math.ceil(helpers.clamp(ne.x / modelScale + 50000, 0, 108800) / resolution) * resolution,
+                top: Math.floor(helpers.clamp(-ne.y / modelScale + 42500 + 0, 0, 78336) / resolution) * resolution,
+                bottom: Math.ceil(helpers.clamp(-sw.y / modelScale + 42500 + 0, 0, 78336) / resolution) * resolution
             };
 
         if (nowCastData) {
@@ -83,7 +79,8 @@ class PrecipitationLayer extends ThreeLayer {
 
     refreshEmitter() {
         const me = this,
-            {map, nowCastData, emitterQueue, fgGroup, bgGroup} = me;
+            {map, nowCastData, emitterQueue, fgGroup, bgGroup} = me,
+            modelScale = me.getModelScale();
 
         if (bgGroup) {
             const zoom = map.getZoom(),
