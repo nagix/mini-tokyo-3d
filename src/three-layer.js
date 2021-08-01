@@ -1,7 +1,7 @@
-import {MercatorCoordinate} from 'mapbox-gl';
+import {MercatorCoordinate, Point} from 'mapbox-gl';
 import * as THREE from 'three';
 import configs from './configs';
-import * as helpers from './helpers';
+import {clamp} from './helpers';
 
 const SQRT3 = Math.sqrt(3);
 
@@ -53,7 +53,7 @@ export default class {
             halfFov = _fov / 2,
             angle = Math.PI / 2 - _pitch,
             cameraToSeaLevelDistance = _camera.position[2] * worldSize / Math.cos(_pitch),
-            topHalfSurfaceDistance = Math.sin(fovAboveCenter) * cameraToSeaLevelDistance / Math.sin(helpers.clamp(angle - fovAboveCenter, 0.01, Math.PI - 0.01)),
+            topHalfSurfaceDistance = Math.sin(fovAboveCenter) * cameraToSeaLevelDistance / Math.sin(clamp(angle - fovAboveCenter, 0.01, Math.PI - 0.01)),
             furthestDistance = Math.cos(angle) * topHalfSurfaceDistance + cameraToSeaLevelDistance,
             horizonDistance = cameraToSeaLevelDistance / _horizonShift,
             farZ = Math.min(furthestDistance * 1.01, horizonDistance),
@@ -130,6 +130,23 @@ export default class {
             y: -(coord.y - origin.y),
             z: coord.z - origin.z
         };
+    }
+
+    /**
+     * Returns a Point representing pixel coordinates, relative to the map's
+     * container, that correspond to the specified geographical location.
+     * @param {LngLatLike} lngLatLike - The geographical location to project
+     * @param {number} altitude - The altitude in meters of the position
+     * @returns {Point} The Point corresponding to lnglat, relative to the
+     *     map's container
+     */
+    project(lngLatLike, altitude) {
+        const {map, camera} = this,
+            {width, height} = map.transform,
+            {x, y, z} = this.getModelPosition(lngLatLike, altitude),
+            {x: px, y: py} = new THREE.Vector3(x, y, z).project(camera);
+
+        return new Point((px + 1) / 2 * width, (1 - py) / 2 * height);
     }
 
 }

@@ -4,7 +4,6 @@ import {GeoJsonLayer} from '@deck.gl/layers';
 import {featureEach} from '@turf/meta';
 import {Evented, FullscreenControl, LngLat, Map, MercatorCoordinate, NavigationControl} from 'mapbox-gl';
 import AnimatedPopup from 'mapbox-gl-animated-popup';
-import * as THREE from 'three';
 import SunCalc from 'suncalc';
 import animation from './animation';
 import AboutPanel from './about-panel';
@@ -1640,29 +1639,33 @@ export default class extends Evented {
         }
     }
 
+    /**
+     * Returns a LngLat representing geographical coordinates on the ground
+     * that shares the same projected pixel coordinates with the specified
+     * geographical location and altitude.
+     * @param {LngLatLike} coord - The geographical location to adjust
+     * @param {number} altitude - The altitude in meters of the position
+     * @param {number} bearing - The desired bearing of the camera in degrees.
+     *     If not specified, the coordinates will be calculated using the
+     *     current camera projection matrix
+     * @returns {LngLat} The adjusted LngLat.
+     */
     adjustCoord(coord, altitude, bearing) {
         if (!altitude) {
             return LngLat.convert(coord);
         }
 
-        const {map, trainLayers} = this,
-            mCoord = MercatorCoordinate.fromLngLat(coord, altitude);
+        const {map, trainLayers} = this;
 
         if (!isNaN(bearing)) {
-            const offset = mCoord.z * Math.tan(map.getPitch() * DEGREE_TO_RADIAN),
+            const mCoord = MercatorCoordinate.fromLngLat(coord, altitude),
+                offset = mCoord.z * Math.tan(map.getPitch() * DEGREE_TO_RADIAN),
                 x = mCoord.x + offset * Math.sin(bearing * DEGREE_TO_RADIAN),
                 y = mCoord.y - offset * Math.cos(bearing * DEGREE_TO_RADIAN);
 
             return new MercatorCoordinate(x, y, 0).toLngLat();
         } else {
-            const {width, height} = map.transform,
-                {x, y} = new THREE.Vector3(
-                    mCoord.x - modelOrigin.x,
-                    -(mCoord.y - modelOrigin.y),
-                    mCoord.z
-                ).project(trainLayers.ug.camera);
-
-            return map.unproject([(x + 1) / 2 * width, (1 - y) / 2 * height]);
+            return map.unproject(trainLayers.ug.project(coord, altitude));
         }
     }
 
