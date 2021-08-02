@@ -25,6 +25,7 @@ import SearchPanel from './search-panel';
 import SharePanel from './share-panel';
 import StationPanel from './station-panel';
 import ThreeLayer from './three-layer';
+import verify from './verify';
 
 const OPERATORS_FOR_DYNAMIC_TRAIN_DATA = [
     'JR-East',
@@ -84,6 +85,7 @@ export default class extends Evented {
         me.dataUrl = options.dataUrl || configs.dataUrl;
         me.container = typeof options.container === 'string' ?
             document.getElementById(options.container) : options.container;
+        me.secrets = verify(me.options.secrets);
         me.exitPopups = [];
 
         me.clockControl = helpers.valueOrDefault(options.clockControl, true);
@@ -469,7 +471,6 @@ export default class extends Evented {
     initialize() {
         const me = this;
 
-        Object.assign(me.secrets, me.options.secrets);
         const map = me.map = new Map({
             accessToken: me.secrets.mapbox,
             container: me.container.querySelector('#map'),

@@ -70,8 +70,7 @@ export function loadStaticData(dataUrl, lang, clock) {
         `${dataUrl}/operators.json.gz`,
         `${dataUrl}/airports.json.gz`,
         `${dataUrl}/flight-statuses.json.gz`,
-        `${dataUrl}/poi.json.gz`,
-        configs.secretsUrl
+        `${dataUrl}/poi.json.gz`
     ].map(helpers.loadJSON)).then(data => ({
         dict: data[0],
         railwayData: data[1],
@@ -84,8 +83,7 @@ export function loadStaticData(dataUrl, lang, clock) {
         operatorData: data[8],
         airportData: data[9],
         flightStatusData: data[10],
-        poiData: data[11],
-        secrets: data[12]
+        poiData: data[11]
     }));
 }
 

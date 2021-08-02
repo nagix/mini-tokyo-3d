@@ -113,9 +113,6 @@ const configs = {
     // ATIS URL
     atisUrl: 'https://mini-tokyo.appspot.com/atisinfo',
 
-    // Secrets URL
-    secretsUrl: 'secrets',
-
     // Default data URL
     dataUrl: 'https://minitokyo3d.com/data',
 

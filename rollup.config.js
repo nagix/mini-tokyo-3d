@@ -17,10 +17,6 @@ const banner = `/*!
  * (c) 2019-${new Date().getFullYear()} ${pkg.author}
  * Released under the ${pkg.license} license
  */`;
-const extraReplacement = process.env.SECRETS ? {
-	secrets: process.env.SECRETS,
-	include: 'src/configs.js'
-} : {};
 const sassRender = (content, id) => new Promise((resolve, reject) => {
 	const result = sass.renderSync({file: id});
 	resolve({code: result.css.toString()});
@@ -66,7 +62,6 @@ export default [{
 			'process.env.NODE_ENV': '\'development\'',
 			'log.error': '(() => () => {})'
 		}),
-		replace(extraReplacement),
 		image()
 	]
 }, {
@@ -96,7 +91,6 @@ export default [{
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})'
 		}),
-		replace(extraReplacement),
 		image(),
 		terser({
 			compress: {
@@ -131,7 +125,6 @@ export default [{
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})'
 		}),
-		replace(extraReplacement),
 		image()
 	]
 }];

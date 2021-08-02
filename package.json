@@ -57,7 +57,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "build-pages": "rm -rf build; cp -r public build; cp .npmignore secrets dist/mini-tokyo-3d.min.css dist/mini-tokyo-3d.min.js dist/mini-tokyo-3d.min.js.map build",
+    "build-pages": "rm -rf build; cp -r public build; cp .npmignore dist/mini-tokyo-3d.min.css dist/mini-tokyo-3d.min.js dist/mini-tokyo-3d.min.js.map build",
     "build-data": "rm -rf build/data; mkdir -p build/data; cp data/dictionary-*.json data/osm-liberty.json build/data; node dist/loader",
     "build-all": "run-s build build-pages build-data",
     "lint": "eslint --cache --ignore-path .gitignore src"
