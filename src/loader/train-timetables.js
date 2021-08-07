@@ -1,5 +1,5 @@
-import * as helpers from '../helpers';
-import * as loaderHelpers from './helpers';
+import {buildLookup, includes, cleanKeys, removePrefix} from '../helpers';
+import {loadJSON, saveJSON} from './helpers';
 
 const RAILWAYS_FOR_TRAINTIMETABLES = {
     tokyochallenge: [[
@@ -151,7 +151,7 @@ async function process(options, calendar, postfix) {
     const [extra, ...original] = await Promise.all([
         `data/timetable-${postfix}.json`,
         ...urls
-    ].map(loaderHelpers.loadJSON));
+    ].map(loadJSON));
 
     for (const group of original) {
         if (group.length >= 1000) {
@@ -160,33 +160,33 @@ async function process(options, calendar, postfix) {
     }
 
     const data = [].concat(...original).map(timetable => ({
-        t: helpers.removePrefix(timetable['odpt:train']),
-        id: helpers.removePrefix(timetable['owl:sameAs']),
-        r: helpers.removePrefix(timetable['odpt:railway']),
-        y: helpers.removePrefix(timetable['odpt:trainType']),
+        t: removePrefix(timetable['odpt:train']),
+        id: removePrefix(timetable['owl:sameAs']),
+        r: removePrefix(timetable['odpt:railway']),
+        y: removePrefix(timetable['odpt:trainType']),
         n: timetable['odpt:trainNumber'],
-        os: helpers.removePrefix(timetable['odpt:originStation']),
-        d: helpers.removePrefix(timetable['odpt:railDirection']),
-        ds: helpers.removePrefix(timetable['odpt:destinationStation']),
-        nt: helpers.removePrefix(timetable['odpt:nextTrainTimetable']),
+        os: removePrefix(timetable['odpt:originStation']),
+        d: removePrefix(timetable['odpt:railDirection']),
+        ds: removePrefix(timetable['odpt:destinationStation']),
+        nt: removePrefix(timetable['odpt:nextTrainTimetable']),
         tt: timetable['odpt:trainTimetableObject'].map(obj => {
-            const as = helpers.removePrefix(obj['odpt:arrivalStation']);
-            const ds = helpers.removePrefix(obj['odpt:departureStation']);
+            const as = removePrefix(obj['odpt:arrivalStation']);
+            const ds = removePrefix(obj['odpt:departureStation']);
 
             if (as && ds && as !== ds) {
                 console.log(`Error: ${as} != ${ds}`);
             }
-            return helpers.cleanKeys({
+            return cleanKeys({
                 a: obj['odpt:arrivalTime'],
                 d: obj['odpt:departureTime'],
                 s: as || ds
             });
         }),
-        pt: helpers.removePrefix(timetable['odpt:previousTrainTimetable']),
+        pt: removePrefix(timetable['odpt:previousTrainTimetable']),
         nm: timetable['odpt:trainName']
     }));
 
-    const lookup = helpers.buildLookup(data);
+    const lookup = buildLookup(data);
 
     for (const timetable of extra) {
         const {id, tt, os, ds, pt, nt, nm, v} = timetable,
@@ -270,7 +270,7 @@ async function process(options, calendar, postfix) {
         });
     }
     data.filter(timetable =>
-        helpers.includes(RAILWAYS_FOR_SOBURAPID, timetable.r) &&
+        includes(RAILWAYS_FOR_SOBURAPID, timetable.r) &&
         timetable.y === TRAINTYPE_JREAST_RAPID &&
         timetable.os[0] !== STATION_SOBU_NARUTO
     ).forEach(timetable => {
@@ -473,7 +473,7 @@ async function process(options, calendar, postfix) {
         });
     });
 
-    loaderHelpers.saveJSON(`build/data/timetable-${postfix}.json.gz`, data);
+    saveJSON(`build/data/timetable-${postfix}.json.gz`, data);
 
     console.log(`${calendar} train timetable data was loaded`);
 }

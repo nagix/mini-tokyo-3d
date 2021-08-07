@@ -1,5 +1,5 @@
 import configs from './configs';
-import * as helpers from './helpers';
+import {loadJSON, removePrefix} from './helpers';
 
 const OPERATORS_FOR_TRAINS = [
     'JR-East',
@@ -71,7 +71,7 @@ export function loadStaticData(dataUrl, lang, clock) {
         `${dataUrl}/airports.json.gz`,
         `${dataUrl}/flight-statuses.json.gz`,
         `${dataUrl}/poi.json.gz`
-    ].map(helpers.loadJSON)).then(data => ({
+    ].map(loadJSON)).then(data => ({
         dict: data[0],
         railwayData: data[1],
         stationData: data[2],
@@ -94,7 +94,7 @@ export function loadStaticData(dataUrl, lang, clock) {
  * @returns {object} Loaded timetable data
  */
 export function loadTimetableData(dataUrl, clock) {
-    return helpers.loadJSON(`${dataUrl}/${getTimetableFileName(clock)}`);
+    return loadJSON(`${dataUrl}/${getTimetableFileName(clock)}`);
 }
 
 /**
@@ -126,23 +126,23 @@ export function loadDynamicTrainData(secrets) {
         urls.push(`${url}odpt:TrainInformation?odpt:operator=${operators}&acl:consumerKey=${key}`);
     });
 
-    return Promise.all(urls.map(helpers.loadJSON)).then(data => {
+    return Promise.all(urls.map(loadJSON)).then(data => {
         // Train data for JR-East, Tokyo Metro and Toei
         data.shift().forEach(train => {
-            const trainType = helpers.removePrefix(train['odpt:trainType']),
-                destinationStation = helpers.removePrefix(train['odpt:destinationStation']);
+            const trainType = removePrefix(train['odpt:trainType']),
+                destinationStation = removePrefix(train['odpt:destinationStation']);
 
             trainData.push({
-                id: adjustTrainID(helpers.removePrefix(train['owl:sameAs']), trainType, destinationStation),
-                o: helpers.removePrefix(train['odpt:operator']),
-                r: helpers.removePrefix(train['odpt:railway']),
+                id: adjustTrainID(removePrefix(train['owl:sameAs']), trainType, destinationStation),
+                o: removePrefix(train['odpt:operator']),
+                r: removePrefix(train['odpt:railway']),
                 y: trainType,
                 n: train['odpt:trainNumber'],
-                os: helpers.removePrefix(train['odpt:originStation']),
-                d: helpers.removePrefix(train['odpt:railDirection']),
+                os: removePrefix(train['odpt:originStation']),
+                d: removePrefix(train['odpt:railDirection']),
                 ds: destinationStation,
-                ts: helpers.removePrefix(train['odpt:toStation']),
-                fs: helpers.removePrefix(train['odpt:fromStation']),
+                ts: removePrefix(train['odpt:toStation']),
+                fs: removePrefix(train['odpt:fromStation']),
                 delay: (train['odpt:delay'] || 0) * 1000,
                 carComposition: train['odpt:carComposition'],
                 date: train['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2')
@@ -157,8 +157,8 @@ export function loadDynamicTrainData(secrets) {
         // Train information data
         [].concat(...data).forEach(trainInfo => {
             trainInfoData.push({
-                operator: helpers.removePrefix(trainInfo['odpt:operator']),
-                railway: helpers.removePrefix(trainInfo['odpt:railway']),
+                operator: removePrefix(trainInfo['odpt:operator']),
+                railway: removePrefix(trainInfo['odpt:railway']),
                 status: trainInfo['odpt:trainInformationStatus'],
                 text: trainInfo['odpt:trainInformationText']
             });
@@ -184,18 +184,18 @@ export function loadDynamicFlightData(secrets) {
         `${url}odpt:FlightInformation${type}?odpt:operator=${operators}&acl:consumerKey=${key}`
     )];
 
-    return Promise.all(urls.map(helpers.loadJSON)).then(data => {
+    return Promise.all(urls.map(loadJSON)).then(data => {
         const atisData = data.shift(),
             flightData = [].concat(...data).map(flight => ({
-                id: helpers.removePrefix(flight['owl:sameAs']),
-                o: helpers.removePrefix(flight['odpt:operator']),
+                id: removePrefix(flight['owl:sameAs']),
+                o: removePrefix(flight['odpt:operator']),
                 n: flight['odpt:flightNumber'],
-                a: helpers.removePrefix(flight['odpt:airline']),
-                s: helpers.removePrefix(flight['odpt:flightStatus']),
-                dp: helpers.removePrefix(flight['odpt:departureAirport']),
-                ar: helpers.removePrefix(flight['odpt:arrivalAirport']),
-                ds: helpers.removePrefix(flight['odpt:destinationAirport']),
-                or: helpers.removePrefix(flight['odpt:originAirport']),
+                a: removePrefix(flight['odpt:airline']),
+                s: removePrefix(flight['odpt:flightStatus']),
+                dp: removePrefix(flight['odpt:departureAirport']),
+                ar: removePrefix(flight['odpt:arrivalAirport']),
+                ds: removePrefix(flight['odpt:destinationAirport']),
+                or: removePrefix(flight['odpt:originAirport']),
                 edt: flight['odpt:estimatedDepartureTime'],
                 adt: flight['odpt:actualDepartureTime'],
                 sdt: flight['odpt:scheduledDepartureTime'],

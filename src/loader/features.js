@@ -14,8 +14,8 @@ import lineOffset from '../turf/line-offset';
 import lineSlice from '../turf/line-slice';
 import lineSliceAlong from '../turf/line-slice-along';
 import nearestPointProps from '../turf/nearest-point-props';
-import * as helpers from '../helpers';
-import * as loaderHelpers from './helpers';
+import {includes, valueOrDefault} from '../helpers';
+import {loadJSON, saveJSON} from './helpers';
 
 const HIDDEN_STATIONS = /^(JR-East\.(YamanoteFreight|Musashino\w+Branch)|TokyoMetro\.(Hibiya\.ShinKoshigaya|Chiyoda\.(Machida|ShinYurigaoka|SeijogakuenMae))|Keio\.Sagamihara\.Shinjuku|Keikyu\.Airport\.Shinagawa|Seibu\.S-)/;
 
@@ -102,7 +102,7 @@ export default async function(railwayLookup, stationLookup) {
     const [stationGroupData, coordinateData] = await Promise.all([
         'data/station-groups.json',
         'data/coordinates.json'
-    ].map(loaderHelpers.loadJSON));
+    ].map(loadJSON));
 
     const transitStations = [].concat(...stationGroupData.map(
         group => [].concat(...group)
@@ -110,7 +110,7 @@ export default async function(railwayLookup, stationLookup) {
 
     for (const {id} of coordinateData.railways) {
         ((railwayLookup[id] || {}).stations || [])
-            .filter(station => !helpers.includes(transitStations, station))
+            .filter(station => !includes(transitStations, station))
             .forEach(station => stationGroupData.push([[station]]));
     }
 
@@ -143,7 +143,7 @@ export default async function(railwayLookup, stationLookup) {
         featureArray.push(airwayFeature);
     }
 
-    loaderHelpers.saveJSON('build/data/features.json.gz', truncate(featureCollection(featureArray), {precision: 7}));
+    saveJSON('build/data/features.json.gz', truncate(featureCollection(featureArray), {precision: 7}));
 
     console.log('Feature data was loaded');
 }
@@ -160,7 +160,7 @@ export function featureWorker() {
     for (const {id, sublines, color, altitude, loop} of railways) {
         const railwayFeature = lineString([].concat(...sublines.map(subline => {
             const {type, start, end, coords, opacity} = subline,
-                sublineAltitude = helpers.valueOrDefault(subline.altitude, altitude) || 0;
+                sublineAltitude = valueOrDefault(subline.altitude, altitude) || 0;
             let coordinates;
 
             function smoothCoords(nextSubline, reverse) {
@@ -362,6 +362,7 @@ export function featureWorker() {
                         feature = featureLookup[railway];
 
                     if (!id.match(HIDDEN_STATIONS)) {
+                        layer.id = layer.id || id;
                         ids.push(id);
                     }
                     return getCoord(nearestPointOnLine(feature, coord));
@@ -383,6 +384,7 @@ export function featureWorker() {
 
             setAltitude(feature, ug.altitude * unit * 1000);
             feature.properties = {
+                id: `${ug.id}.${zoom}`,
                 type: 1,
                 outlineColor: '#000000',
                 width: 4,
@@ -403,6 +405,7 @@ export function featureWorker() {
             const feature = union(...og.features);
 
             feature.properties = {
+                id: `${og.id}.${zoom}`,
                 type: 1,
                 outlineColor: '#000000',
                 width: 4,

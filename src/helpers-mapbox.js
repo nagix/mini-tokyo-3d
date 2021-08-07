@@ -1,6 +1,6 @@
 import {LngLatBounds} from 'mapbox-gl';
 import {parseCSSColor} from 'csscolorparser';
-import * as helpers from './helpers';
+import {includes, luminance} from './helpers';
 
 export function getBounds(coords) {
     const bounds = new LngLatBounds();
@@ -17,7 +17,7 @@ export function setLayerProps(map, id, props) {
 
 export function isDarkBackground(map) {
     const [r, g, b] = parseCSSColor(map.getPaintProperty('background', 'background-color'));
-    return helpers.luminance({r, g, b}) < 127.5;
+    return luminance({r, g, b}) < 127.5;
 }
 
 /**
@@ -47,7 +47,7 @@ export function getStyleColors(map) {
         colors = [];
 
     map.getStyle().layers.filter(layer =>
-        helpers.includes(layerTypes, layer.type) && !layer.id.match(/-(og|ug)-/)
+        includes(layerTypes, layer.type) && !layer.id.match(/-(og|ug)-/)
     ).forEach(layer => {
         const {id, type} = layer;
 
@@ -85,7 +85,7 @@ export function getStyleOpacities(map) {
         opacities = [];
 
     map.getStyle().layers.filter(layer =>
-        helpers.includes(layerTypes, layer.type)
+        includes(layerTypes, layer.type)
     ).forEach(layer => {
         const {id, type} = layer,
             key = `${type}-opacity`;

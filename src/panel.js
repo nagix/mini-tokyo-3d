@@ -1,6 +1,6 @@
-import * as helpers from './helpers';
+import {createElement, includes} from './helpers';
 
-const isWindows = helpers.includes(navigator.userAgent, 'Windows');
+const isWindows = includes(navigator.userAgent, 'Windows');
 
 export default class {
 
@@ -54,28 +54,25 @@ export default class {
         return me;
     }
 
-    addTo(mt3d) {
+    addTo(map) {
         const me = this,
-            options = me._options,
-            container = me._container = document.createElement('div');
+            options = me._options;
 
-        me._mt3d = mt3d;
+        me._map = map;
 
         if (options.modal) {
-            const background = me._background = document.createElement('div');
+            const background = me._background = createElement('div', {
+                className: 'modal-panel-background closed'
+            }, map.container);
 
-            background.className = 'modal-panel-background closed';
             background.addEventListener('click', () => {
                 me.remove();
             });
-            mt3d.container.appendChild(background);
         }
 
-        container.className = [
-            'panel closed',
-            ` ${options.className || ''}`
-        ].join('');
-        container.innerHTML = `
+        const container = me._container = createElement('div', {
+            className: `panel closed ${options.className || ''}`,
+            innerHTML: `
 <div id="panel-header">
     <div id="panel-title"></div>
     <div id="panel-button-group" class="panel-button-group">
@@ -84,9 +81,8 @@ export default class {
 </div>
 <div id="panel-body"${isWindows ? ' class="windows"' : ''}>
     <div id="panel-content"></div>
-</div>`;
-
-        mt3d.container.appendChild(container);
+</div>`
+        }, map.container);
 
         if (me._title) {
             me.setTitle(me._title);
@@ -146,12 +142,12 @@ export default class {
             }
             container.parentNode.removeChild(container);
             delete me._container;
-            delete me._mt3d;
+            delete me._map;
         }, 300);
     }
 
     isOpen() {
-        return !!this._mt3d;
+        return !!this._map;
     }
 
 }

@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import SPE from '../spe/SPE';
-import * as helpers from '../helpers';
+import {clamp, loadJSON} from '../helpers';
 import ThreeLayer from '../three-layer';
 import Plugin from './plugin';
 import raindrop from './raindrop.png';
@@ -32,12 +32,12 @@ class PrecipitationLayer extends ThreeLayer {
             ne = me.getModelPosition(bounds.getNorthEast()),
             sw = me.getModelPosition(bounds.getSouthWest()),
             modelScale = me.getModelScale(),
-            resolution = helpers.clamp(Math.pow(2, Math.floor(17 - map.getZoom())), 0, 1) * 1088,
+            resolution = clamp(Math.pow(2, Math.floor(17 - map.getZoom())), 0, 1) * 1088,
             currBounds = {
-                left: Math.floor(helpers.clamp(sw.x / modelScale + 50000, 0, 108800) / resolution) * resolution,
-                right: Math.ceil(helpers.clamp(ne.x / modelScale + 50000, 0, 108800) / resolution) * resolution,
-                top: Math.floor(helpers.clamp(-ne.y / modelScale + 42500 + 0, 0, 78336) / resolution) * resolution,
-                bottom: Math.ceil(helpers.clamp(-sw.y / modelScale + 42500 + 0, 0, 78336) / resolution) * resolution
+                left: Math.floor(clamp(sw.x / modelScale + 50000, 0, 108800) / resolution) * resolution,
+                right: Math.ceil(clamp(ne.x / modelScale + 50000, 0, 108800) / resolution) * resolution,
+                top: Math.floor(clamp(-ne.y / modelScale + 42500 + 0, 0, 78336) / resolution) * resolution,
+                bottom: Math.ceil(clamp(-sw.y / modelScale + 42500 + 0, 0, 78336) / resolution) * resolution
             };
 
         if (nowCastData) {
@@ -84,10 +84,10 @@ class PrecipitationLayer extends ThreeLayer {
 
         if (bgGroup) {
             const zoom = map.getZoom(),
-                n = zoom >= 17 ? 20 : helpers.clamp(Math.floor(Math.pow(3, zoom - 13)), 3, 10000000),
-                h = helpers.clamp(Math.pow(2, 14 - zoom), 0, 1) * 1000,
-                v = helpers.clamp(Math.pow(1.7, 14 - zoom), 0, 1) * 2000,
-                s = helpers.clamp(Math.pow(1.2, zoom - 14.5) * map.transform.cameraToCenterDistance / 800, 0, 1);
+                n = zoom >= 17 ? 20 : clamp(Math.floor(Math.pow(3, zoom - 13)), 3, 10000000),
+                h = clamp(Math.pow(2, 14 - zoom), 0, 1) * 1000,
+                v = clamp(Math.pow(1.7, 14 - zoom), 0, 1) * 2000,
+                s = clamp(Math.pow(1.2, zoom - 14.5) * map.transform.cameraToCenterDistance / 800, 0, 1);
             let emitterCount = 30;
 
             while (emitterCount > 0) {
@@ -184,30 +184,30 @@ class PrecipitationPlugin extends Plugin {
         };
         me._layer = new PrecipitationLayer(me.id);
         me._moveEventListener = () => {
-            if (me._mt3d.clockMode === 'realtime') {
+            if (me._map.getClockMode() === 'realtime') {
                 me._layer.updateEmitterQueue();
             }
         };
     }
 
-    onAdd(mt3d) {
-        mt3d.map.addLayer(this._layer, 'poi');
+    onAdd(map) {
+        map.map.addLayer(this._layer, 'poi');
     }
 
-    onRemove(mt3d) {
-        mt3d.map.removeLayer(this._layer);
+    onRemove(map) {
+        map.map.removeLayer(this._layer);
     }
 
     onEnabled() {
         const me = this;
-        let {clockMode} = me._mt3d;
+        let clockMode = me._map.getClockMode();
 
         delete me._lastWeatherRefresh;
-        me._mt3d.map.on('move', me._moveEventListener);
+        me._map.on('move', me._moveEventListener);
 
         const repeat = () => {
             const now = Date.now(),
-                currentClockMode = me._mt3d.clockMode;
+                currentClockMode = me._map.getClockMode();
 
             if (clockMode !== currentClockMode) {
                 if (currentClockMode === 'realtime') {
@@ -220,7 +220,7 @@ class PrecipitationPlugin extends Plugin {
 
             if (me.enabled) {
                 if (clockMode === 'realtime' && now - (me._lastWeatherRefresh || 0) >= NOWCASTS_REFRESH_INTERVAL) {
-                    helpers.loadJSON(NOWCASTS_URL).then(data => {
+                    loadJSON(NOWCASTS_URL).then(data => {
                         me._layer.updateEmitterQueue(data);
                     });
                     me._lastWeatherRefresh = now;
@@ -238,13 +238,13 @@ class PrecipitationPlugin extends Plugin {
         const me = this;
 
         me._layer.clear();
-        me._mt3d.map.off('move', me._moveEventListener);
+        me._map.off('move', me._moveEventListener);
     }
 
     setVisibility(visible) {
         const me = this;
 
-        me._mt3d.map.setLayoutProperty(me.id, 'visibility', visible ? 'visible' : 'none');
+        me._map.map.setLayoutProperty(me.id, 'visibility', visible ? 'visible' : 'none');
     }
 
 }

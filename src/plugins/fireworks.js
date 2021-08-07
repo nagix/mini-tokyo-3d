@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import * as helpers from '../helpers';
+import {clamp} from '../helpers';
 import ThreeLayer from '../three-layer';
 import Plugin from './plugin';
 import fireworksSVG from './fireworks.svg';
@@ -645,7 +645,7 @@ class FireworksLayer extends ThreeLayer {
 
         const modelPosition = me.getModelPosition(lngLat);
         const modelScale = me.getModelScale();
-        const scale = Math.pow(2, 17 - helpers.clamp(map.getZoom(), 14, 16)) * modelScale;
+        const scale = Math.pow(2, 17 - clamp(map.getZoom(), 14, 16)) * modelScale;
         const position = {
             x: modelPosition.x + (Math.random() * 400 - 200) * modelScale,
             y: modelPosition.y + (Math.random() * 400 - 200) * modelScale
@@ -733,19 +733,19 @@ class FireworksPlugin extends Plugin {
         }];
     }
 
-    onAdd(mt3d) {
-        mt3d.map.addLayer(this._layer, 'poi');
+    onAdd(map) {
+        map.map.addLayer(this._layer, 'poi');
     }
 
-    onRemove(mt3d) {
-        mt3d.map.removeLayer(this._layer);
+    onRemove(map) {
+        map.map.removeLayer(this._layer);
     }
 
     onEnabled() {
         const me = this;
 
         me._interval = setInterval(() => {
-            const now = me._mt3d.clock.getTime();
+            const now = me._map.clock.getTime();
 
             me._plans.forEach((plan, index) => {
                 if (now >= plan.start && now < plan.end && Math.random() > 0.7) {
@@ -762,7 +762,7 @@ class FireworksPlugin extends Plugin {
     setVisibility(visible) {
         const me = this;
 
-        me._mt3d.map.setLayoutProperty(me.id, 'visibility', visible ? 'visible' : 'none');
+        me._map.map.setLayoutProperty(me.id, 'visibility', visible ? 'visible' : 'none');
     }
 
 }

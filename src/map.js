@@ -10,6 +10,7 @@ import AboutPanel from './about-panel';
 import Clock from './clock';
 import ClockControl from './clock-control';
 import configs from './configs';
+import extend from './extend';
 import TrainPanel from './train-panel';
 import * as helpers from './helpers';
 import * as helpersGeojson from './helpers-geojson';
@@ -25,7 +26,6 @@ import SearchPanel from './search-panel';
 import SharePanel from './share-panel';
 import StationPanel from './station-panel';
 import ThreeLayer from './three-layer';
-import verify from './verify';
 
 const OPERATORS_FOR_DYNAMIC_TRAIN_DATA = [
     'JR-East',
@@ -40,7 +40,7 @@ const AIRLINES_FOR_ANA_CODE_SHARE = ['ADO', 'SFJ', 'SNJ'];
 
 const DEGREE_TO_RADIAN = Math.PI / 180;
 
-const modelOrigin = MercatorCoordinate.fromLngLat(configs.originCoord),
+const modelOrigin = MercatorCoordinate.fromLngLat(configs.defaultCenter),
     modelScale = modelOrigin.meterInMercatorCoordinateUnits();
 
 // Replace MapboxLayer.render to support underground rendering
@@ -80,20 +80,37 @@ export default class extends Evented {
 
         const me = this;
 
-        me.options = options;
+        options = extend({
+            hash: false,
+            center: configs.defaultCenter,
+            zoom: configs.defaultZoom,
+            bearing: configs.defaultBearing,
+            pitch: configs.defaultPitch,
+            dataUrl: configs.dataUrl,
+            clockControl: true,
+            searchControl: true,
+            navigationControl: true,
+            fullscreenControl: true,
+            modeControl: true,
+            configControl: true,
+            trackingMode: configs.defaultTrackingMode,
+            ecoMode: configs.defaultEcoMode,
+            ecoFrameRate: configs.defaultEcoFrameRate
+        }, options);
+
         me.lang = helpers.getLang(options.lang);
-        me.dataUrl = options.dataUrl || configs.dataUrl;
+        me.dataUrl = options.dataUrl;
         me.container = typeof options.container === 'string' ?
             document.getElementById(options.container) : options.container;
-        me.secrets = verify(me.options.secrets);
+        me.secrets = options.secrets;
         me.exitPopups = [];
 
-        me.clockControl = helpers.valueOrDefault(options.clockControl, true);
-        me.searchControl = helpers.valueOrDefault(options.searchControl, true);
-        me.navigationControl = helpers.valueOrDefault(options.navigationControl, true);
-        me.fullscreenControl = helpers.valueOrDefault(options.fullscreenControl, true);
-        me.modeControl = helpers.valueOrDefault(options.modeControl, true);
-        me.configControl = helpers.valueOrDefault(options.configControl, true);
+        me.clockControl = options.clockControl;
+        me.searchControl = options.searchControl;
+        me.navigationControl = options.navigationControl;
+        me.fullscreenControl = options.fullscreenControl;
+        me.modeControl = options.modeControl;
+        me.configControl = options.configControl;
         me.clock = new Clock();
 
         me.plugins = [
@@ -105,31 +122,52 @@ export default class extends Evented {
 
         me.searchMode = 'none';
         me.viewMode = configs.defaultViewMode;
-        me.trackingMode = helpers.valueOrDefault(options.trackingMode, configs.defaultTrackingMode);
+        me.trackingMode = options.trackingMode;
         me.initialSelection = options.selection;
         me.clockMode = configs.defaultClockMode;
         me.isEditingTime = false;
-        me.ecoMode = helpers.valueOrDefault(options.ecoMode, configs.defaultEcoMode);
-
-        me.initialCenter = helpers.valueOrDefault(options.center, configs.originCoord);
-        me.initialZoom = helpers.valueOrDefault(options.zoom, configs.defaultZoom);
-        me.initialBearing = helpers.valueOrDefault(options.bearing, configs.defaultBearing);
-        me.initialPitch = helpers.valueOrDefault(options.pitch, configs.defaultPitch);
-        me.ecoFrameRate = helpers.valueOrDefault(options.ecoFrameRate, configs.defaultEcoFrameRate);
+        me.ecoMode = options.ecoMode;
+        me.ecoFrameRate = options.ecoFrameRate;
 
         me.lastDynamicUpdate = {};
         me.lastRepaint = 0;
 
-        me.container.classList.add('mini-tokyo-3d');
-        insertTags(me.container);
-
-        loader.loadStaticData(me.dataUrl, me.lang, me.clock).then(data => {
-            Object.assign(me, data);
-            me.initialize();
-        }).catch(error => {
-            showErrorMessage(me.container);
-            throw error;
+        me.container.addEventListener('touchstart', () => {
+            me.touchDevice = true;
         });
+
+        // The inner map container overrides the option
+        options.container = initContainer(me.container);
+
+        // This style overrides the option
+        options.style = `${options.dataUrl}/osm-liberty.json`;
+
+        // The custom attribution will be appended only if ConfigControl is visible
+        if (!options.configControl) {
+            options.customAttribution = helpers.flat([options.customAttribution, configs.customAttribution]);
+        }
+
+        me.map = new Map(options);
+
+        configs.events.forEach(event => {
+            me.map.on(event, me.fire.bind(me));
+        });
+
+        me.map.once('load', () => {
+            hideLoader(me.container);
+        });
+
+        Promise.all([
+            loader.loadStaticData(me.dataUrl, me.lang, me.clock)
+                .then(me.initData.bind(me))
+                .catch(error => {
+                    showErrorMessage(me.container);
+                    throw error;
+                }),
+            new Promise(resolve => {
+                me.map.once('styledata', resolve);
+            })
+        ]).then(me.initialize.bind(me));
     }
 
     /**
@@ -137,26 +175,19 @@ export default class extends Evented {
      * @returns {LngLat} The map's geographical centerpoint
      */
     getCenter() {
-        const {map, initialCenter} = this;
-
-        return map ? map.getCenter() : new LngLat(initialCenter);
+        return this.map.getCenter();
     }
 
     /**
      * Sets the map's geographical centerpoint. Equivalent to jumpTo({center: center}).
      * @param {LngLatLike} center - The centerpoint to set
-     * @returns {MiniTokyo3D} this
+     * @returns {Map} this
      */
     setCenter(center) {
-        const me = this,
-            {map} = me;
+        const me = this;
 
-        if (map) {
-            me.trackObject();
-            map.setCenter(center);
-        } else {
-            me.initialCenter = center;
-        }
+        me.trackObject();
+        me.map.setCenter(center);
         return me;
     }
 
@@ -165,25 +196,18 @@ export default class extends Evented {
      * @returns {number} The map's current zoom level
      */
     getZoom() {
-        const {map, initialZoom} = this;
-
-        return map ? map.getZoom() : initialZoom;
+        return this.map.getZoom();
     }
 
     /**
      * Sets the map's zoom level. Equivalent to jumpTo({zoom: zoom}).
      * @param {number} zoom - The zoom level to set (0-20)
-     * @returns {MiniTokyo3D} this
+     * @returns {Map} this
      */
     setZoom(zoom) {
-        const me = this,
-            {map} = me;
+        const me = this;
 
-        if (map) {
-            map.setZoom(zoom);
-        } else {
-            me.initialZoom = zoom;
-        }
+        me.map.setZoom(zoom);
         return me;
     }
 
@@ -193,9 +217,7 @@ export default class extends Evented {
      * @returns {number} The map's current bearing
      */
     getBearing() {
-        const {map, initialBearing} = this;
-
-        return map ? map.getBearing() : initialBearing;
+        return this.map.getBearing();
     }
 
     /**
@@ -203,18 +225,13 @@ export default class extends Evented {
      * is "up"; for example, a bearing of 90° orients the map so that east is up.
      * Equivalent to jumpTo({bearing: bearing}).
      * @param {number} bearing - The desired bearing
-     * @returns {MiniTokyo3D} this
+     * @returns {Map} this
      */
     setBearing(bearing) {
-        const me = this,
-            {map} = me;
+        const me = this;
 
-        if (map) {
-            me.trackObject();
-            map.setBearing(bearing);
-        } else {
-            me.initialBearing = bearing;
-        }
+        me.trackObject();
+        me.map.setBearing(bearing);
         return me;
     }
 
@@ -224,26 +241,19 @@ export default class extends Evented {
      *     plane of the screen
      */
     getPitch() {
-        const {map, initialPitch} = this;
-
-        return map ? map.getPitch() : initialPitch;
+        return this.map.getPitch();
     }
 
     /**
      * Sets the map's pitch (tilt). Equivalent to jumpTo({pitch: pitch}).
      * @param {number} pitch - The pitch to set, measured in degrees away from the
      *     plane of the screen (0-60)
-     * @returns {MiniTokyo3D} this
-     */
+     * @returns {Map} this
+    */
     setPitch(pitch) {
-        const me = this,
-            {map} = me;
+        const me = this;
 
-        if (map) {
-            map.setPitch(pitch);
-        } else {
-            me.initialPitch = pitch;
-        }
+        me.map.setPitch(pitch);
         return me;
     }
 
@@ -253,19 +263,16 @@ export default class extends Evented {
      * values for any details not specified in options.
      * @param {object} options - Options describing the destination and animation of
      *     the transition. Accepts CameraOptions and AnimationOptions
-     * @returns {MiniTokyo3D} this
+     * @returns {Map} this
      */
     easeTo(options) {
         const me = this,
-            {map} = me,
             {center, bearing} = options;
 
-        if (map) {
-            if (center !== undefined || bearing !== undefined) {
-                me.trackObject();
-            }
-            map.easeTo(options);
+        if (center !== undefined || bearing !== undefined) {
+            me.trackObject();
         }
+        me.map.easeTo(options);
         return me;
     }
 
@@ -277,19 +284,16 @@ export default class extends Evented {
      * @param {object} options - Options describing the destination and animation of
      *     the transition. Accepts CameraOptions, AnimationOptions, and a few additional
      *     options
-     * @returns {MiniTokyo3D} this
+     * @returns {Map} this
      */
     flyTo(options) {
         const me = this,
-            {map} = me,
             {center, bearing} = options;
 
-        if (map) {
-            if (center !== undefined || bearing !== undefined) {
-                me.trackObject();
-            }
-            map.flyTo(options);
+        if (center !== undefined || bearing !== undefined) {
+            me.trackObject();
         }
+        me.map.flyTo(options);
         return me;
     }
 
@@ -298,19 +302,16 @@ export default class extends Evented {
      * transition. The map will retain its current values for any details not specified
      * in options.
      * @param {CameraOptions} options - Options object
-     * @returns {MiniTokyo3D} this
+     * @returns {Map} this
      */
     jumpTo(options) {
         const me = this,
-            {map} = me,
             {center, bearing} = options;
 
-        if (map) {
-            if (center !== undefined || bearing !== undefined) {
-                me.trackObject();
-            }
-            map.jumpTo(options);
+        if (center !== undefined || bearing !== undefined) {
+            me.trackObject();
         }
+        me.map.jumpTo(options);
         return me;
     }
 
@@ -325,12 +326,12 @@ export default class extends Evented {
     /**
      * Sets the view mode.
      * @param {string} mode - View mode: 'ground' or 'underground'
-     * @returns {MiniTokyo3D} this
+     * @returns {Map} this
      */
     setViewMode(mode) {
         const me = this;
 
-        if (me.styleLoaded) {
+        if (me.initialized) {
             me._setViewMode(mode);
         }
         return me;
@@ -347,7 +348,7 @@ export default class extends Evented {
     /**
      * Sets the tracking mode.
      * @param {string} mode - Tracking mode: 'helicopter' or 'heading'
-     * @returns {MiniTokyo3D} this
+     * @returns {Map} this
      */
     setTrackingMode(mode) {
         const me = this;
@@ -373,7 +374,7 @@ export default class extends Evented {
     /**
      * Selects a train or flight.
      * @param {string} id - ID for the object to select
-     * @returns {MiniTokyo3D} this
+     * @returns {Map} this
      */
     setSelection(id) {
         const me = this,
@@ -437,12 +438,12 @@ export default class extends Evented {
     /**
      * Sets the clock mode.
      * @param {string} mode - Clock mode: 'realtime' or 'playback'
-     * @returns {MiniTokyo3D} this
+     * @returns {Map} this
      */
     setClockMode(mode) {
         const me = this;
 
-        if (me.styleLoaded) {
+        if (me.initialized) {
             me._setClockMode(mode);
         }
         return me;
@@ -459,7 +460,7 @@ export default class extends Evented {
     /**
      * Sets the eco mode.
      * @param {string} mode - Eco mode: 'normal' or 'eco'
-     * @returns {MiniTokyo3D} this
+     * @returns {Map} this
      */
     setEcoMode(mode) {
         const me = this;
@@ -468,22 +469,49 @@ export default class extends Evented {
         return me;
     }
 
-    initialize() {
+    initData(data) {
         const me = this;
 
-        const map = me.map = new Map({
-            accessToken: me.secrets.mapbox,
-            container: me.container.querySelector('#map'),
-            style: `${me.dataUrl}/osm-liberty.json`,
-            customAttribution: me.configControl ? '' : configs.customAttribution,
-            hash: helpers.valueOrDefault(me.options.hash, false),
-            center: me.initialCenter,
-            zoom: me.initialZoom,
-            bearing: me.initialBearing,
-            pitch: me.initialPitch
+        Object.assign(me, data);
+
+        me.railwayLookup = helpers.buildLookup(me.railwayData);
+        me.stationLookup = helpers.buildLookup(me.stationData);
+
+        // Build feature lookup dictionary and update feature properties
+        me.featureLookup = {};
+        featureEach(me.featureCollection, feature => {
+            const {id, type} = feature.properties;
+
+            if (id && !id.match(/\.(ug|og)\./)) {
+                me.featureLookup[id] = feature;
+                if (type !== 1) {
+                    helpersGeojson.updateDistances(feature);
+                }
+            }
         });
 
-        const unit = Math.pow(2, 14 - helpers.clamp(map.getZoom(), 13, 19));
+        me.lastTimetableRefresh = me.clock.getTime('03:00');
+        me.updateTimetableData(me.timetableData);
+        me.trainLookup = helpers.buildLookup(me.timetableData, 't');
+
+        me.railDirectionLookup = helpers.buildLookup(me.railDirectionData);
+        me.trainTypeLookup = helpers.buildLookup(me.trainTypeData);
+        me.trainVehicleLookup = helpers.buildLookup(me.trainVehicleData);
+        me.operatorLookup = helpers.buildLookup(me.operatorData);
+        me.airportLookup = helpers.buildLookup(me.airportData);
+        me.flightStatusLookup = helpers.buildLookup(me.flightStatusData);
+        me.poiLookup = helpers.buildLookup(me.poiData);
+
+        me.activeTrainLookup = {};
+        me.realtimeTrainLookup = {};
+        me.activeFlightLookup = {};
+        me.flightLookup = {};
+    }
+
+    initialize() {
+        const me = this,
+            {lang, dict, clock, map} = me,
+            unit = Math.pow(2, 14 - helpers.clamp(map.getZoom(), 13, 19));
 
         me.layerZoom = helpers.clamp(Math.floor(map.getZoom()), 13, 18);
         me.objectUnit = Math.max(unit * .19, .02);
@@ -534,550 +562,495 @@ export default class extends Evented {
             }
         };
 
-        me.railwayLookup = helpers.buildLookup(me.railwayData);
-        me.stationLookup = helpers.buildLookup(me.stationData);
-
-        // Build feature lookup dictionary and update feature properties
-        me.featureLookup = {};
-        featureEach(me.featureCollection, feature => {
-            const {id} = feature.properties;
-
-            if (id && !id.match(/\.(ug|og)\./)) {
-                me.featureLookup[id] = feature;
-                helpersGeojson.updateDistances(feature);
-            }
+        ['poi', 'poi_extra'].forEach(id => {
+            map.setLayoutProperty(id, 'text-field', `{name_${lang.match(/ja|ko|zh-Han[st]/) ? lang : 'en'}}`);
         });
 
-        me.lastTimetableRefresh = me.clock.getTime('03:00');
-        me.updateTimetableData(me.timetableData);
-        me.trainLookup = helpers.buildLookup(me.timetableData, 't');
+        [13, 14, 15, 16, 17, 18].forEach(zoom => {
+            const minzoom = zoom <= 13 ? 0 : zoom,
+                maxzoom = zoom >= 18 ? 24 : zoom + 1,
+                lineWidthScale =
+                    zoom === 13 ? helpers.clamp(Math.pow(2, map.getZoom() - 12), .125, 1) :
+                    zoom === 18 ? helpers.clamp(Math.pow(2, map.getZoom() - 19), 1, 8) : 1;
 
-        me.railDirectionLookup = helpers.buildLookup(me.railDirectionData);
-        me.trainTypeLookup = helpers.buildLookup(me.trainTypeData);
-        me.trainVehicleLookup = helpers.buildLookup(me.trainVehicleData);
-        me.operatorLookup = helpers.buildLookup(me.operatorData);
-        me.airportLookup = helpers.buildLookup(me.airportData);
-        me.flightStatusLookup = helpers.buildLookup(me.flightStatusData);
-        me.poiLookup = helpers.buildLookup(me.poiData);
-
-        me.activeTrainLookup = {};
-        me.realtimeTrainLookup = {};
-        me.activeFlightLookup = {};
-        me.flightLookup = {};
-
-        me.container.addEventListener('touchstart', () => {
-            me.touchDevice = true;
-        });
-
-        map.once('load', () => {
-            me.container.querySelector('#loader').style.opacity = 0;
-            setTimeout(() => {
-                me.container.querySelector('#loader').style.display = 'none';
-            }, 1000);
-            me.loaded = true;
-        });
-
-        map.once('styledata', () => {
-            ['poi', 'poi_extra'].forEach(id => {
-                map.setLayoutProperty(id, 'text-field', `{name_${me.lang.match(/ja|ko|zh-Han[st]/) ? me.lang : 'en'}}`);
-            });
-
-            [13, 14, 15, 16, 17, 18].forEach(zoom => {
-                const minzoom = zoom <= 13 ? 0 : zoom,
-                    maxzoom = zoom >= 18 ? 24 : zoom + 1,
-                    lineWidthScale =
-                        zoom === 13 ? helpers.clamp(Math.pow(2, map.getZoom() - 12), .125, 1) :
-                        zoom === 18 ? helpers.clamp(Math.pow(2, map.getZoom() - 19), 1, 8) : 1;
-
-                map.addLayer(new MapboxLayer({
-                    id: `stations-marked-${zoom}`,
-                    type: GeoJsonLayer,
-                    filled: true,
-                    stroked: true,
-                    getLineWidth: 12,
-                    getLineColor: [255, 255, 255],
-                    lineWidthUnits: 'pixels',
-                    lineWidthScale,
-                    getFillColor: [255, 255, 255],
-                    visible: false
-                }), 'building-3d');
-                map.setLayerZoomRange(`stations-marked-${zoom}`, minzoom, maxzoom);
-                map.addLayer(new MapboxLayer({
-                    id: `stations-selected-${zoom}`,
-                    type: GeoJsonLayer,
-                    filled: true,
-                    stroked: true,
-                    getLineWidth: 12,
-                    getLineColor: [255, 255, 255],
-                    lineWidthUnits: 'pixels',
-                    lineWidthScale,
-                    getFillColor: [255, 255, 255],
-                    visible: false
-                }), 'building-3d');
-                map.setLayerZoomRange(`stations-selected-${zoom}`, minzoom, maxzoom);
-                map.addLayer(new MapboxLayer({
-                    id: `railways-ug-${zoom}`,
-                    type: GeoJsonLayer,
-                    data: helpersGeojson.featureFilter(me.featureCollection, p =>
-                        p.zoom === zoom && p.type === 0 && p.altitude < 0
-                    ),
-                    filled: false,
-                    stroked: true,
-                    getLineWidth: d => d.properties.width,
-                    getLineColor: d => helpers.colorToRGBArray(d.properties.color),
-                    lineWidthUnits: 'pixels',
-                    lineWidthScale,
-                    opacity: .0625,
-                    pickable: true
-                }), 'building-3d');
-                map.setLayerZoomRange(`railways-ug-${zoom}`, minzoom, maxzoom);
-                map.addLayer(new MapboxLayer({
-                    id: `stations-ug-${zoom}`,
-                    type: GeoJsonLayer,
-                    data: helpersGeojson.featureFilter(me.featureCollection, p =>
-                        p.zoom === zoom && p.type === 1 && p.altitude < 0
-                    ),
-                    filled: true,
-                    stroked: true,
-                    getLineWidth: 4,
-                    getLineColor: [0, 0, 0],
-                    lineWidthUnits: 'pixels',
-                    lineWidthScale,
-                    getFillColor: [255, 255, 255, 179],
-                    opacity: .0625,
-                    pickable: true
-                }), 'building-3d');
-                map.setLayerZoomRange(`stations-ug-${zoom}`, minzoom, maxzoom);
-                map.addLayer(new MapboxLayer({
-                    id: `railways-routeug-${zoom}`,
-                    type: GeoJsonLayer,
-                    data: helpersGeojson.emptyFeatureCollection(),
-                    filled: false,
-                    stroked: true,
-                    getLineWidth: d => d.properties.width,
-                    getLineColor: d => helpers.colorToRGBArray(d.properties.color),
-                    lineWidthUnits: 'pixels',
-                    lineWidthScale,
-                    opacity: .0625
-                }), 'building-3d');
-                map.setLayerZoomRange(`railways-routeug-${zoom}`, minzoom, maxzoom);
-                map.addLayer(new MapboxLayer({
-                    id: `stations-routeug-${zoom}`,
-                    type: GeoJsonLayer,
-                    data: helpersGeojson.emptyFeatureCollection(),
-                    filled: true,
-                    stroked: true,
-                    getLineWidth: 4,
-                    getLineColor: [0, 0, 0],
-                    lineWidthUnits: 'pixels',
-                    lineWidthScale,
-                    getFillColor: [255, 255, 255, 179],
-                    opacity: .0625
-                }), 'building-3d');
-                map.setLayerZoomRange(`stations-routeug-${zoom}`, minzoom, maxzoom);
-                map.addLayer(new MapboxLayer({
-                    id: `railways-routeog-${zoom}`,
-                    type: GeoJsonLayer,
-                    data: helpersGeojson.emptyFeatureCollection(),
-                    filled: false,
-                    stroked: true,
-                    getLineWidth: d => d.properties.width,
-                    getLineColor: d => helpers.colorToRGBArray(d.properties.color),
-                    lineWidthUnits: 'pixels',
-                    lineWidthScale
-                }), 'building-3d');
-                map.setLayerZoomRange(`railways-routeog-${zoom}`, minzoom, maxzoom);
-                map.addLayer(new MapboxLayer({
-                    id: `stations-routeog-${zoom}`,
-                    type: GeoJsonLayer,
-                    data: helpersGeojson.emptyFeatureCollection(),
-                    filled: true,
-                    stroked: true,
-                    getLineWidth: 4,
-                    getLineColor: [0, 0, 0],
-                    lineWidthUnits: 'pixels',
-                    lineWidthScale,
-                    getFillColor: [255, 255, 255, 179]
-                }), 'building-3d');
-                map.setLayerZoomRange(`stations-routeog-${zoom}`, minzoom, maxzoom);
-            });
-
-            // Workaround for deck.gl #3522
-            map.__deck.props.getCursor = () => map.getCanvas().style.cursor;
-
-            map.addLayer(trainLayers.ug, 'building-3d');
-
-            [13, 14, 15, 16, 17, 18].forEach(zoom => {
-                const minzoom = zoom <= 13 ? 0 : zoom,
-                    maxzoom = zoom >= 18 ? 24 : zoom + 1,
-                    width = ['get', 'width'],
-                    color = ['get', 'color'],
-                    outlineColor = ['get', 'outlineColor'],
-                    lineWidth =
-                        zoom === 13 ? ['interpolate', ['exponential', 2], ['zoom'], 9, ['/', width, 8], 12, width] :
-                        zoom === 18 ? ['interpolate', ['exponential', 2], ['zoom'], 19, width, 22, ['*', width, 8]] : width,
-                    railwaySource = {
-                        type: 'geojson',
-                        data: helpersGeojson.featureFilter(me.featureCollection, p =>
-                            p.zoom === zoom && p.type === 0 && p.altitude === 0
-                        )
-                    },
-                    stationSource = {
-                        type: 'geojson',
-                        data: helpersGeojson.featureFilter(me.featureCollection, p =>
-                            p.zoom === zoom && p.type === 1 && p.altitude === 0
-                        )
-                    };
-
-                map.addLayer({
-                    id: `railways-og-${zoom}`,
-                    type: 'line',
-                    source: railwaySource,
-                    paint: {
-                        'line-color': color,
-                        'line-width': lineWidth
-                    },
-                    minzoom,
-                    maxzoom
-                }, 'building-3d');
-                map.addLayer({
-                    id: `stations-og-${zoom}`,
-                    type: 'fill',
-                    source: stationSource,
-                    paint: {
-                        'fill-color': color,
-                        'fill-opacity': .7
-                    },
-                    minzoom,
-                    maxzoom
-                }, 'building-3d');
-                map.addLayer({
-                    id: `stations-outline-og-${zoom}`,
-                    type: 'line',
-                    source: stationSource,
-                    paint: {
-                        'line-color': outlineColor,
-                        'line-width': lineWidth
-                    },
-                    minzoom,
-                    maxzoom
-                }, 'building-3d');
-            });
-
-            map.addLayer(trainLayers.og, 'building-3d');
-
-            map.addLayer({
-                id: 'sky',
-                type: 'sky',
-                paint: {
-                    'sky-opacity': [
-                        'interpolate',
-                        ['linear'],
-                        ['zoom'],
-                        0,
-                        0,
-                        5,
-                        0.3,
-                        8,
-                        1
-                    ],
-                    'sky-type': 'atmosphere',
-                    'sky-atmosphere-sun-intensity': 20
-                }
-            });
-
-            /* For development
             map.addLayer(new MapboxLayer({
-                id: `airway-og-`,
+                id: `stations-marked-${zoom}`,
+                type: GeoJsonLayer,
+                filled: true,
+                stroked: true,
+                getLineWidth: 12,
+                getLineColor: [255, 255, 255],
+                lineWidthUnits: 'pixels',
+                lineWidthScale,
+                getFillColor: [255, 255, 255],
+                visible: false
+            }), 'building-3d');
+            map.setLayerZoomRange(`stations-marked-${zoom}`, minzoom, maxzoom);
+            map.addLayer(new MapboxLayer({
+                id: `stations-selected-${zoom}`,
+                type: GeoJsonLayer,
+                filled: true,
+                stroked: true,
+                getLineWidth: 12,
+                getLineColor: [255, 255, 255],
+                lineWidthUnits: 'pixels',
+                lineWidthScale,
+                getFillColor: [255, 255, 255],
+                visible: false
+            }), 'building-3d');
+            map.setLayerZoomRange(`stations-selected-${zoom}`, minzoom, maxzoom);
+            map.addLayer(new MapboxLayer({
+                id: `railways-ug-${zoom}`,
                 type: GeoJsonLayer,
                 data: helpersGeojson.featureFilter(me.featureCollection, p =>
-                    p.type === 0 && p.altitude > 0
+                    p.zoom === zoom && p.type === 0 && p.altitude < 0
                 ),
                 filled: false,
                 stroked: true,
                 getLineWidth: d => d.properties.width,
                 getLineColor: d => helpers.colorToRGBArray(d.properties.color),
                 lineWidthUnits: 'pixels',
-                lineWidthScale: 1,
+                lineWidthScale,
+                opacity: .0625,
+                pickable: true
+            }), 'building-3d');
+            map.setLayerZoomRange(`railways-ug-${zoom}`, minzoom, maxzoom);
+            map.addLayer(new MapboxLayer({
+                id: `stations-ug-${zoom}`,
+                type: GeoJsonLayer,
+                data: helpersGeojson.featureFilter(me.featureCollection, p =>
+                    p.zoom === zoom && p.type === 1 && p.altitude < 0
+                ),
+                filled: true,
+                stroked: true,
+                getLineWidth: 4,
+                getLineColor: [0, 0, 0],
+                lineWidthUnits: 'pixels',
+                lineWidthScale,
+                getFillColor: [255, 255, 255, 179],
+                opacity: .0625,
+                pickable: true
+            }), 'building-3d');
+            map.setLayerZoomRange(`stations-ug-${zoom}`, minzoom, maxzoom);
+            map.addLayer(new MapboxLayer({
+                id: `railways-routeug-${zoom}`,
+                type: GeoJsonLayer,
+                data: helpersGeojson.emptyFeatureCollection(),
+                filled: false,
+                stroked: true,
+                getLineWidth: d => d.properties.width,
+                getLineColor: d => helpers.colorToRGBArray(d.properties.color),
+                lineWidthUnits: 'pixels',
+                lineWidthScale,
                 opacity: .0625
-            }), 'poi');
-            */
-
-            me.styleColors = helpersMapbox.getStyleColors(map);
-            me.styleOpacities = helpersMapbox.getStyleOpacities(map);
-
-            const datalist = document.createElement('datalist');
-            datalist.id = 'stations';
-            me.stationTitleLookup = {};
-            [me.lang, 'en'].forEach(l => {
-                me.railwayData.forEach(railway => {
-                    railway.stations.forEach(id => {
-                        const station = me.stationLookup[id],
-                            utitle = station.utitle && station.utitle[l],
-                            title = utitle || helpers.normalize(station.title[l] || station.title.en),
-                            key = title.toUpperCase();
-
-                        if (!me.stationTitleLookup[key]) {
-                            const option = document.createElement('option');
-
-                            option.value = title;
-                            datalist.appendChild(option);
-                            me.stationTitleLookup[key] = station;
-                        }
-                    });
-                });
-            });
-            document.body.appendChild(datalist);
-
-            if (me.searchControl) {
-                const control = new MapboxGLButtonControl([{
-                    className: 'mapboxgl-ctrl-search',
-                    title: me.dict['enter-search'],
-                    eventHandler() {
-                        me._setSearchMode(me.searchMode === 'none' ? 'edit' : 'none');
-                    }
-                }]);
-                map.addControl(control);
-            }
-
-            if (me.navigationControl) {
-                const control = new NavigationControl();
-
-                control._setButtonTitle = function(button) {
-                    const {_zoomInButton, _zoomOutButton, _compass} = this,
-                        title = button === _zoomInButton ? me.dict['zoom-in'] :
-                        button === _zoomOutButton ? me.dict['zoom-out'] :
-                        button === _compass ? me.dict['compass'] : '';
-
-                    button.title = title;
-                    button.setAttribute('aria-label', title);
-                };
-                map.addControl(control);
-            }
-
-            if (me.fullscreenControl) {
-                const control = new FullscreenControl({container: me.container});
-
-                control._updateTitle = function() {
-                    const {_fullscreenButton} = this,
-                        title = me.dict[this._isFullscreen() ? 'exit-fullscreen' : 'enter-fullscreen'];
-
-                    _fullscreenButton.title = title;
-                    _fullscreenButton.setAttribute('aria-label', title);
-                };
-                map.addControl(control);
-            }
-
-            if (me.modeControl) {
-                const control = new MapboxGLButtonControl([{
-                    className: 'mapboxgl-ctrl-underground',
-                    title: me.dict['enter-underground'],
-                    eventHandler() {
-                        me._setViewMode(me.viewMode === 'ground' ? 'underground' : 'ground');
-                    }
-                }, {
-                    className: `mapboxgl-ctrl-track mapboxgl-ctrl-track-${me.trackingMode === 'helicopter' ? 'helicopter' : 'train'}`,
-                    title: me.dict['track'],
-                    eventHandler(event) {
-                        me._setTrackingMode(me.trackingMode === 'helicopter' ? 'heading' : 'helicopter');
-                        event.stopPropagation();
-                    }
-                }, {
-                    className: 'mapboxgl-ctrl-playback',
-                    title: me.dict['enter-playback'],
-                    eventHandler() {
-                        me._setClockMode(me.clockMode === 'realtime' ? 'playback' : 'realtime');
-                    }
-                }, {
-                    className: 'mapboxgl-ctrl-eco',
-                    title: me.dict['enter-eco'],
-                    eventHandler() {
-                        me._setEcoMode(me.ecoMode === 'eco' ? 'normal' : 'eco');
-                    }
-                }]);
-                map.addControl(control);
-            }
-
-            me.layerPanel = new LayerPanel({layers: me.plugins});
-            me.aboutPanel = new AboutPanel();
-
-            if (me.configControl) {
-                map.addControl(new MapboxGLButtonControl([{
-                    className: 'mapboxgl-ctrl-layers',
-                    title: me.dict['select-layers'],
-                    eventHandler() {
-                        me.layerPanel.addTo(me);
-                    }
-                }, {
-                    className: 'mapboxgl-ctrl-about',
-                    title: me.dict['about'],
-                    eventHandler() {
-                        me.aboutPanel.addTo(me);
-                    }
-                }]));
-            }
-
-            if (me.clockControl) {
-                me.clockCtrl = new ClockControl({lang: me.lang, dict: me.dict, clock: me.clock});
-                me.clockCtrl.on('change', me.onClockChange.bind(me));
-                map.addControl(me.clockCtrl);
-            }
-
-            [13, 14, 15, 16, 17, 18].forEach(zoom => {
-                map.on('mouseenter', `stations-og-${zoom}`, e => {
-                    me.pickedFeature = e.features[0];
-                });
-                map.on('click', `stations-og-${zoom}`, e => {
-                    me.pickedFeature = e.features[0];
-                });
-                map.on('mouseleave', `stations-og-${zoom}`, () => {
-                    delete me.pickedFeature;
-                });
-            });
-
-            map.on('mousemove', e => {
-                me.markObject(me.pickObject(e.point));
-            });
-
-            map.on('mouseout', () => {
-                me.markObject();
-            });
-
-            map.on('click', e => {
-                const object = me.pickObject(e.point);
-
-                me.markObject(object);
-                me.trackObject(object);
-
-                // For development
-                console.log(e.lngLat);
-            });
-
-            map.on('zoom', e => {
-                if (!e.tracking) {
-                    me.markObject();
-
-                    if (helpersThree.isObject3D(me.trackedObject)) {
-                        const {type, coord, altitude} = me.trackedObject.userData;
-
-                        if (type === 'aircraft') {
-                            me.updateBaseZoom(coord, altitude);
-                        }
-                    }
-                }
-                /*
-                if (me.trackedObject) {
-                    const {altitude} = me.trackedObject.userData;
-                    // Keep camera off from the tracked aircraft
-                    if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
-                        map.setZoom(22 - Math.log2(altitude * .5));
-                    }
-                }
-                */
-
-                const zoom = map.getZoom(),
-                    unit = Math.pow(2, 14 - helpers.clamp(zoom, 13, 19));
-
-                if (zoom < 13) {
-                    const lineWidthScale = helpers.clamp(Math.pow(2, zoom - 12), .125, 1);
-
-                    ['stations-marked-13', 'stations-selected-13', 'railways-ug-13', 'stations-ug-13'].forEach(id => {
-                        helpersMapbox.setLayerProps(map, id, {lineWidthScale});
-                    });
-                } else if (zoom > 19) {
-                    const lineWidthScale = helpers.clamp(Math.pow(2, zoom - 19), 1, 8);
-
-                    ['stations-marked-18', 'stations-selected-18', 'railways-ug-18', 'stations-ug-18', 'railways-routeug-18', 'stations-routeug-18', 'railways-routeog-13', 'stations-routeog-13'].forEach(id => {
-                        helpersMapbox.setLayerProps(map, id, {lineWidthScale});
-                    });
-                }
-
-                me.layerZoom = helpers.clamp(Math.floor(zoom), 13, 18);
-                me.objectUnit = Math.max(unit * .19, .02);
-                me.objectScale = unit * modelScale * 100;
-                // me.carScale = Math.max(.02 / .19 / unit, 1);
-                // me.aircraftScale = Math.max(.06 / .285 / unit, 1);
-
-                Object.keys(me.activeTrainLookup).forEach(key => {
-                    const train = me.activeTrainLookup[key];
-
-                    me.updateTrainProps(train);
-                    me.updateTrainShape(train);
-                });
-                Object.keys(me.activeFlightLookup).forEach(key => {
-                    me.updateFlightShape(me.activeFlightLookup[key]);
-                });
-            });
-
-            map.on('render', () => {
-                if (helpersThree.isObject3D(me.markedObject)) {
-                    // Popup for a 3D object needs to be updated every time
-                    // because the adjustment for altitude is required
-                    me.updatePopup({setHTML: true});
-                }
-            });
-
-            map.on('resize', e => {
-                trainLayers.onResize(e);
-            });
-
-            configs.events.forEach(event => {
-                map.on(event, e => {
-                    me.fire(e);
-                });
-            });
-
-            for (const plugin of me.plugins) {
-                plugin.addTo(me);
-            }
-
-            animation.init();
-
-            animation.start({
-                callback: () => {
-                    const now = me.clock.getTime();
-
-                    if (now - me.lastTimetableRefresh >= 86400000) {
-                        me.loadTimetableData();
-                        me.lastTimetableRefresh = me.clock.getTime('03:00');
-                    }
-
-                    // Remove all trains if the page has been invisible for certain amount of time
-                    if (Date.now() - me.lastFrameRefresh >= configs.refreshTimeout) {
-                        me.stopAll();
-                    }
-                    me.lastFrameRefresh = Date.now();
-
-                    me.updateVisibleArea();
-
-                    if (Math.floor((now - configs.minDelay) / configs.trainRefreshInterval) !== Math.floor(me.lastTrainRefresh / configs.trainRefreshInterval)) {
-                        me.refreshStyleColors();
-                        me.setSunPosition();
-                        if (me.searchMode === 'none') {
-                            if (me.clockMode === 'realtime') {
-                                me.loadRealtimeTrainData();
-                                me.loadRealtimeFlightData();
-                            } else {
-                                me.refreshTrains();
-                                me.refreshFlights();
-                            }
-                        }
-                        me.lastTrainRefresh = now - configs.minDelay;
-                    }
-
-                    if (!helpersThree.isObject3D(me.trackedObject) && (me.ecoMode === 'normal' && me.loaded || Date.now() - me.lastRepaint >= 1000 / me.ecoFrameRate)) {
-                        if (me.trackedObject) {
-                            me.refreshStationOutline();
-                        }
-                        map.triggerRepaint();
-                        me.lastRepaint = Date.now();
-                    }
-                }
-            });
-
-            me.styleLoaded = true;
+            }), 'building-3d');
+            map.setLayerZoomRange(`railways-routeug-${zoom}`, minzoom, maxzoom);
+            map.addLayer(new MapboxLayer({
+                id: `stations-routeug-${zoom}`,
+                type: GeoJsonLayer,
+                data: helpersGeojson.emptyFeatureCollection(),
+                filled: true,
+                stroked: true,
+                getLineWidth: 4,
+                getLineColor: [0, 0, 0],
+                lineWidthUnits: 'pixels',
+                lineWidthScale,
+                getFillColor: [255, 255, 255, 179],
+                opacity: .0625
+            }), 'building-3d');
+            map.setLayerZoomRange(`stations-routeug-${zoom}`, minzoom, maxzoom);
+            map.addLayer(new MapboxLayer({
+                id: `railways-routeog-${zoom}`,
+                type: GeoJsonLayer,
+                data: helpersGeojson.emptyFeatureCollection(),
+                filled: false,
+                stroked: true,
+                getLineWidth: d => d.properties.width,
+                getLineColor: d => helpers.colorToRGBArray(d.properties.color),
+                lineWidthUnits: 'pixels',
+                lineWidthScale
+            }), 'building-3d');
+            map.setLayerZoomRange(`railways-routeog-${zoom}`, minzoom, maxzoom);
+            map.addLayer(new MapboxLayer({
+                id: `stations-routeog-${zoom}`,
+                type: GeoJsonLayer,
+                data: helpersGeojson.emptyFeatureCollection(),
+                filled: true,
+                stroked: true,
+                getLineWidth: 4,
+                getLineColor: [0, 0, 0],
+                lineWidthUnits: 'pixels',
+                lineWidthScale,
+                getFillColor: [255, 255, 255, 179]
+            }), 'building-3d');
+            map.setLayerZoomRange(`stations-routeog-${zoom}`, minzoom, maxzoom);
         });
 
+        // Workaround for deck.gl #3522
+        map.__deck.props.getCursor = () => map.getCanvas().style.cursor;
+
+        map.addLayer(trainLayers.ug, 'building-3d');
+
+        [13, 14, 15, 16, 17, 18].forEach(zoom => {
+            const minzoom = zoom <= 13 ? 0 : zoom,
+                maxzoom = zoom >= 18 ? 24 : zoom + 1,
+                width = ['get', 'width'],
+                color = ['get', 'color'],
+                outlineColor = ['get', 'outlineColor'],
+                lineWidth =
+                    zoom === 13 ? ['interpolate', ['exponential', 2], ['zoom'], 9, ['/', width, 8], 12, width] :
+                    zoom === 18 ? ['interpolate', ['exponential', 2], ['zoom'], 19, width, 22, ['*', width, 8]] : width,
+                railwaySource = {
+                    type: 'geojson',
+                    data: helpersGeojson.featureFilter(me.featureCollection, p =>
+                        p.zoom === zoom && p.type === 0 && p.altitude === 0
+                    )
+                },
+                stationSource = {
+                    type: 'geojson',
+                    data: helpersGeojson.featureFilter(me.featureCollection, p =>
+                        p.zoom === zoom && p.type === 1 && p.altitude === 0
+                    )
+                };
+
+            map.addLayer({
+                id: `railways-og-${zoom}`,
+                type: 'line',
+                source: railwaySource,
+                paint: {
+                    'line-color': color,
+                    'line-width': lineWidth
+                },
+                minzoom,
+                maxzoom
+            }, 'building-3d');
+            map.addLayer({
+                id: `stations-og-${zoom}`,
+                type: 'fill',
+                source: stationSource,
+                paint: {
+                    'fill-color': color,
+                    'fill-opacity': .7
+                },
+                minzoom,
+                maxzoom
+            }, 'building-3d');
+            map.addLayer({
+                id: `stations-outline-og-${zoom}`,
+                type: 'line',
+                source: stationSource,
+                paint: {
+                    'line-color': outlineColor,
+                    'line-width': lineWidth
+                },
+                minzoom,
+                maxzoom
+            }, 'building-3d');
+        });
+
+        map.addLayer(trainLayers.og, 'building-3d');
+
+        map.addLayer({
+            id: 'sky',
+            type: 'sky',
+            paint: {
+                'sky-opacity': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    0,
+                    0,
+                    5,
+                    0.3,
+                    8,
+                    1
+                ],
+                'sky-type': 'atmosphere',
+                'sky-atmosphere-sun-intensity': 20
+            }
+        });
+
+        /* For development
+        map.addLayer(new MapboxLayer({
+            id: `airway-og-`,
+            type: GeoJsonLayer,
+            data: helpersGeojson.featureFilter(me.featureCollection, p =>
+                p.type === 0 && p.altitude > 0
+            ),
+            filled: false,
+            stroked: true,
+            getLineWidth: d => d.properties.width,
+            getLineColor: d => helpers.colorToRGBArray(d.properties.color),
+            lineWidthUnits: 'pixels',
+            lineWidthScale: 1,
+            opacity: .0625
+        }), 'poi');
+        */
+
+        me.styleColors = helpersMapbox.getStyleColors(map);
+        me.styleOpacities = helpersMapbox.getStyleOpacities(map);
+
+        const datalist = helpers.createElement('datalist', {id: 'stations'}, document.body);
+        me.stationTitleLookup = {};
+        [lang, 'en'].forEach(l => {
+            me.railwayData.forEach(railway => {
+                railway.stations.forEach(id => {
+                    const station = me.stationLookup[id],
+                        utitle = station.utitle && station.utitle[l],
+                        title = utitle || helpers.normalize(station.title[l] || station.title.en),
+                        key = title.toUpperCase();
+
+                    if (!me.stationTitleLookup[key]) {
+                        helpers.createElement('option', {value: title}, datalist);
+                        me.stationTitleLookup[key] = station;
+                    }
+                });
+            });
+        });
+
+        if (me.searchControl) {
+            const control = new MapboxGLButtonControl([{
+                className: 'mapboxgl-ctrl-search',
+                title: dict['enter-search'],
+                eventHandler() {
+                    me._setSearchMode(me.searchMode === 'none' ? 'edit' : 'none');
+                }
+            }]);
+            map.addControl(control);
+        }
+
+        if (me.navigationControl) {
+            const control = new NavigationControl();
+
+            control._setButtonTitle = function(button) {
+                const {_zoomInButton, _zoomOutButton, _compass} = this,
+                    title = button === _zoomInButton ? dict['zoom-in'] :
+                    button === _zoomOutButton ? dict['zoom-out'] :
+                    button === _compass ? dict['compass'] : '';
+
+                button.title = title;
+                button.setAttribute('aria-label', title);
+            };
+            map.addControl(control);
+        }
+
+        if (me.fullscreenControl) {
+            const control = new FullscreenControl({container: me.container});
+
+            control._updateTitle = function() {
+                const {_fullscreenButton} = this,
+                    title = dict[this._isFullscreen() ? 'exit-fullscreen' : 'enter-fullscreen'];
+
+                _fullscreenButton.title = title;
+                _fullscreenButton.setAttribute('aria-label', title);
+            };
+            map.addControl(control);
+        }
+
+        if (me.modeControl) {
+            const control = new MapboxGLButtonControl([{
+                className: 'mapboxgl-ctrl-underground',
+                title: dict['enter-underground'],
+                eventHandler() {
+                    me._setViewMode(me.viewMode === 'ground' ? 'underground' : 'ground');
+                }
+            }, {
+                className: `mapboxgl-ctrl-track mapboxgl-ctrl-track-${me.trackingMode === 'helicopter' ? 'helicopter' : 'train'}`,
+                title: dict['track'],
+                eventHandler(event) {
+                    me._setTrackingMode(me.trackingMode === 'helicopter' ? 'heading' : 'helicopter');
+                    event.stopPropagation();
+                }
+            }, {
+                className: 'mapboxgl-ctrl-playback',
+                title: dict['enter-playback'],
+                eventHandler() {
+                    me._setClockMode(me.clockMode === 'realtime' ? 'playback' : 'realtime');
+                }
+            }, {
+                className: 'mapboxgl-ctrl-eco',
+                title: dict['enter-eco'],
+                eventHandler() {
+                    me._setEcoMode(me.ecoMode === 'eco' ? 'normal' : 'eco');
+                }
+            }]);
+            map.addControl(control);
+        }
+
+        me.layerPanel = new LayerPanel({layers: me.plugins});
+        me.aboutPanel = new AboutPanel();
+
+        if (me.configControl) {
+            map.addControl(new MapboxGLButtonControl([{
+                className: 'mapboxgl-ctrl-layers',
+                title: dict['select-layers'],
+                eventHandler() {
+                    me.layerPanel.addTo(me);
+                }
+            }, {
+                className: 'mapboxgl-ctrl-about',
+                title: dict['about'],
+                eventHandler() {
+                    me.aboutPanel.addTo(me);
+                }
+            }]));
+        }
+
+        if (me.clockControl) {
+            me.clockCtrl = new ClockControl({lang, dict, clock});
+            me.clockCtrl.on('change', me.onClockChange.bind(me));
+            map.addControl(me.clockCtrl);
+        }
+
+        [13, 14, 15, 16, 17, 18].forEach(zoom => {
+            map.on('mouseenter', `stations-og-${zoom}`, e => {
+                me.pickedFeature = e.features[0];
+            });
+            map.on('click', `stations-og-${zoom}`, e => {
+                me.pickedFeature = e.features[0];
+            });
+            map.on('mouseleave', `stations-og-${zoom}`, () => {
+                delete me.pickedFeature;
+            });
+        });
+
+        map.on('mousemove', e => {
+            me.markObject(me.pickObject(e.point));
+        });
+
+        map.on('mouseout', () => {
+            me.markObject();
+        });
+
+        map.on('click', e => {
+            const object = me.pickObject(e.point);
+
+            me.markObject(object);
+            me.trackObject(object);
+
+            // For development
+            console.log(e.lngLat);
+        });
+
+        map.on('zoom', e => {
+            if (!e.tracking) {
+                if (helpersThree.isObject3D(me.trackedObject)) {
+                    const {type, coord, altitude} = me.trackedObject.userData;
+
+                    if (type === 'aircraft') {
+                        me.updateBaseZoom(coord, altitude);
+                    }
+                }
+            }
+            /*
+            if (me.trackedObject) {
+                const {altitude} = me.trackedObject.userData;
+                // Keep camera off from the tracked aircraft
+                if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
+                    map.setZoom(22 - Math.log2(altitude * .5));
+                }
+            }
+            */
+
+            const zoom = map.getZoom(),
+                unit = Math.pow(2, 14 - helpers.clamp(zoom, 13, 19));
+
+            if (zoom < 13) {
+                const lineWidthScale = helpers.clamp(Math.pow(2, zoom - 12), .125, 1);
+
+                ['stations-marked-13', 'stations-selected-13', 'railways-ug-13', 'stations-ug-13', 'railways-routeug-13', 'stations-routeug-13', 'railways-routeog-13', 'stations-routeog-13'].forEach(id => {
+                    helpersMapbox.setLayerProps(map, id, {lineWidthScale});
+                });
+            } else if (zoom > 19) {
+                const lineWidthScale = helpers.clamp(Math.pow(2, zoom - 19), 1, 8);
+
+                ['stations-marked-18', 'stations-selected-18', 'railways-ug-18', 'stations-ug-18', 'railways-routeug-18', 'stations-routeug-18', 'railways-routeog-18', 'stations-routeog-18'].forEach(id => {
+                    helpersMapbox.setLayerProps(map, id, {lineWidthScale});
+                });
+            }
+
+            me.layerZoom = helpers.clamp(Math.floor(zoom), 13, 18);
+            me.objectUnit = Math.max(unit * .19, .02);
+            me.objectScale = unit * modelScale * 100;
+            // me.carScale = Math.max(.02 / .19 / unit, 1);
+            // me.aircraftScale = Math.max(.06 / .285 / unit, 1);
+
+            Object.keys(me.activeTrainLookup).forEach(key => {
+                const train = me.activeTrainLookup[key];
+
+                me.updateTrainProps(train);
+                me.updateTrainShape(train);
+            });
+            Object.keys(me.activeFlightLookup).forEach(key => {
+                me.updateFlightShape(me.activeFlightLookup[key]);
+            });
+        });
+
+        map.on('render', () => {
+            if (me.markedObject) {
+                // Popup for a 3D object needs to be updated every time
+                // because the adjustment for altitude is required
+                if (helpersThree.isObject3D(me.markedObject)) {
+                    me.updatePopup({setHTML: true});
+                } else {
+                    me.updatePopup();
+                }
+            }
+        });
+
+        map.on('resize', e => {
+            trainLayers.onResize(e);
+        });
+
+        for (const plugin of me.plugins) {
+            plugin.addTo(me);
+        }
+
+        animation.init();
+
+        animation.start({
+            callback: () => {
+                const now = me.clock.getTime();
+
+                if (now - me.lastTimetableRefresh >= 86400000) {
+                    me.loadTimetableData();
+                    me.lastTimetableRefresh = me.clock.getTime('03:00');
+                }
+
+                // Remove all trains if the page has been invisible for certain amount of time
+                if (Date.now() - me.lastFrameRefresh >= configs.refreshTimeout) {
+                    me.stopAll();
+                }
+                me.lastFrameRefresh = Date.now();
+
+                me.updateVisibleArea();
+
+                if (Math.floor((now - configs.minDelay) / configs.trainRefreshInterval) !== Math.floor(me.lastTrainRefresh / configs.trainRefreshInterval)) {
+                    me.refreshStyleColors();
+                    me.setSunPosition();
+                    if (me.searchMode === 'none') {
+                        if (me.clockMode === 'realtime') {
+                            me.loadRealtimeTrainData();
+                            me.loadRealtimeFlightData();
+                        } else {
+                            me.refreshTrains();
+                            me.refreshFlights();
+                        }
+                    }
+                    me.lastTrainRefresh = now - configs.minDelay;
+                }
+
+                if (!helpersThree.isObject3D(me.trackedObject) && (me.ecoMode === 'normal' && map._loaded || Date.now() - me.lastRepaint >= 1000 / me.ecoFrameRate)) {
+                    if (me.trackedObject) {
+                        me.refreshStationOutline();
+                    }
+                    map.triggerRepaint();
+                    me.lastRepaint = Date.now();
+                }
+            }
+        });
+
+        me.initialized = true;
     }
 
     _jumpTo(options) {
@@ -1089,9 +1062,9 @@ export default class extends Evented {
         if (trackingMode === 'helicopter') {
             bearing = (trackingBaseBearing + performance.now() / 100) % 360;
         } else if (bearingFactor >= 0) {
-            const mapBearing = map.getBearing();
+            const currentBearing = map.getBearing();
 
-            bearing = mapBearing + ((bearing - mapBearing + 540) % 360 - 180) * bearingFactor;
+            bearing = currentBearing + ((bearing - currentBearing + 540) % 360 - 180) * bearingFactor;
         }
 
         center = me.adjustCoord(center, altitude, bearing);
@@ -1232,7 +1205,7 @@ export default class extends Evented {
             // Reduce the frame rate of invisible objects for performance optimization
             if (animation.isActive(train.animationID)) {
                 const point = [position.x, position.y],
-                    frameRate = helpers.pointInTrapezoid(point, me.visibleArea) ? me.ecoMode === 'normal' && me.loaded ? 60 : me.ecoFrameRate : 1;
+                    frameRate = helpers.pointInTrapezoid(point, me.visibleArea) ? me.ecoMode === 'normal' && map._loaded ? 60 : me.ecoFrameRate : 1;
 
                 animation.setFrameRate(train.animationID, frameRate);
             }
@@ -1360,7 +1333,7 @@ export default class extends Evented {
         // Reduce the frame rate of invisible objects for performance optimization
         if (animation.isActive(flight.animationID)) {
             const point = [position.x, position.y],
-                frameRate = helpers.pointInTrapezoid(point, me.visibleArea) ? me.ecoMode === 'normal' && me.loaded ? 60 : me.ecoFrameRate : 1;
+                frameRate = helpers.pointInTrapezoid(point, me.visibleArea) ? me.ecoMode === 'normal' && map._loaded ? 60 : me.ecoFrameRate : 1;
 
             animation.setFrameRate(flight.animationID, frameRate);
         }
@@ -2469,7 +2442,7 @@ export default class extends Evented {
      * @returns {object} Color object
      */
     getLightColor() {
-        const [lng, lat] = configs.originCoord,
+        const [lng, lat] = configs.defaultCenter,
             {clock} = this,
             times = SunCalc.getTimes(new Date(clock.getTime()), lat, lng),
             sunrise = clock.getJSTDate(times.sunrise.getTime()).getTime(),
@@ -2572,27 +2545,27 @@ export default class extends Evented {
     }
 
     pickObject(point) {
-        const me = this,
-            deck = me.map.__deck,
-            layers = me.viewMode === 'underground' ? ['ug', 'og'] : ['og', 'ug'];
+        const {map, viewMode, trainLayers, layerZoom, pickedFeature} = this,
+            deck = map.__deck,
+            layers = viewMode === 'underground' ? ['ug', 'og'] : ['og', 'ug'];
         let object;
 
         for (const layer of layers) {
-            object = me.trainLayers[layer].pickObject(point);
+            object = trainLayers[layer].pickObject(point);
             if (object) {
                 return object;
             }
             if (layer === 'ug') {
                 if (deck.deckPicker) {
                     const {x, y} = point,
-                        info = deck.pickObject({x, y, layerIds: [`stations-ug-${me.layerZoom}`]});
+                        info = deck.pickObject({x, y, layerIds: [`stations-ug-${layerZoom}`]});
 
                     if (info) {
                         object = info.object;
                     }
                 }
             } else {
-                object = me.pickedFeature;
+                object = pickedFeature;
             }
             if (object) {
                 return object;
@@ -2602,11 +2575,11 @@ export default class extends Evented {
 
     markObject(object) {
         const me = this,
-            {map, popup} = me;
+            {markedObject, map, popup} = me;
 
-        if (me.markedObject && me.markedObject !== object) {
-            if (helpersThree.isObject3D(me.markedObject)) {
-                helpersThree.removeOutline(me.markedObject, 'outline-marked');
+        if (markedObject && !isEqualObject(markedObject, object)) {
+            if (helpersThree.isObject3D(markedObject)) {
+                helpersThree.removeOutline(markedObject, 'outline-marked');
             } else {
                 me.removeStationOutline('stations-marked');
             }
@@ -2617,7 +2590,7 @@ export default class extends Evented {
             }
         }
 
-        if (object && object !== me.markedObject) {
+        if (object && !isEqualObject(object, me.markedObject)) {
             me.markedObject = object;
             map.getCanvas().style.cursor = 'pointer';
 
@@ -2647,25 +2620,25 @@ export default class extends Evented {
 
     trackObject(object) {
         const me = this,
-            {lang, map} = me;
+            {searchMode, searchPanel, lang, map, trackedObject, sharePanel, detailPanel} = me;
 
-        if (me.searchMode !== 'none') {
-            if (me.searchMode === 'edit' && me.searchPanel && object && !helpersThree.isObject3D(object)) {
+        if (searchMode !== 'none') {
+            if (searchMode === 'edit' && searchPanel && object && !helpersThree.isObject3D(object)) {
                 const ids = helpersGeojson.getIds(object),
                     station = me.stationLookup[ids[0]],
                     utitle = station.utitle && station.utitle[lang],
                     title = utitle || helpers.normalize(station.title[lang] || station.title.en);
 
-                me.searchPanel.fillStationName(title);
+                searchPanel.fillStationName(title);
             }
             return;
         }
 
-        if (me.trackedObject) {
-            if (helpersThree.isObject3D(me.trackedObject)) {
-                const prevObject = me.trackedObject.userData.object;
+        if (trackedObject) {
+            if (helpersThree.isObject3D(trackedObject)) {
+                const prevObject = trackedObject.userData.object;
 
-                helpersThree.removeOutline(me.trackedObject, 'outline-tracked');
+                helpersThree.removeOutline(trackedObject, 'outline-tracked');
                 me.fire({type: 'deselection', deselection: prevObject.t || prevObject.id});
             } else {
                 me.removeStationOutline('stations-selected');
@@ -2674,12 +2647,12 @@ export default class extends Evented {
             me.updateBaseZoom();
             me.stopViewAnimation();
             me.updateTrackingButton(false);
-            if (me.sharePanel) {
-                me.sharePanel.remove();
+            if (sharePanel) {
+                sharePanel.remove();
                 delete me.sharePanel;
             }
-            if (me.detailPanel) {
-                me.detailPanel.remove();
+            if (detailPanel) {
+                detailPanel.remove();
                 delete me.detailPanel;
             }
             me.exitPopups.forEach(popup => {
@@ -2789,24 +2762,25 @@ export default class extends Evented {
 
     updatePopup(options) {
         const me = this,
-            {map, popup} = me,
+            {markedObject, trackedObject, map, popup} = me,
             {setHTML, addToMap} = options || {};
 
-        if (helpersThree.isObject3D(me.markedObject)) {
-            const {coord, altitude, object} = me.markedObject.userData,
-                bearing = me.markedObject === me.trackedObject ? map.getBearing() : undefined;
+        if (helpersThree.isObject3D(markedObject)) {
+            const {coord, altitude, object} = markedObject.userData,
+                bearing = markedObject === trackedObject ? map.getBearing() : undefined;
 
             popup.setLngLat(me.adjustCoord(coord, altitude, bearing));
             if (setHTML) {
                 popup.setHTML(object.description);
             }
         } else {
-            const coord = helpersGeojson.getCenterCoord(me.markedObject),
-                altitude = helpersGeojson.getAltitude(me.markedObject);
+            const object = me.featureLookup[markedObject.properties.id.replace(/\d+$/, me.layerZoom)],
+                coord = helpersGeojson.getCenterCoord(object),
+                altitude = helpersGeojson.getAltitude(object);
 
             popup.setLngLat(me.adjustCoord(coord, altitude));
             if (setHTML) {
-                const ids = helpersGeojson.getIds(me.markedObject),
+                const ids = helpersGeojson.getIds(markedObject),
                     stations = {};
 
                 ids.forEach(id => {
@@ -2989,19 +2963,39 @@ export default class extends Evented {
 
 }
 
-function insertTags(container) {
-    container.innerHTML = `
-<div id="map"></div>
-<div id="loader" class="loader-inner ball-pulse">
-    <div></div><div></div><div></div>
-</div>
-<div id="loading-error"></div>`;
+function initContainer(container) {
+    const map = helpers.createElement('div', {
+        id: 'map'
+    }, container);
+
+    helpers.createElement('div', {
+        id: 'loader',
+        className: 'loader-inner ball-pulse',
+        innerHTML: '<div></div><div></div><div></div>'
+    }, container);
+    helpers.createElement('div', {
+        id: 'loading-error'
+    }, container);
+    container.classList.add('mini-tokyo-3d');
+    return map;
+}
+
+function hideLoader(container) {
+    const element = container.querySelector('#loader');
+
+    element.style.opacity = 0;
+    setTimeout(() => {
+        element.style.display = 'none';
+    }, 1000);
 }
 
 function showErrorMessage(container) {
-    container.querySelector('#loader').style.display = 'none';
-    container.querySelector('#loading-error').innerHTML = 'Loading failed. Please reload the page.';
-    container.querySelector('#loading-error').style.display = 'block';
+    const loaderElement = container.querySelector('#loader'),
+        errorElement = container.querySelector('#loading-error');
+
+    loaderElement.style.display = 'none';
+    errorElement.innerHTML = 'Loading failed. Please reload the page.';
+    errorElement.style.display = 'block';
 }
 
 function startTrainAnimation(callback, endCallback, distance, minDuration, maxDuration, start, clock) {
@@ -3125,6 +3119,16 @@ function getConnectingTrainIds(train) {
         ids = id ? [id] : [];
 
     return nextTrains ? ids.concat(...nextTrains.map(getConnectingTrainIds)) : ids;
+}
+
+function isEqualObject(a, b) {
+    if (a === b) {
+        return true;
+    }
+    if (a && a.properties && b && b.properties && a.properties.ids === b.properties.ids) {
+        return true;
+    }
+    return false;
 }
 
 function setObjectOpacity(object, opacity, duration) {

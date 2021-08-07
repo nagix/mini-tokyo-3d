@@ -9,12 +9,12 @@ export default class extends Panel {
         }, options));
     }
 
-    addTo(mt3d) {
+    addTo(map) {
         const me = this,
             {layers} = me._options,
-            {lang, dict} = mt3d;
+            {lang, dict} = map;
 
-        super.addTo(mt3d)
+        super.addTo(map)
             .setTitle(dict['layers'])
             .setHTML(layers.map(({id, name}) => [
                 `<div id="${id}-layer" class="layer-row">`,

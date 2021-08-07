@@ -6,11 +6,11 @@ export default class {
         this.enabled = valueOrDefault(options.enabled, true);
     }
 
-    addTo(mt3d) {
+    addTo(map) {
         const me = this;
 
-        me._mt3d = mt3d;
-        me.onAdd(mt3d);
+        me._map = map;
+        me.onAdd(map);
         if (me.enabled) {
             me.onEnabled();
         }
@@ -22,8 +22,8 @@ export default class {
         const me = this;
 
         me.disable();
-        me.onRemove(me._mt3d);
-        delete me._mt3d;
+        me.onRemove(me._map);
+        delete me._map;
 
         return me;
     }

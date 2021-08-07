@@ -1,5 +1,5 @@
-import * as helpers from '../helpers';
-import * as loaderHelpers from './helpers';
+import {buildLookup, removePrefix} from '../helpers';
+import {loadJSON, saveJSON} from './helpers';
 
 const OPERATORS_FOR_TRAINTYPES = {
     tokyochallenge: [
@@ -36,14 +36,14 @@ export default async function(options) {
     const [extra, ...original] = await Promise.all([
         'data/train-types.json',
         ...urls
-    ].map(loaderHelpers.loadJSON));
+    ].map(loadJSON));
 
     const data = [].concat(...original).map(type => ({
-        id: helpers.removePrefix(type['owl:sameAs']),
+        id: removePrefix(type['owl:sameAs']),
         title: type['odpt:trainTypeTitle']
     }));
 
-    const lookup = helpers.buildLookup(data);
+    const lookup = buildLookup(data);
 
     for (const {id, title} of extra) {
         let trainType = lookup[id];
@@ -58,7 +58,7 @@ export default async function(options) {
         Object.assign(trainType.title, title);
     }
 
-    loaderHelpers.saveJSON('build/data/train-types.json.gz', data);
+    saveJSON('build/data/train-types.json.gz', data);
 
     console.log('Train type data was loaded');
 

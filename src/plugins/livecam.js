@@ -1,6 +1,6 @@
 import {Marker} from 'mapbox-gl';
 import AnimatedPopup from 'mapbox-gl-animated-popup';
-import * as helpers from '../helpers';
+import {createElement, loadJSON} from '../helpers';
 import Panel from '../panel';
 import Plugin from './plugin';
 import livecamSVG from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/video.svg';
@@ -9,31 +9,30 @@ import livecamSVG from '../../node_modules/@fortawesome/fontawesome-free/svgs/so
 const LIVECAM_URL = 'https://mini-tokyo.appspot.com/livecam';
 
 // Add style
-const style = document.createElement('style');
-style.innerHTML = `
-    .livecam-panel {
-        height: 262px !important;
-    }
-    .livecam-panel.collapsed {
-        height: 50px !important;
-    }
-    .livecam-panel.closed {
-        height: 0 !important;
-    }
-    .livecam-marker {
-        width: 40px;
-        height: 40px;
-        border: 2px solid #333;
-        border-radius: 50%;
-        background: white no-repeat center/20px url("${livecamSVG.replace('%3e', ' fill=\'%23333\'%3e')}");
-        cursor: pointer;
-    }
-    .livecam-marker-active {
-        border-color: #33B5E5;
-        background-image: url("${livecamSVG.replace('%3e', ' fill=\'%2333B5E5\'%3e')}");
-    }
-`;
-document.head.appendChild(style);
+createElement('style', {
+    innerHTML: `
+.livecam-panel {
+    height: 262px !important;
+}
+.livecam-panel.collapsed {
+    height: 50px !important;
+}
+.livecam-panel.closed {
+    height: 0 !important;
+}
+.livecam-marker {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    background: white no-repeat center/20px url("${livecamSVG.replace('%3e', ' fill=\'%23333\'%3e')}");
+    cursor: pointer;
+}
+.livecam-marker-active {
+    border-color: #33B5E5;
+    background-image: url("${livecamSVG.replace('%3e', ' fill=\'%2333B5E5\'%3e')}");
+}`
+}, document.head);
 
 class LivecamPanel extends Panel {
 
@@ -41,13 +40,13 @@ class LivecamPanel extends Panel {
         super(Object.assign({className: 'livecam-panel'}, options));
     }
 
-    addTo(mt3d) {
+    addTo(map) {
         const me = this,
             {name, html} = me._options.camera;
 
-        me.setTitle(name[mt3d.lang])
+        me.setTitle(name[map.lang])
             .setHTML(html);
-        return super.addTo(mt3d);
+        return super.addTo(map);
     }
 
 }
@@ -94,20 +93,20 @@ class LivecamPlugin extends Plugin {
 
     onEnabled() {
         const me = this,
-            mt3d = me._mt3d;
+            map = me._map;
 
-        mt3d.on('click', me._clickEventListener);
-        mt3d.on('clockmode', me._clockModeEventListener);
+        map.on('click', me._clickEventListener);
+        map.on('clockmode', me._clockModeEventListener);
 
-        helpers.loadJSON(LIVECAM_URL).then(data => {
+        loadJSON(LIVECAM_URL).then(data => {
             me._addMarkers(data);
-            me.setVisibility(mt3d.getClockMode() === 'realtime');
+            me.setVisibility(map.getClockMode() === 'realtime');
         });
     }
 
     onDisabled() {
         const me = this,
-            mt3d = me._mt3d;
+            map = me._map;
 
         me._updatePanel();
         for (const marker of me.markers) {
@@ -115,8 +114,8 @@ class LivecamPlugin extends Plugin {
         }
         me.markers = [];
 
-        mt3d.off('clockmode', me._clockModeEventListener);
-        mt3d.off('click', me._clickEventListener);
+        map.off('clockmode', me._clockModeEventListener);
+        map.off('click', me._clickEventListener);
     }
 
     setVisibility(visible) {
@@ -130,24 +129,20 @@ class LivecamPlugin extends Plugin {
 
     _addMarkers(cameras) {
         const me = this,
-            mt3d = me._mt3d,
-            {lang, map} = mt3d;
+            map = me._map,
+            {lang, map: mbox} = map;
 
         for (const camera of cameras) {
             const {center, zoom, bearing, pitch, id, name, thumbnail} = camera,
-                element = document.createElement('div');
+                element = createElement('div', {
+                    id: `camera-${id}`,
+                    className: 'livecam-marker'
+                });
             let popup;
 
-            element.id = `camera-${id}`;
-            element.className = 'livecam-marker';
             element.addEventListener('click', event => {
                 me._updatePanel(camera);
-                if (popup) {
-                    popup.remove();
-                    popup = undefined;
-                }
-                mt3d.trackObject();
-                mt3d._setViewMode('ground');
+                map.setViewMode('ground');
                 map.flyTo({
                     center,
                     zoom,
@@ -181,7 +176,7 @@ class LivecamPlugin extends Plugin {
                         '</div>',
                         `<div><strong>${name[lang]}</strong></div>`
                     ].join(''))
-                    .addTo(map);
+                    .addTo(mbox);
             });
             element.addEventListener('mouseleave', () => {
                 updateMarkerElement(element, me.selectedCamera === id);
@@ -191,25 +186,25 @@ class LivecamPlugin extends Plugin {
                 }
             });
             element.addEventListener('mousemove', event => {
-                mt3d.markObject();
+                map.markObject();
                 event.stopPropagation();
             });
 
             me.markers.push(
                 new Marker(element)
                     .setLngLat(center)
-                    .addTo(map)
+                    .addTo(mbox)
             );
         }
     }
 
     _updatePanel(camera) {
         const me = this,
-            mt3d = me._mt3d,
+            map = me._map,
             {id} = camera || {};
 
         if (me.selectedCamera !== id && me.panel) {
-            const element = mt3d.container.querySelector(`#camera-${me.selectedCamera}`);
+            const element = map.container.querySelector(`#camera-${me.selectedCamera}`);
 
             updateMarkerElement(element);
             me.panel.remove();
@@ -217,10 +212,10 @@ class LivecamPlugin extends Plugin {
             delete me.selectedCamera;
         }
         if (!me.selectedCamera && camera) {
-            const element = mt3d.container.querySelector(`#camera-${id}`);
+            const element = map.container.querySelector(`#camera-${id}`);
 
             updateMarkerElement(element, true);
-            me.panel = new LivecamPanel({camera}).addTo(mt3d);
+            me.panel = new LivecamPanel({camera}).addTo(map);
             me.selectedCamera = id;
         }
     }

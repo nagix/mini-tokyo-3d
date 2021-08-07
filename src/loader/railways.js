@@ -1,5 +1,5 @@
-import * as helpers from '../helpers';
-import * as loaderHelpers from './helpers';
+import {buildLookup, removePrefix} from '../helpers';
+import {loadJSON, saveJSON} from './helpers';
 
 const OPERATORS_FOR_RAILWAYS = {
     tokyochallenge: [
@@ -46,19 +46,19 @@ export default async function(options) {
     const [extra, ...original] = await Promise.all([
         'data/railways.json',
         ...urls
-    ].map(loaderHelpers.loadJSON));
+    ].map(loadJSON));
 
     const data = [].concat(...original).map(railway => ({
-        id: helpers.removePrefix(railway['owl:sameAs']),
+        id: removePrefix(railway['owl:sameAs']),
         title: railway['odpt:railwayTitle'],
         stations: railway['odpt:stationOrder'].map(obj =>
-            helpers.removePrefix(obj['odpt:station'])
+            removePrefix(obj['odpt:station'])
         ),
-        ascending: helpers.removePrefix(railway['odpt:ascendingRailDirection']),
+        ascending: removePrefix(railway['odpt:ascendingRailDirection']),
         del: true
     }));
 
-    const lookup = helpers.buildLookup(data);
+    const lookup = buildLookup(data);
 
     for (const {id, title, stations, ascending, color, altitude, carComposition} of extra) {
         let railway = lookup[id];
@@ -85,7 +85,7 @@ export default async function(options) {
         delete railway.del;
     }
 
-    loaderHelpers.saveJSON('build/data/railways.json.gz', data.filter(({del}) => !del));
+    saveJSON('build/data/railways.json.gz', data.filter(({del}) => !del));
 
     console.log('Railway data was loaded');
 

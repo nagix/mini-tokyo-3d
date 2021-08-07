@@ -1,5 +1,5 @@
-import * as helpers from '../helpers';
-import * as loaderHelpers from './helpers';
+import {buildLookup, removePrefix} from '../helpers';
+import {loadJSON, saveJSON} from './helpers';
 
 export default async function(options) {
 
@@ -8,20 +8,20 @@ export default async function(options) {
     const [original, extra] = await Promise.all([
         `${url}odpt:RailDirection?acl:consumerKey=${key}`,
         'data/rail-directions.json'
-    ].map(loaderHelpers.loadJSON));
+    ].map(loadJSON));
 
     const data = original.map(direction => ({
-        id: helpers.removePrefix(direction['owl:sameAs']),
+        id: removePrefix(direction['owl:sameAs']),
         title: direction['odpt:railDirectionTitle']
     }));
 
-    const lookup = helpers.buildLookup(data);
+    const lookup = buildLookup(data);
 
     for (const {id, title} of extra) {
         Object.assign(lookup[id].title, title);
     }
 
-    loaderHelpers.saveJSON('build/data/rail-directions.json.gz', data);
+    saveJSON('build/data/rail-directions.json.gz', data);
 
     console.log('Rail direction data was loaded');
 

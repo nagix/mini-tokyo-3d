@@ -6,17 +6,17 @@ export default class extends Panel {
         super(Object.assign({className: 'train-panel'}, options));
     }
 
-    addTo(mt3d) {
+    addTo(map) {
         const me = this,
-            {lang, dict, clock} = mt3d,
+            {lang, dict, clock} = map,
             trains = [],
             sections = [],
             stationHTML = [],
             offsets = [],
             train = me._options.object,
             {r: railwayID, nm: names, v: vehicle, ds: destination, nextTrains} = train,
-            railway = mt3d.railwayLookup[railwayID],
-            color = vehicle ? mt3d.trainVehicleLookup[vehicle].color : railway.color,
+            railway = map.railwayLookup[railwayID],
+            color = vehicle ? map.trainVehicleLookup[vehicle].color : railway.color,
             delay = train.delay || 0;
         let currSection, scrollTop;
 
@@ -34,7 +34,7 @@ export default class extends Panel {
                 if (index > 0 || !curr.previousTrains) {
                     stationHTML.push([
                         '<div class="station-row">',
-                        `<div class="station-title-box">${mt3d.getLocalizedStationTitle(s.s)}</div>`,
+                        `<div class="station-title-box">${map.getLocalizedStationTitle(s.s)}</div>`,
                         '<div class="station-time-box',
                         delay >= 60000 ? ' desc-caution' : '',
                         '">',
@@ -46,14 +46,14 @@ export default class extends Panel {
                 }
             });
             section.end = stationHTML.length - 1;
-            section.color = mt3d.railwayLookup[curr.r].color;
+            section.color = map.railwayLookup[curr.r].color;
             sections.push(section);
             if (curr === train) {
                 currSection = section;
             }
         });
 
-        super.addTo(mt3d)
+        super.addTo(map)
             .setTitle([
                 '<div class="desc-header">',
                 Array.isArray(color) ? [
@@ -62,12 +62,12 @@ export default class extends Panel {
                     '</div>'
                 ].join('') : `<div style="background-color: ${color};"></div>`,
                 '<div>',
-                names ? names.map(name => name[lang] || name.en).join(dict['and']) : mt3d.getLocalizedRailwayTitle(railwayID),
+                names ? names.map(name => name[lang] || name.en).join(dict['and']) : map.getLocalizedRailwayTitle(railwayID),
                 '<br><span class="desc-normal-style">',
-                `<span class="train-type-label">${mt3d.getLocalizedTrainTypeTitle(train.y)}</span> `,
+                `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y)}</span> `,
                 destination ?
-                    dict['for'].replace('$1', mt3d.getLocalizedStationTitle(destination)) :
-                    mt3d.getLocalizedRailDirectionTitle(train.d),
+                    dict['for'].replace('$1', map.getLocalizedStationTitle(destination)) :
+                    map.getLocalizedRailDirectionTitle(train.d),
                 '</span></div></div>'
             ].join(''))
             .setHTML([

@@ -1,6 +1,6 @@
 import JapaneseHolidays from 'japanese-holidays';
 import configs from './configs';
-import * as helpers from './helpers';
+import {valueOrDefault} from './helpers';
 
 export default class {
 
@@ -60,7 +60,7 @@ export default class {
             // Adjust local time to JST (UTC+9)
             offset = me.getTimezoneOffset();
 
-        return new Date(helpers.valueOrDefault(time, me.getTime()) + offset);
+        return new Date(valueOrDefault(time, me.getTime()) + offset);
     }
 
     /**

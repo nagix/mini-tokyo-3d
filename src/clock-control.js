@@ -1,5 +1,6 @@
 import {Evented} from 'mapbox-gl';
 import JapaneseHolidays from 'japanese-holidays';
+import {createElement} from './helpers';
 
 const DATE_FORMAT = {
     year: 'numeric',
@@ -40,8 +41,7 @@ export default class extends Evented {
 
         me._map = map;
 
-        me._container = document.createElement('div');
-        me._container.className = 'clock-ctrl';
+        me._container = createElement('div', {className: 'clock-ctrl'});
         me._update();
 
         const repeat = () => {

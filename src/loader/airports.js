@@ -1,5 +1,5 @@
-import * as helpers from '../helpers';
-import * as loaderHelpers from './helpers';
+import {buildLookup, removePrefix} from '../helpers';
+import {loadJSON, saveJSON} from './helpers';
 
 export default async function(options) {
 
@@ -8,14 +8,14 @@ export default async function(options) {
     const [original, extra] = await Promise.all([
         `${url}odpt:Airport?acl:consumerKey=${key}`,
         'data/airports.json'
-    ].map(loaderHelpers.loadJSON));
+    ].map(loadJSON));
 
     const data = original.map(airport => ({
-        id: helpers.removePrefix(airport['owl:sameAs']),
+        id: removePrefix(airport['owl:sameAs']),
         title: airport['odpt:airportTitle']
     }));
 
-    const lookup = helpers.buildLookup(data);
+    const lookup = buildLookup(data);
 
     for (const {id, title, direction} of extra) {
         const airport = lookup[id];
@@ -24,7 +24,7 @@ export default async function(options) {
         airport.direction = direction;
     }
 
-    loaderHelpers.saveJSON('build/data/airports.json.gz', data);
+    saveJSON('build/data/airports.json.gz', data);
 
     console.log('Airport data was loaded');
 

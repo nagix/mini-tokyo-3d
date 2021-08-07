@@ -1,5 +1,5 @@
-import * as helpers from '../helpers';
-import * as loaderHelpers from './helpers';
+import {buildLookup, removePrefix} from '../helpers';
+import {loadJSON, saveJSON} from './helpers';
 
 export default async function(options) {
 
@@ -8,14 +8,14 @@ export default async function(options) {
     const [original, extra] = await Promise.all([
         `${url}odpt:Operator?acl:consumerKey=${key}`,
         'data/operators.json'
-    ].map(loaderHelpers.loadJSON));
+    ].map(loadJSON));
 
     const data = original.map(operator => ({
-        id: helpers.removePrefix(operator['owl:sameAs']),
+        id: removePrefix(operator['owl:sameAs']),
         title: operator['odpt:operatorTitle']
     }));
 
-    const lookup = helpers.buildLookup(data);
+    const lookup = buildLookup(data);
 
     for (const {id, title, color, tailcolor} of extra) {
         let operator = lookup[id];
@@ -33,7 +33,7 @@ export default async function(options) {
         operator.tailcolor = tailcolor;
     }
 
-    loaderHelpers.saveJSON('build/data/operators.json.gz', data);
+    saveJSON('build/data/operators.json.gz', data);
 
     console.log('Operator data was loaded');
 

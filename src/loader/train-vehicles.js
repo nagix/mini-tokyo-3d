@@ -1,10 +1,10 @@
-import * as loaderHelpers from './helpers';
+import {loadJSON, saveJSON} from './helpers';
 
 export default async function() {
 
-    const data = await loaderHelpers.loadJSON('data/train-vehicles.json');
+    const data = await loadJSON('data/train-vehicles.json');
 
-    loaderHelpers.saveJSON('build/data/train-vehicles.json.gz', data);
+    saveJSON('build/data/train-vehicles.json.gz', data);
 
     console.log('Train vehicle data was loaded');
 

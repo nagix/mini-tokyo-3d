@@ -1,3 +1,5 @@
+import {createElement} from './helpers';
+
 export default class {
 
     constructor(optionArray) {
@@ -13,25 +15,24 @@ export default class {
 
         me._map = map;
 
-        me._container = document.createElement('div');
-        me._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group';
+        me._container = createElement('div', {
+            className: 'mapboxgl-ctrl mapboxgl-ctrl-group'
+        });
 
         me._buttons = me._options.map(options => {
-            const button = document.createElement('button'),
-                icon = document.createElement('span'),
-                {className, title, eventHandler} = options;
+            const button = createElement('button', {
+                    className: options.className,
+                    type: 'button',
+                    title: options.title,
+                    onclick: options.eventHandler
+                }, me._container),
+                icon = createElement('span', {
+                    className: 'mapboxgl-ctrl-icon',
+                }, button);
 
-            button.className = className;
-            button.type = 'button';
-            button.title = title;
-            button.setAttribute('aria-label', title);
-            button.onclick = eventHandler;
-
-            icon.className = 'mapboxgl-ctrl-icon';
+            // For Firefox
+            button.setAttribute('aria-label', options.title);
             icon.setAttribute('aria-hidden', true);
-            button.appendChild(icon);
-
-            me._container.appendChild(button);
 
             return button;
         });

@@ -10,9 +10,9 @@ export default class extends Panel {
         }, options));
     }
 
-    addTo(mt3d) {
-        return super.addTo(mt3d)
-            .setTitle(mt3d.dict['about'])
+    addTo(map) {
+        return super.addTo(map)
+            .setTitle(map.dict['about'])
             .updateContent();
     }
 
@@ -20,7 +20,7 @@ export default class extends Panel {
         const me = this;
 
         if (me.isOpen()) {
-            const {dict, lastDynamicUpdate} = me._mt3d,
+            const {dict, lastDynamicUpdate} = me._map,
                 {copyright, lastStaticUpdate} = configs;
 
             me.setHTML([

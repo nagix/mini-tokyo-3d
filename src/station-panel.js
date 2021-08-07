@@ -6,7 +6,7 @@ export default class extends Panel {
         super(Object.assign({className: 'station-panel'}, options));
     }
 
-    addTo(mt3d) {
+    addTo(map) {
         const me = this,
             exitHTML = [],
             stations = me._options.object,
@@ -14,22 +14,22 @@ export default class extends Panel {
             exits = [].concat(...stations.map(station => station.exit || []));
 
         for (const {id} of stations) {
-            titles[mt3d.getLocalizedStationTitle(id)] = true;
+            titles[map.getLocalizedStationTitle(id)] = true;
         }
 
         for (const id of exits) {
             exitHTML.push([
                 '<div class="exit-row">',
                 '<div class="exit-title-box">',
-                mt3d.getLocalizedPOIDescription(id),
+                map.getLocalizedPOIDescription(id),
                 '</div>',
                 '<div class="exit-share-button"></div>',
                 '</div>'
             ].join(''));
         }
 
-        super.addTo(mt3d)
-            .setTitle(Object.keys(titles).join(mt3d.dict['and']))
+        super.addTo(map)
+            .setTitle(Object.keys(titles).join(map.dict['and']))
             .setHTML(exitHTML.join(''));
 
         const {children} = me._container.querySelector('#panel-content');
@@ -38,14 +38,14 @@ export default class extends Panel {
             const child = children[i];
 
             child.addEventListener('mouseenter', () => {
-                const element = mt3d.container.querySelector(`#exit-${i}`);
+                const element = map.container.querySelector(`#exit-${i}`);
 
                 if (element) {
                     element.classList.add('highlighted');
                 }
             });
             child.addEventListener('mouseleave', () => {
-                const element = mt3d.container.querySelector(`#exit-${i}`);
+                const element = map.container.querySelector(`#exit-${i}`);
 
                 if (element) {
                     element.classList.remove('highlighted');

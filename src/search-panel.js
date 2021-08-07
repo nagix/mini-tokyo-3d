@@ -1,9 +1,9 @@
 import AnimatedPopup from 'mapbox-gl-animated-popup';
 import Swiper, {Pagination} from 'swiper';
 import configs from './configs';
-import * as helpers from './helpers';
-import * as helpersGeojson from './helpers-geojson';
-import * as helpersMapbox from './helpers-mapbox';
+import {createElement, includes, loadJSON} from './helpers';
+import {emptyFeatureCollection, featureFilter} from './helpers-geojson';
+import {getBounds} from './helpers-mapbox';
 import Panel from './panel';
 
 Swiper.use([Pagination]);
@@ -14,18 +14,18 @@ export default class extends Panel {
         super(Object.assign({className: 'search-panel'}, options));
     }
 
-    addTo(mt3d) {
+    addTo(map) {
         const me = this,
-            {lang, dict} = mt3d,
-            date = mt3d.clock.getJSTDate(),
+            {lang, dict} = map,
+            date = map.clock.getJSTDate(),
             currMonth = date.getMonth() + 1,
             currDate = date.getDate(),
             currHours = date.getHours(),
             currMinutes = date.getMinutes();
 
-        mt3d.trackObject();
+        map.trackObject();
 
-        super.addTo(mt3d)
+        super.addTo(map)
             .setHTML(`
 <div id="search-form">
     <div class="search-form-element">${dict['from-station']} <input id="origin" class="search-input" type="text" list="stations"></div>
@@ -86,31 +86,25 @@ export default class extends Panel {
         destinationElement.placeholder = dict['station-name'];
 
         for (let i = 0; i < 24; i++) {
-            const option = document.createElement('option');
-
-            option.value = i;
             date.setHours(i);
-            option.text = date.toLocaleTimeString(lang, {hour: 'numeric'});
-            if (i === currHours) {
-                option.selected = true;
-            }
-            hoursElement.appendChild(option);
+            createElement('option', {
+                value: i,
+                text: date.toLocaleTimeString(lang, {hour: 'numeric'}),
+                selected: i === currHours
+            }, hoursElement);
         }
         for (let i = 0; i < 60; i++) {
-            const option = document.createElement('option');
-
-            option.value = i;
             date.setMinutes(i);
-            option.text = `${date.toLocaleTimeString(lang, {minute: 'numeric'})}${dict['minute']}`;
-            if (i === currMinutes) {
-                option.selected = true;
-            }
-            minutesElement.appendChild(option);
+            createElement('option', {
+                value: i,
+                text: `${date.toLocaleTimeString(lang, {minute: 'numeric'})}${dict['minute']}`,
+                selected: i === currMinutes
+            }, minutesElement);
         }
 
         searchButtonElement.addEventListener('click', () => {
-            const origin = mt3d.stationTitleLookup[originElement.value.toUpperCase()],
-                destination = mt3d.stationTitleLookup[destinationElement.value.toUpperCase()],
+            const origin = map.stationTitleLookup[originElement.value.toUpperCase()],
+                destination = map.stationTitleLookup[destinationElement.value.toUpperCase()],
                 type = container.querySelector('#type').value,
                 month = container.querySelector('#month').value,
                 date = container.querySelector('#date').value,
@@ -133,7 +127,7 @@ export default class extends Panel {
             container.classList.remove('search-form');
             container.classList.add('search-load');
 
-            helpers.loadJSON(`${configs.searchUrl}?origin=${origin.id}&destination=${destination.id}&type=${type}&month=${month}&date=${date}&hours=${hours}&minutes=${minutes}`).then(data => {
+            loadJSON(`${configs.searchUrl}?origin=${origin.id}&destination=${destination.id}&type=${type}&month=${month}&date=${date}&hours=${hours}&minutes=${minutes}`).then(data => {
                 container.classList.remove('search-load');
                 me.showResult(data);
             });
@@ -141,7 +135,7 @@ export default class extends Panel {
 
         me.showForm();
 
-        if (!mt3d.touchDevice) {
+        if (!map.touchDevice) {
             // Set focus after transition (workaround for Safari)
             container.addEventListener('transitionend', () => {
                 originElement.focus();
@@ -159,7 +153,7 @@ export default class extends Panel {
     showForm() {
         const me = this;
 
-        me.setTitle(me._mt3d.dict['route-search'])
+        me.setTitle(me._map.dict['route-search'])
             .setButtons();
         me._container.classList.add('search-form');
     }
@@ -178,7 +172,7 @@ export default class extends Panel {
             focusedElement = container.querySelector(`#${me.focus}`);
             if (!focusedElement.value) {
                 focusedElement.classList.add('search-focus');
-                if (!me._mt3d.touchDevice) {
+                if (!me._map.touchDevice) {
                     focusedElement.focus();
                 }
             } else {
@@ -189,24 +183,35 @@ export default class extends Panel {
 
     showResult(result) {
         const me = this,
-            mt3d = me._mt3d,
-            {lang, dict, clock} = mt3d,
+            map = me._map,
+            {lang, dict, clock} = map,
             container = me._container,
-            backButton = document.createElement('div'),
-            pageController = document.createElement('div'),
+            backButton = createElement('div', {
+                innerHTML: [
+                    '<button id="back-button" class="back-button">',
+                    '<span class="back-icon"></span>',
+                    '</button>'
+                ].join('')
+            }),
+            pageController = createElement('div', {
+                className: 'page-controller',
+                innerHTML: [
+                    '<span><button id="previous-button" class="previous-button">',
+                    '<span class="previous-icon"></span>',
+                    '</button></span>',
+                    '<span><button id="next-button" class="next-button">',
+                    '<span class="next-icon"></span>',
+                    '</button></span>'
+                ].join('')
+            }),
             swiperElement = container.querySelector('.swiper-wrapper');
 
         me._result = result;
 
-        mt3d._setSearchMode('route');
+        map._setSearchMode('route');
 
         container.classList.add('search-result');
 
-        backButton.innerHTML = [
-            '<button id="back-button" class="back-button">',
-            '<span class="back-icon"></span>',
-            '</button>'
-        ].join('');
         backButton.addEventListener('click', event => {
             event.stopPropagation();
         });
@@ -218,19 +223,10 @@ export default class extends Panel {
             }
             container.classList.remove('search-result');
             me.showForm();
-            mt3d._setSearchMode('edit');
-            mt3d.refreshMap();
+            map._setSearchMode('edit');
+            map.refreshMap();
         });
 
-        pageController.className = 'page-controller';
-        pageController.innerHTML = [
-            '<span><button id="previous-button" class="previous-button">',
-            '<span class="previous-icon"></span>',
-            '</button></span>',
-            '<span><button id="next-button" class="next-button">',
-            '<span class="next-icon"></span>',
-            '</button></span>'
-        ].join('');
         pageController.addEventListener('click', event => {
             event.stopPropagation();
         });
@@ -247,24 +243,32 @@ export default class extends Panel {
             me.setButtons([backButton, pageController]);
 
             for (const route of result.routes) {
-                const slideElement = document.createElement('div'),
+                const slideElement = createElement('div', {
+                        className: 'swiper-slide',
+                        innerHTML: [
+                            '<div class="swiper-slide-content">',
+                            '<div id="search-routes"></div>',
+                            '<svg id="railway-mark"></svg>',
+                            '</div>'
+                        ].join('')
+                    }, swiperElement),
+                    routesElement = slideElement.querySelector('#search-routes'),
+                    railwayMarkElement = slideElement.querySelector('#railway-mark'),
                     sections = [],
                     stations = [],
                     offsets = [];
                 let arrivalTime;
 
-                slideElement.className = 'swiper-slide';
-
                 for (const {r, y, ds, d, tt, nm, transfer, delay} of route.trains) {
-                    const railwayTitle = nm ? nm.map(name => name[lang] || name.en).join(dict['and']) : mt3d.getLocalizedRailwayTitle(r),
-                        trainTypeTitle = mt3d.getLocalizedTrainTypeTitle(y),
-                        destinationTitle = ds ? dict['for'].replace('$1', mt3d.getLocalizedStationTitle(ds)) : mt3d.getLocalizedRailDirectionTitle(d),
+                    const railwayTitle = nm ? nm.map(name => name[lang] || name.en).join(dict['and']) : map.getLocalizedRailwayTitle(r),
+                        trainTypeTitle = map.getLocalizedTrainTypeTitle(y),
+                        destinationTitle = ds ? dict['for'].replace('$1', map.getLocalizedStationTitle(ds)) : map.getLocalizedRailDirectionTitle(d),
                         section = {};
 
                     section.start = stations.length;
                     stations.push([
                         '<div class="station-row">',
-                        `<div class="station-title-box">${mt3d.getLocalizedStationTitle(tt[0].s)}</div>`,
+                        `<div class="station-title-box">${map.getLocalizedStationTitle(tt[0].s)}</div>`,
                         `<div class="station-time-box${delay ? ' desc-caution' : ''}">`,
                         arrivalTime ? `${clock.getTimeString(clock.getTime(arrivalTime) + delay * 60000)}<br>` : '',
                         clock.getTimeString(clock.getTime(tt[0].d) + delay * 60000),
@@ -277,14 +281,14 @@ export default class extends Panel {
                         '</div></div>'
                     ].join(''));
                     section.end = stations.length;
-                    section.color = mt3d.railwayLookup[r].color;
+                    section.color = map.railwayLookup[r].color;
                     sections.push(section);
                     if (transfer === 0) {
                         arrivalTime = tt[tt.length - 1].a;
                     } else {
                         stations.push([
                             '<div class="station-row">',
-                            `<div class="station-title-box">${mt3d.getLocalizedStationTitle(tt[tt.length - 1].s)}</div>`,
+                            `<div class="station-title-box">${map.getLocalizedStationTitle(tt[tt.length - 1].s)}</div>`,
                             `<div class="station-time-box${delay ? ' desc-caution' : ''}">`,
                             clock.getTimeString(clock.getTime(tt[tt.length - 1].a || tt[tt.length - 1].d) + delay * 60000),
                             '</div></div>'
@@ -305,17 +309,9 @@ export default class extends Panel {
                     }
                 }
 
-                slideElement.innerHTML = [
-                    '<div class="swiper-slide-content">',
-                    `<div id="search-routes">${stations.join('')}</div>`,
-                    '<svg id="railway-mark"></svg>',
-                    '</div>'
-                ].join('');
-                swiperElement.appendChild(slideElement);
+                routesElement.innerHTML = stations.join('');
 
-                const routesElement = slideElement.querySelector('#search-routes'),
-                    railwayMarkElement = slideElement.querySelector('#railway-mark'),
-                    {children} = routesElement;
+                const {children} = routesElement;
 
                 for (let i = 0, ilen = children.length; i < ilen; i++) {
                     const child = children[i];
@@ -360,8 +356,8 @@ export default class extends Panel {
 
     switchRoute() {
         const me = this,
-            mt3d = me._mt3d,
-            {dict, map} = mt3d,
+            map = me._map,
+            {dict, map: mbox} = map,
             container = me._container,
             swiper = me._swiper,
             index = swiper.activeIndex,
@@ -379,10 +375,10 @@ export default class extends Panel {
         container.querySelector('#next-button').disabled = swiper.isEnd;
 
         for (const {r, tt, d} of route.trains) {
-            const {stations, ascending} = mt3d.railwayLookup[r];
+            const {stations, ascending} = map.railwayLookup[r];
 
             for (const {s} of tt) {
-                const station = mt3d.stationLookup[s];
+                const station = map.stationLookup[s];
 
                 stationGroups.push(station.group);
                 coords.push(station.coord);
@@ -406,47 +402,47 @@ export default class extends Panel {
         }
 
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
-            let layer = map.getLayer(`railways-routeug-${zoom}`).implementation;
+            let layer = mbox.getLayer(`railways-routeug-${zoom}`).implementation;
 
             layer.setProps({
-                data: helpersGeojson.featureFilter(mt3d.featureCollection, p =>
-                    p.zoom === zoom && p.altitude < 0 && helpers.includes(railwaySections, p.section)
+                data: featureFilter(map.featureCollection, p =>
+                    p.zoom === zoom && p.altitude < 0 && includes(railwaySections, p.section)
                 )
             });
 
-            layer = map.getLayer(`stations-routeug-${zoom}`).implementation;
+            layer = mbox.getLayer(`stations-routeug-${zoom}`).implementation;
 
             layer.setProps({
-                data: helpersGeojson.featureFilter(mt3d.featureCollection, p =>
-                    p.zoom === zoom && p.altitude < 0 && helpers.includes(stationGroups, p.group)
+                data: featureFilter(map.featureCollection, p =>
+                    p.zoom === zoom && p.altitude < 0 && includes(stationGroups, p.group)
                 )
             });
 
-            layer = map.getLayer(`railways-routeog-${zoom}`).implementation;
+            layer = mbox.getLayer(`railways-routeog-${zoom}`).implementation;
 
             layer.setProps({
-                data: helpersGeojson.featureFilter(mt3d.featureCollection, p =>
-                    p.zoom === zoom && p.altitude === 0 && helpers.includes(railwaySections, p.section)
+                data: featureFilter(map.featureCollection, p =>
+                    p.zoom === zoom && p.altitude === 0 && includes(railwaySections, p.section)
                 )
             });
 
-            layer = map.getLayer(`stations-routeog-${zoom}`).implementation;
+            layer = mbox.getLayer(`stations-routeog-${zoom}`).implementation;
 
             layer.setProps({
-                data: helpersGeojson.featureFilter(mt3d.featureCollection, p =>
-                    p.zoom === zoom && p.altitude === 0 && helpers.includes(stationGroups, p.group)
+                data: featureFilter(map.featureCollection, p =>
+                    p.zoom === zoom && p.altitude === 0 && includes(stationGroups, p.group)
                 )
             });
         }
 
-        map.fitBounds(helpersMapbox.getBounds(coords), {
-            bearing: map.getBearing(),
-            offset: [0, -map.transform.height / 12],
+        mbox.fitBounds(getBounds(coords), {
+            bearing: mbox.getBearing(),
+            offset: [0, -mbox.transform.height / 12],
             padding: {top: 20, bottom: 20, left: 10, right: 50},
             linear: true,
             maxZoom: 18
         });
-        mt3d.refreshMap();
+        map.refreshMap();
 
         const stationIDs = [route.trains[0].tt[0].s];
 
@@ -464,9 +460,9 @@ export default class extends Panel {
                     closeOnClick: false
                 });
 
-                popup.setLngLat(mt3d.stationLookup[id].coord)
+                popup.setLngLat(map.stationLookup[id].coord)
                     .setHTML(index === 0 ? dict['from-station'] : index === stationIDs.length - 1 ? dict['to-station'] : `${dict['transfer']}${index}`)
-                    .addTo(map);
+                    .addTo(mbox);
 
                 me.popups[index] = popup;
             }, index / stationIDs.length * 1000 + 500);
@@ -475,12 +471,12 @@ export default class extends Panel {
 
     hideRoute() {
         const me = this,
-            map = me._mt3d.map;
+            mbox = me._map.map;
 
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
             for (const id of [`railways-routeug-${zoom}`, `stations-routeug-${zoom}`, `railways-routeog-${zoom}`, `stations-routeog-${zoom}`]) {
-                map.getLayer(id).implementation.setProps({
-                    data: helpersGeojson.emptyFeatureCollection()
+                mbox.getLayer(id).implementation.setProps({
+                    data: emptyFeatureCollection()
                 });
             }
         }

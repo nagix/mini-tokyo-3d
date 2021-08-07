@@ -15,7 +15,7 @@ export default class {
         me.renderingMode = '3d';
         me.underground = underground;
         me.semitransparent = semitransparent;
-        me.modelOrigin = MercatorCoordinate.fromLngLat(configs.originCoord);
+        me.modelOrigin = MercatorCoordinate.fromLngLat(configs.defaultCenter);
         me.modelScale = me.modelOrigin.meterInMercatorCoordinateUnits();
     }
 

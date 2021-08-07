@@ -1,5 +1,5 @@
-import * as helpers from '../helpers';
-import * as loaderHelpers from './helpers';
+import {buildLookup, removePrefix} from '../helpers';
+import {loadJSON, saveJSON} from './helpers';
 
 const WIKIPEDIA_URL = 'https://ja.wikipedia.org/w/api.php';
 const WIKIPEDIA_PARAMS = 'format=json&action=query&prop=pageimages&pithumbsize=128';
@@ -62,7 +62,7 @@ export default async function(options) {
         'data/station-groups.json',
         'data/stations.json',
         ...urls
-    ].map(loaderHelpers.loadJSON));
+    ].map(loadJSON));
 
     const data = [].concat(...original).map(station => {
         const lon = station['geo:long'];
@@ -70,13 +70,13 @@ export default async function(options) {
 
         return {
             coord: !isNaN(lon) && !isNaN(lat) ? [lon, lat] : undefined,
-            id: helpers.removePrefix(station['owl:sameAs']),
-            railway: helpers.removePrefix(station['odpt:railway']),
+            id: removePrefix(station['owl:sameAs']),
+            railway: removePrefix(station['odpt:railway']),
             title: station['odpt:stationTitle']
         };
     });
 
-    const lookup = helpers.buildLookup(data);
+    const lookup = buildLookup(data);
 
     for (const {id, railway, coord, title, utitle, thumbnail, exit, altitude} of extra) {
         let station = lookup[id];
@@ -132,7 +132,7 @@ export default async function(options) {
         }
     }
     (await Promise.all(stationLists.map(stations =>
-        loaderHelpers.loadJSON(`${WIKIPEDIA_URL}?${WIKIPEDIA_PARAMS}&titles=${stations.join('|')}`)
+        loadJSON(`${WIKIPEDIA_URL}?${WIKIPEDIA_PARAMS}&titles=${stations.join('|')}`)
     ))).forEach((result) => {
         const {pages} = result.query;
 
@@ -149,7 +149,7 @@ export default async function(options) {
         }
     });
 
-    loaderHelpers.saveJSON('build/data/stations.json.gz', data);
+    saveJSON('build/data/stations.json.gz', data);
 
     console.log('Station data was loaded');
 

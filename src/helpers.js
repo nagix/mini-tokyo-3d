@@ -51,6 +51,10 @@ export function includes(array, value) {
     return true;
 }
 
+export function flat(array) {
+    return array.reduce((acc, val) => acc.concat(val), []);
+}
+
 export function normalize(value) {
     return value.normalize("NFD").replace(/\(.*\)|<.*>|〈.*〉|[\u0300-\u036F]/g, '');
 }
@@ -164,7 +168,7 @@ export function luminance(color) {
 }
 
 /**
- * Convert a hex color code to RGB array.
+ * Converts a hex color code to RGB array.
  * @param {object} color - Hex color code
  * @returns {Array} RGB array
  */
@@ -175,16 +179,33 @@ export function colorToRGBArray(color) {
 }
 
 /**
- * Show notification message.
+ * Creates an element with the specified attributes and appends it to a container.
+ * @param {string} tagName - A string that specifies the type of element to be created
+ * @param {object} attributes - The attributes to set
+ * @param {Element} container - The node to append the element to
+ * @returns {Element} The new Element
+ */
+export function createElement(tagName, attributes, container) {
+    const element = document.createElement(tagName);
+
+    Object.assign(element, attributes);
+    if (container) {
+        container.appendChild(element);
+    }
+    return element;
+}
+
+/**
+ * Shows notification message.
  * @param {Node} container - Node in which the notification panel is shown
  * @param {string} message - Notification message
  */
 export function showNotification(container, message) {
-    const element = document.createElement('div');
+    const element = createElement('div', {
+        className: 'notification',
+        innerHTML: message
+    }, container);
 
-    element.className = 'notification';
-    element.innerHTML = message;
-    container.appendChild(element);
     setTimeout(() => {
         element.style.opacity = 0;
     }, 1000);

@@ -70,7 +70,7 @@ const configs = {
     fadeDuration: 1000,
 
     // Origin of coordinates (around Tokyo station)
-    originCoord: [139.7670, 35.6814],
+    defaultCenter: [139.7670, 35.6814],
 
     // Default zoom level
     defaultZoom: 14,
@@ -168,6 +168,7 @@ const configs = {
         'zoomend',
         'zoomstart'
     ]
+
 };
 
 export default configs;

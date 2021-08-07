@@ -26,13 +26,13 @@
 	<script src="mt3d-plugin-olympics2020.min.js"></script>
 </head>
 <body style="width: 100%; height: 100%; margin: 0; padding: 0; position: absolute;">
-	<div id="mini-tokyo-3d" style="width: 100%; height: 100%;"></div>
+	<div id="map" style="width: 100%; height: 100%;"></div>
 	<script>
 		const matchLang = location.search.match(/lang=(.*?)(&|$)/),
 			matchSelection = location.search.match(/selection=(.*?)(&|$)/),
 			lang = matchLang ? decodeURIComponent(matchLang[1]) : undefined,
 			selection = matchSelection ? decodeURIComponent(matchSelection[1]) : undefined,
-			map = new mt3d.MiniTokyo3D({lang, container: 'mini-tokyo-3d', selection, plugins: [mt3dOlympics2020()]});
+			map = new mt3d.Map({lang, container: 'map', selection, plugins: [mt3dOlympics2020()]});
 	</script>
 </body>
 </html>

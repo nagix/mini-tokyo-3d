@@ -1,4 +1,4 @@
-import * as helpers from './helpers';
+import {valueOrDefault} from './helpers';
 
 function repeat() {
     const instances = animation.instances,
@@ -69,7 +69,7 @@ const animation = {
      * @returns {number} Animation ID which can be used to stop
      */
     start(options) {
-        options.duration = helpers.valueOrDefault(options.duration, Infinity);
+        options.duration = valueOrDefault(options.duration, Infinity);
         animation.instances[animation.count] = options;
         return animation.count++;
     },
