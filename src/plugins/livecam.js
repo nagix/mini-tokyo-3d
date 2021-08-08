@@ -4,35 +4,10 @@ import Panel from '../panel';
 import Popup from '../popup';
 import Plugin from './plugin';
 import livecamSVG from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/video.svg';
+import './livecam.css';
 
 // Live camera URL
 const LIVECAM_URL = 'https://mini-tokyo.appspot.com/livecam';
-
-// Add style
-createElement('style', {
-    innerHTML: `
-.livecam-panel {
-    height: 262px !important;
-}
-.livecam-panel.collapsed {
-    height: 50px !important;
-}
-.livecam-panel.closed {
-    height: 0 !important;
-}
-.livecam-marker {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #333;
-    border-radius: 50%;
-    background: white no-repeat center/20px url("${livecamSVG.replace('%3e', ' fill=\'%23333\'%3e')}");
-    cursor: pointer;
-}
-.livecam-marker.active, .livecam-marker:hover {
-    border-color: #33B5E5;
-    background-image: url("${livecamSVG.replace('%3e', ' fill=\'%2333B5E5\'%3e')}");
-}`
-}, document.head);
 
 class LivecamPanel extends Panel {
 
