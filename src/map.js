@@ -1002,7 +1002,7 @@ export default class extends Evented {
             trainLayers.onResize(e);
         });
 
-        for (const plugin of me.plugins) {
+        for (const plugin of me.plugins.slice().reverse()) {
             plugin.addTo(me);
         }
 
