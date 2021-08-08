@@ -1,8 +1,8 @@
-import {Marker} from 'mapbox-gl';
+import Marker from './marker';
 import Map from './map';
 import Panel from './panel';
 import Plugin from './plugins/plugin';
-import Popup from 'mapbox-gl-animated-popup';
+import Popup from './popup';
 import ThreeLayer from './three-layer';
 import {TextureLoader, MeshPhongMaterial} from 'three';
 import {GLTFLoader} from '../node_modules/three/examples/jsm/loaders/GLTFLoader';

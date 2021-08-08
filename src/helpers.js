@@ -67,6 +67,25 @@ export function numberOrDefault(value, defaultValue) {
     return isNaN(value) ? defaultValue : value;
 }
 
+/**
+ * Given an array of member function names as strings, replace all of them
+ * with bound versions that will always refer to `context` as `this`. This
+ * is useful for classes where otherwise event bindings would reassign
+ * `this` to the evented object or some other value: this lets you ensure
+ * the `this` value always.
+ *
+ * @param fns list of member function names
+ * @param context the context value
+ */
+export function bindAll(fns, context) {
+    for (const fn of fns) {
+        if (!context[fn]) {
+            continue;
+        }
+        context[fn] = context[fn].bind(context);
+    }
+}
+
 export function removePrefix(value) {
     if (typeof value === 'string') {
         return value.replace(/.*:/, '');
