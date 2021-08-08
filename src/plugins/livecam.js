@@ -1,7 +1,7 @@
-import {Marker} from 'mapbox-gl';
-import AnimatedPopup from 'mapbox-gl-animated-popup';
 import {createElement, loadJSON} from '../helpers';
+import Marker from '../marker';
 import Panel from '../panel';
+import Popup from '../popup';
 import Plugin from './plugin';
 import livecamSVG from '../../node_modules/@fortawesome/fontawesome-free/svgs/solid/video.svg';
 
@@ -28,7 +28,7 @@ createElement('style', {
     background: white no-repeat center/20px url("${livecamSVG.replace('%3e', ' fill=\'%23333\'%3e')}");
     cursor: pointer;
 }
-.livecam-marker-active {
+.livecam-marker.active, .livecam-marker:hover {
     border-color: #33B5E5;
     background-image: url("${livecamSVG.replace('%3e', ' fill=\'%2333B5E5\'%3e')}");
 }`
@@ -49,16 +49,6 @@ class LivecamPanel extends Panel {
         return super.addTo(map);
     }
 
-}
-
-function updateMarkerElement(element, highlight) {
-    const {classList} = element;
-
-    if (highlight) {
-        classList.add('livecam-marker-active');
-    } else {
-        classList.remove('livecam-marker-active');
-    }
 }
 
 class LivecamPlugin extends Plugin {
@@ -82,7 +72,7 @@ class LivecamPlugin extends Plugin {
             backgroundSize: '32px',
             backgroundImage: `url("${livecamSVG.replace('%3e', ' fill=\'white\'%3e')}")`
         };
-        me.markers = [];
+        me.markers = {};
         me._clickEventListener = () => {
             me._updatePanel();
         };
@@ -109,10 +99,10 @@ class LivecamPlugin extends Plugin {
             map = me._map;
 
         me._updatePanel();
-        for (const marker of me.markers) {
-            marker.remove();
+        for (const id of Object.keys(me.markers)) {
+            me.markers[id].remove();
+            delete me.markers[id];
         }
-        me.markers = [];
 
         map.off('clockmode', me._clockModeEventListener);
         map.off('click', me._clickEventListener);
@@ -122,100 +112,63 @@ class LivecamPlugin extends Plugin {
         const me = this;
 
         me._updatePanel();
-        for (const marker of me.markers) {
-            marker.getElement().style.visibility = visible ? 'visible' : 'hidden';
+        for (const id of Object.keys(me.markers)) {
+            me.markers[id].setVisibility(visible);
         }
     }
 
     _addMarkers(cameras) {
         const me = this,
             map = me._map,
-            {lang, map: mbox} = map;
+            {lang} = map;
 
         for (const camera of cameras) {
             const {center, zoom, bearing, pitch, id, name, thumbnail} = camera,
-                element = createElement('div', {
-                    id: `camera-${id}`,
-                    className: 'livecam-marker'
-                });
+                element = createElement('div', {className: 'livecam-marker'});
             let popup;
 
-            element.addEventListener('click', event => {
-                me._updatePanel(camera);
-                map.setViewMode('ground');
-                map.flyTo({
-                    center,
-                    zoom,
-                    bearing,
-                    pitch
-                });
-
-                event.stopPropagation();
-            });
-            element.addEventListener('mouseenter', () => {
-                updateMarkerElement(element, true);
-                popup = new AnimatedPopup({
-                    className: 'popup-object',
-                    closeButton: false,
-                    closeOnClick: false,
-                    maxWidth: '300px',
-                    offset: {
-                        top: [0, 10],
-                        bottom: [0, -30]
-                    },
-                    openingAnimation: {
-                        duration: 300,
-                        easing: 'easeOutBack'
+            me.markers[id] = new Marker({element})
+                .setLngLat(center)
+                .addTo(map)
+                .on('click', () => {
+                    me._updatePanel(camera);
+                    map.setViewMode('ground');
+                    map.flyTo({center, zoom, bearing, pitch});
+                })
+                .on('mouseenter', () => {
+                    popup = new Popup()
+                        .setLngLat(center)
+                        .setHTML([
+                            '<div class="thumbnail-image-container">',
+                            '<div class="ball-pulse"><div></div><div></div><div></div></div>',
+                            `<div class="thumbnail-image" style="background-image: url(\'${thumbnail}\');"></div>`,
+                            '</div>',
+                            `<div><strong>${name[lang]}</strong></div>`
+                        ].join(''))
+                        .addTo(map);
+                })
+                .on('mouseleave', () => {
+                    if (popup) {
+                        popup.remove();
+                        popup = undefined;
                     }
                 });
-                popup.setLngLat(center)
-                    .setHTML([
-                        '<div class="thumbnail-image-container">',
-                        '<div class="ball-pulse"><div></div><div></div><div></div></div>',
-                        `<div class="thumbnail-image" style="background-image: url(\'${thumbnail}\');"></div>`,
-                        '</div>',
-                        `<div><strong>${name[lang]}</strong></div>`
-                    ].join(''))
-                    .addTo(mbox);
-            });
-            element.addEventListener('mouseleave', () => {
-                updateMarkerElement(element, me.selectedCamera === id);
-                if (popup) {
-                    popup.remove();
-                    popup = undefined;
-                }
-            });
-            element.addEventListener('mousemove', event => {
-                map.markObject();
-                event.stopPropagation();
-            });
-
-            me.markers.push(
-                new Marker(element)
-                    .setLngLat(center)
-                    .addTo(mbox)
-            );
         }
     }
 
     _updatePanel(camera) {
         const me = this,
-            map = me._map,
             {id} = camera || {};
 
         if (me.selectedCamera !== id && me.panel) {
-            const element = map.container.querySelector(`#camera-${me.selectedCamera}`);
-
-            updateMarkerElement(element);
+            me.markers[me.selectedCamera].setActivity(false);
             me.panel.remove();
             delete me.panel;
             delete me.selectedCamera;
         }
         if (!me.selectedCamera && camera) {
-            const element = map.container.querySelector(`#camera-${id}`);
-
-            updateMarkerElement(element, true);
-            me.panel = new LivecamPanel({camera}).addTo(map);
+            me.markers[id].setActivity(true);
+            me.panel = new LivecamPanel({camera}).addTo(me._map);
             me.selectedCamera = id;
         }
     }

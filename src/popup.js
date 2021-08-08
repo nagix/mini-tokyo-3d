@@ -24,7 +24,7 @@ export default class {
 
     /**
      * Adds the popup to a map.
-     * @param {Map} map The Mini Tokyo 3D map to add the popup to
+     * @param {Map} map - The Mini Tokyo 3D map to add the popup to
      * @returns {Popup} Returns itself to allow for method chaining
      */
     addTo(map) {
@@ -43,7 +43,7 @@ export default class {
 
     /**
      * Sets the geographical location of the popup's anchor, and moves the popup to it.
-     * @param {LngLatLike} lnglat The geographical location to set as the popup's anchor.
+     * @param {LngLatLike} lnglat - The geographical location to set as the popup's anchor.
      * @returns {Popup} Returns itself to allow for method chaining
      */
     setLngLat(lnglat) {
