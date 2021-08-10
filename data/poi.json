@@ -2988,7 +2988,7 @@
 },
 {
 	"id": "TokyoMetro.Suehirocho.2",
-	"coord": [139.7719087, 35.7032138],
+	"coord": [139.771955, 35.7031819],
 	"title": {
 		"en": "2"
 	},
@@ -5957,7 +5957,7 @@
 	}
 }, {
 	"id": "TokyoMetro.Ikebukuro.4",
-	"coord": [139.7099188, 35.729769],
+	"coord": [139.7095883, 35.729423],
 	"title": {
 		"en": "4"
 	},
@@ -5970,7 +5970,7 @@
 	}
 }, {
 	"id": "TokyoMetro.Ikebukuro.5",
-	"coord": [139.7098799, 35.7303275],
+	"coord": [139.7099188, 35.729769],
 	"title": {
 		"en": "5"
 	},
@@ -5982,17 +5982,30 @@
 		"zh-Hant": "5號出口"
 	}
 }, {
-	"id": "TokyoMetro.Ikebukuro.6",
-	"coord": [139.7100529, 35.7303166],
+	"id": "TokyoMetro.Ikebukuro.6a",
+	"coord": [139.7098799, 35.7303275],
 	"title": {
-		"en": "6"
+		"en": "6a"
 	},
 	"description": {
-		"ja": "6番出口",
-		"en": "Exit 6",
-		"ko": "6번출구",
-		"zh-Hans": "6号出口",
-		"zh-Hant": "6號出口"
+		"ja": "6a出口",
+		"en": "Exit 6a",
+		"ko": "6a출구",
+		"zh-Hans": "6a出口",
+		"zh-Hant": "6a出口"
+	}
+}, {
+	"id": "TokyoMetro.Ikebukuro.6b",
+	"coord": [139.7100529, 35.7303166],
+	"title": {
+		"en": "6b"
+	},
+	"description": {
+		"ja": "6b出口",
+		"en": "Exit 6b",
+		"ko": "6b출구",
+		"zh-Hans": "6b出口",
+		"zh-Hant": "6b出口"
 	}
 }, {
 	"id": "TokyoMetro.Ikebukuro.7",
@@ -7808,6 +7821,19 @@
 		"ko": "4번출구",
 		"zh-Hans": "4号出口",
 		"zh-Hant": "4號出口"
+	}
+}, {
+	"id": "TokyoMetro.NakaOkachimachi.5",
+	"coord": [139.7759253, 35.706556],
+	"title": {
+		"en": "5"
+	},
+	"description": {
+		"ja": "5番出口",
+		"en": "Exit 5",
+		"ko": "5번출구",
+		"zh-Hans": "5号出口",
+		"zh-Hant": "5號出口"
 	}
 }, {
 	"id": "TokyoMetro.Iriya.1",
@@ -10252,38 +10278,69 @@
 		"zh-Hant": "西出口"
 	}
 }, {
-	"id": "TokyoMetro.KitaAyase.Center",
-	"coord": [139.8321571, 35.7773219],
+	"id": "TokyoMetro.KitaAyase.1",
+	"coord": [139.8320612, 35.7774836],
 	"title": {
-		"ja": "中央口",
-		"en": "Center",
-		"ko": "서쪽",
-		"zh-Hans": "中央出口",
-		"zh-Hant": "中央出口"
+		"en": "1"
 	},
 	"description": {
-		"ja": "中央口",
-		"en": "Center Exit",
-		"ko": "중앙 출구",
-		"zh-Hans": "中央出口",
-		"zh-Hant": "中央出口"
+		"ja": "1番出口",
+		"en": "Exit 1",
+		"ko": "1번출구",
+		"zh-Hans": "1号出口",
+		"zh-Hant": "1號出口"
 	}
 }, {
-	"id": "TokyoMetro.KitaAyase.South",
-	"coord": [139.8319817, 35.7755817],
+	"id": "TokyoMetro.KitaAyase.2",
+	"coord": [139.8321839, 35.7772694],
 	"title": {
-		"ja": "南口",
-		"en": "South",
-		"ko": "남쪽",
-		"zh-Hans": "南出口",
-		"zh-Hant": "南出口"
+		"en": "2"
 	},
 	"description": {
-		"ja": "南口",
-		"en": "South Exit",
-		"ko": "남쪽 출구",
-		"zh-Hans": "南出口",
-		"zh-Hant": "南出口"
+		"ja": "2番出口",
+		"en": "Exit 2",
+		"ko": "2번출구",
+		"zh-Hans": "2号出口",
+		"zh-Hant": "2號出口"
+	}
+}, {
+	"id": "TokyoMetro.KitaAyase.3",
+	"coord": [139.8322882, 35.7770922],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "3番出口",
+		"en": "Exit 3",
+		"ko": "3번출구",
+		"zh-Hans": "3号出口",
+		"zh-Hant": "3號出口"
+	}
+}, {
+	"id": "TokyoMetro.KitaAyase.4",
+	"coord": [139.8321595, 35.77681661],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "4番出口",
+		"en": "Exit 4",
+		"ko": "4번출구",
+		"zh-Hans": "4号出口",
+		"zh-Hant": "4號出口"
+	}
+}, {
+	"id": "TokyoMetro.KitaAyase.5",
+	"coord": [139.8319817, 35.7755817],
+	"title": {
+		"en": "5"
+	},
+	"description": {
+		"ja": "5番出口",
+		"en": "Exit 5",
+		"ko": "5번출구",
+		"zh-Hans": "5号出口",
+		"zh-Hant": "5號出口"
 	}
 }, {
 	"id": "TokyoMetro.Wakoshi.South",
