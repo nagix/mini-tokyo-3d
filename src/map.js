@@ -1154,7 +1154,7 @@ export default class extends Evented {
         }
 
         if (delay) {
-            helpersThree.addDelayMarker(cars[0], helpersMapbox.isDarkBackground(map));
+            helpersThree.addDelayMarker(cars[0], me.isDarkBackground());
         }
 
         const pArr = helpersGeojson.getCoordAndBearing(feature, offset + train._t * interval, 1, objectUnit);
@@ -2485,6 +2485,10 @@ export default class extends Evented {
         return {r, g, b};
     }
 
+    isDarkBackground() {
+        return helpersMapbox.isDarkBackground(this.map);
+    }
+
     refreshStyleColors() {
         const me = this,
             {map, viewMode} = me,
@@ -2533,7 +2537,7 @@ export default class extends Evented {
 
     refreshDelayMarkers() {
         const me = this,
-            dark = helpersMapbox.isDarkBackground(me.map);
+            dark = me.isDarkBackground();
 
         Object.keys(me.activeTrainLookup).forEach(key => {
             const car = me.activeTrainLookup[key].cars[0];
