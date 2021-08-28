@@ -6,8 +6,6 @@ import {emptyFeatureCollection, featureFilter} from './helpers-geojson';
 import {getBounds} from './helpers-mapbox';
 import Panel from './panel';
 
-Swiper.use([Pagination]);
-
 export default class extends Panel {
 
     constructor(options) {
@@ -329,6 +327,7 @@ export default class extends Panel {
             }
 
             me._swiper = new Swiper('.swiper-container', {
+                modules: [Pagination],
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true

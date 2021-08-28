@@ -8,6 +8,7 @@ import mapboxgl from 'mapbox-gl';
 import * as THREE from 'three';
 import {GLTFLoader} from '../node_modules/three/examples/jsm/loaders/GLTFLoader';
 import './css/loaders.scss';
+import './css/swiper.scss';
 import './css/mini-tokyo-3d.css';
 
 export default {
