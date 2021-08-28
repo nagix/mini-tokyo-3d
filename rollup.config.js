@@ -94,8 +94,7 @@ export default [{
 		image(),
 		terser({
 			compress: {
-				pure_getters: true,
-				passes: 3
+				pure_getters: true
 			}
 		}),
 		strip({
