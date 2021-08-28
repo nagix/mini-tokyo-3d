@@ -28,6 +28,10 @@
     "no-invalid-this": "off",
     "no-buffer-constructor": "off",
 
+    // import/no-unresolved doesn't support package.json exports and imports
+    // https://github.com/import-js/eslint-plugin-import/issues/1868
+    "import/no-unresolved": ["error", {"ignore": ["swiper"]}],
+
     "array-bracket-spacing": "off",
     "consistent-return": "off",
     "global-require": "off",
@@ -74,7 +78,7 @@
       "ignorePrivate": true
     }
   },
-  "ignorePatterns": ["src/spe", "src/extend.js"],
+  "ignorePatterns": ["src/extend.js"],
   "globals": {
     "performance": true
   },
