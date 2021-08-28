@@ -135,3 +135,7 @@ export function getCenterCoord(geojson) {
 export function emptyFeatureCollection() {
     return featureCollection([]);
 }
+
+export function isFeature(object) {
+    return object && object.type === 'Feature' && object.geometry;
+}

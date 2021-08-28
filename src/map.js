@@ -19,9 +19,6 @@ import * as helpersThree from './helpers-three';
 import LayerPanel from './layer-panel';
 import * as loader from './loader';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
-import fireworksPlugin from './plugins/fireworks.js';
-import livecamPlugin from './plugins/livecam.js';
-import precipitationPlugin from './plugins/precipitation.js';
 import SearchPanel from './search-panel';
 import SharePanel from './share-panel';
 import StationPanel from './station-panel';
@@ -112,13 +109,7 @@ export default class extends Evented {
         me.modeControl = options.modeControl;
         me.configControl = options.configControl;
         me.clock = new Clock();
-
-        me.plugins = [
-            precipitationPlugin({enabled: false}),
-            fireworksPlugin(),
-            livecamPlugin(),
-            ...(options.plugins || [])
-        ];
+        me.plugins = options.plugins || [];
 
         me.searchMode = 'none';
         me.viewMode = configs.defaultViewMode;
@@ -2627,7 +2618,7 @@ export default class extends Evented {
             {searchMode, searchPanel, lang, map, trackedObject, sharePanel, detailPanel} = me;
 
         if (searchMode !== 'none') {
-            if (searchMode === 'edit' && searchPanel && object && !helpersThree.isObject3D(object)) {
+            if (searchMode === 'edit' && searchPanel && object && helpersGeojson.isFeature(object)) {
                 const ids = helpersGeojson.getIds(object),
                     station = me.stationLookup[ids[0]],
                     utitle = station.utitle && station.utitle[lang],
@@ -2638,14 +2629,17 @@ export default class extends Evented {
             return;
         }
 
-        if (trackedObject) {
+        if (trackedObject && (helpersThree.isObject3D(trackedObject) || helpersGeojson.isFeature(trackedObject) || !isEqualObject(trackedObject, object))) {
             if (helpersThree.isObject3D(trackedObject)) {
                 const prevObject = trackedObject.userData.object;
 
                 helpersThree.removeOutline(trackedObject, 'outline-tracked');
                 me.fire({type: 'deselection', deselection: prevObject.t || prevObject.id});
-            } else {
+            } else if (helpersGeojson.isFeature(trackedObject)) {
                 me.removeStationOutline('stations-selected');
+                me.fire({type: 'deselection'});
+            } else {
+                me.fire(Object.assign({type: 'deselection'}, trackedObject));
             }
             delete me.trackedObject;
             me.updateBaseZoom();
@@ -2670,7 +2664,7 @@ export default class extends Evented {
             });
         }
 
-        if (object) {
+        if (object && (helpersThree.isObject3D(object) || helpersGeojson.isFeature(object) || !isEqualObject(object, me.trackedObject))) {
             me.trackedObject = object;
 
             if (helpersThree.isObject3D(object)) {
@@ -2695,7 +2689,7 @@ export default class extends Evented {
 
                 helpersThree.addOutline(object, 'outline-tracked');
                 me.fire({type: 'selection', selection: train.t || train.id});
-            } else {
+            } else if (helpersGeojson.isFeature(object)) {
                 const altitude = helpersGeojson.getAltitude(object),
                     ids = helpersGeojson.getIds(object),
                     stations = ids.map(id => me.stationLookup[id]),
@@ -2710,7 +2704,8 @@ export default class extends Evented {
                                 me.exitPopups[index] = setTimeout(() => {
                                     const popup = new AnimatedPopup({
                                         className: 'popup-station',
-                                        closeButton: false
+                                        closeButton: false,
+                                        closeOnClick: false
                                     });
 
                                     popup.setLngLat(coord)
@@ -2740,9 +2735,12 @@ export default class extends Evented {
                     me.detailPanel.addTo(me);
 
                     me.addStationOutline(object, 'stations-selected');
+                    me.fire({type: 'selection'});
                 } else {
                     me.trackedObject = undefined;
                 }
+            } else {
+                me.fire(Object.assign({type: 'selection'}, object));
             }
         }
     }
