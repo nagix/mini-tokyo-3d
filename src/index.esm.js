@@ -13,7 +13,7 @@ import './css/mini-tokyo-3d.css';
 
 const THREE = Object.assign({GLTFLoader}, three);
 
-export default {
+export {
     mapboxgl,
     Marker,
     Map,

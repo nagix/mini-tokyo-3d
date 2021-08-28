@@ -102,7 +102,7 @@ export default [{
 		})
 	]
 }, {
-	input: 'src/index.js',
+	input: 'src/index.esm.js',
 	output: {
 		file: pkg.module,
 		format: 'esm',
