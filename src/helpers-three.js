@@ -42,7 +42,7 @@ export function createCube(options) {
     if (Array.isArray(color)) {
         const hasFaceColor = color.length > 3;
 
-        geometry = new THREE.BoxBufferGeometry(dimension.x, dimension.y, dimension.z, 1, 1, 3);
+        geometry = new THREE.BoxGeometry(dimension.x, dimension.y, dimension.z, 1, 1, 3);
         geometry.clearGroups();
         [0, 1, 2, 2, 1, 0, 2, 1, 0, 0, 1, 2, 0, 2].forEach((index, i) => {
             geometry.addGroup(i * 6, 6, i >= 6 && i < 12 && hasFaceColor ? 3 : index);
@@ -53,7 +53,7 @@ export function createCube(options) {
             }, materialParams))
         );
     } else {
-        geometry = new THREE.BoxBufferGeometry(dimension.x, dimension.y, dimension.z);
+        geometry = new THREE.BoxGeometry(dimension.x, dimension.y, dimension.z);
         material = new THREE.MeshLambertMaterial(Object.assign({color}, materialParams));
     }
 
@@ -94,6 +94,27 @@ export function setOpacity(object, opacity) {
     });
 }
 
+/**
+ * Disposes all the geometries and materials of the object and its descendants.
+ * @param {Object3D} object - Target object
+ */
+export function dispose(object) {
+    object.traverse(({geometry, material: materials}) => {
+        if (geometry) {
+            geometry.dispose();
+        }
+        if (materials) {
+            if (Array.isArray(materials)) {
+                for (const material of materials) {
+                    material.dispose();
+                }
+            } else {
+                materials.dispose();
+            }
+        }
+    });
+}
+
 export function resetPolygonOffsetFactor(object) {
     object.traverse(({material}) => {
         if (material) {
@@ -112,7 +133,7 @@ export function addDelayMarker(object, dark) {
         return;
     }
 
-    const geometry = new THREE.SphereBufferGeometry(1.8, 32, 32),
+    const geometry = new THREE.SphereGeometry(1.8, 32, 32),
         material = new THREE.ShaderMaterial({
             uniforms: {
                 glowColor: {type: 'c', value: new THREE.Color(0xff9900)},
@@ -178,7 +199,7 @@ export function addOutline(object, name) {
             const {width, height, depth} = descendant.geometry.parameters,
                 {translate} = descendant.geometry.userData,
                 outline = new THREE.Mesh(
-                    new THREE.BoxBufferGeometry(width + .2, height + .2, depth + .2),
+                    new THREE.BoxGeometry(width + .2, height + .2, depth + .2),
                     new THREE.MeshBasicMaterial({
                         color: '#FFFFFF',
                         side: THREE.BackSide,

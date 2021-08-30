@@ -538,6 +538,7 @@ export default class extends Evented {
                 setObjectOpacity(object, 0, duration);
                 setTimeout(() => {
                     layer.scene.remove(object);
+                    helpersThree.dispose(object);
                 }, duration);
             },
             pickObject(point) {
@@ -1187,7 +1188,7 @@ export default class extends Evented {
 
             position.x = mCoord.x - modelOrigin.x;
             position.y = -(mCoord.y - modelOrigin.y);
-            position.z = mCoord.z + objectScale / 2;
+            position.z = mCoord.z + .44 * objectScale;
             scale.x = scale.y = scale.z = objectScale;
             rotation.x = p.pitch * direction;
             rotation.z = -bearing * DEGREE_TO_RADIAN;
@@ -1310,7 +1311,7 @@ export default class extends Evented {
 
         position.x = mCoord.x - modelOrigin.x;
         position.y = -(mCoord.y - modelOrigin.y);
-        position.z = mCoord.z + objectScale / 2;
+        position.z = mCoord.z + .44 * objectScale;
         scale.x = scale.y = scale.z = objectScale;
         rotation.x = p.pitch;
         rotation.z = -bearing * DEGREE_TO_RADIAN;
