@@ -961,21 +961,63 @@ export default class extends Evented {
                 });
             }
 
+            const prevLayerZoom = me.layerZoom;
             me.layerZoom = helpers.clamp(Math.floor(zoom), 13, 18);
             me.objectUnit = Math.max(unit * .19, .02);
             me.objectScale = unit * modelScale * 100;
             // me.carScale = Math.max(.02 / .19 / unit, 1);
             // me.aircraftScale = Math.max(.06 / .285 / unit, 1);
 
-            Object.keys(me.activeTrainLookup).forEach(key => {
-                const train = me.activeTrainLookup[key];
+            if (prevLayerZoom !== me.layerZoom) {
+                // If the layer is switched, all object positions need to be recalculated
+                Object.keys(me.activeTrainLookup).forEach(key => {
+                    const train = me.activeTrainLookup[key];
 
-                me.updateTrainProps(train);
-                me.updateTrainShape(train);
-            });
-            Object.keys(me.activeFlightLookup).forEach(key => {
-                me.updateFlightShape(me.activeFlightLookup[key]);
-            });
+                    me.updateTrainProps(train);
+                    me.updateTrainShape(train);
+                });
+                Object.keys(me.activeFlightLookup).forEach(key => {
+                    me.updateFlightShape(me.activeFlightLookup[key]);
+                });
+            } else {
+                // If not, only a few properties need to be updated
+                Object.keys(me.activeTrainLookup).forEach(key => {
+                    const {cars} = me.activeTrainLookup[key];
+
+                    for (let i = 0, ilen = cars.length; i < ilen; i++) {
+                        const {position, scale, userData} = cars[i],
+                            {coord, altitude} = userData,
+                            mCoord = MercatorCoordinate.fromLngLat(coord, altitude);
+
+                        position.z = mCoord.z + .44 * me.objectScale;
+                        scale.x = scale.y = scale.z = me.objectScale;
+                        cars[i].updateMatrix();
+                    }
+                });
+                Object.keys(me.activeFlightLookup).forEach(key => {
+                    const {aircraft, body, wing, vTail} = me.activeFlightLookup[key];
+
+                    if (aircraft) {
+                        const {position, scale, userData} = aircraft,
+                            {coord, altitude} = userData,
+                            mCoord = MercatorCoordinate.fromLngLat(coord, altitude),
+                            {z: cameraZ} = map.getFreeCameraOptions().position,
+                            baseZoom = map.getZoom() + Math.log2(cameraZ / Math.abs(cameraZ - mCoord.z)),
+                            unit = Math.pow(2, 14 - helpers.clamp(baseZoom, 13, 19)),
+                            objectScale = unit * modelScale * 100,
+                            aircraftScale = Math.max(.06 / .285 / unit, 1);
+
+                        position.z = mCoord.z + .44 * objectScale;
+                        scale.x = scale.y = scale.z = objectScale;
+                        aircraft.updateMatrix();
+
+                        body.scale.y = wing.scale.x = vTail.scale.y = aircraftScale;
+                        body.updateMatrix();
+                        wing.updateMatrix();
+                        vTail.updateMatrix();
+                    }
+                });
+            }
         });
 
         map.on('render', () => {
