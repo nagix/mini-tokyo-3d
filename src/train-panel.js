@@ -1,3 +1,4 @@
+import {lerp} from './helpers';
 import Panel from './panel';
 
 export default class extends Panel {
@@ -100,7 +101,7 @@ export default class extends Panel {
                 {timetableIndex: index} = train,
                 curr = timetableOffsets[index],
                 next = train.arrivalStation ? timetableOffsets[index + 1] : curr,
-                y = curr + (next - curr) * train._t,
+                y = lerp(curr, next, train._t),
                 p = performance.now() % 1500 / 1500;
 
             container.querySelector('#train-mark').innerHTML =

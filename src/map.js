@@ -11,18 +11,17 @@ import Clock from './clock';
 import ClockControl from './clock-control';
 import configs from './configs';
 import extend from './extend';
-import TrainPanel from './train-panel';
 import * as helpers from './helpers';
 import * as helpersGeojson from './helpers-geojson';
 import * as helpersMapbox from './helpers-mapbox';
-import * as helpersThree from './helpers-three';
 import LayerPanel from './layer-panel';
 import * as loader from './loader';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
 import SearchPanel from './search-panel';
 import SharePanel from './share-panel';
 import StationPanel from './station-panel';
-import ThreeLayer from './three-layer';
+import TrafficLayer from './traffic-layer';
+import TrainPanel from './train-panel';
 
 const OPERATORS_FOR_DYNAMIC_TRAIN_DATA = [
     'JR-East',
@@ -355,8 +354,8 @@ export default class extends Evented {
     getSelection() {
         const me = this;
 
-        if (helpersThree.isObject3D(me.trackedObject)) {
-            const object = me.trackedObject.userData.object;
+        if (isTrainOrFlight(me.trackedObject)) {
+            const object = me.trackedObject.object;
 
             return object.t || object.id;
         }
@@ -510,49 +509,7 @@ export default class extends Evented {
         // me.carScale = Math.max(.02 / .19 / unit, 1);
         // me.aircraftScale = Math.max(.06 / .285 / unit, 1);
 
-        const trainLayers = me.trainLayers = {
-            ug: new ThreeLayer('trains-ug', true, true),
-            og: new ThreeLayer('trains-og'),
-            addObject(object, duration) {
-                const layer = object.userData.altitude < 0 ? this.ug : this.og;
-
-                setObjectOpacity(object, 0, 0);
-                layer.scene.add(object);
-                setObjectOpacity(object, getObjectOpacity(object, me.viewMode, me.searchMode), duration);
-            },
-            updateObject(object, duration) {
-                const layer = object.userData.altitude < 0 ? this.ug : this.og;
-
-                layer.scene.add(object);
-                setObjectOpacity(object, getObjectOpacity(object, me.viewMode, me.searchMode), duration);
-            },
-            removeObject(object, duration) {
-                if (!object) {
-                    return;
-                }
-
-                const layer = object.userData.altitude < 0 ? this.ug : this.og;
-
-                helpersThree.resetPolygonOffsetFactor(object);
-                object.renderOrder = 1;
-                setObjectOpacity(object, 0, duration);
-                setTimeout(() => {
-                    layer.scene.remove(object);
-                    helpersThree.dispose(object);
-                }, duration);
-            },
-            pickObject(point) {
-                if (me.viewMode === 'underground') {
-                    return this.ug.pickObject(point) || this.og.pickObject(point);
-                } else {
-                    return this.og.pickObject(point) || this.ug.pickObject(point);
-                }
-            },
-            onResize(event) {
-                this.ug.onResize(event);
-                this.og.onResize(event);
-            }
-        };
+        me.trafficLayer = new TrafficLayer({id: 'traffic'});
 
         ['poi', 'poi_extra'].forEach(id => {
             map.setLayoutProperty(id, 'text-field', `{name_${lang.match(/ja|ko|zh-Han[st]/) ? lang : 'en'}}`);
@@ -681,8 +638,6 @@ export default class extends Evented {
         // Workaround for deck.gl #3522
         map.__deck.props.getCursor = () => map.getCanvas().style.cursor;
 
-        map.addLayer(trainLayers.ug, 'building-3d');
-
         [13, 14, 15, 16, 17, 18].forEach(zoom => {
             const minzoom = zoom <= 13 ? 0 : zoom,
                 maxzoom = zoom >= 18 ? 24 : zoom + 1,
@@ -740,7 +695,7 @@ export default class extends Evented {
             }, 'building-3d');
         });
 
-        map.addLayer(trainLayers.og, 'building-3d');
+        map.addLayer(me.trafficLayer, 'building-3d');
 
         map.addLayer({
             id: 'sky',
@@ -926,10 +881,10 @@ export default class extends Evented {
 
         map.on('zoom', e => {
             if (!e.tracking) {
-                if (helpersThree.isObject3D(me.trackedObject)) {
-                    const {type, coord, altitude} = me.trackedObject.userData;
+                if (isTrainOrFlight(me.trackedObject)) {
+                    const {type, coord, altitude} = me.trackedObject;
 
-                    if (type === 'aircraft') {
+                    if (type === 'flight') {
                         me.updateBaseZoom(coord, altitude);
                     }
                 }
@@ -979,44 +934,6 @@ export default class extends Evented {
                 Object.keys(me.activeFlightLookup).forEach(key => {
                     me.updateFlightShape(me.activeFlightLookup[key]);
                 });
-            } else {
-                // If not, only a few properties need to be updated
-                Object.keys(me.activeTrainLookup).forEach(key => {
-                    const {cars} = me.activeTrainLookup[key];
-
-                    for (let i = 0, ilen = cars.length; i < ilen; i++) {
-                        const {position, scale, userData} = cars[i],
-                            {coord, altitude} = userData,
-                            mCoord = MercatorCoordinate.fromLngLat(coord, altitude);
-
-                        position.z = mCoord.z + .44 * me.objectScale;
-                        scale.x = scale.y = scale.z = me.objectScale;
-                        cars[i].updateMatrix();
-                    }
-                });
-                Object.keys(me.activeFlightLookup).forEach(key => {
-                    const {aircraft, body, wing, vTail} = me.activeFlightLookup[key];
-
-                    if (aircraft) {
-                        const {position, scale, userData} = aircraft,
-                            {coord, altitude} = userData,
-                            mCoord = MercatorCoordinate.fromLngLat(coord, altitude),
-                            {z: cameraZ} = map.getFreeCameraOptions().position,
-                            baseZoom = map.getZoom() + Math.log2(cameraZ / Math.abs(cameraZ - mCoord.z)),
-                            unit = Math.pow(2, 14 - helpers.clamp(baseZoom, 13, 19)),
-                            objectScale = unit * modelScale * 100,
-                            aircraftScale = Math.max(.06 / .285 / unit, 1);
-
-                        position.z = mCoord.z + .44 * objectScale;
-                        scale.x = scale.y = scale.z = objectScale;
-                        aircraft.updateMatrix();
-
-                        body.scale.y = wing.scale.x = vTail.scale.y = aircraftScale;
-                        body.updateMatrix();
-                        wing.updateMatrix();
-                        vTail.updateMatrix();
-                    }
-                });
             }
         });
 
@@ -1024,7 +941,7 @@ export default class extends Evented {
             if (me.markedObject) {
                 // Popup for a 3D object needs to be updated every time
                 // because the adjustment for altitude is required
-                if (helpersThree.isObject3D(me.markedObject)) {
+                if (isTrainOrFlight(me.markedObject)) {
                     me.updatePopup({setHTML: true});
                 } else {
                     me.updatePopup();
@@ -1033,7 +950,7 @@ export default class extends Evented {
         });
 
         map.on('resize', e => {
-            trainLayers.onResize(e);
+            me.trafficLayer.onResize(e);
         });
 
         for (const plugin of me.plugins.slice().reverse()) {
@@ -1074,7 +991,7 @@ export default class extends Evented {
                     me.lastTrainRefresh = now - configs.minDelay;
                 }
 
-                if (!helpersThree.isObject3D(me.trackedObject) && (me.ecoMode === 'normal' && map._loaded || Date.now() - me.lastRepaint >= 1000 / me.ecoFrameRate)) {
+                if (!isTrainOrFlight(me.trackedObject) && (me.ecoMode === 'normal' && map._loaded || Date.now() - me.lastRepaint >= 1000 / me.ecoFrameRate)) {
                     if (me.trackedObject) {
                         me.refreshStationOutline();
                     }
@@ -1149,7 +1066,7 @@ export default class extends Evented {
 
     updateTrainShape(train, t) {
         const me = this,
-            {map, trainLayers, objectUnit, objectScale} = me,
+            {map, trafficLayer, objectUnit} = me,
             {railwayFeature: feature, offset, interval, direction, cars, delay} = train,
             length = cars.length;
         let marked, tracked, viewMode;
@@ -1164,21 +1081,21 @@ export default class extends Evented {
         if (length === 0) {
             const railway = me.railwayLookup[train.r],
                 {v: vehicle} = train,
-                car = helpersThree.createGroup(helpersThree.createCube({
-                    dimension: {x: .88, y: 1.76, z: .88},
-                    color: vehicle ? me.trainVehicleLookup[vehicle].color : railway.color
-                }));
+                car = {
+                    type: 'train',
+                    object: train,
+                    color: vehicle ? me.trainVehicleLookup[vehicle].color : railway.color,
+                    delay: 0
+                };
 
-            car.userData.type = 'train';
-            car.userData.object = train;
             cars.push(car);
 
             // Reset marked/tracked object if it was marked/tracked before
             // Delay calling markObject() and trackObject() as they require the object position to be set
-            if (helpersThree.isObject3D(me.markedObject) && me.markedObject.userData.object === train) {
+            if (me.markedObject && me.markedObject.object === train) {
                 marked = cars[0];
             }
-            if (helpersThree.isObject3D(me.trackedObject) && me.trackedObject.userData.object === train) {
+            if (me.trackedObject && me.trackedObject.object === train) {
                 tracked = cars[0];
             }
             if (me.selection === train.t) {
@@ -1187,30 +1104,22 @@ export default class extends Evented {
             }
         }
 
-        if (delay) {
-            helpersThree.addDelayMarker(cars[0], me.isDarkBackground());
-        }
+        cars[0].delay = delay ? 1 : 0;
 
         const pArr = helpersGeojson.getCoordAndBearing(feature, offset + train._t * interval, 1, objectUnit);
         for (let i = 0, ilen = cars.length; i < ilen; i++) {
             const car = cars[i],
-                {position, scale, rotation, userData} = car,
-                p = pArr[i],
-                coord = userData.coord = p.coord,
-                altitude = p.altitude,
-                mCoord = MercatorCoordinate.fromLngLat(coord, altitude),
-                bearing = userData.bearing = p.bearing + (direction < 0 ? 180 : 0);
+                p = pArr[i];
 
-            if (userData.altitude < 0 && altitude >= 0) {
+            if (car.altitude < 0 && p.altitude >= 0) {
                 viewMode = 'ground';
-            } else if (userData.altitude >= 0 && altitude < 0) {
+            } else if (car.altitude >= 0 && p.altitude < 0) {
                 viewMode = 'underground';
             }
-            userData.altitude = altitude;
-
-            if (isNaN(coord[0]) || isNaN(coord[1])) {
-                console.log(train);
-            }
+            car.coord = p.coord;
+            car.altitude = p.altitude;
+            car.bearing = p.bearing + (direction < 0 ? 180 : 0);
+            car.pitch = p.pitch * direction;
 
             if (marked === car) {
                 me.markObject(car);
@@ -1218,55 +1127,50 @@ export default class extends Evented {
             if (tracked === car) {
                 me.trackObject(car);
             }
+            if (me.markedObject === car) {
+                car.outline = 1;
+            } else if (me.trackedObject === car) {
+                car.outline = helpers.blink();
+            } else {
+                car.outline = 0;
+            }
 
             if (me.trackedObject === car && !me.viewAnimationID && !map._zooming && !map._pitching) {
                 me._jumpTo({
-                    center: coord,
-                    altitude,
-                    bearing,
+                    center: car.coord,
+                    altitude: car.altitude,
+                    bearing: car.bearing,
                     bearingFactor: .02
                 });
             }
 
-            position.x = mCoord.x - modelOrigin.x;
-            position.y = -(mCoord.y - modelOrigin.y);
-            position.z = mCoord.z + .44 * objectScale;
-            scale.x = scale.y = scale.z = objectScale;
-            rotation.x = p.pitch * direction;
-            rotation.z = -bearing * DEGREE_TO_RADIAN;
-            car.updateMatrix();
-
             // Reduce the frame rate of invisible objects for performance optimization
             if (animation.isActive(train.animationID)) {
-                const point = [position.x, position.y],
-                    frameRate = helpers.pointInTrapezoid(point, me.visibleArea) ? me.ecoMode === 'normal' && map._loaded ? 60 : me.ecoFrameRate : 1;
+                const {x, y} = trafficLayer.getModelPosition(car.coord),
+                    frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) ? me.ecoMode === 'normal' && map._loaded ? 60 : me.ecoFrameRate : 1;
 
                 animation.setFrameRate(train.animationID, frameRate);
             }
 
-            if (!car.parent) {
-                trainLayers.addObject(car, configs.fadeDuration);
+            if (car.meshIndex === undefined) {
+                trafficLayer.addObject(car);
+            } else {
+                trafficLayer.updateObject(car);
             }
-            if (viewMode) {
-                if (me.trackedObject === car) {
-                    me._setViewMode(viewMode);
-                }
-                trainLayers.updateObject(car, configs.fadeDuration);
+            if (viewMode && me.trackedObject === car) {
+                me._setViewMode(viewMode);
             }
 
-            if (me.trackedObject === car) {
-                helpersThree.refreshOutline(car);
-                if (me.markedObject === car) {
-                    me.updatePopup();
-                }
+            if (me.trackedObject === car && me.markedObject === car) {
+                me.updatePopup();
             }
         }
     }
 
     updateFlightShape(flight, t) {
         const me = this,
-            {map, trainLayers} = me;
-        let {aircraft, body, wing, vTail} = flight,
+            {map, trafficLayer} = me;
+        let {aircraft} = flight,
             tracked;
 
         if (t !== undefined) {
@@ -1275,25 +1179,14 @@ export default class extends Evented {
         if (flight._t === undefined) {
             return;
         }
-        if (!body) {
+        if (!aircraft) {
             const {color, tailcolor} = me.operatorLookup[flight.a];
 
-            body = flight.body = helpersThree.createCube({
-                dimension: {x: .88, y: 2.64, z: .88},
-                color: color || '#FFFFFF'
-            });
-            wing = flight.wing = helpersThree.createCube({
-                dimension: {x: 2.64, y: .88, z: .1},
-                color: color || '#FFFFFF'
-            });
-            vTail = flight.vTail = helpersThree.createCube({
-                dimension: {x: .1, y: .88, z: .88},
-                translate: {x: 0, y: -.88, z: .88},
-                color: tailcolor || '#FFFFFF'
-            });
-            aircraft = flight.aircraft = helpersThree.createGroup(body, wing, vTail);
-            aircraft.userData.type = 'aircraft';
-            aircraft.userData.object = flight;
+            aircraft = flight.aircraft = {
+                type: 'flight',
+                object: flight,
+                color: [color || '#FFFFFF', tailcolor || '#FFFFFF']
+            };
 
             // Set tracked object if the selection is specified
             // Delay calling trackObject() as they require the object position to be set
@@ -1301,26 +1194,31 @@ export default class extends Evented {
                 tracked = aircraft;
                 delete me.selection;
             }
-
-            trainLayers.addObject(aircraft, configs.fadeDuration);
         }
 
-        const {position, scale, rotation} = aircraft,
-            p = helpersGeojson.getCoordAndBearing(flight.feature, flight._t * flight.feature.properties.length, 1, 0)[0],
-            coord = aircraft.userData.coord = p.coord,
-            altitude = aircraft.userData.altitude = p.altitude,
-            mCoord = MercatorCoordinate.fromLngLat(coord, altitude),
-            bearing = aircraft.userData.bearing = p.bearing;
+        const p = helpersGeojson.getCoordAndBearing(flight.feature, flight._t * flight.feature.properties.length, 1, 0)[0];
+
+        aircraft.coord = p.coord;
+        aircraft.altitude = p.altitude;
+        aircraft.bearing = p.bearing;
+        aircraft.pitch = p.pitch;
 
         if (tracked === aircraft) {
             me.trackObject(aircraft);
         }
+        if (me.markedObject === aircraft) {
+            aircraft.outline = 1;
+        } else if (me.trackedObject === aircraft) {
+            aircraft.outline = helpers.blink();
+        } else {
+            aircraft.outline = 0;
+        }
 
         if (me.trackedObject === aircraft && !me.viewAnimationID && !map._zooming && !map._pitching) {
             me._jumpTo({
-                center: coord,
-                altitude,
-                bearing,
+                center: aircraft.coord,
+                altitude: aircraft.altitude,
+                bearing: aircraft.bearing,
                 bearingFactor: .02
             });
 
@@ -1333,7 +1231,8 @@ export default class extends Evented {
 
             if (!isNaN(me.baseZoom)) {
                 const {baseDistance, baseZoom} = me,
-                    zoom = baseZoom - Math.log2((mCoord.z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN) + baseDistance) / baseDistance),
+                    {z} = trafficLayer.getModelPosition(aircraft.coord, aircraft.altitude),
+                    zoom = baseZoom - Math.log2((z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN) + baseDistance) / baseDistance),
                     scrollZooming = map.scrollZoom._active;
 
                 map.setZoom(zoom, {tracking: true});
@@ -1345,38 +1244,22 @@ export default class extends Evented {
             }
         }
 
-        const {z: cameraZ} = map.getFreeCameraOptions().position,
-            baseZoom = map.getZoom() + Math.log2(cameraZ / Math.abs(cameraZ - mCoord.z)),
-            unit = Math.pow(2, 14 - helpers.clamp(baseZoom, 13, 19)),
-            objectScale = unit * modelScale * 100,
-            aircraftScale = Math.max(.06 / .285 / unit, 1);
-
-        position.x = mCoord.x - modelOrigin.x;
-        position.y = -(mCoord.y - modelOrigin.y);
-        position.z = mCoord.z + .44 * objectScale;
-        scale.x = scale.y = scale.z = objectScale;
-        rotation.x = p.pitch;
-        rotation.z = -bearing * DEGREE_TO_RADIAN;
-        aircraft.updateMatrix();
-
-        body.scale.y = wing.scale.x = vTail.scale.y = aircraftScale;
-        body.updateMatrix();
-        wing.updateMatrix();
-        vTail.updateMatrix();
-
         // Reduce the frame rate of invisible objects for performance optimization
         if (animation.isActive(flight.animationID)) {
-            const point = [position.x, position.y],
-                frameRate = helpers.pointInTrapezoid(point, me.visibleArea) ? me.ecoMode === 'normal' && map._loaded ? 60 : me.ecoFrameRate : 1;
+            const {x, y} = trafficLayer.getModelPosition(aircraft.coord),
+                frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) ? me.ecoMode === 'normal' && map._loaded ? 60 : me.ecoFrameRate : 1;
 
             animation.setFrameRate(flight.animationID, frameRate);
         }
 
-        if (me.trackedObject === aircraft) {
-            helpersThree.refreshOutline(aircraft);
-            if (me.markedObject === aircraft) {
-                me.updatePopup();
-            }
+        if (aircraft.meshIndex === undefined) {
+            trafficLayer.addObject(aircraft);
+        } else {
+            trafficLayer.updateObject(aircraft);
+        }
+
+        if (me.trackedObject === aircraft && me.markedObject === aircraft) {
+            me.updatePopup();
         }
     }
 
@@ -1394,6 +1277,8 @@ export default class extends Evented {
                 me.trainStart(train);
             }
         });
+
+        me.trafficLayer.refreshDelayMarkers();
 
         me.trainLoaded = true;
         if (me.initialSelection) {
@@ -1444,7 +1329,7 @@ export default class extends Evented {
             me.setTrainStandingStatus(train, true);
             train.animationID = animation.start({
                 callback: () => {
-                    if (me.trackedObject && me.trackedObject.userData && me.trackedObject.userData.object === train) {
+                    if (me.trackedObject && me.trackedObject.object === train) {
                         me.updateTrainShape(train);
                     }
                 },
@@ -1486,7 +1371,8 @@ export default class extends Evented {
         train.animationID = startTrainAnimation(t => {
             // Guard for an unexpected error
             // Probably a bug due to duplicate train IDs in timetable lookup
-            if (!train.cars) {
+            if (!train.cars || isNaN(t)) {
+                console.log('Invalid train', train);
                 me.stopTrain(train);
                 return;
             }
@@ -1567,7 +1453,7 @@ export default class extends Evented {
                     me.setFlightStandingStatus(flight, true);
                     flight.animationID = animation.start({
                         callback: () => {
-                            if (me.trackedObject && me.trackedObject.userData && me.trackedObject.userData.object === flight) {
+                            if (me.trackedObject && me.trackedObject.object === flight) {
                                 me.updateFlightShape(flight);
                             }
                         },
@@ -1598,7 +1484,7 @@ export default class extends Evented {
             me.setFlightStandingStatus(flight, true);
             flight.animationID = animation.start({
                 callback: () => {
-                    if (me.trackedObject && me.trackedObject.userData && me.trackedObject.userData.object === flight) {
+                    if (me.trackedObject && me.trackedObject.object === flight) {
                         me.updateFlightShape(flight);
                     }
                 },
@@ -1620,7 +1506,7 @@ export default class extends Evented {
             callback: (elapsed, duration) => {
                 const t1 = easeOutQuart(elapsed / duration),
                     factor = 1 - (1 - t1) / (1 - t2),
-                    {coord: center, altitude, bearing} = me.trackedObject.userData;
+                    {coord: center, altitude, bearing} = me.trackedObject;
 
                 me._jumpTo({
                     center,
@@ -1663,7 +1549,7 @@ export default class extends Evented {
             return LngLat.convert(coord);
         }
 
-        const {map, trainLayers} = this;
+        const {map, trafficLayer} = this;
 
         if (!isNaN(bearing)) {
             const mCoord = MercatorCoordinate.fromLngLat(coord, altitude),
@@ -1673,7 +1559,7 @@ export default class extends Evented {
 
             return new MercatorCoordinate(x, y, 0).toLngLat();
         } else {
-            return map.unproject(trainLayers.ug.project(coord, altitude));
+            return map.unproject(trafficLayer.project(coord, altitude));
         }
     }
 
@@ -1861,7 +1747,7 @@ export default class extends Evented {
         animation.stop(animationID);
         if (cars) {
             cars.forEach(car => {
-                me.trainLayers.removeObject(car, configs.fadeDuration);
+                me.trafficLayer.removeObject(car);
                 if (car === me.markedObject && !keep) {
                     me.markObject();
                 }
@@ -1885,7 +1771,7 @@ export default class extends Evented {
             {id, animationID, aircraft} = flight;
 
         animation.stop(animationID);
-        me.trainLayers.removeObject(aircraft, configs.fadeDuration);
+        me.trafficLayer.removeObject(aircraft);
         if (aircraft === me.markedObject) {
             me.markObject();
         }
@@ -1893,9 +1779,6 @@ export default class extends Evented {
             me.trackObject();
         }
         delete flight.aircraft;
-        delete flight.body;
-        delete flight.wing;
-        delete flight.vTail;
         delete me.activeFlightLookup[id];
     }
 
@@ -2024,7 +1907,6 @@ export default class extends Evented {
             });
 
             me.refreshTrains();
-            me.refreshDelayMarkers();
             me.aboutPanel.updateContent();
         }).catch(error => {
             me.refreshTrains();
@@ -2331,7 +2213,7 @@ export default class extends Evented {
 
     refreshMap() {
         const me = this,
-            {map, viewMode, searchMode, styleColors, styleOpacities} = me,
+            {map, trafficLayer, viewMode, searchMode, styleColors, styleOpacities} = me,
             isUndergroundMode = viewMode === 'underground',
             lightColor = me.getLightColor();
 
@@ -2351,23 +2233,7 @@ export default class extends Evented {
             }
         }
 
-        for (const key of Object.keys(me.activeTrainLookup)) {
-            for (const car of me.activeTrainLookup[key].cars) {
-                setObjectOpacity(car, getObjectOpacity(car, viewMode, searchMode));
-            }
-        }
-
-        animation.start({
-            callback: me.refreshDelayMarkers.bind(me),
-            duration: configs.transitionDuration
-        });
-
-        for (const key of Object.keys(me.activeFlightLookup)) {
-            const aircraft = me.activeFlightLookup[key].aircraft;
-            if (aircraft) {
-                setObjectOpacity(aircraft, getObjectOpacity(aircraft, viewMode, searchMode));
-            }
-        }
+        trafficLayer.setMode(viewMode, searchMode);
     }
 
     _setSearchMode(mode) {
@@ -2394,16 +2260,13 @@ export default class extends Evented {
     }
 
     _setViewMode(mode) {
-        const me = this,
-            {trainLayers} = me;
+        const me = this;
 
         if (me.viewMode === mode) {
             return;
         }
 
         me.updateUndergroundButton(mode);
-        trainLayers.ug.setSemitransparent(mode === 'ground');
-        trainLayers.og.setSemitransparent(mode === 'underground');
         me.viewMode = mode;
         me.refreshMap();
         me.fire({type: 'viewmode', mode});
@@ -2418,7 +2281,7 @@ export default class extends Evented {
 
         me.updateTrackingButton(mode);
         me.trackingMode = mode;
-        if (helpersThree.isObject3D(me.trackedObject)) {
+        if (isTrainOrFlight(me.trackedObject)) {
             me.startViewAnimation();
         }
         me.fire({type: 'trackingmode', mode});
@@ -2569,41 +2432,29 @@ export default class extends Evented {
         map.setPaintProperty('sky', 'sky-atmosphere-sun', [sunAzimuth, sunAltitude]);
     }
 
-    refreshDelayMarkers() {
-        const me = this,
-            dark = me.isDarkBackground();
-
-        Object.keys(me.activeTrainLookup).forEach(key => {
-            const car = me.activeTrainLookup[key].cars[0];
-
-            if (car) {
-                helpersThree.refreshDelayMarker(car, dark);
-            }
-        });
-    }
-
     pickObject(point) {
-        const {map, viewMode, trainLayers, layerZoom, pickedFeature} = this,
+        const {map, viewMode, trafficLayer, layerZoom, pickedFeature} = this,
             deck = map.__deck,
-            layers = viewMode === 'underground' ? ['ug', 'og'] : ['og', 'ug'];
+            modes = ['ground', 'underground'];
         let object;
 
-        for (const layer of layers) {
-            object = trainLayers[layer].pickObject(point);
+        if (viewMode === 'underground') {
+            modes.reverse();
+        }
+        for (const mode of modes) {
+            object = trafficLayer.pickObject(mode, point);
             if (object) {
                 return object;
             }
-            if (layer === 'ug') {
-                if (deck.deckPicker) {
-                    const {x, y} = point,
-                        info = deck.pickObject({x, y, layerIds: [`stations-ug-${layerZoom}`]});
-
-                    if (info) {
-                        object = info.object;
-                    }
-                }
-            } else {
+            if (mode === 'ground') {
                 object = pickedFeature;
+            } else if (deck.deckPicker) {
+                const {x, y} = point,
+                    info = deck.pickObject({x, y, layerIds: [`stations-ug-${layerZoom}`]});
+
+                if (info) {
+                    object = info.object;
+                }
             }
             if (object) {
                 return object;
@@ -2616,8 +2467,9 @@ export default class extends Evented {
             {markedObject, map, popup} = me;
 
         if (markedObject && !isEqualObject(markedObject, object)) {
-            if (helpersThree.isObject3D(markedObject)) {
-                helpersThree.removeOutline(markedObject, 'outline-marked');
+            if (isTrainOrFlight(markedObject)) {
+                markedObject.outline = 0;
+                me.trafficLayer.updateObject(markedObject);
             } else {
                 me.removeStationOutline('stations-marked');
             }
@@ -2648,8 +2500,9 @@ export default class extends Evented {
             });
             me.updatePopup({setHTML: true, addToMap: true});
 
-            if (helpersThree.isObject3D(object)) {
-                helpersThree.addOutline(object, 'outline-marked');
+            if (isTrainOrFlight(object)) {
+                object.outline = 1;
+                me.trafficLayer.updateObject(object);
             } else {
                 me.addStationOutline(object, 'stations-marked');
             }
@@ -2661,7 +2514,7 @@ export default class extends Evented {
             {searchMode, searchPanel, lang, map, trackedObject, sharePanel, detailPanel} = me;
 
         if (searchMode !== 'none') {
-            if (searchMode === 'edit' && searchPanel && object && helpersGeojson.isFeature(object)) {
+            if (searchMode === 'edit' && searchPanel && isStation(object)) {
                 const ids = helpersGeojson.getIds(object),
                     station = me.stationLookup[ids[0]],
                     utitle = station.utitle && station.utitle[lang],
@@ -2672,13 +2525,14 @@ export default class extends Evented {
             return;
         }
 
-        if (trackedObject && (helpersThree.isObject3D(trackedObject) || helpersGeojson.isFeature(trackedObject) || !isEqualObject(trackedObject, object))) {
-            if (helpersThree.isObject3D(trackedObject)) {
-                const prevObject = trackedObject.userData.object;
+        if (isTrainOrFlight(trackedObject) || isStation(trackedObject) || (trackedObject && !isEqualObject(trackedObject, object))) {
+            if (isTrainOrFlight(trackedObject)) {
+                const prevObject = trackedObject.object;
 
-                helpersThree.removeOutline(trackedObject, 'outline-tracked');
+                trackedObject.outline = 0;
+                me.trafficLayer.updateObject(trackedObject);
                 me.fire({type: 'deselection', deselection: prevObject.t || prevObject.id});
-            } else if (helpersGeojson.isFeature(trackedObject)) {
+            } else if (isStation(trackedObject)) {
                 me.removeStationOutline('stations-selected');
                 me.fire({type: 'deselection'});
             } else {
@@ -2707,13 +2561,13 @@ export default class extends Evented {
             });
         }
 
-        if (object && (helpersThree.isObject3D(object) || helpersGeojson.isFeature(object) || !isEqualObject(object, me.trackedObject))) {
+        if (isTrainOrFlight(object) || isStation(object) || (object && !isEqualObject(object, me.trackedObject))) {
             me.trackedObject = object;
 
-            if (helpersThree.isObject3D(object)) {
-                const {type, coord, altitude, object: train} = object.userData;
+            if (isTrainOrFlight(object)) {
+                const {type, coord, altitude, object: _object} = object;
 
-                if (type === 'aircraft') {
+                if (type === 'flight') {
                     me.updateBaseZoom(coord, altitude);
                 }
 
@@ -2722,17 +2576,18 @@ export default class extends Evented {
                 me._setViewMode(altitude < 0 ? 'underground' : 'ground');
 
                 if (me.clockMode === 'realtime' && navigator.share) {
-                    me.sharePanel = new SharePanel({object: train});
+                    me.sharePanel = new SharePanel({object: _object});
                     me.sharePanel.addTo(me);
                 }
-                if (train.tt) {
-                    me.detailPanel = new TrainPanel({object: train});
+                if (_object.tt) {
+                    me.detailPanel = new TrainPanel({object: _object});
                     me.detailPanel.addTo(me);
                 }
 
-                helpersThree.addOutline(object, 'outline-tracked');
-                me.fire({type: 'selection', selection: train.t || train.id});
-            } else if (helpersGeojson.isFeature(object)) {
+                object.outline = 1;
+                me.trafficLayer.updateObject(object);
+                me.fire({type: 'selection', selection: _object.t || _object.id});
+            } else if (isStation(object)) {
                 const altitude = helpersGeojson.getAltitude(object),
                     ids = helpersGeojson.getIds(object),
                     stations = ids.map(id => me.stationLookup[id]),
@@ -2810,8 +2665,8 @@ export default class extends Evented {
             {markedObject, trackedObject, map, popup} = me,
             {setHTML, addToMap} = options || {};
 
-        if (helpersThree.isObject3D(markedObject)) {
-            const {coord, altitude, object} = markedObject.userData,
+        if (isTrainOrFlight(markedObject)) {
+            const {coord, altitude, object} = markedObject,
                 bearing = markedObject === trackedObject ? map.getBearing() : undefined;
 
             popup.setLngLat(me.adjustCoord(coord, altitude, bearing));
@@ -3166,6 +3021,14 @@ function getConnectingTrainIds(train) {
     return nextTrains ? ids.concat(...nextTrains.map(getConnectingTrainIds)) : ids;
 }
 
+function isTrainOrFlight(object) {
+    return object && helpers.includes(['train', 'flight'], object.type);
+}
+
+function isStation(object) {
+    return helpersGeojson.isFeature(object);
+}
+
 function isEqualObject(a, b) {
     if (a === b) {
         return true;
@@ -3176,34 +3039,6 @@ function isEqualObject(a, b) {
     return false;
 }
 
-function setObjectOpacity(object, opacity, duration) {
-    const {userData} = object;
-
-    if (duration === 0) {
-        helpersThree.setOpacity(object, opacity);
-    } else {
-        const current = helpers.valueOrDefault(userData.opacity, 1);
-
-        animation.start({
-            callback: (elapsed, duration) => {
-                helpersThree.setOpacity(object, current + (opacity - current) * elapsed / duration);
-            },
-            duration: helpers.valueOrDefault(duration, configs.transitionDuration)
-        });
-    }
-    userData.opacity = opacity;
-}
-
-function getObjectOpacity(object, viewMode, searchMode) {
-    const isNotSearchResultMode = searchMode === 'none' || searchMode === 'edit';
-
-    if ((viewMode === 'underground') === (object.userData.altitude < 0)) {
-        return isNotSearchResultMode ? .9 : .1;
-    } else {
-        return isNotSearchResultMode ? .225 : .1;
-    }
-}
-
 function setLayerOpacity(map, id, opacity) {
     const layer = map.getLayer(id).implementation,
         current = helpers.valueOrDefault(layer.props.opacity, 1);
@@ -3211,7 +3046,7 @@ function setLayerOpacity(map, id, opacity) {
     animation.start({
         callback: (elapsed, duration) => {
             layer.setProps({
-                opacity: current + (opacity - current) * elapsed / duration
+                opacity: helpers.lerp(current, opacity, elapsed / duration)
             });
         },
         duration: configs.transitionDuration

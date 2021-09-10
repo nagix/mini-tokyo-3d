@@ -30,6 +30,10 @@ export function buildLookup(array, key) {
     return lookup;
 }
 
+export function lerp(x, y, a) {
+    return x * (1 - a) + y * a;
+}
+
 export function clamp(value, lower, upper) {
     return Math.min(Math.max(value, lower), upper);
 }
@@ -103,6 +107,12 @@ export function cleanKeys(obj) {
         }
     }
     return obj;
+}
+
+export function blink() {
+    const p = performance.now() % 1500 / 1500 * 2;
+
+    return p < 1 ? p : 2 - p;
 }
 
 /**
@@ -180,7 +190,7 @@ export function pointInTrapezoid(point, trapezoid) {
 /**
  * Returns the relative luminance of the color.
  * @param {object} color - Color object that has {r, g, b}
- * @returns {number} Relative luminance between 0 and 255
+ * @returns {number} Relative luminance
  */
 export function luminance(color) {
     return .2126 * color.r + .7152 * color.g + .0722 * color.b;

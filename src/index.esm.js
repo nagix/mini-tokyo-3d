@@ -6,7 +6,7 @@ import Popup from './popup';
 import ThreeLayer from './three-layer';
 import mapboxgl from 'mapbox-gl';
 import * as three from 'three';
-import {GLTFLoader} from '../node_modules/three/examples/jsm/loaders/GLTFLoader';
+import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
 import './css/loaders.scss';
 import './css/swiper.scss';
 import './css/mini-tokyo-3d.css';

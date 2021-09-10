@@ -60,7 +60,8 @@ export default [{
 		commonjs(),
 		replace({
 			'process.env.NODE_ENV': '\'development\'',
-			'log.error': '(() => () => {})'
+			'log.error': '(() => () => {})',
+			'1.01*': '2*'
 		}),
 		image()
 	]
@@ -89,7 +90,8 @@ export default [{
 		commonjs(),
 		replace({
 			'process.env.NODE_ENV': '\'production\'',
-			'log.error': '(() => () => {})'
+			'log.error': '(() => () => {})',
+			'1.01*': '2*'
 		}),
 		image(),
 		terser({
@@ -122,7 +124,8 @@ export default [{
 		commonjs(),
 		replace({
 			'process.env.NODE_ENV': '\'production\'',
-			'log.error': '(() => () => {})'
+			'log.error': '(() => () => {})',
+			'1.01*': '2*'
 		}),
 		image()
 	]
