@@ -2823,10 +2823,16 @@ export default class extends Evented {
             currentSection = stations.indexOf(departureStation);
             nextSection = stations.indexOf(arrivalStation, currentSection);
             finalSection = stations.indexOf(destination, currentSection);
+            if (finalSection === -1) {
+                finalSection = stations.length - 1;
+            }
         } else {
             currentSection = stations.lastIndexOf(departureStation);
             nextSection = stations.lastIndexOf(arrivalStation, currentSection);
             finalSection = stations.lastIndexOf(destination, currentSection);
+            if (finalSection === -1) {
+                finalSection = 0;
+            }
         }
 
         if (table) {
@@ -2852,7 +2858,7 @@ export default class extends Evented {
             if (actualSection >= 0 && actualSection !== finalSection && ((!final && nextSection >= 0) || (final && finalSection >= 0))) {
                 train.sectionIndex = actualSection;
                 train.sectionLength = (final ? finalSection : nextSection) - actualSection;
-                train.arrivalStation = arrivalStation === departureStation ? stations[currentSection + direction] : arrivalStation;
+                train.arrivalStation = arrivalStation === departureStation ? stations[actualSection + direction] : arrivalStation;
 
                 return true;
             }
