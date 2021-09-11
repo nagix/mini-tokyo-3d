@@ -253,10 +253,10 @@ The source of the public transportation data in this application is the Open Dat
 
 This application has been tested with the following browsers. Chrome is recommended. Internet Explorer is not supported.
 
-- Chrome 92 (Mac OS, Windows, iOS, Android)
-- FireFox 91 (Mac OS, Windows, iOS)
+- Chrome 93 (Mac OS, Windows, iOS, Android)
+- FireFox 92 (Mac OS, Windows, iOS)
 - Safari 14 (Mac OS, iOS)
-- Edge 92 (Mac OS, Windows, iOS)
+- Edge 93 (Mac OS, Windows, iOS)
 
 ## Development Information
 
