@@ -474,9 +474,10 @@ export default class extends Evented {
 
             if (id && !id.match(/\.(ug|og)\./)) {
                 me.featureLookup[id] = feature;
-                if (type !== 1) {
-                    helpersGeojson.updateDistances(feature);
-                }
+                helpersGeojson.updateDistances(feature);
+            }
+            if (type === 1) {
+                me.featureLookup[id] = feature;
             }
         });
 

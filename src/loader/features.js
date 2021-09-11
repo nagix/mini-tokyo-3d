@@ -384,7 +384,7 @@ export function featureWorker() {
 
             setAltitude(feature, ug.altitude * unit * 1000);
             feature.properties = {
-                id: `${ug.id}.${zoom}`,
+                id: `${ug.id}.ug.${zoom}`,
                 type: 1,
                 outlineColor: '#000000',
                 width: 4,
@@ -405,7 +405,7 @@ export function featureWorker() {
             const feature = union(...og.features);
 
             feature.properties = {
-                id: `${og.id}.${zoom}`,
+                id: `${og.id}.og.${zoom}`,
                 type: 1,
                 outlineColor: '#000000',
                 width: 4,
