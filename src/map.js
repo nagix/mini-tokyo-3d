@@ -36,9 +36,6 @@ const AIRLINES_FOR_ANA_CODE_SHARE = ['ADO', 'SFJ', 'SNJ'];
 
 const DEGREE_TO_RADIAN = Math.PI / 180;
 
-const modelOrigin = MercatorCoordinate.fromLngLat(configs.defaultCenter),
-    modelScale = modelOrigin.meterInMercatorCoordinateUnits();
-
 // Replace MapboxLayer.render to support underground rendering
 const render = MapboxLayer.prototype.render;
 MapboxLayer.prototype.render = function(...args) {
@@ -506,7 +503,6 @@ export default class extends Evented {
 
         me.layerZoom = helpers.clamp(Math.floor(map.getZoom()), 13, 18);
         me.objectUnit = Math.max(unit * .19, .02);
-        me.objectScale = unit * modelScale * 100;
         // me.carScale = Math.max(.02 / .19 / unit, 1);
         // me.aircraftScale = Math.max(.06 / .285 / unit, 1);
 
@@ -920,7 +916,6 @@ export default class extends Evented {
             const prevLayerZoom = me.layerZoom;
             me.layerZoom = helpers.clamp(Math.floor(zoom), 13, 18);
             me.objectUnit = Math.max(unit * .19, .02);
-            me.objectScale = unit * modelScale * 100;
             // me.carScale = Math.max(.02 / .19 / unit, 1);
             // me.aircraftScale = Math.max(.06 / .285 / unit, 1);
 
@@ -1040,18 +1035,18 @@ export default class extends Evented {
 
     updateVisibleArea() {
         const me = this,
-            {map} = me,
+            {map, trafficLayer} = me,
             {width, height} = map.transform,
-            topLeft = MercatorCoordinate.fromLngLat(map.unproject([0, 0])),
-            topRight = MercatorCoordinate.fromLngLat(map.unproject([width, 0])),
-            bottomLeft = MercatorCoordinate.fromLngLat(map.unproject([0, height])),
-            bottomRight = MercatorCoordinate.fromLngLat(map.unproject([width, height]));
+            topLeft = trafficLayer.getModelPosition(map.unproject([0, 0])),
+            topRight = trafficLayer.getModelPosition(map.unproject([width, 0])),
+            bottomLeft = trafficLayer.getModelPosition(map.unproject([0, height])),
+            bottomRight = trafficLayer.getModelPosition(map.unproject([width, height]));
 
         me.visibleArea = helpers.bufferTrapezoid([
-            [topLeft.x - modelOrigin.x, -(topLeft.y - modelOrigin.y)],
-            [topRight.x - modelOrigin.x, -(topRight.y - modelOrigin.y)],
-            [bottomRight.x - modelOrigin.x, -(bottomRight.y - modelOrigin.y)],
-            [bottomLeft.x - modelOrigin.x, -(bottomLeft.y - modelOrigin.y)]
+            [topLeft.x, topLeft.y],
+            [topRight.x, topRight.y],
+            [bottomRight.x, bottomRight.y],
+            [bottomLeft.x, bottomLeft.y]
         ], Math.max(1.4e-5, 5e-5 * Math.sin(map.getPitch() * DEGREE_TO_RADIAN)));
     }
 
@@ -1232,7 +1227,7 @@ export default class extends Evented {
 
             if (!isNaN(me.baseZoom)) {
                 const {baseDistance, baseZoom} = me,
-                    {z} = trafficLayer.getModelPosition(aircraft.coord, aircraft.altitude),
+                    z = trafficLayer.getModelPosition(aircraft.coord, aircraft.altitude).z,
                     zoom = baseZoom - Math.log2((z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN) + baseDistance) / baseDistance),
                     scrollZooming = map.scrollZoom._active;
 
@@ -2646,11 +2641,11 @@ export default class extends Evented {
 
     updateBaseZoom(coord, altitude) {
         const me = this,
-            {map} = me;
+            {map, trafficLayer} = me;
 
         if (coord !== undefined && altitude !== undefined) {
-            const {z: objectZ} = MercatorCoordinate.fromLngLat(coord, altitude),
-                {z: cameraZ} = map.getFreeCameraOptions().position,
+            const objectZ = trafficLayer.getModelPosition(coord, altitude).z,
+                cameraZ = map.getFreeCameraOptions().position.z,
                 z = cameraZ - objectZ;
 
             me.baseDistance = z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN);

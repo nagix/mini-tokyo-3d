@@ -105,9 +105,9 @@ export default class extends ThreeLayer {
 
     getAircraftScale(object) {
         const me = this,
-            {z} = me.getModelPosition(object.coord, object.altitude),
-            {z: cameraZ} = me.map.getFreeCameraOptions().position,
-            zoom = me.map.getZoom() + Math.log2(cameraZ / Math.abs(cameraZ - z)),
+            objectZ = me.getModelPosition(object.coord, object.altitude).z,
+            cameraZ = me.map.getFreeCameraOptions().position.z,
+            zoom = me.map.getZoom() + Math.log2(cameraZ / Math.abs(cameraZ - objectZ)),
             unit = Math.pow(2, 14 - clamp(zoom, 13, 19));
 
         return unit * me.modelScale * 100;
