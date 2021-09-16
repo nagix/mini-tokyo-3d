@@ -1,4 +1,4 @@
-import {buildLookup, removePrefix} from '../helpers';
+import {buildLookup, removePrefix, valueOrDefault} from '../helpers';
 import {loadJSON, saveJSON} from './helpers';
 
 const OPERATORS_FOR_RAILWAYS = {
@@ -74,7 +74,9 @@ export default async function(options) {
 
         Object.assign(railway.title, title);
         if (stations) {
-            railway.stations.splice(stations.index, stations.delete, ...stations.insert || []);
+            for (const item of stations) {
+                railway.stations.splice(item.index, item.delete || 0, ...item.insert || []);
+            }
         }
         if (ascending !== undefined) {
             railway.ascending = ascending;

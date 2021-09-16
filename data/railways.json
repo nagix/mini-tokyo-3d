@@ -59,10 +59,10 @@
 		"zh-Hans": "宇都宫线",
 		"zh-Hant": "宇都宮線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 24,
 		"delete": 10
-	},
+	}],
 	"color": "#F68B1E",
 	"carComposition": 15
 }, {
@@ -102,15 +102,34 @@
 	"color": "#A8A39D",
 	"carComposition": 10
 }, {
+	"id": "JR-East.Joban",
+	"title": {
+		"ko": "조반 선",
+		"zh-Hans": "常磐线",
+		"zh-Hant": "常磐線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"JR-East.Joban.Ueno",
+			"JR-East.Joban.Nippori",
+			"JR-East.Joban.Kashiwa"
+		]
+	}, {
+		"index": 20,
+		"delete": 52
+	}],
+	"color": "#007AC1",
+	"carComposition": 15
+}, {
 	"id": "JR-East.SobuRapid",
 	"title": {
 		"ko": "소부 쾌속선",
 		"zh-Hans": "总武快速线",
 		"zh-Hant": "總武快速線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 10,
-		"delete": 0,
 		"insert": [
 			"JR-East.SobuRapid.Tsuga",
 			"JR-East.SobuRapid.Yotsukaido",
@@ -121,7 +140,7 @@
 			"JR-East.SobuRapid.NaritaAirportTerminal2and3",
 			"JR-East.SobuRapid.NaritaAirportTerminal1"
 		]
-	},
+	}],
 	"color": "#007AC1",
 	"carComposition": 15
 }, {
@@ -131,10 +150,10 @@
 		"zh-Hans": "总武本线",
 		"zh-Hant": "總武本線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 9,
 		"delete": 13
-	},
+	}],
 	"color": "#A8A39D",
 	"carComposition": 15
 }, {
@@ -144,10 +163,10 @@
 		"zh-Hans": "成田线",
 		"zh-Hant": "成田線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 5,
 		"delete": 12
-	},
+	}],
 	"color": "#00B261",
 	"carComposition": 15
 }, {
@@ -175,10 +194,10 @@
 		"zh-Hans": "内房线",
 		"zh-Hant": "內房線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 12,
 		"delete": 20
-	},
+	}],
 	"color": "#DCAF27",
 	"carComposition": 15
 }, {
@@ -188,10 +207,10 @@
 		"zh-Hans": "外房线",
 		"zh-Hant": "外房線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 13,
 		"delete": 14
-	},
+	}],
 	"color": "#008848",
 	"carComposition": 15
 }, {
@@ -210,10 +229,10 @@
 		"zh-Hans": "京叶线",
 		"zh-Hant": "京葉線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 9,
 		"delete": 1
-	},
+	}],
 	"color": "#C9252F",
 	"carComposition": 10
 }, {
@@ -225,16 +244,15 @@
 		"zh-Hans": "武藏野线",
 		"zh-Hant": "武藏野線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"JR-East.KeiyoKoyaBranch.NishiFunabashi",
 			"JR-East.KeiyoKoyaBranch.MinamiFunabashi",
 			"JR-East.KeiyoKoyaBranch.ShinNarashino",
 			"JR-East.KeiyoKoyaBranch.Kaihimmakuhari"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#F15A22",
 	"carComposition": 8
@@ -247,9 +265,8 @@
 		"zh-Hans": "武藏野线",
 		"zh-Hant": "武藏野線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"JR-East.KeiyoFutamataBranch.Tokyo",
 			"JR-East.KeiyoFutamataBranch.Hatchobori",
@@ -262,7 +279,7 @@
 			"JR-East.KeiyoFutamataBranch.Ichikawashiohama",
 			"JR-East.KeiyoFutamataBranch.NishiFunabashi"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#F15A22",
 	"carComposition": 8
@@ -293,15 +310,14 @@
 		"zh-Hans": "横须贺线",
 		"zh-Hant": "橫須賀線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"JR-East.YamanoteFreight.Tokyo",
 			"JR-East.YamanoteFreight.Shinagawa",
 			"JR-East.YamanoteFreight.Shibuya"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#007AC1",
 	"carComposition": 6
@@ -377,9 +393,8 @@
 		"zh-Hans": "武藏野线",
 		"zh-Hant": "武藏野線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"JR-East.MusashinoKunitachiBranch.ShinKodaira",
 			"JR-East.MusashinoKunitachiBranch.Kunitachi",
@@ -388,7 +403,7 @@
 			"JR-East.MusashinoKunitachiBranch.Toyoda",
 			"JR-East.MusashinoKunitachiBranch.Hachioji"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#F15A22",
 	"carComposition": 8
@@ -401,14 +416,13 @@
 		"zh-Hans": "武藏野线",
 		"zh-Hant": "武藏野線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"JR-East.MusashinoOmiyaBranch.KitaAsaka",
 			"JR-East.MusashinoOmiyaBranch.Omiya"
 		]
-	},
+	}],
 	"ascending": "Northbound",
 	"color": "#F15A22",
 	"carComposition": 8
@@ -421,14 +435,13 @@
 		"zh-Hans": "武藏野线",
 		"zh-Hant": "武藏野線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"JR-East.MusashinoNishiUrawaBranch.Omiya",
 			"JR-East.MusashinoNishiUrawaBranch.MusashiUrawa"
 		]
-	},
+	}],
 	"ascending": "Southbound",
 	"color": "#F15A22",
 	"carComposition": 8
@@ -495,13 +508,12 @@
 	"carComposition": 6
 }, {
 	"id": "TokyoMetro.Hibiya",
-	"stations": {
+	"stations": [{
 		"index": 22,
-		"delete": 0,
 		"insert": [
 			"TokyoMetro.Hibiya.ShinKoshigaya"
 		]
-	},
+	}],
 	"altitude": -1,
 	"color": "#B5B5AC",
 	"carComposition": 7
@@ -512,15 +524,14 @@
 	"carComposition": 10
 }, {
 	"id": "TokyoMetro.Chiyoda",
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"TokyoMetro.Chiyoda.Machida",
 			"TokyoMetro.Chiyoda.ShinYurigaoka",
 			"TokyoMetro.Chiyoda.SeijogakuenMae"
 		]
-	},
+	}],
 	"altitude": -1,
 	"color": "#00BB85",
 	"carComposition": 10
@@ -581,13 +592,13 @@
 		"zh-Hans": "大江户线",
 		"zh-Hant": "大江戶線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 28,
 		"delete": 1,
 		"insert": [
 			"Toei.Oedo.Tochomae.1"
 		]
-	},
+	}],
 	"altitude": -1,
 	"color": "#CE045B",
 	"carComposition": 8
@@ -631,13 +642,12 @@
 	"carComposition": 10
 }, {
 	"id": "Keio.Sagamihara",
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"Keio.Sagamihara.Shinjuku"
 		]
-	},
+	}],
 	"color": "#DD0077",
 	"carComposition": 10
 }, {
@@ -661,10 +671,10 @@
 	"title": {
 		"zh-Hant": "京急本線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 39,
 		"delete": 11
-	},
+	}],
 	"color": "#33C2E4",
 	"carComposition": 8
 }, {
@@ -672,13 +682,12 @@
 	"title": {
 		"zh-Hant": "機場線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"Keikyu.Airport.Shinagawa"
 		]
-	},
+	}],
 	"color": "#33C2E4",
 	"carComposition": 8
 }, {
@@ -743,15 +752,14 @@
 		"zh-Hans": "成田Sky Access线",
 		"zh-Hant": "成田Sky Access線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"Keisei.NaritaSkyAccess.KeiseiUeno",
 			"Keisei.NaritaSkyAccess.Nippori",
 			"Keisei.NaritaSkyAccess.Aoto"
 		]
-	},
+	}],
 	"color": "#FF8620",
 	"carComposition": 8
 }, {
@@ -770,9 +778,8 @@
 		"zh-Hans": "北总线",
 		"zh-Hant": "北總線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"Hokuso.Hokuso.KeiseiTakasago",
 			"Hokuso.Hokuso.ShinShibamata",
@@ -790,7 +797,7 @@
 			"Hokuso.Hokuso.InzaiMakinohara",
 			"Hokuso.Hokuso.ImbaNihonIdai"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#00BDF2",
 	"carComposition": 8
@@ -801,14 +808,13 @@
 		"zh-Hans": "芝山铁道线",
 		"zh-Hant": "芝山鐵道線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"Shibayama.Shibayama.HigashiNarita",
 			"Shibayama.Shibayama.ShibayamaChiyoda"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#00A650",
 	"carComposition": 6
@@ -829,10 +835,10 @@
 	"carComposition": 10
 }, {
 	"id": "Tobu.Isesaki",
-	"stations": {
+	"stations": [{
 		"index": 3,
 		"delete": 23
-	},
+	}],
 	"color": "#FF0000",
 	"carComposition": 10
 }, {
@@ -849,10 +855,10 @@
 	"carComposition": 6
 }, {
 	"id": "Tobu.Tojo",
-	"stations": {
+	"stations": [{
 		"index": 33,
 		"delete": 6
-	},
+	}],
 	"color": "#000099",
 	"carComposition": 10
 }, {
@@ -862,10 +868,10 @@
 		"zh-Hans": "池袋线",
 		"zh-Hant": "池袋線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 26,
 		"delete": 5
-	},
+	}],
 	"color": "#FF6600",
 	"carComposition": 10
 }, {
@@ -904,14 +910,13 @@
 		"zh-Hans": "池袋线",
 		"zh-Hant": "池袋線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"Seibu.S-Fukutoshin.Ikebukuro",
 			"Seibu.S-Fukutoshin.ShakujiiKoen"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#FF6600",
 	"carComposition": 10
@@ -924,15 +929,14 @@
 		"zh-Hans": "池袋线",
 		"zh-Hant": "池袋線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"Seibu.S-Yurakucho.Iidabashi",
 			"Seibu.S-Yurakucho.Nerima",
 			"Seibu.S-Yurakucho.ShakujiiKoen"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#FF6600",
 	"carComposition": 10
@@ -997,9 +1001,8 @@
 		"zh-Hans": "小田原线",
 		"zh-Hant": "小田原線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"Odakyu.Odawara.Shinjuku",
 			"Odakyu.Odawara.MinamiShinjuku",
@@ -1038,7 +1041,7 @@
 			"Odakyu.Odawara.AikoIshida",
 			"Odakyu.Odawara.Isehara"
 		]
-	},
+	}],
 	"color": "#2288CC",
 	"carComposition": 10
 }, {
@@ -1048,9 +1051,8 @@
 		"zh-Hans": "多摩线",
 		"zh-Hant": "多摩線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"Odakyu.Tama.ShinYurigaoka",
 			"Odakyu.Tama.Satsukidai",
@@ -1061,7 +1063,7 @@
 			"Odakyu.Tama.OdakyuTamaCenter",
 			"Odakyu.Tama.Karakida"
 		]
-	},
+	}],
 	"color": "#2288CC",
 	"carComposition": 10
 }, {
@@ -1071,9 +1073,8 @@
 		"zh-Hans": "江之岛线",
 		"zh-Hant": "江之島線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"Odakyu.Enoshima.SagamiOno",
 			"Odakyu.Enoshima.HigashiRinkan",
@@ -1090,7 +1091,7 @@
 			"Odakyu.Enoshima.FujisawaHommachi",
 			"Odakyu.Enoshima.Fujisawa"
 		]
-	},
+	}],
 	"color": "#2288CC",
 	"carComposition": 10
 }, {
@@ -1127,14 +1128,13 @@
 		"zh-Hans": "大井町线",
 		"zh-Hant": "大井町線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 15,
-		"delete": 0,
 		"insert": [
 			"Tokyu.Oimachi.FutakoShinchi",
 			"Tokyu.Oimachi.Takatsu"
 		]
-	},
+	}],
 	"color": "#F18C43",
 	"carComposition": 5
 }, {
@@ -1180,9 +1180,8 @@
 		"zh-Hans": "港未来线",
 		"zh-Hant": "港未來線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"Minatomirai.Minatomirai.Yokohama",
 			"Minatomirai.Minatomirai.ShinTakashima",
@@ -1191,7 +1190,7 @@
 			"Minatomirai.Minatomirai.NihonOdori",
 			"Minatomirai.Minatomirai.MotomachiChukagai"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"altitude": -1,
 	"color": "#09357F",
@@ -1230,9 +1229,8 @@
 		"zh-Hans": "埼玉高速铁道线",
 		"zh-Hant": "埼玉高速鐵道線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
 			"SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
@@ -1243,7 +1241,7 @@
 			"SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
 			"SaitamaRailway.SaitamaRailway.UrawaMisono"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"altitude": -1,
 	"color": "#2351A5",
@@ -1259,9 +1257,8 @@
 		"zh-Hans": "东叶高速线",
 		"zh-Hant": "東葉高速線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"ToyoRapid.ToyoRapid.NishiFunabashi",
 			"ToyoRapid.ToyoRapid.HigashiKaijin",
@@ -1273,7 +1270,7 @@
 			"ToyoRapid.ToyoRapid.Murakami",
 			"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#3FB036",
 	"carComposition": 10
@@ -1284,9 +1281,8 @@
 		"zh-Hans": "新京成线",
 		"zh-Hant": "新京成線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"ShinKeisei.ShinKeisei.Matsudo",
 			"ShinKeisei.ShinKeisei.Kamihongo",
@@ -1313,7 +1309,7 @@
 			"ShinKeisei.ShinKeisei.ShinTsudanuma",
 			"ShinKeisei.ShinKeisei.KeiseiTsudanuma"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#EF59A1",
 	"carComposition": 6
@@ -1331,9 +1327,8 @@
 		"zh-Hans": "羽田机场线",
 		"zh-Hant": "羽田機場線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"TokyoMonorail.HanedaAirport.Hamamatsucho",
 			"TokyoMonorail.HanedaAirport.TennozuIsle",
@@ -1347,7 +1342,7 @@
 			"TokyoMonorail.HanedaAirport.HanedaAirportTerminal1",
 			"TokyoMonorail.HanedaAirport.HanedaAirportTerminal2"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#003686",
 	"carComposition": 6
@@ -1369,9 +1364,8 @@
 		"zh-Hans": "千叶单轨电车1号线",
 		"zh-Hant": "千葉單軌電車1號線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"ChibaMonorail.Line1.ChibaMinato",
 			"ChibaMonorail.Line1.ShiyakushoMae",
@@ -1380,7 +1374,7 @@
 			"ChibaMonorail.Line1.YoshikawaKoen",
 			"ChibaMonorail.Line1.KenchoMae"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#2843BA",
 	"carComposition": 2
@@ -1393,9 +1387,8 @@
 		"zh-Hans": "千叶单轨电车2号线",
 		"zh-Hant": "千葉單軌電車2號線"
 	},
-	"stations": {
+	"stations": [{
 		"index": 0,
-		"delete": 0,
 		"insert": [
 			"ChibaMonorail.Line2.Chiba",
 			"ChibaMonorail.Line2.ChibaKoen",
@@ -1411,7 +1404,7 @@
 			"ChibaMonorail.Line2.ChishirodaiKita",
 			"ChibaMonorail.Line2.Chishirodai"
 		]
-	},
+	}],
 	"ascending": "Outbound",
 	"color": "#2843BA",
 	"carComposition": 2

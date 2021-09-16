@@ -21,12 +21,13 @@ const RAILWAYS_FOR_TRAINTIMETABLES = {
         'JR-East.JobanRapid',
         'JR-East.JobanLocal'
     ], [
+        'JR-East.Joban',
         'JR-East.SobuRapid',
-        'JR-East.Sobu',
+        'JR-East.Sobu'
+    ], [
         'JR-East.Narita',
         'JR-East.NaritaAirportBranch',
-        'JR-East.NaritaAbikoBranch'
-    ], [
+        'JR-East.NaritaAbikoBranch',
         'JR-East.Uchibo',
         'JR-East.Sotobo'
     ], [
@@ -93,7 +94,9 @@ const RAILWAYS_FOR_TRAINTIMETABLES = {
     odpt: []
 };
 
-const RAILWAY_SOBURAPID = 'JR-East.SobuRapid',
+const RAILWAY_JOBANRAPID = 'JR-East.JobanRapid',
+    RAILWAY_JOBAN = 'JR-East.Joban',
+    RAILWAY_SOBURAPID = 'JR-East.SobuRapid',
     RAILWAY_YOKOSUKA = 'JR-East.Yokosuka',
     RAILWAY_SHONANSHINJUKU = 'JR-East.ShonanShinjuku',
     RAILWAY_YAMANOTEFREIGHT = 'JR-East.YamanoteFreight',
@@ -224,6 +227,36 @@ async function process(options, calendar, postfix) {
             timetableRef.v = v;
         }
     }
+
+    // Modify Joban timetables
+    data.filter(timetable =>
+        timetable.r === RAILWAY_JOBAN &&
+        timetable.y === TRAINTYPE_JREAST_LIMITEDEXPRESS &&
+        ((timetable.pt && timetable.pt[0].startsWith(RAILWAY_JOBANRAPID)) ||
+        (timetable.nt && timetable.nt[0].startsWith(RAILWAY_JOBANRAPID)))
+    ).forEach(timetable => {
+        const {tt, nt, pt} = timetable;
+
+        if (pt && pt[0].startsWith(RAILWAY_JOBANRAPID)) {
+            const ptt = lookup[pt[0]].tt,
+                station = ptt[ptt.length - 1];
+
+            tt.unshift({
+                d: station.d,
+                s: station.s.replace(RAILWAY_JOBANRAPID, RAILWAY_JOBAN)
+            });
+            delete station.d;
+        } else if (nt && nt[0].startsWith(RAILWAY_JOBANRAPID)) {
+            const ntt = lookup[nt[0]].tt,
+                station = ntt[0];
+
+            tt.push({
+                a: station.a,
+                s: station.s.replace(RAILWAY_JOBANRAPID, RAILWAY_JOBAN)
+            });
+            delete station.a;
+        }
+    });
 
     // Modify Sobu Rapid, Sobu, Narita and Narita Airport branch timetables
     for (const railwayID of RAILWAYS_FOR_SOBURAPID) {
