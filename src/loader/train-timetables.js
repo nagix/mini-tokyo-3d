@@ -50,7 +50,8 @@ const RAILWAYS_FOR_TRAINTIMETABLES = {
         'JR-East.Kawagoe'
     ], [
         'JR-East.Sagami',
-        'JR-East.Kashima'
+        'JR-East.Kashima',
+        'JR-East.Togane'
     ], [
         'TWR.Rinkai'
     ], [
