@@ -691,10 +691,6 @@
 	"title": {
 		"zh-Hant": "京急本線"
 	},
-	"stations": [{
-		"index": 39,
-		"delete": 11
-	}],
 	"color": "#33C2E4",
 	"carComposition": 8
 }, {
@@ -717,6 +713,20 @@
 	},
 	"color": "#33C2E4",
 	"carComposition": 4
+}, {
+	"id": "Keikyu.Zushi",
+	"title": {
+		"zh-Hant": "逗子線"
+	},
+	"color": "#33C2E4",
+	"carComposition": 8
+}, {
+	"id": "Keikyu.Kurihama",
+	"title": {
+		"zh-Hant": "久里濱線"
+	},
+	"color": "#33C2E4",
+	"carComposition": 8
 }, {
 	"id": "Keisei.Main",
 	"title": {
