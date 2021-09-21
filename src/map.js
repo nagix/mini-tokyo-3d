@@ -529,7 +529,8 @@ export default class extends Evented {
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 getFillColor: [255, 255, 255],
-                visible: false
+                visible: false,
+                parameters: {depthTest: false}
             }), 'building-3d');
             map.setLayerZoomRange(`stations-marked-${zoom}`, minzoom, maxzoom);
             map.addLayer(new MapboxLayer({
@@ -542,7 +543,8 @@ export default class extends Evented {
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 getFillColor: [255, 255, 255],
-                visible: false
+                visible: false,
+                parameters: {depthTest: false}
             }), 'building-3d');
             map.setLayerZoomRange(`stations-selected-${zoom}`, minzoom, maxzoom);
             map.addLayer(new MapboxLayer({
@@ -558,7 +560,8 @@ export default class extends Evented {
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 opacity: .0625,
-                pickable: true
+                pickable: true,
+                parameters: {depthTest: false}
             }), 'building-3d');
             map.setLayerZoomRange(`railways-ug-${zoom}`, minzoom, maxzoom);
             map.addLayer(new MapboxLayer({
@@ -575,7 +578,8 @@ export default class extends Evented {
                 lineWidthScale,
                 getFillColor: [255, 255, 255, 179],
                 opacity: .0625,
-                pickable: true
+                pickable: true,
+                parameters: {depthTest: false}
             }), 'building-3d');
             map.setLayerZoomRange(`stations-ug-${zoom}`, minzoom, maxzoom);
             map.addLayer(new MapboxLayer({
@@ -588,7 +592,8 @@ export default class extends Evented {
                 getLineColor: d => helpers.colorToRGBArray(d.properties.color),
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
-                opacity: .0625
+                opacity: .0625,
+                parameters: {depthTest: false}
             }), 'building-3d');
             map.setLayerZoomRange(`railways-routeug-${zoom}`, minzoom, maxzoom);
             map.addLayer(new MapboxLayer({
@@ -602,7 +607,8 @@ export default class extends Evented {
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 getFillColor: [255, 255, 255, 179],
-                opacity: .0625
+                opacity: .0625,
+                parameters: {depthTest: false}
             }), 'building-3d');
             map.setLayerZoomRange(`stations-routeug-${zoom}`, minzoom, maxzoom);
             map.addLayer(new MapboxLayer({
@@ -614,7 +620,8 @@ export default class extends Evented {
                 getLineWidth: d => d.properties.width,
                 getLineColor: d => helpers.colorToRGBArray(d.properties.color),
                 lineWidthUnits: 'pixels',
-                lineWidthScale
+                lineWidthScale,
+                parameters: {depthTest: false}
             }), 'building-3d');
             map.setLayerZoomRange(`railways-routeog-${zoom}`, minzoom, maxzoom);
             map.addLayer(new MapboxLayer({
@@ -627,7 +634,8 @@ export default class extends Evented {
                 getLineColor: [0, 0, 0],
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
-                getFillColor: [255, 255, 255, 179]
+                getFillColor: [255, 255, 255, 179],
+                parameters: {depthTest: false}
             }), 'building-3d');
             map.setLayerZoomRange(`stations-routeog-${zoom}`, minzoom, maxzoom);
         });
@@ -727,7 +735,8 @@ export default class extends Evented {
             getLineColor: d => helpers.colorToRGBArray(d.properties.color),
             lineWidthUnits: 'pixels',
             lineWidthScale: 1,
-            opacity: .0625
+            opacity: .0625,
+            parameters: {depthTest: false}
         }), 'poi');
         */
 
