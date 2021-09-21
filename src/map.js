@@ -1,4 +1,3 @@
-import {WebMercatorViewport} from '@deck.gl/core';
 import {MapboxLayer} from '@deck.gl/mapbox';
 import {GeoJsonLayer} from '@deck.gl/layers';
 import {featureEach} from '@turf/meta';
@@ -12,6 +11,7 @@ import ClockControl from './clock-control';
 import configs from './configs';
 import extend from './extend';
 import * as helpers from './helpers';
+import {getViewport, pickObject} from './helpers-deck';
 import * as helpersGeojson from './helpers-geojson';
 import * as helpersMapbox from './helpers-mapbox';
 import LayerPanel from './layer-panel';
@@ -40,28 +40,15 @@ const DEGREE_TO_RADIAN = Math.PI / 180;
 const render = MapboxLayer.prototype.render;
 MapboxLayer.prototype.render = function(...args) {
     const me = this,
-        {deck: _deck, map} = me,
-        center = map.getCenter();
+        {deck, map} = me;
 
-    if (!_deck.layerManager) {
+    if (!deck.layerManager) {
         // Not yet initialized
         return;
     }
 
-    if (!_deck.props.userData.currentViewport) {
-        _deck.props.userData.currentViewport = new WebMercatorViewport({
-            x: 0,
-            y: 0,
-            width: _deck.width,
-            height: _deck.height,
-            longitude: center.lng,
-            latitude: center.lat,
-            zoom: map.getZoom(),
-            bearing: map.getBearing(),
-            pitch: map.getPitch(),
-            nearZMultiplier: 0,
-            farZMultiplier: 10
-        });
+    if (!deck.props.userData.currentViewport) {
+        deck.props.userData.currentViewport = getViewport(deck, map);
     }
     render.apply(me, args);
 };
@@ -2439,7 +2426,6 @@ export default class extends Evented {
 
     pickObject(point) {
         const {map, viewMode, trafficLayer, layerZoom, pickedFeature} = this,
-            deck = map.__deck,
             modes = ['ground', 'underground'];
         let object;
 
@@ -2453,13 +2439,8 @@ export default class extends Evented {
             }
             if (mode === 'ground') {
                 object = pickedFeature;
-            } else if (deck.deckPicker) {
-                const {x, y} = point,
-                    info = deck.pickObject({x, y, layerIds: [`stations-ug-${layerZoom}`]});
-
-                if (info) {
-                    object = info.object;
-                }
+            } else {
+                object = pickObject(map, `stations-ug-${layerZoom}`, point);
             }
             if (object) {
                 return object;
