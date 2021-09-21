@@ -42,6 +42,7 @@
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-replace": "^3.0.0",
     "@rollup/plugin-strip": "^2.1.0",
+    "@vuepress/plugin-google-analytics": "1.8.2",
     "eslint": "^7.32.0",
     "eslint-config-mourner": "^3.0.0",
     "eslint-plugin-import": "^2.24.2",
@@ -53,13 +54,17 @@
     "postcss-inline-svg": "^5.0.0",
     "rollup": "^2.56.3",
     "rollup-plugin-postcss": "^4.0.1",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-flexsearch": "^0.2.0"
   },
   "scripts": {
     "build": "rollup -c",
     "build-pages": "rm -rf build; cp -r public build; cp .npmignore dist/mini-tokyo-3d.min.css dist/mini-tokyo-3d.min.js dist/mini-tokyo-3d.min.js.map build",
     "build-data": "rm -rf build/data; mkdir -p build/data; cp data/dictionary-*.json data/osm-liberty.json build/data; node dist/loader",
     "build-all": "run-s build build-pages build-data",
+    "docs": "vuepress build docs --no-cache",
+    "docs:dev": "vuepress dev docs --no-cache",
     "lint": "eslint --cache --ignore-path .gitignore src"
   },
   "files": [
