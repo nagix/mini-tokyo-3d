@@ -1947,7 +1947,7 @@
 }, {
 	"id": "JR-East.Joban.Kashiwa",
 	"railway": "JR-East.Joban",
-	"coord": [139.97046, 35.86199],
+	"coord": [139.97091, 35.86184],
 	"title": {
 		"ja": "柏",
 		"en": "Kashiwa",
@@ -12269,7 +12269,31 @@
 		"zh-Hant": "伊勢原"
 	}
 }, {
+	"id": "Odakyu.Odawara.TsurumakiOnsen",
+	"railway": "Odakyu.Odawara",
+	"coord": [139.27775, 35.38094],
+	"title": {
+		"ja": "鶴巻温泉",
+		"en": "Tsurumaki-Onsen",
+		"ko": "쓰루마키온센",
+		"zh-Hans": "鹤卷温泉",
+		"zh-Hant": "鶴卷溫泉"
+	}
+}, {
+	"id": "Odakyu.Odawara.TokaidaigakuMae",
+	"railway": "Odakyu.Odawara",
+	"coord": [139.27123, 35.37314],
+	"title": {
+		"ja": "東海大学前",
+		"en": "Tokaidaigaku-Mae",
+		"ko": "도카이다이가쿠마에",
+		"zh-Hans": "东海大学前",
+		"zh-Hant": "東海大學前"
+	}
+}, {
 	"id": "Odakyu.Odawara.Hadano",
+	"railway": "Odakyu.Odawara",
+	"coord": [139.22577, 35.37025],
 	"title": {
 		"ja": "秦野",
 		"en": "Hadano",
@@ -12278,7 +12302,20 @@
 		"zh-Hant": "秦野"
 	}
 }, {
+	"id": "Odakyu.Odawara.Shibusawa",
+	"railway": "Odakyu.Odawara",
+	"coord": [139.18451, 35.37415],
+	"title": {
+		"ja": "渋沢",
+		"en": "Shibusawa",
+		"ko": "시부사와",
+		"zh-Hans": "涩泽",
+		"zh-Hant": "澀澤"
+	}
+}, {
 	"id": "Odakyu.Odawara.ShinMatsuda",
+	"railway": "Odakyu.Odawara",
+	"coord": [139.13965, 35.34476],
 	"title": {
 		"ja": "新松田",
 		"en": "Shin-Matsuda",
@@ -12287,7 +12324,65 @@
 		"zh-Hant": "新松田"
 	}
 }, {
+	"id": "Odakyu.Odawara.Kaisei",
+	"railway": "Odakyu.Odawara",
+	"coord": [139.13606, 35.32627],
+	"title": {
+		"ja": "開成",
+		"en": "Kaisei",
+		"ko": "가이세이",
+		"zh-Hans": "开成",
+		"zh-Hant": "開成"
+	}
+}, {
+	"id": "Odakyu.Odawara.Kayama",
+	"railway": "Odakyu.Odawara",
+	"coord": [139.14254, 35.31059],
+	"title": {
+		"ja": "栢山",
+		"en": "Kayama",
+		"ko": "가야마",
+		"zh-Hans": "柏山",
+		"zh-Hant": "栢山"
+	}
+}, {
+	"id": "Odakyu.Odawara.Tomizu",
+	"railway": "Odakyu.Odawara",
+	"coord": [139.14518, 35.29657],
+	"title": {
+		"ja": "富水",
+		"en": "Tomizu",
+		"ko": "도미즈",
+		"zh-Hans": "富水",
+		"zh-Hant": "富水"
+	}
+}, {
+	"id": "Odakyu.Odawara.Hotaruda",
+	"railway": "Odakyu.Odawara",
+	"coord": [139.15197, 35.28506],
+	"title": {
+		"ja": "螢田",
+		"en": "Hotaruda",
+		"ko": "호타루다",
+		"zh-Hans": "萤田",
+		"zh-Hant": "螢田"
+	}
+}, {
+	"id": "Odakyu.Odawara.Ashigara",
+	"railway": "Odakyu.Odawara",
+	"coord": [139.15445, 35.27181],
+	"title": {
+		"ja": "足柄",
+		"en": "Ashigara",
+		"ko": "아시가라",
+		"zh-Hans": "足柄",
+		"zh-Hant": "足柄",
+		"ja-Wiki": "足柄駅 (神奈川県)"
+	}
+}, {
 	"id": "Odakyu.Odawara.Odawara",
+	"railway": "Odakyu.Odawara",
+	"coord": [139.15491, 35.25642],
 	"title": {
 		"ja": "小田原",
 		"en": "Odawara",
@@ -12541,7 +12636,31 @@
 		"zh-Hant": "藤澤"
 	}
 }, {
+	"id": "Odakyu.Enoshima.HonKugenuma",
+	"railway": "Odakyu.Enoshima",
+	"coord": [139.47528, 35.331],
+	"title": {
+		"ja": "本鵠沼",
+		"en": "Hon-Kugenuma",
+		"ko": "혼쿠게누마",
+		"zh-Hans": "本鹄沼",
+		"zh-Hant": "本鵠沼"
+	}
+}, {
+	"id": "Odakyu.Enoshima.KugenumaKaigan",
+	"railway": "Odakyu.Enoshima",
+	"coord": [139.47118, 35.32086],
+	"title": {
+		"ja": "鵠沼海岸",
+		"en": "Kugenuma-Kaigan",
+		"ko": "구게누마카이간",
+		"zh-Hans": "鹄沼海岸",
+		"zh-Hant": "鵠沼海岸"
+	}
+}, {
 	"id": "Odakyu.Enoshima.KataseEnoshima",
+	"railway": "Odakyu.Enoshima",
+	"coord": [139.48321, 35.30906],
 	"title": {
 		"ja": "片瀬江ノ島",
 		"en": "Katase-Enoshima",
