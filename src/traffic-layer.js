@@ -269,10 +269,10 @@ export default class extends ThreeLayer {
             1
         );
 
-        me.renderer.resetState();
         me.renderer.setRenderTarget(me.pickingTexture);
         me.renderer.render(scene, me.camera);
         me.renderer.setRenderTarget(null);
+        me.renderer.resetState();
 
         me.camera.clearViewOffset();
 
