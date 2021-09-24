@@ -11411,6 +11411,41 @@
 		"zh-Hant": "飯能"
 	}
 }, {
+	"id": "Seibu.Ikebukuro.HigashiHanno",
+	"title": {
+		"ko": "히가시한노",
+		"zh-Hans": "东饭能",
+		"zh-Hant": "東飯能"
+	}
+}, {
+	"id": "Seibu.Ikebukuro.Koma",
+	"title": {
+		"ko": "고마",
+		"zh-Hans": "高丽",
+		"zh-Hant": "高麗"
+	}
+}, {
+	"id": "Seibu.Ikebukuro.MusashiYokote",
+	"title": {
+		"ko": "무사시요코테",
+		"zh-Hans": "武藏横手",
+		"zh-Hant": "武藏橫手"
+	}
+}, {
+	"id": "Seibu.Ikebukuro.HigashiAgano",
+	"title": {
+		"ko": "히가시아가노",
+		"zh-Hans": "东吾野",
+		"zh-Hant": "東吾野"
+	}
+}, {
+	"id": "Seibu.Ikebukuro.Agano",
+	"title": {
+		"ko": "아가노",
+		"zh-Hans": "吾野",
+		"zh-Hant": "吾野"
+	}
+}, {
 	"id": "Seibu.Toshima.Nerima",
 	"title": {
 		"ko": "네리마",
@@ -11440,10 +11475,64 @@
 	}
 }, {
 	"id": "Seibu.Sayama.SeibukyujoMae",
+	"coord": [139.4198044, 35.7711314],
 	"title": {
 		"ko": "세이부 구장앞",
 		"zh-Hans": "西武球场前",
 		"zh-Hant": "西武球場前"
+	}
+}, {
+	"id": "Seibu.SeibuChichibu.Hanno",
+	"railway": "Seibu.SeibuChichibu",
+	"coord": [139.31904, 35.85102],
+	"title": {
+		"ja": "飯能",
+		"en": "Hanno",
+		"ko": "한노",
+		"zh-Hans": "饭能",
+		"zh-Hant": "飯能"
+	}
+}, {
+	"id": "Seibu.SeibuChichibu.Agano",
+	"title": {
+		"ko": "아가노",
+		"zh-Hans": "吾野",
+		"zh-Hant": "吾野"
+	}
+}, {
+	"id": "Seibu.SeibuChichibu.NishiAgano",
+	"title": {
+		"ko": "니시아가노",
+		"zh-Hans": "西吾野",
+		"zh-Hant": "西吾野"
+	}
+}, {
+	"id": "Seibu.SeibuChichibu.Shomaru",
+	"title": {
+		"ko": "쇼마루",
+		"zh-Hans": "正丸",
+		"zh-Hant": "正丸"
+	}
+}, {
+	"id": "Seibu.SeibuChichibu.Ashigakubo",
+	"title": {
+		"ko": "아시가쿠보",
+		"zh-Hans": "芦之久保",
+		"zh-Hant": "蘆之久保"
+	}
+}, {
+	"id": "Seibu.SeibuChichibu.Yokoze",
+	"title": {
+		"ko": "요코제",
+		"zh-Hans": "横濑",
+		"zh-Hant": "橫瀨"
+	}
+ }, {
+	"id": "Seibu.SeibuChichibu.SeibuChichibu",
+	"title": {
+		"ko": "세이부 지치부",
+		"zh-Hans": "西武秩父",
+		"zh-Hant": "西武秩父"
 	}
 }, {
 	"id": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -11935,6 +12024,28 @@
 		"ko": "고레마사",
 		"zh-Hans": "是政",
 		"zh-Hant": "是政"
+	}
+}, {
+	"id": "Seibu.Yamaguchi.Tamako",
+	"title": {
+		"ko": "다마코",
+		"zh-Hans": "多摩湖",
+		"zh-Hant": "多摩湖"
+	}
+}, {
+	"id": "Seibu.Yamaguchi.SeibuenYuenchi",
+	"title": {
+		"ko": "세이부엔유원지",
+		"zh-Hans": "西武园游园地",
+		"zh-Hant": "西武園遊園地"
+	}
+}, {
+	"id": "Seibu.Yamaguchi.SeibukyujoMae",
+	"coord": [139.4198044, 35.7711314],
+	"title": {
+		"ko": "쇼마루",
+		"zh-Hans": "西武球场前",
+		"zh-Hant": "西武球場前"
 	}
 }, {
 	"id": "Odakyu.Odawara.Shinjuku",
@@ -15239,11 +15350,11 @@
 		"zh-Hant": "會津田島"
 	}
 }, {
-	"id": "Seibu.SeibuChichibu.SeibuChichibu",
+	"id": "Chichibu.Chichibu.Nagatoro",
 	"title": {
-		"ko": "세이부 지치부",
-		"zh-Hans": "西武秩父",
-		"zh-Hant": "西武秩父"
+		"ko": "나가토로",
+		"zh-Hans": "长瀞",
+		"zh-Hant": "長瀞"
 	}
 }, {
 	"id": "Chichibu.Chichibu.Mitsumineguchi",

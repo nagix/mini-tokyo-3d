@@ -898,10 +898,6 @@
 		"zh-Hans": "池袋线",
 		"zh-Hant": "池袋線"
 	},
-	"stations": [{
-		"index": 26,
-		"delete": 5
-	}],
 	"color": "#FF6600",
 	"carComposition": 10
 }, {
@@ -920,6 +916,21 @@
 		"zh-Hans": "狭山线",
 		"zh-Hant": "狹山線"
 	},
+	"color": "#FF6600",
+	"carComposition": 10
+}, {
+	"id": "Seibu.SeibuChichibu",
+	"title": {
+		"ko": "세이부 지치부 선",
+		"zh-Hans": "西武秩父线",
+		"zh-Hant": "西武秩父線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"Seibu.SeibuChichibu.Hanno"
+		]
+	}],
 	"color": "#FF6600",
 	"carComposition": 10
 }, {
@@ -1023,6 +1034,15 @@
 		"zh-Hant": "多摩川線"
 	},
 	"color": "#FF6600",
+	"carComposition": 4
+}, {
+	"id": "Seibu.Yamaguchi",
+	"title": {
+		"ko": "야마구치 선",
+		"zh-Hans": "山口线",
+		"zh-Hant": "山口線"
+	},
+	"color": "#FF3333",
 	"carComposition": 4
 }, {
 	"id": "Odakyu.Odawara",
