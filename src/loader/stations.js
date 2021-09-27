@@ -22,6 +22,7 @@ const OPERATORS_FOR_STATIONS = {
         'Hokuso',
         'Shibayama',
         'Tobu',
+        'Yagan',
         'Aizu',
         'Seibu',
         'Chichibu',
