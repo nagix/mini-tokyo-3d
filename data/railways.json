@@ -1411,10 +1411,10 @@
 	"id": "Kanto.Joso",
 	"title": {
 		"ja": "常総線",
-		"en": "Joso line",
-		"ko": " 선",
-		"zh-Hans": "线",
-		"zh-Hant": "線"
+		"en": "Joso Line",
+		"ko": "조소 선",
+		"zh-Hans": "常总线",
+		"zh-Hant": "常總線"
 	},
 	"stations": [{
 		"index": 0,
@@ -1453,7 +1453,7 @@
 	"id": "Kanto.Ryugasaki",
 	"title": {
 		"ja": "竜ケ崎線",
-		"en": "Ryugasaki line",
+		"en": "Ryugasaki Line",
 		"ko": "류가사키 선",
 		"zh-Hans": "龙崎线",
 		"zh-Hant": "龍崎線"
@@ -1468,6 +1468,29 @@
 	}],
 	"ascending": "Outbound",
 	"color": "#2C94B6",
+	"carComposition": 2
+}, {
+	"id": "Ryutetsu.Nagareyama",
+	"title": {
+		"ja": "流山線",
+		"en": "Nagareyama Line",
+		"ko": "나가레야마 선",
+		"zh-Hans": "流山线",
+		"zh-Hant": "流山線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"Ryutetsu.Nagareyama.Mabashi",
+			"Ryutetsu.Nagareyama.Koya",
+			"Ryutetsu.Nagareyama.KoganeJoshi",
+			"Ryutetsu.Nagareyama.Hiregasaki",
+			"Ryutetsu.Nagareyama.Heiwadai",
+			"Ryutetsu.Nagareyama.Nagareyama"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#C64F24",
 	"carComposition": 2
 }, {
 	"id": "Yurikamome.Yurikamome",
