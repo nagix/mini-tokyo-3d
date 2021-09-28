@@ -14531,7 +14531,7 @@
 	"altitude": -1
 }, {
 	"id": "MIR.TsukubaExpress.Yashio",
-	"coord": [139.8448300, 35.8078016]
+	"coord": [139.84483, 35.8078016]
 }, {
 	"id": "MIR.TsukubaExpress.MisatoChuo",
 	"coord": [139.8783938, 35.8245212]
@@ -14840,7 +14840,7 @@
 }, {
 	"id": "ShinKeisei.ShinKeisei.Hatsutomi",
 	"railway": "ShinKeisei.ShinKeisei",
-	"coord": [140.0005870, 35.7722826],
+	"coord": [140.000587, 35.7722826],
 	"title": {
 		"ja": "初富",
 		"en": "Hatsutomi",
@@ -14917,7 +14917,7 @@
 }, {
 	"id": "ShinKeisei.ShinKeisei.KitaNarashino",
 	"railway": "ShinKeisei.ShinKeisei",
-	"coord": [140.0422237, 35.7212550],
+	"coord": [140.0422237, 35.721255],
 	"title": {
 		"ja": "北習志野",
 		"en": "Kita-Narashino",
@@ -14979,6 +14979,315 @@
 		"ko": "게이세이쓰다누마",
 		"zh-Hans": "京成津田沼",
 		"zh-Hant": "京成津田沼"
+	}
+}, {
+	"id": "Kanto.Joso.Toride",
+	"railway": "Kanto.Joso",
+	"coord": [140.0638828, 35.8975067],
+	"title": {
+		"ja": "取手",
+		"en": "Toride",
+		"ko": "도리데",
+		"zh-Hans": "取手",
+		"zh-Hant": "取手"
+	}
+}, {
+	"id": "Kanto.Joso.NishiToride",
+	"railway": "Kanto.Joso",
+	"coord": [140.0591655, 35.9088559],
+	"title": {
+		"ja": "西取手",
+		"en": "Nishi-Toride",
+		"ko": "니시토리데",
+		"zh-Hans": "西取手",
+		"zh-Hant": "西取手"
+	}
+}, {
+	"id": "Kanto.Joso.Terahara",
+	"railway": "Kanto.Joso",
+	"coord": [140.0544646, 35.9118742],
+	"title": {
+		"ja": "寺原",
+		"en": "Terahara",
+		"ko": "데라하라",
+		"zh-Hans": "寺原",
+		"zh-Hant": "寺原"
+	}
+}, {
+	"id": "Kanto.Joso.ShinToride",
+	"railway": "Kanto.Joso",
+	"coord": [140.0425851, 35.9174575],
+	"title": {
+		"ja": "新取手",
+		"en": "Shin-Toride",
+		"ko": "신토리데",
+		"zh-Hans": "新取手",
+		"zh-Hant": "新取手"
+	}
+}, {
+	"id": "Kanto.Joso.Yumemino",
+	"railway": "Kanto.Joso",
+	"coord": [140.0349181, 35.9210581],
+	"title": {
+		"ja": "ゆめみ野",
+		"en": "Yumemino",
+		"ko": "유메미노",
+		"zh-Hans": "梦见野",
+		"zh-Hant": "夢見野"
+	}
+}, {
+	"id": "Kanto.Joso.Inatoi",
+	"railway": "Kanto.Joso",
+	"coord": [140.0224008, 35.9262947],
+	"title": {
+		"ja": "稲戸井",
+		"en": "Inatoi",
+		"ko": "이나토이",
+		"zh-Hans": "稻户井",
+		"zh-Hant": "稻戶井"
+	}
+}, {
+	"id": "Kanto.Joso.Togashira",
+	"railway": "Kanto.Joso",
+	"coord": [140.0141759, 35.9294755],
+	"title": {
+		"ja": "戸頭",
+		"en": "Togashira",
+		"ko": "도가시라",
+		"zh-Hans": "户头",
+		"zh-Hant": "戶頭"
+	}
+}, {
+	"id": "Kanto.Joso.MinamiMoriya",
+	"railway": "Kanto.Joso",
+	"coord": [140.0024794, 35.9342845],
+	"title": {
+		"ja": "南守谷",
+		"en": "Minami-Moriya",
+		"ko": "미나미모리야",
+		"zh-Hans": "南守谷",
+		"zh-Hant": "南守谷"
+	}
+}, {
+	"id": "Kanto.Joso.Moriya",
+	"railway": "Kanto.Joso",
+	"coord": [139.9920363, 35.9510997],
+	"title": {
+		"ja": "守谷",
+		"en": "Moriya",
+		"ko": "모리야",
+		"zh-Hans": "守谷",
+		"zh-Hant": "守谷"
+	}
+}, {
+	"id": "Kanto.Joso.ShinMoriya",
+	"railway": "Kanto.Joso",
+	"coord": [139.9856512, 35.9665144],
+	"title": {
+		"ja": "新守谷",
+		"en": "Shin-Moriya",
+		"ko": "신모리야",
+		"zh-Hans": "新守谷",
+		"zh-Hant": "新守谷"
+	}
+}, {
+	"id": "Kanto.Joso.Kokinu",
+	"railway": "Kanto.Joso",
+	"coord": [139.9833418, 35.9808767],
+	"title": {
+		"ja": "小絹",
+		"en": "Kokinu",
+		"ko": "고키누",
+		"zh-Hans": "小绢",
+		"zh-Hant": "小絹"
+	}
+}, {
+	"id": "Kanto.Joso.Mitsukaido",
+	"railway": "Kanto.Joso",
+	"coord": [139.9915668, 36.0180189],
+	"title": {
+		"ja": "水海道",
+		"en": "Mitsukaido",
+		"ko": "미쓰카이도",
+		"zh-Hans": "水海道",
+		"zh-Hant": "水海道"
+	}
+}, {
+	"id": "Kanto.Joso.KitaMitsukaido",
+	"railway": "Kanto.Joso",
+	"coord": [139.992861, 36.0320855],
+	"title": {
+		"ja": "北水海道",
+		"en": "Kita-Mitsukaido",
+		"ko": "기타미쓰카이도",
+		"zh-Hans": "北水海道",
+		"zh-Hant": "北水海道"
+	}
+}, {
+	"id": "Kanto.Joso.Nakatsuma",
+	"railway": "Kanto.Joso",
+	"coord": [139.9906455, 36.0472166],
+	"title": {
+		"ja": "中妻",
+		"en": "Nakatsuma",
+		"ko": "나카쓰마",
+		"zh-Hans": "中妻",
+		"zh-Hant": "中妻"
+	}
+}, {
+	"id": "Kanto.Joso.Mitsuma",
+	"railway": "Kanto.Joso",
+	"coord": [139.983024, 36.0735656],
+	"title": {
+		"ja": "三妻",
+		"en": "Mitsuma",
+		"ko": "미쓰마",
+		"zh-Hans": "三妻",
+		"zh-Hant": "三妻"
+	}
+}, {
+	"id": "Kanto.Joso.MinamiIshige",
+	"railway": "Kanto.Joso",
+	"coord": [139.9738622, 36.1023895],
+	"title": {
+		"ja": "南石下",
+		"en": "Minami-Ishige",
+		"ko": "미나미이시게",
+		"zh-Hans": "南石下",
+		"zh-Hant": "南石下"
+	}
+}, {
+	"id": "Kanto.Joso.Ishige",
+	"railway": "Kanto.Joso",
+	"coord": [139.9742525, 36.1172237],
+	"title": {
+		"ja": "石下",
+		"en": "Ishige",
+		"ko": "이시게",
+		"zh-Hans": "石下",
+		"zh-Hant": "石下"
+	}
+}, {
+	"id": "Kanto.Joso.Tamamura",
+	"railway": "Kanto.Joso",
+	"coord": [139.9698611, 36.1356647],
+	"title": {
+		"ja": "玉村",
+		"en": "Tamamura",
+		"ko": "다마무라",
+		"zh-Hans": "玉村",
+		"zh-Hant": "玉村"
+	}
+}, {
+	"id": "Kanto.Joso.Sodo",
+	"railway": "Kanto.Joso",
+	"coord": [139.9705195, 36.1541067],
+	"title": {
+		"ja": "宗道",
+		"en": "Sodo",
+		"ko": "소도",
+		"zh-Hans": "宗道",
+		"zh-Hant": "宗道"
+	}
+}, {
+	"id": "Kanto.Joso.Shimotsuma",
+	"railway": "Kanto.Joso",
+	"coord": [139.9644363, 36.1820063],
+	"title": {
+		"ja": "下妻",
+		"en": "Shimotsuma",
+		"ko": "시모쓰마",
+		"zh-Hans": "下妻",
+		"zh-Hant": "下妻"
+	}
+}, {
+	"id": "Kanto.Joso.Daiho",
+	"railway": "Kanto.Joso",
+	"coord": [139.9702929, 36.2031008],
+	"title": {
+		"ja": "大宝",
+		"en": "Daiho",
+		"ko": "다이호",
+		"zh-Hans": "大宝",
+		"zh-Hant": "大寶"
+	}
+}, {
+	"id": "Kanto.Joso.Tobanoe",
+	"railway": "Kanto.Joso",
+	"coord": [139.9764083, 36.223245],
+	"title": {
+		"ja": "騰波ノ江",
+		"en": "Tobanoe",
+		"ko": "도바노에",
+		"zh-Hans": "腾波之江",
+		"zh-Hant": "騰波之江"
+	}
+}, {
+	"id": "Kanto.Joso.Kurogo",
+	"railway": "Kanto.Joso",
+	"coord": [139.9749928, 36.2473114],
+	"title": {
+		"ja": "黒子",
+		"en": "Kurogo",
+		"ko": "구로고",
+		"zh-Hans": "黑子",
+		"zh-Hant": "黑子"
+	}
+}, {
+	"id": "Kanto.Joso.Otago",
+	"railway": "Kanto.Joso",
+	"coord": [139.9596405, 36.2782142],
+	"title": {
+		"ja": "大田郷",
+		"en": "Otago",
+		"ko": "오타고",
+		"zh-Hans": "大田乡",
+		"zh-Hant": "大田鄉"
+	}
+}, {
+	"id": "Kanto.Joso.Shimodate",
+	"railway": "Kanto.Joso",
+	"coord": [139.9780655, 36.3041016],
+	"title": {
+		"ja": "下館",
+		"en": "Shimodate",
+		"ko": "시모다테",
+		"zh-Hans": "下馆",
+		"zh-Hant": "下館"
+	}
+}, {
+	"id": "Kanto.Ryugasaki.Sanuki",
+	"railway": "Kanto.Ryugasaki",
+	"coord": [140.1384245, 35.929602],
+	"title": {
+		"ja": "佐貫",
+		"en": "Sanuki",
+		"ko": "사누키",
+		"zh-Hans": "佐贯",
+		"zh-Hant": "佐貫"
+	}
+}, {
+	"id": "Kanto.Ryugasaki.Ireji",
+	"railway": "Kanto.Ryugasaki",
+	"coord": [140.1569553, 35.9191832],
+	"title": {
+		"ja": "入地",
+		"en": "Ireji",
+		"ko": "이레지",
+		"zh-Hans": "入地",
+		"zh-Hant": "入地"
+	}
+}, {
+	"id": "Kanto.Ryugasaki.Ryugasaki",
+	"railway": "Kanto.Ryugasaki",
+	"coord": [140.1792678, 35.9085243],
+	"title": {
+		"ja": "竜ケ崎",
+		"en": "Ryugasaki",
+		"ko": "류가사키",
+		"zh-Hans": "龙崎",
+		"zh-Hant": "龍崎",
+		"ja-Wiki": "竜ヶ崎駅"
 	}
 }, {
 	"id": "Yurikamome.Yurikamome.Shimbashi",
@@ -15122,7 +15431,7 @@
 }, {
 	"id": "TokyoMonorail.HanedaAirport.Seibijo",
 	"railway": "TokyoMonorail.HanedaAirport",
-	"coord": [139.753410, 35.555183],
+	"coord": [139.75341, 35.555183],
 	"title": {
 		"ja": "整備場",
 		"en": "Seibijo",

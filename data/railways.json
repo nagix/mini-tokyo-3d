@@ -1408,6 +1408,68 @@
 	"color": "#EF59A1",
 	"carComposition": 6
 }, {
+	"id": "Kanto.Joso",
+	"title": {
+		"ja": "常総線",
+		"en": "Joso line",
+		"ko": " 선",
+		"zh-Hans": "线",
+		"zh-Hant": "線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"Kanto.Joso.Toride",
+			"Kanto.Joso.NishiToride",
+			"Kanto.Joso.Terahara",
+			"Kanto.Joso.ShinToride",
+			"Kanto.Joso.Yumemino",
+			"Kanto.Joso.Inatoi",
+			"Kanto.Joso.Togashira",
+			"Kanto.Joso.MinamiMoriya",
+			"Kanto.Joso.Moriya",
+			"Kanto.Joso.ShinMoriya",
+			"Kanto.Joso.Kokinu",
+			"Kanto.Joso.Mitsukaido",
+			"Kanto.Joso.KitaMitsukaido",
+			"Kanto.Joso.Nakatsuma",
+			"Kanto.Joso.Mitsuma",
+			"Kanto.Joso.MinamiIshige",
+			"Kanto.Joso.Ishige",
+			"Kanto.Joso.Tamamura",
+			"Kanto.Joso.Sodo",
+			"Kanto.Joso.Shimotsuma",
+			"Kanto.Joso.Daiho",
+			"Kanto.Joso.Tobanoe",
+			"Kanto.Joso.Kurogo",
+			"Kanto.Joso.Otago",
+			"Kanto.Joso.Shimodate"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#2C94B6",
+	"carComposition": 2
+}, {
+	"id": "Kanto.Ryugasaki",
+	"title": {
+		"ja": "竜ケ崎線",
+		"en": "Ryugasaki line",
+		"ko": "류가사키 선",
+		"zh-Hans": "龙崎线",
+		"zh-Hant": "龍崎線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"Kanto.Ryugasaki.Sanuki",
+			"Kanto.Ryugasaki.Ireji",
+			"Kanto.Ryugasaki.Ryugasaki"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#2C94B6",
+	"carComposition": 2
+}, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {
 		"zh-Hant": "百合鷗線"
