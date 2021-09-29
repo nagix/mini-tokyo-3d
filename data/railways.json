@@ -1493,6 +1493,41 @@
 	"color": "#C64F24",
 	"carComposition": 2
 }, {
+	"id": "Kominato.Kominato",
+	"title": {
+		"ja": "小湊鉄道線",
+		"en": "Kominato Line",
+		"ko": "고미나토 철도선",
+		"zh-Hans": "小凑铁道线",
+		"zh-Hant": "小湊鐵道線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"Kominato.Kominato.Goi",
+			"Kominato.Kominato.KazusaMurakami",
+			"Kominato.Kominato.Amaariki",
+			"Kominato.Kominato.KazusaMitsumata",
+			"Kominato.Kominato.KazusaYamada",
+			"Kominato.Kominato.Kofudai",
+			"Kominato.Kominato.Umatate",
+			"Kominato.Kominato.KazusaUshiku",
+			"Kominato.Kominato.KazusaKawama",
+			"Kominato.Kominato.KazusaTsurumai",
+			"Kominato.Kominato.KazusaKubo",
+			"Kominato.Kominato.Takataki",
+			"Kominato.Kominato.Satomi",
+			"Kominato.Kominato.Itabu",
+			"Kominato.Kominato.Tsukizaki",
+			"Kominato.Kominato.KazusaOkubo",
+			"Kominato.Kominato.Yorokeikoku",
+			"Kominato.Kominato.KazusaNakano"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#D74F32",
+	"carComposition": 4
+}, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {
 		"zh-Hant": "百合鷗線"
