@@ -1528,6 +1528,37 @@
 	"color": "#D74F32",
 	"carComposition": 4
 }, {
+	"id": "Isumi.Isumi",
+	"title": {
+		"ja": "いすみ線",
+		"en": "Isumi Line",
+		"ko": "이스미 선",
+		"zh-Hans": "夷隅线",
+		"zh-Hant": "夷隅線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"Isumi.Isumi.Ohara",
+			"Isumi.Isumi.NishiOhara",
+			"Isumi.Isumi.KazusaAzuma",
+			"Isumi.Isumi.Nittano",
+			"Isumi.Isumi.Kuniyoshi",
+			"Isumi.Isumi.KazusaNakagawa",
+			"Isumi.Isumi.Shiromigaoka",
+			"Isumi.Isumi.Otaki",
+			"Isumi.Isumi.Koyamatsu",
+			"Isumi.Isumi.HigashiFusamoto",
+			"Isumi.Isumi.Kugahara",
+			"Isumi.Isumi.Fusamoto",
+			"Isumi.Isumi.Nishihata",
+			"Isumi.Isumi.KazusaNakano"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#FFD400",
+	"carComposition": 2
+}, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {
 		"zh-Hant": "百合鷗線"
