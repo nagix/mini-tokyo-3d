@@ -1566,6 +1566,37 @@
 	"color": "#27404E",
 	"carComposition": 6
 }, {
+	"id": "YSL.KanazawaSeasideLine",
+	"title": {
+		"ja": "金沢シーサイドライン",
+		"en": "Kanazawa Seaside Line",
+		"ko": "가나자와 시사이드 라인",
+		"zh-Hans": "金泽海岸线",
+		"zh-Hant": "金澤海岸線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"YSL.KanazawaSeasideLine.ShinSugita",
+			"YSL.KanazawaSeasideLine.NambuShijo",
+			"YSL.KanazawaSeasideLine.Torihama",
+			"YSL.KanazawaSeasideLine.NamikiKita",
+			"YSL.KanazawaSeasideLine.NamikiChuo",
+			"YSL.KanazawaSeasideLine.Sachiura",
+			"YSL.KanazawaSeasideLine.SangyoShinkoCenter",
+			"YSL.KanazawaSeasideLine.Fukuura",
+			"YSL.KanazawaSeasideLine.ShidaiIgakubu",
+			"YSL.KanazawaSeasideLine.Hakkeijima",
+			"YSL.KanazawaSeasideLine.UminokoenShibaguchi",
+			"YSL.KanazawaSeasideLine.UminokoenMinamiguchi",
+			"YSL.KanazawaSeasideLine.Nojimakoen",
+			"YSL.KanazawaSeasideLine.KanazawaHakkei"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#F68B1E",
+	"carComposition": 5
+}, {
 	"id": "TokyoMonorail.HanedaAirport",
 	"title": {
 		"ko": "하네다 공항선",
