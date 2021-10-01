@@ -16,8 +16,8 @@ const OPERATORS_FOR_TRAINTYPES = {
         'Yurikamome',
         'MIR',
         'TamaMonorail'
-    ],
-    odpt: []
+    ]
+//    odpt: []
 };
 
 export default async function(options) {

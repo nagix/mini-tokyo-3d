@@ -22,8 +22,8 @@ const OPERATORS_FOR_TRAININFORMATION = {
         'Tokyu',
         'MIR',
         'TamaMonorail'
-    ],
-    odpt: []
+    ]
+//    odpt: []
 };
 
 const OPERATORS_FOR_FLIGHTINFORMATION = [

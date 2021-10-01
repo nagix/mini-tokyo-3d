@@ -40,8 +40,8 @@ const OPERATORS_FOR_STATIONS = {
         'Fujikyu',
         'MIR',
         'TamaMonorail'
-    ]],
-    odpt: []
+    ]]
+//    odpt: []
 };
 
 export default async function(options) {

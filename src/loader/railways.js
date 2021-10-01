@@ -26,8 +26,8 @@ const OPERATORS_FOR_RAILWAYS = {
         'TokyoMonorail',
         'MIR',
         'TamaMonorail'
-    ],
-    odpt: []
+    ]
+//    odpt: []
 };
 
 export default async function(options) {

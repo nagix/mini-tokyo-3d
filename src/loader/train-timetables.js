@@ -94,8 +94,8 @@ const RAILWAYS_FOR_TRAINTIMETABLES = {
     ], [
         'MIR.TsukubaExpress',
         'TamaMonorail.TamaMonorail'
-    ]],
-    odpt: []
+    ]]
+//    odpt: []
 };
 
 const RAILWAY_JOBANRAPID = 'JR-East.JobanRapid',
