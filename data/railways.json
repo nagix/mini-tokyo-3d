@@ -1559,6 +1559,38 @@
 	"color": "#FFD400",
 	"carComposition": 2
 }, {
+	"id": "EER.Enoshima",
+	"title": {
+		"ja": "江ノ島電鉄線",
+		"en": "Enoshima Electric Railway Line",
+		"ko": "에노시마 전철선",
+		"zh-Hans": "江之岛电铁线",
+		"zh-Hant": "江之島電鐵線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"EER.Enoshima.Fujisawa",
+			"EER.Enoshima.Ishigami",
+			"EER.Enoshima.Yanagikoji",
+			"EER.Enoshima.Kugenuma",
+			"EER.Enoshima.Shonankaigankoen",
+			"EER.Enoshima.Enoshima",
+			"EER.Enoshima.Koshigoe",
+			"EER.Enoshima.KamakuraKokoMae",
+			"EER.Enoshima.Shichirigahama",
+			"EER.Enoshima.Inamuragasaki",
+			"EER.Enoshima.Gokurakuji",
+			"EER.Enoshima.Hase",
+			"EER.Enoshima.Yuigahama",
+			"EER.Enoshima.Wadazuka",
+			"EER.Enoshima.Kamakura"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#005B1A",
+	"carComposition": 4
+}, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {
 		"zh-Hant": "百合鷗線"
@@ -1684,4 +1716,29 @@
 	"ascending": "Outbound",
 	"color": "#2843BA",
 	"carComposition": 2
+}, {
+	"id": "ShonanMonorail.Enoshima",
+	"title": {
+		"ja": "江ノ島線",
+		"en": "Enoshima Line",
+		"ko": "에노시마 선",
+		"zh-Hans": "江之岛线",
+		"zh-Hant": "江之島線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"ShonanMonorail.Enoshima.Ofuna",
+			"ShonanMonorail.Enoshima.Fujimicho",
+			"ShonanMonorail.Enoshima.ShonanMachiya",
+			"ShonanMonorail.Enoshima.ShonanFukasawa",
+			"ShonanMonorail.Enoshima.NishiKamakura",
+			"ShonanMonorail.Enoshima.Kataseyama",
+			"ShonanMonorail.Enoshima.Mejiroyamashita",
+			"ShonanMonorail.Enoshima.ShonanEnoshima"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#FF0000",
+	"carComposition": 3
 }]
