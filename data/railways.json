@@ -1629,6 +1629,36 @@
 	"color": "#F68B1E",
 	"carComposition": 5
 }, {
+	"id": "SNUT.NewShuttle",
+	"title": {
+		"ja": "ニューシャトル",
+		"en": "New Shuttle",
+		"ko": "뉴셔틀",
+		"zh-Hans": "New Shuttle",
+		"zh-Hant": "New Shuttle"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"SNUT.NewShuttle.Omiya",
+			"SNUT.NewShuttle.TetsudoHakubutsukan",
+			"SNUT.NewShuttle.Kamonomiya",
+			"SNUT.NewShuttle.HigashiMiyahara",
+			"SNUT.NewShuttle.Komba",
+			"SNUT.NewShuttle.Yoshinohara",
+			"SNUT.NewShuttle.Haraichi",
+			"SNUT.NewShuttle.Shonan",
+			"SNUT.NewShuttle.Maruyama",
+			"SNUT.NewShuttle.Shiku",
+			"SNUT.NewShuttle.InaChuo",
+			"SNUT.NewShuttle.Hanuki",
+			"SNUT.NewShuttle.Uchijuku"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#FFFF00",
+	"carComposition": 6
+}, {
 	"id": "Yamaman.Yukarigaoka",
 	"title": {
 		"ja": "ユーカリが丘線",
