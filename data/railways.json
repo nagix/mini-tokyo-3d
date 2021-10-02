@@ -1452,7 +1452,7 @@
 }, {
 	"id": "Kanto.Ryugasaki",
 	"title": {
-		"ja": "竜ケ崎線",
+		"ja": "竜ヶ崎線",
 		"en": "Ryugasaki Line",
 		"ko": "류가사키 선",
 		"zh-Hans": "龙崎线",
@@ -1628,6 +1628,32 @@
 	"ascending": "Outbound",
 	"color": "#F68B1E",
 	"carComposition": 5
+}, {
+	"id": "Yamaman.Yukarigaoka",
+	"title": {
+		"ja": "ユーカリが丘線",
+		"en": "Yukarigaoka Line",
+		"ko": "유카리가오카 선",
+		"zh-Hans": "有加利丘线",
+		"zh-Hant": "有加利丘線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"Yamaman.Yukarigaoka.Yukarigaoka",
+			"Yamaman.Yukarigaoka.ChikuCenter",
+			"Yamaman.Yukarigaoka.Koen",
+			"Yamaman.Yukarigaoka.Joshidai",
+			"Yamaman.Yukarigaoka.Chugakko",
+			"Yamaman.Yukarigaoka.Ino",
+			"Yamaman.Yukarigaoka.Koen.1",
+			"Yamaman.Yukarigaoka.ChikuCenter.1",
+			"Yamaman.Yukarigaoka.Yukarigaoka.1"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#2F9D66",
+	"carComposition": 3
 }, {
 	"id": "TokyoMonorail.HanedaAirport",
 	"title": {

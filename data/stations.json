@@ -10342,6 +10342,7 @@
 	}
 }, {
 	"id": "Keisei.Main.Yukarigaoka",
+	"coord": [140.1563758, 35.7217309],
 	"title": {
 		"zh-Hant": "有加利丘"
 	}
@@ -15282,12 +15283,11 @@
 	"railway": "Kanto.Ryugasaki",
 	"coord": [140.1792678, 35.9085243],
 	"title": {
-		"ja": "竜ケ崎",
+		"ja": "竜ヶ崎",
 		"en": "Ryugasaki",
 		"ko": "류가사키",
 		"zh-Hans": "龙崎",
-		"zh-Hant": "龍崎",
-		"ja-Wiki": "竜ヶ崎駅"
+		"zh-Hant": "龍崎"
 	}
 }, {
 	"id": "Ryutetsu.Nagareyama.Mabashi",
@@ -15327,12 +15327,11 @@
 	"railway": "Ryutetsu.Nagareyama",
 	"coord": [139.910894, 35.84101],
 	"title": {
-		"ja": "鰭ケ崎",
+		"ja": "鰭ヶ崎",
 		"en": "Hiregasaki",
 		"ko": "히레가사키",
 		"zh-Hans": "鳍崎",
-		"zh-Hant": "鰭崎",
-		"ja-Wiki": "鰭ヶ崎駅"
+		"zh-Hant": "鰭崎"
 	}
 }, {
 	"id": "Ryutetsu.Nagareyama.Heiwadai",
@@ -16113,6 +16112,106 @@
 		"ko": "가나자와핫케이",
 		"zh-Hans": "金泽八景",
 		"zh-Hant": "金澤八景"
+	}
+}, {
+	"id": "Yamaman.Yukarigaoka.Yukarigaoka",
+	"railway": "Yamaman.Yukarigaoka",
+	"coord": [140.1569777, 35.7221099],
+	"title": {
+		"ja": "ユーカリが丘",
+		"en": "Yukarigaoka",
+		"ko": "유카리가오카",
+		"zh-Hans": "有加利丘",
+		"zh-Hant": "有加利丘"
+	}
+}, {
+	"id": "Yamaman.Yukarigaoka.ChikuCenter",
+	"railway": "Yamaman.Yukarigaoka",
+	"coord": [140.1552964, 35.7259481],
+	"title": {
+		"ja": "地区センター",
+		"en": "Chiku Center",
+		"ko": "지쿠센터",
+		"zh-Hans": "地区中心",
+		"zh-Hant": "地區中心"
+	}
+}, {
+	"id": "Yamaman.Yukarigaoka.Koen",
+	"railway": "Yamaman.Yukarigaoka",
+	"coord": [140.1537491, 35.7307393],
+	"title": {
+		"ja": "公園",
+		"en": "Koen",
+		"ko": "공원",
+		"zh-Hans": "公园",
+		"zh-Hant": "公園"
+	}
+}, {
+	"id": "Yamaman.Yukarigaoka.Joshidai",
+	"railway": "Yamaman.Yukarigaoka",
+	"coord": [140.1549737, 35.7382026],
+	"title": {
+		"ja": "女子大",
+		"en": "Joshidai",
+		"ko": "조시다이",
+		"zh-Hans": "女子大",
+		"zh-Hant": "女子大"
+	}
+}, {
+	"id": "Yamaman.Yukarigaoka.Chugakko",
+	"railway": "Yamaman.Yukarigaoka",
+	"coord": [140.1483869, 35.7402153],
+	"title": {
+		"ja": "中学校",
+		"en": "Chugakko",
+		"ko": "주갓코",
+		"zh-Hans": "中学校",
+		"zh-Hant": "中學校"
+	}
+}, {
+	"id": "Yamaman.Yukarigaoka.Ino",
+	"railway": "Yamaman.Yukarigaoka",
+	"coord": [140.1485968, 35.7326736],
+	"title": {
+		"ja": "井野",
+		"en": "Ino",
+		"ko": "이노",
+		"zh-Hans": "井野",
+		"zh-Hant": "井野",
+		"ja-Wiki": "井野駅 (千葉県)"
+	}
+}, {
+	"id": "Yamaman.Yukarigaoka.Koen.1",
+	"railway": "Yamaman.Yukarigaoka",
+	"coord": [140.1537411, 35.7307381],
+	"title": {
+		"ja": "公園",
+		"en": "Koen",
+		"ko": "공원",
+		"zh-Hans": "公园",
+		"zh-Hant": "公園"
+	}
+}, {
+	"id": "Yamaman.Yukarigaoka.ChikuCenter.1",
+	"railway": "Yamaman.Yukarigaoka",
+	"coord": [140.1552553, 35.7259449],
+	"title": {
+		"ja": "地区センター",
+		"en": "Chiku Center",
+		"ko": "지쿠센터",
+		"zh-Hans": "地区中心",
+		"zh-Hant": "地區中心"
+	}
+}, {
+	"id": "Yamaman.Yukarigaoka.Yukarigaoka.1",
+	"railway": "Yamaman.Yukarigaoka",
+	"coord": [140.1569706, 35.7221076],
+	"title": {
+		"ja": "ユーカリが丘",
+		"en": "Yukarigaoka",
+		"ko": "유카리가오카",
+		"zh-Hans": "有加利丘",
+		"zh-Hant": "有加利丘"
 	}
 }, {
 	"id": "TokyoMonorail.HanedaAirport.Hamamatsucho",
