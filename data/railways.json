@@ -960,9 +960,33 @@
 		"insert": [
 			"Seibu.SeibuChichibu.Hanno"
 		]
+	}, {
+		"index": 7,
+		"insert": [
+			"Seibu.SeibuChichibu.Kagemori"
+		]
 	}],
 	"color": "#FF6600",
 	"carComposition": 10
+}, {
+	"id": "Seibu.SeibuChichibuBranch",
+	"title": {
+		"ja": "西武秩父線",
+		"en": "Seibu-Chichibu Line",
+		"ko": "세이부 지치부 선",
+		"zh-Hans": "西武秩父线",
+		"zh-Hant": "西武秩父線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"Seibu.SeibuChichibuBranch.Yokoze",
+			"Seibu.SeibuChichibuBranch.Ohanabatake"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#FF6600",
+	"carComposition": 4
 }, {
 	"id": "Seibu.SeibuYurakucho",
 	"title": {
@@ -1590,6 +1614,60 @@
 	"ascending": "Outbound",
 	"color": "#005B1A",
 	"carComposition": 4
+}, {
+	"id": "Chichibu.Chichibu",
+	"title": {
+		"ja": "秩父本線",
+		"en": "Chichibu Main Line",
+		"ko": "지치부 본선",
+		"zh-Hans": "秩父本线",
+		"zh-Hant": "秩父本線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"Chichibu.Chichibu.Hanyu",
+			"Chichibu.Chichibu.NishiHanyu",
+			"Chichibu.Chichibu.Shingo",
+			"Chichibu.Chichibu.BushuAraki",
+			"Chichibu.Chichibu.HigashiGyoda",
+			"Chichibu.Chichibu.Gyodashi",
+			"Chichibu.Chichibu.Mochida",
+			"Chichibu.Chichibu.SocioDistributionCenter",
+			"Chichibu.Chichibu.Kumagaya",
+			"Chichibu.Chichibu.KamiKumagaya",
+			"Chichibu.Chichibu.Ishiwara",
+			"Chichibu.Chichibu.HiroseYachonoMori",
+			"Chichibu.Chichibu.Oaso",
+			"Chichibu.Chichibu.Aketo",
+			"Chichibu.Chichibu.Takekawa",
+			"Chichibu.Chichibu.Nagata",
+			"Chichibu.Chichibu.FukayaHanazono",
+			"Chichibu.Chichibu.Omaeda",
+			"Chichibu.Chichibu.Sakurazawa",
+			"Chichibu.Chichibu.Yorii",
+			"Chichibu.Chichibu.Hagure",
+			"Chichibu.Chichibu.Higuchi",
+			"Chichibu.Chichibu.Nogami",
+			"Chichibu.Chichibu.Nagatoro",
+			"Chichibu.Chichibu.KamiNagatoro",
+			"Chichibu.Chichibu.Oyahana",
+			"Chichibu.Chichibu.Minano",
+			"Chichibu.Chichibu.WadoKuroya",
+			"Chichibu.Chichibu.Onohara",
+			"Chichibu.Chichibu.Chichibu",
+			"Chichibu.Chichibu.Ohanabatake",
+			"Chichibu.Chichibu.Kagemori",
+			"Chichibu.Chichibu.Urayamaguchi",
+			"Chichibu.Chichibu.BushuNakagawa",
+			"Chichibu.Chichibu.BushuHino",
+			"Chichibu.Chichibu.Shiroku",
+			"Chichibu.Chichibu.Mitsumineguchi"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#0054A6",
+	"carComposition": 3
 }, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {
