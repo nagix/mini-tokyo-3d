@@ -11178,6 +11178,29 @@
 	"id": "Tobu.Nikko.TobuNikko",
 	"coord": [139.61993, 36.74809]
 }, {
+	"id": "Tobu.JRTobuConnection.Omiya",
+	"railway": "Tobu.JRTobuConnection",
+	"coord": [139.62427, 35.90627],
+	"title": {
+		"ja": "大宮",
+		"en": "Omiya",
+		"ko": "오미야",
+		"zh-Hans": "大宫",
+		"zh-Hant": "大宮",
+		"ja-Wiki": "大宮駅 (埼玉県)"
+	}
+}, {
+	"id": "Tobu.JRTobuConnection.Tochigi",
+	"railway": "Tobu.JRTobuConnection",
+	"coord": [139.73149, 36.37167],
+	"title": {
+		"ja": "栃木",
+		"en": "Tochigi",
+		"ko": "도치기",
+		"zh-Hans": "枥木",
+		"zh-Hant": "櫔木"
+	}
+}, {
 	"id": "Tobu.Utsunomiya.ShinTochigi",
 	"coord": [139.74235, 36.39006]
 }, {

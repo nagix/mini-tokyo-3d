@@ -894,6 +894,25 @@
 	"color": "#FFA500",
 	"carComposition": 6
 }, {
+	"id": "Tobu.JRTobuConnection",
+	"title": {
+		"ja": "日光線",
+		"en": "Nikko Line",
+		"ko": "닛코선",
+		"zh-Hans": "日光线",
+		"zh-Hant": "日光線"
+	},
+	"stations": [{
+		"index": 0,
+		"insert": [
+			"Tobu.JRTobuConnection.Omiya",
+			"Tobu.JRTobuConnection.Tochigi"
+		]
+	}],
+	"ascending": "Outbound",
+	"color": "#FFA500",
+	"carComposition": 6
+}, {
 	"id": "Tobu.Utsunomiya",
 	"color": "#FFA500",
 	"carComposition": 4

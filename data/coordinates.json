@@ -39430,6 +39430,55 @@
 		}],
 		"color": "#FFA500"
 	}, {
+		"id": "Tobu.JRTobuConnection",
+		"sublines": [{
+			"type": "sub",
+			"start": {
+				"railway": "JR-East.Utsunomiya",
+				"offset": 0
+			},
+			"coords": [
+				[139.6243375, 35.905574],
+				[139.6940977, 36.136417]
+			],
+			"end": {
+				"railway": "JR-East.Utsunomiya",
+				"offset": 0
+			},
+			"opacity": 0
+		}, {
+			"type": "sub",
+			"start": {
+				"railway": "JR-East.Utsunomiya",
+				"offset": 0
+			},
+			"coords": [
+				[139.6940977, 36.136417],
+				[139.6943481, 36.1400101]
+			],
+			"end": {
+				"railway": "Tobu.Nikko",
+				"offset": 0
+			},
+			"interpolate": 20
+		}, {
+			"type": "sub",
+			"start": {
+				"railway": "Tobu.Nikko",
+				"offset": 0
+			},
+			"coords": [
+				[139.6943481, 36.1400101],
+				[139.7316127, 36.3717594]
+			],
+			"end": {
+				"railway": "Tobu.Nikko",
+				"offset": 0
+			},
+			"opacity": 0
+		}],
+		"color": "#FFA500"
+	}, {
 		"id": "Tobu.Utsunomiya",
 		"sublines": [{
 			"type": "main",
