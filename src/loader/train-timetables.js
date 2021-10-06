@@ -84,6 +84,8 @@ const RAILWAYS_FOR_TRAINTIMETABLES = {
         'Toei.Oedo',
         'Toei.NipporiToneri'
     ], [
+        'Toei.Arakawa'
+    ], [
         'YokohamaMunicipal.Blue',
         'YokohamaMunicipal.Green'
     ], [
@@ -519,5 +521,7 @@ async function process(options, calendar, postfix) {
 
 export default async function(options) {
     await process(options, 'Weekday', 'weekday');
+    await process(options, 'Saturday', 'saturday');
+    await process(options, 'Holiday', 'sunday-holiday');
     await process(options, 'SaturdayHoliday', 'holiday');
 }

@@ -42,6 +42,18 @@ function getTimetableFileName(clock) {
     return `timetable-${calendar}.json.gz`;
 }
 
+function getExtraTimetableFileNames(clock) {
+    const calendar = clock.getCalendar();
+
+    if (calendar === 'Saturday') {
+        return ['timetable-saturday.json.gz'];
+    }
+    if (calendar === 'Holiday') {
+        return ['timetable-sunday-holiday.json.gz'];
+    }
+    return [];
+}
+
 function adjustTrainID(id, type, destination) {
     if (type === TRAINTYPE_JREAST_LIMITEDEXPRESS &&
         destination[0].match(/NaritaAirportTerminal1|Takao|Ofuna|Omiya|Ikebukuro|Shinjuku/)) {
@@ -58,6 +70,8 @@ function adjustTrainID(id, type, destination) {
  * @returns {object} Loaded data
  */
 export function loadStaticData(dataUrl, lang, clock) {
+    const extra = getExtraTimetableFileNames(clock);
+
     return Promise.all([
         `${dataUrl}/dictionary-${lang}.json`,
         `${dataUrl}/railways.json.gz`,
@@ -70,13 +84,14 @@ export function loadStaticData(dataUrl, lang, clock) {
         `${dataUrl}/operators.json.gz`,
         `${dataUrl}/airports.json.gz`,
         `${dataUrl}/flight-statuses.json.gz`,
-        `${dataUrl}/poi.json.gz`
+        `${dataUrl}/poi.json.gz`,
+        ...extra.map(name => `${dataUrl}/${name}`)
     ].map(loadJSON)).then(data => ({
         dict: data[0],
         railwayData: data[1],
         stationData: data[2],
         featureCollection: data[3],
-        timetableData: data[4],
+        timetableData: data[4].concat(...data.slice(12)),
         railDirectionData: data[5],
         trainTypeData: data[6],
         trainVehicleData: data[7],
@@ -94,7 +109,12 @@ export function loadStaticData(dataUrl, lang, clock) {
  * @returns {object} Loaded timetable data
  */
 export function loadTimetableData(dataUrl, clock) {
-    return loadJSON(`${dataUrl}/${getTimetableFileName(clock)}`);
+    const extra = getExtraTimetableFileNames(clock);
+
+    return Promise.all([
+        `${dataUrl}/${getTimetableFileName(clock)}`,
+        ...extra.map(name => `${dataUrl}/${name}`)
+    ].map(loadJSON)).then(data => data[0].concat(...data.slice(1)));
 }
 
 /**

@@ -30,7 +30,8 @@ const OPERATORS_FOR_DYNAMIC_TRAIN_DATA = [
 ];
 
 const RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
-    RAILWAY_MITA = 'Toei.Mita';
+    RAILWAY_MITA = 'Toei.Mita',
+    RAILWAY_ARAKAWA = 'Toei.Arakawa';
 
 const AIRLINES_FOR_ANA_CODE_SHARE = ['ADO', 'SFJ', 'SNJ'];
 
@@ -1846,6 +1847,11 @@ export default class extends Evented {
                 } else if (trainRef.r) {
                     // Exclude Namboku line trains that connect to/from Mita line
                     if (trainRef.r === RAILWAY_NAMBOKU && (trainRef.os[0].startsWith(RAILWAY_MITA) || trainRef.ds[0].startsWith(RAILWAY_MITA))) {
+                        return;
+                    }
+
+                    // Exclude Arakawa line trains
+                    if (trainRef.r === RAILWAY_ARAKAWA) {
                         return;
                     }
 
