@@ -2,7 +2,7 @@
 
 ## 画面の説明
 
-<img :src="$withBase('/images/screen.jpg')" style="width: 660px;">
+<img :src="$withBase('/images/screen.jpg')" style="width: 659px;">
 
 1. **時刻表示**: [時刻表示](#%E6%99%82%E5%88%BB%E8%A1%A8%E7%A4%BA)をご覧ください
 2. **検索ボタン**: [経路検索](#%E7%B5%8C%E8%B7%AF%E6%A4%9C%E7%B4%A2)をご覧ください
@@ -18,7 +18,7 @@
 
 ## 地図の拡大・縮小
 
-<img :src="$withBase('/images/zoom.jpg')" style="width: 244px;"> <img :src="$withBase('/images/zoom-icon.jpg')" style="width: 50px; vertical-align: top">
+<img :src="$withBase('/images/zoom.jpg')" style="width: 244px;"> <img :src="$withBase('/images/zoom-icon.jpg')" style="width: 50px; vertical-align: top;">
 
 「＋」「−」アイコンボタンをクリックまたはタップすると、地図を拡大・縮小することができます。また、マウスホイールの回転または画面のピンチイン・アウトで地図を拡大・縮小することができます。
 
@@ -28,7 +28,7 @@
 
 ## 地図の回転と傾きの変更
 
-<img :src="$withBase('/images/rotate-tilt.jpg')" style="width: 244px;"> <img :src="$withBase('/images/compass-icon.jpg')" style="width: 49px; vertical-align: top">
+<img :src="$withBase('/images/rotate-tilt.jpg')" style="width: 244px;"> <img :src="$withBase('/images/compass-icon.jpg')" style="width: 49px; vertical-align: top;">
 
 コンパスアイコンは、地図の向きを表しています。コンパスアイコンボタンを押して左右方向にドラッグすると、地図を回転させることができます。また、マウスの右ボタンを押してドラッグ、またはキーボードの Ctrl キーを押しながらマウスの左ボタンを押してドラッグすることで地図の回転と傾きを変更することができます。2本指で上下方向にドラッグして地図の傾きを変更することもできます。
 
@@ -40,13 +40,13 @@
 
 <img :src="$withBase('/images/clock.jpg')" style="width: 141px;">
 
-画面左上に現在時刻が表示されます。常に日本時間が表示されるため、海外からのアクセス時に便利です。[再生モード](./display-modes.md#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%89)がオンの状態では、現在時刻の他に時刻や時間の経過速度を変更するためのボタンが表示されます。
+画面左上に現在時刻が表示されます。常に日本時間が表示されるため、海外からのアクセス時に便利です。[再生モード](./display-modes.md#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%88%E3%82%99)がオンの状態では、現在時刻の他に時刻や時間の経過速度を変更するためのボタンが表示されます。
 
-再生モードの詳細については[こちら](./display-modes.md#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%89)をご覧ください。
+再生モードの詳細については[こちら](./display-modes.md#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%88%E3%82%99)をご覧ください。
 
 ## 列車・旅客機の詳細情報の表示
 
-<img :src="$withBase('/images/train-details.jpg')" style="width: 216px;"> <img :src="$withBase('/images/flight-details.jpg')" style="width: 216px;">
+<img :src="$withBase('/images/train-details.jpg')" style="width: 216px;"> <img :src="$withBase('/images/flight-details.jpg')" style="width: 216px; vertical-align: top;">
 
 列車や旅客機にマウスポインタを合わせたり、タップをすると列車や旅客機の詳細情報が表示されます。列車の詳細情報は、路線名、列車種別、行先、列車番号、前駅または停車駅と発車時刻、次駅と到着時刻、遅延時間、運行情報を含みます。旅客機の詳細情報は、航空会社名、便名、出発地または到着地、状況、出発時刻または到着時刻、コードシェアを含みます。列車の遅延もしくは旅客機のスケジュール変更がある場合は、変更部分がオレンジ色でハイライトされます。
 
@@ -58,15 +58,15 @@
 
 ## 列車・旅客機の追跡
 
-列車や旅客機をクリックまたはタップすると、[追跡モード](./display-modes.md#%E8%BF%BD%E8%B7%A1%E3%83%A2%E3%83%BC%E3%83%89)がオンに切り替わり、列車や旅客機の動きに追随して画面が自動的に移動します。追跡モードには「ヘリコプター追跡モード」と「進行方向追跡モード」の2種類があり、お好みの追跡モードで沿線の風景を楽しむことができます。追跡モードがオンの状態では、地図のスクロール・回転操作は無効になります（拡大・縮小、傾きの変更は可能です）。列車や旅客機が存在しない地図上をクリックすると、追跡モードがオフに切り替わります。
+列車や旅客機をクリックまたはタップすると、[追跡モード](./display-modes.md#%E8%BF%BD%E8%B7%A1%E3%83%A2%E3%83%BC%E3%83%88%E3%82%99)がオンに切り替わり、列車や旅客機の動きに追随して画面が自動的に移動します。追跡モードには「ヘリコプター追跡モード」と「進行方向追跡モード」の2種類があり、お好みの追跡モードで沿線の風景を楽しむことができます。追跡モードがオンの状態では、地図のスクロール・回転操作は無効になります（拡大・縮小、傾きの変更は可能です）。列車や旅客機が存在しない地図上をクリックすると、追跡モードがオフに切り替わります。
 
-追跡モードの詳細については[こちら](./display-modes.md#%E8%BF%BD%E8%B7%A1%E3%83%A2%E3%83%BC%E3%83%89)をご覧ください。
+追跡モードの詳細については[こちら](./display-modes.md#%E8%BF%BD%E8%B7%A1%E3%83%A2%E3%83%BC%E3%83%88%E3%82%99)をご覧ください。
 
 ## 列車・フライトのシェア
 
 <img :src="$withBase('/images/share-button.jpg')" style="width: 211px;">
 
-[追跡モード](./display-modes.md#%E8%BF%BD%E8%B7%A1%E3%83%A2%E3%83%BC%E3%83%89)がオンの状態では、画面上部に「この列車をシェア」または「このフライトをシェア」ボタンが表示されます。ボタンをクリックすると、利用しているデバイスに応じて追加のメニューが表示され、追跡中の列車やフライトを示す URL と任意のメッセージをメッセージアプリやメール、SNSアプリなどで送信することができます。情報を受け取った人がその URL をブラウザで開くと、同じ列車やフライトを追跡した状態で Mini Tokyo 3D が起動します。
+[追跡モード](./display-modes.md#%E8%BF%BD%E8%B7%A1%E3%83%A2%E3%83%BC%E3%83%88%E3%82%99)がオンの状態では、画面上部に「この列車をシェア」または「このフライトをシェア」ボタンが表示されます。ボタンをクリックすると、利用しているデバイスに応じて追加のメニューが表示され、追跡中の列車やフライトを示す URL と任意のメッセージをメッセージアプリやメール、SNSアプリなどで送信することができます。情報を受け取った人がその URL をブラウザで開くと、同じ列車やフライトを追跡した状態で Mini Tokyo 3D が起動します。
 
 この機能は Edge、Safari、Chrome (Android)、Opera (Android)、Samsung Internet の各ブラウザでのみ利用可能です。
 
@@ -74,7 +74,7 @@
 
 <img :src="$withBase('/images/delay-marker.jpg')" style="width: 185px;">
 
-[再生モード](./display-modes.md#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%89)がオフの状態では、1分以上遅延している列車には周囲にオレンジ色の球が表示されます。地図上のどの区間で遅れがあるかが一目瞭然です。
+[再生モード](./display-modes.md#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%88%E3%82%99)がオフの状態では、1分以上遅延している列車には周囲にオレンジ色の球が表示されます。地図上のどの区間で遅れがあるかが一目瞭然です。
 
 ## 駅出口情報の表示
 
@@ -84,7 +84,7 @@
 
 ## 経路検索
 
-<img :src="$withBase('/images/search-form.jpg')" style="width: 400px;"> <img :src="$withBase('/images/search-route.jpg')" style="width: 400px;"> <img :src="$withBase('/images/search-icon.jpg')" style="width: 49px; vertical-align: top">
+<img :src="$withBase('/images/search-form.jpg')" style="width: 400px;"> <img :src="$withBase('/images/search-route.jpg')" style="width: 400px;"> <img :src="$withBase('/images/search-icon.jpg')" style="width: 49px; vertical-align: top;">
 
 検索アイコンボタンをクリックまたはタップすると、検索ウィンドウが画面下部に現れて経路の検索が可能になります。出発駅および到着駅の駅名を入力し、出発時刻を選択して検索ボタンをクリックまたはタップすると、おすすめの経路がマップ上にハイライト表示され、検索ウィンドウには乗車する列車や発着時刻、乗り換え駅などの情報が表示されます。条件によっては複数の経路候補を表示する場合があり、検索ウィンドウ上部の「<」「>」ボタンを押すかウィンドウ上で水平方向にスワイプ操作を行うと経路を切り替えることができます。また、戻るアイコンボタンをクリックまたはタップすると検索条件の入力に戻ります。
 

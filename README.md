@@ -17,13 +17,13 @@ See a [Live Demo](https://minitokyo3d.com).
 
 ## User Guides
 
-- [User Guide (English)](https://github.com/nagix/mini-tokyo-3d/blob/master/USER_GUIDE-en.md)
-- [User Guide (Japanese)](https://github.com/nagix/mini-tokyo-3d/blob/master/USER_GUIDE-ja.md)
+- [User Guide (English)](https://minitokyo3d.com/docs/master/)
+- [User Guide (Japanese)](https://minitokyo3d.com/docs/master/ja/)
 
 ## Developer Guides
 
-- [Developer Guide (English)](https://github.com/nagix/mini-tokyo-3d/blob/master/DEVELOPER_GUIDE-en.md)
-- [Developer Guide (Japanese)](https://github.com/nagix/mini-tokyo-3d/blob/master/DEVELOPER_GUIDE-ja.md)
+- [Developer Guide (English)](https://minitokyo3d.com/docs/master/developer-guide/)
+- [Developer Guide (Japanese)](https://minitokyo3d.com/docs/master/ja/developer-guide/)
 
 ## Cheat Sheet
 

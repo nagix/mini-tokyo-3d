@@ -1,8 +1,8 @@
 # Mini Tokyo 3D User Guide
 
-日本語版は[こちら](USER_GUIDE-ja.md)でご覧いただけます。
+日本語版は[こちら](https://minitokyo3d.com/docs/master/ja/)でご覧いただけます。
 
-This document describes how to use Mini Tokyo 3D and its features. For more information for developers, see the [Mini Tokyo 3D Developer Guide](DEVELOPER_GUIDE-en.md).
+This document describes how to use Mini Tokyo 3D and its features. For more information for developers, see the [Mini Tokyo 3D Developer Guide](https://minitokyo3d.com/docs/master/developer-guide/).
 
 ## Mini Tokyo 3D Overview
 
@@ -253,10 +253,10 @@ The source of the public transportation data in this application is the Open Dat
 
 This application has been tested with the following browsers. Chrome is recommended. Internet Explorer is not supported.
 
-- Chrome 93 (Mac OS, Windows, iOS, Android)
-- FireFox 92 (Mac OS, Windows, iOS)
+- Chrome 94 (Mac OS, Windows, iOS, Android)
+- FireFox 93 (Mac OS, Windows, iOS)
 - Safari 14 (Mac OS, iOS)
-- Edge 93 (Mac OS, Windows, iOS)
+- Edge 94 (Mac OS, Windows, iOS)
 
 ## Development Information
 

@@ -10,7 +10,7 @@ When Full Screen Mode is on, you can cancel Full Screen Mode by pressing Esc key
 
 ## Underground Mode
 
-<img :src="$withBase('/images/underground.jpg')" style="width: 662px;"> <img :src="$withBase('/images/eye-icon.jpg')" style="width: 49px; vertical-align: top">
+<img :src="$withBase('/images/underground.jpg')" style="width: 662px;"> <img :src="$withBase('/images/eye-icon.jpg')" style="width: 49px; vertical-align: top;">
 
 Click or tap the eye icon button to turn Underground Mode on or off (the icon is in light blue when it is on).
 
@@ -22,7 +22,7 @@ You can also switch modes by clicking or tapping underground trains with Undergr
 
 ## Tracking Mode
 
-<img :src="$withBase('/images/helicopter-tracking.jpg')" style="width: 400px;"> <img :src="$withBase('/images/helicopter-icon.jpg')" style="width: 49px; vertical-align: top"> <img :src="$withBase('/images/rear-tracking.jpg')" style="width: 400px;"> <img :src="$withBase('/images/train-icon.jpg')" style="width: 49px; vertical-align: top">
+<img :src="$withBase('/images/helicopter-tracking.jpg')" style="width: 400px;"> <img :src="$withBase('/images/helicopter-icon.jpg')" style="width: 49px; vertical-align: top;"> <img :src="$withBase('/images/rear-tracking.jpg')" style="width: 400px;"> <img :src="$withBase('/images/train-icon.jpg')" style="width: 49px; vertical-align: top;">
 
 Click or tap on a train or airplane to turn Tracking Mode on and the screen will automatically follow the movement of the train or airplane (the icon will appear in light blue when it is on). Clicking on a map with no trains or airplanes turns Tracking Mode off.
 
@@ -44,7 +44,7 @@ When Playback Mode is off, trains and airplanes are displayed on the map accordi
 
 When Playback Mode is turned on, the “Edit date & time” button and the “+” and “-” buttons to change the playback speed appear just below the time display. If you click or tap the “Edit date & time” button, you will enter the date/time editing mode. The “+” and “-” buttons appear above and below the year, month, day, hour, minute, and second numbers. Use these buttons to change the date and time, and click or tap the "OK" button to confirm the change. Clicking or tapping the "Cancel" button will cancel the change and return to the original setting time. You can also change the playback speed by clicking or tapping the “+” and “-” buttons on the left and right of the number that indicates the speed. It can be set to between 1x (the same speed as real time) and 600x, in increments of 1 from 1x to 10x, 10 from 10x to 100x, and 100 from 100x to 600x.
 
-<img :src="$withBase('/images/clock-playback.jpg')" style="width: 141px;"> <img :src="$withBase('/images/clock-edit.jpg')" style="width: 292px; vertical-align: top">
+<img :src="$withBase('/images/clock-playback.jpg')" style="width: 141px;"> <img :src="$withBase('/images/clock-edit.jpg')" style="width: 292px; vertical-align: top;">
 
 ## Eco Mode
 
@@ -54,4 +54,4 @@ When Eco Mode is on, the display interval for trains and airplanes will be incre
 
 When Eco Mode is off, trains and airplanes are animated smoothly at 60 frames per second. Suitable for use on a PC or display device connected to a power source.
 
-<img :src="$withBase('/images/battery-icon.jpg')" style="width: 49px; vertical-align: top">
+<img :src="$withBase('/images/battery-icon.jpg')" style="width: 49px; vertical-align: top;">

@@ -10,7 +10,7 @@
 
 ## 地下モード
 
-<img :src="$withBase('/images/underground.jpg')" style="width: 662px;"> <img :src="$withBase('/images/eye-icon.jpg')" style="width: 49px; vertical-align: top">
+<img :src="$withBase('/images/underground.jpg')" style="width: 662px;"> <img :src="$withBase('/images/eye-icon.jpg')" style="width: 49px; vertical-align: top;">
 
 眼アイコンボタンをクリックまたはタップすると、地下モードのオン・オフを切り替えることができます（オンの状態でアイコンは水色で表示されます）。
 
@@ -22,7 +22,7 @@
 
 ## 追跡モード
 
-<img :src="$withBase('/images/helicopter-tracking.jpg')" style="width: 400px;"> <img :src="$withBase('/images/helicopter-icon.jpg')" style="width: 49px; vertical-align: top"> <img :src="$withBase('/images/rear-tracking.jpg')" style="width: 400px;"> <img :src="$withBase('/images/train-icon.jpg')" style="width: 49px; vertical-align: top">
+<img :src="$withBase('/images/helicopter-tracking.jpg')" style="width: 400px;"> <img :src="$withBase('/images/helicopter-icon.jpg')" style="width: 49px; vertical-align: top;"> <img :src="$withBase('/images/rear-tracking.jpg')" style="width: 400px;"> <img :src="$withBase('/images/train-icon.jpg')" style="width: 49px; vertical-align: top;">
 
 列車や旅客機をクリックまたはタップすると、追跡モードがオンに切り替わり、列車や旅客機の動きに追随して画面が自動的に移動します（オンの状態でアイコンは水色で表示されます）。列車や旅客機が存在しない地図上をクリックすると、追跡モードがオフに切り替わります。
 
@@ -44,7 +44,7 @@
 
 再生モードをオンにすると、時刻表示のすぐ下に「日付時刻を変更」ボタンと再生速度を変更するための「＋」「−」ボタンが現れます。ここで「日付時刻を変更」ボタンを押すと、日付時刻編集モードに入ります。年・月・日・時・分・秒を表す数字の上下に「＋」「−」ボタンが現れるので、このボタンを使用して日付時刻を変更し、「OK」ボタンを押すと変更が確定されます。「キャンセル」ボタンを押すと、変更がキャンセルされて元の設定時刻に戻ります。また、再生速度を表す数字の左右にある「＋」「−」ボタンを押すと、再生速度が変わります。1倍速（現実の時間の流れと同じ速度）〜600倍速の間で設定することが可能です。1〜10倍速の間は1刻み、10〜100倍速の間は10刻み、100〜600倍速の間は100刻みになります。
 
-<img :src="$withBase('/images/clock-playback.jpg')" style="width: 141px;"> <img :src="$withBase('/images/clock-edit.jpg')" style="width: 292px; vertical-align: top">
+<img :src="$withBase('/images/clock-playback.jpg')" style="width: 141px;"> <img :src="$withBase('/images/clock-edit.jpg')" style="width: 292px; vertical-align: top;">
 
 ## エコモード
 
@@ -54,4 +54,4 @@
 
 エコモードがオフの状態では、列車や航空機は60フレーム/秒の滑らかなアニメーションで表示されます。電源に繋がったPCや表示端末上での利用に適しています。
 
-<img :src="$withBase('/images/battery-icon.jpg')" style="width: 49px; vertical-align: top">
+<img :src="$withBase('/images/battery-icon.jpg')" style="width: 49px; vertical-align: top;">

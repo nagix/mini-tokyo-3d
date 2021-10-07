@@ -28,7 +28,7 @@ A box zoom can be used by dragging the mouse while holding down the Shift key on
 
 ## Rotation and Tilting
 
-<img :src="$withBase('/images/rotate-tilt.jpg')" style="width: 244px;"> <img :src="$withBase('/images/compass-icon.jpg')" style="width: 49px; vertical-align: top">
+<img :src="$withBase('/images/rotate-tilt.jpg')" style="width: 244px;"> <img :src="$withBase('/images/compass-icon.jpg')" style="width: 49px; vertical-align: top;">
 
 The compass icon represents the orientation of the map. If you press the compass icon button and drag the mouse or your finger to the left or right, you can rotate the map. You can also change the rotation and tilt of the map by dragging with the right mouse button, or by dragging with the left mouse button while holding down the Ctrl key on the keyboard. You can drag two fingers up and down to change the tilt of the map.
 
@@ -46,7 +46,7 @@ See [here](./display-modes.md#playback-mode) for details on Playback Mode.
 
 ## Displaying Detailed Information on Trains and Airplanes
 
-<img :src="$withBase('/images/train-details.jpg')" style="width: 216px;"> <img :src="$withBase('/images/flight-details.jpg')" style="width: 216px;">
+<img :src="$withBase('/images/train-details.jpg')" style="width: 216px;"> <img :src="$withBase('/images/flight-details.jpg')" style="width: 216px; vertical-align: top;">
 
 Place the mouse pointer or tap on the train or airplane to display detailed information about it. Detailed train information includes railway name, train type, destination, train number, previous or standing station and departure time, next station and arrival time, delay time, and operation information. Flight details include airline name, flight number, departure or arrival location, status, departure or arrival time, and code-share information. If there is a train delay or a flight schedule change, the change will be highlighted in orange.
 
@@ -84,7 +84,7 @@ When you click or tap on a station, the station is selected and the map around t
 
 ## Route Search
 
-<img :src="$withBase('/images/search-form.jpg')" style="width: 400px;"> <img :src="$withBase('/images/search-route.jpg')" style="width: 400px;"> <img :src="$withBase('/images/search-icon.jpg')" style="width: 49px; vertical-align: top">
+<img :src="$withBase('/images/search-form.jpg')" style="width: 400px;"> <img :src="$withBase('/images/search-route.jpg')" style="width: 400px;"> <img :src="$withBase('/images/search-icon.jpg')" style="width: 49px; vertical-align: top;">
 
 When you click or tap the search icon button, the search window appears at the bottom of the screen to allow you to search for a route. Enter the departure and arrival station names, select the departure time, and click or tap the search button. Then, a recommended route will be highlighted on the map, and the search window will display information such as the trains to take, arrival and departure times, and transfer stations. Depending on the conditions, multiple route suggestions may be displayed, and you can switch between routes by pressing the “<” and “>” buttons at the top of the search window or swiping horizontally on the window. You can also click or tap the “Back” icon button to return to the search criteria.
 

@@ -1,8 +1,8 @@
 # Mini Tokyo 3D ユーザーガイド
 
-English version is available [here](USER_GUIDE-en.md).
+English version is available [here](https://minitokyo3d.com/docs/master/).
 
-本ドキュメントは、Mini Tokyo 3D の機能や操作方法について説明します。開発者向けの情報については、[Mini Tokyo 3D 開発者ガイド](DEVELOPER_GUIDE-ja.md)をご覧ください。
+本ドキュメントは、Mini Tokyo 3D の機能や操作方法について説明します。開発者向けの情報については、[Mini Tokyo 3D 開発者ガイド](https://minitokyo3d.com/docs/master/ja/developer-guide/)をご覧ください。
 
 ## Mini Tokyo 3D 概要
 
@@ -253,10 +253,10 @@ Mini Tokyo 3D の特徴は次の通りです。
 
 次のブラウザで動作を確認しています。推奨は Chrome です。Internet Explorer には非対応です。
 
-- Chrome 93 (Mac OS, Windows, iOS, Android)
-- FireFox 92 (Mac OS, Windows, iOS)
+- Chrome 94 (Mac OS, Windows, iOS, Android)
+- FireFox 93 (Mac OS, Windows, iOS)
 - Safari 14 (Mac OS, iOS)
-- Edge 93 (Mac OS, Windows, iOS)
+- Edge 94 (Mac OS, Windows, iOS)
 
 ## 開発情報
 

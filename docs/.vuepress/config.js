@@ -1,7 +1,7 @@
 module.exports = {
-  dest: 'dist/docs',
+  dest: 'build/docs/master',
   title: 'Mini Tokyo 3D',
-  base: '/docs/2.8.0/',
+  base: '/docs/master/',
   locales: {
     '/': {
       lang: 'en-US',

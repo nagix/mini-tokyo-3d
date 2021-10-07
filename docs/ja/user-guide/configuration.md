@@ -2,7 +2,7 @@
 
 ## レイヤー表示設定
 
-<img :src="$withBase('/images/layer-panel.jpg')" style="width: 490px;"> <img :src="$withBase('/images/layer-icon.jpg')" style="width: 49px; vertical-align: top">
+<img :src="$withBase('/images/layer-panel.jpg')" style="width: 490px;"> <img :src="$withBase('/images/layer-icon.jpg')" style="width: 49px; vertical-align: top;">
 
 レイヤーアイコンボタンをクリックまたはタップすると、レイヤー表示設定パネルが表示されます。レイヤー表示設定パネルでは、地図上に重ねて表示するレイヤーのオン・オフを切り替えることができます。降水レイヤー、花火レイヤー、ライブカメラレイヤーが用意されています。パネル右上の「×」ボタン、またはパネルの外をクリックまたはタップするとパネルが閉じます。
 
@@ -20,6 +20,6 @@
 
 ## アプリ情報の表示
 
-<img :src="$withBase('/images/about-panel.jpg')" style="width: 490px;"> <img :src="$withBase('/images/info-icon.jpg')" style="width: 49px; vertical-align: top">
+<img :src="$withBase('/images/about-panel.jpg')" style="width: 490px;"> <img :src="$withBase('/images/info-icon.jpg')" style="width: 49px; vertical-align: top;">
 
 情報アイコンボタンをクリックまたはタップすると、アプリおよびデータの情報が表示されます。静的データ・動的データの最終更新日時も表示されます。パネル右上の「×」ボタン、またはパネルの外をクリックまたはタップするとパネルが閉じます。
