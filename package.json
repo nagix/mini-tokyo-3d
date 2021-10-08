@@ -1,14 +1,14 @@
 {
   "name": "mini-tokyo-3d",
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.3",
   "description": "A real-time 3D digital map of Tokyo's public transport system",
   "main": "dist/mini-tokyo-3d.js",
   "module": "dist/mini-tokyo-3d.esm.js",
   "style": "dist/mini-tokyo-3d.css",
   "dependencies": {
-    "@deck.gl/core": "^8.5.7",
-    "@deck.gl/layers": "^8.5.7",
-    "@deck.gl/mapbox": "^8.5.7",
+    "@deck.gl/core": "^8.5.10",
+    "@deck.gl/layers": "^8.5.10",
+    "@deck.gl/mapbox": "^8.5.10",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@turf/along": "^5.1.5",
     "@turf/bearing": "^5.1.5",
@@ -29,17 +29,17 @@
     "csscolorparser": "^1.0.3",
     "japanese-holidays": "^1.0.10",
     "loaders.css": "^0.1.2",
-    "mapbox-gl": "^2.4.1",
+    "mapbox-gl": "^2.5.1",
     "mapbox-gl-animated-popup": "^0.2.1",
     "pako": "^1.0.11",
     "suncalc": "^1.8.0",
-    "swiper": "^7.0.5",
-    "three": "^0.132.2"
+    "swiper": "^7.0.8",
+    "three": "^0.133.1"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-commonjs": "^21.0.0",
     "@rollup/plugin-image": "^2.1.1",
-    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-node-resolve": "^13.0.5",
     "@rollup/plugin-replace": "^3.0.0",
     "@rollup/plugin-strip": "^2.1.0",
     "@vuepress/plugin-google-analytics": "1.8.2",
@@ -49,14 +49,14 @@
     "eslint-plugin-jsdoc": "^36.1.0",
     "node-sass": "^6.0.1",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.3.6",
+    "postcss": "^8.3.9",
     "postcss-import": "^14.0.2",
     "postcss-inline-svg": "^5.0.0",
-    "rollup": "^2.56.3",
+    "rollup": "^2.58.0",
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-terser": "^7.0.2",
     "vuepress": "^1.8.2",
-    "vuepress-plugin-flexsearch": "^0.2.0"
+    "vuepress-plugin-flexsearch": "^0.3.0"
   },
   "scripts": {
     "build": "rollup -c",
@@ -70,9 +70,7 @@
   "files": [
     "build/",
     "dist/mini-tokyo-3d.*",
-    "src/",
-    "USER_GUIDE-*",
-    "DEVELOPER_GUIDE-*"
+    "src/"
   ],
   "repository": {
     "type": "git",
