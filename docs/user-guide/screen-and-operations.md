@@ -82,6 +82,10 @@ When [Playback Mode](./display-modes.md#playback-mode) is off, orange spheres ar
 
 When you click or tap on a station, the station is selected and the map around the station is enlarged to show the locations and names of the exits on the map. When a station is selected, a list of exits will be displayed at the bottom of the screen. If you move the mouse pointer over the name of the exit in the list or tap it, the name of the exit will be highlighted on the map and you can check the location. Clicking on the map where no station exists will deselect it.
 
+::: warning
+As of the version 3.0, only subway lines and underground stations are supported for displaying station exit information.
+:::
+
 ## Route Search
 
 <img :src="$withBase('/images/search-form.jpg')" style="width: 400px;"> <img :src="$withBase('/images/search-route.jpg')" style="width: 400px;"> <img :src="$withBase('/images/search-icon.jpg')" style="width: 49px; vertical-align: top;">
@@ -95,5 +99,5 @@ You can also enter the departure and arrival stations by clicking or tapping on 
 Trains, airplanes and layers will be temporarily hidden when the search window is displayed. To close the search window, click the search icon button again.
 
 ::: warning
-As of the version 2.8, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
+As of the version 3.0, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
 :::

@@ -28,7 +28,7 @@ Mini Tokyo 3D is using the same line colors used in official route maps and guid
 
 <img :src="$withBase('/images/performance.jpg')" style="width: 537px;">
 
-Over 1,900 trains run at the same time during the rush hour, but with the optimized data structure and processing logic, a very smooth operation animation is realized even on smartphones. Smooth animation of 60 frames per second is used everywhere, including viewpoint movement, switching between overground and underground views, and fading in and out of trains and airplanes.
+Over 2,200 trains run at the same time during the rush hour, but with the optimized data structure and processing logic, a very smooth operation animation is realized even on smartphones. Smooth animation of 60 frames per second is used everywhere, including viewpoint movement, switching between overground and underground views, and fading in and out of trains and airplanes.
 
 ## Support for 4 Languages
 
@@ -36,14 +36,14 @@ Over 1,900 trains run at the same time during the rush hour, but with the optimi
 
 In addition to Japanese, Mini Tokyo 3D supports English, Chinese (Simplified and Traditional) and Korean, which are popular with tourists visiting Japan. Not only the user interface texts but also railway names, station names, train types, airport names and airline names are also multilingualized. For the user interface texts, Thai and Nepali are also supported.
 
-## Train Operation and Display as Close as Possible to Reality
-
-<img :src="$withBase('/images/reality.jpg')" style="width: 604px;">
-
-Fine tuning of the starting acceleration and maximum speed of the trains was done repeatedly by getting on them, so that they would move in the same way as the actual trains. The underground tunnel sections of the overground railways and the overground sections of the subways are also completely reproduced.
-
 ## Switching Views Between Overground and Underground
 
 <img :src="$withBase('/images/shinjuku-overground.jpg')" style="width: 300px;"> <img :src="$withBase('/images/shinjuku-underground.jpg')" style="width: 300px;">
 
 The railway network in Tokyo is one of the most complex in the world. Mini Tokyo 3D is pursuing ease of viewing by switching between the overground and underground railway networks as well as clearly expressing subway train operations that are invisible in reality.
+
+## Practical Real-Time Route Search
+
+<img :src="$withBase('/images/route-search.jpg')" style="width: 563px;">
+
+Mini Tokyo 3D is equipped with a unique route search function that uses real-time delay information. It displays multiple candidate travel routes based on train delays on an easy-to-understand 3D map through intuitive operation with gesture support on mobile devices.

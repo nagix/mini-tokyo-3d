@@ -34,7 +34,7 @@ Mini Tokyo 3D is using the same line colors used in official route maps and guid
 
 <img src="docs/.vuepress/public/images/performance.jpg" width="537">
 
-Over 1,900 trains run at the same time during the rush hour, but with the optimized data structure and processing logic, a very smooth operation animation is realized even on smartphones. Smooth animation of 60 frames per second is used everywhere, including viewpoint movement, switching between overground and underground views, and fading in and out of trains and airplanes.
+Over 2,200 trains run at the same time during the rush hour, but with the optimized data structure and processing logic, a very smooth operation animation is realized even on smartphones. Smooth animation of 60 frames per second is used everywhere, including viewpoint movement, switching between overground and underground views, and fading in and out of trains and airplanes.
 
 ### Support for 4 Languages
 
@@ -42,17 +42,17 @@ Over 1,900 trains run at the same time during the rush hour, but with the optimi
 
 In addition to Japanese, Mini Tokyo 3D supports English, Chinese (Simplified and Traditional) and Korean, which are popular with tourists visiting Japan. Not only the user interface texts but also railway names, station names, train types, airport names and airline names are also multilingualized. For the user interface texts, Thai and Nepali are also supported.
 
-### Train Operation and Display as Close as Possible to Reality
-
-<img src="docs/.vuepress/public/images/reality.jpg" width="604">
-
-Fine tuning of the starting acceleration and maximum speed of the trains was done repeatedly by getting on them, so that they would move in the same way as the actual trains. The underground tunnel sections of the overground railways and the overground sections of the subways are also completely reproduced.
-
 ### Switching Views Between Overground and Underground
 
 <img src="docs/.vuepress/public/images/shinjuku-overground.jpg" width="300"> <img src="docs/.vuepress/public/images/shinjuku-underground.jpg" width="300">
 
 The railway network in Tokyo is one of the most complex in the world. Mini Tokyo 3D is pursuing ease of viewing by switching between the overground and underground railway networks as well as clearly expressing subway train operations that are invisible in reality.
+
+## Practical Real-Time Route Search
+
+<img src="docs/.vuepress/public/images/route-search.jpg" width="563">
+
+Mini Tokyo 3D is equipped with a unique route search function that uses real-time delay information. It displays multiple candidate travel routes based on train delays on an easy-to-understand 3D map through intuitive operation with gesture support on mobile devices.
 
 ## Screen and Operations
 
@@ -138,6 +138,8 @@ When [Playback Mode](#playback-mode) is off, orange spheres are displayed around
 
 When you click or tap on a station, the station is selected and the map around the station is enlarged to show the locations and names of the exits on the map. When a station is selected, a list of exits will be displayed at the bottom of the screen. If you move the mouse pointer over the name of the exit in the list or tap it, the name of the exit will be highlighted on the map and you can check the location. Clicking on the map where no station exists will deselect it.
 
+**Note**: As of the version 3.0, only subway lines and underground stations are supported for displaying station exit information.
+
 ### Route Search
 
 <img src="docs/.vuepress/public/images/search-form.jpg" width="400"> <img src="docs/.vuepress/public/images/search-route.jpg" width="400"> <img src="docs/.vuepress/public/images/search-icon.jpg" width="49" align="top">
@@ -150,7 +152,7 @@ You can also enter the departure and arrival stations by clicking or tapping on 
 
 Trains, airplanes and layers will be temporarily hidden when the search window is displayed. To close the search window, click the search icon button again.
 
-**Note**: As of the version 2.8, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
+**Note**: As of the version 3.0, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
 
 ## Display Modes
 
@@ -216,25 +218,53 @@ When Eco Mode is off, trains and airplanes are animated smoothly at 60 frames pe
 
 <img src="docs/.vuepress/public/images/layer-panel.jpg" width="490"> <img src="docs/.vuepress/public/images/layer-icon.jpg" width="49" align="top">
 
-Click or tap the layer icon button to show the Layer Display Settings panel. In the Layer Display Settings panel, you can turn on/off the layer that is superimposed on the map. Precipitation layer, Fireworks layer and Live Cameras layer are available. Click or tap the “x” button in the top right corner of the panel, or click or tap outside the panel to close the panel.
+Click or tap the layer icon button to show the Layer Display Settings panel. In the Layer Display Settings panel, you can turn on/off the layer that is superimposed on the map. By incorporating the [Plugins](#plugins), Precipitation layer, Fireworks layer, Live Cameras layer and Tokyo 2020 Olympics layer will be displayed in the list. Click or tap the “x” button in the top right corner of the panel, or click or tap outside the panel to close the panel.
 
-<img src="docs/.vuepress/public/images/weather.jpg" width="580">
-
-Click or tap the Precipitation layer button to turn the precipitation animation on or off (the outer frame of the icon is shown in light blue when it is on). Based on real-time weather information, 8 levels of precipitation intensity are displayed in 3D animation in 1km mesh units.
-
-<img src="docs/.vuepress/public/images/fireworks.jpg" width="580">
-
-Click or tap the Fireworks layer button to turn the fireworks animation on or off (the outer frame of the icon is shown in light blue when it is on). The fireworks animation will appear at a specific location on the map at a scheduled date and time.
-
-<img src="docs/.vuepress/public/images/livecam.jpg" width="580">
-
-Click or tap on the Live Cameras layer button to toggle the display of the live camera buttons on and off (the outer frame of the icon is shown in light blue when it is on). Clicking or tapping on the live camera buttons on the map will zoom in on the location and show the live camera video being broadcast from the same viewpoint. The video is transmitted in real time, but there is a delay of a few tens of seconds, so the actual train tends to appear slightly later than the movement of the train on the map. Clicking on a map where there is no live camera button will deselect the live camera.
+Click or tap the icon of each layer to toggle the layer display on and off (the outer frame of the icon is shown in light blue when it is on). See [here](#plugins) to learn more about the functions of each layer.
 
 ### Showing Application Information
 
 <img src="docs/.vuepress/public/images/about-panel.jpg" width="490"> <img src="docs/.vuepress/public/images/info-icon.jpg" width="49" align="top">
 
 Click or tap the information icon button to show application and data information. The last update time of static data and dynamic data is also displayed. Click or tap the “x” button in the top right corner of the panel, or click or tap outside the panel to close the panel.
+
+## Plugins
+
+A variety of plugins are available to display additional information on the 3D map. The information provided by each plugin is displayed as a layer on the map, and can be toggled on and off in the [Layer Display Settings](#layer-display-settings) panel.
+
+### Precipitation Plugin
+
+<img src="docs/.vuepress/public/images/weather.jpg" width="580">
+
+Based on real-time radar information, precipitation animations are displayed on the map according to the intensity of rain. As you increase the zoom level, the intensity of precipitation is displayed in finer mesh units, and is updated every 10 minutes with the latest information.
+
+For more information, please visit [Mini Tokyo 3D Precipitation Plugin GitHub Repository](https://github.com/nagix/mt3d-plugin-precipitation).
+
+### Fireworks Plugin
+
+<img src="docs/.vuepress/public/images/fireworks.jpg" width="580">
+
+This plugin displays fireworks animations on a map. You can watch 3D animation of fireworks launch at a specific location on the map on a scheduled date and time.
+
+For more information, please visit [Mini Tokyo 3D Fireworks Plugin GitHub Repository](https://github.com/nagix/mt3d-plugin-fireworks).
+
+### Live Camera Plugin
+
+<img src="docs/.vuepress/public/images/livecam.jpg" width="580">
+
+You can watch trains running on live cameras placed in various locations around Tokyo. Clicking or tapping on a live camera button on the map will zoom in on the location and display the live camera video stream being broadcast from the same viewpoint. The video is transmitted in real-time, but there is a delay of a few tens of seconds, so the actual train tends to appear a little later than the movement of the train on the map. Clicking on a map where there is no live camera button will deselect the live camera.
+
+For more information, please visit [Mini Tokyo 3D Live Camera Plugin GitHub Repository](https://github.com/nagix/mt3d-plugin-livecam).
+
+### Tokyo 2020 Olympics Plugin
+
+<img src="docs/.vuepress/public/images/olympics.jpg" width="580">
+
+This plugin displays information about the competition schedule and venues for the Tokyo 2020 Olympic Games, which was held from July 23 to August 8, 2021. Just below the time display in the upper left corner of the screen, a countdown to the opening ceremony if it is before the event, or an indication of what day it is during the event will be displayed. In addition, pictograms of the competitions will appear on the map at the locations of the competition venues, and when clicked or tapped, it will zoom in to that location and show the details of the competition schedule for that venue. Also, near the Kokuritsu-kyogijo station, an elaborate 3D model of the Olympic Stadium built for the Tokyo 2020 Olympics is displayed.
+
+For more information, please visit [Mini Tokyo 3D Tokyo 2020 Olympics Plugin GitHub Repository](https://github.com/nagix/mt3d-plugin-olympics2020).
+
+**Note**: The Tokyo 2020 Olympics plugin is not shown at [https://minitokyo3d.com](https://minitokyo3d.com). You can view on the page of [Mini Tokyo 3D 2021 for Open Data Challenge for Public Transportation in Tokyo](https://minitokyo3d.com/2021/).
 
 ## About Data
 
