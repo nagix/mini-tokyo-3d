@@ -43,7 +43,7 @@ const glslTransformVariables = `
 `;
 
 const glslTransform = outline => `
-    vec3 position0 = position * ( scale * ( 1.0 + ( idColor.g + idColor.b / 256.0 ) * 10.0 ) );
+    vec3 position0 = position * ( scale * ( 1.0 + idColor.b * 0.03 ) );
     ${outline ? 'position0 = position0 + 0.1 * scale * sign( position );' : ''}
     vec3 transformed = rotateZ( rotationZ ) * rotateX( rotationX ) * position0 + translation + vec3( 0.0, 0.0, .44 * scale );
 `;

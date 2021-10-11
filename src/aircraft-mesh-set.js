@@ -48,7 +48,7 @@ const glslTransform = outline => `
     float scaleX = groupIndex == 1.0 ? max( scale0, scale ) : scale0;
     float scaleY = groupIndex == 0.0 ? max( scale0, scale ) : scale0;
     vec3 position0 = ( position + vec3( 0.0, offsetY, offsetZ ) ) * vec3( scaleX, scaleY, scale0 );
-    position0 = position0 * ( 1.0 + ( idColor.g + idColor.b / 256.0 ) * 100.0 );
+    position0 = position0 * ( 1.0 + idColor.b * 0.03 );
     ${outline ? 'position0 = position0 + 0.1 * scale0 * sign( position );' : ''}
     vec3 transformed = rotateZ( rotationZ ) * rotateX( rotationX ) * position0 + translation + vec3( 0.0, 0.0, .44 * scale0 );
 `;
