@@ -9,7 +9,7 @@
 - [Node.js](https://nodejs.org/ja/) 最新版
 - [Git](https://git-scm.com) 最新版（リポジトリをクローンする場合）
 
-Mini Tokyo 3D は次のデータソースを使用しており、ビルド時にそれぞれのデータソースに対するアクセストークンが必要です。下記の手順に従って、アクセストークンを入手してください。
+Mini Tokyo 3D は次のデータソースを使用しており、ビルド時および実行時にそれぞれのデータソースに対するアクセストークンが必要です。下記の手順に従って、アクセストークンを入手してください。
 
 データソース | サインアップ用 URL | アクセストークンの形式
 :-- | :-- | :--
@@ -39,7 +39,7 @@ Mini Tokyo 3D は[公共交通オープンデータセンター](https://www.odp
 
 ### Mapbox アクセストークンの入手
 
-[Mapbox アクセストークンの入手](#mapbox-%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%AE%E5%85%A5%E6%89%8B) を参照してください。
+[Mapbox アクセストークンの入手](./integration.md#mapbox-%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%AE%E5%85%A5%E6%89%8B) を参照してください。
 
 ## ビルド手順
 
@@ -67,13 +67,12 @@ Mini Tokyo 3D のトップディレクトリに移動します。
 cd mini-tokyo-3d
 ```
 
-ビルド準備のステップで取得したアクセストークンを記載した JSON ファイルを作成し、`secrets` というファイル名でこのディレクトリに保存します。
+ビルド準備のステップで取得した東京公共交通オープンデータチャレンジ、および公共交通オープンデータセンターのアクセストークンを記載した JSON ファイルを作成し、`secrets` というファイル名でこのディレクトリに保存します。
 
 ```json
 {
     "tokyochallenge": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "mapbox": "pk.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxx"
+    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 ```
 
@@ -93,4 +92,4 @@ npm run build-all
 
 ### 3. Web サイトへの設置
 
-`build` ディレクトリに含まれる `index.html` は [https://minitokyo3d.com](http://minitokyo3d.com) 用の Web ページです。設置する Web サイトに合わせて編集した上で、`build` ディレクトリのファイル全てを Web サーバの公開ディレクトリに配置してください。
+`build` ディレクトリに含まれる `index.html` は [https://minitokyo3d.com](http://minitokyo3d.com) 用の Web ページです。`Map` コンストラクタに渡される `accessToken` プロパティを、ビルド準備のステップで取得した Mapbox アクセストークンで置き換えます。そして設置する Web サイトに合わせて編集した上で、`build` ディレクトリのファイル全てを Web サーバの公開ディレクトリに配置してください。

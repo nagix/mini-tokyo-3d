@@ -37,7 +37,7 @@ Mini Tokyo 3D は地図タイルに [Mapbox](https://www.mapbox.com) のサー�
 </head>
 ```
 
-同じ HTML ファイルの `<body>` エレメント内で、`id` のついた HTML エレメント（下の例では `<div>` エレメント）を追加し、`<script>` エレメントで Mini Tokyo 3D インスタンスを作成する JavaScript コードを記述します。コンストラクタに渡す `options` オブジェクトの `container` には HTML エレメントの `id` を指定します。また、`secrets.mapbox` には、上のステップで入手した Mapbox アクセストークンを指定します。
+同じ HTML ファイルの `<body>` エレメント内で、`id` のついた HTML エレメント（下の例では `<div>` エレメント）を追加し、`<script>` エレメントで Map インスタンスを作成する JavaScript コードを記述します。コンストラクタに渡す `options` オブジェクトの `container` には HTML エレメントの `id` を指定します。また、`accessToken` には、上のステップで入手した Mapbox アクセストークンを指定します。
 
 ```html
 <body>
@@ -46,11 +46,9 @@ Mini Tokyo 3D は地図タイルに [Mapbox](https://www.mapbox.com) のサー�
   <script>
     const options = {
       container: 'mini-tokyo-3d',
-      secrets: {
-        mapbox: '<Mapbox アクセストークン>'
-      }
+      accessToken: '<Mapbox アクセストークン>'
     };
-    const mt3d = new MiniTokyo3D(options);
+    const map = new mt3d.Map(options);
   </script>
 </body>
 ```
@@ -65,47 +63,90 @@ Mini Tokyo 3D は地図タイルに [Mapbox](https://www.mapbox.com) のサー�
 npm install mini-tokyo-3d --save
 ```
 
-CommomJS 形式でモジュールを読み込む場合は、コードの先頭で次のように記載します。
+CommonJS 形式でモジュールを読み込む場合は、コードの先頭で次のように記載します。
 
 ```js
-const MiniTokyo3D = require('mini-tokyo-3d');
+const {Map} = require('mini-tokyo-3d');
 ```
 
 ES6 形式でモジュールを読み込む場合は、コードの先頭で次のように記載します。
 
 ```js
-import MiniTokyo3D from 'mini-tokyo-3d';
+import {Map} from 'mini-tokyo-3d';
 ```
 
-アプリケーションのコード内で、次のようにして MiniTokyo3D オブジェクトを初期化します。`options` オブジェクトの `container` には Mini Tokyo 3D がマップを表示する HTML エレメントの ID を指定します。また、`secrets.mapbox` には、上のステップで入手した Mapbox アクセストークンを指定します。
+アプリケーションのコード内で、次のようにして Map オブジェクトを初期化します。`options` オブジェクトの `container` には Mini Tokyo 3D がマップを表示する HTML エレメントの ID を指定します。また、`accessToken` には、上のステップで入手した Mapbox アクセストークンを指定します。
 
 ```js
 const options = {
   container: '<コンテナエレメントの ID>',
-  secrets: {
-    mapbox: '<Mapbox アクセストークン>'
-  }
+  accessToken: '<Mapbox アクセストークン>'
 };
-const mt3d = new MiniTokyo3D(options);
+const map = new Map(options);
+```
+
+### プラグインの追加
+
+3Dマップ上に付加的な情報を表示する、様々な[プラグイン](https://minitokyo3d.com/docs/master/ja/user-guide/plugins.html)が利用可能です。プラグインは Mini Tokyo 3D 本体とは別に提供されており、サイト設置時もしくはアプリケーションビルド時に好みに応じて組み込むことができます。下記では例として、[降水プラグイン](https://github.com/nagix/mt3d-plugin-precipitation)と[花火プラグイン](https://github.com/nagix/mt3d-plugin-fireworks)を組み込む手順を示します。
+
+直接 Web ページに組み込む場合は、
+
+```html
+  <script src="https://cdn.jsdelivr.net/npm/mt3d-plugin-precipitation@latest/dist/mt3d-plugin-precipitation.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mt3d-plugin-fireworks@latest/dist/mt3d-plugin-fireworks.min.js"></script>
+```
+
+```html
+  <script>
+    const options = {
+      /* ... */
+      plugins: [mt3dPrecipitation(), mt3dFireworks()]
+    };
+    const map = new mt3d.Map(options);
+  </script>
+```
+
+モジュールとしてアプリに組み込む場合は、次の手順に従ってアプリケーションをビルドしてください。
+
+CommonJS 形式でモジュールを読み込む場合は、コードの先頭で次のように記載します。
+
+```js
+const mt3dPrecipitation = require('mt3d-plugin-precipitation');
+const mt3dFireworks = require('mt3d-plugin-fireworks');
+```
+
+ES6 形式でモジュールを読み込む場合は、コードの先頭で次のように記載します。
+
+```js
+import mt3dPrecipitation from 'mt3d-plugin-precipitation';
+import mt3dFireworks  from 'mt3d-plugin-fireworks';
+```
+
+アプリケーションのコード内で、次のように `plugins` プロパティを指定して Map オブジェクトを初期化します。
+
+```js
+const options = {
+  /* ... */
+  plugins: [mt3dPrecipitation(), mt3dFireworks()]
+};
+const map = new Map(options);
 ```
 
 ## Mini Tokyo 3D API
 
 JavaScript で Mini Tokyo 3D API を使うことで、様々なカスタマイズを行うことが可能です。
 
-**注意**: 現在 Mini Tokyo 3D API はベータ版です。API の変更の可能性があるため、バージョン間の互換性は保証されません。
-
 クラス／オブジェクト | 詳細
 :--|:--
-[`MiniTokyo3D`](#minitokyo3d) | **パラメータ**<br>[`options`](#options-object)<br>**インスタンスメンバ**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getClockMode`](#getclockmode) [`getEcoMode`](#getecomode) [`getPitch`](#getpitch) [`getSelection`](#getselection) [`getTrackingMode`](#gettrackingmode) [`getViewMode`](#getviewmode) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setClockMode`](#setclockmodemode) [`setEcoMode`](#setecomodemode) [`setPitch`](#setpitchpitch) [`setSelection`](#setselectionid) [`setTrackingMode`](#settrackingmodemode) [`setViewMode`](#setviewmodemode) [`setZoom`](#setzoomzoom)<br>**イベント**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`clockmode`](#clockmode) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`deselection`](#deselection) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`ecomode`](#ecomode) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`selection`](#selection) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`trackingmode`](#trackingmode) [`viewmode`](#viewmode) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
+[`Map`](#map) | **パラメータ**<br>[`options`](#options-object)<br>**インスタンスメンバ**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getClockMode`](#getclockmode) [`getEcoMode`](#getecomode) [`getPitch`](#getpitch) [`getSelection`](#getselection) [`getTrackingMode`](#gettrackingmode) [`getViewMode`](#getviewmode) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setClockMode`](#setclockmodemode) [`setEcoMode`](#setecomodemode) [`setPitch`](#setpitchpitch) [`setSelection`](#setselectionid) [`setTrackingMode`](#settrackingmodemode) [`setViewMode`](#setviewmodemode) [`setZoom`](#setzoomzoom)<br>**イベント**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`clockmode`](#clockmode) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`deselection`](#deselection) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`ecomode`](#ecomode) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`selection`](#selection) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`trackingmode`](#trackingmode) [`viewmode`](#viewmode) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
 [`Secrets`](#secrets) |
 
-### MiniTokyo3D
+### Map
 
-`MiniTokyo3D` オブジェクトは、Web ページ上の Mini Tokyo 3D マップを表しています。`MiniTokyo3D` を作るには `container` やその他のオプションを指定してコンストラクタを呼び出します。すると、Web ページ上のマップが初期化され、`MiniTokyo3D` が返されます。
+`Map` オブジェクトは、Web ページ上の Mini Tokyo 3D マップを表しています。`Map` を作るには `container` やその他のオプションを指定してコンストラクタを呼び出します。すると、Web ページ上のマップが初期化され、`Map` が返されます。
 
 ```js
-new MiniTokyo3D(options: Object)
+new Map(options: Object)
 ```
 
 #### パラメータ
@@ -115,6 +156,7 @@ new MiniTokyo3D(options: Object)
 名前 | 説明
 :-- | :--
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D がマップを表示する HTML エレメントの `id`
+**`options.accessToken`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [Mapbox](https://www.mapbox.com) のアクセストークン。未指定の場合はマップのロード時にエラーが起きるため、必ず自分の Web サイト専用のアクセストークンを入手して指定する
 **`options.secrets`**<br>[`Secrets`](#secrets) | データ取得に使用するアクセストークンを格納するオブジェクト
 **`options.lang`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | 言語を表す [IETF 言語タグ](https://ja.wikipedia.org/wiki/IETF言語タグ)。未指定の場合は、ブラウザのデフォルト言語が使われる。現在 `'ja'`, `'en'`, `'ko'`, `'zh-Hans'`, `'zh-Hant'`, `'th'`, `'ne'` がサポートされている。サポートしていない言語が指定された場合は `'en'` が使われる
 **`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D のデータ URL。未指定の場合は、`'https://minitokyo3d.com/data'` が使われる
@@ -147,7 +189,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、新旧�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -163,7 +205,7 @@ center、zoom、bearing および pitch の任意の組み合わせを変更し�
 
 名前 | 説明
 :-- | :--
-**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1.42` | 飛行経路に沿って発生するズームの「カーブ」。高い値を設定するとズームのアニメーションの誇張が最大になり、低い値を設定するとズームの効果が最小になって [`MiniTokyo3D#easeTo`](#easetooptions) の動きに近づく。1.42 は、[van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf) で論じられた、ユーザー調査の参加者によって選択された平均値。`Math.pow(6, 0.25)` の値は平均速度の平方根に相当する。1 の値は円運動を生成する
+**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1.42` | 飛行経路に沿って発生するズームの「カーブ」。高い値を設定するとズームのアニメーションの誇張が最大になり、低い値を設定するとズームの効果が最小になって [`Map#easeTo`](#easetooptions) の動きに近づく。1.42 は、[van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf) で論じられた、ユーザー調査の参加者によって選択された平均値。`Math.pow(6, 0.25)` の値は平均速度の平方根に相当する。1 の値は円運動を生成する
 **`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 飛行経路のピークでのゼロベースのズームレベル。`options.curve` が指定された場合、このオプションは無視される
 **`options.speed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1.2` | `options.curve` と関連して定義されるアニメーションの平均速度。速度が 1.2 の場合、マップが飛行経路に沿って 1 秒ごとに `options.curve` の 1.2 倍のスクリーンフルで移動しているように見えることを意味する。*スクリーンフル*とは、マップの表示部分の幅のこと。これは固定の物理的な距離に対応するものではなく、ズームレベルによって変化する
 **`options.screenSpeed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 直線的なタイミングカーブを想定した場合の、1秒あたりのスクリーンフルで表したアニメーションの平均速度。`options.curve` が指定された場合、このオプションは無視される
@@ -171,7 +213,7 @@ center、zoom、bearing および pitch の任意の組み合わせを変更し�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -275,13 +317,13 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
 ##### **`off(type, listener)`**
 
-[`MiniTokyo3D#on`](#ontype-listener) で追加したイベントリスナを削除します。
+[`Map#on`](#ontype-listener) で追加したイベントリスナを削除します。
 
 ###### パラメータ
 
@@ -291,7 +333,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -307,7 +349,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -323,7 +365,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -339,7 +381,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -353,7 +395,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -367,13 +409,13 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
 ##### **`setEcoMode(mode)`**
 
-エコモードを設定します。ノーマルモード（`'normal'`）では、列車や旅客機のアニメーションのフレームレートは60に設定されます。エコモード（`'eco'`）では、フレームレートは [`MiniTokyo3D`](#minitokyo3d) のコンストラクタオプション `ecoFrameRate` で指定された値に設定されます。
+エコモードを設定します。ノーマルモード（`'normal'`）では、列車や旅客機のアニメーションのフレームレートは60に設定されます。エコモード（`'eco'`）では、フレームレートは [`Map`](#map) のコンストラクタオプション `ecoFrameRate` で指定された値に設定されます。
 
 ###### パラメータ
 
@@ -381,7 +423,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -395,7 +437,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -409,7 +451,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -423,7 +465,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -437,7 +479,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -451,7 +493,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ###### 返り値
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 #### イベント
 
@@ -633,7 +675,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ##### **`move`**
 
-ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、あるビューから別のビューへのアニメーション遷移中に繰り返し発生します。
+ユーザの操作や [`Map#flyTo`](#flytooptions) などのメソッドの結果として、あるビューから別のビューへのアニメーション遷移中に繰り返し発生します。
 
 ###### プロパティ
 
@@ -643,7 +685,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ##### **`moveend`**
 
-ユーザの操作や [`MiniTokyo3D#jumpTo`](#jumptooptions) などのメソッドの結果として、マップがあるビューから別のビューへの遷移を完了した直後に発生します。
+ユーザの操作や [`Map#jumpTo`](#jumptooptions) などのメソッドの結果として、マップがあるビューから別のビューへの遷移を完了した直後に発生します。
 
 ###### プロパティ
 
@@ -653,7 +695,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ##### **`movestart`**
 
-ユーザの操作や [`MiniTokyo3D#jumpTo`](#jumptooptions) などのメソッドの結果として、マップがあるビューから別のビューに遷移する直前に発生します。
+ユーザの操作や [`Map#jumpTo`](#jumptooptions) などのメソッドの結果として、マップがあるビューから別のビューに遷移する直前に発生します。
 
 ###### プロパティ
 
@@ -663,7 +705,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ##### **`pitch`**
 
-ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップの傾きの状態遷移アニメーションの間に繰り返し発生します。
+ユーザの操作や [`Map#flyTo`](#flytooptions) などのメソッドの結果として、マップの傾きの状態遷移アニメーションの間に繰り返し発生します。
 
 ###### プロパティ
 
@@ -673,7 +715,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ##### **`pitchend`**
 
-ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップの傾きが変化し終わった直後に発生します。
+ユーザの操作や [`Map#flyTo`](#flytooptions) などのメソッドの結果として、マップの傾きが変化し終わった直後に発生します。
 
 ###### プロパティ
 
@@ -683,7 +725,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ##### **`pitchstart`**
 
-ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップの傾きが変化し始める直前に発生します。
+ユーザの操作や [`Map#flyTo`](#flytooptions) などのメソッドの結果として、マップの傾きが変化し始める直前に発生します。
 
 ###### プロパティ
 
@@ -809,7 +851,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ##### **`zoom`**
 
-ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、あるズームレベルから別のズームレベルへのアニメーション遷移中に繰り返し発生します。
+ユーザの操作や [`Map#flyTo`](#flytooptions) などのメソッドの結果として、あるズームレベルから別のズームレベルへのアニメーション遷移中に繰り返し発生します。
 
 ###### プロパティ
 
@@ -819,7 +861,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ##### **`zoomend`**
 
-ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を完了した直後に発生します。
+ユーザの操作や [`Map#flyTo`](#flytooptions) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を完了した直後に発生します。
 
 ###### プロパティ
 
@@ -829,7 +871,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ##### **`zoomstart`**
 
-ユーザの操作や [`MiniTokyo3D#flyTo`](#flytooptions) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を開始する直前に発生します。
+ユーザの操作や [`Map#flyTo`](#flytooptions) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を開始する直前に発生します。
 
 ###### プロパティ
 
@@ -837,15 +879,13 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ### Secrets
 
-`Secrets` オブジェクトは、データ取得に使用するアクセストークンを格納するオブジェクトで、[`MiniTokyo3D`](#minitokyo3d) のコンストラクタオプション `secrets` に指定します。
+`Secrets` オブジェクトは、データ取得に使用するアクセストークンを格納するオブジェクトで、[`Map`](#map) のコンストラクタオプション `secrets` に指定します。
 
 #### プロパティ
 
 **`tokyochallenge`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) : [東京公共交通オープンデータチャレンジ](https://tokyochallenge.odpt.org)のアクセストークン。未指定の場合は、デフォルトのトークンが使われる
 
 **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) : [公共交通オープンデータセンター](https://www.odpt.org)のアクセストークン。未指定の場合は、デフォルトのトークンが使われる
-
-**`mapbox`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) : [Mapbox](https://www.mapbox.com) のアクセストークン。未指定の場合はマップのロード時にエラーが起きるため、必ず自分の Web サイト専用のアクセストークンを入手して指定する
 
 ## Mini Tokyo 3D のビルド
 
@@ -858,7 +898,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 - [Node.js](https://nodejs.org/ja/) 最新版
 - [Git](https://git-scm.com) 最新版（リポジトリをクローンする場合）
 
-Mini Tokyo 3D は次のデータソースを使用しており、ビルド時にそれぞれのデータソースに対するアクセストークンが必要です。下記の手順に従って、アクセストークンを入手してください。
+Mini Tokyo 3D は次のデータソースを使用しており、ビルド時および実行時にそれぞれのデータソースに対するアクセストークンが必要です。下記の手順に従って、アクセストークンを入手してください。
 
 データソース | サインアップ用 URL | アクセストークンの形式
 :-- | :-- | :--
@@ -916,13 +956,12 @@ Mini Tokyo 3D のトップディレクトリに移動します。
 cd mini-tokyo-3d
 ```
 
-ビルド準備のステップで取得したアクセストークンを記載した JSON ファイルを作成し、`secrets` というファイル名でこのディレクトリに保存します。
+ビルド準備のステップで取得した東京公共交通オープンデータチャレンジ、および公共交通オープンデータセンターのアクセストークンを記載した JSON ファイルを作成し、`secrets` というファイル名でこのディレクトリに保存します。
 
 ```json
 {
     "tokyochallenge": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "mapbox": "pk.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxx"
+    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 ```
 
@@ -942,4 +981,4 @@ npm run build-all
 
 #### 3. Web サイトへの設置
 
-`build` ディレクトリに含まれる `index.html` は [https://minitokyo3d.com](http://minitokyo3d.com) 用の Web ページです。設置する Web サイトに合わせて編集した上で、`build` ディレクトリのファイル全てを Web サーバの公開ディレクトリに配置してください。
+`build` ディレクトリに含まれる `index.html` は [https://minitokyo3d.com](http://minitokyo3d.com) 用の Web ページです。`Map` コンストラクタに渡される `accessToken` プロパティを、ビルド準備のステップで取得した Mapbox アクセストークンで置き換えます。そして設置する Web サイトに合わせて編集した上で、`build` ディレクトリのファイル全てを Web サーバの公開ディレクトリに配置してください。

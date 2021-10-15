@@ -9,7 +9,7 @@ The following software are required.
 - The latest version of [Node.js](https://nodejs.org)
 - The latest version of [Git](https://git-scm.com) if you're cloning the repository
 
-Mini Tokyo 3D uses the following data sources and requires an access token for each of them at build time. Follow the instructions below to obtain access tokens.
+Mini Tokyo 3D uses the following data sources and requires an access token for each of them at build time and run time. Follow the instructions below to obtain access tokens.
 
 Data Source | Sign-Up URL | Access Token Format
 :-- | :-- | :--
@@ -39,7 +39,7 @@ Mini Tokyo 3D is also using data from the [Public Transportation Open Data Cente
 
 ### Getting an Access Token for Mapbox
 
-See [Getting a Mapbox Access Token](#getting-a-mapbox-access-token).
+See [Getting a Mapbox Access Token](./integration.md#getting-a-mapbox-access-token).
 
 ## Build Instructions
 
@@ -67,13 +67,12 @@ Go to the top directory of Mini Tokyo 3D.
 cd mini-tokyo-3d
 ```
 
-Create a JSON file containing the access tokens obtained in the build preparation step and save it in this directory with the file name `secrets`.
+Create a JSON file containing the access tokens for Open Data Challenge for Public Transportation in Tokyo and Public Transportation Open Data Center obtained in the build preparation step and save it in this directory with the file name `secrets`.
 
 ```json
 {
     "tokyochallenge": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "mapbox": "pk.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxx"
+    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 ```
 
@@ -93,4 +92,4 @@ When the build completes successfully, the `dist` directory will be created. It 
 
 ### 3. Deploying on a Web Site
 
-The `index.html` in the `build` directory is for the web page on [https://minitokyo3d.com](http://minitokyo3d.com). Edit it for your web site, and place all the files in the `build` directory in the public directory of your web server.
+The `index.html` in the `build` directory is for the web page on [https://minitokyo3d.com](http://minitokyo3d.com). Replace the `accessToken` property, which is passed to a `Map` constructor, with the Mapbox access token obtained in the build preparation step. Then, edit it for your web site, and place all the files in the `build` directory in the public directory of your web server.

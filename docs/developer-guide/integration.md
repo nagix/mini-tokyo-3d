@@ -31,7 +31,7 @@ First, use the jsDelivr CDN link to load the Mini Tokyo 3D style sheet and JavaS
 </head>
 ```
 
-Within the `<body>` element of the same HTML file, add an HTML element with an `id` (a `<div>` element in the example below), and write JavaScript code to create a Mini Tokyo 3D instance in the `<script>` element. Specify the `id` of the HTML element to `container` of the `options` object passed to the constructor. In addition, specify the Mapbox access token obtained in the above step to `secrets.mapbox`.
+Within the `<body>` element of the same HTML file, add an HTML element with an `id` (a `<div>` element in the example below), and write JavaScript code to create a Map instance in the `<script>` element. Specify the `id` of the HTML element to `container` of the `options` object passed to the constructor. In addition, specify the Mapbox access token obtained in the above step to `accessToken`.
 
 ```html
 <body>
@@ -40,11 +40,9 @@ Within the `<body>` element of the same HTML file, add an HTML element with an `
   <script>
     const options = {
       container: 'mini-tokyo-3d',
-      secrets: {
-        mapbox: '<Mapbox access token>'
-      }
+      accessToken: '<Mapbox access token>'
     };
-    const mt3d = new MiniTokyo3D(options);
+    const map = new mt3d.Map(options);
   </script>
 </body>
 ```
@@ -59,26 +57,71 @@ First, install the npm module of Mini Tokyo 3D and register it to your applicati
 npm install mini-tokyo-3d --save
 ```
 
-If you want to load the module in the CommomJS style, you need to include the following at the beginning of your code.
+If you want to load the module in the CommonJS style, you need to include the following at the beginning of your code.
 
 ```js
-const MiniTokyo3D = require('mini-tokyo-3d');
+const {Map} = require('mini-tokyo-3d');
 ```
 
 To load the module in the ES6 style, you need to include the following at the beginning of your code.
 
 ```js
-import MiniTokyo3D from 'mini-tokyo-3d';
+import {Map} from 'mini-tokyo-3d';
 ```
 
-In your application code, you need to initialize the MiniTokyo3D object as follows. `container` of the `options` object represents the ID of the HTML element in which Mini Tokyo 3D will render the map. You also need to specify the Mapbox access token obtained in the above step to `secrets.mapbox`.
+In your application code, you need to initialize the Map object as follows. `container` of the `options` object represents the ID of the HTML element in which Mini Tokyo 3D will render the map. You also need to specify the Mapbox access token obtained in the above step to `accessToken`.
 
 ```js
 const options = {
   container: '<container element ID>',
-  secrets: {
-    mapbox: '<Mapbox access token>'
-  }
+  accessToken: '<Mapbox access token>'
 };
-const mt3d = new MiniTokyo3D(options);
+const map = new Map(options);
+```
+
+## Adding Plugins
+
+A variety of [plugins](../user-guide/plugins.md) are available to display additional information on the 3D map. Plugins are provided separately from Mini Tokyo 3D, and can be installed at the time of site installation or application build, depending on your preference. As an example, the following shows how to incorporate the [Precipitation Plugin](https://github.com/nagix/mt3d-plugin-precipitation) and [Fireworks Plugin](https://github.com/nagix/mt3d-plugin-fireworks).
+
+To integrate them directly into a web page, load the plugins in the `<head>` element of the HTML file and initialize the Map object by specifying the `plugins` property as follows.
+
+```html
+  <script src="https://cdn.jsdelivr.net/npm/mt3d-plugin-precipitation@latest/dist/mt3d-plugin-precipitation.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mt3d-plugin-fireworks@latest/dist/mt3d-plugin-fireworks.min.js"></script>
+```
+
+```html
+  <script>
+    const options = {
+      /* ... */
+      plugins: [mt3dPrecipitation(), mt3dFireworks()]
+    };
+    const map = new mt3d.Map(options);
+  </script>
+```
+
+If you want to include them in your application as modules, please follow the steps below to build your application.
+
+If you want to load the modules in the CommonJS style, you need to include the following at the beginning of your code.
+
+```js
+const mt3dPrecipitation = require('mt3d-plugin-precipitation');
+const mt3dFireworks = require('mt3d-plugin-fireworks');
+```
+
+To load the modules in the ES6 style, you need to include the following at the beginning of your code.
+
+```js
+import mt3dPrecipitation from 'mt3d-plugin-precipitation';
+import mt3dFireworks  from 'mt3d-plugin-fireworks';
+```
+
+In your application code, initialize the Map object by specifying the `plugins` property as follows.
+
+```js
+const options = {
+  /* ... */
+  plugins: [mt3dPrecipitation(), mt3dFireworks()]
+};
+const map = new Map(options);
 ```

@@ -37,7 +37,7 @@ First, use the jsDelivr CDN link to load the Mini Tokyo 3D style sheet and JavaS
 </head>
 ```
 
-Within the `<body>` element of the same HTML file, add an HTML element with an `id` (a `<div>` element in the example below), and write JavaScript code to create a Mini Tokyo 3D instance in the `<script>` element. Specify the `id` of the HTML element to `container` of the `options` object passed to the constructor. In addition, specify the Mapbox access token obtained in the above step to `secrets.mapbox`.
+Within the `<body>` element of the same HTML file, add an HTML element with an `id` (a `<div>` element in the example below), and write JavaScript code to create a Map instance in the `<script>` element. Specify the `id` of the HTML element to `container` of the `options` object passed to the constructor. In addition, specify the Mapbox access token obtained in the above step to `accessToken`.
 
 ```html
 <body>
@@ -46,11 +46,9 @@ Within the `<body>` element of the same HTML file, add an HTML element with an `
   <script>
     const options = {
       container: 'mini-tokyo-3d',
-      secrets: {
-        mapbox: '<Mapbox access token>'
-      }
+      accessToken: '<Mapbox access token>'
     };
-    const mt3d = new MiniTokyo3D(options);
+    const map = new mt3d.Map(options);
   </script>
 </body>
 ```
@@ -65,47 +63,90 @@ First, install the npm module of Mini Tokyo 3D and register it to your applicati
 npm install mini-tokyo-3d --save
 ```
 
-If you want to load the module in the CommomJS style, you need to include the following at the beginning of your code.
+If you want to load the module in the CommonJS style, you need to include the following at the beginning of your code.
 
 ```js
-const MiniTokyo3D = require('mini-tokyo-3d');
+const {Map} = require('mini-tokyo-3d');
 ```
 
 To load the module in the ES6 style, you need to include the following at the beginning of your code.
 
 ```js
-import MiniTokyo3D from 'mini-tokyo-3d';
+import {Map} from 'mini-tokyo-3d';
 ```
 
-In your application code, you need to initialize the MiniTokyo3D object as follows. `container` of the `options` object represents the ID of the HTML element in which Mini Tokyo 3D will render the map. You also need to specify the Mapbox access token obtained in the above step to `secrets.mapbox`.
+In your application code, you need to initialize the Map object as follows. `container` of the `options` object represents the ID of the HTML element in which Mini Tokyo 3D will render the map. You also need to specify the Mapbox access token obtained in the above step to `accessToken`.
 
 ```js
 const options = {
   container: '<container element ID>',
-  secrets: {
-    mapbox: '<Mapbox access token>'
-  }
+  accessToken: '<Mapbox access token>'
 };
-const mt3d = new MiniTokyo3D(options);
+const map = new Map(options);
+```
+
+### Adding Plugins
+
+A variety of [plugins](https://minitokyo3d.com/docs/master/user-guide/plugins.html) are available to display additional information on the 3D map. Plugins are provided separately from Mini Tokyo 3D, and can be installed at the time of site installation or application build, depending on your preference. As an example, the following shows how to incorporate the [Precipitation Plugin](https://github.com/nagix/mt3d-plugin-precipitation) and [Fireworks Plugin](https://github.com/nagix/mt3d-plugin-fireworks).
+
+To integrate them directly into a web page, load the plugins in the `<head>` element of the HTML file and initialize the Map object by specifying the `plugins` property as follows.
+
+```html
+  <script src="https://cdn.jsdelivr.net/npm/mt3d-plugin-precipitation@latest/dist/mt3d-plugin-precipitation.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mt3d-plugin-fireworks@latest/dist/mt3d-plugin-fireworks.min.js"></script>
+```
+
+```html
+  <script>
+    const options = {
+      /* ... */
+      plugins: [mt3dPrecipitation(), mt3dFireworks()]
+    };
+    const map = new mt3d.Map(options);
+  </script>
+```
+
+If you want to include them in your application as modules, please follow the steps below to build your application.
+
+If you want to load the modules in the CommonJS style, you need to include the following at the beginning of your code.
+
+```js
+const mt3dPrecipitation = require('mt3d-plugin-precipitation');
+const mt3dFireworks = require('mt3d-plugin-fireworks');
+```
+
+To load the modules in the ES6 style, you need to include the following at the beginning of your code.
+
+```js
+import mt3dPrecipitation from 'mt3d-plugin-precipitation';
+import mt3dFireworks  from 'mt3d-plugin-fireworks';
+```
+
+In your application code, initialize the Map object by specifying the `plugins` property as follows.
+
+```js
+const options = {
+  /* ... */
+  plugins: [mt3dPrecipitation(), mt3dFireworks()]
+};
+const map = new Map(options);
 ```
 
 ## Mini Tokyo 3D API
 
 Using Mini Tokyo 3D API in JavaScript, you can customize Mini Tokyo 3D in a variety of ways.
 
-**Note**: The Mini Tokyo 3D API is currently in beta. Due to the possibility of API changes, compatibility between versions is not guaranteed.
-
 Class/Object | Details
 :--|:--
-[`MiniTokyo3D`](#minitokyo3d) | **Parameters**<br>[`options`](#options-object)<br>**Instance Members**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getClockMode`](#getclockmode) [`getEcoMode`](#getecomode) [`getPitch`](#getpitch) [`getSelection`](#getselection) [`getTrackingMode`](#gettrackingmode) [`getViewMode`](#getviewmode) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setClockMode`](#setclockmodemode) [`setEcoMode`](#setecomodemode) [`setPitch`](#setpitchpitch) [`setSelection`](#setselectionid) [`setTrackingMode`](#settrackingmodemode) [`setViewMode`](#setviewmodemode) [`setZoom`](#setzoomzoom)<br>**Events**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`clockmode`](#clockmode) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`deselection`](#deselection) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`ecomode`](#ecomode) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`selection`](#selection) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`trackingmode`](#trackingmode) [`viewmode`](#viewmode) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
+[`Map`](#map) | **Parameters**<br>[`options`](#options-object)<br>**Instance Members**<br>[`easeTo`](#easetooptions) [`flyTo`](#flytooptions) [`getBearing`](#getbearing) [`getCenter`](#getcenter) [`getClockMode`](#getclockmode) [`getEcoMode`](#getecomode) [`getPitch`](#getpitch) [`getSelection`](#getselection) [`getTrackingMode`](#gettrackingmode) [`getViewMode`](#getviewmode) [`getZoom`](#getzoom) [`jumpTo`](#jumptooptions) [`off`](#offtype-listener) [`on`](#ontype-listener) [`once`](#oncetype-listener) [`setBearing`](#setbearingbearing) [`setCenter`](#setcentercenter) [`setClockMode`](#setclockmodemode) [`setEcoMode`](#setecomodemode) [`setPitch`](#setpitchpitch) [`setSelection`](#setselectionid) [`setTrackingMode`](#settrackingmodemode) [`setViewMode`](#setviewmodemode) [`setZoom`](#setzoomzoom)<br>**Events**<br>[`boxzoomcancel`](#boxzoomcancel) [`boxzoomend`](#boxzoomend) [`boxzoomstart`](#boxzoomstart) [`click`](#click) [`clockmode`](#clockmode) [`contextmenu`](#contextmenu) [`dblclick`](#dblclick) [`deselection`](#deselection) [`drag`](#drag) [`dragend`](#dragend) [`dragstart`](#dragstart) [`ecomode`](#ecomode) [`error`](#error) [`load`](#load) [`mousedown`](#mousedown) [`mousemove`](#mousemove) [`mouseout`](#mouseout) [`mouseover`](#mouseover) [`mouseup`](#mouseup) [`move`](#move) [`moveend`](#moveend) [`movestart`](#movestart) [`pitch`](#pitch) [`pitchend`](#pitchend) [`pitchstart`](#pitchstart) [`resize`](#resize) [`rotate`](#rotate) [`rotateend`](#rotateend) [`rotatestart`](#rotatestart) [`selection`](#selection) [`touchcancel`](#touchcancel) [`touchend`](#touchend) [`touchmove`](#touchmove) [`touchstart`](#touchstart) [`trackingmode`](#trackingmode) [`viewmode`](#viewmode) [`wheel`](#wheel) [`zoom`](#zoom) [`zoomend`](#zoomend) [`zoomstart`](#zoomstart)
 [`Secrets`](#secrets) |
 
-### MiniTokyo3D
+### Map
 
-The `MiniTokyo3D` object represents the Mini Tokyo 3D map on your page. You create a `MiniTokyo3D` by specifying a `container` and other `options`. Then Mini Tokyo 3D initializes the map on the page and returns your `MiniTokyo3D` object.
+The `Map` object represents the Mini Tokyo 3D map on your page. You create a `Map` by specifying a `container` and other `options`. Then Mini Tokyo 3D initializes the map on the page and returns your `Map` object.
 
 ```js
-new MiniTokyo3D(options: Object)
+new Map(options: Object)
 ```
 
 #### Parameters
@@ -115,6 +156,7 @@ new MiniTokyo3D(options: Object)
 Name | Description
 :-- | :--
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | The `id` of the HTML element in which Mini Tokyo 3D will render the map.
+**`options.accessToken`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Access token for [Mapbox](https://www.mapbox.com). If you don't specify this token, an error will occur when loading the map, so make sure to get an access token specific to your web site.
 **`options.secrets`**<br>[`Secrets`](#secrets) | An object to store the access tokens used to retrieve data.
 **`options.lang`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the language. If not specified, the browser's default language is used. Currently `'ja'`, `'en'`, `'ko'`, `'zh-Hans'`, `'zh-Hant'`, `'th'` and `'ne'` are supported. If an unsupported language is specified, then 'en' is used.
 **`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D data URL. If not specified, `'https://minitokyo3d.com/data'` will be used.
@@ -147,7 +189,7 @@ Note: The transition will happen instantly if the user has enabled the reduced m
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -163,7 +205,7 @@ Note: The animation will be skipped, and this will behave equivalently to `jumpT
 
 Name | Description
 :-- | :--
-**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.42` | The zooming "curve" that will occur along the flight path. A high value maximizes zooming for an exaggerated animation, while a low value minimizes zooming for an effect closer to [`MiniTokyo3D#easeTo`](#easetooptions). 1.42 is the average value selected by participants in the user study discussed in [van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf). A value of `Math.pow(6, 0.25)` would be equivalent to the root mean squared average velocity. A value of 1 would produce a circular motion.
+**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.42` | The zooming "curve" that will occur along the flight path. A high value maximizes zooming for an exaggerated animation, while a low value minimizes zooming for an effect closer to [`Map#easeTo`](#easetooptions). 1.42 is the average value selected by participants in the user study discussed in [van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf). A value of `Math.pow(6, 0.25)` would be equivalent to the root mean squared average velocity. A value of 1 would produce a circular motion.
 **`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The zero-based zoom level at the peak of the flight path. If `options.curve` is specified, this option is ignored.
 **`options.speed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.2` | The average speed of the animation defined in relation to `options.curve`. A speed of 1.2 means that the map appears to move along the flight path by 1.2 times `options.curve` screenfuls every second. A *screenful* is the map's visible span. It does not correspond to a fixed physical distance, but varies by zoom level.
 **`options.screenSpeed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The average speed of the animation measured in screenfuls per second, assuming a linear timing curve. If `options.speed` is specified, this option is ignored.
@@ -171,7 +213,7 @@ Name | Description
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -275,13 +317,13 @@ Changes any combination of center, zoom, bearing, and pitch, without an animated
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
 ##### **`off(type, listener)`**
 
-Removes an event listener previously added with [`MiniTokyo3D#on`](#ontype-listener).
+Removes an event listener previously added with [`Map#on`](#ontype-listener).
 
 ###### Parameters
 
@@ -291,7 +333,7 @@ Removes an event listener previously added with [`MiniTokyo3D#on`](#ontype-liste
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -307,7 +349,7 @@ Adds a listener for events of a specified type.
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -323,7 +365,7 @@ Adds a listener that will be called only once to a specified event type.
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -339,7 +381,7 @@ Equivalent to `jumpTo({bearing: bearing})`.
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -353,7 +395,7 @@ Sets the map's geographical centerpoint. Equivalent to `jumpTo({center: center})
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -367,13 +409,13 @@ Sets the clock mode. In the real-time clock mode (`'realtime'`), trains and airp
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
 ##### **`setEcoMode(mode)`**
 
-Sets the eco mode. In the normal mode (`'normal'`), the frame rate for train and airplane animations will be set to 60. In the eco mode (`'eco'`), the frame rate will be set to the [`MiniTokyo3D`](#minitokyo3d) constructor option `ecoFrameRate`.
+Sets the eco mode. In the normal mode (`'normal'`), the frame rate for train and airplane animations will be set to 60. In the eco mode (`'eco'`), the frame rate will be set to the [`Map`](#map) constructor option `ecoFrameRate`.
 
 ###### Parameters
 
@@ -381,7 +423,7 @@ Sets the eco mode. In the normal mode (`'normal'`), the frame rate for train and
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -395,7 +437,7 @@ Sets the map's pitch (tilt). Equivalent to `jumpTo({pitch: pitch})`.
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -409,7 +451,7 @@ Sets the ID of the train or flight you want to track. The train ID is a string i
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -423,7 +465,7 @@ Sets the tracking mode. In the helicopter tracking mode (`'helicopter'`), it mak
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -437,7 +479,7 @@ Sets the view mode. In the ground view mode (`ground'`), ground railways, statio
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 ---
 
@@ -451,7 +493,7 @@ Sets the map's zoom level. Equivalent to `jumpTo({zoom: zoom})`.
 
 ###### Returns
 
-[`MiniTokyo3D`](#minitokyo3d): `this`
+[`Map`](#map): `this`
 
 #### Events
 
@@ -633,7 +675,7 @@ Fired when a pointing device (usually a mouse) is released within the map.
 
 ##### **`move`**
 
-Fired repeatedly during an animated transition from one view to another, as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+Fired repeatedly during an animated transition from one view to another, as the result of either user interaction or methods such as [`Map#flyTo`](#flytooptions).
 
 ###### Properties
 
@@ -643,7 +685,7 @@ Fired repeatedly during an animated transition from one view to another, as the 
 
 ##### **`moveend`**
 
-Fired just after the map completes a transition from one view to another, as the result of either user interaction or methods such as [`MiniTokyo3D#jumpTo`](#jumptooptions).
+Fired just after the map completes a transition from one view to another, as the result of either user interaction or methods such as [`Map#jumpTo`](#jumptooptions).
 
 ###### Properties
 
@@ -653,7 +695,7 @@ Fired just after the map completes a transition from one view to another, as the
 
 ##### **`movestart`**
 
-Fired just before the map begins a transition from one view to another, as the result of either user interaction or methods such as [`MiniTokyo3D#jumpTo`](#jumptooptions).
+Fired just before the map begins a transition from one view to another, as the result of either user interaction or methods such as [`Map#jumpTo`](#jumptooptions).
 
 ###### Properties
 
@@ -663,7 +705,7 @@ Fired just before the map begins a transition from one view to another, as the r
 
 ##### **`pitch`**
 
-Fired repeatedly during the map's pitch (tilt) animation between one state and another as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+Fired repeatedly during the map's pitch (tilt) animation between one state and another as the result of either user interaction or methods such as [`Map#flyTo`](#flytooptions).
 
 ###### Properties
 
@@ -673,7 +715,7 @@ Fired repeatedly during the map's pitch (tilt) animation between one state and a
 
 ##### **`pitchend`**
 
-Fired immediately after the map's pitch (tilt) finishes changing as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+Fired immediately after the map's pitch (tilt) finishes changing as the result of either user interaction or methods such as [`Map#flyTo`](#flytooptions).
 
 ###### Properties
 
@@ -683,7 +725,7 @@ Fired immediately after the map's pitch (tilt) finishes changing as the result o
 
 ##### **`pitchstart`**
 
-Fired whenever the map's pitch (tilt) begins a change as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+Fired whenever the map's pitch (tilt) begins a change as the result of either user interaction or methods such as [`Map#flyTo`](#flytooptions).
 
 ###### Properties
 
@@ -809,7 +851,7 @@ Fired when a [`wheel`](https://developer.mozilla.org/docs/Web/Events/wheel) even
 
 ##### **`zoom`**
 
-Fired repeatedly during an animated transition from one zoom level to another, as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+Fired repeatedly during an animated transition from one zoom level to another, as the result of either user interaction or methods such as [`Map#flyTo`](#flytooptions).
 
 ###### Properties
 
@@ -819,7 +861,7 @@ Fired repeatedly during an animated transition from one zoom level to another, a
 
 ##### **`zoomend`**
 
-Fired just after the map completes a transition from one zoom level to another, as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+Fired just after the map completes a transition from one zoom level to another, as the result of either user interaction or methods such as [`Map#flyTo`](#flytooptions).
 
 ###### Properties
 
@@ -829,7 +871,7 @@ Fired just after the map completes a transition from one zoom level to another, 
 
 ##### **`zoomstart`**
 
-Fired just before the map begins a transition from one zoom level to another, as the result of either user interaction or methods such as [`MiniTokyo3D#flyTo`](#flytooptions).
+Fired just before the map begins a transition from one zoom level to another, as the result of either user interaction or methods such as [`Map#flyTo`](#flytooptions).
 
 ###### Properties
 
@@ -837,15 +879,13 @@ Fired just before the map begins a transition from one zoom level to another, as
 
 ### Secrets
 
-The `Secrets` object is an object that stores the access tokens used to retrieve data and is set to the [`MiniTokyo3D`](#minitokyo3d) constructor option `secrets`.
+The `Secrets` object is an object that stores the access tokens used to retrieve data and is set to the [`Map`](#map) constructor option `secrets`.
 
 #### Properties
 
 **`tokyochallenge`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) : Access token for the [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/). If not specified, the default token will be used.
 
 **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) : Access token for the [Public Transportation Open Data Center](https://www.odpt.org). If not specified, the default token will be used.
-
-**`mapbox`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) : Access token for [Mapbox](https://www.mapbox.com). If you don't specify this token, an error will occur when loading the map, so make sure to get an access token specific to your web site.
 
 ## Building Mini Tokyo 3D
 
@@ -858,7 +898,7 @@ The following software are required.
 - The latest version of [Node.js](https://nodejs.org)
 - The latest version of [Git](https://git-scm.com) if you're cloning the repository
 
-Mini Tokyo 3D uses the following data sources and requires an access token for each of them at build time. Follow the instructions below to obtain access tokens.
+Mini Tokyo 3D uses the following data sources and requires an access token for each of them at build time and run time. Follow the instructions below to obtain access tokens.
 
 Data Source | Sign-Up URL | Access Token Format
 :-- | :-- | :--
@@ -916,13 +956,12 @@ Go to the top directory of Mini Tokyo 3D.
 cd mini-tokyo-3d
 ```
 
-Create a JSON file containing the access tokens obtained in the build preparation step and save it in this directory with the file name `secrets`.
+Create a JSON file containing the access tokens for Open Data Challenge for Public Transportation in Tokyo and Public Transportation Open Data Center obtained in the build preparation step and save it in this directory with the file name `secrets`.
 
 ```json
 {
     "tokyochallenge": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "mapbox": "pk.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxx"
+    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 ```
 
@@ -942,4 +981,4 @@ When the build completes successfully, the `dist` directory will be created. It 
 
 #### 3. Deploying on a Web Site
 
-The `index.html` in the `build` directory is for the web page on [https://minitokyo3d.com](http://minitokyo3d.com). Edit it for your web site, and place all the files in the `build` directory in the public directory of your web server.
+The `index.html` in the `build` directory is for the web page on [https://minitokyo3d.com](http://minitokyo3d.com). Replace the `accessToken` property, which is passed to a `Map` constructor, with the Mapbox access token obtained in the build preparation step. Then, edit it for your web site, and place all the files in the `build` directory in the public directory of your web server.

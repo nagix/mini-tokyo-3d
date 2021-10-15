@@ -78,8 +78,7 @@ First, get access tokens for the public transportation data and map tiles by sig
 ```json
 {
     "tokyochallenge": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "mapbox": "pk.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxx"
+    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 ```
 
@@ -88,6 +87,8 @@ The latest version of Node.js is required. Move to the root directory of the app
 npm install
 npm run build-all
 ```
+
+Finally, replace the `accessToken` property, which is passed to a `Map` constructor, with your Mapbox access token in `index.html`.
 
 See the [Developer Guides](#developer-guides) for more details.
 

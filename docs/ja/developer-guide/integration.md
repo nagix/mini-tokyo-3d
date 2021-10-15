@@ -31,7 +31,7 @@ Mini Tokyo 3D は地図タイルに [Mapbox](https://www.mapbox.com) のサー�
 </head>
 ```
 
-同じ HTML ファイルの `<body>` エレメント内で、`id` のついた HTML エレメント（下の例では `<div>` エレメント）を追加し、`<script>` エレメントで Mini Tokyo 3D インスタンスを作成する JavaScript コードを記述します。コンストラクタに渡す `options` オブジェクトの `container` には HTML エレメントの `id` を指定します。また、`secrets.mapbox` には、上のステップで入手した Mapbox アクセストークンを指定します。
+同じ HTML ファイルの `<body>` エレメント内で、`id` のついた HTML エレメント（下の例では `<div>` エレメント）を追加し、`<script>` エレメントで Mini Tokyo 3D インスタンスを作成する JavaScript コードを記述します。コンストラクタに渡す `options` オブジェクトの `container` には HTML エレメントの `id` を指定します。また、`accessToken` には、上のステップで入手した Mapbox アクセストークンを指定します。
 
 ```html
 <body>
@@ -40,11 +40,9 @@ Mini Tokyo 3D は地図タイルに [Mapbox](https://www.mapbox.com) のサー�
   <script>
     const options = {
       container: 'mini-tokyo-3d',
-      secrets: {
-        mapbox: '<Mapbox アクセストークン>'
-      }
+      accessToken: '<Mapbox アクセストークン>'
     };
-    const mt3d = new MiniTokyo3D(options);
+    const map = new mt3d.Map(options);
   </script>
 </body>
 ```
@@ -59,26 +57,71 @@ Mini Tokyo 3D は地図タイルに [Mapbox](https://www.mapbox.com) のサー�
 npm install mini-tokyo-3d --save
 ```
 
-CommomJS 形式でモジュールを読み込む場合は、コードの先頭で次のように記載します。
+CommonJS 形式でモジュールを読み込む場合は、コードの先頭で次のように記載します。
 
 ```js
-const MiniTokyo3D = require('mini-tokyo-3d');
+const {Map} = require('mini-tokyo-3d');
 ```
 
 ES6 形式でモジュールを読み込む場合は、コードの先頭で次のように記載します。
 
 ```js
-import MiniTokyo3D from 'mini-tokyo-3d';
+import {Map} from 'mini-tokyo-3d';
 ```
 
-アプリケーションのコード内で、次のようにして MiniTokyo3D オブジェクトを初期化します。`options` オブジェクトの `container` には Mini Tokyo 3D がマップを表示する HTML エレメントの ID を指定します。また、`secrets.mapbox` には、上のステップで入手した Mapbox アクセストークンを指定します。
+アプリケーションのコード内で、次のようにして Map オブジェクトを初期化します。`options` オブジェクトの `container` には Mini Tokyo 3D がマップを表示する HTML エレメントの ID を指定します。また、`accessToken` には、上のステップで入手した Mapbox アクセストークンを指定します。
 
 ```js
 const options = {
   container: '<コンテナエレメントの ID>',
-  secrets: {
-    mapbox: '<Mapbox アクセストークン>'
-  }
+  accessToken: '<Mapbox アクセストークン>'
 };
-const mt3d = new MiniTokyo3D(options);
+const map = new Map(options);
+```
+
+## プラグインの追加
+
+3Dマップ上に付加的な情報を表示する、様々な[プラグイン](../user-guide/plugins.md)が利用可能です。プラグインは Mini Tokyo 3D 本体とは別に提供されており、サイト設置時もしくはアプリケーションビルド時に好みに応じて組み込むことができます。下記では例として、[降水プラグイン](https://github.com/nagix/mt3d-plugin-precipitation)と[花火プラグイン](https://github.com/nagix/mt3d-plugin-fireworks)を組み込む手順を示します。
+
+直接 Web ページに組み込む場合は、次のように HTML ファイルの `<head>` エレメント内でプラグインを読み込み、`plugins` プロパティを指定して Map オブジェクトを初期化します。
+
+```html
+  <script src="https://cdn.jsdelivr.net/npm/mt3d-plugin-precipitation@latest/dist/mt3d-plugin-precipitation.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mt3d-plugin-fireworks@latest/dist/mt3d-plugin-fireworks.min.js"></script>
+```
+
+```html
+  <script>
+    const options = {
+      /* ... */
+      plugins: [mt3dPrecipitation(), mt3dFireworks()]
+    };
+    const map = new mt3d.Map(options);
+  </script>
+```
+
+モジュールとしてアプリに組み込む場合は、次の手順に従ってアプリケーションをビルドしてください。
+
+CommonJS 形式でモジュールを読み込む場合は、コードの先頭で次のように記載します。
+
+```js
+const mt3dPrecipitation = require('mt3d-plugin-precipitation');
+const mt3dFireworks = require('mt3d-plugin-fireworks');
+```
+
+ES6 形式でモジュールを読み込む場合は、コードの先頭で次のように記載します。
+
+```js
+import mt3dPrecipitation from 'mt3d-plugin-precipitation';
+import mt3dFireworks  from 'mt3d-plugin-fireworks';
+```
+
+アプリケーションのコード内で、次のように `plugins` プロパティを指定して Map オブジェクトを初期化します。
+
+```js
+const options = {
+  /* ... */
+  plugins: [mt3dPrecipitation(), mt3dFireworks()]
+};
+const map = new Map(options);
 ```
