@@ -120,7 +120,7 @@ const configs = {
     searchUrl: 'https://search.minitokyo3d.com/api/v1/routes',
 
     // Timestamp when the static data was last updated
-    lastStaticUpdate: '2021-06-26 12:00:00',
+    lastStaticUpdate: '2021-08-17 10:00:00',
 
     // String to show in an Mapbox's AttributionControl
     customAttribution: '<a href="https://github.com/nagix/mini-tokyo-3d">© Akihiko Kusanagi</a>',
