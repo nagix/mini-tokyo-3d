@@ -67,8 +67,23 @@ module.exports = {
               children: [
                 '',
                 'integration',
-                'api',
                 'build'
+              ]
+            },
+            {
+              title: 'API Reference',
+              collapsable: false,
+              children: [
+                'api/',
+                'api/map',
+                'api/mapboxgl',
+                'api/marker',
+                'api/panel',
+                'api/plugin',
+                'api/popup',
+                'api/secrets',
+                'api/three',
+                'api/three-layer'
               ]
             }
           ]
@@ -118,8 +133,23 @@ module.exports = {
               children: [
                 '',
                 'integration',
-                'api',
                 'build'
+              ]
+            },
+            {
+              title: 'API リファレンス',
+              collapsable: false,
+              children: [
+                'api/',
+                'api/map',
+                'api/mapboxgl',
+                'api/marker',
+                'api/panel',
+                'api/plugin',
+                'api/popup',
+                'api/secrets',
+                'api/three',
+                'api/three-layer'
               ]
             }
           ]
