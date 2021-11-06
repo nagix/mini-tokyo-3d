@@ -20,6 +20,7 @@ import MapboxGLButtonControl from './mapbox-gl-button-control';
 import SearchPanel from './search-panel';
 import SharePanel from './share-panel';
 import StationPanel from './station-panel';
+import ThreeLayer from './three-layer';
 import TrafficLayer from './traffic-layer';
 import TrainPanel from './train-panel';
 
@@ -156,7 +157,7 @@ export default class extends Evented {
     /**
      * Sets the map's geographical centerpoint. Equivalent to jumpTo({center: center}).
      * @param {LngLatLike} center - The centerpoint to set
-     * @returns {Map} this
+     * @returns {Map} Returns itself to allow for method chaining
      */
     setCenter(center) {
         const me = this;
@@ -177,7 +178,7 @@ export default class extends Evented {
     /**
      * Sets the map's zoom level. Equivalent to jumpTo({zoom: zoom}).
      * @param {number} zoom - The zoom level to set (0-20)
-     * @returns {Map} this
+     * @returns {Map} Returns itself to allow for method chaining
      */
     setZoom(zoom) {
         const me = this;
@@ -200,7 +201,7 @@ export default class extends Evented {
      * is "up"; for example, a bearing of 90° orients the map so that east is up.
      * Equivalent to jumpTo({bearing: bearing}).
      * @param {number} bearing - The desired bearing
-     * @returns {Map} this
+     * @returns {Map} Returns itself to allow for method chaining
      */
     setBearing(bearing) {
         const me = this;
@@ -223,7 +224,7 @@ export default class extends Evented {
      * Sets the map's pitch (tilt). Equivalent to jumpTo({pitch: pitch}).
      * @param {number} pitch - The pitch to set, measured in degrees away from the
      *     plane of the screen (0-60)
-     * @returns {Map} this
+     * @returns {Map} Returns itself to allow for method chaining
     */
     setPitch(pitch) {
         const me = this;
@@ -238,7 +239,7 @@ export default class extends Evented {
      * values for any details not specified in options.
      * @param {object} options - Options describing the destination and animation of
      *     the transition. Accepts CameraOptions and AnimationOptions
-     * @returns {Map} this
+     * @returns {Map} Returns itself to allow for method chaining
      */
     easeTo(options) {
         const me = this,
@@ -259,7 +260,7 @@ export default class extends Evented {
      * @param {object} options - Options describing the destination and animation of
      *     the transition. Accepts CameraOptions, AnimationOptions, and a few additional
      *     options
-     * @returns {Map} this
+     * @returns {Map} Returns itself to allow for method chaining
      */
     flyTo(options) {
         const me = this,
@@ -277,7 +278,7 @@ export default class extends Evented {
      * transition. The map will retain its current values for any details not specified
      * in options.
      * @param {CameraOptions} options - Options object
-     * @returns {Map} this
+     * @returns {Map} Returns itself to allow for method chaining
      */
     jumpTo(options) {
         const me = this,
@@ -301,7 +302,7 @@ export default class extends Evented {
     /**
      * Sets the view mode.
      * @param {string} mode - View mode: 'ground' or 'underground'
-     * @returns {Map} this
+     * @returns {Map} Returns itself to allow for method chaining
      */
     setViewMode(mode) {
         const me = this;
@@ -323,7 +324,7 @@ export default class extends Evented {
     /**
      * Sets the tracking mode.
      * @param {string} mode - Tracking mode: 'helicopter' or 'heading'
-     * @returns {Map} this
+     * @returns {Map} Returns itself to allow for method chaining
      */
     setTrackingMode(mode) {
         const me = this;
@@ -349,7 +350,7 @@ export default class extends Evented {
     /**
      * Selects a train or flight.
      * @param {string} id - ID for the object to select
-     * @returns {Map} this
+     * @returns {Map} Returns itself to allow for method chaining
      */
     setSelection(id) {
         const me = this,
@@ -413,7 +414,7 @@ export default class extends Evented {
     /**
      * Sets the clock mode.
      * @param {string} mode - Clock mode: 'realtime' or 'playback'
-     * @returns {Map} this
+     * @returns {Map} Returns itself to allow for method chaining
      */
     setClockMode(mode) {
         const me = this;
@@ -435,12 +436,60 @@ export default class extends Evented {
     /**
      * Sets the eco mode.
      * @param {string} mode - Eco mode: 'normal' or 'eco'
-     * @returns {Map} this
+     * @returns {Map} Returns itself to allow for method chaining
      */
     setEcoMode(mode) {
         const me = this;
 
         me._setEcoMode(mode);
+        return me;
+    }
+
+    /**
+     * Adds a layer to the map.
+     * @param {object | CustomLayerInterface | ThreeLayer} layer - The layer to add,
+     *     conforming to either the Mapbox Style Specification's layer definition,
+     *     the CustomLayerInterface specification or ThreeLayer object
+     * @param {string} beforeId - The ID of an existing layer to insert the new
+     *     layer before
+     * @returns {Map} Returns itself to allow for method chaining
+     */
+    addLayer(layer, beforeId) {
+        const me = this;
+
+        if (layer instanceof ThreeLayer) {
+            const {id, minzoom, maxzoom, _render} = layer;
+
+            me.map.addLayer({
+                id,
+                type: 'custom',
+                renderingMode: '3d',
+                onAdd: (map, gl) => {
+                    layer._onAdd(map, gl);
+                    layer.onAdd(me);
+                },
+                onRemove: (map, gl) => {
+                    layer._onRemove(map, gl);
+                    layer.onRemove(me);
+                },
+                render: _render.bind(layer)
+            }, beforeId || 'poi');
+            me.map.setLayerZoomRange(id, minzoom, maxzoom);
+        } else {
+            me.map.addLayer(layer, beforeId || 'poi');
+        }
+        return me;
+    }
+
+    /**
+     * Removes the layer with the given ID from the map.
+     * @param {string} id - ID of the layer to remove
+     * @returns {Map} Returns itself to allow for method chaining
+     */
+    removeLayer(id) {
+        const me = this;
+
+        me.map.removeLayer(id);
         return me;
     }
 
@@ -688,7 +737,7 @@ export default class extends Evented {
             }, 'building-3d');
         });
 
-        map.addLayer(me.trafficLayer, 'building-3d');
+        me.addLayer(me.trafficLayer, 'building-3d');
 
         map.addLayer({
             id: 'sky',
@@ -940,10 +989,6 @@ export default class extends Evented {
                     me.updatePopup();
                 }
             }
-        });
-
-        map.on('resize', e => {
-            me.trafficLayer.onResize(e);
         });
 
         for (const plugin of me.plugins.slice().reverse()) {
