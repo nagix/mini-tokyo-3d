@@ -3,7 +3,6 @@ import Map from './map';
 import Panel from './panel';
 import Plugin from './plugin';
 import Popup from './popup';
-import ThreeLayer from './three-layer';
 import mapboxgl from 'mapbox-gl';
 import * as three from 'three';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
@@ -20,6 +19,5 @@ export default {
     Panel,
     Plugin,
     Popup,
-    THREE,
-    ThreeLayer
+    THREE
 };

@@ -55,6 +55,9 @@ MapboxLayer.prototype.render = function(...args) {
     render.apply(me, args);
 };
 
+const modelOrigin = MercatorCoordinate.fromLngLat(configs.defaultCenter);
+const modelScale = modelOrigin.meterInMercatorCoordinateUnits();
+
 export default class extends Evented {
 
     constructor(options) {
@@ -447,9 +450,10 @@ export default class extends Evented {
 
     /**
      * Adds a layer to the map.
-     * @param {object | CustomLayerInterface | ThreeLayer} layer - The layer to add,
-     *     conforming to either the Mapbox Style Specification's layer definition,
-     *     the CustomLayerInterface specification or ThreeLayer object
+     * @param {object | CustomLayerInterface | ThreeLayerInterface} layer - The layer
+     *     to add, conforming to either the Mapbox Style Specification's layer
+     *     definition, the CustomLayerInterface specification or the ThreeLayerInterface
+     *     specification
      * @param {string} beforeId - The ID of an existing layer to insert the new
      *     layer before
      * @returns {Map} Returns itself to allow for method chaining
@@ -457,24 +461,8 @@ export default class extends Evented {
     addLayer(layer, beforeId) {
         const me = this;
 
-        if (layer instanceof ThreeLayer) {
-            const {id, minzoom, maxzoom, _render} = layer;
-
-            me.map.addLayer({
-                id,
-                type: 'custom',
-                renderingMode: '3d',
-                onAdd: (map, gl) => {
-                    layer._onAdd(map, gl);
-                    layer.onAdd(me);
-                },
-                onRemove: (map, gl) => {
-                    layer._onRemove(map, gl);
-                    layer.onRemove(me);
-                },
-                render: _render.bind(layer)
-            }, beforeId || 'poi');
-            me.map.setLayerZoomRange(id, minzoom, maxzoom);
+        if (layer.type === 'three') {
+            new ThreeLayer(layer).onAdd(me, beforeId);
         } else {
             me.map.addLayer(layer, beforeId || 'poi');
         }
@@ -491,6 +479,44 @@ export default class extends Evented {
 
         me.map.removeLayer(id);
         return me;
+    }
+
+    /**
+     * Returns a `MercatorCoordinate` object that represents the position of Tokyo
+     * Station as the origin of the mercator coordinates.
+     * @returns {MercatorCoordinate} The origin of the mercator coordinates
+     */
+    getModelOrigin() {
+        return modelOrigin;
+    }
+
+    /**
+     * Returns the scale to transform into MercatorCoordinate from coordinates in
+     * real world units using meters. This provides the distance of 1 meter in
+     * MercatorCoordinate units at Tokyo Station.
+     * @returns {number} The scale to transform into MercatorCoordinate from
+     *     coordinates in real world units using meters
+     */
+    getModelScale() {
+        return modelScale;
+    }
+
+    /**
+     * Projects a LngLat to a MercatorCoordinate, and returns the translated
+     * mercator coordinates with Tokyo Station as the origin.
+     * @param {LngLatLike} lnglat - The location to project
+     * @param {number} altitude - The altitude in meters of the position
+     * @returns {object} The translated mercator coordinates with Tokyo Station as
+     *     the origin
+     */
+    getModelPosition(lnglat, altitude) {
+        const coord = MercatorCoordinate.fromLngLat(lnglat, altitude);
+
+        return {
+            x: coord.x - modelOrigin.x,
+            y: -(coord.y - modelOrigin.y),
+            z: coord.z - modelOrigin.z
+        };
     }
 
     initData(data) {
@@ -1077,12 +1103,12 @@ export default class extends Evented {
 
     updateVisibleArea() {
         const me = this,
-            {map, trafficLayer} = me,
+            {map} = me,
             {width, height} = map.transform,
-            topLeft = trafficLayer.getModelPosition(map.unproject([0, 0])),
-            topRight = trafficLayer.getModelPosition(map.unproject([width, 0])),
-            bottomLeft = trafficLayer.getModelPosition(map.unproject([0, height])),
-            bottomRight = trafficLayer.getModelPosition(map.unproject([width, height]));
+            topLeft = me.getModelPosition(map.unproject([0, 0])),
+            topRight = me.getModelPosition(map.unproject([width, 0])),
+            bottomLeft = me.getModelPosition(map.unproject([0, height])),
+            bottomRight = me.getModelPosition(map.unproject([width, height]));
 
         me.visibleArea = helpers.bufferTrapezoid([
             [topLeft.x, topLeft.y],
@@ -1184,7 +1210,7 @@ export default class extends Evented {
 
             // Reduce the frame rate of invisible objects for performance optimization
             if (animation.isActive(train.animationID)) {
-                const {x, y} = trafficLayer.getModelPosition(car.coord),
+                const {x, y} = me.getModelPosition(car.coord),
                     frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) ? me.ecoMode === 'normal' && map._loaded ? 60 : me.ecoFrameRate : 1;
 
                 animation.setFrameRate(train.animationID, frameRate);
@@ -1269,7 +1295,7 @@ export default class extends Evented {
 
             if (!isNaN(me.baseZoom)) {
                 const {baseDistance, baseZoom} = me,
-                    z = trafficLayer.getModelPosition(aircraft.coord, aircraft.altitude).z,
+                    z = me.getModelPosition(aircraft.coord, aircraft.altitude).z,
                     zoom = baseZoom - Math.log2((z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN) + baseDistance) / baseDistance),
                     scrollZooming = map.scrollZoom._active;
 
@@ -1284,7 +1310,7 @@ export default class extends Evented {
 
         // Reduce the frame rate of invisible objects for performance optimization
         if (animation.isActive(flight.animationID)) {
-            const {x, y} = trafficLayer.getModelPosition(aircraft.coord),
+            const {x, y} = me.getModelPosition(aircraft.coord),
                 frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) ? me.ecoMode === 'normal' && map._loaded ? 60 : me.ecoFrameRate : 1;
 
             animation.setFrameRate(flight.animationID, frameRate);
@@ -2682,10 +2708,10 @@ export default class extends Evented {
 
     updateBaseZoom(coord, altitude) {
         const me = this,
-            {map, trafficLayer} = me;
+            {map} = me;
 
         if (coord !== undefined && altitude !== undefined) {
-            const objectZ = trafficLayer.getModelPosition(coord, altitude).z,
+            const objectZ = me.getModelPosition(coord, altitude).z,
                 cameraZ = map.getFreeCameraOptions().position.z,
                 z = cameraZ - objectZ;
 

@@ -4,42 +4,46 @@ import CarMeshSet from './car-mesh-set';
 import configs from './configs';
 import {clamp, colorToRGBArray, lerp} from './helpers';
 import {isDarkBackground} from './helpers-mapbox';
-import ThreeLayer from './three-layer';
-import {Color, Scene, MathUtils} from 'three';
+import {Point} from 'mapbox-gl';
+import {Color, Scene, MathUtils, WebGLRenderTarget, Vector3} from 'three';
 
 const MAX_UG_CARS = 2000;
 const MAX_OG_CARS = 4000;
 const MAX_AIRCRAFTS = 200;
 
-export default class extends ThreeLayer {
+export default class {
 
     constructor(options) {
-        super(options);
+        const me = this;
 
-        this.ugObjects = [];
-        this.ogObjects = [];
-        this.aircraftObjects = [];
+        me.id = options.id;
+        me.type = 'three';
+        me.ugObjects = [];
+        me.ogObjects = [];
+        me.aircraftObjects = [];
     }
 
-    onAdd(map) {
-        const me = this;
+    onAdd(map, context) {
+        const me = this,
+            {scene} = me.context = context,
+            modelScale = map.getModelScale();
 
         me.map = map;
 
-        me.ugCarMeshSet = new CarMeshSet(MAX_UG_CARS, {index: 0, scale: me.modelScale * 100, opacity: .225});
-        me.ogCarMeshSet = new CarMeshSet(MAX_OG_CARS, {index: 1, scale: me.modelScale * 100, opacity: .9});
-        me.aircraftMeshSet = new AircraftMeshSet(MAX_AIRCRAFTS, {index: 2, scale: .06 / .285 * me.modelScale * 100, opacity: .9});
+        me.ugCarMeshSet = new CarMeshSet(MAX_UG_CARS, {index: 0, scale: modelScale * 100, opacity: .225});
+        me.ogCarMeshSet = new CarMeshSet(MAX_OG_CARS, {index: 1, scale: modelScale * 100, opacity: .9});
+        me.aircraftMeshSet = new AircraftMeshSet(MAX_AIRCRAFTS, {index: 2, scale: .06 / .285 * modelScale * 100, opacity: .9});
 
-        me.add(me.ugCarMeshSet.getMesh());
-        me.add(me.ogCarMeshSet.getMesh());
-        me.add(me.aircraftMeshSet.getMesh());
+        scene.add(me.ugCarMeshSet.getMesh());
+        scene.add(me.ogCarMeshSet.getMesh());
+        scene.add(me.aircraftMeshSet.getMesh());
 
-        me.add(me.ugCarMeshSet.getDelayMarkerMesh());
-        me.add(me.ogCarMeshSet.getDelayMarkerMesh());
+        scene.add(me.ugCarMeshSet.getDelayMarkerMesh());
+        scene.add(me.ogCarMeshSet.getDelayMarkerMesh());
 
-        me.add(me.ugCarMeshSet.getOutlineMesh());
-        me.add(me.ogCarMeshSet.getOutlineMesh());
-        me.add(me.aircraftMeshSet.getOutlineMesh());
+        scene.add(me.ugCarMeshSet.getOutlineMesh());
+        scene.add(me.ogCarMeshSet.getOutlineMesh());
+        scene.add(me.aircraftMeshSet.getOutlineMesh());
 
         me.ugPickingScene = new Scene();
         me.ugPickingScene.background = new Color(0xFFFFFF);
@@ -50,6 +54,9 @@ export default class extends ThreeLayer {
         me.ogPickingScene.add(me.ogCarMeshSet.getPickingMesh());
         me.ogPickingScene.add(me.aircraftMeshSet.getPickingMesh());
 
+        me.pickingTexture = new WebGLRenderTarget(1, 1);
+        me.pixelBuffer = new Uint8Array(4);
+
         map.on('zoom', me.onZoom.bind(me));
         map.on('pitch', me.onPitch.bind(me));
     }
@@ -58,7 +65,7 @@ export default class extends ThreeLayer {
         const me = this,
             zoom = me.map.getZoom(),
             unit = Math.pow(2, 14 - clamp(zoom, 13, 19)),
-            scale = unit * me.modelScale * 100;
+            scale = unit * me.map.getModelScale() * 100;
 
         me.ugCarMeshSet.setScale(scale);
         me.ogCarMeshSet.setScale(scale);
@@ -101,13 +108,13 @@ export default class extends ThreeLayer {
     }
 
     getAircraftScale(object) {
-        const me = this,
-            objectZ = me.getModelPosition(object.coord, object.altitude).z,
-            cameraZ = me._map.getFreeCameraOptions().position.z,
-            zoom = me.map.getZoom() + Math.log2(cameraZ / Math.abs(cameraZ - objectZ)),
+        const {map} = this,
+            objectZ = map.getModelPosition(object.coord, object.altitude).z,
+            cameraZ = map.map.getFreeCameraOptions().position.z,
+            zoom = map.getZoom() + Math.log2(cameraZ / Math.abs(cameraZ - objectZ)),
             unit = Math.pow(2, 14 - clamp(zoom, 13, 19));
 
-        return unit * me.modelScale * 100;
+        return unit * map.getModelScale() * 100;
     }
 
     addObject(object) {
@@ -115,7 +122,7 @@ export default class extends ThreeLayer {
             meshIndex = object.type === 'train' ? object.altitude < 0 ? 0 : 1 : 2,
             meshSet = [me.ugCarMeshSet, me.ogCarMeshSet, me.aircraftMeshSet][meshIndex],
             objects = [me.ugObjects, me.ogObjects, me.aircraftObjects][meshIndex],
-            {x, y, z} = me.getModelPosition(object.coord, object.altitude),
+            {x, y, z} = me.map.getModelPosition(object.coord, object.altitude),
             color = Array.isArray(object.color) ? object.color : [object.color],
             attributes = {
                 translation: [x, y, z],
@@ -164,7 +171,7 @@ export default class extends ThreeLayer {
             meshSet = [me.ugCarMeshSet, me.ogCarMeshSet, me.aircraftMeshSet][meshIndex],
             objects = [me.ugObjects, me.ogObjects, me.aircraftObjects][meshIndex],
             instanceIndex = object.instanceIndex,
-            {x, y, z} = me.getModelPosition(object.coord, object.altitude),
+            {x, y, z} = me.map.getModelPosition(object.coord, object.altitude),
             attributes = {
                 translation: [x, y, z],
                 rotationX: object.pitch,
@@ -253,10 +260,32 @@ export default class extends ThreeLayer {
 
     pickObject(mode, point) {
         const me = this,
-            scene = mode === 'underground' ? me.ugPickingScene : me.ogPickingScene,
-            pixel = me.getPixel(point, scene),
-            meshIndex = pixel[0],
-            instanceIndex = (pixel[1] << 8) | pixel[2],
+            {context, pickingTexture, pixelBuffer} = me,
+            {renderer, camera} = context,
+            {drawingBufferWidth, drawingBufferHeight} = renderer.getContext(),
+            pixelRatio = window.devicePixelRatio,
+            scene = mode === 'underground' ? me.ugPickingScene : me.ogPickingScene;
+
+        camera.setViewOffset(
+            drawingBufferWidth,
+            drawingBufferHeight,
+            point.x * pixelRatio | 0,
+            point.y * pixelRatio | 0,
+            1,
+            1
+        );
+
+        renderer.setRenderTarget(pickingTexture);
+        renderer.render(scene, camera);
+        renderer.setRenderTarget(null);
+        renderer.resetState();
+
+        camera.clearViewOffset();
+
+        renderer.readRenderTargetPixels(pickingTexture, 0, 0, 1, 1, pixelBuffer);
+
+        const meshIndex = pixelBuffer[0],
+            instanceIndex = (pixelBuffer[1] << 8) | pixelBuffer[2],
             objects = [me.ugObjects, me.ogObjects, me.aircraftObjects][meshIndex];
 
         if (objects) {
@@ -266,10 +295,19 @@ export default class extends ThreeLayer {
 
     refreshDelayMarkers(actual) {
         const me = this,
-            dark = isDarkBackground(me._map, actual);
+            dark = isDarkBackground(me.map.map, actual);
 
         me.ugCarMeshSet.refreshDelayMarkerMesh(dark);
         me.ogCarMeshSet.refreshDelayMarkerMesh(dark);
+    }
+
+    project(lnglat, altitude) {
+        const {map, context} = this,
+            {width, height} = map.map.transform,
+            {x, y, z} = map.getModelPosition(lnglat, altitude),
+            {x: px, y: py} = new Vector3(x, y, z).project(context.camera);
+
+        return new Point((px + 1) / 2 * width, (1 - py) / 2 * height);
     }
 
 }
