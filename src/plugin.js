@@ -2,25 +2,29 @@ import {includes, valueOrDefault} from './helpers';
 
 export default class {
 
-    constructor(options = {}) {
+    constructor(implementation) {
         const me = this;
 
-        me.enabled = valueOrDefault(options.enabled, true);
-        me.clockModes = options.clockModes || ['realtime', 'playback'];
-        me.viewModes = options.viewModes || ['ground', 'underground'];
-        me.searchModes = options.searchModes || ['none'];
+        me.implementation = implementation;
+
+        me.enabled = false;
+        me.clockModes = implementation.clockModes || ['realtime', 'playback'];
+        me.viewModes = implementation.viewModes || ['ground', 'underground'];
+        me.searchModes = implementation.searchModes || ['none'];
         me._onModeChanged = () => {
             me.setVisibility(true);
         };
     }
 
     addTo(map) {
-        const me = this;
+        const me = this,
+            {implementation} = me;
 
-        me._map = map;
-        me.onAdd(map);
-        if (me.enabled) {
-            me.enabled = false;
+        me.map = map;
+        if (implementation.onAdd) {
+            implementation.onAdd(map);
+        }
+        if (valueOrDefault(implementation.enabled, true)) {
             me.enable();
         }
 
@@ -28,24 +32,29 @@ export default class {
     }
 
     remove() {
-        const me = this;
+        const me = this,
+            {map, implementation} = me;
 
         me.disable();
-        me.onRemove(me._map);
-        delete me._map;
+        if (implementation.onRemove) {
+            implementation.onRemove(map);
+        }
+        delete me.map;
 
         return me;
     }
 
     enable() {
         const me = this,
-            map = me._map;
+            {map, implementation} = me;
 
         if (!me.enabled) {
             me.enabled = true;
             map.on('clockmode', me._onModeChanged);
             map.on('viewmode', me._onModeChanged);
-            me.onEnabled();
+            if (implementation.onEnabled) {
+                implementation.onEnabled();
+            }
             me.setVisibility(true);
         }
 
@@ -54,14 +63,16 @@ export default class {
 
     disable() {
         const me = this,
-            map = me._map;
+            {map, implementation} = me;
 
         if (me.enabled) {
             me.enabled = false;
             map.off('clockmode', me._onModeChanged);
             map.off('viewmode', me._onModeChanged);
             me.setVisibility(false);
-            me.onDisabled();
+            if (implementation.onDisabled) {
+                implementation.onDisabled();
+            }
         }
 
         return me;
@@ -69,33 +80,33 @@ export default class {
 
     setVisibility(visible) {
         const me = this,
-            map = me._map;
+            {map, implementation} = me;
 
-        me.onVisibilityChanged(visible && me.enabled &&
-            includes(me.clockModes, map.getClockMode()) &&
-            includes(me.viewModes, map.getViewMode()) &&
-            includes(me.searchModes, map.searchMode)
-        );
+        if (implementation.onVisibilityChanged) {
+            implementation.onVisibilityChanged(visible && me.enabled &&
+                includes(me.clockModes, map.getClockMode()) &&
+                includes(me.viewModes, map.getViewMode()) &&
+                includes(me.searchModes, map.searchMode)
+            );
+        }
     }
 
-    onAdd() {
-        // noop
+    getId() {
+        return this.implementation.id;
     }
 
-    onRemove() {
-        // noop
+    getName(lang) {
+        const {name} = this.implementation;
+
+        return name[lang] || name.en;
     }
 
-    onEnabled() {
-        // noop
+    getIconStyle() {
+        return this.implementation.iconStyle;
     }
 
-    onDisabled() {
-        // noop
-    }
-
-    onVisibilityChanged() {
-        // noop
+    isEnabled() {
+        return this.enabled;
     }
 
 }

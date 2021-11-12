@@ -16,25 +16,24 @@ export default class extends Panel {
 
         super.addTo(map)
             .setTitle(dict['layers'])
-            .setHTML(layers.map(({id, name}) => [
-                `<div id="${id}-layer" class="layer-row">`,
+            .setHTML(layers.map(layer => [
+                `<div id="${layer.getId()}-layer" class="layer-row">`,
                 `<div class="layer-icon"></div>`,
-                `<div>${name[lang]}</div>`,
+                `<div>${layer.getName(lang)}</div>`,
                 '</div>'
             ].join('')).join(''));
 
         for (const layer of layers) {
-            const {id, iconStyle, enabled} = layer,
-                element = me._container.querySelector(`#${id}-layer .layer-icon`),
+            const element = me._container.querySelector(`#${layer.getId()}-layer .layer-icon`),
                 {style, classList} = element;
 
-            Object.assign(style, iconStyle);
-            if (enabled) {
+            Object.assign(style, layer.getIconStyle());
+            if (layer.isEnabled()) {
                 classList.add('layer-icon-enabled');
             }
 
             element.addEventListener('click', () => {
-                if (layer.enabled) {
+                if (layer.isEnabled()) {
                     classList.remove('layer-icon-enabled');
                     layer.disable();
                 } else {

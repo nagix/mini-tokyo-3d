@@ -17,6 +17,7 @@ import * as helpersMapbox from './helpers-mapbox';
 import LayerPanel from './layer-panel';
 import * as loader from './loader';
 import MapboxGLButtonControl from './mapbox-gl-button-control';
+import Plugin from './plugin';
 import SearchPanel from './search-panel';
 import SharePanel from './share-panel';
 import StationPanel from './station-panel';
@@ -97,7 +98,7 @@ export default class extends Evented {
         me.modeControl = options.modeControl;
         me.configControl = options.configControl;
         me.clock = new Clock();
-        me.plugins = options.plugins || [];
+        me.plugins = (options.plugins || []).map(plugin => new Plugin(plugin));
 
         me.searchMode = 'none';
         me.viewMode = configs.defaultViewMode;

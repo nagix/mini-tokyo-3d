@@ -1,7 +1,6 @@
 import Marker from './marker';
 import Map from './map';
 import Panel from './panel';
-import Plugin from './plugin';
 import Popup from './popup';
 import mapboxgl from 'mapbox-gl';
 import * as three from 'three';
@@ -17,7 +16,6 @@ export default {
     Marker,
     Map,
     Panel,
-    Plugin,
     Popup,
     THREE
 };
