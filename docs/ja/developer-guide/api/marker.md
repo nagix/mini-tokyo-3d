@@ -76,7 +76,7 @@ new Marker(options: Object)
 
 #### パラメータ
 
-**`visible`** ([`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)) trueの場合、マーカーが表示される
+**`visible`** ([`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)) `true` の場合、マーカーが表示される
 
 #### 返り値
 

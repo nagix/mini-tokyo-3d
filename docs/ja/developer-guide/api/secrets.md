@@ -6,6 +6,10 @@
 
 ## プロパティ
 
-**`tokyochallenge`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) : [東京公共交通オープンデータチャレンジ](https://tokyochallenge.odpt.org)のアクセストークン。未指定の場合は、デフォルトのトークンが使われる
+### **`tokyochallenge`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
-**`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) : [公共交通オープンデータセンター](https://www.odpt.org)のアクセストークン。未指定の場合は、デフォルトのトークンが使われる
+[東京公共交通オープンデータチャレンジ](https://tokyochallenge.odpt.org)のアクセストークンです。未指定の場合は、デフォルトのトークンが使われます。
+
+### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
+
+[公共交通オープンデータセンター](https://www.odpt.org)のアクセストークンです。未指定の場合は、デフォルトのトークンが使われます。

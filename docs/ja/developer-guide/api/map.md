@@ -31,7 +31,7 @@ new Map(options: Object)
 **`options.pitch`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `60` | 初期のマップの傾き。画面に対する地表面の角度（0〜85）で指定する。未指定の場合は、`60` に設定される
 **`options.ecoFrameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1` | エコモードがオンの場合の、列車や旅客機のアニメーションのフレームレート（1秒あたりのフレーム数）。1〜60 の間で指定する。数値を小さくすると、アニメーションの滑らかさが減少する一方で CPU リソースの使用も下がるため、モバイルデバイスでのバッテリー消費を抑えることができる。未指定の場合は、`1` に設定される
 **`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | 追跡する列車またはフライトの ID。列車 ID は`'odpt.Train:<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'odpt.FlightInformationArrival:<事業者ID>.<空港ID>.<フライト番号>'`または`'odpt.FlightInformationDeparture:<事業者ID>.<空港ID>.<フライト番号>'`の形式で表される文字列。`'odpt.*:'`の部分は省略可。詳細は[東京公共交通オープンデータチャレンジ API 仕様](https://developer-tokyochallenge.odpt.org/documents)を参照のこと
-**`options.plugins`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`Plugin`](./plugin.md)`>` | 
+**`options.plugins`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`PluginInterface`](./plugin.md)`>` | 追加するプラグインの配列。各プラグインは [PluginInterface](./plugin.md) を実装する必要がある
 
 ## インスタンスメンバ
 
@@ -41,7 +41,7 @@ new Map(options: Object)
 
 #### パラメータ
 
-**`layer`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`CustomLayerInterface`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#customlayerinterface) | [`ThreeLayer`](./three-layer.md)) Mapbox スタイル仕様の[レイヤー定義](https://docs.mapbox.com/mapbox-gl-js/style-spec/#layers)、[CustomLayerInterface](https://docs.mapbox.com/mapbox-gl-js/api/properties/#customlayerinterface) 仕様、または [ThreeLayer](./three-layer.md) オブジェクトのいずれかに準拠した、追加するレイヤー
+**`layer`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`CustomLayerInterface`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#customlayerinterface) | [`ThreeLayerInterface`](./three-layer.md)) Mapbox スタイル仕様の[レイヤー定義](https://docs.mapbox.com/mapbox-gl-js/style-spec/#layers)、[CustomLayerInterface](https://docs.mapbox.com/mapbox-gl-js/api/properties/#customlayerinterface) 仕様、または [ThreeLayerInterface](./three-layer.md) 仕様のいずれかに準拠した、追加するレイヤー
 
 #### 返り値
 
@@ -126,6 +126,32 @@ center、zoom、bearing および pitch の任意の組み合わせを変更し�
 #### 返り値
 
 [`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): 現在のエコモードを表す文字列。`'normal'` または `'eco'` のどちらか
+
+---
+
+### **`getModelPosition(lnglat, altitude)`**
+
+`LngLat` を `MercatorCoordinate` に投影し、東京駅を原点とした変換後のメルカトル座標を返します。
+
+#### パラメータ
+
+**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) 投影する地理的位置
+
+**`altitude`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) 位置の高度（メートル単位）
+
+#### 返り値
+
+{x: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), y: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), z: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}: 東京駅を原点とした変換後のメルカトル座標
+
+---
+
+### **`getModelScale()`**
+
+メートル単位の現実世界の座標系から `MercatorCoordinate` に変換する際のスケールを返します。これにより、東京駅における `MercatorCoordinate` 単位での1メートルの距離が得られます。
+
+#### 返り値
+
+[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): メートル単位の現実世界での座標系から `MercatorCoordinate` に変換する際のスケール
 
 ---
 
