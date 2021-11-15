@@ -339,6 +339,22 @@ Sets the eco mode. In the normal mode (`'normal'`), the frame rate for train and
 
 ---
 
+### **`setLayerVisibility(layerId, visibility)`**
+
+Sets the visibility of the layer. Specify `'visible'` to make it visible, or `'none'` to make it invisible.
+
+#### Parameters
+
+**`layerId`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) The ID of the layer to set the visibility in.
+
+**`visibility`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) Whether this layer is displayed. Either `'visible'` or `'none'`.
+
+#### Returns
+
+[`Map`](./map.md): Returns itself to allow for method chaining.
+
+---
+
 ### **`setPitch(pitch)`**
 
 Sets the map's pitch (tilt). Equivalent to `jumpTo({pitch: pitch})`.

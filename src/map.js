@@ -483,6 +483,20 @@ export default class extends Evented {
     }
 
     /**
+     * Sets the visibility of the layer.
+     * @param {string} layerId - The ID of the layer to set the visibility in.
+     * @param {string} visibility - Whether this layer is displayed.
+     *     'visible' and 'none' are supported.
+     * @returns {Map} Returns itself to allow for method chaining
+     */
+    setLayerVisibility(layerId, visibility) {
+        const me = this;
+
+        me.map.setLayoutProperty(layerId, 'visibility', visibility);
+        return me;
+    }
+
+    /**
      * Returns a `MercatorCoordinate` object that represents the position of Tokyo
      * Station as the origin of the mercator coordinates.
      * @returns {MercatorCoordinate} The origin of the mercator coordinates

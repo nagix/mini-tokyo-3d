@@ -339,6 +339,22 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ---
 
+### **`setLayerVisibility(layerId, visibility)`**
+
+レイヤの可視性を設定します。表示する場合は `'visible'` を、表示しない場合は `'none'` を指定します。
+
+#### パラメータ
+
+**`layerId`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) 可視性を設定するレイヤーのID
+
+**`visibility`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) このレイヤーを表示するかどうか。`'visible'` または `'none'` のどちらか
+
+#### 返り値
+
+[`Map`](./map.md): Returns itself to allow for method chaining.
+
+---
+
 ### **`setPitch(pitch)`**
 
 マップの傾きを設定します。`jumpTo({pitch: pitch})` と同じです。
