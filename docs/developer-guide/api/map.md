@@ -129,6 +129,16 @@ Returns the current eco mode.
 
 ---
 
+### **`getMapboxMap()`**
+
+Returns the Mapbox's [`Map`](https://docs.mapbox.com/mapbox-gl-js/api/map/) object used in the map.
+
+#### Returns
+
+[`Map`](https://docs.mapbox.com/mapbox-gl-js/api/map/): The Mapbox's Map.
+
+---
+
 ### **`getModelPosition(lnglat, altitude)`**
 
 Projects a `LngLat` to a `MercatorCoordinate`, and returns the translated mercator coordinates with Tokyo Station as the origin.

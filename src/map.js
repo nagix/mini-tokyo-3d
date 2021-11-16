@@ -151,6 +151,14 @@ export default class extends Evented {
     }
 
     /**
+     * Returns the Mapbox's Map object used in the map
+     * @returns {mapboxgl.Map} The Mapbox's Map
+     */
+    getMapboxMap() {
+        return this.map;
+    }
+
+    /**
      * Returns the map's geographical centerpoint.
      * @returns {LngLat} The map's geographical centerpoint
      */

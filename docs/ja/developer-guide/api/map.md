@@ -129,6 +129,16 @@ center、zoom、bearing および pitch の任意の組み合わせを変更し�
 
 ---
 
+### **`getMapboxMap()`**
+
+マップ内で使われている Mapbox の [`Map`](https://docs.mapbox.com/mapbox-gl-js/api/map/) オブジェクトを返します。
+
+#### 返り値
+
+[`Map`](https://docs.mapbox.com/mapbox-gl-js/api/map/): Mapbox の Map
+
+---
+
 ### **`getModelPosition(lnglat, altitude)`**
 
 `LngLat` を `MercatorCoordinate` に投影し、東京駅を原点とした変換後のメルカトル座標を返します。
