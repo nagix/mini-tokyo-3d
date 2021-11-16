@@ -151,7 +151,7 @@ export default class extends Evented {
     }
 
     /**
-     * Returns the Mapbox's Map object used in the map
+     * Returns the Mapbox's Map object used in the map.
      * @returns {mapboxgl.Map} The Mapbox's Map
      */
     getMapboxMap() {
