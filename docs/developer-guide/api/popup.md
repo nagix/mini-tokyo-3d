@@ -40,7 +40,7 @@ Sets the geographical location of the popup's anchor, and moves the popup to it.
 
 #### Parameters
 
-**`lnglat`** ([`LngLat`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglat)) The geographical location to set as the popup's anchor.
+**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) The geographical location to set as the popup's anchor.
 
 #### Returns
 

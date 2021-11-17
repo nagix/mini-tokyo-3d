@@ -48,7 +48,7 @@ Sets the marker's geographical position and move the marker to it.
 
 #### Parameters
 
-**`lnglat`** ([`LngLat`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglat)) A [`LngLat`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglat) describing where the marker should be located.
+**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) A [LngLatLike](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike) describing where the marker should be located.
 
 #### Returns
 

@@ -15,7 +15,7 @@ Name | Description
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | The `id` of the HTML element in which Mini Tokyo 3D will render the map.
 **`options.accessToken`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Access token for [Mapbox](https://www.mapbox.com). If you don't specify this token, an error will occur when loading the map, so make sure to get an access token specific to your web site.
 **`options.secrets`**<br>[`Secrets`](./secrets.md) | An object to store the access tokens used to retrieve data.
-**`options.lang`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the language. If not specified, the browser's default language is used. Currently `'ja'`, `'en'`, `'ko'`, `'zh-Hans'`, `'zh-Hant'`, `'th'` and `'ne'` are supported. If an unsupported language is specified, then 'en' is used.
+**`options.lang`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the language. If not specified, the browser's default language is used. Currently `'ja'`, `'en'`, `'ko'`, `'zh-Hans'`, `'zh-Hant'`, `'th'` and `'ne'` are supported. If an unsupported language is specified, then `'en'` is used.
 **`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D data URL. If not specified, `'https://minitokyo3d.com/data'` will be used.
 **`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the date and time display will be added to the map.
 **`options.searchControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the search button will be added to the map.
@@ -51,13 +51,13 @@ Adds a layer to the map.
 
 ### **`easeTo(options)`**
 
-Changes any combination of center, zoom, bearing, pitch, and padding with an animated transition between old and new values. The map will retain its current values for any details not specified in `options`.
+Changes any combination of `center`, `zoom`, `bearing`, `pitch`, and `padding` with an animated transition between old and new values. The map will retain its current values for any details not specified in `options`.
 
-Note: The transition will happen instantly if the user has enabled the reduced motion accessibility feature enabled in their operating system, unless `options` includes `essential: true`.
+Note: The transition will happen instantly if the user has enabled the `reduced motion` accessibility feature enabled in their operating system, unless `options` includes `essential: true`.
 
 #### Parameters
 
-**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) Options describing the destination and animation of the transition. Accepts [`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions) and [`AnimationOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions).
+**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) Options describing the destination and animation of the transition. Accepts [CameraOptions](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions) and [AnimationOptions](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions).
 
 #### Returns
 
@@ -67,17 +67,17 @@ Note: The transition will happen instantly if the user has enabled the reduced m
 
 ### **`flyTo(options)`**
 
-Changes any combination of center, zoom, bearing, and pitch, animating the transition along a curve that evokes flight. The animation seamlessly incorporates zooming and panning to help the user maintain her bearings even after traversing a great distance.
+Changes any combination of `center`, `zoom`, `bearing`, and `pitch`, animating the transition along a curve that evokes flight. The animation seamlessly incorporates zooming and panning to help the user maintain her bearings even after traversing a great distance.
 
 Note: The animation will be skipped, and this will behave equivalently to `jumpTo` if the user has the `reduced motion` accessibility feature enabled in their operating system, unless `options` includes `essential: true`.
 
 #### Parameters
 
-**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) Options describing the destination and animation of the transition. Accepts [`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions), [`AnimationOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions), and the following additional options.
+**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) Options describing the destination and animation of the transition. Accepts [CameraOptions](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions), [AnimationOptions](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions), and the following additional options.
 
 Name | Description
 :-- | :--
-**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.42` | The zooming "curve" that will occur along the flight path. A high value maximizes zooming for an exaggerated animation, while a low value minimizes zooming for an effect closer to [`Map#easeTo`](./map.md#easeto-options). 1.42 is the average value selected by participants in the user study discussed in [van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf). A value of `Math.pow(6, 0.25)` would be equivalent to the root mean squared average velocity. A value of 1 would produce a circular motion.
+**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.42` | The zooming "curve" that will occur along the flight path. A high value maximizes zooming for an exaggerated animation, while a low value minimizes zooming for an effect closer to [Map#easeTo](./map.md#easeto-options). 1.42 is the average value selected by participants in the user study discussed in [van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf). A value of `Math.pow(6, 0.25)` would be equivalent to the root mean squared average velocity. A value of 1 would produce a circular motion.
 **`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The zero-based zoom level at the peak of the flight path. If `options.curve` is specified, this option is ignored.
 **`options.speed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.2` | The average speed of the animation defined in relation to `options.curve`. A speed of 1.2 means that the map appears to move along the flight path by 1.2 times `options.curve` screenfuls every second. A *screenful* is the map's visible span. It does not correspond to a fixed physical distance, but varies by zoom level.
 **`options.screenSpeed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The average speed of the animation measured in screenfuls per second, assuming a linear timing curve. If `options.speed` is specified, this option is ignored.
@@ -217,11 +217,11 @@ Returns the map's current zoom level.
 
 ### **`jumpTo(options)`**
 
-Changes any combination of center, zoom, bearing, and pitch, without an animated transition. The map will retain its current values for any details not specified in `options`.
+Changes any combination of `center`, `zoom`, `bearing`, and `pitch`, without an animated transition. The map will retain its current values for any details not specified in `options`.
 
 #### Parameters
 
-**`options`** ([`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions)) Options object
+**`options`** ([`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions)) Options object.
 
 #### Returns
 
@@ -437,7 +437,7 @@ Sets the map's zoom level. Equivalent to `jumpTo({zoom: zoom})`.
 
 ### **`boxzoomcancel`**
 
-Fired when the user cancels a "box zoom" interaction, or when the bounding box does not meet the minimum size threshold. See [`BoxZoomHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
+Fired when the user cancels a "box zoom" interaction, or when the bounding box does not meet the minimum size threshold. See [BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
 
 #### Properties
 
@@ -447,7 +447,7 @@ Fired when the user cancels a "box zoom" interaction, or when the bounding box d
 
 ### **`boxzoomend`**
 
-Fired when a "box zoom" interaction ends. See [`BoxZoomHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
+Fired when a "box zoom" interaction ends. See [BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
 
 #### Properties
 
@@ -457,7 +457,7 @@ Fired when a "box zoom" interaction ends. See [`BoxZoomHandler`](https://docs.ma
 
 ### **`boxzoomstart`**
 
-Fired when a "box zoom" interaction starts. See [`BoxZoomHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
+Fired when a "box zoom" interaction starts. See [BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
 
 #### Properties
 
@@ -517,7 +517,7 @@ Fired when a train or airplane tracking is canceled.
 
 ### **`drag`**
 
-Fired repeatedly during a "drag to pan" interaction. See [`DragPanHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler).
+Fired repeatedly during a "drag to pan" interaction. See [DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler).
 
 #### Properties
 
@@ -527,7 +527,7 @@ Fired repeatedly during a "drag to pan" interaction. See [`DragPanHandler`](http
 
 ### **`dragend`**
 
-Fired when a "drag to pan" interaction ends. See [`DragPanHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler).
+Fired when a "drag to pan" interaction ends. See [DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler).
 
 #### Properties
 
@@ -537,7 +537,7 @@ Fired when a "drag to pan" interaction ends. See [`DragPanHandler`](https://docs
 
 ### **`dragstart`**
 
-Fired when a "drag to pan" interaction starts. See [`DragPanHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler).
+Fired when a "drag to pan" interaction starts. See [DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler).
 
 #### Properties
 
@@ -613,7 +613,7 @@ Fired when a pointing device (usually a mouse) is released within the map.
 
 ### **`move`**
 
-Fired repeatedly during an animated transition from one view to another, as the result of either user interaction or methods such as [`Map#flyTo`](./map.md#flyto-options).
+Fired repeatedly during an animated transition from one view to another, as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
 #### Properties
 
@@ -623,7 +623,7 @@ Fired repeatedly during an animated transition from one view to another, as the 
 
 ### **`moveend`**
 
-Fired just after the map completes a transition from one view to another, as the result of either user interaction or methods such as [`Map#jumpTo`](./map.md#jumpto-options).
+Fired just after the map completes a transition from one view to another, as the result of either user interaction or methods such as [Map#jumpTo](./map.md#jumpto-options).
 
 #### Properties
 
@@ -633,7 +633,7 @@ Fired just after the map completes a transition from one view to another, as the
 
 ### **`movestart`**
 
-Fired just before the map begins a transition from one view to another, as the result of either user interaction or methods such as [`Map#jumpTo`](./map.md#jumpto-options).
+Fired just before the map begins a transition from one view to another, as the result of either user interaction or methods such as [Map#jumpTo](./map.md#jumpto-options).
 
 #### Properties
 
@@ -643,7 +643,7 @@ Fired just before the map begins a transition from one view to another, as the r
 
 ### **`pitch`**
 
-Fired repeatedly during the map's pitch (tilt) animation between one state and another as the result of either user interaction or methods such as [`Map#flyTo`](./map.md#flyto-options).
+Fired repeatedly during the map's pitch (tilt) animation between one state and another as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
 #### Properties
 
@@ -653,7 +653,7 @@ Fired repeatedly during the map's pitch (tilt) animation between one state and a
 
 ### **`pitchend`**
 
-Fired immediately after the map's pitch (tilt) finishes changing as the result of either user interaction or methods such as [`Map#flyTo`](./map.md#flyto-options).
+Fired immediately after the map's pitch (tilt) finishes changing as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
 #### Properties
 
@@ -663,7 +663,7 @@ Fired immediately after the map's pitch (tilt) finishes changing as the result o
 
 ### **`pitchstart`**
 
-Fired whenever the map's pitch (tilt) begins a change as the result of either user interaction or methods such as [`Map#flyTo`](./map.md#flyto-options).
+Fired whenever the map's pitch (tilt) begins a change as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
 #### Properties
 
@@ -679,7 +679,7 @@ Fired immediately after the map has been resized.
 
 ### **`rotate`**
 
-Fired repeatedly during a "drag to rotate" interaction. See [`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
+Fired repeatedly during a "drag to rotate" interaction. See [DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
 
 #### Properties
 
@@ -689,7 +689,7 @@ Fired repeatedly during a "drag to rotate" interaction. See [`DragRotateHandler`
 
 ### **`rotateend`**
 
-Fired when a "drag to rotate" interaction ends. See [`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
+Fired when a "drag to rotate" interaction ends. See [DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
 
 #### Properties
 
@@ -699,7 +699,7 @@ Fired when a "drag to rotate" interaction ends. See [`DragRotateHandler`](https:
 
 ### **`rotatestart`**
 
-Fired when a "drag to rotate" interaction starts. See [`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
+Fired when a "drag to rotate" interaction starts. See [DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
 
 #### Properties
 
@@ -789,7 +789,7 @@ Fired when a [`wheel`](https://developer.mozilla.org/docs/Web/Events/wheel) even
 
 ### **`zoom`**
 
-Fired repeatedly during an animated transition from one zoom level to another, as the result of either user interaction or methods such as [`Map#flyTo`](./map.md#flyto-options).
+Fired repeatedly during an animated transition from one zoom level to another, as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
 #### Properties
 
@@ -799,7 +799,7 @@ Fired repeatedly during an animated transition from one zoom level to another, a
 
 ### **`zoomend`**
 
-Fired just after the map completes a transition from one zoom level to another, as the result of either user interaction or methods such as [`Map#flyTo`](./map.md#flyto-options).
+Fired just after the map completes a transition from one zoom level to another, as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
 #### Properties
 
@@ -809,7 +809,7 @@ Fired just after the map completes a transition from one zoom level to another, 
 
 ### **`zoomstart`**
 
-Fired just before the map begins a transition from one zoom level to another, as the result of either user interaction or methods such as [`Map#flyTo`](./map.md#flyto-options).
+Fired just before the map begins a transition from one zoom level to another, as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
 #### Properties
 

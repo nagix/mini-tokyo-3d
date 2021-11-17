@@ -51,13 +51,13 @@ new Map(options: Object)
 
 ### **`easeTo(options)`**
 
-center、zoom、bearing および pitch の任意の組み合わせを、新旧の値の間のアニメーションによる遷移で変更します。マップは、`options` で指定されていない項目については、現在の値を保持します。
+`center`、`zoom`、`bearing` および `pitch` の任意の組み合わせを、新旧の値の間のアニメーションによる遷移で変更します。マップは、`options` で指定されていない項目については、現在の値を保持します。
 
 注: ユーザーがオペレーティングシステムで `reduced motion` (動きの抑制) アクセシビリティ機能を有効にしている場合、`options` に `essential:true` が含まれていない限り、遷移は即座に行われます。
 
 #### パラメータ
 
-**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) 遷移先とアニメーションを記述するオプション。[`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions) と [`AnimationOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions) が使用可能
+**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) 遷移先とアニメーションを記述するオプション。[CameraOptions](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions) と [AnimationOptions](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions) が使用可能
 
 #### 返り値
 
@@ -67,17 +67,17 @@ center、zoom、bearing および pitch の任意の組み合わせを、新旧�
 
 ### **`flyTo(options)`**
 
-center、zoom、bearing および pitch の任意の組み合わせを変更し、飛行をイメージした曲線に沿って遷移をアニメーションします。アニメーションにはズームとパンがシームレスに組み込まれており、ユーザーが長距離を移動した後でも方向感を維持できるようになっています。
+`center`、`zoom`、`bearing` および `pitch` の任意の組み合わせを変更し、飛行をイメージした曲線に沿って遷移をアニメーションします。アニメーションにはズームとパンがシームレスに組み込まれており、ユーザーが長距離を移動した後でも方向感を維持できるようになっています。
 
 注: ユーザーがオペレーティングシステムで `reduced motion` (動きの抑制) アクセシビリティ機能を有効にしている場合、`options` に `essential:true` が含まれていない限り、アニメーションはスキップされ `jumpTo` と同じ動作になります。
 
 #### パラメータ
 
-**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) 遷移先とアニメーションを記述するオプション。[`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions)、[`AnimationOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions) に加えて、次に示すオプションが使用可能
+**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) 遷移先とアニメーションを記述するオプション。[CameraOptions](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions)、[AnimationOptions](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions) に加えて、次に示すオプションが使用可能
 
 名前 | 説明
 :-- | :--
-**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1.42` | 飛行経路に沿って発生するズームの「カーブ」。高い値を設定するとズームのアニメーションの誇張が最大になり、低い値を設定するとズームの効果が最小になって [`Map#easeTo`](./map.md#easeto-options) の動きに近づく。1.42 は、[van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf) で論じられた、ユーザー調査の参加者によって選択された平均値。`Math.pow(6, 0.25)` の値は平均速度の平方根に相当する。1 の値は円運動を生成する
+**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1.42` | 飛行経路に沿って発生するズームの「カーブ」。高い値を設定するとズームのアニメーションの誇張が最大になり、低い値を設定するとズームの効果が最小になって [Map#easeTo](./map.md#easeto-options) の動きに近づく。1.42 は、[van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf) で論じられた、ユーザー調査の参加者によって選択された平均値。`Math.pow(6, 0.25)` の値は平均速度の平方根に相当する。1 の値は円運動を生成する
 **`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 飛行経路のピークでのゼロベースのズームレベル。`options.curve` が指定された場合、このオプションは無視される
 **`options.speed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1.2` | `options.curve` と関連して定義されるアニメーションの平均速度。速度が 1.2 の場合、マップが飛行経路に沿って 1 秒ごとに `options.curve` の 1.2 倍のスクリーンフルで移動しているように見えることを意味する。*スクリーンフル*とは、マップの表示部分の幅のこと。これは固定の物理的な距離に対応するものではなく、ズームレベルによって変化する
 **`options.screenSpeed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 直線的なタイミングカーブを想定した場合の、1秒あたりのスクリーンフルで表したアニメーションの平均速度。`options.curve` が指定された場合、このオプションは無視される
@@ -217,7 +217,7 @@ center、zoom、bearing および pitch の任意の組み合わせを変更し�
 
 ### **`jumpTo(options)`**
 
-center、zoom、bearing および pitch の任意の組み合わせを、アニメーションによる遷移なしで変更します。マップは、`options` で指定されていない項目については、現在の値を保持します。
+`center`、`zoom`、`bearing` および `pitch` の任意の組み合わせを、アニメーションによる遷移なしで変更します。マップは、`options` で指定されていない項目については、現在の値を保持します。
 
 #### パラメータ
 
@@ -361,7 +361,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### 返り値
 
-[`Map`](./map.md): Returns itself to allow for method chaining.
+[`Map`](./map.md): メソッドチェーンを可能にするために自分自身を返す
 
 ---
 
@@ -437,31 +437,31 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ### **`boxzoomcancel`**
 
-ユーザーが「ボックスズーム」操作をキャンセルした場合や、境界ボックスが最小サイズのしきい値を満たしていない場合に発生します。[`BoxZoomHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler) を参照してください。
+ユーザーが「ボックスズーム」操作をキャンセルした場合や、境界ボックスが最小サイズのしきい値を満たしていない場合に発生します。[BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler) を参照してください。
 
 #### プロパティ
 
-**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdboxzoomevent))
+**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent))
 
 ---
 
 ### **`boxzoomend`**
 
-「ボックスズーム」操作が終了したときに発生します。[`BoxZoomHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler) を参照してください。
+「ボックスズーム」操作が終了したときに発生します。[BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler) を参照してください。
 
 #### プロパティ
 
-**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdboxzoomevent))
+**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent))
 
 ---
 
 ### **`boxzoomstart`**
 
-「ボックスズーム」操作が開始されたときに発生します。[`BoxZoomHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler) を参照してください。
+「ボックスズーム」操作が開始されたときに発生します。[BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler) を参照してください。
 
 #### プロパティ
 
-**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdboxzoomevent))
+**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent))
 
 ---
 
@@ -471,7 +471,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### プロパティ
 
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent))
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
 
 ---
 
@@ -491,7 +491,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### プロパティ
 
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent))
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
 
 ---
 
@@ -501,7 +501,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### プロパティ
 
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent))
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
 
 ---
 
@@ -517,7 +517,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ### **`drag`**
 
-「移動のためのドラッグ」操作中に繰り返し発生します。[`DragPanHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler) を参照してください。
+「移動のためのドラッグ」操作中に繰り返し発生します。[DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler) を参照してください。
 
 #### プロパティ
 
@@ -527,7 +527,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ### **`dragend`**
 
-「移動のためのドラッグ」操作が終了したときに発生します。[`DragPanHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler) を参照してください。
+「移動のためのドラッグ」操作が終了したときに発生します。[DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler) を参照してください。
 
 #### プロパティ
 
@@ -537,7 +537,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ### **`dragstart`**
 
-「移動のためのドラッグ」操作が開始されたときに発生します。[`DragPanHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler) を参照してください。
+「移動のためのドラッグ」操作が開始されたときに発生します。[DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler) を参照してください。
 
 #### プロパティ
 
@@ -577,7 +577,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### プロパティ
 
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent))
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
 
 ---
 
@@ -587,7 +587,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### プロパティ
 
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent))
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
 
 ---
 
@@ -597,7 +597,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### プロパティ
 
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent))
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
 
 ---
 
@@ -607,23 +607,23 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### プロパティ
 
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent))
+**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
 
 ---
 
 ### **`move`**
 
-ユーザの操作や [`Map#flyTo`](./map.md#flyto-options) などのメソッドの結果として、あるビューから別のビューへのアニメーション遷移中に繰り返し発生します。
+ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、あるビューから別のビューへのアニメーション遷移中に繰り返し発生します。
 
 #### プロパティ
 
-**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdtouchevent)`)`)
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
 
 ---
 
 ### **`moveend`**
 
-ユーザの操作や [`Map#jumpTo`](./map.md#jumpto-options) などのメソッドの結果として、マップがあるビューから別のビューへの遷移を完了した直後に発生します。
+ユーザの操作や [Map#jumpTo](./map.md#jumpto-options) などのメソッドの結果として、マップがあるビューから別のビューへの遷移を完了した直後に発生します。
 
 #### プロパティ
 
@@ -633,7 +633,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ### **`movestart`**
 
-ユーザの操作や [`Map#jumpTo`](./map.md#jumpto-options) などのメソッドの結果として、マップがあるビューから別のビューに遷移する直前に発生します。
+ユーザの操作や [Map#jumpTo](./map.md#jumpto-options) などのメソッドの結果として、マップがあるビューから別のビューに遷移する直前に発生します。
 
 #### プロパティ
 
@@ -643,7 +643,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ### **`pitch`**
 
-ユーザの操作や [`Map#flyTo`](./map.md#flyto-options) などのメソッドの結果として、マップの傾きの状態遷移アニメーションの間に繰り返し発生します。
+ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、マップの傾きの状態遷移アニメーションの間に繰り返し発生します。
 
 #### プロパティ
 
@@ -653,7 +653,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ### **`pitchend`**
 
-ユーザの操作や [`Map#flyTo`](./map.md#flyto-options) などのメソッドの結果として、マップの傾きが変化し終わった直後に発生します。
+ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、マップの傾きが変化し終わった直後に発生します。
 
 #### プロパティ
 
@@ -663,7 +663,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ### **`pitchstart`**
 
-ユーザの操作や [`Map#flyTo`](./map.md#flyto-options) などのメソッドの結果として、マップの傾きが変化し始める直前に発生します。
+ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、マップの傾きが変化し始める直前に発生します。
 
 #### プロパティ
 
@@ -679,31 +679,31 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 ### **`rotate`**
 
-「回転のためのドラッグ」操作中に繰り返し発生します。[`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler) を参照してください。
+「回転のためのドラッグ」操作中に繰り返し発生します。[DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler) を参照してください。
 
 #### プロパティ
 
-**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdtouchevent)`)`)
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
 
 ---
 
 ### **`rotateend`**
 
-「回転のためのドラッグ」操作が終了したときに発生します。[`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler)を参照してください。
+「回転のためのドラッグ」操作が終了したときに発生します。[DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler)を参照してください。
 
 #### プロパティ
 
-**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdtouchevent)`)`)
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
 
 ---
 
 ### **`rotatestart`**
 
-「回転のためのドラッグ」操作が開始されたときに発生します。[`DragRotateHandler`](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler)を参照してください。
+「回転のためのドラッグ」操作が開始されたときに発生します。[DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler)を参照してください。
 
 #### プロパティ
 
-**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdtouchevent)`)`)
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
 
 ---
 
@@ -723,7 +723,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### プロパティ
 
-**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdtouchevent))
+**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -733,7 +733,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### プロパティ
 
-**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdtouchevent))
+**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -743,7 +743,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### プロパティ
 
-**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdtouchevent))
+**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -753,7 +753,7 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### プロパティ
 
-**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdtouchevent))
+**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -783,34 +783,34 @@ center、zoom、bearing および pitch の任意の組み合わせを、アニ�
 
 #### プロパティ
 
-**`data`** ([`MapWheelEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdwheelevent))
+**`data`** ([`MapWheelEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapwheelevent))
 
 ---
 
 ### **`zoom`**
 
-ユーザの操作や [`Map#flyTo`](./map.md#flyto-options) などのメソッドの結果として、あるズームレベルから別のズームレベルへのアニメーション遷移中に繰り返し発生します。
+ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、あるズームレベルから別のズームレベルへのアニメーション遷移中に繰り返し発生します。
 
 #### プロパティ
 
-**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdtouchevent)`)`)
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
 
 ---
 
 ### **`zoomend`**
 
-ユーザの操作や [`Map#flyTo`](./map.md#flyto-options) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を完了した直後に発生します。
+ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を完了した直後に発生します。
 
 #### プロパティ
 
-**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdtouchevent)`)`)
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)
 
 ---
 
 ### **`zoomstart`**
 
-ユーザの操作や [`Map#flyTo`](./map.md#flyto-options) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を開始する直前に発生します。
+ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を開始する直前に発生します。
 
 #### プロパティ
 
-**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/./map.mdtouchevent)`)`)
+**`data`** (`(`[`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)`)`)

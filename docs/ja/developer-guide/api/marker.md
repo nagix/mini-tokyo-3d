@@ -48,7 +48,7 @@ new Marker(options: Object)
 
 #### パラメータ
 
-**`lnglat`** ([`LngLat`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglat)) マーカーを設置する位置を示す [`LngLat`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglat)
+**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) マーカーを設置する位置を示す [LngLatLike](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)
 
 #### 返り値
 
