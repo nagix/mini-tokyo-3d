@@ -16,13 +16,13 @@ export function setLayerProps(map, id, props) {
 }
 
 /**
- * Returns true if the background color of the map is dark.
+ * Check if the background color of the map is dark.
  * @param {object} map - Mapbox's Map object
  * @param {boolean} actual - If true, the result is based on the current background color.
  *     Otherwise, the result is based on the target background color
  * @returns {boolean} True if the background color of the map is dark
  */
-export function isDarkBackground(map, actual) {
+export function hasDarkBackground(map, actual) {
     if (actual) {
         return luminance(map.getLayer('background').paint.get('background-color')) < .5;
     }

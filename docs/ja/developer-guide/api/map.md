@@ -2,6 +2,8 @@
 
 `Map` オブジェクトは、Web ページ上の Mini Tokyo 3D マップを表しています。`Map` を作るには `container` やその他のオプションを指定してコンストラクタを呼び出します。すると、Web ページ上のマップが初期化され、`Map` が返されます。
 
+[Evented](https://docs.mapbox.com/mapbox-gl-js/api/events/#evented) を拡張しています。
+
 ```js
 new Map(options: Object)
 ```
@@ -212,6 +214,16 @@ new Map(options: Object)
 #### 返り値
 
 [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): 現在のマップのズームレベル
+
+---
+
+### **`hasDarkBackground()`**
+
+マップの背景色が暗いかどうかをチェックします。
+
+#### 返り値
+
+[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean): マップの背景色が暗い場合は `true`、そうでない場合は `false`
 
 ---
 

@@ -542,6 +542,14 @@ export default class extends Evented {
         };
     }
 
+    /**
+     * Checks if the background color of the map is dark.
+     * @returns {boolean} True if the background color of the map is dark
+     */
+    hasDarkBackground() {
+        return helpersMapbox.hasDarkBackground(this.map);
+    }
+
     initData(data) {
         const me = this;
 
@@ -1459,7 +1467,7 @@ export default class extends Evented {
             // Guard for an unexpected error
             // Probably a bug due to duplicate train IDs in timetable lookup
             if (!train.cars || isNaN(t)) {
-                console.log('Invalid train', train);
+                console.log('Invalid train', Object.assign({}, train));
                 me.stopTrain(train);
                 return;
             }
@@ -2426,7 +2434,7 @@ export default class extends Evented {
     }
 
     /**
-     * Returns the color based on the current date and time.
+     * Returns the light color based on the current date and time.
      * In the playback mode, the time in the simulation clock is used.
      * @returns {object} Color object
      */
@@ -2472,10 +2480,6 @@ export default class extends Evented {
             b = .5;
         }
         return {r, g, b};
-    }
-
-    isDarkBackground() {
-        return helpersMapbox.isDarkBackground(this.map);
     }
 
     refreshStyleColors() {

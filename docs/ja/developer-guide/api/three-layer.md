@@ -12,6 +12,10 @@
 
 固有のレイヤー ID です。
 
+### **`lightColor`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | [`Color`](https://threejs.org/docs/#api/en/math/Color) | [`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
+
+ライトの色です。16進数のカラー、three.js の [Color](https://threejs.org/docs/#api/en/math/Color) インスタンス、または CSS 形式の文字列を指定できます。指定しない場合は、現在の日時に基づいた動的なライトの色が使用されます。
+
 ### **`maxzoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))
 
 レイヤーの最大ズームレベルです。maxzoom 以上のズームレベルでは、レイヤーは非表示になります。値は `0` から `24`（これを含む）までの任意の数値です。maxzoom が指定されていない場合は、レイヤーはすべてのズームレベルで表示されます。

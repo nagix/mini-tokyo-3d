@@ -3,7 +3,7 @@ import animation from './animation';
 import CarMeshSet from './car-mesh-set';
 import configs from './configs';
 import {clamp, colorToRGBArray, lerp} from './helpers';
-import {isDarkBackground} from './helpers-mapbox';
+import {hasDarkBackground} from './helpers-mapbox';
 import {Point} from 'mapbox-gl';
 import {Color, Scene, MathUtils, WebGLRenderTarget, Vector3} from 'three';
 
@@ -18,6 +18,7 @@ export default class {
 
         me.id = options.id;
         me.type = 'three';
+        me.lightColor = 'white';
         me.ugObjects = [];
         me.ogObjects = [];
         me.aircraftObjects = [];
@@ -295,7 +296,7 @@ export default class {
 
     refreshDelayMarkers(actual) {
         const me = this,
-            dark = isDarkBackground(me.map.map, actual);
+            dark = hasDarkBackground(me.map.map, actual);
 
         me.ugCarMeshSet.refreshDelayMarkerMesh(dark);
         me.ogCarMeshSet.refreshDelayMarkerMesh(dark);

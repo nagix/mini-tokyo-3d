@@ -19,7 +19,7 @@ onAdd(map, context) {
 	const material = new mt3d.THREE.MeshBasicMaterial({color: 0xffff00});
 	const mesh = new mt3d.THREE.Mesh(geometry, material);
 	mesh.position = new mt3d.THREE.Vector3(x, y, z);
-	mesh.scale = new mt3d.THREE.Vector3(scale, scale, scale);
+	mesh.scale = new mt3d.THREE.Vector3().setScalar(scale);
 	context.scene.add(mesh);
 }
 ```

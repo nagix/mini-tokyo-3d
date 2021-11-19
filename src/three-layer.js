@@ -1,12 +1,16 @@
-import {AmbientLight, DirectionalLight, MathUtils, Matrix4, Mesh, PerspectiveCamera, Scene, Vector3, WebGLRenderer} from 'three';
-import {clamp} from './helpers';
+import {AmbientLight, Color, DirectionalLight, MathUtils, Matrix4, Mesh, PerspectiveCamera, Scene, Vector3, WebGLRenderer} from 'three';
+import {clamp, valueOrDefault} from './helpers';
 
 const SQRT3 = Math.sqrt(3);
 
 export default class {
 
     constructor(implementation) {
-        this.implementation = implementation;
+        const me = this;
+
+        me.implementation = implementation;
+        me._tick = me._tick.bind(me);
+        me._onResize = me._onResize.bind(me);
     }
 
     onAdd(map, beforeId) {
@@ -14,6 +18,7 @@ export default class {
             {implementation} = me,
             {id, minzoom, maxzoom} = implementation;
 
+        me.map = map;
         me.modelOrigin = map.getModelOrigin();
 
         map.map.addLayer({
@@ -45,16 +50,17 @@ export default class {
         map.map.setLayerZoomRange(id, minzoom, maxzoom);
     }
 
-    _onAdd(map, gl) {
+    _onAdd(mbox, gl) {
         const me = this,
-            {_fov, width, height} = map.transform,
+            {_fov, width, height} = mbox.transform,
             renderer = me.renderer = new WebGLRenderer({
-                canvas: map.getCanvas(),
+                canvas: mbox.getCanvas(),
                 context: gl
             }),
             scene = me.scene = new Scene(),
-            light = me.light = new DirectionalLight(0xffffff, .8),
-            ambientLight = me.ambientLight = new AmbientLight(0xffffff, .4);
+            lightColor = valueOrDefault(me.implementation.lightColor, new Color().copy(me.map.getLightColor())),
+            light = me.light = new DirectionalLight(lightColor, .8),
+            ambientLight = me.ambientLight = new AmbientLight(lightColor, .4);
 
         renderer.autoClear = false;
 
@@ -64,20 +70,44 @@ export default class {
         // This is needed to avoid a black screen with empty scene
         scene.add(new Mesh());
 
-        me._map = map;
+        me.mbox = mbox;
         me.camera = new PerspectiveCamera(MathUtils.radToDeg(_fov), width / height);
 
-        map.on('resize', me._onResize.bind(me));
+        mbox.on('resize', me._onResize);
+
+        if (me.implementation.lightColor === undefined) {
+            me._tick();
+        }
     }
 
-    _onRemove() {
-        // noop
+    _tick() {
+        const me = this,
+            {map, mbox, light, ambientLight, lastRefresh, _tick} = me,
+            now = map.clock.getTime();
+
+        if (Math.floor(now / 60000) !== Math.floor(lastRefresh / 60000)) {
+            const lightColor = map.getLightColor();
+
+            light.color.copy(lightColor);
+            ambientLight.color.copy(lightColor);
+            me.lastRefresh = now;
+        }
+        if (mbox) {
+            requestAnimationFrame(_tick);
+        }
+    }
+
+    _onRemove(mbox) {
+        const me = this;
+
+        mbox.off('resize', me._onResize);
+        delete me.mbox;
     }
 
     _render(gl, matrix) {
         // These parameters are copied from mapbox-gl/src/geo/transform.js
-        const {modelOrigin, _map, renderer, camera, light, scene} = this,
-            {_fov, _camera, _horizonShift, worldSize, fovAboveCenter, _pitch, width, height} = _map.transform,
+        const {modelOrigin, mbox, renderer, camera, light, scene} = this,
+            {_fov, _camera, _horizonShift, worldSize, fovAboveCenter, _pitch, width, height} = mbox.transform,
             halfFov = _fov / 2,
             angle = Math.PI / 2 - _pitch,
             cameraToSeaLevelDistance = _camera.position[2] * worldSize / Math.cos(_pitch),
@@ -99,7 +129,7 @@ export default class {
         ).clone().invert().multiply(m).multiply(l).invert()
             .decompose(camera.position, camera.quaternion, camera.scale);
 
-        const rad = MathUtils.degToRad(_map.getBearing() + 30);
+        const rad = MathUtils.degToRad(mbox.getBearing() + 30);
         light.position.set(-Math.sin(rad), -Math.cos(rad), SQRT3).normalize();
 
         renderer.resetState();

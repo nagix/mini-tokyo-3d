@@ -12,6 +12,10 @@ Custom three.js layers must have a unique `id` and must have the `type` of `'thr
 
 A unique layer id.
 
+### **`lightColor`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | [`Color`](https://threejs.org/docs/#api/en/math/Color) | [`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
+
+A color of the lights. It can be a hexadecimal color, a three.js [Color](https://threejs.org/docs/#api/en/math/Color) instance or a CSS-style string. If not specified, the dynamic light color based on the current date and time will be used.
+
 ### **`maxzoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))
 
 The maximum zoom level for the layer. At zoom levels equal to or greater than the maxzoom, the layer will be hidden. The value can be any number between `0` and `24` (inclusive). If no maxzoom is provided, the layer will be visible at all zoom levels.

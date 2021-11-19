@@ -2,6 +2,8 @@
 
 The `Map` object represents the Mini Tokyo 3D map on your page. You create a `Map` by specifying a `container` and other `options`. Then Mini Tokyo 3D initializes the map on the page and returns your `Map` object.
 
+Extends [Evented](https://docs.mapbox.com/mapbox-gl-js/api/events/#evented).
+
 ```js
 new Map(options: Object)
 ```
@@ -212,6 +214,16 @@ Returns the map's current zoom level.
 #### Returns
 
 [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number): The map's current zoom level.
+
+---
+
+### **`hasDarkBackground()`**
+
+Checks if the background color of the map is dark.
+
+#### Returns
+
+[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean): `true` if the background color of the map is dark, `false` otherwise.
 
 ---
 
