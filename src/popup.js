@@ -43,7 +43,7 @@ export default class {
 
     /**
      * Sets the geographical location of the popup's anchor, and moves the popup to it.
-     * @param {LngLatLike} lnglat - The geographical location to set as the popup's anchor.
+     * @param {LngLatLike} lnglat - The geographical location to set as the popup's anchor
      * @returns {Popup} Returns itself to allow for method chaining
      */
     setLngLat(lnglat) {
@@ -53,7 +53,7 @@ export default class {
 
     /**
      * Sets the popup's content to the HTML provided as a string.
-     * @param {string} html A string representing HTML content for the popup
+     * @param {string} html - A string representing HTML content for the popup
      * @returns {Popup} Returns itself to allow for method chaining
      */
     setHTML(html) {

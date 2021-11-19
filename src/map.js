@@ -237,7 +237,7 @@ export default class extends Evented {
      * @param {number} pitch - The pitch to set, measured in degrees away from the
      *     plane of the screen (0-60)
      * @returns {Map} Returns itself to allow for method chaining
-    */
+     */
     setPitch(pitch) {
         const me = this;
 
@@ -346,8 +346,8 @@ export default class extends Evented {
     }
 
     /**
-     * Returns ID or the selected object.
-     * @returns {string} ID for the selected object
+     * Returns the ID of the train or flight being tracked.
+     * @returns {string} The ID of the train or flight being tracked
      */
     getSelection() {
         const me = this;
@@ -360,8 +360,8 @@ export default class extends Evented {
     }
 
     /**
-     * Selects a train or flight.
-     * @param {string} id - ID for the object to select
+     * Sets the ID of the train or flight you want to track.
+     * @param {string} id - ID of the train or flight to be tracked
      * @returns {Map} Returns itself to allow for method chaining
      */
     setSelection(id) {
@@ -505,7 +505,7 @@ export default class extends Evented {
     }
 
     /**
-     * Returns a `MercatorCoordinate` object that represents the position of Tokyo
+     * Returns a MercatorCoordinate object that represents the position of Tokyo
      * Station as the origin of the mercator coordinates.
      * @returns {MercatorCoordinate} The origin of the mercator coordinates
      */

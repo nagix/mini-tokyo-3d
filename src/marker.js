@@ -16,8 +16,7 @@ export default class extends Evented {
     }
 
     /**
-     * Attaches the `Marker` to a `Map` object.
-     *
+     * Attaches the Marker to a Map object.
      * @param {Map} map - The Mini Tokyo 3D map to add the marker to
      * @returns {Marker} Returns itself to allow for method chaining
      */
@@ -50,21 +49,22 @@ export default class extends Evented {
     }
 
     /**
-    * Set the marker's geographical position and move it.
-    * @param {LngLatLike} lnglat - The geographical location describing where
-    *     the marker should be located
-    * @returns {Marker} Returns itself to allow for method chaining
-    */
+     * Sets the marker's geographical position and move the marker to it.
+     * @param {LngLatLike} lnglat - The geographical location describing where
+     *     the marker should be located
+     * @returns {Marker} Returns itself to allow for method chaining
+     */
     setLngLat(lnglat) {
         this._marker.setLngLat(lnglat);
         return this;
     }
 
     /**
-    * Set the marker's activity state.
-    * @param {boolean} active - If true, the marker is active
-    * @returns {Marker} Returns itself to allow for method chaining
-    */
+     * Sets the marker's activity state. Active status refers to the state where
+     * the marker is selected and highlighted.
+     * @param {boolean} active - If true, the marker is active
+     * @returns {Marker} Returns itself to allow for method chaining
+     */
     setActivity(active) {
         const {classList} = this._marker.getElement();
 
@@ -77,10 +77,10 @@ export default class extends Evented {
     }
 
     /**
-    * Set the marker's visibility state.
-    * @param {boolean} visible - If true, the marker is visible
-    * @returns {Marker} Returns itself to allow for method chaining
-    */
+     * Sets the marker's visibility state.
+     * @param {boolean} visible - If true, the marker is visible
+     * @returns {Marker} Returns itself to allow for method chaining
+     */
     setVisibility(visible) {
         this._marker.getElement().style.visibility = visible ? 'visible' : 'hidden';
         return this;

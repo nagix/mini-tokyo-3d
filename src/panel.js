@@ -2,6 +2,9 @@ import {createElement, includes} from './helpers';
 
 const isWindows = includes(navigator.userAgent, 'Windows');
 
+/**
+ * Creates a panel component.
+ */
 export default class {
 
     constructor(options) {
@@ -10,6 +13,11 @@ export default class {
         }, options);
     }
 
+    /**
+     * Sets the panel's title to a string of text.
+     * @param {string} title - The title of the panel
+     * @returns {Panel} Returns itself to allow for method chaining
+     */
     setTitle(title) {
         const me = this,
             container = me._container;
@@ -22,6 +30,11 @@ export default class {
         return me;
     }
 
+    /**
+     * Sets the panel's content to the HTML provided as a string.
+     * @param {string} html - A string representing HTML content for the panel
+     * @returns {Panel} Returns itself to allow for method chaining
+     */
     setHTML(html) {
         const me = this,
             container = me._container;
@@ -34,6 +47,12 @@ export default class {
         return me;
     }
 
+    /**
+     * Sets buttons on the panel's title.
+     * @param {Array<HTMLElement>} buttons - An array of DOM elements to use as buttons
+     *     on the title of the panel
+     * @returns {Panel} Returns itself to allow for method chaining
+     */
     setButtons(buttons) {
         const me = this,
             container = me._container;
@@ -54,6 +73,11 @@ export default class {
         return me;
     }
 
+    /**
+     * Adds the panel to a map.
+     * @param {Map} map - The Mini Tokyo 3D map to add the panel to
+     * @returns {Panel} Returns itself to allow for method chaining
+     */
     addTo(map) {
         const me = this,
             options = me._options;
@@ -123,6 +147,10 @@ export default class {
         return me;
     }
 
+    /**
+     * Removes the panel from a map.
+     * @returns {Panel} Returns itself to allow for method chaining
+     */
     remove() {
         const me = this,
             options = me._options,
@@ -146,6 +174,10 @@ export default class {
         }, 300);
     }
 
+    /**
+     * Checks if a panel is open.
+     * @returns {boolean} True if the panel is open, false if it is closed
+     */
     isOpen() {
         return !!this._map;
     }
