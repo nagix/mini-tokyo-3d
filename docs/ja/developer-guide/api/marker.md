@@ -42,20 +42,6 @@ new Marker(options: Object)
 
 ---
 
-### **`setLngLat(lnglat)`**
-
-マーカーの地理的な位置を設定し、移動させます。
-
-#### パラメータ
-
-**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) マーカーを設置する位置を示す [LngLatLike](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)
-
-#### 返り値
-
-[`Marker`](./marker.md): メソッドチェーンを可能にするために自分自身を返す
-
----
-
 ### **`setActivity(active)`**
 
 マーカーのアクティブ状態を設定します。アクティブな状態とは、マーカーが選択されてハイライト表示されている状態を指します。
@@ -63,6 +49,20 @@ new Marker(options: Object)
 #### パラメータ
 
 **`active`** ([`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)) trueの場合、マーカーがアクティブになる
+
+#### 返り値
+
+[`Marker`](./marker.md): メソッドチェーンを可能にするために自分自身を返す
+
+---
+
+### **`setLngLat(lnglat)`**
+
+マーカーの地理的な位置を設定し、移動させます。
+
+#### パラメータ
+
+**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) マーカーを設置する位置を示す [LngLatLike](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)
 
 #### 返り値
 

@@ -58,13 +58,9 @@ Optional method called when the plugin has been added to the Map. This gives the
 
 ---
 
-### **`onRemove(map)`**
+### **`onDisabled()`**
 
-Optional method called when the plugin has been removed from the Map. This gives the plugin a chance to clean up resources and event listeners.
-
-#### Parameters
-
-**`map`** ([`Map`](./map.md)) The Mini Tokyo 3D Map this plugin was just removed from.
+Optional method called when the plugin has been disabled by users. This gives the plugin a chance to clean up the display elements.
 
 ---
 
@@ -74,9 +70,13 @@ Optional method called when the plugin has been enabled by users. This gives the
 
 ---
 
-### **`onDisabled()`**
+### **`onRemove(map)`**
 
-Optional method called when the plugin has been disabled by users. This gives the plugin a chance to clean up the display elements.
+Optional method called when the plugin has been removed from the Map. This gives the plugin a chance to clean up resources and event listeners.
+
+#### Parameters
+
+**`map`** ([`Map`](./map.md)) The Mini Tokyo 3D Map this plugin was just removed from.
 
 ---
 

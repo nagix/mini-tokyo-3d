@@ -18,13 +18,47 @@ new Panel(options: Object)
 
 ## インスタンスメンバ
 
-### **`setTitle(title)`**
+### **`addTo(map)`**
 
-パネルのタイトルを文字列で設定します。
+マップにパネルを追加します。
 
 #### パラメータ
 
-**`title`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) パネルのタイトル
+**`map`** ([`Map`](./map.md)) パネルを追加する Mini Tokyo 3D マップ
+
+#### 返り値
+
+[`Panel`](./panel.md): メソッドチェーンを可能にするために自分自身を返す
+
+---
+
+### **`isOpen()`**
+
+パネルが開いているかどうかを確認します。
+
+#### 返り値
+
+[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean): パネルが開いていれば`true`、閉じていれば`false`
+
+---
+
+### **`remove()`**
+
+マップからパネルを削除します。
+
+#### 返り値
+
+[`Panel`](./panel.md): メソッドチェーンを可能にするために自分自身を返す
+
+---
+
+### **`setButtons(buttons)`**
+
+パネルのタイトルにボタンを設定します。
+
+#### パラメータ
+
+**`buttons`** ([`Array`](./map.md)`<`[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element)`>`) パネルのタイトル上のボタンとして使用するDOM要素の配列
 
 #### 返り値
 
@@ -48,48 +82,14 @@ new Panel(options: Object)
 
 ---
 
-### **`setButtons(buttons)`**
+### **`setTitle(title)`**
 
-パネルのタイトルにボタンを設定します。
-
-#### パラメータ
-
-**`buttons`** ([`Array`](./map.md)`<`[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element)`>`) パネルのタイトル上のボタンとして使用するDOM要素の配列
-
-#### 返り値
-
-[`Panel`](./panel.md): メソッドチェーンを可能にするために自分自身を返す
-
----
-
-### **`addTo(map)`**
-
-マップにパネルを追加します。
+パネルのタイトルを文字列で設定します。
 
 #### パラメータ
 
-**`map`** ([`Map`](./map.md)) パネルを追加する Mini Tokyo 3D マップ
+**`title`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) パネルのタイトル
 
 #### 返り値
 
 [`Panel`](./panel.md): メソッドチェーンを可能にするために自分自身を返す
-
----
-
-### **`remove()`**
-
-マップからパネルを削除します。
-
-#### 返り値
-
-[`Panel`](./panel.md): メソッドチェーンを可能にするために自分自身を返す
-
----
-
-### **`isOpen()`**
-
-パネルが開いているかどうかを確認します。
-
-#### 返り値
-
-[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean): パネルが開いていれば`true`、閉じていれば`false`

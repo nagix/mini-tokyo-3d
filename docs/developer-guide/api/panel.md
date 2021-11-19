@@ -18,13 +18,47 @@ Name | Description
 
 ## Instance Members
 
-### **`setTitle(title)`**
+### **`addTo(map)`**
 
-Sets the panel's title to a string of text.
+Adds the panel to a map.
 
 #### Parameters
 
-**`title`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) The title of the panel.
+**`map`** ([`Map`](./map.md)) The Mini Tokyo 3D map to add the panel to.
+
+#### Returns
+
+[`Panel`](./panel.md): Returns itself to allow for method chaining.
+
+---
+
+### **`isOpen()`**
+
+Checks if a panel is open.
+
+#### Returns
+
+[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean): `true` if the panel is open, `false` if it is closed.
+
+---
+
+### **`remove()`**
+
+Removes the panel from a map.
+
+#### Returns
+
+[`Panel`](./panel.md): Returns itself to allow for method chaining.
+
+---
+
+### **`setButtons(buttons)`**
+
+Sets buttons on the panel's title.
+
+#### Parameters
+
+**`buttons`** ([`Array`](./map.md)`<`[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element)`>`) An array of DOM elements to use as buttons on the title of the panel.
 
 #### Returns
 
@@ -48,48 +82,14 @@ This method does not perform HTML filtering or sanitization, and must be used on
 
 ---
 
-### **`setButtons(buttons)`**
+### **`setTitle(title)`**
 
-Sets buttons on the panel's title.
-
-#### Parameters
-
-**`buttons`** ([`Array`](./map.md)`<`[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element)`>`) An array of DOM elements to use as buttons on the title of the panel.
-
-#### Returns
-
-[`Panel`](./panel.md): Returns itself to allow for method chaining.
-
----
-
-### **`addTo(map)`**
-
-Adds the panel to a map.
+Sets the panel's title to a string of text.
 
 #### Parameters
 
-**`map`** ([`Map`](./map.md)) The Mini Tokyo 3D map to add the panel to.
+**`title`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) The title of the panel.
 
 #### Returns
 
 [`Panel`](./panel.md): Returns itself to allow for method chaining.
-
----
-
-### **`remove()`**
-
-Removes the panel from a map.
-
-#### Returns
-
-[`Panel`](./panel.md): Returns itself to allow for method chaining.
-
----
-
-### **`isOpen()`**
-
-Checks if a panel is open.
-
-#### Returns
-
-[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean): `true` if the panel is open, `false` if it is closed.

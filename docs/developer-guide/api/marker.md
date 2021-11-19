@@ -42,20 +42,6 @@ Removes the marker from a map.
 
 ---
 
-### **`setLngLat(lnglat)`**
-
-Sets the marker's geographical position and move the marker to it.
-
-#### Parameters
-
-**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) A [LngLatLike](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike) describing where the marker should be located.
-
-#### Returns
-
-[`Marker`](./marker.md): Returns itself to allow for method chaining.
-
----
-
 ### **`setActivity(active)`**
 
 Sets the marker's activity state. Active status refers to the state where the marker is selected and highlighted.
@@ -63,6 +49,20 @@ Sets the marker's activity state. Active status refers to the state where the ma
 #### Parameters
 
 **`active`** ([`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)) If `true`, the marker is active.
+
+#### Returns
+
+[`Marker`](./marker.md): Returns itself to allow for method chaining.
+
+---
+
+### **`setLngLat(lnglat)`**
+
+Sets the marker's geographical position and move the marker to it.
+
+#### Parameters
+
+**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) A [LngLatLike](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike) describing where the marker should be located.
 
 #### Returns
 

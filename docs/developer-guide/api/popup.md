@@ -34,20 +34,6 @@ Removes the popup from the map it has been added to.
 
 ---
 
-### **`setLngLat(lnglat)`**
-
-Sets the geographical location of the popup's anchor, and moves the popup to it.
-
-#### Parameters
-
-**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) The geographical location to set as the popup's anchor.
-
-#### Returns
-
-[`Popup`](./popup.md): Returns itself to allow for method chaining.
-
----
-
 ### **`setHTML(html)`**
 
 Sets the popup's content to the HTML provided as a string.
@@ -57,6 +43,20 @@ This method does not perform HTML filtering or sanitization, and must be used on
 #### Parameters
 
 **`html`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) A string representing HTML content for the popup.
+
+#### Returns
+
+[`Popup`](./popup.md): Returns itself to allow for method chaining.
+
+---
+
+### **`setLngLat(lnglat)`**
+
+Sets the geographical location of the popup's anchor, and moves the popup to it.
+
+#### Parameters
+
+**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) The geographical location to set as the popup's anchor.
 
 #### Returns
 
