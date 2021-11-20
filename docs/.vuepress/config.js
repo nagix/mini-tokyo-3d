@@ -67,7 +67,8 @@ module.exports = {
               children: [
                 '',
                 'integration',
-                'build'
+                'build',
+                'migration'
               ]
             },
             {
@@ -133,7 +134,8 @@ module.exports = {
               children: [
                 '',
                 'integration',
-                'build'
+                'build',
+                'migration'
               ]
             },
             {
