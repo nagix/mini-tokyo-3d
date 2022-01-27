@@ -126,7 +126,7 @@ const configs = {
     customAttribution: '<a href="https://github.com/nagix/mini-tokyo-3d">© Akihiko Kusanagi</a>',
 
     // Copyright string
-    copyright: '© 2019-2021 Akihiko Kusanagi',
+    copyright: '© 2019-2022 Akihiko Kusanagi',
 
     // Share URL
     shareUrl: 'https://minitokyo3d.com',

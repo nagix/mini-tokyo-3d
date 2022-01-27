@@ -54,7 +54,7 @@
     margin-top: 10px;
     margin-left: 10px;
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     color: #fff;
@@ -65,7 +65,6 @@
 }
 .mini-tokyo-3d .clock-controller {
     width: 100%;
-    margin-top: 4px;
     margin-bottom: 10px;
     display: table;
     font-size: 150%;
@@ -79,8 +78,8 @@
     width: 10px;
 }
 .mini-tokyo-3d .spin-box {
-    width: 30px;
-    border-radius: 4px;
+    width: 39px;
+    border-radius: 10px;
     box-shadow:0 0 0 1px #777;
 }
 .mini-tokyo-3d .spin-box:first-child {
@@ -88,8 +87,8 @@
 }
 .mini-tokyo-3d .spin-box > div {
     width: 100%;
-    height: 30px;
-    line-height: 30px;
+    height: 39px;
+    line-height: 39px;
     text-align: center;
 }
 .mini-tokyo-3d .spin-box > div:first-child {
@@ -109,10 +108,10 @@
     cursor: pointer;
 }
 .mini-tokyo-3d .spin-box .top-button {
-    border-radius: 4px 4px 0 0;
+    border-radius: 10px 10px 0 0;
 }
 .mini-tokyo-3d .spin-box .bottom-button {
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 10px 10px;
 }
 .mini-tokyo-3d .clock-button {
     width: 100%;
@@ -121,7 +120,7 @@
     display: table;
 }
 .mini-tokyo-3d .clock-button > span {
-    height: 30px;
+    height: 39px;
     vertical-align: middle;
     text-align: center;
     display: table-cell;
@@ -131,7 +130,7 @@
     height: 100%;
     padding: 0;
     border: 0;
-    border-radius: 4px;
+    border-radius: 10px;
     box-shadow:0 0 0 1px #777;
     color: #fff;
     background-color: transparent;
@@ -141,21 +140,21 @@
     width: 100%;
     margin-top: 4;
     display: table;
-    border-radius: 4px;
+    border-radius: 10px;
     box-shadow:0 0 0 1px #777;
 }
 .mini-tokyo-3d .speed-controller > span {
-    height: 30px;
+    height: 39px;
     vertical-align: middle;
     text-align: center;
     display: table-cell;
 }
 .mini-tokyo-3d .speed-controller > span:first-child {
-    width: 30px;
+    width: 39px;
     border-right: solid 1px #777;
 }
 .mini-tokyo-3d .speed-controller > span:last-child {
-    width: 30px;
+    width: 39px;
     border-left: solid 1px #777;
 }
 .mini-tokyo-3d .speed-controller button {
@@ -169,10 +168,10 @@
     cursor: pointer;
 }
 .mini-tokyo-3d .speed-controller .left-button {
-    border-radius: 4px 0 0 4px;
+    border-radius: 10px 0 0 10px;
 }
 .mini-tokyo-3d .speed-controller .right-button {
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 10px 10px 0;
 }
 .mini-tokyo-3d .decrease-icon {
     display: block;
@@ -211,17 +210,17 @@
     top: 0;
     left: 50%;
     padding: 10px;
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 0 10px 10px;
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     color: #fff;
     transform: translate(-50%, 0);
 }
 .mini-tokyo-3d .share-button {
-    height: 30px;
+    height: 39px;
     padding: 0 6px;
     border: 0;
-    border-radius: 4px;
+    border-radius: 10px;
     box-shadow:0 0 0 1px #777;
     display: block;
     color: #fff;
@@ -248,7 +247,7 @@
     top: 33%;
     left: 50%;
     padding: 20px;
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 0 10px 10px;
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     color: #fff;
@@ -267,7 +266,7 @@
     max-width: 380px;
     height: 33%;
     margin: auto;
-    border-radius: 3px 3px 0 0;
+    border-radius: 10px 10px 0 0;
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     font-size: 130%;
@@ -413,30 +412,29 @@
     pointer-events: none;
 }
 .mini-tokyo-3d .search-panel {
-    height: 194px;
+    height: 238px;
 }
 .mini-tokyo-3d .search-panel.search-result {
     height: 33%;
 }
 .mini-tokyo-3d .search-panel.collapsed {
-    height: 50px;
+    height: 59px;
 }
-.mini-tokyo-3d #search-header {
-    height: 30px;
-    margin: 10px 0;
-    padding: 0 10px;
-    overflow: hidden;
-    line-height: 30px;
-    cursor: pointer;
+.mini-tokyo-3d .search-panel #panel-header {
+    height: 39px;
+    line-height: 39px;
+}
+.mini-tokyo-3d .search-panel #panel-body {
+    height: calc(100% - 59px);
 }
 .mini-tokyo-3d .page-controller {
     display: table;
-    border-radius: 4px;
+    border-radius: 10px;
     box-shadow:0 0 0 1px #777;
 }
 .mini-tokyo-3d .page-controller > span {
-    width: 30px;
-    height: 30px;
+    width: 39px;
+    height: 39px;
     vertical-align: middle;
     text-align: center;
     display: table-cell;
@@ -456,10 +454,10 @@
     cursor: pointer;
 }
 .mini-tokyo-3d .page-controller .previous-button {
-    border-radius: 4px 0 0 4px;
+    border-radius: 10px 0 0 10px;
 }
 .mini-tokyo-3d .page-controller .next-button {
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 10px 10px 0;
 }
 .mini-tokyo-3d .previous-icon {
     display: block;
@@ -486,12 +484,12 @@
     background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-right.svg', fill: #7f7f7f);
 }
 .mini-tokyo-3d .back-button {
-    width: 30px;
-    height: 30px;
+    width: 39px;
+    height: 39px;
     display: block;
     padding: 0;
     border: 0;
-    border-radius: 4px;
+    border-radius: 10px;
     box-shadow:0 0 0 1px #777;
     color: #fff;
     background-color: transparent;
@@ -537,7 +535,7 @@
     -webkit-appearance: none;
     appearance: none;
     width: 220px;
-    height: 26px;
+    height: 35px;
     padding: 1px;
     font-size: 15.6px;
     border: 1px solid #777;
@@ -555,11 +553,11 @@
 .mini-tokyo-3d .search-select {
     -webkit-appearance: none;
     appearance: none;
-    height: 30px;
+    height: 39px;
     padding: 0 10px;
     margin: 0;
     border: 1px solid #777;
-    border-radius: 4px;
+    border-radius: 10px;
     outline: none;
     background-color: transparent;
     color: #fff;
@@ -573,10 +571,10 @@
     -webkit-appearance: none;
     appearance: none;
     width: calc(100% - 2px);
-    height: 28px;
+    height: 37px;
     margin: 1px;
     border: 0;
-    border-radius: 4px;
+    border-radius: 10px;
     box-shadow:0 0 0 1px #777;
     outline: none;
     background-color: transparent;
@@ -594,11 +592,27 @@
 .mini-tokyo-3d .search-result #search-result {
     display: block;
 }
-.mini-tokyo-3d .mapboxgl-ctrl-search {
-    transition: width 300ms ease;
+.mini-tokyo-3d .mapboxgl-ctrl-group {
+    border-radius: 10px;
+}
+.mini-tokyo-3d .mapboxgl-ctrl-group button {
+    width: 39px;
+    height: 39px;
+}
+.mini-tokyo-3d .mapboxgl-ctrl-group button:focus:first-child,
+.mini-tokyo-3d .mapboxgl-ctrl-group button:hover:first-child {
+    border-radius: 10px 10px 0 0;
+}
+.mini-tokyo-3d .mapboxgl-ctrl-group button:focus:last-child,
+.mini-tokyo-3d .mapboxgl-ctrl-group button:hover:last-child {
+    border-radius: 0 0 10px 10px;
+}
+.mini-tokyo-3d .mapboxgl-ctrl-group button:focus:only-child,
+.mini-tokyo-3d .mapboxgl-ctrl-group button:hover:only-child {
+    border-radius: inherit;
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-search .mapboxgl-ctrl-icon {
-    background: no-repeat right 5px center/19px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/search.svg', fill: #333);
+    background: no-repeat center/19px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/search.svg', fill: #333);
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-search-active .mapboxgl-ctrl-icon {
     background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/search.svg', fill: #33B5E5);
@@ -807,7 +821,7 @@
     margin: 1px 11px 1px 1px;
     border-width: 1px;
     border-style: solid;
-    border-radius: 4px;
+    border-radius: 10px;
     border-color: #777;
     cursor: pointer;
     background: no-repeat center/32px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/puzzle-piece.svg', fill: #fff);
