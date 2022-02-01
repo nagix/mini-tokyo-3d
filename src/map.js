@@ -26,7 +26,6 @@ import TrafficLayer from './traffic-layer';
 import TrainPanel from './train-panel';
 
 const OPERATORS_FOR_DYNAMIC_TRAIN_DATA = [
-    'JR-East',
     'TokyoMetro',
     'Toei'
 ];

@@ -103,7 +103,10 @@ const configs = {
         tokyochallenge: 'https://api-tokyochallenge.odpt.org/api/v4/',
 
         // ODPT URL
-        odpt: 'https://api.odpt.org/api/v4/'
+        odpt: 'https://api.odpt.org/api/v4/',
+
+        // Tokyo Metro URL
+        tokyometro: 'https://api.tokyometroapp.jp/api/v2/'
 
     },
 

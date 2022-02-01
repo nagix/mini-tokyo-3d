@@ -1,35 +1,31 @@
 import configs from './configs';
 import {loadJSON, removePrefix} from './helpers';
 
-const OPERATORS_FOR_TRAINS = [
-    'JR-East',
-    'TokyoMetro',
-    'Toei'
-];
+const OPERATORS_FOR_TRAINS = {
+    odpt: [
+        'Toei'
+    ],
+    tokyometro: [
+        'TokyoMetro'
+    ]
+};
 
 const OPERATORS_FOR_TRAININFORMATION = {
-    tokyochallenge: [
-        'JR-East',
+    odpt: [
         'TWR',
-        'TokyoMetro',
         'Toei',
         'YokohamaMunicipal',
-        'Keio',
-        'Keikyu',
-        'Keisei',
-        'Tobu',
-        'Seibu',
-        'Tokyu',
         'MIR',
         'TamaMonorail'
+    ],
+    tokyometro: [
+        'TokyoMetro'
     ]
-//    odpt: []
 };
 
 const OPERATORS_FOR_FLIGHTINFORMATION = [
-    'HND-JAT',
-    'HND-TIAT',
-    'NAA'
+    'JAL',
+    'ANA'
 ];
 
 const RAILWAY_SOBURAPID = 'JR-East.SobuRapid';
@@ -125,30 +121,35 @@ export function loadTimetableData(dataUrl, clock) {
 export function loadDynamicTrainData(secrets) {
     const trainData = [],
         trainInfoData = [],
-        url = configs.apiUrl.tokyochallenge,
-        key = secrets.tokyochallenge,
-        operators = OPERATORS_FOR_TRAINS
-            .map(operator => `odpt.Operator:${operator}`)
-            .join(',');
+        urls = [];
 
-    const urls = [
-        `${url}odpt:Train?odpt:operator=${operators}&acl:consumerKey=${key}`,
-        configs.tidUrl
-    ];
+    Object.keys(OPERATORS_FOR_TRAINS).forEach(source => {
+        const url = configs.apiUrl[source],
+            datapoint = source === 'odpt' ? 'odpt:Train?' : 'datapoints?rdf:type=odpt:Train&',
+            key = secrets[source],
+            operators = OPERATORS_FOR_TRAINS[source]
+                .map(operator => `odpt.Operator:${operator}`)
+                .join(',');
+
+        urls.push(`${url}${datapoint}odpt:operator=${operators}&acl:consumerKey=${key}`);
+    });
+
+    urls.push(configs.tidUrl);
 
     Object.keys(OPERATORS_FOR_TRAININFORMATION).forEach(source => {
         const url = configs.apiUrl[source],
+            datapoint = source === 'odpt' ? 'odpt:TrainInformation?' : 'datapoints?rdf:type=odpt:TrainInformation&',
             key = secrets[source],
             operators = OPERATORS_FOR_TRAININFORMATION[source]
                 .map(operator => `odpt.Operator:${operator}`)
                 .join(',');
 
-        urls.push(`${url}odpt:TrainInformation?odpt:operator=${operators}&acl:consumerKey=${key}`);
+        urls.push(`${url}${datapoint}odpt:operator=${operators}&acl:consumerKey=${key}`);
     });
 
     return Promise.all(urls.map(loadJSON)).then(data => {
-        // Train data for JR-East, Tokyo Metro and Toei
-        data.shift().forEach(train => {
+        // Train data for Toei and Tokyo Metro
+        [...data.shift(), ...data.shift()].forEach(train => {
             const trainType = removePrefix(train['odpt:trainType']),
                 destinationStation = removePrefix(train['odpt:destinationStation']);
 
@@ -194,8 +195,8 @@ export function loadDynamicTrainData(secrets) {
  * @returns {object} Loaded data
  */
 export function loadDynamicFlightData(secrets) {
-    const url = configs.apiUrl.tokyochallenge,
-        key = secrets.tokyochallenge,
+    const url = configs.apiUrl.odpt,
+        key = secrets.odpt,
         operators = OPERATORS_FOR_FLIGHTINFORMATION
             .map(operator => `odpt.Operator:${operator}`)
             .join(',');

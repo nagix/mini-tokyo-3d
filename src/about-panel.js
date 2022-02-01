@@ -30,18 +30,14 @@ export default class extends Panel {
                 `<div class="card-body">${lastStaticUpdate}</div>`,
                 `<div class="card-title">${dict['dynamic-update']}</div>`,
                 '<div class="card-body">',
-                lastDynamicUpdate['JR-East'] || 'N/A',
-                ` (${dict['jr-east']})<br>`,
                 lastDynamicUpdate['TokyoMetro'] || 'N/A',
                 ` (${dict['tokyo-metro']})<br>`,
                 lastDynamicUpdate['Toei'] || 'N/A',
                 ` (${dict['toei']})<br>`,
-                lastDynamicUpdate['HND-JAT'] || 'N/A',
-                ` (${dict['hnd-jat']})<br>`,
-                lastDynamicUpdate['HND-TIAT'] || 'N/A',
-                ` (${dict['hnd-tiat']})<br>`,
-                lastDynamicUpdate['NAA'] || 'N/A',
-                ` (${dict['naa']})</div>`
+                lastDynamicUpdate['JAL'] || 'N/A',
+                ` (${dict['jal']})<br>`,
+                lastDynamicUpdate['ANA'] || 'N/A',
+                ` (${dict['ana']})</div>`
             ].join(''));
         }
 
