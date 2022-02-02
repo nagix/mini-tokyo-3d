@@ -125,41 +125,49 @@ export function loadDynamicTrainData(secrets) {
 
     Object.keys(OPERATORS_FOR_TRAINS).forEach(source => {
         const url = configs.apiUrl[source],
-            datapoint = source === 'odpt' ? 'odpt:Train?' : 'datapoints?rdf:type=odpt:Train&',
-            key = secrets[source],
-            operators = OPERATORS_FOR_TRAINS[source]
+            key = secrets[source];
+
+        if (source === 'tokyometro') {
+            urls.push(`${url}datapoints?rdf:type=odpt:Train&acl:consumerKey=${key}`);
+        } else {
+            const operators = OPERATORS_FOR_TRAINS[source]
                 .map(operator => `odpt.Operator:${operator}`)
                 .join(',');
 
-        urls.push(`${url}${datapoint}odpt:operator=${operators}&acl:consumerKey=${key}`);
+            urls.push(`${url}odpt:Train?odpt:operator=${operators}&acl:consumerKey=${key}`);
+        }
     });
 
     urls.push(configs.tidUrl);
 
     Object.keys(OPERATORS_FOR_TRAININFORMATION).forEach(source => {
         const url = configs.apiUrl[source],
-            datapoint = source === 'odpt' ? 'odpt:TrainInformation?' : 'datapoints?rdf:type=odpt:TrainInformation&',
-            key = secrets[source],
-            operators = OPERATORS_FOR_TRAININFORMATION[source]
+            key = secrets[source];
+
+        if (source === 'tokyometro') {
+            urls.push(`${url}datapoints?rdf:type=odpt:TrainInformation&acl:consumerKey=${key}`);
+        } else {
+            const operators = OPERATORS_FOR_TRAININFORMATION[source]
                 .map(operator => `odpt.Operator:${operator}`)
                 .join(',');
 
-        urls.push(`${url}${datapoint}odpt:operator=${operators}&acl:consumerKey=${key}`);
+            urls.push(`${url}odpt:TrainInformation?odpt:operator=${operators}&acl:consumerKey=${key}`);
+        }
     });
 
     return Promise.all(urls.map(loadJSON)).then(data => {
         // Train data for Toei and Tokyo Metro
         [...data.shift(), ...data.shift()].forEach(train => {
             const trainType = removePrefix(train['odpt:trainType']),
-                destinationStation = removePrefix(train['odpt:destinationStation']);
+                destinationStation = removePrefix(train['odpt:destinationStation'] || [train['odpt:terminalStation']]);
 
             trainData.push({
                 id: adjustTrainID(removePrefix(train['owl:sameAs']), trainType, destinationStation),
-                o: removePrefix(train['odpt:operator']),
+                o: removePrefix(train['odpt:operator'] || train['odpt:railway'].replace(/\.\w+$/, '')),
                 r: removePrefix(train['odpt:railway']),
                 y: trainType,
                 n: train['odpt:trainNumber'],
-                os: removePrefix(train['odpt:originStation']),
+                os: removePrefix(train['odpt:originStation'] || [train['odpt:startingStation']]),
                 d: removePrefix(train['odpt:railDirection']),
                 ds: destinationStation,
                 ts: removePrefix(train['odpt:toStation']),
