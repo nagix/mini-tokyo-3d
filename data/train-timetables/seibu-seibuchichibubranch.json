@@ -1,0 +1,105 @@
+[{
+	"id": "Seibu.SeibuChichibuBranch.6001.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibuBranch.6001",
+	"r": "Seibu.SeibuChichibuBranch",
+	"n": "6001",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"ds": [
+		"Chichibu.Chichibu.Nagatoro"
+	],
+	"pt": [
+		"Seibu.SeibuChichibu.6001.SaturdayHoliday.1"
+	],
+	"nt": [
+		"Chichibu.Chichibu.S2.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibuBranch.Yokoze",
+		"d": "08:50"
+	}, {
+		"s": "Seibu.SeibuChichibuBranch.Ohanabatake",
+		"a": "08:54"
+	}]
+}, {
+	"id": "Seibu.SeibuChichibuBranch.6003.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibuBranch.6003",
+	"r": "Seibu.SeibuChichibuBranch",
+	"n": "6003",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"ds": [
+		"Chichibu.Chichibu.Nagatoro"
+	],
+	"pt": [
+		"Seibu.SeibuChichibu.6003.SaturdayHoliday.1"
+	],
+	"nt": [
+		"Chichibu.Chichibu.S4.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibuBranch.Yokoze",
+		"d": "09:50"
+	}, {
+		"s": "Seibu.SeibuChichibuBranch.Ohanabatake",
+		"a": "09:54"
+	}]
+}, {
+	"id": "Seibu.SeibuChichibuBranch.6002.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibuBranch.6002",
+	"r": "Seibu.SeibuChichibuBranch",
+	"n": "6002",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"ds": [
+		"Chichibu.Chichibu.Nagatoro"
+	],
+	"pt": [
+		"Chichibu.Chichibu.S5.SaturdayHoliday"
+	],
+	"nt": [
+		"Seibu.SeibuChichibu.6002.SaturdayHoliday.2"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibuBranch.Ohanabatake",
+		"d": "15:49"
+	}, {
+		"s": "Seibu.SeibuChichibuBranch.Yokoze",
+		"a": "15:52"
+	}]
+}, {
+	"id": "Seibu.SeibuChichibuBranch.6004.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibuBranch.6004",
+	"r": "Seibu.SeibuChichibuBranch",
+	"n": "6004",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"ds": [
+		"Chichibu.Chichibu.Nagatoro"
+	],
+	"pt": [
+		"Chichibu.Chichibu.S7.SaturdayHoliday"
+	],
+	"nt": [
+		"Seibu.SeibuChichibu.6004.SaturdayHoliday.2"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibuBranch.Ohanabatake",
+		"d": "16:49"
+	}, {
+		"s": "Seibu.SeibuChichibuBranch.Yokoze",
+		"a": "16:52"
+	}]
+}]

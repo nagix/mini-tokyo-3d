@@ -1,0 +1,10337 @@
+[{
+	"id": "Tobu.Utsunomiya.401.Weekday",
+	"t": "Tobu.Utsunomiya.401",
+	"r": "Tobu.Utsunomiya",
+	"n": "401",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "04:58"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "05:01",
+		"d": "05:02"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "05:04",
+		"d": "05:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "05:08",
+		"d": "05:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "05:13",
+		"d": "05:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "05:16",
+		"d": "05:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "05:19",
+		"d": "05:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "05:23",
+		"d": "05:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "05:27",
+		"d": "05:27"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "05:30",
+		"d": "05:30"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "05:33"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.403.Weekday",
+	"t": "Tobu.Utsunomiya.403",
+	"r": "Tobu.Utsunomiya",
+	"n": "403",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.403.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "05:35"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "05:38",
+		"d": "05:38"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "05:41",
+		"d": "05:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "05:45",
+		"d": "05:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "05:50",
+		"d": "05:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "05:53",
+		"d": "05:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "05:57",
+		"d": "05:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "06:01",
+		"d": "06:02"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "06:04",
+		"d": "06:05"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "06:08",
+		"d": "06:08"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "06:11"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.405.Weekday",
+	"t": "Tobu.Utsunomiya.405",
+	"r": "Tobu.Utsunomiya",
+	"n": "405",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "05:55"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "05:58",
+		"d": "05:58"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "06:01",
+		"d": "06:06"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "06:09",
+		"d": "06:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "06:14",
+		"d": "06:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "06:17",
+		"d": "06:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "06:20",
+		"d": "06:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "06:24",
+		"d": "06:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "06:29",
+		"d": "06:29"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "06:32",
+		"d": "06:32"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "06:35"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.407.Weekday",
+	"t": "Tobu.Utsunomiya.407",
+	"r": "Tobu.Utsunomiya",
+	"n": "407",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.407.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "06:17"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "06:20",
+		"d": "06:20"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "06:23",
+		"d": "06:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "06:27",
+		"d": "06:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "06:33",
+		"d": "06:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "06:36",
+		"d": "06:37"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "06:39",
+		"d": "06:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "06:43",
+		"d": "06:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "06:47",
+		"d": "06:48"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "06:50",
+		"d": "06:51"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "06:54"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.409.Weekday",
+	"t": "Tobu.Utsunomiya.409",
+	"r": "Tobu.Utsunomiya",
+	"n": "409",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.409.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "06:40"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "06:43",
+		"d": "06:43"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "06:46",
+		"d": "06:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "06:51",
+		"d": "06:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "06:55",
+		"d": "06:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "06:59",
+		"d": "06:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:02",
+		"d": "07:02"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:06",
+		"d": "07:06"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "07:10",
+		"d": "07:10"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "07:13",
+		"d": "07:13"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "07:16"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.411.Weekday",
+	"t": "Tobu.Utsunomiya.411",
+	"r": "Tobu.Utsunomiya",
+	"n": "411",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.411.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "06:55"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "06:58",
+		"d": "06:58"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:01",
+		"d": "07:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "07:05",
+		"d": "07:06"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:10",
+		"d": "07:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "07:13",
+		"d": "07:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:16",
+		"d": "07:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:21",
+		"d": "07:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "07:24",
+		"d": "07:25"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "07:28",
+		"d": "07:28"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "07:31"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.413.Weekday",
+	"t": "Tobu.Utsunomiya.413",
+	"r": "Tobu.Utsunomiya",
+	"n": "413",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.413.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "07:12"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "07:15",
+		"d": "07:15"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:18",
+		"d": "07:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "07:22",
+		"d": "07:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:31",
+		"d": "07:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "07:34",
+		"d": "07:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:37",
+		"d": "07:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:42",
+		"d": "07:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "07:45",
+		"d": "07:47"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "07:49",
+		"d": "07:50"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "07:53"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.415.Weekday",
+	"t": "Tobu.Utsunomiya.415",
+	"r": "Tobu.Utsunomiya",
+	"n": "415",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.415.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "07:32"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "07:35",
+		"d": "07:36"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:38",
+		"d": "07:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "07:42",
+		"d": "07:43"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:47",
+		"d": "07:48"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "07:50",
+		"d": "07:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:54",
+		"d": "07:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:58",
+		"d": "07:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:01",
+		"d": "08:02"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:05",
+		"d": "08:05"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "08:08"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.417.Weekday",
+	"t": "Tobu.Utsunomiya.417",
+	"r": "Tobu.Utsunomiya",
+	"n": "417",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.417.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "07:52"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "07:55",
+		"d": "07:55"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:58",
+		"d": "07:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:02",
+		"d": "08:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "08:08",
+		"d": "08:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "08:11",
+		"d": "08:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "08:14",
+		"d": "08:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "08:19",
+		"d": "08:19"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:23",
+		"d": "08:24"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:27",
+		"d": "08:27"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "08:30"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.419.Weekday",
+	"t": "Tobu.Utsunomiya.419",
+	"r": "Tobu.Utsunomiya",
+	"n": "419",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.419.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "08:06"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:09",
+		"d": "08:10"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "08:12",
+		"d": "08:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:16",
+		"d": "08:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "08:21",
+		"d": "08:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "08:24",
+		"d": "08:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "08:28",
+		"d": "08:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "08:35",
+		"d": "08:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:39",
+		"d": "08:41"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:44",
+		"d": "08:44"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "08:47"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.421.Weekday",
+	"t": "Tobu.Utsunomiya.421",
+	"r": "Tobu.Utsunomiya",
+	"n": "421",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.421.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "08:21"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:24",
+		"d": "08:25"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "08:27",
+		"d": "08:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:33",
+		"d": "08:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "08:38",
+		"d": "08:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "08:41",
+		"d": "08:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "08:44",
+		"d": "08:48"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "08:52",
+		"d": "08:52"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:56",
+		"d": "08:58"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "09:01",
+		"d": "09:01"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "09:04"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.423.Weekday",
+	"t": "Tobu.Utsunomiya.423",
+	"r": "Tobu.Utsunomiya",
+	"n": "423",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.423.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "08:47"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:50",
+		"d": "08:51"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "08:53",
+		"d": "08:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:58",
+		"d": "08:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "09:02",
+		"d": "09:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "09:06",
+		"d": "09:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "09:11",
+		"d": "09:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "09:15",
+		"d": "09:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "09:18",
+		"d": "09:19"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "09:22",
+		"d": "09:22"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "09:25"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.425.Weekday",
+	"t": "Tobu.Utsunomiya.425",
+	"r": "Tobu.Utsunomiya",
+	"n": "425",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.425.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "09:29"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "09:32",
+		"d": "09:32"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "09:34",
+		"d": "09:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "09:39",
+		"d": "09:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "09:45",
+		"d": "09:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "09:48",
+		"d": "09:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "09:51",
+		"d": "09:52"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "09:56",
+		"d": "09:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "09:59",
+		"d": "09:59"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "10:02",
+		"d": "10:02"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "10:05"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.427.Weekday",
+	"t": "Tobu.Utsunomiya.427",
+	"r": "Tobu.Utsunomiya",
+	"n": "427",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.427.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "09:57"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "10:00",
+		"d": "10:00"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "10:03",
+		"d": "10:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "10:07",
+		"d": "10:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "10:12",
+		"d": "10:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "10:15",
+		"d": "10:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "10:18",
+		"d": "10:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "10:22",
+		"d": "10:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "10:26",
+		"d": "10:26"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "10:29",
+		"d": "10:29"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "10:32"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.429.Weekday",
+	"t": "Tobu.Utsunomiya.429",
+	"r": "Tobu.Utsunomiya",
+	"n": "429",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.429.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "10:22"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "10:25",
+		"d": "10:26"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "10:28",
+		"d": "10:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "10:32",
+		"d": "10:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "10:37",
+		"d": "10:37"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "10:40",
+		"d": "10:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "10:43",
+		"d": "10:43"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "10:47",
+		"d": "10:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "10:50",
+		"d": "10:51"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "10:54",
+		"d": "10:54"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "10:57"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.431.Weekday",
+	"t": "Tobu.Utsunomiya.431",
+	"r": "Tobu.Utsunomiya",
+	"n": "431",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.431.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "10:50"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "10:54",
+		"d": "10:54"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "10:56",
+		"d": "10:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "11:01",
+		"d": "11:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "11:05",
+		"d": "11:05"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "11:08",
+		"d": "11:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "11:11",
+		"d": "11:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "11:16",
+		"d": "11:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "11:19",
+		"d": "11:19"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "11:22",
+		"d": "11:23"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "11:26"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.433.Weekday",
+	"t": "Tobu.Utsunomiya.433",
+	"r": "Tobu.Utsunomiya",
+	"n": "433",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.433.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "11:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "11:22",
+		"d": "11:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "11:25",
+		"d": "11:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "11:29",
+		"d": "11:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "11:34",
+		"d": "11:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "11:37",
+		"d": "11:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "11:42",
+		"d": "11:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "11:46",
+		"d": "11:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "11:49",
+		"d": "11:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "11:53",
+		"d": "11:53"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "11:56"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.435.Weekday",
+	"t": "Tobu.Utsunomiya.435",
+	"r": "Tobu.Utsunomiya",
+	"n": "435",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.435.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "11:51"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "11:54",
+		"d": "11:55"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "11:57",
+		"d": "11:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "12:01",
+		"d": "12:02"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "12:06",
+		"d": "12:06"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "12:09",
+		"d": "12:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "12:12",
+		"d": "12:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "12:16",
+		"d": "12:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "12:19",
+		"d": "12:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "12:23",
+		"d": "12:23"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "12:26"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.437.Weekday",
+	"t": "Tobu.Utsunomiya.437",
+	"r": "Tobu.Utsunomiya",
+	"n": "437",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.437.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "12:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "12:22",
+		"d": "12:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "12:25",
+		"d": "12:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "12:29",
+		"d": "12:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "12:34",
+		"d": "12:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "12:37",
+		"d": "12:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "12:42",
+		"d": "12:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "12:46",
+		"d": "12:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "12:49",
+		"d": "12:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "12:53",
+		"d": "12:53"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "12:56"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.439.Weekday",
+	"t": "Tobu.Utsunomiya.439",
+	"r": "Tobu.Utsunomiya",
+	"n": "439",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.439.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "12:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "12:52",
+		"d": "12:53"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "12:55",
+		"d": "12:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "12:59",
+		"d": "13:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "13:04",
+		"d": "13:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "13:07",
+		"d": "13:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "13:12",
+		"d": "13:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "13:16",
+		"d": "13:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "13:19",
+		"d": "13:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "13:23",
+		"d": "13:23"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "13:26"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.441.Weekday",
+	"t": "Tobu.Utsunomiya.441",
+	"r": "Tobu.Utsunomiya",
+	"n": "441",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.441.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "13:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "13:22",
+		"d": "13:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "13:25",
+		"d": "13:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "13:29",
+		"d": "13:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "13:34",
+		"d": "13:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "13:37",
+		"d": "13:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "13:42",
+		"d": "13:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "13:46",
+		"d": "13:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "13:49",
+		"d": "13:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "13:53",
+		"d": "13:53"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "13:56"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.443.Weekday",
+	"t": "Tobu.Utsunomiya.443",
+	"r": "Tobu.Utsunomiya",
+	"n": "443",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.443.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "13:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "13:52",
+		"d": "13:53"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "13:55",
+		"d": "13:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "13:59",
+		"d": "14:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "14:04",
+		"d": "14:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "14:07",
+		"d": "14:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "14:12",
+		"d": "14:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "14:16",
+		"d": "14:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "14:19",
+		"d": "14:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "14:23",
+		"d": "14:23"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "14:26"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.445.Weekday",
+	"t": "Tobu.Utsunomiya.445",
+	"r": "Tobu.Utsunomiya",
+	"n": "445",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.445.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "14:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "14:23",
+		"d": "14:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "14:26",
+		"d": "14:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "14:30",
+		"d": "14:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "14:34",
+		"d": "14:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "14:37",
+		"d": "14:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "14:42",
+		"d": "14:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "14:46",
+		"d": "14:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "14:49",
+		"d": "14:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "14:53",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "14:56"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.447.Weekday",
+	"t": "Tobu.Utsunomiya.447",
+	"r": "Tobu.Utsunomiya",
+	"n": "447",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.447.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "14:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "14:52",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "14:55",
+		"d": "14:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "14:59",
+		"d": "15:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "15:04",
+		"d": "15:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "15:07",
+		"d": "15:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "15:10",
+		"d": "15:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "15:14",
+		"d": "15:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "15:18",
+		"d": "15:18"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "15:21",
+		"d": "15:22"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "15:25"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.449.Weekday",
+	"t": "Tobu.Utsunomiya.449",
+	"r": "Tobu.Utsunomiya",
+	"n": "449",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.449.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "15:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "15:22",
+		"d": "15:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "15:25",
+		"d": "15:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "15:29",
+		"d": "15:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "15:37",
+		"d": "15:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "15:40",
+		"d": "15:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "15:43",
+		"d": "15:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "15:48",
+		"d": "15:48"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "15:51",
+		"d": "15:52"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "15:54",
+		"d": "15:55"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "15:58"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.451.Weekday",
+	"t": "Tobu.Utsunomiya.451",
+	"r": "Tobu.Utsunomiya",
+	"n": "451",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.451.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "15:45"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "15:49",
+		"d": "15:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "15:52",
+		"d": "15:52"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "15:56",
+		"d": "15:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "16:01",
+		"d": "16:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "16:04",
+		"d": "16:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "16:07",
+		"d": "16:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "16:11",
+		"d": "16:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "16:14",
+		"d": "16:15"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "16:17",
+		"d": "16:18"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "16:21"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.453.Weekday",
+	"t": "Tobu.Utsunomiya.453",
+	"r": "Tobu.Utsunomiya",
+	"n": "453",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.453.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "16:03"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "16:06",
+		"d": "16:06"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "16:09",
+		"d": "16:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "16:13",
+		"d": "16:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "16:17",
+		"d": "16:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "16:21",
+		"d": "16:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "16:26",
+		"d": "16:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "16:31",
+		"d": "16:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "16:37",
+		"d": "16:37"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "16:40",
+		"d": "16:40"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "16:43"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.455.Weekday",
+	"t": "Tobu.Utsunomiya.455",
+	"r": "Tobu.Utsunomiya",
+	"n": "455",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.455.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "16:20"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "16:23",
+		"d": "16:24"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "16:26",
+		"d": "16:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "16:31",
+		"d": "16:32"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "16:35",
+		"d": "16:36"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "16:39",
+		"d": "16:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "16:44",
+		"d": "16:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "16:48",
+		"d": "16:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "16:52",
+		"d": "16:54"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "16:56",
+		"d": "16:57"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "17:00"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.457.Weekday",
+	"t": "Tobu.Utsunomiya.457",
+	"r": "Tobu.Utsunomiya",
+	"n": "457",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.457.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "16:43"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "16:46",
+		"d": "16:47"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "16:50",
+		"d": "16:52"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "16:55",
+		"d": "16:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "17:00",
+		"d": "17:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "17:03",
+		"d": "17:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "17:07",
+		"d": "17:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "17:11",
+		"d": "17:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "17:14",
+		"d": "17:15"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "17:17",
+		"d": "17:18"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "17:21"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.459.Weekday",
+	"t": "Tobu.Utsunomiya.459",
+	"r": "Tobu.Utsunomiya",
+	"n": "459",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.459.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "17:04"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "17:07",
+		"d": "17:07"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "17:10",
+		"d": "17:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "17:14",
+		"d": "17:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "17:21",
+		"d": "17:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "17:25",
+		"d": "17:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "17:28",
+		"d": "17:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "17:32",
+		"d": "17:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "17:37",
+		"d": "17:37"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "17:40",
+		"d": "17:40"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "17:43"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.461.Weekday",
+	"t": "Tobu.Utsunomiya.461",
+	"r": "Tobu.Utsunomiya",
+	"n": "461",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.461.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "17:27"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "17:30",
+		"d": "17:30"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "17:33",
+		"d": "17:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "17:39",
+		"d": "17:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "17:44",
+		"d": "17:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "17:47",
+		"d": "17:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "17:50",
+		"d": "17:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "17:55",
+		"d": "17:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "17:59",
+		"d": "18:00"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "18:02",
+		"d": "18:03"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "18:06"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.463.Weekday",
+	"t": "Tobu.Utsunomiya.463",
+	"r": "Tobu.Utsunomiya",
+	"n": "463",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.463.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "17:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "17:53",
+		"d": "17:55"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "17:58",
+		"d": "17:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "18:02",
+		"d": "18:02"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "18:07",
+		"d": "18:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "18:10",
+		"d": "18:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "18:13",
+		"d": "18:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "18:17",
+		"d": "18:19"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "18:22",
+		"d": "18:23"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "18:25",
+		"d": "18:26"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "18:29"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.465.Weekday",
+	"t": "Tobu.Utsunomiya.465",
+	"r": "Tobu.Utsunomiya",
+	"n": "465",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.465.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "18:09"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "18:12",
+		"d": "18:13"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "18:15",
+		"d": "18:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "18:20",
+		"d": "18:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "18:24",
+		"d": "18:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "18:27",
+		"d": "18:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "18:30",
+		"d": "18:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "18:35",
+		"d": "18:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "18:38",
+		"d": "18:40"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "18:42",
+		"d": "18:43"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "18:46"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.467.Weekday",
+	"t": "Tobu.Utsunomiya.467",
+	"r": "Tobu.Utsunomiya",
+	"n": "467",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.467.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "18:29"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "18:32",
+		"d": "18:33"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "18:36",
+		"d": "18:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "18:42",
+		"d": "18:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "18:46",
+		"d": "18:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "18:50",
+		"d": "18:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "18:53",
+		"d": "18:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "18:57",
+		"d": "18:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "19:00",
+		"d": "19:01"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "19:03",
+		"d": "19:04"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "19:07"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.469.Weekday",
+	"t": "Tobu.Utsunomiya.469",
+	"r": "Tobu.Utsunomiya",
+	"n": "469",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.469.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "18:54"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "18:57",
+		"d": "18:57"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "19:00",
+		"d": "19:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "19:05",
+		"d": "19:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "19:12",
+		"d": "19:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "19:15",
+		"d": "19:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "19:19",
+		"d": "19:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "19:28",
+		"d": "19:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "19:31",
+		"d": "19:31"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "19:34",
+		"d": "19:34"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "19:37"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.471.Weekday",
+	"t": "Tobu.Utsunomiya.471",
+	"r": "Tobu.Utsunomiya",
+	"n": "471",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.471.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "19:20"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "19:24",
+		"d": "19:25"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "19:27",
+		"d": "19:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "19:32",
+		"d": "19:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "19:38",
+		"d": "19:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "19:41",
+		"d": "19:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "19:44",
+		"d": "19:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "19:48",
+		"d": "19:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "19:54",
+		"d": "19:54"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "19:57",
+		"d": "19:57"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "20:00"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.473.Weekday",
+	"t": "Tobu.Utsunomiya.473",
+	"r": "Tobu.Utsunomiya",
+	"n": "473",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.473.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "19:38"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "19:42",
+		"d": "19:42"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "19:44",
+		"d": "19:45"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "19:49",
+		"d": "19:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "19:53",
+		"d": "19:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "19:56",
+		"d": "19:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "20:00",
+		"d": "20:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "20:05",
+		"d": "20:05"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "20:08",
+		"d": "20:08"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "20:11",
+		"d": "20:12"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "20:15"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.475.Weekday",
+	"t": "Tobu.Utsunomiya.475",
+	"r": "Tobu.Utsunomiya",
+	"n": "475",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "19:59"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "20:02",
+		"d": "20:03"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "20:06",
+		"d": "20:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "20:13",
+		"d": "20:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "20:17",
+		"d": "20:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "20:20",
+		"d": "20:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "20:23",
+		"d": "20:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "20:27",
+		"d": "20:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "20:31",
+		"d": "20:31"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "20:34",
+		"d": "20:34"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "20:37"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.477.Weekday",
+	"t": "Tobu.Utsunomiya.477",
+	"r": "Tobu.Utsunomiya",
+	"n": "477",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.477.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "20:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "20:26",
+		"d": "20:26"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "20:29",
+		"d": "20:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "20:33",
+		"d": "20:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "20:38",
+		"d": "20:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "20:41",
+		"d": "20:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "20:44",
+		"d": "20:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "20:48",
+		"d": "20:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "20:52",
+		"d": "20:52"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "20:55",
+		"d": "20:55"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "20:58"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.479.Weekday",
+	"t": "Tobu.Utsunomiya.479",
+	"r": "Tobu.Utsunomiya",
+	"n": "479",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.479.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "20:52"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "20:55",
+		"d": "20:56"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "20:58",
+		"d": "20:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "21:03",
+		"d": "21:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "21:07",
+		"d": "21:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "21:10",
+		"d": "21:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "21:13",
+		"d": "21:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "21:20",
+		"d": "21:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "21:23",
+		"d": "21:23"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "21:26",
+		"d": "21:26"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "21:29"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.481.Weekday",
+	"t": "Tobu.Utsunomiya.481",
+	"r": "Tobu.Utsunomiya",
+	"n": "481",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "21:31"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "21:35",
+		"d": "21:35"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "21:38",
+		"d": "21:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "21:42",
+		"d": "21:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "21:46",
+		"d": "21:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "21:49",
+		"d": "21:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "21:52",
+		"d": "21:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "21:56",
+		"d": "21:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "22:00",
+		"d": "22:00"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "22:03",
+		"d": "22:03"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "22:06"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.483.Weekday",
+	"t": "Tobu.Utsunomiya.483",
+	"r": "Tobu.Utsunomiya",
+	"n": "483",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.483.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "21:54"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "21:57",
+		"d": "21:57"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "22:00",
+		"d": "22:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "22:04",
+		"d": "22:05"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "22:09",
+		"d": "22:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "22:12",
+		"d": "22:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "22:15",
+		"d": "22:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "22:19",
+		"d": "22:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "22:24",
+		"d": "22:24"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "22:27",
+		"d": "22:27"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "22:30"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.485.Weekday",
+	"t": "Tobu.Utsunomiya.485",
+	"r": "Tobu.Utsunomiya",
+	"n": "485",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.485.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "22:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "22:22",
+		"d": "22:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "22:25",
+		"d": "22:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "22:29",
+		"d": "22:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "22:34",
+		"d": "22:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "22:37",
+		"d": "22:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "22:40",
+		"d": "22:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "22:44",
+		"d": "22:45"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "22:48",
+		"d": "22:48"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "22:51",
+		"d": "22:51"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "22:54"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.487.Weekday",
+	"t": "Tobu.Utsunomiya.487",
+	"r": "Tobu.Utsunomiya",
+	"n": "487",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.487.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "23:21"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "23:24",
+		"d": "23:24"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "23:27",
+		"d": "23:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "23:31",
+		"d": "23:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "23:35",
+		"d": "23:36"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "23:38",
+		"d": "23:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "23:41",
+		"d": "23:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "23:45",
+		"d": "23:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "23:49",
+		"d": "23:49"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "23:52",
+		"d": "23:52"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "23:55"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.402.Weekday",
+	"t": "Tobu.Utsunomiya.402",
+	"r": "Tobu.Utsunomiya",
+	"n": "402",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.402.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "04:55"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "04:58",
+		"d": "04:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "05:01",
+		"d": "05:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "05:03",
+		"d": "05:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "05:07",
+		"d": "05:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "05:10",
+		"d": "05:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "05:13",
+		"d": "05:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "05:18",
+		"d": "05:18"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "05:21",
+		"d": "05:22"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "05:25",
+		"d": "05:25"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "05:28"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.404.Weekday",
+	"t": "Tobu.Utsunomiya.404",
+	"r": "Tobu.Utsunomiya",
+	"n": "404",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.404.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "05:14"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "05:16",
+		"d": "05:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "05:19",
+		"d": "05:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "05:22",
+		"d": "05:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "05:27",
+		"d": "05:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "05:30",
+		"d": "05:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "05:33",
+		"d": "05:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "05:37",
+		"d": "05:37"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "05:41",
+		"d": "05:42"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "05:44",
+		"d": "05:45"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "05:48"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.406.Weekday",
+	"t": "Tobu.Utsunomiya.406",
+	"r": "Tobu.Utsunomiya",
+	"n": "406",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.406.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "05:39"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "05:42",
+		"d": "05:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "05:45",
+		"d": "05:45"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "05:47",
+		"d": "05:48"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "05:51",
+		"d": "05:52"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "05:54",
+		"d": "05:55"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "05:57",
+		"d": "05:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "06:01",
+		"d": "06:02"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "06:05",
+		"d": "06:05"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "06:08",
+		"d": "06:09"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "06:11"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.408.Weekday",
+	"t": "Tobu.Utsunomiya.408",
+	"r": "Tobu.Utsunomiya",
+	"n": "408",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.408.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "06:05"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "06:08",
+		"d": "06:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "06:11",
+		"d": "06:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "06:14",
+		"d": "06:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "06:18",
+		"d": "06:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "06:22",
+		"d": "06:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "06:25",
+		"d": "06:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "06:29",
+		"d": "06:30"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "06:33",
+		"d": "06:33"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "06:36",
+		"d": "06:37"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "06:39"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.410.Weekday",
+	"t": "Tobu.Utsunomiya.410",
+	"r": "Tobu.Utsunomiya",
+	"n": "410",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.410.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "06:18"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "06:20",
+		"d": "06:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "06:23",
+		"d": "06:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "06:26",
+		"d": "06:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "06:30",
+		"d": "06:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "06:33",
+		"d": "06:36"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "06:38",
+		"d": "06:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "06:43",
+		"d": "06:43"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "06:47",
+		"d": "06:47"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "06:50",
+		"d": "06:51"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "06:53"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.412.Weekday",
+	"t": "Tobu.Utsunomiya.412",
+	"r": "Tobu.Utsunomiya",
+	"n": "412",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.412.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "06:41"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "06:44",
+		"d": "06:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "06:47",
+		"d": "06:48"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "06:50",
+		"d": "06:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "06:54",
+		"d": "06:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "06:57",
+		"d": "06:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:01",
+		"d": "07:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "07:06",
+		"d": "07:06"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:09",
+		"d": "07:10"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "07:13",
+		"d": "07:15"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "07:18"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.414.Weekday",
+	"t": "Tobu.Utsunomiya.414",
+	"r": "Tobu.Utsunomiya",
+	"n": "414",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.414.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "07:04"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "07:06",
+		"d": "07:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "07:10",
+		"d": "07:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:12",
+		"d": "07:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:17",
+		"d": "07:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "07:20",
+		"d": "07:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:22",
+		"d": "07:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "07:27",
+		"d": "07:28"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:31",
+		"d": "07:32"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "07:35",
+		"d": "07:35"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "07:38"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.416.Weekday",
+	"t": "Tobu.Utsunomiya.416",
+	"r": "Tobu.Utsunomiya",
+	"n": "416",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.416.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "07:25"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "07:28",
+		"d": "07:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "07:31",
+		"d": "07:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:33",
+		"d": "07:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:38",
+		"d": "07:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "07:41",
+		"d": "07:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:47",
+		"d": "07:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "07:51",
+		"d": "07:52"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:55",
+		"d": "07:58"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:00",
+		"d": "08:01"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "08:04"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.418.Weekday",
+	"t": "Tobu.Utsunomiya.418",
+	"r": "Tobu.Utsunomiya",
+	"n": "418",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"nt": [
+		"Tobu.Nikko.418.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "07:41"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "07:44",
+		"d": "07:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "07:47",
+		"d": "07:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:49",
+		"d": "07:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:54",
+		"d": "07:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "07:57",
+		"d": "07:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:59",
+		"d": "08:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:04",
+		"d": "08:07"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "08:11",
+		"d": "08:12"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:15",
+		"d": "08:16"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "08:18"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.420.Weekday",
+	"t": "Tobu.Utsunomiya.420",
+	"r": "Tobu.Utsunomiya",
+	"n": "420",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.420.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "08:02"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:05",
+		"d": "08:05"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:08",
+		"d": "08:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "08:10",
+		"d": "08:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "08:15",
+		"d": "08:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "08:18",
+		"d": "08:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "08:21",
+		"d": "08:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:25",
+		"d": "08:26"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "08:29",
+		"d": "08:29"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:32",
+		"d": "08:33"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "08:35"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.422.Weekday",
+	"t": "Tobu.Utsunomiya.422",
+	"r": "Tobu.Utsunomiya",
+	"n": "422",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"nt": [
+		"Tobu.Nikko.422.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "08:19"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:21",
+		"d": "08:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:24",
+		"d": "08:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "08:27",
+		"d": "08:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "08:31",
+		"d": "08:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "08:34",
+		"d": "08:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "08:37",
+		"d": "08:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:41",
+		"d": "08:43"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "08:46",
+		"d": "08:47"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:50",
+		"d": "08:50"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "08:53"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.424.Weekday",
+	"t": "Tobu.Utsunomiya.424",
+	"r": "Tobu.Utsunomiya",
+	"n": "424",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.424.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "08:36"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:38",
+		"d": "08:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:41",
+		"d": "08:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "08:44",
+		"d": "08:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "08:48",
+		"d": "08:48"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "08:51",
+		"d": "08:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "08:53",
+		"d": "08:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:58",
+		"d": "08:59"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "09:02",
+		"d": "09:02"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "09:05",
+		"d": "09:06"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "09:08"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.426.Weekday",
+	"t": "Tobu.Utsunomiya.426",
+	"r": "Tobu.Utsunomiya",
+	"n": "426",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.426.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "08:53"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:55",
+		"d": "08:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:58",
+		"d": "08:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "09:01",
+		"d": "09:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "09:05",
+		"d": "09:05"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "09:08",
+		"d": "09:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "09:10",
+		"d": "09:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "09:15",
+		"d": "09:15"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "09:18",
+		"d": "09:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "09:22",
+		"d": "09:22"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "09:25"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.428.Weekday",
+	"t": "Tobu.Utsunomiya.428",
+	"r": "Tobu.Utsunomiya",
+	"n": "428",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.428.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "09:19"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "09:22",
+		"d": "09:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "09:25",
+		"d": "09:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "09:27",
+		"d": "09:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "09:31",
+		"d": "09:32"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "09:34",
+		"d": "09:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "09:37",
+		"d": "09:37"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "09:41",
+		"d": "09:42"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "09:45",
+		"d": "09:45"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "09:48",
+		"d": "09:49"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "09:51"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.430.Weekday",
+	"t": "Tobu.Utsunomiya.430",
+	"r": "Tobu.Utsunomiya",
+	"n": "430",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.430.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "09:52"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "09:54",
+		"d": "09:55"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "09:58",
+		"d": "09:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "10:01",
+		"d": "10:02"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "10:05",
+		"d": "10:06"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "10:08",
+		"d": "10:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "10:11",
+		"d": "10:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "10:15",
+		"d": "10:17"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "10:20",
+		"d": "10:21"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "10:24",
+		"d": "10:25"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "10:28"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.432.Weekday",
+	"t": "Tobu.Utsunomiya.432",
+	"r": "Tobu.Utsunomiya",
+	"n": "432",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.432.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "10:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "10:22",
+		"d": "10:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "10:26",
+		"d": "10:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "10:28",
+		"d": "10:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "10:32",
+		"d": "10:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "10:36",
+		"d": "10:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "10:42",
+		"d": "10:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "10:46",
+		"d": "10:47"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "10:50",
+		"d": "10:50"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "10:54",
+		"d": "10:54"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "10:57"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.434.Weekday",
+	"t": "Tobu.Utsunomiya.434",
+	"r": "Tobu.Utsunomiya",
+	"n": "434",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.434.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "10:51"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "10:54",
+		"d": "10:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "10:57",
+		"d": "10:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "10:59",
+		"d": "11:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "11:03",
+		"d": "11:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "11:07",
+		"d": "11:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "11:10",
+		"d": "11:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "11:14",
+		"d": "11:15"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "11:18",
+		"d": "11:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "11:22",
+		"d": "11:22"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "11:25"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.436.Weekday",
+	"t": "Tobu.Utsunomiya.436",
+	"r": "Tobu.Utsunomiya",
+	"n": "436",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.436.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "11:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "11:23",
+		"d": "11:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "11:26",
+		"d": "11:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "11:28",
+		"d": "11:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "11:32",
+		"d": "11:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "11:36",
+		"d": "11:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "11:40",
+		"d": "11:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "11:44",
+		"d": "11:46"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "11:49",
+		"d": "11:50"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "11:53",
+		"d": "11:55"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "11:57"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.438.Weekday",
+	"t": "Tobu.Utsunomiya.438",
+	"r": "Tobu.Utsunomiya",
+	"n": "438",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.438.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "11:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "11:53",
+		"d": "11:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "11:56",
+		"d": "11:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "11:58",
+		"d": "11:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "12:02",
+		"d": "12:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "12:06",
+		"d": "12:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "12:11",
+		"d": "12:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "12:15",
+		"d": "12:16"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "12:19",
+		"d": "12:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "12:23",
+		"d": "12:23"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "12:26"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.440.Weekday",
+	"t": "Tobu.Utsunomiya.440",
+	"r": "Tobu.Utsunomiya",
+	"n": "440",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.440.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "12:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "12:23",
+		"d": "12:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "12:26",
+		"d": "12:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "12:28",
+		"d": "12:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "12:32",
+		"d": "12:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "12:36",
+		"d": "12:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "12:40",
+		"d": "12:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "12:44",
+		"d": "12:45"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "12:48",
+		"d": "12:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "12:52",
+		"d": "12:53"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "12:55"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.442.Weekday",
+	"t": "Tobu.Utsunomiya.442",
+	"r": "Tobu.Utsunomiya",
+	"n": "442",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.442.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "12:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "12:53",
+		"d": "12:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "12:56",
+		"d": "12:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "12:58",
+		"d": "12:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "13:02",
+		"d": "13:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "13:06",
+		"d": "13:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "13:10",
+		"d": "13:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "13:14",
+		"d": "13:15"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "13:18",
+		"d": "13:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "13:22",
+		"d": "13:23"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "13:25"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.444.Weekday",
+	"t": "Tobu.Utsunomiya.444",
+	"r": "Tobu.Utsunomiya",
+	"n": "444",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.444.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "13:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "13:23",
+		"d": "13:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "13:26",
+		"d": "13:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "13:28",
+		"d": "13:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "13:32",
+		"d": "13:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "13:36",
+		"d": "13:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "13:40",
+		"d": "13:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "13:44",
+		"d": "13:45"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "13:48",
+		"d": "13:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "13:52",
+		"d": "13:53"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "13:55"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.446.Weekday",
+	"t": "Tobu.Utsunomiya.446",
+	"r": "Tobu.Utsunomiya",
+	"n": "446",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.446.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "13:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "13:53",
+		"d": "13:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "13:56",
+		"d": "13:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "13:58",
+		"d": "13:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "14:02",
+		"d": "14:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "14:06",
+		"d": "14:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "14:10",
+		"d": "14:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "14:14",
+		"d": "14:15"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "14:18",
+		"d": "14:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "14:22",
+		"d": "14:23"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "14:26"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.448.Weekday",
+	"t": "Tobu.Utsunomiya.448",
+	"r": "Tobu.Utsunomiya",
+	"n": "448",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.448.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "14:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "14:23",
+		"d": "14:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "14:26",
+		"d": "14:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "14:28",
+		"d": "14:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "14:32",
+		"d": "14:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "14:36",
+		"d": "14:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "14:40",
+		"d": "14:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "14:44",
+		"d": "14:45"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "14:48",
+		"d": "14:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "14:52",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "14:55"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.450.Weekday",
+	"t": "Tobu.Utsunomiya.450",
+	"r": "Tobu.Utsunomiya",
+	"n": "450",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.450.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "14:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "14:53",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "14:56",
+		"d": "14:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "14:58",
+		"d": "14:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "15:02",
+		"d": "15:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "15:06",
+		"d": "15:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "15:10",
+		"d": "15:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "15:14",
+		"d": "15:15"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "15:18",
+		"d": "15:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "15:22",
+		"d": "15:23"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "15:25"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.452.Weekday",
+	"t": "Tobu.Utsunomiya.452",
+	"r": "Tobu.Utsunomiya",
+	"n": "452",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.452.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "15:18"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "15:21",
+		"d": "15:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "15:24",
+		"d": "15:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "15:27",
+		"d": "15:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "15:31",
+		"d": "15:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "15:34",
+		"d": "15:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "15:37",
+		"d": "15:37"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "15:41",
+		"d": "15:42"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "15:45",
+		"d": "15:45"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "15:49",
+		"d": "15:49"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "15:52"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.454.Weekday",
+	"t": "Tobu.Utsunomiya.454",
+	"r": "Tobu.Utsunomiya",
+	"n": "454",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.454.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "15:40"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "15:42",
+		"d": "15:43"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "15:45",
+		"d": "15:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "15:48",
+		"d": "15:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "15:54",
+		"d": "15:55"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "15:57",
+		"d": "15:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "16:00",
+		"d": "16:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "16:05",
+		"d": "16:05"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "16:09",
+		"d": "16:09"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "16:12",
+		"d": "16:13"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "16:15"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.456.Weekday",
+	"t": "Tobu.Utsunomiya.456",
+	"r": "Tobu.Utsunomiya",
+	"n": "456",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.456.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "16:07"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "16:10",
+		"d": "16:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "16:13",
+		"d": "16:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "16:17",
+		"d": "16:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "16:21",
+		"d": "16:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "16:24",
+		"d": "16:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "16:26",
+		"d": "16:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "16:31",
+		"d": "16:32"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "16:35",
+		"d": "16:35"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "16:38",
+		"d": "16:39"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "16:41"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.458.Weekday",
+	"t": "Tobu.Utsunomiya.458",
+	"r": "Tobu.Utsunomiya",
+	"n": "458",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.458.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "16:26"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "16:28",
+		"d": "16:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "16:31",
+		"d": "16:32"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "16:34",
+		"d": "16:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "16:38",
+		"d": "16:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "16:41",
+		"d": "16:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "16:43",
+		"d": "16:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "16:48",
+		"d": "16:48"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "16:51",
+		"d": "16:52"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "16:55",
+		"d": "16:55"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "16:58"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.460.Weekday",
+	"t": "Tobu.Utsunomiya.460",
+	"r": "Tobu.Utsunomiya",
+	"n": "460",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.460.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "16:48"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "16:51",
+		"d": "16:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "16:54",
+		"d": "16:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "16:56",
+		"d": "16:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "17:00",
+		"d": "17:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "17:04",
+		"d": "17:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "17:06",
+		"d": "17:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "17:11",
+		"d": "17:14"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "17:17",
+		"d": "17:18"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "17:21",
+		"d": "17:21"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "17:24"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.462.Weekday",
+	"t": "Tobu.Utsunomiya.462",
+	"r": "Tobu.Utsunomiya",
+	"n": "462",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.462.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "17:07"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "17:09",
+		"d": "17:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "17:13",
+		"d": "17:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "17:16",
+		"d": "17:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "17:20",
+		"d": "17:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "17:24",
+		"d": "17:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "17:27",
+		"d": "17:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "17:31",
+		"d": "17:32"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "17:35",
+		"d": "17:36"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "17:38",
+		"d": "17:39"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "17:41"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.464.Weekday",
+	"t": "Tobu.Utsunomiya.464",
+	"r": "Tobu.Utsunomiya",
+	"n": "464",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.464.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "17:26"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "17:28",
+		"d": "17:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "17:31",
+		"d": "17:32"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "17:34",
+		"d": "17:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "17:38",
+		"d": "17:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "17:41",
+		"d": "17:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "17:44",
+		"d": "17:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "17:48",
+		"d": "17:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "17:52",
+		"d": "17:52"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "17:55",
+		"d": "17:56"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "17:58"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.466.Weekday",
+	"t": "Tobu.Utsunomiya.466",
+	"r": "Tobu.Utsunomiya",
+	"n": "466",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.466.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "17:48"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "17:51",
+		"d": "17:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "17:54",
+		"d": "17:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "17:56",
+		"d": "17:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "18:00",
+		"d": "18:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "18:03",
+		"d": "18:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "18:06",
+		"d": "18:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "18:11",
+		"d": "18:11"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "18:15",
+		"d": "18:16"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "18:18",
+		"d": "18:19"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "18:21"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.468.Weekday",
+	"t": "Tobu.Utsunomiya.468",
+	"r": "Tobu.Utsunomiya",
+	"n": "468",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.468.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "18:11"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "18:14",
+		"d": "18:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "18:17",
+		"d": "18:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "18:19",
+		"d": "18:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "18:23",
+		"d": "18:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "18:27",
+		"d": "18:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "18:30",
+		"d": "18:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "18:34",
+		"d": "18:35"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "18:38",
+		"d": "18:38"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "18:41",
+		"d": "18:42"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "18:44"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.470.Weekday",
+	"t": "Tobu.Utsunomiya.470",
+	"r": "Tobu.Utsunomiya",
+	"n": "470",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.470.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "18:34"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "18:37",
+		"d": "18:37"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "18:40",
+		"d": "18:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "18:42",
+		"d": "18:43"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "18:46",
+		"d": "18:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "18:50",
+		"d": "18:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "18:52",
+		"d": "18:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "18:57",
+		"d": "18:57"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "19:01",
+		"d": "19:01"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "19:04",
+		"d": "19:05"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "19:07"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.472.Weekday",
+	"t": "Tobu.Utsunomiya.472",
+	"r": "Tobu.Utsunomiya",
+	"n": "472",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.472.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "18:52"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "18:55",
+		"d": "18:55"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "18:58",
+		"d": "19:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "19:02",
+		"d": "19:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "19:06",
+		"d": "19:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "19:09",
+		"d": "19:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "19:13",
+		"d": "19:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "19:17",
+		"d": "19:18"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "19:21",
+		"d": "19:22"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "19:25",
+		"d": "19:25"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "19:28"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.474.Weekday",
+	"t": "Tobu.Utsunomiya.474",
+	"r": "Tobu.Utsunomiya",
+	"n": "474",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "19:12"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "19:14",
+		"d": "19:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "19:17",
+		"d": "19:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "19:20",
+		"d": "19:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "19:24",
+		"d": "19:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "19:27",
+		"d": "19:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "19:29",
+		"d": "19:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "19:34",
+		"d": "19:34"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "19:37",
+		"d": "19:38"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "19:41",
+		"d": "19:42"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "19:44"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.476.Weekday",
+	"t": "Tobu.Utsunomiya.476",
+	"r": "Tobu.Utsunomiya",
+	"n": "476",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.476.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "19:43"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "19:45",
+		"d": "19:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "19:48",
+		"d": "19:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "19:51",
+		"d": "19:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "19:55",
+		"d": "19:55"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "19:58",
+		"d": "19:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "20:00",
+		"d": "20:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "20:05",
+		"d": "20:05"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "20:08",
+		"d": "20:09"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "20:12",
+		"d": "20:12"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "20:15"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.478.Weekday",
+	"t": "Tobu.Utsunomiya.478",
+	"r": "Tobu.Utsunomiya",
+	"n": "478",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "20:09"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "20:12",
+		"d": "20:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "20:15",
+		"d": "20:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "20:17",
+		"d": "20:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "20:22",
+		"d": "20:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "20:26",
+		"d": "20:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "20:28",
+		"d": "20:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "20:33",
+		"d": "20:34"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "20:37",
+		"d": "20:37"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "20:40",
+		"d": "20:41"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "20:43"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.480.Weekday",
+	"t": "Tobu.Utsunomiya.480",
+	"r": "Tobu.Utsunomiya",
+	"n": "480",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "20:39"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "20:41",
+		"d": "20:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "20:44",
+		"d": "20:45"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "20:47",
+		"d": "20:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "20:52",
+		"d": "20:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "20:55",
+		"d": "20:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "20:58",
+		"d": "20:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "21:03",
+		"d": "21:03"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "21:06",
+		"d": "21:07"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "21:10",
+		"d": "21:10"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "21:13"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.482.Weekday",
+	"t": "Tobu.Utsunomiya.482",
+	"r": "Tobu.Utsunomiya",
+	"n": "482",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"nt": [
+		"Tobu.Nikko.482.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "21:04"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "21:06",
+		"d": "21:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "21:09",
+		"d": "21:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "21:12",
+		"d": "21:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "21:16",
+		"d": "21:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "21:19",
+		"d": "21:19"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "21:21",
+		"d": "21:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "21:26",
+		"d": "21:27"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "21:31",
+		"d": "21:31"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "21:34",
+		"d": "21:35"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "21:38"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.484.Weekday",
+	"t": "Tobu.Utsunomiya.484",
+	"r": "Tobu.Utsunomiya",
+	"n": "484",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.484.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "21:32"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "21:35",
+		"d": "21:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "21:38",
+		"d": "21:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "21:40",
+		"d": "21:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "21:44",
+		"d": "21:45"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "21:48",
+		"d": "21:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "21:51",
+		"d": "21:52"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "21:56",
+		"d": "21:56"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "22:00",
+		"d": "22:00"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "22:03",
+		"d": "22:04"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "22:06"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.486.Weekday",
+	"t": "Tobu.Utsunomiya.486",
+	"r": "Tobu.Utsunomiya",
+	"n": "486",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"nt": [
+		"Tobu.Nikko.486.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "22:13"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "22:15",
+		"d": "22:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "22:18",
+		"d": "22:19"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "22:21",
+		"d": "22:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "22:25",
+		"d": "22:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "22:28",
+		"d": "22:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "22:34",
+		"d": "22:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "22:38",
+		"d": "22:39"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "22:42",
+		"d": "22:42"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "22:45",
+		"d": "22:46"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "22:48"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.488.Weekday",
+	"t": "Tobu.Utsunomiya.488",
+	"r": "Tobu.Utsunomiya",
+	"n": "488",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "23:07"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "23:09",
+		"d": "23:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "23:12",
+		"d": "23:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "23:15",
+		"d": "23:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "23:19",
+		"d": "23:19"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "23:22",
+		"d": "23:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "23:24",
+		"d": "23:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "23:29",
+		"d": "23:31"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "23:34",
+		"d": "23:35"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "23:37",
+		"d": "23:38"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "23:41"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.401.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.401",
+	"r": "Tobu.Utsunomiya",
+	"n": "401",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "04:58"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "05:01",
+		"d": "05:02"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "05:04",
+		"d": "05:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "05:08",
+		"d": "05:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "05:13",
+		"d": "05:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "05:16",
+		"d": "05:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "05:19",
+		"d": "05:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "05:23",
+		"d": "05:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "05:27",
+		"d": "05:27"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "05:30",
+		"d": "05:30"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "05:33"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.403.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.403",
+	"r": "Tobu.Utsunomiya",
+	"n": "403",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.403.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "05:35"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "05:38",
+		"d": "05:38"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "05:41",
+		"d": "05:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "05:45",
+		"d": "05:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "05:50",
+		"d": "05:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "05:53",
+		"d": "05:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "05:57",
+		"d": "05:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "06:01",
+		"d": "06:02"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "06:04",
+		"d": "06:05"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "06:08",
+		"d": "06:08"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "06:11"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.405.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.405",
+	"r": "Tobu.Utsunomiya",
+	"n": "405",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "05:55"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "05:58",
+		"d": "05:58"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "06:01",
+		"d": "06:06"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "06:09",
+		"d": "06:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "06:14",
+		"d": "06:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "06:17",
+		"d": "06:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "06:20",
+		"d": "06:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "06:24",
+		"d": "06:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "06:29",
+		"d": "06:29"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "06:32",
+		"d": "06:32"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "06:35"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.407.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.407",
+	"r": "Tobu.Utsunomiya",
+	"n": "407",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.407.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "06:17"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "06:20",
+		"d": "06:20"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "06:23",
+		"d": "06:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "06:27",
+		"d": "06:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "06:33",
+		"d": "06:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "06:36",
+		"d": "06:37"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "06:39",
+		"d": "06:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "06:43",
+		"d": "06:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "06:47",
+		"d": "06:48"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "06:50",
+		"d": "06:51"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "06:54"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.409.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.409",
+	"r": "Tobu.Utsunomiya",
+	"n": "409",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.409.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "06:40"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "06:43",
+		"d": "06:43"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "06:46",
+		"d": "06:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "06:51",
+		"d": "06:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "06:55",
+		"d": "06:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "06:59",
+		"d": "06:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:02",
+		"d": "07:02"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:06",
+		"d": "07:06"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "07:10",
+		"d": "07:10"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "07:13",
+		"d": "07:13"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "07:16"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.411.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.411",
+	"r": "Tobu.Utsunomiya",
+	"n": "411",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.411.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "06:55"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "06:58",
+		"d": "06:58"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:01",
+		"d": "07:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "07:05",
+		"d": "07:06"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:10",
+		"d": "07:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "07:13",
+		"d": "07:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:16",
+		"d": "07:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:21",
+		"d": "07:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "07:24",
+		"d": "07:25"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "07:28",
+		"d": "07:28"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "07:31"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.413.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.413",
+	"r": "Tobu.Utsunomiya",
+	"n": "413",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.413.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "07:12"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "07:15",
+		"d": "07:15"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:18",
+		"d": "07:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "07:22",
+		"d": "07:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:31",
+		"d": "07:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "07:34",
+		"d": "07:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:37",
+		"d": "07:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:42",
+		"d": "07:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "07:45",
+		"d": "07:47"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "07:49",
+		"d": "07:50"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "07:53"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.415.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.415",
+	"r": "Tobu.Utsunomiya",
+	"n": "415",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.415.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "07:32"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "07:35",
+		"d": "07:36"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:38",
+		"d": "07:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "07:42",
+		"d": "07:43"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:47",
+		"d": "07:48"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "07:50",
+		"d": "07:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:54",
+		"d": "07:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:58",
+		"d": "07:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:01",
+		"d": "08:02"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:05",
+		"d": "08:05"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "08:08"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.417.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.417",
+	"r": "Tobu.Utsunomiya",
+	"n": "417",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.417.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "07:52"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "07:55",
+		"d": "07:55"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:58",
+		"d": "07:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:02",
+		"d": "08:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "08:08",
+		"d": "08:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "08:11",
+		"d": "08:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "08:14",
+		"d": "08:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "08:19",
+		"d": "08:19"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:23",
+		"d": "08:24"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:27",
+		"d": "08:27"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "08:30"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.419.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.419",
+	"r": "Tobu.Utsunomiya",
+	"n": "419",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.419.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "08:06"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:09",
+		"d": "08:10"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "08:12",
+		"d": "08:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:16",
+		"d": "08:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "08:21",
+		"d": "08:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "08:24",
+		"d": "08:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "08:28",
+		"d": "08:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "08:35",
+		"d": "08:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:39",
+		"d": "08:41"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:44",
+		"d": "08:44"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "08:47"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.421.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.421",
+	"r": "Tobu.Utsunomiya",
+	"n": "421",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.421.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "08:21"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:24",
+		"d": "08:25"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "08:27",
+		"d": "08:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:33",
+		"d": "08:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "08:38",
+		"d": "08:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "08:41",
+		"d": "08:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "08:44",
+		"d": "08:48"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "08:52",
+		"d": "08:52"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:56",
+		"d": "08:58"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "09:01",
+		"d": "09:01"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "09:04"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.423.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.423",
+	"r": "Tobu.Utsunomiya",
+	"n": "423",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.423.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "08:47"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:50",
+		"d": "08:51"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "08:53",
+		"d": "08:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:58",
+		"d": "08:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "09:02",
+		"d": "09:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "09:06",
+		"d": "09:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "09:11",
+		"d": "09:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "09:15",
+		"d": "09:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "09:18",
+		"d": "09:19"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "09:22",
+		"d": "09:22"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "09:25"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.425.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.425",
+	"r": "Tobu.Utsunomiya",
+	"n": "425",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.425.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "09:29"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "09:32",
+		"d": "09:32"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "09:34",
+		"d": "09:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "09:39",
+		"d": "09:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "09:45",
+		"d": "09:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "09:48",
+		"d": "09:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "09:51",
+		"d": "09:52"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "09:56",
+		"d": "09:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "09:59",
+		"d": "09:59"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "10:02",
+		"d": "10:02"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "10:05"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.427.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.427",
+	"r": "Tobu.Utsunomiya",
+	"n": "427",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.427.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "09:57"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "10:00",
+		"d": "10:00"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "10:03",
+		"d": "10:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "10:07",
+		"d": "10:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "10:12",
+		"d": "10:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "10:15",
+		"d": "10:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "10:18",
+		"d": "10:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "10:22",
+		"d": "10:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "10:26",
+		"d": "10:26"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "10:29",
+		"d": "10:29"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "10:32"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.429.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.429",
+	"r": "Tobu.Utsunomiya",
+	"n": "429",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.429.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "10:22"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "10:25",
+		"d": "10:26"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "10:28",
+		"d": "10:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "10:32",
+		"d": "10:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "10:37",
+		"d": "10:37"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "10:40",
+		"d": "10:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "10:43",
+		"d": "10:43"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "10:47",
+		"d": "10:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "10:50",
+		"d": "10:51"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "10:54",
+		"d": "10:54"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "10:57"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.431.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.431",
+	"r": "Tobu.Utsunomiya",
+	"n": "431",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.431.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "10:50"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "10:54",
+		"d": "10:54"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "10:56",
+		"d": "10:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "11:01",
+		"d": "11:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "11:05",
+		"d": "11:05"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "11:08",
+		"d": "11:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "11:11",
+		"d": "11:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "11:16",
+		"d": "11:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "11:19",
+		"d": "11:19"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "11:22",
+		"d": "11:23"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "11:26"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.433.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.433",
+	"r": "Tobu.Utsunomiya",
+	"n": "433",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.433.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "11:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "11:22",
+		"d": "11:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "11:25",
+		"d": "11:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "11:29",
+		"d": "11:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "11:34",
+		"d": "11:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "11:37",
+		"d": "11:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "11:42",
+		"d": "11:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "11:46",
+		"d": "11:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "11:49",
+		"d": "11:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "11:53",
+		"d": "11:53"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "11:56"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.435.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.435",
+	"r": "Tobu.Utsunomiya",
+	"n": "435",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.435.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "11:51"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "11:54",
+		"d": "11:55"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "11:57",
+		"d": "11:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "12:01",
+		"d": "12:02"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "12:06",
+		"d": "12:06"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "12:09",
+		"d": "12:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "12:12",
+		"d": "12:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "12:16",
+		"d": "12:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "12:19",
+		"d": "12:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "12:23",
+		"d": "12:23"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "12:26"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.437.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.437",
+	"r": "Tobu.Utsunomiya",
+	"n": "437",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.437.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "12:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "12:22",
+		"d": "12:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "12:25",
+		"d": "12:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "12:29",
+		"d": "12:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "12:34",
+		"d": "12:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "12:37",
+		"d": "12:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "12:42",
+		"d": "12:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "12:46",
+		"d": "12:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "12:49",
+		"d": "12:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "12:53",
+		"d": "12:53"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "12:56"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.439.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.439",
+	"r": "Tobu.Utsunomiya",
+	"n": "439",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.439.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "12:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "12:52",
+		"d": "12:53"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "12:55",
+		"d": "12:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "12:59",
+		"d": "13:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "13:04",
+		"d": "13:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "13:07",
+		"d": "13:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "13:12",
+		"d": "13:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "13:16",
+		"d": "13:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "13:19",
+		"d": "13:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "13:23",
+		"d": "13:23"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "13:26"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.441.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.441",
+	"r": "Tobu.Utsunomiya",
+	"n": "441",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.441.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "13:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "13:22",
+		"d": "13:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "13:25",
+		"d": "13:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "13:29",
+		"d": "13:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "13:34",
+		"d": "13:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "13:37",
+		"d": "13:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "13:42",
+		"d": "13:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "13:46",
+		"d": "13:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "13:49",
+		"d": "13:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "13:53",
+		"d": "13:53"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "13:56"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.443.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.443",
+	"r": "Tobu.Utsunomiya",
+	"n": "443",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.443.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "13:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "13:52",
+		"d": "13:53"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "13:55",
+		"d": "13:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "13:59",
+		"d": "14:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "14:04",
+		"d": "14:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "14:07",
+		"d": "14:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "14:12",
+		"d": "14:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "14:16",
+		"d": "14:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "14:19",
+		"d": "14:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "14:23",
+		"d": "14:23"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "14:26"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.445.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.445",
+	"r": "Tobu.Utsunomiya",
+	"n": "445",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.445.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "14:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "14:23",
+		"d": "14:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "14:26",
+		"d": "14:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "14:30",
+		"d": "14:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "14:34",
+		"d": "14:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "14:37",
+		"d": "14:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "14:42",
+		"d": "14:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "14:46",
+		"d": "14:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "14:49",
+		"d": "14:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "14:53",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "14:56"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.447.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.447",
+	"r": "Tobu.Utsunomiya",
+	"n": "447",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.447.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "14:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "14:52",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "14:55",
+		"d": "14:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "14:59",
+		"d": "15:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "15:04",
+		"d": "15:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "15:07",
+		"d": "15:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "15:10",
+		"d": "15:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "15:14",
+		"d": "15:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "15:18",
+		"d": "15:18"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "15:21",
+		"d": "15:22"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "15:25"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.449.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.449",
+	"r": "Tobu.Utsunomiya",
+	"n": "449",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.449.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "15:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "15:22",
+		"d": "15:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "15:25",
+		"d": "15:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "15:29",
+		"d": "15:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "15:37",
+		"d": "15:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "15:40",
+		"d": "15:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "15:43",
+		"d": "15:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "15:48",
+		"d": "15:48"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "15:51",
+		"d": "15:52"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "15:54",
+		"d": "15:55"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "15:58"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.451.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.451",
+	"r": "Tobu.Utsunomiya",
+	"n": "451",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.451.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "15:45"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "15:49",
+		"d": "15:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "15:52",
+		"d": "15:52"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "15:56",
+		"d": "15:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "16:01",
+		"d": "16:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "16:04",
+		"d": "16:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "16:07",
+		"d": "16:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "16:11",
+		"d": "16:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "16:14",
+		"d": "16:15"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "16:17",
+		"d": "16:18"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "16:21"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.453.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.453",
+	"r": "Tobu.Utsunomiya",
+	"n": "453",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.453.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "16:03"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "16:06",
+		"d": "16:06"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "16:09",
+		"d": "16:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "16:13",
+		"d": "16:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "16:17",
+		"d": "16:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "16:21",
+		"d": "16:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "16:26",
+		"d": "16:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "16:31",
+		"d": "16:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "16:37",
+		"d": "16:37"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "16:40",
+		"d": "16:40"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "16:43"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.455.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.455",
+	"r": "Tobu.Utsunomiya",
+	"n": "455",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.455.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "16:20"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "16:23",
+		"d": "16:24"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "16:26",
+		"d": "16:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "16:31",
+		"d": "16:32"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "16:35",
+		"d": "16:36"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "16:39",
+		"d": "16:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "16:44",
+		"d": "16:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "16:48",
+		"d": "16:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "16:52",
+		"d": "16:54"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "16:56",
+		"d": "16:57"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "17:00"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.457.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.457",
+	"r": "Tobu.Utsunomiya",
+	"n": "457",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.457.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "16:43"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "16:46",
+		"d": "16:47"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "16:50",
+		"d": "16:52"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "16:55",
+		"d": "16:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "17:00",
+		"d": "17:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "17:03",
+		"d": "17:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "17:07",
+		"d": "17:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "17:11",
+		"d": "17:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "17:14",
+		"d": "17:15"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "17:17",
+		"d": "17:18"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "17:21"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.459.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.459",
+	"r": "Tobu.Utsunomiya",
+	"n": "459",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.459.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "17:04"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "17:07",
+		"d": "17:07"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "17:10",
+		"d": "17:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "17:14",
+		"d": "17:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "17:21",
+		"d": "17:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "17:25",
+		"d": "17:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "17:28",
+		"d": "17:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "17:32",
+		"d": "17:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "17:37",
+		"d": "17:37"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "17:40",
+		"d": "17:40"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "17:43"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.461.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.461",
+	"r": "Tobu.Utsunomiya",
+	"n": "461",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.461.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "17:27"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "17:30",
+		"d": "17:30"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "17:33",
+		"d": "17:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "17:39",
+		"d": "17:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "17:44",
+		"d": "17:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "17:47",
+		"d": "17:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "17:50",
+		"d": "17:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "17:55",
+		"d": "17:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "17:59",
+		"d": "18:00"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "18:02",
+		"d": "18:03"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "18:06"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.463.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.463",
+	"r": "Tobu.Utsunomiya",
+	"n": "463",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.463.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "17:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "17:53",
+		"d": "17:55"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "17:58",
+		"d": "17:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "18:02",
+		"d": "18:02"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "18:07",
+		"d": "18:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "18:10",
+		"d": "18:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "18:13",
+		"d": "18:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "18:17",
+		"d": "18:19"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "18:22",
+		"d": "18:23"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "18:25",
+		"d": "18:26"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "18:29"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.465.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.465",
+	"r": "Tobu.Utsunomiya",
+	"n": "465",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.465.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "18:09"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "18:12",
+		"d": "18:13"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "18:15",
+		"d": "18:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "18:20",
+		"d": "18:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "18:24",
+		"d": "18:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "18:27",
+		"d": "18:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "18:30",
+		"d": "18:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "18:35",
+		"d": "18:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "18:38",
+		"d": "18:40"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "18:42",
+		"d": "18:43"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "18:46"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.467.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.467",
+	"r": "Tobu.Utsunomiya",
+	"n": "467",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.467.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "18:29"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "18:32",
+		"d": "18:33"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "18:36",
+		"d": "18:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "18:42",
+		"d": "18:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "18:46",
+		"d": "18:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "18:50",
+		"d": "18:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "18:53",
+		"d": "18:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "18:57",
+		"d": "18:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "19:00",
+		"d": "19:01"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "19:03",
+		"d": "19:04"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "19:07"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.469.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.469",
+	"r": "Tobu.Utsunomiya",
+	"n": "469",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.469.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "18:54"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "18:57",
+		"d": "18:57"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "19:00",
+		"d": "19:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "19:05",
+		"d": "19:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "19:12",
+		"d": "19:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "19:15",
+		"d": "19:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "19:19",
+		"d": "19:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "19:28",
+		"d": "19:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "19:31",
+		"d": "19:31"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "19:34",
+		"d": "19:34"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "19:37"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.471.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.471",
+	"r": "Tobu.Utsunomiya",
+	"n": "471",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.471.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "19:20"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "19:24",
+		"d": "19:25"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "19:27",
+		"d": "19:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "19:32",
+		"d": "19:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "19:38",
+		"d": "19:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "19:41",
+		"d": "19:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "19:44",
+		"d": "19:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "19:48",
+		"d": "19:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "19:54",
+		"d": "19:54"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "19:57",
+		"d": "19:57"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "20:00"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.473.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.473",
+	"r": "Tobu.Utsunomiya",
+	"n": "473",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.473.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "19:38"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "19:42",
+		"d": "19:42"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "19:44",
+		"d": "19:45"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "19:49",
+		"d": "19:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "19:53",
+		"d": "19:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "19:56",
+		"d": "19:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "20:00",
+		"d": "20:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "20:05",
+		"d": "20:05"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "20:08",
+		"d": "20:08"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "20:11",
+		"d": "20:12"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "20:15"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.475.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.475",
+	"r": "Tobu.Utsunomiya",
+	"n": "475",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "19:59"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "20:02",
+		"d": "20:03"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "20:06",
+		"d": "20:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "20:13",
+		"d": "20:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "20:17",
+		"d": "20:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "20:20",
+		"d": "20:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "20:23",
+		"d": "20:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "20:27",
+		"d": "20:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "20:31",
+		"d": "20:31"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "20:34",
+		"d": "20:34"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "20:37"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.477.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.477",
+	"r": "Tobu.Utsunomiya",
+	"n": "477",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.477.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "20:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "20:26",
+		"d": "20:26"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "20:29",
+		"d": "20:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "20:33",
+		"d": "20:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "20:38",
+		"d": "20:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "20:41",
+		"d": "20:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "20:44",
+		"d": "20:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "20:48",
+		"d": "20:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "20:52",
+		"d": "20:52"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "20:55",
+		"d": "20:55"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "20:58"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.479.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.479",
+	"r": "Tobu.Utsunomiya",
+	"n": "479",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.479.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "20:52"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "20:55",
+		"d": "20:56"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "20:58",
+		"d": "20:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "21:03",
+		"d": "21:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "21:07",
+		"d": "21:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "21:10",
+		"d": "21:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "21:13",
+		"d": "21:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "21:20",
+		"d": "21:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "21:23",
+		"d": "21:23"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "21:26",
+		"d": "21:26"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "21:29"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.481.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.481",
+	"r": "Tobu.Utsunomiya",
+	"n": "481",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "21:31"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "21:35",
+		"d": "21:35"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "21:38",
+		"d": "21:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "21:42",
+		"d": "21:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "21:46",
+		"d": "21:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "21:49",
+		"d": "21:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "21:52",
+		"d": "21:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "21:56",
+		"d": "21:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "22:00",
+		"d": "22:00"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "22:03",
+		"d": "22:03"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "22:06"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.483.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.483",
+	"r": "Tobu.Utsunomiya",
+	"n": "483",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.483.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "21:54"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "21:57",
+		"d": "21:57"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "22:00",
+		"d": "22:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "22:04",
+		"d": "22:05"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "22:09",
+		"d": "22:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "22:12",
+		"d": "22:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "22:15",
+		"d": "22:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "22:19",
+		"d": "22:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "22:24",
+		"d": "22:24"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "22:27",
+		"d": "22:27"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "22:30"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.485.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.485",
+	"r": "Tobu.Utsunomiya",
+	"n": "485",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.485.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "22:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "22:22",
+		"d": "22:23"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "22:25",
+		"d": "22:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "22:29",
+		"d": "22:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "22:34",
+		"d": "22:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "22:37",
+		"d": "22:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "22:40",
+		"d": "22:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "22:44",
+		"d": "22:45"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "22:48",
+		"d": "22:48"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "22:51",
+		"d": "22:51"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "22:54"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.487.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.487",
+	"r": "Tobu.Utsunomiya",
+	"n": "487",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"pt": [
+		"Tobu.Nikko.487.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"d": "23:21"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "23:24",
+		"d": "23:24"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "23:27",
+		"d": "23:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "23:31",
+		"d": "23:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "23:35",
+		"d": "23:36"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "23:38",
+		"d": "23:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "23:41",
+		"d": "23:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "23:45",
+		"d": "23:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "23:49",
+		"d": "23:49"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "23:52",
+		"d": "23:52"
+	}, {
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"a": "23:55"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.402.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.402",
+	"r": "Tobu.Utsunomiya",
+	"n": "402",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.402.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "04:55"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "04:58",
+		"d": "04:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "05:01",
+		"d": "05:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "05:03",
+		"d": "05:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "05:07",
+		"d": "05:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "05:10",
+		"d": "05:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "05:13",
+		"d": "05:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "05:18",
+		"d": "05:18"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "05:21",
+		"d": "05:22"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "05:25",
+		"d": "05:25"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "05:28"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.404.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.404",
+	"r": "Tobu.Utsunomiya",
+	"n": "404",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.404.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "05:14"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "05:16",
+		"d": "05:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "05:19",
+		"d": "05:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "05:22",
+		"d": "05:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "05:27",
+		"d": "05:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "05:30",
+		"d": "05:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "05:33",
+		"d": "05:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "05:37",
+		"d": "05:37"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "05:41",
+		"d": "05:42"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "05:44",
+		"d": "05:45"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "05:48"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.406.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.406",
+	"r": "Tobu.Utsunomiya",
+	"n": "406",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.406.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "05:39"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "05:42",
+		"d": "05:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "05:45",
+		"d": "05:45"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "05:47",
+		"d": "05:48"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "05:51",
+		"d": "05:52"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "05:54",
+		"d": "05:55"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "05:57",
+		"d": "05:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "06:01",
+		"d": "06:02"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "06:05",
+		"d": "06:05"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "06:08",
+		"d": "06:09"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "06:11"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.408.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.408",
+	"r": "Tobu.Utsunomiya",
+	"n": "408",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.408.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "06:05"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "06:08",
+		"d": "06:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "06:11",
+		"d": "06:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "06:14",
+		"d": "06:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "06:18",
+		"d": "06:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "06:22",
+		"d": "06:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "06:25",
+		"d": "06:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "06:29",
+		"d": "06:30"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "06:33",
+		"d": "06:33"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "06:36",
+		"d": "06:37"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "06:39"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.410.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.410",
+	"r": "Tobu.Utsunomiya",
+	"n": "410",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.410.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "06:18"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "06:20",
+		"d": "06:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "06:23",
+		"d": "06:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "06:26",
+		"d": "06:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "06:30",
+		"d": "06:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "06:33",
+		"d": "06:36"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "06:38",
+		"d": "06:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "06:43",
+		"d": "06:43"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "06:47",
+		"d": "06:47"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "06:50",
+		"d": "06:51"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "06:53"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.412.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.412",
+	"r": "Tobu.Utsunomiya",
+	"n": "412",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.412.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "06:41"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "06:44",
+		"d": "06:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "06:47",
+		"d": "06:48"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "06:50",
+		"d": "06:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "06:54",
+		"d": "06:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "06:57",
+		"d": "06:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:01",
+		"d": "07:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "07:06",
+		"d": "07:06"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:09",
+		"d": "07:10"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "07:13",
+		"d": "07:15"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "07:18"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.414.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.414",
+	"r": "Tobu.Utsunomiya",
+	"n": "414",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.414.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "07:04"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "07:06",
+		"d": "07:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "07:10",
+		"d": "07:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:12",
+		"d": "07:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:17",
+		"d": "07:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "07:20",
+		"d": "07:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:22",
+		"d": "07:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "07:27",
+		"d": "07:28"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:31",
+		"d": "07:32"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "07:35",
+		"d": "07:35"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "07:38"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.416.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.416",
+	"r": "Tobu.Utsunomiya",
+	"n": "416",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.416.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "07:25"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "07:28",
+		"d": "07:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "07:31",
+		"d": "07:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:33",
+		"d": "07:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:38",
+		"d": "07:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "07:41",
+		"d": "07:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:47",
+		"d": "07:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "07:51",
+		"d": "07:52"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "07:55",
+		"d": "07:58"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:00",
+		"d": "08:01"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "08:04"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.418.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.418",
+	"r": "Tobu.Utsunomiya",
+	"n": "418",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"nt": [
+		"Tobu.Nikko.418.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "07:41"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "07:44",
+		"d": "07:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "07:47",
+		"d": "07:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "07:49",
+		"d": "07:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "07:54",
+		"d": "07:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "07:57",
+		"d": "07:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "07:59",
+		"d": "08:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:04",
+		"d": "08:07"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "08:11",
+		"d": "08:12"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:15",
+		"d": "08:16"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "08:18"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.420.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.420",
+	"r": "Tobu.Utsunomiya",
+	"n": "420",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.420.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "08:02"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:05",
+		"d": "08:05"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:08",
+		"d": "08:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "08:10",
+		"d": "08:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "08:15",
+		"d": "08:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "08:18",
+		"d": "08:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "08:21",
+		"d": "08:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:25",
+		"d": "08:26"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "08:29",
+		"d": "08:29"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:32",
+		"d": "08:33"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "08:35"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.422.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.422",
+	"r": "Tobu.Utsunomiya",
+	"n": "422",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"nt": [
+		"Tobu.Nikko.422.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "08:19"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:21",
+		"d": "08:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:24",
+		"d": "08:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "08:27",
+		"d": "08:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "08:31",
+		"d": "08:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "08:34",
+		"d": "08:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "08:37",
+		"d": "08:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:41",
+		"d": "08:43"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "08:46",
+		"d": "08:47"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "08:50",
+		"d": "08:50"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "08:53"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.424.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.424",
+	"r": "Tobu.Utsunomiya",
+	"n": "424",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.424.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "08:36"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:38",
+		"d": "08:39"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:41",
+		"d": "08:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "08:44",
+		"d": "08:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "08:48",
+		"d": "08:48"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "08:51",
+		"d": "08:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "08:53",
+		"d": "08:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "08:58",
+		"d": "08:59"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "09:02",
+		"d": "09:02"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "09:05",
+		"d": "09:06"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "09:08"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.426.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.426",
+	"r": "Tobu.Utsunomiya",
+	"n": "426",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.426.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "08:53"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "08:55",
+		"d": "08:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "08:58",
+		"d": "08:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "09:01",
+		"d": "09:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "09:05",
+		"d": "09:05"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "09:08",
+		"d": "09:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "09:10",
+		"d": "09:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "09:15",
+		"d": "09:15"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "09:18",
+		"d": "09:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "09:22",
+		"d": "09:22"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "09:25"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.428.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.428",
+	"r": "Tobu.Utsunomiya",
+	"n": "428",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.428.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "09:19"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "09:22",
+		"d": "09:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "09:25",
+		"d": "09:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "09:27",
+		"d": "09:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "09:31",
+		"d": "09:32"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "09:34",
+		"d": "09:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "09:37",
+		"d": "09:37"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "09:41",
+		"d": "09:42"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "09:45",
+		"d": "09:45"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "09:48",
+		"d": "09:49"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "09:51"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.430.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.430",
+	"r": "Tobu.Utsunomiya",
+	"n": "430",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.430.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "09:52"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "09:54",
+		"d": "09:55"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "09:58",
+		"d": "09:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "10:01",
+		"d": "10:02"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "10:05",
+		"d": "10:06"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "10:08",
+		"d": "10:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "10:11",
+		"d": "10:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "10:15",
+		"d": "10:17"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "10:20",
+		"d": "10:21"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "10:24",
+		"d": "10:25"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "10:28"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.432.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.432",
+	"r": "Tobu.Utsunomiya",
+	"n": "432",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.432.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "10:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "10:22",
+		"d": "10:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "10:26",
+		"d": "10:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "10:28",
+		"d": "10:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "10:32",
+		"d": "10:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "10:36",
+		"d": "10:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "10:42",
+		"d": "10:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "10:46",
+		"d": "10:47"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "10:50",
+		"d": "10:50"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "10:54",
+		"d": "10:54"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "10:57"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.434.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.434",
+	"r": "Tobu.Utsunomiya",
+	"n": "434",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.434.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "10:51"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "10:54",
+		"d": "10:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "10:57",
+		"d": "10:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "10:59",
+		"d": "11:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "11:03",
+		"d": "11:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "11:07",
+		"d": "11:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "11:10",
+		"d": "11:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "11:14",
+		"d": "11:15"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "11:18",
+		"d": "11:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "11:22",
+		"d": "11:22"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "11:25"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.436.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.436",
+	"r": "Tobu.Utsunomiya",
+	"n": "436",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.436.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "11:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "11:23",
+		"d": "11:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "11:26",
+		"d": "11:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "11:28",
+		"d": "11:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "11:32",
+		"d": "11:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "11:36",
+		"d": "11:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "11:40",
+		"d": "11:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "11:44",
+		"d": "11:46"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "11:49",
+		"d": "11:50"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "11:53",
+		"d": "11:55"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "11:57"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.438.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.438",
+	"r": "Tobu.Utsunomiya",
+	"n": "438",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.438.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "11:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "11:53",
+		"d": "11:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "11:56",
+		"d": "11:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "11:58",
+		"d": "11:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "12:02",
+		"d": "12:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "12:06",
+		"d": "12:09"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "12:11",
+		"d": "12:11"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "12:15",
+		"d": "12:16"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "12:19",
+		"d": "12:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "12:23",
+		"d": "12:23"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "12:26"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.440.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.440",
+	"r": "Tobu.Utsunomiya",
+	"n": "440",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.440.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "12:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "12:23",
+		"d": "12:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "12:26",
+		"d": "12:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "12:28",
+		"d": "12:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "12:32",
+		"d": "12:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "12:36",
+		"d": "12:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "12:40",
+		"d": "12:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "12:44",
+		"d": "12:45"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "12:48",
+		"d": "12:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "12:52",
+		"d": "12:53"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "12:55"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.442.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.442",
+	"r": "Tobu.Utsunomiya",
+	"n": "442",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.442.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "12:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "12:53",
+		"d": "12:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "12:56",
+		"d": "12:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "12:58",
+		"d": "12:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "13:02",
+		"d": "13:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "13:06",
+		"d": "13:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "13:10",
+		"d": "13:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "13:14",
+		"d": "13:15"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "13:18",
+		"d": "13:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "13:22",
+		"d": "13:23"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "13:25"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.444.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.444",
+	"r": "Tobu.Utsunomiya",
+	"n": "444",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.444.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "13:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "13:23",
+		"d": "13:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "13:26",
+		"d": "13:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "13:28",
+		"d": "13:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "13:32",
+		"d": "13:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "13:36",
+		"d": "13:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "13:40",
+		"d": "13:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "13:44",
+		"d": "13:45"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "13:48",
+		"d": "13:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "13:52",
+		"d": "13:53"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "13:55"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.446.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.446",
+	"r": "Tobu.Utsunomiya",
+	"n": "446",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.446.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "13:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "13:53",
+		"d": "13:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "13:56",
+		"d": "13:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "13:58",
+		"d": "13:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "14:02",
+		"d": "14:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "14:06",
+		"d": "14:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "14:10",
+		"d": "14:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "14:14",
+		"d": "14:15"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "14:18",
+		"d": "14:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "14:22",
+		"d": "14:23"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "14:26"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.448.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.448",
+	"r": "Tobu.Utsunomiya",
+	"n": "448",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.448.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "14:20"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "14:23",
+		"d": "14:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "14:26",
+		"d": "14:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "14:28",
+		"d": "14:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "14:32",
+		"d": "14:33"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "14:36",
+		"d": "14:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "14:40",
+		"d": "14:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "14:44",
+		"d": "14:45"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "14:48",
+		"d": "14:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "14:52",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "14:55"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.450.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.450",
+	"r": "Tobu.Utsunomiya",
+	"n": "450",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.450.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "14:50"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "14:53",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "14:56",
+		"d": "14:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "14:58",
+		"d": "14:59"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "15:02",
+		"d": "15:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "15:06",
+		"d": "15:08"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "15:10",
+		"d": "15:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "15:14",
+		"d": "15:15"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "15:18",
+		"d": "15:19"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "15:22",
+		"d": "15:23"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "15:25"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.452.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.452",
+	"r": "Tobu.Utsunomiya",
+	"n": "452",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.452.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "15:18"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "15:21",
+		"d": "15:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "15:24",
+		"d": "15:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "15:27",
+		"d": "15:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "15:31",
+		"d": "15:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "15:34",
+		"d": "15:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "15:37",
+		"d": "15:37"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "15:41",
+		"d": "15:42"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "15:45",
+		"d": "15:45"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "15:49",
+		"d": "15:49"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "15:52"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.454.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.454",
+	"r": "Tobu.Utsunomiya",
+	"n": "454",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.454.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "15:40"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "15:42",
+		"d": "15:43"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "15:45",
+		"d": "15:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "15:48",
+		"d": "15:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "15:54",
+		"d": "15:55"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "15:57",
+		"d": "15:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "16:00",
+		"d": "16:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "16:05",
+		"d": "16:05"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "16:09",
+		"d": "16:09"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "16:12",
+		"d": "16:13"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "16:15"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.456.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.456",
+	"r": "Tobu.Utsunomiya",
+	"n": "456",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.456.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "16:07"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "16:10",
+		"d": "16:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "16:13",
+		"d": "16:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "16:17",
+		"d": "16:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "16:21",
+		"d": "16:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "16:24",
+		"d": "16:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "16:26",
+		"d": "16:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "16:31",
+		"d": "16:32"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "16:35",
+		"d": "16:35"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "16:38",
+		"d": "16:39"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "16:41"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.458.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.458",
+	"r": "Tobu.Utsunomiya",
+	"n": "458",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.458.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "16:26"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "16:28",
+		"d": "16:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "16:31",
+		"d": "16:32"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "16:34",
+		"d": "16:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "16:38",
+		"d": "16:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "16:41",
+		"d": "16:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "16:43",
+		"d": "16:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "16:48",
+		"d": "16:48"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "16:51",
+		"d": "16:52"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "16:55",
+		"d": "16:55"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "16:58"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.460.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.460",
+	"r": "Tobu.Utsunomiya",
+	"n": "460",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.460.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "16:48"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "16:51",
+		"d": "16:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "16:54",
+		"d": "16:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "16:56",
+		"d": "16:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "17:00",
+		"d": "17:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "17:04",
+		"d": "17:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "17:06",
+		"d": "17:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "17:11",
+		"d": "17:14"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "17:17",
+		"d": "17:18"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "17:21",
+		"d": "17:21"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "17:24"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.462.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.462",
+	"r": "Tobu.Utsunomiya",
+	"n": "462",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.462.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "17:07"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "17:09",
+		"d": "17:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "17:13",
+		"d": "17:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "17:16",
+		"d": "17:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "17:20",
+		"d": "17:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "17:24",
+		"d": "17:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "17:27",
+		"d": "17:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "17:31",
+		"d": "17:32"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "17:35",
+		"d": "17:36"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "17:38",
+		"d": "17:39"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "17:41"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.464.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.464",
+	"r": "Tobu.Utsunomiya",
+	"n": "464",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.464.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "17:26"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "17:28",
+		"d": "17:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "17:31",
+		"d": "17:32"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "17:34",
+		"d": "17:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "17:38",
+		"d": "17:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "17:41",
+		"d": "17:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "17:44",
+		"d": "17:44"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "17:48",
+		"d": "17:49"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "17:52",
+		"d": "17:52"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "17:55",
+		"d": "17:56"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "17:58"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.466.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.466",
+	"r": "Tobu.Utsunomiya",
+	"n": "466",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.466.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "17:48"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "17:51",
+		"d": "17:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "17:54",
+		"d": "17:54"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "17:56",
+		"d": "17:57"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "18:00",
+		"d": "18:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "18:03",
+		"d": "18:04"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "18:06",
+		"d": "18:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "18:11",
+		"d": "18:11"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "18:15",
+		"d": "18:16"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "18:18",
+		"d": "18:19"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "18:21"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.468.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.468",
+	"r": "Tobu.Utsunomiya",
+	"n": "468",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.468.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "18:11"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "18:14",
+		"d": "18:14"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "18:17",
+		"d": "18:17"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "18:19",
+		"d": "18:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "18:23",
+		"d": "18:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "18:27",
+		"d": "18:28"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "18:30",
+		"d": "18:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "18:34",
+		"d": "18:35"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "18:38",
+		"d": "18:38"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "18:41",
+		"d": "18:42"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "18:44"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.470.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.470",
+	"r": "Tobu.Utsunomiya",
+	"n": "470",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.470.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "18:34"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "18:37",
+		"d": "18:37"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "18:40",
+		"d": "18:40"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "18:42",
+		"d": "18:43"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "18:46",
+		"d": "18:47"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "18:50",
+		"d": "18:50"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "18:52",
+		"d": "18:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "18:57",
+		"d": "18:57"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "19:01",
+		"d": "19:01"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "19:04",
+		"d": "19:05"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "19:07"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.472.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.472",
+	"r": "Tobu.Utsunomiya",
+	"n": "472",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.472.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "18:52"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "18:55",
+		"d": "18:55"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "18:58",
+		"d": "19:00"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "19:02",
+		"d": "19:03"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "19:06",
+		"d": "19:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "19:09",
+		"d": "19:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "19:13",
+		"d": "19:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "19:17",
+		"d": "19:18"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "19:21",
+		"d": "19:22"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "19:25",
+		"d": "19:25"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "19:28"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.474.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.474",
+	"r": "Tobu.Utsunomiya",
+	"n": "474",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "19:12"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "19:14",
+		"d": "19:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "19:17",
+		"d": "19:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "19:20",
+		"d": "19:20"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "19:24",
+		"d": "19:24"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "19:27",
+		"d": "19:27"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "19:29",
+		"d": "19:30"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "19:34",
+		"d": "19:34"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "19:37",
+		"d": "19:38"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "19:41",
+		"d": "19:42"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "19:44"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.476.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.476",
+	"r": "Tobu.Utsunomiya",
+	"n": "476",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.476.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "19:43"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "19:45",
+		"d": "19:46"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "19:48",
+		"d": "19:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "19:51",
+		"d": "19:51"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "19:55",
+		"d": "19:55"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "19:58",
+		"d": "19:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "20:00",
+		"d": "20:01"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "20:05",
+		"d": "20:05"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "20:08",
+		"d": "20:09"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "20:12",
+		"d": "20:12"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "20:15"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.478.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.478",
+	"r": "Tobu.Utsunomiya",
+	"n": "478",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "20:09"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "20:12",
+		"d": "20:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "20:15",
+		"d": "20:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "20:17",
+		"d": "20:18"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "20:22",
+		"d": "20:23"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "20:26",
+		"d": "20:26"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "20:28",
+		"d": "20:29"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "20:33",
+		"d": "20:34"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "20:37",
+		"d": "20:37"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "20:40",
+		"d": "20:41"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "20:43"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.480.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.480",
+	"r": "Tobu.Utsunomiya",
+	"n": "480",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "20:39"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "20:41",
+		"d": "20:42"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "20:44",
+		"d": "20:45"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "20:47",
+		"d": "20:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "20:52",
+		"d": "20:53"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "20:55",
+		"d": "20:56"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "20:58",
+		"d": "20:58"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "21:03",
+		"d": "21:03"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "21:06",
+		"d": "21:07"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "21:10",
+		"d": "21:10"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "21:13"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.482.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.482",
+	"r": "Tobu.Utsunomiya",
+	"n": "482",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"nt": [
+		"Tobu.Nikko.482.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "21:04"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "21:06",
+		"d": "21:07"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "21:09",
+		"d": "21:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "21:12",
+		"d": "21:12"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "21:16",
+		"d": "21:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "21:19",
+		"d": "21:19"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "21:21",
+		"d": "21:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "21:26",
+		"d": "21:27"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "21:31",
+		"d": "21:31"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "21:34",
+		"d": "21:35"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "21:38"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.484.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.484",
+	"r": "Tobu.Utsunomiya",
+	"n": "484",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.MinamiKurihashi"
+	],
+	"nt": [
+		"Tobu.Nikko.484.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "21:32"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "21:35",
+		"d": "21:35"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "21:38",
+		"d": "21:38"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "21:40",
+		"d": "21:41"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "21:44",
+		"d": "21:45"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "21:48",
+		"d": "21:49"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "21:51",
+		"d": "21:52"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "21:56",
+		"d": "21:56"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "22:00",
+		"d": "22:00"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "22:03",
+		"d": "22:04"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "22:06"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.486.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.486",
+	"r": "Tobu.Utsunomiya",
+	"n": "486",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Nikko.Tochigi"
+	],
+	"nt": [
+		"Tobu.Nikko.486.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "22:13"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "22:15",
+		"d": "22:16"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "22:18",
+		"d": "22:19"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "22:21",
+		"d": "22:21"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "22:25",
+		"d": "22:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "22:28",
+		"d": "22:31"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "22:34",
+		"d": "22:34"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "22:38",
+		"d": "22:39"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "22:42",
+		"d": "22:42"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "22:45",
+		"d": "22:46"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "22:48"
+	}]
+}, {
+	"id": "Tobu.Utsunomiya.488.SaturdayHoliday",
+	"t": "Tobu.Utsunomiya.488",
+	"r": "Tobu.Utsunomiya",
+	"n": "488",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Utsunomiya.TobuUtsunomiya"
+	],
+	"ds": [
+		"Tobu.Utsunomiya.ShinTochigi"
+	],
+	"tt": [{
+		"s": "Tobu.Utsunomiya.TobuUtsunomiya",
+		"d": "23:07"
+	}, {
+		"s": "Tobu.Utsunomiya.MinamiUtsunomiya",
+		"a": "23:09",
+		"d": "23:10"
+	}, {
+		"s": "Tobu.Utsunomiya.Esojima",
+		"a": "23:12",
+		"d": "23:13"
+	}, {
+		"s": "Tobu.Utsunomiya.Nishikawada",
+		"a": "23:15",
+		"d": "23:15"
+	}, {
+		"s": "Tobu.Utsunomiya.Yasuzuka",
+		"a": "23:19",
+		"d": "23:19"
+	}, {
+		"s": "Tobu.Utsunomiya.Omochanomachi",
+		"a": "23:22",
+		"d": "23:22"
+	}, {
+		"s": "Tobu.Utsunomiya.Kuniya",
+		"a": "23:24",
+		"d": "23:25"
+	}, {
+		"s": "Tobu.Utsunomiya.Mibu",
+		"a": "23:29",
+		"d": "23:31"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuOtsuka",
+		"a": "23:34",
+		"d": "23:35"
+	}, {
+		"s": "Tobu.Utsunomiya.YashuHirakawa",
+		"a": "23:37",
+		"d": "23:38"
+	}, {
+		"s": "Tobu.Utsunomiya.ShinTochigi",
+		"a": "23:41"
+	}]
+}]

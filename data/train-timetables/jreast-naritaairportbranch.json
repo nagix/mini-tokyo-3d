@@ -1,0 +1,352 @@
+[{
+	"id": "JR-East.NaritaAirportBranch.1431M.Weekday",
+	"t": "JR-East.NaritaAirportBranch.1431M",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "1431M",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.Sobu.Chiba"
+	],
+	"ds": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.Narita.1431M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"d": "08:13"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "08:22",
+		"d": "08:23"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"a": "08:24"
+	}]
+}, {
+	"id": "JR-East.NaritaAirportBranch.1438M.Weekday",
+	"t": "JR-East.NaritaAirportBranch.1438M",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "1438M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.Sobu.Chiba"
+	],
+	"nt": [
+		"JR-East.Narita.1438M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"d": "08:38"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "08:40",
+		"d": "08:41"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"a": "08:53"
+	}]
+}, {
+	"id": "JR-East.NaritaAirportBranch.1458M.Weekday",
+	"t": "JR-East.NaritaAirportBranch.1458M",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "1458M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.Sobu.Chiba"
+	],
+	"nt": [
+		"JR-East.Narita.1458M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"d": "17:32"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "17:34",
+		"d": "17:36"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"a": "17:48"
+	}]
+}, {
+	"id": "JR-East.NaritaAirportBranch.1461M.Weekday",
+	"t": "JR-East.NaritaAirportBranch.1461M",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "1461M",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.Sobu.Chiba"
+	],
+	"ds": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.Narita.1461M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"d": "16:58"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "17:07",
+		"d": "17:08"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"a": "17:09"
+	}]
+}, {
+	"id": "JR-East.NaritaAirportBranch.1472M.Weekday",
+	"t": "JR-East.NaritaAirportBranch.1472M",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "1472M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.Sobu.Chiba"
+	],
+	"nt": [
+		"JR-East.Narita.1472M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"d": "21:32"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "21:34",
+		"d": "21:35"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"a": "21:48"
+	}]
+}, {
+	"id": "JR-East.NaritaAirportBranch.1475M.Weekday",
+	"t": "JR-East.NaritaAirportBranch.1475M",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "1475M",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.Sobu.Chiba"
+	],
+	"ds": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.Narita.1475M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"d": "21:10"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "21:22",
+		"d": "21:23"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"a": "21:25"
+	}]
+}, {
+	"id": "JR-East.NaritaAirportBranch.5770F.Weekday",
+	"t": "JR-East.NaritaAirportBranch.5770F",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "5770F",
+	"y": "JR-East.CommuterRapid",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.Yokosuka.Zushi"
+	],
+	"nt": [
+		"JR-East.Narita.5770F.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"d": "07:22"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "07:24",
+		"d": "07:25"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"a": "07:38"
+	}]
+}, {
+	"id": "JR-East.NaritaAirportBranch.1431M.SaturdayHoliday",
+	"t": "JR-East.NaritaAirportBranch.1431M",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "1431M",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.Sobu.Chiba"
+	],
+	"ds": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.Narita.1431M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"d": "08:13"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "08:22",
+		"d": "08:23"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"a": "08:24"
+	}]
+}, {
+	"id": "JR-East.NaritaAirportBranch.1438M.SaturdayHoliday",
+	"t": "JR-East.NaritaAirportBranch.1438M",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "1438M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.Sobu.Chiba"
+	],
+	"nt": [
+		"JR-East.Narita.1438M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"d": "08:38"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "08:40",
+		"d": "08:41"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"a": "08:53"
+	}]
+}, {
+	"id": "JR-East.NaritaAirportBranch.1458M.SaturdayHoliday",
+	"t": "JR-East.NaritaAirportBranch.1458M",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "1458M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.Sobu.Chiba"
+	],
+	"nt": [
+		"JR-East.Narita.1458M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"d": "17:32"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "17:34",
+		"d": "17:36"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"a": "17:48"
+	}]
+}, {
+	"id": "JR-East.NaritaAirportBranch.1461M.SaturdayHoliday",
+	"t": "JR-East.NaritaAirportBranch.1461M",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "1461M",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.Sobu.Chiba"
+	],
+	"ds": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.Narita.1461M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"d": "16:58"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "17:07",
+		"d": "17:08"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"a": "17:09"
+	}]
+}, {
+	"id": "JR-East.NaritaAirportBranch.1472M.SaturdayHoliday",
+	"t": "JR-East.NaritaAirportBranch.1472M",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "1472M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.Sobu.Chiba"
+	],
+	"nt": [
+		"JR-East.Narita.1472M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"d": "21:32"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "21:34",
+		"d": "21:35"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"a": "21:48"
+	}]
+}, {
+	"id": "JR-East.NaritaAirportBranch.1475M.SaturdayHoliday",
+	"t": "JR-East.NaritaAirportBranch.1475M",
+	"r": "JR-East.NaritaAirportBranch",
+	"n": "1475M",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.Sobu.Chiba"
+	],
+	"ds": [
+		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.Narita.1475M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.NaritaAirportBranch.Narita",
+		"d": "21:10"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
+		"a": "21:22",
+		"d": "21:23"
+	}, {
+		"s": "JR-East.NaritaAirportBranch.NaritaAirportTerminal1",
+		"a": "21:25"
+	}]
+}]

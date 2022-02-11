@@ -1,0 +1,7417 @@
+[{
+	"id": "Tobu.Kiryu.801E.Weekday",
+	"t": "Tobu.Kiryu.801E",
+	"r": "Tobu.Kiryu",
+	"n": "801E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Kiryu.Ota"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "05:14"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "05:17",
+		"d": "05:18"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "05:21",
+		"d": "05:22"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "05:25",
+		"d": "05:26"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "05:30",
+		"d": "05:30"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "05:33",
+		"d": "05:36"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "05:40",
+		"d": "05:40"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "05:44"
+	}]
+}, {
+	"id": "Tobu.Kiryu.803E.Weekday",
+	"t": "Tobu.Kiryu.803E",
+	"r": "Tobu.Kiryu",
+	"n": "803E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.803E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "05:54"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "05:58",
+		"d": "05:58"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "06:01",
+		"d": "06:02"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "06:05",
+		"d": "06:06"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "06:10",
+		"d": "06:10"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "06:13",
+		"d": "06:18"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "06:22",
+		"d": "06:23"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "06:27"
+	}]
+}, {
+	"id": "Tobu.Kiryu.805E.Weekday",
+	"t": "Tobu.Kiryu.805E",
+	"r": "Tobu.Kiryu",
+	"n": "805E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.805E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "06:24"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "06:28",
+		"d": "06:32"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "06:35",
+		"d": "06:35"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "06:39",
+		"d": "06:40"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "06:43",
+		"d": "06:44"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "06:46",
+		"d": "06:47"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "06:51",
+		"d": "06:51"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "06:55"
+	}]
+}, {
+	"id": "Tobu.Kiryu.807E.Weekday",
+	"t": "Tobu.Kiryu.807E",
+	"r": "Tobu.Kiryu",
+	"n": "807E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.807E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "07:03"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "07:07",
+		"d": "07:09"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "07:12",
+		"d": "07:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "07:17",
+		"d": "07:18"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "07:22",
+		"d": "07:22"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "07:24",
+		"d": "07:25"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "07:29",
+		"d": "07:30"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "07:34"
+	}]
+}, {
+	"id": "Tobu.Kiryu.809E.Weekday",
+	"t": "Tobu.Kiryu.809E",
+	"r": "Tobu.Kiryu",
+	"n": "809E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.809E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "07:43"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "07:47",
+		"d": "07:47"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "07:50",
+		"d": "07:51"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "07:55",
+		"d": "07:55"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "07:59",
+		"d": "08:00"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "08:02",
+		"d": "08:03"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "08:07",
+		"d": "08:08"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "08:13"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1801.Weekday",
+	"t": "Tobu.Kiryu.1801",
+	"r": "Tobu.Kiryu",
+	"n": "1801",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1801.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "08:24"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "08:34",
+		"d": "08:35"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "08:40",
+		"d": "08:43"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "08:47",
+		"d": "08:47"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "08:51"
+	}],
+	"nm": [{
+		"ja": "りょうもう 1号",
+		"en": "Ryomo 1",
+		"ko": "료모 1",
+		"zh-Hans": "两毛 1",
+		"zh-Hant": "兩毛 1"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.811E.Weekday",
+	"t": "Tobu.Kiryu.811E",
+	"r": "Tobu.Kiryu",
+	"n": "811E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.811E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "08:37"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "08:41",
+		"d": "08:42"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "08:45",
+		"d": "08:45"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "08:49",
+		"d": "08:50"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "08:54",
+		"d": "08:55"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "08:57",
+		"d": "08:57"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "09:01",
+		"d": "09:02"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "09:06"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1803.Weekday",
+	"t": "Tobu.Kiryu.1803",
+	"r": "Tobu.Kiryu",
+	"n": "1803",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1803.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "09:09"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "09:19",
+		"d": "09:20"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "09:26",
+		"d": "09:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "09:32",
+		"d": "09:32"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "09:36"
+	}],
+	"nm": [{
+		"ja": "りょうもう 3号",
+		"en": "Ryomo 3",
+		"ko": "료모 3",
+		"zh-Hans": "两毛 3",
+		"zh-Hant": "兩毛 3"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.813E.Weekday",
+	"t": "Tobu.Kiryu.813E",
+	"r": "Tobu.Kiryu",
+	"n": "813E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.813E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "09:38"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "09:42",
+		"d": "09:42"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "09:46",
+		"d": "09:47"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "09:51",
+		"d": "09:51"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "09:55",
+		"d": "09:56"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "09:58",
+		"d": "09:59"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "10:04",
+		"d": "10:04"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "10:08"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1805.Weekday",
+	"t": "Tobu.Kiryu.1805",
+	"r": "Tobu.Kiryu",
+	"n": "1805",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1805.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "10:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "10:23",
+		"d": "10:24"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "10:29",
+		"d": "10:30"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "10:34",
+		"d": "10:35"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "10:39"
+	}],
+	"nm": [{
+		"ja": "りょうもう 5号",
+		"en": "Ryomo 5",
+		"ko": "료모 5",
+		"zh-Hans": "两毛 5",
+		"zh-Hant": "兩毛 5"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.815E.Weekday",
+	"t": "Tobu.Kiryu.815E",
+	"r": "Tobu.Kiryu",
+	"n": "815E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.815E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "10:51"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "10:55",
+		"d": "10:56"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "10:58",
+		"d": "10:59"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "11:03",
+		"d": "11:03"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "11:07",
+		"d": "11:07"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "11:10",
+		"d": "11:13"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "11:17",
+		"d": "11:17"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "11:21"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1807.Weekday",
+	"t": "Tobu.Kiryu.1807",
+	"r": "Tobu.Kiryu",
+	"n": "1807",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1807.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "11:10"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "11:20",
+		"d": "11:20"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "11:25",
+		"d": "11:26"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "11:30",
+		"d": "11:30"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "11:34"
+	}],
+	"nm": [{
+		"ja": "りょうもう 7号",
+		"en": "Ryomo 7",
+		"ko": "료모 7",
+		"zh-Hans": "两毛 7",
+		"zh-Hant": "兩毛 7"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.817E.Weekday",
+	"t": "Tobu.Kiryu.817E",
+	"r": "Tobu.Kiryu",
+	"n": "817E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.817E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "11:53"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "11:57",
+		"d": "11:58"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "12:01",
+		"d": "12:02"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "12:05",
+		"d": "12:06"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "12:10",
+		"d": "12:10"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "12:13",
+		"d": "12:13"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "12:17",
+		"d": "12:18"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "12:22"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1811.Weekday",
+	"t": "Tobu.Kiryu.1811",
+	"r": "Tobu.Kiryu",
+	"n": "1811",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1811.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "12:11"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "12:21",
+		"d": "12:21"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "12:27",
+		"d": "12:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "12:31",
+		"d": "12:32"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "12:36"
+	}],
+	"nm": [{
+		"ja": "りょうもう 11号",
+		"en": "Ryomo 11",
+		"ko": "료모 11",
+		"zh-Hans": "两毛 11",
+		"zh-Hant": "兩毛 11"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.819E.Weekday",
+	"t": "Tobu.Kiryu.819E",
+	"r": "Tobu.Kiryu",
+	"n": "819E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.819E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "12:53"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "12:57",
+		"d": "12:58"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "13:01",
+		"d": "13:02"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "13:05",
+		"d": "13:06"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "13:10",
+		"d": "13:10"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "13:13",
+		"d": "13:13"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "13:17",
+		"d": "13:18"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "13:22"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1815.Weekday",
+	"t": "Tobu.Kiryu.1815",
+	"r": "Tobu.Kiryu",
+	"n": "1815",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1815.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "13:11"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "13:20",
+		"d": "13:21"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "13:26",
+		"d": "13:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "13:31",
+		"d": "13:32"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "13:36"
+	}],
+	"nm": [{
+		"ja": "りょうもう 15号",
+		"en": "Ryomo 15",
+		"ko": "료모 15",
+		"zh-Hans": "两毛 15",
+		"zh-Hant": "兩毛 15"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.821E.Weekday",
+	"t": "Tobu.Kiryu.821E",
+	"r": "Tobu.Kiryu",
+	"n": "821E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.821E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "13:53"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "13:57",
+		"d": "13:58"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "14:01",
+		"d": "14:02"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "14:05",
+		"d": "14:06"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "14:10",
+		"d": "14:10"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "14:13",
+		"d": "14:13"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "14:17",
+		"d": "14:18"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "14:22"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1817.Weekday",
+	"t": "Tobu.Kiryu.1817",
+	"r": "Tobu.Kiryu",
+	"n": "1817",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1817.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "14:11"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "14:20",
+		"d": "14:21"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "14:26",
+		"d": "14:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "14:31",
+		"d": "14:33"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "14:37"
+	}],
+	"nm": [{
+		"ja": "りょうもう 17号",
+		"en": "Ryomo 17",
+		"ko": "료모 17",
+		"zh-Hans": "两毛 17",
+		"zh-Hant": "兩毛 17"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.823E.Weekday",
+	"t": "Tobu.Kiryu.823E",
+	"r": "Tobu.Kiryu",
+	"n": "823E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.823E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "14:49"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "14:53",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "14:56",
+		"d": "14:56"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "15:00",
+		"d": "15:01"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "15:04",
+		"d": "15:05"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "15:07",
+		"d": "15:14"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "15:18",
+		"d": "15:18"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "15:22"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1819.Weekday",
+	"t": "Tobu.Kiryu.1819",
+	"r": "Tobu.Kiryu",
+	"n": "1819",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1819.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "15:15"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "15:27",
+		"d": "15:27"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "15:33",
+		"d": "15:35"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "15:39",
+		"d": "15:40"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "15:44"
+	}],
+	"nm": [{
+		"ja": "りょうもう 19号",
+		"en": "Ryomo 19",
+		"ko": "료모 19",
+		"zh-Hans": "两毛 19",
+		"zh-Hant": "兩毛 19"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.825E.Weekday",
+	"t": "Tobu.Kiryu.825E",
+	"r": "Tobu.Kiryu",
+	"n": "825E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.825E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "15:38"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "15:41",
+		"d": "15:42"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "15:45",
+		"d": "15:47"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "15:50",
+		"d": "15:51"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "15:54",
+		"d": "15:55"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "15:57",
+		"d": "15:58"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "16:02",
+		"d": "16:02"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "16:07"
+	}]
+}, {
+	"id": "Tobu.Kiryu.827E.Weekday",
+	"t": "Tobu.Kiryu.827E",
+	"r": "Tobu.Kiryu",
+	"n": "827E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.827E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "16:02"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "16:06",
+		"d": "16:06"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "16:09",
+		"d": "16:10"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "16:13",
+		"d": "16:14"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "16:17",
+		"d": "16:18"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "16:21",
+		"d": "16:21"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "16:25",
+		"d": "16:26"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "16:30"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1821.Weekday",
+	"t": "Tobu.Kiryu.1821",
+	"r": "Tobu.Kiryu",
+	"n": "1821",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1821.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "16:17"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "16:27",
+		"d": "16:28"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "16:33",
+		"d": "16:34"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "16:38",
+		"d": "16:38"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "16:42"
+	}],
+	"nm": [{
+		"ja": "りょうもう 21号",
+		"en": "Ryomo 21",
+		"ko": "료모 21",
+		"zh-Hans": "两毛 21",
+		"zh-Hant": "兩毛 21"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.829E.Weekday",
+	"t": "Tobu.Kiryu.829E",
+	"r": "Tobu.Kiryu",
+	"n": "829E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.829E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "16:47"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "16:51",
+		"d": "16:52"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "16:55",
+		"d": "16:55"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "16:59",
+		"d": "17:00"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "17:03",
+		"d": "17:04"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "17:07",
+		"d": "17:08"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "17:12",
+		"d": "17:13"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "17:17"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1825.Weekday",
+	"t": "Tobu.Kiryu.1825",
+	"r": "Tobu.Kiryu",
+	"n": "1825",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1825.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "17:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "17:24",
+		"d": "17:24"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "17:30",
+		"d": "17:33"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "17:37",
+		"d": "17:38"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "17:42"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 25号",
+		"en": "Revaty Ryomo 25",
+		"ko": "Revaty 료모 25",
+		"zh-Hans": "Revaty两毛 25",
+		"zh-Hant": "Revaty兩毛 25"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.831E.Weekday",
+	"t": "Tobu.Kiryu.831E",
+	"r": "Tobu.Kiryu",
+	"n": "831E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.831E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "17:29"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "17:33",
+		"d": "17:34"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "17:36",
+		"d": "17:37"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "17:41",
+		"d": "17:42"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "17:45",
+		"d": "17:46"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "17:48",
+		"d": "17:48"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "17:52",
+		"d": "17:53"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "17:57"
+	}]
+}, {
+	"id": "Tobu.Kiryu.833E.Weekday",
+	"t": "Tobu.Kiryu.833E",
+	"r": "Tobu.Kiryu",
+	"n": "833E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.833E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "18:01"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "18:05",
+		"d": "18:05"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "18:08",
+		"d": "18:08"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "18:13",
+		"d": "18:14"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "18:18",
+		"d": "18:18"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "18:20",
+		"d": "18:21"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "18:25",
+		"d": "18:25"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "18:30"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1829.Weekday",
+	"t": "Tobu.Kiryu.1829",
+	"r": "Tobu.Kiryu",
+	"n": "1829",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1829.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "18:15"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "18:28",
+		"d": "18:28"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "18:33",
+		"d": "18:34"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "18:38",
+		"d": "18:38"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "18:42"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 29号",
+		"en": "Revaty Ryomo 29",
+		"ko": "Revaty 료모 29",
+		"zh-Hans": "Revaty两毛 29",
+		"zh-Hant": "Revaty兩毛 29"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.835E.Weekday",
+	"t": "Tobu.Kiryu.835E",
+	"r": "Tobu.Kiryu",
+	"n": "835E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.835E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "18:48"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "18:52",
+		"d": "18:52"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "18:55",
+		"d": "18:56"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "18:59",
+		"d": "19:00"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "19:03",
+		"d": "19:04"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "19:07",
+		"d": "19:08"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "19:12",
+		"d": "19:13"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "19:17"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1833.Weekday",
+	"t": "Tobu.Kiryu.1833",
+	"r": "Tobu.Kiryu",
+	"n": "1833",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1833.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "19:13"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "19:27",
+		"d": "19:27"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "19:33",
+		"d": "19:33"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "19:37",
+		"d": "19:38"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "19:42"
+	}],
+	"nm": [{
+		"ja": "りょうもう 33号",
+		"en": "Ryomo 33",
+		"ko": "료모 33",
+		"zh-Hans": "两毛 33",
+		"zh-Hant": "兩毛 33"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.837E.Weekday",
+	"t": "Tobu.Kiryu.837E",
+	"r": "Tobu.Kiryu",
+	"n": "837E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.837E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "19:26"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "19:30",
+		"d": "19:31"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "19:34",
+		"d": "19:34"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "19:38",
+		"d": "19:40"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "19:44",
+		"d": "19:44"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "19:46",
+		"d": "19:47"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "19:51",
+		"d": "19:51"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "19:56"
+	}]
+}, {
+	"id": "Tobu.Kiryu.839E.Weekday",
+	"t": "Tobu.Kiryu.839E",
+	"r": "Tobu.Kiryu",
+	"n": "839E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.839E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "20:05"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "20:08",
+		"d": "20:09"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "20:12",
+		"d": "20:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "20:18",
+		"d": "20:18"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "20:22",
+		"d": "20:23"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "20:25",
+		"d": "20:25"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "20:29",
+		"d": "20:30"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "20:34"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1837.Weekday",
+	"t": "Tobu.Kiryu.1837",
+	"r": "Tobu.Kiryu",
+	"n": "1837",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1837.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "20:12"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "20:26",
+		"d": "20:26"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "20:32",
+		"d": "20:32"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "20:36",
+		"d": "20:37"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "20:41"
+	}],
+	"nm": [{
+		"ja": "りょうもう 37号",
+		"en": "Ryomo 37",
+		"ko": "료모 37",
+		"zh-Hans": "两毛 37",
+		"zh-Hant": "兩毛 37"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.1841.Weekday",
+	"t": "Tobu.Kiryu.1841",
+	"r": "Tobu.Kiryu",
+	"n": "1841",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1841.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "20:44"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "20:54",
+		"d": "20:56"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "21:01",
+		"d": "21:02"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "21:06",
+		"d": "21:06"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "21:10"
+	}],
+	"nm": [{
+		"ja": "りょうもう 41号",
+		"en": "Ryomo 41",
+		"ko": "료모 41",
+		"zh-Hans": "两毛 41",
+		"zh-Hant": "兩毛 41"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.841E.Weekday",
+	"t": "Tobu.Kiryu.841E",
+	"r": "Tobu.Kiryu",
+	"n": "841E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.841E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "20:49"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "20:52",
+		"d": "20:53"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "20:56",
+		"d": "21:00"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "21:04",
+		"d": "21:04"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "21:08",
+		"d": "21:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "21:11",
+		"d": "21:12"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "21:16",
+		"d": "21:16"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "21:20"
+	}]
+}, {
+	"id": "Tobu.Kiryu.843E.Weekday",
+	"t": "Tobu.Kiryu.843E",
+	"r": "Tobu.Kiryu",
+	"n": "843E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.843E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "21:19"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "21:23",
+		"d": "21:23"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "21:26",
+		"d": "21:27"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "21:30",
+		"d": "21:31"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "21:35",
+		"d": "21:35"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "21:38",
+		"d": "21:39"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "21:43",
+		"d": "21:44"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "21:48"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1847.Weekday",
+	"t": "Tobu.Kiryu.1847",
+	"r": "Tobu.Kiryu",
+	"n": "1847",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1847.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "21:48"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "21:59",
+		"d": "21:59"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "22:05",
+		"d": "22:06"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "22:10",
+		"d": "22:10"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "22:14"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 47号",
+		"en": "Revaty Ryomo 47",
+		"ko": "Revaty 료모 47",
+		"zh-Hans": "Revaty两毛 47",
+		"zh-Hant": "Revaty兩毛 47"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.845E.Weekday",
+	"t": "Tobu.Kiryu.845E",
+	"r": "Tobu.Kiryu",
+	"n": "845E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Kiryu.Ota"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "22:07"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "22:11",
+		"d": "22:11"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "22:15",
+		"d": "22:16"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "22:20",
+		"d": "22:20"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "22:24",
+		"d": "22:25"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "22:27",
+		"d": "22:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "22:31",
+		"d": "22:32"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "22:36"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1851.Weekday",
+	"t": "Tobu.Kiryu.1851",
+	"r": "Tobu.Kiryu",
+	"n": "1851",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1851.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "22:36"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "22:45",
+		"d": "22:46"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "22:52",
+		"d": "22:53"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "22:57",
+		"d": "22:57"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "23:01"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 51号",
+		"en": "Revaty Ryomo 51",
+		"ko": "Revaty 료모 51",
+		"zh-Hans": "Revaty两毛 51",
+		"zh-Hant": "Revaty兩毛 51"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.847E.Weekday",
+	"t": "Tobu.Kiryu.847E",
+	"r": "Tobu.Kiryu",
+	"n": "847E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Kiryu.Ota"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "22:51"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "22:55",
+		"d": "22:55"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "22:58",
+		"d": "22:59"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "23:02",
+		"d": "23:03"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "23:06",
+		"d": "23:07"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "23:09",
+		"d": "23:10"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "23:14",
+		"d": "23:14"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "23:18"
+	}]
+}, {
+	"id": "Tobu.Kiryu.849E.Weekday",
+	"t": "Tobu.Kiryu.849E",
+	"r": "Tobu.Kiryu",
+	"n": "849E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.849E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "23:21"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "23:25",
+		"d": "23:25"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "23:28",
+		"d": "23:29"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "23:32",
+		"d": "23:33"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "23:37",
+		"d": "23:37"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "23:39",
+		"d": "23:40"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "23:44",
+		"d": "23:44"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "23:48"
+	}]
+}, {
+	"id": "Tobu.Kiryu.802E.Weekday",
+	"t": "Tobu.Kiryu.802E",
+	"r": "Tobu.Kiryu",
+	"n": "802E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.802E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "05:02"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "05:05",
+		"d": "05:06"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "05:10",
+		"d": "05:10"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "05:12",
+		"d": "05:13"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "05:16",
+		"d": "05:17"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "05:21",
+		"d": "05:21"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "05:24",
+		"d": "05:25"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "05:28"
+	}]
+}, {
+	"id": "Tobu.Kiryu.804E.Weekday",
+	"t": "Tobu.Kiryu.804E",
+	"r": "Tobu.Kiryu",
+	"n": "804E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.804E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "05:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "05:31",
+		"d": "05:31"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "05:35",
+		"d": "05:36"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "05:38",
+		"d": "05:38"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "05:42",
+		"d": "05:42"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "05:46",
+		"d": "05:46"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "05:49",
+		"d": "05:50"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "05:53"
+	}]
+}, {
+	"id": "Tobu.Kiryu.806E.Weekday",
+	"t": "Tobu.Kiryu.806E",
+	"r": "Tobu.Kiryu",
+	"n": "806E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.806E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "06:04"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "06:08",
+		"d": "06:08"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "06:13",
+		"d": "06:13"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "06:15",
+		"d": "06:16"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "06:19",
+		"d": "06:20"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "06:23",
+		"d": "06:24"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "06:27",
+		"d": "06:28"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "06:32"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1806.Weekday",
+	"t": "Tobu.Kiryu.1806",
+	"r": "Tobu.Kiryu",
+	"n": "1806",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1806.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "06:10"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "06:14",
+		"d": "06:14"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "06:18",
+		"d": "06:20"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "06:26",
+		"d": "06:26"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "06:35"
+	}],
+	"nm": [{
+		"ja": "りょうもう 6号",
+		"en": "Ryomo 6",
+		"ko": "료모 6",
+		"zh-Hans": "两毛 6",
+		"zh-Hant": "兩毛 6"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.808E.Weekday",
+	"t": "Tobu.Kiryu.808E",
+	"r": "Tobu.Kiryu",
+	"n": "808E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.808E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "06:45"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "06:49",
+		"d": "06:51"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "06:55",
+		"d": "06:55"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "06:57",
+		"d": "06:58"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "07:01",
+		"d": "07:02"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "07:05",
+		"d": "07:06"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "07:09",
+		"d": "07:09"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "07:13"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1808.Weekday",
+	"t": "Tobu.Kiryu.1808",
+	"r": "Tobu.Kiryu",
+	"n": "1808",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1808.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "06:56"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "07:00",
+		"d": "07:00"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "07:04",
+		"d": "07:05"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "07:10",
+		"d": "07:10"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "07:19"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 8号",
+		"en": "Revaty Ryomo 8",
+		"ko": "Revaty 료모 8",
+		"zh-Hans": "Revaty两毛 8",
+		"zh-Hant": "Revaty兩毛 8"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.810E.Weekday",
+	"t": "Tobu.Kiryu.810E",
+	"r": "Tobu.Kiryu",
+	"n": "810E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.810E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "07:14"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "07:17",
+		"d": "07:18"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "07:22",
+		"d": "07:24"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "07:27",
+		"d": "07:27"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "07:30",
+		"d": "07:31"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "07:35",
+		"d": "07:35"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "07:38",
+		"d": "07:38"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "07:42"
+	}]
+}, {
+	"id": "Tobu.Kiryu.812E.Weekday",
+	"t": "Tobu.Kiryu.812E",
+	"r": "Tobu.Kiryu",
+	"n": "812E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.812E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "07:39"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "07:43",
+		"d": "07:43"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "07:47",
+		"d": "07:48"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "07:50",
+		"d": "07:50"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "07:54",
+		"d": "07:55"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "07:59",
+		"d": "07:59"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "08:02",
+		"d": "08:03"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "08:06"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1814.Weekday",
+	"t": "Tobu.Kiryu.1814",
+	"r": "Tobu.Kiryu",
+	"n": "1814",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1814.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "08:05"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "08:08",
+		"d": "08:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "08:13",
+		"d": "08:15"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "08:20",
+		"d": "08:20"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "08:32"
+	}],
+	"nm": [{
+		"ja": "りょうもう 14号",
+		"en": "Ryomo 14",
+		"ko": "료모 14",
+		"zh-Hans": "两毛 14",
+		"zh-Hant": "兩毛 14"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.814E.Weekday",
+	"t": "Tobu.Kiryu.814E",
+	"r": "Tobu.Kiryu",
+	"n": "814E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Ota"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "08:18"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "08:22",
+		"d": "08:22"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "08:26",
+		"d": "08:27"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "08:29",
+		"d": "08:30"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "08:34",
+		"d": "08:34"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "08:38",
+		"d": "08:38"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "08:42",
+		"d": "08:42"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "08:46"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1816.Weekday",
+	"t": "Tobu.Kiryu.1816",
+	"r": "Tobu.Kiryu",
+	"n": "1816",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1816.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "08:35"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "08:38",
+		"d": "08:39"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "08:43",
+		"d": "08:45"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "08:50",
+		"d": "08:51"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "09:00"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 16号",
+		"en": "Revaty Ryomo 16",
+		"ko": "Revaty 료모 16",
+		"zh-Hans": "Revaty两毛 16",
+		"zh-Hant": "Revaty兩毛 16"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.1818.Weekday",
+	"t": "Tobu.Kiryu.1818",
+	"r": "Tobu.Kiryu",
+	"n": "1818",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1818.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "09:07"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "09:10",
+		"d": "09:11"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "09:15",
+		"d": "09:15"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "09:20",
+		"d": "09:21"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "09:30"
+	}],
+	"nm": [{
+		"ja": "りょうもう 18号",
+		"en": "Ryomo 18",
+		"ko": "료모 18",
+		"zh-Hans": "两毛 18",
+		"zh-Hant": "兩毛 18"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.816E.Weekday",
+	"t": "Tobu.Kiryu.816E",
+	"r": "Tobu.Kiryu",
+	"n": "816E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.816E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "09:28"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "09:32",
+		"d": "09:33"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "09:36",
+		"d": "09:37"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "09:39",
+		"d": "09:40"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "09:43",
+		"d": "09:43"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "09:47",
+		"d": "09:48"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "09:50",
+		"d": "09:51"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "09:55"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1820.Weekday",
+	"t": "Tobu.Kiryu.1820",
+	"r": "Tobu.Kiryu",
+	"n": "1820",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1820.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "10:00"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "10:04",
+		"d": "10:04"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "10:08",
+		"d": "10:09"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "10:14",
+		"d": "10:14"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "10:26"
+	}],
+	"nm": [{
+		"ja": "りょうもう 20号",
+		"en": "Ryomo 20",
+		"ko": "료모 20",
+		"zh-Hans": "两毛 20",
+		"zh-Hant": "兩毛 20"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.818E.Weekday",
+	"t": "Tobu.Kiryu.818E",
+	"r": "Tobu.Kiryu",
+	"n": "818E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.818E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "10:30"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "10:34",
+		"d": "10:36"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "10:39",
+		"d": "10:40"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "10:42",
+		"d": "10:43"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "10:46",
+		"d": "10:46"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "10:50",
+		"d": "10:51"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "10:54",
+		"d": "10:55"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "10:59"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1822.Weekday",
+	"t": "Tobu.Kiryu.1822",
+	"r": "Tobu.Kiryu",
+	"n": "1822",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1822.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "11:05"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "11:08",
+		"d": "11:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "11:13",
+		"d": "11:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "11:19",
+		"d": "11:20"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "11:29"
+	}],
+	"nm": [{
+		"ja": "りょうもう 22号",
+		"en": "Ryomo 22",
+		"ko": "료모 22",
+		"zh-Hans": "两毛 22",
+		"zh-Hant": "兩毛 22"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.820E.Weekday",
+	"t": "Tobu.Kiryu.820E",
+	"r": "Tobu.Kiryu",
+	"n": "820E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.820E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "11:36"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "11:40",
+		"d": "11:40"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "11:44",
+		"d": "11:45"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "11:47",
+		"d": "11:47"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "11:51",
+		"d": "11:51"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "11:55",
+		"d": "11:55"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "11:58",
+		"d": "11:59"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "12:02"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1824.Weekday",
+	"t": "Tobu.Kiryu.1824",
+	"r": "Tobu.Kiryu",
+	"n": "1824",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1824.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "12:05"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "12:08",
+		"d": "12:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "12:13",
+		"d": "12:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "12:19",
+		"d": "12:21"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "12:30"
+	}],
+	"nm": [{
+		"ja": "りょうもう 24号",
+		"en": "Ryomo 24",
+		"ko": "료모 24",
+		"zh-Hans": "两毛 24",
+		"zh-Hant": "兩毛 24"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.822E.Weekday",
+	"t": "Tobu.Kiryu.822E",
+	"r": "Tobu.Kiryu",
+	"n": "822E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.822E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "12:36"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "12:40",
+		"d": "12:40"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "12:44",
+		"d": "12:45"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "12:47",
+		"d": "12:47"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "12:51",
+		"d": "12:51"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "12:55",
+		"d": "12:55"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "12:58",
+		"d": "12:59"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "13:02"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1826.Weekday",
+	"t": "Tobu.Kiryu.1826",
+	"r": "Tobu.Kiryu",
+	"n": "1826",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1826.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "13:05"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "13:08",
+		"d": "13:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "13:13",
+		"d": "13:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "13:19",
+		"d": "13:21"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "13:30"
+	}],
+	"nm": [{
+		"ja": "りょうもう 26号",
+		"en": "Ryomo 26",
+		"ko": "료모 26",
+		"zh-Hans": "两毛 26",
+		"zh-Hant": "兩毛 26"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.824E.Weekday",
+	"t": "Tobu.Kiryu.824E",
+	"r": "Tobu.Kiryu",
+	"n": "824E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.824E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "13:36"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "13:40",
+		"d": "13:40"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "13:44",
+		"d": "13:45"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "13:47",
+		"d": "13:47"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "13:51",
+		"d": "13:51"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "13:55",
+		"d": "13:55"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "13:58",
+		"d": "13:59"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "14:02"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1828.Weekday",
+	"t": "Tobu.Kiryu.1828",
+	"r": "Tobu.Kiryu",
+	"n": "1828",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1828.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "14:05"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "14:08",
+		"d": "14:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "14:13",
+		"d": "14:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "14:19",
+		"d": "14:21"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "14:30"
+	}],
+	"nm": [{
+		"ja": "りょうもう 28号",
+		"en": "Ryomo 28",
+		"ko": "료모 28",
+		"zh-Hans": "两毛 28",
+		"zh-Hant": "兩毛 28"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.826E.Weekday",
+	"t": "Tobu.Kiryu.826E",
+	"r": "Tobu.Kiryu",
+	"n": "826E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.826E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "14:29"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "14:32",
+		"d": "14:33"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "14:37",
+		"d": "14:37"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "14:39",
+		"d": "14:40"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "14:43",
+		"d": "14:44"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "14:47",
+		"d": "14:48"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "14:51",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "14:56"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1832.Weekday",
+	"t": "Tobu.Kiryu.1832",
+	"r": "Tobu.Kiryu",
+	"n": "1832",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1832.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "15:05"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "15:08",
+		"d": "15:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "15:13",
+		"d": "15:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "15:19",
+		"d": "15:19"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "15:28"
+	}],
+	"nm": [{
+		"ja": "りょうもう 32号",
+		"en": "Ryomo 32",
+		"ko": "료모 32",
+		"zh-Hans": "两毛 32",
+		"zh-Hant": "兩毛 32"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.828E.Weekday",
+	"t": "Tobu.Kiryu.828E",
+	"r": "Tobu.Kiryu",
+	"n": "828E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.828E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "15:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "15:31",
+		"d": "15:31"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "15:35",
+		"d": "15:36"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "15:38",
+		"d": "15:39"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "15:42",
+		"d": "15:43"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "15:46",
+		"d": "15:47"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "15:50",
+		"d": "15:50"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "15:54"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1836.Weekday",
+	"t": "Tobu.Kiryu.1836",
+	"r": "Tobu.Kiryu",
+	"n": "1836",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1836.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "15:57"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "16:01",
+		"d": "16:02"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "16:06",
+		"d": "16:06"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "16:12",
+		"d": "16:13"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "16:25"
+	}],
+	"nm": [{
+		"ja": "りょうもう 36号",
+		"en": "Ryomo 36",
+		"ko": "료모 36",
+		"zh-Hans": "两毛 36",
+		"zh-Hant": "兩毛 36"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.830E.Weekday",
+	"t": "Tobu.Kiryu.830E",
+	"r": "Tobu.Kiryu",
+	"n": "830E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.830E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "16:12"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "16:15",
+		"d": "16:16"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "16:20",
+		"d": "16:21"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "16:23",
+		"d": "16:23"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "16:27",
+		"d": "16:28"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "16:31",
+		"d": "16:32"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "16:35",
+		"d": "16:35"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "16:39"
+	}]
+}, {
+	"id": "Tobu.Kiryu.832E.Weekday",
+	"t": "Tobu.Kiryu.832E",
+	"r": "Tobu.Kiryu",
+	"n": "832E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.832E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "16:44"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "16:47",
+		"d": "16:48"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "16:52",
+		"d": "16:52"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "16:54",
+		"d": "16:55"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "16:59",
+		"d": "16:59"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "17:03",
+		"d": "17:04"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "17:06",
+		"d": "17:07"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "17:11"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1840.Weekday",
+	"t": "Tobu.Kiryu.1840",
+	"r": "Tobu.Kiryu",
+	"n": "1840",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1840.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "17:00"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "17:04",
+		"d": "17:04"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "17:08",
+		"d": "17:09"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "17:14",
+		"d": "17:15"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "17:26"
+	}],
+	"nm": [{
+		"ja": "りょうもう 40号",
+		"en": "Ryomo 40",
+		"ko": "료모 40",
+		"zh-Hans": "两毛 40",
+		"zh-Hant": "兩毛 40"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.834E.Weekday",
+	"t": "Tobu.Kiryu.834E",
+	"r": "Tobu.Kiryu",
+	"n": "834E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.834E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "17:25"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "17:29",
+		"d": "17:29"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "17:33",
+		"d": "17:34"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "17:36",
+		"d": "17:37"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "17:41",
+		"d": "17:41"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "17:45",
+		"d": "17:45"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "17:48",
+		"d": "17:49"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "17:52"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1844.Weekday",
+	"t": "Tobu.Kiryu.1844",
+	"r": "Tobu.Kiryu",
+	"n": "1844",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1844.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "18:00"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "18:04",
+		"d": "18:04"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "18:08",
+		"d": "18:09"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "18:14",
+		"d": "18:14"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "18:25"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 44号",
+		"en": "Revaty Ryomo 44",
+		"ko": "Revaty 료모 44",
+		"zh-Hans": "Revaty两毛 44",
+		"zh-Hant": "Revaty兩毛 44"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.836E.Weekday",
+	"t": "Tobu.Kiryu.836E",
+	"r": "Tobu.Kiryu",
+	"n": "836E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.836E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "18:11"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "18:14",
+		"d": "18:15"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "18:19",
+		"d": "18:21"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "18:23",
+		"d": "18:23"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "18:27",
+		"d": "18:28"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "18:31",
+		"d": "18:32"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "18:35",
+		"d": "18:35"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "18:39"
+	}]
+}, {
+	"id": "Tobu.Kiryu.838E.Weekday",
+	"t": "Tobu.Kiryu.838E",
+	"r": "Tobu.Kiryu",
+	"n": "838E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.838E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "18:43"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "18:46",
+		"d": "18:47"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "18:51",
+		"d": "18:51"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "18:53",
+		"d": "18:54"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "18:58",
+		"d": "18:59"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "19:03",
+		"d": "19:04"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "19:06",
+		"d": "19:07"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "19:11"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1848.Weekday",
+	"t": "Tobu.Kiryu.1848",
+	"r": "Tobu.Kiryu",
+	"n": "1848",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1848.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "19:00"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "19:04",
+		"d": "19:04"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "19:08",
+		"d": "19:09"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "19:14",
+		"d": "19:14"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "19:23"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 48号",
+		"en": "Revaty Ryomo 48",
+		"ko": "Revaty 료모 48",
+		"zh-Hans": "Revaty两毛 48",
+		"zh-Hant": "Revaty兩毛 48"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.840E.Weekday",
+	"t": "Tobu.Kiryu.840E",
+	"r": "Tobu.Kiryu",
+	"n": "840E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.840E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "19:25"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "19:28",
+		"d": "19:29"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "19:33",
+		"d": "19:34"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "19:36",
+		"d": "19:36"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "19:40",
+		"d": "19:40"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "19:44",
+		"d": "19:44"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "19:47",
+		"d": "19:48"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "19:51"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1852.Weekday",
+	"t": "Tobu.Kiryu.1852",
+	"r": "Tobu.Kiryu",
+	"n": "1852",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1852.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "19:56"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "20:00",
+		"d": "20:00"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "20:04",
+		"d": "20:05"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "20:10",
+		"d": "20:10"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "20:21"
+	}],
+	"nm": [{
+		"ja": "りょうもう 52号",
+		"en": "Ryomo 52",
+		"ko": "료모 52",
+		"zh-Hans": "两毛 52",
+		"zh-Hant": "兩毛 52"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.842E.Weekday",
+	"t": "Tobu.Kiryu.842E",
+	"r": "Tobu.Kiryu",
+	"n": "842E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.842E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "20:02"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "20:06",
+		"d": "20:06"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "20:10",
+		"d": "20:11"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "20:13",
+		"d": "20:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "20:18",
+		"d": "20:18"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "20:22",
+		"d": "20:22"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "20:25",
+		"d": "20:26"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "20:29"
+	}]
+}, {
+	"id": "Tobu.Kiryu.844E.Weekday",
+	"t": "Tobu.Kiryu.844E",
+	"r": "Tobu.Kiryu",
+	"n": "844E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.844E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "20:41"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "20:45",
+		"d": "20:45"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "20:49",
+		"d": "20:50"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "20:52",
+		"d": "20:52"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "20:56",
+		"d": "20:56"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "21:00",
+		"d": "21:00"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "21:03",
+		"d": "21:04"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "21:07"
+	}]
+}, {
+	"id": "Tobu.Kiryu.846E.Weekday",
+	"t": "Tobu.Kiryu.846E",
+	"r": "Tobu.Kiryu",
+	"n": "846E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Ota"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "21:29"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "21:33",
+		"d": "21:34"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "21:38",
+		"d": "21:38"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "21:41",
+		"d": "21:41"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "21:44",
+		"d": "21:45"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "21:49",
+		"d": "21:49"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "21:52",
+		"d": "21:53"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "21:57"
+	}]
+}, {
+	"id": "Tobu.Kiryu.848E.Weekday",
+	"t": "Tobu.Kiryu.848E",
+	"r": "Tobu.Kiryu",
+	"n": "848E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Ota"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "21:57"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "22:00",
+		"d": "22:01"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "22:05",
+		"d": "22:06"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "22:08",
+		"d": "22:08"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "22:12",
+		"d": "22:12"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "22:16",
+		"d": "22:17"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "22:20",
+		"d": "22:20"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "22:24"
+	}]
+}, {
+	"id": "Tobu.Kiryu.850E.Weekday",
+	"t": "Tobu.Kiryu.850E",
+	"r": "Tobu.Kiryu",
+	"n": "850E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.850E.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "22:44"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "22:48",
+		"d": "22:48"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "22:53",
+		"d": "22:55"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "22:57",
+		"d": "22:57"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "23:01",
+		"d": "23:02"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "23:06",
+		"d": "23:07"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "23:09",
+		"d": "23:10"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "23:14"
+	}]
+}, {
+	"id": "Tobu.Kiryu.801E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.801E",
+	"r": "Tobu.Kiryu",
+	"n": "801E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Kiryu.Ota"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "05:14"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "05:17",
+		"d": "05:18"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "05:21",
+		"d": "05:22"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "05:25",
+		"d": "05:26"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "05:30",
+		"d": "05:30"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "05:33",
+		"d": "05:36"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "05:40",
+		"d": "05:40"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "05:44"
+	}]
+}, {
+	"id": "Tobu.Kiryu.803E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.803E",
+	"r": "Tobu.Kiryu",
+	"n": "803E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.803E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "05:54"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "05:58",
+		"d": "05:58"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "06:01",
+		"d": "06:02"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "06:05",
+		"d": "06:06"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "06:10",
+		"d": "06:10"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "06:13",
+		"d": "06:18"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "06:22",
+		"d": "06:23"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "06:27"
+	}]
+}, {
+	"id": "Tobu.Kiryu.805E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.805E",
+	"r": "Tobu.Kiryu",
+	"n": "805E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.805E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "06:24"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "06:28",
+		"d": "06:32"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "06:35",
+		"d": "06:35"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "06:39",
+		"d": "06:40"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "06:43",
+		"d": "06:44"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "06:46",
+		"d": "06:47"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "06:51",
+		"d": "06:51"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "06:55"
+	}]
+}, {
+	"id": "Tobu.Kiryu.807E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.807E",
+	"r": "Tobu.Kiryu",
+	"n": "807E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.807E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "07:03"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "07:07",
+		"d": "07:09"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "07:12",
+		"d": "07:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "07:17",
+		"d": "07:18"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "07:22",
+		"d": "07:22"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "07:24",
+		"d": "07:25"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "07:29",
+		"d": "07:30"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "07:34"
+	}]
+}, {
+	"id": "Tobu.Kiryu.809E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.809E",
+	"r": "Tobu.Kiryu",
+	"n": "809E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.809E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "07:43"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "07:47",
+		"d": "07:47"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "07:50",
+		"d": "07:51"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "07:55",
+		"d": "07:55"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "07:59",
+		"d": "08:00"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "08:02",
+		"d": "08:03"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "08:07",
+		"d": "08:08"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "08:13"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1801.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1801",
+	"r": "Tobu.Kiryu",
+	"n": "1801",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1801.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "08:24"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "08:34",
+		"d": "08:35"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "08:40",
+		"d": "08:43"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "08:47",
+		"d": "08:47"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "08:51"
+	}],
+	"nm": [{
+		"ja": "りょうもう 1号",
+		"en": "Ryomo 1",
+		"ko": "료모 1",
+		"zh-Hans": "两毛 1",
+		"zh-Hant": "兩毛 1"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.811E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.811E",
+	"r": "Tobu.Kiryu",
+	"n": "811E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.811E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "08:37"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "08:41",
+		"d": "08:42"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "08:45",
+		"d": "08:45"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "08:49",
+		"d": "08:50"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "08:54",
+		"d": "08:55"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "08:57",
+		"d": "08:57"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "09:01",
+		"d": "09:02"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "09:06"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1803.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1803",
+	"r": "Tobu.Kiryu",
+	"n": "1803",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1803.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "09:09"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "09:19",
+		"d": "09:20"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "09:26",
+		"d": "09:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "09:32",
+		"d": "09:32"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "09:36"
+	}],
+	"nm": [{
+		"ja": "りょうもう 3号",
+		"en": "Ryomo 3",
+		"ko": "료모 3",
+		"zh-Hans": "两毛 3",
+		"zh-Hant": "兩毛 3"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.813E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.813E",
+	"r": "Tobu.Kiryu",
+	"n": "813E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.813E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "09:38"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "09:42",
+		"d": "09:42"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "09:46",
+		"d": "09:47"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "09:51",
+		"d": "09:51"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "09:55",
+		"d": "09:56"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "09:58",
+		"d": "09:59"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "10:04",
+		"d": "10:04"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "10:08"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1805.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1805",
+	"r": "Tobu.Kiryu",
+	"n": "1805",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1805.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "10:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "10:23",
+		"d": "10:24"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "10:29",
+		"d": "10:30"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "10:34",
+		"d": "10:35"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "10:39"
+	}],
+	"nm": [{
+		"ja": "りょうもう 5号",
+		"en": "Ryomo 5",
+		"ko": "료모 5",
+		"zh-Hans": "两毛 5",
+		"zh-Hant": "兩毛 5"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.815E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.815E",
+	"r": "Tobu.Kiryu",
+	"n": "815E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.815E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "10:51"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "10:55",
+		"d": "10:56"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "10:58",
+		"d": "10:59"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "11:03",
+		"d": "11:03"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "11:07",
+		"d": "11:07"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "11:10",
+		"d": "11:13"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "11:17",
+		"d": "11:17"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "11:21"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1807.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1807",
+	"r": "Tobu.Kiryu",
+	"n": "1807",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1807.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "11:10"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "11:20",
+		"d": "11:20"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "11:25",
+		"d": "11:26"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "11:30",
+		"d": "11:30"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "11:34"
+	}],
+	"nm": [{
+		"ja": "りょうもう 7号",
+		"en": "Ryomo 7",
+		"ko": "료모 7",
+		"zh-Hans": "两毛 7",
+		"zh-Hant": "兩毛 7"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.817E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.817E",
+	"r": "Tobu.Kiryu",
+	"n": "817E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.817E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "11:53"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "11:57",
+		"d": "11:58"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "12:01",
+		"d": "12:02"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "12:05",
+		"d": "12:06"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "12:10",
+		"d": "12:10"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "12:13",
+		"d": "12:13"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "12:17",
+		"d": "12:18"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "12:22"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1811.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1811",
+	"r": "Tobu.Kiryu",
+	"n": "1811",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1811.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "12:11"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "12:21",
+		"d": "12:21"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "12:27",
+		"d": "12:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "12:31",
+		"d": "12:32"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "12:36"
+	}],
+	"nm": [{
+		"ja": "りょうもう 11号",
+		"en": "Ryomo 11",
+		"ko": "료모 11",
+		"zh-Hans": "两毛 11",
+		"zh-Hant": "兩毛 11"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.819E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.819E",
+	"r": "Tobu.Kiryu",
+	"n": "819E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.819E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "12:53"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "12:57",
+		"d": "12:58"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "13:01",
+		"d": "13:02"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "13:05",
+		"d": "13:06"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "13:10",
+		"d": "13:10"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "13:13",
+		"d": "13:13"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "13:17",
+		"d": "13:18"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "13:22"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1815.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1815",
+	"r": "Tobu.Kiryu",
+	"n": "1815",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1815.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "13:11"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "13:20",
+		"d": "13:21"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "13:26",
+		"d": "13:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "13:31",
+		"d": "13:32"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "13:36"
+	}],
+	"nm": [{
+		"ja": "りょうもう 15号",
+		"en": "Ryomo 15",
+		"ko": "료모 15",
+		"zh-Hans": "两毛 15",
+		"zh-Hant": "兩毛 15"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.821E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.821E",
+	"r": "Tobu.Kiryu",
+	"n": "821E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.821E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "13:53"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "13:57",
+		"d": "13:58"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "14:01",
+		"d": "14:02"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "14:05",
+		"d": "14:06"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "14:10",
+		"d": "14:10"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "14:13",
+		"d": "14:13"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "14:17",
+		"d": "14:18"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "14:22"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1817.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1817",
+	"r": "Tobu.Kiryu",
+	"n": "1817",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1817.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "14:11"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "14:20",
+		"d": "14:21"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "14:26",
+		"d": "14:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "14:31",
+		"d": "14:33"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "14:37"
+	}],
+	"nm": [{
+		"ja": "りょうもう 17号",
+		"en": "Ryomo 17",
+		"ko": "료모 17",
+		"zh-Hans": "两毛 17",
+		"zh-Hant": "兩毛 17"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.823E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.823E",
+	"r": "Tobu.Kiryu",
+	"n": "823E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.823E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "14:49"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "14:53",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "14:56",
+		"d": "14:56"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "15:00",
+		"d": "15:01"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "15:04",
+		"d": "15:05"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "15:07",
+		"d": "15:14"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "15:18",
+		"d": "15:18"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "15:22"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1819.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1819",
+	"r": "Tobu.Kiryu",
+	"n": "1819",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1819.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "15:15"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "15:27",
+		"d": "15:27"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "15:33",
+		"d": "15:35"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "15:39",
+		"d": "15:40"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "15:44"
+	}],
+	"nm": [{
+		"ja": "りょうもう 19号",
+		"en": "Ryomo 19",
+		"ko": "료모 19",
+		"zh-Hans": "两毛 19",
+		"zh-Hant": "兩毛 19"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.825E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.825E",
+	"r": "Tobu.Kiryu",
+	"n": "825E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.825E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "15:38"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "15:41",
+		"d": "15:42"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "15:45",
+		"d": "15:47"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "15:50",
+		"d": "15:51"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "15:54",
+		"d": "15:55"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "15:57",
+		"d": "15:58"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "16:02",
+		"d": "16:02"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "16:07"
+	}]
+}, {
+	"id": "Tobu.Kiryu.827E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.827E",
+	"r": "Tobu.Kiryu",
+	"n": "827E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.827E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "16:02"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "16:06",
+		"d": "16:06"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "16:09",
+		"d": "16:10"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "16:13",
+		"d": "16:14"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "16:17",
+		"d": "16:18"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "16:21",
+		"d": "16:21"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "16:25",
+		"d": "16:26"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "16:30"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1821.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1821",
+	"r": "Tobu.Kiryu",
+	"n": "1821",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1821.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "16:17"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "16:27",
+		"d": "16:28"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "16:33",
+		"d": "16:34"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "16:38",
+		"d": "16:38"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "16:42"
+	}],
+	"nm": [{
+		"ja": "りょうもう 21号",
+		"en": "Ryomo 21",
+		"ko": "료모 21",
+		"zh-Hans": "两毛 21",
+		"zh-Hant": "兩毛 21"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.829E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.829E",
+	"r": "Tobu.Kiryu",
+	"n": "829E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.829E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "16:47"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "16:51",
+		"d": "16:52"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "16:55",
+		"d": "16:55"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "16:59",
+		"d": "17:00"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "17:03",
+		"d": "17:04"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "17:07",
+		"d": "17:08"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "17:12",
+		"d": "17:13"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "17:17"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1825.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1825",
+	"r": "Tobu.Kiryu",
+	"n": "1825",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1825.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "17:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "17:24",
+		"d": "17:24"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "17:30",
+		"d": "17:33"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "17:37",
+		"d": "17:38"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "17:42"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 25号",
+		"en": "Revaty Ryomo 25",
+		"ko": "Revaty 료모 25",
+		"zh-Hans": "Revaty两毛 25",
+		"zh-Hant": "Revaty兩毛 25"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.831E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.831E",
+	"r": "Tobu.Kiryu",
+	"n": "831E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.831E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "17:29"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "17:33",
+		"d": "17:34"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "17:36",
+		"d": "17:37"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "17:41",
+		"d": "17:42"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "17:45",
+		"d": "17:46"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "17:48",
+		"d": "17:48"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "17:52",
+		"d": "17:53"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "17:57"
+	}]
+}, {
+	"id": "Tobu.Kiryu.833E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.833E",
+	"r": "Tobu.Kiryu",
+	"n": "833E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.833E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "18:01"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "18:05",
+		"d": "18:05"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "18:08",
+		"d": "18:08"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "18:13",
+		"d": "18:14"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "18:18",
+		"d": "18:18"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "18:20",
+		"d": "18:21"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "18:25",
+		"d": "18:25"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "18:30"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1829.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1829",
+	"r": "Tobu.Kiryu",
+	"n": "1829",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1829.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "18:15"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "18:28",
+		"d": "18:28"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "18:33",
+		"d": "18:34"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "18:38",
+		"d": "18:38"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "18:42"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 29号",
+		"en": "Revaty Ryomo 29",
+		"ko": "Revaty 료모 29",
+		"zh-Hans": "Revaty两毛 29",
+		"zh-Hant": "Revaty兩毛 29"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.835E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.835E",
+	"r": "Tobu.Kiryu",
+	"n": "835E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.835E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "18:48"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "18:52",
+		"d": "18:52"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "18:55",
+		"d": "18:56"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "18:59",
+		"d": "19:00"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "19:03",
+		"d": "19:04"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "19:07",
+		"d": "19:08"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "19:12",
+		"d": "19:13"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "19:17"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1833.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1833",
+	"r": "Tobu.Kiryu",
+	"n": "1833",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1833.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "19:13"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "19:27",
+		"d": "19:27"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "19:33",
+		"d": "19:33"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "19:37",
+		"d": "19:38"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "19:42"
+	}],
+	"nm": [{
+		"ja": "りょうもう 33号",
+		"en": "Ryomo 33",
+		"ko": "료모 33",
+		"zh-Hans": "两毛 33",
+		"zh-Hant": "兩毛 33"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.837E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.837E",
+	"r": "Tobu.Kiryu",
+	"n": "837E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.837E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "19:26"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "19:30",
+		"d": "19:31"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "19:34",
+		"d": "19:34"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "19:38",
+		"d": "19:40"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "19:44",
+		"d": "19:44"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "19:46",
+		"d": "19:47"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "19:51",
+		"d": "19:51"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "19:56"
+	}]
+}, {
+	"id": "Tobu.Kiryu.839E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.839E",
+	"r": "Tobu.Kiryu",
+	"n": "839E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.839E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "20:05"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "20:08",
+		"d": "20:09"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "20:12",
+		"d": "20:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "20:18",
+		"d": "20:18"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "20:22",
+		"d": "20:23"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "20:25",
+		"d": "20:25"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "20:29",
+		"d": "20:30"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "20:34"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1837.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1837",
+	"r": "Tobu.Kiryu",
+	"n": "1837",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1837.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "20:12"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "20:26",
+		"d": "20:26"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "20:32",
+		"d": "20:32"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "20:36",
+		"d": "20:37"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "20:41"
+	}],
+	"nm": [{
+		"ja": "りょうもう 37号",
+		"en": "Ryomo 37",
+		"ko": "료모 37",
+		"zh-Hans": "两毛 37",
+		"zh-Hant": "兩毛 37"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.1841.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1841",
+	"r": "Tobu.Kiryu",
+	"n": "1841",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1841.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "20:44"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "20:54",
+		"d": "20:56"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "21:01",
+		"d": "21:02"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "21:06",
+		"d": "21:06"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "21:10"
+	}],
+	"nm": [{
+		"ja": "りょうもう 41号",
+		"en": "Ryomo 41",
+		"ko": "료모 41",
+		"zh-Hans": "两毛 41",
+		"zh-Hant": "兩毛 41"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.841E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.841E",
+	"r": "Tobu.Kiryu",
+	"n": "841E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.841E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "20:49"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "20:52",
+		"d": "20:53"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "20:56",
+		"d": "21:00"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "21:04",
+		"d": "21:04"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "21:08",
+		"d": "21:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "21:11",
+		"d": "21:12"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "21:16",
+		"d": "21:16"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "21:20"
+	}]
+}, {
+	"id": "Tobu.Kiryu.843E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.843E",
+	"r": "Tobu.Kiryu",
+	"n": "843E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.843E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "21:19"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "21:23",
+		"d": "21:23"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "21:26",
+		"d": "21:27"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "21:30",
+		"d": "21:31"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "21:35",
+		"d": "21:35"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "21:38",
+		"d": "21:39"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "21:43",
+		"d": "21:44"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "21:48"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1847.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1847",
+	"r": "Tobu.Kiryu",
+	"n": "1847",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1847.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "21:48"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "21:59",
+		"d": "21:59"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "22:05",
+		"d": "22:06"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "22:10",
+		"d": "22:10"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "22:14"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 47号",
+		"en": "Revaty Ryomo 47",
+		"ko": "Revaty 료모 47",
+		"zh-Hans": "Revaty两毛 47",
+		"zh-Hant": "Revaty兩毛 47"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.845E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.845E",
+	"r": "Tobu.Kiryu",
+	"n": "845E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Kiryu.Ota"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "22:07"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "22:11",
+		"d": "22:11"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "22:15",
+		"d": "22:16"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "22:20",
+		"d": "22:20"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "22:24",
+		"d": "22:25"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "22:27",
+		"d": "22:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "22:31",
+		"d": "22:32"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "22:36"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1851.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1851",
+	"r": "Tobu.Kiryu",
+	"n": "1851",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.Isesaki.1851.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "22:36"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "22:45",
+		"d": "22:46"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "22:52",
+		"d": "22:53"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "22:57",
+		"d": "22:57"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "23:01"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 51号",
+		"en": "Revaty Ryomo 51",
+		"ko": "Revaty 료모 51",
+		"zh-Hans": "Revaty两毛 51",
+		"zh-Hant": "Revaty兩毛 51"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.847E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.847E",
+	"r": "Tobu.Kiryu",
+	"n": "847E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Kiryu.Ota"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "22:51"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "22:55",
+		"d": "22:55"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "22:58",
+		"d": "22:59"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "23:02",
+		"d": "23:03"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "23:06",
+		"d": "23:07"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "23:09",
+		"d": "23:10"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "23:14",
+		"d": "23:14"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "23:18"
+	}]
+}, {
+	"id": "Tobu.Kiryu.849E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.849E",
+	"r": "Tobu.Kiryu",
+	"n": "849E",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"pt": [
+		"Tobu.KoizumiBranch.849E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Ota",
+		"d": "23:21"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "23:25",
+		"d": "23:25"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "23:28",
+		"d": "23:29"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "23:32",
+		"d": "23:33"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "23:37",
+		"d": "23:37"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "23:39",
+		"d": "23:40"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "23:44",
+		"d": "23:44"
+	}, {
+		"s": "Tobu.Kiryu.Akagi",
+		"a": "23:48"
+	}]
+}, {
+	"id": "Tobu.Kiryu.802E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.802E",
+	"r": "Tobu.Kiryu",
+	"n": "802E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.802E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "05:02"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "05:05",
+		"d": "05:06"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "05:10",
+		"d": "05:10"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "05:12",
+		"d": "05:13"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "05:16",
+		"d": "05:17"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "05:21",
+		"d": "05:21"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "05:24",
+		"d": "05:25"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "05:28"
+	}]
+}, {
+	"id": "Tobu.Kiryu.804E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.804E",
+	"r": "Tobu.Kiryu",
+	"n": "804E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.804E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "05:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "05:31",
+		"d": "05:31"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "05:35",
+		"d": "05:36"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "05:38",
+		"d": "05:38"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "05:42",
+		"d": "05:42"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "05:46",
+		"d": "05:46"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "05:49",
+		"d": "05:50"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "05:53"
+	}]
+}, {
+	"id": "Tobu.Kiryu.806E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.806E",
+	"r": "Tobu.Kiryu",
+	"n": "806E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.806E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "06:04"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "06:08",
+		"d": "06:08"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "06:13",
+		"d": "06:13"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "06:15",
+		"d": "06:16"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "06:19",
+		"d": "06:20"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "06:23",
+		"d": "06:24"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "06:27",
+		"d": "06:28"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "06:32"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1806.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1806",
+	"r": "Tobu.Kiryu",
+	"n": "1806",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1806.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "06:10"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "06:14",
+		"d": "06:14"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "06:18",
+		"d": "06:20"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "06:26",
+		"d": "06:26"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "06:35"
+	}],
+	"nm": [{
+		"ja": "りょうもう 6号",
+		"en": "Ryomo 6",
+		"ko": "료모 6",
+		"zh-Hans": "两毛 6",
+		"zh-Hant": "兩毛 6"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.808E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.808E",
+	"r": "Tobu.Kiryu",
+	"n": "808E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.808E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "06:45"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "06:49",
+		"d": "06:51"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "06:55",
+		"d": "06:55"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "06:57",
+		"d": "06:58"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "07:01",
+		"d": "07:02"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "07:05",
+		"d": "07:06"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "07:09",
+		"d": "07:09"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "07:13"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1808.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1808",
+	"r": "Tobu.Kiryu",
+	"n": "1808",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1808.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "06:56"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "07:00",
+		"d": "07:00"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "07:04",
+		"d": "07:05"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "07:10",
+		"d": "07:10"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "07:19"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 8号",
+		"en": "Revaty Ryomo 8",
+		"ko": "Revaty 료모 8",
+		"zh-Hans": "Revaty两毛 8",
+		"zh-Hant": "Revaty兩毛 8"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.810E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.810E",
+	"r": "Tobu.Kiryu",
+	"n": "810E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.810E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "07:14"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "07:17",
+		"d": "07:18"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "07:22",
+		"d": "07:24"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "07:27",
+		"d": "07:27"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "07:30",
+		"d": "07:31"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "07:35",
+		"d": "07:35"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "07:38",
+		"d": "07:38"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "07:42"
+	}]
+}, {
+	"id": "Tobu.Kiryu.812E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.812E",
+	"r": "Tobu.Kiryu",
+	"n": "812E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.812E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "07:39"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "07:43",
+		"d": "07:43"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "07:47",
+		"d": "07:48"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "07:50",
+		"d": "07:50"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "07:54",
+		"d": "07:55"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "07:59",
+		"d": "07:59"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "08:02",
+		"d": "08:03"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "08:06"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1814.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1814",
+	"r": "Tobu.Kiryu",
+	"n": "1814",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1814.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "08:05"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "08:08",
+		"d": "08:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "08:13",
+		"d": "08:15"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "08:20",
+		"d": "08:20"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "08:32"
+	}],
+	"nm": [{
+		"ja": "りょうもう 14号",
+		"en": "Ryomo 14",
+		"ko": "료모 14",
+		"zh-Hans": "两毛 14",
+		"zh-Hant": "兩毛 14"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.814E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.814E",
+	"r": "Tobu.Kiryu",
+	"n": "814E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Ota"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "08:18"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "08:22",
+		"d": "08:22"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "08:26",
+		"d": "08:27"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "08:29",
+		"d": "08:30"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "08:34",
+		"d": "08:34"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "08:38",
+		"d": "08:38"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "08:42",
+		"d": "08:42"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "08:46"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1816.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1816",
+	"r": "Tobu.Kiryu",
+	"n": "1816",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1816.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "08:35"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "08:38",
+		"d": "08:39"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "08:43",
+		"d": "08:45"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "08:50",
+		"d": "08:51"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "09:00"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 16号",
+		"en": "Revaty Ryomo 16",
+		"ko": "Revaty 료모 16",
+		"zh-Hans": "Revaty两毛 16",
+		"zh-Hant": "Revaty兩毛 16"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.1818.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1818",
+	"r": "Tobu.Kiryu",
+	"n": "1818",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1818.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "09:07"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "09:10",
+		"d": "09:11"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "09:15",
+		"d": "09:15"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "09:20",
+		"d": "09:21"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "09:30"
+	}],
+	"nm": [{
+		"ja": "りょうもう 18号",
+		"en": "Ryomo 18",
+		"ko": "료모 18",
+		"zh-Hans": "两毛 18",
+		"zh-Hant": "兩毛 18"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.816E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.816E",
+	"r": "Tobu.Kiryu",
+	"n": "816E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.816E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "09:28"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "09:32",
+		"d": "09:33"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "09:36",
+		"d": "09:37"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "09:39",
+		"d": "09:40"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "09:43",
+		"d": "09:43"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "09:47",
+		"d": "09:48"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "09:50",
+		"d": "09:51"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "09:55"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1820.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1820",
+	"r": "Tobu.Kiryu",
+	"n": "1820",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1820.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "10:00"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "10:04",
+		"d": "10:04"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "10:08",
+		"d": "10:09"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "10:14",
+		"d": "10:14"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "10:26"
+	}],
+	"nm": [{
+		"ja": "りょうもう 20号",
+		"en": "Ryomo 20",
+		"ko": "료모 20",
+		"zh-Hans": "两毛 20",
+		"zh-Hant": "兩毛 20"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.818E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.818E",
+	"r": "Tobu.Kiryu",
+	"n": "818E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.818E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "10:30"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "10:34",
+		"d": "10:36"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "10:39",
+		"d": "10:40"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "10:42",
+		"d": "10:43"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "10:46",
+		"d": "10:46"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "10:50",
+		"d": "10:51"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "10:54",
+		"d": "10:55"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "10:59"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1822.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1822",
+	"r": "Tobu.Kiryu",
+	"n": "1822",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1822.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "11:05"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "11:08",
+		"d": "11:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "11:13",
+		"d": "11:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "11:19",
+		"d": "11:20"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "11:29"
+	}],
+	"nm": [{
+		"ja": "りょうもう 22号",
+		"en": "Ryomo 22",
+		"ko": "료모 22",
+		"zh-Hans": "两毛 22",
+		"zh-Hant": "兩毛 22"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.820E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.820E",
+	"r": "Tobu.Kiryu",
+	"n": "820E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.820E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "11:36"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "11:40",
+		"d": "11:40"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "11:44",
+		"d": "11:45"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "11:47",
+		"d": "11:47"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "11:51",
+		"d": "11:51"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "11:55",
+		"d": "11:55"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "11:58",
+		"d": "11:59"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "12:02"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1824.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1824",
+	"r": "Tobu.Kiryu",
+	"n": "1824",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1824.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "12:05"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "12:08",
+		"d": "12:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "12:13",
+		"d": "12:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "12:19",
+		"d": "12:21"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "12:30"
+	}],
+	"nm": [{
+		"ja": "りょうもう 24号",
+		"en": "Ryomo 24",
+		"ko": "료모 24",
+		"zh-Hans": "两毛 24",
+		"zh-Hant": "兩毛 24"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.822E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.822E",
+	"r": "Tobu.Kiryu",
+	"n": "822E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.822E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "12:36"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "12:40",
+		"d": "12:40"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "12:44",
+		"d": "12:45"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "12:47",
+		"d": "12:47"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "12:51",
+		"d": "12:51"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "12:55",
+		"d": "12:55"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "12:58",
+		"d": "12:59"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "13:02"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1826.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1826",
+	"r": "Tobu.Kiryu",
+	"n": "1826",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1826.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "13:05"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "13:08",
+		"d": "13:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "13:13",
+		"d": "13:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "13:19",
+		"d": "13:21"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "13:30"
+	}],
+	"nm": [{
+		"ja": "りょうもう 26号",
+		"en": "Ryomo 26",
+		"ko": "료모 26",
+		"zh-Hans": "两毛 26",
+		"zh-Hant": "兩毛 26"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.824E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.824E",
+	"r": "Tobu.Kiryu",
+	"n": "824E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.824E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "13:36"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "13:40",
+		"d": "13:40"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "13:44",
+		"d": "13:45"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "13:47",
+		"d": "13:47"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "13:51",
+		"d": "13:51"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "13:55",
+		"d": "13:55"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "13:58",
+		"d": "13:59"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "14:02"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1828.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1828",
+	"r": "Tobu.Kiryu",
+	"n": "1828",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1828.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "14:05"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "14:08",
+		"d": "14:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "14:13",
+		"d": "14:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "14:19",
+		"d": "14:21"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "14:30"
+	}],
+	"nm": [{
+		"ja": "りょうもう 28号",
+		"en": "Ryomo 28",
+		"ko": "료모 28",
+		"zh-Hans": "两毛 28",
+		"zh-Hant": "兩毛 28"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.826E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.826E",
+	"r": "Tobu.Kiryu",
+	"n": "826E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.826E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "14:29"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "14:32",
+		"d": "14:33"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "14:37",
+		"d": "14:37"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "14:39",
+		"d": "14:40"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "14:43",
+		"d": "14:44"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "14:47",
+		"d": "14:48"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "14:51",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "14:56"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1832.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1832",
+	"r": "Tobu.Kiryu",
+	"n": "1832",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1832.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "15:05"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "15:08",
+		"d": "15:09"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "15:13",
+		"d": "15:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "15:19",
+		"d": "15:19"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "15:28"
+	}],
+	"nm": [{
+		"ja": "りょうもう 32号",
+		"en": "Ryomo 32",
+		"ko": "료모 32",
+		"zh-Hans": "两毛 32",
+		"zh-Hant": "兩毛 32"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.828E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.828E",
+	"r": "Tobu.Kiryu",
+	"n": "828E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.828E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "15:27"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "15:31",
+		"d": "15:31"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "15:35",
+		"d": "15:36"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "15:38",
+		"d": "15:39"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "15:42",
+		"d": "15:43"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "15:46",
+		"d": "15:47"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "15:50",
+		"d": "15:50"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "15:54"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1836.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1836",
+	"r": "Tobu.Kiryu",
+	"n": "1836",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1836.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "15:57"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "16:01",
+		"d": "16:02"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "16:06",
+		"d": "16:06"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "16:12",
+		"d": "16:13"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "16:25"
+	}],
+	"nm": [{
+		"ja": "りょうもう 36号",
+		"en": "Ryomo 36",
+		"ko": "료모 36",
+		"zh-Hans": "两毛 36",
+		"zh-Hant": "兩毛 36"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.830E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.830E",
+	"r": "Tobu.Kiryu",
+	"n": "830E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.830E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "16:12"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "16:15",
+		"d": "16:16"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "16:20",
+		"d": "16:21"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "16:23",
+		"d": "16:23"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "16:27",
+		"d": "16:28"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "16:31",
+		"d": "16:32"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "16:35",
+		"d": "16:35"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "16:39"
+	}]
+}, {
+	"id": "Tobu.Kiryu.832E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.832E",
+	"r": "Tobu.Kiryu",
+	"n": "832E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.832E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "16:44"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "16:47",
+		"d": "16:48"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "16:52",
+		"d": "16:52"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "16:54",
+		"d": "16:55"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "16:59",
+		"d": "16:59"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "17:03",
+		"d": "17:04"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "17:06",
+		"d": "17:07"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "17:11"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1840.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1840",
+	"r": "Tobu.Kiryu",
+	"n": "1840",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1840.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "17:00"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "17:04",
+		"d": "17:04"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "17:08",
+		"d": "17:09"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "17:14",
+		"d": "17:15"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "17:26"
+	}],
+	"nm": [{
+		"ja": "りょうもう 40号",
+		"en": "Ryomo 40",
+		"ko": "료모 40",
+		"zh-Hans": "两毛 40",
+		"zh-Hant": "兩毛 40"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.834E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.834E",
+	"r": "Tobu.Kiryu",
+	"n": "834E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.834E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "17:25"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "17:29",
+		"d": "17:29"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "17:33",
+		"d": "17:34"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "17:36",
+		"d": "17:37"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "17:41",
+		"d": "17:41"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "17:45",
+		"d": "17:45"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "17:48",
+		"d": "17:49"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "17:52"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1844.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1844",
+	"r": "Tobu.Kiryu",
+	"n": "1844",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1844.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "18:00"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "18:04",
+		"d": "18:04"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "18:08",
+		"d": "18:09"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "18:14",
+		"d": "18:14"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "18:25"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 44号",
+		"en": "Revaty Ryomo 44",
+		"ko": "Revaty 료모 44",
+		"zh-Hans": "Revaty两毛 44",
+		"zh-Hant": "Revaty兩毛 44"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.836E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.836E",
+	"r": "Tobu.Kiryu",
+	"n": "836E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.836E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "18:11"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "18:14",
+		"d": "18:15"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "18:19",
+		"d": "18:21"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "18:23",
+		"d": "18:23"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "18:27",
+		"d": "18:28"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "18:31",
+		"d": "18:32"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "18:35",
+		"d": "18:35"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "18:39"
+	}]
+}, {
+	"id": "Tobu.Kiryu.838E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.838E",
+	"r": "Tobu.Kiryu",
+	"n": "838E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.838E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "18:43"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "18:46",
+		"d": "18:47"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "18:51",
+		"d": "18:51"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "18:53",
+		"d": "18:54"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "18:58",
+		"d": "18:59"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "19:03",
+		"d": "19:04"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "19:06",
+		"d": "19:07"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "19:11"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1848.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1848",
+	"r": "Tobu.Kiryu",
+	"n": "1848",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1848.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "19:00"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "19:04",
+		"d": "19:04"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "19:08",
+		"d": "19:09"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "19:14",
+		"d": "19:14"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "19:23"
+	}],
+	"nm": [{
+		"ja": "リバティりょうもう 48号",
+		"en": "Revaty Ryomo 48",
+		"ko": "Revaty 료모 48",
+		"zh-Hans": "Revaty两毛 48",
+		"zh-Hant": "Revaty兩毛 48"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kiryu.840E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.840E",
+	"r": "Tobu.Kiryu",
+	"n": "840E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.840E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "19:25"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "19:28",
+		"d": "19:29"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "19:33",
+		"d": "19:34"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "19:36",
+		"d": "19:36"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "19:40",
+		"d": "19:40"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "19:44",
+		"d": "19:44"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "19:47",
+		"d": "19:48"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "19:51"
+	}]
+}, {
+	"id": "Tobu.Kiryu.1852.SaturdayHoliday",
+	"t": "Tobu.Kiryu.1852",
+	"r": "Tobu.Kiryu",
+	"n": "1852",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Isesaki.1852.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "19:56"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "20:00",
+		"d": "20:00"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "20:04",
+		"d": "20:05"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "20:10",
+		"d": "20:10"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "20:21"
+	}],
+	"nm": [{
+		"ja": "りょうもう 52号",
+		"en": "Ryomo 52",
+		"ko": "료모 52",
+		"zh-Hans": "两毛 52",
+		"zh-Hant": "兩毛 52"
+	}],
+	"v": "200"
+}, {
+	"id": "Tobu.Kiryu.842E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.842E",
+	"r": "Tobu.Kiryu",
+	"n": "842E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.842E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "20:02"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "20:06",
+		"d": "20:06"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "20:10",
+		"d": "20:11"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "20:13",
+		"d": "20:14"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "20:18",
+		"d": "20:18"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "20:22",
+		"d": "20:22"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "20:25",
+		"d": "20:26"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "20:29"
+	}]
+}, {
+	"id": "Tobu.Kiryu.844E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.844E",
+	"r": "Tobu.Kiryu",
+	"n": "844E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.844E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "20:41"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "20:45",
+		"d": "20:45"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "20:49",
+		"d": "20:50"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "20:52",
+		"d": "20:52"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "20:56",
+		"d": "20:56"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "21:00",
+		"d": "21:00"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "21:03",
+		"d": "21:04"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "21:07"
+	}]
+}, {
+	"id": "Tobu.Kiryu.846E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.846E",
+	"r": "Tobu.Kiryu",
+	"n": "846E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Ota"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "21:29"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "21:33",
+		"d": "21:34"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "21:38",
+		"d": "21:38"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "21:41",
+		"d": "21:41"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "21:44",
+		"d": "21:45"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "21:49",
+		"d": "21:49"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "21:52",
+		"d": "21:53"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "21:57"
+	}]
+}, {
+	"id": "Tobu.Kiryu.848E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.848E",
+	"r": "Tobu.Kiryu",
+	"n": "848E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.Kiryu.Ota"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "21:57"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "22:00",
+		"d": "22:01"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "22:05",
+		"d": "22:06"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "22:08",
+		"d": "22:08"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "22:12",
+		"d": "22:12"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "22:16",
+		"d": "22:17"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "22:20",
+		"d": "22:20"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "22:24"
+	}]
+}, {
+	"id": "Tobu.Kiryu.850E.SaturdayHoliday",
+	"t": "Tobu.Kiryu.850E",
+	"r": "Tobu.Kiryu",
+	"n": "850E",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kiryu.Akagi"
+	],
+	"ds": [
+		"Tobu.KoizumiBranch.HigashiKoizumi"
+	],
+	"nt": [
+		"Tobu.KoizumiBranch.850E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kiryu.Akagi",
+		"d": "22:44"
+	}, {
+		"s": "Tobu.Kiryu.Aioi",
+		"a": "22:48",
+		"d": "22:48"
+	}, {
+		"s": "Tobu.Kiryu.ShinKiryu",
+		"a": "22:53",
+		"d": "22:55"
+	}, {
+		"s": "Tobu.Kiryu.Azami",
+		"a": "22:57",
+		"d": "22:57"
+	}, {
+		"s": "Tobu.Kiryu.Yabuzuka",
+		"a": "23:01",
+		"d": "23:02"
+	}, {
+		"s": "Tobu.Kiryu.Jiroembashi",
+		"a": "23:06",
+		"d": "23:07"
+	}, {
+		"s": "Tobu.Kiryu.Sammaibashi",
+		"a": "23:09",
+		"d": "23:10"
+	}, {
+		"s": "Tobu.Kiryu.Ota",
+		"a": "23:14"
+	}]
+}]

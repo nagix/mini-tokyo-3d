@@ -27,3 +27,7 @@ export function loadJSON(url) {
 export function saveJSON(path, data) {
     fs.promises.writeFile(path, pako.gzip(JSON.stringify(data), {level: 9}));
 }
+
+export function readdir(path) {
+    return fs.promises.readdir(path);
+}

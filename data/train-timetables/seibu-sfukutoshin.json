@@ -1,0 +1,166 @@
+[{
+	"id": "Seibu.S-Fukutoshin.401.SaturdayHoliday",
+	"t": "Seibu.S-Fukutoshin.401",
+	"r": "Seibu.S-Fukutoshin",
+	"n": "401",
+	"y": "Seibu.S-TRAIN",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B771M.SaturdayHoliday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.401.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.S-Fukutoshin.Ikebukuro",
+		"d": "07:50"
+	}, {
+		"s": "Seibu.S-Fukutoshin.ShakujiiKoen",
+		"a": "08:04"
+	}],
+	"nm": [{
+		"ja": "S-TRAIN 1号",
+		"en": "S-TRAIN 1",
+		"ko": "S-트레인 1",
+		"zh-Hans": "S-Train 1",
+		"zh-Hant": "S-Train 1"
+	}]
+}, {
+	"id": "Seibu.S-Fukutoshin.403.SaturdayHoliday",
+	"t": "Seibu.S-Fukutoshin.403",
+	"r": "Seibu.S-Fukutoshin",
+	"n": "403",
+	"y": "Seibu.S-TRAIN",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1673M.SaturdayHoliday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.403.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.S-Fukutoshin.Ikebukuro",
+		"d": "17:46"
+	}, {
+		"s": "Seibu.S-Fukutoshin.ShakujiiKoen",
+		"a": "17:59"
+	}],
+	"nm": [{
+		"ja": "S-TRAIN 3号",
+		"en": "S-TRAIN 3",
+		"ko": "S-트레인 3",
+		"zh-Hans": "S-Train 3",
+		"zh-Hant": "S-Train 3"
+	}]
+}, {
+	"id": "Seibu.S-Fukutoshin.405.SaturdayHoliday",
+	"t": "Seibu.S-Fukutoshin.405",
+	"r": "Seibu.S-Fukutoshin",
+	"n": "405",
+	"y": "Seibu.S-TRAIN",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Tokorozawa"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1975M.SaturdayHoliday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.405.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.S-Fukutoshin.Ikebukuro",
+		"d": "20:45"
+	}, {
+		"s": "Seibu.S-Fukutoshin.ShakujiiKoen",
+		"a": "20:57"
+	}],
+	"nm": [{
+		"ja": "S-TRAIN 5号",
+		"en": "S-TRAIN 5",
+		"ko": "S-트레인 5",
+		"zh-Hans": "S-Train 5",
+		"zh-Hant": "S-Train 5"
+	}]
+}, {
+	"id": "Seibu.S-Fukutoshin.402.SaturdayHoliday",
+	"t": "Seibu.S-Fukutoshin.402",
+	"r": "Seibu.S-Fukutoshin",
+	"n": "402",
+	"y": "Seibu.S-TRAIN",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"ds": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.402.SaturdayHoliday"
+	],
+	"nt": [
+		"TokyoMetro.Fukutoshin.A972M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.S-Fukutoshin.ShakujiiKoen",
+		"d": "09:49"
+	}, {
+		"s": "Seibu.S-Fukutoshin.Ikebukuro",
+		"a": "10:02"
+	}],
+	"nm": [{
+		"ja": "S-TRAIN 2号",
+		"en": "S-TRAIN 2",
+		"ko": "S-트레인 2",
+		"zh-Hans": "S-Train 2",
+		"zh-Hant": "S-Train 2"
+	}]
+}, {
+	"id": "Seibu.S-Fukutoshin.404.SaturdayHoliday",
+	"t": "Seibu.S-Fukutoshin.404",
+	"r": "Seibu.S-Fukutoshin",
+	"n": "404",
+	"y": "Seibu.S-TRAIN",
+	"d": "Inbound",
+	"os": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"ds": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.404.SaturdayHoliday"
+	],
+	"nt": [
+		"TokyoMetro.Fukutoshin.A1774M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.S-Fukutoshin.ShakujiiKoen",
+		"d": "18:27"
+	}, {
+		"s": "Seibu.S-Fukutoshin.Ikebukuro",
+		"a": "18:42"
+	}],
+	"nm": [{
+		"ja": "S-TRAIN 4号",
+		"en": "S-TRAIN 4",
+		"ko": "S-트레인 4",
+		"zh-Hans": "S-Train 4",
+		"zh-Hant": "S-Train 4"
+	}]
+}]

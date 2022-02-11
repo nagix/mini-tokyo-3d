@@ -1,6 +1,8 @@
 [{
 	"id": "Adjusting",
 	"title": {
+		"en": "Adjusting",
+		"ja": "機材繰り",
 		"ko": "비행기 조정",
 		"zh-Hans": "调整飞机",
 		"zh-Hant": "調整飛機"
@@ -8,6 +10,8 @@
 }, {
 	"id": "Arrived",
 	"title": {
+		"en": "Arrived",
+		"ja": "到着済み",
 		"ko": "도착 된",
 		"zh-Hans": "到了",
 		"zh-Hant": "到了"
@@ -15,6 +19,8 @@
 }, {
 	"id": "BaggageAvailable",
 	"title": {
+		"en": "Baggage Available",
+		"ja": "手荷物引渡中",
 		"ko": "수하물 인도 중",
 		"zh-Hans": "行李运送期间",
 		"zh-Hant": "行李運送期間"
@@ -22,6 +28,8 @@
 }, {
 	"id": "BoardingComplete",
 	"title": {
+		"en": "Boarding Complete",
+		"ja": "搭乗終了",
 		"ko": "탑승 종료",
 		"zh-Hans": "登机完成",
 		"zh-Hant": "登機完成"
@@ -29,6 +37,8 @@
 }, {
 	"id": "Cancelled",
 	"title": {
+		"en": "Cancelled",
+		"ja": "欠航",
 		"ko": "결항",
 		"zh-Hans": "取消",
 		"zh-Hant": "取消"
@@ -36,6 +46,8 @@
 }, {
 	"id": "CheckInClose",
 	"title": {
+		"en": "Check In Close",
+		"ja": "搭乗手続終了",
 		"ko": "탑승 수속 종료",
 		"zh-Hans": "登记手续结束",
 		"zh-Hant": "登記手續結束"
@@ -43,6 +55,8 @@
 }, {
 	"id": "CheckIn",
 	"title": {
+		"en": "Check In",
+		"ja": "搭乗手続中",
 		"ko": "탑승 수속 중",
 		"zh-Hans": "登记手续期间",
 		"zh-Hant": "登記手續期間"
@@ -50,6 +64,8 @@
 }, {
 	"id": "Delayed",
 	"title": {
+		"en": "Delayed",
+		"ja": "遅れ",
 		"ko": "지연",
 		"zh-Hans": "延迟",
 		"zh-Hant": "延遲"
@@ -57,6 +73,8 @@
 }, {
 	"id": "Departed",
 	"title": {
+		"en": "Departed",
+		"ja": "出発済み",
 		"ko": "출발 된",
 		"zh-Hans": "出发了",
 		"zh-Hant": "出發了"
@@ -64,6 +82,8 @@
 }, {
 	"id": "EstimatedArrival",
 	"title": {
+		"en": "Estimated Arrival",
+		"ja": "到着予定",
 		"ko": "도착 예정",
 		"zh-Hans": "预定到达",
 		"zh-Hant": "預定到達"
@@ -71,6 +91,8 @@
 }, {
 	"id": "EstimatedDeparture",
 	"title": {
+		"en": "Estimated Departure",
+		"ja": "出発予定",
 		"ko": "출발 예정",
 		"zh-Hans": "预定出发",
 		"zh-Hant": "預定出發"
@@ -78,6 +100,8 @@
 }, {
 	"id": "FinalCall",
 	"title": {
+		"en": "Final Call",
+		"ja": "最終搭乗案内",
 		"ko": "마지막 탑승 안내",
 		"zh-Hans": "最终登机指南",
 		"zh-Hant": "最終登機指南"
@@ -85,6 +109,8 @@
 }, {
 	"id": "InAir",
 	"title": {
+		"en": "In Air",
+		"ja": "航行中",
 		"ko": "항행 중",
 		"zh-Hans": "在飞行中",
 		"zh-Hant": "在飛行中"
@@ -92,6 +118,8 @@
 }, {
 	"id": "Indefinite",
 	"title": {
+		"en": "Indefinite",
+		"ja": "時刻未定",
 		"ko": "시간 미정",
 		"zh-Hans": "时间未定",
 		"zh-Hant": "時間未定"
@@ -99,6 +127,8 @@
 }, {
 	"id": "Landed",
 	"title": {
+		"en": "Landed",
+		"ja": "着陸済み",
 		"ko": "방문 요청",
 		"zh-Hans": "降落",
 		"zh-Hant": "降落"
@@ -106,6 +136,8 @@
 }, {
 	"id": "LateArrival",
 	"title": {
+		"en": "Late Arrival",
+		"ja": "使用機遅れ",
 		"ko": "사용 비행기 지연",
 		"zh-Hans": "延迟使用飞机",
 		"zh-Hant": "延遲使用飛機"
@@ -113,6 +145,8 @@
 }, {
 	"id": "LeftGate",
 	"title": {
+		"en": "Left Gate",
+		"ja": "ゲート出発済み",
 		"ko": "게이트 출발 된",
 		"zh-Hans": "出发了门",
 		"zh-Hant": "出發了門"
@@ -120,6 +154,8 @@
 }, {
 	"id": "Maintenance",
 	"title": {
+		"en": "Maintenance",
+		"ja": "使用機整備",
 		"ko": "사용 비행기 정비",
 		"zh-Hans": "使用飞机整备",
 		"zh-Hant": "使用飛機整備"
@@ -127,6 +163,8 @@
 }, {
 	"id": "NewTime",
 	"title": {
+		"en": "New Time",
+		"ja": "時刻変更",
 		"ko": "시간 변경",
 		"zh-Hans": "变更时间",
 		"zh-Hant": "變更時間"
@@ -134,6 +172,8 @@
 }, {
 	"id": "NowBoarding",
 	"title": {
+		"en": "Now Boarding",
+		"ja": "搭乗中",
 		"ko": "탑승 중",
 		"zh-Hans": "登机",
 		"zh-Hant": "登機"
@@ -141,6 +181,8 @@
 }, {
 	"id": "OnTime",
 	"title": {
+		"en": "On Time",
+		"ja": "定刻",
 		"ko": "정시",
 		"zh-Hans": "准时",
 		"zh-Hant": "準時"
@@ -148,6 +190,8 @@
 }, {
 	"id": "Other",
 	"title": {
+		"en": "Other",
+		"ja": "その他",
 		"ko": "기타",
 		"zh-Hans": "其他",
 		"zh-Hant": "其他"
@@ -155,6 +199,8 @@
 }, {
 	"id": "PostponedTomorrow",
 	"title": {
+		"en": "Postponed Tomorrow",
+		"ja": "翌日運行",
 		"ko": "다음날 실행",
 		"zh-Hans": "翌日运行",
 		"zh-Hant": "翌日運行"
@@ -162,6 +208,8 @@
 }, {
 	"id": "StopCheckIn",
 	"title": {
+		"en": "Stop Check In",
+		"ja": "搭乗手続中止中",
 		"ko": "탑승 수속 중지 중",
 		"zh-Hans": "登记手续取消",
 		"zh-Hant": "登記手續取消"
@@ -169,6 +217,8 @@
 }, {
 	"id": "Takeoff",
 	"title": {
+		"en": "Takeoff",
+		"ja": "離陸済み",
 		"ko": "이륙 된",
 		"zh-Hans": "起飞",
 		"zh-Hant": "起飛"
@@ -176,6 +226,8 @@
 }, {
 	"id": "Unknown",
 	"title": {
+		"en": "Unknown",
+		"ja": "不明",
 		"ko": "알",
 		"zh-Hans": "不明",
 		"zh-Hant": "不明"
@@ -183,6 +235,8 @@
 }, {
 	"id": "WeatherCheck",
 	"title": {
+		"en": "Weather Check",
+		"ja": "天候調査中",
 		"ko": "날씨 조사 중",
 		"zh-Hans": "天气调查",
 		"zh-Hant": "天氣調查"
@@ -190,6 +244,8 @@
 }, {
 	"id": "Yesterday",
 	"title": {
+		"en": "Yesterday",
+		"ja": "昨日便",
 		"ko": "어제 항공편",
 		"zh-Hans": "昨天的航班",
 		"zh-Hant": "昨天的航班"
@@ -197,6 +253,8 @@
 }, {
 	"id": "DestinationChanged",
 	"title": {
+		"en": "Destination Changed",
+		"ja": "到着地変更",
 		"ko": "도착지 변경",
 		"zh-Hans": "变更目的地",
 		"zh-Hant": "變更目的地"
@@ -204,8 +262,28 @@
 }, {
 	"id": "BadWeather",
 	"title": {
+		"en": "Bad Weather",
+		"ja": "天候不良",
 		"ko": "기후 불량",
 		"zh-Hans": "天气不好",
 		"zh-Hant": "天氣不好"
+	}
+}, {
+	"id": "Diverted",
+	"title": {
+		"en": "Diverted",
+		"ja": "到着地変更",
+		"ko": "도착지 변경",
+		"zh-Hans": "变更目的地",
+		"zh-Hant": "變更目的地"
+	}
+}, {
+	"id": "ExtraFlight",
+	"title": {
+		"en": "Extra Flight",
+		"ja": "臨時便",
+		"ko": "임시 항공편",
+		"zh-Hans": "额外航班",
+		"zh-Hant": "額外航班"
 	}
 }]
