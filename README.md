@@ -72,15 +72,14 @@ If you want to contribute, please start with translating the UI messages in the 
 
 ## About Data
 
-The data for this visualization are sourced from the [Public Transportation Open Data Center](https://www.odpt.org) and the [Tokyo Metro Open Data](https://developer.tokyometroapp.jp), which includes station information and train timetables as well as real-time data such as train location information and status information of multiple railway lines in the Greater Tokyo area.
+The data for this visualization are sourced from the [Public Transportation Open Data Center](https://www.odpt.org), which includes station information and train timetables as well as real-time data such as train location information and status information of multiple railway lines in the Greater Tokyo area.
 
 ## How to Build
 
-First, get access tokens for the public transportation data and map tiles by signing up at [Public Transportation Open Data Center](https://developer.odpt.org/en/users/sign_up), [Tokyo Metro Open Data](https://developer.tokyometroapp.jp/ja/users/sign_up) and [Mapbox](https://account.mapbox.com/auth/signup/). Then, create a file named `secrets` which has access tokens in the following format in the root directory of the application.
+First, get access tokens for the public transportation data and map tiles by signing up at [Public Transportation Open Data Center](https://developer.odpt.org/en/users/sign_up) and [Mapbox](https://account.mapbox.com/auth/signup/). Then, create a file named `secrets` which has access tokens in the following format in the root directory of the application.
 ```json
 {
-    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "tokyometro": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 ```
 
