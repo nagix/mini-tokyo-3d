@@ -601,7 +601,7 @@ export default class extends Evented {
         me.trafficLayer = new TrafficLayer({id: 'traffic'});
 
         ['poi', 'poi_extra'].forEach(id => {
-            map.setLayoutProperty(id, 'text-field', `{name_${lang.match(/ja|ko|zh-Han[st]|pt(-BR)/) ? lang.substring(2) : 'en'}}`);
+            map.setLayoutProperty(id, 'text-field', `{name_${lang.match(/ja|ko|zh-Han[st]|pt/) ? lang : 'en'}}`);
         });
 
         [13, 14, 15, 16, 17, 18].forEach(zoom => {

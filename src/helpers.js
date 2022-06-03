@@ -264,10 +264,10 @@ export function getLang(input) {
     } else if (lang.match(/zh/)) {
         lang = 'zh-Hans';
     } else if (lang.match(/pt(-BR)/)) {
-        lang = 'pt-BR';
+        lang = 'pt';
     } else {
         lang = lang.substring(0, 2);
     }
 
-    return lang.match(/ja|en|ko|zh-Han[st]|th|ne|pt(-BR)/) ? lang : 'en';
+    return lang.match(/ja|en|ko|zh-Han[st]|th|ne|pt/) ? lang : 'en';
 }
