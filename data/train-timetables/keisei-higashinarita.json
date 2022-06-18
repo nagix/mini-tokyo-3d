@@ -129,10 +129,10 @@
 		"a": "07:34"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.6A17.Weekday",
-	"t": "Keisei.HigashiNarita.6A17",
+	"id": "Keisei.HigashiNarita.6A19.Weekday",
+	"t": "Keisei.HigashiNarita.6A19",
 	"r": "Keisei.HigashiNarita",
-	"n": "6A17",
+	"n": "6A19",
 	"y": "Keisei.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -142,23 +142,23 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.6A17.Weekday"
+		"Keisei.Main.6A19.Weekday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.6A17.Weekday"
+		"Shibayama.Shibayama.6A19.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
 		"d": "07:48"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "07:53"
+		"a": "07:54"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.647.Weekday",
-	"t": "Keisei.HigashiNarita.647",
+	"id": "Keisei.HigashiNarita.641.Weekday",
+	"t": "Keisei.HigashiNarita.641",
 	"r": "Keisei.HigashiNarita",
-	"n": "647",
+	"n": "641",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -168,10 +168,10 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.647.Weekday"
+		"Keisei.Main.641.Weekday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.647.Weekday"
+		"Shibayama.Shibayama.641.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -207,10 +207,10 @@
 		"a": "08:37"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.981a.Weekday",
-	"t": "Keisei.HigashiNarita.981a",
+	"id": "Keisei.HigashiNarita.881.Weekday",
+	"t": "Keisei.HigashiNarita.881",
 	"r": "Keisei.HigashiNarita",
-	"n": "981a",
+	"n": "881",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -220,23 +220,23 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.981a.Weekday"
+		"Keisei.Main.881.Weekday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.981a.Weekday"
+		"Shibayama.Shibayama.881.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "09:07"
+		"d": "09:03"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "09:12"
+		"a": "09:09"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.981b.Weekday",
-	"t": "Keisei.HigashiNarita.981b",
+	"id": "Keisei.HigashiNarita.981.Weekday",
+	"t": "Keisei.HigashiNarita.981",
 	"r": "Keisei.HigashiNarita",
-	"n": "981b",
+	"n": "981",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -245,21 +245,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.981.Weekday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.981b.Weekday"
+		"Shibayama.Shibayama.981.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "09:52"
+		"d": "09:34"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "09:57"
+		"a": "09:40"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1081.Weekday",
-	"t": "Keisei.HigashiNarita.1081",
+	"id": "Keisei.HigashiNarita.1081a.Weekday",
+	"t": "Keisei.HigashiNarita.1081a",
 	"r": "Keisei.HigashiNarita",
-	"n": "1081",
+	"n": "1081a",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -268,21 +271,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1081a.Weekday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1081.Weekday"
+		"Shibayama.Shibayama.1081a.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "10:32"
+		"d": "10:14"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "10:37"
+		"a": "10:20"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1181.Weekday",
-	"t": "Keisei.HigashiNarita.1181",
+	"id": "Keisei.HigashiNarita.1081b.Weekday",
+	"t": "Keisei.HigashiNarita.1081b",
 	"r": "Keisei.HigashiNarita",
-	"n": "1181",
+	"n": "1081b",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -291,15 +297,18 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1081b.Weekday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1181.Weekday"
+		"Shibayama.Shibayama.1081b.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "11:12"
+		"d": "10:54"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "11:17"
+		"a": "11:00"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1141.Weekday",
@@ -314,248 +323,304 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1141.Weekday"
+	],
 	"nt": [
 		"Shibayama.Shibayama.1141.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "11:52"
+		"d": "11:34"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "11:57"
+		"a": "11:40"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1241.Weekday",
-	"t": "Keisei.HigashiNarita.1241",
+	"id": "Keisei.HigashiNarita.1241a.Weekday",
+	"t": "Keisei.HigashiNarita.1241a",
 	"r": "Keisei.HigashiNarita",
-	"n": "1241",
+	"n": "1241a",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
 		"Keisei.HigashiNarita.KeiseiNarita"
-	],
-	"ds": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"nt": [
-		"Shibayama.Shibayama.1241.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "12:32"
-	}, {
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "12:37"
-	}]
-}, {
-	"id": "Keisei.HigashiNarita.1341a.Weekday",
-	"t": "Keisei.HigashiNarita.1341a",
-	"r": "Keisei.HigashiNarita",
-	"n": "1341a",
-	"y": "Keisei.Local",
-	"d": "Outbound",
-	"os": [
-		"Keisei.HigashiNarita.KeiseiNarita"
-	],
-	"ds": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"nt": [
-		"Shibayama.Shibayama.1341a.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "13:12"
-	}, {
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "13:17"
-	}]
-}, {
-	"id": "Keisei.HigashiNarita.1341b.Weekday",
-	"t": "Keisei.HigashiNarita.1341b",
-	"r": "Keisei.HigashiNarita",
-	"n": "1341b",
-	"y": "Keisei.Local",
-	"d": "Outbound",
-	"os": [
-		"Keisei.HigashiNarita.KeiseiNarita"
-	],
-	"ds": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"nt": [
-		"Shibayama.Shibayama.1341b.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "13:52"
-	}, {
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "13:57"
-	}]
-}, {
-	"id": "Keisei.HigashiNarita.1441.Weekday",
-	"t": "Keisei.HigashiNarita.1441",
-	"r": "Keisei.HigashiNarita",
-	"n": "1441",
-	"y": "Keisei.Local",
-	"d": "Outbound",
-	"os": [
-		"Keisei.HigashiNarita.KeiseiNarita"
-	],
-	"ds": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"nt": [
-		"Shibayama.Shibayama.1441.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "14:32"
-	}, {
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "14:37"
-	}]
-}, {
-	"id": "Keisei.HigashiNarita.1541a.Weekday",
-	"t": "Keisei.HigashiNarita.1541a",
-	"r": "Keisei.HigashiNarita",
-	"n": "1541a",
-	"y": "Keisei.Local",
-	"d": "Outbound",
-	"os": [
-		"Keisei.HigashiNarita.KeiseiNarita"
-	],
-	"ds": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"nt": [
-		"Shibayama.Shibayama.1541a.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "15:12"
-	}, {
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "15:17"
-	}]
-}, {
-	"id": "Keisei.HigashiNarita.1541b.Weekday",
-	"t": "Keisei.HigashiNarita.1541b",
-	"r": "Keisei.HigashiNarita",
-	"n": "1541b",
-	"y": "Keisei.Local",
-	"d": "Outbound",
-	"os": [
-		"Keisei.HigashiNarita.KeiseiNarita"
-	],
-	"ds": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"nt": [
-		"Shibayama.Shibayama.1541b.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "15:52"
-	}, {
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "15:57"
-	}]
-}, {
-	"id": "Keisei.HigashiNarita.1641.Weekday",
-	"t": "Keisei.HigashiNarita.1641",
-	"r": "Keisei.HigashiNarita",
-	"n": "1641",
-	"y": "Keisei.Local",
-	"d": "Outbound",
-	"os": [
-		"Keisei.HigashiNarita.KeiseiNarita"
-	],
-	"ds": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"nt": [
-		"Shibayama.Shibayama.1641.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "16:32"
-	}, {
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "16:37"
-	}]
-}, {
-	"id": "Keisei.HigashiNarita.1741a.Weekday",
-	"t": "Keisei.HigashiNarita.1741a",
-	"r": "Keisei.HigashiNarita",
-	"n": "1741a",
-	"y": "Keisei.Local",
-	"d": "Outbound",
-	"os": [
-		"Keisei.HigashiNarita.KeiseiNarita"
-	],
-	"ds": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"nt": [
-		"Shibayama.Shibayama.1741a.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "17:12"
-	}, {
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "17:17"
-	}]
-}, {
-	"id": "Keisei.HigashiNarita.1741b.Weekday",
-	"t": "Keisei.HigashiNarita.1741b",
-	"r": "Keisei.HigashiNarita",
-	"n": "1741b",
-	"y": "Keisei.Local",
-	"d": "Outbound",
-	"os": [
-		"Keisei.HigashiNarita.KeiseiNarita"
-	],
-	"ds": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"nt": [
-		"Shibayama.Shibayama.1741b.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "17:52"
-	}, {
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "17:57"
-	}]
-}, {
-	"id": "Keisei.HigashiNarita.1669K.Weekday",
-	"t": "Keisei.HigashiNarita.1669K",
-	"r": "Keisei.HigashiNarita",
-	"n": "1669K",
-	"y": "Keisei.RapidLimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Toei.Asakusa.NishiMagome"
 	],
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.1669K.Weekday"
+		"Keisei.Main.1241a.Weekday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.1669K.Weekday"
+		"Shibayama.Shibayama.1241a.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "18:29"
+		"d": "12:14"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "18:34"
+		"a": "12:20"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.1241b.Weekday",
+	"t": "Keisei.HigashiNarita.1241b",
+	"r": "Keisei.HigashiNarita",
+	"n": "1241b",
+	"y": "Keisei.Local",
+	"d": "Outbound",
+	"os": [
+		"Keisei.HigashiNarita.KeiseiNarita"
+	],
+	"ds": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"pt": [
+		"Keisei.Main.1241b.Weekday"
+	],
+	"nt": [
+		"Shibayama.Shibayama.1241b.Weekday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"d": "12:54"
+	}, {
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"a": "13:00"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.1341.Weekday",
+	"t": "Keisei.HigashiNarita.1341",
+	"r": "Keisei.HigashiNarita",
+	"n": "1341",
+	"y": "Keisei.Local",
+	"d": "Outbound",
+	"os": [
+		"Keisei.HigashiNarita.KeiseiNarita"
+	],
+	"ds": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"pt": [
+		"Keisei.Main.1341.Weekday"
+	],
+	"nt": [
+		"Shibayama.Shibayama.1341.Weekday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"d": "13:34"
+	}, {
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"a": "13:40"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.1441a.Weekday",
+	"t": "Keisei.HigashiNarita.1441a",
+	"r": "Keisei.HigashiNarita",
+	"n": "1441a",
+	"y": "Keisei.Local",
+	"d": "Outbound",
+	"os": [
+		"Keisei.HigashiNarita.KeiseiNarita"
+	],
+	"ds": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"pt": [
+		"Keisei.Main.1441a.Weekday"
+	],
+	"nt": [
+		"Shibayama.Shibayama.1441a.Weekday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"d": "14:14"
+	}, {
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"a": "14:20"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.1441b.Weekday",
+	"t": "Keisei.HigashiNarita.1441b",
+	"r": "Keisei.HigashiNarita",
+	"n": "1441b",
+	"y": "Keisei.Local",
+	"d": "Outbound",
+	"os": [
+		"Keisei.HigashiNarita.KeiseiNarita"
+	],
+	"ds": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"pt": [
+		"Keisei.Main.1441b.Weekday"
+	],
+	"nt": [
+		"Shibayama.Shibayama.1441b.Weekday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"d": "14:54"
+	}, {
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"a": "15:00"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.1541.Weekday",
+	"t": "Keisei.HigashiNarita.1541",
+	"r": "Keisei.HigashiNarita",
+	"n": "1541",
+	"y": "Keisei.Local",
+	"d": "Outbound",
+	"os": [
+		"Keisei.HigashiNarita.KeiseiNarita"
+	],
+	"ds": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"pt": [
+		"Keisei.Main.1541.Weekday"
+	],
+	"nt": [
+		"Shibayama.Shibayama.1541.Weekday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"d": "15:34"
+	}, {
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"a": "15:40"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.1641a.Weekday",
+	"t": "Keisei.HigashiNarita.1641a",
+	"r": "Keisei.HigashiNarita",
+	"n": "1641a",
+	"y": "Keisei.Local",
+	"d": "Outbound",
+	"os": [
+		"Keisei.HigashiNarita.KeiseiNarita"
+	],
+	"ds": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"pt": [
+		"Keisei.Main.1641a.Weekday"
+	],
+	"nt": [
+		"Shibayama.Shibayama.1641a.Weekday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"d": "16:14"
+	}, {
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"a": "16:20"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.1641b.Weekday",
+	"t": "Keisei.HigashiNarita.1641b",
+	"r": "Keisei.HigashiNarita",
+	"n": "1641b",
+	"y": "Keisei.Local",
+	"d": "Outbound",
+	"os": [
+		"Keisei.HigashiNarita.KeiseiNarita"
+	],
+	"ds": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"pt": [
+		"Keisei.Main.1641b.Weekday"
+	],
+	"nt": [
+		"Shibayama.Shibayama.1641b.Weekday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"d": "16:54"
+	}, {
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"a": "17:00"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.1741.Weekday",
+	"t": "Keisei.HigashiNarita.1741",
+	"r": "Keisei.HigashiNarita",
+	"n": "1741",
+	"y": "Keisei.Local",
+	"d": "Outbound",
+	"os": [
+		"Keisei.HigashiNarita.KeiseiNarita"
+	],
+	"ds": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"pt": [
+		"Keisei.Main.1741.Weekday"
+	],
+	"nt": [
+		"Shibayama.Shibayama.1741.Weekday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"d": "17:34"
+	}, {
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"a": "17:40"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.16A21.Weekday",
+	"t": "Keisei.HigashiNarita.16A21",
+	"r": "Keisei.HigashiNarita",
+	"n": "16A21",
+	"y": "Keisei.RapidLimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Keisei.Main.KeiseiUeno"
+	],
+	"ds": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"pt": [
+		"Keisei.Main.16A21.Weekday"
+	],
+	"nt": [
+		"Shibayama.Shibayama.16A21.Weekday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"d": "18:00"
+	}, {
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"a": "18:05"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.17A11.Weekday",
+	"t": "Keisei.HigashiNarita.17A11",
+	"r": "Keisei.HigashiNarita",
+	"n": "17A11",
+	"y": "Keisei.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Keisei.Main.KeiseiUeno"
+	],
+	"ds": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"pt": [
+		"Keisei.Main.17A11.Weekday"
+	],
+	"nt": [
+		"Shibayama.Shibayama.17A11.Weekday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"d": "18:23"
+	}, {
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"a": "18:29"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1739.Weekday",
@@ -578,62 +643,62 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "18:57"
+		"d": "18:56"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "19:02"
+		"a": "19:01"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1715.Weekday",
-	"t": "Keisei.HigashiNarita.1715",
+	"id": "Keisei.HigashiNarita.1775K.Weekday",
+	"t": "Keisei.HigashiNarita.1775K",
 	"r": "Keisei.HigashiNarita",
-	"n": "1715",
-	"y": "Keisei.Local",
+	"n": "1775K",
+	"y": "Keisei.LimitedExpress",
 	"d": "Outbound",
 	"os": [
-		"Keisei.Main.KeiseiUeno"
+		"Toei.Asakusa.NishiMagome"
 	],
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.1715.Weekday"
+		"Keisei.Main.1775K.Weekday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.1715.Weekday"
+		"Shibayama.Shibayama.1775K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
 		"d": "19:27"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "19:32"
+		"a": "19:33"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1705.Weekday",
-	"t": "Keisei.HigashiNarita.1705",
+	"id": "Keisei.HigashiNarita.1869K.Weekday",
+	"t": "Keisei.HigashiNarita.1869K",
 	"r": "Keisei.HigashiNarita",
-	"n": "1705",
-	"y": "Keisei.Local",
+	"n": "1869K",
+	"y": "Keisei.RapidLimitedExpress",
 	"d": "Outbound",
 	"os": [
-		"Keisei.Main.KeiseiUeno"
+		"Toei.Asakusa.NishiMagome"
 	],
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.1705.Weekday"
+		"Keisei.Main.1869K.Weekday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.1705.Weekday"
+		"Shibayama.Shibayama.1869K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "19:52"
+		"d": "19:56"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "19:58"
+		"a": "20:01"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1809.Weekday",
@@ -656,17 +721,17 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "20:31"
+		"d": "20:21"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "20:37"
+		"a": "20:27"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1971K.Weekday",
-	"t": "Keisei.HigashiNarita.1971K",
+	"id": "Keisei.HigashiNarita.1989K.Weekday",
+	"t": "Keisei.HigashiNarita.1989K",
 	"r": "Keisei.HigashiNarita",
-	"n": "1971K",
-	"y": "Keisei.CommuterLimitedExpress",
+	"n": "1989K",
+	"y": "Keisei.RapidLimitedExpress",
 	"d": "Outbound",
 	"os": [
 		"Keikyu.Airport.HanedaAirportTerminal1and2"
@@ -675,23 +740,23 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.1971K.Weekday"
+		"Keisei.Main.1989K.Weekday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.1971K.Weekday"
+		"Shibayama.Shibayama.1989K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "20:58"
+		"d": "20:54"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "21:03"
+		"a": "21:00"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1979K.Weekday",
-	"t": "Keisei.HigashiNarita.1979K",
+	"id": "Keisei.HigashiNarita.1967K.Weekday",
+	"t": "Keisei.HigashiNarita.1967K",
 	"r": "Keisei.HigashiNarita",
-	"n": "1979K",
+	"n": "1967K",
 	"y": "Keisei.LimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -701,88 +766,62 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.1979K.Weekday"
+		"Keisei.Main.1967K.Weekday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.1979K.Weekday"
+		"Shibayama.Shibayama.1967K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "21:22"
+		"d": "21:45"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "21:27"
+		"a": "21:51"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.2095K.Weekday",
-	"t": "Keisei.HigashiNarita.2095K",
+	"id": "Keisei.HigashiNarita.21A03.Weekday",
+	"t": "Keisei.HigashiNarita.21A03",
 	"r": "Keisei.HigashiNarita",
-	"n": "2095K",
-	"y": "Keisei.LimitedExpress",
+	"n": "21A03",
+	"y": "Keisei.Rapid",
 	"d": "Outbound",
 	"os": [
-		"Keikyu.Airport.HanedaAirportTerminal1and2"
+		"Keisei.Main.KeiseiUeno"
 	],
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.2095K.Weekday"
+		"Keisei.Main.21A03.Weekday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.2095K.Weekday"
+		"Shibayama.Shibayama.21A03.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "22:10"
+		"d": "22:34"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "22:16"
+		"a": "22:40"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.2085K.Weekday",
-	"t": "Keisei.HigashiNarita.2085K",
+	"id": "Keisei.HigashiNarita.21A05.Weekday",
+	"t": "Keisei.HigashiNarita.21A05",
 	"r": "Keisei.HigashiNarita",
-	"n": "2085K",
-	"y": "Keisei.LimitedExpress",
+	"n": "21A05",
+	"y": "Keisei.Rapid",
 	"d": "Outbound",
 	"os": [
-		"Keikyu.Airport.HanedaAirportTerminal1and2"
+		"Keisei.Main.KeiseiUeno"
 	],
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.2085K.Weekday"
+		"Keisei.Main.21A05.Weekday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.2085K.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "22:42"
-	}, {
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "22:48"
-	}]
-}, {
-	"id": "Keisei.HigashiNarita.2163K.Weekday",
-	"t": "Keisei.HigashiNarita.2163K",
-	"r": "Keisei.HigashiNarita",
-	"n": "2163K",
-	"y": "Keisei.CommuterLimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Keikyu.Airport.HanedaAirportTerminal1and2"
-	],
-	"ds": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"pt": [
-		"Keisei.Main.2163K.Weekday"
-	],
-	"nt": [
-		"Shibayama.Shibayama.2163K.Weekday"
+		"Shibayama.Shibayama.21A05.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -922,36 +961,10 @@
 		"a": "07:55"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.8A16.Weekday",
-	"t": "Keisei.HigashiNarita.8A16",
+	"id": "Keisei.HigashiNarita.8A18.Weekday",
+	"t": "Keisei.HigashiNarita.8A18",
 	"r": "Keisei.HigashiNarita",
-	"n": "8A16",
-	"y": "Keisei.Rapid",
-	"d": "Inbound",
-	"os": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"ds": [
-		"Keisei.Main.KeiseiUeno"
-	],
-	"pt": [
-		"Shibayama.Shibayama.8A16.Weekday"
-	],
-	"nt": [
-		"Keisei.Main.8A16.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "08:09"
-	}, {
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "08:15"
-	}]
-}, {
-	"id": "Keisei.HigashiNarita.846.Weekday",
-	"t": "Keisei.HigashiNarita.846",
-	"r": "Keisei.HigashiNarita",
-	"n": "846",
+	"n": "8A18",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -961,7 +974,30 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.846.Weekday"
+		"Shibayama.Shibayama.8A18.Weekday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"d": "08:07"
+	}, {
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"a": "08:13"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.840.Weekday",
+	"t": "Keisei.HigashiNarita.840",
+	"r": "Keisei.HigashiNarita",
+	"n": "840",
+	"y": "Keisei.Local",
+	"d": "Inbound",
+	"os": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"ds": [
+		"Keisei.HigashiNarita.KeiseiNarita"
+	],
+	"pt": [
+		"Shibayama.Shibayama.840.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -988,10 +1024,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "09:01"
+		"d": "08:55"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "09:07"
+		"a": "09:01"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.980.Weekday",
@@ -1011,10 +1047,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "09:41"
+		"d": "09:23"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "09:47"
+		"a": "09:29"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1080a.Weekday",
@@ -1034,10 +1070,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "10:20"
+		"d": "10:03"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "10:26"
+		"a": "10:09"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1080b.Weekday",
@@ -1057,10 +1093,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "11:00"
+		"d": "10:43"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "11:06"
+		"a": "10:49"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1180.Weekday",
@@ -1080,10 +1116,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "11:40"
+		"d": "11:23"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "11:46"
+		"a": "11:29"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1240a.Weekday",
@@ -1103,10 +1139,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "12:21"
+		"d": "12:03"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "12:27"
+		"a": "12:09"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1240b.Weekday",
@@ -1126,10 +1162,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "13:01"
+		"d": "12:43"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "13:07"
+		"a": "12:49"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1340.Weekday",
@@ -1149,10 +1185,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "13:41"
+		"d": "13:23"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "13:47"
+		"a": "13:29"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1440a.Weekday",
@@ -1172,10 +1208,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "14:21"
+		"d": "14:03"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "14:27"
+		"a": "14:09"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1440b.Weekday",
@@ -1195,10 +1231,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "15:01"
+		"d": "14:43"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "15:07"
+		"a": "14:49"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1540.Weekday",
@@ -1218,10 +1254,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "15:41"
+		"d": "15:23"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "15:47"
+		"a": "15:29"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1640a.Weekday",
@@ -1241,10 +1277,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "16:21"
+		"d": "16:03"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "16:27"
+		"a": "16:09"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1640b.Weekday",
@@ -1264,16 +1300,16 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "17:01"
+		"d": "16:43"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "17:07"
+		"a": "16:49"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1740.Weekday",
-	"t": "Keisei.HigashiNarita.1740",
+	"id": "Keisei.HigashiNarita.1740a.Weekday",
+	"t": "Keisei.HigashiNarita.1740a",
 	"r": "Keisei.HigashiNarita",
-	"n": "1740",
+	"n": "1740a",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -1283,20 +1319,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1740.Weekday"
+		"Shibayama.Shibayama.1740a.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "17:41"
+		"d": "17:23"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "17:47"
+		"a": "17:29"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1840.Weekday",
-	"t": "Keisei.HigashiNarita.1840",
+	"id": "Keisei.HigashiNarita.1740b.Weekday",
+	"t": "Keisei.HigashiNarita.1740b",
 	"r": "Keisei.HigashiNarita",
-	"n": "1840",
+	"n": "1740b",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -1306,43 +1342,69 @@
 		"Keisei.Main.KeiseiUeno"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1840.Weekday"
+		"Shibayama.Shibayama.1740b.Weekday"
 	],
 	"nt": [
-		"Keisei.Main.1840.Weekday"
+		"Keisei.Main.1740b.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "18:20"
+		"d": "17:59"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "18:26"
+		"a": "18:05"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.18A06.Weekday",
-	"t": "Keisei.HigashiNarita.18A06",
+	"id": "Keisei.HigashiNarita.1870K.Weekday",
+	"t": "Keisei.HigashiNarita.1870K",
 	"r": "Keisei.HigashiNarita",
-	"n": "18A06",
+	"n": "1870K",
 	"y": "Keisei.Rapid",
 	"d": "Inbound",
 	"os": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"ds": [
-		"Keisei.Main.KeiseiTakasago"
+		"Toei.Asakusa.NishiMagome"
 	],
 	"pt": [
-		"Shibayama.Shibayama.18A06.Weekday"
+		"Shibayama.Shibayama.1870K.Weekday"
 	],
 	"nt": [
-		"Keisei.Main.18A06.Weekday"
+		"Keisei.Main.1870K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "18:52"
+		"d": "18:22"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "18:58"
+		"a": "18:28"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.18A10.Weekday",
+	"t": "Keisei.HigashiNarita.18A10",
+	"r": "Keisei.HigashiNarita",
+	"n": "18A10",
+	"y": "Keisei.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"ds": [
+		"Keisei.Main.KeiseiUeno"
+	],
+	"pt": [
+		"Shibayama.Shibayama.18A10.Weekday"
+	],
+	"nt": [
+		"Keisei.Main.18A10.Weekday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"d": "18:44"
+	}, {
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"a": "18:50"
 	}]
 }, {
 	"id": "Keisei.HigashiNarita.1938.Weekday",
@@ -1371,10 +1433,10 @@
 		"a": "19:27"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1914.Weekday",
-	"t": "Keisei.HigashiNarita.1914",
+	"id": "Keisei.HigashiNarita.1974K.Weekday",
+	"t": "Keisei.HigashiNarita.1974K",
 	"r": "Keisei.HigashiNarita",
-	"n": "1914",
+	"n": "1974K",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -1384,7 +1446,7 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1914.Weekday"
+		"Shibayama.Shibayama.1974K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -1394,10 +1456,10 @@
 		"a": "19:54"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.2004.Weekday",
-	"t": "Keisei.HigashiNarita.2004",
+	"id": "Keisei.HigashiNarita.2068K.Weekday",
+	"t": "Keisei.HigashiNarita.2068K",
 	"r": "Keisei.HigashiNarita",
-	"n": "2004",
+	"n": "2068K",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -1407,10 +1469,10 @@
 		"Keisei.Main.Sogosando"
 	],
 	"pt": [
-		"Shibayama.Shibayama.2004.Weekday"
+		"Shibayama.Shibayama.2068K.Weekday"
 	],
 	"nt": [
-		"Keisei.Main.2004.Weekday"
+		"Keisei.Main.2068K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -1437,16 +1499,16 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "20:49"
+		"d": "20:50"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "20:54"
+		"a": "20:56"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.2170K.Weekday",
-	"t": "Keisei.HigashiNarita.2170K",
+	"id": "Keisei.HigashiNarita.2188K.Weekday",
+	"t": "Keisei.HigashiNarita.2188K",
 	"r": "Keisei.HigashiNarita",
-	"n": "2170K",
+	"n": "2188K",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -1456,20 +1518,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.2170K.Weekday"
+		"Shibayama.Shibayama.2188K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "21:17"
+		"d": "21:34"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "21:23"
+		"a": "21:40"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.2178K.Weekday",
-	"t": "Keisei.HigashiNarita.2178K",
+	"id": "Keisei.HigashiNarita.2266K.Weekday",
+	"t": "Keisei.HigashiNarita.2266K",
 	"r": "Keisei.HigashiNarita",
-	"n": "2178K",
+	"n": "2266K",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -1479,20 +1541,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.2178K.Weekday"
+		"Shibayama.Shibayama.2266K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "21:49"
+		"d": "22:14"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "21:55"
+		"a": "22:20"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.2294K.Weekday",
-	"t": "Keisei.HigashiNarita.2294K",
+	"id": "Keisei.HigashiNarita.22A02.Weekday",
+	"t": "Keisei.HigashiNarita.22A02",
 	"r": "Keisei.HigashiNarita",
-	"n": "2294K",
+	"n": "22A02",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -1502,20 +1564,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.2294K.Weekday"
+		"Shibayama.Shibayama.22A02.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "22:30"
+		"d": "22:54"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "22:36"
+		"a": "23:00"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.2384K.Weekday",
-	"t": "Keisei.HigashiNarita.2384K",
+	"id": "Keisei.HigashiNarita.23A04.Weekday",
+	"t": "Keisei.HigashiNarita.23A04",
 	"r": "Keisei.HigashiNarita",
-	"n": "2384K",
+	"n": "23A04",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -1525,30 +1587,7 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.2384K.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "23:03"
-	}, {
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "23:09"
-	}]
-}, {
-	"id": "Keisei.HigashiNarita.2362K.Weekday",
-	"t": "Keisei.HigashiNarita.2362K",
-	"r": "Keisei.HigashiNarita",
-	"n": "2362K",
-	"y": "Keisei.Local",
-	"d": "Inbound",
-	"os": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"ds": [
-		"Keisei.HigashiNarita.KeiseiNarita"
-	],
-	"pt": [
-		"Shibayama.Shibayama.2362K.Weekday"
+		"Shibayama.Shibayama.23A04.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -1558,10 +1597,10 @@
 		"a": "23:33"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.529.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.529",
+	"id": "Keisei.HigashiNarita.515.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.515",
 	"r": "Keisei.HigashiNarita",
-	"n": "529",
+	"n": "515",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1571,10 +1610,10 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.529.SaturdayHoliday"
+		"Keisei.Main.515.SaturdayHoliday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.529.SaturdayHoliday"
+		"Shibayama.Shibayama.515.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -1584,10 +1623,10 @@
 		"a": "05:57"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.6A07.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.6A07",
+	"id": "Keisei.HigashiNarita.6A05.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.6A05",
 	"r": "Keisei.HigashiNarita",
-	"n": "6A07",
+	"n": "6A05",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1597,10 +1636,10 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.6A07.SaturdayHoliday"
+		"Keisei.Main.6A05.SaturdayHoliday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.6A07.SaturdayHoliday"
+		"Shibayama.Shibayama.6A05.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -1610,10 +1649,10 @@
 		"a": "06:23"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.6A23.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.6A23",
+	"id": "Keisei.HigashiNarita.6A29.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.6A29",
 	"r": "Keisei.HigashiNarita",
-	"n": "6A23",
+	"n": "6A29",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1623,10 +1662,10 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.6A23.SaturdayHoliday"
+		"Keisei.Main.6A29.SaturdayHoliday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.6A23.SaturdayHoliday"
+		"Shibayama.Shibayama.6A29.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -1636,10 +1675,10 @@
 		"a": "06:38"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.6A11.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.6A11",
+	"id": "Keisei.HigashiNarita.6A27.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.6A27",
 	"r": "Keisei.HigashiNarita",
-	"n": "6A11",
+	"n": "6A27",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1649,10 +1688,10 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.6A11.SaturdayHoliday"
+		"Keisei.Main.6A27.SaturdayHoliday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.6A11.SaturdayHoliday"
+		"Shibayama.Shibayama.6A27.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -1662,10 +1701,10 @@
 		"a": "07:05"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.7A19.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.7A19",
+	"id": "Keisei.HigashiNarita.7A09.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.7A09",
 	"r": "Keisei.HigashiNarita",
-	"n": "7A19",
+	"n": "7A09",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1675,10 +1714,10 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.7A19.SaturdayHoliday"
+		"Keisei.Main.7A09.SaturdayHoliday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.7A19.SaturdayHoliday"
+		"Shibayama.Shibayama.7A09.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -1688,10 +1727,10 @@
 		"a": "07:39"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.617.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.617",
+	"id": "Keisei.HigashiNarita.619.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.619",
 	"r": "Keisei.HigashiNarita",
-	"n": "617",
+	"n": "619",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1701,10 +1740,10 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.617.SaturdayHoliday"
+		"Keisei.Main.619.SaturdayHoliday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.617.SaturdayHoliday"
+		"Shibayama.Shibayama.619.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -1714,10 +1753,10 @@
 		"a": "08:11"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.747.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.747",
+	"id": "Keisei.HigashiNarita.749.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.749",
 	"r": "Keisei.HigashiNarita",
-	"n": "747",
+	"n": "749",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1727,23 +1766,23 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.747.SaturdayHoliday"
+		"Keisei.Main.749.SaturdayHoliday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.747.SaturdayHoliday"
+		"Shibayama.Shibayama.749.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "08:43"
+		"d": "08:42"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
 		"a": "08:48"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.947a.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.947a",
+	"id": "Keisei.HigashiNarita.949a.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.949a",
 	"r": "Keisei.HigashiNarita",
-	"n": "947a",
+	"n": "949a",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1752,21 +1791,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.949a.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.947a.SaturdayHoliday"
+		"Shibayama.Shibayama.949a.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "09:12"
+		"d": "09:11"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
 		"a": "09:17"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.947b.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.947b",
+	"id": "Keisei.HigashiNarita.949b.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.949b",
 	"r": "Keisei.HigashiNarita",
-	"n": "947b",
+	"n": "949b",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1775,21 +1817,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.949b.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.947b.SaturdayHoliday"
+		"Shibayama.Shibayama.949b.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "09:52"
+		"d": "09:40"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "09:57"
+		"a": "09:46"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1047.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1047",
+	"id": "Keisei.HigashiNarita.1049a.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1049a",
 	"r": "Keisei.HigashiNarita",
-	"n": "1047",
+	"n": "1049a",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1798,21 +1843,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1049a.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1047.SaturdayHoliday"
+		"Shibayama.Shibayama.1049a.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "10:32"
+		"d": "10:16"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "10:37"
+		"a": "10:22"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1147a.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1147a",
+	"id": "Keisei.HigashiNarita.1049b.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1049b",
 	"r": "Keisei.HigashiNarita",
-	"n": "1147a",
+	"n": "1049b",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1821,21 +1869,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1049b.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1147a.SaturdayHoliday"
+		"Shibayama.Shibayama.1049b.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "11:12"
+		"d": "10:54"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "11:17"
+		"a": "11:00"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1147b.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1147b",
+	"id": "Keisei.HigashiNarita.1149.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1149",
 	"r": "Keisei.HigashiNarita",
-	"n": "1147b",
+	"n": "1149",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1844,21 +1895,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1149.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1147b.SaturdayHoliday"
+		"Shibayama.Shibayama.1149.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "11:52"
+		"d": "11:34"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "11:57"
+		"a": "11:40"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1247.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1247",
+	"id": "Keisei.HigashiNarita.1249a.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1249a",
 	"r": "Keisei.HigashiNarita",
-	"n": "1247",
+	"n": "1249a",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1867,21 +1921,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1249a.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1247.SaturdayHoliday"
+		"Shibayama.Shibayama.1249a.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "12:32"
+		"d": "12:14"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "12:37"
+		"a": "12:20"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1347a.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1347a",
+	"id": "Keisei.HigashiNarita.1249b.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1249b",
 	"r": "Keisei.HigashiNarita",
-	"n": "1347a",
+	"n": "1249b",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1890,21 +1947,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1249b.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1347a.SaturdayHoliday"
+		"Shibayama.Shibayama.1249b.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "13:12"
+		"d": "12:54"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "13:17"
+		"a": "13:00"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1347b.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1347b",
+	"id": "Keisei.HigashiNarita.1349.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1349",
 	"r": "Keisei.HigashiNarita",
-	"n": "1347b",
+	"n": "1349",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1913,21 +1973,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1349.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1347b.SaturdayHoliday"
+		"Shibayama.Shibayama.1349.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "13:52"
+		"d": "13:34"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "13:57"
+		"a": "13:40"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1447.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1447",
+	"id": "Keisei.HigashiNarita.1449a.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1449a",
 	"r": "Keisei.HigashiNarita",
-	"n": "1447",
+	"n": "1449a",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1936,21 +1999,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1449a.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1447.SaturdayHoliday"
+		"Shibayama.Shibayama.1449a.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "14:32"
+		"d": "14:14"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "14:37"
+		"a": "14:20"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1547a.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1547a",
+	"id": "Keisei.HigashiNarita.1449b.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1449b",
 	"r": "Keisei.HigashiNarita",
-	"n": "1547a",
+	"n": "1449b",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1959,21 +2025,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1449b.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1547a.SaturdayHoliday"
+		"Shibayama.Shibayama.1449b.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "15:12"
+		"d": "14:54"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "15:17"
+		"a": "15:00"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1547b.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1547b",
+	"id": "Keisei.HigashiNarita.1549.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1549",
 	"r": "Keisei.HigashiNarita",
-	"n": "1547b",
+	"n": "1549",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1982,21 +2051,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1549.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1547b.SaturdayHoliday"
+		"Shibayama.Shibayama.1549.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "15:52"
+		"d": "15:34"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "15:57"
+		"a": "15:40"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1647.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1647",
+	"id": "Keisei.HigashiNarita.1649a.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1649a",
 	"r": "Keisei.HigashiNarita",
-	"n": "1647",
+	"n": "1649a",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -2005,21 +2077,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1649a.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1647.SaturdayHoliday"
+		"Shibayama.Shibayama.1649a.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "16:32"
+		"d": "16:14"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "16:37"
+		"a": "16:20"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1747a.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1747a",
+	"id": "Keisei.HigashiNarita.1649b.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1649b",
 	"r": "Keisei.HigashiNarita",
-	"n": "1747a",
+	"n": "1649b",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -2028,21 +2103,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1649b.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1747a.SaturdayHoliday"
+		"Shibayama.Shibayama.1649b.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "17:12"
+		"d": "16:54"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "17:17"
+		"a": "17:00"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1747b.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1747b",
+	"id": "Keisei.HigashiNarita.1749.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1749",
 	"r": "Keisei.HigashiNarita",
-	"n": "1747b",
+	"n": "1749",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -2051,21 +2129,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1749.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1747b.SaturdayHoliday"
+		"Shibayama.Shibayama.1749.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "17:52"
+		"d": "17:34"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "17:57"
+		"a": "17:40"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1847.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1847",
+	"id": "Keisei.HigashiNarita.1849.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1849",
 	"r": "Keisei.HigashiNarita",
-	"n": "1847",
+	"n": "1849",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -2074,21 +2155,24 @@
 	"ds": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
+	"pt": [
+		"Keisei.Main.1849.SaturdayHoliday"
+	],
 	"nt": [
-		"Shibayama.Shibayama.1847.SaturdayHoliday"
+		"Shibayama.Shibayama.1849.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "18:32"
+		"d": "18:14"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "18:37"
+		"a": "18:20"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.17A01.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.17A01",
+	"id": "Keisei.HigashiNarita.17A09.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.17A09",
 	"r": "Keisei.HigashiNarita",
-	"n": "17A01",
+	"n": "17A09",
 	"y": "Keisei.RapidLimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -2098,10 +2182,10 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.17A01.SaturdayHoliday"
+		"Keisei.Main.17A09.SaturdayHoliday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.17A01.SaturdayHoliday"
+		"Shibayama.Shibayama.17A09.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -2111,10 +2195,10 @@
 		"a": "19:05"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.18A05.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.18A05",
+	"id": "Keisei.HigashiNarita.18A03.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.18A03",
 	"r": "Keisei.HigashiNarita",
-	"n": "18A05",
+	"n": "18A03",
 	"y": "Keisei.RapidLimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -2124,10 +2208,10 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.18A05.SaturdayHoliday"
+		"Keisei.Main.18A03.SaturdayHoliday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.18A05.SaturdayHoliday"
+		"Shibayama.Shibayama.18A03.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -2137,10 +2221,10 @@
 		"a": "19:45"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.19A19.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.19A19",
+	"id": "Keisei.HigashiNarita.19A25.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.19A25",
 	"r": "Keisei.HigashiNarita",
-	"n": "19A19",
+	"n": "19A25",
 	"y": "Keisei.RapidLimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -2150,10 +2234,10 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.19A19.SaturdayHoliday"
+		"Keisei.Main.19A25.SaturdayHoliday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.19A19.SaturdayHoliday"
+		"Shibayama.Shibayama.19A25.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -2163,10 +2247,10 @@
 		"a": "20:24"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1907.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1907",
+	"id": "Keisei.HigashiNarita.1909.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1909",
 	"r": "Keisei.HigashiNarita",
-	"n": "1907",
+	"n": "1909",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -2176,10 +2260,10 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"pt": [
-		"Keisei.Main.1907.SaturdayHoliday"
+		"Keisei.Main.1909.SaturdayHoliday"
 	],
 	"nt": [
-		"Shibayama.Shibayama.1907.SaturdayHoliday"
+		"Shibayama.Shibayama.1909.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -2189,37 +2273,11 @@
 		"a": "20:57"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.20A25.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.20A25",
-	"r": "Keisei.HigashiNarita",
-	"n": "20A25",
-	"y": "Keisei.Rapid",
-	"d": "Outbound",
-	"os": [
-		"Keisei.Main.KeiseiUeno"
-	],
-	"ds": [
-		"Shibayama.Shibayama.ShibayamaChiyoda"
-	],
-	"pt": [
-		"Keisei.Main.20A25.SaturdayHoliday"
-	],
-	"nt": [
-		"Shibayama.Shibayama.20A25.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "21:27"
-	}, {
-		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "21:32"
-	}]
-}, {
 	"id": "Keisei.HigashiNarita.20A01.SaturdayHoliday",
 	"t": "Keisei.HigashiNarita.20A01",
 	"r": "Keisei.HigashiNarita",
 	"n": "20A01",
-	"y": "Keisei.RapidLimitedExpress",
+	"y": "Keisei.Rapid",
 	"d": "Outbound",
 	"os": [
 		"Keisei.Main.KeiseiUeno"
@@ -2232,6 +2290,32 @@
 	],
 	"nt": [
 		"Shibayama.Shibayama.20A01.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Keisei.HigashiNarita.KeiseiNarita",
+		"d": "21:27"
+	}, {
+		"s": "Keisei.HigashiNarita.HigashiNarita",
+		"a": "21:32"
+	}]
+}, {
+	"id": "Keisei.HigashiNarita.20A09.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.20A09",
+	"r": "Keisei.HigashiNarita",
+	"n": "20A09",
+	"y": "Keisei.RapidLimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Keisei.Main.KeiseiUeno"
+	],
+	"ds": [
+		"Shibayama.Shibayama.ShibayamaChiyoda"
+	],
+	"pt": [
+		"Keisei.Main.20A09.SaturdayHoliday"
+	],
+	"nt": [
+		"Shibayama.Shibayama.20A09.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
@@ -2261,16 +2345,16 @@
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"d": "22:43"
+		"d": "22:41"
 	}, {
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"a": "22:49"
+		"a": "22:46"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.628.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.628",
+	"id": "Keisei.HigashiNarita.614.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.614",
 	"r": "Keisei.HigashiNarita",
-	"n": "628",
+	"n": "614",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2280,10 +2364,10 @@
 		"Keisei.Main.KeiseiUeno"
 	],
 	"pt": [
-		"Shibayama.Shibayama.628.SaturdayHoliday"
+		"Shibayama.Shibayama.614.SaturdayHoliday"
 	],
 	"nt": [
-		"Keisei.Main.628.SaturdayHoliday"
+		"Keisei.Main.614.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -2293,10 +2377,10 @@
 		"a": "06:15"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.6A06.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.6A06",
+	"id": "Keisei.HigashiNarita.6A04.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.6A04",
 	"r": "Keisei.HigashiNarita",
-	"n": "6A06",
+	"n": "6A04",
 	"y": "Keisei.RapidLimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -2306,10 +2390,10 @@
 		"Keisei.Main.KeiseiUeno"
 	],
 	"pt": [
-		"Shibayama.Shibayama.6A06.SaturdayHoliday"
+		"Shibayama.Shibayama.6A04.SaturdayHoliday"
 	],
 	"nt": [
-		"Keisei.Main.6A06.SaturdayHoliday"
+		"Keisei.Main.6A04.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -2319,10 +2403,10 @@
 		"a": "06:45"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.6A22.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.6A22",
+	"id": "Keisei.HigashiNarita.6A28.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.6A28",
 	"r": "Keisei.HigashiNarita",
-	"n": "6A22",
+	"n": "6A28",
 	"y": "Keisei.RapidLimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -2332,10 +2416,10 @@
 		"Keisei.Main.KeiseiUeno"
 	],
 	"pt": [
-		"Shibayama.Shibayama.6A22.SaturdayHoliday"
+		"Shibayama.Shibayama.6A28.SaturdayHoliday"
 	],
 	"nt": [
-		"Keisei.Main.6A22.SaturdayHoliday"
+		"Keisei.Main.6A28.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -2345,10 +2429,10 @@
 		"a": "07:03"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.7A10.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.7A10",
+	"id": "Keisei.HigashiNarita.7A26.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.7A26",
 	"r": "Keisei.HigashiNarita",
-	"n": "7A10",
+	"n": "7A26",
 	"y": "Keisei.RapidLimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -2358,10 +2442,10 @@
 		"Keisei.Main.KeiseiUeno"
 	],
 	"pt": [
-		"Shibayama.Shibayama.7A10.SaturdayHoliday"
+		"Shibayama.Shibayama.7A26.SaturdayHoliday"
 	],
 	"nt": [
-		"Keisei.Main.7A10.SaturdayHoliday"
+		"Keisei.Main.7A26.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -2371,10 +2455,10 @@
 		"a": "07:25"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.7A18.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.7A18",
+	"id": "Keisei.HigashiNarita.7A08.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.7A08",
 	"r": "Keisei.HigashiNarita",
-	"n": "7A18",
+	"n": "7A08",
 	"y": "Keisei.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -2384,10 +2468,10 @@
 		"Keisei.Main.KeiseiUeno"
 	],
 	"pt": [
-		"Shibayama.Shibayama.7A18.SaturdayHoliday"
+		"Shibayama.Shibayama.7A08.SaturdayHoliday"
 	],
 	"nt": [
-		"Keisei.Main.7A18.SaturdayHoliday"
+		"Keisei.Main.7A08.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -2397,10 +2481,10 @@
 		"a": "08:06"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.816.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.816",
+	"id": "Keisei.HigashiNarita.818.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.818",
 	"r": "Keisei.HigashiNarita",
-	"n": "816",
+	"n": "818",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2410,10 +2494,10 @@
 		"Keisei.Main.KeiseiUeno"
 	],
 	"pt": [
-		"Shibayama.Shibayama.816.SaturdayHoliday"
+		"Shibayama.Shibayama.818.SaturdayHoliday"
 	],
 	"nt": [
-		"Keisei.Main.816.SaturdayHoliday"
+		"Keisei.Main.818.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -2423,10 +2507,10 @@
 		"a": "08:41"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.846.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.846",
+	"id": "Keisei.HigashiNarita.848.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.848",
 	"r": "Keisei.HigashiNarita",
-	"n": "846",
+	"n": "848",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2436,20 +2520,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.846.SaturdayHoliday"
+		"Shibayama.Shibayama.848.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "09:01"
+		"d": "09:00"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "09:07"
+		"a": "09:06"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.946.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.946",
+	"id": "Keisei.HigashiNarita.948.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.948",
 	"r": "Keisei.HigashiNarita",
-	"n": "946",
+	"n": "948",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2459,20 +2543,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.946.SaturdayHoliday"
+		"Shibayama.Shibayama.948.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "09:41"
+		"d": "09:29"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "09:47"
+		"a": "09:35"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1046a.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1046a",
+	"id": "Keisei.HigashiNarita.1048a.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1048a",
 	"r": "Keisei.HigashiNarita",
-	"n": "1046a",
+	"n": "1048a",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2482,20 +2566,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1046a.SaturdayHoliday"
+		"Shibayama.Shibayama.1048a.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "10:21"
+		"d": "10:05"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "10:27"
+		"a": "10:11"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1046b.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1046b",
+	"id": "Keisei.HigashiNarita.1048b.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1048b",
 	"r": "Keisei.HigashiNarita",
-	"n": "1046b",
+	"n": "1048b",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2505,20 +2589,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1046b.SaturdayHoliday"
+		"Shibayama.Shibayama.1048b.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "11:01"
+		"d": "10:43"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "11:07"
+		"a": "10:49"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1146.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1146",
+	"id": "Keisei.HigashiNarita.1148.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1148",
 	"r": "Keisei.HigashiNarita",
-	"n": "1146",
+	"n": "1148",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2528,20 +2612,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1146.SaturdayHoliday"
+		"Shibayama.Shibayama.1148.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "11:41"
+		"d": "11:23"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "11:47"
+		"a": "11:29"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1246a.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1246a",
+	"id": "Keisei.HigashiNarita.1248a.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1248a",
 	"r": "Keisei.HigashiNarita",
-	"n": "1246a",
+	"n": "1248a",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2551,20 +2635,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1246a.SaturdayHoliday"
+		"Shibayama.Shibayama.1248a.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "12:21"
+		"d": "12:03"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "12:27"
+		"a": "12:09"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1246b.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1246b",
+	"id": "Keisei.HigashiNarita.1248b.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1248b",
 	"r": "Keisei.HigashiNarita",
-	"n": "1246b",
+	"n": "1248b",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2574,20 +2658,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1246b.SaturdayHoliday"
+		"Shibayama.Shibayama.1248b.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "13:01"
+		"d": "12:43"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "13:07"
+		"a": "12:49"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1346.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1346",
+	"id": "Keisei.HigashiNarita.1348.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1348",
 	"r": "Keisei.HigashiNarita",
-	"n": "1346",
+	"n": "1348",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2597,20 +2681,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1346.SaturdayHoliday"
+		"Shibayama.Shibayama.1348.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "13:41"
+		"d": "13:23"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "13:47"
+		"a": "13:29"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1446a.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1446a",
+	"id": "Keisei.HigashiNarita.1448a.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1448a",
 	"r": "Keisei.HigashiNarita",
-	"n": "1446a",
+	"n": "1448a",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2620,20 +2704,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1446a.SaturdayHoliday"
+		"Shibayama.Shibayama.1448a.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "14:21"
+		"d": "14:03"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "14:27"
+		"a": "14:09"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1446b.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1446b",
+	"id": "Keisei.HigashiNarita.1448b.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1448b",
 	"r": "Keisei.HigashiNarita",
-	"n": "1446b",
+	"n": "1448b",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2643,20 +2727,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1446b.SaturdayHoliday"
+		"Shibayama.Shibayama.1448b.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "15:01"
+		"d": "14:43"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "15:07"
+		"a": "14:49"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1546.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1546",
+	"id": "Keisei.HigashiNarita.1548.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1548",
 	"r": "Keisei.HigashiNarita",
-	"n": "1546",
+	"n": "1548",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2666,20 +2750,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1546.SaturdayHoliday"
+		"Shibayama.Shibayama.1548.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "15:41"
+		"d": "15:23"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "15:47"
+		"a": "15:29"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1646a.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1646a",
+	"id": "Keisei.HigashiNarita.1648a.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1648a",
 	"r": "Keisei.HigashiNarita",
-	"n": "1646a",
+	"n": "1648a",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2689,20 +2773,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1646a.SaturdayHoliday"
+		"Shibayama.Shibayama.1648a.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "16:21"
+		"d": "16:03"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "16:27"
+		"a": "16:09"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1646b.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1646b",
+	"id": "Keisei.HigashiNarita.1648b.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1648b",
 	"r": "Keisei.HigashiNarita",
-	"n": "1646b",
+	"n": "1648b",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2712,20 +2796,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1646b.SaturdayHoliday"
+		"Shibayama.Shibayama.1648b.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "17:01"
+		"d": "16:43"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "17:07"
+		"a": "16:49"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1746.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1746",
+	"id": "Keisei.HigashiNarita.1748.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1748",
 	"r": "Keisei.HigashiNarita",
-	"n": "1746",
+	"n": "1748",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2735,20 +2819,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1746.SaturdayHoliday"
+		"Shibayama.Shibayama.1748.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "17:41"
+		"d": "17:23"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "17:47"
+		"a": "17:29"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1846a.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1846a",
+	"id": "Keisei.HigashiNarita.1848a.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1848a",
 	"r": "Keisei.HigashiNarita",
-	"n": "1846a",
+	"n": "1848a",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2758,20 +2842,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1846a.SaturdayHoliday"
+		"Shibayama.Shibayama.1848a.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "18:21"
+		"d": "18:03"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "18:27"
+		"a": "18:09"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.1846b.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.1846b",
+	"id": "Keisei.HigashiNarita.1848b.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.1848b",
 	"r": "Keisei.HigashiNarita",
-	"n": "1846b",
+	"n": "1848b",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2781,20 +2865,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.1846b.SaturdayHoliday"
+		"Shibayama.Shibayama.1848b.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "19:01"
+		"d": "18:43"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "19:07"
+		"a": "18:49"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.19A00.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.19A00",
+	"id": "Keisei.HigashiNarita.19A08.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.19A08",
 	"r": "Keisei.HigashiNarita",
-	"n": "19A00",
+	"n": "19A08",
 	"y": "Keisei.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -2804,10 +2888,10 @@
 		"Keisei.Main.KeiseiUeno"
 	],
 	"pt": [
-		"Shibayama.Shibayama.19A00.SaturdayHoliday"
+		"Shibayama.Shibayama.19A08.SaturdayHoliday"
 	],
 	"nt": [
-		"Keisei.Main.19A00.SaturdayHoliday"
+		"Keisei.Main.19A08.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -2817,11 +2901,11 @@
 		"a": "19:37"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.20A04.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.20A04",
+	"id": "Keisei.HigashiNarita.20A02.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.20A02",
 	"r": "Keisei.HigashiNarita",
-	"n": "20A04",
-	"y": "Keisei.Rapid",
+	"n": "20A02",
+	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
 		"Shibayama.Shibayama.ShibayamaChiyoda"
@@ -2830,7 +2914,7 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.20A04.SaturdayHoliday"
+		"Shibayama.Shibayama.20A02.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -2840,10 +2924,10 @@
 		"a": "20:22"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.20A18.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.20A18",
+	"id": "Keisei.HigashiNarita.20A24.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.20A24",
 	"r": "Keisei.HigashiNarita",
-	"n": "20A18",
+	"n": "20A24",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2853,10 +2937,10 @@
 		"Keisei.Main.Sogosando"
 	],
 	"pt": [
-		"Shibayama.Shibayama.20A18.SaturdayHoliday"
+		"Shibayama.Shibayama.20A24.SaturdayHoliday"
 	],
 	"nt": [
-		"Keisei.Main.20A18.SaturdayHoliday"
+		"Keisei.Main.20A24.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -2866,10 +2950,10 @@
 		"a": "21:02"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.2106.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.2106",
+	"id": "Keisei.HigashiNarita.2108.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.2108",
 	"r": "Keisei.HigashiNarita",
-	"n": "2106",
+	"n": "2108",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2879,10 +2963,10 @@
 		"Keisei.Main.KeiseiUeno"
 	],
 	"pt": [
-		"Shibayama.Shibayama.2106.SaturdayHoliday"
+		"Shibayama.Shibayama.2108.SaturdayHoliday"
 	],
 	"nt": [
-		"Keisei.Main.2106.SaturdayHoliday"
+		"Keisei.Main.2108.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -2892,10 +2976,10 @@
 		"a": "21:31"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.21A24.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.21A24",
+	"id": "Keisei.HigashiNarita.21A00.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.21A00",
 	"r": "Keisei.HigashiNarita",
-	"n": "21A24",
+	"n": "21A00",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2905,20 +2989,20 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.21A24.SaturdayHoliday"
+		"Shibayama.Shibayama.21A00.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "21:54"
+		"d": "21:57"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "22:00"
+		"a": "22:03"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.22A00.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.22A00",
+	"id": "Keisei.HigashiNarita.22A08.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.22A08",
 	"r": "Keisei.HigashiNarita",
-	"n": "22A00",
+	"n": "22A08",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2928,7 +3012,7 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.22A00.SaturdayHoliday"
+		"Shibayama.Shibayama.22A08.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
@@ -2938,10 +3022,10 @@
 		"a": "22:34"
 	}]
 }, {
-	"id": "Keisei.HigashiNarita.23A20.SaturdayHoliday",
-	"t": "Keisei.HigashiNarita.23A20",
+	"id": "Keisei.HigashiNarita.22A20.SaturdayHoliday",
+	"t": "Keisei.HigashiNarita.22A20",
 	"r": "Keisei.HigashiNarita",
-	"n": "23A20",
+	"n": "22A20",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2951,13 +3035,13 @@
 		"Keisei.HigashiNarita.KeiseiNarita"
 	],
 	"pt": [
-		"Shibayama.Shibayama.23A20.SaturdayHoliday"
+		"Shibayama.Shibayama.22A20.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.HigashiNarita.HigashiNarita",
-		"d": "23:03"
+		"d": "22:59"
 	}, {
 		"s": "Keisei.HigashiNarita.KeiseiNarita",
-		"a": "23:09"
+		"a": "23:05"
 	}]
 }]

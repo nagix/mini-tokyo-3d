@@ -17,7 +17,7 @@ import nearestPointProps from '../turf/nearest-point-props';
 import {includes, valueOrDefault} from '../helpers';
 import {loadJSON, saveJSON} from './helpers';
 
-const HIDDEN_STATIONS = /^(JR-East\.(YamanoteFreight|Musashino\w+Branch|Joban\.(Ueno|Nippori|Kashiwa))|TokyoMetro\.(Hibiya\.ShinKoshigaya|Chiyoda\.(Machida|ShinYurigaoka|SeijogakuenMae))|Keio\.Sagamihara\.(Shinjuku|Meidaimae)|Keikyu\.Airport\.Shinagawa|Tobu\.(Nikko\.Kasukabe|JRTobuConnection)|Seibu\.(SeibuChichibu\.(Hanno|Kagemori)|SeibuChichibuBranch|S-))/;
+const HIDDEN_STATIONS = /^(JR-East\.(YamanoteFreight|Musashino\w+Branch|Joban\.(Ueno|Nippori|Kashiwa))|TokyoMetro\.(Hibiya\.ShinKoshigaya|Chiyoda\.(Machida|ShinYurigaoka|SeijogakuenMae))|Keio\.Sagamihara\.(Shinjuku|Meidaimae)|Keikyu\.(Airport\.Shinagawa|Kurihama\.YokosukaChuo)|Tobu\.(Nikko\.Kasukabe|JRTobuConnection)|Seibu\.(SeibuChichibu\.(Hanno|Kagemori)|SeibuChichibuBranch|S-))/;
 
 function setAltitude(geojson, altitude) {
     coordEach(geojson, coord => {

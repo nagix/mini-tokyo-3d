@@ -31804,6 +31804,21 @@
 	}, {
 		"id": "Keikyu.Kurihama",
 		"sublines": [{
+			"type": "sub",
+			"start": {
+				"railway": "Keikyu.Main",
+				"offset": 0
+			},
+			"coords": [
+				[139.6688619, 35.2791532],
+				[139.6858122, 35.2637913]
+			],
+			"end": {
+				"railway": "Keikyu.Main",
+				"offset": 0
+			},
+			"opacity": 0
+		}, {
 			"type": "main",
 			"coords": [
 				[139.6858815, 35.2637568],
