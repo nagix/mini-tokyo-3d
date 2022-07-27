@@ -1,12 +1,12 @@
 [{
-	"id": "JR-East.ChuoRapid.2622M.Weekday",
-	"t": "JR-East.ChuoRapid.2622M",
+	"id": "JR-East.MusashinoKunitachiBranch.2622M.Weekday",
+	"t": "JR-East.MusashinoKunitachiBranch.2622M",
 	"r": "JR-East.MusashinoKunitachiBranch",
 	"n": "2622M",
 	"y": "JR-East.Local",
 	"d": "Outbound",
 	"os": [
-		"JR-East.ShonanShinjuku.Omiya"
+		"JR-East.MusashinoOmiyaBranch.Omiya"
 	],
 	"ds": [
 		"JR-East.MusashinoKunitachiBranch.Hachioji"
@@ -45,60 +45,14 @@
 		"zh-Hant": "武藏野"
 	}]
 }, {
-	"id": "JR-East.ChuoRapid.2625M.Weekday",
-	"t": "JR-East.ChuoRapid.2625M",
-	"r": "JR-East.MusashinoKunitachiBranch",
-	"n": "2625M",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.MusashinoKunitachiBranch.Hachioji"
-	],
-	"ds": [
-		"JR-East.ShonanShinjuku.Omiya"
-	],
-	"nt": [
-		"JR-East.Musashino.2625M.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
-		"d": "16:55"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
-		"a": "16:59",
-		"d": "17:00"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Hino",
-		"a": "17:02",
-		"d": "17:03"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
-		"a": "17:06",
-		"d": "17:06"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Kunitachi",
-		"a": "17:09",
-		"d": "17:09"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.ShinKodaira",
-		"a": "17:15"
-	}],
-	"nm": [{
-		"ja": "むさしの号",
-		"en": "Musashino",
-		"ko": "무사시노",
-		"zh-Hans": "武藏野",
-		"zh-Hant": "武藏野"
-	}]
-}, {
-	"id": "JR-East.ChuoRapid.2626M.Weekday",
-	"t": "JR-East.ChuoRapid.2626M",
+	"id": "JR-East.MusashinoKunitachiBranch.2626M.Weekday",
+	"t": "JR-East.MusashinoKunitachiBranch.2626M",
 	"r": "JR-East.MusashinoKunitachiBranch",
 	"n": "2626M",
 	"y": "JR-East.Local",
 	"d": "Outbound",
 	"os": [
-		"JR-East.ShonanShinjuku.Omiya"
+		"JR-East.MusashinoOmiyaBranch.Omiya"
 	],
 	"ds": [
 		"JR-East.MusashinoKunitachiBranch.Hachioji"
@@ -115,15 +69,15 @@
 		"d": "19:31"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
-		"a": "19:35",
-		"d": "19:36"
+		"a": "19:34",
+		"d": "19:35"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Hino",
-		"a": "19:39",
+		"a": "19:38",
 		"d": "19:39"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
-		"a": "19:42",
+		"a": "19:41",
 		"d": "19:42"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
@@ -137,60 +91,14 @@
 		"zh-Hant": "武藏野"
 	}]
 }, {
-	"id": "JR-East.ChuoRapid.2627M.Weekday",
-	"t": "JR-East.ChuoRapid.2627M",
-	"r": "JR-East.MusashinoKunitachiBranch",
-	"n": "2627M",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.MusashinoKunitachiBranch.Hachioji"
-	],
-	"ds": [
-		"JR-East.ShonanShinjuku.Omiya"
-	],
-	"nt": [
-		"JR-East.Musashino.2627M.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
-		"d": "18:44"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
-		"a": "18:48",
-		"d": "18:48"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Hino",
-		"a": "18:51",
-		"d": "18:51"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
-		"a": "18:54",
-		"d": "18:55"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Kunitachi",
-		"a": "18:59",
-		"d": "18:59"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.ShinKodaira",
-		"a": "19:11"
-	}],
-	"nm": [{
-		"ja": "むさしの号",
-		"en": "Musashino",
-		"ko": "무사시노",
-		"zh-Hans": "武藏野",
-		"zh-Hant": "武藏野"
-	}]
-}, {
-	"id": "JR-East.ChuoRapid.2628M.Weekday",
-	"t": "JR-East.ChuoRapid.2628M",
+	"id": "JR-East.MusashinoKunitachiBranch.2628M.Weekday",
+	"t": "JR-East.MusashinoKunitachiBranch.2628M",
 	"r": "JR-East.MusashinoKunitachiBranch",
 	"n": "2628M",
 	"y": "JR-East.Local",
 	"d": "Outbound",
 	"os": [
-		"JR-East.ShonanShinjuku.Omiya"
+		"JR-East.MusashinoOmiyaBranch.Omiya"
 	],
 	"ds": [
 		"JR-East.MusashinoKunitachiBranch.Hachioji"
@@ -229,43 +137,43 @@
 		"zh-Hant": "武藏野"
 	}]
 }, {
-	"id": "JR-East.ChuoRapid.2631M.SaturdayHoliday",
-	"t": "JR-East.ChuoRapid.2631M",
+	"id": "JR-East.MusashinoKunitachiBranch.2625M.Weekday",
+	"t": "JR-East.MusashinoKunitachiBranch.2625M",
 	"r": "JR-East.MusashinoKunitachiBranch",
-	"n": "2631M",
+	"n": "2625M",
 	"y": "JR-East.Local",
 	"d": "Inbound",
 	"os": [
 		"JR-East.MusashinoKunitachiBranch.Hachioji"
 	],
 	"ds": [
-		"JR-East.ShonanShinjuku.Omiya"
+		"JR-East.MusashinoOmiyaBranch.Omiya"
 	],
 	"nt": [
-		"JR-East.Musashino.2631M.SaturdayHoliday"
+		"JR-East.Musashino.2625M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
-		"d": "07:19"
+		"d": "16:55"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
-		"a": "07:23",
-		"d": "07:24"
+		"a": "16:59",
+		"d": "17:00"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Hino",
-		"a": "07:26",
-		"d": "07:27"
+		"a": "17:02",
+		"d": "17:03"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
-		"a": "07:30",
-		"d": "07:30"
+		"a": "17:06",
+		"d": "17:06"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Kunitachi",
-		"a": "07:33",
-		"d": "07:34"
+		"a": "17:09",
+		"d": "17:09"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.ShinKodaira",
-		"a": "07:43"
+		"a": "17:15"
 	}],
 	"nm": [{
 		"ja": "むさしの号",
@@ -275,14 +183,60 @@
 		"zh-Hant": "武藏野"
 	}]
 }, {
-	"id": "JR-East.ChuoRapid.2632M.SaturdayHoliday",
-	"t": "JR-East.ChuoRapid.2632M",
+	"id": "JR-East.MusashinoKunitachiBranch.2627M.Weekday",
+	"t": "JR-East.MusashinoKunitachiBranch.2627M",
+	"r": "JR-East.MusashinoKunitachiBranch",
+	"n": "2627M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.MusashinoKunitachiBranch.Hachioji"
+	],
+	"ds": [
+		"JR-East.MusashinoOmiyaBranch.Omiya"
+	],
+	"nt": [
+		"JR-East.Musashino.2627M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
+		"d": "18:44"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
+		"a": "18:48",
+		"d": "18:49"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Hino",
+		"a": "18:51",
+		"d": "18:52"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
+		"a": "18:55",
+		"d": "18:56"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Kunitachi",
+		"a": "18:59",
+		"d": "18:59"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.ShinKodaira",
+		"a": "19:11"
+	}],
+	"nm": [{
+		"ja": "むさしの号",
+		"en": "Musashino",
+		"ko": "무사시노",
+		"zh-Hans": "武藏野",
+		"zh-Hant": "武藏野"
+	}]
+}, {
+	"id": "JR-East.MusashinoKunitachiBranch.2632M.SaturdayHoliday",
+	"t": "JR-East.MusashinoKunitachiBranch.2632M",
 	"r": "JR-East.MusashinoKunitachiBranch",
 	"n": "2632M",
 	"y": "JR-East.Local",
 	"d": "Outbound",
 	"os": [
-		"JR-East.ShonanShinjuku.Omiya"
+		"JR-East.MusashinoOmiyaBranch.Omiya"
 	],
 	"ds": [
 		"JR-East.MusashinoKunitachiBranch.Hachioji"
@@ -295,23 +249,23 @@
 		"d": "09:23"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Kunitachi",
-		"a": "09:30",
-		"d": "09:30"
+		"a": "09:29",
+		"d": "09:29"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
-		"a": "09:33",
-		"d": "09:33"
+		"a": "09:32",
+		"d": "09:32"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Hino",
-		"a": "09:37",
-		"d": "09:37"
+		"a": "09:35",
+		"d": "09:36"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
-		"a": "09:40",
-		"d": "09:40"
+		"a": "09:38",
+		"d": "09:39"
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
-		"a": "09:45"
+		"a": "09:44"
 	}],
 	"nm": [{
 		"ja": "むさしの号",
@@ -321,106 +275,14 @@
 		"zh-Hant": "武藏野"
 	}]
 }, {
-	"id": "JR-East.ChuoRapid.2635M.SaturdayHoliday",
-	"t": "JR-East.ChuoRapid.2635M",
-	"r": "JR-East.MusashinoKunitachiBranch",
-	"n": "2635M",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.MusashinoKunitachiBranch.Hachioji"
-	],
-	"ds": [
-		"JR-East.ShonanShinjuku.Omiya"
-	],
-	"nt": [
-		"JR-East.Musashino.2635M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
-		"d": "09:50"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
-		"a": "09:54",
-		"d": "09:54"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Hino",
-		"a": "09:57",
-		"d": "09:57"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
-		"a": "10:00",
-		"d": "10:03"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Kunitachi",
-		"a": "10:07",
-		"d": "10:07"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.ShinKodaira",
-		"a": "10:12"
-	}],
-	"nm": [{
-		"ja": "むさしの号",
-		"en": "Musashino",
-		"ko": "무사시노",
-		"zh-Hans": "武藏野",
-		"zh-Hant": "武藏野"
-	}]
-}, {
-	"id": "JR-East.ChuoRapid.2637M.SaturdayHoliday",
-	"t": "JR-East.ChuoRapid.2637M",
-	"r": "JR-East.MusashinoKunitachiBranch",
-	"n": "2637M",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.MusashinoKunitachiBranch.Hachioji"
-	],
-	"ds": [
-		"JR-East.ShonanShinjuku.Omiya"
-	],
-	"nt": [
-		"JR-East.Musashino.2637M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
-		"d": "16:56"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
-		"a": "17:01",
-		"d": "17:01"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Hino",
-		"a": "17:04",
-		"d": "17:04"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
-		"a": "17:07",
-		"d": "17:08"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Kunitachi",
-		"a": "17:10",
-		"d": "17:11"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.ShinKodaira",
-		"a": "17:16"
-	}],
-	"nm": [{
-		"ja": "むさしの号",
-		"en": "Musashino",
-		"ko": "무사시노",
-		"zh-Hans": "武藏野",
-		"zh-Hant": "武藏野"
-	}]
-}, {
-	"id": "JR-East.ChuoRapid.2638M.SaturdayHoliday",
-	"t": "JR-East.ChuoRapid.2638M",
+	"id": "JR-East.MusashinoKunitachiBranch.2638M.SaturdayHoliday",
+	"t": "JR-East.MusashinoKunitachiBranch.2638M",
 	"r": "JR-East.MusashinoKunitachiBranch",
 	"n": "2638M",
 	"y": "JR-East.Local",
 	"d": "Outbound",
 	"os": [
-		"JR-East.ShonanShinjuku.Omiya"
+		"JR-East.MusashinoOmiyaBranch.Omiya"
 	],
 	"ds": [
 		"JR-East.MusashinoKunitachiBranch.Hachioji"
@@ -459,60 +321,14 @@
 		"zh-Hant": "武藏野"
 	}]
 }, {
-	"id": "JR-East.ChuoRapid.2639M.SaturdayHoliday",
-	"t": "JR-East.ChuoRapid.2639M",
-	"r": "JR-East.MusashinoKunitachiBranch",
-	"n": "2639M",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.MusashinoKunitachiBranch.Hachioji"
-	],
-	"ds": [
-		"JR-East.ShonanShinjuku.Omiya"
-	],
-	"nt": [
-		"JR-East.Musashino.2639M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
-		"d": "17:47"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
-		"a": "17:52",
-		"d": "17:52"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Hino",
-		"a": "17:55",
-		"d": "17:56"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
-		"a": "17:59",
-		"d": "17:59"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.Kunitachi",
-		"a": "18:02",
-		"d": "18:02"
-	}, {
-		"s": "JR-East.MusashinoKunitachiBranch.ShinKodaira",
-		"a": "18:07"
-	}],
-	"nm": [{
-		"ja": "むさしの号",
-		"en": "Musashino",
-		"ko": "무사시노",
-		"zh-Hans": "武藏野",
-		"zh-Hant": "武藏野"
-	}]
-}, {
-	"id": "JR-East.ChuoRapid.2640M.SaturdayHoliday",
-	"t": "JR-East.ChuoRapid.2640M",
+	"id": "JR-East.MusashinoKunitachiBranch.2640M.SaturdayHoliday",
+	"t": "JR-East.MusashinoKunitachiBranch.2640M",
 	"r": "JR-East.MusashinoKunitachiBranch",
 	"n": "2640M",
 	"y": "JR-East.Local",
 	"d": "Outbound",
 	"os": [
-		"JR-East.ShonanShinjuku.Omiya"
+		"JR-East.MusashinoOmiyaBranch.Omiya"
 	],
 	"ds": [
 		"JR-East.MusashinoKunitachiBranch.Hachioji"
@@ -542,6 +358,190 @@
 	}, {
 		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
 		"a": "20:43"
+	}],
+	"nm": [{
+		"ja": "むさしの号",
+		"en": "Musashino",
+		"ko": "무사시노",
+		"zh-Hans": "武藏野",
+		"zh-Hant": "武藏野"
+	}]
+}, {
+	"id": "JR-East.MusashinoKunitachiBranch.2631M.SaturdayHoliday",
+	"t": "JR-East.MusashinoKunitachiBranch.2631M",
+	"r": "JR-East.MusashinoKunitachiBranch",
+	"n": "2631M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.MusashinoKunitachiBranch.Hachioji"
+	],
+	"ds": [
+		"JR-East.MusashinoOmiyaBranch.Omiya"
+	],
+	"nt": [
+		"JR-East.Musashino.2631M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
+		"d": "07:19"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
+		"a": "07:23",
+		"d": "07:24"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Hino",
+		"a": "07:26",
+		"d": "07:27"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
+		"a": "07:30",
+		"d": "07:30"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Kunitachi",
+		"a": "07:33",
+		"d": "07:34"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.ShinKodaira",
+		"a": "07:43"
+	}],
+	"nm": [{
+		"ja": "むさしの号",
+		"en": "Musashino",
+		"ko": "무사시노",
+		"zh-Hans": "武藏野",
+		"zh-Hant": "武藏野"
+	}]
+}, {
+	"id": "JR-East.MusashinoKunitachiBranch.2635M.SaturdayHoliday",
+	"t": "JR-East.MusashinoKunitachiBranch.2635M",
+	"r": "JR-East.MusashinoKunitachiBranch",
+	"n": "2635M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.MusashinoKunitachiBranch.Hachioji"
+	],
+	"ds": [
+		"JR-East.MusashinoOmiyaBranch.Omiya"
+	],
+	"nt": [
+		"JR-East.Musashino.2635M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
+		"d": "09:50"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
+		"a": "09:54",
+		"d": "09:54"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Hino",
+		"a": "09:57",
+		"d": "09:57"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
+		"a": "10:00",
+		"d": "10:03"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Kunitachi",
+		"a": "10:07",
+		"d": "10:07"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.ShinKodaira",
+		"a": "10:12"
+	}],
+	"nm": [{
+		"ja": "むさしの号",
+		"en": "Musashino",
+		"ko": "무사시노",
+		"zh-Hans": "武藏野",
+		"zh-Hant": "武藏野"
+	}]
+}, {
+	"id": "JR-East.MusashinoKunitachiBranch.2637M.SaturdayHoliday",
+	"t": "JR-East.MusashinoKunitachiBranch.2637M",
+	"r": "JR-East.MusashinoKunitachiBranch",
+	"n": "2637M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.MusashinoKunitachiBranch.Hachioji"
+	],
+	"ds": [
+		"JR-East.MusashinoOmiyaBranch.Omiya"
+	],
+	"nt": [
+		"JR-East.Musashino.2637M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
+		"d": "16:56"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
+		"a": "17:01",
+		"d": "17:01"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Hino",
+		"a": "17:04",
+		"d": "17:04"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
+		"a": "17:07",
+		"d": "17:08"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Kunitachi",
+		"a": "17:10",
+		"d": "17:11"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.ShinKodaira",
+		"a": "17:16"
+	}],
+	"nm": [{
+		"ja": "むさしの号",
+		"en": "Musashino",
+		"ko": "무사시노",
+		"zh-Hans": "武藏野",
+		"zh-Hant": "武藏野"
+	}]
+}, {
+	"id": "JR-East.MusashinoKunitachiBranch.2639M.SaturdayHoliday",
+	"t": "JR-East.MusashinoKunitachiBranch.2639M",
+	"r": "JR-East.MusashinoKunitachiBranch",
+	"n": "2639M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.MusashinoKunitachiBranch.Hachioji"
+	],
+	"ds": [
+		"JR-East.MusashinoOmiyaBranch.Omiya"
+	],
+	"nt": [
+		"JR-East.Musashino.2639M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.MusashinoKunitachiBranch.Hachioji",
+		"d": "17:47"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Toyoda",
+		"a": "17:52",
+		"d": "17:52"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Hino",
+		"a": "17:55",
+		"d": "17:56"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Tachikawa",
+		"a": "17:59",
+		"d": "17:59"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.Kunitachi",
+		"a": "18:02",
+		"d": "18:02"
+	}, {
+		"s": "JR-East.MusashinoKunitachiBranch.ShinKodaira",
+		"a": "18:07"
 	}],
 	"nm": [{
 		"ja": "むさしの号",

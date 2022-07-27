@@ -1,48 +1,18 @@
 [{
-	"id": "JR-East.ShonanShinjuku.2752M.Weekday",
-	"t": "JR-East.ShonanShinjuku.2752M",
+	"id": "JR-East.MusashinoNishiUrawaBranch.961E.Weekday",
+	"t": "JR-East.MusashinoNishiUrawaBranch.961E",
 	"r": "JR-East.MusashinoNishiUrawaBranch",
-	"n": "2752M",
+	"n": "961E",
 	"y": "JR-East.Local",
-	"d": "Northbound",
-	"os": [
-		"JR-East.Keiyo.ShinNarashino"
-	],
-	"ds": [
-		"JR-East.MusashinoNishiUrawaBranch.Omiya"
-	],
-	"pt": [
-		"JR-East.Musashino.702E.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
-		"d": "08:12"
-	}, {
-		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
-		"a": "08:20"
-	}],
-	"nm": [{
-		"ja": "しもうさ号",
-		"en": "Shimousa",
-		"ko": "시모사",
-		"zh-Hans": "下总",
-		"zh-Hant": "下總"
-	}]
-}, {
-	"id": "JR-East.ShonanShinjuku.2753M.Weekday",
-	"t": "JR-East.ShonanShinjuku.2753M",
-	"r": "JR-East.MusashinoNishiUrawaBranch",
-	"n": "2753M",
-	"y": "JR-East.Local",
-	"d": "Southbound",
+	"d": "Outbound",
 	"os": [
 		"JR-East.MusashinoNishiUrawaBranch.Omiya"
 	],
 	"ds": [
-		"JR-East.Keiyo.Kaihimmakuhari"
+		"JR-East.KeiyoKoyaBranch.Kaihimmakuhari"
 	],
 	"nt": [
-		"JR-East.Musashino.903E.Weekday"
+		"JR-East.Musashino.961E.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
@@ -59,42 +29,12 @@
 		"zh-Hant": "下總"
 	}]
 }, {
-	"id": "JR-East.ShonanShinjuku.2754M.Weekday",
-	"t": "JR-East.ShonanShinjuku.2754M",
+	"id": "JR-East.MusashinoNishiUrawaBranch.1861E.Weekday",
+	"t": "JR-East.MusashinoNishiUrawaBranch.1861E",
 	"r": "JR-East.MusashinoNishiUrawaBranch",
-	"n": "2754M",
+	"n": "1861E",
 	"y": "JR-East.Local",
-	"d": "Northbound",
-	"os": [
-		"JR-East.Keiyo.ShinNarashino"
-	],
-	"ds": [
-		"JR-East.MusashinoNishiUrawaBranch.Omiya"
-	],
-	"pt": [
-		"JR-East.Musashino.1502E.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
-		"d": "16:49"
-	}, {
-		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
-		"a": "16:58"
-	}],
-	"nm": [{
-		"ja": "しもうさ号",
-		"en": "Shimousa",
-		"ko": "시모사",
-		"zh-Hans": "下总",
-		"zh-Hant": "下總"
-	}]
-}, {
-	"id": "JR-East.ShonanShinjuku.2755M.Weekday",
-	"t": "JR-East.ShonanShinjuku.2755M",
-	"r": "JR-East.MusashinoNishiUrawaBranch",
-	"n": "2755M",
-	"y": "JR-East.Local",
-	"d": "Southbound",
+	"d": "Outbound",
 	"os": [
 		"JR-East.MusashinoNishiUrawaBranch.Omiya"
 	],
@@ -102,7 +42,7 @@
 		"JR-East.Musashino.NishiFunabashi"
 	],
 	"nt": [
-		"JR-East.Musashino.1803E.Weekday"
+		"JR-East.Musashino.1861E.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
@@ -119,12 +59,102 @@
 		"zh-Hant": "下總"
 	}]
 }, {
-	"id": "JR-East.ShonanShinjuku.2756M.Weekday",
-	"t": "JR-East.ShonanShinjuku.2756M",
+	"id": "JR-East.MusashinoNishiUrawaBranch.2061E.Weekday",
+	"t": "JR-East.MusashinoNishiUrawaBranch.2061E",
+	"r": "JR-East.MusashinoNishiUrawaBranch",
+	"n": "2061E",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.MusashinoNishiUrawaBranch.Omiya"
+	],
+	"ds": [
+		"JR-East.KeiyoKoyaBranch.ShinNarashino"
+	],
+	"nt": [
+		"JR-East.Musashino.2061E.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
+		"d": "20:56"
+	}, {
+		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
+		"a": "21:08"
+	}],
+	"nm": [{
+		"ja": "しもうさ号",
+		"en": "Shimousa",
+		"ko": "시모사",
+		"zh-Hans": "下总",
+		"zh-Hant": "下總"
+	}]
+}, {
+	"id": "JR-East.MusashinoNishiUrawaBranch.2752M.Weekday",
+	"t": "JR-East.MusashinoNishiUrawaBranch.2752M",
+	"r": "JR-East.MusashinoNishiUrawaBranch",
+	"n": "2752M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.KeiyoKoyaBranch.ShinNarashino"
+	],
+	"ds": [
+		"JR-East.MusashinoNishiUrawaBranch.Omiya"
+	],
+	"pt": [
+		"JR-East.Musashino.760E.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
+		"d": "08:12"
+	}, {
+		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
+		"a": "08:20"
+	}],
+	"nm": [{
+		"ja": "しもうさ号",
+		"en": "Shimousa",
+		"ko": "시모사",
+		"zh-Hans": "下总",
+		"zh-Hant": "下總"
+	}]
+}, {
+	"id": "JR-East.MusashinoNishiUrawaBranch.2754M.Weekday",
+	"t": "JR-East.MusashinoNishiUrawaBranch.2754M",
+	"r": "JR-East.MusashinoNishiUrawaBranch",
+	"n": "2754M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.KeiyoKoyaBranch.ShinNarashino"
+	],
+	"ds": [
+		"JR-East.MusashinoNishiUrawaBranch.Omiya"
+	],
+	"pt": [
+		"JR-East.Musashino.1560E.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
+		"d": "16:49"
+	}, {
+		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
+		"a": "16:58"
+	}],
+	"nm": [{
+		"ja": "しもうさ号",
+		"en": "Shimousa",
+		"ko": "시모사",
+		"zh-Hans": "下总",
+		"zh-Hant": "下總"
+	}]
+}, {
+	"id": "JR-East.MusashinoNishiUrawaBranch.2756M.Weekday",
+	"t": "JR-East.MusashinoNishiUrawaBranch.2756M",
 	"r": "JR-East.MusashinoNishiUrawaBranch",
 	"n": "2756M",
 	"y": "JR-East.Local",
-	"d": "Northbound",
+	"d": "Inbound",
 	"os": [
 		"JR-East.Musashino.NishiFunabashi"
 	],
@@ -132,7 +162,7 @@
 		"JR-East.MusashinoNishiUrawaBranch.Omiya"
 	],
 	"pt": [
-		"JR-East.Musashino.1902E.Weekday"
+		"JR-East.Musashino.1960E.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
@@ -149,80 +179,20 @@
 		"zh-Hant": "下總"
 	}]
 }, {
-	"id": "JR-East.ShonanShinjuku.2757M.Weekday",
-	"t": "JR-East.ShonanShinjuku.2757M",
+	"id": "JR-East.MusashinoNishiUrawaBranch.961E.SaturdayHoliday",
+	"t": "JR-East.MusashinoNishiUrawaBranch.961E",
 	"r": "JR-East.MusashinoNishiUrawaBranch",
-	"n": "2757M",
+	"n": "961E",
 	"y": "JR-East.Local",
-	"d": "Southbound",
+	"d": "Outbound",
 	"os": [
 		"JR-East.MusashinoNishiUrawaBranch.Omiya"
 	],
 	"ds": [
-		"JR-East.Keiyo.ShinNarashino"
+		"JR-East.KeiyoKoyaBranch.Kaihimmakuhari"
 	],
 	"nt": [
-		"JR-East.Musashino.2003E.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
-		"d": "20:56"
-	}, {
-		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
-		"a": "21:08"
-	}],
-	"nm": [{
-		"ja": "しもうさ号",
-		"en": "Shimousa",
-		"ko": "시모사",
-		"zh-Hans": "下总",
-		"zh-Hant": "下總"
-	}]
-}, {
-	"id": "JR-East.ShonanShinjuku.2762M.SaturdayHoliday",
-	"t": "JR-East.ShonanShinjuku.2762M",
-	"r": "JR-East.MusashinoNishiUrawaBranch",
-	"n": "2762M",
-	"y": "JR-East.Local",
-	"d": "Northbound",
-	"os": [
-		"JR-East.Keiyo.ShinNarashino"
-	],
-	"ds": [
-		"JR-East.MusashinoNishiUrawaBranch.Omiya"
-	],
-	"pt": [
-		"JR-East.Musashino.602E.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
-		"d": "07:15"
-	}, {
-		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
-		"a": "07:24"
-	}],
-	"nm": [{
-		"ja": "しもうさ号",
-		"en": "Shimousa",
-		"ko": "시모사",
-		"zh-Hans": "下总",
-		"zh-Hant": "下總"
-	}]
-}, {
-	"id": "JR-East.ShonanShinjuku.2763M.SaturdayHoliday",
-	"t": "JR-East.ShonanShinjuku.2763M",
-	"r": "JR-East.MusashinoNishiUrawaBranch",
-	"n": "2763M",
-	"y": "JR-East.Local",
-	"d": "Southbound",
-	"os": [
-		"JR-East.MusashinoNishiUrawaBranch.Omiya"
-	],
-	"ds": [
-		"JR-East.Keiyo.Kaihimmakuhari"
-	],
-	"nt": [
-		"JR-East.Musashino.903E.SaturdayHoliday"
+		"JR-East.Musashino.961E.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
@@ -239,42 +209,12 @@
 		"zh-Hant": "下總"
 	}]
 }, {
-	"id": "JR-East.ShonanShinjuku.2766M.SaturdayHoliday",
-	"t": "JR-East.ShonanShinjuku.2766M",
+	"id": "JR-East.MusashinoNishiUrawaBranch.1861E.SaturdayHoliday",
+	"t": "JR-East.MusashinoNishiUrawaBranch.1861E",
 	"r": "JR-East.MusashinoNishiUrawaBranch",
-	"n": "2766M",
+	"n": "1861E",
 	"y": "JR-East.Local",
-	"d": "Northbound",
-	"os": [
-		"JR-East.Keiyo.ShinNarashino"
-	],
-	"ds": [
-		"JR-East.MusashinoNishiUrawaBranch.Omiya"
-	],
-	"pt": [
-		"JR-East.Musashino.1602E.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
-		"d": "16:59"
-	}, {
-		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
-		"a": "17:08"
-	}],
-	"nm": [{
-		"ja": "しもうさ号",
-		"en": "Shimousa",
-		"ko": "시모사",
-		"zh-Hans": "下总",
-		"zh-Hant": "下總"
-	}]
-}, {
-	"id": "JR-East.ShonanShinjuku.2767M.SaturdayHoliday",
-	"t": "JR-East.ShonanShinjuku.2767M",
-	"r": "JR-East.MusashinoNishiUrawaBranch",
-	"n": "2767M",
-	"y": "JR-East.Local",
-	"d": "Southbound",
+	"d": "Outbound",
 	"os": [
 		"JR-East.MusashinoNishiUrawaBranch.Omiya"
 	],
@@ -282,7 +222,7 @@
 		"JR-East.Musashino.NishiFunabashi"
 	],
 	"nt": [
-		"JR-East.Musashino.1803E.SaturdayHoliday"
+		"JR-East.Musashino.1861E.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
@@ -299,27 +239,27 @@
 		"zh-Hant": "下總"
 	}]
 }, {
-	"id": "JR-East.ShonanShinjuku.2768M.SaturdayHoliday",
-	"t": "JR-East.ShonanShinjuku.2768M",
+	"id": "JR-East.MusashinoNishiUrawaBranch.2061E.SaturdayHoliday",
+	"t": "JR-East.MusashinoNishiUrawaBranch.2061E",
 	"r": "JR-East.MusashinoNishiUrawaBranch",
-	"n": "2768M",
+	"n": "2061E",
 	"y": "JR-East.Local",
-	"d": "Northbound",
+	"d": "Outbound",
 	"os": [
-		"JR-East.Musashino.NishiFunabashi"
-	],
-	"ds": [
 		"JR-East.MusashinoNishiUrawaBranch.Omiya"
 	],
-	"pt": [
-		"JR-East.Musashino.1902E.SaturdayHoliday"
+	"ds": [
+		"JR-East.KeiyoKoyaBranch.ShinNarashino"
+	],
+	"nt": [
+		"JR-East.Musashino.2061E.SaturdayHoliday"
 	],
 	"tt": [{
-		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
-		"d": "20:08"
-	}, {
 		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
-		"a": "20:16"
+		"d": "20:56"
+	}, {
+		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
+		"a": "21:08"
 	}],
 	"nm": [{
 		"ja": "しもうさ号",
@@ -329,27 +269,87 @@
 		"zh-Hant": "下總"
 	}]
 }, {
-	"id": "JR-East.ShonanShinjuku.2769M.SaturdayHoliday",
-	"t": "JR-East.ShonanShinjuku.2769M",
+	"id": "JR-East.MusashinoNishiUrawaBranch.2762M.SaturdayHoliday",
+	"t": "JR-East.MusashinoNishiUrawaBranch.2762M",
 	"r": "JR-East.MusashinoNishiUrawaBranch",
-	"n": "2769M",
+	"n": "2762M",
 	"y": "JR-East.Local",
-	"d": "Southbound",
+	"d": "Inbound",
 	"os": [
-		"JR-East.MusashinoNishiUrawaBranch.Omiya"
+		"JR-East.KeiyoKoyaBranch.ShinNarashino"
 	],
 	"ds": [
-		"JR-East.Keiyo.ShinNarashino"
+		"JR-East.MusashinoNishiUrawaBranch.Omiya"
 	],
-	"nt": [
-		"JR-East.Musashino.2003E.SaturdayHoliday"
+	"pt": [
+		"JR-East.Musashino.660E.SaturdayHoliday"
 	],
 	"tt": [{
-		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
-		"d": "20:56"
-	}, {
 		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
-		"a": "21:08"
+		"d": "07:15"
+	}, {
+		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
+		"a": "07:24"
+	}],
+	"nm": [{
+		"ja": "しもうさ号",
+		"en": "Shimousa",
+		"ko": "시모사",
+		"zh-Hans": "下总",
+		"zh-Hant": "下總"
+	}]
+}, {
+	"id": "JR-East.MusashinoNishiUrawaBranch.2766M.SaturdayHoliday",
+	"t": "JR-East.MusashinoNishiUrawaBranch.2766M",
+	"r": "JR-East.MusashinoNishiUrawaBranch",
+	"n": "2766M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.KeiyoKoyaBranch.ShinNarashino"
+	],
+	"ds": [
+		"JR-East.MusashinoNishiUrawaBranch.Omiya"
+	],
+	"pt": [
+		"JR-East.Musashino.1660E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
+		"d": "16:59"
+	}, {
+		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
+		"a": "17:08"
+	}],
+	"nm": [{
+		"ja": "しもうさ号",
+		"en": "Shimousa",
+		"ko": "시모사",
+		"zh-Hans": "下总",
+		"zh-Hant": "下總"
+	}]
+}, {
+	"id": "JR-East.MusashinoNishiUrawaBranch.2768M.SaturdayHoliday",
+	"t": "JR-East.MusashinoNishiUrawaBranch.2768M",
+	"r": "JR-East.MusashinoNishiUrawaBranch",
+	"n": "2768M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.Musashino.NishiFunabashi"
+	],
+	"ds": [
+		"JR-East.MusashinoNishiUrawaBranch.Omiya"
+	],
+	"pt": [
+		"JR-East.Musashino.1960E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
+		"d": "20:08"
+	}, {
+		"s": "JR-East.MusashinoNishiUrawaBranch.Omiya",
+		"a": "20:16"
 	}],
 	"nm": [{
 		"ja": "しもうさ号",

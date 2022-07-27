@@ -1,31 +1,437 @@
 [{
-	"id": "JR-East.NambuBranch.1002H.Weekday",
-	"t": "JR-East.NambuBranch.1002H",
+	"id": "JR-East.NambuBranch.503H.Weekday",
+	"t": "JR-East.NambuBranch.503H",
 	"r": "JR-East.NambuBranch",
-	"n": "1002H",
+	"n": "503H",
 	"y": "JR-East.Local",
-	"d": "Inbound",
+	"d": "Outbound",
 	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
 		"JR-East.NambuBranch.HamaKawasaki"
 	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
 	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "10:33"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "10:35"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "10:37"
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "05:27"
 	}, {
 		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "10:38"
+		"d": "05:29"
 	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "05:31"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "05:33"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "05:35"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.603H.Weekday",
+	"t": "JR-East.NambuBranch.603H",
+	"r": "JR-East.NambuBranch",
+	"n": "603H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
 		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "10:40"
+		"d": "06:12"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "06:14"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "06:16"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "06:18"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "06:20"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.613H.Weekday",
+	"t": "JR-East.NambuBranch.613H",
+	"r": "JR-East.NambuBranch",
+	"n": "613H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "06:35"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "06:37"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "06:39"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "06:41"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "06:43"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.703H.Weekday",
+	"t": "JR-East.NambuBranch.703H",
+	"r": "JR-East.NambuBranch",
+	"n": "703H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "07:02"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "07:04"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "07:06"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "07:08"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "07:10"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.701H.Weekday",
+	"t": "JR-East.NambuBranch.701H",
+	"r": "JR-East.NambuBranch",
+	"n": "701H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "07:14"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "07:16"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "07:18"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "07:20"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "07:22"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.713H.Weekday",
+	"t": "JR-East.NambuBranch.713H",
+	"r": "JR-East.NambuBranch",
+	"n": "713H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "07:27"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "07:29"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "07:31"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "07:33"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "07:35"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.711H.Weekday",
+	"t": "JR-East.NambuBranch.711H",
+	"r": "JR-East.NambuBranch",
+	"n": "711H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "07:40"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "07:42"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "07:44"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "07:46"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "07:48"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.723H.Weekday",
+	"t": "JR-East.NambuBranch.723H",
+	"r": "JR-East.NambuBranch",
+	"n": "723H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "07:54"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "07:56"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "07:58"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "08:00"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "08:02"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.801H.Weekday",
+	"t": "JR-East.NambuBranch.801H",
+	"r": "JR-East.NambuBranch",
+	"n": "801H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "08:05"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "08:07"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "08:09"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "08:11"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "08:13"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.803H.Weekday",
+	"t": "JR-East.NambuBranch.803H",
+	"r": "JR-East.NambuBranch",
+	"n": "803H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "08:16"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "08:18"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "08:20"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "08:22"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "08:24"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.811H.Weekday",
+	"t": "JR-East.NambuBranch.811H",
+	"r": "JR-East.NambuBranch",
+	"n": "811H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "08:28"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "08:30"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "08:32"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "08:34"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "08:36"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.813H.Weekday",
+	"t": "JR-East.NambuBranch.813H",
+	"r": "JR-East.NambuBranch",
+	"n": "813H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "08:41"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "08:43"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "08:45"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "08:47"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "08:49"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.903H.Weekday",
+	"t": "JR-East.NambuBranch.903H",
+	"r": "JR-East.NambuBranch",
+	"n": "903H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "09:03"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "09:05"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "09:07"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "09:09"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "09:11"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.913H.Weekday",
+	"t": "JR-East.NambuBranch.913H",
+	"r": "JR-East.NambuBranch",
+	"n": "913H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "09:24"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "09:26"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "09:28"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "09:30"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "09:32"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.923H.Weekday",
+	"t": "JR-East.NambuBranch.923H",
+	"r": "JR-East.NambuBranch",
+	"n": "923H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "09:47"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "09:49"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "09:51"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "09:53"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "09:55"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1003H.Weekday",
@@ -86,35 +492,6 @@
 		"a": "11:05"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1102H.Weekday",
-	"t": "JR-East.NambuBranch.1102H",
-	"r": "JR-East.NambuBranch",
-	"n": "1102H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "11:13"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "11:15"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "11:17"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "11:18"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "11:20"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1103H.Weekday",
 	"t": "JR-East.NambuBranch.1103H",
 	"r": "JR-East.NambuBranch",
@@ -142,64 +519,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "11:45"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1112H.Weekday",
-	"t": "JR-East.NambuBranch.1112H",
-	"r": "JR-East.NambuBranch",
-	"n": "1112H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "11:53"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "11:55"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "11:57"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "11:58"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "12:00"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1202H.Weekday",
-	"t": "JR-East.NambuBranch.1202H",
-	"r": "JR-East.NambuBranch",
-	"n": "1202H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "12:33"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "12:35"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "12:37"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "12:38"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "12:40"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1203H.Weekday",
@@ -260,35 +579,6 @@
 		"a": "13:05"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1302H.Weekday",
-	"t": "JR-East.NambuBranch.1302H",
-	"r": "JR-East.NambuBranch",
-	"n": "1302H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "13:13"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "13:15"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "13:17"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "13:18"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "13:20"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1303H.Weekday",
 	"t": "JR-East.NambuBranch.1303H",
 	"r": "JR-East.NambuBranch",
@@ -316,64 +606,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "13:45"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1312H.Weekday",
-	"t": "JR-East.NambuBranch.1312H",
-	"r": "JR-East.NambuBranch",
-	"n": "1312H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "13:53"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "13:55"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "13:57"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "13:58"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "14:00"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1402H.Weekday",
-	"t": "JR-East.NambuBranch.1402H",
-	"r": "JR-East.NambuBranch",
-	"n": "1402H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "14:33"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "14:35"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "14:37"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "14:38"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "14:40"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1403H.Weekday",
@@ -434,35 +666,6 @@
 		"a": "15:05"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1502H.Weekday",
-	"t": "JR-East.NambuBranch.1502H",
-	"r": "JR-East.NambuBranch",
-	"n": "1502H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "15:13"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "15:15"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "15:17"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "15:18"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "15:20"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1503H.Weekday",
 	"t": "JR-East.NambuBranch.1503H",
 	"r": "JR-East.NambuBranch",
@@ -490,64 +693,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "15:45"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1512H.Weekday",
-	"t": "JR-East.NambuBranch.1512H",
-	"r": "JR-East.NambuBranch",
-	"n": "1512H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "15:53"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "15:55"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "15:57"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "15:58"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "16:00"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1602H.Weekday",
-	"t": "JR-East.NambuBranch.1602H",
-	"r": "JR-East.NambuBranch",
-	"n": "1602H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "16:33"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "16:35"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "16:37"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "16:38"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "16:40"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1603H.Weekday",
@@ -608,35 +753,6 @@
 		"a": "16:55"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1702H.Weekday",
-	"t": "JR-East.NambuBranch.1702H",
-	"r": "JR-East.NambuBranch",
-	"n": "1702H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "17:00"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "17:02"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "17:04"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "17:05"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "17:07"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1703H.Weekday",
 	"t": "JR-East.NambuBranch.1703H",
 	"r": "JR-East.NambuBranch",
@@ -664,35 +780,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "17:20"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1712H.Weekday",
-	"t": "JR-East.NambuBranch.1712H",
-	"r": "JR-East.NambuBranch",
-	"n": "1712H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "17:23"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "17:25"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "17:27"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "17:28"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "17:30"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1713H.Weekday",
@@ -724,64 +811,6 @@
 		"a": "17:43"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1722H.Weekday",
-	"t": "JR-East.NambuBranch.1722H",
-	"r": "JR-East.NambuBranch",
-	"n": "1722H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "17:48"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "17:50"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "17:52"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "17:53"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "17:55"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1802H.Weekday",
-	"t": "JR-East.NambuBranch.1802H",
-	"r": "JR-East.NambuBranch",
-	"n": "1802H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "18:11"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "18:13"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "18:15"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "18:17"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "18:19"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1803H.Weekday",
 	"t": "JR-East.NambuBranch.1803H",
 	"r": "JR-East.NambuBranch",
@@ -809,35 +838,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "18:08"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1812H.Weekday",
-	"t": "JR-East.NambuBranch.1812H",
-	"r": "JR-East.NambuBranch",
-	"n": "1812H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "18:33"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "18:35"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "18:37"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "18:38"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "18:40"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1813H.Weekday",
@@ -869,35 +869,6 @@
 		"a": "18:30"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1822H.Weekday",
-	"t": "JR-East.NambuBranch.1822H",
-	"r": "JR-East.NambuBranch",
-	"n": "1822H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "18:56"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "18:58"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "19:00"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "19:01"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "19:03"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1823H.Weekday",
 	"t": "JR-East.NambuBranch.1823H",
 	"r": "JR-East.NambuBranch",
@@ -925,35 +896,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "18:51"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1902H.Weekday",
-	"t": "JR-East.NambuBranch.1902H",
-	"r": "JR-East.NambuBranch",
-	"n": "1902H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "19:29"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "19:31"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "19:33"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "19:34"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "19:36"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1903H.Weekday",
@@ -985,35 +927,6 @@
 		"a": "19:21"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1912H.Weekday",
-	"t": "JR-East.NambuBranch.1912H",
-	"r": "JR-East.NambuBranch",
-	"n": "1912H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "19:56"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "19:58"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "20:00"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "20:01"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "20:03"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1913H.Weekday",
 	"t": "JR-East.NambuBranch.1913H",
 	"r": "JR-East.NambuBranch",
@@ -1041,35 +954,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "19:52"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.2002H.Weekday",
-	"t": "JR-East.NambuBranch.2002H",
-	"r": "JR-East.NambuBranch",
-	"n": "2002H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "20:27"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "20:29"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "20:31"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "20:33"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "20:35"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.2003H.Weekday",
@@ -1130,35 +1014,6 @@
 		"a": "20:57"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.2102H.Weekday",
-	"t": "JR-East.NambuBranch.2102H",
-	"r": "JR-East.NambuBranch",
-	"n": "2102H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "21:01"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "21:03"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "21:05"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "21:06"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "21:08"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.2103H.Weekday",
 	"t": "JR-East.NambuBranch.2103H",
 	"r": "JR-East.NambuBranch",
@@ -1186,35 +1041,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "21:29"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.2112H.Weekday",
-	"t": "JR-East.NambuBranch.2112H",
-	"r": "JR-East.NambuBranch",
-	"n": "2112H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "21:37"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "21:39"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "21:41"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "21:42"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "21:44"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.2113H.Weekday",
@@ -1246,35 +1072,6 @@
 		"a": "21:58"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.2202H.Weekday",
-	"t": "JR-East.NambuBranch.2202H",
-	"r": "JR-East.NambuBranch",
-	"n": "2202H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "22:16"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "22:18"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "22:20"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "22:22"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "22:24"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.2203H.Weekday",
 	"t": "JR-East.NambuBranch.2203H",
 	"r": "JR-East.NambuBranch",
@@ -1302,35 +1099,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "22:38"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.2212H.Weekday",
-	"t": "JR-East.NambuBranch.2212H",
-	"r": "JR-East.NambuBranch",
-	"n": "2212H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "22:42"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "22:44"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "22:46"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "22:48"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "22:50"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.2213H.Weekday",
@@ -1417,35 +1185,6 @@
 		"a": "05:23"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.503H.Weekday",
-	"t": "JR-East.NambuBranch.503H",
-	"r": "JR-East.NambuBranch",
-	"n": "503H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "05:27"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "05:29"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "05:31"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "05:33"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "05:35"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.602H.Weekday",
 	"t": "JR-East.NambuBranch.602H",
 	"r": "JR-East.NambuBranch",
@@ -1473,35 +1212,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
 		"a": "06:08"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.603H.Weekday",
-	"t": "JR-East.NambuBranch.603H",
-	"r": "JR-East.NambuBranch",
-	"n": "603H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "06:12"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "06:14"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "06:16"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "06:18"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "06:20"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.612H.Weekday",
@@ -1533,35 +1243,6 @@
 		"a": "06:30"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.613H.Weekday",
-	"t": "JR-East.NambuBranch.613H",
-	"r": "JR-East.NambuBranch",
-	"n": "613H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "06:37"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "06:39"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "06:41"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "06:43"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "06:45"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.622H.Weekday",
 	"t": "JR-East.NambuBranch.622H",
 	"r": "JR-East.NambuBranch",
@@ -1576,19 +1257,19 @@
 	],
 	"tt": [{
 		"s": "JR-East.NambuBranch.Shitte",
-		"d": "06:50"
+		"d": "06:47"
 	}, {
 		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "06:52"
+		"d": "06:49"
 	}, {
 		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "06:54"
+		"d": "06:51"
 	}, {
 		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "06:55"
+		"d": "06:52"
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "06:57"
+		"a": "06:54"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.700H.Weekday",
@@ -1620,35 +1301,6 @@
 		"a": "07:09"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.701H.Weekday",
-	"t": "JR-East.NambuBranch.701H",
-	"r": "JR-East.NambuBranch",
-	"n": "701H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "07:14"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "07:16"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "07:18"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "07:20"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "07:22"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.702H.Weekday",
 	"t": "JR-East.NambuBranch.702H",
 	"r": "JR-East.NambuBranch",
@@ -1676,35 +1328,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
 		"a": "07:21"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.703H.Weekday",
-	"t": "JR-East.NambuBranch.703H",
-	"r": "JR-East.NambuBranch",
-	"n": "703H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "07:02"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "07:04"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "07:06"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "07:08"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "07:10"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.710H.Weekday",
@@ -1736,35 +1359,6 @@
 		"a": "07:35"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.711H.Weekday",
-	"t": "JR-East.NambuBranch.711H",
-	"r": "JR-East.NambuBranch",
-	"n": "711H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "07:40"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "07:42"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "07:44"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "07:46"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "07:48"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.712H.Weekday",
 	"t": "JR-East.NambuBranch.712H",
 	"r": "JR-East.NambuBranch",
@@ -1792,35 +1386,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
 		"a": "07:48"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.713H.Weekday",
-	"t": "JR-East.NambuBranch.713H",
-	"r": "JR-East.NambuBranch",
-	"n": "713H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "07:27"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "07:29"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "07:31"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "07:33"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "07:35"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.720H.Weekday",
@@ -1852,33 +1417,33 @@
 		"a": "08:00"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.723H.Weekday",
-	"t": "JR-East.NambuBranch.723H",
+	"id": "JR-East.NambuBranch.802H.Weekday",
+	"t": "JR-East.NambuBranch.802H",
 	"r": "JR-East.NambuBranch",
-	"n": "723H",
+	"n": "802H",
 	"y": "JR-East.Local",
-	"d": "Outbound",
+	"d": "Inbound",
 	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
 		"JR-East.NambuBranch.Shitte"
 	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
 	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "07:54"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "07:56"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "07:58"
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "08:05"
 	}, {
 		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:00"
+		"d": "08:07"
 	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "08:02"
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "08:09"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "08:10"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "08:12"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.800H.Weekday",
@@ -1910,122 +1475,6 @@
 		"a": "08:24"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.801H.Weekday",
-	"t": "JR-East.NambuBranch.801H",
-	"r": "JR-East.NambuBranch",
-	"n": "801H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "08:05"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "08:07"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "08:09"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:11"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "08:13"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.802H.Weekday",
-	"t": "JR-East.NambuBranch.802H",
-	"r": "JR-East.NambuBranch",
-	"n": "802H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "08:05"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:07"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "08:09"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "08:10"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "08:12"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.803H.Weekday",
-	"t": "JR-East.NambuBranch.803H",
-	"r": "JR-East.NambuBranch",
-	"n": "803H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "08:17"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "08:19"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "08:21"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:23"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "08:25"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.811H.Weekday",
-	"t": "JR-East.NambuBranch.811H",
-	"r": "JR-East.NambuBranch",
-	"n": "811H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "08:28"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "08:30"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "08:32"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:34"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "08:36"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.812H.Weekday",
 	"t": "JR-East.NambuBranch.812H",
 	"r": "JR-East.NambuBranch",
@@ -2040,48 +1489,19 @@
 	],
 	"tt": [{
 		"s": "JR-East.NambuBranch.Shitte",
-		"d": "08:28"
+		"d": "08:27"
 	}, {
 		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:30"
+		"d": "08:29"
 	}, {
 		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "08:32"
+		"d": "08:31"
 	}, {
 		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "08:34"
+		"d": "08:33"
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "08:36"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.813H.Weekday",
-	"t": "JR-East.NambuBranch.813H",
-	"r": "JR-East.NambuBranch",
-	"n": "813H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "08:41"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "08:43"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "08:45"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:47"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "08:49"
+		"a": "08:35"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.822H.Weekday",
@@ -2142,35 +1562,6 @@
 		"a": "09:21"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.903H.Weekday",
-	"t": "JR-East.NambuBranch.903H",
-	"r": "JR-East.NambuBranch",
-	"n": "903H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "09:03"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "09:05"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "09:07"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "09:09"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "09:11"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.912H.Weekday",
 	"t": "JR-East.NambuBranch.912H",
 	"r": "JR-East.NambuBranch",
@@ -2198,35 +1589,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
 		"a": "09:44"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.913H.Weekday",
-	"t": "JR-East.NambuBranch.913H",
-	"r": "JR-East.NambuBranch",
-	"n": "913H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "09:24"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "09:26"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "09:28"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "09:30"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "09:32"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.922H.Weekday",
@@ -2258,36 +1620,7 @@
 		"a": "10:05"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.923H.Weekday",
-	"t": "JR-East.NambuBranch.923H",
-	"r": "JR-East.NambuBranch",
-	"n": "923H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "09:47"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "09:49"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "09:51"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "09:53"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "09:55"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1002H.SaturdayHoliday",
+	"id": "JR-East.NambuBranch.1002H.Weekday",
 	"t": "JR-East.NambuBranch.1002H",
 	"r": "JR-East.NambuBranch",
 	"n": "1002H",
@@ -2314,6 +1647,1079 @@
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
 		"a": "10:40"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1102H.Weekday",
+	"t": "JR-East.NambuBranch.1102H",
+	"r": "JR-East.NambuBranch",
+	"n": "1102H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "11:13"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "11:15"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "11:17"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "11:18"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "11:20"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1112H.Weekday",
+	"t": "JR-East.NambuBranch.1112H",
+	"r": "JR-East.NambuBranch",
+	"n": "1112H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "11:53"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "11:55"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "11:57"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "11:58"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "12:00"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1202H.Weekday",
+	"t": "JR-East.NambuBranch.1202H",
+	"r": "JR-East.NambuBranch",
+	"n": "1202H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "12:33"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "12:35"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "12:37"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "12:38"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "12:40"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1302H.Weekday",
+	"t": "JR-East.NambuBranch.1302H",
+	"r": "JR-East.NambuBranch",
+	"n": "1302H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "13:13"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "13:15"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "13:17"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "13:18"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "13:20"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1312H.Weekday",
+	"t": "JR-East.NambuBranch.1312H",
+	"r": "JR-East.NambuBranch",
+	"n": "1312H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "13:53"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "13:55"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "13:57"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "13:58"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "14:00"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1402H.Weekday",
+	"t": "JR-East.NambuBranch.1402H",
+	"r": "JR-East.NambuBranch",
+	"n": "1402H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "14:33"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "14:35"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "14:37"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "14:38"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "14:40"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1502H.Weekday",
+	"t": "JR-East.NambuBranch.1502H",
+	"r": "JR-East.NambuBranch",
+	"n": "1502H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "15:13"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "15:15"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "15:17"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "15:18"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "15:20"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1512H.Weekday",
+	"t": "JR-East.NambuBranch.1512H",
+	"r": "JR-East.NambuBranch",
+	"n": "1512H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "15:53"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "15:55"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "15:57"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "15:58"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "16:00"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1602H.Weekday",
+	"t": "JR-East.NambuBranch.1602H",
+	"r": "JR-East.NambuBranch",
+	"n": "1602H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "16:33"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "16:35"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "16:37"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "16:38"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "16:40"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1702H.Weekday",
+	"t": "JR-East.NambuBranch.1702H",
+	"r": "JR-East.NambuBranch",
+	"n": "1702H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "17:01"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "17:03"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "17:05"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "17:06"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "17:08"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1712H.Weekday",
+	"t": "JR-East.NambuBranch.1712H",
+	"r": "JR-East.NambuBranch",
+	"n": "1712H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "17:23"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "17:25"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "17:27"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "17:28"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "17:30"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1722H.Weekday",
+	"t": "JR-East.NambuBranch.1722H",
+	"r": "JR-East.NambuBranch",
+	"n": "1722H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "17:48"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "17:50"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "17:52"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "17:53"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "17:55"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1802H.Weekday",
+	"t": "JR-East.NambuBranch.1802H",
+	"r": "JR-East.NambuBranch",
+	"n": "1802H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "18:11"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "18:13"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "18:15"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "18:17"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "18:19"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1812H.Weekday",
+	"t": "JR-East.NambuBranch.1812H",
+	"r": "JR-East.NambuBranch",
+	"n": "1812H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "18:33"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "18:35"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "18:37"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "18:38"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "18:40"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1822H.Weekday",
+	"t": "JR-East.NambuBranch.1822H",
+	"r": "JR-East.NambuBranch",
+	"n": "1822H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "18:56"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "18:58"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "19:00"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "19:01"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "19:03"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1902H.Weekday",
+	"t": "JR-East.NambuBranch.1902H",
+	"r": "JR-East.NambuBranch",
+	"n": "1902H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "19:29"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "19:31"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "19:33"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "19:34"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "19:36"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1912H.Weekday",
+	"t": "JR-East.NambuBranch.1912H",
+	"r": "JR-East.NambuBranch",
+	"n": "1912H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "19:56"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "19:58"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "20:00"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "20:01"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "20:03"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.2002H.Weekday",
+	"t": "JR-East.NambuBranch.2002H",
+	"r": "JR-East.NambuBranch",
+	"n": "2002H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "20:27"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "20:29"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "20:31"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "20:33"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "20:35"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.2102H.Weekday",
+	"t": "JR-East.NambuBranch.2102H",
+	"r": "JR-East.NambuBranch",
+	"n": "2102H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "21:01"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "21:03"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "21:05"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "21:06"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "21:08"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.2112H.Weekday",
+	"t": "JR-East.NambuBranch.2112H",
+	"r": "JR-East.NambuBranch",
+	"n": "2112H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "21:37"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "21:39"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "21:41"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "21:42"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "21:44"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.2202H.Weekday",
+	"t": "JR-East.NambuBranch.2202H",
+	"r": "JR-East.NambuBranch",
+	"n": "2202H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "22:16"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "22:18"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "22:20"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "22:22"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "22:24"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.2212H.Weekday",
+	"t": "JR-East.NambuBranch.2212H",
+	"r": "JR-East.NambuBranch",
+	"n": "2212H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "22:42"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "22:44"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "22:46"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "22:48"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "22:50"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.503H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.503H",
+	"r": "JR-East.NambuBranch",
+	"n": "503H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "05:27"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "05:29"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "05:31"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "05:33"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "05:35"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.603H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.603H",
+	"r": "JR-East.NambuBranch",
+	"n": "603H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "06:12"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "06:14"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "06:16"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "06:18"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "06:20"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.613H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.613H",
+	"r": "JR-East.NambuBranch",
+	"n": "613H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "06:35"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "06:37"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "06:39"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "06:41"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "06:43"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.703H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.703H",
+	"r": "JR-East.NambuBranch",
+	"n": "703H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "07:02"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "07:04"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "07:06"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "07:08"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "07:10"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.701H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.701H",
+	"r": "JR-East.NambuBranch",
+	"n": "701H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "07:14"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "07:16"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "07:18"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "07:20"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "07:22"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.713H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.713H",
+	"r": "JR-East.NambuBranch",
+	"n": "713H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "07:27"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "07:29"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "07:31"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "07:33"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "07:35"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.711H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.711H",
+	"r": "JR-East.NambuBranch",
+	"n": "711H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "07:40"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "07:42"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "07:44"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "07:46"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "07:48"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.723H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.723H",
+	"r": "JR-East.NambuBranch",
+	"n": "723H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "07:53"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "07:55"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "07:57"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "07:59"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "08:01"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.801H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.801H",
+	"r": "JR-East.NambuBranch",
+	"n": "801H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "08:05"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "08:07"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "08:09"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "08:11"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "08:13"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.803H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.803H",
+	"r": "JR-East.NambuBranch",
+	"n": "803H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "08:16"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "08:18"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "08:20"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "08:22"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "08:24"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.811H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.811H",
+	"r": "JR-East.NambuBranch",
+	"n": "811H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "08:28"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "08:30"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "08:32"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "08:34"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "08:36"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.813H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.813H",
+	"r": "JR-East.NambuBranch",
+	"n": "813H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "08:41"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "08:43"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "08:45"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "08:47"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "08:49"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.903H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.903H",
+	"r": "JR-East.NambuBranch",
+	"n": "903H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "09:03"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "09:05"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "09:07"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "09:09"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "09:11"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.913H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.913H",
+	"r": "JR-East.NambuBranch",
+	"n": "913H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "09:24"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "09:26"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "09:28"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "09:30"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "09:32"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.923H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.923H",
+	"r": "JR-East.NambuBranch",
+	"n": "923H",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"ds": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"d": "09:47"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "09:49"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "09:51"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "09:53"
+	}, {
+		"s": "JR-East.NambuBranch.Shitte",
+		"a": "09:55"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1003H.SaturdayHoliday",
@@ -2374,35 +2780,6 @@
 		"a": "11:05"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1102H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1102H",
-	"r": "JR-East.NambuBranch",
-	"n": "1102H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "11:13"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "11:15"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "11:17"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "11:18"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "11:20"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1103H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.1103H",
 	"r": "JR-East.NambuBranch",
@@ -2430,64 +2807,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "11:45"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1112H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1112H",
-	"r": "JR-East.NambuBranch",
-	"n": "1112H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "11:53"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "11:55"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "11:57"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "11:58"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "12:00"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1202H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1202H",
-	"r": "JR-East.NambuBranch",
-	"n": "1202H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "12:33"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "12:35"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "12:37"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "12:38"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "12:40"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1203H.SaturdayHoliday",
@@ -2548,35 +2867,6 @@
 		"a": "13:05"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1302H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1302H",
-	"r": "JR-East.NambuBranch",
-	"n": "1302H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "13:13"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "13:15"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "13:17"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "13:18"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "13:20"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1303H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.1303H",
 	"r": "JR-East.NambuBranch",
@@ -2604,64 +2894,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "13:45"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1312H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1312H",
-	"r": "JR-East.NambuBranch",
-	"n": "1312H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "13:53"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "13:55"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "13:57"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "13:58"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "14:00"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1402H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1402H",
-	"r": "JR-East.NambuBranch",
-	"n": "1402H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "14:33"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "14:35"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "14:37"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "14:38"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "14:40"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1403H.SaturdayHoliday",
@@ -2722,35 +2954,6 @@
 		"a": "15:05"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1502H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1502H",
-	"r": "JR-East.NambuBranch",
-	"n": "1502H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "15:13"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "15:15"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "15:17"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "15:18"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "15:20"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1503H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.1503H",
 	"r": "JR-East.NambuBranch",
@@ -2778,64 +2981,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "15:45"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1512H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1512H",
-	"r": "JR-East.NambuBranch",
-	"n": "1512H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "15:53"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "15:55"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "15:57"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "15:58"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "16:00"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1602H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1602H",
-	"r": "JR-East.NambuBranch",
-	"n": "1602H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "16:33"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "16:35"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "16:37"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "16:38"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "16:40"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1603H.SaturdayHoliday",
@@ -2896,35 +3041,6 @@
 		"a": "16:55"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1702H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1702H",
-	"r": "JR-East.NambuBranch",
-	"n": "1702H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "17:00"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "17:02"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "17:04"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "17:05"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "17:07"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1703H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.1703H",
 	"r": "JR-East.NambuBranch",
@@ -2952,35 +3068,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "17:20"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1712H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1712H",
-	"r": "JR-East.NambuBranch",
-	"n": "1712H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "17:23"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "17:25"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "17:27"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "17:28"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "17:30"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1713H.SaturdayHoliday",
@@ -3012,64 +3099,6 @@
 		"a": "17:43"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1722H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1722H",
-	"r": "JR-East.NambuBranch",
-	"n": "1722H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "17:48"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "17:50"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "17:52"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "17:53"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "17:55"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1802H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1802H",
-	"r": "JR-East.NambuBranch",
-	"n": "1802H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "18:11"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "18:13"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "18:15"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "18:17"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "18:19"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1803H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.1803H",
 	"r": "JR-East.NambuBranch",
@@ -3097,35 +3126,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "18:08"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1812H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1812H",
-	"r": "JR-East.NambuBranch",
-	"n": "1812H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "18:33"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "18:35"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "18:37"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "18:38"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "18:40"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1813H.SaturdayHoliday",
@@ -3157,35 +3157,6 @@
 		"a": "18:30"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1822H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1822H",
-	"r": "JR-East.NambuBranch",
-	"n": "1822H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "18:56"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "18:58"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "19:00"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "19:02"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "19:04"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1823H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.1823H",
 	"r": "JR-East.NambuBranch",
@@ -3213,35 +3184,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "18:51"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.1902H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1902H",
-	"r": "JR-East.NambuBranch",
-	"n": "1902H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "19:28"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "19:30"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "19:32"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "19:34"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "19:36"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.1903H.SaturdayHoliday",
@@ -3273,35 +3215,6 @@
 		"a": "19:21"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.1912H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.1912H",
-	"r": "JR-East.NambuBranch",
-	"n": "1912H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "19:56"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "19:58"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "20:00"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "20:01"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "20:03"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.1913H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.1913H",
 	"r": "JR-East.NambuBranch",
@@ -3329,35 +3242,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "19:52"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.2002H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.2002H",
-	"r": "JR-East.NambuBranch",
-	"n": "2002H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "20:26"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "20:28"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "20:30"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "20:32"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "20:34"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.2003H.SaturdayHoliday",
@@ -3418,35 +3302,6 @@
 		"a": "20:57"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.2102H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.2102H",
-	"r": "JR-East.NambuBranch",
-	"n": "2102H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "21:01"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "21:03"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "21:05"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "21:06"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "21:08"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.2103H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.2103H",
 	"r": "JR-East.NambuBranch",
@@ -3474,35 +3329,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "21:28"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.2112H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.2112H",
-	"r": "JR-East.NambuBranch",
-	"n": "2112H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "21:37"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "21:39"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "21:41"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "21:42"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "21:44"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.2113H.SaturdayHoliday",
@@ -3534,35 +3360,6 @@
 		"a": "21:58"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.2202H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.2202H",
-	"r": "JR-East.NambuBranch",
-	"n": "2202H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "22:16"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "22:18"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "22:20"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "22:22"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "22:24"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.2203H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.2203H",
 	"r": "JR-East.NambuBranch",
@@ -3590,35 +3387,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.Shitte",
 		"a": "22:38"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.2212H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.2212H",
-	"r": "JR-East.NambuBranch",
-	"n": "2212H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "22:42"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "22:44"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "22:46"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "22:48"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "22:50"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.2213H.SaturdayHoliday",
@@ -3705,35 +3473,6 @@
 		"a": "05:23"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.503H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.503H",
-	"r": "JR-East.NambuBranch",
-	"n": "503H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "05:27"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "05:29"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "05:31"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "05:33"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "05:35"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.602H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.602H",
 	"r": "JR-East.NambuBranch",
@@ -3761,35 +3500,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
 		"a": "06:08"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.603H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.603H",
-	"r": "JR-East.NambuBranch",
-	"n": "603H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "06:12"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "06:14"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "06:16"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "06:18"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "06:20"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.612H.SaturdayHoliday",
@@ -3821,35 +3531,6 @@
 		"a": "06:30"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.613H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.613H",
-	"r": "JR-East.NambuBranch",
-	"n": "613H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "06:37"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "06:39"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "06:41"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "06:43"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "06:45"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.622H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.622H",
 	"r": "JR-East.NambuBranch",
@@ -3864,19 +3545,19 @@
 	],
 	"tt": [{
 		"s": "JR-East.NambuBranch.Shitte",
-		"d": "06:50"
+		"d": "06:47"
 	}, {
 		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "06:52"
+		"d": "06:49"
 	}, {
 		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "06:54"
+		"d": "06:51"
 	}, {
 		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "06:55"
+		"d": "06:52"
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "06:57"
+		"a": "06:54"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.700H.SaturdayHoliday",
@@ -3908,35 +3589,6 @@
 		"a": "07:09"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.701H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.701H",
-	"r": "JR-East.NambuBranch",
-	"n": "701H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "07:14"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "07:16"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "07:18"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "07:20"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "07:22"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.702H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.702H",
 	"r": "JR-East.NambuBranch",
@@ -3964,35 +3616,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
 		"a": "07:21"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.703H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.703H",
-	"r": "JR-East.NambuBranch",
-	"n": "703H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "07:02"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "07:04"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "07:06"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "07:08"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "07:10"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.710H.SaturdayHoliday",
@@ -4024,35 +3647,6 @@
 		"a": "07:35"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.711H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.711H",
-	"r": "JR-East.NambuBranch",
-	"n": "711H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "07:40"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "07:42"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "07:44"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "07:46"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "07:48"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.712H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.712H",
 	"r": "JR-East.NambuBranch",
@@ -4080,35 +3674,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
 		"a": "07:48"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.713H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.713H",
-	"r": "JR-East.NambuBranch",
-	"n": "713H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "07:27"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "07:29"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "07:31"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "07:33"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "07:35"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.720H.SaturdayHoliday",
@@ -4140,33 +3705,33 @@
 		"a": "08:00"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.723H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.723H",
+	"id": "JR-East.NambuBranch.802H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.802H",
 	"r": "JR-East.NambuBranch",
-	"n": "723H",
+	"n": "802H",
 	"y": "JR-East.Local",
-	"d": "Outbound",
+	"d": "Inbound",
 	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
 		"JR-East.NambuBranch.Shitte"
 	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
 	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "07:53"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "07:55"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "07:57"
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "08:05"
 	}, {
 		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "07:59"
+		"d": "08:07"
 	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "08:01"
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "08:09"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "08:10"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "08:12"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.800H.SaturdayHoliday",
@@ -4198,122 +3763,6 @@
 		"a": "08:24"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.801H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.801H",
-	"r": "JR-East.NambuBranch",
-	"n": "801H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "08:05"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "08:07"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "08:09"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:11"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "08:13"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.802H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.802H",
-	"r": "JR-East.NambuBranch",
-	"n": "802H",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"ds": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.Shitte",
-		"d": "08:05"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:07"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "08:09"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "08:10"
-	}, {
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "08:12"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.803H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.803H",
-	"r": "JR-East.NambuBranch",
-	"n": "803H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "08:17"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "08:19"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "08:21"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:23"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "08:25"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.811H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.811H",
-	"r": "JR-East.NambuBranch",
-	"n": "811H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "08:28"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "08:30"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "08:32"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:34"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "08:36"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.812H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.812H",
 	"r": "JR-East.NambuBranch",
@@ -4328,48 +3777,19 @@
 	],
 	"tt": [{
 		"s": "JR-East.NambuBranch.Shitte",
-		"d": "08:28"
+		"d": "08:27"
 	}, {
 		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:30"
+		"d": "08:29"
 	}, {
 		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "08:32"
+		"d": "08:31"
 	}, {
 		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "08:34"
+		"d": "08:33"
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"a": "08:36"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.813H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.813H",
-	"r": "JR-East.NambuBranch",
-	"n": "813H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "08:41"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "08:43"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "08:45"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "08:47"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "08:49"
+		"a": "08:35"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.822H.SaturdayHoliday",
@@ -4430,35 +3850,6 @@
 		"a": "09:21"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.903H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.903H",
-	"r": "JR-East.NambuBranch",
-	"n": "903H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "09:03"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "09:05"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "09:07"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "09:09"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "09:11"
-	}]
-}, {
 	"id": "JR-East.NambuBranch.912H.SaturdayHoliday",
 	"t": "JR-East.NambuBranch.912H",
 	"r": "JR-East.NambuBranch",
@@ -4486,35 +3877,6 @@
 	}, {
 		"s": "JR-East.NambuBranch.HamaKawasaki",
 		"a": "09:44"
-	}]
-}, {
-	"id": "JR-East.NambuBranch.913H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.913H",
-	"r": "JR-East.NambuBranch",
-	"n": "913H",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
-		"JR-East.NambuBranch.Shitte"
-	],
-	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "09:24"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "09:26"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "09:28"
-	}, {
-		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "09:30"
-	}, {
-		"s": "JR-East.NambuBranch.Shitte",
-		"a": "09:32"
 	}]
 }, {
 	"id": "JR-East.NambuBranch.922H.SaturdayHoliday",
@@ -4546,32 +3908,670 @@
 		"a": "10:05"
 	}]
 }, {
-	"id": "JR-East.NambuBranch.923H.SaturdayHoliday",
-	"t": "JR-East.NambuBranch.923H",
+	"id": "JR-East.NambuBranch.1002H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1002H",
 	"r": "JR-East.NambuBranch",
-	"n": "923H",
+	"n": "1002H",
 	"y": "JR-East.Local",
-	"d": "Outbound",
+	"d": "Inbound",
 	"os": [
-		"JR-East.NambuBranch.HamaKawasaki"
-	],
-	"ds": [
 		"JR-East.NambuBranch.Shitte"
 	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
 	"tt": [{
-		"s": "JR-East.NambuBranch.HamaKawasaki",
-		"d": "09:47"
-	}, {
-		"s": "JR-East.NambuBranch.Odasakae",
-		"d": "09:49"
-	}, {
-		"s": "JR-East.NambuBranch.Kawasakishimmachi",
-		"d": "09:51"
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "10:33"
 	}, {
 		"s": "JR-East.NambuBranch.Hatchonawate",
-		"d": "09:53"
+		"d": "10:35"
 	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "10:37"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "10:38"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "10:40"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1102H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1102H",
+	"r": "JR-East.NambuBranch",
+	"n": "1102H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
 		"s": "JR-East.NambuBranch.Shitte",
-		"a": "09:55"
+		"d": "11:13"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "11:15"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "11:17"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "11:18"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "11:20"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1112H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1112H",
+	"r": "JR-East.NambuBranch",
+	"n": "1112H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "11:53"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "11:55"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "11:57"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "11:58"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "12:00"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1202H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1202H",
+	"r": "JR-East.NambuBranch",
+	"n": "1202H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "12:33"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "12:35"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "12:37"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "12:38"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "12:40"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1302H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1302H",
+	"r": "JR-East.NambuBranch",
+	"n": "1302H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "13:13"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "13:15"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "13:17"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "13:18"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "13:20"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1312H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1312H",
+	"r": "JR-East.NambuBranch",
+	"n": "1312H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "13:53"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "13:55"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "13:57"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "13:58"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "14:00"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1402H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1402H",
+	"r": "JR-East.NambuBranch",
+	"n": "1402H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "14:33"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "14:35"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "14:37"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "14:38"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "14:40"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1502H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1502H",
+	"r": "JR-East.NambuBranch",
+	"n": "1502H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "15:13"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "15:15"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "15:17"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "15:18"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "15:20"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1512H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1512H",
+	"r": "JR-East.NambuBranch",
+	"n": "1512H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "15:53"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "15:55"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "15:57"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "15:58"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "16:00"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1602H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1602H",
+	"r": "JR-East.NambuBranch",
+	"n": "1602H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "16:33"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "16:35"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "16:37"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "16:38"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "16:40"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1702H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1702H",
+	"r": "JR-East.NambuBranch",
+	"n": "1702H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "17:01"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "17:03"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "17:05"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "17:06"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "17:08"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1712H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1712H",
+	"r": "JR-East.NambuBranch",
+	"n": "1712H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "17:23"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "17:25"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "17:27"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "17:28"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "17:30"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1722H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1722H",
+	"r": "JR-East.NambuBranch",
+	"n": "1722H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "17:48"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "17:50"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "17:52"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "17:53"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "17:55"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1802H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1802H",
+	"r": "JR-East.NambuBranch",
+	"n": "1802H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "18:11"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "18:13"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "18:15"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "18:17"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "18:19"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1812H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1812H",
+	"r": "JR-East.NambuBranch",
+	"n": "1812H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "18:33"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "18:35"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "18:37"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "18:38"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "18:40"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1822H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1822H",
+	"r": "JR-East.NambuBranch",
+	"n": "1822H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "18:56"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "18:58"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "19:00"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "19:02"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "19:04"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1902H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1902H",
+	"r": "JR-East.NambuBranch",
+	"n": "1902H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "19:28"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "19:30"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "19:32"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "19:34"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "19:36"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.1912H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.1912H",
+	"r": "JR-East.NambuBranch",
+	"n": "1912H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "19:56"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "19:58"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "20:00"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "20:01"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "20:03"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.2002H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.2002H",
+	"r": "JR-East.NambuBranch",
+	"n": "2002H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "20:27"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "20:29"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "20:31"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "20:33"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "20:35"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.2102H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.2102H",
+	"r": "JR-East.NambuBranch",
+	"n": "2102H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "21:01"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "21:03"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "21:05"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "21:06"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "21:08"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.2112H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.2112H",
+	"r": "JR-East.NambuBranch",
+	"n": "2112H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "21:37"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "21:39"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "21:41"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "21:42"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "21:44"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.2202H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.2202H",
+	"r": "JR-East.NambuBranch",
+	"n": "2202H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "22:16"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "22:18"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "22:20"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "22:22"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "22:24"
+	}]
+}, {
+	"id": "JR-East.NambuBranch.2212H.SaturdayHoliday",
+	"t": "JR-East.NambuBranch.2212H",
+	"r": "JR-East.NambuBranch",
+	"n": "2212H",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.NambuBranch.Shitte"
+	],
+	"ds": [
+		"JR-East.NambuBranch.HamaKawasaki"
+	],
+	"tt": [{
+		"s": "JR-East.NambuBranch.Shitte",
+		"d": "22:42"
+	}, {
+		"s": "JR-East.NambuBranch.Hatchonawate",
+		"d": "22:44"
+	}, {
+		"s": "JR-East.NambuBranch.Kawasakishimmachi",
+		"d": "22:46"
+	}, {
+		"s": "JR-East.NambuBranch.Odasakae",
+		"d": "22:48"
+	}, {
+		"s": "JR-East.NambuBranch.HamaKawasaki",
+		"a": "22:50"
 	}]
 }]

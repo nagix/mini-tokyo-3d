@@ -1,46 +1,94 @@
 [{
-	"id": "JR-East.TsurumiOkawaBranch.1806B.Weekday",
-	"t": "JR-East.TsurumiOkawaBranch.1806B",
+	"id": "JR-East.TsurumiOkawaBranch.713.Weekday",
+	"t": "JR-East.TsurumiOkawaBranch.713",
 	"r": "JR-East.TsurumiOkawaBranch",
-	"n": "1806B",
+	"n": "713",
 	"y": "JR-East.Local",
-	"d": "Inbound",
+	"d": "Outbound",
 	"os": [
-		"JR-East.TsurumiOkawaBranch.Okawa"
-	],
-	"ds": [
 		"JR-East.Tsurumi.Tsurumi"
 	],
-	"nt": [
-		"JR-East.Tsurumi.1806B.Weekday"
+	"ds": [
+		"JR-East.TsurumiOkawaBranch.Okawa"
+	],
+	"pt": [
+		"JR-East.Tsurumi.713.Weekday"
 	],
 	"tt": [{
-		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"d": "18:54"
+		"s": "JR-East.TsurumiOkawaBranch.Anzen",
+		"d": "07:11"
 	}, {
-		"s": "JR-East.TsurumiOkawaBranch.Anzen"
+		"s": "JR-East.TsurumiOkawaBranch.Okawa",
+		"a": "07:15"
 	}]
 }, {
-	"id": "JR-East.TsurumiOkawaBranch.1706.Weekday",
-	"t": "JR-East.TsurumiOkawaBranch.1706",
+	"id": "JR-East.TsurumiOkawaBranch.713B.Weekday",
+	"t": "JR-East.TsurumiOkawaBranch.713B",
 	"r": "JR-East.TsurumiOkawaBranch",
-	"n": "1706",
+	"n": "713B",
 	"y": "JR-East.Local",
-	"d": "Inbound",
+	"d": "Outbound",
 	"os": [
-		"JR-East.TsurumiOkawaBranch.Okawa"
-	],
-	"ds": [
 		"JR-East.Tsurumi.Tsurumi"
 	],
-	"nt": [
-		"JR-East.Tsurumi.1706.Weekday"
+	"ds": [
+		"JR-East.TsurumiOkawaBranch.Okawa"
+	],
+	"pt": [
+		"JR-East.Tsurumi.713B.Weekday"
 	],
 	"tt": [{
-		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"d": "17:29"
+		"s": "JR-East.TsurumiOkawaBranch.Anzen",
+		"d": "07:43"
 	}, {
-		"s": "JR-East.TsurumiOkawaBranch.Anzen"
+		"s": "JR-East.TsurumiOkawaBranch.Okawa",
+		"a": "07:47"
+	}]
+}, {
+	"id": "JR-East.TsurumiOkawaBranch.801.Weekday",
+	"t": "JR-East.TsurumiOkawaBranch.801",
+	"r": "JR-East.TsurumiOkawaBranch",
+	"n": "801",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.Tsurumi.Tsurumi"
+	],
+	"ds": [
+		"JR-East.TsurumiOkawaBranch.Okawa"
+	],
+	"pt": [
+		"JR-East.Tsurumi.801.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.TsurumiOkawaBranch.Anzen",
+		"d": "08:16"
+	}, {
+		"s": "JR-East.TsurumiOkawaBranch.Okawa",
+		"a": "08:20"
+	}]
+}, {
+	"id": "JR-East.TsurumiOkawaBranch.809.Weekday",
+	"t": "JR-East.TsurumiOkawaBranch.809",
+	"r": "JR-East.TsurumiOkawaBranch",
+	"n": "809",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.Tsurumi.Tsurumi"
+	],
+	"ds": [
+		"JR-East.TsurumiOkawaBranch.Okawa"
+	],
+	"pt": [
+		"JR-East.Tsurumi.809.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.TsurumiOkawaBranch.Anzen",
+		"d": "08:36"
+	}, {
+		"s": "JR-East.TsurumiOkawaBranch.Okawa",
+		"a": "08:40"
 	}]
 }, {
 	"id": "JR-East.TsurumiOkawaBranch.1707.Weekday",
@@ -112,50 +160,6 @@
 		"a": "18:45"
 	}]
 }, {
-	"id": "JR-East.TsurumiOkawaBranch.1808.Weekday",
-	"t": "JR-East.TsurumiOkawaBranch.1808",
-	"r": "JR-East.TsurumiOkawaBranch",
-	"n": "1808",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.TsurumiOkawaBranch.Okawa"
-	],
-	"ds": [
-		"JR-East.Tsurumi.Tsurumi"
-	],
-	"nt": [
-		"JR-East.Tsurumi.1808.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"d": "18:03"
-	}, {
-		"s": "JR-East.TsurumiOkawaBranch.Anzen"
-	}]
-}, {
-	"id": "JR-East.TsurumiOkawaBranch.1912B.Weekday",
-	"t": "JR-East.TsurumiOkawaBranch.1912B",
-	"r": "JR-East.TsurumiOkawaBranch",
-	"n": "1912B",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.TsurumiOkawaBranch.Okawa"
-	],
-	"ds": [
-		"JR-East.Tsurumi.Tsurumi"
-	],
-	"nt": [
-		"JR-East.Tsurumi.1912B.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"d": "19:44"
-	}, {
-		"s": "JR-East.TsurumiOkawaBranch.Anzen"
-	}]
-}, {
 	"id": "JR-East.TsurumiOkawaBranch.1913.Weekday",
 	"t": "JR-East.TsurumiOkawaBranch.1913",
 	"r": "JR-East.TsurumiOkawaBranch",
@@ -177,28 +181,6 @@
 	}, {
 		"s": "JR-East.TsurumiOkawaBranch.Okawa",
 		"a": "19:35"
-	}]
-}, {
-	"id": "JR-East.TsurumiOkawaBranch.2012.Weekday",
-	"t": "JR-East.TsurumiOkawaBranch.2012",
-	"r": "JR-East.TsurumiOkawaBranch",
-	"n": "2012",
-	"y": "JR-East.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.TsurumiOkawaBranch.Okawa"
-	],
-	"ds": [
-		"JR-East.Tsurumi.Tsurumi"
-	],
-	"nt": [
-		"JR-East.Tsurumi.2012.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"d": "20:29"
-	}, {
-		"s": "JR-East.TsurumiOkawaBranch.Anzen"
 	}]
 }, {
 	"id": "JR-East.TsurumiOkawaBranch.2013.Weekday",
@@ -263,55 +245,9 @@
 	],
 	"tt": [{
 		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"d": "07:55"
+		"d": "07:56"
 	}, {
 		"s": "JR-East.TsurumiOkawaBranch.Anzen"
-	}]
-}, {
-	"id": "JR-East.TsurumiOkawaBranch.713.Weekday",
-	"t": "JR-East.TsurumiOkawaBranch.713",
-	"r": "JR-East.TsurumiOkawaBranch",
-	"n": "713",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.Tsurumi.Tsurumi"
-	],
-	"ds": [
-		"JR-East.TsurumiOkawaBranch.Okawa"
-	],
-	"pt": [
-		"JR-East.Tsurumi.713.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.TsurumiOkawaBranch.Anzen",
-		"d": "07:11"
-	}, {
-		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"a": "07:15"
-	}]
-}, {
-	"id": "JR-East.TsurumiOkawaBranch.713B.Weekday",
-	"t": "JR-East.TsurumiOkawaBranch.713B",
-	"r": "JR-East.TsurumiOkawaBranch",
-	"n": "713B",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.Tsurumi.Tsurumi"
-	],
-	"ds": [
-		"JR-East.TsurumiOkawaBranch.Okawa"
-	],
-	"pt": [
-		"JR-East.Tsurumi.713B.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.TsurumiOkawaBranch.Anzen",
-		"d": "07:43"
-	}, {
-		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"a": "07:47"
 	}]
 }, {
 	"id": "JR-East.TsurumiOkawaBranch.800.Weekday",
@@ -336,29 +272,6 @@
 		"s": "JR-East.TsurumiOkawaBranch.Anzen"
 	}]
 }, {
-	"id": "JR-East.TsurumiOkawaBranch.801.Weekday",
-	"t": "JR-East.TsurumiOkawaBranch.801",
-	"r": "JR-East.TsurumiOkawaBranch",
-	"n": "801",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
-		"JR-East.Tsurumi.Tsurumi"
-	],
-	"ds": [
-		"JR-East.TsurumiOkawaBranch.Okawa"
-	],
-	"pt": [
-		"JR-East.Tsurumi.801.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.TsurumiOkawaBranch.Anzen",
-		"d": "08:16"
-	}, {
-		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"a": "08:20"
-	}]
-}, {
 	"id": "JR-East.TsurumiOkawaBranch.808B.Weekday",
 	"t": "JR-East.TsurumiOkawaBranch.808B",
 	"r": "JR-East.TsurumiOkawaBranch",
@@ -381,53 +294,29 @@
 		"s": "JR-East.TsurumiOkawaBranch.Anzen"
 	}]
 }, {
-	"id": "JR-East.TsurumiOkawaBranch.809.Weekday",
-	"t": "JR-East.TsurumiOkawaBranch.809",
+	"id": "JR-East.TsurumiOkawaBranch.1706.Weekday",
+	"t": "JR-East.TsurumiOkawaBranch.1706",
 	"r": "JR-East.TsurumiOkawaBranch",
-	"n": "809",
+	"n": "1706",
 	"y": "JR-East.Local",
-	"d": "Outbound",
+	"d": "Inbound",
 	"os": [
-		"JR-East.Tsurumi.Tsurumi"
-	],
-	"ds": [
 		"JR-East.TsurumiOkawaBranch.Okawa"
 	],
-	"pt": [
-		"JR-East.Tsurumi.809.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.TsurumiOkawaBranch.Anzen",
-		"d": "08:36"
-	}, {
-		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"a": "08:40"
-	}]
-}, {
-	"id": "JR-East.TsurumiOkawaBranch.1709B.SaturdayHoliday",
-	"t": "JR-East.TsurumiOkawaBranch.1709B",
-	"r": "JR-East.TsurumiOkawaBranch",
-	"n": "1709B",
-	"y": "JR-East.Local",
-	"d": "Outbound",
-	"os": [
+	"ds": [
 		"JR-East.Tsurumi.Tsurumi"
 	],
-	"ds": [
-		"JR-East.TsurumiOkawaBranch.Okawa"
-	],
-	"pt": [
-		"JR-East.Tsurumi.1709B.SaturdayHoliday"
+	"nt": [
+		"JR-East.Tsurumi.1706.Weekday"
 	],
 	"tt": [{
-		"s": "JR-East.TsurumiOkawaBranch.Anzen",
-		"d": "17:49"
-	}, {
 		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"a": "17:53"
+		"d": "17:29"
+	}, {
+		"s": "JR-East.TsurumiOkawaBranch.Anzen"
 	}]
 }, {
-	"id": "JR-East.TsurumiOkawaBranch.1808.SaturdayHoliday",
+	"id": "JR-East.TsurumiOkawaBranch.1808.Weekday",
 	"t": "JR-East.TsurumiOkawaBranch.1808",
 	"r": "JR-East.TsurumiOkawaBranch",
 	"n": "1808",
@@ -440,19 +329,19 @@
 		"JR-East.Tsurumi.Tsurumi"
 	],
 	"nt": [
-		"JR-East.Tsurumi.1808.SaturdayHoliday"
+		"JR-East.Tsurumi.1808.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"d": "18:14"
+		"d": "18:03"
 	}, {
 		"s": "JR-East.TsurumiOkawaBranch.Anzen"
 	}]
 }, {
-	"id": "JR-East.TsurumiOkawaBranch.704.SaturdayHoliday",
-	"t": "JR-East.TsurumiOkawaBranch.704",
+	"id": "JR-East.TsurumiOkawaBranch.1806B.Weekday",
+	"t": "JR-East.TsurumiOkawaBranch.1806B",
 	"r": "JR-East.TsurumiOkawaBranch",
-	"n": "704",
+	"n": "1806B",
 	"y": "JR-East.Local",
 	"d": "Inbound",
 	"os": [
@@ -462,11 +351,55 @@
 		"JR-East.Tsurumi.Tsurumi"
 	],
 	"nt": [
-		"JR-East.Tsurumi.704.SaturdayHoliday"
+		"JR-East.Tsurumi.1806B.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.TsurumiOkawaBranch.Okawa",
-		"d": "07:36"
+		"d": "18:54"
+	}, {
+		"s": "JR-East.TsurumiOkawaBranch.Anzen"
+	}]
+}, {
+	"id": "JR-East.TsurumiOkawaBranch.1912B.Weekday",
+	"t": "JR-East.TsurumiOkawaBranch.1912B",
+	"r": "JR-East.TsurumiOkawaBranch",
+	"n": "1912B",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.TsurumiOkawaBranch.Okawa"
+	],
+	"ds": [
+		"JR-East.Tsurumi.Tsurumi"
+	],
+	"nt": [
+		"JR-East.Tsurumi.1912B.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.TsurumiOkawaBranch.Okawa",
+		"d": "19:44"
+	}, {
+		"s": "JR-East.TsurumiOkawaBranch.Anzen"
+	}]
+}, {
+	"id": "JR-East.TsurumiOkawaBranch.2012.Weekday",
+	"t": "JR-East.TsurumiOkawaBranch.2012",
+	"r": "JR-East.TsurumiOkawaBranch",
+	"n": "2012",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.TsurumiOkawaBranch.Okawa"
+	],
+	"ds": [
+		"JR-East.Tsurumi.Tsurumi"
+	],
+	"nt": [
+		"JR-East.Tsurumi.2012.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.TsurumiOkawaBranch.Okawa",
+		"d": "20:29"
 	}, {
 		"s": "JR-East.TsurumiOkawaBranch.Anzen"
 	}]
@@ -517,6 +450,51 @@
 		"a": "08:05"
 	}]
 }, {
+	"id": "JR-East.TsurumiOkawaBranch.1709B.SaturdayHoliday",
+	"t": "JR-East.TsurumiOkawaBranch.1709B",
+	"r": "JR-East.TsurumiOkawaBranch",
+	"n": "1709B",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.Tsurumi.Tsurumi"
+	],
+	"ds": [
+		"JR-East.TsurumiOkawaBranch.Okawa"
+	],
+	"pt": [
+		"JR-East.Tsurumi.1709B.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.TsurumiOkawaBranch.Anzen",
+		"d": "17:49"
+	}, {
+		"s": "JR-East.TsurumiOkawaBranch.Okawa",
+		"a": "17:53"
+	}]
+}, {
+	"id": "JR-East.TsurumiOkawaBranch.704.SaturdayHoliday",
+	"t": "JR-East.TsurumiOkawaBranch.704",
+	"r": "JR-East.TsurumiOkawaBranch",
+	"n": "704",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.TsurumiOkawaBranch.Okawa"
+	],
+	"ds": [
+		"JR-East.Tsurumi.Tsurumi"
+	],
+	"nt": [
+		"JR-East.Tsurumi.704.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.TsurumiOkawaBranch.Okawa",
+		"d": "07:36"
+	}, {
+		"s": "JR-East.TsurumiOkawaBranch.Anzen"
+	}]
+}, {
 	"id": "JR-East.TsurumiOkawaBranch.804.SaturdayHoliday",
 	"t": "JR-East.TsurumiOkawaBranch.804",
 	"r": "JR-East.TsurumiOkawaBranch",
@@ -535,6 +513,28 @@
 	"tt": [{
 		"s": "JR-East.TsurumiOkawaBranch.Okawa",
 		"d": "08:22"
+	}, {
+		"s": "JR-East.TsurumiOkawaBranch.Anzen"
+	}]
+}, {
+	"id": "JR-East.TsurumiOkawaBranch.1808.SaturdayHoliday",
+	"t": "JR-East.TsurumiOkawaBranch.1808",
+	"r": "JR-East.TsurumiOkawaBranch",
+	"n": "1808",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.TsurumiOkawaBranch.Okawa"
+	],
+	"ds": [
+		"JR-East.Tsurumi.Tsurumi"
+	],
+	"nt": [
+		"JR-East.Tsurumi.1808.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.TsurumiOkawaBranch.Okawa",
+		"d": "18:14"
 	}, {
 		"s": "JR-East.TsurumiOkawaBranch.Anzen"
 	}]
