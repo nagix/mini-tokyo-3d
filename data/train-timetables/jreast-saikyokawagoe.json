@@ -28834,6 +28834,9 @@
 	"pt": [
 		"JR-East.SotetsuDirect.224M.SaturdayHoliday"
 	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.4867F.SaturdayHoliday"
+	],
 	"tt": [{
 		"s": "JR-East.SaikyoKawagoe.Osaki",
 		"d": "08:18"
@@ -35302,21 +35305,10 @@
 		"JR-East.SaikyoKawagoe.Kawagoe"
 	],
 	"pt": [
-		"JR-East.SotetsuDirect.224M.SaturdayHoliday"
+		"JR-East.SaikyoKawagoe.224M.SaturdayHoliday"
 	],
 	"tt": [{
-		"s": "JR-East.SaikyoKawagoe.Osaki",
-		"d": "08:18"
-	}, {
-		"s": "JR-East.SaikyoKawagoe.Ebisu",
-		"d": "08:22"
-	}, {
-		"s": "JR-East.SaikyoKawagoe.Shibuya",
-		"a": "08:24",
-		"d": "08:25"
-	}, {
 		"s": "JR-East.SaikyoKawagoe.Shinjuku",
-		"a": "08:29",
 		"d": "08:32"
 	}, {
 		"s": "JR-East.SaikyoKawagoe.Ikebukuro",
@@ -41259,7 +41251,7 @@
 		"Sotetsu.Main.Ebina"
 	],
 	"nt": [
-		"JR-East.SotetsuDirect.227M.SaturdayHoliday"
+		"JR-East.SaikyoKawagoe.227M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.SaikyoKawagoe.Kawagoe",
@@ -41308,18 +41300,7 @@
 		"d": "08:02"
 	}, {
 		"s": "JR-East.SaikyoKawagoe.Shinjuku",
-		"a": "08:07",
-		"d": "08:08"
-	}, {
-		"s": "JR-East.SaikyoKawagoe.Shibuya",
-		"d": "08:13"
-	}, {
-		"s": "JR-East.SaikyoKawagoe.Ebisu",
-		"a": "08:15",
-		"d": "08:16"
-	}, {
-		"s": "JR-East.SaikyoKawagoe.Osaki",
-		"a": "08:20"
+		"a": "08:07"
 	}]
 }, {
 	"id": "JR-East.SaikyoKawagoe.718K.SaturdayHoliday",
@@ -51435,6 +51416,9 @@
 	],
 	"ds": [
 		"Sotetsu.Main.Ebina"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.4700F.SaturdayHoliday"
 	],
 	"nt": [
 		"JR-East.SotetsuDirect.227M.SaturdayHoliday"

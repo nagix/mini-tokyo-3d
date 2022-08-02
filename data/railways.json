@@ -1515,7 +1515,6 @@
 	},
 	"stations": [
 		"TokyoMetro.Chiyoda.Machida",
-		"TokyoMetro.Chiyoda.ShinYurigaoka",
 		"TokyoMetro.Chiyoda.SeijogakuenMae",
 		"TokyoMetro.Chiyoda.YoyogiUehara",
 		"TokyoMetro.Chiyoda.YoyogiKoen",
@@ -3855,7 +3854,7 @@
 	"color": "#EF59A1",
 	"carComposition": 6
 }, {
-	"id": "Kanto.Joso",
+	"id": "KantoRailway.Joso",
 	"title": {
 		"ja": "常総線",
 		"en": "Joso Line",
@@ -3864,37 +3863,37 @@
 		"zh-Hant": "常總線"
 	},
 	"stations": [
-		"Kanto.Joso.Toride",
-		"Kanto.Joso.NishiToride",
-		"Kanto.Joso.Terahara",
-		"Kanto.Joso.ShinToride",
-		"Kanto.Joso.Yumemino",
-		"Kanto.Joso.Inatoi",
-		"Kanto.Joso.Togashira",
-		"Kanto.Joso.MinamiMoriya",
-		"Kanto.Joso.Moriya",
-		"Kanto.Joso.ShinMoriya",
-		"Kanto.Joso.Kokinu",
-		"Kanto.Joso.Mitsukaido",
-		"Kanto.Joso.KitaMitsukaido",
-		"Kanto.Joso.Nakatsuma",
-		"Kanto.Joso.Mitsuma",
-		"Kanto.Joso.MinamiIshige",
-		"Kanto.Joso.Ishige",
-		"Kanto.Joso.Tamamura",
-		"Kanto.Joso.Sodo",
-		"Kanto.Joso.Shimotsuma",
-		"Kanto.Joso.Daiho",
-		"Kanto.Joso.Tobanoe",
-		"Kanto.Joso.Kurogo",
-		"Kanto.Joso.Otago",
-		"Kanto.Joso.Shimodate"
+		"KantoRailway.Joso.Toride",
+		"KantoRailway.Joso.NishiToride",
+		"KantoRailway.Joso.Terahara",
+		"KantoRailway.Joso.ShinToride",
+		"KantoRailway.Joso.Yumemino",
+		"KantoRailway.Joso.Inatoi",
+		"KantoRailway.Joso.Togashira",
+		"KantoRailway.Joso.MinamiMoriya",
+		"KantoRailway.Joso.Moriya",
+		"KantoRailway.Joso.ShinMoriya",
+		"KantoRailway.Joso.Kokinu",
+		"KantoRailway.Joso.Mitsukaido",
+		"KantoRailway.Joso.KitaMitsukaido",
+		"KantoRailway.Joso.Nakatsuma",
+		"KantoRailway.Joso.Mitsuma",
+		"KantoRailway.Joso.MinamiIshige",
+		"KantoRailway.Joso.Ishige",
+		"KantoRailway.Joso.Tamamura",
+		"KantoRailway.Joso.Sodo",
+		"KantoRailway.Joso.Shimotsuma",
+		"KantoRailway.Joso.Daiho",
+		"KantoRailway.Joso.Tobanoe",
+		"KantoRailway.Joso.Kurogo",
+		"KantoRailway.Joso.Otago",
+		"KantoRailway.Joso.Shimodate"
 	],
 	"ascending": "Outbound",
 	"color": "#2C94B6",
 	"carComposition": 2
 }, {
-	"id": "Kanto.Ryugasaki",
+	"id": "KantoRailway.Ryugasaki",
 	"title": {
 		"ja": "竜ヶ崎線",
 		"en": "Ryugasaki Line",
@@ -3903,9 +3902,9 @@
 		"zh-Hant": "龍崎線"
 	},
 	"stations": [
-		"Kanto.Ryugasaki.Sanuki",
-		"Kanto.Ryugasaki.Ireji",
-		"Kanto.Ryugasaki.Ryugasaki"
+		"KantoRailway.Ryugasaki.Sanuki",
+		"KantoRailway.Ryugasaki.Ireji",
+		"KantoRailway.Ryugasaki.Ryugasaki"
 	],
 	"ascending": "Outbound",
 	"color": "#2C94B6",
