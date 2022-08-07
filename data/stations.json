@@ -15147,18 +15147,6 @@
 		"zh-Hant": "京王八王子"
 	}
 }, {
-	"id": "Keio.Sagamihara.Shinjuku",
-	"railway": "Keio.Sagamihara",
-	"coord": [139.69916, 35.69019],
-	"title": {
-		"ja": "新宿",
-		"en": "Shinjuku",
-		"ko": "신주쿠",
-		"zh-Hans": "新宿",
-		"zh-Hant": "新宿"
-	},
-	"altitude": -1
-}, {
 	"id": "Keio.Sagamihara.Meidaimae",
 	"railway": "Keio.Sagamihara",
 	"coord": [139.65056, 35.66836],
@@ -15348,6 +15336,17 @@
 		"ko": "다마도부쓰코엔",
 		"zh-Hans": "多摩动物公园",
 		"zh-Hant": "多摩動物公園"
+	}
+}, {
+	"id": "Keio.Takao.Meidaimae",
+	"railway": "Keio.Takao",
+	"coord": [139.65056, 35.66836],
+	"title": {
+		"ja": "明大前",
+		"en": "Meidaimae",
+		"ko": "메이다이마에",
+		"zh-Hans": "明大前",
+		"zh-Hant": "明大前"
 	}
 }, {
 	"id": "Keio.Takao.Kitano",

@@ -234,10 +234,10 @@
 		"a": "06:28"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A512K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A512K",
+	"id": "SaitamaRailway.SaitamaRailway.A516K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A516K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A512K",
+	"n": "A516K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -247,7 +247,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A512K.Weekday"
+		"TokyoMetro.Namboku.A516K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -281,10 +281,10 @@
 		"a": "06:39"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A510K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A510K",
+	"id": "SaitamaRailway.SaitamaRailway.A530S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A530S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A510K",
+	"n": "A530S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -294,7 +294,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A510K.Weekday"
+		"TokyoMetro.Namboku.A530S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -469,20 +469,20 @@
 		"a": "07:12"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A616K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A616K",
+	"id": "SaitamaRailway.SaitamaRailway.A612K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A612K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A616K",
+	"n": "A612K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
-		"Tokyu.Meguro.MusashiKosugi"
+		"Tokyu.Meguro.Hiyoshi"
 	],
 	"ds": [
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A616K.Weekday"
+		"TokyoMetro.Namboku.A612K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -620,7 +620,10 @@
 		"TokyoMetro.Namboku.Ichigaya"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A750S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -836,7 +839,10 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A682M.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -948,20 +954,20 @@
 		"a": "08:25"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A704K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A704K",
+	"id": "SaitamaRailway.SaitamaRailway.A760S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A760S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A704K",
+	"n": "A760S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
-		"Tokyu.Meguro.MusashiKosugi"
+		"Tokyu.Meguro.Hiyoshi"
 	],
 	"ds": [
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A704K.Weekday"
+		"TokyoMetro.Namboku.A760S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -995,17 +1001,20 @@
 		"a": "08:30"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A760S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A760S",
+	"id": "SaitamaRailway.SaitamaRailway.A704K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A704K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A760S",
+	"n": "A704K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
-		"Tokyu.Meguro.Hiyoshi"
+		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A704K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -1040,34 +1049,34 @@
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
-		"d": "08:22"
+		"d": "08:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "08:25",
-		"d": "08:25"
+		"d": "08:26"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "08:27",
+		"a": "08:28",
 		"d": "08:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "08:30",
-		"d": "08:30"
+		"d": "08:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "08:32",
+		"a": "08:33",
 		"d": "08:33"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "08:35",
+		"a": "08:36",
 		"d": "08:36"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
-		"a": "08:38",
+		"a": "08:39",
 		"d": "08:39"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "08:41"
+		"a": "08:42"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A724K.Weekday",
@@ -1080,7 +1089,10 @@
 		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A724K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -1115,7 +1127,7 @@
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
-		"d": "08:33"
+		"d": "08:34"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "08:36",
@@ -1138,7 +1150,7 @@
 		"d": "08:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
-		"a": "08:49",
+		"a": "08:50",
 		"d": "08:50"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -1155,7 +1167,10 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A708K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -1230,7 +1245,10 @@
 		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A706K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -1352,7 +1370,10 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A762S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -1417,10 +1438,10 @@
 		"a": "09:21"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A830S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A830S",
+	"id": "SaitamaRailway.SaitamaRailway.A810K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A810K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A830S",
+	"n": "A810K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -1430,7 +1451,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A830S.Weekday"
+		"TokyoMetro.Namboku.A810K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -1521,7 +1542,10 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A840S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -1643,7 +1667,10 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A894M.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -1661,10 +1688,10 @@
 		"a": "09:38"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A812K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A812K",
+	"id": "SaitamaRailway.SaitamaRailway.A816K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A816K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A812K",
+	"n": "A816K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -1674,7 +1701,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A812K.Weekday"
+		"TokyoMetro.Namboku.A816K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -1755,17 +1782,20 @@
 		"a": "09:58"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A810K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A810K",
+	"id": "SaitamaRailway.SaitamaRailway.A830S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A830S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A810K",
+	"n": "A830S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A830S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -1887,7 +1917,10 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A890M.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -2009,7 +2042,10 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A902K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -2074,10 +2110,10 @@
 		"a": "10:31"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A904K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A904K",
+	"id": "SaitamaRailway.SaitamaRailway.A960S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A960S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A904K",
+	"n": "A960S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -2087,7 +2123,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A904K.Weekday"
+		"TokyoMetro.Namboku.A960S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -2121,10 +2157,10 @@
 		"a": "10:37"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A950S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A950S",
+	"id": "SaitamaRailway.SaitamaRailway.A918K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A918K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A950S",
+	"n": "A918K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -2134,7 +2170,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A950S.Weekday"
+		"TokyoMetro.Namboku.A918K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -2377,7 +2413,7 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "11:05",
-		"d": "11:05"
+		"d": "11:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
 		"a": "11:08",
@@ -2424,22 +2460,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "11:17",
-		"d": "11:17"
+		"d": "11:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "11:19",
+		"a": "11:20",
 		"d": "11:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "11:22",
-		"d": "11:22"
+		"d": "11:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "11:24",
+		"a": "11:25",
 		"d": "11:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "11:27",
+		"a": "11:28",
 		"d": "11:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -2447,13 +2483,13 @@
 		"d": "11:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "11:33"
+		"a": "11:34"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1010K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A1010K",
+	"id": "SaitamaRailway.SaitamaRailway.A1030S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A1030S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1010K",
+	"n": "A1030S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -2463,7 +2499,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1010K.Weekday"
+		"TokyoMetro.Namboku.A1030S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -2471,22 +2507,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "11:29",
-		"d": "11:29"
+		"d": "11:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "11:31",
+		"a": "11:32",
 		"d": "11:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "11:34",
-		"d": "11:34"
+		"d": "11:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "11:36",
+		"a": "11:37",
 		"d": "11:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "11:39",
+		"a": "11:40",
 		"d": "11:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -2494,7 +2530,7 @@
 		"d": "11:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "11:45"
+		"a": "11:46"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1190M.Weekday",
@@ -2518,22 +2554,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "11:41",
-		"d": "11:41"
+		"d": "11:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "11:43",
+		"a": "11:44",
 		"d": "11:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "11:46",
-		"d": "11:46"
+		"d": "11:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "11:48",
+		"a": "11:49",
 		"d": "11:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "11:51",
+		"a": "11:52",
 		"d": "11:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -2541,7 +2577,7 @@
 		"d": "11:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "11:57"
+		"a": "11:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1056S.Weekday",
@@ -2565,22 +2601,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "11:53",
-		"d": "11:53"
+		"d": "11:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "11:55",
+		"a": "11:56",
 		"d": "11:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "11:58",
-		"d": "11:58"
+		"d": "11:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "12:00",
+		"a": "12:01",
 		"d": "12:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "12:03",
+		"a": "12:04",
 		"d": "12:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -2588,7 +2624,7 @@
 		"d": "12:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "12:09"
+		"a": "12:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1140S.Weekday",
@@ -2612,22 +2648,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "12:05",
-		"d": "12:05"
+		"d": "12:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "12:07",
+		"a": "12:08",
 		"d": "12:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "12:10",
-		"d": "12:10"
+		"d": "12:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "12:12",
+		"a": "12:13",
 		"d": "12:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "12:15",
+		"a": "12:16",
 		"d": "12:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -2635,7 +2671,7 @@
 		"d": "12:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "12:21"
+		"a": "12:22"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1188M.Weekday",
@@ -2659,22 +2695,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "12:17",
-		"d": "12:17"
+		"d": "12:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "12:19",
+		"a": "12:20",
 		"d": "12:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "12:22",
-		"d": "12:22"
+		"d": "12:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "12:24",
+		"a": "12:25",
 		"d": "12:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "12:27",
+		"a": "12:28",
 		"d": "12:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -2682,13 +2718,13 @@
 		"d": "12:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "12:33"
+		"a": "12:34"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1166S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A1166S",
+	"id": "SaitamaRailway.SaitamaRailway.A1110K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A1110K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1166S",
+	"n": "A1110K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -2698,7 +2734,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1166S.Weekday"
+		"TokyoMetro.Namboku.A1110K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -2706,22 +2742,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "12:29",
-		"d": "12:29"
+		"d": "12:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "12:31",
+		"a": "12:32",
 		"d": "12:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "12:34",
-		"d": "12:34"
+		"d": "12:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "12:36",
+		"a": "12:37",
 		"d": "12:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "12:39",
+		"a": "12:40",
 		"d": "12:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -2729,7 +2765,7 @@
 		"d": "12:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "12:45"
+		"a": "12:46"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1208K.Weekday",
@@ -2753,22 +2789,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "12:41",
-		"d": "12:41"
+		"d": "12:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "12:43",
+		"a": "12:44",
 		"d": "12:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "12:46",
-		"d": "12:46"
+		"d": "12:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "12:48",
+		"a": "12:49",
 		"d": "12:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "12:51",
+		"a": "12:52",
 		"d": "12:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -2776,7 +2812,7 @@
 		"d": "12:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "12:57"
+		"a": "12:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1102K.Weekday",
@@ -2800,22 +2836,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "12:53",
-		"d": "12:53"
+		"d": "12:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "12:55",
+		"a": "12:56",
 		"d": "12:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "12:58",
-		"d": "12:58"
+		"d": "12:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "13:00",
+		"a": "13:01",
 		"d": "13:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "13:03",
+		"a": "13:04",
 		"d": "13:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -2823,7 +2859,7 @@
 		"d": "13:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "13:09"
+		"a": "13:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1262S.Weekday",
@@ -2847,22 +2883,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "13:05",
-		"d": "13:05"
+		"d": "13:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "13:07",
+		"a": "13:08",
 		"d": "13:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "13:10",
-		"d": "13:10"
+		"d": "13:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "13:12",
+		"a": "13:13",
 		"d": "13:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "13:15",
+		"a": "13:16",
 		"d": "13:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -2870,7 +2906,7 @@
 		"d": "13:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "13:21"
+		"a": "13:22"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1296M.Weekday",
@@ -2894,22 +2930,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "13:17",
-		"d": "13:17"
+		"d": "13:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "13:19",
+		"a": "13:20",
 		"d": "13:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "13:22",
-		"d": "13:22"
+		"d": "13:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "13:24",
+		"a": "13:25",
 		"d": "13:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "13:27",
+		"a": "13:28",
 		"d": "13:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -2917,7 +2953,7 @@
 		"d": "13:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "13:33"
+		"a": "13:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1236S.Weekday",
@@ -2941,22 +2977,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "13:29",
-		"d": "13:29"
+		"d": "13:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "13:31",
+		"a": "13:32",
 		"d": "13:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "13:34",
-		"d": "13:34"
+		"d": "13:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "13:36",
+		"a": "13:37",
 		"d": "13:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "13:39",
+		"a": "13:40",
 		"d": "13:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -2964,13 +3000,13 @@
 		"d": "13:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "13:45"
+		"a": "13:46"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1330S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A1330S",
+	"id": "SaitamaRailway.SaitamaRailway.A1366S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A1366S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1330S",
+	"n": "A1366S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -2980,7 +3016,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1330S.Weekday"
+		"TokyoMetro.Namboku.A1366S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -2988,22 +3024,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "13:41",
-		"d": "13:41"
+		"d": "13:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "13:43",
+		"a": "13:44",
 		"d": "13:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "13:46",
-		"d": "13:46"
+		"d": "13:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "13:48",
+		"a": "13:49",
 		"d": "13:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "13:51",
+		"a": "13:52",
 		"d": "13:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3011,7 +3047,7 @@
 		"d": "13:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "13:57"
+		"a": "13:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1238S.Weekday",
@@ -3035,22 +3071,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "13:53",
-		"d": "13:53"
+		"d": "13:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "13:55",
+		"a": "13:56",
 		"d": "13:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "13:58",
-		"d": "13:58"
+		"d": "13:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "14:00",
+		"a": "14:01",
 		"d": "14:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "14:03",
+		"a": "14:04",
 		"d": "14:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3058,7 +3094,7 @@
 		"d": "14:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "14:09"
+		"a": "14:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1368S.Weekday",
@@ -3082,22 +3118,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "14:05",
-		"d": "14:05"
+		"d": "14:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "14:07",
+		"a": "14:08",
 		"d": "14:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "14:10",
-		"d": "14:10"
+		"d": "14:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "14:12",
+		"a": "14:13",
 		"d": "14:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "14:15",
+		"a": "14:16",
 		"d": "14:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3105,7 +3141,7 @@
 		"d": "14:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "14:21"
+		"a": "14:22"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1352S.Weekday",
@@ -3129,22 +3165,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "14:17",
-		"d": "14:17"
+		"d": "14:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "14:19",
+		"a": "14:20",
 		"d": "14:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "14:22",
-		"d": "14:22"
+		"d": "14:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "14:24",
+		"a": "14:25",
 		"d": "14:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "14:27",
+		"a": "14:28",
 		"d": "14:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3152,7 +3188,7 @@
 		"d": "14:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "14:33"
+		"a": "14:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1348S.Weekday",
@@ -3176,22 +3212,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "14:29",
-		"d": "14:29"
+		"d": "14:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "14:31",
+		"a": "14:32",
 		"d": "14:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "14:34",
-		"d": "14:34"
+		"d": "14:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "14:36",
+		"a": "14:37",
 		"d": "14:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "14:39",
+		"a": "14:40",
 		"d": "14:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3199,7 +3235,7 @@
 		"d": "14:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "14:45"
+		"a": "14:46"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1406K.Weekday",
@@ -3223,22 +3259,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "14:41",
-		"d": "14:41"
+		"d": "14:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "14:43",
+		"a": "14:44",
 		"d": "14:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "14:46",
-		"d": "14:46"
+		"d": "14:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "14:48",
+		"a": "14:49",
 		"d": "14:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "14:51",
+		"a": "14:52",
 		"d": "14:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3246,7 +3282,7 @@
 		"d": "14:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "14:57"
+		"a": "14:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1386M.Weekday",
@@ -3270,22 +3306,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "14:53",
-		"d": "14:53"
+		"d": "14:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "14:55",
+		"a": "14:56",
 		"d": "14:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "14:58",
-		"d": "14:58"
+		"d": "14:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "15:00",
+		"a": "15:01",
 		"d": "15:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "15:03",
+		"a": "15:04",
 		"d": "15:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3293,7 +3329,7 @@
 		"d": "15:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "15:09"
+		"a": "15:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1442S.Weekday",
@@ -3317,22 +3353,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "15:05",
-		"d": "15:05"
+		"d": "15:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "15:07",
+		"a": "15:08",
 		"d": "15:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "15:10",
-		"d": "15:10"
+		"d": "15:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "15:12",
+		"a": "15:13",
 		"d": "15:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "15:15",
+		"a": "15:16",
 		"d": "15:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3340,7 +3376,7 @@
 		"d": "15:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "15:21"
+		"a": "15:22"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1480M.Weekday",
@@ -3364,22 +3400,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "15:17",
-		"d": "15:17"
+		"d": "15:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "15:19",
+		"a": "15:20",
 		"d": "15:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "15:22",
-		"d": "15:22"
+		"d": "15:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "15:24",
+		"a": "15:25",
 		"d": "15:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "15:27",
+		"a": "15:28",
 		"d": "15:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3387,7 +3423,7 @@
 		"d": "15:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "15:33"
+		"a": "15:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1484M.Weekday",
@@ -3411,22 +3447,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "15:29",
-		"d": "15:29"
+		"d": "15:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "15:31",
+		"a": "15:32",
 		"d": "15:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "15:34",
-		"d": "15:34"
+		"d": "15:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "15:36",
+		"a": "15:37",
 		"d": "15:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "15:39",
+		"a": "15:40",
 		"d": "15:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3434,7 +3470,7 @@
 		"d": "15:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "15:45"
+		"a": "15:46"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1594M.Weekday",
@@ -3458,22 +3494,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "15:41",
-		"d": "15:41"
+		"d": "15:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "15:43",
+		"a": "15:44",
 		"d": "15:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "15:46",
-		"d": "15:46"
+		"d": "15:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "15:48",
+		"a": "15:49",
 		"d": "15:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "15:51",
+		"a": "15:52",
 		"d": "15:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3481,13 +3517,13 @@
 		"d": "15:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "15:57"
+		"a": "15:58"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1450S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A1450S",
+	"id": "SaitamaRailway.SaitamaRailway.A1418K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A1418K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1450S",
+	"n": "A1418K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -3497,7 +3533,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1450S.Weekday"
+		"TokyoMetro.Namboku.A1418K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -3505,22 +3541,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "15:53",
-		"d": "15:53"
+		"d": "15:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "15:55",
+		"a": "15:56",
 		"d": "15:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "15:58",
-		"d": "15:58"
+		"d": "15:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "16:00",
+		"a": "16:01",
 		"d": "16:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "16:03",
+		"a": "16:04",
 		"d": "16:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3528,7 +3564,7 @@
 		"d": "16:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "16:09"
+		"a": "16:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1590M.Weekday",
@@ -3552,22 +3588,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "16:05",
-		"d": "16:05"
+		"d": "16:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "16:07",
+		"a": "16:08",
 		"d": "16:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "16:10",
-		"d": "16:10"
+		"d": "16:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "16:12",
+		"a": "16:13",
 		"d": "16:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "16:15",
+		"a": "16:16",
 		"d": "16:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3575,7 +3611,7 @@
 		"d": "16:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "16:21"
+		"a": "16:22"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1556S.Weekday",
@@ -3599,22 +3635,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "16:17",
-		"d": "16:17"
+		"d": "16:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "16:19",
+		"a": "16:20",
 		"d": "16:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "16:22",
-		"d": "16:22"
+		"d": "16:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "16:24",
+		"a": "16:25",
 		"d": "16:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "16:27",
+		"a": "16:28",
 		"d": "16:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3622,7 +3658,7 @@
 		"d": "16:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "16:33"
+		"a": "16:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1540S.Weekday",
@@ -3646,22 +3682,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "16:29",
-		"d": "16:29"
+		"d": "16:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "16:31",
+		"a": "16:32",
 		"d": "16:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "16:34",
-		"d": "16:34"
+		"d": "16:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "16:36",
+		"a": "16:37",
 		"d": "16:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "16:39",
+		"a": "16:40",
 		"d": "16:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3669,7 +3705,7 @@
 		"d": "16:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "16:45"
+		"a": "16:46"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1688M.Weekday",
@@ -3693,22 +3729,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "16:41",
-		"d": "16:41"
+		"d": "16:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "16:43",
+		"a": "16:44",
 		"d": "16:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "16:46",
-		"d": "16:46"
+		"d": "16:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "16:48",
+		"a": "16:49",
 		"d": "16:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "16:51",
+		"a": "16:52",
 		"d": "16:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3716,7 +3752,7 @@
 		"d": "16:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "16:57"
+		"a": "16:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1682M.Weekday",
@@ -3740,27 +3776,27 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "16:48",
-		"d": "16:48"
+		"d": "16:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "16:50",
+		"a": "16:51",
 		"d": "16:51"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "16:53",
-		"d": "16:53"
+		"d": "16:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "16:55",
+		"a": "16:56",
 		"d": "16:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "16:58",
+		"a": "16:59",
 		"d": "16:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
 		"a": "17:01",
-		"d": "17:04"
+		"d": "17:05"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
 		"a": "17:07"
@@ -3787,22 +3823,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "16:59",
-		"d": "16:59"
+		"d": "17:00"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "17:01",
+		"a": "17:02",
 		"d": "17:02"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "17:04",
-		"d": "17:04"
+		"d": "17:05"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "17:06",
+		"a": "17:07",
 		"d": "17:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "17:09",
+		"a": "17:10",
 		"d": "17:10"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3810,7 +3846,7 @@
 		"d": "17:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "17:15"
+		"a": "17:16"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1608K.Weekday",
@@ -3834,22 +3870,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "17:05",
-		"d": "17:05"
+		"d": "17:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "17:07",
+		"a": "17:08",
 		"d": "17:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "17:10",
-		"d": "17:10"
+		"d": "17:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "17:12",
+		"a": "17:13",
 		"d": "17:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "17:15",
+		"a": "17:16",
 		"d": "17:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -3857,7 +3893,7 @@
 		"d": "17:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "17:21"
+		"a": "17:22"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1642S.Weekday",
@@ -4189,10 +4225,10 @@
 		"a": "18:06"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1666S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A1666S",
+	"id": "SaitamaRailway.SaitamaRailway.A1610K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A1610K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1666S",
+	"n": "A1610K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -4202,7 +4238,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1666S.Weekday"
+		"TokyoMetro.Namboku.A1610K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -4283,10 +4319,10 @@
 		"a": "18:17"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1660S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A1660S",
+	"id": "SaitamaRailway.SaitamaRailway.A1622K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A1622K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1660S",
+	"n": "A1622K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -4296,7 +4332,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1660S.Weekday"
+		"TokyoMetro.Namboku.A1622K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -4330,10 +4366,10 @@
 		"a": "18:23"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1730S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A1730S",
+	"id": "SaitamaRailway.SaitamaRailway.A1766S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A1766S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1730S",
+	"n": "A1766S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -4343,7 +4379,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1730S.Weekday"
+		"TokyoMetro.Namboku.A1766S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -4377,10 +4413,10 @@
 		"a": "18:30"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1712K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A1712K",
+	"id": "SaitamaRailway.SaitamaRailway.A1760S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A1760S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1712K",
+	"n": "A1760S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -4390,7 +4426,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1712K.Weekday"
+		"TokyoMetro.Namboku.A1760S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -4565,10 +4601,10 @@
 		"a": "18:50"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1716K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A1716K",
+	"id": "SaitamaRailway.SaitamaRailway.A1704K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A1704K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1716K",
+	"n": "A1704K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -4578,7 +4614,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1716K.Weekday"
+		"TokyoMetro.Namboku.A1704K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -4800,10 +4836,10 @@
 		"a": "19:15"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1750S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A1750S",
+	"id": "SaitamaRailway.SaitamaRailway.A1718K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A1718K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1750S",
+	"n": "A1718K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -4813,7 +4849,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1750S.Weekday"
+		"TokyoMetro.Namboku.A1718K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -4847,10 +4883,10 @@
 		"a": "19:20"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1718K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A1718K",
+	"id": "SaitamaRailway.SaitamaRailway.A1750S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A1750S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1718K",
+	"n": "A1750S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -4860,7 +4896,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1718K.Weekday"
+		"TokyoMetro.Namboku.A1750S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -4941,10 +4977,10 @@
 		"a": "19:30"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1810K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A1810K",
+	"id": "SaitamaRailway.SaitamaRailway.A1830S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A1830S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1810K",
+	"n": "A1830S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -4954,7 +4990,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1810K.Weekday"
+		"TokyoMetro.Namboku.A1830S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -5834,10 +5870,10 @@
 		"a": "21:23"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A2030S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A2030S",
+	"id": "SaitamaRailway.SaitamaRailway.A2066S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A2066S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A2030S",
+	"n": "A2066S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -5847,7 +5883,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A2030S.Weekday"
+		"TokyoMetro.Namboku.A2066S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -6304,10 +6340,10 @@
 		"a": "22:45"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A2110K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A2110K",
+	"id": "SaitamaRailway.SaitamaRailway.A2102K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A2102K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A2110K",
+	"n": "A2102K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -6317,7 +6353,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A2110K.Weekday"
+		"TokyoMetro.Namboku.A2102K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -6633,10 +6669,10 @@
 		"a": "23:39"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A2230S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.A2230S",
+	"id": "SaitamaRailway.SaitamaRailway.A2266S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.A2266S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A2230S",
+	"n": "A2266S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -6646,7 +6682,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A2230S.Weekday"
+		"TokyoMetro.Namboku.A2266S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -7140,7 +7176,7 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
 		"a": "05:37",
-		"d": "05:38"
+		"d": "05:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "05:40",
@@ -7573,10 +7609,10 @@
 		"a": "07:06"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B612K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B612K",
+	"id": "SaitamaRailway.SaitamaRailway.B616K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B616K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B612K",
+	"n": "B616K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -7586,7 +7622,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B612K.Weekday"
+		"TokyoMetro.Namboku.B616K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -7620,10 +7656,10 @@
 		"a": "07:11"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B610K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B610K",
+	"id": "SaitamaRailway.SaitamaRailway.B630S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B630S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B610K",
+	"n": "B630S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -7633,7 +7669,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B610K.Weekday"
+		"TokyoMetro.Namboku.B630S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -7902,10 +7938,10 @@
 		"a": "07:41"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B716K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B716K",
+	"id": "SaitamaRailway.SaitamaRailway.B712K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B712K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B716K",
+	"n": "B712K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -7915,7 +7951,7 @@
 		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B716K.Weekday"
+		"TokyoMetro.Namboku.B712K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -8006,7 +8042,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"ds": [
-		"Tokyu.Meguro.MusashiKosugi"
+		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
 		"TokyoMetro.Namboku.B718K.Weekday"
@@ -8607,10 +8643,10 @@
 		"a": "08:47"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B804K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B804K",
+	"id": "SaitamaRailway.SaitamaRailway.B860S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B860S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B804K",
+	"n": "B860S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -8620,7 +8656,7 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B804K.Weekday"
+		"TokyoMetro.Namboku.B860S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -8936,10 +8972,10 @@
 		"a": "09:47"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B930S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B930S",
+	"id": "SaitamaRailway.SaitamaRailway.B910K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B910K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B930S",
+	"n": "B910K",
 	"y": "SaitamaRailway.Express",
 	"d": "Inbound",
 	"os": [
@@ -8949,7 +8985,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B930S.Weekday"
+		"TokyoMetro.Namboku.B910K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -9218,10 +9254,10 @@
 		"a": "11:02"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1050S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1050S",
+	"id": "SaitamaRailway.SaitamaRailway.B1018K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1018K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1050S",
+	"n": "B1018K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -9231,7 +9267,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1050S.Weekday"
+		"TokyoMetro.Namboku.B1018K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -9453,10 +9489,10 @@
 		"a": "12:02"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1110K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1110K",
+	"id": "SaitamaRailway.SaitamaRailway.B1130S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1130S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1110K",
+	"n": "B1130S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -9466,7 +9502,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1110K.Weekday"
+		"TokyoMetro.Namboku.B1130S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -9688,10 +9724,10 @@
 		"a": "13:02"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1266S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1266S",
+	"id": "SaitamaRailway.SaitamaRailway.B1210K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1210K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1266S",
+	"n": "B1210K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -9701,7 +9737,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1266S.Weekday"
+		"TokyoMetro.Namboku.B1210K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -9970,10 +10006,10 @@
 		"a": "14:14"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1430S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1430S",
+	"id": "SaitamaRailway.SaitamaRailway.B1466S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1466S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1430S",
+	"n": "B1466S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -9983,7 +10019,7 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1430S.Weekday"
+		"TokyoMetro.Namboku.B1466S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -10346,10 +10382,10 @@
 		"a": "15:50"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1512K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1512K",
+	"id": "SaitamaRailway.SaitamaRailway.B1560S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1560S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1512K",
+	"n": "B1560S",
 	"y": "SaitamaRailway.Express",
 	"d": "Inbound",
 	"os": [
@@ -10359,7 +10395,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1512K.Weekday"
+		"TokyoMetro.Namboku.B1560S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -10487,10 +10523,10 @@
 		"a": "16:26"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1650S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1650S",
+	"id": "SaitamaRailway.SaitamaRailway.B1618K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1618K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1650S",
+	"n": "B1618K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -10500,7 +10536,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1650S.Weekday"
+		"TokyoMetro.Namboku.B1618K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -10934,7 +10970,7 @@
 		"d": "17:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "17:27",
+		"a": "17:28",
 		"d": "17:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
@@ -10943,15 +10979,15 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "17:33",
-		"d": "17:33"
+		"d": "17:34"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "17:35",
+		"a": "17:36",
 		"d": "17:36"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "17:38",
-		"d": "17:38"
+		"d": "17:39"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
 		"a": "17:41"
@@ -11286,10 +11322,10 @@
 		"a": "18:17"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1804K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1804K",
+	"id": "SaitamaRailway.SaitamaRailway.B1816K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1816K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1804K",
+	"n": "B1816K",
 	"y": "SaitamaRailway.Express",
 	"d": "Inbound",
 	"os": [
@@ -11299,7 +11335,7 @@
 		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1804K.Weekday"
+		"TokyoMetro.Namboku.B1816K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -11427,10 +11463,10 @@
 		"a": "18:32"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1866S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1866S",
+	"id": "SaitamaRailway.SaitamaRailway.B1810K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1810K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1866S",
+	"n": "B1810K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -11440,7 +11476,7 @@
 		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1866S.Weekday"
+		"TokyoMetro.Namboku.B1810K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -11521,10 +11557,10 @@
 		"a": "18:42"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1860S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1860S",
+	"id": "SaitamaRailway.SaitamaRailway.B1822K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1822K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1860S",
+	"n": "B1822K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -11534,7 +11570,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1860S.Weekday"
+		"TokyoMetro.Namboku.B1822K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -11568,10 +11604,10 @@
 		"a": "18:47"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1830S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1830S",
+	"id": "SaitamaRailway.SaitamaRailway.B1866S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1866S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1830S",
+	"n": "B1866S",
 	"y": "SaitamaRailway.Express",
 	"d": "Inbound",
 	"os": [
@@ -11581,7 +11617,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1830S.Weekday"
+		"TokyoMetro.Namboku.B1866S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -11615,20 +11651,20 @@
 		"a": "18:53"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1812K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1812K",
+	"id": "SaitamaRailway.SaitamaRailway.B1860S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1860S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1812K",
+	"n": "B1860S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"ds": [
-		"Tokyu.Meguro.MusashiKosugi"
+		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1812K.Weekday"
+		"TokyoMetro.Namboku.B1860S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -11803,10 +11839,10 @@
 		"a": "19:18"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1916K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1916K",
+	"id": "SaitamaRailway.SaitamaRailway.B1904K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1904K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1916K",
+	"n": "B1904K",
 	"y": "SaitamaRailway.Express",
 	"d": "Inbound",
 	"os": [
@@ -11816,7 +11852,7 @@
 		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1916K.Weekday"
+		"TokyoMetro.Namboku.B1904K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -11991,10 +12027,10 @@
 		"a": "19:42"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1950S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1950S",
+	"id": "SaitamaRailway.SaitamaRailway.B1918K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1918K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1950S",
+	"n": "B1918K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -12004,7 +12040,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1950S.Weekday"
+		"TokyoMetro.Namboku.B1918K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -12038,10 +12074,10 @@
 		"a": "19:47"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1918K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1918K",
+	"id": "SaitamaRailway.SaitamaRailway.B1950S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1950S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1918K",
+	"n": "B1950S",
 	"y": "SaitamaRailway.Express",
 	"d": "Inbound",
 	"os": [
@@ -12051,7 +12087,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1918K.Weekday"
+		"TokyoMetro.Namboku.B1950S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -12132,10 +12168,10 @@
 		"a": "19:59"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1910K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B1910K",
+	"id": "SaitamaRailway.SaitamaRailway.B1902K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B1902K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1910K",
+	"n": "B1902K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -12145,7 +12181,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1910K.Weekday"
+		"TokyoMetro.Namboku.B1902K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -12884,10 +12920,10 @@
 		"a": "21:52"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B2130S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B2130S",
+	"id": "SaitamaRailway.SaitamaRailway.B2166S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B2166S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B2130S",
+	"n": "B2166S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -12897,7 +12933,7 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B2130S.Weekday"
+		"TokyoMetro.Namboku.B2166S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -13317,7 +13353,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"ds": [
-		"Tokyu.Meguro.Hiyoshi"
+		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"nt": [
 		"TokyoMetro.Namboku.B2218K.Weekday"
@@ -13354,10 +13390,10 @@
 		"a": "23:15"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B2310K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B2310K",
+	"id": "SaitamaRailway.SaitamaRailway.B2302K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B2302K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B2310K",
+	"n": "B2302K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -13367,7 +13403,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B2310K.Weekday"
+		"TokyoMetro.Namboku.B2302K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -13495,10 +13531,10 @@
 		"a": "23:39"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B2302K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B2302K",
+	"id": "SaitamaRailway.SaitamaRailway.B2330S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B2330S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B2302K",
+	"n": "B2330S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -13508,7 +13544,7 @@
 		"Tokyu.Meguro.Okusawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B2302K.Weekday"
+		"TokyoMetro.Namboku.B2330S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -13589,10 +13625,10 @@
 		"a": "23:58"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B2330S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B2330S",
+	"id": "SaitamaRailway.SaitamaRailway.B2366S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B2366S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B2330S",
+	"n": "B2366S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -13602,7 +13638,7 @@
 		"TokyoMetro.Namboku.Ichigaya"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B2330S.Weekday"
+		"TokyoMetro.Namboku.B2366S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -13690,7 +13726,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"Tokyu.Meguro.Hiyoshi"
@@ -13721,7 +13757,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"Tokyu.Meguro.Hiyoshi"
@@ -13752,7 +13788,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"Tokyu.Meguro.Hiyoshi"
@@ -13783,10 +13819,10 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
-		"Tokyu.Meguro.Hiyoshi"
+		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"nt": [
 		"TokyoMetro.Namboku.B750S.Weekday"
@@ -13814,7 +13850,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
@@ -13838,20 +13874,20 @@
 		"a": "08:20"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B860S.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B860S",
+	"id": "SaitamaRailway.SaitamaRailway.B804K.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B804K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B860S",
+	"n": "B804K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B860S.Weekday"
+		"TokyoMetro.Namboku.B804K.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
@@ -13876,10 +13912,10 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
-		"Tokyu.Meguro.MusashiKosugi"
+		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
 		"TokyoMetro.Namboku.B824K.Weekday"
@@ -13907,7 +13943,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"Tokyu.Meguro.Hiyoshi"
@@ -13938,7 +13974,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
@@ -13952,7 +13988,7 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
 		"a": "09:04",
-		"d": "09:05"
+		"d": "09:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "09:07",
@@ -13969,7 +14005,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
@@ -14000,7 +14036,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"Tokyu.Meguro.Hiyoshi"
@@ -14031,7 +14067,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
@@ -14055,20 +14091,20 @@
 		"a": "09:54"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B910K.Weekday",
-	"t": "SaitamaRailway.SaitamaRailway.B910K",
+	"id": "SaitamaRailway.SaitamaRailway.B930S.Weekday",
+	"t": "SaitamaRailway.SaitamaRailway.B930S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B910K",
+	"n": "B930S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B910K.Weekday"
+		"TokyoMetro.Namboku.B930S.Weekday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
@@ -14093,7 +14129,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
@@ -14124,7 +14160,7 @@
 	"y": "SaitamaRailway.Express",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"Tokyu.Meguro.Hiyoshi"
@@ -14430,10 +14466,10 @@
 		"a": "06:39"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A510K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A510K",
+	"id": "SaitamaRailway.SaitamaRailway.A530S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A530S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A510K",
+	"n": "A530S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -14443,7 +14479,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A510K.SaturdayHoliday"
+		"TokyoMetro.Namboku.A530S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -14537,7 +14573,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A506K2.SaturdayHoliday"
+		"TokyoMetro.Namboku.A506K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -14910,7 +14946,10 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A736S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -14985,7 +15024,10 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A784M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -15003,10 +15045,10 @@
 		"a": "08:23"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A730S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A730S",
+	"id": "SaitamaRailway.SaitamaRailway.A710K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A710K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A730S",
+	"n": "A710K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -15016,7 +15058,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A730S.SaturdayHoliday"
+		"TokyoMetro.Namboku.A710K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -15050,17 +15092,20 @@
 		"a": "08:41"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A702K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A702K",
+	"id": "SaitamaRailway.SaitamaRailway.A744S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A744S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A702K",
+	"n": "A744S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
-		"Tokyu.Meguro.MusashiKosugi"
+		"Tokyu.Meguro.Hiyoshi"
 	],
 	"ds": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
+	],
+	"pt": [
+		"TokyoMetro.Namboku.A744S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -15078,10 +15123,10 @@
 		"a": "08:35"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A744S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A744S",
+	"id": "SaitamaRailway.SaitamaRailway.A738S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A738S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A744S",
+	"n": "A738S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -15091,7 +15136,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A744S.SaturdayHoliday"
+		"TokyoMetro.Namboku.A738S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -15125,20 +15170,20 @@
 		"a": "08:53"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A738S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A738S",
+	"id": "SaitamaRailway.SaitamaRailway.A702K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A702K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A738S",
+	"n": "A702K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
-		"Tokyu.Meguro.Hiyoshi"
+		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"ds": [
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A738S.SaturdayHoliday"
+		"TokyoMetro.Namboku.A702K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -15279,7 +15324,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A708K2.SaturdayHoliday"
+		"TokyoMetro.Namboku.A708K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -15616,22 +15661,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "10:06",
-		"d": "10:06"
+		"d": "10:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "10:08",
+		"a": "10:09",
 		"d": "10:09"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "10:11",
-		"d": "10:11"
+		"d": "10:12"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "10:13",
+		"a": "10:14",
 		"d": "10:14"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "10:16",
+		"a": "10:17",
 		"d": "10:17"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -15639,13 +15684,13 @@
 		"d": "10:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "10:22"
+		"a": "10:23"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A902K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A902K",
+	"id": "SaitamaRailway.SaitamaRailway.A944S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A944S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A902K",
+	"n": "A944S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -15655,7 +15700,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A902K.SaturdayHoliday"
+		"TokyoMetro.Namboku.A944S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -15663,22 +15708,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "10:17",
-		"d": "10:17"
+		"d": "10:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "10:19",
+		"a": "10:20",
 		"d": "10:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "10:22",
-		"d": "10:22"
+		"d": "10:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "10:24",
+		"a": "10:25",
 		"d": "10:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "10:27",
+		"a": "10:28",
 		"d": "10:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -15686,7 +15731,7 @@
 		"d": "10:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "10:33"
+		"a": "10:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A990M.SaturdayHoliday",
@@ -15710,22 +15755,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "10:29",
-		"d": "10:29"
+		"d": "10:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "10:31",
+		"a": "10:32",
 		"d": "10:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "10:34",
-		"d": "10:34"
+		"d": "10:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "10:36",
+		"a": "10:37",
 		"d": "10:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "10:39",
+		"a": "10:40",
 		"d": "10:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -15733,13 +15778,13 @@
 		"d": "10:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "10:45"
+		"a": "10:46"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1044S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A1044S",
+	"id": "SaitamaRailway.SaitamaRailway.A1038S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A1038S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1044S",
+	"n": "A1038S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -15749,7 +15794,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1044S.SaturdayHoliday"
+		"TokyoMetro.Namboku.A1038S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -15757,22 +15802,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "10:41",
-		"d": "10:41"
+		"d": "10:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "10:43",
+		"a": "10:44",
 		"d": "10:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "10:46",
-		"d": "10:46"
+		"d": "10:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "10:48",
+		"a": "10:49",
 		"d": "10:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "10:51",
+		"a": "10:52",
 		"d": "10:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -15780,7 +15825,7 @@
 		"d": "10:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "10:57"
+		"a": "10:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A980M.SaturdayHoliday",
@@ -15804,22 +15849,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "10:53",
-		"d": "10:53"
+		"d": "10:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "10:55",
+		"a": "10:56",
 		"d": "10:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "10:58",
-		"d": "10:58"
+		"d": "10:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "11:00",
+		"a": "11:01",
 		"d": "11:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "11:03",
+		"a": "11:04",
 		"d": "11:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -15827,7 +15872,7 @@
 		"d": "11:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "11:09"
+		"a": "11:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1084M.SaturdayHoliday",
@@ -15851,22 +15896,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "11:05",
-		"d": "11:05"
+		"d": "11:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "11:07",
+		"a": "11:08",
 		"d": "11:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "11:10",
-		"d": "11:10"
+		"d": "11:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "11:12",
+		"a": "11:13",
 		"d": "11:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "11:15",
+		"a": "11:16",
 		"d": "11:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -15874,7 +15919,7 @@
 		"d": "11:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "11:21"
+		"a": "11:22"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1046S.SaturdayHoliday",
@@ -15898,22 +15943,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "11:17",
-		"d": "11:17"
+		"d": "11:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "11:19",
+		"a": "11:20",
 		"d": "11:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "11:22",
-		"d": "11:22"
+		"d": "11:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "11:24",
+		"a": "11:25",
 		"d": "11:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "11:27",
+		"a": "11:28",
 		"d": "11:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -15921,7 +15966,7 @@
 		"d": "11:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "11:33"
+		"a": "11:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1006K.SaturdayHoliday",
@@ -15945,22 +15990,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "11:29",
-		"d": "11:29"
+		"d": "11:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "11:31",
+		"a": "11:32",
 		"d": "11:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "11:34",
-		"d": "11:34"
+		"d": "11:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "11:36",
+		"a": "11:37",
 		"d": "11:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "11:39",
+		"a": "11:40",
 		"d": "11:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -15968,7 +16013,7 @@
 		"d": "11:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "11:45"
+		"a": "11:46"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1134S.SaturdayHoliday",
@@ -15992,22 +16037,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "11:41",
-		"d": "11:41"
+		"d": "11:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "11:43",
+		"a": "11:44",
 		"d": "11:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "11:46",
-		"d": "11:46"
+		"d": "11:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "11:48",
+		"a": "11:49",
 		"d": "11:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "11:51",
+		"a": "11:52",
 		"d": "11:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16015,7 +16060,7 @@
 		"d": "11:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "11:57"
+		"a": "11:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1032S.SaturdayHoliday",
@@ -16039,22 +16084,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "11:53",
-		"d": "11:53"
+		"d": "11:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "11:55",
+		"a": "11:56",
 		"d": "11:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "11:58",
-		"d": "11:58"
+		"d": "11:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "12:00",
+		"a": "12:01",
 		"d": "12:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "12:03",
+		"a": "12:04",
 		"d": "12:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16062,7 +16107,7 @@
 		"d": "12:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "12:09"
+		"a": "12:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1194M.SaturdayHoliday",
@@ -16086,22 +16131,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "12:05",
-		"d": "12:05"
+		"d": "12:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "12:07",
+		"a": "12:08",
 		"d": "12:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "12:10",
-		"d": "12:10"
+		"d": "12:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "12:12",
+		"a": "12:13",
 		"d": "12:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "12:15",
+		"a": "12:16",
 		"d": "12:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16109,7 +16154,7 @@
 		"d": "12:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "12:21"
+		"a": "12:22"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1182M.SaturdayHoliday",
@@ -16133,22 +16178,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "12:17",
-		"d": "12:17"
+		"d": "12:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "12:19",
+		"a": "12:20",
 		"d": "12:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "12:22",
-		"d": "12:22"
+		"d": "12:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "12:24",
+		"a": "12:25",
 		"d": "12:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "12:27",
+		"a": "12:28",
 		"d": "12:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16156,7 +16201,7 @@
 		"d": "12:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "12:33"
+		"a": "12:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1162S.SaturdayHoliday",
@@ -16180,22 +16225,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "12:29",
-		"d": "12:29"
+		"d": "12:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "12:31",
+		"a": "12:32",
 		"d": "12:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "12:34",
-		"d": "12:34"
+		"d": "12:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "12:36",
+		"a": "12:37",
 		"d": "12:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "12:39",
+		"a": "12:40",
 		"d": "12:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16203,7 +16248,7 @@
 		"d": "12:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "12:45"
+		"a": "12:46"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1250S.SaturdayHoliday",
@@ -16227,22 +16272,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "12:41",
-		"d": "12:41"
+		"d": "12:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "12:43",
+		"a": "12:44",
 		"d": "12:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "12:46",
-		"d": "12:46"
+		"d": "12:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "12:48",
+		"a": "12:49",
 		"d": "12:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "12:51",
+		"a": "12:52",
 		"d": "12:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16250,7 +16295,7 @@
 		"d": "12:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "12:57"
+		"a": "12:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1192M.SaturdayHoliday",
@@ -16274,22 +16319,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "12:53",
-		"d": "12:53"
+		"d": "12:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "12:55",
+		"a": "12:56",
 		"d": "12:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "12:58",
-		"d": "12:58"
+		"d": "12:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "13:00",
+		"a": "13:01",
 		"d": "13:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "13:03",
+		"a": "13:04",
 		"d": "13:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16297,7 +16342,7 @@
 		"d": "13:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "13:09"
+		"a": "13:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1212K.SaturdayHoliday",
@@ -16321,22 +16366,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "13:05",
-		"d": "13:05"
+		"d": "13:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "13:07",
+		"a": "13:08",
 		"d": "13:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "13:10",
-		"d": "13:10"
+		"d": "13:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "13:12",
+		"a": "13:13",
 		"d": "13:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "13:15",
+		"a": "13:16",
 		"d": "13:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16344,13 +16389,13 @@
 		"d": "13:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "13:21"
+		"a": "13:22"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1210K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A1210K",
+	"id": "SaitamaRailway.SaitamaRailway.A1230S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A1230S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1210K",
+	"n": "A1230S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -16360,7 +16405,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1210K.SaturdayHoliday"
+		"TokyoMetro.Namboku.A1230S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -16368,22 +16413,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "13:17",
-		"d": "13:17"
+		"d": "13:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "13:19",
+		"a": "13:20",
 		"d": "13:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "13:22",
-		"d": "13:22"
+		"d": "13:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "13:24",
+		"a": "13:25",
 		"d": "13:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "13:27",
+		"a": "13:28",
 		"d": "13:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16391,7 +16436,7 @@
 		"d": "13:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "13:33"
+		"a": "13:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1208K.SaturdayHoliday",
@@ -16415,22 +16460,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "13:29",
-		"d": "13:29"
+		"d": "13:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "13:31",
+		"a": "13:32",
 		"d": "13:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "13:34",
-		"d": "13:34"
+		"d": "13:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "13:36",
+		"a": "13:37",
 		"d": "13:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "13:39",
+		"a": "13:40",
 		"d": "13:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16438,7 +16483,7 @@
 		"d": "13:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "13:45"
+		"a": "13:46"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1340S.SaturdayHoliday",
@@ -16462,22 +16507,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "13:41",
-		"d": "13:41"
+		"d": "13:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "13:43",
+		"a": "13:44",
 		"d": "13:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "13:46",
-		"d": "13:46"
+		"d": "13:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "13:48",
+		"a": "13:49",
 		"d": "13:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "13:51",
+		"a": "13:52",
 		"d": "13:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16485,13 +16530,13 @@
 		"d": "13:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "13:57"
+		"a": "13:58"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1230S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A1230S",
+	"id": "SaitamaRailway.SaitamaRailway.A1210K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A1210K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1230S",
+	"n": "A1210K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -16501,7 +16546,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1230S.SaturdayHoliday"
+		"TokyoMetro.Namboku.A1210K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -16509,22 +16554,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "13:53",
-		"d": "13:53"
+		"d": "13:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "13:55",
+		"a": "13:56",
 		"d": "13:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "13:58",
-		"d": "13:58"
+		"d": "13:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "14:00",
+		"a": "14:01",
 		"d": "14:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "14:03",
+		"a": "14:04",
 		"d": "14:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16532,7 +16577,7 @@
 		"d": "14:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "14:09"
+		"a": "14:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1342S.SaturdayHoliday",
@@ -16556,22 +16601,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "14:05",
-		"d": "14:05"
+		"d": "14:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "14:07",
+		"a": "14:08",
 		"d": "14:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "14:10",
-		"d": "14:10"
+		"d": "14:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "14:12",
+		"a": "14:13",
 		"d": "14:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "14:15",
+		"a": "14:16",
 		"d": "14:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16579,7 +16624,7 @@
 		"d": "14:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "14:21"
+		"a": "14:22"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1356S.SaturdayHoliday",
@@ -16603,22 +16648,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "14:17",
-		"d": "14:17"
+		"d": "14:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "14:19",
+		"a": "14:20",
 		"d": "14:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "14:22",
-		"d": "14:22"
+		"d": "14:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "14:24",
+		"a": "14:25",
 		"d": "14:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "14:27",
+		"a": "14:28",
 		"d": "14:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16626,7 +16671,7 @@
 		"d": "14:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "14:33"
+		"a": "14:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1386M.SaturdayHoliday",
@@ -16650,22 +16695,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "14:29",
-		"d": "14:29"
+		"d": "14:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "14:31",
+		"a": "14:32",
 		"d": "14:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "14:34",
-		"d": "14:34"
+		"d": "14:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "14:36",
+		"a": "14:37",
 		"d": "14:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "14:39",
+		"a": "14:40",
 		"d": "14:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16673,7 +16718,7 @@
 		"d": "14:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "14:45"
+		"a": "14:46"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1454S.SaturdayHoliday",
@@ -16697,22 +16742,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "14:41",
-		"d": "14:41"
+		"d": "14:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "14:43",
+		"a": "14:44",
 		"d": "14:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "14:46",
-		"d": "14:46"
+		"d": "14:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "14:48",
+		"a": "14:49",
 		"d": "14:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "14:51",
+		"a": "14:52",
 		"d": "14:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16720,7 +16765,7 @@
 		"d": "14:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "14:57"
+		"a": "14:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1388M.SaturdayHoliday",
@@ -16744,22 +16789,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "14:53",
-		"d": "14:53"
+		"d": "14:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "14:55",
+		"a": "14:56",
 		"d": "14:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "14:58",
-		"d": "14:58"
+		"d": "14:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "15:00",
+		"a": "15:01",
 		"d": "15:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "15:03",
+		"a": "15:04",
 		"d": "15:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16767,13 +16812,13 @@
 		"d": "15:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "15:09"
+		"a": "15:10"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1444S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A1444S",
+	"id": "SaitamaRailway.SaitamaRailway.A1438S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A1438S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1444S",
+	"n": "A1438S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -16783,7 +16828,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1444S.SaturdayHoliday"
+		"TokyoMetro.Namboku.A1438S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -16791,22 +16836,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "15:05",
-		"d": "15:05"
+		"d": "15:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "15:07",
+		"a": "15:08",
 		"d": "15:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "15:10",
-		"d": "15:10"
+		"d": "15:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "15:12",
+		"a": "15:13",
 		"d": "15:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "15:15",
+		"a": "15:16",
 		"d": "15:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16814,7 +16859,7 @@
 		"d": "15:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "15:21"
+		"a": "15:22"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1480M.SaturdayHoliday",
@@ -16838,22 +16883,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "15:17",
-		"d": "15:17"
+		"d": "15:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "15:19",
+		"a": "15:20",
 		"d": "15:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "15:22",
-		"d": "15:22"
+		"d": "15:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "15:24",
+		"a": "15:25",
 		"d": "15:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "15:27",
+		"a": "15:28",
 		"d": "15:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16861,7 +16906,7 @@
 		"d": "15:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "15:33"
+		"a": "15:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1484M.SaturdayHoliday",
@@ -16885,22 +16930,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "15:29",
-		"d": "15:29"
+		"d": "15:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "15:31",
+		"a": "15:32",
 		"d": "15:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "15:34",
-		"d": "15:34"
+		"d": "15:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "15:36",
+		"a": "15:37",
 		"d": "15:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "15:39",
+		"a": "15:40",
 		"d": "15:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16908,7 +16953,7 @@
 		"d": "15:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "15:45"
+		"a": "15:46"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1546S.SaturdayHoliday",
@@ -16932,22 +16977,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "15:41",
-		"d": "15:41"
+		"d": "15:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "15:43",
+		"a": "15:44",
 		"d": "15:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "15:46",
-		"d": "15:46"
+		"d": "15:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "15:48",
+		"a": "15:49",
 		"d": "15:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "15:51",
+		"a": "15:52",
 		"d": "15:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -16955,7 +17000,7 @@
 		"d": "15:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "15:57"
+		"a": "15:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1490M.SaturdayHoliday",
@@ -16979,22 +17024,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "15:53",
-		"d": "15:53"
+		"d": "15:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "15:55",
+		"a": "15:56",
 		"d": "15:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "15:58",
-		"d": "15:58"
+		"d": "15:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "16:00",
+		"a": "16:01",
 		"d": "16:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "16:03",
+		"a": "16:04",
 		"d": "16:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17002,7 +17047,7 @@
 		"d": "16:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "16:09"
+		"a": "16:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1534S.SaturdayHoliday",
@@ -17026,22 +17071,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "16:05",
-		"d": "16:05"
+		"d": "16:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "16:07",
+		"a": "16:08",
 		"d": "16:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "16:10",
-		"d": "16:10"
+		"d": "16:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "16:12",
+		"a": "16:13",
 		"d": "16:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "16:15",
+		"a": "16:16",
 		"d": "16:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17049,7 +17094,7 @@
 		"d": "16:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "16:21"
+		"a": "16:22"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1532S.SaturdayHoliday",
@@ -17073,22 +17118,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "16:17",
-		"d": "16:17"
+		"d": "16:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "16:19",
+		"a": "16:20",
 		"d": "16:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "16:22",
-		"d": "16:22"
+		"d": "16:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "16:24",
+		"a": "16:25",
 		"d": "16:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "16:27",
+		"a": "16:28",
 		"d": "16:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17096,7 +17141,7 @@
 		"d": "16:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "16:33"
+		"a": "16:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1594M.SaturdayHoliday",
@@ -17120,22 +17165,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "16:29",
-		"d": "16:29"
+		"d": "16:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "16:31",
+		"a": "16:32",
 		"d": "16:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "16:34",
-		"d": "16:34"
+		"d": "16:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "16:36",
+		"a": "16:37",
 		"d": "16:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "16:39",
+		"a": "16:40",
 		"d": "16:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17143,7 +17188,7 @@
 		"d": "16:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "16:45"
+		"a": "16:46"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1682M.SaturdayHoliday",
@@ -17167,22 +17212,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "16:41",
-		"d": "16:41"
+		"d": "16:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "16:43",
+		"a": "16:44",
 		"d": "16:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "16:46",
-		"d": "16:46"
+		"d": "16:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "16:48",
+		"a": "16:49",
 		"d": "16:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "16:51",
+		"a": "16:52",
 		"d": "16:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17190,7 +17235,7 @@
 		"d": "16:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "16:57"
+		"a": "16:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1506K.SaturdayHoliday",
@@ -17214,22 +17259,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "16:53",
-		"d": "16:53"
+		"d": "16:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "16:55",
+		"a": "16:56",
 		"d": "16:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "16:58",
-		"d": "16:58"
+		"d": "16:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "17:00",
+		"a": "17:01",
 		"d": "17:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "17:03",
+		"a": "17:04",
 		"d": "17:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17237,7 +17282,7 @@
 		"d": "17:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "17:09"
+		"a": "17:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1650S.SaturdayHoliday",
@@ -17261,22 +17306,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "17:05",
-		"d": "17:05"
+		"d": "17:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "17:07",
+		"a": "17:08",
 		"d": "17:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "17:10",
-		"d": "17:10"
+		"d": "17:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "17:12",
+		"a": "17:13",
 		"d": "17:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "17:15",
+		"a": "17:16",
 		"d": "17:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17284,7 +17329,7 @@
 		"d": "17:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "17:21"
+		"a": "17:22"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1692M.SaturdayHoliday",
@@ -17308,22 +17353,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "17:17",
-		"d": "17:17"
+		"d": "17:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "17:19",
+		"a": "17:20",
 		"d": "17:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "17:22",
-		"d": "17:22"
+		"d": "17:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "17:24",
+		"a": "17:25",
 		"d": "17:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "17:27",
+		"a": "17:28",
 		"d": "17:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17331,7 +17376,7 @@
 		"d": "17:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "17:33"
+		"a": "17:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1612K.SaturdayHoliday",
@@ -17355,22 +17400,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "17:29",
-		"d": "17:29"
+		"d": "17:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "17:31",
+		"a": "17:32",
 		"d": "17:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "17:34",
-		"d": "17:34"
+		"d": "17:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "17:36",
+		"a": "17:37",
 		"d": "17:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "17:39",
+		"a": "17:40",
 		"d": "17:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17378,13 +17423,13 @@
 		"d": "17:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "17:45"
+		"a": "17:46"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1710K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A1710K",
+	"id": "SaitamaRailway.SaitamaRailway.A1730S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A1730S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1710K",
+	"n": "A1730S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -17394,7 +17439,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1710K.SaturdayHoliday"
+		"TokyoMetro.Namboku.A1730S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -17402,22 +17447,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "17:41",
-		"d": "17:41"
+		"d": "17:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "17:43",
+		"a": "17:44",
 		"d": "17:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "17:46",
-		"d": "17:46"
+		"d": "17:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "17:48",
+		"a": "17:49",
 		"d": "17:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "17:51",
+		"a": "17:52",
 		"d": "17:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17425,7 +17470,7 @@
 		"d": "17:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "17:57"
+		"a": "17:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1662S.SaturdayHoliday",
@@ -17449,22 +17494,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "17:53",
-		"d": "17:53"
+		"d": "17:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "17:55",
+		"a": "17:56",
 		"d": "17:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "17:58",
-		"d": "17:58"
+		"d": "17:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "18:00",
+		"a": "18:01",
 		"d": "18:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "18:03",
+		"a": "18:04",
 		"d": "18:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17472,7 +17517,7 @@
 		"d": "18:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "18:09"
+		"a": "18:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1740S.SaturdayHoliday",
@@ -17496,22 +17541,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "18:05",
-		"d": "18:05"
+		"d": "18:06"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "18:07",
+		"a": "18:08",
 		"d": "18:08"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "18:10",
-		"d": "18:10"
+		"d": "18:11"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "18:12",
+		"a": "18:13",
 		"d": "18:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "18:15",
+		"a": "18:16",
 		"d": "18:16"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17519,13 +17564,13 @@
 		"d": "18:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "18:21"
+		"a": "18:22"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1730S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A1730S",
+	"id": "SaitamaRailway.SaitamaRailway.A1710K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A1710K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1730S",
+	"n": "A1710K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -17535,7 +17580,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1730S.SaturdayHoliday"
+		"TokyoMetro.Namboku.A1710K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -17543,22 +17588,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "18:17",
-		"d": "18:17"
+		"d": "18:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "18:19",
+		"a": "18:20",
 		"d": "18:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "18:22",
-		"d": "18:22"
+		"d": "18:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "18:24",
+		"a": "18:25",
 		"d": "18:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "18:27",
+		"a": "18:28",
 		"d": "18:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17566,7 +17611,7 @@
 		"d": "18:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "18:33"
+		"a": "18:34"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1780M.SaturdayHoliday",
@@ -17590,22 +17635,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "18:23",
-		"d": "18:23"
+		"d": "18:24"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "18:25",
+		"a": "18:26",
 		"d": "18:26"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "18:28",
-		"d": "18:28"
+		"d": "18:29"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "18:30",
+		"a": "18:31",
 		"d": "18:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "18:33",
+		"a": "18:34",
 		"d": "18:34"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17613,7 +17658,7 @@
 		"d": "18:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "18:39"
+		"a": "18:40"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1784M.SaturdayHoliday",
@@ -17637,22 +17682,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "18:35",
-		"d": "18:35"
+		"d": "18:36"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "18:37",
+		"a": "18:38",
 		"d": "18:38"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "18:40",
-		"d": "18:40"
+		"d": "18:41"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "18:42",
+		"a": "18:43",
 		"d": "18:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "18:45",
+		"a": "18:46",
 		"d": "18:46"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17660,7 +17705,7 @@
 		"d": "18:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "18:51"
+		"a": "18:52"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1856S.SaturdayHoliday",
@@ -17684,22 +17729,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "18:41",
-		"d": "18:41"
+		"d": "18:42"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "18:43",
+		"a": "18:44",
 		"d": "18:44"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "18:46",
-		"d": "18:46"
+		"d": "18:47"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "18:48",
+		"a": "18:49",
 		"d": "18:49"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "18:51",
+		"a": "18:52",
 		"d": "18:52"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17707,7 +17752,7 @@
 		"d": "18:55"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "18:57"
+		"a": "18:58"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1708K.SaturdayHoliday",
@@ -17731,22 +17776,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "18:53",
-		"d": "18:53"
+		"d": "18:54"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "18:55",
+		"a": "18:56",
 		"d": "18:56"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "18:58",
-		"d": "18:58"
+		"d": "18:59"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "19:00",
+		"a": "19:01",
 		"d": "19:01"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "19:03",
+		"a": "19:04",
 		"d": "19:04"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17754,7 +17799,7 @@
 		"d": "19:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "19:09"
+		"a": "19:10"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1790M.SaturdayHoliday",
@@ -17778,22 +17823,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "18:59",
-		"d": "18:59"
+		"d": "19:00"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "19:01",
+		"a": "19:02",
 		"d": "19:02"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "19:04",
-		"d": "19:04"
+		"d": "19:05"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "19:06",
+		"a": "19:07",
 		"d": "19:07"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "19:09",
+		"a": "19:10",
 		"d": "19:10"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17801,7 +17846,7 @@
 		"d": "19:13"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "19:15"
+		"a": "19:16"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1850S.SaturdayHoliday",
@@ -17825,22 +17870,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "19:11",
-		"d": "19:11"
+		"d": "19:12"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "19:13",
+		"a": "19:14",
 		"d": "19:14"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "19:16",
-		"d": "19:16"
+		"d": "19:17"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "19:18",
+		"a": "19:19",
 		"d": "19:19"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "19:21",
+		"a": "19:22",
 		"d": "19:22"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17848,7 +17893,7 @@
 		"d": "19:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "19:27"
+		"a": "19:28"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1888M.SaturdayHoliday",
@@ -17872,22 +17917,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "19:17",
-		"d": "19:17"
+		"d": "19:18"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "19:19",
+		"a": "19:20",
 		"d": "19:20"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "19:22",
-		"d": "19:22"
+		"d": "19:23"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "19:24",
+		"a": "19:25",
 		"d": "19:25"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "19:27",
+		"a": "19:28",
 		"d": "19:28"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17895,13 +17940,13 @@
 		"d": "19:31"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "19:33"
+		"a": "19:34"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1844S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A1844S",
+	"id": "SaitamaRailway.SaitamaRailway.A1838S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A1838S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1844S",
+	"n": "A1838S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -17911,7 +17956,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1844S.SaturdayHoliday"
+		"TokyoMetro.Namboku.A1838S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -17919,22 +17964,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "19:29",
-		"d": "19:29"
+		"d": "19:30"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "19:31",
+		"a": "19:32",
 		"d": "19:32"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "19:34",
-		"d": "19:34"
+		"d": "19:35"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "19:36",
+		"a": "19:37",
 		"d": "19:37"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "19:39",
+		"a": "19:40",
 		"d": "19:40"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -17942,7 +17987,7 @@
 		"d": "19:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
-		"a": "19:45"
+		"a": "19:46"
 	}]
 }, {
 	"id": "SaitamaRailway.SaitamaRailway.A1894M.SaturdayHoliday",
@@ -17966,22 +18011,22 @@
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.KawaguchiMotogo",
 		"a": "19:35",
-		"d": "19:35"
+		"d": "19:36"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.MinamiHatogaya",
-		"a": "19:37",
+		"a": "19:38",
 		"d": "19:38"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",
 		"a": "19:40",
-		"d": "19:40"
+		"d": "19:41"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.Araijuku",
-		"a": "19:42",
+		"a": "19:43",
 		"d": "19:43"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.TozukaAngyo",
-		"a": "19:45",
+		"a": "19:46",
 		"d": "19:46"
 	}, {
 		"s": "SaitamaRailway.SaitamaRailway.HigashiKawaguchi",
@@ -18086,10 +18131,10 @@
 		"a": "20:11"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1806K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A1806K",
+	"id": "SaitamaRailway.SaitamaRailway.A1846S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A1846S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1806K",
+	"n": "A1846S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -18099,7 +18144,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1806K.SaturdayHoliday"
+		"TokyoMetro.Namboku.A1846S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -18133,10 +18178,10 @@
 		"a": "20:24"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1992M.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A1992M",
+	"id": "SaitamaRailway.SaitamaRailway.A1902K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A1902K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1992M",
+	"n": "A1902K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -18146,7 +18191,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1992M.SaturdayHoliday"
+		"TokyoMetro.Namboku.A1902K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -18180,10 +18225,10 @@
 		"a": "20:31"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1930S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A1930S",
+	"id": "SaitamaRailway.SaitamaRailway.A1992M.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A1992M",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1930S",
+	"n": "A1992M",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -18193,7 +18238,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1930S.SaturdayHoliday"
+		"TokyoMetro.Namboku.A1992M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -18274,10 +18319,10 @@
 		"a": "20:50"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A1968S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A1968S",
+	"id": "SaitamaRailway.SaitamaRailway.A1912K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A1912K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A1968S",
+	"n": "A1912K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -18287,7 +18332,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A1968S.SaturdayHoliday"
+		"TokyoMetro.Namboku.A1912K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -18650,10 +18695,10 @@
 		"a": "22:05"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A2010K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A2010K",
+	"id": "SaitamaRailway.SaitamaRailway.A2030S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A2030S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A2010K",
+	"n": "A2030S",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -18663,7 +18708,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A2010K.SaturdayHoliday"
+		"TokyoMetro.Namboku.A2030S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -18979,10 +19024,10 @@
 		"a": "23:27"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.A2206K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.A2206K",
+	"id": "SaitamaRailway.SaitamaRailway.A2202K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.A2202K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "A2206K",
+	"n": "A2202K",
 	"y": "SaitamaRailway.Local",
 	"d": "Outbound",
 	"os": [
@@ -18992,7 +19037,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"pt": [
-		"TokyoMetro.Namboku.A2206K.SaturdayHoliday"
+		"TokyoMetro.Namboku.A2202K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.AkabaneIwabuchi",
@@ -19778,10 +19823,10 @@
 		"a": "07:04"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B610K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B610K",
+	"id": "SaitamaRailway.SaitamaRailway.B630S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B630S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B610K",
+	"n": "B630S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -19791,7 +19836,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B610K.SaturdayHoliday"
+		"TokyoMetro.Namboku.B630S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -20530,10 +20575,10 @@
 		"a": "09:00"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B830S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B830S",
+	"id": "SaitamaRailway.SaitamaRailway.B810K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B810K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B830S",
+	"n": "B810K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -20543,7 +20588,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B830S.SaturdayHoliday"
+		"TokyoMetro.Namboku.B810K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -20577,10 +20622,10 @@
 		"a": "09:12"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B844S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B844S",
+	"id": "SaitamaRailway.SaitamaRailway.B838S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B838S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B844S",
+	"n": "B838S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -20590,7 +20635,7 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B844S.SaturdayHoliday"
+		"TokyoMetro.Namboku.B838S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -21094,10 +21139,10 @@
 		"a": "11:14"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1144S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B1144S",
+	"id": "SaitamaRailway.SaitamaRailway.B1138S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B1138S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1144S",
+	"n": "B1138S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -21107,7 +21152,7 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1144S.SaturdayHoliday"
+		"TokyoMetro.Namboku.B1138S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -21705,10 +21750,10 @@
 		"a": "13:50"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1310K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B1310K",
+	"id": "SaitamaRailway.SaitamaRailway.B1330S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B1330S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1310K",
+	"n": "B1330S",
 	"y": "SaitamaRailway.Express",
 	"d": "Inbound",
 	"os": [
@@ -21718,7 +21763,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1310K.SaturdayHoliday"
+		"TokyoMetro.Namboku.B1330S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -21846,10 +21891,10 @@
 		"a": "14:26"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1430S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B1430S",
+	"id": "SaitamaRailway.SaitamaRailway.B1410K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B1410K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1430S",
+	"n": "B1410K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -21859,7 +21904,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1430S.SaturdayHoliday"
+		"TokyoMetro.Namboku.B1410K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -22128,10 +22173,10 @@
 		"a": "15:38"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1544S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B1544S",
+	"id": "SaitamaRailway.SaitamaRailway.B1538S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B1538S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1544S",
+	"n": "B1538S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -22141,7 +22186,7 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1544S.SaturdayHoliday"
+		"TokyoMetro.Namboku.B1538S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -22561,7 +22606,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"ds": [
-		"Tokyu.Meguro.Hiyoshi"
+		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"nt": [
 		"TokyoMetro.Namboku.B1706K.SaturdayHoliday"
@@ -22645,10 +22690,10 @@
 		"a": "17:50"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1792M.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B1792M",
+	"id": "SaitamaRailway.SaitamaRailway.B1702K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B1702K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1792M",
+	"n": "B1702K",
 	"y": "SaitamaRailway.Express",
 	"d": "Inbound",
 	"os": [
@@ -22658,7 +22703,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1792M.SaturdayHoliday"
+		"TokyoMetro.Namboku.B1702K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -22692,10 +22737,10 @@
 		"a": "18:02"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1768S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B1768S",
+	"id": "SaitamaRailway.SaitamaRailway.B1712K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B1712K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1768S",
+	"n": "B1712K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -22705,7 +22750,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1768S.SaturdayHoliday"
+		"TokyoMetro.Namboku.B1712K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -22739,10 +22784,10 @@
 		"a": "18:14"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1810K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B1810K",
+	"id": "SaitamaRailway.SaitamaRailway.B1830S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B1830S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1810K",
+	"n": "B1830S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -22752,7 +22797,7 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1810K.SaturdayHoliday"
+		"TokyoMetro.Namboku.B1830S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -22927,10 +22972,10 @@
 		"a": "18:50"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1830S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B1830S",
+	"id": "SaitamaRailway.SaitamaRailway.B1892M.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B1892M",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1830S",
+	"n": "B1892M",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -22940,7 +22985,7 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1830S.SaturdayHoliday"
+		"TokyoMetro.Namboku.B1892M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -23256,10 +23301,10 @@
 		"a": "20:09"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B1944S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B1944S",
+	"id": "SaitamaRailway.SaitamaRailway.B1938S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B1938S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B1944S",
+	"n": "B1938S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -23269,7 +23314,7 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B1944S.SaturdayHoliday"
+		"TokyoMetro.Namboku.B1938S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -23397,10 +23442,10 @@
 		"a": "20:39"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B2006K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B2006K",
+	"id": "SaitamaRailway.SaitamaRailway.B2002K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B2002K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B2006K",
+	"n": "B2002K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -23410,7 +23455,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B2006K.SaturdayHoliday"
+		"TokyoMetro.Namboku.B2002K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -23444,10 +23489,10 @@
 		"a": "20:54"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B2030S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B2030S",
+	"id": "SaitamaRailway.SaitamaRailway.B2046S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B2046S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B2030S",
+	"n": "B2046S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -23457,7 +23502,7 @@
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B2030S.SaturdayHoliday"
+		"TokyoMetro.Namboku.B2046S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -23914,10 +23959,10 @@
 		"a": "22:31"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B2240S.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B2240S",
+	"id": "SaitamaRailway.SaitamaRailway.B2230S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B2230S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B2240S",
+	"n": "B2230S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -23927,7 +23972,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B2240S.SaturdayHoliday"
+		"TokyoMetro.Namboku.B2230S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -24065,7 +24110,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"ds": [
-		"Tokyu.Meguro.Hiyoshi"
+		"Tokyu.Meguro.MusashiKosugi"
 	],
 	"nt": [
 		"TokyoMetro.Namboku.B2208K.SaturdayHoliday"
@@ -24149,10 +24194,10 @@
 		"a": "23:33"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B2302K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B2302K",
+	"id": "SaitamaRailway.SaitamaRailway.B2368S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B2368S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B2302K",
+	"n": "B2368S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -24162,7 +24207,7 @@
 		"Tokyu.Meguro.Okusawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B2302K.SaturdayHoliday"
+		"TokyoMetro.Namboku.B2368S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -24243,10 +24288,10 @@
 		"a": "23:53"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B2306K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B2306K",
+	"id": "SaitamaRailway.SaitamaRailway.B2302K.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B2302K",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B2306K",
+	"n": "B2302K",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
@@ -24256,7 +24301,7 @@
 		"TokyoMetro.Namboku.Meguro"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B2306K.SaturdayHoliday"
+		"TokyoMetro.Namboku.B2302K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.UrawaMisono",
@@ -24344,7 +24389,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"Tokyu.Meguro.Hiyoshi"
@@ -24375,7 +24420,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
@@ -24406,7 +24451,7 @@
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"Tokyu.Meguro.Hiyoshi"
@@ -24430,20 +24475,20 @@
 		"a": "08:43"
 	}]
 }, {
-	"id": "SaitamaRailway.SaitamaRailway.B802K.SaturdayHoliday",
-	"t": "SaitamaRailway.SaitamaRailway.B802K",
+	"id": "SaitamaRailway.SaitamaRailway.B844S.SaturdayHoliday",
+	"t": "SaitamaRailway.SaitamaRailway.B844S",
 	"r": "SaitamaRailway.SaitamaRailway",
-	"n": "B802K",
+	"n": "B844S",
 	"y": "SaitamaRailway.Local",
 	"d": "Inbound",
 	"os": [
-		"SaitamaRailway.SaitamaRailway.Hatogoya"
+		"SaitamaRailway.SaitamaRailway.Hatogaya"
 	],
 	"ds": [
 		"TokyoMetro.Namboku.ShirokaneTakanawa"
 	],
 	"nt": [
-		"TokyoMetro.Namboku.B802K.SaturdayHoliday"
+		"TokyoMetro.Namboku.B844S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "SaitamaRailway.SaitamaRailway.Hatogaya",

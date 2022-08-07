@@ -12391,58 +12391,6 @@
 		"a": "23:55"
 	}]
 }, {
-	"id": "EER.Enoshima.60.Weekday",
-	"t": "EER.Enoshima.60",
-	"r": "EER.Enoshima",
-	"n": "60",
-	"y": "EER.Local",
-	"d": "Inbound",
-	"os": [
-		"EER.Enoshima.Inamuragasaki"
-	],
-	"ds": [
-		"EER.Enoshima.Fujisawa"
-	],
-	"tt": [{
-		"s": "EER.Enoshima.Inamuragasaki",
-		"d": "05:23"
-	}, {
-		"s": "EER.Enoshima.Shichirigahama",
-		"a": "05:26",
-		"d": "05:26"
-	}, {
-		"s": "EER.Enoshima.KamakuraKokoMae",
-		"a": "05:30",
-		"d": "05:30"
-	}, {
-		"s": "EER.Enoshima.Koshigoe",
-		"a": "05:32",
-		"d": "05:32"
-	}, {
-		"s": "EER.Enoshima.Enoshima",
-		"a": "05:35",
-		"d": "05:36"
-	}, {
-		"s": "EER.Enoshima.Shonankaigankoen",
-		"a": "05:37",
-		"d": "05:37"
-	}, {
-		"s": "EER.Enoshima.Kugenuma",
-		"a": "05:40",
-		"d": "05:41"
-	}, {
-		"s": "EER.Enoshima.Yanagikoji",
-		"a": "05:42",
-		"d": "05:42"
-	}, {
-		"s": "EER.Enoshima.Ishigami",
-		"a": "05:44",
-		"d": "05:44"
-	}, {
-		"s": "EER.Enoshima.Fujisawa",
-		"a": "05:45"
-	}]
-}, {
 	"id": "EER.Enoshima.70.Weekday",
 	"t": "EER.Enoshima.70",
 	"r": "EER.Enoshima",
@@ -12497,6 +12445,58 @@
 	}, {
 		"s": "EER.Enoshima.Fujisawa",
 		"a": "06:09"
+	}]
+}, {
+	"id": "EER.Enoshima.60.Weekday",
+	"t": "EER.Enoshima.60",
+	"r": "EER.Enoshima",
+	"n": "60",
+	"y": "EER.Local",
+	"d": "Inbound",
+	"os": [
+		"EER.Enoshima.Inamuragasaki"
+	],
+	"ds": [
+		"EER.Enoshima.Fujisawa"
+	],
+	"tt": [{
+		"s": "EER.Enoshima.Inamuragasaki",
+		"d": "05:23"
+	}, {
+		"s": "EER.Enoshima.Shichirigahama",
+		"a": "05:26",
+		"d": "05:26"
+	}, {
+		"s": "EER.Enoshima.KamakuraKokoMae",
+		"a": "05:30",
+		"d": "05:30"
+	}, {
+		"s": "EER.Enoshima.Koshigoe",
+		"a": "05:32",
+		"d": "05:32"
+	}, {
+		"s": "EER.Enoshima.Enoshima",
+		"a": "05:35",
+		"d": "05:36"
+	}, {
+		"s": "EER.Enoshima.Shonankaigankoen",
+		"a": "05:37",
+		"d": "05:37"
+	}, {
+		"s": "EER.Enoshima.Kugenuma",
+		"a": "05:40",
+		"d": "05:41"
+	}, {
+		"s": "EER.Enoshima.Yanagikoji",
+		"a": "05:42",
+		"d": "05:42"
+	}, {
+		"s": "EER.Enoshima.Ishigami",
+		"a": "05:44",
+		"d": "05:44"
+	}, {
+		"s": "EER.Enoshima.Fujisawa",
+		"a": "05:45"
 	}]
 }, {
 	"id": "EER.Enoshima.10.Weekday",
@@ -24927,58 +24927,6 @@
 		"a": "23:55"
 	}]
 }, {
-	"id": "EER.Enoshima.60.SaturdayHoliday",
-	"t": "EER.Enoshima.60",
-	"r": "EER.Enoshima",
-	"n": "60",
-	"y": "EER.Local",
-	"d": "Inbound",
-	"os": [
-		"EER.Enoshima.Inamuragasaki"
-	],
-	"ds": [
-		"EER.Enoshima.Fujisawa"
-	],
-	"tt": [{
-		"s": "EER.Enoshima.Inamuragasaki",
-		"d": "05:23"
-	}, {
-		"s": "EER.Enoshima.Shichirigahama",
-		"a": "05:26",
-		"d": "05:26"
-	}, {
-		"s": "EER.Enoshima.KamakuraKokoMae",
-		"a": "05:30",
-		"d": "05:30"
-	}, {
-		"s": "EER.Enoshima.Koshigoe",
-		"a": "05:32",
-		"d": "05:32"
-	}, {
-		"s": "EER.Enoshima.Enoshima",
-		"a": "05:35",
-		"d": "05:36"
-	}, {
-		"s": "EER.Enoshima.Shonankaigankoen",
-		"a": "05:37",
-		"d": "05:37"
-	}, {
-		"s": "EER.Enoshima.Kugenuma",
-		"a": "05:40",
-		"d": "05:41"
-	}, {
-		"s": "EER.Enoshima.Yanagikoji",
-		"a": "05:42",
-		"d": "05:42"
-	}, {
-		"s": "EER.Enoshima.Ishigami",
-		"a": "05:44",
-		"d": "05:44"
-	}, {
-		"s": "EER.Enoshima.Fujisawa",
-		"a": "05:45"
-	}]
-}, {
 	"id": "EER.Enoshima.70.SaturdayHoliday",
 	"t": "EER.Enoshima.70",
 	"r": "EER.Enoshima",
@@ -25033,6 +24981,58 @@
 	}, {
 		"s": "EER.Enoshima.Fujisawa",
 		"a": "06:09"
+	}]
+}, {
+	"id": "EER.Enoshima.60.SaturdayHoliday",
+	"t": "EER.Enoshima.60",
+	"r": "EER.Enoshima",
+	"n": "60",
+	"y": "EER.Local",
+	"d": "Inbound",
+	"os": [
+		"EER.Enoshima.Inamuragasaki"
+	],
+	"ds": [
+		"EER.Enoshima.Fujisawa"
+	],
+	"tt": [{
+		"s": "EER.Enoshima.Inamuragasaki",
+		"d": "05:23"
+	}, {
+		"s": "EER.Enoshima.Shichirigahama",
+		"a": "05:26",
+		"d": "05:26"
+	}, {
+		"s": "EER.Enoshima.KamakuraKokoMae",
+		"a": "05:30",
+		"d": "05:30"
+	}, {
+		"s": "EER.Enoshima.Koshigoe",
+		"a": "05:32",
+		"d": "05:32"
+	}, {
+		"s": "EER.Enoshima.Enoshima",
+		"a": "05:35",
+		"d": "05:36"
+	}, {
+		"s": "EER.Enoshima.Shonankaigankoen",
+		"a": "05:37",
+		"d": "05:37"
+	}, {
+		"s": "EER.Enoshima.Kugenuma",
+		"a": "05:40",
+		"d": "05:41"
+	}, {
+		"s": "EER.Enoshima.Yanagikoji",
+		"a": "05:42",
+		"d": "05:42"
+	}, {
+		"s": "EER.Enoshima.Ishigami",
+		"a": "05:44",
+		"d": "05:44"
+	}, {
+		"s": "EER.Enoshima.Fujisawa",
+		"a": "05:45"
 	}]
 }, {
 	"id": "EER.Enoshima.10.SaturdayHoliday",
