@@ -11057,7 +11057,7 @@
 	"nm": [{
 		"ja": "アーバンパークライナー 2号",
 		"en": "URBAN PARK Liner 2",
-		"ko": "어번 파크 라이너 2",
+		"ko": "어반파크 라이너 2",
 		"zh-Hans": "都市公园LINER 2",
 		"zh-Hant": "都市公園LINER 2"
 	}],
@@ -12401,7 +12401,7 @@
 	"nm": [{
 		"ja": "アーバンパークライナー 4号",
 		"en": "URBAN PARK Liner 4",
-		"ko": "어번 파크 라이너 4",
+		"ko": "어반파크 라이너 4",
 		"zh-Hans": "都市公园LINER 4",
 		"zh-Hant": "都市公園LINER 4"
 	}],
@@ -12845,7 +12845,7 @@
 	"nm": [{
 		"ja": "アーバンパークライナー 6号",
 		"en": "URBAN PARK Liner 6",
-		"ko": "어번 파크 라이너 6",
+		"ko": "어반파크 라이너 6",
 		"zh-Hans": "都市公园LINER 6",
 		"zh-Hant": "都市公園LINER 6"
 	}],
@@ -13956,7 +13956,7 @@
 		"Tobu.TobuUrbanPark.Kashiwa"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.S1041.Weekday"
+		"Tobu.TobuSkytree.S1045.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.TobuUrbanPark.Kasukabe",
@@ -14008,7 +14008,7 @@
 	"nm": [{
 		"ja": "アーバンパークライナー 1号",
 		"en": "URBAN PARK Liner 1",
-		"ko": "어번 파크 라이너 1",
+		"ko": "어반파크 라이너 1",
 		"zh-Hans": "都市公园LINER 1",
 		"zh-Hant": "都市公園LINER 1"
 	}],
@@ -15016,6 +15016,806 @@
 	}, {
 		"s": "Tobu.TobuUrbanPark.Kashiwa",
 		"a": "18:01"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.421A.Weekday",
+	"t": "Tobu.TobuUrbanPark.421A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "421A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "07:12"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "07:15",
+		"d": "07:15"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "07:17",
+		"d": "07:18"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "07:20",
+		"d": "07:20"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "07:22",
+		"d": "07:23"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "07:26"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.431A.Weekday",
+	"t": "Tobu.TobuUrbanPark.431A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "431A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "07:41"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "07:44",
+		"d": "07:44"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "07:46",
+		"d": "07:47"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "07:49",
+		"d": "07:49"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "07:51",
+		"d": "07:52"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "07:55"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.437A.Weekday",
+	"t": "Tobu.TobuUrbanPark.437A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "437A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "08:01"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "08:03",
+		"d": "08:04"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "08:06",
+		"d": "08:06"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "08:08",
+		"d": "08:09"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "08:11",
+		"d": "08:11"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "08:15"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.441A.Weekday",
+	"t": "Tobu.TobuUrbanPark.441A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "441A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "08:12"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "08:14",
+		"d": "08:15"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "08:17",
+		"d": "08:17"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "08:19",
+		"d": "08:20"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "08:22",
+		"d": "08:22"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "08:26"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.455A.Weekday",
+	"t": "Tobu.TobuUrbanPark.455A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "455A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "09:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "09:02",
+		"d": "09:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "09:05",
+		"d": "09:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "09:07",
+		"d": "09:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "09:09",
+		"d": "09:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "09:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.473A.Weekday",
+	"t": "Tobu.TobuUrbanPark.473A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "473A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "10:30"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "10:33",
+		"d": "10:33"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "10:35",
+		"d": "10:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "10:37",
+		"d": "10:38"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "10:39",
+		"d": "10:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "10:43"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.479A.Weekday",
+	"t": "Tobu.TobuUrbanPark.479A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "479A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "11:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "11:03",
+		"d": "11:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "11:05",
+		"d": "11:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "11:07",
+		"d": "11:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "11:09",
+		"d": "11:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "11:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.211A.Weekday",
+	"t": "Tobu.TobuUrbanPark.211A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "211A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Funabashi"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "11:31"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "11:34",
+		"d": "11:34"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "11:36",
+		"d": "11:37"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "11:39",
+		"d": "11:39"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "11:41",
+		"d": "11:41"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "11:45",
+		"d": "11:58"
+	}, {
+		"s": "Tobu.TobuUrbanPark.ShinKashiwa",
+		"a": "12:02",
+		"d": "12:02"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Masuo",
+		"a": "12:04",
+		"d": "12:04"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Sakasai",
+		"a": "12:05",
+		"d": "12:06"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Takayanagi",
+		"a": "12:08",
+		"d": "12:09"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Mutsumi",
+		"a": "12:11",
+		"d": "12:12"
+	}, {
+		"s": "Tobu.TobuUrbanPark.ShinKamagaya",
+		"a": "12:14",
+		"d": "12:14"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kamagaya",
+		"a": "12:16",
+		"d": "12:17"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Magomezawa",
+		"a": "12:19",
+		"d": "12:20"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Tsukada",
+		"a": "12:22",
+		"d": "12:22"
+	}, {
+		"s": "Tobu.TobuUrbanPark.ShinFunabashi",
+		"a": "12:24",
+		"d": "12:24"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Funabashi",
+		"a": "12:27"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.489A.Weekday",
+	"t": "Tobu.TobuUrbanPark.489A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "489A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "12:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "12:03",
+		"d": "12:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "12:05",
+		"d": "12:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "12:07",
+		"d": "12:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "12:09",
+		"d": "12:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "12:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.495A.Weekday",
+	"t": "Tobu.TobuUrbanPark.495A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "495A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "12:30"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "12:33",
+		"d": "12:33"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "12:35",
+		"d": "12:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "12:37",
+		"d": "12:38"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "12:39",
+		"d": "12:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "12:43"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.501A.Weekday",
+	"t": "Tobu.TobuUrbanPark.501A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "501A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "13:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "13:03",
+		"d": "13:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "13:05",
+		"d": "13:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "13:07",
+		"d": "13:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "13:09",
+		"d": "13:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "13:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.507A.Weekday",
+	"t": "Tobu.TobuUrbanPark.507A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "507A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "13:30"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "13:33",
+		"d": "13:33"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "13:35",
+		"d": "13:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "13:37",
+		"d": "13:38"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "13:39",
+		"d": "13:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "13:43"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.513A.Weekday",
+	"t": "Tobu.TobuUrbanPark.513A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "513A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "14:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "14:03",
+		"d": "14:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "14:05",
+		"d": "14:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "14:07",
+		"d": "14:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "14:09",
+		"d": "14:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "14:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.519A.Weekday",
+	"t": "Tobu.TobuUrbanPark.519A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "519A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "14:30"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "14:33",
+		"d": "14:33"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "14:35",
+		"d": "14:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "14:37",
+		"d": "14:38"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "14:39",
+		"d": "14:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "14:43"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.525A.Weekday",
+	"t": "Tobu.TobuUrbanPark.525A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "525A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "15:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "15:03",
+		"d": "15:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "15:05",
+		"d": "15:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "15:07",
+		"d": "15:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "15:09",
+		"d": "15:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "15:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.531A.Weekday",
+	"t": "Tobu.TobuUrbanPark.531A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "531A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "15:30"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "15:33",
+		"d": "15:33"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "15:35",
+		"d": "15:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "15:37",
+		"d": "15:38"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "15:39",
+		"d": "15:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "15:43"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.537A.Weekday",
+	"t": "Tobu.TobuUrbanPark.537A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "537A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "16:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "16:03",
+		"d": "16:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "16:05",
+		"d": "16:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "16:07",
+		"d": "16:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "16:09",
+		"d": "16:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "16:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.543A.Weekday",
+	"t": "Tobu.TobuUrbanPark.543A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "543A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "16:33"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "16:36",
+		"d": "16:36"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "16:38",
+		"d": "16:38"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "16:40",
+		"d": "16:41"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "16:42",
+		"d": "16:43"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "16:46"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.569A.Weekday",
+	"t": "Tobu.TobuUrbanPark.569A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "569A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "18:29"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "18:32",
+		"d": "18:32"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "18:34",
+		"d": "18:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "18:37",
+		"d": "18:37"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "18:39",
+		"d": "18:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "18:43"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.601A.Weekday",
+	"t": "Tobu.TobuUrbanPark.601A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "601A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "20:52"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "20:54",
+		"d": "20:54"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "20:56",
+		"d": "20:57"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "20:59",
+		"d": "20:59"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "21:01",
+		"d": "21:01"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "21:05"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.623A.Weekday",
+	"t": "Tobu.TobuUrbanPark.623A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "623A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "22:49"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "22:51",
+		"d": "22:51"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "22:53",
+		"d": "22:54"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "22:56",
+		"d": "22:56"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "22:58",
+		"d": "22:58"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "23:02"
 	}]
 }, {
 	"id": "Tobu.TobuUrbanPark.105A.Weekday",
@@ -17760,86 +18560,6 @@
 	}, {
 		"s": "Tobu.TobuUrbanPark.Funabashi",
 		"a": "12:17"
-	}]
-}, {
-	"id": "Tobu.TobuUrbanPark.211A.Weekday",
-	"t": "Tobu.TobuUrbanPark.211A",
-	"r": "Tobu.TobuUrbanPark",
-	"n": "211A",
-	"y": "Tobu.Local",
-	"d": "Outbound",
-	"os": [
-		"Tobu.TobuUrbanPark.Unga"
-	],
-	"ds": [
-		"Tobu.TobuUrbanPark.Funabashi"
-	],
-	"tt": [{
-		"s": "Tobu.TobuUrbanPark.Unga",
-		"d": "11:31"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Edogawadai",
-		"a": "11:34",
-		"d": "11:34"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Hatsuishi",
-		"a": "11:36",
-		"d": "11:37"
-	}, {
-		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
-		"a": "11:39",
-		"d": "11:39"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Toyoshiki",
-		"a": "11:41",
-		"d": "11:41"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Kashiwa",
-		"a": "11:45",
-		"d": "11:58"
-	}, {
-		"s": "Tobu.TobuUrbanPark.ShinKashiwa",
-		"a": "12:02",
-		"d": "12:02"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Masuo",
-		"a": "12:04",
-		"d": "12:04"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Sakasai",
-		"a": "12:05",
-		"d": "12:06"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Takayanagi",
-		"a": "12:08",
-		"d": "12:09"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Mutsumi",
-		"a": "12:11",
-		"d": "12:12"
-	}, {
-		"s": "Tobu.TobuUrbanPark.ShinKamagaya",
-		"a": "12:14",
-		"d": "12:14"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Kamagaya",
-		"a": "12:16",
-		"d": "12:17"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Magomezawa",
-		"a": "12:19",
-		"d": "12:20"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Tsukada",
-		"a": "12:22",
-		"d": "12:22"
-	}, {
-		"s": "Tobu.TobuUrbanPark.ShinFunabashi",
-		"a": "12:24",
-		"d": "12:24"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Funabashi",
-		"a": "12:27"
 	}]
 }, {
 	"id": "Tobu.TobuUrbanPark.213A.Weekday",
@@ -41828,7 +42548,7 @@
 	"nm": [{
 		"ja": "アーバンパークライナー 3号",
 		"en": "URBAN PARK Liner 3",
-		"ko": "어번 파크 라이너 3",
+		"ko": "어반파크 라이너 3",
 		"zh-Hans": "都市公园LINER 3",
 		"zh-Hant": "都市公園LINER 3"
 	}],
@@ -42480,7 +43200,7 @@
 	"nm": [{
 		"ja": "アーバンパークライナー 5号",
 		"en": "URBAN PARK Liner 5",
-		"ko": "어번 파크 라이너 5",
+		"ko": "어반파크 라이너 5",
 		"zh-Hans": "都市公园LINER 5",
 		"zh-Hant": "都市公園LINER 5"
 	}],
@@ -43416,7 +44136,7 @@
 	"nm": [{
 		"ja": "アーバンパークライナー 7号",
 		"en": "URBAN PARK Liner 7",
-		"ko": "어번 파크 라이너 7",
+		"ko": "어반파크 라이너 7",
 		"zh-Hans": "都市公园LINER 7",
 		"zh-Hant": "都市公園LINER 7"
 	}],
@@ -43966,6 +44686,86 @@
 		"a": "01:04"
 	}]
 }, {
+	"id": "Tobu.TobuUrbanPark.402A.Weekday",
+	"t": "Tobu.TobuUrbanPark.402A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "402A",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Nodashi"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Omiya"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Nodashi",
+		"d": "05:17"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Atago",
+		"a": "05:19",
+		"d": "05:19"
+	}, {
+		"s": "Tobu.TobuUrbanPark.ShimizuKoen",
+		"a": "05:21",
+		"d": "05:21"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Nanakodai",
+		"a": "05:23",
+		"d": "05:24"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kawama",
+		"a": "05:27",
+		"d": "05:28"
+	}, {
+		"s": "Tobu.TobuUrbanPark.MinamiSakurai",
+		"a": "05:31",
+		"d": "05:31"
+	}, {
+		"s": "Tobu.TobuUrbanPark.FujinoUshijima",
+		"a": "05:34",
+		"d": "05:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kasukabe",
+		"a": "05:38",
+		"d": "05:39"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Yagisaki",
+		"a": "05:41",
+		"d": "05:41"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoharu",
+		"a": "05:43",
+		"d": "05:43"
+	}, {
+		"s": "Tobu.TobuUrbanPark.HigashiIwatsuki",
+		"a": "05:45",
+		"d": "05:45"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Iwatsuki",
+		"a": "05:48",
+		"d": "05:49"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Nanasato",
+		"a": "05:51",
+		"d": "05:52"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Owada",
+		"a": "05:54",
+		"d": "05:54"
+	}, {
+		"s": "Tobu.TobuUrbanPark.OmiyaKoen",
+		"a": "05:56",
+		"d": "05:56"
+	}, {
+		"s": "Tobu.TobuUrbanPark.KitaOmiya",
+		"a": "05:58",
+		"d": "05:58"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Omiya",
+		"a": "06:00"
+	}]
+}, {
 	"id": "Tobu.TobuUrbanPark.702A.Weekday",
 	"t": "Tobu.TobuUrbanPark.702A",
 	"r": "Tobu.TobuUrbanPark",
@@ -44100,86 +44900,6 @@
 	}, {
 		"s": "Tobu.TobuUrbanPark.Omiya",
 		"a": "05:48"
-	}]
-}, {
-	"id": "Tobu.TobuUrbanPark.402A.Weekday",
-	"t": "Tobu.TobuUrbanPark.402A",
-	"r": "Tobu.TobuUrbanPark",
-	"n": "402A",
-	"y": "Tobu.Local",
-	"d": "Inbound",
-	"os": [
-		"Tobu.TobuUrbanPark.Nodashi"
-	],
-	"ds": [
-		"Tobu.TobuUrbanPark.Omiya"
-	],
-	"tt": [{
-		"s": "Tobu.TobuUrbanPark.Nodashi",
-		"d": "05:17"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Atago",
-		"a": "05:19",
-		"d": "05:19"
-	}, {
-		"s": "Tobu.TobuUrbanPark.ShimizuKoen",
-		"a": "05:21",
-		"d": "05:21"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Nanakodai",
-		"a": "05:23",
-		"d": "05:24"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Kawama",
-		"a": "05:27",
-		"d": "05:28"
-	}, {
-		"s": "Tobu.TobuUrbanPark.MinamiSakurai",
-		"a": "05:31",
-		"d": "05:31"
-	}, {
-		"s": "Tobu.TobuUrbanPark.FujinoUshijima",
-		"a": "05:34",
-		"d": "05:35"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Kasukabe",
-		"a": "05:38",
-		"d": "05:39"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Yagisaki",
-		"a": "05:41",
-		"d": "05:41"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Toyoharu",
-		"a": "05:43",
-		"d": "05:43"
-	}, {
-		"s": "Tobu.TobuUrbanPark.HigashiIwatsuki",
-		"a": "05:45",
-		"d": "05:45"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Iwatsuki",
-		"a": "05:48",
-		"d": "05:49"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Nanasato",
-		"a": "05:51",
-		"d": "05:52"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Owada",
-		"a": "05:54",
-		"d": "05:54"
-	}, {
-		"s": "Tobu.TobuUrbanPark.OmiyaKoen",
-		"a": "05:56",
-		"d": "05:56"
-	}, {
-		"s": "Tobu.TobuUrbanPark.KitaOmiya",
-		"a": "05:58",
-		"d": "05:58"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Omiya",
-		"a": "06:00"
 	}]
 }, {
 	"id": "Tobu.TobuUrbanPark.706A.Weekday",
@@ -46079,7 +46799,7 @@
 		"Tobu.TobuUrbanPark.Omiya"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.S1041.Weekday"
+		"Tobu.TobuSkytree.S1045.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.TobuUrbanPark.Kasukabe",
@@ -46107,7 +46827,7 @@
 	"nm": [{
 		"ja": "アーバンパークライナー 1号",
 		"en": "URBAN PARK Liner 1",
-		"ko": "어번 파크 라이너 1",
+		"ko": "어반파크 라이너 1",
 		"zh-Hans": "都市公园LINER 1",
 		"zh-Hant": "都市公園LINER 1"
 	}],
@@ -59415,6 +60135,654 @@
 	}, {
 		"s": "Tobu.TobuUrbanPark.Kashiwa",
 		"a": "06:51"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.417A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.417A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "417A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "06:59"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "07:01",
+		"d": "07:02"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "07:04",
+		"d": "07:04"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "07:06",
+		"d": "07:07"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "07:08",
+		"d": "07:09"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "07:12"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.427A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.427A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "427A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "07:37"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "07:40",
+		"d": "07:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "07:42",
+		"d": "07:43"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "07:45",
+		"d": "07:45"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "07:47",
+		"d": "07:48"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "07:51"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.435A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.435A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "435A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "08:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "08:13",
+		"d": "08:13"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "08:15",
+		"d": "08:16"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "08:18",
+		"d": "08:18"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "08:20",
+		"d": "08:20"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "08:24"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.457A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.457A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "457A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "10:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "10:02",
+		"d": "10:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "10:05",
+		"d": "10:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "10:07",
+		"d": "10:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "10:09",
+		"d": "10:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "10:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.463A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.463A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "463A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "10:30"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "10:33",
+		"d": "10:33"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "10:35",
+		"d": "10:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "10:37",
+		"d": "10:38"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "10:39",
+		"d": "10:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "10:43"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.469A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.469A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "469A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "11:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "11:03",
+		"d": "11:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "11:05",
+		"d": "11:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "11:07",
+		"d": "11:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "11:09",
+		"d": "11:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "11:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.475A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.475A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "475A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "11:31"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "11:34",
+		"d": "11:34"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "11:36",
+		"d": "11:37"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "11:39",
+		"d": "11:39"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "11:41",
+		"d": "11:41"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "11:45"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.481A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.481A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "481A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "12:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "12:03",
+		"d": "12:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "12:05",
+		"d": "12:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "12:07",
+		"d": "12:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "12:09",
+		"d": "12:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "12:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.487A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.487A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "487A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "12:30"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "12:33",
+		"d": "12:33"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "12:35",
+		"d": "12:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "12:37",
+		"d": "12:38"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "12:39",
+		"d": "12:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "12:43"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.493A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.493A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "493A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "13:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "13:03",
+		"d": "13:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "13:05",
+		"d": "13:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "13:07",
+		"d": "13:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "13:09",
+		"d": "13:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "13:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.499A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.499A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "499A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "13:30"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "13:33",
+		"d": "13:33"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "13:35",
+		"d": "13:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "13:37",
+		"d": "13:38"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "13:39",
+		"d": "13:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "13:43"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.505A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.505A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "505A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "14:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "14:03",
+		"d": "14:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "14:05",
+		"d": "14:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "14:07",
+		"d": "14:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "14:09",
+		"d": "14:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "14:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.511A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.511A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "511A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "14:30"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "14:33",
+		"d": "14:33"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "14:35",
+		"d": "14:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "14:37",
+		"d": "14:38"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "14:39",
+		"d": "14:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "14:43"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.517A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.517A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "517A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "15:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "15:03",
+		"d": "15:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "15:05",
+		"d": "15:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "15:07",
+		"d": "15:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "15:09",
+		"d": "15:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "15:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.523A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.523A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "523A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "15:30"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "15:33",
+		"d": "15:33"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "15:35",
+		"d": "15:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "15:37",
+		"d": "15:38"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "15:39",
+		"d": "15:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "15:43"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.529A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.529A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "529A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "16:00"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "16:03",
+		"d": "16:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "16:05",
+		"d": "16:05"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "16:07",
+		"d": "16:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "16:09",
+		"d": "16:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "16:13"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.535A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.535A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "535A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "16:30"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "16:33",
+		"d": "16:33"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "16:35",
+		"d": "16:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "16:37",
+		"d": "16:38"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "16:39",
+		"d": "16:40"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "16:43"
+	}]
+}, {
+	"id": "Tobu.TobuUrbanPark.541A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.541A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "541A",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Unga"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Kashiwa"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Unga",
+		"d": "17:01"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Edogawadai",
+		"a": "17:03",
+		"d": "17:03"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Hatsuishi",
+		"a": "17:05",
+		"d": "17:06"
+	}, {
+		"s": "Tobu.TobuUrbanPark.NagareyamaOtakanomori",
+		"a": "17:08",
+		"d": "17:08"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoshiki",
+		"a": "17:10",
+		"d": "17:10"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kashiwa",
+		"a": "17:14"
 	}]
 }, {
 	"id": "Tobu.TobuUrbanPark.105A.SaturdayHoliday",
@@ -85609,6 +86977,86 @@
 		"a": "00:42"
 	}]
 }, {
+	"id": "Tobu.TobuUrbanPark.402A.SaturdayHoliday",
+	"t": "Tobu.TobuUrbanPark.402A",
+	"r": "Tobu.TobuUrbanPark",
+	"n": "402A",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.TobuUrbanPark.Nodashi"
+	],
+	"ds": [
+		"Tobu.TobuUrbanPark.Omiya"
+	],
+	"tt": [{
+		"s": "Tobu.TobuUrbanPark.Nodashi",
+		"d": "05:17"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Atago",
+		"a": "05:19",
+		"d": "05:19"
+	}, {
+		"s": "Tobu.TobuUrbanPark.ShimizuKoen",
+		"a": "05:21",
+		"d": "05:21"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Nanakodai",
+		"a": "05:23",
+		"d": "05:24"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kawama",
+		"a": "05:27",
+		"d": "05:28"
+	}, {
+		"s": "Tobu.TobuUrbanPark.MinamiSakurai",
+		"a": "05:31",
+		"d": "05:31"
+	}, {
+		"s": "Tobu.TobuUrbanPark.FujinoUshijima",
+		"a": "05:34",
+		"d": "05:35"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Kasukabe",
+		"a": "05:38",
+		"d": "05:39"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Yagisaki",
+		"a": "05:41",
+		"d": "05:41"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Toyoharu",
+		"a": "05:43",
+		"d": "05:43"
+	}, {
+		"s": "Tobu.TobuUrbanPark.HigashiIwatsuki",
+		"a": "05:45",
+		"d": "05:45"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Iwatsuki",
+		"a": "05:48",
+		"d": "05:49"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Nanasato",
+		"a": "05:51",
+		"d": "05:52"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Owada",
+		"a": "05:54",
+		"d": "05:54"
+	}, {
+		"s": "Tobu.TobuUrbanPark.OmiyaKoen",
+		"a": "05:56",
+		"d": "05:56"
+	}, {
+		"s": "Tobu.TobuUrbanPark.KitaOmiya",
+		"a": "05:58",
+		"d": "05:58"
+	}, {
+		"s": "Tobu.TobuUrbanPark.Omiya",
+		"a": "06:00"
+	}]
+}, {
 	"id": "Tobu.TobuUrbanPark.702A.SaturdayHoliday",
 	"t": "Tobu.TobuUrbanPark.702A",
 	"r": "Tobu.TobuUrbanPark",
@@ -85743,86 +87191,6 @@
 	}, {
 		"s": "Tobu.TobuUrbanPark.Omiya",
 		"a": "05:48"
-	}]
-}, {
-	"id": "Tobu.TobuUrbanPark.402A.SaturdayHoliday",
-	"t": "Tobu.TobuUrbanPark.402A",
-	"r": "Tobu.TobuUrbanPark",
-	"n": "402A",
-	"y": "Tobu.Local",
-	"d": "Inbound",
-	"os": [
-		"Tobu.TobuUrbanPark.Nodashi"
-	],
-	"ds": [
-		"Tobu.TobuUrbanPark.Omiya"
-	],
-	"tt": [{
-		"s": "Tobu.TobuUrbanPark.Nodashi",
-		"d": "05:17"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Atago",
-		"a": "05:19",
-		"d": "05:19"
-	}, {
-		"s": "Tobu.TobuUrbanPark.ShimizuKoen",
-		"a": "05:21",
-		"d": "05:21"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Nanakodai",
-		"a": "05:23",
-		"d": "05:24"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Kawama",
-		"a": "05:27",
-		"d": "05:28"
-	}, {
-		"s": "Tobu.TobuUrbanPark.MinamiSakurai",
-		"a": "05:31",
-		"d": "05:31"
-	}, {
-		"s": "Tobu.TobuUrbanPark.FujinoUshijima",
-		"a": "05:34",
-		"d": "05:35"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Kasukabe",
-		"a": "05:38",
-		"d": "05:39"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Yagisaki",
-		"a": "05:41",
-		"d": "05:41"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Toyoharu",
-		"a": "05:43",
-		"d": "05:43"
-	}, {
-		"s": "Tobu.TobuUrbanPark.HigashiIwatsuki",
-		"a": "05:45",
-		"d": "05:45"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Iwatsuki",
-		"a": "05:48",
-		"d": "05:49"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Nanasato",
-		"a": "05:51",
-		"d": "05:52"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Owada",
-		"a": "05:54",
-		"d": "05:54"
-	}, {
-		"s": "Tobu.TobuUrbanPark.OmiyaKoen",
-		"a": "05:56",
-		"d": "05:56"
-	}, {
-		"s": "Tobu.TobuUrbanPark.KitaOmiya",
-		"a": "05:58",
-		"d": "05:58"
-	}, {
-		"s": "Tobu.TobuUrbanPark.Omiya",
-		"a": "06:00"
 	}]
 }, {
 	"id": "Tobu.TobuUrbanPark.804A.SaturdayHoliday",
