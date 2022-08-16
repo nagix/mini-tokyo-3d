@@ -4283,134 +4283,6 @@
 		"a": "23:50"
 	}]
 }, {
-	"id": "Chichibu.Chichibu.1.Weekday",
-	"t": "Chichibu.Chichibu.1",
-	"r": "Chichibu.Chichibu",
-	"n": "1",
-	"y": "Chichibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Chichibu.Chichibu.Kumagaya"
-	],
-	"ds": [
-		"Chichibu.Chichibu.Mitsumineguchi"
-	],
-	"tt": [{
-		"s": "Chichibu.Chichibu.Kumagaya",
-		"d": "05:10"
-	}, {
-		"s": "Chichibu.Chichibu.KamiKumagaya",
-		"a": "05:12",
-		"d": "05:12"
-	}, {
-		"s": "Chichibu.Chichibu.Ishiwara",
-		"a": "05:14",
-		"d": "05:14"
-	}, {
-		"s": "Chichibu.Chichibu.HiroseYachonoMori",
-		"a": "05:16",
-		"d": "05:16"
-	}, {
-		"s": "Chichibu.Chichibu.Oaso",
-		"a": "05:19",
-		"d": "05:19"
-	}, {
-		"s": "Chichibu.Chichibu.Aketo",
-		"a": "05:22",
-		"d": "05:22"
-	}, {
-		"s": "Chichibu.Chichibu.Takekawa",
-		"a": "05:25",
-		"d": "05:25"
-	}, {
-		"s": "Chichibu.Chichibu.Nagata",
-		"a": "05:29",
-		"d": "05:29"
-	}, {
-		"s": "Chichibu.Chichibu.FukayaHanazono",
-		"a": "05:31",
-		"d": "05:31"
-	}, {
-		"s": "Chichibu.Chichibu.Omaeda",
-		"a": "05:34",
-		"d": "05:34"
-	}, {
-		"s": "Chichibu.Chichibu.Sakurazawa",
-		"a": "05:36",
-		"d": "05:36"
-	}, {
-		"s": "Chichibu.Chichibu.Yorii",
-		"a": "05:39",
-		"d": "05:40"
-	}, {
-		"s": "Chichibu.Chichibu.Hagure",
-		"a": "05:44",
-		"d": "05:44"
-	}, {
-		"s": "Chichibu.Chichibu.Higuchi",
-		"a": "05:50",
-		"d": "05:50"
-	}, {
-		"s": "Chichibu.Chichibu.Nogami",
-		"a": "05:53",
-		"d": "05:53"
-	}, {
-		"s": "Chichibu.Chichibu.Nagatoro",
-		"a": "05:56",
-		"d": "05:56"
-	}, {
-		"s": "Chichibu.Chichibu.KamiNagatoro",
-		"a": "05:58",
-		"d": "05:58"
-	}, {
-		"s": "Chichibu.Chichibu.Oyahana",
-		"a": "06:01",
-		"d": "06:01"
-	}, {
-		"s": "Chichibu.Chichibu.Minano",
-		"a": "06:04",
-		"d": "06:04"
-	}, {
-		"s": "Chichibu.Chichibu.WadoKuroya",
-		"a": "06:08",
-		"d": "06:08"
-	}, {
-		"s": "Chichibu.Chichibu.Onohara",
-		"a": "06:12",
-		"d": "06:12"
-	}, {
-		"s": "Chichibu.Chichibu.Chichibu",
-		"a": "06:16",
-		"d": "06:16"
-	}, {
-		"s": "Chichibu.Chichibu.Ohanabatake",
-		"a": "06:18",
-		"d": "06:18"
-	}, {
-		"s": "Chichibu.Chichibu.Kagemori",
-		"a": "06:21",
-		"d": "06:21"
-	}, {
-		"s": "Chichibu.Chichibu.Urayamaguchi",
-		"a": "06:25",
-		"d": "06:25"
-	}, {
-		"s": "Chichibu.Chichibu.BushuNakagawa",
-		"a": "06:28",
-		"d": "06:28"
-	}, {
-		"s": "Chichibu.Chichibu.BushuHino",
-		"a": "06:31",
-		"d": "06:31"
-	}, {
-		"s": "Chichibu.Chichibu.Shiroku",
-		"a": "06:36",
-		"d": "06:36"
-	}, {
-		"s": "Chichibu.Chichibu.Mitsumineguchi",
-		"a": "06:38"
-	}]
-}, {
 	"id": "Chichibu.Chichibu.1503.Weekday",
 	"t": "Chichibu.Chichibu.1503",
 	"r": "Chichibu.Chichibu",
@@ -4553,6 +4425,134 @@
 	}, {
 		"s": "Chichibu.Chichibu.Mitsumineguchi",
 		"a": "07:14"
+	}]
+}, {
+	"id": "Chichibu.Chichibu.1.Weekday",
+	"t": "Chichibu.Chichibu.1",
+	"r": "Chichibu.Chichibu",
+	"n": "1",
+	"y": "Chichibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Chichibu.Chichibu.Kumagaya"
+	],
+	"ds": [
+		"Chichibu.Chichibu.Mitsumineguchi"
+	],
+	"tt": [{
+		"s": "Chichibu.Chichibu.Kumagaya",
+		"d": "05:10"
+	}, {
+		"s": "Chichibu.Chichibu.KamiKumagaya",
+		"a": "05:12",
+		"d": "05:12"
+	}, {
+		"s": "Chichibu.Chichibu.Ishiwara",
+		"a": "05:14",
+		"d": "05:14"
+	}, {
+		"s": "Chichibu.Chichibu.HiroseYachonoMori",
+		"a": "05:16",
+		"d": "05:16"
+	}, {
+		"s": "Chichibu.Chichibu.Oaso",
+		"a": "05:19",
+		"d": "05:19"
+	}, {
+		"s": "Chichibu.Chichibu.Aketo",
+		"a": "05:22",
+		"d": "05:22"
+	}, {
+		"s": "Chichibu.Chichibu.Takekawa",
+		"a": "05:25",
+		"d": "05:25"
+	}, {
+		"s": "Chichibu.Chichibu.Nagata",
+		"a": "05:29",
+		"d": "05:29"
+	}, {
+		"s": "Chichibu.Chichibu.FukayaHanazono",
+		"a": "05:31",
+		"d": "05:31"
+	}, {
+		"s": "Chichibu.Chichibu.Omaeda",
+		"a": "05:34",
+		"d": "05:34"
+	}, {
+		"s": "Chichibu.Chichibu.Sakurazawa",
+		"a": "05:36",
+		"d": "05:36"
+	}, {
+		"s": "Chichibu.Chichibu.Yorii",
+		"a": "05:39",
+		"d": "05:40"
+	}, {
+		"s": "Chichibu.Chichibu.Hagure",
+		"a": "05:44",
+		"d": "05:44"
+	}, {
+		"s": "Chichibu.Chichibu.Higuchi",
+		"a": "05:50",
+		"d": "05:50"
+	}, {
+		"s": "Chichibu.Chichibu.Nogami",
+		"a": "05:53",
+		"d": "05:53"
+	}, {
+		"s": "Chichibu.Chichibu.Nagatoro",
+		"a": "05:56",
+		"d": "05:56"
+	}, {
+		"s": "Chichibu.Chichibu.KamiNagatoro",
+		"a": "05:58",
+		"d": "05:58"
+	}, {
+		"s": "Chichibu.Chichibu.Oyahana",
+		"a": "06:01",
+		"d": "06:01"
+	}, {
+		"s": "Chichibu.Chichibu.Minano",
+		"a": "06:04",
+		"d": "06:04"
+	}, {
+		"s": "Chichibu.Chichibu.WadoKuroya",
+		"a": "06:08",
+		"d": "06:08"
+	}, {
+		"s": "Chichibu.Chichibu.Onohara",
+		"a": "06:12",
+		"d": "06:12"
+	}, {
+		"s": "Chichibu.Chichibu.Chichibu",
+		"a": "06:16",
+		"d": "06:16"
+	}, {
+		"s": "Chichibu.Chichibu.Ohanabatake",
+		"a": "06:18",
+		"d": "06:18"
+	}, {
+		"s": "Chichibu.Chichibu.Kagemori",
+		"a": "06:21",
+		"d": "06:21"
+	}, {
+		"s": "Chichibu.Chichibu.Urayamaguchi",
+		"a": "06:25",
+		"d": "06:25"
+	}, {
+		"s": "Chichibu.Chichibu.BushuNakagawa",
+		"a": "06:28",
+		"d": "06:28"
+	}, {
+		"s": "Chichibu.Chichibu.BushuHino",
+		"a": "06:31",
+		"d": "06:31"
+	}, {
+		"s": "Chichibu.Chichibu.Shiroku",
+		"a": "06:36",
+		"d": "06:36"
+	}, {
+		"s": "Chichibu.Chichibu.Mitsumineguchi",
+		"a": "06:38"
 	}]
 }, {
 	"id": "Chichibu.Chichibu.1001.Weekday",
@@ -14511,134 +14511,6 @@
 		"a": "23:50"
 	}]
 }, {
-	"id": "Chichibu.Chichibu.1.SaturdayHoliday",
-	"t": "Chichibu.Chichibu.1",
-	"r": "Chichibu.Chichibu",
-	"n": "1",
-	"y": "Chichibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Chichibu.Chichibu.Kumagaya"
-	],
-	"ds": [
-		"Chichibu.Chichibu.Mitsumineguchi"
-	],
-	"tt": [{
-		"s": "Chichibu.Chichibu.Kumagaya",
-		"d": "05:22"
-	}, {
-		"s": "Chichibu.Chichibu.KamiKumagaya",
-		"a": "05:24",
-		"d": "05:24"
-	}, {
-		"s": "Chichibu.Chichibu.Ishiwara",
-		"a": "05:26",
-		"d": "05:26"
-	}, {
-		"s": "Chichibu.Chichibu.HiroseYachonoMori",
-		"a": "05:28",
-		"d": "05:28"
-	}, {
-		"s": "Chichibu.Chichibu.Oaso",
-		"a": "05:31",
-		"d": "05:31"
-	}, {
-		"s": "Chichibu.Chichibu.Aketo",
-		"a": "05:34",
-		"d": "05:34"
-	}, {
-		"s": "Chichibu.Chichibu.Takekawa",
-		"a": "05:37",
-		"d": "05:37"
-	}, {
-		"s": "Chichibu.Chichibu.Nagata",
-		"a": "05:41",
-		"d": "05:41"
-	}, {
-		"s": "Chichibu.Chichibu.FukayaHanazono",
-		"a": "05:43",
-		"d": "05:43"
-	}, {
-		"s": "Chichibu.Chichibu.Omaeda",
-		"a": "05:46",
-		"d": "05:46"
-	}, {
-		"s": "Chichibu.Chichibu.Sakurazawa",
-		"a": "05:49",
-		"d": "05:49"
-	}, {
-		"s": "Chichibu.Chichibu.Yorii",
-		"a": "05:51",
-		"d": "05:52"
-	}, {
-		"s": "Chichibu.Chichibu.Hagure",
-		"a": "05:56",
-		"d": "05:56"
-	}, {
-		"s": "Chichibu.Chichibu.Higuchi",
-		"a": "06:02",
-		"d": "06:02"
-	}, {
-		"s": "Chichibu.Chichibu.Nogami",
-		"a": "06:05",
-		"d": "06:05"
-	}, {
-		"s": "Chichibu.Chichibu.Nagatoro",
-		"a": "06:08",
-		"d": "06:08"
-	}, {
-		"s": "Chichibu.Chichibu.KamiNagatoro",
-		"a": "06:10",
-		"d": "06:10"
-	}, {
-		"s": "Chichibu.Chichibu.Oyahana",
-		"a": "06:13",
-		"d": "06:13"
-	}, {
-		"s": "Chichibu.Chichibu.Minano",
-		"a": "06:16",
-		"d": "06:16"
-	}, {
-		"s": "Chichibu.Chichibu.WadoKuroya",
-		"a": "06:20",
-		"d": "06:20"
-	}, {
-		"s": "Chichibu.Chichibu.Onohara",
-		"a": "06:24",
-		"d": "06:24"
-	}, {
-		"s": "Chichibu.Chichibu.Chichibu",
-		"a": "06:27",
-		"d": "06:27"
-	}, {
-		"s": "Chichibu.Chichibu.Ohanabatake",
-		"a": "06:29",
-		"d": "06:29"
-	}, {
-		"s": "Chichibu.Chichibu.Kagemori",
-		"a": "06:32",
-		"d": "06:34"
-	}, {
-		"s": "Chichibu.Chichibu.Urayamaguchi",
-		"a": "06:37",
-		"d": "06:37"
-	}, {
-		"s": "Chichibu.Chichibu.BushuNakagawa",
-		"a": "06:41",
-		"d": "06:41"
-	}, {
-		"s": "Chichibu.Chichibu.BushuHino",
-		"a": "06:44",
-		"d": "06:44"
-	}, {
-		"s": "Chichibu.Chichibu.Shiroku",
-		"a": "06:49",
-		"d": "06:49"
-	}, {
-		"s": "Chichibu.Chichibu.Mitsumineguchi",
-		"a": "06:51"
-	}]
-}, {
 	"id": "Chichibu.Chichibu.1503.SaturdayHoliday",
 	"t": "Chichibu.Chichibu.1503",
 	"r": "Chichibu.Chichibu",
@@ -14781,6 +14653,134 @@
 	}, {
 		"s": "Chichibu.Chichibu.Mitsumineguchi",
 		"a": "07:35"
+	}]
+}, {
+	"id": "Chichibu.Chichibu.1.SaturdayHoliday",
+	"t": "Chichibu.Chichibu.1",
+	"r": "Chichibu.Chichibu",
+	"n": "1",
+	"y": "Chichibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Chichibu.Chichibu.Kumagaya"
+	],
+	"ds": [
+		"Chichibu.Chichibu.Mitsumineguchi"
+	],
+	"tt": [{
+		"s": "Chichibu.Chichibu.Kumagaya",
+		"d": "05:22"
+	}, {
+		"s": "Chichibu.Chichibu.KamiKumagaya",
+		"a": "05:24",
+		"d": "05:24"
+	}, {
+		"s": "Chichibu.Chichibu.Ishiwara",
+		"a": "05:26",
+		"d": "05:26"
+	}, {
+		"s": "Chichibu.Chichibu.HiroseYachonoMori",
+		"a": "05:28",
+		"d": "05:28"
+	}, {
+		"s": "Chichibu.Chichibu.Oaso",
+		"a": "05:31",
+		"d": "05:31"
+	}, {
+		"s": "Chichibu.Chichibu.Aketo",
+		"a": "05:34",
+		"d": "05:34"
+	}, {
+		"s": "Chichibu.Chichibu.Takekawa",
+		"a": "05:37",
+		"d": "05:37"
+	}, {
+		"s": "Chichibu.Chichibu.Nagata",
+		"a": "05:41",
+		"d": "05:41"
+	}, {
+		"s": "Chichibu.Chichibu.FukayaHanazono",
+		"a": "05:43",
+		"d": "05:43"
+	}, {
+		"s": "Chichibu.Chichibu.Omaeda",
+		"a": "05:46",
+		"d": "05:46"
+	}, {
+		"s": "Chichibu.Chichibu.Sakurazawa",
+		"a": "05:49",
+		"d": "05:49"
+	}, {
+		"s": "Chichibu.Chichibu.Yorii",
+		"a": "05:51",
+		"d": "05:52"
+	}, {
+		"s": "Chichibu.Chichibu.Hagure",
+		"a": "05:56",
+		"d": "05:56"
+	}, {
+		"s": "Chichibu.Chichibu.Higuchi",
+		"a": "06:02",
+		"d": "06:02"
+	}, {
+		"s": "Chichibu.Chichibu.Nogami",
+		"a": "06:05",
+		"d": "06:05"
+	}, {
+		"s": "Chichibu.Chichibu.Nagatoro",
+		"a": "06:08",
+		"d": "06:08"
+	}, {
+		"s": "Chichibu.Chichibu.KamiNagatoro",
+		"a": "06:10",
+		"d": "06:10"
+	}, {
+		"s": "Chichibu.Chichibu.Oyahana",
+		"a": "06:13",
+		"d": "06:13"
+	}, {
+		"s": "Chichibu.Chichibu.Minano",
+		"a": "06:16",
+		"d": "06:16"
+	}, {
+		"s": "Chichibu.Chichibu.WadoKuroya",
+		"a": "06:20",
+		"d": "06:20"
+	}, {
+		"s": "Chichibu.Chichibu.Onohara",
+		"a": "06:24",
+		"d": "06:24"
+	}, {
+		"s": "Chichibu.Chichibu.Chichibu",
+		"a": "06:27",
+		"d": "06:27"
+	}, {
+		"s": "Chichibu.Chichibu.Ohanabatake",
+		"a": "06:29",
+		"d": "06:29"
+	}, {
+		"s": "Chichibu.Chichibu.Kagemori",
+		"a": "06:32",
+		"d": "06:34"
+	}, {
+		"s": "Chichibu.Chichibu.Urayamaguchi",
+		"a": "06:37",
+		"d": "06:37"
+	}, {
+		"s": "Chichibu.Chichibu.BushuNakagawa",
+		"a": "06:41",
+		"d": "06:41"
+	}, {
+		"s": "Chichibu.Chichibu.BushuHino",
+		"a": "06:44",
+		"d": "06:44"
+	}, {
+		"s": "Chichibu.Chichibu.Shiroku",
+		"a": "06:49",
+		"d": "06:49"
+	}, {
+		"s": "Chichibu.Chichibu.Mitsumineguchi",
+		"a": "06:51"
 	}]
 }, {
 	"id": "Chichibu.Chichibu.11.SaturdayHoliday",
@@ -15696,7 +15696,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.SeibuChichibuBranch.6002.SaturdayHoliday"
+		"Seibu.SeibuChichibuBranch.6052.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Chichibu.Chichibu.Nagatoro",
@@ -15743,7 +15743,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.SeibuChichibuBranch.6004.SaturdayHoliday"
+		"Seibu.SeibuChichibuBranch.6054.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Chichibu.Chichibu.Nagatoro",
@@ -18128,7 +18128,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.SeibuChichibu.6002.SaturdayHoliday.1"
+		"Seibu.SeibuChichibu.6002.SaturdayHoliday.2"
 	],
 	"tt": [{
 		"s": "Chichibu.Chichibu.Mitsumineguchi",
@@ -18327,7 +18327,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.SeibuChichibu.6004.SaturdayHoliday.1"
+		"Seibu.SeibuChichibu.6004.SaturdayHoliday.2"
 	],
 	"tt": [{
 		"s": "Chichibu.Chichibu.Mitsumineguchi",
@@ -20274,42 +20274,6 @@
 		"zh-Hant": "秩父路 6"
 	}]
 }, {
-	"id": "Chichibu.Chichibu.6002.SaturdayHoliday",
-	"t": "Chichibu.Chichibu.6002",
-	"r": "Chichibu.Chichibu",
-	"n": "6002",
-	"y": "Chichibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Chichibu.Chichibu.Mitsumineguchi"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"tt": [{
-		"s": "Chichibu.Chichibu.Mitsumineguchi",
-		"d": "15:25"
-	}, {
-		"s": "Chichibu.Chichibu.Shiroku",
-		"a": "15:27",
-		"d": "15:27"
-	}, {
-		"s": "Chichibu.Chichibu.BushuHino",
-		"a": "15:32",
-		"d": "15:32"
-	}, {
-		"s": "Chichibu.Chichibu.BushuNakagawa",
-		"a": "15:35",
-		"d": "15:35"
-	}, {
-		"s": "Chichibu.Chichibu.Urayamaguchi",
-		"a": "15:38",
-		"d": "15:38"
-	}, {
-		"s": "Chichibu.Chichibu.Kagemori",
-		"a": "15:41"
-	}]
-}, {
 	"id": "Chichibu.Chichibu.1008.SaturdayHoliday",
 	"t": "Chichibu.Chichibu.1008",
 	"r": "Chichibu.Chichibu",
@@ -20363,42 +20327,6 @@
 		"ko": "지치부지 8",
 		"zh-Hans": "秩父路 8",
 		"zh-Hant": "秩父路 8"
-	}]
-}, {
-	"id": "Chichibu.Chichibu.6004.SaturdayHoliday",
-	"t": "Chichibu.Chichibu.6004",
-	"r": "Chichibu.Chichibu",
-	"n": "6004",
-	"y": "Chichibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Chichibu.Chichibu.Mitsumineguchi"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"tt": [{
-		"s": "Chichibu.Chichibu.Mitsumineguchi",
-		"d": "16:25"
-	}, {
-		"s": "Chichibu.Chichibu.Shiroku",
-		"a": "16:27",
-		"d": "16:27"
-	}, {
-		"s": "Chichibu.Chichibu.BushuHino",
-		"a": "16:32",
-		"d": "16:32"
-	}, {
-		"s": "Chichibu.Chichibu.BushuNakagawa",
-		"a": "16:35",
-		"d": "16:35"
-	}, {
-		"s": "Chichibu.Chichibu.Urayamaguchi",
-		"a": "16:38",
-		"d": "16:38"
-	}, {
-		"s": "Chichibu.Chichibu.Kagemori",
-		"a": "16:41"
 	}]
 }, {
 	"id": "Chichibu.Chichibu.1554.SaturdayHoliday",
@@ -20662,7 +20590,7 @@
 		"Chichibu.Chichibu.Nagatoro"
 	],
 	"pt": [
-		"Seibu.SeibuChichibuBranch.6001.SaturdayHoliday"
+		"Seibu.SeibuChichibuBranch.6051.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Chichibu.Chichibu.Ohanabatake",
@@ -20709,7 +20637,7 @@
 		"Chichibu.Chichibu.Nagatoro"
 	],
 	"pt": [
-		"Seibu.SeibuChichibuBranch.6003.SaturdayHoliday"
+		"Seibu.SeibuChichibuBranch.6053.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Chichibu.Chichibu.Ohanabatake",

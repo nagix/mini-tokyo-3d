@@ -24085,102 +24085,10 @@
 		"a": "06:06"
 	}]
 }, {
-	"id": "Tobu.Tojo.101.Weekday",
-	"t": "Tobu.Tojo.101",
+	"id": "Tobu.Tojo.D2163S.Weekday",
+	"t": "Tobu.Tojo.D2163S",
 	"r": "Tobu.Tojo",
-	"n": "101",
-	"y": "Tobu.Local",
-	"d": "Outbound",
-	"os": [
-		"Tobu.Tojo.Shiki"
-	],
-	"ds": [
-		"Tobu.Tojo.Ogawamachi"
-	],
-	"tt": [{
-		"s": "Tobu.Tojo.Shiki",
-		"d": "04:53"
-	}, {
-		"s": "Tobu.Tojo.Yanasegawa",
-		"a": "04:55",
-		"d": "04:55"
-	}, {
-		"s": "Tobu.Tojo.Mizuhodai",
-		"a": "04:57",
-		"d": "04:57"
-	}, {
-		"s": "Tobu.Tojo.Tsuruse",
-		"a": "04:59",
-		"d": "04:59"
-	}, {
-		"s": "Tobu.Tojo.Fujimino",
-		"a": "05:01",
-		"d": "05:01"
-	}, {
-		"s": "Tobu.Tojo.KamiFukuoka",
-		"a": "05:03",
-		"d": "05:04"
-	}, {
-		"s": "Tobu.Tojo.Shingashi",
-		"a": "05:06",
-		"d": "05:06"
-	}, {
-		"s": "Tobu.Tojo.Kawagoe",
-		"a": "05:09",
-		"d": "05:09"
-	}, {
-		"s": "Tobu.Tojo.Kawagoeshi",
-		"a": "05:11",
-		"d": "05:11"
-	}, {
-		"s": "Tobu.Tojo.Kasumigaseki",
-		"a": "05:14",
-		"d": "05:15"
-	}, {
-		"s": "Tobu.Tojo.Tsurugashima",
-		"a": "05:17",
-		"d": "05:17"
-	}, {
-		"s": "Tobu.Tojo.Wakaba",
-		"a": "05:19",
-		"d": "05:20"
-	}, {
-		"s": "Tobu.Tojo.Sakado",
-		"a": "05:22",
-		"d": "05:22"
-	}, {
-		"s": "Tobu.Tojo.KitaSakado",
-		"a": "05:25",
-		"d": "05:25"
-	}, {
-		"s": "Tobu.Tojo.Takasaka",
-		"a": "05:28",
-		"d": "05:28"
-	}, {
-		"s": "Tobu.Tojo.HigashiMatsuyama",
-		"a": "05:32",
-		"d": "05:32"
-	}, {
-		"s": "Tobu.Tojo.ShinrinKoen",
-		"a": "05:35",
-		"d": "05:35"
-	}, {
-		"s": "Tobu.Tojo.Tsukinowa",
-		"a": "05:38",
-		"d": "05:38"
-	}, {
-		"s": "Tobu.Tojo.MusashiRanzan",
-		"a": "05:40",
-		"d": "05:41"
-	}, {
-		"s": "Tobu.Tojo.Ogawamachi",
-		"a": "05:48"
-	}]
-}, {
-	"id": "Tobu.Tojo.D2165S.Weekday",
-	"t": "Tobu.Tojo.D2165S",
-	"r": "Tobu.Tojo",
-	"n": "D2165S",
+	"n": "D2163S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -24190,7 +24098,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B565S.Weekday"
+		"TokyoMetro.Yurakucho.B563S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -24240,10 +24148,10 @@
 		"a": "06:18"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2167S.Weekday",
-	"t": "Tobu.Tojo.D2167S",
+	"id": "Tobu.Tojo.D2165S.Weekday",
+	"t": "Tobu.Tojo.D2165S",
 	"r": "Tobu.Tojo",
-	"n": "D2167S",
+	"n": "D2165S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -24253,7 +24161,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B567S.Weekday"
+		"TokyoMetro.Yurakucho.B565S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -24303,10 +24211,10 @@
 		"a": "06:36"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2159S.Weekday",
-	"t": "Tobu.Tojo.D2159S",
+	"id": "Tobu.Tojo.D2157S.Weekday",
+	"t": "Tobu.Tojo.D2157S",
 	"r": "Tobu.Tojo",
-	"n": "D2159S",
+	"n": "D2157S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -24316,7 +24224,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B559S.Weekday"
+		"TokyoMetro.Yurakucho.B557S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -24366,10 +24274,10 @@
 		"a": "06:40"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2171S.Weekday",
-	"t": "Tobu.Tojo.D2171S",
+	"id": "Tobu.Tojo.D2169S.Weekday",
+	"t": "Tobu.Tojo.D2169S",
 	"r": "Tobu.Tojo",
-	"n": "D2171S",
+	"n": "D2169S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -24379,7 +24287,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B571S.Weekday"
+		"TokyoMetro.Yurakucho.B569S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -24440,9 +24348,6 @@
 	],
 	"ds": [
 		"Tobu.Tojo.Kawagoeshi"
-	],
-	"pt": [
-		"TokyoMetro.Fukutoshin.B551K.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -24567,9 +24472,6 @@
 	"ds": [
 		"Tobu.Tojo.ShinrinKoen"
 	],
-	"pt": [
-		"TokyoMetro.Fukutoshin.B653K.Weekday"
-	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
 		"d": "07:00"
@@ -24648,6 +24550,37 @@
 	}, {
 		"s": "Tobu.Tojo.ShinrinKoen",
 		"a": "07:51"
+	}]
+}, {
+	"id": "Tobu.Tojo.B3116K.Weekday",
+	"t": "Tobu.Tojo.B3116K",
+	"r": "Tobu.Tojo",
+	"n": "B3116K",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Tobu.Tojo.Shiki"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B516K.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Wakoshi",
+		"d": "07:15"
+	}, {
+		"s": "Tobu.Tojo.Asaka",
+		"a": "07:17",
+		"d": "07:17"
+	}, {
+		"s": "Tobu.Tojo.Asakadai",
+		"a": "07:20",
+		"d": "07:20"
+	}, {
+		"s": "Tobu.Tojo.Shiki",
+		"a": "07:22"
 	}]
 }, {
 	"id": "Tobu.Tojo.D2125S.Weekday",
@@ -24808,10 +24741,41 @@
 		"a": "08:33"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2191S.Weekday",
-	"t": "Tobu.Tojo.D2191S",
+	"id": "Tobu.Tojo.B3103S.Weekday",
+	"t": "Tobu.Tojo.B3103S",
 	"r": "Tobu.Tojo",
-	"n": "D2191S",
+	"n": "B3103S",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Tobu.Tojo.Shiki"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B603S.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Wakoshi",
+		"d": "07:43"
+	}, {
+		"s": "Tobu.Tojo.Asaka",
+		"a": "07:46",
+		"d": "07:46"
+	}, {
+		"s": "Tobu.Tojo.Asakadai",
+		"a": "07:49",
+		"d": "07:50"
+	}, {
+		"s": "Tobu.Tojo.Shiki",
+		"a": "07:52"
+	}]
+}, {
+	"id": "Tobu.Tojo.D2189S.Weekday",
+	"t": "Tobu.Tojo.D2189S",
+	"r": "Tobu.Tojo",
+	"n": "D2189S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -24821,7 +24785,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B791S.Weekday"
+		"TokyoMetro.Yurakucho.B789S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -24871,10 +24835,10 @@
 		"a": "08:25"
 	}]
 }, {
-	"id": "Tobu.Tojo.F1129S.Weekday",
-	"t": "Tobu.Tojo.F1129S",
+	"id": "Tobu.Tojo.F1127S.Weekday",
+	"t": "Tobu.Tojo.F1127S",
 	"r": "Tobu.Tojo",
-	"n": "F1129S",
+	"n": "F1127S",
 	"y": "Tobu.Express",
 	"d": "Outbound",
 	"os": [
@@ -24884,7 +24848,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B629S.Weekday"
+		"TokyoMetro.Fukutoshin.B627S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -24940,6 +24904,37 @@
 	}, {
 		"s": "Tobu.Tojo.ShinrinKoen",
 		"a": "08:51"
+	}]
+}, {
+	"id": "Tobu.Tojo.B2137S.Weekday",
+	"t": "Tobu.Tojo.B2137S",
+	"r": "Tobu.Tojo",
+	"n": "B2137S",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"Tobu.Tojo.Shiki"
+	],
+	"pt": [
+		"TokyoMetro.Yurakucho.B737S.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Wakoshi",
+		"d": "08:14"
+	}, {
+		"s": "Tobu.Tojo.Asaka",
+		"a": "08:16",
+		"d": "08:17"
+	}, {
+		"s": "Tobu.Tojo.Asakadai",
+		"a": "08:20",
+		"d": "08:21"
+	}, {
+		"s": "Tobu.Tojo.Shiki",
+		"a": "08:23"
 	}]
 }, {
 	"id": "Tobu.Tojo.F3119T.Weekday",
@@ -25037,10 +25032,10 @@
 		"a": "09:19"
 	}]
 }, {
-	"id": "Tobu.Tojo.D3197S.Weekday",
-	"t": "Tobu.Tojo.D3197S",
+	"id": "Tobu.Tojo.D3195S.Weekday",
+	"t": "Tobu.Tojo.D3195S",
 	"r": "Tobu.Tojo",
-	"n": "D3197S",
+	"n": "D3195S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -25050,7 +25045,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B797S.Weekday"
+		"TokyoMetro.Fukutoshin.B795S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -25258,10 +25253,10 @@
 		"a": "09:42"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2193S.Weekday",
-	"t": "Tobu.Tojo.F2193S",
+	"id": "Tobu.Tojo.F2191S.Weekday",
+	"t": "Tobu.Tojo.F2191S",
 	"r": "Tobu.Tojo",
-	"n": "F2193S",
+	"n": "F2191S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -25271,7 +25266,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B893S.Weekday"
+		"TokyoMetro.Yurakucho.B891S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -25353,10 +25348,10 @@
 		"a": "10:21"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2271S.Weekday",
-	"t": "Tobu.Tojo.D2271S",
+	"id": "Tobu.Tojo.D2269S.Weekday",
+	"t": "Tobu.Tojo.D2269S",
 	"r": "Tobu.Tojo",
-	"n": "D2271S",
+	"n": "D2269S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -25366,7 +25361,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B871S.Weekday"
+		"TokyoMetro.Yurakucho.B869S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -25414,6 +25409,37 @@
 	}, {
 		"s": "Tobu.Tojo.Kawagoeshi",
 		"a": "10:11"
+	}]
+}, {
+	"id": "Tobu.Tojo.B3123S.Weekday",
+	"t": "Tobu.Tojo.B3123S",
+	"r": "Tobu.Tojo",
+	"n": "B3123S",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Tobu.Tojo.Shiki"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B823S.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Wakoshi",
+		"d": "09:51"
+	}, {
+		"s": "Tobu.Tojo.Asaka",
+		"a": "09:53",
+		"d": "09:54"
+	}, {
+		"s": "Tobu.Tojo.Asakadai",
+		"a": "09:56",
+		"d": "09:57"
+	}, {
+		"s": "Tobu.Tojo.Shiki",
+		"a": "09:58"
 	}]
 }, {
 	"id": "Tobu.Tojo.F2115T.Weekday",
@@ -25511,10 +25537,10 @@
 		"a": "10:55"
 	}]
 }, {
-	"id": "Tobu.Tojo.D3189S.Weekday",
-	"t": "Tobu.Tojo.D3189S",
+	"id": "Tobu.Tojo.D3187S.Weekday",
+	"t": "Tobu.Tojo.D3187S",
 	"r": "Tobu.Tojo",
-	"n": "D3189S",
+	"n": "D3187S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -25524,7 +25550,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B889S.Weekday"
+		"TokyoMetro.Fukutoshin.B887S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -25968,10 +25994,10 @@
 		"a": "12:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2169S.Weekday",
-	"t": "Tobu.Tojo.D2169S",
+	"id": "Tobu.Tojo.D2167S.Weekday",
+	"t": "Tobu.Tojo.D2167S",
 	"r": "Tobu.Tojo",
-	"n": "D2169S",
+	"n": "D2167S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -25981,7 +26007,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1169S.Weekday"
+		"TokyoMetro.Yurakucho.B1167S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -26031,10 +26057,10 @@
 		"a": "12:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.F1229S.Weekday",
-	"t": "Tobu.Tojo.F1229S",
+	"id": "Tobu.Tojo.F1227S.Weekday",
+	"t": "Tobu.Tojo.F1227S",
 	"r": "Tobu.Tojo",
-	"n": "F1229S",
+	"n": "F1227S",
 	"y": "Tobu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -26044,7 +26070,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1129S.Weekday"
+		"TokyoMetro.Fukutoshin.B1127S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -26370,10 +26396,10 @@
 		"a": "13:53"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2291S.Weekday",
-	"t": "Tobu.Tojo.D2291S",
+	"id": "Tobu.Tojo.D2171S.Weekday",
+	"t": "Tobu.Tojo.D2171S",
 	"r": "Tobu.Tojo",
-	"n": "D2291S",
+	"n": "D2171S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -26383,7 +26409,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1291S.Weekday"
+		"TokyoMetro.Yurakucho.B1271S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -26433,10 +26459,10 @@
 		"a": "13:53"
 	}]
 }, {
-	"id": "Tobu.Tojo.F1193S.Weekday",
-	"t": "Tobu.Tojo.F1193S",
+	"id": "Tobu.Tojo.F1191S.Weekday",
+	"t": "Tobu.Tojo.F1191S",
 	"r": "Tobu.Tojo",
-	"n": "F1193S",
+	"n": "F1191S",
 	"y": "Tobu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -26446,7 +26472,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1293S.Weekday"
+		"TokyoMetro.Fukutoshin.B1291S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -26504,10 +26530,10 @@
 		"a": "14:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2141S.Weekday",
-	"t": "Tobu.Tojo.D2141S",
+	"id": "Tobu.Tojo.D2151S.Weekday",
+	"t": "Tobu.Tojo.D2151S",
 	"r": "Tobu.Tojo",
-	"n": "D2141S",
+	"n": "D2151S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -26517,7 +26543,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1341S.Weekday"
+		"TokyoMetro.Yurakucho.B1351S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -26567,10 +26593,10 @@
 		"a": "14:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.F1189S.Weekday",
-	"t": "Tobu.Tojo.F1189S",
+	"id": "Tobu.Tojo.F1187S.Weekday",
+	"t": "Tobu.Tojo.F1187S",
 	"r": "Tobu.Tojo",
-	"n": "F1189S",
+	"n": "F1187S",
 	"y": "Tobu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -26580,7 +26606,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1389S.Weekday"
+		"TokyoMetro.Fukutoshin.B1387S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -26638,10 +26664,10 @@
 		"a": "14:53"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2155S.Weekday",
-	"t": "Tobu.Tojo.D2155S",
+	"id": "Tobu.Tojo.D2153S.Weekday",
+	"t": "Tobu.Tojo.D2153S",
 	"r": "Tobu.Tojo",
-	"n": "D2155S",
+	"n": "D2153S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -26651,7 +26677,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1355S.Weekday"
+		"TokyoMetro.Yurakucho.B1353S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -26906,10 +26932,10 @@
 		"a": "15:53"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2371S.Weekday",
-	"t": "Tobu.Tojo.D2371S",
+	"id": "Tobu.Tojo.D2369S.Weekday",
+	"t": "Tobu.Tojo.D2369S",
 	"r": "Tobu.Tojo",
-	"n": "D2371S",
+	"n": "D2369S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -26919,7 +26945,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1471S.Weekday"
+		"TokyoMetro.Yurakucho.B1469S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -27103,10 +27129,10 @@
 		"a": "16:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.F1329S.Weekday",
-	"t": "Tobu.Tojo.F1329S",
+	"id": "Tobu.Tojo.F1327S.Weekday",
+	"t": "Tobu.Tojo.F1327S",
 	"r": "Tobu.Tojo",
-	"n": "F1329S",
+	"n": "F1327S",
 	"y": "Tobu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -27116,7 +27142,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1529S.Weekday"
+		"TokyoMetro.Fukutoshin.B1527S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -27442,10 +27468,10 @@
 		"a": "17:53"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2187S.Weekday",
-	"t": "Tobu.Tojo.D2187S",
+	"id": "Tobu.Tojo.D2149S.Weekday",
+	"t": "Tobu.Tojo.D2149S",
 	"r": "Tobu.Tojo",
-	"n": "D2187S",
+	"n": "D2149S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -27455,38 +27481,38 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1687S.Weekday"
+		"TokyoMetro.Yurakucho.B1649S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
-		"d": "17:30"
+		"d": "17:31"
 	}, {
 		"s": "Tobu.Tojo.Asaka",
-		"a": "17:32",
+		"a": "17:33",
 		"d": "17:33"
 	}, {
 		"s": "Tobu.Tojo.Asakadai",
-		"a": "17:35",
+		"a": "17:36",
 		"d": "17:36"
 	}, {
 		"s": "Tobu.Tojo.Shiki",
 		"a": "17:38",
-		"d": "17:38"
+		"d": "17:39"
 	}, {
 		"s": "Tobu.Tojo.Yanasegawa",
-		"a": "17:40",
+		"a": "17:41",
 		"d": "17:41"
 	}, {
 		"s": "Tobu.Tojo.Mizuhodai",
-		"a": "17:42",
+		"a": "17:43",
 		"d": "17:43"
 	}, {
 		"s": "Tobu.Tojo.Tsuruse",
 		"a": "17:45",
-		"d": "17:45"
+		"d": "17:46"
 	}, {
 		"s": "Tobu.Tojo.Fujimino",
-		"a": "17:47",
+		"a": "17:48",
 		"d": "17:52"
 	}, {
 		"s": "Tobu.Tojo.KamiFukuoka",
@@ -27505,10 +27531,10 @@
 		"a": "18:02"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2255S.Weekday",
-	"t": "Tobu.Tojo.D2255S",
+	"id": "Tobu.Tojo.D2253S.Weekday",
+	"t": "Tobu.Tojo.D2253S",
 	"r": "Tobu.Tojo",
-	"n": "D2255S",
+	"n": "D2253S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -27518,7 +27544,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1655S.Weekday"
+		"TokyoMetro.Yurakucho.B1653S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -27568,10 +27594,10 @@
 		"a": "18:11"
 	}]
 }, {
-	"id": "Tobu.Tojo.D3193S.Weekday",
-	"t": "Tobu.Tojo.D3193S",
+	"id": "Tobu.Tojo.D3191S.Weekday",
+	"t": "Tobu.Tojo.D3191S",
 	"r": "Tobu.Tojo",
-	"n": "D3193S",
+	"n": "D3191S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -27581,7 +27607,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1693S.Weekday"
+		"TokyoMetro.Fukutoshin.B1691S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -27694,10 +27720,41 @@
 		"a": "18:39"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2195S.Weekday",
-	"t": "Tobu.Tojo.F2195S",
+	"id": "Tobu.Tojo.B3104S.Weekday",
+	"t": "Tobu.Tojo.B3104S",
 	"r": "Tobu.Tojo",
-	"n": "F2195S",
+	"n": "B3104S",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Tobu.Tojo.Shiki"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1604S.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Wakoshi",
+		"d": "18:13"
+	}, {
+		"s": "Tobu.Tojo.Asaka",
+		"a": "18:15",
+		"d": "18:16"
+	}, {
+		"s": "Tobu.Tojo.Asakadai",
+		"a": "18:18",
+		"d": "18:19"
+	}, {
+		"s": "Tobu.Tojo.Shiki",
+		"a": "18:20"
+	}]
+}, {
+	"id": "Tobu.Tojo.F2189S.Weekday",
+	"t": "Tobu.Tojo.F2189S",
+	"r": "Tobu.Tojo",
+	"n": "F2189S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -27707,7 +27764,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1795S.Weekday"
+		"TokyoMetro.Yurakucho.B1789S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -27915,6 +27972,37 @@
 		"a": "19:12"
 	}]
 }, {
+	"id": "Tobu.Tojo.B2165S.Weekday",
+	"t": "Tobu.Tojo.B2165S",
+	"r": "Tobu.Tojo",
+	"n": "B2165S",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"Tobu.Tojo.Shiki"
+	],
+	"pt": [
+		"TokyoMetro.Yurakucho.B1765S.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Wakoshi",
+		"d": "18:48"
+	}, {
+		"s": "Tobu.Tojo.Asaka",
+		"a": "18:50",
+		"d": "18:50"
+	}, {
+		"s": "Tobu.Tojo.Asakadai",
+		"a": "18:53",
+		"d": "18:53"
+	}, {
+		"s": "Tobu.Tojo.Shiki",
+		"a": "18:55"
+	}]
+}, {
 	"id": "Tobu.Tojo.D3251K.Weekday",
 	"t": "Tobu.Tojo.D3251K",
 	"r": "Tobu.Tojo",
@@ -28041,6 +28129,37 @@
 		"a": "19:39"
 	}]
 }, {
+	"id": "Tobu.Tojo.B3102S.Weekday",
+	"t": "Tobu.Tojo.B3102S",
+	"r": "Tobu.Tojo",
+	"n": "B3102S",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Tobu.Tojo.Shiki"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1702S.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Wakoshi",
+		"d": "19:10"
+	}, {
+		"s": "Tobu.Tojo.Asaka",
+		"a": "19:12",
+		"d": "19:13"
+	}, {
+		"s": "Tobu.Tojo.Asakadai",
+		"a": "19:15",
+		"d": "19:16"
+	}, {
+		"s": "Tobu.Tojo.Shiki",
+		"a": "19:18"
+	}]
+}, {
 	"id": "Tobu.Tojo.F2123T.Weekday",
 	"t": "Tobu.Tojo.F2123T",
 	"r": "Tobu.Tojo",
@@ -28136,10 +28255,41 @@
 		"a": "20:08"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2123S.Weekday",
-	"t": "Tobu.Tojo.D2123S",
+	"id": "Tobu.Tojo.B3113K.Weekday",
+	"t": "Tobu.Tojo.B3113K",
 	"r": "Tobu.Tojo",
-	"n": "D2123S",
+	"n": "B3113K",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Tobu.Tojo.Shiki"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1713K.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Wakoshi",
+		"d": "19:18"
+	}, {
+		"s": "Tobu.Tojo.Asaka",
+		"a": "19:20",
+		"d": "19:21"
+	}, {
+		"s": "Tobu.Tojo.Asakadai",
+		"a": "19:23",
+		"d": "19:24"
+	}, {
+		"s": "Tobu.Tojo.Shiki",
+		"a": "19:26"
+	}]
+}, {
+	"id": "Tobu.Tojo.D2133S.Weekday",
+	"t": "Tobu.Tojo.D2133S",
+	"r": "Tobu.Tojo",
+	"n": "D2133S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -28149,7 +28299,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1823S.Weekday"
+		"TokyoMetro.Yurakucho.B1833S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -28325,10 +28475,10 @@
 		"a": "20:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2307T.Weekday",
-	"t": "Tobu.Tojo.D2307T",
+	"id": "Tobu.Tojo.D2121T.Weekday",
+	"t": "Tobu.Tojo.D2121T",
 	"r": "Tobu.Tojo",
-	"n": "D2307T",
+	"n": "D2121T",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -28338,7 +28488,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1907T.Weekday"
+		"TokyoMetro.Yurakucho.B1921T.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -28388,10 +28538,41 @@
 		"a": "20:39"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2101T.Weekday",
-	"t": "Tobu.Tojo.F2101T",
+	"id": "Tobu.Tojo.B3120K.Weekday",
+	"t": "Tobu.Tojo.B3120K",
 	"r": "Tobu.Tojo",
-	"n": "F2101T",
+	"n": "B3120K",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Tobu.Tojo.Shiki"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1820K.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Wakoshi",
+		"d": "20:12"
+	}, {
+		"s": "Tobu.Tojo.Asaka",
+		"a": "20:14",
+		"d": "20:15"
+	}, {
+		"s": "Tobu.Tojo.Asakadai",
+		"a": "20:17",
+		"d": "20:18"
+	}, {
+		"s": "Tobu.Tojo.Shiki",
+		"a": "20:20"
+	}]
+}, {
+	"id": "Tobu.Tojo.F2107T.Weekday",
+	"t": "Tobu.Tojo.F2107T",
+	"r": "Tobu.Tojo",
+	"n": "F2107T",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -28401,7 +28582,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1901T.Weekday"
+		"TokyoMetro.Yurakucho.B1907T.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -28483,10 +28664,10 @@
 		"a": "21:08"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2163S.Weekday",
-	"t": "Tobu.Tojo.D2163S",
+	"id": "Tobu.Tojo.D2161S.Weekday",
+	"t": "Tobu.Tojo.D2161S",
 	"r": "Tobu.Tojo",
-	"n": "D2163S",
+	"n": "D2161S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -28496,7 +28677,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1963S.Weekday"
+		"TokyoMetro.Yurakucho.B1961S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -28641,10 +28822,10 @@
 		"a": "21:36"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2145S.Weekday",
-	"t": "Tobu.Tojo.D2145S",
+	"id": "Tobu.Tojo.D2187S.Weekday",
+	"t": "Tobu.Tojo.D2187S",
 	"r": "Tobu.Tojo",
-	"n": "D2145S",
+	"n": "D2187S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -28654,7 +28835,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2045S.Weekday"
+		"TokyoMetro.Yurakucho.B2087S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -28704,10 +28885,10 @@
 		"a": "21:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2355S.Weekday",
-	"t": "Tobu.Tojo.D2355S",
+	"id": "Tobu.Tojo.D2353S.Weekday",
+	"t": "Tobu.Tojo.D2353S",
 	"r": "Tobu.Tojo",
-	"n": "D2355S",
+	"n": "D2353S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -28717,7 +28898,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2055S.Weekday"
+		"TokyoMetro.Yurakucho.B2053S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -28765,6 +28946,37 @@
 	}, {
 		"s": "Tobu.Tojo.Kawagoeshi",
 		"a": "21:39"
+	}]
+}, {
+	"id": "Tobu.Tojo.B3147S.Weekday",
+	"t": "Tobu.Tojo.B3147S",
+	"r": "Tobu.Tojo",
+	"n": "B3147S",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Tobu.Tojo.Shiki"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1947S.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Wakoshi",
+		"d": "21:12"
+	}, {
+		"s": "Tobu.Tojo.Asaka",
+		"a": "21:14",
+		"d": "21:15"
+	}, {
+		"s": "Tobu.Tojo.Asakadai",
+		"a": "21:17",
+		"d": "21:18"
+	}, {
+		"s": "Tobu.Tojo.Shiki",
+		"a": "21:20"
 	}]
 }, {
 	"id": "Tobu.Tojo.F2109T.Weekday",
@@ -28862,10 +29074,10 @@
 		"a": "22:07"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2149S.Weekday",
-	"t": "Tobu.Tojo.D2149S",
+	"id": "Tobu.Tojo.D2251S.Weekday",
+	"t": "Tobu.Tojo.D2251S",
 	"r": "Tobu.Tojo",
-	"n": "D2149S",
+	"n": "D2251S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -28875,7 +29087,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2049S.Weekday"
+		"TokyoMetro.Yurakucho.B2051S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -28925,10 +29137,10 @@
 		"a": "22:02"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2151S.Weekday",
-	"t": "Tobu.Tojo.D2151S",
+	"id": "Tobu.Tojo.D2179S.Weekday",
+	"t": "Tobu.Tojo.D2179S",
 	"r": "Tobu.Tojo",
-	"n": "D2151S",
+	"n": "D2179S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -28938,7 +29150,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2051S.Weekday"
+		"TokyoMetro.Yurakucho.B2079S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -29146,10 +29358,41 @@
 		"a": "23:06"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2133S.Weekday",
-	"t": "Tobu.Tojo.D2133S",
+	"id": "Tobu.Tojo.B3103K.Weekday",
+	"t": "Tobu.Tojo.B3103K",
 	"r": "Tobu.Tojo",
-	"n": "D2133S",
+	"n": "B3103K",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Tobu.Tojo.Shiki"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B2003K.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Wakoshi",
+		"d": "22:18"
+	}, {
+		"s": "Tobu.Tojo.Asaka",
+		"a": "22:21",
+		"d": "22:21"
+	}, {
+		"s": "Tobu.Tojo.Asakadai",
+		"a": "22:24",
+		"d": "22:24"
+	}, {
+		"s": "Tobu.Tojo.Shiki",
+		"a": "22:26"
+	}]
+}, {
+	"id": "Tobu.Tojo.D2521S.Weekday",
+	"t": "Tobu.Tojo.D2521S",
+	"r": "Tobu.Tojo",
+	"n": "D2521S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -29159,7 +29402,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2133S.Weekday"
+		"TokyoMetro.Yurakucho.B2121S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -29209,10 +29452,10 @@
 		"a": "23:02"
 	}]
 }, {
-	"id": "Tobu.Tojo.F3125S.Weekday",
-	"t": "Tobu.Tojo.F3125S",
+	"id": "Tobu.Tojo.F3131S.Weekday",
+	"t": "Tobu.Tojo.F3131S",
 	"r": "Tobu.Tojo",
-	"n": "F3125S",
+	"n": "F3131S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -29222,7 +29465,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B2125S.Weekday"
+		"TokyoMetro.Fukutoshin.B2131S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -29399,10 +29642,10 @@
 		"a": "23:43"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2107T.Weekday",
-	"t": "Tobu.Tojo.F2107T",
+	"id": "Tobu.Tojo.F2121T.Weekday",
+	"t": "Tobu.Tojo.F2121T",
 	"r": "Tobu.Tojo",
-	"n": "F2107T",
+	"n": "F2121T",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -29412,7 +29655,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2207T.Weekday"
+		"TokyoMetro.Yurakucho.B2221T.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -29684,10 +29927,10 @@
 		"a": "00:42"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2135S.Weekday",
-	"t": "Tobu.Tojo.F2135S",
+	"id": "Tobu.Tojo.F2141S.Weekday",
+	"t": "Tobu.Tojo.F2141S",
 	"r": "Tobu.Tojo",
-	"n": "F2135S",
+	"n": "F2141S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -29697,7 +29940,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2235S.Weekday"
+		"TokyoMetro.Yurakucho.B2241S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -29777,6 +30020,98 @@
 	}, {
 		"s": "Tobu.Tojo.ShinrinKoen",
 		"a": "00:54"
+	}]
+}, {
+	"id": "Tobu.Tojo.101.Weekday",
+	"t": "Tobu.Tojo.101",
+	"r": "Tobu.Tojo",
+	"n": "101",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Tojo.Shiki"
+	],
+	"ds": [
+		"Tobu.Tojo.Ogawamachi"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Shiki",
+		"d": "04:53"
+	}, {
+		"s": "Tobu.Tojo.Yanasegawa",
+		"a": "04:55",
+		"d": "04:55"
+	}, {
+		"s": "Tobu.Tojo.Mizuhodai",
+		"a": "04:57",
+		"d": "04:57"
+	}, {
+		"s": "Tobu.Tojo.Tsuruse",
+		"a": "04:59",
+		"d": "04:59"
+	}, {
+		"s": "Tobu.Tojo.Fujimino",
+		"a": "05:01",
+		"d": "05:01"
+	}, {
+		"s": "Tobu.Tojo.KamiFukuoka",
+		"a": "05:03",
+		"d": "05:04"
+	}, {
+		"s": "Tobu.Tojo.Shingashi",
+		"a": "05:06",
+		"d": "05:06"
+	}, {
+		"s": "Tobu.Tojo.Kawagoe",
+		"a": "05:09",
+		"d": "05:09"
+	}, {
+		"s": "Tobu.Tojo.Kawagoeshi",
+		"a": "05:11",
+		"d": "05:11"
+	}, {
+		"s": "Tobu.Tojo.Kasumigaseki",
+		"a": "05:14",
+		"d": "05:15"
+	}, {
+		"s": "Tobu.Tojo.Tsurugashima",
+		"a": "05:17",
+		"d": "05:17"
+	}, {
+		"s": "Tobu.Tojo.Wakaba",
+		"a": "05:19",
+		"d": "05:20"
+	}, {
+		"s": "Tobu.Tojo.Sakado",
+		"a": "05:22",
+		"d": "05:22"
+	}, {
+		"s": "Tobu.Tojo.KitaSakado",
+		"a": "05:25",
+		"d": "05:25"
+	}, {
+		"s": "Tobu.Tojo.Takasaka",
+		"a": "05:28",
+		"d": "05:28"
+	}, {
+		"s": "Tobu.Tojo.HigashiMatsuyama",
+		"a": "05:32",
+		"d": "05:32"
+	}, {
+		"s": "Tobu.Tojo.ShinrinKoen",
+		"a": "05:35",
+		"d": "05:35"
+	}, {
+		"s": "Tobu.Tojo.Tsukinowa",
+		"a": "05:38",
+		"d": "05:38"
+	}, {
+		"s": "Tobu.Tojo.MusashiRanzan",
+		"a": "05:40",
+		"d": "05:41"
+	}, {
+		"s": "Tobu.Tojo.Ogawamachi",
+		"a": "05:48"
 	}]
 }, {
 	"id": "Tobu.Tojo.Y573.Weekday",
@@ -39379,10 +39714,10 @@
 		"a": "05:57"
 	}]
 }, {
-	"id": "Tobu.Tojo.E2191S.Weekday",
-	"t": "Tobu.Tojo.E2191S",
+	"id": "Tobu.Tojo.E2189S.Weekday",
+	"t": "Tobu.Tojo.E2189S",
 	"r": "Tobu.Tojo",
-	"n": "E2191S",
+	"n": "E2189S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -39392,7 +39727,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A591S.Weekday"
+		"TokyoMetro.Yurakucho.A589S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -40925,10 +41260,10 @@
 		"a": "07:40"
 	}]
 }, {
-	"id": "Tobu.Tojo.E2193S.Weekday",
-	"t": "Tobu.Tojo.E2193S",
+	"id": "Tobu.Tojo.E2191S.Weekday",
+	"t": "Tobu.Tojo.E2191S",
 	"r": "Tobu.Tojo",
-	"n": "E2193S",
+	"n": "E2191S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -40938,7 +41273,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A693S.Weekday"
+		"TokyoMetro.Yurakucho.A691S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -42213,10 +42548,10 @@
 		"a": "09:36"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1129S.Weekday",
-	"t": "Tobu.Tojo.E1129S",
+	"id": "Tobu.Tojo.E1127S.Weekday",
+	"t": "Tobu.Tojo.E1127S",
 	"r": "Tobu.Tojo",
-	"n": "E1129S",
+	"n": "E1127S",
 	"y": "Tobu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -42226,7 +42561,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A929S.Weekday"
+		"TokyoMetro.Fukutoshin.A927S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -42754,10 +43089,10 @@
 		"a": "11:44"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1193S.Weekday",
-	"t": "Tobu.Tojo.E1193S",
+	"id": "Tobu.Tojo.E1191S.Weekday",
+	"t": "Tobu.Tojo.E1191S",
 	"r": "Tobu.Tojo",
-	"n": "E1193S",
+	"n": "E1191S",
 	"y": "Tobu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -42767,7 +43102,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1093S.Weekday"
+		"TokyoMetro.Fukutoshin.A1091S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -42925,10 +43260,10 @@
 		"a": "12:14"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1189S.Weekday",
-	"t": "Tobu.Tojo.E1189S",
+	"id": "Tobu.Tojo.E1187S.Weekday",
+	"t": "Tobu.Tojo.E1187S",
 	"r": "Tobu.Tojo",
-	"n": "E1189S",
+	"n": "E1187S",
 	"y": "Tobu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -42938,7 +43273,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1189S.Weekday"
+		"TokyoMetro.Fukutoshin.A1187S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -43761,10 +44096,10 @@
 		"a": "14:13"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1229S.Weekday",
-	"t": "Tobu.Tojo.E1229S",
+	"id": "Tobu.Tojo.E1227S.Weekday",
+	"t": "Tobu.Tojo.E1227S",
 	"r": "Tobu.Tojo",
-	"n": "E1229S",
+	"n": "E1227S",
 	"y": "Tobu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -43774,7 +44109,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1329S.Weekday"
+		"TokyoMetro.Fukutoshin.A1327S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -44426,10 +44761,10 @@
 		"a": "15:43"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1293S.Weekday",
-	"t": "Tobu.Tojo.E1293S",
+	"id": "Tobu.Tojo.E1291S.Weekday",
+	"t": "Tobu.Tojo.E1291S",
 	"r": "Tobu.Tojo",
-	"n": "E1293S",
+	"n": "E1291S",
 	"y": "Tobu.Express",
 	"d": "Inbound",
 	"os": [
@@ -44439,7 +44774,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1493S.Weekday"
+		"TokyoMetro.Fukutoshin.A1491S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -44597,10 +44932,10 @@
 		"a": "16:13"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1289S.Weekday",
-	"t": "Tobu.Tojo.E1289S",
+	"id": "Tobu.Tojo.E1287S.Weekday",
+	"t": "Tobu.Tojo.E1287S",
 	"r": "Tobu.Tojo",
-	"n": "E1289S",
+	"n": "E1287S",
 	"y": "Tobu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -44610,7 +44945,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1589S.Weekday"
+		"TokyoMetro.Fukutoshin.A1587S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -45637,10 +45972,10 @@
 		"a": "17:49"
 	}]
 }, {
-	"id": "Tobu.Tojo.E3129S.Weekday",
-	"t": "Tobu.Tojo.E3129S",
+	"id": "Tobu.Tojo.E3127S.Weekday",
+	"t": "Tobu.Tojo.E3127S",
 	"r": "Tobu.Tojo",
-	"n": "E3129S",
+	"n": "E3127S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -45650,7 +45985,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1729S.Weekday"
+		"TokyoMetro.Fukutoshin.A1727S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -46818,10 +47153,10 @@
 		"a": "20:25"
 	}]
 }, {
-	"id": "Tobu.Tojo.E2195S.Weekday",
-	"t": "Tobu.Tojo.E2195S",
+	"id": "Tobu.Tojo.E2289S.Weekday",
+	"t": "Tobu.Tojo.E2289S",
 	"r": "Tobu.Tojo",
-	"n": "E2195S",
+	"n": "E2289S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -46831,7 +47166,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1995S.Weekday"
+		"TokyoMetro.Yurakucho.A1989S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -49264,10 +49599,10 @@
 		"a": "06:35"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2165S.Weekday",
-	"t": "Tobu.Tojo.C2165S",
+	"id": "Tobu.Tojo.C2163S.Weekday",
+	"t": "Tobu.Tojo.C2163S",
 	"r": "Tobu.Tojo",
-	"n": "C2165S",
+	"n": "C2163S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -49277,7 +49612,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A665S.Weekday"
+		"TokyoMetro.Yurakucho.A663S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -49327,10 +49662,10 @@
 		"a": "07:02"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2167S.Weekday",
-	"t": "Tobu.Tojo.C2167S",
+	"id": "Tobu.Tojo.C2165S.Weekday",
+	"t": "Tobu.Tojo.C2165S",
 	"r": "Tobu.Tojo",
-	"n": "C2167S",
+	"n": "C2165S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -49340,7 +49675,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A667S.Weekday"
+		"TokyoMetro.Yurakucho.A665S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -49458,10 +49793,10 @@
 		"a": "07:50"
 	}]
 }, {
-	"id": "Tobu.Tojo.C3159S.Weekday",
-	"t": "Tobu.Tojo.C3159S",
+	"id": "Tobu.Tojo.C3157S.Weekday",
+	"t": "Tobu.Tojo.C3157S",
 	"r": "Tobu.Tojo",
-	"n": "C3159S",
+	"n": "C3157S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -49471,7 +49806,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A759S.Weekday"
+		"TokyoMetro.Fukutoshin.A757S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -49521,10 +49856,10 @@
 		"a": "07:36"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2171S.Weekday",
-	"t": "Tobu.Tojo.C2171S",
+	"id": "Tobu.Tojo.C2169S.Weekday",
+	"t": "Tobu.Tojo.C2169S",
 	"r": "Tobu.Tojo",
-	"n": "C2171S",
+	"n": "C2169S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -49534,7 +49869,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A771S.Weekday"
+		"TokyoMetro.Yurakucho.A769S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -50109,10 +50444,10 @@
 		"a": "09:18"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2191S.Weekday",
-	"t": "Tobu.Tojo.C2191S",
+	"id": "Tobu.Tojo.C2189S.Weekday",
+	"t": "Tobu.Tojo.C2189S",
 	"r": "Tobu.Tojo",
-	"n": "C2191S",
+	"n": "C2189S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -50122,7 +50457,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A891S.Weekday"
+		"TokyoMetro.Yurakucho.A889S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -50576,10 +50911,10 @@
 		"a": "10:20"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2197S.Weekday",
-	"t": "Tobu.Tojo.C2197S",
+	"id": "Tobu.Tojo.C2195S.Weekday",
+	"t": "Tobu.Tojo.C2195S",
 	"r": "Tobu.Tojo",
-	"n": "C2197S",
+	"n": "C2195S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -50589,7 +50924,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A997S.Weekday"
+		"TokyoMetro.Yurakucho.A995S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -51238,10 +51573,10 @@
 		"a": "11:27"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2271S.Weekday",
-	"t": "Tobu.Tojo.C2271S",
+	"id": "Tobu.Tojo.C2269S.Weekday",
+	"t": "Tobu.Tojo.C2269S",
 	"r": "Tobu.Tojo",
-	"n": "C2271S",
+	"n": "C2269S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -51251,7 +51586,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1071S.Weekday"
+		"TokyoMetro.Yurakucho.A1069S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -51980,10 +52315,10 @@
 	}, {
 		"s": "Tobu.Tojo.Shiki",
 		"a": "12:28",
-		"d": "12:30"
+		"d": "12:29"
 	}, {
 		"s": "Tobu.Tojo.Asakadai",
-		"a": "12:31",
+		"a": "12:30",
 		"d": "12:32"
 	}, {
 		"s": "Tobu.Tojo.Asaka",
@@ -52162,10 +52497,10 @@
 		"a": "13:07"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2169S.Weekday",
-	"t": "Tobu.Tojo.C2169S",
+	"id": "Tobu.Tojo.C2167S.Weekday",
+	"t": "Tobu.Tojo.C2167S",
 	"r": "Tobu.Tojo",
-	"n": "C2169S",
+	"n": "C2167S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -52175,7 +52510,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1269S.Weekday"
+		"TokyoMetro.Yurakucho.A1267S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -52855,10 +53190,10 @@
 		"a": "14:37"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2291S.Weekday",
-	"t": "Tobu.Tojo.C2291S",
+	"id": "Tobu.Tojo.C2171S.Weekday",
+	"t": "Tobu.Tojo.C2171S",
 	"r": "Tobu.Tojo",
-	"n": "C2291S",
+	"n": "C2171S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -52868,7 +53203,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1491S.Weekday"
+		"TokyoMetro.Yurakucho.A1471S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -53086,10 +53421,10 @@
 		"a": "15:07"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2141S.Weekday",
-	"t": "Tobu.Tojo.C2141S",
+	"id": "Tobu.Tojo.C2151S.Weekday",
+	"t": "Tobu.Tojo.C2151S",
 	"r": "Tobu.Tojo",
-	"n": "C2141S",
+	"n": "C2151S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -53099,7 +53434,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1441S.Weekday"
+		"TokyoMetro.Yurakucho.A1451S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -53135,10 +53470,10 @@
 	}, {
 		"s": "Tobu.Tojo.Shiki",
 		"a": "14:58",
-		"d": "15:00"
+		"d": "14:59"
 	}, {
 		"s": "Tobu.Tojo.Asakadai",
-		"a": "15:01",
+		"a": "15:00",
 		"d": "15:02"
 	}, {
 		"s": "Tobu.Tojo.Asaka",
@@ -53317,10 +53652,10 @@
 		"a": "15:37"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2155S.Weekday",
-	"t": "Tobu.Tojo.C2155S",
+	"id": "Tobu.Tojo.C2153S.Weekday",
+	"t": "Tobu.Tojo.C2153S",
 	"r": "Tobu.Tojo",
-	"n": "C2155S",
+	"n": "C2153S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -53330,7 +53665,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1555S.Weekday"
+		"TokyoMetro.Yurakucho.A1553S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -53879,10 +54214,10 @@
 		"a": "16:54"
 	}]
 }, {
-	"id": "Tobu.Tojo.C3171S.Weekday",
-	"t": "Tobu.Tojo.C3171S",
+	"id": "Tobu.Tojo.C3169S.Weekday",
+	"t": "Tobu.Tojo.C3169S",
 	"r": "Tobu.Tojo",
-	"n": "C3171S",
+	"n": "C3169S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -53892,7 +54227,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1671S.Weekday"
+		"TokyoMetro.Fukutoshin.A1669S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -54775,10 +55110,10 @@
 		"a": "18:54"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2187S.Weekday",
-	"t": "Tobu.Tojo.C2187S",
+	"id": "Tobu.Tojo.C2149S.Weekday",
+	"t": "Tobu.Tojo.C2149S",
 	"r": "Tobu.Tojo",
-	"n": "C2187S",
+	"n": "C2149S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -54788,7 +55123,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1887S.Weekday"
+		"TokyoMetro.Yurakucho.A1849S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -54906,10 +55241,10 @@
 		"a": "19:07"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2255S.Weekday",
-	"t": "Tobu.Tojo.C2255S",
+	"id": "Tobu.Tojo.C2253S.Weekday",
+	"t": "Tobu.Tojo.C2253S",
 	"r": "Tobu.Tojo",
-	"n": "C2255S",
+	"n": "C2253S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -54919,7 +55254,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1855S.Weekday"
+		"TokyoMetro.Yurakucho.A1853S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -54969,10 +55304,10 @@
 		"a": "19:05"
 	}]
 }, {
-	"id": "Tobu.Tojo.C3193S.Weekday",
-	"t": "Tobu.Tojo.C3193S",
+	"id": "Tobu.Tojo.C3191S.Weekday",
+	"t": "Tobu.Tojo.C3191S",
 	"r": "Tobu.Tojo",
-	"n": "C3193S",
+	"n": "C3191S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -54982,7 +55317,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1893S.Weekday"
+		"TokyoMetro.Fukutoshin.A1891S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -55488,73 +55823,10 @@
 		"a": "20:38"
 	}]
 }, {
-	"id": "Tobu.Tojo.C3121S.Weekday",
-	"t": "Tobu.Tojo.C3121S",
+	"id": "Tobu.Tojo.C2421S.Weekday",
+	"t": "Tobu.Tojo.C2421S",
 	"r": "Tobu.Tojo",
-	"n": "C3121S",
-	"y": "Tobu.Local",
-	"d": "Inbound",
-	"os": [
-		"Tobu.Tojo.Kawagoeshi"
-	],
-	"ds": [
-		"Minatomirai.Minatomirai.MotomachiChukagai"
-	],
-	"nt": [
-		"TokyoMetro.Fukutoshin.A2021S.Weekday"
-	],
-	"tt": [{
-		"s": "Tobu.Tojo.Kawagoeshi",
-		"d": "20:02"
-	}, {
-		"s": "Tobu.Tojo.Kawagoe",
-		"a": "20:03",
-		"d": "20:04"
-	}, {
-		"s": "Tobu.Tojo.Shingashi",
-		"a": "20:06",
-		"d": "20:06"
-	}, {
-		"s": "Tobu.Tojo.KamiFukuoka",
-		"a": "20:09",
-		"d": "20:09"
-	}, {
-		"s": "Tobu.Tojo.Fujimino",
-		"a": "20:11",
-		"d": "20:11"
-	}, {
-		"s": "Tobu.Tojo.Tsuruse",
-		"a": "20:14",
-		"d": "20:14"
-	}, {
-		"s": "Tobu.Tojo.Mizuhodai",
-		"a": "20:16",
-		"d": "20:16"
-	}, {
-		"s": "Tobu.Tojo.Yanasegawa",
-		"a": "20:18",
-		"d": "20:18"
-	}, {
-		"s": "Tobu.Tojo.Shiki",
-		"a": "20:20",
-		"d": "20:21"
-	}, {
-		"s": "Tobu.Tojo.Asakadai",
-		"a": "20:22",
-		"d": "20:23"
-	}, {
-		"s": "Tobu.Tojo.Asaka",
-		"a": "20:25",
-		"d": "20:26"
-	}, {
-		"s": "Tobu.Tojo.Wakoshi",
-		"a": "20:28"
-	}]
-}, {
-	"id": "Tobu.Tojo.C2123S.Weekday",
-	"t": "Tobu.Tojo.C2123S",
-	"r": "Tobu.Tojo",
-	"n": "C2123S",
+	"n": "C2421S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -55564,7 +55836,70 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2023S.Weekday"
+		"TokyoMetro.Yurakucho.A2021S.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Kawagoeshi",
+		"d": "20:00"
+	}, {
+		"s": "Tobu.Tojo.Kawagoe",
+		"a": "20:02",
+		"d": "20:02"
+	}, {
+		"s": "Tobu.Tojo.Shingashi",
+		"a": "20:04",
+		"d": "20:05"
+	}, {
+		"s": "Tobu.Tojo.KamiFukuoka",
+		"a": "20:07",
+		"d": "20:07"
+	}, {
+		"s": "Tobu.Tojo.Fujimino",
+		"a": "20:09",
+		"d": "20:10"
+	}, {
+		"s": "Tobu.Tojo.Tsuruse",
+		"a": "20:12",
+		"d": "20:12"
+	}, {
+		"s": "Tobu.Tojo.Mizuhodai",
+		"a": "20:14",
+		"d": "20:14"
+	}, {
+		"s": "Tobu.Tojo.Yanasegawa",
+		"a": "20:16",
+		"d": "20:16"
+	}, {
+		"s": "Tobu.Tojo.Shiki",
+		"a": "20:18",
+		"d": "20:19"
+	}, {
+		"s": "Tobu.Tojo.Asakadai",
+		"a": "20:21",
+		"d": "20:21"
+	}, {
+		"s": "Tobu.Tojo.Asaka",
+		"a": "20:24",
+		"d": "20:24"
+	}, {
+		"s": "Tobu.Tojo.Wakoshi",
+		"a": "20:26"
+	}]
+}, {
+	"id": "Tobu.Tojo.C2133S.Weekday",
+	"t": "Tobu.Tojo.C2133S",
+	"r": "Tobu.Tojo",
+	"n": "C2133S",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Tojo.Kawagoeshi"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"nt": [
+		"TokyoMetro.Yurakucho.A2033S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -55813,10 +56148,10 @@
 		"a": "21:27"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2307T.Weekday",
-	"t": "Tobu.Tojo.C2307T",
+	"id": "Tobu.Tojo.C2121T.Weekday",
+	"t": "Tobu.Tojo.C2121T",
 	"r": "Tobu.Tojo",
-	"n": "C2307T",
+	"n": "C2121T",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -55826,7 +56161,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2007T.Weekday"
+		"TokyoMetro.Yurakucho.A2021T.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -55944,10 +56279,10 @@
 		"a": "21:53"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2163S.Weekday",
-	"t": "Tobu.Tojo.C2163S",
+	"id": "Tobu.Tojo.C2161S.Weekday",
+	"t": "Tobu.Tojo.C2161S",
 	"r": "Tobu.Tojo",
-	"n": "C2163S",
+	"n": "C2161S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -55957,7 +56292,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2163S.Weekday"
+		"TokyoMetro.Yurakucho.A2161S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -56075,10 +56410,10 @@
 		"a": "22:07"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2145S.Weekday",
-	"t": "Tobu.Tojo.C2145S",
+	"id": "Tobu.Tojo.C2187S.Weekday",
+	"t": "Tobu.Tojo.C2187S",
 	"r": "Tobu.Tojo",
-	"n": "C2145S",
+	"n": "C2187S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -56088,7 +56423,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2145S.Weekday"
+		"TokyoMetro.Yurakucho.A2187S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -56206,10 +56541,10 @@
 		"a": "22:27"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2355S.Weekday",
-	"t": "Tobu.Tojo.C2355S",
+	"id": "Tobu.Tojo.C2353S.Weekday",
+	"t": "Tobu.Tojo.C2353S",
 	"r": "Tobu.Tojo",
-	"n": "C2355S",
+	"n": "C2353S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -56219,7 +56554,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2155S.Weekday"
+		"TokyoMetro.Yurakucho.A2153S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -56369,10 +56704,10 @@
 		"a": "23:06"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2149S.Weekday",
-	"t": "Tobu.Tojo.C2149S",
+	"id": "Tobu.Tojo.C2251S.Weekday",
+	"t": "Tobu.Tojo.C2251S",
 	"r": "Tobu.Tojo",
-	"n": "C2149S",
+	"n": "C2251S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -56382,7 +56717,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2249S.Weekday"
+		"TokyoMetro.Yurakucho.A2251S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -56500,10 +56835,10 @@
 		"a": "23:08"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2151S.Weekday",
-	"t": "Tobu.Tojo.C2151S",
+	"id": "Tobu.Tojo.C2179S.Weekday",
+	"t": "Tobu.Tojo.C2179S",
 	"r": "Tobu.Tojo",
-	"n": "C2151S",
+	"n": "C2179S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -56513,7 +56848,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2251S.Weekday"
+		"TokyoMetro.Yurakucho.A2279S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -56726,10 +57061,10 @@
 		"a": "23:35"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2133S.Weekday",
-	"t": "Tobu.Tojo.C2133S",
+	"id": "Tobu.Tojo.C2521S.Weekday",
+	"t": "Tobu.Tojo.C2521S",
 	"r": "Tobu.Tojo",
-	"n": "C2133S",
+	"n": "C2521S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -56739,7 +57074,7 @@
 		"TokyoMetro.Yurakucho.Ikebukuro"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2333S.Weekday"
+		"TokyoMetro.Yurakucho.A2321S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -59036,10 +59371,10 @@
 		"a": "19:42"
 	}]
 }, {
-	"id": "Tobu.Tojo.A2183S.Weekday",
-	"t": "Tobu.Tojo.A2183S",
+	"id": "Tobu.Tojo.A2165S.Weekday",
+	"t": "Tobu.Tojo.A2165S",
 	"r": "Tobu.Tojo",
-	"n": "A2183S",
+	"n": "A2165S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -59049,7 +59384,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1983S.Weekday"
+		"TokyoMetro.Yurakucho.A1965S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Shiki",
@@ -59234,10 +59569,10 @@
 		"a": "20:17"
 	}]
 }, {
-	"id": "Tobu.Tojo.A3128K.Weekday",
-	"t": "Tobu.Tojo.A3128K",
+	"id": "Tobu.Tojo.A3113K.Weekday",
+	"t": "Tobu.Tojo.A3113K",
 	"r": "Tobu.Tojo",
-	"n": "A3128K",
+	"n": "A3113K",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -59247,7 +59582,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1928K.Weekday"
+		"TokyoMetro.Fukutoshin.A1913K.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Shiki",
@@ -59469,10 +59804,10 @@
 		"a": "20:58"
 	}]
 }, {
-	"id": "Tobu.Tojo.A3105K.Weekday",
-	"t": "Tobu.Tojo.A3105K",
+	"id": "Tobu.Tojo.A3120K.Weekday",
+	"t": "Tobu.Tojo.A3120K",
 	"r": "Tobu.Tojo",
-	"n": "A3105K",
+	"n": "A3120K",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -59482,7 +59817,7 @@
 		"Tokyu.Toyoko.MusashiKosugi"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A2005K.Weekday"
+		"TokyoMetro.Fukutoshin.A2020K.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Shiki",
@@ -59704,10 +60039,10 @@
 		"a": "21:57"
 	}]
 }, {
-	"id": "Tobu.Tojo.A3153S.Weekday",
-	"t": "Tobu.Tojo.A3153S",
+	"id": "Tobu.Tojo.A3147S.Weekday",
+	"t": "Tobu.Tojo.A3147S",
 	"r": "Tobu.Tojo",
-	"n": "A3153S",
+	"n": "A3147S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -59717,7 +60052,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A2153S.Weekday"
+		"TokyoMetro.Fukutoshin.A2147S.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Shiki",
@@ -59871,10 +60206,10 @@
 		"a": "22:57"
 	}]
 }, {
-	"id": "Tobu.Tojo.A3126K.Weekday",
-	"t": "Tobu.Tojo.A3126K",
+	"id": "Tobu.Tojo.A3103K.Weekday",
+	"t": "Tobu.Tojo.A3103K",
 	"r": "Tobu.Tojo",
-	"n": "A3126K",
+	"n": "A3103K",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -59884,7 +60219,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A2226K.Weekday"
+		"TokyoMetro.Fukutoshin.A2203K.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Shiki",
@@ -86143,102 +86478,10 @@
 		"a": "06:06"
 	}]
 }, {
-	"id": "Tobu.Tojo.101.SaturdayHoliday",
-	"t": "Tobu.Tojo.101",
+	"id": "Tobu.Tojo.D2163S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2163S",
 	"r": "Tobu.Tojo",
-	"n": "101",
-	"y": "Tobu.Local",
-	"d": "Outbound",
-	"os": [
-		"Tobu.Tojo.Shiki"
-	],
-	"ds": [
-		"Tobu.Tojo.Ogawamachi"
-	],
-	"tt": [{
-		"s": "Tobu.Tojo.Shiki",
-		"d": "04:53"
-	}, {
-		"s": "Tobu.Tojo.Yanasegawa",
-		"a": "04:55",
-		"d": "04:55"
-	}, {
-		"s": "Tobu.Tojo.Mizuhodai",
-		"a": "04:57",
-		"d": "04:57"
-	}, {
-		"s": "Tobu.Tojo.Tsuruse",
-		"a": "04:59",
-		"d": "04:59"
-	}, {
-		"s": "Tobu.Tojo.Fujimino",
-		"a": "05:01",
-		"d": "05:01"
-	}, {
-		"s": "Tobu.Tojo.KamiFukuoka",
-		"a": "05:03",
-		"d": "05:04"
-	}, {
-		"s": "Tobu.Tojo.Shingashi",
-		"a": "05:06",
-		"d": "05:06"
-	}, {
-		"s": "Tobu.Tojo.Kawagoe",
-		"a": "05:09",
-		"d": "05:09"
-	}, {
-		"s": "Tobu.Tojo.Kawagoeshi",
-		"a": "05:11",
-		"d": "05:11"
-	}, {
-		"s": "Tobu.Tojo.Kasumigaseki",
-		"a": "05:14",
-		"d": "05:15"
-	}, {
-		"s": "Tobu.Tojo.Tsurugashima",
-		"a": "05:17",
-		"d": "05:17"
-	}, {
-		"s": "Tobu.Tojo.Wakaba",
-		"a": "05:19",
-		"d": "05:20"
-	}, {
-		"s": "Tobu.Tojo.Sakado",
-		"a": "05:22",
-		"d": "05:22"
-	}, {
-		"s": "Tobu.Tojo.KitaSakado",
-		"a": "05:25",
-		"d": "05:25"
-	}, {
-		"s": "Tobu.Tojo.Takasaka",
-		"a": "05:28",
-		"d": "05:28"
-	}, {
-		"s": "Tobu.Tojo.HigashiMatsuyama",
-		"a": "05:32",
-		"d": "05:32"
-	}, {
-		"s": "Tobu.Tojo.ShinrinKoen",
-		"a": "05:35",
-		"d": "05:35"
-	}, {
-		"s": "Tobu.Tojo.Tsukinowa",
-		"a": "05:38",
-		"d": "05:38"
-	}, {
-		"s": "Tobu.Tojo.MusashiRanzan",
-		"a": "05:40",
-		"d": "05:41"
-	}, {
-		"s": "Tobu.Tojo.Ogawamachi",
-		"a": "05:48"
-	}]
-}, {
-	"id": "Tobu.Tojo.D2165S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2165S",
-	"r": "Tobu.Tojo",
-	"n": "D2165S",
+	"n": "D2163S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -86248,7 +86491,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B565S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B563S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -86298,10 +86541,10 @@
 		"a": "06:19"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2159S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2159S",
+	"id": "Tobu.Tojo.D2157S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2157S",
 	"r": "Tobu.Tojo",
-	"n": "D2159S",
+	"n": "D2157S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -86311,7 +86554,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B559S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B557S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -86361,10 +86604,10 @@
 		"a": "06:44"
 	}]
 }, {
-	"id": "Tobu.Tojo.F195S.SaturdayHoliday",
-	"t": "Tobu.Tojo.F195S",
+	"id": "Tobu.Tojo.F193S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F193S",
 	"r": "Tobu.Tojo",
-	"n": "F195S",
+	"n": "F193S",
 	"y": "Tobu.RapidExpress",
 	"d": "Outbound",
 	"os": [
@@ -86374,7 +86617,7 @@
 		"Tobu.Tojo.Ogawamachi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B595S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B593S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -86416,10 +86659,10 @@
 		"a": "07:32"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2151S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2151S",
+	"id": "Tobu.Tojo.D2149S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2149S",
 	"r": "Tobu.Tojo",
-	"n": "D2151S",
+	"n": "D2149S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -86429,7 +86672,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B551S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B549S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -86479,10 +86722,10 @@
 		"a": "07:13"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2171S.SaturdayHoliday",
-	"t": "Tobu.Tojo.F2171S",
+	"id": "Tobu.Tojo.F2169S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F2169S",
 	"r": "Tobu.Tojo",
-	"n": "F2171S",
+	"n": "F2169S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -86492,7 +86735,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B671S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B669S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -86637,10 +86880,10 @@
 		"a": "07:36"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2157S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2157S",
+	"id": "Tobu.Tojo.D2155S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2155S",
 	"r": "Tobu.Tojo",
-	"n": "D2157S",
+	"n": "D2155S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -86650,7 +86893,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B657S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B655S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -86850,10 +87093,10 @@
 		"a": "08:59"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2167S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2167S",
+	"id": "Tobu.Tojo.D2165S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2165S",
 	"r": "Tobu.Tojo",
-	"n": "D2167S",
+	"n": "D2165S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -86863,7 +87106,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B767S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B765S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -87126,10 +87369,10 @@
 		"a": "10:02"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2125S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2125S",
+	"id": "Tobu.Tojo.D2167S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2167S",
 	"r": "Tobu.Tojo",
-	"n": "D2125S",
+	"n": "D2167S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -87139,7 +87382,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B825S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B867S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -87189,10 +87432,10 @@
 		"a": "09:52"
 	}]
 }, {
-	"id": "Tobu.Tojo.F1159S.SaturdayHoliday",
-	"t": "Tobu.Tojo.F1159S",
+	"id": "Tobu.Tojo.F1157S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F1157S",
 	"r": "Tobu.Tojo",
-	"n": "F1159S",
+	"n": "F1157S",
 	"y": "Tobu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -87202,7 +87445,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B859S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B857S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -87260,10 +87503,10 @@
 		"a": "10:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2251S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2251S",
+	"id": "Tobu.Tojo.D2249S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2249S",
 	"r": "Tobu.Tojo",
-	"n": "D2251S",
+	"n": "D2249S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -87273,7 +87516,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B851S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B849S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -87386,10 +87629,10 @@
 		"a": "10:35"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2191S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2191S",
+	"id": "Tobu.Tojo.D2189S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2189S",
 	"r": "Tobu.Tojo",
-	"n": "D2191S",
+	"n": "D2189S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -87399,7 +87642,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B991S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B989S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -87583,10 +87826,10 @@
 		"a": "11:24"
 	}]
 }, {
-	"id": "Tobu.Tojo.D3195S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D3195S",
+	"id": "Tobu.Tojo.D3193S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D3193S",
 	"r": "Tobu.Tojo",
-	"n": "D3195S",
+	"n": "D3193S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -87596,7 +87839,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1095S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1093S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -87709,10 +87952,10 @@
 		"a": "11:53"
 	}]
 }, {
-	"id": "Tobu.Tojo.F1171S.SaturdayHoliday",
-	"t": "Tobu.Tojo.F1171S",
+	"id": "Tobu.Tojo.F1169S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F1169S",
 	"r": "Tobu.Tojo",
-	"n": "F1171S",
+	"n": "F1169S",
 	"y": "Tobu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -87722,7 +87965,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1071S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1069S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -87780,10 +88023,10 @@
 		"a": "12:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2193S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2193S",
+	"id": "Tobu.Tojo.D2129S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2129S",
 	"r": "Tobu.Tojo",
-	"n": "D2193S",
+	"n": "D2129S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -87793,7 +88036,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1193S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1129S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -88048,10 +88291,10 @@
 		"a": "13:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2181S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2181S",
+	"id": "Tobu.Tojo.D2179S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2179S",
 	"r": "Tobu.Tojo",
-	"n": "D2181S",
+	"n": "D2179S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -88061,7 +88304,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1281S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1279S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -88245,10 +88488,10 @@
 		"a": "13:53"
 	}]
 }, {
-	"id": "Tobu.Tojo.F1259S.SaturdayHoliday",
-	"t": "Tobu.Tojo.F1259S",
+	"id": "Tobu.Tojo.F1257S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F1257S",
 	"r": "Tobu.Tojo",
-	"n": "F1259S",
+	"n": "F1257S",
 	"y": "Tobu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -88258,7 +88501,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1259S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1257S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -88316,10 +88559,10 @@
 		"a": "14:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2117T.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2117T",
+	"id": "Tobu.Tojo.D2141S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2141S",
 	"r": "Tobu.Tojo",
-	"n": "D2117T",
+	"n": "D2141S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -88329,7 +88572,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1317T.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1341S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -88584,10 +88827,10 @@
 		"a": "15:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2189S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2189S",
+	"id": "Tobu.Tojo.D2181S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2181S",
 	"r": "Tobu.Tojo",
-	"n": "D2189S",
+	"n": "D2181S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -88597,7 +88840,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1489S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1481S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -88647,10 +88890,10 @@
 		"a": "15:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.F1195S.SaturdayHoliday",
-	"t": "Tobu.Tojo.F1195S",
+	"id": "Tobu.Tojo.F1193S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F1193S",
 	"r": "Tobu.Tojo",
-	"n": "F1195S",
+	"n": "F1193S",
 	"y": "Tobu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -88660,7 +88903,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1495S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1493S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -88718,10 +88961,10 @@
 		"a": "15:53"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2351S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2351S",
+	"id": "Tobu.Tojo.D2349S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2349S",
 	"r": "Tobu.Tojo",
-	"n": "D2351S",
+	"n": "D2349S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -88731,7 +88974,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1451S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1449S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -88781,10 +89024,10 @@
 		"a": "15:52"
 	}]
 }, {
-	"id": "Tobu.Tojo.F1271S.SaturdayHoliday",
-	"t": "Tobu.Tojo.F1271S",
+	"id": "Tobu.Tojo.F1269S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F1269S",
 	"r": "Tobu.Tojo",
-	"n": "F1271S",
+	"n": "F1269S",
 	"y": "Tobu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -88794,7 +89037,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1471S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1469S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -88852,10 +89095,10 @@
 		"a": "16:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2291S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2291S",
+	"id": "Tobu.Tojo.D2289S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2289S",
 	"r": "Tobu.Tojo",
-	"n": "D2291S",
+	"n": "D2289S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -88865,7 +89108,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1591S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1589S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -88986,10 +89229,10 @@
 		"a": "16:53"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2177S.SaturdayHoliday",
-	"t": "Tobu.Tojo.F2177S",
+	"id": "Tobu.Tojo.F2175S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F2175S",
 	"r": "Tobu.Tojo",
-	"n": "F2177S",
+	"n": "F2175S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -88999,7 +89242,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1577S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1575S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -89310,10 +89553,10 @@
 		"a": "17:35"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2117T.SaturdayHoliday",
-	"t": "Tobu.Tojo.F2117T",
+	"id": "Tobu.Tojo.F2165S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F2165S",
 	"r": "Tobu.Tojo",
-	"n": "F2117T",
+	"n": "F2165S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -89323,7 +89566,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1617T.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1665S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -89405,10 +89648,10 @@
 		"a": "18:15"
 	}]
 }, {
-	"id": "Tobu.Tojo.D3159S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D3159S",
+	"id": "Tobu.Tojo.D3157S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D3157S",
 	"r": "Tobu.Tojo",
-	"n": "D3159S",
+	"n": "D3157S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -89418,7 +89661,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1659S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1657S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -89468,10 +89711,10 @@
 		"a": "18:05"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2127S.SaturdayHoliday",
-	"t": "Tobu.Tojo.F2127S",
+	"id": "Tobu.Tojo.F2153S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F2153S",
 	"r": "Tobu.Tojo",
-	"n": "F2127S",
+	"n": "F2153S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -89481,7 +89724,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1727S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1753S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -89626,10 +89869,10 @@
 		"a": "18:35"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2113T.SaturdayHoliday",
-	"t": "Tobu.Tojo.F2113T",
+	"id": "Tobu.Tojo.F2167S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F2167S",
 	"r": "Tobu.Tojo",
-	"n": "F2113T",
+	"n": "F2167S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -89639,7 +89882,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1713T.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1767S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -89721,10 +89964,10 @@
 		"a": "19:14"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2451S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2451S",
+	"id": "Tobu.Tojo.D2449S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2449S",
 	"r": "Tobu.Tojo",
-	"n": "D2451S",
+	"n": "D2449S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -89734,7 +89977,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1751S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1749S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -89784,10 +90027,10 @@
 		"a": "19:04"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2173S.SaturdayHoliday",
-	"t": "Tobu.Tojo.F2173S",
+	"id": "Tobu.Tojo.F2111T.SaturdayHoliday",
+	"t": "Tobu.Tojo.F2111T",
 	"r": "Tobu.Tojo",
-	"n": "F2173S",
+	"n": "F2111T",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -89797,7 +90040,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1873S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1811T.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -89879,10 +90122,10 @@
 		"a": "19:44"
 	}]
 }, {
-	"id": "Tobu.Tojo.D3139S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D3139S",
+	"id": "Tobu.Tojo.D3137S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D3137S",
 	"r": "Tobu.Tojo",
-	"n": "D3139S",
+	"n": "D3137S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -89892,7 +90135,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1739S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1737S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -90037,10 +90280,10 @@
 		"a": "20:15"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2225S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2225S",
+	"id": "Tobu.Tojo.D2113T.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2113T",
 	"r": "Tobu.Tojo",
-	"n": "D2225S",
+	"n": "D2113T",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -90050,7 +90293,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1825S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1813T.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -90195,10 +90438,10 @@
 		"a": "20:44"
 	}]
 }, {
-	"id": "Tobu.Tojo.D3167S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D3167S",
+	"id": "Tobu.Tojo.D3141S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D3141S",
 	"r": "Tobu.Tojo",
-	"n": "D3167S",
+	"n": "D3141S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -90208,7 +90451,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1867S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1841S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -90353,10 +90596,10 @@
 		"a": "21:14"
 	}]
 }, {
-	"id": "Tobu.Tojo.D3175S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D3175S",
+	"id": "Tobu.Tojo.D3173S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D3173S",
 	"r": "Tobu.Tojo",
-	"n": "D3175S",
+	"n": "D3173S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -90366,7 +90609,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1975S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1973S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -90574,10 +90817,10 @@
 		"a": "21:35"
 	}]
 }, {
-	"id": "Tobu.Tojo.F3159S.SaturdayHoliday",
-	"t": "Tobu.Tojo.F3159S",
+	"id": "Tobu.Tojo.F3157S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F3157S",
 	"r": "Tobu.Tojo",
-	"n": "F3159S",
+	"n": "F3157S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -90587,7 +90830,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1959S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1957S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -90669,10 +90912,10 @@
 		"a": "22:13"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2217T.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2217T",
+	"id": "Tobu.Tojo.D2265S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2265S",
 	"r": "Tobu.Tojo",
-	"n": "D2217T",
+	"n": "D2265S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -90682,7 +90925,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2017T.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B2065S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -90732,10 +90975,10 @@
 		"a": "21:52"
 	}]
 }, {
-	"id": "Tobu.Tojo.D2137S.SaturdayHoliday",
-	"t": "Tobu.Tojo.D2137S",
+	"id": "Tobu.Tojo.D2127S.SaturdayHoliday",
+	"t": "Tobu.Tojo.D2127S",
 	"r": "Tobu.Tojo",
-	"n": "D2137S",
+	"n": "D2127S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -90745,7 +90988,7 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2037S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B2027S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -91080,10 +91323,10 @@
 		"a": "23:23"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2181S.SaturdayHoliday",
-	"t": "Tobu.Tojo.F2181S",
+	"id": "Tobu.Tojo.F2113T.SaturdayHoliday",
+	"t": "Tobu.Tojo.F2113T",
 	"r": "Tobu.Tojo",
-	"n": "F2181S",
+	"n": "F2113T",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -91093,7 +91336,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2181S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B2113T.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -91175,10 +91418,10 @@
 		"a": "23:36"
 	}]
 }, {
-	"id": "Tobu.Tojo.F2111T.SaturdayHoliday",
-	"t": "Tobu.Tojo.F2111T",
+	"id": "Tobu.Tojo.F2171S.SaturdayHoliday",
+	"t": "Tobu.Tojo.F2171S",
 	"r": "Tobu.Tojo",
-	"n": "F2111T",
+	"n": "F2171S",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
@@ -91188,7 +91431,7 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2211T.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B2271S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Wakoshi",
@@ -91268,6 +91511,98 @@
 	}, {
 		"s": "Tobu.Tojo.ShinrinKoen",
 		"a": "00:06"
+	}]
+}, {
+	"id": "Tobu.Tojo.101.SaturdayHoliday",
+	"t": "Tobu.Tojo.101",
+	"r": "Tobu.Tojo",
+	"n": "101",
+	"y": "Tobu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tobu.Tojo.Shiki"
+	],
+	"ds": [
+		"Tobu.Tojo.Ogawamachi"
+	],
+	"tt": [{
+		"s": "Tobu.Tojo.Shiki",
+		"d": "04:53"
+	}, {
+		"s": "Tobu.Tojo.Yanasegawa",
+		"a": "04:55",
+		"d": "04:55"
+	}, {
+		"s": "Tobu.Tojo.Mizuhodai",
+		"a": "04:57",
+		"d": "04:57"
+	}, {
+		"s": "Tobu.Tojo.Tsuruse",
+		"a": "04:59",
+		"d": "04:59"
+	}, {
+		"s": "Tobu.Tojo.Fujimino",
+		"a": "05:01",
+		"d": "05:01"
+	}, {
+		"s": "Tobu.Tojo.KamiFukuoka",
+		"a": "05:03",
+		"d": "05:04"
+	}, {
+		"s": "Tobu.Tojo.Shingashi",
+		"a": "05:06",
+		"d": "05:06"
+	}, {
+		"s": "Tobu.Tojo.Kawagoe",
+		"a": "05:09",
+		"d": "05:09"
+	}, {
+		"s": "Tobu.Tojo.Kawagoeshi",
+		"a": "05:11",
+		"d": "05:11"
+	}, {
+		"s": "Tobu.Tojo.Kasumigaseki",
+		"a": "05:14",
+		"d": "05:15"
+	}, {
+		"s": "Tobu.Tojo.Tsurugashima",
+		"a": "05:17",
+		"d": "05:17"
+	}, {
+		"s": "Tobu.Tojo.Wakaba",
+		"a": "05:19",
+		"d": "05:20"
+	}, {
+		"s": "Tobu.Tojo.Sakado",
+		"a": "05:22",
+		"d": "05:22"
+	}, {
+		"s": "Tobu.Tojo.KitaSakado",
+		"a": "05:25",
+		"d": "05:25"
+	}, {
+		"s": "Tobu.Tojo.Takasaka",
+		"a": "05:28",
+		"d": "05:28"
+	}, {
+		"s": "Tobu.Tojo.HigashiMatsuyama",
+		"a": "05:32",
+		"d": "05:32"
+	}, {
+		"s": "Tobu.Tojo.ShinrinKoen",
+		"a": "05:35",
+		"d": "05:35"
+	}, {
+		"s": "Tobu.Tojo.Tsukinowa",
+		"a": "05:38",
+		"d": "05:38"
+	}, {
+		"s": "Tobu.Tojo.MusashiRanzan",
+		"a": "05:40",
+		"d": "05:41"
+	}, {
+		"s": "Tobu.Tojo.Ogawamachi",
+		"a": "05:48"
 	}]
 }, {
 	"id": "Tobu.Tojo.Y573.SaturdayHoliday",
@@ -96038,10 +96373,10 @@
 		"a": "08:46"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1195S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E1195S",
+	"id": "Tobu.Tojo.E1193S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E1193S",
 	"r": "Tobu.Tojo",
-	"n": "E1195S",
+	"n": "E1193S",
 	"y": "Tobu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -96051,7 +96386,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A795S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A793S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Ogawamachi",
@@ -100718,10 +101053,10 @@
 		"a": "06:36"
 	}]
 }, {
-	"id": "Tobu.Tojo.E2191S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E2191S",
+	"id": "Tobu.Tojo.E2189S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E2189S",
 	"r": "Tobu.Tojo",
-	"n": "E2191S",
+	"n": "E2189S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -100731,7 +101066,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A591S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A589S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -101569,10 +101904,10 @@
 		"a": "07:49"
 	}]
 }, {
-	"id": "Tobu.Tojo.E3193S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E3193S",
+	"id": "Tobu.Tojo.E3191S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E3191S",
 	"r": "Tobu.Tojo",
-	"n": "E3193S",
+	"n": "E3191S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -101582,7 +101917,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A693S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A691S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -102525,10 +102860,10 @@
 		"a": "09:44"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1171S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E1171S",
+	"id": "Tobu.Tojo.E1169S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E1169S",
 	"r": "Tobu.Tojo",
-	"n": "E1171S",
+	"n": "E1169S",
 	"y": "Tobu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -102538,7 +102873,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A871S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A869S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -103155,10 +103490,10 @@
 		"a": "11:43"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1159S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E1159S",
+	"id": "Tobu.Tojo.E1157S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E1157S",
 	"r": "Tobu.Tojo",
-	"n": "E1159S",
+	"n": "E1157S",
 	"y": "Tobu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -103168,7 +103503,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1059S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1057S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -103744,10 +104079,10 @@
 		"a": "13:13"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1295S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E1295S",
+	"id": "Tobu.Tojo.E1293S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E1293S",
 	"r": "Tobu.Tojo",
-	"n": "E1295S",
+	"n": "E1293S",
 	"y": "Tobu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -103757,7 +104092,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1295S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1293S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -103991,10 +104326,10 @@
 		"a": "13:43"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1271S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E1271S",
+	"id": "Tobu.Tojo.E1269S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E1269S",
 	"r": "Tobu.Tojo",
-	"n": "E1271S",
+	"n": "E1269S",
 	"y": "Tobu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -104004,7 +104339,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1271S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1269S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -104827,10 +105162,10 @@
 		"a": "15:43"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1259S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E1259S",
+	"id": "Tobu.Tojo.E1257S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E1257S",
 	"r": "Tobu.Tojo",
-	"n": "E1259S",
+	"n": "E1257S",
 	"y": "Tobu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -104840,7 +105175,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1459S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1457S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -105564,10 +105899,10 @@
 		"a": "17:26"
 	}]
 }, {
-	"id": "Tobu.Tojo.E195S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E195S",
+	"id": "Tobu.Tojo.E193S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E193S",
 	"r": "Tobu.Tojo",
-	"n": "E195S",
+	"n": "E193S",
 	"y": "Tobu.RapidExpress",
 	"d": "Inbound",
 	"os": [
@@ -105577,7 +105912,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1695S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1693S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -105647,10 +105982,10 @@
 		"a": "17:19"
 	}]
 }, {
-	"id": "Tobu.Tojo.E1371S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E1371S",
+	"id": "Tobu.Tojo.E1369S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E1369S",
 	"r": "Tobu.Tojo",
-	"n": "E1371S",
+	"n": "E1369S",
 	"y": "Tobu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -105660,7 +105995,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1671S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1669S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -105936,10 +106271,10 @@
 		"a": "18:19"
 	}]
 }, {
-	"id": "Tobu.Tojo.E2177S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E2177S",
+	"id": "Tobu.Tojo.E2175S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E2175S",
 	"r": "Tobu.Tojo",
-	"n": "E2177S",
+	"n": "E2175S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -105949,7 +106284,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1777S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1775S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -106246,10 +106581,10 @@
 		"a": "19:32"
 	}]
 }, {
-	"id": "Tobu.Tojo.E2117T.SaturdayHoliday",
-	"t": "Tobu.Tojo.E2117T",
+	"id": "Tobu.Tojo.E2165S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E2165S",
 	"r": "Tobu.Tojo",
-	"n": "E2117T",
+	"n": "E2165S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -106259,7 +106594,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1817T.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1865S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -106417,10 +106752,10 @@
 		"a": "20:02"
 	}]
 }, {
-	"id": "Tobu.Tojo.E2127S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E2127S",
+	"id": "Tobu.Tojo.E2153S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E2153S",
 	"r": "Tobu.Tojo",
-	"n": "E2127S",
+	"n": "E2153S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -106430,7 +106765,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1927S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1953S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -106588,10 +106923,10 @@
 		"a": "20:32"
 	}]
 }, {
-	"id": "Tobu.Tojo.E2113T.SaturdayHoliday",
-	"t": "Tobu.Tojo.E2113T",
+	"id": "Tobu.Tojo.E2167S.SaturdayHoliday",
+	"t": "Tobu.Tojo.E2167S",
 	"r": "Tobu.Tojo",
-	"n": "E2113T",
+	"n": "E2167S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -106601,7 +106936,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1913T.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1967S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -106759,10 +107094,10 @@
 		"a": "21:02"
 	}]
 }, {
-	"id": "Tobu.Tojo.E2173S.SaturdayHoliday",
-	"t": "Tobu.Tojo.E2173S",
+	"id": "Tobu.Tojo.E2211T.SaturdayHoliday",
+	"t": "Tobu.Tojo.E2211T",
 	"r": "Tobu.Tojo",
-	"n": "E2173S",
+	"n": "E2211T",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -106772,7 +107107,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2073S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A2011T.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.ShinrinKoen",
@@ -108265,10 +108600,10 @@
 		"a": "07:12"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2165S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2165S",
+	"id": "Tobu.Tojo.C2163S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2163S",
 	"r": "Tobu.Tojo",
-	"n": "C2165S",
+	"n": "C2163S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -108278,7 +108613,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A665S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A663S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -108396,10 +108731,10 @@
 		"a": "07:38"
 	}]
 }, {
-	"id": "Tobu.Tojo.C3159S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C3159S",
+	"id": "Tobu.Tojo.C3157S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C3157S",
 	"r": "Tobu.Tojo",
-	"n": "C3159S",
+	"n": "C3157S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -108409,7 +108744,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A659S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A657S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -108527,10 +108862,10 @@
 		"a": "08:02"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2151S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2151S",
+	"id": "Tobu.Tojo.C2149S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2149S",
 	"r": "Tobu.Tojo",
-	"n": "C2151S",
+	"n": "C2149S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -108540,7 +108875,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A751S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A749S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -108957,10 +109292,10 @@
 		"a": "09:09"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2157S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2157S",
+	"id": "Tobu.Tojo.C2155S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2155S",
 	"r": "Tobu.Tojo",
-	"n": "C2157S",
+	"n": "C2155S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -108970,7 +109305,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A857S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A855S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -109188,10 +109523,10 @@
 		"a": "09:38"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2167S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2167S",
+	"id": "Tobu.Tojo.C2165S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2165S",
 	"r": "Tobu.Tojo",
-	"n": "C2167S",
+	"n": "C2165S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -109201,7 +109536,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A967S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A965S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -109650,10 +109985,10 @@
 		"a": "10:38"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2125S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2125S",
+	"id": "Tobu.Tojo.C2167S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2167S",
 	"r": "Tobu.Tojo",
-	"n": "C2125S",
+	"n": "C2167S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -109663,7 +109998,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1025S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1067S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -109881,10 +110216,10 @@
 		"a": "11:09"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2251S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2251S",
+	"id": "Tobu.Tojo.C2249S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2249S",
 	"r": "Tobu.Tojo",
-	"n": "C2251S",
+	"n": "C2249S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -109894,7 +110229,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1051S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1049S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -110112,10 +110447,10 @@
 		"a": "11:37"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2191S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2191S",
+	"id": "Tobu.Tojo.C2189S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2189S",
 	"r": "Tobu.Tojo",
-	"n": "C2191S",
+	"n": "C2189S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -110125,7 +110460,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1191S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1189S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -110626,7 +110961,7 @@
 		"d": "12:29"
 	}, {
 		"s": "Tobu.Tojo.Asakadai",
-		"a": "12:31",
+		"a": "12:30",
 		"d": "12:32"
 	}, {
 		"s": "Tobu.Tojo.Asaka",
@@ -110805,10 +111140,10 @@
 		"a": "13:07"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2193S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2193S",
+	"id": "Tobu.Tojo.C2129S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2129S",
 	"r": "Tobu.Tojo",
-	"n": "C2193S",
+	"n": "C2129S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -110818,7 +111153,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1293S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1229S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -111267,10 +111602,10 @@
 		"a": "14:07"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2181S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2181S",
+	"id": "Tobu.Tojo.C2179S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2179S",
 	"r": "Tobu.Tojo",
-	"n": "C2181S",
+	"n": "C2179S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -111280,7 +111615,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1381S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1379S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -111729,10 +112064,10 @@
 		"a": "15:07"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2117T.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2117T",
+	"id": "Tobu.Tojo.C2141S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2141S",
 	"r": "Tobu.Tojo",
-	"n": "C2117T",
+	"n": "C2141S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -111742,7 +112077,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1417T.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1441S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -111781,7 +112116,7 @@
 		"d": "14:59"
 	}, {
 		"s": "Tobu.Tojo.Asakadai",
-		"a": "15:01",
+		"a": "15:00",
 		"d": "15:02"
 	}, {
 		"s": "Tobu.Tojo.Asaka",
@@ -112191,10 +112526,10 @@
 		"a": "16:07"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2189S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2189S",
+	"id": "Tobu.Tojo.C2181S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2181S",
 	"r": "Tobu.Tojo",
-	"n": "C2189S",
+	"n": "C2181S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -112204,7 +112539,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1589S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1581S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -112422,10 +112757,10 @@
 		"a": "16:38"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2351S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2351S",
+	"id": "Tobu.Tojo.C2349S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2349S",
 	"r": "Tobu.Tojo",
-	"n": "C2351S",
+	"n": "C2349S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -112435,7 +112770,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1651S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1649S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -112653,10 +112988,10 @@
 		"a": "17:08"
 	}]
 }, {
-	"id": "Tobu.Tojo.C3191S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C3191S",
+	"id": "Tobu.Tojo.C3189S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C3189S",
 	"r": "Tobu.Tojo",
-	"n": "C3191S",
+	"n": "C3189S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -112666,7 +113001,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1691S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1689S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -113487,10 +113822,10 @@
 		"a": "18:55"
 	}]
 }, {
-	"id": "Tobu.Tojo.C3259S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C3259S",
+	"id": "Tobu.Tojo.C3257S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C3257S",
 	"r": "Tobu.Tojo",
-	"n": "C3259S",
+	"n": "C3257S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -113500,7 +113835,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1859S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1857S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -113885,10 +114220,10 @@
 		"a": "19:55"
 	}]
 }, {
-	"id": "Tobu.Tojo.C3151S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C3151S",
+	"id": "Tobu.Tojo.C3149S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C3149S",
 	"r": "Tobu.Tojo",
-	"n": "C3151S",
+	"n": "C3149S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -113898,7 +114233,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1951S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1949S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -114084,10 +114419,10 @@
 		"a": "20:25"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2139S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2139S",
+	"id": "Tobu.Tojo.C2137S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2137S",
 	"r": "Tobu.Tojo",
-	"n": "C2139S",
+	"n": "C2137S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -114097,7 +114432,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1939S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1937S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -114283,10 +114618,10 @@
 		"a": "20:55"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2225S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2225S",
+	"id": "Tobu.Tojo.C2113T.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2113T",
 	"r": "Tobu.Tojo",
-	"n": "C2225S",
+	"n": "C2113T",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -114296,7 +114631,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2025S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A2013T.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -114482,10 +114817,10 @@
 		"a": "21:25"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2267S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2267S",
+	"id": "Tobu.Tojo.C2241S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2241S",
 	"r": "Tobu.Tojo",
-	"n": "C2267S",
+	"n": "C2241S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -114495,7 +114830,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2067S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A2041S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -114813,10 +115148,10 @@
 		"a": "22:08"
 	}]
 }, {
-	"id": "Tobu.Tojo.C3175S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C3175S",
+	"id": "Tobu.Tojo.C3173S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C3173S",
 	"r": "Tobu.Tojo",
-	"n": "C3175S",
+	"n": "C3173S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -114826,7 +115161,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A2175S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A2173S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -115175,10 +115510,10 @@
 		"a": "22:49"
 	}]
 }, {
-	"id": "Tobu.Tojo.C2217T.SaturdayHoliday",
-	"t": "Tobu.Tojo.C2217T",
+	"id": "Tobu.Tojo.C2265S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C2265S",
 	"r": "Tobu.Tojo",
-	"n": "C2217T",
+	"n": "C2265S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -115188,7 +115523,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2217T.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A2265S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",
@@ -115338,10 +115673,10 @@
 		"a": "23:09"
 	}]
 }, {
-	"id": "Tobu.Tojo.C3137S.SaturdayHoliday",
-	"t": "Tobu.Tojo.C3137S",
+	"id": "Tobu.Tojo.C3127S.SaturdayHoliday",
+	"t": "Tobu.Tojo.C3127S",
 	"r": "Tobu.Tojo",
-	"n": "C3137S",
+	"n": "C3127S",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -115351,7 +115686,7 @@
 		"Tokyu.Toyoko.MusashiKosugi"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A2237S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A2227S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Tojo.Kawagoeshi",

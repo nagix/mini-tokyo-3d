@@ -3203,6 +3203,30 @@
 		"a": "00:39"
 	}]
 }, {
+	"id": "Seibu.Tamagawa.201.Weekday",
+	"t": "Seibu.Tamagawa.201",
+	"r": "Seibu.Tamagawa",
+	"n": "201",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Tamagawa.Shiraitodai"
+	],
+	"ds": [
+		"Seibu.Tamagawa.Koremasa"
+	],
+	"tt": [{
+		"s": "Seibu.Tamagawa.Shiraitodai",
+		"d": "05:23"
+	}, {
+		"s": "Seibu.Tamagawa.KyoteijoMae",
+		"a": "05:25",
+		"d": "05:26"
+	}, {
+		"s": "Seibu.Tamagawa.Koremasa",
+		"a": "05:27"
+	}]
+}, {
 	"id": "Seibu.Tamagawa.204.Weekday",
 	"t": "Seibu.Tamagawa.204",
 	"r": "Seibu.Tamagawa",
@@ -6333,6 +6357,62 @@
 	}, {
 		"s": "Seibu.Tamagawa.MusashiSakai",
 		"a": "00:22"
+	}]
+}, {
+	"id": "Seibu.Tamagawa.202.Weekday",
+	"t": "Seibu.Tamagawa.202",
+	"r": "Seibu.Tamagawa",
+	"n": "202",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Tamagawa.Shiraitodai"
+	],
+	"ds": [
+		"Seibu.Tamagawa.MusashiSakai"
+	],
+	"tt": [{
+		"s": "Seibu.Tamagawa.Shiraitodai",
+		"d": "05:16"
+	}, {
+		"s": "Seibu.Tamagawa.Tama",
+		"a": "05:18",
+		"d": "05:19"
+	}, {
+		"s": "Seibu.Tamagawa.ShinKoganei",
+		"a": "05:21",
+		"d": "05:22"
+	}, {
+		"s": "Seibu.Tamagawa.MusashiSakai",
+		"a": "05:24"
+	}]
+}, {
+	"id": "Seibu.Tamagawa.210.Weekday",
+	"t": "Seibu.Tamagawa.210",
+	"r": "Seibu.Tamagawa",
+	"n": "210",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Tamagawa.Shiraitodai"
+	],
+	"ds": [
+		"Seibu.Tamagawa.MusashiSakai"
+	],
+	"tt": [{
+		"s": "Seibu.Tamagawa.Shiraitodai",
+		"d": "06:27"
+	}, {
+		"s": "Seibu.Tamagawa.Tama",
+		"a": "06:29",
+		"d": "06:29"
+	}, {
+		"s": "Seibu.Tamagawa.ShinKoganei",
+		"a": "06:32",
+		"d": "06:32"
+	}, {
+		"s": "Seibu.Tamagawa.MusashiSakai",
+		"a": "06:35"
 	}]
 }, {
 	"id": "Seibu.Tamagawa.203.SaturdayHoliday",
@@ -9539,6 +9619,30 @@
 		"a": "00:39"
 	}]
 }, {
+	"id": "Seibu.Tamagawa.201.SaturdayHoliday",
+	"t": "Seibu.Tamagawa.201",
+	"r": "Seibu.Tamagawa",
+	"n": "201",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Tamagawa.Shiraitodai"
+	],
+	"ds": [
+		"Seibu.Tamagawa.Koremasa"
+	],
+	"tt": [{
+		"s": "Seibu.Tamagawa.Shiraitodai",
+		"d": "05:23"
+	}, {
+		"s": "Seibu.Tamagawa.KyoteijoMae",
+		"a": "05:25",
+		"d": "05:26"
+	}, {
+		"s": "Seibu.Tamagawa.Koremasa",
+		"a": "05:27"
+	}]
+}, {
 	"id": "Seibu.Tamagawa.204.SaturdayHoliday",
 	"t": "Seibu.Tamagawa.204",
 	"r": "Seibu.Tamagawa",
@@ -12669,5 +12773,61 @@
 	}, {
 		"s": "Seibu.Tamagawa.MusashiSakai",
 		"a": "00:22"
+	}]
+}, {
+	"id": "Seibu.Tamagawa.202.SaturdayHoliday",
+	"t": "Seibu.Tamagawa.202",
+	"r": "Seibu.Tamagawa",
+	"n": "202",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Tamagawa.Shiraitodai"
+	],
+	"ds": [
+		"Seibu.Tamagawa.MusashiSakai"
+	],
+	"tt": [{
+		"s": "Seibu.Tamagawa.Shiraitodai",
+		"d": "05:16"
+	}, {
+		"s": "Seibu.Tamagawa.Tama",
+		"a": "05:18",
+		"d": "05:19"
+	}, {
+		"s": "Seibu.Tamagawa.ShinKoganei",
+		"a": "05:21",
+		"d": "05:22"
+	}, {
+		"s": "Seibu.Tamagawa.MusashiSakai",
+		"a": "05:24"
+	}]
+}, {
+	"id": "Seibu.Tamagawa.210.SaturdayHoliday",
+	"t": "Seibu.Tamagawa.210",
+	"r": "Seibu.Tamagawa",
+	"n": "210",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Tamagawa.Shiraitodai"
+	],
+	"ds": [
+		"Seibu.Tamagawa.MusashiSakai"
+	],
+	"tt": [{
+		"s": "Seibu.Tamagawa.Shiraitodai",
+		"d": "06:27"
+	}, {
+		"s": "Seibu.Tamagawa.Tama",
+		"a": "06:29",
+		"d": "06:29"
+	}, {
+		"s": "Seibu.Tamagawa.ShinKoganei",
+		"a": "06:32",
+		"d": "06:32"
+	}, {
+		"s": "Seibu.Tamagawa.MusashiSakai",
+		"a": "06:35"
 	}]
 }]

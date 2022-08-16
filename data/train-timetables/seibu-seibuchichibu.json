@@ -1,4 +1,564 @@
 [{
+	"id": "Seibu.SeibuChichibu.3.Weekday",
+	"t": "Seibu.SeibuChichibu.3",
+	"r": "Seibu.SeibuChichibu",
+	"n": "3",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.3.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "07:34"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "08:08",
+		"d": "08:09"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "08:13"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 3号",
+		"en": "Chichibu 3",
+		"ko": "지치부 3",
+		"zh-Hans": "秩父 3",
+		"zh-Hant": "秩父 3"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.5.Weekday",
+	"t": "Seibu.SeibuChichibu.5",
+	"r": "Seibu.SeibuChichibu",
+	"n": "5",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.5.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "08:16"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "08:54",
+		"d": "08:55"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "08:59"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 5号",
+		"en": "Chichibu 5",
+		"ko": "지치부 5",
+		"zh-Hans": "秩父 5",
+		"zh-Hant": "秩父 5"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.7.Weekday",
+	"t": "Seibu.SeibuChichibu.7",
+	"r": "Seibu.SeibuChichibu",
+	"n": "7",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.7.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "09:14"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "09:47",
+		"d": "09:47"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "09:51"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 7号",
+		"en": "Chichibu 7",
+		"ko": "지치부 7",
+		"zh-Hans": "秩父 7",
+		"zh-Hant": "秩父 7"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.9.Weekday",
+	"t": "Seibu.SeibuChichibu.9",
+	"r": "Seibu.SeibuChichibu",
+	"n": "9",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.9.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "10:13"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "10:47",
+		"d": "10:47"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "10:51"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 9号",
+		"en": "Chichibu 9",
+		"ko": "지치부 9",
+		"zh-Hans": "秩父 9",
+		"zh-Hant": "秩父 9"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.11.Weekday",
+	"t": "Seibu.SeibuChichibu.11",
+	"r": "Seibu.SeibuChichibu",
+	"n": "11",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.11.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "11:10"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "11:42",
+		"d": "11:43"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "11:47"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 11号",
+		"en": "Chichibu 11",
+		"ko": "지치부 11",
+		"zh-Hans": "秩父 11",
+		"zh-Hant": "秩父 11"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.13.Weekday",
+	"t": "Seibu.SeibuChichibu.13",
+	"r": "Seibu.SeibuChichibu",
+	"n": "13",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.13.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "12:10"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "12:42",
+		"d": "12:43"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "12:47"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 13号",
+		"en": "Chichibu 13",
+		"ko": "지치부 13",
+		"zh-Hans": "秩父 13",
+		"zh-Hant": "秩父 13"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.15.Weekday",
+	"t": "Seibu.SeibuChichibu.15",
+	"r": "Seibu.SeibuChichibu",
+	"n": "15",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.15.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "13:10"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "13:42",
+		"d": "13:43"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "13:47"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 15号",
+		"en": "Chichibu 15",
+		"ko": "지치부 15",
+		"zh-Hans": "秩父 15",
+		"zh-Hant": "秩父 15"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.17.Weekday",
+	"t": "Seibu.SeibuChichibu.17",
+	"r": "Seibu.SeibuChichibu",
+	"n": "17",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.17.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "14:10"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "14:42",
+		"d": "14:43"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "14:47"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 17号",
+		"en": "Chichibu 17",
+		"ko": "지치부 17",
+		"zh-Hans": "秩父 17",
+		"zh-Hant": "秩父 17"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.19.Weekday",
+	"t": "Seibu.SeibuChichibu.19",
+	"r": "Seibu.SeibuChichibu",
+	"n": "19",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.19.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "15:10"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "15:42",
+		"d": "15:43"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "15:47"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 19号",
+		"en": "Chichibu 19",
+		"ko": "지치부 19",
+		"zh-Hans": "秩父 19",
+		"zh-Hant": "秩父 19"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.21.Weekday",
+	"t": "Seibu.SeibuChichibu.21",
+	"r": "Seibu.SeibuChichibu",
+	"n": "21",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.21.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "16:10"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "16:42",
+		"d": "16:43"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "16:47"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 21号",
+		"en": "Chichibu 21",
+		"ko": "지치부 21",
+		"zh-Hans": "秩父 21",
+		"zh-Hant": "秩父 21"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.25.Weekday",
+	"t": "Seibu.SeibuChichibu.25",
+	"r": "Seibu.SeibuChichibu",
+	"n": "25",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.25.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "17:13"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "17:44",
+		"d": "17:45"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "17:49"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 25号",
+		"en": "Chichibu 25",
+		"ko": "지치부 25",
+		"zh-Hans": "秩父 25",
+		"zh-Hant": "秩父 25"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.29.Weekday",
+	"t": "Seibu.SeibuChichibu.29",
+	"r": "Seibu.SeibuChichibu",
+	"n": "29",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.29.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "18:15"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "18:50",
+		"d": "18:51"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "18:55"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 29号",
+		"en": "Chichibu 29",
+		"ko": "지치부 29",
+		"zh-Hans": "秩父 29",
+		"zh-Hant": "秩父 29"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.33.Weekday",
+	"t": "Seibu.SeibuChichibu.33",
+	"r": "Seibu.SeibuChichibu",
+	"n": "33",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.33.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "19:16"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "19:50",
+		"d": "19:51"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "19:55"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 33号",
+		"en": "Chichibu 33",
+		"ko": "지치부 33",
+		"zh-Hans": "秩父 33",
+		"zh-Hant": "秩父 33"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.37.Weekday",
+	"t": "Seibu.SeibuChichibu.37",
+	"r": "Seibu.SeibuChichibu",
+	"n": "37",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.37.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "20:16"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "20:50",
+		"d": "20:50"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "20:54"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 37号",
+		"en": "Chichibu 37",
+		"ko": "지치부 37",
+		"zh-Hans": "秩父 37",
+		"zh-Hant": "秩父 37"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.41.Weekday",
+	"t": "Seibu.SeibuChichibu.41",
+	"r": "Seibu.SeibuChichibu",
+	"n": "41",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.41.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "21:15"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "21:47",
+		"d": "21:47"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "21:51"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 41号",
+		"en": "Chichibu 41",
+		"ko": "지치부 41",
+		"zh-Hans": "秩父 41",
+		"zh-Hant": "秩父 41"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.45.Weekday",
+	"t": "Seibu.SeibuChichibu.45",
+	"r": "Seibu.SeibuChichibu",
+	"n": "45",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.45.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "22:16"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "22:47",
+		"d": "22:48"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "22:52"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 45号",
+		"en": "Chichibu 45",
+		"ko": "지치부 45",
+		"zh-Hans": "秩父 45",
+		"zh-Hant": "秩父 45"
+	}],
+	"v": "001"
+}, {
 	"id": "Seibu.SeibuChichibu.5001.Weekday",
 	"t": "Seibu.SeibuChichibu.5001",
 	"r": "Seibu.SeibuChichibu",
@@ -97,19 +657,19 @@
 		"d": "06:27"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "06:32",
+		"a": "06:31",
 		"d": "06:32"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
 		"a": "06:35",
-		"d": "06:36"
+		"d": "06:35"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
 		"a": "06:41",
-		"d": "06:42"
+		"d": "06:41"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "06:46",
+		"a": "06:45",
 		"d": "06:46"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -211,7 +771,7 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
-		"d": "07:38"
+		"d": "07:39"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
 		"a": "07:43",
@@ -232,41 +792,6 @@
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
 		"a": "08:05"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.3.Weekday",
-	"t": "Seibu.SeibuChichibu.3",
-	"r": "Seibu.SeibuChichibu",
-	"n": "3",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.3.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "07:35"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "08:08",
-		"d": "08:09"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "08:13"
-	}],
-	"nm": [{
-		"ja": "ちちぶ3号",
-		"en": "Chichibu 3",
-		"ko": "지치부 3",
-		"zh-Hans": "秩父 3",
-		"zh-Hant": "秩父 3"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5013.Weekday",
 	"t": "Seibu.SeibuChichibu.5013",
@@ -297,50 +822,15 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
 		"a": "08:33",
-		"d": "08:35"
+		"d": "08:34"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "08:39",
-		"d": "08:39"
+		"a": "08:38",
+		"d": "08:38"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "08:43"
+		"a": "08:42"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.5.Weekday",
-	"t": "Seibu.SeibuChichibu.5",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.5.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "08:16"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "08:54",
-		"d": "08:55"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "08:59"
-	}],
-	"nm": [{
-		"ja": "ちちぶ5号",
-		"en": "Chichibu 5",
-		"ko": "지치부 5",
-		"zh-Hans": "秩父 5",
-		"zh-Hant": "秩父 5"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5015.Weekday",
 	"t": "Seibu.SeibuChichibu.5015",
@@ -420,41 +910,6 @@
 		"a": "09:41"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.7.Weekday",
-	"t": "Seibu.SeibuChichibu.7",
-	"r": "Seibu.SeibuChichibu",
-	"n": "7",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.7.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "09:14"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "09:47",
-		"d": "09:47"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "09:51"
-	}],
-	"nm": [{
-		"ja": "ちちぶ7号",
-		"en": "Chichibu 7",
-		"ko": "지치부 7",
-		"zh-Hans": "秩父 7",
-		"zh-Hant": "秩父 7"
-	}],
-	"v": "001"
-}, {
 	"id": "Seibu.SeibuChichibu.5019.Weekday",
 	"t": "Seibu.SeibuChichibu.5019",
 	"r": "Seibu.SeibuChichibu",
@@ -488,46 +943,11 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
 		"a": "10:19",
-		"d": "10:20"
+		"d": "10:19"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "10:24"
+		"a": "10:23"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.9.Weekday",
-	"t": "Seibu.SeibuChichibu.9",
-	"r": "Seibu.SeibuChichibu",
-	"n": "9",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.9.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "10:13"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "10:48",
-		"d": "10:49"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "10:53"
-	}],
-	"nm": [{
-		"ja": "ちちぶ9号",
-		"en": "Chichibu 9",
-		"ko": "지치부 9",
-		"zh-Hans": "秩父 9",
-		"zh-Hant": "秩父 9"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5021.Weekday",
 	"t": "Seibu.SeibuChichibu.5021",
@@ -607,41 +1027,6 @@
 		"a": "11:32"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.11.Weekday",
-	"t": "Seibu.SeibuChichibu.11",
-	"r": "Seibu.SeibuChichibu",
-	"n": "11",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.11.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "11:11"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "11:42",
-		"d": "11:43"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "11:47"
-	}],
-	"nm": [{
-		"ja": "ちちぶ11号",
-		"en": "Chichibu 11",
-		"ko": "지치부 11",
-		"zh-Hans": "秩父 11",
-		"zh-Hant": "秩父 11"
-	}],
-	"v": "001"
-}, {
 	"id": "Seibu.SeibuChichibu.5025.Weekday",
 	"t": "Seibu.SeibuChichibu.5025",
 	"r": "Seibu.SeibuChichibu",
@@ -663,22 +1048,22 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
 		"a": "11:41",
-		"d": "11:42"
-	}, {
-		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "11:45",
 		"d": "11:46"
 	}, {
+		"s": "Seibu.SeibuChichibu.Shomaru",
+		"a": "11:49",
+		"d": "11:49"
+	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "11:51",
-		"d": "11:52"
+		"a": "11:55",
+		"d": "11:55"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "11:56",
-		"d": "11:56"
+		"a": "11:59",
+		"d": "12:00"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "12:00"
+		"a": "12:04"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.5027.Weekday",
@@ -698,62 +1083,27 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
-		"d": "12:09"
+		"d": "12:17"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "12:13",
-		"d": "12:14"
+		"a": "12:21",
+		"d": "12:21"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "12:17",
-		"d": "12:18"
+		"a": "12:25",
+		"d": "12:25"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "12:23",
-		"d": "12:24"
+		"a": "12:31",
+		"d": "12:32"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "12:28",
-		"d": "12:28"
+		"a": "12:36",
+		"d": "12:37"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "12:32"
+		"a": "12:41"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.13.Weekday",
-	"t": "Seibu.SeibuChichibu.13",
-	"r": "Seibu.SeibuChichibu",
-	"n": "13",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.13.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "12:11"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "12:42",
-		"d": "12:43"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "12:47"
-	}],
-	"nm": [{
-		"ja": "ちちぶ13号",
-		"en": "Chichibu 13",
-		"ko": "지치부 13",
-		"zh-Hans": "秩父 13",
-		"zh-Hant": "秩父 13"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5029.Weekday",
 	"t": "Seibu.SeibuChichibu.5029",
@@ -772,26 +1122,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
-		"d": "12:36"
-	}, {
-		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "12:41",
-		"d": "12:42"
-	}, {
-		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "12:45",
-		"d": "12:46"
-	}, {
-		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "12:51",
-		"d": "12:52"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "12:56",
 		"d": "12:56"
 	}, {
+		"s": "Seibu.SeibuChichibu.NishiAgano",
+		"a": "13:00",
+		"d": "13:01"
+	}, {
+		"s": "Seibu.SeibuChichibu.Shomaru",
+		"a": "13:04",
+		"d": "13:05"
+	}, {
+		"s": "Seibu.SeibuChichibu.Ashigakubo",
+		"a": "13:11",
+		"d": "13:11"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "13:15",
+		"d": "13:16"
+	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "13:00"
+		"a": "13:20"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.5031.Weekday",
@@ -808,80 +1158,6 @@
 	],
 	"pt": [
 		"Seibu.Ikebukuro.5031.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Agano",
-		"d": "13:09"
-	}, {
-		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "13:13",
-		"d": "13:14"
-	}, {
-		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "13:17",
-		"d": "13:18"
-	}, {
-		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "13:23",
-		"d": "13:24"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "13:28",
-		"d": "13:30"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "13:34"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.15.Weekday",
-	"t": "Seibu.SeibuChichibu.15",
-	"r": "Seibu.SeibuChichibu",
-	"n": "15",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.15.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "13:11"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "13:42",
-		"d": "13:43"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "13:47"
-	}],
-	"nm": [{
-		"ja": "ちちぶ15号",
-		"en": "Chichibu 15",
-		"ko": "지치부 15",
-		"zh-Hans": "秩父 15",
-		"zh-Hant": "秩父 15"
-	}],
-	"v": "001"
-}, {
-	"id": "Seibu.SeibuChichibu.5033.Weekday",
-	"t": "Seibu.SeibuChichibu.5033",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5033",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.5033.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -907,6 +1183,45 @@
 		"a": "14:00"
 	}]
 }, {
+	"id": "Seibu.SeibuChichibu.5033.Weekday",
+	"t": "Seibu.SeibuChichibu.5033",
+	"r": "Seibu.SeibuChichibu",
+	"n": "5033",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.5033.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Agano",
+		"d": "14:15"
+	}, {
+		"s": "Seibu.SeibuChichibu.NishiAgano",
+		"a": "14:19",
+		"d": "14:19"
+	}, {
+		"s": "Seibu.SeibuChichibu.Shomaru",
+		"a": "14:23",
+		"d": "14:23"
+	}, {
+		"s": "Seibu.SeibuChichibu.Ashigakubo",
+		"a": "14:31",
+		"d": "14:32"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "14:36",
+		"d": "14:37"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "14:41"
+	}]
+}, {
 	"id": "Seibu.SeibuChichibu.5035.Weekday",
 	"t": "Seibu.SeibuChichibu.5035",
 	"r": "Seibu.SeibuChichibu",
@@ -924,62 +1239,27 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
-		"d": "14:09"
+		"d": "14:56"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "14:13",
-		"d": "14:14"
+		"a": "15:01",
+		"d": "15:01"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "14:17",
-		"d": "14:18"
+		"a": "15:04",
+		"d": "15:05"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "14:23",
-		"d": "14:24"
+		"a": "15:10",
+		"d": "15:11"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "14:28",
-		"d": "14:28"
+		"a": "15:15",
+		"d": "15:15"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "14:32"
+		"a": "15:19"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.17.Weekday",
-	"t": "Seibu.SeibuChichibu.17",
-	"r": "Seibu.SeibuChichibu",
-	"n": "17",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.17.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "14:11"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "14:42",
-		"d": "14:43"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "14:47"
-	}],
-	"nm": [{
-		"ja": "ちちぶ17号",
-		"en": "Chichibu 17",
-		"ko": "지치부 17",
-		"zh-Hans": "秩父 17",
-		"zh-Hant": "秩父 17"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5037.Weekday",
 	"t": "Seibu.SeibuChichibu.5037",
@@ -995,119 +1275,6 @@
 	],
 	"pt": [
 		"Seibu.Ikebukuro.5037.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Agano",
-		"d": "14:36"
-	}, {
-		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "14:41",
-		"d": "14:42"
-	}, {
-		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "14:45",
-		"d": "14:46"
-	}, {
-		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "14:51",
-		"d": "14:52"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "14:56",
-		"d": "14:56"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "15:00"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.5039.Weekday",
-	"t": "Seibu.SeibuChichibu.5039",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5039",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.5039.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Agano",
-		"d": "15:09"
-	}, {
-		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "15:13",
-		"d": "15:14"
-	}, {
-		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "15:17",
-		"d": "15:18"
-	}, {
-		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "15:23",
-		"d": "15:24"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "15:28",
-		"d": "15:28"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "15:32"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.19.Weekday",
-	"t": "Seibu.SeibuChichibu.19",
-	"r": "Seibu.SeibuChichibu",
-	"n": "19",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.19.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "15:11"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "15:42",
-		"d": "15:43"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "15:47"
-	}],
-	"nm": [{
-		"ja": "ちちぶ19号",
-		"en": "Chichibu 19",
-		"ko": "지치부 19",
-		"zh-Hans": "秩父 19",
-		"zh-Hant": "秩父 19"
-	}],
-	"v": "001"
-}, {
-	"id": "Seibu.SeibuChichibu.5041.Weekday",
-	"t": "Seibu.SeibuChichibu.5041",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5041",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.5041.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -1133,10 +1300,10 @@
 		"a": "16:00"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5043.Weekday",
-	"t": "Seibu.SeibuChichibu.5043",
+	"id": "Seibu.SeibuChichibu.5039.Weekday",
+	"t": "Seibu.SeibuChichibu.5039",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5043",
+	"n": "5039",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1146,7 +1313,7 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5043.Weekday"
+		"Seibu.Ikebukuro.5039.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -1172,45 +1339,10 @@
 		"a": "16:32"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.21.Weekday",
-	"t": "Seibu.SeibuChichibu.21",
+	"id": "Seibu.SeibuChichibu.5041.Weekday",
+	"t": "Seibu.SeibuChichibu.5041",
 	"r": "Seibu.SeibuChichibu",
-	"n": "21",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.21.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "16:11"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "16:42",
-		"d": "16:43"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "16:47"
-	}],
-	"nm": [{
-		"ja": "ちちぶ21号",
-		"en": "Chichibu 21",
-		"ko": "지치부 21",
-		"zh-Hans": "秩父 21",
-		"zh-Hant": "秩父 21"
-	}],
-	"v": "001"
-}, {
-	"id": "Seibu.SeibuChichibu.5045.Weekday",
-	"t": "Seibu.SeibuChichibu.5045",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5045",
+	"n": "5041",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1220,14 +1352,14 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5045.Weekday"
+		"Seibu.Ikebukuro.5041.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
 		"d": "16:36"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "16:41",
+		"a": "16:40",
 		"d": "16:42"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
@@ -1246,6 +1378,84 @@
 		"a": "17:03"
 	}]
 }, {
+	"id": "Seibu.SeibuChichibu.5043.Weekday",
+	"t": "Seibu.SeibuChichibu.5043",
+	"r": "Seibu.SeibuChichibu",
+	"n": "5043",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.5043.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Agano",
+		"d": "17:05"
+	}, {
+		"s": "Seibu.SeibuChichibu.NishiAgano",
+		"a": "17:09",
+		"d": "17:10"
+	}, {
+		"s": "Seibu.SeibuChichibu.Shomaru",
+		"a": "17:13",
+		"d": "17:13"
+	}, {
+		"s": "Seibu.SeibuChichibu.Ashigakubo",
+		"a": "17:23",
+		"d": "17:24"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "17:28",
+		"d": "17:28"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "17:32"
+	}]
+}, {
+	"id": "Seibu.SeibuChichibu.5045.Weekday",
+	"t": "Seibu.SeibuChichibu.5045",
+	"r": "Seibu.SeibuChichibu",
+	"n": "5045",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.5045.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Agano",
+		"d": "17:24"
+	}, {
+		"s": "Seibu.SeibuChichibu.NishiAgano",
+		"a": "17:28",
+		"d": "17:29"
+	}, {
+		"s": "Seibu.SeibuChichibu.Shomaru",
+		"a": "17:32",
+		"d": "17:41"
+	}, {
+		"s": "Seibu.SeibuChichibu.Ashigakubo",
+		"a": "17:47",
+		"d": "17:49"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "17:53",
+		"d": "17:54"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "17:58"
+	}]
+}, {
 	"id": "Seibu.SeibuChichibu.5047.Weekday",
 	"t": "Seibu.SeibuChichibu.5047",
 	"r": "Seibu.SeibuChichibu",
@@ -1260,119 +1470,6 @@
 	],
 	"pt": [
 		"Seibu.Ikebukuro.5047.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Agano",
-		"d": "17:04"
-	}, {
-		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "17:08",
-		"d": "17:09"
-	}, {
-		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "17:12",
-		"d": "17:14"
-	}, {
-		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "17:24",
-		"d": "17:24"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "17:28",
-		"d": "17:29"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "17:33"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.25.Weekday",
-	"t": "Seibu.SeibuChichibu.25",
-	"r": "Seibu.SeibuChichibu",
-	"n": "25",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.25.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "17:13"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "17:44",
-		"d": "17:45"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "17:49"
-	}],
-	"nm": [{
-		"ja": "ちちぶ25号",
-		"en": "Chichibu 25",
-		"ko": "지치부 25",
-		"zh-Hans": "秩父 25",
-		"zh-Hant": "秩父 25"
-	}],
-	"v": "001"
-}, {
-	"id": "Seibu.SeibuChichibu.5049.Weekday",
-	"t": "Seibu.SeibuChichibu.5049",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5049",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.5049.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Agano",
-		"d": "17:24"
-	}, {
-		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "17:29",
-		"d": "17:29"
-	}, {
-		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "17:33",
-		"d": "17:41"
-	}, {
-		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "17:46",
-		"d": "17:49"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "17:53",
-		"d": "17:54"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "17:58"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.5051.Weekday",
-	"t": "Seibu.SeibuChichibu.5051",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5051",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.5051.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -1398,10 +1495,10 @@
 		"a": "18:21"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5053.Weekday",
-	"t": "Seibu.SeibuChichibu.5053",
+	"id": "Seibu.SeibuChichibu.5049.Weekday",
+	"t": "Seibu.SeibuChichibu.5049",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5053",
+	"n": "5049",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1411,7 +1508,7 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5053.Weekday"
+		"Seibu.Ikebukuro.5049.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -1437,45 +1534,10 @@
 		"a": "18:47"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.29.Weekday",
-	"t": "Seibu.SeibuChichibu.29",
+	"id": "Seibu.SeibuChichibu.5051.Weekday",
+	"t": "Seibu.SeibuChichibu.5051",
 	"r": "Seibu.SeibuChichibu",
-	"n": "29",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.29.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "18:15"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "18:50",
-		"d": "18:51"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "18:55"
-	}],
-	"nm": [{
-		"ja": "ちちぶ29号",
-		"en": "Chichibu 29",
-		"ko": "지치부 29",
-		"zh-Hans": "秩父 29",
-		"zh-Hant": "秩父 29"
-	}],
-	"v": "001"
-}, {
-	"id": "Seibu.SeibuChichibu.5055.Weekday",
-	"t": "Seibu.SeibuChichibu.5055",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5055",
+	"n": "5051",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1485,7 +1547,7 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5055.Weekday"
+		"Seibu.Ikebukuro.5051.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -1511,10 +1573,10 @@
 		"a": "19:03"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5057.Weekday",
-	"t": "Seibu.SeibuChichibu.5057",
+	"id": "Seibu.SeibuChichibu.5053.Weekday",
+	"t": "Seibu.SeibuChichibu.5053",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5057",
+	"n": "5053",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1524,7 +1586,7 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5057.Weekday"
+		"Seibu.Ikebukuro.5053.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -1536,24 +1598,24 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
 		"a": "19:05",
-		"d": "19:06"
+		"d": "19:05"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "19:12",
+		"a": "19:11",
 		"d": "19:12"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
 		"a": "19:16",
-		"d": "19:17"
+		"d": "19:16"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "19:21"
+		"a": "19:20"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5059.Weekday",
-	"t": "Seibu.SeibuChichibu.5059",
+	"id": "Seibu.SeibuChichibu.5055.Weekday",
+	"t": "Seibu.SeibuChichibu.5055",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5059",
+	"n": "5055",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1563,18 +1625,18 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5059.Weekday"
+		"Seibu.Ikebukuro.5055.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
 		"d": "19:21"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "19:25",
+		"a": "19:26",
 		"d": "19:26"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "19:29",
+		"a": "19:30",
 		"d": "19:30"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
@@ -1589,45 +1651,10 @@
 		"a": "19:47"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.33.Weekday",
-	"t": "Seibu.SeibuChichibu.33",
+	"id": "Seibu.SeibuChichibu.5057.Weekday",
+	"t": "Seibu.SeibuChichibu.5057",
 	"r": "Seibu.SeibuChichibu",
-	"n": "33",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.33.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "19:16"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "19:50",
-		"d": "19:51"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "19:55"
-	}],
-	"nm": [{
-		"ja": "ちちぶ33号",
-		"en": "Chichibu 33",
-		"ko": "지치부 33",
-		"zh-Hans": "秩父 33",
-		"zh-Hant": "秩父 33"
-	}],
-	"v": "001"
-}, {
-	"id": "Seibu.SeibuChichibu.5061.Weekday",
-	"t": "Seibu.SeibuChichibu.5061",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5061",
+	"n": "5057",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1637,7 +1664,7 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5061.Weekday"
+		"Seibu.Ikebukuro.5057.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -1663,10 +1690,10 @@
 		"a": "20:21"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5063.Weekday",
-	"t": "Seibu.SeibuChichibu.5063",
+	"id": "Seibu.SeibuChichibu.5059.Weekday",
+	"t": "Seibu.SeibuChichibu.5059",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5063",
+	"n": "5059",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1676,7 +1703,7 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5063.Weekday"
+		"Seibu.Ikebukuro.5059.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -1702,45 +1729,10 @@
 		"a": "20:47"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.37.Weekday",
-	"t": "Seibu.SeibuChichibu.37",
+	"id": "Seibu.SeibuChichibu.5061.Weekday",
+	"t": "Seibu.SeibuChichibu.5061",
 	"r": "Seibu.SeibuChichibu",
-	"n": "37",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.37.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "20:16"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "20:50",
-		"d": "20:51"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "20:55"
-	}],
-	"nm": [{
-		"ja": "ちちぶ37号",
-		"en": "Chichibu 37",
-		"ko": "지치부 37",
-		"zh-Hans": "秩父 37",
-		"zh-Hant": "秩父 37"
-	}],
-	"v": "001"
-}, {
-	"id": "Seibu.SeibuChichibu.5065.Weekday",
-	"t": "Seibu.SeibuChichibu.5065",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5065",
+	"n": "5061",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1750,7 +1742,7 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5065.Weekday"
+		"Seibu.Ikebukuro.5061.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -1776,10 +1768,10 @@
 		"a": "21:22"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5067.Weekday",
-	"t": "Seibu.SeibuChichibu.5067",
+	"id": "Seibu.SeibuChichibu.5063.Weekday",
+	"t": "Seibu.SeibuChichibu.5063",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5067",
+	"n": "5063",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1789,7 +1781,7 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5067.Weekday"
+		"Seibu.Ikebukuro.5063.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -1815,45 +1807,10 @@
 		"a": "21:47"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.41.Weekday",
-	"t": "Seibu.SeibuChichibu.41",
+	"id": "Seibu.SeibuChichibu.5065.Weekday",
+	"t": "Seibu.SeibuChichibu.5065",
 	"r": "Seibu.SeibuChichibu",
-	"n": "41",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.41.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "21:15"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "21:47",
-		"d": "21:47"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "21:51"
-	}],
-	"nm": [{
-		"ja": "ちちぶ41号",
-		"en": "Chichibu 41",
-		"ko": "지치부 41",
-		"zh-Hans": "秩父 41",
-		"zh-Hant": "秩父 41"
-	}],
-	"v": "001"
-}, {
-	"id": "Seibu.SeibuChichibu.5069.Weekday",
-	"t": "Seibu.SeibuChichibu.5069",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5069",
+	"n": "5065",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1863,7 +1820,7 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5069.Weekday"
+		"Seibu.Ikebukuro.5065.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -1889,10 +1846,10 @@
 		"a": "22:12"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5071.Weekday",
-	"t": "Seibu.SeibuChichibu.5071",
+	"id": "Seibu.SeibuChichibu.5067.Weekday",
+	"t": "Seibu.SeibuChichibu.5067",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5071",
+	"n": "5067",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1902,7 +1859,7 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5071.Weekday"
+		"Seibu.Ikebukuro.5067.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -1928,45 +1885,10 @@
 		"a": "22:44"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.45.Weekday",
-	"t": "Seibu.SeibuChichibu.45",
+	"id": "Seibu.SeibuChichibu.5069.Weekday",
+	"t": "Seibu.SeibuChichibu.5069",
 	"r": "Seibu.SeibuChichibu",
-	"n": "45",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.45.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "22:16"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "22:47",
-		"d": "22:48"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "22:52"
-	}],
-	"nm": [{
-		"ja": "ちちぶ45号",
-		"en": "Chichibu 45",
-		"ko": "지치부 45",
-		"zh-Hans": "秩父 45",
-		"zh-Hant": "秩父 45"
-	}],
-	"v": "001"
-}, {
-	"id": "Seibu.SeibuChichibu.5073.Weekday",
-	"t": "Seibu.SeibuChichibu.5073",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5073",
+	"n": "5069",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1976,7 +1898,7 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5073.Weekday"
+		"Seibu.Ikebukuro.5069.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -2002,10 +1924,10 @@
 		"a": "23:23"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5075.Weekday",
-	"t": "Seibu.SeibuChichibu.5075",
+	"id": "Seibu.SeibuChichibu.5071.Weekday",
+	"t": "Seibu.SeibuChichibu.5071",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5075",
+	"n": "5071",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2015,7 +1937,7 @@
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.5075.Weekday"
+		"Seibu.Ikebukuro.5071.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -2146,7 +2068,7 @@
 		"a": "06:20"
 	}],
 	"nm": [{
-		"ja": "ちちぶ8号",
+		"ja": "ちちぶ 8号",
 		"en": "Chichibu 8",
 		"ko": "지치부 8",
 		"zh-Hans": "秩父 8",
@@ -2253,15 +2175,15 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
 		"a": "06:23",
-		"d": "06:23"
+		"d": "06:24"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "06:28",
+		"a": "06:29",
 		"d": "06:29"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "06:34",
-		"d": "06:36"
+		"a": "06:35",
+		"d": "06:35"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
 		"a": "06:39",
@@ -2343,7 +2265,7 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
 		"a": "07:04",
-		"d": "07:05"
+		"d": "07:04"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
 		"a": "07:09"
@@ -2454,7 +2376,7 @@
 		"a": "08:22"
 	}],
 	"nm": [{
-		"ja": "ちちぶ14号",
+		"ja": "ちちぶ 14号",
 		"en": "Chichibu 14",
 		"ko": "지치부 14",
 		"zh-Hans": "秩父 14",
@@ -2567,7 +2489,7 @@
 		"a": "09:03"
 	}],
 	"nm": [{
-		"ja": "ちちぶ18号",
+		"ja": "ちちぶ 18号",
 		"en": "Chichibu 18",
 		"ko": "지치부 18",
 		"zh-Hans": "秩父 18",
@@ -2638,10 +2560,10 @@
 		"d": "09:28"
 	}, {
 		"s": "Seibu.SeibuChichibu.Hanno",
-		"a": "10:02"
+		"a": "10:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ20号",
+		"ja": "ちちぶ 20号",
 		"en": "Chichibu 20",
 		"ko": "지치부 20",
 		"zh-Hans": "秩父 20",
@@ -2705,26 +2627,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "10:07"
+		"d": "10:06"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "10:10",
+		"a": "10:09",
 		"d": "10:10"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
 		"a": "10:15",
-		"d": "10:16"
+		"d": "10:15"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
 		"a": "10:21",
-		"d": "10:22"
+		"d": "10:21"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "10:26",
+		"a": "10:25",
 		"d": "10:26"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "10:31"
+		"a": "10:30"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.22.Weekday",
@@ -2747,14 +2669,14 @@
 		"d": "10:24"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "10:28",
+		"a": "10:27",
 		"d": "10:28"
 	}, {
 		"s": "Seibu.SeibuChichibu.Hanno",
 		"a": "11:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ22号",
+		"ja": "ちちぶ 22号",
 		"en": "Chichibu 22",
 		"ko": "지치부 22",
 		"zh-Hans": "秩父 22",
@@ -2783,19 +2705,19 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
 		"a": "10:45",
-		"d": "10:48"
+		"d": "10:47"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "10:53",
+		"a": "10:52",
 		"d": "10:53"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "10:59",
+		"a": "10:58",
 		"d": "10:59"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
 		"a": "11:03",
-		"d": "11:04"
+		"d": "11:03"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
 		"a": "11:08"
@@ -2867,7 +2789,7 @@
 		"a": "12:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ24号",
+		"ja": "ちちぶ 24号",
 		"en": "Chichibu 24",
 		"ko": "지치부 24",
 		"zh-Hans": "秩父 24",
@@ -2896,22 +2818,22 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
 		"a": "11:41",
-		"d": "11:46"
+		"d": "11:42"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "11:50",
-		"d": "11:52"
+		"a": "11:47",
+		"d": "11:47"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "11:58",
-		"d": "11:58"
+		"a": "11:56",
+		"d": "11:57"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "12:02",
-		"d": "12:02"
+		"a": "12:00",
+		"d": "12:01"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "12:07"
+		"a": "12:05"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.5036.Weekday",
@@ -2931,26 +2853,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "12:07"
+		"d": "12:09"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "12:10",
-		"d": "12:10"
+		"a": "12:12",
+		"d": "12:13"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "12:15",
-		"d": "12:16"
+		"a": "12:18",
+		"d": "12:18"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "12:25",
+		"a": "12:24",
 		"d": "12:25"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
 		"a": "12:29",
-		"d": "12:31"
+		"d": "12:30"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "12:36"
+		"a": "12:35"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.26.Weekday",
@@ -2980,7 +2902,7 @@
 		"a": "13:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ26号",
+		"ja": "ちちぶ 26号",
 		"en": "Chichibu 26",
 		"ko": "지치부 26",
 		"zh-Hans": "秩父 26",
@@ -3005,65 +2927,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "12:38"
+		"d": "12:50"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "12:41",
-		"d": "12:46"
+		"a": "12:53",
+		"d": "12:53"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "12:50",
-		"d": "12:52"
-	}, {
-		"s": "Seibu.SeibuChichibu.Shomaru",
 		"a": "12:58",
-		"d": "12:58"
-	}, {
-		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "13:02",
-		"d": "13:02"
-	}, {
-		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "13:07"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.5040.Weekday",
-	"t": "Seibu.SeibuChichibu.5040",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5040",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.5040.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "13:07"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "13:10",
-		"d": "13:10"
-	}, {
-		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "13:15",
-		"d": "13:16"
+		"d": "12:59"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "13:25",
-		"d": "13:25"
+		"a": "13:04",
+		"d": "13:05"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "13:29",
-		"d": "13:31"
+		"a": "13:09",
+		"d": "13:09"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "13:36"
+		"a": "13:14"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.28.Weekday",
@@ -3093,13 +2976,52 @@
 		"a": "14:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ28号",
+		"ja": "ちちぶ 28号",
 		"en": "Chichibu 28",
 		"ko": "지치부 28",
 		"zh-Hans": "秩父 28",
 		"zh-Hant": "秩父 28"
 	}],
 	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.5040.Weekday",
+	"t": "Seibu.SeibuChichibu.5040",
+	"r": "Seibu.SeibuChichibu",
+	"n": "5040",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.5040.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"d": "13:29"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "13:32",
+		"d": "13:32"
+	}, {
+		"s": "Seibu.SeibuChichibu.Ashigakubo",
+		"a": "13:37",
+		"d": "13:39"
+	}, {
+		"s": "Seibu.SeibuChichibu.Shomaru",
+		"a": "13:45",
+		"d": "13:46"
+	}, {
+		"s": "Seibu.SeibuChichibu.NishiAgano",
+		"a": "13:49",
+		"d": "13:50"
+	}, {
+		"s": "Seibu.SeibuChichibu.Agano",
+		"a": "13:54"
+	}]
 }, {
 	"id": "Seibu.SeibuChichibu.5042.Weekday",
 	"t": "Seibu.SeibuChichibu.5042",
@@ -3118,65 +3040,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "13:38"
+		"d": "14:08"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "13:41",
-		"d": "13:46"
+		"a": "14:11",
+		"d": "14:12"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "13:50",
-		"d": "13:52"
+		"a": "14:17",
+		"d": "14:17"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "13:58",
-		"d": "13:58"
+		"a": "14:23",
+		"d": "14:23"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "14:02",
-		"d": "14:02"
+		"a": "14:27",
+		"d": "14:30"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "14:07"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.5044.Weekday",
-	"t": "Seibu.SeibuChichibu.5044",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5044",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.5044.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "14:07"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "14:10",
-		"d": "14:10"
-	}, {
-		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "14:15",
-		"d": "14:16"
-	}, {
-		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "14:25",
-		"d": "14:25"
-	}, {
-		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "14:29",
-		"d": "14:31"
-	}, {
-		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "14:36"
+		"a": "14:35"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.30.Weekday",
@@ -3206,7 +3089,7 @@
 		"a": "15:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ30号",
+		"ja": "ちちぶ 30号",
 		"en": "Chichibu 30",
 		"ko": "지치부 30",
 		"zh-Hans": "秩父 30",
@@ -3214,10 +3097,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5046.Weekday",
-	"t": "Seibu.SeibuChichibu.5046",
+	"id": "Seibu.SeibuChichibu.5044.Weekday",
+	"t": "Seibu.SeibuChichibu.5044",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5046",
+	"n": "5044",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3227,69 +3110,30 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5046.Weekday"
+		"Seibu.Ikebukuro.5044.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "14:38"
+		"d": "14:50"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "14:41",
-		"d": "14:46"
+		"a": "14:53",
+		"d": "14:53"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "14:50",
-		"d": "14:52"
-	}, {
-		"s": "Seibu.SeibuChichibu.Shomaru",
 		"a": "14:58",
-		"d": "14:58"
-	}, {
-		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "15:02",
-		"d": "15:02"
-	}, {
-		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "15:07"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.5048.Weekday",
-	"t": "Seibu.SeibuChichibu.5048",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5048",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.5048.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "15:07"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "15:10",
-		"d": "15:10"
-	}, {
-		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "15:15",
-		"d": "15:16"
+		"d": "14:59"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "15:25",
-		"d": "15:25"
+		"a": "15:04",
+		"d": "15:05"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "15:29",
-		"d": "15:31"
+		"a": "15:09",
+		"d": "15:09"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "15:36"
+		"a": "15:14"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.32.Weekday",
@@ -3319,7 +3163,7 @@
 		"a": "16:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ32号",
+		"ja": "ちちぶ 32号",
 		"en": "Chichibu 32",
 		"ko": "지치부 32",
 		"zh-Hans": "秩父 32",
@@ -3327,10 +3171,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5050.Weekday",
-	"t": "Seibu.SeibuChichibu.5050",
+	"id": "Seibu.SeibuChichibu.5046.Weekday",
+	"t": "Seibu.SeibuChichibu.5046",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5050",
+	"n": "5046",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3340,36 +3184,36 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5050.Weekday"
+		"Seibu.Ikebukuro.5046.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "15:38"
+		"d": "15:29"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "15:41",
-		"d": "15:46"
+		"a": "15:32",
+		"d": "15:32"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "15:50",
-		"d": "15:52"
+		"a": "15:37",
+		"d": "15:39"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "15:58",
-		"d": "15:58"
+		"a": "15:45",
+		"d": "15:46"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "16:02",
-		"d": "16:02"
+		"a": "15:50",
+		"d": "15:50"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "16:07"
+		"a": "15:55"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5052.Weekday",
-	"t": "Seibu.SeibuChichibu.5052",
+	"id": "Seibu.SeibuChichibu.5048.Weekday",
+	"t": "Seibu.SeibuChichibu.5048",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5052",
+	"n": "5048",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3379,30 +3223,30 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5052.Weekday"
+		"Seibu.Ikebukuro.5048.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "16:07"
+		"d": "16:06"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "16:10",
+		"a": "16:09",
 		"d": "16:10"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
 		"a": "16:15",
-		"d": "16:16"
+		"d": "16:15"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "16:25",
-		"d": "16:25"
+		"a": "16:24",
+		"d": "16:24"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "16:29",
-		"d": "16:31"
+		"a": "16:28",
+		"d": "16:30"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "16:36"
+		"a": "16:35"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.36.Weekday",
@@ -3432,7 +3276,7 @@
 		"a": "17:03"
 	}],
 	"nm": [{
-		"ja": "ちちぶ36号",
+		"ja": "ちちぶ 36号",
 		"en": "Chichibu 36",
 		"ko": "지치부 36",
 		"zh-Hans": "秩父 36",
@@ -3440,10 +3284,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5054.Weekday",
-	"t": "Seibu.SeibuChichibu.5054",
+	"id": "Seibu.SeibuChichibu.5050.Weekday",
+	"t": "Seibu.SeibuChichibu.5050",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5054",
+	"n": "5050",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3453,7 +3297,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5054.Weekday"
+		"Seibu.Ikebukuro.5050.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -3479,10 +3323,10 @@
 		"a": "17:02"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5056.Weekday",
-	"t": "Seibu.SeibuChichibu.5056",
+	"id": "Seibu.SeibuChichibu.5052.Weekday",
+	"t": "Seibu.SeibuChichibu.5052",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5056",
+	"n": "5052",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3492,7 +3336,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5056.Weekday"
+		"Seibu.Ikebukuro.5052.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -3515,7 +3359,7 @@
 		"d": "17:33"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "17:37"
+		"a": "17:38"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.40.Weekday",
@@ -3542,10 +3386,10 @@
 		"d": "17:28"
 	}, {
 		"s": "Seibu.SeibuChichibu.Hanno",
-		"a": "18:03"
+		"a": "18:04"
 	}],
 	"nm": [{
-		"ja": "ちちぶ40号",
+		"ja": "ちちぶ 40号",
 		"en": "Chichibu 40",
 		"ko": "지치부 40",
 		"zh-Hans": "秩父 40",
@@ -3553,10 +3397,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5058.Weekday",
-	"t": "Seibu.SeibuChichibu.5058",
+	"id": "Seibu.SeibuChichibu.5054.Weekday",
+	"t": "Seibu.SeibuChichibu.5054",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5058",
+	"n": "5054",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3566,7 +3410,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5058.Weekday"
+		"Seibu.Ikebukuro.5054.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -3592,10 +3436,10 @@
 		"a": "18:07"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5060.Weekday",
-	"t": "Seibu.SeibuChichibu.5060",
+	"id": "Seibu.SeibuChichibu.5056.Weekday",
+	"t": "Seibu.SeibuChichibu.5056",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5060",
+	"n": "5056",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3605,7 +3449,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5060.Weekday"
+		"Seibu.Ikebukuro.5056.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -3658,7 +3502,7 @@
 		"a": "19:03"
 	}],
 	"nm": [{
-		"ja": "ちちぶ44号",
+		"ja": "ちちぶ 44号",
 		"en": "Chichibu 44",
 		"ko": "지치부 44",
 		"zh-Hans": "秩父 44",
@@ -3666,10 +3510,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5062.Weekday",
-	"t": "Seibu.SeibuChichibu.5062",
+	"id": "Seibu.SeibuChichibu.5058.Weekday",
+	"t": "Seibu.SeibuChichibu.5058",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5062",
+	"n": "5058",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3679,7 +3523,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5062.Weekday"
+		"Seibu.Ikebukuro.5058.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -3694,21 +3538,21 @@
 		"d": "18:39"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "18:47",
+		"a": "18:45",
 		"d": "18:47"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
 		"a": "18:51",
-		"d": "18:51"
+		"d": "18:52"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
 		"a": "18:56"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5064.Weekday",
-	"t": "Seibu.SeibuChichibu.5064",
+	"id": "Seibu.SeibuChichibu.5060.Weekday",
+	"t": "Seibu.SeibuChichibu.5060",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5064",
+	"n": "5060",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3718,7 +3562,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5064.Weekday"
+		"Seibu.Ikebukuro.5060.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -3771,7 +3615,7 @@
 		"a": "20:03"
 	}],
 	"nm": [{
-		"ja": "ちちぶ48号",
+		"ja": "ちちぶ 48号",
 		"en": "Chichibu 48",
 		"ko": "지치부 48",
 		"zh-Hans": "秩父 48",
@@ -3779,10 +3623,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5066.Weekday",
-	"t": "Seibu.SeibuChichibu.5066",
+	"id": "Seibu.SeibuChichibu.5062.Weekday",
+	"t": "Seibu.SeibuChichibu.5062",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5066",
+	"n": "5062",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3792,7 +3636,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5066.Weekday"
+		"Seibu.Ikebukuro.5062.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -3818,10 +3662,10 @@
 		"a": "19:54"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5068.Weekday",
-	"t": "Seibu.SeibuChichibu.5068",
+	"id": "Seibu.SeibuChichibu.5064.Weekday",
+	"t": "Seibu.SeibuChichibu.5064",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5068",
+	"n": "5064",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3831,7 +3675,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5068.Weekday"
+		"Seibu.Ikebukuro.5064.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -3884,7 +3728,7 @@
 		"a": "21:03"
 	}],
 	"nm": [{
-		"ja": "ちちぶ52号",
+		"ja": "ちちぶ 52号",
 		"en": "Chichibu 52",
 		"ko": "지치부 52",
 		"zh-Hans": "秩父 52",
@@ -3892,10 +3736,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5070.Weekday",
-	"t": "Seibu.SeibuChichibu.5070",
+	"id": "Seibu.SeibuChichibu.5066.Weekday",
+	"t": "Seibu.SeibuChichibu.5066",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5070",
+	"n": "5066",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3905,7 +3749,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5070.Weekday"
+		"Seibu.Ikebukuro.5066.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -3925,16 +3769,16 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
 		"a": "20:49",
-		"d": "20:50"
+		"d": "20:49"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
 		"a": "20:54"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5072.Weekday",
-	"t": "Seibu.SeibuChichibu.5072",
+	"id": "Seibu.SeibuChichibu.5068.Weekday",
+	"t": "Seibu.SeibuChichibu.5068",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5072",
+	"n": "5068",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -3944,7 +3788,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5072.Weekday"
+		"Seibu.Ikebukuro.5068.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -3997,7 +3841,7 @@
 		"a": "22:03"
 	}],
 	"nm": [{
-		"ja": "ちちぶ56号",
+		"ja": "ちちぶ 56号",
 		"en": "Chichibu 56",
 		"ko": "지치부 56",
 		"zh-Hans": "秩父 56",
@@ -4005,10 +3849,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5074.Weekday",
-	"t": "Seibu.SeibuChichibu.5074",
+	"id": "Seibu.SeibuChichibu.5070.Weekday",
+	"t": "Seibu.SeibuChichibu.5070",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5074",
+	"n": "5070",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -4018,7 +3862,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5074.Weekday"
+		"Seibu.Ikebukuro.5070.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -4044,10 +3888,10 @@
 		"a": "21:59"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5076.Weekday",
-	"t": "Seibu.SeibuChichibu.5076",
+	"id": "Seibu.SeibuChichibu.5072.Weekday",
+	"t": "Seibu.SeibuChichibu.5072",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5076",
+	"n": "5072",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -4057,7 +3901,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5076.Weekday"
+		"Seibu.Ikebukuro.5072.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -4082,6 +3926,111 @@
 		"s": "Seibu.SeibuChichibu.Agano",
 		"a": "22:40"
 	}]
+}, {
+	"id": "Seibu.SeibuChichibu.61.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.61",
+	"r": "Seibu.SeibuChichibu",
+	"n": "61",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Tokorozawa"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.61.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "07:04"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "07:37",
+		"d": "07:37"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "07:41"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 61号",
+		"en": "Chichibu 61",
+		"ko": "지치부 61",
+		"zh-Hans": "秩父 61",
+		"zh-Hant": "秩父 61"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.3.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.3",
+	"r": "Seibu.SeibuChichibu",
+	"n": "3",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.3.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "07:35"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "08:09",
+		"d": "08:10"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "08:14"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 3号",
+		"en": "Chichibu 3",
+		"ko": "지치부 3",
+		"zh-Hans": "秩父 3",
+		"zh-Hant": "秩父 3"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.5.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.5",
+	"r": "Seibu.SeibuChichibu",
+	"n": "5",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.5.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "08:10"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "08:46",
+		"d": "08:47"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "08:50"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 5号",
+		"en": "Chichibu 5",
+		"ko": "지치부 5",
+		"zh-Hans": "秩父 5",
+		"zh-Hant": "秩父 5"
+	}],
+	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.401.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.401",
@@ -4112,6 +4061,496 @@
 		"zh-Hans": "S-Train 1",
 		"zh-Hant": "S-Train 1"
 	}]
+}, {
+	"id": "Seibu.SeibuChichibu.7.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.7",
+	"r": "Seibu.SeibuChichibu",
+	"n": "7",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.7.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "09:14"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "09:47",
+		"d": "09:47"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "09:51"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 7号",
+		"en": "Chichibu 7",
+		"ko": "지치부 7",
+		"zh-Hans": "秩父 7",
+		"zh-Hant": "秩父 7"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.9.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.9",
+	"r": "Seibu.SeibuChichibu",
+	"n": "9",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.9.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "10:13"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "10:47",
+		"d": "10:47"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "10:51"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 9号",
+		"en": "Chichibu 9",
+		"ko": "지치부 9",
+		"zh-Hans": "秩父 9",
+		"zh-Hant": "秩父 9"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.11.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.11",
+	"r": "Seibu.SeibuChichibu",
+	"n": "11",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.11.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "11:11"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "11:42",
+		"d": "11:43"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "11:47"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 11号",
+		"en": "Chichibu 11",
+		"ko": "지치부 11",
+		"zh-Hans": "秩父 11",
+		"zh-Hant": "秩父 11"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.13.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.13",
+	"r": "Seibu.SeibuChichibu",
+	"n": "13",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.13.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "12:11"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "12:42",
+		"d": "12:43"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "12:47"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 13号",
+		"en": "Chichibu 13",
+		"ko": "지치부 13",
+		"zh-Hans": "秩父 13",
+		"zh-Hant": "秩父 13"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.15.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.15",
+	"r": "Seibu.SeibuChichibu",
+	"n": "15",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.15.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "13:11"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "13:42",
+		"d": "13:43"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "13:47"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 15号",
+		"en": "Chichibu 15",
+		"ko": "지치부 15",
+		"zh-Hans": "秩父 15",
+		"zh-Hant": "秩父 15"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.17.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.17",
+	"r": "Seibu.SeibuChichibu",
+	"n": "17",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.17.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "14:11"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "14:42",
+		"d": "14:43"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "14:47"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 17号",
+		"en": "Chichibu 17",
+		"ko": "지치부 17",
+		"zh-Hans": "秩父 17",
+		"zh-Hant": "秩父 17"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.19.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.19",
+	"r": "Seibu.SeibuChichibu",
+	"n": "19",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.19.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "15:11"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "15:42",
+		"d": "15:43"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "15:47"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 19号",
+		"en": "Chichibu 19",
+		"ko": "지치부 19",
+		"zh-Hans": "秩父 19",
+		"zh-Hant": "秩父 19"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.21.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.21",
+	"r": "Seibu.SeibuChichibu",
+	"n": "21",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.21.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "16:12"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "16:43",
+		"d": "16:44"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "16:48"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 21号",
+		"en": "Chichibu 21",
+		"ko": "지치부 21",
+		"zh-Hans": "秩父 21",
+		"zh-Hant": "秩父 21"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.25.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.25",
+	"r": "Seibu.SeibuChichibu",
+	"n": "25",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.25.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "17:12"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "17:46",
+		"d": "17:47"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "17:51"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 25号",
+		"en": "Chichibu 25",
+		"ko": "지치부 25",
+		"zh-Hans": "秩父 25",
+		"zh-Hant": "秩父 25"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.29.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.29",
+	"r": "Seibu.SeibuChichibu",
+	"n": "29",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.29.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "18:14"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "18:48",
+		"d": "18:48"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "18:52"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 29号",
+		"en": "Chichibu 29",
+		"ko": "지치부 29",
+		"zh-Hans": "秩父 29",
+		"zh-Hant": "秩父 29"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.33.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.33",
+	"r": "Seibu.SeibuChichibu",
+	"n": "33",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.33.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "19:14"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "19:46",
+		"d": "19:47"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "19:51"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 33号",
+		"en": "Chichibu 33",
+		"ko": "지치부 33",
+		"zh-Hans": "秩父 33",
+		"zh-Hant": "秩父 33"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.37.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.37",
+	"r": "Seibu.SeibuChichibu",
+	"n": "37",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.37.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "20:14"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "20:47",
+		"d": "20:48"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "20:52"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 37号",
+		"en": "Chichibu 37",
+		"ko": "지치부 37",
+		"zh-Hans": "秩父 37",
+		"zh-Hant": "秩父 37"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.41.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.41",
+	"r": "Seibu.SeibuChichibu",
+	"n": "41",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.41.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "21:13"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "21:46",
+		"d": "21:47"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "21:51"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 41号",
+		"en": "Chichibu 41",
+		"ko": "지치부 41",
+		"zh-Hans": "秩父 41",
+		"zh-Hant": "秩父 41"
+	}],
+	"v": "001"
+}, {
+	"id": "Seibu.SeibuChichibu.45.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.45",
+	"r": "Seibu.SeibuChichibu",
+	"n": "45",
+	"y": "Seibu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Ikebukuro"
+	],
+	"ds": [
+		"Seibu.SeibuChichibu.SeibuChichibu"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.45.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Hanno",
+		"d": "22:13"
+	}, {
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"a": "22:44",
+		"d": "22:44"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "22:48"
+	}],
+	"nm": [{
+		"ja": "ちちぶ 45号",
+		"en": "Chichibu 45",
+		"ko": "지치부 45",
+		"zh-Hans": "秩父 45",
+		"zh-Hant": "秩父 45"
+	}],
+	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5001.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5001",
@@ -4269,76 +4708,6 @@
 		"a": "07:19"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.61.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.61",
-	"r": "Seibu.SeibuChichibu",
-	"n": "61",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Tokorozawa"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.61.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "07:04"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "07:37",
-		"d": "07:37"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "07:41"
-	}],
-	"nm": [{
-		"ja": "ちちぶ61号",
-		"en": "Chichibu 61",
-		"ko": "지치부 61",
-		"zh-Hans": "秩父 61",
-		"zh-Hant": "秩父 61"
-	}],
-	"v": "001"
-}, {
-	"id": "Seibu.SeibuChichibu.3.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.3",
-	"r": "Seibu.SeibuChichibu",
-	"n": "3",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.3.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "07:35"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "08:09",
-		"d": "08:10"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "08:14"
-	}],
-	"nm": [{
-		"ja": "ちちぶ3号",
-		"en": "Chichibu 3",
-		"ko": "지치부 3",
-		"zh-Hans": "秩父 3",
-		"zh-Hant": "秩父 3"
-	}],
-	"v": "001"
-}, {
 	"id": "Seibu.SeibuChichibu.5009.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5009",
 	"r": "Seibu.SeibuChichibu",
@@ -4368,14 +4737,14 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
 		"a": "07:59",
-		"d": "08:09"
+		"d": "08:02"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "08:13",
-		"d": "08:14"
+		"a": "08:06",
+		"d": "08:07"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "08:18"
+		"a": "08:11"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.6001.SaturdayHoliday.1",
@@ -4396,7 +4765,7 @@
 	],
 	"nt": [
 		"Seibu.SeibuChichibu.6001.SaturdayHoliday.2",
-		"Seibu.SeibuChichibuBranch.6001.SaturdayHoliday"
+		"Seibu.SeibuChichibuBranch.6051.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -4417,71 +4786,6 @@
 		"s": "Seibu.SeibuChichibu.Yokoze",
 		"a": "08:41"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.6001.SaturdayHoliday.2",
-	"t": "Seibu.SeibuChichibu.6001",
-	"r": "Seibu.SeibuChichibu",
-	"n": "6001",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"ds": [
-		"Chichibu.Chichibu.Mitsumineguchi"
-	],
-	"pt": [
-		"Seibu.SeibuChichibu.6001.SaturdayHoliday.1"
-	],
-	"nt": [
-		"Chichibu.Chichibu.S1.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"d": "08:43"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "08:47",
-		"d": "08:57"
-	}, {
-		"s": "Seibu.SeibuChichibu.Kagemori",
-		"a": "09:00"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.5.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.5",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.5.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "08:10"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "08:46",
-		"d": "08:47"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "08:50"
-	}],
-	"nm": [{
-		"ja": "ちちぶ5号",
-		"en": "Chichibu 5",
-		"ko": "지치부 5",
-		"zh-Hans": "秩父 5",
-		"zh-Hant": "秩父 5"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5011.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5011",
@@ -4540,7 +4844,7 @@
 	],
 	"nt": [
 		"Seibu.SeibuChichibu.6003.SaturdayHoliday.2",
-		"Seibu.SeibuChichibuBranch.6003.SaturdayHoliday"
+		"Seibu.SeibuChichibuBranch.6053.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -4561,71 +4865,6 @@
 		"s": "Seibu.SeibuChichibu.Yokoze",
 		"a": "09:41"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.6003.SaturdayHoliday.2",
-	"t": "Seibu.SeibuChichibu.6003",
-	"r": "Seibu.SeibuChichibu",
-	"n": "6003",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"ds": [
-		"Chichibu.Chichibu.Mitsumineguchi"
-	],
-	"pt": [
-		"Seibu.SeibuChichibu.6003.SaturdayHoliday.1"
-	],
-	"nt": [
-		"Chichibu.Chichibu.S3.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"d": "09:44"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "09:48",
-		"d": "09:57"
-	}, {
-		"s": "Seibu.SeibuChichibu.Kagemori",
-		"a": "10:00"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.7.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.7",
-	"r": "Seibu.SeibuChichibu",
-	"n": "7",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.7.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "09:14"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "09:47",
-		"d": "09:47"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "09:51"
-	}],
-	"nm": [{
-		"ja": "ちちぶ7号",
-		"en": "Chichibu 7",
-		"ko": "지치부 7",
-		"zh-Hans": "秩父 7",
-		"zh-Hant": "秩父 7"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5013.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5013",
@@ -4648,22 +4887,22 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
 		"a": "09:50",
-		"d": "09:55"
+		"d": "09:54"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
 		"a": "09:58",
-		"d": "09:59"
+		"d": "09:58"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
 		"a": "10:04",
-		"d": "10:05"
+		"d": "10:04"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "10:09",
-		"d": "10:11"
+		"a": "10:08",
+		"d": "10:10"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "10:15"
+		"a": "10:14"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.5015.SaturdayHoliday",
@@ -4691,10 +4930,10 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
 		"a": "10:18",
-		"d": "10:22"
+		"d": "10:21"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "10:28",
+		"a": "10:27",
 		"d": "10:32"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
@@ -4704,41 +4943,6 @@
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
 		"a": "10:41"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.9.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.9",
-	"r": "Seibu.SeibuChichibu",
-	"n": "9",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.9.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "10:13"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "10:48",
-		"d": "10:49"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "10:53"
-	}],
-	"nm": [{
-		"ja": "ちちぶ9号",
-		"en": "Chichibu 9",
-		"ko": "지치부 9",
-		"zh-Hans": "秩父 9",
-		"zh-Hant": "秩父 9"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5017.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5017",
@@ -4818,41 +5022,6 @@
 		"a": "11:32"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.11.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.11",
-	"r": "Seibu.SeibuChichibu",
-	"n": "11",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.11.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "11:11"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "11:42",
-		"d": "11:43"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "11:47"
-	}],
-	"nm": [{
-		"ja": "ちちぶ11号",
-		"en": "Chichibu 11",
-		"ko": "지치부 11",
-		"zh-Hans": "秩父 11",
-		"zh-Hant": "秩父 11"
-	}],
-	"v": "001"
-}, {
 	"id": "Seibu.SeibuChichibu.5021.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5021",
 	"r": "Seibu.SeibuChichibu",
@@ -4930,41 +5099,6 @@
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
 		"a": "12:32"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.13.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.13",
-	"r": "Seibu.SeibuChichibu",
-	"n": "13",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.13.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "12:11"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "12:42",
-		"d": "12:43"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "12:47"
-	}],
-	"nm": [{
-		"ja": "ちちぶ13号",
-		"en": "Chichibu 13",
-		"ko": "지치부 13",
-		"zh-Hans": "秩父 13",
-		"zh-Hant": "秩父 13"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5025.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5025",
@@ -5044,41 +5178,6 @@
 		"a": "13:34"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.15.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.15",
-	"r": "Seibu.SeibuChichibu",
-	"n": "15",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.15.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "13:11"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "13:42",
-		"d": "13:43"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "13:47"
-	}],
-	"nm": [{
-		"ja": "ちちぶ15号",
-		"en": "Chichibu 15",
-		"ko": "지치부 15",
-		"zh-Hans": "秩父 15",
-		"zh-Hant": "秩父 15"
-	}],
-	"v": "001"
-}, {
 	"id": "Seibu.SeibuChichibu.5029.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5029",
 	"r": "Seibu.SeibuChichibu",
@@ -5108,10 +5207,10 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
 		"a": "13:52",
-		"d": "13:53"
+		"d": "13:52"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "13:57",
+		"a": "13:56",
 		"d": "13:57"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -5156,41 +5255,6 @@
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
 		"a": "14:32"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.17.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.17",
-	"r": "Seibu.SeibuChichibu",
-	"n": "17",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.17.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "14:11"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "14:42",
-		"d": "14:43"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "14:47"
-	}],
-	"nm": [{
-		"ja": "ちちぶ17号",
-		"en": "Chichibu 17",
-		"ko": "지치부 17",
-		"zh-Hans": "秩父 17",
-		"zh-Hant": "秩父 17"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5033.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5033",
@@ -5270,41 +5334,6 @@
 		"a": "15:32"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.19.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.19",
-	"r": "Seibu.SeibuChichibu",
-	"n": "19",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.19.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "15:11"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "15:42",
-		"d": "15:43"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "15:47"
-	}],
-	"nm": [{
-		"ja": "ちちぶ19号",
-		"en": "Chichibu 19",
-		"ko": "지치부 19",
-		"zh-Hans": "秩父 19",
-		"zh-Hant": "秩父 19"
-	}],
-	"v": "001"
-}, {
 	"id": "Seibu.SeibuChichibu.5037.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5037",
 	"r": "Seibu.SeibuChichibu",
@@ -5333,7 +5362,7 @@
 		"d": "15:46"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "15:56",
+		"a": "15:55",
 		"d": "16:02"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
@@ -5361,7 +5390,7 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
-		"d": "16:04"
+		"d": "16:03"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
 		"a": "16:08",
@@ -5377,46 +5406,11 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
 		"a": "16:27",
-		"d": "16:31"
+		"d": "16:30"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "16:35"
+		"a": "16:34"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.21.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.21",
-	"r": "Seibu.SeibuChichibu",
-	"n": "21",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.21.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "16:12"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "16:43",
-		"d": "16:44"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "16:48"
-	}],
-	"nm": [{
-		"ja": "ちちぶ21号",
-		"en": "Chichibu 21",
-		"ko": "지치부 21",
-		"zh-Hans": "秩父 21",
-		"zh-Hant": "秩父 21"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5041.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5041",
@@ -5451,10 +5445,10 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
 		"a": "17:06",
-		"d": "17:11"
+		"d": "17:10"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "17:15"
+		"a": "17:14"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.5043.SaturdayHoliday",
@@ -5495,41 +5489,6 @@
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
 		"a": "17:41"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.25.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.25",
-	"r": "Seibu.SeibuChichibu",
-	"n": "25",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.25.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "17:12"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "17:46",
-		"d": "17:47"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "17:51"
-	}],
-	"nm": [{
-		"ja": "ちちぶ25号",
-		"en": "Chichibu 25",
-		"ko": "지치부 25",
-		"zh-Hans": "秩父 25",
-		"zh-Hant": "秩父 25"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5045.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5045",
@@ -5609,41 +5568,6 @@
 		"a": "18:50"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.29.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.29",
-	"r": "Seibu.SeibuChichibu",
-	"n": "29",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.29.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "18:15"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "18:48",
-		"d": "18:48"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "18:52"
-	}],
-	"nm": [{
-		"ja": "ちちぶ29号",
-		"en": "Chichibu 29",
-		"ko": "지치부 29",
-		"zh-Hans": "秩父 29",
-		"zh-Hant": "秩父 29"
-	}],
-	"v": "001"
-}, {
 	"id": "Seibu.SeibuChichibu.5049.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5049",
 	"r": "Seibu.SeibuChichibu",
@@ -5722,41 +5646,6 @@
 		"a": "19:48"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.33.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.33",
-	"r": "Seibu.SeibuChichibu",
-	"n": "33",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.33.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "19:13"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "19:46",
-		"d": "19:47"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "19:51"
-	}],
-	"nm": [{
-		"ja": "ちちぶ33号",
-		"en": "Chichibu 33",
-		"ko": "지치부 33",
-		"zh-Hans": "秩父 33",
-		"zh-Hant": "秩父 33"
-	}],
-	"v": "001"
-}, {
 	"id": "Seibu.SeibuChichibu.5053.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5053",
 	"r": "Seibu.SeibuChichibu",
@@ -5795,41 +5684,6 @@
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
 		"a": "20:33"
 	}]
-}, {
-	"id": "Seibu.SeibuChichibu.37.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.37",
-	"r": "Seibu.SeibuChichibu",
-	"n": "37",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.37.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "20:14"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "20:47",
-		"d": "20:48"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "20:52"
-	}],
-	"nm": [{
-		"ja": "ちちぶ37号",
-		"en": "Chichibu 37",
-		"ko": "지치부 37",
-		"zh-Hans": "秩父 37",
-		"zh-Hant": "秩父 37"
-	}],
-	"v": "001"
 }, {
 	"id": "Seibu.SeibuChichibu.5055.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5055",
@@ -5909,41 +5763,6 @@
 		"a": "21:48"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.41.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.41",
-	"r": "Seibu.SeibuChichibu",
-	"n": "41",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.41.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "21:13"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "21:46",
-		"d": "21:47"
-	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "21:51"
-	}],
-	"nm": [{
-		"ja": "ちちぶ41号",
-		"en": "Chichibu 41",
-		"ko": "지치부 41",
-		"zh-Hans": "秩父 41",
-		"zh-Hant": "秩父 41"
-	}],
-	"v": "001"
-}, {
 	"id": "Seibu.SeibuChichibu.5059.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5059",
 	"r": "Seibu.SeibuChichibu",
@@ -5961,62 +5780,27 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Agano",
-		"d": "22:10"
+		"d": "22:16"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "22:15",
-		"d": "22:15"
+		"a": "22:20",
+		"d": "22:20"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "22:18",
-		"d": "22:19"
+		"a": "22:24",
+		"d": "22:26"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "22:27",
-		"d": "22:27"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
 		"a": "22:31",
 		"d": "22:32"
 	}, {
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "22:36"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.45.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.45",
-	"r": "Seibu.SeibuChichibu",
-	"n": "45",
-	"y": "Seibu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Ikebukuro.Ikebukuro"
-	],
-	"ds": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.45.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Hanno",
-		"d": "22:13"
-	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "22:44",
-		"d": "22:44"
+		"a": "22:36",
+		"d": "22:36"
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"a": "22:48"
-	}],
-	"nm": [{
-		"ja": "ちちぶ45号",
-		"en": "Chichibu 45",
-		"ko": "지치부 45",
-		"zh-Hans": "秩父 45",
-		"zh-Hant": "秩父 45"
-	}],
-	"v": "001"
+		"a": "22:40"
+	}]
 }, {
 	"id": "Seibu.SeibuChichibu.5061.SaturdayHoliday",
 	"t": "Seibu.SeibuChichibu.5061",
@@ -6094,6 +5878,66 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
 		"a": "23:57"
+	}]
+}, {
+	"id": "Seibu.SeibuChichibu.6001.SaturdayHoliday.2",
+	"t": "Seibu.SeibuChichibu.6001",
+	"r": "Seibu.SeibuChichibu",
+	"n": "6001",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"ds": [
+		"Chichibu.Chichibu.Mitsumineguchi"
+	],
+	"pt": [
+		"Seibu.SeibuChichibu.6001.SaturdayHoliday.1"
+	],
+	"nt": [
+		"Chichibu.Chichibu.S1.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"d": "08:43"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "08:47",
+		"d": "08:57"
+	}, {
+		"s": "Seibu.SeibuChichibu.Kagemori",
+		"a": "09:00"
+	}]
+}, {
+	"id": "Seibu.SeibuChichibu.6003.SaturdayHoliday.2",
+	"t": "Seibu.SeibuChichibu.6003",
+	"r": "Seibu.SeibuChichibu",
+	"n": "6003",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"ds": [
+		"Chichibu.Chichibu.Mitsumineguchi"
+	],
+	"pt": [
+		"Seibu.SeibuChichibu.6003.SaturdayHoliday.1"
+	],
+	"nt": [
+		"Chichibu.Chichibu.S3.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"d": "09:44"
+	}, {
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"a": "09:48",
+		"d": "09:57"
+	}, {
+		"s": "Seibu.SeibuChichibu.Kagemori",
+		"a": "10:00"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.5002.SaturdayHoliday",
@@ -6279,7 +6123,7 @@
 		"a": "07:27"
 	}],
 	"nm": [{
-		"ja": "ちちぶ68号",
+		"ja": "ちちぶ 68号",
 		"en": "Chichibu 68",
 		"ko": "지치부 68",
 		"zh-Hans": "秩父 68",
@@ -6392,7 +6236,7 @@
 		"a": "08:00"
 	}],
 	"nm": [{
-		"ja": "ちちぶ70号",
+		"ja": "ちちぶ 70号",
 		"en": "Chichibu 70",
 		"ko": "지치부 70",
 		"zh-Hans": "秩父 70",
@@ -6456,17 +6300,17 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "07:55"
+		"d": "07:54"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "07:58",
-		"d": "07:59"
+		"a": "07:57",
+		"d": "07:58"
 	}, {
 		"s": "Seibu.SeibuChichibu.Hanno",
 		"a": "08:33"
 	}],
 	"nm": [{
-		"ja": "ちちぶ72号",
+		"ja": "ちちぶ 72号",
 		"en": "Chichibu 72",
 		"ko": "지치부 72",
 		"zh-Hans": "秩父 72",
@@ -6498,10 +6342,10 @@
 		"d": "08:28"
 	}, {
 		"s": "Seibu.SeibuChichibu.Hanno",
-		"a": "09:06"
+		"a": "09:07"
 	}],
 	"nm": [{
-		"ja": "ちちぶ18号",
+		"ja": "ちちぶ 18号",
 		"en": "Chichibu 18",
 		"ko": "지치부 18",
 		"zh-Hans": "秩父 18",
@@ -6614,7 +6458,7 @@
 		"a": "10:00"
 	}],
 	"nm": [{
-		"ja": "ちちぶ20号",
+		"ja": "ちちぶ 20号",
 		"en": "Chichibu 20",
 		"ko": "지치부 20",
 		"zh-Hans": "秩父 20",
@@ -6678,26 +6522,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "10:07"
+		"d": "10:06"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "10:10",
+		"a": "10:09",
 		"d": "10:10"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
 		"a": "10:15",
-		"d": "10:16"
+		"d": "10:15"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
 		"a": "10:21",
-		"d": "10:22"
+		"d": "10:21"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "10:26",
+		"a": "10:25",
 		"d": "10:26"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "10:31"
+		"a": "10:30"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.22.SaturdayHoliday",
@@ -6727,7 +6571,7 @@
 		"a": "11:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ22号",
+		"ja": "ちちぶ 22号",
 		"en": "Chichibu 22",
 		"ko": "지치부 22",
 		"zh-Hans": "秩父 22",
@@ -6752,23 +6596,23 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "10:41"
+		"d": "10:44"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "10:44",
-		"d": "10:48"
+		"a": "10:47",
+		"d": "10:47"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "10:53",
+		"a": "10:52",
 		"d": "10:53"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "10:59",
+		"a": "10:58",
 		"d": "10:59"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
 		"a": "11:03",
-		"d": "11:04"
+		"d": "11:03"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
 		"a": "11:08"
@@ -6802,11 +6646,11 @@
 		"d": "11:16"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "11:25",
-		"d": "11:26"
+		"a": "11:24",
+		"d": "11:24"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "11:29",
+		"a": "11:28",
 		"d": "11:31"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -6840,7 +6684,7 @@
 		"a": "12:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ24号",
+		"ja": "ちちぶ 24号",
 		"en": "Chichibu 24",
 		"ko": "지치부 24",
 		"zh-Hans": "秩父 24",
@@ -6865,14 +6709,14 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "11:38"
+		"d": "11:39"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "11:41",
-		"d": "11:46"
+		"a": "11:42",
+		"d": "11:42"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "11:50",
+		"a": "11:47",
 		"d": "11:52"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
@@ -6915,11 +6759,11 @@
 		"d": "12:16"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "12:25",
-		"d": "12:25"
+		"a": "12:24",
+		"d": "12:24"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "12:29",
+		"a": "12:28",
 		"d": "12:31"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -6953,7 +6797,7 @@
 		"a": "13:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ26号",
+		"ja": "ちちぶ 26号",
 		"en": "Chichibu 26",
 		"ko": "지치부 26",
 		"zh-Hans": "秩父 26",
@@ -6978,14 +6822,14 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "12:38"
+		"d": "12:39"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "12:41",
-		"d": "12:46"
+		"a": "12:42",
+		"d": "12:42"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "12:50",
+		"a": "12:47",
 		"d": "12:52"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
@@ -7028,11 +6872,11 @@
 		"d": "13:16"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "13:25",
-		"d": "13:25"
+		"a": "13:24",
+		"d": "13:24"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "13:29",
+		"a": "13:28",
 		"d": "13:31"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -7066,7 +6910,7 @@
 		"a": "14:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ28号",
+		"ja": "ちちぶ 28号",
 		"en": "Chichibu 28",
 		"ko": "지치부 28",
 		"zh-Hans": "秩父 28",
@@ -7091,14 +6935,14 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "13:38"
+		"d": "13:39"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "13:41",
-		"d": "13:46"
+		"a": "13:42",
+		"d": "13:42"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "13:50",
+		"a": "13:47",
 		"d": "13:52"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
@@ -7141,11 +6985,11 @@
 		"d": "14:16"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "14:25",
-		"d": "14:25"
+		"a": "14:24",
+		"d": "14:24"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "14:29",
+		"a": "14:28",
 		"d": "14:31"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -7179,7 +7023,7 @@
 		"a": "15:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ30号",
+		"ja": "ちちぶ 30号",
 		"en": "Chichibu 30",
 		"ko": "지치부 30",
 		"zh-Hans": "秩父 30",
@@ -7204,14 +7048,14 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "14:38"
+		"d": "14:39"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "14:41",
-		"d": "14:46"
+		"a": "14:42",
+		"d": "14:42"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "14:50",
+		"a": "14:47",
 		"d": "14:52"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
@@ -7243,22 +7087,22 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "15:07"
+		"d": "15:06"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "15:10",
-		"d": "15:10"
+		"a": "15:09",
+		"d": "15:09"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "15:15",
+		"a": "15:14",
 		"d": "15:16"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "15:25",
-		"d": "15:25"
+		"a": "15:24",
+		"d": "15:24"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "15:29",
+		"a": "15:28",
 		"d": "15:31"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
@@ -7292,7 +7136,7 @@
 		"a": "16:02"
 	}],
 	"nm": [{
-		"ja": "ちちぶ32号",
+		"ja": "ちちぶ 32号",
 		"en": "Chichibu 32",
 		"ko": "지치부 32",
 		"zh-Hans": "秩父 32",
@@ -7317,29 +7161,29 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "15:38"
+		"d": "15:39"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "15:41",
-		"d": "15:43"
+		"a": "15:42",
+		"d": "15:42"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "15:48",
+		"a": "15:47",
 		"d": "15:48"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "15:54",
-		"d": "15:55"
+		"a": "15:53",
+		"d": "15:54"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
 		"a": "15:58",
-		"d": "15:59"
+		"d": "15:58"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
 		"a": "16:03"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.6002.SaturdayHoliday.1",
+	"id": "Seibu.SeibuChichibu.6002.SaturdayHoliday.2",
 	"t": "Seibu.SeibuChichibu.6002",
 	"r": "Seibu.SeibuChichibu",
 	"n": "6002",
@@ -7355,7 +7199,7 @@
 		"Chichibu.Chichibu.S6.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.SeibuChichibu.6002.SaturdayHoliday.2"
+		"Seibu.SeibuChichibu.6002.SaturdayHoliday.1"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Kagemori",
@@ -7363,50 +7207,10 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
 		"a": "15:44",
-		"d": "15:51"
+		"d": "15:50"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "15:54"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.6002.SaturdayHoliday.2",
-	"t": "Seibu.SeibuChichibu.6002",
-	"r": "Seibu.SeibuChichibu",
-	"n": "6002",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Chichibu.Chichibu.Mitsumineguchi",
-		"Chichibu.Chichibu.Nagatoro"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"pt": [
-		"Seibu.SeibuChichibu.6002.SaturdayHoliday.1",
-		"Seibu.SeibuChichibuBranch.6002.SaturdayHoliday"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.6002.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"d": "15:57"
-	}, {
-		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "16:02",
-		"d": "16:02"
-	}, {
-		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "16:08",
-		"d": "16:08"
-	}, {
-		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "16:12",
-		"d": "16:13"
-	}, {
-		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "16:17"
+		"a": "15:53"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.36.SaturdayHoliday",
@@ -7436,7 +7240,7 @@
 		"a": "17:02"
 	}],
 	"nm": [{
-		"ja": "ちちぶ36号",
+		"ja": "ちちぶ 36号",
 		"en": "Chichibu 36",
 		"ko": "지치부 36",
 		"zh-Hans": "秩父 36",
@@ -7444,46 +7248,46 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.1002.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.1002",
+	"id": "Seibu.SeibuChichibu.5046.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.5046",
 	"r": "Seibu.SeibuChichibu",
-	"n": "1002",
-	"y": "Seibu.RapidExpress",
+	"n": "5046",
+	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
 		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Ikebukuro"
+		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.1002.SaturdayHoliday"
+		"Seibu.Ikebukuro.5046.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "16:28"
+		"d": "16:27"
 	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "16:31",
-		"d": "16:31"
+		"a": "16:30",
+		"d": "16:34"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "16:36",
-		"d": "16:41"
+		"a": "16:39",
+		"d": "16:40"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
 		"a": "16:46",
 		"d": "16:47"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "16:51",
+		"a": "16:50",
 		"d": "16:52"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
 		"a": "16:56"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.6004.SaturdayHoliday.1",
+	"id": "Seibu.SeibuChichibu.6004.SaturdayHoliday.2",
 	"t": "Seibu.SeibuChichibu.6004",
 	"r": "Seibu.SeibuChichibu",
 	"n": "6004",
@@ -7499,7 +7303,7 @@
 		"Chichibu.Chichibu.S8.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.SeibuChichibu.6004.SaturdayHoliday.2"
+		"Seibu.SeibuChichibu.6004.SaturdayHoliday.1"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.Kagemori",
@@ -7513,44 +7317,43 @@
 		"a": "16:54"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.6004.SaturdayHoliday.2",
-	"t": "Seibu.SeibuChichibu.6004",
+	"id": "Seibu.SeibuChichibu.5048.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.5048",
 	"r": "Seibu.SeibuChichibu",
-	"n": "6004",
+	"n": "5048",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
-		"Chichibu.Chichibu.Mitsumineguchi",
-		"Chichibu.Chichibu.Nagatoro"
+		"Seibu.SeibuChichibu.SeibuChichibu"
 	],
 	"ds": [
 		"Seibu.Ikebukuro.Hanno"
 	],
-	"pt": [
-		"Seibu.SeibuChichibu.6004.SaturdayHoliday.1",
-		"Seibu.SeibuChichibuBranch.6004.SaturdayHoliday"
-	],
 	"nt": [
-		"Seibu.Ikebukuro.6004.SaturdayHoliday"
+		"Seibu.Ikebukuro.5048.SaturdayHoliday"
 	],
 	"tt": [{
+		"s": "Seibu.SeibuChichibu.SeibuChichibu",
+		"d": "17:00"
+	}, {
 		"s": "Seibu.SeibuChichibu.Yokoze",
-		"d": "16:57"
+		"a": "17:03",
+		"d": "17:07"
 	}, {
 		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "17:02",
-		"d": "17:02"
+		"a": "17:11",
+		"d": "17:16"
 	}, {
 		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "17:08",
-		"d": "17:08"
+		"a": "17:22",
+		"d": "17:26"
 	}, {
 		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "17:12",
-		"d": "17:13"
+		"a": "17:30",
+		"d": "17:32"
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "17:17"
+		"a": "17:36"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.404.SaturdayHoliday",
@@ -7570,7 +7373,7 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "17:05"
+		"d": "17:07"
 	}, {
 		"s": "Seibu.SeibuChichibu.Hanno",
 		"a": "17:45"
@@ -7581,45 +7384,6 @@
 		"ko": "S-트레인 4",
 		"zh-Hans": "S-Train 4",
 		"zh-Hant": "S-Train 4"
-	}]
-}, {
-	"id": "Seibu.SeibuChichibu.5046.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.5046",
-	"r": "Seibu.SeibuChichibu",
-	"n": "5046",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.SeibuChichibu.SeibuChichibu"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.5046.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuChichibu.SeibuChichibu",
-		"d": "17:07"
-	}, {
-		"s": "Seibu.SeibuChichibu.Yokoze",
-		"a": "17:10",
-		"d": "17:11"
-	}, {
-		"s": "Seibu.SeibuChichibu.Ashigakubo",
-		"a": "17:16",
-		"d": "17:16"
-	}, {
-		"s": "Seibu.SeibuChichibu.Shomaru",
-		"a": "17:22",
-		"d": "17:26"
-	}, {
-		"s": "Seibu.SeibuChichibu.NishiAgano",
-		"a": "17:29",
-		"d": "17:32"
-	}, {
-		"s": "Seibu.SeibuChichibu.Agano",
-		"a": "17:36"
 	}]
 }, {
 	"id": "Seibu.SeibuChichibu.40.SaturdayHoliday",
@@ -7649,7 +7413,7 @@
 		"a": "18:02"
 	}],
 	"nm": [{
-		"ja": "ちちぶ40号",
+		"ja": "ちちぶ 40号",
 		"en": "Chichibu 40",
 		"ko": "지치부 40",
 		"zh-Hans": "秩父 40",
@@ -7657,10 +7421,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5048.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.5048",
+	"id": "Seibu.SeibuChichibu.5050.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.5050",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5048",
+	"n": "5050",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7670,7 +7434,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5048.SaturdayHoliday"
+		"Seibu.Ikebukuro.5050.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -7696,10 +7460,10 @@
 		"a": "17:58"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5050.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.5050",
+	"id": "Seibu.SeibuChichibu.5052.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.5052",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5050",
+	"n": "5052",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7709,7 +7473,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5050.SaturdayHoliday"
+		"Seibu.Ikebukuro.5052.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -7762,7 +7526,7 @@
 		"a": "19:01"
 	}],
 	"nm": [{
-		"ja": "ちちぶ44号",
+		"ja": "ちちぶ 44号",
 		"en": "Chichibu 44",
 		"ko": "지치부 44",
 		"zh-Hans": "秩父 44",
@@ -7770,10 +7534,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5052.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.5052",
+	"id": "Seibu.SeibuChichibu.5054.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.5054",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5052",
+	"n": "5054",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7783,7 +7547,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5052.SaturdayHoliday"
+		"Seibu.Ikebukuro.5054.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -7809,10 +7573,10 @@
 		"a": "18:59"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5054.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.5054",
+	"id": "Seibu.SeibuChichibu.5056.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.5056",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5054",
+	"n": "5056",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7822,7 +7586,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5054.SaturdayHoliday"
+		"Seibu.Ikebukuro.5056.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -7875,7 +7639,7 @@
 		"a": "20:03"
 	}],
 	"nm": [{
-		"ja": "ちちぶ48号",
+		"ja": "ちちぶ 48号",
 		"en": "Chichibu 48",
 		"ko": "지치부 48",
 		"zh-Hans": "秩父 48",
@@ -7883,10 +7647,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5056.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.5056",
+	"id": "Seibu.SeibuChichibu.5058.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.5058",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5056",
+	"n": "5058",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7896,7 +7660,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5056.SaturdayHoliday"
+		"Seibu.Ikebukuro.5058.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -7949,7 +7713,7 @@
 		"a": "21:00"
 	}],
 	"nm": [{
-		"ja": "ちちぶ52号",
+		"ja": "ちちぶ 52号",
 		"en": "Chichibu 52",
 		"ko": "지치부 52",
 		"zh-Hans": "秩父 52",
@@ -7957,10 +7721,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5058.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.5058",
+	"id": "Seibu.SeibuChichibu.5060.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.5060",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5058",
+	"n": "5060",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7970,7 +7734,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5058.SaturdayHoliday"
+		"Seibu.Ikebukuro.5060.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -7996,10 +7760,10 @@
 		"a": "21:02"
 	}]
 }, {
-	"id": "Seibu.SeibuChichibu.5060.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.5060",
+	"id": "Seibu.SeibuChichibu.5062.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.5062",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5060",
+	"n": "5062",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -8009,7 +7773,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5060.SaturdayHoliday"
+		"Seibu.Ikebukuro.5062.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -8062,7 +7826,7 @@
 		"a": "22:03"
 	}],
 	"nm": [{
-		"ja": "ちちぶ56号",
+		"ja": "ちちぶ 56号",
 		"en": "Chichibu 56",
 		"ko": "지치부 56",
 		"zh-Hans": "秩父 56",
@@ -8070,10 +7834,10 @@
 	}],
 	"v": "001"
 }, {
-	"id": "Seibu.SeibuChichibu.5062.SaturdayHoliday",
-	"t": "Seibu.SeibuChichibu.5062",
+	"id": "Seibu.SeibuChichibu.5064.SaturdayHoliday",
+	"t": "Seibu.SeibuChichibu.5064",
 	"r": "Seibu.SeibuChichibu",
-	"n": "5062",
+	"n": "5064",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -8083,7 +7847,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.5062.SaturdayHoliday"
+		"Seibu.Ikebukuro.5064.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuChichibu.SeibuChichibu",
@@ -8107,5 +7871,85 @@
 	}, {
 		"s": "Seibu.SeibuChichibu.Agano",
 		"a": "22:37"
+	}]
+}, {
+	"id": "Seibu.SeibuChichibu.6002.SaturdayHoliday.1",
+	"t": "Seibu.SeibuChichibu.6002",
+	"r": "Seibu.SeibuChichibu",
+	"n": "6002",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Chichibu.Chichibu.Mitsumineguchi",
+		"Chichibu.Chichibu.Nagatoro"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"pt": [
+		"Seibu.SeibuChichibu.6002.SaturdayHoliday.2",
+		"Seibu.SeibuChichibuBranch.6052.SaturdayHoliday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.6002.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"d": "15:57"
+	}, {
+		"s": "Seibu.SeibuChichibu.Ashigakubo",
+		"a": "16:02",
+		"d": "16:02"
+	}, {
+		"s": "Seibu.SeibuChichibu.Shomaru",
+		"a": "16:08",
+		"d": "16:08"
+	}, {
+		"s": "Seibu.SeibuChichibu.NishiAgano",
+		"a": "16:12",
+		"d": "16:13"
+	}, {
+		"s": "Seibu.SeibuChichibu.Agano",
+		"a": "16:17"
+	}]
+}, {
+	"id": "Seibu.SeibuChichibu.6004.SaturdayHoliday.1",
+	"t": "Seibu.SeibuChichibu.6004",
+	"r": "Seibu.SeibuChichibu",
+	"n": "6004",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Chichibu.Chichibu.Mitsumineguchi",
+		"Chichibu.Chichibu.Nagatoro"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"pt": [
+		"Seibu.SeibuChichibu.6004.SaturdayHoliday.2",
+		"Seibu.SeibuChichibuBranch.6054.SaturdayHoliday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.6004.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuChichibu.Yokoze",
+		"d": "16:57"
+	}, {
+		"s": "Seibu.SeibuChichibu.Ashigakubo",
+		"a": "17:02",
+		"d": "17:02"
+	}, {
+		"s": "Seibu.SeibuChichibu.Shomaru",
+		"a": "17:08",
+		"d": "17:08"
+	}, {
+		"s": "Seibu.SeibuChichibu.NishiAgano",
+		"a": "17:12",
+		"d": "17:13"
+	}, {
+		"s": "Seibu.SeibuChichibu.Agano",
+		"a": "17:17"
 	}]
 }]
