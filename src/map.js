@@ -131,10 +131,6 @@ export default class extends Evented {
             me.map.on(event, me.fire.bind(me));
         });
 
-        me.map.once('load', () => {
-            hideLoader(me.container);
-        });
-
         Promise.all([
             loader.loadStaticData(me.dataUrl, me.lang, me.clock)
                 .then(me.initData.bind(me))
@@ -592,6 +588,14 @@ export default class extends Evented {
         const me = this,
             {lang, dict, clock, map} = me,
             unit = Math.pow(2, 14 - helpers.clamp(map.getZoom(), 13, 19));
+
+        if (me.map.loaded()) {
+            hideLoader(me.container);
+        } else {
+            me.map.once('load', () => {
+                hideLoader(me.container);
+            });
+        }
 
         me.layerZoom = helpers.clamp(Math.floor(map.getZoom()), 13, 18);
         me.objectUnit = Math.max(unit * .19, .02);
