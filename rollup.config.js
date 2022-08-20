@@ -22,6 +22,17 @@ const sassRender = (content, id) => new Promise((resolve, reject) => {
 	resolve({code: result.css.toString()});
 });
 
+const onwarn = (warning, defaultHandler) => {
+	const {code, importer, loc} = warning;
+	if (code == 'CIRCULAR_DEPENDENCY' && importer.includes('@luma.gl')) {
+		return;
+	}
+	if ((code == 'MISSING_EXPORT' || code == 'EVAL') && loc.file.includes('@loaders.gl')) {
+		return;
+	}
+	defaultHandler(warning)
+}
+
 export default [{
 	input: 'src/loader/index.js',
 	output: {
@@ -31,7 +42,6 @@ export default [{
 		indent: false,
 		sourcemap: true
 	},
-	external: ['fs', 'worker_threads', 'https'],
 	plugins: [
 		resolve(),
 		commonjs()
@@ -46,9 +56,11 @@ export default [{
 		sourcemap: true,
 		banner
 	},
-	external: ['fs', 'util', 'module', 'path', 'child_process'],
 	plugins: [
-		resolve(),
+		resolve({
+			browser: true,
+			preferBuiltins: false
+		}),
 		postcss({
 			preprocessor: sassRender,
 			plugins: [
@@ -59,12 +71,14 @@ export default [{
 		}),
 		commonjs(),
 		replace({
+			preventAssignment: true,
 			'process.env.NODE_ENV': '\'development\'',
 			'log.error': '(() => () => {})',
 			'1.01*': '2*'
 		}),
 		image()
-	]
+	],
+	onwarn
 }, {
 	input: 'src/index.js',
 	output: {
@@ -75,9 +89,11 @@ export default [{
 		sourcemap: true,
 		banner
 	},
-	external: ['fs', 'util', 'module', 'path', 'child_process'],
 	plugins: [
-		resolve(),
+		resolve({
+			browser: true,
+			preferBuiltins: false
+		}),
 		postcss({
 			preprocessor: sassRender,
 			plugins: [
@@ -89,6 +105,7 @@ export default [{
 		}),
 		commonjs(),
 		replace({
+			preventAssignment: true,
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})',
 			'1.01*': '2*'
@@ -102,7 +119,8 @@ export default [{
 		strip({
 			sourceMap: true
 		})
-	]
+	],
+	onwarn
 }, {
 	input: 'src/index.esm.js',
 	output: {
@@ -111,9 +129,11 @@ export default [{
 		indent: false,
 		banner
 	},
-	external: ['fs', 'util', 'module', 'path', 'child_process'],
 	plugins: [
-		resolve(),
+		resolve({
+			browser: true,
+			preferBuiltins: false
+		}),
 		postcss({
 			preprocessor: sassRender,
 			plugins: [
@@ -123,10 +143,12 @@ export default [{
 		}),
 		commonjs(),
 		replace({
+			preventAssignment: true,
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})',
 			'1.01*': '2*'
 		}),
 		image()
-	]
+	],
+	onwarn
 }];

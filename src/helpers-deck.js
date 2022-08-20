@@ -1,18 +1,21 @@
 import {WebMercatorViewport} from '@deck.gl/core';
 
 export function getViewport(deck, map) {
-    const center = map.getCenter();
+    const {lng, lat} = map.getCenter();
 
     return new WebMercatorViewport({
+        id: 'mapbox',
         x: 0,
         y: 0,
         width: deck.width,
         height: deck.height,
-        longitude: center.lng,
-        latitude: center.lat,
+        longitude: ((lng + 540) % 360) - 180,
+        latitude: lat,
         zoom: map.getZoom(),
         bearing: map.getBearing(),
         pitch: map.getPitch(),
+        padding: map.getPadding(),
+        repeat: map.getRenderWorldCopies(),
         nearZMultiplier: 0.02,
         farZMultiplier: 2
     });

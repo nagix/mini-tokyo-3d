@@ -43,13 +43,14 @@ MapboxLayer.prototype.render = function(...args) {
     const me = this,
         {deck, map} = me;
 
-    if (!deck.layerManager) {
+    if (!deck.isInitialized) {
         // Not yet initialized
         return;
     }
 
-    if (!deck.props.userData.currentViewport) {
-        deck.props.userData.currentViewport = getViewport(deck, map);
+    if (!deck.userData.currentViewport) {
+        // Get the modified viewport to support underground rendering
+        deck.userData.currentViewport = getViewport(deck, map);
     }
     render.apply(me, args);
 };
