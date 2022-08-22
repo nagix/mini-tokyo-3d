@@ -289,13 +289,13 @@
 .mini-tokyo-3d #panel-body {
     height: calc(100% - 50px);
     margin-top: 10px;
-    padding: 0 10px;
     overflow: auto;
     overscroll-behavior: contain;
     line-height: 130%;
 }
 .mini-tokyo-3d #panel-content{
     position: relative;
+    padding: 0 10px;
     overflow: hidden;
 }
 .mini-tokyo-3d .windows {
@@ -329,13 +329,15 @@
     width: 24px;
     height: 100%;
 }
+.mini-tokyo-3d .train-panel #railway-mark {
+    left: 10px;
+}
 .mini-tokyo-3d #train-mark {
     position: absolute;
     top: 0;
     left: 0;
     width: 44px;
     height: calc(100% + 20px);
-    margin: -10px;
 }
 .mini-tokyo-3d .station-row {
     display: table;
@@ -834,7 +836,7 @@
 .mini-tokyo-3d .panel.closed {
     height: 0;
 }
-.mini-tokyo-3d .search-panel.search-result #panel-body {
+.mini-tokyo-3d .search-panel.search-result #panel-content {
     padding: 0;
 }
 .mini-tokyo-3d .swiper-slide {
