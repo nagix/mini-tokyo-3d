@@ -252,7 +252,7 @@ export function showNotification(container, message) {
 export function getLang(input) {
     let lang = valueOrDefault(input, '');
 
-    if (!lang.match(/ja|en|ko|zh-Han[st]|th|ne|pt(-BR)/)) {
+    if (!lang.match(/ja|en|ko|zh-Han[st]|th|ne|pt-BR/)) {
         lang = (window.navigator.languages && window.navigator.languages[0]) ||
             window.navigator.language ||
             window.navigator.userLanguage ||
@@ -263,8 +263,6 @@ export function getLang(input) {
         lang = 'zh-Hant';
     } else if (lang.match(/zh/)) {
         lang = 'zh-Hans';
-    } else if (lang.match(/pt(-BR)/)) {
-        lang = 'pt';
     } else {
         lang = lang.substring(0, 2);
     }
