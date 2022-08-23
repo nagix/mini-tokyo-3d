@@ -62,14 +62,14 @@ export default class extends Panel {
                     ...color.slice(0, 3).map(c => `<div class="line-strip-long" style="background-color: ${c};"></div>`),
                     '</div>'
                 ].join('') : `<div style="background-color: ${color};"></div>`,
-                '<div>',
+                '<div><div class="desc-first-row">',
                 names ? names.map(name => name[lang] || name.en).join(dict['and']) : map.getLocalizedRailwayTitle(railwayID),
-                '<br><span class="desc-normal-style">',
+                '</div><div class="desc-second-row">',
                 `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y)}</span> `,
                 destination ?
                     dict['for'].replace('$1', map.getLocalizedStationTitle(destination)) :
                     map.getLocalizedRailDirectionTitle(train.d),
-                '</span></div></div>'
+                '</div></div></div>'
             ].join(''))
             .setHTML([
                 '<div id="timetable-content">',

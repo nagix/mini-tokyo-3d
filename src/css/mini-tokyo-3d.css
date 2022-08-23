@@ -285,8 +285,6 @@
 }
 .mini-tokyo-3d #panel-title {
     font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
 }
 .mini-tokyo-3d #panel-body {
     height: calc(100% - 50px);
@@ -721,7 +719,11 @@
 .mini-tokyo-3d .desc-caution {
     color: #f90;
 }
-.mini-tokyo-3d .desc-normal-style {
+.mini-tokyo-3d .desc-first-row {
+    height: 24px;
+    overflow: hidden;
+}
+.mini-tokyo-3d .desc-second-row {
     font-weight: normal;
 }
 .mini-tokyo-3d .line-strip {
