@@ -285,6 +285,8 @@
 }
 .mini-tokyo-3d #panel-title {
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .mini-tokyo-3d #panel-body {
     height: calc(100% - 50px);
