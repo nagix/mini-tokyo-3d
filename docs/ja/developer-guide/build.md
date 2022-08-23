@@ -13,23 +13,12 @@ Mini Tokyo 3D は次のデータソースを使用しており、ビルド時お
 
 データソース | サインアップ用 URL | アクセストークンの形式
 :-- | :-- | :--
-[東京公共交通オープンデータチャレンジ](https://tokyochallenge.odpt.org) | [リンク](https://developer-tokyochallenge.odpt.org/users/sign_up) | 数字と英小文字からなる文字列
 [公共交通オープンデータセンター](https://www.odpt.org) | [リンク](https://developer.odpt.org/users/sign_up) | 数字と英小文字からなる文字列
 [Mapbox](https://www.mapbox.com) | [リンク](https://account.mapbox.com/auth/signup/) | `pk.` で始まるピリオドを含む英数字文字列
 
-### 東京公共交通オープンデータチャレンジアクセストークンの入手
-
-Mini Tokyo 3D は[東京公共交通オープンデータチャレンジ](https://tokyochallenge.odpt.org)で配信されている列車データや旅客機データを利用しています。データの入手には開発者としての登録が必要ですが、無料で利用可能です。
-
-1. [開発者サイトへの登録](https://developer-tokyochallenge.odpt.org/users/sign_up)ページでユーザー情報を入力して、開発者登録をします。登録完了のメールが届くまでに数日かかる場合があります。
-2. 開発者アカウントでログイン後、画面上部のメニューから「Account」をクリックして「アクセストークンの確認・追加」を選びます。
-3. アクセストークン一覧が表示されます。アカウント作成直後はデフォルトの「DefaultApplication」のみが表示されます。「アクセストークンの追加発行」をクリックします。
-4. 「名前」に任意のアプリケーション名を入力して、「Submit」ボタンをクリックします。
-5. アクセストークン一覧に新たに作成されたトークンが表示されます。
-
 ### 公共交通オープンデータセンターアクセストークンの入手
 
-Mini Tokyo 3D は[公共交通オープンデータセンター](https://www.odpt.org)のデータも併せて利用しています。こちらも、データの入手には開発者としての登録が必要ですが、無料で利用可能です。
+Mini Tokyo 3D は[公共交通オープンデータセンター](https://www.odpt.org)で配信されている列車データや旅客機データを利用しています。データの入手には開発者としての登録が必要ですが、無料で利用可能です。
 
 1. [開発者サイトへの登録](https://developer.odpt.org/users/sign_up)ページでユーザー情報を入力して、開発者登録をします。登録完了のメールが届くまでに数日かかる場合があります。
 2. 開発者アカウントでログイン後、画面上部のメニューから「Account」をクリックして「アクセストークンの確認・追加」を選びます。
@@ -67,11 +56,10 @@ Mini Tokyo 3D のトップディレクトリに移動します。
 cd mini-tokyo-3d
 ```
 
-ビルド準備のステップで取得した東京公共交通オープンデータチャレンジ、および公共交通オープンデータセンターのアクセストークンを記載した JSON ファイルを作成し、`secrets` というファイル名でこのディレクトリに保存します。
+ビルド準備のステップで取得した公共交通オープンデータセンターのアクセストークンを記載した JSON ファイルを作成し、`secrets` というファイル名でこのディレクトリに保存します。
 
 ```json
 {
-    "tokyochallenge": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 ```

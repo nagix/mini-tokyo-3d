@@ -13,23 +13,12 @@ Mini Tokyo 3D uses the following data sources and requires an access token for e
 
 Data Source | Sign-Up URL | Access Token Format
 :-- | :-- | :--
-[Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/) | [Link](https://developer-tokyochallenge.odpt.org/en/users/sign_up) | A string of numbers and lowercase letters
 [Public Transportation Open Data Center](https://www.odpt.org) | [Link](https://developer.odpt.org/en/users/sign_up) | A string of numbers and lowercase letters
 [Mapbox](https://www.mapbox.com) | [Link](https://account.mapbox.com/auth/signup/) | Alphanumeric string containing a period beginning with `pk.`
 
-### Getting an Access Token for Open Data Challenge for Public Transportation in Tokyo
-
-Mini Tokyo 3D is using train and airplane data from the [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/). You need to register as a developer to get the data, but it is available for free.
-
-1. Register as a developer by entering your user information on the [developer site's registration page](https://developer-tokyochallenge.odpt.org/en/users/sign_up). It may take a few days to receive your registration confirmation email.
-2. After logging in with your developer account, click on "Account" in the menu at the top of the screen and select "Manage Access Token".
-3. A list of access tokens will be displayed. Only the "DefaultApplication" token will be displayed right after creating the account. Click on "Issuing an access token".
-4. Enter an application name in the "Name" field and click the "Submit" button.
-5. The newly created token will appear in the list of access tokens
-
 ### Getting an Access Token for Public Transportation Open Data Center
 
-Mini Tokyo 3D is also using data from the [Public Transportation Open Data Center](https://www.odpt.org). Again, you need to register as a developer to get the data, but it is available for free.
+Mini Tokyo 3D is using train and airplane data from the [Public Transportation Open Data Center](https://www.odpt.org). You need to register as a developer to get the data, but it is available for free.
 
 1. Register as a developer by entering your user information on the [developer site's registration page](https://developer.odpt.org/en/users/sign_up). It may take a few days to receive your registration confirmation email.
 2. After logging in with your developer account, click on "Account" in the menu at the top of the screen and select "Manage Access Token".
@@ -67,11 +56,10 @@ Go to the top directory of Mini Tokyo 3D.
 cd mini-tokyo-3d
 ```
 
-Create a JSON file containing the access tokens for Open Data Challenge for Public Transportation in Tokyo and Public Transportation Open Data Center obtained in the build preparation step and save it in this directory with the file name `secrets`.
+Create a JSON file containing the access token for the Public Transportation Open Data Center obtained in the build preparation step and save it in this directory with the file name `secrets`.
 
 ```json
 {
-    "tokyochallenge": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 ```

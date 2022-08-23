@@ -34,6 +34,7 @@ Name | Description
 **`name.ja`** | Name in Japanese
 **`name.ko`** | Name in Korean
 **`name.ne`** | Name in Nepali
+**`name.pt`** | Name in Portuguese
 **`name.th`** | Name in Thai
 **`name.zh-Hans`** | Name in Simplified Chinese
 **`name.zh-Hant`** | Name in Traditional Chinese
