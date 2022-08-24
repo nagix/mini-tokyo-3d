@@ -1,14 +1,14 @@
 {
   "name": "mini-tokyo-3d",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "A real-time 3D digital map of Tokyo's public transport system",
   "main": "dist/mini-tokyo-3d.js",
   "module": "dist/mini-tokyo-3d.esm.js",
   "style": "dist/mini-tokyo-3d.css",
   "dependencies": {
-    "@deck.gl/core": "^8.8.8",
-    "@deck.gl/layers": "^8.8.8",
-    "@deck.gl/mapbox": "^8.8.8",
+    "@deck.gl/core": "^8.8.9",
+    "@deck.gl/layers": "^8.8.9",
+    "@deck.gl/mapbox": "^8.8.9",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@turf/along": "^5.1.5",
     "@turf/bearing": "^5.1.5",
