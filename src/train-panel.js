@@ -105,8 +105,8 @@ export default class extends Panel {
                 p = performance.now() % 1500 / 1500;
 
             container.querySelector('#train-mark').innerHTML =
-                `<circle cx="22" cy="${y + 10}" r="${7 + p * 15}" fill="#ffffff" opacity="${1 - p}" />` +
-                `<circle cx="22" cy="${y + 10}" r="7" fill="#ffffff" />`;
+                `<circle cx="22" cy="${y}" r="${7 + p * 15}" fill="#ffffff" opacity="${1 - p}" />` +
+                `<circle cx="22" cy="${y}" r="7" fill="#ffffff" />`;
             if (scrollTop === undefined || scrollTop === bodyElement.scrollTop) {
                 bodyElement.scrollTop = Math.round(y - height / 2 + 4);
                 scrollTop = bodyElement.scrollTop;
