@@ -1,330 +1,8 @@
 [{
-	"id": "TokyoMetro.Chiyoda.A635S.Weekday",
-	"t": "TokyoMetro.Chiyoda.A635S",
+	"id": "TokyoMetro.Chiyoda.B1823S.Weekday",
+	"t": "TokyoMetro.Chiyoda.B1823S",
 	"r": "TokyoMetro.Chiyoda",
-	"n": "A635S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.YoyogiUehara",
-	"os": [
-		"JR-East.JobanLocal.Toride"
-	],
-	"ds": [
-		"TokyoMetro.Chiyoda.Kasumigaseki"
-	],
-	"pt": [
-		"JR-East.JobanLocal.634S.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"d": "07:12"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "07:16"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "07:20"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "07:23"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "07:24"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "07:27"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "07:29"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "07:31"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "07:34"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "07:35"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "07:37"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"a": "07:39"
-	}]
-}, {
-	"id": "TokyoMetro.Chiyoda.B735S.Weekday",
-	"t": "TokyoMetro.Chiyoda.B735S",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "B735S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.KitaAyase",
-	"os": [
-		"TokyoMetro.Chiyoda.Kasumigaseki"
-	],
-	"ds": [
-		"JR-East.JobanLocal.Matsudo"
-	],
-	"nt": [
-		"JR-East.JobanLocal.735S.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "07:50"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "07:52"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "07:54"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "07:55"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "07:58"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "08:00"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "08:02"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "08:04"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "08:06"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "08:08"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "08:12"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"a": "08:15"
-	}]
-}, {
-	"id": "TokyoMetro.Chiyoda.A1009K.Weekday",
-	"t": "TokyoMetro.Chiyoda.A1009K",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "A1009K",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.YoyogiUehara",
-	"os": [
-		"TokyoMetro.Chiyoda.Ayase"
-	],
-	"ds": [
-		"TokyoMetro.Chiyoda.YoyogiUehara"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"d": "10:52"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "10:56"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "10:59"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "11:02"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "11:04"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "11:06"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "11:08"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "11:10"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "11:12"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "11:14"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "11:16"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "11:18"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "11:20"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Akasaka",
-		"d": "11:21"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "11:24"
-	}, {
-		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "11:26"
-	}, {
-		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "11:28"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
-		"d": "11:30"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"a": "11:32"
-	}]
-}, {
-	"id": "TokyoMetro.Chiyoda.A1117K.Weekday",
-	"t": "TokyoMetro.Chiyoda.A1117K",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "A1117K",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.YoyogiUehara",
-	"os": [
-		"TokyoMetro.Chiyoda.Ayase"
-	],
-	"ds": [
-		"TokyoMetro.Chiyoda.YoyogiUehara"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"d": "11:12"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "11:16"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "11:19"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "11:22"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "11:24"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "11:26"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "11:28"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "11:30"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "11:32"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "11:34"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "11:36"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "11:38"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "11:40"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Akasaka",
-		"d": "11:41"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "11:44"
-	}, {
-		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "11:46"
-	}, {
-		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "11:48"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
-		"d": "11:50"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"a": "11:52"
-	}]
-}, {
-	"id": "TokyoMetro.Chiyoda.A1011K.Weekday",
-	"t": "TokyoMetro.Chiyoda.A1011K",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "A1011K",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.YoyogiUehara",
-	"os": [
-		"JR-East.JobanLocal.Abiko"
-	],
-	"ds": [
-		"TokyoMetro.Chiyoda.YoyogiUehara"
-	],
-	"pt": [
-		"JR-East.JobanLocal.1010K.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"d": "10:57"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "11:01"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "11:04"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "11:07"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "11:09"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "11:11"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "11:13"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "11:15"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "11:17"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "11:19"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "11:21"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "11:23"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "11:25"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Akasaka",
-		"d": "11:26"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "11:29"
-	}, {
-		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "11:31"
-	}, {
-		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "11:33"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
-		"d": "11:35"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"a": "11:37"
-	}]
-}, {
-	"id": "TokyoMetro.Chiyoda.B1931S.Weekday",
-	"t": "TokyoMetro.Chiyoda.B1931S",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "B1931S",
+	"n": "B1823S",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.KitaAyase",
 	"os": [
@@ -334,44 +12,150 @@
 		"JR-East.JobanLocal.Abiko"
 	],
 	"nt": [
-		"JR-East.JobanLocal.1931S.Weekday"
+		"JR-East.JobanLocal.1823S.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "19:09"
+		"d": "18:28"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "19:11"
+		"d": "18:31"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "19:13"
+		"d": "18:33"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "19:14"
+		"d": "18:35"
 	}, {
 		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "19:17"
+		"d": "18:37"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "19:18"
+		"d": "18:39"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "19:20"
+		"d": "18:41"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "19:23"
+		"d": "18:43"
 	}, {
 		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "19:25"
+		"d": "18:46"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "19:28"
+		"d": "18:48"
 	}, {
 		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "19:32"
+		"d": "18:52"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Ayase",
-		"a": "19:35"
+		"a": "18:55"
+	}]
+}, {
+	"id": "TokyoMetro.Chiyoda.A623S.Weekday",
+	"t": "TokyoMetro.Chiyoda.A623S",
+	"r": "TokyoMetro.Chiyoda",
+	"n": "A623S",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.YoyogiUehara",
+	"os": [
+		"TokyoMetro.Chiyoda.KitaAyase"
+	],
+	"ds": [
+		"TokyoMetro.Chiyoda.Kasumigaseki"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Chiyoda.KitaAyase",
+		"d": "06:52"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Ayase",
+		"d": "06:57"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KitaSenju",
+		"d": "07:00"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Machiya",
+		"d": "07:04"
+	}, {
+		"s": "TokyoMetro.Chiyoda.NishiNippori",
+		"d": "07:07"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Sendagi",
+		"d": "07:09"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nezu",
+		"d": "07:11"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Yushima",
+		"d": "07:13"
+	}, {
+		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
+		"d": "07:15"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Otemachi",
+		"d": "07:18"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nijubashimae",
+		"d": "07:19"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Hibiya",
+		"d": "07:21"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
+		"a": "07:23"
+	}]
+}, {
+	"id": "TokyoMetro.Chiyoda.B1725S.Weekday",
+	"t": "TokyoMetro.Chiyoda.B1725S",
+	"r": "TokyoMetro.Chiyoda",
+	"n": "B1725S",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.KitaAyase",
+	"os": [
+		"TokyoMetro.Chiyoda.Kasumigaseki"
+	],
+	"ds": [
+		"JR-East.JobanLocal.Kashiwa"
+	],
+	"nt": [
+		"JR-East.JobanLocal.1725S.Weekday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
+		"d": "17:12"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Hibiya",
+		"d": "17:14"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nijubashimae",
+		"d": "17:16"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Otemachi",
+		"d": "17:18"
+	}, {
+		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
+		"d": "17:20"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Yushima",
+		"d": "17:22"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nezu",
+		"d": "17:24"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Sendagi",
+		"d": "17:27"
+	}, {
+		"s": "TokyoMetro.Chiyoda.NishiNippori",
+		"d": "17:29"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Machiya",
+		"d": "17:32"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KitaSenju",
+		"d": "17:35"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Ayase",
+		"a": "17:38"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.A1003K.Weekday",
@@ -588,6 +372,151 @@
 	}, {
 		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
 		"a": "11:12"
+	}]
+}, {
+	"id": "TokyoMetro.Chiyoda.A1009K.Weekday",
+	"t": "TokyoMetro.Chiyoda.A1009K",
+	"r": "TokyoMetro.Chiyoda",
+	"n": "A1009K",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.YoyogiUehara",
+	"os": [
+		"TokyoMetro.Chiyoda.Ayase"
+	],
+	"ds": [
+		"TokyoMetro.Chiyoda.YoyogiUehara"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Chiyoda.Ayase",
+		"d": "10:52"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KitaSenju",
+		"d": "10:56"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Machiya",
+		"d": "10:59"
+	}, {
+		"s": "TokyoMetro.Chiyoda.NishiNippori",
+		"d": "11:02"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Sendagi",
+		"d": "11:04"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nezu",
+		"d": "11:06"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Yushima",
+		"d": "11:08"
+	}, {
+		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
+		"d": "11:10"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Otemachi",
+		"d": "11:12"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nijubashimae",
+		"d": "11:14"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Hibiya",
+		"d": "11:16"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
+		"d": "11:18"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
+		"d": "11:20"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Akasaka",
+		"d": "11:21"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nogizaka",
+		"d": "11:24"
+	}, {
+		"s": "TokyoMetro.Chiyoda.OmoteSando",
+		"d": "11:26"
+	}, {
+		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
+		"d": "11:28"
+	}, {
+		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
+		"d": "11:30"
+	}, {
+		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
+		"a": "11:32"
+	}]
+}, {
+	"id": "TokyoMetro.Chiyoda.A1011K.Weekday",
+	"t": "TokyoMetro.Chiyoda.A1011K",
+	"r": "TokyoMetro.Chiyoda",
+	"n": "A1011K",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.YoyogiUehara",
+	"os": [
+		"JR-East.JobanLocal.Abiko"
+	],
+	"ds": [
+		"TokyoMetro.Chiyoda.YoyogiUehara"
+	],
+	"pt": [
+		"JR-East.JobanLocal.1010K.Weekday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Chiyoda.Ayase",
+		"d": "10:57"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KitaSenju",
+		"d": "11:01"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Machiya",
+		"d": "11:04"
+	}, {
+		"s": "TokyoMetro.Chiyoda.NishiNippori",
+		"d": "11:07"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Sendagi",
+		"d": "11:09"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nezu",
+		"d": "11:11"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Yushima",
+		"d": "11:13"
+	}, {
+		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
+		"d": "11:15"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Otemachi",
+		"d": "11:17"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nijubashimae",
+		"d": "11:19"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Hibiya",
+		"d": "11:21"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
+		"d": "11:23"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
+		"d": "11:25"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Akasaka",
+		"d": "11:26"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nogizaka",
+		"d": "11:29"
+	}, {
+		"s": "TokyoMetro.Chiyoda.OmoteSando",
+		"d": "11:31"
+	}, {
+		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
+		"d": "11:33"
+	}, {
+		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
+		"d": "11:35"
+	}, {
+		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
+		"a": "11:37"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.A1011S.Weekday",
@@ -1554,6 +1483,77 @@
 	}, {
 		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
 		"a": "12:27"
+	}]
+}, {
+	"id": "TokyoMetro.Chiyoda.A1117K.Weekday",
+	"t": "TokyoMetro.Chiyoda.A1117K",
+	"r": "TokyoMetro.Chiyoda",
+	"n": "A1117K",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.YoyogiUehara",
+	"os": [
+		"TokyoMetro.Chiyoda.Ayase"
+	],
+	"ds": [
+		"TokyoMetro.Chiyoda.YoyogiUehara"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Chiyoda.Ayase",
+		"d": "11:12"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KitaSenju",
+		"d": "11:16"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Machiya",
+		"d": "11:19"
+	}, {
+		"s": "TokyoMetro.Chiyoda.NishiNippori",
+		"d": "11:22"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Sendagi",
+		"d": "11:24"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nezu",
+		"d": "11:26"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Yushima",
+		"d": "11:28"
+	}, {
+		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
+		"d": "11:30"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Otemachi",
+		"d": "11:32"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nijubashimae",
+		"d": "11:34"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Hibiya",
+		"d": "11:36"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
+		"d": "11:38"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
+		"d": "11:40"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Akasaka",
+		"d": "11:41"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nogizaka",
+		"d": "11:44"
+	}, {
+		"s": "TokyoMetro.Chiyoda.OmoteSando",
+		"d": "11:46"
+	}, {
+		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
+		"d": "11:48"
+	}, {
+		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
+		"d": "11:50"
+	}, {
+		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
+		"a": "11:52"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.A1119S.Weekday",
@@ -14719,77 +14719,6 @@
 		"a": "06:50"
 	}]
 }, {
-	"id": "TokyoMetro.Chiyoda.A604S.Weekday",
-	"t": "TokyoMetro.Chiyoda.A604S",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "A604S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.YoyogiUehara",
-	"os": [
-		"TokyoMetro.Chiyoda.Ayase"
-	],
-	"ds": [
-		"TokyoMetro.Chiyoda.YoyogiUehara"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"d": "07:02"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "07:06"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "07:09"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "07:12"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "07:14"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "07:16"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "07:18"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "07:21"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "07:23"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "07:25"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "07:27"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "07:29"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "07:31"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Akasaka",
-		"d": "07:33"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "07:35"
-	}, {
-		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "07:38"
-	}, {
-		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "07:39"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
-		"d": "07:41"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"a": "07:43"
-	}]
-}, {
 	"id": "TokyoMetro.Chiyoda.A605K.Weekday",
 	"t": "TokyoMetro.Chiyoda.A605K",
 	"r": "TokyoMetro.Chiyoda",
@@ -14964,55 +14893,55 @@
 		"d": "07:14"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "07:17"
+		"d": "07:18"
 	}, {
 		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "07:20"
+		"d": "07:21"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "07:22"
+		"d": "07:23"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "07:24"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
 		"d": "07:26"
 	}, {
+		"s": "TokyoMetro.Chiyoda.Yushima",
+		"d": "07:28"
+	}, {
 		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "07:29"
+		"d": "07:30"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "07:31"
+		"d": "07:32"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "07:33"
+		"d": "07:34"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "07:35"
+		"d": "07:36"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "07:37"
+		"d": "07:40"
 	}, {
 		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "07:39"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Akasaka",
 		"d": "07:42"
 	}, {
-		"s": "TokyoMetro.Chiyoda.Nogizaka",
+		"s": "TokyoMetro.Chiyoda.Akasaka",
 		"d": "07:44"
 	}, {
-		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "07:47"
+		"s": "TokyoMetro.Chiyoda.Nogizaka",
+		"d": "07:46"
 	}, {
-		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
+		"s": "TokyoMetro.Chiyoda.OmoteSando",
 		"d": "07:49"
 	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
+		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
 		"d": "07:51"
 	}, {
+		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
+		"d": "07:53"
+	}, {
 		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"a": "07:53"
+		"a": "07:54"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.A609K.Weekday",
@@ -15254,7 +15183,7 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Chiyoda.KitaAyase",
-		"d": "06:16"
+		"d": "06:14"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Ayase",
 		"d": "06:21"
@@ -15610,57 +15539,54 @@
 		"a": "07:27"
 	}]
 }, {
-	"id": "TokyoMetro.Chiyoda.A623S.Weekday",
-	"t": "TokyoMetro.Chiyoda.A623S",
+	"id": "TokyoMetro.Chiyoda.A635S.Weekday",
+	"t": "TokyoMetro.Chiyoda.A635S",
 	"r": "TokyoMetro.Chiyoda",
-	"n": "A623S",
+	"n": "A635S",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.YoyogiUehara",
 	"os": [
-		"TokyoMetro.Chiyoda.KitaAyase"
+		"JR-East.JobanLocal.Toride"
 	],
 	"ds": [
 		"TokyoMetro.Chiyoda.Kasumigaseki"
 	],
 	"tt": [{
-		"s": "TokyoMetro.Chiyoda.KitaAyase",
-		"d": "06:52"
-	}, {
 		"s": "TokyoMetro.Chiyoda.Ayase",
-		"d": "06:57"
+		"d": "07:14"
 	}, {
 		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "07:00"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "07:04"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "07:07"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "07:09"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "07:11"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "07:13"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "07:15"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
 		"d": "07:18"
 	}, {
+		"s": "TokyoMetro.Chiyoda.Machiya",
+		"d": "07:22"
+	}, {
+		"s": "TokyoMetro.Chiyoda.NishiNippori",
+		"d": "07:25"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Sendagi",
+		"d": "07:27"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nezu",
+		"d": "07:29"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Yushima",
+		"d": "07:31"
+	}, {
+		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
+		"d": "07:34"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Otemachi",
+		"d": "07:36"
+	}, {
 		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "07:19"
+		"d": "07:38"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "07:21"
+		"d": "07:40"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"a": "07:23"
+		"a": "07:41"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.A637S.Weekday",
@@ -15897,36 +15823,33 @@
 	"ds": [
 		"TokyoMetro.Chiyoda.YoyogiUehara"
 	],
-	"pt": [
-		"JR-East.JobanLocal.646S.Weekday"
-	],
 	"tt": [{
 		"s": "TokyoMetro.Chiyoda.Ayase",
-		"d": "06:59"
+		"d": "07:00"
 	}, {
 		"s": "TokyoMetro.Chiyoda.KitaSenju",
 		"d": "07:03"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "07:06"
+		"d": "07:07"
 	}, {
 		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "07:09"
+		"d": "07:10"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "07:11"
+		"d": "07:12"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "07:13"
+		"d": "07:14"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "07:15"
+		"d": "07:16"
 	}, {
 		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "07:17"
+		"d": "07:18"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "07:20"
+		"d": "07:21"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nijubashimae",
 		"d": "07:22"
@@ -15935,25 +15858,25 @@
 		"d": "07:24"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "07:26"
+		"d": "07:27"
 	}, {
 		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
 		"d": "07:28"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Akasaka",
-		"d": "07:29"
+		"d": "07:30"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nogizaka",
 		"d": "07:32"
 	}, {
 		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "07:34"
+		"d": "07:35"
 	}, {
 		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "07:36"
+		"d": "07:37"
 	}, {
 		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
-		"d": "07:38"
+		"d": "07:39"
 	}, {
 		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
 		"a": "07:40"
@@ -16124,10 +16047,10 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Chiyoda.KitaAyase",
-		"d": "06:11"
+		"d": "06:09"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Ayase",
-		"a": "06:15"
+		"a": "06:13"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.A698S2.Weekday",
@@ -16404,80 +16327,6 @@
 	}, {
 		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
 		"a": "09:16"
-	}]
-}, {
-	"id": "TokyoMetro.Chiyoda.A706S.Weekday",
-	"t": "TokyoMetro.Chiyoda.A706S",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "A706S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.YoyogiUehara",
-	"os": [
-		"TokyoMetro.Chiyoda.KitaAyase"
-	],
-	"ds": [
-		"TokyoMetro.Chiyoda.YoyogiUehara"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.KitaAyase",
-		"d": "07:10"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"d": "07:15"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "07:19"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "07:23"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "07:25"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "07:27"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "07:29"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "07:31"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "07:34"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "07:36"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "07:38"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "07:40"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "07:42"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "07:44"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Akasaka",
-		"d": "07:46"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "07:48"
-	}, {
-		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "07:51"
-	}, {
-		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "07:52"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
-		"d": "07:54"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"a": "07:56"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.A707S.Weekday",
@@ -17033,7 +16882,7 @@
 		"d": "07:18"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "07:19"
+		"d": "07:20"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nezu",
 		"d": "07:22"
@@ -17048,25 +16897,25 @@
 		"d": "07:29"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "07:31"
+		"d": "07:30"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "07:33"
+		"d": "07:32"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
 		"d": "07:35"
 	}, {
 		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "07:37"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Akasaka",
 		"d": "07:38"
 	}, {
+		"s": "TokyoMetro.Chiyoda.Akasaka",
+		"d": "07:39"
+	}, {
 		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "07:41"
+		"d": "07:42"
 	}, {
 		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "07:43"
+		"d": "07:44"
 	}, {
 		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
 		"d": "07:46"
@@ -26516,7 +26365,7 @@
 		"d": "17:09"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "17:11"
+		"d": "17:12"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Akasaka",
 		"d": "17:15"
@@ -28221,59 +28070,6 @@
 		"a": "18:03"
 	}]
 }, {
-	"id": "TokyoMetro.Chiyoda.B1725S.Weekday",
-	"t": "TokyoMetro.Chiyoda.B1725S",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "B1725S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.KitaAyase",
-	"os": [
-		"TokyoMetro.Chiyoda.Kasumigaseki"
-	],
-	"ds": [
-		"JR-East.JobanLocal.Kashiwa"
-	],
-	"nt": [
-		"JR-East.JobanLocal.1725S.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "17:12"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "17:14"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "17:16"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "17:18"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "17:20"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "17:22"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "17:24"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "17:27"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "17:29"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "17:32"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "17:35"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"a": "17:38"
-	}]
-}, {
 	"id": "TokyoMetro.Chiyoda.B1727K.Weekday",
 	"t": "TokyoMetro.Chiyoda.B1727K",
 	"r": "TokyoMetro.Chiyoda",
@@ -28371,7 +28167,7 @@
 		"d": "17:12"
 	}, {
 		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "17:13"
+		"d": "17:14"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nogizaka",
 		"d": "17:17"
@@ -28383,7 +28179,7 @@
 		"d": "17:21"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "17:22"
+		"d": "17:23"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Hibiya",
 		"d": "17:25"
@@ -29337,59 +29133,6 @@
 	}, {
 		"s": "TokyoMetro.Chiyoda.Ayase",
 		"a": "19:30"
-	}]
-}, {
-	"id": "TokyoMetro.Chiyoda.B1823S.Weekday",
-	"t": "TokyoMetro.Chiyoda.B1823S",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "B1823S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.KitaAyase",
-	"os": [
-		"TokyoMetro.Chiyoda.Kasumigaseki"
-	],
-	"ds": [
-		"JR-East.JobanLocal.Abiko"
-	],
-	"nt": [
-		"JR-East.JobanLocal.1823S.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "18:28"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "18:31"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "18:33"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "18:35"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "18:37"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "18:39"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "18:41"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "18:43"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "18:46"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "18:48"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "18:52"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"a": "18:55"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.B1827S.Weekday",
@@ -30961,6 +30704,59 @@
 	}, {
 		"s": "TokyoMetro.Chiyoda.Ayase",
 		"a": "20:08"
+	}]
+}, {
+	"id": "TokyoMetro.Chiyoda.B1931S.Weekday",
+	"t": "TokyoMetro.Chiyoda.B1931S",
+	"r": "TokyoMetro.Chiyoda",
+	"n": "B1931S",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.KitaAyase",
+	"os": [
+		"TokyoMetro.Chiyoda.Kasumigaseki"
+	],
+	"ds": [
+		"JR-East.JobanLocal.Abiko"
+	],
+	"nt": [
+		"JR-East.JobanLocal.1931S.Weekday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
+		"d": "19:09"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Hibiya",
+		"d": "19:11"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nijubashimae",
+		"d": "19:13"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Otemachi",
+		"d": "19:14"
+	}, {
+		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
+		"d": "19:17"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Yushima",
+		"d": "19:18"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nezu",
+		"d": "19:20"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Sendagi",
+		"d": "19:23"
+	}, {
+		"s": "TokyoMetro.Chiyoda.NishiNippori",
+		"d": "19:25"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Machiya",
+		"d": "19:28"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KitaSenju",
+		"d": "19:32"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Ayase",
+		"a": "19:35"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.B1937S.Weekday",
@@ -36858,77 +36654,6 @@
 		"a": "07:32"
 	}]
 }, {
-	"id": "TokyoMetro.Chiyoda.B704S.Weekday",
-	"t": "TokyoMetro.Chiyoda.B704S",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "B704S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.KitaAyase",
-	"os": [
-		"TokyoMetro.Chiyoda.YoyogiUehara"
-	],
-	"ds": [
-		"TokyoMetro.Chiyoda.Ayase"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"d": "07:53"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
-		"d": "07:55"
-	}, {
-		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "07:57"
-	}, {
-		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "07:59"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "08:02"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Akasaka",
-		"d": "08:04"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "08:06"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "08:08"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "08:11"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "08:12"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "08:14"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "08:17"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "08:19"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "08:21"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "08:23"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "08:25"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "08:27"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "08:31"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"a": "08:34"
-	}]
-}, {
 	"id": "TokyoMetro.Chiyoda.B705S.Weekday",
 	"t": "TokyoMetro.Chiyoda.B705S",
 	"r": "TokyoMetro.Chiyoda",
@@ -37180,7 +36905,7 @@
 		"d": "08:11"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "08:14"
+		"d": "08:13"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nijubashimae",
 		"d": "08:15"
@@ -37189,19 +36914,19 @@
 		"d": "08:17"
 	}, {
 		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "08:20"
+		"d": "08:19"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "08:22"
+		"d": "08:21"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "08:24"
+		"d": "08:23"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Sendagi",
 		"d": "08:26"
 	}, {
 		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "08:28"
+		"d": "08:27"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Machiya",
 		"d": "08:30"
@@ -37497,6 +37222,59 @@
 		"a": "08:55"
 	}]
 }, {
+	"id": "TokyoMetro.Chiyoda.B735S.Weekday",
+	"t": "TokyoMetro.Chiyoda.B735S",
+	"r": "TokyoMetro.Chiyoda",
+	"n": "B735S",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.KitaAyase",
+	"os": [
+		"TokyoMetro.Chiyoda.Kasumigaseki"
+	],
+	"ds": [
+		"JR-East.JobanLocal.Matsudo"
+	],
+	"nt": [
+		"JR-East.JobanLocal.735S.Weekday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
+		"d": "07:50"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Hibiya",
+		"d": "07:52"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nijubashimae",
+		"d": "07:54"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Otemachi",
+		"d": "07:55"
+	}, {
+		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
+		"d": "07:58"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Yushima",
+		"d": "08:00"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nezu",
+		"d": "08:02"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Sendagi",
+		"d": "08:04"
+	}, {
+		"s": "TokyoMetro.Chiyoda.NishiNippori",
+		"d": "08:06"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Machiya",
+		"d": "08:08"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KitaSenju",
+		"d": "08:12"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Ayase",
+		"a": "08:15"
+	}]
+}, {
 	"id": "TokyoMetro.Chiyoda.B743E.Weekday",
 	"t": "TokyoMetro.Chiyoda.B743E",
 	"r": "TokyoMetro.Chiyoda",
@@ -37783,61 +37561,61 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"d": "08:04"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
 		"d": "08:06"
 	}, {
+		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
+		"d": "08:08"
+	}, {
 		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "08:09"
+		"d": "08:10"
 	}, {
 		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "08:11"
+		"d": "08:12"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "08:13"
+		"d": "08:15"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Akasaka",
-		"d": "08:16"
+		"d": "08:17"
 	}, {
 		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "08:18"
+		"d": "08:19"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "08:20"
+		"d": "08:21"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "08:22"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
 		"d": "08:24"
 	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
+		"s": "TokyoMetro.Chiyoda.Nijubashimae",
 		"d": "08:26"
 	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "08:28"
+		"s": "TokyoMetro.Chiyoda.Otemachi",
+		"d": "08:27"
 	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
+		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
 		"d": "08:30"
 	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
+		"s": "TokyoMetro.Chiyoda.Yushima",
 		"d": "08:32"
 	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
+		"s": "TokyoMetro.Chiyoda.Nezu",
 		"d": "08:34"
 	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
+		"s": "TokyoMetro.Chiyoda.Sendagi",
 		"d": "08:36"
 	}, {
+		"s": "TokyoMetro.Chiyoda.NishiNippori",
+		"d": "08:38"
+	}, {
 		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "08:39"
+		"d": "08:40"
 	}, {
 		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "08:42"
+		"d": "08:44"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Ayase",
-		"a": "08:45"
+		"a": "08:47"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.B753E.Weekday",
@@ -37990,28 +37768,28 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"d": "07:50"
+		"d": "07:51"
 	}, {
 		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
-		"d": "07:52"
+		"d": "07:53"
 	}, {
 		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "07:54"
+		"d": "07:55"
 	}, {
 		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "07:56"
+		"d": "07:57"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "07:59"
+		"d": "08:00"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Akasaka",
 		"d": "08:02"
 	}, {
 		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "08:03"
+		"d": "08:04"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "08:05"
+		"d": "08:06"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Hibiya",
 		"d": "08:08"
@@ -38020,7 +37798,7 @@
 		"d": "08:10"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "08:11"
+		"d": "08:12"
 	}, {
 		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
 		"d": "08:14"
@@ -38382,77 +38160,6 @@
 		"a": "09:27"
 	}]
 }, {
-	"id": "TokyoMetro.Chiyoda.B806S.Weekday",
-	"t": "TokyoMetro.Chiyoda.B806S",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "B806S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.KitaAyase",
-	"os": [
-		"TokyoMetro.Chiyoda.YoyogiUehara"
-	],
-	"ds": [
-		"TokyoMetro.Chiyoda.Ayase"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"d": "08:06"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
-		"d": "08:09"
-	}, {
-		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "08:11"
-	}, {
-		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "08:13"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "08:16"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Akasaka",
-		"d": "08:18"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "08:20"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "08:22"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "08:24"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "08:26"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "08:28"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "08:30"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "08:33"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "08:34"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "08:37"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "08:39"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "08:41"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "08:45"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"a": "08:48"
-	}]
-}, {
 	"id": "TokyoMetro.Chiyoda.B807K.Weekday",
 	"t": "TokyoMetro.Chiyoda.B807K",
 	"r": "TokyoMetro.Chiyoda",
@@ -38467,61 +38174,61 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"d": "08:01"
+		"d": "08:02"
 	}, {
 		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
 		"d": "08:04"
 	}, {
 		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "08:06"
+		"d": "08:07"
 	}, {
 		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "08:08"
+		"d": "08:09"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "08:11"
+		"d": "08:12"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Akasaka",
-		"d": "08:13"
+		"d": "08:14"
 	}, {
 		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "08:15"
+		"d": "08:16"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "08:17"
+		"d": "08:18"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "08:19"
+		"d": "08:20"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "08:21"
+		"d": "08:22"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "08:23"
+		"d": "08:24"
 	}, {
 		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "08:25"
+		"d": "08:26"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "08:27"
+		"d": "08:28"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "08:29"
+		"d": "08:30"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Sendagi",
 		"d": "08:32"
 	}, {
 		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "08:33"
+		"d": "08:34"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "08:36"
+		"d": "08:37"
 	}, {
 		"s": "TokyoMetro.Chiyoda.KitaSenju",
 		"d": "08:40"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Ayase",
-		"a": "08:43"
+		"a": "08:44"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.B807S.Weekday",
@@ -41002,152 +40709,57 @@
 		"a": "09:42"
 	}]
 }, {
-	"id": "TokyoMetro.Chiyoda.A1003K.SaturdayHoliday",
-	"t": "TokyoMetro.Chiyoda.A1003K",
+	"id": "TokyoMetro.Chiyoda.A2319S.SaturdayHoliday",
+	"t": "TokyoMetro.Chiyoda.A2319S",
 	"r": "TokyoMetro.Chiyoda",
-	"n": "A1003K",
+	"n": "A2319S",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.YoyogiUehara",
 	"os": [
-		"JR-East.JobanLocal.Kashiwa"
+		"JR-East.JobanLocal.Abiko"
 	],
 	"ds": [
-		"TokyoMetro.Chiyoda.YoyogiUehara"
+		"TokyoMetro.Chiyoda.Kasumigaseki"
 	],
 	"pt": [
-		"JR-East.JobanLocal.1002K.SaturdayHoliday"
+		"JR-East.JobanLocal.2318S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Chiyoda.Ayase",
-		"d": "10:51"
+		"d": "00:04"
 	}, {
 		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "10:55"
+		"d": "00:08"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "10:58"
+		"d": "00:11"
 	}, {
 		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "11:01"
+		"d": "00:14"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "11:02"
+		"d": "00:15"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "11:05"
+		"d": "00:18"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "11:06"
+		"d": "00:20"
 	}, {
 		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "11:09"
+		"d": "00:22"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "11:11"
+		"d": "00:25"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "11:12"
+		"d": "00:26"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "11:14"
+		"d": "00:28"
 	}, {
 		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "11:17"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "11:18"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Akasaka",
-		"d": "11:20"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "11:22"
-	}, {
-		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "11:25"
-	}, {
-		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "11:27"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
-		"d": "11:29"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"a": "11:31"
-	}]
-}, {
-	"id": "TokyoMetro.Chiyoda.A1011K.SaturdayHoliday",
-	"t": "TokyoMetro.Chiyoda.A1011K",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "A1011K",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.YoyogiUehara",
-	"os": [
-		"TokyoMetro.Chiyoda.KitaAyase"
-	],
-	"ds": [
-		"TokyoMetro.Chiyoda.YoyogiUehara"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.KitaAyase",
-		"d": "10:09"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"d": "10:15"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "10:19"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "10:22"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "10:25"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "10:27"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "10:29"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "10:31"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "10:33"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "10:35"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "10:37"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "10:39"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"d": "10:41"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
-		"d": "10:43"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Akasaka",
-		"d": "10:45"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nogizaka",
-		"d": "10:47"
-	}, {
-		"s": "TokyoMetro.Chiyoda.OmoteSando",
-		"d": "10:50"
-	}, {
-		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
-		"d": "10:52"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
-		"d": "10:54"
-	}, {
-		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
-		"a": "10:56"
+		"a": "00:30"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.A1001S.SaturdayHoliday",
@@ -41274,6 +40886,80 @@
 	}],
 	"v": "60000"
 }, {
+	"id": "TokyoMetro.Chiyoda.A1003K.SaturdayHoliday",
+	"t": "TokyoMetro.Chiyoda.A1003K",
+	"r": "TokyoMetro.Chiyoda",
+	"n": "A1003K",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.YoyogiUehara",
+	"os": [
+		"JR-East.JobanLocal.Kashiwa"
+	],
+	"ds": [
+		"TokyoMetro.Chiyoda.YoyogiUehara"
+	],
+	"pt": [
+		"JR-East.JobanLocal.1002K.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Chiyoda.Ayase",
+		"d": "10:51"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KitaSenju",
+		"d": "10:55"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Machiya",
+		"d": "10:58"
+	}, {
+		"s": "TokyoMetro.Chiyoda.NishiNippori",
+		"d": "11:01"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Sendagi",
+		"d": "11:02"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nezu",
+		"d": "11:05"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Yushima",
+		"d": "11:06"
+	}, {
+		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
+		"d": "11:09"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Otemachi",
+		"d": "11:11"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nijubashimae",
+		"d": "11:12"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Hibiya",
+		"d": "11:14"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
+		"d": "11:17"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
+		"d": "11:18"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Akasaka",
+		"d": "11:20"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nogizaka",
+		"d": "11:22"
+	}, {
+		"s": "TokyoMetro.Chiyoda.OmoteSando",
+		"d": "11:25"
+	}, {
+		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
+		"d": "11:27"
+	}, {
+		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
+		"d": "11:29"
+	}, {
+		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
+		"a": "11:31"
+	}]
+}, {
 	"id": "TokyoMetro.Chiyoda.A1003S.SaturdayHoliday",
 	"t": "TokyoMetro.Chiyoda.A1003S",
 	"r": "TokyoMetro.Chiyoda",
@@ -41346,6 +41032,80 @@
 	}, {
 		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
 		"a": "11:36"
+	}]
+}, {
+	"id": "TokyoMetro.Chiyoda.A1011K.SaturdayHoliday",
+	"t": "TokyoMetro.Chiyoda.A1011K",
+	"r": "TokyoMetro.Chiyoda",
+	"n": "A1011K",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.YoyogiUehara",
+	"os": [
+		"TokyoMetro.Chiyoda.KitaAyase"
+	],
+	"ds": [
+		"TokyoMetro.Chiyoda.YoyogiUehara"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Chiyoda.KitaAyase",
+		"d": "10:09"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Ayase",
+		"d": "10:15"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KitaSenju",
+		"d": "10:19"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Machiya",
+		"d": "10:22"
+	}, {
+		"s": "TokyoMetro.Chiyoda.NishiNippori",
+		"d": "10:25"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Sendagi",
+		"d": "10:27"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nezu",
+		"d": "10:29"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Yushima",
+		"d": "10:31"
+	}, {
+		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
+		"d": "10:33"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Otemachi",
+		"d": "10:35"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nijubashimae",
+		"d": "10:37"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Hibiya",
+		"d": "10:39"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
+		"d": "10:41"
+	}, {
+		"s": "TokyoMetro.Chiyoda.KokkaiGijidomae",
+		"d": "10:43"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Akasaka",
+		"d": "10:45"
+	}, {
+		"s": "TokyoMetro.Chiyoda.Nogizaka",
+		"d": "10:47"
+	}, {
+		"s": "TokyoMetro.Chiyoda.OmoteSando",
+		"d": "10:50"
+	}, {
+		"s": "TokyoMetro.Chiyoda.MeijiJingumae",
+		"d": "10:52"
+	}, {
+		"s": "TokyoMetro.Chiyoda.YoyogiKoen",
+		"d": "10:54"
+	}, {
+		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
+		"a": "10:56"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.A1015S.SaturdayHoliday",
@@ -52766,59 +52526,6 @@
 	}, {
 		"s": "TokyoMetro.Chiyoda.YoyogiUehara",
 		"a": "00:10"
-	}]
-}, {
-	"id": "TokyoMetro.Chiyoda.A2319S.SaturdayHoliday",
-	"t": "TokyoMetro.Chiyoda.A2319S",
-	"r": "TokyoMetro.Chiyoda",
-	"n": "A2319S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.YoyogiUehara",
-	"os": [
-		"JR-East.JobanLocal.Abiko"
-	],
-	"ds": [
-		"TokyoMetro.Chiyoda.Kasumigaseki"
-	],
-	"pt": [
-		"JR-East.JobanLocal.2318S.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Chiyoda.Ayase",
-		"d": "00:04"
-	}, {
-		"s": "TokyoMetro.Chiyoda.KitaSenju",
-		"d": "00:08"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Machiya",
-		"d": "00:11"
-	}, {
-		"s": "TokyoMetro.Chiyoda.NishiNippori",
-		"d": "00:14"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Sendagi",
-		"d": "00:15"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nezu",
-		"d": "00:18"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Yushima",
-		"d": "00:20"
-	}, {
-		"s": "TokyoMetro.Chiyoda.ShinOchanomizu",
-		"d": "00:22"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Otemachi",
-		"d": "00:25"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Nijubashimae",
-		"d": "00:26"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Hibiya",
-		"d": "00:28"
-	}, {
-		"s": "TokyoMetro.Chiyoda.Kasumigaseki",
-		"a": "00:30"
 	}]
 }, {
 	"id": "TokyoMetro.Chiyoda.A2329K.SaturdayHoliday",
