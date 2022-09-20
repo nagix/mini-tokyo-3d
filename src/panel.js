@@ -172,6 +172,8 @@ export default class {
             delete me._container;
             delete me._map;
         }, 300);
+
+        return me;
     }
 
     /**
