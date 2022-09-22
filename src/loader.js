@@ -10,6 +10,7 @@ const OPERATORS_FOR_TRAINS = {
 const OPERATORS_FOR_TRAININFORMATION = {
     odpt: [
         'TWR',
+        'TokyoMetro',
         'Toei',
         'YokohamaMunicipal',
         'MIR',
