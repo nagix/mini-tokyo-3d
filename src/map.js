@@ -1921,7 +1921,6 @@ export default class extends Evented {
 
         loader.loadDynamicTrainData(me.secrets).then(({trainData, trainInfoData}) => {
             me.realtimeTrainLookup = {};
-
             trainData.forEach(trainRef => {
                 const {id} = trainRef;
 
@@ -1931,7 +1930,7 @@ export default class extends Evented {
 
                 if (train) {
                     me.realtimeTrainLookup[id] = train;
-                    if (train.delay !== trainRef.delay) {
+                    if (!isNaN(train.delay) && train.delay !== trainRef.delay) {
                         train.delay = trainRef.delay;
                         changed = true;
                     }
@@ -1949,6 +1948,9 @@ export default class extends Evented {
                     if (!train.tt) {
                         train.ts = trainRef.ts;
                         train.fs = trainRef.fs;
+                    }
+                    if (trainRef.v) {
+                        train.v = trainRef.v;
                     }
                     if (changed && me.activeTrainLookup[id]) {
                         me.stopTrain(train, true);
