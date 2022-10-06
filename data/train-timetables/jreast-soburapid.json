@@ -1271,6 +1271,41 @@
 		"a": "09:06"
 	}]
 }, {
+	"id": "JR-East.SobuRapid.2011M.Weekday",
+	"t": "JR-East.SobuRapid.2011M",
+	"r": "JR-East.SobuRapid",
+	"n": "2011M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2211M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "08:30"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "09:25",
+		"d": "09:27"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "09:29"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 11号",
+		"en": "Narita Express 11",
+		"ko": "나리타 익스프레스 11",
+		"zh-Hans": "成田特快 11",
+		"zh-Hant": "成田特快 11"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.721F.Weekday",
 	"t": "JR-East.SobuRapid.721F",
 	"r": "JR-East.SobuRapid",
@@ -2293,6 +2328,41 @@
 		"a": "11:07"
 	}]
 }, {
+	"id": "JR-East.SobuRapid.2017M.Weekday",
+	"t": "JR-East.SobuRapid.2017M",
+	"r": "JR-East.SobuRapid",
+	"n": "2017M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2217M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "10:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "11:23",
+		"d": "11:25"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "11:27"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 17号",
+		"en": "Narita Express 17",
+		"ko": "나리타 익스프레스 17",
+		"zh-Hans": "成田特快 17",
+		"zh-Hant": "成田特快 17"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.967F.Weekday",
 	"t": "JR-East.SobuRapid.967F",
 	"r": "JR-East.SobuRapid",
@@ -2616,6 +2686,41 @@
 		"a": "12:07"
 	}]
 }, {
+	"id": "JR-East.SobuRapid.2021M.Weekday",
+	"t": "JR-East.SobuRapid.2021M",
+	"r": "JR-East.SobuRapid",
+	"n": "2021M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2221M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "11:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "12:28",
+		"d": "12:30"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "12:32"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 21号",
+		"en": "Narita Express 21",
+		"ko": "나리타 익스프레스 21",
+		"zh-Hans": "成田特快 21",
+		"zh-Hant": "成田特快 21"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.1085F.Weekday",
 	"t": "JR-East.SobuRapid.1085F",
 	"r": "JR-East.SobuRapid",
@@ -2894,6 +2999,41 @@
 		"s": "JR-East.SobuRapid.Chiba",
 		"a": "13:07"
 	}]
+}, {
+	"id": "JR-East.SobuRapid.2025M.Weekday",
+	"t": "JR-East.SobuRapid.2025M",
+	"r": "JR-East.SobuRapid",
+	"n": "2025M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2225M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "12:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "13:23",
+		"d": "13:25"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "13:27"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 25号",
+		"en": "Narita Express 25",
+		"ko": "나리타 익스프레스 25",
+		"zh-Hans": "成田特快 25",
+		"zh-Hant": "成田特快 25"
+	}],
+	"v": "E259"
 }, {
 	"id": "JR-East.SobuRapid.1209F.Weekday",
 	"t": "JR-East.SobuRapid.1209F",
@@ -3221,6 +3361,41 @@
 		"a": "14:06"
 	}]
 }, {
+	"id": "JR-East.SobuRapid.2029M.Weekday",
+	"t": "JR-East.SobuRapid.2029M",
+	"r": "JR-East.SobuRapid",
+	"n": "2029M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2229M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "13:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "14:28",
+		"d": "14:30"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "14:32"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 29号",
+		"en": "Narita Express 29",
+		"ko": "나리타 익스프레스 29",
+		"zh-Hans": "成田特快 29",
+		"zh-Hant": "成田特快 29"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.4005M.Weekday",
 	"t": "JR-East.SobuRapid.4005M",
 	"r": "JR-East.SobuRapid",
@@ -3534,6 +3709,41 @@
 		"s": "JR-East.SobuRapid.Chiba",
 		"a": "15:07"
 	}]
+}, {
+	"id": "JR-East.SobuRapid.2033M.Weekday",
+	"t": "JR-East.SobuRapid.2033M",
+	"r": "JR-East.SobuRapid",
+	"n": "2033M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2233M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "14:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "15:23",
+		"d": "15:35"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "15:27"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 33号",
+		"en": "Narita Express 33",
+		"ko": "나리타 익스프레스 33",
+		"zh-Hans": "成田特快 33",
+		"zh-Hant": "成田特快 33"
+	}],
+	"v": "E259"
 }, {
 	"id": "JR-East.SobuRapid.1451F.Weekday",
 	"t": "JR-East.SobuRapid.1451F",
@@ -3863,6 +4073,41 @@
 		"s": "JR-East.SobuRapid.Chiba",
 		"a": "16:06"
 	}]
+}, {
+	"id": "JR-East.SobuRapid.2037M.Weekday",
+	"t": "JR-East.SobuRapid.2037M",
+	"r": "JR-East.SobuRapid",
+	"n": "2037M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2237M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "15:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "16:28",
+		"d": "16:30"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "16:32"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 37号",
+		"en": "Narita Express 37",
+		"ko": "나리타 익스프레스 37",
+		"zh-Hans": "成田特快 37",
+		"zh-Hant": "成田特快 37"
+	}],
+	"v": "E259"
 }, {
 	"id": "JR-East.SobuRapid.1525F.Weekday",
 	"t": "JR-East.SobuRapid.1525F",
@@ -4224,6 +4469,41 @@
 		"s": "JR-East.SobuRapid.Chiba",
 		"a": "17:07"
 	}]
+}, {
+	"id": "JR-East.SobuRapid.2041M.Weekday",
+	"t": "JR-East.SobuRapid.2041M",
+	"r": "JR-East.SobuRapid",
+	"n": "2041M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2241M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "16:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "17:26",
+		"d": "17:28"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "17:29"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 41号",
+		"en": "Narita Express 41",
+		"ko": "나리타 익스프레스 41",
+		"zh-Hans": "成田特快 41",
+		"zh-Hant": "成田特快 41"
+	}],
+	"v": "E259"
 }, {
 	"id": "JR-East.SobuRapid.1505F.Weekday",
 	"t": "JR-East.SobuRapid.1505F",
@@ -4629,6 +4909,41 @@
 		"s": "JR-East.SobuRapid.Chiba",
 		"a": "18:07"
 	}]
+}, {
+	"id": "JR-East.SobuRapid.2045M.Weekday",
+	"t": "JR-East.SobuRapid.2045M",
+	"r": "JR-East.SobuRapid",
+	"n": "2045M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2245M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "17:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "18:24",
+		"d": "18:26"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "18:28"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 45号",
+		"en": "Narita Express 45",
+		"ko": "나리타 익스프레스 45",
+		"zh-Hans": "成田特快 45",
+		"zh-Hant": "成田特快 45"
+	}],
+	"v": "E259"
 }, {
 	"id": "JR-East.SobuRapid.1779F.Weekday",
 	"t": "JR-East.SobuRapid.1779F",
@@ -10745,6 +11060,41 @@
 	}],
 	"v": "E259"
 }, {
+	"id": "JR-East.SobuRapid.2008M.Weekday",
+	"t": "JR-East.SobuRapid.2008M",
+	"r": "JR-East.SobuRapid",
+	"n": "2008M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2208M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "09:15"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "09:17",
+		"d": "09:19"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "10:17"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 8号",
+		"en": "Narita Express 8",
+		"ko": "나리타 익스프레스 8",
+		"zh-Hans": "成田特快 8",
+		"zh-Hant": "成田特快 8"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.2010M.Weekday",
 	"t": "JR-East.SobuRapid.2010M",
 	"r": "JR-East.SobuRapid",
@@ -10783,6 +11133,41 @@
 		"ko": "나리타 익스프레스 10",
 		"zh-Hans": "成田特快 10",
 		"zh-Hant": "成田特快 10"
+	}],
+	"v": "E259"
+}, {
+	"id": "JR-East.SobuRapid.2012M.Weekday",
+	"t": "JR-East.SobuRapid.2012M",
+	"r": "JR-East.SobuRapid",
+	"n": "2012M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2212M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "10:15"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "10:16",
+		"d": "10:18"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "11:14"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 12号",
+		"en": "Narita Express 12",
+		"ko": "나리타 익스프레스 12",
+		"zh-Hans": "成田特快 12",
+		"zh-Hant": "成田特快 12"
 	}],
 	"v": "E259"
 }, {
@@ -10827,6 +11212,41 @@
 	}],
 	"v": "E259"
 }, {
+	"id": "JR-East.SobuRapid.2016M.Weekday",
+	"t": "JR-East.SobuRapid.2016M",
+	"r": "JR-East.SobuRapid",
+	"n": "2016M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2216M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "11:14"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "11:16",
+		"d": "11:18"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "12:14"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 16号",
+		"en": "Narita Express 16",
+		"ko": "나리타 익스프레스 16",
+		"zh-Hans": "成田特快 16",
+		"zh-Hant": "成田特快 16"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.2018M.Weekday",
 	"t": "JR-East.SobuRapid.2018M",
 	"r": "JR-East.SobuRapid",
@@ -10865,6 +11285,41 @@
 		"ko": "나리타 익스프레스 18",
 		"zh-Hans": "成田特快 18",
 		"zh-Hant": "成田特快 18"
+	}],
+	"v": "E259"
+}, {
+	"id": "JR-East.SobuRapid.2020M.Weekday",
+	"t": "JR-East.SobuRapid.2020M",
+	"r": "JR-East.SobuRapid",
+	"n": "2020M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2220M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "12:20"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "12:22",
+		"d": "12:24"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "13:14"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 20号",
+		"en": "Narita Express 20",
+		"ko": "나리타 익스프레스 20",
+		"zh-Hans": "成田特快 20",
+		"zh-Hant": "成田特快 20"
 	}],
 	"v": "E259"
 }, {
@@ -10909,6 +11364,41 @@
 	}],
 	"v": "E259"
 }, {
+	"id": "JR-East.SobuRapid.2024M.Weekday",
+	"t": "JR-East.SobuRapid.2024M",
+	"r": "JR-East.SobuRapid",
+	"n": "2024M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2224M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "13:14"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "13:15",
+		"d": "13:17"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "14:14"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 24号",
+		"en": "Narita Express 24",
+		"ko": "나리타 익스프레스 24",
+		"zh-Hans": "成田特快 24",
+		"zh-Hant": "成田特快 24"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.2026M.Weekday",
 	"t": "JR-East.SobuRapid.2026M",
 	"r": "JR-East.SobuRapid",
@@ -10947,6 +11437,41 @@
 		"ko": "나리타 익스프레스 26",
 		"zh-Hans": "成田特快 26",
 		"zh-Hant": "成田特快 26"
+	}],
+	"v": "E259"
+}, {
+	"id": "JR-East.SobuRapid.2028M.Weekday",
+	"t": "JR-East.SobuRapid.2028M",
+	"r": "JR-East.SobuRapid",
+	"n": "2028M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2228M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "14:21"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "14:22",
+		"d": "14:24"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "15:14"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 28号",
+		"en": "Narita Express 28",
+		"ko": "나리타 익스프레스 28",
+		"zh-Hans": "成田特快 28",
+		"zh-Hant": "成田特快 28"
 	}],
 	"v": "E259"
 }, {
@@ -10991,6 +11516,41 @@
 	}],
 	"v": "E259"
 }, {
+	"id": "JR-East.SobuRapid.2032M.Weekday",
+	"t": "JR-East.SobuRapid.2032M",
+	"r": "JR-East.SobuRapid",
+	"n": "2032M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2232M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "15:14"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "15:16",
+		"d": "15:18"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "16:14"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 32号",
+		"en": "Narita Express 32",
+		"ko": "나리타 익스프레스 32",
+		"zh-Hans": "成田特快 32",
+		"zh-Hant": "成田特快 32"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.2034M.Weekday",
 	"t": "JR-East.SobuRapid.2034M",
 	"r": "JR-East.SobuRapid",
@@ -11029,6 +11589,41 @@
 		"ko": "나리타 익스프레스 34",
 		"zh-Hans": "成田特快 34",
 		"zh-Hant": "成田特快 34"
+	}],
+	"v": "E259"
+}, {
+	"id": "JR-East.SobuRapid.2036M.Weekday",
+	"t": "JR-East.SobuRapid.2036M",
+	"r": "JR-East.SobuRapid",
+	"n": "2036M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2236M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "16:21"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "16:22",
+		"d": "16:24"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "17:17"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 36号",
+		"en": "Narita Express 36",
+		"ko": "나리타 익스프레스 36",
+		"zh-Hans": "成田特快 36",
+		"zh-Hant": "成田特快 36"
 	}],
 	"v": "E259"
 }, {
@@ -11149,6 +11744,41 @@
 	}],
 	"v": "E259"
 }, {
+	"id": "JR-East.SobuRapid.2044M.Weekday",
+	"t": "JR-East.SobuRapid.2044M",
+	"r": "JR-East.SobuRapid",
+	"n": "2044M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2244M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "18:15"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "18:17",
+		"d": "18:19"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "19:18"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 44号",
+		"en": "Narita Express 44",
+		"ko": "나리타 익스프레스 44",
+		"zh-Hans": "成田特快 44",
+		"zh-Hant": "成田特快 44"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.2046M.Weekday",
 	"t": "JR-East.SobuRapid.2046M",
 	"r": "JR-East.SobuRapid",
@@ -11187,6 +11817,41 @@
 		"ko": "나리타 익스프레스 46",
 		"zh-Hans": "成田特快 46",
 		"zh-Hant": "成田特快 46"
+	}],
+	"v": "E259"
+}, {
+	"id": "JR-East.SobuRapid.2048M.Weekday",
+	"t": "JR-East.SobuRapid.2048M",
+	"r": "JR-East.SobuRapid",
+	"n": "2044M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2248M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "19:12"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "19:14",
+		"d": "19:16"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "20:13"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 48号",
+		"en": "Narita Express 48",
+		"ko": "나리타 익스프레스 48",
+		"zh-Hans": "成田特快 48",
+		"zh-Hant": "成田特快 48"
 	}],
 	"v": "E259"
 }, {
@@ -19415,6 +20080,41 @@
 		"a": "09:04"
 	}]
 }, {
+	"id": "JR-East.SobuRapid.2011M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2011M",
+	"r": "JR-East.SobuRapid",
+	"n": "2011M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2211M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "08:30"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "09:25",
+		"d": "09:27"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "09:29"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 11号",
+		"en": "Narita Express 11",
+		"ko": "나리타 익스프레스 11",
+		"zh-Hans": "成田特快 11",
+		"zh-Hant": "成田特快 11"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.871F.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.871F",
 	"r": "JR-East.SobuRapid",
@@ -20346,6 +21046,41 @@
 		"a": "11:06"
 	}]
 }, {
+	"id": "JR-East.SobuRapid.2017M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2017M",
+	"r": "JR-East.SobuRapid",
+	"n": "2017M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2217M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "10:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "11:23",
+		"d": "11:25"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "11:27"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 17号",
+		"en": "Narita Express 17",
+		"ko": "나리타 익스프레스 17",
+		"zh-Hans": "成田特快 17",
+		"zh-Hant": "成田特快 17"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.917F.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.917F",
 	"r": "JR-East.SobuRapid",
@@ -20675,6 +21410,41 @@
 		"a": "12:07"
 	}]
 }, {
+	"id": "JR-East.SobuRapid.2021M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2021M",
+	"r": "JR-East.SobuRapid",
+	"n": "2021M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2221M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "11:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "12:28",
+		"d": "12:30"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "12:32"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 21号",
+		"en": "Narita Express 21",
+		"ko": "나리타 익스프레스 21",
+		"zh-Hans": "成田特快 21",
+		"zh-Hant": "成田特快 21"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.1185F.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.1185F",
 	"r": "JR-East.SobuRapid",
@@ -20998,6 +21768,41 @@
 		"a": "13:06"
 	}]
 }, {
+	"id": "JR-East.SobuRapid.2025M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2025M",
+	"r": "JR-East.SobuRapid",
+	"n": "2025M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2225M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "12:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "13:23",
+		"d": "13:25"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "13:27"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 25号",
+		"en": "Narita Express 25",
+		"ko": "나리타 익스프레스 25",
+		"zh-Hans": "成田特快 25",
+		"zh-Hant": "成田特快 25"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.1259F.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.1259F",
 	"r": "JR-East.SobuRapid",
@@ -21276,6 +22081,41 @@
 		"s": "JR-East.SobuRapid.Chiba",
 		"a": "14:05"
 	}]
+}, {
+	"id": "JR-East.SobuRapid.2029M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2029M",
+	"r": "JR-East.SobuRapid",
+	"n": "2029M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2229M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "13:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "14:28",
+		"d": "14:30"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "14:32"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 29号",
+		"en": "Narita Express 29",
+		"ko": "나리타 익스프레스 29",
+		"zh-Hans": "成田特快 29",
+		"zh-Hant": "成田特快 29"
+	}],
+	"v": "E259"
 }, {
 	"id": "JR-East.SobuRapid.4005M.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.4005M",
@@ -21587,6 +22427,41 @@
 		"s": "JR-East.SobuRapid.Chiba",
 		"a": "15:06"
 	}]
+}, {
+	"id": "JR-East.SobuRapid.2033M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2033M",
+	"r": "JR-East.SobuRapid",
+	"n": "2033M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2233M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "14:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "15:23",
+		"d": "15:35"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "15:27"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 33号",
+		"en": "Narita Express 33",
+		"ko": "나리타 익스프레스 33",
+		"zh-Hans": "成田特快 33",
+		"zh-Hant": "成田特快 33"
+	}],
+	"v": "E259"
 }, {
 	"id": "JR-East.SobuRapid.1481F.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.1481F",
@@ -21916,6 +22791,41 @@
 		"s": "JR-East.SobuRapid.Chiba",
 		"a": "16:07"
 	}]
+}, {
+	"id": "JR-East.SobuRapid.2037M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2037M",
+	"r": "JR-East.SobuRapid",
+	"n": "2037M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2237M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "15:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "16:28",
+		"d": "16:30"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "16:32"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 37号",
+		"en": "Narita Express 37",
+		"ko": "나리타 익스프레스 37",
+		"zh-Hans": "成田特快 37",
+		"zh-Hant": "成田特快 37"
+	}],
+	"v": "E259"
 }, {
 	"id": "JR-East.SobuRapid.1593F.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.1593F",
@@ -22278,6 +23188,41 @@
 		"a": "17:07"
 	}]
 }, {
+	"id": "JR-East.SobuRapid.2041M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2041M",
+	"r": "JR-East.SobuRapid",
+	"n": "2041M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2241M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "16:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "17:26",
+		"d": "17:28"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "17:29"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 41号",
+		"en": "Narita Express 41",
+		"ko": "나리타 익스프레스 41",
+		"zh-Hans": "成田特快 41",
+		"zh-Hant": "成田特快 41"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.1541F.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.1541F",
 	"r": "JR-East.SobuRapid",
@@ -22603,6 +23548,41 @@
 		"s": "JR-East.SobuRapid.Chiba",
 		"a": "18:07"
 	}]
+}, {
+	"id": "JR-East.SobuRapid.2045M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2045M",
+	"r": "JR-East.SobuRapid",
+	"n": "2045M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.YamanoteFreight.2245M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.Tokyo",
+		"d": "17:32"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "18:24",
+		"d": "18:26"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"a": "18:28"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 45号",
+		"en": "Narita Express 45",
+		"ko": "나리타 익스프레스 45",
+		"zh-Hans": "成田特快 45",
+		"zh-Hant": "成田特快 45"
+	}],
+	"v": "E259"
 }, {
 	"id": "JR-East.SobuRapid.1735F.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.1735F",
@@ -28029,6 +29009,41 @@
 	}],
 	"v": "E259"
 }, {
+	"id": "JR-East.SobuRapid.2008M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2008M",
+	"r": "JR-East.SobuRapid",
+	"n": "2008M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2208M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "09:15"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "09:17",
+		"d": "09:19"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "10:17"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 8号",
+		"en": "Narita Express 8",
+		"ko": "나리타 익스프레스 8",
+		"zh-Hans": "成田特快 8",
+		"zh-Hant": "成田特快 8"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.2010M.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.2010M",
 	"r": "JR-East.SobuRapid",
@@ -28067,6 +29082,41 @@
 		"ko": "나리타 익스프레스 10",
 		"zh-Hans": "成田特快 10",
 		"zh-Hant": "成田特快 10"
+	}],
+	"v": "E259"
+}, {
+	"id": "JR-East.SobuRapid.2012M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2012M",
+	"r": "JR-East.SobuRapid",
+	"n": "2012M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2212M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "10:15"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "10:16",
+		"d": "10:18"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "11:14"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 12号",
+		"en": "Narita Express 12",
+		"ko": "나리타 익스프레스 12",
+		"zh-Hans": "成田特快 12",
+		"zh-Hant": "成田特快 12"
 	}],
 	"v": "E259"
 }, {
@@ -28111,6 +29161,41 @@
 	}],
 	"v": "E259"
 }, {
+	"id": "JR-East.SobuRapid.2016M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2016M",
+	"r": "JR-East.SobuRapid",
+	"n": "2016M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2216M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "11:14"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "11:16",
+		"d": "11:18"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "12:14"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 16号",
+		"en": "Narita Express 16",
+		"ko": "나리타 익스프레스 16",
+		"zh-Hans": "成田特快 16",
+		"zh-Hant": "成田特快 16"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.2018M.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.2018M",
 	"r": "JR-East.SobuRapid",
@@ -28149,6 +29234,41 @@
 		"ko": "나리타 익스프레스 18",
 		"zh-Hans": "成田特快 18",
 		"zh-Hant": "成田特快 18"
+	}],
+	"v": "E259"
+}, {
+	"id": "JR-East.SobuRapid.2020M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2020M",
+	"r": "JR-East.SobuRapid",
+	"n": "2020M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2220M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "12:20"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "12:22",
+		"d": "12:24"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "13:14"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 20号",
+		"en": "Narita Express 20",
+		"ko": "나리타 익스프레스 20",
+		"zh-Hans": "成田特快 20",
+		"zh-Hant": "成田特快 20"
 	}],
 	"v": "E259"
 }, {
@@ -28193,6 +29313,41 @@
 	}],
 	"v": "E259"
 }, {
+	"id": "JR-East.SobuRapid.2024M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2024M",
+	"r": "JR-East.SobuRapid",
+	"n": "2024M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2224M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "13:14"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "13:15",
+		"d": "13:17"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "14:14"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 24号",
+		"en": "Narita Express 24",
+		"ko": "나리타 익스프레스 24",
+		"zh-Hans": "成田特快 24",
+		"zh-Hant": "成田特快 24"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.2026M.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.2026M",
 	"r": "JR-East.SobuRapid",
@@ -28231,6 +29386,41 @@
 		"ko": "나리타 익스프레스 26",
 		"zh-Hans": "成田特快 26",
 		"zh-Hant": "成田特快 26"
+	}],
+	"v": "E259"
+}, {
+	"id": "JR-East.SobuRapid.2028M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2028M",
+	"r": "JR-East.SobuRapid",
+	"n": "2028M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2228M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "14:21"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "14:22",
+		"d": "14:24"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "15:14"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 28号",
+		"en": "Narita Express 28",
+		"ko": "나리타 익스프레스 28",
+		"zh-Hans": "成田特快 28",
+		"zh-Hant": "成田特快 28"
 	}],
 	"v": "E259"
 }, {
@@ -28275,6 +29465,41 @@
 	}],
 	"v": "E259"
 }, {
+	"id": "JR-East.SobuRapid.2032M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2032M",
+	"r": "JR-East.SobuRapid",
+	"n": "2032M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2232M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "15:14"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "15:16",
+		"d": "15:18"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "16:14"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 32号",
+		"en": "Narita Express 32",
+		"ko": "나리타 익스프레스 32",
+		"zh-Hans": "成田特快 32",
+		"zh-Hant": "成田特快 32"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.2034M.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.2034M",
 	"r": "JR-East.SobuRapid",
@@ -28313,6 +29538,41 @@
 		"ko": "나리타 익스프레스 34",
 		"zh-Hans": "成田特快 34",
 		"zh-Hant": "成田特快 34"
+	}],
+	"v": "E259"
+}, {
+	"id": "JR-East.SobuRapid.2036M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2036M",
+	"r": "JR-East.SobuRapid",
+	"n": "2036M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2236M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "16:21"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "16:22",
+		"d": "16:24"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "17:17"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 36号",
+		"en": "Narita Express 36",
+		"ko": "나리타 익스프레스 36",
+		"zh-Hans": "成田特快 36",
+		"zh-Hant": "成田特快 36"
 	}],
 	"v": "E259"
 }, {
@@ -28433,6 +29693,41 @@
 	}],
 	"v": "E259"
 }, {
+	"id": "JR-East.SobuRapid.2044M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2044M",
+	"r": "JR-East.SobuRapid",
+	"n": "2044M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2244M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "18:15"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "18:17",
+		"d": "18:19"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "19:18"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 44号",
+		"en": "Narita Express 44",
+		"ko": "나리타 익스프레스 44",
+		"zh-Hans": "成田特快 44",
+		"zh-Hant": "成田特快 44"
+	}],
+	"v": "E259"
+}, {
 	"id": "JR-East.SobuRapid.2046M.SaturdayHoliday",
 	"t": "JR-East.SobuRapid.2046M",
 	"r": "JR-East.SobuRapid",
@@ -28471,6 +29766,41 @@
 		"ko": "나리타 익스프레스 46",
 		"zh-Hans": "成田特快 46",
 		"zh-Hant": "成田特快 46"
+	}],
+	"v": "E259"
+}, {
+	"id": "JR-East.SobuRapid.2048M.SaturdayHoliday",
+	"t": "JR-East.SobuRapid.2048M",
+	"r": "JR-East.SobuRapid",
+	"n": "2044M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"nt": [
+		"JR-East.YamanoteFreight.2248M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal1",
+		"d": "19:12"
+	}, {
+		"s": "JR-East.SobuRapid.NaritaAirportTerminal2and3",
+		"a": "19:14",
+		"d": "19:16"
+	}, {
+		"s": "JR-East.SobuRapid.Tokyo",
+		"a": "20:13"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 48号",
+		"en": "Narita Express 48",
+		"ko": "나리타 익스프레스 48",
+		"zh-Hans": "成田特快 48",
+		"zh-Hant": "成田特快 48"
 	}],
 	"v": "E259"
 }, {
