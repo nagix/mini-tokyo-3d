@@ -88,7 +88,7 @@ const configs = {
     defaultViewMode: 'ground',
 
     // Default tracking mode
-    defaultTrackingMode: 'helicopter',
+    defaultTrackingMode: 'position',
 
     // Default clock mode
     defaultClockMode: 'realtime',

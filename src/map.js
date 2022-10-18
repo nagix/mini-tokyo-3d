@@ -22,6 +22,7 @@ import SearchPanel from './search-panel';
 import SharePanel from './share-panel';
 import StationPanel from './station-panel';
 import ThreeLayer from './three-layer';
+import TrackingModePanel from './tracking-mode-panel';
 import TrafficLayer from './traffic-layer';
 import TrainPanel from './train-panel';
 
@@ -102,6 +103,11 @@ export default class extends Evented {
         me.searchMode = 'none';
         me.viewMode = configs.defaultViewMode;
         me.trackingMode = options.trackingMode;
+        me.trackingParams = {
+            zoom: {},
+            bearing: {},
+            pitch: {}
+        };
         me.initialSelection = options.selection;
         me.clockMode = configs.defaultClockMode;
         me.isEditingTime = false;
@@ -322,7 +328,8 @@ export default class extends Evented {
 
     /**
      * Returns the current tracking mode.
-     * @returns {string} Current tracking mode: 'helicopter' or 'heading'
+     * @returns {string} Current tracking mode: 'position', 'back', 'topback', 'front',
+     *     'topfront', 'helicopter', 'drone', 'bird' or 'heading'
      */
     getTrackingMode() {
         return this.trackingMode;
@@ -330,7 +337,8 @@ export default class extends Evented {
 
     /**
      * Sets the tracking mode.
-     * @param {string} mode - Tracking mode: 'helicopter' or 'heading'
+     * @param {string} mode - Tracking mode: 'position', 'back', 'topback', 'front',
+     *     'topfront', 'helicopter', 'drone', 'bird' or 'heading'
      * @returns {Map} Returns itself to allow for method chaining
      */
     setTrackingMode(mode) {
@@ -909,13 +917,6 @@ export default class extends Evented {
                     me._setViewMode(me.viewMode === 'ground' ? 'underground' : 'ground');
                 }
             }, {
-                className: `mapboxgl-ctrl-track mapboxgl-ctrl-track-${me.trackingMode === 'helicopter' ? 'helicopter' : 'train'}`,
-                title: dict['track'],
-                eventHandler(event) {
-                    me._setTrackingMode(me.trackingMode === 'helicopter' ? 'heading' : 'helicopter');
-                    event.stopPropagation();
-                }
-            }, {
                 className: 'mapboxgl-ctrl-playback',
                 title: dict['enter-playback'],
                 eventHandler() {
@@ -932,6 +933,7 @@ export default class extends Evented {
         }
 
         me.layerPanel = new LayerPanel({layers: me.plugins});
+        me.trackingModePanel = new TrackingModePanel();
         me.aboutPanel = new AboutPanel();
 
         if (me.configControl) {
@@ -940,6 +942,12 @@ export default class extends Evented {
                 title: dict['select-layers'],
                 eventHandler() {
                     me.layerPanel.addTo(me);
+                }
+            }, {
+                className: 'mapboxgl-ctrl-tracking-mode',
+                title: dict['select-tracking-mode'],
+                eventHandler() {
+                    me.trackingModePanel.addTo(me);
                 }
             }, {
                 className: 'mapboxgl-ctrl-about',
@@ -1108,30 +1116,77 @@ export default class extends Evented {
 
     _jumpTo(options) {
         const me = this,
-            {map, trackingMode, trackingBaseBearing} = me,
+            {map, trackingMode, trackingParams} = me,
+            now = performance.now(),
+            currentZoom = map.getZoom(),
+            currentBearing = map.getBearing(),
+            currentPitch = map.getPitch(),
             scrollZooming = map.scrollZoom._active;
-        let {center, altitude, bearing, centerFactor, bearingFactor} = options;
+        let zoom, pitch,
+            {center, altitude, bearing, easeOutFactor, easeInFactor, bearingFactor} = options;
 
-        if (trackingMode === 'helicopter') {
-            bearing = (trackingBaseBearing + performance.now() / 100) % 360;
-        } else if (bearingFactor >= 0) {
-            const currentBearing = map.getBearing();
+        if (trackingMode === 'position') {
+            zoom = currentZoom;
+            bearing = currentBearing;
+            pitch = currentPitch;
+        } else if (trackingMode === 'helicopter') {
+            zoom = 15;
+            bearing = trackingParams.bearing.fn(now);
+            pitch = 60;
+        } else if (trackingMode === 'drone') {
+            zoom = 17;
+            bearing = trackingParams.bearing.fn(now);
+            pitch = 75;
+        } else if (trackingMode === 'bird') {
+            me.updateTrackingParams();
+            zoom = trackingParams.zoom.fn(now);
+            bearing = trackingParams.bearing.fn(now);
+            pitch = trackingParams.pitch.fn(now);
+        } else {
+            if (trackingMode === 'front' || trackingMode === 'topfront') {
+                bearing = (bearing + 360) % 360 - 180;
+            }
+            if (bearingFactor >= 0) {
+                bearing = currentBearing + ((bearing - currentBearing + 540) % 360 - 180) * bearingFactor;
+            }
+            if (trackingMode === 'back' || trackingMode === 'front') {
+                zoom = 18.5;
+                pitch = 85;
+            } else {
+                zoom = 15;
+                pitch = 60;
+            }
+        }
 
-            bearing = currentBearing + ((bearing - currentBearing + 540) % 360 - 180) * bearingFactor;
+        if (!isNaN(me.baseZoom)) {
+            const {baseDistance, baseZoom} = me,
+                z = me.getModelPosition(center, altitude).z;
+
+            if (trackingMode === 'position') {
+                zoom = baseZoom - Math.log2((z / Math.cos(currentPitch * DEGREE_TO_RADIAN) + baseDistance) / baseDistance);
+            } else {
+                const d = baseDistance * Math.pow(2, baseZoom - zoom);
+
+                zoom = zoom - Math.log2((z / Math.cos(currentPitch * DEGREE_TO_RADIAN) + d) / d);
+            }
         }
 
         center = me.adjustCoord(center, altitude, bearing);
-        if (centerFactor >= 0) {
+        if (easeOutFactor >= 0) {
             const {lng: fromLng, lat: fromLat} = map.getCenter(),
                 {lng: toLng, lat: toLat} = center;
 
             center = new LngLat(
-                fromLng + (toLng - fromLng) * centerFactor,
-                fromLat + (toLat - fromLat) * centerFactor
+                fromLng + (toLng - fromLng) * easeOutFactor,
+                fromLat + (toLat - fromLat) * easeOutFactor
             );
         }
+        if (easeInFactor >= 0) {
+            zoom = currentZoom + (zoom - currentZoom) * easeInFactor;
+            pitch = currentPitch + (pitch - currentPitch) * easeInFactor;
+        }
 
-        map.jumpTo({center, bearing});
+        map.jumpTo({center, zoom, bearing, pitch}, {tracking: true});
 
         // Workaround for the issue of the scroll zoom during tracking
         if (scrollZooming) {
@@ -1323,33 +1378,12 @@ export default class extends Evented {
                 bearing: aircraft.bearing,
                 bearingFactor: .02
             });
-
-            /*
-            // Keep camera off from the tracked aircraft
-            if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
-                map.setZoom(22 - Math.log2(altitude * .5));
-            }
-            */
-
-            if (!isNaN(me.baseZoom)) {
-                const {baseDistance, baseZoom} = me,
-                    z = me.getModelPosition(aircraft.coord, aircraft.altitude).z,
-                    zoom = baseZoom - Math.log2((z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN) + baseDistance) / baseDistance),
-                    scrollZooming = map.scrollZoom._active;
-
-                map.setZoom(zoom, {tracking: true});
-
-                // Workaround for the issue of the scroll zoom during tracking
-                if (scrollZooming) {
-                    map.scrollZoom._active = true;
-                }
-            }
         }
 
         // Reduce the frame rate of invisible objects for performance optimization
         if (animation.isActive(flight.animationID)) {
             const {x, y} = me.getModelPosition(aircraft.coord),
-                frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) ? me.ecoMode === 'normal' && map._loaded ? 60 : me.ecoFrameRate : 1;
+                frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) || me.trackedObject === aircraft ? me.ecoMode === 'normal' && map._loaded ? 60 : me.ecoFrameRate : 1;
 
             animation.setFrameRate(flight.animationID, frameRate);
         }
@@ -1599,25 +1633,91 @@ export default class extends Evented {
         }, flight.feature.properties.length, flight.maxSpeed, flight.acceleration, elapsed, clock);
     }
 
+    updateTrackingParams(reset) {
+        const me = this,
+            {map, trackingMode, trackingParams} = me,
+            now = performance.now();
+
+        if (trackingMode === 'bird') {
+            const {zoom, bearing, pitch} = trackingParams;
+
+            if (!zoom.time || reset) {
+                const time = zoom.time = [0, now, 0, 0],
+                    value = zoom.value = [0, map.getZoom(), 0, 0];
+                for (const [i, j] of [[0, 1], [2, 1], [3, 2]]) {
+                    time[i] = time[j] + Math.sign(i - j) * (Math.random() * 10000 + 30000);
+                    value[i] = Math.random() * 5 + 15;
+                }
+                zoom.fn = createInterpolant(time, value);
+            } else if (now >= zoom.time[2]) {
+                zoom.time = zoom.time.slice(1).concat(zoom.time[3] + Math.random() * 10000 + 30000);
+                zoom.value = zoom.value.slice(1).concat(Math.random() * 5 + 15);
+                zoom.fn = createInterpolant(zoom.time, zoom.value);
+            }
+            if (!bearing.time || reset) {
+                const time = bearing.time = [0, now, 0, 0],
+                    value = bearing.value = [0, map.getBearing(), 0, 0];
+                for (const [i, j] of [[0, 1], [2, 1], [3, 2]]) {
+                    time[i] = time[j] + Math.sign(i - j) * (Math.random() * 10000 + 40000);
+                    value[i] = Math.random() * 360 - 180;
+                }
+                bearing.fn = createInterpolant(time, value);
+            } else if (now >= bearing.time[2]) {
+                bearing.time = bearing.time.slice(1).concat(bearing.time[3] + Math.random() * 10000 + 40000);
+                bearing.value = bearing.value.slice(1).concat(Math.random() * 360 - 180);
+                bearing.fn = createInterpolant(bearing.time, bearing.value);
+            }
+            if (!pitch.time || reset) {
+                const time = pitch.time = [0, now, 0, 0],
+                    value = pitch.value = [0, map.getPitch(), 0, 0];
+                for (const [i, j] of [[0, 1], [2, 1], [3, 2]]) {
+                    time[i] = time[j] + Math.sign(i - j) * (Math.random() * 10000 + 20000);
+                    value[i] = Math.random() * 30 + 45;
+                }
+                pitch.fn = createInterpolant(time, value);
+            } else if (now >= pitch.time[2]) {
+                pitch.time = pitch.time.slice(1).concat(pitch.time[3] + Math.random() * 10000 + 20000);
+                pitch.value = pitch.value.slice(1).concat(Math.random() * 30 + 45);
+                pitch.fn = createInterpolant(pitch.time, pitch.value);
+            }
+        } else {
+            delete trackingParams.zoom.time;
+            delete trackingParams.bearing.time;
+            delete trackingParams.pitch.time;
+            if (trackingMode === 'drone') {
+                const bearing = map.getBearing();
+                trackingParams.bearing.fn = t => (bearing - (t - now) / 200) % 360;
+            } else if (trackingMode === 'helicopter') {
+                const bearing = map.getBearing();
+                trackingParams.bearing.fn = t => (bearing + (t - now) / 400) % 360;
+            }
+        }
+    }
+
     startViewAnimation() {
         const me = this;
-        let t2 = 0;
+        let t2 = 0,
+            t4 = 0;
 
-        me.trackingBaseBearing = me.map.getBearing() - performance.now() / 100;
+        me.updateTrackingParams(true);
         me.viewAnimationID = animation.start({
             callback: (elapsed, duration) => {
                 const t1 = easeOutQuart(elapsed / duration),
-                    factor = 1 - (1 - t1) / (1 - t2),
+                    easeOutFactor = 1 - (1 - t1) / (1 - t2),
+                    t3 = easeInQuad(elapsed / duration),
+                    easeInFactor = 1 - (1 - t3) / (1 - t4),
                     {coord: center, altitude, bearing} = me.trackedObject;
 
                 me._jumpTo({
                     center,
                     altitude,
                     bearing,
-                    centerFactor: factor,
-                    bearingFactor: factor
+                    easeOutFactor,
+                    easeInFactor,
+                    bearingFactor: easeOutFactor
                 });
                 t2 = t1;
+                t4 = t3;
             },
             complete: () => {
                 delete me.viewAnimationID;
@@ -2266,26 +2366,6 @@ export default class extends Evented {
         }
     }
 
-    updateTrackingButton(mode) {
-        const button = this.container.querySelector('.mapboxgl-ctrl-track');
-
-        if (button) {
-            const {classList} = button;
-
-            if (mode === 'helicopter') {
-                classList.remove('mapboxgl-ctrl-track-train');
-                classList.add('mapboxgl-ctrl-track-helicopter');
-            } else if (mode === 'heading') {
-                classList.remove('mapboxgl-ctrl-track-helicopter');
-                classList.add('mapboxgl-ctrl-track-train');
-            } else if (mode) {
-                classList.add('mapboxgl-ctrl-track-active');
-            } else {
-                classList.remove('mapboxgl-ctrl-track-active');
-            }
-        }
-    }
-
     updatePlaybackButton(mode) {
         const {container, dict} = this,
             button = container.querySelector('.mapboxgl-ctrl-playback');
@@ -2388,7 +2468,6 @@ export default class extends Evented {
             return;
         }
 
-        me.updateTrackingButton(mode);
         me.trackingMode = mode;
         if (isTrainOrFlight(me.trackedObject)) {
             me.startViewAnimation();
@@ -2640,7 +2719,6 @@ export default class extends Evented {
             delete me.trackedObject;
             me.updateBaseZoom();
             me.stopViewAnimation();
-            me.updateTrackingButton(false);
             if (sharePanel) {
                 sharePanel.remove();
                 delete me.sharePanel;
@@ -2671,7 +2749,6 @@ export default class extends Evented {
                 }
 
                 me.startViewAnimation();
-                me.updateTrackingButton(true);
                 me._setViewMode(altitude < 0 ? 'underground' : 'ground');
 
                 if (me.clockMode === 'realtime' && navigator.share) {
@@ -2749,7 +2826,7 @@ export default class extends Evented {
         if (coord !== undefined && altitude !== undefined) {
             const objectZ = me.getModelPosition(coord, altitude).z,
                 cameraZ = map.getFreeCameraOptions().position.z,
-                z = cameraZ - objectZ;
+                z = Math.abs(cameraZ - objectZ);
 
             me.baseDistance = z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN);
             me.baseZoom = map.getZoom() + Math.log2(cameraZ / z);
@@ -3077,8 +3154,71 @@ function startFlightAnimation(callback, endCallback, distance, maxSpeed, acceler
     });
 }
 
+function easeInQuad(t) {
+    return t * t;
+}
+
 function easeOutQuart(t) {
-    return -((t = t - 1) * t * t * t - 1);
+    return -((t -= 1) * t * t * t - 1);
+}
+
+function createInterpolant(xs, ys) {
+    const length = xs.length;
+
+    // Get consecutive differences and slopes
+    const dys = [], dxs = [], ms = [];
+    for (let i = 0; i < length - 1; i++) {
+        const dx = xs[i + 1] - xs[i], dy = ys[i + 1] - ys[i];
+        dxs.push(dx); dys.push(dy); ms.push(dy / dx);
+    }
+
+    // Get degree-1 coefficients
+    const c1s = [ms[0]];
+    for (let i = 0; i < dxs.length - 1; i++) {
+        const m = ms[i], mNext = ms[i + 1];
+        if (m * mNext <= 0) {
+            c1s.push(0);
+        } else {
+            const dx_ = dxs[i], dxNext = dxs[i + 1], common = dx_ + dxNext;
+            c1s.push(3 * common / ((common + dxNext) / m + (common + dx_) / mNext));
+        }
+    }
+    c1s.push(ms[ms.length - 1]);
+
+    // Get degree-2 and degree-3 coefficients
+    const c2s = [], c3s = [];
+    for (let i = 0; i < c1s.length - 1; i++) {
+        const c1 = c1s[i], m_ = ms[i], invDx = 1 / dxs[i], common_ = c1 + c1s[i + 1] - m_ - m_;
+        c2s.push((m_ - c1 - common_) * invDx); c3s.push(common_ * invDx * invDx);
+    }
+
+    // Return interpolant function
+    return x => {
+        // The rightmost point in the dataset should give an exact result
+        let i = xs.length - 1;
+        if (x === xs[i]) {
+            return ys[i];
+        }
+
+        // Search for the interval x is in, returning the corresponding y if x is one of the original xs
+        let low = 0, mid, high = c3s.length - 1;
+        while (low <= high) {
+            mid = Math.floor(0.5 * (low + high));
+            const xHere = xs[mid];
+            if (xHere < x) {
+                low = mid + 1;
+            } else if (xHere > x) {
+                high = mid - 1;
+            } else {
+                return ys[mid];
+            }
+        }
+        i = Math.max(0, high);
+
+        // Interpolate
+        const diff = x - xs[i], diffSq = diff * diff;
+        return ys[i] + c1s[i] * diff + c2s[i] * diffSq + c3s[i] * diff * diffSq;
+    };
 }
 
 function truncateTrainTimetable(train, origin, destination) {
