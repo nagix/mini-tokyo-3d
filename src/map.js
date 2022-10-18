@@ -2030,7 +2030,7 @@ export default class extends Evented {
 
                 if (train) {
                     me.realtimeTrainLookup[id] = train;
-                    if (!isNaN(train.delay) && train.delay !== trainRef.delay) {
+                    if (!isNaN(trainRef.delay) && train.delay !== trainRef.delay) {
                         train.delay = trainRef.delay;
                         changed = true;
                     }
