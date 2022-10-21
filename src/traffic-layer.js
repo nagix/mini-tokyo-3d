@@ -2,7 +2,7 @@ import AircraftMeshSet from './aircraft-mesh-set';
 import animation from './animation';
 import CarMeshSet from './car-mesh-set';
 import configs from './configs';
-import {clamp, colorToRGBArray, lerp} from './helpers';
+import {colorToRGBArray, lerp} from './helpers';
 import {hasDarkBackground} from './helpers-mapbox';
 import {Point} from 'mapbox-gl';
 import {Color, Scene, MathUtils, WebGLRenderTarget, Vector3} from 'three';
@@ -27,13 +27,15 @@ export default class {
     onAdd(map, context) {
         const me = this,
             {scene} = me.context = context,
+            zoom = map.getZoom(),
+            cameraZ = map.map.getFreeCameraOptions().position.z,
             modelScale = map.getModelScale();
 
         me.map = map;
 
-        me.ugCarMeshSet = new CarMeshSet(MAX_UG_CARS, {index: 0, scale: modelScale * 100, opacity: .225});
-        me.ogCarMeshSet = new CarMeshSet(MAX_OG_CARS, {index: 1, scale: modelScale * 100, opacity: .9});
-        me.aircraftMeshSet = new AircraftMeshSet(MAX_AIRCRAFTS, {index: 2, scale: .06 / .285 * modelScale * 100, opacity: .9});
+        me.ugCarMeshSet = new CarMeshSet(MAX_UG_CARS, {index: 0, zoom, cameraZ, modelScale, opacity: .225});
+        me.ogCarMeshSet = new CarMeshSet(MAX_OG_CARS, {index: 1, zoom, cameraZ, modelScale, opacity: .9});
+        me.aircraftMeshSet = new AircraftMeshSet(MAX_AIRCRAFTS, {index: 2, zoom, cameraZ, modelScale, opacity: .9});
 
         scene.add(me.ugCarMeshSet.getMesh());
         scene.add(me.ogCarMeshSet.getMesh());
@@ -58,28 +60,20 @@ export default class {
         me.pickingTexture = new WebGLRenderTarget(1, 1);
         me.pixelBuffer = new Uint8Array(4);
 
-        map.on('zoom', me.onZoom.bind(me));
-        map.on('pitch', me.onPitch.bind(me));
+        map.on('zoom', me.onCameraChanged.bind(me));
+        map.on('pitch', me.onCameraChanged.bind(me));
     }
 
-    onZoom() {
+    onCameraChanged() {
         const me = this,
-            zoom = me.map.getZoom(),
-            unit = Math.pow(2, 14 - clamp(zoom, 13, 19)),
-            scale = unit * me.map.getModelScale() * 100;
+            cameraParams = {
+                zoom: me.map.getZoom(),
+                cameraZ: me.map.map.getFreeCameraOptions().position.z
+            };
 
-        me.ugCarMeshSet.setScale(scale);
-        me.ogCarMeshSet.setScale(scale);
-
-        me.onPitch();
-    }
-
-    onPitch() {
-        const me = this;
-
-        for (const object of me.aircraftObjects) {
-            me.updateObject(object);
-        }
+        me.ugCarMeshSet.refreshCameraParams(cameraParams);
+        me.ogCarMeshSet.refreshCameraParams(cameraParams);
+        me.aircraftMeshSet.refreshCameraParams(cameraParams);
     }
 
     setMode(viewMode, searchMode) {
@@ -108,16 +102,6 @@ export default class {
         });
     }
 
-    getAircraftScale(object) {
-        const {map} = this,
-            objectZ = map.getModelPosition(object.coord, object.altitude).z,
-            cameraZ = map.map.getFreeCameraOptions().position.z,
-            zoom = map.getZoom() + Math.log2(cameraZ / Math.abs(cameraZ - objectZ)),
-            unit = Math.pow(2, 14 - clamp(zoom, 13, 19));
-
-        return unit * map.getModelScale() * 100;
-    }
-
     addObject(object) {
         const me = this,
             meshIndex = object.type === 'train' ? object.altitude < 0 ? 0 : 1 : 2,
@@ -140,7 +124,6 @@ export default class {
             attributes.color2 = colorToRGBArray(color[2] || '#00ff00');
             attributes.color3 = colorToRGBArray(color[3] || '#00ff00');
         } else {
-            attributes.scale0 = me.getAircraftScale(object);
             attributes.color0 = colorToRGBArray(color[0]);
             attributes.color1 = colorToRGBArray(color[1]);
         }
@@ -183,8 +166,6 @@ export default class {
 
         if (object.type === 'train') {
             attributes.delay = object.delay;
-        } else {
-            attributes.scale0 = me.getAircraftScale(object);
         }
 
         meshSet.setInstanceAttributes(instanceIndex, attributes);

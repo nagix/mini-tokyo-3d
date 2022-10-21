@@ -33,16 +33,20 @@ const glslRotateFunctions = `
 `;
 
 const glslTransformVariables = `
-    uniform float scale;
+    uniform float zoom;
+    uniform float cameraZ;
+    uniform float modelScale;
     attribute float groupIndex;
     attribute vec3 translation;
     attribute float rotationX;
     attribute float rotationZ;
-    attribute float scale0;
     attribute vec3 idColor;
 `;
 
 const glslTransform = outline => `
+    float scale = 0.06 / 0.285 * modelScale * 100.0;
+    float zoom0 = zoom + log2( cameraZ / abs( cameraZ - translation.z ) );
+    float scale0 = pow( 2.0, 14.0 - clamp( zoom0, 13.0, 19.0 ) ) * modelScale * 100.0;
     float offsetY = groupIndex == 2.0 ? 0.44 - 1.32 * max( scale / scale0, 1.0 ) : 0.0;
     float offsetZ = groupIndex == 2.0 ? 0.88 : 0.0;
     float scaleX = groupIndex == 1.0 ? max( scale0, scale ) : scale0;
@@ -73,7 +77,6 @@ export default class {
             rotationZ: {type: Float32Array, itemSize: 1},
             opacity0: {type: Float32Array, itemSize: 1},
             outline: {type: Float32Array, itemSize: 1},
-            scale0: {type: Float32Array, itemSize: 1},
             color0: {type: Uint8Array, itemSize: 3, normalized: true},
             color1: {type: Uint8Array, itemSize: 3, normalized: true}
         });
@@ -82,7 +85,9 @@ export default class {
         geometry.dispose();
 
         me.uniforms = {
-            scale: {type: 'f', value: parameters.scale}
+            zoom: {type: 'f', value: parameters.zoom},
+            cameraZ: {type: 'f', value: parameters.cameraZ},
+            modelScale: {type: 'f', value: parameters.modelScale}
         };
 
         me.material = new MeshLambertMaterial({
@@ -90,7 +95,9 @@ export default class {
             transparent: true
         });
         me.material.onBeforeCompile = shader => {
-            shader.uniforms.scale = me.uniforms.scale;
+            shader.uniforms.zoom = me.uniforms.zoom;
+            shader.uniforms.cameraZ = me.uniforms.cameraZ;
+            shader.uniforms.modelScale = me.uniforms.modelScale;
 
             shader.vertexShader = [`
                 attribute vec3 color0;
@@ -131,7 +138,9 @@ export default class {
 
         me.pickingMaterial = new ShaderMaterial({
             uniforms: {
-                scale: me.uniforms.scale
+                zoom: me.uniforms.zoom,
+                cameraZ: me.uniforms.cameraZ,
+                modelScale: me.uniforms.modelScale
             },
             vertexShader: `
                 varying vec3 vIdColor;
@@ -161,7 +170,9 @@ export default class {
 
         me.outlineMaterial = new ShaderMaterial({
             uniforms: {
-                scale: me.uniforms.scale
+                zoom: me.uniforms.zoom,
+                cameraZ: me.uniforms.cameraZ,
+                modelScale: me.uniforms.modelScale
             },
             vertexShader: `
                 attribute float outline;
@@ -227,6 +238,11 @@ export default class {
 
     getOpacity() {
         return this.material.opacity;
+    }
+
+    refreshCameraParams(params) {
+        this.uniforms.zoom.value = params.zoom;
+        this.uniforms.cameraZ.value = params.cameraZ;
     }
 
     dispose() {

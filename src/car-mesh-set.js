@@ -35,7 +35,9 @@ const glslRotateFunctions = `
 `;
 
 const glslTransformVariables = `
-    uniform float scale;
+    uniform float zoom;
+    uniform float cameraZ;
+    uniform float modelScale;
     attribute vec3 translation;
     attribute float rotationX;
     attribute float rotationZ;
@@ -43,6 +45,8 @@ const glslTransformVariables = `
 `;
 
 const glslTransform = outline => `
+    float zoom0 = zoom + log2( cameraZ / abs( cameraZ - translation.z ) );
+    float scale = pow( 2.0, 14.0 - clamp( zoom0, 13.0, 19.0 ) ) * modelScale * 100.0;
     vec3 position0 = position * ( scale * ( 1.0 + idColor.b * 0.03 ) );
     ${outline ? 'position0 = position0 + 0.1 * scale * sign( position );' : ''}
     vec3 transformed = rotateZ( rotationZ ) * rotateX( rotationX ) * position0 + translation + vec3( 0.0, 0.0, .44 * scale );
@@ -75,7 +79,9 @@ export default class {
         nonIndexedGeometry.dispose();
 
         me.uniforms = {
-            scale: {type: 'f', value: parameters.scale},
+            zoom: {type: 'f', value: parameters.zoom},
+            cameraZ: {type: 'f', value: parameters.cameraZ},
+            modelScale: {type: 'f', value: parameters.modelScale},
             base: {type: 'f', value: parameters.dark ? 0 : 1}
         };
 
@@ -84,7 +90,9 @@ export default class {
             transparent: true
         });
         me.material.onBeforeCompile = shader => {
-            shader.uniforms.scale = me.uniforms.scale;
+            shader.uniforms.zoom = me.uniforms.zoom;
+            shader.uniforms.cameraZ = me.uniforms.cameraZ;
+            shader.uniforms.modelScale = me.uniforms.modelScale;
 
             shader.vertexShader = [`
                 attribute float groupIndex;
@@ -133,7 +141,9 @@ export default class {
 
         me.pickingMaterial = new ShaderMaterial({
             uniforms: {
-                scale: me.uniforms.scale
+                zoom: me.uniforms.zoom,
+                cameraZ: me.uniforms.cameraZ,
+                modelScale: me.uniforms.modelScale
             },
             vertexShader: `
                 varying vec3 vIdColor;
@@ -173,7 +183,9 @@ export default class {
 
         me.delayMarkerMaterial = new ShaderMaterial({
             uniforms: {
-                scale: me.uniforms.scale,
+                zoom: me.uniforms.zoom,
+                cameraZ: me.uniforms.cameraZ,
+                modelScale: me.uniforms.modelScale,
                 opacity: {
                     type: 'f',
                     get value() {
@@ -183,7 +195,8 @@ export default class {
                 base: me.uniforms.base
             },
             vertexShader: `
-                uniform float scale;
+                uniform float zoom;
+                uniform float modelScale;
                 uniform float opacity;
                 attribute vec3 translation;
                 attribute float opacity0;
@@ -191,6 +204,7 @@ export default class {
                 varying float vIntensity;
 
                 void main( void ) {
+                    float scale = pow( 2.0, 14.0 - clamp( zoom, 13.0, 19.0 ) ) * modelScale * 100.0;
                     vec3 transformed = position * scale + translation + vec3( 0.0, 0.0, .44 * scale );
                     gl_Position = projectionMatrix * modelViewMatrix * vec4( transformed, delay );
                     vec3 vNormal = normalize( normalMatrix * normal );
@@ -218,7 +232,9 @@ export default class {
 
         me.outlineMaterial = new ShaderMaterial({
             uniforms: {
-                scale: me.uniforms.scale
+                zoom: me.uniforms.zoom,
+                cameraZ: me.uniforms.cameraZ,
+                modelScale: me.uniforms.modelScale
             },
             vertexShader: `
                 attribute float outline;
@@ -284,14 +300,6 @@ export default class {
         return this.geometry.getInstanceAttributes(index);
     }
 
-    setScale(scale) {
-        this.uniforms.scale.value = scale;
-    }
-
-    getScale() {
-        return this.uniforms.scale.value;
-    }
-
     setOpacity(opacity) {
         this.material.opacity = opacity;
         this.delayMarkerMaterial.opacity = opacity;
@@ -299,6 +307,11 @@ export default class {
 
     getOpacity() {
         return this.material.opacity;
+    }
+
+    refreshCameraParams(params) {
+        this.uniforms.zoom.value = params.zoom;
+        this.uniforms.cameraZ.value = params.cameraZ;
     }
 
     refreshDelayMarkerMesh(dark) {
