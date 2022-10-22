@@ -38,6 +38,37 @@ const AIRLINES_FOR_ANA_CODE_SHARE = ['ADO', 'SFJ', 'SNJ'];
 
 const DEGREE_TO_RADIAN = Math.PI / 180;
 
+// Replace NavigationControl._updateZoomButtons to support disabling the control
+const _updateZoomButtons = NavigationControl.prototype._updateZoomButtons;
+NavigationControl.prototype._updateZoomButtons = function() {
+    const me = this;
+
+    _updateZoomButtons.apply(me);
+
+    if (me._disabled) {
+        me._zoomInButton.disabled = true;
+        me._zoomOutButton.disabled = true;
+        me._zoomInButton.setAttribute('aria-disabled', 'true');
+        me._zoomOutButton.setAttribute('aria-disabled', 'true');
+    }
+    me._compass.disabled = !!me._disabled;
+    me._compass.setAttribute('aria-disabled', (!!me._disabled).toString());
+};
+
+NavigationControl.prototype.enable = function() {
+    const me = this;
+
+    delete me._disabled;
+    me._updateZoomButtons();
+};
+
+NavigationControl.prototype.disable = function() {
+    const me = this;
+
+    me._disabled = true;
+    me._updateZoomButtons();
+};
+
 // Replace MapboxLayer.render to support underground rendering
 const render = MapboxLayer.prototype.render;
 MapboxLayer.prototype.render = function(...args) {
@@ -882,7 +913,7 @@ export default class extends Evented {
         }
 
         if (me.navigationControl) {
-            const control = new NavigationControl();
+            const control = me.navControl = new NavigationControl();
 
             control._setButtonTitle = function(button) {
                 const {_zoomInButton, _zoomOutButton, _compass} = this,
@@ -1289,7 +1320,7 @@ export default class extends Evented {
                 car.outline = 0;
             }
 
-            if (me.trackedObject === car && !me.viewAnimationID && !map._zooming && !map._pitching) {
+            if (me.trackedObject === car && !me.viewAnimationID && !map._zooming && !map._rotating && !map._pitching) {
                 me._jumpTo({
                     center: car.coord,
                     altitude: car.altitude,
@@ -1368,7 +1399,7 @@ export default class extends Evented {
             aircraft.outline = 0;
         }
 
-        if (me.trackedObject === aircraft && !me.viewAnimationID && !map._zooming && !map._pitching) {
+        if (me.trackedObject === aircraft && !me.viewAnimationID && !map._zooming && !map._rotating && !map._pitching) {
             me._jumpTo({
                 center: aircraft.coord,
                 altitude: aircraft.altitude,
@@ -1688,6 +1719,27 @@ export default class extends Evented {
                 const bearing = map.getBearing();
                 trackingParams.bearing.fn = t => (bearing + (t - now) / 400) % 360;
             }
+        }
+    }
+
+    updateHandlersAndControls() {
+        const me = this,
+            {map, trackedObject, trackingMode} = me,
+            handlers = ['scrollZoom', 'boxZoom', 'dragRotate', 'dragPan', 'keyboard', 'doubleClickZoom', 'touchZoomRotate', 'touchPitch'];
+
+        if (isTrainOrFlight(trackedObject) && trackingMode !== 'position') {
+            for (const handler of handlers) {
+                map[handler].disable();
+            }
+            me.navControl.disable();
+        } else {
+            for (const handler of handlers) {
+                map[handler].enable();
+            }
+            if (isTrainOrFlight(trackedObject) && trackingMode === 'position') {
+                map.dragPan.disable();
+            }
+            me.navControl.enable();
         }
     }
 
@@ -2468,6 +2520,7 @@ export default class extends Evented {
         if (isTrainOrFlight(me.trackedObject)) {
             me.updateBaseZoom();
             me.updateTrackingParams(true);
+            me.updateHandlersAndControls();
             me.startViewAnimation();
         }
         me.fire({type: 'trackingmode', mode});
@@ -2715,6 +2768,7 @@ export default class extends Evented {
                 me.fire(Object.assign({type: 'deselection'}, trackedObject));
             }
             delete me.trackedObject;
+            me.updateHandlersAndControls();
             me.stopViewAnimation();
             if (sharePanel) {
                 sharePanel.remove();
@@ -2743,6 +2797,7 @@ export default class extends Evented {
 
                 me.updateBaseZoom();
                 me.updateTrackingParams(true);
+                me.updateHandlersAndControls();
                 me.startViewAnimation();
                 me._setViewMode(altitude < 0 ? 'underground' : 'ground');
 
