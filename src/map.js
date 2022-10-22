@@ -996,25 +996,11 @@ export default class extends Evented {
 
         map.on('zoom', e => {
             if (!e.tracking) {
-                if (isTrainOrFlight(me.trackedObject)) {
-                    const {type, coord, altitude} = me.trackedObject;
-
-                    if (type === 'flight') {
-                        me.updateBaseZoom(coord, altitude);
-                    }
-                }
+                me.updateBaseZoom();
             }
-            /*
-            if (me.trackedObject) {
-                const {altitude} = me.trackedObject.userData;
-                // Keep camera off from the tracked aircraft
-                if (altitude > 0 && Math.pow(2, 22 - map.getZoom()) / altitude < .5) {
-                    map.setZoom(22 - Math.log2(altitude * .5));
-                }
-            }
-            */
 
             const zoom = map.getZoom(),
+                layerZoom = helpers.clamp(Math.floor(zoom), 13, 18),
                 unit = Math.pow(2, 14 - helpers.clamp(zoom, 13, 19));
 
             if (zoom < 13) {
@@ -1031,13 +1017,18 @@ export default class extends Evented {
                 });
             }
 
-            const prevLayerZoom = me.layerZoom;
-            me.layerZoom = helpers.clamp(Math.floor(zoom), 13, 18);
             me.objectUnit = Math.max(unit * .19, .02);
             // me.carScale = Math.max(.02 / .19 / unit, 1);
             // me.aircraftScale = Math.max(.06 / .285 / unit, 1);
 
-            if (prevLayerZoom !== me.layerZoom) {
+            if (me.layerZoom !== layerZoom) {
+                if (e.tracking) {
+                    me.prevLayerZoom = me.layerZoom;
+                } else {
+                    delete me.prevLayerZoom;
+                }
+                me.layerZoom = layerZoom;
+
                 // If the layer is switched, all object positions need to be recalculated
                 Object.keys(me.activeTrainLookup).forEach(key => {
                     const train = me.activeTrainLookup[key];
@@ -1126,7 +1117,7 @@ export default class extends Evented {
             {center, altitude, bearing, easeOutFactor, easeInFactor, bearingFactor} = options;
 
         if (trackingMode === 'position') {
-            zoom = currentZoom;
+            zoom = me.baseZoom;
             bearing = currentBearing;
             pitch = currentPitch;
         } else if (trackingMode === 'helicopter') {
@@ -1158,18 +1149,12 @@ export default class extends Evented {
             }
         }
 
-        if (!isNaN(me.baseZoom)) {
-            const {baseDistance, baseZoom} = me,
-                z = me.getModelPosition(center, altitude).z;
+        const cameraToGround = map.getFreeCameraOptions().position.z / Math.cos(currentPitch * DEGREE_TO_RADIAN),
+            cameraToObject = cameraToGround * Math.pow(2, currentZoom - zoom),
+            objectToGround = me.getModelPosition(center, altitude).z / Math.cos(pitch * DEGREE_TO_RADIAN);
 
-            if (trackingMode === 'position') {
-                zoom = baseZoom - Math.log2((z / Math.cos(currentPitch * DEGREE_TO_RADIAN) + baseDistance) / baseDistance);
-            } else {
-                const d = baseDistance * Math.pow(2, baseZoom - zoom);
-
-                zoom = zoom - Math.log2((z / Math.cos(currentPitch * DEGREE_TO_RADIAN) + d) / d);
-            }
-        }
+        // Adjust zoom according to the altitude of the object
+        zoom = Math.min(zoom - Math.log2(Math.max(cameraToObject + objectToGround, 0) / cameraToObject), 22);
 
         center = me.adjustCoord(center, altitude, bearing);
         if (easeOutFactor >= 0) {
@@ -1184,6 +1169,18 @@ export default class extends Evented {
         if (easeInFactor >= 0) {
             zoom = currentZoom + (zoom - currentZoom) * easeInFactor;
             pitch = currentPitch + (pitch - currentPitch) * easeInFactor;
+        }
+
+        // Prevent layer switch due to calculation error
+        if (Math.floor(zoom + 1) - zoom < 1e-6) {
+            zoom = Math.floor(zoom + 1);
+        }
+
+        // Prevent layer switch back and forth
+        if (me.prevLayerZoom === helpers.clamp(Math.floor(zoom), 13, 18)) {
+            zoom = currentZoom;
+        } else {
+            delete me.prevLayerZoom;
         }
 
         map.jumpTo({center, zoom, bearing, pitch}, {tracking: true});
@@ -1643,7 +1640,7 @@ export default class extends Evented {
 
             if (!zoom.time || reset) {
                 const time = zoom.time = [0, now, 0, 0],
-                    value = zoom.value = [0, map.getZoom(), 0, 0];
+                    value = zoom.value = [0, me.baseZoom, 0, 0];
                 for (const [i, j] of [[0, 1], [2, 1], [3, 2]]) {
                     time[i] = time[j] + Math.sign(i - j) * (Math.random() * 10000 + 30000);
                     value[i] = Math.random() * 5 + 15;
@@ -1699,7 +1696,6 @@ export default class extends Evented {
         let t2 = 0,
             t4 = 0;
 
-        me.updateTrackingParams(true);
         me.viewAnimationID = animation.start({
             callback: (elapsed, duration) => {
                 const t1 = easeOutQuart(elapsed / duration),
@@ -2470,6 +2466,8 @@ export default class extends Evented {
 
         me.trackingMode = mode;
         if (isTrainOrFlight(me.trackedObject)) {
+            me.updateBaseZoom();
+            me.updateTrackingParams(true);
             me.startViewAnimation();
         }
         me.fire({type: 'trackingmode', mode});
@@ -2717,7 +2715,6 @@ export default class extends Evented {
                 me.fire(Object.assign({type: 'deselection'}, trackedObject));
             }
             delete me.trackedObject;
-            me.updateBaseZoom();
             me.stopViewAnimation();
             if (sharePanel) {
                 sharePanel.remove();
@@ -2742,12 +2739,10 @@ export default class extends Evented {
             me.trackedObject = object;
 
             if (isTrainOrFlight(object)) {
-                const {type, coord, altitude, object: _object} = object;
+                const {altitude, object: _object} = object;
 
-                if (type === 'flight') {
-                    me.updateBaseZoom(coord, altitude);
-                }
-
+                me.updateBaseZoom();
+                me.updateTrackingParams(true);
                 me.startViewAnimation();
                 me._setViewMode(altitude < 0 ? 'underground' : 'ground');
 
@@ -2819,20 +2814,16 @@ export default class extends Evented {
         }
     }
 
-    updateBaseZoom(coord, altitude) {
+    updateBaseZoom() {
         const me = this,
-            {map} = me;
+            {map, trackedObject} = me;
 
-        if (coord !== undefined && altitude !== undefined) {
-            const objectZ = me.getModelPosition(coord, altitude).z,
-                cameraZ = map.getFreeCameraOptions().position.z,
-                z = Math.abs(cameraZ - objectZ);
+        if (isTrainOrFlight(trackedObject)) {
+            const {coord, altitude} = trackedObject,
+                objectZ = me.getModelPosition(coord, altitude).z,
+                cameraZ = map.getFreeCameraOptions().position.z;
 
-            me.baseDistance = z / Math.cos(map.getPitch() * DEGREE_TO_RADIAN);
-            me.baseZoom = map.getZoom() + Math.log2(cameraZ / z);
-        } else {
-            delete me.baseDistance;
-            delete me.baseZoom;
+            me.baseZoom = map.getZoom() + Math.log2(cameraZ / Math.abs(cameraZ - objectZ));
         }
     }
 
