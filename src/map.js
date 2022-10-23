@@ -139,6 +139,7 @@ export default class extends Evented {
             bearing: {},
             pitch: {}
         };
+        me.lastCameraParams = {};
         me.initialSelection = options.selection;
         me.clockMode = configs.defaultClockMode;
         me.isEditingTime = false;
@@ -2740,7 +2741,7 @@ export default class extends Evented {
 
     trackObject(object) {
         const me = this,
-            {searchMode, searchPanel, lang, map, trackedObject, sharePanel, detailPanel} = me;
+            {searchMode, searchPanel, lang, map, trackedObject, lastCameraParams, sharePanel, detailPanel} = me;
 
         if (searchMode !== 'none') {
             if (searchMode === 'edit' && searchPanel && isStation(object)) {
@@ -2752,6 +2753,21 @@ export default class extends Evented {
                 searchPanel.fillStationName(title);
             }
             return;
+        }
+
+        // Remember the camera params to restore them after the object is deselected
+        if (!trackedObject && object) {
+            lastCameraParams.viewMode = me.getViewMode();
+            lastCameraParams.zoom = map.getZoom();
+            lastCameraParams.bearing = map.getBearing();
+            lastCameraParams.pitch = map.getPitch();
+        } else if (trackedObject && !object) {
+            me._setViewMode(lastCameraParams.viewMode);
+            map.flyTo({
+                zoom: lastCameraParams.zoom,
+                bearing: lastCameraParams.bearing,
+                pitch: lastCameraParams.pitch
+            });
         }
 
         if (isTrainOrFlight(trackedObject) || isStation(trackedObject) || (trackedObject && !isEqualObject(trackedObject, object))) {
