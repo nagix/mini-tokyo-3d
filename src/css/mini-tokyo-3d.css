@@ -176,8 +176,8 @@
 .mini-tokyo-3d .decrease-icon {
     display: block;
     width: 100%;
-    height: 12px;
-    background: no-repeat center/12px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/minus.svg', fill: #fff);
+    height: 13px;
+    background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/minus.svg', fill: #fff);
 }
 .mini-tokyo-3d button:disabled .decrease-icon {
     background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/minus.svg', fill: #7f7f7f);
@@ -195,8 +195,8 @@
 .mini-tokyo-3d .increase-icon {
     display: block;
     width: 100%;
-    height: 12px;
-    background: no-repeat center/12px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/plus.svg', fill: #fff);
+    height: 13px;
+    background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/plus.svg', fill: #fff);
 }
 .mini-tokyo-3d button:disabled .increase-icon {
     background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/plus.svg', fill: #7f7f7f);
@@ -235,7 +235,7 @@
 .mini-tokyo-3d .share-button:before {
     content: "";
     display: block;
-    background: no-repeat center/20px 20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/share-alt.svg', fill: #fff);
+    background: no-repeat center/20px 20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/share-nodes.svg', fill: #fff);
     width: 20px;
     height: 20px;
     float: left;
@@ -382,7 +382,7 @@
 .mini-tokyo-3d .exit-title-box:before {
     content: "";
     display: block;
-    background: no-repeat center/20px 20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/sign-in-alt.svg', fill: #fff);
+    background: no-repeat center/20px 20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/right-to-bracket.svg', fill: #fff);
     width: 20px;
     height: 20px;
     float: left;
@@ -404,7 +404,7 @@
 .mini-tokyo-3d .slide-button {
     width: 20px;
     height: 100%;
-    background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-down.svg', fill: #fff);
+    background: no-repeat center/17px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-down.svg', fill: #fff);
     pointer-events: none;
 }
 .mini-tokyo-3d .collapsed .slide-button {
@@ -464,8 +464,8 @@
 .mini-tokyo-3d .previous-icon {
     display: block;
     width: 100%;
-    height: 14px;
-    background: no-repeat center/10px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-left.svg', fill: #fff);
+    height: 15px;
+    background: no-repeat center/12px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-left.svg', fill: #fff);
 }
 .mini-tokyo-3d button:disabled .previous-icon {
     background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-left.svg', fill: #7f7f7f);
@@ -479,8 +479,8 @@
 .mini-tokyo-3d .next-icon {
     display: block;
     width: 100%;
-    height: 14px;
-    background: no-repeat center/10px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-right.svg', fill: #fff);
+    height: 15px;
+    background: no-repeat center/12px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-right.svg', fill: #fff);
 }
 .mini-tokyo-3d button:disabled .next-icon {
     background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/angle-right.svg', fill: #7f7f7f);
@@ -503,8 +503,8 @@
 .mini-tokyo-3d .back-icon {
     display: block;
     width: 100%;
-    height: 14px;
-    background: no-repeat center/14px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/undo.svg', fill: #fff);
+    height: 17px;
+    background: no-repeat center/17px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/arrow-rotate-left.svg', fill: #fff);
 }
 .mini-tokyo-3d .search-panel #panel-content {
     height: 100%;
@@ -614,10 +614,10 @@
     border-radius: inherit;
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-search .mapboxgl-ctrl-icon {
-    background: no-repeat center/19px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/search.svg', fill: #333);
+    background: no-repeat center/19px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/magnifying-glass.svg', fill: #333);
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-search-active .mapboxgl-ctrl-icon {
-    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/search.svg', fill: #33B5E5);
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/magnifying-glass.svg', fill: #33B5E5);
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-underground .mapboxgl-ctrl-icon {
     background: no-repeat center/23px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/eye.svg', fill: #333);
@@ -626,10 +626,10 @@
     background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/eye.svg', fill: #33B5E5);
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-playback .mapboxgl-ctrl-icon {
-    background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/play-circle.svg', fill: #333);
+    background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/circle-play.svg', fill: #333);
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-playback-active .mapboxgl-ctrl-icon {
-    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/play-circle.svg', fill: #33B5E5);
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/circle-play.svg', fill: #33B5E5);
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-eco .mapboxgl-ctrl-icon {
     background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/battery-three-quarters.svg', fill: #333);
@@ -638,13 +638,13 @@
     background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/battery-three-quarters.svg', fill: #33B5E5);
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-layers .mapboxgl-ctrl-icon {
-    background: no-repeat center/19px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/layer-group.svg', fill: #333);
+    background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/layer-group.svg', fill: #333);
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-tracking-mode .mapboxgl-ctrl-icon {
     background: no-repeat center/19px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/video.svg', fill: #333);
 }
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-about .mapboxgl-ctrl-icon {
-    background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/info-circle.svg', fill: #333);
+    background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/circle-info.svg', fill: #333);
 }
 .mini-tokyo-3d .mapboxgl-popup-content {
     color: #fff;
@@ -777,7 +777,7 @@
 .mini-tokyo-3d .close-button {
     width: 20px;
     height: 100%;
-    background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/times.svg', fill: #fff);
+    background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/xmark.svg', fill: #fff);
     cursor: pointer;
 }
 .mini-tokyo-3d .about-panel #panel-body{
