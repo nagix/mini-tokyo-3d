@@ -58,7 +58,7 @@ Sets the marker's activity state. Active status refers to the state where the ma
 
 ### **`setLngLat(lnglat)`**
 
-Sets the marker's geographical position and move the marker to it.
+Sets the marker's geographical position and move it.
 
 #### Parameters
 

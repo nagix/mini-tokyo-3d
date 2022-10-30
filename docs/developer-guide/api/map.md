@@ -25,7 +25,7 @@ Name | Description
 **`options.fullscreenControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the fullscreen button will be added to the map.
 **`options.modeControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the mode switch buttons will be added to the map.
 **`options.configControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the configuration buttons will be added to the map.
-**`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'helicopter'` | The initial tracking mode. `'helicopter'` and `'heading'` are supported.
+**`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'position'` | The initial tracking mode. `'position'`, `'back'`, `'topback'`, `'front'`, `'topfront'`, `'helicopter'`, `'drone'` and `'bird'` are supported.
 **`options.ecoMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'normal'` | The initial eco mode. `'normal'` and `'eco'` are supported.
 **`options.center`**<br>[`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)<br>default: `[139.7670, 35.6814]` | The initial geographical center point of the map. If not specified, it will default to around Tokyo station (`[139.7670, 35.6814]`). Note: Mini Tokyo 3D uses longitude, latitude coordinate order to match GeoJSON.
 **`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `14` | The initial zoom level of the map. If not specified, it will default to `14`.
@@ -79,8 +79,8 @@ If a user has the `reduced motion` accessibility feature enabled in their operat
 
 Name | Description
 :-- | :--
-**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.42` | The zooming "curve" that will occur along the flight path. A high value maximizes zooming for an exaggerated animation, while a low value minimizes zooming for an effect closer to [Map#easeTo](./map.md#easeto-options). 1.42 is the average value selected by participants in the user study discussed in [van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf). A value of `Math.pow(6, 0.25)` would be equivalent to the root mean squared average velocity. A value of 1 would produce a circular motion.
-**`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The zero-based zoom level at the peak of the flight path. If `options.curve` is specified, this option is ignored.
+**`options.curve`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.42` | The zooming "curve" that will occur along the flight path. A high value maximizes zooming for an exaggerated animation, while a low value minimizes zooming for an effect closer to [Map#easeTo](./map.md#easeto-options). 1.42 is the average value selected by participants in the user study discussed in [van Wijk (2003)](https://www.win.tue.nl/~vanwijk/zoompan.pdf). A value of `Math.pow(6, 0.25)` would be equivalent to the root mean squared average velocity. A value of 1 would produce a circular motion. If `options.minZoom` is specified, this option will be ignored.
+**`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The zero-based zoom level at the peak of the flight path. If this option is specified, `options.curve` will be ignored.
 **`options.speed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1.2` | The average speed of the animation defined in relation to `options.curve`. A speed of 1.2 means that the map appears to move along the flight path by 1.2 times `options.curve` screenfuls every second. A *screenful* is the map's visible span. It does not correspond to a fixed physical distance, but varies by zoom level.
 **`options.screenSpeed`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The average speed of the animation measured in screenfuls per second, assuming a linear timing curve. If `options.speed` is specified, this option is ignored.
 **`options.maxDuration`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The animation's maximum duration, measured in milliseconds. If duration exceeds maximum duration, it resets to 0.
@@ -189,11 +189,15 @@ Returns the ID of the train or flight being tracked.
 
 ### **`getTrackingMode()`**
 
-Returns the current tracking mode.
+Returns the current tracking mode. See [here](../../user-guide/configuration.md#tracking-mode-settings) for details of the tracking modes.
 
 #### Returns
 
-[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): A string representing the current tracking mode. Either `'helicopter'` or `'heading'`.
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): A string representing the current tracking mode. Either `'position'`, `'back'`, `'topback'`, `'front'`, `'topfront'`, `'helicopter'`, `'drone'` or `'bird'`.
+
+::: warning
+The tracking mode `'heading'` is deprecated and falls back to `'topback'`.
+:::
 
 ---
 
@@ -292,6 +296,8 @@ Adds a listener that will be called only once to a specified event type.
 ### **`removeLayer(id)`**
 
 Removes the layer with the given ID from the map.
+
+If no such layer exists, an `error` event is fired.
 
 #### Parameters
 
@@ -407,11 +413,15 @@ Sets the ID of the train or flight you want to track. The train ID is a string i
 
 ### **`setTrackingMode(mode)`**
 
-Sets the tracking mode. In the helicopter tracking mode (`'helicopter'`), it makes a 360 degree turn around the target train or airplane. In the heading tracking mode (`'heading'`), it tracks the target train or airplane from above or diagonally behind in the direction of travel up.
+Sets the tracking mode. See [here](../../user-guide/configuration.md#tracking-mode-settings) for details of the tracking modes.
 
 #### Parameters
 
-**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) A string representing the tracking mode. Either `'helicopter'` or `'heading'`.
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) A string representing the tracking mode. Either `'position'`, `'back'`, `'topback'`, `'front'`, `'topfront'`, `'helicopter'`, `'drone'` or `'bird'`.
+
+::: warning
+The tracking mode `'heading'` is deprecated and falls back to `'topback'`.
+:::
 
 #### Returns
 
@@ -439,7 +449,7 @@ Sets the map's zoom level. Equivalent to `jumpTo({zoom: zoom})`.
 
 #### Parameters
 
-**`zoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) The zoom level to set (0-20).
+**`zoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) The zoom level to set (0-22).
 
 #### Returns
 
@@ -451,9 +461,7 @@ Sets the map's zoom level. Equivalent to `jumpTo({zoom: zoom})`.
 
 Fired when the user cancels a "box zoom" interaction, or when the bounding box does not meet the minimum size threshold. See [BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
 
-#### Properties
-
-**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent))
+**Type** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent)
 
 ---
 
@@ -461,9 +469,7 @@ Fired when the user cancels a "box zoom" interaction, or when the bounding box d
 
 Fired when a "box zoom" interaction ends. See [BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
 
-#### Properties
-
-**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent))
+**Type** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent)
 
 ---
 
@@ -471,9 +477,7 @@ Fired when a "box zoom" interaction ends. See [BoxZoomHandler](https://docs.mapb
 
 Fired when a "box zoom" interaction starts. See [BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
 
-#### Properties
-
-**`data`** ([`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent))
+**Type** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent)
 
 ---
 
@@ -481,9 +485,7 @@ Fired when a "box zoom" interaction starts. See [BoxZoomHandler](https://docs.ma
 
 Fired when a pointing device (usually a mouse) is pressed and released at the same point on the map.
 
-#### Properties
-
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -491,9 +493,11 @@ Fired when a pointing device (usually a mouse) is pressed and released at the sa
 
 Fired when the clock mode is changed.
 
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
 #### Properties
 
-**`data`** (`{mode: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): A string representing the clock mode. Either `'realtime'` or `'playback'`.
 
 ---
 
@@ -501,9 +505,7 @@ Fired when the clock mode is changed.
 
 Fired when the right button of the mouse is clicked or the context menu key is pressed within the map.
 
-#### Properties
-
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -511,9 +513,7 @@ Fired when the right button of the mouse is clicked or the context menu key is p
 
 Fired when a pointing device (usually a mouse) is pressed and released twice at the same point on the map in rapid succession.
 
-#### Properties
-
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -521,9 +521,11 @@ Fired when a pointing device (usually a mouse) is pressed and released twice at 
 
 Fired when a train or airplane tracking is canceled.
 
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
 #### Properties
 
-**`data`** (`{deselection: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+**`deselection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): The ID of the train or flight whose tracking is canceled. The train ID is a string in the form of `'<operator ID>.<line ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`.
 
 ---
 
@@ -531,9 +533,7 @@ Fired when a train or airplane tracking is canceled.
 
 Fired repeatedly during a "drag to pan" interaction. See [DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler).
 
-#### Properties
-
-**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -541,9 +541,7 @@ Fired repeatedly during a "drag to pan" interaction. See [DragPanHandler](https:
 
 Fired when a "drag to pan" interaction ends. See [DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler).
 
-#### Properties
-
-**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -551,9 +549,7 @@ Fired when a "drag to pan" interaction ends. See [DragPanHandler](https://docs.m
 
 Fired when a "drag to pan" interaction starts. See [DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler).
 
-#### Properties
-
-**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -561,9 +557,11 @@ Fired when a "drag to pan" interaction starts. See [DragPanHandler](https://docs
 
 Fired when the eco mode is changed.
 
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
 #### Properties
 
-**`data`** (`{mode: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): A string representing the eco mode. Either `'normal'` or `'eco'`.
 
 ---
 
@@ -571,9 +569,11 @@ Fired when the eco mode is changed.
 
 Fired when an error occurs. This is Mini Tokyo 3D's primary error reporting mechanism. We use an event instead of `throw` to better accommodate asynchronous operations. If no listeners are bound to the `error` event, the error will be printed to the console.
 
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
 #### Properties
 
-**`data`** (`{error: {message: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}}`)
+**`message`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): Error message.
 
 ---
 
@@ -581,15 +581,15 @@ Fired when an error occurs. This is Mini Tokyo 3D's primary error reporting mech
 
 Fired immediately after all necessary resources have been downloaded and the first visually complete rendering of the map has occurred.
 
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
 ---
 
 ### **`mousedown`**
 
 Fired when a pointing device (usually a mouse) is pressed within the map.
 
-#### Properties
-
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -597,9 +597,7 @@ Fired when a pointing device (usually a mouse) is pressed within the map.
 
 Fired when a pointing device (usually a mouse) is moved while the cursor is inside the map. As you move the cursor across the map, the event will fire every time the cursor changes position within the map.
 
-#### Properties
-
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -607,9 +605,7 @@ Fired when a pointing device (usually a mouse) is moved while the cursor is insi
 
 Fired when a pointing device (usually a mouse) is moved within the map. As you move the cursor across a web page containing a map, the event will fire each time it enters the map or any child elements.
 
-#### Properties
-
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -617,9 +613,7 @@ Fired when a pointing device (usually a mouse) is moved within the map. As you m
 
 Fired when a pointing device (usually a mouse) is released within the map.
 
-#### Properties
-
-**`data`** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent))
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -627,9 +621,7 @@ Fired when a pointing device (usually a mouse) is released within the map.
 
 Fired repeatedly during an animated transition from one view to another, as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
-#### Properties
-
-**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -637,9 +629,7 @@ Fired repeatedly during an animated transition from one view to another, as the 
 
 Fired just after the map completes a transition from one view to another, as the result of either user interaction or methods such as [Map#jumpTo](./map.md#jumpto-options).
 
-#### Properties
-
-**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -647,9 +637,7 @@ Fired just after the map completes a transition from one view to another, as the
 
 Fired just before the map begins a transition from one view to another, as the result of either user interaction or methods such as [Map#jumpTo](./map.md#jumpto-options).
 
-#### Properties
-
-**`data`** (`{originalEvent: `[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)`}`)
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -657,9 +645,7 @@ Fired just before the map begins a transition from one view to another, as the r
 
 Fired repeatedly during the map's pitch (tilt) animation between one state and another as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
-#### Properties
-
-**`data`** (`MapEventData`)
+**Type** [`MapDataEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapdataevent)
 
 ---
 
@@ -667,9 +653,7 @@ Fired repeatedly during the map's pitch (tilt) animation between one state and a
 
 Fired immediately after the map's pitch (tilt) finishes changing as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
-#### Properties
-
-**`data`** (`MapEventData`)
+**Type** [`MapDataEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapdataevent)
 
 ---
 
@@ -677,9 +661,7 @@ Fired immediately after the map's pitch (tilt) finishes changing as the result o
 
 Fired whenever the map's pitch (tilt) begins a change as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
-#### Properties
-
-**`data`** (`MapEventData`)
+**Type** [`MapDataEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapdataevent)
 
 ---
 
@@ -693,9 +675,7 @@ Fired immediately after the map has been resized.
 
 Fired repeatedly during a "drag to rotate" interaction. See [DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
 
-#### Properties
-
-**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -703,9 +683,7 @@ Fired repeatedly during a "drag to rotate" interaction. See [DragRotateHandler](
 
 Fired when a "drag to rotate" interaction ends. See [DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
 
-#### Properties
-
-**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -713,9 +691,7 @@ Fired when a "drag to rotate" interaction ends. See [DragRotateHandler](https://
 
 Fired when a "drag to rotate" interaction starts. See [DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler).
 
-#### Properties
-
-**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -723,9 +699,11 @@ Fired when a "drag to rotate" interaction starts. See [DragRotateHandler](https:
 
 Fired when a train or airplane tracking is initiated.
 
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
 #### Properties
 
-**`data`** (`{selection: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+**`selection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): The ID of the train or flight whose tracking is initiated. The train ID is a string in the form of `'<operator ID>.<line ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`.
 
 ---
 
@@ -733,9 +711,7 @@ Fired when a train or airplane tracking is initiated.
 
 Fired when a [`touchcancel`](https://developer.mozilla.org/docs/Web/Events/touchcancel) event occurs within the map.
 
-#### Properties
-
-**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**Type** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
 
 ---
 
@@ -743,9 +719,7 @@ Fired when a [`touchcancel`](https://developer.mozilla.org/docs/Web/Events/touch
 
 Fired when a [`touchend`](https://developer.mozilla.org/docs/Web/Events/touchend) event occurs within the map.
 
-#### Properties
-
-**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**Type** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
 
 ---
 
@@ -753,9 +727,7 @@ Fired when a [`touchend`](https://developer.mozilla.org/docs/Web/Events/touchend
 
 Fired when a [`touchmove`](https://developer.mozilla.org/docs/Web/Events/touchmove) event occurs within the map.
 
-#### Properties
-
-**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**Type** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
 
 ---
 
@@ -763,9 +735,7 @@ Fired when a [`touchmove`](https://developer.mozilla.org/docs/Web/Events/touchmo
 
 Fired when a [`touchstart`](https://developer.mozilla.org/docs/Web/Events/touchstart) event occurs within the map.
 
-#### Properties
-
-**`data`** ([`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**Type** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
 
 ---
 
@@ -773,9 +743,15 @@ Fired when a [`touchstart`](https://developer.mozilla.org/docs/Web/Events/touchs
 
 Fired when the tracking mode is changed.
 
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
 #### Properties
 
-**`data`** (`{mode: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): A string representing the tracking mode. Either `'position'`, `'back'`, `'topback'`, `'front'`, `'topfront'`, `'helicopter'`, `'drone'` or `'bird'`.
+
+::: warning
+The tracking mode `'heading'` is deprecated and falls back to `'topback'`.
+:::
 
 ---
 
@@ -783,9 +759,11 @@ Fired when the tracking mode is changed.
 
 Fired when the view mode is changed.
 
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
 #### Properties
 
-**`data`** (`{mode: `[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`}`)
+**`mode`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): A string representing the view mode. Either `'ground'` or `'underground'`.
 
 ---
 
@@ -793,9 +771,7 @@ Fired when the view mode is changed.
 
 Fired when a [`wheel`](https://developer.mozilla.org/docs/Web/Events/wheel) event occurs within the map.
 
-#### Properties
-
-**`data`** ([`MapWheelEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapwheelevent))
+**Type** [`MapWheelEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapwheelevent)
 
 ---
 
@@ -803,9 +779,7 @@ Fired when a [`wheel`](https://developer.mozilla.org/docs/Web/Events/wheel) even
 
 Fired repeatedly during an animated transition from one zoom level to another, as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
-#### Properties
-
-**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -813,9 +787,7 @@ Fired repeatedly during an animated transition from one zoom level to another, a
 
 Fired just after the map completes a transition from one zoom level to another, as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
-#### Properties
-
-**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -823,6 +795,4 @@ Fired just after the map completes a transition from one zoom level to another, 
 
 Fired just before the map begins a transition from one zoom level to another, as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
-#### Properties
-
-**`data`** (([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)))
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
