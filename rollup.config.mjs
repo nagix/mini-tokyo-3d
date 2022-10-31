@@ -3,7 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import image from '@rollup/plugin-image';
-import {terser} from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import sass from 'node-sass';
 import postcss from 'rollup-plugin-postcss';
 import cssimport from 'postcss-import';
@@ -23,11 +23,11 @@ const sassRender = (content, id) => new Promise((resolve, reject) => {
 });
 
 const onwarn = (warning, defaultHandler) => {
-	const {code, importer, loc} = warning;
-	if (code == 'CIRCULAR_DEPENDENCY' && importer.includes('@luma.gl')) {
+	const {code, message} = warning;
+	if (code == 'CIRCULAR_DEPENDENCY' && message.includes('@luma.gl')) {
 		return;
 	}
-	if ((code == 'MISSING_EXPORT' || code == 'EVAL') && loc.file.includes('@loaders.gl')) {
+	if ((code == 'MISSING_EXPORT' || code == 'EVAL') && message.includes('@loaders.gl')) {
 		return;
 	}
 	defaultHandler(warning)
