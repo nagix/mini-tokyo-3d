@@ -1,16 +1,23 @@
-import pako from 'pako';
+import {DecodeUTF8, Gunzip} from 'fflate';
 
 export function loadJSON(url) {
     return fetch(url).then(async response => {
         if (url.endsWith('.gz')) {
+            let stringData = '';
             const reader = response.body.getReader(),
-                inflate = new pako.Inflate({to: 'string'});
+                utfDecode = new DecodeUTF8(data => {
+                    stringData += data;
+                }),
+                inflate = new Gunzip((data, final) => {
+                    utfDecode.push(data, final);
+                });
 
             while (true) {
                 const {done, value} = await reader.read();
 
                 if (done) {
-                    return JSON.parse(inflate.result);
+                    inflate.push(new Uint8Array(0), true);
+                    return JSON.parse(stringData);
                 }
                 inflate.push(value);
             }

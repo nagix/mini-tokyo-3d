@@ -1,6 +1,6 @@
 import fs from 'fs';
 import https from 'https';
-import pako from 'pako';
+import zlib from 'zlib';
 
 export function loadJSON(url) {
     return new Promise((resolve, reject) => {
@@ -25,7 +25,11 @@ export function loadJSON(url) {
 }
 
 export function saveJSON(path, data) {
-    fs.promises.writeFile(path, pako.gzip(JSON.stringify(data), {level: 9}));
+    zlib.gzip(JSON.stringify(data), {level: 9}, (error, data) => {
+        if (!error) {
+            fs.promises.writeFile(path, data);
+        }
+    });
 }
 
 export function readdir(path) {
