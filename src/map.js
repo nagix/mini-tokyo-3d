@@ -2311,7 +2311,7 @@ export default class extends Evented {
                 const departureTime = flight.edt || flight.adt || flight.sdt,
                     arrivalTime = flight.eat || flight.aat || flight.sat;
 
-                if (!status) {
+                if (arrivalTime && !status) {
                     if (arrivalTime < flight.sat) {
                         status = 'NewTime';
                     } else if (arrivalTime > flight.sat) {
@@ -2319,7 +2319,7 @@ export default class extends Evented {
                     } else if (arrivalTime === flight.sat) {
                         status = 'OnTime';
                     }
-                } else if (status === 'CheckIn' || status === 'NowBoarding' || status === 'BoardingComplete' || status === 'Departed') {
+                } else if (departureTime && (!status || status === 'CheckIn' || status === 'NowBoarding' || status === 'FinalCall' || status === 'BoardingComplete' || status === 'Departed')) {
                     if (departureTime < flight.sdt) {
                         status = 'NewTime';
                     } else if (departureTime > flight.sdt) {
@@ -2375,6 +2375,7 @@ export default class extends Evented {
             }
 
             me.refreshFlights();
+            me.aboutPanel.updateContent();
         }).catch(error => {
             me.refreshFlights();
             console.log(error);

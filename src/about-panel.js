@@ -32,10 +32,12 @@ export default class extends Panel {
                 '<div class="card-body">',
                 lastDynamicUpdate['Toei'] || 'N/A',
                 ` (${dict['toei']})<br>`,
-                lastDynamicUpdate['JAL'] || 'N/A',
-                ` (${dict['jal']})<br>`,
-                lastDynamicUpdate['ANA'] || 'N/A',
-                ` (${dict['ana']})</div>`
+                lastDynamicUpdate['HND-JAT'] || 'N/A',
+                ` (${dict['hnd-jat']})<br>`,
+                lastDynamicUpdate['HND-TIAT'] || 'N/A',
+                ` (${dict['hnd-tiat']})<br>`,
+                lastDynamicUpdate['NAA'] || 'N/A',
+                ` (${dict['naa']})</div>`
             ].join(''));
         }
 

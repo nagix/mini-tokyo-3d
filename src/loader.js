@@ -18,11 +18,6 @@ const OPERATORS_FOR_TRAININFORMATION = {
     ]
 };
 
-const OPERATORS_FOR_FLIGHTINFORMATION = [
-    'JAL',
-    'ANA'
-];
-
 const RAILWAY_SOBURAPID = 'JR-East.SobuRapid';
 
 const TRAINTYPE_JREAST_LIMITEDEXPRESS = 'JR-East.LimitedExpress';
@@ -190,41 +185,14 @@ export function loadDynamicTrainData(secrets) {
 
 /**
  * Load the dynamic data for flights.
- * @param {object} secrets - Secrets object
  * @returns {object} Loaded data
  */
-export function loadDynamicFlightData(secrets) {
-    const url = configs.apiUrl.odpt,
-        key = secrets.odpt,
-        operators = OPERATORS_FOR_FLIGHTINFORMATION
-            .map(operator => `odpt.Operator:${operator}`)
-            .join(',');
-
-    const urls = [configs.atisUrl, ...['Arrival', 'Departure'].map(type =>
-        `${url}odpt:FlightInformation${type}?odpt:operator=${operators}&acl:consumerKey=${key}`
-    )];
-
-    return Promise.all(urls.map(loadJSON)).then(data => {
-        const atisData = data.shift(),
-            flightData = [].concat(...data).map(flight => ({
-                id: removePrefix(flight['owl:sameAs']),
-                o: removePrefix(flight['odpt:operator']),
-                n: flight['odpt:flightNumber'],
-                a: removePrefix(flight['odpt:airline']),
-                s: removePrefix(flight['odpt:flightStatus']),
-                dp: removePrefix(flight['odpt:departureAirport']),
-                ar: removePrefix(flight['odpt:arrivalAirport']),
-                ds: removePrefix(flight['odpt:destinationAirport']),
-                or: removePrefix(flight['odpt:originAirport']),
-                edt: flight['odpt:estimatedDepartureTime'],
-                adt: flight['odpt:actualDepartureTime'],
-                sdt: flight['odpt:scheduledDepartureTime'],
-                eat: flight['odpt:estimatedArrivalTime'],
-                aat: flight['odpt:actualArrivalTime'],
-                sat: flight['odpt:scheduledArrivalTime'],
-                date: flight['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2')
-            }));
-
-        return {atisData, flightData};
-    });
+export function loadDynamicFlightData() {
+    return Promise.all([
+        configs.atisUrl,
+        configs.flightUrl
+    ].map(loadJSON)).then(data => ({
+        atisData: data[0],
+        flightData: data[1]
+    }));
 }

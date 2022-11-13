@@ -113,6 +113,9 @@ const configs = {
     // ATIS URL
     atisUrl: 'https://mini-tokyo.appspot.com/atisinfo',
 
+    // Flight URL
+    flightUrl: 'https://mini-tokyo.appspot.com/flight',
+
     // Default data URL
     dataUrl: 'https://minitokyo3d.com/data',
 
