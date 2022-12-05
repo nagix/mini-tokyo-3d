@@ -92,7 +92,7 @@
 		"d": "06:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "07:04",
+		"a": "07:05",
 		"d": "07:06"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
@@ -143,10 +143,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.7AE03.Weekday",
-	"t": "Keisei.NaritaSkyAccess.7AE03",
+	"id": "Keisei.NaritaSkyAccess.7AE13.Weekday",
+	"t": "Keisei.NaritaSkyAccess.7AE13",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "7AE03",
+	"n": "7AE13",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -164,11 +164,11 @@
 		"d": "07:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "07:46",
+		"a": "07:43",
 		"d": "07:47"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "07:48"
+		"a": "07:49"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 9号",
@@ -179,10 +179,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.7AE15.Weekday",
-	"t": "Keisei.NaritaSkyAccess.7AE15",
+	"id": "Keisei.NaritaSkyAccess.7AE45.Weekday",
+	"t": "Keisei.NaritaSkyAccess.7AE45",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "7AE15",
+	"n": "7AE45",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -203,12 +203,16 @@
 		"a": "07:34",
 		"d": "07:36"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "07:46",
+		"d": "07:48"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "08:03",
-		"d": "08:05"
+		"a": "08:07",
+		"d": "08:10"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "08:07"
+		"a": "08:12"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 11号",
@@ -219,10 +223,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.7AE13.Weekday",
-	"t": "Keisei.NaritaSkyAccess.7AE13",
+	"id": "Keisei.NaritaSkyAccess.7AE03.Weekday",
+	"t": "Keisei.NaritaSkyAccess.7AE03",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "7AE13",
+	"n": "7AE03",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -291,10 +295,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.8AE01.Weekday",
-	"t": "Keisei.NaritaSkyAccess.8AE01",
+	"id": "Keisei.NaritaSkyAccess.8AE31.Weekday",
+	"t": "Keisei.NaritaSkyAccess.8AE31",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "8AE01",
+	"n": "8AE31",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -315,12 +319,16 @@
 		"a": "08:31",
 		"d": "08:32"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "08:44",
+		"d": "08:45"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "09:03",
-		"d": "09:04"
+		"a": "09:04",
+		"d": "09:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "09:06"
+		"a": "09:07"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 17号",
@@ -389,10 +397,10 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "09:42",
-		"d": "09:46"
+		"d": "09:43"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "09:48"
+		"a": "09:44"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 21号",
@@ -403,10 +411,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.9AE05.Weekday",
-	"t": "Keisei.NaritaSkyAccess.9AE05",
+	"id": "Keisei.NaritaSkyAccess.9AE35.Weekday",
+	"t": "Keisei.NaritaSkyAccess.9AE35",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "9AE05",
+	"n": "9AE35",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -427,12 +435,16 @@
 		"a": "09:30",
 		"d": "09:32"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "09:43",
+		"d": "09:44"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:00",
-		"d": "10:01"
+		"a": "10:05",
+		"d": "10:06"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "10:03"
+		"a": "10:08"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 23号",
@@ -443,10 +455,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.9AE03.Weekday",
-	"t": "Keisei.NaritaSkyAccess.9AE03",
+	"id": "Keisei.NaritaSkyAccess.9AE13.Weekday",
+	"t": "Keisei.NaritaSkyAccess.9AE13",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "9AE03",
+	"n": "9AE13",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -479,10 +491,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.10AE13.Weekday",
-	"t": "Keisei.NaritaSkyAccess.10AE13",
+	"id": "Keisei.NaritaSkyAccess.10AE33.Weekday",
+	"t": "Keisei.NaritaSkyAccess.10AE33",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "10AE13",
+	"n": "10AE33",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -499,12 +511,20 @@
 		"a": "10:03",
 		"d": "10:05"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "10:14",
+		"d": "10:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "10:27",
+		"d": "10:29"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:41",
-		"d": "10:42"
+		"a": "10:53",
+		"d": "10:55"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "10:43"
+		"a": "10:57"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 27号",
@@ -529,22 +549,18 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "10:17"
+		"d": "10:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "10:20",
-		"d": "10:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "10:30",
-		"d": "10:32"
+		"a": "10:23",
+		"d": "10:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "11:00",
+		"a": "11:01",
 		"d": "11:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "11:03"
+		"a": "11:04"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 29号",
@@ -555,10 +571,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.10AE09.Weekday",
-	"t": "Keisei.NaritaSkyAccess.10AE09",
+	"id": "Keisei.NaritaSkyAccess.10AE39.Weekday",
+	"t": "Keisei.NaritaSkyAccess.10AE39",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "10AE09",
+	"n": "10AE39",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -569,18 +585,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "10:40"
+		"d": "10:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "10:43",
-		"d": "10:45"
+		"a": "10:40",
+		"d": "10:42"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "10:51",
+		"d": "10:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "11:04",
+		"d": "11:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "11:21",
-		"d": "11:22"
+		"a": "11:25",
+		"d": "11:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "11:23"
+		"a": "11:28"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 31号",
@@ -641,22 +665,18 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "11:17"
+		"d": "11:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "11:20",
-		"d": "11:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "11:31",
-		"d": "11:33"
+		"a": "11:23",
+		"d": "11:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "12:00",
-		"d": "12:06"
+		"a": "12:01",
+		"d": "12:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "12:08"
+		"a": "12:03"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 35号",
@@ -667,10 +687,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.11AE01.Weekday",
-	"t": "Keisei.NaritaSkyAccess.11AE01",
+	"id": "Keisei.NaritaSkyAccess.11AE43.Weekday",
+	"t": "Keisei.NaritaSkyAccess.11AE43",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "11AE01",
+	"n": "11AE43",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -681,18 +701,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "11:40"
+		"d": "11:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "11:43",
-		"d": "11:45"
+		"a": "11:40",
+		"d": "11:42"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "11:51",
+		"d": "11:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "12:04",
+		"d": "12:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "12:21",
-		"d": "12:22"
+		"a": "12:25",
+		"d": "12:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "12:23"
+		"a": "12:27"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 37号",
@@ -703,10 +731,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.12AE13.Weekday",
-	"t": "Keisei.NaritaSkyAccess.12AE13",
+	"id": "Keisei.NaritaSkyAccess.12AE01.Weekday",
+	"t": "Keisei.NaritaSkyAccess.12AE01",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "12AE13",
+	"n": "12AE01",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -753,18 +781,14 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "12:17"
+		"d": "12:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "12:20",
-		"d": "12:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "12:31",
-		"d": "12:33"
+		"a": "12:23",
+		"d": "12:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "13:00",
+		"a": "13:01",
 		"d": "13:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
@@ -779,10 +803,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.12AE09.Weekday",
-	"t": "Keisei.NaritaSkyAccess.12AE09",
+	"id": "Keisei.NaritaSkyAccess.12AE39.Weekday",
+	"t": "Keisei.NaritaSkyAccess.12AE39",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "12AE09",
+	"n": "12AE39",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -793,18 +817,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "12:40"
+		"d": "12:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "12:43",
-		"d": "12:45"
+		"a": "12:40",
+		"d": "12:42"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "12:51",
+		"d": "12:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "13:04",
+		"d": "13:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "13:21",
-		"d": "13:22"
+		"a": "13:25",
+		"d": "13:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "13:23"
+		"a": "13:28"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 43号",
@@ -865,15 +897,11 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "13:17"
+		"d": "13:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "13:20",
-		"d": "13:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "13:31",
-		"d": "13:33"
+		"a": "13:23",
+		"d": "13:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "14:01",
@@ -891,10 +919,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.13AE01.Weekday",
-	"t": "Keisei.NaritaSkyAccess.13AE01",
+	"id": "Keisei.NaritaSkyAccess.13AE43.Weekday",
+	"t": "Keisei.NaritaSkyAccess.13AE43",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "13AE01",
+	"n": "13AE43",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -905,18 +933,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "13:40"
+		"d": "13:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "13:43",
-		"d": "13:45"
+		"a": "13:40",
+		"d": "13:42"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "13:51",
+		"d": "13:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "14:04",
+		"d": "14:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "14:21",
-		"d": "14:22"
+		"a": "14:25",
+		"d": "14:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "14:23"
+		"a": "14:27"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 49号",
@@ -927,10 +963,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.14AE13.Weekday",
-	"t": "Keisei.NaritaSkyAccess.14AE13",
+	"id": "Keisei.NaritaSkyAccess.14AE01.Weekday",
+	"t": "Keisei.NaritaSkyAccess.14AE01",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "14AE13",
+	"n": "14AE01",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -977,18 +1013,14 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "14:17"
+		"d": "14:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "14:20",
-		"d": "14:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "14:31",
-		"d": "14:33"
+		"a": "14:23",
+		"d": "14:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "15:00",
+		"a": "15:01",
 		"d": "15:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
@@ -1003,10 +1035,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.14AE09.Weekday",
-	"t": "Keisei.NaritaSkyAccess.14AE09",
+	"id": "Keisei.NaritaSkyAccess.14AE39.Weekday",
+	"t": "Keisei.NaritaSkyAccess.14AE39",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "14AE09",
+	"n": "14AE39",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -1017,14 +1049,22 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "14:40"
+		"d": "14:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "14:43",
-		"d": "14:45"
+		"a": "14:40",
+		"d": "14:42"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "14:51",
+		"d": "14:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "15:04",
+		"d": "15:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "15:21",
+		"a": "15:25",
 		"d": "15:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
@@ -1089,18 +1129,14 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "15:17"
+		"d": "15:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "15:20",
-		"d": "15:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "15:31",
-		"d": "15:32"
+		"a": "15:23",
+		"d": "15:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "16:00",
+		"a": "16:01",
 		"d": "16:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
@@ -1115,10 +1151,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.15AE01.Weekday",
-	"t": "Keisei.NaritaSkyAccess.15AE01",
+	"id": "Keisei.NaritaSkyAccess.15AE43.Weekday",
+	"t": "Keisei.NaritaSkyAccess.15AE43",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "15AE01",
+	"n": "15AE43",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -1129,18 +1165,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "15:40"
+		"d": "15:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "15:43",
-		"d": "15:45"
+		"a": "15:40",
+		"d": "15:42"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "15:51",
+		"d": "15:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "16:04",
+		"d": "16:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "16:21",
-		"d": "16:22"
+		"a": "16:25",
+		"d": "16:27"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "16:23"
+		"a": "16:29"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 61号",
@@ -1151,10 +1195,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.16AE13.Weekday",
-	"t": "Keisei.NaritaSkyAccess.16AE13",
+	"id": "Keisei.NaritaSkyAccess.16AE01.Weekday",
+	"t": "Keisei.NaritaSkyAccess.16AE01",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "16AE13",
+	"n": "16AE01",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -1201,19 +1245,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "16:17"
+		"d": "16:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "16:20",
-		"d": "16:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "16:31",
-		"d": "16:33"
+		"a": "16:23",
+		"d": "16:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "17:00",
-		"d": "17:01"
+		"a": "17:01",
+		"d": "17:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
 		"a": "17:03"
@@ -1335,10 +1375,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.17AE01.Weekday",
-	"t": "Keisei.NaritaSkyAccess.17AE01",
+	"id": "Keisei.NaritaSkyAccess.17AE13.Weekday",
+	"t": "Keisei.NaritaSkyAccess.17AE13",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "17AE01",
+	"n": "17AE13",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -1356,7 +1396,7 @@
 		"d": "17:45"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "18:24",
+		"a": "18:27",
 		"d": "18:28"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
@@ -1407,6 +1447,62 @@
 	}],
 	"v": "AE"
 }, {
+	"id": "Keisei.NaritaSkyAccess.1809K.Weekday",
+	"t": "Keisei.NaritaSkyAccess.1809K",
+	"r": "Keisei.NaritaSkyAccess",
+	"n": "1809K",
+	"y": "Keisei.AccessExpress",
+	"d": "Outbound",
+	"os": [
+		"Keisei.NaritaSkyAccess.KeiseiUeno"
+	],
+	"ds": [
+		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
+	],
+	"tt": [{
+		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
+		"d": "18:51"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Nippori",
+		"a": "18:55",
+		"d": "18:55"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "19:04",
+		"d": "19:05"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
+		"a": "19:07",
+		"d": "19:10"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
+		"a": "19:17",
+		"d": "19:24"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "19:27",
+		"d": "19:28"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
+		"a": "19:35",
+		"d": "19:36"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
+		"a": "19:44",
+		"d": "19:44"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
+		"a": "19:50",
+		"d": "19:51"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
+		"a": "19:57",
+		"d": "19:58"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
+		"a": "20:00"
+	}]
+}, {
 	"id": "Keisei.NaritaSkyAccess.19AE05.Weekday",
 	"t": "Keisei.NaritaSkyAccess.19AE05",
 	"r": "Keisei.NaritaSkyAccess",
@@ -1443,10 +1539,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.19AE01.Weekday",
-	"t": "Keisei.NaritaSkyAccess.19AE01",
+	"id": "Keisei.NaritaSkyAccess.19AE13.Weekday",
+	"t": "Keisei.NaritaSkyAccess.19AE13",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "19AE01",
+	"n": "19AE13",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -1479,10 +1575,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.1905K.Weekday",
-	"t": "Keisei.NaritaSkyAccess.1905K",
+	"id": "Keisei.NaritaSkyAccess.1901K.Weekday",
+	"t": "Keisei.NaritaSkyAccess.1901K",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "1905K",
+	"n": "1901K",
 	"y": "Keisei.AccessExpress",
 	"d": "Outbound",
 	"os": [
@@ -1571,10 +1667,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.2001K.Weekday",
-	"t": "Keisei.NaritaSkyAccess.2001K",
+	"id": "Keisei.NaritaSkyAccess.2005K.Weekday",
+	"t": "Keisei.NaritaSkyAccess.2005K",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "2001K",
+	"n": "2005K",
 	"y": "Keisei.AccessExpress",
 	"d": "Outbound",
 	"os": [
@@ -1597,18 +1693,18 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
 		"a": "21:02",
-		"d": "21:03"
+		"d": "21:04"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
 		"a": "21:10",
-		"d": "21:10"
+		"d": "21:11"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
 		"a": "21:14",
-		"d": "21:14"
+		"d": "21:15"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
-		"a": "21:21",
+		"a": "21:22",
 		"d": "21:22"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
@@ -1699,7 +1795,7 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
 		"a": "06:20",
-		"d": "06:21"
+		"d": "06:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
 		"a": "06:27",
@@ -1766,10 +1862,10 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "07:21",
-		"d": "07:23"
+		"d": "07:22"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "07:29",
+		"a": "07:28",
 		"d": "07:29"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
@@ -1821,14 +1917,14 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
 		"a": "07:47",
-		"d": "07:52"
+		"d": "07:47"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "08:08",
-		"d": "08:10"
+		"a": "07:56",
+		"d": "07:57"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "08:12"
+		"a": "07:58"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.607K.Weekday",
@@ -1950,10 +2046,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"d": "08:46"
+		"d": "08:45"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
-		"a": "08:49",
+		"a": "08:48",
 		"d": "08:50"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
@@ -1981,7 +2077,7 @@
 		"d": "09:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "09:41"
+		"a": "09:40"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.803K.Weekday",
@@ -2001,38 +2097,38 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"d": "09:31"
+		"d": "09:35"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
-		"a": "09:33",
-		"d": "09:36"
+		"a": "09:37",
+		"d": "09:38"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
-		"a": "09:43",
-		"d": "09:43"
+		"a": "09:44",
+		"d": "09:46"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
-		"a": "09:47",
-		"d": "09:47"
+		"a": "09:50",
+		"d": "09:52"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
-		"a": "09:54",
-		"d": "09:55"
+		"a": "09:59",
+		"d": "09:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
-		"a": "10:00",
-		"d": "10:01"
+		"a": "10:05",
+		"d": "10:06"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "10:07",
-		"d": "10:08"
+		"a": "10:12",
+		"d": "10:18"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:15",
-		"d": "10:16"
+		"a": "10:29",
+		"d": "10:30"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "10:18"
+		"a": "10:32"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.843T.Weekday",
@@ -2052,7 +2148,7 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"d": "09:56"
+		"d": "09:55"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
 		"a": "09:58",
@@ -2060,36 +2156,36 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
 		"a": "10:07",
-		"d": "10:08"
+		"d": "10:07"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
-		"a": "10:12",
+		"a": "10:11",
 		"d": "10:14"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
-		"a": "10:21",
+		"a": "10:20",
 		"d": "10:21"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "10:27",
-		"d": "10:28"
+		"d": "10:27"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "10:34",
-		"d": "10:39"
+		"a": "10:33",
+		"d": "10:34"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:54",
-		"d": "10:55"
+		"a": "10:44",
+		"d": "10:45"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "10:57"
+		"a": "10:47"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.905K.Weekday",
-	"t": "Keisei.NaritaSkyAccess.905K",
+	"id": "Keisei.NaritaSkyAccess.901K.Weekday",
+	"t": "Keisei.NaritaSkyAccess.901K",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "905K",
+	"n": "901K",
 	"y": "Keisei.AccessExpress",
 	"d": "Outbound",
 	"os": [
@@ -2099,7 +2195,7 @@
 		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
 	],
 	"pt": [
-		"Keisei.Oshiage.905K.Weekday"
+		"Keisei.Oshiage.901K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.Aoto",
@@ -2107,31 +2203,31 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
 		"a": "10:35",
-		"d": "10:36"
+		"d": "10:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
-		"a": "10:42",
-		"d": "10:44"
+		"a": "10:43",
+		"d": "10:45"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
-		"a": "10:48",
-		"d": "10:48"
+		"a": "10:49",
+		"d": "10:49"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
-		"a": "10:55",
-		"d": "10:55"
+		"a": "10:56",
+		"d": "10:56"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
-		"a": "11:01",
-		"d": "11:01"
+		"a": "11:02",
+		"d": "11:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "11:08",
-		"d": "11:08"
+		"a": "11:09",
+		"d": "11:09"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "11:15",
-		"d": "11:16"
+		"a": "11:16",
+		"d": "11:17"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
 		"a": "11:18"
@@ -2341,10 +2437,10 @@
 		"a": "13:58"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.1305K.Weekday",
-	"t": "Keisei.NaritaSkyAccess.1305K",
+	"id": "Keisei.NaritaSkyAccess.1301K.Weekday",
+	"t": "Keisei.NaritaSkyAccess.1301K",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "1305K",
+	"n": "1301K",
 	"y": "Keisei.AccessExpress",
 	"d": "Outbound",
 	"os": [
@@ -2354,7 +2450,7 @@
 		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
 	],
 	"pt": [
-		"Keisei.Oshiage.1305K.Weekday"
+		"Keisei.Oshiage.1301K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.Aoto",
@@ -2596,10 +2692,10 @@
 		"a": "17:38"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.1605K.Weekday",
-	"t": "Keisei.NaritaSkyAccess.1605K",
+	"id": "Keisei.NaritaSkyAccess.1601K.Weekday",
+	"t": "Keisei.NaritaSkyAccess.1601K",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "1605K",
+	"n": "1601K",
 	"y": "Keisei.AccessExpress",
 	"d": "Outbound",
 	"os": [
@@ -2609,18 +2705,18 @@
 		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
 	],
 	"pt": [
-		"Keisei.Oshiage.1605K.Weekday"
+		"Keisei.Oshiage.1601K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"d": "17:25"
+		"d": "17:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
-		"a": "17:27",
-		"d": "17:28"
+		"a": "17:28",
+		"d": "17:29"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
-		"a": "17:35",
+		"a": "17:36",
 		"d": "17:41"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
@@ -2644,13 +2740,13 @@
 		"d": "18:17"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "18:18"
+		"a": "18:19"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.1711T.Weekday",
-	"t": "Keisei.NaritaSkyAccess.1711T",
+	"id": "Keisei.NaritaSkyAccess.1725T.Weekday",
+	"t": "Keisei.NaritaSkyAccess.1725T",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "1711T",
+	"n": "1725T",
 	"y": "Keisei.AccessExpress",
 	"d": "Outbound",
 	"os": [
@@ -2660,7 +2756,7 @@
 		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
 	],
 	"pt": [
-		"Keisei.Oshiage.1711T.Weekday"
+		"Keisei.Oshiage.1725T.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.Aoto",
@@ -2743,53 +2839,6 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
 		"a": "19:24"
-	}]
-}, {
-	"id": "Keisei.NaritaSkyAccess.1909K.Weekday",
-	"t": "Keisei.NaritaSkyAccess.1909K",
-	"r": "Keisei.NaritaSkyAccess",
-	"n": "1909K",
-	"y": "Keisei.AccessExpress",
-	"d": "Outbound",
-	"os": [
-		"Keisei.NaritaSkyAccess.KeiseiTakasago"
-	],
-	"ds": [
-		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
-	],
-	"pt": [
-		"Keisei.Main.1809K.Weekday"
-	],
-	"tt": [{
-		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
-		"d": "19:10"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
-		"a": "19:17",
-		"d": "19:24"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
-		"a": "19:27",
-		"d": "19:28"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
-		"a": "19:35",
-		"d": "19:36"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
-		"a": "19:44",
-		"d": "19:44"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "19:50",
-		"d": "19:51"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "19:57",
-		"d": "19:58"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "20:00"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.1943T.Weekday",
@@ -3009,7 +3058,7 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "07:03"
+		"d": "07:04"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "07:09",
@@ -3060,8 +3109,8 @@
 		"d": "07:23"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "07:28",
-		"d": "07:28"
+		"a": "07:27",
+		"d": "07:27"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
 		"a": "08:23",
@@ -3079,10 +3128,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.704K.Weekday",
-	"t": "Keisei.NaritaSkyAccess.704K",
+	"id": "Keisei.NaritaSkyAccess.700K.Weekday",
+	"t": "Keisei.NaritaSkyAccess.700K",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "704K",
+	"n": "700K",
 	"y": "Keisei.AccessExpress",
 	"d": "Inbound",
 	"os": [
@@ -3092,22 +3141,22 @@
 		"Keikyu.Airport.HanedaAirportTerminal1and2"
 	],
 	"nt": [
-		"Keisei.Oshiage.704K.Weekday"
+		"Keisei.Oshiage.700K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "07:34"
+		"d": "07:44"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "07:37",
-		"d": "07:37"
+		"a": "07:47",
+		"d": "07:47"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "07:55",
-		"d": "07:55"
+		"a": "07:57",
+		"d": "07:57"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
-		"a": "08:01",
+		"a": "08:03",
 		"d": "08:04"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
@@ -3130,10 +3179,10 @@
 		"a": "08:31"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.8AE02.Weekday",
-	"t": "Keisei.NaritaSkyAccess.8AE02",
+	"id": "Keisei.NaritaSkyAccess.8AE12.Weekday",
+	"t": "Keisei.NaritaSkyAccess.8AE12",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "8AE02",
+	"n": "8AE12",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -3155,7 +3204,7 @@
 		"d": "09:11"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "09:15"
+		"a": "09:16"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 4号",
@@ -3190,8 +3239,8 @@
 		"d": "08:31"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "08:45",
-		"d": "08:45"
+		"a": "08:46",
+		"d": "08:46"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "08:51",
@@ -3241,23 +3290,23 @@
 		"d": "08:54"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "09:06",
-		"d": "09:06"
+		"a": "09:07",
+		"d": "09:07"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
-		"a": "09:11",
-		"d": "09:12"
+		"a": "09:12",
+		"d": "09:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
-		"a": "09:17",
+		"a": "09:18",
 		"d": "09:18"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
 		"a": "09:25",
-		"d": "09:25"
+		"d": "09:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
-		"a": "09:29",
+		"a": "09:30",
 		"d": "09:31"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
@@ -3282,7 +3331,7 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "09:06"
+		"d": "09:07"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "09:11",
@@ -3321,7 +3370,7 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "09:20"
+		"d": "09:21"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "09:23",
@@ -3372,8 +3421,8 @@
 		"d": "09:36"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "09:43",
-		"d": "09:43"
+		"a": "09:42",
+		"d": "09:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
 		"a": "10:22",
@@ -3391,10 +3440,46 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.902T.Weekday",
-	"t": "Keisei.NaritaSkyAccess.902T",
+	"id": "Keisei.NaritaSkyAccess.9AE06.Weekday",
+	"t": "Keisei.NaritaSkyAccess.9AE06",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "902T",
+	"n": "9AE06",
+	"y": "Keisei.Skyliner",
+	"d": "Inbound",
+	"os": [
+		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
+	],
+	"ds": [
+		"Keisei.NaritaSkyAccess.KeiseiUeno"
+	],
+	"tt": [{
+		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
+		"d": "09:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
+		"a": "09:56",
+		"d": "09:56"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Nippori",
+		"a": "10:39",
+		"d": "10:40"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
+		"a": "10:44"
+	}],
+	"nm": [{
+		"ja": "スカイライナー 10号",
+		"en": "Skyliner 10",
+		"ko": "스카이라이너 10",
+		"zh-Hans": "Skyliner 10",
+		"zh-Hant": "Skyliner 10"
+	}],
+	"v": "AE"
+}, {
+	"id": "Keisei.NaritaSkyAccess.1002T.Weekday",
+	"t": "Keisei.NaritaSkyAccess.1002T",
+	"r": "Keisei.NaritaSkyAccess",
+	"n": "1002T",
 	"y": "Keisei.AccessExpress",
 	"d": "Inbound",
 	"os": [
@@ -3404,22 +3489,22 @@
 		"Keikyu.Airport.HanedaAirportTerminal1and2"
 	],
 	"nt": [
-		"Keisei.Oshiage.902T.Weekday"
+		"Keisei.Oshiage.1002T.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "09:49"
+		"d": "10:03"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "09:52",
-		"d": "09:52"
+		"a": "10:06",
+		"d": "10:06"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "10:13",
-		"d": "10:13"
+		"a": "10:15",
+		"d": "10:15"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
-		"a": "10:18",
+		"a": "10:20",
 		"d": "10:21"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
@@ -3442,42 +3527,6 @@
 		"a": "10:49"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.9AE06.Weekday",
-	"t": "Keisei.NaritaSkyAccess.9AE06",
-	"r": "Keisei.NaritaSkyAccess",
-	"n": "9AE06",
-	"y": "Keisei.Skyliner",
-	"d": "Inbound",
-	"os": [
-		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
-	],
-	"ds": [
-		"Keisei.NaritaSkyAccess.KeiseiUeno"
-	],
-	"tt": [{
-		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "09:59"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:02",
-		"d": "10:02"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "10:39",
-		"d": "10:40"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "10:44"
-	}],
-	"nm": [{
-		"ja": "スカイライナー 10号",
-		"en": "Skyliner 10",
-		"ko": "스카이라이너 10",
-		"zh-Hans": "Skyliner 10",
-		"zh-Hant": "Skyliner 10"
-	}],
-	"v": "AE"
-}, {
 	"id": "Keisei.NaritaSkyAccess.10AE04.Weekday",
 	"t": "Keisei.NaritaSkyAccess.10AE04",
 	"r": "Keisei.NaritaSkyAccess",
@@ -3498,10 +3547,6 @@
 		"a": "10:22",
 		"d": "10:22"
 	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "10:50",
-		"d": "10:51"
-	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
 		"a": "11:01",
 		"d": "11:02"
@@ -3518,10 +3563,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.10AE00.Weekday",
-	"t": "Keisei.NaritaSkyAccess.10AE00",
+	"id": "Keisei.NaritaSkyAccess.10AE42.Weekday",
+	"t": "Keisei.NaritaSkyAccess.10AE42",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "10AE00",
+	"n": "10AE42",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -3532,18 +3577,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "10:39"
+		"d": "10:33"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:43",
-		"d": "10:43"
+		"a": "10:37",
+		"d": "10:37"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "10:58",
+		"d": "11:00"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "11:11",
+		"d": "11:12"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "11:19",
-		"d": "11:20"
+		"a": "11:20",
+		"d": "11:21"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "11:24"
+		"a": "11:25"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 14号",
@@ -3571,11 +3624,11 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "10:44"
+		"d": "10:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:47",
-		"d": "10:47"
+		"a": "10:44",
+		"d": "10:44"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
 		"a": "10:55",
@@ -3605,10 +3658,10 @@
 		"a": "11:29"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.10AE12.Weekday",
-	"t": "Keisei.NaritaSkyAccess.10AE12",
+	"id": "Keisei.NaritaSkyAccess.10AE00.Weekday",
+	"t": "Keisei.NaritaSkyAccess.10AE00",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "10AE12",
+	"n": "10AE00",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -3622,15 +3675,15 @@
 		"d": "10:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "11:03",
-		"d": "11:03"
+		"a": "11:02",
+		"d": "11:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "11:39",
-		"d": "11:40"
+		"a": "11:38",
+		"d": "11:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "11:44"
+		"a": "11:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 16号",
@@ -3641,10 +3694,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.11AE10.Weekday",
-	"t": "Keisei.NaritaSkyAccess.11AE10",
+	"id": "Keisei.NaritaSkyAccess.11AE40.Weekday",
+	"t": "Keisei.NaritaSkyAccess.11AE40",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "11AE10",
+	"n": "11AE40",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -3655,11 +3708,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "11:19"
+		"d": "11:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "11:23",
-		"d": "11:23"
+		"a": "11:16",
+		"d": "11:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "11:39",
+		"d": "11:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "11:51",
@@ -3681,10 +3738,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.1104K.Weekday",
-	"t": "Keisei.NaritaSkyAccess.1104K",
+	"id": "Keisei.NaritaSkyAccess.1100K.Weekday",
+	"t": "Keisei.NaritaSkyAccess.1100K",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "1104K",
+	"n": "1100K",
 	"y": "Keisei.AccessExpress",
 	"d": "Inbound",
 	"os": [
@@ -3694,7 +3751,7 @@
 		"Keikyu.Airport.HanedaAirportTerminal1and2"
 	],
 	"nt": [
-		"Keisei.Oshiage.1104K.Weekday"
+		"Keisei.Oshiage.1100K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
@@ -3705,8 +3762,8 @@
 		"d": "11:27"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "11:35",
-		"d": "11:35"
+		"a": "11:34",
+		"d": "11:34"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "11:40",
@@ -3749,15 +3806,15 @@
 		"d": "11:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "11:43",
-		"d": "11:43"
+		"a": "11:42",
+		"d": "11:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "12:19",
-		"d": "12:20"
+		"a": "12:18",
+		"d": "12:19"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "12:24"
+		"a": "12:23"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 20号",
@@ -3785,15 +3842,15 @@
 		"d": "11:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "12:03",
-		"d": "12:03"
+		"a": "12:02",
+		"d": "12:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "12:39",
-		"d": "12:40"
+		"a": "12:38",
+		"d": "12:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "12:44"
+		"a": "12:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 22号",
@@ -3828,8 +3885,8 @@
 		"d": "12:07"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "12:15",
-		"d": "12:15"
+		"a": "12:14",
+		"d": "12:14"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "12:20",
@@ -3855,10 +3912,10 @@
 		"a": "12:49"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.12AE02.Weekday",
-	"t": "Keisei.NaritaSkyAccess.12AE02",
+	"id": "Keisei.NaritaSkyAccess.12AE32.Weekday",
+	"t": "Keisei.NaritaSkyAccess.12AE32",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "12AE02",
+	"n": "12AE32",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -3869,11 +3926,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "12:19"
+		"d": "12:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "12:23",
-		"d": "12:23"
+		"a": "12:16",
+		"d": "12:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "12:39",
+		"d": "12:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "12:51",
@@ -3895,10 +3956,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.12AE00.Weekday",
-	"t": "Keisei.NaritaSkyAccess.12AE00",
+	"id": "Keisei.NaritaSkyAccess.12AE12.Weekday",
+	"t": "Keisei.NaritaSkyAccess.12AE12",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "12AE00",
+	"n": "12AE12",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -3912,15 +3973,15 @@
 		"d": "12:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "12:43",
-		"d": "12:43"
+		"a": "12:42",
+		"d": "12:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "13:19",
-		"d": "13:20"
+		"a": "13:18",
+		"d": "13:19"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "13:24"
+		"a": "13:23"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 26号",
@@ -3955,8 +4016,8 @@
 		"d": "12:47"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "12:55",
-		"d": "12:55"
+		"a": "12:54",
+		"d": "12:54"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "13:00",
@@ -3982,10 +4043,10 @@
 		"a": "13:29"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.12AE12.Weekday",
-	"t": "Keisei.NaritaSkyAccess.12AE12",
+	"id": "Keisei.NaritaSkyAccess.12AE00.Weekday",
+	"t": "Keisei.NaritaSkyAccess.12AE00",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "12AE12",
+	"n": "12AE00",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -3999,15 +4060,15 @@
 		"d": "12:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "13:03",
-		"d": "13:03"
+		"a": "13:02",
+		"d": "13:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "13:39",
-		"d": "13:40"
+		"a": "13:38",
+		"d": "13:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "13:44"
+		"a": "13:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 28号",
@@ -4018,10 +4079,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.13AE10.Weekday",
-	"t": "Keisei.NaritaSkyAccess.13AE10",
+	"id": "Keisei.NaritaSkyAccess.13AE40.Weekday",
+	"t": "Keisei.NaritaSkyAccess.13AE40",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "13AE10",
+	"n": "13AE40",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -4032,11 +4093,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "13:19"
+		"d": "13:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "13:23",
-		"d": "13:23"
+		"a": "13:16",
+		"d": "13:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "13:39",
+		"d": "13:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "13:51",
@@ -4082,8 +4147,8 @@
 		"d": "13:27"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "13:35",
-		"d": "13:35"
+		"a": "13:34",
+		"d": "13:34"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "13:40",
@@ -4126,15 +4191,15 @@
 		"d": "13:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "13:43",
-		"d": "13:43"
+		"a": "13:42",
+		"d": "13:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "14:19",
-		"d": "14:20"
+		"a": "14:18",
+		"d": "14:19"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "14:24"
+		"a": "14:23"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 32号",
@@ -4162,15 +4227,15 @@
 		"d": "13:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "14:03",
-		"d": "14:03"
+		"a": "14:02",
+		"d": "14:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "14:39",
-		"d": "14:40"
+		"a": "14:38",
+		"d": "14:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "14:44"
+		"a": "14:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 34号",
@@ -4205,8 +4270,8 @@
 		"d": "14:07"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "14:15",
-		"d": "14:15"
+		"a": "14:14",
+		"d": "14:14"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "14:20",
@@ -4232,10 +4297,10 @@
 		"a": "14:49"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.14AE02.Weekday",
-	"t": "Keisei.NaritaSkyAccess.14AE02",
+	"id": "Keisei.NaritaSkyAccess.14AE32.Weekday",
+	"t": "Keisei.NaritaSkyAccess.14AE32",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "14AE02",
+	"n": "14AE32",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -4246,11 +4311,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "14:19"
+		"d": "14:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "14:23",
-		"d": "14:23"
+		"a": "14:16",
+		"d": "14:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "14:39",
+		"d": "14:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "14:51",
@@ -4272,10 +4341,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.14AE00.Weekday",
-	"t": "Keisei.NaritaSkyAccess.14AE00",
+	"id": "Keisei.NaritaSkyAccess.14AE12.Weekday",
+	"t": "Keisei.NaritaSkyAccess.14AE12",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "14AE00",
+	"n": "14AE12",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -4289,15 +4358,15 @@
 		"d": "14:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "14:43",
-		"d": "14:43"
+		"a": "14:42",
+		"d": "14:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "15:19",
-		"d": "15:20"
+		"a": "15:18",
+		"d": "15:19"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "15:24"
+		"a": "15:23"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 38号",
@@ -4308,10 +4377,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.1404K.Weekday",
-	"t": "Keisei.NaritaSkyAccess.1404K",
+	"id": "Keisei.NaritaSkyAccess.1400K.Weekday",
+	"t": "Keisei.NaritaSkyAccess.1400K",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "1404K",
+	"n": "1400K",
 	"y": "Keisei.AccessExpress",
 	"d": "Inbound",
 	"os": [
@@ -4321,7 +4390,7 @@
 		"Keikyu.Airport.HanedaAirportTerminal1and2"
 	],
 	"nt": [
-		"Keisei.Oshiage.1404K.Weekday"
+		"Keisei.Oshiage.1400K.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
@@ -4332,8 +4401,8 @@
 		"d": "14:47"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "14:55",
-		"d": "14:55"
+		"a": "14:54",
+		"d": "14:54"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "15:00",
@@ -4359,10 +4428,10 @@
 		"a": "15:29"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.14AE12.Weekday",
-	"t": "Keisei.NaritaSkyAccess.14AE12",
+	"id": "Keisei.NaritaSkyAccess.14AE00.Weekday",
+	"t": "Keisei.NaritaSkyAccess.14AE00",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "14AE12",
+	"n": "14AE00",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -4376,15 +4445,15 @@
 		"d": "14:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "15:03",
-		"d": "15:03"
+		"a": "15:02",
+		"d": "15:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "15:39",
-		"d": "15:40"
+		"a": "15:38",
+		"d": "15:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "15:44"
+		"a": "15:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 40号",
@@ -4395,10 +4464,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.15AE10.Weekday",
-	"t": "Keisei.NaritaSkyAccess.15AE10",
+	"id": "Keisei.NaritaSkyAccess.15AE40.Weekday",
+	"t": "Keisei.NaritaSkyAccess.15AE40",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "15AE10",
+	"n": "15AE40",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -4409,11 +4478,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "15:19"
+		"d": "15:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "15:23",
-		"d": "15:23"
+		"a": "15:16",
+		"d": "15:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "15:39",
+		"d": "15:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "15:51",
@@ -4503,8 +4576,8 @@
 		"d": "15:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "15:43",
-		"d": "15:43"
+		"a": "15:42",
+		"d": "15:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
 		"a": "16:19",
@@ -4539,15 +4612,15 @@
 		"d": "15:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "16:03",
-		"d": "16:03"
+		"a": "16:02",
+		"d": "16:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "16:39",
-		"d": "16:40"
+		"a": "16:38",
+		"d": "16:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "16:44"
+		"a": "16:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 46号",
@@ -4602,17 +4675,17 @@
 		"d": "16:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
-		"a": "16:45",
+		"a": "16:46",
 		"d": "16:46"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "16:48"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.16AE02.Weekday",
-	"t": "Keisei.NaritaSkyAccess.16AE02",
+	"id": "Keisei.NaritaSkyAccess.16AE32.Weekday",
+	"t": "Keisei.NaritaSkyAccess.16AE32",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "16AE02",
+	"n": "16AE32",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -4623,22 +4696,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "16:19"
+		"d": "16:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "16:22",
-		"d": "16:22"
+		"a": "16:16",
+		"d": "16:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "16:43",
+		"d": "16:44"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "16:51",
-		"d": "16:52"
+		"a": "16:55",
+		"d": "16:56"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "17:01",
-		"d": "17:02"
+		"a": "17:05",
+		"d": "17:06"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "17:06"
+		"a": "17:10"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 48号",
@@ -4649,10 +4726,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.16AE00.Weekday",
-	"t": "Keisei.NaritaSkyAccess.16AE00",
+	"id": "Keisei.NaritaSkyAccess.16AE12.Weekday",
+	"t": "Keisei.NaritaSkyAccess.16AE12",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "16AE00",
+	"n": "16AE12",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -4670,11 +4747,11 @@
 		"d": "16:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "17:18",
-		"d": "17:19"
+		"a": "17:19",
+		"d": "17:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "17:23"
+		"a": "17:24"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 50号",
@@ -4736,10 +4813,10 @@
 		"a": "17:36"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.16AE12.Weekday",
-	"t": "Keisei.NaritaSkyAccess.16AE12",
+	"id": "Keisei.NaritaSkyAccess.16AE00.Weekday",
+	"t": "Keisei.NaritaSkyAccess.16AE00",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "16AE12",
+	"n": "16AE00",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -4772,10 +4849,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.17AE08.Weekday",
-	"t": "Keisei.NaritaSkyAccess.17AE08",
+	"id": "Keisei.NaritaSkyAccess.17AE38.Weekday",
+	"t": "Keisei.NaritaSkyAccess.17AE38",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "17AE08",
+	"n": "17AE38",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -4792,16 +4869,20 @@
 		"a": "17:22",
 		"d": "17:22"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "17:41",
+		"d": "17:42"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "17:50",
-		"d": "17:51"
+		"a": "17:53",
+		"d": "17:54"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "18:00",
-		"d": "18:01"
+		"a": "18:02",
+		"d": "18:03"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "18:05"
+		"a": "18:07"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 54号",
@@ -4812,10 +4893,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.1732T.Weekday",
-	"t": "Keisei.NaritaSkyAccess.1732T",
+	"id": "Keisei.NaritaSkyAccess.1730T.Weekday",
+	"t": "Keisei.NaritaSkyAccess.1730T",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "1732T",
+	"n": "1730T",
 	"y": "Keisei.AccessExpress",
 	"d": "Inbound",
 	"os": [
@@ -4825,7 +4906,7 @@
 		"Keikyu.Airport.HanedaAirportTerminal1and2"
 	],
 	"nt": [
-		"Keisei.Oshiage.1732T.Weekday"
+		"Keisei.Oshiage.1730T.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
@@ -4986,10 +5067,10 @@
 		"a": "19:00"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.18AE02.Weekday",
-	"t": "Keisei.NaritaSkyAccess.18AE02",
+	"id": "Keisei.NaritaSkyAccess.18AE32.Weekday",
+	"t": "Keisei.NaritaSkyAccess.18AE32",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "18AE02",
+	"n": "18AE32",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -5000,22 +5081,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "18:20"
+		"d": "18:15"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "18:24",
-		"d": "18:24"
+		"a": "18:18",
+		"d": "18:18"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "18:42",
+		"d": "18:43"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "18:54",
+		"a": "18:53",
 		"d": "18:55"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "19:05",
-		"d": "19:06"
+		"a": "19:06",
+		"d": "19:07"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "19:10"
+		"a": "19:11"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 60号",
@@ -5026,10 +5111,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.18AE00.Weekday",
-	"t": "Keisei.NaritaSkyAccess.18AE00",
+	"id": "Keisei.NaritaSkyAccess.18AE12.Weekday",
+	"t": "Keisei.NaritaSkyAccess.18AE12",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "18AE00",
+	"n": "18AE12",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -5062,10 +5147,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.1804K.Weekday",
-	"t": "Keisei.NaritaSkyAccess.1804K",
+	"id": "Keisei.NaritaSkyAccess.1800K.Weekday",
+	"t": "Keisei.NaritaSkyAccess.1800K",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "1804K",
+	"n": "1800K",
 	"y": "Keisei.AccessExpress",
 	"d": "Inbound",
 	"os": [
@@ -5091,11 +5176,11 @@
 		"d": "19:01"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
-		"a": "19:06",
+		"a": "19:07",
 		"d": "19:07"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
-		"a": "19:14",
+		"a": "19:15",
 		"d": "19:15"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
@@ -5154,10 +5239,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.19AE08.Weekday",
-	"t": "Keisei.NaritaSkyAccess.19AE08",
+	"id": "Keisei.NaritaSkyAccess.19AE38.Weekday",
+	"t": "Keisei.NaritaSkyAccess.19AE38",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "19AE08",
+	"n": "19AE38",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -5174,12 +5259,20 @@
 		"a": "19:23",
 		"d": "19:23"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "19:43",
+		"d": "19:44"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "19:55",
+		"d": "19:56"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "20:00",
-		"d": "20:01"
+		"a": "20:05",
+		"d": "20:06"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "20:05"
+		"a": "20:10"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 66号",
@@ -5190,10 +5283,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.1900K.Weekday",
-	"t": "Keisei.NaritaSkyAccess.1900K",
+	"id": "Keisei.NaritaSkyAccess.1904K.Weekday",
+	"t": "Keisei.NaritaSkyAccess.1904K",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "1900K",
+	"n": "1904K",
 	"y": "Keisei.AccessExpress",
 	"d": "Inbound",
 	"os": [
@@ -5239,17 +5332,17 @@
 		"d": "20:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "20:29",
-		"d": "20:29"
+		"a": "20:31",
+		"d": "20:31"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "20:33"
+		"a": "20:35"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.19AE12.Weekday",
-	"t": "Keisei.NaritaSkyAccess.19AE12",
+	"id": "Keisei.NaritaSkyAccess.19AE00.Weekday",
+	"t": "Keisei.NaritaSkyAccess.19AE00",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "19AE12",
+	"n": "19AE00",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -5369,10 +5462,10 @@
 		"a": "20:49"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.20AE06.Weekday",
-	"t": "Keisei.NaritaSkyAccess.20AE06",
+	"id": "Keisei.NaritaSkyAccess.20AE36.Weekday",
+	"t": "Keisei.NaritaSkyAccess.20AE36",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "20AE06",
+	"n": "20AE36",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -5388,6 +5481,10 @@
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "20:34",
 		"d": "20:34"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "20:53",
+		"d": "20:54"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "21:06",
@@ -5480,16 +5577,12 @@
 		"a": "21:03",
 		"d": "21:03"
 	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "21:33",
-		"d": "21:34"
-	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "21:43",
-		"d": "21:44"
+		"a": "21:42",
+		"d": "21:43"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "21:48"
+		"a": "21:47"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 74号",
@@ -5500,10 +5593,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.2110T.Weekday",
-	"t": "Keisei.NaritaSkyAccess.2110T",
+	"id": "Keisei.NaritaSkyAccess.2124T.Weekday",
+	"t": "Keisei.NaritaSkyAccess.2124T",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "2110T",
+	"n": "2124T",
 	"y": "Keisei.AccessExpress",
 	"d": "Inbound",
 	"os": [
@@ -5513,7 +5606,7 @@
 		"Toei.Asakusa.NishiMagome"
 	],
 	"nt": [
-		"Keisei.Oshiage.2110T.Weekday"
+		"Keisei.Oshiage.2124T.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
@@ -5571,16 +5664,12 @@
 		"a": "21:33",
 		"d": "21:33"
 	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "22:03",
-		"d": "22:05"
-	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "22:14",
-		"d": "22:15"
+		"a": "22:13",
+		"d": "22:14"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "22:19"
+		"a": "22:18"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 76号",
@@ -5591,10 +5680,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.22AE10.Weekday",
-	"t": "Keisei.NaritaSkyAccess.22AE10",
+	"id": "Keisei.NaritaSkyAccess.22AE40.Weekday",
+	"t": "Keisei.NaritaSkyAccess.22AE40",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "22AE10",
+	"n": "22AE40",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -5611,16 +5700,20 @@
 		"a": "22:03",
 		"d": "22:03"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "22:22",
+		"d": "22:23"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "22:31",
-		"d": "22:32"
+		"a": "22:33",
+		"d": "22:34"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "22:41",
-		"d": "22:42"
+		"a": "22:43",
+		"d": "22:44"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "22:46"
+		"a": "22:48"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 78号",
@@ -5631,10 +5724,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.2200K.Weekday",
-	"t": "Keisei.NaritaSkyAccess.2200K",
+	"id": "Keisei.NaritaSkyAccess.2204K.Weekday",
+	"t": "Keisei.NaritaSkyAccess.2204K",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "2200K",
+	"n": "2204K",
 	"y": "Keisei.AccessExpress",
 	"d": "Inbound",
 	"os": [
@@ -5687,10 +5780,10 @@
 		"a": "23:03"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.22AE04.Weekday",
-	"t": "Keisei.NaritaSkyAccess.22AE04",
+	"id": "Keisei.NaritaSkyAccess.22AE34.Weekday",
+	"t": "Keisei.NaritaSkyAccess.22AE34",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "22AE04",
+	"n": "22AE34",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -5707,16 +5800,20 @@
 		"a": "22:33",
 		"d": "22:33"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "22:52",
+		"d": "22:53"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "23:02",
-		"d": "23:03"
+		"a": "23:03",
+		"d": "23:04"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "23:11",
-		"d": "23:12"
+		"a": "23:13",
+		"d": "23:14"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "23:16"
+		"a": "23:18"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 80号",
@@ -5727,10 +5824,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.23AE00.Weekday",
-	"t": "Keisei.NaritaSkyAccess.23AE00",
+	"id": "Keisei.NaritaSkyAccess.23AE42.Weekday",
+	"t": "Keisei.NaritaSkyAccess.23AE42",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "23AE00",
+	"n": "23AE42",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -5747,16 +5844,20 @@
 		"a": "23:03",
 		"d": "23:03"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "23:22",
+		"d": "23:23"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "23:31",
-		"d": "23:33"
+		"a": "23:33",
+		"d": "23:34"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "23:41",
-		"d": "23:42"
+		"a": "23:43",
+		"d": "23:44"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "23:46"
+		"a": "23:48"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 82号",
@@ -5984,7 +6085,7 @@
 		"d": "07:23"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "07:24"
+		"a": "07:25"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 7号",
@@ -6016,11 +6117,11 @@
 		"d": "07:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "07:45",
-		"d": "07:46"
+		"a": "07:46",
+		"d": "07:47"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "07:48"
+		"a": "07:49"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 9号",
@@ -6031,10 +6132,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.7AE03.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.7AE03",
+	"id": "Keisei.NaritaSkyAccess.7AE33.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.7AE33",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "7AE03",
+	"n": "7AE33",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -6045,22 +6146,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "07:20"
+		"d": "07:18"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "07:23",
-		"d": "07:25"
+		"a": "07:21",
+		"d": "07:23"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "07:33",
-		"d": "07:35"
+		"a": "07:31",
+		"d": "07:33"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "07:43",
+		"d": "07:45"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "08:02",
-		"d": "08:03"
+		"a": "08:06",
+		"d": "08:07"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "08:05"
+		"a": "08:09"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 11号",
@@ -6129,10 +6234,10 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "08:41",
-		"d": "08:42"
+		"d": "08:43"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "08:44"
+		"a": "08:45"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 15号",
@@ -6143,10 +6248,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.8AE11.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.8AE11",
+	"id": "Keisei.NaritaSkyAccess.8AE41.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.8AE41",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "8AE11",
+	"n": "8AE41",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -6165,14 +6270,18 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "08:33",
-		"d": "08:34"
+		"d": "08:35"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "08:45",
+		"d": "08:47"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "09:03",
+		"a": "09:05",
 		"d": "09:06"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "09:07"
+		"a": "09:08"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 17号",
@@ -6208,7 +6317,7 @@
 		"d": "09:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "09:27"
+		"a": "09:28"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 19号",
@@ -6255,10 +6364,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.9AE05.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.9AE05",
+	"id": "Keisei.NaritaSkyAccess.9AE35.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.9AE35",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "9AE05",
+	"n": "9AE35",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -6273,18 +6382,22 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
 		"a": "09:22",
-		"d": "09:23"
+		"d": "09:24"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "09:32",
-		"d": "09:33"
+		"d": "09:34"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "09:44",
+		"d": "09:46"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:00",
-		"d": "10:02"
+		"a": "10:05",
+		"d": "10:06"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "10:03"
+		"a": "10:08"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 23号",
@@ -6331,10 +6444,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.10AE13.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.10AE13",
+	"id": "Keisei.NaritaSkyAccess.9AE43.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.9AE43",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "10AE13",
+	"n": "9AE43",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -6345,18 +6458,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "10:00"
+		"d": "09:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
 		"a": "10:03",
-		"d": "10:05"
+		"d": "10:04"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "10:13",
+		"d": "10:14"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "10:25",
+		"d": "10:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:41",
-		"d": "10:42"
+		"a": "10:45",
+		"d": "10:46"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "10:43"
+		"a": "10:48"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 27号",
@@ -6381,22 +6502,18 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "10:19"
+		"d": "10:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
 		"a": "10:23",
-		"d": "10:24"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "10:33",
-		"d": "10:34"
+		"d": "10:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "11:02",
-		"d": "11:03"
+		"a": "11:01",
+		"d": "11:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "11:05"
+		"a": "11:03"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 29号",
@@ -6407,10 +6524,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.10AE09.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.10AE09",
+	"id": "Keisei.NaritaSkyAccess.10AE39.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.10AE39",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "10AE09",
+	"n": "10AE39",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -6421,18 +6538,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "10:40"
+		"d": "10:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "10:43",
-		"d": "10:45"
+		"a": "10:40",
+		"d": "10:42"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "10:51",
+		"d": "10:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "11:04",
+		"d": "11:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "11:21",
-		"d": "11:22"
+		"a": "11:25",
+		"d": "11:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "11:23"
+		"a": "11:28"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 31号",
@@ -6493,22 +6618,18 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "11:17"
+		"d": "11:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "11:20",
-		"d": "11:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "11:31",
-		"d": "11:33"
+		"a": "11:23",
+		"d": "11:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "12:01",
-		"d": "12:07"
+		"d": "12:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "12:08"
+		"a": "12:03"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 35号",
@@ -6519,10 +6640,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.11AE01.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.11AE01",
+	"id": "Keisei.NaritaSkyAccess.11AE31.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.11AE31",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "11AE01",
+	"n": "11AE31",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -6533,18 +6654,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "11:40"
+		"d": "11:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "11:43",
-		"d": "11:45"
+		"a": "11:40",
+		"d": "11:42"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "11:51",
+		"d": "11:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "12:04",
+		"d": "12:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "12:21",
-		"d": "12:22"
+		"a": "12:25",
+		"d": "12:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "12:23"
+		"a": "12:27"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 37号",
@@ -6605,15 +6734,11 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "12:17"
+		"d": "12:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "12:20",
-		"d": "12:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "12:31",
-		"d": "12:33"
+		"a": "12:23",
+		"d": "12:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "13:01",
@@ -6631,10 +6756,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.12AE09.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.12AE09",
+	"id": "Keisei.NaritaSkyAccess.12AE39.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.12AE39",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "12AE09",
+	"n": "12AE39",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -6645,18 +6770,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "12:40"
+		"d": "12:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "12:43",
-		"d": "12:45"
+		"a": "12:40",
+		"d": "12:42"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "12:51",
+		"d": "12:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "13:04",
+		"d": "13:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "13:21",
-		"d": "13:22"
+		"a": "13:25",
+		"d": "13:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "13:23"
+		"a": "13:28"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 43号",
@@ -6717,15 +6850,11 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "13:17"
+		"d": "13:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "13:20",
-		"d": "13:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "13:31",
-		"d": "13:33"
+		"a": "13:23",
+		"d": "13:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "14:01",
@@ -6743,10 +6872,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.13AE01.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.13AE01",
+	"id": "Keisei.NaritaSkyAccess.13AE31.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.13AE31",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "13AE01",
+	"n": "13AE31",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -6757,18 +6886,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "13:40"
+		"d": "13:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "13:43",
-		"d": "13:45"
+		"a": "13:40",
+		"d": "13:42"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "13:51",
+		"d": "13:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "14:04",
+		"d": "14:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "14:21",
-		"d": "14:22"
+		"a": "14:25",
+		"d": "14:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "14:23"
+		"a": "14:27"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 49号",
@@ -6829,15 +6966,11 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "14:17"
+		"d": "14:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "14:20",
-		"d": "14:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "14:31",
-		"d": "14:33"
+		"a": "14:23",
+		"d": "14:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "15:01",
@@ -6855,10 +6988,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.14AE09.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.14AE09",
+	"id": "Keisei.NaritaSkyAccess.14AE39.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.14AE39",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "14AE09",
+	"n": "14AE39",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -6869,15 +7002,23 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "14:40"
+		"d": "14:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "14:43",
-		"d": "14:45"
+		"a": "14:40",
+		"d": "14:42"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "14:51",
+		"d": "14:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "15:04",
+		"d": "15:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "15:21",
-		"d": "15:27"
+		"a": "15:25",
+		"d": "15:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
 		"a": "15:28"
@@ -6941,15 +7082,11 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "15:17"
+		"d": "15:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "15:20",
-		"d": "15:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "15:31",
-		"d": "15:33"
+		"a": "15:23",
+		"d": "15:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "16:01",
@@ -6967,10 +7104,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.15AE01.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.15AE01",
+	"id": "Keisei.NaritaSkyAccess.15AE31.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.15AE31",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "15AE01",
+	"n": "15AE31",
 	"y": "Keisei.Skyliner",
 	"d": "Outbound",
 	"os": [
@@ -6981,18 +7118,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "15:40"
+		"d": "15:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "15:43",
-		"d": "15:45"
+		"a": "15:40",
+		"d": "15:42"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "15:51",
+		"d": "15:53"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "16:04",
+		"d": "16:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "16:21",
-		"d": "16:22"
+		"a": "16:25",
+		"d": "16:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "16:23"
+		"a": "16:27"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 61号",
@@ -7053,15 +7198,11 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"d": "16:17"
+		"d": "16:20"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "16:20",
-		"d": "16:22"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "16:31",
-		"d": "16:33"
+		"a": "16:23",
+		"d": "16:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "17:01",
@@ -7100,11 +7241,11 @@
 		"d": "16:45"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "17:21",
-		"d": "17:22"
+		"a": "17:25",
+		"d": "17:27"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "17:23"
+		"a": "17:29"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 67号",
@@ -7140,7 +7281,7 @@
 		"d": "17:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "17:43"
+		"a": "17:44"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 69号",
@@ -7208,11 +7349,11 @@
 		"d": "17:45"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "18:21",
-		"d": "18:22"
+		"a": "18:24",
+		"d": "18:26"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "18:23"
+		"a": "18:28"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 73号",
@@ -7498,7 +7639,7 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
 		"a": "07:06",
-		"d": "07:06"
+		"d": "07:07"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
 		"a": "07:13",
@@ -7510,14 +7651,14 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
 		"a": "07:26",
-		"d": "07:26"
+		"d": "07:27"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "07:33",
 		"d": "07:34"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "07:35"
+		"a": "07:36"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.611K.SaturdayHoliday",
@@ -7561,14 +7702,14 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
 		"a": "07:54",
-		"d": "07:59"
+		"d": "08:03"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "08:06",
-		"d": "08:07"
+		"a": "08:09",
+		"d": "08:10"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "08:08"
+		"a": "08:12"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.601K.SaturdayHoliday",
@@ -7603,23 +7744,23 @@
 		"d": "08:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
-		"a": "08:12",
-		"d": "08:13"
+		"a": "08:11",
+		"d": "08:12"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
-		"a": "08:18",
-		"d": "08:19"
+		"a": "08:17",
+		"d": "08:18"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "08:25",
+		"a": "08:24",
 		"d": "08:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "08:32",
-		"d": "08:33"
+		"a": "08:31",
+		"d": "08:32"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "08:35"
+		"a": "08:34"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.707K.SaturdayHoliday",
@@ -7639,10 +7780,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"d": "08:12"
+		"d": "08:10"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
-		"a": "08:15",
+		"a": "08:12",
 		"d": "08:17"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
@@ -7694,14 +7835,14 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
 		"a": "08:33",
-		"d": "08:38"
+		"d": "08:33"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
-		"a": "08:44",
+		"a": "08:40",
 		"d": "08:45"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
-		"a": "08:48",
+		"a": "08:49",
 		"d": "08:49"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
@@ -7710,15 +7851,15 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "09:02",
-		"d": "09:02"
+		"d": "09:03"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "09:08",
+		"a": "09:09",
 		"d": "09:09"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "09:16",
-		"d": "09:16"
+		"d": "09:17"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
 		"a": "09:18"
@@ -7792,10 +7933,10 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"d": "09:55"
+		"d": "09:56"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
-		"a": "09:57",
+		"a": "09:58",
 		"d": "09:58"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
@@ -7803,7 +7944,7 @@
 		"d": "10:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
-		"a": "10:08",
+		"a": "10:09",
 		"d": "10:09"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
@@ -7823,7 +7964,7 @@
 		"d": "10:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "10:38"
+		"a": "10:39"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.973H.SaturdayHoliday",
@@ -7847,26 +7988,26 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
 		"a": "10:32",
-		"d": "10:33"
+		"d": "10:37"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
-		"a": "10:39",
-		"d": "10:42"
+		"a": "10:43",
+		"d": "10:44"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
-		"a": "10:46",
-		"d": "10:46"
+		"a": "10:48",
+		"d": "10:48"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
-		"a": "10:53",
-		"d": "10:54"
+		"a": "10:55",
+		"d": "10:55"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
-		"a": "10:59",
-		"d": "11:02"
+		"a": "11:01",
+		"d": "11:01"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "11:09",
+		"a": "11:08",
 		"d": "11:09"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
@@ -7925,7 +8066,7 @@
 		"d": "11:57"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "11:59"
+		"a": "11:58"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.1103K.SaturdayHoliday",
@@ -8078,7 +8219,7 @@
 		"d": "13:57"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "13:59"
+		"a": "13:58"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.1373H.SaturdayHoliday",
@@ -8180,7 +8321,7 @@
 		"d": "15:17"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "15:19"
+		"a": "15:18"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.1403K.SaturdayHoliday",
@@ -8330,7 +8471,7 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "17:16",
-		"d": "17:17"
+		"d": "17:18"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
 		"a": "17:19"
@@ -8513,7 +8654,7 @@
 		"d": "19:17"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
-		"a": "19:24",
+		"a": "19:23",
 		"d": "19:25"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
@@ -8540,10 +8681,10 @@
 		"a": "20:04"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.1851H.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.1851H",
+	"id": "Keisei.NaritaSkyAccess.1761H.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.1761H",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "1851H",
+	"n": "1761H",
 	"y": "Keisei.AccessExpress",
 	"d": "Outbound",
 	"os": [
@@ -8553,7 +8694,7 @@
 		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
 	],
 	"pt": [
-		"Keisei.Oshiage.1851H.SaturdayHoliday"
+		"Keisei.Oshiage.1761H.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.Aoto",
@@ -8635,17 +8776,17 @@
 		"d": "20:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "21:17",
-		"d": "21:20"
+		"a": "21:14",
+		"d": "21:18"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "21:22"
+		"a": "21:20"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.2043T.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.2043T",
+	"id": "Keisei.NaritaSkyAccess.2041T.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.2041T",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "2043T",
+	"n": "2041T",
 	"y": "Keisei.AccessExpress",
 	"d": "Outbound",
 	"os": [
@@ -8655,7 +8796,7 @@
 		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
 	],
 	"pt": [
-		"Keisei.Oshiage.2043T.SaturdayHoliday"
+		"Keisei.Oshiage.2041T.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.Aoto",
@@ -8683,14 +8824,14 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
 		"a": "21:35",
-		"d": "21:42"
+		"d": "21:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "21:48",
-		"d": "21:52"
+		"a": "21:45",
+		"d": "21:46"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "21:54"
+		"a": "21:48"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.2101K.SaturdayHoliday",
@@ -8737,11 +8878,11 @@
 		"d": "22:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "22:46",
-		"d": "22:47"
+		"a": "22:45",
+		"d": "22:46"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"a": "22:49"
+		"a": "22:48"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.506K.SaturdayHoliday",
@@ -8879,22 +9020,22 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
 		"a": "07:16",
-		"d": "07:17"
+		"d": "07:16"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
-		"a": "07:24",
+		"a": "07:23",
 		"d": "07:24"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
 		"a": "07:28",
-		"d": "07:29"
+		"d": "07:28"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
 		"a": "07:35",
-		"d": "07:36"
+		"d": "07:35"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "07:38"
+		"a": "07:37"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.750H.SaturdayHoliday",
@@ -8907,7 +9048,7 @@
 		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
 	],
 	"ds": [
-		"Keikyu.Kurihama.Misakiguchi"
+		"Keikyu.Kurihama.KeikyuKurihama"
 	],
 	"nt": [
 		"Keisei.Oshiage.750H.SaturdayHoliday"
@@ -8942,10 +9083,10 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
 		"a": "07:55",
-		"d": "07:58"
+		"d": "07:57"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "08:00"
+		"a": "07:59"
 	}]
 }, {
 	"id": "Keisei.NaritaSkyAccess.7AE08.SaturdayHoliday",
@@ -9001,26 +9142,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "07:50"
+		"d": "07:49"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "07:53",
-		"d": "07:53"
+		"a": "07:52",
+		"d": "07:52"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "08:08",
-		"d": "08:08"
+		"a": "08:05",
+		"d": "08:05"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
-		"a": "08:14",
+		"a": "08:11",
 		"d": "08:14"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
 		"a": "08:19",
-		"d": "08:20"
+		"d": "08:19"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
-		"a": "08:27",
+		"a": "08:26",
 		"d": "08:27"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
@@ -9049,7 +9190,7 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "08:30"
+		"d": "08:29"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "08:33",
@@ -9088,11 +9229,11 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "08:40"
+		"d": "08:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "08:43",
-		"d": "08:43"
+		"a": "08:42",
+		"d": "08:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
 		"a": "08:57",
@@ -9259,18 +9400,18 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "09:59"
+		"d": "09:53"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:03",
-		"d": "10:03"
+		"a": "09:57",
+		"d": "09:57"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "10:39",
-		"d": "10:40"
+		"a": "10:38",
+		"d": "10:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "10:44"
+		"a": "10:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 10号",
@@ -9298,15 +9439,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "10:04"
+		"d": "10:03"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:07",
-		"d": "10:07"
+		"a": "10:06",
+		"d": "10:06"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "10:15",
-		"d": "10:15"
+		"a": "10:14",
+		"d": "10:14"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "10:20",
@@ -9346,22 +9487,18 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "10:19"
+		"d": "10:16"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:23",
-		"d": "10:23"
-	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "10:51",
-		"d": "10:52"
+		"a": "10:22",
+		"d": "10:22"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "11:01",
-		"d": "11:02"
+		"a": "10:58",
+		"d": "10:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "11:06"
+		"a": "11:03"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 12号",
@@ -9372,10 +9509,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.10AE00.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.10AE00",
+	"id": "Keisei.NaritaSkyAccess.10AE30.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.10AE30",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "10AE00",
+	"n": "10AE30",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -9386,18 +9523,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "10:39"
+		"d": "10:33"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "10:43",
-		"d": "10:43"
+		"a": "10:36",
+		"d": "10:36"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "10:59",
+		"d": "11:00"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "11:11",
+		"d": "11:12"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "11:19",
-		"d": "11:20"
+		"a": "11:21",
+		"d": "11:22"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "11:24"
+		"a": "11:26"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 14号",
@@ -9432,8 +9577,8 @@
 		"d": "10:47"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "10:55",
-		"d": "10:55"
+		"a": "10:54",
+		"d": "10:54"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "11:00",
@@ -9476,15 +9621,15 @@
 		"d": "10:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "11:03",
-		"d": "11:03"
+		"a": "11:02",
+		"d": "11:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "11:39",
-		"d": "11:40"
+		"a": "11:38",
+		"d": "11:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "11:44"
+		"a": "11:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 16号",
@@ -9495,10 +9640,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.11AE10.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.11AE10",
+	"id": "Keisei.NaritaSkyAccess.11AE40.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.11AE40",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "11AE10",
+	"n": "11AE40",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -9509,11 +9654,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "11:19"
+		"d": "11:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "11:23",
-		"d": "11:23"
+		"a": "11:16",
+		"d": "11:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "11:39",
+		"d": "11:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "11:51",
@@ -9559,8 +9708,8 @@
 		"d": "11:27"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "11:35",
-		"d": "11:35"
+		"a": "11:34",
+		"d": "11:34"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "11:40",
@@ -9603,15 +9752,15 @@
 		"d": "11:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "11:43",
-		"d": "11:43"
+		"a": "11:42",
+		"d": "11:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "12:19",
-		"d": "12:20"
+		"a": "12:18",
+		"d": "12:19"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "12:24"
+		"a": "12:23"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 20号",
@@ -9639,15 +9788,15 @@
 		"d": "11:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "12:03",
-		"d": "12:03"
+		"a": "12:02",
+		"d": "12:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "12:39",
-		"d": "12:40"
+		"a": "12:38",
+		"d": "12:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "12:44"
+		"a": "12:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 22号",
@@ -9682,8 +9831,8 @@
 		"d": "12:07"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "12:15",
-		"d": "12:15"
+		"a": "12:14",
+		"d": "12:14"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "12:20",
@@ -9709,10 +9858,10 @@
 		"a": "12:49"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.12AE02.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.12AE02",
+	"id": "Keisei.NaritaSkyAccess.12AE32.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.12AE32",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "12AE02",
+	"n": "12AE32",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -9723,11 +9872,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "12:19"
+		"d": "12:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "12:23",
-		"d": "12:23"
+		"a": "12:16",
+		"d": "12:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "12:39",
+		"d": "12:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "12:51",
@@ -9766,15 +9919,15 @@
 		"d": "12:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "12:43",
-		"d": "12:43"
+		"a": "12:42",
+		"d": "12:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "13:19",
-		"d": "13:20"
+		"a": "13:18",
+		"d": "13:19"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "13:24"
+		"a": "13:23"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 26号",
@@ -9809,8 +9962,8 @@
 		"d": "12:47"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "12:55",
-		"d": "12:55"
+		"a": "12:54",
+		"d": "12:54"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "13:00",
@@ -9853,15 +10006,15 @@
 		"d": "12:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "13:03",
-		"d": "13:03"
+		"a": "13:02",
+		"d": "13:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "13:39",
-		"d": "13:40"
+		"a": "13:38",
+		"d": "13:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "13:44"
+		"a": "13:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 28号",
@@ -9872,10 +10025,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.13AE10.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.13AE10",
+	"id": "Keisei.NaritaSkyAccess.13AE40.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.13AE40",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "13AE10",
+	"n": "13AE40",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -9886,11 +10039,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "13:19"
+		"d": "13:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "13:23",
-		"d": "13:23"
+		"a": "13:16",
+		"d": "13:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "13:39",
+		"d": "13:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "13:51",
@@ -9936,8 +10093,8 @@
 		"d": "13:27"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "13:35",
-		"d": "13:35"
+		"a": "13:34",
+		"d": "13:34"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "13:40",
@@ -9980,15 +10137,15 @@
 		"d": "13:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "13:43",
-		"d": "13:43"
+		"a": "13:42",
+		"d": "13:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "14:19",
-		"d": "14:20"
+		"a": "14:18",
+		"d": "14:19"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "14:24"
+		"a": "14:23"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 32号",
@@ -10016,15 +10173,15 @@
 		"d": "13:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "14:03",
-		"d": "14:03"
+		"a": "14:02",
+		"d": "14:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "14:39",
-		"d": "14:40"
+		"a": "14:38",
+		"d": "14:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "14:44"
+		"a": "14:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 34号",
@@ -10059,8 +10216,8 @@
 		"d": "14:07"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "14:15",
-		"d": "14:15"
+		"a": "14:14",
+		"d": "14:14"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "14:20",
@@ -10086,10 +10243,10 @@
 		"a": "14:49"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.14AE02.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.14AE02",
+	"id": "Keisei.NaritaSkyAccess.14AE32.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.14AE32",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "14AE02",
+	"n": "14AE32",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -10100,11 +10257,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "14:19"
+		"d": "14:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "14:23",
-		"d": "14:23"
+		"a": "14:16",
+		"d": "14:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "14:39",
+		"d": "14:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "14:51",
@@ -10143,15 +10304,15 @@
 		"d": "14:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "14:43",
-		"d": "14:43"
+		"a": "14:42",
+		"d": "14:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "15:19",
-		"d": "15:20"
+		"a": "15:18",
+		"d": "15:19"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "15:24"
+		"a": "15:23"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 38号",
@@ -10186,8 +10347,8 @@
 		"d": "14:47"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "14:55",
-		"d": "14:55"
+		"a": "14:54",
+		"d": "14:54"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "15:00",
@@ -10230,15 +10391,15 @@
 		"d": "14:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "15:03",
-		"d": "15:03"
+		"a": "15:02",
+		"d": "15:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "15:39",
-		"d": "15:40"
+		"a": "15:38",
+		"d": "15:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "15:44"
+		"a": "15:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 40号",
@@ -10249,10 +10410,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.15AE10.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.15AE10",
+	"id": "Keisei.NaritaSkyAccess.15AE40.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.15AE40",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "15AE10",
+	"n": "15AE40",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -10263,11 +10424,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "15:19"
+		"d": "15:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "15:23",
-		"d": "15:23"
+		"a": "15:16",
+		"d": "15:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "15:39",
+		"d": "15:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "15:51",
@@ -10313,8 +10478,8 @@
 		"d": "15:27"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "15:35",
-		"d": "15:35"
+		"a": "15:34",
+		"d": "15:34"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "15:40",
@@ -10357,15 +10522,15 @@
 		"d": "15:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "15:43",
-		"d": "15:43"
+		"a": "15:42",
+		"d": "15:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "16:20",
-		"d": "16:21"
+		"a": "16:18",
+		"d": "16:19"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "16:25"
+		"a": "16:23"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 44号",
@@ -10393,15 +10558,15 @@
 		"d": "15:59"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "16:03",
-		"d": "16:03"
+		"a": "16:02",
+		"d": "16:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "16:39",
-		"d": "16:40"
+		"a": "16:38",
+		"d": "16:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "16:44"
+		"a": "16:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 46号",
@@ -10436,8 +10601,8 @@
 		"d": "16:07"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "16:15",
-		"d": "16:15"
+		"a": "16:14",
+		"d": "16:14"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "16:20",
@@ -10463,10 +10628,10 @@
 		"a": "16:49"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.16AE02.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.16AE02",
+	"id": "Keisei.NaritaSkyAccess.16AE32.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.16AE32",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "16AE02",
+	"n": "16AE32",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -10477,11 +10642,15 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "16:19"
+		"d": "16:13"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "16:23",
-		"d": "16:23"
+		"a": "16:16",
+		"d": "16:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "16:39",
+		"d": "16:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "16:51",
@@ -10520,15 +10689,15 @@
 		"d": "16:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "16:43",
-		"d": "16:43"
+		"a": "16:42",
+		"d": "16:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "17:19",
-		"d": "17:20"
+		"a": "17:18",
+		"d": "17:19"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "17:24"
+		"a": "17:23"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 50号",
@@ -10563,8 +10732,8 @@
 		"d": "16:47"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaYukawa",
-		"a": "16:55",
-		"d": "16:55"
+		"a": "16:54",
+		"d": "16:54"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "17:00",
@@ -10604,18 +10773,18 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "16:59"
+		"d": "16:58"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "17:03",
-		"d": "17:03"
+		"a": "17:02",
+		"d": "17:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "17:39",
-		"d": "17:40"
+		"a": "17:38",
+		"d": "17:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "17:44"
+		"a": "17:43"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 52号",
@@ -10626,10 +10795,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.17AE08.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.17AE08",
+	"id": "Keisei.NaritaSkyAccess.17AE38.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.17AE38",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "17AE08",
+	"n": "17AE38",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -10640,22 +10809,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "17:19"
+		"d": "17:15"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "17:23",
-		"d": "17:23"
+		"a": "17:19",
+		"d": "17:19"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "17:38",
+		"d": "17:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "17:51",
 		"d": "17:52"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "18:00",
-		"d": "18:01"
+		"a": "18:01",
+		"d": "18:02"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "18:05"
+		"a": "18:06"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 54号",
@@ -10734,15 +10907,15 @@
 		"d": "17:39"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "17:43",
-		"d": "17:43"
+		"a": "17:42",
+		"d": "17:42"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "18:19",
-		"d": "18:20"
+		"a": "18:18",
+		"d": "18:19"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "18:24"
+		"a": "18:23"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 56号",
@@ -10818,7 +10991,7 @@
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ImbaNihonIdai",
 		"a": "18:20",
-		"d": "18:20"
+		"d": "18:21"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
 		"a": "18:26",
@@ -10840,10 +11013,10 @@
 		"a": "18:49"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.18AE02.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.18AE02",
+	"id": "Keisei.NaritaSkyAccess.18AE32.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.18AE32",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "18AE02",
+	"n": "18AE32",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -10854,22 +11027,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "18:18"
+		"d": "18:12"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
-		"a": "18:22",
-		"d": "18:22"
+		"a": "18:16",
+		"d": "18:16"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "18:39",
+		"d": "18:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
 		"a": "18:50",
 		"d": "18:51"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "18:59",
-		"d": "19:00"
+		"a": "19:00",
+		"d": "19:01"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "19:04"
+		"a": "19:05"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 60号",
@@ -10880,10 +11057,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.1834T.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.1834T",
+	"id": "Keisei.NaritaSkyAccess.1800T.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.1800T",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "1834T",
+	"n": "1800T",
 	"y": "Keisei.AccessExpress",
 	"d": "Inbound",
 	"os": [
@@ -10893,7 +11070,7 @@
 		"Toei.Asakusa.NishiMagome"
 	],
 	"nt": [
-		"Keisei.Oshiage.1834T.SaturdayHoliday"
+		"Keisei.Oshiage.1800T.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
@@ -11054,10 +11231,10 @@
 		"a": "20:07"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.19AE08.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.19AE08",
+	"id": "Keisei.NaritaSkyAccess.19AE38.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.19AE38",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "19AE08",
+	"n": "19AE38",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -11074,12 +11251,20 @@
 		"a": "19:24",
 		"d": "19:24"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "19:43",
+		"d": "19:45"
+	}, {
+		"s": "Keisei.NaritaSkyAccess.Aoto",
+		"a": "19:56",
+		"d": "19:57"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "20:01",
-		"d": "20:02"
+		"a": "20:05",
+		"d": "20:06"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "20:06"
+		"a": "20:10"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 66号",
@@ -11206,10 +11391,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.20AE06.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.20AE06",
+	"id": "Keisei.NaritaSkyAccess.20AE36.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.20AE36",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "20AE06",
+	"n": "20AE36",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -11226,16 +11411,20 @@
 		"a": "20:33",
 		"d": "20:33"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "20:52",
+		"d": "20:53"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "21:01",
-		"d": "21:02"
+		"a": "21:03",
+		"d": "21:04"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "21:11",
-		"d": "21:12"
+		"a": "21:13",
+		"d": "21:14"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "21:16"
+		"a": "21:18"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 72号",
@@ -11278,15 +11467,15 @@
 		"d": "20:58"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ChibaNewTownChuo",
-		"a": "21:03",
+		"a": "21:04",
 		"d": "21:04"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
 		"a": "21:11",
-		"d": "21:11"
+		"d": "21:12"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.HigashiMatsudo",
-		"a": "21:15",
+		"a": "21:16",
 		"d": "21:17"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiTakasago",
@@ -11317,16 +11506,12 @@
 		"a": "21:03",
 		"d": "21:03"
 	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "21:31",
-		"d": "21:32"
-	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "21:41",
-		"d": "21:42"
+		"a": "21:39",
+		"d": "21:40"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "21:46"
+		"a": "21:44"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 74号",
@@ -11337,10 +11522,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.2150H.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.2150H",
+	"id": "Keisei.NaritaSkyAccess.2160H.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.2160H",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "2150H",
+	"n": "2160H",
 	"y": "Keisei.AccessExpress",
 	"d": "Inbound",
 	"os": [
@@ -11350,11 +11535,11 @@
 		"Toei.Asakusa.NishiMagome"
 	],
 	"nt": [
-		"Keisei.Oshiage.2150H.SaturdayHoliday"
+		"Keisei.Oshiage.2160H.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal1",
-		"d": "21:18"
+		"d": "21:16"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.NaritaAirportTerminal2and3",
 		"a": "21:21",
@@ -11408,16 +11593,12 @@
 		"a": "21:33",
 		"d": "21:33"
 	}, {
-		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "22:01",
-		"d": "22:02"
-	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "22:11",
-		"d": "22:12"
+		"a": "22:09",
+		"d": "22:10"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "22:16"
+		"a": "22:14"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 76号",
@@ -11428,10 +11609,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.22AE10.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.22AE10",
+	"id": "Keisei.NaritaSkyAccess.22AE40.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.22AE40",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "22AE10",
+	"n": "22AE40",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -11448,16 +11629,20 @@
 		"a": "22:03",
 		"d": "22:03"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "22:22",
+		"d": "22:24"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "22:31",
-		"d": "22:32"
+		"a": "22:34",
+		"d": "22:36"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "22:41",
-		"d": "22:42"
+		"a": "22:45",
+		"d": "22:46"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "22:46"
+		"a": "22:50"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 78号",
@@ -11524,10 +11709,10 @@
 		"a": "23:05"
 	}]
 }, {
-	"id": "Keisei.NaritaSkyAccess.22AE04.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.22AE04",
+	"id": "Keisei.NaritaSkyAccess.22AE34.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.22AE34",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "22AE04",
+	"n": "22AE34",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -11544,16 +11729,20 @@
 		"a": "22:33",
 		"d": "22:33"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "22:52",
+		"d": "22:54"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "23:01",
-		"d": "23:03"
+		"a": "23:04",
+		"d": "23:06"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "23:12",
-		"d": "23:13"
+		"a": "23:14",
+		"d": "23:15"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "23:17"
+		"a": "23:19"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 80号",
@@ -11564,10 +11753,10 @@
 	}],
 	"v": "AE"
 }, {
-	"id": "Keisei.NaritaSkyAccess.23AE00.SaturdayHoliday",
-	"t": "Keisei.NaritaSkyAccess.23AE00",
+	"id": "Keisei.NaritaSkyAccess.23AE30.SaturdayHoliday",
+	"t": "Keisei.NaritaSkyAccess.23AE30",
 	"r": "Keisei.NaritaSkyAccess",
-	"n": "23AE00",
+	"n": "23AE30",
 	"y": "Keisei.Skyliner",
 	"d": "Inbound",
 	"os": [
@@ -11584,16 +11773,20 @@
 		"a": "23:03",
 		"d": "23:03"
 	}, {
+		"s": "Keisei.NaritaSkyAccess.ShinKamagaya",
+		"a": "23:22",
+		"d": "23:23"
+	}, {
 		"s": "Keisei.NaritaSkyAccess.Aoto",
-		"a": "23:32",
-		"d": "23:33"
+		"a": "23:33",
+		"d": "23:34"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.Nippori",
-		"a": "23:41",
-		"d": "23:42"
+		"a": "23:43",
+		"d": "23:44"
 	}, {
 		"s": "Keisei.NaritaSkyAccess.KeiseiUeno",
-		"a": "23:46"
+		"a": "23:48"
 	}],
 	"nm": [{
 		"ja": "スカイライナー 82号",
