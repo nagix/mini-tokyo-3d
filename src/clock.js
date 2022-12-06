@@ -129,8 +129,8 @@ export default class {
         }
 
         if (date.getDay() === 0 || JapaneseHolidays.isHoliday(date) ||
-            (date.getFullYear() === 2021 && date.getMonth() === 11 && date.getDate() >= 30) ||
-            (date.getFullYear() === 2022 && date.getMonth() === 0 && date.getDate() <= 3)) {
+            (date.getFullYear() === 2022 && date.getMonth() === 11 && date.getDate() >= 30) ||
+            (date.getFullYear() === 2023 && date.getMonth() === 0 && date.getDate() <= 3)) {
             return 'Holiday';
         }
         if (date.getDay() === 6) {
