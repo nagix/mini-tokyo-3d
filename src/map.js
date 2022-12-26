@@ -22,6 +22,7 @@ import SearchPanel from './search-panel';
 import SharePanel from './share-panel';
 import StationPanel from './station-panel';
 import ThreeLayer from './three-layer';
+import Tile3DLayer from './tile-3d-layer';
 import TrackingModePanel from './tracking-mode-panel';
 import TrafficLayer from './traffic-layer';
 import TrainPanel from './train-panel';
@@ -494,10 +495,10 @@ export default class extends Evented {
 
     /**
      * Adds a layer to the map.
-     * @param {object | CustomLayerInterface | ThreeLayerInterface} layer - The layer
-     *     to add, conforming to either the Mapbox Style Specification's layer
-     *     definition, the CustomLayerInterface specification or the ThreeLayerInterface
-     *     specification
+     * @param {object | CustomLayerInterface | ThreeLayerInterface | Tile3DLayerInterface} layer
+     *     - The layer to add, conforming to either the Mapbox Style Specification's
+     *     layer definition, the CustomLayerInterface specification, the
+     *     ThreeLayerInterface specification or the Tile3DLayerInterface specification.
      * @param {string} beforeId - The ID of an existing layer to insert the new
      *     layer before
      * @returns {Map} Returns itself to allow for method chaining
@@ -507,6 +508,8 @@ export default class extends Evented {
 
         if (layer.type === 'three') {
             new ThreeLayer(layer).onAdd(me, beforeId);
+        } else if (layer.type === 'tile-3d') {
+            new Tile3DLayer(layer).onAdd(me, beforeId);
         } else {
             me.map.addLayer(layer, beforeId || 'poi');
         }

@@ -24,7 +24,7 @@ const sassRender = (content, id) => new Promise((resolve, reject) => {
 
 const onwarn = (warning, defaultHandler) => {
 	const {code, message} = warning;
-	if (code == 'CIRCULAR_DEPENDENCY' && message.includes('@luma.gl')) {
+	if (code == 'CIRCULAR_DEPENDENCY' && /@(deck|luma)\.gl/.test(message)) {
 		return;
 	}
 	if ((code == 'MISSING_EXPORT' || code == 'EVAL') && message.includes('@loaders.gl')) {
