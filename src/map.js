@@ -1,4 +1,3 @@
-import {MapboxLayer} from '@deck.gl/mapbox';
 import {featureEach} from '@turf/meta';
 import {Evented, FullscreenControl, LngLat, Map, MercatorCoordinate, NavigationControl} from 'mapbox-gl';
 import AnimatedPopup from 'mapbox-gl-animated-popup';
@@ -11,7 +10,7 @@ import configs from './configs';
 import extend from './extend';
 import GeoJsonLayer from './geojson-layer';
 import * as helpers from './helpers';
-import {getViewport, pickObject} from './helpers-deck';
+import {pickObject} from './helpers-deck';
 import * as helpersGeojson from './helpers-geojson';
 import * as helpersMapbox from './helpers-mapbox';
 import LayerPanel from './layer-panel';
@@ -68,24 +67,6 @@ NavigationControl.prototype.disable = function() {
 
     me._disabled = true;
     me._updateZoomButtons();
-};
-
-// Replace MapboxLayer.render to support underground rendering
-const render = MapboxLayer.prototype.render;
-MapboxLayer.prototype.render = function(...args) {
-    const me = this,
-        {deck, map} = me;
-
-    if (!deck.isInitialized) {
-        // Not yet initialized
-        return;
-    }
-
-    if (!deck.userData.currentViewport) {
-        // Get the modified viewport to support underground rendering
-        deck.userData.currentViewport = getViewport(deck, map);
-    }
-    render.apply(me, args);
 };
 
 const modelOrigin = MercatorCoordinate.fromLngLat(configs.defaultCenter);

@@ -30,7 +30,7 @@ const onwarn = (warning, defaultHandler) => {
 	if ((code == 'MISSING_EXPORT' || code == 'EVAL') && message.includes('@loaders.gl')) {
 		return;
 	}
-	defaultHandler(warning)
+	defaultHandler(warning);
 }
 
 export default [{
@@ -76,6 +76,12 @@ export default [{
 			'log.error': '(() => () => {})',
 			'1.01*': '2*'
 		}),
+		replace({
+			preventAssignment: true,
+			include: '**/web-mercator-viewport.js',
+			'0.1': '0.02',
+			'1.01': '2'
+		}),
 		image()
 	],
 	onwarn
@@ -109,6 +115,12 @@ export default [{
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})',
 			'1.01*': '2*'
+		}),
+		replace({
+			preventAssignment: true,
+			include: '**/web-mercator-viewport.js',
+			'0.1': '0.02',
+			'1.01': '2'
 		}),
 		image(),
 		terser({
@@ -147,6 +159,12 @@ export default [{
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})',
 			'1.01*': '2*'
+		}),
+		replace({
+			preventAssignment: true,
+			include: '**/web-mercator-viewport.js',
+			'0.1': '0.02',
+			'1.01': '2'
 		}),
 		image()
 	],
