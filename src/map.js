@@ -1,5 +1,4 @@
 import {MapboxLayer} from '@deck.gl/mapbox';
-import {GeoJsonLayer} from '@deck.gl/layers';
 import {featureEach} from '@turf/meta';
 import {Evented, FullscreenControl, LngLat, Map, MercatorCoordinate, NavigationControl} from 'mapbox-gl';
 import AnimatedPopup from 'mapbox-gl-animated-popup';
@@ -10,6 +9,7 @@ import Clock from './clock';
 import ClockControl from './clock-control';
 import configs from './configs';
 import extend from './extend';
+import GeoJsonLayer from './geojson-layer';
 import * as helpers from './helpers';
 import {getViewport, pickObject} from './helpers-deck';
 import * as helpersGeojson from './helpers-geojson';
@@ -495,10 +495,11 @@ export default class extends Evented {
 
     /**
      * Adds a layer to the map.
-     * @param {object | CustomLayerInterface | ThreeLayerInterface | Tile3DLayerInterface} layer
+     * @param {object | CustomLayerInterface | GeoJsonLayerInterface | ThreeLayerInterface | Tile3DLayerInterface} layer
      *     - The layer to add, conforming to either the Mapbox Style Specification's
      *     layer definition, the CustomLayerInterface specification, the
-     *     ThreeLayerInterface specification or the Tile3DLayerInterface specification.
+     *     GeoJsonLayerInterface specification, the ThreeLayerInterface specification
+     *     or the Tile3DLayerInterface specification
      * @param {string} beforeId - The ID of an existing layer to insert the new
      *     layer before
      * @returns {Map} Returns itself to allow for method chaining
@@ -508,6 +509,8 @@ export default class extends Evented {
 
         if (layer.type === 'three') {
             new ThreeLayer(layer).onAdd(me, beforeId);
+        } else if (layer.type === 'geojson') {
+            new GeoJsonLayer(layer).onAdd(me, beforeId);
         } else if (layer.type === 'tile-3d') {
             new Tile3DLayer(layer).onAdd(me, beforeId);
         } else {
@@ -663,9 +666,9 @@ export default class extends Evented {
                     zoom === 13 ? helpers.clamp(Math.pow(2, map.getZoom() - 12), .125, 1) :
                     zoom === 18 ? helpers.clamp(Math.pow(2, map.getZoom() - 19), 1, 8) : 1;
 
-            map.addLayer(new MapboxLayer({
+            me.addLayer({
                 id: `stations-marked-${zoom}`,
-                type: GeoJsonLayer,
+                type: 'geojson',
                 filled: true,
                 stroked: true,
                 getLineWidth: 12,
@@ -674,12 +677,13 @@ export default class extends Evented {
                 lineWidthScale,
                 getFillColor: [255, 255, 255],
                 visible: false,
-                parameters: {depthTest: false}
-            }), 'building-3d');
-            map.setLayerZoomRange(`stations-marked-${zoom}`, minzoom, maxzoom);
-            map.addLayer(new MapboxLayer({
+                parameters: {depthTest: false},
+                minzoom,
+                maxzoom
+            }, 'building-3d');
+            me.addLayer({
                 id: `stations-selected-${zoom}`,
-                type: GeoJsonLayer,
+                type: 'geojson',
                 filled: true,
                 stroked: true,
                 getLineWidth: 12,
@@ -688,12 +692,13 @@ export default class extends Evented {
                 lineWidthScale,
                 getFillColor: [255, 255, 255],
                 visible: false,
-                parameters: {depthTest: false}
-            }), 'building-3d');
-            map.setLayerZoomRange(`stations-selected-${zoom}`, minzoom, maxzoom);
-            map.addLayer(new MapboxLayer({
+                parameters: {depthTest: false},
+                minzoom,
+                maxzoom
+            }, 'building-3d');
+            me.addLayer({
                 id: `railways-ug-${zoom}`,
-                type: GeoJsonLayer,
+                type: 'geojson',
                 data: helpersGeojson.featureFilter(me.featureCollection, p =>
                     p.zoom === zoom && p.type === 0 && p.altitude < 0
                 ),
@@ -705,12 +710,13 @@ export default class extends Evented {
                 lineWidthScale,
                 opacity: .0625,
                 pickable: true,
-                parameters: {depthTest: false}
-            }), 'building-3d');
-            map.setLayerZoomRange(`railways-ug-${zoom}`, minzoom, maxzoom);
-            map.addLayer(new MapboxLayer({
+                parameters: {depthTest: false},
+                minzoom,
+                maxzoom
+            }, 'building-3d');
+            me.addLayer({
                 id: `stations-ug-${zoom}`,
-                type: GeoJsonLayer,
+                type: 'geojson',
                 data: helpersGeojson.featureFilter(me.featureCollection, p =>
                     p.zoom === zoom && p.type === 1 && p.altitude < 0
                 ),
@@ -723,12 +729,13 @@ export default class extends Evented {
                 getFillColor: [255, 255, 255, 179],
                 opacity: .0625,
                 pickable: true,
-                parameters: {depthTest: false}
-            }), 'building-3d');
-            map.setLayerZoomRange(`stations-ug-${zoom}`, minzoom, maxzoom);
-            map.addLayer(new MapboxLayer({
+                parameters: {depthTest: false},
+                minzoom,
+                maxzoom
+            }, 'building-3d');
+            me.addLayer({
                 id: `railways-routeug-${zoom}`,
-                type: GeoJsonLayer,
+                type: 'geojson',
                 data: helpersGeojson.emptyFeatureCollection(),
                 filled: false,
                 stroked: true,
@@ -737,12 +744,13 @@ export default class extends Evented {
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 opacity: .0625,
-                parameters: {depthTest: false}
-            }), 'building-3d');
-            map.setLayerZoomRange(`railways-routeug-${zoom}`, minzoom, maxzoom);
-            map.addLayer(new MapboxLayer({
+                parameters: {depthTest: false},
+                minzoom,
+                maxzoom
+            }, 'building-3d');
+            me.addLayer({
                 id: `stations-routeug-${zoom}`,
-                type: GeoJsonLayer,
+                type: 'geojson',
                 data: helpersGeojson.emptyFeatureCollection(),
                 filled: true,
                 stroked: true,
@@ -752,12 +760,13 @@ export default class extends Evented {
                 lineWidthScale,
                 getFillColor: [255, 255, 255, 179],
                 opacity: .0625,
-                parameters: {depthTest: false}
-            }), 'building-3d');
-            map.setLayerZoomRange(`stations-routeug-${zoom}`, minzoom, maxzoom);
-            map.addLayer(new MapboxLayer({
+                parameters: {depthTest: false},
+                minzoom,
+                maxzoom
+            }, 'building-3d');
+            me.addLayer({
                 id: `railways-routeog-${zoom}`,
-                type: GeoJsonLayer,
+                type: 'geojson',
                 data: helpersGeojson.emptyFeatureCollection(),
                 filled: false,
                 stroked: true,
@@ -765,12 +774,13 @@ export default class extends Evented {
                 getLineColor: d => helpers.colorToRGBArray(d.properties.color),
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
-                parameters: {depthTest: false}
-            }), 'building-3d');
-            map.setLayerZoomRange(`railways-routeog-${zoom}`, minzoom, maxzoom);
-            map.addLayer(new MapboxLayer({
+                parameters: {depthTest: false},
+                minzoom,
+                maxzoom
+            }, 'building-3d');
+            me.addLayer({
                 id: `stations-routeog-${zoom}`,
-                type: GeoJsonLayer,
+                type: 'geojson',
                 data: helpersGeojson.emptyFeatureCollection(),
                 filled: true,
                 stroked: true,
@@ -779,9 +789,10 @@ export default class extends Evented {
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 getFillColor: [255, 255, 255, 179],
-                parameters: {depthTest: false}
-            }), 'building-3d');
-            map.setLayerZoomRange(`stations-routeog-${zoom}`, minzoom, maxzoom);
+                parameters: {depthTest: false},
+                minzoom,
+                maxzoom
+            }, 'building-3d');
         });
 
         // Workaround for deck.gl #3522
@@ -867,9 +878,9 @@ export default class extends Evented {
         });
 
         /* For development
-        map.addLayer(new MapboxLayer({
+        me.addLayer({
             id: `airway-og-`,
-            type: GeoJsonLayer,
+            type: 'geojson',
             data: helpersGeojson.featureFilter(me.featureCollection, p =>
                 p.type === 0 && p.altitude > 0
             ),
@@ -881,7 +892,7 @@ export default class extends Evented {
             lineWidthScale: 1,
             opacity: .0625,
             parameters: {depthTest: false}
-        }), 'poi');
+        });
         */
 
         me.styleColors = helpersMapbox.getStyleColors(map);
