@@ -393,13 +393,38 @@
 .mini-tokyo-3d .exit-title-box {
     overflow: hidden;
 }
+.mini-tokyo-3d .exit-stairs-icon {
+    background: no-repeat center right/20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/stairs.svg', fill: #fff);
+    width: 23px;
+}
+.mini-tokyo-3d .exit-stairs-small-icon {
+    display: inline-block;
+    background: no-repeat center left/16px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/stairs.svg', fill: #fff);
+    width: 18px;
+    height: 20px;
+    vertical-align: top;
+}
 .mini-tokyo-3d .exit-elevator-icon {
     background: no-repeat center right/20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/elevator.svg', fill: #fff);
-    width: 26px;
+    width: 23px;
+}
+.mini-tokyo-3d .exit-elevator-small-icon {
+    display: inline-block;
+    background: no-repeat center left/16px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/elevator.svg', fill: #fff);
+    width: 18px;
+    height: 20px;
+    vertical-align: top;
 }
 .mini-tokyo-3d .exit-escalator-icon {
     background: no-repeat center right/20px svg-load('../svg/escalator.svg', fill: #fff);
-    width: 26px;
+    width: 23px;
+}
+.mini-tokyo-3d .exit-escalator-small-icon {
+    display: inline-block;
+    background: no-repeat center left/16px svg-load('../svg/escalator.svg', fill: #fff);
+    width: 18px;
+    height: 20px;
+    vertical-align: top;
 }
 .mini-tokyo-3d .exit-share-button {
     width: 0;

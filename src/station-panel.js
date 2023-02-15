@@ -33,8 +33,7 @@ export default class extends Panel {
                 map.getLocalizedPOIDescription(id),
                 uptime && uptime.open !== uptime.close ? ` (${uptime.open}-${uptime.close})` : '',
                 '</div>',
-                includes(poi.facilities, 'elevator') ? '<div class="exit-elevator-icon"></div>' : '',
-                includes(poi.facilities, 'escalator') ? '<div class="exit-escalator-icon"></div>' : '',
+                (poi.facilities || []).map(facility => `<div class="exit-${facility}-icon"></div>`).join(''),
                 '<div class="exit-share-button"></div>',
                 '</div>'
             ].join(''));

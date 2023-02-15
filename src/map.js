@@ -2835,7 +2835,8 @@ export default class extends Evented {
                     const coords = [];
 
                     me.exitPopups = exits.map((id, index) => {
-                        const {coord} = me.poiLookup[id],
+                        const {coord, facilities} = me.poiLookup[id],
+                            icons = (facilities || []).map(facility => `<span class="exit-${facility}-small-icon"></span>`).join(''),
                             listener = () => {
                                 me.exitPopups[index] = setTimeout(() => {
                                     const popup = new AnimatedPopup({
@@ -2845,7 +2846,7 @@ export default class extends Evented {
                                     });
 
                                     popup.setLngLat(coord)
-                                        .setHTML(me.getLocalizedPOITitle(id))
+                                        .setHTML(icons + me.getLocalizedPOITitle(id))
                                         .addTo(map)
                                         .getElement().id = `exit-${index}`;
 
