@@ -4957,7 +4957,8 @@
 	"exit": [
 		"JR-East.Hatchobori.B1",
 		"JR-East.Hatchobori.B2",
-		"JR-East.Hatchobori.B3"
+		"JR-East.Hatchobori.B3",
+		"JR-East.Hatchobori.B4"
 	],
 	"altitude": -1
 }, {
@@ -8032,7 +8033,6 @@
 		"zh-Hant": "青山一丁目"
 	},
 	"exit": [
-		"TokyoMetro.AoyamaItchome.0",
 		"TokyoMetro.AoyamaItchome.1",
 		"TokyoMetro.AoyamaItchome.2",
 		"TokyoMetro.AoyamaItchome.3",
@@ -8775,7 +8775,8 @@
 		"zh-Hant": "淡路町"
 	},
 	"exit": [
-		"TokyoMetro.Awajicho.EVv",
+		"TokyoMetro.Awajicho.A3",
+		"TokyoMetro.Awajicho.A4",
 		"TokyoMetro.Awajicho.EVb"
 	],
 	"altitude": -1
@@ -9206,8 +9207,11 @@
 	},
 	"exit": [
 		"TokyoMetro.Tsukiji.1",
+		"TokyoMetro.Tsukiji.EVr",
 		"TokyoMetro.Tsukiji.2",
-		"TokyoMetro.Tsukiji.3",
+		"TokyoMetro.Tsukiji.EVb",
+		"TokyoMetro.Tsukiji.3a",
+		"TokyoMetro.Tsukiji.3b",
 		"TokyoMetro.Tsukiji.4"
 	],
 	"altitude": -1
@@ -9225,9 +9229,11 @@
 	"exit": [
 		"TokyoMetro.Hatchobori.A1",
 		"TokyoMetro.Hatchobori.A2",
+		"TokyoMetro.Hatchobori.EVr",
 		"TokyoMetro.Hatchobori.A3",
 		"TokyoMetro.Hatchobori.A4",
-		"TokyoMetro.Hatchobori.A5"
+		"TokyoMetro.Hatchobori.A5a",
+		"TokyoMetro.Hatchobori.A5b"
 	],
 	"altitude": -1
 }, {
@@ -9246,6 +9252,7 @@
 		"TokyoMetro.Kayabacho.2",
 		"TokyoMetro.Kayabacho.3",
 		"TokyoMetro.Kayabacho.4a",
+		"TokyoMetro.Kayabacho.EVg",
 		"TokyoMetro.Kayabacho.4b",
 		"TokyoMetro.Kayabacho.5"
 	],
@@ -9263,7 +9270,9 @@
 	},
 	"exit": [
 		"TokyoMetro.Ningyocho.A1",
-		"TokyoMetro.Ningyocho.A2"
+		"TokyoMetro.Ningyocho.A2",
+		"TokyoMetro.Ningyocho.A3",
+		"TokyoMetro.Ningyocho.A4"
 	],
 	"altitude": -1
 }, {
@@ -9282,8 +9291,8 @@
 		"TokyoMetro.Kodemmacho.2",
 		"TokyoMetro.Kodemmacho.3",
 		"TokyoMetro.Kodemmacho.4",
-		"TokyoMetro.Kodemmacho.EV1",
-		"TokyoMetro.Kodemmacho.EV2"
+		"TokyoMetro.Kodemmacho.EVb",
+		"TokyoMetro.Kodemmacho.EVr"
 	],
 	"altitude": -1
 }, {
@@ -9301,6 +9310,7 @@
 		"TokyoMetro.Akihabara.1",
 		"TokyoMetro.Akihabara.2",
 		"TokyoMetro.Akihabara.3",
+		"TokyoMetro.Akihabara.EVr",
 		"TokyoMetro.Akihabara.4",
 		"TokyoMetro.Akihabara.5"
 	],
@@ -9364,10 +9374,10 @@
 	},
 	"exit": [
 		"TokyoMetro.Iriya.1",
+		"TokyoMetro.Iriya.EVr",
 		"TokyoMetro.Iriya.2",
 		"TokyoMetro.Iriya.3",
-		"TokyoMetro.Iriya.4",
-		"TokyoMetro.Iriya.EV"
+		"TokyoMetro.Iriya.4"
 	],
 	"altitude": -1
 }, {
@@ -9383,11 +9393,11 @@
 	},
 	"exit": [
 		"TokyoMetro.Minowa.1a",
+		"TokyoMetro.Minowa.EVr",
 		"TokyoMetro.Minowa.1b",
+		"TokyoMetro.Minowa.EVb",
 		"TokyoMetro.Minowa.2",
-		"TokyoMetro.Minowa.3",
-		"TokyoMetro.Minowa.EV1",
-		"TokyoMetro.Minowa.EV2"
+		"TokyoMetro.Minowa.3"
 	],
 	"altitude": -1
 }, {
@@ -10237,7 +10247,8 @@
 		"TokyoMetro.KitaSenju.2",
 		"TokyoMetro.KitaSenju.3",
 		"TokyoMetro.KitaSenju.4",
-		"TokyoMetro.KitaSenju.5"
+		"TokyoMetro.KitaSenju.5",
+		"TokyoMetro.KitaSenju.EV"
 	],
 	"altitude": -1
 }, {
@@ -11203,7 +11214,6 @@
 	},
 	"exit": [
 		"TokyoMetro.Korakuen.5",
-		"TokyoMetro.Korakuen.6",
 		"TokyoMetro.Korakuen.7",
 		"TokyoMetro.Korakuen.8"
 	],
@@ -11797,6 +11807,7 @@
 	},
 	"exit": [
 		"Toei.HigashiGinza.A1",
+		"Toei.HigashiGinza.EV",
 		"Toei.HigashiGinza.A2",
 		"Toei.HigashiGinza.A7",
 		"Toei.HigashiGinza.A8"
@@ -11855,8 +11866,6 @@
 		"zh-Hant": "人形町"
 	},
 	"exit": [
-		"Toei.Ningyocho.A3",
-		"Toei.Ningyocho.A4",
 		"Toei.Ningyocho.A5",
 		"Toei.Ningyocho.A6"
 	],
@@ -12575,8 +12584,7 @@
 	"exit": [
 		"Toei.Ogawamachi.A1",
 		"Toei.Ogawamachi.A2",
-		"Toei.Ogawamachi.A3",
-		"Toei.Ogawamachi.A4",
+		"Toei.Ogawamachi.EVv",
 		"Toei.Ogawamachi.A5",
 		"Toei.Ogawamachi.A6",
 		"Toei.Ogawamachi.EV",
@@ -12982,6 +12990,9 @@
 		"zh-Hant": "春日",
 		"ja-Wiki": "春日駅 (東京都)"
 	},
+	"exit": [
+		"Toei.Kasuga.6"
+	],
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.HongoSanchome",
@@ -13285,6 +13296,7 @@
 		"zh-Hant": "青山一丁目"
 	},
 	"exit": [
+		"Toei.AoyamaItchome.0",
 		"Toei.AoyamaItchome.5"
 	],
 	"altitude": -1
