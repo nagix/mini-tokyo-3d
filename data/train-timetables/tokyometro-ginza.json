@@ -1,4 +1,137 @@
 [{
+	"id": "TokyoMetro.Ginza.A1631.Weekday",
+	"t": "TokyoMetro.Ginza.A1631",
+	"r": "TokyoMetro.Ginza",
+	"n": "A1631",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Shibuya",
+	"os": [
+		"TokyoMetro.Ginza.Ueno"
+	],
+	"ds": [
+		"TokyoMetro.Ginza.Shibuya"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Ginza.Ueno",
+		"d": "16:40"
+	}, {
+		"s": "TokyoMetro.Ginza.UenoHirokoji",
+		"d": "16:42"
+	}, {
+		"s": "TokyoMetro.Ginza.Suehirocho",
+		"d": "16:43"
+	}, {
+		"s": "TokyoMetro.Ginza.Kanda",
+		"d": "16:45"
+	}, {
+		"s": "TokyoMetro.Ginza.Mitsukoshimae",
+		"d": "16:47"
+	}, {
+		"s": "TokyoMetro.Ginza.Nihombashi",
+		"d": "16:49"
+	}, {
+		"s": "TokyoMetro.Ginza.Kyobashi",
+		"d": "16:51"
+	}, {
+		"s": "TokyoMetro.Ginza.Ginza",
+		"d": "16:53"
+	}, {
+		"s": "TokyoMetro.Ginza.Shimbashi",
+		"d": "16:55"
+	}, {
+		"s": "TokyoMetro.Ginza.Toranomon",
+		"d": "16:57"
+	}, {
+		"s": "TokyoMetro.Ginza.TameikeSanno",
+		"d": "16:59"
+	}, {
+		"s": "TokyoMetro.Ginza.AkasakaMitsuke",
+		"d": "17:01"
+	}, {
+		"s": "TokyoMetro.Ginza.AoyamaItchome",
+		"d": "17:04"
+	}, {
+		"s": "TokyoMetro.Ginza.Gaiemmae",
+		"d": "17:05"
+	}, {
+		"s": "TokyoMetro.Ginza.OmoteSando",
+		"d": "17:07"
+	}, {
+		"s": "TokyoMetro.Ginza.Shibuya",
+		"a": "17:09"
+	}]
+}, {
+	"id": "TokyoMetro.Ginza.A2023.Weekday",
+	"t": "TokyoMetro.Ginza.A2023",
+	"r": "TokyoMetro.Ginza",
+	"n": "A2023",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Shibuya",
+	"os": [
+		"TokyoMetro.Ginza.Asakusa"
+	],
+	"ds": [
+		"TokyoMetro.Ginza.Shibuya"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Ginza.Asakusa",
+		"d": "20:22"
+	}, {
+		"s": "TokyoMetro.Ginza.Tawaramachi",
+		"d": "20:25"
+	}, {
+		"s": "TokyoMetro.Ginza.Inaricho",
+		"d": "20:27"
+	}, {
+		"s": "TokyoMetro.Ginza.Ueno",
+		"d": "20:29"
+	}, {
+		"s": "TokyoMetro.Ginza.UenoHirokoji",
+		"d": "20:31"
+	}, {
+		"s": "TokyoMetro.Ginza.Suehirocho",
+		"d": "20:32"
+	}, {
+		"s": "TokyoMetro.Ginza.Kanda",
+		"d": "20:34"
+	}, {
+		"s": "TokyoMetro.Ginza.Mitsukoshimae",
+		"d": "20:36"
+	}, {
+		"s": "TokyoMetro.Ginza.Nihombashi",
+		"d": "20:38"
+	}, {
+		"s": "TokyoMetro.Ginza.Kyobashi",
+		"d": "20:39"
+	}, {
+		"s": "TokyoMetro.Ginza.Ginza",
+		"d": "20:41"
+	}, {
+		"s": "TokyoMetro.Ginza.Shimbashi",
+		"d": "20:43"
+	}, {
+		"s": "TokyoMetro.Ginza.Toranomon",
+		"d": "20:45"
+	}, {
+		"s": "TokyoMetro.Ginza.TameikeSanno",
+		"d": "20:47"
+	}, {
+		"s": "TokyoMetro.Ginza.AkasakaMitsuke",
+		"d": "20:49"
+	}, {
+		"s": "TokyoMetro.Ginza.AoyamaItchome",
+		"d": "20:51"
+	}, {
+		"s": "TokyoMetro.Ginza.Gaiemmae",
+		"d": "20:53"
+	}, {
+		"s": "TokyoMetro.Ginza.OmoteSando",
+		"d": "20:55"
+	}, {
+		"s": "TokyoMetro.Ginza.Shibuya",
+		"a": "20:56"
+	}]
+}, {
 	"id": "TokyoMetro.Ginza.A1007.Weekday",
 	"t": "TokyoMetro.Ginza.A1007",
 	"r": "TokyoMetro.Ginza",
@@ -6211,68 +6344,6 @@
 		"a": "17:16"
 	}]
 }, {
-	"id": "TokyoMetro.Ginza.A1631.Weekday",
-	"t": "TokyoMetro.Ginza.A1631",
-	"r": "TokyoMetro.Ginza",
-	"n": "A1631",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Shibuya",
-	"os": [
-		"TokyoMetro.Ginza.Ueno"
-	],
-	"ds": [
-		"TokyoMetro.Ginza.Shibuya"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Ginza.Ueno",
-		"d": "16:40"
-	}, {
-		"s": "TokyoMetro.Ginza.UenoHirokoji",
-		"d": "16:42"
-	}, {
-		"s": "TokyoMetro.Ginza.Suehirocho",
-		"d": "16:43"
-	}, {
-		"s": "TokyoMetro.Ginza.Kanda",
-		"d": "16:45"
-	}, {
-		"s": "TokyoMetro.Ginza.Mitsukoshimae",
-		"d": "16:47"
-	}, {
-		"s": "TokyoMetro.Ginza.Nihombashi",
-		"d": "16:49"
-	}, {
-		"s": "TokyoMetro.Ginza.Kyobashi",
-		"d": "16:51"
-	}, {
-		"s": "TokyoMetro.Ginza.Ginza",
-		"d": "16:53"
-	}, {
-		"s": "TokyoMetro.Ginza.Shimbashi",
-		"d": "16:55"
-	}, {
-		"s": "TokyoMetro.Ginza.Toranomon",
-		"d": "16:57"
-	}, {
-		"s": "TokyoMetro.Ginza.TameikeSanno",
-		"d": "16:59"
-	}, {
-		"s": "TokyoMetro.Ginza.AkasakaMitsuke",
-		"d": "17:01"
-	}, {
-		"s": "TokyoMetro.Ginza.AoyamaItchome",
-		"d": "17:04"
-	}, {
-		"s": "TokyoMetro.Ginza.Gaiemmae",
-		"d": "17:05"
-	}, {
-		"s": "TokyoMetro.Ginza.OmoteSando",
-		"d": "17:07"
-	}, {
-		"s": "TokyoMetro.Ginza.Shibuya",
-		"a": "17:09"
-	}]
-}, {
 	"id": "TokyoMetro.Ginza.A1637.Weekday",
 	"t": "TokyoMetro.Ginza.A1637",
 	"r": "TokyoMetro.Ginza",
@@ -7016,68 +7087,6 @@
 	}, {
 		"s": "TokyoMetro.Ginza.Shibuya",
 		"a": "16:57"
-	}]
-}, {
-	"id": "TokyoMetro.Ginza.A617.Weekday",
-	"t": "TokyoMetro.Ginza.A617",
-	"r": "TokyoMetro.Ginza",
-	"n": "A617",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Shibuya",
-	"os": [
-		"TokyoMetro.Ginza.Ueno"
-	],
-	"ds": [
-		"TokyoMetro.Ginza.Shibuya"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Ginza.Ueno",
-		"d": "06:36"
-	}, {
-		"s": "TokyoMetro.Ginza.UenoHirokoji",
-		"d": "06:38"
-	}, {
-		"s": "TokyoMetro.Ginza.Suehirocho",
-		"d": "06:39"
-	}, {
-		"s": "TokyoMetro.Ginza.Kanda",
-		"d": "06:41"
-	}, {
-		"s": "TokyoMetro.Ginza.Mitsukoshimae",
-		"d": "06:43"
-	}, {
-		"s": "TokyoMetro.Ginza.Nihombashi",
-		"d": "06:45"
-	}, {
-		"s": "TokyoMetro.Ginza.Kyobashi",
-		"d": "06:47"
-	}, {
-		"s": "TokyoMetro.Ginza.Ginza",
-		"d": "06:49"
-	}, {
-		"s": "TokyoMetro.Ginza.Shimbashi",
-		"d": "06:51"
-	}, {
-		"s": "TokyoMetro.Ginza.Toranomon",
-		"d": "06:53"
-	}, {
-		"s": "TokyoMetro.Ginza.TameikeSanno",
-		"d": "06:54"
-	}, {
-		"s": "TokyoMetro.Ginza.AkasakaMitsuke",
-		"d": "06:56"
-	}, {
-		"s": "TokyoMetro.Ginza.AoyamaItchome",
-		"d": "06:59"
-	}, {
-		"s": "TokyoMetro.Ginza.Gaiemmae",
-		"d": "07:00"
-	}, {
-		"s": "TokyoMetro.Ginza.OmoteSando",
-		"d": "07:02"
-	}, {
-		"s": "TokyoMetro.Ginza.Shibuya",
-		"a": "07:04"
 	}]
 }, {
 	"id": "TokyoMetro.Ginza.A1701.Weekday",
@@ -12396,77 +12405,6 @@
 		"a": "21:26"
 	}]
 }, {
-	"id": "TokyoMetro.Ginza.A2023.Weekday",
-	"t": "TokyoMetro.Ginza.A2023",
-	"r": "TokyoMetro.Ginza",
-	"n": "A2023",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Shibuya",
-	"os": [
-		"TokyoMetro.Ginza.Asakusa"
-	],
-	"ds": [
-		"TokyoMetro.Ginza.Shibuya"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Ginza.Asakusa",
-		"d": "20:22"
-	}, {
-		"s": "TokyoMetro.Ginza.Tawaramachi",
-		"d": "20:25"
-	}, {
-		"s": "TokyoMetro.Ginza.Inaricho",
-		"d": "20:27"
-	}, {
-		"s": "TokyoMetro.Ginza.Ueno",
-		"d": "20:29"
-	}, {
-		"s": "TokyoMetro.Ginza.UenoHirokoji",
-		"d": "20:31"
-	}, {
-		"s": "TokyoMetro.Ginza.Suehirocho",
-		"d": "20:32"
-	}, {
-		"s": "TokyoMetro.Ginza.Kanda",
-		"d": "20:34"
-	}, {
-		"s": "TokyoMetro.Ginza.Mitsukoshimae",
-		"d": "20:36"
-	}, {
-		"s": "TokyoMetro.Ginza.Nihombashi",
-		"d": "20:38"
-	}, {
-		"s": "TokyoMetro.Ginza.Kyobashi",
-		"d": "20:39"
-	}, {
-		"s": "TokyoMetro.Ginza.Ginza",
-		"d": "20:41"
-	}, {
-		"s": "TokyoMetro.Ginza.Shimbashi",
-		"d": "20:43"
-	}, {
-		"s": "TokyoMetro.Ginza.Toranomon",
-		"d": "20:45"
-	}, {
-		"s": "TokyoMetro.Ginza.TameikeSanno",
-		"d": "20:47"
-	}, {
-		"s": "TokyoMetro.Ginza.AkasakaMitsuke",
-		"d": "20:49"
-	}, {
-		"s": "TokyoMetro.Ginza.AoyamaItchome",
-		"d": "20:51"
-	}, {
-		"s": "TokyoMetro.Ginza.Gaiemmae",
-		"d": "20:53"
-	}, {
-		"s": "TokyoMetro.Ginza.OmoteSando",
-		"d": "20:55"
-	}, {
-		"s": "TokyoMetro.Ginza.Shibuya",
-		"a": "20:56"
-	}]
-}, {
 	"id": "TokyoMetro.Ginza.A2025.Weekday",
 	"t": "TokyoMetro.Ginza.A2025",
 	"r": "TokyoMetro.Ginza",
@@ -16441,6 +16379,68 @@
 		"a": "06:55"
 	}]
 }, {
+	"id": "TokyoMetro.Ginza.A617.Weekday",
+	"t": "TokyoMetro.Ginza.A617",
+	"r": "TokyoMetro.Ginza",
+	"n": "A617",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Shibuya",
+	"os": [
+		"TokyoMetro.Ginza.Ueno"
+	],
+	"ds": [
+		"TokyoMetro.Ginza.Shibuya"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Ginza.Ueno",
+		"d": "06:36"
+	}, {
+		"s": "TokyoMetro.Ginza.UenoHirokoji",
+		"d": "06:38"
+	}, {
+		"s": "TokyoMetro.Ginza.Suehirocho",
+		"d": "06:39"
+	}, {
+		"s": "TokyoMetro.Ginza.Kanda",
+		"d": "06:41"
+	}, {
+		"s": "TokyoMetro.Ginza.Mitsukoshimae",
+		"d": "06:43"
+	}, {
+		"s": "TokyoMetro.Ginza.Nihombashi",
+		"d": "06:45"
+	}, {
+		"s": "TokyoMetro.Ginza.Kyobashi",
+		"d": "06:47"
+	}, {
+		"s": "TokyoMetro.Ginza.Ginza",
+		"d": "06:49"
+	}, {
+		"s": "TokyoMetro.Ginza.Shimbashi",
+		"d": "06:51"
+	}, {
+		"s": "TokyoMetro.Ginza.Toranomon",
+		"d": "06:53"
+	}, {
+		"s": "TokyoMetro.Ginza.TameikeSanno",
+		"d": "06:54"
+	}, {
+		"s": "TokyoMetro.Ginza.AkasakaMitsuke",
+		"d": "06:56"
+	}, {
+		"s": "TokyoMetro.Ginza.AoyamaItchome",
+		"d": "06:59"
+	}, {
+		"s": "TokyoMetro.Ginza.Gaiemmae",
+		"d": "07:00"
+	}, {
+		"s": "TokyoMetro.Ginza.OmoteSando",
+		"d": "07:02"
+	}, {
+		"s": "TokyoMetro.Ginza.Shibuya",
+		"a": "07:04"
+	}]
+}, {
 	"id": "TokyoMetro.Ginza.A639.Weekday",
 	"t": "TokyoMetro.Ginza.A639",
 	"r": "TokyoMetro.Ginza",
@@ -19301,59 +19301,6 @@
 	}, {
 		"s": "TokyoMetro.Ginza.Shibuya",
 		"a": "09:00"
-	}]
-}, {
-	"id": "TokyoMetro.Ginza.B645.Weekday",
-	"t": "TokyoMetro.Ginza.B645",
-	"r": "TokyoMetro.Ginza",
-	"n": "B645",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Asakusa",
-	"os": [
-		"TokyoMetro.Ginza.Toranomon"
-	],
-	"ds": [
-		"TokyoMetro.Ginza.Asakusa"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Ginza.Toranomon",
-		"d": "06:10"
-	}, {
-		"s": "TokyoMetro.Ginza.Shimbashi",
-		"d": "06:12"
-	}, {
-		"s": "TokyoMetro.Ginza.Ginza",
-		"d": "06:14"
-	}, {
-		"s": "TokyoMetro.Ginza.Kyobashi",
-		"d": "06:16"
-	}, {
-		"s": "TokyoMetro.Ginza.Nihombashi",
-		"d": "06:17"
-	}, {
-		"s": "TokyoMetro.Ginza.Mitsukoshimae",
-		"d": "06:19"
-	}, {
-		"s": "TokyoMetro.Ginza.Kanda",
-		"d": "06:21"
-	}, {
-		"s": "TokyoMetro.Ginza.Suehirocho",
-		"d": "06:23"
-	}, {
-		"s": "TokyoMetro.Ginza.UenoHirokoji",
-		"d": "06:24"
-	}, {
-		"s": "TokyoMetro.Ginza.Ueno",
-		"d": "06:26"
-	}, {
-		"s": "TokyoMetro.Ginza.Inaricho",
-		"d": "06:28"
-	}, {
-		"s": "TokyoMetro.Ginza.Tawaramachi",
-		"d": "06:30"
-	}, {
-		"s": "TokyoMetro.Ginza.Asakusa",
-		"a": "06:31"
 	}]
 }, {
 	"id": "TokyoMetro.Ginza.A823.Weekday",
@@ -38435,6 +38382,59 @@
 		"a": "06:35"
 	}]
 }, {
+	"id": "TokyoMetro.Ginza.B645.Weekday",
+	"t": "TokyoMetro.Ginza.B645",
+	"r": "TokyoMetro.Ginza",
+	"n": "B645",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Asakusa",
+	"os": [
+		"TokyoMetro.Ginza.Toranomon"
+	],
+	"ds": [
+		"TokyoMetro.Ginza.Asakusa"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Ginza.Toranomon",
+		"d": "06:10"
+	}, {
+		"s": "TokyoMetro.Ginza.Shimbashi",
+		"d": "06:12"
+	}, {
+		"s": "TokyoMetro.Ginza.Ginza",
+		"d": "06:14"
+	}, {
+		"s": "TokyoMetro.Ginza.Kyobashi",
+		"d": "06:16"
+	}, {
+		"s": "TokyoMetro.Ginza.Nihombashi",
+		"d": "06:17"
+	}, {
+		"s": "TokyoMetro.Ginza.Mitsukoshimae",
+		"d": "06:19"
+	}, {
+		"s": "TokyoMetro.Ginza.Kanda",
+		"d": "06:21"
+	}, {
+		"s": "TokyoMetro.Ginza.Suehirocho",
+		"d": "06:23"
+	}, {
+		"s": "TokyoMetro.Ginza.UenoHirokoji",
+		"d": "06:24"
+	}, {
+		"s": "TokyoMetro.Ginza.Ueno",
+		"d": "06:26"
+	}, {
+		"s": "TokyoMetro.Ginza.Inaricho",
+		"d": "06:28"
+	}, {
+		"s": "TokyoMetro.Ginza.Tawaramachi",
+		"d": "06:30"
+	}, {
+		"s": "TokyoMetro.Ginza.Asakusa",
+		"a": "06:31"
+	}]
+}, {
 	"id": "TokyoMetro.Ginza.B647.Weekday",
 	"t": "TokyoMetro.Ginza.B647",
 	"r": "TokyoMetro.Ginza",
@@ -50344,56 +50344,6 @@
 		"a": "17:43"
 	}]
 }, {
-	"id": "TokyoMetro.Ginza.B627.SaturdayHoliday",
-	"t": "TokyoMetro.Ginza.B627",
-	"r": "TokyoMetro.Ginza",
-	"n": "B627",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Asakusa",
-	"os": [
-		"TokyoMetro.Ginza.Shimbashi"
-	],
-	"ds": [
-		"TokyoMetro.Ginza.Asakusa"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Ginza.Shimbashi",
-		"d": "06:09"
-	}, {
-		"s": "TokyoMetro.Ginza.Ginza",
-		"d": "06:11"
-	}, {
-		"s": "TokyoMetro.Ginza.Kyobashi",
-		"d": "06:12"
-	}, {
-		"s": "TokyoMetro.Ginza.Nihombashi",
-		"d": "06:14"
-	}, {
-		"s": "TokyoMetro.Ginza.Mitsukoshimae",
-		"d": "06:15"
-	}, {
-		"s": "TokyoMetro.Ginza.Kanda",
-		"d": "06:17"
-	}, {
-		"s": "TokyoMetro.Ginza.Suehirocho",
-		"d": "06:19"
-	}, {
-		"s": "TokyoMetro.Ginza.UenoHirokoji",
-		"d": "06:21"
-	}, {
-		"s": "TokyoMetro.Ginza.Ueno",
-		"d": "06:23"
-	}, {
-		"s": "TokyoMetro.Ginza.Inaricho",
-		"d": "06:24"
-	}, {
-		"s": "TokyoMetro.Ginza.Tawaramachi",
-		"d": "06:26"
-	}, {
-		"s": "TokyoMetro.Ginza.Asakusa",
-		"a": "06:28"
-	}]
-}, {
 	"id": "TokyoMetro.Ginza.A1801.SaturdayHoliday",
 	"t": "TokyoMetro.Ginza.A1801",
 	"r": "TokyoMetro.Ginza",
@@ -54945,77 +54895,6 @@
 		"a": "00:19"
 	}]
 }, {
-	"id": "TokyoMetro.Ginza.A511.SaturdayHoliday",
-	"t": "TokyoMetro.Ginza.A511",
-	"r": "TokyoMetro.Ginza",
-	"n": "A511",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Shibuya",
-	"os": [
-		"TokyoMetro.Ginza.Asakusa"
-	],
-	"ds": [
-		"TokyoMetro.Ginza.Shibuya"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Ginza.Asakusa",
-		"d": "05:14"
-	}, {
-		"s": "TokyoMetro.Ginza.Tawaramachi",
-		"d": "05:16"
-	}, {
-		"s": "TokyoMetro.Ginza.Inaricho",
-		"d": "05:18"
-	}, {
-		"s": "TokyoMetro.Ginza.Ueno",
-		"d": "05:20"
-	}, {
-		"s": "TokyoMetro.Ginza.UenoHirokoji",
-		"d": "05:22"
-	}, {
-		"s": "TokyoMetro.Ginza.Suehirocho",
-		"d": "05:23"
-	}, {
-		"s": "TokyoMetro.Ginza.Kanda",
-		"d": "05:25"
-	}, {
-		"s": "TokyoMetro.Ginza.Mitsukoshimae",
-		"d": "05:27"
-	}, {
-		"s": "TokyoMetro.Ginza.Nihombashi",
-		"d": "05:29"
-	}, {
-		"s": "TokyoMetro.Ginza.Kyobashi",
-		"d": "05:30"
-	}, {
-		"s": "TokyoMetro.Ginza.Ginza",
-		"d": "05:32"
-	}, {
-		"s": "TokyoMetro.Ginza.Shimbashi",
-		"d": "05:34"
-	}, {
-		"s": "TokyoMetro.Ginza.Toranomon",
-		"d": "05:36"
-	}, {
-		"s": "TokyoMetro.Ginza.TameikeSanno",
-		"d": "05:38"
-	}, {
-		"s": "TokyoMetro.Ginza.AkasakaMitsuke",
-		"d": "05:40"
-	}, {
-		"s": "TokyoMetro.Ginza.AoyamaItchome",
-		"d": "05:42"
-	}, {
-		"s": "TokyoMetro.Ginza.Gaiemmae",
-		"d": "05:44"
-	}, {
-		"s": "TokyoMetro.Ginza.OmoteSando",
-		"d": "05:45"
-	}, {
-		"s": "TokyoMetro.Ginza.Shibuya",
-		"a": "05:47"
-	}]
-}, {
 	"id": "TokyoMetro.Ginza.A501.SaturdayHoliday",
 	"t": "TokyoMetro.Ginza.A501",
 	"r": "TokyoMetro.Ginza",
@@ -55156,6 +55035,77 @@
 	}, {
 		"s": "TokyoMetro.Ginza.Shibuya",
 		"a": "06:28"
+	}]
+}, {
+	"id": "TokyoMetro.Ginza.A511.SaturdayHoliday",
+	"t": "TokyoMetro.Ginza.A511",
+	"r": "TokyoMetro.Ginza",
+	"n": "A511",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Shibuya",
+	"os": [
+		"TokyoMetro.Ginza.Asakusa"
+	],
+	"ds": [
+		"TokyoMetro.Ginza.Shibuya"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Ginza.Asakusa",
+		"d": "05:14"
+	}, {
+		"s": "TokyoMetro.Ginza.Tawaramachi",
+		"d": "05:16"
+	}, {
+		"s": "TokyoMetro.Ginza.Inaricho",
+		"d": "05:18"
+	}, {
+		"s": "TokyoMetro.Ginza.Ueno",
+		"d": "05:20"
+	}, {
+		"s": "TokyoMetro.Ginza.UenoHirokoji",
+		"d": "05:22"
+	}, {
+		"s": "TokyoMetro.Ginza.Suehirocho",
+		"d": "05:23"
+	}, {
+		"s": "TokyoMetro.Ginza.Kanda",
+		"d": "05:25"
+	}, {
+		"s": "TokyoMetro.Ginza.Mitsukoshimae",
+		"d": "05:27"
+	}, {
+		"s": "TokyoMetro.Ginza.Nihombashi",
+		"d": "05:29"
+	}, {
+		"s": "TokyoMetro.Ginza.Kyobashi",
+		"d": "05:30"
+	}, {
+		"s": "TokyoMetro.Ginza.Ginza",
+		"d": "05:32"
+	}, {
+		"s": "TokyoMetro.Ginza.Shimbashi",
+		"d": "05:34"
+	}, {
+		"s": "TokyoMetro.Ginza.Toranomon",
+		"d": "05:36"
+	}, {
+		"s": "TokyoMetro.Ginza.TameikeSanno",
+		"d": "05:38"
+	}, {
+		"s": "TokyoMetro.Ginza.AkasakaMitsuke",
+		"d": "05:40"
+	}, {
+		"s": "TokyoMetro.Ginza.AoyamaItchome",
+		"d": "05:42"
+	}, {
+		"s": "TokyoMetro.Ginza.Gaiemmae",
+		"d": "05:44"
+	}, {
+		"s": "TokyoMetro.Ginza.OmoteSando",
+		"d": "05:45"
+	}, {
+		"s": "TokyoMetro.Ginza.Shibuya",
+		"a": "05:47"
 	}]
 }, {
 	"id": "TokyoMetro.Ginza.A5232.SaturdayHoliday",
@@ -56569,6 +56519,77 @@
 		"a": "08:28"
 	}]
 }, {
+	"id": "TokyoMetro.Ginza.A741.SaturdayHoliday",
+	"t": "TokyoMetro.Ginza.A741",
+	"r": "TokyoMetro.Ginza",
+	"n": "A741",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Shibuya",
+	"os": [
+		"TokyoMetro.Ginza.Asakusa"
+	],
+	"ds": [
+		"TokyoMetro.Ginza.Shibuya"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Ginza.Asakusa",
+		"d": "07:49"
+	}, {
+		"s": "TokyoMetro.Ginza.Tawaramachi",
+		"d": "07:51"
+	}, {
+		"s": "TokyoMetro.Ginza.Inaricho",
+		"d": "07:54"
+	}, {
+		"s": "TokyoMetro.Ginza.Ueno",
+		"d": "07:56"
+	}, {
+		"s": "TokyoMetro.Ginza.UenoHirokoji",
+		"d": "07:58"
+	}, {
+		"s": "TokyoMetro.Ginza.Suehirocho",
+		"d": "07:59"
+	}, {
+		"s": "TokyoMetro.Ginza.Kanda",
+		"d": "08:01"
+	}, {
+		"s": "TokyoMetro.Ginza.Mitsukoshimae",
+		"d": "08:03"
+	}, {
+		"s": "TokyoMetro.Ginza.Nihombashi",
+		"d": "08:05"
+	}, {
+		"s": "TokyoMetro.Ginza.Kyobashi",
+		"d": "08:06"
+	}, {
+		"s": "TokyoMetro.Ginza.Ginza",
+		"d": "08:08"
+	}, {
+		"s": "TokyoMetro.Ginza.Shimbashi",
+		"d": "08:10"
+	}, {
+		"s": "TokyoMetro.Ginza.Toranomon",
+		"d": "08:12"
+	}, {
+		"s": "TokyoMetro.Ginza.TameikeSanno",
+		"d": "08:14"
+	}, {
+		"s": "TokyoMetro.Ginza.AkasakaMitsuke",
+		"d": "08:16"
+	}, {
+		"s": "TokyoMetro.Ginza.AoyamaItchome",
+		"d": "08:18"
+	}, {
+		"s": "TokyoMetro.Ginza.Gaiemmae",
+		"d": "08:20"
+	}, {
+		"s": "TokyoMetro.Ginza.OmoteSando",
+		"d": "08:21"
+	}, {
+		"s": "TokyoMetro.Ginza.Shibuya",
+		"a": "08:23"
+	}]
+}, {
 	"id": "TokyoMetro.Ginza.A731.SaturdayHoliday",
 	"t": "TokyoMetro.Ginza.A731",
 	"r": "TokyoMetro.Ginza",
@@ -56741,77 +56762,6 @@
 	}, {
 		"s": "TokyoMetro.Ginza.Shibuya",
 		"a": "08:03"
-	}]
-}, {
-	"id": "TokyoMetro.Ginza.A741.SaturdayHoliday",
-	"t": "TokyoMetro.Ginza.A741",
-	"r": "TokyoMetro.Ginza",
-	"n": "A741",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Shibuya",
-	"os": [
-		"TokyoMetro.Ginza.Asakusa"
-	],
-	"ds": [
-		"TokyoMetro.Ginza.Shibuya"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Ginza.Asakusa",
-		"d": "07:49"
-	}, {
-		"s": "TokyoMetro.Ginza.Tawaramachi",
-		"d": "07:51"
-	}, {
-		"s": "TokyoMetro.Ginza.Inaricho",
-		"d": "07:54"
-	}, {
-		"s": "TokyoMetro.Ginza.Ueno",
-		"d": "07:56"
-	}, {
-		"s": "TokyoMetro.Ginza.UenoHirokoji",
-		"d": "07:58"
-	}, {
-		"s": "TokyoMetro.Ginza.Suehirocho",
-		"d": "07:59"
-	}, {
-		"s": "TokyoMetro.Ginza.Kanda",
-		"d": "08:01"
-	}, {
-		"s": "TokyoMetro.Ginza.Mitsukoshimae",
-		"d": "08:03"
-	}, {
-		"s": "TokyoMetro.Ginza.Nihombashi",
-		"d": "08:05"
-	}, {
-		"s": "TokyoMetro.Ginza.Kyobashi",
-		"d": "08:06"
-	}, {
-		"s": "TokyoMetro.Ginza.Ginza",
-		"d": "08:08"
-	}, {
-		"s": "TokyoMetro.Ginza.Shimbashi",
-		"d": "08:10"
-	}, {
-		"s": "TokyoMetro.Ginza.Toranomon",
-		"d": "08:12"
-	}, {
-		"s": "TokyoMetro.Ginza.TameikeSanno",
-		"d": "08:14"
-	}, {
-		"s": "TokyoMetro.Ginza.AkasakaMitsuke",
-		"d": "08:16"
-	}, {
-		"s": "TokyoMetro.Ginza.AoyamaItchome",
-		"d": "08:18"
-	}, {
-		"s": "TokyoMetro.Ginza.Gaiemmae",
-		"d": "08:20"
-	}, {
-		"s": "TokyoMetro.Ginza.OmoteSando",
-		"d": "08:21"
-	}, {
-		"s": "TokyoMetro.Ginza.Shibuya",
-		"a": "08:23"
 	}]
 }, {
 	"id": "TokyoMetro.Ginza.A745.SaturdayHoliday",
@@ -70895,6 +70845,56 @@
 	}, {
 		"s": "TokyoMetro.Ginza.Asakusa",
 		"a": "06:39"
+	}]
+}, {
+	"id": "TokyoMetro.Ginza.B627.SaturdayHoliday",
+	"t": "TokyoMetro.Ginza.B627",
+	"r": "TokyoMetro.Ginza",
+	"n": "B627",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Asakusa",
+	"os": [
+		"TokyoMetro.Ginza.Shimbashi"
+	],
+	"ds": [
+		"TokyoMetro.Ginza.Asakusa"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Ginza.Shimbashi",
+		"d": "06:09"
+	}, {
+		"s": "TokyoMetro.Ginza.Ginza",
+		"d": "06:11"
+	}, {
+		"s": "TokyoMetro.Ginza.Kyobashi",
+		"d": "06:12"
+	}, {
+		"s": "TokyoMetro.Ginza.Nihombashi",
+		"d": "06:14"
+	}, {
+		"s": "TokyoMetro.Ginza.Mitsukoshimae",
+		"d": "06:15"
+	}, {
+		"s": "TokyoMetro.Ginza.Kanda",
+		"d": "06:17"
+	}, {
+		"s": "TokyoMetro.Ginza.Suehirocho",
+		"d": "06:19"
+	}, {
+		"s": "TokyoMetro.Ginza.UenoHirokoji",
+		"d": "06:21"
+	}, {
+		"s": "TokyoMetro.Ginza.Ueno",
+		"d": "06:23"
+	}, {
+		"s": "TokyoMetro.Ginza.Inaricho",
+		"d": "06:24"
+	}, {
+		"s": "TokyoMetro.Ginza.Tawaramachi",
+		"d": "06:26"
+	}, {
+		"s": "TokyoMetro.Ginza.Asakusa",
+		"a": "06:28"
 	}]
 }, {
 	"id": "TokyoMetro.Ginza.B633.SaturdayHoliday",

@@ -31367,70 +31367,6 @@
 		"a": "09:33"
 	}]
 }, {
-	"id": "Toei.NipporiToneri.973A.Weekday",
-	"t": "Toei.NipporiToneri.973A",
-	"r": "Toei.NipporiToneri",
-	"n": "973A",
-	"y": "Toei.Local",
-	"d": "Outbound",
-	"os": [
-		"Toei.NipporiToneri.Nippori"
-	],
-	"ds": [
-		"Toei.NipporiToneri.MinumadaiShinsuikoen"
-	],
-	"tt": [{
-		"s": "Toei.NipporiToneri.Nippori",
-		"d": "09:47"
-	}, {
-		"s": "Toei.NipporiToneri.NishiNippori",
-		"a": "09:48",
-		"d": "09:49"
-	}, {
-		"s": "Toei.NipporiToneri.AkadoShogakkomae",
-		"a": "09:50",
-		"d": "09:51"
-	}, {
-		"s": "Toei.NipporiToneri.Kumanomae",
-		"a": "09:52",
-		"d": "09:52"
-	}, {
-		"s": "Toei.NipporiToneri.AdachiOdai",
-		"a": "09:53",
-		"d": "09:54"
-	}, {
-		"s": "Toei.NipporiToneri.OgiOhashi",
-		"a": "09:55",
-		"d": "09:56"
-	}, {
-		"s": "Toei.NipporiToneri.Koya",
-		"a": "09:57",
-		"d": "09:57"
-	}, {
-		"s": "Toei.NipporiToneri.Kohoku",
-		"a": "09:58",
-		"d": "09:58"
-	}, {
-		"s": "Toei.NipporiToneri.NishiaraidaishiNishi",
-		"a": "10:00",
-		"d": "10:00"
-	}, {
-		"s": "Toei.NipporiToneri.Yazaike",
-		"a": "10:01",
-		"d": "10:02"
-	}, {
-		"s": "Toei.NipporiToneri.ToneriKoen",
-		"a": "10:03",
-		"d": "10:04"
-	}, {
-		"s": "Toei.NipporiToneri.Toneri",
-		"a": "10:05",
-		"d": "10:05"
-	}, {
-		"s": "Toei.NipporiToneri.MinumadaiShinsuikoen",
-		"a": "10:07"
-	}]
-}, {
 	"id": "Toei.NipporiToneri.968A.Weekday",
 	"t": "Toei.NipporiToneri.968A",
 	"r": "Toei.NipporiToneri",
@@ -31669,6 +31605,70 @@
 	}, {
 		"s": "Toei.NipporiToneri.Nippori",
 		"a": "09:42"
+	}]
+}, {
+	"id": "Toei.NipporiToneri.973A.Weekday",
+	"t": "Toei.NipporiToneri.973A",
+	"r": "Toei.NipporiToneri",
+	"n": "973A",
+	"y": "Toei.Local",
+	"d": "Outbound",
+	"os": [
+		"Toei.NipporiToneri.Nippori"
+	],
+	"ds": [
+		"Toei.NipporiToneri.MinumadaiShinsuikoen"
+	],
+	"tt": [{
+		"s": "Toei.NipporiToneri.Nippori",
+		"d": "09:47"
+	}, {
+		"s": "Toei.NipporiToneri.NishiNippori",
+		"a": "09:48",
+		"d": "09:49"
+	}, {
+		"s": "Toei.NipporiToneri.AkadoShogakkomae",
+		"a": "09:50",
+		"d": "09:51"
+	}, {
+		"s": "Toei.NipporiToneri.Kumanomae",
+		"a": "09:52",
+		"d": "09:52"
+	}, {
+		"s": "Toei.NipporiToneri.AdachiOdai",
+		"a": "09:53",
+		"d": "09:54"
+	}, {
+		"s": "Toei.NipporiToneri.OgiOhashi",
+		"a": "09:55",
+		"d": "09:56"
+	}, {
+		"s": "Toei.NipporiToneri.Koya",
+		"a": "09:57",
+		"d": "09:57"
+	}, {
+		"s": "Toei.NipporiToneri.Kohoku",
+		"a": "09:58",
+		"d": "09:58"
+	}, {
+		"s": "Toei.NipporiToneri.NishiaraidaishiNishi",
+		"a": "10:00",
+		"d": "10:00"
+	}, {
+		"s": "Toei.NipporiToneri.Yazaike",
+		"a": "10:01",
+		"d": "10:02"
+	}, {
+		"s": "Toei.NipporiToneri.ToneriKoen",
+		"a": "10:03",
+		"d": "10:04"
+	}, {
+		"s": "Toei.NipporiToneri.Toneri",
+		"a": "10:05",
+		"d": "10:05"
+	}, {
+		"s": "Toei.NipporiToneri.MinumadaiShinsuikoen",
+		"a": "10:07"
 	}]
 }, {
 	"id": "Toei.NipporiToneri.974A.Weekday",
@@ -49919,70 +49919,6 @@
 		"a": "00:26"
 	}]
 }, {
-	"id": "Toei.NipporiToneri.554A.SaturdayHoliday",
-	"t": "Toei.NipporiToneri.554A",
-	"r": "Toei.NipporiToneri",
-	"n": "554A",
-	"y": "Toei.Local",
-	"d": "Inbound",
-	"os": [
-		"Toei.NipporiToneri.MinumadaiShinsuikoen"
-	],
-	"ds": [
-		"Toei.NipporiToneri.Nippori"
-	],
-	"tt": [{
-		"s": "Toei.NipporiToneri.MinumadaiShinsuikoen",
-		"d": "05:21"
-	}, {
-		"s": "Toei.NipporiToneri.Toneri",
-		"a": "05:22",
-		"d": "05:23"
-	}, {
-		"s": "Toei.NipporiToneri.ToneriKoen",
-		"a": "05:24",
-		"d": "05:25"
-	}, {
-		"s": "Toei.NipporiToneri.Yazaike",
-		"a": "05:26",
-		"d": "05:26"
-	}, {
-		"s": "Toei.NipporiToneri.NishiaraidaishiNishi",
-		"a": "05:28",
-		"d": "05:28"
-	}, {
-		"s": "Toei.NipporiToneri.Kohoku",
-		"a": "05:29",
-		"d": "05:30"
-	}, {
-		"s": "Toei.NipporiToneri.Koya",
-		"a": "05:31",
-		"d": "05:31"
-	}, {
-		"s": "Toei.NipporiToneri.OgiOhashi",
-		"a": "05:32",
-		"d": "05:32"
-	}, {
-		"s": "Toei.NipporiToneri.AdachiOdai",
-		"a": "05:34",
-		"d": "05:34"
-	}, {
-		"s": "Toei.NipporiToneri.Kumanomae",
-		"a": "05:36",
-		"d": "05:36"
-	}, {
-		"s": "Toei.NipporiToneri.AkadoShogakkomae",
-		"a": "05:37",
-		"d": "05:37"
-	}, {
-		"s": "Toei.NipporiToneri.NishiNippori",
-		"a": "05:39",
-		"d": "05:39"
-	}, {
-		"s": "Toei.NipporiToneri.Nippori",
-		"a": "05:41"
-	}]
-}, {
 	"id": "Toei.NipporiToneri.550A.SaturdayHoliday",
 	"t": "Toei.NipporiToneri.550A",
 	"r": "Toei.NipporiToneri",
@@ -50301,6 +50237,70 @@
 	}, {
 		"s": "Toei.NipporiToneri.MinumadaiShinsuikoen",
 		"a": "05:58"
+	}]
+}, {
+	"id": "Toei.NipporiToneri.554A.SaturdayHoliday",
+	"t": "Toei.NipporiToneri.554A",
+	"r": "Toei.NipporiToneri",
+	"n": "554A",
+	"y": "Toei.Local",
+	"d": "Inbound",
+	"os": [
+		"Toei.NipporiToneri.MinumadaiShinsuikoen"
+	],
+	"ds": [
+		"Toei.NipporiToneri.Nippori"
+	],
+	"tt": [{
+		"s": "Toei.NipporiToneri.MinumadaiShinsuikoen",
+		"d": "05:21"
+	}, {
+		"s": "Toei.NipporiToneri.Toneri",
+		"a": "05:22",
+		"d": "05:23"
+	}, {
+		"s": "Toei.NipporiToneri.ToneriKoen",
+		"a": "05:24",
+		"d": "05:25"
+	}, {
+		"s": "Toei.NipporiToneri.Yazaike",
+		"a": "05:26",
+		"d": "05:26"
+	}, {
+		"s": "Toei.NipporiToneri.NishiaraidaishiNishi",
+		"a": "05:28",
+		"d": "05:28"
+	}, {
+		"s": "Toei.NipporiToneri.Kohoku",
+		"a": "05:29",
+		"d": "05:30"
+	}, {
+		"s": "Toei.NipporiToneri.Koya",
+		"a": "05:31",
+		"d": "05:31"
+	}, {
+		"s": "Toei.NipporiToneri.OgiOhashi",
+		"a": "05:32",
+		"d": "05:32"
+	}, {
+		"s": "Toei.NipporiToneri.AdachiOdai",
+		"a": "05:34",
+		"d": "05:34"
+	}, {
+		"s": "Toei.NipporiToneri.Kumanomae",
+		"a": "05:36",
+		"d": "05:36"
+	}, {
+		"s": "Toei.NipporiToneri.AkadoShogakkomae",
+		"a": "05:37",
+		"d": "05:37"
+	}, {
+		"s": "Toei.NipporiToneri.NishiNippori",
+		"a": "05:39",
+		"d": "05:39"
+	}, {
+		"s": "Toei.NipporiToneri.Nippori",
+		"a": "05:41"
 	}]
 }, {
 	"id": "Toei.NipporiToneri.555B.SaturdayHoliday",

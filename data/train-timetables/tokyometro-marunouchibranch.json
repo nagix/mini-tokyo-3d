@@ -57,6 +57,32 @@
 		"a": "11:12"
 	}]
 }, {
+	"id": "TokyoMetro.MarunouchiBranch.A10892.Weekday",
+	"t": "TokyoMetro.MarunouchiBranch.A10892",
+	"r": "TokyoMetro.MarunouchiBranch",
+	"n": "A10892",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Honancho",
+	"os": [
+		"TokyoMetro.MarunouchiBranch.NakanoSakaue"
+	],
+	"ds": [
+		"TokyoMetro.MarunouchiBranch.Honancho"
+	],
+	"tt": [{
+		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
+		"d": "10:24"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
+		"d": "10:27"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
+		"d": "10:28"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.Honancho",
+		"a": "10:30"
+	}]
+}, {
 	"id": "TokyoMetro.MarunouchiBranch.A10611.Weekday",
 	"t": "TokyoMetro.MarunouchiBranch.A10611",
 	"r": "TokyoMetro.MarunouchiBranch",
@@ -81,32 +107,6 @@
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.Honancho",
 		"a": "10:24"
-	}]
-}, {
-	"id": "TokyoMetro.MarunouchiBranch.A1097.Weekday",
-	"t": "TokyoMetro.MarunouchiBranch.A1097",
-	"r": "TokyoMetro.MarunouchiBranch",
-	"n": "A1097",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Honancho",
-	"os": [
-		"TokyoMetro.Marunouchi.Ikebukuro"
-	],
-	"ds": [
-		"TokyoMetro.MarunouchiBranch.NakanoFujimicho"
-	],
-	"pt": [
-		"TokyoMetro.Marunouchi.A1097.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
-		"d": "10:48"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
-		"d": "10:50"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
-		"a": "10:51"
 	}]
 }, {
 	"id": "TokyoMetro.MarunouchiBranch.A10612.Weekday",
@@ -187,32 +187,6 @@
 		"a": "10:12"
 	}]
 }, {
-	"id": "TokyoMetro.MarunouchiBranch.A10892.Weekday",
-	"t": "TokyoMetro.MarunouchiBranch.A10892",
-	"r": "TokyoMetro.MarunouchiBranch",
-	"n": "A10892",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Honancho",
-	"os": [
-		"TokyoMetro.MarunouchiBranch.NakanoSakaue"
-	],
-	"ds": [
-		"TokyoMetro.MarunouchiBranch.Honancho"
-	],
-	"tt": [{
-		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
-		"d": "10:24"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
-		"d": "10:27"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
-		"d": "10:28"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.Honancho",
-		"a": "10:30"
-	}]
-}, {
 	"id": "TokyoMetro.MarunouchiBranch.A10893.Weekday",
 	"t": "TokyoMetro.MarunouchiBranch.A10893",
 	"r": "TokyoMetro.MarunouchiBranch",
@@ -237,6 +211,32 @@
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.Honancho",
 		"a": "10:56"
+	}]
+}, {
+	"id": "TokyoMetro.MarunouchiBranch.A1097.Weekday",
+	"t": "TokyoMetro.MarunouchiBranch.A1097",
+	"r": "TokyoMetro.MarunouchiBranch",
+	"n": "A1097",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Honancho",
+	"os": [
+		"TokyoMetro.Marunouchi.Ikebukuro"
+	],
+	"ds": [
+		"TokyoMetro.MarunouchiBranch.NakanoFujimicho"
+	],
+	"pt": [
+		"TokyoMetro.Marunouchi.A1097.Weekday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
+		"d": "10:48"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
+		"d": "10:50"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
+		"a": "10:51"
 	}]
 }, {
 	"id": "TokyoMetro.MarunouchiBranch.A1109.Weekday",
@@ -266,6 +266,32 @@
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.Honancho",
 		"a": "11:47"
+	}]
+}, {
+	"id": "TokyoMetro.MarunouchiBranch.A11892.Weekday",
+	"t": "TokyoMetro.MarunouchiBranch.A11892",
+	"r": "TokyoMetro.MarunouchiBranch",
+	"n": "A11892",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Honancho",
+	"os": [
+		"TokyoMetro.MarunouchiBranch.NakanoSakaue"
+	],
+	"ds": [
+		"TokyoMetro.MarunouchiBranch.Honancho"
+	],
+	"tt": [{
+		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
+		"d": "11:34"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
+		"d": "11:37"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
+		"d": "11:39"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.Honancho",
+		"a": "11:41"
 	}]
 }, {
 	"id": "TokyoMetro.MarunouchiBranch.A11611.Weekday",
@@ -375,32 +401,6 @@
 		"a": "11:23"
 	}]
 }, {
-	"id": "TokyoMetro.MarunouchiBranch.A11892.Weekday",
-	"t": "TokyoMetro.MarunouchiBranch.A11892",
-	"r": "TokyoMetro.MarunouchiBranch",
-	"n": "A11892",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Honancho",
-	"os": [
-		"TokyoMetro.MarunouchiBranch.NakanoSakaue"
-	],
-	"ds": [
-		"TokyoMetro.MarunouchiBranch.Honancho"
-	],
-	"tt": [{
-		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
-		"d": "11:34"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
-		"d": "11:37"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
-		"d": "11:39"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.Honancho",
-		"a": "11:41"
-	}]
-}, {
 	"id": "TokyoMetro.MarunouchiBranch.A11893.Weekday",
 	"t": "TokyoMetro.MarunouchiBranch.A11893",
 	"r": "TokyoMetro.MarunouchiBranch",
@@ -454,32 +454,6 @@
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.Honancho",
 		"a": "13:13"
-	}]
-}, {
-	"id": "TokyoMetro.MarunouchiBranch.A12892.Weekday",
-	"t": "TokyoMetro.MarunouchiBranch.A12892",
-	"r": "TokyoMetro.MarunouchiBranch",
-	"n": "A12892",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Honancho",
-	"os": [
-		"TokyoMetro.MarunouchiBranch.NakanoSakaue"
-	],
-	"ds": [
-		"TokyoMetro.MarunouchiBranch.Honancho"
-	],
-	"tt": [{
-		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
-		"d": "12:49"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
-		"d": "12:52"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
-		"d": "12:53"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.Honancho",
-		"a": "12:55"
 	}]
 }, {
 	"id": "TokyoMetro.MarunouchiBranch.A1259.Weekday",
@@ -613,6 +587,32 @@
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.Honancho",
 		"a": "12:32"
+	}]
+}, {
+	"id": "TokyoMetro.MarunouchiBranch.A12892.Weekday",
+	"t": "TokyoMetro.MarunouchiBranch.A12892",
+	"r": "TokyoMetro.MarunouchiBranch",
+	"n": "A12892",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Honancho",
+	"os": [
+		"TokyoMetro.MarunouchiBranch.NakanoSakaue"
+	],
+	"ds": [
+		"TokyoMetro.MarunouchiBranch.Honancho"
+	],
+	"tt": [{
+		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
+		"d": "12:49"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
+		"d": "12:52"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
+		"d": "12:53"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.Honancho",
+		"a": "12:55"
 	}]
 }, {
 	"id": "TokyoMetro.MarunouchiBranch.A1325.Weekday",
@@ -1046,32 +1046,6 @@
 		"a": "15:29"
 	}]
 }, {
-	"id": "TokyoMetro.MarunouchiBranch.A2343.Weekday",
-	"t": "TokyoMetro.MarunouchiBranch.A2343",
-	"r": "TokyoMetro.MarunouchiBranch",
-	"n": "A2343",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Honancho",
-	"os": [
-		"TokyoMetro.Marunouchi.Ogikubo"
-	],
-	"ds": [
-		"TokyoMetro.MarunouchiBranch.NakanoFujimicho"
-	],
-	"pt": [
-		"TokyoMetro.Marunouchi.B2343.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
-		"d": "23:58"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
-		"d": "00:00"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
-		"a": "00:01"
-	}]
-}, {
 	"id": "TokyoMetro.MarunouchiBranch.A15612.Weekday",
 	"t": "TokyoMetro.MarunouchiBranch.A15612",
 	"r": "TokyoMetro.MarunouchiBranch",
@@ -1263,6 +1237,32 @@
 		"a": "16:57"
 	}]
 }, {
+	"id": "TokyoMetro.MarunouchiBranch.A16611.Weekday",
+	"t": "TokyoMetro.MarunouchiBranch.A16611",
+	"r": "TokyoMetro.MarunouchiBranch",
+	"n": "A16611",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Honancho",
+	"os": [
+		"TokyoMetro.MarunouchiBranch.NakanoSakaue"
+	],
+	"ds": [
+		"TokyoMetro.MarunouchiBranch.Honancho"
+	],
+	"tt": [{
+		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
+		"d": "16:04"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
+		"d": "16:07"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
+		"d": "16:08"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.Honancho",
+		"a": "16:10"
+	}]
+}, {
 	"id": "TokyoMetro.MarunouchiBranch.A1621.Weekday",
 	"t": "TokyoMetro.MarunouchiBranch.A1621",
 	"r": "TokyoMetro.MarunouchiBranch",
@@ -1348,32 +1348,6 @@
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.Honancho",
 		"a": "17:10"
-	}]
-}, {
-	"id": "TokyoMetro.MarunouchiBranch.A16611.Weekday",
-	"t": "TokyoMetro.MarunouchiBranch.A16611",
-	"r": "TokyoMetro.MarunouchiBranch",
-	"n": "A16611",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Honancho",
-	"os": [
-		"TokyoMetro.MarunouchiBranch.NakanoSakaue"
-	],
-	"ds": [
-		"TokyoMetro.MarunouchiBranch.Honancho"
-	],
-	"tt": [{
-		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
-		"d": "16:04"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
-		"d": "16:07"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
-		"d": "16:08"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.Honancho",
-		"a": "16:10"
 	}]
 }, {
 	"id": "TokyoMetro.MarunouchiBranch.A16612.Weekday",
@@ -1932,30 +1906,30 @@
 		"a": "19:30"
 	}]
 }, {
-	"id": "TokyoMetro.MarunouchiBranch.A2459.Weekday",
-	"t": "TokyoMetro.MarunouchiBranch.A2459",
+	"id": "TokyoMetro.MarunouchiBranch.A2343.Weekday",
+	"t": "TokyoMetro.MarunouchiBranch.A2343",
 	"r": "TokyoMetro.MarunouchiBranch",
-	"n": "A2459",
+	"n": "A2343",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.Honancho",
 	"os": [
-		"TokyoMetro.Marunouchi.ShinjukuSanchome"
+		"TokyoMetro.Marunouchi.Ogikubo"
 	],
 	"ds": [
 		"TokyoMetro.MarunouchiBranch.NakanoFujimicho"
 	],
 	"pt": [
-		"TokyoMetro.Marunouchi.A2459.Weekday"
+		"TokyoMetro.Marunouchi.B2343.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
-		"d": "00:22"
+		"d": "23:58"
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
-		"d": "00:25"
+		"d": "00:00"
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
-		"a": "00:26"
+		"a": "00:01"
 	}]
 }, {
 	"id": "TokyoMetro.MarunouchiBranch.A1855.Weekday",
@@ -2179,26 +2153,6 @@
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.Honancho",
 		"a": "19:50"
-	}]
-}, {
-	"id": "TokyoMetro.MarunouchiBranch.A5571.Weekday",
-	"t": "TokyoMetro.MarunouchiBranch.A5571",
-	"r": "TokyoMetro.MarunouchiBranch",
-	"n": "A5571",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Honancho",
-	"os": [
-		"TokyoMetro.MarunouchiBranch.NakanoFujimicho"
-	],
-	"ds": [
-		"TokyoMetro.MarunouchiBranch.Honancho"
-	],
-	"tt": [{
-		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
-		"d": "05:20"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.Honancho",
-		"a": "05:23"
 	}]
 }, {
 	"id": "TokyoMetro.MarunouchiBranch.A1957.Weekday",
@@ -2716,30 +2670,30 @@
 		"a": "21:56"
 	}]
 }, {
-	"id": "TokyoMetro.MarunouchiBranch.A833.Weekday",
-	"t": "TokyoMetro.MarunouchiBranch.A833",
+	"id": "TokyoMetro.MarunouchiBranch.A2459.Weekday",
+	"t": "TokyoMetro.MarunouchiBranch.A2459",
 	"r": "TokyoMetro.MarunouchiBranch",
-	"n": "A833",
+	"n": "A2459",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.Honancho",
 	"os": [
-		"TokyoMetro.Marunouchi.Ikebukuro"
+		"TokyoMetro.Marunouchi.ShinjukuSanchome"
 	],
 	"ds": [
 		"TokyoMetro.MarunouchiBranch.NakanoFujimicho"
 	],
 	"pt": [
-		"TokyoMetro.Marunouchi.A833.Weekday"
+		"TokyoMetro.Marunouchi.A2459.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
-		"d": "09:07"
+		"d": "00:22"
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
-		"d": "09:10"
+		"d": "00:25"
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
-		"a": "09:11"
+		"a": "00:26"
 	}]
 }, {
 	"id": "TokyoMetro.MarunouchiBranch.A21571.Weekday",
@@ -2928,6 +2882,26 @@
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.Honancho",
 		"a": "23:20"
+	}]
+}, {
+	"id": "TokyoMetro.MarunouchiBranch.A5571.Weekday",
+	"t": "TokyoMetro.MarunouchiBranch.A5571",
+	"r": "TokyoMetro.MarunouchiBranch",
+	"n": "A5571",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Honancho",
+	"os": [
+		"TokyoMetro.MarunouchiBranch.NakanoFujimicho"
+	],
+	"ds": [
+		"TokyoMetro.MarunouchiBranch.Honancho"
+	],
+	"tt": [{
+		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
+		"d": "05:20"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.Honancho",
+		"a": "05:23"
 	}]
 }, {
 	"id": "TokyoMetro.MarunouchiBranch.A22471.Weekday",
@@ -4321,6 +4295,32 @@
 		"a": "09:42"
 	}]
 }, {
+	"id": "TokyoMetro.MarunouchiBranch.A833.Weekday",
+	"t": "TokyoMetro.MarunouchiBranch.A833",
+	"r": "TokyoMetro.MarunouchiBranch",
+	"n": "A833",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Honancho",
+	"os": [
+		"TokyoMetro.Marunouchi.Ikebukuro"
+	],
+	"ds": [
+		"TokyoMetro.MarunouchiBranch.NakanoFujimicho"
+	],
+	"pt": [
+		"TokyoMetro.Marunouchi.A833.Weekday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
+		"d": "09:07"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
+		"d": "09:10"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
+		"a": "09:11"
+	}]
+}, {
 	"id": "TokyoMetro.MarunouchiBranch.A843.Weekday",
 	"t": "TokyoMetro.MarunouchiBranch.A843",
 	"r": "TokyoMetro.MarunouchiBranch",
@@ -4348,6 +4348,32 @@
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.Honancho",
 		"a": "08:49"
+	}]
+}, {
+	"id": "TokyoMetro.MarunouchiBranch.A869.Weekday",
+	"t": "TokyoMetro.MarunouchiBranch.A869",
+	"r": "TokyoMetro.MarunouchiBranch",
+	"n": "A869",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Honancho",
+	"os": [
+		"TokyoMetro.MarunouchiBranch.NakanoSakaue"
+	],
+	"ds": [
+		"TokyoMetro.MarunouchiBranch.Honancho"
+	],
+	"tt": [{
+		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
+		"d": "08:13"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
+		"d": "08:16"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
+		"d": "08:18"
+	}, {
+		"s": "TokyoMetro.MarunouchiBranch.Honancho",
+		"a": "08:20"
 	}]
 }, {
 	"id": "TokyoMetro.MarunouchiBranch.A857.Weekday",
@@ -4432,32 +4458,6 @@
 	}, {
 		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
 		"a": "09:24"
-	}]
-}, {
-	"id": "TokyoMetro.MarunouchiBranch.A869.Weekday",
-	"t": "TokyoMetro.MarunouchiBranch.A869",
-	"r": "TokyoMetro.MarunouchiBranch",
-	"n": "A869",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Honancho",
-	"os": [
-		"TokyoMetro.MarunouchiBranch.NakanoSakaue"
-	],
-	"ds": [
-		"TokyoMetro.MarunouchiBranch.Honancho"
-	],
-	"tt": [{
-		"s": "TokyoMetro.MarunouchiBranch.NakanoSakaue",
-		"d": "08:13"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoShimbashi",
-		"d": "08:16"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.NakanoFujimicho",
-		"d": "08:18"
-	}, {
-		"s": "TokyoMetro.MarunouchiBranch.Honancho",
-		"a": "08:20"
 	}]
 }, {
 	"id": "TokyoMetro.MarunouchiBranch.A885.Weekday",

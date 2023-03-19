@@ -1,4 +1,136 @@
 [{
+	"id": "TokyoMetro.Hibiya.A643T.Weekday",
+	"t": "TokyoMetro.Hibiya.A643T",
+	"r": "TokyoMetro.Hibiya",
+	"n": "A643T",
+	"y": "TokyoMetro.TH-LINER",
+	"d": "TokyoMetro.NakaMeguro",
+	"os": [
+		"Tobu.Isesaki.Kuki"
+	],
+	"ds": [
+		"TokyoMetro.Hibiya.Ebisu"
+	],
+	"pt": [
+		"Tobu.TobuSkytree.A4643T.Weekday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Hibiya.ShinKoshigaya",
+		"d": "06:39"
+	}, {
+		"s": "TokyoMetro.Hibiya.Ueno",
+		"a": "07:07",
+		"d": "07:08"
+	}, {
+		"s": "TokyoMetro.Hibiya.Akihabara",
+		"a": "07:11",
+		"d": "07:13"
+	}, {
+		"s": "TokyoMetro.Hibiya.Kayabacho",
+		"a": "07:18",
+		"d": "07:19"
+	}, {
+		"s": "TokyoMetro.Hibiya.Ginza",
+		"a": "07:27",
+		"d": "07:28"
+	}, {
+		"s": "TokyoMetro.Hibiya.Kasumigaseki",
+		"a": "07:31",
+		"d": "07:32"
+	}, {
+		"s": "TokyoMetro.Hibiya.ToranomonHills",
+		"a": "07:33",
+		"d": "07:34"
+	}, {
+		"s": "TokyoMetro.Hibiya.Kamiyacho",
+		"a": "07:35",
+		"d": "07:35"
+	}, {
+		"s": "TokyoMetro.Hibiya.Roppongi",
+		"a": "07:38",
+		"d": "07:39"
+	}, {
+		"s": "TokyoMetro.Hibiya.HiroO",
+		"a": "07:41",
+		"d": "07:42"
+	}, {
+		"s": "TokyoMetro.Hibiya.Ebisu",
+		"a": "07:44"
+	}],
+	"nm": [{
+		"ja": "THライナー 2号",
+		"en": "TH Liner 2",
+		"ko": "TH 라이너 2",
+		"zh-Hans": "TH LINER 2",
+		"zh-Hant": "TH LINER 2"
+	}]
+}, {
+	"id": "TokyoMetro.Hibiya.A845T.Weekday",
+	"t": "TokyoMetro.Hibiya.A845T",
+	"r": "TokyoMetro.Hibiya",
+	"n": "A845T",
+	"y": "TokyoMetro.TH-LINER",
+	"d": "TokyoMetro.NakaMeguro",
+	"os": [
+		"Tobu.Isesaki.Kuki"
+	],
+	"ds": [
+		"TokyoMetro.Hibiya.Ebisu"
+	],
+	"pt": [
+		"Tobu.TobuSkytree.A4845T.Weekday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Hibiya.ShinKoshigaya",
+		"d": "08:41"
+	}, {
+		"s": "TokyoMetro.Hibiya.Ueno",
+		"a": "09:08",
+		"d": "09:10"
+	}, {
+		"s": "TokyoMetro.Hibiya.Akihabara",
+		"a": "09:13",
+		"d": "09:14"
+	}, {
+		"s": "TokyoMetro.Hibiya.Kayabacho",
+		"a": "09:19",
+		"d": "09:21"
+	}, {
+		"s": "TokyoMetro.Hibiya.Ginza",
+		"a": "09:28",
+		"d": "09:29"
+	}, {
+		"s": "TokyoMetro.Hibiya.Kasumigaseki",
+		"a": "09:32",
+		"d": "09:33"
+	}, {
+		"s": "TokyoMetro.Hibiya.ToranomonHills",
+		"a": "09:35",
+		"d": "09:35"
+	}, {
+		"s": "TokyoMetro.Hibiya.Kamiyacho",
+		"a": "09:36",
+		"d": "09:37"
+	}, {
+		"s": "TokyoMetro.Hibiya.Roppongi",
+		"a": "09:39",
+		"d": "09:40"
+	}, {
+		"s": "TokyoMetro.Hibiya.HiroO",
+		"a": "09:43",
+		"d": "09:43"
+	}, {
+		"s": "TokyoMetro.Hibiya.Ebisu",
+		"a": "09:46"
+	}],
+	"nm": [{
+		"ja": "THライナー 4号",
+		"en": "TH Liner 4",
+		"ko": "TH 라이너 4",
+		"zh-Hans": "TH LINER 4",
+		"zh-Hant": "TH LINER 4"
+	}]
+}, {
 	"id": "TokyoMetro.Hibiya.A1004S.Weekday",
 	"t": "TokyoMetro.Hibiya.A1004S",
 	"r": "TokyoMetro.Hibiya",
@@ -9946,10 +10078,13 @@
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.NakaMeguro",
 	"os": [
-		"Tobu.TobuSkytree.KitaKasukabe"
+		"Tobu.TobuSkytree.TobuDobutsuKoen"
 	],
 	"ds": [
 		"TokyoMetro.Hibiya.NakaMeguro"
+	],
+	"pt": [
+		"Tobu.TobuSkytree.A1822S.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Hibiya.KitaSenju",
@@ -11167,10 +11302,13 @@
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.NakaMeguro",
 	"os": [
-		"Tobu.Nikko.MinamiKurihashi"
+		"Tobu.TobuSkytree.TobuDobutsuKoen"
 	],
 	"ds": [
 		"TokyoMetro.Hibiya.NakaMeguro"
+	],
+	"pt": [
+		"Tobu.TobuSkytree.A2015T.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Hibiya.KitaSenju",
@@ -12637,10 +12775,13 @@
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.NakaMeguro",
 	"os": [
-		"Tobu.TobuSkytree.KitaKoshigaya"
+		"Tobu.TobuSkytree.Takenotsuka"
 	],
 	"ds": [
 		"TokyoMetro.Hibiya.NakaMeguro"
+	],
+	"pt": [
+		"Tobu.TobuSkytree.A2027T.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Hibiya.KitaSenju",
@@ -13049,10 +13190,13 @@
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.NakaMeguro",
 	"os": [
-		"Tobu.Isesaki.Kuki"
+		"Tobu.TobuSkytree.TobuDobutsuKoen"
 	],
 	"ds": [
 		"TokyoMetro.Hibiya.NakaMeguro"
+	],
+	"pt": [
+		"Tobu.TobuSkytree.A2045T.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Hibiya.KitaSenju",
@@ -13867,10 +14011,13 @@
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.NakaMeguro",
 	"os": [
-		"Tobu.TobuSkytree.TobuDobutsuKoen"
+		"Tobu.TobuSkytree.KitaKoshigaya"
 	],
 	"ds": [
 		"TokyoMetro.Hibiya.NakaMeguro"
+	],
+	"pt": [
+		"Tobu.TobuSkytree.A2128S.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Hibiya.KitaSenju",
@@ -17786,72 +17933,6 @@
 		"a": "06:55"
 	}]
 }, {
-	"id": "TokyoMetro.Hibiya.A643T.Weekday",
-	"t": "TokyoMetro.Hibiya.A643T",
-	"r": "TokyoMetro.Hibiya",
-	"n": "A643T",
-	"y": "TokyoMetro.TH-LINER",
-	"d": "TokyoMetro.NakaMeguro",
-	"os": [
-		"Tobu.Isesaki.Kuki"
-	],
-	"ds": [
-		"TokyoMetro.Hibiya.Ebisu"
-	],
-	"pt": [
-		"Tobu.TobuSkytree.A4643T.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Hibiya.ShinKoshigaya",
-		"d": "06:39"
-	}, {
-		"s": "TokyoMetro.Hibiya.Ueno",
-		"a": "07:07",
-		"d": "07:08"
-	}, {
-		"s": "TokyoMetro.Hibiya.Akihabara",
-		"a": "07:11",
-		"d": "07:13"
-	}, {
-		"s": "TokyoMetro.Hibiya.Kayabacho",
-		"a": "07:18",
-		"d": "07:19"
-	}, {
-		"s": "TokyoMetro.Hibiya.Ginza",
-		"a": "07:27",
-		"d": "07:28"
-	}, {
-		"s": "TokyoMetro.Hibiya.Kasumigaseki",
-		"a": "07:31",
-		"d": "07:32"
-	}, {
-		"s": "TokyoMetro.Hibiya.ToranomonHills",
-		"a": "07:33",
-		"d": "07:34"
-	}, {
-		"s": "TokyoMetro.Hibiya.Kamiyacho",
-		"a": "07:35",
-		"d": "07:35"
-	}, {
-		"s": "TokyoMetro.Hibiya.Roppongi",
-		"a": "07:38",
-		"d": "07:39"
-	}, {
-		"s": "TokyoMetro.Hibiya.HiroO",
-		"a": "07:41",
-		"d": "07:42"
-	}, {
-		"s": "TokyoMetro.Hibiya.Ebisu",
-		"a": "07:44"
-	}],
-	"nm": [{
-		"ja": "THライナー 2号",
-		"en": "TH Liner 2",
-		"ko": "TH 라이너 2",
-		"zh-Hans": "TH LINER 2",
-		"zh-Hant": "TH LINER 2"
-	}]
-}, {
 	"id": "TokyoMetro.Hibiya.A644S.Weekday",
 	"t": "TokyoMetro.Hibiya.A644S",
 	"r": "TokyoMetro.Hibiya",
@@ -21690,72 +21771,6 @@
 	}, {
 		"s": "TokyoMetro.Hibiya.NakaMeguro",
 		"a": "09:13"
-	}]
-}, {
-	"id": "TokyoMetro.Hibiya.A845T.Weekday",
-	"t": "TokyoMetro.Hibiya.A845T",
-	"r": "TokyoMetro.Hibiya",
-	"n": "A845T",
-	"y": "TokyoMetro.TH-LINER",
-	"d": "TokyoMetro.NakaMeguro",
-	"os": [
-		"Tobu.Isesaki.Kuki"
-	],
-	"ds": [
-		"TokyoMetro.Hibiya.Ebisu"
-	],
-	"pt": [
-		"Tobu.TobuSkytree.A4845T.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Hibiya.ShinKoshigaya",
-		"d": "08:41"
-	}, {
-		"s": "TokyoMetro.Hibiya.Ueno",
-		"a": "09:08",
-		"d": "09:10"
-	}, {
-		"s": "TokyoMetro.Hibiya.Akihabara",
-		"a": "09:13",
-		"d": "09:14"
-	}, {
-		"s": "TokyoMetro.Hibiya.Kayabacho",
-		"a": "09:19",
-		"d": "09:21"
-	}, {
-		"s": "TokyoMetro.Hibiya.Ginza",
-		"a": "09:28",
-		"d": "09:29"
-	}, {
-		"s": "TokyoMetro.Hibiya.Kasumigaseki",
-		"a": "09:32",
-		"d": "09:33"
-	}, {
-		"s": "TokyoMetro.Hibiya.ToranomonHills",
-		"a": "09:35",
-		"d": "09:35"
-	}, {
-		"s": "TokyoMetro.Hibiya.Kamiyacho",
-		"a": "09:36",
-		"d": "09:37"
-	}, {
-		"s": "TokyoMetro.Hibiya.Roppongi",
-		"a": "09:39",
-		"d": "09:40"
-	}, {
-		"s": "TokyoMetro.Hibiya.HiroO",
-		"a": "09:43",
-		"d": "09:43"
-	}, {
-		"s": "TokyoMetro.Hibiya.Ebisu",
-		"a": "09:46"
-	}],
-	"nm": [{
-		"ja": "THライナー 4号",
-		"en": "TH Liner 4",
-		"ko": "TH 라이너 4",
-		"zh-Hans": "TH LINER 4",
-		"zh-Hant": "TH LINER 4"
 	}]
 }, {
 	"id": "TokyoMetro.Hibiya.A850S.Weekday",
@@ -46889,6 +46904,122 @@
 		"a": "10:10"
 	}]
 }, {
+	"id": "TokyoMetro.Hibiya.A528S.SaturdayHoliday",
+	"t": "TokyoMetro.Hibiya.A528S",
+	"r": "TokyoMetro.Hibiya",
+	"n": "A528S",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.NakaMeguro",
+	"os": [
+		"TokyoMetro.Hibiya.Hatchobori"
+	],
+	"ds": [
+		"TokyoMetro.Hibiya.NakaMeguro"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Hibiya.Hatchobori",
+		"d": "05:00"
+	}, {
+		"s": "TokyoMetro.Hibiya.Tsukiji",
+		"d": "05:02"
+	}, {
+		"s": "TokyoMetro.Hibiya.HigashiGinza",
+		"d": "05:04"
+	}, {
+		"s": "TokyoMetro.Hibiya.Ginza",
+		"d": "05:06"
+	}, {
+		"s": "TokyoMetro.Hibiya.Hibiya",
+		"d": "05:07"
+	}, {
+		"s": "TokyoMetro.Hibiya.Kasumigaseki",
+		"d": "05:10"
+	}, {
+		"s": "TokyoMetro.Hibiya.ToranomonHills",
+		"d": "05:11"
+	}, {
+		"s": "TokyoMetro.Hibiya.Kamiyacho",
+		"d": "05:13"
+	}, {
+		"s": "TokyoMetro.Hibiya.Roppongi",
+		"d": "05:16"
+	}, {
+		"s": "TokyoMetro.Hibiya.HiroO",
+		"d": "05:19"
+	}, {
+		"s": "TokyoMetro.Hibiya.Ebisu",
+		"d": "05:22"
+	}, {
+		"s": "TokyoMetro.Hibiya.NakaMeguro",
+		"a": "05:24"
+	}]
+}, {
+	"id": "TokyoMetro.Hibiya.A845T.SaturdayHoliday",
+	"t": "TokyoMetro.Hibiya.A845T",
+	"r": "TokyoMetro.Hibiya",
+	"n": "A845T",
+	"y": "TokyoMetro.TH-LINER",
+	"d": "TokyoMetro.NakaMeguro",
+	"os": [
+		"Tobu.Isesaki.Kuki"
+	],
+	"ds": [
+		"TokyoMetro.Hibiya.Ebisu"
+	],
+	"pt": [
+		"Tobu.TobuSkytree.A4845T.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Hibiya.ShinKoshigaya",
+		"d": "08:39"
+	}, {
+		"s": "TokyoMetro.Hibiya.Ueno",
+		"a": "09:07",
+		"d": "09:08"
+	}, {
+		"s": "TokyoMetro.Hibiya.Akihabara",
+		"a": "09:11",
+		"d": "09:12"
+	}, {
+		"s": "TokyoMetro.Hibiya.Kayabacho",
+		"a": "09:17",
+		"d": "09:18"
+	}, {
+		"s": "TokyoMetro.Hibiya.Ginza",
+		"a": "09:26",
+		"d": "09:27"
+	}, {
+		"s": "TokyoMetro.Hibiya.Kasumigaseki",
+		"a": "09:30",
+		"d": "09:31"
+	}, {
+		"s": "TokyoMetro.Hibiya.ToranomonHills",
+		"a": "09:32",
+		"d": "09:33"
+	}, {
+		"s": "TokyoMetro.Hibiya.Kamiyacho",
+		"a": "09:34",
+		"d": "09:34"
+	}, {
+		"s": "TokyoMetro.Hibiya.Roppongi",
+		"a": "09:37",
+		"d": "09:38"
+	}, {
+		"s": "TokyoMetro.Hibiya.HiroO",
+		"a": "09:40",
+		"d": "09:41"
+	}, {
+		"s": "TokyoMetro.Hibiya.Ebisu",
+		"a": "09:43"
+	}],
+	"nm": [{
+		"ja": "THライナー 2号",
+		"en": "TH Liner 2",
+		"ko": "TH 라이너 2",
+		"zh-Hans": "TH LINER 2",
+		"zh-Hant": "TH LINER 2"
+	}]
+}, {
 	"id": "TokyoMetro.Hibiya.A1001T.SaturdayHoliday",
 	"t": "TokyoMetro.Hibiya.A1001T",
 	"r": "TokyoMetro.Hibiya",
@@ -54901,10 +55032,13 @@
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.NakaMeguro",
 	"os": [
-		"Tobu.TobuSkytree.KitaKasukabe"
+		"Tobu.TobuSkytree.KitaKoshigaya"
 	],
 	"ds": [
 		"TokyoMetro.Hibiya.NakaMeguro"
+	],
+	"pt": [
+		"Tobu.TobuSkytree.A1747T.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Hibiya.KitaSenju",
@@ -55064,10 +55198,13 @@
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.NakaMeguro",
 	"os": [
-		"Tobu.Nikko.MinamiKurihashi"
+		"Tobu.TobuSkytree.TobuDobutsuKoen"
 	],
 	"ds": [
 		"TokyoMetro.Hibiya.NakaMeguro"
+	],
+	"pt": [
+		"Tobu.TobuSkytree.A1802S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Hibiya.KitaSenju",
@@ -55467,10 +55604,13 @@
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.NakaMeguro",
 	"os": [
-		"Tobu.TobuSkytree.KitaKasukabe"
+		"Tobu.TobuSkytree.TobuDobutsuKoen"
 	],
 	"ds": [
 		"TokyoMetro.Hibiya.NakaMeguro"
+	],
+	"pt": [
+		"Tobu.TobuSkytree.A1911T.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Hibiya.KitaSenju",
@@ -59863,56 +60003,6 @@
 		"a": "06:37"
 	}]
 }, {
-	"id": "TokyoMetro.Hibiya.A528S.SaturdayHoliday",
-	"t": "TokyoMetro.Hibiya.A528S",
-	"r": "TokyoMetro.Hibiya",
-	"n": "A528S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.NakaMeguro",
-	"os": [
-		"TokyoMetro.Hibiya.Hatchobori"
-	],
-	"ds": [
-		"TokyoMetro.Hibiya.NakaMeguro"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Hibiya.Hatchobori",
-		"d": "05:00"
-	}, {
-		"s": "TokyoMetro.Hibiya.Tsukiji",
-		"d": "05:02"
-	}, {
-		"s": "TokyoMetro.Hibiya.HigashiGinza",
-		"d": "05:04"
-	}, {
-		"s": "TokyoMetro.Hibiya.Ginza",
-		"d": "05:06"
-	}, {
-		"s": "TokyoMetro.Hibiya.Hibiya",
-		"d": "05:07"
-	}, {
-		"s": "TokyoMetro.Hibiya.Kasumigaseki",
-		"d": "05:10"
-	}, {
-		"s": "TokyoMetro.Hibiya.ToranomonHills",
-		"d": "05:11"
-	}, {
-		"s": "TokyoMetro.Hibiya.Kamiyacho",
-		"d": "05:13"
-	}, {
-		"s": "TokyoMetro.Hibiya.Roppongi",
-		"d": "05:16"
-	}, {
-		"s": "TokyoMetro.Hibiya.HiroO",
-		"d": "05:19"
-	}, {
-		"s": "TokyoMetro.Hibiya.Ebisu",
-		"d": "05:22"
-	}, {
-		"s": "TokyoMetro.Hibiya.NakaMeguro",
-		"a": "05:24"
-	}]
-}, {
 	"id": "TokyoMetro.Hibiya.A532S.SaturdayHoliday",
 	"t": "TokyoMetro.Hibiya.A532S",
 	"r": "TokyoMetro.Hibiya",
@@ -63110,72 +63200,6 @@
 	}, {
 		"s": "TokyoMetro.Hibiya.NakaMeguro",
 		"a": "10:47"
-	}]
-}, {
-	"id": "TokyoMetro.Hibiya.A845T.SaturdayHoliday",
-	"t": "TokyoMetro.Hibiya.A845T",
-	"r": "TokyoMetro.Hibiya",
-	"n": "A845T",
-	"y": "TokyoMetro.TH-LINER",
-	"d": "TokyoMetro.NakaMeguro",
-	"os": [
-		"Tobu.Isesaki.Kuki"
-	],
-	"ds": [
-		"TokyoMetro.Hibiya.Ebisu"
-	],
-	"pt": [
-		"Tobu.TobuSkytree.A4845T.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Hibiya.ShinKoshigaya",
-		"d": "08:39"
-	}, {
-		"s": "TokyoMetro.Hibiya.Ueno",
-		"a": "09:07",
-		"d": "09:08"
-	}, {
-		"s": "TokyoMetro.Hibiya.Akihabara",
-		"a": "09:11",
-		"d": "09:12"
-	}, {
-		"s": "TokyoMetro.Hibiya.Kayabacho",
-		"a": "09:17",
-		"d": "09:18"
-	}, {
-		"s": "TokyoMetro.Hibiya.Ginza",
-		"a": "09:26",
-		"d": "09:27"
-	}, {
-		"s": "TokyoMetro.Hibiya.Kasumigaseki",
-		"a": "09:30",
-		"d": "09:31"
-	}, {
-		"s": "TokyoMetro.Hibiya.ToranomonHills",
-		"a": "09:32",
-		"d": "09:33"
-	}, {
-		"s": "TokyoMetro.Hibiya.Kamiyacho",
-		"a": "09:34",
-		"d": "09:34"
-	}, {
-		"s": "TokyoMetro.Hibiya.Roppongi",
-		"a": "09:37",
-		"d": "09:38"
-	}, {
-		"s": "TokyoMetro.Hibiya.HiroO",
-		"a": "09:40",
-		"d": "09:41"
-	}, {
-		"s": "TokyoMetro.Hibiya.Ebisu",
-		"a": "09:43"
-	}],
-	"nm": [{
-		"ja": "THライナー 2号",
-		"en": "TH Liner 2",
-		"ko": "TH 라이너 2",
-		"zh-Hans": "TH LINER 2",
-		"zh-Hant": "TH LINER 2"
 	}]
 }, {
 	"id": "TokyoMetro.Hibiya.A904S.SaturdayHoliday",

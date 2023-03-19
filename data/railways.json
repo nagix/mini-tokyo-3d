@@ -738,6 +738,7 @@
 		"JR-East.Keiyo.Futamatashimmachi",
 		"JR-East.Keiyo.MinamiFunabashi",
 		"JR-East.Keiyo.ShinNarashino",
+		"JR-East.Keiyo.Makuharitoyosuna",
 		"JR-East.Keiyo.Kaihimmakuhari",
 		"JR-East.Keiyo.Kemigawahama",
 		"JR-East.Keiyo.Inagekaigan",
@@ -760,6 +761,7 @@
 		"JR-East.KeiyoKoyaBranch.NishiFunabashi",
 		"JR-East.KeiyoKoyaBranch.MinamiFunabashi",
 		"JR-East.KeiyoKoyaBranch.ShinNarashino",
+		"JR-East.KeiyoKoyaBranch.Makuharitoyosuna",
 		"JR-East.KeiyoKoyaBranch.Kaihimmakuhari"
 	],
 	"ascending": "Outbound",
@@ -1642,7 +1644,7 @@
 	"ascending": "TokyoMetro.AkabaneIwabuchi",
 	"altitude": -1,
 	"color": "#00AC9B",
-	"carComposition": 6
+	"carComposition": 8
 }, {
 	"id": "TokyoMetro.Fukutoshin",
 	"title": {
@@ -1750,7 +1752,7 @@
 	"ascending": "Northbound",
 	"altitude": -1,
 	"color": "#006AB8",
-	"carComposition": 6
+	"carComposition": 8
 }, {
 	"id": "Toei.Shinjuku",
 	"title": {
@@ -3520,7 +3522,24 @@
 	],
 	"ascending": "Outbound",
 	"color": "#009CD2",
-	"carComposition": 6
+	"carComposition": 8
+}, {
+	"id": "Tokyu.TokyuShinYokohama",
+	"title": {
+		"ja": "東急新横浜線",
+		"en": "Tokyu-Shin-Yokohama Line",
+		"ko": "도큐 신요코하마 선",
+		"zh-Hans": "东急新横滨线",
+		"zh-Hant": "東急新橫濱線"
+	},
+	"stations": [
+		"Tokyu.TokyuShinYokohama.Hiyoshi",
+		"Tokyu.TokyuShinYokohama.ShinTsunashima",
+		"Tokyu.TokyuShinYokohama.ShinYokohama"
+	],
+	"ascending": "Outbound",
+	"color": "#5D4D8D",
+	"carComposition": 10
 }, {
 	"id": "Tokyu.Oimachi",
 	"title": {
@@ -3720,17 +3739,18 @@
 	"color": "#000080",
 	"carComposition": 10
 }, {
-	"id": "Sotetsu.JRDirect",
+	"id": "Sotetsu.SotetsuShinYokohama",
 	"title": {
-		"ja": "JR直通線",
-		"en": "JR Direct Connection Line",
-		"ko": "JR 직통 선",
-		"zh-Hans": "JR直通线",
-		"zh-Hant": "JR直通線"
+		"ja": "相鉄新横浜線",
+		"en": "Sotetsu Shin-Yokohama Line",
+		"ko": "소테쓰 신요코하마 선",
+		"zh-Hans": "相铁新横滨线",
+		"zh-Hant": "相鐵新橫濱線"
 	},
 	"stations": [
-		"Sotetsu.JRDirect.HazawaYokohamaKokudai",
-		"Sotetsu.JRDirect.Nishiya"
+		"Sotetsu.SotetsuShinYokohama.ShinYokohama",
+		"Sotetsu.SotetsuShinYokohama.HazawaYokohamaKokudai",
+		"Sotetsu.SotetsuShinYokohama.Nishiya"
 	],
 	"ascending": "Outbound",
 	"color": "#000080",

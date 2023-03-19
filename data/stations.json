@@ -5073,6 +5073,17 @@
 		"zh-Hant": "新習志野"
 	}
 }, {
+	"id": "JR-East.Keiyo.Makuharitoyosuna",
+	"railway": "JR-East.Keiyo",
+	"coord": [140.0272, 35.6579],
+	"title": {
+		"ja": "幕張豊砂",
+		"en": "Makuharitoyosuna",
+		"ko": "마쿠하리토요스나",
+		"zh-Hans": "幕张丰砂",
+		"zh-Hant": "幕張豐砂"
+	}
+}, {
 	"id": "JR-East.Keiyo.Kaihimmakuhari",
 	"railway": "JR-East.Keiyo",
 	"coord": [140.04174, 35.64853],
@@ -5159,6 +5170,17 @@
 		"ko": "신나라시노",
 		"zh-Hans": "新习志野",
 		"zh-Hant": "新習志野"
+	}
+}, {
+	"id": "JR-East.KeiyoKoyaBranch.Makuharitoyosuna",
+	"railway": "JR-East.KeiyoKoyaBranch",
+	"coord": [140.0272, 35.6579],
+	"title": {
+		"ja": "幕張豊砂",
+		"en": "Makuharitoyosuna",
+		"ko": "마쿠하리토요스나",
+		"zh-Hans": "幕张丰砂",
+		"zh-Hant": "幕張豐砂"
 	}
 }, {
 	"id": "JR-East.KeiyoKoyaBranch.Kaihimmakuhari",
@@ -22955,6 +22977,42 @@
 		"ja-Wiki": "日吉駅 (神奈川県)"
 	}
 }, {
+	"id": "Tokyu.TokyuShinYokohama.Hiyoshi",
+	"railway": "Tokyu.TokyuShinYokohama",
+	"coord": [139.647144, 35.554181],
+	"title": {
+		"ja": "日吉",
+		"en": "Hiyoshi",
+		"ko": "히요시",
+		"zh-Hans": "日吉",
+		"zh-Hant": "日吉",
+		"ja-Wiki": "日吉駅 (神奈川県)"
+	}
+}, {
+	"id": "Tokyu.TokyuShinYokohama.ShinTsunashima",
+	"railway": "Tokyu.TokyuShinYokohama",
+	"coord": [139.6361012, 35.5358452],
+	"title": {
+		"ja": "新綱島",
+		"en": "Shin-Tsunashima",
+		"ko": "신쓰나시마",
+		"zh-Hans": "新纲岛",
+		"zh-Hant": "新綱島"
+	},
+	"altitude": -1
+}, {
+	"id": "Tokyu.TokyuShinYokohama.ShinYokohama",
+	"railway": "Tokyu.TokyuShinYokohama",
+	"coord": [139.6173113, 35.5088883],
+	"title": {
+		"ja": "新横浜",
+		"en": "Shin-Yokohama",
+		"ko": "신요코하마",
+		"zh-Hans": "新横滨",
+		"zh-Hant": "新橫濱"
+	},
+	"altitude": -1
+}, {
 	"id": "Tokyu.Oimachi.Oimachi",
 	"railway": "Tokyu.Oimachi",
 	"coord": [139.735066, 35.60759],
@@ -23947,8 +24005,20 @@
 	},
 	"altitude": -1
 }, {
-	"id": "Sotetsu.JRDirect.HazawaYokohamaKokudai",
-	"railway": "Sotetsu.JRDirect",
+	"id": "Sotetsu.SotetsuShinYokohama.ShinYokohama",
+	"railway": "Sotetsu.SotetsuShinYokohama",
+	"coord": [139.6173113, 35.5088883],
+	"title": {
+		"ja": "新横浜",
+		"en": "Shin-Yokohama",
+		"ko": "신요코하마",
+		"zh-Hans": "新横滨",
+		"zh-Hant": "新橫濱"
+	},
+	"altitude": -1
+}, {
+	"id": "Sotetsu.SotetsuShinYokohama.HazawaYokohamaKokudai",
+	"railway": "Sotetsu.SotetsuShinYokohama",
 	"coord": [139.58614, 35.48102],
 	"title": {
 		"ja": "羽沢横浜国大",
@@ -23959,8 +24029,8 @@
 	},
 	"altitude": -1
 }, {
-	"id": "Sotetsu.JRDirect.Nishiya",
-	"railway": "Sotetsu.JRDirect",
+	"id": "Sotetsu.SotetsuShinYokohama.Nishiya",
+	"railway": "Sotetsu.SotetsuShinYokohama",
 	"coord": [139.56562, 35.47789],
 	"title": {
 		"ja": "西谷",

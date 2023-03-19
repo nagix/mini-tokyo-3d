@@ -19,19 +19,19 @@
 	],
 	"tt": [{
 		"s": "Tobu.JRTobuConnection.Omiya",
-		"d": "08:02"
+		"d": "10:06"
 	}, {
 		"s": "Tobu.JRTobuConnection.Tochigi",
-		"a": "08:46"
+		"a": "10:50"
 	}],
 	"nm": [{
-		"ja": "日光 1号",
-		"en": "Nikko 1",
-		"ko": "닛코 1",
-		"zh-Hans": "日光 1",
-		"zh-Hant": "日光 1"
+		"ja": "スペーシア日光 1号",
+		"en": "Spacia Nikko 1",
+		"ko": "스페이시아 닛코 1",
+		"zh-Hans": "SPACIA 日光 1",
+		"zh-Hant": "SPACIA 日光 1"
 	}],
-	"v": "253"
+	"v": "100"
 }, {
 	"id": "Tobu.JRTobuConnection.1083M.Weekday",
 	"t": "Tobu.JRTobuConnection.1083M",
@@ -59,81 +59,13 @@
 		"a": "11:44"
 	}],
 	"nm": [{
-		"ja": "スペーシアきぬがわ 3号",
-		"en": "Spacia Kinugawa 3",
-		"ko": "스페이시아 키누가와 3",
-		"zh-Hans": "SPACIA 鬼怒川 3",
-		"zh-Hant": "SPACIA 鬼怒川 3"
-	}],
-	"v": "100"
-}, {
-	"id": "Tobu.JRTobuConnection.1085M.Weekday",
-	"t": "Tobu.JRTobuConnection.1085M",
-	"r": "Tobu.JRTobuConnection",
-	"n": "1085M",
-	"y": "Tobu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"JR-East.ShonanShinjuku.Shinjuku"
-	],
-	"ds": [
-		"Tobu.Kinugawa.KinugawaOnsen"
-	],
-	"pt": [
-		"JR-East.ShonanShinjuku.1085M.Weekday"
-	],
-	"nt": [
-		"Tobu.Nikko.1085M.Weekday"
-	],
-	"tt": [{
-		"s": "Tobu.JRTobuConnection.Omiya",
-		"d": "13:30"
-	}, {
-		"s": "Tobu.JRTobuConnection.Tochigi",
-		"a": "14:12"
-	}],
-	"nm": [{
-		"ja": "きぬがわ 5号",
-		"en": "Kinugawa 5",
-		"ko": "키누가와 5",
-		"zh-Hans": "鬼怒川 5",
-		"zh-Hant": "鬼怒川 5"
+		"ja": "きぬがわ 3号",
+		"en": "Kinugawa 3",
+		"ko": "키누가와 3",
+		"zh-Hans": "鬼怒川 3",
+		"zh-Hant": "鬼怒川 3"
 	}],
 	"v": "253"
-}, {
-	"id": "Tobu.JRTobuConnection.1087M.Weekday",
-	"t": "Tobu.JRTobuConnection.1087M",
-	"r": "Tobu.JRTobuConnection",
-	"n": "1087M",
-	"y": "Tobu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"JR-East.ShonanShinjuku.Shinjuku"
-	],
-	"ds": [
-		"Tobu.Kinugawa.KinugawaOnsen"
-	],
-	"pt": [
-		"JR-East.ShonanShinjuku.1087M.Weekday"
-	],
-	"nt": [
-		"Tobu.Nikko.1087M.Weekday"
-	],
-	"tt": [{
-		"s": "Tobu.JRTobuConnection.Omiya",
-		"d": "18:02"
-	}, {
-		"s": "Tobu.JRTobuConnection.Tochigi",
-		"a": "18:46"
-	}],
-	"nm": [{
-		"ja": "スペーシアきぬがわ 7号",
-		"en": "Spacia Kinugawa 7",
-		"ko": "스페이시아 키누가와 7",
-		"zh-Hans": "SPACIA 鬼怒川 7",
-		"zh-Hant": "SPACIA 鬼怒川 7"
-	}],
-	"v": "100"
 }, {
 	"id": "Tobu.JRTobuConnection.1082M.Weekday",
 	"t": "Tobu.JRTobuConnection.1082M",
@@ -155,92 +87,24 @@
 	],
 	"tt": [{
 		"s": "Tobu.JRTobuConnection.Tochigi",
-		"d": "09:05"
+		"d": "15:53"
 	}, {
 		"s": "Tobu.JRTobuConnection.Omiya",
-		"a": "09:48"
+		"a": "16:37"
 	}],
 	"nm": [{
-		"ja": "スペーシアきぬがわ 2号",
-		"en": "Spacia Kinugawa 2",
-		"ko": "스페이시아 키누가와 2",
-		"zh-Hans": "SPACIA 鬼怒川 2",
-		"zh-Hant": "SPACIA 鬼怒川 2"
-	}],
-	"v": "100"
-}, {
-	"id": "Tobu.JRTobuConnection.1084M.Weekday",
-	"t": "Tobu.JRTobuConnection.1084M",
-	"r": "Tobu.JRTobuConnection",
-	"n": "1084M",
-	"y": "Tobu.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"Tobu.Kinugawa.KinugawaOnsen"
-	],
-	"ds": [
-		"JR-East.ShonanShinjuku.Shinjuku"
-	],
-	"pt": [
-		"Tobu.Nikko.1084M.Weekday"
-	],
-	"nt": [
-		"JR-East.ShonanShinjuku.1084M.Weekday"
-	],
-	"tt": [{
-		"s": "Tobu.JRTobuConnection.Tochigi",
-		"d": "11:33"
-	}, {
-		"s": "Tobu.JRTobuConnection.Omiya",
-		"a": "12:16"
-	}],
-	"nm": [{
-		"ja": "きぬがわ 4号",
-		"en": "Kinugawa 4",
-		"ko": "키누가와 4",
-		"zh-Hans": "鬼怒川 4",
-		"zh-Hant": "鬼怒川 4"
+		"ja": "きぬがわ 2号",
+		"en": "Kinugawa 2",
+		"ko": "키누가와 2",
+		"zh-Hans": "鬼怒川 2",
+		"zh-Hant": "鬼怒川 2"
 	}],
 	"v": "253"
 }, {
-	"id": "Tobu.JRTobuConnection.1086M.Weekday",
-	"t": "Tobu.JRTobuConnection.1086M",
+	"id": "Tobu.JRTobuConnection.1094M.Weekday",
+	"t": "Tobu.JRTobuConnection.1094M",
 	"r": "Tobu.JRTobuConnection",
-	"n": "1086M",
-	"y": "Tobu.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"Tobu.Kinugawa.KinugawaOnsen"
-	],
-	"ds": [
-		"JR-East.ShonanShinjuku.Shinjuku"
-	],
-	"pt": [
-		"Tobu.Nikko.1086M.Weekday"
-	],
-	"nt": [
-		"JR-East.ShonanShinjuku.1086M.Weekday"
-	],
-	"tt": [{
-		"s": "Tobu.JRTobuConnection.Tochigi",
-		"d": "16:01"
-	}, {
-		"s": "Tobu.JRTobuConnection.Omiya",
-		"a": "16:45"
-	}],
-	"nm": [{
-		"ja": "スペーシアきぬがわ 6号",
-		"en": "Spacia Kinugawa 6",
-		"ko": "스페이시아 키누가와 6",
-		"zh-Hans": "SPACIA 鬼怒川 6",
-		"zh-Hant": "SPACIA 鬼怒川 6"
-	}],
-	"v": "100"
-}, {
-	"id": "Tobu.JRTobuConnection.1098M.Weekday",
-	"t": "Tobu.JRTobuConnection.1098M",
-	"r": "Tobu.JRTobuConnection",
-	"n": "1098M",
+	"n": "1094M",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -250,10 +114,10 @@
 		"JR-East.ShonanShinjuku.Shinjuku"
 	],
 	"pt": [
-		"Tobu.Nikko.1098M.Weekday"
+		"Tobu.Nikko.1094M.Weekday"
 	],
 	"nt": [
-		"JR-East.ShonanShinjuku.1098M.Weekday"
+		"JR-East.ShonanShinjuku.1094M.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.JRTobuConnection.Tochigi",
@@ -263,13 +127,13 @@
 		"a": "18:03"
 	}],
 	"nm": [{
-		"ja": "日光 8号",
-		"en": "Nikko 8",
-		"ko": "닛코 8",
-		"zh-Hans": "日光 8",
-		"zh-Hant": "日光 8"
+		"ja": "スペーシア日光 4号",
+		"en": "Spacia Nikko 4",
+		"ko": "스페이시아 닛코 4",
+		"zh-Hans": "SPACIA 日光 4",
+		"zh-Hant": "SPACIA 日光 4"
 	}],
-	"v": "253"
+	"v": "100"
 }, {
 	"id": "Tobu.JRTobuConnection.1091M.SaturdayHoliday",
 	"t": "Tobu.JRTobuConnection.1091M",
@@ -291,19 +155,19 @@
 	],
 	"tt": [{
 		"s": "Tobu.JRTobuConnection.Omiya",
-		"d": "08:02"
+		"d": "10:06"
 	}, {
 		"s": "Tobu.JRTobuConnection.Tochigi",
-		"a": "08:46"
+		"a": "10:50"
 	}],
 	"nm": [{
-		"ja": "日光 1号",
-		"en": "Nikko 1",
-		"ko": "닛코 1",
-		"zh-Hans": "日光 1",
-		"zh-Hant": "日光 1"
+		"ja": "スペーシア日光 1号",
+		"en": "Spacia Nikko 1",
+		"ko": "스페이시아 닛코 1",
+		"zh-Hans": "SPACIA 日光 1",
+		"zh-Hant": "SPACIA 日光 1"
 	}],
-	"v": "253"
+	"v": "100"
 }, {
 	"id": "Tobu.JRTobuConnection.1083M.SaturdayHoliday",
 	"t": "Tobu.JRTobuConnection.1083M",
@@ -331,81 +195,13 @@
 		"a": "11:44"
 	}],
 	"nm": [{
-		"ja": "スペーシアきぬがわ 3号",
-		"en": "Spacia Kinugawa 3",
-		"ko": "스페이시아 키누가와 3",
-		"zh-Hans": "SPACIA 鬼怒川 3",
-		"zh-Hant": "SPACIA 鬼怒川 3"
-	}],
-	"v": "100"
-}, {
-	"id": "Tobu.JRTobuConnection.1085M.SaturdayHoliday",
-	"t": "Tobu.JRTobuConnection.1085M",
-	"r": "Tobu.JRTobuConnection",
-	"n": "1085M",
-	"y": "Tobu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"JR-East.ShonanShinjuku.Shinjuku"
-	],
-	"ds": [
-		"Tobu.Kinugawa.KinugawaOnsen"
-	],
-	"pt": [
-		"JR-East.ShonanShinjuku.1085M.SaturdayHoliday"
-	],
-	"nt": [
-		"Tobu.Nikko.1085M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Tobu.JRTobuConnection.Omiya",
-		"d": "13:30"
-	}, {
-		"s": "Tobu.JRTobuConnection.Tochigi",
-		"a": "14:12"
-	}],
-	"nm": [{
-		"ja": "きぬがわ 5号",
-		"en": "Kinugawa 5",
-		"ko": "키누가와 5",
-		"zh-Hans": "鬼怒川 5",
-		"zh-Hant": "鬼怒川 5"
+		"ja": "きぬがわ 3号",
+		"en": "Kinugawa 3",
+		"ko": "키누가와 3",
+		"zh-Hans": "鬼怒川 3",
+		"zh-Hant": "鬼怒川 3"
 	}],
 	"v": "253"
-}, {
-	"id": "Tobu.JRTobuConnection.1087M.SaturdayHoliday",
-	"t": "Tobu.JRTobuConnection.1087M",
-	"r": "Tobu.JRTobuConnection",
-	"n": "1087M",
-	"y": "Tobu.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"JR-East.ShonanShinjuku.Shinjuku"
-	],
-	"ds": [
-		"Tobu.Kinugawa.KinugawaOnsen"
-	],
-	"pt": [
-		"JR-East.ShonanShinjuku.1087M.SaturdayHoliday"
-	],
-	"nt": [
-		"Tobu.Nikko.1087M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Tobu.JRTobuConnection.Omiya",
-		"d": "18:02"
-	}, {
-		"s": "Tobu.JRTobuConnection.Tochigi",
-		"a": "18:46"
-	}],
-	"nm": [{
-		"ja": "スペーシアきぬがわ 7号",
-		"en": "Spacia Kinugawa 7",
-		"ko": "스페이시아 키누가와 7",
-		"zh-Hans": "SPACIA 鬼怒川 7",
-		"zh-Hant": "SPACIA 鬼怒川 7"
-	}],
-	"v": "100"
 }, {
 	"id": "Tobu.JRTobuConnection.1082M.SaturdayHoliday",
 	"t": "Tobu.JRTobuConnection.1082M",
@@ -427,92 +223,24 @@
 	],
 	"tt": [{
 		"s": "Tobu.JRTobuConnection.Tochigi",
-		"d": "09:05"
+		"d": "15:53"
 	}, {
 		"s": "Tobu.JRTobuConnection.Omiya",
-		"a": "09:48"
+		"a": "16:37"
 	}],
 	"nm": [{
-		"ja": "スペーシアきぬがわ 2号",
-		"en": "Spacia Kinugawa 2",
-		"ko": "스페이시아 키누가와 2",
-		"zh-Hans": "SPACIA 鬼怒川 2",
-		"zh-Hant": "SPACIA 鬼怒川 2"
-	}],
-	"v": "100"
-}, {
-	"id": "Tobu.JRTobuConnection.1084M.SaturdayHoliday",
-	"t": "Tobu.JRTobuConnection.1084M",
-	"r": "Tobu.JRTobuConnection",
-	"n": "1084M",
-	"y": "Tobu.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"Tobu.Kinugawa.KinugawaOnsen"
-	],
-	"ds": [
-		"JR-East.ShonanShinjuku.Shinjuku"
-	],
-	"pt": [
-		"Tobu.Nikko.1084M.SaturdayHoliday"
-	],
-	"nt": [
-		"JR-East.ShonanShinjuku.1084M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Tobu.JRTobuConnection.Tochigi",
-		"d": "11:33"
-	}, {
-		"s": "Tobu.JRTobuConnection.Omiya",
-		"a": "12:16"
-	}],
-	"nm": [{
-		"ja": "きぬがわ 4号",
-		"en": "Kinugawa 4",
-		"ko": "키누가와 4",
-		"zh-Hans": "鬼怒川 4",
-		"zh-Hant": "鬼怒川 4"
+		"ja": "きぬがわ 2号",
+		"en": "Kinugawa 2",
+		"ko": "키누가와 2",
+		"zh-Hans": "鬼怒川 2",
+		"zh-Hant": "鬼怒川 2"
 	}],
 	"v": "253"
 }, {
-	"id": "Tobu.JRTobuConnection.1086M.SaturdayHoliday",
-	"t": "Tobu.JRTobuConnection.1086M",
+	"id": "Tobu.JRTobuConnection.1094M.SaturdayHoliday",
+	"t": "Tobu.JRTobuConnection.1094M",
 	"r": "Tobu.JRTobuConnection",
-	"n": "1086M",
-	"y": "Tobu.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"Tobu.Kinugawa.KinugawaOnsen"
-	],
-	"ds": [
-		"JR-East.ShonanShinjuku.Shinjuku"
-	],
-	"pt": [
-		"Tobu.Nikko.1086M.SaturdayHoliday"
-	],
-	"nt": [
-		"JR-East.ShonanShinjuku.1086M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Tobu.JRTobuConnection.Tochigi",
-		"d": "16:01"
-	}, {
-		"s": "Tobu.JRTobuConnection.Omiya",
-		"a": "16:45"
-	}],
-	"nm": [{
-		"ja": "スペーシアきぬがわ 6号",
-		"en": "Spacia Kinugawa 6",
-		"ko": "스페이시아 키누가와 6",
-		"zh-Hans": "SPACIA 鬼怒川 6",
-		"zh-Hant": "SPACIA 鬼怒川 6"
-	}],
-	"v": "100"
-}, {
-	"id": "Tobu.JRTobuConnection.1098M.SaturdayHoliday",
-	"t": "Tobu.JRTobuConnection.1098M",
-	"r": "Tobu.JRTobuConnection",
-	"n": "1098M",
+	"n": "1094M",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -522,10 +250,10 @@
 		"JR-East.ShonanShinjuku.Shinjuku"
 	],
 	"pt": [
-		"Tobu.Nikko.1098M.SaturdayHoliday"
+		"Tobu.Nikko.1094M.SaturdayHoliday"
 	],
 	"nt": [
-		"JR-East.ShonanShinjuku.1098M.SaturdayHoliday"
+		"JR-East.ShonanShinjuku.1094M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.JRTobuConnection.Tochigi",
@@ -535,11 +263,11 @@
 		"a": "18:03"
 	}],
 	"nm": [{
-		"ja": "日光 8号",
-		"en": "Nikko 8",
-		"ko": "닛코 8",
-		"zh-Hans": "日光 8",
-		"zh-Hant": "日光 8"
+		"ja": "スペーシア日光 4号",
+		"en": "Spacia Nikko 4",
+		"ko": "스페이시아 닛코 4",
+		"zh-Hans": "SPACIA 日光 4",
+		"zh-Hant": "SPACIA 日光 4"
 	}],
-	"v": "253"
+	"v": "100"
 }]

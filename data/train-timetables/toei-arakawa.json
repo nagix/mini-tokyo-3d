@@ -1079,82 +1079,6 @@
 		"a": "06:55"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT0194.Weekday",
-	"t": "Toei.Arakawa.ODPT0194",
-	"r": "Toei.Arakawa",
-	"n": "ODPT0194",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.OjiEkimae"
-	],
-	"ds": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.OjiEkimae",
-		"d": "06:16"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "06:16",
-		"d": "06:17"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "06:17",
-		"d": "06:18"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "06:21",
-		"d": "06:22"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "06:22",
-		"d": "06:23"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "06:24",
-		"d": "06:25"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "06:25",
-		"d": "06:26"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "06:29",
-		"d": "06:30"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "06:30",
-		"d": "06:31"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "06:31",
-		"d": "06:32"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "06:34",
-		"d": "06:35"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "06:35",
-		"d": "06:36"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "06:36",
-		"d": "06:37"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "06:37",
-		"d": "06:38"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "06:38",
-		"d": "06:39"
-	}, {
-		"s": "Toei.Arakawa.Minowabashi",
-		"a": "06:41"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0157.Weekday",
 	"t": "Toei.Arakawa.ODPT0157",
 	"r": "Toei.Arakawa",
@@ -1357,6 +1281,82 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "07:06"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT0194.Weekday",
+	"t": "Toei.Arakawa.ODPT0194",
+	"r": "Toei.Arakawa",
+	"n": "ODPT0194",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.OjiEkimae"
+	],
+	"ds": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.OjiEkimae",
+		"d": "06:16"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "06:16",
+		"d": "06:17"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "06:17",
+		"d": "06:18"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "06:21",
+		"d": "06:22"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "06:22",
+		"d": "06:23"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "06:24",
+		"d": "06:25"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "06:25",
+		"d": "06:26"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "06:29",
+		"d": "06:30"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "06:30",
+		"d": "06:31"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "06:31",
+		"d": "06:32"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "06:34",
+		"d": "06:35"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "06:35",
+		"d": "06:36"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "06:36",
+		"d": "06:37"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "06:37",
+		"d": "06:38"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "06:38",
+		"d": "06:39"
+	}, {
+		"s": "Toei.Arakawa.Minowabashi",
+		"a": "06:41"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0212.Weekday",
@@ -2711,70 +2711,6 @@
 		"a": "07:47"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT0406.Weekday",
-	"t": "Toei.Arakawa.ODPT0406",
-	"r": "Toei.Arakawa",
-	"n": "ODPT0406",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "07:06"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "07:06",
-		"d": "07:07"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "07:08",
-		"d": "07:09"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "07:09",
-		"d": "07:10"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "07:13",
-		"d": "07:14"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "07:14",
-		"d": "07:15"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "07:15",
-		"d": "07:16"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "07:18",
-		"d": "07:19"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "07:19",
-		"d": "07:20"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "07:20",
-		"d": "07:21"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "07:21",
-		"d": "07:22"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "07:22",
-		"d": "07:23"
-	}, {
-		"s": "Toei.Arakawa.Minowabashi",
-		"a": "07:25"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0368.Weekday",
 	"t": "Toei.Arakawa.ODPT0368",
 	"r": "Toei.Arakawa",
@@ -3199,6 +3135,70 @@
 		"a": "08:02"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT0406.Weekday",
+	"t": "Toei.Arakawa.ODPT0406",
+	"r": "Toei.Arakawa",
+	"n": "ODPT0406",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "07:06"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "07:06",
+		"d": "07:07"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "07:08",
+		"d": "07:09"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "07:09",
+		"d": "07:10"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "07:13",
+		"d": "07:14"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "07:14",
+		"d": "07:15"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "07:15",
+		"d": "07:16"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "07:18",
+		"d": "07:19"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "07:19",
+		"d": "07:20"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "07:20",
+		"d": "07:21"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "07:21",
+		"d": "07:22"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "07:22",
+		"d": "07:23"
+	}, {
+		"s": "Toei.Arakawa.Minowabashi",
+		"a": "07:25"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT0412.Weekday",
 	"t": "Toei.Arakawa.ODPT0412",
 	"r": "Toei.Arakawa",
@@ -3593,50 +3593,6 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "08:10"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT0541.Weekday",
-	"t": "Toei.Arakawa.ODPT0541",
-	"r": "Toei.Arakawa",
-	"n": "ODPT0541",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.MachiyaEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "07:32"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "07:32",
-		"d": "07:33"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "07:34",
-		"d": "07:35"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "07:35",
-		"d": "07:36"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "07:40",
-		"d": "07:41"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "07:41",
-		"d": "07:42"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "07:42",
-		"d": "07:43"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "07:46"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0452.Weekday",
@@ -4563,6 +4519,50 @@
 		"a": "08:29"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT0541.Weekday",
+	"t": "Toei.Arakawa.ODPT0541",
+	"r": "Toei.Arakawa",
+	"n": "ODPT0541",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.MachiyaEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "07:32"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "07:32",
+		"d": "07:33"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "07:34",
+		"d": "07:35"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "07:35",
+		"d": "07:36"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "07:40",
+		"d": "07:41"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "07:41",
+		"d": "07:42"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "07:42",
+		"d": "07:43"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "07:46"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT0546.Weekday",
 	"t": "Toei.Arakawa.ODPT0546",
 	"r": "Toei.Arakawa",
@@ -5355,90 +5355,6 @@
 		"a": "08:47"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT4130.Weekday",
-	"t": "Toei.Arakawa.ODPT4130",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4130",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.Waseda"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Waseda",
-		"d": "22:49"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "22:49",
-		"d": "22:50"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "22:51",
-		"d": "22:52"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "22:52",
-		"d": "22:53"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "22:54",
-		"d": "22:55"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "22:56",
-		"d": "22:57"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "22:58",
-		"d": "22:59"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "23:02",
-		"d": "23:04"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "23:04",
-		"d": "23:05"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "23:05",
-		"d": "23:06"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "23:06",
-		"d": "23:07"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "23:08",
-		"d": "23:10"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "23:10",
-		"d": "23:11"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "23:11",
-		"d": "23:12"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "23:17",
-		"d": "23:19"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "23:19",
-		"d": "23:20"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "23:20",
-		"d": "23:21"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:24"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0621.Weekday",
 	"t": "Toei.Arakawa.ODPT0621",
 	"r": "Toei.Arakawa",
@@ -5833,82 +5749,6 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "08:50"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT4131.Weekday",
-	"t": "Toei.Arakawa.ODPT4131",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4131",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.OjiEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "22:49"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "22:49",
-		"d": "22:50"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "22:50",
-		"d": "22:51"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "22:51",
-		"d": "22:52"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "22:52",
-		"d": "22:53"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "22:55",
-		"d": "22:56"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "22:56",
-		"d": "22:57"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "22:57",
-		"d": "22:58"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "23:00",
-		"d": "23:01"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "23:01",
-		"d": "23:02"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "23:03",
-		"d": "23:04"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "23:04",
-		"d": "23:05"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:08",
-		"d": "23:09"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "23:09",
-		"d": "23:10"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "23:10",
-		"d": "23:11"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "23:13"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0664.Weekday",
@@ -6939,70 +6779,6 @@
 		"a": "09:10"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT1058.Weekday",
-	"t": "Toei.Arakawa.ODPT1058",
-	"r": "Toei.Arakawa",
-	"n": "ODPT1058",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "07:25"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "07:25",
-		"d": "07:26"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "07:27",
-		"d": "07:28"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "07:28",
-		"d": "07:29"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "07:32",
-		"d": "07:33"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "07:33",
-		"d": "07:34"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "07:34",
-		"d": "07:35"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "07:37",
-		"d": "07:39"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "07:39",
-		"d": "07:40"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "07:40",
-		"d": "07:41"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "07:41",
-		"d": "07:42"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "07:42",
-		"d": "07:43"
-	}, {
-		"s": "Toei.Arakawa.Minowabashi",
-		"a": "07:45"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0752.Weekday",
 	"t": "Toei.Arakawa.ODPT0752",
 	"r": "Toei.Arakawa",
@@ -7397,90 +7173,6 @@
 	}, {
 		"s": "Toei.Arakawa.Waseda",
 		"a": "09:17"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT4173.Weekday",
-	"t": "Toei.Arakawa.ODPT4173",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4173",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.Waseda"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Waseda",
-		"d": "23:04"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "23:04",
-		"d": "23:05"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "23:06",
-		"d": "23:07"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "23:07",
-		"d": "23:08"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "23:08",
-		"d": "23:09"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "23:11",
-		"d": "23:12"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "23:13",
-		"d": "23:14"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "23:16",
-		"d": "23:17"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "23:17",
-		"d": "23:18"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "23:18",
-		"d": "23:19"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "23:19",
-		"d": "23:20"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "23:21",
-		"d": "23:22"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "23:22",
-		"d": "23:23"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "23:23",
-		"d": "23:24"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "23:28",
-		"d": "23:29"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "23:29",
-		"d": "23:30"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "23:30",
-		"d": "23:31"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:34"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0792.Weekday",
@@ -8009,62 +7701,6 @@
 	}, {
 		"s": "Toei.Arakawa.Waseda",
 		"a": "09:27"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT4193.Weekday",
-	"t": "Toei.Arakawa.ODPT4193",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4193",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.OtsukaEkimae"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"d": "23:11"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "23:11",
-		"d": "23:12"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "23:12",
-		"d": "23:13"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "23:13",
-		"d": "23:14"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "23:15",
-		"d": "23:16"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "23:16",
-		"d": "23:17"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "23:17",
-		"d": "23:18"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "23:23",
-		"d": "23:24"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "23:24",
-		"d": "23:25"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "23:25",
-		"d": "23:26"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:29"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0842.Weekday",
@@ -8727,70 +8363,6 @@
 		"a": "09:40"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT4201.Weekday",
-	"t": "Toei.Arakawa.ODPT4201",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4201",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "23:14"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "23:14",
-		"d": "23:15"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "23:15",
-		"d": "23:16"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "23:17",
-		"d": "23:18"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "23:18",
-		"d": "23:19"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "23:20",
-		"d": "23:21"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "23:21",
-		"d": "23:22"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "23:22",
-		"d": "23:23"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "23:24",
-		"d": "23:25"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "23:25",
-		"d": "23:26"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "23:27",
-		"d": "23:28"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "23:28",
-		"d": "23:30"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:33"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0907.Weekday",
 	"t": "Toei.Arakawa.ODPT0907",
 	"r": "Toei.Arakawa",
@@ -9327,50 +8899,6 @@
 		"a": "09:47"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT5226.Weekday",
-	"t": "Toei.Arakawa.ODPT5226",
-	"r": "Toei.Arakawa",
-	"n": "ODPT5226",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.MachiyaEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "05:31"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "05:31",
-		"d": "05:32"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "05:33",
-		"d": "05:34"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "05:34",
-		"d": "05:35"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "05:38",
-		"d": "05:39"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "05:39",
-		"d": "05:40"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "05:40",
-		"d": "05:41"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "05:44"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0947.Weekday",
 	"t": "Toei.Arakawa.ODPT0947",
 	"r": "Toei.Arakawa",
@@ -9501,62 +9029,6 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "09:52"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT5244.Weekday",
-	"t": "Toei.Arakawa.ODPT5244",
-	"r": "Toei.Arakawa",
-	"n": "ODPT5244",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.OtsukaEkimae"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"d": "08:24"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "08:24",
-		"d": "08:25"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "08:25",
-		"d": "08:26"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "08:26",
-		"d": "08:27"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "08:29",
-		"d": "08:30"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "08:30",
-		"d": "08:31"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "08:31",
-		"d": "08:32"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "08:39",
-		"d": "08:40"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "08:40",
-		"d": "08:41"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "08:41",
-		"d": "08:42"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "08:45"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0954.Weekday",
@@ -10791,6 +10263,70 @@
 		"a": "10:13"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT1058.Weekday",
+	"t": "Toei.Arakawa.ODPT1058",
+	"r": "Toei.Arakawa",
+	"n": "ODPT1058",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "07:25"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "07:25",
+		"d": "07:26"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "07:27",
+		"d": "07:28"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "07:28",
+		"d": "07:29"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "07:32",
+		"d": "07:33"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "07:33",
+		"d": "07:34"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "07:34",
+		"d": "07:35"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "07:37",
+		"d": "07:39"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "07:39",
+		"d": "07:40"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "07:40",
+		"d": "07:41"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "07:41",
+		"d": "07:42"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "07:42",
+		"d": "07:43"
+	}, {
+		"s": "Toei.Arakawa.Minowabashi",
+		"a": "07:45"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT1077.Weekday",
 	"t": "Toei.Arakawa.ODPT1077",
 	"r": "Toei.Arakawa",
@@ -10921,90 +10457,6 @@
 	}, {
 		"s": "Toei.Arakawa.Waseda",
 		"a": "10:15"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT1190.Weekday",
-	"t": "Toei.Arakawa.ODPT1190",
-	"r": "Toei.Arakawa",
-	"n": "ODPT1190",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.Waseda"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Waseda",
-		"d": "09:44"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "09:44",
-		"d": "09:45"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "09:46",
-		"d": "09:47"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "09:47",
-		"d": "09:48"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "09:49",
-		"d": "09:50"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "09:51",
-		"d": "09:52"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "09:53",
-		"d": "09:54"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "09:58",
-		"d": "09:59"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "09:59",
-		"d": "10:00"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "10:00",
-		"d": "10:01"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "10:01",
-		"d": "10:02"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "10:04",
-		"d": "10:05"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "10:05",
-		"d": "10:06"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "10:06",
-		"d": "10:07"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "10:14",
-		"d": "10:15"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "10:15",
-		"d": "10:16"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "10:16",
-		"d": "10:17"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "10:20"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT1089.Weekday",
@@ -11995,6 +11447,90 @@
 		"a": "10:03"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT1190.Weekday",
+	"t": "Toei.Arakawa.ODPT1190",
+	"r": "Toei.Arakawa",
+	"n": "ODPT1190",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.Waseda"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Waseda",
+		"d": "09:44"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "09:44",
+		"d": "09:45"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "09:46",
+		"d": "09:47"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "09:47",
+		"d": "09:48"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "09:49",
+		"d": "09:50"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "09:51",
+		"d": "09:52"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "09:53",
+		"d": "09:54"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "09:58",
+		"d": "09:59"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "09:59",
+		"d": "10:00"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "10:00",
+		"d": "10:01"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "10:01",
+		"d": "10:02"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "10:04",
+		"d": "10:05"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "10:05",
+		"d": "10:06"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "10:06",
+		"d": "10:07"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "10:14",
+		"d": "10:15"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "10:15",
+		"d": "10:16"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "10:16",
+		"d": "10:17"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "10:20"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT1196.Weekday",
 	"t": "Toei.Arakawa.ODPT1196",
 	"r": "Toei.Arakawa",
@@ -12257,90 +11793,6 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "10:44"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT2413.Weekday",
-	"t": "Toei.Arakawa.ODPT2413",
-	"r": "Toei.Arakawa",
-	"n": "ODPT2413",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.Waseda"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "14:43"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "14:43",
-		"d": "14:44"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "14:44",
-		"d": "14:45"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "14:48",
-		"d": "14:49"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "14:50",
-		"d": "14:51"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "14:51",
-		"d": "14:52"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "14:54",
-		"d": "14:55"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "14:55",
-		"d": "14:56"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "14:56",
-		"d": "14:57"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "14:58",
-		"d": "14:59"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "15:03",
-		"d": "15:05"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "15:05",
-		"d": "15:06"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "15:08",
-		"d": "15:09"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "15:09",
-		"d": "15:10"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "15:10",
-		"d": "15:11"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "15:12",
-		"d": "15:13"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "15:14",
-		"d": "15:15"
-	}, {
-		"s": "Toei.Arakawa.Waseda",
-		"a": "15:17"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT1223.Weekday",
@@ -14587,6 +14039,90 @@
 		"a": "16:42"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT2413.Weekday",
+	"t": "Toei.Arakawa.ODPT2413",
+	"r": "Toei.Arakawa",
+	"n": "ODPT2413",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.Waseda"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "14:43"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "14:43",
+		"d": "14:44"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "14:44",
+		"d": "14:45"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "14:48",
+		"d": "14:49"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "14:50",
+		"d": "14:51"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "14:51",
+		"d": "14:52"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "14:54",
+		"d": "14:55"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "14:55",
+		"d": "14:56"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "14:56",
+		"d": "14:57"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "14:58",
+		"d": "14:59"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "15:03",
+		"d": "15:05"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "15:05",
+		"d": "15:06"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "15:08",
+		"d": "15:09"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "15:09",
+		"d": "15:10"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "15:10",
+		"d": "15:11"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "15:12",
+		"d": "15:13"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "15:14",
+		"d": "15:15"
+	}, {
+		"s": "Toei.Arakawa.Waseda",
+		"a": "15:17"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT2420.Weekday",
 	"t": "Toei.Arakawa.ODPT2420",
 	"r": "Toei.Arakawa",
@@ -15705,110 +15241,6 @@
 	}, {
 		"s": "Toei.Arakawa.Waseda",
 		"a": "16:59"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT3181.Weekday",
-	"t": "Toei.Arakawa.ODPT3181",
-	"r": "Toei.Arakawa",
-	"n": "ODPT3181",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.OtsukaEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "18:37"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "18:37",
-		"d": "18:38"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "18:38",
-		"d": "18:39"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "18:39",
-		"d": "18:40"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "18:40",
-		"d": "18:41"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "18:44",
-		"d": "18:45"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "18:45",
-		"d": "18:46"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "18:46",
-		"d": "18:47"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "18:49",
-		"d": "18:50"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "18:50",
-		"d": "18:51"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "18:52",
-		"d": "18:53"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "18:53",
-		"d": "18:54"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "18:59",
-		"d": "19:00"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "19:00",
-		"d": "19:01"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "19:01",
-		"d": "19:02"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "19:05",
-		"d": "19:06"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "19:07",
-		"d": "19:08"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "19:08",
-		"d": "19:09"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "19:11",
-		"d": "19:12"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "19:12",
-		"d": "19:13"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "19:13",
-		"d": "19:14"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "19:15",
-		"d": "19:16"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "19:19"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT2493.Weekday",
@@ -23303,110 +22735,6 @@
 		"a": "18:55"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT3253.Weekday",
-	"t": "Toei.Arakawa.ODPT3253",
-	"r": "Toei.Arakawa",
-	"n": "ODPT3253",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.OtsukaEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "18:52"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "18:52",
-		"d": "18:53"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "18:53",
-		"d": "18:54"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "18:54",
-		"d": "18:55"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "18:55",
-		"d": "18:56"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "18:59",
-		"d": "19:00"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "19:00",
-		"d": "19:01"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "19:01",
-		"d": "19:02"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "19:04",
-		"d": "19:05"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "19:05",
-		"d": "19:06"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "19:07",
-		"d": "19:08"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "19:08",
-		"d": "19:09"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "19:14",
-		"d": "19:16"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "19:16",
-		"d": "19:17"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "19:17",
-		"d": "19:18"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "19:21",
-		"d": "19:22"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "19:23",
-		"d": "19:24"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "19:24",
-		"d": "19:25"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "19:27",
-		"d": "19:28"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "19:28",
-		"d": "19:29"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "19:29",
-		"d": "19:30"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "19:31",
-		"d": "19:32"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "19:35"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT3083.Weekday",
 	"t": "Toei.Arakawa.ODPT3083",
 	"r": "Toei.Arakawa",
@@ -24067,90 +23395,6 @@
 		"a": "19:24"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT3517.Weekday",
-	"t": "Toei.Arakawa.ODPT3517",
-	"r": "Toei.Arakawa",
-	"n": "ODPT3517",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.MachiyaEkimae"
-	],
-	"ds": [
-		"Toei.Arakawa.OtsukaEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"d": "19:56"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "19:56",
-		"d": "19:57"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "19:57",
-		"d": "19:58"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "20:00",
-		"d": "20:01"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "20:01",
-		"d": "20:02"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "20:03",
-		"d": "20:04"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "20:04",
-		"d": "20:05"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "20:09",
-		"d": "20:10"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "20:10",
-		"d": "20:11"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "20:11",
-		"d": "20:12"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "20:14",
-		"d": "20:15"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "20:16",
-		"d": "20:17"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "20:17",
-		"d": "20:18"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "20:19",
-		"d": "20:20"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "20:20",
-		"d": "20:21"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "20:21",
-		"d": "20:22"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "20:23",
-		"d": "20:24"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "20:28"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT3140.Weekday",
 	"t": "Toei.Arakawa.ODPT3140",
 	"r": "Toei.Arakawa",
@@ -24415,62 +23659,6 @@
 		"a": "19:30"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT3381.Weekday",
-	"t": "Toei.Arakawa.ODPT3381",
-	"r": "Toei.Arakawa",
-	"n": "ODPT3381",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.OtsukaEkimae"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"d": "19:23"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "19:23",
-		"d": "19:24"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "19:24",
-		"d": "19:25"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "19:25",
-		"d": "19:26"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "19:28",
-		"d": "19:29"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "19:29",
-		"d": "19:30"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "19:30",
-		"d": "19:31"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "19:37",
-		"d": "19:38"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "19:38",
-		"d": "19:39"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "19:39",
-		"d": "19:40"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "19:43"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT3161.Weekday",
 	"t": "Toei.Arakawa.ODPT3161",
 	"r": "Toei.Arakawa",
@@ -24601,6 +23789,110 @@
 	}, {
 		"s": "Toei.Arakawa.Waseda",
 		"a": "19:29"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT3181.Weekday",
+	"t": "Toei.Arakawa.ODPT3181",
+	"r": "Toei.Arakawa",
+	"n": "ODPT3181",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.OtsukaEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "18:37"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "18:37",
+		"d": "18:38"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "18:38",
+		"d": "18:39"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "18:39",
+		"d": "18:40"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "18:40",
+		"d": "18:41"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "18:44",
+		"d": "18:45"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "18:45",
+		"d": "18:46"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "18:46",
+		"d": "18:47"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "18:49",
+		"d": "18:50"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "18:50",
+		"d": "18:51"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "18:52",
+		"d": "18:53"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "18:53",
+		"d": "18:54"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "18:59",
+		"d": "19:00"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "19:00",
+		"d": "19:01"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "19:01",
+		"d": "19:02"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "19:05",
+		"d": "19:06"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "19:07",
+		"d": "19:08"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "19:08",
+		"d": "19:09"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "19:11",
+		"d": "19:12"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "19:12",
+		"d": "19:13"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "19:13",
+		"d": "19:14"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "19:15",
+		"d": "19:16"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "19:19"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT3182.Weekday",
@@ -25373,6 +24665,110 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "19:52"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT3253.Weekday",
+	"t": "Toei.Arakawa.ODPT3253",
+	"r": "Toei.Arakawa",
+	"n": "ODPT3253",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.OtsukaEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "18:52"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "18:52",
+		"d": "18:53"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "18:53",
+		"d": "18:54"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "18:54",
+		"d": "18:55"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "18:55",
+		"d": "18:56"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "18:59",
+		"d": "19:00"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "19:00",
+		"d": "19:01"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "19:01",
+		"d": "19:02"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "19:04",
+		"d": "19:05"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "19:05",
+		"d": "19:06"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "19:07",
+		"d": "19:08"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "19:08",
+		"d": "19:09"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "19:14",
+		"d": "19:16"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "19:16",
+		"d": "19:17"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "19:17",
+		"d": "19:18"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "19:21",
+		"d": "19:22"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "19:23",
+		"d": "19:24"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "19:24",
+		"d": "19:25"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "19:27",
+		"d": "19:28"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "19:28",
+		"d": "19:29"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "19:29",
+		"d": "19:30"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "19:31",
+		"d": "19:32"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "19:35"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT3267.Weekday",
@@ -26437,6 +25833,62 @@
 	}, {
 		"s": "Toei.Arakawa.OtsukaEkimae",
 		"a": "20:02"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT3381.Weekday",
+	"t": "Toei.Arakawa.ODPT3381",
+	"r": "Toei.Arakawa",
+	"n": "ODPT3381",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.OtsukaEkimae"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"d": "19:23"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "19:23",
+		"d": "19:24"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "19:24",
+		"d": "19:25"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "19:25",
+		"d": "19:26"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "19:28",
+		"d": "19:29"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "19:29",
+		"d": "19:30"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "19:30",
+		"d": "19:31"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "19:37",
+		"d": "19:38"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "19:38",
+		"d": "19:39"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "19:39",
+		"d": "19:40"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "19:43"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT3382.Weekday",
@@ -27715,6 +27167,90 @@
 		"a": "20:45"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT3517.Weekday",
+	"t": "Toei.Arakawa.ODPT3517",
+	"r": "Toei.Arakawa",
+	"n": "ODPT3517",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.MachiyaEkimae"
+	],
+	"ds": [
+		"Toei.Arakawa.OtsukaEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"d": "19:56"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "19:56",
+		"d": "19:57"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "19:57",
+		"d": "19:58"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "20:00",
+		"d": "20:01"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "20:01",
+		"d": "20:02"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "20:03",
+		"d": "20:04"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "20:04",
+		"d": "20:05"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "20:09",
+		"d": "20:10"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "20:10",
+		"d": "20:11"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "20:11",
+		"d": "20:12"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "20:14",
+		"d": "20:15"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "20:16",
+		"d": "20:17"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "20:17",
+		"d": "20:18"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "20:19",
+		"d": "20:20"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "20:20",
+		"d": "20:21"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "20:21",
+		"d": "20:22"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "20:23",
+		"d": "20:24"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "20:28"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT3526.Weekday",
 	"t": "Toei.Arakawa.ODPT3526",
 	"r": "Toei.Arakawa",
@@ -28655,118 +28191,6 @@
 		"a": "21:14"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT3678.Weekday",
-	"t": "Toei.Arakawa.ODPT3678",
-	"r": "Toei.Arakawa",
-	"n": "ODPT3678",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.Waseda"
-	],
-	"ds": [
-		"Toei.Arakawa.MachiyaEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Waseda",
-		"d": "20:34"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "20:34",
-		"d": "20:35"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "20:36",
-		"d": "20:37"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "20:37",
-		"d": "20:38"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "20:39",
-		"d": "20:40"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "20:41",
-		"d": "20:42"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "20:43",
-		"d": "20:44"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "20:48",
-		"d": "20:49"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "20:49",
-		"d": "20:50"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "20:50",
-		"d": "20:51"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "20:51",
-		"d": "20:52"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "20:54",
-		"d": "20:55"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "20:55",
-		"d": "20:56"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "20:56",
-		"d": "20:57"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "21:04",
-		"d": "21:05"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "21:05",
-		"d": "21:06"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "21:06",
-		"d": "21:07"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "21:10",
-		"d": "21:11"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "21:11",
-		"d": "21:12"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "21:13",
-		"d": "21:14"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "21:14",
-		"d": "21:15"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "21:19",
-		"d": "21:20"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "21:20",
-		"d": "21:21"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "21:21",
-		"d": "21:22"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "21:25"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT3642.Weekday",
 	"t": "Toei.Arakawa.ODPT3642",
 	"r": "Toei.Arakawa",
@@ -29095,6 +28519,118 @@
 		"a": "20:52"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT3678.Weekday",
+	"t": "Toei.Arakawa.ODPT3678",
+	"r": "Toei.Arakawa",
+	"n": "ODPT3678",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.Waseda"
+	],
+	"ds": [
+		"Toei.Arakawa.MachiyaEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Waseda",
+		"d": "20:34"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "20:34",
+		"d": "20:35"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "20:36",
+		"d": "20:37"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "20:37",
+		"d": "20:38"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "20:39",
+		"d": "20:40"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "20:41",
+		"d": "20:42"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "20:43",
+		"d": "20:44"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "20:48",
+		"d": "20:49"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "20:49",
+		"d": "20:50"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "20:50",
+		"d": "20:51"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "20:51",
+		"d": "20:52"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "20:54",
+		"d": "20:55"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "20:55",
+		"d": "20:56"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "20:56",
+		"d": "20:57"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "21:04",
+		"d": "21:05"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "21:05",
+		"d": "21:06"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "21:06",
+		"d": "21:07"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "21:10",
+		"d": "21:11"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "21:11",
+		"d": "21:12"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "21:13",
+		"d": "21:14"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "21:14",
+		"d": "21:15"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "21:19",
+		"d": "21:20"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "21:20",
+		"d": "21:21"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "21:21",
+		"d": "21:22"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "21:25"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT3683.Weekday",
 	"t": "Toei.Arakawa.ODPT3683",
 	"r": "Toei.Arakawa",
@@ -29413,90 +28949,6 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "21:38"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT3766.Weekday",
-	"t": "Toei.Arakawa.ODPT3766",
-	"r": "Toei.Arakawa",
-	"n": "ODPT3766",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.Waseda"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Waseda",
-		"d": "20:57"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "20:57",
-		"d": "20:58"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "20:59",
-		"d": "21:00"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "21:00",
-		"d": "21:01"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "21:02",
-		"d": "21:03"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "21:04",
-		"d": "21:05"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "21:06",
-		"d": "21:07"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "21:11",
-		"d": "21:12"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "21:12",
-		"d": "21:13"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "21:13",
-		"d": "21:14"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "21:14",
-		"d": "21:15"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "21:17",
-		"d": "21:18"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "21:18",
-		"d": "21:19"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "21:19",
-		"d": "21:20"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "21:26",
-		"d": "21:27"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "21:27",
-		"d": "21:28"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "21:28",
-		"d": "21:29"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "21:32"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT3720.Weekday",
@@ -29939,48 +29391,88 @@
 		"a": "21:09"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT3900.Weekday",
-	"t": "Toei.Arakawa.ODPT3900",
+	"id": "Toei.Arakawa.ODPT3766.Weekday",
+	"t": "Toei.Arakawa.ODPT3766",
 	"r": "Toei.Arakawa",
-	"n": "ODPT3900",
+	"n": "ODPT3766",
 	"y": "Toei.Local",
-	"d": "Toei.Waseda",
+	"d": "Toei.Minowabashi",
 	"os": [
-		"Toei.Arakawa.MachiyaEkimae"
+		"Toei.Arakawa.Waseda"
 	],
 	"ds": [
 		"Toei.Arakawa.ArakawaShakomae"
 	],
 	"tt": [{
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"d": "21:34"
+		"s": "Toei.Arakawa.Waseda",
+		"d": "20:57"
 	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "21:34",
-		"d": "21:35"
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "20:57",
+		"d": "20:58"
 	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "21:35",
-		"d": "21:36"
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "20:59",
+		"d": "21:00"
 	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "21:38",
-		"d": "21:39"
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "21:00",
+		"d": "21:01"
 	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "21:39",
-		"d": "21:40"
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "21:02",
+		"d": "21:03"
 	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "21:41",
-		"d": "21:42"
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "21:04",
+		"d": "21:05"
 	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "21:42",
-		"d": "21:43"
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "21:06",
+		"d": "21:07"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "21:11",
+		"d": "21:12"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "21:12",
+		"d": "21:13"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "21:13",
+		"d": "21:14"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "21:14",
+		"d": "21:15"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "21:17",
+		"d": "21:18"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "21:18",
+		"d": "21:19"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "21:19",
+		"d": "21:20"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "21:26",
+		"d": "21:27"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "21:27",
+		"d": "21:28"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "21:28",
+		"d": "21:29"
 	}, {
 		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "21:48"
+		"a": "21:32"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT3797.Weekday",
@@ -30687,70 +30179,6 @@
 		"a": "22:15"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT4108.Weekday",
-	"t": "Toei.Arakawa.ODPT4108",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4108",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "22:40"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "22:40",
-		"d": "22:41"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "22:41",
-		"d": "22:42"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "22:42",
-		"d": "22:43"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "22:43",
-		"d": "22:44"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "22:46",
-		"d": "22:47"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "22:47",
-		"d": "22:48"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "22:48",
-		"d": "22:49"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "22:51",
-		"d": "22:52"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "22:52",
-		"d": "22:53"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "22:54",
-		"d": "22:55"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "22:55",
-		"d": "22:56"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "22:59"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT3893.Weekday",
 	"t": "Toei.Arakawa.ODPT3893",
 	"r": "Toei.Arakawa",
@@ -31013,6 +30441,50 @@
 	}, {
 		"s": "Toei.Arakawa.Waseda",
 		"a": "22:28"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT3900.Weekday",
+	"t": "Toei.Arakawa.ODPT3900",
+	"r": "Toei.Arakawa",
+	"n": "ODPT3900",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.MachiyaEkimae"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"d": "21:34"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "21:34",
+		"d": "21:35"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "21:35",
+		"d": "21:36"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "21:38",
+		"d": "21:39"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "21:39",
+		"d": "21:40"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "21:41",
+		"d": "21:42"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "21:42",
+		"d": "21:43"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "21:48"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT3923.Weekday",
@@ -31723,62 +31195,6 @@
 		"a": "22:57"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT4112.Weekday",
-	"t": "Toei.Arakawa.ODPT4112",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4112",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.OtsukaEkimae"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"d": "22:44"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "22:44",
-		"d": "22:45"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "22:45",
-		"d": "22:46"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "22:46",
-		"d": "22:47"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "22:48",
-		"d": "22:49"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "22:49",
-		"d": "22:50"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "22:50",
-		"d": "22:51"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "22:55",
-		"d": "22:56"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "22:56",
-		"d": "22:57"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "22:57",
-		"d": "22:58"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:01"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT4024.Weekday",
 	"t": "Toei.Arakawa.ODPT4024",
 	"r": "Toei.Arakawa",
@@ -32323,6 +31739,286 @@
 		"a": "23:10"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT4108.Weekday",
+	"t": "Toei.Arakawa.ODPT4108",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4108",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "22:40"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "22:40",
+		"d": "22:41"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "22:41",
+		"d": "22:42"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "22:42",
+		"d": "22:43"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "22:43",
+		"d": "22:44"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "22:46",
+		"d": "22:47"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "22:47",
+		"d": "22:48"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "22:48",
+		"d": "22:49"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "22:51",
+		"d": "22:52"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "22:52",
+		"d": "22:53"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "22:54",
+		"d": "22:55"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "22:55",
+		"d": "22:56"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "22:59"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4112.Weekday",
+	"t": "Toei.Arakawa.ODPT4112",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4112",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.OtsukaEkimae"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"d": "22:44"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "22:44",
+		"d": "22:45"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "22:45",
+		"d": "22:46"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "22:46",
+		"d": "22:47"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "22:48",
+		"d": "22:49"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "22:49",
+		"d": "22:50"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "22:50",
+		"d": "22:51"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "22:55",
+		"d": "22:56"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "22:56",
+		"d": "22:57"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "22:57",
+		"d": "22:58"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:01"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4130.Weekday",
+	"t": "Toei.Arakawa.ODPT4130",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4130",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.Waseda"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Waseda",
+		"d": "22:49"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "22:49",
+		"d": "22:50"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "22:51",
+		"d": "22:52"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "22:52",
+		"d": "22:53"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "22:54",
+		"d": "22:55"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "22:56",
+		"d": "22:57"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "22:58",
+		"d": "22:59"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "23:02",
+		"d": "23:04"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "23:04",
+		"d": "23:05"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "23:05",
+		"d": "23:06"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "23:06",
+		"d": "23:07"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "23:08",
+		"d": "23:10"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "23:10",
+		"d": "23:11"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "23:11",
+		"d": "23:12"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "23:17",
+		"d": "23:19"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "23:19",
+		"d": "23:20"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "23:20",
+		"d": "23:21"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:24"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4131.Weekday",
+	"t": "Toei.Arakawa.ODPT4131",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4131",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.OjiEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "22:49"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "22:49",
+		"d": "22:50"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "22:50",
+		"d": "22:51"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "22:51",
+		"d": "22:52"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "22:52",
+		"d": "22:53"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "22:55",
+		"d": "22:56"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "22:56",
+		"d": "22:57"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "22:57",
+		"d": "22:58"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "23:00",
+		"d": "23:01"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "23:01",
+		"d": "23:02"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "23:03",
+		"d": "23:04"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "23:04",
+		"d": "23:05"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:08",
+		"d": "23:09"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "23:09",
+		"d": "23:10"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "23:10",
+		"d": "23:11"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "23:13"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT4136.Weekday",
 	"t": "Toei.Arakawa.ODPT4136",
 	"r": "Toei.Arakawa",
@@ -32531,6 +32227,210 @@
 		"a": "23:25"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT4173.Weekday",
+	"t": "Toei.Arakawa.ODPT4173",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4173",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.Waseda"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Waseda",
+		"d": "23:04"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "23:04",
+		"d": "23:05"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "23:06",
+		"d": "23:07"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "23:07",
+		"d": "23:08"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "23:08",
+		"d": "23:09"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "23:11",
+		"d": "23:12"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "23:13",
+		"d": "23:14"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "23:16",
+		"d": "23:17"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "23:17",
+		"d": "23:18"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "23:18",
+		"d": "23:19"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "23:19",
+		"d": "23:20"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "23:21",
+		"d": "23:22"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "23:22",
+		"d": "23:23"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "23:23",
+		"d": "23:24"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "23:28",
+		"d": "23:29"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "23:29",
+		"d": "23:30"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "23:30",
+		"d": "23:31"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:34"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4193.Weekday",
+	"t": "Toei.Arakawa.ODPT4193",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4193",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.OtsukaEkimae"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"d": "23:11"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "23:11",
+		"d": "23:12"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "23:12",
+		"d": "23:13"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "23:13",
+		"d": "23:14"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "23:15",
+		"d": "23:16"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "23:16",
+		"d": "23:17"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "23:17",
+		"d": "23:18"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "23:23",
+		"d": "23:24"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "23:24",
+		"d": "23:25"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "23:25",
+		"d": "23:26"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:29"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4201.Weekday",
+	"t": "Toei.Arakawa.ODPT4201",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4201",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "23:14"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "23:14",
+		"d": "23:15"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "23:15",
+		"d": "23:16"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "23:17",
+		"d": "23:18"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "23:18",
+		"d": "23:19"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "23:20",
+		"d": "23:21"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "23:21",
+		"d": "23:22"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "23:22",
+		"d": "23:23"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "23:24",
+		"d": "23:25"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "23:25",
+		"d": "23:26"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "23:27",
+		"d": "23:28"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "23:28",
+		"d": "23:30"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:33"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT4237.Weekday",
 	"t": "Toei.Arakawa.ODPT4237",
 	"r": "Toei.Arakawa",
@@ -32557,6 +32457,50 @@
 	}, {
 		"s": "Toei.Arakawa.ArakawaShakomae",
 		"a": "23:33"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT5226.Weekday",
+	"t": "Toei.Arakawa.ODPT5226",
+	"r": "Toei.Arakawa",
+	"n": "ODPT5226",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.MachiyaEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "05:31"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "05:31",
+		"d": "05:32"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "05:33",
+		"d": "05:34"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "05:34",
+		"d": "05:35"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "05:38",
+		"d": "05:39"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "05:39",
+		"d": "05:40"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "05:40",
+		"d": "05:41"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "05:44"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT5227.Weekday",
@@ -33079,50 +33023,6 @@
 		"a": "07:30"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT5238.Weekday",
-	"t": "Toei.Arakawa.ODPT5238",
-	"r": "Toei.Arakawa",
-	"n": "ODPT5238",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.MachiyaEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "07:14"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "07:14",
-		"d": "07:15"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "07:16",
-		"d": "07:17"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "07:17",
-		"d": "07:18"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "07:21",
-		"d": "07:22"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "07:22",
-		"d": "07:23"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "07:23",
-		"d": "07:24"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "07:27"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT5233.Weekday",
 	"t": "Toei.Arakawa.ODPT5233",
 	"r": "Toei.Arakawa",
@@ -33631,6 +33531,50 @@
 		"a": "07:50"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT5238.Weekday",
+	"t": "Toei.Arakawa.ODPT5238",
+	"r": "Toei.Arakawa",
+	"n": "ODPT5238",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.MachiyaEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "07:14"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "07:14",
+		"d": "07:15"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "07:16",
+		"d": "07:17"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "07:17",
+		"d": "07:18"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "07:21",
+		"d": "07:22"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "07:22",
+		"d": "07:23"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "07:23",
+		"d": "07:24"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "07:27"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT5239.Weekday",
 	"t": "Toei.Arakawa.ODPT5239",
 	"r": "Toei.Arakawa",
@@ -33799,32 +33743,60 @@
 		"a": "08:18"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT5460.Weekday",
-	"t": "Toei.Arakawa.ODPT5460",
+	"id": "Toei.Arakawa.ODPT5244.Weekday",
+	"t": "Toei.Arakawa.ODPT5244",
 	"r": "Toei.Arakawa",
-	"n": "ODPT5460",
+	"n": "ODPT5244",
 	"y": "Toei.Local",
 	"d": "Toei.Minowabashi",
 	"os": [
-		"Toei.Arakawa.OjiEkimae"
+		"Toei.Arakawa.OtsukaEkimae"
 	],
 	"ds": [
 		"Toei.Arakawa.ArakawaShakomae"
 	],
 	"tt": [{
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"d": "08:24"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "08:24",
+		"d": "08:25"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "08:25",
+		"d": "08:26"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "08:26",
+		"d": "08:27"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "08:29",
+		"d": "08:30"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "08:30",
+		"d": "08:31"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "08:31",
+		"d": "08:32"
+	}, {
 		"s": "Toei.Arakawa.OjiEkimae",
-		"d": "23:16"
+		"a": "08:39",
+		"d": "08:40"
 	}, {
 		"s": "Toei.Arakawa.Sakaecho",
-		"a": "23:16",
-		"d": "23:17"
+		"a": "08:40",
+		"d": "08:41"
 	}, {
 		"s": "Toei.Arakawa.Kajiwara",
-		"a": "23:17",
-		"d": "23:18"
+		"a": "08:41",
+		"d": "08:42"
 	}, {
 		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:21"
+		"a": "08:45"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT5253.Weekday",
@@ -46111,48 +46083,32 @@
 		"a": "20:00"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT0293.Saturday",
-	"t": "Toei.Arakawa.ODPT0293",
+	"id": "Toei.Arakawa.ODPT5460.Weekday",
+	"t": "Toei.Arakawa.ODPT5460",
 	"r": "Toei.Arakawa",
-	"n": "ODPT0293",
+	"n": "ODPT5460",
 	"y": "Toei.Local",
 	"d": "Toei.Minowabashi",
 	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
+		"Toei.Arakawa.OjiEkimae"
 	],
 	"ds": [
-		"Toei.Arakawa.MachiyaEkimae"
+		"Toei.Arakawa.ArakawaShakomae"
 	],
 	"tt": [{
+		"s": "Toei.Arakawa.OjiEkimae",
+		"d": "23:16"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "23:16",
+		"d": "23:17"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "23:17",
+		"d": "23:18"
+	}, {
 		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "06:42"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "06:42",
-		"d": "06:43"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "06:44",
-		"d": "06:45"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "06:45",
-		"d": "06:46"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "06:49",
-		"d": "06:50"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "06:50",
-		"d": "06:51"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "06:51",
-		"d": "06:52"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "06:55"
+		"a": "23:21"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0059.Saturday",
@@ -47687,90 +47643,6 @@
 		"a": "07:09"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT0252.Saturday",
-	"t": "Toei.Arakawa.ODPT0252",
-	"r": "Toei.Arakawa",
-	"n": "ODPT0252",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.Waseda"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "06:32"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "06:32",
-		"d": "06:33"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "06:33",
-		"d": "06:34"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "06:36",
-		"d": "06:37"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "06:38",
-		"d": "06:39"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "06:39",
-		"d": "06:40"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "06:41",
-		"d": "06:42"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "06:42",
-		"d": "06:43"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "06:43",
-		"d": "06:44"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "06:45",
-		"d": "06:46"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "06:49",
-		"d": "06:50"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "06:50",
-		"d": "06:51"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "06:53",
-		"d": "06:54"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "06:54",
-		"d": "06:55"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "06:55",
-		"d": "06:56"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "06:57",
-		"d": "06:58"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "06:59",
-		"d": "07:00"
-	}, {
-		"s": "Toei.Arakawa.Waseda",
-		"a": "07:02"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0238.Saturday",
 	"t": "Toei.Arakawa.ODPT0238",
 	"r": "Toei.Arakawa",
@@ -47901,6 +47773,90 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "07:24"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT0252.Saturday",
+	"t": "Toei.Arakawa.ODPT0252",
+	"r": "Toei.Arakawa",
+	"n": "ODPT0252",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.Waseda"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "06:32"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "06:32",
+		"d": "06:33"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "06:33",
+		"d": "06:34"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "06:36",
+		"d": "06:37"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "06:38",
+		"d": "06:39"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "06:39",
+		"d": "06:40"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "06:41",
+		"d": "06:42"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "06:42",
+		"d": "06:43"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "06:43",
+		"d": "06:44"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "06:45",
+		"d": "06:46"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "06:49",
+		"d": "06:50"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "06:50",
+		"d": "06:51"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "06:53",
+		"d": "06:54"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "06:54",
+		"d": "06:55"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "06:55",
+		"d": "06:56"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "06:57",
+		"d": "06:58"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "06:59",
+		"d": "07:00"
+	}, {
+		"s": "Toei.Arakawa.Waseda",
+		"a": "07:02"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0256.Saturday",
@@ -48229,6 +48185,50 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "07:39"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT0293.Saturday",
+	"t": "Toei.Arakawa.ODPT0293",
+	"r": "Toei.Arakawa",
+	"n": "ODPT0293",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.MachiyaEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "06:42"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "06:42",
+		"d": "06:43"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "06:44",
+		"d": "06:45"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "06:45",
+		"d": "06:46"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "06:49",
+		"d": "06:50"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "06:50",
+		"d": "06:51"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "06:51",
+		"d": "06:52"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "06:55"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0301.Saturday",
@@ -50369,90 +50369,6 @@
 	}, {
 		"s": "Toei.Arakawa.Waseda",
 		"a": "08:22"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT4128.Saturday",
-	"t": "Toei.Arakawa.ODPT4128",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4128",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.Waseda"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Waseda",
-		"d": "22:48"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "22:48",
-		"d": "22:49"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "22:50",
-		"d": "22:51"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "22:51",
-		"d": "22:52"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "22:53",
-		"d": "22:54"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "22:55",
-		"d": "22:56"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "22:57",
-		"d": "22:58"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "23:01",
-		"d": "23:02"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "23:02",
-		"d": "23:03"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "23:03",
-		"d": "23:04"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "23:04",
-		"d": "23:05"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "23:06",
-		"d": "23:08"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "23:08",
-		"d": "23:09"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "23:09",
-		"d": "23:10"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "23:15",
-		"d": "23:16"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "23:16",
-		"d": "23:17"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "23:17",
-		"d": "23:18"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:21"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0521.Saturday",
@@ -52643,90 +52559,6 @@
 		"a": "09:07"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT4173.Saturday",
-	"t": "Toei.Arakawa.ODPT4173",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4173",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.Waseda"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Waseda",
-		"d": "23:04"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "23:04",
-		"d": "23:05"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "23:06",
-		"d": "23:07"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "23:07",
-		"d": "23:08"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "23:08",
-		"d": "23:09"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "23:11",
-		"d": "23:12"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "23:13",
-		"d": "23:14"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "23:16",
-		"d": "23:17"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "23:17",
-		"d": "23:18"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "23:18",
-		"d": "23:19"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "23:19",
-		"d": "23:20"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "23:21",
-		"d": "23:22"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "23:22",
-		"d": "23:23"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "23:23",
-		"d": "23:24"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "23:28",
-		"d": "23:29"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "23:29",
-		"d": "23:30"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "23:30",
-		"d": "23:31"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:34"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0765.Saturday",
 	"t": "Toei.Arakawa.ODPT0765",
 	"r": "Toei.Arakawa",
@@ -53387,62 +53219,6 @@
 		"a": "09:23"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT4193.Saturday",
-	"t": "Toei.Arakawa.ODPT4193",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4193",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.OtsukaEkimae"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"d": "23:11"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "23:11",
-		"d": "23:12"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "23:12",
-		"d": "23:13"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "23:13",
-		"d": "23:14"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "23:15",
-		"d": "23:16"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "23:16",
-		"d": "23:17"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "23:17",
-		"d": "23:18"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "23:23",
-		"d": "23:24"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "23:24",
-		"d": "23:25"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "23:25",
-		"d": "23:26"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:29"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0834.Saturday",
 	"t": "Toei.Arakawa.ODPT0834",
 	"r": "Toei.Arakawa",
@@ -53969,70 +53745,6 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "09:33"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT4201.Saturday",
-	"t": "Toei.Arakawa.ODPT4201",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4201",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "23:14"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "23:14",
-		"d": "23:15"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "23:15",
-		"d": "23:16"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "23:17",
-		"d": "23:18"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "23:18",
-		"d": "23:19"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "23:20",
-		"d": "23:21"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "23:21",
-		"d": "23:22"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "23:22",
-		"d": "23:23"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "23:24",
-		"d": "23:25"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "23:25",
-		"d": "23:26"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "23:27",
-		"d": "23:28"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "23:28",
-		"d": "23:30"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:33"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0893.Saturday",
@@ -59705,82 +59417,6 @@
 	}, {
 		"s": "Toei.Arakawa.Waseda",
 		"a": "16:48"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT3140.Saturday",
-	"t": "Toei.Arakawa.ODPT3140",
-	"r": "Toei.Arakawa",
-	"n": "ODPT3140",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.OjiEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "18:27"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "18:27",
-		"d": "18:28"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "18:28",
-		"d": "18:29"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "18:29",
-		"d": "18:30"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "18:30",
-		"d": "18:31"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "18:34",
-		"d": "18:35"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "18:35",
-		"d": "18:36"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "18:36",
-		"d": "18:37"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "18:39",
-		"d": "18:40"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "18:40",
-		"d": "18:41"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "18:42",
-		"d": "18:43"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "18:43",
-		"d": "18:44"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "18:48",
-		"d": "18:49"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "18:49",
-		"d": "18:50"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "18:50",
-		"d": "18:51"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "18:54"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT2446.Saturday",
@@ -66383,70 +66019,6 @@
 		"a": "19:20"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT3452.Saturday",
-	"t": "Toei.Arakawa.ODPT3452",
-	"r": "Toei.Arakawa",
-	"n": "ODPT3452",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "19:40"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "19:40",
-		"d": "19:41"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "19:41",
-		"d": "19:42"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "19:42",
-		"d": "19:43"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "19:43",
-		"d": "19:44"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "19:47",
-		"d": "19:48"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "19:48",
-		"d": "19:49"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "19:49",
-		"d": "19:50"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "19:52",
-		"d": "19:53"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "19:53",
-		"d": "19:54"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "19:55",
-		"d": "19:56"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "19:56",
-		"d": "19:57"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "20:01"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT3126.Saturday",
 	"t": "Toei.Arakawa.ODPT3126",
 	"r": "Toei.Arakawa",
@@ -66577,6 +66149,82 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "19:22"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT3140.Saturday",
+	"t": "Toei.Arakawa.ODPT3140",
+	"r": "Toei.Arakawa",
+	"n": "ODPT3140",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.OjiEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "18:27"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "18:27",
+		"d": "18:28"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "18:28",
+		"d": "18:29"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "18:29",
+		"d": "18:30"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "18:30",
+		"d": "18:31"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "18:34",
+		"d": "18:35"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "18:35",
+		"d": "18:36"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "18:36",
+		"d": "18:37"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "18:39",
+		"d": "18:40"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "18:40",
+		"d": "18:41"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "18:42",
+		"d": "18:43"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "18:43",
+		"d": "18:44"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "18:48",
+		"d": "18:49"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "18:49",
+		"d": "18:50"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "18:50",
+		"d": "18:51"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "18:54"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT3156.Saturday",
@@ -69251,6 +68899,70 @@
 		"a": "20:31"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT3452.Saturday",
+	"t": "Toei.Arakawa.ODPT3452",
+	"r": "Toei.Arakawa",
+	"n": "ODPT3452",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "19:40"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "19:40",
+		"d": "19:41"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "19:41",
+		"d": "19:42"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "19:42",
+		"d": "19:43"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "19:43",
+		"d": "19:44"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "19:47",
+		"d": "19:48"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "19:48",
+		"d": "19:49"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "19:49",
+		"d": "19:50"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "19:52",
+		"d": "19:53"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "19:53",
+		"d": "19:54"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "19:55",
+		"d": "19:56"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "19:56",
+		"d": "19:57"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "20:01"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT3471.Saturday",
 	"t": "Toei.Arakawa.ODPT3471",
 	"r": "Toei.Arakawa",
@@ -71107,110 +70819,6 @@
 		"a": "21:37"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT4077.Saturday",
-	"t": "Toei.Arakawa.ODPT4077",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4077",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.OtsukaEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "22:30"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "22:30",
-		"d": "22:31"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "22:31",
-		"d": "22:32"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "22:32",
-		"d": "22:33"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "22:33",
-		"d": "22:34"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "22:36",
-		"d": "22:37"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "22:37",
-		"d": "22:38"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "22:38",
-		"d": "22:39"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "22:41",
-		"d": "22:42"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "22:42",
-		"d": "22:43"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "22:44",
-		"d": "22:45"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "22:45",
-		"d": "22:46"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "22:49",
-		"d": "22:50"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "22:50",
-		"d": "22:51"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "22:51",
-		"d": "22:52"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "22:54",
-		"d": "22:55"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "22:56",
-		"d": "22:57"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "22:57",
-		"d": "22:58"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "22:59",
-		"d": "23:00"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "23:00",
-		"d": "23:01"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "23:01",
-		"d": "23:02"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "23:03",
-		"d": "23:05"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "23:07"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT3722.Saturday",
 	"t": "Toei.Arakawa.ODPT3722",
 	"r": "Toei.Arakawa",
@@ -71341,70 +70949,6 @@
 	}, {
 		"s": "Toei.Arakawa.Waseda",
 		"a": "21:37"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT4108.Saturday",
-	"t": "Toei.Arakawa.ODPT4108",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4108",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "22:40"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "22:40",
-		"d": "22:41"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "22:41",
-		"d": "22:42"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "22:42",
-		"d": "22:43"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "22:43",
-		"d": "22:44"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "22:46",
-		"d": "22:47"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "22:47",
-		"d": "22:48"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "22:48",
-		"d": "22:49"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "22:51",
-		"d": "22:52"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "22:52",
-		"d": "22:53"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "22:54",
-		"d": "22:55"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "22:55",
-		"d": "22:56"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "22:59"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT3748.Saturday",
@@ -73631,6 +73175,110 @@
 		"a": "22:39"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT4077.Saturday",
+	"t": "Toei.Arakawa.ODPT4077",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4077",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.OtsukaEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "22:30"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "22:30",
+		"d": "22:31"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "22:31",
+		"d": "22:32"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "22:32",
+		"d": "22:33"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "22:33",
+		"d": "22:34"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "22:36",
+		"d": "22:37"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "22:37",
+		"d": "22:38"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "22:38",
+		"d": "22:39"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "22:41",
+		"d": "22:42"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "22:42",
+		"d": "22:43"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "22:44",
+		"d": "22:45"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "22:45",
+		"d": "22:46"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "22:49",
+		"d": "22:50"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "22:50",
+		"d": "22:51"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "22:51",
+		"d": "22:52"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "22:54",
+		"d": "22:55"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "22:56",
+		"d": "22:57"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "22:57",
+		"d": "22:58"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "22:59",
+		"d": "23:00"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "23:00",
+		"d": "23:01"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "23:01",
+		"d": "23:02"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "23:03",
+		"d": "23:05"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "23:07"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT4081.Saturday",
 	"t": "Toei.Arakawa.ODPT4081",
 	"r": "Toei.Arakawa",
@@ -73741,6 +73389,154 @@
 	}, {
 		"s": "Toei.Arakawa.ArakawaShakomae",
 		"a": "23:09"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4108.Saturday",
+	"t": "Toei.Arakawa.ODPT4108",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4108",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "22:40"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "22:40",
+		"d": "22:41"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "22:41",
+		"d": "22:42"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "22:42",
+		"d": "22:43"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "22:43",
+		"d": "22:44"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "22:46",
+		"d": "22:47"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "22:47",
+		"d": "22:48"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "22:48",
+		"d": "22:49"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "22:51",
+		"d": "22:52"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "22:52",
+		"d": "22:53"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "22:54",
+		"d": "22:55"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "22:55",
+		"d": "22:56"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "22:59"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4128.Saturday",
+	"t": "Toei.Arakawa.ODPT4128",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4128",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.Waseda"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Waseda",
+		"d": "22:48"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "22:48",
+		"d": "22:49"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "22:50",
+		"d": "22:51"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "22:51",
+		"d": "22:52"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "22:53",
+		"d": "22:54"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "22:55",
+		"d": "22:56"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "22:57",
+		"d": "22:58"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "23:01",
+		"d": "23:02"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "23:02",
+		"d": "23:03"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "23:03",
+		"d": "23:04"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "23:04",
+		"d": "23:05"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "23:06",
+		"d": "23:08"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "23:08",
+		"d": "23:09"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "23:09",
+		"d": "23:10"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "23:15",
+		"d": "23:16"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "23:16",
+		"d": "23:17"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "23:17",
+		"d": "23:18"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:21"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT4138.Saturday",
@@ -73893,6 +73689,210 @@
 	}, {
 		"s": "Toei.Arakawa.OjiEkimae",
 		"a": "23:25"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4173.Saturday",
+	"t": "Toei.Arakawa.ODPT4173",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4173",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.Waseda"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Waseda",
+		"d": "23:04"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "23:04",
+		"d": "23:05"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "23:06",
+		"d": "23:07"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "23:07",
+		"d": "23:08"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "23:08",
+		"d": "23:09"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "23:11",
+		"d": "23:12"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "23:13",
+		"d": "23:14"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "23:16",
+		"d": "23:17"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "23:17",
+		"d": "23:18"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "23:18",
+		"d": "23:19"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "23:19",
+		"d": "23:20"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "23:21",
+		"d": "23:22"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "23:22",
+		"d": "23:23"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "23:23",
+		"d": "23:24"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "23:28",
+		"d": "23:29"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "23:29",
+		"d": "23:30"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "23:30",
+		"d": "23:31"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:34"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4193.Saturday",
+	"t": "Toei.Arakawa.ODPT4193",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4193",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.OtsukaEkimae"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"d": "23:11"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "23:11",
+		"d": "23:12"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "23:12",
+		"d": "23:13"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "23:13",
+		"d": "23:14"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "23:15",
+		"d": "23:16"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "23:16",
+		"d": "23:17"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "23:17",
+		"d": "23:18"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "23:23",
+		"d": "23:24"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "23:24",
+		"d": "23:25"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "23:25",
+		"d": "23:26"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:29"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4201.Saturday",
+	"t": "Toei.Arakawa.ODPT4201",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4201",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "23:14"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "23:14",
+		"d": "23:15"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "23:15",
+		"d": "23:16"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "23:17",
+		"d": "23:18"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "23:18",
+		"d": "23:19"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "23:20",
+		"d": "23:21"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "23:21",
+		"d": "23:22"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "23:22",
+		"d": "23:23"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "23:24",
+		"d": "23:25"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "23:25",
+		"d": "23:26"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "23:27",
+		"d": "23:28"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "23:28",
+		"d": "23:30"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:33"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT4212.Saturday",
@@ -88183,90 +88183,6 @@
 		"a": "06:38"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT0127.Holiday",
-	"t": "Toei.Arakawa.ODPT0127",
-	"r": "Toei.Arakawa",
-	"n": "ODPT0127",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.Waseda"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "05:53"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "05:53",
-		"d": "05:54"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "05:54",
-		"d": "05:55"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "05:57",
-		"d": "05:58"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "05:59",
-		"d": "06:00"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "06:00",
-		"d": "06:01"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "06:02",
-		"d": "06:03"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "06:03",
-		"d": "06:04"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "06:04",
-		"d": "06:05"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "06:06",
-		"d": "06:07"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "06:10",
-		"d": "06:11"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "06:11",
-		"d": "06:12"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "06:14",
-		"d": "06:15"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "06:15",
-		"d": "06:16"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "06:16",
-		"d": "06:17"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "06:18",
-		"d": "06:19"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "06:20",
-		"d": "06:21"
-	}, {
-		"s": "Toei.Arakawa.Waseda",
-		"a": "06:23"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0112.Holiday",
 	"t": "Toei.Arakawa.ODPT0112",
 	"r": "Toei.Arakawa",
@@ -88445,6 +88361,90 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "06:16"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT0127.Holiday",
+	"t": "Toei.Arakawa.ODPT0127",
+	"r": "Toei.Arakawa",
+	"n": "ODPT0127",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.Waseda"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "05:53"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "05:53",
+		"d": "05:54"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "05:54",
+		"d": "05:55"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "05:57",
+		"d": "05:58"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "05:59",
+		"d": "06:00"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "06:00",
+		"d": "06:01"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "06:02",
+		"d": "06:03"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "06:03",
+		"d": "06:04"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "06:04",
+		"d": "06:05"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "06:06",
+		"d": "06:07"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "06:10",
+		"d": "06:11"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "06:11",
+		"d": "06:12"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "06:14",
+		"d": "06:15"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "06:15",
+		"d": "06:16"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "06:16",
+		"d": "06:17"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "06:18",
+		"d": "06:19"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "06:20",
+		"d": "06:21"
+	}, {
+		"s": "Toei.Arakawa.Waseda",
+		"a": "06:23"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0140.Holiday",
@@ -90387,82 +90387,6 @@
 		"a": "08:07"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT0719.Holiday",
-	"t": "Toei.Arakawa.ODPT0719",
-	"r": "Toei.Arakawa",
-	"n": "ODPT0719",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.OjiEkimae"
-	],
-	"ds": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.OjiEkimae",
-		"d": "08:07"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "08:07",
-		"d": "08:08"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "08:08",
-		"d": "08:09"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "08:12",
-		"d": "08:13"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "08:13",
-		"d": "08:14"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "08:15",
-		"d": "08:16"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "08:16",
-		"d": "08:17"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "08:22",
-		"d": "08:23"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "08:23",
-		"d": "08:24"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "08:24",
-		"d": "08:25"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "08:28",
-		"d": "08:29"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "08:29",
-		"d": "08:30"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "08:30",
-		"d": "08:31"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "08:31",
-		"d": "08:32"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "08:32",
-		"d": "08:33"
-	}, {
-		"s": "Toei.Arakawa.Minowabashi",
-		"a": "08:35"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0433.Holiday",
 	"t": "Toei.Arakawa.ODPT0433",
 	"r": "Toei.Arakawa",
@@ -90621,82 +90545,6 @@
 	}, {
 		"s": "Toei.Arakawa.Waseda",
 		"a": "08:10"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT2991.Holiday",
-	"t": "Toei.Arakawa.ODPT2991",
-	"r": "Toei.Arakawa",
-	"n": "ODPT2991",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.OjiEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "17:55"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "17:55",
-		"d": "17:56"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "17:56",
-		"d": "17:57"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "17:57",
-		"d": "17:58"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "17:58",
-		"d": "17:59"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "18:02",
-		"d": "18:03"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "18:03",
-		"d": "18:04"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "18:04",
-		"d": "18:05"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "18:07",
-		"d": "18:08"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "18:08",
-		"d": "18:09"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "18:10",
-		"d": "18:11"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "18:11",
-		"d": "18:12"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "18:16",
-		"d": "18:17"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "18:17",
-		"d": "18:18"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "18:18",
-		"d": "18:19"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "18:22"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0482.Holiday",
@@ -91811,82 +91659,6 @@
 		"a": "08:50"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT4131.Holiday",
-	"t": "Toei.Arakawa.ODPT4131",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4131",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.OjiEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "22:49"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "22:49",
-		"d": "22:50"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "22:50",
-		"d": "22:51"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "22:51",
-		"d": "22:52"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "22:52",
-		"d": "22:53"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "22:55",
-		"d": "22:56"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "22:56",
-		"d": "22:57"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "22:57",
-		"d": "22:58"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "23:00",
-		"d": "23:01"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "23:01",
-		"d": "23:02"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "23:03",
-		"d": "23:04"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "23:04",
-		"d": "23:05"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:08",
-		"d": "23:09"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "23:09",
-		"d": "23:10"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "23:10",
-		"d": "23:11"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "23:13"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0654.Holiday",
 	"t": "Toei.Arakawa.ODPT0654",
 	"r": "Toei.Arakawa",
@@ -92387,88 +92159,80 @@
 		"a": "09:00"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT4173.Holiday",
-	"t": "Toei.Arakawa.ODPT4173",
+	"id": "Toei.Arakawa.ODPT0719.Holiday",
+	"t": "Toei.Arakawa.ODPT0719",
 	"r": "Toei.Arakawa",
-	"n": "ODPT4173",
+	"n": "ODPT0719",
 	"y": "Toei.Local",
 	"d": "Toei.Minowabashi",
 	"os": [
-		"Toei.Arakawa.Waseda"
+		"Toei.Arakawa.OjiEkimae"
 	],
 	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
+		"Toei.Arakawa.Minowabashi"
 	],
 	"tt": [{
-		"s": "Toei.Arakawa.Waseda",
-		"d": "23:04"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "23:04",
-		"d": "23:05"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "23:06",
-		"d": "23:07"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "23:07",
-		"d": "23:08"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "23:08",
-		"d": "23:09"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "23:11",
-		"d": "23:12"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "23:13",
-		"d": "23:14"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "23:16",
-		"d": "23:17"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "23:17",
-		"d": "23:18"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "23:18",
-		"d": "23:19"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "23:19",
-		"d": "23:20"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "23:21",
-		"d": "23:22"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "23:22",
-		"d": "23:23"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "23:23",
-		"d": "23:24"
-	}, {
 		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "23:28",
-		"d": "23:29"
+		"d": "08:07"
 	}, {
 		"s": "Toei.Arakawa.Sakaecho",
-		"a": "23:29",
-		"d": "23:30"
+		"a": "08:07",
+		"d": "08:08"
 	}, {
 		"s": "Toei.Arakawa.Kajiwara",
-		"a": "23:30",
-		"d": "23:31"
+		"a": "08:08",
+		"d": "08:09"
 	}, {
 		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:34"
+		"a": "08:12",
+		"d": "08:13"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "08:13",
+		"d": "08:14"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "08:15",
+		"d": "08:16"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "08:16",
+		"d": "08:17"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "08:22",
+		"d": "08:23"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "08:23",
+		"d": "08:24"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "08:24",
+		"d": "08:25"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "08:28",
+		"d": "08:29"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "08:29",
+		"d": "08:30"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "08:30",
+		"d": "08:31"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "08:31",
+		"d": "08:32"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "08:32",
+		"d": "08:33"
+	}, {
+		"s": "Toei.Arakawa.Minowabashi",
+		"a": "08:35"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0739.Holiday",
@@ -92999,62 +92763,6 @@
 		"a": "09:20"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT4193.Holiday",
-	"t": "Toei.Arakawa.ODPT4193",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4193",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.OtsukaEkimae"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"d": "23:11"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "23:11",
-		"d": "23:12"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "23:12",
-		"d": "23:13"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "23:13",
-		"d": "23:14"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "23:15",
-		"d": "23:16"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "23:16",
-		"d": "23:17"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "23:17",
-		"d": "23:18"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "23:23",
-		"d": "23:24"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "23:24",
-		"d": "23:25"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "23:25",
-		"d": "23:26"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:29"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT0826.Holiday",
 	"t": "Toei.Arakawa.ODPT0826",
 	"r": "Toei.Arakawa",
@@ -93449,70 +93157,6 @@
 	}, {
 		"s": "Toei.Arakawa.Waseda",
 		"a": "09:33"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT4201.Holiday",
-	"t": "Toei.Arakawa.ODPT4201",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4201",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "23:14"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "23:14",
-		"d": "23:15"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "23:15",
-		"d": "23:16"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "23:17",
-		"d": "23:18"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "23:18",
-		"d": "23:19"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "23:20",
-		"d": "23:21"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "23:21",
-		"d": "23:22"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "23:22",
-		"d": "23:23"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "23:24",
-		"d": "23:25"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "23:25",
-		"d": "23:26"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "23:27",
-		"d": "23:28"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "23:29",
-		"d": "23:30"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:33"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT0874.Holiday",
@@ -94307,90 +93951,6 @@
 		"a": "09:57"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT5245.Holiday",
-	"t": "Toei.Arakawa.ODPT5245",
-	"r": "Toei.Arakawa",
-	"n": "ODPT5245",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.Waseda"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "08:33"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "08:33",
-		"d": "08:34"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "08:34",
-		"d": "08:35"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "08:38",
-		"d": "08:39"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "08:40",
-		"d": "08:41"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "08:41",
-		"d": "08:42"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "08:44",
-		"d": "08:45"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "08:45",
-		"d": "08:46"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "08:46",
-		"d": "08:47"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "08:48",
-		"d": "08:49"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "08:54",
-		"d": "08:55"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "08:55",
-		"d": "08:56"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "08:58",
-		"d": "08:59"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "08:59",
-		"d": "09:00"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "09:00",
-		"d": "09:01"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "09:02",
-		"d": "09:03"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "09:04",
-		"d": "09:05"
-	}, {
-		"s": "Toei.Arakawa.Waseda",
-		"a": "09:07"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT1003.Holiday",
 	"t": "Toei.Arakawa.ODPT1003",
 	"r": "Toei.Arakawa",
@@ -94523,70 +94083,6 @@
 		"a": "10:03"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT5246.Holiday",
-	"t": "Toei.Arakawa.ODPT5246",
-	"r": "Toei.Arakawa",
-	"n": "ODPT5246",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "08:52"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "08:52",
-		"d": "08:53"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "08:54",
-		"d": "08:55"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "08:55",
-		"d": "08:56"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "09:01",
-		"d": "09:02"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "09:02",
-		"d": "09:03"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "09:03",
-		"d": "09:04"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "09:07",
-		"d": "09:08"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "09:08",
-		"d": "09:09"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "09:09",
-		"d": "09:10"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "09:10",
-		"d": "09:11"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "09:11",
-		"d": "09:12"
-	}, {
-		"s": "Toei.Arakawa.Minowabashi",
-		"a": "09:14"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT1014.Holiday",
 	"t": "Toei.Arakawa.ODPT1014",
 	"r": "Toei.Arakawa",
@@ -94717,90 +94213,6 @@
 	}, {
 		"s": "Toei.Arakawa.Waseda",
 		"a": "10:03"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT5247.Holiday",
-	"t": "Toei.Arakawa.ODPT5247",
-	"r": "Toei.Arakawa",
-	"n": "ODPT5247",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.Waseda"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "09:04"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "09:04",
-		"d": "09:05"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "09:05",
-		"d": "09:06"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "09:09",
-		"d": "09:10"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "09:11",
-		"d": "09:12"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "09:12",
-		"d": "09:13"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "09:15",
-		"d": "09:16"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "09:16",
-		"d": "09:17"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "09:17",
-		"d": "09:18"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "09:19",
-		"d": "09:20"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "09:26",
-		"d": "09:27"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "09:27",
-		"d": "09:28"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "09:30",
-		"d": "09:31"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "09:31",
-		"d": "09:32"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "09:32",
-		"d": "09:33"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "09:34",
-		"d": "09:35"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "09:36",
-		"d": "09:37"
-	}, {
-		"s": "Toei.Arakawa.Waseda",
-		"a": "09:39"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT1042.Holiday",
@@ -95331,50 +94743,6 @@
 		"a": "10:21"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT5248.Holiday",
-	"t": "Toei.Arakawa.ODPT5248",
-	"r": "Toei.Arakawa",
-	"n": "ODPT5248",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.MachiyaEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "09:09"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "09:09",
-		"d": "09:10"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "09:11",
-		"d": "09:12"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "09:12",
-		"d": "09:13"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "09:17",
-		"d": "09:18"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "09:18",
-		"d": "09:19"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "09:19",
-		"d": "09:20"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "09:25"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT1113.Holiday",
 	"t": "Toei.Arakawa.ODPT1113",
 	"r": "Toei.Arakawa",
@@ -95617,70 +94985,6 @@
 	}, {
 		"s": "Toei.Arakawa.Minowabashi",
 		"a": "10:25"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT5250.Holiday",
-	"t": "Toei.Arakawa.ODPT5250",
-	"r": "Toei.Arakawa",
-	"n": "ODPT5250",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"ds": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"d": "09:28"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "09:28",
-		"d": "09:29"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "09:30",
-		"d": "09:31"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "09:31",
-		"d": "09:32"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "09:35",
-		"d": "09:36"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "09:36",
-		"d": "09:37"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "09:37",
-		"d": "09:38"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "09:41",
-		"d": "09:42"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "09:42",
-		"d": "09:43"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "09:43",
-		"d": "09:44"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "09:44",
-		"d": "09:45"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "09:45",
-		"d": "09:46"
-	}, {
-		"s": "Toei.Arakawa.Minowabashi",
-		"a": "09:48"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT1122.Holiday",
@@ -104527,6 +103831,82 @@
 		"a": "18:49"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT2991.Holiday",
+	"t": "Toei.Arakawa.ODPT2991",
+	"r": "Toei.Arakawa",
+	"n": "ODPT2991",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.OjiEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "17:55"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "17:55",
+		"d": "17:56"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "17:56",
+		"d": "17:57"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "17:57",
+		"d": "17:58"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "17:58",
+		"d": "17:59"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "18:02",
+		"d": "18:03"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "18:03",
+		"d": "18:04"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "18:04",
+		"d": "18:05"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "18:07",
+		"d": "18:08"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "18:08",
+		"d": "18:09"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "18:10",
+		"d": "18:11"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "18:11",
+		"d": "18:12"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "18:16",
+		"d": "18:17"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "18:17",
+		"d": "18:18"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "18:18",
+		"d": "18:19"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "18:22"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT2997.Holiday",
 	"t": "Toei.Arakawa.ODPT2997",
 	"r": "Toei.Arakawa",
@@ -106633,70 +106013,6 @@
 	}, {
 		"s": "Toei.Arakawa.ArakawaShakomae",
 		"a": "19:06"
-	}]
-}, {
-	"id": "Toei.Arakawa.ODPT3519.Holiday",
-	"t": "Toei.Arakawa.ODPT3519",
-	"r": "Toei.Arakawa",
-	"n": "ODPT3519",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "19:56"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "19:56",
-		"d": "19:57"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "19:57",
-		"d": "19:58"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "19:58",
-		"d": "19:59"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "19:59",
-		"d": "20:00"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "20:03",
-		"d": "20:04"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "20:04",
-		"d": "20:05"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "20:05",
-		"d": "20:06"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "20:08",
-		"d": "20:09"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "20:09",
-		"d": "20:10"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "20:11",
-		"d": "20:12"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "20:12",
-		"d": "20:13"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "20:17"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT3229.Holiday",
@@ -109109,6 +108425,70 @@
 	}, {
 		"s": "Toei.Arakawa.ArakawaShakomae",
 		"a": "20:30"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT3519.Holiday",
+	"t": "Toei.Arakawa.ODPT3519",
+	"r": "Toei.Arakawa",
+	"n": "ODPT3519",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "19:56"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "19:56",
+		"d": "19:57"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "19:57",
+		"d": "19:58"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "19:58",
+		"d": "19:59"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "19:59",
+		"d": "20:00"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "20:03",
+		"d": "20:04"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "20:04",
+		"d": "20:05"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "20:05",
+		"d": "20:06"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "20:08",
+		"d": "20:09"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "20:09",
+		"d": "20:10"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "20:11",
+		"d": "20:12"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "20:12",
+		"d": "20:13"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "20:17"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT3542.Holiday",
@@ -112027,110 +111407,6 @@
 		"a": "22:42"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT4077.Holiday",
-	"t": "Toei.Arakawa.ODPT4077",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4077",
-	"y": "Toei.Local",
-	"d": "Toei.Waseda",
-	"os": [
-		"Toei.Arakawa.Minowabashi"
-	],
-	"ds": [
-		"Toei.Arakawa.OtsukaEkimae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Minowabashi",
-		"d": "22:30"
-	}, {
-		"s": "Toei.Arakawa.ArakawaItchumae",
-		"a": "22:30",
-		"d": "22:31"
-	}, {
-		"s": "Toei.Arakawa.Arakawakuyakushomae",
-		"a": "22:31",
-		"d": "22:32"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNichome",
-		"a": "22:32",
-		"d": "22:33"
-	}, {
-		"s": "Toei.Arakawa.ArakawaNanachome",
-		"a": "22:33",
-		"d": "22:34"
-	}, {
-		"s": "Toei.Arakawa.MachiyaEkimae",
-		"a": "22:36",
-		"d": "22:37"
-	}, {
-		"s": "Toei.Arakawa.MachiyaNichome",
-		"a": "22:37",
-		"d": "22:38"
-	}, {
-		"s": "Toei.Arakawa.HigashiOguSanchome",
-		"a": "22:38",
-		"d": "22:39"
-	}, {
-		"s": "Toei.Arakawa.Kumanomae",
-		"a": "22:41",
-		"d": "22:42"
-	}, {
-		"s": "Toei.Arakawa.Miyanomae",
-		"a": "22:42",
-		"d": "22:43"
-	}, {
-		"s": "Toei.Arakawa.Odai",
-		"a": "22:44",
-		"d": "22:45"
-	}, {
-		"s": "Toei.Arakawa.ArakawaYuenchimae",
-		"a": "22:45",
-		"d": "22:46"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "22:50",
-		"d": "22:51"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "22:51",
-		"d": "22:52"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "22:52",
-		"d": "22:53"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "22:55",
-		"d": "22:56"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "22:57",
-		"d": "22:58"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "22:58",
-		"d": "22:59"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "23:00",
-		"d": "23:01"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "23:01",
-		"d": "23:02"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "23:02",
-		"d": "23:03"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "23:04",
-		"d": "23:05"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "23:07"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT3951.Holiday",
 	"t": "Toei.Arakawa.ODPT3951",
 	"r": "Toei.Arakawa",
@@ -112767,90 +112043,6 @@
 		"a": "23:11"
 	}]
 }, {
-	"id": "Toei.Arakawa.ODPT4128.Holiday",
-	"t": "Toei.Arakawa.ODPT4128",
-	"r": "Toei.Arakawa",
-	"n": "ODPT4128",
-	"y": "Toei.Local",
-	"d": "Toei.Minowabashi",
-	"os": [
-		"Toei.Arakawa.Waseda"
-	],
-	"ds": [
-		"Toei.Arakawa.ArakawaShakomae"
-	],
-	"tt": [{
-		"s": "Toei.Arakawa.Waseda",
-		"d": "22:48"
-	}, {
-		"s": "Toei.Arakawa.Omokagebashi",
-		"a": "22:48",
-		"d": "22:49"
-	}, {
-		"s": "Toei.Arakawa.Gakushuinshita",
-		"a": "22:50",
-		"d": "22:51"
-	}, {
-		"s": "Toei.Arakawa.Kishibojimmae",
-		"a": "22:51",
-		"d": "22:52"
-	}, {
-		"s": "Toei.Arakawa.TodenZoshigaya",
-		"a": "22:53",
-		"d": "22:54"
-	}, {
-		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
-		"a": "22:55",
-		"d": "22:56"
-	}, {
-		"s": "Toei.Arakawa.Mukohara",
-		"a": "22:57",
-		"d": "22:58"
-	}, {
-		"s": "Toei.Arakawa.OtsukaEkimae",
-		"a": "23:02",
-		"d": "23:03"
-	}, {
-		"s": "Toei.Arakawa.Sugamoshinden",
-		"a": "23:03",
-		"d": "23:04"
-	}, {
-		"s": "Toei.Arakawa.Koshinzuka",
-		"a": "23:04",
-		"d": "23:05"
-	}, {
-		"s": "Toei.Arakawa.ShinKoshinzuka",
-		"a": "23:05",
-		"d": "23:06"
-	}, {
-		"s": "Toei.Arakawa.NishigaharaYonchome",
-		"a": "23:07",
-		"d": "23:08"
-	}, {
-		"s": "Toei.Arakawa.TakinogawaItchome",
-		"a": "23:08",
-		"d": "23:09"
-	}, {
-		"s": "Toei.Arakawa.Asukayama",
-		"a": "23:09",
-		"d": "23:10"
-	}, {
-		"s": "Toei.Arakawa.OjiEkimae",
-		"a": "23:15",
-		"d": "23:16"
-	}, {
-		"s": "Toei.Arakawa.Sakaecho",
-		"a": "23:16",
-		"d": "23:17"
-	}, {
-		"s": "Toei.Arakawa.Kajiwara",
-		"a": "23:17",
-		"d": "23:18"
-	}, {
-		"s": "Toei.Arakawa.ArakawaShakomae",
-		"a": "23:21"
-	}]
-}, {
 	"id": "Toei.Arakawa.ODPT4052.Holiday",
 	"t": "Toei.Arakawa.ODPT4052",
 	"r": "Toei.Arakawa",
@@ -112913,6 +112105,110 @@
 	}, {
 		"s": "Toei.Arakawa.ArakawaShakomae",
 		"a": "22:41"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4077.Holiday",
+	"t": "Toei.Arakawa.ODPT4077",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4077",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.OtsukaEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "22:30"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "22:30",
+		"d": "22:31"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "22:31",
+		"d": "22:32"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "22:32",
+		"d": "22:33"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "22:33",
+		"d": "22:34"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "22:36",
+		"d": "22:37"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "22:37",
+		"d": "22:38"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "22:38",
+		"d": "22:39"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "22:41",
+		"d": "22:42"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "22:42",
+		"d": "22:43"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "22:44",
+		"d": "22:45"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "22:45",
+		"d": "22:46"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "22:50",
+		"d": "22:51"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "22:51",
+		"d": "22:52"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "22:52",
+		"d": "22:53"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "22:55",
+		"d": "22:56"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "22:57",
+		"d": "22:58"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "22:58",
+		"d": "22:59"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "23:00",
+		"d": "23:01"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "23:01",
+		"d": "23:02"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "23:02",
+		"d": "23:03"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "23:04",
+		"d": "23:05"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "23:07"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT4089.Holiday",
@@ -112999,6 +112295,166 @@
 		"a": "23:07"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT4128.Holiday",
+	"t": "Toei.Arakawa.ODPT4128",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4128",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.Waseda"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Waseda",
+		"d": "22:48"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "22:48",
+		"d": "22:49"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "22:50",
+		"d": "22:51"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "22:51",
+		"d": "22:52"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "22:53",
+		"d": "22:54"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "22:55",
+		"d": "22:56"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "22:57",
+		"d": "22:58"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "23:02",
+		"d": "23:03"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "23:03",
+		"d": "23:04"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "23:04",
+		"d": "23:05"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "23:05",
+		"d": "23:06"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "23:07",
+		"d": "23:08"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "23:08",
+		"d": "23:09"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "23:09",
+		"d": "23:10"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "23:15",
+		"d": "23:16"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "23:16",
+		"d": "23:17"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "23:17",
+		"d": "23:18"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:21"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4131.Holiday",
+	"t": "Toei.Arakawa.ODPT4131",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4131",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.OjiEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "22:49"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "22:49",
+		"d": "22:50"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "22:50",
+		"d": "22:51"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "22:51",
+		"d": "22:52"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "22:52",
+		"d": "22:53"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "22:55",
+		"d": "22:56"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "22:56",
+		"d": "22:57"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "22:57",
+		"d": "22:58"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "23:00",
+		"d": "23:01"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "23:01",
+		"d": "23:02"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "23:03",
+		"d": "23:04"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "23:04",
+		"d": "23:05"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:08",
+		"d": "23:09"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "23:09",
+		"d": "23:10"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "23:10",
+		"d": "23:11"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "23:13"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT4161.Holiday",
 	"t": "Toei.Arakawa.ODPT4161",
 	"r": "Toei.Arakawa",
@@ -113075,6 +112531,210 @@
 		"a": "23:25"
 	}]
 }, {
+	"id": "Toei.Arakawa.ODPT4173.Holiday",
+	"t": "Toei.Arakawa.ODPT4173",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4173",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.Waseda"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Waseda",
+		"d": "23:04"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "23:04",
+		"d": "23:05"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "23:06",
+		"d": "23:07"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "23:07",
+		"d": "23:08"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "23:08",
+		"d": "23:09"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "23:11",
+		"d": "23:12"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "23:13",
+		"d": "23:14"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "23:16",
+		"d": "23:17"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "23:17",
+		"d": "23:18"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "23:18",
+		"d": "23:19"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "23:19",
+		"d": "23:20"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "23:21",
+		"d": "23:22"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "23:22",
+		"d": "23:23"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "23:23",
+		"d": "23:24"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "23:28",
+		"d": "23:29"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "23:29",
+		"d": "23:30"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "23:30",
+		"d": "23:31"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:34"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4193.Holiday",
+	"t": "Toei.Arakawa.ODPT4193",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4193",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.OtsukaEkimae"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"d": "23:11"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "23:11",
+		"d": "23:12"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "23:12",
+		"d": "23:13"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "23:13",
+		"d": "23:14"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "23:15",
+		"d": "23:16"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "23:16",
+		"d": "23:17"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "23:17",
+		"d": "23:18"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "23:23",
+		"d": "23:24"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "23:24",
+		"d": "23:25"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "23:25",
+		"d": "23:26"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:29"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT4201.Holiday",
+	"t": "Toei.Arakawa.ODPT4201",
+	"r": "Toei.Arakawa",
+	"n": "ODPT4201",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"ds": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.Minowabashi",
+		"d": "23:14"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "23:14",
+		"d": "23:15"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "23:15",
+		"d": "23:16"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "23:17",
+		"d": "23:18"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "23:18",
+		"d": "23:19"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "23:20",
+		"d": "23:21"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "23:21",
+		"d": "23:22"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "23:22",
+		"d": "23:23"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "23:24",
+		"d": "23:25"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "23:25",
+		"d": "23:26"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "23:27",
+		"d": "23:28"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "23:29",
+		"d": "23:30"
+	}, {
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"a": "23:33"
+	}]
+}, {
 	"id": "Toei.Arakawa.ODPT4210.Holiday",
 	"t": "Toei.Arakawa.ODPT4210",
 	"r": "Toei.Arakawa",
@@ -113129,6 +112789,346 @@
 	}, {
 		"s": "Toei.Arakawa.ArakawaShakomae",
 		"a": "23:33"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT5245.Holiday",
+	"t": "Toei.Arakawa.ODPT5245",
+	"r": "Toei.Arakawa",
+	"n": "ODPT5245",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.Waseda"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "08:33"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "08:33",
+		"d": "08:34"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "08:34",
+		"d": "08:35"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "08:38",
+		"d": "08:39"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "08:40",
+		"d": "08:41"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "08:41",
+		"d": "08:42"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "08:44",
+		"d": "08:45"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "08:45",
+		"d": "08:46"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "08:46",
+		"d": "08:47"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "08:48",
+		"d": "08:49"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "08:54",
+		"d": "08:55"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "08:55",
+		"d": "08:56"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "08:58",
+		"d": "08:59"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "08:59",
+		"d": "09:00"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "09:00",
+		"d": "09:01"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "09:02",
+		"d": "09:03"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "09:04",
+		"d": "09:05"
+	}, {
+		"s": "Toei.Arakawa.Waseda",
+		"a": "09:07"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT5246.Holiday",
+	"t": "Toei.Arakawa.ODPT5246",
+	"r": "Toei.Arakawa",
+	"n": "ODPT5246",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "08:52"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "08:52",
+		"d": "08:53"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "08:54",
+		"d": "08:55"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "08:55",
+		"d": "08:56"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "09:01",
+		"d": "09:02"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "09:02",
+		"d": "09:03"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "09:03",
+		"d": "09:04"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "09:07",
+		"d": "09:08"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "09:08",
+		"d": "09:09"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "09:09",
+		"d": "09:10"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "09:10",
+		"d": "09:11"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "09:11",
+		"d": "09:12"
+	}, {
+		"s": "Toei.Arakawa.Minowabashi",
+		"a": "09:14"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT5247.Holiday",
+	"t": "Toei.Arakawa.ODPT5247",
+	"r": "Toei.Arakawa",
+	"n": "ODPT5247",
+	"y": "Toei.Local",
+	"d": "Toei.Waseda",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.Waseda"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "09:04"
+	}, {
+		"s": "Toei.Arakawa.Kajiwara",
+		"a": "09:04",
+		"d": "09:05"
+	}, {
+		"s": "Toei.Arakawa.Sakaecho",
+		"a": "09:05",
+		"d": "09:06"
+	}, {
+		"s": "Toei.Arakawa.OjiEkimae",
+		"a": "09:09",
+		"d": "09:10"
+	}, {
+		"s": "Toei.Arakawa.Asukayama",
+		"a": "09:11",
+		"d": "09:12"
+	}, {
+		"s": "Toei.Arakawa.TakinogawaItchome",
+		"a": "09:12",
+		"d": "09:13"
+	}, {
+		"s": "Toei.Arakawa.NishigaharaYonchome",
+		"a": "09:15",
+		"d": "09:16"
+	}, {
+		"s": "Toei.Arakawa.ShinKoshinzuka",
+		"a": "09:16",
+		"d": "09:17"
+	}, {
+		"s": "Toei.Arakawa.Koshinzuka",
+		"a": "09:17",
+		"d": "09:18"
+	}, {
+		"s": "Toei.Arakawa.Sugamoshinden",
+		"a": "09:19",
+		"d": "09:20"
+	}, {
+		"s": "Toei.Arakawa.OtsukaEkimae",
+		"a": "09:26",
+		"d": "09:27"
+	}, {
+		"s": "Toei.Arakawa.Mukohara",
+		"a": "09:27",
+		"d": "09:28"
+	}, {
+		"s": "Toei.Arakawa.HigashiIkebukuroYonchome",
+		"a": "09:30",
+		"d": "09:31"
+	}, {
+		"s": "Toei.Arakawa.TodenZoshigaya",
+		"a": "09:31",
+		"d": "09:32"
+	}, {
+		"s": "Toei.Arakawa.Kishibojimmae",
+		"a": "09:32",
+		"d": "09:33"
+	}, {
+		"s": "Toei.Arakawa.Gakushuinshita",
+		"a": "09:34",
+		"d": "09:35"
+	}, {
+		"s": "Toei.Arakawa.Omokagebashi",
+		"a": "09:36",
+		"d": "09:37"
+	}, {
+		"s": "Toei.Arakawa.Waseda",
+		"a": "09:39"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT5248.Holiday",
+	"t": "Toei.Arakawa.ODPT5248",
+	"r": "Toei.Arakawa",
+	"n": "ODPT5248",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.MachiyaEkimae"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "09:09"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "09:09",
+		"d": "09:10"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "09:11",
+		"d": "09:12"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "09:12",
+		"d": "09:13"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "09:17",
+		"d": "09:18"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "09:18",
+		"d": "09:19"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "09:19",
+		"d": "09:20"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "09:25"
+	}]
+}, {
+	"id": "Toei.Arakawa.ODPT5250.Holiday",
+	"t": "Toei.Arakawa.ODPT5250",
+	"r": "Toei.Arakawa",
+	"n": "ODPT5250",
+	"y": "Toei.Local",
+	"d": "Toei.Minowabashi",
+	"os": [
+		"Toei.Arakawa.ArakawaShakomae"
+	],
+	"ds": [
+		"Toei.Arakawa.Minowabashi"
+	],
+	"tt": [{
+		"s": "Toei.Arakawa.ArakawaShakomae",
+		"d": "09:28"
+	}, {
+		"s": "Toei.Arakawa.ArakawaYuenchimae",
+		"a": "09:28",
+		"d": "09:29"
+	}, {
+		"s": "Toei.Arakawa.Odai",
+		"a": "09:30",
+		"d": "09:31"
+	}, {
+		"s": "Toei.Arakawa.Miyanomae",
+		"a": "09:31",
+		"d": "09:32"
+	}, {
+		"s": "Toei.Arakawa.Kumanomae",
+		"a": "09:35",
+		"d": "09:36"
+	}, {
+		"s": "Toei.Arakawa.HigashiOguSanchome",
+		"a": "09:36",
+		"d": "09:37"
+	}, {
+		"s": "Toei.Arakawa.MachiyaNichome",
+		"a": "09:37",
+		"d": "09:38"
+	}, {
+		"s": "Toei.Arakawa.MachiyaEkimae",
+		"a": "09:41",
+		"d": "09:42"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNanachome",
+		"a": "09:42",
+		"d": "09:43"
+	}, {
+		"s": "Toei.Arakawa.ArakawaNichome",
+		"a": "09:43",
+		"d": "09:44"
+	}, {
+		"s": "Toei.Arakawa.Arakawakuyakushomae",
+		"a": "09:44",
+		"d": "09:45"
+	}, {
+		"s": "Toei.Arakawa.ArakawaItchumae",
+		"a": "09:45",
+		"d": "09:46"
+	}, {
+		"s": "Toei.Arakawa.Minowabashi",
+		"a": "09:48"
 	}]
 }, {
 	"id": "Toei.Arakawa.ODPT5251.Holiday",
