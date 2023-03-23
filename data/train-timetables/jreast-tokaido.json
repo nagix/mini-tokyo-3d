@@ -4110,45 +4110,6 @@
 		"a": "14:11"
 	}]
 }, {
-	"id": "JR-East.Tokaido.8003M.Weekday",
-	"t": "JR-East.Tokaido.8003M",
-	"r": "JR-East.Tokaido",
-	"n": "8003M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"JR-East.Tokaido.Tokyo"
-	],
-	"ds": [
-		"Izukyu.Izukyu.IzukyuShimoda"
-	],
-	"nt": [
-		"JR-East.Ito.8003M.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.Tokaido.Tokyo",
-		"d": "12:30"
-	}, {
-		"s": "JR-East.Tokaido.Shinagawa",
-		"a": "12:37",
-		"d": "12:38"
-	}, {
-		"s": "JR-East.Tokaido.Yokohama",
-		"a": "12:57",
-		"d": "12:58"
-	}, {
-		"s": "JR-East.Tokaido.Atami",
-		"a": "13:51"
-	}],
-	"nm": [{
-		"ja": "サフィール踊り子 3号",
-		"en": "Saphir Odoriko 3",
-		"ko": "사피르 오도리코 3",
-		"zh-Hans": "Saphir踊子 3",
-		"zh-Hant": "Saphir踊子 3"
-	}],
-	"v": "E261"
-}, {
 	"id": "JR-East.Tokaido.1567E.Weekday",
 	"t": "JR-East.Tokaido.1567E",
 	"r": "JR-East.Tokaido",
@@ -17276,45 +17237,6 @@
 		"a": "19:38"
 	}]
 }, {
-	"id": "JR-East.Tokaido.8004M.Weekday",
-	"t": "JR-East.Tokaido.8004M",
-	"r": "JR-East.Tokaido",
-	"n": "8004M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"Izukyu.Izukyu.IzukyuShimoda"
-	],
-	"ds": [
-		"JR-East.Tokaido.Tokyo"
-	],
-	"pt": [
-		"JR-East.Ito.8004M.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.Tokaido.Atami",
-		"d": "18:00"
-	}, {
-		"s": "JR-East.Tokaido.Yokohama",
-		"a": "18:56",
-		"d": "18:57"
-	}, {
-		"s": "JR-East.Tokaido.Shinagawa",
-		"a": "19:11",
-		"d": "19:12"
-	}, {
-		"s": "JR-East.Tokaido.Tokyo",
-		"a": "19:19"
-	}],
-	"nm": [{
-		"ja": "サフィール踊り子 4号",
-		"en": "Saphir Odoriko 4",
-		"ko": "사피르 오도리코 4",
-		"zh-Hans": "Saphir踊子 4",
-		"zh-Hant": "Saphir踊子 4"
-	}],
-	"v": "E261"
-}, {
 	"id": "JR-East.Tokaido.1656E.Weekday",
 	"t": "JR-East.Tokaido.1656E",
 	"r": "JR-East.Tokaido",
@@ -28589,62 +28511,6 @@
 		"a": "11:26"
 	}]
 }, {
-	"id": "JR-East.Tokaido.8029M.SaturdayHoliday",
-	"t": "JR-East.Tokaido.8029M",
-	"r": "JR-East.Tokaido",
-	"n": "8029M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"JR-East.Tokaido.Tokyo"
-	],
-	"ds": [
-		"Izukyu.Izukyu.IzukyuShimoda",
-		"IzuHakone.Sunzu.Shuzenji"
-	],
-	"nt": [
-		"JR-East.Ito.8029M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.Tokaido.Tokyo",
-		"d": "10:30"
-	}, {
-		"s": "JR-East.Tokaido.Shinagawa",
-		"a": "10:37",
-		"d": "10:38"
-	}, {
-		"s": "JR-East.Tokaido.Kawasaki",
-		"a": "10:46",
-		"d": "10:46"
-	}, {
-		"s": "JR-East.Tokaido.Yokohama",
-		"a": "10:53",
-		"d": "10:54"
-	}, {
-		"s": "JR-East.Tokaido.Ofuna",
-		"a": "11:07",
-		"d": "11:07"
-	}, {
-		"s": "JR-East.Tokaido.Odawara",
-		"a": "11:31",
-		"d": "11:31"
-	}, {
-		"s": "JR-East.Tokaido.Yugawara",
-		"a": "11:44",
-		"d": "11:45"
-	}, {
-		"s": "JR-East.Tokaido.Atami",
-		"a": "11:51"
-	}],
-	"nm": [{
-		"ja": "踊り子 9号",
-		"en": "Odoriko 9",
-		"ko": "오도리코 9",
-		"zh-Hans": "踊子 9",
-		"zh-Hant": "踊子 9"
-	}],
-	"v": "E257-2000"
-}, {
 	"id": "JR-East.Tokaido.1549E.SaturdayHoliday",
 	"t": "JR-East.Tokaido.1549E",
 	"r": "JR-East.Tokaido",
@@ -29276,61 +29142,6 @@
 		"s": "JR-East.Tokaido.Atami",
 		"a": "13:12"
 	}]
-}, {
-	"id": "JR-East.Tokaido.8031M.SaturdayHoliday",
-	"t": "JR-East.Tokaido.8031M",
-	"r": "JR-East.Tokaido",
-	"n": "8031M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"JR-East.Tokaido.Tokyo"
-	],
-	"ds": [
-		"Izukyu.Izukyu.IzukyuShimoda"
-	],
-	"nt": [
-		"JR-East.Ito.8031M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.Tokaido.Tokyo",
-		"d": "11:30"
-	}, {
-		"s": "JR-East.Tokaido.Shinagawa",
-		"a": "11:37",
-		"d": "11:38"
-	}, {
-		"s": "JR-East.Tokaido.Kawasaki",
-		"a": "11:46",
-		"d": "11:46"
-	}, {
-		"s": "JR-East.Tokaido.Yokohama",
-		"a": "11:54",
-		"d": "11:54"
-	}, {
-		"s": "JR-East.Tokaido.Ofuna",
-		"a": "12:07",
-		"d": "12:07"
-	}, {
-		"s": "JR-East.Tokaido.Odawara",
-		"a": "12:30",
-		"d": "12:31"
-	}, {
-		"s": "JR-East.Tokaido.Yugawara",
-		"a": "12:43",
-		"d": "12:43"
-	}, {
-		"s": "JR-East.Tokaido.Atami",
-		"a": "12:49"
-	}],
-	"nm": [{
-		"ja": "踊り子 11号",
-		"en": "Odoriko 11",
-		"ko": "오도리코 11",
-		"zh-Hans": "踊子 11",
-		"zh-Hant": "踊子 11"
-	}],
-	"v": "E257-2000"
 }, {
 	"id": "JR-East.Tokaido.1557E.SaturdayHoliday",
 	"t": "JR-East.Tokaido.1557E",
@@ -35117,7 +34928,7 @@
 		"JR-East.Tokaido.Tokyo"
 	],
 	"ds": [
-		null,
+		"JR-Shikoku.SetoOhashi.Takamatsu",
 		"JR-West.Sanin.Izumoshi"
 	],
 	"tt": [{
@@ -36425,40 +36236,6 @@
 		"s": "JR-East.Tokaido.Odawara",
 		"a": "07:14"
 	}]
-}, {
-	"id": "JR-East.Tokaido.8015M.SaturdayHoliday",
-	"t": "JR-East.Tokaido.8015M",
-	"r": "JR-East.Tokaido",
-	"n": "8015M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"JR-East.ShonanShinjuku.Shinjuku"
-	],
-	"ds": [
-		"Izukyu.Izukyu.IzukyuShimoda"
-	],
-	"pt": [
-		"JR-East.ShonanShinjuku.8015M.SaturdayHoliday"
-	],
-	"nt": [
-		"JR-East.Ito.8015M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.Tokaido.Yokohama",
-		"d": "12:58"
-	}, {
-		"s": "JR-East.Tokaido.Atami",
-		"a": "13:51"
-	}],
-	"nm": [{
-		"ja": "サフィール踊り子 5号",
-		"en": "Saphir Odoriko 5",
-		"ko": "사피르 오도리코 5",
-		"zh-Hans": "Saphir踊子 5",
-		"zh-Hant": "Saphir踊子 5"
-	}],
-	"v": "E261"
 }, {
 	"id": "JR-East.Tokaido.2821Y.SaturdayHoliday",
 	"t": "JR-East.Tokaido.2821Y",
@@ -41391,61 +41168,6 @@
 		"a": "16:47"
 	}]
 }, {
-	"id": "JR-East.Tokaido.8032M.SaturdayHoliday",
-	"t": "JR-East.Tokaido.8032M",
-	"r": "JR-East.Tokaido",
-	"n": "8032M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"Izukyu.Izukyu.IzukyuShimoda"
-	],
-	"ds": [
-		"JR-East.Tokaido.Tokyo"
-	],
-	"pt": [
-		"JR-East.Ito.8032M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.Tokaido.Atami",
-		"d": "15:08"
-	}, {
-		"s": "JR-East.Tokaido.Yugawara",
-		"a": "15:13",
-		"d": "15:14"
-	}, {
-		"s": "JR-East.Tokaido.Odawara",
-		"a": "15:25",
-		"d": "15:26"
-	}, {
-		"s": "JR-East.Tokaido.Ofuna",
-		"a": "15:53",
-		"d": "15:54"
-	}, {
-		"s": "JR-East.Tokaido.Yokohama",
-		"a": "16:06",
-		"d": "16:07"
-	}, {
-		"s": "JR-East.Tokaido.Kawasaki",
-		"a": "16:14",
-		"d": "16:15"
-	}, {
-		"s": "JR-East.Tokaido.Shinagawa",
-		"a": "16:22",
-		"d": "16:23"
-	}, {
-		"s": "JR-East.Tokaido.Tokyo",
-		"a": "16:30"
-	}],
-	"nm": [{
-		"ja": "踊り子 12号",
-		"en": "Odoriko 12",
-		"ko": "오도리코 12",
-		"zh-Hans": "踊子 12",
-		"zh-Hant": "踊子 12"
-	}],
-	"v": "E257-2000"
-}, {
 	"id": "JR-East.Tokaido.1634E.SaturdayHoliday",
 	"t": "JR-East.Tokaido.1634E",
 	"r": "JR-East.Tokaido",
@@ -41682,61 +41404,6 @@
 		"s": "JR-East.Tokaido.Tokyo",
 		"a": "17:35"
 	}]
-}, {
-	"id": "JR-East.Tokaido.8034M.SaturdayHoliday",
-	"t": "JR-East.Tokaido.8034M",
-	"r": "JR-East.Tokaido",
-	"n": "8034M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"Izukyu.Izukyu.IzukyuShimoda"
-	],
-	"ds": [
-		"JR-East.Tokaido.Tokyo"
-	],
-	"pt": [
-		"JR-East.Ito.8034M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.Tokaido.Atami",
-		"d": "16:00"
-	}, {
-		"s": "JR-East.Tokaido.Yugawara",
-		"a": "16:04",
-		"d": "16:05"
-	}, {
-		"s": "JR-East.Tokaido.Odawara",
-		"a": "16:18",
-		"d": "16:18"
-	}, {
-		"s": "JR-East.Tokaido.Ofuna",
-		"a": "16:44",
-		"d": "16:44"
-	}, {
-		"s": "JR-East.Tokaido.Yokohama",
-		"a": "16:56",
-		"d": "16:57"
-	}, {
-		"s": "JR-East.Tokaido.Kawasaki",
-		"a": "17:04",
-		"d": "17:05"
-	}, {
-		"s": "JR-East.Tokaido.Shinagawa",
-		"a": "17:12",
-		"d": "17:13"
-	}, {
-		"s": "JR-East.Tokaido.Tokyo",
-		"a": "17:19"
-	}],
-	"nm": [{
-		"ja": "踊り子 14号",
-		"en": "Odoriko 14",
-		"ko": "오도리코 14",
-		"zh-Hans": "踊子 14",
-		"zh-Hant": "踊子 14"
-	}],
-	"v": "E257-2000"
 }, {
 	"id": "JR-East.Tokaido.1640E.SaturdayHoliday",
 	"t": "JR-East.Tokaido.1640E",
@@ -42190,40 +41857,6 @@
 		"a": "18:45"
 	}]
 }, {
-	"id": "JR-East.Tokaido.8098M.SaturdayHoliday",
-	"t": "JR-East.Tokaido.8098M",
-	"r": "JR-East.Tokaido",
-	"n": "8098M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"Izukyu.Izukyu.IzukyuShimoda"
-	],
-	"ds": [
-		"JR-East.ShonanShinjuku.Ikebukuro"
-	],
-	"pt": [
-		"JR-East.Ito.8098M.SaturdayHoliday"
-	],
-	"nt": [
-		"JR-East.ShonanShinjuku.8098M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.Tokaido.Atami",
-		"d": "17:27"
-	}, {
-		"s": "JR-East.Tokaido.Yokohama",
-		"a": "18:24"
-	}],
-	"nm": [{
-		"ja": "踊り子 78号",
-		"en": "Odoriko 78",
-		"ko": "오도리코 78",
-		"zh-Hans": "踊子 78",
-		"zh-Hant": "踊子 78"
-	}],
-	"v": "E257-2000"
-}, {
 	"id": "JR-East.Tokaido.1924E.SaturdayHoliday",
 	"t": "JR-East.Tokaido.1924E",
 	"r": "JR-East.Tokaido",
@@ -42421,45 +42054,6 @@
 		"s": "JR-East.Tokaido.Tokyo",
 		"a": "19:37"
 	}]
-}, {
-	"id": "JR-East.Tokaido.8004M.SaturdayHoliday",
-	"t": "JR-East.Tokaido.8004M",
-	"r": "JR-East.Tokaido",
-	"n": "8004M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"Izukyu.Izukyu.IzukyuShimoda"
-	],
-	"ds": [
-		"JR-East.Tokaido.Tokyo"
-	],
-	"pt": [
-		"JR-East.Ito.8004M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.Tokaido.Atami",
-		"d": "18:00"
-	}, {
-		"s": "JR-East.Tokaido.Yokohama",
-		"a": "18:56",
-		"d": "18:57"
-	}, {
-		"s": "JR-East.Tokaido.Shinagawa",
-		"a": "19:11",
-		"d": "19:12"
-	}, {
-		"s": "JR-East.Tokaido.Tokyo",
-		"a": "19:19"
-	}],
-	"nm": [{
-		"ja": "サフィール踊り子 4号",
-		"en": "Saphir Odoriko 4",
-		"ko": "사피르 오도리코 4",
-		"zh-Hans": "Saphir踊子 4",
-		"zh-Hant": "Saphir踊子 4"
-	}],
-	"v": "E261"
 }, {
 	"id": "JR-East.Tokaido.1656E.SaturdayHoliday",
 	"t": "JR-East.Tokaido.1656E",
