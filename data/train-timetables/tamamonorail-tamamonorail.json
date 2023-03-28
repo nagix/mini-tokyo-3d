@@ -11919,7 +11919,7 @@
 		"TamaMonorail.TamaMonorail.TamaCenter"
 	],
 	"ds": [
-		"TamaMonorail.TamaMonorail.TachikawaMinami"
+		"TamaMonorail.TamaMonorail.TachikawaKita"
 	],
 	"tt": [{
 		"s": "TamaMonorail.TamaMonorail.TamaCenter",
@@ -11953,7 +11953,10 @@
 		"d": "00:06"
 	}, {
 		"s": "TamaMonorail.TamaMonorail.TachikawaMinami",
-		"a": "00:08"
+		"d": "00:08"
+	}, {
+		"s": "TamaMonorail.TamaMonorail.TachikawaKita",
+		"a": "00:09"
 	}]
 }, {
 	"id": "TamaMonorail.TamaMonorail.2312.Weekday",
@@ -15817,7 +15820,7 @@
 		"TamaMonorail.TamaMonorail.TamaCenter"
 	],
 	"ds": [
-		"TamaMonorail.TamaMonorail.TachikawaKita"
+		"TamaMonorail.TamaMonorail.Takamatsu"
 	],
 	"tt": [{
 		"s": "TamaMonorail.TamaMonorail.TamaCenter",
@@ -15854,7 +15857,10 @@
 		"d": "08:56"
 	}, {
 		"s": "TamaMonorail.TamaMonorail.TachikawaKita",
-		"a": "08:59"
+		"d": "08:59"
+	}, {
+		"s": "TamaMonorail.TamaMonorail.Takamatsu",
+		"a": "09:01"
 	}]
 }, {
 	"id": "TamaMonorail.TamaMonorail.819.Weekday",
@@ -17003,7 +17009,7 @@
 		"TamaMonorail.TamaMonorail.TamaCenter"
 	],
 	"ds": [
-		"TamaMonorail.TamaMonorail.TachikawaKita"
+		"TamaMonorail.TamaMonorail.Takamatsu"
 	],
 	"tt": [{
 		"s": "TamaMonorail.TamaMonorail.TamaCenter",
@@ -17040,7 +17046,10 @@
 		"d": "09:25"
 	}, {
 		"s": "TamaMonorail.TamaMonorail.TachikawaKita",
-		"a": "09:27"
+		"d": "09:27"
+	}, {
+		"s": "TamaMonorail.TamaMonorail.Takamatsu",
+		"a": "09:29"
 	}]
 }, {
 	"id": "TamaMonorail.TamaMonorail.925.Weekday",
