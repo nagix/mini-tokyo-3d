@@ -426,6 +426,17 @@
     height: 20px;
     vertical-align: top;
 }
+.mini-tokyo-3d .exit-ramp-icon {
+    background: no-repeat center right/20px svg-load('../svg/wheelchair-ramp.svg', fill: #fff);
+    width: 23px;
+}
+.mini-tokyo-3d .exit-ramp-small-icon {
+    display: inline-block;
+    background: no-repeat center left/16px svg-load('../svg/wheelchair-ramp.svg', fill: #fff);
+    width: 18px;
+    height: 20px;
+    vertical-align: top;
+}
 .mini-tokyo-3d .exit-share-button {
     width: 0;
 }
