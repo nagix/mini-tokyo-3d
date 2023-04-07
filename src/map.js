@@ -650,8 +650,6 @@ export default class extends Evented {
             me.addLayer({
                 id: `stations-marked-${zoom}`,
                 type: 'geojson',
-                filled: true,
-                stroked: true,
                 getLineWidth: 12,
                 getLineColor: [255, 255, 255],
                 lineWidthUnits: 'pixels',
@@ -665,8 +663,6 @@ export default class extends Evented {
             me.addLayer({
                 id: `stations-selected-${zoom}`,
                 type: 'geojson',
-                filled: true,
-                stroked: true,
                 getLineWidth: 12,
                 getLineColor: [255, 255, 255],
                 lineWidthUnits: 'pixels',
@@ -684,12 +680,12 @@ export default class extends Evented {
                     p.zoom === zoom && p.type === 0 && p.altitude < 0
                 ),
                 filled: false,
-                stroked: true,
                 getLineWidth: d => d.properties.width,
                 getLineColor: d => helpers.colorToRGBArray(d.properties.color),
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 opacity: .0625,
+                transitions: {opacity: configs.transitionDuration},
                 pickable: true,
                 parameters: {depthTest: false},
                 minzoom,
@@ -701,14 +697,12 @@ export default class extends Evented {
                 data: helpersGeojson.featureFilter(me.featureCollection, p =>
                     p.zoom === zoom && p.type === 1 && p.altitude < 0
                 ),
-                filled: true,
-                stroked: true,
                 getLineWidth: 4,
-                getLineColor: [0, 0, 0],
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 getFillColor: [255, 255, 255, 179],
                 opacity: .0625,
+                transitions: {opacity: configs.transitionDuration},
                 pickable: true,
                 parameters: {depthTest: false},
                 minzoom,
@@ -719,12 +713,12 @@ export default class extends Evented {
                 type: 'geojson',
                 data: helpersGeojson.emptyFeatureCollection(),
                 filled: false,
-                stroked: true,
                 getLineWidth: d => d.properties.width,
                 getLineColor: d => helpers.colorToRGBArray(d.properties.color),
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 opacity: .0625,
+                transitions: {opacity: configs.transitionDuration},
                 parameters: {depthTest: false},
                 minzoom,
                 maxzoom
@@ -733,14 +727,12 @@ export default class extends Evented {
                 id: `stations-routeug-${zoom}`,
                 type: 'geojson',
                 data: helpersGeojson.emptyFeatureCollection(),
-                filled: true,
-                stroked: true,
                 getLineWidth: 4,
-                getLineColor: [0, 0, 0],
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 getFillColor: [255, 255, 255, 179],
                 opacity: .0625,
+                transitions: {opacity: configs.transitionDuration},
                 parameters: {depthTest: false},
                 minzoom,
                 maxzoom
@@ -750,11 +742,11 @@ export default class extends Evented {
                 type: 'geojson',
                 data: helpersGeojson.emptyFeatureCollection(),
                 filled: false,
-                stroked: true,
                 getLineWidth: d => d.properties.width,
                 getLineColor: d => helpers.colorToRGBArray(d.properties.color),
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
+                transitions: {opacity: configs.transitionDuration},
                 parameters: {depthTest: false},
                 minzoom,
                 maxzoom
@@ -763,13 +755,11 @@ export default class extends Evented {
                 id: `stations-routeog-${zoom}`,
                 type: 'geojson',
                 data: helpersGeojson.emptyFeatureCollection(),
-                filled: true,
-                stroked: true,
                 getLineWidth: 4,
-                getLineColor: [0, 0, 0],
                 lineWidthUnits: 'pixels',
                 lineWidthScale,
                 getFillColor: [255, 255, 255, 179],
+                transitions: {opacity: configs.transitionDuration},
                 parameters: {depthTest: false},
                 minzoom,
                 maxzoom
@@ -866,12 +856,12 @@ export default class extends Evented {
                 p.type === 0 && p.altitude > 0
             ),
             filled: false,
-            stroked: true,
             getLineWidth: d => d.properties.width,
             getLineColor: d => helpers.colorToRGBArray(d.properties.color),
             lineWidthUnits: 'pixels',
             lineWidthScale: 1,
             opacity: .0625,
+            transitions: {opacity: configs.transitionDuration},
             parameters: {depthTest: false}
         });
         */
@@ -2463,7 +2453,9 @@ export default class extends Evented {
 
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
             for (const id of [`railways-ug-${zoom}`, `stations-ug-${zoom}`, `railways-routeug-${zoom}`, `stations-routeug-${zoom}`, `railways-routeog-${zoom}`, `stations-routeog-${zoom}`]) {
-                setLayerOpacity(map, id, getLayerOpacity(id, viewMode, searchMode));
+                helpersMapbox.setLayerProps(map, id, {
+                    opacity: getLayerOpacity(id, viewMode, searchMode)
+                });
             }
         }
 
@@ -3341,20 +3333,6 @@ function isEqualObject(a, b) {
         return true;
     }
     return false;
-}
-
-function setLayerOpacity(map, id, opacity) {
-    const layer = map.getLayer(id).implementation,
-        current = helpers.valueOrDefault(layer.props.opacity, 1);
-
-    animation.start({
-        callback: (elapsed, duration) => {
-            layer.setProps({
-                opacity: helpers.lerp(current, opacity, elapsed / duration)
-            });
-        },
-        duration: configs.transitionDuration
-    });
 }
 
 function getLayerOpacity(id, viewMode, searchMode) {

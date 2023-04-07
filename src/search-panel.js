@@ -3,7 +3,7 @@ import Swiper, {Pagination} from 'swiper';
 import configs from './configs';
 import {createElement, includes, loadJSON} from './helpers';
 import {emptyFeatureCollection, featureFilter} from './helpers-geojson';
-import {getBounds} from './helpers-mapbox';
+import {getBounds, setLayerProps} from './helpers-mapbox';
 import Panel from './panel';
 
 export default class extends Panel {
@@ -474,7 +474,7 @@ export default class extends Panel {
 
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
             for (const id of [`railways-routeug-${zoom}`, `stations-routeug-${zoom}`, `railways-routeog-${zoom}`, `stations-routeog-${zoom}`]) {
-                mbox.getLayer(id).implementation.setProps({
+                setLayerProps(mbox, id, {
                     data: emptyFeatureCollection()
                 });
             }
