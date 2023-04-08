@@ -11366,7 +11366,8 @@
 		"ko": "동쪽 출구",
 		"zh-Hans": "东出口",
 		"zh-Hant": "東出口"
-	}
+	},
+	"facilities": ["stairs", "ramp"]
 }, {
 	"id": "TokyoMetro.YoyogiUehara.West",
 	"coord": [139.6796863, 35.6691804],
@@ -11383,7 +11384,8 @@
 		"ko": "서쪽 출구",
 		"zh-Hans": "西出口",
 		"zh-Hant": "西出口"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.YoyogiUehara.South1",
 	"coord": [139.6805339, 35.6692251],
@@ -11400,7 +11402,8 @@
 		"ko": "남쪽 출구 1",
 		"zh-Hans": "南出口1",
 		"zh-Hant": "南出口1"
-	}
+	},
+	"facilities": ["stairs", "elevator"]
 }, {
 	"id": "TokyoMetro.YoyogiUehara.South2",
 	"coord": [139.6812634, 35.6695977],
@@ -11417,7 +11420,8 @@
 		"ko": "남쪽 출구 2",
 		"zh-Hans": "南出口2",
 		"zh-Hant": "南出口2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.YoyogiUehara.North1",
 	"coord": [139.680381, 35.6693526],
@@ -11434,7 +11438,8 @@
 		"ko": "키타 출구 1",
 		"zh-Hans": "北出口1",
 		"zh-Hant": "北出口1"
-	}
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "TokyoMetro.YoyogiUehara.North2",
 	"coord": [139.6812916, 35.6698777],
@@ -11451,7 +11456,8 @@
 		"ko": "키타 출구 2",
 		"zh-Hans": "北出口2",
 		"zh-Hant": "北出口2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.YoyogiKoen.1",
 	"coord": [139.6889976, 35.6691804],
@@ -11464,7 +11470,8 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.YoyogiKoen.2",
 	"coord": [139.6909636, 35.6687642],
@@ -11477,7 +11484,8 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.YoyogiKoen.3",
 	"coord": [139.6907692, 35.669175],
@@ -11490,7 +11498,8 @@
 		"ko": "출구3",
 		"zh-Hans": "出口3",
 		"zh-Hant": "出口3"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TokyoMetro.YoyogiKoen.4",
 	"coord": [139.69115, 35.6689669],
@@ -11503,7 +11512,22 @@
 		"ko": "출구4",
 		"zh-Hans": "出口4",
 		"zh-Hant": "出口4"
-	}
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "TokyoMetro.YoyogiKoen.EVr",
+	"coord": [139.6911094, 35.6690577],
+	"title": {
+		"en": "r"
+	},
+	"description": {
+		"ja": "エレベーターr",
+		"en": "Elevator r",
+		"ko": "엘리베이터 r",
+		"zh-Hans": "电梯r",
+		"zh-Hant": "電梯r"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TokyoMetro.MeijiJingumae.1",
 	"coord": [139.7027801, 35.6693362],
@@ -11516,10 +11540,11 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.MeijiJingumae.2",
-	"coord": [139.7026312, 35.669942],
+	"coord": [139.7026658, 35.6700088],
 	"title": {
 		"en": "2"
 	},
@@ -11529,7 +11554,22 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "TokyoMetro.MeijiJingumae.EVr",
+	"coord": [139.7026993, 35.669808],
+	"title": {
+		"en": "r"
+	},
+	"description": {
+		"ja": "エレベーターr",
+		"en": "Elevator r",
+		"ko": "엘리베이터 r",
+		"zh-Hans": "电梯r",
+		"zh-Hant": "電梯r"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TokyoMetro.MeijiJingumae.3",
 	"coord": [139.703106, 35.6696805],
@@ -11542,7 +11582,8 @@
 		"ko": "출구3",
 		"zh-Hans": "出口3",
 		"zh-Hant": "出口3"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.MeijiJingumae.4",
 	"coord": [139.7049004, 35.6685801],
@@ -11555,7 +11596,12 @@
 		"ko": "출구4",
 		"zh-Hans": "出口4",
 		"zh-Hant": "出口4"
-	}
+	},
+	"uptime": [{
+		"open": "06:00",
+		"close": "00:50"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.MeijiJingumae.5",
 	"coord": [139.7050412, 35.6687664],
@@ -11568,7 +11614,12 @@
 		"ko": "출구5",
 		"zh-Hans": "出口5",
 		"zh-Hant": "出口5"
-	}
+	},
+	"uptime": [{
+		"open": "06:00",
+		"close": "00:50"
+	}],
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TokyoMetro.MeijiJingumae.6",
 	"coord": [139.7045946, 35.6686357],
@@ -11581,7 +11632,26 @@
 		"ko": "출구6",
 		"zh-Hans": "出口6",
 		"zh-Hant": "出口6"
-	}
+	},
+	"uptime": [{
+		"open": "06:00",
+		"close": "00:00"
+	}],
+	"facilities": ["stairs", "elevator"]
+}, {
+	"id": "TokyoMetro.MeijiJingumae.EVb",
+	"coord": [139.7057681, 35.6684224],
+	"title": {
+		"en": "b"
+	},
+	"description": {
+		"ja": "エレベーターb",
+		"en": "Elevator b",
+		"ko": "엘리베이터 b",
+		"zh-Hans": "电梯b",
+		"zh-Hant": "電梯b"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TokyoMetro.MeijiJingumae.7",
 	"coord": [139.7048025, 35.6680026],
@@ -11594,20 +11664,12 @@
 		"ko": "출구7",
 		"zh-Hans": "出口7",
 		"zh-Hant": "出口7"
-	}
-}, {
-	"id": "TokyoMetro.MeijiJingumae.EV",
-	"coord": [139.7057681, 35.6684224],
-	"title": {
-		"en": "EV"
 	},
-	"description": {
-		"ja": "エレベーター",
-		"en": "Elevator",
-		"ko": "엘리베이터",
-		"zh-Hans": "电梯",
-		"zh-Hant": "電梯"
-	}
+	"uptime": [{
+		"open": "00:00",
+		"close": "00:00"
+	}],
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TokyoMetro.Nogizaka.1",
 	"coord": [139.7277112, 35.668019],
@@ -11620,7 +11682,8 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Nogizaka.2",
 	"coord": [139.727667, 35.6677499],
@@ -11633,7 +11696,8 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs", "elevator"]
 }, {
 	"id": "TokyoMetro.Nogizaka.3",
 	"coord": [139.7271144, 35.6673337],
@@ -11646,7 +11710,8 @@
 		"ko": "출구3",
 		"zh-Hans": "出口3",
 		"zh-Hant": "出口3"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TokyoMetro.Nogizaka.5",
 	"coord": [139.7248466, 35.6656503],
@@ -11659,7 +11724,12 @@
 		"ko": "출구5",
 		"zh-Hans": "出口5",
 		"zh-Hant": "出口5"
-	}
+	},
+	"uptime": [{
+		"open": "05:30",
+		"close": "00:45"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Nogizaka.6",
 	"coord": [139.725666, 35.665719],
@@ -11672,7 +11742,12 @@
 		"ko": "출구6",
 		"zh-Hans": "出口6",
 		"zh-Hant": "出口6"
-	}
+	},
+	"uptime": [{
+		"open": "09:30",
+		"close": "18:00"
+	}],
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "TokyoMetro.Akasaka.1",
 	"coord": [139.7369219, 35.6731418],
@@ -11685,7 +11760,8 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TokyoMetro.Akasaka.2",
 	"coord": [139.7372331, 35.6726668],
@@ -11698,10 +11774,11 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Akasaka.3a",
-	"coord": [139.736533, 35.6725393],
+	"coord": [139.7365419, 35.6725239],
 	"title": {
 		"en": "3a"
 	},
@@ -11711,7 +11788,23 @@
 		"ko": "출구3a",
 		"zh-Hans": "出口3a",
 		"zh-Hant": "出口3a"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "TokyoMetro.Akasaka.EV",
+	"coord": [139.7366, 35.6725653],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
+}, {
 }, {
 	"id": "TokyoMetro.Akasaka.3b",
 	"coord": [139.735778, 35.6723585],
@@ -11724,7 +11817,8 @@
 		"ko": "출구3b",
 		"zh-Hans": "出口3b",
 		"zh-Hant": "出口3b"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TokyoMetro.Akasaka.4",
 	"coord": [139.7361884, 35.6722168],
@@ -11737,7 +11831,8 @@
 		"ko": "출구4",
 		"zh-Hans": "出口4",
 		"zh-Hant": "出口4"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Akasaka.5a",
 	"coord": [139.7367355, 35.6720915],
@@ -11750,7 +11845,12 @@
 		"ko": "출구5a",
 		"zh-Hans": "出口5a",
 		"zh-Hant": "出口5a"
-	}
+	},
+	"uptime": [{
+		"open": "00:00",
+		"close": "00:00"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Akasaka.5b",
 	"coord": [139.7365384, 35.6719641],
@@ -11763,7 +11863,12 @@
 		"ko": "출구5b",
 		"zh-Hans": "出口5b",
 		"zh-Hant": "出口5b"
-	}
+	},
+	"uptime": [{
+		"open": "00:00",
+		"close": "00:00"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Akasaka.6",
 	"coord": [139.7358249, 35.6715664],
@@ -11776,7 +11881,12 @@
 		"ko": "출구6",
 		"zh-Hans": "出口6",
 		"zh-Hant": "出口6"
-	}
+	},
+	"uptime": [{
+		"open": "06:00",
+		"close": "22:00"
+	}],
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TokyoMetro.Akasaka.7",
 	"coord": [139.7354145, 35.6714836],
@@ -11789,7 +11899,12 @@
 		"ko": "출구7",
 		"zh-Hans": "出口7",
 		"zh-Hant": "出口7"
-	}
+	},
+	"uptime": [{
+		"open": "06:00",
+		"close": "22:00"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Nijubashimae.1",
 	"coord": [139.7614561, 35.6785496],
@@ -11802,7 +11917,12 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"uptime": [{
+		"open": "05:15",
+		"close": "23:00"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Nijubashimae.2",
 	"coord": [139.7606139, 35.6788972],
@@ -11815,7 +11935,12 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"uptime": [{
+		"open": "07:00",
+		"close": "20:00"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Nijubashimae.3",
 	"coord": [139.7615996, 35.6794832],
@@ -11823,12 +11948,17 @@
 		"en": "3"
 	},
 	"description": {
-		"ja": "出口3",
-		"en": "Exit 3",
-		"ko": "출구3",
-		"zh-Hans": "出口3",
-		"zh-Hant": "出口3"
-	}
+		"ja": "出口3 (エレベーターb)",
+		"en": "Exit 3 (Elevator b)",
+		"ko": "출구3 (엘리베이터 b)",
+		"zh-Hans": "出口3 (电梯b)",
+		"zh-Hant": "出口3 (電梯b)"
+	},
+	"uptime": [{
+		"open": "07:00",
+		"close": "23:00"
+	}],
+	"facilities": ["stairs", "elevator"]
 }, {
 	"id": "TokyoMetro.Nijubashimae.4",
 	"coord": [139.7622272, 35.6807306],
@@ -11841,10 +11971,11 @@
 		"ko": "출구4",
 		"zh-Hans": "出口4",
 		"zh-Hant": "出口4"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Nijubashimae.5a",
-	"coord": [139.7620679, 35.6809708],
+	"coord": [139.7620304, 35.6809357],
 	"title": {
 		"en": "5a"
 	},
@@ -11854,7 +11985,22 @@
 		"ko": "출구5a",
 		"zh-Hans": "出口5a",
 		"zh-Hant": "出口5a"
-	}
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "TokyoMetro.Nijubashimae.EVr",
+	"coord": [139.7621179, 35.6809234],
+	"title": {
+		"en": "r"
+	},
+	"description": {
+		"ja": "エレベーターr",
+		"en": "Elevator r",
+		"ko": "엘리베이터 r",
+		"zh-Hans": "电梯r",
+		"zh-Hant": "電梯r"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TokyoMetro.Nijubashimae.5b",
 	"coord": [139.7621062, 35.6810835],
@@ -11867,7 +12013,8 @@
 		"ko": "출구5b",
 		"zh-Hans": "出口5b",
 		"zh-Hant": "出口5b"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Nijubashimae.6",
 	"coord": [139.7617967, 35.6820116],
@@ -11880,7 +12027,12 @@
 		"ko": "출구6",
 		"zh-Hans": "出口6",
 		"zh-Hant": "出口6"
-	}
+	},
+	"uptime": [{
+		"open": "07:00",
+		"close": "20:00"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Nijubashimae.7",
 	"coord": [139.7624606, 35.6818559],
@@ -11893,7 +12045,8 @@
 		"ko": "출구7",
 		"zh-Hans": "出口7",
 		"zh-Hant": "出口7"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.ShinOchanomizu.B1",
 	"coord": [139.7653413, 35.6990252],
@@ -12046,7 +12199,8 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Yushima.2",
 	"coord": [139.7701558, 35.7083637],
@@ -12059,10 +12213,11 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Yushima.3",
-	"coord": [139.7697951, 35.7080555],
+	"coord": [139.7697872, 35.7080645],
 	"title": {
 		"en": "3"
 	},
@@ -12072,7 +12227,22 @@
 		"ko": "출구3",
 		"zh-Hans": "出口3",
 		"zh-Hant": "出口3"
-	}
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "TokyoMetro.Yushima.EVr",
+	"coord": [139.7697911, 35.7080272],
+	"title": {
+		"en": "r"
+	},
+	"description": {
+		"ja": "エレベーターr",
+		"en": "Elevator r",
+		"ko": "엘리베이터 r",
+		"zh-Hans": "电梯r",
+		"zh-Hant": "電梯r"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TokyoMetro.Yushima.4",
 	"coord": [139.7700915, 35.7079249],
@@ -12085,7 +12255,8 @@
 		"ko": "출구4",
 		"zh-Hans": "出口4",
 		"zh-Hant": "出口4"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Yushima.5",
 	"coord": [139.769775, 35.7060224],
@@ -12098,7 +12269,12 @@
 		"ko": "출구5",
 		"zh-Hans": "出口5",
 		"zh-Hant": "出口5"
-	}
+	},
+	"uptime": [{
+		"open": "06:00",
+		"close": "00:25"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Yushima.6",
 	"coord": [139.7700606, 35.7058002],
@@ -12111,7 +12287,12 @@
 		"ko": "출구6",
 		"zh-Hans": "出口6",
 		"zh-Hant": "出口6"
-	}
+	},
+	"uptime": [{
+		"open": "06:00",
+		"close": "00:25"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Nezu.1",
 	"coord": [139.7649229, 35.717994],
@@ -12124,7 +12305,8 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Nezu.2",
 	"coord": [139.7661634, 35.7167941],
@@ -12137,20 +12319,22 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
-	"id": "TokyoMetro.Nezu.EV",
+	"id": "TokyoMetro.Nezu.EVr",
 	"coord": [139.7662975, 35.7165753],
 	"title": {
-		"en": "EV"
+		"en": "r"
 	},
 	"description": {
-		"ja": "エレベーター",
-		"en": "Elevator",
-		"ko": "엘리베이터",
-		"zh-Hans": "电梯",
-		"zh-Hant": "電梯"
-	}
+		"ja": "エレベーターr",
+		"en": "Elevator r",
+		"ko": "엘리베이터 r",
+		"zh-Hans": "电梯r",
+		"zh-Hant": "電梯r"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TokyoMetro.Sendagi.1",
 	"coord": [139.7628857, 35.7247217],
@@ -12163,7 +12347,22 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "TokyoMetro.Sendagi.EV",
+	"coord": [139.7630621, 35.7252402],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TokyoMetro.Sendagi.2",
 	"coord": [139.76328, 35.7261915],
@@ -12176,20 +12375,12 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
-}, {
-	"id": "TokyoMetro.Sendagi.EV",
-	"coord": [139.7630621, 35.7252402],
-	"title": {
-		"en": "EV"
 	},
-	"description": {
-		"ja": "エレベーター",
-		"en": "Elevator",
-		"ko": "엘리베이터",
-		"zh-Hans": "电梯",
-		"zh-Hant": "電梯"
-	}
+	"uptime": [{
+		"open": "05:30",
+		"close": "00:30"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.NishiNippori.1",
 	"coord": [139.7665912, 35.7320835],
@@ -12202,7 +12393,22 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "TokyoMetro.NishiNippori.EVr",
+	"coord": [139.7678466, 35.7327079],
+	"title": {
+		"en": "r"
+	},
+	"description": {
+		"ja": "エレベーターr",
+		"en": "Elevator r",
+		"ko": "엘리베이터 r",
+		"zh-Hans": "电梯r",
+		"zh-Hant": "電梯r"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TokyoMetro.NishiNippori.2",
 	"coord": [139.767939, 35.7326942],
@@ -12215,7 +12421,8 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.NishiNippori.3",
 	"coord": [139.768336, 35.7328641],
@@ -12228,20 +12435,8 @@
 		"ko": "출구3",
 		"zh-Hans": "出口3",
 		"zh-Hant": "出口3"
-	}
-}, {
-	"id": "TokyoMetro.NishiNippori.EV",
-	"coord": [139.7678466, 35.7327079],
-	"title": {
-		"en": "EV"
 	},
-	"description": {
-		"ja": "エレベーター",
-		"en": "Elevator",
-		"ko": "엘리베이터",
-		"zh-Hans": "电梯",
-		"zh-Hant": "電梯"
-	}
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Machiya.0",
 	"coord": [139.7806889, 35.742695],
@@ -12254,7 +12449,8 @@
 		"ko": "출구0",
 		"zh-Hans": "出口0",
 		"zh-Hant": "出口0"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Machiya.1",
 	"coord": [139.7808672, 35.7429421],
@@ -12267,7 +12463,8 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Machiya.2",
 	"coord": [139.7815217, 35.742511],
@@ -12280,7 +12477,22 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "TokyoMetro.Machiya.EVr",
+	"coord": [139.7801994, 35.7420582],
+	"title": {
+		"en": "r"
+	},
+	"description": {
+		"ja": "エレベーターr",
+		"en": "Elevator r",
+		"ko": "엘리베이터 r",
+		"zh-Hans": "电梯r",
+		"zh-Hant": "電梯r"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TokyoMetro.Machiya.3",
 	"coord": [139.779506, 35.7410361],
@@ -12293,20 +12505,12 @@
 		"ko": "출구3",
 		"zh-Hans": "出口3",
 		"zh-Hant": "出口3"
-	}
-}, {
-	"id": "TokyoMetro.Machiya.EV",
-	"coord": [139.7801994, 35.7420582],
-	"title": {
-		"en": "EV"
 	},
-	"description": {
-		"ja": "エレベーター",
-		"en": "Elevator",
-		"ko": "엘리베이터",
-		"zh-Hans": "电梯",
-		"zh-Hant": "電梯"
-	}
+	"uptime": [{
+		"open": "06:00",
+		"close": "00:35"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Ayase.East",
 	"coord": [139.8263642, 35.762278],
@@ -12323,7 +12527,8 @@
 		"ko": "동쪽 출구",
 		"zh-Hans": "东出口",
 		"zh-Hant": "東出口"
-	}
+	},
+	"facilities": ["stairs", "ramp"]
 }, {
 	"id": "TokyoMetro.Ayase.West",
 	"coord": [139.8234031, 35.761969],
@@ -12343,17 +12548,18 @@
 	}
 }, {
 	"id": "TokyoMetro.KitaAyase.1",
-	"coord": [139.8320612, 35.7774836],
+	"coord": [139.832082, 35.7775535],
 	"title": {
 		"en": "1"
 	},
 	"description": {
-		"ja": "出口1",
-		"en": "Exit 1",
-		"ko": "출구1",
-		"zh-Hans": "出口1",
-		"zh-Hant": "出口1"
-	}
+		"ja": "出口1 (エレベーターr)",
+		"en": "Exit 1 (Elevator r)",
+		"ko": "출구1 (엘리베이터 r)",
+		"zh-Hans": "出口1 (电梯r)",
+		"zh-Hant": "出口1 (電梯r)"
+	},
+	"facilities": ["stairs", "elevator"]
 }, {
 	"id": "TokyoMetro.KitaAyase.2",
 	"coord": [139.8321839, 35.7772694],
@@ -12366,7 +12572,8 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["ramp"]
 }, {
 	"id": "TokyoMetro.KitaAyase.3",
 	"coord": [139.8322882, 35.7770922],
@@ -12379,7 +12586,8 @@
 		"ko": "출구3",
 		"zh-Hans": "出口3",
 		"zh-Hant": "出口3"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.KitaAyase.4",
 	"coord": [139.8321595, 35.77681661],
@@ -12392,7 +12600,22 @@
 		"ko": "출구4",
 		"zh-Hans": "出口4",
 		"zh-Hant": "出口4"
-	}
+	},
+	"facilities": ["ramp"]
+}, {
+	"id": "TokyoMetro.KitaAyase.EVv",
+	"coord": [139.8318559, 35.7758088],
+	"title": {
+		"en": "v"
+	},
+	"description": {
+		"ja": "エレベーターv",
+		"en": "Elevator v",
+		"ko": "엘리베이터 v",
+		"zh-Hans": "电梯v",
+		"zh-Hant": "電梯v"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TokyoMetro.KitaAyase.5",
 	"coord": [139.8319817, 35.7755817],
@@ -12405,7 +12628,8 @@
 		"ko": "출구5",
 		"zh-Hans": "出口5",
 		"zh-Hant": "出口5"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Wakoshi.South",
 	"coord": [139.6122891, 35.7883838],
