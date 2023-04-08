@@ -770,9 +770,7 @@ export default class extends Evented {
         map.__deck.props.getCursor = () => map.getCanvas().style.cursor;
 
         [13, 14, 15, 16, 17, 18].forEach(zoom => {
-            const minzoom = zoom <= 13 ? 0 : zoom,
-                maxzoom = zoom >= 18 ? 24 : zoom + 1,
-                width = ['get', 'width'],
+            const width = ['get', 'width'],
                 color = ['get', 'color'],
                 outlineColor = ['get', 'outlineColor'],
                 lineWidth =
@@ -789,40 +787,40 @@ export default class extends Evented {
                     data: helpersGeojson.featureFilter(me.featureCollection, p =>
                         p.zoom === zoom && p.type === 1 && p.altitude === 0
                     )
+                },
+                layout = {
+                    visibility: zoom === me.layerZoom ? 'visible' : 'none'
                 };
 
             map.addLayer({
                 id: `railways-og-${zoom}`,
                 type: 'line',
                 source: railwaySource,
+                layout,
                 paint: {
                     'line-color': color,
                     'line-width': lineWidth
-                },
-                minzoom,
-                maxzoom
+                }
             }, 'building-3d');
             map.addLayer({
                 id: `stations-og-${zoom}`,
                 type: 'fill',
                 source: stationSource,
+                layout,
                 paint: {
                     'fill-color': color,
                     'fill-opacity': .7
-                },
-                minzoom,
-                maxzoom
+                }
             }, 'building-3d');
             map.addLayer({
                 id: `stations-outline-og-${zoom}`,
                 type: 'line',
                 source: stationSource,
+                layout,
                 paint: {
                     'line-color': outlineColor,
                     'line-width': lineWidth
-                },
-                minzoom,
-                maxzoom
+                }
             }, 'building-3d');
         });
 
@@ -1039,6 +1037,11 @@ export default class extends Evented {
             // me.aircraftScale = Math.max(.06 / .285 / unit, 1);
 
             if (me.layerZoom !== layerZoom) {
+                for (const key of ['railways', 'stations', 'stations-outline']) {
+                    me.setLayerVisibility(`${key}-og-${me.layerZoom}`, 'none');
+                    me.setLayerVisibility(`${key}-og-${layerZoom}`, 'visible');
+                }
+
                 if (e.tracking) {
                     me.prevLayerZoom = me.layerZoom;
                 } else {
