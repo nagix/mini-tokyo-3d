@@ -20,28 +20,6 @@
         "https://klokantech.github.io/naturalearthtiles/tiles/natural_earth_2_shaded_relief.raster/{z}/{x}/{y}.png"
       ],
       "type": "raster"
-    },
-    "poi_extra": {
-      "type": "geojson",
-      "data": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {
-              "name_ja": "新綱島",
-              "name_en": "Shin-Tsunashima",
-              "name_ko": "신쓰나시마",
-              "name_zh-Hans": "新纲岛",
-              "name_zh-Hant": "新綱島"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [139.6361012, 35.5358452]
-            }
-          }
-        ]
-      }
     }
   },
   "sprite": "mapbox://sprites/mapbox/streets-v8",
@@ -3266,28 +3244,6 @@
           "tram"
         ]
       ],
-      "layout": {
-        "text-font": [
-          "Open Sans Bold",
-          "Arial Unicode MS Bold"
-        ],
-        "text-max-width": 9,
-        "text-padding": 2,
-        "text-size": 12
-      },
-      "paint": {
-        "text-color": "rgba(102,102,102,1)",
-        "text-halo-blur": 0.5,
-        "text-halo-color": "rgba(255,255,255,1)",
-        "text-halo-width": 1
-      }
-    },
-    {
-      "id": "poi_extra",
-      "type": "symbol",
-      "metadata": {},
-      "source": "poi_extra",
-      "minzoom": 11,
       "layout": {
         "text-font": [
           "Open Sans Bold",
