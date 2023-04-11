@@ -436,6 +436,7 @@ export default class extends Panel {
 
         mbox.fitBounds(getBounds(coords), {
             bearing: mbox.getBearing(),
+            pitch: mbox.getPitch(),
             offset: [0, -mbox.transform.height / 12],
             padding: {top: 20, bottom: 20, left: 10, right: 50},
             linear: true,

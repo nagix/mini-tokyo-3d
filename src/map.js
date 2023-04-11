@@ -2864,6 +2864,7 @@ export default class extends Evented {
                     me._setViewMode(altitude < 0 ? 'underground' : 'ground');
                     map.fitBounds(helpersMapbox.getBounds(coords), {
                         bearing: map.getBearing(),
+                        pitch: map.getPitch(),
                         offset: [0, -map.transform.height / 12],
                         padding: {top: 20, bottom:20, left: 10, right: 50},
                         maxZoom: 18
