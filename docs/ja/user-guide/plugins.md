@@ -26,6 +26,14 @@
 
 詳細は [Mini Tokyo 3D ライブカメラプラグイン GitHub レポジトリ](https://github.com/nagix/mt3d-plugin-livecam)をご覧ください。
 
+## PLATEAU プラグイン
+
+<img :src="$withBase('/images/plateau.jpg')" style="width: 580px;">
+
+[プロジェクト PLATEAU](https://www.mlit.go.jp/plateau/) が提供する東京の3D都市モデルを Mini Tokyo 3D と組み合わせて表示します。都心部では詳細な建築物の形状データとテクスチャーが利用できるため、非常にリアルな都市の景観を表示することができます。比較的大きな負荷がかかり、多くのメモリを要求するため、性能の高いデバイスでの使用を推奨します。
+
+詳細は [Mini Tokyo 3D PLATEAU プラグイン GitHub レポジトリ](https://github.com/nagix/mt3d-plugin-plateau)をご覧ください。
+
 ## 東京2020オリンピックプラグイン
 
 <img :src="$withBase('/images/olympics.jpg')" style="width: 580px;">

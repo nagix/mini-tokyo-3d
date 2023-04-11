@@ -26,6 +26,14 @@ You can watch trains running on live cameras placed in various locations around 
 
 For more information, please visit [Mini Tokyo 3D Live Camera Plugin GitHub Repository](https://github.com/nagix/mt3d-plugin-livecam).
 
+## PLATEAU Plugin
+
+<img :src="$withBase('/images/plateau.jpg')" style="width: 580px;">
+
+A 3D city model of Tokyo provided by [Project PLATEAU](https://www.mlit.go.jp/plateau/) is displayed in combination with Mini Tokyo 3D. Detailed geometry data and textures of buildings are available for the city center, allowing for the display of very realistic urban landscapes. Due to the relatively heavy load and large memory requirements, use on a high performance device is recommended.
+
+For more information, please visit [Mini Tokyo 3D PLATEAU Plugin GitHub Repository](https://github.com/nagix/mt3d-plugin-plateau).
+
 ## Tokyo 2020 Olympics Plugin
 
 <img :src="$withBase('/images/olympics.jpg')" style="width: 580px;">

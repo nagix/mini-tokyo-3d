@@ -2,4 +2,4 @@
 
 本アプリケーションに関するお問い合わせは、以下のメールアドレスにお願いします。
 
-mini-tokyo-3d@nagi-p.com
+info@minitokyo3d.com

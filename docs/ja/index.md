@@ -17,5 +17,5 @@ features:
   details: 地上と地下の路線網を切り替えて表示することで見やすさを追求
 - title: リアルタイム経路検索
   details: 列車の遅れに応じた複数の乗り換え経路候補をわかりやすく3Dマップ上に表示
-footer: © 2019-2022 Akihiko Kusanagi
+footer: © 2019-2023 Akihiko Kusanagi
 ---

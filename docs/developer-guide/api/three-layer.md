@@ -2,7 +2,7 @@
 
 Interface for custom three.js layers. This is a specification for implementers to model: it is not an exported method or class.
 
-A custom three.js layer contains a three.js scene. It allows a developer to render three.js objects directly into the map's GL context using the map's camera. These layers can be added to the map using [Map#addLayer](./map.md#addlayer-layer).
+A custom three.js layer contains a [three.js](https://threejs.org/docs/) scene. It allows a developer to render three.js objects directly into the map's GL context using the map's camera. These layers can be added to the map using [Map#addLayer](./map.md#addlayer-layer).
 
 Custom three.js layers must have a unique `id` and must have the `type` of `'three'`. They may implement `onAdd` and `onRemove`.
 

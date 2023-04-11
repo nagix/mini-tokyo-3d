@@ -76,6 +76,7 @@ module.exports = {
               collapsable: false,
               children: [
                 'api/',
+                'api/geojson-layer',
                 'api/map',
                 'api/mapboxgl',
                 'api/marker',
@@ -84,7 +85,8 @@ module.exports = {
                 'api/popup',
                 'api/secrets',
                 'api/three',
-                'api/three-layer'
+                'api/three-layer',
+                'api/tile-3d-layer'
               ]
             }
           ]
@@ -143,6 +145,7 @@ module.exports = {
               collapsable: false,
               children: [
                 'api/',
+                'api/geojson-layer',
                 'api/map',
                 'api/mapboxgl',
                 'api/marker',
@@ -151,7 +154,8 @@ module.exports = {
                 'api/popup',
                 'api/secrets',
                 'api/three',
-                'api/three-layer'
+                'api/three-layer',
+                'api/tile-3d-layer'
               ]
             }
           ]

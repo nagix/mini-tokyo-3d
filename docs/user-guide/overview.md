@@ -34,7 +34,7 @@ Over 2,200 trains run at the same time during the rush hour, but with the optimi
 
 <img :src="$withBase('/images/multilanguage.jpg')" style="width: 219px;">
 
-In addition to Japanese, Mini Tokyo 3D supports English, Chinese (Simplified and Traditional) and Korean, which are popular with tourists visiting Japan. Not only the user interface texts but also railway names, station names, train types, airport names and airline names are also multilingualized. For the user interface texts, Thai, Nepali and Portuguese (Brazil) are also supported.
+In addition to Japanese, Mini Tokyo 3D supports English, Chinese (Simplified and Traditional) and Korean, which are popular with tourists visiting Japan. Not only the user interface texts but also railway names, station names, train types, airport names and airline names are also multilingualized. For the user interface texts, Thai, Nepali, Portuguese (Brazil) and French are also supported.
 
 ## Switching Views Between Overground and Underground
 

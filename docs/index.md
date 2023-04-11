@@ -17,5 +17,5 @@ features:
   details: Ease of viewing by switching between the overground and underground railway networks
 - title: Real-time Route Search
   details: Displays multiple candidate travel routes based on train delays on an easy-to-understand 3D map
-footer: © 2019-2022 Akihiko Kusanagi
+footer: © 2019-2023 Akihiko Kusanagi
 ---

@@ -58,7 +58,7 @@ Sets buttons on the panel's title.
 
 #### Parameters
 
-**`buttons`** ([`Array`](./map.md)`<`[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element)`>`) An array of DOM elements to use as buttons on the title of the panel.
+**`buttons`** ([`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element)`>`) An array of DOM elements to use as buttons on the title of the panel.
 
 #### Returns
 

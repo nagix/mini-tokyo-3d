@@ -58,7 +58,7 @@ new Panel(options: Object)
 
 #### パラメータ
 
-**`buttons`** ([`Array`](./map.md)`<`[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element)`>`) パネルのタイトル上のボタンとして使用するDOM要素の配列
+**`buttons`** ([`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element)`>`) パネルのタイトル上のボタンとして使用するDOM要素の配列
 
 #### 返り値
 

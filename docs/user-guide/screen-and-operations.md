@@ -88,8 +88,17 @@ When [Playback Mode](./display-modes.md#playback-mode) is off, orange spheres ar
 
 When you click or tap on a station, the station is selected and the map around the station is enlarged to show the locations and names of the exits on the map. When a station is selected, a list of exits will be displayed at the bottom of the screen. If you move the mouse pointer over the name of the exit in the list or tap it, the name of the exit will be highlighted on the map and you can check the location. Clicking on the map where no station exists will deselect it.
 
+In addition to the names, the list of exits also shows the opening hours and icons of stairs or barrier-free facilities. Exits that are closed due to construction or other reasons, or exits that are closed after hours, are indicated in orange. The meaning of the barrier-free facility icons are as follows.
+
+Icon | Description
+:-:|:--
+<img :src="$withBase('/images/stairs-icon.jpg')" style="width: 28px; vertical-align: top;">|Staits
+<img :src="$withBase('/images/ramp-icon.jpg')" style="width: 28px; vertical-align: top;">|Wheelchair ramp
+<img :src="$withBase('/images/escalator-icon.jpg')" style="width: 28px; vertical-align: top;">|Escalator
+<img :src="$withBase('/images/elevator-icon.jpg')" style="width: 28px; vertical-align: top;">|Elevator
+
 ::: warning
-As of the version 3.2, only subway lines and underground stations are supported for displaying station exit information.
+As of the version 3.3, only subway lines and underground stations are supported for displaying station exit information.
 :::
 
 ## Route Search
@@ -105,5 +114,5 @@ You can also enter the departure and arrival stations by clicking or tapping on 
 Trains, airplanes and layers will be temporarily hidden when the search window is displayed. To close the search window, click the search icon button again.
 
 ::: warning
-As of the version 3.2, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
+As of the version 3.3, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
 :::
