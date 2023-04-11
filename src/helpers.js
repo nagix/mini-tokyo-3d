@@ -123,6 +123,25 @@ export function blink() {
 }
 
 /**
+ * Measure the actual frame rate asynchronously
+ * @returns {Promise} A Promise that resolves to the measured frame rate value
+ */
+export function measureFrameRate() {
+    return new Promise(resolve => {
+        let count = 0;
+        const start = performance.now(),
+            repeat = () => {
+                if (count++ < 60) {
+                    requestAnimationFrame(repeat);
+                } else {
+                    resolve(1000 / ((performance.now() - start) / 60));
+                }
+            };
+        repeat();
+    });
+}
+
+/**
  * Calculates a buffer for input trapezoid for a given distance.
  * @param {Array} trapezoid - Input trapezoid
  * @param {number} distance - Input distance

@@ -130,6 +130,7 @@ export default class extends Evented {
 
         me.lastDynamicUpdate = {};
         me.lastRepaint = 0;
+        me.frameRateFactor = 1;
 
         me.container.addEventListener('touchstart', () => {
             me.touchDevice = true;
@@ -150,6 +151,12 @@ export default class extends Evented {
 
         configs.events.forEach(event => {
             me.map.on(event, me.fire.bind(me));
+        });
+
+        me.map.once('idle', () => {
+            helpers.measureFrameRate().then(frameRate => {
+                me.frameRateFactor = Math.min(60 / frameRate, 2);
+            });
         });
 
         Promise.all([
@@ -1126,7 +1133,7 @@ export default class extends Evented {
 
     _jumpTo(options) {
         const me = this,
-            {map, trackingMode, trackingParams} = me,
+            {map, trackingMode, trackingParams, frameRateFactor} = me,
             now = performance.now(),
             currentZoom = map.getZoom(),
             currentBearing = map.getBearing(),
@@ -1157,7 +1164,7 @@ export default class extends Evented {
                 bearing = (bearing + 360) % 360 - 180;
             }
             if (bearingFactor >= 0) {
-                bearing = currentBearing + ((bearing - currentBearing + 540) % 360 - 180) * bearingFactor;
+                bearing = currentBearing + ((bearing - currentBearing + 540) % 360 - 180) * bearingFactor * frameRateFactor;
             }
             if (trackingMode === 'back' || trackingMode === 'front') {
                 zoom = 18.5;
@@ -1177,17 +1184,17 @@ export default class extends Evented {
 
         center = me.adjustCoord(center, altitude, bearing);
         if (easeOutFactor >= 0) {
-            const {lng: fromLng, lat: fromLat} = map.getCenter(),
-                {lng: toLng, lat: toLat} = center;
+            const {lng: currentLng, lat: currentLat} = map.getCenter(),
+                {lng, lat} = center;
 
             center = new LngLat(
-                fromLng + (toLng - fromLng) * easeOutFactor,
-                fromLat + (toLat - fromLat) * easeOutFactor
+                helpers.lerp(currentLng, lng, easeOutFactor * frameRateFactor),
+                helpers.lerp(currentLat, lat, easeOutFactor * frameRateFactor)
             );
         }
         if (easeInFactor >= 0) {
-            zoom = currentZoom + (zoom - currentZoom) * easeInFactor;
-            pitch = currentPitch + (pitch - currentPitch) * easeInFactor;
+            zoom = helpers.lerp(currentZoom, zoom, easeInFactor * frameRateFactor);
+            pitch = helpers.lerp(currentPitch, pitch, easeInFactor * frameRateFactor);
         }
 
         // Prevent layer switch due to calculation error
@@ -1320,7 +1327,7 @@ export default class extends Evented {
             // Reduce the frame rate of invisible objects for performance optimization
             if (animation.isActive(train.animationID)) {
                 const {x, y} = me.getModelPosition(car.coord),
-                    frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) ? me.ecoMode === 'normal' && map._loaded ? 60 : me.ecoFrameRate : 1;
+                    frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) ? me.ecoMode === 'normal' && map._loaded ? 0 : me.ecoFrameRate : 1;
 
                 animation.setFrameRate(train.animationID, frameRate);
             }
@@ -1399,7 +1406,7 @@ export default class extends Evented {
         // Reduce the frame rate of invisible objects for performance optimization
         if (animation.isActive(flight.animationID)) {
             const {x, y} = me.getModelPosition(aircraft.coord),
-                frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) || me.trackedObject === aircraft ? me.ecoMode === 'normal' && map._loaded ? 60 : me.ecoFrameRate : 1;
+                frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) || me.trackedObject === aircraft ? me.ecoMode === 'normal' && map._loaded ? 0 : me.ecoFrameRate : 1;
 
             animation.setFrameRate(flight.animationID, frameRate);
         }

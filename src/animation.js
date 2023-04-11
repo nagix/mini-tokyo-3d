@@ -22,7 +22,7 @@ function repeat() {
                 if (callback) {
                     callback(Math.min(elapsed, duration), duration);
                 }
-                instance.nextFrame = Math.max((nextFrame || 0) + 1000 / (instance.frameRate || 120), now);
+                instance.nextFrame = Math.max((nextFrame || 0) + 1000 / (instance.frameRate || Infinity), now);
 
                 if (elapsed >= duration) {
                     const complete = instance.complete;
@@ -89,14 +89,14 @@ const animation = {
     /**
      * Set the frame rate to an animation.
      * @param {number} id - Animation ID to set
-     * @param {number} frameRate - Frames per second of the animation. If not specified,
-     *     the default value (60 fps) will be applied.
+     * @param {number} frameRate - Frames per second of the animation. If set to 0 or
+     *     not specified, the default value (browser's native fps) will be applied.
      */
     setFrameRate(id, frameRate) {
         const instance = animation.instances[id];
 
         if (instance) {
-            if (frameRate > 0 && frameRate < 60) {
+            if (frameRate > 0) {
                 instance.frameRate = frameRate;
             } else {
                 delete instance.frameRate;
