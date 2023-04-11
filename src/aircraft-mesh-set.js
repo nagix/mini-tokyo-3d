@@ -1,6 +1,6 @@
 import InstancedGeometry from './instanced-geometry.js';
 import {BackSide, BoxGeometry, BufferAttribute, Mesh, MeshLambertMaterial, ShaderMaterial} from 'three';
-import {mergeBufferGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js';
+import {mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 
 const groupIndices = new Float32Array([
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -67,7 +67,7 @@ export default class {
             new BoxGeometry(2.64, .88, .1),
             new BoxGeometry(.1, .88, .88)
         ];
-        const geometry = mergeBufferGeometries(geometries);
+        const geometry = mergeGeometries(geometries);
 
         geometry.setAttribute('groupIndex', new BufferAttribute(groupIndices, 1));
 
