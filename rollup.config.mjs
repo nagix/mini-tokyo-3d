@@ -6,6 +6,7 @@ import image from '@rollup/plugin-image';
 import terser from '@rollup/plugin-terser';
 import sass from 'node-sass';
 import postcss from 'rollup-plugin-postcss';
+import {visualizer} from "rollup-plugin-visualizer";
 import cssimport from 'postcss-import';
 import inlinesvg from 'postcss-inline-svg';
 import strip from '@rollup/plugin-strip';
@@ -24,7 +25,7 @@ const sassRender = (content, id) => new Promise((resolve, reject) => {
 
 const onwarn = (warning, defaultHandler) => {
 	const {code, message} = warning;
-	if (code == 'CIRCULAR_DEPENDENCY' && /@(deck|luma)\.gl/.test(message)) {
+	if (code == 'CIRCULAR_DEPENDENCY' && /@(deck|loaders|luma)\.gl/.test(message)) {
 		return;
 	}
 	if ((code == 'MISSING_EXPORT' || code == 'EVAL') && message.includes('@loaders.gl')) {
@@ -130,7 +131,8 @@ export default [{
 		}),
 		strip({
 			sourceMap: true
-		})
+		}),
+		visualizer()
 	],
 	onwarn
 }, {
