@@ -83,6 +83,11 @@ export default [{
 			'0.1': '0.02',
 			'1.01': '2'
 		}),
+		replace({
+			preventAssignment: true,
+			delimiters: ['\\b', ''],
+			'catch {': 'catch (e) {'
+		}),
 		image()
 	],
 	onwarn
@@ -122,6 +127,11 @@ export default [{
 			include: '**/web-mercator-viewport.js',
 			'0.1': '0.02',
 			'1.01': '2'
+		}),
+		replace({
+			preventAssignment: true,
+			delimiters: ['\\b', ''],
+			'catch {': 'catch (e) {'
 		}),
 		image(),
 		terser({
@@ -167,6 +177,11 @@ export default [{
 			include: '**/web-mercator-viewport.js',
 			'0.1': '0.02',
 			'1.01': '2'
+		}),
+		replace({
+			preventAssignment: true,
+			delimiters: ['\\b', ''],
+			'catch {': 'catch (e) {'
 		}),
 		image()
 	],
