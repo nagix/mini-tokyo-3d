@@ -1,6 +1,6 @@
 {
   "name": "mini-tokyo-3d",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "A real-time 3D digital map of Tokyo's public transport system",
   "main": "dist/mini-tokyo-3d.js",
   "module": "dist/mini-tokyo-3d.esm.js",
@@ -34,7 +34,7 @@
     "mapbox-gl": "^2.14.1",
     "mapbox-gl-animated-popup": "^0.4.0",
     "suncalc": "^1.9.0",
-    "swiper": "^9.2.0",
+    "swiper": "^9.2.2",
     "three": "^0.151.3"
   },
   "devDependencies": {
