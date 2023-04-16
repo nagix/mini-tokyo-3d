@@ -832,26 +832,6 @@ export default class extends Evented {
 
         me.addLayer(me.trafficLayer, 'building-3d');
 
-        map.addLayer({
-            id: 'sky',
-            type: 'sky',
-            paint: {
-                'sky-opacity': [
-                    'interpolate',
-                    ['linear'],
-                    ['zoom'],
-                    0,
-                    0,
-                    5,
-                    0.3,
-                    8,
-                    1
-                ],
-                'sky-type': 'atmosphere',
-                'sky-atmosphere-sun-intensity': 20
-            }
-        });
-
         /* For development
         me.addLayer({
             id: `airway-og-`,
@@ -2662,7 +2642,7 @@ export default class extends Evented {
             sunAzimuth = 180 + (sunPos.azimuth * 180) / Math.PI,
             sunAltitude = 90 - (sunPos.altitude * 180) / Math.PI;
 
-        map.setPaintProperty('sky', 'sky-atmosphere-sun', [sunAzimuth, sunAltitude]);
+        map.setLight({position: [1.15, sunAzimuth, sunAltitude]});
     }
 
     pickObject(point) {

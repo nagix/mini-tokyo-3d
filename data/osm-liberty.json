@@ -24,7 +24,29 @@
   },
   "sprite": "mapbox://sprites/mapbox/streets-v8",
   "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+  "light": {
+    "anchor": "map"
+  },
   "layers": [
+    {
+      "id": "sky",
+      "type": "sky",
+      "paint": {
+        "sky-type": "atmosphere",
+        "sky-opacity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          0,
+          0,
+          5,
+          0.3,
+          8,
+          1
+        ],
+        "sky-atmosphere-sun-intensity": 20
+      }
+    },
     {
       "id": "background",
       "type": "background",
@@ -3204,7 +3226,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "fill-extrusion-color": "rgba(220,217,214,1)",
+        "fill-extrusion-color": "rgba(255,252,249,1)",
         "fill-extrusion-height": {
           "property": "height",
           "type": "identity"
