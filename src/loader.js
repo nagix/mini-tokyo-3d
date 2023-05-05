@@ -1,5 +1,5 @@
 import configs from './configs';
-import {loadJSON, removePrefix} from './helpers';
+import {loadJSON, removePrefix} from './helpers/helpers';
 
 const OPERATORS_FOR_TRAINS = {
     odpt: [

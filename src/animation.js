@@ -1,4 +1,4 @@
-import {valueOrDefault} from './helpers';
+import {valueOrDefault} from './helpers/helpers';
 
 function repeat() {
     const instances = animation.instances,

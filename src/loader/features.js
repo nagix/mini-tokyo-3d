@@ -9,12 +9,8 @@ import {coordEach} from '@turf/meta';
 import nearestPointOnLine from '@turf/nearest-point-on-line';
 import truncate from '@turf/truncate';
 import union from '@turf/union';
-import destination from '../turf/destination';
-import lineOffset from '../turf/line-offset';
-import lineSlice from '../turf/line-slice';
-import lineSliceAlong from '../turf/line-slice-along';
-import nearestPointProps from '../turf/nearest-point-props';
-import {includes, valueOrDefault} from '../helpers';
+import {destination, lineOffset, lineSlice, lineSliceAlong, nearestPointProps} from '../turf';
+import {includes, valueOrDefault} from '../helpers/helpers';
 import {loadJSON, saveJSON} from './helpers';
 
 const HIDDEN_STATIONS = /^(JR-East\.(YamanoteFreight|Musashino\w+Branch|Joban\.(Ueno|Nippori|Kashiwa))|TokyoMetro\.(Hibiya\.ShinKoshigaya|Chiyoda\.(Machida|SeijogakuenMae))|Keio\.(Sagamihara|Takao)\.Meidaimae|Keikyu\.(Airport\.Shinagawa|Kurihama\.YokosukaChuo)|Tobu\.(Nikko\.Kasukabe|JRTobuConnection)|Seibu\.(SeibuChichibu\.(Hanno|Kagemori)|SeibuChichibuBranch|S-))/;

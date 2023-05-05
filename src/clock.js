@@ -1,6 +1,6 @@
 import JapaneseHolidays from 'japanese-holidays';
 import configs from './configs';
-import {valueOrDefault} from './helpers';
+import {valueOrDefault} from './helpers/helpers';
 
 export default class {
 

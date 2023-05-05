@@ -1,4 +1,4 @@
-import {includes, valueOrDefault} from './helpers';
+import {includes, valueOrDefault} from './helpers/helpers';
 
 export default class {
 

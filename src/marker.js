@@ -1,4 +1,4 @@
-import {bindAll} from './helpers';
+import {bindAll} from './helpers/helpers';
 import {Evented, Marker} from 'mapbox-gl';
 
 /**

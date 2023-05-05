@@ -1,9 +1,8 @@
-import AircraftMeshSet from './aircraft-mesh-set';
-import animation from './animation';
-import CarMeshSet from './car-mesh-set';
-import configs from './configs';
-import {colorToRGBArray, lerp} from './helpers';
-import {hasDarkBackground} from './helpers-mapbox';
+import animation from '../animation';
+import configs from '../configs';
+import {colorToRGBArray, lerp} from '../helpers/helpers';
+import {hasDarkBackground} from '../helpers/helpers-mapbox';
+import {AircraftMeshSet, CarMeshSet} from '../mesh-sets';
 import {Point} from 'mapbox-gl';
 import {Color, Scene, MathUtils, WebGLRenderTarget, Vector3} from 'three';
 

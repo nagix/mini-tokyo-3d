@@ -1,4 +1,4 @@
-import {buildLookup} from '../helpers';
+import {buildLookup} from '../helpers/helpers';
 import {loadJSON, saveJSON} from './helpers';
 
 export default async function() {

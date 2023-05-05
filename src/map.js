@@ -3,28 +3,18 @@ import {Evented, FullscreenControl, LngLat, Map, MercatorCoordinate, NavigationC
 import AnimatedPopup from 'mapbox-gl-animated-popup';
 import SunCalc from 'suncalc';
 import animation from './animation';
-import AboutPanel from './about-panel';
 import Clock from './clock';
-import ClockControl from './clock-control';
 import configs from './configs';
+import {ClockControl, MapboxGLButtonControl} from './controls';
 import extend from './extend';
-import GeoJsonLayer from './geojson-layer';
-import * as helpers from './helpers';
-import {pickObject} from './helpers-deck';
-import * as helpersGeojson from './helpers-geojson';
-import * as helpersMapbox from './helpers-mapbox';
-import LayerPanel from './layer-panel';
+import * as helpers from './helpers/helpers';
+import {pickObject} from './helpers/helpers-deck';
+import * as helpersGeojson from './helpers/helpers-geojson';
+import * as helpersMapbox from './helpers/helpers-mapbox';
+import {GeoJsonLayer, ThreeLayer, Tile3DLayer, TrafficLayer} from './layers';
 import * as loader from './loader';
-import MapboxGLButtonControl from './mapbox-gl-button-control';
+import {AboutPanel, LayerPanel, SearchPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
-import SearchPanel from './search-panel';
-import SharePanel from './share-panel';
-import StationPanel from './station-panel';
-import ThreeLayer from './three-layer';
-import Tile3DLayer from './tile-3d-layer';
-import TrackingModePanel from './tracking-mode-panel';
-import TrafficLayer from './traffic-layer';
-import TrainPanel from './train-panel';
 
 const OPERATORS_FOR_DYNAMIC_TRAIN_DATA = [
     'Toei'

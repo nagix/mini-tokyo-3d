@@ -1,9 +1,9 @@
 import AnimatedPopup from 'mapbox-gl-animated-popup';
 import Swiper, {Pagination} from 'swiper';
-import configs from './configs';
-import {createElement, includes, loadJSON} from './helpers';
-import {emptyFeatureCollection, featureFilter} from './helpers-geojson';
-import {getBounds, setLayerProps} from './helpers-mapbox';
+import configs from '../configs';
+import {createElement, includes, loadJSON} from '../helpers/helpers';
+import {emptyFeatureCollection, featureFilter} from '../helpers/helpers-geojson';
+import {getBounds, setLayerProps} from '../helpers/helpers-mapbox';
 import Panel from './panel';
 
 export default class extends Panel {

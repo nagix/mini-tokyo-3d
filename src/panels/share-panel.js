@@ -1,5 +1,5 @@
-import configs from './configs';
-import {createElement, showNotification} from './helpers';
+import configs from '../configs';
+import {createElement, showNotification} from '../helpers/helpers';
 
 export default class {
 

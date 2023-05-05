@@ -1,4 +1,4 @@
-import {buildLookup} from '../helpers';
+import {buildLookup} from '../helpers/helpers';
 import {loadJSON, saveJSON} from './helpers';
 
 const WIKIPEDIA_URL = 'https://ja.wikipedia.org/w/api.php';

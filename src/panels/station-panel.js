@@ -1,5 +1,5 @@
 import Panel from './panel';
-import {includes} from './helpers';
+import {includes} from '../helpers/helpers';
 
 export default class extends Panel {
 

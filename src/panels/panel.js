@@ -1,4 +1,4 @@
-import {createElement, includes} from './helpers';
+import {createElement, includes} from '../helpers/helpers';
 
 const isWindows = includes(navigator.userAgent, 'Windows');
 

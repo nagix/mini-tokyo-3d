@@ -4,7 +4,7 @@ import turfDistance from '@turf/distance';
 import {featureCollection} from '@turf/helpers';
 import {getCoord, getCoords} from '@turf/invariant';
 import {featureEach} from '@turf/meta';
-import destination from './turf/destination';
+import destination from '../turf/destination';
 
 /**
  * Filter GeoJSON object using a filter function.

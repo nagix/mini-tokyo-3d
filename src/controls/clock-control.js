@@ -1,6 +1,6 @@
 import {Evented} from 'mapbox-gl';
 import JapaneseHolidays from 'japanese-holidays';
-import {createElement} from './helpers';
+import {createElement} from '../helpers/helpers';
 
 const DATE_FORMAT = {
     year: 'numeric',

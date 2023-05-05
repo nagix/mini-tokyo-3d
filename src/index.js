@@ -1,6 +1,6 @@
 import Marker from './marker';
 import Map from './map';
-import Panel from './panel';
+import {Panel} from './panels';
 import Popup from './popup';
 import mapboxgl from 'mapbox-gl';
 import * as three from 'three';

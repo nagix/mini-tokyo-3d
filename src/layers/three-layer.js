@@ -1,5 +1,5 @@
 import {AmbientLight, Color, DirectionalLight, MathUtils, Matrix4, Mesh, PerspectiveCamera, Scene, Vector3, WebGLRenderer} from 'three';
-import {clamp, valueOrDefault} from './helpers';
+import {clamp, valueOrDefault} from '../helpers/helpers';
 
 const SQRT3 = Math.sqrt(3);
 

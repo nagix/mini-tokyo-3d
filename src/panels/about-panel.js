@@ -1,4 +1,4 @@
-import configs from './configs';
+import configs from '../configs';
 import Panel from './panel';
 
 export default class extends Panel {

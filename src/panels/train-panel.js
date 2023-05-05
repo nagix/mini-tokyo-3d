@@ -1,4 +1,4 @@
-import {lerp} from './helpers';
+import {lerp} from '../helpers/helpers';
 import Panel from './panel';
 
 export default class extends Panel {
