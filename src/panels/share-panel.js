@@ -17,7 +17,7 @@ export default class {
             }, map.container),
             button = me._button = createElement('button', {
                 className: 'share-button',
-                innerHTML: dict[`share-this`].replace('$1', dict[type])
+                innerHTML: dict['share-this'].replace('$1', dict[type])
             }, container);
 
         button.onclick = () => {

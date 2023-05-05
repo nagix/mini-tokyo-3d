@@ -12,7 +12,7 @@ import {pickObject} from './helpers/helpers-deck';
 import * as helpersGeojson from './helpers/helpers-geojson';
 import * as helpersMapbox from './helpers/helpers-mapbox';
 import {GeoJsonLayer, ThreeLayer, Tile3DLayer, TrafficLayer} from './layers';
-import * as loader from './loader';
+import {loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData} from './loader';
 import {AboutPanel, LayerPanel, SearchPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
 
@@ -150,7 +150,7 @@ export default class extends Evented {
         });
 
         Promise.all([
-            loader.loadStaticData(me.dataUrl, me.lang, me.clock)
+            loadStaticData(me.dataUrl, me.lang, me.clock)
                 .then(me.initData.bind(me))
                 .catch(error => {
                     showErrorMessage(me.container);
@@ -2021,7 +2021,7 @@ export default class extends Evented {
     loadTimetableData() {
         const me = this;
 
-        loader.loadTimetableData(me.dataUrl, me.clock).then(data => {
+        loadTimetableData(me.dataUrl, me.clock).then(data => {
             me.timetableData = data;
             me.updateTimetableData(me.timetableData);
             me.trainLookup = helpers.buildLookup(me.timetableData, 't');
@@ -2032,7 +2032,7 @@ export default class extends Evented {
     loadRealtimeTrainData() {
         const me = this;
 
-        loader.loadDynamicTrainData(me.secrets).then(({trainData, trainInfoData}) => {
+        loadDynamicTrainData(me.secrets).then(({trainData, trainInfoData}) => {
             me.realtimeTrainLookup = {};
             trainData.forEach(trainRef => {
                 const {id} = trainRef;
@@ -2139,7 +2139,7 @@ export default class extends Evented {
     loadRealtimeFlightData() {
         const me = this;
 
-        loader.loadDynamicFlightData(me.secrets).then(({atisData, flightData}) => {
+        loadDynamicFlightData(me.secrets).then(({atisData, flightData}) => {
             const {landing, departure} = atisData,
                 pattern = [landing.join('/'), departure.join('/')].join(' '),
                 codeShareFlights = {},

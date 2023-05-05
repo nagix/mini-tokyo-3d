@@ -24,32 +24,33 @@ export default class extends Panel {
         map.trackObject();
 
         super.addTo(map)
-            .setHTML(`
-<div id="search-form">
-    <div class="search-form-element">${dict['from-station']} <input id="origin" class="search-input" type="text" list="stations"></div>
-    <div class="search-form-element">${dict['to-station']} <input id="destination" class="search-input" type="text" list="stations"></div>
-    <div class="search-form-element">
-        <select id="type" class="search-select">
-            <option value="departure" selected>${dict['depart-at']}</option>
-        </select>
-        <select id="month" class="search-select">
-            <option value="${currMonth}" selected>${date.toLocaleDateString(lang, {month: 'short'})}</option>
-        </select>
-        <select id="date" class="search-select">
-            <option value="${currDate}" selected>${date.toLocaleDateString(lang, {day: 'numeric'})}</option>
-        </select>
-        <select id="hours" class="search-select"></select>
-        <select id="minutes" class="search-select"></select>
-    </div>
-    <div class="search-form-element"><button id="search-button" class="search-button">${dict['search-route']}</button></div>
-</div>
-<div id="search-load">
-    <div class="ball-pulse"><div></div><div></div><div></div></div>
-</div>
-<div id="search-result" class="swiper-container">
-    <div class="swiper-wrapper"></div>
-    <div class="swiper-pagination"></div>
-</div>`);
+            .setHTML([
+                '<div id="search-form">',
+                `<div class="search-form-element">${dict['from-station']} <input id="origin" class="search-input" type="text" list="stations"></div>`,
+                `<div class="search-form-element">${dict['to-station']} <input id="destination" class="search-input" type="text" list="stations"></div>`,
+                '<div class="search-form-element">',
+                '<select id="type" class="search-select">',
+                `<option value="departure" selected>${dict['depart-at']}</option>`,
+                '</select>',
+                '<select id="month" class="search-select">',
+                `<option value="${currMonth}" selected>${date.toLocaleDateString(lang, {month: 'short'})}</option>`,
+                '</select>',
+                '<select id="date" class="search-select">',
+                `<option value="${currDate}" selected>${date.toLocaleDateString(lang, {day: 'numeric'})}</option>`,
+                '</select>',
+                '<select id="hours" class="search-select"></select>',
+                '<select id="minutes" class="search-select"></select>',
+                '</div>',
+                `<div class="search-form-element"><button id="search-button" class="search-button">${dict['search-route']}</button></div>`,
+                '</div>',
+                '<div id="search-load">',
+                '<div class="ball-pulse"><div></div><div></div><div></div></div>',
+                '</div>',
+                '<div id="search-result" class="swiper-container">',
+                '<div class="swiper-wrapper"></div>',
+                '<div class="swiper-pagination"></div>',
+                '</div>'
+            ].join(''));
 
         const container = me._container,
             originElement = container.querySelector('#origin'),

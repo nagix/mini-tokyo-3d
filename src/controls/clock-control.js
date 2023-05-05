@@ -65,8 +65,8 @@ export default class extends Evented {
         const me = this;
 
         me._container.parentNode.removeChild(me._container);
-        me._container = undefined;
-        me._map = undefined;
+        delete me._container;
+        delete me._map;
     }
 
     setMode(mode) {

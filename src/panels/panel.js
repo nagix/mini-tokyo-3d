@@ -96,16 +96,17 @@ export default class {
 
         const container = me._container = createElement('div', {
             className: `panel closed ${options.className || ''}`,
-            innerHTML: `
-<div id="panel-header">
-    <div id="panel-title"></div>
-    <div id="panel-button-group" class="panel-button-group">
-        <div id="panel-button" class="${options.modal ? 'close-button' : 'slide-button'}"></div>
-    </div>
-</div>
-<div id="panel-body"${isWindows ? ' class="windows"' : ''}>
-    <div id="panel-content"></div>
-</div>`
+            innerHTML: [
+                '<div id="panel-header">',
+                '<div id="panel-title"></div>',
+                '<div id="panel-button-group" class="panel-button-group">',
+                `<div id="panel-button" class="${options.modal ? 'close-button' : 'slide-button'}"></div>`,
+                '</div>',
+                '</div>',
+                `<div id="panel-body"${isWindows ? ' class="windows"' : ''}>`,
+                '<div id="panel-content"></div>',
+                '</div>'
+            ].join('')
         }, map.container);
 
         if (me._title) {

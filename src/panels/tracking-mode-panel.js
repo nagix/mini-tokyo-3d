@@ -38,7 +38,7 @@ export default class extends Panel {
             .setTitle(dict['tracking-modes'])
             .setHTML(trackingModes.map(mode => [
                 `<div id="${mode}-tracking-mode" class="tracking-mode-row">`,
-                `<div class="tracking-mode-icon"></div>`,
+                '<div class="tracking-mode-icon"></div>',
                 `<div>${dict[mode]}</div>`,
                 '</div>'
             ].join('')).join(''));

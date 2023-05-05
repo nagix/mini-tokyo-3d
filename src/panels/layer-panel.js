@@ -18,7 +18,7 @@ export default class extends Panel {
             .setTitle(dict['layers'])
             .setHTML(layers.map(layer => [
                 `<div id="${layer.getId()}-layer" class="layer-row">`,
-                `<div class="layer-icon"></div>`,
+                '<div class="layer-icon"></div>',
                 `<div>${layer.getName(lang)}</div>`,
                 '</div>'
             ].join('')).join(''));

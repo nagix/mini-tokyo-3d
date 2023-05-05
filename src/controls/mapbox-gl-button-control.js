@@ -44,7 +44,7 @@ export default class {
         const me = this;
 
         me._container.parentNode.removeChild(me._container);
-        me._map = undefined;
+        delete me._map;
     }
 
 }
