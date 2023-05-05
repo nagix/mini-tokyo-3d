@@ -1075,7 +1075,7 @@ export default class extends Evented {
 
                 if (Math.floor((now - configs.minDelay) / configs.trainRefreshInterval) !== Math.floor(me.lastTrainRefresh / configs.trainRefreshInterval)) {
                     me.refreshStyleColors();
-                    me.setSunPosition();
+                    helpersMapbox.setSunPosition(map, now);
                     if (me.searchMode === 'none') {
                         if (me.clockMode === 'realtime') {
                             me.loadRealtimeTrainData();
@@ -2619,20 +2619,6 @@ export default class extends Evented {
             }
             map.setPaintProperty(id, key, prop);
         });
-    }
-
-    setSunPosition() {
-        const {map, clock} = this,
-            center = map.getCenter(),
-            sunPos = SunCalc.getPosition(
-                clock.getTime(),
-                center.lat,
-                center.lng
-            ),
-            sunAzimuth = 180 + (sunPos.azimuth * 180) / Math.PI,
-            sunAltitude = 90 - (sunPos.altitude * 180) / Math.PI;
-
-        map.setLight({position: [1.15, sunAzimuth, sunAltitude]});
     }
 
     pickObject(point) {

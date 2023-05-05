@@ -1,7 +1,13 @@
 import {LngLatBounds} from 'mapbox-gl';
 import {parseCSSColor} from 'csscolorparser';
 import {includes, luminance} from './helpers';
+import SunCalc from 'suncalc';
 
+/**
+ * Returns the smallest bounding box that contains all the given points
+ * @param {Array<LngLatLike>} coords - Array of LngLatLike objects
+ * @returns {LngLatBounds} The bounding box
+ */
 export function getBounds(coords) {
     const bounds = new LngLatBounds();
 
@@ -11,13 +17,34 @@ export function getBounds(coords) {
     return bounds;
 }
 
+/**
+ * Sets the properties in the specified layer that inherits deck.gl's MabboxLayer.
+ * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @param {string} id - The ID of the layer
+ * @param {object} props - One or more properties to update
+ */
 export function setLayerProps(map, id, props) {
     map.getLayer(id).implementation.setProps(props);
 }
 
 /**
- * Check if the background color of the map is dark.
- * @param {object} map - Mapbox's Map object
+ * Sets the sun position at a specific time
+ * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @param {Date | number} date - Date object or the number of milliseconds elapsed
+ *     since January 1, 1970 00:00:00 UTC
+ */
+export function setSunPosition(map, date) {
+    const {lat, lng} = map.getCenter(),
+        {azimuth, altitude} = SunCalc.getPosition(date, lat, lng),
+        sunAzimuth = 180 + azimuth * 180 / Math.PI,
+        sunAltitude = 90 - altitude * 180 / Math.PI;
+
+    map.setLight({position: [1.15, sunAzimuth, sunAltitude]});
+}
+
+/**
+ * Checks if the background color of the map is dark.
+ * @param {mapboxgl.Map} map - Mapbox's Map object
  * @param {boolean} actual - If true, the result is based on the current background color.
  *     Otherwise, the result is based on the target background color
  * @returns {boolean} True if the background color of the map is dark
@@ -42,8 +69,8 @@ export function getScaledColorString(color, colorFactors) {
 
 /**
  * Returns an array of the style color information retrieved from map layers.
- * @param {object} map - Mapbox's Map object
- * @returns {Array} Array of the style color objects
+ * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @returns {Array<object>} Array of the style color objects
  */
 export function getStyleColors(map) {
     // Layer type -> paint property key mapping
@@ -87,8 +114,8 @@ export function getStyleColors(map) {
 
 /**
  * Returns an array of the style opacity information retrieved from map layers.
- * @param {object} map - Mapbox's Map object
- * @returns {Array} Array of the style opacity objects
+ * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @returns {Array<object>} Array of the style opacity objects
  */
 export function getStyleOpacities(map) {
     const layerTypes = ['line', 'fill', 'fill-extrusion'],
@@ -105,6 +132,14 @@ export function getStyleOpacities(map) {
     return opacities;
 }
 
+/**
+ * Multiplies a target by a factor. The target can be either a number, "case" expression
+ * or zoom function that is used in the Mapbox style specification
+ * @param {number | Array | object} obj - Target number, "case" expression or zoom
+ *     function
+ * @param {number} factor - Factor to multiply
+ * @returns {number | Array | object} Result number, "case" expression or zoom function
+ */
 export function scaleValues(obj, factor) {
     if (!isNaN(obj)) {
         return obj * factor;
