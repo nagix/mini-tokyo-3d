@@ -1,7 +1,6 @@
 import {featureEach} from '@turf/meta';
 import {Evented, FullscreenControl, LngLat, Map, MercatorCoordinate, NavigationControl} from 'mapbox-gl';
 import AnimatedPopup from 'mapbox-gl-animated-popup';
-import SunCalc from 'suncalc';
 import animation from './animation';
 import Clock from './clock';
 import configs from './configs';
@@ -1075,7 +1074,7 @@ export default class extends Evented {
 
                 if (Math.floor((now - configs.minDelay) / configs.trainRefreshInterval) !== Math.floor(me.lastTrainRefresh / configs.trainRefreshInterval)) {
                     me.refreshStyleColors();
-                    helpersMapbox.setSunPosition(map, now);
+                    helpersMapbox.setSunlight(map, now);
                     if (me.searchMode === 'none') {
                         if (me.clockMode === 'realtime') {
                             me.loadRealtimeTrainData();
@@ -2546,47 +2545,7 @@ export default class extends Evented {
      * @returns {object} Color object
      */
     getLightColor() {
-        const [lng, lat] = configs.defaultCenter,
-            {clock} = this,
-            times = SunCalc.getTimes(new Date(clock.getTime()), lat, lng),
-            sunrise = clock.getJSTDate(times.sunrise.getTime()).getTime(),
-            sunset = clock.getJSTDate(times.sunset.getTime()).getTime(),
-            now = clock.getJSTDate().getTime();
-        let t, r, g, b;
-
-        if (now >= sunrise - 3600000 && now < sunrise) {
-            // Night to sunrise
-            t = (now - sunrise) / 3600000 + 1;
-            r = helpers.lerp(.4, .8, t);
-            g = helpers.lerp(.4, .9, t);
-            b = helpers.lerp(.5, 1, t);
-        } else if (now >= sunrise && now < sunrise + 3600000) {
-            // Sunrise to day
-            t = (now - sunrise) / 3600000;
-            r = helpers.lerp(.8, 1, t);
-            g = helpers.lerp(.9, 1, t);
-            b = 1;
-        } else if (now >= sunrise + 3600000 && now < sunset - 3600000) {
-            // Day
-            r = g = b = 1;
-        } else if (now >= sunset - 3600000 && now < sunset) {
-            // Day to sunset
-            t = (now - sunset) / 3600000 + 1;
-            r = 1;
-            g = helpers.lerp(1, .9, t);
-            b = helpers.lerp(1, .8, t);
-        } else if (now >= sunset && now < sunset + 3600000) {
-            // Sunset to night
-            t = (now - sunset) / 3600000;
-            r = helpers.lerp(1, .4, t);
-            g = helpers.lerp(.9, .4, t);
-            b = helpers.lerp(.8, .5, t);
-        } else {
-            // Night
-            r = g = .4;
-            b = .5;
-        }
-        return {r, g, b};
+        return helpersMapbox.getSunlightColor(this.map, this.clock.getTime());
     }
 
     refreshStyleColors() {

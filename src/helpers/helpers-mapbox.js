@@ -1,7 +1,9 @@
 import {LngLatBounds} from 'mapbox-gl';
 import {parseCSSColor} from 'csscolorparser';
-import {includes, luminance} from './helpers';
+import {includes, lerp, luminance} from './helpers';
 import SunCalc from 'suncalc';
+
+const HOUR = 3600000;
 
 /**
  * Returns the smallest bounding box that contains all the given points
@@ -28,18 +30,71 @@ export function setLayerProps(map, id, props) {
 }
 
 /**
- * Sets the sun position at a specific time
+ * Returns the sunlight color at a specific time.
  * @param {mapboxgl.Map} map - Mapbox's Map object
- * @param {Date | number} date - Date object or the number of milliseconds elapsed
- *     since January 1, 1970 00:00:00 UTC
+ * @param {number} time - The number of milliseconds elapsed since January 1,
+ *     1970 00:00:00 UTC
+ * @returns {object} Color object
  */
-export function setSunPosition(map, date) {
-    const {lat, lng} = map.getCenter(),
-        {azimuth, altitude} = SunCalc.getPosition(date, lat, lng),
-        sunAzimuth = 180 + azimuth * 180 / Math.PI,
-        sunAltitude = 90 - altitude * 180 / Math.PI;
+export function getSunlightColor(map, time) {
+    const {lng, lat} = map.getCenter(),
+        {sunrise, sunset} = SunCalc.getTimes(time, lat, lng),
+        sunriseTime = sunrise.getTime(),
+        sunsetTime = sunset.getTime();
+    let t, r, g, b;
 
-    map.setLight({position: [1.15, sunAzimuth, sunAltitude]});
+    if (time >= sunriseTime - HOUR && time < sunriseTime) {
+        // Night to sunrise
+        t = (time - sunriseTime) / HOUR + 1;
+        r = lerp(.4, .8, t);
+        g = lerp(.4, .9, t);
+        b = lerp(.5, 1, t);
+    } else if (time >= sunriseTime && time < sunriseTime + HOUR) {
+        // Sunrise to day
+        t = (time - sunriseTime) / HOUR;
+        r = lerp(.8, 1, t);
+        g = lerp(.9, 1, t);
+        b = 1;
+    } else if (time >= sunriseTime + HOUR && time < sunsetTime - HOUR) {
+        // Day
+        r = g = b = 1;
+    } else if (time >= sunsetTime - HOUR && time < sunsetTime) {
+        // Day to sunset
+        t = (time - sunsetTime) / HOUR + 1;
+        r = 1;
+        g = lerp(1, .9, t);
+        b = lerp(1, .8, t);
+    } else if (time >= sunsetTime && time < sunsetTime + HOUR) {
+        // Sunset to night
+        t = (time - sunsetTime) / HOUR;
+        r = lerp(1, .4, t);
+        g = lerp(.9, .4, t);
+        b = lerp(.8, .5, t);
+    } else {
+        // Night
+        r = g = .4;
+        b = .5;
+    }
+    return {r, g, b};
+}
+
+/**
+ * Sets the sunlight at a specific time to the map
+ * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @param {number} time - The number of milliseconds elapsed since January 1,
+ *     1970 00:00:00 UTC
+ */
+export function setSunlight(map, time) {
+    const {lat, lng} = map.getCenter(),
+        {azimuth, altitude} = SunCalc.getPosition(time, lat, lng),
+        sunAzimuth = 180 + azimuth * 180 / Math.PI,
+        sunAltitude = 90 - altitude * 180 / Math.PI,
+        {r, g, b} = getSunlightColor(map, time);
+
+    map.setLight({
+        position: [1.15, sunAzimuth, sunAltitude],
+        color: `rgb(${r * 255},${g * 255},${b * 255})`
+    });
 }
 
 /**
@@ -77,8 +132,7 @@ export function getStyleColors(map) {
     const paintPropertyKeys = {
             'background': ['background-color'],
             'line': ['line-color'],
-            'fill': ['fill-color', 'fill-outline-color'],
-            'fill-extrusion': ['fill-extrusion-color']
+            'fill': ['fill-color', 'fill-outline-color']
         },
         layerTypes = Object.keys(paintPropertyKeys),
         colors = [];
