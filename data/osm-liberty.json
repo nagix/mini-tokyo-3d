@@ -3223,7 +3223,8 @@
       ],
       "minzoom": 14,
       "layout": {
-        "visibility": "visible"
+        "visibility": "visible",
+        "fill-extrusion-edge-radius": 0.3
       },
       "paint": {
         "fill-extrusion-color": "rgba(255,252,249,1)",
@@ -3235,7 +3236,9 @@
           "property": "min_height",
           "type": "identity"
         },
-        "fill-extrusion-opacity": 0.8
+        "fill-extrusion-opacity": 0.8,
+        "fill-extrusion-ambient-occlusion-intensity": 0.4,
+        "fill-extrusion-ambient-occlusion-radius": 20
       }
     },
     {

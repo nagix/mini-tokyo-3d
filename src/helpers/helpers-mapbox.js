@@ -93,7 +93,8 @@ export function setSunlight(map, time) {
 
     map.setLight({
         position: [1.15, sunAzimuth, sunAltitude],
-        color: `rgb(${r * 255},${g * 255},${b * 255})`
+        color: `rgb(${r * 255},${g * 255},${b * 255})`,
+        intensity: 0.35
     });
 }
 
