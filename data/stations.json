@@ -10904,10 +10904,11 @@
 		"TokyoMetro.Hanzomon.2",
 		"TokyoMetro.Hanzomon.3a",
 		"TokyoMetro.Hanzomon.3b",
+		"TokyoMetro.Hanzomon.EV",
 		"TokyoMetro.Hanzomon.4",
 		"TokyoMetro.Hanzomon.5",
-		"TokyoMetro.Hanzomon.6",
-		"TokyoMetro.Hanzomon.EV"
+		"TokyoMetro.Hanzomon.EVr",
+		"TokyoMetro.Hanzomon.6"
 	],
 	"altitude": -1
 }, {
@@ -10943,10 +10944,6 @@
 		"zh-Hans": "神保町",
 		"zh-Hant": "神保町"
 	},
-	"exit": [
-		"TokyoMetro.Jimbocho.A1",
-		"TokyoMetro.Jimbocho.A2"
-	],
 	"altitude": -1
 }, {
 	"id": "TokyoMetro.Hanzomon.Otemachi",
@@ -11054,9 +11051,11 @@
 	},
 	"exit": [
 		"TokyoMetro.Kinshicho.1",
+		"TokyoMetro.Kinshicho.EVb",
 		"TokyoMetro.Kinshicho.2",
 		"TokyoMetro.Kinshicho.3",
 		"TokyoMetro.Kinshicho.4",
+		"TokyoMetro.Kinshicho.EVg",
 		"TokyoMetro.Kinshicho.5"
 	],
 	"altitude": -1
@@ -12022,6 +12021,7 @@
 	},
 	"exit": [
 		"Toei.Oshiage.A1",
+		"Toei.Oshiage.EV",
 		"Toei.Oshiage.A2",
 		"Toei.Oshiage.A3"
 	],
@@ -12197,6 +12197,8 @@
 		"zh-Hant": "神保町"
 	},
 	"exit": [
+		"Toei.Jimbocho.A1",
+		"Toei.Jimbocho.A2",
 		"Toei.Jimbocho.A3",
 		"Toei.Jimbocho.A4",
 		"Toei.Jimbocho.A5",
@@ -13153,7 +13155,8 @@
 	"exit": [
 		"Toei.KiyosumiShirakawa.A1",
 		"Toei.KiyosumiShirakawa.A2",
-		"Toei.KiyosumiShirakawa.A3"
+		"Toei.KiyosumiShirakawa.A3",
+		"Toei.KiyosumiShirakawa.EV"
 	],
 	"altitude": -1
 }, {
