@@ -387,7 +387,7 @@
     background: no-repeat center left/20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/right-to-bracket.svg', fill: #fff);
     width: 26px;
 }
-.mini-tokyo-3d .closed .exit-icon-box {
+.mini-tokyo-3d .exit-row.closed .exit-icon-box {
     background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/rectangle-xmark.svg', fill: #f90);
 }
 .mini-tokyo-3d .exit-title-box {
