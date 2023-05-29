@@ -1,9 +1,10 @@
 import {LngLatBounds} from 'mapbox-gl';
 import {parseCSSColor} from 'csscolorparser';
-import {includes, lerp, luminance} from './helpers';
+import {lerp, luminance, valueOrDefault} from './helpers';
 import SunCalc from 'suncalc';
 
 const HOUR = 3600000;
+const BG_LAYER_IDS = ['background', 'background-underground'];
 
 /**
  * Returns the smallest bounding box that contains all the given points
@@ -93,8 +94,7 @@ export function setSunlight(map, time) {
 
     map.setLight({
         position: [1.15, sunAzimuth, sunAltitude],
-        color: `rgb(${r * 255},${g * 255},${b * 255})`,
-        intensity: 0.35
+        color: `rgb(${r * 255},${g * 255},${b * 255})`
     });
 }
 
@@ -107,10 +107,18 @@ export function setSunlight(map, time) {
  */
 export function hasDarkBackground(map, actual) {
     if (actual) {
-        return luminance(map.getLayer('background').paint.get('background-color')) < .5;
+        return BG_LAYER_IDS.reduce((value, id) => {
+            const {r, g, b} = map.getLayer(id).paint.get('background-color'),
+                a = map.getLayer(id).paint.get('background-opacity');
+            return value + luminance({r: r * a, g: g * a, b: b * a});
+        }, 0) < .5;
     }
-    const [r, g, b] = parseCSSColor(map.getPaintProperty('background', 'background-color'));
-    return luminance({r, g, b}) < 127.5;
+
+    return BG_LAYER_IDS.reduce((value, id) => {
+        const [r, g, b] = parseCSSColor(map.getPaintProperty(id, 'background-color')),
+            a = map.getPaintProperty(id, 'background-opacity');
+        return value + luminance({r: r * a, g: g * a, b: b * a});
+    }, 0) < 127.5;
 }
 
 /**
@@ -126,41 +134,48 @@ export function getScaledColorString(color, colorFactors) {
 /**
  * Returns an array of the style color information retrieved from map layers.
  * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @param {string} metadataKey - Metadata key to filter
  * @returns {Array<object>} Array of the style color objects
  */
-export function getStyleColors(map) {
+export function getStyleColors(map, metadataKey) {
     // Layer type -> paint property key mapping
     const paintPropertyKeys = {
             'background': ['background-color'],
             'line': ['line-color'],
             'fill': ['fill-color', 'fill-outline-color']
         },
-        layerTypes = Object.keys(paintPropertyKeys),
         colors = [];
 
-    map.getStyle().layers.filter(layer =>
-        includes(layerTypes, layer.type) && !layer.id.match(/-(og|ug)-/)
-    ).forEach(layer => {
-        const {id, type} = layer;
-
+    map.getStyle().layers.filter(({metadata}) =>
+        metadata && metadata[metadataKey]
+    ).forEach(({id, type}) => {
         for (const key of paintPropertyKeys[type]) {
             const prop = map.getPaintProperty(id, key);
 
+            if (!prop) {
+                return;
+            }
             if (typeof prop === 'string') {
                 const [r, g, b, a] = parseCSSColor(prop);
-                colors.push({id, key, r, g, b, a});
-            } else if (Array.isArray(prop) && prop[0] === 'case') {
-                prop.forEach((item, i) => {
-                    if (i >= 1 && typeof item === 'string') {
+                colors.push({id, key, color: {r, g, b, a}});
+            } else if (prop.stops) {
+                const color = [];
+
+                prop.stops.forEach((item, index) => {
+                    const [r, g, b, a] = parseCSSColor(item[1]);
+                    color.push({index, value: {r, g, b, a}});
+                });
+                colors.push({id, key, color});
+            } else if (prop[0] === 'case' || prop[0] === 'interpolate') {
+                const color = [];
+
+                prop.forEach((item, index) => {
+                    if (index >= 1 && typeof item === 'string') {
                         const [r, g, b, a] = parseCSSColor(item);
-                        colors.push({id, key, _case: i, r, g, b, a});
+                        color.push({index, value: {r, g, b, a}});
                     }
                 });
-            } else if (typeof prop === 'object') {
-                prop.stops.forEach((item, i) => {
-                    const [r, g, b, a] = parseCSSColor(item[1]);
-                    colors.push({id, key, stops: i, r, g, b, a});
-                });
+                colors.push({id, key, color});
             }
         }
     });
@@ -168,51 +183,116 @@ export function getStyleColors(map) {
 }
 
 /**
+ * Sets style colors based on the style color objects and color factors
+ * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @param {Array<object>} styleColors - Array of the style color objects
+ * @param {object} factors - Color factors to multiply in the form of {r, g, b}
+ */
+export function setStyleColors(map, styleColors, factors) {
+    let prop;
+
+    for (const {id, key, color} of styleColors) {
+        if (Array.isArray(color)) {
+            prop = map.getPaintProperty(id, key);
+            for (const {index, value} of color) {
+                const scaledColor = getScaledColorString(value, factors);
+
+                if (prop.stops) {
+                    prop.stops[index][1] = scaledColor;
+                } else {
+                    // Bug: transition doesn't work (mapbox-gl-js #7121)
+                    prop[index] = scaledColor;
+                }
+            }
+        } else {
+            prop = getScaledColorString(color, factors);
+        }
+        map.setPaintProperty(id, key, prop);
+    }
+}
+
+/**
  * Returns an array of the style opacity information retrieved from map layers.
  * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @param {string} metadataKey - Metadata key to filter
  * @returns {Array<object>} Array of the style opacity objects
  */
-export function getStyleOpacities(map) {
-    const layerTypes = ['line', 'fill', 'fill-extrusion'],
+export function getStyleOpacities(map, metadataKey) {
+    const {_layers, _order} = map.style,
+        propMapping = {
+            'background-underground': 1,
+            'building-underground': ['interpolate', ['linear'], ['zoom'], 14.5, 0, 15, 1]
+        },
         opacities = [];
 
-    map.getStyle().layers.filter(layer =>
-        includes(layerTypes, layer.type)
-    ).forEach(layer => {
-        const {id, type} = layer,
-            key = `${type}-opacity`;
+    _order.map(id => _layers[id]).filter(({metadata}) =>
+        metadata && metadata[metadataKey]
+    ).forEach(({id, type, metadata}) => {
+        if (type === 'custom') {
+            opacities.push({id, metadata});
+            return;
+        }
 
-        opacities.push({id, key, opacity: map.getPaintProperty(id, key) || 1});
+        const key = `${type}-opacity`,
+            prop = propMapping[id] || valueOrDefault(map.getPaintProperty(id, key), 1);
+
+        if (!isNaN(prop)) {
+            opacities.push({id, key, opacity: prop, metadata});
+        } else if (prop.stops) {
+            const opacity = [];
+
+            prop.stops.forEach((item, index) => {
+                opacity.push({index, value: item[1]});
+            });
+            opacities.push({id, key, opacity, metadata});
+        } else if (prop[0] === 'case' || prop[0] === 'interpolate') {
+            const opacity = [];
+
+            prop.forEach((item, index) => {
+                if (index % 2 === 0 && !isNaN(item)) {
+                    opacity.push({index, value: item});
+                }
+            });
+            opacities.push({id, key, opacity, metadata});
+        }
     });
     return opacities;
 }
 
 /**
- * Multiplies a target by a factor. The target can be either a number, "case" expression
- * or zoom function that is used in the Mapbox style specification
- * @param {number | Array | object} obj - Target number, "case" expression or zoom
- *     function
- * @param {number} factor - Factor to multiply
- * @returns {number | Array | object} Result number, "case" expression or zoom function
+ * Sets style opacities based on the style opacity objects and factor
+ * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @param {Array<object>} styleOpacities - Array of the style opacity objects
+ * @param {string | Array<string>} factorKey - Metadata key for the factor to multiply
  */
-export function scaleValues(obj, factor) {
-    if (!isNaN(obj)) {
-        return obj * factor;
-    }
-    if (Array.isArray(obj) && obj[0] === 'case') {
-        return obj.map(item => isNaN(item) ? item : item * factor);
-    }
+export function setStyleOpacities(map, styleOpacities, factorKey) {
+    let factor, prop;
 
-    const result = {};
-
-    for (const key of Object.keys(obj)) {
-        if (key === 'stops') {
-            result[key] = obj[key].map(element =>
-                [element[0], element[1] * factor]
-            );
+    for (const {id, key, opacity, metadata} of styleOpacities) {
+        if (Array.isArray(factorKey)) {
+            factor = factorKey.reduce((value, key) => valueOrDefault(value, metadata[key]), undefined);
         } else {
-            result[key] = obj[key];
+            factor = metadata[factorKey];
+        }
+
+        if (key) {
+            if (Array.isArray(opacity)) {
+                prop = map.getPaintProperty(id, key);
+                for (const {index, value} of opacity) {
+                    const scaledOpacity = value * factor;
+
+                    if (prop.stops) {
+                        prop.stops[index][1] = scaledOpacity;
+                    } else {
+                        prop[index] = scaledOpacity;
+                    }
+                }
+            } else {
+                prop = opacity * factor;
+            }
+            map.setPaintProperty(id, key, prop);
+        } else {
+            setLayerProps(map, id, {opacity: factor});
         }
     }
-    return result;
 }

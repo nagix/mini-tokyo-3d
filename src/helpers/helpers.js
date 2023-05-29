@@ -224,7 +224,7 @@ export function luminance(color) {
 
 /**
  * Converts a hex color code to RGB array.
- * @param {object} color - Hex color code
+ * @param {string} color - Hex color code
  * @returns {Array} RGB array
  */
 export function colorToRGBArray(color) {

@@ -628,6 +628,60 @@ export default class extends Evented {
 
         me.trafficLayer = new TrafficLayer({id: 'traffic'});
 
+        // To move to the style file in v4.0
+        map.setLight({
+            intensity: 0.35,
+            anchor: 'map'
+        });
+
+        // To move to the style file in v4.0
+        map.addLayer({
+            id: 'sky',
+            type: 'sky',
+            paint: {
+                'sky-opacity': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    0,
+                    0,
+                    5,
+                    0.3,
+                    8,
+                    1
+                ],
+                'sky-type': 'atmosphere',
+                'sky-atmosphere-sun-intensity': 20
+            }
+        }, 'background');
+
+        // To move to the style file in v4.0
+        map.addLayer({
+            id: 'background-underground',
+            type: 'background',
+            paint: {
+                'background-color': 'rgba(16,16,16,1)',
+                'background-opacity': 0
+            },
+            metadata: {
+                'mt3d:opacity-effect': true,
+                'mt3d:opacity': 0,
+                'mt3d:opacity-underground': 1
+            }
+        }, 'natural_earth');
+
+        // To move to the style file in v4.0
+        map.setPaintProperty('building-underground', 'fill-color', 'hsla(268, 67%, 67%, 0.5)');
+        map.setPaintProperty('building-underground', 'fill-opacity', [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            14.5,
+            0,
+            15,
+            0.5
+        ]);
+
         map.setLayoutProperty('poi', 'text-field', [
             "coalesce",
             ["get", `name_${lang}`],
@@ -684,7 +738,14 @@ export default class extends Evented {
                 pickable: true,
                 parameters: {depthTest: false},
                 minzoom,
-                maxzoom
+                maxzoom,
+                metadata: {
+                    'mt3d:opacity-effect': true,
+                    'mt3d:opacity': 0.0625,
+                    'mt3d:opacity-route': 0.005,
+                    'mt3d:opacity-underground': 1,
+                    'mt3d:opacity-underground-route': 0.005
+                }
             }, 'building-3d');
             me.addLayer({
                 id: `stations-ug-${zoom}`,
@@ -701,7 +762,14 @@ export default class extends Evented {
                 pickable: true,
                 parameters: {depthTest: false},
                 minzoom,
-                maxzoom
+                maxzoom,
+                metadata: {
+                    'mt3d:opacity-effect': true,
+                    'mt3d:opacity': 0.0625,
+                    'mt3d:opacity-route': 0.005,
+                    'mt3d:opacity-underground': 1,
+                    'mt3d:opacity-underground-route': 0.005
+                }
             }, 'building-3d');
             me.addLayer({
                 id: `railways-routeug-${zoom}`,
@@ -716,7 +784,12 @@ export default class extends Evented {
                 transitions: {opacity: configs.transitionDuration},
                 parameters: {depthTest: false},
                 minzoom,
-                maxzoom
+                maxzoom,
+                metadata: {
+                    'mt3d:opacity-effect': true,
+                    'mt3d:opacity': 0.125,
+                    'mt3d:opacity-underground': 1
+                }
             }, 'building-3d');
             me.addLayer({
                 id: `stations-routeug-${zoom}`,
@@ -730,7 +803,12 @@ export default class extends Evented {
                 transitions: {opacity: configs.transitionDuration},
                 parameters: {depthTest: false},
                 minzoom,
-                maxzoom
+                maxzoom,
+                metadata: {
+                    'mt3d:opacity-effect': true,
+                    'mt3d:opacity': 0.125,
+                    'mt3d:opacity-underground': 1
+                }
             }, 'building-3d');
             me.addLayer({
                 id: `railways-routeog-${zoom}`,
@@ -744,7 +822,12 @@ export default class extends Evented {
                 transitions: {opacity: configs.transitionDuration},
                 parameters: {depthTest: false},
                 minzoom,
-                maxzoom
+                maxzoom,
+                metadata: {
+                    'mt3d:opacity-effect': true,
+                    'mt3d:opacity': 1,
+                    'mt3d:opacity-underground': 0.25
+                }
             }, 'building-3d');
             me.addLayer({
                 id: `stations-routeog-${zoom}`,
@@ -757,7 +840,12 @@ export default class extends Evented {
                 transitions: {opacity: configs.transitionDuration},
                 parameters: {depthTest: false},
                 minzoom,
-                maxzoom
+                maxzoom,
+                metadata: {
+                    'mt3d:opacity-effect': true,
+                    'mt3d:opacity': 1,
+                    'mt3d:opacity-underground': 0.25
+                }
             }, 'building-3d');
         });
 
@@ -785,6 +873,13 @@ export default class extends Evented {
                 },
                 layout = {
                     visibility: zoom === me.layerZoom ? 'visible' : 'none'
+                },
+                metadata = {
+                    'mt3d:opacity-effect': true,
+                    'mt3d:opacity': 1,
+                    'mt3d:opacity-route': 0.1,
+                    'mt3d:opacity-underground': 0.25,
+                    'mt3d:opacity-underground-route': 0.1
                 };
 
             map.addLayer({
@@ -795,7 +890,8 @@ export default class extends Evented {
                 paint: {
                     'line-color': color,
                     'line-width': lineWidth
-                }
+                },
+                metadata
             }, 'building-3d');
             map.addLayer({
                 id: `stations-og-${zoom}`,
@@ -805,7 +901,8 @@ export default class extends Evented {
                 paint: {
                     'fill-color': color,
                     'fill-opacity': .7
-                }
+                },
+                metadata
             }, 'building-3d');
             map.addLayer({
                 id: `stations-outline-og-${zoom}`,
@@ -815,7 +912,8 @@ export default class extends Evented {
                 paint: {
                     'line-color': outlineColor,
                     'line-width': lineWidth
-                }
+                },
+                metadata
             }, 'building-3d');
         });
 
@@ -839,8 +937,8 @@ export default class extends Evented {
         });
         */
 
-        me.styleColors = helpersMapbox.getStyleColors(map);
-        me.styleOpacities = helpersMapbox.getStyleOpacities(map);
+        me.styleColors = helpersMapbox.getStyleColors(map, 'mt3d:color-effect');
+        me.styleOpacities = helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect');
 
         const datalist = helpers.createElement('datalist', {id: 'stations'}, document.body);
         me.stationTitleLookup = {};
@@ -1073,7 +1171,7 @@ export default class extends Evented {
                 me.updateVisibleArea();
 
                 if (Math.floor((now - configs.minDelay) / configs.trainRefreshInterval) !== Math.floor(me.lastTrainRefresh / configs.trainRefreshInterval)) {
-                    me.refreshStyleColors();
+                    helpersMapbox.setStyleColors(map, me.styleColors, me.getLightColor());
                     helpersMapbox.setSunlight(map, now);
                     if (me.searchMode === 'none') {
                         if (me.clockMode === 'realtime') {
@@ -2414,29 +2512,12 @@ export default class extends Evented {
     }
 
     refreshMap() {
-        const me = this,
-            {map, trafficLayer, viewMode, searchMode, styleColors, styleOpacities} = me,
+        const {map, trafficLayer, viewMode, searchMode, styleOpacities} = this,
             isUndergroundMode = viewMode === 'underground',
-            lightColor = me.getLightColor();
+            isNotSearchResultMode = searchMode === 'none' || searchMode === 'edit',
+            factorKey = `mt3d:opacity${isUndergroundMode ? '-underground' : ''}`;
 
-        map.setPaintProperty('background', 'background-color',
-            isUndergroundMode ? 'rgb(16,16,16)' : helpersMapbox.getScaledColorString(styleColors[0], lightColor));
-        map.setPaintProperty('building-underground', 'fill-color',
-            isUndergroundMode ? 'hsla(268,67%,67%,.5)' : helpersMapbox.getScaledColorString({r: 167, g: 114, b: 227, a: .25}, lightColor));
-        for (const {id, key, opacity} of styleOpacities) {
-            const factor = getLayerOpacity(id, viewMode, searchMode);
-
-            map.setPaintProperty(id, key, helpersMapbox.scaleValues(opacity, factor));
-        }
-
-        for (const zoom of [13, 14, 15, 16, 17, 18]) {
-            for (const id of [`railways-ug-${zoom}`, `stations-ug-${zoom}`, `railways-routeug-${zoom}`, `stations-routeug-${zoom}`, `railways-routeog-${zoom}`, `stations-routeog-${zoom}`]) {
-                helpersMapbox.setLayerProps(map, id, {
-                    opacity: getLayerOpacity(id, viewMode, searchMode)
-                });
-            }
-        }
-
+        helpersMapbox.setStyleOpacities(map, styleOpacities, isNotSearchResultMode ? factorKey : [`${factorKey}-route`, factorKey]);
         trafficLayer.setMode(viewMode, searchMode);
     }
 
@@ -2546,38 +2627,6 @@ export default class extends Evented {
      */
     getLightColor() {
         return helpersMapbox.getSunlightColor(this.map, this.clock.getTime());
-    }
-
-    refreshStyleColors() {
-        const me = this,
-            {map, viewMode} = me,
-            isUndergroundMode = viewMode === 'underground',
-            lightColor = me.getLightColor();
-
-        me.styleColors.forEach(item => {
-            const {id, key, stops, _case} = item;
-            let prop;
-
-            if (id === 'background' && isUndergroundMode) {
-                prop = 'rgb(16,16,16)';
-            } else if (id === 'building-underground' && isUndergroundMode) {
-                prop = 'hsla(268,67%,67%,.5)';
-            } else {
-                const color = helpersMapbox.getScaledColorString(item, lightColor);
-
-                if (stops !== undefined) {
-                    prop = map.getPaintProperty(id, key);
-                    prop.stops[stops][1] = color;
-                } else if (_case !== undefined) {
-                    // Bug: transition doesn't work (mapbox-gl-js #7121)
-                    prop = map.getPaintProperty(id, key);
-                    prop[_case] = color;
-                } else {
-                    prop = color;
-                }
-            }
-            map.setPaintProperty(id, key, prop);
-        });
     }
 
     pickObject(point) {
@@ -3258,33 +3307,4 @@ function isEqualObject(a, b) {
         return true;
     }
     return false;
-}
-
-function getLayerOpacity(id, viewMode, searchMode) {
-    const isUndergroundMode = viewMode === 'underground',
-        isNotSearchResultMode = searchMode === 'none' || searchMode === 'edit';
-
-    if (helpers.includes(id, '-ug-')) {
-        if (isUndergroundMode) {
-            return isNotSearchResultMode ? 1 : .005;
-        } else {
-            return isNotSearchResultMode ? .0625 : .005;
-        }
-    } else if (helpers.includes(id, '-og-')) {
-        if (isUndergroundMode) {
-            return isNotSearchResultMode ? .25 : .1;
-        } else {
-            return isNotSearchResultMode ? 1 : .1;
-        }
-    } else if (helpers.includes(id, '-routeug-')) {
-        return isUndergroundMode ? 1 : .125;
-    } else if (helpers.includes(id, '-routeog-')) {
-        return isUndergroundMode ? .25 : 1;
-    } else {
-        if (isUndergroundMode && id !== 'building-underground') {
-            return isNotSearchResultMode ? .0625 : .025;
-        } else {
-            return isNotSearchResultMode ? 1 : .1;
-        }
-    }
 }

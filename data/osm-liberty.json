@@ -1,9 +1,6 @@
 {
   "version": 8,
   "name": "Mini Tokyo 3D",
-  "metadata": {
-    "mapbox:type": "template"
-  },
   "center": [139.7670, 35.6814],
   "zoom": 14,
   "bearing": 0,
@@ -24,34 +21,18 @@
   },
   "sprite": "mapbox://sprites/mapbox/streets-v8",
   "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
-  "light": {
-    "anchor": "map"
-  },
   "layers": [
-    {
-      "id": "sky",
-      "type": "sky",
-      "paint": {
-        "sky-type": "atmosphere",
-        "sky-opacity": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          0,
-          0,
-          5,
-          0.3,
-          8,
-          1
-        ],
-        "sky-atmosphere-sun-intensity": 20
-      }
-    },
     {
       "id": "background",
       "type": "background",
       "paint": {
         "background-color": "rgba(239,239,239,1)"
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-underground": 0
       }
     },
     {
@@ -63,19 +44,15 @@
         "visibility": "visible"
       },
       "paint": {
-        "raster-opacity": {
-          "base": 1.5,
-          "stops": [
-            [
-              0,
-              0.6
-            ],
-            [
-              6,
-              0.1
-            ]
-          ]
-        }
+        "raster-opacity": [
+          "interpolate",
+          ["exponential", 1.5],
+          ["zoom"],
+          0,
+          0.6,
+          6,
+          0.1
+        ]
       }
     },
     {
@@ -92,6 +69,14 @@
         "fill-color": "rgba(216,232,200,1)",
         "fill-opacity": 0.7,
         "fill-outline-color": "rgba(95,208,100,1)"
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
@@ -112,12 +97,19 @@
         ],
         "line-color": "rgba(228,241,215,1)",
         "line-opacity": 1
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "landuse_residential",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "landuse",
       "maxzoom": 8,
@@ -143,12 +135,19 @@
             ]
           ]
         }
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "landcover_wood",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "landuse",
       "filter": [
@@ -163,12 +162,19 @@
         "fill-antialias": false,
         "fill-color": "rgba(172,227,140,0.7)",
         "fill-opacity": 0.4
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "landcover_grass",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "landuse",
       "filter": [
@@ -196,12 +202,19 @@
         "fill-antialias": false,
         "fill-color": "rgba(176,213,154,1)",
         "fill-opacity": 0.3
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "landuse_cemetery",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "landuse",
       "filter": [
@@ -214,12 +227,19 @@
       },
       "paint": {
         "fill-color": "rgba(216,224,189,1)"
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "landuse_hospital",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "landuse",
       "filter": [
@@ -229,12 +249,19 @@
       ],
       "paint": {
         "fill-color": "rgba(255,221,238,1)"
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "landuse_school",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "landuse",
       "filter": [
@@ -244,12 +271,19 @@
       ],
       "paint": {
         "fill-color": "rgba(236,238,204,1)"
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "waterway_river",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "waterway",
       "filter": [
@@ -262,25 +296,28 @@
       },
       "paint": {
         "line-color": "rgba(160,200,240,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              11,
-              0.5
-            ],
-            [
-              20,
-              6
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          11,
+          0.5,
+          20,
+          6
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "waterway_other",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "waterway",
       "filter": [
@@ -296,35 +333,45 @@
       },
       "paint": {
         "line-color": "rgba(160,200,240,1)",
-        "line-width": {
-          "base": 1.3,
-          "stops": [
-            [
-              13,
-              0.5
-            ],
-            [
-              20,
-              6
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.3],
+          ["zoom"],
+          13,
+          0.5,
+          20,
+          6
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "water",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "water",
       "paint": {
         "fill-color": "rgba(158,189,255,1)"
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "landcover_sand",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "landuse",
       "filter": [
@@ -337,12 +384,19 @@
       ],
       "paint": {
         "fill-color": "rgba(247,239,195,1)"
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "aeroway_fill",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "landuse",
       "minzoom": 11,
@@ -362,12 +416,19 @@
       "paint": {
         "fill-color": "rgba(229,228,224,1)",
         "fill-opacity": 0.7
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "aeroway_runway",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "aeroway",
       "minzoom": 9,
@@ -395,12 +456,19 @@
           18,
           80
         ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "aeroway_taxiway",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "aeroway",
       "minzoom": 9,
@@ -428,12 +496,19 @@
           18,
           20
         ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_motorway_link_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -458,33 +533,32 @@
           0.25
         ],
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12,
-              1
-            ],
-            [
-              13,
-              3
-            ],
-            [
-              14,
-              4
-            ],
-            [
-              20,
-              15
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12,
+          1,
+          13,
+          3,
+          14,
+          4,
+          20,
+          15
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_service_track_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -507,29 +581,30 @@
           0.5,
           0.25
         ],
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              15,
-              1
-            ],
-            [
-              16,
-              4
-            ],
-            [
-              20,
-              11
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          15,
+          1,
+          16,
+          4,
+          20,
+          11
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_link_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -549,33 +624,32 @@
       "paint": {
         "line-color": "rgba(233,172,119,1)",
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12,
-              1
-            ],
-            [
-              13,
-              3
-            ],
-            [
-              14,
-              4
-            ],
-            [
-              20,
-              15
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12,
+          1,
+          13,
+          3,
+          14,
+          4,
+          20,
+          15
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_street_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -606,33 +680,32 @@
             ]
           ]
         },
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12,
-              0.5
-            ],
-            [
-              13,
-              1
-            ],
-            [
-              14,
-              4
-            ],
-            [
-              20,
-              15
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12,
+          0.5,
+          13,
+          1,
+          14,
+          4,
+          20,
+          15
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_secondary_tertiary_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -652,25 +725,28 @@
       "paint": {
         "line-color": "rgba(233,172,119,1)",
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              8,
-              1.5
-            ],
-            [
-              20,
-              17
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          8,
+          1.5,
+          20,
+          17
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_trunk_primary_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -689,33 +765,32 @@
       },
       "paint": {
         "line-color": "rgba(233,172,119,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0.4
-            ],
-            [
-              6,
-              0.7
-            ],
-            [
-              7,
-              1.75
-            ],
-            [
-              20,
-              22
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          5,
+          0.4,
+          6,
+          0.7,
+          7,
+          1.75,
+          20,
+          22
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_motorway_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -739,33 +814,32 @@
           0.5,
           0.25
         ],
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0.4
-            ],
-            [
-              6,
-              0.7
-            ],
-            [
-              7,
-              1.75
-            ],
-            [
-              20,
-              22
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          5,
+          0.4,
+          6,
+          0.7,
+          7,
+          1.75,
+          20,
+          22
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_path_pedestrian",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -786,25 +860,28 @@
           1,
           0.75
         ],
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              14,
-              0.5
-            ],
-            [
-              20,
-              10
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          14,
+          0.5,
+          20,
+          10
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_motorway_link",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -824,33 +901,32 @@
       },
       "paint": {
         "line-color": "rgba(255,203,136,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12.5,
-              0
-            ],
-            [
-              13,
-              1.5
-            ],
-            [
-              14,
-              2.5
-            ],
-            [
-              20,
-              11.5
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12.5,
+          0,
+          13,
+          1.5,
+          14,
+          2.5,
+          20,
+          11.5
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_service_track",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -869,29 +945,30 @@
       },
       "paint": {
         "line-color": "rgba(255,255,255,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              15.5,
-              0
-            ],
-            [
-              16,
-              2
-            ],
-            [
-              20,
-              7.5
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          15.5,
+          0,
+          16,
+          2,
+          20,
+          7.5
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_link",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -910,33 +987,32 @@
       },
       "paint": {
         "line-color": "rgba(255,244,198,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12.5,
-              0
-            ],
-            [
-              13,
-              1.5
-            ],
-            [
-              14,
-              2.5
-            ],
-            [
-              20,
-              11.5
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12.5,
+          0,
+          13,
+          1.5,
+          14,
+          2.5,
+          20,
+          11.5
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_minor",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -956,29 +1032,30 @@
       "paint": {
         "line-color": "rgba(255,255,255,1)",
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              13.5,
-              0
-            ],
-            [
-              14,
-              2.5
-            ],
-            [
-              20,
-              11.5
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          13.5,
+          0,
+          14,
+          2.5,
+          20,
+          11.5
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_secondary_tertiary",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -997,29 +1074,30 @@
       },
       "paint": {
         "line-color": "rgba(255,244,198,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              6.5,
-              0
-            ],
-            [
-              7,
-              0.5
-            ],
-            [
-              20,
-              10
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          6.5,
+          0,
+          7,
+          0.5,
+          20,
+          10
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_trunk_primary",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1038,29 +1116,30 @@
       },
       "paint": {
         "line-color": "rgba(255,244,198,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0
-            ],
-            [
-              7,
-              1
-            ],
-            [
-              20,
-              18
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          5,
+          0,
+          7,
+          1,
+          20,
+          18
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_motorway",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1080,29 +1159,30 @@
       },
       "paint": {
         "line-color": "rgba(255,218,166,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0
-            ],
-            [
-              7,
-              1
-            ],
-            [
-              20,
-              18
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          5,
+          0,
+          7,
+          1,
+          20,
+          18
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_major_rail",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1120,29 +1200,30 @@
       ],
       "paint": {
         "line-color": "rgba(187,187,187,1)",
-        "line-width": {
-          "base": 1.4,
-          "stops": [
-            [
-              14,
-              0.4
-            ],
-            [
-              15,
-              0.75
-            ],
-            [
-              20,
-              2
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          14,
+          0.4,
+          15,
+          0.75,
+          20,
+          2
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_major_rail_hatching",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1164,29 +1245,30 @@
           0.2,
           8
         ],
-        "line-width": {
-          "base": 1.4,
-          "stops": [
-            [
-              14.5,
-              0
-            ],
-            [
-              15,
-              3
-            ],
-            [
-              20,
-              8
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          14.5,
+          0,
+          15,
+          3,
+          20,
+          8
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_transit_rail",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1205,29 +1287,30 @@
       ],
       "paint": {
         "line-color": "rgba(187,187,187,1)",
-        "line-width": {
-          "base": 1.4,
-          "stops": [
-            [
-              14,
-              0.4
-            ],
-            [
-              15,
-              0.75
-            ],
-            [
-              20,
-              2
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          14,
+          0.4,
+          15,
+          0.75,
+          20,
+          2
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "tunnel_transit_rail_hatching",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1250,29 +1333,30 @@
           0.2,
           8
         ],
-        "line-width": {
-          "base": 1.4,
-          "stops": [
-            [
-              14.5,
-              0
-            ],
-            [
-              15,
-              3
-            ],
-            [
-              20,
-              8
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          14.5,
+          0,
+          15,
+          3,
+          20,
+          8
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_area_pattern",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1288,12 +1372,19 @@
       },
       "paint": {
         "fill-color": "rgba(237,238,242,1)"
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_path_pedestrian",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "minzoom": 14,
@@ -1322,25 +1413,28 @@
       },
       "paint": {
         "line-color": "rgba(255,255,255,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              14,
-              1
-            ],
-            [
-              20,
-              10
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          14,
+          1,
+          20,
+          10
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_motorway_link_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "minzoom": 12,
@@ -1362,33 +1456,32 @@
       "paint": {
         "line-color": "rgba(233,172,119,1)",
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12,
-              1
-            ],
-            [
-              13,
-              3
-            ],
-            [
-              14,
-              4
-            ],
-            [
-              20,
-              15
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12,
+          1,
+          13,
+          3,
+          14,
+          4,
+          20,
+          15
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_service_track_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1408,29 +1501,30 @@
       },
       "paint": {
         "line-color": "rgba(207,205,202,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              15,
-              1
-            ],
-            [
-              16,
-              4
-            ],
-            [
-              20,
-              11
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          15,
+          1,
+          16,
+          4,
+          20,
+          11
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_link_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "minzoom": 13,
@@ -1453,33 +1547,32 @@
       "paint": {
         "line-color": "rgba(233,172,119,1)",
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12,
-              1
-            ],
-            [
-              13,
-              3
-            ],
-            [
-              14,
-              4
-            ],
-            [
-              20,
-              15
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12,
+          1,
+          13,
+          3,
+          14,
+          4,
+          20,
+          15
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_minor_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1513,33 +1606,32 @@
             ]
           ]
         },
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12,
-              0.5
-            ],
-            [
-              13,
-              1
-            ],
-            [
-              14,
-              4
-            ],
-            [
-              20,
-              20
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12,
+          0.5,
+          13,
+          1,
+          14,
+          4,
+          20,
+          20
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_secondary_tertiary_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1562,25 +1654,28 @@
       "paint": {
         "line-color": "rgba(233,172,119,1)",
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              8,
-              1.5
-            ],
-            [
-              20,
-              17
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          8,
+          1.5,
+          20,
+          17
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_trunk_primary_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1602,33 +1697,32 @@
       "paint": {
         "line-color": "rgba(233,172,119,1)",
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0.4
-            ],
-            [
-              6,
-              0.7
-            ],
-            [
-              7,
-              1.75
-            ],
-            [
-              20,
-              22
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          5,
+          0.4,
+          6,
+          0.7,
+          7,
+          1.75,
+          20,
+          22
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_motorway_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "minzoom": 5,
@@ -1651,33 +1745,32 @@
       },
       "paint": {
         "line-color": "rgba(233,172,119,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0.4
-            ],
-            [
-              6,
-              0.7
-            ],
-            [
-              7,
-              1.75
-            ],
-            [
-              20,
-              22
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          5,
+          0.4,
+          6,
+          0.7,
+          7,
+          1.75,
+          20,
+          22
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_motorway_link",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "minzoom": 12,
@@ -1699,33 +1792,32 @@
       },
       "paint": {
         "line-color": "rgba(255,203,136,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12.5,
-              0
-            ],
-            [
-              13,
-              1.5
-            ],
-            [
-              14,
-              2.5
-            ],
-            [
-              20,
-              11.5
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12.5,
+          0,
+          13,
+          1.5,
+          14,
+          2.5,
+          20,
+          11.5
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_service_track",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1745,29 +1837,30 @@
       },
       "paint": {
         "line-color": "rgba(255,255,255,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              15.5,
-              0
-            ],
-            [
-              16,
-              2
-            ],
-            [
-              20,
-              7.5
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          15.5,
+          0,
+          16,
+          2,
+          20,
+          7.5
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_minor",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1789,29 +1882,30 @@
       "paint": {
         "line-color": "rgba(255,255,255,1)",
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              13.5,
-              0
-            ],
-            [
-              14,
-              2.5
-            ],
-            [
-              20,
-              18
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          13.5,
+          0,
+          14,
+          2.5,
+          20,
+          18
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_link",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "minzoom": 13,
@@ -1833,33 +1927,32 @@
       },
       "paint": {
         "line-color": "rgba(255,238,170,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12.5,
-              0
-            ],
-            [
-              13,
-              1.5
-            ],
-            [
-              14,
-              2.5
-            ],
-            [
-              20,
-              11.5
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12.5,
+          0,
+          13,
+          1.5,
+          14,
+          2.5,
+          20,
+          11.5
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_secondary_tertiary",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1880,29 +1973,30 @@
       },
       "paint": {
         "line-color": "rgba(255,238,170,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              6.5,
-              0
-            ],
-            [
-              8,
-              0.5
-            ],
-            [
-              20,
-              13
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          6.5,
+          0,
+          8,
+          0.5,
+          20,
+          13
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_trunk_primary",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -1923,29 +2017,30 @@
       },
       "paint": {
         "line-color": "rgba(255,238,170,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0
-            ],
-            [
-              7,
-              1
-            ],
-            [
-              20,
-              18
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          5,
+          0,
+          7,
+          1,
+          20,
+          18
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_motorway",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "minzoom": 5,
@@ -1980,29 +2075,30 @@
             ]
           ]
         },
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0
-            ],
-            [
-              7,
-              1
-            ],
-            [
-              20,
-              18
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          5,
+          0,
+          7,
+          1,
+          20,
+          18
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road-detail-shape-polygon",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road_detail_shape",
       "minzoom": 15,
@@ -2056,12 +2152,19 @@
           "hsl(0, 0%, 100%)"
         ],
         "fill-antialias": false
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road-detail-shape-lines",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road_detail_shape",
       "minzoom": 15,
@@ -2089,12 +2192,19 @@
           "#d0cdc8",
           "#d0cdc8"
         ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_major_rail",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2113,29 +2223,30 @@
       ],
       "paint": {
         "line-color": "rgba(187,187,187,1)",
-        "line-width": {
-          "base": 1.4,
-          "stops": [
-            [
-              14,
-              0.4
-            ],
-            [
-              15,
-              0.75
-            ],
-            [
-              20,
-              2
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          14,
+          0.4,
+          15,
+          0.75,
+          20,
+          2
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_major_rail_hatching",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2158,29 +2269,30 @@
           0.2,
           8
         ],
-        "line-width": {
-          "base": 1.4,
-          "stops": [
-            [
-              14.5,
-              0
-            ],
-            [
-              15,
-              3
-            ],
-            [
-              20,
-              8
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          14.5,
+          0,
+          15,
+          3,
+          20,
+          8
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_transit_rail",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2200,29 +2312,30 @@
       ],
       "paint": {
         "line-color": "rgba(187,187,187,1)",
-        "line-width": {
-          "base": 1.4,
-          "stops": [
-            [
-              14,
-              0.4
-            ],
-            [
-              15,
-              0.75
-            ],
-            [
-              20,
-              2
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          14,
+          0.4,
+          15,
+          0.75,
+          20,
+          2
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "road_transit_rail_hatching",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2246,29 +2359,30 @@
           0.2,
           8
         ],
-        "line-width": {
-          "base": 1.4,
-          "stops": [
-            [
-              14.5,
-              0
-            ],
-            [
-              15,
-              3
-            ],
-            [
-              20,
-              8
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          14.5,
+          0,
+          15,
+          3,
+          20,
+          8
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_motorway_link_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2288,33 +2402,32 @@
       "paint": {
         "line-color": "rgba(233,172,119,1)",
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12,
-              1
-            ],
-            [
-              13,
-              3
-            ],
-            [
-              14,
-              4
-            ],
-            [
-              20,
-              15
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12,
+          1,
+          13,
+          3,
+          14,
+          4,
+          20,
+          15
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_service_track_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2333,29 +2446,30 @@
       },
       "paint": {
         "line-color": "rgba(207,205,202,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              15,
-              1
-            ],
-            [
-              16,
-              4
-            ],
-            [
-              20,
-              11
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          15,
+          1,
+          16,
+          4,
+          20,
+          11
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_link_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2375,33 +2489,32 @@
       "paint": {
         "line-color": "rgba(233,172,119,1)",
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12,
-              1
-            ],
-            [
-              13,
-              3
-            ],
-            [
-              14,
-              4
-            ],
-            [
-              20,
-              15
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12,
+          1,
+          13,
+          3,
+          14,
+          4,
+          20,
+          15
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_street_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2432,33 +2545,32 @@
             ]
           ]
         },
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12,
-              0.5
-            ],
-            [
-              13,
-              1
-            ],
-            [
-              14,
-              4
-            ],
-            [
-              20,
-              25
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12,
+          0.5,
+          13,
+          1,
+          14,
+          4,
+          20,
+          25
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_path_pedestrian_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2483,25 +2595,28 @@
           1,
           0
         ],
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              14,
-              1.5
-            ],
-            [
-              20,
-              18
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          14,
+          1.5,
+          20,
+          18
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_secondary_tertiary_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2521,25 +2636,28 @@
       "paint": {
         "line-color": "rgba(233,172,119,1)",
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              8,
-              1.5
-            ],
-            [
-              20,
-              17
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          8,
+          1.5,
+          20,
+          17
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_trunk_primary_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2558,33 +2676,32 @@
       },
       "paint": {
         "line-color": "rgba(233,172,119,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0.4
-            ],
-            [
-              6,
-              0.7
-            ],
-            [
-              7,
-              1.75
-            ],
-            [
-              20,
-              22
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          5,
+          0.4,
+          6,
+          0.7,
+          7,
+          1.75,
+          20,
+          22
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_motorway_casing",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2603,33 +2720,32 @@
       },
       "paint": {
         "line-color": "rgba(233,172,119,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0.4
-            ],
-            [
-              6,
-              0.7
-            ],
-            [
-              7,
-              1.75
-            ],
-            [
-              20,
-              22
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          5,
+          0.4,
+          6,
+          0.7,
+          7,
+          1.75,
+          20,
+          22
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_path_pedestrian",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2650,25 +2766,28 @@
           1,
           0.3
         ],
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              14,
-              0.5
-            ],
-            [
-              20,
-              10
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          14,
+          0.5,
+          20,
+          10
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_motorway_link",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2687,33 +2806,32 @@
       },
       "paint": {
         "line-color": "rgba(255,203,136,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12.5,
-              0
-            ],
-            [
-              13,
-              1.5
-            ],
-            [
-              14,
-              2.5
-            ],
-            [
-              20,
-              11.5
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12.5,
+          0,
+          13,
+          1.5,
+          14,
+          2.5,
+          20,
+          11.5
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_service_track",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2732,29 +2850,30 @@
       },
       "paint": {
         "line-color": "rgba(255,255,255,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              15.5,
-              0
-            ],
-            [
-              16,
-              2
-            ],
-            [
-              20,
-              7.5
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          15.5,
+          0,
+          16,
+          2,
+          20,
+          7.5
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_link",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2773,33 +2892,32 @@
       },
       "paint": {
         "line-color": "rgba(255,238,170,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              12.5,
-              0
-            ],
-            [
-              13,
-              1.5
-            ],
-            [
-              14,
-              2.5
-            ],
-            [
-              20,
-              11.5
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          12.5,
+          0,
+          13,
+          1.5,
+          14,
+          2.5,
+          20,
+          11.5
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_street",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2819,29 +2937,30 @@
       "paint": {
         "line-color": "rgba(255,255,255,1)",
         "line-opacity": 1,
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              13.5,
-              0
-            ],
-            [
-              14,
-              2.5
-            ],
-            [
-              20,
-              18
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          13.5,
+          0,
+          14,
+          2.5,
+          20,
+          18
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_secondary_tertiary",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2860,29 +2979,30 @@
       },
       "paint": {
         "line-color": "rgba(255,238,170,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              6.5,
-              0
-            ],
-            [
-              7,
-              0.5
-            ],
-            [
-              20,
-              10
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          6.5,
+          0,
+          7,
+          0.5,
+          20,
+          10
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_trunk_primary",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2901,29 +3021,30 @@
       },
       "paint": {
         "line-color": "rgba(255,238,170,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0
-            ],
-            [
-              7,
-              1
-            ],
-            [
-              20,
-              18
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          5,
+          0,
+          7,
+          1,
+          20,
+          18
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_motorway",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2942,29 +3063,30 @@
       },
       "paint": {
         "line-color": "rgba(255,203,136,1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0
-            ],
-            [
-              7,
-              1
-            ],
-            [
-              20,
-              18
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.2],
+          ["zoom"],
+          5,
+          0,
+          7,
+          1,
+          20,
+          18
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_major_rail",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -2982,29 +3104,30 @@
       ],
       "paint": {
         "line-color": "rgba(187,187,187,1)",
-        "line-width": {
-          "base": 1.4,
-          "stops": [
-            [
-              14,
-              0.4
-            ],
-            [
-              15,
-              0.75
-            ],
-            [
-              20,
-              2
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          14,
+          0.4,
+          15,
+          0.75,
+          20,
+          2
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_major_rail_hatching",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -3026,29 +3149,30 @@
           0.2,
           8
         ],
-        "line-width": {
-          "base": 1.4,
-          "stops": [
-            [
-              14.5,
-              0
-            ],
-            [
-              15,
-              3
-            ],
-            [
-              20,
-              8
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          14.5,
+          0,
+          15,
+          3,
+          20,
+          8
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_transit_rail",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -3067,29 +3191,30 @@
       ],
       "paint": {
         "line-color": "rgba(187,187,187,1)",
-        "line-width": {
-          "base": 1.4,
-          "stops": [
-            [
-              14,
-              0.4
-            ],
-            [
-              15,
-              0.75
-            ],
-            [
-              20,
-              2
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          14,
+          0.4,
+          15,
+          0.75,
+          20,
+          2
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "bridge_transit_rail_hatching",
       "type": "line",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "road",
       "filter": [
@@ -3112,29 +3237,30 @@
           0.2,
           8
         ],
-        "line-width": {
-          "base": 1.4,
-          "stops": [
-            [
-              14.5,
-              0
-            ],
-            [
-              15,
-              3
-            ],
-            [
-              20,
-              8
-            ]
-          ]
-        }
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          14.5,
+          0,
+          15,
+          3,
+          20,
+          8
+        ]
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "building-underground",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "building",
       "minzoom": 14.5,
@@ -3167,12 +3293,19 @@
           ]
         },
         "fill-color": "hsla(268, 67%, 67%, 0.25)"
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 0.5,
+        "mt3d:opacity-route": 0.05,
+        "mt3d:opacity-underground": 1,
+        "mt3d:opacity-underground-route": 0.1
       }
     },
     {
       "id": "building",
       "type": "fill",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "building",
       "filter": [
@@ -3208,12 +3341,19 @@
             ]
           ]
         }
+      },
+      "metadata": {
+        "mt3d:color-effect": true,
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "building-3d",
       "type": "fill-extrusion",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "building",
       "filter": [
@@ -3239,12 +3379,18 @@
         "fill-extrusion-opacity": 0.8,
         "fill-extrusion-ambient-occlusion-intensity": 0.4,
         "fill-extrusion-ambient-occlusion-radius": 20
+      },
+      "metadata": {
+        "mt3d:opacity-effect": true,
+        "mt3d:opacity": 1,
+        "mt3d:opacity-route": 0.1,
+        "mt3d:opacity-underground": 0.0625,
+        "mt3d:opacity-underground-route": 0.025
       }
     },
     {
       "id": "poi",
       "type": "symbol",
-      "metadata": {},
       "source": "mapbox",
       "source-layer": "transit_stop_label",
       "filter": [
@@ -3286,5 +3432,5 @@
       }
     }
   ],
-  "id": "osm-liberty"
+  "id": "mini-tokyo-3d"
 }
