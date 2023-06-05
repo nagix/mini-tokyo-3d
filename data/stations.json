@@ -11090,7 +11090,8 @@
 	},
 	"exit": [
 		"TokyoMetro.Meguro.Main",
-		"TokyoMetro.Meguro.West"
+		"TokyoMetro.Meguro.West",
+		"TokyoMetro.Meguro.EV"
 	],
 	"altitude": -1
 }, {
@@ -11123,6 +11124,7 @@
 	"exit": [
 		"TokyoMetro.ShirokaneTakanawa.1",
 		"TokyoMetro.ShirokaneTakanawa.2",
+		"TokyoMetro.ShirokaneTakanawa.EVv",
 		"TokyoMetro.ShirokaneTakanawa.3",
 		"TokyoMetro.ShirokaneTakanawa.4"
 	],
@@ -11140,6 +11142,7 @@
 	},
 	"exit": [
 		"TokyoMetro.AzabuJuban.1",
+		"TokyoMetro.AzabuJuban.EVb",
 		"TokyoMetro.AzabuJuban.2",
 		"TokyoMetro.AzabuJuban.3",
 		"TokyoMetro.AzabuJuban.4"
@@ -11158,9 +11161,10 @@
 	},
 	"exit": [
 		"TokyoMetro.RoppongiItchome.1",
+		"TokyoMetro.RoppongiItchome.EVb",
 		"TokyoMetro.RoppongiItchome.2",
-		"TokyoMetro.RoppongiItchome.3",
-		"TokyoMetro.RoppongiItchome.EV"
+		"TokyoMetro.RoppongiItchome.EVr",
+		"TokyoMetro.RoppongiItchome.3"
 	],
 	"altitude": -1
 }, {
@@ -11269,9 +11273,9 @@
 	},
 	"exit": [
 		"TokyoMetro.Todaimae.1",
+		"TokyoMetro.Todaimae.EVr",
 		"TokyoMetro.Todaimae.2",
-		"TokyoMetro.Todaimae.EV1",
-		"TokyoMetro.Todaimae.EV2"
+		"TokyoMetro.Todaimae.EVb"
 	],
 	"altitude": -1
 }, {
@@ -11287,8 +11291,8 @@
 	},
 	"exit": [
 		"TokyoMetro.HonKomagome.1",
-		"TokyoMetro.HonKomagome.2",
-		"TokyoMetro.HonKomagome.EV"
+		"TokyoMetro.HonKomagome.EVr",
+		"TokyoMetro.HonKomagome.2"
 	],
 	"altitude": -1
 }, {
@@ -11306,9 +11310,9 @@
 		"TokyoMetro.Komagome.1",
 		"TokyoMetro.Komagome.2",
 		"TokyoMetro.Komagome.3",
+		"TokyoMetro.Komagome.EVr",
 		"TokyoMetro.Komagome.4",
-		"TokyoMetro.Komagome.5",
-		"TokyoMetro.Komagome.EV"
+		"TokyoMetro.Komagome.5"
 	],
 	"altitude": -1
 }, {
@@ -11343,6 +11347,7 @@
 		"TokyoMetro.Oji.2",
 		"TokyoMetro.Oji.3",
 		"TokyoMetro.Oji.4",
+		"TokyoMetro.Oji.EVr",
 		"TokyoMetro.Oji.5"
 	],
 	"altitude": -1
@@ -11360,8 +11365,8 @@
 	"exit": [
 		"TokyoMetro.OjiKamiya.1",
 		"TokyoMetro.OjiKamiya.2",
-		"TokyoMetro.OjiKamiya.3",
-		"TokyoMetro.OjiKamiya.EV"
+		"TokyoMetro.OjiKamiya.EVr",
+		"TokyoMetro.OjiKamiya.3"
 	],
 	"altitude": -1
 }, {
@@ -11393,9 +11398,9 @@
 	},
 	"exit": [
 		"TokyoMetro.AkabaneIwabuchi.1",
+		"TokyoMetro.AkabaneIwabuchi.EVr",
 		"TokyoMetro.AkabaneIwabuchi.2",
-		"TokyoMetro.AkabaneIwabuchi.3",
-		"TokyoMetro.AkabaneIwabuchi.EV"
+		"TokyoMetro.AkabaneIwabuchi.3"
 	],
 	"altitude": -1
 }, {
@@ -13304,6 +13309,7 @@
 	"exit": [
 		"Toei.AzabuJuban.5a",
 		"Toei.AzabuJuban.5b",
+		"Toei.AzabuJuban.EV",
 		"Toei.AzabuJuban.6",
 		"Toei.AzabuJuban.7"
 	],
