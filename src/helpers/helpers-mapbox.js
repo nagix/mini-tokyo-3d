@@ -116,7 +116,7 @@ export function hasDarkBackground(map, actual) {
 
     return BG_LAYER_IDS.reduce((value, id) => {
         const [r, g, b] = parseCSSColor(map.getPaintProperty(id, 'background-color')),
-            a = map.getPaintProperty(id, 'background-opacity');
+            a = valueOrDefault(map.getPaintProperty(id, 'background-opacity'), 1);
         return value + luminance({r: r * a, g: g * a, b: b * a});
     }, 0) < 127.5;
 }
