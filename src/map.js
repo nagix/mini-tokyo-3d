@@ -671,22 +671,51 @@ export default class extends Evented {
         }, 'natural_earth');
 
         // To move to the style file in v4.0
-        map.setPaintProperty('building-underground', 'fill-color', 'hsla(268, 67%, 67%, 0.5)');
-        map.setPaintProperty('building-underground', 'fill-opacity', [
-            'interpolate',
-            ['linear'],
-            ['zoom'],
-            14.5,
-            0,
-            15,
-            0.5
-        ]);
+        map.addLayer({
+            id: 'building-underground-underground',
+            type: 'fill',
+            source: 'mapbox',
+            'source-layer': 'building',
+            minzoom: 14.5,
+            filter: [
+                'all',
+                [
+                    'match',
+                    ['get', 'type'],
+                    ['underground_mall', 'subway'],
+                    true,
+                    false
+                ],
+                ['==', ['get', 'underground'], 'true'],
+                ['==', ['geometry-type'], 'Polygon']
+            ],
+            layout: {},
+            paint: {
+                'fill-outline-color': 'hsl(35, 8%, 80%)',
+                'fill-opacity': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    14.5,
+                    0,
+                    15,
+                    0
+                ],
+                'fill-color': 'hsla(268, 67%, 67%, 0.5)'
+            },
+            metadata: {
+                'mt3d:opacity-effect': true,
+                'mt3d:opacity': 0,
+                'mt3d:opacity-underground': 1,
+                'mt3d:opacity-underground-route': 0.1
+            }
+        }, 'building');
 
         map.setLayoutProperty('poi', 'text-field', [
-            "coalesce",
-            ["get", `name_${lang}`],
-            ["get", "name_en"],
-            ["get", "name"]
+            'coalesce',
+            ['get', `name_${lang}`],
+            ['get', 'name_en'],
+            ['get', 'name']
         ]);
 
         [13, 14, 15, 16, 17, 18].forEach(zoom => {

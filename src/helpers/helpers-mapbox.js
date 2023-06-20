@@ -221,7 +221,7 @@ export function getStyleOpacities(map, metadataKey) {
     const {_layers, _order} = map.style,
         propMapping = {
             'background-underground': 1,
-            'building-underground': ['interpolate', ['linear'], ['zoom'], 14.5, 0, 15, 1]
+            'building-underground-underground': ['interpolate', ['linear'], ['zoom'], 14.5, 0, 15, 1]
         },
         opacities = [];
 
