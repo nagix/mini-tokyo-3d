@@ -29,9 +29,22 @@ function clearOpacity(geojson) {
     });
 }
 
-function getLocationAlongLine(line, point) {
-    const nearestPoint = nearestPointOnLine(line, point);
-    return nearestPoint.properties.location;
+function getLocationAlongLine(line, point, options) {
+    if (options && (options.first || options.last)) {
+        const coords = getCoords(line),
+            center = Math.floor(coords.length / 2),
+            firstHalf = lineString(coords.slice(0, center + 1)),
+            secondHalf = lineString(coords.slice(center)),
+            startLocation = options.first ? 0 : turfLength(firstHalf),
+            partialLine = options.first ? firstHalf : secondHalf,
+            nearestPoint = nearestPointOnLine(partialLine, point);
+
+        return startLocation + nearestPoint.properties.location;
+    } else {
+        const nearestPoint = nearestPointOnLine(line, point);
+
+        return nearestPoint.properties.location;
+    }
 }
 
 function alignDirection(feature, refCoords) {
@@ -154,9 +167,11 @@ export function featureWorker() {
     const unit = Math.pow(2, 14 - zoom) * .1;
 
     for (const {id, sublines, color, altitude, loop} of railways) {
-        const railwayFeature = lineString([].concat(...sublines.map(subline => {
+        const railwayFeature = lineString([].concat(...sublines.map((subline, index) => {
             const {type, start, end, coords, opacity} = subline,
-                sublineAltitude = valueOrDefault(subline.altitude, altitude) || 0;
+                sublineAltitude = valueOrDefault(subline.altitude, altitude) || 0,
+                prevSubline = sublines[index - 1] || {},
+                nextSubline = sublines[index + 1] || {};
             let coordinates;
 
             function smoothCoords(nextSubline, reverse) {
@@ -210,7 +225,7 @@ export function featureWorker() {
                 if (end && end.railway && !(zoom >= end.zoom)) {
                     smoothCoords(end, true);
                 }
-            } else if (type === 'sub' || (type === 'hybrid' && zoom < subline.zoom)) {
+            } else if (type === 'sub' || type === 'hybrid') {
                 if (start.railway === end.railway && start.offset === end.offset) {
                     const feature = lineSlice(coords[0], coords[coords.length - 1], featureLookup[start.railway]),
                         offset = start.offset;
@@ -233,7 +248,7 @@ export function featureWorker() {
                     const length1 = turfLength(feature1),
                         length2 = turfLength(feature2);
                     coordinates = [];
-                    for (let i = 1; i < interpolate; i++) {
+                    for (let i = 0; i <= interpolate; i++) {
                         const coord1 = getCoord(along(feature1, length1 * i / interpolate)),
                             coord2 = getCoord(along(feature2, length2 * i / interpolate)),
                             f = easeInOutQuad(i / interpolate);
@@ -264,6 +279,12 @@ export function featureWorker() {
                     coord[3] = opacity;
                 }
             }
+            if (prevSubline.type && opacity !== undefined && prevSubline.opacity === undefined) {
+                coordinates.shift();
+            }
+            if (nextSubline.type && !(opacity === undefined && nextSubline.opacity !== undefined)) {
+                coordinates.pop();
+            }
 
             return coordinates;
         })), {
@@ -281,11 +302,11 @@ export function featureWorker() {
 
         // Set station offsets
         const stationOffsets = railwayLookup[id].stations.map((station, i, stations) =>
-            // If the line has a loop, the last offset must be set explicitly
-            // Otherwise, the location of the last station goes wrong
-            loop && i === stations.length - 1 ?
-                turfLength(railwayFeature) :
-                getLocationAlongLine(railwayFeature, stationLookup[station].coord)
+            // If the line has a loop, the first and last offsets must be handled differently
+            getLocationAlongLine(railwayFeature, stationLookup[station].coord, {
+                first: loop && i === 0,
+                last: loop && i === stations.length - 1
+            })
         );
         railwayFeature.properties['station-offsets'] = stationOffsets;
 
