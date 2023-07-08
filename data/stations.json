@@ -12108,6 +12108,7 @@
 		"Toei.Shibakoen.A1",
 		"Toei.Shibakoen.A2",
 		"Toei.Shibakoen.A3",
+		"Toei.Shibakoen.EV",
 		"Toei.Shibakoen.A4"
 	],
 	"altitude": -1
@@ -12235,6 +12236,7 @@
 	"exit": [
 		"Toei.Suidobashi.A1",
 		"Toei.Suidobashi.A2",
+		"Toei.Suidobashi.EV",
 		"Toei.Suidobashi.A3",
 		"Toei.Suidobashi.A4",
 		"Toei.Suidobashi.A5",
@@ -12279,7 +12281,8 @@
 	"exit": [
 		"Toei.Hakusan.A1",
 		"Toei.Hakusan.A2",
-		"Toei.Hakusan.A3"
+		"Toei.Hakusan.A3",
+		"Toei.Hakusan.EV"
 	],
 	"altitude": -1
 }, {
@@ -12314,6 +12317,7 @@
 	},
 	"exit": [
 		"Toei.Sugamo.A1",
+		"Toei.Sugamo.EV",
 		"Toei.Sugamo.A2",
 		"Toei.Sugamo.A3",
 		"Toei.Sugamo.A4"
@@ -12367,8 +12371,10 @@
 	},
 	"exit": [
 		"Toei.ItabashiKuyakushomae.A1",
+		"Toei.ItabashiKuyakushomae.EV1",
 		"Toei.ItabashiKuyakushomae.A2",
-		"Toei.ItabashiKuyakushomae.A3"
+		"Toei.ItabashiKuyakushomae.A3",
+		"Toei.ItabashiKuyakushomae.EV2"
 	],
 	"altitude": -1
 }, {
@@ -12384,6 +12390,7 @@
 	},
 	"exit": [
 		"Toei.Itabashihoncho.A1",
+		"Toei.Itabashihoncho.EV",
 		"Toei.Itabashihoncho.A2",
 		"Toei.Itabashihoncho.A3",
 		"Toei.Itabashihoncho.A4"
@@ -12422,6 +12429,7 @@
 		"Toei.ShimuraSakaue.A1",
 		"Toei.ShimuraSakaue.A2",
 		"Toei.ShimuraSakaue.A3",
+		"Toei.ShimuraSakaue.EV",
 		"Toei.ShimuraSakaue.A4"
 	],
 	"altitude": -1
@@ -12496,7 +12504,9 @@
 		"zh-Hant": "新高島平"
 	},
 	"exit": [
-		"Toei.ShinTakashimadaira.1"
+		"Toei.ShinTakashimadaira.North",
+		"Toei.ShinTakashimadaira.South",
+		"Toei.ShinTakashimadaira.Pedestrian"
 	]
 }, {
 	"id": "Toei.Mita.NishiTakashimadaira",
@@ -12510,7 +12520,8 @@
 		"zh-Hant": "西高島平"
 	},
 	"exit": [
-		"Toei.NishiTakashimadaira.1"
+		"Toei.NishiTakashimadaira.North",
+		"Toei.NishiTakashimadaira.South"
 	]
 }, {
 	"id": "Toei.Shinjuku.Shinjuku",
