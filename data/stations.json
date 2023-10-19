@@ -12708,7 +12708,8 @@
 	},
 	"exit": [
 		"Toei.Hamacho.A1",
-		"Toei.Hamacho.A2"
+		"Toei.Hamacho.A2",
+		"Toei.Hamacho.EV"
 	],
 	"altitude": -1
 }, {
@@ -12746,6 +12747,7 @@
 		"Toei.Kikukawa.A1",
 		"Toei.Kikukawa.A2",
 		"Toei.Kikukawa.A3",
+		"Toei.Kikukawa.EV",
 		"Toei.Kikukawa.A4"
 	],
 	"altitude": -1
@@ -12783,7 +12785,8 @@
 		"Toei.NishiOjima.A1",
 		"Toei.NishiOjima.A2",
 		"Toei.NishiOjima.A3",
-		"Toei.NishiOjima.A4"
+		"Toei.NishiOjima.A4",
+		"Toei.NishiOjima.EV"
 	],
 	"altitude": -1
 }, {
@@ -12869,8 +12872,9 @@
 		"zh-Hant": "瑞江"
 	},
 	"exit": [
+		"Toei.Mizue.North",
 		"Toei.Mizue.South",
-		"Toei.Mizue.North"
+		"Toei.Mizue.EV"
 	],
 	"altitude": -1
 }, {
@@ -12886,8 +12890,9 @@
 	},
 	"exit": [
 		"Toei.Shinozaki.West",
+		"Toei.Shinozaki.North",
 		"Toei.Shinozaki.South",
-		"Toei.Shinozaki.North"
+		"Toei.Shinozaki.EV"
 	],
 	"altitude": -1
 }, {
@@ -13163,6 +13168,7 @@
 	"exit": [
 		"Toei.Morishita.A5",
 		"Toei.Morishita.A6",
+		"Toei.Morishita.EV",
 		"Toei.Morishita.A7"
 	],
 	"altitude": -1

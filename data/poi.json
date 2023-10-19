@@ -19415,8 +19415,8 @@
 		"zh-Hant": "出口2"
 	},
 	"uptime": [{
-		"open": "06:00",
-		"close": "22:30"
+		"open": "04:50",
+		"close": "23:00"
 	}],
 	"facilities": ["stairs"]
 }, {
@@ -19677,7 +19677,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Akebonobashi.A2",
 	"coord": [139.7220665, 35.6925884],
@@ -19690,7 +19691,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Akebonobashi.A3",
 	"coord": [139.72335, 35.6925884],
@@ -19703,7 +19705,8 @@
 		"ko": "출구A3",
 		"zh-Hans": "出口A3",
 		"zh-Hant": "出口A3"
-	}
+	},
+	"facilities": ["stairs", "elevator"]
 }, {
 	"id": "Toei.Akebonobashi.A4",
 	"coord": [139.7234304, 35.6922692],
@@ -19716,7 +19719,8 @@
 		"ko": "출구A4",
 		"zh-Hans": "出口A4",
 		"zh-Hant": "出口A4"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Ichigaya.A1",
 	"coord": [139.7365022, 35.6913837],
@@ -19883,7 +19887,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Iwamotocho.A2",
 	"coord": [139.7741, 35.6957753],
@@ -19896,7 +19901,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Iwamotocho.A3",
 	"coord": [139.7751085, 35.6959887],
@@ -19909,7 +19915,8 @@
 		"ko": "출구A3",
 		"zh-Hans": "出口A3",
 		"zh-Hant": "出口A3"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Iwamotocho.A4",
 	"coord": [139.7759588, 35.6959637],
@@ -19922,7 +19929,12 @@
 		"ko": "출구A4",
 		"zh-Hans": "出口A4",
 		"zh-Hant": "出口A4"
-	}
+	},
+	"uptime": [{
+		"open": "04:55",
+		"close": "22:00"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Iwamotocho.A5",
 	"coord": [139.7755109, 35.6951305],
@@ -19935,7 +19947,8 @@
 		"ko": "출구A5",
 		"zh-Hans": "出口A5",
 		"zh-Hant": "出口A5"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Iwamotocho.A6",
 	"coord": [139.7747411, 35.695747],
@@ -19948,7 +19961,8 @@
 		"ko": "출구A6",
 		"zh-Hans": "出口A6",
 		"zh-Hant": "出口A6"
-	}
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "Toei.BakuroYokoyama.A1",
 	"coord": [139.7828494, 35.692242],
@@ -20035,7 +20049,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Hamacho.A2",
 	"coord": [139.788022, 35.6878884],
@@ -20048,7 +20063,22 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "Toei.Hamacho.EV",
+	"coord": [139.7881049, 35.6878502],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "Toei.Morishita.A1",
 	"coord": [139.7962645, 35.6878274],
@@ -20061,7 +20091,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Morishita.A2",
 	"coord": [139.7962524, 35.6881193],
@@ -20074,7 +20105,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Morishita.A3",
 	"coord": [139.7974527, 35.6878415],
@@ -20087,7 +20119,8 @@
 		"ko": "출구A3",
 		"zh-Hans": "出口A3",
 		"zh-Hant": "出口A3"
-	}
+	},
+	"facilities": ["stairs", "elevator"]
 }, {
 	"id": "Toei.Morishita.A4",
 	"coord": [139.7978282, 35.6881803],
@@ -20100,7 +20133,8 @@
 		"ko": "출구A4",
 		"zh-Hans": "出口A4",
 		"zh-Hant": "出口A4"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Morishita.A5",
 	"coord": [139.7983056, 35.6893697],
@@ -20113,7 +20147,8 @@
 		"ko": "출구A5",
 		"zh-Hans": "出口A5",
 		"zh-Hant": "出口A5"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "Toei.Morishita.A6",
 	"coord": [139.7984532, 35.6875834],
@@ -20126,7 +20161,22 @@
 		"ko": "출구A6",
 		"zh-Hans": "出口A6",
 		"zh-Hant": "出口A6"
-	}
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "Toei.Morishita.EV",
+	"coord": [139.7985785, 35.6874999],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "Toei.Morishita.A7",
 	"coord": [139.7981554, 35.6872],
@@ -20139,7 +20189,8 @@
 		"ko": "출구A7",
 		"zh-Hans": "出口A7",
 		"zh-Hant": "出口A7"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Kikukawa.A1",
 	"coord": [139.8054725, 35.6885495],
@@ -20152,7 +20203,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Kikukawa.A2",
 	"coord": [139.8055945, 35.688225],
@@ -20165,10 +20217,11 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Kikukawa.A3",
-	"coord": [139.806245, 35.6886999],
+	"coord": [139.8062225, 35.6887437],
 	"title": {
 		"en": "A3"
 	},
@@ -20178,7 +20231,22 @@
 		"ko": "출구A3",
 		"zh-Hans": "出口A3",
 		"zh-Hant": "出口A3"
-	}
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "Toei.Kikukawa.EV",
+	"coord": [139.8062257, 35.6886994],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "Toei.Kikukawa.A4",
 	"coord": [139.8063804, 35.6882587],
@@ -20191,7 +20259,8 @@
 		"ko": "출구A4",
 		"zh-Hans": "出口A4",
 		"zh-Hant": "出口A4"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Sumiyoshi.A1",
 	"coord": [139.815394, 35.6888752],
@@ -20260,7 +20329,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.NishiOjima.A2",
 	"coord": [139.8260745, 35.6894885],
@@ -20273,7 +20343,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.NishiOjima.A3",
 	"coord": [139.8268832, 35.6895135],
@@ -20286,7 +20357,8 @@
 		"ko": "출구A3",
 		"zh-Hans": "出口A3",
 		"zh-Hant": "出口A3"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.NishiOjima.A4",
 	"coord": [139.8265775, 35.6891421],
@@ -20299,7 +20371,22 @@
 		"ko": "출구A4",
 		"zh-Hans": "出口A4",
 		"zh-Hant": "出口A4"
-	}
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "Toei.NishiOjima.EV",
+	"coord": [139.8265836, 35.689187],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "Toei.Ojima.A1",
 	"coord": [139.8342553, 35.6895473],
@@ -20312,7 +20399,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Ojima.A2",
 	"coord": [139.8343049, 35.6898523],
@@ -20325,7 +20413,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Ojima.A3",
 	"coord": [139.8353134, 35.6896638],
@@ -20338,7 +20427,8 @@
 		"ko": "출구A3",
 		"zh-Hans": "出口A3",
 		"zh-Hant": "出口A3"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Ojima.A4",
 	"coord": [139.8352638, 35.6899634],
@@ -20351,7 +20441,8 @@
 		"ko": "출구A4",
 		"zh-Hans": "出口A4",
 		"zh-Hant": "出口A4"
-	}
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "Toei.Ojima.A5",
 	"coord": [139.8361556, 35.6897335],
@@ -20364,7 +20455,8 @@
 		"ko": "출구A5",
 		"zh-Hans": "出口A5",
 		"zh-Hant": "出口A5"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Ojima.A6",
 	"coord": [139.8360054, 35.6900135],
@@ -20377,7 +20469,8 @@
 		"ko": "출구A6",
 		"zh-Hans": "出口A6",
 		"zh-Hant": "出口A6"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.HigashiOjima.1",
 	"coord": [139.8457338, 35.6903588],
@@ -20394,7 +20487,8 @@
 		"ko": "오지마 출구",
 		"zh-Hans": "大岛出口",
 		"zh-Hant": "大島出口"
-	}
+	},
+	"facilities": ["stairs", "elevator"]
 }, {
 	"id": "Toei.HigashiOjima.2",
 	"coord": [139.8492555, 35.6891944],
@@ -20428,7 +20522,8 @@
 		"ko": "남쪽 출구",
 		"zh-Hans": "南出口",
 		"zh-Hant": "南出口"
-	}
+	},
+	"facilities": ["stairs", "ramp"]
 }, {
 	"id": "Toei.Funabori.North",
 	"coord": [139.8639111, 35.6838504],
@@ -20445,7 +20540,8 @@
 		"ko": "키타 출구",
 		"zh-Hans": "北出口",
 		"zh-Hant": "北出口"
-	}
+	},
+	"facilities": ["stairs", "ramp"]
 }, {
 	"id": "Toei.Ichinoe.A0",
 	"coord": [139.8818035, 35.6856829],
@@ -20458,7 +20554,8 @@
 		"ko": "출구A0",
 		"zh-Hans": "出口A0",
 		"zh-Hant": "出口A0"
-	}
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "Toei.Ichinoe.A1",
 	"coord": [139.8820134, 35.685761],
@@ -20471,7 +20568,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "Toei.Ichinoe.A2",
 	"coord": [139.8826531, 35.6858776],
@@ -20484,7 +20582,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "Toei.Ichinoe.A3a",
 	"coord": [139.8829105, 35.6860137],
@@ -20497,7 +20596,8 @@
 		"ko": "출구A3a",
 		"zh-Hans": "出口A3a",
 		"zh-Hant": "出口A3a"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "Toei.Ichinoe.A3b",
 	"coord": [139.8833477, 35.6860747],
@@ -20510,7 +20610,12 @@
 		"ko": "출구A3b",
 		"zh-Hans": "出口A3b",
 		"zh-Hant": "出口A3b"
-	}
+	},
+	"uptime": [{
+		"open": "05:25",
+		"close": "23:30"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Ichinoe.A3c",
 	"coord": [139.8831694, 35.6859615],
@@ -20523,24 +20628,8 @@
 		"ko": "출구A3c",
 		"zh-Hans": "出口A3c",
 		"zh-Hant": "出口A3c"
-	}
-}, {
-	"id": "Toei.Mizue.South",
-	"coord": [139.8976949, 35.6930894],
-	"title": {
-		"ja": "南口",
-		"en": "South",
-		"ko": "남쪽",
-		"zh-Hans": "南出口",
-		"zh-Hant": "南出口"
 	},
-	"description": {
-		"ja": "南口",
-		"en": "South Exit",
-		"ko": "남쪽 출구",
-		"zh-Hans": "南出口",
-		"zh-Hant": "南出口"
-	}
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "Toei.Mizue.North",
 	"coord": [139.8974951, 35.6932136],
@@ -20557,7 +20646,40 @@
 		"ko": "키타 출구",
 		"zh-Hans": "北出口",
 		"zh-Hant": "北出口"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "Toei.Mizue.South",
+	"coord": [139.8976949, 35.6930894],
+	"title": {
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"description": {
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "Toei.Mizue.EV",
+	"coord": [139.8978717, 35.6930785],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "Toei.Shinozaki.West",
 	"coord": [139.9026147, 35.705389],
@@ -20574,24 +20696,8 @@
 		"ko": "서쪽 출구",
 		"zh-Hans": "西出口",
 		"zh-Hant": "西出口"
-	}
-}, {
-	"id": "Toei.Shinozaki.South",
-	"coord": [139.9038747, 35.7060169],
-	"title": {
-		"ja": "南口",
-		"en": "South",
-		"ko": "남쪽",
-		"zh-Hans": "南出口",
-		"zh-Hant": "南出口"
 	},
-	"description": {
-		"ja": "南口",
-		"en": "South Exit",
-		"ko": "남쪽 출구",
-		"zh-Hans": "南出口",
-		"zh-Hant": "南出口"
-	}
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "Toei.Shinozaki.North",
 	"coord": [139.9036856, 35.7061422],
@@ -20608,7 +20714,40 @@
 		"ko": "키타 출구",
 		"zh-Hans": "北出口",
 		"zh-Hant": "北出口"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "Toei.Shinozaki.South",
+	"coord": [139.9038747, 35.7060169],
+	"title": {
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"description": {
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "Toei.Shinozaki.EV",
+	"coord": [139.9037967, 35.7058548],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "Toei.Motoyawata.A1",
 	"coord": [139.9261357, 35.7215969],
@@ -20621,7 +20760,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Motoyawata.A2",
 	"coord": [139.9261719, 35.721536],
@@ -20634,7 +20774,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "Toei.Motoyawata.A3",
 	"coord": [139.9257414, 35.7217505],
@@ -20647,7 +20788,12 @@
 		"ko": "출구A3",
 		"zh-Hans": "出口A3",
 		"zh-Hant": "出口A3"
-	}
+	},
+	"uptime": [{
+		"open": "06:00",
+		"close": "22:00"
+	}],
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Motoyawata.A4a",
 	"coord": [139.9270423, 35.7228414],
@@ -20660,7 +20806,8 @@
 		"ko": "출구A4a",
 		"zh-Hans": "出口A4a",
 		"zh-Hant": "出口A4a"
-	}
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "Toei.Motoyawata.A4b",
 	"coord": [139.9266694, 35.7226193],
@@ -20673,7 +20820,8 @@
 		"ko": "출구A4b",
 		"zh-Hans": "出口A4b",
 		"zh-Hant": "出口A4b"
-	}
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "Toei.Motoyawata.A5",
 	"coord": [139.9265246, 35.7230113],
@@ -20686,7 +20834,8 @@
 		"ko": "출구A5",
 		"zh-Hans": "出口A5",
 		"zh-Hant": "出口A5"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Motoyawata.A6",
 	"coord": [139.9275613, 35.7239247],
@@ -20699,7 +20848,8 @@
 		"ko": "출구A6",
 		"zh-Hans": "出口A6",
 		"zh-Hant": "出口A6"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "Toei.Tochomae.A1",
 	"coord": [139.6934339, 35.6907335],
