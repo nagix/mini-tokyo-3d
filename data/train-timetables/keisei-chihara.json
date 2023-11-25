@@ -38,10 +38,10 @@
 		"a": "06:01"
 	}]
 }, {
-	"id": "Keisei.Chihara.6B17.Weekday",
-	"t": "Keisei.Chihara.6B17",
+	"id": "Keisei.Chihara.6B07.Weekday",
+	"t": "Keisei.Chihara.6B07",
 	"r": "Keisei.Chihara",
-	"n": "6B17",
+	"n": "6B07",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -51,7 +51,7 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"pt": [
-		"Keisei.Chiba.6B17.Weekday"
+		"Keisei.Chiba.6B07.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
@@ -233,10 +233,10 @@
 		"a": "07:47"
 	}]
 }, {
-	"id": "Keisei.Chihara.7B17.Weekday",
-	"t": "Keisei.Chihara.7B17",
+	"id": "Keisei.Chihara.7B07.Weekday",
+	"t": "Keisei.Chihara.7B07",
 	"r": "Keisei.Chihara",
-	"n": "7B17",
+	"n": "7B07",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -246,7 +246,7 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"pt": [
-		"Keisei.Chiba.7B17.Weekday"
+		"Keisei.Chiba.7B07.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
@@ -545,20 +545,20 @@
 		"a": "10:05"
 	}]
 }, {
-	"id": "Keisei.Chihara.8B07.Weekday",
-	"t": "Keisei.Chihara.8B07",
+	"id": "Keisei.Chihara.9B07.Weekday",
+	"t": "Keisei.Chihara.9B07",
 	"r": "Keisei.Chihara",
-	"n": "8B07",
+	"n": "9B07",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
-		"Keisei.Main.KeiseiUeno"
+		"Keisei.Chiba.KeiseiTsudanuma"
 	],
 	"ds": [
 		"Keisei.Chihara.Chiharadai"
 	],
 	"pt": [
-		"Keisei.Chiba.8B07.Weekday"
+		"Keisei.Chiba.9B07.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
@@ -1364,10 +1364,10 @@
 		"a": "17:08"
 	}]
 }, {
-	"id": "Keisei.Chihara.15B17.Weekday",
-	"t": "Keisei.Chihara.15B17",
+	"id": "Keisei.Chihara.15B15.Weekday",
+	"t": "Keisei.Chihara.15B15",
 	"r": "Keisei.Chihara",
-	"n": "15B17",
+	"n": "15B15",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1377,7 +1377,7 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"pt": [
-		"Keisei.Chiba.15B17.Weekday"
+		"Keisei.Chiba.15B15.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
@@ -1462,8 +1462,8 @@
 		"d": "18:04"
 	}, {
 		"s": "Keisei.Chihara.Chibadera",
-		"a": "18:07",
-		"d": "18:07"
+		"a": "18:06",
+		"d": "18:06"
 	}, {
 		"s": "Keisei.Chihara.Omoridai",
 		"a": "18:09",
@@ -1478,7 +1478,7 @@
 		"d": "18:14"
 	}, {
 		"s": "Keisei.Chihara.Chiharadai",
-		"a": "18:17"
+		"a": "18:16"
 	}]
 }, {
 	"id": "Keisei.Chihara.18B03.Weekday",
@@ -1598,10 +1598,10 @@
 		"a": "19:22"
 	}]
 }, {
-	"id": "Keisei.Chihara.19B17.Weekday",
-	"t": "Keisei.Chihara.19B17",
+	"id": "Keisei.Chihara.19B15.Weekday",
+	"t": "Keisei.Chihara.19B15",
 	"r": "Keisei.Chihara",
-	"n": "19B17",
+	"n": "19B15",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1611,7 +1611,7 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"pt": [
-		"Keisei.Chiba.19B17.Weekday"
+		"Keisei.Chiba.19B15.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
@@ -1754,10 +1754,10 @@
 		"a": "20:51"
 	}]
 }, {
-	"id": "Keisei.Chihara.19B15.Weekday",
-	"t": "Keisei.Chihara.19B15",
+	"id": "Keisei.Chihara.19B31.Weekday",
+	"t": "Keisei.Chihara.19B31",
 	"r": "Keisei.Chihara",
-	"n": "19B15",
+	"n": "19B31",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1767,7 +1767,7 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"pt": [
-		"Keisei.Chiba.19B15.Weekday"
+		"Keisei.Chiba.19B31.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
@@ -1871,10 +1871,10 @@
 		"a": "22:00"
 	}]
 }, {
-	"id": "Keisei.Chihara.20B21.Weekday",
-	"t": "Keisei.Chihara.20B21",
+	"id": "Keisei.Chihara.20B25.Weekday",
+	"t": "Keisei.Chihara.20B25",
 	"r": "Keisei.Chihara",
-	"n": "20B21",
+	"n": "20B25",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -1884,7 +1884,7 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"pt": [
-		"Keisei.Chiba.20B21.Weekday"
+		"Keisei.Chiba.20B25.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
@@ -1927,26 +1927,26 @@
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
-		"d": "22:27"
+		"d": "22:26"
 	}, {
 		"s": "Keisei.Chihara.Chibadera",
-		"a": "22:30",
-		"d": "22:30"
+		"a": "22:29",
+		"d": "22:29"
 	}, {
 		"s": "Keisei.Chihara.Omoridai",
-		"a": "22:32",
-		"d": "22:32"
+		"a": "22:31",
+		"d": "22:31"
 	}, {
 		"s": "Keisei.Chihara.Gakuemmae",
-		"a": "22:36",
-		"d": "22:36"
+		"a": "22:35",
+		"d": "22:35"
 	}, {
 		"s": "Keisei.Chihara.Oyumino",
-		"a": "22:38",
-		"d": "22:38"
+		"a": "22:37",
+		"d": "22:37"
 	}, {
 		"s": "Keisei.Chihara.Chiharadai",
-		"a": "22:40"
+		"a": "22:39"
 	}]
 }, {
 	"id": "Keisei.Chihara.21B09.Weekday",
@@ -1966,32 +1966,32 @@
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
-		"d": "22:46"
+		"d": "22:45"
 	}, {
 		"s": "Keisei.Chihara.Chibadera",
-		"a": "22:48",
-		"d": "22:48"
+		"a": "22:47",
+		"d": "22:47"
 	}, {
 		"s": "Keisei.Chihara.Omoridai",
-		"a": "22:51",
-		"d": "22:51"
+		"a": "22:50",
+		"d": "22:50"
 	}, {
 		"s": "Keisei.Chihara.Gakuemmae",
+		"a": "22:54",
+		"d": "22:54"
+	}, {
+		"s": "Keisei.Chihara.Oyumino",
 		"a": "22:55",
 		"d": "22:55"
 	}, {
-		"s": "Keisei.Chihara.Oyumino",
-		"a": "22:56",
-		"d": "22:56"
-	}, {
 		"s": "Keisei.Chihara.Chiharadai",
-		"a": "22:59"
+		"a": "22:58"
 	}]
 }, {
-	"id": "Keisei.Chihara.21B07.Weekday",
-	"t": "Keisei.Chihara.21B07",
+	"id": "Keisei.Chihara.21B29.Weekday",
+	"t": "Keisei.Chihara.21B29",
 	"r": "Keisei.Chihara",
-	"n": "21B07",
+	"n": "21B29",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -2001,7 +2001,7 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"pt": [
-		"Keisei.Chiba.21B07.Weekday"
+		"Keisei.Chiba.21B29.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
@@ -2027,43 +2027,43 @@
 		"a": "23:31"
 	}]
 }, {
-	"id": "Keisei.Chihara.23B19.Weekday",
-	"t": "Keisei.Chihara.23B19",
+	"id": "Keisei.Chihara.22B21.Weekday",
+	"t": "Keisei.Chihara.22B21",
 	"r": "Keisei.Chihara",
-	"n": "23B19",
+	"n": "22B21",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
-		"Keisei.Chiba.KeiseiTsudanuma"
+		"Keisei.Main.KeiseiUeno"
 	],
 	"ds": [
 		"Keisei.Chihara.Chiharadai"
 	],
 	"pt": [
-		"Keisei.Chiba.23B19.Weekday"
+		"Keisei.Chiba.22B21.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
-		"d": "23:48"
+		"d": "23:49"
 	}, {
 		"s": "Keisei.Chihara.Chibadera",
-		"a": "23:51",
-		"d": "23:51"
+		"a": "23:52",
+		"d": "23:52"
 	}, {
 		"s": "Keisei.Chihara.Omoridai",
-		"a": "23:53",
-		"d": "23:53"
+		"a": "23:54",
+		"d": "23:54"
 	}, {
 		"s": "Keisei.Chihara.Gakuemmae",
-		"a": "23:56",
-		"d": "23:56"
+		"a": "23:57",
+		"d": "23:57"
 	}, {
 		"s": "Keisei.Chihara.Oyumino",
-		"a": "23:58",
-		"d": "23:58"
+		"a": "23:59",
+		"d": "23:59"
 	}, {
 		"s": "Keisei.Chihara.Chiharadai",
-		"a": "00:00"
+		"a": "00:01"
 	}]
 }, {
 	"id": "Keisei.Chihara.5B20.Weekday",
@@ -2183,10 +2183,10 @@
 		"a": "06:30"
 	}]
 }, {
-	"id": "Keisei.Chihara.6B16.Weekday",
-	"t": "Keisei.Chihara.6B16",
+	"id": "Keisei.Chihara.6B06.Weekday",
+	"t": "Keisei.Chihara.6B06",
 	"r": "Keisei.Chihara",
-	"n": "6B16",
+	"n": "6B06",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2196,7 +2196,7 @@
 		"Keisei.Chiba.KeiseiTsudanuma"
 	],
 	"nt": [
-		"Keisei.Chiba.6B16.Weekday"
+		"Keisei.Chiba.6B06.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.Chiharadai",
@@ -2378,10 +2378,10 @@
 		"a": "08:05"
 	}]
 }, {
-	"id": "Keisei.Chihara.8B16.Weekday",
-	"t": "Keisei.Chihara.8B16",
+	"id": "Keisei.Chihara.8B06.Weekday",
+	"t": "Keisei.Chihara.8B06",
 	"r": "Keisei.Chihara",
-	"n": "8B16",
+	"n": "8B06",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -2391,7 +2391,7 @@
 		"Keisei.Chiba.KeiseiTsudanuma"
 	],
 	"nt": [
-		"Keisei.Chiba.8B16.Weekday"
+		"Keisei.Chiba.8B06.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.Chiharadai",
@@ -3509,10 +3509,10 @@
 		"a": "17:27"
 	}]
 }, {
-	"id": "Keisei.Chihara.17B16.Weekday",
-	"t": "Keisei.Chihara.17B16",
+	"id": "Keisei.Chihara.17B14.Weekday",
+	"t": "Keisei.Chihara.17B14",
 	"r": "Keisei.Chihara",
-	"n": "17B16",
+	"n": "17B14",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -3522,7 +3522,7 @@
 		"Keisei.Chiba.KeiseiTsudanuma"
 	],
 	"nt": [
-		"Keisei.Chiba.17B16.Weekday"
+		"Keisei.Chiba.17B14.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.Chiharadai",
@@ -3568,23 +3568,23 @@
 		"d": "18:00"
 	}, {
 		"s": "Keisei.Chihara.Oyumino",
-		"a": "18:03",
-		"d": "18:03"
+		"a": "18:02",
+		"d": "18:02"
 	}, {
 		"s": "Keisei.Chihara.Gakuemmae",
-		"a": "18:06",
-		"d": "18:06"
+		"a": "18:05",
+		"d": "18:05"
 	}, {
 		"s": "Keisei.Chihara.Omoridai",
-		"a": "18:10",
-		"d": "18:10"
+		"a": "18:09",
+		"d": "18:09"
 	}, {
 		"s": "Keisei.Chihara.Chibadera",
-		"a": "18:12",
-		"d": "18:12"
+		"a": "18:11",
+		"d": "18:11"
 	}, {
 		"s": "Keisei.Chihara.ChibaChuo",
-		"a": "18:15"
+		"a": "18:14"
 	}]
 }, {
 	"id": "Keisei.Chihara.18B04.Weekday",
@@ -3743,10 +3743,10 @@
 		"a": "19:42"
 	}]
 }, {
-	"id": "Keisei.Chihara.19B16.Weekday",
-	"t": "Keisei.Chihara.19B16",
+	"id": "Keisei.Chihara.19B14.Weekday",
+	"t": "Keisei.Chihara.19B14",
 	"r": "Keisei.Chihara",
-	"n": "19B16",
+	"n": "19B14",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -3756,7 +3756,7 @@
 		"Keisei.Chiba.KeiseiTsudanuma"
 	],
 	"nt": [
-		"Keisei.Chiba.19B16.Weekday"
+		"Keisei.Chiba.19B14.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.Chiharadai",
@@ -3849,15 +3849,15 @@
 		"d": "20:41"
 	}, {
 		"s": "Keisei.Chihara.Omoridai",
-		"a": "20:45",
-		"d": "20:45"
+		"a": "20:44",
+		"d": "20:44"
 	}, {
 		"s": "Keisei.Chihara.Chibadera",
 		"a": "20:47",
 		"d": "20:47"
 	}, {
 		"s": "Keisei.Chihara.ChibaChuo",
-		"a": "20:50"
+		"a": "20:49"
 	}]
 }, {
 	"id": "Keisei.Chihara.21B02.Weekday",
@@ -3899,10 +3899,10 @@
 		"a": "21:16"
 	}]
 }, {
-	"id": "Keisei.Chihara.21B14.Weekday",
-	"t": "Keisei.Chihara.21B14",
+	"id": "Keisei.Chihara.21B30.Weekday",
+	"t": "Keisei.Chihara.21B30",
 	"r": "Keisei.Chihara",
-	"n": "21B14",
+	"n": "21B30",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -3912,7 +3912,7 @@
 		"Keisei.Main.KeiseiUeno"
 	],
 	"nt": [
-		"Keisei.Chiba.21B14.Weekday"
+		"Keisei.Chiba.21B30.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.Chiharadai",
@@ -3948,7 +3948,7 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"ds": [
-		"Keisei.Chiba.KeiseiTsudanuma"
+		"Keisei.Main.KeiseiUeno"
 	],
 	"nt": [
 		"Keisei.Chiba.21B12.Weekday"
@@ -4016,10 +4016,10 @@
 		"a": "22:21"
 	}]
 }, {
-	"id": "Keisei.Chihara.22B20.Weekday",
-	"t": "Keisei.Chihara.22B20",
+	"id": "Keisei.Chihara.22B24.Weekday",
+	"t": "Keisei.Chihara.22B24",
 	"r": "Keisei.Chihara",
-	"n": "22B20",
+	"n": "22B24",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -4029,7 +4029,7 @@
 		"Keisei.Chiba.KeiseiTsudanuma"
 	],
 	"nt": [
-		"Keisei.Chiba.22B20.Weekday"
+		"Keisei.Chiba.22B24.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.Chiharadai",
@@ -4040,19 +4040,19 @@
 		"d": "22:31"
 	}, {
 		"s": "Keisei.Chihara.Gakuemmae",
-		"a": "22:36",
-		"d": "22:36"
+		"a": "22:35",
+		"d": "22:35"
 	}, {
 		"s": "Keisei.Chihara.Omoridai",
-		"a": "22:40",
-		"d": "22:40"
+		"a": "22:39",
+		"d": "22:39"
 	}, {
 		"s": "Keisei.Chihara.Chibadera",
-		"a": "22:42",
-		"d": "22:42"
+		"a": "22:41",
+		"d": "22:41"
 	}, {
 		"s": "Keisei.Chihara.ChibaChuo",
-		"a": "22:45"
+		"a": "22:44"
 	}]
 }, {
 	"id": "Keisei.Chihara.22B18.Weekday",
@@ -4065,33 +4065,33 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"ds": [
-		"Keisei.Chiba.KeiseiTsudanuma"
+		"Keisei.Main.KeiseiUeno"
 	],
 	"nt": [
 		"Keisei.Chiba.22B18.Weekday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.Chiharadai",
-		"d": "22:49"
+		"d": "22:48"
 	}, {
 		"s": "Keisei.Chihara.Oyumino",
-		"a": "22:52",
-		"d": "22:52"
+		"a": "22:51",
+		"d": "22:51"
 	}, {
 		"s": "Keisei.Chihara.Gakuemmae",
-		"a": "22:55",
-		"d": "22:55"
+		"a": "22:54",
+		"d": "22:54"
 	}, {
 		"s": "Keisei.Chihara.Omoridai",
-		"a": "22:58",
-		"d": "22:58"
+		"a": "22:57",
+		"d": "22:57"
 	}, {
 		"s": "Keisei.Chihara.Chibadera",
-		"a": "23:01",
-		"d": "23:01"
+		"a": "23:00",
+		"d": "23:00"
 	}, {
 		"s": "Keisei.Chihara.ChibaChuo",
-		"a": "23:03"
+		"a": "23:02"
 	}]
 }, {
 	"id": "Keisei.Chihara.23B08.Weekday",
@@ -5732,10 +5732,10 @@
 		"a": "20:17"
 	}]
 }, {
-	"id": "Keisei.Chihara.20B01.SaturdayHoliday",
-	"t": "Keisei.Chihara.20B01",
+	"id": "Keisei.Chihara.20B05.SaturdayHoliday",
+	"t": "Keisei.Chihara.20B05",
 	"r": "Keisei.Chihara",
-	"n": "20B01",
+	"n": "20B05",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
@@ -5745,7 +5745,7 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"pt": [
-		"Keisei.Chiba.20B01.SaturdayHoliday"
+		"Keisei.Chiba.20B05.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
@@ -5966,20 +5966,20 @@
 		"a": "22:21"
 	}]
 }, {
-	"id": "Keisei.Chihara.22B25.SaturdayHoliday",
-	"t": "Keisei.Chihara.22B25",
+	"id": "Keisei.Chihara.21B27.SaturdayHoliday",
+	"t": "Keisei.Chihara.21B27",
 	"r": "Keisei.Chihara",
-	"n": "22B25",
+	"n": "21B27",
 	"y": "Keisei.Local",
 	"d": "Outbound",
 	"os": [
-		"Keisei.Chiba.KeiseiTsudanuma"
+		"Keisei.Main.KeiseiUeno"
 	],
 	"ds": [
 		"Keisei.Chihara.Chiharadai"
 	],
 	"pt": [
-		"Keisei.Chiba.22B25.SaturdayHoliday"
+		"Keisei.Chiba.21B27.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.ChibaChuo",
@@ -7614,7 +7614,7 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"ds": [
-		"Keisei.Main.KeiseiUeno"
+		"Keisei.Chiba.KeiseiTsudanuma"
 	],
 	"nt": [
 		"Keisei.Chiba.19B04.SaturdayHoliday"
@@ -7760,10 +7760,10 @@
 		"a": "20:38"
 	}]
 }, {
-	"id": "Keisei.Chihara.20B00.SaturdayHoliday",
-	"t": "Keisei.Chihara.20B00",
+	"id": "Keisei.Chihara.20B04.SaturdayHoliday",
+	"t": "Keisei.Chihara.20B04",
 	"r": "Keisei.Chihara",
-	"n": "20B00",
+	"n": "20B04",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
@@ -7773,7 +7773,7 @@
 		"Keisei.Chiba.KeiseiTsudanuma"
 	],
 	"nt": [
-		"Keisei.Chiba.20B00.SaturdayHoliday"
+		"Keisei.Chiba.20B04.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.Chiharadai",
@@ -7926,7 +7926,7 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"ds": [
-		"Keisei.Chiba.KeiseiTsudanuma"
+		"Keisei.Main.KeiseiUeno"
 	],
 	"nt": [
 		"Keisei.Chiba.22B12.SaturdayHoliday"
@@ -7994,20 +7994,20 @@
 		"a": "22:42"
 	}]
 }, {
-	"id": "Keisei.Chihara.22B24.SaturdayHoliday",
-	"t": "Keisei.Chihara.22B24",
+	"id": "Keisei.Chihara.22B26.SaturdayHoliday",
+	"t": "Keisei.Chihara.22B26",
 	"r": "Keisei.Chihara",
-	"n": "22B24",
+	"n": "22B26",
 	"y": "Keisei.Local",
 	"d": "Inbound",
 	"os": [
 		"Keisei.Chihara.Chiharadai"
 	],
 	"ds": [
-		"Keisei.Chiba.KeiseiTsudanuma"
+		"Keisei.Main.KeiseiUeno"
 	],
 	"nt": [
-		"Keisei.Chiba.22B24.SaturdayHoliday"
+		"Keisei.Chiba.22B26.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keisei.Chihara.Chiharadai",
