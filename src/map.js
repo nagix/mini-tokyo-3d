@@ -2321,6 +2321,9 @@ export default class extends Evented {
                 } else if (helpers.includes(landing, 'I34R')) {
                     arrRoutes = {S: 'IY34R', N: 'IY34R'};
                     north = true;
+                } else if (helpers.includes(landing, 'L22')) { // Special
+                    arrRoutes = {S: 'L22', N: 'L22'};
+                    north = false;
                 } else {
                     console.log(`Unexpected LDG RWY: ${landing[0]}`);
                 }
@@ -2328,6 +2331,8 @@ export default class extends Evented {
                     depRoutes = {S: 'N16L', N: 'N16L'};
                 } else if (helpers.includes(departure, '05')) {
                     depRoutes = {S: 'N05', N: 'N05'};
+                } else if (helpers.includes(departure, '16R')) { // Special
+                    depRoutes = {S: '16R', N: '16R'};
                 } else {
                     console.log(`Unexpected DEP RWY: ${departure[0]}`);
                 }
