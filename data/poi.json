@@ -4648,6 +4648,24 @@
 	}],
 	"facilities": ["stairs", "elevator"]
 }, {
+	"id": "TokyoMetro.NishiShinjuku.E9",
+	"coord": [139.6967878, 35.6934491],
+	"title": {
+		"en": "E9"
+	},
+	"description": {
+		"ja": "出口E9",
+		"en": "Exit E9",
+		"ko": "출구E9",
+		"zh-Hans": "出口E9",
+		"zh-Hant": "出口E9"
+	},
+	"uptime": [{
+		"open": "06:00",
+		"close": "23:00"
+	}],
+	"facilities": ["stairs", "elevator"]
+}, {
 	"id": "TokyoMetro.Shinjuku.A6",
 	"coord": [139.7022504, 35.6919033],
 	"title": {
@@ -8510,33 +8528,75 @@
 	},
 	"facilities": ["stairs"]
 }, {
-	"id": "TokyoMetro.ToranomonHills.A1",
-	"coord": [139.7477284, 35.6668958],
+	"id": "TokyoMetro.Kamiyacho.5",
+	"coord": [139.7440881, 35.6622192],
 	"title": {
-		"en": "A1"
+		"en": "5"
 	},
 	"description": {
-		"ja": "出口A1 (エレベーターr)",
-		"en": "Exit A1 (Elevator r)",
-		"ko": "출구A1 (엘리베이터 r)",
-		"zh-Hans": "出口A1 (电梯r)",
-		"zh-Hant": "出口A1 (電梯r)"
+		"ja": "出口5",
+		"en": "Exit 5",
+		"ko": "출구5",
+		"zh-Hans": "出口5",
+		"zh-Hant": "出口5"
 	},
-	"facilities": ["stairs", "elevator"]
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
-	"id": "TokyoMetro.ToranomonHills.A2",
-	"coord": [139.7477386, 35.6680003],
+	"id": "TokyoMetro.ToranomonHills.A1a",
+	"coord": [139.7478789, 35.6671503],
 	"title": {
-		"en": "A2"
+		"en": "A1a"
 	},
 	"description": {
-		"ja": "出口A2 (エレベーターb)",
-		"en": "Exit A2 (Elevator b)",
-		"ko": "출구A2 (엘리베이터 b)",
-		"zh-Hans": "出口A2 (电梯b)",
-		"zh-Hant": "出口A2 (電梯b)"
+		"ja": "出口A1a (エレベーターA1)",
+		"en": "Exit A1a (Elevator A1)",
+		"ko": "출구A1a (엘리베이터 A1)",
+		"zh-Hans": "出口A1a (电梯A1)",
+		"zh-Hant": "出口A1a (電梯A1)"
 	},
-	"facilities": ["stairs", "elevator"]
+	"facilities": ["escalator", "elevator"]
+}, {
+	"id": "TokyoMetro.ToranomonHills.A1b",
+	"coord": [139.7480697, 35.6672215],
+	"title": {
+		"en": "A1b"
+	},
+	"description": {
+		"ja": "出口A1b (エレベーターA1)",
+		"en": "Exit A1b (Elevator A1)",
+		"ko": "출구A1b (엘리베이터 A1)",
+		"zh-Hans": "出口A1b (电梯A1)",
+		"zh-Hant": "出口A1b (電梯A1)"
+	},
+	"facilities": ["escalator", "elevator"]
+}, {
+	"id": "TokyoMetro.ToranomonHills.A2a",
+	"coord": [139.7474991, 35.667364],
+	"title": {
+		"en": "A2a"
+	},
+	"description": {
+		"ja": "出口A2a (エレベーターA2)",
+		"en": "Exit A2a (Elevator A2)",
+		"ko": "출구A2a (엘리베이터 A2)",
+		"zh-Hans": "出口A2a (电梯A2)",
+		"zh-Hant": "出口A2a (電梯A2)"
+	},
+	"facilities": ["escalator", "elevator"]
+}, {
+	"id": "TokyoMetro.ToranomonHills.A2b",
+	"coord": [139.7473426, 35.667237],
+	"title": {
+		"en": "A2b"
+	},
+	"description": {
+		"ja": "出口A2b (エレベーターA2)",
+		"en": "Exit A2b (Elevator A2)",
+		"ko": "출구A2b (엘리베이터 A2)",
+		"zh-Hans": "出口A2b (电梯A2)",
+		"zh-Hant": "出口A2b (電梯A2)"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TokyoMetro.ToranomonHills.B1",
 	"coord": [139.7487547, 35.6674233],
@@ -21784,6 +21844,19 @@
 		"ko": "출구A4b",
 		"zh-Hans": "出口A4b",
 		"zh-Hant": "出口A4b"
+	}
+}, {
+	"id": "Toei.Kachidoki.A5",
+	"coord": [139.7773863, 35.6574114],
+	"title": {
+		"en": "A5"
+	},
+	"description": {
+		"ja": "出口A5",
+		"en": "Exit A5",
+		"ko": "출구A5",
+		"zh-Hans": "出口A5",
+		"zh-Hant": "出口A5"
 	}
 }, {
 	"id": "Toei.Tsukijishijo.A1",
