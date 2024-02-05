@@ -15,8 +15,12 @@ import {loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetab
 import {AboutPanel, LayerPanel, SearchPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
 
-const OPERATORS_FOR_DYNAMIC_TRAIN_DATA = [
-    'Toei'
+const RAILWAYS_FOR_DYNAMIC_TRAIN_DATA = [
+    'Toei.Asakusa',
+    'Toei.Mita',
+    'Toei.Shinjuku',
+    'Toei.Oedo',
+    'Toei.Arakawa'
 ];
 
 const RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
@@ -2242,7 +2246,7 @@ export default class extends Evented {
                 if (railway && trainInfoRef.status && trainInfoRef.status.ja) {
                     railway.status = trainInfoRef.status.ja;
                     railway.text = trainInfoRef.text.ja;
-                    if (helpers.includes(OPERATORS_FOR_DYNAMIC_TRAIN_DATA, trainInfoRef.operator)) {
+                    if (helpers.includes(RAILWAYS_FOR_DYNAMIC_TRAIN_DATA, railway)) {
                         railway.dynamic = true;
                         Object.keys(me.activeTrainLookup).forEach(key => {
                             const train = me.activeTrainLookup[key];
