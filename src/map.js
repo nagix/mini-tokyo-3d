@@ -74,6 +74,7 @@ export default class extends Evented {
 
         options = extend({
             hash: false,
+            useWebGL2: true,
             center: configs.defaultCenter,
             zoom: configs.defaultZoom,
             bearing: configs.defaultBearing,

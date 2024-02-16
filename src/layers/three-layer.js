@@ -1,4 +1,4 @@
-import {AmbientLight, Color, DirectionalLight, MathUtils, Matrix4, Mesh, PerspectiveCamera, Scene, Vector3, WebGLRenderer} from 'three';
+import {AmbientLight, Color, DirectionalLight, LinearSRGBColorSpace, MathUtils, Matrix4, Mesh, PerspectiveCamera, Scene, Vector3, WebGLRenderer} from 'three';
 import {clamp, valueOrDefault} from '../helpers/helpers';
 
 const SQRT3 = Math.sqrt(3);
@@ -59,9 +59,10 @@ export default class {
             }),
             scene = me.scene = new Scene(),
             lightColor = valueOrDefault(me.implementation.lightColor, new Color().copy(me.map.getLightColor())),
-            light = me.light = new DirectionalLight(lightColor, .8),
-            ambientLight = me.ambientLight = new AmbientLight(lightColor, .4);
+            light = me.light = new DirectionalLight(lightColor, .8 * Math.PI),
+            ambientLight = me.ambientLight = new AmbientLight(lightColor, .4 * Math.PI);
 
+        renderer.outputColorSpace = LinearSRGBColorSpace;
         renderer.autoClear = false;
 
         scene.add(light);
