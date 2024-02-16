@@ -1,5 +1,6 @@
 import AnimatedPopup from 'mapbox-gl-animated-popup';
-import Swiper, {Pagination} from 'swiper';
+import Swiper from 'swiper';
+import {Pagination} from 'swiper/modules';
 import configs from '../configs';
 import {createElement, includes, loadJSON} from '../helpers/helpers';
 import {emptyFeatureCollection, featureFilter} from '../helpers/helpers-geojson';
@@ -46,7 +47,7 @@ export default class extends Panel {
                 '<div id="search-load">',
                 '<div class="ball-pulse"><div></div><div></div><div></div></div>',
                 '</div>',
-                '<div id="search-result" class="swiper-container">',
+                '<div id="search-result" class="swiper">',
                 '<div class="swiper-wrapper"></div>',
                 '<div class="swiper-pagination"></div>',
                 '</div>'
@@ -327,7 +328,7 @@ export default class extends Panel {
 
             }
 
-            me._swiper = new Swiper('.swiper-container', {
+            me._swiper = new Swiper('.swiper', {
                 modules: [Pagination],
                 pagination: {
                     el: '.swiper-pagination',
