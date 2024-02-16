@@ -98,7 +98,7 @@ Icon | Description
 <img :src="$withBase('/images/elevator-icon.jpg')" style="width: 28px; vertical-align: top;">|Elevator
 
 ::: warning
-As of the version 3.3, only subway lines and underground stations are supported for displaying station exit information.
+As of the version 3.4, only subway lines and underground stations are supported for displaying station exit information.
 :::
 
 ## Route Search
@@ -114,5 +114,5 @@ You can also enter the departure and arrival stations by clicking or tapping on 
 Trains, airplanes and layers will be temporarily hidden when the search window is displayed. To close the search window, click the search icon button again.
 
 ::: warning
-As of the version 3.3, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
+As of the version 3.4, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
 :::
