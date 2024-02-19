@@ -26233,7 +26233,8 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "SaitamaRailway.KawaguchiMotogo.2",
 	"coord": [139.7303985, 35.800924],
@@ -26246,7 +26247,36 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "SaitamaRailway.KawaguchiMotogo.EV1",
+	"coord": [139.7301647, 35.8010624],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "駅前広場方面エレベーター",
+		"en": "Elevator to Station Square",
+		"ko": "역앞광장 방면 엘리베이터",
+		"zh-Hans": "车站广场方向电梯",
+		"zh-Hant": "車站廣場方向電梯"
+	},
+	"facilities": ["elevator"]
+}, {
+	"id": "SaitamaRailway.KawaguchiMotogo.EV2",
+	"coord": [139.7301732, 35.800594],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "芝川公園方面エレベーター",
+		"en": "Elevator to Shibakawa-koen Park",
+		"ko": "시바가와 공원 방면 엘리베이터",
+		"zh-Hans": "芝川公园方向电梯",
+		"zh-Hant": "芝川公園方向電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "SaitamaRailway.MinamiHatogaya.1",
 	"coord": [139.7367841, 35.8166486],
@@ -26259,7 +26289,8 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "SaitamaRailway.MinamiHatogaya.2",
 	"coord": [139.7361654, 35.8168138],
@@ -26272,7 +26303,8 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "SaitamaRailway.Hatogaya.1",
 	"coord": [139.7366704, 35.8300779],
@@ -26285,33 +26317,22 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
-	"id": "SaitamaRailway.Hatogaya.2a",
-	"coord": [139.7358918, 35.8306663],
+	"id": "SaitamaRailway.Hatogaya.2",
+	"coord": [139.7359573, 35.8306851],
 	"title": {
-		"en": "2a"
+		"en": "2"
 	},
 	"description": {
-		"ja": "出口2a",
-		"en": "Exit 2a",
-		"ko": "출구2a",
-		"zh-Hans": "出口2a",
-		"zh-Hant": "出口2a"
-	}
-}, {
-	"id": "SaitamaRailway.Hatogaya.2b",
-	"coord": [139.7360566, 35.8307165],
-	"title": {
-		"en": "2b"
+		"ja": "出口2",
+		"en": "Exit 2",
+		"ko": "출구2",
+		"zh-Hans": "出口2",
+		"zh-Hant": "出口2"
 	},
-	"description": {
-		"ja": "出口2b",
-		"en": "Exit 2b",
-		"ko": "출구2b",
-		"zh-Hans": "出口2b",
-		"zh-Hant": "出口2b"
-	}
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "SaitamaRailway.Hatogaya.3",
 	"coord": [139.7360649, 35.8319092],
@@ -26324,7 +26345,8 @@
 		"ko": "출구3",
 		"zh-Hans": "出口3",
 		"zh-Hant": "出口3"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "SaitamaRailway.Araijuku.1",
 	"coord": [139.7369901, 35.8428215],
@@ -26337,7 +26359,22 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "SaitamaRailway.Araijuku.EV",
+	"coord": [139.737232, 35.8428447],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "SaitamaRailway.Araijuku.2",
 	"coord": [139.7388649, 35.8431414],
@@ -26350,7 +26387,8 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "SaitamaRailway.TozukaAngyo.1",
 	"coord": [139.7535681, 35.8580621],
@@ -26363,7 +26401,8 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "SaitamaRailway.TozukaAngyo.2",
 	"coord": [139.7538644, 35.8588392],
@@ -26376,7 +26415,8 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "SaitamaRailway.TozukaAngyo.3",
 	"coord": [139.7532549, 35.8589833],
@@ -26389,7 +26429,22 @@
 		"ko": "출구3",
 		"zh-Hans": "出口3",
 		"zh-Hant": "出口3"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "SaitamaRailway.TozukaAngyo.EV",
+	"coord": [139.7535587, 35.8590448],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "SaitamaRailway.HigashiKawaguchi.1",
 	"coord": [139.7445965, 35.8751476],
@@ -26402,7 +26457,8 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "SaitamaRailway.HigashiKawaguchi.2",
 	"coord": [139.744395, 35.875505],
@@ -26415,7 +26471,22 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "SaitamaRailway.HigashiKawaguchi.EV",
+	"coord": [139.744104, 35.8758456],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "SaitamaRailway.HigashiKawaguchi.3",
 	"coord": [139.7439629, 35.8764252],
@@ -26428,7 +26499,8 @@
 		"ko": "출구3",
 		"zh-Hans": "出口3",
 		"zh-Hant": "出口3"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "SaitamaRailway.UrawaMisono.1",
 	"coord": [139.7279212, 35.8931714],
@@ -26441,7 +26513,22 @@
 		"ko": "출구1",
 		"zh-Hans": "出口1",
 		"zh-Hant": "出口1"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "SaitamaRailway.UrawaMisono.EV1",
+	"coord": [139.7277208, 35.893408],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "SaitamaRailway.UrawaMisono.2",
 	"coord": [139.7279299, 35.8938713],
@@ -26454,7 +26541,8 @@
 		"ko": "출구2",
 		"zh-Hans": "出口2",
 		"zh-Hant": "出口2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "SaitamaRailway.UrawaMisono.3",
 	"coord": [139.7282585, 35.8934632],
@@ -26467,7 +26555,22 @@
 		"ko": "출구3",
 		"zh-Hans": "出口3",
 		"zh-Hant": "出口3"
-	}
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "SaitamaRailway.UrawaMisono.EV2",
+	"coord": [139.7280866, 35.8936323],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "SaitamaRailway.UrawaMisono.4",
 	"coord": [139.7275961, 35.8936255],
@@ -26480,7 +26583,8 @@
 		"ko": "출구4",
 		"zh-Hans": "出口4",
 		"zh-Hant": "出口4"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "MIR.Akihabara.A1",
 	"coord": [139.773864, 35.6979775],
