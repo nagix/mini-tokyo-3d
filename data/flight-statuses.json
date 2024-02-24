@@ -5,8 +5,8 @@
 		"pt": "Ajustando",
 		"ja": "機材繰り",
 		"ko": "비행기 조정",
-		"zh-Hans": "调整飞机",
-		"zh-Hant": "調整飛機"
+		"zh-Hans": "航班调配",
+		"zh-Hant": "班機調度"
 	}
 }, {
 	"id": "Arrived",
@@ -15,8 +15,8 @@
 		"pt": "Chegou",
 		"ja": "到着済み",
 		"ko": "도착 된",
-		"zh-Hans": "到了",
-		"zh-Hant": "到了"
+		"zh-Hans": "已到达",
+		"zh-Hant": "已到達"
 	}
 }, {
 	"id": "BaggageAvailable",
@@ -25,8 +25,8 @@
 		"pt": "Despacho Aberto",
 		"ja": "手荷物引渡中",
 		"ko": "수하물 인도 중",
-		"zh-Hans": "行李运送期间",
-		"zh-Hant": "行李運送期間"
+		"zh-Hans": "行李可供领取",
+		"zh-Hant": "行李提取中"
 	}
 }, {
 	"id": "BoardingComplete",
@@ -55,8 +55,8 @@
 		"pr-BR": "Check-in Encerrado",
 		"ja": "搭乗手続終了",
 		"ko": "탑승 수속 종료",
-		"zh-Hans": "登记手续结束",
-		"zh-Hant": "登記手續結束"
+		"zh-Hans": "登机手续结束",
+		"zh-Hant": "登機手續結束"
 	}
 }, {
 	"id": "CheckIn",
@@ -65,8 +65,8 @@
 		"pt": "Check-in",
 		"ja": "搭乗手続中",
 		"ko": "탑승 수속 중",
-		"zh-Hans": "登记手续期间",
-		"zh-Hant": "登記手續期間"
+		"zh-Hans": "在进行登机手续",
+		"zh-Hant": "正進行登機手續"
 	}
 }, {
 	"id": "Delayed",
@@ -85,8 +85,8 @@
 		"pt": "Decolado",
 		"ja": "出発済み",
 		"ko": "출발 된",
-		"zh-Hans": "出发了",
-		"zh-Hant": "出發了"
+		"zh-Hans": "已出发",
+		"zh-Hant": "已出發"
 	}
 }, {
 	"id": "EstimatedArrival",
@@ -115,8 +115,8 @@
 		"pt": "Última Chamada",
 		"ja": "最終搭乗案内",
 		"ko": "마지막 탑승 안내",
-		"zh-Hans": "最终登机指南",
-		"zh-Hant": "最終登機指南"
+		"zh-Hans": "最后召集",
+		"zh-Hant": "最後召集"
 	}
 }, {
 	"id": "InAir",
@@ -125,8 +125,8 @@
 		"pt": "No Ar",
 		"ja": "航行中",
 		"ko": "항행 중",
-		"zh-Hans": "在飞行中",
-		"zh-Hant": "在飛行中"
+		"zh-Hans": "飞行中",
+		"zh-Hant": "飛行中"
 	}
 }, {
 	"id": "Indefinite",
@@ -145,8 +145,8 @@
 		"pt": "Em solo",
 		"ja": "着陸済み",
 		"ko": "방문 요청",
-		"zh-Hans": "降落",
-		"zh-Hant": "降落"
+		"zh-Hans": "已降落",
+		"zh-Hant": "已降落"
 	}
 }, {
 	"id": "LateArrival",
@@ -155,8 +155,8 @@
 		"pt": "Chegada atrasada",
 		"ja": "使用機遅れ",
 		"ko": "사용 비행기 지연",
-		"zh-Hans": "延迟使用飞机",
-		"zh-Hant": "延遲使用飛機"
+		"zh-Hans": "前序航班延误",
+		"zh-Hant": "前序航班延誤"
 	}
 }, {
 	"id": "LeftGate",
@@ -165,8 +165,8 @@
 		"pt": "Portões fechados",
 		"ja": "ゲート出発済み",
 		"ko": "게이트 출발 된",
-		"zh-Hans": "出发了门",
-		"zh-Hant": "出發了門"
+		"zh-Hans": "已离开登机闸口",
+		"zh-Hant": "已離開登機閘口"
 	}
 }, {
 	"id": "Maintenance",
@@ -175,8 +175,8 @@
 		"pt": "Manutenção",
 		"ja": "使用機整備",
 		"ko": "사용 비행기 정비",
-		"zh-Hans": "使用飞机整备",
-		"zh-Hant": "使用飛機整備"
+		"zh-Hans": "机材维护",
+		"zh-Hant": "機材維護"
 	}
 }, {
 	"id": "NewTime",
@@ -195,8 +195,8 @@
 		"pt": "Embarque Imediato",
 		"ja": "搭乗中",
 		"ko": "탑승 중",
-		"zh-Hans": "登机",
-		"zh-Hant": "登機"
+		"zh-Hans": "正在登机",
+		"zh-Hant": "正在登機"
 	}
 }, {
 	"id": "OnTime",
@@ -235,8 +235,8 @@
 		"pt": "Check-in encerrado",
 		"ja": "搭乗手続中止中",
 		"ko": "탑승 수속 중지 중",
-		"zh-Hans": "登记手续取消",
-		"zh-Hant": "登記手續取消"
+		"zh-Hans": "登机手续中止",
+		"zh-Hant": "登機手續中止"
 	}
 }, {
 	"id": "Takeoff",
@@ -245,8 +245,8 @@
 		"pt": "Partindo",
 		"ja": "離陸済み",
 		"ko": "이륙 된",
-		"zh-Hans": "起飞",
-		"zh-Hant": "起飛"
+		"zh-Hans": "已起飞",
+		"zh-Hant": "已起飛"
 	}
 }, {
 	"id": "Unknown",
@@ -315,7 +315,7 @@
 		"pt": "Voo Extra",
 		"ja": "臨時便",
 		"ko": "임시 항공편",
-		"zh-Hans": "额外航班",
-		"zh-Hant": "額外航班"
+		"zh-Hans": "临时航班",
+		"zh-Hant": "臨時航班"
 	}
 }]
