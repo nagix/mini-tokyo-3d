@@ -5453,6 +5453,9 @@
 	"ds": [
 		"JR-East.Togane.Naruto"
 	],
+	"pt": [
+		"JR-East.Sotobo.5883A.Weekday.1"
+	],
 	"nt": [
 		"JR-East.Togane.5983A.Weekday"
 	],
@@ -5483,6 +5486,9 @@
 	"pt": [
 		"JR-East.Sotobo.5883A.Weekday.1"
 	],
+	"nt": [
+		"JR-East.Sotobo.4283M.Weekday"
+	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Honda",
 		"d": "19:10"
@@ -5500,39 +5506,7 @@
 		"d": "19:28"
 	}, {
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
-		"a": "19:35",
-		"d": "19:37"
-	}, {
-		"s": "JR-East.Sotobo.Torami",
-		"a": "19:40",
-		"d": "19:41"
-	}, {
-		"s": "JR-East.Sotobo.Taito",
-		"a": "19:44",
-		"d": "19:45"
-	}, {
-		"s": "JR-East.Sotobo.Chojamachi",
-		"a": "19:47",
-		"d": "19:48"
-	}, {
-		"s": "JR-East.Sotobo.Mikado",
-		"a": "19:50",
-		"d": "19:50"
-	}, {
-		"s": "JR-East.Sotobo.Ohara",
-		"a": "19:54",
-		"d": "19:55"
-	}, {
-		"s": "JR-East.Sotobo.Namihana",
-		"a": "19:58",
-		"d": "19:59"
-	}, {
-		"s": "JR-East.Sotobo.Onjuku",
-		"a": "20:03",
-		"d": "20:04"
-	}, {
-		"s": "JR-East.Sotobo.Katsuura",
-		"a": "20:09"
+		"a": "19:35"
 	}]
 }, {
 	"id": "JR-East.Sotobo.223M.Weekday",
@@ -6508,34 +6482,10 @@
 		"JR-East.Sotobo.Katsuura"
 	],
 	"pt": [
-		"JR-East.Keiyo.2883A.Weekday"
+		"JR-East.Sotobo.5883A.Weekday.2"
 	],
 	"tt": [{
-		"s": "JR-East.Sotobo.Soga",
-		"d": "18:53"
-	}, {
-		"s": "JR-East.Sotobo.Kamatori",
-		"a": "18:58",
-		"d": "18:58"
-	}, {
-		"s": "JR-East.Sotobo.Honda",
-		"a": "19:02",
-		"d": "19:10"
-	}, {
-		"s": "JR-East.Sotobo.Toke",
-		"a": "19:15",
-		"d": "19:15"
-	}, {
-		"s": "JR-East.Sotobo.Oami",
-		"a": "19:19",
-		"d": "19:20"
-	}, {
-		"s": "JR-East.Sotobo.Mobara",
-		"a": "19:28",
-		"d": "19:28"
-	}, {
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
-		"a": "19:35",
 		"d": "19:37"
 	}, {
 		"s": "JR-East.Sotobo.Torami",
@@ -9017,7 +8967,7 @@
 		"JR-East.Keiyo.Tokyo"
 	],
 	"nt": [
-		"JR-East.Keiyo.2784A.Weekday"
+		"JR-East.Sotobo.5784A.Weekday.2"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Katsuura",
@@ -9052,31 +9002,7 @@
 		"d": "06:54"
 	}, {
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
-		"a": "06:58",
-		"d": "07:00"
-	}, {
-		"s": "JR-East.Sotobo.Mobara",
-		"a": "07:06",
-		"d": "07:07"
-	}, {
-		"s": "JR-East.Sotobo.Oami",
-		"a": "07:15",
-		"d": "07:15"
-	}, {
-		"s": "JR-East.Sotobo.Toke",
-		"a": "07:19",
-		"d": "07:20"
-	}, {
-		"s": "JR-East.Sotobo.Honda",
-		"a": "07:25",
-		"d": "07:34"
-	}, {
-		"s": "JR-East.Sotobo.Kamatori",
-		"a": "07:38",
-		"d": "07:38"
-	}, {
-		"s": "JR-East.Sotobo.Soga",
-		"a": "07:43"
+		"a": "06:58"
 	}]
 }, {
 	"id": "JR-East.Sotobo.1054M.Weekday",
@@ -9967,43 +9893,14 @@
 	"ds": [
 		"JR-East.Keiyo.Tokyo"
 	],
+	"pt": [
+		"JR-East.Sotobo.4284M.Weekday"
+	],
 	"nt": [
 		"JR-East.Sotobo.5784A.Weekday.1"
 	],
 	"tt": [{
-		"s": "JR-East.Sotobo.Katsuura",
-		"d": "06:25"
-	}, {
-		"s": "JR-East.Sotobo.Onjuku",
-		"a": "06:30",
-		"d": "06:31"
-	}, {
-		"s": "JR-East.Sotobo.Namihana",
-		"a": "06:36",
-		"d": "06:36"
-	}, {
-		"s": "JR-East.Sotobo.Ohara",
-		"a": "06:40",
-		"d": "06:41"
-	}, {
-		"s": "JR-East.Sotobo.Mikado",
-		"a": "06:44",
-		"d": "06:45"
-	}, {
-		"s": "JR-East.Sotobo.Chojamachi",
-		"a": "06:47",
-		"d": "06:47"
-	}, {
-		"s": "JR-East.Sotobo.Taito",
-		"a": "06:50",
-		"d": "06:51"
-	}, {
-		"s": "JR-East.Sotobo.Torami",
-		"a": "06:54",
-		"d": "06:54"
-	}, {
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
-		"a": "06:58",
 		"d": "07:00"
 	}, {
 		"s": "JR-East.Sotobo.Mobara",
@@ -12821,6 +12718,9 @@
 	],
 	"pt": [
 		"JR-East.Togane.5684A.Weekday"
+	],
+	"nt": [
+		"JR-East.Sotobo.5784A.Weekday.1"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Oami",
@@ -18945,6 +18845,9 @@
 	"ds": [
 		"JR-East.Togane.Naruto"
 	],
+	"pt": [
+		"JR-East.Sotobo.4883A.SaturdayHoliday.1"
+	],
 	"nt": [
 		"JR-East.Togane.4983A.SaturdayHoliday"
 	],
@@ -18975,6 +18878,9 @@
 	"pt": [
 		"JR-East.Sotobo.4883A.SaturdayHoliday.1"
 	],
+	"nt": [
+		"JR-East.Sotobo.4283M.SaturdayHoliday"
+	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Honda",
 		"d": "19:10"
@@ -18992,39 +18898,7 @@
 		"d": "19:28"
 	}, {
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
-		"a": "19:35",
-		"d": "19:37"
-	}, {
-		"s": "JR-East.Sotobo.Torami",
-		"a": "19:40",
-		"d": "19:41"
-	}, {
-		"s": "JR-East.Sotobo.Taito",
-		"a": "19:44",
-		"d": "19:45"
-	}, {
-		"s": "JR-East.Sotobo.Chojamachi",
-		"a": "19:47",
-		"d": "19:48"
-	}, {
-		"s": "JR-East.Sotobo.Mikado",
-		"a": "19:50",
-		"d": "19:50"
-	}, {
-		"s": "JR-East.Sotobo.Ohara",
-		"a": "19:54",
-		"d": "19:55"
-	}, {
-		"s": "JR-East.Sotobo.Namihana",
-		"a": "19:58",
-		"d": "19:59"
-	}, {
-		"s": "JR-East.Sotobo.Onjuku",
-		"a": "20:03",
-		"d": "20:04"
-	}, {
-		"s": "JR-East.Sotobo.Katsuura",
-		"a": "20:09"
+		"a": "19:35"
 	}]
 }, {
 	"id": "JR-East.Sotobo.223M.SaturdayHoliday",
@@ -20000,34 +19874,10 @@
 		"JR-East.Sotobo.Katsuura"
 	],
 	"pt": [
-		"JR-East.Keiyo.1883A.SaturdayHoliday"
+		"JR-East.Sotobo.4883A.SaturdayHoliday.2"
 	],
 	"tt": [{
-		"s": "JR-East.Sotobo.Soga",
-		"d": "18:53"
-	}, {
-		"s": "JR-East.Sotobo.Kamatori",
-		"a": "18:58",
-		"d": "18:58"
-	}, {
-		"s": "JR-East.Sotobo.Honda",
-		"a": "19:02",
-		"d": "19:10"
-	}, {
-		"s": "JR-East.Sotobo.Toke",
-		"a": "19:15",
-		"d": "19:15"
-	}, {
-		"s": "JR-East.Sotobo.Oami",
-		"a": "19:19",
-		"d": "19:20"
-	}, {
-		"s": "JR-East.Sotobo.Mobara",
-		"a": "19:28",
-		"d": "19:28"
-	}, {
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
-		"a": "19:35",
 		"d": "19:37"
 	}, {
 		"s": "JR-East.Sotobo.Torami",
@@ -22573,7 +22423,7 @@
 		"JR-East.Keiyo.Tokyo"
 	],
 	"nt": [
-		"JR-East.Keiyo.784A.SaturdayHoliday"
+		"JR-East.Sotobo.3784A.SaturdayHoliday.2"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Katsuura",
@@ -22608,31 +22458,7 @@
 		"d": "06:54"
 	}, {
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
-		"a": "06:58",
-		"d": "07:00"
-	}, {
-		"s": "JR-East.Sotobo.Mobara",
-		"a": "07:06",
-		"d": "07:07"
-	}, {
-		"s": "JR-East.Sotobo.Oami",
-		"a": "07:15",
-		"d": "07:15"
-	}, {
-		"s": "JR-East.Sotobo.Toke",
-		"a": "07:19",
-		"d": "07:20"
-	}, {
-		"s": "JR-East.Sotobo.Honda",
-		"a": "07:25",
-		"d": "07:34"
-	}, {
-		"s": "JR-East.Sotobo.Kamatori",
-		"a": "07:38",
-		"d": "07:38"
-	}, {
-		"s": "JR-East.Sotobo.Soga",
-		"a": "07:43"
+		"a": "06:58"
 	}]
 }, {
 	"id": "JR-East.Sotobo.1054M.SaturdayHoliday",
@@ -23523,43 +23349,14 @@
 	"ds": [
 		"JR-East.Keiyo.Tokyo"
 	],
+	"pt": [
+		"JR-East.Sotobo.4284M.SaturdayHoliday"
+	],
 	"nt": [
 		"JR-East.Sotobo.3784A.SaturdayHoliday.1"
 	],
 	"tt": [{
-		"s": "JR-East.Sotobo.Katsuura",
-		"d": "06:25"
-	}, {
-		"s": "JR-East.Sotobo.Onjuku",
-		"a": "06:30",
-		"d": "06:31"
-	}, {
-		"s": "JR-East.Sotobo.Namihana",
-		"a": "06:36",
-		"d": "06:36"
-	}, {
-		"s": "JR-East.Sotobo.Ohara",
-		"a": "06:40",
-		"d": "06:41"
-	}, {
-		"s": "JR-East.Sotobo.Mikado",
-		"a": "06:44",
-		"d": "06:45"
-	}, {
-		"s": "JR-East.Sotobo.Chojamachi",
-		"a": "06:47",
-		"d": "06:47"
-	}, {
-		"s": "JR-East.Sotobo.Taito",
-		"a": "06:50",
-		"d": "06:51"
-	}, {
-		"s": "JR-East.Sotobo.Torami",
-		"a": "06:54",
-		"d": "06:54"
-	}, {
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
-		"a": "06:58",
 		"d": "07:00"
 	}, {
 		"s": "JR-East.Sotobo.Mobara",
@@ -26338,6 +26135,9 @@
 	],
 	"pt": [
 		"JR-East.Togane.3684A.SaturdayHoliday"
+	],
+	"nt": [
+		"JR-East.Sotobo.3784A.SaturdayHoliday.1"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Oami",
