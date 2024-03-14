@@ -1,0 +1,103 @@
+[{
+	"id": "JR-East.TokaidoFreight.3076M.Weekday",
+	"t": "JR-East.TokaidoFreight.3076M",
+	"r": "JR-East.TokaidoFreight",
+	"n": "3076M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.Tokaido.Odawara"
+	],
+	"ds": [
+		"JR-East.Tokaido.Tokyo"
+	],
+	"pt": [
+		"JR-East.Tokaido.3076M.Weekday.1"
+	],
+	"nt": [
+		"JR-East.Tokaido.3076M.Weekday.2"
+	],
+	"tt": [{
+		"s": "JR-East.TokaidoFreight.Fujisawa",
+		"d": "07:05"
+	}, {
+		"s": "JR-East.TokaidoFreight.Shinagawa",
+		"a": "07:47"
+	}],
+	"nm": [{
+		"ja": "湘南 6号",
+		"en": "Shonan 6",
+		"ko": "쇼난 6",
+		"zh-Hans": "湘南 6",
+		"zh-Hant": "湘南 6"
+	}],
+	"v": "E257-2000"
+}, {
+	"id": "JR-East.TokaidoFreight.3078M.Weekday",
+	"t": "JR-East.TokaidoFreight.3078M",
+	"r": "JR-East.TokaidoFreight",
+	"n": "3078M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.Tokaido.Odawara"
+	],
+	"ds": [
+		"JR-East.Yokosuka.Tokyo"
+	],
+	"pt": [
+		"JR-East.Tokaido.3078M.Weekday"
+	],
+	"nt": [
+		"JR-East.Yokosuka.3078M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.TokaidoFreight.Fujisawa",
+		"d": "07:23"
+	}, {
+		"s": "JR-East.TokaidoFreight.Shinagawa",
+		"a": "08:03"
+	}],
+	"nm": [{
+		"ja": "湘南 8号",
+		"en": "Shonan 8",
+		"ko": "쇼난 8",
+		"zh-Hans": "湘南 8",
+		"zh-Hant": "湘南 8"
+	}],
+	"v": "E257-2000"
+}, {
+	"id": "JR-East.TokaidoFreight.3080M.Weekday",
+	"t": "JR-East.TokaidoFreight.3080M",
+	"r": "JR-East.TokaidoFreight",
+	"n": "3080M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.Tokaido.Odawara"
+	],
+	"ds": [
+		"JR-East.Yokosuka.Tokyo"
+	],
+	"pt": [
+		"JR-East.Tokaido.3080M.Weekday"
+	],
+	"nt": [
+		"JR-East.Yokosuka.3080M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.TokaidoFreight.Fujisawa",
+		"d": "08:00"
+	}, {
+		"s": "JR-East.TokaidoFreight.Shinagawa",
+		"a": "08:38"
+	}],
+	"nm": [{
+		"ja": "湘南 10号",
+		"en": "Shonan 10",
+		"ko": "쇼난 10",
+		"zh-Hans": "湘南 10",
+		"zh-Hant": "湘南 10"
+	}],
+	"v": "E257-2000"
+}]
