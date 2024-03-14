@@ -862,11 +862,11 @@
 }, {
 	"id": "JR-East.YamanoteFreight",
 	"title": {
-		"ja": "横須賀線",
-		"en": "Yokosuka Line",
-		"ko": "요코스카 선",
-		"zh-Hans": "横须贺线",
-		"zh-Hant": "橫須賀線"
+		"ja": "山手貨物線",
+		"en": "Yamanote Freight Line",
+		"ko": "야마노테 화물선",
+		"zh-Hans": "山手货物线",
+		"zh-Hant": "山手貨物線"
 	},
 	"stations": [
 		"JR-East.YamanoteFreight.Tokyo",
@@ -894,6 +894,38 @@
 	"ascending": "Southbound",
 	"color": "#00B48D",
 	"carComposition": 10
+}, {
+	"id": "JR-East.OsakiBranch",
+	"title": {
+		"ja": "大崎支線",
+		"en": "Osaki Branch Line",
+		"ko": "오사키 지선",
+		"zh-Hans": "大崎支线",
+		"zh-Hant": "大崎支線"
+	},
+	"stations": [
+		"JR-East.OsakiBranch.Osaki",
+		"JR-East.OsakiBranch.Fujisawa"
+	],
+	"ascending": "Outbound",
+	"color": "#F68B1E",
+	"carComposition": 9
+}, {
+	"id": "JR-East.TokaidoFreight",
+	"title": {
+		"ja": "東海道貨物線",
+		"en": "Tokaido Freight Line",
+		"ko": "도카이도 화물선",
+		"zh-Hans": "东海道货物线",
+		"zh-Hant": "東海道貨物線"
+	},
+	"stations": [
+		"JR-East.TokaidoFreight.Shinagawa",
+		"JR-East.TokaidoFreight.Fujisawa"
+	],
+	"ascending": "Outbound",
+	"color": "#007AC1",
+	"carComposition": 14
 }, {
 	"id": "JR-East.Tsurumi",
 	"title": {

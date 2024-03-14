@@ -13,7 +13,7 @@ import {destination, lineOffset, lineSlice, lineSliceAlong, nearestPointProps} f
 import {includes, valueOrDefault} from '../helpers/helpers';
 import {loadJSON, saveJSON} from './helpers';
 
-const HIDDEN_STATIONS = /^(JR-East\.(YamanoteFreight|Musashino\w+Branch|Joban\.(Ueno|Nippori|Kashiwa))|TokyoMetro\.(Hibiya\.ShinKoshigaya|Chiyoda\.(Machida|SeijogakuenMae))|Keio\.(Sagamihara|Takao)\.Meidaimae|Keikyu\.(Airport\.Shinagawa|Kurihama\.YokosukaChuo)|Tobu\.(Nikko\.Kasukabe|JRTobuConnection)|Seibu\.(SeibuChichibu\.(Hanno|Kagemori)|SeibuChichibuBranch|S-))/;
+const HIDDEN_STATIONS = /^(JR-East\.(\w+Freight|Musashino\w+Branch|Joban\.(Ueno|Nippori|Kashiwa)|OsakiBranch)|TokyoMetro\.(Hibiya\.ShinKoshigaya|Chiyoda\.(Machida|SeijogakuenMae))|Keio\.(Sagamihara|Takao)\.Meidaimae|Keikyu\.(Airport\.Shinagawa|Kurihama\.YokosukaChuo)|Tobu\.(Nikko\.Kasukabe|JRTobuConnection)|Seibu\.(SeibuChichibu\.(Hanno|Kagemori)|SeibuChichibuBranch|S-))/;
 
 function setAltitude(geojson, altitude) {
     coordEach(geojson, coord => {
