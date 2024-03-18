@@ -433,27 +433,62 @@
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
 		"a": "10:13",
-		"d": "10:18"
+		"d": "10:13"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
+		"a": "10:17",
+		"d": "10:18"
+	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "10:19",
+		"d": "10:19"
+	}, {
+		"s": "Tobu.Kinugawa.KinugawaOnsen",
 		"a": "10:22",
 		"d": "10:23"
 	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "10:24",
-		"d": "10:24"
-	}, {
-		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "10:27",
-		"d": "10:28"
-	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "10:32",
-		"d": "10:32"
+		"a": "10:27",
+		"d": "10:27"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "10:37"
+		"a": "10:32"
 	}]
+}, {
+	"id": "Tobu.Kinugawa.1109.Weekday",
+	"t": "Tobu.Kinugawa.1109",
+	"r": "Tobu.Kinugawa",
+	"n": "1109",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kinugawa.KinugawaOnsen"
+	],
+	"pt": [
+		"Tobu.Nikko.1109.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kinugawa.ShimoImaichi",
+		"d": "10:14"
+	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "10:30",
+		"d": "10:31"
+	}, {
+		"s": "Tobu.Kinugawa.KinugawaOnsen",
+		"a": "10:34"
+	}],
+	"nm": [{
+		"ja": "リバティきぬ 109号",
+		"en": "Revaty Kinu 109",
+		"ko": "Revaty 기누 109",
+		"zh-Hans": "Revaty鬼怒 109",
+		"zh-Hant": "Revaty鬼怒 109"
+	}],
+	"v": "500"
 }, {
 	"id": "Tobu.Kinugawa.103N.Weekday",
 	"t": "Tobu.Kinugawa.103N",
@@ -618,14 +653,14 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"d": "12:17"
+		"d": "12:18"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "12:32",
-		"d": "12:32"
+		"a": "12:33",
+		"d": "12:33"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "12:35"
+		"a": "12:36"
 	}],
 	"nm": [{
 		"ja": "きぬがわ 3号",
@@ -701,7 +736,7 @@
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
 		"a": "13:07",
-		"d": "13:08"
+		"d": "13:07"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
 		"a": "13:12",
@@ -773,7 +808,7 @@
 		"Tobu.Kinugawa.ShimoImaichi"
 	],
 	"ds": [
-		"Tobu.Kinugawa.KinugawaKoen"
+		"Tobu.Kinugawa.ShinFujiwara"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShimoImaichi",
@@ -804,59 +839,47 @@
 		"d": "14:22"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "14:26"
+		"a": "14:26",
+		"d": "14:26"
+	}, {
+		"s": "Tobu.Kinugawa.ShinFujiwara",
+		"a": "14:30"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.105N.Weekday",
-	"t": "Tobu.Kinugawa.105N",
+	"id": "Tobu.Kinugawa.1123.Weekday",
+	"t": "Tobu.Kinugawa.1123",
 	"r": "Tobu.Kinugawa",
-	"n": "105N",
-	"y": "Tobu.Local",
+	"n": "1123",
+	"y": "Tobu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
-		"Tobu.Nikko.MinamiKurihashi"
+		"Tobu.TobuSkytree.Asakusa"
 	],
 	"ds": [
-		"Tobu.Kinugawa.ShinFujiwara"
+		"Tobu.Kinugawa.KinugawaOnsen"
 	],
 	"pt": [
-		"Tobu.Nikko.105N.Weekday"
+		"Tobu.Nikko.1123.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"d": "14:32"
-	}, {
-		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "14:34",
-		"d": "14:35"
-	}, {
-		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "14:39",
-		"d": "14:40"
-	}, {
-		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "14:45",
-		"d": "14:45"
-	}, {
-		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "14:49",
-		"d": "14:50"
+		"d": "14:11"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "14:51",
-		"d": "14:51"
+		"a": "14:28",
+		"d": "14:29"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "14:54",
-		"d": "14:55"
-	}, {
-		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "14:59",
-		"d": "14:59"
-	}, {
-		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "15:03"
-	}]
+		"a": "14:32"
+	}],
+	"nm": [{
+		"ja": "スペーシアX 7号",
+		"en": "Spacia X 7",
+		"ko": "스페이시아 X 7",
+		"zh-Hans": "SPACIA X 7",
+		"zh-Hant": "SPACIA X 7"
+	}],
+	"v": "N100"
 }, {
 	"id": "Tobu.Kinugawa.321N.Weekday",
 	"t": "Tobu.Kinugawa.321N",
@@ -872,38 +895,38 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"d": "15:21"
+		"d": "14:50"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "15:23",
-		"d": "15:23"
+		"a": "14:52",
+		"d": "14:53"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "15:28",
-		"d": "15:31"
+		"a": "14:57",
+		"d": "14:58"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "15:36",
-		"d": "15:36"
+		"a": "15:03",
+		"d": "15:04"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "15:40",
-		"d": "15:42"
+		"a": "15:08",
+		"d": "15:11"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "15:44",
-		"d": "15:44"
+		"a": "15:12",
+		"d": "15:12"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "15:47",
-		"d": "15:48"
+		"a": "15:15",
+		"d": "15:16"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "15:51",
-		"d": "15:52"
+		"a": "15:20",
+		"d": "15:20"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "15:56"
+		"a": "15:24"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.1129.Weekday",
@@ -933,13 +956,13 @@
 		"a": "16:03"
 	}],
 	"nm": [{
-		"ja": "きぬ 129号",
-		"en": "Kinu 129",
-		"ko": "기누 129",
-		"zh-Hans": "鬼怒 129",
-		"zh-Hant": "鬼怒 129"
+		"ja": "スペーシアX 9号",
+		"en": "Spacia X 9",
+		"ko": "스페이시아 X 9",
+		"zh-Hans": "SPACIA X 9",
+		"zh-Hant": "SPACIA X 9"
 	}],
-	"v": "100"
+	"v": "N100"
 }, {
 	"id": "Tobu.Kinugawa.323N.Weekday",
 	"t": "Tobu.Kinugawa.323N",
@@ -959,34 +982,34 @@
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
 		"a": "15:55",
-		"d": "15:56"
+		"d": "15:57"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "16:00",
-		"d": "16:01"
+		"a": "16:01",
+		"d": "16:07"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "16:06",
-		"d": "16:06"
-	}, {
-		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "16:10",
-		"d": "16:11"
-	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "16:13",
+		"a": "16:12",
 		"d": "16:13"
 	}, {
-		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "16:16",
+		"s": "Tobu.Kinugawa.Kosagoe",
+		"a": "16:17",
 		"d": "16:17"
 	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "16:18",
+		"d": "16:19"
+	}, {
+		"s": "Tobu.Kinugawa.KinugawaOnsen",
+		"a": "16:22",
+		"d": "16:23"
+	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "16:21",
-		"d": "16:21"
+		"a": "16:27",
+		"d": "16:27"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "16:26"
+		"a": "16:31"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.1131.Weekday",
@@ -1009,23 +1032,23 @@
 		"d": "16:13"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "16:24",
-		"d": "16:29"
+		"a": "16:32",
+		"d": "16:32"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "16:33",
-		"d": "16:34"
+		"a": "16:37",
+		"d": "16:37"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "16:37",
-		"d": "16:38"
+		"a": "16:40",
+		"d": "16:41"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "16:42",
-		"d": "16:42"
+		"a": "16:45",
+		"d": "16:45"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "16:46"
+		"a": "16:49"
 	}],
 	"nm": [{
 		"ja": "リバティ会津 131号",
@@ -1050,38 +1073,38 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"d": "16:50"
+		"d": "16:52"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "16:52",
-		"d": "16:54"
+		"a": "16:54",
+		"d": "16:58"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "16:59",
-		"d": "17:05"
+		"a": "17:02",
+		"d": "17:07"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "17:10",
-		"d": "17:10"
+		"a": "17:12",
+		"d": "17:12"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "17:14",
-		"d": "17:14"
-	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
 		"a": "17:16",
 		"d": "17:16"
 	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "17:18",
+		"d": "17:18"
+	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "17:19",
-		"d": "17:20"
+		"a": "17:21",
+		"d": "17:22"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "17:23",
-		"d": "17:24"
+		"a": "17:25",
+		"d": "17:26"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "17:28"
+		"a": "17:30"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.327N.Weekday",
@@ -1159,13 +1182,13 @@
 		"a": "19:04"
 	}],
 	"nm": [{
-		"ja": "リバティきぬ 139号",
-		"en": "Revaty Kinu 139",
-		"ko": "Revaty 기누 139",
-		"zh-Hans": "Revaty鬼怒 139",
-		"zh-Hant": "Revaty鬼怒 139"
+		"ja": "きぬ 139号",
+		"en": "Kinu 139",
+		"ko": "기누 139",
+		"zh-Hans": "鬼怒 139",
+		"zh-Hant": "鬼怒 139"
 	}],
-	"v": "500"
+	"v": "100"
 }, {
 	"id": "Tobu.Kinugawa.329N.Weekday",
 	"t": "Tobu.Kinugawa.329N",
@@ -1193,26 +1216,26 @@
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
 		"a": "19:12",
-		"d": "19:19"
+		"d": "19:18"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "19:23",
-		"d": "19:24"
+		"a": "19:22",
+		"d": "19:22"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "19:25",
-		"d": "19:26"
+		"a": "19:24",
+		"d": "19:24"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "19:29",
-		"d": "19:29"
+		"a": "19:27",
+		"d": "19:28"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "19:33",
-		"d": "19:33"
+		"a": "19:31",
+		"d": "19:32"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "19:38"
+		"a": "19:36"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.1141.Weekday",
@@ -1232,23 +1255,23 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"d": "19:44"
+		"d": "19:48"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "20:00",
-		"d": "20:00"
+		"a": "20:05",
+		"d": "20:06"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "20:03"
+		"a": "20:09"
 	}],
 	"nm": [{
-		"ja": "リバティきぬ 141号",
-		"en": "Revaty Kinu 141",
-		"ko": "Revaty 기누 141",
-		"zh-Hans": "Revaty鬼怒 141",
-		"zh-Hant": "Revaty鬼怒 141"
+		"ja": "きぬ 141号",
+		"en": "Kinu 141",
+		"ko": "기누 141",
+		"zh-Hans": "鬼怒 141",
+		"zh-Hant": "鬼怒 141"
 	}],
-	"v": "500"
+	"v": "100"
 }, {
 	"id": "Tobu.Kinugawa.331N.Weekday",
 	"t": "Tobu.Kinugawa.331N",
@@ -1485,14 +1508,14 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"d": "15:05"
+		"d": "14:35"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "15:09",
-		"d": "15:10"
+		"a": "14:39",
+		"d": "14:39"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "15:14"
+		"a": "14:44"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.102N.Weekday",
@@ -1690,10 +1713,10 @@
 		"a": "08:22"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.1112.Weekday",
-	"t": "Tobu.Kinugawa.1112",
+	"id": "Tobu.Kinugawa.1114.Weekday",
+	"t": "Tobu.Kinugawa.1114",
 	"r": "Tobu.Kinugawa",
-	"n": "1112",
+	"n": "1114",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -1703,7 +1726,7 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1012.Weekday.1"
+		"Tobu.Nikko.1014.Weekday.1"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
@@ -1725,11 +1748,11 @@
 		"a": "09:01"
 	}],
 	"nm": [{
-		"ja": "リバティきぬ 112号",
-		"en": "Revaty Kinu 112",
-		"ko": "Revaty 기누 112",
-		"zh-Hans": "Revaty鬼怒 112",
-		"zh-Hant": "Revaty鬼怒 112"
+		"ja": "リバティきぬ 114号",
+		"en": "Revaty Kinu 114",
+		"ko": "Revaty 기누 114",
+		"zh-Hans": "Revaty鬼怒 114",
+		"zh-Hant": "Revaty鬼怒 114"
 	}],
 	"v": "500"
 }, {
@@ -1874,14 +1897,14 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"d": "10:20"
+		"d": "10:14"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "10:24",
-		"d": "10:24"
+		"a": "10:18",
+		"d": "10:18"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "10:28",
+		"a": "10:22",
 		"d": "10:48"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
@@ -1970,20 +1993,20 @@
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
 		"a": "12:02",
-		"d": "12:04"
+		"d": "12:05"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
 		"a": "12:09",
-		"d": "12:09"
+		"d": "12:10"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
 		"a": "12:12"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.1126.Weekday",
-	"t": "Tobu.Kinugawa.1126",
+	"id": "Tobu.Kinugawa.1128.Weekday",
+	"t": "Tobu.Kinugawa.1128",
 	"r": "Tobu.Kinugawa",
-	"n": "1126",
+	"n": "1128",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -1993,7 +2016,7 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1026.Weekday.1"
+		"Tobu.Nikko.1028.Weekday.1"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
@@ -2019,11 +2042,11 @@
 		"a": "12:22"
 	}],
 	"nm": [{
-		"ja": "リバティ会津 126号",
-		"en": "Revaty Aizu 126",
-		"ko": "Revaty 아이즈 126",
-		"zh-Hans": "Revaty会津 126",
-		"zh-Hant": "Revaty會津 126"
+		"ja": "リバティ会津 128号",
+		"en": "Revaty Aizu 128",
+		"ko": "Revaty 아이즈 128",
+		"zh-Hans": "Revaty会津 128",
+		"zh-Hant": "Revaty會津 128"
 	}],
 	"v": "500"
 }, {
@@ -2061,18 +2084,18 @@
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
 		"a": "12:26",
-		"d": "12:28"
+		"d": "12:29"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "12:33",
-		"d": "12:33"
+		"a": "12:34",
+		"d": "12:34"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "12:38",
-		"d": "12:38"
+		"a": "12:39",
+		"d": "12:39"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "12:41"
+		"a": "12:42"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.322N.Weekday",
@@ -2123,10 +2146,10 @@
 		"a": "13:38"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.1134.Weekday",
-	"t": "Tobu.Kinugawa.1134",
+	"id": "Tobu.Kinugawa.1136.Weekday",
+	"t": "Tobu.Kinugawa.1136",
 	"r": "Tobu.Kinugawa",
-	"n": "1134",
+	"n": "1136",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -2136,7 +2159,7 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1034.Weekday.1"
+		"Tobu.Nikko.1036.Weekday.1"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
@@ -2162,28 +2185,25 @@
 		"a": "14:26"
 	}],
 	"nm": [{
-		"ja": "リバティ会津 134号",
-		"en": "Revaty Aizu 134",
-		"ko": "Revaty 아이즈 134",
-		"zh-Hans": "Revaty会津 134",
-		"zh-Hant": "Revaty會津 134"
+		"ja": "リバティ会津 136号",
+		"en": "Revaty Aizu 136",
+		"ko": "Revaty 아이즈 136",
+		"zh-Hans": "Revaty会津 136",
+		"zh-Hant": "Revaty會津 136"
 	}],
 	"v": "500"
 }, {
-	"id": "Tobu.Kinugawa.104N.Weekday",
-	"t": "Tobu.Kinugawa.104N",
+	"id": "Tobu.Kinugawa.324N.Weekday",
+	"t": "Tobu.Kinugawa.324N",
 	"r": "Tobu.Kinugawa",
-	"n": "104N",
+	"n": "324N",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
 		"Tobu.Kinugawa.ShinFujiwara"
 	],
 	"ds": [
-		"Tobu.Nikko.MinamiKurihashi"
-	],
-	"nt": [
-		"Tobu.Nikko.104N.Weekday"
+		"Tobu.Kinugawa.ShimoImaichi"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
@@ -2207,14 +2227,14 @@
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
 		"a": "14:21",
-		"d": "14:21"
+		"d": "14:25"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "14:26",
-		"d": "14:27"
+		"a": "14:30",
+		"d": "14:30"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "14:31",
+		"a": "14:35",
 		"d": "14:35"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
@@ -2231,51 +2251,48 @@
 		"Tobu.Kinugawa.ShinFujiwara"
 	],
 	"ds": [
-		"Tobu.Nikko.TobuNikko"
-	],
-	"nt": [
-		"Tobu.Nikko.715N.Weekday"
+		"Tobu.Kinugawa.ShimoImaichi"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"d": "15:28"
+		"d": "14:56"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "15:32",
-		"d": "15:33"
+		"a": "15:00",
+		"d": "15:00"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "15:36",
-		"d": "15:38"
+		"a": "15:04",
+		"d": "15:06"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "15:40",
-		"d": "15:41"
+		"a": "15:09",
+		"d": "15:09"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "15:42",
-		"d": "15:43"
+		"a": "15:10",
+		"d": "15:11"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "15:47",
-		"d": "15:56"
+		"a": "15:15",
+		"d": "15:22"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "16:01",
-		"d": "16:01"
+		"a": "15:27",
+		"d": "15:27"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "16:06",
-		"d": "16:06"
+		"a": "15:32",
+		"d": "15:32"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "16:09"
+		"a": "15:35"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.1140.Weekday",
-	"t": "Tobu.Kinugawa.1140",
+	"id": "Tobu.Kinugawa.1142.Weekday",
+	"t": "Tobu.Kinugawa.1142",
 	"r": "Tobu.Kinugawa",
-	"n": "1140",
+	"n": "1142",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -2285,90 +2302,39 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1040.Weekday.1"
+		"Tobu.Nikko.1042.Weekday.1"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"d": "15:57"
+		"d": "15:55"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "16:01",
-		"d": "16:01"
+		"a": "15:59",
+		"d": "15:59"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "16:05",
-		"d": "16:07"
+		"a": "16:03",
+		"d": "16:05"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "16:10",
-		"d": "16:10"
+		"a": "16:07",
+		"d": "16:08"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "16:15",
-		"d": "16:15"
+		"a": "16:12",
+		"d": "16:14"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "16:27"
+		"a": "16:25"
 	}],
 	"nm": [{
-		"ja": "リバティ会津 140号",
-		"en": "Revaty Aizu 140",
-		"ko": "Revaty 아이즈 140",
-		"zh-Hans": "Revaty会津 140",
-		"zh-Hant": "Revaty會津 140"
+		"ja": "リバティ会津 142号",
+		"en": "Revaty Aizu 142",
+		"ko": "Revaty 아이즈 142",
+		"zh-Hans": "Revaty会津 142",
+		"zh-Hant": "Revaty會津 142"
 	}],
 	"v": "500"
-}, {
-	"id": "Tobu.Kinugawa.106N.Weekday",
-	"t": "Tobu.Kinugawa.106N",
-	"r": "Tobu.Kinugawa",
-	"n": "106N",
-	"y": "Tobu.Local",
-	"d": "Inbound",
-	"os": [
-		"Tobu.Kinugawa.ShinFujiwara"
-	],
-	"ds": [
-		"Tobu.Nikko.MinamiKurihashi"
-	],
-	"nt": [
-		"Tobu.Nikko.106N.Weekday"
-	],
-	"tt": [{
-		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"d": "16:09"
-	}, {
-		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "16:13",
-		"d": "16:13"
-	}, {
-		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "16:17",
-		"d": "16:18"
-	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "16:21",
-		"d": "16:21"
-	}, {
-		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "16:22",
-		"d": "16:23"
-	}, {
-		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "16:27",
-		"d": "16:27"
-	}, {
-		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "16:32",
-		"d": "16:33"
-	}, {
-		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "16:37",
-		"d": "16:38"
-	}, {
-		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "16:40"
-	}]
 }, {
 	"id": "Tobu.Kinugawa.328N.Weekday",
 	"t": "Tobu.Kinugawa.328N",
@@ -2384,44 +2350,92 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"d": "17:00"
+		"d": "16:03"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "17:04",
-		"d": "17:05"
+		"a": "16:07",
+		"d": "16:07"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "17:08",
-		"d": "17:09"
+		"a": "16:11",
+		"d": "16:12"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "17:12",
-		"d": "17:12"
+		"a": "16:15",
+		"d": "16:15"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "17:14",
-		"d": "17:14"
+		"a": "16:16",
+		"d": "16:17"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "17:18",
-		"d": "17:18"
+		"a": "16:21",
+		"d": "16:21"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "17:23",
-		"d": "17:24"
+		"a": "16:26",
+		"d": "16:29"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "17:29",
-		"d": "17:29"
+		"a": "16:34",
+		"d": "16:34"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "17:31"
+		"a": "16:37"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.330N.Weekday",
 	"t": "Tobu.Kinugawa.330N",
 	"r": "Tobu.Kinugawa",
 	"n": "330N",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kinugawa.ShinFujiwara"
+	],
+	"ds": [
+		"Tobu.Kinugawa.ShimoImaichi"
+	],
+	"tt": [{
+		"s": "Tobu.Kinugawa.ShinFujiwara",
+		"d": "16:54"
+	}, {
+		"s": "Tobu.Kinugawa.KinugawaKoen",
+		"a": "16:58",
+		"d": "16:59"
+	}, {
+		"s": "Tobu.Kinugawa.KinugawaOnsen",
+		"a": "17:02",
+		"d": "17:03"
+	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "17:06",
+		"d": "17:06"
+	}, {
+		"s": "Tobu.Kinugawa.Kosagoe",
+		"a": "17:08",
+		"d": "17:08"
+	}, {
+		"s": "Tobu.Kinugawa.ShinTakatoku",
+		"a": "17:12",
+		"d": "17:16"
+	}, {
+		"s": "Tobu.Kinugawa.Okuwa",
+		"a": "17:21",
+		"d": "17:21"
+	}, {
+		"s": "Tobu.Kinugawa.Daiyamuko",
+		"a": "17:26",
+		"d": "17:27"
+	}, {
+		"s": "Tobu.Kinugawa.ShimoImaichi",
+		"a": "17:29"
+	}]
+}, {
+	"id": "Tobu.Kinugawa.332N.Weekday",
+	"t": "Tobu.Kinugawa.332N",
+	"r": "Tobu.Kinugawa",
+	"n": "332N",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -2466,10 +2480,10 @@
 		"a": "18:17"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.1152.Weekday",
-	"t": "Tobu.Kinugawa.1152",
+	"id": "Tobu.Kinugawa.1154.Weekday",
+	"t": "Tobu.Kinugawa.1154",
 	"r": "Tobu.Kinugawa",
-	"n": "1152",
+	"n": "1154",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -2479,7 +2493,7 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1152.Weekday"
+		"Tobu.Nikko.1154.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
@@ -2505,18 +2519,18 @@
 		"a": "19:14"
 	}],
 	"nm": [{
-		"ja": "リバティ会津 152号",
-		"en": "Revaty Aizu 152",
-		"ko": "Revaty 아이즈 152",
-		"zh-Hans": "Revaty会津 152",
-		"zh-Hant": "Revaty會津 152"
+		"ja": "リバティ会津 154号",
+		"en": "Revaty Aizu 154",
+		"ko": "Revaty 아이즈 154",
+		"zh-Hans": "Revaty会津 154",
+		"zh-Hant": "Revaty會津 154"
 	}],
 	"v": "500"
 }, {
-	"id": "Tobu.Kinugawa.332N.Weekday",
-	"t": "Tobu.Kinugawa.332N",
+	"id": "Tobu.Kinugawa.334N.Weekday",
+	"t": "Tobu.Kinugawa.334N",
 	"r": "Tobu.Kinugawa",
-	"n": "332N",
+	"n": "334N",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -2535,36 +2549,36 @@
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
 		"a": "19:26",
-		"d": "19:35"
+		"d": "19:33"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "19:38",
-		"d": "19:38"
+		"a": "19:35",
+		"d": "19:36"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "19:39",
-		"d": "19:40"
+		"a": "19:37",
+		"d": "19:38"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "19:44",
-		"d": "19:44"
+		"a": "19:41",
+		"d": "19:42"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "19:49",
-		"d": "19:51"
+		"a": "19:47",
+		"d": "19:47"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "19:56",
-		"d": "19:56"
+		"a": "19:52",
+		"d": "19:55"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "19:59"
+		"a": "19:57"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.334N.Weekday",
-	"t": "Tobu.Kinugawa.334N",
+	"id": "Tobu.Kinugawa.336N.Weekday",
+	"t": "Tobu.Kinugawa.336N",
 	"r": "Tobu.Kinugawa",
-	"n": "334N",
+	"n": "336N",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -2609,10 +2623,10 @@
 		"a": "20:51"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.336N.Weekday",
-	"t": "Tobu.Kinugawa.336N",
+	"id": "Tobu.Kinugawa.338N.Weekday",
+	"t": "Tobu.Kinugawa.338N",
 	"r": "Tobu.Kinugawa",
-	"n": "336N",
+	"n": "338N",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -2622,7 +2636,7 @@
 		"Tobu.Nikko.TobuNikko"
 	],
 	"nt": [
-		"Tobu.Nikko.717N.Weekday"
+		"Tobu.Nikko.715N.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
@@ -2658,50 +2672,6 @@
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
 		"a": "22:01"
-	}]
-}, {
-	"id": "Tobu.Kinugawa.324N.Weekday",
-	"t": "Tobu.Kinugawa.324N",
-	"r": "Tobu.Kinugawa",
-	"n": "324N",
-	"y": "Tobu.Local",
-	"d": "Inbound",
-	"os": [
-		"Tobu.Kinugawa.KinugawaKoen"
-	],
-	"ds": [
-		"Tobu.Kinugawa.ShimoImaichi"
-	],
-	"tt": [{
-		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"d": "14:32"
-	}, {
-		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "14:35",
-		"d": "14:36"
-	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "14:38",
-		"d": "14:39"
-	}, {
-		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "14:40",
-		"d": "14:41"
-	}, {
-		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "14:45",
-		"d": "14:45"
-	}, {
-		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "14:50",
-		"d": "14:52"
-	}, {
-		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "14:57",
-		"d": "14:57"
-	}, {
-		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "14:59"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.302N.Weekday",
@@ -2744,10 +2714,10 @@
 		"a": "05:51"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.1108.Weekday",
-	"t": "Tobu.Kinugawa.1108",
+	"id": "Tobu.Kinugawa.1110.Weekday",
+	"t": "Tobu.Kinugawa.1110",
 	"r": "Tobu.Kinugawa",
-	"n": "1108",
+	"n": "1110",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -2757,7 +2727,7 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1108.Weekday"
+		"Tobu.Nikko.1110.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
@@ -2771,18 +2741,18 @@
 		"a": "07:00"
 	}],
 	"nm": [{
-		"ja": "リバティきぬ 108号",
-		"en": "Revaty Kinu 108",
-		"ko": "Revaty 기누 108",
-		"zh-Hans": "Revaty鬼怒 108",
-		"zh-Hant": "Revaty鬼怒 108"
+		"ja": "きぬ 110号",
+		"en": "Kinu 110",
+		"ko": "기누 110",
+		"zh-Hans": "鬼怒 110",
+		"zh-Hant": "鬼怒 110"
 	}],
-	"v": "500"
+	"v": "100"
 }, {
-	"id": "Tobu.Kinugawa.1114.Weekday",
-	"t": "Tobu.Kinugawa.1114",
+	"id": "Tobu.Kinugawa.1116.Weekday",
+	"t": "Tobu.Kinugawa.1116",
 	"r": "Tobu.Kinugawa",
-	"n": "1114",
+	"n": "1116",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -2792,7 +2762,7 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1114.Weekday"
+		"Tobu.Nikko.1116.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
@@ -2806,18 +2776,18 @@
 		"a": "09:29"
 	}],
 	"nm": [{
-		"ja": "きぬ 114号",
-		"en": "Kinu 114",
-		"ko": "기누 114",
-		"zh-Hans": "鬼怒 114",
-		"zh-Hant": "鬼怒 114"
+		"ja": "きぬ 116号",
+		"en": "Kinu 116",
+		"ko": "기누 116",
+		"zh-Hans": "鬼怒 116",
+		"zh-Hant": "鬼怒 116"
 	}],
 	"v": "100"
 }, {
-	"id": "Tobu.Kinugawa.1118.Weekday",
-	"t": "Tobu.Kinugawa.1118",
+	"id": "Tobu.Kinugawa.1122.Weekday",
+	"t": "Tobu.Kinugawa.1122",
 	"r": "Tobu.Kinugawa",
-	"n": "1118",
+	"n": "1122",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -2827,25 +2797,60 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1118.Weekday"
+		"Tobu.Nikko.1122.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"d": "10:10"
+		"d": "10:25"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "10:12",
-		"d": "10:13"
+		"a": "10:27",
+		"d": "10:28"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "10:28"
+		"a": "10:50"
 	}],
 	"nm": [{
-		"ja": "リバティきぬ 118号",
-		"en": "Revaty Kinu 118",
-		"ko": "Revaty 기누 118",
-		"zh-Hans": "Revaty鬼怒 118",
-		"zh-Hant": "Revaty鬼怒 118"
+		"ja": "リバティきぬ 122号",
+		"en": "Revaty Kinu 122",
+		"ko": "Revaty 기누 122",
+		"zh-Hans": "Revaty鬼怒 122",
+		"zh-Hant": "Revaty鬼怒 122"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kinugawa.1124.Weekday",
+	"t": "Tobu.Kinugawa.1124",
+	"r": "Tobu.Kinugawa",
+	"n": "1124",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kinugawa.KinugawaOnsen"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Nikko.1124.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kinugawa.KinugawaOnsen",
+		"d": "11:10"
+	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "11:13",
+		"d": "11:13"
+	}, {
+		"s": "Tobu.Kinugawa.ShimoImaichi",
+		"a": "11:29"
+	}],
+	"nm": [{
+		"ja": "リバティきぬ 124号",
+		"en": "Revaty Kinu 124",
+		"ko": "Revaty 기누 124",
+		"zh-Hans": "Revaty鬼怒 124",
+		"zh-Hant": "Revaty鬼怒 124"
 	}],
 	"v": "500"
 }, {
@@ -2898,11 +2903,11 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"d": "14:55"
+		"d": "14:56"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "14:57",
-		"d": "14:58"
+		"a": "14:59",
+		"d": "15:00"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
 		"a": "15:19"
@@ -2915,6 +2920,41 @@
 		"zh-Hant": "鬼怒川 2"
 	}],
 	"v": "253"
+}, {
+	"id": "Tobu.Kinugawa.1140.Weekday",
+	"t": "Tobu.Kinugawa.1140",
+	"r": "Tobu.Kinugawa",
+	"n": "1140",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kinugawa.KinugawaOnsen"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Nikko.1140.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Kinugawa.KinugawaOnsen",
+		"d": "15:21"
+	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "15:24",
+		"d": "15:24"
+	}, {
+		"s": "Tobu.Kinugawa.ShimoImaichi",
+		"a": "15:44"
+	}],
+	"nm": [{
+		"ja": "スペーシアX 8号",
+		"en": "Spacia X 8",
+		"ko": "스페이시아 X 8",
+		"zh-Hans": "SPACIA X 8",
+		"zh-Hant": "SPACIA X 8"
+	}],
+	"v": "N100"
 }, {
 	"id": "Tobu.Kinugawa.6.Weekday",
 	"t": "Tobu.Kinugawa.6",
@@ -2930,14 +2970,14 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"d": "15:05"
+		"d": "15:41"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "15:09",
-		"d": "15:10"
+		"a": "15:46",
+		"d": "15:47"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "15:44"
+		"a": "16:21"
 	}],
 	"nm": [{
 		"ja": "SL大樹 6号",
@@ -2948,10 +2988,10 @@
 	}],
 	"v": "C11"
 }, {
-	"id": "Tobu.Kinugawa.1142.Weekday",
-	"t": "Tobu.Kinugawa.1142",
+	"id": "Tobu.Kinugawa.1144.Weekday",
+	"t": "Tobu.Kinugawa.1144",
 	"r": "Tobu.Kinugawa",
-	"n": "1142",
+	"n": "1144",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -2961,32 +3001,32 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1142.Weekday"
+		"Tobu.Nikko.1144.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"d": "16:37"
-	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "16:40",
 		"d": "16:40"
 	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "16:43",
+		"d": "16:43"
+	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "16:56"
+		"a": "16:59"
 	}],
 	"nm": [{
-		"ja": "きぬ 142号",
-		"en": "Kinu 142",
-		"ko": "기누 142",
-		"zh-Hans": "鬼怒 142",
-		"zh-Hant": "鬼怒 142"
+		"ja": "スペーシアX 10号",
+		"en": "Spacia X 10",
+		"ko": "스페이시아 X 10",
+		"zh-Hans": "SPACIA X 10",
+		"zh-Hant": "SPACIA X 10"
 	}],
-	"v": "100"
+	"v": "N100"
 }, {
-	"id": "Tobu.Kinugawa.1154.Weekday",
-	"t": "Tobu.Kinugawa.1154",
+	"id": "Tobu.Kinugawa.1156.Weekday",
+	"t": "Tobu.Kinugawa.1156",
 	"r": "Tobu.Kinugawa",
-	"n": "1154",
+	"n": "1156",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -2996,27 +3036,27 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1154.Weekday"
+		"Tobu.Nikko.1156.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"d": "19:29"
+		"d": "19:28"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "19:31",
-		"d": "19:32"
+		"a": "19:30",
+		"d": "19:31"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "19:49"
+		"a": "19:46"
 	}],
 	"nm": [{
-		"ja": "リバティきぬ 154号",
-		"en": "Revaty Kinu 154",
-		"ko": "Revaty 기누 154",
-		"zh-Hans": "Revaty鬼怒 154",
-		"zh-Hant": "Revaty鬼怒 154"
+		"ja": "きぬ 156号",
+		"en": "Kinu 156",
+		"ko": "기누 156",
+		"zh-Hans": "鬼怒 156",
+		"zh-Hant": "鬼怒 156"
 	}],
-	"v": "500"
+	"v": "100"
 }, {
 	"id": "Tobu.Kinugawa.301N.SaturdayHoliday",
 	"t": "Tobu.Kinugawa.301N",
@@ -3452,26 +3492,26 @@
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
 		"a": "10:13",
-		"d": "10:18"
+		"d": "10:13"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
+		"a": "10:17",
+		"d": "10:18"
+	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "10:19",
+		"d": "10:19"
+	}, {
+		"s": "Tobu.Kinugawa.KinugawaOnsen",
 		"a": "10:22",
 		"d": "10:23"
 	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "10:24",
-		"d": "10:24"
-	}, {
-		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "10:27",
-		"d": "10:28"
-	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "10:32",
-		"d": "10:32"
+		"a": "10:27",
+		"d": "10:27"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "10:37"
+		"a": "10:32"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.1109.SaturdayHoliday",
@@ -3787,7 +3827,7 @@
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
 		"a": "13:07",
-		"d": "13:08"
+		"d": "13:07"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
 		"a": "13:12",
@@ -3859,7 +3899,7 @@
 		"Tobu.Kinugawa.ShimoImaichi"
 	],
 	"ds": [
-		"Tobu.Kinugawa.KinugawaKoen"
+		"Tobu.Kinugawa.ShinFujiwara"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShimoImaichi",
@@ -3890,58 +3930,94 @@
 		"d": "14:22"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "14:26"
+		"a": "14:26",
+		"d": "14:26"
+	}, {
+		"s": "Tobu.Kinugawa.ShinFujiwara",
+		"a": "14:30"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.105N.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.105N",
+	"id": "Tobu.Kinugawa.1123.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.1123",
 	"r": "Tobu.Kinugawa",
-	"n": "105N",
+	"n": "1123",
+	"y": "Tobu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Kinugawa.KinugawaOnsen"
+	],
+	"pt": [
+		"Tobu.Nikko.1123.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kinugawa.ShimoImaichi",
+		"d": "14:11"
+	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "14:28",
+		"d": "14:29"
+	}, {
+		"s": "Tobu.Kinugawa.KinugawaOnsen",
+		"a": "14:32"
+	}],
+	"nm": [{
+		"ja": "スペーシアX 7号",
+		"en": "Spacia X 7",
+		"ko": "스페이시아 X 7",
+		"zh-Hans": "SPACIA X 7",
+		"zh-Hant": "SPACIA X 7"
+	}],
+	"v": "N100"
+}, {
+	"id": "Tobu.Kinugawa.321N.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.321N",
+	"r": "Tobu.Kinugawa",
+	"n": "321N",
 	"y": "Tobu.Local",
 	"d": "Outbound",
 	"os": [
-		"Tobu.Nikko.MinamiKurihashi"
+		"Tobu.Kinugawa.ShimoImaichi"
 	],
 	"ds": [
 		"Tobu.Kinugawa.ShinFujiwara"
 	],
-	"pt": [
-		"Tobu.Nikko.105N.SaturdayHoliday"
-	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"d": "14:32"
-	}, {
-		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "14:34",
-		"d": "14:35"
-	}, {
-		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "14:39",
-		"d": "14:40"
-	}, {
-		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "14:45",
-		"d": "14:45"
-	}, {
-		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "14:49",
 		"d": "14:50"
 	}, {
+		"s": "Tobu.Kinugawa.Daiyamuko",
+		"a": "14:52",
+		"d": "14:53"
+	}, {
+		"s": "Tobu.Kinugawa.Okuwa",
+		"a": "14:57",
+		"d": "14:58"
+	}, {
+		"s": "Tobu.Kinugawa.ShinTakatoku",
+		"a": "15:03",
+		"d": "15:04"
+	}, {
+		"s": "Tobu.Kinugawa.Kosagoe",
+		"a": "15:08",
+		"d": "15:11"
+	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "14:51",
-		"d": "14:51"
+		"a": "15:12",
+		"d": "15:12"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "14:54",
-		"d": "14:55"
+		"a": "15:15",
+		"d": "15:16"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "14:59",
-		"d": "14:59"
+		"a": "15:20",
+		"d": "15:20"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "15:03"
+		"a": "15:24"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.7.SaturdayHoliday",
@@ -3976,54 +4052,6 @@
 	}],
 	"v": "C11"
 }, {
-	"id": "Tobu.Kinugawa.321N.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.321N",
-	"r": "Tobu.Kinugawa",
-	"n": "321N",
-	"y": "Tobu.Local",
-	"d": "Outbound",
-	"os": [
-		"Tobu.Kinugawa.ShimoImaichi"
-	],
-	"ds": [
-		"Tobu.Kinugawa.ShinFujiwara"
-	],
-	"tt": [{
-		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"d": "15:21"
-	}, {
-		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "15:23",
-		"d": "15:23"
-	}, {
-		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "15:28",
-		"d": "15:31"
-	}, {
-		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "15:36",
-		"d": "15:36"
-	}, {
-		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "15:40",
-		"d": "15:42"
-	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "15:44",
-		"d": "15:44"
-	}, {
-		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "15:47",
-		"d": "15:48"
-	}, {
-		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "15:51",
-		"d": "15:52"
-	}, {
-		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "15:56"
-	}]
-}, {
 	"id": "Tobu.Kinugawa.1129.SaturdayHoliday",
 	"t": "Tobu.Kinugawa.1129",
 	"r": "Tobu.Kinugawa",
@@ -4051,13 +4079,13 @@
 		"a": "16:03"
 	}],
 	"nm": [{
-		"ja": "きぬ 129号",
-		"en": "Kinu 129",
-		"ko": "기누 129",
-		"zh-Hans": "鬼怒 129",
-		"zh-Hant": "鬼怒 129"
+		"ja": "スペーシアX 9号",
+		"en": "Spacia X 9",
+		"ko": "스페이시아 X 9",
+		"zh-Hans": "SPACIA X 9",
+		"zh-Hant": "SPACIA X 9"
 	}],
-	"v": "100"
+	"v": "N100"
 }, {
 	"id": "Tobu.Kinugawa.323N.SaturdayHoliday",
 	"t": "Tobu.Kinugawa.323N",
@@ -4077,34 +4105,34 @@
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
 		"a": "15:55",
-		"d": "15:56"
+		"d": "15:57"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "16:00",
-		"d": "16:01"
+		"a": "16:01",
+		"d": "16:07"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "16:06",
-		"d": "16:06"
-	}, {
-		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "16:10",
-		"d": "16:11"
-	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "16:13",
+		"a": "16:12",
 		"d": "16:13"
 	}, {
-		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "16:16",
+		"s": "Tobu.Kinugawa.Kosagoe",
+		"a": "16:17",
 		"d": "16:17"
 	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "16:18",
+		"d": "16:19"
+	}, {
+		"s": "Tobu.Kinugawa.KinugawaOnsen",
+		"a": "16:22",
+		"d": "16:23"
+	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "16:21",
-		"d": "16:21"
+		"a": "16:27",
+		"d": "16:27"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "16:26"
+		"a": "16:31"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.1131.SaturdayHoliday",
@@ -4127,23 +4155,23 @@
 		"d": "16:13"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "16:24",
-		"d": "16:29"
+		"a": "16:32",
+		"d": "16:32"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "16:33",
-		"d": "16:34"
+		"a": "16:37",
+		"d": "16:37"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "16:37",
-		"d": "16:38"
+		"a": "16:40",
+		"d": "16:41"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "16:42",
-		"d": "16:42"
+		"a": "16:45",
+		"d": "16:45"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "16:46"
+		"a": "16:49"
 	}],
 	"nm": [{
 		"ja": "リバティ会津 131号",
@@ -4168,38 +4196,38 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"d": "16:50"
+		"d": "16:52"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "16:52",
-		"d": "16:54"
+		"a": "16:54",
+		"d": "16:58"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "16:59",
-		"d": "17:05"
+		"a": "17:02",
+		"d": "17:07"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "17:10",
-		"d": "17:10"
+		"a": "17:12",
+		"d": "17:12"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "17:14",
-		"d": "17:14"
-	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
 		"a": "17:16",
 		"d": "17:16"
 	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "17:18",
+		"d": "17:18"
+	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "17:19",
-		"d": "17:20"
+		"a": "17:21",
+		"d": "17:22"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "17:23",
-		"d": "17:24"
+		"a": "17:25",
+		"d": "17:26"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "17:28"
+		"a": "17:30"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.327N.SaturdayHoliday",
@@ -4277,13 +4305,13 @@
 		"a": "19:04"
 	}],
 	"nm": [{
-		"ja": "リバティきぬ 139号",
-		"en": "Revaty Kinu 139",
-		"ko": "Revaty 기누 139",
-		"zh-Hans": "Revaty鬼怒 139",
-		"zh-Hant": "Revaty鬼怒 139"
+		"ja": "きぬ 139号",
+		"en": "Kinu 139",
+		"ko": "기누 139",
+		"zh-Hans": "鬼怒 139",
+		"zh-Hant": "鬼怒 139"
 	}],
-	"v": "500"
+	"v": "100"
 }, {
 	"id": "Tobu.Kinugawa.329N.SaturdayHoliday",
 	"t": "Tobu.Kinugawa.329N",
@@ -4311,26 +4339,26 @@
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
 		"a": "19:12",
-		"d": "19:19"
+		"d": "19:18"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "19:23",
-		"d": "19:24"
+		"a": "19:22",
+		"d": "19:22"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "19:25",
-		"d": "19:26"
+		"a": "19:24",
+		"d": "19:24"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "19:29",
-		"d": "19:29"
+		"a": "19:27",
+		"d": "19:28"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "19:33",
-		"d": "19:33"
+		"a": "19:31",
+		"d": "19:32"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "19:38"
+		"a": "19:36"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.1141.SaturdayHoliday",
@@ -4350,23 +4378,23 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"d": "19:44"
+		"d": "19:48"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "20:00",
-		"d": "20:00"
+		"a": "20:05",
+		"d": "20:06"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "20:03"
+		"a": "20:09"
 	}],
 	"nm": [{
-		"ja": "リバティきぬ 141号",
-		"en": "Revaty Kinu 141",
-		"ko": "Revaty 기누 141",
-		"zh-Hans": "Revaty鬼怒 141",
-		"zh-Hant": "Revaty鬼怒 141"
+		"ja": "きぬ 141号",
+		"en": "Kinu 141",
+		"ko": "기누 141",
+		"zh-Hans": "鬼怒 141",
+		"zh-Hant": "鬼怒 141"
 	}],
-	"v": "500"
+	"v": "100"
 }, {
 	"id": "Tobu.Kinugawa.331N.SaturdayHoliday",
 	"t": "Tobu.Kinugawa.331N",
@@ -4603,14 +4631,14 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"d": "15:05"
+		"d": "14:35"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "15:09",
-		"d": "15:10"
+		"a": "14:39",
+		"d": "14:39"
 	}, {
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"a": "15:14"
+		"a": "14:44"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.102N.SaturdayHoliday",
@@ -4808,10 +4836,10 @@
 		"a": "08:22"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.1112.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.1112",
+	"id": "Tobu.Kinugawa.1114.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.1114",
 	"r": "Tobu.Kinugawa",
-	"n": "1112",
+	"n": "1114",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -4821,7 +4849,7 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1012.SaturdayHoliday.1"
+		"Tobu.Nikko.1014.SaturdayHoliday.1"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
@@ -4843,11 +4871,11 @@
 		"a": "09:01"
 	}],
 	"nm": [{
-		"ja": "リバティきぬ 112号",
-		"en": "Revaty Kinu 112",
-		"ko": "Revaty 기누 112",
-		"zh-Hans": "Revaty鬼怒 112",
-		"zh-Hant": "Revaty鬼怒 112"
+		"ja": "リバティきぬ 114号",
+		"en": "Revaty Kinu 114",
+		"ko": "Revaty 기누 114",
+		"zh-Hans": "Revaty鬼怒 114",
+		"zh-Hant": "Revaty鬼怒 114"
 	}],
 	"v": "500"
 }, {
@@ -4992,14 +5020,14 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"d": "10:20"
+		"d": "10:14"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "10:24",
-		"d": "10:24"
+		"a": "10:18",
+		"d": "10:18"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "10:28",
+		"a": "10:22",
 		"d": "10:48"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
@@ -5088,20 +5116,20 @@
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
 		"a": "12:02",
-		"d": "12:04"
+		"d": "12:05"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
 		"a": "12:09",
-		"d": "12:09"
+		"d": "12:10"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
 		"a": "12:12"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.1126.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.1126",
+	"id": "Tobu.Kinugawa.1128.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.1128",
 	"r": "Tobu.Kinugawa",
-	"n": "1126",
+	"n": "1128",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -5111,7 +5139,7 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1026.SaturdayHoliday.1"
+		"Tobu.Nikko.1028.SaturdayHoliday.1"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
@@ -5137,11 +5165,11 @@
 		"a": "12:22"
 	}],
 	"nm": [{
-		"ja": "リバティ会津 126号",
-		"en": "Revaty Aizu 126",
-		"ko": "Revaty 아이즈 126",
-		"zh-Hans": "Revaty会津 126",
-		"zh-Hant": "Revaty會津 126"
+		"ja": "リバティ会津 128号",
+		"en": "Revaty Aizu 128",
+		"ko": "Revaty 아이즈 128",
+		"zh-Hans": "Revaty会津 128",
+		"zh-Hant": "Revaty會津 128"
 	}],
 	"v": "500"
 }, {
@@ -5179,18 +5207,18 @@
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
 		"a": "12:26",
-		"d": "12:28"
+		"d": "12:29"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "12:33",
-		"d": "12:33"
+		"a": "12:34",
+		"d": "12:34"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "12:38",
-		"d": "12:38"
+		"a": "12:39",
+		"d": "12:39"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "12:41"
+		"a": "12:42"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.322N.SaturdayHoliday",
@@ -5241,10 +5269,10 @@
 		"a": "13:38"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.1134.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.1134",
+	"id": "Tobu.Kinugawa.1136.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.1136",
 	"r": "Tobu.Kinugawa",
-	"n": "1134",
+	"n": "1136",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -5254,7 +5282,7 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1034.SaturdayHoliday.1"
+		"Tobu.Nikko.1036.SaturdayHoliday.1"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
@@ -5280,28 +5308,25 @@
 		"a": "14:26"
 	}],
 	"nm": [{
-		"ja": "リバティ会津 134号",
-		"en": "Revaty Aizu 134",
-		"ko": "Revaty 아이즈 134",
-		"zh-Hans": "Revaty会津 134",
-		"zh-Hant": "Revaty會津 134"
+		"ja": "リバティ会津 136号",
+		"en": "Revaty Aizu 136",
+		"ko": "Revaty 아이즈 136",
+		"zh-Hans": "Revaty会津 136",
+		"zh-Hant": "Revaty會津 136"
 	}],
 	"v": "500"
 }, {
-	"id": "Tobu.Kinugawa.104N.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.104N",
+	"id": "Tobu.Kinugawa.324N.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.324N",
 	"r": "Tobu.Kinugawa",
-	"n": "104N",
+	"n": "324N",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
 		"Tobu.Kinugawa.ShinFujiwara"
 	],
 	"ds": [
-		"Tobu.Nikko.MinamiKurihashi"
-	],
-	"nt": [
-		"Tobu.Nikko.104N.SaturdayHoliday"
+		"Tobu.Kinugawa.ShimoImaichi"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
@@ -5325,14 +5350,14 @@
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
 		"a": "14:21",
-		"d": "14:21"
+		"d": "14:25"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "14:26",
-		"d": "14:27"
+		"a": "14:30",
+		"d": "14:30"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "14:31",
+		"a": "14:35",
 		"d": "14:35"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
@@ -5349,51 +5374,48 @@
 		"Tobu.Kinugawa.ShinFujiwara"
 	],
 	"ds": [
-		"Tobu.Nikko.TobuNikko"
-	],
-	"nt": [
-		"Tobu.Nikko.715N.SaturdayHoliday"
+		"Tobu.Kinugawa.ShimoImaichi"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"d": "15:28"
+		"d": "14:56"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "15:32",
-		"d": "15:33"
+		"a": "15:00",
+		"d": "15:00"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "15:36",
-		"d": "15:38"
+		"a": "15:04",
+		"d": "15:06"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "15:40",
-		"d": "15:41"
+		"a": "15:09",
+		"d": "15:09"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "15:42",
-		"d": "15:43"
+		"a": "15:10",
+		"d": "15:11"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "15:47",
-		"d": "15:56"
+		"a": "15:15",
+		"d": "15:22"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "16:01",
-		"d": "16:01"
+		"a": "15:27",
+		"d": "15:27"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "16:06",
-		"d": "16:06"
+		"a": "15:32",
+		"d": "15:32"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "16:09"
+		"a": "15:35"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.1140.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.1140",
+	"id": "Tobu.Kinugawa.1142.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.1142",
 	"r": "Tobu.Kinugawa",
-	"n": "1140",
+	"n": "1142",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -5403,90 +5425,39 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1040.SaturdayHoliday.1"
+		"Tobu.Nikko.1042.SaturdayHoliday.1"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"d": "15:57"
+		"d": "15:55"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "16:01",
-		"d": "16:01"
+		"a": "15:59",
+		"d": "15:59"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "16:05",
-		"d": "16:07"
+		"a": "16:03",
+		"d": "16:05"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "16:10",
-		"d": "16:10"
+		"a": "16:07",
+		"d": "16:08"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "16:15",
-		"d": "16:15"
+		"a": "16:12",
+		"d": "16:14"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "16:27"
+		"a": "16:25"
 	}],
 	"nm": [{
-		"ja": "リバティ会津 140号",
-		"en": "Revaty Aizu 140",
-		"ko": "Revaty 아이즈 140",
-		"zh-Hans": "Revaty会津 140",
-		"zh-Hant": "Revaty會津 140"
+		"ja": "リバティ会津 142号",
+		"en": "Revaty Aizu 142",
+		"ko": "Revaty 아이즈 142",
+		"zh-Hans": "Revaty会津 142",
+		"zh-Hant": "Revaty會津 142"
 	}],
 	"v": "500"
-}, {
-	"id": "Tobu.Kinugawa.106N.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.106N",
-	"r": "Tobu.Kinugawa",
-	"n": "106N",
-	"y": "Tobu.Local",
-	"d": "Inbound",
-	"os": [
-		"Tobu.Kinugawa.ShinFujiwara"
-	],
-	"ds": [
-		"Tobu.Nikko.MinamiKurihashi"
-	],
-	"nt": [
-		"Tobu.Nikko.106N.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"d": "16:09"
-	}, {
-		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "16:13",
-		"d": "16:13"
-	}, {
-		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "16:17",
-		"d": "16:18"
-	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "16:21",
-		"d": "16:21"
-	}, {
-		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "16:22",
-		"d": "16:23"
-	}, {
-		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "16:27",
-		"d": "16:27"
-	}, {
-		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "16:32",
-		"d": "16:33"
-	}, {
-		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "16:37",
-		"d": "16:38"
-	}, {
-		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "16:40"
-	}]
 }, {
 	"id": "Tobu.Kinugawa.328N.SaturdayHoliday",
 	"t": "Tobu.Kinugawa.328N",
@@ -5502,44 +5473,92 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
-		"d": "17:00"
+		"d": "16:03"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"a": "17:04",
-		"d": "17:05"
+		"a": "16:07",
+		"d": "16:07"
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "17:08",
-		"d": "17:09"
+		"a": "16:11",
+		"d": "16:12"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "17:12",
-		"d": "17:12"
+		"a": "16:15",
+		"d": "16:15"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "17:14",
-		"d": "17:14"
+		"a": "16:16",
+		"d": "16:17"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "17:18",
-		"d": "17:18"
+		"a": "16:21",
+		"d": "16:21"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "17:23",
-		"d": "17:24"
+		"a": "16:26",
+		"d": "16:29"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "17:29",
-		"d": "17:29"
+		"a": "16:34",
+		"d": "16:34"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "17:31"
+		"a": "16:37"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.330N.SaturdayHoliday",
 	"t": "Tobu.Kinugawa.330N",
 	"r": "Tobu.Kinugawa",
 	"n": "330N",
+	"y": "Tobu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kinugawa.ShinFujiwara"
+	],
+	"ds": [
+		"Tobu.Kinugawa.ShimoImaichi"
+	],
+	"tt": [{
+		"s": "Tobu.Kinugawa.ShinFujiwara",
+		"d": "16:54"
+	}, {
+		"s": "Tobu.Kinugawa.KinugawaKoen",
+		"a": "16:58",
+		"d": "16:59"
+	}, {
+		"s": "Tobu.Kinugawa.KinugawaOnsen",
+		"a": "17:02",
+		"d": "17:03"
+	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "17:06",
+		"d": "17:06"
+	}, {
+		"s": "Tobu.Kinugawa.Kosagoe",
+		"a": "17:08",
+		"d": "17:08"
+	}, {
+		"s": "Tobu.Kinugawa.ShinTakatoku",
+		"a": "17:12",
+		"d": "17:16"
+	}, {
+		"s": "Tobu.Kinugawa.Okuwa",
+		"a": "17:21",
+		"d": "17:21"
+	}, {
+		"s": "Tobu.Kinugawa.Daiyamuko",
+		"a": "17:26",
+		"d": "17:27"
+	}, {
+		"s": "Tobu.Kinugawa.ShimoImaichi",
+		"a": "17:29"
+	}]
+}, {
+	"id": "Tobu.Kinugawa.332N.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.332N",
+	"r": "Tobu.Kinugawa",
+	"n": "332N",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -5584,10 +5603,10 @@
 		"a": "18:17"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.1152.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.1152",
+	"id": "Tobu.Kinugawa.1154.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.1154",
 	"r": "Tobu.Kinugawa",
-	"n": "1152",
+	"n": "1154",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -5597,7 +5616,7 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1152.SaturdayHoliday"
+		"Tobu.Nikko.1154.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
@@ -5623,18 +5642,18 @@
 		"a": "19:14"
 	}],
 	"nm": [{
-		"ja": "リバティ会津 152号",
-		"en": "Revaty Aizu 152",
-		"ko": "Revaty 아이즈 152",
-		"zh-Hans": "Revaty会津 152",
-		"zh-Hant": "Revaty會津 152"
+		"ja": "リバティ会津 154号",
+		"en": "Revaty Aizu 154",
+		"ko": "Revaty 아이즈 154",
+		"zh-Hans": "Revaty会津 154",
+		"zh-Hant": "Revaty會津 154"
 	}],
 	"v": "500"
 }, {
-	"id": "Tobu.Kinugawa.332N.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.332N",
+	"id": "Tobu.Kinugawa.334N.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.334N",
 	"r": "Tobu.Kinugawa",
-	"n": "332N",
+	"n": "334N",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -5653,36 +5672,36 @@
 	}, {
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
 		"a": "19:26",
-		"d": "19:35"
+		"d": "19:33"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "19:38",
-		"d": "19:38"
+		"a": "19:35",
+		"d": "19:36"
 	}, {
 		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "19:39",
-		"d": "19:40"
+		"a": "19:37",
+		"d": "19:38"
 	}, {
 		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "19:44",
-		"d": "19:44"
+		"a": "19:41",
+		"d": "19:42"
 	}, {
 		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "19:49",
-		"d": "19:51"
+		"a": "19:47",
+		"d": "19:47"
 	}, {
 		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "19:56",
-		"d": "19:56"
+		"a": "19:52",
+		"d": "19:55"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "19:59"
+		"a": "19:57"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.334N.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.334N",
+	"id": "Tobu.Kinugawa.336N.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.336N",
 	"r": "Tobu.Kinugawa",
-	"n": "334N",
+	"n": "336N",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -5727,10 +5746,10 @@
 		"a": "20:51"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.336N.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.336N",
+	"id": "Tobu.Kinugawa.338N.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.338N",
 	"r": "Tobu.Kinugawa",
-	"n": "336N",
+	"n": "338N",
 	"y": "Tobu.Local",
 	"d": "Inbound",
 	"os": [
@@ -5740,7 +5759,7 @@
 		"Tobu.Nikko.TobuNikko"
 	],
 	"nt": [
-		"Tobu.Nikko.717N.SaturdayHoliday"
+		"Tobu.Nikko.715N.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.ShinFujiwara",
@@ -5776,50 +5795,6 @@
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
 		"a": "22:01"
-	}]
-}, {
-	"id": "Tobu.Kinugawa.324N.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.324N",
-	"r": "Tobu.Kinugawa",
-	"n": "324N",
-	"y": "Tobu.Local",
-	"d": "Inbound",
-	"os": [
-		"Tobu.Kinugawa.KinugawaKoen"
-	],
-	"ds": [
-		"Tobu.Kinugawa.ShimoImaichi"
-	],
-	"tt": [{
-		"s": "Tobu.Kinugawa.KinugawaKoen",
-		"d": "14:32"
-	}, {
-		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"a": "14:35",
-		"d": "14:36"
-	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "14:38",
-		"d": "14:39"
-	}, {
-		"s": "Tobu.Kinugawa.Kosagoe",
-		"a": "14:40",
-		"d": "14:41"
-	}, {
-		"s": "Tobu.Kinugawa.ShinTakatoku",
-		"a": "14:45",
-		"d": "14:45"
-	}, {
-		"s": "Tobu.Kinugawa.Okuwa",
-		"a": "14:50",
-		"d": "14:52"
-	}, {
-		"s": "Tobu.Kinugawa.Daiyamuko",
-		"a": "14:57",
-		"d": "14:57"
-	}, {
-		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "14:59"
 	}]
 }, {
 	"id": "Tobu.Kinugawa.302N.SaturdayHoliday",
@@ -5862,10 +5837,10 @@
 		"a": "05:51"
 	}]
 }, {
-	"id": "Tobu.Kinugawa.1108.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.1108",
+	"id": "Tobu.Kinugawa.1110.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.1110",
 	"r": "Tobu.Kinugawa",
-	"n": "1108",
+	"n": "1110",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -5875,7 +5850,7 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1108.SaturdayHoliday"
+		"Tobu.Nikko.1110.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
@@ -5889,18 +5864,18 @@
 		"a": "07:00"
 	}],
 	"nm": [{
-		"ja": "リバティきぬ 108号",
-		"en": "Revaty Kinu 108",
-		"ko": "Revaty 기누 108",
-		"zh-Hans": "Revaty鬼怒 108",
-		"zh-Hant": "Revaty鬼怒 108"
+		"ja": "きぬ 110号",
+		"en": "Kinu 110",
+		"ko": "기누 110",
+		"zh-Hans": "鬼怒 110",
+		"zh-Hant": "鬼怒 110"
 	}],
-	"v": "500"
+	"v": "100"
 }, {
-	"id": "Tobu.Kinugawa.1114.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.1114",
+	"id": "Tobu.Kinugawa.1116.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.1116",
 	"r": "Tobu.Kinugawa",
-	"n": "1114",
+	"n": "1116",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -5910,7 +5885,7 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1114.SaturdayHoliday"
+		"Tobu.Nikko.1116.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
@@ -5924,48 +5899,13 @@
 		"a": "09:29"
 	}],
 	"nm": [{
-		"ja": "きぬ 114号",
-		"en": "Kinu 114",
-		"ko": "기누 114",
-		"zh-Hans": "鬼怒 114",
-		"zh-Hant": "鬼怒 114"
+		"ja": "きぬ 116号",
+		"en": "Kinu 116",
+		"ko": "기누 116",
+		"zh-Hans": "鬼怒 116",
+		"zh-Hant": "鬼怒 116"
 	}],
 	"v": "100"
-}, {
-	"id": "Tobu.Kinugawa.1118.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.1118",
-	"r": "Tobu.Kinugawa",
-	"n": "1118",
-	"y": "Tobu.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"Tobu.Kinugawa.KinugawaOnsen"
-	],
-	"ds": [
-		"Tobu.TobuSkytree.Asakusa"
-	],
-	"nt": [
-		"Tobu.Nikko.1118.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"d": "10:10"
-	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "10:12",
-		"d": "10:13"
-	}, {
-		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "10:28"
-	}],
-	"nm": [{
-		"ja": "リバティきぬ 118号",
-		"en": "Revaty Kinu 118",
-		"ko": "Revaty 기누 118",
-		"zh-Hans": "Revaty鬼怒 118",
-		"zh-Hant": "Revaty鬼怒 118"
-	}],
-	"v": "500"
 }, {
 	"id": "Tobu.Kinugawa.1122.SaturdayHoliday",
 	"t": "Tobu.Kinugawa.1122",
@@ -5984,6 +5924,41 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
+		"d": "10:25"
+	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "10:27",
+		"d": "10:28"
+	}, {
+		"s": "Tobu.Kinugawa.ShimoImaichi",
+		"a": "10:50"
+	}],
+	"nm": [{
+		"ja": "リバティきぬ 122号",
+		"en": "Revaty Kinu 122",
+		"ko": "Revaty 기누 122",
+		"zh-Hans": "Revaty鬼怒 122",
+		"zh-Hant": "Revaty鬼怒 122"
+	}],
+	"v": "500"
+}, {
+	"id": "Tobu.Kinugawa.1124.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.1124",
+	"r": "Tobu.Kinugawa",
+	"n": "1124",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kinugawa.KinugawaOnsen"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Nikko.1124.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kinugawa.KinugawaOnsen",
 		"d": "11:10"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
@@ -5994,11 +5969,11 @@
 		"a": "11:29"
 	}],
 	"nm": [{
-		"ja": "リバティきぬ 122号",
-		"en": "Revaty Kinu 122",
-		"ko": "Revaty 기누 122",
-		"zh-Hans": "Revaty鬼怒 122",
-		"zh-Hant": "Revaty鬼怒 122"
+		"ja": "リバティきぬ 124号",
+		"en": "Revaty Kinu 124",
+		"ko": "Revaty 기누 124",
+		"zh-Hans": "Revaty鬼怒 124",
+		"zh-Hant": "Revaty鬼怒 124"
 	}],
 	"v": "500"
 }, {
@@ -6101,6 +6076,41 @@
 	}],
 	"v": "253"
 }, {
+	"id": "Tobu.Kinugawa.1140.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.1140",
+	"r": "Tobu.Kinugawa",
+	"n": "1140",
+	"y": "Tobu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"Tobu.Kinugawa.KinugawaOnsen"
+	],
+	"ds": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"nt": [
+		"Tobu.Nikko.1140.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Tobu.Kinugawa.KinugawaOnsen",
+		"d": "15:21"
+	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "15:24",
+		"d": "15:24"
+	}, {
+		"s": "Tobu.Kinugawa.ShimoImaichi",
+		"a": "15:44"
+	}],
+	"nm": [{
+		"ja": "スペーシアX 8号",
+		"en": "Spacia X 8",
+		"ko": "스페이시아 X 8",
+		"zh-Hans": "SPACIA X 8",
+		"zh-Hant": "SPACIA X 8"
+	}],
+	"v": "N100"
+}, {
 	"id": "Tobu.Kinugawa.6.SaturdayHoliday",
 	"t": "Tobu.Kinugawa.6",
 	"r": "Tobu.Kinugawa",
@@ -6115,14 +6125,14 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"d": "15:05"
+		"d": "15:41"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "15:09",
-		"d": "15:10"
+		"a": "15:46",
+		"d": "15:47"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "15:44"
+		"a": "16:21"
 	}],
 	"nm": [{
 		"ja": "SL大樹 6号",
@@ -6133,10 +6143,10 @@
 	}],
 	"v": "C11"
 }, {
-	"id": "Tobu.Kinugawa.1142.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.1142",
+	"id": "Tobu.Kinugawa.1144.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.1144",
 	"r": "Tobu.Kinugawa",
-	"n": "1142",
+	"n": "1144",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -6146,27 +6156,27 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1142.SaturdayHoliday"
+		"Tobu.Nikko.1144.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"d": "16:37"
-	}, {
-		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "16:40",
 		"d": "16:40"
 	}, {
+		"s": "Tobu.Kinugawa.TobuWorldSquare",
+		"a": "16:43",
+		"d": "16:43"
+	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "16:56"
+		"a": "16:59"
 	}],
 	"nm": [{
-		"ja": "きぬ 142号",
-		"en": "Kinu 142",
-		"ko": "기누 142",
-		"zh-Hans": "鬼怒 142",
-		"zh-Hant": "鬼怒 142"
+		"ja": "スペーシアX 10号",
+		"en": "Spacia X 10",
+		"ko": "스페이시아 X 10",
+		"zh-Hans": "SPACIA X 10",
+		"zh-Hant": "SPACIA X 10"
 	}],
-	"v": "100"
+	"v": "N100"
 }, {
 	"id": "Tobu.Kinugawa.8.SaturdayHoliday",
 	"t": "Tobu.Kinugawa.8",
@@ -6182,14 +6192,14 @@
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"d": "16:43"
+		"d": "16:45"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "16:47",
-		"d": "16:48"
+		"a": "16:49",
+		"d": "16:50"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "17:18"
+		"a": "17:20"
 	}],
 	"nm": [{
 		"ja": "SL大樹 8号",
@@ -6200,10 +6210,10 @@
 	}],
 	"v": "C11"
 }, {
-	"id": "Tobu.Kinugawa.1154.SaturdayHoliday",
-	"t": "Tobu.Kinugawa.1154",
+	"id": "Tobu.Kinugawa.1156.SaturdayHoliday",
+	"t": "Tobu.Kinugawa.1156",
 	"r": "Tobu.Kinugawa",
-	"n": "1154",
+	"n": "1156",
 	"y": "Tobu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -6213,25 +6223,25 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"nt": [
-		"Tobu.Nikko.1154.SaturdayHoliday"
+		"Tobu.Nikko.1156.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tobu.Kinugawa.KinugawaOnsen",
-		"d": "19:29"
+		"d": "19:28"
 	}, {
 		"s": "Tobu.Kinugawa.TobuWorldSquare",
-		"a": "19:31",
-		"d": "19:32"
+		"a": "19:30",
+		"d": "19:31"
 	}, {
 		"s": "Tobu.Kinugawa.ShimoImaichi",
-		"a": "19:49"
+		"a": "19:46"
 	}],
 	"nm": [{
-		"ja": "リバティきぬ 154号",
-		"en": "Revaty Kinu 154",
-		"ko": "Revaty 기누 154",
-		"zh-Hans": "Revaty鬼怒 154",
-		"zh-Hant": "Revaty鬼怒 154"
+		"ja": "きぬ 156号",
+		"en": "Kinu 156",
+		"ko": "기누 156",
+		"zh-Hans": "鬼怒 156",
+		"zh-Hant": "鬼怒 156"
 	}],
-	"v": "500"
+	"v": "100"
 }]

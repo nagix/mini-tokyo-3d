@@ -220,7 +220,7 @@
 		"d": "05:23"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
-		"a": "05:27",
+		"a": "05:26",
 		"d": "05:27"
 	}, {
 		"s": "Tokyu.Toyoko.GakugeiDaigaku",
@@ -490,7 +490,7 @@
 		"d": "06:02"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "06:04",
+		"a": "06:03",
 		"d": "06:04"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
@@ -499,10 +499,10 @@
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
 		"a": "06:09",
-		"d": "06:10"
+		"d": "06:09"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "06:12",
+		"a": "06:11",
 		"d": "06:12"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
@@ -738,19 +738,19 @@
 		"d": "06:26"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
-		"a": "06:27",
+		"a": "06:28",
 		"d": "06:28"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
 		"a": "06:30",
-		"d": "06:30"
+		"d": "06:31"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
 		"a": "06:33",
 		"d": "06:33"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
-		"a": "06:34",
+		"a": "06:35",
 		"d": "06:38"
 	}, {
 		"s": "Tokyu.Toyoko.Myorenji",
@@ -3524,10 +3524,10 @@
 		"a": "08:49"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.130081.Weekday",
-	"t": "Tokyu.Toyoko.130081",
+	"id": "Tokyu.Toyoko.132081.Weekday",
+	"t": "Tokyu.Toyoko.132081",
 	"r": "Tokyu.Toyoko",
-	"n": "130081",
+	"n": "132081",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -3537,10 +3537,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A630M.Weekday"
+		"TokyoMetro.Fukutoshin.A632M.Weekday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.130081.Weekday"
+		"Minatomirai.Minatomirai.132081.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -3734,10 +3734,10 @@
 		"a": "08:44"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.992081.Weekday",
-	"t": "Tokyu.Toyoko.992081",
+	"id": "Tokyu.Toyoko.995081.Weekday",
+	"t": "Tokyu.Toyoko.995081",
 	"r": "Tokyu.Toyoko",
-	"n": "992081",
+	"n": "995081",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -3747,10 +3747,10 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A892G.Weekday"
+		"TokyoMetro.Fukutoshin.A895G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.992081.Weekday"
+		"Tokyu.TokyuShinYokohama.995081.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -3886,10 +3886,10 @@
 		"a": "09:03"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.132081.Weekday",
-	"t": "Tokyu.Toyoko.132081",
+	"id": "Tokyu.Toyoko.134081.Weekday",
+	"t": "Tokyu.Toyoko.134081",
 	"r": "Tokyu.Toyoko",
-	"n": "132081",
+	"n": "134081",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -3899,10 +3899,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A632M.Weekday"
+		"TokyoMetro.Fukutoshin.A634M.Weekday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.132081.Weekday"
+		"Minatomirai.Minatomirai.134081.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -4096,23 +4096,23 @@
 		"a": "08:58"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.993081.Weekday",
-	"t": "Tokyu.Toyoko.993081",
+	"id": "Tokyu.Toyoko.991081.Weekday",
+	"t": "Tokyu.Toyoko.991081",
 	"r": "Tokyu.Toyoko",
-	"n": "993081",
+	"n": "991081",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Fukutoshin.ShinjukuSanchome"
 	],
 	"ds": [
-		"Sotetsu.Main.Yamato"
+		"Sotetsu.SotetsuShinYokohama.Nishiya"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A893G.Weekday"
+		"TokyoMetro.Fukutoshin.A891G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.993081.Weekday"
+		"Tokyu.TokyuShinYokohama.991081.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -4248,23 +4248,23 @@
 		"a": "09:19"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.134081.Weekday",
-	"t": "Tokyu.Toyoko.134081",
+	"id": "Tokyu.Toyoko.126081.Weekday",
+	"t": "Tokyu.Toyoko.126081",
 	"r": "Tokyu.Toyoko",
-	"n": "134081",
+	"n": "126081",
 	"y": "Tokyu.CommuterLimitedExpress",
 	"d": "Outbound",
 	"os": [
-		"Seibu.Ikebukuro.Hanno"
+		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"ds": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A734M.Weekday"
+		"TokyoMetro.Fukutoshin.A726M.Weekday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.134081.Weekday"
+		"Minatomirai.Minatomirai.126081.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -4436,20 +4436,20 @@
 		"d": "09:16"
 	}, {
 		"s": "Tokyu.Toyoko.Myorenji",
-		"a": "09:18",
-		"d": "09:18"
+		"a": "09:19",
+		"d": "09:19"
 	}, {
 		"s": "Tokyu.Toyoko.Hakuraku",
-		"a": "09:20",
-		"d": "09:20"
+		"a": "09:21",
+		"d": "09:21"
 	}, {
 		"s": "Tokyu.Toyoko.HigashiHakuraku",
 		"a": "09:22",
 		"d": "09:22"
 	}, {
 		"s": "Tokyu.Toyoko.Tammachi",
-		"a": "09:23",
-		"d": "09:23"
+		"a": "09:24",
+		"d": "09:24"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
 		"a": "09:25"
@@ -4564,19 +4564,19 @@
 		"d": "08:57"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "08:58",
-		"d": "08:58"
+		"a": "08:59",
+		"d": "08:59"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "09:00",
-		"d": "09:00"
+		"d": "09:01"
 	}, {
 		"s": "Tokyu.Toyoko.ShinMaruko",
-		"a": "09:02",
-		"d": "09:02"
+		"a": "09:03",
+		"d": "09:03"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"a": "09:03",
+		"a": "09:04",
 		"d": "09:04"
 	}, {
 		"s": "Tokyu.Toyoko.Motosumiyoshi",
@@ -4642,19 +4642,19 @@
 		"d": "08:48"
 	}, {
 		"s": "Tokyu.Toyoko.DaikanYama",
-		"a": "08:50",
-		"d": "08:50"
+		"a": "08:51",
+		"d": "08:51"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
 		"a": "08:52",
-		"d": "08:52"
+		"d": "08:53"
 	}, {
 		"s": "Tokyu.Toyoko.Yutenji",
 		"a": "08:54",
-		"d": "08:54"
+		"d": "08:55"
 	}, {
 		"s": "Tokyu.Toyoko.GakugeiDaigaku",
-		"a": "08:55",
+		"a": "08:56",
 		"d": "08:56"
 	}, {
 		"s": "Tokyu.Toyoko.ToritsuDaigaku",
@@ -4666,31 +4666,31 @@
 		"d": "09:03"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "09:04",
+		"a": "09:05",
 		"d": "09:05"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "09:06",
-		"d": "09:06"
+		"d": "09:07"
 	}, {
 		"s": "Tokyu.Toyoko.ShinMaruko",
-		"a": "09:08",
-		"d": "09:08"
+		"a": "09:09",
+		"d": "09:09"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"a": "09:09",
+		"a": "09:10",
 		"d": "09:10"
 	}, {
 		"s": "Tokyu.Toyoko.Motosumiyoshi",
 		"a": "09:12",
-		"d": "09:14"
+		"d": "09:15"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
 		"a": "09:16",
-		"d": "09:16"
+		"d": "09:17"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "09:18",
+		"a": "09:19",
 		"d": "09:19"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
@@ -4702,12 +4702,12 @@
 		"d": "09:26"
 	}, {
 		"s": "Tokyu.Toyoko.Myorenji",
-		"a": "09:28",
-		"d": "09:28"
+		"a": "09:29",
+		"d": "09:29"
 	}, {
 		"s": "Tokyu.Toyoko.Hakuraku",
-		"a": "09:30",
-		"d": "09:30"
+		"a": "09:31",
+		"d": "09:31"
 	}, {
 		"s": "Tokyu.Toyoko.HigashiHakuraku",
 		"a": "09:32",
@@ -4749,41 +4749,41 @@
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "09:01",
-		"d": "09:01"
+		"d": "09:02"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"a": "09:05",
+		"a": "09:06",
 		"d": "09:06"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
 		"a": "09:09",
-		"d": "09:09"
+		"d": "09:10"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
 		"a": "09:14",
-		"d": "09:14"
+		"d": "09:15"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
 		"a": "09:21"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.991081.Weekday",
-	"t": "Tokyu.Toyoko.991081",
+	"id": "Tokyu.Toyoko.993081.Weekday",
+	"t": "Tokyu.Toyoko.993081",
 	"r": "Tokyu.Toyoko",
-	"n": "991081",
+	"n": "993081",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Fukutoshin.ShinjukuSanchome"
 	],
 	"ds": [
-		"Sotetsu.SotetsuShinYokohama.Nishiya"
+		"Sotetsu.Main.Yamato"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A891G.Weekday"
+		"TokyoMetro.Fukutoshin.A893G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.991081.Weekday"
+		"Tokyu.TokyuShinYokohama.993081.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -4798,11 +4798,11 @@
 		"d": "09:01"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "09:03",
+		"a": "09:04",
 		"d": "09:05"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "09:06",
+		"a": "09:07",
 		"d": "09:07"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
@@ -4811,10 +4811,10 @@
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
 		"a": "09:11",
-		"d": "09:11"
+		"d": "09:12"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
-		"a": "09:14"
+		"a": "09:15"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.025081.Weekday",
@@ -5945,7 +5945,7 @@
 	"y": "Tokyu.Local",
 	"d": "Outbound",
 	"os": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"ds": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
@@ -6138,11 +6138,11 @@
 		"d": "10:01"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "10:03",
+		"a": "10:02",
 		"d": "10:03"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"a": "10:06"
+		"a": "10:05"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.009091.Weekday",
@@ -7160,20 +7160,20 @@
 		"a": "11:00"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.992101.Weekday",
-	"t": "Tokyu.Toyoko.992101",
+	"id": "Tokyu.Toyoko.995101.Weekday",
+	"t": "Tokyu.Toyoko.995101",
 	"r": "Tokyu.Toyoko",
-	"n": "992101",
+	"n": "995101",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
 		"Tokyu.Toyoko.Shibuya"
 	],
 	"ds": [
-		"Sotetsu.Izumino.Shonandai"
+		"Sotetsu.SotetsuShinYokohama.Nishiya"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.992101.Weekday"
+		"Tokyu.TokyuShinYokohama.995101.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -7916,13 +7916,13 @@
 		"d": "11:48"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "11:49"
+		"a": "11:50"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.120111.Weekday",
-	"t": "Tokyu.Toyoko.120111",
+	"id": "Tokyu.Toyoko.112111.Weekday",
+	"t": "Tokyu.Toyoko.112111",
 	"r": "Tokyu.Toyoko",
-	"n": "120111",
+	"n": "112111",
 	"y": "Tokyu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -7932,10 +7932,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1020M.Weekday"
+		"TokyoMetro.Fukutoshin.A1012M.Weekday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.120111.Weekday"
+		"Minatomirai.Minatomirai.112111.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -8557,7 +8557,7 @@
 		"d": "12:18"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "12:19"
+		"a": "12:20"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.787111.Weekday",
@@ -8763,10 +8763,10 @@
 		"a": "12:26"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995111.Weekday",
-	"t": "Tokyu.Toyoko.995111",
+	"id": "Tokyu.Toyoko.992111.Weekday",
+	"t": "Tokyu.Toyoko.992111",
 	"r": "Tokyu.Toyoko",
-	"n": "995111",
+	"n": "992111",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -8776,10 +8776,10 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1195G.Weekday"
+		"TokyoMetro.Fukutoshin.A1192G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.995111.Weekday"
+		"Tokyu.TokyuShinYokohama.992111.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -9217,13 +9217,13 @@
 		"d": "12:48"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "12:49"
+		"a": "12:50"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.112121.Weekday",
-	"t": "Tokyu.Toyoko.112121",
+	"id": "Tokyu.Toyoko.120121.Weekday",
+	"t": "Tokyu.Toyoko.120121",
 	"r": "Tokyu.Toyoko",
-	"n": "112121",
+	"n": "120121",
 	"y": "Tokyu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -9233,10 +9233,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1112M.Weekday"
+		"TokyoMetro.Fukutoshin.A1120M.Weekday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.112121.Weekday"
+		"Minatomirai.Minatomirai.120121.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -9877,7 +9877,7 @@
 		"d": "13:18"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "13:19"
+		"a": "13:20"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.779121.Weekday",
@@ -10537,7 +10537,7 @@
 		"d": "13:48"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "13:49"
+		"a": "13:50"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.729131.Weekday",
@@ -11197,7 +11197,7 @@
 		"d": "14:18"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "14:19"
+		"a": "14:20"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.106131.Weekday",
@@ -11403,10 +11403,10 @@
 		"a": "14:26"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.991131.Weekday",
-	"t": "Tokyu.Toyoko.991131",
+	"id": "Tokyu.Toyoko.995131.Weekday",
+	"t": "Tokyu.Toyoko.995131",
 	"r": "Tokyu.Toyoko",
-	"n": "991131",
+	"n": "995131",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -11416,10 +11416,10 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1391G.Weekday"
+		"TokyoMetro.Fukutoshin.A1395G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.991131.Weekday"
+		"Tokyu.TokyuShinYokohama.995131.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -11857,13 +11857,13 @@
 		"d": "14:48"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "14:49"
+		"a": "14:50"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.120141.Weekday",
-	"t": "Tokyu.Toyoko.120141",
+	"id": "Tokyu.Toyoko.112141.Weekday",
+	"t": "Tokyu.Toyoko.112141",
 	"r": "Tokyu.Toyoko",
-	"n": "120141",
+	"n": "112141",
 	"y": "Tokyu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -11873,10 +11873,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1320M.Weekday"
+		"TokyoMetro.Fukutoshin.A1312M.Weekday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.120141.Weekday"
+		"Minatomirai.Minatomirai.112141.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -12517,7 +12517,7 @@
 		"d": "15:18"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "15:19"
+		"a": "15:20"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.060141.Weekday",
@@ -12723,10 +12723,10 @@
 		"a": "15:26"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.992141.Weekday",
-	"t": "Tokyu.Toyoko.992141",
+	"id": "Tokyu.Toyoko.991141.Weekday",
+	"t": "Tokyu.Toyoko.991141",
 	"r": "Tokyu.Toyoko",
-	"n": "992141",
+	"n": "991141",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -12736,10 +12736,10 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1492G.Weekday"
+		"TokyoMetro.Fukutoshin.A1491G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.992141.Weekday"
+		"Tokyu.TokyuShinYokohama.991141.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -13177,13 +13177,13 @@
 		"d": "15:48"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "15:49"
+		"a": "15:50"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.112151.Weekday",
-	"t": "Tokyu.Toyoko.112151",
+	"id": "Tokyu.Toyoko.120151.Weekday",
+	"t": "Tokyu.Toyoko.120151",
 	"r": "Tokyu.Toyoko",
-	"n": "112151",
+	"n": "120151",
 	"y": "Tokyu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -13193,10 +13193,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1412M.Weekday"
+		"TokyoMetro.Fukutoshin.A1420M.Weekday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.112151.Weekday"
+		"Minatomirai.Minatomirai.120151.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -13840,10 +13840,10 @@
 		"a": "16:19"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.124151.Weekday",
-	"t": "Tokyu.Toyoko.124151",
+	"id": "Tokyu.Toyoko.130151.Weekday",
+	"t": "Tokyu.Toyoko.130151",
 	"r": "Tokyu.Toyoko",
-	"n": "124151",
+	"n": "130151",
 	"y": "Tokyu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -13853,10 +13853,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1424M.Weekday"
+		"TokyoMetro.Fukutoshin.A1430M.Weekday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.124151.Weekday"
+		"Minatomirai.Minatomirai.130151.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -14043,10 +14043,10 @@
 		"a": "16:26"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995151.Weekday",
-	"t": "Tokyu.Toyoko.995151",
+	"id": "Tokyu.Toyoko.992151.Weekday",
+	"t": "Tokyu.Toyoko.992151",
 	"r": "Tokyu.Toyoko",
-	"n": "995151",
+	"n": "992151",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -14056,10 +14056,10 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1595G.Weekday"
+		"TokyoMetro.Fukutoshin.A1592G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.995151.Weekday"
+		"Tokyu.TokyuShinYokohama.992151.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -15883,10 +15883,10 @@
 		"a": "17:51"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.991171.Weekday",
-	"t": "Tokyu.Toyoko.991171",
+	"id": "Tokyu.Toyoko.995171.Weekday",
+	"t": "Tokyu.Toyoko.995171",
 	"r": "Tokyu.Toyoko",
-	"n": "991171",
+	"n": "995171",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -15896,10 +15896,10 @@
 		"Sotetsu.SotetsuShinYokohama.Nishiya"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1691G.Weekday"
+		"TokyoMetro.Fukutoshin.A1695G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.991171.Weekday"
+		"Tokyu.TokyuShinYokohama.995171.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -16035,10 +16035,10 @@
 		"a": "17:58"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.106171.Weekday",
-	"t": "Tokyu.Toyoko.106171",
+	"id": "Tokyu.Toyoko.112171.Weekday",
+	"t": "Tokyu.Toyoko.112171",
 	"r": "Tokyu.Toyoko",
-	"n": "106171",
+	"n": "112171",
 	"y": "Tokyu.CommuterLimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -16048,10 +16048,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1606M.Weekday"
+		"TokyoMetro.Fukutoshin.A1612M.Weekday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.106171.Weekday"
+		"Minatomirai.Minatomirai.112171.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -17687,10 +17687,10 @@
 		"a": "18:53"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.992181.Weekday",
-	"t": "Tokyu.Toyoko.992181",
+	"id": "Tokyu.Toyoko.991181.Weekday",
+	"t": "Tokyu.Toyoko.991181",
 	"r": "Tokyu.Toyoko",
-	"n": "992181",
+	"n": "991181",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -17700,10 +17700,10 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1792G.Weekday"
+		"TokyoMetro.Fukutoshin.A1791G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.992181.Weekday"
+		"Tokyu.TokyuShinYokohama.991181.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -17800,16 +17800,16 @@
 		"d": "18:49"
 	}, {
 		"s": "Tokyu.Toyoko.Motosumiyoshi",
-		"a": "18:51",
+		"a": "18:50",
 		"d": "18:51"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
-		"a": "18:53",
+		"a": "18:52",
 		"d": "18:53"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
 		"a": "18:55",
-		"d": "18:56"
+		"d": "18:55"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
 		"a": "18:58",
@@ -17885,6 +17885,82 @@
 		"a": "19:00"
 	}]
 }, {
+	"id": "Tokyu.Toyoko.033181.Weekday",
+	"t": "Tokyu.Toyoko.033181",
+	"r": "Tokyu.Toyoko",
+	"n": "033181",
+	"y": "Tokyu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tokyu.Toyoko.Shibuya"
+	],
+	"ds": [
+		"Tokyu.Toyoko.Kikuna"
+	],
+	"tt": [{
+		"s": "Tokyu.Toyoko.Shibuya",
+		"d": "18:31"
+	}, {
+		"s": "Tokyu.Toyoko.DaikanYama",
+		"a": "18:34",
+		"d": "18:34"
+	}, {
+		"s": "Tokyu.Toyoko.NakaMeguro",
+		"a": "18:35",
+		"d": "18:35"
+	}, {
+		"s": "Tokyu.Toyoko.Yutenji",
+		"a": "18:37",
+		"d": "18:37"
+	}, {
+		"s": "Tokyu.Toyoko.GakugeiDaigaku",
+		"a": "18:39",
+		"d": "18:39"
+	}, {
+		"s": "Tokyu.Toyoko.ToritsuDaigaku",
+		"a": "18:41",
+		"d": "18:41"
+	}, {
+		"s": "Tokyu.Toyoko.Jiyugaoka",
+		"a": "18:43",
+		"d": "18:46"
+	}, {
+		"s": "Tokyu.Toyoko.DenEnChofu",
+		"a": "18:48",
+		"d": "18:49"
+	}, {
+		"s": "Tokyu.Toyoko.Tamagawa",
+		"a": "18:50",
+		"d": "18:50"
+	}, {
+		"s": "Tokyu.Toyoko.ShinMaruko",
+		"a": "18:52",
+		"d": "18:52"
+	}, {
+		"s": "Tokyu.Toyoko.MusashiKosugi",
+		"a": "18:53",
+		"d": "18:54"
+	}, {
+		"s": "Tokyu.Toyoko.Motosumiyoshi",
+		"a": "18:55",
+		"d": "18:56"
+	}, {
+		"s": "Tokyu.Toyoko.Hiyoshi",
+		"a": "18:57",
+		"d": "18:58"
+	}, {
+		"s": "Tokyu.Toyoko.Tsunashima",
+		"a": "19:00",
+		"d": "19:00"
+	}, {
+		"s": "Tokyu.Toyoko.Okurayama",
+		"a": "19:03",
+		"d": "19:03"
+	}, {
+		"s": "Tokyu.Toyoko.Kikuna",
+		"a": "19:05"
+	}]
+}, {
 	"id": "Tokyu.Toyoko.056181.Weekday",
 	"t": "Tokyu.Toyoko.056181",
 	"r": "Tokyu.Toyoko",
@@ -17921,27 +17997,27 @@
 		"d": "18:47"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "18:49",
+		"a": "18:48",
 		"d": "18:49"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
 		"a": "18:51",
-		"d": "18:52"
+		"d": "18:51"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
-		"a": "18:55",
-		"d": "18:56"
+		"a": "18:54",
+		"d": "18:55"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "18:58",
-		"d": "18:59"
+		"a": "18:57",
+		"d": "18:58"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
-		"a": "19:02",
+		"a": "19:01",
 		"d": "19:02"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "19:08"
+		"a": "19:07"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.029181.Weekday",
@@ -18019,8 +18095,8 @@
 		"d": "19:02"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
-		"a": "19:04",
-		"d": "19:04"
+		"a": "19:05",
+		"d": "19:05"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
 		"a": "19:06",
@@ -18557,10 +18633,10 @@
 		"a": "19:43"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.112191.Weekday",
-	"t": "Tokyu.Toyoko.112191",
+	"id": "Tokyu.Toyoko.120191.Weekday",
+	"t": "Tokyu.Toyoko.120191",
 	"r": "Tokyu.Toyoko",
-	"n": "112191",
+	"n": "120191",
 	"y": "Tokyu.CommuterLimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -18570,10 +18646,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1712M.Weekday"
+		"TokyoMetro.Fukutoshin.A1720M.Weekday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.112191.Weekday"
+		"Minatomirai.Minatomirai.120191.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -19123,10 +19199,10 @@
 		"a": "19:53"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995191.Weekday",
-	"t": "Tokyu.Toyoko.995191",
+	"id": "Tokyu.Toyoko.992191.Weekday",
+	"t": "Tokyu.Toyoko.992191",
 	"r": "Tokyu.Toyoko",
-	"n": "995191",
+	"n": "992191",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -19136,10 +19212,10 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1895G.Weekday"
+		"TokyoMetro.Fukutoshin.A1892G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.995191.Weekday"
+		"Tokyu.TokyuShinYokohama.992191.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -20194,10 +20270,10 @@
 		"a": "20:38"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.991201.Weekday",
-	"t": "Tokyu.Toyoko.991201",
+	"id": "Tokyu.Toyoko.995201.Weekday",
+	"t": "Tokyu.Toyoko.995201",
 	"r": "Tokyu.Toyoko",
-	"n": "991201",
+	"n": "995201",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -20207,10 +20283,10 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1991G.Weekday"
+		"TokyoMetro.Fukutoshin.A1995G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.991201.Weekday"
+		"Tokyu.TokyuShinYokohama.995201.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -20557,7 +20633,7 @@
 	"t": "Tokyu.Toyoko.031201",
 	"r": "Tokyu.Toyoko",
 	"n": "031201",
-	"y": "Tokyu.Express",
+	"y": "Tokyu.Local",
 	"d": "Outbound",
 	"os": [
 		"Tokyu.Toyoko.Shibuya"
@@ -20567,27 +20643,43 @@
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
-		"d": "20:23"
+		"d": "20:22"
+	}, {
+		"s": "Tokyu.Toyoko.DaikanYama",
+		"a": "20:25",
+		"d": "20:25"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
 		"a": "20:26",
+		"d": "20:26"
+	}, {
+		"s": "Tokyu.Toyoko.Yutenji",
+		"a": "20:28",
 		"d": "20:28"
 	}, {
 		"s": "Tokyu.Toyoko.GakugeiDaigaku",
 		"a": "20:30",
-		"d": "20:31"
+		"d": "20:30"
+	}, {
+		"s": "Tokyu.Toyoko.ToritsuDaigaku",
+		"a": "20:32",
+		"d": "20:32"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "20:33",
+		"a": "20:34",
 		"d": "20:35"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "20:37",
+		"a": "20:36",
 		"d": "20:37"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "20:39",
-		"d": "20:39"
+		"a": "20:38",
+		"d": "20:38"
+	}, {
+		"s": "Tokyu.Toyoko.ShinMaruko",
+		"a": "20:40",
+		"d": "20:40"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
 		"a": "20:42"
@@ -20902,49 +20994,6 @@
 		"a": "21:08"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.032201.Weekday",
-	"t": "Tokyu.Toyoko.032201",
-	"r": "Tokyu.Toyoko",
-	"n": "032201",
-	"y": "Tokyu.Express",
-	"d": "Outbound",
-	"os": [
-		"TokyoMetro.Fukutoshin.Wakoshi"
-	],
-	"ds": [
-		"Tokyu.Toyoko.MusashiKosugi"
-	],
-	"pt": [
-		"TokyoMetro.Fukutoshin.A2032K.Weekday"
-	],
-	"tt": [{
-		"s": "Tokyu.Toyoko.Shibuya",
-		"d": "20:39"
-	}, {
-		"s": "Tokyu.Toyoko.NakaMeguro",
-		"a": "20:42",
-		"d": "20:43"
-	}, {
-		"s": "Tokyu.Toyoko.GakugeiDaigaku",
-		"a": "20:45",
-		"d": "20:46"
-	}, {
-		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "20:48",
-		"d": "20:50"
-	}, {
-		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "20:52",
-		"d": "20:52"
-	}, {
-		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "20:54",
-		"d": "20:54"
-	}, {
-		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"a": "20:57"
-	}]
-}, {
 	"id": "Tokyu.Toyoko.005201.Weekday",
 	"t": "Tokyu.Toyoko.005201",
 	"r": "Tokyu.Toyoko",
@@ -20955,13 +21004,72 @@
 		"Tobu.Tojo.Shiki"
 	],
 	"ds": [
-		"Minatomirai.Minatomirai.MotomachiChukagai"
+		"Tokyu.Toyoko.MusashiKosugi"
 	],
 	"pt": [
 		"TokyoMetro.Fukutoshin.A1905K.Weekday"
 	],
+	"tt": [{
+		"s": "Tokyu.Toyoko.Shibuya",
+		"d": "20:37"
+	}, {
+		"s": "Tokyu.Toyoko.DaikanYama",
+		"a": "20:40",
+		"d": "20:40"
+	}, {
+		"s": "Tokyu.Toyoko.NakaMeguro",
+		"a": "20:41",
+		"d": "20:42"
+	}, {
+		"s": "Tokyu.Toyoko.Yutenji",
+		"a": "20:43",
+		"d": "20:44"
+	}, {
+		"s": "Tokyu.Toyoko.GakugeiDaigaku",
+		"a": "20:45",
+		"d": "20:46"
+	}, {
+		"s": "Tokyu.Toyoko.ToritsuDaigaku",
+		"a": "20:48",
+		"d": "20:48"
+	}, {
+		"s": "Tokyu.Toyoko.Jiyugaoka",
+		"a": "20:49",
+		"d": "20:50"
+	}, {
+		"s": "Tokyu.Toyoko.DenEnChofu",
+		"a": "20:51",
+		"d": "20:52"
+	}, {
+		"s": "Tokyu.Toyoko.Tamagawa",
+		"a": "20:53",
+		"d": "20:53"
+	}, {
+		"s": "Tokyu.Toyoko.ShinMaruko",
+		"a": "20:55",
+		"d": "20:55"
+	}, {
+		"s": "Tokyu.Toyoko.MusashiKosugi",
+		"a": "20:57"
+	}]
+}, {
+	"id": "Tokyu.Toyoko.032201.Weekday",
+	"t": "Tokyu.Toyoko.032201",
+	"r": "Tokyu.Toyoko",
+	"n": "032201",
+	"y": "Tokyu.Local",
+	"d": "Outbound",
+	"os": [
+		"TokyoMetro.Fukutoshin.Wakoshi"
+	],
+	"ds": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.A2032K.Weekday"
+	],
 	"nt": [
-		"Minatomirai.Minatomirai.005201.Weekday"
+		"Minatomirai.Minatomirai.032201.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -21192,10 +21300,10 @@
 		"a": "21:35"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.134201.Weekday",
-	"t": "Tokyu.Toyoko.134201",
+	"id": "Tokyu.Toyoko.126201.Weekday",
+	"t": "Tokyu.Toyoko.126201",
 	"r": "Tokyu.Toyoko",
-	"n": "134201",
+	"n": "126201",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -21205,10 +21313,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1934M.Weekday"
+		"TokyoMetro.Fukutoshin.A1926M.Weekday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.134201.Weekday"
+		"Minatomirai.Minatomirai.126201.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -21972,7 +22080,7 @@
 		"Tobu.Tojo.Shiki"
 	],
 	"ds": [
-		"Sotetsu.Main.Ebina"
+		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
 		"TokyoMetro.Fukutoshin.A2052K.Weekday"
@@ -22453,10 +22561,10 @@
 		"a": "22:15"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.112211.Weekday",
-	"t": "Tokyu.Toyoko.112211",
+	"id": "Tokyu.Toyoko.120211.Weekday",
+	"t": "Tokyu.Toyoko.120211",
 	"r": "Tokyu.Toyoko",
-	"n": "112211",
+	"n": "120211",
 	"y": "Tokyu.CommuterLimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -22466,10 +22574,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A2112M.Weekday"
+		"TokyoMetro.Fukutoshin.A2120M.Weekday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.112211.Weekday"
+		"Minatomirai.Minatomirai.120211.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -22641,10 +22749,10 @@
 		"a": "22:06"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.992211.Weekday",
-	"t": "Tokyu.Toyoko.992211",
+	"id": "Tokyu.Toyoko.991211.Weekday",
+	"t": "Tokyu.Toyoko.991211",
 	"r": "Tokyu.Toyoko",
-	"n": "992211",
+	"n": "991211",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -22654,10 +22762,10 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A2192G.Weekday"
+		"TokyoMetro.Fukutoshin.A2191G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.992211.Weekday"
+		"Tokyu.TokyuShinYokohama.991211.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -23247,10 +23355,10 @@
 		"a": "23:05"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.134221.Weekday",
-	"t": "Tokyu.Toyoko.134221",
+	"id": "Tokyu.Toyoko.126221.Weekday",
+	"t": "Tokyu.Toyoko.126221",
 	"r": "Tokyu.Toyoko",
-	"n": "134221",
+	"n": "126221",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -23260,7 +23368,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.134221.Weekday"
+		"Minatomirai.Minatomirai.126221.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -23949,10 +24057,10 @@
 		"a": "23:07"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.991221.Weekday",
-	"t": "Tokyu.Toyoko.991221",
+	"id": "Tokyu.Toyoko.995221.Weekday",
+	"t": "Tokyu.Toyoko.995221",
 	"r": "Tokyu.Toyoko",
-	"n": "991221",
+	"n": "995221",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -23962,7 +24070,7 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.991221.Weekday"
+		"Tokyu.TokyuShinYokohama.995221.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -24243,10 +24351,10 @@
 		"a": "23:50"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995231.Weekday",
-	"t": "Tokyu.Toyoko.995231",
+	"id": "Tokyu.Toyoko.992231.Weekday",
+	"t": "Tokyu.Toyoko.992231",
 	"r": "Tokyu.Toyoko",
-	"n": "995231",
+	"n": "992231",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -24256,10 +24364,10 @@
 		"Sotetsu.Main.Ebina"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A2295G.Weekday"
+		"TokyoMetro.Fukutoshin.A2292G.Weekday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.995231.Weekday"
+		"Tokyu.TokyuShinYokohama.992231.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -24293,10 +24401,10 @@
 		"a": "23:25"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.112231.Weekday",
-	"t": "Tokyu.Toyoko.112231",
+	"id": "Tokyu.Toyoko.120231.Weekday",
+	"t": "Tokyu.Toyoko.120231",
 	"r": "Tokyu.Toyoko",
-	"n": "112231",
+	"n": "120231",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -24590,7 +24698,7 @@
 		"Tokyu.Toyoko.Shibuya"
 	],
 	"ds": [
-		"Sotetsu.Main.Yamato"
+		"Sotetsu.Izumino.Shonandai"
 	],
 	"nt": [
 		"Tokyu.TokyuShinYokohama.994231.Weekday"
@@ -25080,23 +25188,23 @@
 		"d": "23:57"
 	}, {
 		"s": "Tokyu.Toyoko.GakugeiDaigaku",
-		"a": "00:00",
+		"a": "23:59",
 		"d": "00:00"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "00:03",
-		"d": "00:04"
+		"d": "00:03"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "00:06",
-		"d": "00:06"
+		"a": "00:05",
+		"d": "00:05"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "00:08",
-		"d": "00:08"
+		"a": "00:06",
+		"d": "00:07"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"a": "00:10",
+		"a": "00:09",
 		"d": "00:11"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -25283,7 +25391,7 @@
 	}, {
 		"s": "Tokyu.Toyoko.GakugeiDaigaku",
 		"a": "00:13",
-		"d": "00:13"
+		"d": "00:14"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "00:16",
@@ -25537,10 +25645,10 @@
 		"a": "05:43"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.003061.Weekday",
-	"t": "Tokyu.Toyoko.003061",
+	"id": "Tokyu.Toyoko.003051.Weekday",
+	"t": "Tokyu.Toyoko.003051",
 	"r": "Tokyu.Toyoko",
-	"n": "003061",
+	"n": "003051",
 	"y": "Tokyu.Local",
 	"d": "Outbound",
 	"os": [
@@ -25550,30 +25658,30 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.003061.Weekday"
+		"Minatomirai.Minatomirai.003051.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"d": "06:08"
+		"d": "06:04"
 	}, {
 		"s": "Tokyu.Toyoko.Motosumiyoshi",
-		"a": "06:10",
-		"d": "06:10"
+		"a": "06:06",
+		"d": "06:09"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
-		"a": "06:12",
-		"d": "06:12"
+		"a": "06:11",
+		"d": "06:11"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "06:14",
-		"d": "06:15"
+		"a": "06:13",
+		"d": "06:14"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
-		"a": "06:17",
-		"d": "06:17"
+		"a": "06:16",
+		"d": "06:16"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
-		"a": "06:19",
+		"a": "06:18",
 		"d": "06:22"
 	}, {
 		"s": "Tokyu.Toyoko.Myorenji",
@@ -25770,14 +25878,14 @@
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
-		"d": "06:15"
+		"d": "06:14"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "06:17",
-		"d": "06:17"
+		"a": "06:16",
+		"d": "06:16"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
-		"a": "06:20",
+		"a": "06:19",
 		"d": "06:21"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -25804,16 +25912,16 @@
 		"d": "06:26"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "06:27",
+		"a": "06:28",
 		"d": "06:28"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
-		"a": "06:30",
-		"d": "06:30"
+		"a": "06:31",
+		"d": "06:31"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
 		"a": "06:32",
-		"d": "06:32"
+		"d": "06:33"
 	}, {
 		"s": "Tokyu.Toyoko.Myorenji",
 		"a": "06:35",
@@ -25914,10 +26022,10 @@
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
-		"d": "06:47"
+		"d": "06:48"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "06:49",
+		"a": "06:50",
 		"d": "06:50"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
@@ -25925,16 +26033,16 @@
 		"d": "06:52"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
-		"a": "06:53",
+		"a": "06:54",
 		"d": "06:54"
 	}, {
 		"s": "Tokyu.Toyoko.Myorenji",
-		"a": "06:56",
-		"d": "06:56"
+		"a": "06:57",
+		"d": "06:57"
 	}, {
 		"s": "Tokyu.Toyoko.Hakuraku",
-		"a": "06:58",
-		"d": "06:58"
+		"a": "06:59",
+		"d": "06:59"
 	}, {
 		"s": "Tokyu.Toyoko.HigashiHakuraku",
 		"a": "07:00",
@@ -26000,14 +26108,14 @@
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
 		"a": "07:03",
-		"d": "07:03"
+		"d": "07:04"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
 		"a": "07:06",
 		"d": "07:06"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
-		"a": "07:07",
+		"a": "07:08",
 		"d": "07:09"
 	}, {
 		"s": "Tokyu.Toyoko.Myorenji",
@@ -26085,8 +26193,8 @@
 		"d": "07:18"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
-		"a": "07:20",
-		"d": "07:20"
+		"a": "07:21",
+		"d": "07:21"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
 		"a": "07:22",
@@ -26796,7 +26904,7 @@
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
 		"a": "06:33",
-		"d": "06:34"
+		"d": "06:33"
 	}, {
 		"s": "Tokyu.Toyoko.Shibuya",
 		"a": "06:37"
@@ -27213,7 +27321,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
 		"Minatomirai.Minatomirai.704062.Weekday"
@@ -27370,7 +27478,7 @@
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "07:08",
-		"d": "07:09"
+		"d": "07:08"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "07:10",
@@ -27581,7 +27689,7 @@
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
 		"a": "07:03",
-		"d": "07:04"
+		"d": "07:03"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
 		"a": "07:06",
@@ -27682,7 +27790,7 @@
 		"d": "07:19"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "07:21",
+		"a": "07:20",
 		"d": "07:21"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
@@ -27752,23 +27860,23 @@
 		"d": "07:17"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "07:21",
+		"a": "07:20",
 		"d": "07:21"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "07:23",
-		"d": "07:23"
+		"a": "07:22",
+		"d": "07:22"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "07:25",
+		"a": "07:24",
 		"d": "07:25"
 	}, {
 		"s": "Tokyu.Toyoko.GakugeiDaigaku",
 		"a": "07:28",
-		"d": "07:29"
+		"d": "07:28"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
-		"a": "07:32",
+		"a": "07:31",
 		"d": "07:32"
 	}, {
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -27839,11 +27947,11 @@
 		"d": "07:27"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "07:29",
+		"a": "07:28",
 		"d": "07:29"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "07:31",
+		"a": "07:30",
 		"d": "07:31"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
@@ -27863,7 +27971,7 @@
 		"d": "07:47"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
-		"a": "07:50",
+		"a": "07:49",
 		"d": "07:50"
 	}, {
 		"s": "Tokyu.Toyoko.DaikanYama",
@@ -27987,11 +28095,11 @@
 		"d": "07:32"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "07:34",
+		"a": "07:33",
 		"d": "07:34"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "07:36",
+		"a": "07:35",
 		"d": "07:36"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
@@ -28163,12 +28271,12 @@
 		"d": "07:32"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "07:36",
+		"a": "07:35",
 		"d": "07:36"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "07:38",
-		"d": "07:38"
+		"a": "07:37",
+		"d": "07:37"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "07:40",
@@ -28213,8 +28321,8 @@
 		"d": "07:18"
 	}, {
 		"s": "Tokyu.Toyoko.HigashiHakuraku",
-		"a": "07:20",
-		"d": "07:20"
+		"a": "07:19",
+		"d": "07:19"
 	}, {
 		"s": "Tokyu.Toyoko.Hakuraku",
 		"a": "07:21",
@@ -28225,19 +28333,19 @@
 		"d": "07:23"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
-		"a": "07:26",
+		"a": "07:25",
 		"d": "07:28"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
-		"a": "07:31",
-		"d": "07:31"
+		"a": "07:30",
+		"d": "07:30"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
 		"a": "07:33",
 		"d": "07:33"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
-		"a": "07:36",
+		"a": "07:35",
 		"d": "07:36"
 	}, {
 		"s": "Tokyu.Toyoko.Motosumiyoshi",
@@ -28246,7 +28354,7 @@
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
 		"a": "07:40",
-		"d": "07:41"
+		"d": "07:40"
 	}, {
 		"s": "Tokyu.Toyoko.ShinMaruko",
 		"a": "07:42",
@@ -28261,7 +28369,7 @@
 		"d": "07:46"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "07:49",
+		"a": "07:48",
 		"d": "07:52"
 	}, {
 		"s": "Tokyu.Toyoko.ToritsuDaigaku",
@@ -28374,18 +28482,18 @@
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
 		"a": "07:31",
-		"d": "07:33"
+		"d": "07:32"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
-		"a": "07:35",
-		"d": "07:35"
+		"a": "07:34",
+		"d": "07:34"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
 		"a": "07:37",
 		"d": "07:37"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
-		"a": "07:40",
+		"a": "07:39",
 		"d": "07:40"
 	}, {
 		"s": "Tokyu.Toyoko.Motosumiyoshi",
@@ -28394,19 +28502,19 @@
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
 		"a": "07:44",
-		"d": "07:45"
+		"d": "07:44"
 	}, {
 		"s": "Tokyu.Toyoko.ShinMaruko",
-		"a": "07:47",
-		"d": "07:47"
+		"a": "07:46",
+		"d": "07:46"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "07:48",
-		"d": "07:49"
+		"d": "07:48"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "07:50",
-		"d": "07:51"
+		"d": "07:50"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "07:53",
@@ -28504,11 +28612,11 @@
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "07:53",
-		"d": "07:54"
+		"d": "07:53"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "07:55",
-		"d": "07:56"
+		"d": "07:55"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "07:58",
@@ -28581,7 +28689,7 @@
 		"d": "07:50"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "07:52",
+		"a": "07:51",
 		"d": "07:52"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
@@ -28668,11 +28776,11 @@
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "07:58",
-		"d": "07:59"
+		"d": "07:58"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "08:00",
-		"d": "08:01"
+		"d": "08:00"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "08:03",
@@ -28795,15 +28903,15 @@
 		"d": "07:49"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "07:52",
-		"d": "07:52"
+		"a": "07:51",
+		"d": "07:51"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
 		"a": "07:54",
-		"d": "07:55"
+		"d": "07:54"
 	}, {
 		"s": "Tokyu.Toyoko.Motosumiyoshi",
-		"a": "07:57",
+		"a": "07:56",
 		"d": "07:57"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
@@ -28918,11 +29026,11 @@
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "08:08",
-		"d": "08:09"
+		"d": "08:08"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "08:10",
-		"d": "08:11"
+		"d": "08:10"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "08:13",
@@ -28991,12 +29099,12 @@
 		"d": "08:02"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "08:05",
+		"a": "08:04",
 		"d": "08:05"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "08:07",
-		"d": "08:07"
+		"a": "08:06",
+		"d": "08:06"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "08:09",
@@ -29082,11 +29190,11 @@
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "08:13",
-		"d": "08:14"
+		"d": "08:13"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "08:15",
-		"d": "08:16"
+		"d": "08:15"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "08:18",
@@ -29205,16 +29313,16 @@
 		"d": "08:02"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
-		"a": "08:05",
-		"d": "08:05"
+		"a": "08:04",
+		"d": "08:04"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "08:07",
+		"a": "08:06",
 		"d": "08:07"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
 		"a": "08:09",
-		"d": "08:10"
+		"d": "08:09"
 	}, {
 		"s": "Tokyu.Toyoko.Motosumiyoshi",
 		"a": "08:12",
@@ -29222,7 +29330,7 @@
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
 		"a": "08:14",
-		"d": "08:15"
+		"d": "08:14"
 	}, {
 		"s": "Tokyu.Toyoko.ShinMaruko",
 		"a": "08:16",
@@ -29237,7 +29345,7 @@
 		"d": "08:20"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "08:23",
+		"a": "08:22",
 		"d": "08:26"
 	}, {
 		"s": "Tokyu.Toyoko.ToritsuDaigaku",
@@ -29332,11 +29440,11 @@
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "08:23",
-		"d": "08:24"
+		"d": "08:23"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "08:25",
-		"d": "08:26"
+		"d": "08:25"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "08:28",
@@ -29409,7 +29517,7 @@
 		"d": "08:20"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "08:22",
+		"a": "08:21",
 		"d": "08:22"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
@@ -29496,11 +29604,11 @@
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "08:28",
-		"d": "08:29"
+		"d": "08:28"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "08:30",
-		"d": "08:31"
+		"d": "08:30"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "08:33",
@@ -29619,16 +29727,16 @@
 		"d": "08:17"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
-		"a": "08:20",
-		"d": "08:20"
+		"a": "08:19",
+		"d": "08:19"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "08:22",
+		"a": "08:21",
 		"d": "08:22"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
 		"a": "08:24",
-		"d": "08:25"
+		"d": "08:24"
 	}, {
 		"s": "Tokyu.Toyoko.Motosumiyoshi",
 		"a": "08:27",
@@ -29636,7 +29744,7 @@
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
 		"a": "08:29",
-		"d": "08:30"
+		"d": "08:29"
 	}, {
 		"s": "Tokyu.Toyoko.ShinMaruko",
 		"a": "08:31",
@@ -29651,7 +29759,7 @@
 		"d": "08:35"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "08:38",
+		"a": "08:37",
 		"d": "08:41"
 	}, {
 		"s": "Tokyu.Toyoko.ToritsuDaigaku",
@@ -29746,11 +29854,11 @@
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "08:38",
-		"d": "08:39"
+		"d": "08:38"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "08:40",
-		"d": "08:41"
+		"d": "08:40"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "08:43",
@@ -29823,7 +29931,7 @@
 		"d": "08:35"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "08:37",
+		"a": "08:36",
 		"d": "08:37"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
@@ -29907,11 +30015,11 @@
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "08:43",
-		"d": "08:44"
+		"d": "08:43"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "08:45",
-		"d": "08:46"
+		"d": "08:45"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
 		"a": "08:48",
@@ -30908,10 +31016,10 @@
 		"a": "09:49"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.130082.Weekday",
-	"t": "Tokyu.Toyoko.130082",
+	"id": "Tokyu.Toyoko.132082.Weekday",
+	"t": "Tokyu.Toyoko.132082",
 	"r": "Tokyu.Toyoko",
-	"n": "130082",
+	"n": "132082",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -30921,10 +31029,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.130082.Weekday"
+		"Minatomirai.Minatomirai.132082.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B830M.Weekday"
+		"TokyoMetro.Fukutoshin.B832M.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -31217,10 +31325,10 @@
 		"a": "10:02"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.132092.Weekday",
-	"t": "Tokyu.Toyoko.132092",
+	"id": "Tokyu.Toyoko.134092.Weekday",
+	"t": "Tokyu.Toyoko.134092",
 	"r": "Tokyu.Toyoko",
-	"n": "132092",
+	"n": "134092",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -31230,10 +31338,10 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.132092.Weekday"
+		"Minatomirai.Minatomirai.134092.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B932M.Weekday"
+		"TokyoMetro.Fukutoshin.B934M.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -31545,10 +31653,10 @@
 		"a": "10:12"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.134092.Weekday",
-	"t": "Tokyu.Toyoko.134092",
+	"id": "Tokyu.Toyoko.126092.Weekday",
+	"t": "Tokyu.Toyoko.126092",
 	"r": "Tokyu.Toyoko",
-	"n": "134092",
+	"n": "126092",
 	"y": "Tokyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -31558,10 +31666,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.134092.Weekday"
+		"Minatomirai.Minatomirai.126092.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B934M.Weekday"
+		"TokyoMetro.Fukutoshin.B926M.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -34595,10 +34703,10 @@
 		"a": "12:38"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.120112.Weekday",
-	"t": "Tokyu.Toyoko.120112",
+	"id": "Tokyu.Toyoko.112112.Weekday",
+	"t": "Tokyu.Toyoko.112112",
 	"r": "Tokyu.Toyoko",
-	"n": "120112",
+	"n": "112112",
 	"y": "Tokyu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -34608,10 +34716,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.120112.Weekday"
+		"Minatomirai.Minatomirai.112112.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1120M.Weekday"
+		"TokyoMetro.Fukutoshin.B1112M.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -35815,10 +35923,10 @@
 		"a": "13:38"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.112122.Weekday",
-	"t": "Tokyu.Toyoko.112122",
+	"id": "Tokyu.Toyoko.120122.Weekday",
+	"t": "Tokyu.Toyoko.120122",
 	"r": "Tokyu.Toyoko",
-	"n": "112122",
+	"n": "120122",
 	"y": "Tokyu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -35828,10 +35936,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.112122.Weekday"
+		"Minatomirai.Minatomirai.120122.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1212M.Weekday"
+		"TokyoMetro.Fukutoshin.B1220M.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -38255,10 +38363,10 @@
 		"a": "15:38"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.120142.Weekday",
-	"t": "Tokyu.Toyoko.120142",
+	"id": "Tokyu.Toyoko.112142.Weekday",
+	"t": "Tokyu.Toyoko.112142",
 	"r": "Tokyu.Toyoko",
-	"n": "120142",
+	"n": "112142",
 	"y": "Tokyu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -38268,10 +38376,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.120142.Weekday"
+		"Minatomirai.Minatomirai.112142.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1420M.Weekday"
+		"TokyoMetro.Fukutoshin.B1412M.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -39472,10 +39580,10 @@
 		"a": "16:38"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.112152.Weekday",
-	"t": "Tokyu.Toyoko.112152",
+	"id": "Tokyu.Toyoko.120152.Weekday",
+	"t": "Tokyu.Toyoko.120152",
 	"r": "Tokyu.Toyoko",
-	"n": "112152",
+	"n": "120152",
 	"y": "Tokyu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -39485,10 +39593,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.112152.Weekday"
+		"Minatomirai.Minatomirai.120152.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1512M.Weekday"
+		"TokyoMetro.Fukutoshin.B1520M.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -40079,10 +40187,10 @@
 		"a": "17:09"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.124162.Weekday",
-	"t": "Tokyu.Toyoko.124162",
+	"id": "Tokyu.Toyoko.130162.Weekday",
+	"t": "Tokyu.Toyoko.130162",
 	"r": "Tokyu.Toyoko",
-	"n": "124162",
+	"n": "130162",
 	"y": "Tokyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -40092,10 +40200,10 @@
 		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.124162.Weekday"
+		"Minatomirai.Minatomirai.130162.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1624M.Weekday"
+		"TokyoMetro.Fukutoshin.B1630M.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -41395,32 +41503,32 @@
 		"d": "17:46"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
-		"a": "17:48",
-		"d": "17:48"
+		"a": "17:47",
+		"d": "17:47"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "17:50",
-		"d": "17:51"
+		"a": "17:49",
+		"d": "17:50"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
-		"a": "17:53",
-		"d": "17:53"
+		"a": "17:52",
+		"d": "17:52"
 	}, {
 		"s": "Tokyu.Toyoko.Motosumiyoshi",
-		"a": "17:55",
+		"a": "17:54",
 		"d": "17:55"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"a": "17:57",
+		"a": "17:56",
 		"d": "17:57"
 	}, {
 		"s": "Tokyu.Toyoko.ShinMaruko",
-		"a": "17:59",
-		"d": "17:59"
+		"a": "17:58",
+		"d": "17:58"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "18:00",
-		"d": "18:01"
+		"d": "18:00"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "18:02",
@@ -41439,7 +41547,7 @@
 		"d": "18:12"
 	}, {
 		"s": "Tokyu.Toyoko.Yutenji",
-		"a": "18:14",
+		"a": "18:13",
 		"d": "18:14"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
@@ -41535,16 +41643,16 @@
 		"d": "17:44"
 	}, {
 		"s": "Tokyu.Toyoko.Myorenji",
-		"a": "17:47",
-		"d": "17:47"
+		"a": "17:46",
+		"d": "17:46"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
-		"a": "17:49",
-		"d": "17:52"
+		"a": "17:48",
+		"d": "17:53"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
-		"a": "17:54",
-		"d": "17:54"
+		"a": "17:55",
+		"d": "17:55"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
 		"a": "17:56",
@@ -41556,26 +41664,26 @@
 	}, {
 		"s": "Tokyu.Toyoko.Motosumiyoshi",
 		"a": "18:01",
-		"d": "18:01"
+		"d": "18:02"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
 		"a": "18:03",
-		"d": "18:03"
+		"d": "18:04"
 	}, {
 		"s": "Tokyu.Toyoko.ShinMaruko",
 		"a": "18:05",
 		"d": "18:05"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "18:06",
+		"a": "18:07",
 		"d": "18:07"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "18:08",
-		"d": "18:08"
+		"d": "18:09"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "18:10",
+		"a": "18:11",
 		"d": "18:14"
 	}, {
 		"s": "Tokyu.Toyoko.ToritsuDaigaku",
@@ -41622,34 +41730,34 @@
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
-		"d": "17:45"
+		"d": "17:44"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
 		"a": "17:50",
-		"d": "17:51"
+		"d": "17:50"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "17:54",
-		"d": "17:54"
+		"a": "17:53",
+		"d": "17:53"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
-		"a": "17:56",
-		"d": "17:57"
+		"a": "17:55",
+		"d": "17:56"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"a": "17:59",
-		"d": "18:00"
+		"a": "17:58",
+		"d": "17:59"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "18:02",
-		"d": "18:03"
+		"a": "18:01",
+		"d": "18:02"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "18:04",
+		"a": "18:03",
 		"d": "18:04"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "18:06",
+		"a": "18:05",
 		"d": "18:06"
 	}, {
 		"s": "Tokyu.Toyoko.GakugeiDaigaku",
@@ -41801,7 +41909,7 @@
 		"d": "18:07"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "18:11",
+		"a": "18:12",
 		"d": "18:12"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
@@ -41931,19 +42039,19 @@
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
-		"d": "18:00"
+		"d": "17:59"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
 		"a": "18:05",
-		"d": "18:06"
+		"d": "18:05"
 	}, {
 		"s": "Tokyu.Toyoko.Tsunashima",
-		"a": "18:09",
+		"a": "18:08",
 		"d": "18:09"
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
 		"a": "18:11",
-		"d": "18:12"
+		"d": "18:11"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
 		"a": "18:14",
@@ -41951,26 +42059,26 @@
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "18:17",
-		"d": "18:18"
+		"d": "18:17"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "18:19",
 		"d": "18:19"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "18:21",
+		"a": "18:20",
 		"d": "18:21"
 	}, {
 		"s": "Tokyu.Toyoko.GakugeiDaigaku",
 		"a": "18:24",
-		"d": "18:25"
+		"d": "18:24"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
 		"a": "18:27",
-		"d": "18:28"
+		"d": "18:27"
 	}, {
 		"s": "Tokyu.Toyoko.Shibuya",
-		"a": "18:32"
+		"a": "18:31"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.007172.Weekday",
@@ -42072,10 +42180,10 @@
 		"a": "18:50"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.106172.Weekday",
-	"t": "Tokyu.Toyoko.106172",
+	"id": "Tokyu.Toyoko.112172.Weekday",
+	"t": "Tokyu.Toyoko.112172",
 	"r": "Tokyu.Toyoko",
-	"n": "106172",
+	"n": "112172",
 	"y": "Tokyu.CommuterLimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -42085,10 +42193,10 @@
 		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.106172.Weekday"
+		"Minatomirai.Minatomirai.112172.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1706M.Weekday"
+		"TokyoMetro.Fukutoshin.B1712M.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -44229,10 +44337,10 @@
 		"a": "20:33"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.112192.Weekday",
-	"t": "Tokyu.Toyoko.112192",
+	"id": "Tokyu.Toyoko.120192.Weekday",
+	"t": "Tokyu.Toyoko.120192",
 	"r": "Tokyu.Toyoko",
-	"n": "112192",
+	"n": "120192",
 	"y": "Tokyu.CommuterLimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -44242,10 +44350,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.112192.Weekday"
+		"Minatomirai.Minatomirai.120192.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1912M.Weekday"
+		"TokyoMetro.Fukutoshin.B1920M.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -46519,10 +46627,10 @@
 		"a": "22:28"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.134212.Weekday",
-	"t": "Tokyu.Toyoko.134212",
+	"id": "Tokyu.Toyoko.126212.Weekday",
+	"t": "Tokyu.Toyoko.126212",
 	"r": "Tokyu.Toyoko",
-	"n": "134212",
+	"n": "126212",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -46532,7 +46640,7 @@
 		"Tokyu.Toyoko.Shibuya"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.134212.Weekday"
+		"Minatomirai.Minatomirai.126212.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -46726,10 +46834,10 @@
 		"a": "22:23"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.005212.Weekday",
-	"t": "Tokyu.Toyoko.005212",
+	"id": "Tokyu.Toyoko.032212.Weekday",
+	"t": "Tokyu.Toyoko.032212",
 	"r": "Tokyu.Toyoko",
-	"n": "005212",
+	"n": "032212",
 	"y": "Tokyu.Local",
 	"d": "Inbound",
 	"os": [
@@ -46739,10 +46847,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.005212.Weekday"
+		"Minatomirai.Minatomirai.032212.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B2105K.Weekday"
+		"TokyoMetro.Fukutoshin.B2132K.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -47577,10 +47685,10 @@
 		"a": "23:16"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.112222.Weekday",
-	"t": "Tokyu.Toyoko.112222",
+	"id": "Tokyu.Toyoko.120222.Weekday",
+	"t": "Tokyu.Toyoko.120222",
 	"r": "Tokyu.Toyoko",
-	"n": "112222",
+	"n": "120222",
 	"y": "Tokyu.CommuterLimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -47590,7 +47698,7 @@
 		"Tokyu.Toyoko.Shibuya"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.112222.Weekday"
+		"Minatomirai.Minatomirai.120222.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -48232,10 +48340,10 @@
 		"a": "23:33"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.134232.Weekday",
-	"t": "Tokyu.Toyoko.134232",
+	"id": "Tokyu.Toyoko.126232.Weekday",
+	"t": "Tokyu.Toyoko.126232",
 	"r": "Tokyu.Toyoko",
-	"n": "134232",
+	"n": "126232",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -48245,10 +48353,10 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.134232.Weekday"
+		"Minatomirai.Minatomirai.126232.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B2334M.Weekday"
+		"TokyoMetro.Fukutoshin.B2326M.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -48633,22 +48741,22 @@
 	}, {
 		"s": "Tokyu.Toyoko.Hiyoshi",
 		"a": "23:48",
-		"d": "23:48"
+		"d": "23:49"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"a": "23:51",
-		"d": "23:51"
+		"a": "23:52",
+		"d": "23:52"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "23:55",
-		"d": "23:56"
+		"a": "23:56",
+		"d": "23:57"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
 		"a": "00:01",
-		"d": "00:01"
+		"d": "00:02"
 	}, {
 		"s": "Tokyu.Toyoko.Shibuya",
-		"a": "00:05"
+		"a": "00:06"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.701232.Weekday",
@@ -49455,19 +49563,19 @@
 		"d": "06:27"
 	}, {
 		"s": "Tokyu.Toyoko.Yutenji",
-		"a": "06:29",
+		"a": "06:28",
 		"d": "06:29"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
 		"a": "06:31",
-		"d": "06:32"
+		"d": "06:31"
 	}, {
 		"s": "Tokyu.Toyoko.DaikanYama",
 		"a": "06:33",
 		"d": "06:33"
 	}, {
 		"s": "Tokyu.Toyoko.Shibuya",
-		"a": "06:36"
+		"a": "06:35"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.717062.Weekday",
@@ -49623,6 +49731,85 @@
 	}, {
 		"s": "Tokyu.Toyoko.Shibuya",
 		"a": "07:51"
+	}]
+}, {
+	"id": "Tokyu.Toyoko.033192.Weekday",
+	"t": "Tokyu.Toyoko.033192",
+	"r": "Tokyu.Toyoko",
+	"n": "033192",
+	"y": "Tokyu.Local",
+	"d": "Inbound",
+	"os": [
+		"Tokyu.Toyoko.Kikuna"
+	],
+	"ds": [
+		"TokyoMetro.Fukutoshin.ShinjukuSanchome"
+	],
+	"nt": [
+		"TokyoMetro.Fukutoshin.B1933K.Weekday"
+	],
+	"tt": [{
+		"s": "Tokyu.Toyoko.Kikuna",
+		"d": "19:25"
+	}, {
+		"s": "Tokyu.Toyoko.Okurayama",
+		"a": "19:27",
+		"d": "19:27"
+	}, {
+		"s": "Tokyu.Toyoko.Tsunashima",
+		"a": "19:29",
+		"d": "19:30"
+	}, {
+		"s": "Tokyu.Toyoko.Hiyoshi",
+		"a": "19:32",
+		"d": "19:32"
+	}, {
+		"s": "Tokyu.Toyoko.Motosumiyoshi",
+		"a": "19:34",
+		"d": "19:38"
+	}, {
+		"s": "Tokyu.Toyoko.MusashiKosugi",
+		"a": "19:39",
+		"d": "19:40"
+	}, {
+		"s": "Tokyu.Toyoko.ShinMaruko",
+		"a": "19:41",
+		"d": "19:41"
+	}, {
+		"s": "Tokyu.Toyoko.Tamagawa",
+		"a": "19:43",
+		"d": "19:43"
+	}, {
+		"s": "Tokyu.Toyoko.DenEnChofu",
+		"a": "19:44",
+		"d": "19:45"
+	}, {
+		"s": "Tokyu.Toyoko.Jiyugaoka",
+		"a": "19:46",
+		"d": "19:47"
+	}, {
+		"s": "Tokyu.Toyoko.ToritsuDaigaku",
+		"a": "19:49",
+		"d": "19:49"
+	}, {
+		"s": "Tokyu.Toyoko.GakugeiDaigaku",
+		"a": "19:51",
+		"d": "19:51"
+	}, {
+		"s": "Tokyu.Toyoko.Yutenji",
+		"a": "19:53",
+		"d": "19:53"
+	}, {
+		"s": "Tokyu.Toyoko.NakaMeguro",
+		"a": "19:55",
+		"d": "19:55"
+	}, {
+		"s": "Tokyu.Toyoko.DaikanYama",
+		"a": "19:57",
+		"d": "19:57"
+	}, {
+		"s": "Tokyu.Toyoko.Shibuya",
+		"a": "19:59"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.058052.Weekday",
@@ -49847,14 +50034,14 @@
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
 		"a": "07:15",
-		"d": "07:16"
+		"d": "07:15"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
 		"a": "07:17",
-		"d": "07:18"
+		"d": "07:17"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "07:20",
+		"a": "07:19",
 		"d": "07:20"
 	}, {
 		"s": "Tokyu.Toyoko.GakugeiDaigaku",
@@ -49869,10 +50056,10 @@
 		"a": "07:31"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.992072.Weekday",
-	"t": "Tokyu.Toyoko.992072",
+	"id": "Tokyu.Toyoko.995072.Weekday",
+	"t": "Tokyu.Toyoko.995072",
 	"r": "Tokyu.Toyoko",
-	"n": "992072",
+	"n": "995072",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -49882,10 +50069,10 @@
 		"TokyoMetro.Fukutoshin.ShinjukuSanchome"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.992072.Weekday"
+		"Tokyu.TokyuShinYokohama.995072.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B692G.Weekday"
+		"TokyoMetro.Fukutoshin.B695G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -49896,11 +50083,11 @@
 		"d": "07:27"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "07:31",
+		"a": "07:30",
 		"d": "07:31"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "07:33",
+		"a": "07:32",
 		"d": "07:33"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
@@ -49919,10 +50106,10 @@
 		"a": "07:47"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.993072.Weekday",
-	"t": "Tokyu.Toyoko.993072",
+	"id": "Tokyu.Toyoko.991072.Weekday",
+	"t": "Tokyu.Toyoko.991072",
 	"r": "Tokyu.Toyoko",
-	"n": "993072",
+	"n": "991072",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -49932,10 +50119,10 @@
 		"TokyoMetro.Fukutoshin.ShinjukuSanchome"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.993072.Weekday"
+		"Tokyu.TokyuShinYokohama.991072.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B693G.Weekday"
+		"TokyoMetro.Fukutoshin.B691G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -49946,15 +50133,15 @@
 		"d": "07:42"
 	}, {
 		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "07:46",
+		"a": "07:45",
 		"d": "07:46"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "07:48",
-		"d": "07:48"
+		"a": "07:47",
+		"d": "07:47"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "07:50",
+		"a": "07:49",
 		"d": "07:50"
 	}, {
 		"s": "Tokyu.Toyoko.GakugeiDaigaku",
@@ -50019,10 +50206,10 @@
 		"a": "08:16"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.991082.Weekday",
-	"t": "Tokyu.Toyoko.991082",
+	"id": "Tokyu.Toyoko.993082.Weekday",
+	"t": "Tokyu.Toyoko.993082",
 	"r": "Tokyu.Toyoko",
-	"n": "991082",
+	"n": "993082",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -50032,10 +50219,10 @@
 		"TokyoMetro.Fukutoshin.ShinjukuSanchome"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.991082.Weekday"
+		"Tokyu.TokyuShinYokohama.993082.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B791G.Weekday"
+		"TokyoMetro.Fukutoshin.B793G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -50050,7 +50237,7 @@
 		"d": "08:15"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "08:17",
+		"a": "08:16",
 		"d": "08:17"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
@@ -50069,10 +50256,10 @@
 		"a": "08:31"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995082.Weekday",
-	"t": "Tokyu.Toyoko.995082",
+	"id": "Tokyu.Toyoko.992082.Weekday",
+	"t": "Tokyu.Toyoko.992082",
 	"r": "Tokyu.Toyoko",
-	"n": "995082",
+	"n": "992082",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -50082,10 +50269,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.995082.Weekday"
+		"Tokyu.TokyuShinYokohama.992082.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B795G.Weekday"
+		"TokyoMetro.Fukutoshin.B792G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -50147,7 +50334,7 @@
 		"d": "08:45"
 	}, {
 		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "08:47",
+		"a": "08:46",
 		"d": "08:47"
 	}, {
 		"s": "Tokyu.Toyoko.Jiyugaoka",
@@ -50313,10 +50500,10 @@
 		"a": "10:17"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.992102.Weekday",
-	"t": "Tokyu.Toyoko.992102",
+	"id": "Tokyu.Toyoko.995102.Weekday",
+	"t": "Tokyu.Toyoko.995102",
 	"r": "Tokyu.Toyoko",
-	"n": "992102",
+	"n": "995102",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -50326,7 +50513,7 @@
 		"Tokyu.Toyoko.Shibuya"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.992102.Weekday"
+		"Tokyu.TokyuShinYokohama.995102.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -50460,10 +50647,10 @@
 		"a": "11:31"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.991112.Weekday",
-	"t": "Tokyu.Toyoko.991112",
+	"id": "Tokyu.Toyoko.995112.Weekday",
+	"t": "Tokyu.Toyoko.995112",
 	"r": "Tokyu.Toyoko",
-	"n": "991112",
+	"n": "995112",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -50473,10 +50660,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.991112.Weekday"
+		"Tokyu.TokyuShinYokohama.995112.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1191G.Weekday"
+		"TokyoMetro.Fukutoshin.B1195G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -50560,10 +50747,10 @@
 		"a": "12:31"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.992122.Weekday",
-	"t": "Tokyu.Toyoko.992122",
+	"id": "Tokyu.Toyoko.991122.Weekday",
+	"t": "Tokyu.Toyoko.991122",
 	"r": "Tokyu.Toyoko",
-	"n": "992122",
+	"n": "991122",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -50573,10 +50760,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.992122.Weekday"
+		"Tokyu.TokyuShinYokohama.991122.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1192G.Weekday"
+		"TokyoMetro.Fukutoshin.B1191G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -50660,10 +50847,10 @@
 		"a": "13:31"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995132.Weekday",
-	"t": "Tokyu.Toyoko.995132",
+	"id": "Tokyu.Toyoko.992132.Weekday",
+	"t": "Tokyu.Toyoko.992132",
 	"r": "Tokyu.Toyoko",
-	"n": "995132",
+	"n": "992132",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -50673,10 +50860,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.995132.Weekday"
+		"Tokyu.TokyuShinYokohama.992132.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1295G.Weekday"
+		"TokyoMetro.Fukutoshin.B1292G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -50860,10 +51047,10 @@
 		"a": "15:31"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.991152.Weekday",
-	"t": "Tokyu.Toyoko.991152",
+	"id": "Tokyu.Toyoko.995152.Weekday",
+	"t": "Tokyu.Toyoko.995152",
 	"r": "Tokyu.Toyoko",
-	"n": "991152",
+	"n": "995152",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -50873,10 +51060,10 @@
 		"TokyoMetro.Fukutoshin.Ikebukuro"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.991152.Weekday"
+		"Tokyu.TokyuShinYokohama.995152.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1491G.Weekday"
+		"TokyoMetro.Fukutoshin.B1495G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -50960,10 +51147,10 @@
 		"a": "16:29"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.992162.Weekday",
-	"t": "Tokyu.Toyoko.992162",
+	"id": "Tokyu.Toyoko.991162.Weekday",
+	"t": "Tokyu.Toyoko.991162",
 	"r": "Tokyu.Toyoko",
-	"n": "992162",
+	"n": "991162",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -50973,10 +51160,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.992162.Weekday"
+		"Tokyu.TokyuShinYokohama.991162.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1592G.Weekday"
+		"TokyoMetro.Fukutoshin.B1591G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -51060,10 +51247,10 @@
 		"a": "17:25"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995172.Weekday",
-	"t": "Tokyu.Toyoko.995172",
+	"id": "Tokyu.Toyoko.992172.Weekday",
+	"t": "Tokyu.Toyoko.992172",
 	"r": "Tokyu.Toyoko",
-	"n": "995172",
+	"n": "992172",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -51073,10 +51260,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.995172.Weekday"
+		"Tokyu.TokyuShinYokohama.992172.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1695G.Weekday"
+		"TokyoMetro.Fukutoshin.B1692G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -51160,10 +51347,10 @@
 		"a": "18:26"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.991182.Weekday",
-	"t": "Tokyu.Toyoko.991182",
+	"id": "Tokyu.Toyoko.995182.Weekday",
+	"t": "Tokyu.Toyoko.995182",
 	"r": "Tokyu.Toyoko",
-	"n": "991182",
+	"n": "995182",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -51173,10 +51360,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.991182.Weekday"
+		"Tokyu.TokyuShinYokohama.995182.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1891G.Weekday"
+		"TokyoMetro.Fukutoshin.B1895G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -51410,10 +51597,10 @@
 		"a": "20:11"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.992192.Weekday",
-	"t": "Tokyu.Toyoko.992192",
+	"id": "Tokyu.Toyoko.991192.Weekday",
+	"t": "Tokyu.Toyoko.991192",
 	"r": "Tokyu.Toyoko",
-	"n": "992192",
+	"n": "991192",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -51423,10 +51610,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.992192.Weekday"
+		"Tokyu.TokyuShinYokohama.991192.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1992G.Weekday"
+		"TokyoMetro.Fukutoshin.B1991G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -51610,10 +51797,10 @@
 		"a": "21:11"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995212.Weekday",
-	"t": "Tokyu.Toyoko.995212",
+	"id": "Tokyu.Toyoko.992212.Weekday",
+	"t": "Tokyu.Toyoko.992212",
 	"r": "Tokyu.Toyoko",
-	"n": "995212",
+	"n": "992212",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -51623,10 +51810,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.995212.Weekday"
+		"Tokyu.TokyuShinYokohama.992212.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B2095G.Weekday"
+		"TokyoMetro.Fukutoshin.B2092G.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -51767,7 +51954,7 @@
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
-		"Sotetsu.Main.Yamato"
+		"Sotetsu.Izumino.Shonandai"
 	],
 	"ds": [
 		"Tokyu.Toyoko.MusashiKosugi"
@@ -51783,10 +51970,10 @@
 		"a": "22:09"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.991222.Weekday",
-	"t": "Tokyu.Toyoko.991222",
+	"id": "Tokyu.Toyoko.995222.Weekday",
+	"t": "Tokyu.Toyoko.995222",
 	"r": "Tokyu.Toyoko",
-	"n": "991222",
+	"n": "995222",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -51796,7 +51983,7 @@
 		"Tokyu.Toyoko.Shibuya"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.991222.Weekday"
+		"Tokyu.TokyuShinYokohama.995222.Weekday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -51920,7 +52107,7 @@
 		"d": "04:59"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"a": "05:01",
+		"a": "05:00",
 		"d": "05:01"
 	}, {
 		"s": "Tokyu.Toyoko.ShinMaruko",
@@ -51948,11 +52135,11 @@
 		"d": "05:12"
 	}, {
 		"s": "Tokyu.Toyoko.Yutenji",
-		"a": "05:14",
+		"a": "05:13",
 		"d": "05:14"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
-		"a": "05:16",
+		"a": "05:15",
 		"d": "05:16"
 	}, {
 		"s": "Tokyu.Toyoko.DaikanYama",
@@ -52651,65 +52838,6 @@
 		"a": "18:56"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.033192.Weekday",
-	"t": "Tokyu.Toyoko.033192",
-	"r": "Tokyu.Toyoko",
-	"n": "033192",
-	"y": "Tokyu.Local",
-	"d": "Inbound",
-	"os": [
-		"Tokyu.Toyoko.MusashiKosugi"
-	],
-	"ds": [
-		"TokyoMetro.Fukutoshin.ShinjukuSanchome"
-	],
-	"nt": [
-		"TokyoMetro.Fukutoshin.B1933K.Weekday"
-	],
-	"tt": [{
-		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"d": "19:40"
-	}, {
-		"s": "Tokyu.Toyoko.ShinMaruko",
-		"a": "19:41",
-		"d": "19:41"
-	}, {
-		"s": "Tokyu.Toyoko.Tamagawa",
-		"a": "19:43",
-		"d": "19:43"
-	}, {
-		"s": "Tokyu.Toyoko.DenEnChofu",
-		"a": "19:45",
-		"d": "19:45"
-	}, {
-		"s": "Tokyu.Toyoko.Jiyugaoka",
-		"a": "19:47",
-		"d": "19:47"
-	}, {
-		"s": "Tokyu.Toyoko.ToritsuDaigaku",
-		"a": "19:49",
-		"d": "19:49"
-	}, {
-		"s": "Tokyu.Toyoko.GakugeiDaigaku",
-		"a": "19:51",
-		"d": "19:51"
-	}, {
-		"s": "Tokyu.Toyoko.Yutenji",
-		"a": "19:53",
-		"d": "19:53"
-	}, {
-		"s": "Tokyu.Toyoko.NakaMeguro",
-		"a": "19:55",
-		"d": "19:55"
-	}, {
-		"s": "Tokyu.Toyoko.DaikanYama",
-		"a": "19:57",
-		"d": "19:57"
-	}, {
-		"s": "Tokyu.Toyoko.Shibuya",
-		"a": "19:59"
-	}]
-}, {
 	"id": "Tokyu.Toyoko.004052.Weekday",
 	"t": "Tokyu.Toyoko.004052",
 	"r": "Tokyu.Toyoko",
@@ -52971,7 +53099,7 @@
 		"d": "05:23"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
-		"a": "05:27",
+		"a": "05:26",
 		"d": "05:27"
 	}, {
 		"s": "Tokyu.Toyoko.GakugeiDaigaku",
@@ -54866,7 +54994,7 @@
 		"d": "07:55"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "07:56"
+		"a": "07:57"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.051071.SaturdayHoliday",
@@ -55015,7 +55143,7 @@
 		"d": "08:03"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "08:04"
+		"a": "08:05"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.805071.SaturdayHoliday",
@@ -55757,7 +55885,7 @@
 		"d": "08:40"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "08:41"
+		"a": "08:42"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.011071.SaturdayHoliday",
@@ -58107,10 +58235,10 @@
 		"a": "10:15"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995091.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.995091",
+	"id": "Tokyu.Toyoko.992091.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.992091",
 	"r": "Tokyu.Toyoko",
-	"n": "995091",
+	"n": "992091",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -58120,10 +58248,10 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A995G.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A992G.SaturdayHoliday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.995091.SaturdayHoliday"
+		"Tokyu.TokyuShinYokohama.992091.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -59915,7 +60043,7 @@
 		"d": "11:48"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "11:49"
+		"a": "11:50"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.110111.SaturdayHoliday",
@@ -60575,7 +60703,7 @@
 		"d": "12:18"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "12:19"
+		"a": "12:20"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.725111.SaturdayHoliday",
@@ -61235,7 +61363,7 @@
 		"d": "12:48"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "12:49"
+		"a": "12:50"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.053121.SaturdayHoliday",
@@ -61245,7 +61373,7 @@
 	"y": "Tokyu.F-Liner",
 	"d": "Outbound",
 	"os": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Hanno"
 	],
 	"ds": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
@@ -61895,7 +62023,7 @@
 		"d": "13:18"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "13:19"
+		"a": "13:20"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.058121.SaturdayHoliday",
@@ -62555,13 +62683,13 @@
 		"d": "13:48"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "13:49"
+		"a": "13:50"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.120131.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.120131",
+	"id": "Tokyu.Toyoko.128131.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.128131",
 	"r": "Tokyu.Toyoko",
-	"n": "120131",
+	"n": "128131",
 	"y": "Tokyu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -62571,10 +62699,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1220M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1228M.SaturdayHoliday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.120131.SaturdayHoliday"
+		"Minatomirai.Minatomirai.128131.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -63215,13 +63343,13 @@
 		"d": "14:18"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "14:19"
+		"a": "14:20"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.128131.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.128131",
+	"id": "Tokyu.Toyoko.120131.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.120131",
 	"r": "Tokyu.Toyoko",
-	"n": "128131",
+	"n": "120131",
 	"y": "Tokyu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -63231,10 +63359,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1228M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1220M.SaturdayHoliday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.128131.SaturdayHoliday"
+		"Minatomirai.Minatomirai.120131.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -63421,10 +63549,10 @@
 		"a": "14:26"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995131.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.995131",
+	"id": "Tokyu.Toyoko.992131.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.992131",
 	"r": "Tokyu.Toyoko",
-	"n": "995131",
+	"n": "992131",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -63434,10 +63562,10 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1395G.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1392G.SaturdayHoliday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.995131.SaturdayHoliday"
+		"Tokyu.TokyuShinYokohama.992131.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -63875,7 +64003,7 @@
 		"d": "14:48"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "14:49"
+		"a": "14:50"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.791141.SaturdayHoliday",
@@ -64535,7 +64663,7 @@
 		"d": "15:18"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "15:19"
+		"a": "15:20"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.110141.SaturdayHoliday",
@@ -65195,7 +65323,7 @@
 		"d": "15:48"
 	}, {
 		"s": "Tokyu.Toyoko.Yokohama",
-		"a": "15:49"
+		"a": "15:50"
 	}]
 }, {
 	"id": "Tokyu.Toyoko.773151.SaturdayHoliday",
@@ -67178,10 +67306,10 @@
 		"a": "17:20"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.128161.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.128161",
+	"id": "Tokyu.Toyoko.120161.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.120161",
 	"r": "Tokyu.Toyoko",
-	"n": "128161",
+	"n": "120161",
 	"y": "Tokyu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -67191,10 +67319,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1528M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1520M.SaturdayHoliday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.128161.SaturdayHoliday"
+		"Minatomirai.Minatomirai.120161.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -67729,10 +67857,10 @@
 		"a": "17:30"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995171.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.995171",
+	"id": "Tokyu.Toyoko.992171.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.992171",
 	"r": "Tokyu.Toyoko",
-	"n": "995171",
+	"n": "992171",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -67742,10 +67870,10 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1695G.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1692G.SaturdayHoliday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.995171.SaturdayHoliday"
+		"Tokyu.TokyuShinYokohama.992171.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -67881,10 +68009,10 @@
 		"a": "17:50"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.785171.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.785171",
+	"id": "Tokyu.Toyoko.791171.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.791171",
 	"r": "Tokyu.Toyoko",
-	"n": "785171",
+	"n": "791171",
 	"y": "Tokyu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -67894,10 +68022,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1685S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1691S.SaturdayHoliday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.785171.SaturdayHoliday"
+		"Minatomirai.Minatomirai.791171.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -68541,10 +68669,10 @@
 		"a": "18:20"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.791171.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.791171",
+	"id": "Tokyu.Toyoko.785171.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.785171",
 	"r": "Tokyu.Toyoko",
-	"n": "791171",
+	"n": "785171",
 	"y": "Tokyu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -68554,10 +68682,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1691S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1685S.SaturdayHoliday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.791171.SaturdayHoliday"
+		"Minatomirai.Minatomirai.785171.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -69858,10 +69986,10 @@
 		"a": "19:20"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.120181.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.120181",
+	"id": "Tokyu.Toyoko.128181.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.128181",
 	"r": "Tokyu.Toyoko",
-	"n": "120181",
+	"n": "128181",
 	"y": "Tokyu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -69871,10 +69999,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A1720M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1728M.SaturdayHoliday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.120181.SaturdayHoliday"
+		"Minatomirai.Minatomirai.128181.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -74351,10 +74479,10 @@
 		"a": "22:48"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.791221.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.791221",
+	"id": "Tokyu.Toyoko.785221.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.785221",
 	"r": "Tokyu.Toyoko",
-	"n": "791221",
+	"n": "785221",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -74364,10 +74492,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A2091S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A2085S.SaturdayHoliday"
 	],
 	"nt": [
-		"Minatomirai.Minatomirai.791221.SaturdayHoliday"
+		"Minatomirai.Minatomirai.785221.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -75842,10 +75970,10 @@
 		"a": "00:05"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995231.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.995231",
+	"id": "Tokyu.Toyoko.992231.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.992231",
 	"r": "Tokyu.Toyoko",
-	"n": "995231",
+	"n": "992231",
 	"y": "Tokyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -75855,10 +75983,10 @@
 		"Sotetsu.Main.Ebina"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.A2295G.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A2292G.SaturdayHoliday"
 	],
 	"nt": [
-		"Tokyu.TokyuShinYokohama.995231.SaturdayHoliday"
+		"Tokyu.TokyuShinYokohama.992231.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Shibuya",
@@ -76165,8 +76293,8 @@
 		"d": "00:17"
 	}, {
 		"s": "Tokyu.Toyoko.Okurayama",
-		"a": "00:20",
-		"d": "00:20"
+		"a": "00:19",
+		"d": "00:19"
 	}, {
 		"s": "Tokyu.Toyoko.Kikuna",
 		"a": "00:22"
@@ -80722,7 +80850,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
 		"Minatomirai.Minatomirai.053092.SaturdayHoliday"
@@ -86205,10 +86333,10 @@
 		"a": "14:38"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.120132.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.120132",
+	"id": "Tokyu.Toyoko.128132.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.128132",
 	"r": "Tokyu.Toyoko",
-	"n": "120132",
+	"n": "128132",
 	"y": "Tokyu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -86218,10 +86346,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.120132.SaturdayHoliday"
+		"Minatomirai.Minatomirai.128132.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1320M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1328M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -86815,10 +86943,10 @@
 		"a": "15:08"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.128142.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.128142",
+	"id": "Tokyu.Toyoko.120142.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.120142",
 	"r": "Tokyu.Toyoko",
-	"n": "128142",
+	"n": "120142",
 	"y": "Tokyu.F-Liner",
 	"d": "Inbound",
 	"os": [
@@ -86828,10 +86956,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.128142.SaturdayHoliday"
+		"Minatomirai.Minatomirai.120142.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1428M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1420M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -90506,10 +90634,10 @@
 		"a": "18:09"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.128172.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.128172",
+	"id": "Tokyu.Toyoko.120172.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.120172",
 	"r": "Tokyu.Toyoko",
-	"n": "128172",
+	"n": "120172",
 	"y": "Tokyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -90519,10 +90647,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.128172.SaturdayHoliday"
+		"Minatomirai.Minatomirai.120172.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1728M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1720M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -91119,10 +91247,10 @@
 		"a": "18:40"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.785172.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.785172",
+	"id": "Tokyu.Toyoko.791172.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.791172",
 	"r": "Tokyu.Toyoko",
-	"n": "785172",
+	"n": "791172",
 	"y": "Tokyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -91132,10 +91260,10 @@
 		"Tobu.Tojo.Kawagoeshi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.785172.SaturdayHoliday"
+		"Minatomirai.Minatomirai.791172.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1785S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1791S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -91729,10 +91857,10 @@
 		"a": "19:13"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.791182.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.791182",
+	"id": "Tokyu.Toyoko.785182.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.785182",
 	"r": "Tokyu.Toyoko",
-	"n": "791182",
+	"n": "785182",
 	"y": "Tokyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -91742,10 +91870,10 @@
 		"Tobu.Tojo.ShinrinKoen"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.791182.SaturdayHoliday"
+		"Minatomirai.Minatomirai.785182.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1891S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1885S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -92946,10 +93074,10 @@
 		"a": "20:10"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.120192.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.120192",
+	"id": "Tokyu.Toyoko.128192.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.128192",
 	"r": "Tokyu.Toyoko",
-	"n": "120192",
+	"n": "128192",
 	"y": "Tokyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -92959,10 +93087,10 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.120192.SaturdayHoliday"
+		"Minatomirai.Minatomirai.128192.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1920M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1928M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -96762,10 +96890,10 @@
 		"a": "23:43"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.791222.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.791222",
+	"id": "Tokyu.Toyoko.785222.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.785222",
 	"r": "Tokyu.Toyoko",
-	"n": "791222",
+	"n": "785222",
 	"y": "Tokyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -96775,10 +96903,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Minatomirai.Minatomirai.791222.SaturdayHoliday"
+		"Minatomirai.Minatomirai.785222.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B2291S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B2285S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Yokohama",
@@ -98702,10 +98830,10 @@
 		"a": "07:00"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995072.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.995072",
+	"id": "Tokyu.Toyoko.992072.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.992072",
 	"r": "Tokyu.Toyoko",
-	"n": "995072",
+	"n": "992072",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -98715,10 +98843,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.995072.SaturdayHoliday"
+		"Tokyu.TokyuShinYokohama.992072.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B695G.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B692G.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -99199,10 +99327,10 @@
 		"a": "11:31"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995112.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.995112",
+	"id": "Tokyu.Toyoko.992112.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.992112",
 	"r": "Tokyu.Toyoko",
-	"n": "995112",
+	"n": "992112",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -99212,10 +99340,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.995112.SaturdayHoliday"
+		"Tokyu.TokyuShinYokohama.992112.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1095G.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1092G.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -99599,10 +99727,10 @@
 		"a": "15:31"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995152.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.995152",
+	"id": "Tokyu.Toyoko.992152.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.992152",
 	"r": "Tokyu.Toyoko",
-	"n": "995152",
+	"n": "992152",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -99612,10 +99740,10 @@
 		"TokyoMetro.Fukutoshin.Ikebukuro"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.995152.SaturdayHoliday"
+		"Tokyu.TokyuShinYokohama.992152.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B1495G.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1492G.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -100190,10 +100318,10 @@
 		"a": "21:22"
 	}]
 }, {
-	"id": "Tokyu.Toyoko.995212.SaturdayHoliday",
-	"t": "Tokyu.Toyoko.995212",
+	"id": "Tokyu.Toyoko.992212.SaturdayHoliday",
+	"t": "Tokyu.Toyoko.992212",
 	"r": "Tokyu.Toyoko",
-	"n": "995212",
+	"n": "992212",
 	"y": "Tokyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -100203,10 +100331,10 @@
 		"TokyoMetro.Fukutoshin.Wakoshi"
 	],
 	"pt": [
-		"Tokyu.TokyuShinYokohama.995212.SaturdayHoliday"
+		"Tokyu.TokyuShinYokohama.992212.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.B2095G.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B2092G.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Tokyu.Toyoko.Hiyoshi",
@@ -100404,7 +100532,7 @@
 		"d": "04:59"
 	}, {
 		"s": "Tokyu.Toyoko.MusashiKosugi",
-		"a": "05:01",
+		"a": "05:00",
 		"d": "05:01"
 	}, {
 		"s": "Tokyu.Toyoko.ShinMaruko",
@@ -100432,11 +100560,11 @@
 		"d": "05:12"
 	}, {
 		"s": "Tokyu.Toyoko.Yutenji",
-		"a": "05:14",
+		"a": "05:13",
 		"d": "05:14"
 	}, {
 		"s": "Tokyu.Toyoko.NakaMeguro",
-		"a": "05:16",
+		"a": "05:15",
 		"d": "05:16"
 	}, {
 		"s": "Tokyu.Toyoko.DaikanYama",
@@ -100786,7 +100914,7 @@
 		"Tokyu.Toyoko.MusashiKosugi"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Hanno"
+		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"nt": [
 		"TokyoMetro.Fukutoshin.B820K.SaturdayHoliday"

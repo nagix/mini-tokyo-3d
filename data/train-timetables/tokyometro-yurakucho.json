@@ -429,10 +429,10 @@
 		"a": "11:45"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.A1032M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A1032M",
+	"id": "TokyoMetro.Yurakucho.A1034M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A1034M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "A1032M",
+	"n": "A1034M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.ShinKiba",
 	"os": [
@@ -1106,7 +1106,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6360.Weekday"
+		"Seibu.SeibuYurakucho.6358.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -1174,13 +1174,13 @@
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.ShinKiba",
 	"os": [
-		"Seibu.Ikebukuro.Hoya"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"ds": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6358.Weekday"
+		"Seibu.SeibuYurakucho.6456.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -1241,10 +1241,10 @@
 		"a": "12:27"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.A1130M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A1130M",
+	"id": "TokyoMetro.Yurakucho.A1132M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A1132M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "A1130M",
+	"n": "A1132M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.ShinKiba",
 	"os": [
@@ -2013,7 +2013,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6364.Weekday"
+		"Seibu.SeibuYurakucho.6362.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -2419,7 +2419,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6362.Weekday"
+		"Seibu.SeibuYurakucho.6360.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -2816,7 +2816,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6368.Weekday"
+		"Seibu.SeibuYurakucho.6366.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -2951,10 +2951,10 @@
 		"a": "15:09"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.A1330M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A1330M",
+	"id": "TokyoMetro.Yurakucho.A1332M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A1332M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "A1330M",
+	"n": "A1332M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.ShinKiba",
 	"os": [
@@ -3037,10 +3037,10 @@
 		"a": "14:45"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.A1332M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A1332M",
+	"id": "TokyoMetro.Yurakucho.A1334M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A1334M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "A1332M",
+	"n": "A1334M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.ShinKiba",
 	"os": [
@@ -3050,7 +3050,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6366.Weekday"
+		"Seibu.SeibuYurakucho.6364.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -3643,7 +3643,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6370.Weekday"
+		"Seibu.SeibuYurakucho.6368.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -3702,6 +3702,92 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
 		"a": "15:27"
+	}]
+}, {
+	"id": "TokyoMetro.Yurakucho.A1426M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A1426M",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "A1426M",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.ShinKiba",
+	"os": [
+		"TokyoMetro.Yurakucho.Wakoshi"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.Wakoshi",
+		"d": "14:58"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
+		"d": "15:01"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
+		"d": "15:03"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Heiwadai",
+		"d": "15:06"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Hikawadai",
+		"d": "15:08"
+	}, {
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"d": "15:12"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "15:14"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "15:16"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "15:19"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "15:21"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "15:23"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "15:26"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "15:29"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "15:31"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "15:33"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "15:35"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "15:37"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "15:39"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "15:40"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "15:42"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "15:44"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "15:46"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "15:49"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"a": "15:51"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.A1433S.Weekday",
@@ -3788,92 +3874,6 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
 		"a": "15:15"
-	}]
-}, {
-	"id": "TokyoMetro.Yurakucho.A1434M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A1434M",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "A1434M",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.ShinKiba",
-	"os": [
-		"TokyoMetro.Yurakucho.Wakoshi"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"d": "14:58"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "15:01"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "15:03"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "15:06"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "15:08"
-	}, {
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "15:12"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "15:14"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "15:16"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "15:19"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "15:21"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "15:23"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "15:26"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "15:29"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "15:31"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "15:33"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "15:35"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "15:37"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "15:39"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "15:40"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "15:42"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "15:44"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "15:46"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "15:49"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"a": "15:51"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.A1437S.Weekday",
@@ -4126,7 +4126,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6372.Weekday"
+		"Seibu.SeibuYurakucho.6370.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -4289,7 +4289,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6374.Weekday"
+		"Seibu.SeibuYurakucho.6372.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -4522,10 +4522,10 @@
 		"a": "16:15"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.A1532M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A1532M",
+	"id": "TokyoMetro.Yurakucho.A1534M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A1534M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "A1532M",
+	"n": "A1534M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.ShinKiba",
 	"os": [
@@ -4535,7 +4535,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6376.Weekday"
+		"Seibu.SeibuYurakucho.6374.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -5008,6 +5008,80 @@
 		"a": "17:03"
 	}]
 }, {
+	"id": "TokyoMetro.Yurakucho.A1606M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A1606M",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "A1606M",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.ShinKiba",
+	"os": [
+		"Seibu.Ikebukuro.Kotesashi"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"pt": [
+		"Seibu.SeibuYurakucho.4562.Weekday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"d": "17:32"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "17:34"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "17:35"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "17:38"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "17:40"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "17:42"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "17:45"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "17:48"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "17:50"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "17:52"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "17:54"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "17:56"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "17:58"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "17:59"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "18:01"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "18:03"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "18:06"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "18:08"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"a": "18:10"
+	}]
+}, {
 	"id": "TokyoMetro.Yurakucho.A1614M.Weekday",
 	"t": "TokyoMetro.Yurakucho.A1614M",
 	"r": "TokyoMetro.Yurakucho",
@@ -5092,80 +5166,6 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
 		"a": "16:57"
-	}]
-}, {
-	"id": "TokyoMetro.Yurakucho.A1620M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A1620M",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "A1620M",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.ShinKiba",
-	"os": [
-		"Seibu.Ikebukuro.Kotesashi"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"pt": [
-		"Seibu.SeibuYurakucho.4566.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "17:32"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "17:34"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "17:35"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "17:38"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "17:40"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "17:42"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "17:45"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "17:48"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "17:50"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "17:52"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "17:54"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "17:56"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "17:58"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "17:59"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "18:01"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "18:03"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "18:06"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "18:08"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"a": "18:10"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.A1623T.Weekday",
@@ -5270,7 +5270,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6378.Weekday"
+		"Seibu.SeibuYurakucho.6376.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -5602,7 +5602,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6380.Weekday"
+		"Seibu.SeibuYurakucho.6378.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -5929,10 +5929,10 @@
 		"d": "16:43"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "16:45"
+		"d": "16:46"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "16:48"
+		"d": "16:49"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
 		"d": "16:51"
@@ -6419,6 +6419,92 @@
 		"a": "19:20"
 	}]
 }, {
+	"id": "TokyoMetro.Yurakucho.A1726M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A1726M",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "A1726M",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.ShinKiba",
+	"os": [
+		"TokyoMetro.Yurakucho.Wakoshi"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.Wakoshi",
+		"d": "17:21"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
+		"d": "17:24"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
+		"d": "17:27"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Heiwadai",
+		"d": "17:30"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Hikawadai",
+		"d": "17:32"
+	}, {
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"d": "17:34"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "17:37"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "17:39"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "17:43"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "17:45"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "17:47"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "17:49"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "17:52"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "17:55"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "17:56"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "17:58"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "18:00"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "18:02"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "18:04"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "18:06"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "18:08"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "18:10"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "18:13"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"a": "18:15"
+	}]
+}, {
 	"id": "TokyoMetro.Yurakucho.A1733S.Weekday",
 	"t": "TokyoMetro.Yurakucho.A1733S",
 	"r": "TokyoMetro.Yurakucho",
@@ -6506,92 +6592,6 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
 		"a": "18:40"
-	}]
-}, {
-	"id": "TokyoMetro.Yurakucho.A1734M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A1734M",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "A1734M",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.ShinKiba",
-	"os": [
-		"TokyoMetro.Yurakucho.Wakoshi"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"d": "17:21"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "17:24"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "17:27"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "17:30"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "17:32"
-	}, {
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "17:34"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "17:37"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "17:39"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "17:43"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "17:45"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "17:47"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "17:49"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "17:52"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "17:55"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "17:56"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "17:58"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "18:00"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "18:02"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "18:04"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "18:06"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "18:08"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "18:10"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "18:13"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"a": "18:15"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.A1743S.Weekday",
@@ -6853,7 +6853,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.4570.Weekday"
+		"Seibu.SeibuYurakucho.4566.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -7013,7 +7013,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6456.Weekday"
+		"Seibu.SeibuYurakucho.6458.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -7087,7 +7087,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.4568.Weekday"
+		"Seibu.SeibuYurakucho.4564.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -7247,7 +7247,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.4572.Weekday"
+		"Seibu.SeibuYurakucho.4568.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -7631,10 +7631,10 @@
 		"a": "20:05"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.A1832M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A1832M",
+	"id": "TokyoMetro.Yurakucho.A1834M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A1834M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "A1832M",
+	"n": "A1834M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.ShinKiba",
 	"os": [
@@ -7804,7 +7804,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.4574.Weekday"
+		"Seibu.SeibuYurakucho.4570.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -8301,6 +8301,92 @@
 		"a": "21:06"
 	}]
 }, {
+	"id": "TokyoMetro.Yurakucho.A1906M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A1906M",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "A1906M",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.ShinKiba",
+	"os": [
+		"TokyoMetro.Yurakucho.Wakoshi"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.Wakoshi",
+		"d": "19:40"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
+		"d": "19:43"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
+		"d": "19:45"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Heiwadai",
+		"d": "19:48"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Hikawadai",
+		"d": "19:50"
+	}, {
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"d": "19:53"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "19:55"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "19:57"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "20:00"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "20:02"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "20:04"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "20:07"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "20:10"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "20:12"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "20:14"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "20:16"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "20:18"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "20:19"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "20:21"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "20:23"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "20:25"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "20:27"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "20:30"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"a": "20:32"
+	}]
+}, {
 	"id": "TokyoMetro.Yurakucho.A1915T.Weekday",
 	"t": "TokyoMetro.Yurakucho.A1915T",
 	"r": "TokyoMetro.Yurakucho",
@@ -8385,92 +8471,6 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
 		"a": "20:10"
-	}]
-}, {
-	"id": "TokyoMetro.Yurakucho.A1920M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A1920M",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "A1920M",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.ShinKiba",
-	"os": [
-		"TokyoMetro.Yurakucho.Wakoshi"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"d": "19:40"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "19:43"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "19:45"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "19:48"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "19:50"
-	}, {
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "19:53"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "19:55"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "19:57"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "20:00"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "20:02"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "20:04"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "20:07"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "20:10"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "20:12"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "20:14"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "20:16"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "20:18"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "20:19"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "20:21"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "20:23"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "20:25"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "20:27"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "20:30"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"a": "20:32"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.A1923T.Weekday",
@@ -8575,7 +8575,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.4576.Weekday"
+		"Seibu.SeibuYurakucho.4572.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -9058,7 +9058,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.4578.Weekday"
+		"Seibu.SeibuYurakucho.4574.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -9531,10 +9531,10 @@
 		"a": "21:48"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.A2032M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A2032M",
+	"id": "TokyoMetro.Yurakucho.A2034M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A2034M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "A2032M",
+	"n": "A2034M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.ShinKiba",
 	"os": [
@@ -9876,7 +9876,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6382.Weekday"
+		"Seibu.SeibuYurakucho.6380.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -10125,7 +10125,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6384.Weekday"
+		"Seibu.SeibuYurakucho.6382.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -10361,92 +10361,6 @@
 		"a": "22:37"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.A2126M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A2126M",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "A2126M",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.ShinKiba",
-	"os": [
-		"TokyoMetro.Yurakucho.Wakoshi"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"d": "21:35"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "21:38"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "21:40"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "21:43"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "21:45"
-	}, {
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "21:48"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "21:50"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "21:52"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "21:55"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "21:57"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "21:59"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "22:01"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "22:04"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "22:07"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "22:08"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "22:10"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "22:12"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "22:14"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "22:16"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "22:17"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "22:20"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "22:22"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "22:24"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"a": "22:27"
-	}]
-}, {
 	"id": "TokyoMetro.Yurakucho.A2129S.Weekday",
 	"t": "TokyoMetro.Yurakucho.A2129S",
 	"r": "TokyoMetro.Yurakucho",
@@ -10620,6 +10534,92 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
 		"a": "22:58"
+	}]
+}, {
+	"id": "TokyoMetro.Yurakucho.A2136M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A2136M",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "A2136M",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.ShinKiba",
+	"os": [
+		"TokyoMetro.Yurakucho.Wakoshi"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.Wakoshi",
+		"d": "21:35"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
+		"d": "21:38"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
+		"d": "21:40"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Heiwadai",
+		"d": "21:43"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Hikawadai",
+		"d": "21:45"
+	}, {
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"d": "21:48"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "21:50"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "21:52"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "21:55"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "21:57"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "21:59"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "22:01"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "22:04"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "22:07"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "22:08"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "22:10"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "22:12"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "22:14"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "22:16"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "22:17"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "22:20"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "22:22"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "22:24"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"a": "22:27"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.A2139S.Weekday",
@@ -11041,7 +11041,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.6386.Weekday"
+		"Seibu.SeibuYurakucho.6384.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -13709,7 +13709,7 @@
 		"d": "07:32"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "07:35"
+		"d": "07:34"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
 		"d": "07:38"
@@ -13727,7 +13727,7 @@
 		"d": "07:49"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "07:53"
+		"d": "07:52"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
 		"d": "07:55"
@@ -13930,13 +13930,13 @@
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.ShinKiba",
 	"os": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"ds": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.4552.Weekday"
+		"Seibu.SeibuYurakucho.4502.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -14379,7 +14379,7 @@
 		"d": "07:01"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "07:05"
+		"d": "07:04"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
 		"d": "07:07"
@@ -14465,7 +14465,7 @@
 		"d": "07:09"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "07:14"
+		"d": "07:13"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
 		"d": "07:16"
@@ -14650,7 +14650,7 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"d": "07:13"
+		"d": "07:12"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
 		"d": "07:16"
@@ -14760,7 +14760,7 @@
 		"d": "07:14"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "07:18"
+		"d": "07:17"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
 		"d": "07:20"
@@ -14923,7 +14923,7 @@
 		"d": "08:17"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "08:20"
+		"d": "08:19"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
 		"d": "08:22"
@@ -15166,7 +15166,7 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"d": "08:36"
+		"d": "08:35"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
 		"d": "08:39"
@@ -15430,7 +15430,7 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"d": "07:32"
+		"d": "07:31"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
 		"d": "07:35"
@@ -15445,16 +15445,16 @@
 		"d": "07:43"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "07:47"
+		"d": "07:46"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
 		"d": "07:50"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "07:53"
+		"d": "07:52"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "07:56"
+		"d": "07:55"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
 		"d": "07:58"
@@ -15522,7 +15522,7 @@
 		"d": "07:48"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "07:51"
+		"d": "07:50"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
 		"d": "07:54"
@@ -15531,7 +15531,7 @@
 		"d": "07:57"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "08:00"
+		"d": "07:59"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
 		"d": "08:02"
@@ -15588,20 +15588,20 @@
 		"a": "08:44"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.A726M.Weekday",
-	"t": "TokyoMetro.Yurakucho.A726M",
+	"id": "TokyoMetro.Yurakucho.A736M.Weekday",
+	"t": "TokyoMetro.Yurakucho.A736M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "A726M",
+	"n": "A736M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.ShinKiba",
 	"os": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Hanno"
 	],
 	"ds": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.4558.Weekday"
+		"Seibu.SeibuYurakucho.4402.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -15662,80 +15662,6 @@
 		"a": "09:10"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.A727S.Weekday",
-	"t": "TokyoMetro.Yurakucho.A727S",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "A727S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.ShinKiba",
-	"os": [
-		"Seibu.Ikebukuro.Kotesashi"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"pt": [
-		"Seibu.SeibuYurakucho.4562.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "08:46"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "08:48"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "08:50"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "08:54"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "08:57"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "08:59"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "09:02"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "09:05"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "09:08"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "09:10"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "09:12"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "09:15"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "09:17"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "09:19"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "09:21"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "09:23"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "09:26"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "09:29"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"a": "09:31"
-	}]
-}, {
 	"id": "TokyoMetro.Yurakucho.A747S.Weekday",
 	"t": "TokyoMetro.Yurakucho.A747S",
 	"r": "TokyoMetro.Yurakucho",
@@ -15759,7 +15685,7 @@
 		"d": "07:43"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "07:47"
+		"d": "07:46"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
 		"d": "07:50"
@@ -15823,7 +15749,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.4556.Weekday"
+		"Seibu.SeibuYurakucho.4554.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -15836,7 +15762,7 @@
 		"d": "08:11"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "08:15"
+		"d": "08:14"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
 		"d": "08:17"
@@ -15907,10 +15833,10 @@
 		"d": "08:05"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "08:07"
+		"d": "08:06"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "08:10"
+		"d": "08:09"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
 		"d": "08:12"
@@ -15975,10 +15901,10 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"d": "07:35"
+		"d": "07:34"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "07:39"
+		"d": "07:38"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
 		"d": "07:41"
@@ -15996,10 +15922,10 @@
 		"d": "07:53"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "07:56"
+		"d": "07:55"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "07:59"
+		"d": "07:58"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
 		"d": "08:01"
@@ -16060,7 +15986,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.4560.Weekday"
+		"Seibu.SeibuYurakucho.4556.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -16196,20 +16122,20 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.4554.Weekday"
+		"Seibu.SeibuYurakucho.4552.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
 		"d": "07:53"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "07:57"
+		"d": "07:56"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "07:59"
+		"d": "07:58"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "08:02"
+		"d": "08:01"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
 		"d": "08:04"
@@ -16449,7 +16375,7 @@
 		"d": "07:18"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "07:22"
+		"d": "07:21"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
 		"d": "07:24"
@@ -16538,10 +16464,10 @@
 		"d": "07:46"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "07:49"
+		"d": "07:48"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "07:52"
+		"d": "07:51"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
 		"d": "07:54"
@@ -16769,7 +16695,7 @@
 		"d": "08:20"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "08:23"
+		"d": "08:24"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
 		"d": "08:27"
@@ -17194,6 +17120,80 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
 		"a": "09:07"
+	}]
+}, {
+	"id": "TokyoMetro.Yurakucho.A827S.Weekday",
+	"t": "TokyoMetro.Yurakucho.A827S",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "A827S",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.ShinKiba",
+	"os": [
+		"Seibu.Ikebukuro.Kotesashi"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"pt": [
+		"Seibu.SeibuYurakucho.4558.Weekday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"d": "08:46"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "08:48"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "08:50"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "08:54"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "08:57"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "08:59"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "09:02"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "09:05"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "09:08"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "09:10"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "09:12"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "09:15"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "09:17"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "09:19"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "09:21"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "09:23"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "09:26"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "09:29"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"a": "09:31"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.A831S.Weekday",
@@ -17754,7 +17754,7 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"d": "08:39"
+		"d": "08:38"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
 		"d": "08:42"
@@ -17901,7 +17901,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.SeibuYurakucho.4564.Weekday"
+		"Seibu.SeibuYurakucho.4560.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
@@ -19613,10 +19613,10 @@
 		"d": "10:51"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "10:55"
+		"d": "10:56"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "10:57"
+		"d": "10:58"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
 		"d": "11:00"
@@ -20517,10 +20517,10 @@
 		"a": "13:15"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B1230M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B1230M",
+	"id": "TokyoMetro.Yurakucho.B1232M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B1232M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "B1230M",
+	"n": "B1232M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.Wakoshi",
 	"os": [
@@ -20603,10 +20603,10 @@
 		"a": "13:42"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B1232M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B1232M",
+	"id": "TokyoMetro.Yurakucho.B1234M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B1234M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "B1232M",
+	"n": "B1234M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.Wakoshi",
 	"os": [
@@ -22586,10 +22586,10 @@
 		"a": "15:12"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B1430M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B1430M",
+	"id": "TokyoMetro.Yurakucho.B1432M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B1432M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "B1430M",
+	"n": "B1432M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.Wakoshi",
 	"os": [
@@ -22660,10 +22660,10 @@
 		"a": "15:32"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B1432M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B1432M",
+	"id": "TokyoMetro.Yurakucho.B1434M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B1434M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "B1432M",
+	"n": "B1434M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.Wakoshi",
 	"os": [
@@ -23967,10 +23967,10 @@
 		"a": "17:25"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B1634M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B1634M",
+	"id": "TokyoMetro.Yurakucho.B1626M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B1626M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "B1634M",
+	"n": "B1626M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.Wakoshi",
 	"os": [
@@ -24728,31 +24728,31 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"d": "17:39"
+		"d": "17:40"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "17:41"
+		"d": "17:42"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "17:44"
+		"d": "17:45"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tsukishima",
 		"d": "17:47"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "17:49"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
 		"d": "17:50"
 	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "17:51"
+	}, {
 		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "17:52"
+		"d": "17:53"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "17:54"
+		"d": "17:55"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "17:56"
+		"d": "17:57"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kojimachi",
 		"d": "17:58"
@@ -24761,16 +24761,16 @@
 		"d": "18:00"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "18:02"
+		"d": "18:03"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "18:05"
+		"d": "18:06"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "18:07"
+		"d": "18:08"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "18:09"
+		"d": "18:10"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
 		"d": "18:13"
@@ -24847,10 +24847,10 @@
 		"d": "18:00"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "18:04"
+		"d": "18:05"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "18:06"
+		"d": "18:07"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
 		"d": "18:09"
@@ -24859,10 +24859,10 @@
 		"a": "18:11"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B1732M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B1732M",
+	"id": "TokyoMetro.Yurakucho.B1734M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B1734M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "B1732M",
+	"n": "B1734M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.Wakoshi",
 	"os": [
@@ -25033,10 +25033,10 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"d": "17:56"
+		"d": "17:55"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "17:59"
+		"d": "17:58"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Toyosu",
 		"d": "18:01"
@@ -25069,7 +25069,7 @@
 		"d": "18:19"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "18:22"
+		"d": "18:23"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Gokokuji",
 		"d": "18:25"
@@ -25078,31 +25078,31 @@
 		"d": "18:27"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "18:29"
+		"d": "18:30"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "18:32"
+		"d": "18:33"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "18:34"
+		"d": "18:35"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "18:37"
+		"d": "18:38"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "18:39"
+		"d": "18:40"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "18:41"
+		"d": "18:42"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "18:44"
+		"d": "18:45"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "18:47"
+		"d": "18:48"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"a": "18:49"
+		"a": "18:50"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.B1751M.Weekday",
@@ -25153,76 +25153,76 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"d": "17:47"
+		"d": "17:48"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tatsumi",
 		"d": "17:50"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "17:52"
+		"d": "17:53"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "17:55"
+		"d": "17:56"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "17:57"
+		"d": "17:58"
 	}, {
 		"s": "TokyoMetro.Yurakucho.GinzaItchome",
 		"d": "17:59"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "18:00"
+		"d": "18:01"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "18:02"
+		"d": "18:03"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "18:04"
+		"d": "18:05"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "18:06"
+		"d": "18:07"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "18:08"
+		"d": "18:09"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "18:10"
+		"d": "18:11"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "18:13"
+		"d": "18:14"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "18:16"
+		"d": "18:17"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "18:18"
+		"d": "18:19"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "18:20"
+		"d": "18:21"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "18:23"
+		"d": "18:24"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "18:25"
+		"d": "18:26"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "18:27"
+		"d": "18:28"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "18:29"
+		"d": "18:30"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "18:31"
+		"d": "18:32"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "18:34"
+		"d": "18:35"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "18:37"
+		"d": "18:38"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"a": "18:40"
+		"a": "18:41"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.B1763S.Weekday",
@@ -25450,16 +25450,16 @@
 		"d": "18:05"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "18:08"
+		"d": "18:09"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "18:11"
+		"d": "18:12"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
 		"d": "18:14"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "18:16"
+		"d": "18:17"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
 		"d": "18:19"
@@ -25494,10 +25494,10 @@
 		"d": "17:51"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "17:54"
+		"d": "17:53"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "17:57"
+		"d": "17:56"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tsukishima",
 		"d": "17:59"
@@ -25506,7 +25506,7 @@
 		"d": "18:01"
 	}, {
 		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "18:03"
+		"d": "18:02"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Yurakucho",
 		"d": "18:04"
@@ -25545,22 +25545,22 @@
 		"d": "18:29"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "18:33"
+		"d": "18:34"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "18:35"
+		"d": "18:36"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "18:37"
+		"d": "18:38"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "18:40"
+		"d": "18:41"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "18:43"
+		"d": "18:44"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"a": "18:45"
+		"a": "18:46"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.B1781S.Weekday",
@@ -25663,76 +25663,162 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"d": "17:43"
+		"d": "17:44"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "17:46"
+		"d": "17:47"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "17:48"
+		"d": "17:49"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "17:51"
+		"d": "17:52"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "17:53"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
 		"d": "17:54"
 	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "17:55"
+	}, {
 		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "17:56"
+		"d": "17:57"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "17:58"
+		"d": "17:59"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "18:00"
+		"d": "18:01"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "18:02"
+		"d": "18:03"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "18:04"
+		"d": "18:05"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "18:06"
+		"d": "18:07"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "18:09"
+		"d": "18:10"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "18:11"
+		"d": "18:12"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "18:13"
+		"d": "18:14"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "18:16"
+		"d": "18:17"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "18:19"
+		"d": "18:20"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "18:21"
+		"d": "18:22"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "18:23"
+		"d": "18:24"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "18:25"
+		"d": "18:27"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "18:28"
+		"d": "18:29"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "18:30"
+		"d": "18:32"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "18:33"
+		"d": "18:34"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"a": "18:36"
+		"a": "18:37"
+	}]
+}, {
+	"id": "TokyoMetro.Yurakucho.B1806M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B1806M",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "B1806M",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Wakoshi",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.Wakoshi"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"d": "18:31"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "18:34"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "18:37"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "18:39"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "18:41"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "18:43"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "18:44"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "18:46"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "18:48"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "18:50"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "18:52"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "18:54"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "18:57"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "19:00"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "19:02"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "19:06"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "19:09"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "19:11"
+	}, {
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"d": "19:15"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Hikawadai",
+		"d": "19:17"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Heiwadai",
+		"d": "19:19"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
+		"d": "19:22"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
+		"d": "19:25"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Wakoshi",
+		"a": "19:27"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.B1815T.Weekday",
@@ -25996,92 +26082,6 @@
 		"a": "19:14"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B1820M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B1820M",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "B1820M",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Wakoshi",
-	"os": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.Wakoshi"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"d": "18:31"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "18:34"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "18:37"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "18:39"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "18:41"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "18:43"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "18:44"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "18:46"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "18:48"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "18:50"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "18:52"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "18:54"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "18:57"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "19:00"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "19:02"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "19:05"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "19:08"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "19:11"
-	}, {
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "19:14"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "19:16"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "19:19"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "19:22"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "19:24"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"a": "19:27"
-	}]
-}, {
 	"id": "TokyoMetro.Yurakucho.B1823T.Weekday",
 	"t": "TokyoMetro.Yurakucho.B1823T",
 	"r": "TokyoMetro.Yurakucho",
@@ -26171,96 +26171,10 @@
 		"a": "19:07"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B1833S.Weekday",
-	"t": "TokyoMetro.Yurakucho.B1833S",
+	"id": "TokyoMetro.Yurakucho.B1826M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B1826M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "B1833S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Wakoshi",
-	"os": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.Wakoshi"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"d": "18:47"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "18:50"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "18:52"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "18:55"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "18:57"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "18:59"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "19:00"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "19:02"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "19:04"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "19:06"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "19:08"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "19:10"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "19:13"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "19:15"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "19:18"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "19:20"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "19:23"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "19:25"
-	}, {
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "19:27"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "19:29"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "19:32"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "19:34"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "19:37"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"a": "19:40"
-	}]
-}, {
-	"id": "TokyoMetro.Yurakucho.B1834M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B1834M",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "B1834M",
+	"n": "B1826M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.Wakoshi",
 	"os": [
@@ -26331,6 +26245,92 @@
 		"a": "19:04"
 	}]
 }, {
+	"id": "TokyoMetro.Yurakucho.B1833S.Weekday",
+	"t": "TokyoMetro.Yurakucho.B1833S",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "B1833S",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Wakoshi",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.Wakoshi"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"d": "18:47"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "18:50"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "18:52"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "18:55"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "18:57"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "18:59"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "19:00"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "19:02"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "19:04"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "19:06"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "19:08"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "19:10"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "19:13"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "19:16"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "19:18"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "19:21"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "19:23"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "19:25"
+	}, {
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"d": "19:28"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Hikawadai",
+		"d": "19:30"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Heiwadai",
+		"d": "19:32"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
+		"d": "19:35"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
+		"d": "19:37"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Wakoshi",
+		"a": "19:40"
+	}]
+}, {
 	"id": "TokyoMetro.Yurakucho.B1843S.Weekday",
 	"t": "TokyoMetro.Yurakucho.B1843S",
 	"r": "TokyoMetro.Yurakucho",
@@ -26354,7 +26354,7 @@
 		"d": "18:42"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "18:44"
+		"d": "18:45"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tsukishima",
 		"d": "18:47"
@@ -26387,19 +26387,19 @@
 		"d": "19:05"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "19:07"
+		"d": "19:08"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
 		"d": "19:10"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "19:12"
+		"d": "19:13"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "19:15"
+		"d": "19:16"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "19:17"
+		"d": "19:18"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
 		"a": "19:19"
@@ -26464,10 +26464,10 @@
 		"d": "18:46"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "18:49"
+		"d": "18:50"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "18:51"
+		"d": "18:52"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
 		"d": "18:54"
@@ -26545,7 +26545,7 @@
 		"d": "18:56"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "18:59"
+		"d": "18:58"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Toyosu",
 		"d": "19:01"
@@ -26661,7 +26661,7 @@
 		"d": "19:06"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "19:09"
+		"d": "19:10"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
 		"d": "19:12"
@@ -26673,19 +26673,19 @@
 		"d": "19:17"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "19:19"
+		"d": "19:20"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "19:21"
+		"d": "19:22"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "19:24"
+		"d": "19:25"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
 		"d": "19:27"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"a": "19:29"
+		"a": "19:30"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.B1877S.Weekday",
@@ -26708,7 +26708,7 @@
 		"d": "18:46"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "18:48"
+		"d": "18:49"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tsukishima",
 		"d": "18:51"
@@ -26741,13 +26741,13 @@
 		"d": "19:09"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "19:11"
+		"d": "19:12"
 	}, {
 		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
 		"d": "19:14"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "19:16"
+		"d": "19:17"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
 		"d": "19:19"
@@ -26756,22 +26756,22 @@
 		"d": "19:21"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "19:23"
+		"d": "19:24"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "19:25"
+		"d": "19:27"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "19:28"
+		"d": "19:29"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "19:31"
+		"d": "19:32"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "19:33"
+		"d": "19:34"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"a": "19:36"
+		"a": "19:37"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.B1879S.Weekday",
@@ -26797,7 +26797,7 @@
 		"d": "18:54"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "18:57"
+		"d": "18:56"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Tsukishima",
 		"d": "18:59"
@@ -26845,22 +26845,22 @@
 		"d": "19:29"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "19:32"
+		"d": "19:33"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "19:34"
+		"d": "19:35"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
 		"d": "19:37"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "19:39"
+		"d": "19:40"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "19:42"
+		"d": "19:43"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"a": "19:45"
+		"a": "19:46"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.B1883S.Weekday",
@@ -27613,10 +27613,10 @@
 		"a": "20:19"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B1932M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B1932M",
+	"id": "TokyoMetro.Yurakucho.B1934M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B1934M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "B1932M",
+	"n": "B1934M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.Wakoshi",
 	"os": [
@@ -27847,7 +27847,7 @@
 		"d": "19:35"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "19:38"
+		"d": "19:39"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
 		"d": "19:41"
@@ -28154,6 +28154,80 @@
 		"a": "20:39"
 	}]
 }, {
+	"id": "TokyoMetro.Yurakucho.B2006M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B2006M",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "B2006M",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Wakoshi",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Kotesashi"
+	],
+	"nt": [
+		"Seibu.SeibuYurakucho.6545.Weekday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"d": "20:44"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "20:47"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "20:50"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "20:52"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "20:54"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "20:56"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "20:58"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "20:59"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "21:01"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "21:03"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "21:05"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "21:07"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "21:10"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "21:13"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "21:15"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "21:18"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "21:20"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "21:22"
+	}, {
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"a": "21:24"
+	}]
+}, {
 	"id": "TokyoMetro.Yurakucho.B2015T.Weekday",
 	"t": "TokyoMetro.Yurakucho.B2015T",
 	"r": "TokyoMetro.Yurakucho",
@@ -28216,7 +28290,7 @@
 		"d": "20:50"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "20:53"
+		"d": "20:54"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
 		"d": "20:56"
@@ -28317,80 +28391,6 @@
 		"a": "21:04"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B2020M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B2020M",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "B2020M",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Wakoshi",
-	"os": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Kotesashi"
-	],
-	"nt": [
-		"Seibu.SeibuYurakucho.6545.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"d": "20:44"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "20:47"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "20:50"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "20:52"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "20:54"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "20:56"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "20:58"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "20:59"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "21:01"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "21:03"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "21:05"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "21:07"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "21:10"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "21:13"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "21:15"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "21:18"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "21:20"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "21:22"
-	}, {
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"a": "21:24"
-	}]
-}, {
 	"id": "TokyoMetro.Yurakucho.B2025T.Weekday",
 	"t": "TokyoMetro.Yurakucho.B2025T",
 	"r": "TokyoMetro.Yurakucho",
@@ -28453,10 +28453,10 @@
 		"d": "20:30"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "20:34"
+		"d": "20:35"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "20:36"
+		"d": "20:37"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
 		"d": "20:39"
@@ -28542,10 +28542,10 @@
 		"d": "20:40"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "20:44"
+		"d": "20:45"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "20:46"
+		"d": "20:47"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
 		"d": "20:50"
@@ -29879,10 +29879,10 @@
 		"d": "22:14"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "22:18"
+		"d": "22:19"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "22:20"
+		"d": "22:21"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
 		"d": "22:23"
@@ -30319,7 +30319,7 @@
 	"t": "TokyoMetro.Yurakucho.B2214M",
 	"r": "TokyoMetro.Yurakucho",
 	"n": "B2214M",
-	"y": "TokyoMetro.Local",
+	"y": "TokyoMetro.SemiExpress",
 	"d": "TokyoMetro.Wakoshi",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
@@ -30328,7 +30328,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.SeibuYurakucho.6549.Weekday"
+		"Seibu.SeibuYurakucho.4401.Weekday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
@@ -30638,10 +30638,84 @@
 		"a": "23:54"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B2226M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B2226M",
+	"id": "TokyoMetro.Yurakucho.B2228M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B2228M",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "B2226M",
+	"n": "B2228M",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Wakoshi",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Kotesashi"
+	],
+	"nt": [
+		"Seibu.SeibuYurakucho.6549.Weekday"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"d": "22:21"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "22:23"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "22:26"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "22:28"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "22:31"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "22:32"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "22:34"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "22:36"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "22:38"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "22:40"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "22:41"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "22:44"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "22:46"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "22:49"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "22:51"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "22:55"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "22:57"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "22:59"
+	}, {
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"a": "23:01"
+	}]
+}, {
+	"id": "TokyoMetro.Yurakucho.B2236M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B2236M",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "B2236M",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.Wakoshi",
 	"os": [
@@ -30710,80 +30784,6 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
 		"a": "23:27"
-	}]
-}, {
-	"id": "TokyoMetro.Yurakucho.B2228M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B2228M",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "B2228M",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Wakoshi",
-	"os": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Kotesashi"
-	],
-	"nt": [
-		"Seibu.SeibuYurakucho.6551.Weekday"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"d": "22:21"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "22:23"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "22:26"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "22:28"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "22:31"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "22:32"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "22:34"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "22:36"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "22:38"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "22:40"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "22:41"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "22:44"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "22:46"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "22:49"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "22:51"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "22:55"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "22:57"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "22:59"
-	}, {
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"a": "23:01"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.B2239S.Weekday",
@@ -33219,10 +33219,10 @@
 		"d": "07:24"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "07:27"
+		"d": "07:28"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "07:29"
+		"d": "07:30"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
 		"d": "07:33"
@@ -33551,16 +33551,16 @@
 		"d": "06:56"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "06:59"
+		"d": "06:58"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "07:01"
+		"d": "07:00"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
 		"d": "07:03"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "07:06"
+		"d": "07:05"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
 		"d": "07:08"
@@ -33723,16 +33723,16 @@
 		"d": "07:54"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "07:57"
+		"d": "07:58"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "07:59"
+		"d": "08:00"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "08:01"
+		"d": "08:02"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "08:04"
+		"d": "08:05"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
 		"d": "08:07"
@@ -34274,10 +34274,10 @@
 		"d": "08:23"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "08:26"
+		"d": "08:27"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "08:28"
+		"d": "08:30"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
 		"d": "08:32"
@@ -35252,10 +35252,10 @@
 		"d": "08:47"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "08:49"
+		"d": "08:50"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "08:52"
+		"d": "08:53"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
 		"d": "08:55"
@@ -35836,7 +35836,7 @@
 		"d": "08:39"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "08:41"
+		"d": "08:42"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
 		"d": "08:44"
@@ -36236,7 +36236,7 @@
 		"d": "10:10"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "10:12"
+		"d": "10:13"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
 		"d": "10:15"
@@ -36755,92 +36755,6 @@
 		"a": "10:38"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B926M.Weekday",
-	"t": "TokyoMetro.Yurakucho.B926M",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "B926M",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Wakoshi",
-	"os": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.Wakoshi"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"d": "09:19"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "09:21"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "09:24"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "09:27"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "09:29"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "09:31"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "09:32"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "09:34"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "09:36"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "09:38"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "09:40"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "09:42"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "09:45"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "09:48"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "09:50"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "09:52"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "09:55"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "09:58"
-	}, {
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "10:01"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "10:03"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "10:05"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "10:08"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "10:11"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"a": "10:14"
-	}]
-}, {
 	"id": "TokyoMetro.Yurakucho.B927S.Weekday",
 	"t": "TokyoMetro.Yurakucho.B927S",
 	"r": "TokyoMetro.Yurakucho",
@@ -36851,7 +36765,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kiyose"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"nt": [
 		"Seibu.SeibuYurakucho.4503.Weekday"
@@ -36999,6 +36913,92 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
 		"a": "10:21"
+	}]
+}, {
+	"id": "TokyoMetro.Yurakucho.B936M.Weekday",
+	"t": "TokyoMetro.Yurakucho.B936M",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "B936M",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Wakoshi",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.Wakoshi"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"d": "09:19"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "09:21"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "09:24"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "09:27"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "09:29"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "09:31"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "09:32"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "09:34"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "09:36"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "09:38"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "09:40"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "09:42"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "09:45"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "09:48"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "09:50"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "09:52"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "09:55"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "09:58"
+	}, {
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"d": "10:01"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Hikawadai",
+		"d": "10:03"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Heiwadai",
+		"d": "10:05"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
+		"d": "10:08"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
+		"d": "10:11"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Wakoshi",
+		"a": "10:14"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.B957S.Weekday",
@@ -37248,6 +37248,62 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
 		"a": "09:54"
+	}]
+}, {
+	"id": "TokyoMetro.Yurakucho.B553S.SaturdayHoliday",
+	"t": "TokyoMetro.Yurakucho.B553S",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "B553S",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Wakoshi",
+	"os": [
+		"TokyoMetro.Yurakucho.Ichigaya"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.Wakoshi"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "05:00"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "05:02"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "05:05"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "05:07"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "05:09"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "05:12"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "05:14"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "05:16"
+	}, {
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"d": "05:18"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Hikawadai",
+		"d": "05:20"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Heiwadai",
+		"d": "05:22"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
+		"d": "05:25"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
+		"d": "05:28"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Wakoshi",
+		"a": "05:30"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.A1004M.SaturdayHoliday",
@@ -43473,10 +43529,10 @@
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"d": "17:22"
+		"d": "17:21"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "17:25"
+		"d": "17:24"
 	}, {
 		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
 		"d": "17:27"
@@ -43488,13 +43544,13 @@
 		"d": "17:32"
 	}, {
 		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "17:35"
+		"d": "17:36"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "17:37"
+		"d": "17:38"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "17:39"
+		"d": "17:40"
 	}, {
 		"s": "TokyoMetro.Yurakucho.Ikebukuro",
 		"d": "17:43"
@@ -45748,10 +45804,10 @@
 		"a": "20:08"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.A1985S.SaturdayHoliday",
-	"t": "TokyoMetro.Yurakucho.A1985S",
+	"id": "TokyoMetro.Yurakucho.A1991S.SaturdayHoliday",
+	"t": "TokyoMetro.Yurakucho.A1991S",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "A1985S",
+	"n": "A1991S",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.ShinKiba",
 	"os": [
@@ -45761,7 +45817,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Tobu.Tojo.C2185S.SaturdayHoliday"
+		"Tobu.Tojo.C2191S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
@@ -48001,92 +48057,6 @@
 		"a": "23:34"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.A2285S.SaturdayHoliday",
-	"t": "TokyoMetro.Yurakucho.A2285S",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "A2285S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.ShinKiba",
-	"os": [
-		"TokyoMetro.Yurakucho.Wakoshi"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"d": "22:21"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "22:24"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "22:26"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "22:29"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "22:31"
-	}, {
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "22:36"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "22:38"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "22:40"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "22:42"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "22:45"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "22:47"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "22:49"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "22:52"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "22:54"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "22:56"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "22:58"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "23:00"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "23:02"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "23:04"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "23:05"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "23:07"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "23:10"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "23:12"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"a": "23:14"
-	}]
-}, {
 	"id": "TokyoMetro.Yurakucho.A2289S.SaturdayHoliday",
 	"t": "TokyoMetro.Yurakucho.A2289S",
 	"r": "TokyoMetro.Yurakucho",
@@ -48171,6 +48141,92 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.ShinKiba",
 		"a": "23:02"
+	}]
+}, {
+	"id": "TokyoMetro.Yurakucho.A2291S.SaturdayHoliday",
+	"t": "TokyoMetro.Yurakucho.A2291S",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "A2291S",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.ShinKiba",
+	"os": [
+		"TokyoMetro.Yurakucho.Wakoshi"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.Wakoshi",
+		"d": "22:21"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
+		"d": "22:24"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
+		"d": "22:26"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Heiwadai",
+		"d": "22:29"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Hikawadai",
+		"d": "22:31"
+	}, {
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"d": "22:36"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "22:38"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "22:40"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "22:42"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "22:45"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "22:47"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "22:49"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "22:52"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "22:54"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "22:56"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "22:58"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "23:00"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "23:02"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "23:04"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "23:05"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "23:07"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "23:10"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "23:12"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"a": "23:14"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.A2343S.SaturdayHoliday",
@@ -63241,10 +63297,10 @@
 		"a": "21:49"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B2185S.SaturdayHoliday",
-	"t": "TokyoMetro.Yurakucho.B2185S",
+	"id": "TokyoMetro.Yurakucho.B2191S.SaturdayHoliday",
+	"t": "TokyoMetro.Yurakucho.B2191S",
 	"r": "TokyoMetro.Yurakucho",
-	"n": "B2185S",
+	"n": "B2191S",
 	"y": "TokyoMetro.Local",
 	"d": "TokyoMetro.Wakoshi",
 	"os": [
@@ -64572,92 +64628,6 @@
 		"a": "00:32"
 	}]
 }, {
-	"id": "TokyoMetro.Yurakucho.B2385S.SaturdayHoliday",
-	"t": "TokyoMetro.Yurakucho.B2385S",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "B2385S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Wakoshi",
-	"os": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.Wakoshi"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.ShinKiba",
-		"d": "23:23"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tatsumi",
-		"d": "23:26"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Toyosu",
-		"d": "23:29"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Tsukishima",
-		"d": "23:31"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Shintomicho",
-		"d": "23:33"
-	}, {
-		"s": "TokyoMetro.Yurakucho.GinzaItchome",
-		"d": "23:35"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Yurakucho",
-		"d": "23:37"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Sakuradamon",
-		"d": "23:38"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Nagatacho",
-		"d": "23:40"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kojimachi",
-		"d": "23:42"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "23:44"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "23:46"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "23:49"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "23:52"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "23:54"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "23:57"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "23:59"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "00:01"
-	}, {
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "00:04"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "00:06"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "00:09"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "00:11"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "00:14"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"a": "00:17"
-	}]
-}, {
 	"id": "TokyoMetro.Yurakucho.B2389S.SaturdayHoliday",
 	"t": "TokyoMetro.Yurakucho.B2389S",
 	"r": "TokyoMetro.Yurakucho",
@@ -64742,6 +64712,92 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
 		"a": "00:02"
+	}]
+}, {
+	"id": "TokyoMetro.Yurakucho.B2391S.SaturdayHoliday",
+	"t": "TokyoMetro.Yurakucho.B2391S",
+	"r": "TokyoMetro.Yurakucho",
+	"n": "B2391S",
+	"y": "TokyoMetro.Local",
+	"d": "TokyoMetro.Wakoshi",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.Wakoshi"
+	],
+	"tt": [{
+		"s": "TokyoMetro.Yurakucho.ShinKiba",
+		"d": "23:23"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tatsumi",
+		"d": "23:26"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Toyosu",
+		"d": "23:29"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Tsukishima",
+		"d": "23:31"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Shintomicho",
+		"d": "23:33"
+	}, {
+		"s": "TokyoMetro.Yurakucho.GinzaItchome",
+		"d": "23:35"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Yurakucho",
+		"d": "23:37"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Sakuradamon",
+		"d": "23:38"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Nagatacho",
+		"d": "23:40"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kojimachi",
+		"d": "23:42"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ichigaya",
+		"d": "23:44"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Iidabashi",
+		"d": "23:46"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Edogawabashi",
+		"d": "23:49"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Gokokuji",
+		"d": "23:52"
+	}, {
+		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
+		"d": "23:54"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Ikebukuro",
+		"d": "23:57"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Kanamecho",
+		"d": "23:59"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Senkawa",
+		"d": "00:01"
+	}, {
+		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
+		"d": "00:04"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Hikawadai",
+		"d": "00:06"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Heiwadai",
+		"d": "00:09"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
+		"d": "00:11"
+	}, {
+		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
+		"d": "00:14"
+	}, {
+		"s": "TokyoMetro.Yurakucho.Wakoshi",
+		"a": "00:17"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.B2423S.SaturdayHoliday",
@@ -64976,62 +65032,6 @@
 	}, {
 		"s": "TokyoMetro.Yurakucho.Wakoshi",
 		"a": "06:37"
-	}]
-}, {
-	"id": "TokyoMetro.Yurakucho.B553S.SaturdayHoliday",
-	"t": "TokyoMetro.Yurakucho.B553S",
-	"r": "TokyoMetro.Yurakucho",
-	"n": "B553S",
-	"y": "TokyoMetro.Local",
-	"d": "TokyoMetro.Wakoshi",
-	"os": [
-		"TokyoMetro.Yurakucho.Ichigaya"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.Wakoshi"
-	],
-	"tt": [{
-		"s": "TokyoMetro.Yurakucho.Ichigaya",
-		"d": "05:00"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Iidabashi",
-		"d": "05:02"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Edogawabashi",
-		"d": "05:05"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Gokokuji",
-		"d": "05:07"
-	}, {
-		"s": "TokyoMetro.Yurakucho.HigashiIkebukuro",
-		"d": "05:09"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Ikebukuro",
-		"d": "05:12"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Kanamecho",
-		"d": "05:14"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Senkawa",
-		"d": "05:16"
-	}, {
-		"s": "TokyoMetro.Yurakucho.KotakeMukaihara",
-		"d": "05:18"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Hikawadai",
-		"d": "05:20"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Heiwadai",
-		"d": "05:22"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
-		"d": "05:25"
-	}, {
-		"s": "TokyoMetro.Yurakucho.ChikatetsuNarimasu",
-		"d": "05:28"
-	}, {
-		"s": "TokyoMetro.Yurakucho.Wakoshi",
-		"a": "05:30"
 	}]
 }, {
 	"id": "TokyoMetro.Yurakucho.B555S.SaturdayHoliday",

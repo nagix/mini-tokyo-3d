@@ -542,7 +542,7 @@
 	}, {
 		"s": "Tobu.Isesaki.Wado",
 		"a": "07:16",
-		"d": "07:17"
+		"d": "07:16"
 	}, {
 		"s": "Tobu.Isesaki.Kuki",
 		"a": "07:20",
@@ -964,65 +964,6 @@
 		"a": "08:59"
 	}]
 }, {
-	"id": "Tobu.Isesaki.2511.Weekday",
-	"t": "Tobu.Isesaki.2511",
-	"r": "Tobu.Isesaki",
-	"n": "2511",
-	"y": "Tobu.SectionExpress",
-	"d": "Outbound",
-	"os": [
-		"Tobu.TobuSkytree.Asakusa"
-	],
-	"ds": [
-		"Tobu.Isesaki.Tatebayashi"
-	],
-	"pt": [
-		"Tobu.TobuSkytree.2511.Weekday"
-	],
-	"tt": [{
-		"s": "Tobu.Isesaki.TobuDobutsuKoen",
-		"d": "08:35"
-	}, {
-		"s": "Tobu.Isesaki.Wado",
-		"a": "08:38",
-		"d": "08:39"
-	}, {
-		"s": "Tobu.Isesaki.Kuki",
-		"a": "08:42",
-		"d": "08:49"
-	}, {
-		"s": "Tobu.Isesaki.Washinomiya",
-		"a": "08:53",
-		"d": "08:53"
-	}, {
-		"s": "Tobu.Isesaki.Hanasaki",
-		"a": "08:56",
-		"d": "08:56"
-	}, {
-		"s": "Tobu.Isesaki.Kazo",
-		"a": "09:00",
-		"d": "09:00"
-	}, {
-		"s": "Tobu.Isesaki.MinamiHanyu",
-		"a": "09:04",
-		"d": "09:04"
-	}, {
-		"s": "Tobu.Isesaki.Hanyu",
-		"a": "09:08",
-		"d": "09:08"
-	}, {
-		"s": "Tobu.Isesaki.Kawamata",
-		"a": "09:12",
-		"d": "09:12"
-	}, {
-		"s": "Tobu.Isesaki.Morinjimae",
-		"a": "09:14",
-		"d": "09:15"
-	}, {
-		"s": "Tobu.Isesaki.Tatebayashi",
-		"a": "09:18"
-	}]
-}, {
 	"id": "Tobu.Isesaki.F680T.Weekday",
 	"t": "Tobu.Isesaki.F680T",
 	"r": "Tobu.Isesaki",
@@ -1060,10 +1001,69 @@
 		"Tobu.TobuSkytree.Asakusa"
 	],
 	"ds": [
-		"Tobu.Isesaki.Kuki"
+		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
 		"Tobu.TobuSkytree.3503.Weekday"
+	],
+	"tt": [{
+		"s": "Tobu.Isesaki.TobuDobutsuKoen",
+		"d": "08:44"
+	}, {
+		"s": "Tobu.Isesaki.Wado",
+		"a": "08:47",
+		"d": "08:47"
+	}, {
+		"s": "Tobu.Isesaki.Kuki",
+		"a": "08:51",
+		"d": "08:52"
+	}, {
+		"s": "Tobu.Isesaki.Washinomiya",
+		"a": "08:56",
+		"d": "08:56"
+	}, {
+		"s": "Tobu.Isesaki.Hanasaki",
+		"a": "08:59",
+		"d": "08:59"
+	}, {
+		"s": "Tobu.Isesaki.Kazo",
+		"a": "09:03",
+		"d": "09:03"
+	}, {
+		"s": "Tobu.Isesaki.MinamiHanyu",
+		"a": "09:07",
+		"d": "09:08"
+	}, {
+		"s": "Tobu.Isesaki.Hanyu",
+		"a": "09:11",
+		"d": "09:11"
+	}, {
+		"s": "Tobu.Isesaki.Kawamata",
+		"a": "09:15",
+		"d": "09:15"
+	}, {
+		"s": "Tobu.Isesaki.Morinjimae",
+		"a": "09:18",
+		"d": "09:18"
+	}, {
+		"s": "Tobu.Isesaki.Tatebayashi",
+		"a": "09:21"
+	}]
+}, {
+	"id": "Tobu.Isesaki.3505.Weekday",
+	"t": "Tobu.Isesaki.3505",
+	"r": "Tobu.Isesaki",
+	"n": "3505",
+	"y": "Tobu.SectionSemiExpress",
+	"d": "Outbound",
+	"os": [
+		"Tobu.TobuSkytree.Asakusa"
+	],
+	"ds": [
+		"Tobu.Isesaki.Kuki"
+	],
+	"pt": [
+		"Tobu.TobuSkytree.3505.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -1787,10 +1787,10 @@
 	}, {
 		"s": "Tobu.Isesaki.Ashikagashi",
 		"a": "15:04",
-		"d": "15:06"
+		"d": "15:05"
 	}, {
 		"s": "Tobu.Isesaki.Ota",
-		"a": "15:13"
+		"a": "15:12"
 	}],
 	"nm": [{
 		"ja": "りょうもう 17号",
@@ -2432,10 +2432,10 @@
 		"a": "18:10"
 	}]
 }, {
-	"id": "Tobu.Isesaki.3505.Weekday",
-	"t": "Tobu.Isesaki.3505",
+	"id": "Tobu.Isesaki.3507.Weekday",
+	"t": "Tobu.Isesaki.3507",
 	"r": "Tobu.Isesaki",
-	"n": "3505",
+	"n": "3507",
 	"y": "Tobu.SectionSemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -2445,7 +2445,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.3505.Weekday"
+		"Tobu.TobuSkytree.3507.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -2572,10 +2572,10 @@
 		"a": "18:29"
 	}]
 }, {
-	"id": "Tobu.Isesaki.3507.Weekday",
-	"t": "Tobu.Isesaki.3507",
+	"id": "Tobu.Isesaki.3509.Weekday",
+	"t": "Tobu.Isesaki.3509",
 	"r": "Tobu.Isesaki",
-	"n": "3507",
+	"n": "3509",
 	"y": "Tobu.SectionSemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -2585,7 +2585,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.3507.Weekday"
+		"Tobu.TobuSkytree.3509.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -2709,10 +2709,10 @@
 	}],
 	"v": "200"
 }, {
-	"id": "Tobu.Isesaki.2513.Weekday",
-	"t": "Tobu.Isesaki.2513",
+	"id": "Tobu.Isesaki.2511.Weekday",
+	"t": "Tobu.Isesaki.2511",
 	"r": "Tobu.Isesaki",
-	"n": "2513",
+	"n": "2511",
 	"y": "Tobu.SectionExpress",
 	"d": "Outbound",
 	"os": [
@@ -2722,7 +2722,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.2513.Weekday"
+		"Tobu.TobuSkytree.2511.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -2876,10 +2876,10 @@
 		"a": "19:29"
 	}]
 }, {
-	"id": "Tobu.Isesaki.3509.Weekday",
-	"t": "Tobu.Isesaki.3509",
+	"id": "Tobu.Isesaki.3511.Weekday",
+	"t": "Tobu.Isesaki.3511",
 	"r": "Tobu.Isesaki",
-	"n": "3509",
+	"n": "3511",
 	"y": "Tobu.SectionSemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -2889,7 +2889,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.3509.Weekday"
+		"Tobu.TobuSkytree.3511.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -3016,10 +3016,10 @@
 	}],
 	"v": "200"
 }, {
-	"id": "Tobu.Isesaki.2515.Weekday",
-	"t": "Tobu.Isesaki.2515",
+	"id": "Tobu.Isesaki.2513.Weekday",
+	"t": "Tobu.Isesaki.2513",
 	"r": "Tobu.Isesaki",
-	"n": "2515",
+	"n": "2513",
 	"y": "Tobu.SectionExpress",
 	"d": "Outbound",
 	"os": [
@@ -3029,7 +3029,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.2515.Weekday"
+		"Tobu.TobuSkytree.2513.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -3151,10 +3151,10 @@
 	}, {
 		"s": "Tobu.Isesaki.Sakaimachi",
 		"a": "21:26",
-		"d": "21:26"
+		"d": "21:27"
 	}, {
 		"s": "Tobu.Isesaki.ShinIsesaki",
-		"a": "21:34",
+		"a": "21:35",
 		"d": "21:35"
 	}, {
 		"s": "Tobu.Isesaki.Isesaki",
@@ -3196,10 +3196,10 @@
 		"a": "20:31"
 	}]
 }, {
-	"id": "Tobu.Isesaki.3511.Weekday",
-	"t": "Tobu.Isesaki.3511",
+	"id": "Tobu.Isesaki.3513.Weekday",
+	"t": "Tobu.Isesaki.3513",
 	"r": "Tobu.Isesaki",
-	"n": "3511",
+	"n": "3513",
 	"y": "Tobu.SectionSemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -3209,7 +3209,7 @@
 		"Tobu.Isesaki.Kuki"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.3511.Weekday"
+		"Tobu.TobuSkytree.3513.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -3240,14 +3240,14 @@
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
-		"d": "20:45"
+		"d": "20:43"
 	}, {
 		"s": "Tobu.Isesaki.Wado",
-		"a": "20:48",
-		"d": "20:48"
+		"a": "20:45",
+		"d": "20:46"
 	}, {
 		"s": "Tobu.Isesaki.Kuki",
-		"a": "20:52"
+		"a": "20:49"
 	}]
 }, {
 	"id": "Tobu.Isesaki.1841.Weekday",
@@ -3304,10 +3304,10 @@
 	}],
 	"v": "200"
 }, {
-	"id": "Tobu.Isesaki.2517.Weekday",
-	"t": "Tobu.Isesaki.2517",
+	"id": "Tobu.Isesaki.2515.Weekday",
+	"t": "Tobu.Isesaki.2515",
 	"r": "Tobu.Isesaki",
-	"n": "2517",
+	"n": "2515",
 	"y": "Tobu.SectionExpress",
 	"d": "Outbound",
 	"os": [
@@ -3317,7 +3317,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.2517.Weekday"
+		"Tobu.TobuSkytree.2515.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -3436,10 +3436,10 @@
 	}],
 	"v": "500"
 }, {
-	"id": "Tobu.Isesaki.3513.Weekday",
-	"t": "Tobu.Isesaki.3513",
+	"id": "Tobu.Isesaki.3515.Weekday",
+	"t": "Tobu.Isesaki.3515",
 	"r": "Tobu.Isesaki",
-	"n": "3513",
+	"n": "3515",
 	"y": "Tobu.SectionSemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -3449,7 +3449,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.3513.Weekday"
+		"Tobu.TobuSkytree.3515.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -3576,10 +3576,10 @@
 	}],
 	"v": "500"
 }, {
-	"id": "Tobu.Isesaki.3515.Weekday",
-	"t": "Tobu.Isesaki.3515",
+	"id": "Tobu.Isesaki.3517.Weekday",
+	"t": "Tobu.Isesaki.3517",
 	"r": "Tobu.Isesaki",
-	"n": "3515",
+	"n": "3517",
 	"y": "Tobu.SectionSemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -3589,7 +3589,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.3515.Weekday"
+		"Tobu.TobuSkytree.3517.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -3713,10 +3713,10 @@
 	}],
 	"v": "200"
 }, {
-	"id": "Tobu.Isesaki.3517.Weekday",
-	"t": "Tobu.Isesaki.3517",
+	"id": "Tobu.Isesaki.3519.Weekday",
+	"t": "Tobu.Isesaki.3519",
 	"r": "Tobu.Isesaki",
-	"n": "3517",
+	"n": "3519",
 	"y": "Tobu.SectionSemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -3726,7 +3726,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.3517.Weekday"
+		"Tobu.TobuSkytree.3519.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -3772,10 +3772,10 @@
 		"a": "23:05"
 	}]
 }, {
-	"id": "Tobu.Isesaki.2519.Weekday",
-	"t": "Tobu.Isesaki.2519",
+	"id": "Tobu.Isesaki.2517.Weekday",
+	"t": "Tobu.Isesaki.2517",
 	"r": "Tobu.Isesaki",
-	"n": "2519",
+	"n": "2517",
 	"y": "Tobu.SectionExpress",
 	"d": "Outbound",
 	"os": [
@@ -3785,7 +3785,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.2519.Weekday"
+		"Tobu.TobuSkytree.2517.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -3874,10 +3874,10 @@
 	}],
 	"v": "500"
 }, {
-	"id": "Tobu.Isesaki.3519.Weekday",
-	"t": "Tobu.Isesaki.3519",
+	"id": "Tobu.Isesaki.3521.Weekday",
+	"t": "Tobu.Isesaki.3521",
 	"r": "Tobu.Isesaki",
-	"n": "3519",
+	"n": "3521",
 	"y": "Tobu.SectionSemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -3887,7 +3887,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.3519.Weekday"
+		"Tobu.TobuSkytree.3521.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -3933,10 +3933,10 @@
 		"a": "23:54"
 	}]
 }, {
-	"id": "Tobu.Isesaki.2521.Weekday",
-	"t": "Tobu.Isesaki.2521",
+	"id": "Tobu.Isesaki.2519.Weekday",
+	"t": "Tobu.Isesaki.2519",
 	"r": "Tobu.Isesaki",
-	"n": "2521",
+	"n": "2519",
 	"y": "Tobu.SectionExpress",
 	"d": "Outbound",
 	"os": [
@@ -3946,7 +3946,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.2521.Weekday"
+		"Tobu.TobuSkytree.2519.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -3992,10 +3992,10 @@
 		"a": "00:14"
 	}]
 }, {
-	"id": "Tobu.Isesaki.2523.Weekday",
-	"t": "Tobu.Isesaki.2523",
+	"id": "Tobu.Isesaki.2521.Weekday",
+	"t": "Tobu.Isesaki.2521",
 	"r": "Tobu.Isesaki",
-	"n": "2523",
+	"n": "2521",
 	"y": "Tobu.SectionExpress",
 	"d": "Outbound",
 	"os": [
@@ -4005,7 +4005,7 @@
 		"Tobu.Isesaki.Tatebayashi"
 	],
 	"pt": [
-		"Tobu.TobuSkytree.2523.Weekday"
+		"Tobu.TobuSkytree.2521.Weekday"
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
@@ -7180,38 +7180,38 @@
 	}, {
 		"s": "Tobu.Isesaki.Niragawa",
 		"a": "14:59",
-		"d": "15:01"
+		"d": "15:00"
 	}, {
 		"s": "Tobu.Isesaki.Ota",
-		"a": "15:04",
+		"a": "15:03",
 		"d": "15:15"
 	}, {
 		"s": "Tobu.Isesaki.Hosoya",
 		"a": "15:18",
-		"d": "15:18"
+		"d": "15:19"
 	}, {
 		"s": "Tobu.Isesaki.Kizaki",
 		"a": "15:22",
-		"d": "15:22"
+		"d": "15:23"
 	}, {
 		"s": "Tobu.Isesaki.Serada",
-		"a": "15:25",
+		"a": "15:26",
 		"d": "15:26"
 	}, {
 		"s": "Tobu.Isesaki.Sakaimachi",
 		"a": "15:28",
-		"d": "15:28"
+		"d": "15:29"
 	}, {
 		"s": "Tobu.Isesaki.Goshi",
-		"a": "15:32",
+		"a": "15:33",
 		"d": "15:33"
 	}, {
 		"s": "Tobu.Isesaki.ShinIsesaki",
-		"a": "15:36",
+		"a": "15:37",
 		"d": "15:37"
 	}, {
 		"s": "Tobu.Isesaki.Isesaki",
-		"a": "15:39"
+		"a": "15:40"
 	}]
 }, {
 	"id": "Tobu.Isesaki.413E.Weekday",
@@ -8284,15 +8284,15 @@
 	}, {
 		"s": "Tobu.Isesaki.Sakaimachi",
 		"a": "21:17",
-		"d": "21:19"
+		"d": "21:20"
 	}, {
 		"s": "Tobu.Isesaki.Goshi",
 		"a": "21:23",
-		"d": "21:23"
+		"d": "21:24"
 	}, {
 		"s": "Tobu.Isesaki.ShinIsesaki",
 		"a": "21:27",
-		"d": "21:27"
+		"d": "21:28"
 	}, {
 		"s": "Tobu.Isesaki.Isesaki",
 		"a": "21:30"
@@ -9802,11 +9802,11 @@
 		"d": "09:09"
 	}, {
 		"s": "Tobu.Isesaki.Tatara",
-		"a": "09:13",
+		"a": "09:12",
 		"d": "09:13"
 	}, {
 		"s": "Tobu.Isesaki.Tatebayashi",
-		"a": "09:17"
+		"a": "09:16"
 	}]
 }, {
 	"id": "Tobu.Isesaki.324E.Weekday",
@@ -11343,19 +11343,19 @@
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.Isesaki",
-		"d": "21:09"
+		"d": "21:10"
 	}, {
 		"s": "Tobu.Isesaki.ShinIsesaki",
-		"a": "21:11",
+		"a": "21:12",
 		"d": "21:12"
 	}, {
 		"s": "Tobu.Isesaki.Goshi",
-		"a": "21:15",
+		"a": "21:16",
 		"d": "21:16"
 	}, {
 		"s": "Tobu.Isesaki.Sakaimachi",
 		"a": "21:19",
-		"d": "21:19"
+		"d": "21:20"
 	}, {
 		"s": "Tobu.Isesaki.Serada",
 		"a": "21:23",
@@ -11363,10 +11363,10 @@
 	}, {
 		"s": "Tobu.Isesaki.Kizaki",
 		"a": "21:27",
-		"d": "21:27"
+		"d": "21:28"
 	}, {
 		"s": "Tobu.Isesaki.Hosoya",
-		"a": "21:31",
+		"a": "21:32",
 		"d": "21:33"
 	}, {
 		"s": "Tobu.Isesaki.Ota",
@@ -11794,19 +11794,19 @@
 	}, {
 		"s": "Tobu.Isesaki.Tatebayashi",
 		"a": "06:03",
-		"d": "06:07"
+		"d": "06:06"
 	}, {
 		"s": "Tobu.Isesaki.Hanyu",
-		"a": "06:14",
-		"d": "06:14"
+		"a": "06:12",
+		"d": "06:13"
 	}, {
 		"s": "Tobu.Isesaki.Kazo",
-		"a": "06:20",
-		"d": "06:21"
+		"a": "06:19",
+		"d": "06:20"
 	}, {
 		"s": "Tobu.Isesaki.Kuki",
-		"a": "06:29",
-		"d": "06:30"
+		"a": "06:28",
+		"d": "06:29"
 	}, {
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
 		"a": "06:35"
@@ -11856,14 +11856,14 @@
 	}, {
 		"s": "Tobu.Isesaki.Kazo",
 		"a": "07:11",
-		"d": "07:11"
+		"d": "07:12"
 	}, {
 		"s": "Tobu.Isesaki.Kuki",
-		"a": "07:19",
+		"a": "07:20",
 		"d": "07:21"
 	}, {
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
-		"a": "07:27"
+		"a": "07:28"
 	}],
 	"nm": [{
 		"ja": "りょうもう 6号",
@@ -13488,46 +13488,46 @@
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.Tatebayashi",
-		"d": "06:09"
+		"d": "06:07"
 	}, {
 		"s": "Tobu.Isesaki.Morinjimae",
-		"a": "06:12",
-		"d": "06:12"
+		"a": "06:10",
+		"d": "06:11"
 	}, {
 		"s": "Tobu.Isesaki.Kawamata",
-		"a": "06:14",
-		"d": "06:15"
+		"a": "06:13",
+		"d": "06:13"
 	}, {
 		"s": "Tobu.Isesaki.Hanyu",
-		"a": "06:19",
-		"d": "06:19"
+		"a": "06:17",
+		"d": "06:18"
 	}, {
 		"s": "Tobu.Isesaki.MinamiHanyu",
-		"a": "06:22",
-		"d": "06:23"
+		"a": "06:21",
+		"d": "06:21"
 	}, {
 		"s": "Tobu.Isesaki.Kazo",
-		"a": "06:27",
-		"d": "06:27"
+		"a": "06:25",
+		"d": "06:26"
 	}, {
 		"s": "Tobu.Isesaki.Hanasaki",
-		"a": "06:30",
-		"d": "06:31"
+		"a": "06:29",
+		"d": "06:29"
 	}, {
 		"s": "Tobu.Isesaki.Washinomiya",
-		"a": "06:33",
-		"d": "06:34"
+		"a": "06:32",
+		"d": "06:32"
 	}, {
 		"s": "Tobu.Isesaki.Kuki",
-		"a": "06:38",
-		"d": "06:39"
+		"a": "06:36",
+		"d": "06:37"
 	}, {
 		"s": "Tobu.Isesaki.Wado",
-		"a": "06:42",
-		"d": "06:43"
+		"a": "06:41",
+		"d": "06:41"
 	}, {
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
-		"a": "06:46"
+		"a": "06:45"
 	}]
 }, {
 	"id": "Tobu.Isesaki.2510.Weekday",
@@ -13697,11 +13697,11 @@
 	}, {
 		"s": "Tobu.Isesaki.Kuki",
 		"a": "07:06",
-		"d": "07:07"
+		"d": "07:06"
 	}, {
 		"s": "Tobu.Isesaki.Wado",
 		"a": "07:10",
-		"d": "07:11"
+		"d": "07:10"
 	}, {
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
 		"a": "07:14"
@@ -14110,11 +14110,11 @@
 	}, {
 		"s": "Tobu.Isesaki.Kuki",
 		"a": "08:15",
-		"d": "08:18"
+		"d": "08:17"
 	}, {
 		"s": "Tobu.Isesaki.Wado",
 		"a": "08:21",
-		"d": "08:22"
+		"d": "08:21"
 	}, {
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
 		"a": "08:25"
@@ -16478,7 +16478,7 @@
 	}, {
 		"s": "Tobu.Isesaki.Wado",
 		"a": "07:07",
-		"d": "07:08"
+		"d": "07:07"
 	}, {
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
 		"a": "07:11"
@@ -18055,14 +18055,14 @@
 	}, {
 		"s": "Tobu.Isesaki.Kuki",
 		"a": "07:04",
-		"d": "07:05"
+		"d": "07:04"
 	}, {
 		"s": "Tobu.Isesaki.Washinomiya",
-		"a": "07:09",
+		"a": "07:08",
 		"d": "07:09"
 	}, {
 		"s": "Tobu.Isesaki.Hanasaki",
-		"a": "07:12",
+		"a": "07:11",
 		"d": "07:12"
 	}, {
 		"s": "Tobu.Isesaki.Kazo",
@@ -19475,10 +19475,10 @@
 	}, {
 		"s": "Tobu.Isesaki.Ashikagashi",
 		"a": "15:04",
-		"d": "15:06"
+		"d": "15:05"
 	}, {
 		"s": "Tobu.Isesaki.Ota",
-		"a": "15:13"
+		"a": "15:12"
 	}],
 	"nm": [{
 		"ja": "りょうもう 17号",
@@ -20780,10 +20780,10 @@
 	}, {
 		"s": "Tobu.Isesaki.Sakaimachi",
 		"a": "21:26",
-		"d": "21:26"
+		"d": "21:27"
 	}, {
 		"s": "Tobu.Isesaki.ShinIsesaki",
-		"a": "21:34",
+		"a": "21:35",
 		"d": "21:35"
 	}, {
 		"s": "Tobu.Isesaki.Isesaki",
@@ -24632,38 +24632,38 @@
 	}, {
 		"s": "Tobu.Isesaki.Niragawa",
 		"a": "14:59",
-		"d": "15:01"
+		"d": "15:00"
 	}, {
 		"s": "Tobu.Isesaki.Ota",
-		"a": "15:04",
+		"a": "15:03",
 		"d": "15:15"
 	}, {
 		"s": "Tobu.Isesaki.Hosoya",
 		"a": "15:18",
-		"d": "15:18"
+		"d": "15:19"
 	}, {
 		"s": "Tobu.Isesaki.Kizaki",
 		"a": "15:22",
-		"d": "15:22"
+		"d": "15:23"
 	}, {
 		"s": "Tobu.Isesaki.Serada",
-		"a": "15:25",
+		"a": "15:26",
 		"d": "15:26"
 	}, {
 		"s": "Tobu.Isesaki.Sakaimachi",
 		"a": "15:28",
-		"d": "15:28"
+		"d": "15:29"
 	}, {
 		"s": "Tobu.Isesaki.Goshi",
-		"a": "15:32",
+		"a": "15:33",
 		"d": "15:33"
 	}, {
 		"s": "Tobu.Isesaki.ShinIsesaki",
-		"a": "15:36",
+		"a": "15:37",
 		"d": "15:37"
 	}, {
 		"s": "Tobu.Isesaki.Isesaki",
-		"a": "15:39"
+		"a": "15:40"
 	}]
 }, {
 	"id": "Tobu.Isesaki.413E.SaturdayHoliday",
@@ -25736,15 +25736,15 @@
 	}, {
 		"s": "Tobu.Isesaki.Sakaimachi",
 		"a": "21:17",
-		"d": "21:19"
+		"d": "21:20"
 	}, {
 		"s": "Tobu.Isesaki.Goshi",
 		"a": "21:23",
-		"d": "21:23"
+		"d": "21:24"
 	}, {
 		"s": "Tobu.Isesaki.ShinIsesaki",
 		"a": "21:27",
-		"d": "21:27"
+		"d": "21:28"
 	}, {
 		"s": "Tobu.Isesaki.Isesaki",
 		"a": "21:30"
@@ -27254,11 +27254,11 @@
 		"d": "09:09"
 	}, {
 		"s": "Tobu.Isesaki.Tatara",
-		"a": "09:13",
+		"a": "09:12",
 		"d": "09:13"
 	}, {
 		"s": "Tobu.Isesaki.Tatebayashi",
-		"a": "09:17"
+		"a": "09:16"
 	}]
 }, {
 	"id": "Tobu.Isesaki.324E.SaturdayHoliday",
@@ -28795,19 +28795,19 @@
 	],
 	"tt": [{
 		"s": "Tobu.Isesaki.Isesaki",
-		"d": "21:09"
+		"d": "21:10"
 	}, {
 		"s": "Tobu.Isesaki.ShinIsesaki",
-		"a": "21:11",
+		"a": "21:12",
 		"d": "21:12"
 	}, {
 		"s": "Tobu.Isesaki.Goshi",
-		"a": "21:15",
+		"a": "21:16",
 		"d": "21:16"
 	}, {
 		"s": "Tobu.Isesaki.Sakaimachi",
 		"a": "21:19",
-		"d": "21:19"
+		"d": "21:20"
 	}, {
 		"s": "Tobu.Isesaki.Serada",
 		"a": "21:23",
@@ -28815,10 +28815,10 @@
 	}, {
 		"s": "Tobu.Isesaki.Kizaki",
 		"a": "21:27",
-		"d": "21:27"
+		"d": "21:28"
 	}, {
 		"s": "Tobu.Isesaki.Hosoya",
-		"a": "21:31",
+		"a": "21:32",
 		"d": "21:33"
 	}, {
 		"s": "Tobu.Isesaki.Ota",
@@ -29246,19 +29246,19 @@
 	}, {
 		"s": "Tobu.Isesaki.Tatebayashi",
 		"a": "06:03",
-		"d": "06:07"
+		"d": "06:06"
 	}, {
 		"s": "Tobu.Isesaki.Hanyu",
-		"a": "06:14",
-		"d": "06:14"
+		"a": "06:12",
+		"d": "06:13"
 	}, {
 		"s": "Tobu.Isesaki.Kazo",
-		"a": "06:20",
-		"d": "06:21"
+		"a": "06:19",
+		"d": "06:20"
 	}, {
 		"s": "Tobu.Isesaki.Kuki",
-		"a": "06:29",
-		"d": "06:30"
+		"a": "06:28",
+		"d": "06:29"
 	}, {
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
 		"a": "06:35"
@@ -29308,14 +29308,14 @@
 	}, {
 		"s": "Tobu.Isesaki.Kazo",
 		"a": "07:11",
-		"d": "07:11"
+		"d": "07:12"
 	}, {
 		"s": "Tobu.Isesaki.Kuki",
-		"a": "07:19",
+		"a": "07:20",
 		"d": "07:21"
 	}, {
 		"s": "Tobu.Isesaki.TobuDobutsuKoen",
-		"a": "07:27"
+		"a": "07:28"
 	}],
 	"nm": [{
 		"ja": "りょうもう 6号",

@@ -40,7 +40,7 @@
 	"y": "JR-East.LimitedExpress",
 	"d": "Inbound",
 	"os": [
-		"JR-East.ChuoRapid.Hachioji"
+		"JR-East.ShonanShinjuku.Shinjuku"
 	],
 	"ds": [
 		"JR-East.SobuRapid.NaritaAirportTerminal1"
@@ -87,10 +87,10 @@
 	],
 	"tt": [{
 		"s": "JR-East.YamanoteFreight.Shibuya",
-		"d": "06:57"
+		"d": "07:13"
 	}, {
 		"s": "JR-East.YamanoteFreight.Tokyo",
-		"a": "07:13"
+		"a": "07:29"
 	}],
 	"nm": [{
 		"ja": "成田エクスプレス 5号",
@@ -108,7 +108,7 @@
 	"y": "JR-East.LimitedExpress",
 	"d": "Inbound",
 	"os": [
-		"JR-East.ChuoRapid.Hachioji"
+		"JR-East.ShonanShinjuku.Shinjuku"
 	],
 	"ds": [
 		"JR-East.SobuRapid.NaritaAirportTerminal1"
@@ -121,10 +121,10 @@
 	],
 	"tt": [{
 		"s": "JR-East.YamanoteFreight.Shibuya",
-		"d": "07:13"
+		"d": "07:33"
 	}, {
 		"s": "JR-East.YamanoteFreight.Tokyo",
-		"a": "07:29"
+		"a": "07:52"
 	}],
 	"nm": [{
 		"ja": "成田エクスプレス 7号",
@@ -155,44 +155,6 @@
 	],
 	"tt": [{
 		"s": "JR-East.YamanoteFreight.Shibuya",
-		"d": "07:33"
-	}, {
-		"s": "JR-East.YamanoteFreight.Shinagawa",
-		"a": "07:44",
-		"d": "07:45"
-	}, {
-		"s": "JR-East.YamanoteFreight.Tokyo",
-		"a": "07:54"
-	}],
-	"nm": [{
-		"ja": "成田エクスプレス 9号",
-		"en": "Narita Express 9",
-		"ko": "나리타 익스프레스 9",
-		"zh-Hans": "成田特快 9",
-		"zh-Hant": "成田特快 9"
-	}],
-	"v": "E259"
-}, {
-	"id": "JR-East.YamanoteFreight.2211M.Weekday",
-	"t": "JR-East.YamanoteFreight.2211M",
-	"r": "JR-East.YamanoteFreight",
-	"n": "2211M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"JR-East.ShonanShinjuku.Shinjuku"
-	],
-	"ds": [
-		"JR-East.SobuRapid.NaritaAirportTerminal1"
-	],
-	"pt": [
-		"JR-East.ShonanShinjuku.2211M.Weekday"
-	],
-	"nt": [
-		"JR-East.SobuRapid.2011M.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.YamanoteFreight.Shibuya",
 		"d": "08:08"
 	}, {
 		"s": "JR-East.YamanoteFreight.Shinagawa",
@@ -203,11 +165,49 @@
 		"a": "08:28"
 	}],
 	"nm": [{
-		"ja": "成田エクスプレス 11号",
-		"en": "Narita Express 11",
-		"ko": "나리타 익스프레스 11",
-		"zh-Hans": "成田特快 11",
-		"zh-Hant": "成田特快 11"
+		"ja": "成田エクスプレス 9号",
+		"en": "Narita Express 9",
+		"ko": "나리타 익스프레스 9",
+		"zh-Hans": "成田特快 9",
+		"zh-Hant": "成田特快 9"
+	}],
+	"v": "E259"
+}, {
+	"id": "JR-East.YamanoteFreight.2213M.Weekday",
+	"t": "JR-East.YamanoteFreight.2213M",
+	"r": "JR-East.YamanoteFreight",
+	"n": "2213M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.ShonanShinjuku.2213M.Weekday"
+	],
+	"nt": [
+		"JR-East.SobuRapid.2013M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.YamanoteFreight.Shibuya",
+		"d": "09:11"
+	}, {
+		"s": "JR-East.YamanoteFreight.Shinagawa",
+		"a": "09:20",
+		"d": "09:21"
+	}, {
+		"s": "JR-East.YamanoteFreight.Tokyo",
+		"a": "09:28"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 13号",
+		"en": "Narita Express 13",
+		"ko": "나리타 익스프레스 13",
+		"zh-Hans": "成田特快 13",
+		"zh-Hant": "成田特快 13"
 	}],
 	"v": "E259"
 }, {
@@ -378,7 +378,7 @@
 		"d": "11:44"
 	}, {
 		"s": "JR-East.YamanoteFreight.Tokyo",
-		"a": "12:00"
+		"a": "12:01"
 	}],
 	"nm": [{
 		"ja": "成田エクスプレス 23号",
@@ -810,7 +810,7 @@
 		"d": "17:45"
 	}, {
 		"s": "JR-East.YamanoteFreight.Tokyo",
-		"a": "18:01"
+		"a": "18:00"
 	}],
 	"nm": [{
 		"ja": "成田エクスプレス 47号",
@@ -1701,7 +1701,7 @@
 	],
 	"tt": [{
 		"s": "JR-East.YamanoteFreight.Tokyo",
-		"d": "19:54"
+		"d": "19:55"
 	}, {
 		"s": "JR-East.YamanoteFreight.Shibuya",
 		"a": "20:14"
@@ -1763,7 +1763,7 @@
 		"JR-East.SobuRapid.NaritaAirportTerminal1"
 	],
 	"ds": [
-		"JR-East.ChuoRapid.Hachioji"
+		"JR-East.ShonanShinjuku.Shinjuku"
 	],
 	"pt": [
 		"JR-East.SobuRapid.2050M.Weekday"
@@ -1797,7 +1797,7 @@
 		"JR-East.SobuRapid.NaritaAirportTerminal1"
 	],
 	"ds": [
-		"JR-East.ChuoRapid.Hachioji"
+		"JR-East.ShonanShinjuku.Shinjuku"
 	],
 	"pt": [
 		"JR-East.SobuRapid.2052M.Weekday"
@@ -1896,7 +1896,7 @@
 	"y": "JR-East.LimitedExpress",
 	"d": "Inbound",
 	"os": [
-		"JR-East.ChuoRapid.Hachioji"
+		"JR-East.ShonanShinjuku.Shinjuku"
 	],
 	"ds": [
 		"JR-East.SobuRapid.NaritaAirportTerminal1"
@@ -1943,10 +1943,10 @@
 	],
 	"tt": [{
 		"s": "JR-East.YamanoteFreight.Shibuya",
-		"d": "06:57"
+		"d": "07:13"
 	}, {
 		"s": "JR-East.YamanoteFreight.Tokyo",
-		"a": "07:13"
+		"a": "07:29"
 	}],
 	"nm": [{
 		"ja": "成田エクスプレス 5号",
@@ -1964,7 +1964,7 @@
 	"y": "JR-East.LimitedExpress",
 	"d": "Inbound",
 	"os": [
-		"JR-East.ChuoRapid.Hachioji"
+		"JR-East.ShonanShinjuku.Shinjuku"
 	],
 	"ds": [
 		"JR-East.SobuRapid.NaritaAirportTerminal1"
@@ -1977,10 +1977,10 @@
 	],
 	"tt": [{
 		"s": "JR-East.YamanoteFreight.Shibuya",
-		"d": "07:13"
+		"d": "07:33"
 	}, {
 		"s": "JR-East.YamanoteFreight.Tokyo",
-		"a": "07:29"
+		"a": "07:52"
 	}],
 	"nm": [{
 		"ja": "成田エクスプレス 7号",
@@ -2011,44 +2011,6 @@
 	],
 	"tt": [{
 		"s": "JR-East.YamanoteFreight.Shibuya",
-		"d": "07:33"
-	}, {
-		"s": "JR-East.YamanoteFreight.Shinagawa",
-		"a": "07:44",
-		"d": "07:45"
-	}, {
-		"s": "JR-East.YamanoteFreight.Tokyo",
-		"a": "07:54"
-	}],
-	"nm": [{
-		"ja": "成田エクスプレス 9号",
-		"en": "Narita Express 9",
-		"ko": "나리타 익스프레스 9",
-		"zh-Hans": "成田特快 9",
-		"zh-Hant": "成田特快 9"
-	}],
-	"v": "E259"
-}, {
-	"id": "JR-East.YamanoteFreight.2211M.SaturdayHoliday",
-	"t": "JR-East.YamanoteFreight.2211M",
-	"r": "JR-East.YamanoteFreight",
-	"n": "2211M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"JR-East.ShonanShinjuku.Shinjuku"
-	],
-	"ds": [
-		"JR-East.SobuRapid.NaritaAirportTerminal1"
-	],
-	"pt": [
-		"JR-East.ShonanShinjuku.2211M.SaturdayHoliday"
-	],
-	"nt": [
-		"JR-East.SobuRapid.2011M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.YamanoteFreight.Shibuya",
 		"d": "08:08"
 	}, {
 		"s": "JR-East.YamanoteFreight.Shinagawa",
@@ -2059,11 +2021,49 @@
 		"a": "08:28"
 	}],
 	"nm": [{
-		"ja": "成田エクスプレス 11号",
-		"en": "Narita Express 11",
-		"ko": "나리타 익스프레스 11",
-		"zh-Hans": "成田特快 11",
-		"zh-Hant": "成田特快 11"
+		"ja": "成田エクスプレス 9号",
+		"en": "Narita Express 9",
+		"ko": "나리타 익스프레스 9",
+		"zh-Hans": "成田特快 9",
+		"zh-Hant": "成田特快 9"
+	}],
+	"v": "E259"
+}, {
+	"id": "JR-East.YamanoteFreight.2213M.SaturdayHoliday",
+	"t": "JR-East.YamanoteFreight.2213M",
+	"r": "JR-East.YamanoteFreight",
+	"n": "2213M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.ShonanShinjuku.Shinjuku"
+	],
+	"ds": [
+		"JR-East.SobuRapid.NaritaAirportTerminal1"
+	],
+	"pt": [
+		"JR-East.ShonanShinjuku.2213M.SaturdayHoliday"
+	],
+	"nt": [
+		"JR-East.SobuRapid.2013M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.YamanoteFreight.Shibuya",
+		"d": "09:10"
+	}, {
+		"s": "JR-East.YamanoteFreight.Shinagawa",
+		"a": "09:20",
+		"d": "09:21"
+	}, {
+		"s": "JR-East.YamanoteFreight.Tokyo",
+		"a": "09:28"
+	}],
+	"nm": [{
+		"ja": "成田エクスプレス 13号",
+		"en": "Narita Express 13",
+		"ko": "나리타 익스프레스 13",
+		"zh-Hans": "成田特快 13",
+		"zh-Hant": "成田特快 13"
 	}],
 	"v": "E259"
 }, {
@@ -2234,7 +2234,7 @@
 		"d": "11:44"
 	}, {
 		"s": "JR-East.YamanoteFreight.Tokyo",
-		"a": "12:00"
+		"a": "12:01"
 	}],
 	"nm": [{
 		"ja": "成田エクスプレス 23号",
@@ -2666,7 +2666,7 @@
 		"d": "17:45"
 	}, {
 		"s": "JR-East.YamanoteFreight.Tokyo",
-		"a": "18:01"
+		"a": "18:00"
 	}],
 	"nm": [{
 		"ja": "成田エクスプレス 47号",
@@ -3557,7 +3557,7 @@
 	],
 	"tt": [{
 		"s": "JR-East.YamanoteFreight.Tokyo",
-		"d": "19:54"
+		"d": "19:55"
 	}, {
 		"s": "JR-East.YamanoteFreight.Shibuya",
 		"a": "20:14"
@@ -3619,7 +3619,7 @@
 		"JR-East.SobuRapid.NaritaAirportTerminal1"
 	],
 	"ds": [
-		"JR-East.ChuoRapid.Hachioji"
+		"JR-East.ShonanShinjuku.Shinjuku"
 	],
 	"pt": [
 		"JR-East.SobuRapid.2050M.SaturdayHoliday"
@@ -3653,7 +3653,7 @@
 		"JR-East.SobuRapid.NaritaAirportTerminal1"
 	],
 	"ds": [
-		"JR-East.ChuoRapid.Hachioji"
+		"JR-East.ShonanShinjuku.Shinjuku"
 	],
 	"pt": [
 		"JR-East.SobuRapid.2052M.SaturdayHoliday"

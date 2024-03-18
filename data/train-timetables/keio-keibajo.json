@@ -973,10 +973,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"d": "20:24"
+		"d": "20:27"
 	}, {
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"a": "20:27"
+		"a": "20:30"
 	}]
 }, {
 	"id": "Keio.Keibajo.6499.Weekday",
@@ -993,10 +993,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"d": "20:38"
+		"d": "20:39"
 	}, {
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"a": "20:40"
+		"a": "20:42"
 	}]
 }, {
 	"id": "Keio.Keibajo.6401A.Weekday",
@@ -2053,10 +2053,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "20:30"
+		"d": "20:33"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "20:32"
+		"a": "20:36"
 	}]
 }, {
 	"id": "Keio.Keibajo.6498.Weekday",
@@ -2133,7 +2133,7 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "21:45"
+		"d": "21:44"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
 		"a": "21:47"
@@ -2739,10 +2739,10 @@
 		"a": "15:17"
 	}]
 }, {
-	"id": "Keio.Keibajo.6499.SaturdayHoliday",
-	"t": "Keio.Keibajo.6499",
+	"id": "Keio.Keibajo.6401A.SaturdayHoliday",
+	"t": "Keio.Keibajo.6401A",
 	"r": "Keio.Keibajo",
-	"n": "6499",
+	"n": "6401A",
 	"y": "Keio.Local",
 	"d": "Outbound",
 	"os": [
@@ -2759,10 +2759,10 @@
 		"a": "15:36"
 	}]
 }, {
-	"id": "Keio.Keibajo.6407A.SaturdayHoliday",
-	"t": "Keio.Keibajo.6407A",
+	"id": "Keio.Keibajo.6409A.SaturdayHoliday",
+	"t": "Keio.Keibajo.6409A",
 	"r": "Keio.Keibajo",
-	"n": "6407A",
+	"n": "6409A",
 	"y": "Keio.Local",
 	"d": "Outbound",
 	"os": [
@@ -2779,10 +2779,10 @@
 		"a": "15:57"
 	}]
 }, {
-	"id": "Keio.Keibajo.6415A.SaturdayHoliday",
-	"t": "Keio.Keibajo.6415A",
+	"id": "Keio.Keibajo.6417A.SaturdayHoliday",
+	"t": "Keio.Keibajo.6417A",
 	"r": "Keio.Keibajo",
-	"n": "6415A",
+	"n": "6417A",
 	"y": "Keio.Local",
 	"d": "Outbound",
 	"os": [
@@ -2799,10 +2799,10 @@
 		"a": "16:16"
 	}]
 }, {
-	"id": "Keio.Keibajo.6423A.SaturdayHoliday",
-	"t": "Keio.Keibajo.6423A",
+	"id": "Keio.Keibajo.6425A.SaturdayHoliday",
+	"t": "Keio.Keibajo.6425A",
 	"r": "Keio.Keibajo",
-	"n": "6423A",
+	"n": "6425A",
 	"y": "Keio.Local",
 	"d": "Outbound",
 	"os": [
@@ -2819,10 +2819,10 @@
 		"a": "16:37"
 	}]
 }, {
-	"id": "Keio.Keibajo.6431A.SaturdayHoliday",
-	"t": "Keio.Keibajo.6431A",
+	"id": "Keio.Keibajo.6433A.SaturdayHoliday",
+	"t": "Keio.Keibajo.6433A",
 	"r": "Keio.Keibajo",
-	"n": "6431A",
+	"n": "6433A",
 	"y": "Keio.Local",
 	"d": "Outbound",
 	"os": [
@@ -3839,10 +3839,10 @@
 		"a": "16:46"
 	}]
 }, {
-	"id": "Keio.Keibajo.6434A.SaturdayHoliday",
-	"t": "Keio.Keibajo.6434A",
+	"id": "Keio.Keibajo.6432A.SaturdayHoliday",
+	"t": "Keio.Keibajo.6432A",
 	"r": "Keio.Keibajo",
-	"n": "6434A",
+	"n": "6432A",
 	"y": "Keio.Local",
 	"d": "Inbound",
 	"os": [
@@ -3859,6 +3859,26 @@
 		"a": "17:08"
 	}]
 }, {
+	"id": "Keio.Keibajo.6438A.SaturdayHoliday",
+	"t": "Keio.Keibajo.6438A",
+	"r": "Keio.Keibajo",
+	"n": "6438A",
+	"y": "Keio.Local",
+	"d": "Inbound",
+	"os": [
+		"Keio.Keibajo.FuchukeibaSeimommae"
+	],
+	"ds": [
+		"Keio.Keibajo.HigashiFuchu"
+	],
+	"tt": [{
+		"s": "Keio.Keibajo.FuchukeibaSeimommae",
+		"d": "17:23"
+	}, {
+		"s": "Keio.Keibajo.HigashiFuchu",
+		"a": "17:26"
+	}]
+}, {
 	"id": "Keio.Keibajo.6440A.SaturdayHoliday",
 	"t": "Keio.Keibajo.6440A",
 	"r": "Keio.Keibajo",
@@ -3873,10 +3893,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "17:24"
+		"d": "17:43"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "17:26"
+		"a": "17:46"
 	}]
 }, {
 	"id": "Keio.Keibajo.6442A.SaturdayHoliday",
@@ -3893,10 +3913,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "17:45"
+		"d": "18:00"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "17:47"
+		"a": "18:02"
 	}]
 }, {
 	"id": "Keio.Keibajo.6444A.SaturdayHoliday",
@@ -3913,10 +3933,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "18:00"
+		"d": "18:20"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "18:02"
+		"a": "18:23"
 	}]
 }, {
 	"id": "Keio.Keibajo.6446A.SaturdayHoliday",
@@ -3933,10 +3953,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "18:20"
+		"d": "18:40"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "18:23"
+		"a": "18:42"
 	}]
 }, {
 	"id": "Keio.Keibajo.6448A.SaturdayHoliday",
@@ -3953,10 +3973,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "18:40"
+		"d": "18:56"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "18:42"
+		"a": "18:59"
 	}]
 }, {
 	"id": "Keio.Keibajo.6450A.SaturdayHoliday",
@@ -3973,10 +3993,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "18:56"
+		"d": "19:11"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "18:59"
+		"a": "19:14"
 	}]
 }, {
 	"id": "Keio.Keibajo.6452A.SaturdayHoliday",
@@ -3993,10 +4013,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "19:11"
+		"d": "19:26"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "19:14"
+		"a": "19:29"
 	}]
 }, {
 	"id": "Keio.Keibajo.6454A.SaturdayHoliday",
@@ -4013,10 +4033,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "19:26"
+		"d": "19:42"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "19:29"
+		"a": "19:44"
 	}]
 }, {
 	"id": "Keio.Keibajo.6456A.SaturdayHoliday",
@@ -4033,10 +4053,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "19:42"
+		"d": "19:56"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "19:44"
+		"a": "19:59"
 	}]
 }, {
 	"id": "Keio.Keibajo.6458A.SaturdayHoliday",
@@ -4053,10 +4073,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "19:56"
+		"d": "20:14"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "19:59"
+		"a": "20:16"
 	}]
 }, {
 	"id": "Keio.Keibajo.6460A.SaturdayHoliday",
@@ -4073,10 +4093,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "20:14"
+		"d": "20:34"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "20:16"
+		"a": "20:36"
 	}]
 }, {
 	"id": "Keio.Keibajo.6462A.SaturdayHoliday",
@@ -4093,10 +4113,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "20:34"
+		"d": "20:54"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "20:36"
+		"a": "20:56"
 	}]
 }, {
 	"id": "Keio.Keibajo.6464A.SaturdayHoliday",
@@ -4113,10 +4133,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "20:54"
+		"d": "21:14"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "20:56"
+		"a": "21:16"
 	}]
 }, {
 	"id": "Keio.Keibajo.6466A.SaturdayHoliday",
@@ -4133,10 +4153,10 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "21:14"
+		"d": "21:30"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "21:16"
+		"a": "21:33"
 	}]
 }, {
 	"id": "Keio.Keibajo.6468A.SaturdayHoliday",
@@ -4153,36 +4173,16 @@
 	],
 	"tt": [{
 		"s": "Keio.Keibajo.FuchukeibaSeimommae",
-		"d": "21:30"
-	}, {
-		"s": "Keio.Keibajo.HigashiFuchu",
-		"a": "21:32"
-	}]
-}, {
-	"id": "Keio.Keibajo.6470A.SaturdayHoliday",
-	"t": "Keio.Keibajo.6470A",
-	"r": "Keio.Keibajo",
-	"n": "6470A",
-	"y": "Keio.Local",
-	"d": "Inbound",
-	"os": [
-		"Keio.Keibajo.FuchukeibaSeimommae"
-	],
-	"ds": [
-		"Keio.Keibajo.HigashiFuchu"
-	],
-	"tt": [{
-		"s": "Keio.Keibajo.FuchukeibaSeimommae",
 		"d": "21:49"
 	}, {
 		"s": "Keio.Keibajo.HigashiFuchu",
 		"a": "21:51"
 	}]
 }, {
-	"id": "Keio.Keibajo.6472A.SaturdayHoliday",
-	"t": "Keio.Keibajo.6472A",
+	"id": "Keio.Keibajo.6470A.SaturdayHoliday",
+	"t": "Keio.Keibajo.6470A",
 	"r": "Keio.Keibajo",
-	"n": "6472A",
+	"n": "6470A",
 	"y": "Keio.Local",
 	"d": "Inbound",
 	"os": [

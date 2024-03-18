@@ -81,7 +81,7 @@
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
 		"a": "06:12",
-		"d": "06:14"
+		"d": "06:13"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
 		"a": "06:15",
@@ -121,7 +121,7 @@
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
 		"a": "06:22",
-		"d": "06:24"
+		"d": "06:23"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
 		"a": "06:25",
@@ -133,34 +133,6 @@
 	}, {
 		"s": "Seibu.Tamako.Tamako",
 		"a": "06:31"
-	}]
-}, {
-	"id": "Seibu.Tamako.6405.Weekday",
-	"t": "Seibu.Tamako.6405",
-	"r": "Seibu.Tamako",
-	"n": "6405",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Tamako.Kokubunji"
-	],
-	"ds": [
-		"Seibu.Tamako.Hagiyama"
-	],
-	"tt": [{
-		"s": "Seibu.Tamako.Kokubunji",
-		"d": "06:25"
-	}, {
-		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "06:28",
-		"d": "06:28"
-	}, {
-		"s": "Seibu.Tamako.OmeKaido",
-		"a": "06:30",
-		"d": "06:30"
-	}, {
-		"s": "Seibu.Tamako.Hagiyama",
-		"a": "06:32"
 	}]
 }, {
 	"id": "Seibu.Tamako.6005.Weekday",
@@ -177,30 +149,58 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "06:36"
+		"d": "06:25"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
+		"a": "06:28",
+		"d": "06:28"
+	}, {
+		"s": "Seibu.Tamako.OmeKaido",
+		"a": "06:30",
+		"d": "06:30"
+	}, {
+		"s": "Seibu.Tamako.Hagiyama",
+		"a": "06:32",
+		"d": "06:33"
+	}, {
+		"s": "Seibu.Tamako.Yasaka",
+		"a": "06:35",
+		"d": "06:36"
+	}, {
+		"s": "Seibu.Tamako.MusashiYamato",
 		"a": "06:39",
 		"d": "06:39"
 	}, {
+		"s": "Seibu.Tamako.Tamako",
+		"a": "06:41"
+	}]
+}, {
+	"id": "Seibu.Tamako.6405.Weekday",
+	"t": "Seibu.Tamako.6405",
+	"r": "Seibu.Tamako",
+	"n": "6405",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Tamako.Kokubunji"
+	],
+	"ds": [
+		"Seibu.Tamako.Hagiyama"
+	],
+	"tt": [{
+		"s": "Seibu.Tamako.Kokubunji",
+		"d": "06:35"
+	}, {
+		"s": "Seibu.Tamako.HitotsubashiGakuen",
+		"a": "06:38",
+		"d": "06:38"
+	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "06:41",
-		"d": "06:41"
+		"a": "06:40",
+		"d": "06:40"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "06:43",
-		"d": "06:44"
-	}, {
-		"s": "Seibu.Tamako.Yasaka",
-		"a": "06:46",
-		"d": "06:46"
-	}, {
-		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "06:49",
-		"d": "06:50"
-	}, {
-		"s": "Seibu.Tamako.Tamako",
-		"a": "06:52"
+		"a": "06:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6007.Weekday",
@@ -217,30 +217,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "06:46"
+		"d": "06:45"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "06:49",
-		"d": "06:50"
+		"a": "06:48",
+		"d": "06:48"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "06:51",
-		"d": "06:52"
+		"a": "06:50",
+		"d": "06:50"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "06:54",
-		"d": "06:55"
+		"a": "06:52",
+		"d": "06:54"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "06:57",
-		"d": "06:57"
+		"a": "06:56",
+		"d": "06:56"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "07:00",
-		"d": "07:01"
+		"a": "06:59",
+		"d": "07:00"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "07:03"
+		"a": "07:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6009.Weekday",
@@ -257,18 +257,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "06:57"
+		"d": "06:56"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "07:00",
-		"d": "07:00"
+		"a": "06:59",
+		"d": "06:59"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "07:02",
-		"d": "07:02"
+		"a": "07:01",
+		"d": "07:01"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "07:04",
+		"a": "07:03",
 		"d": "07:05"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
@@ -777,14 +777,14 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "09:07"
+		"d": "09:06"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "09:10",
+		"a": "09:09",
 		"d": "09:10"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "09:12",
+		"a": "09:11",
 		"d": "09:12"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -792,15 +792,15 @@
 		"d": "09:15"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "09:17",
+		"a": "09:16",
 		"d": "09:17"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
 		"a": "09:20",
-		"d": "09:21"
+		"d": "09:20"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "09:23"
+		"a": "09:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6407.Weekday",
@@ -817,18 +817,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "09:17"
+		"d": "09:16"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "09:20",
-		"d": "09:20"
+		"a": "09:19",
+		"d": "09:19"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "09:22",
-		"d": "09:22"
+		"a": "09:21",
+		"d": "09:21"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "09:24"
+		"a": "09:23"
 	}]
 }, {
 	"id": "Seibu.Tamako.6037.Weekday",
@@ -845,19 +845,19 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "09:26"
+		"d": "09:25"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "09:29",
-		"d": "09:30"
+		"a": "09:28",
+		"d": "09:29"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "09:31",
-		"d": "09:32"
+		"a": "09:30",
+		"d": "09:31"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "09:34",
-		"d": "09:35"
+		"a": "09:33",
+		"d": "09:34"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
 		"a": "09:36",
@@ -865,10 +865,10 @@
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
 		"a": "09:40",
-		"d": "09:41"
+		"d": "09:40"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "09:43"
+		"a": "09:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6409.Weekday",
@@ -885,18 +885,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "09:36"
+		"d": "09:35"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "09:39",
-		"d": "09:39"
+		"a": "09:38",
+		"d": "09:38"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "09:41",
-		"d": "09:41"
+		"a": "09:40",
+		"d": "09:40"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "09:43"
+		"a": "09:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6039.Weekday",
@@ -913,30 +913,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "09:46"
+		"d": "09:45"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "09:49",
-		"d": "09:49"
+		"a": "09:48",
+		"d": "09:48"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "09:51",
-		"d": "09:51"
+		"a": "09:50",
+		"d": "09:50"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "09:53",
-		"d": "09:55"
+		"a": "09:52",
+		"d": "09:53"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "09:56",
-		"d": "09:57"
+		"a": "09:55",
+		"d": "09:56"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "10:00",
-		"d": "10:01"
+		"a": "09:59",
+		"d": "10:00"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "10:03"
+		"a": "10:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6411.Weekday",
@@ -953,18 +953,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "09:56"
+		"d": "09:55"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "09:59",
-		"d": "09:59"
+		"a": "09:58",
+		"d": "09:58"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:01",
-		"d": "10:01"
+		"a": "10:00",
+		"d": "10:00"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "10:03"
+		"a": "10:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6041.Weekday",
@@ -981,30 +981,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "10:06"
+		"d": "10:05"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:09",
-		"d": "10:09"
+		"a": "10:08",
+		"d": "10:08"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:11",
-		"d": "10:11"
+		"a": "10:10",
+		"d": "10:10"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "10:13",
-		"d": "10:15"
+		"a": "10:12",
+		"d": "10:13"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "10:16",
-		"d": "10:17"
+		"a": "10:15",
+		"d": "10:16"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "10:20",
-		"d": "10:21"
+		"a": "10:19",
+		"d": "10:20"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "10:23"
+		"a": "10:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6413.Weekday",
@@ -1021,18 +1021,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "10:16"
+		"d": "10:15"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:19",
-		"d": "10:19"
+		"a": "10:18",
+		"d": "10:18"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:21",
-		"d": "10:21"
+		"a": "10:20",
+		"d": "10:20"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "10:23"
+		"a": "10:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6043.Weekday",
@@ -1049,30 +1049,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "10:26"
+		"d": "10:25"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:29",
-		"d": "10:29"
+		"a": "10:28",
+		"d": "10:28"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:31",
-		"d": "10:31"
+		"a": "10:30",
+		"d": "10:30"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "10:33",
-		"d": "10:35"
+		"a": "10:32",
+		"d": "10:33"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "10:36",
-		"d": "10:37"
+		"a": "10:35",
+		"d": "10:36"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "10:40",
-		"d": "10:41"
+		"a": "10:39",
+		"d": "10:40"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "10:43"
+		"a": "10:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6415.Weekday",
@@ -1089,18 +1089,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "10:36"
+		"d": "10:35"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:39",
-		"d": "10:39"
+		"a": "10:38",
+		"d": "10:38"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:41",
-		"d": "10:41"
+		"a": "10:40",
+		"d": "10:40"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "10:43"
+		"a": "10:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6045.Weekday",
@@ -1117,30 +1117,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "10:46"
+		"d": "10:45"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:49",
-		"d": "10:49"
+		"a": "10:48",
+		"d": "10:48"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:51",
-		"d": "10:51"
+		"a": "10:50",
+		"d": "10:50"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "10:53",
-		"d": "10:55"
+		"a": "10:52",
+		"d": "10:53"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "10:56",
-		"d": "10:57"
+		"a": "10:55",
+		"d": "10:56"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "11:00",
-		"d": "11:01"
+		"a": "10:59",
+		"d": "11:00"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "11:03"
+		"a": "11:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6417.Weekday",
@@ -1157,18 +1157,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "10:56"
+		"d": "10:55"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:59",
-		"d": "10:59"
+		"a": "10:58",
+		"d": "10:58"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "11:01",
-		"d": "11:01"
+		"a": "11:00",
+		"d": "11:00"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "11:03"
+		"a": "11:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6047.Weekday",
@@ -1185,30 +1185,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "11:06"
+		"d": "11:05"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "11:09",
-		"d": "11:09"
+		"a": "11:08",
+		"d": "11:08"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "11:11",
-		"d": "11:11"
+		"a": "11:10",
+		"d": "11:10"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "11:13",
-		"d": "11:15"
+		"a": "11:12",
+		"d": "11:13"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "11:16",
-		"d": "11:17"
+		"a": "11:15",
+		"d": "11:16"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "11:20",
-		"d": "11:21"
+		"a": "11:19",
+		"d": "11:20"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "11:23"
+		"a": "11:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6419.Weekday",
@@ -1225,18 +1225,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "11:16"
+		"d": "11:15"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "11:19",
-		"d": "11:19"
+		"a": "11:18",
+		"d": "11:18"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "11:21",
-		"d": "11:21"
+		"a": "11:20",
+		"d": "11:20"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "11:23"
+		"a": "11:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6049.Weekday",
@@ -1253,30 +1253,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "11:26"
+		"d": "11:25"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "11:29",
-		"d": "11:29"
+		"a": "11:28",
+		"d": "11:28"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "11:31",
-		"d": "11:31"
+		"a": "11:30",
+		"d": "11:30"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "11:33",
-		"d": "11:35"
+		"a": "11:32",
+		"d": "11:33"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "11:36",
-		"d": "11:37"
+		"a": "11:35",
+		"d": "11:36"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "11:40",
-		"d": "11:41"
+		"a": "11:39",
+		"d": "11:40"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "11:43"
+		"a": "11:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6421.Weekday",
@@ -1293,18 +1293,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "11:36"
+		"d": "11:35"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "11:39",
-		"d": "11:39"
+		"a": "11:38",
+		"d": "11:38"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "11:41",
-		"d": "11:41"
+		"a": "11:40",
+		"d": "11:40"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "11:43"
+		"a": "11:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6051.Weekday",
@@ -1321,30 +1321,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "11:46"
+		"d": "11:45"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "11:49",
-		"d": "11:49"
+		"a": "11:48",
+		"d": "11:48"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "11:51",
-		"d": "11:51"
+		"a": "11:50",
+		"d": "11:50"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "11:53",
-		"d": "11:55"
+		"a": "11:52",
+		"d": "11:53"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "11:56",
-		"d": "11:57"
+		"a": "11:55",
+		"d": "11:56"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "12:00",
-		"d": "12:01"
+		"a": "11:59",
+		"d": "12:00"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "12:03"
+		"a": "12:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6423.Weekday",
@@ -1361,18 +1361,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "11:56"
+		"d": "11:55"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "11:59",
-		"d": "11:59"
+		"a": "11:58",
+		"d": "11:58"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "12:01",
-		"d": "12:01"
+		"a": "12:00",
+		"d": "12:00"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "12:03"
+		"a": "12:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6053.Weekday",
@@ -1389,26 +1389,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "12:06"
+		"d": "12:05"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "12:09",
-		"d": "12:09"
+		"a": "12:08",
+		"d": "12:08"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "12:11",
-		"d": "12:11"
+		"a": "12:10",
+		"d": "12:10"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "12:13",
-		"d": "12:15"
+		"a": "12:12",
+		"d": "12:13"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "12:16",
-		"d": "12:17"
+		"a": "12:15",
+		"d": "12:16"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "12:20",
+		"a": "12:19",
 		"d": "12:20"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
@@ -1429,18 +1429,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "12:16"
+		"d": "12:15"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "12:19",
-		"d": "12:19"
+		"a": "12:18",
+		"d": "12:18"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "12:21",
-		"d": "12:21"
+		"a": "12:20",
+		"d": "12:20"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "12:23"
+		"a": "12:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6055.Weekday",
@@ -1457,26 +1457,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "12:26"
+		"d": "12:25"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "12:29",
-		"d": "12:29"
+		"a": "12:28",
+		"d": "12:28"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "12:31",
-		"d": "12:31"
+		"a": "12:30",
+		"d": "12:30"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "12:33",
-		"d": "12:35"
+		"a": "12:32",
+		"d": "12:33"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "12:36",
-		"d": "12:37"
+		"a": "12:35",
+		"d": "12:36"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "12:40",
+		"a": "12:39",
 		"d": "12:40"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
@@ -1497,18 +1497,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "12:36"
+		"d": "12:35"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "12:39",
-		"d": "12:39"
+		"a": "12:38",
+		"d": "12:38"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "12:41",
-		"d": "12:41"
+		"a": "12:40",
+		"d": "12:40"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "12:43"
+		"a": "12:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6057.Weekday",
@@ -1525,26 +1525,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "12:46"
+		"d": "12:45"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "12:49",
-		"d": "12:49"
+		"a": "12:48",
+		"d": "12:48"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "12:51",
-		"d": "12:51"
+		"a": "12:50",
+		"d": "12:50"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "12:53",
-		"d": "12:55"
+		"a": "12:52",
+		"d": "12:53"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "12:56",
-		"d": "12:57"
+		"a": "12:55",
+		"d": "12:56"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "13:00",
+		"a": "12:59",
 		"d": "13:00"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
@@ -1565,18 +1565,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "12:56"
+		"d": "12:55"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "12:59",
-		"d": "12:59"
+		"a": "12:58",
+		"d": "12:58"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "13:01",
-		"d": "13:01"
+		"a": "13:00",
+		"d": "13:00"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "13:03"
+		"a": "13:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6059.Weekday",
@@ -1593,26 +1593,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "13:06"
+		"d": "13:05"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "13:09",
-		"d": "13:09"
+		"a": "13:08",
+		"d": "13:08"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "13:11",
-		"d": "13:11"
+		"a": "13:10",
+		"d": "13:10"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "13:13",
-		"d": "13:15"
+		"a": "13:12",
+		"d": "13:13"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "13:16",
-		"d": "13:17"
+		"a": "13:15",
+		"d": "13:16"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "13:20",
+		"a": "13:19",
 		"d": "13:20"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
@@ -1633,18 +1633,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "13:16"
+		"d": "13:15"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "13:19",
-		"d": "13:19"
+		"a": "13:18",
+		"d": "13:18"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "13:21",
-		"d": "13:21"
+		"a": "13:20",
+		"d": "13:20"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "13:23"
+		"a": "13:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6061.Weekday",
@@ -1661,26 +1661,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "13:26"
+		"d": "13:25"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "13:29",
-		"d": "13:29"
+		"a": "13:28",
+		"d": "13:28"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "13:31",
-		"d": "13:31"
+		"a": "13:30",
+		"d": "13:30"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "13:33",
-		"d": "13:35"
+		"a": "13:32",
+		"d": "13:33"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "13:36",
-		"d": "13:37"
+		"a": "13:35",
+		"d": "13:36"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "13:40",
+		"a": "13:39",
 		"d": "13:40"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
@@ -1701,18 +1701,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "13:36"
+		"d": "13:35"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "13:39",
-		"d": "13:39"
+		"a": "13:38",
+		"d": "13:38"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "13:41",
-		"d": "13:41"
+		"a": "13:40",
+		"d": "13:40"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "13:43"
+		"a": "13:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6063.Weekday",
@@ -1729,26 +1729,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "13:46"
+		"d": "13:45"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "13:49",
-		"d": "13:49"
+		"a": "13:48",
+		"d": "13:48"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "13:51",
-		"d": "13:51"
+		"a": "13:50",
+		"d": "13:50"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "13:53",
-		"d": "13:55"
+		"a": "13:52",
+		"d": "13:53"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "13:56",
-		"d": "13:57"
+		"a": "13:55",
+		"d": "13:56"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "14:00",
+		"a": "13:59",
 		"d": "14:00"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
@@ -1769,18 +1769,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "13:56"
+		"d": "13:55"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "13:59",
-		"d": "13:59"
+		"a": "13:58",
+		"d": "13:58"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "14:01",
-		"d": "14:01"
+		"a": "14:00",
+		"d": "14:00"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "14:03"
+		"a": "14:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6065.Weekday",
@@ -1797,26 +1797,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "14:06"
+		"d": "14:05"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "14:09",
-		"d": "14:09"
+		"a": "14:08",
+		"d": "14:08"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "14:11",
-		"d": "14:11"
+		"a": "14:10",
+		"d": "14:10"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "14:13",
-		"d": "14:15"
+		"a": "14:12",
+		"d": "14:13"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "14:16",
-		"d": "14:17"
+		"a": "14:15",
+		"d": "14:16"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "14:20",
+		"a": "14:19",
 		"d": "14:20"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
@@ -1837,18 +1837,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "14:16"
+		"d": "14:15"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "14:19",
-		"d": "14:19"
+		"a": "14:18",
+		"d": "14:18"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "14:21",
-		"d": "14:21"
+		"a": "14:20",
+		"d": "14:20"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "14:23"
+		"a": "14:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6067.Weekday",
@@ -1865,26 +1865,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "14:26"
+		"d": "14:25"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "14:29",
-		"d": "14:29"
+		"a": "14:28",
+		"d": "14:28"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "14:31",
-		"d": "14:31"
+		"a": "14:30",
+		"d": "14:30"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "14:33",
-		"d": "14:35"
+		"a": "14:32",
+		"d": "14:33"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "14:36",
-		"d": "14:37"
+		"a": "14:35",
+		"d": "14:36"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "14:40",
+		"a": "14:39",
 		"d": "14:40"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
@@ -1905,18 +1905,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "14:36"
+		"d": "14:35"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "14:39",
-		"d": "14:39"
+		"a": "14:38",
+		"d": "14:38"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "14:41",
-		"d": "14:41"
+		"a": "14:40",
+		"d": "14:40"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "14:43"
+		"a": "14:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6069.Weekday",
@@ -1933,26 +1933,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "14:46"
+		"d": "14:45"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "14:49",
-		"d": "14:49"
+		"a": "14:48",
+		"d": "14:48"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "14:51",
-		"d": "14:51"
+		"a": "14:50",
+		"d": "14:50"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "14:53",
-		"d": "14:55"
+		"a": "14:52",
+		"d": "14:53"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "14:56",
-		"d": "14:57"
+		"a": "14:55",
+		"d": "14:56"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "15:00",
+		"a": "14:59",
 		"d": "15:00"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
@@ -1973,18 +1973,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "14:56"
+		"d": "14:55"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "14:59",
-		"d": "14:59"
+		"a": "14:58",
+		"d": "14:58"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "15:01",
-		"d": "15:01"
+		"a": "15:00",
+		"d": "15:00"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "15:03"
+		"a": "15:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6071.Weekday",
@@ -2001,26 +2001,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "15:06"
+		"d": "15:05"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "15:09",
-		"d": "15:09"
+		"a": "15:08",
+		"d": "15:08"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "15:11",
-		"d": "15:11"
+		"a": "15:10",
+		"d": "15:10"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "15:13",
-		"d": "15:15"
+		"a": "15:12",
+		"d": "15:13"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "15:16",
-		"d": "15:17"
+		"a": "15:15",
+		"d": "15:16"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "15:20",
+		"a": "15:19",
 		"d": "15:20"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
@@ -2041,18 +2041,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "15:16"
+		"d": "15:15"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "15:19",
-		"d": "15:19"
+		"a": "15:18",
+		"d": "15:18"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "15:21",
-		"d": "15:21"
+		"a": "15:20",
+		"d": "15:20"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "15:23"
+		"a": "15:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6073.Weekday",
@@ -2069,26 +2069,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "15:26"
+		"d": "15:25"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "15:29",
-		"d": "15:29"
+		"a": "15:28",
+		"d": "15:28"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "15:31",
-		"d": "15:31"
+		"a": "15:30",
+		"d": "15:30"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "15:33",
-		"d": "15:35"
+		"a": "15:32",
+		"d": "15:33"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "15:36",
-		"d": "15:37"
+		"a": "15:35",
+		"d": "15:36"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "15:40",
+		"a": "15:39",
 		"d": "15:40"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
@@ -2109,18 +2109,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "15:36"
+		"d": "15:35"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "15:39",
-		"d": "15:39"
+		"a": "15:38",
+		"d": "15:38"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "15:41",
-		"d": "15:41"
+		"a": "15:40",
+		"d": "15:40"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "15:43"
+		"a": "15:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6075.Weekday",
@@ -2137,30 +2137,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "15:46"
+		"d": "15:45"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "15:49",
-		"d": "15:49"
+		"a": "15:48",
+		"d": "15:48"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "15:51",
-		"d": "15:51"
+		"a": "15:50",
+		"d": "15:50"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "15:53",
-		"d": "15:55"
+		"a": "15:52",
+		"d": "15:53"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "15:56",
-		"d": "15:57"
+		"a": "15:55",
+		"d": "15:56"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "16:00",
-		"d": "16:01"
+		"a": "15:59",
+		"d": "16:00"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "16:03"
+		"a": "16:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6447.Weekday",
@@ -2177,18 +2177,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "15:56"
+		"d": "15:55"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "15:59",
-		"d": "15:59"
+		"a": "15:58",
+		"d": "15:58"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "16:01",
-		"d": "16:01"
+		"a": "16:00",
+		"d": "16:00"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "16:03"
+		"a": "16:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6077.Weekday",
@@ -2205,30 +2205,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "16:06"
+		"d": "16:05"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "16:09",
-		"d": "16:09"
+		"a": "16:08",
+		"d": "16:08"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "16:11",
-		"d": "16:11"
+		"a": "16:10",
+		"d": "16:10"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "16:13",
-		"d": "16:15"
+		"a": "16:12",
+		"d": "16:14"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "16:16",
-		"d": "16:17"
+		"a": "16:15",
+		"d": "16:16"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "16:20",
-		"d": "16:21"
+		"a": "16:19",
+		"d": "16:20"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "16:23"
+		"a": "16:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6449.Weekday",
@@ -2345,18 +2345,18 @@
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
 		"a": "16:50",
-		"d": "16:51"
+		"d": "16:50"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
 		"a": "16:52",
-		"d": "16:53"
+		"d": "16:52"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "16:55",
-		"d": "16:56"
+		"a": "16:54",
+		"d": "16:55"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "16:58",
+		"a": "16:57",
 		"d": "16:58"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
@@ -4055,35 +4055,35 @@
 		"a": "06:02"
 	}]
 }, {
-	"id": "Seibu.Tamako.5501.Weekday",
-	"t": "Seibu.Tamako.5501",
+	"id": "Seibu.Tamako.5531.Weekday",
+	"t": "Seibu.Tamako.5531",
 	"r": "Seibu.Tamako",
-	"n": "5501",
+	"n": "5531",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
-		"Seibu.Shinjuku.SeibuShinjuku"
+		"Seibu.Haijima.Kodaira"
 	],
 	"ds": [
 		"Seibu.Tamako.Tamako"
 	],
 	"pt": [
-		"Seibu.Haijima.5501.Weekday"
+		"Seibu.Haijima.5531.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "06:33"
+		"d": "06:43"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "06:34",
-		"d": "06:36"
+		"a": "06:44",
+		"d": "06:45"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "06:39",
-		"d": "06:39"
+		"a": "06:48",
+		"d": "06:49"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
-		"a": "06:41"
+		"a": "06:51"
 	}]
 }, {
 	"id": "Seibu.Tamako.6505.Weekday",
@@ -4187,12 +4187,12 @@
 		"d": "06:05"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "06:07",
+		"a": "06:06",
 		"d": "06:07"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
 		"a": "06:10",
-		"d": "06:11"
+		"d": "06:10"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
 		"a": "06:12",
@@ -4235,7 +4235,7 @@
 		"d": "06:20"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "06:21",
+		"a": "06:22",
 		"d": "06:24"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
@@ -4276,18 +4276,18 @@
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
 		"a": "06:32",
-		"d": "06:35"
+		"d": "06:34"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "06:36",
-		"d": "06:37"
+		"a": "06:35",
+		"d": "06:36"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "06:38",
-		"d": "06:39"
+		"a": "06:37",
+		"d": "06:38"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "06:43"
+		"a": "06:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6008.Weekday",
@@ -4312,22 +4312,62 @@
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
 		"a": "06:39",
-		"d": "06:40"
+		"d": "06:41"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
 		"a": "06:42",
-		"d": "06:45"
+		"d": "06:44"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
 		"a": "06:46",
-		"d": "06:47"
+		"d": "06:46"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
 		"a": "06:48",
 		"d": "06:49"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "06:53"
+		"a": "06:52"
+	}]
+}, {
+	"id": "Seibu.Tamako.6010.Weekday",
+	"t": "Seibu.Tamako.6010",
+	"r": "Seibu.Tamako",
+	"n": "6010",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Tamako.Tamako"
+	],
+	"ds": [
+		"Seibu.Tamako.Kokubunji"
+	],
+	"tt": [{
+		"s": "Seibu.Tamako.Tamako",
+		"d": "06:44"
+	}, {
+		"s": "Seibu.Tamako.MusashiYamato",
+		"a": "06:46",
+		"d": "06:46"
+	}, {
+		"s": "Seibu.Tamako.Yasaka",
+		"a": "06:49",
+		"d": "06:50"
+	}, {
+		"s": "Seibu.Tamako.Hagiyama",
+		"a": "06:52",
+		"d": "06:55"
+	}, {
+		"s": "Seibu.Tamako.OmeKaido",
+		"a": "06:57",
+		"d": "06:57"
+	}, {
+		"s": "Seibu.Tamako.HitotsubashiGakuen",
+		"a": "06:59",
+		"d": "07:00"
+	}, {
+		"s": "Seibu.Tamako.Kokubunji",
+		"a": "07:04"
 	}]
 }, {
 	"id": "Seibu.Tamako.5502.Weekday",
@@ -4347,58 +4387,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "06:45"
+		"d": "06:55"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "06:46",
-		"d": "06:47"
+		"a": "06:56",
+		"d": "06:57"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "06:50",
-		"d": "06:50"
+		"a": "07:00",
+		"d": "07:00"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "06:52"
-	}]
-}, {
-	"id": "Seibu.Tamako.6010.Weekday",
-	"t": "Seibu.Tamako.6010",
-	"r": "Seibu.Tamako",
-	"n": "6010",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.Tamako.Tamako"
-	],
-	"ds": [
-		"Seibu.Tamako.Kokubunji"
-	],
-	"tt": [{
-		"s": "Seibu.Tamako.Tamako",
-		"d": "06:56"
-	}, {
-		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "06:57",
-		"d": "06:58"
-	}, {
-		"s": "Seibu.Tamako.Yasaka",
-		"a": "07:01",
-		"d": "07:02"
-	}, {
-		"s": "Seibu.Tamako.Hagiyama",
-		"a": "07:04",
-		"d": "07:05"
-	}, {
-		"s": "Seibu.Tamako.OmeKaido",
-		"a": "07:07",
-		"d": "07:07"
-	}, {
-		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "07:09",
-		"d": "07:10"
-	}, {
-		"s": "Seibu.Tamako.Kokubunji",
-		"a": "07:14"
+		"a": "07:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6012.Weekday",
@@ -4670,11 +4670,11 @@
 		"d": "08:15"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "08:17",
+		"a": "08:16",
 		"d": "08:17"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "08:19",
+		"a": "08:18",
 		"d": "08:20"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
@@ -4703,7 +4703,7 @@
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
 		"a": "08:21",
-		"d": "08:23"
+		"d": "08:22"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
 		"a": "08:24",
@@ -4711,7 +4711,7 @@
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
 		"a": "08:27",
-		"d": "08:27"
+		"d": "08:28"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
 		"a": "08:29",
@@ -4743,7 +4743,7 @@
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
 		"a": "08:31",
-		"d": "08:33"
+		"d": "08:32"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
 		"a": "08:34",
@@ -4790,11 +4790,11 @@
 		"d": "08:45"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "08:47",
+		"a": "08:46",
 		"d": "08:47"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "08:49",
+		"a": "08:48",
 		"d": "08:50"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
@@ -4838,7 +4838,7 @@
 		"d": "09:00"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "09:04"
+		"a": "09:03"
 	}]
 }, {
 	"id": "Seibu.Tamako.6034.Weekday",
@@ -4870,15 +4870,15 @@
 		"d": "09:05"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "09:07",
+		"a": "09:06",
 		"d": "09:07"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "09:09",
-		"d": "09:10"
+		"a": "09:08",
+		"d": "09:09"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "09:14"
+		"a": "09:13"
 	}]
 }, {
 	"id": "Seibu.Tamako.6036.Weekday",
@@ -4907,18 +4907,18 @@
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
 		"a": "09:14",
-		"d": "09:15"
+		"d": "09:14"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "09:17",
-		"d": "09:17"
+		"a": "09:16",
+		"d": "09:16"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "09:19",
-		"d": "09:20"
+		"a": "09:18",
+		"d": "09:19"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "09:23"
+		"a": "09:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6038.Weekday",
@@ -4946,19 +4946,19 @@
 		"d": "09:22"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "09:24",
-		"d": "09:25"
+		"a": "09:23",
+		"d": "09:24"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "09:27",
-		"d": "09:27"
+		"a": "09:26",
+		"d": "09:26"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "09:29",
-		"d": "09:29"
+		"a": "09:28",
+		"d": "09:28"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "09:33"
+		"a": "09:32"
 	}]
 }, {
 	"id": "Seibu.Tamako.6040.Weekday",
@@ -4975,7 +4975,7 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "09:26"
+		"d": "09:25"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
 		"a": "09:27",
@@ -4986,19 +4986,19 @@
 		"d": "09:32"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "09:34",
-		"d": "09:35"
+		"a": "09:33",
+		"d": "09:34"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
 		"a": "09:36",
-		"d": "09:37"
+		"d": "09:36"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
 		"a": "09:38",
-		"d": "09:39"
+		"d": "09:38"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "09:43"
+		"a": "09:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6042.Weekday",
@@ -5015,30 +5015,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "09:46"
+		"d": "09:45"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
 		"a": "09:47",
-		"d": "09:48"
+		"d": "09:47"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "09:51",
+		"a": "09:50",
 		"d": "09:52"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "09:54",
-		"d": "09:55"
+		"a": "09:53",
+		"d": "09:54"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "09:57",
-		"d": "09:57"
+		"a": "09:56",
+		"d": "09:56"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "09:59",
-		"d": "09:59"
+		"a": "09:58",
+		"d": "09:58"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "10:03"
+		"a": "10:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6044.Weekday",
@@ -5055,30 +5055,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "10:06"
+		"d": "10:05"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
 		"a": "10:07",
-		"d": "10:08"
+		"d": "10:07"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "10:11",
-		"d": "10:12"
+		"a": "10:10",
+		"d": "10:11"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "10:14",
-		"d": "10:15"
+		"a": "10:12",
+		"d": "10:14"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:17",
-		"d": "10:17"
+		"a": "10:16",
+		"d": "10:16"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:19",
-		"d": "10:19"
+		"a": "10:18",
+		"d": "10:18"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "10:23"
+		"a": "10:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6046.Weekday",
@@ -5095,30 +5095,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "10:26"
+		"d": "10:25"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "10:27",
-		"d": "10:28"
+		"a": "10:26",
+		"d": "10:27"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "10:31",
-		"d": "10:32"
+		"a": "10:30",
+		"d": "10:31"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "10:34",
-		"d": "10:35"
+		"a": "10:32",
+		"d": "10:34"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:37",
-		"d": "10:37"
+		"a": "10:36",
+		"d": "10:36"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:39",
-		"d": "10:39"
+		"a": "10:38",
+		"d": "10:38"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "10:43"
+		"a": "10:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6048.Weekday",
@@ -5135,30 +5135,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "10:46"
+		"d": "10:45"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "10:47",
-		"d": "10:48"
+		"a": "10:46",
+		"d": "10:47"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "10:51",
-		"d": "10:52"
+		"a": "10:50",
+		"d": "10:51"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "10:54",
-		"d": "10:55"
+		"a": "10:52",
+		"d": "10:54"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:57",
-		"d": "10:57"
+		"a": "10:56",
+		"d": "10:56"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:59",
-		"d": "10:59"
+		"a": "10:58",
+		"d": "10:58"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "11:03"
+		"a": "11:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6050.Weekday",
@@ -5175,30 +5175,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "11:06"
+		"d": "11:05"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "11:07",
-		"d": "11:08"
+		"a": "11:06",
+		"d": "11:07"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "11:11",
-		"d": "11:12"
+		"a": "11:10",
+		"d": "11:11"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "11:14",
-		"d": "11:15"
+		"a": "11:12",
+		"d": "11:14"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "11:17",
-		"d": "11:17"
+		"a": "11:16",
+		"d": "11:16"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "11:19",
-		"d": "11:19"
+		"a": "11:18",
+		"d": "11:18"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "11:23"
+		"a": "11:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6052.Weekday",
@@ -5215,30 +5215,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "11:26"
+		"d": "11:25"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "11:27",
-		"d": "11:28"
+		"a": "11:26",
+		"d": "11:27"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "11:31",
-		"d": "11:32"
+		"a": "11:30",
+		"d": "11:31"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "11:34",
-		"d": "11:35"
+		"a": "11:32",
+		"d": "11:34"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "11:37",
-		"d": "11:37"
+		"a": "11:36",
+		"d": "11:36"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "11:39",
-		"d": "11:39"
+		"a": "11:38",
+		"d": "11:38"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "11:43"
+		"a": "11:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6054.Weekday",
@@ -5255,30 +5255,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "11:46"
+		"d": "11:45"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "11:47",
-		"d": "11:48"
+		"a": "11:46",
+		"d": "11:47"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "11:51",
-		"d": "11:52"
+		"a": "11:50",
+		"d": "11:51"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "11:54",
-		"d": "11:55"
+		"a": "11:52",
+		"d": "11:54"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "11:57",
-		"d": "11:57"
+		"a": "11:56",
+		"d": "11:56"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "11:59",
-		"d": "11:59"
+		"a": "11:58",
+		"d": "11:58"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "12:03"
+		"a": "12:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6056.Weekday",
@@ -5295,30 +5295,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "12:06"
+		"d": "12:05"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "12:07",
-		"d": "12:08"
+		"a": "12:06",
+		"d": "12:07"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "12:11",
-		"d": "12:12"
+		"a": "12:10",
+		"d": "12:11"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "12:14",
-		"d": "12:15"
+		"a": "12:12",
+		"d": "12:14"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "12:17",
-		"d": "12:17"
+		"a": "12:16",
+		"d": "12:16"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "12:19",
-		"d": "12:19"
+		"a": "12:18",
+		"d": "12:18"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "12:23"
+		"a": "12:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6058.Weekday",
@@ -5335,30 +5335,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "12:26"
+		"d": "12:25"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "12:27",
-		"d": "12:28"
+		"a": "12:26",
+		"d": "12:27"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "12:31",
-		"d": "12:32"
+		"a": "12:30",
+		"d": "12:31"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "12:34",
-		"d": "12:35"
+		"a": "12:32",
+		"d": "12:34"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "12:37",
-		"d": "12:37"
+		"a": "12:36",
+		"d": "12:36"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "12:39",
-		"d": "12:39"
+		"a": "12:38",
+		"d": "12:38"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "12:43"
+		"a": "12:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6060.Weekday",
@@ -5375,30 +5375,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "12:46"
+		"d": "12:45"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "12:47",
-		"d": "12:48"
+		"a": "12:46",
+		"d": "12:47"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "12:51",
-		"d": "12:52"
+		"a": "12:50",
+		"d": "12:51"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "12:54",
-		"d": "12:55"
+		"a": "12:52",
+		"d": "12:54"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "12:57",
-		"d": "12:57"
+		"a": "12:56",
+		"d": "12:56"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "12:59",
-		"d": "12:59"
+		"a": "12:58",
+		"d": "12:58"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "13:03"
+		"a": "13:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6062.Weekday",
@@ -5415,30 +5415,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "13:06"
+		"d": "13:05"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "13:07",
-		"d": "13:08"
+		"a": "13:06",
+		"d": "13:07"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "13:11",
-		"d": "13:12"
+		"a": "13:10",
+		"d": "13:11"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "13:14",
-		"d": "13:15"
+		"a": "13:12",
+		"d": "13:14"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "13:17",
-		"d": "13:17"
+		"a": "13:16",
+		"d": "13:16"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "13:19",
-		"d": "13:19"
+		"a": "13:18",
+		"d": "13:18"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "13:23"
+		"a": "13:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6064.Weekday",
@@ -5455,30 +5455,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "13:26"
+		"d": "13:25"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "13:27",
-		"d": "13:28"
+		"a": "13:26",
+		"d": "13:27"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "13:31",
-		"d": "13:32"
+		"a": "13:30",
+		"d": "13:31"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "13:34",
-		"d": "13:35"
+		"a": "13:32",
+		"d": "13:34"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "13:37",
-		"d": "13:37"
+		"a": "13:36",
+		"d": "13:36"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "13:39",
-		"d": "13:39"
+		"a": "13:38",
+		"d": "13:38"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "13:43"
+		"a": "13:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6066.Weekday",
@@ -5495,30 +5495,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "13:46"
+		"d": "13:45"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "13:47",
-		"d": "13:48"
+		"a": "13:46",
+		"d": "13:47"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "13:51",
-		"d": "13:52"
+		"a": "13:50",
+		"d": "13:51"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "13:54",
-		"d": "13:55"
+		"a": "13:52",
+		"d": "13:54"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "13:57",
-		"d": "13:57"
+		"a": "13:56",
+		"d": "13:56"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "13:59",
-		"d": "13:59"
+		"a": "13:58",
+		"d": "13:58"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "14:03"
+		"a": "14:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6068.Weekday",
@@ -5535,30 +5535,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "14:06"
+		"d": "14:05"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "14:07",
-		"d": "14:08"
+		"a": "14:06",
+		"d": "14:07"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "14:11",
-		"d": "14:12"
+		"a": "14:10",
+		"d": "14:11"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "14:14",
-		"d": "14:15"
+		"a": "14:12",
+		"d": "14:14"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "14:17",
-		"d": "14:17"
+		"a": "14:16",
+		"d": "14:16"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "14:19",
-		"d": "14:19"
+		"a": "14:18",
+		"d": "14:18"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "14:23"
+		"a": "14:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6070.Weekday",
@@ -5575,30 +5575,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "14:26"
+		"d": "14:25"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "14:27",
-		"d": "14:28"
+		"a": "14:26",
+		"d": "14:27"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "14:31",
-		"d": "14:32"
+		"a": "14:30",
+		"d": "14:31"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "14:34",
-		"d": "14:35"
+		"a": "14:32",
+		"d": "14:34"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "14:37",
-		"d": "14:37"
+		"a": "14:36",
+		"d": "14:36"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "14:39",
-		"d": "14:39"
+		"a": "14:38",
+		"d": "14:38"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "14:43"
+		"a": "14:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6072.Weekday",
@@ -5615,30 +5615,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "14:46"
+		"d": "14:45"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "14:47",
-		"d": "14:48"
+		"a": "14:46",
+		"d": "14:47"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "14:51",
-		"d": "14:52"
+		"a": "14:50",
+		"d": "14:51"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "14:54",
-		"d": "14:55"
+		"a": "14:52",
+		"d": "14:54"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "14:57",
-		"d": "14:57"
+		"a": "14:56",
+		"d": "14:56"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "14:59",
-		"d": "14:59"
+		"a": "14:58",
+		"d": "14:58"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "15:03"
+		"a": "15:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6074.Weekday",
@@ -5655,30 +5655,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "15:06"
+		"d": "15:05"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "15:07",
-		"d": "15:08"
+		"a": "15:06",
+		"d": "15:07"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "15:11",
-		"d": "15:12"
+		"a": "15:10",
+		"d": "15:11"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "15:14",
-		"d": "15:15"
+		"a": "15:12",
+		"d": "15:14"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "15:17",
-		"d": "15:17"
+		"a": "15:16",
+		"d": "15:16"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "15:19",
-		"d": "15:19"
+		"a": "15:18",
+		"d": "15:18"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "15:23"
+		"a": "15:22"
 	}]
 }, {
 	"id": "Seibu.Tamako.6076.Weekday",
@@ -5695,30 +5695,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "15:26"
+		"d": "15:25"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "15:27",
-		"d": "15:28"
+		"a": "15:26",
+		"d": "15:27"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "15:31",
-		"d": "15:32"
+		"a": "15:30",
+		"d": "15:31"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "15:34",
-		"d": "15:35"
+		"a": "15:32",
+		"d": "15:34"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "15:37",
-		"d": "15:37"
+		"a": "15:36",
+		"d": "15:36"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "15:39",
-		"d": "15:39"
+		"a": "15:38",
+		"d": "15:38"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "15:43"
+		"a": "15:42"
 	}]
 }, {
 	"id": "Seibu.Tamako.6078.Weekday",
@@ -5735,30 +5735,30 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "15:46"
+		"d": "15:45"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "15:47",
-		"d": "15:48"
+		"a": "15:46",
+		"d": "15:47"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "15:51",
-		"d": "15:52"
+		"a": "15:50",
+		"d": "15:51"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "15:54",
-		"d": "15:55"
+		"a": "15:52",
+		"d": "15:54"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "15:57",
-		"d": "15:57"
+		"a": "15:56",
+		"d": "15:56"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "15:59",
-		"d": "15:59"
+		"a": "15:58",
+		"d": "15:58"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "16:03"
+		"a": "16:02"
 	}]
 }, {
 	"id": "Seibu.Tamako.6080.Weekday",
@@ -5775,26 +5775,26 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "16:06"
+		"d": "16:05"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "16:07",
-		"d": "16:08"
+		"a": "16:06",
+		"d": "16:07"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "16:11",
-		"d": "16:12"
+		"a": "16:10",
+		"d": "16:11"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "16:14",
+		"a": "16:12",
 		"d": "16:15"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "16:17",
+		"a": "16:16",
 		"d": "16:17"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "16:19",
+		"a": "16:18",
 		"d": "16:19"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
@@ -5826,15 +5826,15 @@
 		"d": "16:32"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "16:34",
+		"a": "16:33",
 		"d": "16:35"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "16:37",
+		"a": "16:36",
 		"d": "16:37"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "16:39",
+		"a": "16:38",
 		"d": "16:40"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
@@ -5855,15 +5855,15 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "16:46"
+		"d": "16:47"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "16:47",
-		"d": "16:48"
+		"a": "16:48",
+		"d": "16:49"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "16:51",
-		"d": "16:52"
+		"a": "16:52",
+		"d": "16:53"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
 		"a": "16:54",
@@ -6978,7 +6978,7 @@
 		"d": "21:39"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "21:41",
+		"a": "21:40",
 		"d": "21:41"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
@@ -7475,18 +7475,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "06:55"
+		"d": "07:05"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "06:57",
-		"d": "06:57"
+		"a": "07:07",
+		"d": "07:07"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "06:59",
-		"d": "07:00"
+		"a": "07:09",
+		"d": "07:10"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "07:04"
+		"a": "07:14"
 	}]
 }, {
 	"id": "Seibu.Tamako.6412.Weekday",
@@ -7503,18 +7503,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "09:45"
+		"d": "09:44"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "09:47",
-		"d": "09:47"
+		"a": "09:46",
+		"d": "09:46"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "09:49",
-		"d": "09:49"
+		"a": "09:48",
+		"d": "09:48"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "09:53"
+		"a": "09:52"
 	}]
 }, {
 	"id": "Seibu.Tamako.6414.Weekday",
@@ -7531,18 +7531,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "10:05"
+		"d": "10:04"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:07",
-		"d": "10:07"
+		"a": "10:06",
+		"d": "10:06"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:09",
-		"d": "10:09"
+		"a": "10:08",
+		"d": "10:08"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "10:13"
+		"a": "10:12"
 	}]
 }, {
 	"id": "Seibu.Tamako.6416.Weekday",
@@ -7559,18 +7559,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "10:25"
+		"d": "10:24"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:27",
-		"d": "10:27"
+		"a": "10:26",
+		"d": "10:26"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:29",
-		"d": "10:29"
+		"a": "10:28",
+		"d": "10:28"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "10:33"
+		"a": "10:32"
 	}]
 }, {
 	"id": "Seibu.Tamako.6418.Weekday",
@@ -7587,18 +7587,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "10:45"
+		"d": "10:44"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:47",
-		"d": "10:47"
+		"a": "10:46",
+		"d": "10:46"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:49",
-		"d": "10:49"
+		"a": "10:48",
+		"d": "10:48"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "10:53"
+		"a": "10:52"
 	}]
 }, {
 	"id": "Seibu.Tamako.6420.Weekday",
@@ -7615,18 +7615,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "11:05"
+		"d": "11:04"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "11:07",
-		"d": "11:07"
+		"a": "11:06",
+		"d": "11:06"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "11:09",
-		"d": "11:09"
+		"a": "11:08",
+		"d": "11:08"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "11:13"
+		"a": "11:12"
 	}]
 }, {
 	"id": "Seibu.Tamako.6422.Weekday",
@@ -7643,18 +7643,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "11:25"
+		"d": "11:24"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "11:27",
-		"d": "11:27"
+		"a": "11:26",
+		"d": "11:26"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "11:29",
-		"d": "11:29"
+		"a": "11:28",
+		"d": "11:28"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "11:33"
+		"a": "11:32"
 	}]
 }, {
 	"id": "Seibu.Tamako.6424.Weekday",
@@ -7671,18 +7671,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "11:45"
+		"d": "11:44"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "11:47",
-		"d": "11:47"
+		"a": "11:46",
+		"d": "11:46"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "11:49",
-		"d": "11:49"
+		"a": "11:48",
+		"d": "11:48"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "11:53"
+		"a": "11:52"
 	}]
 }, {
 	"id": "Seibu.Tamako.6426.Weekday",
@@ -7699,18 +7699,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "12:05"
+		"d": "12:04"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "12:07",
-		"d": "12:07"
+		"a": "12:06",
+		"d": "12:06"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "12:09",
-		"d": "12:09"
+		"a": "12:08",
+		"d": "12:08"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "12:13"
+		"a": "12:12"
 	}]
 }, {
 	"id": "Seibu.Tamako.6428.Weekday",
@@ -7727,18 +7727,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "12:25"
+		"d": "12:24"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "12:27",
-		"d": "12:27"
+		"a": "12:26",
+		"d": "12:26"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "12:29",
-		"d": "12:29"
+		"a": "12:28",
+		"d": "12:28"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "12:33"
+		"a": "12:32"
 	}]
 }, {
 	"id": "Seibu.Tamako.6430.Weekday",
@@ -7755,18 +7755,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "12:45"
+		"d": "12:44"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "12:47",
-		"d": "12:47"
+		"a": "12:46",
+		"d": "12:46"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "12:49",
-		"d": "12:49"
+		"a": "12:48",
+		"d": "12:48"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "12:53"
+		"a": "12:52"
 	}]
 }, {
 	"id": "Seibu.Tamako.6432.Weekday",
@@ -7783,18 +7783,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "13:05"
+		"d": "13:04"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "13:07",
-		"d": "13:07"
+		"a": "13:06",
+		"d": "13:06"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "13:09",
-		"d": "13:09"
+		"a": "13:08",
+		"d": "13:08"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "13:13"
+		"a": "13:12"
 	}]
 }, {
 	"id": "Seibu.Tamako.6434.Weekday",
@@ -7811,18 +7811,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "13:25"
+		"d": "13:24"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "13:27",
-		"d": "13:27"
+		"a": "13:26",
+		"d": "13:26"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "13:29",
-		"d": "13:29"
+		"a": "13:28",
+		"d": "13:28"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "13:33"
+		"a": "13:32"
 	}]
 }, {
 	"id": "Seibu.Tamako.6436.Weekday",
@@ -7839,18 +7839,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "13:45"
+		"d": "13:44"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "13:47",
-		"d": "13:47"
+		"a": "13:46",
+		"d": "13:46"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "13:49",
-		"d": "13:49"
+		"a": "13:48",
+		"d": "13:48"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "13:53"
+		"a": "13:52"
 	}]
 }, {
 	"id": "Seibu.Tamako.6438.Weekday",
@@ -7867,18 +7867,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "14:05"
+		"d": "14:04"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "14:07",
-		"d": "14:07"
+		"a": "14:06",
+		"d": "14:06"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "14:09",
-		"d": "14:09"
+		"a": "14:08",
+		"d": "14:08"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "14:13"
+		"a": "14:12"
 	}]
 }, {
 	"id": "Seibu.Tamako.6440.Weekday",
@@ -7895,18 +7895,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "14:25"
+		"d": "14:24"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "14:27",
-		"d": "14:27"
+		"a": "14:26",
+		"d": "14:26"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "14:29",
-		"d": "14:29"
+		"a": "14:28",
+		"d": "14:28"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "14:33"
+		"a": "14:32"
 	}]
 }, {
 	"id": "Seibu.Tamako.6442.Weekday",
@@ -7923,18 +7923,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "14:45"
+		"d": "14:44"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "14:47",
-		"d": "14:47"
+		"a": "14:46",
+		"d": "14:46"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "14:49",
-		"d": "14:49"
+		"a": "14:48",
+		"d": "14:48"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "14:53"
+		"a": "14:52"
 	}]
 }, {
 	"id": "Seibu.Tamako.6444.Weekday",
@@ -7951,18 +7951,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "15:05"
+		"d": "15:04"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "15:07",
-		"d": "15:07"
+		"a": "15:06",
+		"d": "15:06"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "15:09",
-		"d": "15:09"
+		"a": "15:08",
+		"d": "15:08"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "15:13"
+		"a": "15:12"
 	}]
 }, {
 	"id": "Seibu.Tamako.6446.Weekday",
@@ -7979,18 +7979,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "15:25"
+		"d": "15:24"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "15:27",
-		"d": "15:27"
+		"a": "15:26",
+		"d": "15:26"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "15:29",
-		"d": "15:29"
+		"a": "15:28",
+		"d": "15:28"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "15:33"
+		"a": "15:32"
 	}]
 }, {
 	"id": "Seibu.Tamako.6448.Weekday",
@@ -8007,18 +8007,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "15:45"
+		"d": "15:44"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "15:47",
-		"d": "15:47"
+		"a": "15:46",
+		"d": "15:46"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "15:49",
-		"d": "15:49"
+		"a": "15:48",
+		"d": "15:48"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "15:53"
+		"a": "15:52"
 	}]
 }, {
 	"id": "Seibu.Tamako.6450.Weekday",
@@ -8035,18 +8035,18 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Hagiyama",
-		"d": "16:05"
+		"d": "16:04"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "16:07",
-		"d": "16:07"
+		"a": "16:06",
+		"d": "16:06"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "16:09",
-		"d": "16:09"
+		"a": "16:08",
+		"d": "16:08"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "16:13"
+		"a": "16:12"
 	}]
 }, {
 	"id": "Seibu.Tamako.6452.Weekday",
@@ -8386,7 +8386,7 @@
 		"d": "06:47"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "06:48",
+		"a": "06:49",
 		"d": "06:49"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -8426,15 +8426,15 @@
 		"d": "06:57"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "06:58",
+		"a": "06:59",
 		"d": "06:59"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
 		"a": "07:01",
-		"d": "07:03"
+		"d": "07:02"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "07:04",
+		"a": "07:03",
 		"d": "07:05"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
@@ -8466,12 +8466,12 @@
 		"d": "07:07"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "07:08",
+		"a": "07:09",
 		"d": "07:09"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
 		"a": "07:11",
-		"d": "07:13"
+		"d": "07:12"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
 		"a": "07:14",
@@ -8506,7 +8506,7 @@
 		"d": "07:17"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "07:18",
+		"a": "07:19",
 		"d": "07:19"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -8546,7 +8546,7 @@
 		"d": "07:27"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "07:28",
+		"a": "07:29",
 		"d": "07:29"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -8586,7 +8586,7 @@
 		"d": "07:37"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "07:38",
+		"a": "07:39",
 		"d": "07:39"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -8626,7 +8626,7 @@
 		"d": "07:47"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "07:48",
+		"a": "07:49",
 		"d": "07:49"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -8666,7 +8666,7 @@
 		"d": "07:57"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "07:58",
+		"a": "07:59",
 		"d": "07:59"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -8706,7 +8706,7 @@
 		"d": "08:07"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "08:08",
+		"a": "08:09",
 		"d": "08:09"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -8746,7 +8746,7 @@
 		"d": "08:17"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "08:18",
+		"a": "08:19",
 		"d": "08:19"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -8774,7 +8774,7 @@
 		"d": "08:27"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "08:28",
+		"a": "08:29",
 		"d": "08:29"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -8907,14 +8907,14 @@
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
 		"a": "09:06",
-		"d": "09:07"
+		"d": "09:08"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
 		"a": "09:09",
-		"d": "09:09"
+		"d": "09:10"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "09:11",
+		"a": "09:12",
 		"d": "09:13"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
@@ -8975,14 +8975,14 @@
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
 		"a": "09:26",
-		"d": "09:27"
+		"d": "09:28"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
 		"a": "09:29",
-		"d": "09:29"
+		"d": "09:30"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
-		"a": "09:31",
+		"a": "09:32",
 		"d": "09:33"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
@@ -9018,7 +9018,7 @@
 		"d": "09:37"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "09:38",
+		"a": "09:39",
 		"d": "09:39"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -11035,10 +11035,10 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "19:25"
+		"d": "19:24"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "19:28",
+		"a": "19:27",
 		"d": "19:28"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
@@ -11082,7 +11082,7 @@
 		"d": "19:46"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "19:49",
+		"a": "19:48",
 		"d": "19:49"
 	}, {
 		"s": "Seibu.Tamako.Tamako",
@@ -11103,10 +11103,10 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Kokubunji",
-		"d": "19:45"
+		"d": "19:44"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "19:48",
+		"a": "19:47",
 		"d": "19:48"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
@@ -11138,7 +11138,7 @@
 		"d": "19:58"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "20:00",
+		"a": "19:59",
 		"d": "20:00"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -11146,7 +11146,7 @@
 		"d": "20:04"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "20:06",
+		"a": "20:05",
 		"d": "20:06"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
@@ -11970,11 +11970,11 @@
 		"d": "06:33"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "06:35",
+		"a": "06:34",
 		"d": "06:35"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "06:37",
+		"a": "06:36",
 		"d": "06:37"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
@@ -12047,11 +12047,11 @@
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
 		"a": "07:01",
-		"d": "07:03"
+		"d": "07:02"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
 		"a": "07:04",
-		"d": "07:05"
+		"d": "07:04"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
 		"a": "07:06",
@@ -12650,11 +12650,11 @@
 		"d": "10:34"
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
-		"a": "10:36",
+		"a": "10:35",
 		"d": "10:36"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
-		"a": "10:38",
+		"a": "10:37",
 		"d": "10:38"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
@@ -13778,7 +13778,7 @@
 		"d": "19:28"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "19:32"
+		"a": "19:31"
 	}]
 }, {
 	"id": "Seibu.Tamako.6098.SaturdayHoliday",
@@ -13882,7 +13882,7 @@
 		"d": "20:17"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
-		"a": "20:20",
+		"a": "20:19",
 		"d": "20:20"
 	}, {
 		"s": "Seibu.Tamako.Hagiyama",
@@ -14155,10 +14155,10 @@
 	],
 	"tt": [{
 		"s": "Seibu.Tamako.Tamako",
-		"d": "22:35"
+		"d": "22:36"
 	}, {
 		"s": "Seibu.Tamako.MusashiYamato",
-		"a": "22:37",
+		"a": "22:38",
 		"d": "22:38"
 	}, {
 		"s": "Seibu.Tamako.Yasaka",
@@ -14494,7 +14494,7 @@
 		"d": "09:48"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "09:52"
+		"a": "09:51"
 	}]
 }, {
 	"id": "Seibu.Tamako.6416.SaturdayHoliday",
@@ -15215,11 +15215,11 @@
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
 		"a": "18:46",
-		"d": "18:47"
+		"d": "18:46"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
 		"a": "18:48",
-		"d": "18:49"
+		"d": "18:48"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
 		"a": "18:52"
@@ -15243,14 +15243,14 @@
 	}, {
 		"s": "Seibu.Tamako.OmeKaido",
 		"a": "19:16",
-		"d": "19:17"
+		"d": "19:16"
 	}, {
 		"s": "Seibu.Tamako.HitotsubashiGakuen",
 		"a": "19:18",
-		"d": "19:19"
+		"d": "19:18"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "19:22"
+		"a": "19:21"
 	}]
 }, {
 	"id": "Seibu.Tamako.6470.SaturdayHoliday",
@@ -15278,7 +15278,7 @@
 		"d": "19:38"
 	}, {
 		"s": "Seibu.Tamako.Kokubunji",
-		"a": "19:42"
+		"a": "19:41"
 	}]
 }, {
 	"id": "Seibu.Tamako.6472.SaturdayHoliday",
