@@ -4,6 +4,7 @@ import {lerp, luminance, valueOrDefault} from './helpers';
 import SunCalc from 'suncalc';
 
 const HOUR = 3600000;
+const RADIAN_TO_DEGREE = 180 / Math.PI;
 const BG_LAYER_IDS = ['background', 'background-underground'];
 
 /**
@@ -24,7 +25,7 @@ export function getBounds(coords) {
  * Sets the properties in the specified layer that inherits deck.gl's MabboxLayer.
  * @param {mapboxgl.Map} map - Mapbox's Map object
  * @param {string} id - The ID of the layer
- * @param {object} props - One or more properties to update
+ * @param {Object} props - One or more properties to update
  */
 export function setLayerProps(map, id, props) {
     map.getLayer(id).implementation.setProps(props);
@@ -35,11 +36,11 @@ export function setLayerProps(map, id, props) {
  * @param {mapboxgl.Map} map - Mapbox's Map object
  * @param {number} time - The number of milliseconds elapsed since January 1,
  *     1970 00:00:00 UTC
- * @returns {object} Color object
+ * @returns {Object} Color object
  */
 export function getSunlightColor(map, time) {
-    const {lng, lat} = map.getCenter(),
-        {sunrise, sunset} = SunCalc.getTimes(time, lat, lng),
+    const center = map.getCenter(),
+        {sunrise, sunset} = SunCalc.getTimes(time, center.lat, center.lng),
         sunriseTime = sunrise.getTime(),
         sunsetTime = sunset.getTime();
     let t, r, g, b;
@@ -86,10 +87,10 @@ export function getSunlightColor(map, time) {
  *     1970 00:00:00 UTC
  */
 export function setSunlight(map, time) {
-    const {lat, lng} = map.getCenter(),
-        {azimuth, altitude} = SunCalc.getPosition(time, lat, lng),
-        sunAzimuth = 180 + azimuth * 180 / Math.PI,
-        sunAltitude = 90 - altitude * 180 / Math.PI,
+    const center = map.getCenter(),
+        {azimuth, altitude} = SunCalc.getPosition(time, center.lat, center.lng),
+        sunAzimuth = 180 + azimuth * RADIAN_TO_DEGREE,
+        sunAltitude = 90 - altitude * RADIAN_TO_DEGREE,
         {r, g, b} = getSunlightColor(map, time);
 
     map.setLight({
@@ -108,8 +109,9 @@ export function setSunlight(map, time) {
 export function hasDarkBackground(map, actual) {
     if (actual) {
         return BG_LAYER_IDS.reduce((value, id) => {
-            const {r, g, b} = map.getLayer(id).paint.get('background-color'),
-                a = map.getLayer(id).paint.get('background-opacity');
+            const paintProperties = map.getLayer(id).paint,
+                {r, g, b} = paintProperties.get('background-color'),
+                a = paintProperties.get('background-opacity');
             return value + luminance({r: r * a, g: g * a, b: b * a});
         }, 0) < .5;
     }
@@ -123,8 +125,8 @@ export function hasDarkBackground(map, actual) {
 
 /**
  * Returns the modified style color based on the color factors.
- * @param {object} color - Style color object
- * @param {object} colorFactors - Color factors object
+ * @param {Object} color - Style color object
+ * @param {Object} colorFactors - Color factors object
  * @returns {string} Modified style color string
  */
 export function getScaledColorString(color, colorFactors) {
@@ -135,7 +137,7 @@ export function getScaledColorString(color, colorFactors) {
  * Returns an array of the style color information retrieved from map layers.
  * @param {mapboxgl.Map} map - Mapbox's Map object
  * @param {string} metadataKey - Metadata key to filter
- * @returns {Array<object>} Array of the style color objects
+ * @returns {Array<Object>} Array of the style color objects
  */
 export function getStyleColors(map, metadataKey) {
     // Layer type -> paint property key mapping
@@ -185,8 +187,8 @@ export function getStyleColors(map, metadataKey) {
 /**
  * Sets style colors based on the style color objects and color factors
  * @param {mapboxgl.Map} map - Mapbox's Map object
- * @param {Array<object>} styleColors - Array of the style color objects
- * @param {object} factors - Color factors to multiply in the form of {r, g, b}
+ * @param {Array<Object>} styleColors - Array of the style color objects
+ * @param {Object} factors - Color factors to multiply in the form of {r, g, b}
  */
 export function setStyleColors(map, styleColors, factors) {
     let prop;
@@ -215,7 +217,7 @@ export function setStyleColors(map, styleColors, factors) {
  * Returns an array of the style opacity information retrieved from map layers.
  * @param {mapboxgl.Map} map - Mapbox's Map object
  * @param {string} metadataKey - Metadata key to filter
- * @returns {Array<object>} Array of the style opacity objects
+ * @returns {Array<Object>} Array of the style opacity objects
  */
 export function getStyleOpacities(map, metadataKey) {
     const {_layers, _order} = map.style,
@@ -262,7 +264,7 @@ export function getStyleOpacities(map, metadataKey) {
 /**
  * Sets style opacities based on the style opacity objects and factor
  * @param {mapboxgl.Map} map - Mapbox's Map object
- * @param {Array<object>} styleOpacities - Array of the style opacity objects
+ * @param {Array<Object>} styleOpacities - Array of the style opacity objects
  * @param {string | Array<string>} factorKey - Metadata key for the factor to multiply
  */
 export function setStyleOpacities(map, styleOpacities, factorKey) {

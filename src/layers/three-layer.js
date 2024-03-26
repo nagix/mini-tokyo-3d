@@ -15,13 +15,14 @@ export default class {
 
     onAdd(map, beforeId) {
         const me = this,
-            {implementation} = me,
-            {id, minzoom, maxzoom} = implementation;
+            implementation = me.implementation,
+            id = implementation.id,
+            _mbox = map.map;
 
         me.map = map;
         me.modelOrigin = map.getModelOrigin();
 
-        map.map.addLayer({
+        _mbox.addLayer({
             id,
             type: 'custom',
             renderingMode: '3d',
@@ -47,7 +48,7 @@ export default class {
             },
             render: me._render.bind(me)
         }, beforeId || 'poi');
-        map.map.setLayerZoomRange(id, minzoom, maxzoom);
+        _mbox.setLayerZoomRange(id, implementation.minzoom, implementation.maxzoom);
     }
 
     _onAdd(mbox, gl) {
@@ -83,18 +84,18 @@ export default class {
 
     _tick() {
         const me = this,
-            {map, mbox, light, ambientLight, lastRefresh, _tick} = me,
+            map = me.map,
             now = map.clock.getTime();
 
-        if (Math.floor(now / 60000) !== Math.floor(lastRefresh / 60000)) {
+        if (Math.floor(now / 60000) !== Math.floor(me.lastRefresh / 60000)) {
             const lightColor = map.getLightColor();
 
-            light.color.copy(lightColor);
-            ambientLight.color.copy(lightColor);
+            me.light.color.copy(lightColor);
+            me.ambientLight.color.copy(lightColor);
             me.lastRefresh = now;
         }
-        if (mbox) {
-            requestAnimationFrame(_tick);
+        if (me.mbox) {
+            requestAnimationFrame(me._tick);
         }
     }
 
@@ -138,10 +139,10 @@ export default class {
     }
 
     _onResize(event) {
-        const {camera} = this,
-            {width, height} = event.target.transform;
+        const camera = this.camera,
+            transform = event.target.transform;
 
-        camera.aspect = width / height;
+        camera.aspect = transform.width / transform.height;
         camera.updateProjectionMatrix();
     }
 

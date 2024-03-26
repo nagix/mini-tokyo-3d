@@ -1,6 +1,6 @@
 # Migration
 
-Mini Tokyo 3D v3.0.0 introduces a few breaking changes. In order to improve extensibility and usability, it was necessary to break backwards compatibility, but we aimed to do so only when worth the benefit. 
+Mini Tokyo 3D v3.0.0 introduces a few breaking changes. In order to improve extensibility and usability, it was necessary to break backwards compatibility, but we aimed to do so only when worth the benefit.
 
 ## Migrating to v3.0.0
 

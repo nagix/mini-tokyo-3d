@@ -1,14 +1,11 @@
 export function pickObject(map, id, point) {
     const deck = map.__deck;
 
-    if (!deck.deckPicker) {
-        return;
-    }
+    if (deck.deckPicker) {
+        const info = deck.pickObject({x: point.x, y: point.y, layerIds: [id]});
 
-    const {x, y} = point,
-        info = deck.pickObject({x, y, layerIds: [id]});
-
-    if (info) {
-        return info.object;
+        if (info) {
+            return info.object;
+        }
     }
 }

@@ -4,45 +4,29 @@
     "plugin:import/recommended"
   ],
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 2018
   },
   "plugins": [
     "import",
     "jsdoc"
   ],
   "rules": {
-    // temporarily disabled due to https://github.com/babel/babel-eslint/issues/485
-    "no-use-before-define": "off",
-
-    // no-duplicate-imports doesn't play well with Flow
-    // https://github.com/babel/eslint-plugin-babel/issues/59
-    "no-duplicate-imports": "off",
-    "import/no-duplicates": "error",
-
     // temporarily disabled for easier upgrading of dependencies
     "implicit-arrow-linebreak": "off",
     "arrow-parens": "off",
     "arrow-body-style": "off",
     "no-confusing-arrow": "off",
-    "no-control-regex": "off",
-    "no-invalid-this": "off",
-    "no-buffer-constructor": "off",
-
-    // import/no-unresolved doesn't support package.json exports and imports
-    // https://github.com/import-js/eslint-plugin-import/issues/1868
-    "import/no-unresolved": ["error", {"ignore": ["swiper"]}],
 
     "array-bracket-spacing": "off",
     "consistent-return": "off",
-    "global-require": "off",
     "import/no-commonjs": "error",
-    "import/no-named-as-default" : "off",
-    "key-spacing": "off",
-    "no-eq-null": "off",
+    "import/no-duplicates": "error",
+    "import/no-unresolved": "error",
     "no-lonely-if": "off",
-    "no-new": "off",
-    "no-unused-vars": ["error", {"argsIgnorePattern": "^_$"}],
+    "no-unused-vars": ["error", {"argsIgnorePattern": "^_"}],
     "no-warning-comments": "error",
+    "no-mixed-operators": ["error", {"groups": [["&", "|", "^", "~", "<<", ">>", ">>>"], ["&&", "||"]]}],
     "object-curly-spacing": ["error", "never"],
     "prefer-arrow-callback": "error",
     "prefer-const": ["error", {"destructuring": "all"}],
@@ -66,24 +50,35 @@
     "no-multiple-empty-lines": [ "error", { 
         "max": 1
     }],
-    "jsdoc/check-param-names": "warn",
-    "jsdoc/require-param": "warn",
-    "jsdoc/require-param-description": "warn",
-    "jsdoc/require-param-name": "warn",
-    "jsdoc/require-returns": "warn",
-    "jsdoc/require-returns-description": "warn"
+    "jsdoc/check-param-names": "error",
+    "jsdoc/require-param": "error",
+    "jsdoc/require-param-description": "error",
+    "jsdoc/require-param-name": "error",
+    "jsdoc/require-returns": "error",
+    "jsdoc/require-returns-description": "error",
+    "jsdoc/require-property": "error",
+    "jsdoc/check-access": "error",
+    "jsdoc/check-line-alignment": ["error", "any", {"wrapIndent": "    "}],
+    "jsdoc/check-property-names": "error",
+    "jsdoc/check-types": "error",
+    "jsdoc/require-description": "error",
+    "jsdoc/require-param-type": "error",
+    "jsdoc/require-property-description": "error",
+    "jsdoc/require-property-name": "error",
+    "jsdoc/require-property-type": "error",
+    "jsdoc/require-returns-type": "error"
   },
   "settings": {
     "jsdoc":{
-      "ignorePrivate": true
+      "ignorePrivate": true,
+      "preferredTypes": {
+        "object": "Object"
+      }
     }
   },
   "ignorePatterns": ["src/extend.js"],
-  "globals": {
-    "performance": true
-  },
   "env": {
-    "es6": true,
+    "es2018": true,
     "browser": true
   }
 }

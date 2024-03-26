@@ -103,8 +103,9 @@ export default class extends Panel {
         }
 
         searchButtonElement.addEventListener('click', () => {
-            const origin = map.stationTitleLookup[originElement.value.toUpperCase()],
-                destination = map.stationTitleLookup[destinationElement.value.toUpperCase()],
+            const stationTitleLookup = map.stationTitleLookup,
+                origin = stationTitleLookup[originElement.value.toUpperCase()],
+                destination = stationTitleLookup[destinationElement.value.toUpperCase()],
                 type = container.querySelector('#type').value,
                 month = container.querySelector('#month').value,
                 date = container.querySelector('#date').value,
@@ -160,16 +161,18 @@ export default class extends Panel {
 
     fillStationName(name) {
         const me = this;
+        let focus = me.focus;
 
-        if (me.focus) {
+        if (focus) {
             const container = me._container;
-            let focusedElement = container.querySelector(`#${me.focus}`);
+            let focusedElement = container.querySelector(`#${focus}`);
 
             focusedElement.style.borderColor = '#777';
             focusedElement.value = name;
             focusedElement.classList.remove('search-focus');
-            me.focus = me.focus === 'origin' ? 'destination' : 'origin';
-            focusedElement = container.querySelector(`#${me.focus}`);
+            focus = me.focus = focus === 'origin' ? 'destination' : 'origin';
+
+            focusedElement = container.querySelector(`#${focus}`);
             if (!focusedElement.value) {
                 focusedElement.classList.add('search-focus');
                 if (!me._map.touchDevice) {
@@ -184,7 +187,7 @@ export default class extends Panel {
     showResult(result) {
         const me = this,
             map = me._map,
-            {lang, dict, clock} = map,
+            {dict, clock} = map,
             container = me._container,
             backButton = createElement('div', {
                 innerHTML: [
@@ -204,7 +207,8 @@ export default class extends Panel {
                     '</button></span>'
                 ].join('')
             }),
-            swiperElement = container.querySelector('.swiper-wrapper');
+            swiperElement = container.querySelector('.swiper-wrapper'),
+            routes = result.routes;
 
         me._result = result;
 
@@ -239,10 +243,10 @@ export default class extends Panel {
 
         swiperElement.innerHTML = '';
 
-        if (result.routes) {
+        if (routes) {
             me.setButtons([backButton, pageController]);
 
-            for (const route of result.routes) {
+            for (const route of routes) {
                 const slideElement = createElement('div', {
                         className: 'swiper-slide',
                         innerHTML: [
@@ -260,18 +264,20 @@ export default class extends Panel {
                 let arrivalTime;
 
                 for (const {r, y, ds, d, tt, nm, transfer, delay} of route.trains) {
-                    const railwayTitle = nm ? nm.map(name => name[lang] || name.en).join(dict['and']) : map.getLocalizedRailwayTitle(r),
+                    const departure = tt[0],
+                        arrival = tt[tt.length - 1],
+                        railwayTitle = map.getLocalizedTrainNameOrRailwayTitle(nm, r),
                         trainTypeTitle = map.getLocalizedTrainTypeTitle(y),
-                        destinationTitle = ds ? dict['for'].replace('$1', map.getLocalizedStationTitle(ds)) : map.getLocalizedRailDirectionTitle(d),
+                        destinationTitle = map.getLocalizedDestinationTitle(ds, d),
                         section = {};
 
                     section.start = stations.length;
                     stations.push([
                         '<div class="station-row">',
-                        `<div class="station-title-box">${map.getLocalizedStationTitle(tt[0].s)}</div>`,
+                        `<div class="station-title-box">${map.getLocalizedStationTitle(departure.s)}</div>`,
                         `<div class="station-time-box${delay ? ' desc-caution' : ''}">`,
                         arrivalTime ? `${clock.getTimeString(clock.getTime(arrivalTime) + delay * 60000)}<br>` : '',
-                        clock.getTimeString(clock.getTime(tt[0].d) + delay * 60000),
+                        clock.getTimeString(clock.getTime(departure.d) + delay * 60000),
                         '</div></div>'
                     ].join(''));
                     stations.push([
@@ -284,13 +290,13 @@ export default class extends Panel {
                     section.color = map.railwayLookup[r].color;
                     sections.push(section);
                     if (transfer === 0) {
-                        arrivalTime = tt[tt.length - 1].a;
+                        arrivalTime = arrival.a;
                     } else {
                         stations.push([
                             '<div class="station-row">',
-                            `<div class="station-title-box">${map.getLocalizedStationTitle(tt[tt.length - 1].s)}</div>`,
+                            `<div class="station-title-box">${map.getLocalizedStationTitle(arrival.s)}</div>`,
                             `<div class="station-time-box${delay ? ' desc-caution' : ''}">`,
-                            clock.getTimeString(clock.getTime(tt[tt.length - 1].a || tt[tt.length - 1].d) + delay * 60000),
+                            clock.getTimeString(clock.getTime(arrival.a || arrival.d) + delay * 60000),
                             '</div></div>'
                         ].join(''));
                         if (transfer > 0) {
@@ -311,11 +317,7 @@ export default class extends Panel {
 
                 routesElement.innerHTML = stations.join('');
 
-                const {children} = routesElement;
-
-                for (let i = 0, ilen = children.length; i < ilen; i++) {
-                    const child = children[i];
-
+                for (const child of routesElement.children) {
                     offsets.push(child.offsetTop + child.getBoundingClientRect().height / 2);
                 }
 
@@ -358,11 +360,12 @@ export default class extends Panel {
     switchRoute() {
         const me = this,
             map = me._map,
-            {dict, map: mbox} = map,
+            {dict, map: mbox, featureCollection} = map,
             container = me._container,
             swiper = me._swiper,
             index = swiper.activeIndex,
             route = me._result.routes[index],
+            trains = route.trains,
             railwaySections = [],
             stationGroups = [],
             coords = [];
@@ -375,26 +378,28 @@ export default class extends Panel {
         container.querySelector('#previous-button').disabled = swiper.isBeginning;
         container.querySelector('#next-button').disabled = swiper.isEnd;
 
-        for (const {r, tt, d} of route.trains) {
-            const {stations, ascending} = map.railwayLookup[r];
+        for (const {r, tt, d} of trains) {
+            const {stations, ascending} = map.railwayLookup[r],
+                startStation = tt[0].s,
+                endStation = tt[tt.length - 1].s;
 
-            for (const {s} of tt) {
-                const station = map.stationLookup[s];
+            for (const stop of tt) {
+                const station = map.stationLookup[stop.s];
 
                 stationGroups.push(station.group);
                 coords.push(station.coord);
             }
 
             if (d === ascending) {
-                const start = stations.indexOf(tt[0].s),
-                    end = stations.indexOf(tt[tt.length - 1].s, start);
+                const start = stations.indexOf(startStation),
+                    end = stations.indexOf(endStation, start);
 
                 for (let i = start; i < end; i++) {
                     railwaySections.push(`${r}.${i + 1}`);
                 }
             } else {
-                const start = stations.lastIndexOf(tt[0].s),
-                    end = stations.lastIndexOf(tt[tt.length - 1].s, start);
+                const start = stations.lastIndexOf(startStation),
+                    end = stations.lastIndexOf(endStation, start);
 
                 for (let i = start; i > end; i--) {
                     railwaySections.push(`${r}.${i}`);
@@ -403,34 +408,26 @@ export default class extends Panel {
         }
 
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
-            let layer = mbox.getLayer(`railways-routeug-${zoom}`).implementation;
-
-            layer.setProps({
-                data: featureFilter(map.featureCollection, p =>
+            mbox.getLayer(`railways-routeug-${zoom}`).implementation.setProps({
+                data: featureFilter(featureCollection, p =>
                     p.zoom === zoom && p.altitude < 0 && includes(railwaySections, p.section)
                 )
             });
 
-            layer = mbox.getLayer(`stations-routeug-${zoom}`).implementation;
-
-            layer.setProps({
-                data: featureFilter(map.featureCollection, p =>
+            mbox.getLayer(`stations-routeug-${zoom}`).implementation.setProps({
+                data: featureFilter(featureCollection, p =>
                     p.zoom === zoom && p.altitude < 0 && includes(stationGroups, p.group)
                 )
             });
 
-            layer = mbox.getLayer(`railways-routeog-${zoom}`).implementation;
-
-            layer.setProps({
-                data: featureFilter(map.featureCollection, p =>
+            mbox.getLayer(`railways-routeog-${zoom}`).implementation.setProps({
+                data: featureFilter(featureCollection, p =>
                     p.zoom === zoom && p.altitude === 0 && includes(railwaySections, p.section)
                 )
             });
 
-            layer = mbox.getLayer(`stations-routeog-${zoom}`).implementation;
-
-            layer.setProps({
-                data: featureFilter(map.featureCollection, p =>
+            mbox.getLayer(`stations-routeog-${zoom}`).implementation.setProps({
+                data: featureFilter(featureCollection, p =>
                     p.zoom === zoom && p.altitude === 0 && includes(stationGroups, p.group)
                 )
             });
@@ -446,10 +443,10 @@ export default class extends Panel {
         });
         map.refreshMap();
 
-        const stationIDs = [route.trains[0].tt[0].s];
+        const stationIDs = [trains[0].tt[0].s];
 
-        for (const train of route.trains) {
-            if (train.transfer > 0 || train === route.trains[route.trains.length - 1]) {
+        for (const train of trains) {
+            if (train.transfer > 0 || train === trains[trains.length - 1]) {
                 stationIDs.push(train.tt[train.tt.length - 1].s);
             }
         }
@@ -476,10 +473,12 @@ export default class extends Panel {
             mbox = me._map.map;
 
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
-            for (const id of [`railways-routeug-${zoom}`, `stations-routeug-${zoom}`, `railways-routeog-${zoom}`, `stations-routeog-${zoom}`]) {
-                setLayerProps(mbox, id, {
-                    data: emptyFeatureCollection()
-                });
+            for (const key2 of ['routeug', 'routeog']) {
+                for (const key1 of ['railways', 'stations']) {
+                    setLayerProps(mbox, `${key1}-${key2}-${zoom}`, {
+                        data: emptyFeatureCollection()
+                    });
+                }
             }
         }
 
@@ -494,7 +493,8 @@ export default class extends Panel {
 
     remove() {
         this.hideRoute();
-        super.remove();
+
+        return super.remove();
     }
 
 }

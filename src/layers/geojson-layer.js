@@ -6,16 +6,16 @@ import {MapboxLayer} from '@deck.gl/mapbox';
 class ShaderExtension extends LayerExtension {
 
     constructor(options) {
-        super(Object.assign({extensionName: 'ShaderExtension'}, options));
+        super(options);
+        this.constructor.extensionName = 'ShaderExtension';
     }
 
     getShaders(extensions) {
-        return {
-            ...super.getShaders(extensions),
+        return Object.assign({}, super.getShaders(extensions), {
             inject: {
                 'vs:#decl': 'invariant gl_Position;'
             }
-        };
+        });
     }
 
 }
@@ -28,12 +28,13 @@ export default class {
 
     onAdd(map, beforeId) {
         const me = this,
-            {implementation} = me,
-            {id, minzoom, maxzoom, metadata} = implementation,
+            implementation = me.implementation,
+            id = implementation.id,
             options = Object.assign({}, implementation, {
                 type: GeoJsonLayer,
                 extensions: [new ShaderExtension()]
-            });
+            }),
+            mbox = map.map;
 
         me.map = map;
 
@@ -41,9 +42,9 @@ export default class {
         delete options.maxzoom;
         delete options.metadata;
 
-        map.map.addLayer(new MapboxLayer(options), beforeId || 'poi');
-        map.map.setLayerZoomRange(id, minzoom, maxzoom);
-        map.map.getLayer(id).metadata = metadata;
+        mbox.addLayer(new MapboxLayer(options), beforeId || 'poi');
+        mbox.setLayerZoomRange(id, implementation.minzoom, implementation.maxzoom);
+        mbox.getLayer(id).metadata = implementation.metadata;
     }
 
 }

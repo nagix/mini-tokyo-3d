@@ -4,7 +4,7 @@ Embedding Mini Tokyo 3D into a web page, or using the APIs to customize it, is v
 
 ## Preparation for Use
 
-Mini Tokyo 3D works on all major browsers that support ES6. Internet Explorer is not supported.
+Mini Tokyo 3D works on all major browsers that support ES2018. Internet Explorer is not supported.
 
 ### Getting a Mapbox Access Token
 

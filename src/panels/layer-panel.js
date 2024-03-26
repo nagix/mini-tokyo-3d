@@ -11,23 +11,22 @@ export default class extends Panel {
 
     addTo(map) {
         const me = this,
-            {layers} = me._options,
-            {lang, dict} = map;
+            layers = me._options.layers;
 
         super.addTo(map)
-            .setTitle(dict['layers'])
+            .setTitle(map.dict['layers'])
             .setHTML(layers.map(layer => [
                 `<div id="${layer.getId()}-layer" class="layer-row">`,
                 '<div class="layer-icon"></div>',
-                `<div>${layer.getName(lang)}</div>`,
+                `<div>${layer.getName(map.lang)}</div>`,
                 '</div>'
             ].join('')).join(''));
 
         for (const layer of layers) {
             const element = me._container.querySelector(`#${layer.getId()}-layer .layer-icon`),
-                {style, classList} = element;
+                classList = element.classList;
 
-            Object.assign(style, layer.getIconStyle());
+            Object.assign(element.style, layer.getIconStyle());
             if (layer.isEnabled()) {
                 classList.add('layer-icon-enabled');
             }

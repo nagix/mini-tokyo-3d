@@ -62,7 +62,7 @@ export default class {
 
         nonIndexedGeometry.setAttribute('groupIndex', new BufferAttribute(groupIndices, 1));
 
-        me.geometry = new InstancedGeometry(nonIndexedGeometry, count, parameters.index, {
+        const geometry = me.geometry = new InstancedGeometry(nonIndexedGeometry, count, parameters.index, {
             translation: {type: Float32Array, itemSize: 3},
             rotationX: {type: Float32Array, itemSize: 1},
             rotationZ: {type: Float32Array, itemSize: 1},
@@ -78,21 +78,24 @@ export default class {
         boxGeometry.dispose();
         nonIndexedGeometry.dispose();
 
-        me.uniforms = {
+        const uniforms = me.uniforms = {
             zoom: {type: 'f', value: parameters.zoom},
             cameraZ: {type: 'f', value: parameters.cameraZ},
             modelScale: {type: 'f', value: parameters.modelScale},
             base: {type: 'f', value: parameters.dark ? 0 : 1}
         };
 
-        me.material = new MeshLambertMaterial({
+        const material = me.material = new MeshLambertMaterial({
             opacity: parameters.opacity,
             transparent: true
         });
-        me.material.onBeforeCompile = shader => {
-            shader.uniforms.zoom = me.uniforms.zoom;
-            shader.uniforms.cameraZ = me.uniforms.cameraZ;
-            shader.uniforms.modelScale = me.uniforms.modelScale;
+
+        material.onBeforeCompile = shader => {
+            const shaderUniforms = shader.uniforms;
+
+            shaderUniforms.zoom = uniforms.zoom;
+            shaderUniforms.cameraZ = uniforms.cameraZ;
+            shaderUniforms.modelScale = uniforms.modelScale;
 
             shader.vertexShader = [`
                 attribute float groupIndex;
@@ -134,16 +137,17 @@ export default class {
             )].join('');
         };
 
-        me.mesh = new Mesh(me.geometry, me.material);
-        me.mesh.updateMatrix();
-        me.mesh.matrixAutoUpdate = false;
-        me.mesh.frustumCulled = false;
+        const mesh = me.mesh = new Mesh(geometry, material);
 
-        me.pickingMaterial = new ShaderMaterial({
+        mesh.updateMatrix();
+        mesh.matrixAutoUpdate = false;
+        mesh.frustumCulled = false;
+
+        const pickingMaterial = me.pickingMaterial = new ShaderMaterial({
             uniforms: {
-                zoom: me.uniforms.zoom,
-                cameraZ: me.uniforms.cameraZ,
-                modelScale: me.uniforms.modelScale
+                zoom: uniforms.zoom,
+                cameraZ: uniforms.cameraZ,
+                modelScale: uniforms.modelScale
             },
             vertexShader: `
                 varying vec3 vIdColor;
@@ -166,33 +170,34 @@ export default class {
             `
         });
 
-        me.pickingMesh = new Mesh(me.geometry, me.pickingMaterial);
-        me.pickingMesh.updateMatrix();
-        me.pickingMesh.matrixAutoUpdate = false;
-        me.pickingMesh.frustumCulled = false;
+        const pickingMesh = me.pickingMesh = new Mesh(geometry, pickingMaterial);
+
+        pickingMesh.updateMatrix();
+        pickingMesh.matrixAutoUpdate = false;
+        pickingMesh.frustumCulled = false;
 
         const sphereGeometry = new SphereGeometry(1.8, 32, 32);
 
-        me.delayMarkerGeometry = new InstancedGeometry(sphereGeometry, count, parameters.index, {
-            translation: me.geometry.getAttribute('translation'),
-            opacity0: me.geometry.getAttribute('opacity0'),
-            delay: me.geometry.getAttribute('delay')
+        const delayMarkerGeometry = me.delayMarkerGeometry = new InstancedGeometry(sphereGeometry, count, parameters.index, {
+            translation: geometry.getAttribute('translation'),
+            opacity0: geometry.getAttribute('opacity0'),
+            delay: geometry.getAttribute('delay')
         });
 
         sphereGeometry.dispose();
 
-        me.delayMarkerMaterial = new ShaderMaterial({
+        const delayMarkerMaterial = me.delayMarkerMaterial = new ShaderMaterial({
             uniforms: {
-                zoom: me.uniforms.zoom,
-                cameraZ: me.uniforms.cameraZ,
-                modelScale: me.uniforms.modelScale,
+                zoom: uniforms.zoom,
+                cameraZ: uniforms.cameraZ,
+                modelScale: uniforms.modelScale,
                 opacity: {
                     type: 'f',
                     get value() {
                         return me.material.opacity;
                     }
                 },
-                base: me.uniforms.base
+                base: uniforms.base
             },
             vertexShader: `
                 uniform float zoom;
@@ -225,16 +230,17 @@ export default class {
             depthWrite: false
         });
 
-        me.delayMarkerMesh = new Mesh(me.delayMarkerGeometry, me.delayMarkerMaterial);
-        me.delayMarkerMesh.updateMatrix();
-        me.delayMarkerMesh.matrixAutoUpdate = false;
-        me.delayMarkerMesh.frustumCulled = false;
+        const delayMarkerMesh = me.delayMarkerMesh = new Mesh(delayMarkerGeometry, delayMarkerMaterial);
 
-        me.outlineMaterial = new ShaderMaterial({
+        delayMarkerMesh.updateMatrix();
+        delayMarkerMesh.matrixAutoUpdate = false;
+        delayMarkerMesh.frustumCulled = false;
+
+        const outlineMaterial = me.outlineMaterial = new ShaderMaterial({
             uniforms: {
-                zoom: me.uniforms.zoom,
-                cameraZ: me.uniforms.cameraZ,
-                modelScale: me.uniforms.modelScale
+                zoom: uniforms.zoom,
+                cameraZ: uniforms.cameraZ,
+                modelScale: uniforms.modelScale
             },
             vertexShader: `
                 attribute float outline;
@@ -260,10 +266,11 @@ export default class {
             side: BackSide
         });
 
-        me.outlineMesh = new Mesh(me.geometry, me.outlineMaterial);
-        me.outlineMesh.updateMatrix();
-        me.outlineMesh.matrixAutoUpdate = false;
-        me.outlineMesh.frustumCulled = false;
+        const outlineMesh = me.outlineMesh = new Mesh(geometry, outlineMaterial);
+
+        outlineMesh.updateMatrix();
+        outlineMesh.matrixAutoUpdate = false;
+        outlineMesh.frustumCulled = false;
     }
 
     getMesh() {
@@ -310,8 +317,10 @@ export default class {
     }
 
     refreshCameraParams(params) {
-        this.uniforms.zoom.value = params.zoom;
-        this.uniforms.cameraZ.value = params.cameraZ;
+        const uniforms = this.uniforms;
+
+        uniforms.zoom.value = params.zoom;
+        uniforms.cameraZ.value = params.cameraZ;
     }
 
     refreshDelayMarkerMesh(dark) {

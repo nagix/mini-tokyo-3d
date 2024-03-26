@@ -9,7 +9,7 @@ function getElementPosition(el) {
 }
 
 function getElement(to) {
-  const targetAnchor = to.hash.slice(1);  
+  const targetAnchor = to.hash.slice(1);
   return document.getElementById(targetAnchor) || document.querySelector(`[name='${targetAnchor}']`);
 }
 

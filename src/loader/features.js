@@ -372,7 +372,7 @@ export function featureWorker() {
             ids = [];
 
         for (const stations of group) {
-            const {altitude} = stationLookup[stations[0]] || 0,
+            const altitude = stationLookup[stations[0]].altitude || 0,
                 layer = altitude < 0 ? ug : og,
                 coords = stations.map(id => {
                     const {railway, coord} = stationLookup[id],

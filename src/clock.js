@@ -38,13 +38,14 @@ export default class {
         }
 
         const me = this,
-            baseTime = me.baseTime;
+            prevBaseTime = me.baseTime,
 
-        // Adjust JST back to local time
-        const offset = -me.getTimezoneOffset();
+            // Adjust JST back to local time
+            offset = -me.getTimezoneOffset(),
 
-        me.baseTime = date.getTime() + offset - Date.now() * me.speed;
-        me.baseHighResTime += me.baseTime - baseTime;
+            baseTime = me.baseTime = date.getTime() + offset - Date.now() * me.speed;
+
+        me.baseHighResTime += baseTime - prevBaseTime;
     }
 
     /**
@@ -75,19 +76,19 @@ export default class {
 
         if (!timeString) {
             return me.baseTime + Date.now() * me.speed;
-        } else {
-            const date = me.getJSTDate(),
-                timeStrings = timeString.split(':'),
-                hours = +timeStrings[0],
-                minutes = +timeStrings[1],
-
-                // Adjust JST back to local time
-                // Special handling of time between midnight and 3am
-                offset = -me.getTimezoneOffset() +
-                    ((date.getHours() < 3 ? -1 : 0) + (hours < 3 ? 1 : 0)) * 86400000;
-
-            return date.setHours(hours, minutes, 0, 0) + offset + configs.minDelay;
         }
+
+        const date = me.getJSTDate(),
+            timeStrings = timeString.split(':'),
+            hours = +timeStrings[0],
+            minutes = +timeStrings[1],
+
+            // Adjust JST back to local time
+            // Special handling of time between midnight and 3am
+            offset = -me.getTimezoneOffset() +
+                ((date.getHours() < 3 ? -1 : 0) + (hours < 3 ? 1 : 0)) * 86400000;
+
+        return date.setHours(hours, minutes, 0, 0) + offset + configs.minDelay;
     }
 
     /**
@@ -128,12 +129,17 @@ export default class {
             date.setHours(hours - 24);
         }
 
-        if (date.getDay() === 0 || JapaneseHolidays.isHoliday(date) ||
-            (date.getFullYear() === 2022 && date.getMonth() === 11 && date.getDate() >= 30) ||
-            (date.getFullYear() === 2023 && date.getMonth() === 0 && date.getDate() <= 3)) {
+        const dayOfWeek = date.getDay(),
+            year = date.getFullYear(),
+            month = date.getMonth(),
+            day = date.getDate();
+
+        if (dayOfWeek === 0 || JapaneseHolidays.isHoliday(date) ||
+            (year === 2022 && month === 11 && day >= 30) ||
+            (year === 2023 && month === 0 && day <= 3)) {
             return 'Holiday';
         }
-        if (date.getDay() === 6) {
+        if (dayOfWeek === 6) {
             return 'Saturday';
         }
         return 'Weekday';

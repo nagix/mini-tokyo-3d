@@ -9,7 +9,7 @@ export default class extends Evented {
     constructor(options) {
         super();
 
-        const {element} = options;
+        const element = options.element;
 
         this._marker = new Marker({element});
         bindAll(['_onClick', '_onMouseEnter', '_onMouseLeave'], this);
@@ -21,15 +21,16 @@ export default class extends Evented {
      * @returns {Marker} Returns itself to allow for method chaining
      */
     addTo(map) {
-        const marker = this._marker,
+        const me = this,
+            marker = me._marker,
             element = marker.getElement();
 
         marker.addTo(map.map);
-        element.addEventListener('click', this._onClick);
-        element.addEventListener('mouseenter', this._onMouseEnter);
-        element.addEventListener('mouseleave', this._onMouseLeave);
-        element.addEventListener('mousemove', this._onMouseMove);
-        return this;
+        element.addEventListener('click', me._onClick);
+        element.addEventListener('mouseenter', me._onMouseEnter);
+        element.addEventListener('mouseleave', me._onMouseLeave);
+        element.addEventListener('mousemove', me._onMouseMove);
+        return me;
     }
 
     /**
@@ -37,15 +38,16 @@ export default class extends Evented {
      * @returns {Marker} Returns itself to allow for method chaining
      */
     remove() {
-        const marker = this._marker,
+        const me = this,
+            marker = me._marker,
             element = marker.getElement();
 
-        element.removeEventListener('click', this._onClick);
-        element.removeEventListener('mouseenter', this._onMouseEnter);
-        element.removeEventListener('mouseleave', this._onMouseLeave);
-        element.removeEventListener('mousemove', this._onMouseMove);
+        element.removeEventListener('click', me._onClick);
+        element.removeEventListener('mouseenter', me._onMouseEnter);
+        element.removeEventListener('mouseleave', me._onMouseLeave);
+        element.removeEventListener('mousemove', me._onMouseMove);
         marker.remove();
-        return this;
+        return me;
     }
 
     /**
@@ -66,7 +68,7 @@ export default class extends Evented {
      * @returns {Marker} Returns itself to allow for method chaining
      */
     setActivity(active) {
-        const {classList} = this._marker.getElement();
+        const classList = this._marker.getElement().classList;
 
         if (active) {
             classList.add('active');

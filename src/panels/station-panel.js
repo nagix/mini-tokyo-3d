@@ -13,7 +13,7 @@ export default class extends Panel {
             stations = me._options.object,
             titles = {},
             exits = [].concat(...stations.map(station => station.exit || [])),
-            {clock, dict, container} = map,
+            {clock, container} = map,
             now = clock.getTime();
 
         for (const {id} of stations) {
@@ -40,10 +40,10 @@ export default class extends Panel {
         }
 
         super.addTo(map)
-            .setTitle(Object.keys(titles).join(dict['and']))
+            .setTitle(Object.keys(titles).join(map.dict['and']))
             .setHTML(exitHTML.join(''));
 
-        const {children} = me._container.querySelector('#panel-content');
+        const children = me._container.querySelector('#panel-content').children;
 
         for (let i = 0, ilen = children.length; i < ilen; i++) {
             const child = children[i];

@@ -1,43 +1,5 @@
 import {valueOrDefault} from './helpers/helpers';
 
-function repeat() {
-    const instances = animation.instances,
-        ids = Object.keys(instances),
-        length = ids.length,
-        now = performance.now();
-
-    for (let i = 0; i < length; i++) {
-        const id = ids[i],
-            instance = instances[id];
-
-        if (instance) {
-            const nextFrame = instance.nextFrame;
-
-            if (!(nextFrame > now)) {
-                const {clock, callback, duration} = instance,
-                    time = clock ? clock.getHighResTime() : now,
-                    start = instance.start = instance.start || time,
-                    elapsed = time - start;
-
-                if (callback) {
-                    callback(Math.min(elapsed, duration), duration);
-                }
-                instance.nextFrame = Math.max((nextFrame || 0) + 1000 / (instance.frameRate || Infinity), now);
-
-                if (elapsed >= duration) {
-                    const complete = instance.complete;
-
-                    if (complete) {
-                        complete();
-                    }
-                    animation.stop(id);
-                }
-            }
-        }
-    }
-    requestAnimationFrame(repeat);
-}
-
 const animation = {
 
     instances: {},
@@ -47,10 +9,46 @@ const animation = {
     initialized: false,
 
     init() {
-        if (!animation.initialized) {
-            animation.initialized = true;
-            repeat();
+        if (animation.initialized) {
+            return;
         }
+        animation.initialized = true;
+
+        (function repeat() {
+            const instances = animation.instances,
+                ids = Object.keys(instances),
+                length = ids.length,
+                now = performance.now();
+
+            for (let i = 0; i < length; i++) {
+                const id = ids[i],
+                    instance = instances[id];
+
+                if (instance) {
+                    const nextFrame = instance.nextFrame || 0;
+
+                    if (nextFrame <= now) {
+                        const {clock, duration, frameRate = Infinity} = instance,
+                            time = clock ? clock.getHighResTime() : now,
+                            start = instance.start = instance.start || time,
+                            elapsed = time - start;
+
+                        if (instance.callback) {
+                            instance.callback(Math.min(elapsed, duration), duration);
+                        }
+                        instance.nextFrame = Math.max(nextFrame + 1000 / frameRate, now);
+
+                        if (elapsed >= duration) {
+                            if (instance.complete) {
+                                instance.complete();
+                            }
+                            animation.stop(id);
+                        }
+                    }
+                }
+            }
+            requestAnimationFrame(repeat);
+        })();
     },
 
     isActive(id) {
@@ -59,13 +57,13 @@ const animation = {
 
     /**
      * Starts a new animation.
-     * @param {object} options - Animation options
-     * @param {function} options.callback - Function called on every frame
-     * @param {function} options.complete - Function called when the animation completes
+     * @param {Object} options - Animation options
+     * @param {Function} options.callback - Function called on every frame
+     * @param {Function} options.complete - Function called when the animation completes
      * @param {number} options.duration - Animation duration. Default is Infinity
      * @param {number} options.start - Animation start time (same timestamp as performance.now())
      * @param {number} options.frameRate - Animation frames per second
-     * @param {object} options.clock - If specified, animation speed will be affected by its clock speed
+     * @param {Object} options.clock - If specified, animation speed will be affected by its clock speed
      * @returns {number} Animation ID which can be used to stop
      */
     start(options) {

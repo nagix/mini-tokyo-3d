@@ -9,14 +9,15 @@ export default class extends Panel {
 
     addTo(map) {
         const me = this,
-            {lang, dict, clock} = map,
+            clock = map.clock,
             trains = [],
             sections = [],
             stationHTML = [],
             offsets = [],
             train = me._options.object,
-            {r: railwayID, nm: names, v: vehicle, ds: destination, nextTrains} = train,
-            railway = map.railwayLookup[railwayID],
+            {r: railwayID, v: vehicle, nextTrains} = train,
+            railwayLookup = map.railwayLookup,
+            railway = railwayLookup[railwayID],
             color = vehicle ? map.trainVehicleLookup[vehicle].color : railway.color,
             delay = train.delay || 0;
         let currSection, scrollTop;
@@ -27,7 +28,7 @@ export default class extends Panel {
         for (let curr = nextTrains && nextTrains[0]; curr; curr = curr.nextTrains && curr.nextTrains[0]) {
             trains.push(curr);
         }
-        trains.forEach(curr => {
+        for (const curr of trains) {
             const section = {};
 
             section.start = Math.max(stationHTML.length - 1, 0);
@@ -47,12 +48,12 @@ export default class extends Panel {
                 }
             });
             section.end = stationHTML.length - 1;
-            section.color = map.railwayLookup[curr.r].color;
+            section.color = railwayLookup[curr.r].color;
             sections.push(section);
             if (curr === train) {
                 currSection = section;
             }
-        });
+        }
 
         super.addTo(map)
             .setTitle([
@@ -63,12 +64,10 @@ export default class extends Panel {
                     '</div>'
                 ].join('') : `<div style="background-color: ${color};"></div>`,
                 '<div><div class="desc-first-row">',
-                names ? names.map(name => name[lang] || name.en).join(dict['and']) : map.getLocalizedRailwayTitle(railwayID),
+                map.getLocalizedTrainNameOrRailwayTitle(train.nm, railwayID),
                 '</div><div class="desc-second-row">',
                 `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y)}</span> `,
-                destination ?
-                    dict['for'].replace('$1', map.getLocalizedStationTitle(destination)) :
-                    map.getLocalizedRailDirectionTitle(train.d),
+                map.getLocalizedDestinationTitle(train.ds, train.d),
                 '</div></div></div>'
             ].join(''))
             .setHTML([
@@ -80,12 +79,9 @@ export default class extends Panel {
             ].join(''));
 
         const container = me._container,
-            bodyElement = container.querySelector('#panel-body'),
-            {children} = container.querySelector('#timetable-content');
+            bodyElement = container.querySelector('#panel-body');
 
-        for (let i = 0, ilen = children.length; i < ilen; i++) {
-            const child = children[i];
-
+        for (const child of container.querySelector('#timetable-content').children) {
             offsets.push(child.offsetTop + child.getBoundingClientRect().height / 2);
         }
         container.querySelector('#railway-mark').innerHTML = sections.map(({color, start, end}) =>
@@ -96,9 +92,9 @@ export default class extends Panel {
 
         const timetableOffsets = offsets.slice(currSection.start, currSection.end + 1);
 
-        const repeat = () => {
-            const {height} = bodyElement.getBoundingClientRect(),
-                {timetableIndex: index} = train,
+        (function repeat() {
+            const height = bodyElement.getBoundingClientRect().height,
+                index = train.timetableIndex,
                 curr = timetableOffsets[index],
                 next = train.arrivalStation ? timetableOffsets[index + 1] : curr,
                 y = lerp(curr, next, train._t),
@@ -108,15 +104,12 @@ export default class extends Panel {
                 `<circle cx="22" cy="${y}" r="${7 + p * 15}" fill="#ffffff" opacity="${1 - p}" />` +
                 `<circle cx="22" cy="${y}" r="7" fill="#ffffff" />`;
             if (scrollTop === undefined || scrollTop === bodyElement.scrollTop) {
-                bodyElement.scrollTop = Math.round(y - height / 2 + 4);
-                scrollTop = bodyElement.scrollTop;
+                scrollTop = bodyElement.scrollTop = Math.round(y - height / 2 + 4);
             }
             if (me._container) {
                 requestAnimationFrame(repeat);
             }
-        };
-
-        repeat();
+        })();
 
         return me;
     }

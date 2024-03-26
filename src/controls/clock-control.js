@@ -23,13 +23,12 @@ export default class extends Evented {
     constructor(options) {
         super();
 
-        const me = this,
-            {lang, dict, clock, mode} = options;
+        const me = this;
 
-        me._lang = lang;
-        me._dict = dict;
-        me._clock = clock;
-        me._mode = mode || 'realtime';
+        me._lang = options.lang;
+        me._dict = options.dict;
+        me._clock = options.clock;
+        me._mode = options.mode || 'realtime';
     }
 
     getDefaultPosition() {
@@ -44,7 +43,7 @@ export default class extends Evented {
         me._container = createElement('div', {className: 'clock-ctrl'});
         me._update();
 
-        const repeat = () => {
+        (function repeat() {
             const now = me._clock.getTime();
 
             if (Math.floor(now / 1000) !== Math.floor(me._lastRefresh / 1000)) {
@@ -54,17 +53,16 @@ export default class extends Evented {
             if (me._container) {
                 requestAnimationFrame(repeat);
             }
-        };
-
-        repeat();
+        })();
 
         return me._container;
     }
 
     onRemove() {
-        const me = this;
+        const me = this,
+            container = me._container;
 
-        me._container.parentNode.removeChild(me._container);
+        container.parentNode.removeChild(container);
         delete me._container;
         delete me._map;
     }
@@ -89,17 +87,18 @@ export default class extends Evented {
             container = me._container,
             dict = me._dict,
             clock = me._clock,
-            mode = me._mode;
+            mode = me._mode,
+            editing = me._editing;
 
         container.innerHTML = [
-            mode === 'realtime' || !me._editing ?
+            mode === 'realtime' || !editing ?
                 '<span id="date"></span><br><span id="time"></span><br>' : '',
-            mode === 'playback' && !me._editing ? [
+            mode === 'playback' && !editing ? [
                 '<div class="clock-button">',
                 `<span><button id="edit-time-button">${dict['edit-date-time']}</button></span>`,
                 '</div>'
             ].join('') : '',
-            mode === 'playback' && me._editing ? [
+            mode === 'playback' && editing ? [
                 '<div class="clock-controller">',
                 DATE_COMPONENTS.slice(0, 3).map(({id}) => [
                     '<span class="spin-box">',
@@ -138,15 +137,17 @@ export default class extends Evented {
 
         me._refresh();
 
-        if (mode === 'playback' && me._editing) {
+        if (mode === 'playback' && editing) {
             container.querySelector('#edit-time-cancel-button').addEventListener('click', () => {
                 delete me._tempDate;
                 me._editing = false;
                 me._update();
             });
             container.querySelector('#edit-time-ok-button').addEventListener('click', () => {
-                if (me._tempDate) {
-                    clock.setDate(me._tempDate);
+                const date = me._tempDate;
+
+                if (date) {
+                    clock.setDate(date);
                     me._onChange();
                     delete me._tempDate;
                 }
@@ -156,44 +157,46 @@ export default class extends Evented {
             });
         }
 
-        if (mode === 'playback' && !me._editing) {
+        if (mode === 'playback' && !editing) {
             container.querySelector('#edit-time-button').addEventListener('click', () => {
                 me._editing = true;
                 me._update();
             });
         }
 
-        if (mode === 'playback' && me._editing) {
-            DATE_COMPONENTS.forEach(({id, fn}) => {
+        if (mode === 'playback' && editing) {
+            for (const {id, fn} of DATE_COMPONENTS) {
                 container.querySelector(`#${id}-increase-button`).addEventListener('click', () => {
-                    me._tempDate = me._tempDate || clock.getJSTDate();
-                    me._tempDate[`set${fn}`](me._tempDate[`get${fn}`]() + 1);
+                    const date = me._tempDate = me._tempDate || clock.getJSTDate();
+
+                    date[`set${fn}`](date[`get${fn}`]() + 1);
                     me._refresh();
                 });
                 container.querySelector(`#${id}-decrease-button`).addEventListener('click', () => {
-                    me._tempDate = me._tempDate || clock.getJSTDate();
-                    me._tempDate[`set${fn}`](me._tempDate[`get${fn}`]() - 1);
+                    const date = me._tempDate = me._tempDate || clock.getJSTDate();
+
+                    date[`set${fn}`](date[`get${fn}`]() - 1);
                     me._refresh();
                 });
-            });
+            }
         }
 
         if (mode === 'playback') {
-            container.querySelector('#speed-increase-button').addEventListener('click', function() {
-                let {speed} = clock;
+            container.querySelector('#speed-increase-button').addEventListener('click', e => {
+                let speed = clock.speed;
 
                 speed += speed < 10 ? 1 : speed < 100 ? 10 : 100;
                 clock.setSpeed(speed);
-                this.disabled = speed === 600;
+                e.currentTarget.disabled = speed === 600;
                 container.querySelector('#speed-decrease-button').disabled = false;
                 container.querySelector('#clock-speed').innerHTML = speed + dict['x-speed'];
             });
-            container.querySelector('#speed-decrease-button').addEventListener('click', function() {
-                let {speed} = clock;
+            container.querySelector('#speed-decrease-button').addEventListener('click', e => {
+                let speed = clock.speed;
 
                 speed -= speed <= 10 ? 1 : speed <= 100 ? 10 : 100;
                 clock.setSpeed(speed);
-                this.disabled = speed === 1;
+                e.currentTarget.disabled = speed === 1;
                 container.querySelector('#speed-increase-button').disabled = false;
                 container.querySelector('#clock-speed').innerHTML = speed + dict['x-speed'];
             });
@@ -202,29 +205,32 @@ export default class extends Evented {
 
     _refresh() {
         const me = this,
-            lang = me._lang,
             container = me._container;
-        let date = me._clock.getJSTDate(),
-            dateString = date.toLocaleDateString(lang, DATE_FORMAT);
+        let date = me._clock.getJSTDate();
 
-        if (lang === 'ja' && JapaneseHolidays.isHoliday(date)) {
-            dateString = dateString.replace(/\(.+\)/, '(祝)');
-        }
         if (!me._editing) {
+            const lang = me._lang;
+            let dateString = date.toLocaleDateString(lang, DATE_FORMAT);
+
+            if (lang === 'ja' && JapaneseHolidays.isHoliday(date)) {
+                dateString = dateString.replace(/\(.+\)/, '(祝)');
+            }
             container.querySelector('#date').innerHTML = dateString;
             container.querySelector('#time').innerHTML = date.toLocaleTimeString(lang);
         } else {
-            if (me._tempDate) {
-                date = me._tempDate;
-                DATE_COMPONENTS.forEach(({id}) => {
+            const tempDate = me._tempDate;
+
+            if (tempDate) {
+                date = tempDate;
+                for (const {id} of DATE_COMPONENTS) {
                     container.querySelector(`#${id}`).classList.add('desc-caution');
-                });
+                }
                 container.querySelector('#edit-time-ok-button').disabled = false;
             }
-            DATE_COMPONENTS.forEach(({id, fn, digits, extra}) => {
+            for (const {id, fn, digits, extra} of DATE_COMPONENTS) {
                 container.querySelector(`#${id}`).innerHTML =
                     `0${date[`get${fn}`]() + extra}`.slice(-digits);
-            });
+            }
         }
     }
 }

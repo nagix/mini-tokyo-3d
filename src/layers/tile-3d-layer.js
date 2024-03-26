@@ -14,9 +14,19 @@ export default class {
 
     onAdd(map, beforeId) {
         const me = this,
-            {implementation} = me,
-            {id, lightColor, minzoom, maxzoom} = implementation,
-            options = Object.assign({}, implementation, {type: Tile3DLayer});
+            implementation = me.implementation,
+            options = Object.assign({}, implementation, {type: Tile3DLayer}),
+            lightColor = implementation.lightColor,
+            ambientLight = me.ambientLight = new AmbientLight({
+                color: lightColor,
+                intensity: 3.0
+            }),
+            directionalLight = me.directionalLight = new DirectionalLight({
+                color: lightColor,
+                intensity: 9.0,
+                direction: [0, 0, -1]
+            }),
+            mbox = map.map;
 
         me.map = map;
 
@@ -24,23 +34,9 @@ export default class {
         delete options.minzoom;
         delete options.maxzoom;
 
-        map.map.addLayer(new MapboxLayer(options), beforeId || 'poi');
-        map.map.setLayerZoomRange(id, minzoom, maxzoom);
-
-        me.ambientLight = new AmbientLight({
-            color: lightColor,
-            intensity: 3.0
-        });
-        me.directionalLight = new DirectionalLight({
-            color: lightColor,
-            intensity: 9.0,
-            direction: [0, 0, -1]
-        });
-
-        map.map.__deck.props.effects = [new LightingEffect({
-            ambientLight: me.ambientLight,
-            directionalLight: me.directionalLight
-        })];
+        mbox.addLayer(new MapboxLayer(options), beforeId || 'poi');
+        mbox.setLayerZoomRange(implementation.id, implementation.minzoom, implementation.maxzoom);
+        mbox.__deck.props.effects = [new LightingEffect({ambientLight, directionalLight})];
 
         if (lightColor === undefined) {
             me._tick();
@@ -49,14 +45,14 @@ export default class {
 
     _tick() {
         const me = this,
-            {map, ambientLight, directionalLight, lastRefresh, _tick, implementation} = me,
+            {map, ambientLight, directionalLight} = me,
             now = map.clock.getTime();
 
-        if (Math.floor(now / 60000) !== Math.floor(lastRefresh / 60000)) {
+        if (Math.floor(now / 60000) !== Math.floor(me.lastRefresh / 60000)) {
             const {r, g, b} = map.getLightColor(),
                 lightColor = [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)],
-                {lat, lng} = map.getCenter(),
-                sunPos = SunCalc.getPosition(now, lat, lng),
+                center = map.getCenter(),
+                sunPos = SunCalc.getPosition(now, center.lat, center.lng),
                 azimuth = Math.PI + sunPos.azimuth,
                 altitude = -sunPos.altitude;
 
@@ -69,8 +65,8 @@ export default class {
             ];
             me.lastRefresh = now;
         }
-        if (map.map.getLayer(implementation.id)) {
-            requestAnimationFrame(_tick);
+        if (map.map.getLayer(me.implementation.id)) {
+            requestAnimationFrame(me._tick);
         }
     }
 

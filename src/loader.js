@@ -53,7 +53,7 @@ function adjustTrainID(id, type, destination) {
  * @param {string} dataUrl - Data URL
  * @param {string} lang - IETF language tag for dictionary
  * @param {Clock} clock - Clock object representing the current time
- * @returns {object} Loaded data
+ * @returns {Object} Loaded data
  */
 export function loadStaticData(dataUrl, lang, clock) {
     const extra = getExtraTimetableFileNames(clock);
@@ -92,7 +92,7 @@ export function loadStaticData(dataUrl, lang, clock) {
  * Load the timetable data.
  * @param {string} dataUrl - Data URL
  * @param {Clock} clock - Clock object representing the current time
- * @returns {object} Loaded timetable data
+ * @returns {Object} Loaded timetable data
  */
 export function loadTimetableData(dataUrl, clock) {
     const extra = getExtraTimetableFileNames(clock);
@@ -105,15 +105,15 @@ export function loadTimetableData(dataUrl, clock) {
 
 /**
  * Load the dynamic data for trains.
- * @param {object} secrets - Secrets object
- * @returns {object} Loaded data
+ * @param {Object} secrets - Secrets object
+ * @returns {Object} Loaded data
  */
 export function loadDynamicTrainData(secrets) {
     const trainData = [],
         trainInfoData = [],
         urls = [];
 
-    Object.keys(OPERATORS_FOR_TRAINS).forEach(source => {
+    for (const source of Object.keys(OPERATORS_FOR_TRAINS)) {
         const url = configs.apiUrl[source],
             key = secrets[source];
 
@@ -124,11 +124,11 @@ export function loadDynamicTrainData(secrets) {
 
             urls.push(`${url}odpt:Train?odpt:operator=${operators}&acl:consumerKey=${key}`);
         }
-    });
+    }
 
     urls.push(configs.tidUrl);
 
-    Object.keys(OPERATORS_FOR_TRAININFORMATION).forEach(source => {
+    for (const source of Object.keys(OPERATORS_FOR_TRAININFORMATION)) {
         const url = configs.apiUrl[source],
             key = secrets[source];
 
@@ -139,11 +139,11 @@ export function loadDynamicTrainData(secrets) {
 
             urls.push(`${url}odpt:TrainInformation?odpt:operator=${operators}&acl:consumerKey=${key}`);
         }
-    });
+    }
 
     return Promise.all(urls.map(loadJSON)).then(data => {
         // Train data for Toei
-        data.shift().forEach(train => {
+        for (const train of data.shift()) {
             const trainType = removePrefix(train['odpt:trainType']),
                 destinationStation = removePrefix(train['odpt:destinationStation']);
 
@@ -162,22 +162,22 @@ export function loadDynamicTrainData(secrets) {
                 carComposition: train['odpt:carComposition'],
                 date: train['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2')
             });
-        });
+        }
 
         // Train data for others
-        data.shift().forEach(train => {
+        for (const train of data.shift()) {
             trainData.push(train);
-        });
+        }
 
         // Train information data
-        [].concat(...data).forEach(trainInfo => {
+        for (const trainInfo of [].concat(...data)) {
             trainInfoData.push({
                 operator: removePrefix(trainInfo['odpt:operator']),
                 railway: removePrefix(trainInfo['odpt:railway']),
                 status: trainInfo['odpt:trainInformationStatus'],
                 text: trainInfo['odpt:trainInformationText']
             });
-        });
+        }
 
         return {trainData, trainInfoData};
     });
@@ -185,7 +185,7 @@ export function loadDynamicTrainData(secrets) {
 
 /**
  * Load the dynamic data for flights.
- * @returns {object} Loaded data
+ * @returns {Object} Loaded data
  */
 export function loadDynamicFlightData() {
     return Promise.all([

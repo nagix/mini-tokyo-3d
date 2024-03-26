@@ -18,7 +18,7 @@ export default class {
 
     addTo(map) {
         const me = this,
-            {implementation} = me;
+            implementation = me.implementation;
 
         me.map = map;
         if (implementation.onAdd) {
@@ -33,11 +33,11 @@ export default class {
 
     remove() {
         const me = this,
-            {map, implementation} = me;
+            implementation = me.implementation;
 
         me.disable();
         if (implementation.onRemove) {
-            implementation.onRemove(map);
+            implementation.onRemove(me.map);
         }
         delete me.map;
 
@@ -46,12 +46,12 @@ export default class {
 
     enable() {
         const me = this,
-            {map, implementation} = me;
+            {map, _onModeChanged, implementation} = me;
 
         if (!me.enabled) {
             me.enabled = true;
-            map.on('clockmode', me._onModeChanged);
-            map.on('viewmode', me._onModeChanged);
+            map.on('clockmode', _onModeChanged);
+            map.on('viewmode', _onModeChanged);
             if (implementation.onEnabled) {
                 implementation.onEnabled();
             }
@@ -63,12 +63,12 @@ export default class {
 
     disable() {
         const me = this,
-            {map, implementation} = me;
+            {map, _onModeChanged, implementation} = me;
 
         if (me.enabled) {
             me.enabled = false;
-            map.off('clockmode', me._onModeChanged);
-            map.off('viewmode', me._onModeChanged);
+            map.off('clockmode', _onModeChanged);
+            map.off('viewmode', _onModeChanged);
             me.setVisibility(false);
             if (implementation.onDisabled) {
                 implementation.onDisabled();
@@ -96,7 +96,7 @@ export default class {
     }
 
     getName(lang) {
-        const {name} = this.implementation;
+        const name = this.implementation.name;
 
         return name[lang] || name.en;
     }

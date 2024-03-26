@@ -1,7 +1,7 @@
 import {DecodeUTF8, Gunzip} from 'fflate';
 
 export function loadJSON(url) {
-    return fetch(url).then(async response => {
+    return fetch(url).then(response => {
         if (url.endsWith('.gz')) {
             let stringData = '';
             const reader = response.body.getReader(),
@@ -12,15 +12,14 @@ export function loadJSON(url) {
                     utfDecode.push(data, final);
                 });
 
-            while (true) {
-                const {done, value} = await reader.read();
-
+            return reader.read().then(function pump({done, value}) {
                 if (done) {
                     inflate.push(new Uint8Array(0), true);
                     return JSON.parse(stringData);
                 }
                 inflate.push(value);
-            }
+                return reader.read().then(pump);
+            });
         } else {
             return response.json();
         }
@@ -85,8 +84,8 @@ export function numberOrDefault(value, defaultValue) {
  * `this` to the evented object or some other value: this lets you ensure
  * the `this` value always.
  *
- * @param fns list of member function names
- * @param context the context value
+ * @param {Array<string>} fns - list of member function names
+ * @param {Object} context - the context value
  */
 export function bindAll(fns, context) {
     for (const fn of fns) {
@@ -215,7 +214,7 @@ export function pointInTrapezoid(point, trapezoid) {
 
 /**
  * Returns the relative luminance of the color.
- * @param {object} color - Color object that has {r, g, b}
+ * @param {Object} color - Color object that has {r, g, b}
  * @returns {number} Relative luminance
  */
 export function luminance(color) {
@@ -236,7 +235,7 @@ export function colorToRGBArray(color) {
 /**
  * Creates an element with the specified attributes and appends it to a container.
  * @param {string} tagName - A string that specifies the type of element to be created
- * @param {object} attributes - The attributes to set
+ * @param {Object} attributes - The attributes to set
  * @param {Element} container - The node to append the element to
  * @returns {Element} The new Element
  */
@@ -279,10 +278,12 @@ export function getLang(input) {
     let lang = valueOrDefault(input, '');
 
     if (!lang.match(/ja|en|fr|es|ko|zh-Han[st]|th|ne|pt-BR/)) {
-        lang = (window.navigator.languages && window.navigator.languages[0]) ||
-            window.navigator.language ||
-            window.navigator.userLanguage ||
-            window.navigator.browserLanguage || '';
+        const _navigator = window.navigator;
+
+        lang = (_navigator.languages && _navigator.languages[0]) ||
+            _navigator.language ||
+            _navigator.userLanguage ||
+            _navigator.browserLanguage || '';
     }
 
     if (lang.match(/zh-(Hant|TW|HK|MO)/)) {

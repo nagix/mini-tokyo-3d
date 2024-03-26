@@ -25,36 +25,39 @@ export default class {
 
     onAdd(map, context) {
         const me = this,
-            {scene} = me.context = context,
+            scene = context.scene,
             zoom = map.getZoom(),
             cameraZ = map.map.getFreeCameraOptions().position.z,
             modelScale = map.getModelScale();
 
         me.map = map;
+        me.context = context;
 
-        me.ugCarMeshSet = new CarMeshSet(MAX_UG_CARS, {index: 0, zoom, cameraZ, modelScale, opacity: .225});
-        me.ogCarMeshSet = new CarMeshSet(MAX_OG_CARS, {index: 1, zoom, cameraZ, modelScale, opacity: .9});
-        me.aircraftMeshSet = new AircraftMeshSet(MAX_AIRCRAFTS, {index: 2, zoom, cameraZ, modelScale, opacity: .9});
+        const ugCarMeshSet = me.ugCarMeshSet = new CarMeshSet(MAX_UG_CARS, {index: 0, zoom, cameraZ, modelScale, opacity: .225});
+        const ogCarMeshSet = me.ogCarMeshSet = new CarMeshSet(MAX_OG_CARS, {index: 1, zoom, cameraZ, modelScale, opacity: .9});
+        const aircraftMeshSet = me.aircraftMeshSet = new AircraftMeshSet(MAX_AIRCRAFTS, {index: 2, zoom, cameraZ, modelScale, opacity: .9});
 
-        scene.add(me.ugCarMeshSet.getMesh());
-        scene.add(me.ogCarMeshSet.getMesh());
-        scene.add(me.aircraftMeshSet.getMesh());
+        scene.add(ugCarMeshSet.getMesh());
+        scene.add(ogCarMeshSet.getMesh());
+        scene.add(aircraftMeshSet.getMesh());
 
-        scene.add(me.ugCarMeshSet.getDelayMarkerMesh());
-        scene.add(me.ogCarMeshSet.getDelayMarkerMesh());
+        scene.add(ugCarMeshSet.getDelayMarkerMesh());
+        scene.add(ogCarMeshSet.getDelayMarkerMesh());
 
-        scene.add(me.ugCarMeshSet.getOutlineMesh());
-        scene.add(me.ogCarMeshSet.getOutlineMesh());
-        scene.add(me.aircraftMeshSet.getOutlineMesh());
+        scene.add(ugCarMeshSet.getOutlineMesh());
+        scene.add(ogCarMeshSet.getOutlineMesh());
+        scene.add(aircraftMeshSet.getOutlineMesh());
 
-        me.ugPickingScene = new Scene();
-        me.ugPickingScene.background = new Color(0xFFFFFF);
-        me.ugPickingScene.add(me.ugCarMeshSet.getPickingMesh());
+        const ugPickingScene = me.ugPickingScene = new Scene();
 
-        me.ogPickingScene = new Scene();
-        me.ogPickingScene.background = new Color(0xFFFFFF);
-        me.ogPickingScene.add(me.ogCarMeshSet.getPickingMesh());
-        me.ogPickingScene.add(me.aircraftMeshSet.getPickingMesh());
+        ugPickingScene.background = new Color(0xFFFFFF);
+        ugPickingScene.add(ugCarMeshSet.getPickingMesh());
+
+        const ogPickingScene = me.ogPickingScene = new Scene();
+
+        ogPickingScene.background = new Color(0xFFFFFF);
+        ogPickingScene.add(ogCarMeshSet.getPickingMesh());
+        ogPickingScene.add(aircraftMeshSet.getPickingMesh());
 
         me.pickingTexture = new WebGLRenderTarget(1, 1);
         me.pixelBuffer = new Uint8Array(4);
@@ -65,9 +68,10 @@ export default class {
 
     onCameraChanged() {
         const me = this,
+            map = me.map,
             cameraParams = {
-                zoom: me.map.getZoom(),
-                cameraZ: me.map.map.getFreeCameraOptions().position.z
+                zoom: map.getZoom(),
+                cameraZ: map.map.getFreeCameraOptions().position.z
             };
 
         me.ugCarMeshSet.refreshCameraParams(cameraParams);
@@ -103,10 +107,11 @@ export default class {
 
     addObject(object) {
         const me = this,
-            meshIndex = object.type === 'train' ? object.altitude < 0 ? 0 : 1 : 2,
+            {type, altitude} = object,
+            meshIndex = type === 'train' ? altitude < 0 ? 0 : 1 : 2,
             meshSet = [me.ugCarMeshSet, me.ogCarMeshSet, me.aircraftMeshSet][meshIndex],
             objects = [me.ugObjects, me.ogObjects, me.aircraftObjects][meshIndex],
-            {x, y, z} = me.map.getModelPosition(object.coord, object.altitude),
+            {x, y, z} = me.map.getModelPosition(object.coord, altitude),
             color = Array.isArray(object.color) ? object.color : [object.color],
             attributes = {
                 translation: [x, y, z],
@@ -116,7 +121,7 @@ export default class {
                 outline: object.outline
             };
 
-        if (object.type === 'train') {
+        if (type === 'train') {
             attributes.delay = object.delay;
             attributes.color0 = colorToRGBArray(color[0]);
             attributes.color1 = colorToRGBArray(color[1] || '#00ff00');
@@ -150,38 +155,40 @@ export default class {
         }
 
         const me = this,
-            meshIndex = object.meshIndex,
-            meshSet = [me.ugCarMeshSet, me.ogCarMeshSet, me.aircraftMeshSet][meshIndex],
-            objects = [me.ugObjects, me.ogObjects, me.aircraftObjects][meshIndex],
-            instanceIndex = object.instanceIndex,
-            {x, y, z} = me.map.getModelPosition(object.coord, object.altitude),
+            {meshIndex, instanceIndex, altitude, type, animationID} = object,
+            meshSetArray = [me.ugCarMeshSet, me.ogCarMeshSet, me.aircraftMeshSet],
+            objectsArray = [me.ugObjects, me.ogObjects, me.aircraftObjects],
+            meshSet = meshSetArray[meshIndex],
+            objects = objectsArray[meshIndex],
+            {x, y, z} = me.map.getModelPosition(object.coord, altitude),
             attributes = {
                 translation: [x, y, z],
                 rotationX: object.pitch,
                 rotationZ: MathUtils.degToRad(-object.bearing),
                 outline: object.outline
             },
-            newMeshIndex = object.altitude < 0 ? 0 : 1;
+            newMeshIndex = altitude < 0 ? 0 : 1;
 
-        if (object.type === 'train') {
+        if (type === 'train') {
             attributes.delay = object.delay;
         }
 
         meshSet.setInstanceAttributes(instanceIndex, attributes);
 
-        if (object.type === 'train' && newMeshIndex !== meshIndex) {
-            const newMeshSet = [me.ugCarMeshSet, me.ogCarMeshSet, me.aircraftMeshSet][newMeshIndex],
-                newObjects = [me.ugObjects, me.ogObjects, me.aircraftObjects][newMeshIndex],
+        if (type === 'train' && newMeshIndex !== meshIndex) {
+            const newMeshSet = meshSetArray[newMeshIndex],
+                newObjects = objectsArray[newMeshIndex],
                 opacity = meshSet.getInstanceAttributes(instanceIndex).opacity0 * meshSet.getOpacity();
+            let newInstanceIndex;
 
-            if (object.animationID) {
-                animation.stop(object.animationID);
+            if (animationID) {
+                animation.stop(animationID);
             }
 
             newMeshSet.addInstance(meshSet.getInstanceAttributes(instanceIndex));
 
             object.meshIndex = newMeshIndex;
-            object.instanceIndex = newObjects.length;
+            object.instanceIndex = newInstanceIndex = newObjects.length;
             newObjects.push(object);
 
             meshSet.removeInstance(instanceIndex);
@@ -190,7 +197,7 @@ export default class {
                 objects[i].instanceIndex--;
             }
 
-            newMeshSet.setInstanceAttributes(object.instanceIndex, {opacity0: opacity / newMeshSet.getOpacity()});
+            newMeshSet.setInstanceAttributes(newInstanceIndex, {opacity0: opacity / newMeshSet.getOpacity()});
             object.animationID = animation.start({
                 callback: (elapsed, duration) => {
                     newMeshSet.setInstanceAttributes(object.instanceIndex, {opacity0: lerp(opacity / newMeshSet.getOpacity(), 1, elapsed / duration)});
@@ -209,12 +216,12 @@ export default class {
         }
 
         const me = this,
-            meshIndex = object.meshIndex,
+            {meshIndex, animationID} = object,
             meshSet = [me.ugCarMeshSet, me.ogCarMeshSet, me.aircraftMeshSet][meshIndex],
             objects = [me.ugObjects, me.ogObjects, me.aircraftObjects][meshIndex];
 
-        if (object.animationID) {
-            animation.stop(object.animationID);
+        if (animationID) {
+            animation.stop(animationID);
         }
 
         object.animationID = animation.start({
@@ -241,15 +248,15 @@ export default class {
 
     pickObject(mode, point) {
         const me = this,
-            {context, pickingTexture, pixelBuffer} = me,
-            {renderer, camera} = context,
-            {drawingBufferWidth, drawingBufferHeight} = renderer.getContext(),
+            {pickingTexture, pixelBuffer} = me,
+            {renderer, camera} = me.context,
+            rendererContext = renderer.getContext(),
             pixelRatio = window.devicePixelRatio,
             scene = mode === 'underground' ? me.ugPickingScene : me.ogPickingScene;
 
         camera.setViewOffset(
-            drawingBufferWidth,
-            drawingBufferHeight,
+            rendererContext.drawingBufferWidth,
+            rendererContext.drawingBufferHeight,
             point.x * pixelRatio | 0,
             point.y * pixelRatio | 0,
             1,

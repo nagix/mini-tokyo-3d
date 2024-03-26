@@ -5,15 +5,19 @@ export default class extends InstancedBufferGeometry {
     constructor(geometry, count, index, attributes) {
         super();
 
-        const me = this;
+        const me = this,
+            {attributes: geometryAttributes, index: geometryIndex} = geometry,
+            userData = me.userData,
+            userDataAttributes = userData.attributes = {},
+            userDataBuffers = userData.buffers = [];
 
         me.instanceCount = 0;
 
-        for (const key of Object.keys(geometry.attributes)) {
-            me.attributes[key] = geometry.attributes[key].clone();
+        for (const key of Object.keys(geometryAttributes)) {
+            me.attributes[key] = geometryAttributes[key].clone();
         }
-        if (geometry.index) {
-            me.index = geometry.index.clone();
+        if (geometryIndex) {
+            me.index = geometryIndex.clone();
         }
 
         const idColors = new Uint8Array(count * 3),
@@ -22,9 +26,6 @@ export default class extends InstancedBufferGeometry {
             idColors.set([index & 255, (i >> 8) & 255, i & 255], i * 3);
         }
         me.setAttribute('idColor', idColorBuffer);
-
-        me.userData.attributes = {};
-        me.userData.buffers = [];
 
         const items = {};
         for (const key of Object.keys(attributes)) {
@@ -36,7 +37,7 @@ export default class extends InstancedBufferGeometry {
                 const {type, itemSize, normalized} = attributes[key],
                     item = items[type] = items[type] || {type, size: 0, keys: []};
 
-                me.userData.attributes[key] = {itemSize, offset: item.size, normalized};
+                userDataAttributes[key] = {itemSize, offset: item.size, normalized};
                 item.size += itemSize;
                 item.keys.push(key);
             }
@@ -48,13 +49,13 @@ export default class extends InstancedBufferGeometry {
                 buffer = new InstancedInterleavedBuffer(array, size).setUsage(DynamicDrawUsage);
 
             for (const key of keys) {
-                const attribute = me.userData.attributes[key],
+                const attribute = userDataAttributes[key],
                     {itemSize, offset, normalized} = attribute;
 
                 me.setAttribute(key, new InterleavedBufferAttribute(buffer, itemSize, offset, normalized));
                 attribute.buffer = buffer;
             }
-            me.userData.buffers.push(buffer);
+            userDataBuffers.push(buffer);
         }
     }
 
@@ -83,12 +84,13 @@ export default class extends InstancedBufferGeometry {
 
         for (const key of Object.keys(attributes)) {
             const {offset, buffer} = me.userData.attributes[key],
+                attribute = attributes[key],
                 start = index * buffer.stride + offset;
 
-            if (isNaN(attributes[key])) {
-                buffer.set(attributes[key], start);
+            if (isNaN(attribute)) {
+                buffer.set(attribute, start);
             } else {
-                buffer.array[start] = attributes[key];
+                buffer.array[start] = attribute;
             }
             buffer.needsUpdate = true;
         }
@@ -96,15 +98,17 @@ export default class extends InstancedBufferGeometry {
 
     getInstanceAttributes(index) {
         const me = this,
+            userDataAttributes = me.userData.attributes,
             attributes = {};
 
-        for (const key of Object.keys(me.userData.attributes)) {
-            const {itemSize, offset, buffer} = me.userData.attributes[key],
+        for (const key of Object.keys(userDataAttributes)) {
+            const {itemSize, offset, buffer} = userDataAttributes[key],
+                array = buffer.array,
                 start = index * buffer.stride + offset;
 
             attributes[key] = itemSize > 1 ?
-                buffer.array.subarray(start, start + itemSize) :
-                buffer.array[start];
+                array.subarray(start, start + itemSize) :
+                array[start];
         }
         return attributes;
     }

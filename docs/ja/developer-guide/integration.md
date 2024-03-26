@@ -4,7 +4,7 @@ Mini Tokyo 3D を Web ページに埋め込んで利用する、もしくは API
 
 ## 使用の準備
 
-Mini Tokyo 3D は ES6 に対応した主要ブラウザで動作します。Internet Explorer には非対応です。 
+Mini Tokyo 3D は ES2018 に対応した主要ブラウザで動作します。Internet Explorer には非対応です。
 
 ### Mapbox アクセストークンの入手
 

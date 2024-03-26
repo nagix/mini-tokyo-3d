@@ -22,16 +22,17 @@ export default class extends Panel {
         const me = this;
 
         me._onModeChanged = e => {
-            const mode = e.mode.replace('heading', 'topback');
+            const container = me._container,
+                mode = e.mode.replace('heading', 'topback');
 
-            me._container.querySelector('.tracking-mode-icon-enabled').classList.remove('tracking-mode-icon-enabled');
-            me._container.querySelector(`#${mode}-tracking-mode .tracking-mode-icon`).classList.add('tracking-mode-icon-enabled');
+            container.querySelector('.tracking-mode-icon-enabled').classList.remove('tracking-mode-icon-enabled');
+            container.querySelector(`#${mode}-tracking-mode .tracking-mode-icon`).classList.add('tracking-mode-icon-enabled');
         };
     }
 
     addTo(map) {
         const me = this,
-            {dict} = map,
+            dict = map.dict,
             trackingMode = map.getTrackingMode();
 
         super.addTo(map)

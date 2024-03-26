@@ -20,10 +20,11 @@ export default class {
         });
 
         me._buttons = me._options.map(options => {
-            const button = createElement('button', {
+            const title = options.title,
+                button = createElement('button', {
                     className: options.className,
                     type: 'button',
-                    title: options.title,
+                    title,
                     onclick: options.eventHandler
                 }, me._container),
                 icon = createElement('span', {
@@ -31,7 +32,7 @@ export default class {
                 }, button);
 
             // For Firefox
-            button.setAttribute('aria-label', options.title);
+            button.setAttribute('aria-label', title);
             icon.setAttribute('aria-hidden', true);
 
             return button;
@@ -41,9 +42,10 @@ export default class {
     }
 
     onRemove() {
-        const me = this;
+        const me = this,
+            container = me._container;
 
-        me._container.parentNode.removeChild(me._container);
+        container.parentNode.removeChild(container);
         delete me._map;
     }
 

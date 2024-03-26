@@ -20,14 +20,13 @@ export default class extends Panel {
         const me = this;
 
         if (me.isOpen()) {
-            const {dict, lastDynamicUpdate} = me._map,
-                {copyright, lastStaticUpdate} = configs;
+            const {dict, lastDynamicUpdate} = me._map;
 
             me.setHTML([
                 dict['description'].replace(/<h3>.*<\/h3>/, ''),
-                `<p>${copyright}</p>`,
+                `<p>${configs.copyright}</p>`,
                 `<div class="card-title">${dict['static-update']}</div>`,
-                `<div class="card-body">${lastStaticUpdate}</div>`,
+                `<div class="card-body">${configs.lastStaticUpdate}</div>`,
                 `<div class="card-title">${dict['dynamic-update']}</div>`,
                 '<div class="card-body">',
                 lastDynamicUpdate['Toei'] || 'N/A',

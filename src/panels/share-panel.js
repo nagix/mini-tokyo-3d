@@ -9,9 +9,10 @@ export default class {
 
     addTo(map) {
         const me = this,
-            {dict} = me._map = map,
-            type = me._object.t ? 'train' : 'flight',
-            id = me._object.t || me._object.id,
+            dict = map.dict,
+            object = me._object,
+            type = object.t ? 'train' : 'flight',
+            id = object.t || object.id,
             container = me._container = createElement('div', {
                 className: 'share-panel'
             }, map.container),
@@ -32,15 +33,20 @@ export default class {
             });
         };
 
+        me._map = map;
+
         return me;
     }
 
     remove() {
-        const me = this;
+        const me = this,
+            container = me._container;
 
-        me._container.parentNode.removeChild(me._container);
+        container.parentNode.removeChild(container);
         delete me._container;
         delete me._map;
+
+        return me;
     }
 
 }

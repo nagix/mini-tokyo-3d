@@ -60,7 +60,7 @@ export default class {
         me._buttons = buttons;
         if (container) {
             const buttonGroup = container.querySelector('#panel-button-group'),
-                {children} = buttonGroup;
+                children = buttonGroup.children;
 
             for (let i = children.length - 1; i > 0; i--) {
                 buttonGroup.removeChild(children[i]);
@@ -125,7 +125,7 @@ export default class {
             });
         } else {
             container.querySelector('#panel-header').addEventListener('click', () => {
-                const {classList} = container;
+                const classList = container.classList;
 
                 if (classList.contains('collapsed')) {
                     classList.remove('collapsed');
