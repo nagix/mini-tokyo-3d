@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja_JP">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39988758-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-39988758-3');
+	</script>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="mini-tokyo-3d.min.css" />
+	<title>Mini Tokyo 3D 2021</title>
+	<meta name="description" content="A real-time 3D digital map of Tokyo's public transport system. This data visualization was produced by Akihiko Kusanagi." />
+	<meta name="viewport" content="user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, width=device-width, height=device-height, initial-scale=1" />
+	<meta property="og:title" content="Mini Tokyo 3D 2021" />
+	<meta property="og:description" content="A real-time 3D digital map of Tokyo's public transport system. This data visualization was produced by Akihiko Kusanagi." />
+	<meta property="og:locale" content="ja_JP" />
+	<link rel="canonical" href="https://minitokyo3d.com/2021/" />
+	<meta property="og:url" content="https://minitokyo3d.com/2021/" />
+	<meta property="og:site_name" content="Mini Tokyo 3D 2021" />
+	<meta property="og:image" content="https://minitokyo3d.com/images/screenshot1.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@nagix" />
+	<script src="mini-tokyo-3d.min.js"></script>
+	<script src="mt3d-plugin-precipitation.min.js"></script>
+	<script src="mt3d-plugin-fireworks.min.js"></script>
+	<script src="mt3d-plugin-livecam.min.js"></script>
+	<script src="mt3d-plugin-olympics2020.min.js"></script>
+</head>
+<body style="width: 100%; height: 100%; margin: 0; padding: 0; position: absolute;">
+	<div id="map" style="width: 100%; height: 100%;"></div>
+	<script>
+		const matchLang = location.search.match(/lang=(.*?)(&|$)/),
+			matchSelection = location.search.match(/selection=(.*?)(&|$)/),
+			lang = matchLang ? decodeURIComponent(matchLang[1]) : undefined,
+			selection = matchSelection ? decodeURIComponent(matchSelection[1]) : undefined,
+			map = new mt3d.Map({
+				lang,
+				container: 'map',
+				selection,
+				plugins: [mt3dPrecipitation(), mt3dFireworks(), mt3dLivecam(), mt3dOlympics2020()]
+			});
+	</script>
+</body>
+</html>
