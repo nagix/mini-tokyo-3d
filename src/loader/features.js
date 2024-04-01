@@ -13,8 +13,6 @@ import {destination, lineOffset, lineSlice, lineSliceAlong, nearestPointProps} f
 import {includes, valueOrDefault} from '../helpers/helpers';
 import {loadJSON, saveJSON} from './helpers';
 
-const HIDDEN_STATIONS = /^(JR-East\.(\w+Freight|Musashino\w+Branch|Joban\.(Ueno|Nippori|Kashiwa)|OsakiBranch)|TokyoMetro\.(Hibiya\.ShinKoshigaya|Chiyoda\.(Machida|SeijogakuenMae))|Keio\.(Sagamihara|Takao)\.Meidaimae|Keikyu\.(Airport\.Shinagawa|Kurihama\.YokosukaChuo)|Tobu\.(Nikko\.Kasukabe|JRTobuConnection)|Seibu\.(SeibuChichibu\.(Hanno|Kagemori)|SeibuChichibuBranch|S-))/;
-
 function setAltitude(geojson, altitude) {
     coordEach(geojson, coord => {
         coord[2] = altitude;
@@ -375,10 +373,10 @@ export function featureWorker() {
             const altitude = stationLookup[stations[0]].altitude || 0,
                 layer = altitude < 0 ? ug : og,
                 coords = stations.map(id => {
-                    const {railway, coord} = stationLookup[id],
+                    const {railway, coord, hidden} = stationLookup[id],
                         feature = featureLookup[railway];
 
-                    if (!id.match(HIDDEN_STATIONS)) {
+                    if (!hidden) {
                         layer.id = layer.id || id;
                         ids.push(id);
                     }

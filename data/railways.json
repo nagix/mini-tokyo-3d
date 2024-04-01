@@ -82,6 +82,30 @@
 	"color": "#F15A22",
 	"carComposition": 10
 }, {
+	"id": "JR-East.Chuo",
+	"title": {
+		"ja": "中央本線",
+		"en": "Chuo Line",
+		"ko": "주오 본선",
+		"zh-Hans": "中央本线",
+		"zh-Hant": "中央本線"
+	},
+	"stations": [
+		"JR-East.Chuo.Hachioji",
+		"JR-East.Chuo.Takao",
+		"JR-East.Chuo.Sagamiko",
+		"JR-East.Chuo.Fujino",
+		"JR-East.Chuo.Uenohara",
+		"JR-East.Chuo.Shiotsu",
+		"JR-East.Chuo.Yanagawa",
+		"JR-East.Chuo.Torisawa",
+		"JR-East.Chuo.Saruhashi",
+		"JR-East.Chuo.Otsuki"
+	],
+	"ascending": "Outbound",
+	"color": "#0074BE",
+	"carComposition": 10
+}, {
 	"id": "JR-East.Ome",
 	"title": {
 		"ja": "青梅線",
