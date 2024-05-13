@@ -26686,7 +26686,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "MIR.Asakusa.A2",
 	"coord": [139.7922774, 35.7141057],
@@ -26699,7 +26700,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "MIR.Asakusa.SouthA",
 	"coord": [139.7923578, 35.7126749],
@@ -26716,7 +26718,8 @@
 		"ko": "남쪽 자전거 주차장 A",
 		"zh-Hans": "南自行车停车场A",
 		"zh-Hant": "南自行車停車場A"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "MIR.Asakusa.SouthB",
 	"coord": [139.7920802, 35.7127108],
@@ -26733,7 +26736,8 @@
 		"ko": "남쪽 자전거 주차장 B",
 		"zh-Hans": "南自行车停车场B",
 		"zh-Hant": "南自行車停車場B"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "MIR.Asakusa.NorthA",
 	"coord": [139.7927403, 35.7158908],
@@ -26750,7 +26754,8 @@
 		"ko": "키타 자전거 주차장 A",
 		"zh-Hans": "北自行车停车场A",
 		"zh-Hant": "北自行車停車場A"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "MIR.Asakusa.NorthB",
 	"coord": [139.7923417, 35.7151452],
@@ -26767,7 +26772,8 @@
 		"ko": "키타 자전거 주차장 B",
 		"zh-Hans": "北自行车停车场B",
 		"zh-Hant": "北自行車停車場B"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "MIR.MinamiSenju.East",
 	"coord": [139.7989185, 35.7329904],
@@ -26850,7 +26856,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "MIR.Aoi.A2",
 	"coord": [139.8205083, 35.7726832],
@@ -26863,7 +26870,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "MIR.Rokucho.A1",
 	"coord": [139.8216224, 35.7844218],
@@ -26876,7 +26884,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "MIR.Rokucho.A2",
 	"coord": [139.8220641, 35.7845832],
@@ -26889,7 +26898,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "MIR.Rokucho.A3",
 	"coord": [139.8217707, 35.785558],
@@ -26902,7 +26912,8 @@
 		"ko": "출구A3",
 		"zh-Hans": "出口A3",
 		"zh-Hant": "出口A3"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "MIR.MinamiNagareyama.A1",
 	"coord": [139.9035567, 35.8381753],
@@ -26915,7 +26926,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "MIR.MinamiNagareyama.A2",
 	"coord": [139.903515, 35.8389129],
@@ -26928,7 +26940,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "MIR.MinamiNagareyama.A3",
 	"coord": [139.9037905, 35.8384903],
@@ -26941,7 +26954,8 @@
 		"ko": "출구A3",
 		"zh-Hans": "出口A3",
 		"zh-Hant": "出口A3"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "MIR.Tsukuba.A1",
 	"coord": [140.1111925, 36.0828395],
@@ -26954,7 +26968,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "MIR.Tsukuba.A2",
 	"coord": [140.1116167, 36.0829876],
@@ -26967,7 +26982,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "MIR.Tsukuba.A3",
 	"coord": [140.1121255, 36.0827925],
@@ -26980,7 +26996,22 @@
 		"ko": "출구A3",
 		"zh-Hans": "出口A3",
 		"zh-Hant": "出口A3"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "MIR.Tsukuba.EV",
+	"coord": [140.1118538, 36.0826461],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "MIR.Tsukuba.A4",
 	"coord": [140.1120521, 36.0823421],
@@ -26993,7 +27024,8 @@
 		"ko": "출구A4",
 		"zh-Hans": "出口A4",
 		"zh-Hant": "出口A4"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "MIR.Tsukuba.A5",
 	"coord": [140.1116504, 36.0823772],
@@ -27006,7 +27038,8 @@
 		"ko": "출구A5",
 		"zh-Hans": "出口A5",
 		"zh-Hant": "出口A5"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "ToyoRapid.HigashiKaijin.T1",
 	"coord": [139.9795722, 35.7055543],
