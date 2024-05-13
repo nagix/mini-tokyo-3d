@@ -396,12 +396,13 @@
 		"en": "A"
 	},
 	"description": {
-		"ja": "A出口",
+		"ja": "出口A",
 		"en": "Exit A",
-		"ko": "A출구",
-		"zh-Hans": "A出口",
-		"zh-Hant": "A出口"
-	}
+		"ko": "출구A",
+		"zh-Hans": "出口A",
+		"zh-Hant": "出口A"
+	},
+	"facilities": ["stairs", "ramp"]
 }, {
 	"id": "TWR.Shinonome.B",
 	"coord": [139.8032122, 35.6406687],
@@ -409,11 +410,11 @@
 		"en": "B"
 	},
 	"description": {
-		"ja": "B出口",
+		"ja": "出口B",
 		"en": "Exit B",
-		"ko": "B출구",
-		"zh-Hans": "B出口",
-		"zh-Hant": "B出口"
+		"ko": "출구B",
+		"zh-Hans": "出口B",
+		"zh-Hant": "出口B"
 	}
 }, {
 	"id": "TWR.KokusaiTenjijo.A",
@@ -422,11 +423,11 @@
 		"en": "A"
 	},
 	"description": {
-		"ja": "A出口",
+		"ja": "出口A",
 		"en": "Exit A",
-		"ko": "A출구",
-		"zh-Hans": "A出口",
-		"zh-Hant": "A出口"
+		"ko": "출구A",
+		"zh-Hans": "出口A",
+		"zh-Hant": "出口A"
 	}
 }, {
 	"id": "TWR.KokusaiTenjijo.B",
@@ -435,11 +436,11 @@
 		"en": "B"
 	},
 	"description": {
-		"ja": "B出口",
+		"ja": "出口B",
 		"en": "Exit B",
-		"ko": "B출구",
-		"zh-Hans": "B出口",
-		"zh-Hant": "B出口"
+		"ko": "출구B",
+		"zh-Hans": "出口B",
+		"zh-Hant": "出口B"
 	}
 }, {
 	"id": "TWR.KokusaiTenjijo.C",
@@ -448,11 +449,11 @@
 		"en": "C"
 	},
 	"description": {
-		"ja": "C出口",
+		"ja": "出口C",
 		"en": "Exit C",
-		"ko": "C출구",
-		"zh-Hans": "C出口",
-		"zh-Hant": "C出口"
+		"ko": "출구C",
+		"zh-Hans": "出口C",
+		"zh-Hant": "出口C"
 	}
 }, {
 	"id": "TWR.TokyoTeleport.A",
@@ -461,12 +462,13 @@
 		"en": "A"
 	},
 	"description": {
-		"ja": "A出口",
+		"ja": "出口A",
 		"en": "Exit A",
-		"ko": "A출구",
-		"zh-Hans": "A出口",
-		"zh-Hant": "A出口"
-	}
+		"ko": "출구A",
+		"zh-Hans": "出口A",
+		"zh-Hant": "出口A"
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TWR.TokyoTeleport.B",
 	"coord": [139.7783575, 35.6270788],
@@ -474,17 +476,18 @@
 		"en": "B"
 	},
 	"description": {
-		"ja": "B出口",
+		"ja": "出口B",
 		"en": "Exit B",
-		"ko": "B출구",
-		"zh-Hans": "B出口",
-		"zh-Hant": "B出口"
-	}
+		"ko": "출구B",
+		"zh-Hans": "出口B",
+		"zh-Hant": "出口B"
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TWR.TokyoTeleport.EV1",
 	"coord": [139.7792066, 35.6275867],
 	"title": {
-		"en": "EV"
+		"en": ""
 	},
 	"description": {
 		"ja": "エレベーター",
@@ -492,12 +495,13 @@
 		"ko": "엘리베이터",
 		"zh-Hans": "电梯",
 		"zh-Hant": "電梯"
-	}
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TWR.TokyoTeleport.EV2",
 	"coord": [139.7788166, 35.6272375],
 	"title": {
-		"en": "EV"
+		"en": ""
 	},
 	"description": {
 		"ja": "エレベーター",
@@ -505,7 +509,8 @@
 		"ko": "엘리베이터",
 		"zh-Hans": "电梯",
 		"zh-Hant": "電梯"
-	}
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TWR.TennozuIsle.A",
 	"coord": [139.7511413, 35.6210954],
@@ -513,12 +518,13 @@
 		"en": "A"
 	},
 	"description": {
-		"ja": "A出口",
+		"ja": "出口A",
 		"en": "Exit A",
-		"ko": "A출구",
-		"zh-Hans": "A出口",
-		"zh-Hant": "A出口"
-	}
+		"ko": "출구A",
+		"zh-Hans": "出口A",
+		"zh-Hant": "出口A"
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TWR.TennozuIsle.B",
 	"coord": [139.7505833, 35.6208549],
@@ -526,12 +532,13 @@
 		"en": "B"
 	},
 	"description": {
-		"ja": "B出口",
+		"ja": "出口B",
 		"en": "Exit B",
-		"ko": "B출구",
-		"zh-Hans": "B出口",
-		"zh-Hant": "B出口"
-	}
+		"ko": "출구B",
+		"zh-Hans": "出口B",
+		"zh-Hant": "出口B"
+	},
+	"facilities": ["escalator", "elevator"]
 }, {
 	"id": "TWR.TennozuIsle.C",
 	"coord": [139.7510002, 35.6197424],
@@ -539,12 +546,13 @@
 		"en": "C"
 	},
 	"description": {
-		"ja": "C出口",
+		"ja": "出口C",
 		"en": "Exit C",
-		"ko": "C출구",
-		"zh-Hans": "C出口",
-		"zh-Hant": "C出口"
-	}
+		"ko": "출구C",
+		"zh-Hans": "出口C",
+		"zh-Hant": "出口C"
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TWR.ShinagawaSeaside.A",
 	"coord": [139.7498316, 35.6106507],
@@ -552,12 +560,13 @@
 		"en": "A"
 	},
 	"description": {
-		"ja": "A出口",
+		"ja": "出口A",
 		"en": "Exit A",
-		"ko": "A출구",
-		"zh-Hans": "A出口",
-		"zh-Hant": "A出口"
-	}
+		"ko": "출구A",
+		"zh-Hans": "出口A",
+		"zh-Hant": "出口A"
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TWR.ShinagawaSeaside.B",
 	"coord": [139.7496114, 35.6088818],
@@ -565,12 +574,13 @@
 		"en": "B"
 	},
 	"description": {
-		"ja": "B出口",
+		"ja": "出口B",
 		"en": "Exit B",
-		"ko": "B출구",
-		"zh-Hans": "B出口",
-		"zh-Hant": "B出口"
-	}
+		"ko": "출구B",
+		"zh-Hans": "出口B",
+		"zh-Hant": "出口B"
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TWR.ShinagawaSeaside.C",
 	"coord": [139.7495766, 35.609583],
@@ -578,17 +588,18 @@
 		"en": "C"
 	},
 	"description": {
-		"ja": "C出口",
+		"ja": "出口C",
 		"en": "Exit C",
-		"ko": "C출구",
-		"zh-Hans": "C出口",
-		"zh-Hant": "C出口"
-	}
+		"ko": "출구C",
+		"zh-Hans": "出口C",
+		"zh-Hant": "出口C"
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TWR.ShinagawaSeaside.EV",
 	"coord": [139.7495799, 35.6096198],
 	"title": {
-		"en": "EV"
+		"en": ""
 	},
 	"description": {
 		"ja": "エレベーター",
@@ -596,7 +607,8 @@
 		"ko": "엘리베이터",
 		"zh-Hans": "电梯",
 		"zh-Hant": "電梯"
-	}
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TWR.Oimachi.A1",
 	"coord": [139.7346076, 35.6063012],
@@ -609,7 +621,8 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["escalator"]
 }, {
 	"id": "TWR.Oimachi.A2",
 	"coord": [139.7345709, 35.6063061],
@@ -622,7 +635,8 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TWR.Oimachi.B",
 	"coord": [139.7348136, 35.6074955],
@@ -630,12 +644,13 @@
 		"en": "B"
 	},
 	"description": {
-		"ja": "B出口",
+		"ja": "出口B",
 		"en": "Exit B",
-		"ko": "B출구",
-		"zh-Hans": "B出口",
-		"zh-Hant": "B出口"
-	}
+		"ko": "출구B",
+		"zh-Hans": "出口B",
+		"zh-Hant": "出口B"
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TWR.Oimachi.C",
 	"coord": [139.7343227, 35.6069609],
@@ -643,17 +658,18 @@
 		"en": "C"
 	},
 	"description": {
-		"ja": "C出口",
+		"ja": "出口C",
 		"en": "Exit C",
-		"ko": "C출구",
-		"zh-Hans": "C出口",
-		"zh-Hant": "C出口"
-	}
+		"ko": "출구C",
+		"zh-Hans": "出口C",
+		"zh-Hant": "出口C"
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TWR.Oimachi.EV",
 	"coord": [139.7347626, 35.6069437],
 	"title": {
-		"en": "EV"
+		"en": ""
 	},
 	"description": {
 		"ja": "エレベーター",
@@ -661,7 +677,8 @@
 		"ko": "엘리베이터",
 		"zh-Hans": "电梯",
 		"zh-Hant": "電梯"
-	}
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "TokyoMetro.Shibuya.A0",
 	"coord": [139.6984658, 35.6593444],
