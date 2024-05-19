@@ -17190,7 +17190,13 @@
 		"ko": "가쓰타다이",
 		"zh-Hans": "胜田台",
 		"zh-Hant": "勝田台"
-	}
+	},
+	"exit": [
+		"Keisei.Katsutadai.A1",
+		"Keisei.Katsutadai.A2",
+		"Keisei.Katsutadai.A3",
+		"Keisei.Katsutadai.EV"
+	]
 }, {
 	"id": "Keisei.Main.Shizu",
 	"railway": "Keisei.Main",
@@ -24774,6 +24780,7 @@
 	},
 	"exit": [
 		"ToyoRapid.KitaNarashino.T1",
+		"ToyoRapid.KitaNarashino.EV",
 		"ToyoRapid.KitaNarashino.T2",
 		"ToyoRapid.KitaNarashino.T3",
 		"ToyoRapid.KitaNarashino.T4",

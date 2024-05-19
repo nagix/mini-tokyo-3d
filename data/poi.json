@@ -25445,6 +25445,62 @@
 	}],
 	"facilities": ["stairs"]
 }, {
+	"id": "Keisei.Katsutadai.A1",
+	"coord": [140.1266192, 35.7153951],
+	"title": {
+		"en": "A1"
+	},
+	"description": {
+		"ja": "出口A1",
+		"en": "Exit A1",
+		"ko": "출구A1",
+		"zh-Hans": "出口A1",
+		"zh-Hant": "出口A1"
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "Keisei.Katsutadai.A2",
+	"coord": [140.1261132, 35.7153067],
+	"title": {
+		"en": "A2"
+	},
+	"description": {
+		"ja": "出口A2",
+		"en": "Exit A2",
+		"ko": "출구A2",
+		"zh-Hans": "出口A2",
+		"zh-Hant": "出口A2"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "Keisei.Katsutadai.A3",
+	"coord": [140.1259807, 35.7155654],
+	"title": {
+		"en": "A3"
+	},
+	"description": {
+		"ja": "出口A3",
+		"en": "Exit A3",
+		"ko": "출구A3",
+		"zh-Hans": "出口A3",
+		"zh-Hant": "出口A3"
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "Keisei.Katsutadai.EV",
+	"coord": [140.1264506, 35.7155841],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
+}, {
 	"id": "Seibu.ShinSakuradai.1",
 	"coord": [139.6680663, 139.6680663],
 	"title": {
@@ -27052,7 +27108,8 @@
 		"ko": "출구T1",
 		"zh-Hans": "出口T1",
 		"zh-Hant": "出口T1"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "ToyoRapid.HigashiKaijin.T4",
 	"coord": [139.9815735, 35.7063153],
@@ -27065,7 +27122,8 @@
 		"ko": "출구T4",
 		"zh-Hans": "出口T4",
 		"zh-Hant": "出口T4"
-	}
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "ToyoRapid.Hasama.1",
 	"coord": [140.0220362, 35.7141057],
@@ -27104,7 +27162,22 @@
 		"ko": "출구T1",
 		"zh-Hans": "出口T1",
 		"zh-Hant": "出口T1"
-	}
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "ToyoRapid.KitaNarashino.EV",
+	"coord": [140.0421487, 35.7215136],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "ToyoRapid.KitaNarashino.T2",
 	"coord": [140.0423887, 35.7213217],
@@ -27117,7 +27190,8 @@
 		"ko": "출구T2",
 		"zh-Hans": "出口T2",
 		"zh-Hant": "出口T2"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "ToyoRapid.KitaNarashino.T3",
 	"coord": [140.0425338, 35.7213821],
@@ -27130,7 +27204,8 @@
 		"ko": "출구T3",
 		"zh-Hans": "出口T3",
 		"zh-Hant": "出口T3"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "ToyoRapid.KitaNarashino.T4",
 	"coord": [140.0429549, 35.7215539],
@@ -27143,7 +27218,8 @@
 		"ko": "출구T4",
 		"zh-Hans": "出口T4",
 		"zh-Hant": "出口T4"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "ToyoRapid.KitaNarashino.T5",
 	"coord": [140.0429549, 35.7219444],
@@ -27156,7 +27232,8 @@
 		"ko": "출구T5",
 		"zh-Hans": "出口T5",
 		"zh-Hant": "出口T5"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "ToyoRapid.FunabashiNichidaimae.East",
 	"coord": [140.0606614, 35.7274578],
@@ -27190,7 +27267,8 @@
 		"ko": "서쪽 출구",
 		"zh-Hans": "西出口",
 		"zh-Hant": "西出口"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "ToyoRapid.YachiyoMidorigaoka.South",
 	"coord": [140.0739629, 35.7287668],
@@ -27207,7 +27285,8 @@
 		"ko": "남쪽 출구",
 		"zh-Hans": "南出口",
 		"zh-Hant": "南出口"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "ToyoRapid.YachiyoMidorigaoka.North",
 	"coord": [140.0739401, 35.7290279],
@@ -27224,7 +27303,8 @@
 		"ko": "키타 출구",
 		"zh-Hans": "北出口",
 		"zh-Hant": "北出口"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "ToyoRapid.YachiyoChuo.1",
 	"coord": [140.1037932, 35.727849],
@@ -27258,7 +27338,8 @@
 		"ko": "출구",
 		"zh-Hans": "出口",
 		"zh-Hant": "出口"
-	}
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "ToyoRapid.ToyoKatsutadai.T1",
 	"coord": [140.1257775, 35.7172451],
@@ -27271,7 +27352,8 @@
 		"ko": "출구T1",
 		"zh-Hans": "出口T1",
 		"zh-Hant": "出口T1"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "ToyoRapid.ToyoKatsutadai.T2",
 	"coord": [140.1259522, 35.716534],
@@ -27284,7 +27366,8 @@
 		"ko": "출구T2",
 		"zh-Hans": "出口T2",
 		"zh-Hant": "出口T2"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "ToyoRapid.ToyoKatsutadai.T3",
 	"coord": [140.1251248, 35.7174868],
@@ -27297,7 +27380,8 @@
 		"ko": "출구T3",
 		"zh-Hans": "出口T3",
 		"zh-Hant": "出口T3"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMonorail.Tenkubashi.North",
 	"coord": [139.754355, 35.5491255],
