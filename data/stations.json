@@ -9963,7 +9963,8 @@
 	},
 	"exit": [
 		"TokyoMetro.Kasai.West",
-		"TokyoMetro.Kasai.Center",
+		"TokyoMetro.Kasai.South",
+		"TokyoMetro.Kasai.North",
 		"TokyoMetro.Kasai.Museum"
 	]
 }, {
@@ -15079,7 +15080,8 @@
 	"exit": [
 		"Keio.Hatsudai.East",
 		"Keio.Hatsudai.South",
-		"Keio.Hatsudai.North"
+		"Keio.Hatsudai.North",
+		"Keio.Hatsudai.EV"
 	],
 	"altitude": -1
 }, {
@@ -15094,7 +15096,8 @@
 		"zh-Hant": "幡谷"
 	},
 	"exit": [
-		"Keio.Hatagaya.South",
+		"Keio.Hatagaya.South1",
+		"Keio.Hatagaya.South2",
 		"Keio.Hatagaya.North"
 	],
 	"altitude": -1
@@ -15265,7 +15268,12 @@
 		"ko": "고쿠료",
 		"zh-Hans": "国领",
 		"zh-Hant": "國領"
-	}
+	},
+	"exit": [
+		"Keio.Kokuryo.South",
+		"Keio.Kokuryo.North"
+	],
+	"altitude": -1
 }, {
 	"id": "Keio.Keio.Fuda",
 	"railway": "Keio.Keio",
@@ -15276,7 +15284,11 @@
 		"ko": "후다",
 		"zh-Hans": "布田",
 		"zh-Hant": "布田"
-	}
+	},
+	"exit": [
+		"Keio.Fuda.1"
+	],
+	"altitude": -1
 }, {
 	"id": "Keio.Keio.Chofu",
 	"railway": "Keio.Keio",
@@ -15287,7 +15299,13 @@
 		"ko": "조후",
 		"zh-Hans": "调布",
 		"zh-Hant": "調布"
-	}
+	},
+	"exit": [
+		"Keio.Chofu.East",
+		"Keio.Chofu.Central",
+		"Keio.Chofu.Hiroba"
+	],
+	"altitude": -1
 }, {
 	"id": "Keio.Keio.NishiChofu",
 	"railway": "Keio.Keio",
@@ -15466,7 +15484,15 @@
 		"ko": "게이오하치오지",
 		"zh-Hans": "京王八王子",
 		"zh-Hant": "京王八王子"
-	}
+	},
+	"exit": [
+		"Keio.KeioHachioji.1",
+		"Keio.KeioHachioji.2",
+		"Keio.KeioHachioji.3",
+		"Keio.KeioHachioji.4",
+		"Keio.KeioHachioji.West"
+	],
+	"altitude": -1
 }, {
 	"id": "Keio.Sagamihara.Meidaimae",
 	"railway": "Keio.Sagamihara",
@@ -15489,7 +15515,8 @@
 		"ko": "조후",
 		"zh-Hans": "调布",
 		"zh-Hant": "調布"
-	}
+	},
+	"altitude": -1
 }, {
 	"id": "Keio.Sagamihara.KeioTamagawa",
 	"railway": "Keio.Sagamihara",

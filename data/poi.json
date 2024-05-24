@@ -11100,7 +11100,7 @@
 	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TokyoMetro.Kasai.West",
-	"coord": [139.8723923, 35.6635191],
+	"coord": [139.8720795, 35.6635424],
 	"title": {
 		"ja": "西口",
 		"en": "West",
@@ -11117,23 +11117,41 @@
 	},
 	"facilities": ["stairs"]
 }, {
-	"id": "TokyoMetro.Kasai.Center",
-	"coord": [139.8728777, 35.6636945],
+	"id": "TokyoMetro.Kasai.South",
+	"coord": [139.8726105, 35.6635042],
 	"title": {
-		"ja": "中央口",
-		"en": "Center",
-		"ko": "서쪽",
-		"zh-Hans": "中央出口",
-		"zh-Hant": "中央出口"
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
 	},
 	"description": {
-		"ja": "中央口",
-		"en": "Center Exit",
-		"ko": "중앙 출구",
-		"zh-Hans": "中央出口",
-		"zh-Hant": "中央出口"
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
 	},
 	"facilities": ["stairs", "ramp"]
+}, {
+	"id": "TokyoMetro.Kasai.North",
+	"coord": [139.8728528, 35.6636334],
+	"title": {
+		"ja": "北口",
+		"en": "North",
+		"ko": "키타",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	},
+	"description": {
+		"ja": "北口",
+		"en": "North Exit",
+		"ko": "키타 출구",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Kasai.Museum",
 	"coord": [139.8737669, 35.663358],
@@ -25173,7 +25191,8 @@
 		"ko": "동쪽 출구",
 		"zh-Hans": "东出口",
 		"zh-Hant": "東出口"
-	}
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "Keio.Hatsudai.South",
 	"coord": [139.6865031, 35.6805645],
@@ -25190,7 +25209,8 @@
 		"ko": "남쪽 출구",
 		"zh-Hans": "南出口",
 		"zh-Hant": "南出口"
-	}
+	},
+	"facilities": ["stairs", "elevator"]
 }, {
 	"id": "Keio.Hatsudai.North",
 	"coord": [139.6858835, 35.6812402],
@@ -25207,9 +25227,42 @@
 		"ko": "키타 출구",
 		"zh-Hans": "北出口",
 		"zh-Hant": "北出口"
-	}
+	},
+	"facilities": ["stairs"]
 }, {
-	"id": "Keio.Hatagaya.South",
+	"id": "Keio.Hatsudai.EV",
+	"coord": [139.6857162, 35.6814284],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
+}, {
+	"id": "Keio.Hatagaya.South1",
+	"coord": [139.6769088, 35.6770423],
+	"title": {
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"description": {
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "Keio.Hatagaya.South2",
 	"coord": [139.6768378, 35.676935],
 	"title": {
 		"ja": "南口",
@@ -25224,7 +25277,8 @@
 		"ko": "남쪽 출구",
 		"zh-Hans": "南出口",
 		"zh-Hant": "南出口"
-	}
+	},
+	"facilities": ["stairs", "elevator"]
 }, {
 	"id": "Keio.Hatagaya.North",
 	"coord": [139.6768452, 35.677455],
@@ -25241,7 +25295,187 @@
 		"ko": "키타 출구",
 		"zh-Hans": "北出口",
 		"zh-Hant": "北出口"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "Keio.Kokuryo.South",
+	"coord": [139.5582622, 35.6500402],
+	"title": {
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"description": {
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
 	}
+}, {
+	"id": "Keio.Kokuryo.North",
+	"coord": [139.5581636, 35.6501351],
+	"title": {
+		"ja": "北口",
+		"en": "North",
+		"ko": "키타",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	},
+	"description": {
+		"ja": "北口",
+		"en": "North Exit",
+		"ko": "키타 출구",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	}
+}, {
+	"id": "Keio.Fuda.1",
+	"coord": [139.5515038, 35.6499171],
+	"title": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	},
+	"description": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	}
+}, {
+	"id": "Keio.Chofu.East",
+	"coord": [139.5453088, 35.6516246],
+	"title": {
+		"ja": "東口",
+		"en": "East",
+		"ko": "동쪽",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	},
+	"description": {
+		"ja": "東口",
+		"en": "East Exit",
+		"ko": "동쪽 출구",
+		"zh-Hans": "东出口",
+		"zh-Hant": "東出口"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
+	"id": "Keio.Chofu.Central",
+	"coord": [139.5443397, 35.651865],
+	"title": {
+		"ja": "中央口",
+		"en": "Central",
+		"ko": "중앙",
+		"zh-Hans": "中央出口",
+		"zh-Hant": "中央出口"
+	},
+	"description": {
+		"ja": "中央口",
+		"en": "Central Exit",
+		"ko": "중앙 출구",
+		"zh-Hans": "中央出口",
+		"zh-Hant": "中央出口"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
+	"id": "Keio.Chofu.Hiroba",
+	"coord": [139.5437187, 35.6519706],
+	"title": {
+		"ja": "広場口",
+		"en": "Hiroba",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	},
+	"description": {
+		"ja": "広場口",
+		"en": "Hiroba Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
+	"id": "Keio.KeioHachioji.1",
+	"coord": [139.3430105, 35.6580378],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "出口1",
+		"en": "Exit 1",
+		"ko": "출구1",
+		"zh-Hans": "出口1",
+		"zh-Hant": "出口1"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "Keio.KeioHachioji.2",
+	"coord": [139.3428388, 35.6579622],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "出口2",
+		"en": "Exit 2",
+		"ko": "출구2",
+		"zh-Hans": "出口2",
+		"zh-Hant": "出口2"
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "Keio.KeioHachioji.3",
+	"coord": [139.3426735, 35.6577675],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "出口3",
+		"en": "Exit 3",
+		"ko": "출구3",
+		"zh-Hans": "出口3",
+		"zh-Hant": "出口3"
+	},
+	"facilities": ["elevator"]
+}, {
+	"id": "Keio.KeioHachioji.4",
+	"coord": [139.3429566, 35.6576322],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "出口4",
+		"en": "Exit 4",
+		"ko": "출구4",
+		"zh-Hans": "出口4",
+		"zh-Hant": "出口4"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "Keio.KeioHachioji.West",
+	"coord": [139.3424937, 35.6589899],
+	"title": {
+		"ja": "西口",
+		"en": "West",
+		"ko": "서쪽",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	},
+	"description": {
+		"ja": "西口",
+		"en": "West Exit",
+		"ko": "서쪽 출구",
+		"zh-Hans": "西出口",
+		"zh-Hant": "西出口"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "Keikyu.Otorii.East",
 	"coord": [139.7412341, 35.5521454],
