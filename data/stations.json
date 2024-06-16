@@ -16213,7 +16213,7 @@
 }, {
 	"id": "Keikyu.Main.KanagawaShimmachi",
 	"railway": "Keikyu.Main",
-	"coord": [139.639608, 35.480879],
+	"coord": [139.6399999, 35.4814272],
 	"title": {
 		"ja": "神奈川新町",
 		"en": "Kanagawa-shimmachi",
@@ -16235,7 +16235,7 @@
 }, {
 	"id": "Keikyu.Main.Kanagawa",
 	"railway": "Keikyu.Main",
-	"coord": [139.627523, 35.470321],
+	"coord": [139.6275201, 35.4715259],
 	"title": {
 		"ja": "神奈川",
 		"en": "Kanagawa",
@@ -16301,7 +16301,7 @@
 }, {
 	"id": "Keikyu.Main.Idogaya",
 	"railway": "Keikyu.Main",
-	"coord": [139.601401, 35.433787],
+	"coord": [139.6005383, 35.4339314],
 	"title": {
 		"ja": "井土ヶ谷",
 		"en": "Idogaya",
@@ -16602,6 +16602,7 @@
 	},
 	"exit": [
 		"Keikyu.Tenkubashi.A1",
+		"Keikyu.Tenkubashi.EV",
 		"Keikyu.Tenkubashi.A2"
 	],
 	"altitude": -1
@@ -16617,6 +16618,9 @@
 		"zh-Hant": "羽田機場第3航廈",
 		"ja-Wiki": "羽田空港第3ターミナル駅"
 	},
+	"exit": [
+		"Keikyu.HanedaAirportTerminal3.1"
+	],
 	"altitude": -1
 }, {
 	"id": "Keikyu.Airport.HanedaAirportTerminal1and2",
@@ -16630,6 +16634,10 @@
 		"zh-Hant": "羽田機場第1、第2航廈",
 		"ja-Wiki": "羽田空港第1・第2ターミナル駅"
 	},
+	"exit": [
+		"Keikyu.HanedaAirportTerminal1and2.1",
+		"Keikyu.HanedaAirportTerminal1and2.2"
+	],
 	"altitude": -1
 }, {
 	"id": "Keikyu.Daishi.KeikyuKawasaki",
@@ -16697,6 +16705,9 @@
 		"zh-Hans": "大师桥",
 		"zh-Hant": "大師橋"
 	},
+	"exit": [
+		"Keikyu.Daishibashi.1"
+	],
 	"altitude": -1
 }, {
 	"id": "Keikyu.Daishi.Kojimashinden",
@@ -16791,7 +16802,7 @@
 }, {
 	"id": "Keikyu.Kurihama.Kitakurihama",
 	"railway": "Keikyu.Kurihama",
-	"coord": [139.686574, 35.250646],
+	"coord": [139.6864169, 35.249514],
 	"title": {
 		"ja": "北久里浜",
 		"en": "Kitakurihama",
@@ -16835,7 +16846,7 @@
 }, {
 	"id": "Keikyu.Kurihama.Tsukuihama",
 	"railway": "Keikyu.Kurihama",
-	"coord": [139.665787, 35.198708],
+	"coord": [139.6652683, 35.1984199],
 	"title": {
 		"ja": "津久井浜",
 		"en": "Tsukuihama",
@@ -16846,7 +16857,7 @@
 }, {
 	"id": "Keikyu.Kurihama.Miurakaigan",
 	"railway": "Keikyu.Kurihama",
-	"coord": [139.653619, 35.186584],
+	"coord": [139.6532667, 35.1882147],
 	"title": {
 		"ja": "三浦海岸",
 		"en": "Miurakaigan",
@@ -25259,7 +25270,8 @@
 		"ko": "모리야",
 		"zh-Hans": "守谷",
 		"zh-Hant": "守谷"
-	}
+	},
+	"thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Moriya-sta_kantou.JPG/128px-Moriya-sta_kantou.JPG"
 }, {
 	"id": "KantoRailway.Joso.ShinMoriya",
 	"railway": "KantoRailway.Joso",
@@ -26799,7 +26811,8 @@
 		"ko": "가나자와핫케이",
 		"zh-Hans": "金泽八景",
 		"zh-Hant": "金澤八景"
-	}
+	},
+	"thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Kanazawa-hakkei-station-building.jpg/128px-Kanazawa-hakkei-station-building.jpg"
 }, {
 	"id": "Yamaman.Yukarigaoka.Yukarigaoka",
 	"railway": "Yamaman.Yukarigaoka",
@@ -27165,6 +27178,10 @@
 		"zh-Hans": "羽田机场第1航站楼",
 		"zh-Hant": "羽田機場第1航廈"
 	},
+	"exit": [
+		"TokyoMonorail.HanedaAirportTerminal1.North",
+		"TokyoMonorail.HanedaAirportTerminal1.South"
+	],
 	"altitude": -1
 }, {
 	"id": "TokyoMonorail.HanedaAirport.HanedaAirportTerminal2",
@@ -27177,6 +27194,10 @@
 		"zh-Hans": "羽田机场第2航站楼",
 		"zh-Hant": "羽田機場第2航廈"
 	},
+	"exit": [
+		"TokyoMonorail.HanedaAirportTerminal2.North",
+		"TokyoMonorail.HanedaAirportTerminal2.South"
+	],
 	"altitude": -1
 }, {
 	"id": "TamaMonorail.TamaMonorail.TamaCenter",

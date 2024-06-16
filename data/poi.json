@@ -25512,7 +25512,7 @@
 	}
 }, {
 	"id": "Keikyu.Tenkubashi.A1",
-	"coord": [139.7539137, 35.5488222],
+	"coord": [139.7540408, 35.5487859],
 	"title": {
 		"en": "A1"
 	},
@@ -25522,10 +25522,25 @@
 		"ko": "출구A1",
 		"zh-Hans": "出口A1",
 		"zh-Hant": "出口A1"
-	}
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "Keikyu.Tenkubashi.EV",
+	"coord": [139.753948, 35.5486703],
+	"title": {
+		"en": ""
+	},
+	"description": {
+		"ja": "エレベーター",
+		"en": "Elevator",
+		"ko": "엘리베이터",
+		"zh-Hans": "电梯",
+		"zh-Hant": "電梯"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "Keikyu.Tenkubashi.A2",
-	"coord": [139.75338, 35.5487643],
+	"coord": [139.7531106, 35.5488424],
 	"title": {
 		"en": "A2"
 	},
@@ -25535,6 +25550,78 @@
 		"ko": "출구A2",
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "Keikyu.HanedaAirportTerminal3.1",
+	"coord": [139.767834, 35.5449391],
+	"title": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	},
+	"description": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	},
+	"facilities": ["escalator", "elevator"]
+}, {
+	"id": "Keikyu.HanedaAirportTerminal1and2.1",
+	"coord": [139.784701, 35.5491568],
+	"title": {
+		"ja": "第1ターミナル",
+		"en": "Terminal 1",
+		"ko": "제1 터미널",
+		"zh-Hans": "第1航站楼",
+		"zh-Hant": "第1航廈"
+	},
+	"description": {
+		"ja": "出口 (第1ターミナル)",
+		"en": "Exit (Terminal 1)",
+		"ko": "출구 (제1 터미널)",
+		"zh-Hans": "出口 (第1航站楼)",
+		"zh-Hant": "出口 (第1航廈)"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
+	"id": "Keikyu.HanedaAirportTerminal1and2.2",
+	"coord": [139.788026, 35.5507309],
+	"title": {
+		"ja": "第2ターミナル",
+		"en": "Terminal 2",
+		"ko": "제2 터미널",
+		"zh-Hans": "第2航站楼",
+		"zh-Hant": "第2航廈"
+	},
+	"description": {
+		"ja": "出口 (第2ターミナル)",
+		"en": "Exit (Terminal 2)",
+		"ko": "출구 (제2 터미널)",
+		"zh-Hans": "出口 (第2航站楼)",
+		"zh-Hant": "出口 (第2航廈)"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
+	"id": "Keikyu.Daishibashi.1",
+	"coord": [139.7408812, 35.5366953],
+	"title": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
+	},
+	"description": {
+		"ja": "出口",
+		"en": "Exit",
+		"ko": "출구",
+		"zh-Hans": "出口",
+		"zh-Hant": "出口"
 	}
 }, {
 	"id": "Keisei.KeiseiUeno.Main",
@@ -27660,7 +27747,8 @@
 		"ko": "키타 출구",
 		"zh-Hans": "北出口",
 		"zh-Hant": "北出口"
-	}
+	},
+	"facilities": ["stairs", "ramp"]
 }, {
 	"id": "TokyoMonorail.Tenkubashi.HICity",
 	"coord": [139.7548753, 35.5485636],
@@ -27677,7 +27765,8 @@
 		"ko": "HICity 출구",
 		"zh-Hans": "HICity出口",
 		"zh-Hant": "HICity出口"
-	}
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "TokyoMonorail.ShinSeibijo.1",
 	"coord": [139.7884762, 35.542526],
@@ -27695,4 +27784,76 @@
 		"zh-Hans": "出口",
 		"zh-Hant": "出口"
 	}
+}, {
+	"id": "TokyoMonorail.HanedaAirportTerminal1.North",
+	"coord": [139.7841877, 35.5495912],
+	"title": {
+		"ja": "北口",
+		"en": "North",
+		"ko": "키타",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	},
+	"description": {
+		"ja": "北口",
+		"en": "North Exit",
+		"ko": "키타 출구",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
+	"id": "TokyoMonorail.HanedaAirportTerminal1.South",
+	"coord": [139.7849086, 35.5485574],
+	"title": {
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"description": {
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
+	"id": "TokyoMonorail.HanedaAirportTerminal2.North",
+	"coord": [139.7877856, 35.5512888],
+	"title": {
+		"ja": "北口",
+		"en": "North",
+		"ko": "키타",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	},
+	"description": {
+		"ja": "北口",
+		"en": "North Exit",
+		"ko": "키타 출구",
+		"zh-Hans": "北出口",
+		"zh-Hant": "北出口"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
+	"id": "TokyoMonorail.HanedaAirportTerminal2.South",
+	"coord": [139.7885517, 35.5502148],
+	"title": {
+		"ja": "南口",
+		"en": "South",
+		"ko": "남쪽",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"description": {
+		"ja": "南口",
+		"en": "South Exit",
+		"ko": "남쪽 출구",
+		"zh-Hans": "南出口",
+		"zh-Hant": "南出口"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
 }]
