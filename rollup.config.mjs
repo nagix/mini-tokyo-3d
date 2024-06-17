@@ -75,13 +75,18 @@ export default [{
 			preventAssignment: true,
 			'process.env.NODE_ENV': '\'development\'',
 			'log.error': '(() => () => {})',
-			'1.01*': '2*'
+			'Math.min(1.01*a,i*(1/t._horizonShift))}': 'Math.max(i*(1/t._horizonShift),i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}'
 		}),
 		replace({
 			preventAssignment: true,
 			include: '**/web-mercator-viewport.js',
-			'0.1': '0.02',
-			'1.01': '2'
+			'farZMultiplier': 'farZMultiplier,\n        unitsPerMeter: scale * unitsPerMeter(latitude) / height'
+		}),
+		replace({
+			preventAssignment: true,
+			include: '**/web-mercator-utils.js',
+			'farZMultiplier = 1': 'farZMultiplier = 1,\n    unitsPerMeter',
+			'Math.min(furthestDistance * farZMultiplier, horizonDistance': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians)'
 		}),
 		replace({
 			preventAssignment: true,
@@ -120,13 +125,18 @@ export default [{
 			preventAssignment: true,
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})',
-			'1.01*': '2*'
+			'Math.min(1.01*a,i*(1/t._horizonShift))}': 'Math.max(i*(1/t._horizonShift),i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}'
 		}),
 		replace({
 			preventAssignment: true,
 			include: '**/web-mercator-viewport.js',
-			'0.1': '0.02',
-			'1.01': '2'
+			'farZMultiplier': 'farZMultiplier,\n        unitsPerMeter: scale * unitsPerMeter(latitude) / height'
+		}),
+		replace({
+			preventAssignment: true,
+			include: '**/web-mercator-utils.js',
+			'farZMultiplier = 1': 'farZMultiplier = 1,\n    unitsPerMeter',
+			'Math.min(furthestDistance * farZMultiplier, horizonDistance': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians)'
 		}),
 		replace({
 			preventAssignment: true,
@@ -170,13 +180,18 @@ export default [{
 			preventAssignment: true,
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})',
-			'1.01*': '2*'
+			'Math.min(1.01*a,i*(1/t._horizonShift))}': 'Math.max(i*(1/t._horizonShift),i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}'
 		}),
 		replace({
 			preventAssignment: true,
 			include: '**/web-mercator-viewport.js',
-			'0.1': '0.02',
-			'1.01': '2'
+			'farZMultiplier': 'farZMultiplier,\n        unitsPerMeter: scale * unitsPerMeter(latitude) / height'
+		}),
+		replace({
+			preventAssignment: true,
+			include: '**/web-mercator-utils.js',
+			'farZMultiplier = 1': 'farZMultiplier = 1,\n    unitsPerMeter',
+			'Math.min(furthestDistance * farZMultiplier, horizonDistance': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians)'
 		}),
 		replace({
 			preventAssignment: true,

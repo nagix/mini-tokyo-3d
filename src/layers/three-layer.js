@@ -1,5 +1,5 @@
 import {AmbientLight, Color, DirectionalLight, LinearSRGBColorSpace, MathUtils, Matrix4, Mesh, PerspectiveCamera, Scene, Vector3, WebGLRenderer} from 'three';
-import {clamp, valueOrDefault} from '../helpers/helpers';
+import {valueOrDefault} from '../helpers/helpers';
 
 const SQRT3 = Math.sqrt(3);
 
@@ -109,14 +109,12 @@ export default class {
     _render(gl, matrix) {
         // These parameters are copied from mapbox-gl/src/geo/transform.js
         const {modelOrigin, mbox, renderer, camera, light, scene} = this,
-            {_fov, _camera, _horizonShift, worldSize, fovAboveCenter, _pitch, width, height} = mbox.transform,
+            {_fov, _camera, _horizonShift, pixelsPerMeter, worldSize, _pitch, width, height} = mbox.transform,
             halfFov = _fov / 2,
-            angle = Math.PI / 2 - _pitch,
             cameraToSeaLevelDistance = _camera.position[2] * worldSize / Math.cos(_pitch),
-            topHalfSurfaceDistance = Math.sin(fovAboveCenter) * cameraToSeaLevelDistance / Math.sin(clamp(angle - fovAboveCenter, 0.01, Math.PI - 0.01)),
-            furthestDistance = Math.cos(angle) * topHalfSurfaceDistance + cameraToSeaLevelDistance,
             horizonDistance = cameraToSeaLevelDistance / _horizonShift,
-            farZ = camera.far = Math.min(furthestDistance * 2, horizonDistance),
+            undergroundDistance = 1000 * pixelsPerMeter / Math.cos(_pitch),
+            farZ = camera.far = Math.max(horizonDistance, cameraToSeaLevelDistance + undergroundDistance),
             nearZ = camera.near = height / 50,
             halfHeight = Math.tan(halfFov) * nearZ,
             halfWidth = halfHeight * width / height,
