@@ -317,6 +317,201 @@
 	},
 	"facilities": ["stairs"]
 }, {
+	"id": "JR-East.Tokyo.1",
+	"coord": [139.7664305, 35.6779231],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "出口1",
+		"en": "Exit 1",
+		"ko": "출구1",
+		"zh-Hans": "出口1",
+		"zh-Hant": "出口1"
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "JR-East.Tokyo.2",
+	"coord": [139.7655637, 35.677328],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "出口2",
+		"en": "Exit 2",
+		"ko": "출구2",
+		"zh-Hans": "出口2",
+		"zh-Hant": "出口2"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "JR-East.Tokyo.3",
+	"coord": [139.7653083, 35.6779043],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "出口3",
+		"en": "Exit 3",
+		"ko": "출구3",
+		"zh-Hans": "出口3",
+		"zh-Hant": "出口3"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "JR-East.Tokyo.4",
+	"coord": [139.7641818, 35.6775868],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "出口4",
+		"en": "Exit 4",
+		"ko": "출구4",
+		"zh-Hans": "出口4",
+		"zh-Hant": "出口4"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
+	"id": "JR-East.Tokyo.5",
+	"coord": [139.7637533, 35.6777774],
+	"title": {
+		"en": "5"
+	},
+	"description": {
+		"ja": "出口5",
+		"en": "Exit 5",
+		"ko": "출구5",
+		"zh-Hans": "出口5",
+		"zh-Hant": "出口5"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "JR-East.Tokyo.6",
+	"coord": [139.7627877, 35.6779639],
+	"title": {
+		"en": "6"
+	},
+	"description": {
+		"ja": "出口6",
+		"en": "Exit 6",
+		"ko": "출구6",
+		"zh-Hans": "出口6",
+		"zh-Hant": "出口6"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "JR-East.Tokyo.7",
+	"coord": [139.7636985, 35.6781034],
+	"title": {
+		"en": "7"
+	},
+	"description": {
+		"ja": "出口7",
+		"en": "Exit 7",
+		"ko": "출구7",
+		"zh-Hans": "出口7",
+		"zh-Hant": "出口7"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "JR-East.Tokyo.8",
+	"coord": [139.7637087, 35.6784324],
+	"title": {
+		"en": "8"
+	},
+	"description": {
+		"ja": "出口8",
+		"en": "Exit 8",
+		"ko": "출구8",
+		"zh-Hans": "出口8",
+		"zh-Hant": "出口8"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "JR-East.Tokyo.9",
+	"coord": [139.763744, 35.6794985],
+	"title": {
+		"en": "9"
+	},
+	"description": {
+		"ja": "出口9",
+		"en": "Exit 9",
+		"ko": "출구9",
+		"zh-Hans": "出口9",
+		"zh-Hant": "出口9"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "JR-East.Tokyo.10",
+	"coord": [139.7638568, 35.6798594],
+	"title": {
+		"en": "10"
+	},
+	"description": {
+		"ja": "出口10",
+		"en": "Exit 10",
+		"ko": "출구10",
+		"zh-Hans": "出口10",
+		"zh-Hant": "出口10"
+	},
+	"uptime": [{
+		"open": "08:00",
+		"close": "19:00",
+		"calendar": "Weekday"
+	}, {
+		"open": "08:00",
+		"close": "15:00",
+		"calendar": "Saturday"
+	}, {
+		"open": "00:00",
+		"close": "00:00",
+		"calendar": "Holiday"
+	}],
+	"facilities": ["stairs"]
+}, {
+	"id": "JR-East.Tokyo.10b",
+	"coord": [139.7642448, 35.67965],
+	"title": {
+		"en": "10-b"
+	},
+	"description": {
+		"ja": "出口10-b",
+		"en": "Exit 10-b",
+		"ko": "출구10-b",
+		"zh-Hans": "出口10-b",
+		"zh-Hant": "出口10-b"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
+	"id": "JR-East.Tokyo.11",
+	"coord": [139.7644744, 35.6779394],
+	"title": {
+		"en": "11"
+	},
+	"description": {
+		"ja": "出口11",
+		"en": "Exit 11",
+		"ko": "출구11",
+		"zh-Hans": "出口11",
+		"zh-Hant": "出口11"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
+	"id": "JR-East.Tokyo.12",
+	"coord": [139.763522, 35.6787449],
+	"title": {
+		"en": "12"
+	},
+	"description": {
+		"ja": "出口12",
+		"en": "Exit 12",
+		"ko": "출구12",
+		"zh-Hans": "出口12",
+		"zh-Hant": "出口12"
+	},
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
 	"id": "JR-East.Hatchobori.B1",
 	"coord": [139.777212, 35.6749914],
 	"title": {
@@ -372,6 +567,62 @@
 		"zh-Hant": "出口B4"
 	},
 	"facilities": ["stairs"]
+}, {
+	"id": "JR-East.Etchujima.1",
+	"coord": [139.7919637, 35.6687048],
+	"title": {
+		"en": "1"
+	},
+	"description": {
+		"ja": "出口1",
+		"en": "Exit 1",
+		"ko": "출구1",
+		"zh-Hans": "出口1",
+		"zh-Hant": "出口1"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "JR-East.Etchujima.2",
+	"coord": [139.7926654, 35.6677862],
+	"title": {
+		"en": "2"
+	},
+	"description": {
+		"ja": "出口2",
+		"en": "Exit 2",
+		"ko": "출구2",
+		"zh-Hans": "出口2",
+		"zh-Hant": "出口2"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "JR-East.Etchujima.3",
+	"coord": [139.7936939, 35.6672863],
+	"title": {
+		"en": "3"
+	},
+	"description": {
+		"ja": "出口3",
+		"en": "Exit 3",
+		"ko": "출구3",
+		"zh-Hans": "出口3",
+		"zh-Hant": "出口3"
+	},
+	"facilities": ["stairs"]
+}, {
+	"id": "JR-East.Etchujima.4",
+	"coord": [139.7923365, 35.6683897],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "出口4",
+		"en": "Exit 4",
+		"ko": "출구4",
+		"zh-Hans": "出口4",
+		"zh-Hant": "出口4"
+	},
+	"facilities": ["elevator"]
 }, {
 	"id": "JR-East.HazawaYokohamaKokudai.1",
 	"coord": [139.5857886, 35.4810862],
@@ -18216,7 +18467,7 @@
 	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Hibiya.B5",
-	"coord": [139.7610001, 35.677872],
+	"coord": [139.7613136, 35.678235],
 	"title": {
 		"en": "B5"
 	},
