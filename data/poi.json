@@ -11259,18 +11259,18 @@
 	"facilities": ["stairs", "escalator"]
 }, {
 	"id": "TokyoMetro.MinamiSunamachi.1",
-	"coord": [139.8290531, 35.6694779],
+	"coord": [139.8291518, 35.6692193],
 	"title": {
 		"en": "1"
 	},
 	"description": {
-		"ja": "出口1",
-		"en": "Exit 1",
-		"ko": "출구1",
-		"zh-Hans": "出口1",
-		"zh-Hant": "出口1"
+		"ja": "出口1 (エレベーターv)",
+		"en": "Exit 1 (Elevator v)",
+		"ko": "출구1 (엘리베이터 v)",
+		"zh-Hans": "出口1 (电梯v)",
+		"zh-Hant": "出口1 (電梯v)"
 	},
-	"facilities": ["stairs"]
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "TokyoMetro.MinamiSunamachi.2a",
 	"coord": [139.8320773, 35.6687032],
@@ -11284,6 +11284,10 @@
 		"zh-Hans": "出口2a",
 		"zh-Hant": "出口2a"
 	},
+	"uptime": [{
+		"open": "00:00",
+		"close": "00:00"
+	}],
 	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.MinamiSunamachi.2b",
@@ -11298,6 +11302,10 @@
 		"zh-Hans": "出口2b",
 		"zh-Hant": "出口2b"
 	},
+	"uptime": [{
+		"open": "00:00",
+		"close": "00:00"
+	}],
 	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "TokyoMetro.MinamiSunamachi.3",
@@ -11312,7 +11320,53 @@
 		"zh-Hans": "出口3 (电梯r)",
 		"zh-Hant": "出口3 (電梯r)"
 	},
+	"uptime": [{
+		"open": "00:00",
+		"close": "00:00"
+	}],
 	"facilities": ["stairs", "escalator", "elevator"]
+}, {
+	"id": "TokyoMetro.MinamiSunamachi.4",
+	"coord": [139.8301854, 35.6686255],
+	"title": {
+		"en": "4"
+	},
+	"description": {
+		"ja": "出口4",
+		"en": "Exit 4",
+		"ko": "출구4",
+		"zh-Hans": "出口4",
+		"zh-Hant": "出口4"
+	},
+	"facilities": ["stairs", "escalator"]
+}, {
+	"id": "TokyoMetro.MinamiSunamachi.EVp",
+	"coord": [139.8306946, 35.6684843],
+	"title": {
+		"en": "p"
+	},
+	"description": {
+		"ja": "エレベーターp",
+		"en": "Elevator p",
+		"ko": "엘리베이터 p",
+		"zh-Hans": "电梯p",
+		"zh-Hant": "電梯p"
+	},
+	"facilities": ["elevator"]
+}, {
+	"id": "TokyoMetro.MinamiSunamachi.5",
+	"coord": [139.8309317, 35.668482],
+	"title": {
+		"en": "5"
+	},
+	"description": {
+		"ja": "出口5",
+		"en": "Exit 5",
+		"ko": "출구5",
+		"zh-Hans": "出口5",
+		"zh-Hant": "出口5"
+	},
+	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.NishiKasai.South",
 	"coord": [139.8594533, 35.6643004],
