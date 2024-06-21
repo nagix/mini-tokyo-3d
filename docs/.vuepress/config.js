@@ -15,7 +15,9 @@ module.exports = {
   head: [
     ['meta', { name: 'theme-color', content: '#b31166' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-7NP0LHFG11' }],
+    ['script', {}, ["window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-7NP0LHFG11');"]]
   ],
   themeConfig: {
     repo: 'nagix/mini-tokyo-3d',
@@ -168,9 +170,6 @@ module.exports = {
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
   plugins: [
-    ['flexsearch'],
-    ['@vuepress/google-analytics', {
-      ga: 'UA-39988758-3'
-    }]
+    ['flexsearch']
   ]
 }
