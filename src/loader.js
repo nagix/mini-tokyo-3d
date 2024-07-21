@@ -15,6 +15,12 @@ const OPERATORS_FOR_TRAININFORMATION = {
         'YokohamaMunicipal',
         'MIR',
         'TamaMonorail'
+    ],
+    challenge2024: [
+        'Tokyu',
+        'Keikyu',
+        'Tobu',
+        'Seibu'
     ]
 };
 
@@ -132,7 +138,7 @@ export function loadDynamicTrainData(secrets) {
         const url = configs.apiUrl[source],
             key = secrets[source];
 
-        if (source === 'odpt') {
+        if (source === 'odpt' || source === 'challenge2024') {
             const operators = OPERATORS_FOR_TRAININFORMATION[source]
                 .map(operator => `odpt.Operator:${operator}`)
                 .join(',');
