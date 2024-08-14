@@ -282,7 +282,7 @@ export default class extends Panel {
                     ].join(''));
                     stations.push([
                         '<div class="station-row">',
-                        `<div class="train-title-box">${railwayTitle} ${trainTypeTitle} ${destinationTitle}`,
+                        `<div class="train-title-box">${railwayTitle} <span class="train-type-label">${trainTypeTitle}</span> ${destinationTitle}`,
                         delay ? ` <span class="desc-caution">${dict['delay'].replace('$1', delay)}</span>` : '',
                         '</div></div>'
                     ].join(''));
