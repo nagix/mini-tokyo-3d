@@ -15,14 +15,6 @@ import {loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetab
 import {AboutPanel, LayerPanel, SearchPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
 
-const RAILWAYS_FOR_DYNAMIC_TRAIN_DATA = [
-    'Toei.Asakusa',
-    'Toei.Mita',
-    'Toei.Shinjuku',
-    'Toei.Oedo',
-    'Toei.Arakawa'
-];
-
 const RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
     RAILWAY_MITA = 'Toei.Mita',
     RAILWAY_ARAKAWA = 'Toei.Arakawa';
@@ -1440,7 +1432,8 @@ export default class extends Evented {
 
             if (train.start + delay <= now && now <= train.end + delay &&
                 !me.checkActiveTrains(train, true) &&
-                (!railway.dynamic || !railway.status || me.realtimeTrainLookup[train.t])) {
+                !(railway.dynamic && railway.status && !me.realtimeTrainLookup[train.t]) &&
+                !railway.suspended) {
                 me.trainStart(train);
             }
         }
@@ -2068,7 +2061,7 @@ export default class extends Evented {
         for (const railway of this.railwayData) {
             delete railway.status;
             delete railway.text;
-            delete railway.dynamic;
+            delete railway.suspended;
         }
     }
 
@@ -2173,13 +2166,22 @@ export default class extends Evented {
                 if (railway && status && status.ja) {
                     railway.status = status.ja;
                     railway.text = trainInfoRef.text.ja;
-                    if (helpers.includes(RAILWAYS_FOR_DYNAMIC_TRAIN_DATA, railway)) {
-                        railway.dynamic = true;
+                    if (railway.dynamic) {
                         for (const key of Object.keys(activeTrainLookup)) {
                             const train = activeTrainLookup[key];
                             if (train.r === railway.id && !realtimeTrainLookup[train.t]) {
                                 me.stopTrain(train);
                             }
+                        }
+                    }
+                }
+
+                if (trainInfoRef.suspended) {
+                    railway.suspended = true;
+                    for (const key of Object.keys(activeTrainLookup)) {
+                        const train = activeTrainLookup[key];
+                        if (train.r === railway.id) {
+                            me.stopTrain(train);
                         }
                     }
                 }

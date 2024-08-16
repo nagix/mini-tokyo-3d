@@ -147,8 +147,10 @@ export function loadDynamicTrainData(secrets) {
         }
     }
 
+    urls.push(configs.trainInfoUrl);
+
     return Promise.all(urls.map(loadJSON)).then(data => {
-        // Train data for Toei
+        // Train data from ODPT
         for (const train of data.shift()) {
             const trainType = removePrefix(train['odpt:trainType']),
                 destinationStation = removePrefix(train['odpt:destinationStation']);
@@ -170,19 +172,24 @@ export function loadDynamicTrainData(secrets) {
             });
         }
 
-        // Train data for others
+        // Train data from others
         for (const train of data.shift()) {
             trainData.push(train);
         }
 
-        // Train information data
-        for (const trainInfo of [].concat(...data)) {
+        // Train information data from ODPT and Tokyo Challenge
+        for (const trainInfo of [...data.shift(), ...data.shift()]) {
             trainInfoData.push({
                 operator: removePrefix(trainInfo['odpt:operator']),
                 railway: removePrefix(trainInfo['odpt:railway']),
                 status: trainInfo['odpt:trainInformationStatus'],
                 text: trainInfo['odpt:trainInformationText']
             });
+        }
+
+        // Train information data from others
+        for (const trainInfo of data.shift()) {
+            trainInfoData.push(trainInfo);
         }
 
         return {trainData, trainInfoData};

@@ -80,7 +80,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#F15A22",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "JR-East.Chuo",
 	"title": {
@@ -143,7 +144,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#F15A22",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "JR-East.Itsukaichi",
 	"title": {
@@ -164,7 +166,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#F15A22",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "JR-East.ChuoSobuLocal",
 	"title": {
@@ -217,7 +220,8 @@
 	],
 	"ascending": "Westbound",
 	"color": "#FFD400",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "JR-East.Tokaido",
 	"title": {
@@ -252,7 +256,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#F68B1E",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.Utsunomiya",
 	"title": {
@@ -290,7 +295,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#F68B1E",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.Takasaki",
 	"title": {
@@ -329,7 +335,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#F68B1E",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.KeihinTohokuNegishi",
 	"title": {
@@ -390,7 +397,8 @@
 	],
 	"ascending": "Southbound",
 	"color": "#00B2E5",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "JR-East.JobanRapid",
 	"title": {
@@ -417,7 +425,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#00B261",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.JobanLocal",
 	"title": {
@@ -445,7 +454,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#A8A39D",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "JR-East.Joban",
 	"title": {
@@ -479,7 +489,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#007AC1",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.SobuRapid",
 	"title": {
@@ -511,7 +522,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#007AC1",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.Sobu",
 	"title": {
@@ -547,7 +559,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#A8A39D",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.Narita",
 	"title": {
@@ -578,7 +591,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#00B261",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.NaritaAirportBranch",
 	"title": {
@@ -595,7 +609,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#00B261",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.NaritaAbikoBranch",
 	"title": {
@@ -619,7 +634,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#00B261",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "JR-East.Uchibo",
 	"title": {
@@ -665,7 +681,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#DCAF27",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.Sotobo",
 	"title": {
@@ -706,7 +723,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#008848",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.Yokosuka",
 	"title": {
@@ -739,7 +757,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#007AC1",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.Keiyo",
 	"title": {
@@ -771,7 +790,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#C9252F",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "JR-East.KeiyoKoyaBranch",
 	"title": {
@@ -852,7 +872,8 @@
 	],
 	"ascending": "Northbound",
 	"color": "#00B48D",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "JR-East.ShonanShinjuku",
 	"title": {
@@ -882,7 +903,8 @@
 	],
 	"ascending": "Northbound",
 	"color": "#E31F26",
-	"carComposition": 15
+	"carComposition": 15,
+	"dynamic": true
 }, {
 	"id": "JR-East.YamanoteFreight",
 	"title": {
@@ -917,7 +939,8 @@
 	],
 	"ascending": "Southbound",
 	"color": "#00B48D",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "JR-East.OsakiBranch",
 	"title": {
@@ -1046,7 +1069,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#FFD400",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "JR-East.NambuBranch",
 	"title": {
@@ -1105,7 +1129,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#F15A22",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "JR-East.MusashinoKunitachiBranch",
 	"title": {
@@ -1191,7 +1216,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#80C342",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "JR-East.Hachiko",
 	"title": {
@@ -1229,7 +1255,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#A8A39D",
-	"carComposition": 4
+	"carComposition": 4,
+	"dynamic": true
 }, {
 	"id": "JR-East.Kawagoe",
 	"title": {
@@ -1249,7 +1276,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#A8A39D",
-	"carComposition": 4
+	"carComposition": 4,
+	"dynamic": true
 }, {
 	"id": "JR-East.Sagami",
 	"title": {
@@ -1281,7 +1309,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#009793",
-	"carComposition": 4
+	"carComposition": 4,
+	"dynamic": true
 }, {
 	"id": "JR-East.Kashima",
 	"title": {
@@ -1302,7 +1331,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#C56E2E",
-	"carComposition": 4
+	"carComposition": 4,
+	"dynamic": true
 }, {
 	"id": "JR-East.Togane",
 	"title": {
@@ -1321,7 +1351,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#F15A22",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "JR-East.Kururi",
 	"title": {
@@ -1349,7 +1380,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#00B5AD",
-	"carComposition": 4
+	"carComposition": 4,
+	"dynamic": true
 }, {
 	"id": "JR-East.Ito",
 	"title": {
@@ -1369,7 +1401,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#F68B1E",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "TWR.Rinkai",
 	"title": {
@@ -1766,7 +1799,8 @@
 	"ascending": "Northbound",
 	"altitude": -1,
 	"color": "#DC435F",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "Toei.Mita",
 	"title": {
@@ -1808,7 +1842,8 @@
 	"ascending": "Northbound",
 	"altitude": -1,
 	"color": "#006AB8",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "Toei.Shinjuku",
 	"title": {
@@ -1844,7 +1879,8 @@
 	"ascending": "Eastbound",
 	"altitude": -1,
 	"color": "#B0BF1E",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Toei.Oedo",
 	"title": {
@@ -1898,7 +1934,8 @@
 	"ascending": "OuterLoop",
 	"altitude": -1,
 	"color": "#CE045B",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "Toei.NipporiToneri",
 	"title": {
@@ -1969,7 +2006,8 @@
 	],
 	"ascending": "Toei.Waseda",
 	"color": "#EE86A7",
-	"carComposition": 1
+	"carComposition": 1,
+	"dynamic": true
 }, {
 	"id": "YokohamaMunicipal.Blue",
 	"title": {
@@ -2016,7 +2054,8 @@
 	"ascending": "Inbound",
 	"altitude": -1,
 	"color": "#093F86",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "YokohamaMunicipal.Green",
 	"title": {
@@ -2041,7 +2080,8 @@
 	"ascending": "Inbound",
 	"altitude": -1,
 	"color": "#00A15A",
-	"carComposition": 4
+	"carComposition": 4,
+	"dynamic": true
 }, {
 	"id": "Keio.KeioNew",
 	"title": {
@@ -2060,7 +2100,8 @@
 	"ascending": "Outbound",
 	"altitude": -1,
 	"color": "#DD0077",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Keio.Keio",
 	"title": {
@@ -2106,7 +2147,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#DD0077",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Keio.Sagamihara",
 	"title": {
@@ -2133,7 +2175,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#DD0077",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Keio.Keibajo",
 	"title": {
@@ -2149,7 +2192,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#DD0077",
-	"carComposition": 2
+	"carComposition": 2,
+	"dynamic": true
 }, {
 	"id": "Keio.Dobutsuen",
 	"title": {
@@ -2165,7 +2209,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#DD0077",
-	"carComposition": 4
+	"carComposition": 4,
+	"dynamic": true
 }, {
 	"id": "Keio.Takao",
 	"title": {
@@ -2187,7 +2232,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#DD0077",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Keio.Inokashira",
 	"title": {
@@ -2218,7 +2264,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#000088",
-	"carComposition": 5
+	"carComposition": 5,
+	"dynamic": true
 }, {
 	"id": "Keikyu.Main",
 	"title": {
@@ -2423,7 +2470,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#005AAA",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "Keisei.HigashiNarita",
 	"title": {
@@ -2439,7 +2487,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#005AAA",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "Keisei.Oshiage",
 	"title": {
@@ -2459,7 +2508,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#005AAA",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "Keisei.Chiba",
 	"title": {
@@ -2483,7 +2533,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#005AAA",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "Keisei.Chihara",
 	"title": {
@@ -2503,7 +2554,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#005AAA",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "Keisei.NaritaSkyAccess",
 	"title": {
@@ -2528,7 +2580,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#FF8620",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "Keisei.Kanamachi",
 	"title": {
@@ -2545,7 +2598,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#005AAA",
-	"carComposition": 4
+	"carComposition": 4,
+	"dynamic": true
 }, {
 	"id": "Hokuso.Hokuso",
 	"title": {
@@ -2574,7 +2628,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#00BDF2",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "Shibayama.Shibayama",
 	"title": {
@@ -2590,7 +2645,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#00A650",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "Tobu.TobuSkytree",
 	"title": {
@@ -3082,7 +3138,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#FF6600",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Seibu.Toshima",
 	"title": {
@@ -3098,7 +3155,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#FF6600",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "Seibu.Sayama",
 	"title": {
@@ -3115,7 +3173,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#FF6600",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Seibu.SeibuChichibu",
 	"title": {
@@ -3137,7 +3196,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#FF6600",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Seibu.SeibuChichibuBranch",
 	"title": {
@@ -3170,7 +3230,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#FF6600",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Seibu.S-Fukutoshin",
 	"title": {
@@ -3246,7 +3307,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#0099CC",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Seibu.Haijima",
 	"title": {
@@ -3268,7 +3330,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#0099CC",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Seibu.Tamako",
 	"title": {
@@ -3289,7 +3352,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#FFCC33",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "Seibu.Kokubunji",
 	"title": {
@@ -3308,7 +3372,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#33CC66",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "Seibu.Seibuen",
 	"title": {
@@ -3324,7 +3389,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#33CC66",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "Seibu.Tamagawa",
 	"title": {
@@ -3344,7 +3410,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#FF6600",
-	"carComposition": 4
+	"carComposition": 4,
+	"dynamic": true
 }, {
 	"id": "Seibu.Yamaguchi",
 	"title": {
@@ -3361,7 +3428,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#FF3333",
-	"carComposition": 4
+	"carComposition": 4,
+	"dynamic": true
 }, {
 	"id": "Odakyu.Odawara",
 	"title": {
@@ -3422,7 +3490,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#2288CC",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Odakyu.Tama",
 	"title": {
@@ -3444,7 +3513,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#2288CC",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Odakyu.Enoshima",
 	"title": {
@@ -3475,7 +3545,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#2288CC",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Tokyu.DenEnToshi",
 	"title": {
@@ -3516,7 +3587,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#20A288",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Tokyu.Toyoko",
 	"title": {
@@ -3551,7 +3623,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#DA0442",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Tokyu.Meguro",
 	"title": {
@@ -3578,7 +3651,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#009CD2",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "Tokyu.TokyuShinYokohama",
 	"title": {
@@ -3595,7 +3669,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#5D4D8D",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Tokyu.Oimachi",
 	"title": {
@@ -3627,7 +3702,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#F18C43",
-	"carComposition": 5
+	"carComposition": 5,
+	"dynamic": true
 }, {
 	"id": "Tokyu.Ikegami",
 	"title": {
@@ -3771,7 +3847,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#000080",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Sotetsu.Izumino",
 	"title": {
@@ -3793,7 +3870,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#000080",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Sotetsu.SotetsuShinYokohama",
 	"title": {
@@ -3810,7 +3888,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#000080",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "SaitamaRailway.SaitamaRailway",
 	"title": {
@@ -3928,7 +4007,8 @@
 	],
 	"ascending": "Outbound",
 	"color": "#EF59A1",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "KantoRailway.Joso",
 	"title": {

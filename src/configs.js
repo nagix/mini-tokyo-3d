@@ -110,6 +110,9 @@ const configs = {
     // TID URL
     tidUrl: 'https://mini-tokyo.appspot.com/tid',
 
+    // Train information URL
+    trainInfoUrl: 'https://mini-tokyo.appspot.com/traininfo',
+
     // ATIS URL
     atisUrl: 'https://mini-tokyo.appspot.com/atisinfo',
 
