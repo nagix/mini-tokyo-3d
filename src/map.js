@@ -2298,7 +2298,7 @@ export default class extends Evented {
                 }
 
                 if (!flight) {
-                    if (status === 'Cancelled') {
+                    if (helpers.includes(['Cancelled', 'PostponedTomorrow'], status)) {
                         continue;
                     }
                     const airport = me.airportLookup[ds || or],
