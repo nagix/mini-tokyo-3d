@@ -17,6 +17,7 @@ const OPERATORS_FOR_TRAININFORMATION = {
         'TamaMonorail'
     ],
     challenge2024: [
+        'jre-is',
         'Tokyu',
         'Keikyu',
         'Tobu',
