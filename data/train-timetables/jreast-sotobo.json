@@ -4327,12 +4327,12 @@
 		"d": "10:22"
 	}, {
 		"s": "JR-East.Sotobo.Katsuura",
-		"a": "10:28",
+		"a": "10:27",
 		"d": "10:28"
 	}, {
 		"s": "JR-East.Sotobo.KazusaOkitsu",
 		"a": "10:35",
-		"d": "10:36"
+		"d": "10:35"
 	}, {
 		"s": "JR-East.Sotobo.AwaKominato",
 		"a": "10:44",
@@ -4350,11 +4350,11 @@
 	}],
 	"v": "E257-500"
 }, {
-	"id": "JR-East.Sotobo.3815Y.Weekday",
-	"t": "JR-East.Sotobo.3815Y",
+	"id": "JR-East.Sotobo.3915A.Weekday",
+	"t": "JR-East.Sotobo.3915A",
 	"r": "JR-East.Sotobo",
-	"n": "3815Y",
-	"y": "JR-East.Local",
+	"n": "3915A",
+	"y": "JR-East.Rapid",
 	"d": "Outbound",
 	"os": [
 		"JR-East.Keiyo.Tokyo"
@@ -4363,7 +4363,7 @@
 		"JR-East.Sotobo.KazusaIchinomiya"
 	],
 	"pt": [
-		"JR-East.Keiyo.815Y.Weekday"
+		"JR-East.Keiyo.915A.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Soga",
@@ -4567,12 +4567,12 @@
 		"d": "12:22"
 	}, {
 		"s": "JR-East.Sotobo.Katsuura",
-		"a": "12:28",
+		"a": "12:27",
 		"d": "12:28"
 	}, {
 		"s": "JR-East.Sotobo.AwaKominato",
 		"a": "12:43",
-		"d": "12:44"
+		"d": "12:43"
 	}, {
 		"s": "JR-East.Sotobo.AwaKamogawa",
 		"a": "12:52"
@@ -4804,7 +4804,7 @@
 	}, {
 		"s": "JR-East.Sotobo.Katsuura",
 		"a": "15:24",
-		"d": "15:25"
+		"d": "15:24"
 	}, {
 		"s": "JR-East.Sotobo.AwaKominato",
 		"a": "15:39",
@@ -5133,7 +5133,7 @@
 		"d": "20:17"
 	}, {
 		"s": "JR-East.Sotobo.Onjuku",
-		"a": "20:25",
+		"a": "20:24",
 		"d": "20:25"
 	}, {
 		"s": "JR-East.Sotobo.Katsuura",
@@ -5148,10 +5148,10 @@
 	}],
 	"v": "E257-500"
 }, {
-	"id": "JR-East.Sotobo.4919Y.Weekday",
-	"t": "JR-East.Sotobo.4919Y",
+	"id": "JR-East.Sotobo.4921Y.Weekday",
+	"t": "JR-East.Sotobo.4921Y",
 	"r": "JR-East.Sotobo",
-	"n": "4919Y",
+	"n": "4921Y",
 	"y": "JR-East.Local",
 	"d": "Outbound",
 	"os": [
@@ -5161,7 +5161,7 @@
 		"JR-East.Sotobo.KazusaIchinomiya"
 	],
 	"pt": [
-		"JR-East.Keiyo.1919Y.Weekday"
+		"JR-East.Keiyo.1921Y.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Soga",
@@ -5250,11 +5250,11 @@
 	}],
 	"v": "E257-500"
 }, {
-	"id": "JR-East.Sotobo.5031Y.Weekday",
-	"t": "JR-East.Sotobo.5031Y",
+	"id": "JR-East.Sotobo.5031A.Weekday",
+	"t": "JR-East.Sotobo.5031A",
 	"r": "JR-East.Sotobo",
-	"n": "5031Y",
-	"y": "JR-East.Local",
+	"n": "5031A",
+	"y": "JR-East.Rapid",
 	"d": "Outbound",
 	"os": [
 		"JR-East.Keiyo.Tokyo"
@@ -5263,7 +5263,7 @@
 		"JR-East.Sotobo.KazusaIchinomiya"
 	],
 	"pt": [
-		"JR-East.Keiyo.2031Y.Weekday"
+		"JR-East.Keiyo.2031A.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Soga",
@@ -8925,7 +8925,7 @@
 		"d": "07:54"
 	}, {
 		"s": "JR-East.Sotobo.Mobara",
-		"a": "08:00",
+		"a": "07:59",
 		"d": "08:00"
 	}, {
 		"s": "JR-East.Sotobo.Oami",
@@ -9536,11 +9536,11 @@
 		"a": "06:57"
 	}]
 }, {
-	"id": "JR-East.Sotobo.3632Y.Weekday",
-	"t": "JR-East.Sotobo.3632Y",
+	"id": "JR-East.Sotobo.3632A.Weekday",
+	"t": "JR-East.Sotobo.3632A",
 	"r": "JR-East.Sotobo",
-	"n": "3632Y",
-	"y": "JR-East.Local",
+	"n": "3632A",
+	"y": "JR-East.Rapid",
 	"d": "Inbound",
 	"os": [
 		"JR-East.Sotobo.KazusaIchinomiya"
@@ -9549,50 +9549,50 @@
 		"JR-East.Keiyo.Tokyo"
 	],
 	"nt": [
-		"JR-East.Keiyo.632Y.Weekday"
+		"JR-East.Keiyo.632A.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
-		"d": "06:27"
+		"d": "06:28"
 	}, {
 		"s": "JR-East.Sotobo.Yatsumi",
-		"a": "06:30",
-		"d": "06:31"
+		"a": "06:31",
+		"d": "06:32"
 	}, {
 		"s": "JR-East.Sotobo.Mobara",
-		"a": "06:35",
-		"d": "06:35"
+		"a": "06:36",
+		"d": "06:36"
 	}, {
 		"s": "JR-East.Sotobo.ShimMobara",
-		"a": "06:38",
-		"d": "06:39"
+		"a": "06:39",
+		"d": "06:40"
 	}, {
 		"s": "JR-East.Sotobo.Honno",
-		"a": "06:42",
-		"d": "06:42"
+		"a": "06:43",
+		"d": "06:43"
 	}, {
 		"s": "JR-East.Sotobo.Nagata",
-		"a": "06:45",
-		"d": "06:45"
+		"a": "06:46",
+		"d": "06:46"
 	}, {
 		"s": "JR-East.Sotobo.Oami",
-		"a": "06:48",
-		"d": "06:48"
+		"a": "06:49",
+		"d": "06:49"
 	}, {
 		"s": "JR-East.Sotobo.Toke",
-		"a": "06:52",
-		"d": "06:52"
+		"a": "06:53",
+		"d": "06:53"
 	}, {
 		"s": "JR-East.Sotobo.Honda",
-		"a": "06:57",
-		"d": "06:57"
+		"a": "06:58",
+		"d": "06:58"
 	}, {
 		"s": "JR-East.Sotobo.Kamatori",
-		"a": "07:00",
-		"d": "07:01"
+		"a": "07:01",
+		"d": "07:02"
 	}, {
 		"s": "JR-East.Sotobo.Soga",
-		"a": "07:05"
+		"a": "07:06"
 	}]
 }, {
 	"id": "JR-East.Sotobo.3668F.Weekday",
@@ -11734,10 +11734,10 @@
 		"a": "21:45"
 	}]
 }, {
-	"id": "JR-East.Sotobo.5118Y.Weekday",
-	"t": "JR-East.Sotobo.5118Y",
+	"id": "JR-East.Sotobo.5120Y.Weekday",
+	"t": "JR-East.Sotobo.5120Y",
 	"r": "JR-East.Sotobo",
-	"n": "5118Y",
+	"n": "5120Y",
 	"y": "JR-East.Local",
 	"d": "Inbound",
 	"os": [
@@ -11747,7 +11747,7 @@
 		"JR-East.Keiyo.Tokyo"
 	],
 	"nt": [
-		"JR-East.Keiyo.2118Y.Weekday"
+		"JR-East.Keiyo.2120Y.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
@@ -12537,30 +12537,30 @@
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Oami",
-		"d": "06:52"
+		"d": "06:53"
 	}, {
 		"s": "JR-East.Sotobo.Toke",
-		"a": "06:56",
-		"d": "06:57"
+		"a": "06:58",
+		"d": "06:58"
 	}, {
 		"s": "JR-East.Sotobo.Honda",
-		"a": "07:02",
+		"a": "07:03",
 		"d": "07:03"
 	}, {
 		"s": "JR-East.Sotobo.Kamatori",
-		"a": "07:06",
+		"a": "07:07",
 		"d": "07:07"
 	}, {
 		"s": "JR-East.Sotobo.Soga",
 		"a": "07:12",
-		"d": "07:12"
+		"d": "07:13"
 	}, {
 		"s": "JR-East.Sotobo.HonChiba",
-		"a": "07:15",
-		"d": "07:15"
+		"a": "07:16",
+		"d": "07:16"
 	}, {
 		"s": "JR-East.Sotobo.Chiba",
-		"a": "07:18"
+		"a": "07:19"
 	}]
 }, {
 	"id": "JR-East.Sotobo.5684Y.Weekday",
@@ -17654,12 +17654,12 @@
 		"d": "10:22"
 	}, {
 		"s": "JR-East.Sotobo.Katsuura",
-		"a": "10:28",
+		"a": "10:27",
 		"d": "10:28"
 	}, {
 		"s": "JR-East.Sotobo.KazusaOkitsu",
 		"a": "10:35",
-		"d": "10:36"
+		"d": "10:35"
 	}, {
 		"s": "JR-East.Sotobo.AwaKominato",
 		"a": "10:44",
@@ -17677,11 +17677,11 @@
 	}],
 	"v": "E257-500"
 }, {
-	"id": "JR-East.Sotobo.3835Y.SaturdayHoliday",
-	"t": "JR-East.Sotobo.3835Y",
+	"id": "JR-East.Sotobo.3923A.SaturdayHoliday",
+	"t": "JR-East.Sotobo.3923A",
 	"r": "JR-East.Sotobo",
-	"n": "3835Y",
-	"y": "JR-East.Local",
+	"n": "3923A",
+	"y": "JR-East.Rapid",
 	"d": "Outbound",
 	"os": [
 		"JR-East.Keiyo.Tokyo"
@@ -17690,7 +17690,7 @@
 		"JR-East.Sotobo.KazusaIchinomiya"
 	],
 	"pt": [
-		"JR-East.Keiyo.835Y.SaturdayHoliday"
+		"JR-East.Keiyo.923A.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Soga",
@@ -17894,12 +17894,12 @@
 		"d": "12:22"
 	}, {
 		"s": "JR-East.Sotobo.Katsuura",
-		"a": "12:28",
+		"a": "12:27",
 		"d": "12:28"
 	}, {
 		"s": "JR-East.Sotobo.AwaKominato",
 		"a": "12:43",
-		"d": "12:44"
+		"d": "12:43"
 	}, {
 		"s": "JR-East.Sotobo.AwaKamogawa",
 		"a": "12:52"
@@ -17913,10 +17913,10 @@
 	}],
 	"v": "E257-500"
 }, {
-	"id": "JR-East.Sotobo.4121A.SaturdayHoliday",
-	"t": "JR-East.Sotobo.4121A",
+	"id": "JR-East.Sotobo.4117A.SaturdayHoliday",
+	"t": "JR-East.Sotobo.4117A",
 	"r": "JR-East.Sotobo",
-	"n": "4121A",
+	"n": "4117A",
 	"y": "JR-East.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -17926,7 +17926,7 @@
 		"JR-East.Sotobo.KazusaIchinomiya"
 	],
 	"pt": [
-		"JR-East.Keiyo.1121A.SaturdayHoliday"
+		"JR-East.Keiyo.1117A.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Soga",
@@ -18131,7 +18131,7 @@
 	}, {
 		"s": "JR-East.Sotobo.Katsuura",
 		"a": "15:24",
-		"d": "15:25"
+		"d": "15:24"
 	}, {
 		"s": "JR-East.Sotobo.AwaKominato",
 		"a": "15:39",
@@ -18149,10 +18149,10 @@
 	}],
 	"v": "E257-500"
 }, {
-	"id": "JR-East.Sotobo.4415A.SaturdayHoliday",
-	"t": "JR-East.Sotobo.4415A",
+	"id": "JR-East.Sotobo.4485A.SaturdayHoliday",
+	"t": "JR-East.Sotobo.4485A",
 	"r": "JR-East.Sotobo",
-	"n": "4415A",
+	"n": "4485A",
 	"y": "JR-East.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -18162,7 +18162,7 @@
 		"JR-East.Sotobo.KazusaIchinomiya"
 	],
 	"pt": [
-		"JR-East.Keiyo.1415A.SaturdayHoliday"
+		"JR-East.Keiyo.1485A.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Soga",
@@ -18433,7 +18433,7 @@
 		"d": "20:17"
 	}, {
 		"s": "JR-East.Sotobo.Onjuku",
-		"a": "20:25",
+		"a": "20:24",
 		"d": "20:25"
 	}, {
 		"s": "JR-East.Sotobo.Katsuura",
@@ -18448,10 +18448,10 @@
 	}],
 	"v": "E257-500"
 }, {
-	"id": "JR-East.Sotobo.4985Y.SaturdayHoliday",
-	"t": "JR-East.Sotobo.4985Y",
+	"id": "JR-East.Sotobo.4915Y.SaturdayHoliday",
+	"t": "JR-East.Sotobo.4915Y",
 	"r": "JR-East.Sotobo",
-	"n": "4985Y",
+	"n": "4915Y",
 	"y": "JR-East.Local",
 	"d": "Outbound",
 	"os": [
@@ -18461,7 +18461,7 @@
 		"JR-East.Sotobo.KazusaIchinomiya"
 	],
 	"pt": [
-		"JR-East.Keiyo.1985Y.SaturdayHoliday"
+		"JR-East.Keiyo.1915Y.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Soga",
@@ -18507,11 +18507,11 @@
 		"a": "21:02"
 	}]
 }, {
-	"id": "JR-East.Sotobo.5031Y.SaturdayHoliday",
-	"t": "JR-East.Sotobo.5031Y",
+	"id": "JR-East.Sotobo.5031A.SaturdayHoliday",
+	"t": "JR-East.Sotobo.5031A",
 	"r": "JR-East.Sotobo",
-	"n": "5031Y",
-	"y": "JR-East.Local",
+	"n": "5031A",
+	"y": "JR-East.Rapid",
 	"d": "Outbound",
 	"os": [
 		"JR-East.Keiyo.Tokyo"
@@ -18520,7 +18520,7 @@
 		"JR-East.Sotobo.KazusaIchinomiya"
 	],
 	"pt": [
-		"JR-East.Keiyo.2031Y.SaturdayHoliday"
+		"JR-East.Keiyo.2031A.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Soga",
@@ -22707,11 +22707,11 @@
 		"a": "06:57"
 	}]
 }, {
-	"id": "JR-East.Sotobo.3632Y.SaturdayHoliday",
-	"t": "JR-East.Sotobo.3632Y",
+	"id": "JR-East.Sotobo.3632A.SaturdayHoliday",
+	"t": "JR-East.Sotobo.3632A",
 	"r": "JR-East.Sotobo",
-	"n": "3632Y",
-	"y": "JR-East.Local",
+	"n": "3632A",
+	"y": "JR-East.Rapid",
 	"d": "Inbound",
 	"os": [
 		"JR-East.Sotobo.KazusaIchinomiya"
@@ -22720,50 +22720,50 @@
 		"JR-East.Keiyo.Tokyo"
 	],
 	"nt": [
-		"JR-East.Keiyo.632Y.SaturdayHoliday"
+		"JR-East.Keiyo.632A.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
-		"d": "06:27"
+		"d": "06:28"
 	}, {
 		"s": "JR-East.Sotobo.Yatsumi",
-		"a": "06:30",
-		"d": "06:31"
+		"a": "06:31",
+		"d": "06:32"
 	}, {
 		"s": "JR-East.Sotobo.Mobara",
-		"a": "06:35",
-		"d": "06:35"
+		"a": "06:36",
+		"d": "06:36"
 	}, {
 		"s": "JR-East.Sotobo.ShimMobara",
-		"a": "06:38",
-		"d": "06:39"
+		"a": "06:39",
+		"d": "06:40"
 	}, {
 		"s": "JR-East.Sotobo.Honno",
-		"a": "06:42",
-		"d": "06:42"
+		"a": "06:43",
+		"d": "06:43"
 	}, {
 		"s": "JR-East.Sotobo.Nagata",
-		"a": "06:45",
-		"d": "06:45"
+		"a": "06:46",
+		"d": "06:46"
 	}, {
 		"s": "JR-East.Sotobo.Oami",
-		"a": "06:48",
-		"d": "06:48"
+		"a": "06:49",
+		"d": "06:49"
 	}, {
 		"s": "JR-East.Sotobo.Toke",
-		"a": "06:52",
-		"d": "06:52"
+		"a": "06:53",
+		"d": "06:53"
 	}, {
 		"s": "JR-East.Sotobo.Honda",
-		"a": "06:57",
-		"d": "06:57"
+		"a": "06:58",
+		"d": "06:58"
 	}, {
 		"s": "JR-East.Sotobo.Kamatori",
-		"a": "07:00",
-		"d": "07:01"
+		"a": "07:01",
+		"d": "07:02"
 	}, {
 		"s": "JR-East.Sotobo.Soga",
-		"a": "07:05"
+		"a": "07:06"
 	}]
 }, {
 	"id": "JR-East.Sotobo.3610F.SaturdayHoliday",
@@ -23354,10 +23354,10 @@
 		"a": "11:01"
 	}]
 }, {
-	"id": "JR-East.Sotobo.4034A.SaturdayHoliday",
-	"t": "JR-East.Sotobo.4034A",
+	"id": "JR-East.Sotobo.4022A.SaturdayHoliday",
+	"t": "JR-East.Sotobo.4022A",
 	"r": "JR-East.Sotobo",
-	"n": "4034A",
+	"n": "4022A",
 	"y": "JR-East.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -23367,7 +23367,7 @@
 		"JR-East.Keiyo.Tokyo"
 	],
 	"nt": [
-		"JR-East.Keiyo.1034A.SaturdayHoliday"
+		"JR-East.Keiyo.1022A.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
@@ -23651,10 +23651,10 @@
 		"a": "13:09"
 	}]
 }, {
-	"id": "JR-East.Sotobo.4220A.SaturdayHoliday",
-	"t": "JR-East.Sotobo.4220A",
+	"id": "JR-East.Sotobo.4216A.SaturdayHoliday",
+	"t": "JR-East.Sotobo.4216A",
 	"r": "JR-East.Sotobo",
-	"n": "4220A",
+	"n": "4216A",
 	"y": "JR-East.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -23664,7 +23664,7 @@
 		"JR-East.Keiyo.Tokyo"
 	],
 	"nt": [
-		"JR-East.Keiyo.1220A.SaturdayHoliday"
+		"JR-East.Keiyo.1216A.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
@@ -24020,10 +24020,10 @@
 		"a": "16:04"
 	}]
 }, {
-	"id": "JR-East.Sotobo.4514Y.SaturdayHoliday",
-	"t": "JR-East.Sotobo.4514Y",
+	"id": "JR-East.Sotobo.4584Y.SaturdayHoliday",
+	"t": "JR-East.Sotobo.4584Y",
 	"r": "JR-East.Sotobo",
-	"n": "4514Y",
+	"n": "4584Y",
 	"y": "JR-East.Local",
 	"d": "Inbound",
 	"os": [
@@ -24033,7 +24033,7 @@
 		"JR-East.Keiyo.Tokyo"
 	],
 	"nt": [
-		"JR-East.Keiyo.1514Y.SaturdayHoliday"
+		"JR-East.Keiyo.1584Y.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
@@ -24905,10 +24905,10 @@
 		"a": "21:45"
 	}]
 }, {
-	"id": "JR-East.Sotobo.5184Y.SaturdayHoliday",
-	"t": "JR-East.Sotobo.5184Y",
+	"id": "JR-East.Sotobo.5114Y.SaturdayHoliday",
+	"t": "JR-East.Sotobo.5114Y",
 	"r": "JR-East.Sotobo",
-	"n": "5184Y",
+	"n": "5114Y",
 	"y": "JR-East.Local",
 	"d": "Inbound",
 	"os": [
@@ -24918,7 +24918,7 @@
 		"JR-East.Keiyo.Tokyo"
 	],
 	"nt": [
-		"JR-East.Keiyo.2184Y.SaturdayHoliday"
+		"JR-East.Keiyo.2114Y.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.KazusaIchinomiya",
@@ -25669,30 +25669,30 @@
 	],
 	"tt": [{
 		"s": "JR-East.Sotobo.Oami",
-		"d": "06:52"
+		"d": "06:53"
 	}, {
 		"s": "JR-East.Sotobo.Toke",
-		"a": "06:56",
-		"d": "06:57"
+		"a": "06:58",
+		"d": "06:58"
 	}, {
 		"s": "JR-East.Sotobo.Honda",
-		"a": "07:02",
+		"a": "07:03",
 		"d": "07:03"
 	}, {
 		"s": "JR-East.Sotobo.Kamatori",
-		"a": "07:06",
+		"a": "07:07",
 		"d": "07:07"
 	}, {
 		"s": "JR-East.Sotobo.Soga",
 		"a": "07:12",
-		"d": "07:12"
+		"d": "07:13"
 	}, {
 		"s": "JR-East.Sotobo.HonChiba",
-		"a": "07:15",
-		"d": "07:15"
+		"a": "07:16",
+		"d": "07:16"
 	}, {
 		"s": "JR-East.Sotobo.Chiba",
-		"a": "07:18"
+		"a": "07:19"
 	}]
 }, {
 	"id": "JR-East.Sotobo.5684Y.SaturdayHoliday",
