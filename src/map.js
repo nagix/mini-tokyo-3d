@@ -12,7 +12,7 @@ import * as helpersGeojson from './helpers/helpers-geojson';
 import * as helpersMapbox from './helpers/helpers-mapbox';
 import {GeoJsonLayer, ThreeLayer, Tile3DLayer, TrafficLayer} from './layers';
 import {loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData} from './loader';
-import {AboutPanel, LayerPanel, SearchPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
+import {AboutPanel, LayerPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
 
 const RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
@@ -564,7 +564,8 @@ export default class extends Evented {
 
     initData(data) {
         const me = this,
-            featureLookup = me.featureLookup = {};
+            featureLookup = me.featureLookup = {},
+            stationGroupLookup = me.stationGroupLookup = {};
 
         Object.assign(me, data);
 
@@ -577,13 +578,37 @@ export default class extends Evented {
 
             if (properties.type === 1) {
                 // stations
-                featureLookup[properties.id] = feature;
+                featureLookup[`${properties.group}.${properties.zoom}`] = feature;
+                if (!stationGroupLookup[properties.group]) {
+                    stationGroupLookup[properties.group] = {
+                        id: properties.group,
+                        type: 'station',
+                        stations: properties.ids,
+                        layer: properties.altitude === 0 ? 'ground' : 'underground'
+                    };
+                }
             } else if (!(properties.altitude <= 0)) {
                 // airways and railways (no railway sections)
                 featureLookup[properties.id] = feature;
                 helpersGeojson.updateDistances(feature);
             }
         });
+
+        for (const {id, group, alternate} of me.stationData) {
+            if (alternate) {
+                for (const layer of ['og', 'ug']) {
+                    const key = group.replace(/.g$/, layer),
+                        stationGroup = stationGroupLookup[key];
+
+                    if (stationGroup) {
+                        if (!stationGroup.hidden) {
+                            stationGroup.hidden = [];
+                        }
+                        stationGroup.hidden.push(id);
+                    }
+                }
+            }
+        }
 
         me.lastTimetableRefresh = me.clock.getTime('03:00');
         me.updateTimetableData(me.timetableData);
@@ -880,12 +905,57 @@ export default class extends Evented {
             }
         }
 
+        const searchBox = helpers.createElement('input', {
+            id: 'search-box',
+            className: 'disabled',
+            type: 'text',
+            list: 'stations',
+            placeholder: me.dict['station-name']
+        }, container);
+        const flyToStation = () => {
+            const station = me.stationTitleLookup[searchBox.value.toUpperCase()];
+
+            if (station && station.coord) {
+                me.markObject();
+                me.trackObject(me.stationGroupLookup[station.group]);
+                return true;
+            }
+        };
+        searchBox.addEventListener('change', () => {
+            if (document.activeElement === searchBox && flyToStation()) {
+                searchBox.blur();
+            }
+        });
+
+        // Work around for touch device soft keyboard
+        searchBox.addEventListener('keydown', () => {
+            if (me.touchDevice && event.key === 'Enter' && flyToStation()) {
+                searchBox.blur();
+            }
+        });
+
         if (me.searchControl) {
             const control = new MapboxGLButtonControl([{
                 className: 'mapboxgl-ctrl-search',
-                title: dict['enter-search'],
+                title: dict['search'],
                 eventHandler() {
-                    me._setSearchMode(me.searchMode === 'none' ? 'edit' : 'none');
+                    if (!this.onmousedown) {
+                        const listener = () => {
+                            this.classList.remove('expanded');
+                            searchBox.classList.add('disabled');
+                        };
+
+                        searchBox.addEventListener('blur', listener);
+                        this.onmousedown = () => searchBox.removeEventListener('blur', listener);
+                        this.onmouseup = () => searchBox.addEventListener('blur', listener);
+                    }
+                    searchBox.classList.toggle('disabled');
+                    if (this.classList.toggle('expanded')) {
+                        searchBox.value = '';
+                        searchBox.focus();
+                    } else {
+                        flyToStation();
+                    }
                 }
             }]);
             map.addControl(control);
@@ -973,18 +1043,6 @@ export default class extends Evented {
 
             control.on('change', me.onClockChange.bind(me));
             map.addControl(control);
-        }
-
-        for (const zoom of [13, 14, 15, 16, 17, 18]) {
-            map.on('mouseenter', `stations-og-${zoom}`, e => {
-                me.pickedFeature = e.features[0];
-            });
-            map.on('click', `stations-og-${zoom}`, e => {
-                me.pickedFeature = e.features[0];
-            });
-            map.on('mouseleave', `stations-og-${zoom}`, () => {
-                delete me.pickedFeature;
-            });
         }
 
         map.on('mousemove', e => {
@@ -1107,6 +1165,9 @@ export default class extends Evented {
                         } else {
                             me.refreshTrains();
                             me.refreshFlights();
+                        }
+                        if (isStation(me.trackedObject)) {
+                            me.detailPanel.updateContent();
                         }
                     }
                     me.lastTrainRefresh = now - minDelay;
@@ -1845,16 +1906,19 @@ export default class extends Evented {
         }).join(me.dict['and']);
     }
 
+    getLocalizedRailDirectionTitle(direction) {
+        const me = this,
+            title = (me.railDirectionLookup[direction] || {}).title || {};
+
+        return title[me.lang] || title.en;
+    }
+
     getLocalizedDestinationTitle(destination, direction) {
         const me = this;
 
-        if (destination) {
-            return me.dict['for'].replace('$1', me.getLocalizedStationTitle(destination));
-        }
-
-        const title = (me.railDirectionLookup[direction] || {}).title || {};
-
-        return title[me.lang] || title.en;
+        return destination ?
+            me.dict['for'].replace('$1', me.getLocalizedStationTitle(destination)) :
+            me.getLocalizedRailDirectionTitle(direction);
     }
 
     getLocalizedOperatorTitle(operator) {
@@ -2492,26 +2556,15 @@ export default class extends Evented {
 
     _setSearchMode(mode) {
         const me = this;
-        let searchPanel = me.searchPanel;
 
-        me.updateSearchButton(mode);
-        if (mode === 'none') {
-            if (searchPanel) {
-                searchPanel.remove();
-                delete me.searchPanel;
+        if (me.searchMode !== mode) {
+            me.searchMode = mode;
+            me.stopAll();
+            for (const plugin of me.plugins) {
+                plugin.setVisibility(mode === 'none');
             }
-        } else {
-            if (!searchPanel) {
-                searchPanel = me.searchPanel = new SearchPanel();
-                searchPanel.addTo(me);
-            }
+            me.refreshMap();
         }
-        me.searchMode = mode;
-        me.stopAll();
-        for (const plugin of me.plugins) {
-            plugin.setVisibility(mode === 'none');
-        }
-        me.refreshMap();
     }
 
     _setViewMode(mode) {
@@ -2601,6 +2654,7 @@ export default class extends Evented {
 
     pickObject(point) {
         const me = this,
+            {map, layerZoom} = me,
             modes = ['ground', 'underground'];
         let object;
 
@@ -2613,12 +2667,12 @@ export default class extends Evented {
                 return object;
             }
             if (mode === 'ground') {
-                object = me.pickedFeature;
+                object = map.queryRenderedFeatures(point, {layers: [`stations-og-${layerZoom}`]})[0];
             } else {
-                object = pickObject(me.map, `stations-ug-${me.layerZoom}`, point);
+                object = pickObject(map, `stations-ug-${layerZoom}`, point);
             }
             if (object) {
-                return object;
+                return me.stationGroupLookup[object.properties.group];
             }
         }
     }
@@ -2672,29 +2726,28 @@ export default class extends Evented {
 
     trackObject(object) {
         const me = this,
-            {searchMode, searchPanel, lang, map, trackedObject, lastCameraParams, sharePanel, detailPanel} = me;
+            {searchMode, lang, map, trackedObject, lastCameraParams, sharePanel, detailPanel} = me;
 
-        if (searchMode !== 'none') {
-            if (searchMode === 'edit' && searchPanel && isStation(object)) {
-                const ids = helpersGeojson.getIds(object),
-                    station = me.stationLookup[ids[0]],
-                    utitle = station.utitle && station.utitle[lang],
-                    title = utitle || helpers.normalize(station.title[lang] || station.title.en);
+        if (searchMode === 'edit' && detailPanel && isStation(object)) {
+            const station = me.stationLookup[object.stations[0]],
+                utitle = station.utitle && station.utitle[lang],
+                title = utitle || helpers.normalize(station.title[lang] || station.title.en);
 
-                searchPanel.fillStationName(title);
-            }
+            detailPanel.fillStationName(title);
             return;
         }
 
         // Remember the camera params to restore them after the object is deselected
         if (!trackedObject && object) {
             lastCameraParams.viewMode = me.getViewMode();
+            delete lastCameraParams.center;
             lastCameraParams.zoom = map.getZoom();
             lastCameraParams.bearing = map.getBearing();
             lastCameraParams.pitch = map.getPitch();
         } else if (trackedObject && !object) {
             me._setViewMode(lastCameraParams.viewMode);
             map.flyTo({
+                center: lastCameraParams.center || map.getCenter(),
                 zoom: lastCameraParams.zoom,
                 bearing: lastCameraParams.bearing,
                 pitch: lastCameraParams.pitch
@@ -2711,6 +2764,8 @@ export default class extends Evented {
             } else if (isStation(trackedObject)) {
                 me.removeStationOutline('stations-selected');
                 me.fire({type: 'deselection'});
+                me._setSearchMode('none');
+                me.hideStationExits();
             } else {
                 me.fire(Object.assign({type: 'deselection'}, trackedObject));
             }
@@ -2724,15 +2779,6 @@ export default class extends Evented {
             if (detailPanel) {
                 detailPanel.remove();
                 delete me.detailPanel;
-            }
-            for (const popup of me.exitPopups) {
-                if (popup instanceof AnimatedPopup) {
-                    popup.remove();
-                } else if (typeof popup === 'function') {
-                    map.off('moveend', popup);
-                } else {
-                    clearTimeout(popup);
-                }
             }
         }
 
@@ -2761,61 +2807,104 @@ export default class extends Evented {
                 me.trafficLayer.updateObject(object);
                 me.fire({type: 'selection', selection: _object.t || _object.id});
             } else if (isStation(object)) {
-                const altitude = helpersGeojson.getAltitude(object),
-                    ids = helpersGeojson.getIds(object),
-                    stations = ids.map(id => me.stationLookup[id]),
-                    exits = [].concat(...stations.map(station => station.exit || []));
+                const stations = object.stations.concat(object.hidden || []).map(id => me.stationLookup[id]),
+                    coords = stations.map(station => station.coord),
+                    center = lastCameraParams.center = helpersMapbox.getBounds(coords).getCenter();
 
-                if (exits.length > 0) {
-                    const coords = [];
-
-                    me.exitPopups = exits.map((id, index) => {
-                        const {coord, facilities} = me.poiLookup[id],
-                            icons = (facilities || []).map(facility => `<span class="exit-${facility}-small-icon"></span>`).join(''),
-                            listener = () => {
-                                me.exitPopups[index] = setTimeout(() => {
-                                    const popup = new AnimatedPopup({
-                                        className: 'popup-station',
-                                        closeButton: false,
-                                        closeOnClick: false
-                                    });
-
-                                    popup.setLngLat(coord)
-                                        .setHTML(icons + me.getLocalizedPOITitle(id))
-                                        .addTo(map)
-                                        .getElement().id = `exit-${index}`;
-
-                                    me.exitPopups[index] = popup;
-                                }, index / exits.length * 1000);
-                            };
-
-                        map.once('moveend', listener);
-                        coords.push(coord);
-
-                        return listener;
-                    });
-
-                    me._setViewMode(altitude < 0 ? 'underground' : 'ground');
-                    map.fitBounds(helpersMapbox.getBounds(coords), {
-                        bearing: map.getBearing(),
-                        pitch: map.getPitch(),
-                        offset: [0, -map.transform.height / 12],
-                        padding: {top: 20, bottom: 20, left: 10, right: 50},
-                        maxZoom: 18
-                    });
-
-                    me.detailPanel = new StationPanel({object: stations});
-                    me.detailPanel.addTo(me);
-
-                    me.addStationOutline(object, 'stations-selected');
-                    me.fire({type: 'selection'});
+                if (object.layer === 'ground') {
+                    me._setViewMode('ground');
+                } else if (!map.getCenter().distanceTo(center)) {
+                    me._setViewMode('underground');
                 } else {
-                    delete me.trackedObject;
+                    let prevZoom = map.getZoom();
+                    const initialZoom = prevZoom,
+                        onZoom = () => {
+                            const zoom = map.getZoom();
+
+                            if (zoom < prevZoom && zoom < initialZoom - 0.5) {
+                                me._setViewMode('ground');
+                            } else if (zoom > prevZoom && zoom > 15) {
+                                me._setViewMode('underground');
+                            }
+                            prevZoom = zoom;
+                        };
+
+                    map.on('zoom', onZoom);
+                    map.once('zoomend', () => {
+                        me._setViewMode('underground');
+                        map.off('zoom', onZoom);
+                    });
                 }
+                map.flyTo({center, zoom: 15.5});
+
+                me.detailPanel = new StationPanel({object: stations});
+                me.detailPanel.addTo(me);
+
+                me.addStationOutline(object, 'stations-selected');
+                me.fire({type: 'selection'});
             } else {
                 me.fire(Object.assign({type: 'selection'}, object));
             }
         }
+    }
+
+    showStationExits(stations) {
+        const me = this,
+            map = me.map,
+            exits = [].concat(...stations.map(station => station.exit || []));
+
+        if (exits.length > 0) {
+            const coords = [];
+
+            me.exitPopups = exits.map((id, index) => {
+                const {coord, facilities} = me.poiLookup[id],
+                    icons = (facilities || []).map(facility => `<span class="exit-${facility}-small-icon"></span>`).join(''),
+                    listener = () => {
+                        me.exitPopups[index] = setTimeout(() => {
+                            const popup = new AnimatedPopup({
+                                className: 'popup-station',
+                                closeButton: false,
+                                closeOnClick: false
+                            });
+
+                            popup.setLngLat(coord)
+                                .setHTML(icons + me.getLocalizedPOITitle(id))
+                                .addTo(map)
+                                .getElement().id = `exit-${index}`;
+
+                            me.exitPopups[index] = popup;
+                        }, index / exits.length * 1000);
+                    };
+
+                map.once('moveend', listener);
+                coords.push(coord);
+
+                return listener;
+            });
+
+            map.fitBounds(helpersMapbox.getBounds(coords), {
+                bearing: map.getBearing(),
+                pitch: map.getPitch(),
+                offset: [0, -map.transform.height / 12],
+                padding: {top: 20, bottom: 20, left: 10, right: 50},
+                maxZoom: 18
+            });
+        }
+    }
+
+    hideStationExits() {
+        const me = this;
+
+        for (const popup of me.exitPopups) {
+            if (popup instanceof AnimatedPopup) {
+                popup.remove();
+            } else if (typeof popup === 'function') {
+                me.map.off('moveend', popup);
+            } else {
+                clearTimeout(popup);
+            }
+        }
+        me.exitPopups = [];
     }
 
     updateBaseZoom() {
@@ -2843,13 +2932,13 @@ export default class extends Evented {
                 popup.setHTML(markedObject.object.description);
             }
         } else {
-            const object = me.featureLookup[markedObject.properties.id.replace(/\d+$/, me.layerZoom)],
+            const object = me.featureLookup[`${markedObject.id}.${me.layerZoom}`],
                 coord = helpersGeojson.getCenterCoord(object),
                 altitude = helpersGeojson.getAltitude(object);
 
             popup.setLngLat(me.adjustCoord(coord, altitude));
             if (setHTML) {
-                const ids = helpersGeojson.getIds(markedObject),
+                const ids = markedObject.stations,
                     railwayColors = {};
 
                 for (const id of ids) {
@@ -2935,11 +3024,11 @@ export default class extends Evented {
 
     addStationOutline(object, name) {
         const me = this,
-            ids = helpersGeojson.getIds(object);
+            id = object.stations[0];
 
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
             helpersMapbox.setLayerProps(me.map, `${name}-${zoom}`, {
-                data: helpersGeojson.featureFilter(me.featureCollection, p => p.zoom === zoom && p.ids && p.ids[0] === ids[0]),
+                data: helpersGeojson.featureFilter(me.featureCollection, p => p.zoom === zoom && p.ids && p.ids[0] === id),
                 opacity: 1,
                 visible: true
             });
@@ -3273,7 +3362,7 @@ function isTrainOrFlight(object) {
 }
 
 function isStation(object) {
-    return helpersGeojson.isFeature(object);
+    return object && object.type === 'station';
 }
 
 function isEqualObject(a, b) {

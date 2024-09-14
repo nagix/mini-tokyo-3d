@@ -41,6 +41,7 @@
 		"JR-East.Yamanote.Osaki"
 	],
 	"ascending": "OuterLoop",
+	"descending": "InnerLoop",
 	"color": "#80C342",
 	"carComposition": 11
 }, {
@@ -79,6 +80,7 @@
 		"JR-East.ChuoRapid.Takao"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F15A22",
 	"carComposition": 10,
 	"dynamic": true
@@ -104,6 +106,7 @@
 		"JR-East.Chuo.Otsuki"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#0074BE",
 	"carComposition": 10
 }, {
@@ -143,6 +146,7 @@
 		"JR-East.Ome.OkuTama"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F15A22",
 	"carComposition": 10,
 	"dynamic": true
@@ -165,6 +169,7 @@
 		"JR-East.Itsukaichi.MusashiItsukaichi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F15A22",
 	"carComposition": 6,
 	"dynamic": true
@@ -219,6 +224,7 @@
 		"JR-East.ChuoSobuLocal.Mitaka"
 	],
 	"ascending": "Westbound",
+	"descending": "Eastbound",
 	"color": "#FFD400",
 	"carComposition": 10,
 	"dynamic": true
@@ -255,6 +261,7 @@
 		"JR-East.Tokaido.Atami"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F68B1E",
 	"carComposition": 15,
 	"dynamic": true
@@ -294,6 +301,7 @@
 		"JR-East.Utsunomiya.Utsunomiya"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F68B1E",
 	"carComposition": 15,
 	"dynamic": true
@@ -334,6 +342,7 @@
 		"JR-East.Takasaki.Takasaki"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F68B1E",
 	"carComposition": 15,
 	"dynamic": true
@@ -396,6 +405,7 @@
 		"JR-East.KeihinTohokuNegishi.Ofuna"
 	],
 	"ascending": "Southbound",
+	"descending": "Northbound",
 	"color": "#00B2E5",
 	"carComposition": 10,
 	"dynamic": true
@@ -424,6 +434,7 @@
 		"JR-East.JobanRapid.Toride"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#00B261",
 	"carComposition": 15,
 	"dynamic": true
@@ -453,6 +464,7 @@
 		"JR-East.JobanLocal.Toride"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#A8A39D",
 	"carComposition": 10,
 	"dynamic": true
@@ -488,6 +500,7 @@
 		"JR-East.Joban.Mito"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#007AC1",
 	"carComposition": 15,
 	"dynamic": true
@@ -521,6 +534,7 @@
 		"JR-East.SobuRapid.NaritaAirportTerminal1"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#007AC1",
 	"carComposition": 15,
 	"dynamic": true
@@ -558,6 +572,7 @@
 		"JR-East.Sobu.Choshi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#A8A39D",
 	"carComposition": 15,
 	"dynamic": true
@@ -590,6 +605,7 @@
 		"JR-East.Narita.Choshi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#00B261",
 	"carComposition": 15,
 	"dynamic": true
@@ -608,6 +624,7 @@
 		"JR-East.NaritaAirportBranch.NaritaAirportTerminal1"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#00B261",
 	"carComposition": 15,
 	"dynamic": true
@@ -633,6 +650,7 @@
 		"JR-East.NaritaAbikoBranch.Narita"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#00B261",
 	"carComposition": 10,
 	"dynamic": true
@@ -680,6 +698,7 @@
 		"JR-East.Uchibo.AwaKamogawa"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#DCAF27",
 	"carComposition": 15,
 	"dynamic": true
@@ -722,6 +741,7 @@
 		"JR-East.Sotobo.AwaKamogawa"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#008848",
 	"carComposition": 15,
 	"dynamic": true
@@ -756,6 +776,7 @@
 		"JR-East.Yokosuka.Kurihama"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#007AC1",
 	"carComposition": 15,
 	"dynamic": true
@@ -789,6 +810,7 @@
 		"JR-East.Keiyo.Soga"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#C9252F",
 	"carComposition": 10,
 	"dynamic": true
@@ -808,7 +830,8 @@
 		"JR-East.KeiyoKoyaBranch.Makuharitoyosuna",
 		"JR-East.KeiyoKoyaBranch.Kaihimmakuhari"
 	],
-	"ascending": "Outbound",
+	"ascending": "JR-East.Kaihimmakuhari",
+	"descending": "JR-East.NishiFunabashi",
 	"color": "#F15A22",
 	"carComposition": 8
 }, {
@@ -832,7 +855,8 @@
 		"JR-East.KeiyoFutamataBranch.Ichikawashiohama",
 		"JR-East.KeiyoFutamataBranch.NishiFunabashi"
 	],
-	"ascending": "Outbound",
+	"ascending": "JR-East.NishiFunabashi",
+	"descending": "JR-East.Tokyo",
 	"color": "#F15A22",
 	"carComposition": 8
 }, {
@@ -871,6 +895,7 @@
 		"JR-East.SaikyoKawagoe.Kawagoe"
 	],
 	"ascending": "Northbound",
+	"descending": "Southbound",
 	"color": "#00B48D",
 	"carComposition": 10,
 	"dynamic": true
@@ -902,6 +927,7 @@
 		"JR-East.ShonanShinjuku.Omiya"
 	],
 	"ascending": "Northbound",
+	"descending": "Southbound",
 	"color": "#E31F26",
 	"carComposition": 15,
 	"dynamic": true
@@ -920,6 +946,7 @@
 		"JR-East.YamanoteFreight.Shibuya"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#007AC1",
 	"carComposition": 6
 }, {
@@ -938,6 +965,7 @@
 		"JR-East.SotetsuDirect.HazawaYokohamaKokudai"
 	],
 	"ascending": "Southbound",
+	"descending": "Northbound",
 	"color": "#00B48D",
 	"carComposition": 10,
 	"dynamic": true
@@ -955,6 +983,7 @@
 		"JR-East.OsakiBranch.Fujisawa"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F68B1E",
 	"carComposition": 9
 }, {
@@ -971,6 +1000,7 @@
 		"JR-East.TokaidoFreight.Fujisawa"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#007AC1",
 	"carComposition": 14
 }, {
@@ -995,6 +1025,7 @@
 		"JR-East.Tsurumi.Ogimachi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FFD400",
 	"carComposition": 3
 }, {
@@ -1012,6 +1043,7 @@
 		"JR-East.TsurumiUmiShibauraBranch.UmiShibaura"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FFD400",
 	"carComposition": 3
 }, {
@@ -1028,6 +1060,7 @@
 		"JR-East.TsurumiOkawaBranch.Okawa"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FFD400",
 	"carComposition": 3
 }, {
@@ -1068,6 +1101,7 @@
 		"JR-East.Nambu.Tachikawa"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FFD400",
 	"carComposition": 6,
 	"dynamic": true
@@ -1088,6 +1122,7 @@
 		"JR-East.NambuBranch.Shitte"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FFD400",
 	"carComposition": 2
 }, {
@@ -1128,6 +1163,7 @@
 		"JR-East.Musashino.NishiFunabashi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F15A22",
 	"carComposition": 8,
 	"dynamic": true
@@ -1149,6 +1185,7 @@
 		"JR-East.MusashinoKunitachiBranch.Hachioji"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F15A22",
 	"carComposition": 8
 }, {
@@ -1165,6 +1202,7 @@
 		"JR-East.MusashinoOmiyaBranch.Omiya"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F15A22",
 	"carComposition": 8
 }, {
@@ -1181,6 +1219,7 @@
 		"JR-East.MusashinoNishiUrawaBranch.Omiya"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F15A22",
 	"carComposition": 8
 }, {
@@ -1215,6 +1254,7 @@
 		"JR-East.Yokohama.Hachioji"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#80C342",
 	"carComposition": 8,
 	"dynamic": true
@@ -1254,6 +1294,7 @@
 		"JR-East.Hachiko.Takasaki"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#A8A39D",
 	"carComposition": 4,
 	"dynamic": true
@@ -1275,6 +1316,7 @@
 		"JR-East.Kawagoe.Komagawa"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#A8A39D",
 	"carComposition": 4,
 	"dynamic": true
@@ -1308,6 +1350,7 @@
 		"JR-East.Sagami.Hashimoto"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#009793",
 	"carComposition": 4,
 	"dynamic": true
@@ -1330,6 +1373,7 @@
 		"JR-East.Kashima.KashimaSoccerStadium"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#C56E2E",
 	"carComposition": 4,
 	"dynamic": true
@@ -1350,6 +1394,7 @@
 		"JR-East.Togane.Naruto"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F15A22",
 	"carComposition": 6,
 	"dynamic": true
@@ -1379,6 +1424,7 @@
 		"JR-East.Kururi.KazusaKameyama"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#00B5AD",
 	"carComposition": 4,
 	"dynamic": true
@@ -1400,6 +1446,7 @@
 		"JR-East.Ito.Ito"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F68B1E",
 	"carComposition": 10,
 	"dynamic": true
@@ -1423,6 +1470,7 @@
 		"TWR.Rinkai.Osaki"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"altitude": -1,
 	"color": "#00418E",
 	"carComposition": 10
@@ -1457,6 +1505,7 @@
 		"TokyoMetro.Ginza.Asakusa"
 	],
 	"ascending": "TokyoMetro.Asakusa",
+	"descending": "TokyoMetro.Shibuya",
 	"altitude": -1,
 	"color": "#FF9500",
 	"carComposition": 6
@@ -1497,6 +1546,7 @@
 		"TokyoMetro.Marunouchi.Ikebukuro"
 	],
 	"ascending": "TokyoMetro.Ikebukuro",
+	"descending": "TokyoMetro.Ogikubo",
 	"altitude": -1,
 	"color": "#F62E36",
 	"carComposition": 6
@@ -1516,6 +1566,7 @@
 		"TokyoMetro.MarunouchiBranch.NakanoSakaue"
 	],
 	"ascending": "TokyoMetro.NakanoSakaue",
+	"descending": "TokyoMetro.Honancho",
 	"altitude": -1,
 	"color": "#F62E36",
 	"carComposition": 6
@@ -1554,6 +1605,7 @@
 		"TokyoMetro.Hibiya.ShinKoshigaya"
 	],
 	"ascending": "TokyoMetro.KitaSenju",
+	"descending": "TokyoMetro.NakaMeguro",
 	"altitude": -1,
 	"color": "#B5B5AC",
 	"carComposition": 7
@@ -1592,6 +1644,7 @@
 		"TokyoMetro.Tozai.NishiFunabashi"
 	],
 	"ascending": "TokyoMetro.NishiFunabashi",
+	"descending": "TokyoMetro.Nakano",
 	"altitude": -1,
 	"color": "#009BBF",
 	"carComposition": 10
@@ -1629,6 +1682,7 @@
 		"TokyoMetro.Chiyoda.KitaAyase"
 	],
 	"ascending": "TokyoMetro.KitaAyase",
+	"descending": "TokyoMetro.YoyogiUehara",
 	"altitude": -1,
 	"color": "#00BB85",
 	"carComposition": 10
@@ -1668,6 +1722,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"ascending": "TokyoMetro.ShinKiba",
+	"descending": "TokyoMetro.Wakoshi",
 	"altitude": -1,
 	"color": "#C1A470",
 	"carComposition": 10
@@ -1697,6 +1752,7 @@
 		"TokyoMetro.Hanzomon.Oshiage"
 	],
 	"ascending": "TokyoMetro.Oshiage",
+	"descending": "TokyoMetro.Shibuya",
 	"altitude": -1,
 	"color": "#8F76D6",
 	"carComposition": 10
@@ -1731,6 +1787,7 @@
 		"TokyoMetro.Namboku.AkabaneIwabuchi"
 	],
 	"ascending": "TokyoMetro.AkabaneIwabuchi",
+	"descending": "TokyoMetro.Meguro",
 	"altitude": -1,
 	"color": "#00AC9B",
 	"carComposition": 8
@@ -1762,6 +1819,7 @@
 		"TokyoMetro.Fukutoshin.Shibuya"
 	],
 	"ascending": "TokyoMetro.Shibuya",
+	"descending": "TokyoMetro.Wakoshi",
 	"altitude": -1,
 	"color": "#9C5E31",
 	"carComposition": 10
@@ -1797,6 +1855,7 @@
 		"Toei.Asakusa.Oshiage"
 	],
 	"ascending": "Northbound",
+	"descending": "Southbound",
 	"altitude": -1,
 	"color": "#DC435F",
 	"carComposition": 8,
@@ -1840,6 +1899,7 @@
 		"Toei.Mita.NishiTakashimadaira"
 	],
 	"ascending": "Northbound",
+	"descending": "Southbound",
 	"altitude": -1,
 	"color": "#006AB8",
 	"carComposition": 8,
@@ -1877,6 +1937,7 @@
 		"Toei.Shinjuku.Motoyawata"
 	],
 	"ascending": "Eastbound",
+	"descending": "Westbound",
 	"altitude": -1,
 	"color": "#B0BF1E",
 	"carComposition": 10,
@@ -1932,6 +1993,7 @@
 		"Toei.Oedo.Hikarigaoka"
 	],
 	"ascending": "OuterLoop",
+	"descending": "InnerLoop",
 	"altitude": -1,
 	"color": "#CE045B",
 	"carComposition": 8,
@@ -1961,6 +2023,7 @@
 		"Toei.NipporiToneri.MinumadaiShinsuikoen"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#227324",
 	"carComposition": 5
 }, {
@@ -2005,6 +2068,7 @@
 		"Toei.Arakawa.Waseda"
 	],
 	"ascending": "Toei.Waseda",
+	"descending": "Toei.Minowabashi",
 	"color": "#EE86A7",
 	"carComposition": 1,
 	"dynamic": true
@@ -2052,6 +2116,7 @@
 		"YokohamaMunicipal.Blue.Azamino"
 	],
 	"ascending": "Inbound",
+	"descending": "Outbound",
 	"altitude": -1,
 	"color": "#093F86",
 	"carComposition": 6,
@@ -2078,6 +2143,7 @@
 		"YokohamaMunicipal.Green.Hiyoshi"
 	],
 	"ascending": "Inbound",
+	"descending": "Outbound",
 	"altitude": -1,
 	"color": "#00A15A",
 	"carComposition": 4,
@@ -2098,6 +2164,7 @@
 		"Keio.KeioNew.Sasazuka"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"altitude": -1,
 	"color": "#DD0077",
 	"carComposition": 10,
@@ -2146,6 +2213,7 @@
 		"Keio.Keio.KeioHachioji"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#DD0077",
 	"carComposition": 10,
 	"dynamic": true
@@ -2174,6 +2242,7 @@
 		"Keio.Sagamihara.Hashimoto"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#DD0077",
 	"carComposition": 10,
 	"dynamic": true
@@ -2191,6 +2260,7 @@
 		"Keio.Keibajo.FuchukeibaSeimommae"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#DD0077",
 	"carComposition": 2,
 	"dynamic": true
@@ -2208,6 +2278,7 @@
 		"Keio.Dobutsuen.TamaDobutsukoen"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#DD0077",
 	"carComposition": 4,
 	"dynamic": true
@@ -2231,6 +2302,7 @@
 		"Keio.Takao.Takaosanguchi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#DD0077",
 	"carComposition": 10,
 	"dynamic": true
@@ -2263,6 +2335,7 @@
 		"Keio.Inokashira.Kichijoji"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#000088",
 	"carComposition": 5,
 	"dynamic": true
@@ -2328,6 +2401,7 @@
 		"Keikyu.Main.Uraga"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#33C2E4",
 	"carComposition": 8
 }, {
@@ -2350,6 +2424,7 @@
 		"Keikyu.Airport.HanedaAirportTerminal1and2"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#33C2E4",
 	"carComposition": 8
 }, {
@@ -2371,6 +2446,7 @@
 		"Keikyu.Daishi.Kojimashinden"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#33C2E4",
 	"carComposition": 4
 }, {
@@ -2389,6 +2465,7 @@
 		"Keikyu.Zushi.ZushiHayama"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#33C2E4",
 	"carComposition": 8
 }, {
@@ -2413,6 +2490,7 @@
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#33C2E4",
 	"carComposition": 8
 }, {
@@ -2469,6 +2547,7 @@
 		"Keisei.Main.NaritaAirportTerminal1"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#005AAA",
 	"carComposition": 6,
 	"dynamic": true
@@ -2486,6 +2565,7 @@
 		"Keisei.HigashiNarita.HigashiNarita"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#005AAA",
 	"carComposition": 6,
 	"dynamic": true
@@ -2507,6 +2587,7 @@
 		"Keisei.Oshiage.Aoto"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#005AAA",
 	"carComposition": 8,
 	"dynamic": true
@@ -2532,6 +2613,7 @@
 		"Keisei.Chiba.ChibaChuo"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#005AAA",
 	"carComposition": 6,
 	"dynamic": true
@@ -2553,6 +2635,7 @@
 		"Keisei.Chihara.Chiharadai"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#005AAA",
 	"carComposition": 6,
 	"dynamic": true
@@ -2579,6 +2662,7 @@
 		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF8620",
 	"carComposition": 8,
 	"dynamic": true
@@ -2597,6 +2681,7 @@
 		"Keisei.Kanamachi.KeiseiKanamachi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#005AAA",
 	"carComposition": 4,
 	"dynamic": true
@@ -2627,6 +2712,7 @@
 		"Hokuso.Hokuso.ImbaNihonIdai"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#00BDF2",
 	"carComposition": 8,
 	"dynamic": true
@@ -2644,6 +2730,7 @@
 		"Shibayama.Shibayama.ShibayamaChiyoda"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#00A650",
 	"carComposition": 6,
 	"dynamic": true
@@ -2688,6 +2775,7 @@
 		"Tobu.TobuSkytree.TobuDobutsuKoen"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#0F6CC3",
 	"carComposition": 6
 }, {
@@ -2704,6 +2792,7 @@
 		"Tobu.TobuSkytreeBranch.Hikifune"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#0F6CC3",
 	"carComposition": 10
 }, {
@@ -2744,6 +2833,7 @@
 		"Tobu.Isesaki.Isesaki"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF0000",
 	"carComposition": 10
 }, {
@@ -2768,6 +2858,7 @@
 		"Tobu.Sano.Kuzu"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF0000",
 	"carComposition": 3
 }, {
@@ -2789,6 +2880,7 @@
 		"Tobu.Koizumi.NishiKoizumi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF0000",
 	"carComposition": 2
 }, {
@@ -2806,6 +2898,7 @@
 		"Tobu.KoizumiBranch.Ota"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF0000",
 	"carComposition": 2
 }, {
@@ -2828,6 +2921,7 @@
 		"Tobu.Kiryu.Akagi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF0000",
 	"carComposition": 2
 }, {
@@ -2869,6 +2963,7 @@
 		"Tobu.Nikko.TobuNikko"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FFA500",
 	"carComposition": 6
 }, {
@@ -2885,6 +2980,7 @@
 		"Tobu.JRTobuConnection.Tochigi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FFA500",
 	"carComposition": 6
 }, {
@@ -2910,6 +3006,7 @@
 		"Tobu.Utsunomiya.TobuUtsunomiya"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FFA500",
 	"carComposition": 4
 }, {
@@ -2933,6 +3030,7 @@
 		"Tobu.Kinugawa.ShinFujiwara"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FFA500",
 	"carComposition": 2
 }, {
@@ -2952,6 +3050,7 @@
 		"Tobu.Kameido.Kameido"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#0F6CC3",
 	"carComposition": 2
 }, {
@@ -2968,6 +3067,7 @@
 		"Tobu.Daishi.Daishimae"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#0F6CC3",
 	"carComposition": 2
 }, {
@@ -3017,6 +3117,7 @@
 		"Tobu.TobuUrbanPark.Funabashi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#33CCCC",
 	"carComposition": 6
 }, {
@@ -3070,6 +3171,7 @@
 		"Tobu.Tojo.Yorii"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#000099",
 	"carComposition": 10
 }, {
@@ -3092,6 +3194,7 @@
 		"Tobu.Ogose.Ogose"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#000099",
 	"carComposition": 4
 }, {
@@ -3137,6 +3240,7 @@
 		"Seibu.Ikebukuro.Agano"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF6600",
 	"carComposition": 10,
 	"dynamic": true
@@ -3154,6 +3258,7 @@
 		"Seibu.Toshima.Toshimaen"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF6600",
 	"carComposition": 8,
 	"dynamic": true
@@ -3172,6 +3277,7 @@
 		"Seibu.Sayama.SeibukyujoMae"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF6600",
 	"carComposition": 10,
 	"dynamic": true
@@ -3195,6 +3301,7 @@
 		"Seibu.SeibuChichibu.Kagemori"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF6600",
 	"carComposition": 10,
 	"dynamic": true
@@ -3212,6 +3319,7 @@
 		"Seibu.SeibuChichibuBranch.Ohanabatake"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF6600",
 	"carComposition": 4
 }, {
@@ -3229,6 +3337,7 @@
 		"Seibu.SeibuYurakucho.Nerima"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF6600",
 	"carComposition": 10,
 	"dynamic": true
@@ -3246,6 +3355,7 @@
 		"Seibu.S-Fukutoshin.ShakujiiKoen"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF6600",
 	"carComposition": 10
 }, {
@@ -3263,6 +3373,7 @@
 		"Seibu.S-Yurakucho.ShakujiiKoen"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF6600",
 	"carComposition": 10
 }, {
@@ -3306,6 +3417,7 @@
 		"Seibu.Shinjuku.HonKawagoe"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#0099CC",
 	"carComposition": 10,
 	"dynamic": true
@@ -3329,6 +3441,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#0099CC",
 	"carComposition": 10,
 	"dynamic": true
@@ -3351,6 +3464,7 @@
 		"Seibu.Tamako.Tamako"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FFCC33",
 	"carComposition": 8,
 	"dynamic": true
@@ -3371,6 +3485,7 @@
 		"Seibu.Kokubunji.HigashiMurayama"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#33CC66",
 	"carComposition": 6,
 	"dynamic": true
@@ -3388,6 +3503,7 @@
 		"Seibu.Seibuen.Seibuen"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#33CC66",
 	"carComposition": 6,
 	"dynamic": true
@@ -3409,6 +3525,7 @@
 		"Seibu.Tamagawa.Koremasa"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF6600",
 	"carComposition": 4,
 	"dynamic": true
@@ -3427,6 +3544,7 @@
 		"Seibu.Yamaguchi.SeibukyujoMae"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF3333",
 	"carComposition": 4,
 	"dynamic": true
@@ -3489,6 +3607,7 @@
 		"Odakyu.Odawara.Odawara"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#2288CC",
 	"carComposition": 10,
 	"dynamic": true
@@ -3512,6 +3631,7 @@
 		"Odakyu.Tama.Karakida"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#2288CC",
 	"carComposition": 10,
 	"dynamic": true
@@ -3544,6 +3664,7 @@
 		"Odakyu.Enoshima.KataseEnoshima"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#2288CC",
 	"carComposition": 10,
 	"dynamic": true
@@ -3586,6 +3707,7 @@
 		"Tokyu.DenEnToshi.ChuoRinkan"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#20A288",
 	"carComposition": 10,
 	"dynamic": true
@@ -3622,6 +3744,7 @@
 		"Tokyu.Toyoko.Yokohama"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#DA0442",
 	"carComposition": 10,
 	"dynamic": true
@@ -3650,6 +3773,7 @@
 		"Tokyu.Meguro.Hiyoshi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#009CD2",
 	"carComposition": 8,
 	"dynamic": true
@@ -3668,6 +3792,7 @@
 		"Tokyu.TokyuShinYokohama.ShinYokohama"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#5D4D8D",
 	"carComposition": 10,
 	"dynamic": true
@@ -3701,6 +3826,7 @@
 		"Tokyu.Oimachi.Mizonokuchi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F18C43",
 	"carComposition": 5,
 	"dynamic": true
@@ -3731,6 +3857,7 @@
 		"Tokyu.Ikegami.Kamata"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#EE86A7",
 	"carComposition": 3
 }, {
@@ -3752,6 +3879,7 @@
 		"Tokyu.TokyuTamagawa.Kamata"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#AE0378",
 	"carComposition": 3
 }, {
@@ -3769,6 +3897,7 @@
 		"Tokyu.Kodomonokuni.Kodomonokuni"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#0068B7",
 	"carComposition": 2
 }, {
@@ -3793,6 +3922,7 @@
 		"Tokyu.Setagaya.ShimoTakaido"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FCC70D",
 	"carComposition": 2
 }, {
@@ -3813,6 +3943,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"altitude": -1,
 	"color": "#09357F",
 	"carComposition": 10
@@ -3846,6 +3977,7 @@
 		"Sotetsu.Main.Ebina"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#000080",
 	"carComposition": 10,
 	"dynamic": true
@@ -3869,6 +4001,7 @@
 		"Sotetsu.Izumino.Shonandai"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#000080",
 	"carComposition": 10,
 	"dynamic": true
@@ -3887,6 +4020,7 @@
 		"Sotetsu.SotetsuShinYokohama.Nishiya"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#000080",
 	"carComposition": 10,
 	"dynamic": true
@@ -3910,6 +4044,7 @@
 		"SaitamaRailway.SaitamaRailway.UrawaMisono"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"altitude": -1,
 	"color": "#2351A5",
 	"carComposition": 6
@@ -3945,6 +4080,7 @@
 		"MIR.TsukubaExpress.Tsukuba"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#000084",
 	"carComposition": 6
 }, {
@@ -3968,6 +4104,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#3FB036",
 	"carComposition": 10
 }, {
@@ -4006,6 +4143,7 @@
 		"ShinKeisei.ShinKeisei.KeiseiTsudanuma"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#EF59A1",
 	"carComposition": 6,
 	"dynamic": true
@@ -4046,6 +4184,7 @@
 		"KantoRailway.Joso.Shimodate"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#2C94B6",
 	"carComposition": 2
 }, {
@@ -4063,6 +4202,7 @@
 		"KantoRailway.Ryugasaki.Ryugasaki"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#2C94B6",
 	"carComposition": 2
 }, {
@@ -4083,6 +4223,7 @@
 		"Ryutetsu.Nagareyama.Nagareyama"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#C64F24",
 	"carComposition": 2
 }, {
@@ -4115,6 +4256,7 @@
 		"Kominato.Kominato.KazusaNakano"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#D74F32",
 	"carComposition": 4
 }, {
@@ -4143,6 +4285,7 @@
 		"Isumi.Isumi.KazusaNakano"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FFD400",
 	"carComposition": 2
 }, {
@@ -4172,6 +4315,7 @@
 		"EER.Enoshima.Kamakura"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#005B1A",
 	"carComposition": 4
 }, {
@@ -4223,6 +4367,7 @@
 		"Chichibu.Chichibu.Mitsumineguchi"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#0054A6",
 	"carComposition": 3
 }, {
@@ -4253,6 +4398,7 @@
 		"Yurikamome.Yurikamome.Toyosu"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#27404E",
 	"carComposition": 6
 }, {
@@ -4281,6 +4427,7 @@
 		"YSL.KanazawaSeasideLine.KanazawaHakkei"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#F68B1E",
 	"carComposition": 5
 }, {
@@ -4308,6 +4455,7 @@
 		"SNUT.NewShuttle.Uchijuku"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FFFF00",
 	"carComposition": 6
 }, {
@@ -4331,6 +4479,7 @@
 		"Yamaman.Yukarigaoka.Yukarigaoka.1"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#2F9D66",
 	"carComposition": 3
 }, {
@@ -4356,6 +4505,7 @@
 		"TokyoMonorail.HanedaAirport.HanedaAirportTerminal2"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#003686",
 	"carComposition": 6
 }, {
@@ -4389,6 +4539,7 @@
 		"TamaMonorail.TamaMonorail.Kamikitadai"
 	],
 	"ascending": "Northbound",
+	"descending": "Southbound",
 	"color": "#FF6633",
 	"carComposition": 4
 }, {
@@ -4409,6 +4560,7 @@
 		"ChibaMonorail.Line1.KenchoMae"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#2843BA",
 	"carComposition": 2
 }, {
@@ -4436,6 +4588,7 @@
 		"ChibaMonorail.Line2.Chishirodai"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#2843BA",
 	"carComposition": 2
 }, {
@@ -4458,6 +4611,7 @@
 		"ShonanMonorail.Enoshima.ShonanEnoshima"
 	],
 	"ascending": "Outbound",
+	"descending": "Inbound",
 	"color": "#FF0000",
 	"carComposition": 3
 }]

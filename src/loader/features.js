@@ -373,10 +373,10 @@ export function featureWorker() {
             const altitude = stationLookup[stations[0]].altitude || 0,
                 layer = altitude < 0 ? ug : og,
                 coords = stations.map(id => {
-                    const {railway, coord, hidden} = stationLookup[id],
+                    const {railway, coord, alternate} = stationLookup[id],
                         feature = featureLookup[railway];
 
-                    if (!hidden) {
+                    if (!alternate) {
                         layer.id = layer.id || id;
                         ids.push(id);
                     }

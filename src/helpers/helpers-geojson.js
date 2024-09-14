@@ -103,17 +103,6 @@ export function getCoordAndBearing(line, distance, composition, unit) {
 }
 
 /**
- * Takes GeoJSON object and returns IDs in the properties.
- * @param {Object} geojson - GeoJSON object
- * @returns {Array} IDs
- */
-export function getIds(geojson) {
-    const ids = geojson.properties.ids;
-
-    return typeof ids === 'string' ? JSON.parse(ids) : ids;
-}
-
-/**
  * Takes GeoJSON object and returns the altitude of the first point.
  * @param {Object} geojson - GeoJSON object
  * @returns {number} Altitude of the first point
@@ -133,8 +122,4 @@ export function getCenterCoord(geojson) {
 
 export function emptyFeatureCollection() {
     return featureCollection([]);
-}
-
-export function isFeature(object) {
-    return object && object.type === 'Feature' && object.geometry;
 }

@@ -610,7 +610,9 @@
 		"zh-Hans": "八王子",
 		"zh-Hant": "八王子"
 	},
-	"hidden": true
+	"alternate": "JR-East.ChuoRapid.Hachioji",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "JR-East.Chuo.Takao",
 	"railway": "JR-East.Chuo",
@@ -3122,7 +3124,9 @@
 		"zh-Hans": "上野",
 		"zh-Hant": "上野"
 	},
-	"hidden": true
+	"alternate": "JR-East.JobanRapid.Ueno",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "JR-East.Joban.Nippori",
 	"railway": "JR-East.Joban",
@@ -3134,7 +3138,9 @@
 		"zh-Hans": "日暮里",
 		"zh-Hant": "日暮里"
 	},
-	"hidden": true
+	"alternate": "JR-East.JobanRapid.Nippori",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "JR-East.Joban.Kashiwa",
 	"railway": "JR-East.Joban",
@@ -3146,7 +3152,9 @@
 		"zh-Hans": "柏",
 		"zh-Hant": "柏"
 	},
-	"hidden": true
+	"alternate": "JR-East.JobanRapid.Kashiwa",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "JR-East.Joban.Toride",
 	"railway": "JR-East.Joban",
@@ -5901,7 +5909,9 @@
 		"zh-Hant": "東京"
 	},
 	"altitude": -1,
-	"hidden": true
+	"alternate": "JR-East.Yokosuka.Tokyo",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "JR-East.YamanoteFreight.Shinagawa",
 	"railway": "JR-East.YamanoteFreight",
@@ -5913,7 +5923,9 @@
 		"zh-Hans": "品川",
 		"zh-Hant": "品川"
 	},
-	"hidden": true
+	"alternate": "JR-East.Yokosuka.Shinagawa",
+	"ascending": "Outbound",
+	"descending": "Inbound"
 }, {
 	"id": "JR-East.YamanoteFreight.Shibuya",
 	"railway": "JR-East.YamanoteFreight",
@@ -5925,7 +5937,9 @@
 		"zh-Hans": "涩谷",
 		"zh-Hant": "澀谷"
 	},
-	"hidden": true
+	"alternate": "JR-East.ShonanShinjuku.Shibuya",
+	"ascending": null,
+	"descending": "Southbound"
 }, {
 	"id": "JR-East.SotetsuDirect.Osaki",
 	"railway": "JR-East.SotetsuDirect",
@@ -5985,7 +5999,9 @@
 		"zh-Hans": "大崎",
 		"zh-Hant": "大崎"
 	},
-	"hidden": true
+	"alternate": "JR-East.ShonanShinjuku.Osaki",
+	"ascending": "Southbound",
+	"descending": null
 }, {
 	"id": "JR-East.OsakiBranch.Fujisawa",
 	"railway": "JR-East.OsakiBranch",
@@ -5997,7 +6013,9 @@
 		"zh-Hans": "藤泽",
 		"zh-Hant": "藤澤"
 	},
-	"hidden": true
+	"alternate": "JR-East.Tokaido.Fujisawa",
+	"ascending": null,
+	"descending": "Inbound"
 }, {
 	"id": "JR-East.TokaidoFreight.Shinagawa",
 	"railway": "JR-East.TokaidoFreight",
@@ -6009,7 +6027,9 @@
 		"zh-Hans": "品川",
 		"zh-Hant": "品川"
 	},
-	"hidden": true
+	"alternate": "JR-East.Yokosuka.Shinagawa",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "JR-East.TokaidoFreight.Fujisawa",
 	"railway": "JR-East.TokaidoFreight",
@@ -6021,7 +6041,9 @@
 		"zh-Hans": "藤泽",
 		"zh-Hant": "藤澤"
 	},
-	"hidden": true
+	"alternate": "JR-East.Tokaido.Fujisawa",
+	"ascending": null,
+	"descending": "Inbound"
 }, {
 	"id": "JR-East.Tsurumi.Tsurumi",
 	"railway": "JR-East.Tsurumi",
@@ -6828,7 +6850,10 @@
 		"zh-Hans": "新小平",
 		"zh-Hant": "新小平"
 	},
-	"hidden": true
+	"altitude": -1,
+	"alternate": "JR-East.Musashino.ShinKodaira",
+	"ascending": "Inbound",
+	"descending": null
 }, {
 	"id": "JR-East.MusashinoKunitachiBranch.Kunitachi",
 	"railway": "JR-East.MusashinoKunitachiBranch",
@@ -6840,7 +6865,9 @@
 		"zh-Hans": "国立",
 		"zh-Hant": "國立"
 	},
-	"hidden": true
+	"alternate": "JR-East.ChuoRapid.Kunitachi",
+	"ascending": "Outbound",
+	"descending": "Inbound"
 }, {
 	"id": "JR-East.MusashinoKunitachiBranch.Tachikawa",
 	"railway": "JR-East.MusashinoKunitachiBranch",
@@ -6852,7 +6879,9 @@
 		"zh-Hans": "立川",
 		"zh-Hant": "立川"
 	},
-	"hidden": true
+	"alternate": "JR-East.ChuoRapid.Tachikawa",
+	"ascending": "Outbound",
+	"descending": "Inbound"
 }, {
 	"id": "JR-East.MusashinoKunitachiBranch.Hino",
 	"railway": "JR-East.MusashinoKunitachiBranch",
@@ -6865,7 +6894,9 @@
 		"zh-Hant": "日野",
 		"ja-Wiki": "日野駅 (東京都)"
 	},
-	"hidden": true
+	"alternate": "JR-East.ChuoRapid.Hino",
+	"ascending": "Outbound",
+	"descending": "Inbound"
 }, {
 	"id": "JR-East.MusashinoKunitachiBranch.Toyoda",
 	"railway": "JR-East.MusashinoKunitachiBranch",
@@ -6877,7 +6908,9 @@
 		"zh-Hans": "丰田",
 		"zh-Hant": "豐田"
 	},
-	"hidden": true
+	"alternate": "JR-East.ChuoRapid.Toyoda",
+	"ascending": "Outbound",
+	"descending": "Inbound"
 }, {
 	"id": "JR-East.MusashinoKunitachiBranch.Hachioji",
 	"railway": "JR-East.MusashinoKunitachiBranch",
@@ -6889,7 +6922,9 @@
 		"zh-Hans": "八王子",
 		"zh-Hant": "八王子"
 	},
-	"hidden": true
+	"alternate": "JR-East.ChuoRapid.Hachioji",
+	"ascending": null,
+	"descending": "Inbound"
 }, {
 	"id": "JR-East.MusashinoOmiyaBranch.KitaAsaka",
 	"railway": "JR-East.MusashinoOmiyaBranch",
@@ -6901,7 +6936,9 @@
 		"zh-Hans": "北朝霞",
 		"zh-Hant": "北朝霞"
 	},
-	"hidden": true
+	"alternate": "JR-East.Musashino.KitaAsaka",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "JR-East.MusashinoOmiyaBranch.Omiya",
 	"railway": "JR-East.MusashinoOmiyaBranch",
@@ -6914,7 +6951,23 @@
 		"zh-Hant": "大宮",
 		"ja-Wiki": "大宮駅 (埼玉県)"
 	},
-	"hidden": true
+	"alternate": "JR-East.ShonanShinjuku.Omiya",
+	"ascending" : null,
+	"descending": "Southbound"
+}, {
+	"id": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
+	"railway": "JR-East.MusashinoNishiUrawaBranch",
+	"coord": [139.64788, 35.846],
+	"title": {
+		"ja": "武蔵浦和",
+		"en": "Musashi-Urawa",
+		"ko": "무사시우라와",
+		"zh-Hans": "武藏浦和",
+		"zh-Hant": "武藏浦和"
+	},
+	"alternate": "JR-East.Musashino.MusashiUrawa",
+	"ascending": "Inbound",
+	"descending": null
 }, {
 	"id": "JR-East.MusashinoNishiUrawaBranch.Omiya",
 	"railway": "JR-East.MusashinoNishiUrawaBranch",
@@ -6927,19 +6980,9 @@
 		"zh-Hant": "大宮",
 		"ja-Wiki": "大宮駅 (埼玉県)"
 	},
-	"hidden": true
-}, {
-	"id": "JR-East.MusashinoNishiUrawaBranch.MusashiUrawa",
-	"railway": "JR-East.MusashinoNishiUrawaBranch",
-	"coord": [139.64788, 35.846],
-	"title": {
-		"ja": "武蔵浦和",
-		"en": "Musashi-Urawa",
-		"ko": "무사시우라와",
-		"zh-Hans": "武藏浦和",
-		"zh-Hant": "武藏浦和"
-	},
-	"hidden": true
+	"alternate": "JR-East.ShonanShinjuku.Omiya",
+	"ascending": null,
+	"descending": "Southbound"
 }, {
 	"id": "JR-East.Yokohama.HigashiKanagawa",
 	"railway": "JR-East.Yokohama",
@@ -9664,7 +9707,9 @@
 		"zh-Hans": "新越谷",
 		"zh-Hant": "新越谷"
 	},
-	"hidden": true
+	"alternate": "Tobu.TobuSkytree.ShinKoshigaya",
+	"ascending": null,
+	"descending": "Inbound"
 }, {
 	"id": "TokyoMetro.Tozai.Nakano",
 	"railway": "TokyoMetro.Tozai",
@@ -10097,7 +10142,9 @@
 		"zh-Hans": "町田",
 		"zh-Hant": "町田"
 	},
-	"hidden": true
+	"alternate": "Odakyu.Odawara.Machida",
+	"ascending": "Inbound",
+	"descending": null
 }, {
 	"id": "TokyoMetro.Chiyoda.SeijogakuenMae",
 	"railway": "TokyoMetro.Chiyoda",
@@ -10109,7 +10156,9 @@
 		"zh-Hans": "成城学园前",
 		"zh-Hant": "成城學園前"
 	},
-	"hidden": true
+	"alternate": "Odakyu.Odawara.SeijogakuenMae",
+	"ascending": "Inbound",
+	"descending": null
 }, {
 	"id": "TokyoMetro.Chiyoda.YoyogiUehara",
 	"railway": "TokyoMetro.Chiyoda",
@@ -13655,6 +13704,7 @@
 		"zh-Hans": "都庁前",
 		"zh-Hant": "都廳前"
 	},
+	"ascending": "Toei.Hikarigaoka",
 	"altitude": -1
 }, {
 	"id": "Toei.Oedo.NishiShinjukuGochome",
@@ -15528,7 +15578,9 @@
 		"zh-Hans": "明大前",
 		"zh-Hant": "明大前"
 	},
-	"hidden": true
+	"alternate": "Keio.Keio.Meidaimae",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "Keio.Sagamihara.Chofu",
 	"railway": "Keio.Sagamihara",
@@ -15721,7 +15773,9 @@
 		"zh-Hans": "明大前",
 		"zh-Hant": "明大前"
 	},
-	"hidden": true
+	"alternate": "Keio.Keio.Meidaimae",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "Keio.Takao.Kitano",
 	"railway": "Keio.Takao",
@@ -16563,7 +16617,9 @@
 		"zh-Hans": "品川",
 		"zh-Hant": "品川"
 	},
-	"hidden": true
+	"alternate": "Keikyu.Main.Shinagawa",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "Keikyu.Airport.KeikyuKamata",
 	"railway": "Keikyu.Airport",
@@ -16800,7 +16856,9 @@
 		"zh-Hans": "横须贺中央",
 		"zh-Hant": "橫須賀中央"
 	},
-	"hidden": true
+	"alternate": "Keikyu.Main.YokosukaChuo",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "Keikyu.Kurihama.Horinouchi",
 	"railway": "Keikyu.Kurihama",
@@ -18963,7 +19021,9 @@
 		"zh-Hans": "春日部",
 		"zh-Hant": "春日部"
 	},
-	"hidden": true
+	"alternate": "Tobu.TobuSkytree.Kasukabe",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "Tobu.Nikko.TobuDobutsuKoen",
 	"railway": "Tobu.Nikko",
@@ -19262,7 +19322,9 @@
 		"zh-Hant": "大宮",
 		"ja-Wiki": "大宮駅 (埼玉県)"
 	},
-	"hidden": true
+	"alternate": "JR-East.Utsunomiya.Omiya",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "Tobu.JRTobuConnection.Tochigi",
 	"railway": "Tobu.JRTobuConnection",
@@ -19274,7 +19336,9 @@
 		"zh-Hans": "枥木",
 		"zh-Hant": "櫔木"
 	},
-	"hidden": true
+	"alternate": "Tobu.Nikko.Tochigi",
+	"ascending": null,
+	"descending": "Inbound"
 }, {
 	"id": "Tobu.Utsunomiya.ShinTochigi",
 	"railway": "Tobu.Utsunomiya",
@@ -20908,7 +20972,9 @@
 		"zh-Hans": "饭能",
 		"zh-Hant": "飯能"
 	},
-	"hidden": true
+	"alternate": "Seibu.Ikebukuro.Hanno",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "Seibu.SeibuChichibu.Agano",
 	"railway": "Seibu.SeibuChichibu",
@@ -20986,7 +21052,9 @@
 		"zh-Hans": "影森",
 		"zh-Hant": "影森"
 	},
-	"hidden": true
+	"alternate": "Chichibu.Chichibu.Kagemori",
+	"ascending": null,
+	"descending": "Inbound"
 }, {
 	"id": "Seibu.SeibuChichibuBranch.Yokoze",
 	"railway": "Seibu.SeibuChichibuBranch",
@@ -20998,7 +21066,9 @@
 		"zh-Hans": "横濑",
 		"zh-Hant": "橫瀨"
 	},
-	"hidden": true
+	"alternate": "Seibu.SeibuChichibu.Yokoze",
+	"ascending": "Outbound",
+	"descending": null
 }, {
 	"id": "Seibu.SeibuChichibuBranch.Ohanabatake",
 	"railway": "Seibu.SeibuChichibuBranch",
@@ -21010,7 +21080,9 @@
 		"zh-Hans": "御花畑",
 		"zh-Hant": "御花畑"
 	},
-	"hidden": true
+	"alternate": "Chichibu.Chichibu.Ohanabatake",
+	"ascending": null,
+	"descending": "Outbound"
 }, {
 	"id": "Seibu.SeibuYurakucho.KotakeMukaihara",
 	"railway": "Seibu.SeibuYurakucho",
@@ -21064,7 +21136,9 @@
 		"zh-Hant": "池袋"
 	},
 	"altitude": -1,
-	"hidden": true
+	"alternate": "TokyoMetro.Fukutoshin.Ikebukuro",
+	"ascending": "TokyoMetro.Wakoshi",
+	"descending": null
 }, {
 	"id": "Seibu.S-Fukutoshin.ShakujiiKoen",
 	"railway": "Seibu.S-Fukutoshin",
@@ -21076,7 +21150,9 @@
 		"zh-Hans": "石神井公园",
 		"zh-Hant": "石神井公園"
 	},
-	"hidden": true
+	"alternate": "Seibu.Ikebukuro.ShakujiiKoen",
+	"ascending": null,
+	"descending": "Inbound"
 }, {
 	"id": "Seibu.S-Yurakucho.Iidabashi",
 	"railway": "Seibu.S-Yurakucho",
@@ -21089,7 +21165,9 @@
 		"zh-Hant": "飯田橋"
 	},
 	"altitude": -1,
-	"hidden": true
+	"alternate": "TokyoMetro.Yurakucho.Iidabashi",
+	"ascending": "TokyoMetro.Wakoshi",
+	"descending": null
 }, {
 	"id": "Seibu.S-Yurakucho.Nerima",
 	"railway": "Seibu.S-Yurakucho",
@@ -21101,7 +21179,9 @@
 		"zh-Hans": "练马",
 		"zh-Hant": "練馬"
 	},
-	"hidden": true
+	"alternate": "Seibu.Ikebukuro.Nerima",
+	"ascending": null,
+	"descending": "Inbound"
 }, {
 	"id": "Seibu.S-Yurakucho.ShakujiiKoen",
 	"railway": "Seibu.S-Yurakucho",
@@ -21113,7 +21193,9 @@
 		"zh-Hans": "石神井公园",
 		"zh-Hant": "石神井公園"
 	},
-	"hidden": true
+	"alternate": "Seibu.Ikebukuro.ShakujiiKoen",
+	"ascending": null,
+	"descending": "Inbound"
 }, {
 	"id": "Seibu.Shinjuku.SeibuShinjuku",
 	"railway": "Seibu.Shinjuku",
@@ -26858,7 +26940,8 @@
 		"ko": "지쿠센터",
 		"zh-Hans": "地区中心",
 		"zh-Hant": "地區中心"
-	}
+	},
+	"descending": null
 }, {
 	"id": "Yamaman.Yukarigaoka.Koen",
 	"railway": "Yamaman.Yukarigaoka",
@@ -26869,7 +26952,8 @@
 		"ko": "공원",
 		"zh-Hans": "公园",
 		"zh-Hant": "公園"
-	}
+	},
+	"descending": null
 }, {
 	"id": "Yamaman.Yukarigaoka.Joshidai",
 	"railway": "Yamaman.Yukarigaoka",
@@ -26880,7 +26964,8 @@
 		"ko": "조시다이",
 		"zh-Hans": "女子大",
 		"zh-Hant": "女子大"
-	}
+	},
+	"descending": null
 }, {
 	"id": "Yamaman.Yukarigaoka.Chugakko",
 	"railway": "Yamaman.Yukarigaoka",
@@ -26891,7 +26976,9 @@
 		"ko": "주갓코",
 		"zh-Hans": "中学校",
 		"zh-Hant": "中學校"
-	}
+	},
+	"ascending": "Inbound",
+	"descending": null
 }, {
 	"id": "Yamaman.Yukarigaoka.Ino",
 	"railway": "Yamaman.Yukarigaoka",
@@ -26903,7 +26990,9 @@
 		"zh-Hans": "井野",
 		"zh-Hant": "井野",
 		"ja-Wiki": "井野駅 (千葉県)"
-	}
+	},
+	"ascending": "Inbound",
+	"descending": null
 }, {
 	"id": "Yamaman.Yukarigaoka.Koen.1",
 	"railway": "Yamaman.Yukarigaoka",
@@ -26914,7 +27003,9 @@
 		"ko": "공원",
 		"zh-Hans": "公园",
 		"zh-Hant": "公園"
-	}
+	},
+	"ascending": "Inbound",
+	"descending": null
 }, {
 	"id": "Yamaman.Yukarigaoka.ChikuCenter.1",
 	"railway": "Yamaman.Yukarigaoka",
@@ -26925,7 +27016,9 @@
 		"ko": "지쿠센터",
 		"zh-Hans": "地区中心",
 		"zh-Hant": "地區中心"
-	}
+	},
+	"ascending": "Inbound",
+	"descending": null
 }, {
 	"id": "Yamaman.Yukarigaoka.Yukarigaoka.1",
 	"railway": "Yamaman.Yukarigaoka",
@@ -26936,7 +27029,8 @@
 		"ko": "유카리가오카",
 		"zh-Hans": "有加利丘",
 		"zh-Hant": "有加利丘"
-	}
+	},
+	"descending": null
 }, {
 	"id": "SNUT.NewShuttle.Omiya",
 	"railway": "SNUT.NewShuttle",

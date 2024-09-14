@@ -242,7 +242,13 @@ export function colorToRGBArray(color) {
 export function createElement(tagName, attributes, container) {
     const element = document.createElement(tagName);
 
-    Object.assign(element, attributes);
+    for (const key of Object.keys(attributes)) {
+        try {
+            element[key] = attributes[key];
+        } catch (e) {
+            element.setAttribute(key, attributes[key]);
+        }
+    }
     if (container) {
         container.appendChild(element);
     }
