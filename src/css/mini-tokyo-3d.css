@@ -863,22 +863,21 @@
 .mini-tokyo-3d .mapboxgl-popup-anchor-right.highlighted .mapboxgl-popup-tip {
     border-left-color: rgba(102, 102, 102, 0.7);
 }
-.mini-tokyo-3d #search-box {
-    top: 30px;
-    right: 149px;
-    width: 200px;
+.mini-tokyo-3d .search-box {
+    top: 20px;
+    left: 10px;
+    width: calc(100% - 50px);
     height: 22px;
-    transform: translate(50%, -50%);
+    padding: 0;
+    transform: translate(0, -50%);
     font-size: 16px;
     border: none;
     outline: none;
     background-color: rgba(255, 255, 255, 0);
-    transition: opacity 300ms step-end;
     position: absolute;
     z-index: 3;
 }
-.mini-tokyo-3d #search-box.disabled {
-    opacity: 0;
+.mini-tokyo-3d .search-box.disabled {
     visibility: hidden;
 }
 .mini-tokyo-3d .desc-header {

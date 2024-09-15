@@ -1,5 +1,18 @@
 import {DecodeUTF8, Gunzip} from 'fflate';
 
+let touchDevice = false;
+
+if (typeof window !== 'undefined') {
+    // Browser environment
+    window.addEventListener('touchstart', () => {
+        touchDevice = true;
+    }, {once: true});
+}
+
+export function isTouchDevice() {
+    return touchDevice;
+}
+
 export function loadJSON(url) {
     return fetch(url).then(response => {
         if (url.endsWith('.gz')) {

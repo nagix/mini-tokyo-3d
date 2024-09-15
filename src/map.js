@@ -4,7 +4,7 @@ import AnimatedPopup from 'mapbox-gl-animated-popup';
 import animation from './animation';
 import Clock from './clock';
 import configs from './configs';
-import {ClockControl, MapboxGLButtonControl} from './controls';
+import {ClockControl, MapboxGLButtonControl, SearchControl} from './controls';
 import extend from './extend';
 import * as helpers from './helpers/helpers';
 import {pickObject} from './helpers/helpers-deck';
@@ -117,10 +117,6 @@ export default class extends Evented {
         me.lastDynamicUpdate = {};
         me.lastRepaint = 0;
         me.frameRateFactor = 1;
-
-        me.container.addEventListener('touchstart', () => {
-            me.touchDevice = true;
-        });
 
         // The inner map container overrides the option
         options.container = initContainer(me.container);
@@ -905,59 +901,22 @@ export default class extends Evented {
             }
         }
 
-        const searchBox = helpers.createElement('input', {
-            id: 'search-box',
-            className: 'disabled',
-            type: 'text',
-            list: 'stations',
-            placeholder: me.dict['station-name']
-        }, container);
-        const flyToStation = () => {
-            const station = me.stationTitleLookup[searchBox.value.toUpperCase()];
-
-            if (station && station.coord) {
-                me.markObject();
-                me.trackObject(me.stationGroupLookup[station.group]);
-                return true;
-            }
-        };
-        searchBox.addEventListener('change', () => {
-            if (document.activeElement === searchBox && flyToStation()) {
-                searchBox.blur();
-            }
-        });
-
-        // Work around for touch device soft keyboard
-        searchBox.addEventListener('keydown', () => {
-            if (me.touchDevice && event.key === 'Enter' && flyToStation()) {
-                searchBox.blur();
-            }
-        });
-
         if (me.searchControl) {
-            const control = new MapboxGLButtonControl([{
-                className: 'mapboxgl-ctrl-search',
-                title: dict['search'],
-                eventHandler() {
-                    if (!this.onmousedown) {
-                        const listener = () => {
-                            this.classList.remove('expanded');
-                            searchBox.classList.add('disabled');
-                        };
+            const control = new SearchControl({
+                title: me.dict['search'],
+                placeholder: me.dict['station-name'],
+                list: 'stations',
+                eventHandler: ({value}) => {
+                    const station = me.stationTitleLookup[value.toUpperCase()];
 
-                        searchBox.addEventListener('blur', listener);
-                        this.onmousedown = () => searchBox.removeEventListener('blur', listener);
-                        this.onmouseup = () => searchBox.addEventListener('blur', listener);
-                    }
-                    searchBox.classList.toggle('disabled');
-                    if (this.classList.toggle('expanded')) {
-                        searchBox.value = '';
-                        searchBox.focus();
-                    } else {
-                        flyToStation();
+                    if (station && station.coord) {
+                        me.markObject();
+                        me.trackObject(me.stationGroupLookup[station.group]);
+                        return true;
                     }
                 }
-            }]);
+            });
+
             map.addControl(control);
         }
 
@@ -1009,6 +968,7 @@ export default class extends Evented {
                     me._setEcoMode(me.ecoMode === 'eco' ? 'normal' : 'eco');
                 }
             }]);
+
             map.addControl(control);
         }
 
