@@ -51,8 +51,6 @@
     display: none;
 }
 .mini-tokyo-3d .clock-ctrl {
-    margin-top: 10px;
-    margin-left: 10px;
     padding: 10px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -760,23 +758,24 @@
 .mini-tokyo-3d .search-button:not(:disabled):hover {
     background-color: rgba(51, 51, 51, 0.7);
 }
+.mini-tokyo-3d .ctrl-group,
 .mini-tokyo-3d .mapboxgl-ctrl-group {
     border-radius: 10px;
+}
+.mini-tokyo-3d .mapboxgl-ctrl.ctrl-group button:not(:disabled):hover {
+    background-color: rgba(51, 51, 51, 0.7);
 }
 .mini-tokyo-3d .mapboxgl-ctrl-group button {
     width: 39px;
     height: 39px;
 }
-.mini-tokyo-3d .mapboxgl-ctrl-group button:focus:first-child,
-.mini-tokyo-3d .mapboxgl-ctrl-group button:hover:first-child {
+.mini-tokyo-3d .mapboxgl-ctrl-group button:first-child {
     border-radius: 10px 10px 0 0;
 }
-.mini-tokyo-3d .mapboxgl-ctrl-group button:focus:last-child,
-.mini-tokyo-3d .mapboxgl-ctrl-group button:hover:last-child {
+.mini-tokyo-3d .mapboxgl-ctrl-group button:last-child {
     border-radius: 0 0 10px 10px;
 }
-.mini-tokyo-3d .mapboxgl-ctrl-group button:focus:only-child,
-.mini-tokyo-3d .mapboxgl-ctrl-group button:hover:only-child {
+.mini-tokyo-3d .mapboxgl-ctrl-group button:only-child {
     border-radius: inherit;
 }
 .mini-tokyo-3d .mapboxgl-ctrl-search {

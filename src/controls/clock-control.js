@@ -40,7 +40,8 @@ export default class extends Evented {
 
         me._map = map;
 
-        me._container = createElement('div', {className: 'clock-ctrl'});
+        me._container = createElement('div', {className: 'mapboxgl-ctrl ctrl-group'});
+        me._element = createElement('div', {className: 'clock-ctrl'}, me._container);
         me._update();
 
         (function repeat() {
@@ -84,13 +85,13 @@ export default class extends Evented {
 
     _update() {
         const me = this,
-            container = me._container,
+            element = me._element,
             dict = me._dict,
             clock = me._clock,
             mode = me._mode,
             editing = me._editing;
 
-        container.innerHTML = [
+        element.innerHTML = [
             mode === 'realtime' || !editing ?
                 '<span id="date"></span><br><span id="time"></span><br>' : '',
             mode === 'playback' && !editing ? [
@@ -138,12 +139,12 @@ export default class extends Evented {
         me._refresh();
 
         if (mode === 'playback' && editing) {
-            container.querySelector('#edit-time-cancel-button').addEventListener('click', () => {
+            element.querySelector('#edit-time-cancel-button').addEventListener('click', () => {
                 delete me._tempDate;
                 me._editing = false;
                 me._update();
             });
-            container.querySelector('#edit-time-ok-button').addEventListener('click', () => {
+            element.querySelector('#edit-time-ok-button').addEventListener('click', () => {
                 const date = me._tempDate;
 
                 if (date) {
@@ -158,7 +159,7 @@ export default class extends Evented {
         }
 
         if (mode === 'playback' && !editing) {
-            container.querySelector('#edit-time-button').addEventListener('click', () => {
+            element.querySelector('#edit-time-button').addEventListener('click', () => {
                 me._editing = true;
                 me._update();
             });
@@ -166,13 +167,13 @@ export default class extends Evented {
 
         if (mode === 'playback' && editing) {
             for (const {id, fn} of DATE_COMPONENTS) {
-                container.querySelector(`#${id}-increase-button`).addEventListener('click', () => {
+                element.querySelector(`#${id}-increase-button`).addEventListener('click', () => {
                     const date = me._tempDate = me._tempDate || clock.getJSTDate();
 
                     date[`set${fn}`](date[`get${fn}`]() + 1);
                     me._refresh();
                 });
-                container.querySelector(`#${id}-decrease-button`).addEventListener('click', () => {
+                element.querySelector(`#${id}-decrease-button`).addEventListener('click', () => {
                     const date = me._tempDate = me._tempDate || clock.getJSTDate();
 
                     date[`set${fn}`](date[`get${fn}`]() - 1);
@@ -182,30 +183,30 @@ export default class extends Evented {
         }
 
         if (mode === 'playback') {
-            container.querySelector('#speed-increase-button').addEventListener('click', e => {
+            element.querySelector('#speed-increase-button').addEventListener('click', e => {
                 let speed = clock.speed;
 
                 speed += speed < 10 ? 1 : speed < 100 ? 10 : 100;
                 clock.setSpeed(speed);
                 e.currentTarget.disabled = speed === 600;
-                container.querySelector('#speed-decrease-button').disabled = false;
-                container.querySelector('#clock-speed').innerHTML = speed + dict['x-speed'];
+                element.querySelector('#speed-decrease-button').disabled = false;
+                element.querySelector('#clock-speed').innerHTML = speed + dict['x-speed'];
             });
-            container.querySelector('#speed-decrease-button').addEventListener('click', e => {
+            element.querySelector('#speed-decrease-button').addEventListener('click', e => {
                 let speed = clock.speed;
 
                 speed -= speed <= 10 ? 1 : speed <= 100 ? 10 : 100;
                 clock.setSpeed(speed);
                 e.currentTarget.disabled = speed === 1;
-                container.querySelector('#speed-increase-button').disabled = false;
-                container.querySelector('#clock-speed').innerHTML = speed + dict['x-speed'];
+                element.querySelector('#speed-increase-button').disabled = false;
+                element.querySelector('#clock-speed').innerHTML = speed + dict['x-speed'];
             });
         }
     }
 
     _refresh() {
         const me = this,
-            container = me._container;
+            element = me._element;
         let date = me._clock.getJSTDate();
 
         if (!me._editing) {
@@ -215,20 +216,20 @@ export default class extends Evented {
             if (lang === 'ja' && JapaneseHolidays.isHoliday(date)) {
                 dateString = dateString.replace(/\(.+\)/, '(祝)');
             }
-            container.querySelector('#date').innerHTML = dateString;
-            container.querySelector('#time').innerHTML = date.toLocaleTimeString(lang);
+            element.querySelector('#date').innerHTML = dateString;
+            element.querySelector('#time').innerHTML = date.toLocaleTimeString(lang);
         } else {
             const tempDate = me._tempDate;
 
             if (tempDate) {
                 date = tempDate;
                 for (const {id} of DATE_COMPONENTS) {
-                    container.querySelector(`#${id}`).classList.add('desc-caution');
+                    element.querySelector(`#${id}`).classList.add('desc-caution');
                 }
-                container.querySelector('#edit-time-ok-button').disabled = false;
+                element.querySelector('#edit-time-ok-button').disabled = false;
             }
             for (const {id, fn, digits, extra} of DATE_COMPONENTS) {
-                container.querySelector(`#${id}`).innerHTML =
+                element.querySelector(`#${id}`).innerHTML =
                     `0${date[`get${fn}`]() + extra}`.slice(-digits);
             }
         }

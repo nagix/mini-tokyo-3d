@@ -61,7 +61,7 @@ export default class {
             type: 'text',
             list: me._list,
             placeholder: me._placeholder
-        }, container);
+        }, button);
 
         searchBox.addEventListener('blur', onBlur);
         searchBox.addEventListener('change', () => {
@@ -72,8 +72,18 @@ export default class {
 
         // Work around for touch device soft keyboard
         searchBox.addEventListener('keydown', event => {
-            if (isTouchDevice() && event.key === 'Enter' && me._eventHandler({value: searchBox.value})) {
+            if (isTouchDevice() && event.code === 'Enter' && me._eventHandler({value: searchBox.value})) {
                 searchBox.blur();
+            }
+        });
+
+        // Prevent event bubbling
+        searchBox.addEventListener('click', event => {
+            event.stopPropagation();
+        });
+        searchBox.addEventListener('keyup', event => {
+            if (event.code === 'Space') {
+                event.preventDefault();
             }
         });
 
