@@ -821,13 +821,11 @@
 .mini-tokyo-3d .highlighted .mapboxgl-popup-content {
     background-color: rgba(102, 102, 102, 0.7);
 }
-.mini-tokyo-3d .popup-object .mapboxgl-popup-content,
-.mini-tokyo-3d .popup-object .mapboxgl-popup-tip,
-.mini-tokyo-3d .popup-station .mapboxgl-popup-content,
-.mini-tokyo-3d .popup-station .mapboxgl-popup-tip {
+.mini-tokyo-3d .popup-exit .mapboxgl-popup-content,
+.mini-tokyo-3d .popup-exit .mapboxgl-popup-tip {
     pointer-events: none;
 }
-.mini-tokyo-3d .popup-station .mapboxgl-popup-content {
+.mini-tokyo-3d .popup-exit .mapboxgl-popup-content {
     padding: 5px 10px;
 }
 .mini-tokyo-3d .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,

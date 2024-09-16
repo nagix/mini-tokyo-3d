@@ -1005,9 +1005,11 @@ export default class extends Evented {
             map.addControl(control);
         }
 
-        map.on('mousemove', e => {
-            me.markObject(me.pickObject(e.point));
-        });
+        for (const key of ['mousemove', 'touchstart', 'touchmove']) {
+            map.on(key, e => {
+                me.markObject(me.pickObject(e.point));
+            });
+        }
 
         map.on('mouseout', () => {
             me.markObject();
@@ -2822,7 +2824,7 @@ export default class extends Evented {
                     listener = () => {
                         me.exitPopups[index] = setTimeout(() => {
                             const popup = new AnimatedPopup({
-                                className: 'popup-station',
+                                className: 'popup-exit',
                                 closeButton: false,
                                 closeOnClick: false
                             });
