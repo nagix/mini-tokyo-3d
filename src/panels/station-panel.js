@@ -17,17 +17,15 @@ export default class extends Panel {
 
     addTo(map) {
         const me = this,
-            exitHTML = [],
             stations = me._options.object,
             titles = [],
             titlesByRailway = {},
             mode = me._options.mode || 'departure',
             departures = me._departures = [],
-            exits = [].concat(...stations.map(station => station.exit || [])),
+            exits = me._exits = [].concat(...stations.map(station => station.exit || [])),
             pitch = map.getPitch(),
-            {lang, dict, clock, container: mapContainer} = map,
-            now = clock.getTime(),
-            date = map.clock.getJSTDate(),
+            {lang, dict, clock} = map,
+            date = clock.getJSTDate(),
             currMonth = date.getMonth() + 1,
             currDate = date.getDate(),
             currHours = date.getHours(),
@@ -89,25 +87,6 @@ export default class extends Panel {
                     }
                 }
             }
-        }
-
-        for (const id of exits) {
-            const poi = map.poiLookup[id],
-                calendar = clock.getCalendar(),
-                uptime = poi.uptime && poi.uptime.reduce((acc, val) => !val.calendar || includes(val.calendar, calendar) ? val : acc, {}),
-                closed = uptime && (now < clock.getTime(uptime.open) || now >= clock.getTime(uptime.close) || uptime.open === uptime.close);
-
-            exitHTML.push([
-                `<div class="exit-row${closed ? ' closed' : ''}">`,
-                '<div class="exit-icon-box"></div>',
-                '<div class="exit-title-box">',
-                map.getLocalizedPOIDescription(id),
-                uptime && uptime.open !== uptime.close ? ` (${uptime.open}-${uptime.close})` : '',
-                '</div>',
-                (poi.facilities || []).map(facility => `<div class="exit-${facility}-icon"></div>`).join(''),
-                '<div class="exit-share-button"></div>',
-                '</div>'
-            ].join(''));
         }
 
         super.addTo(map)
@@ -174,9 +153,7 @@ export default class extends Panel {
                 '</div>',
                 `<div class="search-form-element"><button id="from-search-button" class="search-button" disabled>${dict['search-route']}</button></div>`,
                 '</div>',
-                '<div id="station-exits">',
-                ...exitHTML,
-                '</div>',
+                '<div id="station-exits"></div>',
                 '<div id="station-searching">',
                 '<div class="ball-pulse"><div></div><div></div><div></div></div>',
                 '</div>',
@@ -188,58 +165,35 @@ export default class extends Panel {
             ].join(''));
 
         const container = me._container,
-            departureButtonElement = container.querySelector('#station-departure-button'),
-            toButtonElement = container.querySelector('#station-to-button'),
-            fromButtonElement = container.querySelector('#station-from-button'),
-            exitsButtonElement = container.querySelector('#station-exits-button'),
             originElement = container.querySelector('#origin'),
             destinationElement = container.querySelector('#destination');
 
         container.classList.add(`station-${mode}`);
         container.querySelector(`#station-${mode}-button`).checked = true;
 
-        departureButtonElement.addEventListener('click', () => {
-            if (!container.classList.contains('station-departure')) {
-                container.classList.remove(...MODE_CLASSES);
-                container.classList.add('station-departure');
+        for (const key of ['station-departure', 'station-to', 'station-from', 'station-exits']) {
+            const buttonElement = container.querySelector(`#${key}-button`);
 
-                map.hideStationExits();
-                map.map.flyTo({center: map.lastCameraParams.center, zoom: 15.5, pitch});
-                map._setSearchMode('none');
+            if (buttonElement) {
+                buttonElement.addEventListener('click', () => {
+                    if (!container.classList.contains(key)) {
+                        container.classList.remove(...MODE_CLASSES);
+                        container.classList.add(key);
+                        if (key === 'station-to') {
+                            originElement.focus();
+                        } else if (key === 'station-from') {
+                            destinationElement.focus();
+                        }
+                        if (key !== 'station-exits') {
+                            map.hideStationExits();
+                            map.map.flyTo({center: map.lastCameraParams.center, zoom: 15.5, pitch});
+                        } else {
+                            map.showStationExits(stations);
+                        }
+                        map._setSearchMode(includes(['station-to', 'station-from'], key) ? 'edit' : 'none');
+                    }
+                });
             }
-        });
-        toButtonElement.addEventListener('click', () => {
-            if (!container.classList.contains('station-to')) {
-                container.classList.remove(...MODE_CLASSES);
-                container.classList.add('station-to');
-                originElement.focus();
-
-                map.hideStationExits();
-                map.map.flyTo({center: map.lastCameraParams.center, zoom: 15.5, pitch});
-                map._setSearchMode('edit');
-            }
-        });
-        fromButtonElement.addEventListener('click', () => {
-            if (!container.classList.contains('station-from')) {
-                container.classList.remove(...MODE_CLASSES);
-                container.classList.add('station-from');
-                destinationElement.focus();
-
-                map.hideStationExits();
-                map.map.flyTo({center: map.lastCameraParams.center, zoom: 15.5, pitch});
-                map._setSearchMode('edit');
-            }
-        });
-        if (exitsButtonElement) {
-            exitsButtonElement.addEventListener('click', () => {
-                if (!container.classList.contains('station-exits')) {
-                    container.classList.remove(...MODE_CLASSES);
-                    container.classList.add('station-exits');
-
-                    map.showStationExits(stations);
-                    map._setSearchMode('none');
-                }
-            });
         }
 
         me.updateContent();
@@ -296,34 +250,6 @@ export default class extends Panel {
 
         me.popups = [];
 
-        const children = container.querySelector('#station-exits').children;
-
-        for (let i = 0, ilen = children.length; i < ilen; i++) {
-            const child = children[i];
-
-            child.addEventListener('click', () => {
-                map.map.flyTo({
-                    center: map.poiLookup[exits[i]].coord,
-                    zoom: 19,
-                    pitch: 30
-                });
-            });
-            child.addEventListener('mouseenter', () => {
-                const element = mapContainer.querySelector(`#exit-${i}`);
-
-                if (element) {
-                    element.classList.add('highlighted');
-                }
-            });
-            child.addEventListener('mouseleave', () => {
-                const element = mapContainer.querySelector(`#exit-${i}`);
-
-                if (element) {
-                    element.classList.remove('highlighted');
-                }
-            });
-        }
-
         const backButton = me._backButton = createElement('div', {
             innerHTML: [
                 '<button id="back-button" class="back-button">',
@@ -359,62 +285,123 @@ export default class extends Panel {
 
     updateContent() {
         const me = this,
-            map = me._map,
-            {dict, clock} = map,
-            now = clock.getTime();
+            {_map: map, _container: container, _exits: exits} = me,
+            {dict, clock, container: mapContainer} = map,
+            now = clock.getTime(),
+            exitsElement = container.querySelector('#station-exits');
 
-        if (me.isOpen()) {
-            for (const departure of me._departures) {
-                const trains = [];
+        if (!me.isOpen()) {
+            return;
+        }
 
-                for (const train of map.timetableData) {
-                    const delay = train.delay || 0;
+        for (const departure of me._departures) {
+            const trains = [];
 
-                    for (const railway of departure.railways) {
-                        if (train.r === railway.id && train.d === railway.direction && train.end + delay > now && train.tt) {
-                            for (let i = 0; i < train.tt.length - 1; i++) {
-                                const {s, d} = train.tt[i];
+            for (const train of map.timetableData) {
+                const delay = train.delay || 0;
 
-                                if (s === railway.station) {
-                                    const time = clock.getTime(d) + delay;
+                for (const railway of departure.railways) {
+                    if (train.r === railway.id && train.d === railway.direction && train.end + delay > now && train.tt) {
+                        for (let i = 0; i < train.tt.length - 1; i++) {
+                            const {s, d} = train.tt[i];
 
-                                    if (time > now) {
-                                        if (trains.length === 0 || time < trains[0].time) {
-                                            trains.unshift({train, time});
-                                            trains.splice(2, 1);
-                                        } else if (trains.length === 1 || time < trains[1].time) {
-                                            trains.splice(1, 1, {train, time});
-                                        }
+                            if (s === railway.station) {
+                                const time = clock.getTime(d) + delay;
+
+                                if (time > now) {
+                                    if (trains.length === 0 || time < trains[0].time) {
+                                        trains.unshift({train, time});
+                                        trains.splice(2, 1);
+                                    } else if (trains.length === 1 || time < trains[1].time) {
+                                        trains.splice(1, 1, {train, time});
                                     }
-                                    break;
                                 }
+                                break;
                             }
                         }
                     }
                 }
-                departure.trains = trains;
             }
+            departure.trains = trains;
+        }
 
-            me._container.querySelector('#station-departure').innerHTML =
-                me._departures.map(({color, label, trains}) => [
-                    '<div class="direction-row">',
-                    `<div class="line-strip" style="background-color: ${color};"></div>`,
-                    `<div class="direction-label">${label}</div>`,
+        container.querySelector('#station-departure').innerHTML =
+            me._departures.map(({color, label, trains}) => [
+                '<div class="direction-row">',
+                `<div class="line-strip" style="background-color: ${color};"></div>`,
+                `<div class="direction-label">${label}</div>`,
+                '</div>',
+                '<div class="trains-row">',
+                trains.length ? trains.map(({train, time}) => [
+                    '<div class="train-row">',
+                    `<div class="train-time-box${train.delay >= 60000 ? ' desc-caution' : ''}">${clock.getTimeString(time)}</div>`,
+                    '<div class="train-title-box">',
+                    `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y)}</span> `,
+                    train.nm ? `${map.getLocalizedTrainNameOrRailwayTitle(train.nm)} ` : '',
+                    map.getLocalizedDestinationTitle(train.ds, train.d),
+                    train.delay >= 60000 ? ` <span class="desc-caution">${dict['delay'].replace('$1', Math.floor(train.delay / 60000))}</span>` : '',
                     '</div>',
-                    '<div class="trains-row">',
-                    trains.length ? trains.map(({train, time}) => [
-                        '<div class="train-row">',
-                        `<div class="train-time-box${train.delay >= 60000 ? ' desc-caution' : ''}">${clock.getTimeString(time)}</div>`,
-                        '<div class="train-title-box">',
-                        `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y)}</span> `,
-                        train.nm ? `${map.getLocalizedTrainNameOrRailwayTitle(train.nm)} ` : '',
-                        map.getLocalizedDestinationTitle(train.ds, train.d),
-                        train.delay >= 60000 ? ` <span class="desc-caution">${dict['delay'].replace('$1', Math.floor(train.delay / 60000))}</span>` : '',
-                        '</div>',
-                        '</div>'
-                    ].join('')).join('') : `<div class="train-row desc-caution">${dict['service-has-ended']}</div>`,
                     '</div>'
-                ].join('')).join('');
+                ].join('')).join('') : `<div class="train-row desc-caution">${dict['service-has-ended']}</div>`,
+                '</div>'
+            ].join('')).join('');
+
+        container.querySelector('#station-exits').innerHTML =
+            me._exits.map(id => {
+                const poi = map.poiLookup[id],
+                    calendar = clock.getCalendar(),
+                    uptime = poi.uptime && poi.uptime.reduce((acc, val) => !val.calendar || includes(val.calendar, calendar) ? val : acc, {}),
+                    closed = uptime && (now < clock.getTime(uptime.open) || now >= clock.getTime(uptime.close) || uptime.open === uptime.close);
+
+                return [
+                    `<div class="exit-row${closed ? ' closed' : ''}">`,
+                    '<div class="exit-icon-box"></div>',
+                    '<div class="exit-title-box">',
+                    map.getLocalizedPOIDescription(id),
+                    uptime && uptime.open !== uptime.close ? ` (${uptime.open}-${uptime.close})` : '',
+                    '</div>',
+                    (poi.facilities || []).map(facility => `<div class="exit-${facility}-icon"></div>`).join(''),
+                    '<div class="exit-share-button"></div>',
+                    '</div>'
+                ].join('');
+            }).join('');
+
+        for (let i = 0, ilen = exits.length; i < ilen; i++) {
+            const id = exits[i],
+                poi = map.poiLookup[id],
+                calendar = clock.getCalendar(),
+                uptime = poi.uptime && poi.uptime.reduce((acc, val) => !val.calendar || includes(val.calendar, calendar) ? val : acc, {}),
+                closed = uptime && (now < clock.getTime(uptime.open) || now >= clock.getTime(uptime.close) || uptime.open === uptime.close),
+                elemet = createElement('div', {
+                    className: `exit-row${closed ? ' closed' : ''}`,
+                    innerHTML: [
+                        '<div class="exit-icon-box"></div>',
+                        '<div class="exit-title-box">',
+                        map.getLocalizedPOIDescription(id),
+                        uptime && uptime.open !== uptime.close ? ` (${uptime.open}-${uptime.close})` : '',
+                        '</div>',
+                        (poi.facilities || []).map(facility => `<div class="exit-${facility}-icon"></div>`).join(''),
+                        '<div class="exit-share-button"></div>'
+                    ].join('')
+                }, exitsElement);
+
+            elemet.addEventListener('click', () => {
+                map.map.flyTo({center: poi.coord, zoom: 19, pitch: 30});
+            });
+            elemet.addEventListener('mouseenter', () => {
+                const popup = mapContainer.querySelector(`#exit-${i}`);
+
+                if (popup) {
+                    popup.classList.add('highlighted');
+                }
+            });
+            elemet.addEventListener('mouseleave', () => {
+                const popup = mapContainer.querySelector(`#exit-${i}`);
+
+                if (popup) {
+                    popup.classList.remove('highlighted');
+                }
+            });
         }
     }
 
