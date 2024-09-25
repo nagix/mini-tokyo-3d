@@ -349,29 +349,38 @@ export default class extends Evented {
     }
 
     /**
-     * Returns the ID of the train or flight being tracked.
-     * @returns {string} The ID of the train or flight being tracked
+     * Returns the ID of the train or flight being tracked, or the IDs of the selected
+     * stations.
+     * @returns {string | Array<string>} The ID of the train or flight being tracked, or
+     *     the IDs of the selected stations
      */
     getSelection() {
-        const me = this;
+        const trackedObject = this.trackedObject;
 
-        if (isTrainOrFlight(me.trackedObject)) {
-            const object = me.trackedObject.object;
+        if (isTrainOrFlight(trackedObject)) {
+            const object = trackedObject.object;
 
             return object.t || object.id;
+        } else if (isStation(trackedObject)) {
+            return trackedObject.stations;
         }
     }
 
     /**
-     * Sets the ID of the train or flight you want to track.
-     * @param {string} id - ID of the train or flight to be tracked
+     * Sets the ID of the train or flight you want to track, or the station to select.
+     * @param {string} id - ID of the train or flight to be tracked, or the station to
+     *     be selected
      * @returns {Map} Returns itself to allow for method chaining
      */
     setSelection(id) {
         const me = this,
-            selection = helpers.removePrefix(id);
+            selection = helpers.removePrefix(id),
+            station = me.stationLookup[selection];
 
-        if (!selection.match(/NRT|HND/)) {
+        if (station) {
+            me.trackObject(me.stationGroupLookup[station.group]);
+            delete me.initialSelection;
+        } else if (!selection.match(/NRT|HND/)) {
             if (me.trainLoaded) {
                 const train = me.trainLookup[selection];
                 let activeTrain;
@@ -2708,7 +2717,7 @@ export default class extends Evented {
                 me.fire({type: 'deselection', deselection: prevObject.t || prevObject.id});
             } else if (isStation(trackedObject)) {
                 me.removeStationOutline('stations-selected');
-                me.fire({type: 'deselection'});
+                me.fire({type: 'deselection', deselection: trackedObject.stations});
                 me._setSearchMode('none');
                 me.hideStationExits();
             } else {
@@ -2786,7 +2795,7 @@ export default class extends Evented {
                 me.detailPanel.addTo(me);
 
                 me.addStationOutline(object, 'stations-selected');
-                me.fire({type: 'selection'});
+                me.fire({type: 'selection', selection: object.stations});
             } else {
                 me.fire(Object.assign({type: 'selection'}, object));
             }
