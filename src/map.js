@@ -2437,23 +2437,6 @@ export default class extends Evented {
         });
     }
 
-    updateSearchButton(mode) {
-        const {container, dict} = this,
-            button = container.querySelector('.mapboxgl-ctrl-search');
-
-        if (button) {
-            const classList = button.classList;
-
-            if (mode === 'edit' || mode === 'route' || mode === 'playback') {
-                button.title = dict['exit-search'];
-                classList.add('mapboxgl-ctrl-search-active');
-            } else {
-                button.title = dict['enter-search'];
-                classList.remove('mapboxgl-ctrl-search-active');
-            }
-        }
-    }
-
     updateUndergroundButton(mode) {
         const {container, dict} = this,
             button = container.querySelector('.mapboxgl-ctrl-underground');
