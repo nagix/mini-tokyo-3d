@@ -346,33 +346,14 @@ export default class extends Panel {
                 '</div>'
             ].join('')).join('');
 
-        container.querySelector('#station-exits').innerHTML =
-            me._exits.map(id => {
-                const poi = map.poiLookup[id],
-                    calendar = clock.getCalendar(),
-                    uptime = poi.uptime && poi.uptime.reduce((acc, val) => !val.calendar || includes(val.calendar, calendar) ? val : acc, {}),
-                    closed = uptime && (now < clock.getTime(uptime.open) || now >= clock.getTime(uptime.close) || uptime.open === uptime.close);
-
-                return [
-                    `<div class="exit-row${closed ? ' closed' : ''}">`,
-                    '<div class="exit-icon-box"></div>',
-                    '<div class="exit-title-box">',
-                    map.getLocalizedPOIDescription(id),
-                    uptime && uptime.open !== uptime.close ? ` (${uptime.open}-${uptime.close})` : '',
-                    '</div>',
-                    (poi.facilities || []).map(facility => `<div class="exit-${facility}-icon"></div>`).join(''),
-                    '<div class="exit-share-button"></div>',
-                    '</div>'
-                ].join('');
-            }).join('');
-
+        exitsElement.innerHTML = '';
         for (let i = 0, ilen = exits.length; i < ilen; i++) {
             const id = exits[i],
                 poi = map.poiLookup[id],
                 calendar = clock.getCalendar(),
                 uptime = poi.uptime && poi.uptime.reduce((acc, val) => !val.calendar || includes(val.calendar, calendar) ? val : acc, {}),
                 closed = uptime && (now < clock.getTime(uptime.open) || now >= clock.getTime(uptime.close) || uptime.open === uptime.close),
-                elemet = createElement('div', {
+                element = createElement('div', {
                     className: `exit-row${closed ? ' closed' : ''}`,
                     innerHTML: [
                         '<div class="exit-icon-box"></div>',
@@ -385,17 +366,17 @@ export default class extends Panel {
                     ].join('')
                 }, exitsElement);
 
-            elemet.addEventListener('click', () => {
+            element.addEventListener('click', () => {
                 map.map.flyTo({center: poi.coord, zoom: 19, pitch: 30});
             });
-            elemet.addEventListener('mouseenter', () => {
+            element.addEventListener('mouseenter', () => {
                 const popup = mapContainer.querySelector(`#exit-${i}`);
 
                 if (popup) {
                     popup.classList.add('highlighted');
                 }
             });
-            elemet.addEventListener('mouseleave', () => {
+            element.addEventListener('mouseleave', () => {
                 const popup = mapContainer.querySelector(`#exit-${i}`);
 
                 if (popup) {
