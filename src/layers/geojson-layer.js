@@ -1,24 +1,5 @@
-import {LayerExtension} from '@deck.gl/core';
 import {GeoJsonLayer} from '@deck.gl/layers';
 import {MapboxLayer} from '@deck.gl/mapbox';
-
-// Workaround for deck.gl #8235
-class ShaderExtension extends LayerExtension {
-
-    constructor(options) {
-        super(options);
-        this.constructor.extensionName = 'ShaderExtension';
-    }
-
-    getShaders(extensions) {
-        return Object.assign({}, super.getShaders(extensions), {
-            inject: {
-                'vs:#decl': 'invariant gl_Position;'
-            }
-        });
-    }
-
-}
 
 export default class {
 
@@ -30,10 +11,7 @@ export default class {
         const me = this,
             implementation = me.implementation,
             id = implementation.id,
-            options = Object.assign({}, implementation, {
-                type: GeoJsonLayer,
-                extensions: [new ShaderExtension()]
-            }),
+            options = Object.assign({}, implementation, {type: GeoJsonLayer}),
             mbox = map.map;
 
         me.map = map;
