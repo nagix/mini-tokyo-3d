@@ -24,14 +24,14 @@ Name | Description
 **`options.ecoFrameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1` | Frame rate for train and airplane animations (frames per second) when Eco Mode is on. Specify on a scale of 1 to 60. Lower values result in less smoother animations and lower CPU resource usage, thus reducing battery consumption on mobile devices. If not specified, it will default to `1`.
 **`options.ecoMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'normal'` | The initial eco mode. `'normal'` and `'eco'` are supported.
 **`options.fullscreenControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the fullscreen button will be added to the map.
-**`options.lang`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the language. If not specified, the browser's default language is used. Currently `'ja'`, `'en'`, `'ko'`, `'zh-Hans'`, `'zh-Hant'`, `'th'`, `'ne'`, `'pt-BR'` and `'fr'` are supported. If an unsupported language is specified, then `'en'` is used.
+**`options.lang`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the language. If not specified, the browser's default language is used. Currently `'ja'`, `'en'`, `'ko'`, `'zh-Hans'`, `'zh-Hant'`, `'th'`, `'ne'`, `'pt-BR'` and `'fr'`, `'es'` are supported. If an unsupported language is specified, then `'en'` is used.
 **`options.modeControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the mode switch buttons will be added to the map.
 **`options.navigationControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the navigation buttons will be added to the map.
 **`options.pitch`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `60` | The initial pitch (tilt) of the map, measured in degrees away from the plane of the screen (0-85). If not specified, it will default to `60`.
 **`options.plugins`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`PluginInterface`](./plugin.md)`>` | An array of plugins to add. Each plugin must implement [PluginInterface](./plugin.md).
 **`options.searchControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the search button will be added to the map.
 **`options.secrets`**<br>[`Secrets`](./secrets.md) | An object to store the access tokens used to retrieve data.
-**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | ID of the train or flight to be tracked. The train ID is a string in the form of `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. The fright ID is a string in the form of `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` or `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. The `'odpt.*:'` part can be omitted. For details, see the [Public Transportation Open Data Center: API Specification](https://developer.odpt.org/en/documents).
+**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | ID of the train or flight to be tracked, or the station to be selected. The train ID is a string in the form of `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. The fright ID is a string in the form of `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` or `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. The `'odpt.*:'` part can be omitted. For details, see the [Public Transportation Open Data Center: API Specification](https://developer.odpt.org/en/documents).
 **`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'position'` | The initial tracking mode. `'position'`, `'back'`, `'topback'`, `'front'`, `'topfront'`, `'helicopter'`, `'drone'` and `'bird'` are supported.
 **`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `14` | The initial zoom level of the map. If not specified, it will default to `14`.
 
@@ -43,7 +43,7 @@ Adds a layer to the map.
 
 #### Parameters
 
-**`layer`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`CustomLayerInterface`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#customlayerinterface) | [`GeoJsonLayerInterface`](./geojson-layer.md) | [`ThreeLayerInterface`](./three-layer.md) | [`Tile3DLayerInterface`](./tile-3d-layer.md)) The layer to add, conforming to either the Mapbox Style Specification's [layer definition](https://docs.mapbox.com/mapbox-gl-js/style-spec/#layers), the [CustomLayerInterface](https://docs.mapbox.com/mapbox-gl-js/api/properties/#customlayerinterface) specification, the [GeoJsonLayerInterface](./geojson-layer.md) specification, the [ThreeLayerInterface](./three-layer.md) specification or the [Tile3DLayerInterface](./tile-3d-layer.md) specification.
+**`layer`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`CustomLayerInterface`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#customlayerinterface) | [`GeoJsonLayerInterface`](./geojson-layer.md) | [`ThreeLayerInterface`](./three-layer.md) | [`Tile3DLayerInterface`](./tile-3d-layer.md)) The layer to add, conforming to either the Mapbox Style Specification's [layer definition](https://docs.mapbox.com/style-spec/reference/layers/), the [CustomLayerInterface](https://docs.mapbox.com/mapbox-gl-js/api/properties/#customlayerinterface) specification, the [GeoJsonLayerInterface](./geojson-layer.md) specification, the [ThreeLayerInterface](./three-layer.md) specification or the [Tile3DLayerInterface](./tile-3d-layer.md) specification.
 
 #### Returns
 
@@ -179,11 +179,11 @@ Returns the map's current pitch (tilt).
 
 ### **`getSelection()`**
 
-Returns the ID of the train or flight being tracked.
+Returns the ID of the train or flight being tracked, or the array of the IDs of the selected stations.
 
 #### Returns
 
-[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): The ID of the train or flight being tracked. The train ID is a string in the form of `'<operator ID>.<line ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`.
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`: The ID of the train or flight being tracked, or the array of the IDs of the selected stations. The train ID is a string in the form of `'<operator ID>.<line ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'<operator ID>.<line ID>.<station ID>'`.
 
 ---
 
@@ -399,11 +399,11 @@ Sets the map's pitch (tilt). Equivalent to `jumpTo({pitch: pitch})`.
 
 ### **`setSelection(id)`**
 
-Sets the ID of the train or flight you want to track. The train ID is a string in the form of `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. The fright ID is a string in the form of `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` or `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. The `'odpt.*:'` part can be omitted. For details, see the [Public Transportation Open Data Center: API Specification](https://developer.odpt.org/en/documents).
+Sets the ID of the train or flight you want to track, or the station to select. The train ID is a string in the form of `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. The fright ID is a string in the form of `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` or `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. The `'odpt.*:'` part can be omitted. For details, see the [Public Transportation Open Data Center: API Specification](https://developer.odpt.org/en/documents).
 
 #### Parameters
 
-**`id`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) ID of the train or flight to be tracked.
+**`id`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) ID of the train or flight to be tracked, or the station to be selected.
 
 #### Returns
 
@@ -519,13 +519,13 @@ Fired when a pointing device (usually a mouse) is pressed and released twice at 
 
 ### **`deselection`**
 
-Fired when a train or airplane tracking is canceled.
+Fired when a train or airplane tracking is canceled, or stations are deselected.
 
 **Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 #### Properties
 
-**`deselection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): The ID of the train or flight whose tracking is canceled. The train ID is a string in the form of `'<operator ID>.<line ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`.
+**`deselection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`): The ID of the train or flight whose tracking is canceled, or the array of the IDs of the deselected stations. The train ID is a string in the form of `'<operator ID>.<line ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'<operator ID>.<line ID>.<station ID>'`.
 
 ---
 
@@ -645,7 +645,7 @@ Fired just before the map begins a transition from one view to another, as the r
 
 Fired repeatedly during the map's pitch (tilt) animation between one state and another as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
-**Type** [`MapDataEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapdataevent)
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -653,7 +653,7 @@ Fired repeatedly during the map's pitch (tilt) animation between one state and a
 
 Fired immediately after the map's pitch (tilt) finishes changing as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
-**Type** [`MapDataEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapdataevent)
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -661,7 +661,7 @@ Fired immediately after the map's pitch (tilt) finishes changing as the result o
 
 Fired whenever the map's pitch (tilt) begins a change as the result of either user interaction or methods such as [Map#flyTo](./map.md#flyto-options).
 
-**Type** [`MapDataEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapdataevent)
+**Type** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
 
 ---
 
@@ -697,13 +697,13 @@ Fired when a "drag to rotate" interaction starts. See [DragRotateHandler](https:
 
 ### **`selection`**
 
-Fired when a train or airplane tracking is initiated.
+Fired when a train or airplane tracking is initiated, or stations are selected.
 
 **Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 #### Properties
 
-**`selection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): The ID of the train or flight whose tracking is initiated. The train ID is a string in the form of `'<operator ID>.<line ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`.
+**`selection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`): The ID of the train or flight whose tracking is initiated, or the array of the IDs of the selected stations. The train ID is a string in the form of `'<operator ID>.<line ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'<operator ID>.<line ID>.<station ID>'`.
 
 ---
 

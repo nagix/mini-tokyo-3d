@@ -2,7 +2,7 @@
 
 マーカーコンポーネントを作成します。
 
-[Evented](https://docs.mapbox.com/mapbox-gl-js/api/events/#evented) を拡張しています。
+[Evented](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#evented) を拡張しています。
 
 ```js
 new Marker(options: Object)
@@ -62,7 +62,7 @@ new Marker(options: Object)
 
 #### パラメータ
 
-**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) マーカーを設置する位置を示す [LngLatLike](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)
+**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/ja/api/geography/#lnglatlike)) マーカーを設置する位置を示す [LngLatLike](https://docs.mapbox.com/mapbox-gl-js/ja/api/geography/#lnglatlike)
 
 #### 返り値
 

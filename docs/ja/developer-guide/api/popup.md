@@ -56,7 +56,7 @@ new Popup()
 
 #### パラメータ
 
-**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) ポップアップのアンカーとして設定する地理的な位置
+**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/ja/api/geography/#lnglatlike)) ポップアップのアンカーとして設定する地理的な位置
 
 #### 返り値
 

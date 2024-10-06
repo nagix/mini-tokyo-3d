@@ -2,7 +2,7 @@
 
 `Map` オブジェクトは、Web ページ上の Mini Tokyo 3D マップを表しています。`Map` を作るには `container` やその他のオプションを指定してコンストラクタを呼び出します。すると、Web ページ上のマップが初期化され、`Map` が返されます。
 
-[Evented](https://docs.mapbox.com/mapbox-gl-js/api/events/#evented) を拡張しています。
+[Evented](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#evented) を拡張しています。
 
 ```js
 new Map(options: Object)
@@ -16,7 +16,7 @@ new Map(options: Object)
 :-- | :--
 **`options.accessToken`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [Mapbox](https://www.mapbox.com) のアクセストークン。未指定の場合はマップのロード時にエラーが起きるため、必ず自分の Web サイト専用のアクセストークンを入手して指定する
 **`options.bearing`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `0` | 初期のマップの方角。真北から反時計回りの角度で指定する。未指定の場合は、`0` に設定される
-**`options.center`**<br>[`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)<br>デフォルト: `[139.7670, 35.6814]` | 初期のマップ中心点の座標。未指定の場合は、東京駅付近（`[139.7670, 35.6814]`）に設定される。注: Mini Tokyo 3D では、GeoJSON と同様に経度、緯度の順で座標を指定する
+**`options.center`**<br>[`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/ja/api/geography/#lnglatlike)<br>デフォルト: `[139.7670, 35.6814]` | 初期のマップ中心点の座標。未指定の場合は、東京駅付近（`[139.7670, 35.6814]`）に設定される。注: Mini Tokyo 3D では、GeoJSON と同様に経度、緯度の順で座標を指定する
 **`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、時刻表示をマップに追加する
 **`options.configControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、設定ボタンをマップに追加する
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D がマップを表示する HTML 要素の `id`。指定された要素は、子要素を含んではならない
@@ -24,14 +24,14 @@ new Map(options: Object)
 **`options.ecoFrameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1` | エコモードがオンの場合の、列車や旅客機のアニメーションのフレームレート（1秒あたりのフレーム数）。1〜60 の間で指定する。数値を小さくすると、アニメーションの滑らかさが減少する一方で CPU リソースの使用も下がるため、モバイルデバイスでのバッテリー消費を抑えることができる。未指定の場合は、`1` に設定される
 **`options.ecoMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>デフォルト: `'normal'` | 初期のエコモードを指定する。`'normal'` または `'eco'` がサポートされている
 **`options.fullscreenControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、フルスクリーンボタンをマップに追加する
-**`options.lang`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | 言語を表す [IETF 言語タグ](https://ja.wikipedia.org/wiki/IETF言語タグ)。未指定の場合は、ブラウザのデフォルト言語が使われる。現在 `'ja'`, `'en'`, `'ko'`, `'zh-Hans'`, `'zh-Hant'`, `'th'`, `'ne'`, `'pt-BR'`, `'fr'` がサポートされている。サポートしていない言語が指定された場合は `'en'` が使われる
+**`options.lang`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | 言語を表す [IETF 言語タグ](https://ja.wikipedia.org/wiki/IETF言語タグ)。未指定の場合は、ブラウザのデフォルト言語が使われる。現在 `'ja'`, `'en'`, `'ko'`, `'zh-Hans'`, `'zh-Hant'`, `'th'`, `'ne'`, `'pt-BR'`, `'fr'`, `'es'` がサポートされている。サポートしていない言語が指定された場合は `'en'` が使われる
 **`options.modeControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、表示モード切り替えボタンをマップに追加する
 **`options.navigationControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、ナビゲーションボタンをマップに追加する
 **`options.pitch`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `60` | 初期のマップの傾き。画面に対する地表面の角度（0〜85）で指定する。未指定の場合は、`60` に設定される
 **`options.plugins`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`PluginInterface`](./plugin.md)`>` | 追加するプラグインの配列。各プラグインは [PluginInterface](./plugin.md) を実装する必要がある
 **`options.searchControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、検索ボタンをマップに追加する
 **`options.secrets`**<br>[`Secrets`](./secrets.md) | データ取得に使用するアクセストークンを格納するオブジェクト
-**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | 追跡する列車またはフライトの ID。列車 ID は`'odpt.Train:<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'odpt.FlightInformationArrival:<事業者ID>.<空港ID>.<フライト番号>'`または`'odpt.FlightInformationDeparture:<事業者ID>.<空港ID>.<フライト番号>'`の形式で表される文字列。`'odpt.*:'`の部分は省略可。詳細は[公共交通オープンデータセンター API 仕様](https://developer.odpt.org/documents)を参照のこと
+**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | 追跡する列車またはフライトの ID、あるいは選択する駅の ID。列車 ID は`'odpt.Train:<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'odpt.FlightInformationArrival:<事業者ID>.<空港ID>.<フライト番号>'`または`'odpt.FlightInformationDeparture:<事業者ID>.<空港ID>.<フライト番号>'`、駅 ID は`'odpt.Station:<事業者ID>.<路線ID>.<駅ID>'`の形式で表される文字列。`'odpt.*:'`の部分は省略可。詳細は[公共交通オープンデータセンター API 仕様](https://developer.odpt.org/documents)を参照のこと
 **`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>デフォルト: `'position'` | 初期の追跡モードを指定する。`'position'`, `'back'`, `'topback'`, `'front'`, `'topfront'`, `'helicopter'`, `'drone'`, `'bird'` がサポートされている
 **`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `14` | 初期のマップのズームレベル。未指定の場合は、`14` に設定される
 
@@ -43,7 +43,7 @@ new Map(options: Object)
 
 #### パラメータ
 
-**`layer`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`CustomLayerInterface`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#customlayerinterface) | [`GeoJsonLayerInterface`](./geojson-layer.md) | [`ThreeLayerInterface`](./three-layer.md) | [`Tile3DLayerInterface`](./tile-3d-layer.md)) Mapbox スタイル仕様の[レイヤー定義](https://docs.mapbox.com/mapbox-gl-js/style-spec/#layers)、[CustomLayerInterface](https://docs.mapbox.com/mapbox-gl-js/api/properties/#customlayerinterface) 仕様、[GeoJsonLayerInterface](./geojson-layer.md) 仕様、[ThreeLayerInterface](./three-layer.md) 仕様、または [Tile3DLayerInterface](./tile-3d-layer.md) 仕様のいずれかに準拠した、追加するレイヤー
+**`layer`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | [`CustomLayerInterface`](https://docs.mapbox.com/mapbox-gl-js/ja/api/properties/#customlayerinterface) | [`GeoJsonLayerInterface`](./geojson-layer.md) | [`ThreeLayerInterface`](./three-layer.md) | [`Tile3DLayerInterface`](./tile-3d-layer.md)) Mapbox スタイル仕様の[レイヤー定義](https://docs.mapbox.com/ja/style-spec/reference/layers/)、[CustomLayerInterface](https://docs.mapbox.com/mapbox-gl-js/ja/api/properties/#customlayerinterface) 仕様、[GeoJsonLayerInterface](./geojson-layer.md) 仕様、[ThreeLayerInterface](./three-layer.md) 仕様、または [Tile3DLayerInterface](./tile-3d-layer.md) 仕様のいずれかに準拠した、追加するレイヤー
 
 #### 返り値
 
@@ -59,7 +59,7 @@ new Map(options: Object)
 
 #### パラメータ
 
-**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) 遷移先とアニメーションを記述するオプション。[CameraOptions](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions) と [AnimationOptions](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions) が使用可能
+**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) 遷移先とアニメーションを記述するオプション。[CameraOptions](https://docs.mapbox.com/mapbox-gl-js/ja/api/properties/#cameraoptions) と [AnimationOptions](https://docs.mapbox.com/mapbox-gl-js/ja/api/properties/#animationoptions) が使用可能
 
 #### 返り値
 
@@ -75,7 +75,7 @@ new Map(options: Object)
 
 #### パラメータ
 
-**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) 遷移先とアニメーションを記述するオプション。[CameraOptions](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions)、[AnimationOptions](https://docs.mapbox.com/mapbox-gl-js/api/properties/#animationoptions) に加えて、次に示すオプションが使用可能
+**`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) 遷移先とアニメーションを記述するオプション。[CameraOptions](https://docs.mapbox.com/mapbox-gl-js/ja/api/properties/#cameraoptions)、[AnimationOptions](https://docs.mapbox.com/mapbox-gl-js/ja/api/properties/#animationoptions) に加えて、次に示すオプションが使用可能
 
 名前 | 説明
 :-- | :--
@@ -107,7 +107,7 @@ new Map(options: Object)
 
 #### 返り値
 
-[`LngLat`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglat): マップ中心点の座標
+[`LngLat`](https://docs.mapbox.com/mapbox-gl-js/ja/api/geography/#lnglat): マップ中心点の座標
 
 ---
 
@@ -133,11 +133,11 @@ new Map(options: Object)
 
 ### **`getMapboxMap()`**
 
-マップ内で使われている Mapbox の [`Map`](https://docs.mapbox.com/mapbox-gl-js/api/map/) オブジェクトを返します。
+マップ内で使われている Mapbox の [`Map`](https://docs.mapbox.com/mapbox-gl-js/ja/api/map/) オブジェクトを返します。
 
 #### 返り値
 
-[`Map`](https://docs.mapbox.com/mapbox-gl-js/api/map/): Mapbox の Map
+[`Map`](https://docs.mapbox.com/mapbox-gl-js/ja/api/map/): Mapbox の Map
 
 ---
 
@@ -147,7 +147,7 @@ new Map(options: Object)
 
 #### パラメータ
 
-**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) 投影する地理的位置
+**`lnglat`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/ja/api/geography/#lnglatlike)) 投影する地理的位置
 
 **`altitude`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) 位置の高度（メートル単位）
 
@@ -179,11 +179,11 @@ new Map(options: Object)
 
 ### **`getSelection()`**
 
-追跡中の列車またはフライトの ID を返します。
+追跡中の列車またはフライトの ID、あるいは選択中の駅の ID の配列を返します。
 
 #### 返り値
 
-[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String): 追跡中の列車またはフライトの ID。列車 ID は`'<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'<事業者ID>.<空港ID>.<フライト番号>'`の形式で表される文字列
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`: 追跡中の列車またはフライトの ID。あるいは、選択中の駅の ID の配列。列車 ID は`'<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'<事業者ID>.<空港ID>.<フライト番号>'`、駅 ID は`'<事業者ID>.<路線ID>.<駅ID>'`の形式で表される文字列
 
 ---
 
@@ -237,7 +237,7 @@ new Map(options: Object)
 
 #### パラメータ
 
-**`options`** ([`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/api/properties/#cameraoptions)) オプションのオブジェクト
+**`options`** ([`CameraOptions`](https://docs.mapbox.com/mapbox-gl-js/ja/api/properties/#cameraoptions)) オプションのオブジェクト
 
 #### 返り値
 
@@ -331,7 +331,7 @@ new Map(options: Object)
 
 #### パラメータ
 
-**`center`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#lnglatlike)) 設定する中心点の座標
+**`center`** ([`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/ja/api/geography/#lnglatlike)) 設定する中心点の座標
 
 #### 返り値
 
@@ -399,11 +399,11 @@ new Map(options: Object)
 
 ### **`setSelection(id)`**
 
-追跡する列車またはフライトの ID を設定します。列車 ID は`'odpt.Train:<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'odpt.FlightInformationArrival:<事業者ID>.<空港ID>.<フライト番号>'`または`'odpt.FlightInformationDeparture:<事業者ID>.<空港ID>.<フライト番号>'`の形式で表される文字列です。`'odpt.*:'`の部分は省略可能です。詳細は[公共交通オープンデータセンター API 仕様](https://developer.odpt.org/documents)を参照してください。
+追跡する列車またはフライトの ID を設定します。列車 ID は`'odpt.Train:<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'odpt.FlightInformationArrival:<事業者ID>.<空港ID>.<フライト番号>'`または`'odpt.FlightInformationDeparture:<事業者ID>.<空港ID>.<フライト番号>'`、駅 ID は`'odpt.Station:<事業者ID>.<路線ID>.<駅ID>'`の形式で表される文字列です。`'odpt.*:'`の部分は省略可能です。詳細は[公共交通オープンデータセンター API 仕様](https://developer.odpt.org/documents)を参照してください。
 
 #### パラメータ
 
-**`id`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) 追跡する列車またはフライトの ID
+**`id`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) 追跡する列車またはフライトの ID、あるいは選択する駅の ID
 
 #### 返り値
 
@@ -459,25 +459,25 @@ new Map(options: Object)
 
 ### **`boxzoomcancel`**
 
-ユーザーが「ボックスズーム」操作をキャンセルした場合や、境界ボックスが最小サイズのしきい値を満たしていない場合に発生します。[BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler) を参照してください。
+ユーザーが「ボックスズーム」操作をキャンセルした場合や、境界ボックスが最小サイズのしきい値を満たしていない場合に発生します。[BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/ja/api/handlers/#boxzoomhandler) を参照してください。
 
-**型** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent)
+**型** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapboxzoomevent)
 
 ---
 
 ### **`boxzoomend`**
 
-「ボックスズーム」操作が終了したときに発生します。[BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler) を参照してください。
+「ボックスズーム」操作が終了したときに発生します。[BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/ja/api/handlers/#boxzoomhandler) を参照してください。
 
-**型** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent)
+**型** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapboxzoomevent)
 
 ---
 
 ### **`boxzoomstart`**
 
-「ボックスズーム」操作が開始されたときに発生します。[BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler) を参照してください。
+「ボックスズーム」操作が開始されたときに発生します。[BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/ja/api/handlers/#boxzoomhandler) を参照してください。
 
-**型** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent)
+**型** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapboxzoomevent)
 
 ---
 
@@ -485,7 +485,7 @@ new Map(options: Object)
 
 マップ上の同じ場所でポインティングデバイス（通常はマウス）を押して離すと発生します。
 
-**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)
 
 ---
 
@@ -505,7 +505,7 @@ new Map(options: Object)
 
 マウスの右ボタンがクリックされたとき、またはマップ内でコンテキストメニューキーが押されたときに発生します。
 
-**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)
 
 ---
 
@@ -513,43 +513,43 @@ new Map(options: Object)
 
 マップ上の同じ場所でポインティングデバイス（通常はマウス）を2回連続して押して離すと発生します。
 
-**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)
 
 ---
 
 ### **`deselection`**
 
-列車または航空機の追跡が解除された時に発生します。
+列車または航空機の追跡が解除された時や、駅の選択が解除された時に発生します。
 
 **型** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 #### プロパティ
 
-**`deselection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): 追跡が解除された列車またはフライトの ID。列車 ID は`'<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'<事業者ID>.<空港ID>.<フライト番号>'`の形式で表される文字列
+**`deselection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`): 追跡が解除された列車またはフライトの ID。あるいは、選択が解除された駅 ID の配列。列車 ID は`'<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'<事業者ID>.<空港ID>.<フライト番号>'`、駅 ID は`'<事業者ID>.<路線ID>.<駅ID>'`の形式で表される文字列
 
 ---
 
 ### **`drag`**
 
-「移動のためのドラッグ」操作中に繰り返し発生します。[DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler) を参照してください。
+「移動のためのドラッグ」操作中に繰り返し発生します。[DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/ja/api/handlers/#dragpanhandler) を参照してください。
 
-**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
 ### **`dragend`**
 
-「移動のためのドラッグ」操作が終了したときに発生します。[DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler) を参照してください。
+「移動のためのドラッグ」操作が終了したときに発生します。[DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/ja/api/handlers/#dragpanhandler) を参照してください。
 
-**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
 ### **`dragstart`**
 
-「移動のためのドラッグ」操作が開始されたときに発生します。[DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragpanhandler) を参照してください。
+「移動のためのドラッグ」操作が開始されたときに発生します。[DragPanHandler](https://docs.mapbox.com/mapbox-gl-js/ja/api/handlers/#dragpanhandler) を参照してください。
 
-**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent) | [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
@@ -589,7 +589,7 @@ new Map(options: Object)
 
 マップ内でポインティングデバイス（通常はマウス）が押されたときに発生します。
 
-**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)
 
 ---
 
@@ -597,7 +597,7 @@ new Map(options: Object)
 
 カーソルがマップ内にあるときにポインティングデバイス（通常はマウス）が移動したときに発生します。マップ上でカーソルを移動すると、カーソルがマップ内の位置を変更するたびにイベントが発生します。
 
-**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)
 
 ---
 
@@ -605,7 +605,7 @@ new Map(options: Object)
 
 ポインティングデバイス（通常はマウス）がマップ内で移動したときに発生します。マップを含む Web ページ上でカーソルを移動すると、カーソルがマップまたは子要素に入るたびにイベントが発生します。
 
-**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)
 
 ---
 
@@ -613,7 +613,7 @@ new Map(options: Object)
 
 マップ内でポインティングデバイス（通常はマウス）が離されたときに発生します。
 
-**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)
 
 ---
 
@@ -621,7 +621,7 @@ new Map(options: Object)
 
 ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、あるビューから別のビューへのアニメーション遷移中に繰り返し発生します。
 
-**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
@@ -629,7 +629,7 @@ new Map(options: Object)
 
 ユーザの操作や [Map#jumpTo](./map.md#jumpto-options) などのメソッドの結果として、マップがあるビューから別のビューへの遷移を完了した直後に発生します。
 
-**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
@@ -637,7 +637,7 @@ new Map(options: Object)
 
 ユーザの操作や [Map#jumpTo](./map.md#jumpto-options) などのメソッドの結果として、マップがあるビューから別のビューに遷移する直前に発生します。
 
-**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
@@ -645,7 +645,7 @@ new Map(options: Object)
 
 ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、マップの傾きの状態遷移アニメーションの間に繰り返し発生します。
 
-**型** [`MapDataEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapdataevent)
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
@@ -653,7 +653,7 @@ new Map(options: Object)
 
 ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、マップの傾きが変化し終わった直後に発生します。
 
-**型** [`MapDataEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapdataevent)
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
@@ -661,7 +661,7 @@ new Map(options: Object)
 
 ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、マップの傾きが変化し始める直前に発生します。
 
-**型** [`MapDataEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapdataevent)
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
@@ -673,37 +673,37 @@ new Map(options: Object)
 
 ### **`rotate`**
 
-「回転のためのドラッグ」操作中に繰り返し発生します。[DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler) を参照してください。
+「回転のためのドラッグ」操作中に繰り返し発生します。[DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/ja/api/handlers/#dragrotatehandler) を参照してください。
 
-**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
 ### **`rotateend`**
 
-「回転のためのドラッグ」操作が終了したときに発生します。[DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler)を参照してください。
+「回転のためのドラッグ」操作が終了したときに発生します。[DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/ja/api/handlers/#dragrotatehandler)を参照してください。
 
-**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
 ### **`rotatestart`**
 
-「回転のためのドラッグ」操作が開始されたときに発生します。[DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#dragrotatehandler)を参照してください。
+「回転のためのドラッグ」操作が開始されたときに発生します。[DragRotateHandler](https://docs.mapbox.com/mapbox-gl-js/ja/api/handlers/#dragrotatehandler)を参照してください。
 
-**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
 ### **`selection`**
 
-列車または航空機の追跡が開始された時に発生します。
+列車または航空機の追跡が開始された時、あるいは駅が選択された時に発生します。
 
 **型** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 #### プロパティ
 
-**`selection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): 追跡が開始された列車またはフライトの ID。列車 ID は`'<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'<事業者ID>.<空港ID>.<フライト番号>'`の形式で表される文字列
+**`selection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`): 追跡が開始された列車またはフライトの ID。あるいは、選択された駅の ID の配列。列車 ID は`'<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'<事業者ID>.<空港ID>.<フライト番号>'`、駅 ID は`'<事業者ID>.<路線ID>.<駅ID>'`の形式で表される文字列
 
 ---
 
@@ -711,7 +711,7 @@ new Map(options: Object)
 
 マップ内で [`touchcancel`](https://developer.mozilla.org/docs/Web/Events/touchcancel) イベントが発生したときに発生します。
 
-**型** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
+**型** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent)
 
 ---
 
@@ -719,7 +719,7 @@ new Map(options: Object)
 
 マップ内で [`touchend`](https://developer.mozilla.org/docs/Web/Events/touchend) イベントが発生したときに発生します。
 
-**型** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
+**型** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent)
 
 ---
 
@@ -727,7 +727,7 @@ new Map(options: Object)
 
 マップ内で [`touchmove`](https://developer.mozilla.org/docs/Web/Events/touchmove) イベントが発生したときに発生します。
 
-**型** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
+**型** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent)
 
 ---
 
@@ -735,7 +735,7 @@ new Map(options: Object)
 
 マップ内で [`touchstart`](https://developer.mozilla.org/docs/Web/Events/touchstart) イベントが発生したときに発生します。
 
-**型** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
+**型** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent)
 
 ---
 
@@ -771,7 +771,7 @@ new Map(options: Object)
 
 マップ内で [`wheel`](https://developer.mozilla.org/docs/Web/Events/wheel) イベントが発生したときに発生します。
 
-**型** [`MapWheelEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapwheelevent)
+**型** [`MapWheelEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapwheelevent)
 
 ---
 
@@ -779,7 +779,7 @@ new Map(options: Object)
 
 ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、あるズームレベルから別のズームレベルへのアニメーション遷移中に繰り返し発生します。
 
-**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
@@ -787,7 +787,7 @@ new Map(options: Object)
 
 ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を完了した直後に発生します。
 
-**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))
 
 ---
 
@@ -795,4 +795,4 @@ new Map(options: Object)
 
 ユーザの操作や [Map#flyTo](./map.md#flyto-options) などのメソッドの結果として、マップがあるズームレベルから別のズームレベルへの移行を開始する直前に発生します。
 
-**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent))
+**型** ([`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)` | `[`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#maptouchevent))

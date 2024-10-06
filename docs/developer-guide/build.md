@@ -9,27 +9,6 @@ The following software are required.
 - The latest version of [Node.js](https://nodejs.org)
 - The latest version of [Git](https://git-scm.com) if you're cloning the repository
 
-Mini Tokyo 3D uses the following data sources and requires an access token for each of them at build time and run time. Follow the instructions below to obtain access tokens.
-
-Data Source | Sign-Up URL | Access Token Format
-:-- | :-- | :--
-[Public Transportation Open Data Center](https://www.odpt.org) | [Link](https://developer.odpt.org/en/users/sign_up) | A string of numbers and lowercase letters
-[Mapbox](https://www.mapbox.com) | [Link](https://account.mapbox.com/auth/signup/) | Alphanumeric string containing a period beginning with `pk.`
-
-### Getting an Access Token for Public Transportation Open Data Center
-
-Mini Tokyo 3D is using train and airplane data from the [Public Transportation Open Data Center](https://www.odpt.org). You need to register as a developer to get the data, but it is available for free.
-
-1. Register as a developer by entering your user information on the [developer site's registration page](https://developer.odpt.org/en/users/sign_up). It may take a few days to receive your registration confirmation email.
-2. After logging in with your developer account, click on "Account" in the menu at the top of the screen and select "Manage Access Token".
-3. A list of access tokens will be displayed. Only the "DefaultApplication" token will be displayed right after creating the account. Click on "Issuing an access token".
-4. Enter an application name in the "Name" field and click the "Submit" button.
-5. The newly created token will appear in the list of access tokens
-
-### Getting an Access Token for Mapbox
-
-See [Getting a Mapbox Access Token](./integration.md#getting-a-mapbox-access-token).
-
 ## Build Instructions
 
 ### 1. Downloading Files
@@ -56,14 +35,6 @@ Go to the top directory of Mini Tokyo 3D.
 cd mini-tokyo-3d
 ```
 
-Create a JSON file containing the access token for the Public Transportation Open Data Center obtained in the build preparation step and save it in this directory with the file name `secrets`.
-
-```json
-{
-    "odpt": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-}
-```
-
 Install the dependent npm modules.
 
 ```bash
@@ -78,6 +49,25 @@ npm run build-all
 
 When the build completes successfully, the `dist` directory will be created. It includes style sheet and JavaScript files for distribution. The `build` directory will also be created at the same time. It contains all the files needed for deployment on your web site.
 
-### 3. Deploying on a Web Site
+## Deploying on a Web Site
 
-The `index.html` in the `build` directory is for the web page on [https://minitokyo3d.com](http://minitokyo3d.com). Replace the `accessToken` property, which is passed to a `Map` constructor, with the Mapbox access token obtained in the build preparation step. Then, edit it for your web site, and place all the files in the `build` directory in the public directory of your web server.
+You need access tokens for the data sources to deploy and use the built files on your web site. See [Preparation for Use](./integration.md#preparation-for-use) to obtain access tokens for Public Transportation Open Data Center, Open Data Challenge for Public Transportation 2024, and Mapbox.
+
+The `index.html` in the `build` directory is for the web page on [https://minitokyo3d.com](http://minitokyo3d.com). In `index.html`, add the `accessToken` and `secrets` properties to the object passed to the `Map` constructor, and specify the Mapbox access token for the `accessToken` and the access tokens for Public Transportation Open Data Center and Open Data Challenge for Public Transportation 2024 for the `secrets`.
+
+```js
+map = new mt3d.Map({
+  /* ... */
+  accessToken: '<Mapbox access token>',
+  secrets: {
+    odpt: '<access token for Public Transportation Open Data Center>',
+    challenge2024: '<access token for Open Data Challenge for Public Transportation 2024>'
+  }
+});
+```
+
+Then, edit it for your web site, and place all the files in the `build` directory in the public directory of your web server.
+
+::: warning
+Since `index.html` also uses the Mini Tokyo 3D [plugins](../user-guide/plugins.md), you must separately build the JavaScript files for each plugin and place them in the `build` directory.
+:::

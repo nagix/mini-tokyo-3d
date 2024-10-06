@@ -90,7 +90,7 @@ npm run build-all
 Finally, pass your Mapbox access token as `accessToken` and tokens for ODPT Center and Challenge 2024 as `secrets` property to a `Map` constructor in `index.html`.
 
 ```js
-map = new Map({
+map = new mt3d.Map({
     /* ... */
     accessToken: 'pk.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxx',
     secrets: {

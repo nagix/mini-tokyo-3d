@@ -1,12 +1,12 @@
 # mapboxgl
 
-`mapboxgl` は [Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/) に含まれる全てのクラス、オブジェクト、プロパティを持つオブジェクトです。Mapbox API の名前空間として利用されます。
+`mapboxgl` は [Mapbox API](https://docs.mapbox.com/mapbox-gl-js/ja/api/) に含まれる全てのクラス、オブジェクト、プロパティを持つオブジェクトです。Mapbox API の名前空間として利用されます。
 
 **型** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 ## プロパティ
 
-詳細は、[Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/) を参照してください。
+詳細は、[Mapbox API](https://docs.mapbox.com/mapbox-gl-js/ja/api/) を参照してください。
 
 ## 例
 

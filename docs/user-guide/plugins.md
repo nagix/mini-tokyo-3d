@@ -14,7 +14,7 @@ For more information, please visit [Mini Tokyo 3D Precipitation Plugin GitHub Re
 
 <img :src="$withBase('/images/fireworks.jpg')" style="width: 580px;">
 
-This plugin displays fireworks animations on a map. You can watch 3D animation of fireworks launch at a specific location on the map on a scheduled date and time.
+This plugin displays fireworks animations on a map. You can watch 3D animation of fireworks launch at a specific location on the map on a scheduled date and time. On the day fireworks festivals are to be held, a list of festivals will appear on the left side of the screen, and clicking or tapping on an item will take you to the location where the festival is to be held.
 
 For more information, please visit [Mini Tokyo 3D Fireworks Plugin GitHub Repository](https://github.com/nagix/mt3d-plugin-fireworks).
 

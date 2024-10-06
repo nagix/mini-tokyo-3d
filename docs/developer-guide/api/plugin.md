@@ -31,6 +31,7 @@ The name of the plugin. The key of each property indicates the language code and
 Name | Description
 :-- | :--
 **`name.en`** | Name in English
+**`name.es`** | Name in Spanish
 **`name.fr`** | Name in French
 **`name.ja`** | Name in Japanese
 **`name.ko`** | Name in Korean
