@@ -2654,7 +2654,7 @@ export default class extends Evented {
             map.getCanvas().style.cursor = 'pointer';
 
             me.popup = new AnimatedPopup({
-                className: 'popup-object',
+                className: helpers.isTouchDevice() ? 'popup-object popup-touch' : 'popup-object',
                 closeButton: false,
                 closeOnClick: false,
                 maxWidth: '300px',

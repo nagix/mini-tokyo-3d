@@ -1,3 +1,4 @@
+import {isTouchDevice} from './helpers/helpers';
 import Popup from 'mapbox-gl-animated-popup';
 
 /**
@@ -7,7 +8,7 @@ export default class {
 
     constructor() {
         this._popup = new Popup({
-            className: 'popup-object',
+            className: isTouchDevice() ? 'popup-object popup-touch' : 'popup-object',
             closeButton: false,
             closeOnClick: false,
             maxWidth: '300px',

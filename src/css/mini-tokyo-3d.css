@@ -817,13 +817,13 @@
 .mini-tokyo-3d .mapboxgl-popup-content {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+}
+.mini-tokyo-3d .popup-touch .mapboxgl-popup-content {
+    pointer-events: auto;
 }
 .mini-tokyo-3d .highlighted .mapboxgl-popup-content {
     background-color: rgba(102, 102, 102, 0.7);
-}
-.mini-tokyo-3d .popup-exit .mapboxgl-popup-content,
-.mini-tokyo-3d .popup-exit .mapboxgl-popup-tip {
-    pointer-events: none;
 }
 .mini-tokyo-3d .popup-exit .mapboxgl-popup-content {
     padding: 5px 10px;
