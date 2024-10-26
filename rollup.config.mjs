@@ -90,6 +90,13 @@ export default [{
 		}),
 		replace({
 			preventAssignment: true,
+			include: '**/EXT_texture_webp.js',
+			'import { isImageFormatSupported': 'import { getSupportedImageFormats',
+			'import GLTFScenegraph': 'let supportedImageFormats;\ngetSupportedImageFormats().then(formats => {\n  supportedImageFormats = formats;\n});\nimport GLTFScenegraph',
+			'isImageFormatSupported': '(mimeType => supportedImageFormats.has(mimeType))'
+		}),
+		replace({
+			preventAssignment: true,
 			delimiters: ['\\b', ''],
 			'catch {': 'catch (e) {'
 		}),
@@ -137,6 +144,13 @@ export default [{
 			include: '**/web-mercator-utils.js',
 			'farZMultiplier = 1': 'farZMultiplier = 1,\n    unitsPerMeter',
 			'Math.min(furthestDistance * farZMultiplier, horizonDistance': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians)'
+		}),
+		replace({
+			preventAssignment: true,
+			include: '**/EXT_texture_webp.js',
+			'import { isImageFormatSupported': 'import { getSupportedImageFormats',
+			'import GLTFScenegraph': 'let supportedImageFormats;\ngetSupportedImageFormats().then(formats => {\n  supportedImageFormats = formats;\n});\nimport GLTFScenegraph',
+			'isImageFormatSupported': '(mimeType => supportedImageFormats.has(mimeType))'
 		}),
 		replace({
 			preventAssignment: true,
@@ -192,6 +206,13 @@ export default [{
 			include: '**/web-mercator-utils.js',
 			'farZMultiplier = 1': 'farZMultiplier = 1,\n    unitsPerMeter',
 			'Math.min(furthestDistance * farZMultiplier, horizonDistance': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians)'
+		}),
+		replace({
+			preventAssignment: true,
+			include: '**/EXT_texture_webp.js',
+			'import { isImageFormatSupported': 'import { getSupportedImageFormats',
+			'import GLTFScenegraph': 'let supportedImageFormats;\ngetSupportedImageFormats().then(formats => {\n  supportedImageFormats = formats;\n});\nimport GLTFScenegraph',
+			'isImageFormatSupported': '(mimeType => supportedImageFormats.has(mimeType))'
 		}),
 		replace({
 			preventAssignment: true,
