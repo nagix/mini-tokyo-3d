@@ -263,10 +263,10 @@ export default class {
             1
         );
 
+        renderer.resetState();
         renderer.setRenderTarget(pickingTexture);
         renderer.render(scene, camera);
         renderer.setRenderTarget(null);
-        renderer.resetState();
 
         camera.clearViewOffset();
 
