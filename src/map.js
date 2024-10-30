@@ -1582,7 +1582,7 @@ export default class extends Evented {
                 maxDuration = minDuration + 60000;
             }
         }
-        train.standing = true;
+        train.standing = false;
         if (me.markedObject && me.markedObject.object === train) {
             me.updatePopup({setHTML: true});
         }
