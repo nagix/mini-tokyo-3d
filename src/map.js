@@ -1111,11 +1111,7 @@ export default class extends Evented {
             if (markedObject) {
                 // Popup for a 3D object needs to be updated every time
                 // because the adjustment for altitude is required
-                if (isTrainOrFlight(markedObject)) {
-                    me.updatePopup({setHTML: true});
-                } else {
-                    me.updatePopup();
-                }
+                me.updatePopup();
             }
             me.updateTrainPopup();
         });
@@ -1541,7 +1537,10 @@ export default class extends Evented {
         if (!train.tt && train.sectionLength !== 0) {
             me.trainRepeat(train);
         } else {
-            me.setTrainStandingStatus(train, true);
+            train.standing = true;
+            if (me.markedObject && me.markedObject.object === train) {
+                me.updatePopup({setHTML: true});
+            }
             train.animationID = animation.start({
                 callback: () => {
                     if (me.trackedObject && me.trackedObject.object === train) {
@@ -1583,7 +1582,10 @@ export default class extends Evented {
                 maxDuration = minDuration + 60000;
             }
         }
-        me.setTrainStandingStatus(train, false);
+        train.standing = true;
+        if (me.markedObject && me.markedObject.object === train) {
+            me.updatePopup({setHTML: true});
+        }
         train.animationID = startTrainAnimation(t => {
             // Guard for an unexpected error
             // Probably a bug due to duplicate train IDs in timetable lookup
@@ -1662,13 +1664,16 @@ export default class extends Evented {
                 {id, start} = flight,
                 activeFlightLookup = me.activeFlightLookup;
 
-            if (flight.standing <= now && now <= flight.end && !activeFlightLookup[id]) {
+            if (flight.entry <= now && now <= flight.end && !activeFlightLookup[id]) {
                 activeFlightLookup[id] = flight;
                 if (now >= start) {
                     me.flightRepeat(flight, now - start);
                 } else {
                     me.updateFlightShape(flight, 0);
-                    me.setFlightStandingStatus(flight, true);
+                    flight.standing = true;
+                    if (me.markedObject && me.markedObject.object === flight) {
+                        me.updatePopup({setHTML: true});
+                    }
                     flight.animationID = animation.start({
                         callback: () => {
                             const trackedObject = me.trackedObject;
@@ -1696,11 +1701,17 @@ export default class extends Evented {
         const me = this,
             clock = me.clock;
 
-        me.setFlightStandingStatus(flight, false);
+        flight.standing = false;
+        if (me.markedObject && me.markedObject.object === flight) {
+            me.updatePopup({setHTML: true});
+        }
         flight.animationID = startFlightAnimation(t => {
             me.updateFlightShape(flight, t);
         }, () => {
-            me.setFlightStandingStatus(flight, true);
+            flight.standing = true;
+            if (me.markedObject && me.markedObject.object === flight) {
+                me.updatePopup({setHTML: true});
+            }
             flight.animationID = animation.start({
                 callback: () => {
                     if (me.trackedObject && me.trackedObject.object === flight) {
@@ -1949,7 +1960,7 @@ export default class extends Evented {
         return description[me.lang] || description.en;
     }
 
-    setTrainStandingStatus(train, standing) {
+    getTrainDescription(train) {
         const me = this,
             {lang, dict, clock} = me,
             {r: railwayID, v: vehicle, departureTime, arrivalStation} = train,
@@ -1959,8 +1970,7 @@ export default class extends Evented {
             arrivalTime = train.arrivalTime || train.nextDepartureTime,
             status = railway.status;
 
-        train.standing = standing;
-        train.description = [
+        return [
             '<div class="desc-header">',
             Array.isArray(color) ? [
                 '<div>',
@@ -1979,7 +1989,7 @@ export default class extends Evented {
             hasGreenCars(train) ? `<span class="desc-green-cars">${WITH_GREEN_CARS[lang]}</span><br>` : '',
             delay >= 60000 ? '<span class="desc-caution">' : '',
             '<strong>',
-            dict[standing ? 'standing-at' : 'previous-stop'],
+            dict[train.standing ? 'standing-at' : 'previous-stop'],
             ':</strong> ',
             me.getLocalizedStationTitle(train.departureStation),
             departureTime ? ` ${clock.getTimeString(clock.getTime(departureTime) + delay)}` : '',
@@ -1993,7 +2003,7 @@ export default class extends Evented {
         ].join('');
     }
 
-    setFlightStandingStatus(flight) {
+    getFlightDescription(flight) {
         const me = this,
             dict = me.dict,
             {a: airlineID, n: flightNumber, ds: destination} = flight,
@@ -2003,7 +2013,7 @@ export default class extends Evented {
             actualTime = flight.adt || flight.aat,
             delayed = (estimatedTime || actualTime) && scheduledTime !== (estimatedTime || actualTime);
 
-        flight.description = [
+        return [
             '<div class="desc-header">',
             `<div style="background-color: ${tailcolor};"></div>`,
             `<div><strong>${me.getLocalizedOperatorTitle(airlineID)}</strong>`,
@@ -2427,10 +2437,10 @@ export default class extends Evented {
 
                 if (departureTime) {
                     flight.start = flight.base = me.clock.getTime(departureTime);
-                    flight.standing = flight.start - standingDuration;
+                    flight.entry = flight.start - standingDuration;
                     flight.end = flight.start + duration;
                 } else {
-                    flight.start = flight.standing = me.clock.getTime(arrivalTime) - duration;
+                    flight.start = flight.entry = me.clock.getTime(arrivalTime) - duration;
                     flight.base = flight.start + duration - standingDuration;
                     flight.end = flight.start + duration + standingDuration;
                 }
@@ -2455,7 +2465,7 @@ export default class extends Evented {
                     if (delay) {
                         flight.start += delay;
                         flight.base += delay;
-                        flight.standing += delay;
+                        flight.entry += delay;
                         flight.end += delay;
                     }
                     latest = flight.base;
@@ -2959,7 +2969,10 @@ export default class extends Evented {
 
             popup.setLngLat(me.adjustCoord(markedObject.coord, markedObject.altitude, bearing));
             if (setHTML) {
-                popup.setHTML(markedObject.object.description);
+                popup.setHTML(markedObject.type === 'train' ?
+                    me.getTrainDescription(markedObject.object) :
+                    me.getFlightDescription(markedObject.object)
+                );
             }
         } else {
             const object = me.featureLookup[`${markedObject.id}.${me.layerZoom}`],
