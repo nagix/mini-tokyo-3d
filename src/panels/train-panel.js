@@ -10,33 +10,31 @@ export default class extends Panel {
     addTo(map) {
         const me = this,
             clock = map.clock,
-            trains = [],
+            timetables = [],
             sections = [],
             stationHTML = [],
             offsets = [],
             train = me._options.object,
-            {r: railwayID, v: vehicle, nextTrains} = train,
-            railwayLookup = map.railwayLookup,
-            railway = railwayLookup[railwayID],
-            color = vehicle ? map.trainVehicleLookup[vehicle].color : railway.color,
+            {r: railway, timetable} = train,
+            color = (train.v || railway).color,
             delay = train.delay || 0;
         let currSection, scrollTop;
 
-        for (let curr = train; curr; curr = curr.previousTrains && curr.previousTrains[0]) {
-            trains.unshift(curr);
+        for (let curr = timetable; curr; curr = curr.pt && curr.pt[0]) {
+            timetables.unshift(curr);
         }
-        for (let curr = nextTrains && nextTrains[0]; curr; curr = curr.nextTrains && curr.nextTrains[0]) {
-            trains.push(curr);
+        for (let curr = timetable.nt && timetable.nt[0]; curr; curr = curr.nt && curr.nt[0]) {
+            timetables.push(curr);
         }
-        for (const curr of trains) {
+        for (const curr of timetables) {
             const section = {};
 
             section.start = Math.max(stationHTML.length - 1, 0);
             curr.tt.forEach((s, index) => {
-                if (index > 0 || !curr.previousTrains) {
+                if (index > 0 || !curr.pt) {
                     stationHTML.push([
                         '<div class="station-row">',
-                        `<div class="station-title-box">${map.getLocalizedStationTitle(s.s)}</div>`,
+                        `<div class="station-title-box">${map.getLocalizedStationTitle(s.s.id)}</div>`,
                         '<div class="station-time-box',
                         delay >= 60000 ? ' desc-caution' : '',
                         '">',
@@ -48,9 +46,9 @@ export default class extends Panel {
                 }
             });
             section.end = stationHTML.length - 1;
-            section.color = railwayLookup[curr.r].color;
+            section.color = curr.r.color;
             sections.push(section);
-            if (curr === train) {
+            if (curr === timetable) {
                 currSection = section;
             }
         }
@@ -64,10 +62,10 @@ export default class extends Panel {
                     '</div>'
                 ].join('') : `<div style="background-color: ${color};"></div>`,
                 '<div><div class="desc-first-row">',
-                map.getLocalizedTrainNameOrRailwayTitle(train.nm, railwayID),
+                map.getLocalizedTrainNameOrRailwayTitle(train.nm, railway.id),
                 '</div><div class="desc-second-row">',
-                `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y)}</span> `,
-                map.getLocalizedDestinationTitle(train.ds, train.d),
+                `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y.id)}</span> `,
+                map.getLocalizedDestinationTitle(train.ds && train.ds.map(({id}) => id), train.d.id),
                 '</div></div></div>'
             ].join(''))
             .setHTML([

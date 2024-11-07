@@ -176,9 +176,11 @@ export default class extends Panel {
 
             if (buttonElement) {
                 buttonElement.addEventListener('click', () => {
-                    if (!container.classList.contains(key)) {
-                        container.classList.remove(...MODE_CLASSES);
-                        container.classList.add(key);
+                    const classList = container.classList;
+
+                    if (!classList.contains(key)) {
+                        classList.remove(...MODE_CLASSES);
+                        classList.add(key);
                         if (key === 'station-to') {
                             originElement.focus();
                         } else if (key === 'station-from') {
@@ -226,7 +228,8 @@ export default class extends Panel {
                 searchButtonElement.disabled = !selectedStation || includes(stations, selectedStation);
             });
             searchButtonElement.addEventListener('click', () => {
-                const stationTitleLookup = map.stationTitleLookup,
+                const classList = container.classList,
+                    stationTitleLookup = map.stationTitleLookup,
                     origin = key === 'to' ? stationTitleLookup[originElement.value.toUpperCase()] : stations[0],
                     destination = key === 'from' ? stationTitleLookup[destinationElement.value.toUpperCase()] : stations[0],
                     type = container.querySelector(`#${key}-type`).value,
@@ -235,13 +238,15 @@ export default class extends Panel {
                     hours = hoursElement.value,
                     minutes = minutesElement.value;
 
-                container.classList.remove(...MODE_CLASSES);
-                container.classList.add('station-searching');
+                classList.remove(...MODE_CLASSES);
+                classList.add('station-searching');
                 me.setButtons([me._backButton]);
 
                 loadJSON(`${configs.searchUrl}?origin=${origin.id}&destination=${destination.id}&type=${type}&month=${month}&date=${date}&hours=${hours}&minutes=${minutes}`).then(data => {
-                    if (container.classList.contains('station-searching')) {
-                        container.classList.remove(...MODE_CLASSES);
+                    const classList = container.classList;
+
+                    if (classList.contains('station-searching')) {
+                        classList.remove(...MODE_CLASSES);
                         me.showResult(data);
                     }
                 });
@@ -262,17 +267,20 @@ export default class extends Panel {
             event.stopPropagation();
         });
         backButton.querySelector('#back-button').addEventListener('click', () => {
-            if (me._swiper) {
-                me._swiper.destroy();
+            const swiper = me._swiper,
+                classList = container.classList;
+
+            if (swiper) {
+                swiper.destroy();
                 delete me._swiper;
                 me.hideRoute();
             }
-            container.classList.remove(...MODE_CLASSES);
+            classList.remove(...MODE_CLASSES);
             if (container.querySelector('#station-to-button').checked) {
-                container.classList.add('station-to');
+                classList.add('station-to');
                 originElement.focus();
             } else {
-                container.classList.add('station-from');
+                classList.add('station-from');
                 destinationElement.focus();
             }
             me.setButtons();
@@ -297,27 +305,29 @@ export default class extends Panel {
         for (const departure of me._departures) {
             const trains = [];
 
-            for (const train of map.timetableData) {
-                const delay = train.delay || 0;
+            for (const railway of departure.railways) {
+                for (const timetable of map.timetables.getByDirectionId(railway.id, railway.direction)) {
+                    const train = map.activeTrainLookup[timetable.t] || map.standbyTrainLookup[timetable.id],
+                        delay = (train && train.delay) || 0;
 
-                for (const railway of departure.railways) {
-                    if (train.r === railway.id && train.d === railway.direction && train.end + delay > now && train.tt) {
-                        for (let i = 0; i < train.tt.length - 1; i++) {
-                            const {s, d} = train.tt[i];
+                    if (timetable.end + delay <= now) {
+                        continue;
+                    }
+                    for (let i = 0; i < timetable.tt.length - 1; i++) {
+                        const {s, d} = timetable.tt[i];
 
-                            if (s === railway.station) {
-                                const time = clock.getTime(d) + delay;
+                        if (s.id === railway.station) {
+                            const time = clock.getTime(d) + delay;
 
-                                if (time > now) {
-                                    if (trains.length === 0 || time < trains[0].time) {
-                                        trains.unshift({train, time});
-                                        trains.splice(2, 1);
-                                    } else if (trains.length === 1 || time < trains[1].time) {
-                                        trains.splice(1, 1, {train, time});
-                                    }
+                            if (time > now) {
+                                if (trains.length === 0 || time < trains[0].time) {
+                                    trains.unshift({train: train || timetable, time});
+                                    trains.splice(2, 1);
+                                } else if (trains.length === 1 || time < trains[1].time) {
+                                    trains.splice(1, 1, {train: train || timetable, time});
                                 }
-                                break;
                             }
+                            break;
                         }
                     }
                 }
@@ -336,9 +346,9 @@ export default class extends Panel {
                     '<div class="train-row">',
                     `<div class="train-time-box${train.delay >= 60000 ? ' desc-caution' : ''}">${clock.getTimeString(time)}</div>`,
                     '<div class="train-title-box">',
-                    `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y)}</span> `,
+                    `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y.id)}</span> `,
                     train.nm ? `${map.getLocalizedTrainNameOrRailwayTitle(train.nm)} ` : '',
-                    map.getLocalizedDestinationTitle(train.ds, train.d),
+                    map.getLocalizedDestinationTitle(train.ds && train.ds.map(({id}) => id), train.d.id),
                     train.delay >= 60000 ? ` <span class="desc-caution">${dict['delay'].replace('$1', Math.floor(train.delay / 60000))}</span>` : '',
                     '</div>',
                     '</div>'
@@ -387,15 +397,16 @@ export default class extends Panel {
     }
 
     fillStationName(name) {
-        const container = this._container;
+        const container = this._container,
+            classList = container.classList;
 
-        if (container.classList.contains('station-to')) {
+        if (classList.contains('station-to')) {
             const element = container.querySelector('#origin');
 
             element.value = name;
             element.dispatchEvent(new Event('input'));
             element.focus();
-        } else if (container.classList.contains('station-from')) {
+        } else if (classList.contains('station-from')) {
             const element = container.querySelector('#destination');
 
             element.value = name;
@@ -409,6 +420,7 @@ export default class extends Panel {
             map = me._map,
             {dict, clock} = map,
             container = me._container,
+            classList = container.classList,
             pageController = createElement('div', {
                 className: 'page-controller',
                 innerHTML: [
@@ -440,7 +452,7 @@ export default class extends Panel {
         swiperElement.innerHTML = '';
 
         if (routes) {
-            container.classList.add('station-routes');
+            classList.add('station-routes');
             me.setButtons([me._backButton, pageController]);
 
             for (const route of routes) {
@@ -543,7 +555,7 @@ export default class extends Panel {
 
             me.switchRoute();
         } else {
-            container.classList.add('station-noroute');
+            classList.add('station-noroute');
             me.setButtons([me._backButton]);
 
             swiperElement.innerHTML = [

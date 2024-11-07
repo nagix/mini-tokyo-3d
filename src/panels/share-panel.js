@@ -1,4 +1,5 @@
 import configs from '../configs';
+import Train from '../data-classes/train';
 import {createElement, showNotification} from '../helpers/helpers';
 
 export default class {
@@ -11,8 +12,7 @@ export default class {
         const me = this,
             dict = map.dict,
             object = me._object,
-            type = object.t ? 'train' : 'flight',
-            id = object.t || object.id,
+            type = object instanceof Train ? 'train' : 'flight',
             container = me._container = createElement('div', {
                 className: 'share-panel'
             }, map.container),
@@ -25,7 +25,7 @@ export default class {
             window.navigator.share({
                 title: dict['my'].replace('$1', dict[type]),
                 text: dict['on-this'].replace('$1', dict[type]),
-                url: `${configs.shareUrl}?selection=${id}`
+                url: `${configs.shareUrl}?selection=${object.id}`
             }).then(() => {
                 showNotification(map.container, dict['shared']);
             }).catch(() => {

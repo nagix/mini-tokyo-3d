@@ -5,6 +5,8 @@ import animation from './animation';
 import Clock from './clock';
 import configs from './configs';
 import {ClockControl, MapboxGLButtonControl, SearchControl} from './controls';
+import Train from './data-classes/train';
+import TrainTimetables from './data-classes/train-timetables';
 import extend from './extend';
 import * as helpers from './helpers/helpers';
 import {pickObject} from './helpers/helpers-deck';
@@ -376,9 +378,7 @@ export default class extends Evented {
         const trackedObject = this.trackedObject;
 
         if (isTrainOrFlight(trackedObject)) {
-            const object = trackedObject.object;
-
-            return object.t || object.id;
+            return trackedObject.object.id;
         } else if (isStation(trackedObject)) {
             return trackedObject.stations;
         }
@@ -400,21 +400,18 @@ export default class extends Evented {
             delete me.initialSelection;
         } else if (!selection.match(/NRT|HND/)) {
             if (me.trainLoaded) {
-                const train = me.trainLookup[selection];
                 let activeTrain;
 
-                if (train) {
-                    for (const id of getConnectingTrainIds(train)) {
-                        if ((activeTrain = me.activeTrainLookup[id])) {
-                            break;
-                        }
+                for (const id of me.timetables.getConnectingTrainIds(selection)) {
+                    if ((activeTrain = me.activeTrainLookup[id])) {
+                        break;
                     }
                 }
                 if (activeTrain) {
                     if (activeTrain.cars[0]) {
                         me.trackObject(activeTrain.cars[0]);
                     } else {
-                        me.selection = activeTrain.t;
+                        me.selection = activeTrain.id;
                     }
                 } else {
                     helpers.showNotification(me.container, me.dict['train-terminated']);
@@ -633,20 +630,30 @@ export default class extends Evented {
             }
         }
 
-        me.lastTimetableRefresh = me.clock.getTime('03:00');
-        me.updateTimetableData(me.timetableData);
-        me.trainLookup = helpers.buildLookup(me.timetableData, 't');
-
         me.railDirectionLookup = helpers.buildLookup(me.railDirectionData);
         me.trainTypeLookup = helpers.buildLookup(me.trainTypeData);
         me.trainVehicleLookup = helpers.buildLookup(me.trainVehicleData);
+
+        me.lastTimetableRefresh = me.clock.getTime('03:00');
+        me.dataReferences = {
+            clock: me.clock,
+            railways: {get: id => me.railwayLookup[id]},
+            stations: {get: id => me.stationLookup[id]},
+            railDirections: {get: id => me.railDirectionLookup[id]},
+            trainTypes: {get: id => me.trainTypeLookup[id]},
+            trainVehicles: {get: id => me.trainVehicleLookup[id]}
+        };
+        me.timetables = new TrainTimetables(me.timetableData, me.dataReferences);
+        delete me.timetableData;
+
         me.operatorLookup = helpers.buildLookup(me.operatorData);
         me.airportLookup = helpers.buildLookup(me.airportData);
         me.flightStatusLookup = helpers.buildLookup(me.flightStatusData);
         me.poiLookup = helpers.buildLookup(me.poiData);
 
         me.activeTrainLookup = {};
-        me.realtimeTrainLookup = {};
+        me.standbyTrainLookup = {};
+        me.realtimeTrains = new Set();
         me.activeFlightLookup = {};
         me.flightLookup = {};
     }
@@ -1276,7 +1283,7 @@ export default class extends Evented {
 
     updateTrainProps(train) {
         const me = this,
-            feature = train.railwayFeature = me.featureLookup[`${train.r}.${me.layerZoom}`],
+            feature = train.railwayFeature = me.featureLookup[`${train.r.id}.${me.layerZoom}`],
             stationOffsets = feature.properties['station-offsets'],
             sectionIndex = train.sectionIndex,
             offset = train.offset = stationOffsets[sectionIndex];
@@ -1293,7 +1300,7 @@ export default class extends Evented {
             objectUnit = 0,
             carComposition = 1,
 
-            {railwayFeature: feature, offset, interval, direction, cars, delay} = train,
+            {railwayFeature: feature, direction, cars, animationID} = train,
             length = cars.length;
         let marked, tracked, viewMode;
 
@@ -1305,12 +1312,13 @@ export default class extends Evented {
         }
 
         if (length === 0) {
-            const railway = me.railwayLookup[train.r],
-                vehicle = train.v,
+            const {markedObject, trackedObject} = me,
+                id = train.id,
                 car = {
                     type: 'train',
                     object: train,
-                    color: vehicle ? me.trainVehicleLookup[vehicle].color : railway.color,
+                    index: 0,
+                    color: (train.v || train.r).color,
                     delay: 0
                 };
 
@@ -1318,34 +1326,35 @@ export default class extends Evented {
 
             // Reset marked/tracked object if it was marked/tracked before
             // Delay calling markObject() and trackObject() as they require the object position to be set
-            if (me.markedObject && me.markedObject.object === train) {
-                marked = cars[0];
+            if (markedObject && markedObject.type === 'train' && markedObject.object.id === id) {
+                marked = cars[markedObject.index];
             }
-            if (me.trackedObject && me.trackedObject.object === train) {
-                tracked = cars[0];
+            if (trackedObject && trackedObject.type === 'train' && trackedObject.object.id === id) {
+                tracked = cars[trackedObject.index];
             }
-            if (me.selection === train.t) {
+            if (me.selection === id) {
                 tracked = cars[0];
                 delete me.selection;
             }
         }
 
-        cars[0].delay = delay ? 1 : 0;
+        cars[0].delay = train.delay ? 1 : 0;
 
-        const pArr = helpersGeojson.getCoordAndBearing(feature, offset + train._t * interval, carComposition, objectUnit);
+        const pArr = helpersGeojson.getCoordAndBearing(feature, train.offset + train._t * train.interval, carComposition, objectUnit);
         for (let i = 0, ilen = cars.length; i < ilen; i++) {
             const car = cars[i],
-                p = pArr[i];
+                {coord, altitude, bearing, pitch} = pArr[i];
 
-            if (car.altitude < 0 && p.altitude >= 0) {
+            if (car.altitude < 0 && altitude >= 0) {
                 viewMode = 'ground';
-            } else if (car.altitude >= 0 && p.altitude < 0) {
+            } else if (car.altitude >= 0 && altitude < 0) {
                 viewMode = 'underground';
             }
-            car.coord = p.coord;
-            car.altitude = p.altitude;
-            car.bearing = p.bearing + (direction < 0 ? 180 : 0);
-            car.pitch = p.pitch * direction;
+
+            car.coord = coord;
+            car.altitude = altitude;
+            car.bearing = bearing + (direction < 0 ? 180 : 0);
+            car.pitch = pitch * direction;
 
             if (marked === car) {
                 me.markObject(car);
@@ -1365,20 +1374,15 @@ export default class extends Evented {
             }
 
             if (me.trackedObject === car && !me.viewAnimationID && !map._zooming && !map._rotating && !map._pitching) {
-                me._jumpTo({
-                    center: car.coord,
-                    altitude: car.altitude,
-                    bearing: car.bearing,
-                    bearingFactor: .02
-                });
+                me._jumpTo({center: coord, altitude, bearing: car.bearing, bearingFactor: .02});
             }
 
             // Reduce the frame rate of invisible objects for performance optimization
-            if (animation.isActive(train.animationID)) {
-                const {x, y} = me.getModelPosition(car.coord),
+            if (animation.isActive(animationID)) {
+                const {x, y} = me.getModelPosition(coord),
                     frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) ? me.ecoMode === 'normal' && map._loaded ? 0 : me.ecoFrameRate : 1;
 
-                animation.setFrameRate(train.animationID, frameRate);
+                animation.setFrameRate(animationID, frameRate);
             }
 
             if (car.meshIndex === undefined) {
@@ -1398,7 +1402,8 @@ export default class extends Evented {
 
     updateFlightShape(flight, t) {
         const me = this,
-            {map, trafficLayer} = me;
+            {map, trafficLayer} = me,
+            {feature, animationID} = flight;
         let aircraft = flight.aircraft,
             tracked;
 
@@ -1409,12 +1414,12 @@ export default class extends Evented {
             return;
         }
         if (!aircraft) {
-            const {color, tailcolor} = me.operatorLookup[flight.a];
+            const operator = me.operatorLookup[flight.a];
 
             aircraft = flight.aircraft = {
                 type: 'flight',
                 object: flight,
-                color: [color || '#FFFFFF', tailcolor || '#FFFFFF']
+                color: [operator.color || '#FFFFFF', operator.tailcolor || '#FFFFFF']
             };
 
             // Set tracked object if the selection is specified
@@ -1425,12 +1430,12 @@ export default class extends Evented {
             }
         }
 
-        const p = helpersGeojson.getCoordAndBearing(flight.feature, flight._t * flight.feature.properties.length, 1, 0)[0];
+        const {coord, altitude, bearing, pitch} = helpersGeojson.getCoordAndBearing(feature, flight._t * feature.properties.length, 1, 0)[0];
 
-        aircraft.coord = p.coord;
-        aircraft.altitude = p.altitude;
-        aircraft.bearing = p.bearing;
-        aircraft.pitch = p.pitch;
+        aircraft.coord = coord;
+        aircraft.altitude = altitude;
+        aircraft.bearing = bearing;
+        aircraft.pitch = pitch;
 
         if (tracked === aircraft) {
             me.trackObject(aircraft);
@@ -1444,20 +1449,15 @@ export default class extends Evented {
         }
 
         if (me.trackedObject === aircraft && !me.viewAnimationID && !map._zooming && !map._rotating && !map._pitching) {
-            me._jumpTo({
-                center: aircraft.coord,
-                altitude: aircraft.altitude,
-                bearing: aircraft.bearing,
-                bearingFactor: .02
-            });
+            me._jumpTo({center: coord, altitude, bearing, bearingFactor: .02});
         }
 
         // Reduce the frame rate of invisible objects for performance optimization
-        if (animation.isActive(flight.animationID)) {
-            const {x, y} = me.getModelPosition(aircraft.coord),
+        if (animation.isActive(animationID)) {
+            const {x, y} = me.getModelPosition(coord),
                 frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) || me.trackedObject === aircraft ? me.ecoMode === 'normal' && map._loaded ? 0 : me.ecoFrameRate : 1;
 
-            animation.setFrameRate(flight.animationID, frameRate);
+            animation.setFrameRate(animationID, frameRate);
         }
 
         if (aircraft.meshIndex === undefined) {
@@ -1476,15 +1476,9 @@ export default class extends Evented {
             initialSelection = me.initialSelection,
             now = me.clock.getTime();
 
-        for (const train of me.timetableData) {
-            const delay = train.delay || 0,
-                railway = me.railwayLookup[train.r];
-
-            if (train.start + delay <= now && now <= train.end + delay &&
-                !me.checkActiveTrains(train, true) &&
-                !(railway.dynamic && railway.status && !me.realtimeTrainLookup[train.t]) &&
-                !railway.suspended) {
-                me.trainStart(train);
+        for (const timetable of me.timetables.getAll()) {
+            if (timetable.start <= now && now <= timetable.end && !me.standbyTrainLookup[timetable.id]) {
+                me.trainStart(new Train(timetable));
             }
         }
 
@@ -1498,21 +1492,27 @@ export default class extends Evented {
 
     trainStart(train, index) {
         const me = this,
+            {r: railway, timetable} = train,
             clock = me.clock,
             now = clock.getTime();
 
+        if (me.checkActiveTrains(train) || (railway.status && railway.dynamic && !me.realtimeTrains.has(train.id)) || railway.suspended) {
+            me.deactivateTrain(train);
+            return;
+        }
         if (!me.setSectionData(train, index)) {
+            me.deactivateTrain(train);
             return; // Out of range
         }
-        me.activeTrainLookup[train.t] = train;
+        me.activeTrainLookup[train.id] = train;
         train.cars = [];
         me.updateTrainProps(train);
 
         const departureTime = clock.getTime(train.departureTime) + (train.delay || 0);
 
-        if (!train.tt && train.sectionLength !== 0) {
+        if (!timetable && train.sectionLength !== 0) {
             me.trainRepeat(train);
-        } else if (train.tt && now >= departureTime) {
+        } else if (timetable && now >= departureTime) {
             me.trainRepeat(train, now - departureTime);
         } else {
             me.trainStand(train);
@@ -1521,12 +1521,10 @@ export default class extends Evented {
 
     trainStand(train, final) {
         const me = this,
-            clock = me.clock,
-            departureTime = clock.getTime(train.departureTime) + (train.delay || 0),
-            minStandingDuration = configs.minStandingDuration;
+            timetable = train.timetable;
 
-        if (!train.tt) {
-            final = !me.setSectionData(train, undefined, !me.realtimeTrainLookup[train.t]);
+        if (!timetable) {
+            final = !me.setSectionData(train, undefined, !me.realtimeTrains.has(train.id));
         }
 
         if (!final && train.arrivalStation) {
@@ -1534,29 +1532,36 @@ export default class extends Evented {
             me.updateTrainShape(train, 0);
         }
 
-        if (!train.tt && train.sectionLength !== 0) {
+        if (!timetable && train.sectionLength !== 0) {
             me.trainRepeat(train);
         } else {
+            const markedObject = me.markedObject,
+                clock = me.clock,
+                departureTime = clock.getTime(train.departureTime) + (train.delay || 0),
+                minStandingDuration = configs.minStandingDuration;
+
             train.standing = true;
-            if (me.markedObject && me.markedObject.object === train) {
+            if (markedObject && markedObject.object === train) {
                 me.updatePopup({setHTML: true});
             }
             train.animationID = animation.start({
                 callback: () => {
-                    if (me.trackedObject && me.trackedObject.object === train) {
+                    const trackedObject = me.trackedObject;
+
+                    if (trackedObject && trackedObject.object === train) {
                         me.updateTrainShape(train);
                     }
                 },
                 complete: () => {
                     if (final) {
                         me.stopTrain(train);
-                    } else if (train.tt) {
+                    } else if (timetable) {
                         me.trainRepeat(train, me.clock.speed === 1 ? undefined : me.clock.getTime() - departureTime);
                     } else {
                         me.trainStand(train);
                     }
                 },
-                duration: train.tt ?
+                duration: timetable ?
                     Math.max(departureTime - clock.getTime(), clock.speed === 1 ? minStandingDuration : 0) :
                     final ? minStandingDuration : configs.realtimeTrainCheckInterval,
                 clock
@@ -1566,7 +1571,7 @@ export default class extends Evented {
 
     trainRepeat(train, elapsed) {
         const me = this,
-            clock = me.clock,
+            {clock, markedObject} = me,
             now = clock.getTime(),
             delay = train.delay || 0,
             minDelay = configs.minDelay,
@@ -1583,7 +1588,7 @@ export default class extends Evented {
             }
         }
         train.standing = false;
-        if (me.markedObject && me.markedObject.object === train) {
+        if (markedObject && markedObject.object === train) {
             me.updatePopup({setHTML: true});
         }
         train.animationID = startTrainAnimation(t => {
@@ -1597,52 +1602,60 @@ export default class extends Evented {
 
             me.updateTrainShape(train, t);
         }, () => {
+            const {timetable, timetableIndex} = train;
+
             // Guard for an unexpected error
             // Probably a bug due to duplicate train IDs in timetable lookup
-            if (!train.cars || (train.tt && train.timetableIndex + 1 >= train.tt.length)) {
+            if (!train.cars || (timetable && timetableIndex + 1 >= timetable.tt.length)) {
                 me.stopTrain(train);
                 return;
             }
 
-            if (!me.setSectionData(train, train.timetableIndex + 1)) {
-                const nextTrains = train.nextTrains;
+            if (!me.setSectionData(train, timetableIndex + 1)) {
+                const nextTimetables = timetable && timetable.nt;
 
-                if (nextTrains) {
+                if (nextTimetables) {
                     let needToStand = false;
 
-                    for (const previousTrain of nextTrains[0].previousTrains) {
-                        if (previousTrain.arrivalStation) {
+                    for (const {t: id} of nextTimetables[0].pt) {
+                        const prevTrain = me.activeTrainLookup[id];
+
+                        if (prevTrain && prevTrain.arrivalStation) {
                             needToStand = true;
                         }
                     }
                     if (needToStand) {
                         me.trainStand(train);
                     } else {
-                        let markedObjectIndex = -1,
-                            trackedObjectIndex = -1;
+                        const {markedObject, trackedObject} = me;
+                        let marked = false,
+                            tracked = false;
 
-                        for (const previousTrain of nextTrains[0].previousTrains) {
-                            if (markedObjectIndex === -1 && previousTrain.cars) {
-                                markedObjectIndex = previousTrain.cars.indexOf(me.markedObject);
+                        for (const {t: id} of nextTimetables[0].pt) {
+                            const prevTrain = me.activeTrainLookup[id];
+
+                            if (markedObject && markedObject.object === prevTrain) {
+                                marked = true;
                             }
-                            if (trackedObjectIndex === -1 && previousTrain.cars) {
-                                trackedObjectIndex = previousTrain.cars.indexOf(me.trackedObject);
+                            if (trackedObject && trackedObject.object === prevTrain) {
+                                tracked = true;
                             }
-                            me.stopTrain(previousTrain);
+                            if (prevTrain) {
+                                me.stopTrain(prevTrain, marked || tracked);
+                            }
                         }
-                        nextTrains.forEach((train, index) => {
-                            if (!me.activeTrainLookup[train.t]) {
-                                me.trainStart(train, 0);
-                            }
-                            if (index === 0 && train.cars) {
-                                me.updateTrainShape(train, 0);
-                                if (markedObjectIndex !== -1) {
-                                    me.markObject(train.cars[markedObjectIndex]);
+                        nextTimetables.forEach((nextTimetable, index) => {
+                            const nextTrain = me.standbyTrainLookup[nextTimetable.id] || new Train(nextTimetable);
+
+                            if (index === 0) {
+                                if (marked) {
+                                    markedObject.object = nextTrain;
                                 }
-                                if (trackedObjectIndex !== -1) {
-                                    me.trackObject(train.cars[trackedObjectIndex]);
+                                if (tracked) {
+                                    trackedObject.object = nextTrain;
                                 }
                             }
+                            me.trainStart(nextTrain, 0);
                         });
                     }
                     return;
@@ -1656,13 +1669,12 @@ export default class extends Evented {
 
     refreshFlights() {
         const me = this,
-            {clock, flightLookup, initialSelection} = me,
+            {clock, flightLookup, activeFlightLookup, markedObject, initialSelection} = me,
             now = clock.getTime();
 
         for (const key of Object.keys(flightLookup)) {
             const flight = flightLookup[key],
-                {id, start} = flight,
-                activeFlightLookup = me.activeFlightLookup;
+                {id, start} = flight;
 
             if (flight.entry <= now && now <= flight.end && !activeFlightLookup[id]) {
                 activeFlightLookup[id] = flight;
@@ -1671,12 +1683,13 @@ export default class extends Evented {
                 } else {
                     me.updateFlightShape(flight, 0);
                     flight.standing = true;
-                    if (me.markedObject && me.markedObject.object === flight) {
+                    if (markedObject && markedObject.object === flight) {
                         me.updatePopup({setHTML: true});
                     }
                     flight.animationID = animation.start({
                         callback: () => {
                             const trackedObject = me.trackedObject;
+
                             if (trackedObject && trackedObject.object === flight) {
                                 me.updateFlightShape(flight);
                             }
@@ -1699,22 +1712,26 @@ export default class extends Evented {
 
     flightRepeat(flight, elapsed) {
         const me = this,
-            clock = me.clock;
+            {clock, markedObject} = me;
 
         flight.standing = false;
-        if (me.markedObject && me.markedObject.object === flight) {
+        if (markedObject && markedObject.object === flight) {
             me.updatePopup({setHTML: true});
         }
         flight.animationID = startFlightAnimation(t => {
             me.updateFlightShape(flight, t);
         }, () => {
+            const markedObject = me.markedObject;
+
             flight.standing = true;
-            if (me.markedObject && me.markedObject.object === flight) {
+            if (markedObject && markedObject.object === flight) {
                 me.updatePopup({setHTML: true});
             }
             flight.animationID = animation.start({
                 callback: () => {
-                    if (me.trackedObject && me.trackedObject.object === flight) {
+                    const trackedObject = me.trackedObject;
+
+                    if (trackedObject && trackedObject.object === flight) {
                         me.updateFlightShape(flight);
                     }
                 },
@@ -1963,9 +1980,8 @@ export default class extends Evented {
     getTrainDescription(train) {
         const me = this,
             {lang, dict, clock} = me,
-            {r: railwayID, v: vehicle, departureTime, arrivalStation} = train,
-            railway = me.railwayLookup[railwayID],
-            color = vehicle ? me.trainVehicleLookup[vehicle].color : railway.color,
+            {r: railway, departureTime, arrivalStation} = train,
+            color = (train.v || railway).color,
             delay = train.delay || 0,
             arrivalTime = train.arrivalTime || train.nextDepartureTime,
             status = railway.status;
@@ -1978,24 +1994,24 @@ export default class extends Evented {
                 '</div>'
             ].join('') : `<div style="background-color: ${color};"></div>`,
             '<div><strong>',
-            me.getLocalizedTrainNameOrRailwayTitle(train.nm, railwayID),
+            me.getLocalizedTrainNameOrRailwayTitle(train.nm, railway.id),
             '</strong>',
-            `<br> <span class="train-type-label">${me.getLocalizedTrainTypeTitle(train.y)}</span> `,
-            me.getLocalizedDestinationTitle(train.ds, train.d),
+            `<br> <span class="train-type-label">${me.getLocalizedTrainTypeTitle(train.y.id)}</span> `,
+            me.getLocalizedDestinationTitle(train.ds && train.ds.map(({id}) => id), train.d.id),
             '</div></div>',
             `<strong>${dict['train-number']}:</strong> ${train.n}`,
-            !train.tt ? ` <span class="desc-caution">${dict['special']}</span>` : '',
+            !train.timetable ? ` <span class="desc-caution">${dict['special']}</span>` : '',
             '<br>',
             hasGreenCars(train) ? `<span class="desc-green-cars">${WITH_GREEN_CARS[lang]}</span><br>` : '',
             delay >= 60000 ? '<span class="desc-caution">' : '',
             '<strong>',
             dict[train.standing ? 'standing-at' : 'previous-stop'],
             ':</strong> ',
-            me.getLocalizedStationTitle(train.departureStation),
+            me.getLocalizedStationTitle(train.departureStation.id),
             departureTime ? ` ${clock.getTimeString(clock.getTime(departureTime) + delay)}` : '',
             arrivalStation ? [
                 `<br><strong>${dict['next-stop']}:</strong> `,
-                me.getLocalizedStationTitle(arrivalStation),
+                me.getLocalizedStationTitle(arrivalStation.id),
                 arrivalTime ? ` ${clock.getTimeString(clock.getTime(arrivalTime) + delay)}` : ''
             ].join('') : '',
             delay >= 60000 ? `<br>${dict['delay'].replace('$1', Math.floor(delay / 60000))}</span>` : '',
@@ -2050,15 +2066,16 @@ export default class extends Evented {
         function check(curr, prop) {
             const activeTrain = me.activeTrainLookup[curr.t];
 
-            if (activeTrain && curr.id === activeTrain.id) {
+            // Need to check timetable ID
+            if (activeTrain && curr.id === activeTrain.timetable.id) {
                 return true;
             }
 
-            const trains = curr[prop];
+            const timetables = curr[prop];
 
-            if (trains) {
-                for (let i = 0, ilen = trains.length; i < ilen; i++) {
-                    if (check(trains[i], prop)) {
+            if (timetables) {
+                for (const timetable of timetables) {
+                    if (check(timetable, prop)) {
                         return true;
                     }
                 }
@@ -2066,7 +2083,7 @@ export default class extends Evented {
             return false;
         }
 
-        return check(train, 'previousTrains') || check(train, 'nextTrains');
+        return check(train.timetable, 'pt') || check(train.timetable, 'nt');
     }
 
     stopTrain(train, keep) {
@@ -2087,12 +2104,18 @@ export default class extends Evented {
             }
         }
         delete train.cars;
-        delete me.activeTrainLookup[train.t];
-        if (!keep) {
-            delete train.delay;
+        delete me.activeTrainLookup[train.id];
+    }
+
+    deactivateTrain(train) {
+        const me = this,
+            {markedObject, trackedObject} = me;
+
+        if (markedObject && markedObject.object === train) {
+            me.markObject();
         }
-        if (!train.tt) {
-            delete me.timetableData.splice(me.timetableData.indexOf(train), 1);
+        if (trackedObject && trackedObject.object === train) {
+            me.trackObject();
         }
     }
 
@@ -2122,7 +2145,8 @@ export default class extends Evented {
         for (const key of Object.keys(activeFlightLookup)) {
             me.stopFlight(activeFlightLookup[key]);
         }
-        me.realtimeTrainLookup = {};
+        me.standbyTrainLookup = {};
+        me.realtimeTrains.clear();
         delete me.lastTrainRefresh;
     }
 
@@ -2138,9 +2162,7 @@ export default class extends Evented {
         const me = this;
 
         loadTimetableData(me.dataUrl, me.clock).then(data => {
-            me.timetableData = data;
-            me.updateTimetableData(data);
-            me.trainLookup = helpers.buildLookup(data, 't');
+            me.timetables = new TrainTimetables(data, me.dataReferences);
             delete me.lastTrainRefresh;
         });
     }
@@ -2149,81 +2171,9 @@ export default class extends Evented {
         const me = this;
 
         loadDynamicTrainData(me.secrets).then(({trainData, trainInfoData}) => {
-            const {trainLookup, activeTrainLookup, railwayLookup} = me,
-                realtimeTrainLookup = me.realtimeTrainLookup = {};
-
-            for (const trainRef of trainData) {
-                const {id, r, y, os, d, ds, ts, fs, v, delay, carComposition} = trainRef;
-
-                // Retry lookup replacing Marunouchi line with MarunouchiBranch line
-                let train = trainLookup[id] || trainLookup[id.replace('.Marunouchi.', '.MarunouchiBranch.')];
-                let changed = false;
-
-                if (train) {
-                    realtimeTrainLookup[id] = train;
-                    if (!isNaN(delay) && train.delay !== delay) {
-                        train.delay = delay;
-                        changed = true;
-                    }
-                    if (carComposition && train.carComposition !== carComposition) {
-                        train.carComposition = carComposition;
-                        changed = true;
-                    }
-                    if (y && train.y !== y) {
-                        train.y = y;
-                        changed = true;
-                    }
-                    if (truncateTrainTimetable(train, os, ds)) {
-                        changed = true;
-                    }
-                    if (!train.tt) {
-                        train.ts = ts;
-                        train.fs = fs;
-                    }
-                    if (v) {
-                        train.v = v;
-                    }
-                    if (changed && activeTrainLookup[id]) {
-                        me.stopTrain(train, true);
-                    }
-                } else if (r) {
-                    // Exclude Namboku line trains that connect to/from Mita line
-                    if (r === RAILWAY_NAMBOKU && (os[0].startsWith(RAILWAY_MITA) || ds[0].startsWith(RAILWAY_MITA))) {
-                        continue;
-                    }
-
-                    // Exclude Arakawa line trains
-                    if (r === RAILWAY_ARAKAWA) {
-                        continue;
-                    }
-
-                    const railwayRef = railwayLookup[r];
-
-                    if (railwayRef) {
-                        train = {
-                            t: id,
-                            id: `${id}.Today`,
-                            r,
-                            y,
-                            n: trainRef.n,
-                            os,
-                            d,
-                            ds,
-                            ts,
-                            fs,
-                            start: Date.now(),
-                            end: Date.now() + 86400000,
-                            delay,
-                            direction: d === railwayRef.ascending ? 1 : -1,
-                            altitude: railwayRef.altitude,
-                            carComposition: carComposition || railwayRef.carComposition
-                        };
-                        me.timetableData.push(train);
-                        realtimeTrainLookup[id] = trainLookup[id] = train;
-                    }
-                }
-                me.lastDynamicUpdate[trainRef.o] = trainRef.date;
-            }
+            const {activeTrainLookup, realtimeTrains, railwayLookup, dataReferences} = me,
+                standbyTrainLookup = me.standbyTrainLookup = {},
+                now = me.clock.getTime();
 
             me.resetRailwayStatus();
 
@@ -2235,24 +2185,90 @@ export default class extends Evented {
                 if (railway && status && status.ja) {
                     railway.status = status.ja;
                     railway.text = trainInfoRef.text.ja;
-                    if (railway.dynamic) {
-                        for (const key of Object.keys(activeTrainLookup)) {
-                            const train = activeTrainLookup[key];
-                            if (train.r === railway.id && !realtimeTrainLookup[train.t]) {
-                                me.stopTrain(train);
-                            }
-                        }
-                    }
                 }
 
                 if (trainInfoRef.suspended) {
                     railway.suspended = true;
-                    for (const key of Object.keys(activeTrainLookup)) {
-                        const train = activeTrainLookup[key];
-                        if (train.r === railway.id) {
-                            me.stopTrain(train);
+                }
+            }
+
+            realtimeTrains.clear();
+
+            for (const trainRef of trainData) {
+                const {id, r, n, y, d, os, ds, ts, fs, v, delay, carComposition} = trainRef,
+                    aliasId = id.replace('.Marunouchi.', '.MarunouchiBranch.');
+
+                me.lastDynamicUpdate[trainRef.o] = trainRef.date;
+                realtimeTrains.add(trainRef.id);
+
+                // Retry lookup replacing Marunouchi line with MarunouchiBranch line
+                const activeTrain = activeTrainLookup[id] || activeTrainLookup[aliasId];
+
+                // Update the avtive train if exists
+                if (activeTrain) {
+                    if ((y && y !== activeTrain.y.id) ||
+                        (os && activeTrain.os && os[0] !== activeTrain.os[0].id) ||
+                        (ds && activeTrain.ds && ds[0] !== activeTrain.ds[0].id) ||
+                        (v && v !== activeTrain.v.id) ||
+                        (!isNaN(carComposition) && carComposition !== activeTrain.carComposition) ||
+                        (!isNaN(delay) && delay !== activeTrain.delay)) {
+                        me.stopTrain(activeTrain, true);
+                    } else {
+                        if (!activeTrain.timetable) {
+                            activeTrain.update({ts, fs}, dataReferences);
+                        }
+                        continue;
+                    }
+                }
+
+                let timetables = me.timetables.getByTrainId(id);
+
+                // Retry lookup replacing Marunouchi line with MarunouchiBranch line
+                if (timetables.length === 0) {
+                    timetables = me.timetables.getByTrainId(aliasId);
+                }
+
+                // Start train with timetable
+                if (timetables.length !== 0) {
+                    for (const timetable of timetables) {
+                        const train = new Train(timetable);
+
+                        train.update({y, os, ds, v, delay, carComposition}, dataReferences);
+                        if (timetable.start + (delay || 0) <= now && now <= timetable.end + (delay || 0)) {
+                            me.trainStart(train);
+                        } else {
+                            me.deactivateTrain(train);
+                            standbyTrainLookup[timetable.id] = train;
                         }
                     }
+                    continue;
+                }
+
+                if (!r) {
+                    continue;
+                }
+
+                // Exclude Namboku line trains that connect to/from Mita line
+                if (r === RAILWAY_NAMBOKU && (os[0].startsWith(RAILWAY_MITA) || ds[0].startsWith(RAILWAY_MITA))) {
+                    continue;
+                }
+
+                // Exclude Arakawa line trains
+                if (r === RAILWAY_ARAKAWA) {
+                    continue;
+                }
+
+                // Start train without timetable
+                me.trainStart(new Train({id, r, n, y, d, os, ds, ts, fs, delay, carComposition}, dataReferences));
+            }
+
+            // Stop trains if they are no longer active
+            for (const key of Object.keys(activeTrainLookup)) {
+                const train = activeTrainLookup[key],
+                    railway = train.r;
+
+                if ((((railway.status && railway.dynamic) || !train.timetable) && !realtimeTrains.has(train.id)) || railway.suspended) {
+                    me.stopTrain(train);
                 }
             }
 
@@ -2268,7 +2284,7 @@ export default class extends Evented {
         const me = this;
 
         loadDynamicFlightData(me.secrets).then(({atisData, flightData}) => {
-            const {flightLookup, activeFlightLookup} = me,
+            const {clock, flightLookup, activeFlightLookup} = me,
                 {landing, departure} = atisData,
                 pattern = [landing.join('/'), departure.join('/')].join(' '),
                 codeShareFlights = {},
@@ -2436,11 +2452,11 @@ export default class extends Evented {
                     standingDuration = configs.standingDuration;
 
                 if (departureTime) {
-                    flight.start = flight.base = me.clock.getTime(departureTime);
+                    flight.start = flight.base = clock.getTime(departureTime);
                     flight.entry = flight.start - standingDuration;
                     flight.end = flight.start + duration;
                 } else {
-                    flight.start = flight.entry = me.clock.getTime(arrivalTime) - duration;
+                    flight.start = flight.entry = clock.getTime(arrivalTime) - duration;
                     flight.base = flight.start + duration - standingDuration;
                     flight.end = flight.start + duration + standingDuration;
                 }
@@ -2750,7 +2766,7 @@ export default class extends Evented {
 
                 trackedObject.outline = 0;
                 me.trafficLayer.updateObject(trackedObject);
-                me.fire({type: 'deselection', deselection: prevObject.t || prevObject.id});
+                me.fire({type: 'deselection', deselection: prevObject.id});
             } else if (isStation(trackedObject)) {
                 me.removeStationOutline('stations-selected');
                 me.fire({type: 'deselection', deselection: trackedObject.stations});
@@ -2788,14 +2804,14 @@ export default class extends Evented {
                     me.sharePanel = new SharePanel({object: _object});
                     me.sharePanel.addTo(me);
                 }
-                if (_object.tt) {
+                if (_object.timetable) {
                     me.detailPanel = new TrainPanel({object: _object});
                     me.detailPanel.addTo(me);
                 }
 
                 object.outline = 1;
                 me.trafficLayer.updateObject(object);
-                me.fire({type: 'selection', selection: _object.t || _object.id});
+                me.fire({type: 'selection', selection: _object.id});
             } else if (isStation(object)) {
                 const stations = object.stations.concat(object.hidden || []).map(id => me.stationLookup[id]),
                     coords = stations.map(station => station.coord),
@@ -2840,9 +2856,9 @@ export default class extends Evented {
 
     showTrainPopup(object) {
         const me = this,
-            index = me.trainPopupObjects.indexOf(object);
+            trainPopupObjects = me.trainPopupObjects;
 
-        if (index !== -1) {
+        if (trainPopupObjects.indexOf(object) !== -1) {
             return;
         }
         object.popup = new AnimatedPopup({
@@ -2855,7 +2871,7 @@ export default class extends Evented {
             }
         });
         object.popup.setHTML('');
-        me.trainPopupObjects.push(object);
+        trainPopupObjects.push(object);
         me.updateTrainPopup();
     }
 
@@ -2877,7 +2893,8 @@ export default class extends Evented {
 
     hideTrainPopup(object) {
         const me = this,
-            index = me.trainPopupObjects.indexOf(object);
+            trainPopupObjects = me.trainPopupObjects,
+            index = trainPopupObjects.indexOf(object);
 
         if (index === -1 || !object.popup) {
             return;
@@ -2885,7 +2902,7 @@ export default class extends Evented {
         object.popup.remove();
         delete object.popup;
         delete object.popupVisible;
-        me.trainPopupObjects.splice(index, 1);
+        trainPopupObjects.splice(index, 1);
     }
 
     showStationExits(stations) {
@@ -3013,58 +3030,6 @@ export default class extends Evented {
         }
     }
 
-    updateTimetableData(data) {
-        const me = this,
-            clock = me.clock,
-            lookup = helpers.buildLookup(data);
-
-        for (const train of data) {
-            const railway = me.railwayLookup[train.r],
-                direction = train.d === railway.ascending ? 1 : -1,
-                {tt: table, pt: previousTableIDs, nt: nextTableIDs} = train,
-                length = table.length;
-            let start = Infinity,
-                previousTrains, nextTrains;
-
-            if (previousTableIDs) {
-                for (const id of previousTableIDs) {
-                    const previousTrain = lookup[id];
-
-                    if (previousTrain) {
-                        const tt = previousTrain.tt;
-
-                        start = Math.min(start,
-                            clock.getTime(tt[tt.length - 1].a || tt[tt.length - 1].d || table[0].d) - configs.standingDuration);
-                        previousTrains = previousTrains || [];
-                        previousTrains.push(previousTrain);
-                    }
-                }
-            }
-            if (nextTableIDs) {
-                for (const id of nextTableIDs) {
-                    const nextTrain = lookup[id];
-
-                    if (nextTrain) {
-                        nextTrains = nextTrains || [];
-                        nextTrains.push(nextTrain);
-                    }
-                }
-                if (nextTrains) {
-                    table[length - 1].d = nextTrains[0].tt[0].d;
-                }
-            }
-            train.start = Math.min(start, clock.getTime(table[0].d) - configs.standingDuration);
-            train.end = clock.getTime(table[length - 1].a ||
-                table[length - 1].d ||
-                table[Math.max(length - 2, 0)].d);
-            train.direction = direction;
-            train.altitude = railway.altitude;
-            train.carComposition = railway.carComposition;
-            train.previousTrains = previousTrains;
-            train.nextTrains = nextTrains;
-        }
-    }
-
     addStationOutline(object, name) {
         const me = this,
             id = object.stations[0];
@@ -3100,19 +3065,19 @@ export default class extends Evented {
     setSectionData(train, index, final) {
         const me = this,
             clock = me.clock,
-            stations = me.railwayLookup[train.r].stations,
-            {direction, tt: table} = train,
+            stations = train.r.stations.map(id => me.stationLookup[id]),
+            {direction, timetable} = train,
             destination = (train.ds || [])[0],
             delay = train.delay || 0,
             now = clock.getTime();
         let ttIndex, current, next, departureStation, arrivalStation, currentSection, nextSection, finalSection;
 
-        if (table) {
-            ttIndex = helpers.valueOrDefault(index, table.reduce((acc, cur, i) => {
+        if (timetable) {
+            ttIndex = helpers.valueOrDefault(index, timetable.tt.reduce((acc, cur, i) => {
                 return cur.d && clock.getTime(cur.d) + delay <= now ? i : acc;
             }, 0));
-            current = table[ttIndex];
-            next = table[ttIndex + 1];
+            current = timetable.tt[ttIndex];
+            next = timetable.tt[ttIndex + 1];
             departureStation = current.s;
             arrivalStation = next && next.s;
         } else {
@@ -3136,7 +3101,7 @@ export default class extends Evented {
             }
         }
 
-        if (table) {
+        if (timetable) {
             train.timetableIndex = ttIndex;
             train.departureStation = departureStation;
             train.departureTime = current.d || current.a;
@@ -3355,51 +3320,6 @@ function getLayerZoom(zoom) {
 //     return Math.pow(2, 14 - helpers.clamp(zoom, 13, 19));
 // }
 
-function truncateTrainTimetable(train, origin, destination) {
-    const {tt, os, ds} = train;
-    let changed = false;
-
-    if (os && origin && os[0] !== origin[0]) {
-        train.os = origin;
-        if (tt) {
-            for (let i = 0, ilen = tt.length; i < ilen; i++) {
-                const item = tt[i];
-
-                if (item.s === origin[0]) {
-                    delete item.a;
-                    tt.splice(0, i);
-                    break;
-                }
-            }
-        }
-        changed = true;
-    }
-    if (ds && destination && ds[0] !== destination[0]) {
-        train.ds = destination;
-        if (tt) {
-            for (let i = 0, ilen = tt.length; i < ilen; i++) {
-                const item = tt[i];
-
-                if (item.s === destination[0]) {
-                    item.a = item.a || item.d;
-                    delete item.d;
-                    tt.splice(i + 1);
-                    break;
-                }
-            }
-        }
-        changed = true;
-    }
-    return changed;
-}
-
-function getConnectingTrainIds(train) {
-    const {nextTrains, t: id} = train,
-        ids = id ? [id] : [];
-
-    return nextTrains ? ids.concat(...nextTrains.map(getConnectingTrainIds)) : ids;
-}
-
 function isTrainOrFlight(object) {
     return object && helpers.includes(['train', 'flight'], object.type);
 }
@@ -3419,5 +3339,5 @@ function isEqualObject(a, b) {
 }
 
 function hasGreenCars(train) {
-    return helpers.includes([RAILWAY_CHUORAPID, RAILWAY_OME], train.r) && train.y !== TRAINTYPE_JREAST_LIMITEDEXPRESS && train.carComposition === 12;
+    return helpers.includes([RAILWAY_CHUORAPID, RAILWAY_OME], train.r.id) && train.y.id !== TRAINTYPE_JREAST_LIMITEDEXPRESS && train.carComposition === 12;
 }
