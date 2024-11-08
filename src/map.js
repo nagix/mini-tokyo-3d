@@ -1040,11 +1040,9 @@ export default class extends Evented {
             map.addControl(control);
         }
 
-        for (const key of ['mousemove', 'touchstart', 'touchmove']) {
-            map.on(key, e => {
-                me.markObject(me.pickObject(e.point));
-            });
-        }
+        map.on('mousemove', e => {
+            me.markObject(me.pickObject(e.point));
+        });
 
         map.on('mouseout', () => {
             me.markObject();
