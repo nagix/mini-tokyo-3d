@@ -17,10 +17,11 @@ export default class extends Panel {
 
     addTo(map) {
         const me = this,
-            stations = me._options.object,
+            options = me._options,
+            stations = options.object,
             titles = [],
             titlesByRailway = {},
-            mode = me._options.mode || 'departure',
+            mode = options.mode || 'departure',
             departures = me._departures = [],
             exits = me._exits = [].concat(...stations.map(station => station.exit || [])),
             pitch = map.getPitch(),
@@ -291,6 +292,26 @@ export default class extends Panel {
         return me;
     }
 
+    reset() {
+        const me = this,
+            {_map: map, _container: container, _swiper: swiper} = me,
+            classList = me._container.classList;
+
+        if (swiper) {
+            swiper.destroy();
+            delete me._swiper;
+            me.hideRoute();
+        }
+        classList.remove(...MODE_CLASSES);
+        classList.add('station-departure');
+        container.querySelector(':checked').checked = false;
+        container.querySelector('#station-departure-button').checked = true;
+        me.setButtons();
+        map.hideStationExits();
+        map.map.flyTo({center: map.lastCameraParams.center, zoom: 15.5});
+        map._setSearchMode('none');
+    }
+
     updateContent() {
         const me = this,
             {_map: map, _container: container, _exits: exits} = me,
@@ -417,9 +438,8 @@ export default class extends Panel {
 
     showResult(result) {
         const me = this,
-            map = me._map,
+            {_map: map, _container: container, _backButton: backButton} = me,
             {dict, clock} = map,
-            container = me._container,
             classList = container.classList,
             pageController = createElement('div', {
                 className: 'page-controller',
@@ -453,7 +473,7 @@ export default class extends Panel {
 
         if (routes) {
             classList.add('station-routes');
-            me.setButtons([me._backButton, pageController]);
+            me.setButtons([backButton, pageController]);
 
             for (const route of routes) {
                 const slideElement = createElement('div', {
@@ -556,7 +576,7 @@ export default class extends Panel {
             me.switchRoute();
         } else {
             classList.add('station-noroute');
-            me.setButtons([me._backButton]);
+            me.setButtons([backButton]);
 
             swiperElement.innerHTML = [
                 '<div class="swiper-slide">',
@@ -569,10 +589,8 @@ export default class extends Panel {
 
     switchRoute() {
         const me = this,
-            map = me._map,
+            {_map: map, _container: container, _swiper: swiper} = me,
             {dict, map: mbox, featureCollection} = map,
-            container = me._container,
-            swiper = me._swiper,
             index = swiper.activeIndex,
             route = me._result.routes[index],
             trains = route.trains,

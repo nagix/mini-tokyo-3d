@@ -18,7 +18,7 @@ export default class extends Panel {
             {r: railway, timetable} = train,
             color = (train.v || railway).color,
             delay = train.delay || 0;
-        let currSection, scrollTop;
+        let currSection;
 
         for (let curr = timetable; curr; curr = curr.pt && curr.pt[0]) {
             timetables.unshift(curr);
@@ -101,8 +101,8 @@ export default class extends Panel {
             container.querySelector('#train-mark').innerHTML =
                 `<circle cx="22" cy="${y}" r="${7 + p * 15}" fill="#ffffff" opacity="${1 - p}" />` +
                 `<circle cx="22" cy="${y}" r="7" fill="#ffffff" />`;
-            if (scrollTop === undefined || scrollTop === bodyElement.scrollTop) {
-                scrollTop = bodyElement.scrollTop = Math.round(y - height / 2 + 4);
+            if (me._scrollTop === undefined || me._scrollTop === bodyElement.scrollTop) {
+                me._scrollTop = bodyElement.scrollTop = Math.round(y - height / 2 + 4);
             }
             if (me._container) {
                 requestAnimationFrame(repeat);
@@ -110,6 +110,10 @@ export default class extends Panel {
         })();
 
         return me;
+    }
+
+    reset() {
+        delete this._scrollTop;
     }
 
 }

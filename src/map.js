@@ -918,18 +918,19 @@ export default class extends Evented {
         me.styleOpacities = helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect');
 
         const datalist = helpers.createElement('datalist', {id: 'stations'}, document.body);
-        me.stationTitleLookup = {};
+        const stationTitleLookup = me.stationTitleLookup = {};
+
         for (const l of [lang, 'en']) {
             for (const railway of me.railwayData) {
                 for (const id of railway.stations) {
                     const station = me.stationLookup[id],
-                        utitle = station.utitle && station.utitle[l],
-                        title = utitle || helpers.normalize(station.title[l] || station.title.en),
-                        key = title.toUpperCase();
+                        {title, utitle} = station,
+                        stationTitle = (utitle && utitle[l]) || helpers.normalize(title[l] || title.en),
+                        key = stationTitle.toUpperCase();
 
-                    if (!me.stationTitleLookup[key]) {
-                        helpers.createElement('option', {value: title}, datalist);
-                        me.stationTitleLookup[key] = station;
+                    if (!stationTitleLookup[key]) {
+                        helpers.createElement('option', {value: stationTitle}, datalist);
+                        stationTitleLookup[key] = station;
                     }
                 }
             }
@@ -2685,7 +2686,11 @@ export default class extends Evented {
         const me = this,
             {markedObject, trafficLayer, map, popup} = me;
 
-        if (markedObject && !isEqualObject(markedObject, object)) {
+        if (isEqualObject(markedObject, object)) {
+            return;
+        }
+
+        if (markedObject) {
             if (isTrainOrFlight(markedObject)) {
                 markedObject.outline = 0;
                 trafficLayer.updateObject(markedObject);
@@ -2699,7 +2704,7 @@ export default class extends Evented {
             }
         }
 
-        if (object && !isEqualObject(object, me.markedObject)) {
+        if (object) {
             me.markedObject = object;
             map.getCanvas().style.cursor = 'pointer';
 
@@ -2735,11 +2740,17 @@ export default class extends Evented {
             {searchMode, lang, map, trackedObject, lastCameraParams, sharePanel, detailPanel} = me;
 
         if (searchMode === 'edit' && detailPanel && isStation(object)) {
-            const station = me.stationLookup[object.stations[0]],
-                utitle = station.utitle && station.utitle[lang],
-                title = utitle || helpers.normalize(station.title[lang] || station.title.en);
+            const {title, utitle} = me.stationLookup[object.stations[0]],
+                stationTitle = (utitle && utitle[lang]) || helpers.normalize(title[lang] || title.en);
 
-            detailPanel.fillStationName(title);
+            detailPanel.fillStationName(stationTitle);
+            return;
+        }
+
+        if (isEqualObject(trackedObject, object)) {
+            if ((isTrainOrFlight(object) || isStation(object)) && me.detailPanel) {
+                me.detailPanel.reset();
+            }
             return;
         }
 
@@ -2760,7 +2771,7 @@ export default class extends Evented {
             });
         }
 
-        if (isTrainOrFlight(trackedObject) || isStation(trackedObject) || (trackedObject && !isEqualObject(trackedObject, object))) {
+        if (trackedObject) {
             if (isTrainOrFlight(trackedObject)) {
                 const prevObject = trackedObject.object;
 
@@ -2788,7 +2799,7 @@ export default class extends Evented {
             }
         }
 
-        if (isTrainOrFlight(object) || isStation(object) || (object && !isEqualObject(object, me.trackedObject))) {
+        if (object) {
             me.trackedObject = object;
 
             if (isTrainOrFlight(object)) {
