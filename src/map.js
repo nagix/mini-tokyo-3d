@@ -2082,7 +2082,7 @@ export default class extends Evented {
             return false;
         }
 
-        return check(train.timetable, 'pt') || check(train.timetable, 'nt');
+        return train.timetable ? check(train.timetable, 'pt') || check(train.timetable, 'nt') : false;
     }
 
     stopTrain(train, keep) {

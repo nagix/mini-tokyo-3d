@@ -1,9 +1,30 @@
 import configs from './configs';
 import {loadJSON, removePrefix} from './helpers/helpers';
 
-const OPERATORS_FOR_TRAINS = {
+const RAILWAYS_FOR_TRAINS = {
     odpt: [
-        'Toei'
+        'Toei.Asakusa',
+        'Toei.Mita',
+        'Toei.Shinjuku',
+        'Toei.Oedo',
+        'Toei.Arakawa'
+    ],
+    challenge2024: [
+        'JR-East.Yamanote',
+        'Keikyu.Main',
+        'Keikyu.Airport',
+        'Keikyu.Daishi',
+        'Keikyu.Zushi',
+        'Keikyu.Kurihama',
+        'Tobu.TobuSkytree',
+        'Tobu.TobuSkytreeBranch',
+        'Tobu.Isesaki',
+        'Tobu.Nikko',
+        'Tobu.TobuUrbanPark',
+        'Tobu.Kameido',
+        'Tobu.Daishi',
+        'Tobu.Tojo',
+        'Tobu.Ogose'
     ]
 };
 
@@ -120,16 +141,16 @@ export function loadDynamicTrainData(secrets) {
         trainInfoData = [],
         urls = [];
 
-    for (const source of Object.keys(OPERATORS_FOR_TRAINS)) {
+    for (const source of Object.keys(RAILWAYS_FOR_TRAINS)) {
         const url = configs.apiUrl[source],
             key = secrets[source];
 
-        if (source === 'odpt') {
-            const operators = OPERATORS_FOR_TRAINS[source]
-                .map(operator => `odpt.Operator:${operator}`)
+        if (source === 'odpt' || source === 'challenge2024') {
+            const railways = RAILWAYS_FOR_TRAINS[source]
+                .map((railway) => `odpt.Railway:${railway}`)
                 .join(',');
 
-            urls.push(`${url}odpt:Train?odpt:operator=${operators}&acl:consumerKey=${key}`);
+            urls.push(`${url}odpt:Train?odpt:railway=${railways}&acl:consumerKey=${key}`);
         }
     }
 
@@ -151,8 +172,8 @@ export function loadDynamicTrainData(secrets) {
     urls.push(configs.trainInfoUrl);
 
     return Promise.all(urls.map(loadJSON)).then(data => {
-        // Train data from ODPT
-        for (const train of data.shift()) {
+        // Train data from ODPT and Challenge 2024
+        for (const train of [...data.shift(), ...data.shift()]) {
             const trainType = removePrefix(train['odpt:trainType']),
                 destinationStation = removePrefix(train['odpt:destinationStation']);
 
@@ -178,7 +199,7 @@ export function loadDynamicTrainData(secrets) {
             trainData.push(train);
         }
 
-        // Train information data from ODPT and Tokyo Challenge
+        // Train information data from ODPT and Challenge 2024
         for (const trainInfo of [...data.shift(), ...data.shift()]) {
             trainInfoData.push({
                 operator: removePrefix(trainInfo['odpt:operator']),
