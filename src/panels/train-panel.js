@@ -1,4 +1,4 @@
-import {getTimeOffset, getTimeString, lerp} from '../helpers/helpers';
+import {getTimeString, lerp} from '../helpers/helpers';
 import Panel from './panel';
 
 export default class extends Panel {
@@ -37,9 +37,9 @@ export default class extends Panel {
                         '<div class="station-time-box',
                         delay >= 60000 ? ' desc-caution' : '',
                         '">',
-                        s.a ? getTimeString(getTimeOffset(s.a) + delay) : '',
-                        s.a && s.d ? '<br>' : '',
-                        s.d ? getTimeString(getTimeOffset(s.d) + delay) : '',
+                        s.a !== undefined ? getTimeString(s.a + delay) : '',
+                        s.a !== undefined && s.d !== undefined ? '<br>' : '',
+                        s.d !== undefined ? getTimeString(s.d + delay) : '',
                         '</div></div>'
                     ].join(''));
                 }

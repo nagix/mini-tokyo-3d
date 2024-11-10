@@ -6,8 +6,9 @@ export default class TrainTimetable {
     constructor(params, refs) {
         const me = this,
             {os, ds, tt, nm, v} = params,
-            {a, d} = tt[tt.length - 1],
             stations = refs.stations;
+        let start = 86400000,
+            end = 0;
 
         /**
          * Train timetable ID
@@ -69,10 +70,14 @@ export default class TrainTimetable {
             const stop = {s: stations.get(s)};
 
             if (a) {
-                stop.a = a;
+                stop.a = getTimeOffset(a);
+                start = Math.min(start, stop.a);
+                end = Math.max(end, stop.a);
             }
             if (d) {
-                stop.d = d;
+                stop.d = getTimeOffset(d);
+                start = Math.min(start, stop.d);
+                end = Math.max(end, stop.d);
             }
             return stop;
         });
@@ -97,19 +102,20 @@ export default class TrainTimetable {
          * Start timestamp
          * @type {number}
          */
-        me.start = getTimeOffset(tt[0].d) - configs.standingDuration;
+        me.start = start - configs.standingDuration;
 
         /**
          * End timestamp
          * @type {number}
          */
-        me.end = getTimeOffset(a || d || tt[Math.max(0, tt.length - 2)].d);
+        me.end = end;
     }
 
     update(params, refs) {
         const me = this,
             {pt, nt} = params,
-            timetables = refs.timetables;
+            timetables = refs.timetables,
+            standingDuration = configs.standingDuration;
 
         if (pt) {
             for (const id of pt) {
@@ -126,8 +132,10 @@ export default class TrainTimetable {
                     me.pt = me.pt || [];
                     me.pt.push(prevTimetable);
 
-                    if (a || d) {
-                        me.start = Math.min(me.start, getTimeOffset(a || d) - configs.standingDuration);
+                    if (a) {
+                        me.start = Math.min(me.start, a - standingDuration);
+                    } else if (d) {
+                        me.start = Math.min(me.start, d - standingDuration);
                     }
                 }
             }

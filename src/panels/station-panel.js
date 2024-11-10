@@ -339,7 +339,7 @@ export default class extends Panel {
                         const {s, d} = timetable.tt[i];
 
                         if (s.id === railway.station) {
-                            const time = getTimeOffset(d) + delay;
+                            const time = d + delay;
 
                             if (time > now) {
                                 if (trains.length === 0 || time < trains[0].time) {

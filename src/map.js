@@ -2288,7 +2288,7 @@ export default class extends Evented {
         const me = this;
 
         loadDynamicFlightData(me.secrets).then(({atisData, flightData}) => {
-            const {clock, flightLookup, activeFlightLookup} = me,
+            const {flightLookup, activeFlightLookup} = me,
                 {landing, departure} = atisData,
                 pattern = [landing.join('/'), departure.join('/')].join(' '),
                 codeShareFlights = {},
@@ -3086,9 +3086,9 @@ export default class extends Evented {
         let ttIndex, current, next, departureStation, arrivalStation, currentSection, nextSection, finalSection;
 
         if (timetable) {
-            ttIndex = helpers.valueOrDefault(index, timetable.tt.reduce((acc, cur, i) => {
-                return cur.d && helpers.getTimeOffset(cur.d) + delay <= now ? i : acc;
-            }, 0));
+            ttIndex = helpers.valueOrDefault(index, timetable.tt.reduce(
+                (acc, cur, i) => cur.d !== undefined && cur.d + delay <= now ? i : acc, 0
+            ));
             current = timetable.tt[ttIndex];
             next = timetable.tt[ttIndex + 1];
             departureStation = current.s;
@@ -3117,14 +3117,14 @@ export default class extends Evented {
         if (timetable) {
             train.timetableIndex = ttIndex;
             train.departureStation = departureStation;
-            train.departureTime = helpers.getTimeOffset(current.d || current.a);
+            train.departureTime = helpers.valueOrDefault(current.d, current.a);
 
             if (currentSection >= 0 && nextSection >= 0) {
                 train.sectionIndex = currentSection;
                 train.sectionLength = nextSection - currentSection;
                 train.arrivalStation = arrivalStation;
-                train.arrivalTime = next.a ? helpers.getTimeOffset(next.a) : undefined;
-                train.nextDepartureTime = next.d ? helpers.getTimeOffset(next.d) : undefined;
+                train.arrivalTime = next.a;
+                train.nextDepartureTime = next.d;
 
                 return true;
             }

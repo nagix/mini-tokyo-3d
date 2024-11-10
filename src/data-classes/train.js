@@ -1,3 +1,4 @@
+import {valueOrDefault} from '../helpers/helpers';
 import TrainTimetable from './train-timetable';
 
 export default class {
@@ -185,7 +186,7 @@ export default class {
                     if (stop.s.id === ds[0]) {
                         me.timetable = timetable.clone();
                         me.timetable.tt = timetable.tt.slice(0, i + 1);
-                        me.timetable.tt[timetable.tt.length - 1] = {s: stop.s, a: stop.a || stop.d};
+                        me.timetable.tt[timetable.tt.length - 1] = {s: stop.s, a: valueOrDefault(stop.a, stop.d)};
                         break;
                     }
                 }
