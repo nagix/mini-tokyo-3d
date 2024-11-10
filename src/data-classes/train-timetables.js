@@ -73,4 +73,12 @@ export default class {
         return Array.from(ids);
     }
 
+    clear() {
+        const me = this;
+
+        me.array = [];
+        me.trainLookup = new Map();
+        me.railwayDirectionLookup = new Map();
+    }
+
 }

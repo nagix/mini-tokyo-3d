@@ -1,13 +1,13 @@
 import configs from '../configs';
+import {getTimeOffset} from '../helpers/helpers';
 
 export default class TrainTimetable {
 
     constructor(params, refs) {
         const me = this,
             {os, ds, tt, nm, v} = params,
-            stations = refs.stations,
-            lastStopIndex = tt.length - 1,
-            clock = refs.clock;
+            {a, d} = tt[tt.length - 1],
+            stations = refs.stations;
 
         /**
          * Train timetable ID
@@ -97,17 +97,13 @@ export default class TrainTimetable {
          * Start timestamp
          * @type {number}
          */
-        me.start = clock.getTime(tt[0].d) - configs.standingDuration;
+        me.start = getTimeOffset(tt[0].d) - configs.standingDuration;
 
         /**
          * End timestamp
          * @type {number}
          */
-        me.end = clock.getTime(
-            tt[lastStopIndex].a ||
-            tt[lastStopIndex].d ||
-            tt[Math.max(0, lastStopIndex - 1)].d
-        );
+        me.end = getTimeOffset(a || d || tt[Math.max(0, tt.length - 2)].d);
     }
 
     update(params, refs) {
@@ -121,7 +117,7 @@ export default class TrainTimetable {
 
                 if (prevTimetable) {
                     const tt = prevTimetable.tt,
-                        lastStopIndex = tt.length - 1;
+                        {a, d} = tt[tt.length - 1];
 
                     /**
                      * Previous train tametables
@@ -129,14 +125,10 @@ export default class TrainTimetable {
                      */
                     me.pt = me.pt || [];
                     me.pt.push(prevTimetable);
-                    me.start = Math.min(
-                        me.start,
-                        refs.clock.getTime(
-                            tt[lastStopIndex].a ||
-                            tt[lastStopIndex].d ||
-                            me.tt[0].d
-                        ) - configs.standingDuration
-                    );
+
+                    if (a || d) {
+                        me.start = Math.min(me.start, getTimeOffset(a || d) - configs.standingDuration);
+                    }
                 }
             }
         }

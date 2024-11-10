@@ -2,7 +2,7 @@ import AnimatedPopup from 'mapbox-gl-animated-popup';
 import Swiper from 'swiper';
 import {Pagination} from 'swiper/modules';
 import configs from '../configs';
-import {createElement, includes, loadJSON} from '../helpers/helpers';
+import {createElement, getTimeOffset, getTimeString, includes, loadJSON} from '../helpers/helpers';
 import {emptyFeatureCollection, featureFilter} from '../helpers/helpers-geojson';
 import {getBounds, setLayerProps} from '../helpers/helpers-mapbox';
 import Panel from './panel';
@@ -316,7 +316,8 @@ export default class extends Panel {
         const me = this,
             {_map: map, _container: container, _exits: exits} = me,
             {dict, clock, container: mapContainer} = map,
-            now = clock.getTime(),
+            now = clock.getTimeOffset(),
+            calendar = clock.getCalendar(),
             exitsElement = container.querySelector('#station-exits');
 
         if (!me.isOpen()) {
@@ -338,7 +339,7 @@ export default class extends Panel {
                         const {s, d} = timetable.tt[i];
 
                         if (s.id === railway.station) {
-                            const time = clock.getTime(d) + delay;
+                            const time = getTimeOffset(d) + delay;
 
                             if (time > now) {
                                 if (trains.length === 0 || time < trains[0].time) {
@@ -365,7 +366,7 @@ export default class extends Panel {
                 '<div class="trains-row">',
                 trains.length ? trains.map(({train, time}) => [
                     '<div class="train-row">',
-                    `<div class="train-time-box${train.delay >= 60000 ? ' desc-caution' : ''}">${clock.getTimeString(time)}</div>`,
+                    `<div class="train-time-box${train.delay >= 60000 ? ' desc-caution' : ''}">${getTimeString(time)}</div>`,
                     '<div class="train-title-box">',
                     `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y.id)}</span> `,
                     train.nm ? `${map.getLocalizedTrainNameOrRailwayTitle(train.nm)} ` : '',
@@ -381,9 +382,8 @@ export default class extends Panel {
         for (let i = 0, ilen = exits.length; i < ilen; i++) {
             const id = exits[i],
                 poi = map.poiLookup[id],
-                calendar = clock.getCalendar(),
                 uptime = poi.uptime && poi.uptime.reduce((acc, val) => !val.calendar || includes(val.calendar, calendar) ? val : acc, {}),
-                closed = uptime && (now < clock.getTime(uptime.open) || now >= clock.getTime(uptime.close) || uptime.open === uptime.close),
+                closed = uptime && (now < getTimeOffset(uptime.open) || now >= getTimeOffset(uptime.close) || uptime.open === uptime.close),
                 element = createElement('div', {
                     className: `exit-row${closed ? ' closed' : ''}`,
                     innerHTML: [
@@ -439,7 +439,7 @@ export default class extends Panel {
     showResult(result) {
         const me = this,
             {_map: map, _container: container, _backButton: backButton} = me,
-            {dict, clock} = map,
+            dict = map.dict,
             classList = container.classList,
             pageController = createElement('div', {
                 className: 'page-controller',
@@ -505,8 +505,8 @@ export default class extends Panel {
                         '<div class="station-row">',
                         `<div class="station-title-box">${map.getLocalizedStationTitle(departure.s)}</div>`,
                         `<div class="station-time-box${delay ? ' desc-caution' : ''}">`,
-                        arrivalTime ? `${clock.getTimeString(clock.getTime(arrivalTime) + delay * 60000)}<br>` : '',
-                        clock.getTimeString(clock.getTime(departure.d) + delay * 60000),
+                        arrivalTime !== undefined ? `${getTimeString(arrivalTime + delay * 60000)}<br>` : '',
+                        getTimeString(getTimeOffset(departure.d) + delay * 60000),
                         '</div></div>'
                     ].join(''));
                     stations.push([
@@ -519,13 +519,13 @@ export default class extends Panel {
                     section.color = map.railwayLookup[r].color;
                     sections.push(section);
                     if (transfer === 0) {
-                        arrivalTime = arrival.a;
+                        arrivalTime = getTimeOffset(arrival.a);
                     } else {
                         stations.push([
                             '<div class="station-row">',
                             `<div class="station-title-box">${map.getLocalizedStationTitle(arrival.s)}</div>`,
                             `<div class="station-time-box${delay ? ' desc-caution' : ''}">`,
-                            clock.getTimeString(clock.getTime(arrival.a || arrival.d) + delay * 60000),
+                            getTimeString(getTimeOffset(arrival.a || arrival.d) + delay * 60000),
                             '</div></div>'
                         ].join(''));
                         if (transfer > 0) {

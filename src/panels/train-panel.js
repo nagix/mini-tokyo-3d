@@ -1,4 +1,4 @@
-import {lerp} from '../helpers/helpers';
+import {getTimeOffset, getTimeString, lerp} from '../helpers/helpers';
 import Panel from './panel';
 
 export default class extends Panel {
@@ -9,7 +9,6 @@ export default class extends Panel {
 
     addTo(map) {
         const me = this,
-            clock = map.clock,
             timetables = [],
             sections = [],
             stationHTML = [],
@@ -38,9 +37,9 @@ export default class extends Panel {
                         '<div class="station-time-box',
                         delay >= 60000 ? ' desc-caution' : '',
                         '">',
-                        s.a ? clock.getTimeString(clock.getTime(s.a) + delay) : '',
+                        s.a ? getTimeString(getTimeOffset(s.a) + delay) : '',
                         s.a && s.d ? '<br>' : '',
-                        s.d ? clock.getTimeString(clock.getTime(s.d) + delay) : '',
+                        s.d ? getTimeString(getTimeOffset(s.d) + delay) : '',
                         '</div></div>'
                     ].join(''));
                 }

@@ -91,6 +91,27 @@ export function numberOrDefault(value, defaultValue) {
 }
 
 /**
+ * Returns a time expression based on a time offset.
+ * @param {number} timeOffset - The number of milliseconds elapsed since the last 3am
+ * @returns {string} Time expression in "hh:mm" format
+ */
+export function getTimeString(timeOffset) {
+    const hours = `0${(Math.floor(timeOffset / 3600000) + 3) % 24}`.slice(-2),
+        minutes = `0${Math.floor(timeOffset / 60000) % 60}`.slice(-2);
+
+    return `${hours}:${minutes}`;
+}
+
+/**
+ * Return a time offset based on a time expression.
+ * @param {string} string - Time expression in "hh:mm" format
+ * @returns {number} The number of milliseconds elapsed since the last 3am
+ */
+export function getTimeOffset(string) {
+    return (((+string.substring(0, 2)) + 21) % 24 * 60 + (+string.substring(3, 5))) * 60000;
+}
+
+/**
  * Given an array of member function names as strings, replace all of them
  * with bound versions that will always refer to `context` as `this`. This
  * is useful for classes where otherwise event bindings would reassign

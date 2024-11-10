@@ -636,7 +636,6 @@ export default class extends Evented {
 
         me.lastTimetableRefresh = me.clock.getTime('03:00');
         me.dataReferences = {
-            clock: me.clock,
             railways: {get: id => me.railwayLookup[id]},
             stations: {get: id => me.stationLookup[id]},
             railDirections: {get: id => me.railDirectionLookup[id]},
@@ -1473,7 +1472,7 @@ export default class extends Evented {
     refreshTrains() {
         const me = this,
             initialSelection = me.initialSelection,
-            now = me.clock.getTime();
+            now = me.clock.getTimeOffset();
 
         for (const timetable of me.timetables.getAll()) {
             if (timetable.start <= now && now <= timetable.end && !me.standbyTrainLookup[timetable.id]) {
@@ -1492,8 +1491,7 @@ export default class extends Evented {
     trainStart(train, index) {
         const me = this,
             {r: railway, timetable} = train,
-            clock = me.clock,
-            now = clock.getTime();
+            now = me.clock.getTimeOffset();
 
         if (me.checkActiveTrains(train) || (railway.status && railway.dynamic && !me.realtimeTrains.has(train.id)) || railway.suspended) {
             me.deactivateTrain(train);
@@ -1507,7 +1505,7 @@ export default class extends Evented {
         train.cars = [];
         me.updateTrainProps(train);
 
-        const departureTime = clock.getTime(train.departureTime) + (train.delay || 0);
+        const departureTime = train.departureTime + (train.delay || 0);
 
         if (!timetable && train.sectionLength !== 0) {
             me.trainRepeat(train);
@@ -1536,7 +1534,7 @@ export default class extends Evented {
         } else {
             const markedObject = me.markedObject,
                 clock = me.clock,
-                departureTime = clock.getTime(train.departureTime) + (train.delay || 0),
+                departureTime = train.departureTime + (train.delay || 0),
                 minStandingDuration = configs.minStandingDuration;
 
             train.standing = true;
@@ -1552,16 +1550,20 @@ export default class extends Evented {
                     }
                 },
                 complete: () => {
+                    const clock = me.clock;
+
                     if (final) {
                         me.stopTrain(train);
                     } else if (timetable) {
-                        me.trainRepeat(train, me.clock.speed === 1 ? undefined : me.clock.getTime() - departureTime);
+                        // Specify elapsed time if clock speed is high because the time typically advances
+                        me.trainRepeat(train, clock.speed === 1 ? undefined : clock.getTimeOffset() - departureTime);
                     } else {
                         me.trainStand(train);
                     }
                 },
                 duration: timetable ?
-                    Math.max(departureTime - clock.getTime(), clock.speed === 1 ? minStandingDuration : 0) :
+                    // Set minimum duration to 0 if clock speed is high because the time typically advances
+                    Math.max(departureTime - clock.getTimeOffset(), clock.speed === 1 ? minStandingDuration : 0) :
                     final ? minStandingDuration : configs.realtimeTrainCheckInterval,
                 clock
             });
@@ -1571,17 +1573,17 @@ export default class extends Evented {
     trainRepeat(train, elapsed) {
         const me = this,
             {clock, markedObject} = me,
-            now = clock.getTime(),
+            now = clock.getTimeOffset(),
             delay = train.delay || 0,
             minDelay = configs.minDelay,
             {arrivalTime, nextDepartureTime} = train;
         let minDuration, maxDuration;
 
-        if (nextDepartureTime) {
-            maxDuration = clock.getTime(nextDepartureTime) + delay - now + (elapsed || 0) - minDelay + 60000 - configs.minStandingDuration;
+        if (nextDepartureTime !== undefined) {
+            maxDuration = nextDepartureTime + delay - now + (elapsed || 0) - minDelay + 60000 - configs.minStandingDuration;
         }
-        if (arrivalTime) {
-            minDuration = clock.getTime(arrivalTime) + delay - now + (elapsed || 0) - minDelay;
+        if (arrivalTime !== undefined) {
+            minDuration = arrivalTime + delay - now + (elapsed || 0) - minDelay;
             if (!(maxDuration < minDuration + 60000)) {
                 maxDuration = minDuration + 60000;
             }
@@ -1669,7 +1671,7 @@ export default class extends Evented {
     refreshFlights() {
         const me = this,
             {clock, flightLookup, activeFlightLookup, markedObject, initialSelection} = me,
-            now = clock.getTime();
+            now = clock.getTimeOffset();
 
         for (const key of Object.keys(flightLookup)) {
             const flight = flightLookup[key],
@@ -1737,7 +1739,7 @@ export default class extends Evented {
                 complete: () => {
                     me.stopFlight(flight);
                 },
-                duration: Math.max(flight.end - clock.getTime(), 0),
+                duration: Math.max(flight.end - clock.getTimeOffset(), 0),
                 clock
             });
         }, flight.feature.properties.length, flight.maxSpeed, flight.acceleration, elapsed, clock);
@@ -1978,11 +1980,11 @@ export default class extends Evented {
 
     getTrainDescription(train) {
         const me = this,
-            {lang, dict, clock} = me,
+            {lang, dict} = me,
             {r: railway, departureTime, arrivalStation} = train,
             color = (train.v || railway).color,
             delay = train.delay || 0,
-            arrivalTime = train.arrivalTime || train.nextDepartureTime,
+            arrivalTime = helpers.valueOrDefault(train.arrivalTime, train.nextDepartureTime),
             status = railway.status;
 
         return [
@@ -2007,11 +2009,11 @@ export default class extends Evented {
             dict[train.standing ? 'standing-at' : 'previous-stop'],
             ':</strong> ',
             me.getLocalizedStationTitle(train.departureStation.id),
-            departureTime ? ` ${clock.getTimeString(clock.getTime(departureTime) + delay)}` : '',
+            departureTime !== undefined ? ` ${helpers.getTimeString(departureTime + delay)}` : '',
             arrivalStation ? [
                 `<br><strong>${dict['next-stop']}:</strong> `,
                 me.getLocalizedStationTitle(arrivalStation.id),
-                arrivalTime ? ` ${clock.getTimeString(clock.getTime(arrivalTime) + delay)}` : ''
+                arrivalTime !== undefined ? ` ${helpers.getTimeString(arrivalTime + delay)}` : ''
             ].join('') : '',
             delay >= 60000 ? `<br>${dict['delay'].replace('$1', Math.floor(delay / 60000))}</span>` : '',
             status && lang === 'ja' ? `<br><span class="desc-caution"><strong>${status}:</strong> ${railway.text}</span>` : ''
@@ -2160,9 +2162,12 @@ export default class extends Evented {
     loadTimetableData() {
         const me = this;
 
+        showLoader(me.container);
+        me.timetables.clear();
         loadTimetableData(me.dataUrl, me.clock).then(data => {
             me.timetables = new TrainTimetables(data, me.dataReferences);
             delete me.lastTrainRefresh;
+            hideLoader(me.container);
         });
     }
 
@@ -2172,7 +2177,7 @@ export default class extends Evented {
         loadDynamicTrainData(me.secrets).then(({trainData, trainInfoData}) => {
             const {activeTrainLookup, realtimeTrains, railwayLookup, dataReferences} = me,
                 standbyTrainLookup = me.standbyTrainLookup = {},
-                now = me.clock.getTime();
+                now = me.clock.getTimeOffset();
 
             me.resetRailwayStatus();
 
@@ -2451,11 +2456,11 @@ export default class extends Evented {
                     standingDuration = configs.standingDuration;
 
                 if (departureTime) {
-                    flight.start = flight.base = clock.getTime(departureTime);
+                    flight.start = flight.base = helpers.getTimeOffset(departureTime);
                     flight.entry = flight.start - standingDuration;
                     flight.end = flight.start + duration;
                 } else {
-                    flight.start = flight.entry = clock.getTime(arrivalTime) - duration;
+                    flight.start = flight.entry = helpers.getTimeOffset(arrivalTime) - duration;
                     flight.base = flight.start + duration - standingDuration;
                     flight.end = flight.start + duration + standingDuration;
                 }
@@ -3073,17 +3078,16 @@ export default class extends Evented {
 
     setSectionData(train, index, final) {
         const me = this,
-            clock = me.clock,
             stations = train.r.stations.map(id => me.stationLookup[id]),
             {direction, timetable} = train,
             destination = (train.ds || [])[0],
             delay = train.delay || 0,
-            now = clock.getTime();
+            now = me.clock.getTimeOffset();
         let ttIndex, current, next, departureStation, arrivalStation, currentSection, nextSection, finalSection;
 
         if (timetable) {
             ttIndex = helpers.valueOrDefault(index, timetable.tt.reduce((acc, cur, i) => {
-                return cur.d && clock.getTime(cur.d) + delay <= now ? i : acc;
+                return cur.d && helpers.getTimeOffset(cur.d) + delay <= now ? i : acc;
             }, 0));
             current = timetable.tt[ttIndex];
             next = timetable.tt[ttIndex + 1];
@@ -3113,14 +3117,14 @@ export default class extends Evented {
         if (timetable) {
             train.timetableIndex = ttIndex;
             train.departureStation = departureStation;
-            train.departureTime = current.d || current.a;
+            train.departureTime = helpers.getTimeOffset(current.d || current.a);
 
             if (currentSection >= 0 && nextSection >= 0) {
                 train.sectionIndex = currentSection;
                 train.sectionLength = nextSection - currentSection;
                 train.arrivalStation = arrivalStation;
-                train.arrivalTime = next.a;
-                train.nextDepartureTime = next.d;
+                train.arrivalTime = next.a ? helpers.getTimeOffset(next.a) : undefined;
+                train.nextDepartureTime = next.d ? helpers.getTimeOffset(next.d) : undefined;
 
                 return true;
             }
@@ -3159,6 +3163,13 @@ function initContainer(container) {
     }, container);
     container.classList.add('mini-tokyo-3d');
     return map;
+}
+
+function showLoader(container) {
+    const element = container.querySelector('#loader');
+
+    element.style.opacity = 1;
+    element.style.display = 'block';
 }
 
 function hideLoader(container) {

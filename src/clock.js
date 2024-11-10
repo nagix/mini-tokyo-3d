@@ -96,14 +96,24 @@ export default class {
      * If the time is not specified, it returns that at the current time.
      * In the playback mode, the time in the simulation clock is used.
      * @param {number} time - The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
-     * @returns {number} Time expression in JST in "hh:mm" format
+     * @returns {string} Time expression in JST in "hh:mm" format
      */
     getTimeString(time) {
         const date = this.getJSTDate(time),
             hours = `0${date.getHours()}`.slice(-2),
-            minutes = `'0${date.getMinutes()}`.slice(-2);
+            minutes = `0${date.getMinutes()}`.slice(-2);
 
         return `${hours}:${minutes}`;
+    }
+
+    /**
+     * Returns a time offset based on the current time.
+     * @returns {number} The number of milliseconds elapsed since the last 3am
+     */
+    getTimeOffset() {
+        const me = this;
+
+        return me.getTime() - me.getTime('03:00');
     }
 
     /**
