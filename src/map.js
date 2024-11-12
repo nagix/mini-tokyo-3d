@@ -5,8 +5,7 @@ import animation from './animation';
 import Clock from './clock';
 import configs from './configs';
 import {ClockControl, MapboxGLButtonControl, SearchControl} from './controls';
-import Train from './data-classes/train';
-import TrainTimetables from './data-classes/train-timetables';
+import {POIs, Train, TrainTimetables} from './data-classes';
 import extend from './extend';
 import * as helpers from './helpers/helpers';
 import {pickObject} from './helpers/helpers-deck';
@@ -589,6 +588,9 @@ export default class extends Evented {
 
         Object.assign(me, data);
 
+        me.pois = new POIs(me.poiData);
+        delete me.poiData;
+
         me.railwayLookup = helpers.buildLookup(me.railwayData);
         me.stationLookup = helpers.buildLookup(me.stationData);
 
@@ -648,7 +650,6 @@ export default class extends Evented {
         me.operatorLookup = helpers.buildLookup(me.operatorData);
         me.airportLookup = helpers.buildLookup(me.airportData);
         me.flightStatusLookup = helpers.buildLookup(me.flightStatusData);
-        me.poiLookup = helpers.buildLookup(me.poiData);
 
         me.activeTrainLookup = {};
         me.standbyTrainLookup = {};
@@ -1966,14 +1967,14 @@ export default class extends Evented {
 
     getLocalizedPOITitle(poi) {
         const me = this,
-            title = (me.poiLookup[poi] || {}).title || {};
+            title = (me.pois.get(poi) || {}).title || {};
 
         return title[me.lang] || title.en;
     }
 
     getLocalizedPOIDescription(poi) {
         const me = this,
-            description = (me.poiLookup[poi] || {}).description || {};
+            description = (me.pois.get(poi) || {}).description || {};
 
         return description[me.lang] || description.en;
     }
@@ -2928,8 +2929,8 @@ export default class extends Evented {
             const coords = [];
 
             me.exitPopups = exits.map((id, index) => {
-                const {coord, facilities} = me.poiLookup[id],
-                    icons = (facilities || []).map(facility => `<span class="exit-${facility}-small-icon"></span>`).join(''),
+                const {coord, facilities = []} = me.pois.get(id),
+                    icons = facilities.map(facility => `<span class="exit-${facility}-small-icon"></span>`).join(''),
                     listener = () => {
                         me.exitPopups[index] = setTimeout(() => {
                             const popup = new AnimatedPopup({

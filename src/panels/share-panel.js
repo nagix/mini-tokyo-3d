@@ -1,5 +1,5 @@
 import configs from '../configs';
-import Train from '../data-classes/train';
+import {Train} from '../data-classes';
 import {createElement, showNotification} from '../helpers/helpers';
 
 export default class {

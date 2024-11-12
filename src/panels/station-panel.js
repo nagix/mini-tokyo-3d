@@ -381,9 +381,9 @@ export default class extends Panel {
         exitsElement.innerHTML = '';
         for (let i = 0, ilen = exits.length; i < ilen; i++) {
             const id = exits[i],
-                poi = map.poiLookup[id],
+                poi = map.pois.get(id),
                 uptime = poi.uptime && poi.uptime.reduce((acc, val) => !val.calendar || includes(val.calendar, calendar) ? val : acc, {}),
-                closed = uptime && (now < getTimeOffset(uptime.open) || now >= getTimeOffset(uptime.close) || uptime.open === uptime.close),
+                closed = uptime && (now < uptime.open || now >= uptime.close || uptime.open === uptime.close),
                 element = createElement('div', {
                     className: `exit-row${closed ? ' closed' : ''}`,
                     innerHTML: [
