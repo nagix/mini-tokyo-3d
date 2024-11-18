@@ -370,7 +370,7 @@ export default class extends Panel {
                     '<div class="train-row">',
                     `<div class="train-time-box${train.delay >= 60000 ? ' desc-caution' : ''}">${getTimeString(time)}</div>`,
                     '<div class="train-title-box">',
-                    `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y.id)}</span> `,
+                    `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y)}</span> `,
                     train.nm ? `${map.getLocalizedTrainNameOrRailwayTitle(train.nm)} ` : '',
                     map.getLocalizedDestinationTitle(train.ds, train.d),
                     train.delay >= 60000 ? ` <span class="desc-caution">${dict['delay'].replace('$1', Math.floor(train.delay / 60000))}</span>` : '',
@@ -497,8 +497,8 @@ export default class extends Panel {
                     const departure = tt[0],
                         arrival = tt[tt.length - 1],
                         railwayTitle = map.getLocalizedTrainNameOrRailwayTitle(nm, map.railways.get(r)),
-                        trainTypeTitle = map.getLocalizedTrainTypeTitle(y),
-                        destinationTitle = map.getLocalizedDestinationTitle(ds ? ds.map(id => map.stations.get(id)) : undefined, map.railDirectionLookup[d]),
+                        trainTypeTitle = map.getLocalizedTrainTypeTitle(map.trainTypes.get(y)),
+                        destinationTitle = map.getLocalizedDestinationTitle(ds ? ds.map(id => map.stations.get(id)) : undefined, map.railDirections.get(d)),
                         section = {};
 
                     section.start = stations.length;

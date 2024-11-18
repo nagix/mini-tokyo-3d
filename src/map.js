@@ -6,7 +6,7 @@ import Clock from './clock';
 import configs from './configs';
 import {ClockControl, MapboxGLButtonControl, SearchControl} from './controls';
 import Dataset from './dataset';
-import {POI, Railway, Station, Train, TrainTimetables} from './data-classes';
+import {POI, RailDirection, Railway, Station, Train, TrainTimetables, TrainType, TrainVehicle} from './data-classes';
 import extend from './extend';
 import * as helpers from './helpers/helpers';
 import {pickObject} from './helpers/helpers-deck';
@@ -590,10 +590,11 @@ export default class extends Evented {
         Object.assign(me, data);
 
         me.stations = new Dataset(Station);
-        me.railDirectionLookup = helpers.buildLookup(me.railDirectionData);
+        me.railDirections = new Dataset(RailDirection, me.railDirectionData);
+        delete me.railDirectionData;
         me.railways = new Dataset(Railway, me.railwayData, {
             stations: me.stations,
-            railDirections: {get: id => me.railDirectionLookup[id]}
+            railDirections: me.railDirections
         });
         delete me.railwayData;
         me.pois = new Dataset(POI, me.poiData);
@@ -601,7 +602,7 @@ export default class extends Evented {
         me.stations.load(me.stationData, {
             stations: me.stations,
             railways: me.railways,
-            railDirections: {get: id => me.railDirectionLookup[id]},
+            railDirections: me.railDirections,
             pois: me.pois
         });
         delete me.stationData;
@@ -645,16 +646,18 @@ export default class extends Evented {
             }
         }
 
-        me.trainTypeLookup = helpers.buildLookup(me.trainTypeData);
-        me.trainVehicleLookup = helpers.buildLookup(me.trainVehicleData);
+        me.trainTypes = new Dataset(TrainType, me.trainTypeData);
+        delete me.trainTypeData;
+        me.trainVehicles = new Dataset(TrainVehicle, me.trainVehicleData);
+        delete me.trainVehicleData;
 
         me.lastTimetableRefresh = me.clock.getTime('03:00');
         me.dataReferences = {
             railways: me.railways,
             stations: me.stations,
-            railDirections: {get: id => me.railDirectionLookup[id]},
-            trainTypes: {get: id => me.trainTypeLookup[id]},
-            trainVehicles: {get: id => me.trainVehicleLookup[id]}
+            railDirections: me.railDirections,
+            trainTypes: me.trainTypes,
+            trainVehicles: me.trainVehicles
         };
         me.timetables = new TrainTimetables(me.timetableData, me.dataReferences);
         delete me.timetableData;
@@ -1925,7 +1928,7 @@ export default class extends Evented {
 
     getLocalizedTrainTypeTitle(type) {
         const me = this,
-            title = (me.trainTypeLookup[type] || {}).title || {};
+            title = (type || {}).title || {};
 
         return title[me.lang] || title.en;
     }
@@ -2009,7 +2012,7 @@ export default class extends Evented {
             '<div><strong>',
             me.getLocalizedTrainNameOrRailwayTitle(train.nm, railway),
             '</strong>',
-            `<br> <span class="train-type-label">${me.getLocalizedTrainTypeTitle(train.y.id)}</span> `,
+            `<br> <span class="train-type-label">${me.getLocalizedTrainTypeTitle(train.y)}</span> `,
             me.getLocalizedDestinationTitle(train.ds, train.d),
             '</div></div>',
             `<strong>${dict['train-number']}:</strong> ${train.n}`,

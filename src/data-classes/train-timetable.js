@@ -24,7 +24,7 @@ export default class TrainTimetable {
 
         /**
          * Railway.
-         * @type {Object}
+         * @type {Railway}
          */
         me.r = refs.railways.get(params.r);
 
@@ -36,20 +36,20 @@ export default class TrainTimetable {
 
         /**
          * Train type.
-         * @type {Object}
+         * @type {TrainType}
          */
         me.y = refs.trainTypes.get(params.y);
 
         /**
          * Rail direction.
-         * @type {Object}
+         * @type {RailDirection}
          */
         me.d = refs.railDirections.get(params.d);
 
         if (os) {
             /**
              * Origin stations.
-             * @type {Array<Object>}
+             * @type {Array<Station>}
              */
             me.os = os.map(id => stations.get(id));
         }
@@ -57,7 +57,7 @@ export default class TrainTimetable {
         if (ds) {
             /**
              * Destination stations.
-             * @type {Array<Object>}
+             * @type {Array<Station>}
              */
             me.ds = ds.map(id => stations.get(id));
         }
@@ -93,7 +93,7 @@ export default class TrainTimetable {
         if (v) {
             /**
              * Train vehicle.
-             * @type {Object}
+             * @type {TrainVehicle}
              */
             me.v = refs.trainVehicles.get(v);
         }

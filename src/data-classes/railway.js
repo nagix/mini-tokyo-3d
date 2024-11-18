@@ -32,13 +32,13 @@ export default class {
 
         /**
          * Ascending rail direction.
-         * @type {Object}
+         * @type {RailDirection}
          */
         me.ascending = refs.railDirections.get(params.ascending);
 
         /**
          * Descending rail direction.
-         * @type {Object}
+         * @type {RailDirection}
          */
         me.descending = refs.railDirections.get(params.descending);
 

@@ -29,70 +29,70 @@ export default class {
             {r, y, d, os, ds, ts, fs, nm, v, delay, carComposition} = params;
 
         /**
-         * Train ID
+         * Train ID.
          * @type {string}
          */
         me.id = fromTimetable ? params.t : params.id;
 
         /**
-         * Railway
-         * @type {Object}
+         * Railway.
+         * @type {Railway}
          */
         me.r = fromTimetable ? r : refs.railways.get(r);
 
         /**
-         * Train number
+         * Train number.
          * @type {string}
          */
         me.n = params.n;
 
         /**
-         * Train type
-         * @type {Object}
+         * Train type.
+         * @type {TrainType}
          */
         me.y = fromTimetable ? y : refs.trainTypes.get(y);
 
         /**
-         * Rail direction
-         * @type {Object}
+         * Rail direction.
+         * @type {RailDirection}
          */
         me.d = fromTimetable ? d : refs.railDirections.get(d);
 
         if (os) {
             /**
-             * Origin stations
-             * @type {Array<Object>}
+             * Origin stations.
+             * @type {Array<Station>}
              */
             me.os = fromTimetable ? os : os.map(id => refs.stations.get(id));
         }
 
         if (ds) {
             /**
-             * Destination stations
-             * @type {Array<Object>}
+             * Destination stations.
+             * @type {Array<Station>}
              */
             me.ds = fromTimetable ? ds : ds.map(id => refs.stations.get(id));
         }
 
         if (ts) {
             /**
-             * To station
-             * @type {Array<Object>}
+             * To station.
+             * @type {Array<Station>}
              */
             me.ts = refs.stations.get(ts);
         }
 
         if (fs) {
             /**
-             * From station
-             * @type {Array<Object>}
+             * From station.
+             * @type {Array<Station>}
              */
             me.fs = refs.stations.get(fs);
         }
 
         if (fromTimetable) {
             /**
-             * Train timetable
+             * Train timetable.
              * @type {TrainTimetable}
              */
             me.timetable = params;
@@ -100,7 +100,7 @@ export default class {
 
         if (nm) {
             /**
-             * Train names
+             * Train names.
              * @type {Array<Object>}
              */
             me.nm = nm;
@@ -108,8 +108,8 @@ export default class {
 
         if (v) {
             /**
-             * Train vehicle
-             * @type {Object}
+             * Train vehicle.
+             * @type {TrainVehicle}
              */
             me.v = fromTimetable ? v : refs.trainVehicles.get(v);
         }
@@ -117,27 +117,27 @@ export default class {
         const railway = me.r;
 
         /**
-         * Direction
+         * Direction.
          * @type {number}
          */
         me.direction = me.d === railway.ascending ? 1 : -1;
 
         /**
-         * Altitude
+         * Altitude.
          * @type {number}
          */
         me.altitude = railway.altitude;
 
         if (!isNaN(delay)) {
             /**
-             * Delay
+             * Delay.
              * @type {number}
              */
             me.delay = delay;
         }
 
         /**
-         * Car composition
+         * Car composition.
          * @type {number}
          */
         me.carComposition = !isNaN(carComposition) ? carComposition : railway.carComposition;

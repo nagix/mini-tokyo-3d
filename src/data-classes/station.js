@@ -84,7 +84,7 @@ export default class {
              * If exists, this ascending rail direction is used in the departure board
              * instead of railway's default. If null, it doesn't appear in the departure
              * board.
-             * @type {Object}
+             * @type {RailDirection}
              */
             me.ascending = ascending ? refs.railDirections.get(ascending) : null;
         }
@@ -94,7 +94,7 @@ export default class {
              * If exists, this descending rail direction is used in the departure board
              * instead of railway's default. If null, it doesn't appear in the departure
              * board.
-             * @type {Object}
+             * @type {RailDirection}
              */
             me.descending = descending ? refs.railDirections.get(descending) : null;
         }
