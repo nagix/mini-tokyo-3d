@@ -32,21 +32,23 @@ export default class extends Panel {
             currHours = date.getHours(),
             currMinutes = date.getMinutes();
 
-        for (const {id, railway} of stations) {
-            const title = map.getLocalizedStationTitle(id);
+        for (const station of stations) {
+            const title = map.getLocalizedStationTitle(station),
+                railwayId = station.railway.id;
 
             if (!includes(titles, title)) {
                 titles.push(title);
             }
-            if (!titlesByRailway[railway]) {
-                titlesByRailway[railway] = [];
+            if (!titlesByRailway[railwayId]) {
+                titlesByRailway[railwayId] = [];
             }
-            if (!includes(titlesByRailway[railway], title)) {
-                titlesByRailway[railway].push(title);
+            if (!includes(titlesByRailway[railwayId], title)) {
+                titlesByRailway[railwayId].push(title);
             }
         }
-        for (const {id: stationID, railway: railwayID, alternate, ascending: altAscending, descending: altDescending} of stations) {
-            const {stations: railwayStations, ascending, descending, color} = map.railwayLookup[railwayID];
+        for (const station of stations) {
+            const {railway, alternate, ascending: altAscending, descending: altDescending} = station,
+                {stations: railwayStations, ascending, descending, color} = railway;
 
             for (const {direction, altDirection} of [
                 {direction: ascending, altDirection: altAscending},
@@ -60,21 +62,21 @@ export default class extends Panel {
 
                     if (railwayStations[0] !== railwayStations[railwayStations.length - 1]) {
                         for (let i = 0, ilen = railwayStations.length; i < ilen; i++) {
-                            const id = railwayStations[direction === ascending ? ilen - 1 - i : i];
+                            const railwayStation = railwayStations[direction === ascending ? ilen - 1 - i : i];
 
-                            if (!map.stationLookup[id].alternate) {
-                                last = id;
+                            if (!railwayStation.alternate) {
+                                last = railwayStation;
                                 break;
                             }
                         }
                     }
-                    if (stationID !== last) {
+                    if (station !== last) {
                         departures.push({
-                            railways: [{id: railwayID, station: stationID, direction}],
+                            railways: [{railway, station, direction}],
                             color,
                             label: [
-                                map.getLocalizedRailwayTitle(railwayID),
-                                titlesByRailway[railwayID].length > 1 ? `(${map.getLocalizedStationTitle(stationID)})` : '',
+                                map.getLocalizedRailwayTitle(railway),
+                                titlesByRailway[railway.id].length > 1 ? `(${map.getLocalizedStationTitle(station)})` : '',
                                 map.getLocalizedRailDirectionTitle(altDirection || direction)
                             ].join(' ')
                         });
@@ -82,7 +84,7 @@ export default class extends Panel {
                 } else {
                     for (const {railways} of departures) {
                         if (railways[0].station === alternate && railways[0].direction === altDirection) {
-                            railways.push({id: railwayID, station: stationID, direction});
+                            railways.push({railway, station, direction});
                             break;
                         }
                     }
@@ -327,8 +329,8 @@ export default class extends Panel {
         for (const departure of me._departures) {
             const trains = [];
 
-            for (const railway of departure.railways) {
-                for (const timetable of map.timetables.getByDirectionId(railway.id, railway.direction)) {
+            for (const {railway, station, direction} of departure.railways) {
+                for (const timetable of map.timetables.getByDirectionId(railway.id, direction.id)) {
                     const train = map.activeTrainLookup[timetable.t] || map.standbyTrainLookup[timetable.id],
                         delay = (train && train.delay) || 0;
 
@@ -338,7 +340,7 @@ export default class extends Panel {
                     for (let i = 0; i < timetable.tt.length - 1; i++) {
                         const {s, d} = timetable.tt[i];
 
-                        if (s.id === railway.station) {
+                        if (s === station) {
                             const time = d + delay;
 
                             if (time > now) {
@@ -370,7 +372,7 @@ export default class extends Panel {
                     '<div class="train-title-box">',
                     `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y.id)}</span> `,
                     train.nm ? `${map.getLocalizedTrainNameOrRailwayTitle(train.nm)} ` : '',
-                    map.getLocalizedDestinationTitle(train.ds && train.ds.map(({id}) => id), train.d.id),
+                    map.getLocalizedDestinationTitle(train.ds, train.d),
                     train.delay >= 60000 ? ` <span class="desc-caution">${dict['delay'].replace('$1', Math.floor(train.delay / 60000))}</span>` : '',
                     '</div>',
                     '</div>'
@@ -380,8 +382,7 @@ export default class extends Panel {
 
         exitsElement.innerHTML = '';
         for (let i = 0, ilen = exits.length; i < ilen; i++) {
-            const id = exits[i],
-                poi = map.pois.get(id),
+            const poi = exits[i],
                 uptime = poi.uptime && poi.uptime.reduce((acc, val) => !val.calendar || includes(val.calendar, calendar) ? val : acc, {}),
                 closed = uptime && (now < uptime.open || now >= uptime.close || uptime.open === uptime.close),
                 element = createElement('div', {
@@ -389,8 +390,8 @@ export default class extends Panel {
                     innerHTML: [
                         '<div class="exit-icon-box"></div>',
                         '<div class="exit-title-box">',
-                        map.getLocalizedPOIDescription(id),
-                        uptime && uptime.open !== uptime.close ? ` (${uptime.open}-${uptime.close})` : '',
+                        map.getLocalizedPOIDescription(poi),
+                        uptime && uptime.open !== uptime.close ? ` (${getTimeString(uptime.open)}-${getTimeString(uptime.close)})` : '',
                         '</div>',
                         (poi.facilities || []).map(facility => `<div class="exit-${facility}-icon"></div>`).join(''),
                         '<div class="exit-share-button"></div>'
@@ -495,15 +496,15 @@ export default class extends Panel {
                 for (const {r, y, ds, d, tt, nm, transfer, delay} of route.trains) {
                     const departure = tt[0],
                         arrival = tt[tt.length - 1],
-                        railwayTitle = map.getLocalizedTrainNameOrRailwayTitle(nm, r),
+                        railwayTitle = map.getLocalizedTrainNameOrRailwayTitle(nm, map.railways.get(r)),
                         trainTypeTitle = map.getLocalizedTrainTypeTitle(y),
-                        destinationTitle = map.getLocalizedDestinationTitle(ds, d),
+                        destinationTitle = map.getLocalizedDestinationTitle(ds ? ds.map(id => map.stations.get(id)) : undefined, map.railDirectionLookup[d]),
                         section = {};
 
                     section.start = stations.length;
                     stations.push([
                         '<div class="station-row">',
-                        `<div class="station-title-box">${map.getLocalizedStationTitle(departure.s)}</div>`,
+                        `<div class="station-title-box">${map.getLocalizedStationTitle(map.stations.get(departure.s))}</div>`,
                         `<div class="station-time-box${delay ? ' desc-caution' : ''}">`,
                         arrivalTime !== undefined ? `${getTimeString(arrivalTime + delay * 60000)}<br>` : '',
                         getTimeString(getTimeOffset(departure.d) + delay * 60000),
@@ -516,14 +517,14 @@ export default class extends Panel {
                         '</div></div>'
                     ].join(''));
                     section.end = stations.length;
-                    section.color = map.railwayLookup[r].color;
+                    section.color = map.railways.get(r).color;
                     sections.push(section);
                     if (transfer === 0) {
                         arrivalTime = getTimeOffset(arrival.a);
                     } else {
                         stations.push([
                             '<div class="station-row">',
-                            `<div class="station-title-box">${map.getLocalizedStationTitle(arrival.s)}</div>`,
+                            `<div class="station-title-box">${map.getLocalizedStationTitle(map.stations.get(arrival.s))}</div>`,
                             `<div class="station-time-box${delay ? ' desc-caution' : ''}">`,
                             getTimeString(getTimeOffset(arrival.a || arrival.d) + delay * 60000),
                             '</div></div>'
@@ -607,27 +608,28 @@ export default class extends Panel {
         container.querySelector('#next-button').disabled = swiper.isEnd;
 
         for (const {r, tt, d} of trains) {
-            const {stations, ascending} = map.railwayLookup[r],
+            const {stations, ascending} = map.railways.get(r),
+                stationIds = stations.map(({id}) => id),
                 startStation = tt[0].s,
                 endStation = tt[tt.length - 1].s;
 
             for (const stop of tt) {
-                const station = map.stationLookup[stop.s];
+                const station = map.stations.get(stop.s);
 
                 stationGroups.push(station.group);
                 coords.push(station.coord);
             }
 
-            if (d === ascending) {
-                const start = stations.indexOf(startStation),
-                    end = stations.indexOf(endStation, start);
+            if (d === ascending.id) {
+                const start = stationIds.indexOf(startStation),
+                    end = stationIds.indexOf(endStation, start);
 
                 for (let i = start; i < end; i++) {
                     railwaySections.push(`${r}.${i + 1}`);
                 }
             } else {
-                const start = stations.lastIndexOf(startStation),
-                    end = stations.lastIndexOf(endStation, start);
+                const start = stationIds.lastIndexOf(startStation),
+                    end = stationIds.lastIndexOf(endStation, start);
 
                 for (let i = start; i > end; i--) {
                     railwaySections.push(`${r}.${i}`);
@@ -687,7 +689,7 @@ export default class extends Panel {
                     closeOnClick: false
                 });
 
-                popup.setLngLat(map.stationLookup[id].coord)
+                popup.setLngLat(map.stations.get(id).coord)
                     .setHTML(index === 0 ? dict['from-station'] : index === stationIDs.length - 1 ? dict['to-station'] : `${dict['transfer']}${index}`)
                     .addTo(mbox);
 

@@ -33,7 +33,7 @@ export default class extends Panel {
                 if (index > 0 || !curr.pt) {
                     stationHTML.push([
                         '<div class="station-row">',
-                        `<div class="station-title-box">${map.getLocalizedStationTitle(s.s.id)}</div>`,
+                        `<div class="station-title-box">${map.getLocalizedStationTitle(s.s)}</div>`,
                         '<div class="station-time-box',
                         delay >= 60000 ? ' desc-caution' : '',
                         '">',
@@ -61,10 +61,10 @@ export default class extends Panel {
                     '</div>'
                 ].join('') : `<div style="background-color: ${color};"></div>`,
                 '<div><div class="desc-first-row">',
-                map.getLocalizedTrainNameOrRailwayTitle(train.nm, railway.id),
+                map.getLocalizedTrainNameOrRailwayTitle(train.nm, railway),
                 '</div><div class="desc-second-row">',
                 `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y.id)}</span> `,
-                map.getLocalizedDestinationTitle(train.ds && train.ds.map(({id}) => id), train.d.id),
+                map.getLocalizedDestinationTitle(train.ds, train.d),
                 '</div></div></div>'
             ].join(''))
             .setHTML([

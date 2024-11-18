@@ -120,7 +120,7 @@ export default class {
          * Direction
          * @type {number}
          */
-        me.direction = me.d.id === railway.ascending ? 1 : -1;
+        me.direction = me.d === railway.ascending ? 1 : -1;
 
         /**
          * Altitude

@@ -1,6 +1,6 @@
 import {getTimeOffset} from '../helpers/helpers';
 
-class POI {
+export default class {
 
     constructor(params) {
         const me = this,
@@ -55,25 +55,6 @@ class POI {
              */
             me.facilities = facilities;
         }
-    }
-
-}
-
-export default class {
-
-    constructor(data) {
-        const lookup = this.lookup = new Map();
-
-        for (const item of data) {
-            const poi = new POI(item);
-
-            lookup.set(poi.id, poi);
-        }
-
-    }
-
-    get(id) {
-        return this.lookup.get(id);
     }
 
 }

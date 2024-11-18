@@ -11,44 +11,44 @@ export default class TrainTimetable {
             end = 0;
 
         /**
-         * Train timetable ID
+         * Train timetable ID.
          * @type {string}
          */
         me.id = params.id;
 
         /**
-         * Train ID
+         * Train ID.
          * @type {string}
          */
         me.t = params.t;
 
         /**
-         * Railway
+         * Railway.
          * @type {Object}
          */
         me.r = refs.railways.get(params.r);
 
         /**
-         * Train number
+         * Train number.
          * @type {string}
          */
         me.n = params.n;
 
         /**
-         * Train type
+         * Train type.
          * @type {Object}
          */
         me.y = refs.trainTypes.get(params.y);
 
         /**
-         * Rail direction
+         * Rail direction.
          * @type {Object}
          */
         me.d = refs.railDirections.get(params.d);
 
         if (os) {
             /**
-             * Origin stations
+             * Origin stations.
              * @type {Array<Object>}
              */
             me.os = os.map(id => stations.get(id));
@@ -56,14 +56,14 @@ export default class TrainTimetable {
 
         if (ds) {
             /**
-             * Destination stations
+             * Destination stations.
              * @type {Array<Object>}
              */
             me.ds = ds.map(id => stations.get(id));
         }
 
         /**
-         * Timetable object
+         * Timetable object.
          * @type {Array<Object>}
          */
         me.tt = tt.map(({s, a, d}) => {
@@ -84,7 +84,7 @@ export default class TrainTimetable {
 
         if (nm) {
             /**
-             * Train names
+             * Train names.
              * @type {Array<Object>}
              */
             me.nm = nm;
@@ -92,20 +92,20 @@ export default class TrainTimetable {
 
         if (v) {
             /**
-             * Train vehicle
+             * Train vehicle.
              * @type {Object}
              */
             me.v = refs.trainVehicles.get(v);
         }
 
         /**
-         * Start timestamp
+         * Start timestamp offset.
          * @type {number}
          */
         me.start = start - configs.standingDuration;
 
         /**
-         * End timestamp
+         * End timestamp offset.
          * @type {number}
          */
         me.end = end;
@@ -126,7 +126,7 @@ export default class TrainTimetable {
                         {a, d} = tt[tt.length - 1];
 
                     /**
-                     * Previous train tametables
+                     * Previous train tametables.
                      * @type {Array<TrainTimetable>}
                      */
                     me.pt = me.pt || [];
@@ -146,7 +146,7 @@ export default class TrainTimetable {
 
                 if (nextTimetable) {
                     /**
-                     * Next train tametables
+                     * Next train tametables.
                      * @type {Array<TrainTimetable>}
                      */
                     me.nt = me.nt || [];
@@ -186,4 +186,5 @@ export default class TrainTimetable {
 
         return nt ? [t].concat(...nt.map(timetable => timetable.getConnectingTrainIds())) : [t];
     }
+
 }

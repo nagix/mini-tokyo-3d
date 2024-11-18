@@ -5,7 +5,8 @@ import animation from './animation';
 import Clock from './clock';
 import configs from './configs';
 import {ClockControl, MapboxGLButtonControl, SearchControl} from './controls';
-import {POIs, Train, TrainTimetables} from './data-classes';
+import Dataset from './dataset';
+import {POI, Railway, Station, Train, TrainTimetables} from './data-classes';
 import extend from './extend';
 import * as helpers from './helpers/helpers';
 import {pickObject} from './helpers/helpers-deck';
@@ -392,7 +393,7 @@ export default class extends Evented {
     setSelection(id) {
         const me = this,
             selection = helpers.removePrefix(id),
-            station = me.stationLookup[selection];
+            station = me.stations.get(selection);
 
         if (station) {
             me.trackObject(me.stationGroupLookup[station.group]);
@@ -588,58 +589,69 @@ export default class extends Evented {
 
         Object.assign(me, data);
 
-        me.pois = new POIs(me.poiData);
+        me.stations = new Dataset(Station);
+        me.railDirectionLookup = helpers.buildLookup(me.railDirectionData);
+        me.railways = new Dataset(Railway, me.railwayData, {
+            stations: me.stations,
+            railDirections: {get: id => me.railDirectionLookup[id]}
+        });
+        delete me.railwayData;
+        me.pois = new Dataset(POI, me.poiData);
         delete me.poiData;
-
-        me.railwayLookup = helpers.buildLookup(me.railwayData);
-        me.stationLookup = helpers.buildLookup(me.stationData);
+        me.stations.load(me.stationData, {
+            stations: me.stations,
+            railways: me.railways,
+            railDirections: {get: id => me.railDirectionLookup[id]},
+            pois: me.pois
+        });
+        delete me.stationData;
 
         // Build feature lookup dictionary and update feature properties
         featureEach(me.featureCollection, feature => {
-            const properties = feature.properties;
+            const properties = feature.properties,
+                {group, altitude} = properties;
 
             if (properties.type === 1) {
                 // stations
-                featureLookup[`${properties.group}.${properties.zoom}`] = feature;
-                if (!stationGroupLookup[properties.group]) {
-                    stationGroupLookup[properties.group] = {
-                        id: properties.group,
+                featureLookup[`${group}.${properties.zoom}`] = feature;
+                if (!stationGroupLookup[group]) {
+                    stationGroupLookup[group] = {
+                        id: group,
                         type: 'station',
-                        stations: properties.ids,
-                        layer: properties.altitude === 0 ? 'ground' : 'underground'
+                        stations: properties.ids.map(id => me.stations.get(id)),
+                        layer: altitude === 0 ? 'ground' : 'underground'
                     };
                 }
-            } else if (!(properties.altitude <= 0)) {
+            } else if (!(altitude <= 0)) {
                 // airways and railways (no railway sections)
                 featureLookup[properties.id] = feature;
                 helpersGeojson.updateDistances(feature);
             }
         });
 
-        for (const {id, group, alternate} of me.stationData) {
-            if (alternate) {
+        for (const station of me.stations.getAll()) {
+            if (station.alternate) {
                 for (const layer of ['og', 'ug']) {
-                    const key = group.replace(/.g$/, layer),
+                    const key = station.group.replace(/.g$/, layer),
                         stationGroup = stationGroupLookup[key];
 
                     if (stationGroup) {
                         if (!stationGroup.hidden) {
                             stationGroup.hidden = [];
                         }
-                        stationGroup.hidden.push(id);
+                        stationGroup.hidden.push(station);
                     }
                 }
             }
         }
 
-        me.railDirectionLookup = helpers.buildLookup(me.railDirectionData);
         me.trainTypeLookup = helpers.buildLookup(me.trainTypeData);
         me.trainVehicleLookup = helpers.buildLookup(me.trainVehicleData);
 
         me.lastTimetableRefresh = me.clock.getTime('03:00');
         me.dataReferences = {
-            railways: {get: id => me.railwayLookup[id]},
-            stations: {get: id => me.stationLookup[id]},
+            railways: me.railways,
+            stations: me.stations,
             railDirections: {get: id => me.railDirectionLookup[id]},
             trainTypes: {get: id => me.trainTypeLookup[id]},
             trainVehicles: {get: id => me.trainVehicleLookup[id]}
@@ -921,10 +933,9 @@ export default class extends Evented {
         const stationTitleLookup = me.stationTitleLookup = {};
 
         for (const l of [lang, 'en']) {
-            for (const railway of me.railwayData) {
-                for (const id of railway.stations) {
-                    const station = me.stationLookup[id],
-                        {title, utitle} = station,
+            for (const railway of me.railways.getAll()) {
+                for (const station of railway.stations) {
+                    const {title, utitle} = station,
                         stationTitle = (utitle && utitle[l]) || helpers.normalize(title[l] || title.en),
                         key = stationTitle.toUpperCase();
 
@@ -1899,7 +1910,7 @@ export default class extends Evented {
 
     getLocalizedRailwayTitle(railway) {
         const me = this,
-            title = (me.railwayLookup[railway] || {}).title || {};
+            title = (railway || {}).title || {};
 
         return title[me.lang] || title.en;
     }
@@ -1924,14 +1935,14 @@ export default class extends Evented {
             stations = Array.isArray(array) ? array : [array];
 
         return stations.map(station => {
-            const title = (me.stationLookup[station] || {}).title || {};
+            const title = (station || {}).title || {};
             return title[me.lang] || title.en;
         }).join(me.dict['and']);
     }
 
     getLocalizedRailDirectionTitle(direction) {
         const me = this,
-            title = (me.railDirectionLookup[direction] || {}).title || {};
+            title = (direction || {}).title || {};
 
         return title[me.lang] || title.en;
     }
@@ -1967,14 +1978,14 @@ export default class extends Evented {
 
     getLocalizedPOITitle(poi) {
         const me = this,
-            title = (me.pois.get(poi) || {}).title || {};
+            title = (poi || {}).title || {};
 
         return title[me.lang] || title.en;
     }
 
     getLocalizedPOIDescription(poi) {
         const me = this,
-            description = (me.pois.get(poi) || {}).description || {};
+            description = (poi || {}).description || {};
 
         return description[me.lang] || description.en;
     }
@@ -1996,10 +2007,10 @@ export default class extends Evented {
                 '</div>'
             ].join('') : `<div style="background-color: ${color};"></div>`,
             '<div><strong>',
-            me.getLocalizedTrainNameOrRailwayTitle(train.nm, railway.id),
+            me.getLocalizedTrainNameOrRailwayTitle(train.nm, railway),
             '</strong>',
             `<br> <span class="train-type-label">${me.getLocalizedTrainTypeTitle(train.y.id)}</span> `,
-            me.getLocalizedDestinationTitle(train.ds && train.ds.map(({id}) => id), train.d.id),
+            me.getLocalizedDestinationTitle(train.ds, train.d),
             '</div></div>',
             `<strong>${dict['train-number']}:</strong> ${train.n}`,
             !train.timetable ? ` <span class="desc-caution">${dict['special']}</span>` : '',
@@ -2009,11 +2020,11 @@ export default class extends Evented {
             '<strong>',
             dict[train.standing ? 'standing-at' : 'previous-stop'],
             ':</strong> ',
-            me.getLocalizedStationTitle(train.departureStation.id),
+            me.getLocalizedStationTitle(train.departureStation),
             departureTime !== undefined ? ` ${helpers.getTimeString(departureTime + delay)}` : '',
             arrivalStation ? [
                 `<br><strong>${dict['next-stop']}:</strong> `,
-                me.getLocalizedStationTitle(arrivalStation.id),
+                me.getLocalizedStationTitle(arrivalStation),
                 arrivalTime !== undefined ? ` ${helpers.getTimeString(arrivalTime + delay)}` : ''
             ].join('') : '',
             delay >= 60000 ? `<br>${dict['delay'].replace('$1', Math.floor(delay / 60000))}</span>` : '',
@@ -2153,7 +2164,7 @@ export default class extends Evented {
     }
 
     resetRailwayStatus() {
-        for (const railway of this.railwayData) {
+        for (const railway of this.railways.getAll()) {
             delete railway.status;
             delete railway.text;
             delete railway.suspended;
@@ -2176,14 +2187,14 @@ export default class extends Evented {
         const me = this;
 
         loadDynamicTrainData(me.secrets).then(({trainData, trainInfoData}) => {
-            const {activeTrainLookup, realtimeTrains, railwayLookup, dataReferences} = me,
+            const {activeTrainLookup, realtimeTrains, dataReferences} = me,
                 standbyTrainLookup = me.standbyTrainLookup = {},
                 now = me.clock.getTimeOffset();
 
             me.resetRailwayStatus();
 
             for (const trainInfoRef of trainInfoData) {
-                const railway = railwayLookup[trainInfoRef.railway],
+                const railway = me.railways.get(trainInfoRef.railway),
                     status = trainInfoRef.status;
 
                 // Train information text is provided in Japanese only
@@ -2744,7 +2755,7 @@ export default class extends Evented {
             {searchMode, lang, map, trackedObject, lastCameraParams, sharePanel, detailPanel} = me;
 
         if (searchMode === 'edit' && detailPanel && isStation(object)) {
-            const {title, utitle} = me.stationLookup[object.stations[0]],
+            const {title, utitle} = object.stations[0],
                 stationTitle = (utitle && utitle[lang]) || helpers.normalize(title[lang] || title.en);
 
             detailPanel.fillStationName(stationTitle);
@@ -2784,7 +2795,7 @@ export default class extends Evented {
                 me.fire({type: 'deselection', deselection: prevObject.id});
             } else if (isStation(trackedObject)) {
                 me.removeStationOutline('stations-selected');
-                me.fire({type: 'deselection', deselection: trackedObject.stations});
+                me.fire({type: 'deselection', deselection: trackedObject.stations.map(({id}) => id)});
                 me._setSearchMode('none');
                 me.hideStationExits();
             } else {
@@ -2828,7 +2839,7 @@ export default class extends Evented {
                 me.trafficLayer.updateObject(object);
                 me.fire({type: 'selection', selection: _object.id});
             } else if (isStation(object)) {
-                const stations = object.stations.concat(object.hidden || []).map(id => me.stationLookup[id]),
+                const stations = object.stations.concat(object.hidden || []),
                     coords = stations.map(station => station.coord),
                     center = lastCameraParams.center = helpersMapbox.getBounds(coords).getCenter();
 
@@ -2862,7 +2873,7 @@ export default class extends Evented {
                 me.detailPanel.addTo(me);
 
                 me.addStationOutline(object, 'stations-selected');
-                me.fire({type: 'selection', selection: object.stations});
+                me.fire({type: 'selection', selection: object.stations.map(({id}) => id)});
             } else {
                 me.fire(Object.assign({type: 'selection'}, object));
             }
@@ -2928,8 +2939,8 @@ export default class extends Evented {
         if (exits.length > 0) {
             const coords = [];
 
-            me.exitPopups = exits.map((id, index) => {
-                const {coord, facilities = []} = me.pois.get(id),
+            me.exitPopups = exits.map((poi, index) => {
+                const {coord, facilities = []} = poi,
                     icons = facilities.map(facility => `<span class="exit-${facility}-small-icon"></span>`).join(''),
                     listener = () => {
                         me.exitPopups[index] = setTimeout(() => {
@@ -2940,7 +2951,7 @@ export default class extends Evented {
                             });
 
                             popup.setLngLat(coord)
-                                .setHTML(icons + me.getLocalizedPOITitle(id))
+                                .setHTML(icons + me.getLocalizedPOITitle(poi))
                                 .addTo(map)
                                 .getElement().id = `exit-${index}`;
 
@@ -2993,7 +3004,7 @@ export default class extends Evented {
 
     updatePopup(options) {
         const me = this,
-            {markedObject, map, stationLookup, popup} = me,
+            {markedObject, map, popup} = me,
             {setHTML, addToMap} = options || {};
 
         if (isTrainOrFlight(markedObject)) {
@@ -3013,28 +3024,28 @@ export default class extends Evented {
 
             popup.setLngLat(me.adjustCoord(coord, altitude));
             if (setHTML) {
-                const ids = markedObject.stations,
+                const stations = markedObject.stations,
                     railwayColors = {};
 
-                for (const id of ids) {
-                    const title = me.getLocalizedStationTitle(id),
-                        railwayID = stationLookup[id].railway,
+                for (const station of stations) {
+                    const title = me.getLocalizedStationTitle(station),
+                        railway = station.railway,
                         colors = railwayColors[title] = railwayColors[title] || {};
 
-                    colors[me.getLocalizedRailwayTitle(railwayID)] = me.railwayLookup[railwayID].color;
+                    colors[me.getLocalizedRailwayTitle(railway)] = railway.color;
                 }
                 popup.setHTML([
                     '<div class="thumbnail-image-container">',
                     '<div class="ball-pulse"><div></div><div></div><div></div></div>',
-                    `<div class="thumbnail-image" style="background-image: url(\'${stationLookup[ids[0]].thumbnail}\');"></div>`,
+                    `<div class="thumbnail-image" style="background-image: url(\'${stations[0].thumbnail}\');"></div>`,
                     '</div>',
                     '<div class="railway-list">',
-                    Object.keys(railwayColors).map(station => {
-                        const railways = Object.keys(railwayColors[station])
-                            .map(railway => `<div class="line-strip" style="background-color: ${railwayColors[station][railway]};"></div><span>${railway}</span>`)
+                    Object.keys(railwayColors).map(stationTitle => {
+                        const railwayTitles = Object.keys(railwayColors[stationTitle])
+                            .map(railwayTitle => `<div class="line-strip" style="background-color: ${railwayColors[stationTitle][railwayTitle]};"></div><span>${railwayTitle}</span>`)
                             .join('<br>');
 
-                        return `<strong>${station}</strong><br>${railways}`;
+                        return `<strong>${stationTitle}</strong><br>${railwayTitles}`;
                     }).join('<br>'),
                     '</div>'
                 ].join(''));
@@ -3047,7 +3058,7 @@ export default class extends Evented {
 
     addStationOutline(object, name) {
         const me = this,
-            id = object.stations[0];
+            id = object.stations[0].id;
 
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
             helpersMapbox.setLayerProps(me.map, `${name}-${zoom}`, {
@@ -3079,7 +3090,7 @@ export default class extends Evented {
 
     setSectionData(train, index, final) {
         const me = this,
-            stations = train.r.stations.map(id => me.stationLookup[id]),
+            stations = train.r.stations,
             {direction, timetable} = train,
             destination = (train.ds || [])[0],
             delay = train.delay || 0,
