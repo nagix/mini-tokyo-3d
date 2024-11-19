@@ -39,16 +39,6 @@ export function loadJSON(url) {
     });
 }
 
-export function buildLookup(array, key) {
-    const k = key || 'id',
-        lookup = {};
-
-    for (const element of array) {
-        lookup[element[k]] = element;
-    }
-    return lookup;
-}
-
 export function lerp(x, y, a) {
     return x * (1 - a) + y * a;
 }

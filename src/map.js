@@ -1,5 +1,5 @@
 import {featureEach} from '@turf/meta';
-import {Evented, FullscreenControl, LngLat, Map, MercatorCoordinate, NavigationControl} from 'mapbox-gl';
+import {Evented, FullscreenControl, LngLat, Map as Mapbox, MercatorCoordinate, NavigationControl} from 'mapbox-gl';
 import AnimatedPopup from 'mapbox-gl-animated-popup';
 import animation from './animation';
 import Clock from './clock';
@@ -149,7 +149,7 @@ export default class extends Evented {
             options.customAttribution = helpers.flat([options.customAttribution, configs.customAttribution]);
         }
 
-        me.map = new Map(options);
+        me.map = new Mapbox(options);
 
         for (const event of configs.events) {
             me.map.on(event, me.fire.bind(me));
@@ -396,14 +396,14 @@ export default class extends Evented {
             station = me.stations.get(selection);
 
         if (station) {
-            me.trackObject(me.stationGroupLookup[station.group]);
+            me.trackObject(me.stationGroupLookup.get(station.group));
             delete me.initialSelection;
         } else if (!selection.match(/NRT|HND/)) {
             if (me.trainLoaded) {
                 let activeTrain;
 
                 for (const id of me.timetables.getConnectingTrainIds(selection)) {
-                    if ((activeTrain = me.activeTrainLookup[id])) {
+                    if ((activeTrain = me.activeTrainLookup.get(id))) {
                         break;
                     }
                 }
@@ -422,7 +422,7 @@ export default class extends Evented {
             }
         } else {
             if (me.flightLoaded) {
-                const activeFlight = me.activeFlightLookup[selection];
+                const activeFlight = me.activeFlightLookup.get(selection);
 
                 if (activeFlight) {
                     if (activeFlight.aircraft) {
@@ -584,8 +584,8 @@ export default class extends Evented {
 
     initData(data) {
         const me = this,
-            featureLookup = me.featureLookup = {},
-            stationGroupLookup = me.stationGroupLookup = {};
+            featureLookup = me.featureLookup = new Map(),
+            stationGroupLookup = me.stationGroupLookup = new Map();
 
         me.dict = data.dict;
         me.featureCollection = data.featureCollection;
@@ -611,18 +611,18 @@ export default class extends Evented {
 
             if (properties.type === 1) {
                 // stations
-                featureLookup[`${group}.${properties.zoom}`] = feature;
-                if (!stationGroupLookup[group]) {
-                    stationGroupLookup[group] = {
+                featureLookup.set(`${group}.${properties.zoom}`, feature);
+                if (!stationGroupLookup.has(group)) {
+                    stationGroupLookup.set(group, {
                         id: group,
                         type: 'station',
                         stations: properties.ids.map(id => me.stations.get(id)),
                         layer: altitude === 0 ? 'ground' : 'underground'
-                    };
+                    });
                 }
             } else if (!(altitude <= 0)) {
                 // airways and railways (no railway sections)
-                featureLookup[properties.id] = feature;
+                featureLookup.set(properties.id, feature);
                 helpersGeojson.updateDistances(feature);
             }
         });
@@ -631,7 +631,7 @@ export default class extends Evented {
             if (station.alternate) {
                 for (const layer of ['og', 'ug']) {
                     const key = station.group.replace(/.g$/, layer),
-                        stationGroup = stationGroupLookup[key];
+                        stationGroup = stationGroupLookup.get(key);
 
                     if (stationGroup) {
                         if (!stationGroup.hidden) {
@@ -660,11 +660,11 @@ export default class extends Evented {
         me.airports = new Dataset(Airport, data.airportData);
         me.flightStatuses = new Dataset(FlightStatus, data.flightStatusData);
 
-        me.activeTrainLookup = {};
-        me.standbyTrainLookup = {};
+        me.activeTrainLookup = new Map();
+        me.standbyTrainLookup = new Map();
         me.realtimeTrains = new Set();
-        me.activeFlightLookup = {};
-        me.flightLookup = {};
+        me.activeFlightLookup = new Map();
+        me.flightLookup = new Map();
     }
 
     initialize() {
@@ -927,7 +927,7 @@ export default class extends Evented {
         me.styleOpacities = helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect');
 
         const datalist = helpers.createElement('datalist', {id: 'stations'}, document.body);
-        const stationTitleLookup = me.stationTitleLookup = {};
+        const stationTitleLookup = me.stationTitleLookup = new Map();
 
         for (const l of [lang, 'en']) {
             for (const railway of me.railways.getAll()) {
@@ -936,9 +936,9 @@ export default class extends Evented {
                         stationTitle = (utitle && utitle[l]) || helpers.normalize(title[l] || title.en),
                         key = stationTitle.toUpperCase();
 
-                    if (!stationTitleLookup[key]) {
+                    if (!stationTitleLookup.has(key)) {
                         helpers.createElement('option', {value: stationTitle}, datalist);
-                        stationTitleLookup[key] = station;
+                        stationTitleLookup.set(key, station);
                     }
                 }
             }
@@ -950,11 +950,11 @@ export default class extends Evented {
                 placeholder: me.dict['station-name'],
                 list: 'stations',
                 eventHandler: ({value}) => {
-                    const station = me.stationTitleLookup[value.toUpperCase()];
+                    const station = me.stationTitleLookup.get(value.toUpperCase());
 
                     if (station && station.coord) {
                         me.markObject();
-                        me.trackObject(me.stationGroupLookup[station.group]);
+                        me.trackObject(me.stationGroupLookup.get(station.group));
                         return true;
                     }
                 }
@@ -1093,8 +1093,6 @@ export default class extends Evented {
             // me.objectUnit = Math.max(getObjectScale(zoom) * .19, .02);
 
             if (prevLayerZoom !== layerZoom) {
-                const {activeTrainLookup, activeFlightLookup} = me;
-
                 for (const key of ['railways', 'stations', 'stations-outline']) {
                     me.setLayerVisibility(`${key}-og-${prevLayerZoom}`, 'none');
                     me.setLayerVisibility(`${key}-og-${layerZoom}`, 'visible');
@@ -1107,14 +1105,12 @@ export default class extends Evented {
                 }
 
                 // If the layer is switched, all object positions need to be recalculated
-                for (const key of Object.keys(activeTrainLookup)) {
-                    const train = activeTrainLookup[key];
-
+                for (const train of me.activeTrainLookup.values()) {
                     me.updateTrainProps(train);
                     me.updateTrainShape(train);
                 }
-                for (const key of Object.keys(activeFlightLookup)) {
-                    me.updateFlightShape(activeFlightLookup[key]);
+                for (const flight of me.activeFlightLookup.values()) {
+                    me.updateFlightShape(flight);
                 }
             }
         });
@@ -1290,7 +1286,7 @@ export default class extends Evented {
 
     updateTrainProps(train) {
         const me = this,
-            feature = train.railwayFeature = me.featureLookup[`${train.r.id}.${me.layerZoom}`],
+            feature = train.railwayFeature = me.featureLookup.get(`${train.r.id}.${me.layerZoom}`),
             stationOffsets = feature.properties['station-offsets'],
             sectionIndex = train.sectionIndex,
             offset = train.offset = stationOffsets[sectionIndex];
@@ -1484,7 +1480,7 @@ export default class extends Evented {
             now = me.clock.getTimeOffset();
 
         for (const timetable of me.timetables.getAll()) {
-            if (timetable.start <= now && now <= timetable.end && !me.standbyTrainLookup[timetable.id]) {
+            if (timetable.start <= now && now <= timetable.end && !me.standbyTrainLookup.has(timetable.id)) {
                 me.trainStart(new Train(timetable));
             }
         }
@@ -1510,7 +1506,7 @@ export default class extends Evented {
             me.deactivateTrain(train);
             return; // Out of range
         }
-        me.activeTrainLookup[train.id] = train;
+        me.activeTrainLookup.set(train.id, train);
         train.cars = [];
         me.updateTrainProps(train);
 
@@ -1612,7 +1608,8 @@ export default class extends Evented {
 
             me.updateTrainShape(train, t);
         }, () => {
-            const {timetable, timetableIndex} = train;
+            const activeTrainLookup = me.activeTrainLookup,
+                {timetable, timetableIndex} = train;
 
             // Guard for an unexpected error
             // Probably a bug due to duplicate train IDs in timetable lookup
@@ -1628,7 +1625,7 @@ export default class extends Evented {
                     let needToStand = false;
 
                     for (const {t: id} of nextTimetables[0].pt) {
-                        const prevTrain = me.activeTrainLookup[id];
+                        const prevTrain = activeTrainLookup.get(id);
 
                         if (prevTrain && prevTrain.arrivalStation) {
                             needToStand = true;
@@ -1642,7 +1639,7 @@ export default class extends Evented {
                             tracked = false;
 
                         for (const {t: id} of nextTimetables[0].pt) {
-                            const prevTrain = me.activeTrainLookup[id];
+                            const prevTrain = activeTrainLookup.get(id);
 
                             if (markedObject && markedObject.object === prevTrain) {
                                 marked = true;
@@ -1655,7 +1652,7 @@ export default class extends Evented {
                             }
                         }
                         nextTimetables.forEach((nextTimetable, index) => {
-                            const nextTrain = me.standbyTrainLookup[nextTimetable.id] || new Train(nextTimetable);
+                            const nextTrain = me.standbyTrainLookup.get(nextTimetable.id) || new Train(nextTimetable);
 
                             if (index === 0) {
                                 if (marked) {
@@ -1679,15 +1676,14 @@ export default class extends Evented {
 
     refreshFlights() {
         const me = this,
-            {clock, flightLookup, activeFlightLookup, markedObject, initialSelection} = me,
+            {clock, activeFlightLookup, markedObject, initialSelection} = me,
             now = clock.getTimeOffset();
 
-        for (const key of Object.keys(flightLookup)) {
-            const flight = flightLookup[key],
-                {id, start} = flight;
+        for (const flight of me.flightLookup.values()) {
+            const {id, start} = flight;
 
-            if (flight.entry <= now && now <= flight.end && !activeFlightLookup[id]) {
-                activeFlightLookup[id] = flight;
+            if (flight.entry <= now && now <= flight.end && !activeFlightLookup.has(id)) {
+                activeFlightLookup.set(id, flight);
                 if (now >= start) {
                     me.flightRepeat(flight, now - start);
                 } else {
@@ -2074,7 +2070,7 @@ export default class extends Evented {
         const me = this;
 
         function check(curr, prop) {
-            const activeTrain = me.activeTrainLookup[curr.t];
+            const activeTrain = me.activeTrainLookup.get(curr.t);
 
             // Need to check timetable ID
             if (activeTrain && curr.id === activeTrain.timetable.id) {
@@ -2114,7 +2110,7 @@ export default class extends Evented {
             }
         }
         delete train.cars;
-        delete me.activeTrainLookup[train.id];
+        me.activeTrainLookup.delete(train.id);
     }
 
     deactivateTrain(train) {
@@ -2142,20 +2138,19 @@ export default class extends Evented {
             me.trackObject();
         }
         delete flight.aircraft;
-        delete me.activeFlightLookup[flight.id];
+        me.activeFlightLookup.delete(flight.id);
     }
 
     stopAll() {
-        const me = this,
-            {activeTrainLookup, activeFlightLookup} = me;
+        const me = this;
 
-        for (const key of Object.keys(activeTrainLookup)) {
-            me.stopTrain(activeTrainLookup[key]);
+        for (const train of me.activeTrainLookup.values()) {
+            me.stopTrain(train);
         }
-        for (const key of Object.keys(activeFlightLookup)) {
-            me.stopFlight(activeFlightLookup[key]);
+        for (const flight of me.activeFlightLookup.values()) {
+            me.stopFlight(flight);
         }
-        me.standbyTrainLookup = {};
+        me.standbyTrainLookup.clear();
         me.realtimeTrains.clear();
         delete me.lastTrainRefresh;
     }
@@ -2184,8 +2179,7 @@ export default class extends Evented {
         const me = this;
 
         loadDynamicTrainData(me.secrets).then(({trainData, trainInfoData}) => {
-            const {activeTrainLookup, realtimeTrains, dataReferences} = me,
-                standbyTrainLookup = me.standbyTrainLookup = {},
+            const {activeTrainLookup, standbyTrainLookup, realtimeTrains, dataReferences} = me,
                 now = me.clock.getTimeOffset();
 
             me.resetRailwayStatus();
@@ -2205,6 +2199,7 @@ export default class extends Evented {
                 }
             }
 
+            standbyTrainLookup.clear();
             realtimeTrains.clear();
 
             for (const trainRef of trainData) {
@@ -2215,7 +2210,7 @@ export default class extends Evented {
                 realtimeTrains.add(trainRef.id);
 
                 // Retry lookup replacing Marunouchi line with MarunouchiBranch line
-                const activeTrain = activeTrainLookup[id] || activeTrainLookup[aliasId];
+                const activeTrain = activeTrainLookup.get(id) || activeTrainLookup.get(aliasId);
 
                 // Update the avtive train if exists
                 if (activeTrain) {
@@ -2251,7 +2246,7 @@ export default class extends Evented {
                             me.trainStart(train);
                         } else {
                             me.deactivateTrain(train);
-                            standbyTrainLookup[timetable.id] = train;
+                            standbyTrainLookup.set(timetable.id, train);
                         }
                     }
                     continue;
@@ -2276,9 +2271,8 @@ export default class extends Evented {
             }
 
             // Stop trains if they are no longer active
-            for (const key of Object.keys(activeTrainLookup)) {
-                const train = activeTrainLookup[key],
-                    railway = train.r;
+            for (const train of activeTrainLookup.values()) {
+                const railway = train.r;
 
                 if ((((railway.status && railway.dynamic) || !train.timetable) && !realtimeTrains.has(train.id)) || railway.suspended) {
                     me.stopTrain(train);
@@ -2297,7 +2291,7 @@ export default class extends Evented {
         const me = this;
 
         loadDynamicFlightData(me.secrets).then(({atisData, flightData}) => {
-            const {flightLookup, activeFlightLookup} = me,
+            const flightLookup = me.flightLookup,
                 {landing, departure} = atisData,
                 pattern = [landing.join('/'), departure.join('/')].join(' '),
                 codeShareFlights = {},
@@ -2309,8 +2303,8 @@ export default class extends Evented {
             if (me.flightPattern !== pattern) {
                 me.flightPattern = pattern;
                 me.lastFlightPatternChanged = Date.now();
-                for (const key of Object.keys(activeFlightLookup)) {
-                    me.stopFlight(activeFlightLookup[key]);
+                for (const flight of me.activeFlightLookup.values()) {
+                    me.stopFlight(flight);
                 }
             }
 
@@ -2382,7 +2376,7 @@ export default class extends Evented {
 
             for (const flightRef of flightData) {
                 const {id, n, dp, ds, sdt, or, ar, sat} = flightRef;
-                let flight = flightLookup[id],
+                let flight = flightLookup.get(id),
                     status = flightRef.s,
                     {maxFlightSpeed: maxSpeed, flightAcceleration: acceleration} = configs;
 
@@ -2407,10 +2401,10 @@ export default class extends Evented {
                         ar === 'NRT' ? `NRT.${north ? '34R' : '16L'}.Arr` :
                         dp === 'HND' ? `HND.${depRoutes[direction]}.Dep` :
                         ar === 'HND' ? `HND.${arrRoutes[direction]}.Arr` : undefined,
-                        feature = me.featureLookup[route];
+                        feature = me.featureLookup.get(route);
 
                     if (feature) {
-                        flight = flightLookup[id] = new Flight({
+                        flight = new Flight({
                             id,
                             n,
                             a: flightRef.a,
@@ -2424,6 +2418,7 @@ export default class extends Evented {
                         });
                         flight.runway = route.replace(/^([^.]+\.)[A-Z]*([^.]+).+/, '$1$2');
                         flight.feature = feature;
+                        flightLookup.set(flight.id, flight);
                     } else {
                         continue;
                     }
@@ -2692,7 +2687,7 @@ export default class extends Evented {
                 object = pickObject(map, `stations-ug-${layerZoom}`, point);
             }
             if (object) {
-                return me.stationGroupLookup[object.properties.group];
+                return me.stationGroupLookup.get(object.properties.group);
             }
         }
     }
@@ -3018,7 +3013,7 @@ export default class extends Evented {
                 );
             }
         } else {
-            const object = me.featureLookup[`${markedObject.id}.${me.layerZoom}`],
+            const object = me.featureLookup.get(`${markedObject.id}.${me.layerZoom}`),
                 coord = helpersGeojson.getCenterCoord(object),
                 altitude = helpersGeojson.getAltitude(object);
 

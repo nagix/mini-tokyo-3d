@@ -35,3 +35,12 @@ export function saveJSON(path, data) {
 export function readdir(path) {
     return fs.promises.readdir(path);
 }
+
+export function buildLookup(array) {
+    const lookup = {};
+
+    for (const element of array) {
+        lookup[element.id] = element;
+    }
+    return lookup;
+}

@@ -226,15 +226,15 @@ export default class extends Panel {
                 }, minutesElement);
             }
             stationNameElement.addEventListener('input', () => {
-                const selectedStation = map.stationTitleLookup[stationNameElement.value.toUpperCase()];
+                const selectedStation = map.stationTitleLookup.get(stationNameElement.value.toUpperCase());
 
                 searchButtonElement.disabled = !selectedStation || includes(stations, selectedStation);
             });
             searchButtonElement.addEventListener('click', () => {
                 const classList = container.classList,
                     stationTitleLookup = map.stationTitleLookup,
-                    origin = key === 'to' ? stationTitleLookup[originElement.value.toUpperCase()] : stations[0],
-                    destination = key === 'from' ? stationTitleLookup[destinationElement.value.toUpperCase()] : stations[0],
+                    origin = key === 'to' ? stationTitleLookup.get(originElement.value.toUpperCase()) : stations[0],
+                    destination = key === 'from' ? stationTitleLookup.get(destinationElement.value.toUpperCase()) : stations[0],
                     type = container.querySelector(`#${key}-type`).value,
                     month = container.querySelector(`#${key}-month`).value,
                     date = container.querySelector(`#${key}-date`).value,
@@ -331,7 +331,7 @@ export default class extends Panel {
 
             for (const {railway, station, direction} of departure.railways) {
                 for (const timetable of map.timetables.getByDirectionId(railway.id, direction.id)) {
-                    const train = map.activeTrainLookup[timetable.t] || map.standbyTrainLookup[timetable.id],
+                    const train = map.activeTrainLookup.get(timetable.t) || map.standbyTrainLookup.get(timetable.id),
                         delay = (train && train.delay) || 0;
 
                     if (timetable.end + delay <= now) {

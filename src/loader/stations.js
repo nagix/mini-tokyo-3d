@@ -1,5 +1,4 @@
-import {buildLookup} from '../helpers/helpers';
-import {loadJSON, saveJSON} from './helpers';
+import {loadJSON, saveJSON, buildLookup} from './helpers';
 
 const WIKIPEDIA_URL = 'https://ja.wikipedia.org/w/api.php';
 const WIKIPEDIA_PARAMS = 'format=json&action=query&prop=pageimages&pithumbsize=128';
