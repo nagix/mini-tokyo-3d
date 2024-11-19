@@ -1,3 +1,7 @@
+export {default as Airport} from './airport';
+export {default as Flight} from './flight';
+export {default as FlightStatus} from './flight-status';
+export {default as Operator} from './operator';
 export {default as POI} from './poi';
 export {default as RailDirection} from './rail-direction';
 export {default as Railway} from './railway';

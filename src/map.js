@@ -6,7 +6,7 @@ import Clock from './clock';
 import configs from './configs';
 import {ClockControl, MapboxGLButtonControl, SearchControl} from './controls';
 import Dataset from './dataset';
-import {POI, RailDirection, Railway, Station, Train, TrainTimetables, TrainType, TrainVehicle} from './data-classes';
+import {Airport, Flight, FlightStatus, Operator, POI, RailDirection, Railway, Station, Train, TrainTimetables, TrainType, TrainVehicle} from './data-classes';
 import extend from './extend';
 import * as helpers from './helpers/helpers';
 import {pickObject} from './helpers/helpers-deck';
@@ -587,25 +587,22 @@ export default class extends Evented {
             featureLookup = me.featureLookup = {},
             stationGroupLookup = me.stationGroupLookup = {};
 
-        Object.assign(me, data);
+        me.dict = data.dict;
+        me.featureCollection = data.featureCollection;
 
         me.stations = new Dataset(Station);
-        me.railDirections = new Dataset(RailDirection, me.railDirectionData);
-        delete me.railDirectionData;
-        me.railways = new Dataset(Railway, me.railwayData, {
+        me.railDirections = new Dataset(RailDirection, data.railDirectionData);
+        me.railways = new Dataset(Railway, data.railwayData, {
             stations: me.stations,
             railDirections: me.railDirections
         });
-        delete me.railwayData;
-        me.pois = new Dataset(POI, me.poiData);
-        delete me.poiData;
-        me.stations.load(me.stationData, {
+        me.pois = new Dataset(POI, data.poiData);
+        me.stations.load(data.stationData, {
             stations: me.stations,
             railways: me.railways,
             railDirections: me.railDirections,
             pois: me.pois
         });
-        delete me.stationData;
 
         // Build feature lookup dictionary and update feature properties
         featureEach(me.featureCollection, feature => {
@@ -646,10 +643,8 @@ export default class extends Evented {
             }
         }
 
-        me.trainTypes = new Dataset(TrainType, me.trainTypeData);
-        delete me.trainTypeData;
-        me.trainVehicles = new Dataset(TrainVehicle, me.trainVehicleData);
-        delete me.trainVehicleData;
+        me.trainTypes = new Dataset(TrainType, data.trainTypeData);
+        me.trainVehicles = new Dataset(TrainVehicle, data.trainVehicleData);
 
         me.lastTimetableRefresh = me.clock.getTime('03:00');
         me.dataReferences = {
@@ -659,12 +654,11 @@ export default class extends Evented {
             trainTypes: me.trainTypes,
             trainVehicles: me.trainVehicles
         };
-        me.timetables = new TrainTimetables(me.timetableData, me.dataReferences);
-        delete me.timetableData;
+        me.timetables = new TrainTimetables(data.timetableData, me.dataReferences);
 
-        me.operatorLookup = helpers.buildLookup(me.operatorData);
-        me.airportLookup = helpers.buildLookup(me.airportData);
-        me.flightStatusLookup = helpers.buildLookup(me.flightStatusData);
+        me.operators = new Dataset(Operator, data.operatorData);
+        me.airports = new Dataset(Airport, data.airportData);
+        me.flightStatuses = new Dataset(FlightStatus, data.flightStatusData);
 
         me.activeTrainLookup = {};
         me.standbyTrainLookup = {};
@@ -1427,7 +1421,7 @@ export default class extends Evented {
             return;
         }
         if (!aircraft) {
-            const operator = me.operatorLookup[flight.a];
+            const operator = flight.a;
 
             aircraft = flight.aircraft = {
                 type: 'flight',
@@ -1960,21 +1954,21 @@ export default class extends Evented {
 
     getLocalizedOperatorTitle(operator) {
         const me = this,
-            title = (me.operatorLookup[operator] || {}).title || {};
+            title = (operator || {}).title || {};
 
         return title[me.lang] || title.en;
     }
 
     getLocalizedAirportTitle(airport) {
         const me = this,
-            title = (me.airportLookup[airport] || {}).title || {};
+            title = (airport || {}).title || {};
 
         return title[me.lang] || title.en;
     }
 
     getLocalizedFlightStatusTitle(status) {
         const me = this,
-            title = (me.flightStatusLookup[status] || {}).title || {};
+            title = (status || {}).title || {};
 
         return title[me.lang] || title.en;
     }
@@ -2038,33 +2032,33 @@ export default class extends Evented {
     getFlightDescription(flight) {
         const me = this,
             dict = me.dict,
-            {a: airlineID, n: flightNumber, ds: destination} = flight,
-            tailcolor = me.operatorLookup[airlineID].tailcolor || '#FFFFFF',
-            scheduledTime = flight.sdt || flight.sat,
-            estimatedTime = flight.edt || flight.eat,
-            actualTime = flight.adt || flight.aat,
-            delayed = (estimatedTime || actualTime) && scheduledTime !== (estimatedTime || actualTime);
+            {a: airline, n: flightNumber, ds: destination} = flight,
+            tailcolor = airline.tailcolor || '#FFFFFF',
+            scheduledTime = helpers.valueOrDefault(flight.sdt, flight.sat),
+            estimatedTime = helpers.valueOrDefault(flight.edt, flight.eat),
+            actualTime = helpers.valueOrDefault(flight.adt, flight.aat),
+            delayed = (estimatedTime !== undefined || actualTime !== undefined) && scheduledTime !== helpers.valueOrDefault(estimatedTime, actualTime);
 
         return [
             '<div class="desc-header">',
             `<div style="background-color: ${tailcolor};"></div>`,
-            `<div><strong>${me.getLocalizedOperatorTitle(airlineID)}</strong>`,
+            `<div><strong>${me.getLocalizedOperatorTitle(airline)}</strong>`,
             `<br>${flightNumber[0]} `,
             dict[destination ? 'to' : 'from'].replace('$1', me.getLocalizedAirportTitle(destination || flight.or)),
             '</div></div>',
             `<strong>${dict['status']}:</strong> ${me.getLocalizedFlightStatusTitle(flight.s)}`,
             '<br><strong>',
             dict[destination ? 'scheduled-departure-time' : 'scheduled-arrival-time'],
-            `:</strong> ${scheduledTime}`,
+            `:</strong> ${helpers.getTimeString(scheduledTime)}`,
             delayed ? '<span class="desc-caution">' : '',
-            estimatedTime ? [
+            estimatedTime !== undefined ? [
                 '<br><strong>',
                 dict[destination ? 'estimated-departure-time' : 'estimated-arrival-time'],
-                `:</strong> ${estimatedTime}`
-            ].join('') : actualTime ? [
+                `:</strong> ${helpers.getTimeString(estimatedTime)}`
+            ].join('') : actualTime !== undefined ? [
                 '<br><strong>',
                 dict[destination ? 'actual-departure-time' : 'actual-arrival-time'],
-                `:</strong> ${actualTime}`
+                `:</strong> ${helpers.getTimeString(actualTime)}`
             ].join('') : '',
             delayed ? '</span>' : '',
             flightNumber.length > 1 ? `<br><strong>${dict['code-share']}:</strong> ${flightNumber.slice(1).join(' ')}` : ''
@@ -2407,7 +2401,7 @@ export default class extends Evented {
                     if (helpers.includes(['Cancelled', 'PostponedTomorrow'], status)) {
                         continue;
                     }
-                    const airport = me.airportLookup[ds || or],
+                    const airport = me.airports.get(ds || or),
                         direction = airport ? airport.direction : 'S',
                         route = dp === 'NRT' ? `NRT.${north ? '34L' : '16R'}.Dep` :
                         ar === 'NRT' ? `NRT.${north ? '34R' : '16L'}.Arr` :
@@ -2416,22 +2410,25 @@ export default class extends Evented {
                         feature = me.featureLookup[route];
 
                     if (feature) {
-                        flight = flightLookup[id] = {
+                        flight = flightLookup[id] = new Flight({
                             id,
                             n,
                             a: flightRef.a,
                             dp,
                             ar,
                             ds,
-                            or,
-                            runway: route.replace(/^([^.]+\.)[A-Z]*([^.]+).+/, '$1$2'),
-                            feature
-                        };
+                            or
+                        }, {
+                            airports: me.airports,
+                            operators: me.operators
+                        });
+                        flight.runway = route.replace(/^([^.]+\.)[A-Z]*([^.]+).+/, '$1$2');
+                        flight.feature = feature;
                     } else {
                         continue;
                     }
                 }
-                Object.assign(flight, {
+                flight.update({
                     edt: flightRef.edt,
                     adt: flightRef.adt,
                     sdt,
@@ -2440,10 +2437,10 @@ export default class extends Evented {
                     sat
                 });
 
-                const departureTime = flight.edt || flight.adt || flight.sdt,
-                    arrivalTime = flight.eat || flight.aat || flight.sat;
+                const departureTime = helpers.valueOrDefault(flight.edt, helpers.valueOrDefault(flight.adt, flight.sdt)),
+                    arrivalTime = helpers.valueOrDefault(flight.eat, helpers.valueOrDefault(flight.aat, flight.sat));
 
-                if (arrivalTime && !status) {
+                if (arrivalTime !== undefined && !status) {
                     if (arrivalTime < flight.sat) {
                         status = 'NewTime';
                     } else if (arrivalTime > flight.sat) {
@@ -2451,7 +2448,7 @@ export default class extends Evented {
                     } else if (arrivalTime === flight.sat) {
                         status = 'OnTime';
                     }
-                } else if (departureTime && (!status || status === 'CheckIn' || status === 'NowBoarding' || status === 'FinalCall' || status === 'BoardingComplete' || status === 'Departed')) {
+                } else if (departureTime !== undefined && (!status || status === 'CheckIn' || status === 'NowBoarding' || status === 'FinalCall' || status === 'BoardingComplete' || status === 'Departed')) {
                     if (departureTime < flight.sdt) {
                         status = 'NewTime';
                     } else if (departureTime > flight.sdt) {
@@ -2460,9 +2457,9 @@ export default class extends Evented {
                         status = 'OnTime';
                     }
                 }
-                flight.s = status;
+                flight.update({s: status}, {flightStatuses: me.flightStatuses});
 
-                if (arrivalTime) {
+                if (arrivalTime !== undefined) {
                     maxSpeed /= 2;
                     acceleration /= -2;
                 }
@@ -2471,11 +2468,11 @@ export default class extends Evented {
                     standingDuration = configs.standingDuration;
 
                 if (departureTime) {
-                    flight.start = flight.base = helpers.getTimeOffset(departureTime);
+                    flight.start = flight.base = departureTime;
                     flight.entry = flight.start - standingDuration;
                     flight.end = flight.start + duration;
                 } else {
-                    flight.start = flight.entry = helpers.getTimeOffset(arrivalTime) - duration;
+                    flight.start = flight.entry = arrivalTime - duration;
                     flight.base = flight.start + duration - standingDuration;
                     flight.end = flight.start + duration + standingDuration;
                 }
