@@ -1613,7 +1613,7 @@ export default class extends Evented {
 
             // Guard for an unexpected error
             // Probably a bug due to duplicate train IDs in timetable lookup
-            if (!train.cars || (timetable && timetableIndex + 1 >= timetable.tt.length)) {
+            if (!train.cars || (timetable && timetableIndex + 1 >= timetable.stations.length)) {
                 me.stopTrain(train);
                 return;
             }
@@ -3090,16 +3090,18 @@ export default class extends Evented {
             destination = (train.ds || [])[0],
             delay = train.delay || 0,
             now = me.clock.getTimeOffset();
-        let ttIndex, current, next, departureStation, arrivalStation, currentSection, nextSection, finalSection;
+        let arrivalTimes, departureTimes, ttIndex, departureStation, arrivalStation, currentSection, nextSection, finalSection;
 
         if (timetable) {
-            ttIndex = helpers.valueOrDefault(index, timetable.tt.reduce(
-                (acc, cur, i) => cur.d !== undefined && cur.d + delay <= now ? i : acc, 0
+            const s = timetable.stations;
+
+            arrivalTimes = timetable.arrivalTimes;
+            departureTimes = timetable.departureTimes;
+            ttIndex = helpers.valueOrDefault(index, departureTimes.reduce(
+                (acc, cur, i) => cur !== undefined && cur + delay <= now ? i : acc, 0
             ));
-            current = timetable.tt[ttIndex];
-            next = timetable.tt[ttIndex + 1];
-            departureStation = current.s;
-            arrivalStation = next && next.s;
+            departureStation = s[ttIndex];
+            arrivalStation = s[ttIndex + 1];
         } else {
             departureStation = train.fs || train.ts;
             arrivalStation = train.ts || train.fs;
@@ -3124,14 +3126,14 @@ export default class extends Evented {
         if (timetable) {
             train.timetableIndex = ttIndex;
             train.departureStation = departureStation;
-            train.departureTime = helpers.valueOrDefault(current.d, current.a);
+            train.departureTime = helpers.valueOrDefault(departureTimes[ttIndex], arrivalTimes[ttIndex]);
 
             if (currentSection >= 0 && nextSection >= 0) {
                 train.sectionIndex = currentSection;
                 train.sectionLength = nextSection - currentSection;
                 train.arrivalStation = arrivalStation;
-                train.arrivalTime = next.a;
-                train.nextDepartureTime = next.d;
+                train.arrivalTime = arrivalTimes[ttIndex + 1];
+                train.nextDepartureTime = departureTimes[ttIndex + 1];
 
                 return true;
             }

@@ -26,24 +26,28 @@ export default class extends Panel {
             timetables.push(curr);
         }
         for (const curr of timetables) {
-            const section = {};
+            const section = {},
+                stations = curr.stations;
 
             section.start = Math.max(stationHTML.length - 1, 0);
-            curr.tt.forEach((s, index) => {
-                if (index > 0 || !curr.pt) {
+            for (let i = 0, ilen = stations.length; i < ilen; i++) {
+                if (i > 0 || !curr.pt) {
+                    const arrivalTime = curr.arrivalTimes[i],
+                        departureTime = curr.departureTimes[i];
+
                     stationHTML.push([
                         '<div class="station-row">',
-                        `<div class="station-title-box">${map.getLocalizedStationTitle(s.s)}</div>`,
+                        `<div class="station-title-box">${map.getLocalizedStationTitle(stations[i])}</div>`,
                         '<div class="station-time-box',
                         delay >= 60000 ? ' desc-caution' : '',
                         '">',
-                        s.a !== undefined ? getTimeString(s.a + delay) : '',
-                        s.a !== undefined && s.d !== undefined ? '<br>' : '',
-                        s.d !== undefined ? getTimeString(s.d + delay) : '',
+                        arrivalTime !== undefined ? getTimeString(arrivalTime + delay) : '',
+                        arrivalTime !== undefined && departureTime !== undefined ? '<br>' : '',
+                        departureTime !== undefined ? getTimeString(departureTime + delay) : '',
                         '</div></div>'
                     ].join(''));
                 }
-            });
+            }
             section.end = stationHTML.length - 1;
             section.color = curr.r.color;
             sections.push(section);

@@ -332,16 +332,15 @@ export default class extends Panel {
             for (const {railway, station, direction} of departure.railways) {
                 for (const timetable of map.timetables.getByDirectionId(railway.id, direction.id)) {
                     const train = map.activeTrainLookup.get(timetable.t) || map.standbyTrainLookup.get(timetable.id),
-                        delay = (train && train.delay) || 0;
+                        delay = (train && train.delay) || 0,
+                        stations = timetable.stations;
 
                     if (timetable.end + delay <= now) {
                         continue;
                     }
-                    for (let i = 0; i < timetable.tt.length - 1; i++) {
-                        const {s, d} = timetable.tt[i];
-
-                        if (s === station) {
-                            const time = d + delay;
+                    for (let i = 0, ilen = stations.length - 1; i < ilen; i++) {
+                        if (stations[i] === station) {
+                            const time = timetable.departureTimes[i] + delay;
 
                             if (time > now) {
                                 if (trains.length === 0 || time < trains[0].time) {

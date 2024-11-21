@@ -7,8 +7,6 @@ export default class TrainTimetable {
         const me = this,
             {os, ds, tt, nm, v} = params,
             stations = refs.stations;
-        let start = 86400000,
-            end = 0;
 
         /**
          * Train timetable ID.
@@ -63,24 +61,22 @@ export default class TrainTimetable {
         }
 
         /**
-         * Timetable object.
-         * @type {Array<Object>}
+         * Stations where the train stops.
+         * @type {Array<Station>}
          */
-        me.tt = tt.map(({s, a, d}) => {
-            const stop = {s: stations.get(s)};
+        me.stations = tt.map(({s}) => stations.get(s));
 
-            if (a) {
-                stop.a = getTimeOffset(a);
-                start = Math.min(start, stop.a);
-                end = Math.max(end, stop.a);
-            }
-            if (d) {
-                stop.d = getTimeOffset(d);
-                start = Math.min(start, stop.d);
-                end = Math.max(end, stop.d);
-            }
-            return stop;
-        });
+        /**
+         * Arrival time offset at each stop
+         * @type {Array<number>}
+         */
+        me.arrivalTimes = tt.map(({a}) => a ? getTimeOffset(a) : undefined);
+
+        /**
+         * Departure time offset at each stop
+         * @type {Array<number>}
+         */
+        me.departureTimes = tt.map(({d}) => d ? getTimeOffset(d) : undefined);
 
         if (nm) {
             /**
@@ -98,17 +94,19 @@ export default class TrainTimetable {
             me.v = refs.trainVehicles.get(v);
         }
 
+        const timeOffsets = me.arrivalTimes.concat(me.departureTimes).filter(t => !isNaN(t));
+
         /**
          * Start timestamp offset.
          * @type {number}
          */
-        me.start = start - configs.standingDuration;
+        me.start = Math.min(...timeOffsets) - configs.standingDuration;
 
         /**
          * End timestamp offset.
          * @type {number}
          */
-        me.end = end;
+        me.end = Math.max(...timeOffsets);
     }
 
     update(params, refs) {
@@ -122,8 +120,9 @@ export default class TrainTimetable {
                 const prevTimetable = timetables.get(id);
 
                 if (prevTimetable) {
-                    const tt = prevTimetable.tt,
-                        {a, d} = tt[tt.length - 1];
+                    const lastIndex = me.stations.length - 1,
+                        arrivalTime = me.arrivalTimes[lastIndex],
+                        departureTime = me.departureTimes[lastIndex];
 
                     /**
                      * Previous train tametables.
@@ -132,10 +131,10 @@ export default class TrainTimetable {
                     me.pt = me.pt || [];
                     me.pt.push(prevTimetable);
 
-                    if (a) {
-                        me.start = Math.min(me.start, a - standingDuration);
-                    } else if (d) {
-                        me.start = Math.min(me.start, d - standingDuration);
+                    if (arrivalTime !== undefined) {
+                        me.start = Math.min(me.start, arrivalTime - standingDuration);
+                    } else if (departureTime !== undefined) {
+                        me.start = Math.min(me.start, departureTime - standingDuration);
                     }
                 }
             }
@@ -154,7 +153,7 @@ export default class TrainTimetable {
                 }
             }
             if (me.nt) {
-                me.tt[me.tt.length - 1].d = me.nt[0].tt[0].d;
+                me.departureTimes[me.stations.length - 1] = me.nt[0].departureTimes[0];
             }
         }
     }
@@ -173,7 +172,9 @@ export default class TrainTimetable {
             ds: me.ds,
             pt: me.pt,
             nt: me.nt,
-            tt: me.tt,
+            stations: me.stations.slice(),
+            arrivalTimes: me.arrivalTimes.slice(),
+            departureTimes: me.departureTimes.slice(),
             nm: me.nm,
             v: me.v,
             start: me.start,

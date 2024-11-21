@@ -160,13 +160,14 @@ export default class {
             // A potential problem of this is that connecting trains don't know if the timetable
             // reference changed.
             if (_os && os[0] !== _os[0].id && timetable) {
-                for (let i = 0, ilen = timetable.tt.length; i < ilen; i++) {
-                    const stop = timetable.tt[i];
+                const s = timetable.stations;
 
-                    if (stop.s.id === os[0]) {
+                for (let i = 0, ilen = s.length; i < ilen; i++) {
+                    if (s[i].id === os[0]) {
                         me.timetable = timetable.clone();
-                        me.timetable.tt = timetable.tt.slice(i);
-                        me.timetable.tt[0] = {s: stop.s, d: stop.d};
+                        me.timetable.stations.splice(0, i);
+                        me.timetable.arrivalTimes.splice(0, i + 1, undefined);
+                        me.timetable.departureTimes.splice(0, i);
                         break;
                     }
                 }
@@ -180,13 +181,14 @@ export default class {
             // A potential problem of this is that connecting trains don't know if the timetable
             // reference changed.
             if (_ds && ds[0] !== _ds[0].id && timetable) {
-                for (let i = 0, ilen = timetable.tt.length; i < ilen; i++) {
-                    const stop = timetable.tt[i];
+                const s = timetable.stations;
 
-                    if (stop.s.id === ds[0]) {
+                for (let i = 0, ilen = s.length; i < ilen; i++) {
+                    if (s[i].id === ds[0]) {
                         me.timetable = timetable.clone();
-                        me.timetable.tt = timetable.tt.slice(0, i + 1);
-                        me.timetable.tt[timetable.tt.length - 1] = {s: stop.s, a: valueOrDefault(stop.a, stop.d)};
+                        me.timetable.stations.splice(i + 1);
+                        me.timetable.arrivalTimes.splice(i, Infinity, valueOrDefault(me.timetable.arrivalTimes[i], me.timetable.departureTimes[i]));
+                        me.timetable.departureTimes.splice(i, Infinity, undefined);
                         break;
                     }
                 }
