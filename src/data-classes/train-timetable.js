@@ -88,10 +88,10 @@ export default class TrainTimetable {
 
         if (v) {
             /**
-             * Train vehicle.
-             * @type {TrainVehicle}
+             * Train vehicle type.
+             * @type {TrainVehicleType}
              */
-            me.v = refs.trainVehicles.get(v);
+            me.v = refs.trainVehicleTypes.get(v);
         }
 
         const timeOffsets = me.arrivalTimes.concat(me.departureTimes).filter(t => !isNaN(t));

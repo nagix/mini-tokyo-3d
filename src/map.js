@@ -6,7 +6,7 @@ import Clock from './clock';
 import configs from './configs';
 import {ClockControl, MapboxGLButtonControl, SearchControl} from './controls';
 import Dataset from './dataset';
-import {Airport, Flight, FlightStatus, Operator, POI, RailDirection, Railway, Station, Train, TrainTimetables, TrainType, TrainVehicle} from './data-classes';
+import {Airport, Flight, FlightStatus, Operator, POI, RailDirection, Railway, Station, Train, TrainTimetables, TrainType, TrainVehicleType} from './data-classes';
 import extend from './extend';
 import * as helpers from './helpers/helpers';
 import {pickObject} from './helpers/helpers-deck';
@@ -644,7 +644,7 @@ export default class extends Evented {
         }
 
         me.trainTypes = new Dataset(TrainType, data.trainTypeData);
-        me.trainVehicles = new Dataset(TrainVehicle, data.trainVehicleData);
+        me.trainVehicleTypes = new Dataset(TrainVehicleType, data.trainVehicleData);
 
         me.lastTimetableRefresh = me.clock.getTime('03:00');
         me.dataReferences = {
@@ -652,7 +652,7 @@ export default class extends Evented {
             stations: me.stations,
             railDirections: me.railDirections,
             trainTypes: me.trainTypes,
-            trainVehicles: me.trainVehicles
+            trainVehicleTypes: me.trainVehicleTypes
         };
         me.timetables = new TrainTimetables(data.timetableData, me.dataReferences);
 

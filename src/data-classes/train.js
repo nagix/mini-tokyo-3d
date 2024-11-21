@@ -108,10 +108,10 @@ export default class {
 
         if (v) {
             /**
-             * Train vehicle.
-             * @type {TrainVehicle}
+             * Train vehicle type.
+             * @type {TrainVehicleType}
              */
-            me.v = fromTimetable ? v : refs.trainVehicles.get(v);
+            me.v = fromTimetable ? v : refs.trainVehicleTypes.get(v);
         }
 
         const railway = me.r;
@@ -201,7 +201,7 @@ export default class {
             me.fs = stations.get(fs);
         }
         if (v) {
-            me.v = refs.trainVehicles.get(v);
+            me.v = refs.trainVehicleTypes.get(v);
         }
         if (!isNaN(delay)) {
             me.delay = delay;
