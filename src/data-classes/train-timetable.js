@@ -4,6 +4,10 @@ import {getTimeOffset} from '../helpers/helpers';
 export default class TrainTimetable {
 
     constructor(params, refs) {
+        if (!params) {
+            return;
+        }
+
         const me = this,
             {os, ds, tt, nm, v} = params,
             stations = refs.stations;
@@ -159,27 +163,27 @@ export default class TrainTimetable {
     }
 
     clone() {
-        const me = this;
+        const me = this,
+            timetable = new TrainTimetable();
 
-        return new TrainTimetable({
-            id: me.id,
-            t: me.t,
-            r: me.r,
-            n: me.n,
-            y: me.y,
-            d: me.d,
-            os: me.os,
-            ds: me.ds,
-            pt: me.pt,
-            nt: me.nt,
-            stations: me.stations.slice(),
-            arrivalTimes: me.arrivalTimes.slice(),
-            departureTimes: me.departureTimes.slice(),
-            nm: me.nm,
-            v: me.v,
-            start: me.start,
-            end: me.end
-        });
+        timetable.id = me.id;
+        timetable.t = me.t;
+        timetable.r = me.r;
+        timetable.n = me.n;
+        timetable.y = me.y;
+        timetable.d = me.d;
+        timetable.os = me.os;
+        timetable.ds = me.ds;
+        timetable.pt = me.pt;
+        timetable.nt = me.nt;
+        timetable.stations = me.stations.slice();
+        timetable.arrivalTimes = me.arrivalTimes.slice();
+        timetable.departureTimes = me.departureTimes.slice();
+        timetable.nm = me.nm;
+        timetable.v = me.v;
+        timetable.start = me.start;
+        timetable.end = me.end;
+        return timetable;
     }
 
     getConnectingTrainIds() {
