@@ -42,7 +42,8 @@ const OPERATORS_FOR_TRAININFORMATION = {
         'Tokyu',
         'Keikyu',
         'Tobu',
-        'Seibu'
+        'Seibu',
+        'Keio'
     ]
 };
 
