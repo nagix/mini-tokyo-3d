@@ -1451,6 +1451,43 @@
 	"carComposition": 10,
 	"dynamic": true
 }, {
+	"id": "JR-East.Ryomo",
+	"title": {
+		"ja": "両毛線",
+		"en": "Ryomo Line",
+		"ko": "료모 선",
+		"zh-Hans": "两毛线",
+		"zh-Hant": "兩毛線"
+	},
+	"stations": [
+		"JR-East.Ryomo.Takasaki",
+		"JR-East.Ryomo.Takasakitonyamachi",
+		"JR-East.Ryomo.Ino",
+		"JR-East.Ryomo.ShimMaebashi",
+		"JR-East.Ryomo.Maebashi",
+		"JR-East.Ryomo.Maebashioshima",
+		"JR-East.Ryomo.Komagata",
+		"JR-East.Ryomo.Isesaki",
+		"JR-East.Ryomo.Kunisada",
+		"JR-East.Ryomo.Iwajuku",
+		"JR-East.Ryomo.Kiryu",
+		"JR-East.Ryomo.Omata",
+		"JR-East.Ryomo.Yamamae",
+		"JR-East.Ryomo.Ashikaga",
+		"JR-East.Ryomo.AshikagaFlowerPark",
+		"JR-East.Ryomo.Tomita",
+		"JR-East.Ryomo.Sano",
+		"JR-East.Ryomo.Iwafune",
+		"JR-East.Ryomo.Ohirashita",
+		"JR-East.Ryomo.Tochigi",
+		"JR-East.Ryomo.Omoigawa",
+		"JR-East.Ryomo.Oyama"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#FFD400",
+	"carComposition": 10
+}, {
 	"id": "TWR.Rinkai",
 	"title": {
 		"ja": "りんかい線",

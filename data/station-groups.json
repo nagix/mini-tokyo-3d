@@ -479,6 +479,9 @@
 ], [
 	"Tobu.Nikko.Kurihashi"
 ]], [[
+	"JR-East.Utsunomiya.Oyama",
+	"JR-East.Ryomo.Oyama"
+]], [[
 	"JR-East.Takasaki.Kumagaya"
 ], [
 	"Chichibu.Chichibu.Kumagaya"
@@ -486,6 +489,7 @@
 	"JR-East.Takasaki.Kuragano",
 	"JR-East.Hachiko.Kuragano"
 ]], [[
+	"JR-East.Ryomo.Takasaki",
 	"JR-East.Takasaki.Takasaki",
 	"JR-East.Hachiko.Takasaki"
 ]], [[
@@ -897,6 +901,19 @@
 ], [
 	"Sotetsu.Main.Ebina"
 ]], [[
+	"JR-East.Ryomo.Isesaki"
+], [
+	"Tobu.Isesaki.Isesaki"
+]], [[
+	"JR-East.Ryomo.Sano"
+], [
+	"Tobu.Sano.Sano"
+]], [[
+	"JR-East.Ryomo.Tochigi"
+], [
+	"Tobu.Nikko.Tochigi",
+	"Tobu.JRTobuConnection.Tochigi"
+]],[[
 	"TWR.Rinkai.TennozuIsle"
 ], [
 	"TokyoMonorail.HanedaAirport.TennozuIsle"
@@ -1338,9 +1355,6 @@
 ]], [[
 	"Tobu.Koizumi.HigashiKoizumi",
 	"Tobu.KoizumiBranch.HigashiKoizumi"
-]], [[
-	"Tobu.Nikko.Tochigi",
-	"Tobu.JRTobuConnection.Tochigi"
 ]], [[
 	"Tobu.Nikko.ShinTochigi",
 	"Tobu.Utsunomiya.ShinTochigi"

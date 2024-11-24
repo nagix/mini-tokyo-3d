@@ -30,15 +30,16 @@ export default async function() {
     const stationIDLookup = {};
 
     for (const {id, title} of data) {
-        const stations = stationLists[stationLists.length - 1];
         const titleJa = title['ja-Wiki'] || `${title['ja']}駅`;
+        let stations = stationLists[stationLists.length - 1];
 
+        if (stations.length >= 50) {
+            stations = [];
+            stationLists.push(stations);
+        }
         stationIDLookup[titleJa] = stationIDLookup[titleJa] || [];
         stationIDLookup[titleJa].push(id);
         stations.push(titleJa);
-        if (stations.length >= 50) {
-            stationLists.push([]);
-        }
     }
     (await Promise.all(stationLists.map(stations =>
         loadJSON(`${WIKIPEDIA_URL}?${WIKIPEDIA_PARAMS}&titles=${stations.join('|')}`)
