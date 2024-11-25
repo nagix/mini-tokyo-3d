@@ -1488,6 +1488,37 @@
 	"color": "#FFD400",
 	"carComposition": 10
 }, {
+	"id": "JR-East.Mito",
+	"title": {
+		"ja": "水戸線",
+		"en": "Mito Line",
+		"ko": "미토 선",
+		"zh-Hans": "水户线",
+		"zh-Hant": "水戶線"
+	},
+	"stations": [
+		"JR-East.Mito.Oyama",
+		"JR-East.Mito.Otabayashi",
+		"JR-East.Mito.Yuki",
+		"JR-East.Mito.HigashiYuki",
+		"JR-East.Mito.Kawashima",
+		"JR-East.Mito.Tamado",
+		"JR-East.Mito.Shimodate",
+		"JR-East.Mito.Niihari",
+		"JR-East.Mito.Yamato",
+		"JR-East.Mito.Iwase",
+		"JR-East.Mito.Haguro",
+		"JR-East.Mito.Fukuhara",
+		"JR-East.Mito.Inada",
+		"JR-East.Mito.Kasama",
+		"JR-East.Mito.Shishido",
+		"JR-East.Mito.Tomobe"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#007AC1",
+	"carComposition": 5
+}, {
 	"id": "TWR.Rinkai",
 	"title": {
 		"ja": "りんかい線",
