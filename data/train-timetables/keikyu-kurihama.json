@@ -44,7 +44,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "05:32",
-		"d": "05:32"
+		"d": "05:33"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "05:35"
@@ -150,7 +150,7 @@
 		"d": "06:13"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "06:15",
+		"a": "06:14",
 		"d": "06:15"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
@@ -334,7 +334,7 @@
 		"d": "07:09"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "07:10",
+		"a": "07:11",
 		"d": "07:11"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -382,7 +382,7 @@
 		"d": "07:20"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "07:21",
+		"a": "07:22",
 		"d": "07:22"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -870,20 +870,20 @@
 		"a": "08:56"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.718T.Weekday",
-	"t": "Keikyu.Kurihama.718T",
+	"id": "Keikyu.Kurihama.602T.Weekday",
+	"t": "Keikyu.Kurihama.602T",
 	"r": "Keikyu.Kurihama",
-	"n": "718T",
+	"n": "602T",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
-		"Keikyu.Main.Sengakuji"
+		"Keisei.NaritaSkyAccess.NaritaAirportTerminal1"
 	],
 	"ds": [
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"pt": [
-		"Keikyu.Main.718T.Weekday"
+		"Keikyu.Main.602T.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
@@ -965,7 +965,7 @@
 		"d": "09:14"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "09:15",
+		"a": "09:16",
 		"d": "09:16"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -1047,7 +1047,7 @@
 		"d": "09:27"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "09:28",
+		"a": "09:29",
 		"d": "09:29"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -1345,7 +1345,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "10:15",
-		"d": "10:16"
+		"d": "10:15"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "10:18"
@@ -1504,7 +1504,7 @@
 		"d": "10:51"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "10:52",
+		"a": "10:53",
 		"d": "10:53"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
@@ -1597,10 +1597,10 @@
 		"a": "11:17"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.810SH.Weekday",
-	"t": "Keikyu.Kurihama.810SH",
+	"id": "Keikyu.Kurihama.840SH.Weekday",
+	"t": "Keikyu.Kurihama.840SH",
 	"r": "Keikyu.Kurihama",
-	"n": "810SH",
+	"n": "840SH",
 	"y": "Keikyu.RapidLimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -1610,7 +1610,7 @@
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"pt": [
-		"Keikyu.Main.810SH.Weekday"
+		"Keikyu.Main.840SH.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
@@ -1782,14 +1782,14 @@
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "11:45",
-		"d": "11:46"
+		"d": "11:45"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
 		"a": "11:47",
 		"d": "11:47"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "11:50",
+		"a": "11:49",
 		"d": "11:58"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
@@ -1925,10 +1925,10 @@
 		"a": "12:17"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.932T.Weekday",
-	"t": "Keikyu.Kurihama.932T",
+	"id": "Keikyu.Kurihama.1030T.Weekday",
+	"t": "Keikyu.Kurihama.1030T",
 	"r": "Keikyu.Kurihama",
-	"n": "932T",
+	"n": "1030T",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -1938,22 +1938,22 @@
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"pt": [
-		"Keikyu.Main.932T.Weekday"
+		"Keikyu.Main.1030T.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "12:24"
+		"d": "12:23"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "12:25",
-		"d": "12:26"
+		"d": "12:25"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "12:27",
+		"a": "12:26",
 		"d": "12:27"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "12:30",
+		"a": "12:29",
 		"d": "12:38"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
@@ -1997,14 +1997,14 @@
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "12:32",
-		"d": "12:33"
+		"d": "12:32"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
 		"a": "12:34",
 		"d": "12:34"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "12:37"
+		"a": "12:36"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1186H.Weekday",
@@ -2024,7 +2024,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "12:44"
+		"d": "12:43"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "12:45",
@@ -2106,7 +2106,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "13:04"
+		"d": "13:03"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "13:05",
@@ -2188,7 +2188,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "13:24"
+		"d": "13:23"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "13:25",
@@ -2270,7 +2270,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "13:44"
+		"d": "13:43"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "13:45",
@@ -2286,14 +2286,14 @@
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "14:01",
-		"d": "14:01"
+		"d": "14:02"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
 		"a": "14:03",
-		"d": "14:03"
+		"d": "14:04"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "14:04",
+		"a": "14:05",
 		"d": "14:05"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
@@ -2352,7 +2352,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "14:04"
+		"d": "14:03"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "14:05",
@@ -2434,7 +2434,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "14:24"
+		"d": "14:23"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "14:25",
@@ -2449,11 +2449,11 @@
 		"d": "14:30"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "14:34",
+		"a": "14:33",
 		"d": "14:34"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "14:36",
+		"a": "14:35",
 		"d": "14:36"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
@@ -2532,11 +2532,11 @@
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "14:53",
-		"d": "14:54"
+		"d": "14:53"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
 		"a": "14:55",
-		"d": "14:56"
+		"d": "14:55"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "14:57",
@@ -2598,7 +2598,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "15:04"
+		"d": "15:03"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "15:05",
@@ -2680,7 +2680,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "15:24"
+		"d": "15:23"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "15:25",
@@ -2745,10 +2745,10 @@
 		"a": "15:36"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.1410H.Weekday",
-	"t": "Keikyu.Kurihama.1410H",
+	"id": "Keikyu.Kurihama.1440H.Weekday",
+	"t": "Keikyu.Kurihama.1440H",
 	"r": "Keikyu.Kurihama",
-	"n": "1410H",
+	"n": "1440H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -2758,11 +2758,11 @@
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"pt": [
-		"Keikyu.Main.1410H.Weekday"
+		"Keikyu.Main.1440H.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "15:44"
+		"d": "15:43"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "15:45",
@@ -2844,7 +2844,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "16:04"
+		"d": "16:03"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "16:05",
@@ -2934,7 +2934,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
 		"a": "16:26",
-		"d": "16:27"
+		"d": "16:26"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "16:29",
@@ -2953,7 +2953,7 @@
 		"d": "16:39"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "16:40",
+		"a": "16:41",
 		"d": "16:41"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -3012,14 +3012,14 @@
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "16:44",
-		"d": "16:45"
+		"d": "16:44"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
 		"a": "16:46",
 		"d": "16:46"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "16:49",
+		"a": "16:48",
 		"d": "16:50"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
@@ -3149,7 +3149,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "17:28",
-		"d": "17:28"
+		"d": "17:29"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "17:31"
@@ -3293,15 +3293,15 @@
 		"d": "17:59"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "18:00",
+		"a": "18:01",
 		"d": "18:01"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "18:02",
-		"d": "18:02"
+		"d": "18:03"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "18:04",
+		"a": "18:05",
 		"d": "18:05"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -3414,7 +3414,7 @@
 		"d": "18:22"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "18:23",
+		"a": "18:24",
 		"d": "18:24"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -3461,7 +3461,7 @@
 		"d": "18:31"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "18:32",
+		"a": "18:33",
 		"d": "18:33"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
@@ -3469,7 +3469,7 @@
 		"d": "18:35"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
-		"a": "18:37"
+		"a": "18:38"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1656H.Weekday",
@@ -3547,7 +3547,7 @@
 		"d": "18:42"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "18:43",
+		"a": "18:44",
 		"d": "18:44"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -4046,10 +4046,10 @@
 		"a": "19:32"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.1714T.Weekday",
-	"t": "Keikyu.Kurihama.1714T",
+	"id": "Keikyu.Kurihama.1748T.Weekday",
+	"t": "Keikyu.Kurihama.1748T",
 	"r": "Keikyu.Kurihama",
-	"n": "1714T",
+	"n": "1748T",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -4059,7 +4059,7 @@
 		"Keikyu.Kurihama.KeikyuKurihama"
 	],
 	"pt": [
-		"Keikyu.Main.1714T.Weekday"
+		"Keikyu.Main.1748T.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
@@ -4280,11 +4280,11 @@
 		"d": "20:06"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "20:10",
+		"a": "20:09",
 		"d": "20:10"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "20:12",
+		"a": "20:11",
 		"d": "20:12"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
@@ -4293,7 +4293,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "20:15",
-		"d": "20:16"
+		"d": "20:15"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "20:18"
@@ -4319,12 +4319,12 @@
 		"d": "20:04"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "20:05",
-		"d": "20:05"
+		"a": "20:06",
+		"d": "20:06"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
 		"a": "20:07",
-		"d": "20:07"
+		"d": "20:08"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "20:10",
@@ -4370,12 +4370,12 @@
 		"d": "20:06"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "20:07",
-		"d": "20:07"
+		"a": "20:08",
+		"d": "20:08"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
 		"a": "20:09",
-		"d": "20:09"
+		"d": "20:10"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "20:12"
@@ -4388,10 +4388,10 @@
 		"zh-Hant": "晚上翼 4號"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.1810H.Weekday",
-	"t": "Keikyu.Kurihama.1810H",
+	"id": "Keikyu.Kurihama.1840H.Weekday",
+	"t": "Keikyu.Kurihama.1840H",
 	"r": "Keikyu.Kurihama",
-	"n": "1810H",
+	"n": "1840H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -4401,19 +4401,19 @@
 		"Keikyu.Kurihama.KeikyuKurihama"
 	],
 	"pt": [
-		"Keikyu.Main.1810H.Weekday"
+		"Keikyu.Main.1840H.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
 		"d": "20:14"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "20:15",
-		"d": "20:15"
+		"a": "20:16",
+		"d": "20:16"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
 		"a": "20:17",
-		"d": "20:17"
+		"d": "20:18"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "20:20"
@@ -4439,12 +4439,12 @@
 		"d": "20:16"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "20:17",
-		"d": "20:17"
+		"a": "20:18",
+		"d": "20:18"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
 		"a": "20:19",
-		"d": "20:19"
+		"d": "20:20"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "20:22",
@@ -4670,23 +4670,23 @@
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "20:50",
-		"d": "20:54"
+		"d": "20:55"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "20:57",
+		"a": "20:58",
 		"d": "20:58"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "20:59",
+		"a": "21:00",
 		"d": "21:00"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "21:01",
-		"d": "21:01"
+		"d": "21:02"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "21:03",
-		"d": "21:03"
+		"a": "21:04",
+		"d": "21:04"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "21:06"
@@ -5041,35 +5041,35 @@
 		"a": "21:38"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.1934SH.Weekday",
-	"t": "Keikyu.Kurihama.1934SH",
+	"id": "Keikyu.Kurihama.2082A.Weekday",
+	"t": "Keikyu.Kurihama.2082A",
 	"r": "Keikyu.Kurihama",
-	"n": "1934SH",
-	"y": "Keikyu.RapidLimitedExpress",
+	"n": "2082A",
+	"y": "Keikyu.EveningWing",
 	"d": "Outbound",
 	"os": [
-		"Hokuso.Hokuso.InzaiMakinohara"
+		"Keikyu.Main.Shinagawa"
 	],
 	"ds": [
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"pt": [
-		"Keikyu.Main.1934SH.Weekday"
+		"Keikyu.Main.2082A.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "21:42"
+		"d": "21:40"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "21:44",
-		"d": "21:44"
+		"a": "21:41",
+		"d": "21:42"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "21:45",
-		"d": "21:46"
+		"a": "21:43",
+		"d": "21:43"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "21:48",
+		"a": "21:46",
 		"d": "21:50"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
@@ -5090,13 +5090,51 @@
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "22:02"
+	}],
+	"nm": [{
+		"ja": "イブニング・ウィング 14号",
+		"en": "Evening Wing 14",
+		"ko": "저녁 윙 14",
+		"zh-Hans": "晚上翼 14号",
+		"zh-Hant": "晚上翼 14號"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.2002A.Weekday",
-	"t": "Keikyu.Kurihama.2002A",
+	"id": "Keikyu.Kurihama.1934SH.Weekday",
+	"t": "Keikyu.Kurihama.1934SH",
 	"r": "Keikyu.Kurihama",
-	"n": "2002A",
+	"n": "1934SH",
 	"y": "Keikyu.RapidLimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Hokuso.Hokuso.InzaiMakinohara"
+	],
+	"ds": [
+		"Keikyu.Kurihama.KeikyuKurihama"
+	],
+	"pt": [
+		"Keikyu.Main.1934SH.Weekday"
+	],
+	"tt": [{
+		"s": "Keikyu.Kurihama.Horinouchi",
+		"d": "21:42"
+	}, {
+		"s": "Keikyu.Kurihama.Shinotsu",
+		"a": "21:43",
+		"d": "21:44"
+	}, {
+		"s": "Keikyu.Kurihama.Kitakurihama",
+		"a": "21:45",
+		"d": "21:45"
+	}, {
+		"s": "Keikyu.Kurihama.KeikyuKurihama",
+		"a": "21:48"
+	}]
+}, {
+	"id": "Keikyu.Kurihama.2002C.Weekday",
+	"t": "Keikyu.Kurihama.2002C",
+	"r": "Keikyu.Kurihama",
+	"n": "2002C",
+	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
 		"Keikyu.Main.Shinagawa"
@@ -5105,22 +5143,22 @@
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"pt": [
-		"Keikyu.Main.2002A.Weekday"
+		"Keikyu.Main.2002C.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
 		"d": "21:52"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "21:53",
-		"d": "21:53"
+		"a": "21:54",
+		"d": "21:54"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "21:54",
-		"d": "21:55"
+		"a": "21:55",
+		"d": "21:56"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "21:57",
+		"a": "21:58",
 		"d": "22:02"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
@@ -5136,11 +5174,69 @@
 		"d": "22:09"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "22:10",
+		"a": "22:11",
 		"d": "22:11"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "22:13"
+	}]
+}, {
+	"id": "Keikyu.Kurihama.2184A.Weekday",
+	"t": "Keikyu.Kurihama.2184A",
+	"r": "Keikyu.Kurihama",
+	"n": "2184A",
+	"y": "Keikyu.EveningWing",
+	"d": "Outbound",
+	"os": [
+		"Keikyu.Main.Shinagawa"
+	],
+	"ds": [
+		"Keikyu.Kurihama.Misakiguchi"
+	],
+	"pt": [
+		"Keikyu.Main.2184A.Weekday"
+	],
+	"tt": [{
+		"s": "Keikyu.Kurihama.Horinouchi",
+		"d": "21:59"
+	}, {
+		"s": "Keikyu.Kurihama.Shinotsu",
+		"a": "22:01",
+		"d": "22:01"
+	}, {
+		"s": "Keikyu.Kurihama.Kitakurihama",
+		"a": "22:02",
+		"d": "22:03"
+	}, {
+		"s": "Keikyu.Kurihama.KeikyuKurihama",
+		"a": "22:05",
+		"d": "22:10"
+	}, {
+		"s": "Keikyu.Kurihama.YrpNobi",
+		"a": "22:14",
+		"d": "22:14"
+	}, {
+		"s": "Keikyu.Kurihama.KeikyuNagasawa",
+		"a": "22:16",
+		"d": "22:16"
+	}, {
+		"s": "Keikyu.Kurihama.Tsukuihama",
+		"a": "22:17",
+		"d": "22:18"
+	}, {
+		"s": "Keikyu.Kurihama.Miurakaigan",
+		"a": "22:19",
+		"d": "22:20"
+	}, {
+		"s": "Keikyu.Kurihama.Misakiguchi",
+		"a": "22:22"
+	}],
+	"nm": [{
+		"ja": "イブニング・ウィング 16号",
+		"en": "Evening Wing 16",
+		"ko": "저녁 윙 16",
+		"zh-Hans": "晚上翼 16号",
+		"zh-Hant": "晚上翼 16號"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1904SH.Weekday",
@@ -5153,7 +5249,7 @@
 		"Hokuso.Hokuso.InzaiMakinohara"
 	],
 	"ds": [
-		"Keikyu.Kurihama.Misakiguchi"
+		"Keikyu.Kurihama.KeikyuKurihama"
 	],
 	"pt": [
 		"Keikyu.Main.1904SH.Weekday"
@@ -5171,34 +5267,14 @@
 		"d": "22:05"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "22:08",
-		"d": "22:10"
-	}, {
-		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "22:13",
-		"d": "22:14"
-	}, {
-		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "22:15",
-		"d": "22:16"
-	}, {
-		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "22:17",
-		"d": "22:17"
-	}, {
-		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "22:19",
-		"d": "22:19"
-	}, {
-		"s": "Keikyu.Kurihama.Misakiguchi",
-		"a": "22:22"
+		"a": "22:08"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.2104A.Weekday",
-	"t": "Keikyu.Kurihama.2104A",
+	"id": "Keikyu.Kurihama.2104C.Weekday",
+	"t": "Keikyu.Kurihama.2104C",
 	"r": "Keikyu.Kurihama",
-	"n": "2104A",
-	"y": "Keikyu.RapidLimitedExpress",
+	"n": "2104C",
+	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
 		"Keikyu.Main.Shinagawa"
@@ -5207,38 +5283,38 @@
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"pt": [
-		"Keikyu.Main.2104A.Weekday"
+		"Keikyu.Main.2104C.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "22:11"
+		"d": "22:13"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "22:12",
-		"d": "22:12"
+		"a": "22:15",
+		"d": "22:15"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "22:14",
-		"d": "22:14"
+		"a": "22:16",
+		"d": "22:17"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "22:17",
-		"d": "22:19"
+		"a": "22:19",
+		"d": "22:20"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "22:22",
-		"d": "22:23"
+		"a": "22:23",
+		"d": "22:24"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "22:24",
-		"d": "22:25"
-	}, {
-		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "22:26",
+		"a": "22:25",
 		"d": "22:26"
 	}, {
+		"s": "Keikyu.Kurihama.Tsukuihama",
+		"a": "22:27",
+		"d": "22:27"
+	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "22:28",
+		"a": "22:29",
 		"d": "22:31"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -5286,7 +5362,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "22:35",
-		"d": "22:35"
+		"d": "22:36"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "22:37",
@@ -5296,11 +5372,11 @@
 		"a": "22:40"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.2106A.Weekday",
-	"t": "Keikyu.Kurihama.2106A",
+	"id": "Keikyu.Kurihama.2106C.Weekday",
+	"t": "Keikyu.Kurihama.2106C",
 	"r": "Keikyu.Kurihama",
-	"n": "2106A",
-	"y": "Keikyu.RapidLimitedExpress",
+	"n": "2106C",
+	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
 		"Keikyu.Main.Shinagawa"
@@ -5309,22 +5385,22 @@
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"pt": [
-		"Keikyu.Main.2106A.Weekday"
+		"Keikyu.Main.2106C.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "22:30"
+		"d": "22:31"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "22:31",
-		"d": "22:32"
-	}, {
-		"s": "Keikyu.Kurihama.Kitakurihama",
 		"a": "22:33",
 		"d": "22:33"
 	}, {
+		"s": "Keikyu.Kurihama.Kitakurihama",
+		"a": "22:34",
+		"d": "22:35"
+	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "22:36",
+		"a": "22:37",
 		"d": "22:40"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
@@ -5477,6 +5553,37 @@
 		"d": "23:19"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
+		"a": "23:21"
+	}]
+}, {
+	"id": "Keikyu.Kurihama.2154.Weekday",
+	"t": "Keikyu.Kurihama.2154",
+	"r": "Keikyu.Kurihama",
+	"n": "2154",
+	"y": "Keikyu.Local",
+	"d": "Outbound",
+	"os": [
+		"Keikyu.Main.Shinagawa"
+	],
+	"ds": [
+		"Keikyu.Kurihama.KeikyuKurihama"
+	],
+	"pt": [
+		"Keikyu.Main.2154.Weekday"
+	],
+	"tt": [{
+		"s": "Keikyu.Kurihama.Horinouchi",
+		"d": "23:15"
+	}, {
+		"s": "Keikyu.Kurihama.Shinotsu",
+		"a": "23:16",
+		"d": "23:16"
+	}, {
+		"s": "Keikyu.Kurihama.Kitakurihama",
+		"a": "23:18",
+		"d": "23:18"
+	}, {
+		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "23:21"
 	}]
 }, {
@@ -5838,7 +5945,7 @@
 		"d": "06:08"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "06:09",
+		"a": "06:10",
 		"d": "06:10"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -5863,11 +5970,11 @@
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "06:34",
-		"d": "06:35"
+		"d": "06:34"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
 		"a": "06:36",
-		"d": "06:37"
+		"d": "06:36"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "06:38",
@@ -5906,7 +6013,7 @@
 		"d": "10:23"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "10:24",
+		"a": "10:25",
 		"d": "10:25"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
@@ -5971,22 +6078,22 @@
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "15:01",
-		"d": "15:01"
+		"d": "15:02"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
 		"a": "15:03",
-		"d": "15:03"
+		"d": "15:04"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "15:04",
+		"a": "15:05",
 		"d": "15:05"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "15:07",
-		"d": "15:10"
+		"d": "15:09"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
-		"a": "15:13"
+		"a": "15:12"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1560H.Weekday",
@@ -6003,26 +6110,26 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"d": "15:20"
+		"d": "15:21"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "15:23",
-		"d": "15:23"
+		"a": "15:24",
+		"d": "15:24"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "15:25",
-		"d": "15:25"
+		"a": "15:26",
+		"d": "15:26"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "15:27",
-		"d": "15:27"
+		"d": "15:28"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "15:29",
+		"a": "15:30",
 		"d": "15:31"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
-		"a": "15:34"
+		"a": "15:33"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1566H.Weekday",
@@ -6051,7 +6158,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "15:51",
-		"d": "15:51"
+		"d": "15:52"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "15:53",
@@ -6147,26 +6254,26 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"d": "16:57"
+		"d": "16:59"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "17:01",
-		"d": "17:01"
+		"a": "17:02",
+		"d": "17:02"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "17:03",
-		"d": "17:03"
-	}, {
-		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "17:04",
 		"d": "17:04"
 	}, {
+		"s": "Keikyu.Kurihama.Tsukuihama",
+		"a": "17:05",
+		"d": "17:06"
+	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "17:06",
-		"d": "17:07"
+		"a": "17:08",
+		"d": "17:08"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
-		"a": "17:09"
+		"a": "17:10"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1750H.Weekday",
@@ -6234,7 +6341,7 @@
 		"d": "18:15"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "18:16",
+		"a": "18:17",
 		"d": "18:17"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -7165,10 +7272,10 @@
 		"a": "09:13"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.919T.Weekday",
-	"t": "Keikyu.Kurihama.919T",
+	"id": "Keikyu.Kurihama.903T.Weekday",
+	"t": "Keikyu.Kurihama.903T",
 	"r": "Keikyu.Kurihama",
-	"n": "919T",
+	"n": "903T",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -7550,14 +7657,14 @@
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "11:11",
-		"d": "11:12"
+		"d": "11:13"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
 		"a": "11:15",
-		"d": "11:15"
+		"d": "11:16"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "11:16",
+		"a": "11:17",
 		"d": "11:17"
 	}, {
 		"s": "Keikyu.Kurihama.Horinouchi",
@@ -7651,10 +7758,10 @@
 		"a": "11:58"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.1111H.Weekday",
-	"t": "Keikyu.Kurihama.1111H",
+	"id": "Keikyu.Kurihama.1141H.Weekday",
+	"t": "Keikyu.Kurihama.1141H",
 	"r": "Keikyu.Kurihama",
-	"n": "1111H",
+	"n": "1141H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -7664,7 +7771,7 @@
 		"Keisei.Oshiage.Aoto"
 	],
 	"nt": [
-		"Keikyu.Main.1111H.Weekday.2"
+		"Keikyu.Main.1141H.Weekday.2"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -7855,10 +7962,10 @@
 		"a": "13:18"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.1333T.Weekday",
-	"t": "Keikyu.Kurihama.1333T",
+	"id": "Keikyu.Kurihama.1331T.Weekday",
+	"t": "Keikyu.Kurihama.1331T",
 	"r": "Keikyu.Kurihama",
-	"n": "1333T",
+	"n": "1331T",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -7868,7 +7975,7 @@
 		"Keisei.Main.KeiseiTakasago"
 	],
 	"nt": [
-		"Keikyu.Main.1333T.Weekday.2"
+		"Keikyu.Main.1331T.Weekday.2"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -7978,11 +8085,11 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "13:55",
-		"d": "13:55"
+		"d": "13:56"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "13:57",
-		"d": "13:57"
+		"d": "13:58"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
 		"a": "13:59",
@@ -8128,7 +8235,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "14:53",
-		"d": "14:54"
+		"d": "14:53"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "14:56",
@@ -8179,7 +8286,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "15:01",
-		"d": "15:01"
+		"d": "15:02"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "15:04",
@@ -8269,22 +8376,22 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "15:21",
-		"d": "15:22"
+		"d": "15:21"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "15:23",
-		"d": "15:24"
+		"d": "15:23"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "15:25",
-		"d": "15:25"
+		"a": "15:24",
+		"d": "15:26"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "15:27",
+		"a": "15:28",
 		"d": "15:28"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "15:30",
+		"a": "15:31",
 		"d": "15:32"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
@@ -8554,10 +8661,10 @@
 		"a": "16:32"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.1611H.Weekday",
-	"t": "Keikyu.Kurihama.1611H",
+	"id": "Keikyu.Kurihama.1641H.Weekday",
+	"t": "Keikyu.Kurihama.1641H",
 	"r": "Keikyu.Kurihama",
-	"n": "1611H",
+	"n": "1641H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -8567,7 +8674,7 @@
 		"Keisei.Oshiage.Aoto"
 	],
 	"nt": [
-		"Keikyu.Main.1611H.Weekday.2"
+		"Keikyu.Main.1641H.Weekday.2"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -8724,26 +8831,26 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
-		"d": "16:52"
+		"d": "16:53"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "16:54",
-		"d": "16:55"
+		"a": "16:56",
+		"d": "16:56"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "16:56",
-		"d": "16:57"
+		"a": "16:58",
+		"d": "16:58"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "16:58",
-		"d": "16:59"
+		"a": "16:59",
+		"d": "17:00"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "17:01",
-		"d": "17:01"
+		"a": "17:02",
+		"d": "17:02"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "17:04",
+		"a": "17:05",
 		"d": "17:08"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
@@ -9027,22 +9134,22 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
-		"d": "17:50"
+		"d": "17:51"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "17:52",
+		"a": "17:53",
 		"d": "17:53"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "17:54",
+		"a": "17:55",
 		"d": "17:55"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "17:56",
-		"d": "17:56"
+		"a": "17:57",
+		"d": "17:57"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "17:58",
+		"a": "17:59",
 		"d": "17:59"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
@@ -9223,11 +9330,11 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "18:43",
-		"d": "18:43"
+		"d": "18:44"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "18:45",
-		"d": "18:45"
+		"d": "18:46"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
 		"a": "18:47",
@@ -9238,7 +9345,7 @@
 		"d": "18:50"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "18:52",
+		"a": "18:53",
 		"d": "18:57"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
@@ -9592,7 +9699,7 @@
 		"d": "20:00"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "20:03"
+		"a": "20:02"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.2007A.Weekday",
@@ -9852,23 +9959,23 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
-		"d": "20:49"
+		"d": "20:50"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "20:51",
-		"d": "20:51"
+		"a": "20:52",
+		"d": "20:52"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "20:53",
-		"d": "20:53"
+		"a": "20:54",
+		"d": "20:54"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "20:55",
-		"d": "20:55"
+		"a": "20:56",
+		"d": "20:56"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "20:57",
-		"d": "20:59"
+		"a": "20:58",
+		"d": "20:58"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "21:01",
@@ -9968,7 +10075,7 @@
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"ds": [
-		"Keisei.Oshiage.Aoto"
+		"Keisei.Main.KeiseiTakasago"
 	],
 	"nt": [
 		"Keikyu.Main.2171H.Weekday.2"
@@ -10172,22 +10279,22 @@
 		"d": "22:20"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "22:22",
-		"d": "22:22"
+		"a": "22:23",
+		"d": "22:23"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "22:24",
-		"d": "22:24"
+		"d": "22:25"
 	}, {
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"a": "22:25"
+		"a": "22:26"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.2235H.Weekday",
-	"t": "Keikyu.Kurihama.2235H",
+	"id": "Keikyu.Kurihama.2283A.Weekday",
+	"t": "Keikyu.Kurihama.2283A",
 	"r": "Keikyu.Kurihama",
-	"n": "2235H",
-	"y": "Keikyu.LimitedExpress",
+	"n": "2283A",
+	"y": "Keikyu.RapidLimitedExpress",
 	"d": "Inbound",
 	"os": [
 		"Keikyu.Kurihama.Misakiguchi"
@@ -10197,26 +10304,26 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
-		"d": "22:14"
+		"d": "22:15"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "22:16",
-		"d": "22:16"
-	}, {
-		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "22:18",
+		"a": "22:17",
 		"d": "22:18"
 	}, {
-		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "22:20",
+		"s": "Keikyu.Kurihama.Tsukuihama",
+		"a": "22:19",
 		"d": "22:20"
 	}, {
+		"s": "Keikyu.Kurihama.KeikyuNagasawa",
+		"a": "22:21",
+		"d": "22:21"
+	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "22:22",
-		"d": "22:23"
+		"a": "22:23",
+		"d": "22:24"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "22:25"
+		"a": "22:27"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.2283H.Weekday",
@@ -11814,10 +11921,10 @@
 		"a": "18:41"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.2015T.Weekday",
-	"t": "Keikyu.Kurihama.2015T",
+	"id": "Keikyu.Kurihama.2049T.Weekday",
+	"t": "Keikyu.Kurihama.2049T",
 	"r": "Keikyu.Kurihama",
-	"n": "2015T",
+	"n": "2049T",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -11827,7 +11934,7 @@
 		"Hokuso.Hokuso.ImbaNihonIdai"
 	],
 	"nt": [
-		"Keikyu.Main.2015T.Weekday.2"
+		"Keikyu.Main.2049T.Weekday.2"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
@@ -11907,10 +12014,10 @@
 		"a": "21:24"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.2123H.Weekday",
-	"t": "Keikyu.Kurihama.2123H",
+	"id": "Keikyu.Kurihama.2135H.Weekday",
+	"t": "Keikyu.Kurihama.2135H",
 	"r": "Keikyu.Kurihama",
-	"n": "2123H",
+	"n": "2135H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -11920,7 +12027,7 @@
 		"Keikyu.Main.Shinagawa"
 	],
 	"nt": [
-		"Keikyu.Main.2123H.Weekday"
+		"Keikyu.Main.2135H.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
@@ -11993,7 +12100,7 @@
 		"d": "05:19"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "05:21",
+		"a": "05:20",
 		"d": "05:21"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
@@ -12160,7 +12267,7 @@
 		"d": "06:31"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "06:32",
+		"a": "06:33",
 		"d": "06:33"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -12251,11 +12358,11 @@
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "07:04",
-		"d": "07:05"
+		"d": "07:04"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
 		"a": "07:06",
-		"d": "07:07"
+		"d": "07:06"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "07:08",
@@ -12364,7 +12471,7 @@
 		"d": "07:34"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "07:35",
+		"a": "07:36",
 		"d": "07:36"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -12400,7 +12507,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "07:41",
-		"d": "07:42"
+		"d": "07:41"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "07:45",
@@ -12412,7 +12519,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "07:48",
-		"d": "07:49"
+		"d": "07:48"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "07:50",
@@ -12470,10 +12577,10 @@
 		"a": "08:04"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.614H.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.614H",
+	"id": "Keikyu.Kurihama.614HX.SaturdayHoliday",
+	"t": "Keikyu.Kurihama.614HX",
 	"r": "Keikyu.Kurihama",
-	"n": "614H",
+	"n": "614HX",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -12483,7 +12590,7 @@
 		"Keikyu.Kurihama.KeikyuKurihama"
 	],
 	"pt": [
-		"Keikyu.Main.614H.SaturdayHoliday"
+		"Keikyu.Main.614HX.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
@@ -12518,14 +12625,14 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "08:03"
+		"d": "08:04"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "08:05",
 		"d": "08:05"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "08:06",
+		"a": "08:07",
 		"d": "08:07"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
@@ -12545,7 +12652,7 @@
 		"d": "08:18"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "08:19",
+		"a": "08:20",
 		"d": "08:20"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -12627,7 +12734,7 @@
 		"d": "08:45"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "08:46",
+		"a": "08:47",
 		"d": "08:47"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -12702,14 +12809,14 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "08:51"
+		"d": "08:50"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "08:52",
 		"d": "08:52"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "08:54",
+		"a": "08:53",
 		"d": "08:54"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
@@ -13066,7 +13173,7 @@
 		"d": "10:13"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "10:14",
+		"a": "10:15",
 		"d": "10:15"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -13155,20 +13262,20 @@
 		"a": "10:42"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.874H.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.874H",
+	"id": "Keikyu.Kurihama.936T.SaturdayHoliday",
+	"t": "Keikyu.Kurihama.936T",
 	"r": "Keikyu.Kurihama",
-	"n": "874H",
+	"n": "936T",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
-		"Keisei.Main.KeiseiTakasago"
+		"Keisei.Oshiage.Aoto"
 	],
 	"ds": [
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"pt": [
-		"Keikyu.Main.874H.SaturdayHoliday"
+		"Keikyu.Main.936T.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
@@ -13281,7 +13388,7 @@
 		"d": "11:04"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "11:05",
+		"a": "11:06",
 		"d": "11:06"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -13435,7 +13542,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "11:42",
-		"d": "11:42"
+		"d": "11:43"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "11:45"
@@ -13485,7 +13592,7 @@
 		"d": "11:49"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "11:50",
+		"a": "11:51",
 		"d": "11:51"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -13537,7 +13644,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "12:02",
-		"d": "12:02"
+		"d": "12:03"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "12:05"
@@ -13587,7 +13694,7 @@
 		"d": "12:09"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "12:10",
+		"a": "12:11",
 		"d": "12:11"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -13611,7 +13718,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "12:04"
+		"d": "12:03"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "12:05",
@@ -13639,7 +13746,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "12:22",
-		"d": "12:22"
+		"d": "12:23"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "12:25"
@@ -13693,7 +13800,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "12:24"
+		"d": "12:23"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "12:25",
@@ -13721,7 +13828,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "12:42",
-		"d": "12:42"
+		"d": "12:43"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "12:45"
@@ -13771,7 +13878,7 @@
 		"d": "12:49"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "12:50",
+		"a": "12:51",
 		"d": "12:51"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -13795,7 +13902,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "12:44"
+		"d": "12:43"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "12:45",
@@ -13823,7 +13930,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "13:02",
-		"d": "13:02"
+		"d": "13:03"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "13:05"
@@ -13877,7 +13984,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "13:04"
+		"d": "13:03"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "13:05",
@@ -13905,7 +14012,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "13:22",
-		"d": "13:22"
+		"d": "13:23"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "13:25"
@@ -13955,7 +14062,7 @@
 		"d": "13:29"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "13:30",
+		"a": "13:31",
 		"d": "13:31"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -13979,7 +14086,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "13:24"
+		"d": "13:23"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "13:25",
@@ -14007,7 +14114,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "13:42",
-		"d": "13:42"
+		"d": "13:43"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "13:45"
@@ -14057,7 +14164,7 @@
 		"d": "13:49"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "13:50",
+		"a": "13:51",
 		"d": "13:51"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -14081,7 +14188,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "13:44"
+		"d": "13:43"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "13:45",
@@ -14109,7 +14216,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "14:02",
-		"d": "14:02"
+		"d": "14:03"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "14:05"
@@ -14159,7 +14266,7 @@
 		"d": "14:09"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "14:10",
+		"a": "14:11",
 		"d": "14:11"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -14183,7 +14290,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "14:04"
+		"d": "14:03"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "14:05",
@@ -14211,7 +14318,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "14:22",
-		"d": "14:22"
+		"d": "14:23"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "14:25"
@@ -14261,7 +14368,7 @@
 		"d": "14:29"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "14:30",
+		"a": "14:31",
 		"d": "14:31"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -14285,7 +14392,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "14:24"
+		"d": "14:23"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "14:25",
@@ -14313,7 +14420,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "14:42",
-		"d": "14:42"
+		"d": "14:43"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "14:45"
@@ -14363,7 +14470,7 @@
 		"d": "14:49"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "14:50",
+		"a": "14:51",
 		"d": "14:51"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -14377,7 +14484,7 @@
 	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
-		"Keisei.Main.KeiseiTakasago"
+		"Keisei.Oshiage.Aoto"
 	],
 	"ds": [
 		"Keikyu.Kurihama.Misakiguchi"
@@ -14387,7 +14494,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "14:44"
+		"d": "14:43"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "14:45",
@@ -14415,7 +14522,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "15:02",
-		"d": "15:02"
+		"d": "15:03"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "15:05"
@@ -14465,7 +14572,7 @@
 		"d": "15:09"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "15:10",
+		"a": "15:11",
 		"d": "15:11"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -14489,7 +14596,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "15:04"
+		"d": "15:03"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "15:05",
@@ -14517,7 +14624,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "15:22",
-		"d": "15:22"
+		"d": "15:23"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "15:25"
@@ -14567,7 +14674,7 @@
 		"d": "15:29"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "15:30",
+		"a": "15:31",
 		"d": "15:31"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -14591,7 +14698,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "15:24"
+		"d": "15:23"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "15:25",
@@ -14649,7 +14756,7 @@
 		"d": "15:49"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "15:50",
+		"a": "15:51",
 		"d": "15:51"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -14673,7 +14780,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "15:44"
+		"d": "15:43"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "15:45",
@@ -14701,7 +14808,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "16:02",
-		"d": "16:02"
+		"d": "16:03"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "16:05"
@@ -14751,7 +14858,7 @@
 		"d": "16:09"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "16:10",
+		"a": "16:11",
 		"d": "16:11"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -14775,7 +14882,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "16:04"
+		"d": "16:03"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "16:05",
@@ -14833,7 +14940,7 @@
 		"d": "16:29"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "16:30",
+		"a": "16:31",
 		"d": "16:31"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -14857,7 +14964,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "16:24"
+		"d": "16:23"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "16:25",
@@ -14885,7 +14992,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "16:42",
-		"d": "16:42"
+		"d": "16:43"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "16:45"
@@ -14935,7 +15042,7 @@
 		"d": "16:49"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "16:50",
+		"a": "16:51",
 		"d": "16:51"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -14959,7 +15066,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "16:44"
+		"d": "16:43"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "16:45",
@@ -14987,7 +15094,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "17:02",
-		"d": "17:02"
+		"d": "17:03"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "17:05"
@@ -15037,7 +15144,7 @@
 		"d": "17:09"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "17:10",
+		"a": "17:11",
 		"d": "17:11"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -15061,7 +15168,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "17:04"
+		"d": "17:03"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "17:05",
@@ -15119,7 +15226,7 @@
 		"d": "17:29"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "17:30",
+		"a": "17:31",
 		"d": "17:31"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -15143,7 +15250,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "17:24"
+		"d": "17:23"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "17:25",
@@ -15171,7 +15278,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "17:42",
-		"d": "17:42"
+		"d": "17:43"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "17:45"
@@ -15225,7 +15332,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "17:44"
+		"d": "17:43"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "17:45",
@@ -15253,7 +15360,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "18:02",
-		"d": "18:02"
+		"d": "18:03"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "18:05"
@@ -15303,7 +15410,7 @@
 		"d": "18:09"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "18:10",
+		"a": "18:11",
 		"d": "18:11"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -15327,7 +15434,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "18:04"
+		"d": "18:03"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "18:05",
@@ -15354,7 +15461,7 @@
 		"d": "18:19"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "18:20",
+		"a": "18:21",
 		"d": "18:21"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -15405,7 +15512,7 @@
 		"d": "18:29"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "18:30",
+		"a": "18:31",
 		"d": "18:31"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -15429,7 +15536,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "18:24"
+		"d": "18:23"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "18:25",
@@ -15456,7 +15563,7 @@
 		"d": "18:39"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "18:40",
+		"a": "18:41",
 		"d": "18:41"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -15507,7 +15614,7 @@
 		"d": "18:49"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "18:50",
+		"a": "18:51",
 		"d": "18:51"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -15589,7 +15696,7 @@
 		"d": "19:08"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "19:09",
+		"a": "19:10",
 		"d": "19:10"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -15606,7 +15713,7 @@
 		"Keisei.Oshiage.Aoto"
 	],
 	"ds": [
-		"Keikyu.Kurihama.KeikyuKurihama"
+		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"pt": [
 		"Keikyu.Main.1774H.SaturdayHoliday"
@@ -15624,7 +15731,27 @@
 		"d": "19:07"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "19:09"
+		"a": "19:09",
+		"d": "19:17"
+	}, {
+		"s": "Keikyu.Kurihama.YrpNobi",
+		"a": "19:21",
+		"d": "19:21"
+	}, {
+		"s": "Keikyu.Kurihama.KeikyuNagasawa",
+		"a": "19:23",
+		"d": "19:23"
+	}, {
+		"s": "Keikyu.Kurihama.Tsukuihama",
+		"a": "19:24",
+		"d": "19:25"
+	}, {
+		"s": "Keikyu.Kurihama.Miurakaigan",
+		"a": "19:26",
+		"d": "19:27"
+	}, {
+		"s": "Keikyu.Kurihama.Misakiguchi",
+		"a": "19:29"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1812A.SaturdayHoliday",
@@ -15637,7 +15764,7 @@
 		"Keikyu.Main.Sengakuji"
 	],
 	"ds": [
-		"Keikyu.Kurihama.Misakiguchi"
+		"Keikyu.Kurihama.KeikyuKurihama"
 	],
 	"pt": [
 		"Keikyu.Main.1812A.SaturdayHoliday"
@@ -15655,27 +15782,7 @@
 		"d": "19:14"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "19:16",
-		"d": "19:20"
-	}, {
-		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "19:23",
-		"d": "19:23"
-	}, {
-		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "19:25",
-		"d": "19:25"
-	}, {
-		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "19:27",
-		"d": "19:27"
-	}, {
-		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "19:29",
-		"d": "19:29"
-	}, {
-		"s": "Keikyu.Kurihama.Misakiguchi",
-		"a": "19:32"
+		"a": "19:16"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1740H.SaturdayHoliday",
@@ -15688,7 +15795,7 @@
 		"Keisei.Main.KeiseiTakasago"
 	],
 	"ds": [
-		"Keikyu.Kurihama.KeikyuKurihama"
+		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"pt": [
 		"Keikyu.Main.1740H.SaturdayHoliday"
@@ -15706,7 +15813,27 @@
 		"d": "19:26"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "19:29"
+		"a": "19:29",
+		"d": "19:37"
+	}, {
+		"s": "Keikyu.Kurihama.YrpNobi",
+		"a": "19:40",
+		"d": "19:41"
+	}, {
+		"s": "Keikyu.Kurihama.KeikyuNagasawa",
+		"a": "19:42",
+		"d": "19:43"
+	}, {
+		"s": "Keikyu.Kurihama.Tsukuihama",
+		"a": "19:44",
+		"d": "19:44"
+	}, {
+		"s": "Keikyu.Kurihama.Miurakaigan",
+		"a": "19:46",
+		"d": "19:46"
+	}, {
+		"s": "Keikyu.Kurihama.Misakiguchi",
+		"a": "19:49"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1814A.SaturdayHoliday",
@@ -15719,7 +15846,7 @@
 		"Keikyu.Main.Sengakuji"
 	],
 	"ds": [
-		"Keikyu.Kurihama.Misakiguchi"
+		"Keikyu.Kurihama.KeikyuKurihama"
 	],
 	"pt": [
 		"Keikyu.Main.1814A.SaturdayHoliday"
@@ -15737,27 +15864,7 @@
 		"d": "19:34"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "19:36",
-		"d": "19:40"
-	}, {
-		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "19:43",
-		"d": "19:43"
-	}, {
-		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "19:45",
-		"d": "19:45"
-	}, {
-		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "19:47",
-		"d": "19:47"
-	}, {
-		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "19:49",
-		"d": "19:49"
-	}, {
-		"s": "Keikyu.Kurihama.Misakiguchi",
-		"a": "19:52"
+		"a": "19:36"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1878H.SaturdayHoliday",
@@ -15820,26 +15927,26 @@
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "19:56",
-		"d": "20:00"
+		"d": "19:59"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "20:03",
-		"d": "20:03"
+		"a": "20:02",
+		"d": "20:02"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "20:05",
-		"d": "20:05"
+		"a": "20:04",
+		"d": "20:04"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "20:07",
-		"d": "20:07"
+		"a": "20:06",
+		"d": "20:06"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "20:09",
-		"d": "20:09"
+		"a": "20:08",
+		"d": "20:08"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
-		"a": "20:12"
+		"a": "20:11"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1884H.SaturdayHoliday",
@@ -15972,7 +16079,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"d": "20:34"
+		"d": "20:33"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "20:35",
@@ -16046,7 +16153,7 @@
 		"d": "20:57"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "20:58",
+		"a": "20:59",
 		"d": "20:59"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
@@ -16345,10 +16452,10 @@
 		"a": "22:09"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.2112C.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.2112C",
+	"id": "Keikyu.Kurihama.2178H.SaturdayHoliday",
+	"t": "Keikyu.Kurihama.2178H",
 	"r": "Keikyu.Kurihama",
-	"n": "2112C",
+	"n": "2178H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -16358,7 +16465,7 @@
 		"Keikyu.Kurihama.KeikyuKurihama"
 	],
 	"pt": [
-		"Keikyu.Main.2112C.SaturdayHoliday"
+		"Keikyu.Main.2178H.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
@@ -16376,10 +16483,10 @@
 		"a": "22:19"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.2114C.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.2114C",
+	"id": "Keikyu.Kurihama.2140H.SaturdayHoliday",
+	"t": "Keikyu.Kurihama.2140H",
 	"r": "Keikyu.Kurihama",
-	"n": "2114C",
+	"n": "2140H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -16389,7 +16496,7 @@
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"pt": [
-		"Keikyu.Main.2114C.SaturdayHoliday"
+		"Keikyu.Main.2140H.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
@@ -16416,7 +16523,7 @@
 		"d": "22:36"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "22:37",
+		"a": "22:38",
 		"d": "22:38"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
@@ -16509,10 +16616,10 @@
 		"a": "22:58"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.2178H.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.2178H",
+	"id": "Keikyu.Kurihama.2174H.SaturdayHoliday",
+	"t": "Keikyu.Kurihama.2174H",
 	"r": "Keikyu.Kurihama",
-	"n": "2178H",
+	"n": "2174H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -16522,14 +16629,14 @@
 		"Keikyu.Kurihama.KeikyuKurihama"
 	],
 	"pt": [
-		"Keikyu.Main.2178H.SaturdayHoliday"
+		"Keikyu.Main.2174H.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
 		"d": "22:51"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "22:53",
+		"a": "22:52",
 		"d": "22:53"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
@@ -16591,10 +16698,10 @@
 		"a": "23:19"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.2140H.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.2140H",
+	"id": "Keikyu.Kurihama.2146H.SaturdayHoliday",
+	"t": "Keikyu.Kurihama.2146H",
 	"r": "Keikyu.Kurihama",
-	"n": "2140H",
+	"n": "2146H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -16604,7 +16711,7 @@
 		"Keikyu.Kurihama.Miurakaigan"
 	],
 	"pt": [
-		"Keikyu.Main.2140H.SaturdayHoliday"
+		"Keikyu.Main.2146H.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Horinouchi",
@@ -16620,7 +16727,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "23:21",
-		"d": "23:24"
+		"d": "23:23"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "23:27",
@@ -16632,7 +16739,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "23:30",
-		"d": "23:31"
+		"d": "23:30"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "23:32"
@@ -16658,7 +16765,7 @@
 		"d": "23:26"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "23:27",
+		"a": "23:28",
 		"d": "23:28"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
@@ -16791,7 +16898,7 @@
 		"d": "00:09"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "00:11",
+		"a": "00:10",
 		"d": "00:11"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
@@ -16800,7 +16907,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "00:15",
-		"d": "00:16"
+		"d": "00:15"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "00:19",
@@ -16971,7 +17078,7 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"d": "10:18"
+		"d": "10:17"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "10:21",
@@ -17050,12 +17157,12 @@
 		"d": "11:10"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "11:11",
+		"a": "11:12",
 		"d": "11:12"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "11:13",
-		"d": "11:13"
+		"d": "11:14"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "11:15",
@@ -17094,7 +17201,7 @@
 		"d": "12:29"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "12:30",
+		"a": "12:31",
 		"d": "12:31"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -17130,7 +17237,7 @@
 		"d": "13:09"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "13:10",
+		"a": "13:11",
 		"d": "13:11"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -17167,7 +17274,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "15:42",
-		"d": "15:42"
+		"d": "15:43"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "15:45"
@@ -17203,7 +17310,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "16:22",
-		"d": "16:22"
+		"d": "16:23"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "16:25"
@@ -17239,7 +17346,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "17:22",
-		"d": "17:22"
+		"d": "17:23"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"a": "17:25"
@@ -17274,7 +17381,7 @@
 		"d": "17:49"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "17:50",
+		"a": "17:51",
 		"d": "17:51"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -17346,7 +17453,7 @@
 		"d": "22:17"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "22:18",
+		"a": "22:19",
 		"d": "22:19"
 	}, {
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -17542,7 +17649,7 @@
 		"d": "06:16"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "06:18",
+		"a": "06:19",
 		"d": "06:19"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
@@ -18085,7 +18192,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "08:59",
-		"d": "09:01"
+		"d": "09:00"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "09:03",
@@ -18175,11 +18282,11 @@
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
 		"a": "09:14",
-		"d": "09:14"
+		"d": "09:15"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
 		"a": "09:16",
-		"d": "09:16"
+		"d": "09:17"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
 		"a": "09:18",
@@ -18190,7 +18297,7 @@
 		"d": "09:21"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "09:23",
+		"a": "09:24",
 		"d": "09:25"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
@@ -18715,10 +18822,10 @@
 		"a": "11:11"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.1175H.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.1175H",
+	"id": "Keikyu.Kurihama.1137T.SaturdayHoliday",
+	"t": "Keikyu.Kurihama.1137T",
 	"r": "Keikyu.Kurihama",
-	"n": "1175H",
+	"n": "1137T",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -18728,42 +18835,42 @@
 		"Keisei.Main.KeiseiTakasago"
 	],
 	"nt": [
-		"Keikyu.Main.1175H.SaturdayHoliday"
+		"Keikyu.Main.1137T.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
 		"d": "11:01"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "11:03",
+		"a": "11:04",
 		"d": "11:04"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "11:05",
+		"a": "11:06",
 		"d": "11:06"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
 		"a": "11:07",
-		"d": "11:07"
+		"d": "11:08"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "11:09",
+		"a": "11:10",
 		"d": "11:10"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "11:12",
+		"a": "11:13",
 		"d": "11:13"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "11:15",
+		"a": "11:16",
 		"d": "11:16"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "11:17",
-		"d": "11:17"
+		"d": "11:18"
 	}, {
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"a": "11:18"
+		"a": "11:19"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1115A.SaturdayHoliday",
@@ -18857,15 +18964,15 @@
 		"d": "11:33"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "11:35",
+		"a": "11:36",
 		"d": "11:36"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
 		"a": "11:37",
-		"d": "11:37"
+		"d": "11:38"
 	}, {
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"a": "11:38"
+		"a": "11:39"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.1131A.SaturdayHoliday",
@@ -21282,26 +21389,26 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
-		"d": "19:26"
+		"d": "19:20"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "19:28",
-		"d": "19:28"
+		"a": "19:22",
+		"d": "19:23"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "19:30",
-		"d": "19:30"
+		"a": "19:24",
+		"d": "19:25"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "19:32",
-		"d": "19:32"
+		"a": "19:26",
+		"d": "19:26"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "19:34",
-		"d": "19:34"
+		"a": "19:28",
+		"d": "19:29"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "19:37",
+		"a": "19:32",
 		"d": "19:41"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
@@ -21316,61 +21423,61 @@
 		"a": "19:47"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.1913C.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.1913C",
+	"id": "Keikyu.Kurihama.1975H.SaturdayHoliday",
+	"t": "Keikyu.Kurihama.1975H",
 	"r": "Keikyu.Kurihama",
-	"n": "1913C",
+	"n": "1975H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"ds": [
-		"Keikyu.Main.Sengakuji"
+		"Toei.Asakusa.Oshiage"
 	],
 	"nt": [
-		"Keikyu.Main.1913C.SaturdayHoliday"
+		"Keikyu.Main.1975H.SaturdayHoliday.2"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
-		"d": "19:46"
+		"d": "19:40"
 	}, {
 		"s": "Keikyu.Kurihama.Miurakaigan",
-		"a": "19:48",
-		"d": "19:48"
+		"a": "19:42",
+		"d": "19:43"
 	}, {
 		"s": "Keikyu.Kurihama.Tsukuihama",
-		"a": "19:50",
-		"d": "19:50"
+		"a": "19:44",
+		"d": "19:45"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuNagasawa",
-		"a": "19:52",
-		"d": "19:52"
+		"a": "19:46",
+		"d": "19:46"
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
-		"a": "19:54",
-		"d": "19:54"
+		"a": "19:48",
+		"d": "19:49"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "19:57",
-		"d": "20:01"
+		"a": "19:51",
+		"d": "19:53"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "20:04",
-		"d": "20:04"
+		"a": "19:55",
+		"d": "19:55"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "20:05",
-		"d": "20:05"
+		"a": "19:56",
+		"d": "19:57"
 	}, {
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"a": "20:07"
+		"a": "19:58"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.2015C.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.2015C",
+	"id": "Keikyu.Kurihama.2041H.SaturdayHoliday",
+	"t": "Keikyu.Kurihama.2041H",
 	"r": "Keikyu.Kurihama",
-	"n": "2015C",
+	"n": "2041H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -21380,7 +21487,7 @@
 		"Keikyu.Main.Shinagawa"
 	],
 	"nt": [
-		"Keikyu.Main.2015C.SaturdayHoliday"
+		"Keikyu.Main.2041H.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -21530,7 +21637,7 @@
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"ds": [
-		"Keisei.Main.KeiseiTakasago"
+		"Keikyu.Main.Sengakuji"
 	],
 	"nt": [
 		"Keikyu.Main.2045H.SaturdayHoliday"
@@ -21683,10 +21790,10 @@
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"ds": [
-		"Keikyu.Main.Sengakuji"
+		"Keisei.Main.KeiseiTakasago"
 	],
 	"nt": [
-		"Keikyu.Main.2153H.SaturdayHoliday"
+		"Keikyu.Main.2153H.SaturdayHoliday.2"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -21808,7 +21915,7 @@
 	}, {
 		"s": "Keikyu.Kurihama.YrpNobi",
 		"a": "22:34",
-		"d": "22:34"
+		"d": "22:35"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
 		"a": "22:37",
@@ -21826,17 +21933,20 @@
 		"a": "22:43"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.2215C.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.2215C",
+	"id": "Keikyu.Kurihama.2241H.SaturdayHoliday",
+	"t": "Keikyu.Kurihama.2241H",
 	"r": "Keikyu.Kurihama",
-	"n": "2215C",
+	"n": "2241H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
 		"Keikyu.Kurihama.Misakiguchi"
 	],
 	"ds": [
-		"Keikyu.Kurihama.KeikyuKurihama"
+		"Keikyu.Main.KanazawaBunko"
+	],
+	"nt": [
+		"Keikyu.Main.2241H.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.Misakiguchi",
@@ -21859,7 +21969,19 @@
 		"d": "22:58"
 	}, {
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"a": "23:00"
+		"a": "23:00",
+		"d": "23:01"
+	}, {
+		"s": "Keikyu.Kurihama.Kitakurihama",
+		"a": "23:03",
+		"d": "23:04"
+	}, {
+		"s": "Keikyu.Kurihama.Shinotsu",
+		"a": "23:05",
+		"d": "23:05"
+	}, {
+		"s": "Keikyu.Kurihama.Horinouchi",
+		"a": "23:06"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.2331C.SaturdayHoliday",
@@ -22331,10 +22453,10 @@
 		"a": "08:14"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.1941H.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.1941H",
+	"id": "Keikyu.Kurihama.1947H.SaturdayHoliday",
+	"t": "Keikyu.Kurihama.1947H",
 	"r": "Keikyu.Kurihama",
-	"n": "1941H",
+	"n": "1947H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
@@ -22344,7 +22466,7 @@
 		"Keisei.Oshiage.Aoto"
 	],
 	"nt": [
-		"Keikyu.Main.1941H.SaturdayHoliday.2"
+		"Keikyu.Main.1947H.SaturdayHoliday.2"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
@@ -22362,35 +22484,35 @@
 		"a": "19:38"
 	}]
 }, {
-	"id": "Keikyu.Kurihama.1979H.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.1979H",
+	"id": "Keikyu.Kurihama.2079H.SaturdayHoliday",
+	"t": "Keikyu.Kurihama.2079H",
 	"r": "Keikyu.Kurihama",
-	"n": "1979H",
+	"n": "2079H",
 	"y": "Keikyu.LimitedExpress",
 	"d": "Inbound",
 	"os": [
 		"Keikyu.Kurihama.KeikyuKurihama"
 	],
 	"ds": [
-		"Toei.Asakusa.Oshiage"
+		"Keikyu.Main.Sengakuji"
 	],
 	"nt": [
-		"Keikyu.Main.1979H.SaturdayHoliday.2"
+		"Keikyu.Main.2079H.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"d": "19:53"
+		"d": "20:01"
 	}, {
 		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "19:55",
-		"d": "19:55"
+		"a": "20:04",
+		"d": "20:04"
 	}, {
 		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "19:56",
-		"d": "19:57"
+		"a": "20:05",
+		"d": "20:05"
 	}, {
 		"s": "Keikyu.Kurihama.Horinouchi",
-		"a": "19:58"
+		"a": "20:07"
 	}]
 }, {
 	"id": "Keikyu.Kurihama.2085H.SaturdayHoliday",
@@ -22453,36 +22575,5 @@
 	}, {
 		"s": "Keikyu.Kurihama.Horinouchi",
 		"a": "20:47"
-	}]
-}, {
-	"id": "Keikyu.Kurihama.2379H.SaturdayHoliday",
-	"t": "Keikyu.Kurihama.2379H",
-	"r": "Keikyu.Kurihama",
-	"n": "2379H",
-	"y": "Keikyu.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"Keikyu.Kurihama.KeikyuKurihama"
-	],
-	"ds": [
-		"Keikyu.Main.KanazawaBunko"
-	],
-	"nt": [
-		"Keikyu.Main.2379H.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Keikyu.Kurihama.KeikyuKurihama",
-		"d": "23:01"
-	}, {
-		"s": "Keikyu.Kurihama.Kitakurihama",
-		"a": "23:03",
-		"d": "23:04"
-	}, {
-		"s": "Keikyu.Kurihama.Shinotsu",
-		"a": "23:05",
-		"d": "23:05"
-	}, {
-		"s": "Keikyu.Kurihama.Horinouchi",
-		"a": "23:06"
 	}]
 }]

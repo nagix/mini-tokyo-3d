@@ -118,7 +118,7 @@
 	"t": "Keikyu.Zushi.540T",
 	"r": "Keikyu.Zushi",
 	"n": "540T",
-	"y": "Keikyu.Express",
+	"y": "Keikyu.Local",
 	"d": "Outbound",
 	"os": [
 		"Keikyu.Main.KanazawaBunko"
@@ -208,7 +208,7 @@
 	"t": "Keikyu.Zushi.662H",
 	"r": "Keikyu.Zushi",
 	"n": "662H",
-	"y": "Keikyu.LimitedExpress",
+	"y": "Keikyu.Local",
 	"d": "Outbound",
 	"os": [
 		"Keikyu.Main.KanazawaBunko"
@@ -363,7 +363,7 @@
 	"t": "Keikyu.Zushi.772C",
 	"r": "Keikyu.Zushi",
 	"n": "772C",
-	"y": "Keikyu.LimitedExpress",
+	"y": "Keikyu.Local",
 	"d": "Outbound",
 	"os": [
 		"Keikyu.Main.KanazawaBunko"
@@ -627,7 +627,7 @@
 		"d": "08:26"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "08:27",
+		"a": "08:28",
 		"d": "08:28"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
@@ -635,7 +635,7 @@
 		"d": "08:31"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"a": "08:33"
+		"a": "08:34"
 	}]
 }, {
 	"id": "Keikyu.Zushi.716.Weekday",
@@ -735,7 +735,7 @@
 	"t": "Keikyu.Zushi.902D",
 	"r": "Keikyu.Zushi",
 	"n": "902D",
-	"y": "Keikyu.Express",
+	"y": "Keikyu.Local",
 	"d": "Outbound",
 	"os": [
 		"Keikyu.Main.KanazawaBunko"
@@ -797,7 +797,7 @@
 	"t": "Keikyu.Zushi.904D",
 	"r": "Keikyu.Zushi",
 	"n": "904D",
-	"y": "Keikyu.Express",
+	"y": "Keikyu.Local",
 	"d": "Outbound",
 	"os": [
 		"Keikyu.Main.KanazawaBunko"
@@ -1034,7 +1034,7 @@
 		"d": "10:42"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "10:44",
+		"a": "10:45",
 		"d": "10:45"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
@@ -1089,49 +1089,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "10:58"
-	}, {
-		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "10:59",
 		"d": "11:00"
 	}, {
-		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "11:02",
-		"d": "11:03"
-	}, {
-		"s": "Keikyu.Zushi.ZushiHayama",
-		"a": "11:05"
-	}]
-}, {
-	"id": "Keikyu.Zushi.1000DR28.Weekday",
-	"t": "Keikyu.Zushi.1000DR28",
-	"r": "Keikyu.Zushi",
-	"n": "1000DR28",
-	"y": "Keikyu.Express",
-	"d": "Outbound",
-	"os": [
-		"Keikyu.Main.KanazawaBunko"
-	],
-	"ds": [
-		"Keikyu.Zushi.ZushiHayama"
-	],
-	"pt": [
-		"Keikyu.Main.1000DR28.Weekday"
-	],
-	"tt": [{
-		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "11:10"
-	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "11:11",
-		"d": "11:12"
+		"a": "11:01",
+		"d": "11:02"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "11:14",
-		"d": "11:15"
+		"a": "11:05",
+		"d": "11:05"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"a": "11:17"
+		"a": "11:07"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1020DX.Weekday",
@@ -1213,18 +1182,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "11:44"
+		"d": "11:43"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "11:46",
-		"d": "11:46"
+		"a": "11:45",
+		"d": "11:45"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "11:49",
-		"d": "11:49"
+		"a": "11:48",
+		"d": "11:48"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"a": "11:52"
+		"a": "11:51"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1104D.Weekday",
@@ -1244,15 +1213,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "11:53"
+		"d": "11:54"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
 		"a": "11:55",
-		"d": "11:55"
+		"d": "11:56"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "11:58",
-		"d": "11:58"
+		"d": "11:59"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "12:01"
@@ -1314,7 +1283,7 @@
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "12:18",
-		"d": "12:19"
+		"d": "12:18"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "12:21"
@@ -1475,11 +1444,11 @@
 		"a": "13:11"
 	}]
 }, {
-	"id": "Keikyu.Zushi.1318T.Weekday",
-	"t": "Keikyu.Zushi.1318T",
+	"id": "Keikyu.Zushi.1302T.Weekday",
+	"t": "Keikyu.Zushi.1302T",
 	"r": "Keikyu.Zushi",
-	"n": "1318T",
-	"y": "Keikyu.Express",
+	"n": "1302T",
+	"y": "Keikyu.Local",
 	"d": "Outbound",
 	"os": [
 		"Keikyu.Main.KanazawaBunko"
@@ -1488,7 +1457,7 @@
 		"Keikyu.Zushi.ZushiHayama"
 	],
 	"pt": [
-		"Keikyu.Main.1318T.Weekday"
+		"Keikyu.Main.1302T.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
@@ -1751,7 +1720,7 @@
 		"d": "14:38"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"a": "14:40"
+		"a": "14:41"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1426D.Weekday",
@@ -1779,7 +1748,7 @@
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "14:48",
-		"d": "14:48"
+		"d": "14:49"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "14:51"
@@ -2050,18 +2019,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "16:14"
+		"d": "16:15"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
 		"a": "16:16",
-		"d": "16:16"
+		"d": "16:17"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "16:19",
-		"d": "16:19"
+		"d": "16:20"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"a": "16:21"
+		"a": "16:22"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1522D.Weekday",
@@ -2081,15 +2050,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "16:26"
+		"d": "16:25"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
 		"a": "16:27",
-		"d": "16:28"
+		"d": "16:27"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "16:30",
-		"d": "16:31"
+		"d": "16:30"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "16:33"
@@ -2254,7 +2223,7 @@
 	"t": "Keikyu.Zushi.1750D",
 	"r": "Keikyu.Zushi",
 	"n": "1750D",
-	"y": "Keikyu.Express",
+	"y": "Keikyu.Local",
 	"d": "Outbound",
 	"os": [
 		"Keikyu.Main.KanazawaBunko"
@@ -2399,7 +2368,7 @@
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "18:10",
-		"d": "18:10"
+		"d": "18:11"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "18:13"
@@ -2546,11 +2515,11 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "18:56"
+		"d": "18:57"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
 		"a": "18:58",
-		"d": "18:58"
+		"d": "18:59"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "19:01",
@@ -2560,10 +2529,10 @@
 		"a": "19:04"
 	}]
 }, {
-	"id": "Keikyu.Zushi.1860T.Weekday",
-	"t": "Keikyu.Zushi.1860T",
+	"id": "Keikyu.Zushi.1858T.Weekday",
+	"t": "Keikyu.Zushi.1858T",
 	"r": "Keikyu.Zushi",
-	"n": "1860T",
+	"n": "1858T",
 	"y": "Keikyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -2573,15 +2542,15 @@
 		"Keikyu.Zushi.ZushiHayama"
 	],
 	"pt": [
-		"Keikyu.Main.1860T.Weekday"
+		"Keikyu.Main.1858T.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "19:06"
+		"d": "19:07"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
 		"a": "19:08",
-		"d": "19:08"
+		"d": "19:09"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "19:11",
@@ -2677,7 +2646,7 @@
 		"d": "19:39"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "19:42",
+		"a": "19:41",
 		"d": "19:42"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
@@ -2732,15 +2701,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "19:56"
+		"d": "19:57"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
 		"a": "19:58",
-		"d": "19:58"
+		"d": "19:59"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "20:01",
-		"d": "20:01"
+		"a": "20:02",
+		"d": "20:02"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "20:04"
@@ -2763,18 +2732,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "20:06"
+		"d": "20:07"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "20:08",
-		"d": "20:08"
+		"a": "20:09",
+		"d": "20:09"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "20:11",
+		"a": "20:12",
 		"d": "20:12"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"a": "20:14"
+		"a": "20:15"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1910D.Weekday",
@@ -2994,10 +2963,10 @@
 		"a": "21:21"
 	}]
 }, {
-	"id": "Keikyu.Zushi.2046T.Weekday",
-	"t": "Keikyu.Zushi.2046T",
+	"id": "Keikyu.Zushi.2024T.Weekday",
+	"t": "Keikyu.Zushi.2024T",
 	"r": "Keikyu.Zushi",
-	"n": "2046T",
+	"n": "2024T",
 	"y": "Keikyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -3007,7 +2976,7 @@
 		"Keikyu.Zushi.ZushiHayama"
 	],
 	"pt": [
-		"Keikyu.Main.2046T.Weekday"
+		"Keikyu.Main.2024T.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
@@ -3025,10 +2994,10 @@
 		"a": "21:30"
 	}]
 }, {
-	"id": "Keikyu.Zushi.2060TX.Weekday",
-	"t": "Keikyu.Zushi.2060TX",
+	"id": "Keikyu.Zushi.2058TX.Weekday",
+	"t": "Keikyu.Zushi.2058TX",
 	"r": "Keikyu.Zushi",
-	"n": "2060TX",
+	"n": "2058TX",
 	"y": "Keikyu.Express",
 	"d": "Outbound",
 	"os": [
@@ -3038,7 +3007,7 @@
 		"Keikyu.Zushi.ZushiHayama"
 	],
 	"pt": [
-		"Keikyu.Main.2060TX.Weekday"
+		"Keikyu.Main.2058TX.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
@@ -3142,7 +3111,7 @@
 		"d": "22:06"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "22:08",
+		"a": "22:09",
 		"d": "22:09"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
@@ -3964,11 +3933,11 @@
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "07:31",
-		"d": "07:31"
+		"d": "07:32"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
 		"a": "07:34",
-		"d": "07:34"
+		"d": "07:35"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "07:36"
@@ -4456,15 +4425,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "10:16"
+		"d": "10:15"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "10:17",
-		"d": "10:18"
+		"d": "10:17"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "10:21",
-		"d": "10:21"
+		"a": "10:20",
+		"d": "10:20"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "10:22"
@@ -4487,18 +4456,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "10:24"
+		"d": "10:25"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "10:26",
-		"d": "10:26"
+		"a": "10:27",
+		"d": "10:27"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "10:29",
-		"d": "10:29"
+		"a": "10:30",
+		"d": "10:30"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"a": "10:31"
+		"a": "10:32"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1029D.Weekday",
@@ -4518,18 +4487,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "10:34"
+		"d": "10:35"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "10:36",
-		"d": "10:36"
+		"a": "10:37",
+		"d": "10:37"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "10:39",
-		"d": "10:39"
+		"a": "10:40",
+		"d": "10:40"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"a": "10:41"
+		"a": "10:42"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1011D.Weekday",
@@ -4549,18 +4518,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "10:43"
-	}, {
-		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "10:45",
 		"d": "10:45"
 	}, {
+		"s": "Keikyu.Zushi.Jimmuji",
+		"a": "10:47",
+		"d": "10:47"
+	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "10:48",
-		"d": "10:49"
+		"a": "10:50",
+		"d": "10:50"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"a": "10:50"
+		"a": "10:52"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1019H.Weekday",
@@ -4580,18 +4549,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "10:53"
+		"d": "10:54"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "10:55",
-		"d": "10:55"
+		"a": "10:56",
+		"d": "10:57"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "10:58",
-		"d": "10:58"
+		"a": "10:59",
+		"d": "11:00"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"a": "11:00"
+		"a": "11:01"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1113D.Weekday",
@@ -4611,18 +4580,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "11:02"
+		"d": "11:05"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "11:03",
-		"d": "11:04"
-	}, {
-		"s": "Keikyu.Zushi.Mutsuura",
 		"a": "11:07",
 		"d": "11:07"
 	}, {
+		"s": "Keikyu.Zushi.Mutsuura",
+		"a": "11:10",
+		"d": "11:10"
+	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"a": "11:08"
+		"a": "11:12"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1161X.Weekday",
@@ -4642,18 +4611,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "11:13"
-	}, {
-		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "11:15",
 		"d": "11:15"
 	}, {
+		"s": "Keikyu.Zushi.Jimmuji",
+		"a": "11:17",
+		"d": "11:17"
+	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "11:18",
-		"d": "11:18"
+		"a": "11:20",
+		"d": "11:20"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"a": "11:20"
+		"a": "11:22"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1101D.Weekday",
@@ -4673,18 +4642,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "11:24"
+		"d": "11:25"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "11:26",
-		"d": "11:26"
+		"a": "11:27",
+		"d": "11:27"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "11:29",
-		"d": "11:29"
+		"a": "11:30",
+		"d": "11:30"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"a": "11:31"
+		"a": "11:32"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1121D.Weekday",
@@ -4712,7 +4681,7 @@
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
 		"a": "11:40",
-		"d": "11:41"
+		"d": "11:40"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "11:42"
@@ -4766,15 +4735,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "11:56"
+		"d": "11:55"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "11:57",
-		"d": "11:58"
+		"d": "11:57"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "12:01",
-		"d": "12:01"
+		"a": "12:00",
+		"d": "12:00"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "12:02"
@@ -5028,10 +4997,10 @@
 		"a": "13:22"
 	}]
 }, {
-	"id": "Keikyu.Zushi.1319T.Weekday",
-	"t": "Keikyu.Zushi.1319T",
+	"id": "Keikyu.Zushi.1303T.Weekday",
+	"t": "Keikyu.Zushi.1303T",
 	"r": "Keikyu.Zushi",
-	"n": "1319T",
+	"n": "1303T",
 	"y": "Keikyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -5041,7 +5010,7 @@
 		"Keikyu.Airport.HanedaAirportTerminal1and2"
 	],
 	"nt": [
-		"Keikyu.Main.1319T.Weekday"
+		"Keikyu.Main.1303T.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
@@ -5265,7 +5234,7 @@
 		"d": "14:35"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "14:36",
+		"a": "14:37",
 		"d": "14:37"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
@@ -5273,7 +5242,7 @@
 		"d": "14:40"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"a": "14:41"
+		"a": "14:42"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1407D.Weekday",
@@ -6113,10 +6082,10 @@
 		"a": "19:15"
 	}]
 }, {
-	"id": "Keikyu.Zushi.1961T.Weekday",
-	"t": "Keikyu.Zushi.1961T",
+	"id": "Keikyu.Zushi.1959T.Weekday",
+	"t": "Keikyu.Zushi.1959T",
 	"r": "Keikyu.Zushi",
-	"n": "1961T",
+	"n": "1959T",
 	"y": "Keikyu.Express",
 	"d": "Inbound",
 	"os": [
@@ -6126,7 +6095,7 @@
 		"Keikyu.Airport.HanedaAirportTerminal1and2"
 	],
 	"nt": [
-		"Keikyu.Main.1961T.Weekday"
+		"Keikyu.Main.1959T.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
@@ -6161,18 +6130,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "19:30"
+		"d": "19:29"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "19:32",
-		"d": "19:32"
+		"a": "19:31",
+		"d": "19:31"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "19:35",
-		"d": "19:35"
+		"a": "19:34",
+		"d": "19:34"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"a": "19:37"
+		"a": "19:36"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1925D.Weekday",
@@ -6547,10 +6516,10 @@
 		"a": "21:32"
 	}]
 }, {
-	"id": "Keikyu.Zushi.2147T.Weekday",
-	"t": "Keikyu.Zushi.2147T",
+	"id": "Keikyu.Zushi.2125T.Weekday",
+	"t": "Keikyu.Zushi.2125T",
 	"r": "Keikyu.Zushi",
-	"n": "2147T",
+	"n": "2125T",
 	"y": "Keikyu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6560,7 +6529,7 @@
 		"Keikyu.Main.KanazawaBunko"
 	],
 	"nt": [
-		"Keikyu.Main.2147T.Weekday"
+		"Keikyu.Main.2125T.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
@@ -6578,10 +6547,10 @@
 		"a": "21:41"
 	}]
 }, {
-	"id": "Keikyu.Zushi.2161T.Weekday",
-	"t": "Keikyu.Zushi.2161T",
+	"id": "Keikyu.Zushi.2159T.Weekday",
+	"t": "Keikyu.Zushi.2159T",
 	"r": "Keikyu.Zushi",
-	"n": "2161T",
+	"n": "2159T",
 	"y": "Keikyu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6591,7 +6560,7 @@
 		"Keikyu.Main.KanazawaBunko"
 	],
 	"nt": [
-		"Keikyu.Main.2161T.Weekday"
+		"Keikyu.Main.2159T.Weekday"
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
@@ -7085,18 +7054,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "05:31"
+		"d": "05:32"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "05:33",
-		"d": "05:33"
+		"a": "05:34",
+		"d": "05:34"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "05:36",
-		"d": "05:36"
+		"a": "05:37",
+		"d": "05:37"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"a": "05:39"
+		"a": "05:40"
 	}]
 }, {
 	"id": "Keikyu.Zushi.520DX.SaturdayHoliday",
@@ -7169,18 +7138,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "06:17"
-	}, {
-		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "06:18",
 		"d": "06:19"
 	}, {
+		"s": "Keikyu.Zushi.Mutsuura",
+		"a": "06:20",
+		"d": "06:21"
+	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "06:21",
-		"d": "06:22"
+		"a": "06:23",
+		"d": "06:24"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"a": "06:24"
+		"a": "06:26"
 	}]
 }, {
 	"id": "Keikyu.Zushi.622DX.SaturdayHoliday",
@@ -7200,15 +7169,15 @@
 		"d": "06:29"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "06:30",
+		"a": "06:31",
 		"d": "06:31"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "06:33",
+		"a": "06:34",
 		"d": "06:34"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"a": "06:36"
+		"a": "06:37"
 	}]
 }, {
 	"id": "Keikyu.Zushi.624D.SaturdayHoliday",
@@ -7397,27 +7366,27 @@
 		"a": "07:38"
 	}]
 }, {
-	"id": "Keikyu.Zushi.730D.SaturdayHoliday",
-	"t": "Keikyu.Zushi.730D",
+	"id": "Keikyu.Zushi.630D.SaturdayHoliday",
+	"t": "Keikyu.Zushi.630D",
 	"r": "Keikyu.Zushi",
-	"n": "730D",
+	"n": "630D",
 	"y": "Keikyu.Express",
 	"d": "Outbound",
 	"os": [
-		"Keikyu.Main.KanagawaShimmachi"
+		"Keikyu.Airport.HanedaAirportTerminal1and2"
 	],
 	"ds": [
 		"Keikyu.Zushi.ZushiHayama"
 	],
 	"pt": [
-		"Keikyu.Main.730D.SaturdayHoliday"
+		"Keikyu.Main.630D.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"d": "07:40"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "07:41",
+		"a": "07:42",
 		"d": "07:42"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
@@ -7425,7 +7394,7 @@
 		"d": "07:45"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"a": "07:47"
+		"a": "07:48"
 	}]
 }, {
 	"id": "Keikyu.Zushi.710D.SaturdayHoliday",
@@ -8034,15 +8003,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "11:04"
+		"d": "11:03"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "11:06",
-		"d": "11:06"
+		"a": "11:05",
+		"d": "11:05"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "11:09",
-		"d": "11:09"
+		"a": "11:08",
+		"d": "11:08"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "11:11"
@@ -8096,15 +8065,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "11:24"
+		"d": "11:23"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "11:26",
-		"d": "11:26"
+		"a": "11:25",
+		"d": "11:25"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "11:29",
-		"d": "11:29"
+		"a": "11:28",
+		"d": "11:28"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "11:31"
@@ -8161,11 +8130,11 @@
 		"d": "11:44"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "11:46",
+		"a": "11:45",
 		"d": "11:46"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "11:49",
+		"a": "11:48",
 		"d": "11:49"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
@@ -8220,15 +8189,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "12:04"
+		"d": "12:03"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "12:06",
-		"d": "12:06"
+		"a": "12:05",
+		"d": "12:05"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "12:09",
-		"d": "12:09"
+		"a": "12:08",
+		"d": "12:08"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "12:11"
@@ -8282,15 +8251,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "12:24"
+		"d": "12:23"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "12:26",
-		"d": "12:26"
+		"a": "12:25",
+		"d": "12:25"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "12:29",
-		"d": "12:29"
+		"a": "12:28",
+		"d": "12:28"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "12:31"
@@ -8344,15 +8313,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "12:44"
+		"d": "12:43"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "12:46",
-		"d": "12:46"
+		"a": "12:45",
+		"d": "12:45"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "12:49",
-		"d": "12:49"
+		"a": "12:48",
+		"d": "12:48"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "12:51"
@@ -8406,15 +8375,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "13:04"
+		"d": "13:03"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "13:06",
-		"d": "13:06"
+		"a": "13:05",
+		"d": "13:05"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "13:09",
-		"d": "13:09"
+		"a": "13:08",
+		"d": "13:08"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "13:11"
@@ -8468,15 +8437,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "13:24"
+		"d": "13:23"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "13:26",
-		"d": "13:26"
+		"a": "13:25",
+		"d": "13:25"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "13:29",
-		"d": "13:29"
+		"a": "13:28",
+		"d": "13:28"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "13:31"
@@ -8530,15 +8499,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "13:44"
+		"d": "13:43"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "13:46",
-		"d": "13:46"
+		"a": "13:45",
+		"d": "13:45"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "13:49",
-		"d": "13:49"
+		"a": "13:48",
+		"d": "13:48"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "13:51"
@@ -8592,15 +8561,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "14:04"
+		"d": "14:03"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "14:06",
-		"d": "14:06"
+		"a": "14:05",
+		"d": "14:05"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "14:09",
-		"d": "14:09"
+		"a": "14:08",
+		"d": "14:08"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "14:11"
@@ -8654,15 +8623,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "14:24"
+		"d": "14:23"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "14:26",
-		"d": "14:26"
+		"a": "14:25",
+		"d": "14:25"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "14:29",
-		"d": "14:29"
+		"a": "14:28",
+		"d": "14:28"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "14:31"
@@ -8716,15 +8685,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "14:44"
+		"d": "14:43"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "14:46",
-		"d": "14:46"
+		"a": "14:45",
+		"d": "14:45"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "14:49",
-		"d": "14:49"
+		"a": "14:48",
+		"d": "14:48"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "14:51"
@@ -8778,15 +8747,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "15:04"
+		"d": "15:03"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "15:06",
-		"d": "15:06"
+		"a": "15:05",
+		"d": "15:05"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "15:09",
-		"d": "15:09"
+		"a": "15:08",
+		"d": "15:08"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "15:11"
@@ -8840,15 +8809,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "15:24"
+		"d": "15:23"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "15:26",
-		"d": "15:26"
+		"a": "15:25",
+		"d": "15:25"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "15:29",
-		"d": "15:29"
+		"a": "15:28",
+		"d": "15:28"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "15:31"
@@ -8902,15 +8871,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "15:44"
+		"d": "15:43"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "15:46",
-		"d": "15:46"
+		"a": "15:45",
+		"d": "15:45"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "15:49",
-		"d": "15:49"
+		"a": "15:48",
+		"d": "15:48"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "15:51"
@@ -8964,15 +8933,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "16:04"
+		"d": "16:03"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "16:06",
-		"d": "16:06"
+		"a": "16:05",
+		"d": "16:05"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "16:09",
-		"d": "16:09"
+		"a": "16:08",
+		"d": "16:08"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "16:11"
@@ -9026,15 +8995,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "16:24"
+		"d": "16:23"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "16:26",
-		"d": "16:26"
+		"a": "16:25",
+		"d": "16:25"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "16:29",
-		"d": "16:29"
+		"a": "16:28",
+		"d": "16:28"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "16:31"
@@ -9088,15 +9057,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "16:44"
+		"d": "16:43"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "16:46",
-		"d": "16:46"
+		"a": "16:45",
+		"d": "16:45"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "16:49",
-		"d": "16:49"
+		"a": "16:48",
+		"d": "16:48"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "16:51"
@@ -9150,15 +9119,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "17:04"
+		"d": "17:03"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "17:06",
-		"d": "17:06"
+		"a": "17:05",
+		"d": "17:05"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "17:09",
-		"d": "17:09"
+		"a": "17:08",
+		"d": "17:08"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "17:11"
@@ -9212,15 +9181,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "17:24"
+		"d": "17:23"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "17:26",
-		"d": "17:26"
+		"a": "17:25",
+		"d": "17:25"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "17:29",
-		"d": "17:29"
+		"a": "17:28",
+		"d": "17:28"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "17:31"
@@ -9274,15 +9243,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "17:44"
+		"d": "17:43"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "17:46",
-		"d": "17:46"
+		"a": "17:45",
+		"d": "17:45"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "17:49",
-		"d": "17:49"
+		"a": "17:48",
+		"d": "17:48"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "17:51"
@@ -9336,15 +9305,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "18:04"
+		"d": "18:03"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "18:06",
-		"d": "18:06"
+		"a": "18:05",
+		"d": "18:05"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "18:09",
-		"d": "18:09"
+		"a": "18:08",
+		"d": "18:08"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "18:11"
@@ -9398,15 +9367,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "18:24"
+		"d": "18:23"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "18:26",
-		"d": "18:26"
+		"a": "18:25",
+		"d": "18:25"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "18:29",
-		"d": "18:29"
+		"a": "18:28",
+		"d": "18:28"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "18:31"
@@ -9460,15 +9429,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "18:44"
+		"d": "18:43"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "18:46",
-		"d": "18:46"
+		"a": "18:45",
+		"d": "18:45"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "18:49",
-		"d": "18:49"
+		"a": "18:48",
+		"d": "18:48"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "18:51"
@@ -9522,15 +9491,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "19:04"
+		"d": "19:03"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "19:06",
-		"d": "19:06"
+		"a": "19:05",
+		"d": "19:05"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "19:09",
-		"d": "19:09"
+		"a": "19:08",
+		"d": "19:08"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "19:11"
@@ -9584,15 +9553,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "19:24"
+		"d": "19:23"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "19:26",
-		"d": "19:26"
+		"a": "19:25",
+		"d": "19:25"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "19:29",
-		"d": "19:29"
+		"a": "19:28",
+		"d": "19:28"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "19:31"
@@ -9646,15 +9615,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "19:44"
+		"d": "19:43"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "19:46",
-		"d": "19:46"
+		"a": "19:45",
+		"d": "19:45"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "19:49",
-		"d": "19:49"
+		"a": "19:48",
+		"d": "19:48"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "19:51"
@@ -9708,15 +9677,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "20:04"
+		"d": "20:03"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "20:06",
-		"d": "20:06"
+		"a": "20:05",
+		"d": "20:05"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "20:09",
-		"d": "20:09"
+		"a": "20:08",
+		"d": "20:08"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "20:11"
@@ -10297,15 +10266,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"d": "23:21"
+		"d": "23:22"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
 		"a": "23:23",
-		"d": "23:23"
+		"d": "23:24"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "23:26",
-		"d": "23:26"
+		"d": "23:27"
 	}, {
 		"s": "Keikyu.Zushi.ZushiHayama",
 		"a": "23:29"
@@ -10373,20 +10342,20 @@
 		"a": "00:04"
 	}]
 }, {
-	"id": "Keikyu.Zushi.2272H.SaturdayHoliday",
-	"t": "Keikyu.Zushi.2272H",
+	"id": "Keikyu.Zushi.2260H.SaturdayHoliday",
+	"t": "Keikyu.Zushi.2260H",
 	"r": "Keikyu.Zushi",
-	"n": "2272H",
+	"n": "2260H",
 	"y": "Keikyu.Express",
 	"d": "Outbound",
 	"os": [
-		"Keisei.Main.KeiseiTakasago"
+		"Keisei.Main.KeiseiSakura"
 	],
 	"ds": [
 		"Keikyu.Zushi.ZushiHayama"
 	],
 	"pt": [
-		"Keikyu.Main.2272H.SaturdayHoliday"
+		"Keikyu.Main.2260H.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.KanazawaHakkei",
@@ -10482,7 +10451,7 @@
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
 		"a": "05:33",
-		"d": "05:34"
+		"d": "05:33"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "05:35"
@@ -10502,18 +10471,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "05:43"
+		"d": "05:44"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "05:45",
-		"d": "05:45"
+		"a": "05:46",
+		"d": "05:46"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "05:48",
-		"d": "05:48"
+		"a": "05:49",
+		"d": "05:49"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"a": "05:50"
+		"a": "05:51"
 	}]
 }, {
 	"id": "Keikyu.Zushi.621DX.SaturdayHoliday",
@@ -10589,18 +10558,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "06:29"
-	}, {
-		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "06:30",
 		"d": "06:31"
 	}, {
+		"s": "Keikyu.Zushi.Jimmuji",
+		"a": "06:32",
+		"d": "06:33"
+	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "06:34",
-		"d": "06:34"
+		"a": "06:36",
+		"d": "06:36"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"a": "06:35"
+		"a": "06:37"
 	}]
 }, {
 	"id": "Keikyu.Zushi.623D.SaturdayHoliday",
@@ -11457,15 +11426,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "11:16"
+		"d": "11:15"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "11:17",
-		"d": "11:18"
+		"d": "11:17"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "11:21",
-		"d": "11:21"
+		"a": "11:20",
+		"d": "11:20"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "11:22"
@@ -11519,15 +11488,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "11:36"
+		"d": "11:35"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "11:37",
-		"d": "11:38"
+		"d": "11:37"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "11:41",
-		"d": "11:41"
+		"a": "11:40",
+		"d": "11:40"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "11:42"
@@ -11581,15 +11550,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "11:56"
+		"d": "11:55"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "11:57",
-		"d": "11:58"
+		"d": "11:57"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "12:01",
-		"d": "12:01"
+		"a": "12:00",
+		"d": "12:00"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "12:02"
@@ -11643,15 +11612,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "12:16"
+		"d": "12:15"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "12:17",
-		"d": "12:18"
+		"d": "12:17"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "12:21",
-		"d": "12:21"
+		"a": "12:20",
+		"d": "12:20"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "12:22"
@@ -11705,15 +11674,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "12:36"
+		"d": "12:35"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "12:37",
-		"d": "12:38"
+		"d": "12:37"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "12:41",
-		"d": "12:41"
+		"a": "12:40",
+		"d": "12:40"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "12:42"
@@ -11767,15 +11736,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "12:56"
+		"d": "12:55"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "12:57",
-		"d": "12:58"
+		"d": "12:57"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "13:01",
-		"d": "13:01"
+		"a": "13:00",
+		"d": "13:00"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "13:02"
@@ -11829,15 +11798,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "13:16"
+		"d": "13:15"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "13:17",
-		"d": "13:18"
+		"d": "13:17"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "13:21",
-		"d": "13:21"
+		"a": "13:20",
+		"d": "13:20"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "13:22"
@@ -11891,15 +11860,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "13:36"
+		"d": "13:35"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "13:37",
-		"d": "13:38"
+		"d": "13:37"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "13:41",
-		"d": "13:41"
+		"a": "13:40",
+		"d": "13:40"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "13:42"
@@ -11953,15 +11922,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "13:56"
+		"d": "13:55"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "13:57",
-		"d": "13:58"
+		"d": "13:57"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "14:01",
-		"d": "14:01"
+		"a": "14:00",
+		"d": "14:00"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "14:02"
@@ -12015,15 +11984,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "14:16"
+		"d": "14:15"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "14:17",
-		"d": "14:18"
+		"d": "14:17"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "14:21",
-		"d": "14:21"
+		"a": "14:20",
+		"d": "14:20"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "14:22"
@@ -12077,15 +12046,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "14:36"
+		"d": "14:35"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "14:37",
-		"d": "14:38"
+		"d": "14:37"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "14:41",
-		"d": "14:41"
+		"a": "14:40",
+		"d": "14:40"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "14:42"
@@ -12139,15 +12108,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "14:56"
+		"d": "14:55"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "14:57",
-		"d": "14:58"
+		"d": "14:57"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "15:01",
-		"d": "15:01"
+		"a": "15:00",
+		"d": "15:00"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "15:02"
@@ -12201,15 +12170,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "15:16"
+		"d": "15:15"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "15:17",
-		"d": "15:18"
+		"d": "15:17"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "15:21",
-		"d": "15:21"
+		"a": "15:20",
+		"d": "15:20"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "15:22"
@@ -12263,15 +12232,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "15:36"
+		"d": "15:35"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "15:37",
-		"d": "15:38"
+		"d": "15:37"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "15:41",
-		"d": "15:41"
+		"a": "15:40",
+		"d": "15:40"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "15:42"
@@ -12325,15 +12294,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "15:56"
+		"d": "15:55"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "15:57",
-		"d": "15:58"
+		"d": "15:57"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "16:01",
-		"d": "16:01"
+		"a": "16:00",
+		"d": "16:00"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "16:02"
@@ -12387,15 +12356,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "16:16"
+		"d": "16:15"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "16:17",
-		"d": "16:18"
+		"d": "16:17"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "16:21",
-		"d": "16:21"
+		"a": "16:20",
+		"d": "16:20"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "16:22"
@@ -12449,15 +12418,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "16:36"
+		"d": "16:35"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "16:37",
-		"d": "16:38"
+		"d": "16:37"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "16:41",
-		"d": "16:41"
+		"a": "16:40",
+		"d": "16:40"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "16:42"
@@ -12511,15 +12480,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "16:56"
+		"d": "16:55"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "16:57",
-		"d": "16:58"
+		"d": "16:57"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "17:01",
-		"d": "17:01"
+		"a": "17:00",
+		"d": "17:00"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "17:02"
@@ -12573,15 +12542,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "17:16"
+		"d": "17:15"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "17:17",
-		"d": "17:18"
+		"d": "17:17"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "17:21",
-		"d": "17:21"
+		"a": "17:20",
+		"d": "17:20"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "17:22"
@@ -12635,15 +12604,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "17:36"
+		"d": "17:35"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "17:37",
-		"d": "17:38"
+		"d": "17:37"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "17:41",
-		"d": "17:41"
+		"a": "17:40",
+		"d": "17:40"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "17:42"
@@ -12697,15 +12666,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "17:56"
+		"d": "17:55"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "17:57",
-		"d": "17:58"
+		"d": "17:57"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "18:01",
-		"d": "18:01"
+		"a": "18:00",
+		"d": "18:00"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "18:02"
@@ -12759,15 +12728,15 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "18:16"
+		"d": "18:15"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
 		"a": "18:17",
-		"d": "18:18"
+		"d": "18:17"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "18:21",
-		"d": "18:21"
+		"a": "18:20",
+		"d": "18:20"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
 		"a": "18:22"
@@ -12852,18 +12821,18 @@
 	],
 	"tt": [{
 		"s": "Keikyu.Zushi.ZushiHayama",
-		"d": "18:45"
+		"d": "18:46"
 	}, {
 		"s": "Keikyu.Zushi.Jimmuji",
-		"a": "18:47",
-		"d": "18:47"
+		"a": "18:48",
+		"d": "18:48"
 	}, {
 		"s": "Keikyu.Zushi.Mutsuura",
-		"a": "18:50",
-		"d": "18:51"
+		"a": "18:51",
+		"d": "18:52"
 	}, {
 		"s": "Keikyu.Zushi.KanazawaHakkei",
-		"a": "18:52"
+		"a": "18:53"
 	}]
 }, {
 	"id": "Keikyu.Zushi.1863.SaturdayHoliday",
