@@ -307,7 +307,7 @@ export function showNotification(container, message) {
 export function getLang(input) {
     let lang = valueOrDefault(input, '');
 
-    if (!lang.match(/ja|en|fr|es|ko|zh-Han[st]|th|ne|pt-BR/)) {
+    if (!lang.match(/de|en|es|fr|ja|ko|ne|pt-BR|th|zh-Han[st]/)) {
         const _navigator = window.navigator;
 
         lang = (_navigator.languages && _navigator.languages[0]) ||
@@ -324,5 +324,5 @@ export function getLang(input) {
         lang = lang.substring(0, 2);
     }
 
-    return lang.match(/ja|en|ko|zh-Han[st]|th|fr|es|ne|pt/) ? lang : 'en';
+    return lang.match(/de|en|es|fr|ja|ko|ne|pt|th|zh-Han[st]/) ? lang : 'en';
 }
