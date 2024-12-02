@@ -1486,7 +1486,8 @@
 	"ascending": "Outbound",
 	"descending": "Inbound",
 	"color": "#FFD400",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "JR-East.Mito",
 	"title": {
@@ -1517,7 +1518,27 @@
 	"ascending": "Outbound",
 	"descending": "Inbound",
 	"color": "#007AC1",
-	"carComposition": 5
+	"carComposition": 5,
+	"dynamic": true
+}, {
+	"id": "JR-Central.Tokaido",
+	"title": {
+		"ja": "東海道線",
+		"en": "Tokaido Line",
+		"ko": "도카이도 선",
+		"zh-Hans": "东海道线",
+		"zh-Hant": "東海道線"
+	},
+	"stations": [
+		"JR-Central.Tokaido.Atami",
+		"JR-Central.Tokaido.Kannami",
+		"JR-Central.Tokaido.Mishima",
+		"JR-Central.Tokaido.Numazu"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#F68B1E",
+	"carComposition": 15
 }, {
 	"id": "TWR.Rinkai",
 	"title": {

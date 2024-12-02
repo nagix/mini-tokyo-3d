@@ -11,6 +11,9 @@
 	"ds": [
 		"JR-Central.Tokaido.Numazu"
 	],
+	"nt": [
+		"JR-Central.Tokaido.321M.Weekday"
+	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
 		"d": "05:20"
@@ -106,6 +109,9 @@
 	],
 	"ds": [
 		"JR-Central.Tokaido.Numazu"
+	],
+	"nt": [
+		"JR-Central.Tokaido.323M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
@@ -1999,7 +2005,8 @@
 		"IzuHakone.Sunzu.Shuzenji"
 	],
 	"nt": [
-		"JR-East.Ito.3021M.Weekday"
+		"JR-East.Ito.3021M.Weekday",
+		"JR-Central.Tokaido.4021M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
@@ -3811,7 +3818,8 @@
 		"IzuHakone.Sunzu.Shuzenji"
 	],
 	"nt": [
-		"JR-East.Ito.3029M.Weekday"
+		"JR-East.Ito.3029M.Weekday",
+		"JR-Central.Tokaido.4029M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
@@ -6475,30 +6483,6 @@
 		"a": "18:08"
 	}]
 }, {
-	"id": "JR-East.Tokaido.1642H.Weekday",
-	"t": "JR-East.Tokaido.1642H",
-	"r": "JR-East.Tokaido",
-	"n": "1642H",
-	"y": "JR-East.Rapid",
-	"d": "Outbound",
-	"os": [
-		null
-	],
-	"ds": [
-		"JR-East.Tokaido.Shinagawa"
-	],
-	"tt": [{
-		"s": "JR-East.Tokaido.Tokyo",
-		"d": "17:10"
-	}, {
-		"s": "JR-East.Tokaido.Shimbashi",
-		"a": "17:12",
-		"d": "17:13"
-	}, {
-		"s": "JR-East.Tokaido.Shinagawa",
-		"a": "17:18"
-	}]
-}, {
 	"id": "JR-East.Tokaido.1897E.Weekday",
 	"t": "JR-East.Tokaido.1897E",
 	"r": "JR-East.Tokaido",
@@ -8226,6 +8210,9 @@
 	"pt": [
 		"JR-East.Takasaki.1931E.Weekday"
 	],
+	"nt": [
+		"JR-Central.Tokaido.327M.Weekday"
+	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
 		"d": "19:16"
@@ -8855,6 +8842,9 @@
 	],
 	"pt": [
 		"JR-East.Takasaki.1935E.Weekday"
+	],
+	"nt": [
+		"JR-Central.Tokaido.329M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
@@ -9643,6 +9633,9 @@
 	"pt": [
 		"JR-East.Takasaki.1943E.Weekday"
 	],
+	"nt": [
+		"JR-Central.Tokaido.331M.Weekday"
+	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
 		"d": "21:24"
@@ -9889,6 +9882,9 @@
 	"ds": [
 		"JR-Shikoku.SetoOhashi.Takamatsu",
 		"JR-West.Sanin.Izumoshi"
+	],
+	"nt": [
+		"JR-Central.Tokaido.5031M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
@@ -10215,6 +10211,9 @@
 	],
 	"pt": [
 		"JR-East.Utsunomiya.1657E.Weekday"
+	],
+	"nt": [
+		"JR-Central.Tokaido.333M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
@@ -12924,6 +12923,9 @@
 	"ds": [
 		"JR-Central.Tokaido.Numazu"
 	],
+	"nt": [
+		"JR-Central.Tokaido.325M.Weekday"
+	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Kozu",
 		"d": "16:53"
@@ -13266,6 +13268,9 @@
 	"ds": [
 		"JR-East.Tokaido.Tokyo"
 	],
+	"pt": [
+		"JR-Central.Tokaido.5032M.Weekday"
+	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Atami",
 		"d": "05:45"
@@ -13403,6 +13408,9 @@
 	"ds": [
 		"JR-East.Utsunomiya.Koganei"
 	],
+	"pt": [
+		"JR-Central.Tokaido.320M.Weekday"
+	],
 	"nt": [
 		"JR-East.Utsunomiya.1538E.Weekday"
 	],
@@ -13501,6 +13509,9 @@
 	],
 	"ds": [
 		"JR-East.Utsunomiya.Utsunomiya"
+	],
+	"pt": [
+		"JR-Central.Tokaido.322M.Weekday"
 	],
 	"nt": [
 		"JR-East.Utsunomiya.1542E.Weekday"
@@ -13699,6 +13710,9 @@
 	],
 	"ds": [
 		"JR-East.Utsunomiya.Ueno"
+	],
+	"pt": [
+		"JR-Central.Tokaido.324M.Weekday"
 	],
 	"nt": [
 		"JR-East.Utsunomiya.1554E.Weekday"
@@ -13901,6 +13915,9 @@
 	"ds": [
 		"JR-East.Utsunomiya.Ueno"
 	],
+	"pt": [
+		"JR-Central.Tokaido.326M.Weekday"
+	],
 	"nt": [
 		"JR-East.Utsunomiya.1562E.Weekday"
 	],
@@ -13999,6 +14016,9 @@
 	],
 	"ds": [
 		"JR-East.Utsunomiya.Koganei"
+	],
+	"pt": [
+		"JR-Central.Tokaido.328M.Weekday"
 	],
 	"nt": [
 		"JR-East.Utsunomiya.1566E.Weekday"
@@ -14296,6 +14316,9 @@
 	],
 	"ds": [
 		"JR-East.Tokaido.Odawara"
+	],
+	"pt": [
+		"JR-Central.Tokaido.330M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Atami",
@@ -15677,7 +15700,8 @@
 		"JR-East.Tokaido.Tokyo"
 	],
 	"pt": [
-		"JR-East.Ito.3024M.Weekday"
+		"JR-East.Ito.3024M.Weekday",
+		"JR-Central.Tokaido.4024M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Atami",
@@ -16817,7 +16841,8 @@
 		"JR-East.Tokaido.Tokyo"
 	],
 	"pt": [
-		"JR-East.Ito.3030M.Weekday"
+		"JR-East.Ito.3030M.Weekday",
+		"JR-Central.Tokaido.4030M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Atami",
@@ -18166,6 +18191,9 @@
 	],
 	"ds": [
 		"JR-East.Tokaido.Kozu"
+	],
+	"pt": [
+		"JR-Central.Tokaido.332M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Atami",
@@ -25779,6 +25807,9 @@
 	"ds": [
 		"JR-Central.Tokaido.Numazu"
 	],
+	"nt": [
+		"JR-Central.Tokaido.321M.SaturdayHoliday"
+	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
 		"d": "05:20"
@@ -25874,6 +25905,9 @@
 	],
 	"ds": [
 		"JR-Central.Tokaido.Numazu"
+	],
+	"nt": [
+		"JR-Central.Tokaido.323M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
@@ -27728,7 +27762,8 @@
 		"IzuHakone.Sunzu.Shuzenji"
 	],
 	"nt": [
-		"JR-East.Ito.3021M.SaturdayHoliday"
+		"JR-East.Ito.3021M.SaturdayHoliday",
+		"JR-Central.Tokaido.4021M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
@@ -28568,8 +28603,7 @@
 		"JR-East.Tokaido.Tokyo"
 	],
 	"ds": [
-		"Izukyu.Izukyu.IzukyuShimoda",
-		"IzuHakone.Sunzu.Shuzenji"
+		"Izukyu.Izukyu.IzukyuShimoda"
 	],
 	"nt": [
 		"JR-East.Ito.9027M.SaturdayHoliday"
@@ -29497,7 +29531,8 @@
 		"IzuHakone.Sunzu.Shuzenji"
 	],
 	"nt": [
-		"JR-East.Ito.3029M.SaturdayHoliday"
+		"JR-East.Ito.3029M.SaturdayHoliday",
+		"JR-Central.Tokaido.4029M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
@@ -33570,6 +33605,9 @@
 	"pt": [
 		"JR-East.Takasaki.1931E.SaturdayHoliday"
 	],
+	"nt": [
+		"JR-Central.Tokaido.327M.SaturdayHoliday"
+	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
 		"d": "19:16"
@@ -34075,6 +34113,9 @@
 	],
 	"pt": [
 		"JR-East.Takasaki.1935E.SaturdayHoliday"
+	],
+	"nt": [
+		"JR-Central.Tokaido.329M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
@@ -34751,6 +34792,9 @@
 	"pt": [
 		"JR-East.Takasaki.1943E.SaturdayHoliday"
 	],
+	"nt": [
+		"JR-Central.Tokaido.331M.SaturdayHoliday"
+	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
 		"d": "21:22"
@@ -34983,8 +35027,11 @@
 		"JR-East.Tokaido.Tokyo"
 	],
 	"ds": [
-		null,
+		"JR-Shikoku.SetoOhashi.Takamatsu",
 		"JR-West.Sanin.Izumoshi"
+	],
+	"nt": [
+		"JR-Central.Tokaido.5031M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
@@ -35263,6 +35310,9 @@
 	],
 	"pt": [
 		"JR-East.Utsunomiya.1649E.SaturdayHoliday"
+	],
+	"nt": [
+		"JR-Central.Tokaido.333M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Tokyo",
@@ -37899,6 +37949,9 @@
 	"ds": [
 		"JR-Central.Tokaido.Numazu"
 	],
+	"nt": [
+		"JR-Central.Tokaido.325M.SaturdayHoliday"
+	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Kozu",
 		"d": "16:53"
@@ -38241,6 +38294,9 @@
 	"ds": [
 		"JR-East.Tokaido.Tokyo"
 	],
+	"pt": [
+		"JR-Central.Tokaido.5032M.SaturdayHoliday"
+	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Atami",
 		"d": "05:45"
@@ -38378,6 +38434,9 @@
 	"ds": [
 		"JR-East.Utsunomiya.Ueno"
 	],
+	"pt": [
+		"JR-Central.Tokaido.5320M.SaturdayHoliday"
+	],
 	"nt": [
 		"JR-East.Utsunomiya.1534E.SaturdayHoliday"
 	],
@@ -38476,6 +38535,9 @@
 	],
 	"ds": [
 		"JR-East.Utsunomiya.Utsunomiya"
+	],
+	"pt": [
+		"JR-Central.Tokaido.322M.SaturdayHoliday"
 	],
 	"nt": [
 		"JR-East.Utsunomiya.1540E.SaturdayHoliday"
@@ -38674,6 +38736,9 @@
 	],
 	"ds": [
 		"JR-East.Utsunomiya.Ueno"
+	],
+	"pt": [
+		"JR-Central.Tokaido.5324M.SaturdayHoliday"
 	],
 	"nt": [
 		"JR-East.Utsunomiya.1550E.SaturdayHoliday"
@@ -38876,6 +38941,9 @@
 	"ds": [
 		"JR-East.Utsunomiya.Utsunomiya"
 	],
+	"pt": [
+		"JR-Central.Tokaido.5326M.SaturdayHoliday"
+	],
 	"nt": [
 		"JR-East.Utsunomiya.1564E.SaturdayHoliday"
 	],
@@ -38974,6 +39042,9 @@
 	],
 	"ds": [
 		"JR-East.Utsunomiya.Koganei"
+	],
+	"pt": [
+		"JR-Central.Tokaido.328M.SaturdayHoliday"
 	],
 	"nt": [
 		"JR-East.Utsunomiya.1566E.SaturdayHoliday"
@@ -39271,6 +39342,9 @@
 	],
 	"ds": [
 		"JR-East.Tokaido.Odawara"
+	],
+	"pt": [
+		"JR-Central.Tokaido.330M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Atami",
@@ -40652,7 +40726,8 @@
 		"JR-East.Tokaido.Tokyo"
 	],
 	"pt": [
-		"JR-East.Ito.3024M.SaturdayHoliday"
+		"JR-East.Ito.3024M.SaturdayHoliday",
+		"JR-Central.Tokaido.4024M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Atami",
@@ -41847,7 +41922,8 @@
 		"JR-East.Tokaido.Tokyo"
 	],
 	"pt": [
-		"JR-East.Ito.3030M.SaturdayHoliday"
+		"JR-East.Ito.3030M.SaturdayHoliday",
+		"JR-Central.Tokaido.4030M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Atami",
@@ -43269,6 +43345,9 @@
 	],
 	"ds": [
 		"JR-East.Tokaido.Kozu"
+	],
+	"pt": [
+		"JR-Central.Tokaido.332M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Tokaido.Atami",
