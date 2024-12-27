@@ -17,6 +17,7 @@ attribute vec3 idColor;
 attribute float groupIndex;
 #endif
 
+#ifndef BUS
 mat3 rotateX( float angle ) {
     float s = sin( angle );
     float c = cos( angle );
@@ -26,6 +27,7 @@ mat3 rotateX( float angle ) {
         0.0, -s, c
     );
 }
+#endif
 
 mat3 rotateZ( float angle ) {
     float s = sin( angle );
@@ -76,7 +78,11 @@ position0 = position0 * ( 1.0 + idColor.b * 0.03 );
 position0 = position0 + 0.1 * scale0 * sign( position );
 #endif
 
+#ifdef BUS
+vec3 transformed = rotateZ( rotationZ ) * position0 + translation + vec3( 0.0, 0.0, 0.3 * scale0 );
+#else
 vec3 transformed = rotateZ( rotationZ ) * rotateX( rotationX ) * position0 + translation + vec3( 0.0, 0.0, 0.44 * scale0 );
+#endif
 `;
 
 const common = `
@@ -84,22 +90,31 @@ const common = `
 #define TRANSFORM
 
 ${commonVariables}
+
+#ifdef BUS
+attribute vec3 color;
+#else
 attribute vec3 color0;
 attribute vec3 color1;
-attribute float opacity0;
-
 #ifdef CAR
 attribute vec3 color2;
 attribute vec3 color3;
 attribute float groupIndex;
 #endif
+#endif
+
+attribute float opacity0;
 
 ${vInstanceColor}
 ${vInstanceOpacity}
 `;
 
 const beginNormalVertex = `
+#ifdef BUS
+vec3 objectNormal = rotateZ( rotationZ ) * vec3( normal );
+#else
 vec3 objectNormal = rotateZ( rotationZ ) * rotateX( rotationX ) * vec3( normal );
+#endif
 `;
 
 const colorVertex = `
@@ -108,11 +123,15 @@ const colorVertex = `
 #ifdef CAR
 float mod3 = mod( groupIndex, 3.0 );
 vec3 null = vec3( 0.0, 1.0, 0.0 );
-vInstanceColor = mod3 == 1.0 && color1 != null ? color1 : color0;
-vInstanceColor = mod3 == 2.0 && color2 != null ? color2 : vInstanceColor;
-vInstanceColor = groupIndex >= 3.0 && color3 != null ? color3 : vInstanceColor;
-#else
+vInstanceColor = groupIndex >= 3.0 && color3 != null ? color3 : mod3 == 0.0 ? color0 : mod3 == 1.0 ? color1 : color2;
+#endif
+
+#ifdef AIRCRAFT
 vInstanceColor = groupIndex < 2.0 ? color0 : color1;
+#endif
+
+#ifdef BUS
+vInstanceColor = color;
 #endif
 
 vInstanceOpacity = opacity0;

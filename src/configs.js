@@ -12,8 +12,8 @@ const configs = {
     // All train positions will be refreshed if the screen has been inactive for this duration
     refreshTimeout: 10000,
 
-    // Interval of checking train positions based on real-time data in milliseconds
-    realtimeTrainCheckInterval: 15000,
+    // Interval of checking train and bus positions based on real-time data in milliseconds
+    realtimeCheckInterval: 15000,
 
     // Maximum train speed in km/h
     maxSpeedKMPH: 80,
@@ -55,6 +55,32 @@ const configs = {
     // Flight acceleration in km/ms^2
     get flightAcceleration() {
         return configs.flightAccelerationKMPHPS / 3600000000;
+    },
+
+    // Maximum bus speed in km/h
+    maxBusSpeedKMPH: 30,
+
+    // Bus acceleration in km/h/s
+    busAccelerationKMPHPS: 3,
+
+    // Maximum bus speed in km/ms
+    get maxBusSpeed() {
+        return configs.maxBusSpeedKMPH / 3600000;
+    },
+
+    // Bus acceleration in km/ms^2
+    get busAcceleration() {
+        return configs.busAccelerationKMPHPS / 3600000000;
+    },
+
+    // Time required to reach maximum bus speed in milliseconds
+    get maxBusAccelerationTime() {
+        return configs.maxBusSpeed / configs.busAcceleration;
+    },
+
+    // Distance required to reach maximum bus speed in kilometers
+    get maxBusAccDistance() {
+        return configs.maxBusAccelerationTime * configs.maxBusSpeed / 2;
     },
 
     // Delay in milliseconds for minimizing precision error
@@ -121,6 +147,9 @@ const configs = {
 
     // Default data URL
     dataUrl: 'https://minitokyo3d.com/data',
+
+    // Default data
+    data: [],
 
     // Route search URL
     searchUrl: 'https://search.minitokyo3d.com/api/v1/routes',

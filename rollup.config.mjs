@@ -31,6 +31,9 @@ const onwarn = (warning, defaultHandler) => {
 	if ((code == 'MISSING_EXPORT' || code == 'EVAL') && message.includes('@loaders.gl')) {
 		return;
 	}
+	if ((code == 'CIRCULAR_DEPENDENCY' || code == 'EVAL') && message.includes('protobufjs')) {
+		return;
+	}
 	defaultHandler(warning);
 }
 
@@ -46,6 +49,26 @@ export default [{
 	plugins: [
 		resolve(),
 		commonjs()
+	]
+}, {
+	input: 'src/worker.js',
+	output: {
+		file: `dist/${pkg.name}-worker.js`,
+		format: 'umd',
+		indent: false
+	},
+	plugins: [
+		resolve({
+			browser: true,
+			preferBuiltins: false
+		}),
+		commonjs(),
+		terser({
+			compress: {
+				pure_getters: true
+			}
+		}),
+		strip()
 	]
 }, {
 	input: 'src/index.js',
@@ -75,7 +98,8 @@ export default [{
 			preventAssignment: true,
 			'process.env.NODE_ENV': '\'development\'',
 			'log.error': '(() => () => {})',
-			'Math.min(1.01*a,i*(1/t._horizonShift))}': 'Math.max(i*(1/t._horizonShift),i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}'
+			'Math.min(1.01*a,i*(1/t._horizonShift))}': 'Math.max(i*(1/t._horizonShift),i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}',
+			'WORKER_STRING': () => fs.readFileSync(`dist/${pkg.name}-worker.js`, {encoding: 'utf8'}).replace(/(?=`|\${|\\)/g, '\\')
 		}),
 		replace({
 			preventAssignment: true,
@@ -132,7 +156,8 @@ export default [{
 			preventAssignment: true,
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})',
-			'Math.min(1.01*a,i*(1/t._horizonShift))}': 'Math.max(i*(1/t._horizonShift),i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}'
+			'Math.min(1.01*a,i*(1/t._horizonShift))}': 'Math.max(i*(1/t._horizonShift),i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}',
+			'WORKER_STRING': () => fs.readFileSync(`dist/${pkg.name}-worker.js`, {encoding: 'utf8'}).replace(/(?=`|\${|\\)/g, '\\')
 		}),
 		replace({
 			preventAssignment: true,
@@ -194,7 +219,8 @@ export default [{
 			preventAssignment: true,
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})',
-			'Math.min(1.01*a,i*(1/t._horizonShift))}': 'Math.max(i*(1/t._horizonShift),i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}'
+			'Math.min(1.01*a,i*(1/t._horizonShift))}': 'Math.max(i*(1/t._horizonShift),i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}',
+			'WORKER_STRING': () => fs.readFileSync(`dist/${pkg.name}-worker.js`, {encoding: 'utf8'}).replace(/(?=`|\${|\\)/g, '\\')
 		}),
 		replace({
 			preventAssignment: true,

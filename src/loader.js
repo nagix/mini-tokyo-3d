@@ -1,3 +1,4 @@
+import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
 import configs from './configs';
 import {loadJSON, removePrefix} from './helpers/helpers';
 
@@ -231,4 +232,20 @@ export function loadDynamicFlightData() {
         atisData: data[0],
         flightData: data[1]
     }));
+}
+
+export function loadDynamicBusData(gtfsData) {
+    return Promise.all(gtfsData.map(({vehiclePositionUrl}) => fetch(vehiclePositionUrl)
+        .then(response => response.arrayBuffer())
+        .then(data => GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(new Uint8Array(data)))
+    ));
+}
+
+export function updateOdptUrl(url, secrets) {
+    if (url.startsWith('https://api.odpt.org/') && !url.match(/acl:consumerKey/)) {
+        return `${url}${url.match(/\?/) ? '&' : '?'}acl:consumerKey=${secrets.odpt}`;
+    } else if (url.startsWith('https://api-challenge2024.odpt.org/') && !url.match(/acl:consumerKey/)) {
+        return `${url}${url.match(/\?/) ? '&' : '?'}acl:consumerKey=${secrets.challenge2024}`;
+    }
+    return url;
 }
