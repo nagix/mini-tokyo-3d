@@ -2055,6 +2055,13 @@ export default class extends Evented {
                 me.updatePopup({setHTML: true});
             }
             bus.animationID = animation.start({
+                callback: () => {
+                    const trackedObject = me.trackedObject;
+
+                    if (trackedObject && trackedObject.object === bus) {
+                        me.updateBusShape(bus);
+                    }
+                },
                 complete: () => {
                     if (final) {
                         me.stopBus(bus);
