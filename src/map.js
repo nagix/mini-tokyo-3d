@@ -2408,7 +2408,7 @@ export default class extends Evented {
             '<div class="desc-header">',
             `<div style="background-color: ${me.data[bus.index].color};"></div>`,
             `<div><strong>${me.busAgencies[bus.index]}</strong><br>`,
-            shortName ? ` <span class="bus-short-name-label" style="color: ${trip.textColor}; background-color: ${trip.color};">${shortName[lang] || shortName.en}</span> ` : '',
+            shortName.en ? ` <span class="bus-short-name-label" style="color: ${trip.textColor}; background-color: ${trip.color};">${shortName[lang] || shortName.en}</span> ` : '',
             headsign[lang] || headsign.en,
             '</div></div>',
             `<strong>${dict['vehicle-number']}:</strong> ${bus.id}`,
