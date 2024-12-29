@@ -702,7 +702,8 @@ export default class extends Evented {
 
     initGtfsData(data) {
         const me = this,
-            {lang, map} = me;
+            {lang, map} = me,
+            layerIds = new Set(me.styleOpacities.map(({id}) => id));
 
         for (let i = 0, ilen = data.length; i < ilen; i++) {
             const {agency, featureCollection, stops, trips} = data[i],
@@ -828,7 +829,12 @@ export default class extends Evented {
                 minzoom: 14
             });
         }
-        me.styleOpacities = helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect');
+
+        for (const item of helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect')) {
+            if (!layerIds.has(item.id)) {
+                me.styleOpacities.push(item);
+            }
+        }
         me.refreshMap();
 
         if (me.clockMode === 'realtime') {
