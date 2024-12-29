@@ -236,6 +236,7 @@ export default class {
         if (animationID) {
             animation.stop(animationID);
         }
+        object.removing = true;
 
         object.animationID = animation.start({
             callback: (elapsed, duration) => {
@@ -249,6 +250,7 @@ export default class {
                 delete object.meshIndex;
                 delete object.instanceIndex;
                 delete object.animationID;
+                delete object.removing;
                 objects.splice(instanceIndex, 1);
                 for (let i = instanceIndex; i < objects.length; i++) {
                     objects[i].instanceIndex--;
@@ -256,7 +258,6 @@ export default class {
             },
             duration: configs.fadeDuration
         });
-
     }
 
     pickObject(mode, point) {

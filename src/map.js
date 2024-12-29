@@ -3174,7 +3174,7 @@ export default class extends Evented {
             }
         }
 
-        if (object) {
+        if (object && !object.removing) {
             me.markedObject = object;
             map.getCanvas().style.cursor = 'pointer';
 
@@ -3269,7 +3269,7 @@ export default class extends Evented {
             }
         }
 
-        if (object) {
+        if (object && !object.removing) {
             me.trackedObject = object;
 
             if (isVehicle(object)) {
