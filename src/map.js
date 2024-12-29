@@ -18,7 +18,7 @@ import {decode} from './helpers/helpers-gtfs';
 import * as helpersMapbox from './helpers/helpers-mapbox';
 import {GeoJsonLayer, ThreeLayer, Tile3DLayer, TrafficLayer} from './layers';
 import {loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
-import {AboutPanel, LayerPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
+import {AboutPanel, BusPanel, LayerPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
 import nearestCloserPointOnLine from './turf/nearest-closer-point-on-line';
 
@@ -2415,7 +2415,7 @@ export default class extends Evented {
             '<div class="desc-header">',
             `<div style="background-color: ${me.data[bus.index].color};"></div>`,
             `<div><strong>${me.busAgencies[bus.index]}</strong><br>`,
-            shortName.en ? ` <span class="bus-short-name-label" style="color: ${trip.textColor}; background-color: ${trip.color};">${shortName[lang] || shortName.en}</span> ` : '',
+            shortName.en ? ` <span class="bus-route-label" style="color: ${trip.textColor}; background-color: ${trip.color};">${shortName[lang] || shortName.en}</span> ` : '',
             headsign[lang] || headsign.en,
             '</div></div>',
             `<strong>${dict['vehicle-number']}:</strong> ${bus.id}`,
@@ -3248,12 +3248,15 @@ export default class extends Evented {
                 me.startViewAnimation();
                 me._setViewMode(object.altitude < 0 ? 'underground' : 'ground');
 
-                if (me.clockMode === 'realtime' && navigator.share) {
+                if (helpers.includes(['train', 'flight'], object.type) && me.clockMode === 'realtime' && navigator.share) {
                     me.sharePanel = new SharePanel({object: _object});
                     me.sharePanel.addTo(me);
                 }
                 if (_object.timetable) {
                     me.detailPanel = new TrainPanel({object: _object});
+                    me.detailPanel.addTo(me);
+                } else if (_object.trip) {
+                    me.detailPanel = new BusPanel({object: _object});
                     me.detailPanel.addTo(me);
                 }
 

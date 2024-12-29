@@ -364,6 +364,55 @@
     font-size: 12px;
     line-height: 20px;
 }
+.mini-tokyo-3d .bus-panel.collapsed {
+    height: 68px;
+}
+.mini-tokyo-3d .bus-panel #panel-header {
+    height: 48px;
+    line-height: 24px;
+}
+.mini-tokyo-3d .bus-panel #panel-body {
+    height: calc(100% - 68px);
+}
+.mini-tokyo-3d #busroute-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 100%;
+}
+.mini-tokyo-3d .bus-panel #busroute-mark {
+    left: 10px;
+}
+.mini-tokyo-3d #bus-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 44px;
+    height: calc(100% + 20px);
+}
+.mini-tokyo-3d .busstop-row {
+    display: table;
+    width: 100%;
+    margin: 5px 0;
+}
+.mini-tokyo-3d .busstop-row:last-child {
+    margin-bottom: 10px;
+}
+.mini-tokyo-3d .busstop-row:hover {
+    background-color: rgba(102, 102, 102, 0.7);
+}
+.mini-tokyo-3d .busstop-row > div {
+    display: table-cell;
+    vertical-align: middle;
+}
+.mini-tokyo-3d .busstop-row .busstop-title-box {
+    padding-left: 30px;
+}
+.mini-tokyo-3d .busstop-row .busstop-time-box {
+    width: 0;
+    text-align: right;
+}
 .mini-tokyo-3d .station-panel.station-to,
 .mini-tokyo-3d .station-panel.station-from {
     height: 230px;
@@ -924,7 +973,7 @@
     height: 16px;
 }
 .mini-tokyo-3d .train-type-label,
-.mini-tokyo-3d .bus-short-name-label {
+.mini-tokyo-3d .bus-route-label {
     padding: 2px 2px 1px 2px;
     border-radius: 3px;
     color: #333;
