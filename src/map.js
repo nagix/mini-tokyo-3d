@@ -1659,17 +1659,11 @@ export default class extends Evented {
     }
 
     updateBusProps(bus) {
-        const me = this,
-            {index, feature, sectionIndex} = bus,
-            stops = bus.trip.stops,
-            point = me.busStops[index].get(stops[sectionIndex]).coord,
-            // Use the current bus.offset to calulate a weight and pick a closer point
-            offset = bus.offset = nearestCloserPointOnLine(feature, point, bus.offset).properties.location,
-            nextPoint = me.busStops[index].get(stops[sectionIndex + bus.sectionLength]).coord,
-            // Use the current bus.offset to calulate a weight and pick a closer point
-            nextOffset = nearestCloserPointOnLine(feature, nextPoint, bus.offset).properties.location;
+        const sectionIndex = bus.sectionIndex,
+            stopOffsets = bus.offsets,
+            offset = bus.offset = stopOffsets[sectionIndex];
 
-        bus.interval = nextOffset - offset;
+        bus.interval = stopOffsets[sectionIndex + bus.sectionLength] - offset;
     }
 
     updateBusShape(bus, t) {
@@ -2897,34 +2891,67 @@ export default class extends Evented {
 
         loadDynamicBusData(me.data).then(data => {
             for (let i = 0, ilen = me.busFeatureLookup.length; i < ilen; i++) {
-                me.realtimeBuses[i].clear();
+                const busFeatureLookup = me.busFeatureLookup[i],
+                    busStops = me.busStops[i],
+                    busTrips = me.busTrips[i],
+                    activeBusLookup = me.activeBusLookup[i],
+                    realtimeBuses = me.realtimeBuses[i];
 
-                for (const position of data[i].entity) {
-                    const {id, vehicle} = position,
-                        stop = vehicle.currentStopSequence,
+                realtimeBuses.clear();
+
+                for (const {id, vehicle} of data[i].entity) {
+                    const stop = vehicle.currentStopSequence,
+                        position = vehicle.position,
                         tripId = vehicle.trip && vehicle.trip.tripId;
 
-                    if (!stop || !tripId) {
+                    if (!(stop || position) || !tripId) {
                         continue;
                     }
-                    if (me.activeBusLookup[i].has(tripId) && stop) {
-                        me.activeBusLookup[i].get(tripId).stop = stop;
-                    } else {
-                        const busTrip = me.busTrips[i].get(tripId) || {},
-                            feature = me.busFeatureLookup[i].get(busTrip.shape);
 
-                        if (feature) {
-                            me.busStart({
-                                id,
-                                index: i,
-                                stop,
-                                trip: busTrip,
-                                feature,
-                                offset: 0
-                            });
-                        }
+                    const busTrip = busTrips.get(tripId),
+                        feature = busTrip && busFeatureLookup.get(busTrip.shape);
+
+                    if (!busTrip || !feature) {
+                        continue;
                     }
-                    me.realtimeBuses[i].add(tripId);
+
+                    const isActive = activeBusLookup.has(tripId);
+                    let bus;
+
+                    if (isActive) {
+                        bus = activeBusLookup.get(tripId);
+                    } else {
+                        let offset = 0;
+                        const offsets = busTrip.stops.map(stopId =>
+                            // Use the previous offset to calulate a weight and pick a closer point
+                            (offset = nearestCloserPointOnLine(feature, busStops.get(stopId).coord, offset).properties.location)
+                        );
+
+                        bus = {
+                            id,
+                            index: i,
+                            trip: busTrip,
+                            feature,
+                            offsets,
+                            offset: 0
+                        };
+                    }
+                    if (stop) {
+                        bus.stop = stop;
+                    } else {
+                        const offsets = bus.offsets,
+                            // Use the current bus.offset to calulate a weight and pick a closer point
+                            offset = nearestCloserPointOnLine(feature, [position.longitude, position.latitude], bus.offset).properties.location;
+
+                        bus.stop = busTrip.stopSequences[offsets.reduce(
+                            (acc, cur, i) => cur < offset ? Math.min(i + 1, offsets.length - 1) : acc, 0
+                        )];
+                    }
+                    if (!isActive) {
+                        me.busStart(bus);
+                    }
+
+                    realtimeBuses.add(tripId);
                 }
             }
 
