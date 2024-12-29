@@ -2924,7 +2924,7 @@ export default class extends Evented {
                             });
                         }
                     }
-                    me.realtimeBuses[i].add(id);
+                    me.realtimeBuses[i].add(tripId);
                 }
             }
 
