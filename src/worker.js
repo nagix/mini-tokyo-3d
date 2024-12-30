@@ -132,11 +132,12 @@ class RouteReader {
         if (me.routeIdIndex === undefined) {
             me.routeIdIndex = fileds.indexOf('route_id');
             me.routeShortNameIndex = fileds.indexOf('route_short_name');
+            me.routeLongNameIndex = fileds.indexOf('route_long_name');
             me.routeColorIndex = fileds.indexOf('route_color');
             me.routeTextColorIndex = fileds.indexOf('route_text_color');
         } else {
             me.lookup.set(fileds[me.routeIdIndex], {
-                shortName: fileds[me.routeShortNameIndex],
+                shortName: fileds[me.routeShortNameIndex] || fileds[me.routeLongNameIndex],
                 color: `#${fileds[me.routeColorIndex]}`,
                 textColor: `#${fileds[me.routeTextColorIndex]}`
             });
@@ -239,19 +240,22 @@ class StopTimeReader {
             me.tripIdIndex = fileds.indexOf('trip_id');
             me.stopIdIndex = fileds.indexOf('stop_id');
             me.stopSequenceIndex = fileds.indexOf('stop_sequence');
+            me.stopHeadsignIndex = fileds.indexOf('stop_headsign');
         } else {
             const id = fileds[me.tripIdIndex];
-            let stops, stopSequences;
+            let stops, stopSequences, stopHeadsigns;
 
             if (lookup.has(id)) {
-                ({stops, stopSequences} = lookup.get(id));
+                ({stops, stopSequences, stopHeadsigns} = lookup.get(id));
             } else {
                 stops = [];
                 stopSequences = [];
-                lookup.set(id, {stops, stopSequences});
+                stopHeadsigns = [];
+                lookup.set(id, {stops, stopSequences, stopHeadsigns});
             }
             stops.push(fileds[me.stopIdIndex]);
             stopSequences.push(+fileds[me.stopSequenceIndex]);
+            stopHeadsigns.push(fileds[me.stopHeadsignIndex]);
         }
     }
 
@@ -392,7 +396,8 @@ function getTrips(trips, services, serviceExceptions, routeLookup, stopsLookup, 
     for (const {id, service, route, shape, headsign} of trips) {
         if (serviceSet.has(service)) {
             const {shortName, color, textColor} = routeLookup.get(route),
-                {stops, stopSequences} = stopsLookup.get(id);
+                {stops, stopSequences, stopHeadsigns} = stopsLookup.get(id),
+                headsignOverride = new Set(stopHeadsigns).size > 1;
 
             result.push({
                 id,
@@ -405,10 +410,16 @@ function getTrips(trips, services, serviceExceptions, routeLookup, stopsLookup, 
                 shape,
                 stops,
                 stopSequences,
-                headsign: {
+                headsigns: headsignOverride ? stopHeadsigns.map(value => ({
+                    ja: value,
+                    en: dict.get(`stop_times.stop_headsign.${value}.en`) || value
+                })) : headsign ? [{
                     ja: headsign,
                     en: dict.get(`trips.trip_headsign.${id}.en`) || dict.get(`trips.trip_headsign.${headsign}.en`) || headsign
-                }
+                }] : [{
+                    ja: stopHeadsigns[0],
+                    en: dict.get(`stop_times.stop_headsign.${stopHeadsigns[0]}.en`) || stopHeadsigns[0]
+                }]
             });
         }
     }

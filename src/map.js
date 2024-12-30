@@ -2049,10 +2049,13 @@ export default class extends Evented {
         if (bus.sectionLength > 0 && bus.interval > 0) {
             me.busRepeat(bus);
         } else {
-            const markedObject = me.markedObject;
+            const {markedObject, trackedObject} = me;
 
             if (markedObject && markedObject.object === bus) {
                 me.updatePopup({setHTML: true});
+            }
+            if (trackedObject && trackedObject.object === bus && me.detailPanel) {
+                me.detailPanel.updateHeader();
             }
             bus.animationID = animation.start({
                 callback: () => {
@@ -2077,10 +2080,13 @@ export default class extends Evented {
 
     busRepeat(bus) {
         const me = this,
-            markedObject = me.markedObject;
+            {markedObject, trackedObject} = me;
 
         if (markedObject && markedObject.object === bus) {
             me.updatePopup({setHTML: true});
+        }
+        if (trackedObject && trackedObject.object === bus && me.detailPanel) {
+            me.detailPanel.updateHeader();
         }
         bus.animationID = startBusAnimation(t => {
             me.updateBusShape(bus, t);
@@ -2405,11 +2411,12 @@ export default class extends Evented {
             {lang, dict} = me,
             busStops = me.busStops[bus.index],
             trip = bus.trip,
-            {shortName, headsign, stops} = trip,
+            {shortName, headsigns, stops} = trip,
             nextStopIndex = bus.sectionIndex + bus.sectionLength,
             nextStopName = busStops.get(stops[nextStopIndex]).name,
             prevStopIndex = Math.max(0, nextStopIndex - 1),
-            prevStopName = busStops.get(stops[prevStopIndex]).name;
+            prevStopName = busStops.get(stops[prevStopIndex]).name,
+            headsign = headsigns[headsigns.length === 1 ? 0 : prevStopIndex];
 
         return [
             '<div class="desc-header">',

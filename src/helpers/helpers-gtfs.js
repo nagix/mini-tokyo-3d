@@ -24,10 +24,12 @@ export function encode(data, pbf) {
                 pbf.writeStringField(6, stop);
             }
             pbf.writePackedVarint(7, obj.stopSequences);
-            pbf.writeMessage(8, (obj, pbf) => {
-                pbf.writeStringField(1, obj.en);
-                pbf.writeStringField(2, obj.ja);
-            }, obj.headsign);
+            for (const headsign of obj.headsigns) {
+                pbf.writeMessage(8, (obj, pbf) => {
+                    pbf.writeStringField(1, obj.en);
+                    pbf.writeStringField(2, obj.ja);
+                }, headsign);
+            }
         }, trip);
     }
     return pbf.finish();
@@ -55,10 +57,10 @@ export function decode(pbf) {
             else if (tag === 5) obj.shape = pbf.readString();
             else if (tag === 6) obj.stops.push(pbf.readString());
             else if (tag === 7) pbf.readPackedVarint(obj.stopSequences, true);
-            else if (tag === 8) obj.headsign = pbf.readFields((tag, obj, pbf) => {
+            else if (tag === 8) obj.headsigns.push(pbf.readFields((tag, obj, pbf) => {
                 if (tag === 1) obj.en = pbf.readString();
                 else if (tag === 2) obj.ja = pbf.readString();
-            }, {}, pbf.readVarint() + pbf.pos);
-        }, {stops: [], stopSequences: []}, pbf.readVarint() + pbf.pos));
+            }, {}, pbf.readVarint() + pbf.pos));
+        }, {stops: [], stopSequences: [], headsigns: []}, pbf.readVarint() + pbf.pos));
     }, {stops: [], trips: []});
 }
