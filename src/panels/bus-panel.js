@@ -12,11 +12,11 @@ export default class extends Panel {
             busstopHTML = [],
             offsets = [],
             bus = me._options.object,
-            busIndex = bus.index,
-            busStops = map.busStops[busIndex];
+            gtfs = map.gtfs.get(bus.gtfsId),
+            stopLookup = gtfs.stopLookup;
 
         for (const stopId of bus.trip.stops) {
-            const stop = busStops.get(stopId),
+            const stop = stopLookup.get(stopId),
                 name = stop.name;
 
             busstopHTML.push([
@@ -44,7 +44,7 @@ export default class extends Panel {
             offsets.push(child.offsetTop + child.getBoundingClientRect().height / 2);
         }
         container.querySelector('#busroute-mark').innerHTML = [
-            `<line stroke="${map.data[busIndex].color}" stroke-width="10" x1="12" y1="${offsets[0]}" x2="12" y2="${offsets[offsets.length - 1]}" stroke-linecap="round" />`,
+            `<line stroke="${gtfs.color}" stroke-width="10" x1="12" y1="${offsets[0]}" x2="12" y2="${offsets[offsets.length - 1]}" stroke-linecap="round" />`,
         ].concat(offsets.map(offset =>
             `<circle cx="12" cy="${offset}" r="3" fill="#ffffff" />`
         )).join('');
@@ -76,15 +76,16 @@ export default class extends Panel {
             map = me._map,
             lang = map.lang,
             bus = me._options.object,
-            {index, trip} = bus,
+            gtfs = map.gtfs.get(bus.gtfsId),
+            trip = bus.trip,
             {shortName, headsigns} = trip,
             headsign = headsigns[headsigns.length === 1 ? 0 : bus.sectionIndex];
 
         this.setTitle([
             '<div class="desc-header">',
-            `<div style="background-color: ${map.data[index].color};"></div>`,
+            `<div style="background-color: ${gtfs.color};"></div>`,
             '<div><div class="desc-first-row">',
-            map.busAgencies[index],
+            gtfs.agency,
             '</div><div class="desc-second-row">',
             shortName.en ? ` <span class="bus-route-label" style="color: ${trip.textColor}; background-color: ${trip.color};">${shortName[lang] || shortName.en}</span> ` : '',
             headsign[lang] || headsign.en,

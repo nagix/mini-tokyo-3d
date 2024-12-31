@@ -1,6 +1,10 @@
+import * as Comlink from 'comlink';
+import geobuf from 'geobuf';
 import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
+import Pbf from 'pbf';
 import configs from './configs';
 import {loadJSON, removePrefix} from './helpers/helpers';
+import {decode} from './helpers/helpers-gtfs';
 
 const RAILWAYS_FOR_TRAINS = {
     odpt: [
@@ -234,10 +238,32 @@ export function loadDynamicFlightData() {
     }));
 }
 
-export function loadDynamicBusData(gtfsData) {
-    return Promise.all(gtfsData.map(({vehiclePositionUrl}) => fetch(vehiclePositionUrl)
+export function loadBusData(options) {
+    const workerUrl = URL.createObjectURL(new Blob([`WORKER_STRING`], {type: 'text/javascript'})),
+        worker = new Worker(workerUrl),
+        proxy = Comlink.wrap(worker);
+
+    return new Promise(resolve => proxy.load(options, Comlink.proxy(data => {
+        const gtfsData = data.map((items, i) => ({
+            featureCollection: geobuf.decode(new Pbf(items[0])),
+            ...decode(new Pbf(items[1])),
+            vehiclePositionUrl: options[i].vehiclePositionUrl,
+            color: options[i].color
+        }));
+
+        proxy[Comlink.releaseProxy]();
+        worker.terminate();
+        resolve(gtfsData);
+    })));
+}
+
+export function loadDynamicBusData(gtfsArray) {
+    return Promise.all(gtfsArray.map(gtfs => fetch(gtfs.vehiclePositionUrl)
         .then(response => response.arrayBuffer())
-        .then(data => GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(new Uint8Array(data)))
+        .then(data => ({
+            gtfs,
+            vehiclePosition: GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(new Uint8Array(data))
+        }))
     ));
 }
 

@@ -1,9 +1,6 @@
 import {featureEach} from '@turf/meta';
-import * as Comlink from 'comlink';
-import geobuf from 'geobuf';
 import {Evented, FullscreenControl, LngLat, Map as Mapbox, MercatorCoordinate, NavigationControl} from 'mapbox-gl';
 import AnimatedPopup from 'mapbox-gl-animated-popup';
-import Pbf from 'pbf';
 import animation from './animation';
 import Clock from './clock';
 import configs from './configs';
@@ -14,10 +11,9 @@ import extend from './extend';
 import * as helpers from './helpers/helpers';
 import {pickObject} from './helpers/helpers-deck';
 import * as helpersGeojson from './helpers/helpers-geojson';
-import {decode} from './helpers/helpers-gtfs';
 import * as helpersMapbox from './helpers/helpers-mapbox';
 import {GeoJsonLayer, ThreeLayer, Tile3DLayer, TrafficLayer} from './layers';
-import {loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
+import {loadBusData, loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
 import {AboutPanel, BusPanel, LayerPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
 import nearestCloserPointOnLine from './turf/nearest-closer-point-on-line';
@@ -160,20 +156,7 @@ export default class extends Evented {
             options.customAttribution = helpers.flat([options.customAttribution, configs.customAttribution]);
         }
 
-        const workerUrl = URL.createObjectURL(new Blob([`WORKER_STRING`], {type: 'text/javascript'})),
-            worker = new Worker(workerUrl),
-            proxy = Comlink.wrap(worker);
-
-        proxy.load(me.data, Comlink.proxy(data => {
-            const gtfsData = data.map(items => ({
-                featureCollection: geobuf.decode(new Pbf(items[0])),
-                ...decode(new Pbf(items[1]))
-            }));
-
-            proxy[Comlink.releaseProxy]();
-            worker.terminate();
-            me.initGtfsData(gtfsData);
-        }));
+        me.refreshBusData();
 
         me.map = new Mapbox(options);
 
@@ -692,154 +675,7 @@ export default class extends Evented {
         me.activeFlightLookup = new Map();
         me.flightLookup = new Map();
 
-        me.busAgencies = [];
-        me.busFeatureLookup = [];
-        me.busStops = [];
-        me.busTrips = [];
-        me.activeBusLookup = [];
-        me.realtimeBuses = [];
-    }
-
-    initGtfsData(data) {
-        const me = this,
-            {lang, map} = me,
-            layerIds = new Set(me.styleOpacities.map(({id}) => id));
-
-        for (let i = 0, ilen = data.length; i < ilen; i++) {
-            const {agency, featureCollection, stops, trips} = data[i],
-                busFeatureLookup = new Map(),
-                busStops = new Map(),
-                busTrips = new Map(),
-                source = `gtfs-${i}`;
-
-            featureEach(featureCollection, feature => {
-                const properties = feature.properties;
-
-                if (properties.type === 0) {
-                    busFeatureLookup.set(properties.id, feature);
-                }
-            });
-            for (const stop of stops) {
-                busStops.set(stop.id, stop);
-            }
-            for (const trip of trips) {
-                busTrips.set(trip.id, trip);
-            }
-            me.busAgencies.push(agency);
-            me.busFeatureLookup.push(busFeatureLookup);
-            me.busStops.push(busStops);
-            me.busTrips.push(busTrips);
-
-            me.activeBusLookup.push(new Map());
-            me.realtimeBuses.push(new Set());
-
-            me.map.addSource(source, {
-                type: 'geojson',
-                data: featureCollection
-            });
-
-            me.addLayer({
-                id: `busroute-${i}-og-`,
-                type: 'line',
-                source,
-                filter: ['==', ['get', 'type'], 0],
-                paint: {
-                    'line-color': ['get', 'color'],
-                    'line-width': [
-                        'interpolate',
-                        ['exponential', 2],
-                        ['zoom'],
-                        11,
-                        ['/', ['get', 'width'], 2],
-                        12,
-                        ['get', 'width'],
-                        19,
-                        ['get', 'width'],
-                        22,
-                        ['*', ['get', 'width'], 8]
-                    ]
-                },
-                metadata: {
-                    'mt3d:opacity-effect': true,
-                    'mt3d:opacity': 1,
-                    'mt3d:opacity-route': 0.1,
-                    'mt3d:opacity-underground': 0.25,
-                    'mt3d:opacity-underground-route': 0.1
-                }
-            }, 'railways-og-13');
-
-            for (const zoom of [14, 15, 16, 17, 18]) {
-                const interpolate = ['interpolate', ['exponential', 2], ['zoom']],
-                    width = ['get', 'width'],
-                    lineWidth = zoom === 18 ? [...interpolate, 19, width, 22, ['*', width, 8]] : width;
-
-                for (const key of ['busstops', 'busstops-outline']) {
-                    me.addLayer({
-                        id: `${key}-${i}-og-${zoom}`,
-                        type: key === 'busstops' ? 'fill' : 'line',
-                        source,
-                        filter: ['all', ['==', ['get', 'zoom'], zoom], ['==', ['get', 'type'], 1]],
-                        layout: {
-                            visibility: zoom === me.layerZoom ? 'visible' : 'none'
-                        },
-                        paint: {
-                            'busstops': {
-                                'fill-color': ['get', 'color'],
-                                'fill-opacity': .7
-                            },
-                            'busstops-outline': {
-                                'line-color': ['get', 'outlineColor'],
-                                'line-width': lineWidth
-                            }
-                        }[key],
-                        metadata: {
-                            'mt3d:opacity-effect': true,
-                            'mt3d:opacity': 1,
-                            'mt3d:opacity-route': 0.1,
-                            'mt3d:opacity-underground': 0.25,
-                            'mt3d:opacity-underground-route': 0.1
-                        }
-                    }, 'railways-og-13');
-                }
-            }
-
-            me.addLayer({
-                id: `busstops-poi-${i}`,
-                type: 'symbol',
-                source,
-                filter: ['==', ['get', 'type'], 2],
-                layout: {
-                    'text-field': `{name_${lang.match(/ja/) ? lang : 'en'}}`,
-                    'text-font': [
-                        'Open Sans Bold',
-                        'Arial Unicode MS Bold'
-                    ],
-                    'text-max-width': 9,
-                    'text-padding': 2,
-                    'text-size': 12,
-                    'text-anchor': 'bottom',
-                    'text-offset': [0, -1]
-                },
-                paint: {
-                    'text-color': 'rgba(102,102,102,1)',
-                    'text-halo-blur': 0.5,
-                    'text-halo-color': 'rgba(255,255,255,1)',
-                    'text-halo-width': 1
-                },
-                minzoom: 14
-            });
-        }
-
-        for (const item of helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect')) {
-            if (!layerIds.has(item.id)) {
-                me.styleOpacities.push(item);
-            }
-        }
-        me.refreshMap();
-
-        if (me.clockMode === 'realtime') {
-            me.loadRealtimeBusData();
-        }
+        me.gtfs = new Map();
     }
 
     initialize() {
@@ -1276,13 +1112,13 @@ export default class extends Evented {
                     me.setLayerVisibility(`${key}-og-${layerZoom}`, 'visible');
                 }
 
-                for (let i = 0, ilen = me.busFeatureLookup.length; i < ilen; i++) {
+                for (const {id} of me.gtfs.values()) {
                     for (const key of ['busstops', 'busstops-outline']) {
                         if (prevLayerZoom >= 14) {
-                            me.setLayerVisibility(`${key}-${i}-og-${prevLayerZoom}`, 'none');
+                            me.setLayerVisibility(`${key}-${id}-og-${prevLayerZoom}`, 'none');
                         }
                         if (layerZoom >= 14) {
-                            me.setLayerVisibility(`${key}-${i}-og-${layerZoom}`, 'visible');
+                            me.setLayerVisibility(`${key}-${id}-og-${layerZoom}`, 'visible');
                         }
                     }
                 }
@@ -1328,7 +1164,8 @@ export default class extends Evented {
                     {minDelay, realtimeCheckInterval} = configs;
 
                 if (now - me.lastTimetableRefresh >= 86400000) {
-                    me.loadTimetableData();
+                    me.refreshTrainTimetableData();
+                    me.refreshBusData();
                     me.lastTimetableRefresh = clock.getTime('03:00');
                 }
 
@@ -1345,9 +1182,9 @@ export default class extends Evented {
                     helpersMapbox.setSunlight(map, now);
                     if (me.searchMode === 'none') {
                         if (me.clockMode === 'realtime') {
-                            me.loadRealtimeTrainData();
-                            me.loadRealtimeFlightData();
-                            me.loadRealtimeBusData();
+                            me.refreshRealtimeTrainData();
+                            me.refreshRealtimeFlightData();
+                            me.refreshRealtimeBusData();
                         } else {
                             me.refreshTrains();
                             me.refreshFlights();
@@ -1689,7 +1526,7 @@ export default class extends Evented {
             car = bus.car = {
                 type: 'bus',
                 object: bus,
-                color: me.data[bus.index].color
+                color: me.gtfs.get(bus.gtfsId).color
             };
         }
 
@@ -2013,7 +1850,7 @@ export default class extends Evented {
         if (!me.setBusSectionData(bus)) {
             return;
         }
-        me.activeBusLookup[bus.index].set(bus.trip.id, bus);
+        me.gtfs.get(bus.gtfsId).activeBusLookup.set(bus.trip.id, bus);
         me.updateBusProps(bus);
 
         // Sometimes bus.interval becomes 0 because the busroute coordinates
@@ -2033,7 +1870,7 @@ export default class extends Evented {
         const me = this;
         let final = false;
 
-        if (me.setBusSectionData(bus, !me.realtimeBuses[bus.index].has(bus.trip.id))) {
+        if (me.setBusSectionData(bus, !me.gtfs.get(bus.gtfsId).realtimeBuses.has(bus.trip.id))) {
             me.updateBusProps(bus);
             me.updateBusShape(bus, 0);
         } else {
@@ -2409,19 +2246,20 @@ export default class extends Evented {
     getBusDescription(bus) {
         const me = this,
             {lang, dict} = me,
-            busStops = me.busStops[bus.index],
+            gtfs = me.gtfs.get(bus.gtfsId),
+            stopLookup = gtfs.stopLookup,
             trip = bus.trip,
             {shortName, headsigns, stops} = trip,
             nextStopIndex = bus.sectionIndex + bus.sectionLength,
-            nextStopName = busStops.get(stops[nextStopIndex]).name,
+            nextStopName = stopLookup.get(stops[nextStopIndex]).name,
             prevStopIndex = Math.max(0, nextStopIndex - 1),
-            prevStopName = busStops.get(stops[prevStopIndex]).name,
+            prevStopName = stopLookup.get(stops[prevStopIndex]).name,
             headsign = headsigns[headsigns.length === 1 ? 0 : prevStopIndex];
 
         return [
             '<div class="desc-header">',
-            `<div style="background-color: ${me.data[bus.index].color};"></div>`,
-            `<div><strong>${me.busAgencies[bus.index]}</strong><br>`,
+            `<div style="background-color: ${gtfs.color};"></div>`,
+            `<div><strong>${gtfs.agency}</strong><br>`,
             shortName.en ? ` <span class="bus-route-label" style="color: ${trip.textColor}; background-color: ${trip.color};">${shortName[lang] || shortName.en}</span> ` : '',
             headsign[lang] || headsign.en,
             '</div></div>',
@@ -2524,7 +2362,7 @@ export default class extends Evented {
             me.trackObject();
         }
         delete bus.car;
-        me.activeBusLookup[bus.index].delete(bus.trip.id);
+        me.gtfs.get(bus.gtfsId).activeBusLookup.delete(bus.trip.id);
     }
 
     stopAll() {
@@ -2538,11 +2376,11 @@ export default class extends Evented {
         }
         me.standbyTrainLookup.clear();
         me.realtimeTrains.clear();
-        for (let i = 0, ilen = me.activeBusLookup.length; i < ilen; i++) {
-            for (const bus of me.activeBusLookup[i].values()) {
+        for (const {activeBusLookup, realtimeBuses} of me.gtfs.values()) {
+            for (const bus of activeBusLookup.values()) {
                 me.stopBus(bus);
             }
-            me.realtimeBuses[i].clear();
+            realtimeBuses.clear();
         }
         delete me.lastTrainRefresh;
     }
@@ -2555,7 +2393,7 @@ export default class extends Evented {
         }
     }
 
-    loadTimetableData() {
+    refreshTrainTimetableData() {
         const me = this;
 
         showLoader(me.container);
@@ -2567,7 +2405,174 @@ export default class extends Evented {
         });
     }
 
-    loadRealtimeTrainData() {
+    refreshBusData() {
+        const me = this;
+
+        loadBusData(me.data).then(data => {
+            const {lang, map} = me,
+                layerIds = new Set(me.styleOpacities.map(({id}) => id));
+
+            for (const {id, activeBusLookup} of me.gtfs.values()) {
+                for (const bus of activeBusLookup.values()) {
+                    me.stopBus(bus);
+                }
+
+                me.removeLayer(`busroute-${id}-og-`);
+                for (const zoom of [14, 15, 16, 17, 18]) {
+                    for (const key of ['busstops', 'busstops-outline']) {
+                        me.removeLayer(`${key}-${id}-og-${zoom}`);
+                    }
+                }
+                me.removeLayer(`busstops-poi-${id}`);
+                me.map.removeSource(`gtfs-${id}`);
+
+                me.gtfs.delete(id);
+            }
+
+            for (const item of data) {
+                const {agency, featureCollection} = item,
+                    id = `${agency}.${item.feedVersion}`,
+                    featureLookup = new Map(),
+                    stopLookup = new Map(),
+                    tripLookup = new Map(),
+                    source = `gtfs-${id}`;
+
+                featureEach(featureCollection, feature => {
+                    const properties = feature.properties;
+
+                    if (properties.type === 0) {
+                        featureLookup.set(properties.id, feature);
+                    }
+                });
+                for (const stop of item.stops) {
+                    stopLookup.set(stop.id, stop);
+                }
+                for (const trip of item.trips) {
+                    tripLookup.set(trip.id, trip);
+                }
+                me.gtfs.set(id, {
+                    id,
+                    agency,
+                    featureLookup,
+                    stopLookup,
+                    tripLookup,
+                    activeBusLookup: new Map(),
+                    realtimeBuses: new Set(),
+                    vehiclePositionUrl: item.vehiclePositionUrl,
+                    color: item.color
+                });
+
+                me.map.addSource(source, {
+                    type: 'geojson',
+                    data: featureCollection
+                });
+
+                me.addLayer({
+                    id: `busroute-${id}-og-`,
+                    type: 'line',
+                    source,
+                    filter: ['==', ['get', 'type'], 0],
+                    paint: {
+                        'line-color': ['get', 'color'],
+                        'line-width': [
+                            'interpolate',
+                            ['exponential', 2],
+                            ['zoom'],
+                            11,
+                            ['/', ['get', 'width'], 2],
+                            12,
+                            ['get', 'width'],
+                            19,
+                            ['get', 'width'],
+                            22,
+                            ['*', ['get', 'width'], 8]
+                        ]
+                    },
+                    metadata: {
+                        'mt3d:opacity-effect': true,
+                        'mt3d:opacity': 1,
+                        'mt3d:opacity-route': 0.1,
+                        'mt3d:opacity-underground': 0.25,
+                        'mt3d:opacity-underground-route': 0.1
+                    }
+                }, 'railways-og-13');
+
+                for (const zoom of [14, 15, 16, 17, 18]) {
+                    const interpolate = ['interpolate', ['exponential', 2], ['zoom']],
+                        width = ['get', 'width'],
+                        lineWidth = zoom === 18 ? [...interpolate, 19, width, 22, ['*', width, 8]] : width;
+
+                    for (const key of ['busstops', 'busstops-outline']) {
+                        me.addLayer({
+                            id: `${key}-${id}-og-${zoom}`,
+                            type: key === 'busstops' ? 'fill' : 'line',
+                            source,
+                            filter: ['all', ['==', ['get', 'zoom'], zoom], ['==', ['get', 'type'], 1]],
+                            layout: {
+                                visibility: zoom === me.layerZoom ? 'visible' : 'none'
+                            },
+                            paint: {
+                                'busstops': {
+                                    'fill-color': ['get', 'color'],
+                                    'fill-opacity': .7
+                                },
+                                'busstops-outline': {
+                                    'line-color': ['get', 'outlineColor'],
+                                    'line-width': lineWidth
+                                }
+                            }[key],
+                            metadata: {
+                                'mt3d:opacity-effect': true,
+                                'mt3d:opacity': 1,
+                                'mt3d:opacity-route': 0.1,
+                                'mt3d:opacity-underground': 0.25,
+                                'mt3d:opacity-underground-route': 0.1
+                            }
+                        }, 'railways-og-13');
+                    }
+                }
+
+                me.addLayer({
+                    id: `busstops-poi-${id}`,
+                    type: 'symbol',
+                    source,
+                    filter: ['==', ['get', 'type'], 2],
+                    layout: {
+                        'text-field': `{name_${lang.match(/ja/) ? lang : 'en'}}`,
+                        'text-font': [
+                            'Open Sans Bold',
+                            'Arial Unicode MS Bold'
+                        ],
+                        'text-max-width': 9,
+                        'text-padding': 2,
+                        'text-size': 12,
+                        'text-anchor': 'bottom',
+                        'text-offset': [0, -1]
+                    },
+                    paint: {
+                        'text-color': 'rgba(102,102,102,1)',
+                        'text-halo-blur': 0.5,
+                        'text-halo-color': 'rgba(255,255,255,1)',
+                        'text-halo-width': 1
+                    },
+                    minzoom: 14
+                });
+            }
+
+            for (const item of helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect')) {
+                if (!layerIds.has(item.id)) {
+                    me.styleOpacities.push(item);
+                }
+            }
+            me.refreshMap();
+
+            if (me.clockMode === 'realtime') {
+                me.refreshRealtimeBusData();
+            }
+        });
+    }
+
+    refreshRealtimeTrainData() {
         const me = this;
 
         loadDynamicTrainData(me.secrets).then(({trainData, trainInfoData}) => {
@@ -2679,7 +2684,7 @@ export default class extends Evented {
         });
     }
 
-    loadRealtimeFlightData() {
+    refreshRealtimeFlightData() {
         const me = this;
 
         loadDynamicFlightData(me.secrets).then(({atisData, flightData}) => {
@@ -2899,20 +2904,16 @@ export default class extends Evented {
         });
     }
 
-    loadRealtimeBusData() {
+    refreshRealtimeBusData() {
         const me = this;
 
-        loadDynamicBusData(me.data).then(data => {
-            for (let i = 0, ilen = me.busFeatureLookup.length; i < ilen; i++) {
-                const busFeatureLookup = me.busFeatureLookup[i],
-                    busStops = me.busStops[i],
-                    busTrips = me.busTrips[i],
-                    activeBusLookup = me.activeBusLookup[i],
-                    realtimeBuses = me.realtimeBuses[i];
+        loadDynamicBusData([...me.gtfs.values()]).then(data => {
+            for (const {gtfs, vehiclePosition} of data) {
+                const {id: gtfsId, featureLookup, stopLookup, tripLookup, activeBusLookup, realtimeBuses} = gtfs;
 
                 realtimeBuses.clear();
 
-                for (const {id, vehicle} of data[i].entity) {
+                for (const {id, vehicle} of vehiclePosition.entity) {
                     const stop = vehicle.currentStopSequence,
                         position = vehicle.position,
                         tripId = vehicle.trip && vehicle.trip.tripId;
@@ -2921,8 +2922,8 @@ export default class extends Evented {
                         continue;
                     }
 
-                    const busTrip = busTrips.get(tripId),
-                        feature = busTrip && busFeatureLookup.get(busTrip.shape);
+                    const busTrip = tripLookup.get(tripId),
+                        feature = busTrip && featureLookup.get(busTrip.shape);
 
                     if (!busTrip || !feature) {
                         continue;
@@ -2937,12 +2938,12 @@ export default class extends Evented {
                         let offset = 0;
                         const offsets = busTrip.stops.map(stopId =>
                             // Use the previous offset to calulate a weight and pick a closer point
-                            (offset = nearestCloserPointOnLine(feature, busStops.get(stopId).coord, offset).properties.location)
+                            (offset = nearestCloserPointOnLine(feature, stopLookup.get(stopId).coord, offset).properties.location)
                         );
 
                         bus = {
                             id,
-                            index: i,
+                            gtfsId,
                             trip: busTrip,
                             feature,
                             offsets,
@@ -3120,7 +3121,7 @@ export default class extends Evented {
         me.trackObject();
 
         if (me.lastTimetableRefresh !== baseTime) {
-            me.loadTimetableData();
+            me.refreshTrainTimetableData();
             me.lastTimetableRefresh = baseTime;
         }
     }

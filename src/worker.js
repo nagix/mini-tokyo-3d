@@ -119,6 +119,25 @@ class CalendarDateReader {
 
 }
 
+class FeedInfoReader {
+
+    read(line) {
+        const me = this,
+            fileds = line.split(',');
+
+        if (me.feedVersionIndex === undefined) {
+            me.feedVersionIndex = fileds.indexOf('feed_version');
+        } else {
+            me.feedVersion = fileds[me.feedVersionIndex];
+        }
+    }
+
+    get result() {
+        return this.feedVersion;
+    }
+
+}
+
 class RouteReader {
 
     constructor() {
@@ -330,6 +349,7 @@ const gtfsReaders = {
     'agency': AgencyReader,
     'calendar': CalendarReader,
     'calendar_dates': CalendarDateReader,
+    'feed_info': FeedInfoReader,
     'routes': RouteReader,
     'shapes': ShapeReader,
     'stops': StopReader,
@@ -427,8 +447,8 @@ function getTrips(trips, services, serviceExceptions, routeLookup, stopsLookup, 
     return result;
 }
 
-function loadGtfs(gtfsData) {
-    return new Promise((resolve, reject) => fetch(gtfsData.gtfsUrl).then(response => {
+function loadGtfs(options) {
+    return new Promise((resolve, reject) => fetch(options.gtfsUrl).then(response => {
         const stringArrays = {},
             reader = response.body.getReader(),
             inflate = new Unzip(file => {
@@ -436,7 +456,7 @@ function loadGtfs(gtfsData) {
 
                 if (includes(gtfsFiles, key)) {
                     let stringBuffer = '';
-                    const gtfsReader = new gtfsReaders[key](gtfsData.color),
+                    const gtfsReader = new gtfsReaders[key](options.color),
                         utfDecode = new DecodeUTF8(async (data, final) => {
                             const lines = data.split(/\r?\n/);
 
@@ -454,6 +474,7 @@ function loadGtfs(gtfsData) {
                                     const featureCollection = getFeatureCollection(stringArrays.shapes, stringArrays.stops, stringArrays.translations),
                                         result = {
                                             agency: stringArrays.agency,
+                                            feedVersion: stringArrays.feed_info,
                                             stops: getStops(stringArrays.stops, stringArrays.translations),
                                             trips: getTrips(stringArrays.trips, stringArrays.calendar, stringArrays.calendar_dates, stringArrays.routes, stringArrays.stop_times, stringArrays.translations)
                                         };
@@ -491,7 +512,7 @@ function loadGtfs(gtfsData) {
 }
 
 Comlink.expose({
-    load: (data, callback) => Promise.all(data.map(loadGtfs)).then(data =>
+    load: (options, callback) => Promise.all(options.map(loadGtfs)).then(data =>
         callback(Comlink.transfer(data, [].concat(...data.map(items => items.map(({buffer}) => buffer)))))
     )
 });

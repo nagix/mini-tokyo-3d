@@ -1,7 +1,8 @@
 export function encode(data, pbf) {
     pbf.writeStringField(1, data.agency);
+    pbf.writeStringField(2, data.feedVersion);
     for (const stop of data.stops) {
-        pbf.writeMessage(2, (obj, pbf) => {
+        pbf.writeMessage(3, (obj, pbf) => {
             pbf.writeStringField(1, obj.id);
             pbf.writeMessage(2, (obj, pbf) => {
                 pbf.writeStringField(1, obj.en);
@@ -11,7 +12,7 @@ export function encode(data, pbf) {
         }, stop);
     }
     for (const trip of data.trips) {
-        pbf.writeMessage(3, (obj, pbf) => {
+        pbf.writeMessage(4, (obj, pbf) => {
             pbf.writeStringField(1, obj.id);
             pbf.writeMessage(2, (obj, pbf) => {
                 pbf.writeStringField(1, obj.en);
@@ -38,7 +39,8 @@ export function encode(data, pbf) {
 export function decode(pbf) {
     return pbf.readFields((tag, obj, pbf) => {
         if (tag === 1) obj.agency = pbf.readString();
-        if (tag === 2) obj.stops.push(pbf.readFields((tag, obj, pbf) => {
+        if (tag === 2) obj.feedVersion = pbf.readString();
+        if (tag === 3) obj.stops.push(pbf.readFields((tag, obj, pbf) => {
             if (tag === 1) obj.id = pbf.readString();
             else if (tag === 2) obj.name = pbf.readFields((tag, obj, pbf) => {
                 if (tag === 1) obj.en = pbf.readString();
@@ -46,7 +48,7 @@ export function decode(pbf) {
             }, {}, pbf.readVarint() + pbf.pos);
             else if (tag === 3) obj.coord = pbf.readPackedDouble();
         }, {}, pbf.readVarint() + pbf.pos));
-        if (tag === 3) obj.trips.push(pbf.readFields((tag, obj, pbf) => {
+        if (tag === 4) obj.trips.push(pbf.readFields((tag, obj, pbf) => {
             if (tag === 1) obj.id = pbf.readString();
             else if (tag === 2) obj.shortName = pbf.readFields((tag, obj, pbf) => {
                 if (tag === 1) obj.en = pbf.readString();
