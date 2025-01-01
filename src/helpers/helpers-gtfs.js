@@ -1,23 +1,16 @@
 export function encode(data, pbf) {
     pbf.writeStringField(1, data.agency);
-    pbf.writeStringField(2, data.feedVersion);
     for (const stop of data.stops) {
-        pbf.writeMessage(3, (obj, pbf) => {
+        pbf.writeMessage(2, (obj, pbf) => {
             pbf.writeStringField(1, obj.id);
-            pbf.writeMessage(2, (obj, pbf) => {
-                pbf.writeStringField(1, obj.en);
-                pbf.writeStringField(2, obj.ja);
-            }, obj.name);
+            pbf.writeStringField(2, obj.name);
             pbf.writePackedDouble(3, obj.coord);
         }, stop);
     }
     for (const trip of data.trips) {
-        pbf.writeMessage(4, (obj, pbf) => {
+        pbf.writeMessage(3, (obj, pbf) => {
             pbf.writeStringField(1, obj.id);
-            pbf.writeMessage(2, (obj, pbf) => {
-                pbf.writeStringField(1, obj.en);
-                pbf.writeStringField(2, obj.ja);
-            }, obj.shortName);
+            pbf.writeStringField(2, obj.shortName);
             pbf.writeStringField(3, obj.color);
             pbf.writeStringField(4, obj.textColor);
             pbf.writeStringField(5, obj.shape);
@@ -26,43 +19,32 @@ export function encode(data, pbf) {
             }
             pbf.writePackedVarint(7, obj.stopSequences);
             for (const headsign of obj.headsigns) {
-                pbf.writeMessage(8, (obj, pbf) => {
-                    pbf.writeStringField(1, obj.en);
-                    pbf.writeStringField(2, obj.ja);
-                }, headsign);
+                pbf.writeStringField(8, headsign);
             }
         }, trip);
     }
+    pbf.writeStringField(4, data.version);
     return pbf.finish();
 }
 
 export function decode(pbf) {
     return pbf.readFields((tag, obj, pbf) => {
         if (tag === 1) obj.agency = pbf.readString();
-        if (tag === 2) obj.feedVersion = pbf.readString();
-        if (tag === 3) obj.stops.push(pbf.readFields((tag, obj, pbf) => {
+        if (tag === 2) obj.stops.push(pbf.readFields((tag, obj, pbf) => {
             if (tag === 1) obj.id = pbf.readString();
-            else if (tag === 2) obj.name = pbf.readFields((tag, obj, pbf) => {
-                if (tag === 1) obj.en = pbf.readString();
-                else if (tag === 2) obj.ja = pbf.readString();
-            }, {}, pbf.readVarint() + pbf.pos);
+            else if (tag === 2) obj.name = pbf.readString();
             else if (tag === 3) obj.coord = pbf.readPackedDouble();
         }, {}, pbf.readVarint() + pbf.pos));
-        if (tag === 4) obj.trips.push(pbf.readFields((tag, obj, pbf) => {
+        if (tag === 3) obj.trips.push(pbf.readFields((tag, obj, pbf) => {
             if (tag === 1) obj.id = pbf.readString();
-            else if (tag === 2) obj.shortName = pbf.readFields((tag, obj, pbf) => {
-                if (tag === 1) obj.en = pbf.readString();
-                else if (tag === 2) obj.ja = pbf.readString();
-            }, {}, pbf.readVarint() + pbf.pos);
+            else if (tag === 2) obj.shortName = pbf.readString();
             else if (tag === 3) obj.color = pbf.readString();
             else if (tag === 4) obj.textColor = pbf.readString();
             else if (tag === 5) obj.shape = pbf.readString();
             else if (tag === 6) obj.stops.push(pbf.readString());
             else if (tag === 7) pbf.readPackedVarint(obj.stopSequences, true);
-            else if (tag === 8) obj.headsigns.push(pbf.readFields((tag, obj, pbf) => {
-                if (tag === 1) obj.en = pbf.readString();
-                else if (tag === 2) obj.ja = pbf.readString();
-            }, {}, pbf.readVarint() + pbf.pos));
+            else if (tag === 8) obj.headsigns.push(pbf.readString());
         }, {stops: [], stopSequences: [], headsigns: []}, pbf.readVarint() + pbf.pos));
+        if (tag === 4) obj.version = pbf.readString();
     }, {stops: [], trips: []});
 }

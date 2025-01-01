@@ -2245,7 +2245,7 @@ export default class extends Evented {
 
     getBusDescription(bus) {
         const me = this,
-            {lang, dict} = me,
+            dict = me.dict,
             gtfs = me.gtfs.get(bus.gtfsId),
             stopLookup = gtfs.stopLookup,
             trip = bus.trip,
@@ -2253,19 +2253,18 @@ export default class extends Evented {
             nextStopIndex = bus.sectionIndex + bus.sectionLength,
             nextStopName = stopLookup.get(stops[nextStopIndex]).name,
             prevStopIndex = Math.max(0, nextStopIndex - 1),
-            prevStopName = stopLookup.get(stops[prevStopIndex]).name,
-            headsign = headsigns[headsigns.length === 1 ? 0 : prevStopIndex];
+            prevStopName = stopLookup.get(stops[prevStopIndex]).name;
 
         return [
             '<div class="desc-header">',
             `<div style="background-color: ${gtfs.color};"></div>`,
             `<div><strong>${gtfs.agency}</strong><br>`,
-            shortName.en ? ` <span class="bus-route-label" style="color: ${trip.textColor}; background-color: ${trip.color};">${shortName[lang] || shortName.en}</span> ` : '',
-            headsign[lang] || headsign.en,
+            shortName ? ` <span class="bus-route-label" style="color: ${trip.textColor}; background-color: ${trip.color};">${shortName}</span> ` : '',
+            headsigns[headsigns.length === 1 ? 0 : prevStopIndex],
             '</div></div>',
             `<strong>${dict['vehicle-number']}:</strong> ${bus.id}`,
-            `<br><strong>${dict['previous-busstop']}:</strong> ${prevStopName[lang] || prevStopName.en}`,
-            `<br><strong>${dict['next-busstop']}:</strong> ${nextStopName[lang] || nextStopName.en}`
+            `<br><strong>${dict['previous-busstop']}:</strong> ${prevStopName}`,
+            `<br><strong>${dict['next-busstop']}:</strong> ${nextStopName}`
         ].join('');
     }
 
@@ -2408,8 +2407,8 @@ export default class extends Evented {
     refreshBusData() {
         const me = this;
 
-        loadBusData(me.data).then(data => {
-            const {lang, map} = me,
+        loadBusData(me.data, me.lang).then(data => {
+            const map = me.map,
                 layerIds = new Set(me.styleOpacities.map(({id}) => id));
 
             for (const {id, activeBusLookup} of me.gtfs.values()) {
@@ -2424,14 +2423,14 @@ export default class extends Evented {
                     }
                 }
                 me.removeLayer(`busstops-poi-${id}`);
-                me.map.removeSource(`gtfs-${id}`);
+                map.removeSource(`gtfs-${id}`);
 
                 me.gtfs.delete(id);
             }
 
             for (const item of data) {
                 const {agency, featureCollection} = item,
-                    id = `${agency}.${item.feedVersion}`,
+                    id = `${agency}.${item.version}`,
                     featureLookup = new Map(),
                     stopLookup = new Map(),
                     tripLookup = new Map(),
@@ -2462,7 +2461,7 @@ export default class extends Evented {
                     color: item.color
                 });
 
-                me.map.addSource(source, {
+                map.addSource(source, {
                     type: 'geojson',
                     data: featureCollection
                 });
@@ -2538,7 +2537,7 @@ export default class extends Evented {
                     source,
                     filter: ['==', ['get', 'type'], 2],
                     layout: {
-                        'text-field': `{name_${lang.match(/ja/) ? lang : 'en'}}`,
+                        'text-field': ['get', 'name'],
                         'text-font': [
                             'Open Sans Bold',
                             'Arial Unicode MS Bold'

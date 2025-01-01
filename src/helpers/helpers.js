@@ -1,4 +1,5 @@
 import {DecodeUTF8, Gunzip} from 'fflate';
+import configs from '../configs';
 
 let touchDevice = false;
 
@@ -78,6 +79,17 @@ export function valueOrDefault(value, defaultValue) {
 
 export function numberOrDefault(value, defaultValue) {
     return isNaN(value) ? defaultValue : value;
+}
+
+export function mergeMaps(...maps) {
+    const result = new Map();
+
+    for (const map of maps) {
+        for (const [k, v] of map) {
+            result.set(k, v);
+        }
+    }
+    return result;
 }
 
 /**
@@ -299,15 +311,33 @@ export function showNotification(container, message) {
 }
 
 /**
+ * Normalize the given language code to one of the supported codes. The
+ * returned value is ISO 639-1 code, but the exception is Chinese
+ * (zh-Hans or zh-Hant). Returns undefined if not supported.
+ * @param {string} lang - Language code
+ * @returns {string} Normalized language code
+ */
+export function normalizeLang(lang) {
+    const langs = configs.langs.map(code => code.replace('pt-BR', 'pt'));
+
+    if (lang.match(/^zh-(Hant|TW|HK|MO)/)) {
+        lang = 'zh-Hant';
+    } else if (lang.match(/^zh/)) {
+        lang = 'zh-Hans';
+    } else {
+        lang = lang.substring(0, 2);
+    }
+    return includes(langs, lang) ? lang : undefined;
+}
+
+/**
  * Returns the language code for user interface. The returned value is
  * ISO 639-1 code, but the exception is Chinese (zh-Hans or zh-Hant).
- * @param {string} input - Language code to verify
+ * @param {string} lang - Language code to verify
  * @returns {string} Language code for user interface
  */
-export function getLang(input) {
-    let lang = valueOrDefault(input, '');
-
-    if (!lang.match(/de|en|es|fr|ja|ko|ne|pt-BR|th|zh-Han[st]/)) {
+export function getLang(lang) {
+    if (!includes(configs.langs, lang)) {
         const _navigator = window.navigator;
 
         lang = (_navigator.languages && _navigator.languages[0]) ||
@@ -315,14 +345,5 @@ export function getLang(input) {
             _navigator.userLanguage ||
             _navigator.browserLanguage || '';
     }
-
-    if (lang.match(/zh-(Hant|TW|HK|MO)/)) {
-        lang = 'zh-Hant';
-    } else if (lang.match(/zh/)) {
-        lang = 'zh-Hans';
-    } else {
-        lang = lang.substring(0, 2);
-    }
-
-    return lang.match(/de|en|es|fr|ja|ko|ne|pt|th|zh-Han[st]/) ? lang : 'en';
+    return normalizeLang(lang) || 'en';
 }

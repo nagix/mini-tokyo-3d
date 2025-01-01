@@ -202,7 +202,10 @@ const configs = {
         'zoom',
         'zoomend',
         'zoomstart'
-    ]
+    ],
+
+    // Supported languages
+    langs: ['de', 'en', 'es', 'fr', 'ja', 'ko', 'ne', 'pt-BR', 'th', 'zh-Hans', 'zh-Hant']
 
 };
 

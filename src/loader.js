@@ -238,12 +238,12 @@ export function loadDynamicFlightData() {
     }));
 }
 
-export function loadBusData(options) {
+export function loadBusData(options, lang) {
     const workerUrl = URL.createObjectURL(new Blob([`WORKER_STRING`], {type: 'text/javascript'})),
         worker = new Worker(workerUrl),
         proxy = Comlink.wrap(worker);
 
-    return new Promise(resolve => proxy.load(options, Comlink.proxy(data => {
+    return new Promise(resolve => proxy.load(options, lang, Comlink.proxy(data => {
         const gtfsData = data.map((items, i) => ({
             featureCollection: geobuf.decode(new Pbf(items[0])),
             ...decode(new Pbf(items[1])),

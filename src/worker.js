@@ -6,7 +6,7 @@ import {DecodeUTF8, Unzip, UnzipInflate} from 'fflate';
 import geobuf from 'geobuf';
 import Pbf from 'pbf';
 import Clock from './clock';
-import {includes} from './helpers/helpers';
+import {includes, mergeMaps, normalizeLang} from './helpers/helpers';
 import {updateDistances} from './helpers/helpers-geojson';
 import {encode} from './helpers/helpers-gtfs';
 
@@ -121,19 +121,30 @@ class CalendarDateReader {
 
 class FeedInfoReader {
 
+    constructor({lang}) {
+        this.lang = lang;
+    }
+
     read(line) {
         const me = this,
             fileds = line.split(',');
 
-        if (me.feedVersionIndex === undefined) {
+        if (me.feedLangIndex === undefined) {
+            me.feedLangIndex = fileds.indexOf('feed_lang');
             me.feedVersionIndex = fileds.indexOf('feed_version');
         } else {
+            me.feedLang = fileds[me.feedLangIndex];
             me.feedVersion = fileds[me.feedVersionIndex];
         }
     }
 
     get result() {
-        return this.feedVersion;
+        const me = this;
+
+        return {
+            needTranslation: normalizeLang(me.feedLang) !== me.lang,
+            version: me.feedVersion
+        };
     }
 
 }
@@ -171,7 +182,7 @@ class RouteReader {
 
 class ShapeReader {
 
-    constructor(color) {
+    constructor({color}) {
         const me = this;
 
         me.color = color;
@@ -286,8 +297,11 @@ class StopTimeReader {
 
 class TranslationReader {
 
-    constructor() {
-        this.lookup = new Map();
+    constructor({lang}) {
+        const me = this;
+
+        me.lang = lang;
+        me.lookup = new Map();
     }
 
     read(line) {
@@ -302,12 +316,37 @@ class TranslationReader {
             me.languageIndex = fileds.indexOf('language');
             me.translationIndex = fileds.indexOf('translation');
         } else {
-            me.lookup.set(`${fileds[me.tableNameIndex]}.${fileds[me.fieldNameIndex]}.${fileds[me.recordIdIndex] || fileds[me.fieldValueIndex]}.${fileds[me.languageIndex]}`, fileds[me.translationIndex]);
+            const lang = fileds[me.languageIndex];
+            let subLookup;
+
+            if (me.lookup.has(lang)) {
+                subLookup = me.lookup.get(lang);
+            } else {
+                subLookup = new Map();
+                me.lookup.set(lang, subLookup);
+            }
+            subLookup.set(`${fileds[me.tableNameIndex]}.${fileds[me.fieldNameIndex]}.${fileds[me.recordIdIndex] || fileds[me.fieldValueIndex]}`, fileds[me.translationIndex]);
         }
     }
 
     get result() {
-        return this.lookup;
+        const me = this,
+            defaultLookup = me.lookup.get('en') || new Map();
+
+        if (me.lang === 'en') {
+            return defaultLookup;
+        }
+        if (me.lookup.has(me.lang)) {
+            return mergeMaps(defaultLookup, me.lookup.get(me.lang));
+        }
+        for (const [lang, subLookup] of me.lookup) {
+            const normalizedLang = normalizeLang(lang);
+
+            if (normalizedLang === me.lang || (normalizedLang === 'zh-Hans' && me.lang === 'zh-Hant')) {
+                return mergeMaps(defaultLookup, subLookup);
+            }
+        }
+        return defaultLookup;
     }
 
 }
@@ -360,15 +399,16 @@ const gtfsReaders = {
 
 const gtfsFiles = Object.keys(gtfsReaders);
 
-function getFeatureCollection(shapes, stops, dict) {
+function getFeatureCollection(shapes, stops, translations) {
     const features = shapes,
         stopGroups = new Map();
 
     for (const {id, name, coord} of stops) {
         features.push(point(coord, {
             type: 2,
-            'name_ja': name,
-            'name_en': dict.get(`stops.stop_name.${id}.en`) || dict.get(`stops.stop_name.${name}.en`) || name
+            name: translations ?
+                translations.get(`stops.stop_name.${id}`) || translations.get(`stops.stop_name.${name}`) || name :
+                name
         }));
 
         if (stopGroups.has(name)) {
@@ -398,48 +438,54 @@ function getFeatureCollection(shapes, stops, dict) {
     return featureCollection(features);
 }
 
-function getStops(stops, dict) {
+function getStops(stops, translations) {
     return stops.map(({id, name, coord}) => ({
         id,
-        name: {
-            ja: name,
-            en: dict.get(`stops.stop_name.${id}.en`) || dict.get(`stops.stop_name.${name}.en`) || name
-        },
+        name: translations ?
+            translations.get(`stops.stop_name.${id}`) || translations.get(`stops.stop_name.${name}`) || name :
+            name,
         coord
     }));
 }
 
-function getTrips(trips, services, serviceExceptions, routeLookup, stopsLookup, dict) {
+function getTrips(trips, services, serviceExceptions, routeLookup, stopTimeLookup, translations) {
     const serviceSet = services.union(serviceExceptions[0]).difference(serviceExceptions[1]),
         result = [];
 
     for (const {id, service, route, shape, headsign} of trips) {
         if (serviceSet.has(service)) {
             const {shortName, color, textColor} = routeLookup.get(route),
-                {stops, stopSequences, stopHeadsigns} = stopsLookup.get(id),
-                headsignOverride = new Set(stopHeadsigns).size > 1;
+                {stops, stopSequences, stopHeadsigns} = stopTimeLookup.get(id),
+                headsignOverride = new Set(stopHeadsigns).size > 1,
+                headsigns = [];
+
+            if (headsign && !headsignOverride) {
+                headsigns.push(translations ?
+                    translations.get(`trips.trip_headsign.${id}`) || translations.get(`trips.trip_headsign.${headsign}`) || headsign :
+                    headsign
+                );
+            } else {
+                for (const stopHeadsign of headsignOverride ? stopHeadsigns : [stopHeadsigns[0]]) {
+                    headsigns.push(translations ?
+                        translations.get(`stop_times.stop_headsign.${stopHeadsign}`) || stopHeadsign :
+                        stopHeadsign
+                    );
+                }
+            }
 
             result.push({
                 id,
-                shortName: {
-                    ja: shortName,
-                    en: dict.get(`routes.route_short_name.${route}.en`) || dict.get(`routes.route_short_name.${shortName}.en`) || shortName
-                },
+                shortName: translations ?
+                    translations.get(`routes.route_short_name.${route}`) || translations.get(`routes.route_short_name.${shortName}`) ||
+                    translations.get(`routes.route_long_name.${route}`) || translations.get(`routes.route_long_name.${shortName}`) ||
+                    shortName :
+                    shortName,
                 color,
                 textColor,
                 shape,
                 stops,
                 stopSequences,
-                headsigns: headsignOverride ? stopHeadsigns.map(value => ({
-                    ja: value,
-                    en: dict.get(`stop_times.stop_headsign.${value}.en`) || value
-                })) : headsign ? [{
-                    ja: headsign,
-                    en: dict.get(`trips.trip_headsign.${id}.en`) || dict.get(`trips.trip_headsign.${headsign}.en`) || headsign
-                }] : [{
-                    ja: stopHeadsigns[0],
-                    en: dict.get(`stop_times.stop_headsign.${stopHeadsigns[0]}.en`) || stopHeadsigns[0]
-                }]
+                headsigns
             });
         }
     }
@@ -447,16 +493,16 @@ function getTrips(trips, services, serviceExceptions, routeLookup, stopsLookup, 
     return result;
 }
 
-function loadGtfs(options) {
-    return new Promise((resolve, reject) => fetch(options.gtfsUrl).then(response => {
-        const stringArrays = {},
+function loadGtfs(source, lang) {
+    return new Promise((resolve, reject) => fetch(source.gtfsUrl).then(response => {
+        const results = {},
             reader = response.body.getReader(),
             inflate = new Unzip(file => {
                 const key = file.name.split('.')[0];
 
                 if (includes(gtfsFiles, key)) {
                     let stringBuffer = '';
-                    const gtfsReader = new gtfsReaders[key](options.color),
+                    const gtfsReader = new gtfsReaders[key]({lang, color: source.color}),
                         utfDecode = new DecodeUTF8(async (data, final) => {
                             const lines = data.split(/\r?\n/);
 
@@ -469,14 +515,14 @@ function loadGtfs(options) {
                                 if (stringBuffer) {
                                     gtfsReader.read(stringBuffer);
                                 }
-                                stringArrays[key] = gtfsReader.result;
-                                if (Object.keys(stringArrays).length === gtfsFiles.length) {
-                                    const featureCollection = getFeatureCollection(stringArrays.shapes, stringArrays.stops, stringArrays.translations),
+                                results[key] = gtfsReader.result;
+                                if (Object.keys(results).length === gtfsFiles.length) {
+                                    const featureCollection = getFeatureCollection(results.shapes, results.stops, results.feed_info.needTranslation && results.translations),
                                         result = {
-                                            agency: stringArrays.agency,
-                                            feedVersion: stringArrays.feed_info,
-                                            stops: getStops(stringArrays.stops, stringArrays.translations),
-                                            trips: getTrips(stringArrays.trips, stringArrays.calendar, stringArrays.calendar_dates, stringArrays.routes, stringArrays.stop_times, stringArrays.translations)
+                                            agency: results.agency,
+                                            version: results.feed_info.version,
+                                            stops: getStops(results.stops, results.feed_info.needTranslation && results.translations),
+                                            trips: getTrips(results.trips, results.calendar, results.calendar_dates, results.routes, results.stop_times, results.feed_info.needTranslation && results.translations)
                                         };
 
                                     resolve([geobuf.encode(featureCollection, new Pbf()), encode(result, new Pbf())]);
@@ -512,7 +558,7 @@ function loadGtfs(options) {
 }
 
 Comlink.expose({
-    load: (options, callback) => Promise.all(options.map(loadGtfs)).then(data =>
+    load: (sources, lang, callback) => Promise.all(sources.map(source => loadGtfs(source, lang))).then(data =>
         callback(Comlink.transfer(data, [].concat(...data.map(items => items.map(({buffer}) => buffer)))))
     )
 });

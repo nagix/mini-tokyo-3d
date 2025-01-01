@@ -16,12 +16,11 @@ export default class extends Panel {
             stopLookup = gtfs.stopLookup;
 
         for (const stopId of bus.trip.stops) {
-            const stop = stopLookup.get(stopId),
-                name = stop.name;
+            const stop = stopLookup.get(stopId);
 
             busstopHTML.push([
                 '<div class="busstop-row">',
-                `<div class="busstop-title-box">${name[map.lang] || name.en}</div>`,
+                `<div class="busstop-title-box">${stop.name}</div>`,
                 '<div class="busstop-time-box"></div>',
                 '</div>'
             ].join(''));
@@ -74,12 +73,10 @@ export default class extends Panel {
     updateHeader() {
         const me = this,
             map = me._map,
-            lang = map.lang,
             bus = me._options.object,
             gtfs = map.gtfs.get(bus.gtfsId),
             trip = bus.trip,
-            {shortName, headsigns} = trip,
-            headsign = headsigns[headsigns.length === 1 ? 0 : bus.sectionIndex];
+            {shortName, headsigns} = trip;
 
         this.setTitle([
             '<div class="desc-header">',
@@ -87,8 +84,8 @@ export default class extends Panel {
             '<div><div class="desc-first-row">',
             gtfs.agency,
             '</div><div class="desc-second-row">',
-            shortName.en ? ` <span class="bus-route-label" style="color: ${trip.textColor}; background-color: ${trip.color};">${shortName[lang] || shortName.en}</span> ` : '',
-            headsign[lang] || headsign.en,
+            shortName ? ` <span class="bus-route-label" style="color: ${trip.textColor}; background-color: ${trip.color};">${shortName}</span> ` : '',
+            headsigns[headsigns.length === 1 ? 0 : bus.sectionIndex],
             '</div></div></div>'
         ].join(''));
     }
