@@ -92,6 +92,25 @@ export default class {
     }
 
     /**
+     * Returns the date and time expression in JST.
+     * If the time is not specified, it returns that at the current time.
+     * In the playback mode, the time in the simulation clock is used.
+     * @param {number} time - The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
+     * @returns {string} Date and time expression in JST in "YYYY-MM-DD HH:mm:ss" format
+     */
+    getString(time) {
+        const date = this.getJSTDate(time),
+            year = date.getFullYear(),
+            month = `0${date.getMonth() + 1}`.slice(-2),
+            day = `0${date.getDate()}`.slice(-2),
+            hours = `0${date.getHours()}`.slice(-2),
+            minutes = `0${date.getMinutes()}`.slice(-2),
+            seconds = `0${date.getSeconds()}`.slice(-2);
+
+        return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    }
+
+    /**
      * Returns the time expression in JST.
      * If the time is not specified, it returns that at the current time.
      * In the playback mode, the time in the simulation clock is used.

@@ -2441,8 +2441,8 @@ export default class extends Evented {
             }
 
             for (const item of data) {
-                const {agency, featureCollection} = item,
-                    id = `${agency}.${item.version}`,
+                const {agency, featureCollection, version} = item,
+                    id = `${agency}.${version}`,
                     featureLookup = new Map(),
                     stopLookup = new Map(),
                     tripLookup = new Map(),
@@ -2465,6 +2465,7 @@ export default class extends Evented {
                 me.gtfs.set(id, {
                     id,
                     agency,
+                    version,
                     featureLookup,
                     stopLookup,
                     tripLookup,
@@ -2930,6 +2931,7 @@ export default class extends Evented {
                 const {id: gtfsId, featureLookup, stopLookup, tripLookup, activeBusLookup, realtimeBuses} = gtfs;
 
                 realtimeBuses.clear();
+                gtfs.date = me.clock.getString(vehiclePosition.header.timestamp * 1000);
 
                 for (const {id, vehicle: vp} of vehiclePosition.entity) {
                     const vehicle = vp.vehicle,

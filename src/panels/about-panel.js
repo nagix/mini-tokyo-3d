@@ -20,7 +20,8 @@ export default class extends Panel {
         const me = this;
 
         if (me.isOpen()) {
-            const {dict, lastDynamicUpdate} = me._map;
+            const {dict, gtfs, lastDynamicUpdate} = me._map,
+                gtfsArray = [...gtfs.values()];
 
             me.setHTML([
                 dict['description'].replace(/<h3>.*<\/h3>/, ''),
@@ -36,7 +37,15 @@ export default class extends Panel {
                 lastDynamicUpdate['HND-TIAT'] || 'N/A',
                 ` (${dict['hnd-tiat']})<br>`,
                 lastDynamicUpdate['NAA'] || 'N/A',
-                ` (${dict['naa']})</div>`
+                ` (${dict['naa']})<br>`,
+                gtfsArray.map(({date, agency}) => `${date} (${agency})`).join('<br>'),
+                '</div>',
+                gtfsArray.length > 0 ? [
+                    `<div class="card-title">${dict['gtfs-feed-version']}</div>`,
+                    '<div class="card-body">',
+                    gtfsArray.map(({version, agency}) => `${version} (${agency})`).join('<br>'),
+                    '</div>'
+                ].join('') : ''
             ].join(''));
         }
 
