@@ -9,10 +9,17 @@ export default class extends Evented {
     constructor(options) {
         super();
 
-        const element = options.element;
+        const me = this,
+            element = document.createElement('div'),
+            child = options.element;
 
-        this._marker = new Marker({element});
-        bindAll(['_onClick', '_onMouseEnter', '_onMouseLeave'], this);
+        child.style.transition = 'opacity 300ms';
+
+        me._element = element.appendChild(child);
+        me._marker = new Marker({element});
+        me._minZoom = options.minZoom || 0;
+        me._visible = true;
+        bindAll(['_onClick', '_onMouseEnter', '_onMouseLeave', '_onZoom'], me);
     }
 
     /**
@@ -22,10 +29,14 @@ export default class extends Evented {
      */
     addTo(map) {
         const me = this,
-            marker = me._marker,
-            element = marker.getElement();
+            element = me._element;
 
-        marker.addTo(map.map);
+        me._map = map;
+        me._zoom = map.getZoom();
+        me._setVisibility(me._zoom >= me._minZoom);
+
+        me._marker.addTo(map.map);
+        map.on('zoom', me._onZoom);
         element.addEventListener('click', me._onClick);
         element.addEventListener('mouseenter', me._onMouseEnter);
         element.addEventListener('mouseleave', me._onMouseLeave);
@@ -39,14 +50,14 @@ export default class extends Evented {
      */
     remove() {
         const me = this,
-            marker = me._marker,
-            element = marker.getElement();
+            element = me._element;
 
         element.removeEventListener('click', me._onClick);
         element.removeEventListener('mouseenter', me._onMouseEnter);
         element.removeEventListener('mouseleave', me._onMouseLeave);
         element.removeEventListener('mousemove', me._onMouseMove);
-        marker.remove();
+        me._map.off('zoom', me._onZoom);
+        me._marker.remove();
         return me;
     }
 
@@ -68,7 +79,7 @@ export default class extends Evented {
      * @returns {Marker} Returns itself to allow for method chaining
      */
     setActivity(active) {
-        const classList = this._marker.getElement().classList;
+        const classList = this._element.classList;
 
         if (active) {
             classList.add('active');
@@ -84,8 +95,34 @@ export default class extends Evented {
      * @returns {Marker} Returns itself to allow for method chaining
      */
     setVisibility(visible) {
-        this._marker.getElement().style.visibility = visible ? 'visible' : 'hidden';
-        return this;
+        const me = this,
+            prevVisible = me._visible;
+
+        me._visible = visible;
+        if (me._zoom >= me._minZoom) {
+            if (!prevVisible && visible) {
+                me._setVisibility(true);
+            } else if (prevVisible && !visible) {
+                me._setVisibility(false);
+            }
+        }
+        return me;
+    }
+
+    _setVisibility(visible) {
+        const me = this,
+            style = me._element.style;
+
+        if (visible) {
+            style.opacity = 1;
+            style.pointerEvents = 'auto';
+        } else {
+            style.opacity = 0;
+            style.pointerEvents = 'none';
+            if (me._hover) {
+                me._onMouseLeave();
+            }
+        }
     }
 
     _onClick(event) {
@@ -94,15 +131,32 @@ export default class extends Evented {
     }
 
     _onMouseEnter() {
+        this._hover = true;
         this.fire({type: 'mouseenter'});
     }
 
     _onMouseLeave() {
+        delete this._hover;
         this.fire({type: 'mouseleave'});
     }
 
     _onMouseMove(event) {
         event.stopPropagation();
+    }
+
+    _onZoom() {
+        const me = this,
+            prevZoom = me._zoom,
+            zoom = me._zoom = me._map.getZoom(),
+            minZoom = me._minZoom;
+
+        if (me._visible) {
+            if (prevZoom < minZoom && zoom >= minZoom) {
+                me._setVisibility(true);
+            } else if (prevZoom >= minZoom && zoom < minZoom) {
+                me._setVisibility(false);
+            }
+        }
     }
 
 }
