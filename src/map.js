@@ -2408,12 +2408,21 @@ export default class extends Evented {
         const me = this;
 
         loadBusData(me.data, me.lang).then(data => {
-            const map = me.map,
-                layerIds = new Set(me.styleOpacities.map(({id}) => id));
+            const map = me.map;
 
-            for (const {id, activeBusLookup} of me.gtfs.values()) {
+            for (const {id, activeBusLookup, layerIds} of me.gtfs.values()) {
                 for (const bus of activeBusLookup.values()) {
                     me.stopBus(bus);
+                }
+
+                for (const layerId of layerIds) {
+                    me.removeLayer(layerId);
+                    for (let i = 0, ilen = me.styleOpacities.length; i < ilen; i++) {
+                        if (me.styleOpacities[i].id === layerId) {
+                            me.styleOpacities.splice(i, 1);
+                            break;
+                        }
+                    }
                 }
 
                 me.removeLayer(`busroute-${id}-og-`);
@@ -2434,6 +2443,7 @@ export default class extends Evented {
                     featureLookup = new Map(),
                     stopLookup = new Map(),
                     tripLookup = new Map(),
+                    layerIds = new Set(),
                     source = `gtfs-${id}`;
 
                 featureEach(featureCollection, feature => {
@@ -2455,6 +2465,7 @@ export default class extends Evented {
                     featureLookup,
                     stopLookup,
                     tripLookup,
+                    layerIds,
                     activeBusLookup: new Map(),
                     realtimeBuses: new Set(),
                     vehiclePositionUrl: item.vehiclePositionUrl,
@@ -2495,6 +2506,7 @@ export default class extends Evented {
                         'mt3d:opacity-underground-route': 0.1
                     }
                 }, 'railways-og-13');
+                layerIds.add(`busroute-${id}-og-`);
 
                 for (const zoom of [14, 15, 16, 17, 18]) {
                     const interpolate = ['interpolate', ['exponential', 2], ['zoom']],
@@ -2528,6 +2540,7 @@ export default class extends Evented {
                                 'mt3d:opacity-underground-route': 0.1
                             }
                         }, 'railways-og-13');
+                        layerIds.add(`${key}-${id}-og-${zoom}`);
                     }
                 }
 
@@ -2556,10 +2569,13 @@ export default class extends Evented {
                     },
                     minzoom: 14
                 });
+                layerIds.add(`busstops-poi-${id}`);
             }
 
+            const existingLayerIds = new Set(me.styleOpacities.map(({id}) => id));
+
             for (const item of helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect')) {
-                if (!layerIds.has(item.id)) {
+                if (!existingLayerIds.has(item.id)) {
                     me.styleOpacities.push(item);
                 }
             }
