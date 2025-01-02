@@ -2912,10 +2912,11 @@ export default class extends Evented {
 
                 realtimeBuses.clear();
 
-                for (const {id, vehicle} of vehiclePosition.entity) {
-                    const stop = vehicle.currentStopSequence,
-                        position = vehicle.position,
-                        tripId = vehicle.trip && vehicle.trip.tripId;
+                for (const {id, vehicle: vp} of vehiclePosition.entity) {
+                    const vehicle = vp.vehicle,
+                        stop = vp.currentStopSequence,
+                        position = vp.position,
+                        tripId = vp.trip && vp.trip.tripId;
 
                     if (!(stop || position) || !tripId) {
                         continue;
@@ -2941,7 +2942,7 @@ export default class extends Evented {
                         );
 
                         bus = {
-                            id,
+                            id: vehicle ? vehicle.license_plate || vehicle.id : id,
                             gtfsId,
                             trip: busTrip,
                             feature,
