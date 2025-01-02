@@ -156,8 +156,6 @@ export default class extends Evented {
             options.customAttribution = helpers.flat([options.customAttribution, configs.customAttribution]);
         }
 
-        me.refreshBusData();
-
         me.map = new Mapbox(options);
 
         for (const event of configs.events) {
@@ -181,6 +179,8 @@ export default class extends Evented {
                 me.map.once('styledata', resolve);
             })
         ]).then(me.initialize.bind(me));
+
+        me.refreshBusData();
     }
 
     /**
@@ -1207,6 +1207,7 @@ export default class extends Evented {
         });
 
         me.initialized = true;
+        me.fire({type: 'initialized'});
     }
 
     _jumpTo(options) {
@@ -2407,7 +2408,9 @@ export default class extends Evented {
     refreshBusData() {
         const me = this;
 
-        loadBusData(me.data, me.lang).then(data => {
+        loadBusData(me.data, me.lang).then(data =>
+            new Promise(resolve => me.initialized ? resolve(data) : me.once('initialized', () => resolve(data)))
+        ).then(data => {
             const map = me.map;
 
             for (const {id, activeBusLookup, layerIds} of me.gtfs.values()) {
