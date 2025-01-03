@@ -2427,14 +2427,6 @@ export default class extends Evented {
                         }
                     }
                 }
-
-                me.removeLayer(`busroute-${id}-og-`);
-                for (const zoom of [14, 15, 16, 17, 18]) {
-                    for (const key of ['busstops', 'busstops-outline']) {
-                        me.removeLayer(`${key}-${id}-og-${zoom}`);
-                    }
-                }
-                me.removeLayer(`busstops-poi-${id}`);
                 map.removeSource(`gtfs-${id}`);
 
                 me.gtfs.delete(id);
