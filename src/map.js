@@ -18,28 +18,11 @@ import {AboutPanel, BusPanel, LayerPanel, SharePanel, StationPanel, TrackingMode
 import Plugin from './plugin';
 import nearestCloserPointOnLine from './turf/nearest-closer-point-on-line';
 
-const RAILWAY_CHUORAPID = 'JR-East.ChuoRapid',
-    RAILWAY_OME = 'JR-East.Ome',
-    RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
+const RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
     RAILWAY_MITA = 'Toei.Mita',
     RAILWAY_ARAKAWA = 'Toei.Arakawa';
 
-const TRAINTYPE_JREAST_LIMITEDEXPRESS = 'JR-East.LimitedExpress';
-
 const AIRLINES_FOR_ANA_CODE_SHARE = ['ADO', 'SFJ', 'SNJ'];
-
-const WITH_GREEN_CARS = {
-    en: 'With double-decker green cars',
-    es: 'Con vagones verdes de dos niveles',
-    fr: 'Avec des voitures vertes à deux étages',
-    ja: '2階建てグリーン車連結',
-    ko: '2층 그린차 연결',
-    ne: 'डबल डेकर हरियो कारहरु संग',
-    pt: 'Com carros verdes de dois andares',
-    th: 'การเชื่อมต่อรถสีเขียวสองชั้น',
-    'zh-Hans': '双层绿色车厢连接',
-    'zh-Hant': '雙層綠色車廂連接'
-};
 
 const DEGREE_TO_RADIAN = Math.PI / 180;
 
@@ -114,7 +97,6 @@ export default class extends Evented {
         me.container = typeof options.container === 'string' ?
             document.getElementById(options.container) : options.container;
         me.secrets = options.secrets;
-        me.trainPopupObjects = [];
         me.exitPopups = [];
 
         me.clockControl = options.clockControl;
@@ -1148,7 +1130,6 @@ export default class extends Evented {
                 // because the adjustment for altitude is required
                 me.updatePopup();
             }
-            me.updateTrainPopup();
         });
 
         for (const plugin of me.plugins.slice().reverse()) {
@@ -1392,9 +1373,6 @@ export default class extends Evented {
             }
             if (tracked === car) {
                 me.trackObject(car);
-            }
-            if (hasGreenCars(train)) {
-                me.showTrainPopup(car);
             }
             if (me.markedObject === car) {
                 car.outline = 1;
@@ -2191,7 +2169,6 @@ export default class extends Evented {
             `<strong>${dict['train-number']}:</strong> ${train.n}`,
             !train.timetable ? ` <span class="desc-caution">${dict['special']}</span>` : '',
             '<br>',
-            hasGreenCars(train) ? `<span class="desc-green-cars">${WITH_GREEN_CARS[lang]}</span><br>` : '',
             delay >= 60000 ? '<span class="desc-caution">' : '',
             '<strong>',
             dict[train.standing ? 'standing-at' : 'previous-stop'],
@@ -2308,7 +2285,6 @@ export default class extends Evented {
         if (cars) {
             for (const car of cars) {
                 me.trafficLayer.removeObject(car);
-                me.hideTrainPopup(car);
                 if (car === me.markedObject && !keep) {
                     me.markObject();
                 }
@@ -3222,8 +3198,6 @@ export default class extends Evented {
                 me.addStationOutline(object, 'stations-marked');
             }
         }
-
-        me.updateTrainPopup();
     }
 
     trackObject(object) {
@@ -3357,57 +3331,6 @@ export default class extends Evented {
                 me.fire(Object.assign({type: 'selection'}, object));
             }
         }
-    }
-
-    showTrainPopup(object) {
-        const me = this,
-            trainPopupObjects = me.trainPopupObjects;
-
-        if (trainPopupObjects.indexOf(object) !== -1) {
-            return;
-        }
-        object.popup = new AnimatedPopup({
-            className: 'popup-green-cars',
-            closeButton: false,
-            closeOnClick: false,
-            offset: {
-                top: [0, 10],
-                bottom: [0, -30]
-            }
-        });
-        object.popup.setHTML('');
-        trainPopupObjects.push(object);
-        me.updateTrainPopup();
-    }
-
-    updateTrainPopup() {
-        const me = this,
-            markedObject = me.markedObject;
-
-        for (const object of me.trainPopupObjects) {
-            object.popup.setLngLat(me.adjustCoord(object.coord, object.altitude));
-            if (object !== markedObject && !object.popupVisible) {
-                object.popup.addTo(me.map);
-                object.popupVisible = true;
-            } else if (object === markedObject && object.popupVisible) {
-                object.popup.remove();
-                delete object.popupVisible;
-            }
-        }
-    }
-
-    hideTrainPopup(object) {
-        const me = this,
-            trainPopupObjects = me.trainPopupObjects,
-            index = trainPopupObjects.indexOf(object);
-
-        if (index === -1 || !object.popup) {
-            return;
-        }
-        object.popup.remove();
-        delete object.popup;
-        delete object.popupVisible;
-        trainPopupObjects.splice(index, 1);
     }
 
     showStationExits(stations) {
@@ -3897,8 +3820,4 @@ function isEqualObject(a, b) {
         return true;
     }
     return false;
-}
-
-function hasGreenCars(train) {
-    return helpers.includes([RAILWAY_CHUORAPID, RAILWAY_OME], train.r.id) && train.y.id !== TRAINTYPE_JREAST_LIMITEDEXPRESS && train.carComposition === 12;
 }
