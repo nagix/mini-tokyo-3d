@@ -55,6 +55,7 @@ module.exports = {
                 'display-modes',
                 'configuration',
                 'plugins',
+                'gtfs',
                 'about-data',
                 'supported-browsers',
                 'development-information',
@@ -78,6 +79,7 @@ module.exports = {
               collapsable: false,
               children: [
                 'api/',
+                'api/data-source',
                 'api/geojson-layer',
                 'api/map',
                 'api/mapboxgl',
@@ -124,6 +126,7 @@ module.exports = {
                 'display-modes',
                 'configuration',
                 'plugins',
+                'gtfs',
                 'about-data',
                 'supported-browsers',
                 'development-information',
@@ -147,6 +150,7 @@ module.exports = {
               collapsable: false,
               children: [
                 'api/',
+                'api/data-source',
                 'api/geojson-layer',
                 'api/map',
                 'api/mapboxgl',

@@ -10,13 +10,13 @@ Mini Tokyo 3D uses the following data sources and requires an access token for e
 
 Data Source | Sign-Up URL | Access Token Format
 :-- | :-- | :--
-[Public Transportation Open Data Center](https://www.odpt.org) | [Link](https://developer.odpt.org/signup) | A string of numbers and lowercase letters
+[Public Transportation Open Data Center](https://www.odpt.org/en/) | [Link](https://developer.odpt.org/signup) | A string of numbers and lowercase letters
 Public Transportation Open Data Center<br>([Open Data Challenge for Public Transportation 2024](https://challenge2024.odpt.org/index-e.html)) | [Link](https://developer.odpt.org/signup) | A string of numbers and lowercase letters
 [Mapbox](https://www.mapbox.com) | [Link](https://account.mapbox.com/auth/signup/) | Alphanumeric string containing a period beginning with `pk.`
 
 ### Getting an Access Token for Public Transportation Open Data Center
 
-Mini Tokyo 3D is using train and airplane data from the [Public Transportation Open Data Center](https://www.odpt.org). You need to register as a developer to get the data, but it is available for free.
+Mini Tokyo 3D is using train and airplane data from the [Public Transportation Open Data Center](https://www.odpt.org/en/). You need to register as a developer to get the data, but it is available for free.
 
 1. Register as a developer by entering your user information on the [developer site's registration page](https://developer.odpt.org/signup). It may take a few days to receive your registration confirmation email.
 2. After logging in with your developer account, select "Access Token for ODPT Center" from the menu shown "Logged in" in the upper right corner of the screen.

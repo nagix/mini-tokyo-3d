@@ -2,7 +2,7 @@
 
 This application uses the following data.
 
-- [Public Transportation Open Data Center](https://www.odpt.org)
+- [Public Transportation Open Data Center](https://www.odpt.org/en/)
 - [Mapbox](https://www.mapbox.com)
 - [OpenStreetMap](https://www.openstreetmap.org)
 - [Rain Viewer](https://www.rainviewer.com)

@@ -12,7 +12,7 @@ Access token for the [Open Data Challenge for Public Transportation 2024](https:
 
 ### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
 
-Access token for the [Public Transportation Open Data Center](https://www.odpt.org). If not specified, the default token will be used.
+Access token for the [Public Transportation Open Data Center](https://www.odpt.org/en/). If not specified, the default token will be used.
 
 ### **`tokyochallenge`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 

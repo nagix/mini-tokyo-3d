@@ -15,6 +15,7 @@ new Marker(options: Object)
 名前 | 説明
 :-- | :--
 **`options.element`**<br>[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element) | マーカーとして使用する DOM エレメント。デフォルトは、水色のしずく型の SVG マーカー
+**`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | マーカーの最小のズームレベル。minZoom 未満のズームレベルでは、マーカーは非表示になる。値は `0` から `24`（これを含む）の間の任意の数値。minZoom が指定されていない場合は、レイヤーはすべてのズームレベルで表示される
 
 ## インスタンスメンバ
 
