@@ -238,17 +238,17 @@ export function loadDynamicFlightData() {
     }));
 }
 
-export function loadBusData(options, lang) {
+export function loadBusData(sources, lang) {
     const workerUrl = URL.createObjectURL(new Blob([`WORKER_STRING`], {type: 'text/javascript'})),
         worker = new Worker(workerUrl),
         proxy = Comlink.wrap(worker);
 
-    return new Promise(resolve => proxy.load(options, lang, Comlink.proxy(data => {
+    return new Promise(resolve => proxy.load(sources, lang, Comlink.proxy(data => {
         const gtfsData = data.map((items, i) => ({
             featureCollection: geobuf.decode(new Pbf(items[0])),
             ...decode(new Pbf(items[1])),
-            vehiclePositionUrl: options[i].vehiclePositionUrl,
-            color: options[i].color
+            vehiclePositionUrl: sources[i].vehiclePositionUrl,
+            color: sources[i].color
         }));
 
         proxy[Comlink.releaseProxy]();

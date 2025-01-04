@@ -75,7 +75,7 @@ export default class extends Evented {
             bearing: configs.defaultBearing,
             pitch: configs.defaultPitch,
             dataUrl: configs.dataUrl,
-            data: configs.data,
+            dataSources: configs.dataSources,
             clockControl: true,
             searchControl: true,
             navigationControl: true,
@@ -89,7 +89,7 @@ export default class extends Evented {
 
         me.lang = helpers.getLang(options.lang);
         me.dataUrl = options.dataUrl;
-        me.data = options.data.map(({gtfsUrl, vehiclePositionUrl, color}) => ({
+        me.dataSources = options.dataSources.map(({gtfsUrl, vehiclePositionUrl, color}) => ({
             gtfsUrl: updateOdptUrl(gtfsUrl, options.secrets),
             vehiclePositionUrl: updateOdptUrl(vehiclePositionUrl, options.secrets),
             color
@@ -2384,7 +2384,7 @@ export default class extends Evented {
     refreshBusData() {
         const me = this;
 
-        loadBusData(me.data, me.lang).then(data =>
+        loadBusData(me.dataSources, me.lang).then(data =>
             new Promise(resolve => me.initialized ? resolve(data) : me.once('initialized', () => resolve(data)))
         ).then(data => {
             const map = me.map;

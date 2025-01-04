@@ -148,8 +148,8 @@ const configs = {
     // Default data URL
     dataUrl: 'https://minitokyo3d.com/data',
 
-    // Default data
-    data: [],
+    // Default data sources
+    dataSources: [],
 
     // Route search URL
     searchUrl: 'https://search.minitokyo3d.com/api/v1/routes',
