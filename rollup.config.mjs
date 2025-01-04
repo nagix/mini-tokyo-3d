@@ -4,7 +4,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import image from '@rollup/plugin-image';
 import terser from '@rollup/plugin-terser';
-import sass from 'node-sass';
 import postcss from 'rollup-plugin-postcss';
 import {visualizer} from "rollup-plugin-visualizer";
 import cssimport from 'postcss-import';
@@ -18,10 +17,6 @@ const banner = `/*!
  * (c) 2019-${new Date().getFullYear()} ${pkg.author}
  * Released under the ${pkg.license} license
  */`;
-const sassRender = (content, id) => new Promise((resolve, reject) => {
-	const result = sass.renderSync({file: id});
-	resolve({code: result.css.toString()});
-});
 
 const onwarn = (warning, defaultHandler) => {
 	const {code, message} = warning;
@@ -86,7 +81,6 @@ export default [{
 			preferBuiltins: false
 		}),
 		postcss({
-			preprocessor: sassRender,
 			plugins: [
 				cssimport(),
 				inlinesvg()
@@ -143,7 +137,6 @@ export default [{
 			preferBuiltins: false
 		}),
 		postcss({
-			preprocessor: sassRender,
 			plugins: [
 				cssimport(),
 				inlinesvg()
@@ -208,7 +201,6 @@ export default [{
 			preferBuiltins: false
 		}),
 		postcss({
-			preprocessor: sassRender,
 			plugins: [
 				cssimport(),
 				inlinesvg()

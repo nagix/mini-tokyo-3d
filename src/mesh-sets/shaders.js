@@ -4,7 +4,7 @@ uniform float modelScale;
 attribute vec3 translation;
 
 float getScale( float zoom, float modelScale) {
-	return pow( 2.0, 14.0 - clamp( zoom, 13.0, 19.0 ) ) * modelScale * 100.0;
+    return pow( 2.0, 14.0 - clamp( zoom, 13.0, 19.0 ) ) * modelScale * 100.0;
 }
 
 #ifdef TRANSFORM
