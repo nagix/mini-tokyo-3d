@@ -680,10 +680,13 @@ export default class extends Evented {
         me.trafficLayer = new TrafficLayer({id: 'traffic'});
 
         // To move to the style file in v4.0
-        map.setLight({
-            intensity: 0.35,
-            anchor: 'map'
-        });
+        map.setLights([{
+            type: 'flat',
+            properties: {
+                intensity: 0.35,
+                anchor: 'map'
+            }
+        }]);
 
         // To move to the style file in v4.0
         map.addLayer({

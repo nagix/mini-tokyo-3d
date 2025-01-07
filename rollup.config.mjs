@@ -92,7 +92,7 @@ export default [{
 			preventAssignment: true,
 			'process.env.NODE_ENV': '\'development\'',
 			'log.error': '(() => () => {})',
-			'Math.min(1.01*a,i*(1/t._horizonShift))}': 'Math.max(i*(1/t._horizonShift),i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}',
+			'Math.min(1.01*s,o)}': 'Math.max(o,i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}',
 			'WORKER_STRING': () => fs.readFileSync(`dist/${pkg.name}-worker.js`, {encoding: 'utf8'}).replace(/(?=`|\${|\\)/g, '\\')
 		}),
 		replace({
@@ -149,7 +149,7 @@ export default [{
 			preventAssignment: true,
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})',
-			'Math.min(1.01*a,i*(1/t._horizonShift))}': 'Math.max(i*(1/t._horizonShift),i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}',
+			'Math.min(1.01*s,o)}': 'Math.max(o,i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}',
 			'WORKER_STRING': () => fs.readFileSync(`dist/${pkg.name}-worker.js`, {encoding: 'utf8'}).replace(/(?=`|\${|\\)/g, '\\')
 		}),
 		replace({
@@ -211,7 +211,7 @@ export default [{
 			preventAssignment: true,
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})',
-			'Math.min(1.01*a,i*(1/t._horizonShift))}': 'Math.max(i*(1/t._horizonShift),i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}',
+			'Math.min(1.01*s,o)}': 'Math.max(o,i+1000*t.pixelsPerMeter/Math.cos(t._pitch))}',
 			'WORKER_STRING': () => fs.readFileSync(`dist/${pkg.name}-worker.js`, {encoding: 'utf8'}).replace(/(?=`|\${|\\)/g, '\\')
 		}),
 		replace({

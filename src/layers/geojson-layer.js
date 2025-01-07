@@ -22,7 +22,7 @@ export default class {
 
         mbox.addLayer(new MapboxLayer(options), beforeId || 'poi');
         mbox.setLayerZoomRange(id, implementation.minzoom, implementation.maxzoom);
-        mbox.getLayer(id).metadata = implementation.metadata;
+        mbox.style.getOwnLayer(id).metadata = implementation.metadata;
     }
 
 }

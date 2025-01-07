@@ -28,7 +28,7 @@ export function getBounds(coords) {
  * @param {Object} props - One or more properties to update
  */
 export function setLayerProps(map, id, props) {
-    map.getLayer(id).implementation.setProps(props);
+    map.getLayer(id).setProps(props);
 }
 
 /**
@@ -93,10 +93,13 @@ export function setSunlight(map, time) {
         sunAltitude = 90 - altitude * RADIAN_TO_DEGREE,
         {r, g, b} = getSunlightColor(map, time);
 
-    map.setLight({
-        position: [1.15, sunAzimuth, sunAltitude],
-        color: `rgb(${r * 255},${g * 255},${b * 255})`
-    });
+    map.setLights([{
+        type: 'flat',
+        properties: {
+            position: [1.15, sunAzimuth, sunAltitude],
+            color: `rgb(${r * 255},${g * 255},${b * 255})`
+        }
+    }]);
 }
 
 /**
@@ -109,7 +112,7 @@ export function setSunlight(map, time) {
 export function hasDarkBackground(map, actual) {
     if (actual) {
         return BG_LAYER_IDS.reduce((value, id) => {
-            const paintProperties = map.getLayer(id).paint,
+            const paintProperties = map.style.getOwnLayer(id).paint,
                 {r, g, b} = paintProperties.get('background-color'),
                 a = paintProperties.get('background-opacity');
             return value + luminance({r: r * a, g: g * a, b: b * a});
