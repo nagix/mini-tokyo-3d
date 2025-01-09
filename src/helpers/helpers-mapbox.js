@@ -88,18 +88,158 @@ export function getSunlightColor(map, time) {
  */
 export function setSunlight(map, time) {
     const center = map.getCenter(),
+        {sunrise, sunset} = SunCalc.getTimes(time, center.lat, center.lng),
+        sunriseTime = sunrise.getTime(),
+        sunsetTime = sunset.getTime(),
         {azimuth, altitude} = SunCalc.getPosition(time, center.lat, center.lng),
         sunAzimuth = 180 + azimuth * RADIAN_TO_DEGREE,
-        sunAltitude = 90 - altitude * RADIAN_TO_DEGREE,
-        {r, g, b} = getSunlightColor(map, time);
+        sunAltitude = 90 - altitude * RADIAN_TO_DEGREE;
+    let t, ambient, directional, sun;
+
+    if (time >= sunriseTime - HOUR / 2 && time < sunriseTime) {
+        // Night to sunrise
+        const sunrisePosition = SunCalc.getPosition(sunriseTime, center.lat, center.lng);
+
+        t = (time - sunriseTime) / (HOUR / 2) + 1;
+        ambient = {
+            r: lerp(0, 153, t),
+            g: lerp(22, 179, t),
+            b: lerp(56, 204, t),
+            i: lerp(.5, .65, t)
+        };
+        directional = {
+            r: 74,
+            g: 74,
+            b: 74,
+            i: lerp(.5, .6, t),
+            w: .5
+        };
+        sun = {
+            azimuth: lerp(210, 180 + sunrisePosition.azimuth * RADIAN_TO_DEGREE, t),
+            altitude: 20
+        };
+    } else if (time >= sunriseTime && time < sunriseTime + HOUR) {
+        // Sunrise to day
+        t = (time - sunriseTime) / HOUR;
+        ambient = {
+            r: lerp(153, 255, t),
+            g: lerp(179, 255, t),
+            b: lerp(204, 255, t),
+            i: lerp(.65, .7, t)
+        };
+        directional = {
+            r: lerp(254, 255, t),
+            g: lerp(202, 255, t),
+            b: lerp(139, 255, t),
+            i: lerp(.6, .3, t),
+            w: 1
+        };
+        sun = {
+            azimuth: sunAzimuth,
+            altitude: sunAltitude
+        };
+    } else if (time >= sunriseTime + HOUR && time < sunsetTime - HOUR) {
+        // Day
+        ambient = {
+            r: 255,
+            g: 255,
+            b: 255,
+            i: .7
+        };
+        directional = {
+            r: 255,
+            g: 255,
+            b: 255,
+            i: .3,
+            w: 1
+        };
+        sun = {
+            azimuth: sunAzimuth,
+            altitude: sunAltitude
+        };
+    } else if (time >= sunsetTime - HOUR && time < sunsetTime) {
+        // Day to sunset
+        t = (time - sunsetTime) / HOUR + 1;
+        ambient = {
+            r: lerp(255, 204, t),
+            g: lerp(255, 179, t),
+            b: lerp(255, 153, t),
+            i: lerp(.7, .65, t)
+        };
+        directional = {
+            r: lerp(255, 254, t),
+            g: lerp(255, 194, t),
+            b: lerp(255, 134, t),
+            i: lerp(.3, .6, t),
+            w: 1
+        };
+        sun = {
+            azimuth: sunAzimuth,
+            altitude: sunAltitude
+        };
+    } else if (time >= sunsetTime && time < sunsetTime + HOUR / 2) {
+        // Sunset to night
+        const sunsetPosition = SunCalc.getPosition(sunsetTime, center.lat, center.lng);
+
+        t = (time - sunsetTime) / (HOUR / 2);
+        ambient = {
+            r: lerp(204, 0, t),
+            g: lerp(179, 22, t),
+            b: lerp(153, 56, t),
+            i: lerp(.65, .5, t)
+        };
+        directional = {
+            r: 74,
+            g: 74,
+            b: 74,
+            i: lerp(.6, .5, t),
+            w: .5
+        };
+        sun = {
+            azimuth: lerp(180 + sunsetPosition.azimuth * RADIAN_TO_DEGREE, 210, t),
+            altitude: 20
+        };
+    } else {
+        // Night
+        ambient = {
+            r: 0,
+            g: 22,
+            b: 56,
+            i: .5
+        };
+        directional = {
+            r: 74,
+            g: 74,
+            b: 74,
+            i: .5,
+            w: .5
+        };
+        sun = {
+            azimuth: 210,
+            altitude: 20
+        };
+    }
 
     map.setLights([{
-        type: 'flat',
+        id: 'ambient',
+        type: 'ambient',
         properties: {
-            position: [1.15, sunAzimuth, sunAltitude],
-            color: `rgb(${r * 255},${g * 255},${b * 255})`
+            color: `rgb(${ambient.r}, ${ambient.g}, ${ambient.b})`,
+            intensity: ambient.i
+        }
+    }, {
+        id: 'directional',
+        type: 'directional',
+        properties: {
+            direction: ['literal', [sun.azimuth, sun.altitude]],
+            color: `rgb(${directional.r}, ${directional.g}, ${directional.b})`,
+            intensity: directional.i,
+            'cast-shadows': true,
+            'shadow-intensity': directional.w
         }
     }]);
+
+    map.setPaintProperty('sky', 'sky-atmosphere-sun', [sunAzimuth, sunAltitude]);
 }
 
 /**
@@ -110,19 +250,26 @@ export function setSunlight(map, time) {
  * @returns {boolean} True if the background color of the map is dark
  */
 export function hasDarkBackground(map, actual) {
+    const light = map.getLights().filter(({type}) => type === 'ambient')[0],
+        lightColorElements = parseCSSColor(light.properties.color),
+        lightIntensity = light.properties.intensity,
+        lr = lightColorElements[0] / 255 * lightIntensity,
+        lg = lightColorElements[1] / 255 * lightIntensity,
+        lb = lightColorElements[2] / 255 * lightIntensity;
+
     if (actual) {
         return BG_LAYER_IDS.reduce((value, id) => {
             const paintProperties = map.style.getOwnLayer(id).paint,
                 {r, g, b} = paintProperties.get('background-color'),
                 a = paintProperties.get('background-opacity');
-            return value + luminance({r: r * a, g: g * a, b: b * a});
+            return value + luminance({r: r * lr * a, g: g * lg * a, b: b * lb * a});
         }, 0) < .5;
     }
 
     return BG_LAYER_IDS.reduce((value, id) => {
         const [r, g, b] = parseCSSColor(map.getPaintProperty(id, 'background-color')),
             a = valueOrDefault(map.getPaintProperty(id, 'background-opacity'), 1);
-        return value + luminance({r: r * a, g: g * a, b: b * a});
+        return value + luminance({r: r * lr * a, g: g * lg * a, b: b * lb * a});
     }, 0) < 127.5;
 }
 
@@ -134,86 +281,6 @@ export function hasDarkBackground(map, actual) {
  */
 export function getScaledColorString(color, colorFactors) {
     return `rgba(${color.r * colorFactors.r},${color.g * colorFactors.g},${color.b * colorFactors.b},${color.a})`;
-}
-
-/**
- * Returns an array of the style color information retrieved from map layers.
- * @param {mapboxgl.Map} map - Mapbox's Map object
- * @param {string} metadataKey - Metadata key to filter
- * @returns {Array<Object>} Array of the style color objects
- */
-export function getStyleColors(map, metadataKey) {
-    // Layer type -> paint property key mapping
-    const paintPropertyKeys = {
-            'background': ['background-color'],
-            'line': ['line-color'],
-            'fill': ['fill-color', 'fill-outline-color']
-        },
-        colors = [];
-
-    map.getStyle().layers.filter(({metadata}) =>
-        metadata && metadata[metadataKey]
-    ).forEach(({id, type}) => {
-        for (const key of paintPropertyKeys[type]) {
-            const prop = map.getPaintProperty(id, key);
-
-            if (!prop) {
-                return;
-            }
-            if (typeof prop === 'string') {
-                const [r, g, b, a] = parseCSSColor(prop);
-                colors.push({id, key, color: {r, g, b, a}});
-            } else if (prop.stops) {
-                const color = [];
-
-                prop.stops.forEach((item, index) => {
-                    const [r, g, b, a] = parseCSSColor(item[1]);
-                    color.push({index, value: {r, g, b, a}});
-                });
-                colors.push({id, key, color});
-            } else if (prop[0] === 'case' || prop[0] === 'interpolate') {
-                const color = [];
-
-                prop.forEach((item, index) => {
-                    if (index >= 1 && typeof item === 'string') {
-                        const [r, g, b, a] = parseCSSColor(item);
-                        color.push({index, value: {r, g, b, a}});
-                    }
-                });
-                colors.push({id, key, color});
-            }
-        }
-    });
-    return colors;
-}
-
-/**
- * Sets style colors based on the style color objects and color factors
- * @param {mapboxgl.Map} map - Mapbox's Map object
- * @param {Array<Object>} styleColors - Array of the style color objects
- * @param {Object} factors - Color factors to multiply in the form of {r, g, b}
- */
-export function setStyleColors(map, styleColors, factors) {
-    let prop;
-
-    for (const {id, key, color} of styleColors) {
-        if (Array.isArray(color)) {
-            prop = map.getPaintProperty(id, key);
-            for (const {index, value} of color) {
-                const scaledColor = getScaledColorString(value, factors);
-
-                if (prop.stops) {
-                    prop.stops[index][1] = scaledColor;
-                } else {
-                    // Bug: transition doesn't work (mapbox-gl-js #7121)
-                    prop[index] = scaledColor;
-                }
-            }
-        } else {
-            prop = getScaledColorString(color, factors);
-        }
-        map.setPaintProperty(id, key, prop);
-    }
 }
 
 /**

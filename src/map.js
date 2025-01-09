@@ -131,7 +131,7 @@ export default class extends Evented {
         options.container = initContainer(me.container);
 
         // This style overrides the option
-        options.style = `${options.dataUrl}/osm-liberty.json`;
+        options.style = `${options.dataUrl}/v2/style.json`;
 
         // The custom attribution will be appended only if ConfigControl is visible
         if (!options.configControl) {
@@ -680,15 +680,6 @@ export default class extends Evented {
         me.trafficLayer = new TrafficLayer({id: 'traffic'});
 
         // To move to the style file in v4.0
-        map.setLights([{
-            type: 'flat',
-            properties: {
-                intensity: 0.35,
-                anchor: 'map'
-            }
-        }]);
-
-        // To move to the style file in v4.0
         map.addLayer({
             id: 'sky',
             type: 'sky',
@@ -708,62 +699,7 @@ export default class extends Evented {
                 'sky-atmosphere-sun-intensity': 20
             }
         }, 'background');
-
-        // To move to the style file in v4.0
-        map.addLayer({
-            id: 'background-underground',
-            type: 'background',
-            paint: {
-                'background-color': 'rgba(16,16,16,1)',
-                'background-opacity': 0
-            },
-            metadata: {
-                'mt3d:opacity-effect': true,
-                'mt3d:opacity': 0,
-                'mt3d:opacity-underground': 1
-            }
-        }, 'natural_earth');
-
-        // To move to the style file in v4.0
-        map.addLayer({
-            id: 'building-underground-underground',
-            type: 'fill',
-            source: 'mapbox',
-            'source-layer': 'building',
-            minzoom: 14.5,
-            filter: [
-                'all',
-                [
-                    'match',
-                    ['get', 'type'],
-                    ['underground_mall', 'subway'],
-                    true,
-                    false
-                ],
-                ['==', ['get', 'underground'], 'true'],
-                ['==', ['geometry-type'], 'Polygon']
-            ],
-            layout: {},
-            paint: {
-                'fill-outline-color': 'hsl(35, 8%, 80%)',
-                'fill-opacity': [
-                    'interpolate',
-                    ['linear'],
-                    ['zoom'],
-                    14.5,
-                    0,
-                    15,
-                    0
-                ],
-                'fill-color': 'hsla(268, 67%, 67%, 0.5)'
-            },
-            metadata: {
-                'mt3d:opacity-effect': true,
-                'mt3d:opacity': 0,
-                'mt3d:opacity-underground': 1,
-                'mt3d:opacity-underground-route': 0.1
-            }
-        }, 'building');
+        helpersMapbox.setSunlight(map, clock.getTime());
 
         map.setLayoutProperty('poi', 'text-field', [
             'coalesce',
@@ -791,7 +727,7 @@ export default class extends Evented {
                     getLineColor: [255, 255, 255],
                     getFillColor: [255, 255, 255],
                     visible: false
-                }), 'building-3d');
+                }), 'trees');
             }
 
             for (const key2 of ['ug', 'routeug', 'routeog']) {
@@ -842,7 +778,7 @@ export default class extends Evented {
                                 'mt3d:opacity-underground': 0.25
                             }
                         }
-                    }[key2]), 'building-3d');
+                    }[key2]), 'trees');
                 }
             }
         }
@@ -880,15 +816,18 @@ export default class extends Evented {
                     paint: {
                         'railways': {
                             'line-color': color,
-                            'line-width': lineWidth
+                            'line-width': lineWidth,
+                            'line-emissive-strength': 1
                         },
                         'stations': {
                             'fill-color': color,
-                            'fill-opacity': .7
+                            'fill-opacity': .7,
+                            'fill-emissive-strength': 1
                         },
                         'stations-outline': {
                             'line-color': ['get', 'outlineColor'],
-                            'line-width': lineWidth
+                            'line-width': lineWidth,
+                            'line-emissive-strength': 1
                         }
                     }[key],
                     metadata: {
@@ -898,11 +837,11 @@ export default class extends Evented {
                         'mt3d:opacity-underground': 0.25,
                         'mt3d:opacity-underground-route': 0.1
                     }
-                }, 'building-3d');
+                }, 'trees');
             }
         }
 
-        me.addLayer(me.trafficLayer, 'building-3d');
+        me.addLayer(me.trafficLayer, 'trees');
 
         /* For development
         me.addLayer({
@@ -922,7 +861,6 @@ export default class extends Evented {
         });
         */
 
-        me.styleColors = helpersMapbox.getStyleColors(map, 'mt3d:color-effect');
         me.styleOpacities = helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect');
 
         const datalist = helpers.createElement('datalist', {id: 'stations'}, document.body);
@@ -1145,7 +1083,7 @@ export default class extends Evented {
             callback: () => {
                 const clock = me.clock,
                     now = clock.getTime(),
-                    {minDelay, realtimeCheckInterval} = configs;
+                    {minDelay, trainRefreshInterval, realtimeCheckInterval} = configs;
 
                 if (now - me.lastTimetableRefresh >= 86400000) {
                     me.refreshTrainTimetableData();
@@ -1161,23 +1099,28 @@ export default class extends Evented {
 
                 me.updateVisibleArea();
 
-                if (Math.floor((now - minDelay) / realtimeCheckInterval) !== Math.floor(me.lastTrainRefresh / realtimeCheckInterval)) {
-                    helpersMapbox.setStyleColors(map, me.styleColors, me.getLightColor());
+                if (Math.floor((now - minDelay) / trainRefreshInterval) !== Math.floor(me.lastTrainRefresh / trainRefreshInterval)) {
                     helpersMapbox.setSunlight(map, now);
-                    if (me.searchMode === 'none') {
-                        if (me.clockMode === 'realtime') {
-                            me.refreshRealtimeTrainData();
-                            me.refreshRealtimeFlightData();
-                            me.refreshRealtimeBusData();
-                        } else {
-                            me.refreshTrains();
-                            me.refreshFlights();
-                        }
+                    if (me.searchMode === 'none' && me.clockMode === 'playback') {
+                        me.refreshTrains();
+                        me.refreshFlights();
                         if (isStation(me.trackedObject)) {
                             me.detailPanel.updateContent();
                         }
                     }
                     me.lastTrainRefresh = now - minDelay;
+                }
+
+                if (Math.floor((now - minDelay) / realtimeCheckInterval) !== Math.floor(me.lastRealtimeCheck / realtimeCheckInterval)) {
+                    if (me.searchMode === 'none' && me.clockMode === 'realtime') {
+                        me.refreshRealtimeTrainData();
+                        me.refreshRealtimeFlightData();
+                        me.refreshRealtimeBusData();
+                        if (isStation(me.trackedObject)) {
+                            me.detailPanel.updateContent();
+                        }
+                    }
+                    me.lastRealtimeCheck = now - minDelay;
                 }
 
                 if (!isVehicle(me.trackedObject) && ((me.ecoMode === 'normal' && map._loaded) || Date.now() - me.lastRepaint >= 1000 / me.ecoFrameRate)) {
@@ -2362,6 +2305,7 @@ export default class extends Evented {
             realtimeBuses.clear();
         }
         delete me.lastTrainRefresh;
+        delete me.lastRealtimeCheck;
     }
 
     resetRailwayStatus() {
@@ -2380,6 +2324,7 @@ export default class extends Evented {
         loadTimetableData(me.dataUrl, me.clock).then(data => {
             me.timetables = new TrainTimetables(data, me.dataReferences);
             delete me.lastTrainRefresh;
+            delete me.lastRealtimeCheck;
             hideLoader(me.container);
         });
     }
@@ -2471,7 +2416,8 @@ export default class extends Evented {
                             ['get', 'width'],
                             22,
                             ['*', ['get', 'width'], 8]
-                        ]
+                        ],
+                        'line-emissive-strength': 1
                     },
                     metadata: {
                         'mt3d:opacity-effect': true,
@@ -2500,11 +2446,13 @@ export default class extends Evented {
                             paint: {
                                 'busstops': {
                                     'fill-color': ['get', 'color'],
-                                    'fill-opacity': .7
+                                    'fill-opacity': .7,
+                                    'fill-emissive-strength': 1
                                 },
                                 'busstops-outline': {
                                     'line-color': ['get', 'outlineColor'],
-                                    'line-width': lineWidth
+                                    'line-width': lineWidth,
+                                    'line-emissive-strength': 1
                                 }
                             }[key],
                             metadata: {
