@@ -10,11 +10,31 @@ import {includes, mergeMaps, normalizeLang} from './helpers/helpers';
 import {updateDistances} from './helpers/helpers-geojson';
 import {encode} from './helpers/helpers-gtfs';
 
+function csvToArray(text) {
+    const result = [''];
+    let i = 0, previous = '', state = true;
+
+    for (const letter of text) {
+        if (letter === '"') {
+            if (state && letter === previous) {
+                result[i] += letter;
+            }
+            state = !state;
+        } else if (letter === ',' && state) {
+            result[++i] = '';
+        } else {
+            result[i] += letter;
+        }
+        previous = letter;
+    }
+    return result;
+}
+
 class AgencyReader {
 
     read(line) {
         const me = this,
-            fileds = line.split(',');
+            fileds = csvToArray(line);
 
         if (me.agencyNameIndex === undefined) {
             me.agencyNameIndex = fileds.indexOf('agency_name');
@@ -52,7 +72,7 @@ class CalendarReader {
 
     read(line) {
         const me = this,
-            fileds = line.split(',');
+            fileds = csvToArray(line);
 
         if (me.serviceIdIndex === undefined) {
             me.serviceIdIndex = fileds.indexOf('service_id');
@@ -94,7 +114,7 @@ class CalendarDateReader {
 
     read(line) {
         const me = this,
-            fileds = line.split(',');
+            fileds = csvToArray(line);
 
         if (me.serviceIdIndex === undefined) {
             me.serviceIdIndex = fileds.indexOf('service_id');
@@ -127,7 +147,7 @@ class FeedInfoReader {
 
     read(line) {
         const me = this,
-            fileds = line.split(',');
+            fileds = csvToArray(line);
 
         if (me.feedLangIndex === undefined) {
             me.feedLangIndex = fileds.indexOf('feed_lang');
@@ -157,7 +177,7 @@ class RouteReader {
 
     read(line) {
         const me = this,
-            fileds = line.split(',');
+            fileds = csvToArray(line);
 
         if (me.routeIdIndex === undefined) {
             me.routeIdIndex = fileds.indexOf('route_id');
@@ -191,7 +211,7 @@ class ShapeReader {
 
     read(line) {
         const me = this,
-            fileds = line.split(',');
+            fileds = csvToArray(line);
 
         if (me.shapeIdIndex === undefined) {
             me.shapeIdIndex = fileds.indexOf('shape_id');
@@ -233,7 +253,7 @@ class StopReader {
 
     read(line) {
         const me = this,
-            fileds = line.split(',');
+            fileds = csvToArray(line);
 
         if (me.stopIdIndex === undefined) {
             me.stopIdIndex = fileds.indexOf('stop_id');
@@ -263,7 +283,7 @@ class StopTimeReader {
 
     read(line) {
         const me = this,
-            fileds = line.split(','),
+            fileds = csvToArray(line),
             lookup = me.lookup;
 
         if (me.tripIdIndex === undefined) {
@@ -306,7 +326,7 @@ class TranslationReader {
 
     read(line) {
         const me = this,
-            fileds = line.split(',');
+            fileds = csvToArray(line);
 
         if (me.tableNameIndex === undefined) {
             me.tableNameIndex = fileds.indexOf('table_name');
@@ -359,7 +379,7 @@ class TripReader {
 
     read(line) {
         const me = this,
-            fileds = line.split(',');
+            fileds = csvToArray(line);
 
         if (me.tripIdIndex === undefined) {
             me.tripIdIndex = fileds.indexOf('trip_id');
@@ -516,17 +536,6 @@ function loadGtfs(source, lang) {
                                     gtfsReader.read(stringBuffer);
                                 }
                                 results[key] = gtfsReader.result;
-                                if (Object.keys(results).length === gtfsFiles.length) {
-                                    const featureCollection = getFeatureCollection(results.shapes, results.stops, results.feed_info.needTranslation && results.translations),
-                                        result = {
-                                            agency: results.agency,
-                                            version: results.feed_info.version,
-                                            stops: getStops(results.stops, results.feed_info.needTranslation && results.translations),
-                                            trips: getTrips(results.trips, results.calendar, results.calendar_dates, results.routes, results.stop_times, results.feed_info.needTranslation && results.translations)
-                                        };
-
-                                    resolve([geobuf.encode(featureCollection, new Pbf()), encode(result, new Pbf())]);
-                                }
                             }
                         });
 
@@ -549,12 +558,24 @@ function loadGtfs(source, lang) {
         return reader.read().then(function pump({done, value}) {
             if (done) {
                 inflate.push(new Uint8Array(0), true);
+                resolve(results);
                 return;
             }
             inflate.push(value);
             reader.read().then(pump);
         });
-    }));
+    })).then(results => {
+        const translations = results.feed_info && results.feed_info.needTranslation && results.translations,
+            featureCollection = getFeatureCollection(results.shapes, results.stops, translations),
+            result = {
+                agency: results.agency,
+                version: results.feed_info ? results.feed_info.version : 'N/A',
+                stops: getStops(results.stops, translations),
+                trips: getTrips(results.trips, results.calendar, results.calendar_dates, results.routes, results.stop_times, translations)
+            };
+
+        return [geobuf.encode(featureCollection, new Pbf()), encode(result, new Pbf())];
+    });
 }
 
 Comlink.expose({

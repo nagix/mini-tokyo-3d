@@ -2852,6 +2852,10 @@ export default class extends Evented {
                 gtfs.date = me.clock.getString(vehiclePosition.header.timestamp * 1000);
 
                 for (const {id, vehicle: vp} of vehiclePosition.entity) {
+                    if (!vp) {
+                        continue;
+                    }
+
                     const vehicle = vp.vehicle,
                         stop = vp.currentStopSequence,
                         position = vp.position,
