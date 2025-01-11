@@ -57,9 +57,6 @@ NavigationControl.prototype.disable = function() {
     me._updateZoomButtons();
 };
 
-const modelOrigin = MercatorCoordinate.fromLngLat(configs.defaultCenter);
-const modelScale = modelOrigin.meterInMercatorCoordinateUnits();
-
 export default class extends Evented {
 
     constructor(options) {
@@ -97,6 +94,7 @@ export default class extends Evented {
         me.container = typeof options.container === 'string' ?
             document.getElementById(options.container) : options.container;
         me.secrets = options.secrets;
+        me.modelOrigin = MercatorCoordinate.fromLngLat(options.center);
         me.exitPopups = [];
 
         me.clockControl = options.clockControl;
@@ -528,40 +526,41 @@ export default class extends Evented {
     }
 
     /**
-     * Returns a MercatorCoordinate object that represents the position of Tokyo
-     * Station as the origin of the mercator coordinates.
+     * Returns a MercatorCoordinate object that represents the initial centerpoint
+     * of the map as the origin of the mercator coordinates.
      * @returns {MercatorCoordinate} The origin of the mercator coordinates
      */
     getModelOrigin() {
-        return modelOrigin;
+        return this.modelOrigin;
     }
 
     /**
      * Returns the scale to transform into MercatorCoordinate from coordinates in
      * real world units using meters. This provides the distance of 1 meter in
-     * MercatorCoordinate units at Tokyo Station.
+     * MercatorCoordinate units at the initial centerpoint of the map.
      * @returns {number} The scale to transform into MercatorCoordinate from
      *     coordinates in real world units using meters
      */
     getModelScale() {
-        return modelScale;
+        return this.modelOrigin.meterInMercatorCoordinateUnits();
     }
 
     /**
      * Projects a LngLat to a MercatorCoordinate, and returns the translated
-     * mercator coordinates with Tokyo Station as the origin.
+     * mercator coordinates with the initial centerpoint of the map as the origin.
      * @param {LngLatLike} lnglat - The location to project
      * @param {number} altitude - The altitude in meters of the position
-     * @returns {Object} The translated mercator coordinates with Tokyo Station as
-     *     the origin
+     * @returns {Object} The translated mercator coordinates with the initial
+     *     centerpoint of the map as the origin
      */
     getModelPosition(lnglat, altitude) {
-        const coord = MercatorCoordinate.fromLngLat(lnglat, altitude);
+        const me = this,
+            coord = MercatorCoordinate.fromLngLat(lnglat, altitude);
 
         return {
-            x: coord.x - modelOrigin.x,
-            y: -(coord.y - modelOrigin.y),
-            z: coord.z - modelOrigin.z
+            x: coord.x - me.modelOrigin.x,
+            y: -(coord.y - me.modelOrigin.y),
+            z: coord.z - me.modelOrigin.z
         };
     }
 
