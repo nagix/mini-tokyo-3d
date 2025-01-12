@@ -469,7 +469,7 @@ function getStops(stops, translations) {
 }
 
 function getTrips(trips, services, serviceExceptions, routeLookup, stopTimeLookup, translations) {
-    const serviceSet = services.union(serviceExceptions[0]).difference(serviceExceptions[1]),
+    const serviceSet = (services || new Set()).union(serviceExceptions[0]).difference(serviceExceptions[1]),
         result = [];
 
     for (const {id, service, route, shape, headsign} of trips) {
