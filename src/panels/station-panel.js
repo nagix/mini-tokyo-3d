@@ -26,7 +26,7 @@ export default class extends Panel {
             exits = me._exits = [].concat(...stations.map(station => station.exit || [])),
             pitch = map.getPitch(),
             {lang, dict, clock} = map,
-            date = clock.getJSTDate(),
+            date = clock.getDate(),
             currMonth = date.getMonth() + 1,
             currDate = date.getDate(),
             currHours = date.getHours(),

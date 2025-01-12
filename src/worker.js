@@ -51,9 +51,9 @@ class AgencyReader {
 
 class CalendarReader {
 
-    constructor() {
+    constructor({offset}) {
         const me = this,
-            date = new Clock().getJSTDate(),
+            date = new Clock().setTimezoneOffset(offset).getDate(),
             hours = date.getHours();
 
         if (hours < 3) {
@@ -94,9 +94,9 @@ class CalendarReader {
 
 class CalendarDateReader {
 
-    constructor() {
+    constructor({offset}) {
         const me = this,
-            date = new Clock().getJSTDate(),
+            date = new Clock().setTimezoneOffset(offset).getDate(),
             hours = date.getHours();
 
         if (hours < 3) {
@@ -513,7 +513,7 @@ function getTrips(trips, services, serviceExceptions, routeLookup, stopTimeLooku
     return result;
 }
 
-function loadGtfs(source, lang) {
+function loadGtfs(source, offset, lang) {
     return new Promise((resolve, reject) => fetch(source.gtfsUrl).then(response => {
         const results = {},
             reader = response.body.getReader(),
@@ -522,7 +522,7 @@ function loadGtfs(source, lang) {
 
                 if (includes(gtfsFiles, key)) {
                     let stringBuffer = '';
-                    const gtfsReader = new gtfsReaders[key]({lang, color: source.color}),
+                    const gtfsReader = new gtfsReaders[key]({offset, lang, color: source.color}),
                         utfDecode = new DecodeUTF8(async (data, final) => {
                             const lines = data.split(/\r?\n/);
 
@@ -579,7 +579,7 @@ function loadGtfs(source, lang) {
 }
 
 Comlink.expose({
-    load: (sources, lang, callback) => Promise.all(sources.map(source => loadGtfs(source, lang))).then(data =>
+    load: (sources, offset, lang, callback) => Promise.all(sources.map(source => loadGtfs(source, offset, lang))).then(data =>
         callback(Comlink.transfer(data, [].concat(...data.map(items => items.map(({buffer}) => buffer)))))
     )
 });

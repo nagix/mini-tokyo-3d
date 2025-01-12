@@ -148,8 +148,13 @@ export default class extends Evented {
             });
         });
 
+        const clockPromise = options.center === configs.defaultCenter ?
+            new Promise(resolve => resolve(me.clock)) :
+            helpersMapbox.fetchTimezoneOffset(options.center, options.accessToken)
+                .then(offset => me.clock.setTimezoneOffset(offset));
+
         Promise.all([
-            loadStaticData(me.dataUrl, me.lang, me.clock)
+            loadStaticData(me.dataUrl, me.lang, clockPromise)
                 .then(me.initData.bind(me))
                 .catch(error => {
                     showErrorMessage(me.container);
@@ -2331,7 +2336,7 @@ export default class extends Evented {
     refreshBusData() {
         const me = this;
 
-        loadBusData(me.dataSources, me.lang).then(data =>
+        loadBusData(me.dataSources, me.clock.getTimezoneOffset(), me.lang).then(data =>
             new Promise(resolve => me.initialized ? resolve(data) : me.once('initialized', () => resolve(data)))
         ).then(data => {
             const map = me.map;

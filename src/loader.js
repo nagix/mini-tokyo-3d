@@ -86,39 +86,42 @@ function adjustTrainID(id, type, destination) {
  * Load all the static data.
  * @param {string} dataUrl - Data URL
  * @param {string} lang - IETF language tag for dictionary
- * @param {Clock} clock - Clock object representing the current time
+ * @param {Promise} clockPromise - Promise for the Clock object representing the
+ *     current time
  * @returns {Object} Loaded data
  */
-export function loadStaticData(dataUrl, lang, clock) {
-    const extra = getExtraTimetableFileNames(clock);
-
+export function loadStaticData(dataUrl, lang, clockPromise) {
     return Promise.all([
-        `${dataUrl}/dictionary-${lang}.json`,
-        `${dataUrl}/railways.json.gz`,
-        `${dataUrl}/stations.json.gz`,
-        `${dataUrl}/features.json.gz`,
-        `${dataUrl}/${getTimetableFileName(clock)}`,
-        `${dataUrl}/rail-directions.json.gz`,
-        `${dataUrl}/train-types.json.gz`,
-        `${dataUrl}/train-vehicles.json.gz`,
-        `${dataUrl}/operators.json.gz`,
-        `${dataUrl}/airports.json.gz`,
-        `${dataUrl}/flight-statuses.json.gz`,
-        `${dataUrl}/poi.json.gz`,
-        ...extra.map(name => `${dataUrl}/${name}`)
-    ].map(loadJSON)).then(data => ({
+        ...[
+            `dictionary-${lang}.json`,
+            'railways.json.gz',
+            'stations.json.gz',
+            'features.json.gz',
+            'rail-directions.json.gz',
+            'train-types.json.gz',
+            'train-vehicles.json.gz',
+            'operators.json.gz',
+            'airports.json.gz',
+            'flight-statuses.json.gz',
+            '/poi.json.gz'
+        ].map(fileName => `${dataUrl}/${fileName}`).map(loadJSON),
+        clockPromise.then(clock => Promise.all([
+            getTimetableFileName(clock),
+            ...getExtraTimetableFileNames(clock)
+        ].map(fileName => `${dataUrl}/${fileName}`).map(loadJSON)))
+    ]).then(data => ({
         dict: data[0],
         railwayData: data[1],
         stationData: data[2],
         featureCollection: data[3],
-        timetableData: data[4].concat(...data.slice(12)),
-        railDirectionData: data[5],
-        trainTypeData: data[6],
-        trainVehicleData: data[7],
-        operatorData: data[8],
-        airportData: data[9],
-        flightStatusData: data[10],
-        poiData: data[11]
+        railDirectionData: data[4],
+        trainTypeData: data[5],
+        trainVehicleData: data[6],
+        operatorData: data[7],
+        airportData: data[8],
+        flightStatusData: data[9],
+        poiData: data[10],
+        timetableData: [].concat(...data[11])
     }));
 }
 
@@ -129,12 +132,10 @@ export function loadStaticData(dataUrl, lang, clock) {
  * @returns {Object} Loaded timetable data
  */
 export function loadTimetableData(dataUrl, clock) {
-    const extra = getExtraTimetableFileNames(clock);
-
     return Promise.all([
-        `${dataUrl}/${getTimetableFileName(clock)}`,
-        ...extra.map(name => `${dataUrl}/${name}`)
-    ].map(loadJSON)).then(data => data[0].concat(...data.slice(1)));
+        getTimetableFileName(clock),
+        ...getExtraTimetableFileNames(clock)
+    ].map(fileName => `${dataUrl}/${fileName}`).map(loadJSON)).then(data => [].concat(...data));
 }
 
 /**
@@ -238,12 +239,12 @@ export function loadDynamicFlightData() {
     }));
 }
 
-export function loadBusData(sources, lang) {
+export function loadBusData(sources, offset, lang) {
     const workerUrl = URL.createObjectURL(new Blob([`WORKER_STRING`], {type: 'text/javascript'})),
         worker = new Worker(workerUrl),
         proxy = Comlink.wrap(worker);
 
-    return new Promise(resolve => proxy.load(sources, lang, Comlink.proxy(data => {
+    return new Promise(resolve => proxy.load(sources, offset, lang, Comlink.proxy(data => {
         const gtfsData = data.map((items, i) => ({
             featureCollection: geobuf.decode(new Pbf(items[0])),
             ...decode(new Pbf(items[1])),

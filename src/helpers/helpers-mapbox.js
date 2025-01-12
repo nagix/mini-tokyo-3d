@@ -1,4 +1,4 @@
-import {LngLatBounds} from 'mapbox-gl';
+import {LngLat, LngLatBounds} from 'mapbox-gl';
 import {parseCSSColor} from 'csscolorparser';
 import {lerp, luminance, valueOrDefault} from './helpers';
 import SunCalc from 'suncalc';
@@ -367,4 +367,19 @@ export function setStyleOpacities(map, styleOpacities, factorKey) {
             setLayerProps(map, id, {opacity: factor});
         }
     }
+}
+
+export function fetchTimezoneOffset(lngLat, accessToken) {
+    const {lng, lat} = LngLat.convert(lngLat);
+
+    return fetch(`https://api.mapbox.com/v4/examples.4ze9z6tv/tilequery/${lng},${lat}.json?access_token=${accessToken}`)
+        .then(response => response.json())
+        .then(data => {
+            const timeZone = data.features[0].properties.TZID,
+                date = new Date(),
+                utcDate = new Date(date.toLocaleString('en-US', {timeZone: 'UTC'})),
+                tzDate = new Date(date.toLocaleString('en-US', {timeZone}));
+
+            return (utcDate.getTime() - tzDate.getTime()) / 60000;
+        });
 }

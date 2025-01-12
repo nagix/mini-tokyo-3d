@@ -168,13 +168,13 @@ export default class extends Evented {
         if (mode === 'playback' && editing) {
             for (const {id, fn} of DATE_COMPONENTS) {
                 element.querySelector(`#${id}-increase-button`).addEventListener('click', () => {
-                    const date = me._tempDate = me._tempDate || clock.getJSTDate();
+                    const date = me._tempDate = me._tempDate || clock.getDate();
 
                     date[`set${fn}`](date[`get${fn}`]() + 1);
                     me._refresh();
                 });
                 element.querySelector(`#${id}-decrease-button`).addEventListener('click', () => {
-                    const date = me._tempDate = me._tempDate || clock.getJSTDate();
+                    const date = me._tempDate = me._tempDate || clock.getDate();
 
                     date[`set${fn}`](date[`get${fn}`]() - 1);
                     me._refresh();
@@ -207,7 +207,7 @@ export default class extends Evented {
     _refresh() {
         const me = this,
             element = me._element;
-        let date = me._clock.getJSTDate();
+        let date = me._clock.getDate();
 
         if (!me._editing) {
             const lang = me._lang;

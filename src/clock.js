@@ -4,12 +4,11 @@ import {valueOrDefault} from './helpers/helpers';
 
 export default class {
 
-    constructor(date, speed) {
-        const me = this;
-
-        me.reset();
-        me.setDate(date);
-        me.setSpeed(speed);
+    constructor(date, speed, offset = -540) {
+        this.reset()
+            .setTimezoneOffset(offset)
+            .setDate(date)
+            .setSpeed(speed);
     }
 
     reset() {
@@ -18,48 +17,66 @@ export default class {
         me.baseTime = 0;
         me.baseHighResTime = 0;
         me.speed = 1;
+        return me;
     }
 
     setSpeed(speed) {
-        if (isNaN(speed)) {
-            return;
-        }
-
         const me = this;
+
+        if (isNaN(speed)) {
+            return me;
+        }
 
         me.baseTime = me.getTime() - Date.now() * speed;
         me.baseHighResTime = me.getHighResTime() - performance.now() * speed;
         me.speed = speed;
+        return me;
     }
 
+    /**
+     * Changes the clock time based on the given Date object. Note that the timestamp stored
+     * in the Date object is ignored because Date objects don't hold time zones.
+     * @param {Date} date - Date object that represents the specified time in the target time zone
+     * @returns {Clock} Returns itself to allow for method chaining
+     */
     setDate(date) {
+        const me = this;
+
         if (!(date instanceof Date)) {
-            return;
+            return me;
         }
 
-        const me = this,
-            prevBaseTime = me.baseTime,
+        const prevBaseTime = me.baseTime,
 
-            // Adjust JST back to local time
-            offset = -me.getTimezoneOffset(),
+            // Adjust the date back to local time
+            offset = -me.getLocalTimezoneOffset(),
 
             baseTime = me.baseTime = date.getTime() + offset - Date.now() * me.speed;
 
         me.baseHighResTime += baseTime - prevBaseTime;
+        return me;
+    }
+
+    setTimezoneOffset(offset) {
+        const me = this;
+
+        me.timezoneOffset = offset;
+        return me;
     }
 
     /**
-     * Returns the date object in JST.
+     * Returns the date object in the target time zone. Note that the timestamp stored
+     * in the Date object is not actual because Date objects don't hold time zones.
      * If the time is not specified, it returns that at the current time.
      * In the playback mode, the time in the simulation clock is used.
      * @param {number} time - The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
-     * @returns {Date} Date object that represents the specified time in JST
+     * @returns {Date} Date object that represents the specified time in the target time zone
      */
-    getJSTDate(time) {
+    getDate(time) {
         const me = this,
 
-            // Adjust local time to JST (UTC+9)
-            offset = me.getTimezoneOffset();
+            // Adjust the date from local time
+            offset = me.getLocalTimezoneOffset();
 
         return new Date(valueOrDefault(time, me.getTime()) + offset);
     }
@@ -68,7 +85,7 @@ export default class {
      * Returns the number of milliseconds since the Unix Epoch at the specified time.
      * If the time is not specified, it returns that at the current time.
      * In the playback mode, the time in the simulation clock is used.
-     * @param {string} timeString - Time expression in JST in "hh:mm" format
+     * @param {string} timeString - Time expression in the target time zone in "hh:mm" format
      * @returns {number} The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
      */
     getTime(timeString) {
@@ -78,28 +95,28 @@ export default class {
             return me.baseTime + Date.now() * me.speed;
         }
 
-        const date = me.getJSTDate(),
+        const date = me.getDate(),
             timeStrings = timeString.split(':'),
             hours = +timeStrings[0],
             minutes = +timeStrings[1],
 
-            // Adjust JST back to local time
+            // Adjust the date back to local time
             // Special handling of time between midnight and 3am
-            offset = -me.getTimezoneOffset() +
+            offset = -me.getLocalTimezoneOffset() +
                 ((date.getHours() < 3 ? -1 : 0) + (hours < 3 ? 1 : 0)) * 86400000;
 
         return date.setHours(hours, minutes, 0, 0) + offset + configs.minDelay;
     }
 
     /**
-     * Returns the date and time expression in JST.
+     * Returns the date and time expression in the target time zone.
      * If the time is not specified, it returns that at the current time.
      * In the playback mode, the time in the simulation clock is used.
      * @param {number} time - The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
-     * @returns {string} Date and time expression in JST in "YYYY-MM-DD HH:mm:ss" format
+     * @returns {string} Date and time expression in the target time zone in "YYYY-MM-DD HH:mm:ss" format
      */
     getString(time) {
-        const date = this.getJSTDate(time),
+        const date = this.getDate(time),
             year = date.getFullYear(),
             month = `0${date.getMonth() + 1}`.slice(-2),
             day = `0${date.getDate()}`.slice(-2),
@@ -111,14 +128,14 @@ export default class {
     }
 
     /**
-     * Returns the time expression in JST.
+     * Returns the time expression in the target time zone.
      * If the time is not specified, it returns that at the current time.
      * In the playback mode, the time in the simulation clock is used.
      * @param {number} time - The number of milliseconds elapsed since January 1, 1970 00:00:00 UTC
-     * @returns {string} Time expression in JST in "hh:mm" format
+     * @returns {string} Time expression in the target time zone in "hh:mm" format
      */
     getTimeString(time) {
-        const date = this.getJSTDate(time),
+        const date = this.getDate(time),
             hours = `0${date.getHours()}`.slice(-2),
             minutes = `0${date.getMinutes()}`.slice(-2);
 
@@ -147,11 +164,20 @@ export default class {
     }
 
     getTimezoneOffset() {
-        return (new Date().getTimezoneOffset() + 540) * 60000;
+        return this.timezoneOffset;
+    }
+
+    /**
+     * Returns the difference, in minutes, between the date in the local time zone
+     * and the same date in the target time zone.
+     * @returns {number} The difference in minutes
+     */
+    getLocalTimezoneOffset() {
+        return (new Date().getTimezoneOffset() - this.timezoneOffset) * 60000;
     }
 
     getCalendar() {
-        const date = this.getJSTDate(),
+        const date = this.getDate(),
             hours = date.getHours();
 
         if (hours < 3) {
