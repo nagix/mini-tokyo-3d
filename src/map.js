@@ -2177,7 +2177,11 @@ export default class extends Evented {
             gtfs = me.gtfs.get(bus.gtfsId),
             stopLookup = gtfs.stopLookup,
             trip = bus.trip,
-            {shortName, headsigns, stops} = trip,
+            {shortName, headsigns, stops, color, textColor} = trip,
+            labelStyle = [
+                textColor ? `color: ${textColor};` : '',
+                color ? `background-color: ${color};` : ''
+            ].join(' '),
             nextStopIndex = bus.sectionIndex + bus.sectionLength,
             nextStopName = stopLookup.get(stops[nextStopIndex]).name,
             prevStopIndex = Math.max(0, nextStopIndex - 1),
@@ -2187,7 +2191,7 @@ export default class extends Evented {
             '<div class="desc-header">',
             `<div style="background-color: ${gtfs.color};"></div>`,
             `<div><strong>${gtfs.agency}</strong><br>`,
-            shortName ? ` <span class="bus-route-label" style="color: ${trip.textColor}; background-color: ${trip.color};">${shortName}</span> ` : '',
+            shortName ? ` <span class="bus-route-label" style="${labelStyle}">${shortName}</span> ` : '',
             headsigns[headsigns.length === 1 ? 0 : prevStopIndex],
             '</div></div>',
             `<strong>${dict['vehicle-number']}:</strong> ${bus.id}`,
@@ -2398,40 +2402,57 @@ export default class extends Evented {
 
                 map.addSource(source, {
                     type: 'geojson',
-                    data: featureCollection
+                    data: featureCollection,
+                    promoteId: 'id'
                 });
 
-                me.addLayer({
-                    id: `busroute-${id}-og-`,
-                    type: 'line',
-                    source,
-                    filter: ['==', ['get', 'type'], 0],
-                    paint: {
-                        'line-color': ['get', 'color'],
-                        'line-width': [
-                            'interpolate',
-                            ['exponential', 2],
-                            ['zoom'],
-                            11,
-                            ['/', ['get', 'width'], 2],
-                            12,
-                            ['get', 'width'],
-                            19,
-                            ['get', 'width'],
-                            22,
-                            ['*', ['get', 'width'], 8]
-                        ],
-                        'line-emissive-strength': 1
-                    },
-                    metadata: {
-                        'mt3d:opacity-effect': true,
-                        'mt3d:opacity': 1,
-                        'mt3d:opacity-route': 0.1,
-                        'mt3d:opacity-underground': 0.25,
-                        'mt3d:opacity-underground-route': 0.1
-                    }
-                }, 'railways-og-13');
-                layerIds.add(`busroute-${id}-og-`);
+                for (const key of ['busroute', 'busroute-highlighted']) {
+                    const width = key === 'busroute' ? ['get', 'width'] : ['*', ['get', 'width'], 4];
+
+                    me.addLayer({
+                        id: `${key}-${id}-og-`,
+                        type: 'line',
+                        source,
+                        filter: ['==', ['get', 'type'], 0],
+                        paint: {
+                            'line-color': {
+                                'busroute': ['get', 'color'],
+                                'busroute-highlighted': ['string', ['feature-state', 'highlight'], ['get', 'color']]
+                            }[key],
+                            'line-opacity': {
+                                'busroute': 1,
+                                'busroute-highlighted': [
+                                    'case',
+                                    ['to-boolean', ['feature-state', 'highlight']],
+                                    1,
+                                    0
+                                ]
+                            }[key],
+                            'line-width': [
+                                'interpolate',
+                                ['exponential', 2],
+                                ['zoom'],
+                                11,
+                                ['/', width, 2],
+                                12,
+                                width,
+                                19,
+                                width,
+                                22,
+                                ['*', width, 8]
+                            ],
+                            'line-emissive-strength': 1
+                        },
+                        metadata: {
+                            'mt3d:opacity-effect': true,
+                            'mt3d:opacity': 1,
+                            'mt3d:opacity-route': 0.1,
+                            'mt3d:opacity-underground': 0.25,
+                            'mt3d:opacity-underground-route': 0.1
+                        }
+                    }, 'railways-og-13');
+                    layerIds.add(`${key}-${id}-og-`);
+                }
 
                 for (const zoom of [14, 15, 16, 17, 18]) {
                     const interpolate = ['interpolate', ['exponential', 2], ['zoom']],
@@ -3117,13 +3138,16 @@ export default class extends Evented {
         }
 
         if (markedObject) {
+            delete me.markedObject;
             if (isVehicle(markedObject)) {
                 markedObject.outline = 0;
                 trafficLayer.updateObject(markedObject);
+                if (markedObject.type === 'bus') {
+                    me.updateBusRouteHighlight(markedObject);
+                }
             } else {
                 me.removeStationOutline('stations-marked');
             }
-            delete me.markedObject;
             if (popup && popup.isOpen()) {
                 map.getCanvas().style.cursor = '';
                 popup.remove();
@@ -3153,6 +3177,9 @@ export default class extends Evented {
             if (isVehicle(object)) {
                 object.outline = 1;
                 trafficLayer.updateObject(object);
+                if (object.type === 'bus') {
+                    me.updateBusRouteHighlight(object);
+                }
             } else {
                 me.addStationOutline(object, 'stations-marked');
             }
@@ -3196,11 +3223,15 @@ export default class extends Evented {
         }
 
         if (trackedObject) {
+            delete me.trackedObject;
             if (isVehicle(trackedObject)) {
                 const prevObject = trackedObject.object;
 
                 trackedObject.outline = 0;
                 me.trafficLayer.updateObject(trackedObject);
+                if (trackedObject.type === 'bus') {
+                    me.updateBusRouteHighlight(trackedObject);
+                }
                 me.fire({type: 'deselection', deselection: prevObject.id});
             } else if (isStation(trackedObject)) {
                 me.removeStationOutline('stations-selected');
@@ -3210,7 +3241,6 @@ export default class extends Evented {
             } else {
                 me.fire(Object.assign({type: 'deselection'}, trackedObject));
             }
-            delete me.trackedObject;
             me.updateHandlersAndControls();
             me.stopViewAnimation();
             if (sharePanel) {
@@ -3249,6 +3279,9 @@ export default class extends Evented {
 
                 object.outline = 1;
                 me.trafficLayer.updateObject(object);
+                if (object.type === 'bus') {
+                    me.updateBusRouteHighlight(object);
+                }
                 me.fire({type: 'selection', selection: _object.id});
             } else if (isStation(object)) {
                 const stations = object.stations.concat(object.hidden || []),
@@ -3415,6 +3448,21 @@ export default class extends Evented {
         }
         if (addToMap) {
             popup.addTo(map);
+        }
+    }
+
+    updateBusRouteHighlight(object) {
+        const me = this,
+            {map, markedObject, trackedObject} = me,
+            {gtfsId, trip} = object.object,
+            source = `gtfs-${gtfsId}`,
+            id = trip.shape;
+
+        if ((markedObject && markedObject.type === 'bus' && markedObject.object.gtfsId === gtfsId && markedObject.object.trip.shape === id) ||
+            (trackedObject && trackedObject.type === 'bus' && trackedObject.object.gtfsId === gtfsId && trackedObject.object.trip.shape === id)) {
+            map.setFeatureState({source, id}, {highlight: trip.color || me.gtfs.get(gtfsId).color});
+        } else {
+            map.removeFeatureState({source, id});
         }
     }
 

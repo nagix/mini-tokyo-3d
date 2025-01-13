@@ -13,9 +13,10 @@ export default class extends Panel {
             offsets = [],
             bus = me._options.object,
             gtfs = map.gtfs.get(bus.gtfsId),
+            trip = bus.trip,
             stopLookup = gtfs.stopLookup;
 
-        for (const stopId of bus.trip.stops) {
+        for (const stopId of trip.stops) {
             const stop = stopLookup.get(stopId);
 
             busstopHTML.push([
@@ -43,7 +44,7 @@ export default class extends Panel {
             offsets.push(child.offsetTop + child.getBoundingClientRect().height / 2);
         }
         container.querySelector('#busroute-mark').innerHTML = [
-            `<line stroke="${gtfs.color}" stroke-width="10" x1="12" y1="${offsets[0]}" x2="12" y2="${offsets[offsets.length - 1]}" stroke-linecap="round" />`,
+            `<line stroke="${trip.color || gtfs.color}" stroke-width="10" x1="12" y1="${offsets[0]}" x2="12" y2="${offsets[offsets.length - 1]}" stroke-linecap="round" />`,
         ].concat(offsets.map(offset =>
             `<circle cx="12" cy="${offset}" r="3" fill="#ffffff" />`
         )).join('');
@@ -76,7 +77,11 @@ export default class extends Panel {
             bus = me._options.object,
             gtfs = map.gtfs.get(bus.gtfsId),
             trip = bus.trip,
-            {shortName, headsigns} = trip;
+            {shortName, headsigns, color, textColor} = trip,
+            labelStyle = [
+                textColor ? `color: ${textColor};` : '',
+                color ? `background-color: ${color};` : ''
+            ].join(' ');
 
         this.setTitle([
             '<div class="desc-header">',
@@ -84,7 +89,7 @@ export default class extends Panel {
             '<div><div class="desc-first-row">',
             gtfs.agency,
             '</div><div class="desc-second-row">',
-            shortName ? ` <span class="bus-route-label" style="color: ${trip.textColor}; background-color: ${trip.color};">${shortName}</span> ` : '',
+            shortName ? ` <span class="bus-route-label" style="${labelStyle}">${shortName}</span> ` : '',
             headsigns[headsigns.length === 1 ? 0 : bus.sectionIndex],
             '</div></div></div>'
         ].join(''));

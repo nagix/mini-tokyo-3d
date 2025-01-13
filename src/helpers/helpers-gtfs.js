@@ -11,8 +11,8 @@ export function encode(data, pbf) {
         pbf.writeMessage(3, (obj, pbf) => {
             pbf.writeStringField(1, obj.id);
             pbf.writeStringField(2, obj.shortName);
-            pbf.writeStringField(3, obj.color);
-            pbf.writeStringField(4, obj.textColor);
+            if (obj.color) pbf.writeStringField(3, obj.color);
+            if (obj.textColor) pbf.writeStringField(4, obj.textColor);
             pbf.writeStringField(5, obj.shape);
             for (const stop of obj.stops) {
                 pbf.writeStringField(6, stop);

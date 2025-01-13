@@ -186,10 +186,13 @@ class RouteReader {
             me.routeColorIndex = fileds.indexOf('route_color');
             me.routeTextColorIndex = fileds.indexOf('route_text_color');
         } else {
+            const color = fileds[me.routeColorIndex],
+                textColor = fileds[me.routeTextColorIndex];
+
             me.lookup.set(fileds[me.routeIdIndex], {
                 shortName: fileds[me.routeShortNameIndex] || fileds[me.routeLongNameIndex],
-                color: `#${fileds[me.routeColorIndex]}`,
-                textColor: `#${fileds[me.routeTextColorIndex]}`
+                color: color ? `#${color}` : undefined,
+                textColor: textColor ? `#${textColor}` : undefined
             });
         }
     }
