@@ -700,6 +700,7 @@ export default class extends Evented {
                     1
                 ],
                 'sky-type': 'atmosphere',
+                'sky-atmosphere-color': 'hsl(220, 100%, 70%)',
                 'sky-atmosphere-sun-intensity': 20
             }
         }, 'background');
