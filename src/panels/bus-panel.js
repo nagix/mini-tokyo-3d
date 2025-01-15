@@ -1,4 +1,4 @@
-import {lerp} from '../helpers/helpers';
+import {getTimeString, lerp} from '../helpers/helpers';
 import Panel from './panel';
 
 export default class extends Panel {
@@ -14,15 +14,17 @@ export default class extends Panel {
             bus = me._options.object,
             gtfs = map.gtfs.get(bus.gtfsId),
             trip = bus.trip,
+            {stops, departureTimes} = trip,
             stopLookup = gtfs.stopLookup;
 
-        for (const stopId of trip.stops) {
-            const stop = stopLookup.get(stopId);
+        for (let i = 0, ilen = stops.length; i < ilen; i++) {
+            const stop = stopLookup.get(stops[i]),
+                departureTime = getTimeString(departureTimes[i]);
 
             busstopHTML.push([
                 '<div class="busstop-row">',
                 `<div class="busstop-title-box">${stop.name}</div>`,
-                '<div class="busstop-time-box"></div>',
+                `<div class="busstop-time-box">${departureTime}</div>`,
                 '</div>'
             ].join(''));
         }

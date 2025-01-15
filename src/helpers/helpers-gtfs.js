@@ -14,12 +14,13 @@ export function encode(data, pbf) {
             if (obj.color) pbf.writeStringField(3, obj.color);
             if (obj.textColor) pbf.writeStringField(4, obj.textColor);
             pbf.writeStringField(5, obj.shape);
+            pbf.writePackedVarint(6, obj.departureTimes);
             for (const stop of obj.stops) {
-                pbf.writeStringField(6, stop);
+                pbf.writeStringField(7, stop);
             }
-            pbf.writePackedVarint(7, obj.stopSequences);
+            pbf.writePackedVarint(8, obj.stopSequences);
             for (const headsign of obj.headsigns) {
-                pbf.writeStringField(8, headsign);
+                pbf.writeStringField(9, headsign);
             }
         }, trip);
     }
@@ -41,10 +42,11 @@ export function decode(pbf) {
             else if (tag === 3) obj.color = pbf.readString();
             else if (tag === 4) obj.textColor = pbf.readString();
             else if (tag === 5) obj.shape = pbf.readString();
-            else if (tag === 6) obj.stops.push(pbf.readString());
-            else if (tag === 7) pbf.readPackedVarint(obj.stopSequences, true);
-            else if (tag === 8) obj.headsigns.push(pbf.readString());
-        }, {stops: [], stopSequences: [], headsigns: []}, pbf.readVarint() + pbf.pos));
+            else if (tag === 6) pbf.readPackedVarint(obj.departureTimes, true);
+            else if (tag === 7) obj.stops.push(pbf.readString());
+            else if (tag === 8) pbf.readPackedVarint(obj.stopSequences, true);
+            else if (tag === 9) obj.headsigns.push(pbf.readString());
+        }, {departureTimes: [], stops: [], stopSequences: [], headsigns: []}, pbf.readVarint() + pbf.pos));
         if (tag === 4) obj.version = pbf.readString();
     }, {stops: [], trips: []});
 }

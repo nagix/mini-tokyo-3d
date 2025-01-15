@@ -30,6 +30,15 @@ function csvToArray(text) {
     return result;
 }
 
+function getTimeOffset(string) {
+    const timeStrings = string.split(':'),
+        hours = +timeStrings[0],
+        minutes = +timeStrings[1],
+        seconds = +timeStrings[2];
+
+    return (((hours - 3) * 60 + minutes) * 60 + seconds) * 1000;
+}
+
 class AgencyReader {
 
     read(line) {
@@ -291,21 +300,24 @@ class StopTimeReader {
 
         if (me.tripIdIndex === undefined) {
             me.tripIdIndex = fileds.indexOf('trip_id');
+            me.departureTimeIndex = fileds.indexOf('departure_time');
             me.stopIdIndex = fileds.indexOf('stop_id');
             me.stopSequenceIndex = fileds.indexOf('stop_sequence');
             me.stopHeadsignIndex = fileds.indexOf('stop_headsign');
         } else {
             const id = fileds[me.tripIdIndex];
-            let stops, stopSequences, stopHeadsigns;
+            let departureTimes, stops, stopSequences, stopHeadsigns;
 
             if (lookup.has(id)) {
-                ({stops, stopSequences, stopHeadsigns} = lookup.get(id));
+                ({departureTimes, stops, stopSequences, stopHeadsigns} = lookup.get(id));
             } else {
+                departureTimes = [];
                 stops = [];
                 stopSequences = [];
                 stopHeadsigns = [];
-                lookup.set(id, {stops, stopSequences, stopHeadsigns});
+                lookup.set(id, {departureTimes, stops, stopSequences, stopHeadsigns});
             }
+            departureTimes.push(getTimeOffset(fileds[me.departureTimeIndex]));
             stops.push(fileds[me.stopIdIndex]);
             stopSequences.push(+fileds[me.stopSequenceIndex]);
             stopHeadsigns.push(fileds[me.stopHeadsignIndex]);
@@ -478,7 +490,7 @@ function getTrips(trips, services, serviceExceptions, routeLookup, stopTimeLooku
     for (const {id, service, route, shape, headsign} of trips) {
         if (serviceSet.has(service)) {
             const {shortName, color, textColor} = routeLookup.get(route),
-                {stops, stopSequences, stopHeadsigns} = stopTimeLookup.get(id),
+                {departureTimes, stops, stopSequences, stopHeadsigns} = stopTimeLookup.get(id),
                 headsignOverride = new Set(stopHeadsigns).size > 1,
                 headsigns = [];
 
@@ -506,6 +518,7 @@ function getTrips(trips, services, serviceExceptions, routeLookup, stopTimeLooku
                 color,
                 textColor,
                 shape,
+                departureTimes,
                 stops,
                 stopSequences,
                 headsigns
