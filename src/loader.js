@@ -103,7 +103,7 @@ export function loadStaticData(dataUrl, lang, clockPromise) {
             'operators.json.gz',
             'airports.json.gz',
             'flight-statuses.json.gz',
-            '/poi.json.gz'
+            'poi.json.gz'
         ].map(fileName => `${dataUrl}/${fileName}`).map(loadJSON),
         clockPromise.then(clock => Promise.all([
             getTimetableFileName(clock),
