@@ -577,6 +577,17 @@ export default class extends Evented {
         return helpersMapbox.hasDarkBackground(this.map);
     }
 
+    setDataSources(dataSources) {
+        const me = this;
+
+        me.dataSources = dataSources.map(({gtfsUrl, vehiclePositionUrl, color}) => ({
+            gtfsUrl: updateOdptUrl(gtfsUrl, me.secrets),
+            vehiclePositionUrl: updateOdptUrl(vehiclePositionUrl, me.secrets),
+            color
+        }));
+        me.refreshBusData();
+    }
+
     initData(data) {
         const me = this,
             featureLookup = me.featureLookup = new Map(),
