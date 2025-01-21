@@ -595,7 +595,7 @@ function loadGtfs(source, offset, lang) {
 }
 
 Comlink.expose({
-    load: (sources, offset, lang, callback) => Promise.all(sources.map(source => loadGtfs(source, offset, lang))).then(data =>
-        callback(Comlink.transfer(data, [].concat(...data.map(items => items.map(({buffer}) => buffer)))))
+    load: (source, offset, lang, callback) => loadGtfs(source, offset, lang).then(data =>
+        callback(Comlink.transfer(data, data.map(({buffer}) => buffer)))
     )
 });

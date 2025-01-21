@@ -239,33 +239,25 @@ export function loadDynamicFlightData() {
     }));
 }
 
-export function loadBusData(sources, offset, lang) {
+export function loadBusData(source, offset, lang) {
     const workerUrl = URL.createObjectURL(new Blob([`WORKER_STRING`], {type: 'text/javascript'})),
         worker = new Worker(workerUrl),
         proxy = Comlink.wrap(worker);
 
-    return new Promise(resolve => proxy.load(sources, offset, lang, Comlink.proxy(data => {
-        const gtfsData = data.map((items, i) => ({
-            featureCollection: geobuf.decode(new Pbf(items[0])),
-            ...decode(new Pbf(items[1])),
-            vehiclePositionUrl: sources[i].vehiclePositionUrl,
-            color: sources[i].color
-        }));
-
+    return new Promise(resolve => proxy.load(source, offset, lang, Comlink.proxy(data => {
         proxy[Comlink.releaseProxy]();
         worker.terminate();
-        resolve(gtfsData);
+        resolve({
+            featureCollection: geobuf.decode(new Pbf(data[0])),
+            ...decode(new Pbf(data[1]))
+        });
     })));
 }
 
-export function loadDynamicBusData(gtfsArray) {
-    return Promise.all(gtfsArray.map(gtfs => fetch(gtfs.vehiclePositionUrl)
+export function loadDynamicBusData(url) {
+    return fetch(url)
         .then(response => response.arrayBuffer())
-        .then(data => ({
-            gtfs,
-            vehiclePosition: GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(new Uint8Array(data))
-        }))
-    ));
+        .then(data => GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(new Uint8Array(data)));
 }
 
 export function updateOdptUrl(url, secrets) {

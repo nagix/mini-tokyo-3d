@@ -165,7 +165,7 @@ export default class extends Evented {
             })
         ]).then(me.initialize.bind(me));
 
-        me.refreshBusData();
+        me.refreshBusData(true);
     }
 
     /**
@@ -1103,7 +1103,7 @@ export default class extends Evented {
 
                 if (now - me.lastTimetableRefresh >= 86400000) {
                     me.refreshTrainTimetableData();
-                    me.refreshBusData();
+                    me.refreshBusData(true);
                     me.lastTimetableRefresh = clock.getTime('03:00');
                 }
 
@@ -2349,41 +2349,49 @@ export default class extends Evented {
         });
     }
 
-    refreshBusData() {
-        const me = this;
-
-        loadBusData(me.dataSources, me.clock.getTimezoneOffset(), me.lang).then(data =>
-            new Promise(resolve => me.initialized ? resolve(data) : me.once('initialized', () => resolve(data)))
-        ).then(data => {
-            const map = me.map;
-
-            for (const {id, activeBusLookup, layerIds} of me.gtfs.values()) {
+    refreshBusData(replace) {
+        const me = this,
+            {map, styleOpacities} = me,
+            deleting = new Map(me.gtfs),
+            deleteGtfs = ({id, activeBusLookup, layerIds}) => {
                 for (const bus of activeBusLookup.values()) {
                     me.stopBus(bus);
                 }
-
                 for (const layerId of layerIds) {
                     me.removeLayer(layerId);
-                    for (let i = 0, ilen = me.styleOpacities.length; i < ilen; i++) {
-                        if (me.styleOpacities[i].id === layerId) {
-                            me.styleOpacities.splice(i, 1);
+                    for (let i = 0, ilen = styleOpacities.length; i < ilen; i++) {
+                        if (styleOpacities[i].id === layerId) {
+                            styleOpacities.splice(i, 1);
                             break;
                         }
                     }
                 }
-                map.removeSource(`gtfs-${id}`);
-
+                map.removeSource(id);
                 me.gtfs.delete(id);
+            };
+
+        for (const source of me.dataSources) {
+            const id = source.gtfsUrl;
+
+            if (me.gtfs.has(id)) {
+                deleting.delete(id);
+                if (!replace) {
+                    continue;
+                }
             }
 
-            for (const item of data) {
-                const {agency, featureCollection, version} = item,
-                    id = `${agency}.${version}`,
+            loadBusData(source, me.clock.getTimezoneOffset(), me.lang).then(data =>
+                new Promise(resolve => me.initialized ? resolve(data) : me.once('initialized', () => resolve(data)))
+            ).then(data => {
+                const {agency, featureCollection, version} = data,
                     featureLookup = new Map(),
                     stopLookup = new Map(),
                     tripLookup = new Map(),
-                    layerIds = new Set(),
-                    source = `gtfs-${id}`;
+                    layerIds = new Set();
+
+                if (me.gtfs.has(id)) {
+                    deleteGtfs(me.gtfs.get(id));
+                }
 
                 featureEach(featureCollection, feature => {
                     const properties = feature.properties;
@@ -2392,10 +2400,10 @@ export default class extends Evented {
                         featureLookup.set(properties.id, feature);
                     }
                 });
-                for (const stop of item.stops) {
+                for (const stop of data.stops) {
                     stopLookup.set(stop.id, stop);
                 }
-                for (const trip of item.trips) {
+                for (const trip of data.trips) {
                     tripLookup.set(trip.id, trip);
                 }
                 me.gtfs.set(id, {
@@ -2408,11 +2416,11 @@ export default class extends Evented {
                     layerIds,
                     activeBusLookup: new Map(),
                     realtimeBuses: new Set(),
-                    vehiclePositionUrl: item.vehiclePositionUrl,
-                    color: item.color
+                    vehiclePositionUrl: source.vehiclePositionUrl,
+                    color: source.color
                 });
 
-                map.addSource(source, {
+                map.addSource(id, {
                     type: 'geojson',
                     data: featureCollection,
                     promoteId: 'id'
@@ -2424,7 +2432,7 @@ export default class extends Evented {
                     me.addLayer({
                         id: `${key}-${id}-og-`,
                         type: 'line',
-                        source,
+                        source: id,
                         filter: ['==', ['get', 'type'], 0],
                         paint: {
                             'line-color': {
@@ -2475,7 +2483,7 @@ export default class extends Evented {
                         me.addLayer({
                             id: `${key}-${id}-og-${zoom}`,
                             type: key === 'busstops' ? 'fill' : 'line',
-                            source,
+                            source: id,
                             filter: ['all', ['==', ['get', 'zoom'], zoom], ['==', ['get', 'type'], 1]],
                             layout: {
                                 visibility: zoom === me.layerZoom ? 'visible' : 'none'
@@ -2507,7 +2515,7 @@ export default class extends Evented {
                 me.addLayer({
                     id: `busstops-poi-${id}`,
                     type: 'symbol',
-                    source,
+                    source: id,
                     filter: ['==', ['get', 'type'], 2],
                     layout: {
                         'text-field': ['get', 'name'],
@@ -2530,21 +2538,25 @@ export default class extends Evented {
                     minzoom: 14
                 });
                 layerIds.add(`busstops-poi-${id}`);
-            }
 
-            const existingLayerIds = new Set(me.styleOpacities.map(({id}) => id));
+                const existingLayerIds = new Set(styleOpacities.map(({id}) => id));
 
-            for (const item of helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect')) {
-                if (!existingLayerIds.has(item.id)) {
-                    me.styleOpacities.push(item);
+                for (const item of helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect')) {
+                    if (!existingLayerIds.has(item.id)) {
+                        styleOpacities.push(item);
+                    }
                 }
-            }
-            me.refreshMap();
+                me.refreshMap();
 
-            if (me.clockMode === 'realtime') {
-                me.refreshRealtimeBusData();
-            }
-        });
+                if (me.clockMode === 'realtime') {
+                    me.refreshRealtimeBusData(id);
+                }
+            });
+        }
+
+        for (const gtfs of deleting.values()) {
+            deleteGtfs(gtfs);
+        }
     }
 
     refreshRealtimeTrainData() {
@@ -2879,17 +2891,17 @@ export default class extends Evented {
         });
     }
 
-    refreshRealtimeBusData() {
+    refreshRealtimeBusData(gtfsId) {
         const me = this;
 
-        loadDynamicBusData([...me.gtfs.values()]).then(data => {
-            for (const {gtfs, vehiclePosition} of data) {
-                const {id: gtfsId, featureLookup, stopLookup, tripLookup, activeBusLookup, realtimeBuses} = gtfs;
+        for (const gtfs of gtfsId ? [me.gtfs.get(gtfsId)] : me.gtfs.values()) {
+            const {id: gtfsId, vehiclePositionUrl, featureLookup, stopLookup, tripLookup, activeBusLookup, realtimeBuses} = gtfs;
 
+            loadDynamicBusData(vehiclePositionUrl).then(data => {
                 realtimeBuses.clear();
-                gtfs.date = me.clock.getString(vehiclePosition.header.timestamp * 1000);
+                gtfs.date = me.clock.getString(data.header.timestamp * 1000);
 
-                for (const {id, vehicle: vp} of vehiclePosition.entity) {
+                for (const {id, vehicle: vp} of data.entity) {
                     if (!vp) {
                         continue;
                     }
@@ -2948,12 +2960,12 @@ export default class extends Evented {
 
                     realtimeBuses.add(tripId);
                 }
-            }
 
-            me.aboutPanel.updateContent();
-        }).catch(error => {
-            console.log(error);
-        });
+                me.aboutPanel.updateContent();
+            }).catch(error => {
+                console.log(error);
+            });
+        }
     }
 
     updateUndergroundButton(mode) {
@@ -3467,7 +3479,7 @@ export default class extends Evented {
         const me = this,
             {map, markedObject, trackedObject} = me,
             {gtfsId, trip} = object.object,
-            source = `gtfs-${gtfsId}`,
+            source = gtfsId,
             id = trip.shape;
 
         if ((markedObject && markedObject.type === 'bus' && markedObject.object.gtfsId === gtfsId && markedObject.object.trip.shape === id) ||
