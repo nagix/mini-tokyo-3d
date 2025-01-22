@@ -165,6 +165,7 @@ export default class extends Evented {
             })
         ]).then(me.initialize.bind(me));
 
+        me.gtfs = new Map();
         me.refreshBusData(true);
     }
 
@@ -671,8 +672,6 @@ export default class extends Evented {
         me.realtimeTrains = new Set();
         me.activeFlightLookup = new Map();
         me.flightLookup = new Map();
-
-        me.gtfs = new Map();
     }
 
     initialize() {
@@ -2351,9 +2350,11 @@ export default class extends Evented {
 
     refreshBusData(replace) {
         const me = this,
-            {map, styleOpacities} = me,
+            map = me.map,
             deleting = new Map(me.gtfs),
             deleteGtfs = ({id, activeBusLookup, layerIds}) => {
+                const styleOpacities = me.styleOpacities;
+
                 for (const bus of activeBusLookup.values()) {
                     me.stopBus(bus);
                 }
@@ -2539,7 +2540,8 @@ export default class extends Evented {
                 });
                 layerIds.add(`busstops-poi-${id}`);
 
-                const existingLayerIds = new Set(styleOpacities.map(({id}) => id));
+                const styleOpacities = me.styleOpacities,
+                    existingLayerIds = new Set(styleOpacities.map(({id}) => id));
 
                 for (const item of helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect')) {
                     if (!existingLayerIds.has(item.id)) {
