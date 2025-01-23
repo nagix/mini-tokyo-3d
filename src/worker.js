@@ -218,12 +218,13 @@ class ShapeReader {
         const me = this;
 
         me.color = color;
-        me.features = [];
+        me.lookup = new Map();
     }
 
     read(line) {
         const me = this,
-            fileds = csvToArray(line);
+            fileds = csvToArray(line),
+            lookup = me.lookup;
 
         if (me.shapeIdIndex === undefined) {
             me.shapeIdIndex = fileds.indexOf('shape_id');
@@ -231,28 +232,34 @@ class ShapeReader {
             me.shapePtLonIdIndex = fileds.indexOf('shape_pt_lon');
         } else {
             const id = fileds[me.shapeIdIndex];
-            let coords = me.coords;
+            let coords;
 
-            if (me.id !== id) {
-                if (coords) {
-                    const feature = lineString(coords, {
-                        id: me.id,
-                        type: 0,
-                        color: me.color,
-                        width: 2
-                    });
-                    updateDistances(feature);
-                    me.features.push(feature);
-                }
-                me.id = id;
-                coords = me.coords = [];
+            if (lookup.has(id)) {
+                coords = lookup.get(id);
+            } else {
+                coords = [];
+                lookup.set(id, coords);
             }
             coords.push([+fileds[me.shapePtLonIdIndex], +fileds[me.shapePtLatIdIndex]]);
         }
     }
 
     get result() {
-        return this.features;
+        const me = this,
+            features = [];
+
+        for (const [id, coords] of me.lookup.entries()) {
+            const feature = lineString(coords, {
+                id,
+                type: 0,
+                color: me.color,
+                width: 2
+            });
+
+            updateDistances(feature);
+            features.push(feature);
+        }
+        return features;
     }
 
 }
@@ -341,7 +348,8 @@ class TranslationReader {
 
     read(line) {
         const me = this,
-            fileds = csvToArray(line);
+            fileds = csvToArray(line),
+            lookup = me.lookup;
 
         if (me.tableNameIndex === undefined) {
             me.tableNameIndex = fileds.indexOf('table_name');
@@ -354,11 +362,11 @@ class TranslationReader {
             const lang = fileds[me.languageIndex];
             let subLookup;
 
-            if (me.lookup.has(lang)) {
-                subLookup = me.lookup.get(lang);
+            if (lookup.has(lang)) {
+                subLookup = lookup.get(lang);
             } else {
                 subLookup = new Map();
-                me.lookup.set(lang, subLookup);
+                lookup.set(lang, subLookup);
             }
             subLookup.set(`${fileds[me.tableNameIndex]}.${fileds[me.fieldNameIndex]}.${fileds[me.recordIdIndex] || fileds[me.fieldValueIndex]}`, fileds[me.translationIndex]);
         }
@@ -366,15 +374,16 @@ class TranslationReader {
 
     get result() {
         const me = this,
-            defaultLookup = me.lookup.get('en') || new Map();
+            lookup = me.lookup,
+            defaultLookup = lookup.get('en') || new Map();
 
         if (me.lang === 'en') {
             return defaultLookup;
         }
-        if (me.lookup.has(me.lang)) {
-            return mergeMaps(defaultLookup, me.lookup.get(me.lang));
+        if (lookup.has(me.lang)) {
+            return mergeMaps(defaultLookup, lookup.get(me.lang));
         }
-        for (const [lang, subLookup] of me.lookup) {
+        for (const [lang, subLookup] of lookup) {
             const normalizedLang = normalizeLang(lang);
 
             if (normalizedLang === me.lang || (normalizedLang === 'zh-Hans' && me.lang === 'zh-Hant')) {
@@ -542,11 +551,14 @@ function loadGtfs(source, offset, lang) {
                         utfDecode = new DecodeUTF8(async (data, final) => {
                             const lines = data.split(/\r?\n/);
 
-                            gtfsReader.read(stringBuffer + lines[0]);
+                            if (lines.length > 1) {
+                                gtfsReader.read(stringBuffer + lines[0]);
+                                stringBuffer = '';
+                            }
                             for (let i = 1; i < lines.length - 1; i++) {
                                 gtfsReader.read(lines[i]);
                             }
-                            stringBuffer = lines[lines.length - 1];
+                            stringBuffer += lines[lines.length - 1];
                             if (final) {
                                 if (stringBuffer) {
                                     gtfsReader.read(stringBuffer);
