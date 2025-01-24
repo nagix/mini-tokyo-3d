@@ -3,7 +3,7 @@ import geobuf from 'geobuf';
 import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
 import Pbf from 'pbf';
 import configs from './configs';
-import {loadJSON, removePrefix} from './helpers/helpers';
+import {isString, loadJSON, removePrefix} from './helpers/helpers';
 import {decode} from './helpers/helpers-gtfs';
 
 const RAILWAYS_FOR_TRAINS = {
@@ -261,6 +261,9 @@ export function loadDynamicBusData(url) {
 }
 
 export function updateOdptUrl(url, secrets) {
+    if (!isString(url)) {
+        return;
+    }
     if (url.startsWith('https://api.odpt.org/') && !url.match(/acl:consumerKey/)) {
         return `${url}${url.match(/\?/) ? '&' : '?'}acl:consumerKey=${secrets.odpt}`;
     } else if (url.startsWith('https://api-challenge2024.odpt.org/') && !url.match(/acl:consumerKey/)) {

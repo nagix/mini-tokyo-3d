@@ -2899,6 +2899,10 @@ export default class extends Evented {
         for (const gtfs of gtfsId ? [me.gtfs.get(gtfsId)] : me.gtfs.values()) {
             const {id: gtfsId, vehiclePositionUrl, featureLookup, stopLookup, tripLookup, activeBusLookup, realtimeBuses} = gtfs;
 
+            if (!vehiclePositionUrl) {
+                continue;
+            }
+
             loadDynamicBusData(vehiclePositionUrl).then(data => {
                 realtimeBuses.clear();
                 gtfs.date = me.clock.getString(data.header.timestamp * 1000);

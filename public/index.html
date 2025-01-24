@@ -61,10 +61,10 @@
 		if (matchHash[5]) {
 			options.pitch = +matchHash[5];
 		}
-		if (matchGtfsUrl && matchVehiclePositionUrl && matchGtfsColor) {
+		if (matchGtfsUrl && matchGtfsColor) {
 			options.dataSources = [{
 				gtfsUrl: decodeURIComponent(matchGtfsUrl[1]),
-				vehiclePositionUrl: decodeURIComponent(matchVehiclePositionUrl[1]),
+				vehiclePositionUrl: matchVehiclePositionUrl ? decodeURIComponent(matchVehiclePositionUrl[1]) : undefined,
 				color: `#${decodeURIComponent(matchGtfsColor[1])}`
 			}];
 		}

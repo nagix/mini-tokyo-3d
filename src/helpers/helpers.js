@@ -81,6 +81,10 @@ export function numberOrDefault(value, defaultValue) {
     return isNaN(value) ? defaultValue : value;
 }
 
+export function isString(value) {
+    return typeof value === 'string' || value instanceof String;
+}
+
 export function mergeMaps(...maps) {
     const result = new Map();
 
