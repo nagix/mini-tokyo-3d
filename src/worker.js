@@ -199,7 +199,8 @@ class RouteReader {
                 textColor = fileds[me.routeTextColorIndex];
 
             me.lookup.set(fileds[me.routeIdIndex], {
-                shortName: fileds[me.routeShortNameIndex] || fileds[me.routeLongNameIndex],
+                shortName: fileds[me.routeShortNameIndex],
+                longName: fileds[me.routeLongNameIndex],
                 color: color ? `#${color}` : undefined,
                 textColor: textColor ? `#${textColor}` : undefined
             });
@@ -230,6 +231,7 @@ class ShapeReader {
             me.shapeIdIndex = fileds.indexOf('shape_id');
             me.shapePtLatIdIndex = fileds.indexOf('shape_pt_lat');
             me.shapePtLonIdIndex = fileds.indexOf('shape_pt_lon');
+            me.shapePtSequenceIndex = fileds.indexOf('shape_pt_sequence');
         } else {
             const id = fileds[me.shapeIdIndex];
             let coords;
@@ -240,7 +242,11 @@ class ShapeReader {
                 coords = [];
                 lookup.set(id, coords);
             }
-            coords.push([+fileds[me.shapePtLonIdIndex], +fileds[me.shapePtLatIdIndex]]);
+            coords.push([
+                +fileds[me.shapePtLonIdIndex],
+                +fileds[me.shapePtLatIdIndex],
+                +fileds[me.shapePtSequenceIndex]
+            ]);
         }
     }
 
@@ -249,13 +255,16 @@ class ShapeReader {
             features = [];
 
         for (const [id, coords] of me.lookup.entries()) {
-            const feature = lineString(coords, {
+            const feature = lineString(coords.sort((a, b) => a[2] - b[2]), {
                 id,
                 type: 0,
                 color: me.color,
                 width: 2
             });
 
+            for (const coord of coords) {
+                coord.pop();
+            }
             updateDistances(feature);
             features.push(feature);
         }
@@ -313,26 +322,36 @@ class StopTimeReader {
             me.stopHeadsignIndex = fileds.indexOf('stop_headsign');
         } else {
             const id = fileds[me.tripIdIndex];
-            let departureTimes, stops, stopSequences, stopHeadsigns;
+            let stopTimes;
 
             if (lookup.has(id)) {
-                ({departureTimes, stops, stopSequences, stopHeadsigns} = lookup.get(id));
+                stopTimes = lookup.get(id);
             } else {
-                departureTimes = [];
-                stops = [];
-                stopSequences = [];
-                stopHeadsigns = [];
-                lookup.set(id, {departureTimes, stops, stopSequences, stopHeadsigns});
+                stopTimes = [];
+                lookup.set(id, stopTimes);
             }
-            departureTimes.push(getTimeOffset(fileds[me.departureTimeIndex]));
-            stops.push(fileds[me.stopIdIndex]);
-            stopSequences.push(+fileds[me.stopSequenceIndex]);
-            stopHeadsigns.push(fileds[me.stopHeadsignIndex]);
+            stopTimes.push([
+                getTimeOffset(fileds[me.departureTimeIndex]),
+                fileds[me.stopIdIndex],
+                +fileds[me.stopSequenceIndex],
+                fileds[me.stopHeadsignIndex]
+            ]);
         }
     }
 
     get result() {
-        return this.lookup;
+        const lookup = new Map();
+
+        for (const [id, stopTimes] of this.lookup.entries()) {
+            stopTimes.sort((a, b) => a[2] - b[2]);
+            lookup.set(id, {
+                departureTimes: stopTimes.map(v => v[0]),
+                stops: stopTimes.map(v => v[1]),
+                stopSequences: stopTimes.map(v => v[2]),
+                stopHeadsigns: stopTimes.map(v => v[3])
+            });
+        }
+        return lookup;
     }
 
 }
@@ -498,32 +517,40 @@ function getTrips(trips, services, serviceExceptions, routeLookup, stopTimeLooku
 
     for (const {id, service, route, shape, headsign} of trips) {
         if (serviceSet.has(service)) {
-            const {shortName, color, textColor} = routeLookup.get(route),
+            const {shortName, longName, color, textColor} = routeLookup.get(route),
                 {departureTimes, stops, stopSequences, stopHeadsigns} = stopTimeLookup.get(id),
-                headsignOverride = new Set(stopHeadsigns).size > 1,
                 headsigns = [];
 
-            if (headsign && !headsignOverride) {
-                headsigns.push(translations ?
-                    translations.get(`trips.trip_headsign.${id}`) || translations.get(`trips.trip_headsign.${headsign}`) || headsign :
-                    headsign
-                );
-            } else {
-                for (const stopHeadsign of headsignOverride ? stopHeadsigns : [stopHeadsigns[0]]) {
+            if (new Set(stopHeadsigns).size > 1) {
+                for (const stopHeadsign of stopHeadsigns) {
                     headsigns.push(translations ?
                         translations.get(`stop_times.stop_headsign.${stopHeadsign}`) || stopHeadsign :
                         stopHeadsign
                     );
                 }
+            } else if (headsign) {
+                headsigns.push(translations ?
+                    translations.get(`trips.trip_headsign.${id}`) || translations.get(`trips.trip_headsign.${headsign}`) || headsign :
+                    headsign
+                );
+            } else if (stopHeadsigns[0]) {
+                headsigns.push(translations ?
+                    translations.get(`stop_times.stop_headsign.${stopHeadsigns[0]}`) || stopHeadsigns[0] :
+                    stopHeadsigns[0]
+                );
+            } else {
+                headsigns.push(translations ?
+                    translations.get(`routes.route_long_name.${route}`) || translations.get(`routes.route_long_name.${longName}`) || longName :
+                    longName
+                );
             }
 
             result.push({
                 id,
                 shortName: translations ?
-                    translations.get(`routes.route_short_name.${route}`) || translations.get(`routes.route_short_name.${shortName}`) ||
-                    translations.get(`routes.route_long_name.${route}`) || translations.get(`routes.route_long_name.${shortName}`) ||
-                    shortName :
-                    shortName,
+                    translations.get(`routes.route_short_name.${route}`) || translations.get(`routes.route_short_name.${shortName}`) || shortName ||
+                    translations.get(`routes.route_long_name.${route}`) || translations.get(`routes.route_long_name.${longName}`) || longName :
+                    shortName || longName,
                 color,
                 textColor,
                 shape,
