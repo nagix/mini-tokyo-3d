@@ -34,6 +34,18 @@
 
 詳細は [Mini Tokyo 3D PLATEAU プラグイン GitHub レポジトリ](https://github.com/nagix/mt3d-plugin-plateau)をご覧ください。
 
+## GTFS プラグイン
+
+<img :src="$withBase('/images/gtfs-plugin.jpg')" style="width: 580px;">
+
+[GTFS](https://gtfs.org/ja/) データセットおよび GTFS Realtime フィードに基づいて、Mini Tokyo 3D マップ上に路線と車両を表示します。列車や旅客機と同様に、車両にマウスポインタを合わせたり、タップをすると車両の詳細情報が表示されます。また、車両をクリックまたはタップすると、追跡モードがオンに切り替わり、車両の動きに追随して画面が自動的に移動します。比較的大きな負荷がかかり、多くのメモリを要求するため、性能の高いデバイスでの使用を推奨します。
+
+詳細は [Mini Tokyo 3D GTFS プラグイン GitHub レポジトリ](https://github.com/nagix/mt3d-plugin-gtfs)をご覧ください。
+
+::: warning 注意
+現時点では、都営バス、横浜市営バス、京成トランジットバスのリアルタイム位置表示のみに対応しています。また、[再生モード](./display-modes.md#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%88%E3%82%99)がオンの状態では車両は表示されません。
+:::
+
 ## 東京2020オリンピックプラグイン
 
 <img :src="$withBase('/images/olympics.jpg')" style="width: 580px;">

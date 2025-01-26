@@ -113,7 +113,7 @@ When you enter a part of the station name, a list of candidates will be displaye
 Trains, airplanes and layers will be temporarily hidden when the criteria entry panel or search result panel is displayed.
 
 ::: warning
-As of the version 3.6, there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
+As of the version 4.0 (beta 1), there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
 :::
 
 ## Displaying Station Exit Information
@@ -132,5 +132,5 @@ Icon | Description
 <img :src="$withBase('/images/elevator-icon.jpg')" style="width: 28px; vertical-align: top;">|Elevator
 
 ::: warning
-As of the version 3.6, only subway lines and underground stations are supported for displaying station exit information.
+As of the version 4.0 (beta 1), only subway lines and underground stations are supported for displaying station exit information.
 :::

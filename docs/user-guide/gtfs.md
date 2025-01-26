@@ -17,14 +17,14 @@ Currently, you must specify both a GTFS dataset and a GTFS Realtime feed to view
 To specify a specific GTFS dataset and GTFS Realtime VehiclePosition feed, append a `?` followed by key/value pairs (query parameters) to the URL to access Mini Tokyo 3D. If you specify a data URL as `gtfsurl` or `gtfsvpurl` which is hosted by the Public Transportation Open Data Center and begins with `https://api.odpt.org/`, the `acl:consumerKey` parameter specifying an access token is not required.
 
 ```
-https://minitokyo3d.com/?gtfsurl=<URL>&gtfsvpurl=<URL>&color=<color code>
+https://minitokyo3d.com/?gtfsurl=<URL>&gtfsvpurl=<URL>&gtfscolor=<color code>
 ```
 
 Query parameter | Description | Example
 -- | -- | --
 `gtfsurl` | The URL of a [GTFS dataset zip file](https://gtfs.org/documentation/schedule/reference/#_10) (URL encoding required) | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Ffiles%2FToei%2Fdata%2FToeiBus-GTFS.zip`
 `gtfsvpurl` | The URL of a [VehiclePosition feed of GTFS Realtime](https://gtfs.org/documentation/realtime/reference/#message-vehicleposition) (URL encoding required) | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Fgtfs%2Frealtime%2FToeiBus`
-`color` | A color used to display routes and vehicles. Hexadecimal color code (no leading `#`) | `9FC105`
+`gtfscolor` | A color used to display routes and vehicles. Hexadecimal color code (no leading `#`) | `9FC105`
 
 Since a GTFS dataset to display does not necessarily cover the area around Tokyo, it is useful to specify `#` followed by multiple elements separated by `/` (hash) to make the initial position and orientation of the map suitable for displaying the dataset. The hash should be placed after the query parameters above.
 
@@ -52,6 +52,6 @@ Place the mouse pointer or tap on the vehicle to display detailed information ab
 
 Clicking or tapping on a vehicle will turn on Tracking Mode and the screen will automatically move following the movement of the vehicle. There are eight viewpoints in Tracking Mode: “Position only”, “Back”, “Top-back”, “Front”, “Top-front”, “Helicopter”, “Drone” and “Bird”, allowing you to enjoy the scenery along the route from your preferred viewpoint. When the Tracking Mode is turned on, map panning, zooming in/out, rotation and tilting operations are disabled (zooming in/out, rotation and tilting are enabled only for the “Position only” viewpoint). Clicking or tapping on a map with no vehicles turns Tracking Mode off.
 
-When Tracking Mode is on, the list of stops and current position of the vehicle being tracked is displayed at the bottom of the screen. The list of stops can be scrolled by using the mouse wheel, dragging the scroll bar, or dragging your finger. Click or tap on the “∨” icon in the upper right corner of the list of stops to hide the list at the bottom of the screen, and click or tap on the “∧” icon to display it again.
+When Tracking Mode is on, the timetable and current position of the vehicle being tracked is displayed at the bottom of the screen. The timetable can be scrolled by using the mouse wheel, dragging the scroll bar, or dragging your finger. Click or tap on the “∨” icon in the upper right corner of the timetable to hide the timetable at the bottom of the screen, and click or tap on the “∧” icon to display it again.
 
 The viewpoint in Tracking Mode can be changed in the Tracking Mode Settings panel. See [here](./configuration.md#tracking-mode-settings) for more details.

@@ -25,11 +25,8 @@ Specifies the URL of [a GTFS dataset zip file](https://gtfs.org/documentation/sc
 - routes.txt
 - trips.txt
 - stop_times.txt
-- calendar.txt
-- calendar_dates.txt
+- calendar.txt or calendar_dates.txt
 - shapes.txt
-- translations.txt
-- feed_info.txt
 
 ### **`vehiclePositionUrl`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 

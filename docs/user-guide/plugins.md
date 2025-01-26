@@ -34,6 +34,18 @@ A 3D city model of Tokyo provided by [Project PLATEAU](https://www.mlit.go.jp/pl
 
 For more information, please visit [Mini Tokyo 3D PLATEAU Plugin GitHub Repository](https://github.com/nagix/mt3d-plugin-plateau).
 
+## GTFS Plugin
+
+<img :src="$withBase('/images/gtfs-plugin.jpg')" style="width: 580px;">
+
+This plugin displays transit routes and vehicles on the the Mini Tokyo 3D map based on [GTFS](https://gtfs.org) datasets and GTFS Realtime feeds. As with trains and aircrafts, hovering the mouse pointer over a vehicle or tapping it will display detailed information about the vehicle. Clicking or tapping on a vehicle toggles the tracking mode on, and the screen automatically moves to follow the vehicle's movement. Due to the relatively heavy load and large memory requirements, use on a high performance device is recommended.
+
+For more information, please visit [Mini Tokyo 3D GTFS Plugin GitHub Repository](https://github.com/nagix/mt3d-plugin-gtfs).
+
+::: warning
+Currently, the plugin only supports real-time location display for Toei Bus, Yokohama Municipal Bus, and Keisei Transit Bus. Also, vehicles will not be displayed when [Playback Mode](./display-modes.md#playback-mode) is on.
+:::
+
 ## Tokyo 2020 Olympics Plugin
 
 <img :src="$withBase('/images/olympics.jpg')" style="width: 580px;">
