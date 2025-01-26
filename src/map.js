@@ -2941,7 +2941,7 @@ export default class extends Evented {
                         );
 
                         bus = {
-                            id: vehicle ? vehicle.license_plate || vehicle.id : id,
+                            id: vehicle ? vehicle.licensePlate || vehicle.id : id,
                             gtfsId,
                             trip: busTrip,
                             feature,
