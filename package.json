@@ -64,8 +64,8 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "build-pages": "rm -rf build; cp -r public build; cp .npmignore dist/mini-tokyo-3d.min.css dist/mini-tokyo-3d.min.js dist/mini-tokyo-3d.min.js.map build",
-    "build-data": "rm -rf build/data; mkdir -p build/data; cp -r data/dictionary-*.json data/osm-liberty.json data/v2 build/data; node dist/loader",
+    "build-pages": "rm -rf build; cp -r public build; cp .npmignore dist/mini-tokyo-3d.min.* build; mkdir -p build/assets; cp assets/dictionary-*.json assets/style.json build/assets",
+    "build-data": "rm -rf build/data; mkdir -p build/data; cp assets/dictionary-*.json assets/osm-liberty.json build/data; node dist/loader",
     "build-all": "run-s build build-pages build-data docs",
     "docs": "vuepress build docs --no-cache",
     "docs:dev": "vuepress dev docs --no-cache",

@@ -92,8 +92,8 @@ function adjustTrainID(id, type, destination) {
  */
 export function loadStaticData(dataUrl, lang, clockPromise) {
     return Promise.all([
+        loadJSON(`assets/dictionary-${lang}.json`),
         ...[
-            `dictionary-${lang}.json`,
             'railways.json.gz',
             'stations.json.gz',
             'features.json.gz',
