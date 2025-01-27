@@ -165,8 +165,10 @@ export default class extends Evented {
             })
         ]).then(me.initialize.bind(me));
 
-        me.gtfs = new Map();
-        me.refreshBusData(true);
+        clockPromise.then(() => {
+            me.gtfs = new Map();
+            me.refreshBusData(true);
+        });
     }
 
     /**
