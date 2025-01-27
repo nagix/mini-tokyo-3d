@@ -12,6 +12,8 @@ See a [Live Demo](https://minitokyo3d.com).
 
 ## Demo Videos
 
+- [Demo Video (2025, English)](https://youtu.be/9Cks5UQU0vY)
+- [Demo Video (2025, Japanese)](https://youtu.be/8FC2adzAUIA)
 - [Demo Video (2021, English)](https://youtu.be/CGkHDAj8rGY)
 - [Demo Video (2021, Japanese)](https://youtu.be/C9AA3bDcHk8)
 - [Demo Video (2019, English)](https://youtu.be/sxFEwj0sBJk)
