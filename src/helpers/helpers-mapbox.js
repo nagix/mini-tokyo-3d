@@ -372,10 +372,14 @@ export function setStyleOpacities(map, styleOpacities, factorKey) {
 export function fetchTimezoneOffset(lngLat, accessToken) {
     const {lng, lat} = LngLat.convert(lngLat);
 
-    return fetch(`https://api.mapbox.com/v4/examples.4ze9z6tv/tilequery/${lng},${lat}.json?access_token=${accessToken}`)
+    return fetch(`https://api.mapbox.com/v4/examples.4ze9z6tv/tilequery/${lng},${lat}.json?radius=22224&limit=1&access_token=${accessToken}`)
         .then(response => response.json())
-        .then(data => {
-            const timeZone = data.features[0].properties.TZID,
+        .then(({features}) => {
+            if (features.length === 0) {
+                return -Math.round(lng / 15) * 60;
+            }
+
+            const timeZone = features[0].properties.TZID,
                 date = new Date(),
                 utcDate = new Date(date.toLocaleString('en-US', {timeZone: 'UTC'})),
                 tzDate = new Date(date.toLocaleString('en-US', {timeZone}));
