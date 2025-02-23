@@ -44,7 +44,7 @@ export default class extends Panel {
                 ` (${dict['hnd-tiat']})<br>`,
                 lastDynamicUpdate['NAA'] || 'N/A',
                 ` (${dict['naa']})<br>`,
-                gtfsArray.map(({date, agency}) => `${date} (${agency})`).join('<br>'),
+                gtfsArray.filter(({date}) => date).map(({date, agency}) => `${date} (${agency})`).join('<br>'),
                 '</div>',
                 gtfsArray.length > 0 ? [
                     `<div class="card-title">${dict['gtfs-feed-version']}</div>`,

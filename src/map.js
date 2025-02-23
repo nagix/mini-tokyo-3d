@@ -1100,7 +1100,7 @@ export default class extends Evented {
             callback: () => {
                 const clock = me.clock,
                     now = clock.getTime(),
-                    {minDelay, trainRefreshInterval, realtimeCheckInterval} = configs;
+                    {minDelay, refreshInterval, realtimeCheckInterval} = configs;
 
                 if (now - me.lastTimetableRefresh >= 86400000) {
                     me.refreshTrainTimetableData();
@@ -1116,16 +1116,17 @@ export default class extends Evented {
 
                 me.updateVisibleArea();
 
-                if (Math.floor((now - minDelay) / trainRefreshInterval) !== Math.floor(me.lastTrainRefresh / trainRefreshInterval)) {
+                if (Math.floor((now - minDelay) / refreshInterval) !== Math.floor(me.lastRefresh / refreshInterval)) {
                     helpersMapbox.setSunlight(map, now);
                     if (me.searchMode === 'none' && me.clockMode === 'playback') {
                         me.refreshTrains();
                         me.refreshFlights();
+                        me.refreshBuses();
                         if (isStation(me.trackedObject)) {
                             me.detailPanel.updateContent();
                         }
                     }
-                    me.lastTrainRefresh = now - minDelay;
+                    me.lastRefresh = now - minDelay;
                 }
 
                 if (Math.floor((now - minDelay) / realtimeCheckInterval) !== Math.floor(me.lastRealtimeCheck / realtimeCheckInterval)) {
@@ -1786,8 +1787,42 @@ export default class extends Evented {
         }, flight.feature.properties.length, flight.maxSpeed, flight.acceleration, elapsed, clock);
     }
 
+    refreshBuses(gtfsId) {
+        const me = this,
+            now = me.clock.getTimeOffset();
+
+        for (const gtfs of gtfsId ? [me.gtfs.get(gtfsId)] : me.gtfs.values()) {
+            for (const trip of gtfs.tripLookup.values()) {
+                const departureTimes = trip.departureTimes;
+
+                if (departureTimes[0] <= now && now <= departureTimes[departureTimes.length - 1] && !gtfs.activeBusLookup.has(trip.id)) {
+                    let offset = 0;
+                    const feature = gtfs.featureLookup.get(trip.shape);
+
+                    if (!feature) {
+                        continue;
+                    }
+
+                    const offsets = trip.stops.map(stopId =>
+                        // Use the previous offset to calulate a weight and pick a closer point
+                        (offset = nearestCloserPointOnLine(feature, gtfs.stopLookup.get(stopId).coord, offset).properties.location)
+                    );
+
+                    me.busStart({
+                        gtfsId: gtfs.id,
+                        trip,
+                        feature,
+                        offsets,
+                        offset: 0
+                    });
+                }
+            }
+        }
+    }
+
     busStart(bus) {
-        const me = this;
+        const me = this,
+            now = me.clock.getTimeOffset();
 
         if (!me.setBusSectionData(bus)) {
             return;
@@ -1801,8 +1836,12 @@ export default class extends Evented {
             console.log('bus zero interval:', bus);
         }
 
-        if (bus.sectionLength > 0 && bus.interval > 0) {
+        const departureTime = bus.departureTime;
+
+        if (bus.stop !== undefined && bus.sectionLength > 0 && bus.interval > 0) {
             me.busRepeat(bus);
+        } else if (bus.stop === undefined && now >= departureTime) {
+            me.busRepeat(bus, now - departureTime);
         } else {
             me.busStand(bus);
         }
@@ -1810,13 +1849,17 @@ export default class extends Evented {
 
     busStand(bus) {
         const me = this;
-        let final = false;
+        let final;
 
-        if (me.setBusSectionData(bus, !me.gtfs.get(bus.gtfsId).realtimeBuses.has(bus.trip.id))) {
+        if (bus.stop !== undefined) {
+            final = !me.setBusSectionData(bus, undefined, !me.gtfs.get(bus.gtfsId).realtimeBuses.has(bus.trip.id));
+        } else {
+            final = !me.setBusSectionData(bus, bus.sectionIndex + 1);
+        }
+
+        if (!final) {
             me.updateBusProps(bus);
             me.updateBusShape(bus, 0);
-        } else {
-            final = true;
         }
 
         // Sometimes bus.interval becomes 0 because the busroute coordinates
@@ -1825,10 +1868,13 @@ export default class extends Evented {
             console.log('bus zero interval:', bus);
         }
 
-        if (bus.sectionLength > 0 && bus.interval > 0) {
+        if (bus.stop !== undefined && bus.sectionLength > 0 && bus.interval > 0) {
             me.busRepeat(bus);
         } else {
-            const {markedObject, trackedObject} = me;
+            const {markedObject, trackedObject} = me,
+                clock = me.clock,
+                departureTime = bus.departureTime,
+                minBusStandingDuration = configs.minBusStandingDuration;
 
             if (markedObject && markedObject.object === bus) {
                 me.updatePopup({setHTML: true});
@@ -1847,20 +1893,33 @@ export default class extends Evented {
                 complete: () => {
                     if (final) {
                         me.stopBus(bus);
+                    } else if (bus.stop === undefined) {
+                        // Specify elapsed time if clock speed is high because the time typically advances
+                        me.busRepeat(bus, clock.speed === 1 ? undefined : clock.getTimeOffset() - departureTime);
                     } else {
                         me.busStand(bus);
                     }
                 },
-                duration: configs.realtimeCheckInterval,
-                clock: me.clock
+                duration: bus.stop === undefined ?
+                    // Set minimum duration to 0 if clock speed is high because the time typically advances
+                    Math.max(departureTime - clock.getTimeOffset(), clock.speed === 1 ? minBusStandingDuration : 0) :
+                    final ? minBusStandingDuration : configs.realtimeCheckInterval,
+                clock
             });
         }
     }
 
-    busRepeat(bus) {
+    busRepeat(bus, elapsed) {
         const me = this,
-            {markedObject, trackedObject} = me;
+            {clock, markedObject, trackedObject} = me,
+            now = clock.getTimeOffset(),
+            minDelay = configs.minDelay,
+            nextDepartureTime = bus.nextDepartureTime;
+        let maxDuration;
 
+        if (nextDepartureTime !== undefined) {
+            maxDuration = nextDepartureTime - now + (elapsed || 0) - minDelay + 60000 - configs.minBusStandingDuration;
+        }
         if (markedObject && markedObject.object === bus) {
             me.updatePopup({setHTML: true});
         }
@@ -1871,7 +1930,7 @@ export default class extends Evented {
             me.updateBusShape(bus, t);
         }, () => {
             me.busStand(bus);
-        }, Math.abs(bus.interval), 0, me.clock);
+        }, Math.abs(bus.interval), undefined, maxDuration, elapsed, clock);
     }
 
     updateTrackingParams(reset) {
@@ -2209,9 +2268,9 @@ export default class extends Evented {
             shortName ? ` <span class="bus-route-label" style="${labelStyle}">${shortName}</span> ` : '',
             headsigns[headsigns.length === 1 ? 0 : prevStopIndex],
             '</div></div>',
-            `<strong>${dict['vehicle-number']}:</strong> ${bus.id}`,
-            `<br><strong>${dict['previous-busstop']}:</strong> ${prevStopName}`,
-            `<br><strong>${dict['next-busstop']}:</strong> ${nextStopName}`
+            bus.id ? `<strong>${dict['vehicle-number']}:</strong> ${bus.id}<br>` : '',
+            `<strong>${dict['previous-busstop']}:</strong> ${prevStopName}<br>`,
+            `<strong>${dict['next-busstop']}:</strong> ${nextStopName}`
         ].join('');
     }
 
@@ -2327,7 +2386,7 @@ export default class extends Evented {
             }
             realtimeBuses.clear();
         }
-        delete me.lastTrainRefresh;
+        delete me.lastRefresh;
         delete me.lastRealtimeCheck;
     }
 
@@ -2346,7 +2405,7 @@ export default class extends Evented {
         me.timetables.clear();
         loadTimetableData(me.dataUrl, me.clock).then(data => {
             me.timetables = new TrainTimetables(data, me.dataReferences);
-            delete me.lastTrainRefresh;
+            delete me.lastRefresh;
             delete me.lastRealtimeCheck;
             hideLoader(me.container);
         });
@@ -2554,8 +2613,12 @@ export default class extends Evented {
                 }
                 me.refreshMap();
 
-                if (me.clockMode === 'realtime') {
-                    me.refreshRealtimeBusData(id);
+                if (me.searchMode === 'none') {
+                    if (me.clockMode === 'playback') {
+                        me.refreshBuses(id);
+                    } else if (me.clockMode === 'realtime') {
+                        me.refreshRealtimeBusData(id);
+                    }
                 }
             });
         }
@@ -2904,6 +2967,7 @@ export default class extends Evented {
             const {id: gtfsId, vehiclePositionUrl, featureLookup, stopLookup, tripLookup, activeBusLookup, realtimeBuses} = gtfs;
 
             if (!vehiclePositionUrl) {
+                me.refreshBuses(gtfsId);
                 continue;
             }
 
@@ -3533,12 +3597,11 @@ export default class extends Evented {
     }
 
     setSectionData(train, index, final) {
-        const me = this,
-            stations = train.r.stations,
+        const stations = train.r.stations,
             {direction, timetable} = train,
             destination = (train.ds || [])[0],
             delay = train.delay || 0,
-            now = me.clock.getTimeOffset();
+            now = this.clock.getTimeOffset();
         let arrivalTimes, departureTimes, ttIndex, departureStation, arrivalStation, currentSection, nextSection, finalSection;
 
         if (timetable) {
@@ -3604,9 +3667,19 @@ export default class extends Evented {
         train.arrivalStation = train.arrivalTime = train.nextDepartureTime = undefined;
     }
 
-    setBusSectionData(bus, final) {
+    setBusSectionData(bus, index, final) {
         const stopSequences = bus.trip.stopSequences,
+            now = this.clock.getTimeOffset();
+        let departureTimes, currentSection;
+
+        if (bus.stop === undefined) {
+            departureTimes = bus.trip.departureTimes;
+            currentSection = helpers.valueOrDefault(index, departureTimes.reduce(
+                (acc, cur, i) => cur <= now ? i : acc, 0
+            ));
+        } else {
             currentSection = stopSequences.indexOf(bus.stop);
+        }
 
         // Guard for an unexpected error
         // Potential data quality issue
@@ -3614,14 +3687,30 @@ export default class extends Evented {
             console.log('no bus stop', bus);
         }
 
-        const finalSection = stopSequences.length - 1,
-            nextSection = Math.min(currentSection + 1, finalSection),
-            actualSection = helpers.numberOrDefault(bus.sectionIndex + bus.sectionLength, currentSection);
+        const finalSection = stopSequences.length - 1;
 
-        bus.sectionIndex = actualSection;
-        bus.sectionLength = nextSection - actualSection;
+        if (bus.stop === undefined) {
+            if (currentSection !== finalSection) {
+                bus.sectionIndex = currentSection;
+                bus.sectionLength = 1;
+                bus.departureTime = departureTimes[currentSection];
+                bus.nextDepartureTime = departureTimes[currentSection + 1];
 
-        return !final && actualSection !== finalSection;
+                return true;
+            }
+        } else {
+            const nextSection = Math.min(currentSection + 1, finalSection),
+                actualSection = helpers.numberOrDefault(bus.sectionIndex + bus.sectionLength, currentSection);
+
+            if (!final && actualSection !== finalSection) {
+                bus.sectionIndex = actualSection;
+                bus.sectionLength = nextSection - actualSection;
+
+                return true;
+            }
+        }
+
+        bus.nextDepartureTime = undefined;
     }
 }
 
@@ -3741,12 +3830,30 @@ function startFlightAnimation(callback, endCallback, distance, maxSpeed, acceler
     });
 }
 
-function startBusAnimation(callback, endCallback, distance, start, clock) {
-    const {maxBusSpeed, busAcceleration, maxBusAccelerationTime, maxBusAccDistance} = configs;
-    const duration = distance < maxBusAccDistance * 2 ?
-            Math.sqrt(distance / busAcceleration) * 2 :
-            maxBusAccelerationTime * 2 + (distance - maxBusAccDistance * 2) / maxBusSpeed,
-        accelerationTime = Math.min(maxBusAccelerationTime, duration / 2);
+function startBusAnimation(callback, endCallback, distance, minDuration, maxDuration, start, clock) {
+    let {maxBusSpeed, busAcceleration, maxBusAccelerationTime, maxBusAccDistance} = configs,
+        duration, accelerationTime;
+
+    if (distance === 0) {
+        endCallback();
+        return;
+    } else if (distance <= maxBusAccDistance * 2) {
+        duration = Math.sqrt(distance / busAcceleration) * 2;
+        accelerationTime = duration / 2;
+    } else {
+        duration = maxBusAccelerationTime * 2 + (distance - maxBusAccDistance * 2) / maxBusSpeed;
+        if (maxDuration > 0) {
+            duration = helpers.clamp(duration, minDuration || 0, maxDuration);
+            maxBusAccDistance = busAcceleration * duration * duration / 8;
+            if (distance >= maxBusAccDistance * 2) {
+                maxBusSpeed = distance * 2 / duration;
+                busAcceleration = maxBusSpeed * 2 / duration;
+            } else {
+                maxBusSpeed = busAcceleration * duration / 2 - Math.sqrt(busAcceleration * (maxBusAccDistance * 2 - distance));
+            }
+        }
+        accelerationTime = maxBusSpeed / busAcceleration;
+    }
 
     return animation.start({
         callback: elapsed => {

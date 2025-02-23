@@ -6,10 +6,13 @@ const configs = {
     // Minimum standing duration in milliseconds
     minStandingDuration: 30000,
 
-    // Interval of refreshing train positions in milliseconds
-    trainRefreshInterval: 60000,
+    // Minimum bus standing duration in milliseconds
+    minBusStandingDuration: 15000,
 
-    // All train positions will be refreshed if the screen has been inactive for this duration
+    // Interval of refreshing object positions in milliseconds
+    refreshInterval: 60000,
+
+    // All object positions will be refreshed if the screen has been inactive for this duration
     refreshTimeout: 10000,
 
     // Interval of checking train and bus positions based on real-time data in milliseconds
