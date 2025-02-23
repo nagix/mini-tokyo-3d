@@ -210,7 +210,8 @@ class ShapeReader {
             me.shapePtLatIdIndex = fileds.indexOf('shape_pt_lat');
             me.shapePtLonIdIndex = fileds.indexOf('shape_pt_lon');
             me.shapePtSequenceIndex = fileds.indexOf('shape_pt_sequence');
-        } else {
+        // Some GTFS have empty lines
+        } else if (fileds.length > 1) {
             const id = fileds[me.shapeIdIndex];
             let coords;
 
