@@ -965,6 +965,20 @@
     color: #333;
     background-color: #fff;
 }
+.mini-tokyo-3d .realtime-icon {
+    display: inline-block;
+    background: no-repeat center right/20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/wifi.svg', fill: #fff);
+    width: 24px;
+    height: 24px;
+    vertical-align: top;
+}
+.mini-tokyo-3d .realtime-small-icon {
+    display: inline-block;
+    background: no-repeat center right/16px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/wifi.svg', fill: #fff);
+    width: 20px;
+    height: 20px;
+    vertical-align: top;
+}
 .mini-tokyo-3d .thumbnail-image-container {
     width: 128px;
     height: 72px;

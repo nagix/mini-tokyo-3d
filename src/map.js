@@ -2203,7 +2203,9 @@ export default class extends Evented {
         return [
             '<div class="desc-header">',
             `<div style="background-color: ${gtfs.color};"></div>`,
-            `<div><strong>${gtfs.agency}</strong><br>`,
+            `<div><strong>${gtfs.agency}</strong>`,
+            bus.stop !== undefined ? '<span class="realtime-small-icon"></span>' : '',
+            '<br>',
             shortName ? ` <span class="bus-route-label" style="${labelStyle}">${shortName}</span> ` : '',
             headsigns[headsigns.length === 1 ? 0 : prevStopIndex],
             '</div></div>',

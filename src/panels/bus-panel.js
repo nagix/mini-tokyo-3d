@@ -90,6 +90,7 @@ export default class extends Panel {
             `<div style="background-color: ${gtfs.color};"></div>`,
             '<div><div class="desc-first-row">',
             gtfs.agency,
+            bus.stop !== undefined ? '<span class="realtime-icon"></span>' : '',
             '</div><div class="desc-second-row">',
             shortName ? ` <span class="bus-route-label" style="${labelStyle}">${shortName}</span> ` : '',
             headsigns[headsigns.length === 1 ? 0 : bus.sectionIndex],
