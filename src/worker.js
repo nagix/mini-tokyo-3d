@@ -5,7 +5,6 @@ import * as Comlink from 'comlink';
 import {DecodeUTF8, Unzip, UnzipInflate} from 'fflate';
 import geobuf from 'geobuf';
 import Pbf from 'pbf';
-import Clock from './clock';
 import {includes, mergeMaps, normalizeLang} from './helpers/helpers';
 import {updateDistances} from './helpers/helpers-geojson';
 import {encode} from './helpers/helpers-gtfs';
@@ -60,22 +59,11 @@ class AgencyReader {
 
 class CalendarReader {
 
-    constructor({offset}) {
-        const me = this,
-            date = new Clock().setTimezoneOffset(offset).getDate(),
-            hours = date.getHours();
+    constructor({date, day}) {
+        const me = this;
 
-        if (hours < 3) {
-            date.setHours(hours - 24);
-        }
-
-        const dayOfWeek = date.getDay(),
-            year = date.getFullYear(),
-            month = `0${date.getMonth() + 1}`.slice(-2),
-            day = `0${date.getDate()}`.slice(-2);
-
-        me.dayOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][dayOfWeek];
-        me.date = `${year}${month}${day}`;
+        me.date = date;
+        me.day = day;
         me.services = new Set();
     }
 
@@ -85,7 +73,7 @@ class CalendarReader {
 
         if (me.serviceIdIndex === undefined) {
             me.serviceIdIndex = fileds.indexOf('service_id');
-            me.dayIndex = fileds.indexOf(me.dayOfWeek);
+            me.dayIndex = fileds.indexOf(me.day);
             me.startDateIndex = fileds.indexOf('start_date');
             me.endDateIndex = fileds.indexOf('end_date');
         } else {
@@ -103,20 +91,10 @@ class CalendarReader {
 
 class CalendarDateReader {
 
-    constructor({offset}) {
-        const me = this,
-            date = new Clock().setTimezoneOffset(offset).getDate(),
-            hours = date.getHours();
+    constructor({date}) {
+        const me = this;
 
-        if (hours < 3) {
-            date.setHours(hours - 24);
-        }
-
-        const year = date.getFullYear(),
-            month = `0${date.getMonth() + 1}`.slice(-2),
-            day = `0${date.getDate()}`.slice(-2);
-
-        me.date = `${year}${month}${day}`;
+        me.date = date;
         me.additions = new Set();
         me.deletions = new Set();
     }
@@ -565,7 +543,7 @@ function getTrips(trips, services, serviceExceptions, routeLookup, stopTimeLooku
     return result;
 }
 
-function loadGtfs(source, offset, lang) {
+function loadGtfs(source, date, day, lang) {
     return new Promise((resolve, reject) => fetch(source.gtfsUrl).then(response => {
         const results = {},
             reader = response.body.getReader(),
@@ -574,7 +552,7 @@ function loadGtfs(source, offset, lang) {
 
                 if (includes(gtfsFiles, key)) {
                     let stringBuffer = '';
-                    const gtfsReader = new gtfsReaders[key]({offset, lang, color: source.color}),
+                    const gtfsReader = new gtfsReaders[key]({date, day, lang, color: source.color}),
                         utfDecode = new DecodeUTF8(async (data, final) => {
                             const lines = data.split(/\r?\n/);
 
@@ -634,7 +612,7 @@ function loadGtfs(source, offset, lang) {
 }
 
 Comlink.expose({
-    load: (source, offset, lang, callback) => loadGtfs(source, offset, lang).then(data =>
+    load: (source, date, day, lang, callback) => loadGtfs(source, date, day, lang).then(data =>
         callback(Comlink.transfer(data, data.map(({buffer}) => buffer)))
     )
 });

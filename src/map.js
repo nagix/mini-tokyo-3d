@@ -2383,7 +2383,7 @@ export default class extends Evented {
                 }
             }
 
-            loadBusData(source, me.clock.getTimezoneOffset(), me.lang).then(data =>
+            loadBusData(source, me.clock, me.lang).then(data =>
                 new Promise(resolve => me.initialized ? resolve(data) : me.once('initialized', () => resolve(data)))
             ).then(data => {
                 const {agency, featureCollection, version} = data,

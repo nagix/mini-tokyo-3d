@@ -239,12 +239,25 @@ export function loadDynamicFlightData() {
     }));
 }
 
-export function loadBusData(source, offset, lang) {
+export function loadBusData(source, clock, lang) {
     const workerUrl = URL.createObjectURL(new Blob([`WORKER_STRING`], {type: 'text/javascript'})),
         worker = new Worker(workerUrl),
-        proxy = Comlink.wrap(worker);
+        proxy = Comlink.wrap(worker),
+        date = clock.getDate(),
+        hours = date.getHours();
 
-    return new Promise(resolve => proxy.load(source, offset, lang, Comlink.proxy(data => {
+    if (hours < 3) {
+        date.setHours(hours - 24);
+    }
+
+    const year = date.getFullYear(),
+        month = `0${date.getMonth() + 1}`.slice(-2),
+        day = `0${date.getDate()}`.slice(-2),
+        dayOfWeek = date.getDay(),
+        dateString = `${year}${month}${day}`,
+        dayString = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][dayOfWeek];
+
+    return new Promise(resolve => proxy.load(source, dateString, dayString, lang, Comlink.proxy(data => {
         proxy[Comlink.releaseProxy]();
         worker.terminate();
         resolve({
