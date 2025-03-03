@@ -144,7 +144,7 @@ export function loadTimetableData(dataUrl, clock) {
  * @returns {Object} Loaded data
  */
 export function loadDynamicTrainData(secrets) {
-    const trainData = [],
+    const trainData = new Map(),
         trainInfoData = [],
         urls = [];
 
@@ -182,10 +182,11 @@ export function loadDynamicTrainData(secrets) {
         // Train data from ODPT and Challenge 2024
         for (const train of [...data.shift(), ...data.shift()]) {
             const trainType = removePrefix(train['odpt:trainType']),
-                destinationStation = removePrefix(train['odpt:destinationStation']);
+                destinationStation = removePrefix(train['odpt:destinationStation']),
+                id = adjustTrainID(removePrefix(train['owl:sameAs']), trainType, destinationStation);
 
-            trainData.push({
-                id: adjustTrainID(removePrefix(train['owl:sameAs']), trainType, destinationStation),
+            trainData.set(id, {
+                id,
                 o: removePrefix(train['odpt:operator']),
                 r: removePrefix(train['odpt:railway']),
                 y: trainType,
@@ -203,7 +204,13 @@ export function loadDynamicTrainData(secrets) {
 
         // Train data from others
         for (const train of data.shift()) {
-            trainData.push(train);
+            const id = train.id;
+
+            if (trainData.has(id)) {
+                Object.assign(trainData.get(id), train);
+            } else {
+                trainData.set(id, train);
+            }
         }
 
         // Train information data from ODPT and Challenge 2024
@@ -221,7 +228,10 @@ export function loadDynamicTrainData(secrets) {
             trainInfoData.push(trainInfo);
         }
 
-        return {trainData, trainInfoData};
+        return {
+            trainData: Array.from(trainData.values()),
+            trainInfoData
+        };
     });
 }
 

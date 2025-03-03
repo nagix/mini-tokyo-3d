@@ -2691,7 +2691,7 @@ export default class extends Evented {
                     if ((y && y !== activeTrain.y.id) ||
                         (os && activeTrain.os && os[0] !== activeTrain.os[0].id) ||
                         (ds && activeTrain.ds && ds[0] !== activeTrain.ds[0].id) ||
-                        (v && v !== activeTrain.v.id) ||
+                        (v && v !== (activeTrain.v || {}).id) ||
                         (!isNaN(carComposition) && carComposition !== activeTrain.carComposition) ||
                         (!isNaN(delay) && delay !== activeTrain.delay)) {
                         me.stopTrain(activeTrain, true);
