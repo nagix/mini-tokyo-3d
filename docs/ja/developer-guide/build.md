@@ -51,17 +51,16 @@ npm run build-all
 
 ## Web サイトへの設置
 
-ビルドしたファイルを Web サイトに設置して使用するには、データソースに対するアクセストークンが必要です。[使用の準備](./integration.md#%E4%BD%BF%E7%94%A8%E3%81%AE%E6%BA%96%E5%82%99)を参照して、公共交通オープンデータセンターアクセストークン、公共交通オープンデータチャレンジ2024アクセストークン、Mapbox アクセストークンを取得してください。
+ビルドしたファイルを Web サイトに設置して使用するには、データソースに対するアクセストークンが必要です。[使用の準備](./integration.md#%E4%BD%BF%E7%94%A8%E3%81%AE%E6%BA%96%E5%82%99)を参照して、公共交通オープンデータセンターアクセストークン、Mapbox アクセストークンを取得してください。
 
-`build` ディレクトリに含まれる `index.html` は [https://minitokyo3d.com](http://minitokyo3d.com) 用の Web ページです。`index.html` の中で `Map` コンストラクタに渡されるオブジェクトに `accessToken` プロパティと `secrets` プロパティを追加し、`accessToken` には Mapbox アクセストークン、`secrets` には公共交通オープンデータセンターアクセストークンと公共交通オープンデータチャレンジ2024アクセストークンを指定します。
+`build` ディレクトリに含まれる `index.html` は [https://minitokyo3d.com](http://minitokyo3d.com) 用の Web ページです。`index.html` の中で `Map` コンストラクタに渡されるオブジェクトに `accessToken` プロパティと `secrets` プロパティを追加し、`accessToken` には Mapbox アクセストークン、`secrets` には公共交通オープンデータセンターアクセストークンを指定します。
 
 ```js
 map = new mt3d.Map({
   /* ... */
   accessToken: '<Mapbox アクセストークン>',
   secrets: {
-    odpt: '<公共交通オープンデータセンターアクセストークン>',
-    challenge2024: '<公共交通オープンデータチャレンジ2024アクセストークン>'
+    odpt: '<公共交通オープンデータセンターアクセストークン>'
   }
 });
 ```

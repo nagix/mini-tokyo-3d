@@ -10,6 +10,10 @@
 
 [公共交通オープンデータチャレンジ2024](https://challenge2024.odpt.org)のアクセストークンです。未指定の場合は、デフォルトのトークンが使われます。
 
+::: warning 注意
+公共交通オープンデータチャレンジ2024の終了に伴い、バージョン 4.0 以降はこのパラメータは使用されません。
+:::
+
 ### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
 
 [公共交通オープンデータセンター](https://www.odpt.org)のアクセストークンです。未指定の場合は、デフォルトのトークンが使われます。

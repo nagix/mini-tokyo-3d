@@ -13,23 +13,6 @@ const RAILWAYS_FOR_TRAINS = {
         'Toei.Shinjuku',
         'Toei.Oedo',
         'Toei.Arakawa'
-    ],
-    challenge2024: [
-        'JR-East.Yamanote',
-        'Keikyu.Main',
-        'Keikyu.Airport',
-        'Keikyu.Daishi',
-        'Keikyu.Zushi',
-        'Keikyu.Kurihama',
-        'Tobu.TobuSkytree',
-        'Tobu.TobuSkytreeBranch',
-        'Tobu.Isesaki',
-        'Tobu.Nikko',
-        'Tobu.TobuUrbanPark',
-        'Tobu.Kameido',
-        'Tobu.Daishi',
-        'Tobu.Tojo',
-        'Tobu.Ogose'
     ]
 };
 
@@ -41,14 +24,6 @@ const OPERATORS_FOR_TRAININFORMATION = {
         'YokohamaMunicipal',
         'MIR',
         'TamaMonorail'
-    ],
-    challenge2024: [
-        'jre-is',
-        'Tokyu',
-        'Keikyu',
-        'Tobu',
-        'Seibu',
-        'Keio'
     ]
 };
 
@@ -152,7 +127,7 @@ export function loadDynamicTrainData(secrets) {
         const url = configs.apiUrl[source],
             key = secrets[source];
 
-        if (source === 'odpt' || source === 'challenge2024') {
+        if (source === 'odpt') {
             const railways = RAILWAYS_FOR_TRAINS[source]
                 .map((railway) => `odpt.Railway:${railway}`)
                 .join(',');
@@ -167,7 +142,7 @@ export function loadDynamicTrainData(secrets) {
         const url = configs.apiUrl[source],
             key = secrets[source];
 
-        if (source === 'odpt' || source === 'challenge2024') {
+        if (source === 'odpt') {
             const operators = OPERATORS_FOR_TRAININFORMATION[source]
                 .map(operator => `odpt.Operator:${operator}`)
                 .join(',');
@@ -179,8 +154,8 @@ export function loadDynamicTrainData(secrets) {
     urls.push(configs.trainInfoUrl);
 
     return Promise.all(urls.map(loadJSON)).then(data => {
-        // Train data from ODPT and Challenge 2024
-        for (const train of [...data.shift(), ...data.shift()]) {
+        // Train data from ODPT
+        for (const train of data.shift()) {
             const trainType = removePrefix(train['odpt:trainType']),
                 destinationStation = removePrefix(train['odpt:destinationStation']),
                 id = adjustTrainID(removePrefix(train['owl:sameAs']), trainType, destinationStation);
@@ -213,8 +188,8 @@ export function loadDynamicTrainData(secrets) {
             }
         }
 
-        // Train information data from ODPT and Challenge 2024
-        for (const trainInfo of [...data.shift(), ...data.shift()]) {
+        // Train information data from ODPT
+        for (const trainInfo of data.shift()) {
             trainInfoData.push({
                 operator: removePrefix(trainInfo['odpt:operator']),
                 railway: removePrefix(trainInfo['odpt:railway']),
@@ -289,8 +264,6 @@ export function updateOdptUrl(url, secrets) {
     }
     if (url.startsWith('https://api.odpt.org/') && !url.match(/acl:consumerKey/)) {
         return `${url}${url.match(/\?/) ? '&' : '?'}acl:consumerKey=${secrets.odpt}`;
-    } else if (url.startsWith('https://api-challenge2024.odpt.org/') && !url.match(/acl:consumerKey/)) {
-        return `${url}${url.match(/\?/) ? '&' : '?'}acl:consumerKey=${secrets.challenge2024}`;
     }
     return url;
 }

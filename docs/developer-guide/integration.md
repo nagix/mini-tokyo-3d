@@ -11,7 +11,6 @@ Mini Tokyo 3D uses the following data sources and requires an access token for e
 Data Source | Sign-Up URL | Access Token Format
 :-- | :-- | :--
 [Public Transportation Open Data Center](https://www.odpt.org/en/) | [Link](https://developer.odpt.org/signup) | A string of numbers and lowercase letters
-Public Transportation Open Data Center<br>([Open Data Challenge for Public Transportation 2024](https://challenge2024.odpt.org/index-e.html)) | [Link](https://developer.odpt.org/signup) | A string of numbers and lowercase letters
 [Mapbox](https://www.mapbox.com) | [Link](https://account.mapbox.com/auth/signup/) | Alphanumeric string containing a period beginning with `pk.`
 
 ### Getting an Access Token for Public Transportation Open Data Center
@@ -21,16 +20,6 @@ Mini Tokyo 3D is using train and airplane data from the [Public Transportation O
 1. Register as a developer by entering your user information on the [developer site's registration page](https://developer.odpt.org/signup). It may take a few days to receive your registration confirmation email.
 2. After logging in with your developer account, select "Access Token for ODPT Center" from the menu shown "Logged in" in the upper right corner of the screen.
 3. A list of access tokens for ODPT Center will be displayed. Only the "DefaultApplication" token will be displayed right after creating the account. Click on "Add".
-4. Enter an application name in the "Name" field and click the "Update" button.
-5. The newly created token will appear in the list of access tokens.
-
-### Getting an Access Token for Open Data Challenge for Public Transportation 2024
-
-The Public Transportation Open Data Center is also distributing additional train and airplane data for the [Open Data Challenge for Public Transportation 2024](https://challenge2024.odpt.org/index-e.html), which can be obtained with a dedicated access token. You need to enter the challenge to get your dedicated access token, but the data is available for free.
-
-1. Follow the instructions on the Public Transport Open Data Center [developer site](https://developer.odpt.org) to enter the challenge.
-2. Select "Access Token for Challenge 2024" from the menu shown "Logged in" in the upper right corner of the screen.
-3. A list of access tokens for Challenge 2024 will be displayed. Only the "Challenge2024DefaultApplication" token will be displayed right after entry. Click on "Add".
 4. Enter an application name in the "Name" field and click the "Update" button.
 5. The newly created token will appear in the list of access tokens.
 
@@ -59,7 +48,7 @@ First, use the jsDelivr CDN link to load the Mini Tokyo 3D style sheet and JavaS
 </head>
 ```
 
-Within the `<body>` element of the same HTML file, add an HTML element with an `id` (a `<div>` element in the example below), and write JavaScript code to create a Map instance in the `<script>` element. Specify the `id` of the HTML element to `container` of the `options` object passed to the constructor. In addition, specify the Mapbox access token obtained in the above step to `accessToken`, and the access tokens for Public Transportation Open Data Center and Open Data Challenge for Public Transportation 2024 to `secrets`.
+Within the `<body>` element of the same HTML file, add an HTML element with an `id` (a `<div>` element in the example below), and write JavaScript code to create a Map instance in the `<script>` element. Specify the `id` of the HTML element to `container` of the `options` object passed to the constructor. In addition, specify the Mapbox access token obtained in the above step to `accessToken`, and the access token for Public Transportation Open Data Center to `secrets`.
 
 ```html
 <body>
@@ -70,8 +59,7 @@ Within the `<body>` element of the same HTML file, add an HTML element with an `
       container: 'mini-tokyo-3d',
       accessToken: '<Mapbox access token>',
       secrets: {
-        odpt: '<access token for Public Transportation Open Data Center>',
-        challenge2024: '<access token for Open Data Challenge for Public Transportation 2024>'
+        odpt: '<access token for Public Transportation Open Data Center>'
       }
     };
     const map = new mt3d.Map(options);
@@ -101,15 +89,14 @@ To load the module in the ES6 style, you need to include the following at the be
 import {Map} from 'mini-tokyo-3d';
 ```
 
-In your application code, you need to initialize the Map object as follows. `container` of the `options` object represents the ID of the HTML element in which Mini Tokyo 3D will render the map. You also need to specify the Mapbox access token obtained in the above step to `accessToken`, and the access tokens for Public Transportation Open Data Center and Open Data Challenge for Public Transportation 2024 to `secrets`.
+In your application code, you need to initialize the Map object as follows. `container` of the `options` object represents the ID of the HTML element in which Mini Tokyo 3D will render the map. You also need to specify the Mapbox access token obtained in the above step to `accessToken`, and the access token for Public Transportation Open Data Center to `secrets`.
 
 ```js
 const options = {
   container: '<container element ID>',
   accessToken: '<Mapbox access token>',
   secrets: {
-    odpt: '<access token for Public Transportation Open Data Center>',
-    challenge2024: '<access token for Open Data Challenge for Public Transportation 2024>'
+    odpt: '<access token for Public Transportation Open Data Center>'
   }
 };
 const map = new Map(options);

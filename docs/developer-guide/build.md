@@ -51,17 +51,16 @@ When the build completes successfully, the `dist` directory will be created. It 
 
 ## Deploying on a Web Site
 
-You need access tokens for the data sources to deploy and use the built files on your web site. See [Preparation for Use](./integration.md#preparation-for-use) to obtain access tokens for Public Transportation Open Data Center, Open Data Challenge for Public Transportation 2024, and Mapbox.
+You need access tokens for the data sources to deploy and use the built files on your web site. See [Preparation for Use](./integration.md#preparation-for-use) to obtain access tokens for Public Transportation Open Data Center and Mapbox.
 
-The `index.html` in the `build` directory is for the web page on [https://minitokyo3d.com](http://minitokyo3d.com). In `index.html`, add the `accessToken` and `secrets` properties to the object passed to the `Map` constructor, and specify the Mapbox access token for the `accessToken` and the access tokens for Public Transportation Open Data Center and Open Data Challenge for Public Transportation 2024 for the `secrets`.
+The `index.html` in the `build` directory is for the web page on [https://minitokyo3d.com](http://minitokyo3d.com). In `index.html`, add the `accessToken` and `secrets` properties to the object passed to the `Map` constructor, and specify the Mapbox access token for the `accessToken` and the access token for Public Transportation Open Data Center for the `secrets`.
 
 ```js
 map = new mt3d.Map({
   /* ... */
   accessToken: '<Mapbox access token>',
   secrets: {
-    odpt: '<access token for Public Transportation Open Data Center>',
-    challenge2024: '<access token for Open Data Challenge for Public Transportation 2024>'
+    odpt: '<access token for Public Transportation Open Data Center>'
   }
 });
 ```

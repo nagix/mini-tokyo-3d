@@ -129,10 +129,7 @@ const configs = {
     apiUrl: {
 
         // ODPT URL
-        odpt: 'https://api.odpt.org/api/v4/',
-
-        // Challenge 2024 URL
-        challenge2024: 'https://api-challenge2024.odpt.org/api/v4/'
+        odpt: 'https://api.odpt.org/api/v4/'
 
     },
 
