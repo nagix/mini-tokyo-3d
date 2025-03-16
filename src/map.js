@@ -24,20 +24,6 @@ const RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
 
 const AIRLINES_FOR_ANA_CODE_SHARE = ['ADO', 'SFJ', 'SNJ'];
 
-const WITH_AD_CARS = {
-    de: 'Pokémon Masters EX AD-Zug',
-    en: 'Pokémon Masters EX AD Train',
-    es: 'Pokémon Masters EX Tren AD',
-    fr: 'Pokémon Masters EX Train AD',
-    ja: 'ポケモンマスターズEX ADトレイン',
-    ko: '포켓몬 마스터즈 EX AD 열차',
-    ne: 'पोकेमोन मास्टर्स EX AD रेल',
-    pt: 'Pokémon Masters EX Trem AD',
-    th: 'โปเกมอน มาสเตอส์ EX รถไฟ AD',
-    'zh-Hans': '宝可梦大师EX AD列车',
-    'zh-Hant': '寶可夢大師EX AD列車'
-};
-
 const DEGREE_TO_RADIAN = Math.PI / 180;
 
 // Replace NavigationControl._updateZoomButtons to support disabling the control
@@ -109,7 +95,6 @@ export default class extends Evented {
             document.getElementById(options.container) : options.container;
         me.secrets = options.secrets;
         me.modelOrigin = MercatorCoordinate.fromLngLat(options.center);
-        me.trainPopupObjects = [];
         me.exitPopups = [];
 
         me.clockControl = options.clockControl;
@@ -1103,7 +1088,6 @@ export default class extends Evented {
                 // because the adjustment for altitude is required
                 me.updatePopup();
             }
-            me.updateTrainPopup();
         });
 
         for (const plugin of me.plugins.slice().reverse()) {
@@ -1353,9 +1337,6 @@ export default class extends Evented {
             }
             if (tracked === car) {
                 me.trackObject(car);
-            }
-            if (hasAdCars(train)) {
-                me.showTrainPopup(car);
             }
             if (me.markedObject === car) {
                 car.outline = 1;
@@ -2210,7 +2191,6 @@ export default class extends Evented {
             `<strong>${dict['train-number']}:</strong> ${train.n}`,
             !train.timetable ? ` <span class="desc-caution">${dict['special']}</span>` : '',
             '<br>',
-            hasAdCars(train) ? `<span class="desc-ad-cars">${WITH_AD_CARS[lang]}</span><br>` : '',
             delay >= 60000 ? '<span class="desc-caution">' : '',
             '<strong>',
             dict[train.standing ? 'standing-at' : 'previous-stop'],
@@ -2333,7 +2313,6 @@ export default class extends Evented {
         if (cars) {
             for (const car of cars) {
                 me.trafficLayer.removeObject(car);
-                me.hideTrainPopup(car);
                 if (car === me.markedObject && !keep) {
                     me.markObject();
                 }
@@ -3303,8 +3282,6 @@ export default class extends Evented {
                 me.addStationOutline(object, 'stations-marked');
             }
         }
-
-        me.updateTrainPopup();
     }
 
     trackObject(object) {
@@ -3444,57 +3421,6 @@ export default class extends Evented {
                 me.fire(Object.assign({type: 'selection'}, object));
             }
         }
-    }
-
-    showTrainPopup(object) {
-        const me = this,
-            trainPopupObjects = me.trainPopupObjects;
-
-        if (trainPopupObjects.indexOf(object) !== -1) {
-            return;
-        }
-        object.popup = new AnimatedPopup({
-            className: 'popup-ad-cars',
-            closeButton: false,
-            closeOnClick: false,
-            offset: {
-                top: [0, 10],
-                bottom: [0, -30]
-            }
-        });
-        object.popup.setHTML('');
-        trainPopupObjects.push(object);
-        me.updateTrainPopup();
-    }
-
-    updateTrainPopup() {
-        const me = this,
-            markedObject = me.markedObject;
-
-        for (const object of me.trainPopupObjects) {
-            object.popup.setLngLat(me.adjustCoord(object.coord, object.altitude));
-            if (object !== markedObject && !object.popupVisible) {
-                object.popup.addTo(me.map);
-                object.popupVisible = true;
-            } else if (object === markedObject && object.popupVisible) {
-                object.popup.remove();
-                delete object.popupVisible;
-            }
-        }
-    }
-
-    hideTrainPopup(object) {
-        const me = this,
-            trainPopupObjects = me.trainPopupObjects,
-            index = trainPopupObjects.indexOf(object);
-
-        if (index === -1 || !object.popup) {
-            return;
-        }
-        object.popup.remove();
-        delete object.popup;
-        delete object.popupVisible;
-        trainPopupObjects.splice(index, 1);
     }
 
     showStationExits(stations) {
@@ -4042,8 +3968,4 @@ function isEqualObject(a, b) {
         return true;
     }
     return false;
-}
-
-function hasAdCars(train) {
-    return train.v && train.v.id === 'E235AD';
 }
