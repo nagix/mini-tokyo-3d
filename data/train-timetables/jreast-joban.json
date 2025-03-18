@@ -112,20 +112,20 @@
 	}],
 	"v": "E657"
 }, {
-	"id": "JR-East.Joban.2053M.Weekday",
-	"t": "JR-East.Joban.2053M",
+	"id": "JR-East.Joban.53M.Weekday",
+	"t": "JR-East.Joban.53M",
 	"r": "JR-East.Joban",
-	"n": "2053M",
+	"n": "53M",
 	"y": "JR-East.LimitedExpress",
 	"d": "Outbound",
 	"os": [
-		"JR-East.JobanRapid.Ueno"
+		"JR-East.JobanRapid.Shinagawa"
 	],
 	"ds": [
 		"JR-East.Joban.Katsuta"
 	],
 	"pt": [
-		"JR-East.JobanRapid.2053M.Weekday"
+		"JR-East.JobanRapid.53M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Kashiwa",
@@ -576,8 +576,8 @@
 		"d": "14:50"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
-		"a": "15:12",
-		"d": "15:12"
+		"a": "15:11",
+		"d": "15:11"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
 		"a": "15:22",
@@ -1272,7 +1272,7 @@
 		"d": "23:13"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
-		"a": "23:20"
+		"a": "23:18"
 	}],
 	"nm": [{
 		"ja": "ときわ 83号",
@@ -1431,7 +1431,7 @@
 		"JR-East.JobanRapid.Abiko"
 	],
 	"ds": [
-		"JR-East.Joban.Takahagi"
+		"JR-East.Joban.Katsuta"
 	],
 	"pt": [
 		"JR-East.JobanRapid.323M.Weekday"
@@ -1497,7 +1497,7 @@
 		"d": "07:38"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "07:44"
+		"a": "07:43"
 	}]
 }, {
 	"id": "JR-East.Joban.325M.Weekday",
@@ -1510,7 +1510,7 @@
 		"JR-East.JobanRapid.Ueno"
 	],
 	"ds": [
-		"JR-East.Joban.Mito"
+		"JR-East.Joban.Takahagi"
 	],
 	"pt": [
 		"JR-East.JobanRapid.325M.Weekday"
@@ -1548,35 +1548,35 @@
 		"d": "07:19"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "07:24",
+		"a": "07:23",
 		"d": "07:24"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "07:28",
+		"a": "07:27",
 		"d": "07:28"
 	}, {
 		"s": "JR-East.Joban.Hatori",
 		"a": "07:33",
-		"d": "07:34"
+		"d": "07:33"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "07:38",
+		"a": "07:37",
 		"d": "07:38"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
 		"a": "07:43",
-		"d": "07:44"
+		"d": "07:43"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "07:48",
-		"d": "07:48"
+		"a": "07:47",
+		"d": "07:47"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "07:52",
-		"d": "07:53"
+		"a": "07:51",
+		"d": "07:52"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "08:00"
+		"a": "07:58"
 	}]
 }, {
 	"id": "JR-East.Joban.327M.Weekday",
@@ -1600,22 +1600,22 @@
 	}, {
 		"s": "JR-East.Joban.Fujishiro",
 		"a": "07:14",
-		"d": "07:15"
+		"d": "07:14"
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
-		"a": "07:18",
-		"d": "07:19"
+		"a": "07:17",
+		"d": "07:18"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
-		"a": "07:23",
+		"a": "07:22",
 		"d": "07:23"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "07:27",
+		"a": "07:26",
 		"d": "07:27"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "07:30",
+		"a": "07:29",
 		"d": "07:30"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
@@ -1623,7 +1623,7 @@
 		"d": "07:36"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "07:40",
+		"a": "07:41",
 		"d": "07:41"
 	}, {
 		"s": "JR-East.Joban.Takahama",
@@ -2847,7 +2847,7 @@
 		"d": "14:51"
 	}, {
 		"s": "JR-East.Joban.Fujishiro",
-		"a": "14:56",
+		"a": "14:55",
 		"d": "14:56"
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
@@ -3029,39 +3029,39 @@
 		"d": "16:05"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "16:11",
-		"d": "16:21"
+		"a": "16:10",
+		"d": "16:10"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "16:26",
-		"d": "16:26"
+		"a": "16:17",
+		"d": "16:24"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "16:30",
-		"d": "16:30"
+		"a": "16:28",
+		"d": "16:29"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "16:35",
-		"d": "16:35"
+		"a": "16:34",
+		"d": "16:34"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "16:39",
-		"d": "16:40"
+		"a": "16:38",
+		"d": "16:39"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "16:45",
-		"d": "16:45"
+		"a": "16:43",
+		"d": "16:44"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "16:49",
-		"d": "16:49"
+		"a": "16:47",
+		"d": "16:48"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "16:53",
-		"d": "16:54"
+		"a": "16:52",
+		"d": "16:52"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "17:00"
+		"a": "16:59"
 	}]
 }, {
 	"id": "JR-East.Joban.3181M.Weekday",
@@ -3684,27 +3684,27 @@
 	}, {
 		"s": "JR-East.Joban.Ishioka",
 		"a": "19:05",
-		"d": "19:06"
+		"d": "19:05"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "19:11",
-		"d": "19:12"
+		"a": "19:10",
+		"d": "19:10"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "19:16",
-		"d": "19:17"
+		"a": "19:14",
+		"d": "19:15"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "19:22",
-		"d": "19:23"
+		"a": "19:23",
+		"d": "19:24"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "19:27",
-		"d": "19:27"
+		"a": "19:28",
+		"d": "19:29"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "19:32",
-		"d": "19:32"
+		"a": "19:33",
+		"d": "19:33"
 	}, {
 		"s": "JR-East.Joban.Mito",
 		"a": "19:39"
@@ -3720,7 +3720,7 @@
 		"JR-East.JobanRapid.Ueno"
 	],
 	"ds": [
-		"JR-East.Joban.Takahagi"
+		"JR-East.Joban.Katsuta"
 	],
 	"pt": [
 		"JR-East.JobanRapid.421M.Weekday"
@@ -3751,14 +3751,14 @@
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "19:02",
-		"d": "19:08"
+		"d": "19:10"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "19:13",
-		"d": "19:13"
+		"a": "19:14",
+		"d": "19:15"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "19:19",
+		"a": "19:21",
 		"d": "19:25"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
@@ -3786,7 +3786,7 @@
 		"d": "19:53"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "19:59"
+		"a": "19:58"
 	}]
 }, {
 	"id": "JR-East.Joban.1223M.Weekday",
@@ -3814,14 +3814,14 @@
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
 		"a": "18:58",
-		"d": "18:58"
+		"d": "18:59"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
-		"a": "19:02",
-		"d": "19:03"
+		"a": "19:03",
+		"d": "19:04"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "19:07",
+		"a": "19:08",
 		"d": "19:13"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
@@ -4519,38 +4519,38 @@
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "22:03",
-		"d": "22:04"
+		"d": "22:06"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "22:08",
-		"d": "22:09"
+		"a": "22:11",
+		"d": "22:11"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "22:14",
-		"d": "22:14"
+		"a": "22:16",
+		"d": "22:16"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "22:17",
-		"d": "22:18"
+		"a": "22:20",
+		"d": "22:20"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "22:23",
-		"d": "22:23"
+		"a": "22:25",
+		"d": "22:26"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "22:27",
-		"d": "22:28"
+		"a": "22:30",
+		"d": "22:31"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "22:35",
+		"a": "22:36",
 		"d": "22:36"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
 		"a": "22:40",
-		"d": "22:41"
+		"d": "22:40"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "22:45",
+		"a": "22:44",
 		"d": "22:45"
 	}, {
 		"s": "JR-East.Joban.Mito",
@@ -4625,14 +4625,14 @@
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
 		"a": "22:24",
-		"d": "22:24"
+		"d": "22:25"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
 		"a": "22:29",
-		"d": "22:29"
+		"d": "22:30"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "22:33",
+		"a": "22:34",
 		"d": "22:38"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
@@ -4755,50 +4755,50 @@
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
 		"a": "23:06",
-		"d": "23:06"
+		"d": "23:14"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "23:09",
-		"d": "23:09"
+		"a": "23:17",
+		"d": "23:18"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
-		"a": "23:15",
-		"d": "23:25"
+		"a": "23:23",
+		"d": "23:29"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "23:30",
-		"d": "23:30"
+		"a": "23:34",
+		"d": "23:34"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "23:35",
-		"d": "23:35"
-	}, {
-		"s": "JR-East.Joban.Ishioka",
 		"a": "23:39",
 		"d": "23:39"
 	}, {
+		"s": "JR-East.Joban.Ishioka",
+		"a": "23:43",
+		"d": "23:43"
+	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "23:44",
-		"d": "23:44"
+		"a": "23:48",
+		"d": "23:48"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "23:48",
-		"d": "23:49"
+		"a": "23:52",
+		"d": "23:53"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "23:54",
-		"d": "23:54"
-	}, {
-		"s": "JR-East.Joban.Uchihara",
 		"a": "23:58",
 		"d": "23:58"
 	}, {
-		"s": "JR-East.Joban.Akatsuka",
+		"s": "JR-East.Joban.Uchihara",
 		"a": "00:02",
-		"d": "00:03"
+		"d": "00:02"
+	}, {
+		"s": "JR-East.Joban.Akatsuka",
+		"a": "00:06",
+		"d": "00:07"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "00:08"
+		"a": "00:12"
 	}]
 }, {
 	"id": "JR-East.Joban.2455M.Weekday",
@@ -5199,22 +5199,22 @@
 	}, {
 		"s": "JR-East.Joban.Iwama",
 		"a": "11:08",
-		"d": "11:09"
+		"d": "11:08"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "11:15",
+		"a": "11:14",
 		"d": "11:15"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "11:20",
+		"a": "11:19",
 		"d": "11:20"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
 		"a": "11:25",
-		"d": "11:26"
+		"d": "11:25"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "11:33"
+		"a": "11:32"
 	}]
 }, {
 	"id": "JR-East.Joban.629M.Weekday",
@@ -5647,42 +5647,42 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Tsuchiura",
-		"d": "15:08"
+		"d": "15:14"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "15:14",
-		"d": "15:18"
+		"a": "15:19",
+		"d": "15:20"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "15:23",
-		"d": "15:24"
+		"a": "15:25",
+		"d": "15:25"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "15:27",
-		"d": "15:27"
+		"a": "15:28",
+		"d": "15:29"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "15:32",
-		"d": "15:33"
+		"a": "15:34",
+		"d": "15:34"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "15:37",
-		"d": "15:38"
+		"a": "15:38",
+		"d": "15:39"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "15:43",
-		"d": "15:43"
+		"a": "15:44",
+		"d": "15:44"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "15:47",
-		"d": "15:47"
+		"a": "15:48",
+		"d": "15:48"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "15:52",
-		"d": "15:52"
+		"a": "15:53",
+		"d": "15:53"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "15:58"
+		"a": "15:59"
 	}]
 }, {
 	"id": "JR-East.Joban.2723M.Weekday",
@@ -5733,18 +5733,18 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Tomobe",
-		"d": "07:34"
+		"d": "07:35"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "07:38",
-		"d": "07:39"
+		"a": "07:39",
+		"d": "07:40"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "07:44",
-		"d": "07:44"
+		"a": "07:45",
+		"d": "07:45"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "07:50"
+		"a": "07:52"
 	}]
 }, {
 	"id": "JR-East.Joban.2729M.Weekday",
@@ -5860,7 +5860,7 @@
 		"d": "10:09"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "10:13",
+		"a": "10:14",
 		"d": "10:14"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
@@ -6189,26 +6189,26 @@
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "06:01",
-		"d": "06:13"
+		"d": "06:15"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "06:18",
-		"d": "06:19"
+		"a": "06:20",
+		"d": "06:20"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "06:22",
-		"d": "06:22"
+		"a": "06:23",
+		"d": "06:23"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
-		"a": "06:26",
-		"d": "06:27"
+		"a": "06:27",
+		"d": "06:28"
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
 		"a": "06:31",
 		"d": "06:32"
 	}, {
 		"s": "JR-East.Joban.Fujishiro",
-		"a": "06:34",
+		"a": "06:35",
 		"d": "06:35"
 	}, {
 		"s": "JR-East.Joban.Toride",
@@ -6235,64 +6235,131 @@
 		"d": "05:37"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "05:43",
+		"a": "05:42",
 		"d": "05:43"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "05:48",
-		"d": "05:48"
+		"a": "05:47",
+		"d": "05:47"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "05:52",
-		"d": "05:53"
+		"a": "05:51",
+		"d": "05:52"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "05:58",
-		"d": "05:58"
+		"a": "05:57",
+		"d": "05:57"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "06:02",
-		"d": "06:03"
+		"a": "06:01",
+		"d": "06:01"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "06:07",
-		"d": "06:08"
+		"a": "06:06",
+		"d": "06:07"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "06:11",
-		"d": "06:11"
+		"a": "06:10",
+		"d": "06:10"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "06:16",
-		"d": "06:17"
+		"a": "06:15",
+		"d": "06:16"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "06:22",
-		"d": "06:28"
+		"d": "06:31"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "06:32",
-		"d": "06:33"
+		"a": "06:37",
+		"d": "06:37"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "06:35",
-		"d": "06:36"
-	}, {
-		"s": "JR-East.Joban.Ushiku",
-		"a": "06:39",
+		"a": "06:40",
 		"d": "06:40"
 	}, {
+		"s": "JR-East.Joban.Ushiku",
+		"a": "06:44",
+		"d": "06:45"
+	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
-		"a": "06:43",
-		"d": "06:44"
+		"a": "06:48",
+		"d": "06:49"
 	}, {
 		"s": "JR-East.Joban.Fujishiro",
-		"a": "06:46",
-		"d": "06:47"
+		"a": "06:52",
+		"d": "06:52"
 	}, {
 		"s": "JR-East.Joban.Toride",
-		"a": "06:51"
+		"a": "06:57"
 	}]
+}, {
+	"id": "JR-East.Joban.54M.Weekday",
+	"t": "JR-East.Joban.54M",
+	"r": "JR-East.Joban",
+	"n": "54M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.Joban.Katsuta"
+	],
+	"ds": [
+		"JR-East.JobanRapid.Shinagawa"
+	],
+	"nt": [
+		"JR-East.JobanRapid.54M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.Joban.Mito",
+		"d": "05:50"
+	}, {
+		"s": "JR-East.Joban.Akatsuka",
+		"a": "05:56",
+		"d": "05:56"
+	}, {
+		"s": "JR-East.Joban.Tomobe",
+		"a": "06:03",
+		"d": "06:03"
+	}, {
+		"s": "JR-East.Joban.Ishioka",
+		"a": "06:14",
+		"d": "06:15"
+	}, {
+		"s": "JR-East.Joban.Tsuchiura",
+		"a": "06:24",
+		"d": "06:25"
+	}, {
+		"s": "JR-East.Joban.Arakawaoki",
+		"a": "06:30",
+		"d": "06:31"
+	}, {
+		"s": "JR-East.Joban.Hitachinoushiku",
+		"a": "06:33",
+		"d": "06:34"
+	}, {
+		"s": "JR-East.Joban.Ushiku",
+		"a": "06:37",
+		"d": "06:38"
+	}, {
+		"s": "JR-East.Joban.Ryugasakishi",
+		"a": "06:42",
+		"d": "06:42"
+	}, {
+		"s": "JR-East.Joban.Kashiwa",
+		"a": "06:56",
+		"d": "06:57"
+	}, {
+		"s": "JR-East.Joban.Nippori",
+		"a": "07:23"
+	}],
+	"nm": [{
+		"ja": "ときわ 54号",
+		"en": "Tokiwa 54",
+		"ko": "토키와 54",
+		"zh-Hans": "常磐 54",
+		"zh-Hant": "常磐 54"
+	}],
+	"v": "E657"
 }, {
 	"id": "JR-East.Joban.330M.Weekday",
 	"t": "JR-East.Joban.330M",
@@ -6311,42 +6378,42 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
-		"d": "05:49"
+		"d": "05:53"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "05:54",
-		"d": "05:55"
-	}, {
-		"s": "JR-East.Joban.Uchihara",
 		"a": "05:59",
 		"d": "06:00"
 	}, {
-		"s": "JR-East.Joban.Tomobe",
+		"s": "JR-East.Joban.Uchihara",
 		"a": "06:04",
 		"d": "06:04"
 	}, {
+		"s": "JR-East.Joban.Tomobe",
+		"a": "06:08",
+		"d": "06:08"
+	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "06:09",
-		"d": "06:10"
+		"a": "06:13",
+		"d": "06:14"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "06:14",
-		"d": "06:19"
+		"a": "06:17",
+		"d": "06:18"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "06:24",
-		"d": "06:24"
+		"a": "06:22",
+		"d": "06:23"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "06:28",
-		"d": "06:28"
+		"a": "06:26",
+		"d": "06:27"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "06:33",
-		"d": "06:33"
+		"a": "06:31",
+		"d": "06:32"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
-		"a": "06:39",
+		"a": "06:38",
 		"d": "06:45"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
@@ -6372,73 +6439,6 @@
 		"s": "JR-East.Joban.Toride",
 		"a": "07:11"
 	}]
-}, {
-	"id": "JR-East.Joban.2054M.Weekday",
-	"t": "JR-East.Joban.2054M",
-	"r": "JR-East.Joban",
-	"n": "2054M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"JR-East.Joban.Katsuta"
-	],
-	"ds": [
-		"JR-East.JobanRapid.Ueno"
-	],
-	"nt": [
-		"JR-East.JobanRapid.2054M.Weekday"
-	],
-	"tt": [{
-		"s": "JR-East.Joban.Mito",
-		"d": "05:56"
-	}, {
-		"s": "JR-East.Joban.Akatsuka",
-		"a": "06:01",
-		"d": "06:02"
-	}, {
-		"s": "JR-East.Joban.Tomobe",
-		"a": "06:09",
-		"d": "06:10"
-	}, {
-		"s": "JR-East.Joban.Ishioka",
-		"a": "06:20",
-		"d": "06:21"
-	}, {
-		"s": "JR-East.Joban.Tsuchiura",
-		"a": "06:31",
-		"d": "06:31"
-	}, {
-		"s": "JR-East.Joban.Arakawaoki",
-		"a": "06:36",
-		"d": "06:36"
-	}, {
-		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "06:39",
-		"d": "06:39"
-	}, {
-		"s": "JR-East.Joban.Ushiku",
-		"a": "06:43",
-		"d": "06:43"
-	}, {
-		"s": "JR-East.Joban.Ryugasakishi",
-		"a": "06:47",
-		"d": "06:48"
-	}, {
-		"s": "JR-East.Joban.Kashiwa",
-		"a": "07:07",
-		"d": "07:07"
-	}, {
-		"s": "JR-East.Joban.Nippori",
-		"a": "07:33"
-	}],
-	"nm": [{
-		"ja": "ときわ 54号",
-		"en": "Tokiwa 54",
-		"ko": "토키와 54",
-		"zh-Hans": "常磐 54",
-		"zh-Hant": "常磐 54"
-	}],
-	"v": "E657"
 }, {
 	"id": "JR-East.Joban.2728M.Weekday",
 	"t": "JR-East.Joban.2728M",
@@ -6763,20 +6763,20 @@
 		"a": "08:02"
 	}]
 }, {
-	"id": "JR-East.Joban.734M.Weekday",
-	"t": "JR-East.Joban.734M",
+	"id": "JR-East.Joban.2734M.Weekday",
+	"t": "JR-East.Joban.2734M",
 	"r": "JR-East.Joban",
-	"n": "734M",
+	"n": "2734M",
 	"y": "JR-East.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.Joban.Katsuta"
+		"JR-East.Joban.Takahagi"
 	],
 	"ds": [
 		"JR-East.Mito.Oyama"
 	],
 	"nt": [
-		"JR-East.Mito.734M.Weekday"
+		"JR-East.Mito.2734M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
@@ -6818,7 +6818,7 @@
 		"d": "07:32"
 	}, {
 		"s": "JR-East.Joban.Ueno",
-		"a": "08:34"
+		"a": "08:35"
 	}],
 	"nm": [{
 		"ja": "ひたち 2号",
@@ -6836,7 +6836,7 @@
 	"y": "JR-East.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.Joban.Takahagi"
+		"JR-East.Joban.Katsuta"
 	],
 	"ds": [
 		"JR-East.JobanRapid.Shinagawa"
@@ -7059,10 +7059,10 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
-		"d": "07:35"
+		"d": "07:36"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "07:41",
+		"a": "07:42",
 		"d": "07:42"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
@@ -7194,7 +7194,7 @@
 	"y": "JR-East.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.Joban.Mito"
+		"JR-East.Joban.Katsuta"
 	],
 	"ds": [
 		"JR-East.JobanRapid.Shinagawa"
@@ -7319,22 +7319,22 @@
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "09:28",
-		"d": "09:44"
+		"d": "09:45"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "09:49",
-		"d": "09:50"
+		"a": "09:50",
+		"d": "09:51"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "09:52",
-		"d": "09:53"
+		"a": "09:53",
+		"d": "09:54"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
-		"a": "09:56",
-		"d": "09:57"
+		"a": "09:57",
+		"d": "09:58"
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
-		"a": "10:01",
+		"a": "10:02",
 		"d": "10:07"
 	}, {
 		"s": "JR-East.Joban.Fujishiro",
@@ -7436,38 +7436,38 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
-		"d": "09:08"
+		"d": "09:11"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "09:13",
-		"d": "09:14"
+		"a": "09:17",
+		"d": "09:17"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "09:18",
-		"d": "09:18"
+		"a": "09:21",
+		"d": "09:22"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "09:22",
-		"d": "09:23"
+		"a": "09:25",
+		"d": "09:26"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "09:27",
-		"d": "09:28"
+		"a": "09:31",
+		"d": "09:31"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "09:32",
-		"d": "09:32"
+		"a": "09:35",
+		"d": "09:35"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "09:37",
-		"d": "09:37"
+		"a": "09:40",
+		"d": "09:40"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "09:41",
-		"d": "09:41"
+		"a": "09:44",
+		"d": "09:44"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "09:47",
+		"a": "09:50",
 		"d": "09:53"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
@@ -7641,7 +7641,7 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
-		"d": "10:02"
+		"d": "10:03"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
 		"a": "10:09",
@@ -7934,11 +7934,11 @@
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
 		"a": "11:43",
-		"d": "11:43"
+		"d": "11:44"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
 		"a": "11:48",
-		"d": "11:48"
+		"d": "11:49"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
 		"a": "11:53",
@@ -8226,15 +8226,15 @@
 		"d": "13:32"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "13:37",
-		"d": "13:37"
+		"a": "13:38",
+		"d": "13:50"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "13:41",
-		"d": "13:42"
+		"a": "13:55",
+		"d": "13:55"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "13:48",
+		"a": "14:01",
 		"d": "14:02"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
@@ -8381,15 +8381,15 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
-		"d": "14:04"
+		"d": "14:05"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "14:10",
-		"d": "14:10"
+		"a": "14:11",
+		"d": "14:11"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
 		"a": "14:15",
-		"d": "14:15"
+		"d": "14:16"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
 		"a": "14:20",
@@ -8400,23 +8400,23 @@
 		"d": "14:27"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "14:31",
-		"d": "14:32"
+		"a": "14:32",
+		"d": "14:33"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "14:37",
-		"d": "14:37"
+		"a": "14:40",
+		"d": "14:50"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "14:41",
-		"d": "14:42"
+		"a": "14:54",
+		"d": "14:54"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "14:48",
-		"d": "14:53"
+		"a": "14:59",
+		"d": "15:00"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
-		"a": "15:00"
+		"a": "15:06"
 	}]
 }, {
 	"id": "JR-East.Joban.16M.Weekday",
@@ -8618,7 +8618,7 @@
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
 		"a": "15:19",
-		"d": "15:19"
+		"d": "15:20"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
 		"a": "15:24",
@@ -8809,7 +8809,7 @@
 		"d": "16:16"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "16:19",
+		"a": "16:20",
 		"d": "16:20"
 	}, {
 		"s": "JR-East.Joban.Iwama",
@@ -8818,11 +8818,11 @@
 	}, {
 		"s": "JR-East.Joban.Hatori",
 		"a": "16:29",
-		"d": "16:29"
+		"d": "16:30"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
 		"a": "16:34",
-		"d": "16:34"
+		"d": "16:35"
 	}, {
 		"s": "JR-East.Joban.Takahama",
 		"a": "16:38",
@@ -8830,7 +8830,7 @@
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
 		"a": "16:43",
-		"d": "16:43"
+		"d": "16:44"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "16:49",
@@ -9525,18 +9525,18 @@
 	}, {
 		"s": "JR-East.Joban.Tomobe",
 		"a": "18:52",
-		"d": "18:52"
+		"d": "18:53"
 	}, {
 		"s": "JR-East.Joban.Iwama",
 		"a": "18:57",
 		"d": "18:58"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "19:01",
+		"a": "19:02",
 		"d": "19:02"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "19:06",
+		"a": "19:07",
 		"d": "19:07"
 	}, {
 		"s": "JR-East.Joban.Takahama",
@@ -9544,7 +9544,7 @@
 		"d": "19:11"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "19:15",
+		"a": "19:16",
 		"d": "19:16"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
@@ -9752,19 +9752,19 @@
 		"d": "19:40"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "19:45",
+		"a": "19:46",
 		"d": "19:46"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
 		"a": "19:50",
-		"d": "19:50"
+		"d": "19:51"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
 		"a": "19:54",
 		"d": "19:55"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "19:59",
+		"a": "20:00",
 		"d": "20:00"
 	}, {
 		"s": "JR-East.Joban.Hatori",
@@ -9922,30 +9922,30 @@
 	}, {
 		"s": "JR-East.Joban.Hatori",
 		"a": "20:40",
-		"d": "20:46"
+		"d": "20:47"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "20:51",
-		"d": "20:52"
+		"a": "20:52",
+		"d": "20:53"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "20:56",
-		"d": "20:56"
+		"a": "20:57",
+		"d": "20:57"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "21:02",
-		"d": "21:02"
+		"a": "21:03",
+		"d": "21:03"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
-		"a": "21:09",
-		"d": "21:17"
+		"a": "21:11",
+		"d": "21:18"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "21:22",
-		"d": "21:22"
+		"a": "21:23",
+		"d": "21:23"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "21:26",
+		"a": "21:27",
 		"d": "21:32"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
@@ -10326,35 +10326,35 @@
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
 		"a": "22:01",
-		"d": "22:01"
+		"d": "22:02"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "22:05",
+		"a": "22:06",
 		"d": "22:06"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "22:09",
+		"a": "22:10",
 		"d": "22:10"
 	}, {
 		"s": "JR-East.Joban.Iwama",
 		"a": "22:15",
-		"d": "22:15"
+		"d": "22:16"
 	}, {
 		"s": "JR-East.Joban.Hatori",
 		"a": "22:19",
-		"d": "22:19"
+		"d": "22:20"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
 		"a": "22:24",
-		"d": "22:24"
+		"d": "22:25"
 	}, {
 		"s": "JR-East.Joban.Takahama",
 		"a": "22:28",
-		"d": "22:28"
+		"d": "22:29"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
 		"a": "22:33",
-		"d": "22:33"
+		"d": "22:34"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "22:39",
@@ -10405,7 +10405,7 @@
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
 		"a": "22:36",
-		"d": "22:36"
+		"d": "22:37"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
 		"a": "22:41",
@@ -10657,27 +10657,27 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Tsuchiura",
-		"d": "06:36"
+		"d": "06:40"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "06:42",
-		"d": "06:43"
+		"a": "06:44",
+		"d": "06:45"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "06:46",
-		"d": "06:46"
+		"a": "06:47",
+		"d": "06:48"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
-		"a": "06:50",
-		"d": "06:51"
+		"a": "06:51",
+		"d": "06:52"
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
-		"a": "06:55",
-		"d": "06:56"
+		"a": "06:56",
+		"d": "06:57"
 	}, {
 		"s": "JR-East.Joban.Fujishiro",
 		"a": "06:59",
-		"d": "06:59"
+		"d": "07:00"
 	}, {
 		"s": "JR-East.Joban.Toride",
 		"a": "07:05"
@@ -12087,11 +12087,11 @@
 		"d": "22:13"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
-		"a": "22:16",
+		"a": "22:17",
 		"d": "22:17"
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
-		"a": "22:21",
+		"a": "22:22",
 		"d": "22:22"
 	}, {
 		"s": "JR-East.Joban.Fujishiro",
@@ -12124,10 +12124,6 @@
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "07:41",
 		"d": "07:42"
-	}, {
-		"s": "JR-East.Joban.Ishioka",
-		"a": "07:51",
-		"d": "07:52"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
 		"a": "08:01",
@@ -12211,13 +12207,9 @@
 		"a": "08:49",
 		"d": "08:50"
 	}, {
-		"s": "JR-East.Joban.Ishioka",
-		"a": "09:00",
-		"d": "09:00"
-	}, {
 		"s": "JR-East.Joban.Kairakuen",
 		"a": "09:17",
-		"d": "09:17"
+		"d": "09:18"
 	}, {
 		"s": "JR-East.Joban.Mito",
 		"a": "09:18"
@@ -12263,7 +12255,7 @@
 		"d": "09:39"
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
-		"a": "09:47",
+		"a": "09:48",
 		"d": "09:48"
 	}, {
 		"s": "JR-East.Joban.Mito",
@@ -12299,7 +12291,7 @@
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
 		"a": "10:14",
-		"d": "10:14"
+		"d": "10:15"
 	}, {
 		"s": "JR-East.Joban.Mito",
 		"a": "10:16"
@@ -12345,7 +12337,7 @@
 		"d": "10:37"
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
-		"a": "10:45",
+		"a": "10:46",
 		"d": "10:46"
 	}, {
 		"s": "JR-East.Joban.Mito",
@@ -12380,7 +12372,7 @@
 		"d": "10:00"
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
-		"a": "11:03",
+		"a": "11:04",
 		"d": "11:04"
 	}, {
 		"s": "JR-East.Joban.Mito",
@@ -12428,7 +12420,7 @@
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
 		"a": "11:46",
-		"d": "11:46"
+		"d": "11:47"
 	}, {
 		"s": "JR-East.Joban.Mito",
 		"a": "11:48"
@@ -12462,7 +12454,7 @@
 		"d": "11:00"
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
-		"a": "12:04",
+		"a": "12:05",
 		"d": "12:05"
 	}, {
 		"s": "JR-East.Joban.Mito",
@@ -12510,7 +12502,7 @@
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
 		"a": "12:42",
-		"d": "12:42"
+		"d": "12:43"
 	}, {
 		"s": "JR-East.Joban.Mito",
 		"a": "12:44"
@@ -12544,7 +12536,7 @@
 		"d": "12:00"
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
-		"a": "13:04",
+		"a": "13:05",
 		"d": "13:05"
 	}, {
 		"s": "JR-East.Joban.Mito",
@@ -12592,7 +12584,7 @@
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
 		"a": "13:42",
-		"d": "13:42"
+		"d": "13:43"
 	}, {
 		"s": "JR-East.Joban.Mito",
 		"a": "13:44"
@@ -12627,7 +12619,7 @@
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
 		"a": "14:04",
-		"d": "14:04"
+		"d": "14:05"
 	}, {
 		"s": "JR-East.Joban.Mito",
 		"a": "14:05"
@@ -12674,7 +12666,7 @@
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
 		"a": "14:42",
-		"d": "14:42"
+		"d": "14:43"
 	}, {
 		"s": "JR-East.Joban.Mito",
 		"a": "14:44"
@@ -12709,7 +12701,7 @@
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
 		"a": "15:06",
-		"d": "15:06"
+		"d": "15:07"
 	}, {
 		"s": "JR-East.Joban.Mito",
 		"a": "15:08"
@@ -12743,8 +12735,8 @@
 		"d": "14:50"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
-		"a": "15:12",
-		"d": "15:12"
+		"a": "15:11",
+		"d": "15:11"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
 		"a": "15:22",
@@ -12756,7 +12748,7 @@
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
 		"a": "15:43",
-		"d": "15:43"
+		"d": "15:44"
 	}, {
 		"s": "JR-East.Joban.Mito",
 		"a": "15:45"
@@ -12789,12 +12781,8 @@
 		"s": "JR-East.Joban.Ueno",
 		"d": "15:00"
 	}, {
-		"s": "JR-East.Joban.Tsuchiura",
-		"a": "15:39",
-		"d": "15:40"
-	}, {
 		"s": "JR-East.Joban.Kairakuen",
-		"a": "16:04",
+		"a": "16:05",
 		"d": "16:05"
 	}, {
 		"s": "JR-East.Joban.Mito",
@@ -13040,49 +13028,6 @@
 		"ko": "히타치 23",
 		"zh-Hans": "常陆 23",
 		"zh-Hant": "常陸 23"
-	}],
-	"v": "E657"
-}, {
-	"id": "JR-East.Joban.9095M.SaturdayHoliday",
-	"t": "JR-East.Joban.9095M",
-	"r": "JR-East.Joban",
-	"n": "9095M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Outbound",
-	"os": [
-		"JR-East.JobanRapid.Ueno"
-	],
-	"ds": [
-		"JR-East.Joban.Katsuta"
-	],
-	"pt": [
-		"JR-East.JobanRapid.9095M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.Joban.Kashiwa",
-		"d": "18:38"
-	}, {
-		"s": "JR-East.Joban.Tsuchiura",
-		"a": "18:58",
-		"d": "18:59"
-	}, {
-		"s": "JR-East.Joban.Ishioka",
-		"a": "19:09",
-		"d": "19:09"
-	}, {
-		"s": "JR-East.Joban.Tomobe",
-		"a": "19:20",
-		"d": "19:21"
-	}, {
-		"s": "JR-East.Joban.Mito",
-		"a": "19:30"
-	}],
-	"nm": [{
-		"ja": "ときわ 95号",
-		"en": "Tokiwa 95",
-		"ko": "토키와 95",
-		"zh-Hans": "常磐 95",
-		"zh-Hant": "常磐 95"
 	}],
 	"v": "E657"
 }, {
@@ -13494,7 +13439,7 @@
 		"d": "23:13"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
-		"a": "23:20"
+		"a": "23:18"
 	}],
 	"nm": [{
 		"ja": "ときわ 83号",
@@ -13653,7 +13598,7 @@
 		"JR-East.JobanRapid.Abiko"
 	],
 	"ds": [
-		"JR-East.Joban.Takahagi"
+		"JR-East.Joban.Katsuta"
 	],
 	"pt": [
 		"JR-East.JobanRapid.323M.SaturdayHoliday"
@@ -13719,7 +13664,7 @@
 		"d": "07:38"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "07:44"
+		"a": "07:43"
 	}]
 }, {
 	"id": "JR-East.Joban.325M.SaturdayHoliday",
@@ -13732,7 +13677,7 @@
 		"JR-East.JobanRapid.Ueno"
 	],
 	"ds": [
-		"JR-East.Joban.Mito"
+		"JR-East.Joban.Takahagi"
 	],
 	"pt": [
 		"JR-East.JobanRapid.325M.SaturdayHoliday"
@@ -13770,35 +13715,35 @@
 		"d": "07:19"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "07:24",
+		"a": "07:23",
 		"d": "07:24"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "07:28",
+		"a": "07:27",
 		"d": "07:28"
 	}, {
 		"s": "JR-East.Joban.Hatori",
 		"a": "07:33",
-		"d": "07:34"
+		"d": "07:33"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "07:38",
+		"a": "07:37",
 		"d": "07:38"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
 		"a": "07:43",
-		"d": "07:44"
+		"d": "07:43"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "07:48",
-		"d": "07:48"
+		"a": "07:47",
+		"d": "07:47"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "07:52",
-		"d": "07:53"
+		"a": "07:51",
+		"d": "07:52"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "08:00"
+		"a": "07:58"
 	}]
 }, {
 	"id": "JR-East.Joban.327M.SaturdayHoliday",
@@ -13822,22 +13767,22 @@
 	}, {
 		"s": "JR-East.Joban.Fujishiro",
 		"a": "07:14",
-		"d": "07:15"
+		"d": "07:14"
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
-		"a": "07:18",
-		"d": "07:19"
+		"a": "07:17",
+		"d": "07:18"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
-		"a": "07:23",
+		"a": "07:22",
 		"d": "07:23"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "07:27",
+		"a": "07:26",
 		"d": "07:27"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "07:30",
+		"a": "07:29",
 		"d": "07:30"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
@@ -13845,7 +13790,7 @@
 		"d": "07:36"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "07:40",
+		"a": "07:41",
 		"d": "07:41"
 	}, {
 		"s": "JR-East.Joban.Takahama",
@@ -15038,7 +14983,7 @@
 		"d": "14:51"
 	}, {
 		"s": "JR-East.Joban.Fujishiro",
-		"a": "14:56",
+		"a": "14:55",
 		"d": "14:56"
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
@@ -15228,39 +15173,39 @@
 		"d": "16:05"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "16:11",
-		"d": "16:21"
+		"a": "16:10",
+		"d": "16:10"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "16:26",
-		"d": "16:26"
+		"a": "16:17",
+		"d": "16:24"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "16:30",
-		"d": "16:30"
+		"a": "16:28",
+		"d": "16:29"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "16:35",
-		"d": "16:35"
+		"a": "16:34",
+		"d": "16:34"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "16:39",
-		"d": "16:40"
+		"a": "16:38",
+		"d": "16:39"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "16:45",
-		"d": "16:45"
+		"a": "16:43",
+		"d": "16:44"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "16:49",
-		"d": "16:49"
+		"a": "16:47",
+		"d": "16:48"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "16:53",
-		"d": "16:54"
+		"a": "16:52",
+		"d": "16:52"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "17:00"
+		"a": "16:59"
 	}]
 }, {
 	"id": "JR-East.Joban.3181M.SaturdayHoliday",
@@ -15883,27 +15828,27 @@
 	}, {
 		"s": "JR-East.Joban.Ishioka",
 		"a": "19:05",
-		"d": "19:06"
+		"d": "19:05"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "19:11",
-		"d": "19:12"
+		"a": "19:10",
+		"d": "19:10"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "19:16",
-		"d": "19:17"
+		"a": "19:14",
+		"d": "19:15"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "19:22",
-		"d": "19:23"
+		"a": "19:23",
+		"d": "19:24"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "19:27",
-		"d": "19:27"
+		"a": "19:28",
+		"d": "19:29"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "19:32",
-		"d": "19:32"
+		"a": "19:33",
+		"d": "19:33"
 	}, {
 		"s": "JR-East.Joban.Mito",
 		"a": "19:39"
@@ -15919,7 +15864,7 @@
 		"JR-East.JobanRapid.Ueno"
 	],
 	"ds": [
-		"JR-East.Joban.Takahagi"
+		"JR-East.Joban.Katsuta"
 	],
 	"pt": [
 		"JR-East.JobanRapid.421M.SaturdayHoliday"
@@ -15950,14 +15895,14 @@
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "18:59",
-		"d": "19:08"
+		"d": "19:10"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "19:13",
-		"d": "19:13"
+		"a": "19:14",
+		"d": "19:15"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "19:19",
+		"a": "19:21",
 		"d": "19:25"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
@@ -15985,7 +15930,7 @@
 		"d": "19:53"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "19:59"
+		"a": "19:58"
 	}]
 }, {
 	"id": "JR-East.Joban.1223M.SaturdayHoliday",
@@ -16013,14 +15958,14 @@
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
 		"a": "18:58",
-		"d": "18:58"
+		"d": "18:59"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
-		"a": "19:02",
-		"d": "19:03"
+		"a": "19:03",
+		"d": "19:04"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "19:07",
+		"a": "19:08",
 		"d": "19:13"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
@@ -16718,38 +16663,38 @@
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "22:03",
-		"d": "22:04"
+		"d": "22:06"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "22:08",
-		"d": "22:09"
+		"a": "22:11",
+		"d": "22:11"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "22:14",
-		"d": "22:14"
+		"a": "22:16",
+		"d": "22:16"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "22:17",
-		"d": "22:18"
+		"a": "22:20",
+		"d": "22:20"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "22:23",
-		"d": "22:23"
+		"a": "22:25",
+		"d": "22:26"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "22:27",
-		"d": "22:28"
+		"a": "22:30",
+		"d": "22:31"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "22:35",
+		"a": "22:36",
 		"d": "22:36"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
 		"a": "22:40",
-		"d": "22:41"
+		"d": "22:40"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "22:45",
+		"a": "22:44",
 		"d": "22:45"
 	}, {
 		"s": "JR-East.Joban.Mito",
@@ -16824,14 +16769,14 @@
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
 		"a": "22:24",
-		"d": "22:24"
+		"d": "22:25"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
 		"a": "22:29",
-		"d": "22:29"
+		"d": "22:30"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "22:33",
+		"a": "22:34",
 		"d": "22:38"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
@@ -16954,50 +16899,50 @@
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
 		"a": "23:06",
-		"d": "23:06"
+		"d": "23:14"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "23:09",
-		"d": "23:09"
+		"a": "23:17",
+		"d": "23:18"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
-		"a": "23:15",
-		"d": "23:25"
+		"a": "23:23",
+		"d": "23:29"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "23:30",
-		"d": "23:30"
+		"a": "23:34",
+		"d": "23:34"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "23:35",
-		"d": "23:35"
-	}, {
-		"s": "JR-East.Joban.Ishioka",
 		"a": "23:39",
 		"d": "23:39"
 	}, {
+		"s": "JR-East.Joban.Ishioka",
+		"a": "23:43",
+		"d": "23:43"
+	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "23:44",
-		"d": "23:44"
+		"a": "23:48",
+		"d": "23:48"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "23:48",
-		"d": "23:49"
+		"a": "23:52",
+		"d": "23:53"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "23:54",
-		"d": "23:54"
-	}, {
-		"s": "JR-East.Joban.Uchihara",
 		"a": "23:58",
 		"d": "23:58"
 	}, {
-		"s": "JR-East.Joban.Akatsuka",
+		"s": "JR-East.Joban.Uchihara",
 		"a": "00:02",
-		"d": "00:03"
+		"d": "00:02"
+	}, {
+		"s": "JR-East.Joban.Akatsuka",
+		"a": "00:06",
+		"d": "00:07"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "00:08"
+		"a": "00:12"
 	}]
 }, {
 	"id": "JR-East.Joban.2455M.SaturdayHoliday",
@@ -17402,26 +17347,26 @@
 	}, {
 		"s": "JR-East.Joban.Iwama",
 		"a": "11:08",
-		"d": "11:09"
+		"d": "11:08"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "11:15",
+		"a": "11:14",
 		"d": "11:15"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "11:20",
+		"a": "11:19",
 		"d": "11:20"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
 		"a": "11:25",
-		"d": "11:26"
+		"d": "11:25"
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
 		"a": "11:29",
-		"d": "11:30"
+		"d": "11:29"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "11:33"
+		"a": "11:32"
 	}]
 }, {
 	"id": "JR-East.Joban.629M.SaturdayHoliday",
@@ -17886,46 +17831,46 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Tsuchiura",
-		"d": "15:08"
+		"d": "15:14"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "15:14",
-		"d": "15:18"
+		"a": "15:19",
+		"d": "15:20"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "15:23",
-		"d": "15:24"
+		"a": "15:25",
+		"d": "15:25"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "15:27",
-		"d": "15:27"
+		"a": "15:28",
+		"d": "15:29"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "15:32",
-		"d": "15:33"
+		"a": "15:34",
+		"d": "15:34"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "15:37",
-		"d": "15:38"
+		"a": "15:38",
+		"d": "15:39"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "15:43",
-		"d": "15:43"
+		"a": "15:44",
+		"d": "15:44"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "15:47",
-		"d": "15:47"
+		"a": "15:48",
+		"d": "15:48"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "15:52",
-		"d": "15:52"
+		"a": "15:53",
+		"d": "15:53"
 	}, {
 		"s": "JR-East.Joban.Kairakuen",
-		"a": "15:56",
-		"d": "15:56"
+		"a": "15:57",
+		"d": "15:57"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "15:58"
+		"a": "15:59"
 	}]
 }, {
 	"id": "JR-East.Joban.2723M.SaturdayHoliday",
@@ -17976,18 +17921,18 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Tomobe",
-		"d": "07:34"
+		"d": "07:35"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "07:38",
-		"d": "07:39"
+		"a": "07:39",
+		"d": "07:40"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "07:44",
-		"d": "07:44"
+		"a": "07:45",
+		"d": "07:45"
 	}, {
 		"s": "JR-East.Joban.Mito",
-		"a": "07:50"
+		"a": "07:52"
 	}]
 }, {
 	"id": "JR-East.Joban.2729M.SaturdayHoliday",
@@ -18107,7 +18052,7 @@
 		"d": "10:09"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "10:13",
+		"a": "10:14",
 		"d": "10:14"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
@@ -18444,26 +18389,26 @@
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "06:01",
-		"d": "06:13"
+		"d": "06:15"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "06:18",
-		"d": "06:19"
+		"a": "06:20",
+		"d": "06:20"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "06:22",
-		"d": "06:22"
+		"a": "06:23",
+		"d": "06:23"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
-		"a": "06:26",
-		"d": "06:27"
+		"a": "06:27",
+		"d": "06:28"
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
 		"a": "06:31",
 		"d": "06:32"
 	}, {
 		"s": "JR-East.Joban.Fujishiro",
-		"a": "06:34",
+		"a": "06:35",
 		"d": "06:35"
 	}, {
 		"s": "JR-East.Joban.Toride",
@@ -18490,64 +18435,131 @@
 		"d": "05:37"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "05:43",
+		"a": "05:42",
 		"d": "05:43"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "05:48",
-		"d": "05:48"
+		"a": "05:47",
+		"d": "05:47"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "05:52",
-		"d": "05:53"
+		"a": "05:51",
+		"d": "05:52"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "05:58",
-		"d": "05:58"
+		"a": "05:57",
+		"d": "05:57"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "06:02",
-		"d": "06:03"
+		"a": "06:01",
+		"d": "06:01"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "06:07",
-		"d": "06:08"
+		"a": "06:06",
+		"d": "06:07"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "06:11",
-		"d": "06:11"
+		"a": "06:10",
+		"d": "06:10"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "06:16",
-		"d": "06:17"
+		"a": "06:15",
+		"d": "06:16"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "06:22",
-		"d": "06:28"
+		"d": "06:31"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "06:32",
-		"d": "06:33"
+		"a": "06:37",
+		"d": "06:37"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "06:35",
-		"d": "06:36"
-	}, {
-		"s": "JR-East.Joban.Ushiku",
-		"a": "06:39",
+		"a": "06:40",
 		"d": "06:40"
 	}, {
+		"s": "JR-East.Joban.Ushiku",
+		"a": "06:44",
+		"d": "06:45"
+	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
-		"a": "06:43",
-		"d": "06:44"
+		"a": "06:48",
+		"d": "06:49"
 	}, {
 		"s": "JR-East.Joban.Fujishiro",
-		"a": "06:46",
-		"d": "06:47"
+		"a": "06:52",
+		"d": "06:52"
 	}, {
 		"s": "JR-East.Joban.Toride",
-		"a": "06:52"
+		"a": "06:57"
 	}]
+}, {
+	"id": "JR-East.Joban.54M.SaturdayHoliday",
+	"t": "JR-East.Joban.54M",
+	"r": "JR-East.Joban",
+	"n": "54M",
+	"y": "JR-East.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-East.Joban.Katsuta"
+	],
+	"ds": [
+		"JR-East.JobanRapid.Shinagawa"
+	],
+	"nt": [
+		"JR-East.JobanRapid.54M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.Joban.Mito",
+		"d": "05:50"
+	}, {
+		"s": "JR-East.Joban.Akatsuka",
+		"a": "05:56",
+		"d": "05:56"
+	}, {
+		"s": "JR-East.Joban.Tomobe",
+		"a": "06:03",
+		"d": "06:03"
+	}, {
+		"s": "JR-East.Joban.Ishioka",
+		"a": "06:14",
+		"d": "06:15"
+	}, {
+		"s": "JR-East.Joban.Tsuchiura",
+		"a": "06:24",
+		"d": "06:25"
+	}, {
+		"s": "JR-East.Joban.Arakawaoki",
+		"a": "06:30",
+		"d": "06:31"
+	}, {
+		"s": "JR-East.Joban.Hitachinoushiku",
+		"a": "06:33",
+		"d": "06:34"
+	}, {
+		"s": "JR-East.Joban.Ushiku",
+		"a": "06:37",
+		"d": "06:38"
+	}, {
+		"s": "JR-East.Joban.Ryugasakishi",
+		"a": "06:42",
+		"d": "06:42"
+	}, {
+		"s": "JR-East.Joban.Kashiwa",
+		"a": "06:56",
+		"d": "06:57"
+	}, {
+		"s": "JR-East.Joban.Nippori",
+		"a": "07:23"
+	}],
+	"nm": [{
+		"ja": "ときわ 54号",
+		"en": "Tokiwa 54",
+		"ko": "토키와 54",
+		"zh-Hans": "常磐 54",
+		"zh-Hant": "常磐 54"
+	}],
+	"v": "E657"
 }, {
 	"id": "JR-East.Joban.330M.SaturdayHoliday",
 	"t": "JR-East.Joban.330M",
@@ -18566,42 +18578,42 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
-		"d": "05:49"
+		"d": "05:53"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "05:54",
-		"d": "05:55"
-	}, {
-		"s": "JR-East.Joban.Uchihara",
 		"a": "05:59",
 		"d": "06:00"
 	}, {
-		"s": "JR-East.Joban.Tomobe",
+		"s": "JR-East.Joban.Uchihara",
 		"a": "06:04",
 		"d": "06:04"
 	}, {
+		"s": "JR-East.Joban.Tomobe",
+		"a": "06:08",
+		"d": "06:08"
+	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "06:09",
-		"d": "06:10"
+		"a": "06:13",
+		"d": "06:14"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "06:14",
-		"d": "06:19"
+		"a": "06:17",
+		"d": "06:18"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "06:24",
-		"d": "06:24"
+		"a": "06:22",
+		"d": "06:23"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "06:28",
-		"d": "06:28"
+		"a": "06:26",
+		"d": "06:27"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "06:33",
-		"d": "06:33"
+		"a": "06:31",
+		"d": "06:32"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
-		"a": "06:39",
+		"a": "06:38",
 		"d": "06:55"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
@@ -18627,73 +18639,6 @@
 		"s": "JR-East.Joban.Toride",
 		"a": "07:23"
 	}]
-}, {
-	"id": "JR-East.Joban.54M.SaturdayHoliday",
-	"t": "JR-East.Joban.54M",
-	"r": "JR-East.Joban",
-	"n": "54M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Inbound",
-	"os": [
-		"JR-East.Joban.Katsuta"
-	],
-	"ds": [
-		"JR-East.JobanRapid.Shinagawa"
-	],
-	"nt": [
-		"JR-East.JobanRapid.54M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.Joban.Mito",
-		"d": "05:56"
-	}, {
-		"s": "JR-East.Joban.Akatsuka",
-		"a": "06:01",
-		"d": "06:02"
-	}, {
-		"s": "JR-East.Joban.Tomobe",
-		"a": "06:09",
-		"d": "06:10"
-	}, {
-		"s": "JR-East.Joban.Ishioka",
-		"a": "06:20",
-		"d": "06:21"
-	}, {
-		"s": "JR-East.Joban.Tsuchiura",
-		"a": "06:31",
-		"d": "06:31"
-	}, {
-		"s": "JR-East.Joban.Arakawaoki",
-		"a": "06:36",
-		"d": "06:36"
-	}, {
-		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "06:39",
-		"d": "06:39"
-	}, {
-		"s": "JR-East.Joban.Ushiku",
-		"a": "06:43",
-		"d": "06:43"
-	}, {
-		"s": "JR-East.Joban.Ryugasakishi",
-		"a": "06:47",
-		"d": "06:48"
-	}, {
-		"s": "JR-East.Joban.Kashiwa",
-		"a": "07:02",
-		"d": "07:03"
-	}, {
-		"s": "JR-East.Joban.Nippori",
-		"a": "07:26"
-	}],
-	"nm": [{
-		"ja": "ときわ 54号",
-		"en": "Tokiwa 54",
-		"ko": "토키와 54",
-		"zh-Hans": "常磐 54",
-		"zh-Hant": "常磐 54"
-	}],
-	"v": "E657"
 }, {
 	"id": "JR-East.Joban.2728M.SaturdayHoliday",
 	"t": "JR-East.Joban.2728M",
@@ -18991,20 +18936,20 @@
 		"a": "07:59"
 	}]
 }, {
-	"id": "JR-East.Joban.734M.SaturdayHoliday",
-	"t": "JR-East.Joban.734M",
+	"id": "JR-East.Joban.2734M.SaturdayHoliday",
+	"t": "JR-East.Joban.2734M",
 	"r": "JR-East.Joban",
-	"n": "734M",
+	"n": "2734M",
 	"y": "JR-East.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.Joban.Katsuta"
+		"JR-East.Joban.Takahagi"
 	],
 	"ds": [
 		"JR-East.Mito.Oyama"
 	],
 	"nt": [
-		"JR-East.Mito.734M.SaturdayHoliday"
+		"JR-East.Mito.2734M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
@@ -19064,7 +19009,7 @@
 	"y": "JR-East.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.Joban.Takahagi"
+		"JR-East.Joban.Katsuta"
 	],
 	"ds": [
 		"JR-East.JobanRapid.Shinagawa"
@@ -19287,10 +19232,10 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
-		"d": "07:35"
+		"d": "07:36"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "07:41",
+		"a": "07:42",
 		"d": "07:42"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
@@ -19422,7 +19367,7 @@
 	"y": "JR-East.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.Joban.Mito"
+		"JR-East.Joban.Katsuta"
 	],
 	"ds": [
 		"JR-East.JobanRapid.Shinagawa"
@@ -19547,22 +19492,22 @@
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "09:28",
-		"d": "09:44"
+		"d": "09:45"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "09:49",
-		"d": "09:50"
+		"a": "09:50",
+		"d": "09:51"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "09:52",
-		"d": "09:53"
+		"a": "09:53",
+		"d": "09:54"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
-		"a": "09:56",
-		"d": "09:57"
+		"a": "09:57",
+		"d": "09:58"
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
-		"a": "10:01",
+		"a": "10:02",
 		"d": "10:07"
 	}, {
 		"s": "JR-East.Joban.Fujishiro",
@@ -19664,38 +19609,38 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
-		"d": "09:08"
+		"d": "09:11"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "09:13",
-		"d": "09:14"
+		"a": "09:17",
+		"d": "09:17"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "09:18",
-		"d": "09:18"
+		"a": "09:21",
+		"d": "09:22"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "09:22",
-		"d": "09:23"
+		"a": "09:25",
+		"d": "09:26"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "09:27",
-		"d": "09:28"
+		"a": "09:31",
+		"d": "09:31"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "09:32",
-		"d": "09:32"
+		"a": "09:35",
+		"d": "09:35"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "09:37",
-		"d": "09:37"
+		"a": "09:40",
+		"d": "09:40"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "09:41",
-		"d": "09:41"
+		"a": "09:44",
+		"d": "09:44"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "09:47",
+		"a": "09:50",
 		"d": "09:53"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
@@ -19869,7 +19814,7 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
-		"d": "10:02"
+		"d": "10:03"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
 		"a": "10:09",
@@ -20162,11 +20107,11 @@
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
 		"a": "11:43",
-		"d": "11:43"
+		"d": "11:44"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
 		"a": "11:48",
-		"d": "11:48"
+		"d": "11:49"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
 		"a": "11:53",
@@ -20454,15 +20399,15 @@
 		"d": "13:32"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "13:37",
-		"d": "13:37"
+		"a": "13:38",
+		"d": "13:50"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "13:41",
-		"d": "13:42"
+		"a": "13:55",
+		"d": "13:55"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "13:48",
+		"a": "14:01",
 		"d": "14:02"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
@@ -20609,15 +20554,15 @@
 	],
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
-		"d": "14:04"
+		"d": "14:05"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "14:10",
-		"d": "14:10"
+		"a": "14:11",
+		"d": "14:11"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
 		"a": "14:15",
-		"d": "14:15"
+		"d": "14:16"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
 		"a": "14:20",
@@ -20628,23 +20573,23 @@
 		"d": "14:27"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "14:31",
-		"d": "14:32"
+		"a": "14:32",
+		"d": "14:33"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "14:37",
-		"d": "14:37"
+		"a": "14:40",
+		"d": "14:50"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "14:41",
-		"d": "14:42"
+		"a": "14:54",
+		"d": "14:54"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "14:48",
-		"d": "14:53"
+		"a": "14:59",
+		"d": "15:00"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
-		"a": "15:00"
+		"a": "15:06"
 	}]
 }, {
 	"id": "JR-East.Joban.16M.SaturdayHoliday",
@@ -20846,7 +20791,7 @@
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
 		"a": "15:19",
-		"d": "15:19"
+		"d": "15:20"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
 		"a": "15:24",
@@ -20874,10 +20819,6 @@
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
 		"d": "15:27"
-	}, {
-		"s": "JR-East.Joban.Ishioka",
-		"a": "15:47",
-		"d": "15:47"
 	}, {
 		"s": "JR-East.Joban.Ueno",
 		"a": "16:36"
@@ -21041,7 +20982,7 @@
 		"d": "16:16"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "16:19",
+		"a": "16:20",
 		"d": "16:20"
 	}, {
 		"s": "JR-East.Joban.Iwama",
@@ -21050,11 +20991,11 @@
 	}, {
 		"s": "JR-East.Joban.Hatori",
 		"a": "16:29",
-		"d": "16:29"
+		"d": "16:30"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
 		"a": "16:34",
-		"d": "16:34"
+		"d": "16:35"
 	}, {
 		"s": "JR-East.Joban.Takahama",
 		"a": "16:38",
@@ -21062,7 +21003,7 @@
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
 		"a": "16:43",
-		"d": "16:43"
+		"d": "16:44"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "16:49",
@@ -21110,10 +21051,6 @@
 	"tt": [{
 		"s": "JR-East.Joban.Mito",
 		"d": "16:27"
-	}, {
-		"s": "JR-East.Joban.Ishioka",
-		"a": "16:47",
-		"d": "16:47"
 	}, {
 		"s": "JR-East.Joban.Ueno",
 		"a": "17:37"
@@ -21761,18 +21698,18 @@
 	}, {
 		"s": "JR-East.Joban.Tomobe",
 		"a": "18:52",
-		"d": "18:52"
+		"d": "18:53"
 	}, {
 		"s": "JR-East.Joban.Iwama",
 		"a": "18:57",
 		"d": "18:58"
 	}, {
 		"s": "JR-East.Joban.Hatori",
-		"a": "19:01",
+		"a": "19:02",
 		"d": "19:02"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "19:06",
+		"a": "19:07",
 		"d": "19:07"
 	}, {
 		"s": "JR-East.Joban.Takahama",
@@ -21780,7 +21717,7 @@
 		"d": "19:11"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "19:15",
+		"a": "19:16",
 		"d": "19:16"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
@@ -21988,19 +21925,19 @@
 		"d": "19:40"
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
-		"a": "19:45",
+		"a": "19:46",
 		"d": "19:46"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
 		"a": "19:50",
-		"d": "19:50"
+		"d": "19:51"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
 		"a": "19:54",
 		"d": "19:55"
 	}, {
 		"s": "JR-East.Joban.Iwama",
-		"a": "19:59",
+		"a": "20:00",
 		"d": "20:00"
 	}, {
 		"s": "JR-East.Joban.Hatori",
@@ -22158,30 +22095,30 @@
 	}, {
 		"s": "JR-East.Joban.Hatori",
 		"a": "20:40",
-		"d": "20:46"
+		"d": "20:47"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
-		"a": "20:51",
-		"d": "20:52"
+		"a": "20:52",
+		"d": "20:53"
 	}, {
 		"s": "JR-East.Joban.Takahama",
-		"a": "20:56",
-		"d": "20:56"
+		"a": "20:57",
+		"d": "20:57"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
-		"a": "21:02",
-		"d": "21:02"
+		"a": "21:03",
+		"d": "21:03"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
-		"a": "21:09",
-		"d": "21:17"
+		"a": "21:11",
+		"d": "21:18"
 	}, {
 		"s": "JR-East.Joban.Arakawaoki",
-		"a": "21:22",
-		"d": "21:22"
+		"a": "21:23",
+		"d": "21:23"
 	}, {
 		"s": "JR-East.Joban.Hitachinoushiku",
-		"a": "21:26",
+		"a": "21:27",
 		"d": "21:32"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
@@ -22562,35 +22499,35 @@
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
 		"a": "22:01",
-		"d": "22:01"
+		"d": "22:02"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
-		"a": "22:05",
+		"a": "22:06",
 		"d": "22:06"
 	}, {
 		"s": "JR-East.Joban.Tomobe",
-		"a": "22:09",
+		"a": "22:10",
 		"d": "22:10"
 	}, {
 		"s": "JR-East.Joban.Iwama",
 		"a": "22:15",
-		"d": "22:15"
+		"d": "22:16"
 	}, {
 		"s": "JR-East.Joban.Hatori",
 		"a": "22:19",
-		"d": "22:19"
+		"d": "22:20"
 	}, {
 		"s": "JR-East.Joban.Ishioka",
 		"a": "22:24",
-		"d": "22:24"
+		"d": "22:25"
 	}, {
 		"s": "JR-East.Joban.Takahama",
 		"a": "22:28",
-		"d": "22:28"
+		"d": "22:29"
 	}, {
 		"s": "JR-East.Joban.Kandatsu",
 		"a": "22:33",
-		"d": "22:33"
+		"d": "22:34"
 	}, {
 		"s": "JR-East.Joban.Tsuchiura",
 		"a": "22:39",
@@ -22641,7 +22578,7 @@
 	}, {
 		"s": "JR-East.Joban.Akatsuka",
 		"a": "22:36",
-		"d": "22:36"
+		"d": "22:37"
 	}, {
 		"s": "JR-East.Joban.Uchihara",
 		"a": "22:41",
@@ -24280,11 +24217,11 @@
 		"d": "22:13"
 	}, {
 		"s": "JR-East.Joban.Ushiku",
-		"a": "22:16",
+		"a": "22:17",
 		"d": "22:17"
 	}, {
 		"s": "JR-East.Joban.Ryugasakishi",
-		"a": "22:21",
+		"a": "22:22",
 		"d": "22:22"
 	}, {
 		"s": "JR-East.Joban.Fujishiro",

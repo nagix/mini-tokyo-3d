@@ -73,7 +73,7 @@
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
 		"a": "05:51",
-		"d": "05:51"
+		"d": "05:52"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "05:54",
@@ -568,10 +568,10 @@
 		"a": "08:11"
 	}]
 }, {
-	"id": "Seibu.Haijima.4301.Weekday",
-	"t": "Seibu.Haijima.4301",
+	"id": "Seibu.Haijima.2305.Weekday",
+	"t": "Seibu.Haijima.2305",
 	"r": "Seibu.Haijima",
-	"n": "4301",
+	"n": "2305",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -581,22 +581,22 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4301.Weekday"
+		"Seibu.Shinjuku.2305.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
 		"d": "08:00"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "08:02",
+		"a": "08:01",
 		"d": "08:02"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "08:05",
-		"d": "08:05"
+		"d": "08:06"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "08:08",
+		"a": "08:09",
 		"d": "08:09"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
@@ -729,10 +729,10 @@
 		"a": "08:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2305.Weekday",
-	"t": "Seibu.Haijima.2305",
+	"id": "Seibu.Haijima.2307.Weekday",
+	"t": "Seibu.Haijima.2307",
 	"r": "Seibu.Haijima",
-	"n": "2305",
+	"n": "2307",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -742,7 +742,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2305.Weekday"
+		"Seibu.Shinjuku.2307.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -811,10 +811,10 @@
 		"a": "08:47"
 	}]
 }, {
-	"id": "Seibu.Haijima.4303.Weekday",
-	"t": "Seibu.Haijima.4303",
+	"id": "Seibu.Haijima.4301.Weekday",
+	"t": "Seibu.Haijima.4301",
 	"r": "Seibu.Haijima",
-	"n": "4303",
+	"n": "4301",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -824,14 +824,14 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4303.Weekday"
+		"Seibu.Shinjuku.4301.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
-		"d": "08:39"
+		"d": "08:38"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "08:41",
+		"a": "08:40",
 		"d": "08:41"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
@@ -893,10 +893,10 @@
 		"a": "09:01"
 	}]
 }, {
-	"id": "Seibu.Haijima.2307.Weekday",
-	"t": "Seibu.Haijima.2307",
+	"id": "Seibu.Haijima.2309.Weekday",
+	"t": "Seibu.Haijima.2309",
 	"r": "Seibu.Haijima",
-	"n": "2307",
+	"n": "2309",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -906,7 +906,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2307.Weekday"
+		"Seibu.Shinjuku.2309.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -975,10 +975,10 @@
 		"a": "09:11"
 	}]
 }, {
-	"id": "Seibu.Haijima.4305.Weekday",
-	"t": "Seibu.Haijima.4305",
+	"id": "Seibu.Haijima.4303.Weekday",
+	"t": "Seibu.Haijima.4303",
 	"r": "Seibu.Haijima",
-	"n": "4305",
+	"n": "4303",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -988,7 +988,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4305.Weekday"
+		"Seibu.Shinjuku.4303.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -1057,10 +1057,10 @@
 		"a": "09:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2309.Weekday",
-	"t": "Seibu.Haijima.2309",
+	"id": "Seibu.Haijima.2311.Weekday",
+	"t": "Seibu.Haijima.2311",
 	"r": "Seibu.Haijima",
-	"n": "2309",
+	"n": "2311",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1070,7 +1070,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2309.Weekday"
+		"Seibu.Shinjuku.2311.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -1081,23 +1081,23 @@
 		"d": "09:31"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "09:33",
-		"d": "09:34"
+		"a": "09:34",
+		"d": "09:35"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "09:37",
-		"d": "09:37"
+		"a": "09:38",
+		"d": "09:38"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "09:39",
+		"a": "09:40",
 		"d": "09:40"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "09:43",
-		"d": "09:43"
+		"d": "09:44"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "09:45",
+		"a": "09:46",
 		"d": "09:46"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
@@ -1125,24 +1125,24 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "09:39",
-		"d": "09:40"
+		"d": "09:41"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "09:42",
-		"d": "09:43"
+		"a": "09:44",
+		"d": "09:44"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "09:46",
-		"d": "09:46"
+		"a": "09:47",
+		"d": "09:48"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "09:49"
+		"a": "09:50"
 	}]
 }, {
-	"id": "Seibu.Haijima.4307.Weekday",
-	"t": "Seibu.Haijima.4307",
+	"id": "Seibu.Haijima.4305.Weekday",
+	"t": "Seibu.Haijima.4305",
 	"r": "Seibu.Haijima",
-	"n": "4307",
+	"n": "4305",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1152,7 +1152,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4307.Weekday"
+		"Seibu.Shinjuku.4305.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -1233,10 +1233,10 @@
 		"a": "10:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2311.Weekday",
-	"t": "Seibu.Haijima.2311",
+	"id": "Seibu.Haijima.2313.Weekday",
+	"t": "Seibu.Haijima.2313",
 	"r": "Seibu.Haijima",
-	"n": "2311",
+	"n": "2313",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1246,14 +1246,14 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2311.Weekday"
+		"Seibu.Shinjuku.2313.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
 		"d": "10:09"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "10:10",
+		"a": "10:11",
 		"d": "10:11"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
@@ -1273,7 +1273,7 @@
 		"d": "10:23"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "10:25",
+		"a": "10:26",
 		"d": "10:26"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
@@ -1315,10 +1315,10 @@
 		"a": "10:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2313.Weekday",
-	"t": "Seibu.Haijima.2313",
+	"id": "Seibu.Haijima.2315.Weekday",
+	"t": "Seibu.Haijima.2315",
 	"r": "Seibu.Haijima",
-	"n": "2313",
+	"n": "2315",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1328,7 +1328,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2313.Weekday"
+		"Seibu.Shinjuku.2315.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -1394,10 +1394,10 @@
 		"a": "10:50"
 	}]
 }, {
-	"id": "Seibu.Haijima.2315.Weekday",
-	"t": "Seibu.Haijima.2315",
+	"id": "Seibu.Haijima.2317.Weekday",
+	"t": "Seibu.Haijima.2317",
 	"r": "Seibu.Haijima",
-	"n": "2315",
+	"n": "2317",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1407,7 +1407,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2315.Weekday"
+		"Seibu.Shinjuku.2317.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -1488,10 +1488,10 @@
 		"a": "11:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2317.Weekday",
-	"t": "Seibu.Haijima.2317",
+	"id": "Seibu.Haijima.2319.Weekday",
+	"t": "Seibu.Haijima.2319",
 	"r": "Seibu.Haijima",
-	"n": "2317",
+	"n": "2319",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1501,7 +1501,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2317.Weekday"
+		"Seibu.Shinjuku.2319.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -1567,10 +1567,10 @@
 		"a": "11:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2319.Weekday",
-	"t": "Seibu.Haijima.2319",
+	"id": "Seibu.Haijima.2321.Weekday",
+	"t": "Seibu.Haijima.2321",
 	"r": "Seibu.Haijima",
-	"n": "2319",
+	"n": "2321",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1580,7 +1580,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2319.Weekday"
+		"Seibu.Shinjuku.2321.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -1614,20 +1614,17 @@
 		"a": "11:49"
 	}]
 }, {
-	"id": "Seibu.Haijima.5261.Weekday",
-	"t": "Seibu.Haijima.5261",
+	"id": "Seibu.Haijima.5475.Weekday",
+	"t": "Seibu.Haijima.5475",
 	"r": "Seibu.Haijima",
-	"n": "5261",
+	"n": "5475",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
-		"Seibu.Shinjuku.SeibuShinjuku"
+		"Seibu.Haijima.Kodaira"
 	],
 	"ds": [
 		"Seibu.Haijima.TamagawaJosui"
-	],
-	"pt": [
-		"Seibu.Shinjuku.5261.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -1639,20 +1636,20 @@
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "11:44",
-		"d": "11:45"
+		"d": "11:44"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "11:48",
+		"a": "11:47",
 		"d": "11:48"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
 		"a": "11:50"
 	}]
 }, {
-	"id": "Seibu.Haijima.2321.Weekday",
-	"t": "Seibu.Haijima.2321",
+	"id": "Seibu.Haijima.2323.Weekday",
+	"t": "Seibu.Haijima.2323",
 	"r": "Seibu.Haijima",
-	"n": "2321",
+	"n": "2323",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1662,7 +1659,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2321.Weekday"
+		"Seibu.Shinjuku.2323.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -1740,10 +1737,10 @@
 		"a": "12:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2323.Weekday",
-	"t": "Seibu.Haijima.2323",
+	"id": "Seibu.Haijima.2325.Weekday",
+	"t": "Seibu.Haijima.2325",
 	"r": "Seibu.Haijima",
-	"n": "2323",
+	"n": "2325",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1753,7 +1750,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2323.Weekday"
+		"Seibu.Shinjuku.2325.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -1787,10 +1784,10 @@
 		"a": "12:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.5475.Weekday",
-	"t": "Seibu.Haijima.5475",
+	"id": "Seibu.Haijima.5477.Weekday",
+	"t": "Seibu.Haijima.5477",
 	"r": "Seibu.Haijima",
-	"n": "5475",
+	"n": "5477",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1819,10 +1816,10 @@
 		"a": "12:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2325.Weekday",
-	"t": "Seibu.Haijima.2325",
+	"id": "Seibu.Haijima.2327.Weekday",
+	"t": "Seibu.Haijima.2327",
 	"r": "Seibu.Haijima",
-	"n": "2325",
+	"n": "2327",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1832,7 +1829,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2325.Weekday"
+		"Seibu.Shinjuku.2327.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -1866,10 +1863,10 @@
 		"a": "12:49"
 	}]
 }, {
-	"id": "Seibu.Haijima.5477.Weekday",
-	"t": "Seibu.Haijima.5477",
+	"id": "Seibu.Haijima.5479.Weekday",
+	"t": "Seibu.Haijima.5479",
 	"r": "Seibu.Haijima",
-	"n": "5477",
+	"n": "5479",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1898,10 +1895,10 @@
 		"a": "12:50"
 	}]
 }, {
-	"id": "Seibu.Haijima.2327.Weekday",
-	"t": "Seibu.Haijima.2327",
+	"id": "Seibu.Haijima.2329.Weekday",
+	"t": "Seibu.Haijima.2329",
 	"r": "Seibu.Haijima",
-	"n": "2327",
+	"n": "2329",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1911,7 +1908,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2327.Weekday"
+		"Seibu.Shinjuku.2329.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -1989,10 +1986,10 @@
 		"a": "13:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2329.Weekday",
-	"t": "Seibu.Haijima.2329",
+	"id": "Seibu.Haijima.2331.Weekday",
+	"t": "Seibu.Haijima.2331",
 	"r": "Seibu.Haijima",
-	"n": "2329",
+	"n": "2331",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2002,7 +1999,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2329.Weekday"
+		"Seibu.Shinjuku.2331.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -2036,10 +2033,10 @@
 		"a": "13:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.5479.Weekday",
-	"t": "Seibu.Haijima.5479",
+	"id": "Seibu.Haijima.5481.Weekday",
+	"t": "Seibu.Haijima.5481",
 	"r": "Seibu.Haijima",
-	"n": "5479",
+	"n": "5481",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2068,10 +2065,10 @@
 		"a": "13:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2331.Weekday",
-	"t": "Seibu.Haijima.2331",
+	"id": "Seibu.Haijima.2333.Weekday",
+	"t": "Seibu.Haijima.2333",
 	"r": "Seibu.Haijima",
-	"n": "2331",
+	"n": "2333",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2081,7 +2078,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2331.Weekday"
+		"Seibu.Shinjuku.2333.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -2115,10 +2112,10 @@
 		"a": "13:49"
 	}]
 }, {
-	"id": "Seibu.Haijima.5481.Weekday",
-	"t": "Seibu.Haijima.5481",
+	"id": "Seibu.Haijima.5483.Weekday",
+	"t": "Seibu.Haijima.5483",
 	"r": "Seibu.Haijima",
-	"n": "5481",
+	"n": "5483",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2147,10 +2144,10 @@
 		"a": "13:50"
 	}]
 }, {
-	"id": "Seibu.Haijima.2333.Weekday",
-	"t": "Seibu.Haijima.2333",
+	"id": "Seibu.Haijima.2335.Weekday",
+	"t": "Seibu.Haijima.2335",
 	"r": "Seibu.Haijima",
-	"n": "2333",
+	"n": "2335",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2160,7 +2157,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2333.Weekday"
+		"Seibu.Shinjuku.2335.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -2238,10 +2235,10 @@
 		"a": "14:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2335.Weekday",
-	"t": "Seibu.Haijima.2335",
+	"id": "Seibu.Haijima.2337.Weekday",
+	"t": "Seibu.Haijima.2337",
 	"r": "Seibu.Haijima",
-	"n": "2335",
+	"n": "2337",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2251,7 +2248,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2335.Weekday"
+		"Seibu.Shinjuku.2337.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -2285,10 +2282,10 @@
 		"a": "14:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.5483.Weekday",
-	"t": "Seibu.Haijima.5483",
+	"id": "Seibu.Haijima.5485.Weekday",
+	"t": "Seibu.Haijima.5485",
 	"r": "Seibu.Haijima",
-	"n": "5483",
+	"n": "5485",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2317,10 +2314,10 @@
 		"a": "14:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2337.Weekday",
-	"t": "Seibu.Haijima.2337",
+	"id": "Seibu.Haijima.2339.Weekday",
+	"t": "Seibu.Haijima.2339",
 	"r": "Seibu.Haijima",
-	"n": "2337",
+	"n": "2339",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2330,7 +2327,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2337.Weekday"
+		"Seibu.Shinjuku.2339.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -2364,10 +2361,10 @@
 		"a": "14:49"
 	}]
 }, {
-	"id": "Seibu.Haijima.5485.Weekday",
-	"t": "Seibu.Haijima.5485",
+	"id": "Seibu.Haijima.5487.Weekday",
+	"t": "Seibu.Haijima.5487",
 	"r": "Seibu.Haijima",
-	"n": "5485",
+	"n": "5487",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2396,10 +2393,10 @@
 		"a": "14:50"
 	}]
 }, {
-	"id": "Seibu.Haijima.2339.Weekday",
-	"t": "Seibu.Haijima.2339",
+	"id": "Seibu.Haijima.2341.Weekday",
+	"t": "Seibu.Haijima.2341",
 	"r": "Seibu.Haijima",
-	"n": "2339",
+	"n": "2341",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2409,7 +2406,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2339.Weekday"
+		"Seibu.Shinjuku.2341.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -2487,10 +2484,10 @@
 		"a": "15:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2341.Weekday",
-	"t": "Seibu.Haijima.2341",
+	"id": "Seibu.Haijima.2343.Weekday",
+	"t": "Seibu.Haijima.2343",
 	"r": "Seibu.Haijima",
-	"n": "2341",
+	"n": "2343",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2500,7 +2497,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2341.Weekday"
+		"Seibu.Shinjuku.2343.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -2534,17 +2531,20 @@
 		"a": "15:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.5487.Weekday",
-	"t": "Seibu.Haijima.5487",
+	"id": "Seibu.Haijima.5261.Weekday",
+	"t": "Seibu.Haijima.5261",
 	"r": "Seibu.Haijima",
-	"n": "5487",
+	"n": "5261",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
-		"Seibu.Haijima.Kodaira"
+		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"ds": [
 		"Seibu.Haijima.TamagawaJosui"
+	],
+	"pt": [
+		"Seibu.Shinjuku.5261.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -2566,10 +2566,10 @@
 		"a": "15:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2343.Weekday",
-	"t": "Seibu.Haijima.2343",
+	"id": "Seibu.Haijima.2345.Weekday",
+	"t": "Seibu.Haijima.2345",
 	"r": "Seibu.Haijima",
-	"n": "2343",
+	"n": "2345",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2579,7 +2579,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2343.Weekday"
+		"Seibu.Shinjuku.2345.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -2657,10 +2657,10 @@
 		"a": "15:59"
 	}]
 }, {
-	"id": "Seibu.Haijima.2345.Weekday",
-	"t": "Seibu.Haijima.2345",
+	"id": "Seibu.Haijima.2347.Weekday",
+	"t": "Seibu.Haijima.2347",
 	"r": "Seibu.Haijima",
-	"n": "2345",
+	"n": "2347",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2670,7 +2670,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2345.Weekday"
+		"Seibu.Shinjuku.2347.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -2748,10 +2748,10 @@
 		"a": "16:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2347.Weekday",
-	"t": "Seibu.Haijima.2347",
+	"id": "Seibu.Haijima.2349.Weekday",
+	"t": "Seibu.Haijima.2349",
 	"r": "Seibu.Haijima",
-	"n": "2347",
+	"n": "2349",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2761,7 +2761,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2347.Weekday"
+		"Seibu.Shinjuku.2349.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -2839,10 +2839,10 @@
 		"a": "16:40"
 	}]
 }, {
-	"id": "Seibu.Haijima.2349.Weekday",
-	"t": "Seibu.Haijima.2349",
+	"id": "Seibu.Haijima.2351.Weekday",
+	"t": "Seibu.Haijima.2351",
 	"r": "Seibu.Haijima",
-	"n": "2349",
+	"n": "2351",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2852,7 +2852,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2349.Weekday"
+		"Seibu.Shinjuku.2351.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -2907,36 +2907,36 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "16:42",
-		"d": "16:42"
+		"d": "16:43"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "16:45",
-		"d": "16:45"
+		"d": "16:46"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "16:48",
+		"a": "16:49",
 		"d": "16:49"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
 		"a": "16:51",
-		"d": "16:51"
+		"d": "16:52"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "16:54",
-		"d": "16:54"
+		"a": "16:55",
+		"d": "16:55"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
 		"a": "16:57",
-		"d": "16:57"
+		"d": "16:58"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
 		"a": "17:01"
 	}]
 }, {
-	"id": "Seibu.Haijima.2351.Weekday",
-	"t": "Seibu.Haijima.2351",
+	"id": "Seibu.Haijima.2353.Weekday",
+	"t": "Seibu.Haijima.2353",
 	"r": "Seibu.Haijima",
-	"n": "2351",
+	"n": "2353",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2946,7 +2946,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2351.Weekday"
+		"Seibu.Shinjuku.2353.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -3024,10 +3024,10 @@
 		"a": "17:21"
 	}]
 }, {
-	"id": "Seibu.Haijima.4309.Weekday",
-	"t": "Seibu.Haijima.4309",
+	"id": "Seibu.Haijima.4307.Weekday",
+	"t": "Seibu.Haijima.4307",
 	"r": "Seibu.Haijima",
-	"n": "4309",
+	"n": "4307",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3037,7 +3037,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4309.Weekday"
+		"Seibu.Shinjuku.4307.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -3045,14 +3045,14 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "17:12",
-		"d": "17:12"
+		"d": "17:13"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "17:15",
-		"d": "17:15"
+		"d": "17:16"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "17:18",
+		"a": "17:19",
 		"d": "17:19"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
@@ -3118,10 +3118,10 @@
 		"a": "17:41"
 	}]
 }, {
-	"id": "Seibu.Haijima.4311.Weekday",
-	"t": "Seibu.Haijima.4311",
+	"id": "Seibu.Haijima.4309.Weekday",
+	"t": "Seibu.Haijima.4309",
 	"r": "Seibu.Haijima",
-	"n": "4311",
+	"n": "4309",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3131,7 +3131,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4311.Weekday"
+		"Seibu.Shinjuku.4309.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -3313,10 +3313,10 @@
 		"a": "18:23"
 	}]
 }, {
-	"id": "Seibu.Haijima.2353.Weekday",
-	"t": "Seibu.Haijima.2353",
+	"id": "Seibu.Haijima.2355.Weekday",
+	"t": "Seibu.Haijima.2355",
 	"r": "Seibu.Haijima",
-	"n": "2353",
+	"n": "2355",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3326,7 +3326,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2353.Weekday"
+		"Seibu.Shinjuku.2355.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -3407,10 +3407,10 @@
 		"a": "18:43"
 	}]
 }, {
-	"id": "Seibu.Haijima.4313.Weekday",
-	"t": "Seibu.Haijima.4313",
+	"id": "Seibu.Haijima.4311.Weekday",
+	"t": "Seibu.Haijima.4311",
 	"r": "Seibu.Haijima",
-	"n": "4313",
+	"n": "4311",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3420,7 +3420,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4313.Weekday"
+		"Seibu.Shinjuku.4311.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -3525,40 +3525,40 @@
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
-		"d": "18:52"
+		"d": "18:53"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "18:54",
-		"d": "18:54"
+		"d": "18:55"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "18:57",
-		"d": "18:57"
+		"a": "18:58",
+		"d": "18:58"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "19:00",
-		"d": "19:01"
+		"a": "19:01",
+		"d": "19:02"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "19:03",
+		"a": "19:04",
 		"d": "19:04"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "19:06",
-		"d": "19:07"
+		"a": "19:07",
+		"d": "19:08"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "19:09",
+		"a": "19:10",
 		"d": "19:10"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
-		"a": "19:13"
+		"a": "19:14"
 	}]
 }, {
-	"id": "Seibu.Haijima.4315.Weekday",
-	"t": "Seibu.Haijima.4315",
+	"id": "Seibu.Haijima.4313.Weekday",
+	"t": "Seibu.Haijima.4313",
 	"r": "Seibu.Haijima",
-	"n": "4315",
+	"n": "4313",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3568,14 +3568,14 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4315.Weekday"
+		"Seibu.Shinjuku.4313.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
 		"d": "19:02"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "19:04",
+		"a": "19:03",
 		"d": "19:04"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
@@ -3602,10 +3602,10 @@
 		"a": "19:23"
 	}]
 }, {
-	"id": "Seibu.Haijima.4317.Weekday",
-	"t": "Seibu.Haijima.4317",
+	"id": "Seibu.Haijima.4315.Weekday",
+	"t": "Seibu.Haijima.4315",
 	"r": "Seibu.Haijima",
-	"n": "4317",
+	"n": "4315",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3615,7 +3615,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4317.Weekday"
+		"Seibu.Shinjuku.4315.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -3696,10 +3696,10 @@
 		"a": "19:43"
 	}]
 }, {
-	"id": "Seibu.Haijima.4319.Weekday",
-	"t": "Seibu.Haijima.4319",
+	"id": "Seibu.Haijima.4317.Weekday",
+	"t": "Seibu.Haijima.4317",
 	"r": "Seibu.Haijima",
-	"n": "4319",
+	"n": "4317",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3709,7 +3709,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4319.Weekday"
+		"Seibu.Shinjuku.4317.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -3844,10 +3844,10 @@
 		"a": "20:13"
 	}]
 }, {
-	"id": "Seibu.Haijima.4321.Weekday",
-	"t": "Seibu.Haijima.4321",
+	"id": "Seibu.Haijima.4319.Weekday",
+	"t": "Seibu.Haijima.4319",
 	"r": "Seibu.Haijima",
-	"n": "4321",
+	"n": "4319",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3857,7 +3857,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4321.Weekday"
+		"Seibu.Shinjuku.4319.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -3891,10 +3891,10 @@
 		"a": "20:23"
 	}]
 }, {
-	"id": "Seibu.Haijima.2355.Weekday",
-	"t": "Seibu.Haijima.2355",
+	"id": "Seibu.Haijima.2357.Weekday",
+	"t": "Seibu.Haijima.2357",
 	"r": "Seibu.Haijima",
-	"n": "2355",
+	"n": "2357",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3904,7 +3904,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2355.Weekday"
+		"Seibu.Shinjuku.2357.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -3955,40 +3955,40 @@
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
-		"d": "20:22"
+		"d": "20:21"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "20:24",
-		"d": "20:24"
+		"a": "20:23",
+		"d": "20:23"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "20:27",
+		"a": "20:26",
 		"d": "20:27"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
 		"a": "20:30",
-		"d": "20:31"
+		"d": "20:30"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "20:33",
-		"d": "20:34"
+		"a": "20:32",
+		"d": "20:33"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "20:36",
-		"d": "20:37"
+		"d": "20:36"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "20:39",
-		"d": "20:40"
+		"a": "20:38",
+		"d": "20:39"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
-		"a": "20:43"
+		"a": "20:42"
 	}]
 }, {
-	"id": "Seibu.Haijima.4323.Weekday",
-	"t": "Seibu.Haijima.4323",
+	"id": "Seibu.Haijima.4321.Weekday",
+	"t": "Seibu.Haijima.4321",
 	"r": "Seibu.Haijima",
-	"n": "4323",
+	"n": "4321",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3998,7 +3998,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4323.Weekday"
+		"Seibu.Shinjuku.4321.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -4133,10 +4133,10 @@
 		"a": "21:13"
 	}]
 }, {
-	"id": "Seibu.Haijima.2357.Weekday",
-	"t": "Seibu.Haijima.2357",
+	"id": "Seibu.Haijima.2359.Weekday",
+	"t": "Seibu.Haijima.2359",
 	"r": "Seibu.Haijima",
-	"n": "2357",
+	"n": "2359",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -4146,7 +4146,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2357.Weekday"
+		"Seibu.Shinjuku.2359.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -4262,10 +4262,10 @@
 		"a": "21:33"
 	}]
 }, {
-	"id": "Seibu.Haijima.4325.Weekday",
-	"t": "Seibu.Haijima.4325",
+	"id": "Seibu.Haijima.4323.Weekday",
+	"t": "Seibu.Haijima.4323",
 	"r": "Seibu.Haijima",
-	"n": "4325",
+	"n": "4323",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -4275,7 +4275,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4325.Weekday"
+		"Seibu.Shinjuku.4323.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -4410,10 +4410,10 @@
 		"a": "22:13"
 	}]
 }, {
-	"id": "Seibu.Haijima.4327.Weekday",
-	"t": "Seibu.Haijima.4327",
+	"id": "Seibu.Haijima.4325.Weekday",
+	"t": "Seibu.Haijima.4325",
 	"r": "Seibu.Haijima",
-	"n": "4327",
+	"n": "4325",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -4423,7 +4423,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.4327.Weekday"
+		"Seibu.Shinjuku.4325.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -4431,7 +4431,7 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "22:05",
-		"d": "22:05"
+		"d": "22:06"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "22:08",
@@ -4492,10 +4492,10 @@
 		"a": "22:22"
 	}]
 }, {
-	"id": "Seibu.Haijima.2359.Weekday",
-	"t": "Seibu.Haijima.2359",
+	"id": "Seibu.Haijima.2361.Weekday",
+	"t": "Seibu.Haijima.2361",
 	"r": "Seibu.Haijima",
-	"n": "2359",
+	"n": "2361",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -4505,7 +4505,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2359.Weekday"
+		"Seibu.Shinjuku.2361.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -4539,24 +4539,27 @@
 		"a": "22:40"
 	}]
 }, {
-	"id": "Seibu.Haijima.5489.Weekday",
-	"t": "Seibu.Haijima.5489",
+	"id": "Seibu.Haijima.4255.Weekday",
+	"t": "Seibu.Haijima.4255",
 	"r": "Seibu.Haijima",
-	"n": "5489",
+	"n": "4255",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
-		"Seibu.Haijima.Kodaira"
+		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"ds": [
 		"Seibu.Haijima.TamagawaJosui"
+	],
+	"pt": [
+		"Seibu.Shinjuku.4255.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
 		"d": "22:34"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "22:35",
+		"a": "22:36",
 		"d": "22:36"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
@@ -4672,10 +4675,42 @@
 		"a": "23:12"
 	}]
 }, {
-	"id": "Seibu.Haijima.2361.Weekday",
-	"t": "Seibu.Haijima.2361",
+	"id": "Seibu.Haijima.5489.Weekday",
+	"t": "Seibu.Haijima.5489",
 	"r": "Seibu.Haijima",
-	"n": "2361",
+	"n": "5489",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Seibu.Haijima.Kodaira"
+	],
+	"ds": [
+		"Seibu.Haijima.TamagawaJosui"
+	],
+	"tt": [{
+		"s": "Seibu.Haijima.Kodaira",
+		"d": "22:58"
+	}, {
+		"s": "Seibu.Haijima.Hagiyama",
+		"a": "23:00",
+		"d": "23:01"
+	}, {
+		"s": "Seibu.Haijima.Ogawa",
+		"a": "23:03",
+		"d": "23:05"
+	}, {
+		"s": "Seibu.Haijima.HigashiYamatoshi",
+		"a": "23:08",
+		"d": "23:09"
+	}, {
+		"s": "Seibu.Haijima.TamagawaJosui",
+		"a": "23:11"
+	}]
+}, {
+	"id": "Seibu.Haijima.2363.Weekday",
+	"t": "Seibu.Haijima.2363",
+	"r": "Seibu.Haijima",
+	"n": "2363",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -4685,7 +4720,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2361.Weekday"
+		"Seibu.Shinjuku.2363.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -4709,7 +4744,7 @@
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "23:19",
-		"d": "23:19"
+		"d": "23:20"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
 		"a": "23:22",
@@ -4751,10 +4786,10 @@
 		"a": "23:25"
 	}]
 }, {
-	"id": "Seibu.Haijima.2363.Weekday",
-	"t": "Seibu.Haijima.2363",
+	"id": "Seibu.Haijima.2365.Weekday",
+	"t": "Seibu.Haijima.2365",
 	"r": "Seibu.Haijima",
-	"n": "2363",
+	"n": "2365",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -4764,7 +4799,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2363.Weekday"
+		"Seibu.Shinjuku.2365.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -4772,14 +4807,14 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "23:23",
-		"d": "23:23"
+		"d": "23:24"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "23:26",
-		"d": "23:26"
+		"d": "23:27"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "23:29",
+		"a": "23:30",
 		"d": "23:30"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
@@ -4788,7 +4823,7 @@
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "23:37",
-		"d": "23:37"
+		"d": "23:38"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
 		"a": "23:40",
@@ -4871,38 +4906,35 @@
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
 		"a": "23:59",
-		"d": "23:59"
+		"d": "00:00"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "00:01",
+		"a": "00:02",
 		"d": "00:02"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "00:05",
-		"d": "00:05"
+		"d": "00:06"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "00:07",
+		"a": "00:08",
 		"d": "00:08"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
 		"a": "00:11"
 	}]
 }, {
-	"id": "Seibu.Haijima.4329.Weekday",
-	"t": "Seibu.Haijima.4329",
+	"id": "Seibu.Haijima.5433.Weekday",
+	"t": "Seibu.Haijima.5433",
 	"r": "Seibu.Haijima",
-	"n": "4329",
+	"n": "5433",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
-		"Seibu.Shinjuku.SeibuShinjuku"
+		"Seibu.Haijima.Kodaira"
 	],
 	"ds": [
 		"Seibu.Haijima.Haijima"
-	],
-	"pt": [
-		"Seibu.Shinjuku.4329.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -4936,10 +4968,10 @@
 		"a": "00:26"
 	}]
 }, {
-	"id": "Seibu.Haijima.5433.Weekday",
-	"t": "Seibu.Haijima.5433",
+	"id": "Seibu.Haijima.5435.Weekday",
+	"t": "Seibu.Haijima.5435",
 	"r": "Seibu.Haijima",
-	"n": "5433",
+	"n": "5435",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -5036,17 +5068,20 @@
 		"a": "06:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.5402.Weekday",
-	"t": "Seibu.Haijima.5402",
+	"id": "Seibu.Haijima.4302.Weekday",
+	"t": "Seibu.Haijima.4302",
 	"r": "Seibu.Haijima",
-	"n": "5402",
-	"y": "Seibu.Local",
+	"n": "4302",
+	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Haijima.Haijima"
 	],
 	"ds": [
-		"Seibu.Haijima.Kodaira"
+		"Seibu.Shinjuku.SeibuShinjuku"
+	],
+	"nt": [
+		"Seibu.Shinjuku.4302.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -5074,10 +5109,10 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "05:30",
-		"d": "05:32"
+		"d": "05:33"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
-		"a": "05:34"
+		"a": "05:35"
 	}]
 }, {
 	"id": "Seibu.Haijima.5302.Weekday",
@@ -5144,10 +5179,10 @@
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
-		"d": "05:50"
+		"d": "05:49"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "05:53",
+		"a": "05:52",
 		"d": "05:53"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
@@ -5159,19 +5194,19 @@
 		"d": "05:59"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "06:01",
+		"a": "06:00",
 		"d": "06:01"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "06:04",
-		"d": "06:05"
+		"d": "06:04"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "06:07",
 		"d": "06:08"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
-		"a": "06:10"
+		"a": "06:09"
 	}]
 }, {
 	"id": "Seibu.Haijima.2304.Weekday",
@@ -5308,10 +5343,10 @@
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
 		"a": "06:32",
-		"d": "06:33"
+		"d": "06:32"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "06:36",
+		"a": "06:35",
 		"d": "06:36"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
@@ -5343,11 +5378,11 @@
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
 		"a": "06:34",
-		"d": "06:34"
+		"d": "06:35"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "06:36",
-		"d": "06:37"
+		"a": "06:37",
+		"d": "06:38"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
 		"a": "06:40",
@@ -5470,10 +5505,10 @@
 		"zh-Hant": "拜島Liner 4"
 	}]
 }, {
-	"id": "Seibu.Haijima.5404.Weekday",
-	"t": "Seibu.Haijima.5404",
+	"id": "Seibu.Haijima.5402.Weekday",
+	"t": "Seibu.Haijima.5402",
 	"r": "Seibu.Haijima",
-	"n": "5404",
+	"n": "5402",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -5504,20 +5539,20 @@
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "07:06",
-		"d": "07:08"
+		"d": "07:07"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "07:10",
+		"a": "07:09",
 		"d": "07:11"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
 		"a": "07:14"
 	}]
 }, {
-	"id": "Seibu.Haijima.4302.Weekday",
-	"t": "Seibu.Haijima.4302",
+	"id": "Seibu.Haijima.4304.Weekday",
+	"t": "Seibu.Haijima.4304",
 	"r": "Seibu.Haijima",
-	"n": "4302",
+	"n": "4304",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -5527,7 +5562,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4302.Weekday"
+		"Seibu.Shinjuku.4304.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -5645,11 +5680,11 @@
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "07:36",
-		"d": "07:37"
+		"d": "07:38"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "07:40",
-		"d": "07:41"
+		"a": "07:41",
+		"d": "07:42"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
 		"a": "07:43"
@@ -5702,10 +5737,10 @@
 		"a": "07:53"
 	}]
 }, {
-	"id": "Seibu.Haijima.4304.Weekday",
-	"t": "Seibu.Haijima.4304",
+	"id": "Seibu.Haijima.4306.Weekday",
+	"t": "Seibu.Haijima.4306",
 	"r": "Seibu.Haijima",
-	"n": "4304",
+	"n": "4306",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -5715,7 +5750,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4304.Weekday"
+		"Seibu.Shinjuku.4306.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -5735,18 +5770,18 @@
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
 		"a": "07:53",
-		"d": "07:54"
+		"d": "07:53"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "07:57",
+		"a": "07:56",
 		"d": "07:57"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "08:00",
-		"d": "08:01"
+		"d": "08:00"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
-		"a": "08:03"
+		"a": "08:02"
 	}]
 }, {
 	"id": "Seibu.Haijima.5306.Weekday",
@@ -5850,10 +5885,10 @@
 		"zh-Hant": "拜島Liner 6"
 	}]
 }, {
-	"id": "Seibu.Haijima.4306.Weekday",
-	"t": "Seibu.Haijima.4306",
+	"id": "Seibu.Haijima.4308.Weekday",
+	"t": "Seibu.Haijima.4308",
 	"r": "Seibu.Haijima",
-	"n": "4306",
+	"n": "4308",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -5863,7 +5898,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4306.Weekday"
+		"Seibu.Shinjuku.4308.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -5897,10 +5932,10 @@
 		"a": "08:26"
 	}]
 }, {
-	"id": "Seibu.Haijima.4308.Weekday",
-	"t": "Seibu.Haijima.4308",
+	"id": "Seibu.Haijima.4310.Weekday",
+	"t": "Seibu.Haijima.4310",
 	"r": "Seibu.Haijima",
-	"n": "4308",
+	"n": "4310",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -5910,7 +5945,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4308.Weekday"
+		"Seibu.Shinjuku.4310.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -6085,10 +6120,10 @@
 		"a": "09:11"
 	}]
 }, {
-	"id": "Seibu.Haijima.5406.Weekday",
-	"t": "Seibu.Haijima.5406",
+	"id": "Seibu.Haijima.5404.Weekday",
+	"t": "Seibu.Haijima.5404",
 	"r": "Seibu.Haijima",
-	"n": "5406",
+	"n": "5404",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6176,10 +6211,10 @@
 		"a": "09:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5408.Weekday",
-	"t": "Seibu.Haijima.5408",
+	"id": "Seibu.Haijima.5406.Weekday",
+	"t": "Seibu.Haijima.5406",
 	"r": "Seibu.Haijima",
-	"n": "5408",
+	"n": "5406",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6220,10 +6255,10 @@
 		"a": "09:49"
 	}]
 }, {
-	"id": "Seibu.Haijima.5410.Weekday",
-	"t": "Seibu.Haijima.5410",
+	"id": "Seibu.Haijima.5408.Weekday",
+	"t": "Seibu.Haijima.5408",
 	"r": "Seibu.Haijima",
-	"n": "5410",
+	"n": "5408",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6546,10 +6581,10 @@
 		"a": "11:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5412.Weekday",
-	"t": "Seibu.Haijima.5412",
+	"id": "Seibu.Haijima.5410.Weekday",
+	"t": "Seibu.Haijima.5410",
 	"r": "Seibu.Haijima",
-	"n": "5412",
+	"n": "5410",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6731,10 +6766,10 @@
 		"a": "12:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5414.Weekday",
-	"t": "Seibu.Haijima.5414",
+	"id": "Seibu.Haijima.5412.Weekday",
+	"t": "Seibu.Haijima.5412",
 	"r": "Seibu.Haijima",
-	"n": "5414",
+	"n": "5412",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6916,10 +6951,10 @@
 		"a": "13:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5416.Weekday",
-	"t": "Seibu.Haijima.5416",
+	"id": "Seibu.Haijima.5414.Weekday",
+	"t": "Seibu.Haijima.5414",
 	"r": "Seibu.Haijima",
-	"n": "5416",
+	"n": "5414",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7101,10 +7136,10 @@
 		"a": "14:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5418.Weekday",
-	"t": "Seibu.Haijima.5418",
+	"id": "Seibu.Haijima.5416.Weekday",
+	"t": "Seibu.Haijima.5416",
 	"r": "Seibu.Haijima",
-	"n": "5418",
+	"n": "5416",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7286,10 +7321,10 @@
 		"a": "15:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5420.Weekday",
-	"t": "Seibu.Haijima.5420",
+	"id": "Seibu.Haijima.5418.Weekday",
+	"t": "Seibu.Haijima.5418",
 	"r": "Seibu.Haijima",
-	"n": "5420",
+	"n": "5418",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7518,10 +7553,10 @@
 		"a": "16:41"
 	}]
 }, {
-	"id": "Seibu.Haijima.5422.Weekday",
-	"t": "Seibu.Haijima.5422",
+	"id": "Seibu.Haijima.5420.Weekday",
+	"t": "Seibu.Haijima.5420",
 	"r": "Seibu.Haijima",
-	"n": "5422",
+	"n": "5420",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7539,27 +7574,27 @@
 		"d": "16:34"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "16:37",
+		"a": "16:36",
 		"d": "16:37"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "16:40",
-		"d": "16:41"
+		"a": "16:39",
+		"d": "16:40"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "16:43",
-		"d": "16:43"
+		"a": "16:42",
+		"d": "16:42"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "16:46",
-		"d": "16:47"
+		"a": "16:45",
+		"d": "16:46"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "16:49",
-		"d": "16:50"
+		"a": "16:48",
+		"d": "16:49"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
-		"a": "16:52"
+		"a": "16:51"
 	}]
 }, {
 	"id": "Seibu.Haijima.2366.Weekday",
@@ -7609,10 +7644,10 @@
 		"a": "17:03"
 	}]
 }, {
-	"id": "Seibu.Haijima.4310.Weekday",
-	"t": "Seibu.Haijima.4310",
+	"id": "Seibu.Haijima.4312.Weekday",
+	"t": "Seibu.Haijima.4312",
 	"r": "Seibu.Haijima",
-	"n": "4310",
+	"n": "4312",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -7622,7 +7657,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4310.Weekday"
+		"Seibu.Shinjuku.4312.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -7703,10 +7738,10 @@
 		"a": "17:23"
 	}]
 }, {
-	"id": "Seibu.Haijima.4312.Weekday",
-	"t": "Seibu.Haijima.4312",
+	"id": "Seibu.Haijima.4314.Weekday",
+	"t": "Seibu.Haijima.4314",
 	"r": "Seibu.Haijima",
-	"n": "4312",
+	"n": "4314",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -7716,7 +7751,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4312.Weekday"
+		"Seibu.Shinjuku.4314.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -7771,14 +7806,14 @@
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
 		"a": "17:26",
-		"d": "17:27"
+		"d": "17:26"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "17:29",
+		"a": "17:28",
 		"d": "17:29"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "17:32",
+		"a": "17:31",
 		"d": "17:32"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
@@ -7787,14 +7822,14 @@
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "17:37",
-		"d": "17:38"
+		"d": "17:37"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "17:41",
+		"a": "17:40",
 		"d": "17:41"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
-		"a": "17:43"
+		"a": "17:42"
 	}]
 }, {
 	"id": "Seibu.Haijima.2372.Weekday",
@@ -7844,10 +7879,10 @@
 		"a": "17:54"
 	}]
 }, {
-	"id": "Seibu.Haijima.5424.Weekday",
-	"t": "Seibu.Haijima.5424",
+	"id": "Seibu.Haijima.5422.Weekday",
+	"t": "Seibu.Haijima.5422",
 	"r": "Seibu.Haijima",
-	"n": "5424",
+	"n": "5422",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7888,10 +7923,10 @@
 		"a": "18:04"
 	}]
 }, {
-	"id": "Seibu.Haijima.4314.Weekday",
-	"t": "Seibu.Haijima.4314",
+	"id": "Seibu.Haijima.4316.Weekday",
+	"t": "Seibu.Haijima.4316",
 	"r": "Seibu.Haijima",
-	"n": "4314",
+	"n": "4316",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -7901,7 +7936,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4314.Weekday"
+		"Seibu.Shinjuku.4316.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -7982,10 +8017,10 @@
 		"a": "18:24"
 	}]
 }, {
-	"id": "Seibu.Haijima.5426.Weekday",
-	"t": "Seibu.Haijima.5426",
+	"id": "Seibu.Haijima.5424.Weekday",
+	"t": "Seibu.Haijima.5424",
 	"r": "Seibu.Haijima",
-	"n": "5426",
+	"n": "5424",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -8261,10 +8296,10 @@
 		"a": "19:24"
 	}]
 }, {
-	"id": "Seibu.Haijima.5428.Weekday",
-	"t": "Seibu.Haijima.5428",
+	"id": "Seibu.Haijima.5426.Weekday",
+	"t": "Seibu.Haijima.5426",
 	"r": "Seibu.Haijima",
-	"n": "5428",
+	"n": "5426",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -8352,10 +8387,10 @@
 		"a": "19:44"
 	}]
 }, {
-	"id": "Seibu.Haijima.5430.Weekday",
-	"t": "Seibu.Haijima.5430",
+	"id": "Seibu.Haijima.5428.Weekday",
+	"t": "Seibu.Haijima.5428",
 	"r": "Seibu.Haijima",
-	"n": "5430",
+	"n": "5428",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -8396,10 +8431,10 @@
 		"a": "19:54"
 	}]
 }, {
-	"id": "Seibu.Haijima.4316.Weekday",
-	"t": "Seibu.Haijima.4316",
+	"id": "Seibu.Haijima.4318.Weekday",
+	"t": "Seibu.Haijima.4318",
 	"r": "Seibu.Haijima",
-	"n": "4316",
+	"n": "4318",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -8409,7 +8444,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4316.Weekday"
+		"Seibu.Shinjuku.4318.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -8537,10 +8572,10 @@
 		"a": "20:24"
 	}]
 }, {
-	"id": "Seibu.Haijima.5432.Weekday",
-	"t": "Seibu.Haijima.5432",
+	"id": "Seibu.Haijima.5430.Weekday",
+	"t": "Seibu.Haijima.5430",
 	"r": "Seibu.Haijima",
-	"n": "5432",
+	"n": "5430",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -8628,10 +8663,10 @@
 		"a": "20:44"
 	}]
 }, {
-	"id": "Seibu.Haijima.5434.Weekday",
-	"t": "Seibu.Haijima.5434",
+	"id": "Seibu.Haijima.5432.Weekday",
+	"t": "Seibu.Haijima.5432",
 	"r": "Seibu.Haijima",
-	"n": "5434",
+	"n": "5432",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -8693,14 +8728,14 @@
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
 		"a": "20:48",
-		"d": "20:49"
+		"d": "20:48"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "20:51",
 		"d": "20:51"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "20:54",
+		"a": "20:53",
 		"d": "20:54"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
@@ -8719,10 +8754,10 @@
 		"a": "21:07"
 	}]
 }, {
-	"id": "Seibu.Haijima.5436.Weekday",
-	"t": "Seibu.Haijima.5436",
+	"id": "Seibu.Haijima.5434.Weekday",
+	"t": "Seibu.Haijima.5434",
 	"r": "Seibu.Haijima",
-	"n": "5436",
+	"n": "5434",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -8737,26 +8772,26 @@
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
 		"a": "20:58",
-		"d": "20:59"
+		"d": "20:58"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "21:01",
+		"a": "21:00",
 		"d": "21:01"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "21:04",
+		"a": "21:03",
 		"d": "21:04"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "21:06",
+		"a": "21:05",
 		"d": "21:06"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "21:09",
-		"d": "21:10"
+		"d": "21:09"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "21:13",
+		"a": "21:12",
 		"d": "21:14"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
@@ -8810,10 +8845,10 @@
 		"a": "21:23"
 	}]
 }, {
-	"id": "Seibu.Haijima.5438.Weekday",
-	"t": "Seibu.Haijima.5438",
+	"id": "Seibu.Haijima.5436.Weekday",
+	"t": "Seibu.Haijima.5436",
 	"r": "Seibu.Haijima",
-	"n": "5438",
+	"n": "5436",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -8922,22 +8957,22 @@
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
 		"a": "21:44",
-		"d": "21:45"
+		"d": "21:44"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "21:47",
+		"a": "21:46",
 		"d": "21:47"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "21:50",
+		"a": "21:49",
 		"d": "21:50"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
 		"a": "21:52",
-		"d": "21:53"
+		"d": "21:52"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "21:56",
+		"a": "21:55",
 		"d": "21:58"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
@@ -8948,54 +8983,57 @@
 		"a": "22:03"
 	}]
 }, {
-	"id": "Seibu.Haijima.5440.Weekday",
-	"t": "Seibu.Haijima.5440",
+	"id": "Seibu.Haijima.5326.Weekday",
+	"t": "Seibu.Haijima.5326",
 	"r": "Seibu.Haijima",
-	"n": "5440",
+	"n": "5326",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Haijima.Haijima"
 	],
 	"ds": [
-		"Seibu.Haijima.Kodaira"
+		"Seibu.Shinjuku.SeibuShinjuku"
+	],
+	"nt": [
+		"Seibu.Shinjuku.5326.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
-		"d": "21:53"
+		"d": "21:52"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "21:56",
-		"d": "21:56"
+		"a": "21:55",
+		"d": "21:55"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "21:58",
 		"d": "21:58"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "22:01",
+		"a": "22:00",
 		"d": "22:01"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
 		"a": "22:03",
-		"d": "22:04"
+		"d": "22:03"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "22:07",
+		"a": "22:06",
 		"d": "22:07"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "22:10",
-		"d": "22:11"
+		"d": "22:10"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
 		"a": "22:12"
 	}]
 }, {
-	"id": "Seibu.Haijima.5442.Weekday",
-	"t": "Seibu.Haijima.5442",
+	"id": "Seibu.Haijima.5438.Weekday",
+	"t": "Seibu.Haijima.5438",
 	"r": "Seibu.Haijima",
-	"n": "5442",
+	"n": "5438",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -9029,17 +9067,17 @@
 		"d": "22:20"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "22:22",
+		"a": "22:23",
 		"d": "22:23"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
 		"a": "22:25"
 	}]
 }, {
-	"id": "Seibu.Haijima.5444.Weekday",
-	"t": "Seibu.Haijima.5444",
+	"id": "Seibu.Haijima.5440.Weekday",
+	"t": "Seibu.Haijima.5440",
 	"r": "Seibu.Haijima",
-	"n": "5444",
+	"n": "5440",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -9080,20 +9118,17 @@
 		"a": "22:36"
 	}]
 }, {
-	"id": "Seibu.Haijima.2386.Weekday",
-	"t": "Seibu.Haijima.2386",
+	"id": "Seibu.Haijima.5442.Weekday",
+	"t": "Seibu.Haijima.5442",
 	"r": "Seibu.Haijima",
-	"n": "2386",
-	"y": "Seibu.Express",
+	"n": "5442",
+	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Haijima.Haijima"
 	],
 	"ds": [
-		"Seibu.Shinjuku.SeibuShinjuku"
-	],
-	"nt": [
-		"Seibu.Shinjuku.2386.Weekday"
+		"Seibu.Haijima.Kodaira"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -9127,10 +9162,10 @@
 		"a": "22:48"
 	}]
 }, {
-	"id": "Seibu.Haijima.5446.Weekday",
-	"t": "Seibu.Haijima.5446",
+	"id": "Seibu.Haijima.5444.Weekday",
+	"t": "Seibu.Haijima.5444",
 	"r": "Seibu.Haijima",
-	"n": "5446",
+	"n": "5444",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -9171,10 +9206,10 @@
 		"a": "23:03"
 	}]
 }, {
-	"id": "Seibu.Haijima.5448.Weekday",
-	"t": "Seibu.Haijima.5448",
+	"id": "Seibu.Haijima.5446.Weekday",
+	"t": "Seibu.Haijima.5446",
 	"r": "Seibu.Haijima",
-	"n": "5448",
+	"n": "5446",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -9215,10 +9250,10 @@
 		"a": "23:17"
 	}]
 }, {
-	"id": "Seibu.Haijima.5450.Weekday",
-	"t": "Seibu.Haijima.5450",
+	"id": "Seibu.Haijima.5448.Weekday",
+	"t": "Seibu.Haijima.5448",
 	"r": "Seibu.Haijima",
-	"n": "5450",
+	"n": "5448",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -9252,17 +9287,17 @@
 		"d": "23:28"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "23:30",
+		"a": "23:31",
 		"d": "23:31"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
 		"a": "23:33"
 	}]
 }, {
-	"id": "Seibu.Haijima.5452.Weekday",
-	"t": "Seibu.Haijima.5452",
+	"id": "Seibu.Haijima.5450.Weekday",
+	"t": "Seibu.Haijima.5450",
 	"r": "Seibu.Haijima",
-	"n": "5452",
+	"n": "5450",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -9281,11 +9316,11 @@
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "23:31",
-		"d": "23:31"
+		"d": "23:32"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
 		"a": "23:34",
-		"d": "23:34"
+		"d": "23:35"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
 		"a": "23:36",
@@ -9303,10 +9338,10 @@
 		"a": "23:45"
 	}]
 }, {
-	"id": "Seibu.Haijima.5454.Weekday",
-	"t": "Seibu.Haijima.5454",
+	"id": "Seibu.Haijima.5452.Weekday",
+	"t": "Seibu.Haijima.5452",
 	"r": "Seibu.Haijima",
-	"n": "5454",
+	"n": "5452",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -10337,30 +10372,30 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "06:59",
-		"d": "06:59"
+		"d": "07:00"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "07:02",
-		"d": "07:02"
+		"d": "07:03"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "07:05",
+		"a": "07:06",
 		"d": "07:06"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
 		"a": "07:08",
-		"d": "07:08"
+		"d": "07:09"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "07:11",
-		"d": "07:11"
+		"a": "07:12",
+		"d": "07:12"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
 		"a": "07:14",
 		"d": "07:14"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
-		"a": "07:17"
+		"a": "07:18"
 	}]
 }, {
 	"id": "Seibu.Haijima.5251.SaturdayHoliday",
@@ -10445,20 +10480,20 @@
 		"a": "07:37"
 	}]
 }, {
-	"id": "Seibu.Haijima.5311.SaturdayHoliday",
-	"t": "Seibu.Haijima.5311",
+	"id": "Seibu.Haijima.2303.SaturdayHoliday",
+	"t": "Seibu.Haijima.2303",
 	"r": "Seibu.Haijima",
-	"n": "5311",
+	"n": "2303",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
-		"Seibu.Shinjuku.KamiShakujii"
+		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"ds": [
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5311.SaturdayHoliday"
+		"Seibu.Shinjuku.2303.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -10492,10 +10527,10 @@
 		"a": "07:48"
 	}]
 }, {
-	"id": "Seibu.Haijima.5313.SaturdayHoliday",
-	"t": "Seibu.Haijima.5313",
+	"id": "Seibu.Haijima.5311.SaturdayHoliday",
+	"t": "Seibu.Haijima.5311",
 	"r": "Seibu.Haijima",
-	"n": "5313",
+	"n": "5311",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10505,7 +10540,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5313.SaturdayHoliday"
+		"Seibu.Shinjuku.5311.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -10539,10 +10574,10 @@
 		"a": "07:57"
 	}]
 }, {
-	"id": "Seibu.Haijima.5315.SaturdayHoliday",
-	"t": "Seibu.Haijima.5315",
+	"id": "Seibu.Haijima.2305.SaturdayHoliday",
+	"t": "Seibu.Haijima.2305",
 	"r": "Seibu.Haijima",
-	"n": "5315",
+	"n": "2305",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10552,44 +10587,44 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5315.SaturdayHoliday"
+		"Seibu.Shinjuku.2305.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
-		"d": "07:47"
+		"d": "07:48"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "07:49",
-		"d": "07:49"
+		"d": "07:50"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "07:52",
+		"a": "07:53",
 		"d": "07:53"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
 		"a": "07:56",
-		"d": "07:56"
+		"d": "07:57"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "07:58",
+		"a": "07:59",
 		"d": "07:59"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "08:01",
+		"a": "08:02",
 		"d": "08:02"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
 		"a": "08:04",
-		"d": "08:04"
+		"d": "08:05"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
-		"a": "08:07"
+		"a": "08:08"
 	}]
 }, {
-	"id": "Seibu.Haijima.5317.SaturdayHoliday",
-	"t": "Seibu.Haijima.5317",
+	"id": "Seibu.Haijima.5313.SaturdayHoliday",
+	"t": "Seibu.Haijima.5313",
 	"r": "Seibu.Haijima",
-	"n": "5317",
+	"n": "5313",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10599,7 +10634,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5317.SaturdayHoliday"
+		"Seibu.Shinjuku.5313.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -10633,39 +10668,39 @@
 		"a": "08:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.5319.SaturdayHoliday",
-	"t": "Seibu.Haijima.5319",
+	"id": "Seibu.Haijima.2307.SaturdayHoliday",
+	"t": "Seibu.Haijima.2307",
 	"r": "Seibu.Haijima",
-	"n": "5319",
+	"n": "2307",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
-		"Seibu.Shinjuku.KamiShakujii"
+		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"ds": [
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5319.SaturdayHoliday"
+		"Seibu.Shinjuku.2307.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
-		"d": "08:06"
+		"d": "08:07"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "08:08",
-		"d": "08:09"
+		"a": "08:09",
+		"d": "08:10"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "08:11",
-		"d": "08:12"
+		"a": "08:12",
+		"d": "08:13"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "08:15",
-		"d": "08:15"
+		"a": "08:16",
+		"d": "08:16"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "08:17",
+		"a": "08:18",
 		"d": "08:20"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
@@ -10680,10 +10715,10 @@
 		"a": "08:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.5321.SaturdayHoliday",
-	"t": "Seibu.Haijima.5321",
+	"id": "Seibu.Haijima.5315.SaturdayHoliday",
+	"t": "Seibu.Haijima.5315",
 	"r": "Seibu.Haijima",
-	"n": "5321",
+	"n": "5315",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10693,7 +10728,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5321.SaturdayHoliday"
+		"Seibu.Shinjuku.5315.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -10774,10 +10809,10 @@
 		"a": "08:48"
 	}]
 }, {
-	"id": "Seibu.Haijima.5323.SaturdayHoliday",
-	"t": "Seibu.Haijima.5323",
+	"id": "Seibu.Haijima.5317.SaturdayHoliday",
+	"t": "Seibu.Haijima.5317",
 	"r": "Seibu.Haijima",
-	"n": "5323",
+	"n": "5317",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10787,7 +10822,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5323.SaturdayHoliday"
+		"Seibu.Shinjuku.5317.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -10821,10 +10856,10 @@
 		"a": "08:57"
 	}]
 }, {
-	"id": "Seibu.Haijima.5325.SaturdayHoliday",
-	"t": "Seibu.Haijima.5325",
+	"id": "Seibu.Haijima.5319.SaturdayHoliday",
+	"t": "Seibu.Haijima.5319",
 	"r": "Seibu.Haijima",
-	"n": "5325",
+	"n": "5319",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10834,14 +10869,14 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5325.SaturdayHoliday"
+		"Seibu.Shinjuku.5319.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
-		"d": "08:48"
+		"d": "08:49"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "08:50",
+		"a": "08:51",
 		"d": "08:51"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
@@ -10903,10 +10938,10 @@
 		"a": "09:10"
 	}]
 }, {
-	"id": "Seibu.Haijima.5327.SaturdayHoliday",
-	"t": "Seibu.Haijima.5327",
+	"id": "Seibu.Haijima.5321.SaturdayHoliday",
+	"t": "Seibu.Haijima.5321",
 	"r": "Seibu.Haijima",
-	"n": "5327",
+	"n": "5321",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10916,7 +10951,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5327.SaturdayHoliday"
+		"Seibu.Shinjuku.5321.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -10950,10 +10985,10 @@
 		"a": "09:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.5329.SaturdayHoliday",
-	"t": "Seibu.Haijima.5329",
+	"id": "Seibu.Haijima.5323.SaturdayHoliday",
+	"t": "Seibu.Haijima.5323",
 	"r": "Seibu.Haijima",
-	"n": "5329",
+	"n": "5323",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10963,7 +10998,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5329.SaturdayHoliday"
+		"Seibu.Shinjuku.5323.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -11032,10 +11067,10 @@
 		"a": "09:40"
 	}]
 }, {
-	"id": "Seibu.Haijima.5331.SaturdayHoliday",
-	"t": "Seibu.Haijima.5331",
+	"id": "Seibu.Haijima.5325.SaturdayHoliday",
+	"t": "Seibu.Haijima.5325",
 	"r": "Seibu.Haijima",
-	"n": "5331",
+	"n": "5325",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11045,7 +11080,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5331.SaturdayHoliday"
+		"Seibu.Shinjuku.5325.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -11079,10 +11114,10 @@
 		"a": "09:58"
 	}]
 }, {
-	"id": "Seibu.Haijima.2303.SaturdayHoliday",
-	"t": "Seibu.Haijima.2303",
+	"id": "Seibu.Haijima.2309.SaturdayHoliday",
+	"t": "Seibu.Haijima.2309",
 	"r": "Seibu.Haijima",
-	"n": "2303",
+	"n": "2309",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11092,7 +11127,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2303.SaturdayHoliday"
+		"Seibu.Shinjuku.2309.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -11170,10 +11205,10 @@
 		"a": "10:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2305.SaturdayHoliday",
-	"t": "Seibu.Haijima.2305",
+	"id": "Seibu.Haijima.2311.SaturdayHoliday",
+	"t": "Seibu.Haijima.2311",
 	"r": "Seibu.Haijima",
-	"n": "2305",
+	"n": "2311",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11183,7 +11218,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2305.SaturdayHoliday"
+		"Seibu.Shinjuku.2311.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -11252,10 +11287,10 @@
 		"a": "10:28"
 	}]
 }, {
-	"id": "Seibu.Haijima.2307.SaturdayHoliday",
-	"t": "Seibu.Haijima.2307",
+	"id": "Seibu.Haijima.2313.SaturdayHoliday",
+	"t": "Seibu.Haijima.2313",
 	"r": "Seibu.Haijima",
-	"n": "2307",
+	"n": "2313",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11265,73 +11300,38 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2307.SaturdayHoliday"
+		"Seibu.Shinjuku.2313.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
 		"d": "10:29"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "10:30",
-		"d": "10:31"
+		"a": "10:31",
+		"d": "10:32"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "10:34",
-		"d": "10:34"
+		"d": "10:35"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "10:37",
-		"d": "10:38"
+		"a": "10:38",
+		"d": "10:39"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "10:40",
-		"d": "10:40"
-	}, {
-		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "10:43",
-		"d": "10:43"
-	}, {
-		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "10:45",
-		"d": "10:46"
-	}, {
-		"s": "Seibu.Haijima.Haijima",
-		"a": "10:49"
-	}]
-}, {
-	"id": "Seibu.Haijima.5255.SaturdayHoliday",
-	"t": "Seibu.Haijima.5255",
-	"r": "Seibu.Haijima",
-	"n": "5255",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Seibu.Shinjuku.SeibuShinjuku"
-	],
-	"ds": [
-		"Seibu.Haijima.TamagawaJosui"
-	],
-	"pt": [
-		"Seibu.Shinjuku.5255.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.Haijima.Kodaira",
-		"d": "10:34"
-	}, {
-		"s": "Seibu.Haijima.Hagiyama",
-		"a": "10:36",
-		"d": "10:36"
-	}, {
-		"s": "Seibu.Haijima.Ogawa",
-		"a": "10:39",
+		"a": "10:41",
 		"d": "10:41"
 	}, {
-		"s": "Seibu.Haijima.HigashiYamatoshi",
+		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "10:44",
 		"d": "10:44"
 	}, {
-		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "10:47"
+		"s": "Seibu.Haijima.SeibuTachikawa",
+		"a": "10:46",
+		"d": "10:47"
+	}, {
+		"s": "Seibu.Haijima.Haijima",
+		"a": "10:50"
 	}]
 }, {
 	"id": "Seibu.Haijima.4253.SaturdayHoliday",
@@ -11369,10 +11369,10 @@
 		"a": "10:50"
 	}]
 }, {
-	"id": "Seibu.Haijima.2309.SaturdayHoliday",
-	"t": "Seibu.Haijima.2309",
+	"id": "Seibu.Haijima.2315.SaturdayHoliday",
+	"t": "Seibu.Haijima.2315",
 	"r": "Seibu.Haijima",
-	"n": "2309",
+	"n": "2315",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11382,7 +11382,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2309.SaturdayHoliday"
+		"Seibu.Shinjuku.2315.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -11460,10 +11460,10 @@
 		"a": "11:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2311.SaturdayHoliday",
-	"t": "Seibu.Haijima.2311",
+	"id": "Seibu.Haijima.2317.SaturdayHoliday",
+	"t": "Seibu.Haijima.2317",
 	"r": "Seibu.Haijima",
-	"n": "2311",
+	"n": "2317",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11473,7 +11473,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2311.SaturdayHoliday"
+		"Seibu.Shinjuku.2317.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -11539,10 +11539,10 @@
 		"a": "11:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2313.SaturdayHoliday",
-	"t": "Seibu.Haijima.2313",
+	"id": "Seibu.Haijima.2319.SaturdayHoliday",
+	"t": "Seibu.Haijima.2319",
 	"r": "Seibu.Haijima",
-	"n": "2313",
+	"n": "2319",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11552,14 +11552,14 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2313.SaturdayHoliday"
+		"Seibu.Shinjuku.2319.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
 		"d": "11:29"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "11:30",
+		"a": "11:31",
 		"d": "11:31"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
@@ -11579,7 +11579,7 @@
 		"d": "11:43"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "11:45",
+		"a": "11:46",
 		"d": "11:46"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
@@ -11618,10 +11618,10 @@
 		"a": "11:50"
 	}]
 }, {
-	"id": "Seibu.Haijima.2315.SaturdayHoliday",
-	"t": "Seibu.Haijima.2315",
+	"id": "Seibu.Haijima.2321.SaturdayHoliday",
+	"t": "Seibu.Haijima.2321",
 	"r": "Seibu.Haijima",
-	"n": "2315",
+	"n": "2321",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11631,7 +11631,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2315.SaturdayHoliday"
+		"Seibu.Shinjuku.2321.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -11709,10 +11709,10 @@
 		"a": "12:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2317.SaturdayHoliday",
-	"t": "Seibu.Haijima.2317",
+	"id": "Seibu.Haijima.2323.SaturdayHoliday",
+	"t": "Seibu.Haijima.2323",
 	"r": "Seibu.Haijima",
-	"n": "2317",
+	"n": "2323",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11722,7 +11722,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2317.SaturdayHoliday"
+		"Seibu.Shinjuku.2323.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -11788,10 +11788,10 @@
 		"a": "12:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2319.SaturdayHoliday",
-	"t": "Seibu.Haijima.2319",
+	"id": "Seibu.Haijima.2325.SaturdayHoliday",
+	"t": "Seibu.Haijima.2325",
 	"r": "Seibu.Haijima",
-	"n": "2319",
+	"n": "2325",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11801,7 +11801,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2319.SaturdayHoliday"
+		"Seibu.Shinjuku.2325.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -11867,10 +11867,10 @@
 		"a": "12:50"
 	}]
 }, {
-	"id": "Seibu.Haijima.2321.SaturdayHoliday",
-	"t": "Seibu.Haijima.2321",
+	"id": "Seibu.Haijima.2327.SaturdayHoliday",
+	"t": "Seibu.Haijima.2327",
 	"r": "Seibu.Haijima",
-	"n": "2321",
+	"n": "2327",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11880,7 +11880,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2321.SaturdayHoliday"
+		"Seibu.Shinjuku.2327.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -11958,10 +11958,10 @@
 		"a": "13:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2323.SaturdayHoliday",
-	"t": "Seibu.Haijima.2323",
+	"id": "Seibu.Haijima.2329.SaturdayHoliday",
+	"t": "Seibu.Haijima.2329",
 	"r": "Seibu.Haijima",
-	"n": "2323",
+	"n": "2329",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11971,7 +11971,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2323.SaturdayHoliday"
+		"Seibu.Shinjuku.2329.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12037,10 +12037,10 @@
 		"a": "13:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2325.SaturdayHoliday",
-	"t": "Seibu.Haijima.2325",
+	"id": "Seibu.Haijima.2331.SaturdayHoliday",
+	"t": "Seibu.Haijima.2331",
 	"r": "Seibu.Haijima",
-	"n": "2325",
+	"n": "2331",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12050,7 +12050,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2325.SaturdayHoliday"
+		"Seibu.Shinjuku.2331.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12116,10 +12116,10 @@
 		"a": "13:50"
 	}]
 }, {
-	"id": "Seibu.Haijima.2327.SaturdayHoliday",
-	"t": "Seibu.Haijima.2327",
+	"id": "Seibu.Haijima.2333.SaturdayHoliday",
+	"t": "Seibu.Haijima.2333",
 	"r": "Seibu.Haijima",
-	"n": "2327",
+	"n": "2333",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12129,7 +12129,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2327.SaturdayHoliday"
+		"Seibu.Shinjuku.2333.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12207,10 +12207,10 @@
 		"a": "14:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2329.SaturdayHoliday",
-	"t": "Seibu.Haijima.2329",
+	"id": "Seibu.Haijima.2335.SaturdayHoliday",
+	"t": "Seibu.Haijima.2335",
 	"r": "Seibu.Haijima",
-	"n": "2329",
+	"n": "2335",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12220,7 +12220,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2329.SaturdayHoliday"
+		"Seibu.Shinjuku.2335.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12286,10 +12286,10 @@
 		"a": "14:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2331.SaturdayHoliday",
-	"t": "Seibu.Haijima.2331",
+	"id": "Seibu.Haijima.2337.SaturdayHoliday",
+	"t": "Seibu.Haijima.2337",
 	"r": "Seibu.Haijima",
-	"n": "2331",
+	"n": "2337",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12299,7 +12299,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2331.SaturdayHoliday"
+		"Seibu.Shinjuku.2337.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12365,10 +12365,10 @@
 		"a": "14:50"
 	}]
 }, {
-	"id": "Seibu.Haijima.2333.SaturdayHoliday",
-	"t": "Seibu.Haijima.2333",
+	"id": "Seibu.Haijima.2339.SaturdayHoliday",
+	"t": "Seibu.Haijima.2339",
 	"r": "Seibu.Haijima",
-	"n": "2333",
+	"n": "2339",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12378,7 +12378,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2333.SaturdayHoliday"
+		"Seibu.Shinjuku.2339.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12456,10 +12456,10 @@
 		"a": "15:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2335.SaturdayHoliday",
-	"t": "Seibu.Haijima.2335",
+	"id": "Seibu.Haijima.2341.SaturdayHoliday",
+	"t": "Seibu.Haijima.2341",
 	"r": "Seibu.Haijima",
-	"n": "2335",
+	"n": "2341",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12469,7 +12469,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2335.SaturdayHoliday"
+		"Seibu.Shinjuku.2341.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12535,10 +12535,10 @@
 		"a": "15:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.2337.SaturdayHoliday",
-	"t": "Seibu.Haijima.2337",
+	"id": "Seibu.Haijima.2343.SaturdayHoliday",
+	"t": "Seibu.Haijima.2343",
 	"r": "Seibu.Haijima",
-	"n": "2337",
+	"n": "2343",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12548,7 +12548,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2337.SaturdayHoliday"
+		"Seibu.Shinjuku.2343.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12614,10 +12614,10 @@
 		"a": "15:50"
 	}]
 }, {
-	"id": "Seibu.Haijima.2339.SaturdayHoliday",
-	"t": "Seibu.Haijima.2339",
+	"id": "Seibu.Haijima.2345.SaturdayHoliday",
+	"t": "Seibu.Haijima.2345",
 	"r": "Seibu.Haijima",
-	"n": "2339",
+	"n": "2345",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12627,7 +12627,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2339.SaturdayHoliday"
+		"Seibu.Shinjuku.2345.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12705,10 +12705,10 @@
 		"a": "16:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.2341.SaturdayHoliday",
-	"t": "Seibu.Haijima.2341",
+	"id": "Seibu.Haijima.2347.SaturdayHoliday",
+	"t": "Seibu.Haijima.2347",
 	"r": "Seibu.Haijima",
-	"n": "2341",
+	"n": "2347",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12718,7 +12718,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2341.SaturdayHoliday"
+		"Seibu.Shinjuku.2347.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12752,10 +12752,10 @@
 		"a": "16:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.5333.SaturdayHoliday",
-	"t": "Seibu.Haijima.5333",
+	"id": "Seibu.Haijima.5327.SaturdayHoliday",
+	"t": "Seibu.Haijima.5327",
 	"r": "Seibu.Haijima",
-	"n": "5333",
+	"n": "5327",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12765,7 +12765,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5333.SaturdayHoliday"
+		"Seibu.Shinjuku.5327.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12799,10 +12799,10 @@
 		"a": "16:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.2343.SaturdayHoliday",
-	"t": "Seibu.Haijima.2343",
+	"id": "Seibu.Haijima.2349.SaturdayHoliday",
+	"t": "Seibu.Haijima.2349",
 	"r": "Seibu.Haijima",
-	"n": "2343",
+	"n": "2349",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12812,7 +12812,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2343.SaturdayHoliday"
+		"Seibu.Shinjuku.2349.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12846,10 +12846,10 @@
 		"a": "16:49"
 	}]
 }, {
-	"id": "Seibu.Haijima.5335.SaturdayHoliday",
-	"t": "Seibu.Haijima.5335",
+	"id": "Seibu.Haijima.5329.SaturdayHoliday",
+	"t": "Seibu.Haijima.5329",
 	"r": "Seibu.Haijima",
-	"n": "5335",
+	"n": "5329",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12859,7 +12859,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5335.SaturdayHoliday"
+		"Seibu.Shinjuku.5329.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12867,7 +12867,7 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "16:40",
-		"d": "16:41"
+		"d": "16:40"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "16:43",
@@ -12882,21 +12882,21 @@
 		"d": "16:50"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "16:53",
+		"a": "16:52",
 		"d": "16:53"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
 		"a": "16:55",
-		"d": "16:56"
+		"d": "16:55"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
-		"a": "16:59"
+		"a": "16:58"
 	}]
 }, {
-	"id": "Seibu.Haijima.5337.SaturdayHoliday",
-	"t": "Seibu.Haijima.5337",
+	"id": "Seibu.Haijima.5331.SaturdayHoliday",
+	"t": "Seibu.Haijima.5331",
 	"r": "Seibu.Haijima",
-	"n": "5337",
+	"n": "5331",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12906,7 +12906,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5337.SaturdayHoliday"
+		"Seibu.Shinjuku.5331.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12940,10 +12940,10 @@
 		"a": "17:09"
 	}]
 }, {
-	"id": "Seibu.Haijima.5339.SaturdayHoliday",
-	"t": "Seibu.Haijima.5339",
+	"id": "Seibu.Haijima.5333.SaturdayHoliday",
+	"t": "Seibu.Haijima.5333",
 	"r": "Seibu.Haijima",
-	"n": "5339",
+	"n": "5333",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12953,7 +12953,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5339.SaturdayHoliday"
+		"Seibu.Shinjuku.5333.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -12987,10 +12987,10 @@
 		"a": "17:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.5341.SaturdayHoliday",
-	"t": "Seibu.Haijima.5341",
+	"id": "Seibu.Haijima.5335.SaturdayHoliday",
+	"t": "Seibu.Haijima.5335",
 	"r": "Seibu.Haijima",
-	"n": "5341",
+	"n": "5335",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13000,7 +13000,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5341.SaturdayHoliday"
+		"Seibu.Shinjuku.5335.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13034,10 +13034,10 @@
 		"a": "17:28"
 	}]
 }, {
-	"id": "Seibu.Haijima.5343.SaturdayHoliday",
-	"t": "Seibu.Haijima.5343",
+	"id": "Seibu.Haijima.5337.SaturdayHoliday",
+	"t": "Seibu.Haijima.5337",
 	"r": "Seibu.Haijima",
-	"n": "5343",
+	"n": "5337",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13047,7 +13047,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5343.SaturdayHoliday"
+		"Seibu.Shinjuku.5337.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13081,10 +13081,10 @@
 		"a": "17:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.2345.SaturdayHoliday",
-	"t": "Seibu.Haijima.2345",
+	"id": "Seibu.Haijima.2351.SaturdayHoliday",
+	"t": "Seibu.Haijima.2351",
 	"r": "Seibu.Haijima",
-	"n": "2345",
+	"n": "2351",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13094,7 +13094,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2345.SaturdayHoliday"
+		"Seibu.Shinjuku.2351.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13182,10 +13182,10 @@
 		"zh-Hant": "拜島Liner 1"
 	}]
 }, {
-	"id": "Seibu.Haijima.2347.SaturdayHoliday",
-	"t": "Seibu.Haijima.2347",
+	"id": "Seibu.Haijima.2353.SaturdayHoliday",
+	"t": "Seibu.Haijima.2353",
 	"r": "Seibu.Haijima",
-	"n": "2347",
+	"n": "2353",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13195,7 +13195,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2347.SaturdayHoliday"
+		"Seibu.Shinjuku.2353.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13229,10 +13229,10 @@
 		"a": "18:09"
 	}]
 }, {
-	"id": "Seibu.Haijima.2349.SaturdayHoliday",
-	"t": "Seibu.Haijima.2349",
+	"id": "Seibu.Haijima.2355.SaturdayHoliday",
+	"t": "Seibu.Haijima.2355",
 	"r": "Seibu.Haijima",
-	"n": "2349",
+	"n": "2355",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13242,7 +13242,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2349.SaturdayHoliday"
+		"Seibu.Shinjuku.2355.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13276,20 +13276,17 @@
 		"a": "18:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.5345.SaturdayHoliday",
-	"t": "Seibu.Haijima.5345",
+	"id": "Seibu.Haijima.5419.SaturdayHoliday",
+	"t": "Seibu.Haijima.5419",
 	"r": "Seibu.Haijima",
-	"n": "5345",
+	"n": "5419",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
-		"Seibu.Shinjuku.SeibuShinjuku"
+		"Seibu.Haijima.Kodaira"
 	],
 	"ds": [
 		"Seibu.Haijima.Haijima"
-	],
-	"pt": [
-		"Seibu.Shinjuku.5345.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13323,10 +13320,10 @@
 		"a": "18:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.2351.SaturdayHoliday",
-	"t": "Seibu.Haijima.2351",
+	"id": "Seibu.Haijima.2357.SaturdayHoliday",
+	"t": "Seibu.Haijima.2357",
 	"r": "Seibu.Haijima",
-	"n": "2351",
+	"n": "2357",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13336,7 +13333,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2351.SaturdayHoliday"
+		"Seibu.Shinjuku.2357.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13471,10 +13468,10 @@
 		"zh-Hant": "拜島Liner 3"
 	}]
 }, {
-	"id": "Seibu.Haijima.2353.SaturdayHoliday",
-	"t": "Seibu.Haijima.2353",
+	"id": "Seibu.Haijima.2359.SaturdayHoliday",
+	"t": "Seibu.Haijima.2359",
 	"r": "Seibu.Haijima",
-	"n": "2353",
+	"n": "2359",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13484,7 +13481,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2353.SaturdayHoliday"
+		"Seibu.Shinjuku.2359.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13518,10 +13515,10 @@
 		"a": "19:09"
 	}]
 }, {
-	"id": "Seibu.Haijima.2355.SaturdayHoliday",
-	"t": "Seibu.Haijima.2355",
+	"id": "Seibu.Haijima.2361.SaturdayHoliday",
+	"t": "Seibu.Haijima.2361",
 	"r": "Seibu.Haijima",
-	"n": "2355",
+	"n": "2361",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13531,7 +13528,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2355.SaturdayHoliday"
+		"Seibu.Shinjuku.2361.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13565,10 +13562,10 @@
 		"a": "19:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.5347.SaturdayHoliday",
-	"t": "Seibu.Haijima.5347",
+	"id": "Seibu.Haijima.5339.SaturdayHoliday",
+	"t": "Seibu.Haijima.5339",
 	"r": "Seibu.Haijima",
-	"n": "5347",
+	"n": "5339",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13578,7 +13575,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5347.SaturdayHoliday"
+		"Seibu.Shinjuku.5339.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13612,10 +13609,10 @@
 		"a": "19:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.2357.SaturdayHoliday",
-	"t": "Seibu.Haijima.2357",
+	"id": "Seibu.Haijima.2363.SaturdayHoliday",
+	"t": "Seibu.Haijima.2363",
 	"r": "Seibu.Haijima",
-	"n": "2357",
+	"n": "2363",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13625,7 +13622,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2357.SaturdayHoliday"
+		"Seibu.Shinjuku.2363.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13659,10 +13656,10 @@
 		"a": "19:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.2359.SaturdayHoliday",
-	"t": "Seibu.Haijima.2359",
+	"id": "Seibu.Haijima.2365.SaturdayHoliday",
+	"t": "Seibu.Haijima.2365",
 	"r": "Seibu.Haijima",
-	"n": "2359",
+	"n": "2365",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13672,7 +13669,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2359.SaturdayHoliday"
+		"Seibu.Shinjuku.2365.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13760,10 +13757,10 @@
 		"zh-Hant": "拜島Liner 5"
 	}]
 }, {
-	"id": "Seibu.Haijima.2361.SaturdayHoliday",
-	"t": "Seibu.Haijima.2361",
+	"id": "Seibu.Haijima.5341.SaturdayHoliday",
+	"t": "Seibu.Haijima.5341",
 	"r": "Seibu.Haijima",
-	"n": "2361",
+	"n": "5341",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13773,7 +13770,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2361.SaturdayHoliday"
+		"Seibu.Shinjuku.5341.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13807,10 +13804,10 @@
 		"a": "20:10"
 	}]
 }, {
-	"id": "Seibu.Haijima.2363.SaturdayHoliday",
-	"t": "Seibu.Haijima.2363",
+	"id": "Seibu.Haijima.2367.SaturdayHoliday",
+	"t": "Seibu.Haijima.2367",
 	"r": "Seibu.Haijima",
-	"n": "2363",
+	"n": "2367",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13820,7 +13817,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2363.SaturdayHoliday"
+		"Seibu.Shinjuku.2367.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13854,10 +13851,10 @@
 		"a": "20:22"
 	}]
 }, {
-	"id": "Seibu.Haijima.5349.SaturdayHoliday",
-	"t": "Seibu.Haijima.5349",
+	"id": "Seibu.Haijima.5343.SaturdayHoliday",
+	"t": "Seibu.Haijima.5343",
 	"r": "Seibu.Haijima",
-	"n": "5349",
+	"n": "5343",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13867,7 +13864,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5349.SaturdayHoliday"
+		"Seibu.Shinjuku.5343.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13901,10 +13898,10 @@
 		"a": "20:37"
 	}]
 }, {
-	"id": "Seibu.Haijima.2365.SaturdayHoliday",
-	"t": "Seibu.Haijima.2365",
+	"id": "Seibu.Haijima.2369.SaturdayHoliday",
+	"t": "Seibu.Haijima.2369",
 	"r": "Seibu.Haijima",
-	"n": "2365",
+	"n": "2369",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -13914,7 +13911,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2365.SaturdayHoliday"
+		"Seibu.Shinjuku.2369.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -13965,34 +13962,34 @@
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
-		"d": "20:37"
+		"d": "20:38"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "20:39",
-		"d": "20:40"
+		"a": "20:40",
+		"d": "20:41"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "20:42",
-		"d": "20:43"
+		"a": "20:43",
+		"d": "20:44"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "20:46",
-		"d": "20:46"
+		"a": "20:47",
+		"d": "20:47"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "20:48",
-		"d": "20:49"
+		"a": "20:49",
+		"d": "20:50"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "20:52",
-		"d": "20:52"
+		"a": "20:53",
+		"d": "20:53"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "20:54",
-		"d": "20:55"
+		"a": "20:55",
+		"d": "20:56"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
-		"a": "20:58"
+		"a": "20:59"
 	}],
 	"nm": [{
 		"ja": "拝島ライナー 7号",
@@ -14002,10 +13999,10 @@
 		"zh-Hant": "拜島Liner 7"
 	}]
 }, {
-	"id": "Seibu.Haijima.5351.SaturdayHoliday",
-	"t": "Seibu.Haijima.5351",
+	"id": "Seibu.Haijima.5345.SaturdayHoliday",
+	"t": "Seibu.Haijima.5345",
 	"r": "Seibu.Haijima",
-	"n": "5351",
+	"n": "5345",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -14015,7 +14012,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5351.SaturdayHoliday"
+		"Seibu.Shinjuku.5345.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -14081,10 +14078,10 @@
 		"a": "21:10"
 	}]
 }, {
-	"id": "Seibu.Haijima.2367.SaturdayHoliday",
-	"t": "Seibu.Haijima.2367",
+	"id": "Seibu.Haijima.2371.SaturdayHoliday",
+	"t": "Seibu.Haijima.2371",
 	"r": "Seibu.Haijima",
-	"n": "2367",
+	"n": "2371",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -14094,7 +14091,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2367.SaturdayHoliday"
+		"Seibu.Shinjuku.2371.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -14102,7 +14099,7 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "21:10",
-		"d": "21:11"
+		"d": "21:10"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "21:13",
@@ -14117,7 +14114,7 @@
 		"d": "21:20"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "21:23",
+		"a": "21:22",
 		"d": "21:23"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
@@ -14125,13 +14122,13 @@
 		"d": "21:25"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
-		"a": "21:29"
+		"a": "21:28"
 	}]
 }, {
-	"id": "Seibu.Haijima.5419.SaturdayHoliday",
-	"t": "Seibu.Haijima.5419",
+	"id": "Seibu.Haijima.5421.SaturdayHoliday",
+	"t": "Seibu.Haijima.5421",
 	"r": "Seibu.Haijima",
-	"n": "5419",
+	"n": "5421",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -14226,10 +14223,10 @@
 		"zh-Hant": "拜島Liner 9"
 	}]
 }, {
-	"id": "Seibu.Haijima.5353.SaturdayHoliday",
-	"t": "Seibu.Haijima.5353",
+	"id": "Seibu.Haijima.5347.SaturdayHoliday",
+	"t": "Seibu.Haijima.5347",
 	"r": "Seibu.Haijima",
-	"n": "5353",
+	"n": "5347",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -14239,7 +14236,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5353.SaturdayHoliday"
+		"Seibu.Shinjuku.5347.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -14273,10 +14270,10 @@
 		"a": "22:15"
 	}]
 }, {
-	"id": "Seibu.Haijima.2369.SaturdayHoliday",
-	"t": "Seibu.Haijima.2369",
+	"id": "Seibu.Haijima.2373.SaturdayHoliday",
+	"t": "Seibu.Haijima.2373",
 	"r": "Seibu.Haijima",
-	"n": "2369",
+	"n": "2373",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -14286,7 +14283,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2369.SaturdayHoliday"
+		"Seibu.Shinjuku.2373.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -14320,10 +14317,10 @@
 		"a": "22:28"
 	}]
 }, {
-	"id": "Seibu.Haijima.5257.SaturdayHoliday",
-	"t": "Seibu.Haijima.5257",
+	"id": "Seibu.Haijima.5255.SaturdayHoliday",
+	"t": "Seibu.Haijima.5255",
 	"r": "Seibu.Haijima",
-	"n": "5257",
+	"n": "5255",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -14333,7 +14330,7 @@
 		"Seibu.Haijima.TamagawaJosui"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5257.SaturdayHoliday"
+		"Seibu.Shinjuku.5255.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -14355,10 +14352,10 @@
 		"a": "22:33"
 	}]
 }, {
-	"id": "Seibu.Haijima.2371.SaturdayHoliday",
-	"t": "Seibu.Haijima.2371",
+	"id": "Seibu.Haijima.2375.SaturdayHoliday",
+	"t": "Seibu.Haijima.2375",
 	"r": "Seibu.Haijima",
-	"n": "2371",
+	"n": "2375",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -14368,7 +14365,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2371.SaturdayHoliday"
+		"Seibu.Shinjuku.2375.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -14456,10 +14453,10 @@
 		"zh-Hant": "拜島Liner 11"
 	}]
 }, {
-	"id": "Seibu.Haijima.5355.SaturdayHoliday",
-	"t": "Seibu.Haijima.5355",
+	"id": "Seibu.Haijima.5349.SaturdayHoliday",
+	"t": "Seibu.Haijima.5349",
 	"r": "Seibu.Haijima",
-	"n": "5355",
+	"n": "5349",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -14469,7 +14466,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5355.SaturdayHoliday"
+		"Seibu.Shinjuku.5349.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -14503,10 +14500,10 @@
 		"a": "23:12"
 	}]
 }, {
-	"id": "Seibu.Haijima.2373.SaturdayHoliday",
-	"t": "Seibu.Haijima.2373",
+	"id": "Seibu.Haijima.2377.SaturdayHoliday",
+	"t": "Seibu.Haijima.2377",
 	"r": "Seibu.Haijima",
-	"n": "2373",
+	"n": "2377",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -14516,7 +14513,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2373.SaturdayHoliday"
+		"Seibu.Shinjuku.2377.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -14550,10 +14547,10 @@
 		"a": "23:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.5357.SaturdayHoliday",
-	"t": "Seibu.Haijima.5357",
+	"id": "Seibu.Haijima.4305.SaturdayHoliday",
+	"t": "Seibu.Haijima.4305",
 	"r": "Seibu.Haijima",
-	"n": "5357",
+	"n": "4305",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -14563,22 +14560,22 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.5357.SaturdayHoliday"
+		"Seibu.Shinjuku.4305.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
 		"d": "23:32"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "23:33",
+		"a": "23:34",
 		"d": "23:34"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "23:37",
-		"d": "23:37"
+		"d": "23:38"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "23:40",
+		"a": "23:41",
 		"d": "23:41"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
@@ -14587,20 +14584,20 @@
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "23:46",
-		"d": "23:46"
+		"d": "23:47"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "23:48",
+		"a": "23:49",
 		"d": "23:49"
 	}, {
 		"s": "Seibu.Haijima.Haijima",
 		"a": "23:52"
 	}]
 }, {
-	"id": "Seibu.Haijima.2375.SaturdayHoliday",
-	"t": "Seibu.Haijima.2375",
+	"id": "Seibu.Haijima.2379.SaturdayHoliday",
+	"t": "Seibu.Haijima.2379",
 	"r": "Seibu.Haijima",
-	"n": "2375",
+	"n": "2379",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -14610,7 +14607,7 @@
 		"Seibu.Haijima.Haijima"
 	],
 	"pt": [
-		"Seibu.Shinjuku.2375.SaturdayHoliday"
+		"Seibu.Shinjuku.2379.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Kodaira",
@@ -14644,10 +14641,10 @@
 		"a": "00:09"
 	}]
 }, {
-	"id": "Seibu.Haijima.5421.SaturdayHoliday",
-	"t": "Seibu.Haijima.5421",
+	"id": "Seibu.Haijima.5423.SaturdayHoliday",
+	"t": "Seibu.Haijima.5423",
 	"r": "Seibu.Haijima",
-	"n": "5421",
+	"n": "5423",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -14800,17 +14797,20 @@
 		"a": "09:49"
 	}]
 }, {
-	"id": "Seibu.Haijima.5402.SaturdayHoliday",
-	"t": "Seibu.Haijima.5402",
+	"id": "Seibu.Haijima.4302.SaturdayHoliday",
+	"t": "Seibu.Haijima.4302",
 	"r": "Seibu.Haijima",
-	"n": "5402",
-	"y": "Seibu.Local",
+	"n": "4302",
+	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Haijima.Haijima"
 	],
 	"ds": [
-		"Seibu.Haijima.Kodaira"
+		"Seibu.Shinjuku.SeibuShinjuku"
+	],
+	"nt": [
+		"Seibu.Shinjuku.4302.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -14838,10 +14838,10 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "05:30",
-		"d": "05:32"
+		"d": "05:33"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
-		"a": "05:34"
+		"a": "05:35"
 	}]
 }, {
 	"id": "Seibu.Haijima.5302.SaturdayHoliday",
@@ -14891,11 +14891,11 @@
 		"a": "05:55"
 	}]
 }, {
-	"id": "Seibu.Haijima.5304.SaturdayHoliday",
-	"t": "Seibu.Haijima.5304",
+	"id": "Seibu.Haijima.2302.SaturdayHoliday",
+	"t": "Seibu.Haijima.2302",
 	"r": "Seibu.Haijima",
-	"n": "5304",
-	"y": "Seibu.Local",
+	"n": "2302",
+	"y": "Seibu.Express",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Haijima.Haijima"
@@ -14904,7 +14904,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5304.SaturdayHoliday"
+		"Seibu.Shinjuku.2302.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -14938,10 +14938,10 @@
 		"a": "06:15"
 	}]
 }, {
-	"id": "Seibu.Haijima.5306.SaturdayHoliday",
-	"t": "Seibu.Haijima.5306",
+	"id": "Seibu.Haijima.5304.SaturdayHoliday",
+	"t": "Seibu.Haijima.5304",
 	"r": "Seibu.Haijima",
-	"n": "5306",
+	"n": "5304",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -14951,7 +14951,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5306.SaturdayHoliday"
+		"Seibu.Shinjuku.5304.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -14985,10 +14985,10 @@
 		"a": "06:31"
 	}]
 }, {
-	"id": "Seibu.Haijima.2302.SaturdayHoliday",
-	"t": "Seibu.Haijima.2302",
+	"id": "Seibu.Haijima.2304.SaturdayHoliday",
+	"t": "Seibu.Haijima.2304",
 	"r": "Seibu.Haijima",
-	"n": "2302",
+	"n": "2304",
 	"y": "Seibu.Express",
 	"d": "Inbound",
 	"os": [
@@ -14998,7 +14998,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.2302.SaturdayHoliday"
+		"Seibu.Shinjuku.2304.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15032,10 +15032,10 @@
 		"a": "06:47"
 	}]
 }, {
-	"id": "Seibu.Haijima.5308.SaturdayHoliday",
-	"t": "Seibu.Haijima.5308",
+	"id": "Seibu.Haijima.5306.SaturdayHoliday",
+	"t": "Seibu.Haijima.5306",
 	"r": "Seibu.Haijima",
-	"n": "5308",
+	"n": "5306",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15045,7 +15045,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5308.SaturdayHoliday"
+		"Seibu.Shinjuku.5306.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15079,10 +15079,10 @@
 		"a": "07:06"
 	}]
 }, {
-	"id": "Seibu.Haijima.2304.SaturdayHoliday",
-	"t": "Seibu.Haijima.2304",
+	"id": "Seibu.Haijima.2306.SaturdayHoliday",
+	"t": "Seibu.Haijima.2306",
 	"r": "Seibu.Haijima",
-	"n": "2304",
+	"n": "2306",
 	"y": "Seibu.Express",
 	"d": "Inbound",
 	"os": [
@@ -15092,7 +15092,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.2304.SaturdayHoliday"
+		"Seibu.Shinjuku.2306.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15126,10 +15126,10 @@
 		"a": "07:17"
 	}]
 }, {
-	"id": "Seibu.Haijima.5310.SaturdayHoliday",
-	"t": "Seibu.Haijima.5310",
+	"id": "Seibu.Haijima.5308.SaturdayHoliday",
+	"t": "Seibu.Haijima.5308",
 	"r": "Seibu.Haijima",
-	"n": "5310",
+	"n": "5308",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15139,7 +15139,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5310.SaturdayHoliday"
+		"Seibu.Shinjuku.5308.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15173,10 +15173,10 @@
 		"a": "07:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.5312.SaturdayHoliday",
-	"t": "Seibu.Haijima.5312",
+	"id": "Seibu.Haijima.5310.SaturdayHoliday",
+	"t": "Seibu.Haijima.5310",
 	"r": "Seibu.Haijima",
-	"n": "5312",
+	"n": "5310",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15186,7 +15186,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5312.SaturdayHoliday"
+		"Seibu.Shinjuku.5310.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15220,57 +15220,10 @@
 		"a": "07:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.2306.SaturdayHoliday",
-	"t": "Seibu.Haijima.2306",
+	"id": "Seibu.Haijima.4304.SaturdayHoliday",
+	"t": "Seibu.Haijima.4304",
 	"r": "Seibu.Haijima",
-	"n": "2306",
-	"y": "Seibu.Express",
-	"d": "Inbound",
-	"os": [
-		"Seibu.Haijima.Haijima"
-	],
-	"ds": [
-		"Seibu.Shinjuku.SeibuShinjuku"
-	],
-	"nt": [
-		"Seibu.Shinjuku.2306.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "Seibu.Haijima.Haijima",
-		"d": "07:28"
-	}, {
-		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "07:31",
-		"d": "07:31"
-	}, {
-		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "07:34",
-		"d": "07:34"
-	}, {
-		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "07:36",
-		"d": "07:37"
-	}, {
-		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "07:39",
-		"d": "07:39"
-	}, {
-		"s": "Seibu.Haijima.Ogawa",
-		"a": "07:42",
-		"d": "07:43"
-	}, {
-		"s": "Seibu.Haijima.Hagiyama",
-		"a": "07:45",
-		"d": "07:46"
-	}, {
-		"s": "Seibu.Haijima.Kodaira",
-		"a": "07:48"
-	}]
-}, {
-	"id": "Seibu.Haijima.4302.SaturdayHoliday",
-	"t": "Seibu.Haijima.4302",
-	"r": "Seibu.Haijima",
-	"n": "4302",
+	"n": "4304",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -15280,14 +15233,61 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4302.SaturdayHoliday"
+		"Seibu.Shinjuku.4304.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
-		"d": "07:39"
+		"d": "07:30"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "07:42",
+		"a": "07:33",
+		"d": "07:33"
+	}, {
+		"s": "Seibu.Haijima.MusashiSunagawa",
+		"a": "07:35",
+		"d": "07:35"
+	}, {
+		"s": "Seibu.Haijima.TamagawaJosui",
+		"a": "07:38",
+		"d": "07:38"
+	}, {
+		"s": "Seibu.Haijima.HigashiYamatoshi",
+		"a": "07:40",
+		"d": "07:41"
+	}, {
+		"s": "Seibu.Haijima.Ogawa",
+		"a": "07:44",
+		"d": "07:45"
+	}, {
+		"s": "Seibu.Haijima.Hagiyama",
+		"a": "07:48",
+		"d": "07:49"
+	}, {
+		"s": "Seibu.Haijima.Kodaira",
+		"a": "07:51"
+	}]
+}, {
+	"id": "Seibu.Haijima.4306.SaturdayHoliday",
+	"t": "Seibu.Haijima.4306",
+	"r": "Seibu.Haijima",
+	"n": "4306",
+	"y": "Seibu.SemiExpress",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Haijima.Haijima"
+	],
+	"ds": [
+		"Seibu.Shinjuku.SeibuShinjuku"
+	],
+	"nt": [
+		"Seibu.Shinjuku.4306.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Seibu.Haijima.Haijima",
+		"d": "07:38"
+	}, {
+		"s": "Seibu.Haijima.SeibuTachikawa",
+		"a": "07:41",
 		"d": "07:42"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
@@ -15300,24 +15300,24 @@
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
 		"a": "07:49",
-		"d": "07:50"
+		"d": "07:49"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "07:53",
+		"a": "07:52",
 		"d": "07:53"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "07:56",
-		"d": "07:56"
+		"d": "07:57"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
-		"a": "07:58"
+		"a": "07:59"
 	}]
 }, {
-	"id": "Seibu.Haijima.5314.SaturdayHoliday",
-	"t": "Seibu.Haijima.5314",
+	"id": "Seibu.Haijima.5312.SaturdayHoliday",
+	"t": "Seibu.Haijima.5312",
 	"r": "Seibu.Haijima",
-	"n": "5314",
+	"n": "5312",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15327,7 +15327,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5314.SaturdayHoliday"
+		"Seibu.Shinjuku.5312.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15361,10 +15361,10 @@
 		"a": "08:09"
 	}]
 }, {
-	"id": "Seibu.Haijima.4304.SaturdayHoliday",
-	"t": "Seibu.Haijima.4304",
+	"id": "Seibu.Haijima.4308.SaturdayHoliday",
+	"t": "Seibu.Haijima.4308",
 	"r": "Seibu.Haijima",
-	"n": "4304",
+	"n": "4308",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -15374,7 +15374,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4304.SaturdayHoliday"
+		"Seibu.Shinjuku.4308.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15408,10 +15408,10 @@
 		"a": "08:20"
 	}]
 }, {
-	"id": "Seibu.Haijima.5316.SaturdayHoliday",
-	"t": "Seibu.Haijima.5316",
+	"id": "Seibu.Haijima.5314.SaturdayHoliday",
+	"t": "Seibu.Haijima.5314",
 	"r": "Seibu.Haijima",
-	"n": "5316",
+	"n": "5314",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15421,7 +15421,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5316.SaturdayHoliday"
+		"Seibu.Shinjuku.5314.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15455,10 +15455,10 @@
 		"a": "08:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.5318.SaturdayHoliday",
-	"t": "Seibu.Haijima.5318",
+	"id": "Seibu.Haijima.5316.SaturdayHoliday",
+	"t": "Seibu.Haijima.5316",
 	"r": "Seibu.Haijima",
-	"n": "5318",
+	"n": "5316",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15468,7 +15468,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5318.SaturdayHoliday"
+		"Seibu.Shinjuku.5316.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15496,10 +15496,10 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "08:37",
-		"d": "08:38"
+		"d": "08:37"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
-		"a": "08:40"
+		"a": "08:39"
 	}]
 }, {
 	"id": "Seibu.Haijima.2308.SaturdayHoliday",
@@ -15590,16 +15590,16 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "08:55",
-		"d": "08:57"
+		"d": "08:58"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
-		"a": "08:59"
+		"a": "09:00"
 	}]
 }, {
-	"id": "Seibu.Haijima.5320.SaturdayHoliday",
-	"t": "Seibu.Haijima.5320",
+	"id": "Seibu.Haijima.5318.SaturdayHoliday",
+	"t": "Seibu.Haijima.5318",
 	"r": "Seibu.Haijima",
-	"n": "5320",
+	"n": "5318",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15609,7 +15609,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5320.SaturdayHoliday"
+		"Seibu.Shinjuku.5318.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15690,10 +15690,10 @@
 		"a": "09:17"
 	}]
 }, {
-	"id": "Seibu.Haijima.5322.SaturdayHoliday",
-	"t": "Seibu.Haijima.5322",
+	"id": "Seibu.Haijima.5320.SaturdayHoliday",
+	"t": "Seibu.Haijima.5320",
 	"r": "Seibu.Haijima",
-	"n": "5322",
+	"n": "5320",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15703,7 +15703,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5322.SaturdayHoliday"
+		"Seibu.Shinjuku.5320.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15737,10 +15737,10 @@
 		"a": "09:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.5324.SaturdayHoliday",
-	"t": "Seibu.Haijima.5324",
+	"id": "Seibu.Haijima.5322.SaturdayHoliday",
+	"t": "Seibu.Haijima.5322",
 	"r": "Seibu.Haijima",
-	"n": "5324",
+	"n": "5322",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15750,7 +15750,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5324.SaturdayHoliday"
+		"Seibu.Shinjuku.5322.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15784,10 +15784,10 @@
 		"a": "09:40"
 	}]
 }, {
-	"id": "Seibu.Haijima.5404.SaturdayHoliday",
-	"t": "Seibu.Haijima.5404",
+	"id": "Seibu.Haijima.5402.SaturdayHoliday",
+	"t": "Seibu.Haijima.5402",
 	"r": "Seibu.Haijima",
-	"n": "5404",
+	"n": "5402",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15798,40 +15798,40 @@
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
-		"d": "09:29"
+		"d": "09:30"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "09:32",
-		"d": "09:32"
+		"a": "09:33",
+		"d": "09:33"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "09:35",
 		"d": "09:35"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "09:37",
+		"a": "09:38",
 		"d": "09:38"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
 		"a": "09:40",
-		"d": "09:40"
+		"d": "09:41"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "09:43",
+		"a": "09:44",
 		"d": "09:44"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "09:46",
+		"a": "09:47",
 		"d": "09:47"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
 		"a": "09:49"
 	}]
 }, {
-	"id": "Seibu.Haijima.5326.SaturdayHoliday",
-	"t": "Seibu.Haijima.5326",
+	"id": "Seibu.Haijima.5324.SaturdayHoliday",
+	"t": "Seibu.Haijima.5324",
 	"r": "Seibu.Haijima",
-	"n": "5326",
+	"n": "5324",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15841,7 +15841,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5326.SaturdayHoliday"
+		"Seibu.Shinjuku.5324.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15875,10 +15875,10 @@
 		"a": "09:59"
 	}]
 }, {
-	"id": "Seibu.Haijima.5328.SaturdayHoliday",
-	"t": "Seibu.Haijima.5328",
+	"id": "Seibu.Haijima.5326.SaturdayHoliday",
+	"t": "Seibu.Haijima.5326",
 	"r": "Seibu.Haijima",
-	"n": "5328",
+	"n": "5326",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15888,7 +15888,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5328.SaturdayHoliday"
+		"Seibu.Shinjuku.5326.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -15922,10 +15922,10 @@
 		"a": "10:10"
 	}]
 }, {
-	"id": "Seibu.Haijima.5330.SaturdayHoliday",
-	"t": "Seibu.Haijima.5330",
+	"id": "Seibu.Haijima.5328.SaturdayHoliday",
+	"t": "Seibu.Haijima.5328",
 	"r": "Seibu.Haijima",
-	"n": "5330",
+	"n": "5328",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15935,7 +15935,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5330.SaturdayHoliday"
+		"Seibu.Shinjuku.5328.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -16016,10 +16016,10 @@
 		"a": "10:29"
 	}]
 }, {
-	"id": "Seibu.Haijima.5332.SaturdayHoliday",
-	"t": "Seibu.Haijima.5332",
+	"id": "Seibu.Haijima.5330.SaturdayHoliday",
+	"t": "Seibu.Haijima.5330",
 	"r": "Seibu.Haijima",
-	"n": "5332",
+	"n": "5330",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -16029,7 +16029,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5332.SaturdayHoliday"
+		"Seibu.Shinjuku.5330.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -16063,10 +16063,10 @@
 		"a": "10:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5406.SaturdayHoliday",
-	"t": "Seibu.Haijima.5406",
+	"id": "Seibu.Haijima.5404.SaturdayHoliday",
+	"t": "Seibu.Haijima.5404",
 	"r": "Seibu.Haijima",
-	"n": "5406",
+	"n": "5404",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -16248,10 +16248,10 @@
 		"a": "11:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5408.SaturdayHoliday",
-	"t": "Seibu.Haijima.5408",
+	"id": "Seibu.Haijima.5406.SaturdayHoliday",
+	"t": "Seibu.Haijima.5406",
 	"r": "Seibu.Haijima",
-	"n": "5408",
+	"n": "5406",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -16433,10 +16433,10 @@
 		"a": "12:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5410.SaturdayHoliday",
-	"t": "Seibu.Haijima.5410",
+	"id": "Seibu.Haijima.5408.SaturdayHoliday",
+	"t": "Seibu.Haijima.5408",
 	"r": "Seibu.Haijima",
-	"n": "5410",
+	"n": "5408",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -16618,10 +16618,10 @@
 		"a": "13:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5412.SaturdayHoliday",
-	"t": "Seibu.Haijima.5412",
+	"id": "Seibu.Haijima.5410.SaturdayHoliday",
+	"t": "Seibu.Haijima.5410",
 	"r": "Seibu.Haijima",
-	"n": "5412",
+	"n": "5410",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -16803,10 +16803,10 @@
 		"a": "14:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5414.SaturdayHoliday",
-	"t": "Seibu.Haijima.5414",
+	"id": "Seibu.Haijima.5412.SaturdayHoliday",
+	"t": "Seibu.Haijima.5412",
 	"r": "Seibu.Haijima",
-	"n": "5414",
+	"n": "5412",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -16988,10 +16988,10 @@
 		"a": "15:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5416.SaturdayHoliday",
-	"t": "Seibu.Haijima.5416",
+	"id": "Seibu.Haijima.5414.SaturdayHoliday",
+	"t": "Seibu.Haijima.5414",
 	"r": "Seibu.Haijima",
-	"n": "5416",
+	"n": "5414",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -17049,34 +17049,34 @@
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
-		"d": "15:40"
+		"d": "15:39"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "15:43",
-		"d": "15:44"
+		"a": "15:42",
+		"d": "15:43"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "15:46",
-		"d": "15:46"
+		"a": "15:45",
+		"d": "15:45"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "15:49",
-		"d": "15:49"
+		"a": "15:48",
+		"d": "15:48"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "15:51",
-		"d": "15:51"
+		"a": "15:50",
+		"d": "15:50"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "15:54",
-		"d": "15:55"
+		"a": "15:53",
+		"d": "15:54"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "15:57",
-		"d": "15:58"
+		"a": "15:56",
+		"d": "15:57"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
-		"a": "16:00"
+		"a": "15:59"
 	}]
 }, {
 	"id": "Seibu.Haijima.5572.SaturdayHoliday",
@@ -17107,10 +17107,10 @@
 		"a": "16:08"
 	}]
 }, {
-	"id": "Seibu.Haijima.4306.SaturdayHoliday",
-	"t": "Seibu.Haijima.4306",
+	"id": "Seibu.Haijima.4310.SaturdayHoliday",
+	"t": "Seibu.Haijima.4310",
 	"r": "Seibu.Haijima",
-	"n": "4306",
+	"n": "4310",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -17120,7 +17120,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4306.SaturdayHoliday"
+		"Seibu.Shinjuku.4310.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -17128,14 +17128,14 @@
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
 		"a": "16:22",
-		"d": "16:22"
+		"d": "16:23"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "16:25",
 		"d": "16:25"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "16:27",
+		"a": "16:28",
 		"d": "16:28"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
@@ -17154,10 +17154,10 @@
 		"a": "16:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5334.SaturdayHoliday",
-	"t": "Seibu.Haijima.5334",
+	"id": "Seibu.Haijima.5332.SaturdayHoliday",
+	"t": "Seibu.Haijima.5332",
 	"r": "Seibu.Haijima",
-	"n": "5334",
+	"n": "5332",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -17167,7 +17167,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5334.SaturdayHoliday"
+		"Seibu.Shinjuku.5332.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -17248,10 +17248,10 @@
 		"a": "16:59"
 	}]
 }, {
-	"id": "Seibu.Haijima.4308.SaturdayHoliday",
-	"t": "Seibu.Haijima.4308",
+	"id": "Seibu.Haijima.4312.SaturdayHoliday",
+	"t": "Seibu.Haijima.4312",
 	"r": "Seibu.Haijima",
-	"n": "4308",
+	"n": "4312",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -17261,7 +17261,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4308.SaturdayHoliday"
+		"Seibu.Shinjuku.4312.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -17319,7 +17319,7 @@
 		"d": "17:02"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
-		"a": "17:05",
+		"a": "17:04",
 		"d": "17:05"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
@@ -17327,25 +17327,25 @@
 		"d": "17:08"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "17:10",
+		"a": "17:09",
 		"d": "17:10"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "17:13",
-		"d": "17:14"
+		"d": "17:13"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "17:16",
-		"d": "17:17"
+		"d": "17:16"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
-		"a": "17:19"
+		"a": "17:18"
 	}]
 }, {
-	"id": "Seibu.Haijima.5336.SaturdayHoliday",
-	"t": "Seibu.Haijima.5336",
+	"id": "Seibu.Haijima.5334.SaturdayHoliday",
+	"t": "Seibu.Haijima.5334",
 	"r": "Seibu.Haijima",
-	"n": "5336",
+	"n": "5334",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -17355,7 +17355,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5336.SaturdayHoliday"
+		"Seibu.Shinjuku.5334.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -17417,20 +17417,17 @@
 		"a": "17:28"
 	}]
 }, {
-	"id": "Seibu.Haijima.5338.SaturdayHoliday",
-	"t": "Seibu.Haijima.5338",
+	"id": "Seibu.Haijima.5416.SaturdayHoliday",
+	"t": "Seibu.Haijima.5416",
 	"r": "Seibu.Haijima",
-	"n": "5338",
+	"n": "5416",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Haijima.Haijima"
 	],
 	"ds": [
-		"Seibu.Shinjuku.SeibuShinjuku"
-	],
-	"nt": [
-		"Seibu.Shinjuku.5338.SaturdayHoliday"
+		"Seibu.Haijima.Kodaira"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -17464,10 +17461,10 @@
 		"a": "17:48"
 	}]
 }, {
-	"id": "Seibu.Haijima.5340.SaturdayHoliday",
-	"t": "Seibu.Haijima.5340",
+	"id": "Seibu.Haijima.5336.SaturdayHoliday",
+	"t": "Seibu.Haijima.5336",
 	"r": "Seibu.Haijima",
-	"n": "5340",
+	"n": "5336",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -17477,7 +17474,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5340.SaturdayHoliday"
+		"Seibu.Shinjuku.5336.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -17511,10 +17508,10 @@
 		"a": "17:59"
 	}]
 }, {
-	"id": "Seibu.Haijima.4310.SaturdayHoliday",
-	"t": "Seibu.Haijima.4310",
+	"id": "Seibu.Haijima.4314.SaturdayHoliday",
+	"t": "Seibu.Haijima.4314",
 	"r": "Seibu.Haijima",
-	"n": "4310",
+	"n": "4314",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -17524,7 +17521,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4310.SaturdayHoliday"
+		"Seibu.Shinjuku.4314.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -17558,10 +17555,10 @@
 		"a": "18:12"
 	}]
 }, {
-	"id": "Seibu.Haijima.5342.SaturdayHoliday",
-	"t": "Seibu.Haijima.5342",
+	"id": "Seibu.Haijima.5338.SaturdayHoliday",
+	"t": "Seibu.Haijima.5338",
 	"r": "Seibu.Haijima",
-	"n": "5342",
+	"n": "5338",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -17571,7 +17568,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5342.SaturdayHoliday"
+		"Seibu.Shinjuku.5338.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -17696,17 +17693,20 @@
 		"a": "18:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5420.SaturdayHoliday",
-	"t": "Seibu.Haijima.5420",
+	"id": "Seibu.Haijima.4316.SaturdayHoliday",
+	"t": "Seibu.Haijima.4316",
 	"r": "Seibu.Haijima",
-	"n": "5420",
-	"y": "Seibu.Local",
+	"n": "4316",
+	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Haijima.Haijima"
 	],
 	"ds": [
-		"Seibu.Haijima.Kodaira"
+		"Seibu.Shinjuku.SeibuShinjuku"
+	],
+	"nt": [
+		"Seibu.Shinjuku.4316.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -17787,10 +17787,10 @@
 		"a": "18:59"
 	}]
 }, {
-	"id": "Seibu.Haijima.5344.SaturdayHoliday",
-	"t": "Seibu.Haijima.5344",
+	"id": "Seibu.Haijima.5340.SaturdayHoliday",
+	"t": "Seibu.Haijima.5340",
 	"r": "Seibu.Haijima",
-	"n": "5344",
+	"n": "5340",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -17800,7 +17800,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.5344.SaturdayHoliday"
+		"Seibu.Shinjuku.5340.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -17834,10 +17834,10 @@
 		"a": "19:09"
 	}]
 }, {
-	"id": "Seibu.Haijima.5422.SaturdayHoliday",
-	"t": "Seibu.Haijima.5422",
+	"id": "Seibu.Haijima.5420.SaturdayHoliday",
+	"t": "Seibu.Haijima.5420",
 	"r": "Seibu.Haijima",
-	"n": "5422",
+	"n": "5420",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -17878,10 +17878,10 @@
 		"a": "19:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.5424.SaturdayHoliday",
-	"t": "Seibu.Haijima.5424",
+	"id": "Seibu.Haijima.5422.SaturdayHoliday",
+	"t": "Seibu.Haijima.5422",
 	"r": "Seibu.Haijima",
-	"n": "5424",
+	"n": "5422",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -17969,10 +17969,10 @@
 		"a": "19:39"
 	}]
 }, {
-	"id": "Seibu.Haijima.5426.SaturdayHoliday",
-	"t": "Seibu.Haijima.5426",
+	"id": "Seibu.Haijima.5424.SaturdayHoliday",
+	"t": "Seibu.Haijima.5424",
 	"r": "Seibu.Haijima",
-	"n": "5426",
+	"n": "5424",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -18013,17 +18013,20 @@
 		"a": "19:49"
 	}]
 }, {
-	"id": "Seibu.Haijima.5428.SaturdayHoliday",
-	"t": "Seibu.Haijima.5428",
+	"id": "Seibu.Haijima.5342.SaturdayHoliday",
+	"t": "Seibu.Haijima.5342",
 	"r": "Seibu.Haijima",
-	"n": "5428",
+	"n": "5342",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Haijima.Haijima"
 	],
 	"ds": [
-		"Seibu.Haijima.Kodaira"
+		"Seibu.Shinjuku.SeibuShinjuku"
+	],
+	"nt": [
+		"Seibu.Shinjuku.5342.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -18104,10 +18107,10 @@
 		"a": "20:09"
 	}]
 }, {
-	"id": "Seibu.Haijima.5430.SaturdayHoliday",
-	"t": "Seibu.Haijima.5430",
+	"id": "Seibu.Haijima.5426.SaturdayHoliday",
+	"t": "Seibu.Haijima.5426",
 	"r": "Seibu.Haijima",
-	"n": "5430",
+	"n": "5426",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -18148,10 +18151,10 @@
 		"a": "20:19"
 	}]
 }, {
-	"id": "Seibu.Haijima.5432.SaturdayHoliday",
-	"t": "Seibu.Haijima.5432",
+	"id": "Seibu.Haijima.5428.SaturdayHoliday",
+	"t": "Seibu.Haijima.5428",
 	"r": "Seibu.Haijima",
-	"n": "5432",
+	"n": "5428",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -18192,10 +18195,10 @@
 		"a": "20:30"
 	}]
 }, {
-	"id": "Seibu.Haijima.5434.SaturdayHoliday",
-	"t": "Seibu.Haijima.5434",
+	"id": "Seibu.Haijima.5430.SaturdayHoliday",
+	"t": "Seibu.Haijima.5430",
 	"r": "Seibu.Haijima",
-	"n": "5434",
+	"n": "5430",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -18283,10 +18286,10 @@
 		"a": "20:58"
 	}]
 }, {
-	"id": "Seibu.Haijima.5436.SaturdayHoliday",
-	"t": "Seibu.Haijima.5436",
+	"id": "Seibu.Haijima.5432.SaturdayHoliday",
+	"t": "Seibu.Haijima.5432",
 	"r": "Seibu.Haijima",
-	"n": "5436",
+	"n": "5432",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -18374,10 +18377,10 @@
 		"a": "21:28"
 	}]
 }, {
-	"id": "Seibu.Haijima.5438.SaturdayHoliday",
-	"t": "Seibu.Haijima.5438",
+	"id": "Seibu.Haijima.5434.SaturdayHoliday",
+	"t": "Seibu.Haijima.5434",
 	"r": "Seibu.Haijima",
-	"n": "5438",
+	"n": "5434",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -18418,10 +18421,10 @@
 		"a": "21:38"
 	}]
 }, {
-	"id": "Seibu.Haijima.4312.SaturdayHoliday",
-	"t": "Seibu.Haijima.4312",
+	"id": "Seibu.Haijima.4318.SaturdayHoliday",
+	"t": "Seibu.Haijima.4318",
 	"r": "Seibu.Haijima",
-	"n": "4312",
+	"n": "4318",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -18431,7 +18434,7 @@
 		"Seibu.Shinjuku.SeibuShinjuku"
 	],
 	"nt": [
-		"Seibu.Shinjuku.4312.SaturdayHoliday"
+		"Seibu.Shinjuku.4318.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -18443,14 +18446,14 @@
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "21:38",
-		"d": "21:38"
+		"d": "21:39"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
 		"a": "21:41",
-		"d": "21:41"
+		"d": "21:42"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
-		"a": "21:43",
+		"a": "21:44",
 		"d": "21:44"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
@@ -18459,23 +18462,26 @@
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "21:50",
-		"d": "21:50"
+		"d": "21:51"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
 		"a": "21:52"
 	}]
 }, {
-	"id": "Seibu.Haijima.5440.SaturdayHoliday",
-	"t": "Seibu.Haijima.5440",
+	"id": "Seibu.Haijima.5344.SaturdayHoliday",
+	"t": "Seibu.Haijima.5344",
 	"r": "Seibu.Haijima",
-	"n": "5440",
+	"n": "5344",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Haijima.Haijima"
 	],
 	"ds": [
-		"Seibu.Haijima.Kodaira"
+		"Seibu.Shinjuku.SeibuShinjuku"
+	],
+	"nt": [
+		"Seibu.Shinjuku.5344.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
@@ -18603,10 +18609,10 @@
 		"a": "22:48"
 	}]
 }, {
-	"id": "Seibu.Haijima.5442.SaturdayHoliday",
-	"t": "Seibu.Haijima.5442",
+	"id": "Seibu.Haijima.5436.SaturdayHoliday",
+	"t": "Seibu.Haijima.5436",
 	"r": "Seibu.Haijima",
-	"n": "5442",
+	"n": "5436",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -18617,40 +18623,40 @@
 	],
 	"tt": [{
 		"s": "Seibu.Haijima.Haijima",
-		"d": "22:51"
+		"d": "22:50"
 	}, {
 		"s": "Seibu.Haijima.SeibuTachikawa",
-		"a": "22:54",
-		"d": "22:54"
+		"a": "22:53",
+		"d": "22:53"
 	}, {
 		"s": "Seibu.Haijima.MusashiSunagawa",
 		"a": "22:56",
 		"d": "22:56"
 	}, {
 		"s": "Seibu.Haijima.TamagawaJosui",
-		"a": "22:59",
+		"a": "22:58",
 		"d": "22:59"
 	}, {
 		"s": "Seibu.Haijima.HigashiYamatoshi",
 		"a": "23:01",
-		"d": "23:02"
+		"d": "23:01"
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
-		"a": "23:05",
+		"a": "23:04",
 		"d": "23:05"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
-		"a": "23:08",
+		"a": "23:07",
 		"d": "23:08"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
 		"a": "23:10"
 	}]
 }, {
-	"id": "Seibu.Haijima.5444.SaturdayHoliday",
-	"t": "Seibu.Haijima.5444",
+	"id": "Seibu.Haijima.5438.SaturdayHoliday",
+	"t": "Seibu.Haijima.5438",
 	"r": "Seibu.Haijima",
-	"n": "5444",
+	"n": "5438",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -18681,20 +18687,20 @@
 	}, {
 		"s": "Seibu.Haijima.Ogawa",
 		"a": "23:27",
-		"d": "23:27"
+		"d": "23:28"
 	}, {
 		"s": "Seibu.Haijima.Hagiyama",
 		"a": "23:30",
-		"d": "23:30"
+		"d": "23:31"
 	}, {
 		"s": "Seibu.Haijima.Kodaira",
-		"a": "23:32"
+		"a": "23:33"
 	}]
 }, {
-	"id": "Seibu.Haijima.5446.SaturdayHoliday",
-	"t": "Seibu.Haijima.5446",
+	"id": "Seibu.Haijima.5440.SaturdayHoliday",
+	"t": "Seibu.Haijima.5440",
 	"r": "Seibu.Haijima",
-	"n": "5446",
+	"n": "5440",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [

@@ -76,10 +76,10 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "06:22"
+		"d": "06:21"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "06:24",
+		"a": "06:23",
 		"d": "06:24"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -116,23 +116,23 @@
 		"a": "06:41"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6401.Weekday",
-	"t": "Seibu.SeibuYurakucho.6401",
+	"id": "Seibu.SeibuYurakucho.6507.Weekday",
+	"t": "Seibu.SeibuYurakucho.6507",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6401",
+	"n": "6507",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kiyose"
+		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
 		"TokyoMetro.Yurakucho.B604M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6401.Weekday"
+		"Seibu.Ikebukuro.6507.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -176,20 +176,20 @@
 		"a": "06:56"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6507.Weekday",
-	"t": "Seibu.SeibuYurakucho.6507",
+	"id": "Seibu.SeibuYurakucho.6401.Weekday",
+	"t": "Seibu.SeibuYurakucho.6401",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6507",
+	"n": "6401",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"Seibu.SeibuYurakucho.KotakeMukaihara"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Kiyose"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6507.Weekday"
+		"Seibu.Ikebukuro.6401.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -197,10 +197,10 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "06:57",
-		"d": "06:57"
+		"d": "06:58"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "06:59"
+		"a": "07:00"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6701.Weekday",
@@ -306,7 +306,7 @@
 		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B614M.Weekday"
+		"TokyoMetro.Yurakucho.B616M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.4501.Weekday"
@@ -383,11 +383,11 @@
 		"a": "07:45"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.3551.Weekday",
-	"t": "Seibu.SeibuYurakucho.3551",
+	"id": "Seibu.SeibuYurakucho.4551.Weekday",
+	"t": "Seibu.SeibuYurakucho.4551",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "3551",
-	"y": "Seibu.Rapid",
+	"n": "4551",
+	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
@@ -399,7 +399,7 @@
 		"TokyoMetro.Yurakucho.B779S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.3551.Weekday"
+		"Seibu.Ikebukuro.4551.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -413,11 +413,11 @@
 		"a": "07:47"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4803.Weekday",
-	"t": "Seibu.SeibuYurakucho.4803",
+	"id": "Seibu.SeibuYurakucho.6751.Weekday",
+	"t": "Seibu.SeibuYurakucho.6751",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4803",
-	"y": "Seibu.SemiExpress",
+	"n": "6751",
+	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
@@ -429,7 +429,7 @@
 		"TokyoMetro.Fukutoshin.B604S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4803.Weekday"
+		"Seibu.Ikebukuro.6751.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -527,10 +527,10 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "08:07",
-		"d": "08:07"
+		"d": "08:08"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "08:09"
+		"a": "08:11"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6403.Weekday",
@@ -590,14 +590,14 @@
 		"d": "08:23"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "08:25"
+		"a": "08:26"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6511.Weekday",
-	"t": "Seibu.SeibuYurakucho.6511",
+	"id": "Seibu.SeibuYurakucho.4553.Weekday",
+	"t": "Seibu.SeibuYurakucho.4553",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6511",
-	"y": "Seibu.Local",
+	"n": "4553",
+	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
@@ -609,7 +609,7 @@
 		"TokyoMetro.Yurakucho.B752M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6511.Weekday"
+		"Seibu.Ikebukuro.4553.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -709,23 +709,23 @@
 		"a": "08:54"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4805.Weekday",
-	"t": "Seibu.SeibuYurakucho.4805",
+	"id": "Seibu.SeibuYurakucho.4853.Weekday",
+	"t": "Seibu.SeibuYurakucho.4853",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4805",
+	"n": "4853",
 	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Tokorozawa"
+		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
 		"TokyoMetro.Fukutoshin.B704K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4805.Weekday"
+		"Seibu.Ikebukuro.4853.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -733,10 +733,10 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "08:54",
-		"d": "08:55"
+		"d": "08:54"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "08:58"
+		"a": "08:57"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6703.Weekday",
@@ -763,17 +763,17 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "08:58",
-		"d": "08:59"
+		"d": "09:00"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "09:01"
+		"a": "09:02"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4853.Weekday",
-	"t": "Seibu.SeibuYurakucho.4853",
+	"id": "Seibu.SeibuYurakucho.6805.Weekday",
+	"t": "Seibu.SeibuYurakucho.6805",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4853",
-	"y": "Seibu.SemiExpress",
+	"n": "6805",
+	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
@@ -782,10 +782,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B720M.Weekday"
+		"TokyoMetro.Fukutoshin.B722M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4853.Weekday"
+		"Seibu.Ikebukuro.6805.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -793,37 +793,37 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "09:05",
-		"d": "09:05"
+		"d": "09:06"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "09:07"
+		"a": "09:09"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6451.Weekday",
-	"t": "Seibu.SeibuYurakucho.6451",
+	"id": "Seibu.SeibuYurakucho.6511.Weekday",
+	"t": "Seibu.SeibuYurakucho.6511",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6451",
+	"n": "6511",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Tokorozawa"
+		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B812M.Weekday"
+		"TokyoMetro.Yurakucho.B814M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6451.Weekday"
+		"Seibu.Ikebukuro.6511.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "09:08"
+		"d": "09:07"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "09:10",
-		"d": "09:11"
+		"a": "09:09",
+		"d": "09:10"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
 		"a": "09:13"
@@ -842,7 +842,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B824M.Weekday"
+		"TokyoMetro.Yurakucho.B826M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1551.Weekday"
@@ -855,23 +855,23 @@
 		"a": "09:16"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6705.Weekday",
-	"t": "Seibu.SeibuYurakucho.6705",
+	"id": "Seibu.SeibuYurakucho.3801.Weekday",
+	"t": "Seibu.SeibuYurakucho.3801",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6705",
-	"y": "Seibu.Local",
+	"n": "3801",
+	"y": "Seibu.Rapid",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kiyose"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
 		"TokyoMetro.Fukutoshin.B856K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6705.Weekday"
+		"Seibu.Ikebukuro.3801.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -915,11 +915,11 @@
 		"a": "09:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6513.Weekday",
-	"t": "Seibu.SeibuYurakucho.6513",
+	"id": "Seibu.SeibuYurakucho.4555.Weekday",
+	"t": "Seibu.SeibuYurakucho.4555",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6513",
-	"y": "Seibu.Local",
+	"n": "4555",
+	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
@@ -928,10 +928,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B853S.Weekday"
+		"TokyoMetro.Yurakucho.B875S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6513.Weekday"
+		"Seibu.Ikebukuro.4555.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -958,7 +958,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B904M.Weekday"
+		"TokyoMetro.Yurakucho.B930M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1553.Weekday"
@@ -998,7 +998,7 @@
 		"d": "09:48"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "09:51"
+		"a": "09:50"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6307.Weekday",
@@ -1014,7 +1014,7 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B981S.Weekday"
+		"TokyoMetro.Yurakucho.B957S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6307.Weekday"
@@ -1031,10 +1031,10 @@
 		"a": "10:01"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6805.Weekday",
-	"t": "Seibu.SeibuYurakucho.6805",
+	"id": "Seibu.SeibuYurakucho.6807.Weekday",
+	"t": "Seibu.SeibuYurakucho.6807",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6805",
+	"n": "6807",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1044,10 +1044,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B832M.Weekday"
+		"TokyoMetro.Fukutoshin.B828M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6805.Weekday"
+		"Seibu.Ikebukuro.6807.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -1084,7 +1084,7 @@
 		"d": "10:10"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "10:15"
+		"a": "10:14"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6655.Weekday",
@@ -1147,10 +1147,10 @@
 		"a": "10:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6515.Weekday",
-	"t": "Seibu.SeibuYurakucho.6515",
+	"id": "Seibu.SeibuYurakucho.6513.Weekday",
+	"t": "Seibu.SeibuYurakucho.6513",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6515",
+	"n": "6513",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1163,7 +1163,7 @@
 		"TokyoMetro.Yurakucho.B906M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6515.Weekday"
+		"Seibu.Ikebukuro.6513.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -1216,7 +1216,7 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1016M.Weekday"
+		"TokyoMetro.Yurakucho.B1018M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6353.Weekday"
@@ -1246,7 +1246,7 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B910K.Weekday"
+		"TokyoMetro.Fukutoshin.B902K.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6607.Weekday"
@@ -1263,10 +1263,10 @@
 		"a": "10:59"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6517.Weekday",
-	"t": "Seibu.SeibuYurakucho.6517",
+	"id": "Seibu.SeibuYurakucho.6515.Weekday",
+	"t": "Seibu.SeibuYurakucho.6515",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6517",
+	"n": "6515",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1279,7 +1279,7 @@
 		"TokyoMetro.Yurakucho.B1069S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6517.Weekday"
+		"Seibu.Ikebukuro.6515.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -1332,7 +1332,7 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1022M.Weekday"
+		"TokyoMetro.Yurakucho.B1021S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6355.Weekday"
@@ -1349,10 +1349,10 @@
 		"a": "11:22"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4807.Weekday",
-	"t": "Seibu.SeibuYurakucho.4807",
+	"id": "Seibu.SeibuYurakucho.4803.Weekday",
+	"t": "Seibu.SeibuYurakucho.4803",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4807",
+	"n": "4803",
 	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -1362,10 +1362,10 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1022K.Weekday"
+		"TokyoMetro.Fukutoshin.B1015S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4807.Weekday"
+		"Seibu.Ikebukuro.4803.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -1379,10 +1379,10 @@
 		"a": "11:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6519.Weekday",
-	"t": "Seibu.SeibuYurakucho.6519",
+	"id": "Seibu.SeibuYurakucho.6517.Weekday",
+	"t": "Seibu.SeibuYurakucho.6517",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6519",
+	"n": "6517",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1395,7 +1395,7 @@
 		"TokyoMetro.Yurakucho.B1054M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6519.Weekday"
+		"Seibu.Ikebukuro.6517.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -1422,7 +1422,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1029S.Weekday"
+		"TokyoMetro.Fukutoshin.B1071S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1805.Weekday"
@@ -1495,10 +1495,10 @@
 		"a": "11:59"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6521.Weekday",
-	"t": "Seibu.SeibuYurakucho.6521",
+	"id": "Seibu.SeibuYurakucho.6519.Weekday",
+	"t": "Seibu.SeibuYurakucho.6519",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6521",
+	"n": "6519",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1511,7 +1511,7 @@
 		"TokyoMetro.Yurakucho.B1123S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6521.Weekday"
+		"Seibu.Ikebukuro.6519.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -1564,7 +1564,7 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1121S.Weekday"
+		"TokyoMetro.Yurakucho.B1145S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6359.Weekday"
@@ -1581,10 +1581,10 @@
 		"a": "12:22"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4809.Weekday",
-	"t": "Seibu.SeibuYurakucho.4809",
+	"id": "Seibu.SeibuYurakucho.4805.Weekday",
+	"t": "Seibu.SeibuYurakucho.4805",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4809",
+	"n": "4805",
 	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -1594,10 +1594,10 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1113S.Weekday"
+		"TokyoMetro.Fukutoshin.B1122K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4809.Weekday"
+		"Seibu.Ikebukuro.4805.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -1611,10 +1611,10 @@
 		"a": "12:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6523.Weekday",
-	"t": "Seibu.SeibuYurakucho.6523",
+	"id": "Seibu.SeibuYurakucho.6521.Weekday",
+	"t": "Seibu.SeibuYurakucho.6521",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6523",
+	"n": "6521",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1624,10 +1624,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1128M.Weekday"
+		"TokyoMetro.Yurakucho.B1124M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6523.Weekday"
+		"Seibu.Ikebukuro.6521.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -1654,7 +1654,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1112M.Weekday"
+		"TokyoMetro.Fukutoshin.B1130M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1809.Weekday"
@@ -1727,10 +1727,10 @@
 		"a": "12:59"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6525.Weekday",
-	"t": "Seibu.SeibuYurakucho.6525",
+	"id": "Seibu.SeibuYurakucho.6523.Weekday",
+	"t": "Seibu.SeibuYurakucho.6523",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6525",
+	"n": "6523",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1743,7 +1743,7 @@
 		"TokyoMetro.Yurakucho.B1249S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6525.Weekday"
+		"Seibu.Ikebukuro.6523.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -1813,10 +1813,10 @@
 		"a": "13:22"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4811.Weekday",
-	"t": "Seibu.SeibuYurakucho.4811",
+	"id": "Seibu.SeibuYurakucho.4807.Weekday",
+	"t": "Seibu.SeibuYurakucho.4807",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4811",
+	"n": "4807",
 	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -1829,7 +1829,7 @@
 		"TokyoMetro.Fukutoshin.B1202S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4811.Weekday"
+		"Seibu.Ikebukuro.4807.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -1843,10 +1843,10 @@
 		"a": "13:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6527.Weekday",
-	"t": "Seibu.SeibuYurakucho.6527",
+	"id": "Seibu.SeibuYurakucho.6525.Weekday",
+	"t": "Seibu.SeibuYurakucho.6525",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6527",
+	"n": "6525",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1859,7 +1859,7 @@
 		"TokyoMetro.Yurakucho.B1237S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6527.Weekday"
+		"Seibu.Ikebukuro.6525.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -1886,7 +1886,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1220M.Weekday"
+		"TokyoMetro.Fukutoshin.B1222M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1813.Weekday"
@@ -1912,7 +1912,7 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1322M.Weekday"
+		"TokyoMetro.Yurakucho.B1321S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6365.Weekday"
@@ -1959,10 +1959,10 @@
 		"a": "13:59"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6529.Weekday",
-	"t": "Seibu.SeibuYurakucho.6529",
+	"id": "Seibu.SeibuYurakucho.6527.Weekday",
+	"t": "Seibu.SeibuYurakucho.6527",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6529",
+	"n": "6527",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -1972,10 +1972,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1351S.Weekday"
+		"TokyoMetro.Yurakucho.B1325S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6529.Weekday"
+		"Seibu.Ikebukuro.6527.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2045,10 +2045,10 @@
 		"a": "14:22"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4813.Weekday",
-	"t": "Seibu.SeibuYurakucho.4813",
+	"id": "Seibu.SeibuYurakucho.4809.Weekday",
+	"t": "Seibu.SeibuYurakucho.4809",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4813",
+	"n": "4809",
 	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -2058,10 +2058,10 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1310K.Weekday"
+		"TokyoMetro.Fukutoshin.B1302K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4813.Weekday"
+		"Seibu.Ikebukuro.4809.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2075,10 +2075,10 @@
 		"a": "14:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6531.Weekday",
-	"t": "Seibu.SeibuYurakucho.6531",
+	"id": "Seibu.SeibuYurakucho.6529.Weekday",
+	"t": "Seibu.SeibuYurakucho.6529",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6531",
+	"n": "6529",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2088,10 +2088,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1345S.Weekday"
+		"TokyoMetro.Yurakucho.B1363S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6531.Weekday"
+		"Seibu.Ikebukuro.6529.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2118,7 +2118,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1329S.Weekday"
+		"TokyoMetro.Fukutoshin.B1371S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1817.Weekday"
@@ -2144,7 +2144,7 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1421S.Weekday"
+		"TokyoMetro.Yurakucho.B1445S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6369.Weekday"
@@ -2174,7 +2174,7 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1322K.Weekday"
+		"TokyoMetro.Fukutoshin.B1315S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6615.Weekday"
@@ -2191,10 +2191,10 @@
 		"a": "14:59"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6533.Weekday",
-	"t": "Seibu.SeibuYurakucho.6533",
+	"id": "Seibu.SeibuYurakucho.6531.Weekday",
+	"t": "Seibu.SeibuYurakucho.6531",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6533",
+	"n": "6531",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2204,10 +2204,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1475S.Weekday"
+		"TokyoMetro.Yurakucho.B1477S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6533.Weekday"
+		"Seibu.Ikebukuro.6531.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2234,7 +2234,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1406M.Weekday"
+		"TokyoMetro.Fukutoshin.B1460K.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1819.Weekday"
@@ -2277,10 +2277,10 @@
 		"a": "15:22"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4815.Weekday",
-	"t": "Seibu.SeibuYurakucho.4815",
+	"id": "Seibu.SeibuYurakucho.4811.Weekday",
+	"t": "Seibu.SeibuYurakucho.4811",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4815",
+	"n": "4811",
 	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -2293,7 +2293,7 @@
 		"TokyoMetro.Fukutoshin.B1407K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4815.Weekday"
+		"Seibu.Ikebukuro.4811.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2307,10 +2307,10 @@
 		"a": "15:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6535.Weekday",
-	"t": "Seibu.SeibuYurakucho.6535",
+	"id": "Seibu.SeibuYurakucho.6533.Weekday",
+	"t": "Seibu.SeibuYurakucho.6533",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6535",
+	"n": "6533",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2320,10 +2320,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1432M.Weekday"
+		"TokyoMetro.Yurakucho.B1428M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6535.Weekday"
+		"Seibu.Ikebukuro.6533.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2350,7 +2350,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1412M.Weekday"
+		"TokyoMetro.Fukutoshin.B1430M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1821.Weekday"
@@ -2393,10 +2393,10 @@
 		"a": "15:52"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4817.Weekday",
-	"t": "Seibu.SeibuYurakucho.4817",
+	"id": "Seibu.SeibuYurakucho.4813.Weekday",
+	"t": "Seibu.SeibuYurakucho.4813",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4817",
+	"n": "4813",
 	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -2406,10 +2406,10 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1413S.Weekday"
+		"TokyoMetro.Fukutoshin.B1422K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4817.Weekday"
+		"Seibu.Ikebukuro.4813.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2423,10 +2423,10 @@
 		"a": "15:59"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6453.Weekday",
-	"t": "Seibu.SeibuYurakucho.6453",
+	"id": "Seibu.SeibuYurakucho.6451.Weekday",
+	"t": "Seibu.SeibuYurakucho.6451",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6453",
+	"n": "6451",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2436,10 +2436,10 @@
 		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1577S.Weekday"
+		"TokyoMetro.Yurakucho.B1565S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6453.Weekday"
+		"Seibu.Ikebukuro.6451.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2463,10 +2463,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Tokorozawa"
+		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1560K.Weekday"
+		"TokyoMetro.Fukutoshin.B1587S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1823.Weekday"
@@ -2479,23 +2479,23 @@
 		"a": "16:17"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6375.Weekday",
-	"t": "Seibu.SeibuYurakucho.6375",
+	"id": "Seibu.SeibuYurakucho.6309.Weekday",
+	"t": "Seibu.SeibuYurakucho.6309",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6375",
+	"n": "6309",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Hoya"
+		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1565S.Weekday"
+		"TokyoMetro.Yurakucho.B1521S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6375.Weekday"
+		"Seibu.Ikebukuro.6309.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2509,23 +2509,23 @@
 		"a": "16:22"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6617.Weekday",
-	"t": "Seibu.SeibuYurakucho.6617",
+	"id": "Seibu.SeibuYurakucho.4815.Weekday",
+	"t": "Seibu.SeibuYurakucho.4815",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6617",
-	"y": "Seibu.Local",
+	"n": "4815",
+	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.ShakujiiKoen"
+		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1419K.Weekday"
+		"TokyoMetro.Fukutoshin.B1405K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6617.Weekday"
+		"Seibu.Ikebukuro.4815.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2539,10 +2539,10 @@
 		"a": "16:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6537.Weekday",
-	"t": "Seibu.SeibuYurakucho.6537",
+	"id": "Seibu.SeibuYurakucho.6535.Weekday",
+	"t": "Seibu.SeibuYurakucho.6535",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6537",
+	"n": "6535",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2552,10 +2552,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1567S.Weekday"
+		"TokyoMetro.Yurakucho.B1529S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6537.Weekday"
+		"Seibu.Ikebukuro.6535.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2582,7 +2582,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1520M.Weekday"
+		"TokyoMetro.Fukutoshin.B1522M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1825.Weekday"
@@ -2593,6 +2593,156 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
 		"a": "16:47"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6453.Weekday",
+	"t": "Seibu.SeibuYurakucho.6453",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6453",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Tokorozawa"
+	],
+	"pt": [
+		"TokyoMetro.Yurakucho.B1655S.Weekday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.6453.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"d": "16:47"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "16:49",
+		"d": "16:50"
+	}, {
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"a": "16:52"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.4817.Weekday",
+	"t": "Seibu.SeibuYurakucho.4817",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "4817",
+	"y": "Seibu.SemiExpress",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.ShakujiiKoen"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1514K.Weekday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.4817.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"d": "16:55"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "16:57",
+		"d": "16:57"
+	}, {
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"a": "16:59"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6537.Weekday",
+	"t": "Seibu.SeibuYurakucho.6537",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6537",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Kotesashi"
+	],
+	"pt": [
+		"TokyoMetro.Yurakucho.B1620M.Weekday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.6537.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"d": "17:04"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "17:07",
+		"d": "17:07"
+	}, {
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"a": "17:09"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.3803.Weekday",
+	"t": "Seibu.SeibuYurakucho.3803",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "3803",
+	"y": "Seibu.Rapid",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Tokorozawa"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1614M.Weekday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.3803.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"d": "17:13"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "17:15",
+		"d": "17:15"
+	}, {
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"a": "17:18"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6617.Weekday",
+	"t": "Seibu.SeibuYurakucho.6617",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6617",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.ShakujiiKoen"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1611S.Weekday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.6617.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"d": "17:18"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "17:20",
+		"d": "17:20"
+	}, {
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"a": "17:22"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6539.Weekday",
@@ -2608,160 +2758,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1655S.Weekday"
+		"TokyoMetro.Yurakucho.B1645S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6539.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "16:47"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "16:49",
-		"d": "16:50"
-	}, {
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "16:52"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6619.Weekday",
-	"t": "Seibu.SeibuYurakucho.6619",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6619",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Minatomirai.Minatomirai.MotomachiChukagai"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.ShakujiiKoen"
-	],
-	"pt": [
-		"TokyoMetro.Fukutoshin.B1517K.Weekday"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.6619.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "16:55"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "16:57",
-		"d": "16:57"
-	}, {
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "16:59"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6541.Weekday",
-	"t": "Seibu.SeibuYurakucho.6541",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6541",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Hanno"
-	],
-	"pt": [
-		"TokyoMetro.Yurakucho.B1637S.Weekday"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.6541.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "17:04"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "17:07",
-		"d": "17:07"
-	}, {
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "17:09"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.3801.Weekday",
-	"t": "Seibu.SeibuYurakucho.3801",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "3801",
-	"y": "Seibu.Rapid",
-	"d": "Outbound",
-	"os": [
-		"Minatomirai.Minatomirai.MotomachiChukagai"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Tokorozawa"
-	],
-	"pt": [
-		"TokyoMetro.Fukutoshin.B1630M.Weekday"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.3801.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "17:13"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "17:15",
-		"d": "17:15"
-	}, {
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "17:18"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6621.Weekday",
-	"t": "Seibu.SeibuYurakucho.6621",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6621",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Minatomirai.Minatomirai.MotomachiChukagai"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.ShakujiiKoen"
-	],
-	"pt": [
-		"TokyoMetro.Fukutoshin.B1616K.Weekday"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.6621.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "17:18"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "17:20",
-		"d": "17:20"
-	}, {
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "17:22"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6543.Weekday",
-	"t": "Seibu.SeibuYurakucho.6543",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6543",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Kotesashi"
-	],
-	"pt": [
-		"TokyoMetro.Yurakucho.B1621S.Weekday"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.6543.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2769,70 +2769,10 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "17:27",
-		"d": "17:27"
+		"d": "17:28"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "17:29"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6309.Weekday",
-	"t": "Seibu.SeibuYurakucho.6309",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6309",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.ShakujiiKoen"
-	],
-	"pt": [
-		"TokyoMetro.Yurakucho.B1651S.Weekday"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.6309.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "17:33"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "17:35",
-		"d": "17:35"
-	}, {
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "17:37"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6707.Weekday",
-	"t": "Seibu.SeibuYurakucho.6707",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6707",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Tokyu.Toyoko.MusashiKosugi"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Kiyose"
-	],
-	"pt": [
-		"TokyoMetro.Fukutoshin.B1607S.Weekday"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.6707.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "17:43"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "17:45",
-		"d": "17:46"
-	}, {
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "17:48"
+		"a": "17:31"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6311.Weekday",
@@ -2848,10 +2788,70 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1735S.Weekday"
+		"TokyoMetro.Yurakucho.B1625S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6311.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"d": "17:33"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "17:35",
+		"d": "17:35"
+	}, {
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"a": "17:37"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6705.Weekday",
+	"t": "Seibu.SeibuYurakucho.6705",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6705",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Tokyu.Toyoko.MusashiKosugi"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Kiyose"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1631K.Weekday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.6705.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"d": "17:43"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "17:45",
+		"d": "17:46"
+	}, {
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"a": "17:48"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6313.Weekday",
+	"t": "Seibu.SeibuYurakucho.6313",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6313",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.ShakujiiKoen"
+	],
+	"pt": [
+		"TokyoMetro.Yurakucho.B1783S.Weekday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.6313.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2878,7 +2878,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1629S.Weekday"
+		"TokyoMetro.Fukutoshin.B1671S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.3701.Weekday"
@@ -2908,21 +2908,21 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1630K.Weekday"
+		"TokyoMetro.Fukutoshin.B1617K.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6657.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "18:05"
+		"d": "18:06"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "18:07",
-		"d": "18:08"
+		"a": "18:08",
+		"d": "18:09"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "18:10"
+		"a": "18:11"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6405.Weekday",
@@ -2938,7 +2938,7 @@
 		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1728M.Weekday"
+		"TokyoMetro.Yurakucho.B1724M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6405.Weekday"
@@ -2955,10 +2955,10 @@
 		"a": "18:20"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6313.Weekday",
-	"t": "Seibu.SeibuYurakucho.6313",
+	"id": "Seibu.SeibuYurakucho.6315.Weekday",
+	"t": "Seibu.SeibuYurakucho.6315",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6313",
+	"n": "6315",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -2971,7 +2971,7 @@
 		"TokyoMetro.Yurakucho.B1727S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6313.Weekday"
+		"Seibu.Ikebukuro.6315.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -2998,7 +2998,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1787S.Weekday"
+		"TokyoMetro.Fukutoshin.B1760K.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.3703.Weekday"
@@ -3028,7 +3028,7 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1708K.Weekday"
+		"TokyoMetro.Fukutoshin.B1716K.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6659.Weekday"
@@ -3058,7 +3058,7 @@
 		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1765S.Weekday"
+		"TokyoMetro.Yurakucho.B1821S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6407.Weekday"
@@ -3075,126 +3075,6 @@
 		"a": "18:49"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6315.Weekday",
-	"t": "Seibu.SeibuYurakucho.6315",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6315",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.ShakujiiKoen"
-	],
-	"pt": [
-		"TokyoMetro.Yurakucho.B1883S.Weekday"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.6315.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "18:51"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "18:53",
-		"d": "18:53"
-	}, {
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "18:55"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.4819.Weekday",
-	"t": "Seibu.SeibuYurakucho.4819",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "4819",
-	"y": "Seibu.SemiExpress",
-	"d": "Outbound",
-	"os": [
-		"Minatomirai.Minatomirai.MotomachiChukagai"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Tokorozawa"
-	],
-	"pt": [
-		"TokyoMetro.Fukutoshin.B1712M.Weekday"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.4819.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "18:57"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "18:59",
-		"d": "18:59"
-	}, {
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "19:01"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6377.Weekday",
-	"t": "Seibu.SeibuYurakucho.6377",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6377",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Hoya"
-	],
-	"pt": [
-		"TokyoMetro.Yurakucho.B1826M.Weekday"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.6377.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "19:05"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "19:07",
-		"d": "19:08"
-	}, {
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "19:10"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6709.Weekday",
-	"t": "Seibu.SeibuYurakucho.6709",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6709",
-	"y": "Seibu.Local",
-	"d": "Outbound",
-	"os": [
-		"Minatomirai.Minatomirai.MotomachiChukagai"
-	],
-	"ds": [
-		"Seibu.Ikebukuro.Kiyose"
-	],
-	"pt": [
-		"TokyoMetro.Fukutoshin.B1853S.Weekday"
-	],
-	"nt": [
-		"Seibu.Ikebukuro.6709.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "19:15"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "19:17",
-		"d": "19:18"
-	}, {
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "19:20"
-	}]
-}, {
 	"id": "Seibu.SeibuYurakucho.6317.Weekday",
 	"t": "Seibu.SeibuYurakucho.6317",
 	"r": "Seibu.SeibuYurakucho",
@@ -3208,10 +3088,130 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1843S.Weekday"
+		"TokyoMetro.Yurakucho.B1851S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6317.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"d": "18:51"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "18:53",
+		"d": "18:53"
+	}, {
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"a": "18:55"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6753.Weekday",
+	"t": "Seibu.SeibuYurakucho.6753",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6753",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Tokorozawa"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1730M.Weekday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.6753.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"d": "18:56"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "18:58",
+		"d": "18:58"
+	}, {
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"a": "19:00"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6375.Weekday",
+	"t": "Seibu.SeibuYurakucho.6375",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6375",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Hoya"
+	],
+	"pt": [
+		"TokyoMetro.Yurakucho.B1887S.Weekday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.6375.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"d": "19:06"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "19:09",
+		"d": "19:09"
+	}, {
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"a": "19:11"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6707.Weekday",
+	"t": "Seibu.SeibuYurakucho.6707",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6707",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.Kiyose"
+	],
+	"pt": [
+		"TokyoMetro.Fukutoshin.B1875S.Weekday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.6707.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"d": "19:15"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "19:17",
+		"d": "19:18"
+	}, {
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"a": "19:20"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6319.Weekday",
+	"t": "Seibu.SeibuYurakucho.6319",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6319",
+	"y": "Seibu.Local",
+	"d": "Outbound",
+	"os": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"ds": [
+		"Seibu.Ikebukuro.ShakujiiKoen"
+	],
+	"pt": [
+		"TokyoMetro.Yurakucho.B1804M.Weekday"
+	],
+	"nt": [
+		"Seibu.Ikebukuro.6319.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3238,7 +3238,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1860K.Weekday"
+		"TokyoMetro.Fukutoshin.B1828M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.3705.Weekday"
@@ -3255,10 +3255,10 @@
 		"a": "19:30"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6379.Weekday",
-	"t": "Seibu.SeibuYurakucho.6379",
+	"id": "Seibu.SeibuYurakucho.6377.Weekday",
+	"t": "Seibu.SeibuYurakucho.6377",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6379",
+	"n": "6377",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3268,10 +3268,10 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1857S.Weekday"
+		"TokyoMetro.Yurakucho.B1879S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6379.Weekday"
+		"Seibu.Ikebukuro.6377.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3285,10 +3285,10 @@
 		"a": "19:41"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6711.Weekday",
-	"t": "Seibu.SeibuYurakucho.6711",
+	"id": "Seibu.SeibuYurakucho.6709.Weekday",
+	"t": "Seibu.SeibuYurakucho.6709",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6711",
+	"n": "6709",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3301,7 +3301,7 @@
 		"TokyoMetro.Fukutoshin.B1885S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6711.Weekday"
+		"Seibu.Ikebukuro.6709.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3315,10 +3315,10 @@
 		"a": "19:48"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6623.Weekday",
-	"t": "Seibu.SeibuYurakucho.6623",
+	"id": "Seibu.SeibuYurakucho.6619.Weekday",
+	"t": "Seibu.SeibuYurakucho.6619",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6623",
+	"n": "6619",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3328,10 +3328,10 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1802K.Weekday"
+		"TokyoMetro.Fukutoshin.B1810K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6623.Weekday"
+		"Seibu.Ikebukuro.6619.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3345,11 +3345,11 @@
 		"a": "19:55"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4855.Weekday",
-	"t": "Seibu.SeibuYurakucho.4855",
+	"id": "Seibu.SeibuYurakucho.6809.Weekday",
+	"t": "Seibu.SeibuYurakucho.6809",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4855",
-	"y": "Seibu.SemiExpress",
+	"n": "6809",
+	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
@@ -3358,10 +3358,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1841S.Weekday"
+		"TokyoMetro.Fukutoshin.B1881S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4855.Weekday"
+		"Seibu.Ikebukuro.6809.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3369,10 +3369,10 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "19:58",
-		"d": "19:59"
+		"d": "19:58"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "20:01"
+		"a": "20:00"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6409.Weekday",
@@ -3388,27 +3388,27 @@
 		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1914M.Weekday"
+		"TokyoMetro.Yurakucho.B1916M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6409.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "20:05"
+		"d": "20:06"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "20:07",
-		"d": "20:08"
+		"a": "20:09",
+		"d": "20:09"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "20:10"
+		"a": "20:11"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6713.Weekday",
-	"t": "Seibu.SeibuYurakucho.6713",
+	"id": "Seibu.SeibuYurakucho.6711.Weekday",
+	"t": "Seibu.SeibuYurakucho.6711",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6713",
+	"n": "6711",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3418,10 +3418,10 @@
 		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1909S.Weekday"
+		"TokyoMetro.Fukutoshin.B1911K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6713.Weekday"
+		"Seibu.Ikebukuro.6711.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3435,10 +3435,10 @@
 		"a": "20:20"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6319.Weekday",
-	"t": "Seibu.SeibuYurakucho.6319",
+	"id": "Seibu.SeibuYurakucho.6321.Weekday",
+	"t": "Seibu.SeibuYurakucho.6321",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6319",
+	"n": "6321",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3448,10 +3448,10 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1925S.Weekday"
+		"TokyoMetro.Yurakucho.B1953S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6319.Weekday"
+		"Seibu.Ikebukuro.6321.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3478,7 +3478,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1967S.Weekday"
+		"TokyoMetro.Fukutoshin.B1929S.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.3707.Weekday"
@@ -3525,23 +3525,23 @@
 		"a": "20:40"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6715.Weekday",
-	"t": "Seibu.SeibuYurakucho.6715",
+	"id": "Seibu.SeibuYurakucho.6755.Weekday",
+	"t": "Seibu.SeibuYurakucho.6755",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6715",
+	"n": "6755",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kiyose"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
 		"TokyoMetro.Fukutoshin.B1904K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6715.Weekday"
+		"Seibu.Ikebukuro.6755.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3555,10 +3555,10 @@
 		"a": "20:49"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6321.Weekday",
-	"t": "Seibu.SeibuYurakucho.6321",
+	"id": "Seibu.SeibuYurakucho.6323.Weekday",
+	"t": "Seibu.SeibuYurakucho.6323",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6321",
+	"n": "6323",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3568,10 +3568,10 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2075S.Weekday"
+		"TokyoMetro.Yurakucho.B2077S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6321.Weekday"
+		"Seibu.Ikebukuro.6323.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3585,11 +3585,11 @@
 		"a": "20:55"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4857.Weekday",
-	"t": "Seibu.SeibuYurakucho.4857",
+	"id": "Seibu.SeibuYurakucho.6811.Weekday",
+	"t": "Seibu.SeibuYurakucho.6811",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4857",
-	"y": "Seibu.SemiExpress",
+	"n": "6811",
+	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
@@ -3598,10 +3598,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1981S.Weekday"
+		"TokyoMetro.Fukutoshin.B1963S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4857.Weekday"
+		"Seibu.Ikebukuro.6811.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3615,40 +3615,40 @@
 		"a": "21:00"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6381.Weekday",
-	"t": "Seibu.SeibuYurakucho.6381",
+	"id": "Seibu.SeibuYurakucho.6325.Weekday",
+	"t": "Seibu.SeibuYurakucho.6325",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6381",
+	"n": "6325",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Hoya"
+		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2018M.Weekday"
+		"TokyoMetro.Yurakucho.B2036M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6381.Weekday"
+		"Seibu.Ikebukuro.6325.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "21:05"
+		"d": "21:06"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "21:07",
+		"a": "21:08",
 		"d": "21:08"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
 		"a": "21:10"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6717.Weekday",
-	"t": "Seibu.SeibuYurakucho.6717",
+	"id": "Seibu.SeibuYurakucho.6713.Weekday",
+	"t": "Seibu.SeibuYurakucho.6713",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6717",
+	"n": "6713",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3658,10 +3658,10 @@
 		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B2007S.Weekday"
+		"TokyoMetro.Fukutoshin.B2031K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6717.Weekday"
+		"Seibu.Ikebukuro.6713.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3675,10 +3675,10 @@
 		"a": "21:20"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6545.Weekday",
-	"t": "Seibu.SeibuYurakucho.6545",
+	"id": "Seibu.SeibuYurakucho.6541.Weekday",
+	"t": "Seibu.SeibuYurakucho.6541",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6545",
+	"n": "6541",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3688,10 +3688,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2006M.Weekday"
+		"TokyoMetro.Yurakucho.B2002M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6545.Weekday"
+		"Seibu.Ikebukuro.6541.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3735,23 +3735,23 @@
 		"a": "21:41"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6413.Weekday",
-	"t": "Seibu.SeibuYurakucho.6413",
+	"id": "Seibu.SeibuYurakucho.6379.Weekday",
+	"t": "Seibu.SeibuYurakucho.6379",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6413",
+	"n": "6379",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kiyose"
+		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2189S.Weekday"
+		"TokyoMetro.Yurakucho.B2171S.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6413.Weekday"
+		"Seibu.Ikebukuro.6379.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3765,10 +3765,10 @@
 		"a": "21:49"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6807.Weekday",
-	"t": "Seibu.SeibuYurakucho.6807",
+	"id": "Seibu.SeibuYurakucho.6813.Weekday",
+	"t": "Seibu.SeibuYurakucho.6813",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6807",
+	"n": "6813",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3778,10 +3778,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B2011K.Weekday"
+		"TokyoMetro.Fukutoshin.B2023K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6807.Weekday"
+		"Seibu.Ikebukuro.6813.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3795,41 +3795,41 @@
 		"a": "21:56"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6383.Weekday",
-	"t": "Seibu.SeibuYurakucho.6383",
+	"id": "Seibu.SeibuYurakucho.6413.Weekday",
+	"t": "Seibu.SeibuYurakucho.6413",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6383",
+	"n": "6413",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Hoya"
+		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2122M.Weekday"
+		"TokyoMetro.Yurakucho.B2132M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6383.Weekday"
+		"Seibu.Ikebukuro.6413.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "22:04"
+		"d": "22:01"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "22:06",
-		"d": "22:07"
+		"a": "22:03",
+		"d": "22:03"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "22:09"
+		"a": "22:05"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4859.Weekday",
-	"t": "Seibu.SeibuYurakucho.4859",
+	"id": "Seibu.SeibuYurakucho.6815.Weekday",
+	"t": "Seibu.SeibuYurakucho.6815",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4859",
-	"y": "Seibu.SemiExpress",
+	"n": "6815",
+	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
@@ -3838,40 +3838,40 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B2108K.Weekday"
+		"TokyoMetro.Fukutoshin.B2116K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4859.Weekday"
+		"Seibu.Ikebukuro.6815.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "22:16"
+		"d": "22:13"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "22:18",
-		"d": "22:19"
+		"a": "22:15",
+		"d": "22:16"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "22:21"
+		"a": "22:18"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6547.Weekday",
-	"t": "Seibu.SeibuYurakucho.6547",
+	"id": "Seibu.SeibuYurakucho.6415.Weekday",
+	"t": "Seibu.SeibuYurakucho.6415",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6547",
+	"n": "6415",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2102M.Weekday"
+		"TokyoMetro.Yurakucho.B2112M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6547.Weekday"
+		"Seibu.Ikebukuro.6415.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3885,10 +3885,10 @@
 		"a": "22:28"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6625.Weekday",
-	"t": "Seibu.SeibuYurakucho.6625",
+	"id": "Seibu.SeibuYurakucho.6621.Weekday",
+	"t": "Seibu.SeibuYurakucho.6621",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6625",
+	"n": "6621",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3901,7 +3901,7 @@
 		"TokyoMetro.Fukutoshin.B2101K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6625.Weekday"
+		"Seibu.Ikebukuro.6621.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3915,10 +3915,10 @@
 		"a": "22:40"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4551.Weekday",
-	"t": "Seibu.SeibuYurakucho.4551",
+	"id": "Seibu.SeibuYurakucho.4557.Weekday",
+	"t": "Seibu.SeibuYurakucho.4557",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4551",
+	"n": "4557",
 	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -3931,7 +3931,7 @@
 		"TokyoMetro.Yurakucho.B2208M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4551.Weekday"
+		"Seibu.Ikebukuro.4557.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -3958,7 +3958,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2214M.Weekday"
+		"TokyoMetro.Yurakucho.B2216M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.4401.Weekday"
@@ -3975,10 +3975,10 @@
 		"a": "22:57"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6549.Weekday",
-	"t": "Seibu.SeibuYurakucho.6549",
+	"id": "Seibu.SeibuYurakucho.6543.Weekday",
+	"t": "Seibu.SeibuYurakucho.6543",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6549",
+	"n": "6543",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -3988,10 +3988,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2228M.Weekday"
+		"TokyoMetro.Yurakucho.B2224M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6549.Weekday"
+		"Seibu.Ikebukuro.6543.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -4005,10 +4005,10 @@
 		"a": "23:08"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6809.Weekday",
-	"t": "Seibu.SeibuYurakucho.6809",
+	"id": "Seibu.SeibuYurakucho.6817.Weekday",
+	"t": "Seibu.SeibuYurakucho.6817",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6809",
+	"n": "6817",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -4021,7 +4021,7 @@
 		"TokyoMetro.Fukutoshin.B2210M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6809.Weekday"
+		"Seibu.Ikebukuro.6817.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -4035,10 +4035,10 @@
 		"a": "23:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6415.Weekday",
-	"t": "Seibu.SeibuYurakucho.6415",
+	"id": "Seibu.SeibuYurakucho.6417.Weekday",
+	"t": "Seibu.SeibuYurakucho.6417",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6415",
+	"n": "6417",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -4048,10 +4048,10 @@
 		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2236M.Weekday"
+		"TokyoMetro.Yurakucho.B2226M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6415.Weekday"
+		"Seibu.Ikebukuro.6417.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -4065,11 +4065,11 @@
 		"a": "23:33"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4553.Weekday",
-	"t": "Seibu.SeibuYurakucho.4553",
+	"id": "Seibu.SeibuYurakucho.3551.Weekday",
+	"t": "Seibu.SeibuYurakucho.3551",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4553",
-	"y": "Seibu.SemiExpress",
+	"n": "3551",
+	"y": "Seibu.Rapid",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
@@ -4078,10 +4078,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2218M.Weekday"
+		"TokyoMetro.Yurakucho.B2236M.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4553.Weekday"
+		"Seibu.Ikebukuro.3551.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -4095,10 +4095,10 @@
 		"a": "23:43"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6627.Weekday",
-	"t": "Seibu.SeibuYurakucho.6627",
+	"id": "Seibu.SeibuYurakucho.6623.Weekday",
+	"t": "Seibu.SeibuYurakucho.6623",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6627",
+	"n": "6623",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -4108,10 +4108,10 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B2218K.Weekday"
+		"TokyoMetro.Fukutoshin.B2206K.Weekday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6627.Weekday"
+		"Seibu.Ikebukuro.6623.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -4125,20 +4125,20 @@
 		"a": "23:55"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6385.Weekday",
-	"t": "Seibu.SeibuYurakucho.6385",
+	"id": "Seibu.SeibuYurakucho.6545.Weekday",
+	"t": "Seibu.SeibuYurakucho.6545",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6385",
+	"n": "6545",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"Seibu.SeibuYurakucho.KotakeMukaihara"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Hoya"
+		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6385.Weekday"
+		"Seibu.Ikebukuro.6545.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -4165,7 +4165,7 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B2326M.Weekday"
+		"TokyoMetro.Fukutoshin.B2304M.Weekday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6663.Weekday"
@@ -4225,7 +4225,7 @@
 		"Seibu.Ikebukuro.6504.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A514M.Weekday"
+		"TokyoMetro.Yurakucho.A516M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -4255,7 +4255,7 @@
 		"Seibu.Ikebukuro.6802.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A516M.Weekday"
+		"TokyoMetro.Fukutoshin.A518M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -4285,7 +4285,7 @@
 		"Seibu.Ikebukuro.6506.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A518M.Weekday"
+		"TokyoMetro.Yurakucho.A520M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -4315,14 +4315,14 @@
 		"Seibu.Ikebukuro.6804.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A620M.Weekday"
+		"TokyoMetro.Fukutoshin.A622M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "06:40"
+		"d": "06:39"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "06:42",
+		"a": "06:41",
 		"d": "06:42"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -4389,27 +4389,27 @@
 		"a": "07:11"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6452.Weekday",
-	"t": "Seibu.SeibuYurakucho.6452",
+	"id": "Seibu.SeibuYurakucho.6402.Weekday",
+	"t": "Seibu.SeibuYurakucho.6402",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6452",
+	"n": "6402",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Tokorozawa"
+		"Seibu.Ikebukuro.Kiyose"
 	],
 	"ds": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6452.Weekday"
+		"Seibu.Ikebukuro.6402.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A622M.Weekday"
+		"TokyoMetro.Yurakucho.A612M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "07:12"
+		"d": "07:13"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "07:15",
@@ -4435,14 +4435,14 @@
 		"Seibu.Ikebukuro.6508.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A612M.Weekday"
+		"TokyoMetro.Yurakucho.A614M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "07:19"
+		"d": "07:20"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "07:21",
+		"a": "07:22",
 		"d": "07:23"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -4479,27 +4479,27 @@
 		"a": "07:30"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4502.Weekday",
-	"t": "Seibu.SeibuYurakucho.4502",
+	"id": "Seibu.SeibuYurakucho.4552.Weekday",
+	"t": "Seibu.SeibuYurakucho.4552",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4502",
+	"n": "4552",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Tokorozawa"
+		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"ds": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.4502.Weekday"
+		"Seibu.Ikebukuro.4552.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A624M.Weekday"
+		"TokyoMetro.Yurakucho.A626M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "07:29"
+		"d": "07:30"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "07:32",
@@ -4539,23 +4539,23 @@
 		"a": "07:40"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.3702.Weekday",
-	"t": "Seibu.SeibuYurakucho.3702",
+	"id": "Seibu.SeibuYurakucho.3852.Weekday",
+	"t": "Seibu.SeibuYurakucho.3852",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "3702",
+	"n": "3852",
 	"y": "Seibu.Rapid",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Hanno"
+		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"ds": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.3702.Weekday"
+		"Seibu.Ikebukuro.3852.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A632M.Weekday"
+		"TokyoMetro.Fukutoshin.A728M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -4593,16 +4593,16 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "07:43",
-		"d": "07:43"
+		"d": "07:44"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "07:46"
+		"a": "07:47"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4552.Weekday",
-	"t": "Seibu.SeibuYurakucho.4552",
+	"id": "Seibu.SeibuYurakucho.4554.Weekday",
+	"t": "Seibu.SeibuYurakucho.4554",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4552",
+	"n": "4554",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -4612,7 +4612,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.4552.Weekday"
+		"Seibu.Ikebukuro.4554.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A765S.Weekday"
@@ -4629,10 +4629,10 @@
 		"a": "07:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.3704.Weekday",
-	"t": "Seibu.SeibuYurakucho.3704",
+	"id": "Seibu.SeibuYurakucho.3702.Weekday",
+	"t": "Seibu.SeibuYurakucho.3702",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "3704",
+	"n": "3702",
 	"y": "Seibu.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -4642,18 +4642,18 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.3704.Weekday"
+		"Seibu.Ikebukuro.3702.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Fukutoshin.A634M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "07:53"
+		"d": "07:52"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "07:55",
-		"d": "07:56"
+		"a": "07:54",
+		"d": "07:55"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
 		"a": "07:58"
@@ -4679,20 +4679,20 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "07:56"
+		"d": "07:55"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "07:58",
-		"d": "07:58"
+		"a": "07:57",
+		"d": "07:59"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
 		"a": "08:01"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4554.Weekday",
-	"t": "Seibu.SeibuYurakucho.4554",
+	"id": "Seibu.SeibuYurakucho.4556.Weekday",
+	"t": "Seibu.SeibuYurakucho.4556",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4554",
+	"n": "4556",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -4702,27 +4702,27 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.4554.Weekday"
+		"Seibu.Ikebukuro.4556.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A751S.Weekday"
+		"TokyoMetro.Yurakucho.A730M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "07:59"
+		"d": "07:58"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "08:02",
-		"d": "08:02"
+		"a": "08:01",
+		"d": "08:03"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
 		"a": "08:05"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6402.Weekday",
-	"t": "Seibu.SeibuYurakucho.6402",
+	"id": "Seibu.SeibuYurakucho.6404.Weekday",
+	"t": "Seibu.SeibuYurakucho.6404",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6402",
+	"n": "6404",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -4732,10 +4732,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6402.Weekday"
+		"Seibu.Ikebukuro.6404.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A704M.Weekday"
+		"TokyoMetro.Yurakucho.A757S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -4749,11 +4749,11 @@
 		"a": "08:10"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.3852.Weekday",
-	"t": "Seibu.SeibuYurakucho.3852",
+	"id": "Seibu.SeibuYurakucho.4852.Weekday",
+	"t": "Seibu.SeibuYurakucho.4852",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "3852",
-	"y": "Seibu.Rapid",
+	"n": "4852",
+	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Ikebukuro.Kotesashi"
@@ -4762,17 +4762,17 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.3852.Weekday"
+		"Seibu.Ikebukuro.4852.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A726M.Weekday"
+		"TokyoMetro.Fukutoshin.A704M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "08:08"
+		"d": "08:07"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "08:10",
+		"a": "08:09",
 		"d": "08:11"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -4839,11 +4839,11 @@
 		"a": "08:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4852.Weekday",
-	"t": "Seibu.SeibuYurakucho.4852",
+	"id": "Seibu.SeibuYurakucho.3854.Weekday",
+	"t": "Seibu.SeibuYurakucho.3854",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4852",
-	"y": "Seibu.SemiExpress",
+	"n": "3854",
+	"y": "Seibu.Rapid",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Ikebukuro.Kotesashi"
@@ -4852,10 +4852,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.4852.Weekday"
+		"Seibu.Ikebukuro.3854.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A728M.Weekday"
+		"TokyoMetro.Fukutoshin.A724M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -4899,10 +4899,10 @@
 		"a": "08:31"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4556.Weekday",
-	"t": "Seibu.SeibuYurakucho.4556",
+	"id": "Seibu.SeibuYurakucho.4558.Weekday",
+	"t": "Seibu.SeibuYurakucho.4558",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4556",
+	"n": "4558",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -4912,17 +4912,17 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.4556.Weekday"
+		"Seibu.Ikebukuro.4558.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A757S.Weekday"
+		"TokyoMetro.Yurakucho.A751S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
 		"d": "08:31"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "08:34",
+		"a": "08:33",
 		"d": "08:34"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -4952,17 +4952,17 @@
 		"d": "08:35"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "08:38",
+		"a": "08:37",
 		"d": "08:38"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
 		"a": "08:40"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4558.Weekday",
-	"t": "Seibu.SeibuYurakucho.4558",
+	"id": "Seibu.SeibuYurakucho.4560.Weekday",
+	"t": "Seibu.SeibuYurakucho.4560",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4558",
+	"n": "4560",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -4972,7 +4972,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.4558.Weekday"
+		"Seibu.Ikebukuro.4560.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A827S.Weekday"
@@ -4989,11 +4989,11 @@
 		"a": "08:44"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.3706.Weekday",
-	"t": "Seibu.SeibuYurakucho.3706",
+	"id": "Seibu.SeibuYurakucho.4702.Weekday",
+	"t": "Seibu.SeibuYurakucho.4702",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "3706",
-	"y": "Seibu.Rapid",
+	"n": "4702",
+	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Ikebukuro.Hanno"
@@ -5002,7 +5002,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.3706.Weekday"
+		"Seibu.Ikebukuro.4702.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Fukutoshin.A752K.Weekday"
@@ -5019,10 +5019,10 @@
 		"a": "08:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6454.Weekday",
-	"t": "Seibu.SeibuYurakucho.6454",
+	"id": "Seibu.SeibuYurakucho.6452.Weekday",
+	"t": "Seibu.SeibuYurakucho.6452",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6454",
+	"n": "6452",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -5032,10 +5032,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6454.Weekday"
+		"Seibu.Ikebukuro.6452.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A814M.Weekday"
+		"TokyoMetro.Yurakucho.A816M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -5049,10 +5049,10 @@
 		"a": "08:55"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6404.Weekday",
-	"t": "Seibu.SeibuYurakucho.6404",
+	"id": "Seibu.SeibuYurakucho.6406.Weekday",
+	"t": "Seibu.SeibuYurakucho.6406",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6404",
+	"n": "6406",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -5062,7 +5062,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6404.Weekday"
+		"Seibu.Ikebukuro.6406.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A806M.Weekday"
@@ -5199,11 +5199,11 @@
 		"a": "09:28"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.3708.Weekday",
-	"t": "Seibu.SeibuYurakucho.3708",
+	"id": "Seibu.SeibuYurakucho.4704.Weekday",
+	"t": "Seibu.SeibuYurakucho.4704",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "3708",
-	"y": "Seibu.Rapid",
+	"n": "4704",
+	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Ikebukuro.Hanno"
@@ -5212,7 +5212,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.3708.Weekday"
+		"Seibu.Ikebukuro.4704.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Fukutoshin.A885S.Weekday"
@@ -5229,10 +5229,10 @@
 		"a": "09:34"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6406.Weekday",
-	"t": "Seibu.SeibuYurakucho.6406",
+	"id": "Seibu.SeibuYurakucho.6408.Weekday",
+	"t": "Seibu.SeibuYurakucho.6408",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6406",
+	"n": "6408",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -5242,7 +5242,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6406.Weekday"
+		"Seibu.Ikebukuro.6408.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A937S.Weekday"
@@ -5282,18 +5282,18 @@
 		"d": "09:50"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "09:53",
+		"a": "09:52",
 		"d": "09:53"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
 		"a": "09:55"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6706.Weekday",
-	"t": "Seibu.SeibuYurakucho.6706",
+	"id": "Seibu.SeibuYurakucho.4802.Weekday",
+	"t": "Seibu.SeibuYurakucho.4802",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6706",
-	"y": "Seibu.Local",
+	"n": "4802",
+	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Ikebukuro.Kiyose"
@@ -5302,7 +5302,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6706.Weekday"
+		"Seibu.Ikebukuro.4802.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Fukutoshin.A906K.Weekday"
@@ -5319,11 +5319,11 @@
 		"a": "10:02"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4560.Weekday",
-	"t": "Seibu.SeibuYurakucho.4560",
+	"id": "Seibu.SeibuYurakucho.6510.Weekday",
+	"t": "Seibu.SeibuYurakucho.6510",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4560",
-	"y": "Seibu.SemiExpress",
+	"n": "6510",
+	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Ikebukuro.Kotesashi"
@@ -5332,7 +5332,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.4560.Weekday"
+		"Seibu.Ikebukuro.6510.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A902M.Weekday"
@@ -5343,7 +5343,7 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "10:07",
-		"d": "10:07"
+		"d": "10:08"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
 		"a": "10:10"
@@ -5369,11 +5369,11 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "10:11"
+		"d": "10:10"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "10:13",
-		"d": "10:14"
+		"a": "10:12",
+		"d": "10:13"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
 		"a": "10:16"
@@ -5409,23 +5409,23 @@
 		"a": "10:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6708.Weekday",
-	"t": "Seibu.SeibuYurakucho.6708",
+	"id": "Seibu.SeibuYurakucho.6754.Weekday",
+	"t": "Seibu.SeibuYurakucho.6754",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6708",
+	"n": "6754",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Kiyose"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"ds": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6708.Weekday"
+		"Seibu.Ikebukuro.6754.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1056K.Weekday"
+		"TokyoMetro.Fukutoshin.A956K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -5493,7 +5493,7 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "10:43",
-		"d": "10:44"
+		"d": "10:43"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
 		"a": "10:46"
@@ -5515,7 +5515,7 @@
 		"Seibu.Ikebukuro.1802.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1012M.Weekday"
+		"TokyoMetro.Fukutoshin.A1030M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -5571,7 +5571,7 @@
 		"Seibu.Ikebukuro.6308.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1081S.Weekday"
+		"TokyoMetro.Yurakucho.A1057S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -5641,10 +5641,10 @@
 		"a": "11:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6510.Weekday",
-	"t": "Seibu.SeibuYurakucho.6510",
+	"id": "Seibu.SeibuYurakucho.6512.Weekday",
+	"t": "Seibu.SeibuYurakucho.6512",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6510",
+	"n": "6512",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -5654,10 +5654,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6510.Weekday"
+		"Seibu.Ikebukuro.6512.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1053S.Weekday"
+		"TokyoMetro.Yurakucho.A1075S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -5687,7 +5687,7 @@
 		"Seibu.Ikebukuro.6610.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1110K.Weekday"
+		"TokyoMetro.Fukutoshin.A1102K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -5701,10 +5701,10 @@
 		"a": "11:38"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6456.Weekday",
-	"t": "Seibu.SeibuYurakucho.6456",
+	"id": "Seibu.SeibuYurakucho.6454.Weekday",
+	"t": "Seibu.SeibuYurakucho.6454",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6456",
+	"n": "6454",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -5714,7 +5714,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6456.Weekday"
+		"Seibu.Ikebukuro.6454.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1127S.Weekday"
@@ -5747,7 +5747,7 @@
 		"Seibu.Ikebukuro.1806.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1120M.Weekday"
+		"TokyoMetro.Fukutoshin.A1122M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -5757,10 +5757,10 @@
 		"a": "11:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6512.Weekday",
-	"t": "Seibu.SeibuYurakucho.6512",
+	"id": "Seibu.SeibuYurakucho.6514.Weekday",
+	"t": "Seibu.SeibuYurakucho.6514",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6512",
+	"n": "6514",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -5770,10 +5770,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6512.Weekday"
+		"Seibu.Ikebukuro.6514.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1132M.Weekday"
+		"TokyoMetro.Yurakucho.A1128M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -5803,7 +5803,7 @@
 		"Seibu.Ikebukuro.6612.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1122K.Weekday"
+		"TokyoMetro.Fukutoshin.A1115S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -5833,7 +5833,7 @@
 		"Seibu.Ikebukuro.6358.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1122M.Weekday"
+		"TokyoMetro.Yurakucho.A1121S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -5873,10 +5873,10 @@
 		"a": "12:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6514.Weekday",
-	"t": "Seibu.SeibuYurakucho.6514",
+	"id": "Seibu.SeibuYurakucho.6516.Weekday",
+	"t": "Seibu.SeibuYurakucho.6516",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6514",
+	"n": "6516",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -5886,7 +5886,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6514.Weekday"
+		"Seibu.Ikebukuro.6516.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1133S.Weekday"
@@ -5979,7 +5979,7 @@
 		"Seibu.Ikebukuro.1810.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1229S.Weekday"
+		"TokyoMetro.Fukutoshin.A1271S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -5989,10 +5989,10 @@
 		"a": "12:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6516.Weekday",
-	"t": "Seibu.SeibuYurakucho.6516",
+	"id": "Seibu.SeibuYurakucho.6518.Weekday",
+	"t": "Seibu.SeibuYurakucho.6518",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6516",
+	"n": "6518",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6002,7 +6002,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6516.Weekday"
+		"Seibu.Ikebukuro.6518.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1269S.Weekday"
@@ -6035,7 +6035,7 @@
 		"Seibu.Ikebukuro.6616.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1213S.Weekday"
+		"TokyoMetro.Fukutoshin.A1222K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6065,7 +6065,7 @@
 		"Seibu.Ikebukuro.6362.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1221S.Weekday"
+		"TokyoMetro.Yurakucho.A1245S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6095,7 +6095,7 @@
 		"Seibu.Ikebukuro.1812.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1206M.Weekday"
+		"TokyoMetro.Fukutoshin.A1260K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6105,10 +6105,10 @@
 		"a": "13:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6518.Weekday",
-	"t": "Seibu.SeibuYurakucho.6518",
+	"id": "Seibu.SeibuYurakucho.6520.Weekday",
+	"t": "Seibu.SeibuYurakucho.6520",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6518",
+	"n": "6520",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6118,7 +6118,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6518.Weekday"
+		"Seibu.Ikebukuro.6520.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1254M.Weekday"
@@ -6211,7 +6211,7 @@
 		"Seibu.Ikebukuro.1814.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1312M.Weekday"
+		"TokyoMetro.Fukutoshin.A1330M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6221,10 +6221,10 @@
 		"a": "13:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6520.Weekday",
-	"t": "Seibu.SeibuYurakucho.6520",
+	"id": "Seibu.SeibuYurakucho.6522.Weekday",
+	"t": "Seibu.SeibuYurakucho.6522",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6520",
+	"n": "6522",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6234,7 +6234,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6520.Weekday"
+		"Seibu.Ikebukuro.6522.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1323S.Weekday"
@@ -6327,7 +6327,7 @@
 		"Seibu.Ikebukuro.1816.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1360K.Weekday"
+		"TokyoMetro.Fukutoshin.A1387S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6337,10 +6337,10 @@
 		"a": "14:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6522.Weekday",
-	"t": "Seibu.SeibuYurakucho.6522",
+	"id": "Seibu.SeibuYurakucho.6524.Weekday",
+	"t": "Seibu.SeibuYurakucho.6524",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6522",
+	"n": "6524",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6350,10 +6350,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6522.Weekday"
+		"Seibu.Ikebukuro.6524.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1328M.Weekday"
+		"TokyoMetro.Yurakucho.A1324M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6413,7 +6413,7 @@
 		"Seibu.Ikebukuro.6368.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1422M.Weekday"
+		"TokyoMetro.Yurakucho.A1421S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6443,7 +6443,7 @@
 		"Seibu.Ikebukuro.1818.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1420M.Weekday"
+		"TokyoMetro.Fukutoshin.A1422M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6453,10 +6453,10 @@
 		"a": "14:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6524.Weekday",
-	"t": "Seibu.SeibuYurakucho.6524",
+	"id": "Seibu.SeibuYurakucho.6526.Weekday",
+	"t": "Seibu.SeibuYurakucho.6526",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6524",
+	"n": "6526",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6466,7 +6466,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6524.Weekday"
+		"Seibu.Ikebukuro.6526.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1449S.Weekday"
@@ -6499,7 +6499,7 @@
 		"Seibu.Ikebukuro.6624.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1410K.Weekday"
+		"TokyoMetro.Fukutoshin.A1402K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6559,7 +6559,7 @@
 		"Seibu.Ikebukuro.1820.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1430M.Weekday"
+		"TokyoMetro.Fukutoshin.A1414M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6569,10 +6569,10 @@
 		"a": "15:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6526.Weekday",
-	"t": "Seibu.SeibuYurakucho.6526",
+	"id": "Seibu.SeibuYurakucho.6528.Weekday",
+	"t": "Seibu.SeibuYurakucho.6528",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6526",
+	"n": "6528",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6582,7 +6582,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6526.Weekday"
+		"Seibu.Ikebukuro.6528.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1437S.Weekday"
@@ -6615,7 +6615,7 @@
 		"Seibu.Ikebukuro.6626.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1522K.Weekday"
+		"TokyoMetro.Fukutoshin.A1515S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6645,7 +6645,7 @@
 		"Seibu.Ikebukuro.6372.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1521S.Weekday"
+		"TokyoMetro.Yurakucho.A1545S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6675,20 +6675,20 @@
 		"Seibu.Ikebukuro.1822.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1529S.Weekday"
+		"TokyoMetro.Fukutoshin.A1571S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "15:47"
+		"d": "15:48"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "15:51"
+		"a": "15:52"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6528.Weekday",
-	"t": "Seibu.SeibuYurakucho.6528",
+	"id": "Seibu.SeibuYurakucho.6530.Weekday",
+	"t": "Seibu.SeibuYurakucho.6530",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6528",
+	"n": "6530",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6698,10 +6698,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6528.Weekday"
+		"Seibu.Ikebukuro.6530.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1551S.Weekday"
+		"TokyoMetro.Yurakucho.A1525S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6791,7 +6791,7 @@
 		"Seibu.Ikebukuro.1824.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1587S.Weekday"
+		"TokyoMetro.Fukutoshin.A1560K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6801,10 +6801,10 @@
 		"a": "16:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6530.Weekday",
-	"t": "Seibu.SeibuYurakucho.6530",
+	"id": "Seibu.SeibuYurakucho.6532.Weekday",
+	"t": "Seibu.SeibuYurakucho.6532",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6530",
+	"n": "6532",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6814,10 +6814,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6530.Weekday"
+		"Seibu.Ikebukuro.6532.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1545S.Weekday"
+		"TokyoMetro.Yurakucho.A1563S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6847,7 +6847,7 @@
 		"Seibu.Ikebukuro.6630.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1613S.Weekday"
+		"TokyoMetro.Fukutoshin.A1622K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6907,7 +6907,7 @@
 		"Seibu.Ikebukuro.1852.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1612M.Weekday"
+		"TokyoMetro.Fukutoshin.A1630M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6917,10 +6917,10 @@
 		"a": "16:52"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6532.Weekday",
-	"t": "Seibu.SeibuYurakucho.6532",
+	"id": "Seibu.SeibuYurakucho.6534.Weekday",
+	"t": "Seibu.SeibuYurakucho.6534",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6532",
+	"n": "6534",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -6930,10 +6930,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6532.Weekday"
+		"Seibu.Ikebukuro.6534.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1675S.Weekday"
+		"TokyoMetro.Yurakucho.A1677S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -6947,53 +6947,53 @@
 		"a": "17:00"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6378.Weekday",
-	"t": "Seibu.SeibuYurakucho.6378",
+	"id": "Seibu.SeibuYurakucho.6310.Weekday",
+	"t": "Seibu.SeibuYurakucho.6310",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6378",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.Ikebukuro.Hoya"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.6378.Weekday"
-	],
-	"nt": [
-		"TokyoMetro.Yurakucho.A1665S.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "17:04"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "17:06",
-		"d": "17:06"
-	}, {
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "17:09"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6632.Weekday",
-	"t": "Seibu.SeibuYurakucho.6632",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6632",
+	"n": "6310",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.6310.Weekday"
+	],
+	"nt": [
+		"TokyoMetro.Yurakucho.A1621S.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"d": "17:02"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "17:05",
+		"d": "17:06"
+	}, {
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"a": "17:09"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6656.Weekday",
+	"t": "Seibu.SeibuYurakucho.6656",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6656",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Ikebukuro.Hoya"
+	],
+	"ds": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6632.Weekday"
+		"Seibu.Ikebukuro.6656.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1619K.Weekday"
+		"TokyoMetro.Fukutoshin.A1605K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7007,30 +7007,30 @@
 		"a": "17:15"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6754.Weekday",
-	"t": "Seibu.SeibuYurakucho.6754",
+	"id": "Seibu.SeibuYurakucho.6812.Weekday",
+	"t": "Seibu.SeibuYurakucho.6812",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6754",
+	"n": "6812",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Tokorozawa"
+		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"ds": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6754.Weekday"
+		"Seibu.Ikebukuro.6812.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1660K.Weekday"
+		"TokyoMetro.Fukutoshin.A1628M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "17:20"
+		"d": "17:19"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "17:22",
+		"a": "17:21",
 		"d": "17:22"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -7053,7 +7053,7 @@
 		"Seibu.Ikebukuro.4562.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1606M.Weekday"
+		"TokyoMetro.Yurakucho.A1687S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7067,27 +7067,27 @@
 		"a": "17:31"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6310.Weekday",
-	"t": "Seibu.SeibuYurakucho.6310",
+	"id": "Seibu.SeibuYurakucho.6378.Weekday",
+	"t": "Seibu.SeibuYurakucho.6378",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6310",
+	"n": "6378",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.ShakujiiKoen"
+		"Seibu.Ikebukuro.Hoya"
 	],
 	"ds": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6310.Weekday"
+		"Seibu.Ikebukuro.6378.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1716M.Weekday"
+		"TokyoMetro.Yurakucho.A1718M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "17:35"
+		"d": "17:34"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "17:37",
@@ -7097,10 +7097,10 @@
 		"a": "17:40"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6634.Weekday",
-	"t": "Seibu.SeibuYurakucho.6634",
+	"id": "Seibu.SeibuYurakucho.6632.Weekday",
+	"t": "Seibu.SeibuYurakucho.6632",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6634",
+	"n": "6632",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7110,10 +7110,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6634.Weekday"
+		"Seibu.Ikebukuro.6632.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1717K.Weekday"
+		"TokyoMetro.Fukutoshin.A1714K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7127,10 +7127,10 @@
 		"a": "17:45"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6458.Weekday",
-	"t": "Seibu.SeibuYurakucho.6458",
+	"id": "Seibu.SeibuYurakucho.6456.Weekday",
+	"t": "Seibu.SeibuYurakucho.6456",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6458",
+	"n": "6456",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7140,10 +7140,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6458.Weekday"
+		"Seibu.Ikebukuro.6456.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1777S.Weekday"
+		"TokyoMetro.Yurakucho.A1765S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7187,10 +7187,10 @@
 		"a": "18:00"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6636.Weekday",
-	"t": "Seibu.SeibuYurakucho.6636",
+	"id": "Seibu.SeibuYurakucho.6634.Weekday",
+	"t": "Seibu.SeibuYurakucho.6634",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6636",
+	"n": "6634",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7200,10 +7200,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6636.Weekday"
+		"Seibu.Ikebukuro.6634.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1716K.Weekday"
+		"TokyoMetro.Fukutoshin.A1711S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7233,7 +7233,7 @@
 		"Seibu.Ikebukuro.6312.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1751S.Weekday"
+		"TokyoMetro.Yurakucho.A1725S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7263,7 +7263,7 @@
 		"Seibu.Ikebukuro.6756.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1767S.Weekday"
+		"TokyoMetro.Fukutoshin.A1729S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7277,20 +7277,20 @@
 		"a": "18:25"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4566.Weekday",
-	"t": "Seibu.SeibuYurakucho.4566",
+	"id": "Seibu.SeibuYurakucho.4502.Weekday",
+	"t": "Seibu.SeibuYurakucho.4502",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4566",
+	"n": "4502",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"ds": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.4566.Weekday"
+		"Seibu.Ikebukuro.4502.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1755S.Weekday"
@@ -7307,20 +7307,20 @@
 		"a": "18:30"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6710.Weekday",
-	"t": "Seibu.SeibuYurakucho.6710",
+	"id": "Seibu.SeibuYurakucho.6814.Weekday",
+	"t": "Seibu.SeibuYurakucho.6814",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6710",
+	"n": "6814",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Kiyose"
+		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"ds": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6710.Weekday"
+		"Seibu.Ikebukuro.6814.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Fukutoshin.A1720M.Weekday"
@@ -7353,7 +7353,7 @@
 		"Seibu.Ikebukuro.6314.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1835S.Weekday"
+		"TokyoMetro.Yurakucho.A1883S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7367,10 +7367,10 @@
 		"a": "18:45"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6712.Weekday",
-	"t": "Seibu.SeibuYurakucho.6712",
+	"id": "Seibu.SeibuYurakucho.6706.Weekday",
+	"t": "Seibu.SeibuYurakucho.6706",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6712",
+	"n": "6706",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7380,10 +7380,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6712.Weekday"
+		"Seibu.Ikebukuro.6706.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1807S.Weekday"
+		"TokyoMetro.Fukutoshin.A1831K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7397,10 +7397,10 @@
 		"a": "18:55"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4568.Weekday",
-	"t": "Seibu.SeibuYurakucho.4568",
+	"id": "Seibu.SeibuYurakucho.4566.Weekday",
+	"t": "Seibu.SeibuYurakucho.4566",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4568",
+	"n": "4566",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -7410,10 +7410,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.4568.Weekday"
+		"Seibu.Ikebukuro.4566.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1821S.Weekday"
+		"TokyoMetro.Yurakucho.A1845S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7457,126 +7457,6 @@
 		"a": "19:09"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6656.Weekday",
-	"t": "Seibu.SeibuYurakucho.6656",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6656",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.Ikebukuro.Hoya"
-	],
-	"ds": [
-		"Minatomirai.Minatomirai.MotomachiChukagai"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.6656.Weekday"
-	],
-	"nt": [
-		"TokyoMetro.Fukutoshin.A1830K.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "19:10"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "19:12",
-		"d": "19:13"
-	}, {
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "19:15"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6408.Weekday",
-	"t": "Seibu.SeibuYurakucho.6408",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6408",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.Ikebukuro.Kiyose"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.6408.Weekday"
-	],
-	"nt": [
-		"TokyoMetro.Yurakucho.A1828M.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "19:20"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "19:22",
-		"d": "19:22"
-	}, {
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "19:25"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.4570.Weekday",
-	"t": "Seibu.SeibuYurakucho.4570",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "4570",
-	"y": "Seibu.SemiExpress",
-	"d": "Inbound",
-	"os": [
-		"Seibu.Ikebukuro.Kotesashi"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.4570.Weekday"
-	],
-	"nt": [
-		"TokyoMetro.Yurakucho.A1837S.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "19:26"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "19:28",
-		"d": "19:28"
-	}, {
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "19:30"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6318.Weekday",
-	"t": "Seibu.SeibuYurakucho.6318",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6318",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.Ikebukuro.ShakujiiKoen"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.6318.Weekday"
-	],
-	"nt": [
-		"TokyoMetro.Yurakucho.A1983S.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "19:34"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "19:36",
-		"d": "19:37"
-	}, {
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "19:39"
-	}]
-}, {
 	"id": "Seibu.SeibuYurakucho.6658.Weekday",
 	"t": "Seibu.SeibuYurakucho.6658",
 	"r": "Seibu.SeibuYurakucho",
@@ -7593,18 +7473,18 @@
 		"Seibu.Ikebukuro.6658.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1908K.Weekday"
+		"TokyoMetro.Fukutoshin.A1817K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "19:40"
+		"d": "19:10"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "19:42",
-		"d": "19:43"
+		"a": "19:12",
+		"d": "19:13"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "19:45"
+		"a": "19:15"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6410.Weekday",
@@ -7623,25 +7503,25 @@
 		"Seibu.Ikebukuro.6410.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1965S.Weekday"
+		"TokyoMetro.Yurakucho.A1824M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "19:50"
+		"d": "19:20"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "19:52",
-		"d": "19:53"
+		"a": "19:22",
+		"d": "19:22"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "19:55"
+		"a": "19:25"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4572.Weekday",
-	"t": "Seibu.SeibuYurakucho.4572",
+	"id": "Seibu.SeibuYurakucho.6536.Weekday",
+	"t": "Seibu.SeibuYurakucho.6536",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4572",
-	"y": "Seibu.SemiExpress",
+	"n": "6536",
+	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Ikebukuro.Kotesashi"
@@ -7650,51 +7530,51 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.4572.Weekday"
+		"Seibu.Ikebukuro.6536.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1929S.Weekday"
+		"TokyoMetro.Yurakucho.A1826M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "19:58"
+		"d": "19:30"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "20:00",
-		"d": "20:00"
+		"a": "19:32",
+		"d": "19:33"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "20:03"
+		"a": "19:35"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6638.Weekday",
-	"t": "Seibu.SeibuYurakucho.6638",
+	"id": "Seibu.SeibuYurakucho.6318.Weekday",
+	"t": "Seibu.SeibuYurakucho.6318",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6638",
+	"n": "6318",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"ds": [
-		"Minatomirai.Minatomirai.MotomachiChukagai"
+		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6638.Weekday"
+		"Seibu.Ikebukuro.6318.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1943S.Weekday"
+		"TokyoMetro.Yurakucho.A1951S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "20:04"
+		"d": "19:34"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "20:07",
-		"d": "20:07"
+		"a": "19:36",
+		"d": "19:37"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "20:09"
+		"a": "19:39"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6660.Weekday",
@@ -7713,7 +7593,127 @@
 		"Seibu.Ikebukuro.6660.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1926M.Weekday"
+		"TokyoMetro.Fukutoshin.A1916K.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"d": "19:40"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "19:42",
+		"d": "19:43"
+	}, {
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"a": "19:45"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6412.Weekday",
+	"t": "Seibu.SeibuYurakucho.6412",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6412",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Ikebukuro.Kiyose"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.6412.Weekday"
+	],
+	"nt": [
+		"TokyoMetro.Yurakucho.A1921S.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"d": "19:50"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "19:52",
+		"d": "19:53"
+	}, {
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"a": "19:55"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.4404.Weekday",
+	"t": "Seibu.SeibuYurakucho.4404",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "4404",
+	"y": "Seibu.SemiExpress",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Ikebukuro.Hanno"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.4404.Weekday"
+	],
+	"nt": [
+		"TokyoMetro.Yurakucho.A1971S.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"d": "19:58"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "20:00",
+		"d": "20:00"
+	}, {
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"a": "20:03"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6662.Weekday",
+	"t": "Seibu.SeibuYurakucho.6662",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6662",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Ikebukuro.Hoya"
+	],
+	"ds": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.6662.Weekday"
+	],
+	"nt": [
+		"TokyoMetro.Fukutoshin.A1987S.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"d": "20:04"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "20:07",
+		"d": "20:07"
+	}, {
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"a": "20:09"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6636.Weekday",
+	"t": "Seibu.SeibuYurakucho.6636",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6636",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Ikebukuro.ShakujiiKoen"
+	],
+	"ds": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.6636.Weekday"
+	],
+	"nt": [
+		"TokyoMetro.Fukutoshin.A2004M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7727,10 +7727,10 @@
 		"a": "20:17"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6714.Weekday",
-	"t": "Seibu.SeibuYurakucho.6714",
+	"id": "Seibu.SeibuYurakucho.6708.Weekday",
+	"t": "Seibu.SeibuYurakucho.6708",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6714",
+	"n": "6708",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7740,27 +7740,27 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6714.Weekday"
+		"Seibu.Ikebukuro.6708.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1953S.Weekday"
+		"TokyoMetro.Fukutoshin.A1975S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "20:21"
+		"d": "20:20"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "20:23",
-		"d": "20:23"
+		"a": "20:22",
+		"d": "20:24"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
 		"a": "20:26"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4574.Weekday",
-	"t": "Seibu.SeibuYurakucho.4574",
+	"id": "Seibu.SeibuYurakucho.4568.Weekday",
+	"t": "Seibu.SeibuYurakucho.4568",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4574",
+	"n": "4568",
 	"y": "Seibu.SemiExpress",
 	"d": "Inbound",
 	"os": [
@@ -7770,10 +7770,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.4574.Weekday"
+		"Seibu.Ikebukuro.4568.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1987S.Weekday"
+		"TokyoMetro.Yurakucho.A1932M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7787,10 +7787,10 @@
 		"a": "20:33"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6640.Weekday",
-	"t": "Seibu.SeibuYurakucho.6640",
+	"id": "Seibu.SeibuYurakucho.6638.Weekday",
+	"t": "Seibu.SeibuYurakucho.6638",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6640",
+	"n": "6638",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7800,10 +7800,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6640.Weekday"
+		"Seibu.Ikebukuro.6638.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A2002K.Weekday"
+		"TokyoMetro.Fukutoshin.A2010K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7833,7 +7833,7 @@
 		"Seibu.Ikebukuro.6380.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2057S.Weekday"
+		"TokyoMetro.Yurakucho.A2079S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7847,10 +7847,10 @@
 		"a": "20:46"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6716.Weekday",
-	"t": "Seibu.SeibuYurakucho.6716",
+	"id": "Seibu.SeibuYurakucho.6710.Weekday",
+	"t": "Seibu.SeibuYurakucho.6710",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6716",
+	"n": "6710",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7860,7 +7860,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6716.Weekday"
+		"Seibu.Ikebukuro.6710.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Fukutoshin.A2085S.Weekday"
@@ -7893,7 +7893,7 @@
 		"Seibu.Ikebukuro.6320.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2025S.Weekday"
+		"TokyoMetro.Yurakucho.A2053S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7907,10 +7907,10 @@
 		"a": "21:06"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6412.Weekday",
-	"t": "Seibu.SeibuYurakucho.6412",
+	"id": "Seibu.SeibuYurakucho.6414.Weekday",
+	"t": "Seibu.SeibuYurakucho.6414",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6412",
+	"n": "6414",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7920,10 +7920,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6412.Weekday"
+		"Seibu.Ikebukuro.6414.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2014M.Weekday"
+		"TokyoMetro.Yurakucho.A2016M.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7937,10 +7937,10 @@
 		"a": "21:15"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6718.Weekday",
-	"t": "Seibu.SeibuYurakucho.6718",
+	"id": "Seibu.SeibuYurakucho.6712.Weekday",
+	"t": "Seibu.SeibuYurakucho.6712",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6718",
+	"n": "6712",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7950,10 +7950,10 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6718.Weekday"
+		"Seibu.Ikebukuro.6712.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A2009S.Weekday"
+		"TokyoMetro.Fukutoshin.A2011K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -7967,10 +7967,10 @@
 		"a": "21:26"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6534.Weekday",
-	"t": "Seibu.SeibuYurakucho.6534",
+	"id": "Seibu.SeibuYurakucho.6538.Weekday",
+	"t": "Seibu.SeibuYurakucho.6538",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6534",
+	"n": "6538",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -7980,10 +7980,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6534.Weekday"
+		"Seibu.Ikebukuro.6538.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2041S.Weekday"
+		"TokyoMetro.Yurakucho.A2081S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -8013,7 +8013,7 @@
 		"Seibu.Ikebukuro.6322.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2175S.Weekday"
+		"TokyoMetro.Yurakucho.A2177S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -8025,126 +8025,6 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
 		"a": "21:43"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6414.Weekday",
-	"t": "Seibu.SeibuYurakucho.6414",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6414",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.Ikebukuro.Kiyose"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.6414.Weekday"
-	],
-	"nt": [
-		"TokyoMetro.Yurakucho.A2161S.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "21:54"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "21:56",
-		"d": "21:57"
-	}, {
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "21:59"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6382.Weekday",
-	"t": "Seibu.SeibuYurakucho.6382",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6382",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.Ikebukuro.Hoya"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.6382.Weekday"
-	],
-	"nt": [
-		"TokyoMetro.Yurakucho.A2118M.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "22:02"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "22:04",
-		"d": "22:04"
-	}, {
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "22:07"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6720.Weekday",
-	"t": "Seibu.SeibuYurakucho.6720",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6720",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.Ikebukuro.Kiyose"
-	],
-	"ds": [
-		"Minatomirai.Minatomirai.MotomachiChukagai"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.6720.Weekday"
-	],
-	"nt": [
-		"TokyoMetro.Fukutoshin.A2107S.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "22:12"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "22:14",
-		"d": "22:14"
-	}, {
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "22:17"
-	}]
-}, {
-	"id": "Seibu.SeibuYurakucho.6384.Weekday",
-	"t": "Seibu.SeibuYurakucho.6384",
-	"r": "Seibu.SeibuYurakucho",
-	"n": "6384",
-	"y": "Seibu.Local",
-	"d": "Inbound",
-	"os": [
-		"Seibu.Ikebukuro.Hoya"
-	],
-	"ds": [
-		"TokyoMetro.Yurakucho.ShinKiba"
-	],
-	"pt": [
-		"Seibu.Ikebukuro.6384.Weekday"
-	],
-	"nt": [
-		"TokyoMetro.Yurakucho.A2223S.Weekday"
-	],
-	"tt": [{
-		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "22:26"
-	}, {
-		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "22:28",
-		"d": "22:28"
-	}, {
-		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "22:31"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6416.Weekday",
@@ -8163,7 +8043,127 @@
 		"Seibu.Ikebukuro.6416.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2289S.Weekday"
+		"TokyoMetro.Yurakucho.A2161S.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"d": "21:54"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "21:57",
+		"d": "21:57"
+	}, {
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"a": "21:59"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.4504.Weekday",
+	"t": "Seibu.SeibuYurakucho.4504",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "4504",
+	"y": "Seibu.SemiExpress",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Ikebukuro.ShakujiiKoen"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.4504.Weekday"
+	],
+	"nt": [
+		"TokyoMetro.Yurakucho.A2136M.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"d": "22:02"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "22:04",
+		"d": "22:04"
+	}, {
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"a": "22:07"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6714.Weekday",
+	"t": "Seibu.SeibuYurakucho.6714",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6714",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Ikebukuro.Kiyose"
+	],
+	"ds": [
+		"Minatomirai.Minatomirai.MotomachiChukagai"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.6714.Weekday"
+	],
+	"nt": [
+		"TokyoMetro.Fukutoshin.A2131K.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"d": "22:12"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "22:14",
+		"d": "22:14"
+	}, {
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"a": "22:17"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6382.Weekday",
+	"t": "Seibu.SeibuYurakucho.6382",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6382",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Ikebukuro.Hoya"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.6382.Weekday"
+	],
+	"nt": [
+		"TokyoMetro.Yurakucho.A2223S.Weekday"
+	],
+	"tt": [{
+		"s": "Seibu.SeibuYurakucho.Nerima",
+		"d": "22:26"
+	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "22:28",
+		"d": "22:28"
+	}, {
+		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
+		"a": "22:31"
+	}]
+}, {
+	"id": "Seibu.SeibuYurakucho.6384.Weekday",
+	"t": "Seibu.SeibuYurakucho.6384",
+	"r": "Seibu.SeibuYurakucho",
+	"n": "6384",
+	"y": "Seibu.Local",
+	"d": "Inbound",
+	"os": [
+		"Seibu.Ikebukuro.Hoya"
+	],
+	"ds": [
+		"TokyoMetro.Yurakucho.ShinKiba"
+	],
+	"pt": [
+		"Seibu.Ikebukuro.6384.Weekday"
+	],
+	"nt": [
+		"TokyoMetro.Yurakucho.A2271S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -8207,10 +8207,10 @@
 		"a": "23:00"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6642.Weekday",
-	"t": "Seibu.SeibuYurakucho.6642",
+	"id": "Seibu.SeibuYurakucho.6640.Weekday",
+	"t": "Seibu.SeibuYurakucho.6640",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6642",
+	"n": "6640",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -8220,7 +8220,7 @@
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6642.Weekday"
+		"Seibu.Ikebukuro.6640.Weekday"
 	],
 	"nt": [
 		"TokyoMetro.Fukutoshin.A2301K.Weekday"
@@ -8237,10 +8237,10 @@
 		"a": "23:15"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6536.Weekday",
-	"t": "Seibu.SeibuYurakucho.6536",
+	"id": "Seibu.SeibuYurakucho.6540.Weekday",
+	"t": "Seibu.SeibuYurakucho.6540",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6536",
+	"n": "6540",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -8250,10 +8250,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6536.Weekday"
+		"Seibu.Ikebukuro.6540.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2281S.Weekday"
+		"TokyoMetro.Yurakucho.A2263S.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -8267,20 +8267,20 @@
 		"a": "23:23"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6386.Weekday",
-	"t": "Seibu.SeibuYurakucho.6386",
+	"id": "Seibu.SeibuYurakucho.6418.Weekday",
+	"t": "Seibu.SeibuYurakucho.6418",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6386",
+	"n": "6418",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Hoya"
+		"Seibu.Ikebukuro.Kiyose"
 	],
 	"ds": [
 		"Seibu.SeibuYurakucho.KotakeMukaihara"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6386.Weekday"
+		"Seibu.Ikebukuro.6418.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -8294,10 +8294,10 @@
 		"a": "23:33"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6812.Weekday",
-	"t": "Seibu.SeibuYurakucho.6812",
+	"id": "Seibu.SeibuYurakucho.6816.Weekday",
+	"t": "Seibu.SeibuYurakucho.6816",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6812",
+	"n": "6816",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -8307,10 +8307,10 @@
 		"Tokyu.Toyoko.Kikuna"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6812.Weekday"
+		"Seibu.Ikebukuro.6816.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A2311K.Weekday"
+		"TokyoMetro.Fukutoshin.A2223K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -8324,23 +8324,23 @@
 		"a": "23:41"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6662.Weekday",
-	"t": "Seibu.SeibuYurakucho.6662",
+	"id": "Seibu.SeibuYurakucho.6818.Weekday",
+	"t": "Seibu.SeibuYurakucho.6818",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6662",
+	"n": "6818",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Hoya"
+		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"ds": [
 		"Tokyu.Toyoko.Motosumiyoshi"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6662.Weekday"
+		"Seibu.Ikebukuro.6818.Weekday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A2308K.Weekday"
+		"TokyoMetro.Fukutoshin.A2316K.Weekday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -8354,10 +8354,10 @@
 		"a": "23:52"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6501.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6501",
+	"id": "Seibu.SeibuYurakucho.6551.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6551",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6501",
+	"n": "6551",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -8367,7 +8367,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6501.SaturdayHoliday"
+		"Seibu.Ikebukuro.6551.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -8381,10 +8381,10 @@
 		"a": "05:53"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6503.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6503",
+	"id": "Seibu.SeibuYurakucho.6501.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6501",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6503",
+	"n": "6501",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -8397,7 +8397,7 @@
 		"TokyoMetro.Yurakucho.B565S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6503.SaturdayHoliday"
+		"Seibu.Ikebukuro.6501.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -8435,10 +8435,10 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "06:30",
-		"d": "06:30"
+		"d": "06:31"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "06:32"
+		"a": "06:33"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6601.SaturdayHoliday",
@@ -8591,23 +8591,23 @@
 		"a": "07:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6401.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6401",
+	"id": "Seibu.SeibuYurakucho.6451.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6451",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6401",
+	"n": "6451",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kiyose"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
 		"TokyoMetro.Yurakucho.B604M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6401.SaturdayHoliday"
+		"Seibu.Ikebukuro.6451.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -8634,7 +8634,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B649S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B629S.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.4853.SaturdayHoliday"
@@ -8761,20 +8761,20 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "08:24"
+		"d": "08:25"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "08:26",
+		"a": "08:27",
 		"d": "08:27"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
 		"a": "08:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6505.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6505",
+	"id": "Seibu.SeibuYurakucho.6503.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6503",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6505",
+	"n": "6503",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -8787,7 +8787,7 @@
 		"TokyoMetro.Yurakucho.B751S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6505.SaturdayHoliday"
+		"Seibu.Ikebukuro.6503.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -8861,10 +8861,10 @@
 		"a": "08:53"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6403.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6403",
+	"id": "Seibu.SeibuYurakucho.6401.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6401",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6403",
+	"n": "6401",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -8874,10 +8874,10 @@
 		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B824M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B826M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6403.SaturdayHoliday"
+		"Seibu.Ikebukuro.6401.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -8977,23 +8977,23 @@
 		"a": "09:22"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6653.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6653",
+	"id": "Seibu.SeibuYurakucho.6705.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6705",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6653",
+	"n": "6705",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Hoya"
+		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
 		"TokyoMetro.Fukutoshin.B703K.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6653.SaturdayHoliday"
+		"Seibu.Ikebukuro.6705.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -9067,10 +9067,10 @@
 		"a": "09:47"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6507.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6507",
+	"id": "Seibu.SeibuYurakucho.6505.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6505",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6507",
+	"n": "6505",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -9083,7 +9083,7 @@
 		"TokyoMetro.Yurakucho.B957S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6507.SaturdayHoliday"
+		"Seibu.Ikebukuro.6505.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -9097,23 +9097,23 @@
 		"a": "09:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6705.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6705",
+	"id": "Seibu.SeibuYurakucho.6653.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6653",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6705",
+	"n": "6653",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kiyose"
+		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B815K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B819K.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6705.SaturdayHoliday"
+		"Seibu.Ikebukuro.6653.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -9127,10 +9127,10 @@
 		"a": "09:59"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6509.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6509",
+	"id": "Seibu.SeibuYurakucho.6507.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6507",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6509",
+	"n": "6507",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -9143,7 +9143,7 @@
 		"TokyoMetro.Yurakucho.B959S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6509.SaturdayHoliday"
+		"Seibu.Ikebukuro.6507.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -9170,7 +9170,7 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B904M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B912M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6307.SaturdayHoliday"
@@ -9256,7 +9256,7 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B926M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B904M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6351.SaturdayHoliday"
@@ -9329,10 +9329,10 @@
 		"a": "10:47"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6511.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6511",
+	"id": "Seibu.SeibuYurakucho.6509.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6509",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6511",
+	"n": "6509",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -9342,10 +9342,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1020M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1022M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6511.SaturdayHoliday"
+		"Seibu.Ikebukuro.6509.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -9389,10 +9389,10 @@
 		"a": "10:59"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6513.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6513",
+	"id": "Seibu.SeibuYurakucho.6511.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6511",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6513",
+	"n": "6511",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -9405,7 +9405,7 @@
 		"TokyoMetro.Yurakucho.B1037S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6513.SaturdayHoliday"
+		"Seibu.Ikebukuro.6511.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -9432,7 +9432,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1049S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1029S.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1803.SaturdayHoliday"
@@ -9442,7 +9442,7 @@
 		"d": "11:13"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "11:16"
+		"a": "11:17"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6353.SaturdayHoliday",
@@ -9505,10 +9505,10 @@
 		"a": "11:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6515.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6515",
+	"id": "Seibu.SeibuYurakucho.6513.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6513",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6515",
+	"n": "6513",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -9518,10 +9518,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1022M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1024M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6515.SaturdayHoliday"
+		"Seibu.Ikebukuro.6513.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -9529,7 +9529,7 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "11:35",
-		"d": "11:36"
+		"d": "11:35"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
 		"a": "11:38"
@@ -9621,10 +9621,10 @@
 		"a": "11:59"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6517.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6517",
+	"id": "Seibu.SeibuYurakucho.6515.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6515",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6517",
+	"n": "6515",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -9637,7 +9637,7 @@
 		"TokyoMetro.Yurakucho.B1127S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6517.SaturdayHoliday"
+		"Seibu.Ikebukuro.6515.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -9664,7 +9664,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1191S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1110M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1807.SaturdayHoliday"
@@ -9690,7 +9690,7 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1104M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1112M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6357.SaturdayHoliday"
@@ -9737,10 +9737,10 @@
 		"a": "12:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6519.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6519",
+	"id": "Seibu.SeibuYurakucho.6517.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6517",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6519",
+	"n": "6517",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -9753,7 +9753,7 @@
 		"TokyoMetro.Yurakucho.B1147S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6519.SaturdayHoliday"
+		"Seibu.Ikebukuro.6517.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -9780,7 +9780,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1110M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1191S.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1809.SaturdayHoliday"
@@ -9806,7 +9806,7 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1226M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1204M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6359.SaturdayHoliday"
@@ -9853,10 +9853,10 @@
 		"a": "12:59"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6521.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6521",
+	"id": "Seibu.SeibuYurakucho.6519.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6519",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6521",
+	"n": "6519",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -9869,7 +9869,7 @@
 		"TokyoMetro.Yurakucho.B1273S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6521.SaturdayHoliday"
+		"Seibu.Ikebukuro.6519.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -9969,10 +9969,10 @@
 		"a": "13:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6523.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6523",
+	"id": "Seibu.SeibuYurakucho.6521.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6521",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6523",
+	"n": "6521",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -9985,7 +9985,7 @@
 		"TokyoMetro.Yurakucho.B1231S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6523.SaturdayHoliday"
+		"Seibu.Ikebukuro.6521.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -10068,7 +10068,7 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1215K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1219K.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6607.SaturdayHoliday"
@@ -10085,10 +10085,10 @@
 		"a": "13:59"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6525.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6525",
+	"id": "Seibu.SeibuYurakucho.6523.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6523",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6525",
+	"n": "6523",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10101,7 +10101,7 @@
 		"TokyoMetro.Yurakucho.B1351S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6525.SaturdayHoliday"
+		"Seibu.Ikebukuro.6523.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -10201,10 +10201,10 @@
 		"a": "14:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6527.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6527",
+	"id": "Seibu.SeibuYurakucho.6525.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6525",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6527",
+	"n": "6525",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10217,7 +10217,7 @@
 		"TokyoMetro.Yurakucho.B1385S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6527.SaturdayHoliday"
+		"Seibu.Ikebukuro.6525.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -10257,10 +10257,10 @@
 		"a": "14:47"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6405.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6405",
+	"id": "Seibu.SeibuYurakucho.6403.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6403",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6405",
+	"n": "6403",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10270,10 +10270,10 @@
 		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1404M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1412M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6405.SaturdayHoliday"
+		"Seibu.Ikebukuro.6403.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -10317,10 +10317,10 @@
 		"a": "14:58"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6529.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6529",
+	"id": "Seibu.SeibuYurakucho.6527.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6527",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6529",
+	"n": "6527",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10333,7 +10333,7 @@
 		"TokyoMetro.Yurakucho.B1441S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6529.SaturdayHoliday"
+		"Seibu.Ikebukuro.6527.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -10360,7 +10360,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1420M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1410M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.1819.SaturdayHoliday"
@@ -10386,7 +10386,7 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1426M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1404M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.4501.SaturdayHoliday"
@@ -10433,10 +10433,10 @@
 		"a": "15:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6531.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6531",
+	"id": "Seibu.SeibuYurakucho.6529.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6529",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6531",
+	"n": "6529",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10449,7 +10449,7 @@
 		"TokyoMetro.Yurakucho.B1435S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6531.SaturdayHoliday"
+		"Seibu.Ikebukuro.6529.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -10489,10 +10489,10 @@
 		"a": "15:47"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6407.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6407",
+	"id": "Seibu.SeibuYurakucho.6405.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6405",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6407",
+	"n": "6405",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10505,7 +10505,7 @@
 		"TokyoMetro.Yurakucho.B1506M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6407.SaturdayHoliday"
+		"Seibu.Ikebukuro.6405.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -10549,10 +10549,10 @@
 		"a": "15:58"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6533.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6533",
+	"id": "Seibu.SeibuYurakucho.6531.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6531",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6533",
+	"n": "6531",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -10565,7 +10565,7 @@
 		"TokyoMetro.Yurakucho.B1545S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6533.SaturdayHoliday"
+		"Seibu.Ikebukuro.6531.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -10579,30 +10579,34 @@
 		"a": "16:08"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.1823.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.1823",
+	"id": "Seibu.SeibuYurakucho.3801.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.3801",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "1823",
-	"y": "Seibu.F-Liner",
+	"n": "3801",
+	"y": "Seibu.Rapid",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1510M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1525S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.1823.SaturdayHoliday"
+		"Seibu.Ikebukuro.3801.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
 		"d": "16:13"
 	}, {
+		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
+		"a": "16:15",
+		"d": "16:16"
+	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "16:16"
+		"a": "16:18"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6367.SaturdayHoliday",
@@ -10665,40 +10669,40 @@
 		"a": "16:29"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6535.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6535",
+	"id": "Seibu.SeibuYurakucho.6453.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6453",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6535",
+	"n": "6453",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1525S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1573S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6535.SaturdayHoliday"
+		"Seibu.Ikebukuro.6453.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "16:32"
+		"d": "16:33"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "16:34",
+		"a": "16:35",
 		"d": "16:35"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "16:37"
+		"a": "16:38"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.1825.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.1825",
+	"id": "Seibu.SeibuYurakucho.1823.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.1823",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "1825",
+	"n": "1823",
 	"y": "Seibu.F-Liner",
 	"d": "Outbound",
 	"os": [
@@ -10708,10 +10712,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1573S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1553K.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.1825.SaturdayHoliday"
+		"Seibu.Ikebukuro.1823.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -10794,7 +10798,7 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1629S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1649S.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6315.SaturdayHoliday"
@@ -10824,7 +10828,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1653K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1658K.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.4855.SaturdayHoliday"
@@ -10854,7 +10858,7 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1604M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1612M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6317.SaturdayHoliday"
@@ -10884,17 +10888,17 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1615K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1619K.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6811.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "17:23"
+		"d": "17:24"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "17:25",
+		"a": "17:26",
 		"d": "17:26"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -10931,23 +10935,23 @@
 		"a": "17:38"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4857.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.4857",
+	"id": "Seibu.SeibuYurakucho.4809.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.4809",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4857",
+	"n": "4809",
 	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1658K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1628M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4857.SaturdayHoliday"
+		"Seibu.Ikebukuro.4809.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -10981,14 +10985,14 @@
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "17:52"
+		"d": "17:53"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "17:54",
-		"d": "17:55"
+		"a": "17:55",
+		"d": "17:56"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "17:57"
+		"a": "17:58"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.3701.SaturdayHoliday",
@@ -11004,7 +11008,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1601S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1607K.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.3701.SaturdayHoliday"
@@ -11034,7 +11038,7 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1607K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1609K.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6617.SaturdayHoliday"
@@ -11051,23 +11055,23 @@
 		"a": "18:09"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4859.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.4859",
+	"id": "Seibu.SeibuYurakucho.4811.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.4811",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4859",
+	"n": "4811",
 	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1720M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1710M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4859.SaturdayHoliday"
+		"Seibu.Ikebukuro.4811.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -11154,7 +11158,7 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1707S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1718K.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6619.SaturdayHoliday"
@@ -11214,17 +11218,17 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1711K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1713S.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6621.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "18:51"
+		"d": "18:52"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "18:53",
+		"a": "18:54",
 		"d": "18:54"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -11244,7 +11248,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1812M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1814M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.3401.SaturdayHoliday"
@@ -11291,10 +11295,10 @@
 		"a": "19:09"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6537.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6537",
+	"id": "Seibu.SeibuYurakucho.6533.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6533",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6537",
+	"n": "6533",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11307,7 +11311,7 @@
 		"TokyoMetro.Yurakucho.B1839S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6537.SaturdayHoliday"
+		"Seibu.Ikebukuro.6533.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -11334,21 +11338,21 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1805S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1819S.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6623.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"d": "19:21"
+		"d": "19:20"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "19:23",
-		"d": "19:24"
+		"a": "19:22",
+		"d": "19:22"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "19:26"
+		"a": "19:24"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.3403.SaturdayHoliday",
@@ -11364,7 +11368,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1810M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1824M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.3403.SaturdayHoliday"
@@ -11424,7 +11428,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1818K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1815K.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6815.SaturdayHoliday"
@@ -11454,7 +11458,7 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1926M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1904M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.4405.SaturdayHoliday"
@@ -11495,16 +11499,16 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "19:58",
-		"d": "19:59"
+		"d": "19:58"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
 		"a": "20:01"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6409.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6409",
+	"id": "Seibu.SeibuYurakucho.6407.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6407",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6409",
+	"n": "6407",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11514,10 +11518,10 @@
 		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1951S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1973S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6409.SaturdayHoliday"
+		"Seibu.Ikebukuro.6407.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -11531,11 +11535,11 @@
 		"a": "20:10"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6851.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6851",
+	"id": "Seibu.SeibuYurakucho.4703.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.4703",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6851",
-	"y": "Seibu.Local",
+	"n": "4703",
+	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
@@ -11544,10 +11548,10 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1928M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1930M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6851.SaturdayHoliday"
+		"Seibu.Ikebukuro.4703.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -11555,10 +11559,10 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "20:17",
-		"d": "20:17"
+		"d": "20:18"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "20:19"
+		"a": "20:20"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6817.SaturdayHoliday",
@@ -11574,7 +11578,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1904M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1912M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6817.SaturdayHoliday"
@@ -11604,7 +11608,7 @@
 		"Seibu.Ikebukuro.Hoya"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B1804K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B1821K.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6655.SaturdayHoliday"
@@ -11634,7 +11638,7 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B1973S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B1925S.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6327.SaturdayHoliday"
@@ -11771,10 +11775,10 @@
 		"a": "21:11"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6451.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6451",
+	"id": "Seibu.SeibuYurakucho.6455.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6455",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6451",
+	"n": "6455",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11784,10 +11788,10 @@
 		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2031S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B2071S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6451.SaturdayHoliday"
+		"Seibu.Ikebukuro.6455.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -11795,16 +11799,16 @@
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "21:24",
-		"d": "21:24"
+		"d": "21:25"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "21:26"
+		"a": "21:27"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.4703.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.4703",
+	"id": "Seibu.SeibuYurakucho.4705.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.4705",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "4703",
+	"n": "4705",
 	"y": "Seibu.SemiExpress",
 	"d": "Outbound",
 	"os": [
@@ -11817,7 +11821,7 @@
 		"TokyoMetro.Fukutoshin.B2058K.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.4703.SaturdayHoliday"
+		"Seibu.Ikebukuro.4705.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -11828,13 +11832,13 @@
 		"d": "21:32"
 	}, {
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"a": "21:34"
+		"a": "21:35"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6453.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6453",
+	"id": "Seibu.SeibuYurakucho.6457.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6457",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6453",
+	"n": "6457",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11847,7 +11851,7 @@
 		"TokyoMetro.Yurakucho.B2023S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6453.SaturdayHoliday"
+		"Seibu.Ikebukuro.6457.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -11861,10 +11865,10 @@
 		"a": "21:41"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6539.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6539",
+	"id": "Seibu.SeibuYurakucho.6535.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6535",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6539",
+	"n": "6535",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11874,10 +11878,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2127S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B2155S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6539.SaturdayHoliday"
+		"Seibu.Ikebukuro.6535.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -11921,10 +11925,10 @@
 		"a": "22:10"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6541.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6541",
+	"id": "Seibu.SeibuYurakucho.6537.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6537",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6541",
+	"n": "6537",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11934,10 +11938,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2124M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B2126M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6541.SaturdayHoliday"
+		"Seibu.Ikebukuro.6537.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -11964,7 +11968,7 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2116M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B2118M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6331.SaturdayHoliday"
@@ -11981,10 +11985,10 @@
 		"a": "22:39"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6543.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6543",
+	"id": "Seibu.SeibuYurakucho.6553.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6553",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6543",
+	"n": "6553",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -11994,10 +11998,10 @@
 		"Seibu.Ikebukuro.Hanno"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2273S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B2225S.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6543.SaturdayHoliday"
+		"Seibu.Ikebukuro.6553.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -12024,7 +12028,7 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B2112M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B2114M.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6821.SaturdayHoliday"
@@ -12054,7 +12058,7 @@
 		"Seibu.Ikebukuro.ShakujiiKoen"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B2215K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B2206K.SaturdayHoliday"
 	],
 	"nt": [
 		"Seibu.Ikebukuro.6625.SaturdayHoliday"
@@ -12071,23 +12075,23 @@
 		"a": "23:31"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6823.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6823",
+	"id": "Seibu.SeibuYurakucho.6715.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6715",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6823",
+	"n": "6715",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"ds": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Kiyose"
 	],
 	"pt": [
-		"TokyoMetro.Fukutoshin.B2210M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.B2224M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6823.SaturdayHoliday"
+		"Seibu.Ikebukuro.6715.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -12101,10 +12105,10 @@
 		"a": "23:46"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6825.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6825",
+	"id": "Seibu.SeibuYurakucho.6823.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6823",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6825",
+	"n": "6823",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12117,7 +12121,7 @@
 		"TokyoMetro.Fukutoshin.B2302M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6825.SaturdayHoliday"
+		"Seibu.Ikebukuro.6823.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -12131,10 +12135,10 @@
 		"a": "23:55"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6545.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6545",
+	"id": "Seibu.SeibuYurakucho.6539.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6539",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6545",
+	"n": "6539",
 	"y": "Seibu.Local",
 	"d": "Outbound",
 	"os": [
@@ -12144,10 +12148,10 @@
 		"Seibu.Ikebukuro.Kotesashi"
 	],
 	"pt": [
-		"TokyoMetro.Yurakucho.B2318M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.B2320M.SaturdayHoliday"
 	],
 	"nt": [
-		"Seibu.Ikebukuro.6545.SaturdayHoliday"
+		"Seibu.Ikebukuro.6539.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -12231,7 +12235,7 @@
 		"Seibu.Ikebukuro.6504.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A514M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A516M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -12261,7 +12265,7 @@
 		"Seibu.Ikebukuro.6506.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A516M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A518M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -12291,7 +12295,7 @@
 		"Seibu.Ikebukuro.6508.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A518M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A520M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -12321,7 +12325,7 @@
 		"Seibu.Ikebukuro.6510.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A620M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A622M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -12351,18 +12355,18 @@
 		"Seibu.Ikebukuro.6802.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A622M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A624M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "06:51"
+		"d": "06:55"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "06:53",
-		"d": "06:54"
+		"a": "06:57",
+		"d": "06:58"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "06:56"
+		"a": "07:00"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6702.SaturdayHoliday",
@@ -12411,7 +12415,7 @@
 		"Seibu.Ikebukuro.4552.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A624M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A626M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -12501,7 +12505,7 @@
 		"Seibu.Ikebukuro.3402.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A712M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A714M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -12651,7 +12655,7 @@
 		"Seibu.Ikebukuro.6402.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A804M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A812M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -12721,30 +12725,30 @@
 		"a": "08:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6514.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6514",
+	"id": "Seibu.SeibuYurakucho.6452.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6452",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6514",
+	"n": "6452",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"ds": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6514.SaturdayHoliday"
+		"Seibu.Ikebukuro.6452.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A826M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A804M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
 		"d": "08:51"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "08:53",
+		"a": "08:54",
 		"d": "08:54"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -12804,7 +12808,7 @@
 		"d": "09:10"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "09:12",
+		"a": "09:13",
 		"d": "09:13"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -12827,11 +12831,11 @@
 		"Seibu.Ikebukuro.1802.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A849S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A829S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "09:16"
+		"d": "09:17"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
 		"a": "09:21"
@@ -12943,7 +12947,7 @@
 		"Seibu.Ikebukuro.1804.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A828M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A928M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -12999,7 +13003,7 @@
 		"Seibu.Ikebukuro.6406.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A924M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A926M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -13089,7 +13093,7 @@
 		"Seibu.Ikebukuro.1806.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A991S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A910M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -13099,10 +13103,10 @@
 		"a": "10:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6516.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6516",
+	"id": "Seibu.SeibuYurakucho.6514.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6514",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6516",
+	"n": "6514",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -13112,7 +13116,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6516.SaturdayHoliday"
+		"Seibu.Ikebukuro.6514.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A951S.SaturdayHoliday"
@@ -13159,20 +13163,20 @@
 		"a": "10:30"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6656.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6656",
+	"id": "Seibu.SeibuYurakucho.6706.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6706",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6656",
+	"n": "6706",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Hoya"
+		"Seibu.Ikebukuro.Kiyose"
 	],
 	"ds": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6656.SaturdayHoliday"
+		"Seibu.Ikebukuro.6706.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Fukutoshin.A1003K.SaturdayHoliday"
@@ -13205,7 +13209,7 @@
 		"Seibu.Ikebukuro.6308.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1004M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1012M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -13235,7 +13239,7 @@
 		"Seibu.Ikebukuro.1808.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1010M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1091S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -13245,10 +13249,10 @@
 		"a": "10:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6518.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6518",
+	"id": "Seibu.SeibuYurakucho.6516.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6516",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6518",
+	"n": "6516",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -13258,7 +13262,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6518.SaturdayHoliday"
+		"Seibu.Ikebukuro.6516.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A985S.SaturdayHoliday"
@@ -13275,23 +13279,23 @@
 		"a": "11:00"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6706.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6706",
+	"id": "Seibu.SeibuYurakucho.6656.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6656",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6706",
+	"n": "6656",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Kiyose"
+		"Seibu.Ikebukuro.Hoya"
 	],
 	"ds": [
 		"Minatomirai.Minatomirai.MotomachiChukagai"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6706.SaturdayHoliday"
+		"Seibu.Ikebukuro.6656.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1015K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1019K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -13321,7 +13325,7 @@
 		"Seibu.Ikebukuro.6352.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1026M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1004M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -13361,10 +13365,10 @@
 		"a": "11:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6520.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6520",
+	"id": "Seibu.SeibuYurakucho.6518.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6518",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6520",
+	"n": "6518",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -13374,7 +13378,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6520.SaturdayHoliday"
+		"Seibu.Ikebukuro.6518.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1057S.SaturdayHoliday"
@@ -13477,10 +13481,10 @@
 		"a": "11:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6522.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6522",
+	"id": "Seibu.SeibuYurakucho.6520.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6520",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6522",
+	"n": "6520",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -13490,7 +13494,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6522.SaturdayHoliday"
+		"Seibu.Ikebukuro.6520.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1159S.SaturdayHoliday"
@@ -13593,10 +13597,10 @@
 		"a": "12:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6524.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6524",
+	"id": "Seibu.SeibuYurakucho.6552.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6552",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6524",
+	"n": "6552",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -13606,7 +13610,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6524.SaturdayHoliday"
+		"Seibu.Ikebukuro.6552.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1145S.SaturdayHoliday"
@@ -13709,10 +13713,10 @@
 		"a": "12:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6526.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6526",
+	"id": "Seibu.SeibuYurakucho.6522.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6522",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6526",
+	"n": "6522",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -13722,7 +13726,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6526.SaturdayHoliday"
+		"Seibu.Ikebukuro.6522.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1237S.SaturdayHoliday"
@@ -13785,7 +13789,7 @@
 		"Seibu.Ikebukuro.6358.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1204M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1212M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -13815,7 +13819,7 @@
 		"Seibu.Ikebukuro.1812.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1220M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1210M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -13825,10 +13829,10 @@
 		"a": "13:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6528.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6528",
+	"id": "Seibu.SeibuYurakucho.6524.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6524",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6528",
+	"n": "6524",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -13838,10 +13842,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6528.SaturdayHoliday"
+		"Seibu.Ikebukuro.6524.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1249S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1229S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -13901,7 +13905,7 @@
 		"Seibu.Ikebukuro.6360.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1326M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1304M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -13941,10 +13945,10 @@
 		"a": "13:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6530.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6530",
+	"id": "Seibu.SeibuYurakucho.6526.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6526",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6530",
+	"n": "6526",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -13954,7 +13958,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6530.SaturdayHoliday"
+		"Seibu.Ikebukuro.6526.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1327S.SaturdayHoliday"
@@ -14047,7 +14051,7 @@
 		"Seibu.Ikebukuro.1816.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1310M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1325S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14057,10 +14061,10 @@
 		"a": "14:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6532.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6532",
+	"id": "Seibu.SeibuYurakucho.6528.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6528",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6532",
+	"n": "6528",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -14070,7 +14074,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6532.SaturdayHoliday"
+		"Seibu.Ikebukuro.6528.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1347S.SaturdayHoliday"
@@ -14103,7 +14107,7 @@
 		"Seibu.Ikebukuro.6616.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1415K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1419K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14163,7 +14167,7 @@
 		"Seibu.Ikebukuro.1818.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1473S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1453K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14173,10 +14177,10 @@
 		"a": "14:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6534.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6534",
+	"id": "Seibu.SeibuYurakucho.6530.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6530",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6534",
+	"n": "6530",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -14186,10 +14190,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6534.SaturdayHoliday"
+		"Seibu.Ikebukuro.6530.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1425S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1473S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14279,7 +14283,7 @@
 		"Seibu.Ikebukuro.1820.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1453K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1458K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14289,10 +14293,10 @@
 		"a": "15:21"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6536.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6536",
+	"id": "Seibu.SeibuYurakucho.6532.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6532",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6536",
+	"n": "6532",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -14302,7 +14306,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6536.SaturdayHoliday"
+		"Seibu.Ikebukuro.6532.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1431S.SaturdayHoliday"
@@ -14365,7 +14369,7 @@
 		"Seibu.Ikebukuro.6408.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1504M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1512M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14395,7 +14399,7 @@
 		"Seibu.Ikebukuro.1822.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1558K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1528M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14405,10 +14409,10 @@
 		"a": "15:51"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6538.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6538",
+	"id": "Seibu.SeibuYurakucho.6534.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6534",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6538",
+	"n": "6534",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -14418,7 +14422,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6538.SaturdayHoliday"
+		"Seibu.Ikebukuro.6534.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1522M.SaturdayHoliday"
@@ -14481,7 +14485,7 @@
 		"Seibu.Ikebukuro.6368.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1526M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1504M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14511,7 +14515,7 @@
 		"Seibu.Ikebukuro.1824.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1520M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1510M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14521,10 +14525,10 @@
 		"a": "16:20"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6540.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6540",
+	"id": "Seibu.SeibuYurakucho.6536.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6536",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6540",
+	"n": "6536",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -14534,7 +14538,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6540.SaturdayHoliday"
+		"Seibu.Ikebukuro.6536.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1551S.SaturdayHoliday"
@@ -14637,10 +14641,10 @@
 		"a": "16:50"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6542.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6542",
+	"id": "Seibu.SeibuYurakucho.6538.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6538",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6542",
+	"n": "6538",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -14650,7 +14654,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6542.SaturdayHoliday"
+		"Seibu.Ikebukuro.6538.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1641S.SaturdayHoliday"
@@ -14753,10 +14757,10 @@
 		"a": "17:20"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6544.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6544",
+	"id": "Seibu.SeibuYurakucho.6540.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6540",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6544",
+	"n": "6540",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -14766,7 +14770,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6544.SaturdayHoliday"
+		"Seibu.Ikebukuro.6540.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A1635S.SaturdayHoliday"
@@ -14776,7 +14780,7 @@
 		"d": "17:25"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
-		"a": "17:27",
+		"a": "17:28",
 		"d": "17:28"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
@@ -14829,7 +14833,7 @@
 		"Seibu.Ikebukuro.6628.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1729S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1749S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14859,7 +14863,7 @@
 		"Seibu.Ikebukuro.4502.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1710M.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1724M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14889,7 +14893,7 @@
 		"Seibu.Ikebukuro.6630.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1704M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1712M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14979,7 +14983,7 @@
 		"Seibu.Ikebukuro.1830.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1728M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1730M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -14989,23 +14993,23 @@
 		"a": "18:22"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6546.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6546",
+	"id": "Seibu.SeibuYurakucho.6454.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6454",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6546",
+	"n": "6454",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
-		"Seibu.Ikebukuro.Kotesashi"
+		"Seibu.Ikebukuro.Tokorozawa"
 	],
 	"ds": [
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6546.SaturdayHoliday"
+		"Seibu.Ikebukuro.6454.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1725S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1773S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15049,10 +15053,10 @@
 		"a": "18:40"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6548.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6548",
+	"id": "Seibu.SeibuYurakucho.6542.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6542",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6548",
+	"n": "6542",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15062,10 +15066,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6548.SaturdayHoliday"
+		"Seibu.Ikebukuro.6542.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A1873S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A1825S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15095,7 +15099,7 @@
 		"Seibu.Ikebukuro.4852.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1815K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1819K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15155,7 +15159,7 @@
 		"Seibu.Ikebukuro.6636.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1807K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1809K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15185,7 +15189,7 @@
 		"Seibu.Ikebukuro.6638.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1907S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1918K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15215,7 +15219,7 @@
 		"Seibu.Ikebukuro.6640.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1911K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1913S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15305,18 +15309,18 @@
 		"Seibu.Ikebukuro.3704.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1801S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1807K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "19:43"
+		"d": "19:44"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "19:46",
-		"d": "19:46"
+		"d": "19:47"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "19:48"
+		"a": "19:49"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.6642.SaturdayHoliday",
@@ -15335,7 +15339,7 @@
 		"Seibu.Ikebukuro.6642.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1905S.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1919S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15469,10 +15473,10 @@
 		"a": "20:34"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6550.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6550",
+	"id": "Seibu.SeibuYurakucho.6544.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6544",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6550",
+	"n": "6544",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15482,21 +15486,21 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6550.SaturdayHoliday"
+		"Seibu.Ikebukuro.6544.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A2039S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
-		"d": "20:39"
+		"d": "20:40"
 	}, {
 		"s": "Seibu.SeibuYurakucho.ShinSakuradai",
 		"a": "20:42",
 		"d": "20:42"
 	}, {
 		"s": "Seibu.SeibuYurakucho.KotakeMukaihara",
-		"a": "20:44"
+		"a": "20:45"
 	}]
 }, {
 	"id": "Seibu.SeibuYurakucho.4704.SaturdayHoliday",
@@ -15515,7 +15519,7 @@
 		"Seibu.Ikebukuro.4704.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A1912M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A1914M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15575,7 +15579,7 @@
 		"Seibu.Ikebukuro.6320.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2173S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A2125S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15605,7 +15609,7 @@
 		"Seibu.Ikebukuro.4854.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A2018K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A2015K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15635,7 +15639,7 @@
 		"Seibu.Ikebukuro.6852.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A2010M.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A2024M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15665,7 +15669,7 @@
 		"Seibu.Ikebukuro.6412.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2151S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A2173S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15695,7 +15699,7 @@
 		"Seibu.Ikebukuro.6660.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Fukutoshin.A2104K.SaturdayHoliday"
+		"TokyoMetro.Fukutoshin.A2121K.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15799,10 +15803,10 @@
 		"a": "22:30"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6452.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6452",
+	"id": "Seibu.SeibuYurakucho.6456.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6456",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6452",
+	"n": "6456",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15812,10 +15816,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6452.SaturdayHoliday"
+		"Seibu.Ikebukuro.6456.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2231S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A2271S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15889,10 +15893,10 @@
 		"a": "23:12"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6552.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6552",
+	"id": "Seibu.SeibuYurakucho.6546.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6546",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6552",
+	"n": "6546",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15902,10 +15906,10 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6552.SaturdayHoliday"
+		"Seibu.Ikebukuro.6546.SaturdayHoliday"
 	],
 	"nt": [
-		"TokyoMetro.Yurakucho.A2227S.SaturdayHoliday"
+		"TokyoMetro.Yurakucho.A2255S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "Seibu.SeibuYurakucho.Nerima",
@@ -15946,10 +15950,10 @@
 		"a": "23:34"
 	}]
 }, {
-	"id": "Seibu.SeibuYurakucho.6554.SaturdayHoliday",
-	"t": "Seibu.SeibuYurakucho.6554",
+	"id": "Seibu.SeibuYurakucho.6548.SaturdayHoliday",
+	"t": "Seibu.SeibuYurakucho.6548",
 	"r": "Seibu.SeibuYurakucho",
-	"n": "6554",
+	"n": "6548",
 	"y": "Seibu.Local",
 	"d": "Inbound",
 	"os": [
@@ -15959,7 +15963,7 @@
 		"TokyoMetro.Yurakucho.ShinKiba"
 	],
 	"pt": [
-		"Seibu.Ikebukuro.6554.SaturdayHoliday"
+		"Seibu.Ikebukuro.6548.SaturdayHoliday"
 	],
 	"nt": [
 		"TokyoMetro.Yurakucho.A2357S.SaturdayHoliday"
