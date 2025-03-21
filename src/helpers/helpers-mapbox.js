@@ -376,7 +376,7 @@ export function fetchTimezoneOffset(lngLat, accessToken) {
         .then(response => response.json())
         .then(({features}) => {
             if (features.length === 0) {
-                return -Math.round(lng / 15) * 60;
+                throw new Error();
             }
 
             const timeZone = features[0].properties.TZID,
@@ -385,5 +385,8 @@ export function fetchTimezoneOffset(lngLat, accessToken) {
                 tzDate = new Date(date.toLocaleString('en-US', {timeZone}));
 
             return (utcDate.getTime() - tzDate.getTime()) / 60000;
+        })
+        .catch(() => {
+            return -Math.round(lng / 15) * 60;
         });
 }
