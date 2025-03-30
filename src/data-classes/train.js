@@ -26,7 +26,7 @@ export default class {
     constructor(params, refs) {
         const me = this,
             fromTimetable = params instanceof TrainTimetable,
-            {r, y, d, os, ds, ts, fs, nm, v, delay, carComposition} = params;
+            {r, y, d, os, ds, ts, fs, nm, v, ad, delay, carComposition} = params;
 
         /**
          * Train ID.
@@ -114,6 +114,14 @@ export default class {
             me.v = fromTimetable ? v : refs.trainVehicleTypes.get(v);
         }
 
+        if (ad) {
+            /**
+             * Train ad.
+             * @type {Object}
+             */
+            me.ad = ad;
+        }
+
         const railway = me.r;
 
         /**
@@ -146,7 +154,7 @@ export default class {
     update(params, refs) {
         const me = this,
             {os: _os, ds: _ds} = me,
-            {y, os, ds, ts, fs, v, delay, carComposition} = params,
+            {y, os, ds, ts, fs, v, ad, delay, carComposition} = params,
             stations = refs.stations;
 
         if (y) {
@@ -202,6 +210,9 @@ export default class {
         }
         if (v) {
             me.v = refs.trainVehicleTypes.get(v);
+        }
+        if (ad) {
+            me.ad = ad;
         }
         if (!isNaN(delay)) {
             me.delay = delay;

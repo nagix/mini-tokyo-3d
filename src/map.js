@@ -95,6 +95,7 @@ export default class extends Evented {
             document.getElementById(options.container) : options.container;
         me.secrets = options.secrets;
         me.modelOrigin = MercatorCoordinate.fromLngLat(options.center);
+        me.trainPopupObjects = [];
         me.exitPopups = [];
 
         me.clockControl = options.clockControl;
@@ -1088,6 +1089,7 @@ export default class extends Evented {
                 // because the adjustment for altitude is required
                 me.updatePopup();
             }
+            me.updateTrainPopup();
         });
 
         for (const plugin of me.plugins.slice().reverse()) {
@@ -1289,12 +1291,12 @@ export default class extends Evented {
 
         if (length === 0) {
             const {markedObject, trackedObject} = me,
-                id = train.id,
+                {id, ad} = train,
                 car = {
                     type: 'train',
                     object: train,
                     index: 0,
-                    color: (train.v || train.r).color,
+                    color: (ad && ad.color) || (train.v || train.r).color,
                     delay: 0
                 };
 
@@ -1337,6 +1339,9 @@ export default class extends Evented {
             }
             if (tracked === car) {
                 me.trackObject(car);
+            }
+            if (train.ad) {
+                me.showTrainPopup(car);
             }
             if (me.markedObject === car) {
                 car.outline = 1;
@@ -2169,8 +2174,8 @@ export default class extends Evented {
     getTrainDescription(train) {
         const me = this,
             {lang, dict} = me,
-            {r: railway, departureTime, arrivalStation} = train,
-            color = (train.v || railway).color,
+            {r: railway, ad, departureTime, arrivalStation} = train,
+            color = (ad && ad.color) || (train.v || railway).color,
             delay = train.delay || 0,
             arrivalTime = helpers.valueOrDefault(train.arrivalTime, train.nextDepartureTime),
             status = railway.status;
@@ -2191,6 +2196,7 @@ export default class extends Evented {
             `<strong>${dict['train-number']}:</strong> ${train.n}`,
             !train.timetable ? ` <span class="desc-caution">${dict['special']}</span>` : '',
             '<br>',
+            ad ? `<span class="desc-ad-cars" style="color: ${ad.textcolor};">${ad.description[lang]}</span><br>` : '',
             delay >= 60000 ? '<span class="desc-caution">' : '',
             '<strong>',
             dict[train.standing ? 'standing-at' : 'previous-stop'],
@@ -2313,6 +2319,7 @@ export default class extends Evented {
         if (cars) {
             for (const car of cars) {
                 me.trafficLayer.removeObject(car);
+                me.hideTrainPopup(car);
                 if (car === me.markedObject && !keep) {
                     me.markObject();
                 }
@@ -2656,7 +2663,7 @@ export default class extends Evented {
             realtimeTrains.clear();
 
             for (const trainRef of trainData) {
-                const {id, r, n, y, d, os, ds, ts, fs, v, delay, carComposition} = trainRef,
+                const {id, r, n, y, d, os, ds, ts, fs, v, ad, delay, carComposition} = trainRef,
                     aliasId = id.replace('.Marunouchi.', '.MarunouchiBranch.');
 
                 me.lastDynamicUpdate[trainRef.o] = trainRef.date;
@@ -2671,6 +2678,7 @@ export default class extends Evented {
                         (os && activeTrain.os && os[0] !== activeTrain.os[0].id) ||
                         (ds && activeTrain.ds && ds[0] !== activeTrain.ds[0].id) ||
                         (v && v !== (activeTrain.v || {}).id) ||
+                        (ad && !activeTrain.ad) ||
                         (!isNaN(carComposition) && carComposition !== activeTrain.carComposition) ||
                         (!isNaN(delay) && delay !== activeTrain.delay)) {
                         me.stopTrain(activeTrain, true);
@@ -2694,7 +2702,7 @@ export default class extends Evented {
                     for (const timetable of timetables) {
                         const train = new Train(timetable);
 
-                        train.update({y, os, ds, v, delay, carComposition}, dataReferences);
+                        train.update({y, os, ds, v, ad, delay, carComposition}, dataReferences);
                         if (timetable.start + (delay || 0) <= now && now <= timetable.end + (delay || 0)) {
                             me.trainStart(train);
                         } else {
@@ -3282,6 +3290,7 @@ export default class extends Evented {
                 me.addStationOutline(object, 'stations-marked');
             }
         }
+        me.updateTrainPopup();
     }
 
     trackObject(object) {
@@ -3421,6 +3430,60 @@ export default class extends Evented {
                 me.fire(Object.assign({type: 'selection'}, object));
             }
         }
+    }
+
+    showTrainPopup(object) {
+        const me = this,
+            trainPopupObjects = me.trainPopupObjects;
+
+        if (trainPopupObjects.indexOf(object) !== -1) {
+            return;
+        }
+
+        const ad = object.object.ad;
+
+        object.popup = new AnimatedPopup({
+            className: 'popup-ad-cars',
+            closeButton: false,
+            closeOnClick: false,
+            offset: {
+                top: [0, 10],
+                bottom: [0, -30]
+            }
+        });
+        object.popup.setHTML(`<span style="color: ${ad.textcolor};">${ad.title[me.lang]}</span>`);
+        trainPopupObjects.push(object);
+        me.updateTrainPopup();
+    }
+
+    updateTrainPopup() {
+        const me = this,
+            markedObject = me.markedObject;
+
+        for (const object of me.trainPopupObjects) {
+            object.popup.setLngLat(me.adjustCoord(object.coord, object.altitude));
+            if (object !== markedObject && !object.popupVisible) {
+                object.popup.addTo(me.map);
+                object.popupVisible = true;
+            } else if (object === markedObject && object.popupVisible) {
+                object.popup.remove();
+                delete object.popupVisible;
+            }
+        }
+    }
+
+    hideTrainPopup(object) {
+        const me = this,
+            trainPopupObjects = me.trainPopupObjects,
+            index = trainPopupObjects.indexOf(object);
+
+        if (index === -1 || !object.popup) {
+            return;
+        }
+        object.popup.remove();
+        delete object.popup;
+        delete object.popupVisible;
+        trainPopupObjects.splice(index, 1);
     }
 
     showStationExits(stations) {
