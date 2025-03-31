@@ -2775,6 +2775,46 @@
 	"carComposition": 4,
 	"dynamic": true
 }, {
+	"id": "Keisei.Matsudo",
+	"title": {
+		"ja": "松戸線",
+		"en": "Matsudo Line",
+		"ko": "마쓰도 선",
+		"zh-Hans": "松户线",
+		"zh-Hant": "松戶線"
+	},
+	"stations": [
+		"Keisei.Matsudo.Matsudo",
+		"Keisei.Matsudo.Kamihongo",
+		"Keisei.Matsudo.MatsudoShinden",
+		"Keisei.Matsudo.Minoridai",
+		"Keisei.Matsudo.Yabashira",
+		"Keisei.Matsudo.Tokiwadaira",
+		"Keisei.Matsudo.Goko",
+		"Keisei.Matsudo.Motoyama",
+		"Keisei.Matsudo.Kunugiyama",
+		"Keisei.Matsudo.KitaHatsutomi",
+		"Keisei.Matsudo.ShinKamagaya",
+		"Keisei.Matsudo.Hatsutomi",
+		"Keisei.Matsudo.KamagayaDaibutsu",
+		"Keisei.Matsudo.Futawamukodai",
+		"Keisei.Matsudo.Misaki",
+		"Keisei.Matsudo.Takifudo",
+		"Keisei.Matsudo.Takanekodan",
+		"Keisei.Matsudo.Takanekido",
+		"Keisei.Matsudo.KitaNarashino",
+		"Keisei.Matsudo.Narashino",
+		"Keisei.Matsudo.Yakuendai",
+		"Keisei.Matsudo.Maebara",
+		"Keisei.Matsudo.ShinTsudanuma",
+		"Keisei.Matsudo.KeiseiTsudanuma"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#005AAA",
+	"carComposition": 6,
+	"dynamic": true
+}, {
 	"id": "Hokuso.Hokuso",
 	"title": {
 		"ja": "北総線",
@@ -4196,46 +4236,6 @@
 	"descending": "Inbound",
 	"color": "#3FB036",
 	"carComposition": 10
-}, {
-	"id": "ShinKeisei.ShinKeisei",
-	"title": {
-		"ja": "新京成線",
-		"en": "Shin-Keisei Line",
-		"ko": "신케이세이 선",
-		"zh-Hans": "新京成线",
-		"zh-Hant": "新京成線"
-	},
-	"stations": [
-		"ShinKeisei.ShinKeisei.Matsudo",
-		"ShinKeisei.ShinKeisei.Kamihongo",
-		"ShinKeisei.ShinKeisei.MatsudoShinden",
-		"ShinKeisei.ShinKeisei.Minoridai",
-		"ShinKeisei.ShinKeisei.Yabashira",
-		"ShinKeisei.ShinKeisei.Tokiwadaira",
-		"ShinKeisei.ShinKeisei.Goko",
-		"ShinKeisei.ShinKeisei.Motoyama",
-		"ShinKeisei.ShinKeisei.Kunugiyama",
-		"ShinKeisei.ShinKeisei.KitaHatsutomi",
-		"ShinKeisei.ShinKeisei.ShinKamagaya",
-		"ShinKeisei.ShinKeisei.Hatsutomi",
-		"ShinKeisei.ShinKeisei.KamagayaDaibutsu",
-		"ShinKeisei.ShinKeisei.Futawamukodai",
-		"ShinKeisei.ShinKeisei.Misaki",
-		"ShinKeisei.ShinKeisei.Takifudo",
-		"ShinKeisei.ShinKeisei.Takanekodan",
-		"ShinKeisei.ShinKeisei.Takanekido",
-		"ShinKeisei.ShinKeisei.KitaNarashino",
-		"ShinKeisei.ShinKeisei.Narashino",
-		"ShinKeisei.ShinKeisei.Yakuendai",
-		"ShinKeisei.ShinKeisei.Maebara",
-		"ShinKeisei.ShinKeisei.ShinTsudanuma",
-		"ShinKeisei.ShinKeisei.KeiseiTsudanuma"
-	],
-	"ascending": "Outbound",
-	"descending": "Inbound",
-	"color": "#EF59A1",
-	"carComposition": 6,
-	"dynamic": true
 }, {
 	"id": "KantoRailway.Joso",
 	"title": {
