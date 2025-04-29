@@ -2,9 +2,9 @@ export default class {
 
     constructor(parameters) {
         this.uniforms = {
-            zoom: {type: 'f', value: parameters.zoom},
-            cameraZ: {type: 'f', value: parameters.cameraZ},
-            modelScale: {type: 'f', value: parameters.modelScale}
+            zoom: {value: parameters.zoom},
+            cameraZ: {value: parameters.cameraZ},
+            modelScale: {value: parameters.modelScale}
         };
     }
 

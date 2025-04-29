@@ -1,11 +1,8 @@
+import CarGeometry from './car-geometry.js';
 import MeshSet from './mesh-set.js';
 import InstancedGeometry from './instanced-geometry.js';
-import {AdditiveBlending, BackSide, BoxGeometry, BufferAttribute, Mesh, MeshLambertMaterial, MultiplyBlending, ShaderMaterial, SphereGeometry} from 'three';
+import {AdditiveBlending, BackSide, Mesh, MeshLambertMaterial, MultiplyBlending, ShaderMaterial, SphereGeometry} from 'three';
 import {updateVertexShader, updateFragmentShader, pickingVertexShader, pickingFragmentShader, delayMarkerVertexShader, delayMarkerFragmentShader, outlineVertexShader, outlineFragmentShader, define} from './shaders.js';
-
-const groupIndices = new Float32Array(
-    [].concat(...[0, 1, 2, 2, 1, 0, 5, 4, 3, 3, 4, 5, 0, 3].map(x => Array(6).fill(x)))
-);
 
 export default class extends MeshSet {
 
@@ -15,12 +12,9 @@ export default class extends MeshSet {
         const me = this,
             {index, opacity, dark} = parameters;
 
-        const boxGeometry = new BoxGeometry(.88, 1.76, .88, 1, 1, 3);
-        const nonIndexedGeometry = boxGeometry.toNonIndexed();
+        const carGeometry = new CarGeometry(.88, 1.76, .88);
 
-        nonIndexedGeometry.setAttribute('groupIndex', new BufferAttribute(groupIndices, 1));
-
-        const geometry = me.geometry = new InstancedGeometry(nonIndexedGeometry, count, index, {
+        const geometry = me.geometry = new InstancedGeometry(carGeometry, count, index, {
             translation: {type: Float32Array, itemSize: 3},
             rotationX: {type: Float32Array, itemSize: 1},
             rotationZ: {type: Float32Array, itemSize: 1},
@@ -33,12 +27,11 @@ export default class extends MeshSet {
             color3: {type: Uint8Array, itemSize: 3, normalized: true}
         });
 
-        boxGeometry.dispose();
-        nonIndexedGeometry.dispose();
+        carGeometry.dispose();
 
         Object.assign(me.uniforms, {
-            opacity: {type: 'f', value: opacity},
-            base: {type: 'f', value: dark ? 0 : 1}
+            opacity: {value: opacity},
+            base: {value: dark ? 0 : 1}
         });
 
         const material = me.material = new MeshLambertMaterial({
