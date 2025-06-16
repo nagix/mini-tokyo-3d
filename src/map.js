@@ -1157,7 +1157,8 @@ export default class extends Evented {
 
     _jumpTo(options) {
         const me = this,
-            {map, trackingMode, trackingParams, frameRateFactor} = me,
+            {map, trackingMode, trackingParams} = me,
+            frameRateFactor = me.ecoMode === 'normal' || me.viewAnimationID ? me.frameRateFactor : 60 / me.ecoFrameRate,
             now = performance.now(),
             currentZoom = map.getZoom(),
             currentBearing = map.getBearing(),
@@ -1188,7 +1189,8 @@ export default class extends Evented {
                 bearing = (bearing + 360) % 360 - 180;
             }
             if (bearingFactor >= 0) {
-                bearing = currentBearing + ((bearing - currentBearing + 540) % 360 - 180) * bearingFactor * frameRateFactor;
+                bearingFactor = 1 - Math.pow(1 - bearingFactor, frameRateFactor);
+                bearing = currentBearing + ((bearing - currentBearing + 540) % 360 - 180) * bearingFactor;
             }
             if (trackingMode === 'back' || trackingMode === 'front') {
                 zoom = 18.5;
@@ -1210,14 +1212,16 @@ export default class extends Evented {
         if (easeOutFactor >= 0) {
             const currentCenter = map.getCenter();
 
+            easeOutFactor = 1 - Math.pow(1 - easeOutFactor, frameRateFactor);
             center = new LngLat(
-                helpers.lerp(currentCenter.lng, center.lng, easeOutFactor * frameRateFactor),
-                helpers.lerp(currentCenter.lat, center.lat, easeOutFactor * frameRateFactor)
+                helpers.lerp(currentCenter.lng, center.lng, easeOutFactor),
+                helpers.lerp(currentCenter.lat, center.lat, easeOutFactor)
             );
         }
         if (easeInFactor >= 0) {
-            zoom = helpers.lerp(currentZoom, zoom, easeInFactor * frameRateFactor);
-            pitch = helpers.lerp(currentPitch, pitch, easeInFactor * frameRateFactor);
+            easeInFactor = 1 - Math.pow(1 - easeInFactor, frameRateFactor);
+            zoom = helpers.lerp(currentZoom, zoom, easeInFactor);
+            pitch = helpers.lerp(currentPitch, pitch, easeInFactor);
         }
 
         // Prevent layer switch due to calculation error
