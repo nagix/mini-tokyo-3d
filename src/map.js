@@ -95,7 +95,6 @@ export default class extends Evented {
             document.getElementById(options.container) : options.container;
         me.secrets = options.secrets;
         me.modelOrigin = MercatorCoordinate.fromLngLat(options.center);
-        me.trainPopupObjects = [];
         me.exitPopups = [];
 
         me.clockControl = options.clockControl;
@@ -673,6 +672,7 @@ export default class extends Evented {
         me.activeTrainLookup = new Map();
         me.standbyTrainLookup = new Map();
         me.realtimeTrains = new Set();
+        me.adTrains = new Set();
         me.activeFlightLookup = new Map();
         me.flightLookup = new Map();
     }
@@ -1082,14 +1082,12 @@ export default class extends Evented {
         });
 
         map.on('render', () => {
-            const markedObject = me.markedObject;
-
-            if (markedObject) {
+            if (me.markedObject) {
                 // Popup for a 3D object needs to be updated every time
                 // because the adjustment for altitude is required
                 me.updatePopup();
             }
-            me.updateTrainPopup();
+            me.updateAdTrainPopup();
         });
 
         for (const plugin of me.plugins.slice().reverse()) {
@@ -1341,7 +1339,7 @@ export default class extends Evented {
                 me.trackObject(car);
             }
             if (train.ad) {
-                me.showTrainPopup(car);
+                me.showAdTrainPopup(train);
             }
             if (me.markedObject === car) {
                 car.outline = 1;
@@ -2319,7 +2317,7 @@ export default class extends Evented {
         if (cars) {
             for (const car of cars) {
                 me.trafficLayer.removeObject(car);
-                me.hideTrainPopup(car);
+                me.hideAdTrainPopup(train);
                 if (car === me.markedObject && !keep) {
                     me.markObject();
                 }
@@ -3290,7 +3288,7 @@ export default class extends Evented {
                 me.addStationOutline(object, 'stations-marked');
             }
         }
-        me.updateTrainPopup();
+        me.updateAdTrainPopup();
     }
 
     trackObject(object) {
@@ -3432,17 +3430,17 @@ export default class extends Evented {
         }
     }
 
-    showTrainPopup(object) {
+    showAdTrainPopup(train) {
         const me = this,
-            trainPopupObjects = me.trainPopupObjects;
+            adTrains = me.adTrains;
 
-        if (trainPopupObjects.indexOf(object) !== -1) {
+        if (adTrains.has(train)) {
             return;
         }
 
-        const ad = object.object.ad;
+        const ad = train.ad;
 
-        object.popup = new AnimatedPopup({
+        train.popup = new AnimatedPopup({
             className: 'popup-ad-cars',
             closeButton: false,
             closeOnClick: false,
@@ -3451,39 +3449,38 @@ export default class extends Evented {
                 bottom: [0, -30]
             }
         });
-        object.popup.setHTML(`<span style="color: ${ad.textcolor};">${ad.title[me.lang]}</span>`);
-        trainPopupObjects.push(object);
-        me.updateTrainPopup();
+        train.popup.setHTML(`<span style="color: ${ad.textcolor};">${ad.title[me.lang]}</span>`);
+        adTrains.add(train);
+        me.updateAdTrainPopup();
     }
 
-    updateTrainPopup() {
+    updateAdTrainPopup() {
         const me = this,
-            markedObject = me.markedObject;
+            markedObject = (me.markedObject || {}).object;
 
-        for (const object of me.trainPopupObjects) {
-            object.popup.setLngLat(me.adjustCoord(object.coord, object.altitude));
-            if (object !== markedObject && !object.popupVisible) {
-                object.popup.addTo(me.map);
-                object.popupVisible = true;
-            } else if (object === markedObject && object.popupVisible) {
-                object.popup.remove();
-                delete object.popupVisible;
+        for (const train of me.adTrains) {
+            train.popup.setLngLat(me.adjustCoord(train.cars[0].coord, train.cars[0].altitude));
+            if (train !== markedObject && !train.popupVisible) {
+                train.popup.addTo(me.map);
+                train.popupVisible = true;
+            } else if (train === markedObject && train.popupVisible) {
+                train.popup.remove();
+                delete train.popupVisible;
             }
         }
     }
 
-    hideTrainPopup(object) {
+    hideAdTrainPopup(train) {
         const me = this,
-            trainPopupObjects = me.trainPopupObjects,
-            index = trainPopupObjects.indexOf(object);
+            adTrains = me.adTrains;
 
-        if (index === -1 || !object.popup) {
+        if (!adTrains.has(train) || !train.popup) {
             return;
         }
-        object.popup.remove();
-        delete object.popup;
-        delete object.popupVisible;
-        trainPopupObjects.splice(index, 1);
+        train.popup.remove();
+        delete train.popup;
+        delete train.popupVisible;
+        adTrains.delete(train);
     }
 
     showStationExits(stations) {

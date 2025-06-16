@@ -21,6 +21,8 @@ export default class {
         cars;
         standing;
         animationID;
+        popup;
+        popupVisible;
     */
 
     constructor(params, refs) {
