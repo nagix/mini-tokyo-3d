@@ -3826,6 +3826,10 @@ function startTrainAnimation(callback, endCallback, distance, minDuration, maxDu
 
     if (distance <= maxAccDistance * 2) {
         duration = Math.sqrt(distance / acceleration) * 2;
+        if (maxDuration > 0) {
+            duration = helpers.clamp(duration, minDuration || 0, maxDuration);
+            acceleration = distance * 4 / duration / duration;
+        }
         accelerationTime = duration / 2;
     } else {
         duration = maxAccelerationTime * 2 + (distance - maxAccDistance * 2) / maxSpeed;
@@ -3903,6 +3907,10 @@ function startBusAnimation(callback, endCallback, distance, minDuration, maxDura
         return;
     } else if (distance <= maxBusAccDistance * 2) {
         duration = Math.sqrt(distance / busAcceleration) * 2;
+        if (maxDuration > 0) {
+            duration = helpers.clamp(duration, minDuration || 0, maxDuration);
+            busAcceleration = distance * 4 / duration / duration;
+        }
         accelerationTime = duration / 2;
     } else {
         duration = maxBusAccelerationTime * 2 + (distance - maxBusAccDistance * 2) / maxBusSpeed;
