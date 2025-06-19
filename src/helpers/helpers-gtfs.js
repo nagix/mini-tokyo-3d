@@ -7,24 +7,34 @@ export function encode(data, pbf) {
             pbf.writePackedDouble(3, obj.coord);
         }, stop);
     }
-    for (const trip of data.trips) {
+    for (const route of data.routes) {
         pbf.writeMessage(3, (obj, pbf) => {
             pbf.writeStringField(1, obj.id);
-            pbf.writeStringField(2, obj.shortName);
-            if (obj.color) pbf.writeStringField(3, obj.color);
-            if (obj.textColor) pbf.writeStringField(4, obj.textColor);
-            pbf.writeStringField(5, obj.shape);
-            pbf.writePackedVarint(6, obj.departureTimes);
-            for (const stop of obj.stops) {
-                pbf.writeStringField(7, stop);
+            if (obj.shortName) pbf.writeStringField(2, obj.shortName);
+            if (obj.longName) pbf.writeStringField(3, obj.longName);
+            if (obj.color) pbf.writeStringField(4, obj.color);
+            if (obj.textColor) pbf.writeStringField(5, obj.textColor);
+            for (const shape of obj.shapes) {
+                pbf.writeStringField(6, shape);
             }
-            pbf.writePackedVarint(8, obj.stopSequences);
+        }, route);
+    }
+    for (const trip of data.trips) {
+        pbf.writeMessage(4, (obj, pbf) => {
+            pbf.writeStringField(1, obj.id);
+            pbf.writeStringField(2, obj.route);
+            pbf.writeStringField(3, obj.shape);
+            pbf.writePackedVarint(4, obj.departureTimes);
+            for (const stop of obj.stops) {
+                pbf.writeStringField(5, stop);
+            }
+            pbf.writePackedVarint(6, obj.stopSequences);
             for (const headsign of obj.headsigns) {
-                pbf.writeStringField(9, headsign);
+                pbf.writeStringField(7, headsign);
             }
         }, trip);
     }
-    pbf.writeStringField(4, data.version);
+    pbf.writeStringField(5, data.version);
     return pbf.finish();
 }
 
@@ -36,17 +46,23 @@ export function decode(pbf) {
             else if (tag === 2) obj.name = pbf.readString();
             else if (tag === 3) obj.coord = pbf.readPackedDouble();
         }, {}, pbf.readVarint() + pbf.pos));
-        if (tag === 3) obj.trips.push(pbf.readFields((tag, obj, pbf) => {
+        if (tag === 3) obj.routes.push(pbf.readFields((tag, obj, pbf) => {
             if (tag === 1) obj.id = pbf.readString();
             else if (tag === 2) obj.shortName = pbf.readString();
-            else if (tag === 3) obj.color = pbf.readString();
-            else if (tag === 4) obj.textColor = pbf.readString();
-            else if (tag === 5) obj.shape = pbf.readString();
-            else if (tag === 6) pbf.readPackedVarint(obj.departureTimes, true);
-            else if (tag === 7) obj.stops.push(pbf.readString());
-            else if (tag === 8) pbf.readPackedVarint(obj.stopSequences, true);
-            else if (tag === 9) obj.headsigns.push(pbf.readString());
+            else if (tag === 3) obj.longName = pbf.readString();
+            else if (tag === 4) obj.color = pbf.readString();
+            else if (tag === 5) obj.textColor = pbf.readString();
+            else if (tag === 6) obj.shapes.push(pbf.readString());
+        }, {shapes: []}, pbf.readVarint() + pbf.pos));
+        if (tag === 4) obj.trips.push(pbf.readFields((tag, obj, pbf) => {
+            if (tag === 1) obj.id = pbf.readString();
+            else if (tag === 2) obj.route = pbf.readString();
+            else if (tag === 3) obj.shape = pbf.readString();
+            else if (tag === 4) pbf.readPackedVarint(obj.departureTimes, true);
+            else if (tag === 5) obj.stops.push(pbf.readString());
+            else if (tag === 6) pbf.readPackedVarint(obj.stopSequences, true);
+            else if (tag === 7) obj.headsigns.push(pbf.readString());
         }, {departureTimes: [], stops: [], stopSequences: [], headsigns: []}, pbf.readVarint() + pbf.pos));
-        if (tag === 4) obj.version = pbf.readString();
-    }, {stops: [], trips: []});
+        if (tag === 5) obj.version = pbf.readString();
+    }, {stops: [], routes: [], trips: []});
 }

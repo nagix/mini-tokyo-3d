@@ -159,7 +159,7 @@ class FeedInfoReader {
 class RouteReader {
 
     constructor() {
-        this.lookup = new Map();
+        this.array = [];
     }
 
     read(line) {
@@ -176,7 +176,8 @@ class RouteReader {
             const color = fileds[me.routeColorIndex],
                 textColor = fileds[me.routeTextColorIndex];
 
-            me.lookup.set(fileds[me.routeIdIndex], {
+            me.array.push({
+                id: fileds[me.routeIdIndex],
                 shortName: fileds[me.routeShortNameIndex],
                 longName: fileds[me.routeLongNameIndex],
                 color: color ? `#${color}` : undefined,
@@ -186,7 +187,7 @@ class RouteReader {
     }
 
     get result() {
-        return this.lookup;
+        return this.array;
     }
 
 }
@@ -490,14 +491,38 @@ function getStops(stops, translations) {
     }));
 }
 
-function getTrips(trips, services, serviceExceptions, routeLookup, stopTimeLookup, translations) {
+function getRoutes(routes, trips, translations) {
+    const shapes = new Map();
+
+    for (const {route, shape} of trips) {
+        if (shapes.has(route)) {
+            shapes.get(route).add(shape);
+        } else {
+            shapes.set(route, new Set([shape]));
+        }
+    }
+
+    return routes.map(({id, shortName, longName, color, textColor}) => ({
+        id,
+        shortName: translations ?
+            translations.get(`routes.route_short_name.${id}`) || translations.get(`routes.route_short_name.${shortName}`) || shortName :
+            shortName,
+        longName: translations ?
+            translations.get(`routes.route_long_name.${id}`) || translations.get(`routes.route_long_name.${longName}`) || longName :
+            longName,
+        color,
+        textColor,
+        shapes: Array.from(shapes.get(id).values())
+    }));
+}
+
+function getTrips(trips, services, serviceExceptions, stopTimeLookup, translations) {
     const serviceSet = (services || new Set()).union(serviceExceptions[0]).difference(serviceExceptions[1]),
         result = [];
 
     for (const {id, service, route, shape, headsign} of trips) {
         if (serviceSet.has(service)) {
-            const {shortName, longName, color, textColor} = routeLookup.get(route),
-                {departureTimes, stops, stopSequences, stopHeadsigns} = stopTimeLookup.get(id),
+            const {departureTimes, stops, stopSequences, stopHeadsigns} = stopTimeLookup.get(id),
                 headsigns = [];
 
             if (new Set(stopHeadsigns).size > 1) {
@@ -517,21 +542,11 @@ function getTrips(trips, services, serviceExceptions, routeLookup, stopTimeLooku
                     translations.get(`stop_times.stop_headsign.${stopHeadsigns[0]}`) || stopHeadsigns[0] :
                     stopHeadsigns[0]
                 );
-            } else {
-                headsigns.push(translations ?
-                    translations.get(`routes.route_long_name.${route}`) || translations.get(`routes.route_long_name.${longName}`) || longName :
-                    longName
-                );
             }
 
             result.push({
                 id,
-                shortName: translations ?
-                    translations.get(`routes.route_short_name.${route}`) || translations.get(`routes.route_short_name.${shortName}`) || shortName ||
-                    translations.get(`routes.route_long_name.${route}`) || translations.get(`routes.route_long_name.${longName}`) || longName :
-                    shortName || longName,
-                color,
-                textColor,
+                route,
                 shape,
                 departureTimes,
                 stops,
@@ -605,7 +620,8 @@ function loadGtfs(source, date, day, lang) {
                 agency: results.agency,
                 version: results.feed_info ? results.feed_info.version : 'N/A',
                 stops: getStops(results.stops, translations),
-                trips: getTrips(results.trips, results.calendar, results.calendar_dates, results.routes, results.stop_times, translations)
+                routes: getRoutes(results.routes, results.trips, translations),
+                trips: getTrips(results.trips, results.calendar, results.calendar_dates, results.stop_times, translations)
             };
 
         return [geobuf.encode(featureCollection, new Pbf()), encode(result, new Pbf())];

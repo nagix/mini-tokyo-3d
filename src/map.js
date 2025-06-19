@@ -2142,8 +2142,8 @@ export default class extends Evented {
             dict = me.dict,
             gtfs = me.gtfs.get(bus.gtfsId),
             stopLookup = gtfs.stopLookup,
-            trip = bus.trip,
-            {shortName, headsigns, stops, color, textColor} = trip,
+            {route, headsigns, stops} = bus.trip,
+            {shortName, longName, color, textColor} = gtfs.routeLookup.get(route),
             labelStyle = [
                 textColor ? `color: ${textColor};` : '',
                 color ? `background-color: ${color};` : ''
@@ -2159,8 +2159,8 @@ export default class extends Evented {
             `<div><strong>${gtfs.agency}</strong>`,
             bus.stop !== undefined ? '<span class="realtime-small-icon"></span>' : '',
             '<br>',
-            shortName ? ` <span class="bus-route-label" style="${labelStyle}">${shortName}</span> ` : '',
-            headsigns[headsigns.length === 1 ? 0 : prevStopIndex],
+            shortName || longName ? ` <span class="bus-route-label" style="${labelStyle}">${shortName || longName}</span> ` : '',
+            headsigns.length === 0 ? longName : headsigns[headsigns.length === 1 ? 0 : prevStopIndex],
             '</div></div>',
             bus.id ? `<strong>${dict['vehicle-number']}:</strong> ${bus.id}<br>` : '',
             `<strong>${dict['previous-busstop']}:</strong> ${prevStopName}<br>`,
@@ -2335,6 +2335,7 @@ export default class extends Evented {
                 const {agency, featureCollection, version} = data,
                     featureLookup = new Map(),
                     stopLookup = new Map(),
+                    routeLookup = new Map(),
                     tripLookup = new Map(),
                     layerIds = new Set();
 
@@ -2352,6 +2353,9 @@ export default class extends Evented {
                 for (const stop of data.stops) {
                     stopLookup.set(stop.id, stop);
                 }
+                for (const route of data.routes) {
+                    routeLookup.set(route.id, route);
+                }
                 for (const trip of data.trips) {
                     tripLookup.set(trip.id, trip);
                 }
@@ -2361,6 +2365,7 @@ export default class extends Evented {
                     version,
                     featureLookup,
                     stopLookup,
+                    routeLookup,
                     tripLookup,
                     layerIds,
                     activeBusLookup: new Map(),
@@ -3547,7 +3552,10 @@ export default class extends Evented {
 
         if ((markedObject && markedObject.type === 'bus' && markedObject.object.gtfsId === gtfsId && markedObject.object.trip.shape === id) ||
             (trackedObject && trackedObject.type === 'bus' && trackedObject.object.gtfsId === gtfsId && trackedObject.object.trip.shape === id)) {
-            map.setFeatureState({source, id}, {highlight: trip.color || me.gtfs.get(gtfsId).color});
+            const gtfs = me.gtfs.get(gtfsId),
+                color = gtfs.routeLookup.get(trip.route).color;
+
+            map.setFeatureState({source, id}, {highlight: color || gtfs.color});
         } else {
             map.removeFeatureState({source, id});
         }

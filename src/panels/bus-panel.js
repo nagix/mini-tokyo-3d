@@ -14,7 +14,8 @@ export default class extends Panel {
             bus = me._options.object,
             gtfs = map.gtfs.get(bus.gtfsId),
             trip = bus.trip,
-            {stops, departureTimes} = trip,
+            {route, stops, departureTimes} = trip,
+            color = gtfs.routeLookup.get(route).color,
             stopLookup = gtfs.stopLookup;
 
         for (let i = 0, ilen = stops.length; i < ilen; i++) {
@@ -46,7 +47,7 @@ export default class extends Panel {
             offsets.push(child.offsetTop + child.getBoundingClientRect().height / 2);
         }
         container.querySelector('#busroute-mark').innerHTML = [
-            `<line stroke="${trip.color || gtfs.color}" stroke-width="10" x1="12" y1="${offsets[0]}" x2="12" y2="${offsets[offsets.length - 1]}" stroke-linecap="round" />`,
+            `<line stroke="${color || gtfs.color}" stroke-width="10" x1="12" y1="${offsets[0]}" x2="12" y2="${offsets[offsets.length - 1]}" stroke-linecap="round" />`,
         ].concat(offsets.map(offset =>
             `<circle cx="12" cy="${offset}" r="3" fill="#ffffff" />`
         )).join('');
@@ -78,8 +79,8 @@ export default class extends Panel {
             map = me._map,
             bus = me._options.object,
             gtfs = map.gtfs.get(bus.gtfsId),
-            trip = bus.trip,
-            {shortName, headsigns, color, textColor} = trip,
+            {route, headsigns} = bus.trip,
+            {shortName, longName, color, textColor} = gtfs.routeLookup.get(route),
             labelStyle = [
                 textColor ? `color: ${textColor};` : '',
                 color ? `background-color: ${color};` : ''
@@ -92,8 +93,8 @@ export default class extends Panel {
             gtfs.agency,
             bus.stop !== undefined ? '<span class="realtime-icon"></span>' : '',
             '</div><div class="desc-second-row">',
-            shortName ? ` <span class="bus-route-label" style="${labelStyle}">${shortName}</span> ` : '',
-            headsigns[headsigns.length === 1 ? 0 : bus.sectionIndex],
+            shortName || longName ? ` <span class="bus-route-label" style="${labelStyle}">${shortName || longName}</span> ` : '',
+            headsigns.length === 0 ? longName : headsigns[headsigns.length === 1 ? 0 : bus.sectionIndex],
             '</div></div></div>'
         ].join(''));
     }
