@@ -14,11 +14,11 @@ export default class {
         arrivalStation;
         arrivalTime;
         nextDepartureTime;
-        railwayFeature;
-        offset;
-        interval;
+        instanceID;
+        coord;
+        altitude;
+        bearing;
         _t;
-        cars;
         standing;
         animationID;
         popup;
@@ -29,6 +29,12 @@ export default class {
         const me = this,
             fromTimetable = params instanceof TrainTimetable,
             {r, y, d, os, ds, ts, fs, nm, v, ad, delay, carComposition} = params;
+
+        /**
+         * Object type
+         * $type {string}
+         */
+        me.type = 'train';
 
         /**
          * Train ID.

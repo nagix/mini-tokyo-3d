@@ -1,7 +1,10 @@
 const commonVariables = `
 uniform float zoom;
 uniform float modelScale;
+
+#ifndef GPGPU
 attribute vec3 translation;
+#endif
 
 float getScale( float zoom, float modelScale) {
     return pow( 2.0, 14.0 - clamp( zoom, 13.0, 19.0 ) ) * modelScale * 100.0;
@@ -9,9 +12,12 @@ float getScale( float zoom, float modelScale) {
 
 #ifdef TRANSFORM
 uniform float cameraZ;
+
+#ifndef GPGPU
 attribute float rotationX;
 attribute float rotationZ;
 attribute vec3 idColor;
+#endif
 
 #ifdef AIRCRAFT
 attribute float groupIndex;
@@ -39,6 +45,12 @@ mat3 rotateZ( float angle ) {
     );
 }
 #endif
+
+#ifdef GPGPU
+uniform sampler2D textureData0;
+uniform sampler2D textureData1;
+uniform sampler2D textureColor;
+#endif
 `;
 
 const vInstanceColor = `
@@ -57,6 +69,30 @@ const vIdColor = `
 varying vec3 vIdColor;
 `;
 
+const gpgpuInit = `
+#ifdef GPGPU
+int width = textureSize( textureData0, 0 ).x;
+ivec2 reference = ivec2( instanceID % width, instanceID / width );
+vec4 data0 = texelFetch( textureData0, reference, 0 );
+vec4 data1 = texelFetch( textureData1, reference, 0 );
+vec3 translation = data0.xyz;
+float rotationX = data1.y;
+float rotationZ = data1.x;
+int colorID = int( data1.z );
+float opacity0 = data1.w;
+
+width = textureSize( textureColor, 0 ).x;
+reference = ivec2( colorID * 4 % width, colorID * 4 / width );
+vec3 color0 = texelFetch( textureColor, reference, 0 ).rgb;
+reference = ivec2( ( colorID * 4 + 1 ) % width, ( colorID * 4 + 1 ) / width );
+vec3 color1 = texelFetch( textureColor, reference, 0 ).rgb;
+reference = ivec2( ( colorID * 4 + 2 ) % width, ( colorID * 4 + 2 ) / width );
+vec3 color2 = texelFetch( textureColor, reference, 0 ).rgb;
+reference = ivec2( ( colorID * 4 + 3 ) % width, ( colorID * 4 + 3 ) / width );
+vec3 color3 = texelFetch( textureColor, reference, 0 ).rgb;
+#endif
+`;
+
 const transformPosition = `
 float zoom0 = zoom + log2( cameraZ / abs( cameraZ - translation.z ) );
 float scale0 = getScale( zoom0, modelScale );
@@ -72,7 +108,11 @@ vec3 position0 = ( position + vec3( 0.0, offsetY, offsetZ ) ) * vec3( scaleX, sc
 vec3 position0 = position * scale0;
 #endif
 
+#ifdef GPGPU
+position0 = position0 * ( 1.0 + float( instanceID % 256 ) / 256.0 * 0.03 );
+#else
 position0 = position0 * ( 1.0 + idColor.b * 0.03 );
+#endif
 
 #ifdef OUTLINE
 position0 = position0 + 0.1 * scale0 * sign( position );
@@ -94,6 +134,10 @@ ${commonVariables}
 #ifdef BUS
 attribute vec3 color;
 #else
+#ifdef GPGPU
+attribute int instanceID;
+attribute float groupIndex;
+#else
 attribute vec3 color0;
 attribute vec3 color1;
 #ifdef CAR
@@ -102,8 +146,11 @@ attribute vec3 color3;
 attribute float groupIndex;
 #endif
 #endif
+#endif
 
+#ifndef GPGPU
 attribute float opacity0;
+#endif
 
 ${vInstanceColor}
 ${vInstanceOpacity}
@@ -119,6 +166,8 @@ vec3 objectNormal = rotateZ( rotationZ ) * rotateX( rotationX ) * vec3( normal )
 
 const colorVertex = `
 #include <color_vertex>
+
+${gpgpuInit}
 
 #ifdef CAR
 float mod3 = mod( groupIndex, 3.0 );
@@ -140,9 +189,9 @@ vInstanceOpacity = opacity0;
 export function updateVertexShader(shader) {
     return shader
         .replace('#include <common>', common)
-        .replace('#include <begin_vertex>', transformPosition)
+        .replace('#include <color_vertex>', colorVertex)
         .replace('#include <beginnormal_vertex>', beginNormalVertex)
-        .replace('#include <color_vertex>', colorVertex);
+        .replace('#include <begin_vertex>', transformPosition);
 }
 
 const packing = `

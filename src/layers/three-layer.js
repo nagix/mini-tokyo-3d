@@ -46,6 +46,15 @@ export default class {
                     });
                 }
             },
+            prerender: () => {
+                if (implementation.prerender) {
+                    implementation.prerender(map, {
+                        renderer: me.renderer,
+                        scene: me.scene,
+                        camera: me.camera
+                    });
+                }
+            },
             render: me._render.bind(me)
         }, beforeId || 'poi');
         _mbox.setLayerZoomRange(id, implementation.minzoom, implementation.maxzoom);

@@ -9,6 +9,7 @@ import {visualizer} from "rollup-plugin-visualizer";
 import cssimport from 'postcss-import';
 import inlinesvg from 'postcss-inline-svg';
 import strip from '@rollup/plugin-strip';
+import {createFilter} from '@rollup/pluginutils';
 
 const pkg = JSON.parse(fs.readFileSync('package.json'));
 const banner = `/*!
@@ -31,6 +32,29 @@ const onwarn = (warning, defaultHandler) => {
 	}
 	defaultHandler(warning);
 }
+
+const glsl = () => {
+	const filter = createFilter('**/*.glsl');
+	return {
+		name: 'glsl',
+		transform: (code, id) => {
+			if (!filter(id)) {
+				return;
+			}
+			code = code.trim()
+				.replace(/\s*\/\/[^\n]*\n/g, '\n')
+				.replace(/\n+/g, '\n')
+				.replace(/\n\s+/g, '\n')
+				.replace(/\s?([+-\/*=,])\s?/g, '$1')
+				.replace(/([;,\{\}])\n(?=[^#])/g, '$1');
+
+			return {
+				code: `export default ${JSON.stringify(code)};`,
+				map: {mappings: ''}
+			};
+		}
+	};
+};
 
 export default [{
 	input: 'src/loader/index.js',
@@ -118,7 +142,8 @@ export default [{
 			delimiters: ['\\b', ''],
 			'catch {': 'catch (e) {'
 		}),
-		image()
+		image(),
+		glsl()
 	],
 	onwarn
 }, {
@@ -176,6 +201,7 @@ export default [{
 			'catch {': 'catch (e) {'
 		}),
 		image(),
+		glsl(),
 		terser({
 			compress: {
 				pure_getters: true
@@ -237,7 +263,8 @@ export default [{
 			delimiters: ['\\b', ''],
 			'catch {': 'catch (e) {'
 		}),
-		image()
+		image(),
+		glsl()
 	],
 	onwarn
 }];

@@ -6089,23 +6089,12 @@
             "source-layer": "building",
             "minzoom": 15,
             "filter": [
-                "all",
+                "==",
                 [
-                    "==",
-                    [
-                        "get",
-                        "extrude"
-                    ],
-                    "true"
+                    "get",
+                    "underground"
                 ],
-                [
-                    "==",
-                    [
-                        "get",
-                        "underground"
-                    ],
-                    "false"
-                ]
+                "false"
             ],
             "layout": {
                 "fill-extrusion-edge-radius": 0.4

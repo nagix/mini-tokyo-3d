@@ -1,48 +1,76 @@
+import {AdditiveBlending, BackSide, BoxGeometry, DynamicDrawUsage, InstancedBufferAttribute, InstancedBufferGeometry, Mesh, MeshLambertMaterial, MultiplyBlending, ShaderMaterial, SphereGeometry} from 'three';
 import CarGeometry from './car-geometry.js';
 import MeshSet from './mesh-set.js';
-import InstancedGeometry from './instanced-geometry.js';
-import {AdditiveBlending, BackSide, Mesh, MeshLambertMaterial, MultiplyBlending, ShaderMaterial, SphereGeometry} from 'three';
-import {updateVertexShader, updateFragmentShader, pickingVertexShader, pickingFragmentShader, delayMarkerVertexShader, delayMarkerFragmentShader, outlineVertexShader, outlineFragmentShader, define} from './shaders.js';
+import {updateVertexShader, updateFragmentShader} from './shaders.js';
+import delayMarkerFragmentShader from './delay-marker-fragment.glsl';
+import delayMarkerVertexShader from './delay-marker-vertex.glsl';
+import outlineFragmentShader from './outline-fragment.glsl';
+import outlineVertexShader from './outline-vertex.glsl';
+import pickingFragmentShader from './picking-fragment.glsl';
+import pickingVertexShader from './picking-vertex.glsl';
+
+class InstancedGeometry extends InstancedBufferGeometry {
+
+    constructor(geometry, count) {
+        super();
+
+        const me = this;
+
+        me.instanceCount = 0;
+        for (const key of Object.keys(geometry.attributes)) {
+            me.attributes[key] = geometry.attributes[key].clone();
+        }
+        me.index = geometry.index.clone();
+
+        const attribute = new InstancedBufferAttribute(new Int32Array(count), 1).setUsage(DynamicDrawUsage);
+
+        me.setAttribute('instanceID', attribute);
+
+    }
+
+    setInstanceIDs(ids) {
+        const me = this,
+            attribute = me.getAttribute('instanceID'),
+            count = ids.length;
+
+        attribute.array.set(ids);
+        attribute.addUpdateRange(0, count);
+        attribute.needsUpdate = true;
+        me.instanceCount = count;
+    }
+
+}
 
 export default class extends MeshSet {
 
     constructor(count, parameters) {
         super(parameters);
 
-        const me = this,
-            {index, opacity, dark} = parameters;
+        const me = this;
 
         const carGeometry = new CarGeometry(.88, 1.76, .88);
-
-        const geometry = me.geometry = new InstancedGeometry(carGeometry, count, index, {
-            translation: {type: Float32Array, itemSize: 3},
-            rotationX: {type: Float32Array, itemSize: 1},
-            rotationZ: {type: Float32Array, itemSize: 1},
-            opacity0: {type: Float32Array, itemSize: 1},
-            delay: {type: Float32Array, itemSize: 1},
-            outline: {type: Float32Array, itemSize: 1},
-            color0: {type: Uint8Array, itemSize: 3, normalized: true},
-            color1: {type: Uint8Array, itemSize: 3, normalized: true},
-            color2: {type: Uint8Array, itemSize: 3, normalized: true},
-            color3: {type: Uint8Array, itemSize: 3, normalized: true}
-        });
+        const geometry = me.geometry = new InstancedGeometry(carGeometry, count);
 
         carGeometry.dispose();
 
         Object.assign(me.uniforms, {
-            opacity: {value: opacity},
-            base: {value: dark ? 0 : 1}
+            textureData0: {value: null},
+            textureData1: {value: null},
+            textureColor: {value: null}
         });
 
         const material = me.material = new MeshLambertMaterial({
-            opacity,
             transparent: true
         });
 
         material.onBeforeCompile = shader => {
-            shader.uniforms = Object.assign(shader.uniforms, me.getUniforms());
-            shader.vertexShader = define('CAR', updateVertexShader(shader.vertexShader));
+            Object.assign(shader.uniforms, me.getUniforms());
+            shader.vertexShader = updateVertexShader(shader.vertexShader);
             shader.fragmentShader = updateFragmentShader(shader.fragmentShader);
+            shader.defines = {
+                CAR: true,
+                GPGPU: true
+            };
         };
 
         const mesh = me.mesh = new Mesh(geometry, material);
@@ -53,8 +81,12 @@ export default class extends MeshSet {
 
         const pickingMaterial = me.pickingMaterial = new ShaderMaterial({
             uniforms: me.getUniforms(),
-            vertexShader: define('CAR', pickingVertexShader),
-            fragmentShader: pickingFragmentShader
+            vertexShader: pickingVertexShader,
+            fragmentShader: pickingFragmentShader,
+            defines: {
+                CAR: true,
+                GPGPU: true
+            }
         });
 
         const pickingMesh = me.pickingMesh = new Mesh(geometry, pickingMaterial);
@@ -64,20 +96,21 @@ export default class extends MeshSet {
         pickingMesh.frustumCulled = false;
 
         const sphereGeometry = new SphereGeometry(1.8, 32, 32);
-
-        const delayMarkerGeometry = me.delayMarkerGeometry = new InstancedGeometry(sphereGeometry, count, index, {
-            translation: geometry.getAttribute('translation'),
-            opacity0: geometry.getAttribute('opacity0'),
-            delay: geometry.getAttribute('delay')
-        });
+        const delayMarkerGeometry = me.delayMarkerGeometry = new InstancedGeometry(sphereGeometry, count);
 
         sphereGeometry.dispose();
 
         const delayMarkerMaterial = me.delayMarkerMaterial = new ShaderMaterial({
-            uniforms: me.getUniforms(true),
-            vertexShader: define('CAR', delayMarkerVertexShader),
+            uniforms: {
+                ...me.getUniforms(),
+                base: {value: 1}
+            },
+            vertexShader: delayMarkerVertexShader,
             fragmentShader: delayMarkerFragmentShader,
-            blending: dark ? AdditiveBlending : MultiplyBlending,
+            defines: {
+                GPGPU: true
+            },
+            blending: MultiplyBlending,
             depthWrite: false
         });
 
@@ -87,47 +120,76 @@ export default class extends MeshSet {
         delayMarkerMesh.matrixAutoUpdate = false;
         delayMarkerMesh.frustumCulled = false;
 
+        const boxGeometry = new BoxGeometry(.88, 1.76, .88);
+        const outlineGeometry = me.outlineGeometry = new InstancedGeometry(boxGeometry, 2);
+
+        boxGeometry.dispose();
+
         const outlineMaterial = me.outlineMaterial = new ShaderMaterial({
-            uniforms: me.getUniforms(),
-            vertexShader: define('CAR', outlineVertexShader),
+            uniforms: {
+                ...me.getUniforms(),
+                marked: {value: -1},
+                tracked: {value: -1},
+                intensity: {value: 0}
+            },
+            vertexShader: outlineVertexShader,
             fragmentShader: outlineFragmentShader,
+            defines: {
+                CAR: true,
+                GPGPU: true
+            },
             transparent: true,
             side: BackSide
         });
 
-        const outlineMesh = me.outlineMesh = new Mesh(geometry, outlineMaterial);
+        const outlineMesh = me.outlineMesh = new Mesh(outlineGeometry, outlineMaterial);
 
         outlineMesh.updateMatrix();
         outlineMesh.matrixAutoUpdate = false;
         outlineMesh.frustumCulled = false;
     }
 
-    getUniforms(extras) {
-        return extras ? Object.assign({}, this.uniforms) : super.getUniforms();
+    setTextures(textures) {
+        const me = this,
+            uniforms = me.uniforms,
+            p = performance.now() % 1500 / 1500 * 2.0;
+
+        uniforms.textureData0.value = textures[0];
+        uniforms.textureData1.value = textures[1];
+        uniforms.textureColor.value = textures[2];
+
+        me.outlineMaterial.uniforms.intensity.value = p < 1 ? p : 2 - p;
+    }
+
+    setInstanceIDs(ids) {
+        const me = this;
+
+        me.geometry.setInstanceIDs(ids.body);
+        me.delayMarkerGeometry.setInstanceIDs(ids.delayMarker);
+        me.outlineGeometry.setInstanceIDs(ids.outline);
+    }
+
+    setMarkedInstanceID(id) {
+        this.outlineMaterial.uniforms.marked.value = id;
+    }
+
+    setTrackedInstanceID(id) {
+        this.outlineMaterial.uniforms.tracked.value = id;
+    }
+
+    getUniforms() {
+        return this.uniforms;
     }
 
     getDelayMarkerMesh() {
         return this.delayMarkerMesh;
     }
 
-    addInstance(attributes) {
-        super.addInstance(attributes);
-        this.delayMarkerGeometry.addInstance();
-    }
-
-    removeInstance(index) {
-        super.removeInstance(index);
-        this.delayMarkerGeometry.removeInstance(index);
-    }
-
-    setOpacity(opacity) {
-        super.setOpacity(opacity);
-        this.uniforms.opacity.value = this.delayMarkerMaterial.opacity = opacity;
-    }
-
     refreshDelayMarkerMesh(dark) {
-        this.uniforms.base.value = dark ? 0 : 1;
-        this.delayMarkerMaterial.blending = dark ? AdditiveBlending : MultiplyBlending;
+        const me = this;
+
+        me.delayMarkerMaterial.uniforms.base.value = dark ? 0 : 1;
+        me.delayMarkerMesh.material.blending = dark ? AdditiveBlending : MultiplyBlending;
     }
 
     dispose() {
@@ -138,6 +200,7 @@ export default class extends MeshSet {
         me.pickingMaterial.dispose();
         me.delayMarkerGeometry.dispose();
         me.delayMarkerMaterial.dispose();
+        me.outlineGeometry.dispose();
         me.outlineMaterial.dispose();
     }
 

@@ -61,4 +61,7 @@ export default class {
         uniforms.cameraZ.value = params.cameraZ;
     }
 
+    dispose() {
+    }
+
 }
