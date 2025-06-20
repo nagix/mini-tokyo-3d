@@ -3798,6 +3798,32 @@
 	"carComposition": 10,
 	"dynamic": true
 }, {
+	"id": "OdakyuHakone.HakoneTozan",
+	"title": {
+		"ja": "箱根登山線",
+		"en": "Hakone-Tozan Line",
+		"ko": "하코네 등산선",
+		"zh-Hans": "箱根登山线",
+		"zh-Hant": "箱根登山線"
+	},
+	"stations": [
+		"OdakyuHakone.HakoneTozan.Odawara",
+		"OdakyuHakone.HakoneTozan.HakoneItabashi",
+		"OdakyuHakone.HakoneTozan.Kazamatsuri",
+		"OdakyuHakone.HakoneTozan.Iriuda",
+		"OdakyuHakone.HakoneTozan.HakoneYumoto",
+		"OdakyuHakone.HakoneTozan.Tonosawa",
+		"OdakyuHakone.HakoneTozan.Ohiradai",
+		"OdakyuHakone.HakoneTozan.Miyanoshita",
+		"OdakyuHakone.HakoneTozan.Kowakidani",
+		"OdakyuHakone.HakoneTozan.ChokokuNoMori",
+		"OdakyuHakone.HakoneTozan.Gora"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#F15A22",
+	"carComposition": 3
+}, {
 	"id": "Tokyu.DenEnToshi",
 	"title": {
 		"ja": "田園都市線",
