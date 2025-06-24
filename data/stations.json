@@ -1660,7 +1660,7 @@
 	"title": {
 		"ja": "国府津",
 		"en": "Kozu",
-		"ko": "고즈역",
+		"ko": "고즈",
 		"zh-Hans": "国府津",
 		"zh-Hant": "國府津"
 	}
@@ -8471,7 +8471,7 @@
 }, {
 	"id": "JR-East.Mito.Haguro",
 	"railway": "JR-East.Mito",
-	"coord": [140.1434163, 36.3552390],
+	"coord": [140.1434163, 36.355239],
 	"title": {
 		"ja": "羽黒",
 		"en": "Haguro",
@@ -8516,7 +8516,7 @@
 }, {
 	"id": "JR-East.Mito.Shishido",
 	"railway": "JR-East.Mito",
-	"coord": [140.2886460, 36.3447069],
+	"coord": [140.288646, 36.3447069],
 	"title": {
 		"ja": "宍戸",
 		"en": "Shishido",
@@ -8571,6 +8571,217 @@
 }, {
 	"id": "JR-Central.Tokaido.Numazu",
 	"railway": "JR-Central.Tokaido",
+	"coord": [138.8593352, 35.1031271],
+	"title": {
+		"ja": "沼津",
+		"en": "Numazu",
+		"ko": "누마즈",
+		"zh-Hans": "沼津",
+		"zh-Hant": "沼津"
+	}
+}, {
+	"id": "JR-Central.Gotemba.Kozu",
+	"railway": "JR-Central.Gotemba",
+	"coord": [139.21488, 35.28133],
+	"title": {
+		"ja": "国府津",
+		"en": "Kozu",
+		"ko": "고즈",
+		"zh-Hans": "国府津",
+		"zh-Hant": "國府津"
+	}
+}, {
+	"id": "JR-Central.Gotemba.ShimoSoga",
+	"railway": "JR-Central.Gotemba",
+	"coord": [139.1831189, 35.3037648],
+	"title": {
+		"ja": "下曽我",
+		"en": "Shimo-Soga",
+		"ko": "시모소가",
+		"zh-Hans": "下曾我",
+		"zh-Hant": "下曾我"
+	}
+}, {
+	"id": "JR-Central.Gotemba.KamiOi",
+	"railway": "JR-Central.Gotemba",
+	"coord": [139.1631854, 35.3222008],
+	"title": {
+		"ja": "上大井",
+		"en": "Kami-Oi",
+		"ko": "가미오이",
+		"zh-Hans": "上大井",
+		"zh-Hant": "上大井"
+	}
+}, {
+	"id": "JR-Central.Gotemba.SagamiKaneko",
+	"railway": "JR-Central.Gotemba",
+	"coord": [139.1504435, 35.333895],
+	"title": {
+		"ja": "相模金子",
+		"en": "Sagami-Kaneko",
+		"ko": "사가미카네코",
+		"zh-Hans": "相模金子",
+		"zh-Hant": "相模金子"
+	}
+}, {
+	"id": "JR-Central.Gotemba.Matsuda",
+	"railway": "JR-Central.Gotemba",
+	"coord": [139.1385751, 35.3462321],
+	"title": {
+		"ja": "松田",
+		"en": "Matsuda",
+		"ko": "마쓰다",
+		"zh-Hans": "松田",
+		"zh-Hant": "松田"
+	}
+}, {
+	"id": "JR-Central.Gotemba.HigashiYamakita",
+	"railway": "JR-Central.Gotemba",
+	"coord": [139.1078326, 35.3574053],
+	"title": {
+		"ja": "東山北",
+		"en": "Yamakita",
+		"ko": "히가시야마키타",
+		"zh-Hans": "东山北",
+		"zh-Hant": "東山北"
+	}
+}, {
+	"id": "JR-Central.Gotemba.Yamakita",
+	"railway": "JR-Central.Gotemba",
+	"coord": [139.0801532, 35.3607725],
+	"title": {
+		"ja": "山北",
+		"en": "Yamakita",
+		"ko": "야마키타",
+		"zh-Hans": "山北",
+		"zh-Hant": "山北"
+	}
+}, {
+	"id": "JR-Central.Gotemba.Yaga",
+	"railway": "JR-Central.Gotemba",
+	"coord": [139.0385217, 35.365538],
+	"title": {
+		"ja": "谷峨",
+		"en": "Yaga",
+		"ko": "야가",
+		"zh-Hans": "谷峨",
+		"zh-Hant": "谷峨"
+	}
+}, {
+	"id": "JR-Central.Gotemba.SurugaOyama",
+	"railway": "JR-Central.Gotemba",
+	"coord": [138.9986211, 35.358942],
+	"title": {
+		"ja": "駿河小山",
+		"en": "Suruga-Oyama",
+		"ko": "스루가오야마",
+		"zh-Hans": "骏河小山",
+		"zh-Hant": "駿河小山"
+	}
+}, {
+	"id": "JR-Central.Gotemba.Ashigara",
+	"railway": "JR-Central.Gotemba",
+	"coord": [138.981526, 35.3332525],
+	"title": {
+		"ja": "足柄",
+		"en": "Ashigara",
+		"ko": "아시가라",
+		"zh-Hans": "足柄",
+		"zh-Hant": "足柄",
+		"ja-Wiki": "足柄駅 (静岡県)"
+	}
+}, {
+	"id": "JR-Central.Gotemba.Gotemba",
+	"railway": "JR-Central.Gotemba",
+	"coord": [138.9341778, 35.2999658],
+	"title": {
+		"ja": "御殿場",
+		"en": "Gotemba",
+		"ko": "고텐바",
+		"zh-Hans": "御殿场",
+		"zh-Hant": "御殿场"
+	}
+}, {
+	"id": "JR-Central.Gotemba.MinamiGotemba",
+	"railway": "JR-Central.Gotemba",
+	"coord": [138.9255289, 35.2771379],
+	"title": {
+		"ja": "南御殿場",
+		"en": "Minami-Gotemba",
+		"ko": "미나미고텐바",
+		"zh-Hans": "南御殿场",
+		"zh-Hant": "南御殿場"
+	}
+}, {
+	"id": "JR-Central.Gotemba.Fujioka",
+	"railway": "JR-Central.Gotemba",
+	"coord": [138.9197969, 35.255026],
+	"title": {
+		"ja": "富士岡",
+		"en": "Fujioka",
+		"ko": "후지오카",
+		"zh-Hans": "富士冈",
+		"zh-Hant": "富士岡"
+	}
+}, {
+	"id": "JR-Central.Gotemba.Iwanami",
+	"railway": "JR-Central.Gotemba",
+	"coord": [138.919285, 35.2153522],
+	"title": {
+		"ja": "岩波",
+		"en": "Iwanami",
+		"ko": "이와나미",
+		"zh-Hans": "岩波",
+		"zh-Hant": "岩波"
+	}
+}, {
+	"id": "JR-Central.Gotemba.Susono",
+	"railway": "JR-Central.Gotemba",
+	"coord": [138.9094546, 35.1716965],
+	"title": {
+		"ja": "裾野",
+		"en": "Susono",
+		"ko": "스소노",
+		"zh-Hans": "裾野",
+		"zh-Hant": "裾野"
+	}
+}, {
+	"id": "JR-Central.Gotemba.NagaizumiNameri",
+	"railway": "JR-Central.Gotemba",
+	"coord": [138.8992419, 35.1474995],
+	"title": {
+		"ja": "長泉なめり",
+		"en": "Nagaizumi-Nameri",
+		"ko": "나가이즈미나메리",
+		"zh-Hans": "长泉纳米里",
+		"zh-Hant": "長泉納米里"
+	}
+}, {
+	"id": "JR-Central.Gotemba.ShimoTogari",
+	"railway": "JR-Central.Gotemba",
+	"coord": [138.8951575, 35.1290633],
+	"title": {
+		"ja": "下土狩",
+		"en": "Shimo-Togari",
+		"ko": "시모토가리",
+		"zh-Hans": "下土狩",
+		"zh-Hant": "下土狩"
+	}
+}, {
+	"id": "JR-Central.Gotemba.Ooka",
+	"railway": "JR-Central.Gotemba",
+	"coord": [138.8814052, 35.1159984],
+	"title": {
+		"ja": "大岡",
+		"en": "Ooka",
+		"ko": "오오카",
+		"zh-Hans": "大冈",
+		"zh-Hant": "大岡",
+		"ja-Wiki": "大岡駅 (静岡県)"
+	}
+}, {
+	"id": "JR-Central.Gotemba.Numazu",
+	"railway": "JR-Central.Gotemba",
 	"coord": [138.8593352, 35.1031271],
 	"title": {
 		"ja": "沼津",
@@ -23146,6 +23357,34 @@
 		"zh-Hant": "片瀨江之島"
 	}
 }, {
+	"id": "Odakyu.JROdakyuConnection.Hadano",
+	"railway": "Odakyu.JROdakyuConnection",
+	"coord": [139.22577, 35.37025],
+	"title": {
+		"ja": "秦野",
+		"en": "Hadano",
+		"ko": "하다노",
+		"zh-Hans": "秦野",
+		"zh-Hant": "秦野"
+	},
+	"alternate": "Odakyu.Odawara.Hadano",
+	"ascending": "Outbound",
+	"descending": null
+}, {
+	"id": "Odakyu.JROdakyuConnection.Matsuda",
+	"railway": "Odakyu.JROdakyuConnection",
+	"coord": [139.1385751, 35.3462321],
+	"title": {
+		"ja": "松田",
+		"en": "Matsuda",
+		"ko": "마쓰다",
+		"zh-Hans": "松田",
+		"zh-Hant": "松田"
+	},
+	"alternate": "JR-Central.Gotemba.Matsuda",
+	"ascending": null,
+	"descending": "Inbound"
+}, {
 	"id": "OdakyuHakone.HakoneTozan.Odawara",
 	"railway": "OdakyuHakone.HakoneTozan",
 	"coord": [139.15491, 35.25642],
@@ -28573,24 +28812,6 @@
 		"ko": "도요하시",
 		"zh-Hans": "丰桥",
 		"zh-Hant": "豐橋"
-	}
-}, {
-	"id": "JR-Central.Gotemba.Yamakita",
-	"title": {
-		"ja": "山北",
-		"en": "Yamakita",
-		"ko": "야마키타",
-		"zh-Hans": "山北",
-		"zh-Hant": "山北"
-	}
-}, {
-	"id": "JR-Central.Gotemba.Gotemba",
-	"title": {
-		"ja": "御殿場",
-		"en": "Gotemba",
-		"ko": "고텐바",
-		"zh-Hans": "御殿场",
-		"zh-Hant": "御殿场"
 	}
 }, {
 	"id": "JR-Central.Minobu.NishiFujinomiya",

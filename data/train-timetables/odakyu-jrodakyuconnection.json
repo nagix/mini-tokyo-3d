@@ -1,0 +1,415 @@
+[{
+	"id": "Odakyu.JROdakyuConnection.0401M.Weekday",
+	"t": "Odakyu.JROdakyuConnection.0401M",
+	"r": "Odakyu.JROdakyuConnection",
+	"n": "0401M",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"ds": [
+		"JR-Central.Gotemba.Gotemba"
+	],
+	"pt": [
+		"Odakyu.Odawara.0401M.Weekday"
+	],
+	"nt": [
+		"JR-Central.Gotemba.1M.Weekday"
+	],
+	"tt": [{
+		"s": "Odakyu.JROdakyuConnection.Hadano",
+		"d": "07:35"
+	}, {
+		"s": "Odakyu.JROdakyuConnection.Matsuda",
+		"a": "07:46"
+	}],
+	"nm": [{
+		"ja": "ふじさん 1号",
+		"en": "Fujisan 1",
+		"ko": "후지산 1",
+		"zh-Hans": "富士山 1",
+		"zh-Hant": "富士山 1"
+	}],
+	"v": "60000"
+}, {
+	"id": "Odakyu.JROdakyuConnection.0403M.Weekday",
+	"t": "Odakyu.JROdakyuConnection.0403M",
+	"r": "Odakyu.JROdakyuConnection",
+	"n": "0403M",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"ds": [
+		"JR-Central.Gotemba.Gotemba"
+	],
+	"pt": [
+		"Odakyu.Odawara.0403M.Weekday"
+	],
+	"nt": [
+		"JR-Central.Gotemba.3M.Weekday"
+	],
+	"tt": [{
+		"s": "Odakyu.JROdakyuConnection.Hadano",
+		"d": "11:38"
+	}, {
+		"s": "Odakyu.JROdakyuConnection.Matsuda",
+		"a": "11:50"
+	}],
+	"nm": [{
+		"ja": "ふじさん 3号",
+		"en": "Fujisan 3",
+		"ko": "후지산 3",
+		"zh-Hans": "富士山 3",
+		"zh-Hant": "富士山 3"
+	}],
+	"v": "60000"
+}, {
+	"id": "Odakyu.JROdakyuConnection.0405M.Weekday",
+	"t": "Odakyu.JROdakyuConnection.0405M",
+	"r": "Odakyu.JROdakyuConnection",
+	"n": "0405M",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"ds": [
+		"JR-Central.Gotemba.Gotemba"
+	],
+	"pt": [
+		"Odakyu.Odawara.0405M.Weekday"
+	],
+	"nt": [
+		"JR-Central.Gotemba.5M.Weekday"
+	],
+	"tt": [{
+		"s": "Odakyu.JROdakyuConnection.Hadano",
+		"d": "15:37"
+	}, {
+		"s": "Odakyu.JROdakyuConnection.Matsuda",
+		"a": "15:49"
+	}],
+	"nm": [{
+		"ja": "ふじさん 5号",
+		"en": "Fujisan 5",
+		"ko": "후지산 5",
+		"zh-Hans": "富士山 5",
+		"zh-Hant": "富士山 5"
+	}],
+	"v": "60000"
+}, {
+	"id": "Odakyu.JROdakyuConnection.0402M.Weekday",
+	"t": "Odakyu.JROdakyuConnection.0402M",
+	"r": "Odakyu.JROdakyuConnection",
+	"n": "0402M",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-Central.Gotemba.Gotemba"
+	],
+	"ds": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"pt": [
+		"JR-Central.Gotemba.0402M.Weekday",
+		"JR-Central.Gotemba.2M.Weekday"
+	],
+	"nt": [
+		"Odakyu.Odawara.0402M.Weekday"
+	],
+	"tt": [{
+		"s": "Odakyu.JROdakyuConnection.Matsuda",
+		"d": "09:15"
+	}, {
+		"s": "Odakyu.JROdakyuConnection.Hadano",
+		"a": "09:25"
+	}],
+	"nm": [{
+		"ja": "ふじさん 2号",
+		"en": "Fujisan 2",
+		"ko": "후지산 2",
+		"zh-Hans": "富士山 2",
+		"zh-Hant": "富士山 2"
+	}],
+	"v": "60000"
+}, {
+	"id": "Odakyu.JROdakyuConnection.0404M.Weekday",
+	"t": "Odakyu.JROdakyuConnection.0404M",
+	"r": "Odakyu.JROdakyuConnection",
+	"n": "0404M",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-Central.Gotemba.Gotemba"
+	],
+	"ds": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"pt": [
+		"JR-Central.Gotemba.0404M.Weekday",
+		"JR-Central.Gotemba.4M.Weekday"
+	],
+	"nt": [
+		"Odakyu.Odawara.0404M.Weekday"
+	],
+	"tt": [{
+		"s": "Odakyu.JROdakyuConnection.Matsuda",
+		"d": "13:16"
+	}, {
+		"s": "Odakyu.JROdakyuConnection.Hadano",
+		"a": "13:26"
+	}],
+	"nm": [{
+		"ja": "ふじさん 4号",
+		"en": "Fujisan 4",
+		"ko": "후지산 4",
+		"zh-Hans": "富士山 4",
+		"zh-Hant": "富士山 4"
+	}],
+	"v": "60000"
+}, {
+	"id": "Odakyu.JROdakyuConnection.0406M.Weekday",
+	"t": "Odakyu.JROdakyuConnection.0406M",
+	"r": "Odakyu.JROdakyuConnection",
+	"n": "0406M",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-Central.Gotemba.Gotemba"
+	],
+	"ds": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"pt": [
+		"JR-Central.Gotemba.0406M.Weekday",
+		"JR-Central.Gotemba.6M.Weekday"
+	],
+	"nt": [
+		"Odakyu.Odawara.0406M.Weekday"
+	],
+	"tt": [{
+		"s": "Odakyu.JROdakyuConnection.Matsuda",
+		"d": "17:57"
+	}, {
+		"s": "Odakyu.JROdakyuConnection.Hadano",
+		"a": "18:06"
+	}],
+	"nm": [{
+		"ja": "ふじさん 6号",
+		"en": "Fujisan 6",
+		"ko": "후지산 6",
+		"zh-Hans": "富士山 6",
+		"zh-Hant": "富士山 6"
+	}],
+	"v": "60000"
+}, {
+	"id": "Odakyu.JROdakyuConnection.0401M.SaturdayHoliday",
+	"t": "Odakyu.JROdakyuConnection.0401M",
+	"r": "Odakyu.JROdakyuConnection",
+	"n": "0401M",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"ds": [
+		"JR-Central.Gotemba.Gotemba"
+	],
+	"pt": [
+		"Odakyu.Odawara.0401M.SaturdayHoliday"
+	],
+	"nt": [
+		"JR-Central.Gotemba.1M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Odakyu.JROdakyuConnection.Hadano",
+		"d": "07:35"
+	}, {
+		"s": "Odakyu.JROdakyuConnection.Matsuda",
+		"a": "07:46"
+	}],
+	"nm": [{
+		"ja": "ふじさん 1号",
+		"en": "Fujisan 1",
+		"ko": "후지산 1",
+		"zh-Hans": "富士山 1",
+		"zh-Hant": "富士山 1"
+	}],
+	"v": "60000"
+}, {
+	"id": "Odakyu.JROdakyuConnection.0403M.SaturdayHoliday",
+	"t": "Odakyu.JROdakyuConnection.0403M",
+	"r": "Odakyu.JROdakyuConnection",
+	"n": "0403M",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"ds": [
+		"JR-Central.Gotemba.Gotemba"
+	],
+	"pt": [
+		"Odakyu.Odawara.0403M.SaturdayHoliday"
+	],
+	"nt": [
+		"JR-Central.Gotemba.3M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Odakyu.JROdakyuConnection.Hadano",
+		"d": "11:38"
+	}, {
+		"s": "Odakyu.JROdakyuConnection.Matsuda",
+		"a": "11:50"
+	}],
+	"nm": [{
+		"ja": "ふじさん 3号",
+		"en": "Fujisan 3",
+		"ko": "후지산 3",
+		"zh-Hans": "富士山 3",
+		"zh-Hant": "富士山 3"
+	}],
+	"v": "60000"
+}, {
+	"id": "Odakyu.JROdakyuConnection.0405M.SaturdayHoliday",
+	"t": "Odakyu.JROdakyuConnection.0405M",
+	"r": "Odakyu.JROdakyuConnection",
+	"n": "0405M",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"ds": [
+		"JR-Central.Gotemba.Gotemba"
+	],
+	"pt": [
+		"Odakyu.Odawara.0405M.SaturdayHoliday"
+	],
+	"nt": [
+		"JR-Central.Gotemba.5M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Odakyu.JROdakyuConnection.Hadano",
+		"d": "15:37"
+	}, {
+		"s": "Odakyu.JROdakyuConnection.Matsuda",
+		"a": "15:49"
+	}],
+	"nm": [{
+		"ja": "ふじさん 5号",
+		"en": "Fujisan 5",
+		"ko": "후지산 5",
+		"zh-Hans": "富士山 5",
+		"zh-Hant": "富士山 5"
+	}],
+	"v": "60000"
+}, {
+	"id": "Odakyu.JROdakyuConnection.0402M.SaturdayHoliday",
+	"t": "Odakyu.JROdakyuConnection.0402M",
+	"r": "Odakyu.JROdakyuConnection",
+	"n": "0402M",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-Central.Gotemba.Gotemba"
+	],
+	"ds": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"pt": [
+		"JR-Central.Gotemba.0402M.SaturdayHoliday",
+		"JR-Central.Gotemba.2M.SaturdayHoliday"
+	],
+	"nt": [
+		"Odakyu.Odawara.0402M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Odakyu.JROdakyuConnection.Matsuda",
+		"d": "09:15"
+	}, {
+		"s": "Odakyu.JROdakyuConnection.Hadano",
+		"a": "09:25"
+	}],
+	"nm": [{
+		"ja": "ふじさん 2号",
+		"en": "Fujisan 2",
+		"ko": "후지산 2",
+		"zh-Hans": "富士山 2",
+		"zh-Hant": "富士山 2"
+	}],
+	"v": "60000"
+}, {
+	"id": "Odakyu.JROdakyuConnection.0404M.SaturdayHoliday",
+	"t": "Odakyu.JROdakyuConnection.0404M",
+	"r": "Odakyu.JROdakyuConnection",
+	"n": "0404M",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-Central.Gotemba.Gotemba"
+	],
+	"ds": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"pt": [
+		"JR-Central.Gotemba.0404M.SaturdayHoliday",
+		"JR-Central.Gotemba.4M.SaturdayHoliday"
+	],
+	"nt": [
+		"Odakyu.Odawara.0404M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Odakyu.JROdakyuConnection.Matsuda",
+		"d": "13:16"
+	}, {
+		"s": "Odakyu.JROdakyuConnection.Hadano",
+		"a": "13:26"
+	}],
+	"nm": [{
+		"ja": "ふじさん 4号",
+		"en": "Fujisan 4",
+		"ko": "후지산 4",
+		"zh-Hans": "富士山 4",
+		"zh-Hant": "富士山 4"
+	}],
+	"v": "60000"
+}, {
+	"id": "Odakyu.JROdakyuConnection.0406M.SaturdayHoliday",
+	"t": "Odakyu.JROdakyuConnection.0406M",
+	"r": "Odakyu.JROdakyuConnection",
+	"n": "0406M",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Inbound",
+	"os": [
+		"JR-Central.Gotemba.Gotemba"
+	],
+	"ds": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"pt": [
+		"JR-Central.Gotemba.0406M.SaturdayHoliday",
+		"JR-Central.Gotemba.6M.SaturdayHoliday"
+	],
+	"nt": [
+		"Odakyu.Odawara.0406M.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "Odakyu.JROdakyuConnection.Matsuda",
+		"d": "17:57"
+	}, {
+		"s": "Odakyu.JROdakyuConnection.Hadano",
+		"a": "18:08"
+	}],
+	"nm": [{
+		"ja": "ふじさん 6号",
+		"en": "Fujisan 6",
+		"ko": "후지산 6",
+		"zh-Hans": "富士山 6",
+		"zh-Hant": "富士山 6"
+	}],
+	"v": "60000"
+}]

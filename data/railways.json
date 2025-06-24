@@ -1540,6 +1540,40 @@
 	"color": "#F68B1E",
 	"carComposition": 15
 }, {
+	"id": "JR-Central.Gotemba",
+	"title": {
+		"ja": "御殿場線",
+		"en": "Gotemba Line",
+		"ko": "고텐바 선",
+		"zh-Hans": "御殿场线",
+		"zh-Hant": "御殿場線"
+	},
+	"stations": [
+		"JR-Central.Gotemba.Kozu",
+		"JR-Central.Gotemba.ShimoSoga",
+		"JR-Central.Gotemba.KamiOi",
+		"JR-Central.Gotemba.SagamiKaneko",
+		"JR-Central.Gotemba.Matsuda",
+		"JR-Central.Gotemba.HigashiYamakita",
+		"JR-Central.Gotemba.Yamakita",
+		"JR-Central.Gotemba.Yaga",
+		"JR-Central.Gotemba.SurugaOyama",
+		"JR-Central.Gotemba.Ashigara",
+		"JR-Central.Gotemba.Gotemba",
+		"JR-Central.Gotemba.MinamiGotemba",
+		"JR-Central.Gotemba.Fujioka",
+		"JR-Central.Gotemba.Iwanami",
+		"JR-Central.Gotemba.Susono",
+		"JR-Central.Gotemba.NagaizumiNameri",
+		"JR-Central.Gotemba.ShimoTogari",
+		"JR-Central.Gotemba.Ooka",
+		"JR-Central.Gotemba.Numazu"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#3F743A",
+	"carComposition": 5
+}, {
 	"id": "TWR.Rinkai",
 	"title": {
 		"ja": "りんかい線",
@@ -3797,6 +3831,23 @@
 	"color": "#2288CC",
 	"carComposition": 10,
 	"dynamic": true
+}, {
+	"id": "Odakyu.JROdakyuConnection",
+	"title": {
+		"ja": "小田原線",
+		"en": "Odawara Line",
+		"ko": "오다와라 선",
+		"zh-Hans": "小田原线",
+		"zh-Hant": "小田原線"
+	},
+	"stations": [
+		"Odakyu.JROdakyuConnection.Hadano",
+		"Odakyu.JROdakyuConnection.Matsuda"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#2288CC",
+	"carComposition": 6
 }, {
 	"id": "OdakyuHakone.HakoneTozan",
 	"title": {
