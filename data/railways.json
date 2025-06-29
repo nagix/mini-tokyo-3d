@@ -1521,6 +1521,29 @@
 	"carComposition": 5,
 	"dynamic": true
 }, {
+	"id": "JR-East.Nikko",
+	"title": {
+		"ja": "日光線",
+		"en": "Nikko Line",
+		"ko": "닛코 선",
+		"zh-Hans": "日光线",
+		"zh-Hant": "日光線"
+	},
+	"stations": [
+		"JR-East.Nikko.Utsunomiya",
+		"JR-East.Nikko.Tsuruta",
+		"JR-East.Nikko.Kanuma",
+		"JR-East.Nikko.Fubasami",
+		"JR-East.Nikko.ShimotsukeOsawa",
+		"JR-East.Nikko.Imaichi",
+		"JR-East.Nikko.Nikko"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#880022",
+	"carComposition": 3,
+	"dynamic": true
+}, {
 	"id": "JR-Central.Tokaido",
 	"title": {
 		"ja": "東海道線",
