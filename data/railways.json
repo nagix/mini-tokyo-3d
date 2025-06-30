@@ -4478,6 +4478,37 @@
 	"color": "#FFD400",
 	"carComposition": 2
 }, {
+	"id": "KashimaRinkai.OaraiKashima",
+	"title": {
+		"ja": "大洗鹿島線",
+		"en": "Oarai-Kashima Line",
+		"ko": "오아라이카시마 선",
+		"zh-Hans": "大洗鹿岛线",
+		"zh-Hant": "大洗鹿島線"
+	},
+	"stations": [
+		"KashimaRinkai.OaraiKashima.Mito",
+		"KashimaRinkai.OaraiKashima.HigashiMito",
+		"KashimaRinkai.OaraiKashima.Tsunezumi",
+		"KashimaRinkai.OaraiKashima.Oarai",
+		"KashimaRinkai.OaraiKashima.Hinuma",
+		"KashimaRinkai.OaraiKashima.KashimaAsahi",
+		"KashimaRinkai.OaraiKashima.Tokushuku",
+		"KashimaRinkai.OaraiKashima.ShinHokota",
+		"KashimaRinkai.OaraiKashima.Kitaurakohan",
+		"KashimaRinkai.OaraiKashima.Taiyo",
+		"KashimaRinkai.OaraiKashima.Kashimanada",
+		"KashimaRinkai.OaraiKashima.KashimaOno",
+		"KashimaRinkai.OaraiKashima.ChojagahamaShiosaiHamanasuKoenmae",
+		"KashimaRinkai.OaraiKashima.Koyadai",
+		"KashimaRinkai.OaraiKashima.KashimaSoccerStadium",
+		"KashimaRinkai.OaraiKashima.Kashimajingu"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#E54848",
+	"carComposition": 2
+}, {
 	"id": "EER.Enoshima",
 	"title": {
 		"ja": "江ノ島電鉄線",
