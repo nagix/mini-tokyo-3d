@@ -4509,6 +4509,40 @@
 	"color": "#E54848",
 	"carComposition": 2
 }, {
+	"id": "UtsunomiyaLightRail.Lightline",
+	"title": {
+		"ja": "ライトライン",
+		"en": "LIGHTLINE",
+		"ko": "라이트라인",
+		"zh-Hans": "LIGHTLINE",
+		"zh-Hant": "LIGHTLINE"
+	},
+	"stations": [
+		"UtsunomiyaLightRail.Lightline.UtsunomiyaStationEast",
+		"UtsunomiyaLightRail.Lightline.HigashiShukugo",
+		"UtsunomiyaLightRail.Lightline.EkihigashiPark",
+		"UtsunomiyaLightRail.Lightline.Mine",
+		"UtsunomiyaLightRail.Lightline.Yoto3Chome",
+		"UtsunomiyaLightRail.Lightline.UtsunomiyaUniversityYotoCampus",
+		"UtsunomiyaLightRail.Lightline.Hiraishi",
+		"UtsunomiyaLightRail.Lightline.HiraishiChuoElementarySchool",
+		"UtsunomiyaLightRail.Lightline.TobiyamaCastleSite",
+		"UtsunomiyaLightRail.Lightline.SeiryoHighSchool",
+		"UtsunomiyaLightRail.Lightline.KiyoharaDistrictCivicCenter",
+		"UtsunomiyaLightRail.Lightline.GreenStadium",
+		"UtsunomiyaLightRail.Lightline.YuinomoriWest",
+		"UtsunomiyaLightRail.Lightline.YuinomoriCentral",
+		"UtsunomiyaLightRail.Lightline.YuinomoriEast",
+		"UtsunomiyaLightRail.Lightline.Hagadai",
+		"UtsunomiyaLightRail.Lightline.HagaIndustrialParkManagementCenter",
+		"UtsunomiyaLightRail.Lightline.KashinomoriPark",
+		"UtsunomiyaLightRail.Lightline.HagaTakanezawaIndustrialPark"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#FADA00",
+	"carComposition": 3
+}, {
 	"id": "EER.Enoshima",
 	"title": {
 		"ja": "江ノ島電鉄線",

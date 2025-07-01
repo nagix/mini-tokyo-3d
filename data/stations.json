@@ -27113,6 +27113,234 @@
 	"ascending": null,
 	"descending": "Outbound"
 }, {
+	"id": "UtsunomiyaLightRail.Lightline.UtsunomiyaStationEast",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.8995751, 36.5590222],
+	"title": {
+		"ja": "宇都宮駅東口",
+		"en": "Utsunomiya Station East",
+		"ko": "우쓰노미야역 동구",
+		"zh-Hans": "宇都宫站东口",
+		"zh-Hant": "宇都宮站東口",
+		"ja-Wiki": "宇都宮駅"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.HigashiShukugo",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.903931, 36.5582712],
+	"title": {
+		"ja": "東宿郷",
+		"en": "Higashi-Shukugo",
+		"ko": "히가시주쿠고",
+		"zh-Hans": "东宿乡",
+		"zh-Hant": "東宿鄉",
+		"ja-Wiki": "東宿郷停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.EkihigashiPark",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.9080894, 36.5579668],
+	"title": {
+		"ja": "駅東公園前",
+		"en": "Ekihigashi Park",
+		"ko": "에키히가시 공원 앞",
+		"zh-Hans": "驿东公园前",
+		"zh-Hant": "驛東公園前",
+		"ja-Wiki": "駅東公園前停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.Mine",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.9162772, 36.5575329],
+	"title": {
+		"ja": "峰",
+		"en": "Mine",
+		"ko": "미네",
+		"zh-Hans": "峰",
+		"zh-Hant": "峰",
+		"ja-Wiki": "峰停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.Yoto3Chome",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.9232319, 36.5572788],
+	"title": {
+		"ja": "陽東3丁目",
+		"en": "Yoto 3-chome",
+		"ko": "양동3초메",
+		"zh-Hans": "阳东3丁目",
+		"zh-Hant": "陽東3丁目",
+		"ja-Wiki": "陽東3丁目停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.UtsunomiyaUniversityYotoCampus",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.9301903, 36.5570446],
+	"title": {
+		"ja": "宇都宮大学陽東キャンパス",
+		"en": "Utsunomiya University Yoto Campus",
+		"ko": "우츠노미야 대학 양동 캠퍼스",
+		"zh-Hans": "宇都宫大学阳东校园",
+		"zh-Hant": "宇都宮大學陽東校區",
+		"ja-Wiki": "宇都宮大学陽東キャンパス停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.Hiraishi",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.9392659, 36.5550683],
+	"title": {
+		"ja": "平石",
+		"en": "Hiraishi",
+		"ko": "히라이시",
+		"zh-Hans": "平石",
+		"zh-Hant": "平石",
+		"ja-Wiki": "平石停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.HiraishiChuoElementarySchool",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.9447606, 36.5548335],
+	"title": {
+		"ja": "平石中央小学校前",
+		"en": "Hiraishi-chuo Elementary School",
+		"ko": "히라이시 추오 초등학교 앞",
+		"zh-Hans": "平石中央小学校前",
+		"zh-Hant": "平石中央小學校前",
+		"ja-Wiki": "平石中央小学校前停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.TobiyamaCastleSite",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.9634208, 36.5483643],
+	"title": {
+		"ja": "飛山城跡",
+		"en": "Tobiyama Castle Site",
+		"ko": "토비야마 성터",
+		"zh-Hans": "飞山城迹",
+		"zh-Hant": "飛山城跡",
+		"ja-Wiki": "飛山城跡停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.SeiryoHighSchool",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.9762998, 36.5449489],
+	"title": {
+		"ja": "清陵高校前",
+		"en": "Seiryo High School",
+		"ko": "기요하라고등학교 앞",
+		"zh-Hans": "清陵高校前",
+		"zh-Hant": "清陵高校前",
+		"ja-Wiki": "清陵高校前停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.KiyoharaDistrictCivicCenter",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.9842429, 36.5476408],
+	"title": {
+		"ja": "清原地区市民センター前",
+		"en": "Kiyohara District Civic Center",
+		"ko": "기요하라지구 시민회관 앞",
+		"zh-Hans": "清原地区市民中心前",
+		"zh-Hant": "清原地區市民中心前",
+		"ja-Wiki": "清原地区市民センター前停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.GreenStadium",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.983171, 36.5535848],
+	"title": {
+		"ja": "グリーンスタジアム前",
+		"en": "Green Stadium",
+		"ko": "그린스타디움 앞",
+		"zh-Hans": "Green Stadium前",
+		"zh-Hant": "Green Stadium前",
+		"ja-Wiki": "グリーンスタジアム前停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.YuinomoriWest",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.9872795, 36.5674513],
+	"title": {
+		"ja": "ゆいの杜西",
+		"en": "Yuinomori-west",
+		"ko": "유이노샤 니시",
+		"zh-Hans": "结之杜西",
+		"zh-Hant": "結之杜西",
+		"ja-Wiki": "ゆいの杜西停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.YuinomoriCentral",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.9929737, 36.5677248],
+	"title": {
+		"ja": "ゆいの杜中央",
+		"en": "Yuinomori-central",
+		"ko": "유이노샤 추오",
+		"zh-Hans": "结之杜中央",
+		"zh-Hant": "結之杜中央",
+		"ja-Wiki": "ゆいの杜中央停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.YuinomoriEast",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [139.9987885, 36.5676112],
+	"title": {
+		"ja": "ゆいの杜東",
+		"en": "Yuinomori-east",
+		"ko": "유이노샤 히가시",
+		"zh-Hans": "结之杜东",
+		"zh-Hant": "結之杜東",
+		"ja-Wiki": "ゆいの杜東停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.Hagadai",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [140.0064986, 36.566112],
+	"title": {
+		"ja": "芳賀台",
+		"en": "Hagadai",
+		"ko": "하가타이",
+		"zh-Hans": "芳贺台",
+		"zh-Hant": "芳賀台",
+		"ja-Wiki": "芳賀台停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.HagaIndustrialParkManagementCenter",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [140.0106667, 36.5649729],
+	"title": {
+		"ja": "芳賀町工業団地管理センター前",
+		"en": "Haga Industrial Park Management Center",
+		"ko": "하가초 산업단지 관리센터 앞",
+		"zh-Hans": "芳贺町工业团地管理中心前",
+		"zh-Hant": "芳賀町工業團地管理中心前",
+		"ja-Wiki": "芳賀町工業団地管理センター前停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.KashinomoriPark",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [140.0145609, 36.5723821],
+	"title": {
+		"ja": "かしの森公園前",
+		"en": "Kashinomori Park",
+		"ko": "카시노모리 공원 앞",
+		"zh-Hans": "㭴之森公园前",
+		"zh-Hant": "樫之森公園前",
+		"ja-Wiki": "かしの森公園前停留場"
+	}
+}, {
+	"id": "UtsunomiyaLightRail.Lightline.HagaTakanezawaIndustrialPark",
+	"railway": "UtsunomiyaLightRail.Lightline",
+	"coord": [140.0120077, 36.5784382],
+	"title": {
+		"ja": "芳賀・高根沢工業団地",
+		"en": "Haga Takanezawa Industrial Park",
+		"ko": "하가・타카네자와 공업단지",
+		"zh-Hans": "芳贺·高根泽工业团地",
+		"zh-Hant": "芳賀·高根澤工業團地",
+		"ja-Wiki": "芳賀・高根沢工業団地停留場"
+	}
+}, {
 	"id": "EER.Enoshima.Fujisawa",
 	"railway": "EER.Enoshima",
 	"coord": [139.4871318, 35.3371925],
