@@ -8245,19 +8245,33 @@
 	},
 	"facilities": ["stairs"]
 }, {
-	"id": "TokyoMetro.Ikebukuro.C1",
+	"id": "TokyoMetro.Ikebukuro.C1a",
 	"coord": [139.7065942, 35.731967],
 	"title": {
-		"en": "C1"
+		"en": "C1a"
 	},
 	"description": {
-		"ja": "出口C1",
-		"en": "Exit C1",
-		"ko": "출구C1",
-		"zh-Hans": "出口C1",
-		"zh-Hant": "出口C1"
+		"ja": "出口C1a",
+		"en": "Exit C1a",
+		"ko": "출구C1a",
+		"zh-Hans": "出口C1a",
+		"zh-Hant": "出口C1a"
 	},
 	"facilities": ["stairs"]
+}, {
+	"id": "TokyoMetro.Ikebukuro.C1b",
+	"coord": [139.706851, 35.7319402],
+	"title": {
+		"en": "C1b"
+	},
+	"description": {
+		"ja": "出口C1b",
+		"en": "Exit C1b",
+		"ko": "출구C1b",
+		"zh-Hans": "出口C1b",
+		"zh-Hant": "出口C1b"
+	},
+	"facilities": ["stairs", "elevator"]
 }, {
 	"id": "TokyoMetro.Ikebukuro.C2",
 	"coord": [139.7065245, 35.7317722],
