@@ -7072,6 +7072,13 @@
 		"zh-Hans": "十日市场",
 		"zh-Hant": "十日市場",
 		"ja-Wiki": "十日市場駅 (神奈川県)"
+	},
+	"utitle": {
+		"ja": "十日市場 (神奈川)",
+		"en": "Tokaichiba (Kanagawa)",
+		"ko": "도카이치바 (가나가와)",
+		"zh-Hans": "十日市场 (神奈川)",
+		"zh-Hant": "十日市場 (神奈川)"
 	}
 }, {
 	"id": "JR-East.Yokohama.Nagatsuta",
@@ -11032,6 +11039,13 @@
 		"zh-Hans": "赤坂",
 		"zh-Hant": "赤坂",
 		"ja-Wiki": "赤坂駅 (東京都)"
+	},
+	"utitle": {
+		"ja": "赤坂 (東京)",
+		"en": "Akasaka (Tokyo)",
+		"ko": "아카사카 (도쿄)",
+		"zh-Hans": "赤坂 (东京)",
+		"zh-Hant": "赤坂 (東京)"
 	},
 	"exit": [
 		"TokyoMetro.Akasaka.1",
@@ -27639,6 +27653,220 @@
 		"zh-Hant": "大雄山"
 	}
 }, {
+	"id": "Fujikyu.Fujikyu.Otsuki",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.942183, 35.6129342],
+	"title": {
+		"ja": "大月",
+		"en": "Otsuki",
+		"ko": "오쓰키",
+		"zh-Hans": "大月",
+		"zh-Hant": "大月"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Kamiotsuki",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.9379864, 35.6093303],
+	"title": {
+		"ja": "上大月",
+		"en": "Kamiotsuki",
+		"ko": "가미오쓰키",
+		"zh-Hans": "上大月",
+		"zh-Hant": "上大月"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Tanokura",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.931309, 35.5932011],
+	"title": {
+		"ja": "田野倉",
+		"en": "Tanokura",
+		"ko": "다노쿠라",
+		"zh-Hans": "田野仓",
+		"zh-Hant": "田野倉"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Kasei",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.929062, 35.575108],
+	"title": {
+		"ja": "禾生",
+		"en": "Kasei",
+		"ko": "가세이",
+		"zh-Hans": "禾生",
+		"zh-Hant": "禾生"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Akasaka",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.9161237, 35.5662116],
+	"title": {
+		"ja": "赤坂",
+		"en": "Akasaka",
+		"ko": "아카사카",
+		"zh-Hans": "赤坂",
+		"zh-Hant": "赤坂",
+		"ja-Wiki": "赤坂駅 (山梨県)"
+	},
+	"utitle": {
+		"ja": "赤坂 (山梨)",
+		"en": "Akasaka (Yamanashi)",
+		"ko": "아카사카 (야마나시)",
+		"zh-Hans": "赤坂 (山梨)",
+		"zh-Hant": "赤坂 (山梨)"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Tsurushi",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.9075261, 35.5570571],
+	"title": {
+		"ja": "都留市",
+		"en": "Tsurushi",
+		"ko": "쓰루시",
+		"zh-Hans": "都留市",
+		"zh-Hant": "都留市"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Yamuramachi",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.9046798, 35.5505912],
+	"title": {
+		"ja": "谷村町",
+		"en": "Yamuramachi",
+		"ko": "야무라마치",
+		"zh-Hans": "谷村町",
+		"zh-Hant": "谷村町"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Tsurubunkadaigakumae",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.8965302, 35.5425045],
+	"title": {
+		"ja": "都留文科大学前",
+		"en": "Tsurubunkadaigakumae",
+		"ko": "쓰루분카다이가쿠마에",
+		"zh-Hans": "都留文科大学前",
+		"zh-Hant": "都留文科大學前"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Tokaichiba",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.8875113, 35.5388986],
+	"title": {
+		"ja": "十日市場",
+		"en": "Tokaichiba",
+		"ko": "도카이치바",
+		"zh-Hans": "十日市场",
+		"zh-Hant": "十日市場",
+		"ja-Wiki": "十日市場駅 (山梨県)"
+	},
+	"utitle": {
+		"ja": "十日市場 (山梨)",
+		"en": "Tokaichiba (Yamanashi)",
+		"ko": "도카이치바 (야마나시)",
+		"zh-Hans": "十日市场 (山梨)",
+		"zh-Hant": "十日市場 (山梨)"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Higashikatsura",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.8708959, 35.5364296],
+	"title": {
+		"ja": "東桂",
+		"en": "Higashikatsura",
+		"ko": "히가시카쓰라",
+		"zh-Hans": "东桂",
+		"zh-Hant": "東桂"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Mitsutoge",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.8453597, 35.5241802],
+	"title": {
+		"ja": "三つ峠",
+		"en": "Mitsutoge",
+		"ko": "미쓰토게",
+		"zh-Hans": "三峠",
+		"zh-Hant": "三峠"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Kotobuki",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.8253169, 35.5083581],
+	"title": {
+		"ja": "寿",
+		"en": "Kotobuki",
+		"ko": "고토부키",
+		"zh-Hans": "寿",
+		"zh-Hant": "壽"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Yoshiikeonsenmae",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.812054, 35.502056],
+	"title": {
+		"ja": "葭池温泉前",
+		"en": "Yoshiikeonsenmae",
+		"ko": "요시이케온센마에",
+		"zh-Hans": "葭池温泉前",
+		"zh-Hant": "葭池溫泉前"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Shimoyoshida",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.8036172, 35.4979775],
+	"title": {
+		"ja": "下吉田",
+		"en": "Shimoyoshida",
+		"ko": "시모요시다",
+		"zh-Hans": "下吉田",
+		"zh-Hant": "下吉田"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Gekkoji",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.7980923, 35.4931826],
+	"title": {
+		"ja": "月江寺",
+		"en": "Gekkoji",
+		"ko": "겟코지",
+		"zh-Hans": "月江寺",
+		"zh-Hant": "月江寺"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.MtFuji",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.7958212, 35.4835487],
+	"title": {
+		"ja": "富士山",
+		"en": "Mt. Fuji",
+		"ko": "후지산",
+		"zh-Hans": "富士山",
+		"zh-Hant": "富士山"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.FujikyuHighland",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.7818557, 35.4895033],
+	"title": {
+		"ja": "富士急ハイランド",
+		"en": "Fujikyu-Highland",
+		"ko": "후지큐 하이랜드",
+		"zh-Hans": "富士急乐园",
+		"zh-Hant": "富士急樂園"
+	}
+}, {
+	"id": "Fujikyu.Fujikyu.Kawaguchiko",
+	"railway": "Fujikyu.Fujikyu",
+	"coord": [138.7689798, 35.4980327],
+	"title": {
+		"ja": "河口湖",
+		"en": "Kawaguchiko",
+		"ko": "가와구치코",
+		"zh-Hans": "河口湖",
+		"zh-Hant": "河口湖"
+	}
+}, {
 	"id": "Chichibu.Chichibu.Hanyu",
 	"railway": "Chichibu.Chichibu",
 	"coord": [139.5339177, 36.1704464],
@@ -29446,15 +29674,6 @@
 		"ko": "다카마쓰",
 		"zh-Hans": "高松",
 		"zh-Hant": "高松"
-	}
-}, {
-	"id": "Fujikyu.Fujikyu.Kawaguchiko",
-	"title": {
-		"ja": "河口湖",
-		"en": "Kawaguchiko",
-		"ko": "가와구치코",
-		"zh-Hans": "河口湖",
-		"zh-Hant": "河口湖"
 	}
 }, {
 	"id": "Izukyu.Izukyu.Izukogen",

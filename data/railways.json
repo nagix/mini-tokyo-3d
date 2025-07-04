@@ -4600,6 +4600,39 @@
 	"color": "#2A639D",
 	"carComposition": 3
 }, {
+	"id": "Fujikyu.Fujikyu",
+	"title": {
+		"ja": "富士急行線",
+		"en": "Fujikyu Line",
+		"ko": "후지 급행선",
+		"zh-Hans": "富士急行线",
+		"zh-Hant": "富士急行線"
+	},
+	"stations": [
+		"Fujikyu.Fujikyu.Otsuki",
+		"Fujikyu.Fujikyu.Kamiotsuki",
+		"Fujikyu.Fujikyu.Tanokura",
+		"Fujikyu.Fujikyu.Kasei",
+		"Fujikyu.Fujikyu.Akasaka",
+		"Fujikyu.Fujikyu.Tsurushi",
+		"Fujikyu.Fujikyu.Yamuramachi",
+		"Fujikyu.Fujikyu.Tsurubunkadaigakumae",
+		"Fujikyu.Fujikyu.Tokaichiba",
+		"Fujikyu.Fujikyu.Higashikatsura",
+		"Fujikyu.Fujikyu.Mitsutoge",
+		"Fujikyu.Fujikyu.Kotobuki",
+		"Fujikyu.Fujikyu.Yoshiikeonsenmae",
+		"Fujikyu.Fujikyu.Shimoyoshida",
+		"Fujikyu.Fujikyu.Gekkoji",
+		"Fujikyu.Fujikyu.MtFuji",
+		"Fujikyu.Fujikyu.FujikyuHighland",
+		"Fujikyu.Fujikyu.Kawaguchiko"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#3B85E0",
+	"carComposition": 3
+}, {
 	"id": "Chichibu.Chichibu",
 	"title": {
 		"ja": "秩父本線",
