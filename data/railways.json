@@ -4478,6 +4478,31 @@
 	"color": "#FFD400",
 	"carComposition": 2
 }, {
+	"id": "Choshi.Choshi",
+	"title": {
+		"ja": "銚子電鉄線",
+		"en": "Choshi Electric Railway Line",
+		"ko": "조시 전기철도선",
+		"zh-Hans": "铫子电铁线",
+		"zh-Hant": "銚子電鐵線"
+	},
+	"stations": [
+		"Choshi.Choshi.Choshi",
+		"Choshi.Choshi.Nakanocho",
+		"Choshi.Choshi.Kannon",
+		"Choshi.Choshi.MotoChoshi",
+		"Choshi.Choshi.KasagamiKurohae",
+		"Choshi.Choshi.NishiAshikajima",
+		"Choshi.Choshi.Ashikajima",
+		"Choshi.Choshi.Kimigahama",
+		"Choshi.Choshi.Inuboh",
+		"Choshi.Choshi.Tokawa"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#B00000",
+	"carComposition": 2
+}, {
 	"id": "KashimaRinkai.OaraiKashima",
 	"title": {
 		"ja": "大洗鹿島線",
