@@ -4625,6 +4625,37 @@
 	"color": "#2A639D",
 	"carComposition": 3
 }, {
+	"id": "Izukyu.Izukyu",
+	"title": {
+		"ja": "伊豆急行線",
+		"en": "Fujikyu Line",
+		"ko": "후지 급행선",
+		"zh-Hans": "富士急行线",
+		"zh-Hant": "富士急行線"
+	},
+	"stations": [
+		"Izukyu.Izukyu.Ito",
+		"Izukyu.Izukyu.MinamiIto",
+		"Izukyu.Izukyu.Kawana",
+		"Izukyu.Izukyu.Futo",
+		"Izukyu.Izukyu.JogasakiKaigan",
+		"Izukyu.Izukyu.Izukogen",
+		"Izukyu.Izukyu.IzuOkawa",
+		"Izukyu.Izukyu.IzuHokkawa",
+		"Izukyu.Izukyu.IzuAtagawa",
+		"Izukyu.Izukyu.KataseShirata",
+		"Izukyu.Izukyu.IzuInatori",
+		"Izukyu.Izukyu.ImaihamaKaigan",
+		"Izukyu.Izukyu.Kawazu",
+		"Izukyu.Izukyu.Inazusa",
+		"Izukyu.Izukyu.Rendaiji",
+		"Izukyu.Izukyu.IzukyuShimoda"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#00BFFF",
+	"carComposition": 9
+}, {
 	"id": "Fujikyu.Fujikyu",
 	"title": {
 		"ja": "富士急行線",
