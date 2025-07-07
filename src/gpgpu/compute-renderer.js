@@ -147,7 +147,7 @@ export default class {
             modelOrigin = me.modelOrigin,
             items = [];
         let size = 0,
-            maxCount = 0;
+            maxCount = 1;
 
         for (const feature of features) {
             const coords = feature.geometry.coordinates,
@@ -162,8 +162,8 @@ export default class {
 
         me.loopCount = Math.ceil(Math.log2(maxCount));
 
-        const textureHeight0 = Math.ceil(items.length / textureWidth),
-            textureHeight1 = Math.ceil(size / textureWidth),
+        const textureHeight0 = Math.ceil(items.length / textureWidth) || 1,
+            textureHeight1 = Math.ceil(size / textureWidth) || 1,
             array0 = new Uint32Array(textureWidth * textureHeight0 * 4),
             array1 = new Float32Array(textureWidth * textureHeight1 * 2);
         let offset = 0;
@@ -204,7 +204,7 @@ export default class {
     loadColors(colors) {
         const me = this,
             textureWidth = me.textureWidth,
-            textureHeight = Math.ceil((colors.length + MAX_EXTRA_COLORS) * 4 / textureWidth),
+            textureHeight = Math.ceil((colors.length + MAX_EXTRA_COLORS) * 4 / textureWidth) || 1,
             array = new Uint8Array(textureWidth * textureHeight * 16);
         let offset = 0;
 
