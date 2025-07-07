@@ -1686,9 +1686,10 @@ export default class extends Evented {
 
         for (const gtfs of gtfsId ? [me.gtfs.get(gtfsId)] : me.gtfs.values()) {
             for (const trip of gtfs.tripLookup.values()) {
-                const departureTimes = trip.departureTimes;
+                const departureTimes = trip.departureTimes,
+                    route = gtfs.routeLookup.get(trip.route);
 
-                if (departureTimes[0] <= now && now <= departureTimes[departureTimes.length - 1] && !gtfs.activeBusLookup.has(trip.id)) {
+                if (departureTimes[0] <= now && now <= departureTimes[departureTimes.length - 1] && !gtfs.activeBusLookup.has(trip.id) && route && !route.hidden) {
                     let offset = 0;
                     const feature = gtfs.featureLookup.get(trip.shape);
 
@@ -2394,10 +2395,19 @@ export default class extends Evented {
                                 'busroute-highlighted': ['string', ['feature-state', 'highlight'], ['get', 'color']]
                             }[key],
                             'line-opacity': {
-                                'busroute': 1,
+                                'busroute': [
+                                    'case',
+                                    ['to-boolean', ['feature-state', 'hidden']],
+                                    0,
+                                    1
+                                ],
                                 'busroute-highlighted': [
                                     'case',
-                                    ['to-boolean', ['feature-state', 'highlight']],
+                                    [
+                                        'all',
+                                        ['to-boolean', ['feature-state', 'highlight']],
+                                        ['!', ['to-boolean', ['feature-state', 'hidden']]]
+                                    ],
                                     1,
                                     0
                                 ]
@@ -2516,6 +2526,8 @@ export default class extends Evented {
         for (const gtfs of deleting.values()) {
             deleteGtfs(gtfs);
         }
+
+        me.updateBusRouteVisibility();
     }
 
     refreshRealtimeTrainData() {
@@ -2859,7 +2871,7 @@ export default class extends Evented {
         const me = this;
 
         for (const gtfs of gtfsId ? [me.gtfs.get(gtfsId)] : me.gtfs.values()) {
-            const {id: gtfsId, vehiclePositionUrl, featureLookup, stopLookup, tripLookup, activeBusLookup, realtimeBuses} = gtfs;
+            const {id: gtfsId, vehiclePositionUrl, featureLookup, stopLookup, routeLookup, tripLookup, activeBusLookup, realtimeBuses} = gtfs;
 
             if (!vehiclePositionUrl) {
                 me.refreshBuses(gtfsId);
@@ -2885,9 +2897,10 @@ export default class extends Evented {
                     }
 
                     const busTrip = tripLookup.get(tripId),
-                        feature = busTrip && featureLookup.get(busTrip.shape);
+                        feature = busTrip && featureLookup.get(busTrip.shape),
+                        route = busTrip && routeLookup.get(busTrip.route);
 
-                    if (!busTrip || !feature) {
+                    if (!busTrip || !feature || !route || route.hidden) {
                         continue;
                     }
 
@@ -3543,6 +3556,40 @@ export default class extends Evented {
         }
     }
 
+    updateBusRouteVisibility() {
+        const me = this,
+            map = me.map;
+
+        for (const gtfs of me.gtfs.values()) {
+            const source = gtfs.id,
+                shapes = new Set();
+
+            for (const route of gtfs.routeLookup.values()) {
+                if (!route.hidden) {
+                    for (const shape of route.shapes) {
+                        shapes.add(shape);
+                    }
+                }
+            }
+            for (const id of gtfs.featureLookup.keys()) {
+                if (shapes.has(id)) {
+                    map.removeFeatureState({source, id}, 'hidden');
+                } else {
+                    map.setFeatureState({source, id}, {hidden: true});
+                }
+            }
+            for (const bus of gtfs.activeBusLookup.values()) {
+                const route = gtfs.routeLookup.get(bus.trip.route);
+
+                if (!route || route.hidden) {
+                    me.stopBus(bus);
+                }
+            }
+        }
+        delete me.lastRefresh;
+        delete me.lastRealtimeCheck;
+    }
+
     updateBusRouteHighlight(object) {
         const me = this,
             {map, markedObject, trackedObject} = me,
@@ -3557,7 +3604,7 @@ export default class extends Evented {
 
             map.setFeatureState({source, id}, {highlight: color || gtfs.color});
         } else {
-            map.removeFeatureState({source, id});
+            map.removeFeatureState({source, id}, 'highlight');
         }
     }
 
