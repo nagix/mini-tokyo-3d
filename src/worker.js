@@ -512,7 +512,7 @@ function getRoutes(routes, trips, translations) {
             longName,
         color,
         textColor,
-        shapes: Array.from(shapes.get(id).values())
+        shapes: Array.from((shapes.get(id) || new Set()).values())
     }));
 }
 
