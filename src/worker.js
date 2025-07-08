@@ -516,8 +516,8 @@ function getRoutes(routes, trips, translations) {
     }));
 }
 
-function getTrips(trips, services, serviceExceptions, stopTimeLookup, translations) {
-    const serviceSet = (services || new Set()).union(serviceExceptions[0]).difference(serviceExceptions[1]),
+function getTrips(trips, services = new Set(), serviceExceptions = [new Set(), new Set()], stopTimeLookup, translations) {
+    const serviceSet = services.union(serviceExceptions[0]).difference(serviceExceptions[1]),
         result = [];
 
     for (const {id, service, route, shape, headsign} of trips) {
