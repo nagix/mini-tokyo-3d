@@ -2392,7 +2392,7 @@ export default class extends Evented {
                         paint: {
                             'line-color': {
                                 'busroute': ['get', 'color'],
-                                'busroute-highlighted': ['string', ['feature-state', 'highlight'], ['get', 'color']]
+                                'busroute-highlighted': ['string', ['feature-state', 'route-highlight'], ['feature-state', 'trip-highlight'], ['get', 'color']]
                             }[key],
                             'line-opacity': {
                                 'busroute': [
@@ -2405,7 +2405,11 @@ export default class extends Evented {
                                     'case',
                                     [
                                         'all',
-                                        ['to-boolean', ['feature-state', 'highlight']],
+                                        [
+                                            'any',
+                                            ['to-boolean', ['feature-state', 'route-highlight']],
+                                            ['to-boolean', ['feature-state', 'trip-highlight']],
+                                        ],
                                         ['!', ['to-boolean', ['feature-state', 'hidden']]]
                                     ],
                                     1,
@@ -3151,7 +3155,7 @@ export default class extends Evented {
                 markedObject.outline = 0;
                 trafficLayer.updateObject(markedObject);
                 if (markedObject.type === 'bus') {
-                    me.updateBusRouteHighlight(markedObject);
+                    me.updateBusTripHighlight(markedObject);
                 }
             } else {
                 me.removeStationOutline('stations-marked');
@@ -3171,7 +3175,7 @@ export default class extends Evented {
                 object.outline = 1;
                 trafficLayer.updateObject(object);
                 if (object.type === 'bus') {
-                    me.updateBusRouteHighlight(object);
+                    me.updateBusTripHighlight(object);
                 }
             } else {
                 me.addStationOutline(object, 'stations-marked');
@@ -3245,7 +3249,7 @@ export default class extends Evented {
                 trackedObject.outline = 0;
                 me.trafficLayer.updateObject(trackedObject);
                 if (trackedObject.type === 'bus') {
-                    me.updateBusRouteHighlight(trackedObject);
+                    me.updateBusTripHighlight(trackedObject);
                 }
                 me.fire({type: 'deselection', deselection: prevObject.id});
             } else if (isStation(trackedObject)) {
@@ -3311,7 +3315,7 @@ export default class extends Evented {
                 object.outline = 1;
                 me.trafficLayer.updateObject(object);
                 if (object.type === 'bus') {
-                    me.updateBusRouteHighlight(object);
+                    me.updateBusTripHighlight(object);
                 }
                 me.fire({type: 'selection', selection: _object.id});
             } else if (isStation(object)) {
@@ -3590,7 +3594,27 @@ export default class extends Evented {
         delete me.lastRealtimeCheck;
     }
 
-    updateBusRouteHighlight(object) {
+    updateBusRouteHighlight(gtfsId, routeId) {
+        const me = this,
+            map = me.map;
+
+        if (gtfsId) {
+            const gtfs = me.gtfs.get(gtfsId),
+                route = gtfs.routeLookup.get(routeId);
+
+            for (const id of route.shapes) {
+                map.setFeatureState({source: gtfsId, id}, {'route-highlight': route.color || gtfs.color});
+            }
+        } else {
+            for (const gtfs of me.gtfs.values()) {
+                for (const id of gtfs.featureLookup.keys()) {
+                    map.removeFeatureState({source: gtfs.id, id}, 'route-highlight');
+                }
+            }
+        }
+    }
+
+    updateBusTripHighlight(object) {
         const me = this,
             {map, markedObject, trackedObject} = me,
             {gtfsId, trip} = object.object,
@@ -3602,9 +3626,9 @@ export default class extends Evented {
             const gtfs = me.gtfs.get(gtfsId),
                 color = gtfs.routeLookup.get(trip.route).color;
 
-            map.setFeatureState({source, id}, {highlight: color || gtfs.color});
+            map.setFeatureState({source, id}, {'trip-highlight': color || gtfs.color});
         } else {
-            map.removeFeatureState({source, id}, 'highlight');
+            map.removeFeatureState({source, id}, 'trip-highlight');
         }
     }
 
