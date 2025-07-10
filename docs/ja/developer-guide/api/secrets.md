@@ -14,6 +14,10 @@
 公共交通オープンデータチャレンジ2024の終了に伴い、バージョン 4.0 以降はこのパラメータは使用されません。
 :::
 
+### **`challenge2025`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
+
+[公共交通オープンデータチャレンジ2025](https://challenge2025.odpt.org)のアクセストークンです。未指定の場合は、デフォルトのトークンが使われます。
+
 ### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
 
 [公共交通オープンデータセンター](https://www.odpt.org)のアクセストークンです。未指定の場合は、デフォルトのトークンが使われます。
