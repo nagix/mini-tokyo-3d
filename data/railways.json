@@ -103,7 +103,18 @@
 		"JR-East.Chuo.Yanagawa",
 		"JR-East.Chuo.Torisawa",
 		"JR-East.Chuo.Saruhashi",
-		"JR-East.Chuo.Otsuki"
+		"JR-East.Chuo.Otsuki",
+		"JR-East.Chuo.Hatsukari",
+		"JR-East.Chuo.Sasago",
+		"JR-East.Chuo.KaiYamato",
+		"JR-East.Chuo.Katsunumabudokyo",
+		"JR-East.Chuo.Enzan",
+		"JR-East.Chuo.HigashiYamanashi",
+		"JR-East.Chuo.Yamanashishi",
+		"JR-East.Chuo.Kasugaicho",
+		"JR-East.Chuo.IsawaOnsen",
+		"JR-East.Chuo.Sakaori",
+		"JR-East.Chuo.Kofu"
 	],
 	"ascending": "Outbound",
 	"descending": "Inbound",
@@ -298,7 +309,17 @@
 		"JR-East.Utsunomiya.Jichiidai",
 		"JR-East.Utsunomiya.Ishibashi",
 		"JR-East.Utsunomiya.Suzumenomiya",
-		"JR-East.Utsunomiya.Utsunomiya"
+		"JR-East.Utsunomiya.Utsunomiya",
+		"JR-East.Utsunomiya.Okamoto",
+		"JR-East.Utsunomiya.Hoshakuji",
+		"JR-East.Utsunomiya.Ujiie",
+		"JR-East.Utsunomiya.Kamasusaka",
+		"JR-East.Utsunomiya.Kataoka",
+		"JR-East.Utsunomiya.Yaita",
+		"JR-East.Utsunomiya.Nozaki",
+		"JR-East.Utsunomiya.NishiNasuno",
+		"JR-East.Utsunomiya.Nasushiobara",
+		"JR-East.Utsunomiya.Kuroiso"
 	],
 	"ascending": "Outbound",
 	"descending": "Inbound",
@@ -346,6 +367,35 @@
 	"color": "#F68B1E",
 	"carComposition": 15,
 	"dynamic": true
+}, {
+	"id": "JR-East.Joetsu",
+	"title": {
+		"ja": "上越線",
+		"en": "Joetsu Line",
+		"ko": "조에쓰 선",
+		"zh-Hans": "上越线",
+		"zh-Hant": "上越線"
+	},
+	"stations": [
+		"JR-East.Joetsu.Takasaki",
+		"JR-East.Joetsu.Takasakitonyamachi",
+		"JR-East.Joetsu.Ino",
+		"JR-East.Joetsu.ShimMaebashi",
+		"JR-East.Joetsu.GummaSoja",
+		"JR-East.Joetsu.Yagihara",
+		"JR-East.Joetsu.Shibukawa",
+		"JR-East.Joetsu.Shikishima",
+		"JR-East.Joetsu.Tsukuda",
+		"JR-East.Joetsu.Iwamoto",
+		"JR-East.Joetsu.Numata",
+		"JR-East.Joetsu.Gokan",
+		"JR-East.Joetsu.Kamimoku",
+		"JR-East.Joetsu.Minakami"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#00B3E6",
+	"carComposition": 6
 }, {
 	"id": "JR-East.KeihinTohokuNegishi",
 	"title": {
@@ -497,7 +547,16 @@
 		"JR-East.Joban.Uchihara",
 		"JR-East.Joban.Akatsuka",
 		"JR-East.Joban.Kairakuen",
-		"JR-East.Joban.Mito"
+		"JR-East.Joban.Mito",
+		"JR-East.Joban.Katsuta",
+		"JR-East.Joban.Sawa",
+		"JR-East.Joban.Tokai",
+		"JR-East.Joban.Omika",
+		"JR-East.Joban.HitachiTaga",
+		"JR-East.Joban.Hitachi",
+		"JR-East.Joban.Ogitsu",
+		"JR-East.Joban.Juo",
+		"JR-East.Joban.Takahagi"
 	],
 	"ascending": "Outbound",
 	"descending": "Inbound",

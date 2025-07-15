@@ -1517,22 +1517,22 @@
 	}, {
 		"s": "JR-East.Takasaki.Honjo",
 		"a": "10:13",
-		"d": "10:18"
+		"d": "10:13"
 	}, {
 		"s": "JR-East.Takasaki.Jimbohara",
-		"a": "10:22",
-		"d": "10:23"
+		"a": "10:17",
+		"d": "10:17"
 	}, {
 		"s": "JR-East.Takasaki.Shimmachi",
-		"a": "10:26",
-		"d": "10:27"
+		"a": "10:21",
+		"d": "10:22"
 	}, {
 		"s": "JR-East.Takasaki.Kuragano",
-		"a": "10:32",
-		"d": "10:32"
+		"a": "10:27",
+		"d": "10:27"
 	}, {
 		"s": "JR-East.Takasaki.Takasaki",
-		"a": "10:37"
+		"a": "10:32"
 	}]
 }, {
 	"id": "JR-East.Takasaki.1838E.Weekday",
@@ -2033,6 +2033,9 @@
 	],
 	"ds": [
 		"JR-East.Agatsuma.Naganoharakusatsuguchi"
+	],
+	"nt": [
+		"JR-East.Joetsu.3001M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Takasaki.Ueno",
@@ -2791,6 +2794,9 @@
 	],
 	"ds": [
 		"JR-East.Agatsuma.Naganoharakusatsuguchi"
+	],
+	"nt": [
+		"JR-East.Joetsu.3003M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Takasaki.Ueno",
@@ -8258,38 +8264,38 @@
 	}, {
 		"s": "JR-East.Takasaki.Kumagaya",
 		"a": "09:56",
-		"d": "10:03"
+		"d": "09:58"
 	}, {
 		"s": "JR-East.Takasaki.Kagohara",
-		"a": "10:11",
-		"d": "10:19"
+		"a": "10:04",
+		"d": "10:13"
 	}, {
 		"s": "JR-East.Takasaki.Fukaya",
-		"a": "10:23",
-		"d": "10:23"
+		"a": "10:18",
+		"d": "10:18"
 	}, {
 		"s": "JR-East.Takasaki.Okabe",
-		"a": "10:27",
-		"d": "10:27"
+		"a": "10:22",
+		"d": "10:22"
 	}, {
 		"s": "JR-East.Takasaki.Honjo",
-		"a": "10:32",
-		"d": "10:32"
+		"a": "10:27",
+		"d": "10:28"
 	}, {
 		"s": "JR-East.Takasaki.Jimbohara",
+		"a": "10:31",
+		"d": "10:32"
+	}, {
+		"s": "JR-East.Takasaki.Shimmachi",
 		"a": "10:36",
 		"d": "10:36"
 	}, {
-		"s": "JR-East.Takasaki.Shimmachi",
-		"a": "10:40",
-		"d": "10:40"
-	}, {
 		"s": "JR-East.Takasaki.Kuragano",
-		"a": "10:45",
-		"d": "10:46"
+		"a": "10:41",
+		"d": "10:42"
 	}, {
 		"s": "JR-East.Takasaki.Takasaki",
-		"a": "10:51"
+		"a": "10:47"
 	}]
 }, {
 	"id": "JR-East.Takasaki.2830Y.Weekday",
@@ -10384,6 +10390,9 @@
 	],
 	"ds": [
 		"JR-East.Tokaido.Atami"
+	],
+	"pt": [
+		"JR-East.Ryomo.1825E.Weekday"
 	],
 	"nt": [
 		"JR-East.Tokaido.1825E.Weekday"
@@ -14117,6 +14126,9 @@
 	"ds": [
 		"JR-East.Takasaki.Ueno"
 	],
+	"pt": [
+		"JR-East.Joetsu.3002M.Weekday"
+	],
 	"tt": [{
 		"s": "JR-East.Takasaki.Takasaki",
 		"d": "14:06"
@@ -15080,6 +15092,9 @@
 	"ds": [
 		"JR-East.Takasaki.Ueno"
 	],
+	"pt": [
+		"JR-East.Joetsu.3004M.Weekday"
+	],
 	"tt": [{
 		"s": "JR-East.Takasaki.Takasaki",
 		"d": "16:46"
@@ -15329,6 +15344,9 @@
 	],
 	"ds": [
 		"JR-East.Takasaki.Ueno"
+	],
+	"pt": [
+		"JR-East.Ryomo.848M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Takasaki.Takasaki",
@@ -21541,7 +21559,7 @@
 		"d": "07:51"
 	}, {
 		"s": "JR-East.Takasaki.Kuragano",
-		"a": "07:57",
+		"a": "07:56",
 		"d": "07:57"
 	}, {
 		"s": "JR-East.Takasaki.Takasaki",
@@ -22466,6 +22484,9 @@
 	"ds": [
 		"JR-East.Agatsuma.Naganoharakusatsuguchi"
 	],
+	"nt": [
+		"JR-East.Joetsu.4031M.SaturdayHoliday"
+	],
 	"tt": [{
 		"s": "JR-East.Takasaki.Ueno",
 		"d": "09:00"
@@ -22512,6 +22533,9 @@
 	],
 	"pt": [
 		"JR-East.Tokaido.1840E.SaturdayHoliday"
+	],
+	"nt": [
+		"JR-East.Ryomo.1840E.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Takasaki.Tokyo",
@@ -22910,6 +22934,9 @@
 	"ds": [
 		"JR-East.Agatsuma.Naganoharakusatsuguchi"
 	],
+	"nt": [
+		"JR-East.Joetsu.3001M.SaturdayHoliday"
+	],
 	"tt": [{
 		"s": "JR-East.Takasaki.Ueno",
 		"d": "10:00"
@@ -23293,19 +23320,19 @@
 	}, {
 		"s": "JR-East.Takasaki.Omiya",
 		"a": "11:34",
-		"d": "11:40"
+		"d": "11:37"
 	}, {
 		"s": "JR-East.Takasaki.Miyahara",
-		"a": "11:44",
-		"d": "11:45"
+		"a": "11:42",
+		"d": "11:42"
 	}, {
 		"s": "JR-East.Takasaki.Ageo",
-		"a": "11:48",
-		"d": "11:49"
+		"a": "11:46",
+		"d": "11:47"
 	}, {
 		"s": "JR-East.Takasaki.KitaAgeo",
-		"a": "11:51",
-		"d": "11:51"
+		"a": "11:50",
+		"d": "11:50"
 	}, {
 		"s": "JR-East.Takasaki.Okegawa",
 		"a": "11:54",
@@ -23667,6 +23694,9 @@
 	],
 	"ds": [
 		"JR-East.Agatsuma.Naganoharakusatsuguchi"
+	],
+	"nt": [
+		"JR-East.Joetsu.3003M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Takasaki.Ueno",
@@ -30694,6 +30724,9 @@
 	"ds": [
 		"JR-East.Tokaido.Atami"
 	],
+	"pt": [
+		"JR-East.Ryomo.1825E.SaturdayHoliday"
+	],
 	"nt": [
 		"JR-East.Tokaido.1825E.SaturdayHoliday"
 	],
@@ -34333,6 +34366,9 @@
 	"ds": [
 		"JR-East.Takasaki.Ueno"
 	],
+	"pt": [
+		"JR-East.Joetsu.3002M.SaturdayHoliday"
+	],
 	"tt": [{
 		"s": "JR-East.Takasaki.Takasaki",
 		"d": "14:06"
@@ -34677,6 +34713,9 @@
 	],
 	"ds": [
 		"JR-East.Takasaki.Ueno"
+	],
+	"pt": [
+		"JR-East.Joetsu.4034M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Takasaki.Takasaki",
@@ -35346,6 +35385,9 @@
 	],
 	"ds": [
 		"JR-East.Takasaki.Ueno"
+	],
+	"pt": [
+		"JR-East.Joetsu.3004M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Takasaki.Takasaki",

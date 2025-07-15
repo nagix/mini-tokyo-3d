@@ -1085,31 +1085,31 @@
 	],
 	"tt": [{
 		"s": "JR-East.Ryomo.Takasaki",
-		"d": "10:40"
+		"d": "10:37"
 	}, {
 		"s": "JR-East.Ryomo.Takasakitonyamachi",
-		"a": "10:43",
-		"d": "10:44"
+		"a": "10:40",
+		"d": "10:40"
 	}, {
 		"s": "JR-East.Ryomo.Ino",
-		"a": "10:46",
-		"d": "10:46"
+		"a": "10:42",
+		"d": "10:43"
 	}, {
 		"s": "JR-East.Ryomo.ShimMaebashi",
-		"a": "10:50",
-		"d": "10:51"
+		"a": "10:47",
+		"d": "10:48"
 	}, {
 		"s": "JR-East.Ryomo.Maebashi",
-		"a": "10:53",
-		"d": "10:54"
+		"a": "10:51",
+		"d": "10:52"
 	}, {
 		"s": "JR-East.Ryomo.Maebashioshima",
-		"a": "10:57",
-		"d": "10:58"
+		"a": "10:55",
+		"d": "10:55"
 	}, {
 		"s": "JR-East.Ryomo.Komagata",
-		"a": "11:01",
-		"d": "11:01"
+		"a": "10:59",
+		"d": "11:00"
 	}, {
 		"s": "JR-East.Ryomo.Isesaki",
 		"a": "11:05",
@@ -7516,6 +7516,96 @@
 		"a": "22:51"
 	}]
 }, {
+	"id": "JR-East.Ryomo.1825E.Weekday",
+	"t": "JR-East.Ryomo.1825E",
+	"r": "JR-East.Ryomo",
+	"n": "1825E",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.Ryomo.ShimMaebashi"
+	],
+	"ds": [
+		"JR-East.Tokaido.Atami"
+	],
+	"nt": [
+		"JR-East.Takasaki.1825E.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.Ryomo.ShimMaebashi",
+		"d": "05:00"
+	}, {
+		"s": "JR-East.Ryomo.Ino",
+		"a": "05:03",
+		"d": "05:03"
+	}, {
+		"s": "JR-East.Ryomo.Takasakitonyamachi",
+		"a": "05:05",
+		"d": "05:06"
+	}, {
+		"s": "JR-East.Ryomo.Takasaki",
+		"a": "05:09"
+	}]
+}, {
+	"id": "JR-East.Ryomo.848M.Weekday",
+	"t": "JR-East.Ryomo.848M",
+	"r": "JR-East.Ryomo",
+	"n": "848M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.Ryomo.ShimMaebashi"
+	],
+	"ds": [
+		"JR-East.Takasaki.Ueno"
+	],
+	"nt": [
+		"JR-East.Takasaki.848M.Weekday"
+	],
+	"tt": [{
+		"s": "JR-East.Ryomo.ShimMaebashi",
+		"d": "17:26"
+	}, {
+		"s": "JR-East.Ryomo.Ino",
+		"a": "17:29",
+		"d": "17:30"
+	}, {
+		"s": "JR-East.Ryomo.Takasakitonyamachi",
+		"a": "17:32",
+		"d": "17:32"
+	}, {
+		"s": "JR-East.Ryomo.Takasaki",
+		"a": "17:36"
+	}]
+}, {
+	"id": "JR-East.Ryomo.2752M.Weekday",
+	"t": "JR-East.Ryomo.2752M",
+	"r": "JR-East.Ryomo",
+	"n": "2752M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.Ryomo.ShimMaebashi"
+	],
+	"ds": [
+		"JR-East.Ryomo.Takasaki"
+	],
+	"tt": [{
+		"s": "JR-East.Ryomo.ShimMaebashi",
+		"d": "19:50"
+	}, {
+		"s": "JR-East.Ryomo.Ino",
+		"a": "19:53",
+		"d": "19:54"
+	}, {
+		"s": "JR-East.Ryomo.Takasakitonyamachi",
+		"a": "19:56",
+		"d": "19:56"
+	}, {
+		"s": "JR-East.Ryomo.Takasaki",
+		"a": "20:00"
+	}]
+}, {
 	"id": "JR-East.Ryomo.425M.SaturdayHoliday",
 	"t": "JR-East.Ryomo.425M",
 	"r": "JR-East.Ryomo",
@@ -11051,6 +11141,37 @@
 	}, {
 		"s": "JR-East.Ryomo.Maebashi",
 		"a": "00:20"
+	}]
+}, {
+	"id": "JR-East.Ryomo.1840E.SaturdayHoliday",
+	"t": "JR-East.Ryomo.1840E",
+	"r": "JR-East.Ryomo",
+	"n": "1840E",
+	"y": "JR-East.Local",
+	"d": "Outbound",
+	"os": [
+		"JR-East.Tokaido.Odawara"
+	],
+	"ds": [
+		"JR-East.Ryomo.ShimMaebashi"
+	],
+	"pt": [
+		"JR-East.Takasaki.1840E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.Ryomo.Takasaki",
+		"d": "10:58"
+	}, {
+		"s": "JR-East.Ryomo.Takasakitonyamachi",
+		"a": "11:02",
+		"d": "11:02"
+	}, {
+		"s": "JR-East.Ryomo.Ino",
+		"a": "11:04",
+		"d": "11:05"
+	}, {
+		"s": "JR-East.Ryomo.ShimMaebashi",
+		"a": "11:09"
 	}]
 }, {
 	"id": "JR-East.Ryomo.421M.SaturdayHoliday",
@@ -15066,5 +15187,64 @@
 	}, {
 		"s": "JR-East.Ryomo.Takasaki",
 		"a": "22:51"
+	}]
+}, {
+	"id": "JR-East.Ryomo.1825E.SaturdayHoliday",
+	"t": "JR-East.Ryomo.1825E",
+	"r": "JR-East.Ryomo",
+	"n": "1825E",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.Ryomo.ShimMaebashi"
+	],
+	"ds": [
+		"JR-East.Tokaido.Atami"
+	],
+	"nt": [
+		"JR-East.Takasaki.1825E.SaturdayHoliday"
+	],
+	"tt": [{
+		"s": "JR-East.Ryomo.ShimMaebashi",
+		"d": "05:00"
+	}, {
+		"s": "JR-East.Ryomo.Ino",
+		"a": "05:03",
+		"d": "05:03"
+	}, {
+		"s": "JR-East.Ryomo.Takasakitonyamachi",
+		"a": "05:05",
+		"d": "05:06"
+	}, {
+		"s": "JR-East.Ryomo.Takasaki",
+		"a": "05:09"
+	}]
+}, {
+	"id": "JR-East.Ryomo.2752M.SaturdayHoliday",
+	"t": "JR-East.Ryomo.2752M",
+	"r": "JR-East.Ryomo",
+	"n": "2752M",
+	"y": "JR-East.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.Ryomo.ShimMaebashi"
+	],
+	"ds": [
+		"JR-East.Ryomo.Takasaki"
+	],
+	"tt": [{
+		"s": "JR-East.Ryomo.ShimMaebashi",
+		"d": "19:50"
+	}, {
+		"s": "JR-East.Ryomo.Ino",
+		"a": "19:53",
+		"d": "19:54"
+	}, {
+		"s": "JR-East.Ryomo.Takasakitonyamachi",
+		"a": "19:56",
+		"d": "19:56"
+	}, {
+		"s": "JR-East.Ryomo.Takasaki",
+		"a": "20:00"
 	}]
 }]
