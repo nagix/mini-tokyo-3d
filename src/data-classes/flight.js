@@ -13,7 +13,10 @@ export default class {
         end;
         maxSpeed;
         acceleration;
-        aircraft;
+        instanceID;
+        coord;
+        altitude;
+        bearing;
         _t;
         standing;
         animationID;
@@ -22,6 +25,12 @@ export default class {
     constructor(params, refs) {
         const me = this,
             {s, dp, ds, adt, edt, sdt, ar, or, aat, eat, sat} = params;
+
+        /**
+         * Object type
+         * $type {string}
+         */
+        me.type = 'flight';
 
         /**
          * Flight ID.

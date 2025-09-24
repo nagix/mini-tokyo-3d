@@ -1,7 +1,7 @@
 import animation from '../animation';
 import configs from '../configs';
 import ComputeRenderer from '../gpgpu/compute-renderer';
-import {colorToRGBArray, lerp} from '../helpers/helpers';
+import {colorToRGBArray, lerp, valueOrDefault} from '../helpers/helpers';
 import {hasDarkBackground} from '../helpers/helpers-mapbox';
 import {AircraftMeshSet, BusMeshSet, CarMeshSet} from '../mesh-sets';
 import {Point} from 'mapbox-gl';
@@ -20,9 +20,10 @@ export default class {
         me.id = options.id;
         me.type = 'three';
         me.lightColor = 'white';
-        me.trains = new Map();
-        me.aircraftObjects = [];
+        me.objects = new Map();
         me.busObjects = [];
+        me.routeIndices = new Map();
+        me.colorIndices = new Map();
 
         me.onCameraChanged = me.onCameraChanged.bind(me);
     }
@@ -39,21 +40,37 @@ export default class {
         me.map = map;
         me.context = context;
 
-        const features = [].concat(
-            ...Array.from(map.railways.getAll()).map(({id}) =>
-                [13, 14, 15, 16, 17, 18].map(zoom => map.featureLookup.get(`${id}.${zoom}`))
-            )
-        );
-        const colors = [].concat(
-            Array.from(map.railways.getAll()).map(({color}) => color),
-            Array.from(map.trainVehicleTypes.getAll()).map(({color}) => color)
-        );
+        const features = [],
+            colors = [];
 
-        me.computeRenderer = new ComputeRenderer(MAX_UG_CARS + MAX_OG_CARS, features, colors, {modelOrigin, textureWidth});
+        for (const {id, color} of map.railways.getAll()) {
+            for (const zoom of [13, 14, 15, 16, 17, 18]) {
+                features.push(map.featureLookup.get(`${id}.${zoom}`));
+            }
+            colors.push(color);
+            me.routeIndices.set(id, me.routeIndices.size);
+            me.colorIndices.set(id, me.colorIndices.size);
+        }
+        for (const [id, feature] of map.featureLookup.entries()) {
+            if (feature.properties.altitude > 0) {
+                features.push(feature);
+                me.routeIndices.set(id, me.routeIndices.size);
+            }
+        }
+        for (const {id, color} of map.trainVehicleTypes.getAll()) {
+            colors.push(color);
+            me.colorIndices.set(id, me.colorIndices.size);
+        }
+        for (const {id, color, tailcolor} of map.operators.getAll()) {
+            colors.push([color, tailcolor]);
+            me.colorIndices.set(id, me.colorIndices.size);
+        }
+
+        me.computeRenderer = new ComputeRenderer(MAX_UG_CARS + MAX_OG_CARS + MAX_AIRCRAFTS, features, colors, {modelOrigin, textureWidth});
 
         const ugCarMeshSet = me.ugCarMeshSet = new CarMeshSet(MAX_UG_CARS, {zoom, cameraZ, modelScale}),
             ogCarMeshSet = me.ogCarMeshSet = new CarMeshSet(MAX_OG_CARS, {zoom, cameraZ, modelScale}),
-            aircraftMeshSet = me.aircraftMeshSet = new AircraftMeshSet(MAX_AIRCRAFTS, {index: 2, zoom, cameraZ, modelScale, opacity: .9}),
+            aircraftMeshSet = me.aircraftMeshSet = new AircraftMeshSet(MAX_AIRCRAFTS, {zoom, cameraZ, modelScale}),
             busMeshSet = me.busMeshSet = new BusMeshSet(MAX_BUSES, {index: 3, zoom, cameraZ, modelScale, opacity: .9});
 
         scene.add(ugCarMeshSet.getMesh());
@@ -119,12 +136,15 @@ export default class {
 
         me.ugCarMeshSet.setTextures(textures);
         me.ogCarMeshSet.setTextures(textures);
+        me.aircraftMeshSet.setTextures(textures);
 
         if (me.needsUpdateInstances) {
-            const [ugInstanceIDs, ogInstanceIDs] = me.computeRenderer.getInstanceIDs(context);
+            // Reassign object instances into mesh sets based on type and altitude
+            const [ugCarInstanceIDs, ogCarInstanceIDs, aircraftInstanceIDs] = me.computeRenderer.getInstanceIDs(context);
 
-            me.ugCarMeshSet.setInstanceIDs(ugInstanceIDs);
-            me.ogCarMeshSet.setInstanceIDs(ogInstanceIDs);
+            me.ugCarMeshSet.setInstanceIDs(ugCarInstanceIDs);
+            me.ogCarMeshSet.setInstanceIDs(ogCarInstanceIDs);
+            me.aircraftMeshSet.setInstanceIDs(aircraftInstanceIDs);
             delete me.needsUpdateInstances;
         }
     }
@@ -163,7 +183,6 @@ export default class {
                     ground: lerp(currentOpacity.ground, ogOpacity, elapsed / duration),
                     underground: lerp(currentOpacity.underground, ugOpacity, elapsed / duration),
                 });
-                me.aircraftMeshSet.setOpacity(lerp(currentOpacity.ground, ogOpacity, elapsed / duration));
                 me.busMeshSet.setOpacity(lerp(currentOpacity.ground, ogOpacity, elapsed / duration));
                 me.refreshDelayMarkers(true);
             },
@@ -171,43 +190,22 @@ export default class {
         });
     }
 
-    addObject(object) {
-        if (object.type === 'train') {
-            return;
-        }
-
+    addBus(object) {
         const me = this,
-            {type, altitude} = object,
-            meshIndex = type === 'train' ? altitude < 0 ? 0 : 1 : type === 'flight' ? 2 : 3,
-            meshSet = [undefined, undefined, me.aircraftMeshSet, me.busMeshSet][meshIndex],
-            objects = [undefined, undefined, me.aircraftObjects, me.busObjects][meshIndex],
-            {x, y, z} = me.map.getModelPosition(object.coord, altitude),
-            color = Array.isArray(object.color) ? object.color : [object.color],
+            meshSet = me.busMeshSet,
+            objects = me.busObjects,
+            {x, y, z} = me.map.getModelPosition(object.coord, object.altitude),
             attributes = {
                 translation: [x, y, z],
                 rotationZ: MathUtils.degToRad(-object.bearing),
                 opacity0: 0,
-                outline: object.outline
+                outline: object.outline,
+                color: colorToRGBArray(object.color)
             };
-
-        if (type === 'train') {
-            attributes.rotationX = object.pitch;
-            attributes.delay = object.delay;
-            attributes.color0 = colorToRGBArray(color[0]);
-            attributes.color1 = colorToRGBArray(color[1] || color[0]);
-            attributes.color2 = colorToRGBArray(color[2] || color[0]);
-            attributes.color3 = colorToRGBArray(color[3] || '#00ff00');
-        } else if (type === 'flight') {
-            attributes.rotationX = object.pitch;
-            attributes.color0 = colorToRGBArray(color[0]);
-            attributes.color1 = colorToRGBArray(color[1]);
-        } else {
-            attributes.color = colorToRGBArray(color[0]);
-        }
 
         meshSet.addInstance(attributes);
 
-        object.meshIndex = meshIndex;
+        object.meshIndex = 3;
         object.instanceIndex = objects.length;
         objects.push(object);
 
@@ -222,114 +220,72 @@ export default class {
         });
     }
 
-    addTrain(train) {
-        const me = this,
-            map = me.map,
-            railways = Array.from(map.railways.getAll()),
-            railwayIndex = railways.indexOf(train.r),
-            adColorIndex = train.ad && train.ad.color ? me.computeRenderer.addColor(train.ad.color) : undefined,
-            vehicleColorIndex = train.v ? railways.length + Array.from(map.trainVehicleTypes.getAll()).indexOf(train.v) : undefined,
-            colorIndex = adColorIndex || vehicleColorIndex || railwayIndex,
-            instanceID = train.instanceID = me.computeRenderer.addInstance(railwayIndex, colorIndex, train.sectionIndex, train.sectionLength, train.delay);
+    addObject(object) {
+        const me = this;
+        let routeIndex, colorIndex, sectionIndex, sectionLength, delay;
 
-        me.trains.set(instanceID, train);
+        if (object.type === 'train') {
+            const {r, v, ad} = object;
+
+            routeIndex = me.routeIndices.get(r.id);
+            colorIndex = ad && ad.color ? me.computeRenderer.addColor(ad.color) : me.colorIndices.get(v ? v.id : r.id);
+            sectionIndex = object.sectionIndex;
+            sectionLength = object.sectionLength;
+            delay = object.delay;
+        } else {
+            const {a, feature} = object;
+
+            routeIndex = me.routeIndices.get(feature.properties.id);
+            colorIndex = me.colorIndices.get(a.id);
+            sectionIndex = 0;
+            sectionLength = 1;
+        }
+
+        const instanceID = object.instanceID = me.computeRenderer.addInstance(routeIndex, colorIndex, sectionIndex, sectionLength, delay);
+
+        me.objects.set(instanceID, object);
         me.needsUpdateInstances = true;
     }
 
-    updateObject(object) {
+    updateBus(object) {
         if (!object || object.instanceIndex === undefined || object.removing) {
-            return;
-        }
-        if (object.type === 'train') {
             return;
         }
 
         const me = this,
-            {meshIndex, instanceIndex, altitude, type, animationID} = object,
-            meshSetArray = [undefined, undefined, me.aircraftMeshSet, me.busMeshSet],
-            objectsArray = [undefined, undefined, me.aircraftObjects, me.busObjects],
-            meshSet = meshSetArray[meshIndex],
-            objects = objectsArray[meshIndex],
-            {x, y, z} = me.map.getModelPosition(object.coord, altitude),
+            {x, y, z} = me.map.getModelPosition(object.coord, object.altitude),
             attributes = {
                 translation: [x, y, z],
                 rotationZ: MathUtils.degToRad(-object.bearing),
                 outline: object.outline
-            },
-            newMeshIndex = altitude < 0 ? 0 : 1;
+            };
 
-        if (type === 'train') {
-            attributes.rotationX = object.pitch;
-            attributes.delay = object.delay;
-        } else if (type === 'flight') {
-            attributes.rotationX = object.pitch;
-        }
-
-        meshSet.setInstanceAttributes(instanceIndex, attributes);
-
-        if (type === 'train' && newMeshIndex !== meshIndex) {
-            const newMeshSet = meshSetArray[newMeshIndex],
-                newObjects = objectsArray[newMeshIndex],
-                opacity = meshSet.getInstanceAttributes(instanceIndex).opacity0 * meshSet.getOpacity();
-            let newInstanceIndex;
-
-            if (animationID) {
-                animation.stop(animationID);
-            }
-
-            newMeshSet.addInstance(meshSet.getInstanceAttributes(instanceIndex));
-
-            object.meshIndex = newMeshIndex;
-            object.instanceIndex = newInstanceIndex = newObjects.length;
-            newObjects.push(object);
-
-            meshSet.removeInstance(instanceIndex);
-            objects.splice(instanceIndex, 1);
-            for (let i = instanceIndex; i < objects.length; i++) {
-                objects[i].instanceIndex--;
-            }
-
-            newMeshSet.setInstanceAttributes(newInstanceIndex, {opacity0: opacity / newMeshSet.getOpacity()});
-            object.animationID = animation.start({
-                callback: (elapsed, duration) => {
-                    newMeshSet.setInstanceAttributes(object.instanceIndex, {opacity0: lerp(opacity / newMeshSet.getOpacity(), 1, elapsed / duration)});
-                },
-                complete: () => {
-                    delete object.animationID;
-                },
-                duration: configs.fadeDuration
-            });
-        }
+        me.busMeshSet.setInstanceAttributes(object.instanceIndex, attributes);
     }
 
-    updateTrain(train, timeOffset, duration, accelerationTime, normalizedAcceleration) {
-        const me = this;
+    updateObject(object, timeOffset, duration, accelerationTime, normalizedAcceleration, decelerationTime, normalizedDeceleration) {
+        const me = this,
+            sectionIndex = valueOrDefault(object.sectionIndex, 0),
+            sectionLength = valueOrDefault(object.sectionLength, 1);
 
-        me.computeRenderer.updateInstance(train.instanceID, train.sectionIndex, train.sectionLength, timeOffset, duration, accelerationTime, normalizedAcceleration);
+        me.computeRenderer.updateInstance(object.instanceID, sectionIndex, sectionLength, timeOffset, duration, accelerationTime, normalizedAcceleration, decelerationTime, normalizedDeceleration);
         me.needsUpdateInstances = true;
     }
 
     getObjectPosition(object) {
-        const me = this;
-
-        if (object.type === 'train') {
-            return me.computeRenderer.getInstancePosition(object.instanceID);
-        }
+        return this.computeRenderer.getInstancePosition(object.instanceID);
     }
 
-    removeObject(object) {
+    removeBus(object) {
         if (!object || object.instanceIndex === undefined || object.removing) {
-            return Promise.resolve();
-        }
-        if (object.type === 'train') {
             return Promise.resolve();
         }
 
         return new Promise(resolve => {
             const me = this,
-                {meshIndex, animationID} = object,
-                meshSet = [undefined, undefined, me.aircraftMeshSet, me.busMeshSet][meshIndex],
-                objects = [undefined, undefined, me.aircraftObjects, me.busObjects][meshIndex];
+                animationID = object.animationID,
+                meshSet = me.busMeshSet,
+                objects = me.busObjects;
 
             if (animationID) {
                 animation.stop(animationID);
@@ -360,13 +316,13 @@ export default class {
         });
     }
 
-    removeTrain(train) {
+    removeObject(object) {
         const me = this,
-            instanceID = train.instanceID;
+            instanceID = object.instanceID;
 
         if (instanceID !== undefined) {
-            me.trains.delete(instanceID);
-            delete train.instanceID;
+            me.objects.delete(instanceID);
+            delete object.instanceID;
             return me.computeRenderer.removeInstance(instanceID).then(() => {
                 me.needsUpdateInstances = true;
             });
@@ -404,14 +360,10 @@ export default class {
         const meshIndex = pixelBuffer[0],
             instanceIndex = (pixelBuffer[1] << 8) | pixelBuffer[2];
 
-        if (meshIndex === 0) {
-            return me.trains.get(instanceIndex);
+        if (meshIndex !== 3) {
+            return me.objects.get(instanceIndex);
         } else {
-            const objects = [undefined, undefined, me.aircraftObjects, me.busObjects][meshIndex];
-
-            if (objects) {
-                return objects[instanceIndex];
-            }
+            return me.busObjects[instanceIndex];
         }
     }
 
@@ -427,23 +379,25 @@ export default class {
         this.computeRenderer.setTimeOffset(timeOffset);
     }
 
-    markTrain(train) {
+    markObject(object) {
         const me = this,
-            instanceID = train ? train.instanceID : -1;
+            instanceID = object ? object.instanceID : -1;
 
         me.computeRenderer.setMarked(instanceID);
         me.ugCarMeshSet.setMarkedInstanceID(instanceID);
         me.ogCarMeshSet.setMarkedInstanceID(instanceID);
+        me.aircraftMeshSet.setMarkedInstanceID(instanceID);
         me.needsUpdateInstances = true;
     }
 
-    trackTrain(train) {
+    trackObject(object) {
         const me = this,
-            instanceID = train ? train.instanceID : -1;
+            instanceID = object ? object.instanceID : -1;
 
         me.computeRenderer.setTracked(instanceID);
         me.ugCarMeshSet.setTrackedInstanceID(instanceID);
         me.ogCarMeshSet.setTrackedInstanceID(instanceID);
+        me.aircraftMeshSet.setTrackedInstanceID(instanceID);
         me.needsUpdateInstances = true;
     }
 

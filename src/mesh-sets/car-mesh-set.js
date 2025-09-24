@@ -1,5 +1,6 @@
-import {AdditiveBlending, BackSide, BoxGeometry, DynamicDrawUsage, InstancedBufferAttribute, InstancedBufferGeometry, Mesh, MeshLambertMaterial, MultiplyBlending, ShaderMaterial, SphereGeometry} from 'three';
+import {AdditiveBlending, BackSide, BoxGeometry, Mesh, MeshLambertMaterial, MultiplyBlending, ShaderMaterial, SphereGeometry} from 'three';
 import CarGeometry from './car-geometry.js';
+import InstancedGeometry from './instanced-geometry.js';
 import MeshSet from './mesh-set.js';
 import {updateVertexShader, updateFragmentShader} from './shaders.js';
 import delayMarkerFragmentShader from './delay-marker-fragment.glsl';
@@ -8,38 +9,6 @@ import outlineFragmentShader from './outline-fragment.glsl';
 import outlineVertexShader from './outline-vertex.glsl';
 import pickingFragmentShader from './picking-fragment.glsl';
 import pickingVertexShader from './picking-vertex.glsl';
-
-class InstancedGeometry extends InstancedBufferGeometry {
-
-    constructor(geometry, count) {
-        super();
-
-        const me = this;
-
-        me.instanceCount = 0;
-        for (const key of Object.keys(geometry.attributes)) {
-            me.attributes[key] = geometry.attributes[key].clone();
-        }
-        me.index = geometry.index.clone();
-
-        const attribute = new InstancedBufferAttribute(new Int32Array(count), 1).setUsage(DynamicDrawUsage);
-
-        me.setAttribute('instanceID', attribute);
-
-    }
-
-    setInstanceIDs(ids) {
-        const me = this,
-            attribute = me.getAttribute('instanceID'),
-            count = ids.length;
-
-        attribute.array.set(ids);
-        attribute.addUpdateRange(0, count);
-        attribute.needsUpdate = true;
-        me.instanceCount = count;
-    }
-
-}
 
 export default class extends MeshSet {
 

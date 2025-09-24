@@ -19,10 +19,6 @@ attribute float rotationZ;
 attribute vec3 idColor;
 #endif
 
-#ifdef AIRCRAFT
-attribute float groupIndex;
-#endif
-
 #ifndef BUS
 mat3 rotateX( float angle ) {
     float s = sin( angle );
@@ -76,9 +72,9 @@ ivec2 reference = ivec2( instanceID % width, instanceID / width );
 vec4 data0 = texelFetch( textureData0, reference, 0 );
 vec4 data1 = texelFetch( textureData1, reference, 0 );
 vec3 translation = data0.xyz;
+int colorID = int( data0.w );
 float rotationX = data1.y;
 float rotationZ = data1.x;
-int colorID = int( data1.z );
 float opacity0 = data1.w;
 
 width = textureSize( textureColor, 0 ).x;

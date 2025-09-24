@@ -374,7 +374,7 @@ export default class extends Evented {
     getSelection() {
         const trackedObject = this.trackedObject;
 
-        if (trackedObject && trackedObject.type === 'train') {
+        if (trackedObject && helpers.includes(['train', 'flight'], trackedObject.type)) {
             return trackedObject.id;
         } else if (isVehicle(trackedObject)) {
             return trackedObject.object.id;
@@ -420,11 +420,7 @@ export default class extends Evented {
                 const activeFlight = me.activeFlightLookup.get(selection);
 
                 if (activeFlight) {
-                    if (activeFlight.aircraft) {
-                        me.trackObject(activeFlight.aircraft);
-                    } else {
-                        me.selection = activeFlight.id;
-                    }
+                    me.trackObject(activeFlight);
                 } else {
                     helpers.showNotification(me.container, me.dict['flight-terminated']);
                 }
@@ -1067,10 +1063,6 @@ export default class extends Evented {
                 } else {
                     delete me.prevLayerZoom;
                 }
-
-                for (const flight of me.activeFlightLookup.values()) {
-                    me.updateFlightShape(flight);
-                }
             }
         });
 
@@ -1142,14 +1134,14 @@ export default class extends Evented {
 
                     me.trafficLayer.setTimeOffset(clock.getTimeOffset());
 
-                    if (me.markedObject && me.markedObject.type === 'train') {
+                    if (me.markedObject && helpers.includes(['train', 'flight'], me.markedObject.type)) {
                         changed = me.updateObjectPosition(me.markedObject);
                         if (changed.standing !== undefined) {
                             me.updatePopup({setHTML: true});
                         }
                     }
 
-                    if (me.trackedObject && me.trackedObject.type === 'train') {
+                    if (me.trackedObject && helpers.includes(['train', 'flight'], me.trackedObject.type)) {
                         if (me.trackedObject !== me.markedObject) {
                             changed = me.updateObjectPosition(me.trackedObject);
                         }
@@ -1293,77 +1285,6 @@ export default class extends Evented {
         ], Math.max(1.4e-5, 5e-5 * Math.sin(map.getPitch() * DEGREE_TO_RADIAN)));
     }
 
-    updateFlightShape(flight, t) {
-        const me = this,
-            {map, trafficLayer} = me,
-            {feature, animationID} = flight;
-        let aircraft = flight.aircraft,
-            tracked;
-
-        if (t !== undefined) {
-            flight._t = t;
-        }
-        if (flight._t === undefined) {
-            return;
-        }
-        if (!aircraft) {
-            const operator = flight.a;
-
-            aircraft = flight.aircraft = {
-                type: 'flight',
-                object: flight,
-                color: [operator.color || '#FFFFFF', operator.tailcolor || '#FFFFFF']
-            };
-
-            // Set tracked object if the selection is specified
-            // Delay calling trackObject() as they require the object position to be set
-            if (me.selection === flight.id) {
-                tracked = aircraft;
-                delete me.selection;
-            }
-        }
-
-        const {coord, altitude, bearing, pitch} = helpersGeojson.getCoordAndBearing(feature, flight._t * feature.properties.length, 1, 0)[0];
-
-        aircraft.coord = coord;
-        aircraft.altitude = altitude;
-        aircraft.bearing = bearing;
-        aircraft.pitch = pitch;
-
-        if (tracked === aircraft) {
-            me.trackObject(aircraft);
-        }
-        if (me.markedObject === aircraft) {
-            aircraft.outline = 1;
-        } else if (me.trackedObject === aircraft) {
-            aircraft.outline = helpers.blink();
-        } else {
-            aircraft.outline = 0;
-        }
-
-        if (me.trackedObject === aircraft && !me.viewAnimationID && !map._zooming && !map._rotating && !map._pitching) {
-            me._jumpTo({center: coord, altitude, bearing, bearingFactor: .02});
-            if (me.markedObject === me.trackedObject) {
-                // This need to be called right after jumpTo() to prevent jittering
-                me.updatePopup();
-            }
-        }
-
-        // Reduce the frame rate of invisible objects for performance optimization
-        if (animation.isActive(animationID)) {
-            const {x, y} = me.getModelPosition(coord),
-                frameRate = helpers.pointInTrapezoid([x, y], me.visibleArea) || me.trackedObject === aircraft ? me.ecoMode === 'normal' && map._loaded ? 0 : me.ecoFrameRate : 1;
-
-            animation.setFrameRate(animationID, frameRate);
-        }
-
-        if (aircraft.meshIndex === undefined) {
-            trafficLayer.addObject(aircraft);
-        } else {
-            trafficLayer.updateObject(aircraft);
-        }
-    }
-
     updateBusProps(bus) {
         const sectionIndex = bus.sectionIndex,
             stopOffsets = bus.offsets,
@@ -1425,9 +1346,9 @@ export default class extends Evented {
         }
 
         if (car.meshIndex === undefined) {
-            trafficLayer.addObject(car);
+            trafficLayer.addBus(car);
         } else {
-            trafficLayer.updateObject(car);
+            trafficLayer.updateBus(car);
         }
     }
 
@@ -1462,7 +1383,7 @@ export default class extends Evented {
         }
 
         me.activeTrainLookup.set(train.id, train);
-        me.trafficLayer.addTrain(train);
+        me.trafficLayer.addObject(train);
         me.trainRepeat(train, options.index);
 
         if (options.marked) {
@@ -1572,7 +1493,7 @@ export default class extends Evented {
                 }
                 accelerationTime = maxSpeed / acceleration;
             }
-            me.trafficLayer.updateTrain(train, actualDepartureTime, duration, accelerationTime, acceleration / distance);
+            me.trafficLayer.updateObject(train, actualDepartureTime, duration, accelerationTime, acceleration / distance, accelerationTime, acceleration / distance);
 
             train.animationID = animation.start({
                 complete: () => {
@@ -1594,49 +1515,16 @@ export default class extends Evented {
                 clock
             });
         }
-
-        if (me.markedObject === train || me.trackedObject === train) {
-            me.updateObjectPosition(train);
-        }
-        if (me.markedObject === train) {
-            train.standing = true;
-            me.updatePopup({setHTML: true});
-        }
     }
 
     refreshFlights() {
         const me = this,
-            {clock, activeFlightLookup, markedObject, initialSelection} = me,
-            now = clock.getTimeOffset();
+            initialSelection = me.initialSelection,
+            now = me.clock.getTimeOffset();
 
         for (const flight of me.flightLookup.values()) {
-            const {id, start} = flight;
-
-            if (flight.entry <= now && now <= flight.end && !activeFlightLookup.has(id)) {
-                activeFlightLookup.set(id, flight);
-                if (now >= start) {
-                    me.flightRepeat(flight, now - start);
-                } else {
-                    me.updateFlightShape(flight, 0);
-                    flight.standing = true;
-                    if (markedObject && markedObject.object === flight) {
-                        me.updatePopup({setHTML: true});
-                    }
-                    flight.animationID = animation.start({
-                        callback: () => {
-                            const trackedObject = me.trackedObject;
-
-                            if (trackedObject && trackedObject.object === flight) {
-                                me.updateFlightShape(flight);
-                            }
-                        },
-                        complete: () => {
-                            me.flightRepeat(flight);
-                        },
-                        duration: start - now,
-                        clock
-                    });
-                }
+            if (flight.entry <= now && now <= flight.end) {
+                me.flightStart(flight);
             }
         }
 
@@ -1646,38 +1534,36 @@ export default class extends Evented {
         }
     }
 
-    flightRepeat(flight, elapsed) {
+    flightStart(flight) {
         const me = this,
-            {clock, markedObject} = me;
+            {activeFlightLookup, clock} = me,
+            id = flight.id;
 
-        flight.standing = false;
-        if (markedObject && markedObject.object === flight) {
-            me.updatePopup({setHTML: true});
+        if (activeFlightLookup.has(id)) {
+            return;
         }
-        flight.animationID = startFlightAnimation(t => {
-            me.updateFlightShape(flight, t);
-        }, () => {
-            const markedObject = me.markedObject;
 
-            flight.standing = true;
-            if (markedObject && markedObject.object === flight) {
-                me.updatePopup({setHTML: true});
-            }
-            flight.animationID = animation.start({
-                callback: () => {
-                    const trackedObject = me.trackedObject;
+        activeFlightLookup.set(id, flight);
+        me.trafficLayer.addObject(flight);
 
-                    if (trackedObject && trackedObject.object === flight) {
-                        me.updateFlightShape(flight);
-                    }
-                },
-                complete: () => {
-                    me.stopFlight(flight);
-                },
-                duration: Math.max(flight.end - clock.getTimeOffset(), 0),
-                clock
-            });
-        }, flight.feature.properties.length, flight.maxSpeed, flight.acceleration, elapsed, clock);
+        const now = clock.getTimeOffset(),
+            distance = flight.feature.properties.length,
+            maxSpeed = flight.maxSpeed,
+            acceleration = flight.acceleration > 0 ? flight.acceleration : 0,
+            deceleration = flight.acceleration > 0 ? 0 : -flight.acceleration,
+            accelerationTime = acceleration > 0 ? maxSpeed / acceleration : 0,
+            decelerationTime = deceleration > 0 ? maxSpeed / deceleration : 0,
+            duration = accelerationTime / 2 + distance / maxSpeed + decelerationTime / 2;
+
+        me.trafficLayer.updateObject(flight, flight.start, duration, accelerationTime, acceleration / distance, decelerationTime, deceleration / distance);
+
+        flight.animationID = animation.start({
+            complete: () => {
+                me.stopFlight(flight);
+            },
+            duration: flight.end - now,
+            clock
+        });
     }
 
     refreshBuses(gtfsId) {
@@ -2212,23 +2098,21 @@ export default class extends Evented {
             me.trackObject();
         }
         me.activeTrainLookup.delete(train.id);
-        return me.trafficLayer.removeTrain(train);
+        return me.trafficLayer.removeObject(train);
     }
 
     stopFlight(flight) {
-        const me = this,
-            aircraft = flight.aircraft;
+        const me = this;
 
         animation.stop(flight.animationID);
-        me.trafficLayer.removeObject(aircraft);
-        if (aircraft === me.markedObject) {
+        if (flight === me.markedObject) {
             me.markObject();
         }
-        if (aircraft === me.trackedObject) {
+        if (flight === me.trackedObject) {
             me.trackObject();
         }
-        delete flight.aircraft;
         me.activeFlightLookup.delete(flight.id);
+        return me.trafficLayer.removeObject(flight);
     }
 
     stopBus(bus) {
@@ -2236,7 +2120,7 @@ export default class extends Evented {
             car = bus.car;
 
         animation.stop(bus.animationID);
-        me.trafficLayer.removeObject(car);
+        me.trafficLayer.removeBus(car);
         if (car === me.markedObject) {
             me.markObject();
         }
@@ -3149,14 +3033,12 @@ export default class extends Evented {
 
         if (markedObject) {
             delete me.markedObject;
-            if (markedObject.type === 'train') {
-                me.trafficLayer.markTrain();
-            } else if (isVehicle(markedObject)) {
+            if (helpers.includes(['train', 'flight'], markedObject.type)) {
+                me.trafficLayer.markObject();
+            } else if (markedObject.type === 'bus') {
                 markedObject.outline = 0;
-                trafficLayer.updateObject(markedObject);
-                if (markedObject.type === 'bus') {
-                    me.updateBusTripHighlight(markedObject);
-                }
+                trafficLayer.updateBus(markedObject);
+                me.updateBusTripHighlight(markedObject);
             } else {
                 me.removeStationOutline('stations-marked');
             }
@@ -3166,17 +3048,15 @@ export default class extends Evented {
             }
         }
 
-        if (object && !object.removing) { // removing is only needed for aircrafts and buses
+        if (object && !object.removing) { // removing is only needed for buses
             me.markedObject = object;
-            if (object.type === 'train') {
+            if (helpers.includes(['train', 'flight'], object.type)) {
                 me.updateObjectPosition(object);
-                me.trafficLayer.markTrain(object);
-            } else if (isVehicle(object)) {
+                me.trafficLayer.markObject(object);
+            } else if (object.type === 'bus') {
                 object.outline = 1;
-                trafficLayer.updateObject(object);
-                if (object.type === 'bus') {
-                    me.updateBusTripHighlight(object);
-                }
+                trafficLayer.updateBus(object);
+                me.updateBusTripHighlight(object);
             } else {
                 me.addStationOutline(object, 'stations-marked');
             }
@@ -3240,17 +3120,15 @@ export default class extends Evented {
 
         if (trackedObject) {
             delete me.trackedObject;
-            if (trackedObject.type === 'train') {
-                me.trafficLayer.trackTrain();
+            if (helpers.includes(['train', 'flight'], trackedObject.type)) {
+                me.trafficLayer.trackObject();
                 me.fire({type: 'deselection', deselection: trackedObject.id});
-            } else if (isVehicle(trackedObject)) {
+            } else if (trackedObject.type === 'bus') {
                 const prevObject = trackedObject.object;
 
                 trackedObject.outline = 0;
-                me.trafficLayer.updateObject(trackedObject);
-                if (trackedObject.type === 'bus') {
-                    me.updateBusTripHighlight(trackedObject);
-                }
+                me.trafficLayer.updateBus(trackedObject);
+                me.updateBusTripHighlight(trackedObject);
                 me.fire({type: 'deselection', deselection: prevObject.id});
             } else if (isStation(trackedObject)) {
                 me.removeStationOutline('stations-selected');
@@ -3272,10 +3150,10 @@ export default class extends Evented {
             }
         }
 
-        if (object && !object.removing) { // removing is only needed for aircrafts and buses
+        if (object && !object.removing) { // removing is only needed for buses
             me.trackedObject = object;
 
-            if (object.type === 'train') {
+            if (helpers.includes(['train', 'flight'], object.type)) {
                 me.updateObjectPosition(object);
                 me.updateBaseZoom();
                 me.updateTrackingParams(true);
@@ -3283,7 +3161,7 @@ export default class extends Evented {
                 me.startViewAnimation();
                 me._setViewMode(object.altitude < 0 ? 'underground' : 'ground');
 
-                if (me.clockMode === 'realtime' && navigator.share) {
+                if (helpers.includes(['train', 'flight'], object.type) && me.clockMode === 'realtime' && navigator.share) {
                     me.sharePanel = new SharePanel({object});
                     me.sharePanel.addTo(me);
                 }
@@ -3292,9 +3170,9 @@ export default class extends Evented {
                     me.detailPanel.addTo(me);
                 }
 
-                me.trafficLayer.trackTrain(object);
+                me.trafficLayer.trackObject(object);
                 me.fire({type: 'selection', selection: object.id});
-            } else if (isVehicle(object)) {
+            } else if (object.type === 'bus') {
                 const _object = object.object;
 
                 me.updateBaseZoom();
@@ -3303,20 +3181,14 @@ export default class extends Evented {
                 me.startViewAnimation();
                 me._setViewMode(object.altitude < 0 ? 'underground' : 'ground');
 
-                if (object.type === 'flight' && me.clockMode === 'realtime' && navigator.share) {
-                    me.sharePanel = new SharePanel({object: _object});
-                    me.sharePanel.addTo(me);
-                }
                 if (_object.trip) {
                     me.detailPanel = new BusPanel({object: _object});
                     me.detailPanel.addTo(me);
                 }
 
                 object.outline = 1;
-                me.trafficLayer.updateObject(object);
-                if (object.type === 'bus') {
-                    me.updateBusTripHighlight(object);
-                }
+                me.trafficLayer.updateBus(object);
+                me.updateBusTripHighlight(object);
                 me.fire({type: 'selection', selection: _object.id});
             } else if (isStation(object)) {
                 const stations = object.stations.concat(object.hidden || []),
@@ -3361,7 +3233,7 @@ export default class extends Evented {
     }
 
     updateObjectPosition(object) {
-        const prevAltitude = object.altitude,
+        const {altitude: prevAltitude, standing: prevStanding} = object,
             {coord, altitude, bearing, _t} = this.trafficLayer.getObjectPosition(object);
         let viewMode, standing;
 
@@ -3369,13 +3241,14 @@ export default class extends Evented {
         object.altitude = altitude;
         object.bearing = bearing;
         object._t = _t;
+        object.standing = _t === 0 || _t === 1;
         if (prevAltitude < 0 && altitude >= 0) {
             viewMode = 'ground';
         } else if (prevAltitude >= 0 && altitude < 0) {
             viewMode = 'underground';
         }
-        if (object.standing !== false && _t > 0 && _t < 1) {
-            standing = object.standing = false;
+        if (prevStanding !== object.standing) {
+            standing = object.standing;
         }
         return {viewMode, standing};
     }
@@ -3517,7 +3390,7 @@ export default class extends Evented {
             if (setHTML) {
                 popup.setHTML(
                     markedObject.type === 'train' ? me.getTrainDescription(markedObject) :
-                    markedObject.type === 'flight' ? me.getFlightDescription(markedObject.object) :
+                    markedObject.type === 'flight' ? me.getFlightDescription(markedObject) :
                     me.getBusDescription(markedObject.object)
                 );
             }
@@ -3822,37 +3695,6 @@ function showErrorMessage(container) {
     loaderElement.style.display = 'none';
     errorElement.innerHTML = 'Loading failed. Please reload the page.';
     errorElement.style.display = 'block';
-}
-
-function startFlightAnimation(callback, endCallback, distance, maxSpeed, acceleration, start, clock) {
-    const accelerationTime = maxSpeed / Math.abs(acceleration),
-        duration = accelerationTime / 2 + distance / maxSpeed;
-
-    return animation.start({
-        callback: elapsed => {
-            const left = duration - elapsed;
-            let d;
-
-            if (acceleration > 0) {
-                if (elapsed <= accelerationTime) {
-                    d = acceleration / 2 * elapsed * elapsed;
-                } else {
-                    d = maxSpeed * (elapsed - accelerationTime / 2);
-                }
-            } else {
-                if (left <= accelerationTime) {
-                    d = distance + acceleration / 2 * left * left;
-                } else {
-                    d = maxSpeed * elapsed;
-                }
-            }
-            callback(d / distance);
-        },
-        complete: endCallback,
-        duration,
-        start: start > 0 ? clock.getHighResTime() - start : undefined,
-        clock
-    });
 }
 
 function startBusAnimation(callback, endCallback, distance, minDuration, maxDuration, start, clock) {

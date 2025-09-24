@@ -75,38 +75,41 @@ void main() {
     vec4 object2 = fetchObject1( instanceID );
     uint routeID = object0.x;
     uint colorID = object0.y;
-    uint stationIndex = object0.z;
-    uint nextStationIndex = object0.w;
+    uint sectionIndex = object0.z;
+    uint nextSectionIndex = object0.w;
     int startTime = int( object1.x );
     int endTime = int( object1.y );
     int fadeAnimationStartTime = int( object1.z );
     uint fadeAnimationType = object1.w % 4u;
     float accelerationTime = object2.x;
     float acceleration = object2.y;
+    float decelerationTime = object2.z;
+    float deceleration = object2.w;
 
     vec4 data0 = fetchData0( instanceID );
     vec4 data1 = fetchData1( instanceID );
     vec3 prevPosition = data0.xyz;
-    int opacityAnimationStartTime = int( data0.w );
     float prevRotateZ = data1.x;
     float prevRotateX = data1.y;
+    int opacityAnimationStartTime = int( data1.z );
 
     uvec4 header = fetchRoute0( routeID * 6u + uint( zoom - 13 ) );
 
-    uint offset = header.b;
-    vec2 distances = fetchRoute1( offset + stationIndex / 2u );
-    float stationDistance = stationIndex % 2u == 0u ? distances.r : distances.g;
-    distances = fetchRoute1( offset + nextStationIndex / 2u );
-    float nextStationDistance = nextStationIndex % 2u == 0u ? distances.r : distances.g;
+    uint routeType = header.x;
+    uint offset = header.w;
+    vec2 distances = fetchRoute1( offset + sectionIndex / 2u );
+    float sectionDistance = sectionIndex % 2u == 0u ? distances.r : distances.g;
+    distances = fetchRoute1( offset + nextSectionIndex / 2u );
+    float nextSectionDistance = nextSectionIndex % 2u == 0u ? distances.r : distances.g;
 
     float elapsed = float( clamp( timeOffset - startTime, 0, endTime - startTime ) );
     float left = float( clamp( endTime - timeOffset, 0, endTime - startTime ) );
-    float a = elapsed <= accelerationTime ? acceleration / 2.0 * elapsed * elapsed :
-        left <= accelerationTime ? 1.0 - acceleration / 2.0 * left * left :
-        acceleration * accelerationTime * ( elapsed - accelerationTime / 2.0 );
-    float distance = mix( stationDistance, nextStationDistance, a );
+    float a = elapsed < accelerationTime ? acceleration / 2.0 * elapsed * elapsed :
+        left < decelerationTime ? 1.0 - deceleration / 2.0 * left * left :
+        max( acceleration * accelerationTime, deceleration * decelerationTime) * ( elapsed - accelerationTime / 2.0 );
+    float distance = mix( sectionDistance, nextSectionDistance, a );
 
-    index = indexOfNodeAt( distance, header.r, header.g );
+    index = indexOfNodeAt( distance, header.y, header.z );
     vec2 section0 = fetchRoute1( index );
     vec2 section1 = fetchRoute1( ++index );
     vec2 section2 = fetchRoute1( ++index );
@@ -137,6 +140,6 @@ void main() {
     rotateZ = fadingOut ? prevRotateZ : rotateZ;
     rotateX = fadingOut ? prevRotateX : rotateX;
 
-    outPosition0 = vec4( position, opacityAnimationStartTime );
-    outPosition1 = vec4( rotateZ, rotateX, float( colorID ), opacity );
+    outPosition0 = vec4( position, float( colorID ) );
+    outPosition1 = vec4( rotateZ, rotateX, opacityAnimationStartTime, opacity );
 }

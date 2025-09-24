@@ -17,9 +17,9 @@ export default class {
             textureHeight0 = Math.ceil(count * 2 / textureWidth),
             textureHeight1 = Math.ceil(count / textureWidth),
             array0 = new Uint32Array(textureWidth * textureHeight0 * 4),
-            array1 = new Float32Array(textureWidth * textureHeight1 * 2),
+            array1 = new Float32Array(textureWidth * textureHeight1 * 4),
             dtObject0 = me.dtObject0 = new DataTexture(array0, textureWidth, textureHeight0, RGBAIntegerFormat, UnsignedIntType),
-            dtObject1 = me.dtObject1 = new DataTexture(array1, textureWidth, textureHeight1, RGFormat, FloatType);
+            dtObject1 = me.dtObject1 = new DataTexture(array1, textureWidth, textureHeight1, RGBAFormat, FloatType);
 
         dtObject0.needsUpdate = true;
         dtObject1.needsUpdate = true;
@@ -112,17 +112,21 @@ export default class {
     getInstanceIDs(context) {
         const me = this,
             texture = me.dataVariable[me.currentTextureIndex],
-            array0 = me.dtObject0.image.data,
-            array1 = me.buffer,
-            ugIDs = {body: [], delayMarker: [], outline: []},
-            ogIDs = {body: [], delayMarker: [], outline: []};
+            objectArray0 = me.dtObject0.image.data,
+            routeArray0 = me.dtRoute0.image.data,
+            bufferArray = me.buffer,
+            ugCarIDs = {body: [], delayMarker: [], outline: []},
+            ogCarIDs = {body: [], delayMarker: [], outline: []},
+            aircraftIDs = {body: [], outline: []};
 
-        context.renderer.readRenderTargetPixels(texture, 0, 0, texture.width, texture.height, array1);
+        context.renderer.readRenderTargetPixels(texture, 0, 0, texture.width, texture.height, bufferArray);
         for (let i = 0, ilen = me.count; i < ilen; i++) {
-            const state = array0[i * 8 + 7];
+            const state = objectArray0[i * 8 + 7];
 
             if (state !== 0) {
-                const ids = array1[i * 4 + 2] < 0 ? ugIDs : ogIDs;
+                const routeID = objectArray0[i * 8],
+                    type = routeArray0[routeID * 24],
+                    ids = type === 0 ? bufferArray[i * 4 + 2] < 0 ? ugCarIDs : ogCarIDs : aircraftIDs;
 
                 ids.body.push(i);
                 if (state & 4) {
@@ -135,10 +139,10 @@ export default class {
         }
 
         // This ensures smooth fade animations
-        ugIDs.body.sort((a, b) => a % 256 - b % 256);
-        ogIDs.body.sort((a, b) => a % 256 - b % 256);
+        ugCarIDs.body.sort((a, b) => a % 256 - b % 256);
+        ogCarIDs.body.sort((a, b) => a % 256 - b % 256);
 
-        return [ugIDs, ogIDs];
+        return [ugCarIDs, ogCarIDs, aircraftIDs];
     }
 
     loadFeatures(features) {
@@ -146,36 +150,41 @@ export default class {
             textureWidth = me.textureWidth,
             modelOrigin = me.modelOrigin,
             items = [];
-        let size = 0,
+        let size0 = 0,
+            size1 = 0,
             maxCount = 1;
 
         for (const feature of features) {
-            const coords = feature.geometry.coordinates,
-                properties = feature.properties,
+            const properties = feature.properties,
+                type = properties.altitude === undefined ? 0 : 1,
+                coords = feature.geometry.coordinates,
                 distances = properties.distances,
-                stationOffsets = properties['station-offsets'];
+                sectionOffsets = properties['station-offsets'] || [0, properties.length];
 
-            items.push({coords, distances, stationOffsets});
-            size += coords.length * 3 + Math.ceil(stationOffsets.length / 2);
+            items.push({type, coords, distances, sectionOffsets});
+            size0 += type === 0 ? 1 : 6;
+            size1 += coords.length * 3 + Math.ceil(sectionOffsets.length / 2);
             maxCount = Math.max(maxCount, coords.length);
         }
 
         me.loopCount = Math.ceil(Math.log2(maxCount));
 
-        const textureHeight0 = Math.ceil(items.length / textureWidth) || 1,
-            textureHeight1 = Math.ceil(size / textureWidth) || 1,
+        const textureHeight0 = Math.ceil(size0 / textureWidth) || 1,
+            textureHeight1 = Math.ceil(size1 / textureWidth) || 1,
             array0 = new Uint32Array(textureWidth * textureHeight0 * 4),
             array1 = new Float32Array(textureWidth * textureHeight1 * 2);
-        let offset = 0;
+        let offset0 = 0,
+            offset1 = 0;
 
-        for (let i = 0, ilen = items.length; i < ilen; i++) {
-            const {coords, distances, stationOffsets} = items[i];
-
-            array0.set([offset, coords.length], i * 4);
-            for (let j = 0, jlen = coords.length; j < jlen; j++) {
-                const coord = coords[j],
+        for (const {type, coords, distances, sectionOffsets} of items) {
+            for (let i = 0, ilen = type === 0 ? 1 : 6; i < ilen; i++) {
+                array0.set([type, offset1, coords.length, offset1 + coords.length * 3], offset0 * 4);
+                offset0 += 1;
+            }
+            for (let i = 0, ilen = coords.length; i < ilen; i++) {
+                const coord = coords[i],
                     mercatorCoord = MercatorCoordinate.fromLngLat(coord, coord[2] || 0),
-                    [distance, bearing, , pitch] = distances[j];
+                    [distance, bearing, , pitch] = distances[i];
 
                 array1.set([
                     distance,
@@ -184,14 +193,10 @@ export default class {
                     mercatorCoord.z - modelOrigin.z,
                     MathUtils.degToRad(-bearing),
                     pitch
-                ], offset * 2 + j * 6);
+                ], offset1 * 2 + i * 6);
             }
-            offset += coords.length * 3;
-            array0.set([offset, stationOffsets.length], i * 4 + 2);
-            for (let j = 0, jlen = stationOffsets.length; j < jlen; j++) {
-                array1[offset * 2 + j] = stationOffsets[j];
-            }
-            offset += Math.ceil(stationOffsets.length / 2);
+            array1.set(sectionOffsets, offset1 * 2 + coords.length * 6);
+            offset1 += Math.ceil(coords.length * 3 + sectionOffsets.length / 2);
         }
 
         const dtRoute0 = me.dtRoute0 = new DataTexture(array0, textureWidth, textureHeight0, RGBAIntegerFormat, UnsignedIntType),
@@ -227,7 +232,7 @@ export default class {
         dtColor.needsUpdate = true;
     }
 
-    addInstance(railwayIndex, colorIndex, sectionIndex, sectionLength, delay) {
+    addInstance(routeIndex, colorIndex, sectionIndex, sectionLength, delay) {
         const me = this,
             array0 = me.dtObject0.image.data;
 
@@ -236,7 +241,7 @@ export default class {
 
             if (array0[offset + 7] === 0) {
                 array0.set([
-                    railwayIndex,
+                    routeIndex,
                     colorIndex,
                     sectionIndex,
                     sectionIndex + sectionLength,
@@ -252,7 +257,7 @@ export default class {
         console.log('Error: exceed the max train count');
     }
 
-    updateInstance(instanceID, sectionIndex, sectionLength, timeOffset, duration, accelerationTime, normalizedAcceleration) {
+    updateInstance(instanceID, sectionIndex, sectionLength, timeOffset, duration, accelerationTime, normalizedAcceleration, decelerationTime, normalizedDeceleration) {
         const me = this,
             array0 = me.dtObject0.image.data,
             array1 = me.dtObject1.image.data;
@@ -265,8 +270,10 @@ export default class {
         ], instanceID * 8 + 2);
         array1.set([
             accelerationTime,
-            normalizedAcceleration
-        ], instanceID * 2);
+            normalizedAcceleration,
+            decelerationTime,
+            normalizedDeceleration
+        ], instanceID * 4);
         me.dtObject0.needsUpdate = true;
         me.dtObject1.needsUpdate = true;
     }
@@ -305,34 +312,36 @@ export default class {
             objectArray0 = me.dtObject0.image.data,
             objectArray1 = me.dtObject1.image.data,
             routeID = objectArray0[instanceID * 8],
-            stationIndex = objectArray0[instanceID * 8 + 2],
-            nextStationIndex = objectArray0[instanceID * 8 + 3],
+            sectionIndex = objectArray0[instanceID * 8 + 2],
+            nextSectionIndex = objectArray0[instanceID * 8 + 3],
             startTime = objectArray0[instanceID * 8 + 4],
             endTime = objectArray0[instanceID * 8 + 5],
-            accelerationTime = objectArray1[instanceID * 2],
-            acceleration = objectArray1[instanceID * 2 + 1],
+            accelerationTime = objectArray1[instanceID * 4],
+            acceleration = objectArray1[instanceID * 4 + 1],
+            decelerationTime = objectArray1[instanceID * 4 + 2],
+            deceleration = objectArray1[instanceID * 4 + 3],
             headerindex = routeID * 6 + zoom - 13,
             routeArray0 = me.dtRoute0.image.data,
             routeArray1 = me.dtRoute1.image.data,
-            stationOffset = routeArray0[headerindex * 4 + 2],
-            stationDistance = routeArray1[stationOffset * 2 + stationIndex],
-            nextStationDistance = routeArray1[stationOffset * 2 + nextStationIndex],
+            sectionOffset = routeArray0[headerindex * 4 + 3],
+            sectionDistance = routeArray1[sectionOffset * 2 + sectionIndex],
+            nextSectionDistance = routeArray1[sectionOffset * 2 + nextSectionIndex],
             elapsed = clamp(timeOffset - startTime, 0, endTime - startTime),
             left = clamp(endTime - timeOffset, 0, endTime - startTime);
         let t;
 
-        if (elapsed <= accelerationTime) {
+        if (elapsed < accelerationTime) {
             t = acceleration / 2 * elapsed * elapsed;
-        } else if (left <= accelerationTime) {
-            t = 1 - acceleration / 2 * left * left;
+        } else if (left < decelerationTime) {
+            t = 1 - deceleration / 2 * left * left;
         } else {
-            t = acceleration * accelerationTime * (elapsed - accelerationTime / 2);
+            t = Math.max(acceleration * accelerationTime, deceleration * decelerationTime) * (elapsed - accelerationTime / 2);
         }
 
-        const distance = lerp(stationDistance, nextStationDistance, t),
-            routeOffset = routeArray0[headerindex * 4];
+        const distance = lerp(sectionDistance, nextSectionDistance, t),
+            routeOffset = routeArray0[headerindex * 4 + 1];
         let start = 0,
-            end = routeArray0[headerindex * 4 + 1] - 1,
+            end = routeArray0[headerindex * 4 + 2] - 1,
             center;
 
         for (let i = 0; i < me.loopCount; i++) {
@@ -372,7 +381,7 @@ export default class {
         return {
             coord: coord.toLngLat(),
             altitude: coord.toAltitude(),
-            bearing: bearing + (stationIndex < nextStationIndex ? 0 : 180),
+            bearing: bearing + (sectionIndex < nextSectionIndex ? 0 : 180),
             _t: t
         };
     }
