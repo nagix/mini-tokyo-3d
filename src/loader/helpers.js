@@ -5,7 +5,11 @@ import zlib from 'zlib';
 export function loadJSON(url) {
     return new Promise((resolve, reject) => {
         if (url.startsWith('https')) {
-            https.get(url, res => {
+            https.get(url, {
+                headers: {
+                    'User-Agent': 'MiniTokyo3DLoader/0.0'
+                }
+            }, res => {
                 let body = '';
 
                 res.setEncoding('utf8');
