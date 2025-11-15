@@ -2444,7 +2444,6 @@ export default class extends Evented {
 
             standbyTrainLookup.clear();
             realtimeTrains.clear();
-            adTrains.clear();
 
             for (const trainRef of trainData) {
                 const {id, r, n, y, d, os, ds, ts, fs, v, ad, delay, carComposition} = trainRef,
@@ -3280,7 +3279,7 @@ export default class extends Evented {
 
     updateAdTrainPopup() {
         const me = this,
-            markedObject = (me.markedObject || {}).object;
+            markedObject = me.markedObject;
 
         for (const train of me.adTrains) {
             train.popup.setLngLat(me.adjustCoord(train.coord, train.altitude));
