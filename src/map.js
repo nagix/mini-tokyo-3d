@@ -2422,7 +2422,7 @@ export default class extends Evented {
         const me = this;
 
         loadDynamicTrainData(me.secrets).then(({trainData, trainInfoData}) => {
-            const {activeTrainLookup, standbyTrainLookup, realtimeTrains, adTrains, dataReferences} = me,
+            const {activeTrainLookup, standbyTrainLookup, realtimeTrains, dataReferences} = me,
                 now = me.clock.getTimeOffset();
 
             me.resetRailwayStatus();
