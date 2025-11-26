@@ -44,26 +44,26 @@ export default class {
             colors = [];
 
         for (const {id, color} of map.railways.getAll()) {
+            me.routeIndices.set(id, features.length);
             for (const zoom of [13, 14, 15, 16, 17, 18]) {
                 features.push(map.featureLookup.get(`${id}.${zoom}`));
             }
+            me.colorIndices.set(id, colors.length);
             colors.push(color);
-            me.routeIndices.set(id, me.routeIndices.size);
-            me.colorIndices.set(id, me.colorIndices.size);
         }
         for (const [id, feature] of map.featureLookup.entries()) {
             if (feature.properties.altitude > 0) {
+                me.routeIndices.set(id, features.length);
                 features.push(feature);
-                me.routeIndices.set(id, me.routeIndices.size);
             }
         }
         for (const {id, color} of map.trainVehicleTypes.getAll()) {
+            me.colorIndices.set(id, colors.length);
             colors.push(color);
-            me.colorIndices.set(id, me.colorIndices.size);
         }
         for (const {id, color, tailcolor} of map.operators.getAll()) {
+            me.colorIndices.set(id, colors.length);
             colors.push([color, tailcolor]);
-            me.colorIndices.set(id, me.colorIndices.size);
         }
 
         me.computeRenderer = new ComputeRenderer(MAX_UG_CARS + MAX_OG_CARS + MAX_AIRCRAFTS, features, colors, {modelOrigin, textureWidth});
@@ -222,26 +222,28 @@ export default class {
 
     addObject(object) {
         const me = this;
-        let routeIndex, colorIndex, sectionIndex, sectionLength, delay;
+        let objectType, routeIndex, colorIndex, sectionIndex, sectionLength, delay;
 
         if (object.type === 'train') {
             const {r, v, ad} = object;
 
+            objectType = 0;
             routeIndex = me.routeIndices.get(r.id);
             colorIndex = ad && ad.color ? me.computeRenderer.addColor(ad.color) : me.colorIndices.get(v ? v.id : r.id);
             sectionIndex = object.sectionIndex;
             sectionLength = object.sectionLength;
-            delay = object.delay;
+            delay = object.delay ? 1 : 0;
         } else {
             const {a, feature} = object;
 
+            objectType = 1;
             routeIndex = me.routeIndices.get(feature.properties.id);
             colorIndex = me.colorIndices.get(a.id);
             sectionIndex = 0;
             sectionLength = 1;
         }
 
-        const instanceID = object.instanceID = me.computeRenderer.addInstance(routeIndex, colorIndex, sectionIndex, sectionLength, delay);
+        const instanceID = object.instanceID = me.computeRenderer.addInstance(objectType, routeIndex, colorIndex, sectionIndex, sectionLength, delay);
 
         me.objects.set(instanceID, object);
         me.needsUpdateInstances = true;

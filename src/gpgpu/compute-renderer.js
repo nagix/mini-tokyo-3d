@@ -15,7 +15,7 @@ export default class {
         const me = this,
             textureWidth = me.textureWidth = parameters.textureWidth,
             textureHeight0 = Math.ceil(count * 2 / textureWidth),
-            textureHeight1 = Math.ceil(count / textureWidth),
+            textureHeight1 = Math.ceil(count * 2 / textureWidth),
             array0 = new Uint32Array(textureWidth * textureHeight0 * 4),
             array1 = new Float32Array(textureWidth * textureHeight1 * 4),
             dtObject0 = me.dtObject0 = new DataTexture(array0, textureWidth, textureHeight0, RGBAIntegerFormat, UnsignedIntType),
@@ -113,7 +113,6 @@ export default class {
         const me = this,
             texture = me.dataVariable[me.currentTextureIndex],
             objectArray0 = me.dtObject0.image.data,
-            routeArray0 = me.dtRoute0.image.data,
             bufferArray = me.buffer,
             ugCarIDs = {body: [], delayMarker: [], outline: []},
             ogCarIDs = {body: [], delayMarker: [], outline: []},
@@ -121,15 +120,17 @@ export default class {
 
         context.renderer.readRenderTargetPixels(texture, 0, 0, texture.width, texture.height, bufferArray);
         for (let i = 0, ilen = me.count; i < ilen; i++) {
-            const state = objectArray0[i * 8 + 7];
+            const offset = i * 8,
+                fadeAnimationType = objectArray0[offset + 6];
 
-            if (state !== 0) {
-                const routeID = objectArray0[i * 8],
-                    type = routeArray0[routeID * 24],
-                    ids = type === 0 ? bufferArray[i * 4 + 2] < 0 ? ugCarIDs : ogCarIDs : aircraftIDs;
+            if (fadeAnimationType !== 0) {
+                const objectType = objectArray0[offset],
+                    delay = objectArray0[offset + 7],
+                    z = bufferArray[i * 4 + 2],
+                    ids = objectType === 0 ? z < 0 ? ugCarIDs : ogCarIDs : aircraftIDs;
 
                 ids.body.push(i);
-                if (state & 4) {
+                if (delay === 1) {
                     ids.delayMarker.push(i);
                 }
                 if (i === me.marked || i === me.tracked) {
@@ -156,13 +157,12 @@ export default class {
 
         for (const feature of features) {
             const properties = feature.properties,
-                type = properties.altitude === undefined ? 0 : 1,
                 coords = feature.geometry.coordinates,
                 distances = properties.distances,
                 sectionOffsets = properties['station-offsets'] || [0, properties.length];
 
-            items.push({type, coords, distances, sectionOffsets});
-            size0 += type === 0 ? 1 : 6;
+            items.push({coords, distances, sectionOffsets});
+            size0 += 1;
             size1 += coords.length * 3 + Math.ceil(sectionOffsets.length / 2);
             maxCount = Math.max(maxCount, coords.length);
         }
@@ -176,11 +176,9 @@ export default class {
         let offset0 = 0,
             offset1 = 0;
 
-        for (const {type, coords, distances, sectionOffsets} of items) {
-            for (let i = 0, ilen = type === 0 ? 1 : 6; i < ilen; i++) {
-                array0.set([type, offset1, coords.length, offset1 + coords.length * 3], offset0 * 4);
-                offset0 += 1;
-            }
+        for (const {coords, distances, sectionOffsets} of items) {
+            array0.set([offset1, coords.length, offset1 + coords.length * 3], offset0 * 4);
+            offset0 += 1;
             for (let i = 0, ilen = coords.length; i < ilen; i++) {
                 const coord = coords[i],
                     mercatorCoord = MercatorCoordinate.fromLngLat(coord, coord[2] || 0),
@@ -232,25 +230,32 @@ export default class {
         dtColor.needsUpdate = true;
     }
 
-    addInstance(routeIndex, colorIndex, sectionIndex, sectionLength, delay) {
+    addInstance(objectType, routeIndex, colorIndex, sectionIndex, sectionLength, delay) {
         const me = this,
-            array0 = me.dtObject0.image.data;
+            array0 = me.dtObject0.image.data,
+            array1 = me.dtObject1.image.data;
 
         for (let i = 0, ilen = me.count; i < ilen; i++) {
-            const offset = i * 8;
+            const offset = i * 8,
+                fadeAnimationType = array0[offset + 6];
 
-            if (array0[offset + 7] === 0) {
+            if (fadeAnimationType === 0) {
                 array0.set([
+                    objectType,
                     routeIndex,
                     colorIndex,
-                    sectionIndex,
-                    sectionIndex + sectionLength,
                     86400000,
                     86400000,
                     performance.now(),
-                    delay ? 5 : 1
+                    1,
+                    delay
+                ], offset);
+                array1.set([
+                    sectionIndex,
+                    sectionIndex + sectionLength
                 ], offset);
                 me.dtObject0.needsUpdate = true;
+                me.dtObject1.needsUpdate = true;
                 return i;
             }
         }
@@ -260,20 +265,21 @@ export default class {
     updateInstance(instanceID, sectionIndex, sectionLength, timeOffset, duration, accelerationTime, normalizedAcceleration, decelerationTime, normalizedDeceleration) {
         const me = this,
             array0 = me.dtObject0.image.data,
-            array1 = me.dtObject1.image.data;
+            array1 = me.dtObject1.image.data,
+            offset = instanceID * 8;
 
         array0.set([
-            sectionIndex,
-            sectionIndex + sectionLength,
             timeOffset,
             timeOffset + duration
-        ], instanceID * 8 + 2);
+        ], offset + 3);
         array1.set([
+            sectionIndex,
+            sectionIndex + sectionLength,
             accelerationTime,
             normalizedAcceleration,
             decelerationTime,
             normalizedDeceleration
-        ], instanceID * 4);
+        ], offset);
         me.dtObject0.needsUpdate = true;
         me.dtObject1.needsUpdate = true;
     }
@@ -282,20 +288,20 @@ export default class {
         return new Promise(resolve => {
             const me = this,
                 array0 = me.dtObject0.image.data,
-                offset = instanceID * 8;
+                offset = instanceID * 8,
+                colorIndex = array0[offset + 2];
 
-            array0[offset + 6] = performance.now();
-            array0[offset + 7] = (array0[offset + 7] & 4) | 2;
+            array0.set([performance.now(), 2], offset + 5);
             me.dtObject0.needsUpdate = true;
 
             animation.start({
                 complete: () => {
-                    array0[offset + 7] = 0;
+                    array0.set([0, 0], offset + 6);
                     me.dtObject0.needsUpdate = true;
 
                     // Clear the extra color if it has
-                    if (array0[offset + 1] >= me.colorCount) {
-                        me.removeColor(array0[offset + 1]);
+                    if (colorIndex >= me.colorCount) {
+                        me.removeColor(colorIndex);
                     }
                     resolve();
                 },
@@ -311,19 +317,21 @@ export default class {
             timeOffset = uniforms.timeOffset.value,
             objectArray0 = me.dtObject0.image.data,
             objectArray1 = me.dtObject1.image.data,
-            routeID = objectArray0[instanceID * 8],
-            sectionIndex = objectArray0[instanceID * 8 + 2],
-            nextSectionIndex = objectArray0[instanceID * 8 + 3],
-            startTime = objectArray0[instanceID * 8 + 4],
-            endTime = objectArray0[instanceID * 8 + 5],
-            accelerationTime = objectArray1[instanceID * 4],
-            acceleration = objectArray1[instanceID * 4 + 1],
-            decelerationTime = objectArray1[instanceID * 4 + 2],
-            deceleration = objectArray1[instanceID * 4 + 3],
-            headerindex = routeID * 6 + zoom - 13,
+            objectType = objectArray0[instanceID * 8],
+            routeID = objectArray0[instanceID * 8 + 1],
+            startTime = objectArray0[instanceID * 8 + 3],
+            endTime = objectArray0[instanceID * 8 + 4],
+            sectionIndex = objectArray1[instanceID * 8],
+            nextSectionIndex = objectArray1[instanceID * 8 + 1],
+            accelerationTime = objectArray1[instanceID * 8 + 2],
+            acceleration = objectArray1[instanceID * 8 + 3],
+            decelerationTime = objectArray1[instanceID * 8 + 4],
+            deceleration = objectArray1[instanceID * 8 + 5],
+            routeSubID = objectType === 0 ? zoom - 13 : 0,
+            headerindex = routeID + routeSubID,
             routeArray0 = me.dtRoute0.image.data,
             routeArray1 = me.dtRoute1.image.data,
-            sectionOffset = routeArray0[headerindex * 4 + 3],
+            sectionOffset = routeArray0[headerindex * 4 + 2],
             sectionDistance = routeArray1[sectionOffset * 2 + sectionIndex],
             nextSectionDistance = routeArray1[sectionOffset * 2 + nextSectionIndex],
             elapsed = clamp(timeOffset - startTime, 0, endTime - startTime),
@@ -339,9 +347,9 @@ export default class {
         }
 
         const distance = lerp(sectionDistance, nextSectionDistance, t),
-            routeOffset = routeArray0[headerindex * 4 + 1];
+            routeOffset = routeArray0[headerindex * 4];
         let start = 0,
-            end = routeArray0[headerindex * 4 + 2] - 1,
+            end = routeArray0[headerindex * 4 + 1] - 1,
             center;
 
         for (let i = 0; i < me.loopCount; i++) {

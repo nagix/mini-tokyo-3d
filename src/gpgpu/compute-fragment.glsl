@@ -71,20 +71,22 @@ void main() {
     uint instanceID = uint( gl_FragCoord.y ) * textureWidth + uint( gl_FragCoord.x );
     uint index = instanceID * 2u;
     uvec4 object0 = fetchObject0( index );
-    uvec4 object1 = fetchObject0( ++index );
-    vec4 object2 = fetchObject1( instanceID );
-    uint routeID = object0.x;
-    uint colorID = object0.y;
-    uint sectionIndex = object0.z;
-    uint nextSectionIndex = object0.w;
-    int startTime = int( object1.x );
-    int endTime = int( object1.y );
-    int fadeAnimationStartTime = int( object1.z );
-    uint fadeAnimationType = object1.w % 4u;
-    float accelerationTime = object2.x;
-    float acceleration = object2.y;
-    float decelerationTime = object2.z;
-    float deceleration = object2.w;
+    uvec4 object1 = fetchObject0( index + 1u );
+    vec4 object2 = fetchObject1( index );
+    vec4 object3 = fetchObject1( index + 1u );
+    uint objectType = object0.x;
+    uint routeID = object0.y;
+    uint colorID = object0.z;
+    int startTime = int( object0.w );
+    int endTime = int( object1.x );
+    int fadeAnimationStartTime = int( object1.y );
+    uint fadeAnimationType = object1.z;
+    uint sectionIndex = uint( object2.x );
+    uint nextSectionIndex = uint( object2.y );
+    float accelerationTime = object2.z;
+    float acceleration = object2.w;
+    float decelerationTime = object3.x;
+    float deceleration = object3.y;
 
     vec4 data0 = fetchData0( instanceID );
     vec4 data1 = fetchData1( instanceID );
@@ -93,10 +95,10 @@ void main() {
     float prevRotateX = data1.y;
     int opacityAnimationStartTime = int( data1.z );
 
-    uvec4 header = fetchRoute0( routeID * 6u + uint( zoom - 13 ) );
+    uint routeSubID = objectType == 0u ? uint( zoom - 13 ) : 0u;
+    uvec4 header = fetchRoute0( routeID + routeSubID );
 
-    uint routeType = header.x;
-    uint offset = header.w;
+    uint offset = header.z;
     vec2 distances = fetchRoute1( offset + sectionIndex / 2u );
     float sectionDistance = sectionIndex % 2u == 0u ? distances.r : distances.g;
     distances = fetchRoute1( offset + nextSectionIndex / 2u );
@@ -109,7 +111,7 @@ void main() {
         max( acceleration * accelerationTime, deceleration * decelerationTime) * ( elapsed - accelerationTime / 2.0 );
     float distance = mix( sectionDistance, nextSectionDistance, a );
 
-    index = indexOfNodeAt( distance, header.y, header.z );
+    index = indexOfNodeAt( distance, header.x, header.y );
     vec2 section0 = fetchRoute1( index );
     vec2 section1 = fetchRoute1( ++index );
     vec2 section2 = fetchRoute1( ++index );
