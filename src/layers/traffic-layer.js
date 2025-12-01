@@ -22,8 +22,6 @@ export default class {
         me.lightColor = 'white';
         me.objects = new Map();
         me.busObjects = [];
-        me.routeIndices = new Map();
-        me.colorIndices = new Map();
 
         me.onCameraChanged = me.onCameraChanged.bind(me);
     }
@@ -35,38 +33,36 @@ export default class {
             cameraZ = map.map.getFreeCameraOptions().position.z,
             modelOrigin = map.getModelOrigin(),
             modelScale = map.getModelScale(),
-            textureWidth = context.renderer.capabilities.maxTextureSize;
+            chunkSize = context.renderer.capabilities.maxTextureSize;
 
         me.map = map;
         me.context = context;
 
-        const features = [],
-            colors = [];
+        const routeData = [],
+            colorData = [];
 
         for (const {id, color} of map.railways.getAll()) {
-            me.routeIndices.set(id, features.length);
-            for (const zoom of [13, 14, 15, 16, 17, 18]) {
-                features.push(map.featureLookup.get(`${id}.${zoom}`));
-            }
-            me.colorIndices.set(id, colors.length);
-            colors.push(color);
+            routeData.push({
+                id,
+                feature: [13, 14, 15, 16, 17, 18].map(zoom => map.featureLookup.get(`${id}.${zoom}`))
+            });
+            colorData.push({id, color});
         }
         for (const [id, feature] of map.featureLookup.entries()) {
             if (feature.properties.altitude > 0) {
-                me.routeIndices.set(id, features.length);
-                features.push(feature);
+                routeData.push({id, feature});
             }
         }
         for (const {id, color} of map.trainVehicleTypes.getAll()) {
-            me.colorIndices.set(id, colors.length);
-            colors.push(color);
+            colorData.push({id, color});
         }
         for (const {id, color, tailcolor} of map.operators.getAll()) {
-            me.colorIndices.set(id, colors.length);
-            colors.push([color, tailcolor]);
+            colorData.push({id, color: [color, tailcolor]});
         }
 
-        me.computeRenderer = new ComputeRenderer(MAX_UG_CARS + MAX_OG_CARS + MAX_AIRCRAFTS, features, colors, {modelOrigin, textureWidth});
+        me.computeRenderer = new ComputeRenderer(MAX_UG_CARS + MAX_OG_CARS + MAX_AIRCRAFTS, {modelOrigin, chunkSize});
+        me.computeRenderer.addRouteGroup(routeData);
+        me.computeRenderer.addColorGroup(colorData);
 
         const ugCarMeshSet = me.ugCarMeshSet = new CarMeshSet(MAX_UG_CARS, {zoom, cameraZ, modelScale}),
             ogCarMeshSet = me.ogCarMeshSet = new CarMeshSet(MAX_OG_CARS, {zoom, cameraZ, modelScale}),
@@ -225,11 +221,19 @@ export default class {
         let objectType, routeIndex, colorIndex, sectionIndex, sectionLength, delay;
 
         if (object.type === 'train') {
-            const {r, v, ad} = object;
+            const {id, r, v, ad} = object;
 
             objectType = 0;
-            routeIndex = me.routeIndices.get(r.id);
-            colorIndex = ad && ad.color ? me.computeRenderer.addColor(ad.color) : me.colorIndices.get(v ? v.id : r.id);
+            routeIndex = me.computeRenderer.getRouteIndex(r.id);
+            if (ad && ad.color) {
+                object.colorGroupIndex = me.computeRenderer.addColorGroup([{
+                    id,
+                    color: ad.color
+                }]);
+                colorIndex = me.computeRenderer.getColorIndex(id);
+            } else {
+                colorIndex = me.computeRenderer.getColorIndex(v ? v.id : r.id);
+            }
             sectionIndex = object.sectionIndex;
             sectionLength = object.sectionLength;
             delay = object.delay ? 1 : 0;
@@ -237,8 +241,8 @@ export default class {
             const {a, feature} = object;
 
             objectType = 1;
-            routeIndex = me.routeIndices.get(feature.properties.id);
-            colorIndex = me.colorIndices.get(a.id);
+            routeIndex = me.computeRenderer.getRouteIndex(feature.properties.id);
+            colorIndex = me.computeRenderer.getColorIndex(a.id);
             sectionIndex = 0;
             sectionLength = 1;
         }
@@ -320,12 +324,16 @@ export default class {
 
     removeObject(object) {
         const me = this,
-            instanceID = object.instanceID;
+            {instanceID, colorGroupIndex} = object;
 
         if (instanceID !== undefined) {
             me.objects.delete(instanceID);
             delete object.instanceID;
             return me.computeRenderer.removeInstance(instanceID).then(() => {
+                if (colorGroupIndex !== undefined) {
+                    me.computeRenderer.removeColorGroup(colorGroupIndex);
+                    delete object.colorGroupIndex;
+                }
                 me.needsUpdateInstances = true;
             });
         }

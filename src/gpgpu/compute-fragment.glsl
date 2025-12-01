@@ -14,32 +14,32 @@ layout (location = 0) out vec4 outPosition0;
 layout (location = 1) out vec4 outPosition1;
 
 uvec4 fetchRoute0( uint index ) {
-    ivec2 ref = ivec2( int( index % textureWidth ), int( index / textureWidth ) );
+    ivec2 ref = ivec2( int( index % chunkSize ), int( index / chunkSize ) );
     return texelFetch( textureRoute0, ref, 0 );
 }
 
 vec2 fetchRoute1( uint index ) {
-    ivec2 ref = ivec2( int( index % textureWidth ), int( index / textureWidth ) );
+    ivec2 ref = ivec2( int( index % chunkSize ), int( index / chunkSize ) );
     return texelFetch( textureRoute1, ref, 0 ).rg;
 }
 
 uvec4 fetchObject0( uint index ) {
-    ivec2 ref = ivec2( int( index % textureWidth ), int( index / textureWidth ) );
+    ivec2 ref = ivec2( int( index % chunkSize ), int( index / chunkSize ) );
     return texelFetch( textureObject0, ref, 0 );
 }
 
 vec4 fetchObject1( uint index ) {
-    ivec2 ref = ivec2( int( index % textureWidth ), int( index / textureWidth ) );
+    ivec2 ref = ivec2( int( index % chunkSize ), int( index / chunkSize ) );
     return texelFetch( textureObject1, ref, 0 );
 }
 
 vec4 fetchData0( uint index ) {
-    ivec2 ref = ivec2( int( index % textureWidth ), int( index / textureWidth ) );
+    ivec2 ref = ivec2( int( index % chunkSize ), int( index / chunkSize ) );
     return texelFetch( textureData0, ref, 0 );
 }
 
 vec4 fetchData1( uint index ) {
-    ivec2 ref = ivec2( int( index % textureWidth ), int( index / textureWidth ) );
+    ivec2 ref = ivec2( int( index % chunkSize ), int( index / chunkSize ) );
     return texelFetch( textureData1, ref, 0 );
 }
 
@@ -68,7 +68,7 @@ uint indexOfNodeAt( float distance, uint offset, uint length ) {
 }
 
 void main() {
-    uint instanceID = uint( gl_FragCoord.y ) * textureWidth + uint( gl_FragCoord.x );
+    uint instanceID = uint( gl_FragCoord.y ) * chunkSize + uint( gl_FragCoord.x );
     uint index = instanceID * 2u;
     uvec4 object0 = fetchObject0( index );
     uvec4 object1 = fetchObject0( index + 1u );
