@@ -321,7 +321,7 @@ export function getStyleOpacities(map, metadataKey) {
             const opacity = [];
 
             prop.forEach((item, index) => {
-                if (index % 2 === 0 && !isNaN(item)) {
+                if ((index % 2 === 0 || index === prop.length - 1) && !isNaN(item)) {
                     opacity.push({index, value: item});
                 }
             });

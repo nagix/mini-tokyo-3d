@@ -2255,12 +2255,21 @@ export default class extends Evented {
                             'line-emissive-strength': 1
                         },
                         metadata: {
-                            'mt3d:opacity-effect': true,
-                            'mt3d:opacity': 1,
-                            'mt3d:opacity-route': 0.1,
-                            'mt3d:opacity-underground': 0.25,
-                            'mt3d:opacity-underground-route': 0.1
-                        }
+                            'busroute': {
+                                'mt3d:opacity-effect': true,
+                                'mt3d:opacity': 1,
+                                'mt3d:opacity-route': 0.1,
+                                'mt3d:opacity-underground': 0,
+                                'mt3d:opacity-underground-route': 0
+                            },
+                            'busroute-highlighted': {
+                                'mt3d:opacity-effect': true,
+                                'mt3d:opacity': 1,
+                                'mt3d:opacity-route': 0.1,
+                                'mt3d:opacity-underground': 0.25,
+                                'mt3d:opacity-underground-route': 0.1
+                            }
+                        }[key]
                     }, 'railways-og-13');
                     layerIds.add(`${key}-${id}-og-`);
                 }
