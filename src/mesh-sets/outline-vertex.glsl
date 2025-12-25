@@ -1,21 +1,13 @@
 uniform float zoom;
 uniform float cameraZ;
 uniform float modelScale;
-
-#ifdef GPGPU
 uniform sampler2D textureData0;
 uniform sampler2D textureData1;
 uniform int marked;
 uniform int tracked;
 uniform float intensity;
+
 attribute int instanceID;
-#else
-attribute vec3 translation;
-attribute float rotationX;
-attribute float rotationZ;
-attribute float outline;
-attribute vec3 idColor;
-#endif
 
 #ifdef AIRCRAFT
 attribute float groupIndex;
@@ -50,7 +42,6 @@ mat3 rotateZ( float angle ) {
 varying float vInstanceOpacity;
 
 void main() {
-    #ifdef GPGPU
     int width = textureSize( textureData0, 0 ).x;
     ivec2 reference = ivec2( instanceID % width, instanceID / width );
     vec4 data0 = texelFetch( textureData0, reference, 0 );
@@ -59,7 +50,6 @@ void main() {
     float rotationX = data1.y;
     float rotationZ = data1.x;
     float outline = instanceID == marked ? 1.0 : instanceID == tracked ? intensity : 0.0;
-    #endif
 
     float zoom0 = zoom + log2( cameraZ / abs( cameraZ - translation.z ) );
     float scale0 = getScale( zoom0, modelScale );
@@ -75,12 +65,7 @@ void main() {
     vec3 position0 = position * scale0;
     #endif
 
-    #ifdef GPGPU
     position0 = position0 * ( 1.0 + float( instanceID % 256 ) / 256.0 * 0.03 );
-    #else
-    position0 = position0 * ( 1.0 + idColor.b * 0.03 );
-    #endif
-
     position0 = position0 + 0.1 * scale0 * sign( position );
 
     #ifdef BUS

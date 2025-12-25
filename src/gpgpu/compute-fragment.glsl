@@ -81,8 +81,8 @@ void main() {
     int endTime = int( object1.x );
     int fadeAnimationStartTime = int( object1.y );
     uint fadeAnimationType = object1.z;
-    uint sectionIndex = uint( object2.x );
-    uint nextSectionIndex = uint( object2.y );
+    float sectionIndex = object2.x;
+    float nextSectionIndex = object2.y;
     float accelerationTime = object2.z;
     float acceleration = object2.w;
     float decelerationTime = object3.x;
@@ -99,10 +99,10 @@ void main() {
     uvec4 header = fetchRoute0( routeID + routeSubID );
 
     uint offset = header.z;
-    vec2 distances = fetchRoute1( offset + sectionIndex / 2u );
-    float sectionDistance = sectionIndex % 2u == 0u ? distances.r : distances.g;
-    distances = fetchRoute1( offset + nextSectionIndex / 2u );
-    float nextSectionDistance = nextSectionIndex % 2u == 0u ? distances.r : distances.g;
+    vec2 distances = objectType == 2u ? vec2( 0.0 ) : fetchRoute1( offset + uint( sectionIndex ) / 2u );
+    float sectionDistance = objectType == 2u ? sectionIndex : uint( sectionIndex ) % 2u == 0u ? distances.r : distances.g;
+    distances = objectType == 2u ? vec2( 0.0 ) : fetchRoute1( offset + uint( nextSectionIndex ) / 2u );
+    float nextSectionDistance = objectType == 2u ? nextSectionIndex : uint( nextSectionIndex ) % 2u == 0u ? distances.r : distances.g;
 
     float elapsed = float( clamp( timeOffset - startTime, 0, endTime - startTime ) );
     float left = float( clamp( endTime - timeOffset, 0, endTime - startTime ) );
@@ -123,7 +123,7 @@ void main() {
     float rotateX = section2.g;
     float nextDistance = section3.r;
     vec3 nextPosition = vec3( section3.g, section4.r, section4.g );
-    a = ( distance - baseDistance ) / ( nextDistance - baseDistance );
+    a = nextDistance != baseDistance ? ( distance - baseDistance ) / ( nextDistance - baseDistance ) : 0.0;
     vec3 position = mix( currentPosition, nextPosition, a );
 
     bool prevGround = prevPosition.z >= 0.0;

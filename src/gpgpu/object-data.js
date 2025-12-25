@@ -14,7 +14,7 @@ export default class {
         me.start = 0;
     }
 
-    add(objectType, routeIndex, colorIndex, sectionIndex, sectionLength, delay) {
+    add(objectType, routeIndex, colorIndex, sectionIndex, nextSectionIndex, delay) {
         const me = this,
             {uintTexture, floatTexture} = me,
             uintArray = uintTexture.image.data,
@@ -37,7 +37,7 @@ export default class {
                 ], offset);
                 floatArray.set([
                     sectionIndex,
-                    sectionIndex + sectionLength
+                    nextSectionIndex
                 ], offset);
                 uintTexture.needsUpdate = true;
                 floatTexture.needsUpdate = true;
@@ -48,7 +48,7 @@ export default class {
         console.log('Error: exceed the max train count');
     }
 
-    update(instanceID, sectionIndex, sectionLength, timeOffset, duration, accelerationTime, normalizedAcceleration, decelerationTime, normalizedDeceleration) {
+    update(instanceID, sectionIndex, nextSectionIndex, timeOffset, duration, accelerationTime, normalizedAcceleration, decelerationTime, normalizedDeceleration) {
         const me = this,
             {uintTexture, floatTexture} = me,
             uintArray = uintTexture.image.data,
@@ -61,7 +61,7 @@ export default class {
         ], offset + 3);
         floatArray.set([
             sectionIndex,
-            sectionIndex + sectionLength,
+            nextSectionIndex,
             accelerationTime,
             normalizedAcceleration,
             decelerationTime,
@@ -106,7 +106,8 @@ export default class {
             uintArray = me.uintTexture.image.data,
             ugCarIDs = {body: [], delayMarker: [], outline: []},
             ogCarIDs = {body: [], delayMarker: [], outline: []},
-            aircraftIDs = {body: [], outline: []};
+            aircraftIDs = {body: [], outline: []},
+            busIDs = {body: [], outline: []};
 
         for (let i = 0, ilen = me.count; i < ilen; i++) {
             const offset = i * 8,
@@ -116,7 +117,7 @@ export default class {
                 const objectType = uintArray[offset],
                     delay = uintArray[offset + 7],
                     z = bufferArray[i * 4 + 2],
-                    ids = objectType === 0 ? z < 0 ? ugCarIDs : ogCarIDs : aircraftIDs;
+                    ids = objectType === 0 ? z < 0 ? ugCarIDs : ogCarIDs : objectType === 1 ? aircraftIDs : busIDs;
 
                 ids.body.push(i);
                 if (delay === 1) {
@@ -132,7 +133,7 @@ export default class {
         ugCarIDs.body.sort((a, b) => a % 256 - b % 256);
         ogCarIDs.body.sort((a, b) => a % 256 - b % 256);
 
-        return [ugCarIDs, ogCarIDs, aircraftIDs];
+        return [ugCarIDs, ogCarIDs, aircraftIDs, busIDs];
     }
 
     dispose() {

@@ -139,12 +139,12 @@ export default class {
         return this.dtColor.getIndex(id);
     }
 
-    addInstance(objectType, routeIndex, colorIndex, sectionIndex, sectionLength, delay) {
-        return this.dtObject.add(objectType, routeIndex, colorIndex, sectionIndex, sectionLength, delay);
+    addInstance(objectType, routeIndex, colorIndex, sectionIndex, nextSectionIndex, delay) {
+        return this.dtObject.add(objectType, routeIndex, colorIndex, sectionIndex, nextSectionIndex, delay);
     }
 
-    updateInstance(instanceID, sectionIndex, sectionLength, timeOffset, duration, accelerationTime, normalizedAcceleration, decelerationTime, normalizedDeceleration) {
-        this.dtObject.update(instanceID, sectionIndex, sectionLength, timeOffset, duration, accelerationTime, normalizedAcceleration, decelerationTime, normalizedDeceleration);
+    updateInstance(instanceID, sectionIndex, nextSectionIndex, timeOffset, duration, accelerationTime, normalizedAcceleration, decelerationTime, normalizedDeceleration) {
+        this.dtObject.update(instanceID, sectionIndex, nextSectionIndex, timeOffset, duration, accelerationTime, normalizedAcceleration, decelerationTime, normalizedDeceleration);
     }
 
     removeInstance(instanceID) {
@@ -190,8 +190,8 @@ export default class {
             routeArray0 = me.dtRoute.uintTexture.image.data,
             routeArray1 = me.dtRoute.floatTexture.image.data,
             sectionOffset = routeArray0[headerindex * 4 + 2],
-            sectionDistance = routeArray1[sectionOffset * 2 + sectionIndex],
-            nextSectionDistance = routeArray1[sectionOffset * 2 + nextSectionIndex],
+            sectionDistance = objectType === 2 ? sectionIndex : routeArray1[sectionOffset * 2 + sectionIndex],
+            nextSectionDistance = objectType === 2 ? nextSectionIndex : routeArray1[sectionOffset * 2 + nextSectionIndex],
             elapsed = clamp(timeOffset - startTime, 0, endTime - startTime),
             left = clamp(endTime - timeOffset, 0, endTime - startTime);
         let t;
@@ -232,7 +232,7 @@ export default class {
             nextX = routeArray1[nodeOffset * 2 + 7],
             nextY = routeArray1[nodeOffset * 2 + 8],
             nextZ = routeArray1[nodeOffset * 2 + 9],
-            a = (distance - baseDistance) / (nextDistance - baseDistance),
+            a = nextDistance !== baseDistance ? (distance - baseDistance) / (nextDistance - baseDistance) : 0,
             x = lerp(currentX, nextX, a),
             y = lerp(currentY, nextY, a),
             z = lerp(currentZ, nextZ, a),

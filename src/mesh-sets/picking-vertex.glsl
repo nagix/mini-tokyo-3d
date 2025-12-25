@@ -1,30 +1,10 @@
 uniform float zoom;
 uniform float cameraZ;
 uniform float modelScale;
-
-#ifdef GPGPU
 uniform sampler2D textureData0;
 uniform sampler2D textureData1;
 
-#ifdef CAR
-#define objectType 0
-#endif
-
-#ifdef AIRCRAFT
-#define objectType 16
-#endif
-
-#ifdef BUS
-#define objectType 32
-#endif
-
 attribute int instanceID;
-#else
-attribute vec3 translation;
-attribute float rotationX;
-attribute float rotationZ;
-attribute vec3 idColor;
-#endif
 
 #ifdef AIRCRAFT
 attribute float groupIndex;
@@ -59,7 +39,6 @@ mat3 rotateZ( float angle ) {
 varying vec3 vIdColor;
 
 void main() {
-    #ifdef GPGPU
     int width = textureSize( textureData0, 0 ).x;
     ivec2 reference = ivec2( instanceID % width, instanceID / width );
     vec4 data0 = texelFetch( textureData0, reference, 0 );
@@ -68,8 +47,7 @@ void main() {
     float rotationX = data1.y;
     float rotationZ = data1.x;
     float opacity0 = data1.w;
-    vec3 idColor = vec3( ivec3( instanceID / 65536 % 16 + objectType, instanceID / 256 % 256, instanceID % 256 ) ) / 256.0 + 0.5 / 256.0;
-    #endif
+    vec3 idColor = vec3( ivec3( instanceID / 65536 % 256, instanceID / 256 % 256, instanceID % 256 ) ) / 256.0 + 0.5 / 256.0;
 
     float zoom0 = zoom + log2( cameraZ / abs( cameraZ - translation.z ) );
     float scale0 = getScale( zoom0, modelScale );
@@ -85,11 +63,7 @@ void main() {
     vec3 position0 = position * scale0;
     #endif
 
-    #ifdef GPGPU
     position0 = position0 * ( 1.0 + float( instanceID % 256 ) / 256.0 * 0.03 );
-    #else
-    position0 = position0 * ( 1.0 + idColor.b * 0.03 );
-    #endif
 
     #ifdef BUS
     vec3 transformed = rotateZ( rotationZ ) * position0 + translation + vec3( 0.0, 0.0, 0.3 * scale0 );

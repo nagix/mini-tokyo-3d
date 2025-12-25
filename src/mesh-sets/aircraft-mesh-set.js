@@ -32,10 +32,7 @@ export default class extends MeshSet {
             Object.assign(shader.uniforms, me.getUniforms());
             shader.vertexShader = updateVertexShader(shader.vertexShader);
             shader.fragmentShader = updateFragmentShader(shader.fragmentShader);
-            shader.defines = {
-                AIRCRAFT: true,
-                GPGPU: true
-            };
+            shader.defines = {AIRCRAFT: true};
         };
 
         const mesh = me.mesh = new Mesh(geometry, material);
@@ -48,10 +45,7 @@ export default class extends MeshSet {
             uniforms: me.getUniforms(),
             vertexShader: pickingVertexShader,
             fragmentShader: pickingFragmentShader,
-            defines: {
-                AIRCRAFT: true,
-                GPGPU: true
-            }
+            defines: {AIRCRAFT: true}
         });
 
         const pickingMesh = me.pickingMesh = new Mesh(geometry, pickingMaterial);
@@ -73,10 +67,7 @@ export default class extends MeshSet {
             },
             vertexShader: outlineVertexShader,
             fragmentShader: outlineFragmentShader,
-            defines: {
-                AIRCRAFT: true,
-                GPGPU: true
-            },
+            defines: {AIRCRAFT: true},
             transparent: true,
             side: BackSide
         });

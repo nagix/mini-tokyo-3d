@@ -36,10 +36,7 @@ export default class extends MeshSet {
             Object.assign(shader.uniforms, me.getUniforms());
             shader.vertexShader = updateVertexShader(shader.vertexShader);
             shader.fragmentShader = updateFragmentShader(shader.fragmentShader);
-            shader.defines = {
-                CAR: true,
-                GPGPU: true
-            };
+            shader.defines = {CAR: true};
         };
 
         const mesh = me.mesh = new Mesh(geometry, material);
@@ -52,10 +49,7 @@ export default class extends MeshSet {
             uniforms: me.getUniforms(),
             vertexShader: pickingVertexShader,
             fragmentShader: pickingFragmentShader,
-            defines: {
-                CAR: true,
-                GPGPU: true
-            }
+            defines: {CAR: true}
         });
 
         const pickingMesh = me.pickingMesh = new Mesh(geometry, pickingMaterial);
@@ -76,9 +70,6 @@ export default class extends MeshSet {
             },
             vertexShader: delayMarkerVertexShader,
             fragmentShader: delayMarkerFragmentShader,
-            defines: {
-                GPGPU: true
-            },
             blending: MultiplyBlending,
             depthWrite: false
         });
@@ -103,10 +94,7 @@ export default class extends MeshSet {
             },
             vertexShader: outlineVertexShader,
             fragmentShader: outlineFragmentShader,
-            defines: {
-                CAR: true,
-                GPGPU: true
-            },
+            defines: {CAR: true},
             transparent: true,
             side: BackSide
         });

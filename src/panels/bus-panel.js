@@ -54,9 +54,9 @@ export default class extends Panel {
 
         (function repeat() {
             const height = bodyElement.getBoundingClientRect().height,
-                index = bus.sectionIndex,
-                curr = offsets[index],
-                next = offsets[Math.min(index + 1, offsets.length - 1)],
+                nextIndex = bus.sectionIndex + bus.sectionLength,
+                curr = offsets[Math.max(0, nextIndex - 1)],
+                next = offsets[nextIndex],
                 y = lerp(curr, next, bus._t),
                 p = performance.now() % 1500 / 1500;
 
