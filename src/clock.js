@@ -190,8 +190,8 @@ export default class {
             day = date.getDate();
 
         if (dayOfWeek === 0 || JapaneseHolidays.isHoliday(date) ||
-            (year === 2022 && month === 11 && day >= 30) ||
-            (year === 2023 && month === 0 && day <= 3)) {
+            (month === 11 && day >= 30) ||
+            (month === 0 && day <= 3)) {
             return 'Holiday';
         }
         if (dayOfWeek === 6) {
