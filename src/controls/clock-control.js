@@ -1,6 +1,7 @@
 import {Evented} from 'mapbox-gl';
 import JapaneseHolidays from 'japanese-holidays';
 import {createElement} from '../helpers/helpers';
+import {Timescope} from 'timescope';
 
 const DATE_FORMAT = {
     year: 'numeric',
@@ -29,6 +30,50 @@ export default class extends Evented {
         me._dict = options.dict;
         me._clock = options.clock;
         me._mode = options.mode || 'realtime';
+
+        me._timescope = new Timescope({
+            timeRange: [undefined, undefined],
+            style: {
+                width: '100%',
+                height: '100%',
+                background: 'transparent',
+            },
+            tracks: {
+                default: {
+                    timeAxis: {
+                        axis: {
+                            color: 'white',
+                        },
+                        ticks: {
+                            color: 'white',
+                        },
+                        labels: {
+                            color: 'white',
+                        },
+                    },
+                },
+            },
+        });
+
+        me._timescope.on('timechanging', (e) => {
+            const now = Math.floor(me._clock.getTime() / 1000);
+            if (e.value) {
+                if (now !== Math.floor(e.value.number())) {
+                    const date = new Date(e.value.mul(1000).number());
+                    me._clock.setDate(date);
+                    me._onChange();
+                }
+            }
+        });
+
+        me._timescope.on('timeanimated', (e) => {
+            if (e.value) {
+                me._clock.setDate(new Date(e.value.mul(1000).number()));
+                me._timescope.setPlaybackTime(me._clock.getTime() / 1000);
+                me._timescope.setTime(null, false);
+                me._onChange();
+            }
+        });
     }
 
     getDefaultPosition() {
@@ -50,6 +95,9 @@ export default class extends Evented {
             if (Math.floor(now / 1000) !== Math.floor(me._lastRefresh / 1000)) {
                 me._refresh();
                 me._lastRefresh = now;
+            }
+            if (me._timescope && !me._timescope.animating && !me._timescope.editing) {
+                me._timescope.setPlaybackTime(now / 1000);
             }
             if (me._container) {
                 requestAnimationFrame(repeat);
@@ -92,8 +140,10 @@ export default class extends Evented {
             editing = me._editing;
 
         element.innerHTML = [
-            mode === 'realtime' || !editing ?
-                '<span id="date"></span><br><span id="time"></span><br>' : '',
+            mode === 'realtime' || !editing ? '<div style="display: inline-flex; gap: 1rem; align-items: center; height: 48px;"><div><span id="date"></span><br><span id="time"></span></div>' : '',
+            mode === 'playback' && !editing ? '<div id="timescope" style="display: inline-block; width: 800px; height: 48px"></div>' : '',
+            mode === 'realtime' || !editing ? '</div><br />' : '',
+            mode === 'playback' ? '<div style="width: fit-content">' : '',
             mode === 'playback' && !editing ? [
                 '<div class="clock-button">',
                 `<span><button id="edit-time-button">${dict['edit-date-time']}</button></span>`,
@@ -132,11 +182,19 @@ export default class extends Evented {
                 '<span><button id="speed-increase-button" class="right-button"',
                 clock.speed === 600 ? ' disabled' : '',
                 '><span class="increase-icon"></span></button></span>',
+                '</div>',
                 '</div>'
             ].join('') : ''
         ].join('');
 
         me._refresh();
+
+        try {
+            if (me._timescope) me._timescope.unmount();
+            me._timescope.mount(element.querySelector('#timescope'));
+        } catch (_e) {
+            // do nothing
+        }
 
         if (mode === 'playback' && editing) {
             element.querySelector('#edit-time-cancel-button').addEventListener('click', () => {
