@@ -3,7 +3,7 @@ import configs from '../configs';
 import ComputeRenderer from '../gpgpu/compute-renderer';
 import {lerp} from '../helpers/helpers';
 import {hasDarkBackground} from '../helpers/helpers-mapbox';
-import {AircraftMeshSet, BusMeshSet, CarMeshSet} from '../mesh-sets';
+import MeshSet from '../mesh-set';
 import {Point} from 'mapbox-gl';
 import {Color, Scene, WebGLRenderTarget, Vector3} from 'three';
 
@@ -28,21 +28,23 @@ export default class {
     onAdd(map, context) {
         const me = this,
             scene = context.scene,
-            zoom = map.getZoom(),
-            cameraZ = map.map.getFreeCameraOptions().position.z,
             modelOrigin = map.getModelOrigin(),
-            modelScale = map.getModelScale(),
-            chunkSize = context.renderer.capabilities.maxTextureSize;
+            chunkSize = context.renderer.capabilities.maxTextureSize,
+            meshSetParams = {
+                zoom: map.getZoom(),
+                cameraZ: map.map.getFreeCameraOptions().position.z,
+                modelScale: map.getModelScale()
+            };
 
         me.map = map;
         me.context = context;
 
         me.computeRenderer = new ComputeRenderer(MAX_UG_CARS + MAX_OG_CARS + MAX_AIRCRAFTS + MAX_BUSES, {modelOrigin, chunkSize});
 
-        const ugCarMeshSet = me.ugCarMeshSet = new CarMeshSet(MAX_UG_CARS, {zoom, cameraZ, modelScale}),
-            ogCarMeshSet = me.ogCarMeshSet = new CarMeshSet(MAX_OG_CARS, {zoom, cameraZ, modelScale}),
-            aircraftMeshSet = me.aircraftMeshSet = new AircraftMeshSet(MAX_AIRCRAFTS, {zoom, cameraZ, modelScale}),
-            busMeshSet = me.busMeshSet = new BusMeshSet(MAX_BUSES, {zoom, cameraZ, modelScale});
+        const ugCarMeshSet = me.ugCarMeshSet = new MeshSet('CAR', MAX_UG_CARS, meshSetParams),
+            ogCarMeshSet = me.ogCarMeshSet = new MeshSet('CAR', MAX_OG_CARS, meshSetParams),
+            aircraftMeshSet = me.aircraftMeshSet = new MeshSet('AIRCRAFT', MAX_AIRCRAFTS, meshSetParams),
+            busMeshSet = me.busMeshSet = new MeshSet('BUS', MAX_BUSES, meshSetParams);
 
         scene.add(ugCarMeshSet.getMesh());
         scene.add(ogCarMeshSet.getMesh());
