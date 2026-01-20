@@ -185,7 +185,6 @@ export default class {
         }
 
         const dayOfWeek = date.getDay(),
-            year = date.getFullYear(),
             month = date.getMonth(),
             day = date.getDate();
 
