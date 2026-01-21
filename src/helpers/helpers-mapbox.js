@@ -274,16 +274,6 @@ export function hasDarkBackground(map, actual) {
 }
 
 /**
- * Returns the modified style color based on the color factors.
- * @param {Object} color - Style color object
- * @param {Object} colorFactors - Color factors object
- * @returns {string} Modified style color string
- */
-export function getScaledColorString(color, colorFactors) {
-    return `rgba(${color.r * colorFactors.r},${color.g * colorFactors.g},${color.b * colorFactors.b},${color.a})`;
-}
-
-/**
  * Returns an array of the style opacity information retrieved from map layers.
  * @param {mapboxgl.Map} map - Mapbox's Map object
  * @param {string} metadataKey - Metadata key to filter

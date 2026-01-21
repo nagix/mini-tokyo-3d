@@ -3454,11 +3454,11 @@ export default class extends Evented {
     }
 
     refreshStationOutline() {
-        const p = performance.now() % 1500 / 1500 * 2;
+        const opacity = helpers.blink();
 
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
             helpersMapbox.setLayerProps(this.map, `stations-selected-${zoom}`, {
-                opacity: p < 1 ? p : 2 - p,
+                opacity,
                 visible: true
             });
         }

@@ -1,4 +1,5 @@
 import {AdditiveBlending, BackSide, BoxGeometry, Mesh, MeshLambertMaterial, MultiplyBlending, ShaderMaterial, SphereGeometry} from 'three';
+import {blink} from '../helpers/helpers';
 import AircraftGeometry from './aircraft-geometry.js';
 import CarGeometry from './car-geometry.js';
 import InstancedGeometry from './instanced-geometry.js';
@@ -150,14 +151,13 @@ export default class {
 
     setTextures(textures) {
         const me = this,
-            uniforms = me.uniforms,
-            p = performance.now() % 1500 / 1500 * 2.0;
+            uniforms = me.uniforms;
 
         uniforms.textureData0.value = textures[0];
         uniforms.textureData1.value = textures[1];
         uniforms.textureColor.value = textures[2];
 
-        me.outlineMaterial.uniforms.intensity.value = p < 1 ? p : 2 - p;
+        me.outlineMaterial.uniforms.intensity.value = blink();
     }
 
     setInstanceIDs(ids) {

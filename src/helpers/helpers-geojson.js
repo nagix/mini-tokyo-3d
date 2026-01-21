@@ -4,7 +4,6 @@ import turfDistance from '@turf/distance';
 import {featureCollection} from '@turf/helpers';
 import {getCoord, getCoords} from '@turf/invariant';
 import {featureEach} from '@turf/meta';
-import destination from '../turf/destination';
 
 /**
  * Filter GeoJSON object using a filter function.
@@ -51,55 +50,6 @@ export function updateDistances(line) {
     }
 
     distances.push([travelled, bearing, slope, pitch]);
-}
-
-/**
- * Returns coordinates, altitude, bearing and pitch of the object from its distance.
- * @param {Object} line - LineString of the railway/airway
- * @param {number} distance - Distance from the beginning of the LineString
- * @param {number} composition - Number of cars
- * @param {number} unit - Unit of car length
- * @returns {Array} Array of coord, altitude, bearing and pitch for cars
- */
-export function getCoordAndBearing(line, distance, composition, unit) {
-    const coords = line.geometry.coordinates,
-        distances = line.properties.distances,
-        length = coords.length,
-        result = [];
-    let start = 0,
-        end = length - 1;
-
-    distance -= unit * (composition - 1) / 2;
-
-    while (start !== end - 1) {
-        const center = Math.floor((start + end) / 2);
-
-        if (distance < distances[center][0]) {
-            end = center;
-        } else {
-            start = center;
-        }
-    }
-
-    let index = start;
-
-    for (let i = 0; i < composition; distance += unit, i++) {
-        while (distance > distances[index + 1][0] && index < length - 2) {
-            index++;
-        }
-
-        const [baseDistance, bearing, slope, pitch] = distances[index],
-            coord = coords[index],
-            overshot = distance - baseDistance;
-
-        result.push({
-            coord: destination(coord, overshot, bearing),
-            altitude: (coord[2] || 0) + slope * overshot,
-            bearing,
-            pitch
-        });
-    }
-    return result;
 }
 
 /**
