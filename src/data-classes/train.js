@@ -15,6 +15,7 @@ export default class {
         arrivalTime;
         nextDepartureTime;
         instanceID;
+        colorGroupIndex;
         coord;
         altitude;
         bearing;
@@ -31,8 +32,8 @@ export default class {
             {r, y, d, os, ds, ts, fs, nm, v, ad, delay, carComposition} = params;
 
         /**
-         * Object type
-         * $type {string}
+         * Object type.
+         * @type {string}
          */
         me.type = 'train';
 

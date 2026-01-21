@@ -27,8 +27,8 @@ export default class {
             {s, dp, ds, adt, edt, sdt, ar, or, aat, eat, sat} = params;
 
         /**
-         * Object type
-         * $type {string}
+         * Object type.
+         * @type {string}
          */
         me.type = 'flight';
 

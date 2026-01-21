@@ -14,12 +14,12 @@ export default class extends Panel {
             bus = me._options.object,
             gtfs = map.gtfs.get(bus.gtfsId),
             trip = bus.trip,
-            {route, stops, departureTimes} = trip,
-            color = gtfs.routeLookup.get(route).color,
-            stopLookup = gtfs.stopLookup;
+            {route, stops: stopIds, departureTimes} = trip,
+            color = gtfs.routes.get(route).color,
+            stops = gtfs.stops;
 
-        for (let i = 0, ilen = stops.length; i < ilen; i++) {
-            const stop = stopLookup.get(stops[i]),
+        for (let i = 0, ilen = stopIds.length; i < ilen; i++) {
+            const stop = stops.get(stopIds[i]),
                 departureTime = getTimeString(departureTimes[i]);
 
             busstopHTML.push([
@@ -80,7 +80,7 @@ export default class extends Panel {
             bus = me._options.object,
             gtfs = map.gtfs.get(bus.gtfsId),
             {route, headsigns} = bus.trip,
-            {shortName, longName, color, textColor} = gtfs.routeLookup.get(route),
+            {shortName, longName, color, textColor} = gtfs.routes.get(route),
             labelStyle = [
                 textColor ? `color: ${textColor};` : '',
                 color ? `background-color: ${color};` : ''

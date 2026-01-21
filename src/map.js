@@ -6,7 +6,7 @@ import Clock from './clock';
 import configs from './configs';
 import {ClockControl, MapboxGLButtonControl, SearchControl} from './controls';
 import Dataset from './dataset';
-import {Airport, Flight, FlightStatus, Operator, POI, RailDirection, Railway, Station, Train, TrainTimetables, TrainType, TrainVehicleType} from './data-classes';
+import {Airport, Bus, Flight, FlightStatus, GTFSRoute, GTFSStop, GTFSTrip, Operator, POI, RailDirection, Railway, Station, Train, TrainTimetables, TrainType, TrainVehicleType} from './data-classes';
 import extend from './extend';
 import * as helpers from './helpers/helpers';
 import {pickObject} from './helpers/helpers-deck';
@@ -1516,9 +1516,9 @@ export default class extends Evented {
             now = me.clock.getTimeOffset();
 
         for (const gtfs of gtfsId ? [me.gtfs.get(gtfsId)] : me.gtfs.values()) {
-            for (const trip of gtfs.tripLookup.values()) {
+            for (const trip of gtfs.trips.getAll()) {
                 const departureTimes = trip.departureTimes,
-                    route = gtfs.routeLookup.get(trip.route);
+                    route = gtfs.routes.get(trip.route);
 
                 if (departureTimes[0] <= now && now <= departureTimes[departureTimes.length - 1] && !gtfs.activeBusLookup.has(trip.id) && route && !route.hidden) {
                     let offset = 0;
@@ -1530,17 +1530,16 @@ export default class extends Evented {
 
                     const offsets = trip.stops.map(stopId =>
                         // Use the previous offset to calulate a weight and pick a closer point
-                        (offset = nearestCloserPointOnLine(feature, gtfs.stopLookup.get(stopId).coord, offset).properties.location)
+                        (offset = nearestCloserPointOnLine(feature, gtfs.stops.get(stopId).coord, offset).properties.location)
                     );
 
-                    me.busStart({
-                        type: 'bus',
+                    me.busStart(new Bus({
                         gtfsId: gtfs.id,
                         trip,
                         feature,
                         offsets,
                         offset: 0
-                    });
+                    }));
                 }
             }
         }
@@ -1959,17 +1958,17 @@ export default class extends Evented {
         const me = this,
             dict = me.dict,
             gtfs = me.gtfs.get(bus.gtfsId),
-            stopLookup = gtfs.stopLookup,
-            {route, headsigns, stops} = bus.trip,
-            {shortName, longName, color, textColor} = gtfs.routeLookup.get(route),
+            stops = gtfs.stops,
+            {route, headsigns, stops: stopIds} = bus.trip,
+            {shortName, longName, color, textColor} = gtfs.routes.get(route),
             labelStyle = [
                 textColor ? `color: ${textColor};` : '',
                 color ? `background-color: ${color};` : ''
             ].join(' '),
             nextStopIndex = bus.sectionIndex + (bus.standing ? 0 : bus.sectionLength),
-            nextStopName = stopLookup.get(stops[nextStopIndex]).name,
+            nextStopName = stops.get(stopIds[nextStopIndex]).name,
             prevStopIndex = Math.max(0, nextStopIndex - 1),
-            prevStopName = stopLookup.get(stops[prevStopIndex]).name;
+            prevStopName = stops.get(stopIds[prevStopIndex]).name;
 
         return [
             '<div class="desc-header">',
@@ -2158,9 +2157,6 @@ export default class extends Evented {
             ).then(data => {
                 const {agency, featureCollection, version} = data,
                     featureLookup = new Map(),
-                    stopLookup = new Map(),
-                    routeLookup = new Map(),
-                    tripLookup = new Map(),
                     layerIds = new Set(),
                     routeData = [];
 
@@ -2172,23 +2168,14 @@ export default class extends Evented {
                         routeData.push({id: `${id}.${properties.id}`, feature});
                     }
                 });
-                for (const stop of data.stops) {
-                    stopLookup.set(stop.id, stop);
-                }
-                for (const route of data.routes) {
-                    routeLookup.set(route.id, route);
-                }
-                for (const trip of data.trips) {
-                    tripLookup.set(trip.id, trip);
-                }
                 me.gtfs.set(id, {
                     id,
                     agency,
                     version,
                     featureLookup,
-                    stopLookup,
-                    routeLookup,
-                    tripLookup,
+                    stops: new Dataset(GTFSStop, data.stops),
+                    routes: new Dataset(GTFSRoute, data.routes),
+                    trips: new Dataset(GTFSTrip, data.trips),
                     layerIds,
                     activeBusLookup: new Map(),
                     realtimeBuses: new Set(),
@@ -2702,7 +2689,7 @@ export default class extends Evented {
         const me = this;
 
         for (const gtfs of gtfsId ? [me.gtfs.get(gtfsId)] : me.gtfs.values()) {
-            const {id: gtfsId, vehiclePositionUrl, featureLookup, stopLookup, routeLookup, tripLookup, activeBusLookup, realtimeBuses} = gtfs;
+            const {id: gtfsId, vehiclePositionUrl, featureLookup, stops, routes, trips, activeBusLookup, realtimeBuses} = gtfs;
 
             if (!vehiclePositionUrl) {
                 me.refreshBuses(gtfsId);
@@ -2729,11 +2716,11 @@ export default class extends Evented {
 
                     realtimeBuses.add(tripId);
 
-                    const busTrip = tripLookup.get(tripId),
-                        feature = busTrip && featureLookup.get(busTrip.shape),
-                        route = busTrip && routeLookup.get(busTrip.route);
+                    const trip = trips.get(tripId),
+                        feature = trip && featureLookup.get(trip.shape),
+                        route = trip && routes.get(trip.route);
 
-                    if (!busTrip || !feature || !route || route.hidden) {
+                    if (!trip || !feature || !route || route.hidden) {
                         continue;
                     }
 
@@ -2744,29 +2731,28 @@ export default class extends Evented {
                         bus = activeBusLookup.get(tripId);
                     } else {
                         let offset = 0;
-                        const offsets = busTrip.stops.map(stopId =>
+                        const offsets = trip.stops.map(stopId =>
                             // Use the previous offset to calulate a weight and pick a closer point
-                            (offset = nearestCloserPointOnLine(feature, stopLookup.get(stopId).coord, offset).properties.location)
+                            (offset = nearestCloserPointOnLine(feature, stops.get(stopId).coord, offset).properties.location)
                         );
 
-                        bus = {
-                            type: 'bus',
+                        bus = new Bus({
                             id: vehicle ? vehicle.licensePlate || vehicle.id : id,
                             gtfsId,
-                            trip: busTrip,
+                            trip,
                             feature,
                             offsets,
                             offset: 0
-                        };
+                        });
                     }
                     if (stop) {
                         bus.stop = stop;
                     } else {
                         const offsets = bus.offsets,
                             // Use the current bus.offset to calulate a weight and pick a closer point
-                            offset = nearestCloserPointOnLine(feature, [position.longitude, position.latitude], bus.offset).properties.location;
+                            offset = bus.offset = nearestCloserPointOnLine(feature, [position.longitude, position.latitude], bus.offset).properties.location;
 
-                        bus.stop = busTrip.stopSequences[offsets.reduce(
+                        bus.stop = trip.stopSequences[offsets.reduce(
                             (acc, cur, i) => cur < offset ? Math.min(i + 1, offsets.length - 1) : acc, 0
                         )];
                     }
@@ -3365,10 +3351,10 @@ export default class extends Evented {
             map = me.map;
 
         for (const gtfs of me.gtfs.values()) {
-            const source = gtfs.id,
+            const {id: source, routes} = gtfs,
                 shapes = new Set();
 
-            for (const route of gtfs.routeLookup.values()) {
+            for (const route of routes.getAll()) {
                 if (!route.hidden) {
                     for (const shape of route.shapes) {
                         shapes.add(shape);
@@ -3383,7 +3369,7 @@ export default class extends Evented {
                 }
             }
             for (const bus of gtfs.activeBusLookup.values()) {
-                const route = gtfs.routeLookup.get(bus.trip.route);
+                const route = routes.get(bus.trip.route);
 
                 if (!route || route.hidden) {
                     me.stopBus(bus);
@@ -3400,7 +3386,7 @@ export default class extends Evented {
 
         if (gtfsId) {
             const gtfs = me.gtfs.get(gtfsId),
-                route = gtfs.routeLookup.get(routeId);
+                route = gtfs.routes.get(routeId);
 
             for (const id of route.shapes) {
                 map.setFeatureState({source: gtfsId, id}, {'route-highlight': route.color || gtfs.color});
@@ -3424,7 +3410,7 @@ export default class extends Evented {
         if ((markedObject && markedObject.type === 'bus' && markedObject.gtfsId === gtfsId && markedObject.trip.shape === id) ||
             (trackedObject && trackedObject.type === 'bus' && trackedObject.gtfsId === gtfsId && trackedObject.trip.shape === id)) {
             const gtfs = me.gtfs.get(gtfsId),
-                color = gtfs.routeLookup.get(trip.route).color;
+                color = gtfs.routes.get(trip.route).color;
 
             map.setFeatureState({source, id}, {'trip-highlight': color || gtfs.color});
         } else {

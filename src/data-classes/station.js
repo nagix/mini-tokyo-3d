@@ -26,7 +26,7 @@ export default class {
 
         if (coord) {
             /**
-             * Station coordinate. These coordinates use longitude, latitude coordinate order.
+             * Station coordinates. These coordinates use longitude, latitude coordinate order.
              * @type {Array<number>}
              */
             me.coord = coord;
