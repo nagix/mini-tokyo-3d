@@ -25,30 +25,37 @@ export default class extends Panel {
         for (let curr = timetable.nt && timetable.nt[0]; curr; curr = curr.nt && curr.nt[0]) {
             timetables.push(curr);
         }
+
+        let lastArrivalTime;
+
         for (const curr of timetables) {
             const section = {},
                 stations = curr.stations;
 
-            section.start = Math.max(stationHTML.length - 1, 0);
+            section.start = stationHTML.length;
             for (let i = 0, ilen = stations.length; i < ilen; i++) {
-                if (i > 0 || !curr.pt) {
-                    const arrivalTime = curr.arrivalTimes[i],
-                        departureTime = curr.departureTimes[i];
+                const arrivalTime = curr.arrivalTimes[i] || lastArrivalTime,
+                    departureTime = curr.departureTimes[i];
 
-                    stationHTML.push([
-                        '<div class="station-row">',
-                        `<div class="station-title-box">${map.getLocalizedStationTitle(stations[i])}</div>`,
-                        '<div class="station-time-box',
-                        delay >= 60000 ? ' desc-caution' : '',
-                        '">',
-                        arrivalTime !== undefined ? getTimeString(arrivalTime + delay) : '',
-                        arrivalTime !== undefined && departureTime !== undefined ? '<br>' : '',
-                        departureTime !== undefined ? getTimeString(departureTime + delay) : '',
-                        '</div></div>'
-                    ].join(''));
+                if (i === ilen - 1 && curr.nt) {
+                    lastArrivalTime = arrivalTime;
+                    break;
                 }
+                lastArrivalTime = undefined;
+
+                stationHTML.push([
+                    '<div class="station-row">',
+                    `<div class="station-title-box">${map.getLocalizedStationTitle(stations[i])}</div>`,
+                    '<div class="station-time-box',
+                    delay >= 60000 ? ' desc-caution' : '',
+                    '">',
+                    arrivalTime !== undefined ? getTimeString(arrivalTime + delay) : '',
+                    arrivalTime !== undefined && departureTime !== undefined ? '<br>' : '',
+                    departureTime !== undefined ? getTimeString(departureTime + delay) : '',
+                    '</div></div>'
+                ].join(''));
             }
-            section.end = stationHTML.length - 1;
+            section.end = stationHTML.length - (curr.nt ? 0 : 1);
             section.color = curr.r.color;
             sections.push(section);
             if (curr === timetable) {
