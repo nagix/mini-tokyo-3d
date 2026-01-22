@@ -297,7 +297,7 @@ export default class extends Panel {
     reset() {
         const me = this,
             {_map: map, _container: container, _swiper: swiper} = me,
-            classList = me._container.classList;
+            classList = container.classList;
 
         if (swiper) {
             swiper.destroy();
@@ -316,7 +316,7 @@ export default class extends Panel {
 
     updateContent() {
         const me = this,
-            {_map: map, _container: container, _exits: exits} = me,
+            {_map: map, _container: container, _exits: exits, _departures: departures} = me,
             {dict, clock, container: mapContainer} = map,
             now = clock.getTimeOffset(),
             calendar = clock.getCalendar(),
@@ -326,7 +326,7 @@ export default class extends Panel {
             return;
         }
 
-        for (const departure of me._departures) {
+        for (const departure of departures) {
             const trains = [];
 
             for (const {railway, station, direction} of departure.railways) {
@@ -344,10 +344,10 @@ export default class extends Panel {
 
                             if (time > now) {
                                 if (trains.length === 0 || time < trains[0].time) {
-                                    trains.unshift({train: train || timetable, time});
+                                    trains.unshift({timetable, time, delay});
                                     trains.splice(2, 1);
                                 } else if (trains.length === 1 || time < trains[1].time) {
-                                    trains.splice(1, 1, {train: train || timetable, time});
+                                    trains.splice(1, 1, {timetable, time, delay});
                                 }
                             }
                             break;
@@ -359,20 +359,20 @@ export default class extends Panel {
         }
 
         container.querySelector('#station-departure').innerHTML =
-            me._departures.map(({color, label, trains}) => [
+            departures.map(({color, label, trains}) => [
                 '<div class="direction-row">',
                 `<div class="line-strip" style="background-color: ${color};"></div>`,
                 `<div class="direction-label">${label}</div>`,
                 '</div>',
                 '<div class="trains-row">',
-                trains.length ? trains.map(({train, time}) => [
+                trains.length ? trains.map(({timetable, time, delay}) => [
                     '<div class="train-row">',
-                    `<div class="train-time-box${train.delay >= 60000 ? ' desc-caution' : ''}">${getTimeString(time)}</div>`,
+                    `<div class="train-time-box${delay >= 60000 ? ' desc-caution' : ''}">${getTimeString(time)}</div>`,
                     '<div class="train-title-box">',
-                    `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(train.y)}</span> `,
-                    train.nm ? `${map.getLocalizedTrainNameOrRailwayTitle(train.nm)} ` : '',
-                    map.getLocalizedDestinationTitle(train.ds, train.d),
-                    train.delay >= 60000 ? ` <span class="desc-caution">${dict['delay'].replace('$1', Math.floor(train.delay / 60000))}</span>` : '',
+                    `<span class="train-type-label">${map.getLocalizedTrainTypeTitle(timetable.y)}</span> `,
+                    timetable.nm ? `${map.getLocalizedTrainNameOrRailwayTitle(timetable.nm)} ` : '',
+                    map.getLocalizedDestinationTitle(timetable.ds, timetable.d),
+                    delay >= 60000 ? ` <span class="desc-caution">${dict['delay'].replace('$1', Math.floor(delay / 60000))}</span>` : '',
                     '</div>',
                     '</div>'
                 ].join('')).join('') : `<div class="train-row desc-caution">${dict['service-has-ended']}</div>`,
