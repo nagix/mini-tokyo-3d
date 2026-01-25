@@ -112,7 +112,9 @@ export default class extends Panel {
                 `<circle cx="22" cy="${y}" r="${7 + p * 15}" fill="#ffffff" opacity="${1 - p}" />` +
                 `<circle cx="22" cy="${y}" r="7" fill="#ffffff" />`;
             if (me._scrollTop === undefined || me._scrollTop === bodyElement.scrollTop) {
-                me._scrollTop = bodyElement.scrollTop = Math.round(y - height / 2 + 4);
+                // scrollTop will be floored at zero, so the following lines should not be a single statement
+                bodyElement.scrollTop = Math.round(y - height / 2 + 4);
+                me._scrollTop = bodyElement.scrollTop;
             }
             if (me._container) {
                 requestAnimationFrame(repeat);
