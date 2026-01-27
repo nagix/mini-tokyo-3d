@@ -749,8 +749,7 @@ export default class extends Evented {
                         id: `${key1}-${key2}-${zoom}`,
                         data: key2 === 'ug' ?
                             helpersGeojson.featureFilter(featureCollection, filter) :
-                            helpersGeojson.emptyFeatureCollection(),
-                        transitions: {opacity: configs.transitionDuration}
+                            helpersGeojson.emptyFeatureCollection()
                     }, {
                         'railways': {
                             filled: false,

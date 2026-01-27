@@ -328,9 +328,11 @@ export function getStyleOpacities(map, metadataKey) {
  * @param {string | Array<string>} factorKey - Metadata key for the factor to multiply
  */
 export function setStyleOpacities(map, styleOpacities, factorKey) {
-    let factor, prop;
+    const duration = map.style.transition.duration;
 
     for (const {id, key, opacity, metadata} of styleOpacities) {
+        let factor, prop;
+
         if (Array.isArray(factorKey)) {
             factor = factorKey.reduce((value, key) => valueOrDefault(value, metadata[key]), undefined);
         } else {
@@ -354,7 +356,20 @@ export function setStyleOpacities(map, styleOpacities, factorKey) {
             }
             map.setPaintProperty(id, key, prop);
         } else {
-            setLayerProps(map, id, {opacity: factor});
+            const start = performance.now(),
+                current = valueOrDefault(map.getLayer(id).props.opacity, 1);
+
+            // Workaround for deck.gl's transitions property which doesn't work as extected
+            (function repeat() {
+                const elapsed = performance.now() - start;
+
+                setLayerProps(map, id, {
+                    opacity: lerp(current, factor, Math.min(elapsed / duration, 1))
+                });
+                if (elapsed < duration) {
+                    requestAnimationFrame(repeat);
+                }
+            })();
         }
     }
 }
