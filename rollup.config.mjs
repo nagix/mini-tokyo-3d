@@ -107,7 +107,9 @@ export default [{
 		postcss({
 			plugins: [
 				cssimport(),
-				inlinesvg()
+				inlinesvg({
+					removeFill: true
+				})
 			],
 			extract: `${pkg.name}.css`
 		}),
@@ -164,7 +166,9 @@ export default [{
 		postcss({
 			plugins: [
 				cssimport(),
-				inlinesvg()
+				inlinesvg({
+					removeFill: true
+				})
 			],
 			extract: `${pkg.name}.min.css`,
 			minimize: true
@@ -229,7 +233,9 @@ export default [{
 		postcss({
 			plugins: [
 				cssimport(),
-				inlinesvg()
+				inlinesvg({
+					removeFill: true
+				})
 			]
 		}),
 		commonjs(),
