@@ -112,6 +112,7 @@ export default class {
                 vertexShader: delayMarkerVertexShader,
                 fragmentShader: delayMarkerFragmentShader,
                 blending: MultiplyBlending,
+                premultipliedAlpha: true,
                 depthWrite: false
             });
 
