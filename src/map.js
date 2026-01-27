@@ -2077,14 +2077,12 @@ export default class extends Evented {
             }
             realtimeBuses.clear();
         }
-        if (promises.length > 0) {
-            me.removing = true;
-            Promise.all(promises).then(() => {
-                delete me.removing;
-                delete me.lastRefresh;
-                delete me.lastRealtimeCheck;
-            });
-        }
+        me.removing = true;
+        Promise.all(promises).then(() => {
+            delete me.removing;
+            delete me.lastRefresh;
+            delete me.lastRealtimeCheck;
+        });
     }
 
     resetRailwayStatus() {
