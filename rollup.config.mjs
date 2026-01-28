@@ -118,7 +118,7 @@ export default [{
 			preventAssignment: true,
 			'process.env.NODE_ENV': '\'development\'',
 			'log.error': '(() => () => {})',
-			'Math.min(1.01*o,a)}': 'Math.max(a,i+1000*e.pixelsPerMeter/Math.cos(e._pitch))}',
+			'Math.min(1.01*o,a)': 'Math.max(a,i+1000*e.pixelsPerMeter/Math.cos(e._pitch))',
 			'WORKER_STRING': () => fs.readFileSync(`dist/${pkg.name}-worker.js`, {encoding: 'utf8'}).replace(/(?=`|\${|\\)/g, '\\')
 		}),
 		replace({
@@ -130,12 +130,12 @@ export default [{
 			preventAssignment: true,
 			include: '**/web-mercator-utils.js',
 			'farZMultiplier = 1': 'farZMultiplier = 1,\n    unitsPerMeter',
-			'Math.min(furthestDistance * farZMultiplier, horizonDistance': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians)'
+			'Math.min(furthestDistance * farZMultiplier, horizonDistance)': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians))'
 		}),
 		replace({
 			preventAssignment: true,
 			include: '**/EXT_texture_webp.js',
-			'import { isImageFormatSupported': 'import { getSupportedImageFormats',
+			'import { isImageFormatSupported }': 'import { getSupportedImageFormats }',
 			'import GLTFScenegraph': 'let supportedImageFormats;\ngetSupportedImageFormats().then(formats => {\n  supportedImageFormats = formats;\n});\nimport GLTFScenegraph',
 			'isImageFormatSupported': '(mimeType => supportedImageFormats.has(mimeType))'
 		}),
@@ -178,7 +178,7 @@ export default [{
 			preventAssignment: true,
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})',
-			'Math.min(1.01*o,a)}': 'Math.max(a,i+1000*e.pixelsPerMeter/Math.cos(e._pitch))}',
+			'Math.min(1.01*o,a)': 'Math.max(a,i+1000*e.pixelsPerMeter/Math.cos(e._pitch))',
 			'WORKER_STRING': () => fs.readFileSync(`dist/${pkg.name}-worker.js`, {encoding: 'utf8'}).replace(/(?=`|\${|\\)/g, '\\')
 		}),
 		replace({
@@ -190,12 +190,12 @@ export default [{
 			preventAssignment: true,
 			include: '**/web-mercator-utils.js',
 			'farZMultiplier = 1': 'farZMultiplier = 1,\n    unitsPerMeter',
-			'Math.min(furthestDistance * farZMultiplier, horizonDistance': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians)'
+			'Math.min(furthestDistance * farZMultiplier, horizonDistance)': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians))'
 		}),
 		replace({
 			preventAssignment: true,
 			include: '**/EXT_texture_webp.js',
-			'import { isImageFormatSupported': 'import { getSupportedImageFormats',
+			'import { isImageFormatSupported }': 'import { getSupportedImageFormats }',
 			'import GLTFScenegraph': 'let supportedImageFormats;\ngetSupportedImageFormats().then(formats => {\n  supportedImageFormats = formats;\n});\nimport GLTFScenegraph',
 			'isImageFormatSupported': '(mimeType => supportedImageFormats.has(mimeType))'
 		}),
@@ -243,7 +243,7 @@ export default [{
 			preventAssignment: true,
 			'process.env.NODE_ENV': '\'production\'',
 			'log.error': '(() => () => {})',
-			'Math.min(1.01*o,a)}': 'Math.max(a,i+1000*e.pixelsPerMeter/Math.cos(e._pitch))}',
+			'Math.min(1.01*o,a)': 'Math.max(a,i+1000*e.pixelsPerMeter/Math.cos(e._pitch))',
 			'WORKER_STRING': () => fs.readFileSync(`dist/${pkg.name}-worker.js`, {encoding: 'utf8'}).replace(/(?=`|\${|\\)/g, '\\')
 		}),
 		replace({
@@ -255,12 +255,12 @@ export default [{
 			preventAssignment: true,
 			include: '**/web-mercator-utils.js',
 			'farZMultiplier = 1': 'farZMultiplier = 1,\n    unitsPerMeter',
-			'Math.min(furthestDistance * farZMultiplier, horizonDistance': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians)'
+			'Math.min(furthestDistance * farZMultiplier, horizonDistance)': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians))'
 		}),
 		replace({
 			preventAssignment: true,
 			include: '**/EXT_texture_webp.js',
-			'import { isImageFormatSupported': 'import { getSupportedImageFormats',
+			'import { isImageFormatSupported }': 'import { getSupportedImageFormats }',
 			'import GLTFScenegraph': 'let supportedImageFormats;\ngetSupportedImageFormats().then(formats => {\n  supportedImageFormats = formats;\n});\nimport GLTFScenegraph',
 			'isImageFormatSupported': '(mimeType => supportedImageFormats.has(mimeType))'
 		}),
