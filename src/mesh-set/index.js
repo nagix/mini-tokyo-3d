@@ -77,12 +77,11 @@ export default class {
 
         const outlineGeometry = me.outlineGeometry = new InstancedGeometry(baseOutlineGeometry || baseGeometry, 2);
         const outlineMaterial = me.outlineMaterial = new ShaderMaterial({
-            uniforms: {
-                ...uniforms,
+            uniforms: Object.assign({}, uniforms, {
                 marked: {value: -1},
                 tracked: {value: -1},
                 intensity: {value: 0}
-            },
+            }),
             vertexShader: outlineVertexShader,
             fragmentShader: outlineFragmentShader,
             defines: {[type]: true},
@@ -105,10 +104,9 @@ export default class {
             const sphereGeometry = new SphereGeometry(1.8, 32, 32);
             const delayMarkerGeometry = me.delayMarkerGeometry = new InstancedGeometry(sphereGeometry, count);
             const delayMarkerMaterial = me.delayMarkerMaterial = new ShaderMaterial({
-                uniforms: {
-                    ...uniforms,
+                uniforms: Object.assign({}, uniforms, {
                     base: {value: 1}
-                },
+                }),
                 vertexShader: delayMarkerVertexShader,
                 fragmentShader: delayMarkerFragmentShader,
                 blending: MultiplyBlending,

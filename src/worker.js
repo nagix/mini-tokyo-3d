@@ -560,60 +560,62 @@ function getTrips(trips, services = new Set(), serviceExceptions = [new Set(), n
 }
 
 function loadGtfs(source, date, day, lang) {
-    return new Promise((resolve, reject) => fetch(source.gtfsUrl).then(response => {
-        const results = {},
-            reader = response.body.getReader(),
-            inflate = new Unzip(file => {
-                const key = file.name.split('.')[0];
+    return new Promise((resolve, reject) => {
+        fetch(source.gtfsUrl).then(response => {
+            const results = {},
+                reader = response.body.getReader(),
+                inflate = new Unzip(file => {
+                    const key = file.name.split('.')[0];
 
-                if (includes(gtfsFiles, key)) {
-                    let stringBuffer = '';
-                    const gtfsReader = new gtfsReaders[key]({date, day, lang, color: source.color}),
-                        utfDecode = new DecodeUTF8(async (data, final) => {
-                            const lines = data.split(/\r?\n/);
+                    if (includes(gtfsFiles, key)) {
+                        let stringBuffer = '';
+                        const gtfsReader = new gtfsReaders[key]({date, day, lang, color: source.color}),
+                            utfDecode = new DecodeUTF8((data, final) => {
+                                const lines = data.split(/\r?\n/);
 
-                            if (lines.length > 1) {
-                                gtfsReader.read(stringBuffer + lines[0]);
-                                stringBuffer = '';
-                            }
-                            for (let i = 1; i < lines.length - 1; i++) {
-                                gtfsReader.read(lines[i]);
-                            }
-                            stringBuffer += lines[lines.length - 1];
-                            if (final) {
-                                if (stringBuffer) {
-                                    gtfsReader.read(stringBuffer);
+                                if (lines.length > 1) {
+                                    gtfsReader.read(stringBuffer + lines[0]);
+                                    stringBuffer = '';
                                 }
-                                results[key] = gtfsReader.result;
+                                for (let i = 1; i < lines.length - 1; i++) {
+                                    gtfsReader.read(lines[i]);
+                                }
+                                stringBuffer += lines[lines.length - 1];
+                                if (final) {
+                                    if (stringBuffer) {
+                                        gtfsReader.read(stringBuffer);
+                                    }
+                                    results[key] = gtfsReader.result;
+                                }
+                            });
+
+                        file.ondata = (err, data, final) => {
+                            if (err) {
+                                reject(err);
+                                return;
                             }
-                        });
+                            try {
+                                utfDecode.push(data, final);
+                            } catch (err) {
+                                reject(err);
+                            }
+                        };
+                        file.start();
+                    }
+                });
 
-                    file.ondata = (err, data, final) => {
-                        if (err) {
-                            reject(err);
-                            return;
-                        }
-                        try {
-                            utfDecode.push(data, final);
-                        } catch (err) {
-                            reject(err);
-                        }
-                    };
-                    file.start();
+            inflate.register(UnzipInflate);
+            return reader.read().then(function pump({done, value}) {
+                if (done) {
+                    inflate.push(new Uint8Array(0), true);
+                    resolve(results);
+                    return;
                 }
+                inflate.push(value);
+                reader.read().then(pump);
             });
-
-        inflate.register(UnzipInflate);
-        return reader.read().then(function pump({done, value}) {
-            if (done) {
-                inflate.push(new Uint8Array(0), true);
-                resolve(results);
-                return;
-            }
-            inflate.push(value);
-            reader.read().then(pump);
         });
-    })).then(results => {
+    }).then(results => {
         const translations = results.feed_info && results.feed_info.needTranslation && results.translations,
             featureCollection = getFeatureCollection(results.shapes, results.stops, translations),
             result = {

@@ -266,14 +266,15 @@ export function loadBusData(source, clock, lang) {
         dateString = `${year}${month}${day}`,
         dayString = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][dayOfWeek];
 
-    return new Promise(resolve => proxy.load(source, dateString, dayString, lang, Comlink.proxy(data => {
-        proxy[Comlink.releaseProxy]();
-        worker.terminate();
-        resolve({
-            featureCollection: geobuf.decode(new Pbf(data[0])),
-            ...decode(new Pbf(data[1]))
-        });
-    })));
+    return new Promise(resolve => {
+        proxy.load(source, dateString, dayString, lang, Comlink.proxy(data => {
+            proxy[Comlink.releaseProxy]();
+            worker.terminate();
+            resolve(Object.assign({
+                featureCollection: geobuf.decode(new Pbf(data[0]))
+            }, decode(new Pbf(data[1]))));
+        }));
+    });
 }
 
 export function loadDynamicBusData(url) {

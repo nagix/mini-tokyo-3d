@@ -21,7 +21,7 @@ export default class {
             if (item.pt || item.nt) {
                 const timetable = lookup.get(item.id);
 
-                timetable.update(item, {...refs, timetables: lookup});
+                timetable.update(item, Object.assign({}, refs, {timetables: lookup}));
             }
         }
     }

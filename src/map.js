@@ -150,7 +150,9 @@ export default class extends Evented {
         });
 
         const clockPromise = options.center === configs.defaultCenter ?
-            new Promise(resolve => resolve(me.clock)) :
+            new Promise(resolve => {
+                resolve(me.clock);
+            }) :
             helpersMapbox.fetchTimezoneOffset(options.center, options.accessToken)
                 .then(offset => me.clock.setTimezoneOffset(offset));
 
@@ -2152,11 +2154,13 @@ export default class extends Evented {
                 continue;
             }
 
-            loadBusData(source, me.clock, me.lang).then(data =>
-                me.initialized ? data : new Promise(resolve => me.once('initialized', () => resolve(data)))
-            ).then(data =>
-                me.gtfs.has(id) ? deleteGtfs(me.gtfs.get(id)).then(() => data) : data
-            ).then(data => {
+            loadBusData(source, me.clock, me.lang).then(data => {
+                return me.initialized ? data : new Promise(resolve => {
+                    me.once('initialized', () => resolve(data));
+                });
+            }).then(data => {
+                return me.gtfs.has(id) ? deleteGtfs(me.gtfs.get(id)).then(() => data) : data;
+            }).then(data => {
                 const {agency, featureCollection, version} = data,
                     featureLookup = new Map(),
                     layerIds = new Set(),
