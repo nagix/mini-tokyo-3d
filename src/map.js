@@ -105,6 +105,7 @@ export default class extends Evented {
         me.configControl = options.configControl;
         me.clock = new Clock();
         me.plugins = (options.plugins || []).map(plugin => new Plugin(plugin));
+        me.buidlingModelsVisibility = new Map();
 
         me.searchMode = 'none';
         me.viewMode = configs.defaultViewMode;
@@ -521,7 +522,11 @@ export default class extends Evented {
     setLayerVisibility(layerId, visibility) {
         const me = this;
 
-        me.map.setLayoutProperty(layerId, 'visibility', visibility);
+        if (layerId === 'building-models') {
+            me.setBuidlingModelsVisibility('public', visibility);
+        } else {
+            me.map.setLayoutProperty(layerId, 'visibility', visibility);
+        }
         return me;
     }
 
@@ -1123,7 +1128,7 @@ export default class extends Evented {
 
                 if (Math.floor((now - minDelay) / refreshInterval) !== Math.floor(me.lastRefresh / refreshInterval)) {
                     // Hide building models when the clock speed is high as changing lights impacts performance
-                    map.setLayoutProperty('building-models', 'visibility', clock.speed <= 30 ? 'visible' : 'none');
+                    me.setBuidlingModelsVisibility('internal', clock.speed <= 30 ? 'visible' : 'none');
 
                     helpersMapbox.setSunlight(map, now);
                     if (me.searchMode === 'none' && me.clockMode === 'playback' && !me.removing) {
@@ -2825,6 +2830,15 @@ export default class extends Evented {
 
         helpersMapbox.setStyleOpacities(me.map, me.styleOpacities, isNotSearchResultMode ? factorKey : [`${factorKey}-route`, factorKey]);
         me.trafficLayer.setMode(viewMode, searchMode);
+    }
+
+    setBuidlingModelsVisibility(key, visibility) {
+        const me = this,
+            buidlingModelsVisibility = me.buidlingModelsVisibility;
+
+        buidlingModelsVisibility.set(key, visibility);
+        me.map.setLayoutProperty('building-models', 'visibility',
+            buidlingModelsVisibility.values().every(v => v === 'visible') ? 'visible' : 'none');
     }
 
     _setSearchMode(mode) {
