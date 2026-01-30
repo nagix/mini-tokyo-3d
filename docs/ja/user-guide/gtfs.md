@@ -8,8 +8,6 @@ GTFS データセットの車両は、通常の Mini Tokyo 3D の列車や旅客
 
 ::: warning 注意
 これは開発中の実験的な機能であり、変更される可能性があることに注意してください。
-
-現時点では、路線上を移動する車両を表示するには GTFS データセットおよび GTFS Realtime フィードの両方を指定する必要があります。また、[再生モード](./display-modes.md#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%88%E3%82%99)がオンの状態では車両は表示されません。
 :::
 
 ## データソースの指定
@@ -23,7 +21,7 @@ https://minitokyo3d.com/?gtfsurl=<URL>&gtfsvpurl=<URL>&gtfscolor=<カラーコ�
 クエリパラメータ | 説明 | 例
 -- | -- | --
 `gtfsurl` | [GTFS データセットの zip ファイル](https://gtfs.org/ja/documentation/schedule/reference/#_10)の URL（URL エンコードが必要） | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Ffiles%2FToei%2Fdata%2FToeiBus-GTFS.zip`
-`gtfsvpurl` | [GTFS Realtime の VehiclePosition フィード](https://gtfs.org/ja/documentation/realtime/reference/#message-vehicleposition)の URL（URL エンコードが必要） | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Fgtfs%2Frealtime%2FToeiBus`
+`gtfsvpurl` | [GTFS Realtime の VehiclePosition フィード](https://gtfs.org/ja/documentation/realtime/reference/#message-vehicleposition)の URL（URL エンコードが必要）。省略した場合は、時刻表通りの運行が行われる | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Fgtfs%2Frealtime%2FToeiBus`
 `gtfscolor` | 路線および車両の表示に使用する色。16進数のカラーコード（先頭に `#` はつけない） | `9FC105`
 
 表示する GTFS データセットは東京周辺とは限らないため、「`#`」に続けて「`/`」で区切られた複数の要素（ハッシュ）を指定することで、マップの初期位置や向きをデータセットの表示に適した値にすると便利です。ハッシュは、上記のクエリパラメータの後に記述してください。

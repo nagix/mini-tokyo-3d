@@ -4,8 +4,6 @@ The `DataSource` object is used to specify additional [GTFS](https://gtfs.org) (
 
 ::: warning
 Note that this is an experimental feature which is under development and is prone to change.
-
-Currently, you must specify both a GTFS dataset and a GTFS Realtime feed to view vehicles moving along routes. Also, vehicles will not be displayed when [Playback Mode](../../user-guide/display-modes.md#playback-mode) is on.
 :::
 
 **Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -30,4 +28,4 @@ Specifies the URL of [a GTFS dataset zip file](https://gtfs.org/documentation/sc
 
 ### **`vehiclePositionUrl`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
-Specifies the URL for [a GTFS Realtime VehiclePosition feed](https://gtfs.org/documentation/realtime/reference/#message-vehicleposition).
+Specifies the URL for [a GTFS Realtime VehiclePosition feed](https://gtfs.org/documentation/realtime/reference/#message-vehicleposition). If omitted, vehicles will operate according to the timetables.

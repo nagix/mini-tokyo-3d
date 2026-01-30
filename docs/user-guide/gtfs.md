@@ -8,8 +8,6 @@ Vehicles of the GTFS dataset are represented as slightly smaller boxes than the 
 
 ::: warning
 Note that this is an experimental feature which is under development and is prone to change.
-
-Currently, you must specify both a GTFS dataset and a GTFS Realtime feed to view vehicles moving along routes. Also, vehicles will not be displayed when [Playback Mode](./display-modes.md#playback-mode) is on.
 :::
 
 ## Specifying data sources
@@ -23,7 +21,7 @@ https://minitokyo3d.com/?gtfsurl=<URL>&gtfsvpurl=<URL>&gtfscolor=<color code>
 Query parameter | Description | Example
 -- | -- | --
 `gtfsurl` | The URL of a [GTFS dataset zip file](https://gtfs.org/documentation/schedule/reference/#_10) (URL encoding required) | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Ffiles%2FToei%2Fdata%2FToeiBus-GTFS.zip`
-`gtfsvpurl` | The URL of a [VehiclePosition feed of GTFS Realtime](https://gtfs.org/documentation/realtime/reference/#message-vehicleposition) (URL encoding required) | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Fgtfs%2Frealtime%2FToeiBus`
+`gtfsvpurl` | The URL of a [VehiclePosition feed of GTFS Realtime](https://gtfs.org/documentation/realtime/reference/#message-vehicleposition) (URL encoding required). If omitted, vehicles will operate according to the timetables | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Fgtfs%2Frealtime%2FToeiBus`
 `gtfscolor` | A color used to display routes and vehicles. Hexadecimal color code (no leading `#`) | `9FC105`
 
 Since a GTFS dataset to display does not necessarily cover the area around Tokyo, it is useful to specify `#` followed by multiple elements separated by `/` (hash) to make the initial position and orientation of the map suitable for displaying the dataset. The hash should be placed after the query parameters above.

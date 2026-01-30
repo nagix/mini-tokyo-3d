@@ -74,7 +74,7 @@ The viewpoint in Tracking Mode can be changed in the Tracking Mode Settings pane
 
 When [Tracking Mode](./screen-and-operations.md#tracking-trains-and-airplanes) is on, the “Share this train” or “Share this flight” button will appear at the top of the screen. Clicking or tapping the button will bring up an additional menu, depending on the device you are using, and you can send the tracking URLs for the trains or flight and optional messages through messaging apps, email or social networking apps. When the recipient of the information opens the URL in their browser, Mini Tokyo 3D will be launched, and they will be able to track the same train or flight.
 
-This feature is only available in the following browsers: Edge, Safari, Chrome (Android), Opera (Android) and Samsung Internet
+This feature is available in all browsers except Firefox.
 
 ## Delayed Train
 
@@ -113,7 +113,7 @@ When you enter a part of the station name, a list of candidates will be displaye
 Trains, airplanes and layers will be temporarily hidden when the criteria entry panel or search result panel is displayed.
 
 ::: warning
-As of the version 4.0 (beta 1), there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
+As of the version 4.0 (beta 2), there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
 :::
 
 ## Displaying Station Exit Information
@@ -132,5 +132,5 @@ Icon | Description
 <img :src="$withBase('/images/elevator-icon.jpg')" style="width: 28px; vertical-align: top;">|Elevator
 
 ::: warning
-As of the version 4.0 (beta 1), only subway lines and underground stations are supported for displaying station exit information.
+As of the version 4.0 (beta 2), only subway lines and underground stations are supported for displaying station exit information.
 :::

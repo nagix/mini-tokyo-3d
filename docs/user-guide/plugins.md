@@ -43,7 +43,7 @@ This plugin displays transit routes and vehicles on the the Mini Tokyo 3D map ba
 For more information, please visit [Mini Tokyo 3D GTFS Plugin GitHub Repository](https://github.com/nagix/mt3d-plugin-gtfs).
 
 ::: warning
-Currently, the plugin only supports real-time location display for Toei Bus, Yokohama Municipal Bus, and Keisei Transit Bus. Also, vehicles will not be displayed when [Playback Mode](./display-modes.md#playback-mode) is on.
+Currently, the plugin supports display for Toei Bus, Yokohama Municipal Bus, and Keisei Bus Chiba West.
 :::
 
 ## Tokyo 2020 Olympics Plugin

@@ -4,8 +4,6 @@
 
 ::: warning 注意
 これは開発中の実験的な機能であり、変更される可能性があることに注意してください。
-
-現時点では、路線上を移動する車両を表示するには GTFS データセットおよび GTFS Realtime フィードの両方を指定する必要があります。また、[再生モード](../../user-guide/display-modes.md#%E5%86%8D%E7%94%9F%E3%83%A2%E3%83%BC%E3%83%88%E3%82%99)がオンの状態では車両は表示されません。
 :::
 
 **型** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
@@ -30,4 +28,4 @@
 
 ### **`vehiclePositionUrl`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
-[GTFS Realtime の VehiclePosition フィード](https://gtfs.org/ja/documentation/realtime/reference/#message-vehicleposition)の URL を指定します。
+[GTFS Realtime の VehiclePosition フィード](https://gtfs.org/ja/documentation/realtime/reference/#message-vehicleposition)の URL を指定します。省略した場合は、時刻表通りの運行が行われます。
