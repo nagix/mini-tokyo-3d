@@ -105,7 +105,6 @@ export default class extends Evented {
         me.configControl = options.configControl;
         me.clock = new Clock();
         me.plugins = (options.plugins || []).map(plugin => new Plugin(plugin));
-        me.buidlingModelsVisibility = new Map();
 
         me.searchMode = 'none';
         me.viewMode = configs.defaultViewMode;
@@ -488,14 +487,17 @@ export default class extends Evented {
      * @returns {Map} Returns itself to allow for method chaining
      */
     addLayer(layer, beforeId) {
-        const me = this;
+        const me = this,
+            type = layer.type;
 
-        if (layer.type === 'three') {
+        if (type === 'three') {
             new ThreeLayer(layer).onAdd(me, beforeId);
-        } else if (layer.type === 'geojson') {
+        } else if (type === 'geojson') {
             new GeoJsonLayer(layer).onAdd(me, beforeId);
-        } else if (layer.type === 'tile-3d') {
+        } else if (type === 'tile-3d') {
             new Tile3DLayer(layer).onAdd(me, beforeId);
+            me.layerVisibility.tile3d.set(layer.id, 'visible');
+            me.updateLayerVisibility();
         } else {
             me.map.addLayer(layer, beforeId || 'poi');
         }
@@ -508,9 +510,14 @@ export default class extends Evented {
      * @returns {Map} Returns itself to allow for method chaining
      */
     removeLayer(id) {
-        const me = this;
+        const me = this,
+            tile3d = me.layerVisibility.tile3d;
 
         me.map.removeLayer(id);
+        if (tile3d.has(id)) {
+            tile3d.delete(id);
+            me.updateLayerVisibility();
+        }
         return me;
     }
 
@@ -522,13 +529,20 @@ export default class extends Evented {
      * @returns {Map} Returns itself to allow for method chaining
      */
     setLayerVisibility(layerId, visibility) {
-        const me = this;
+        const me = this,
+            {model, tile3d} = me.layerVisibility;
+        let value = visibility;
 
-        if (layerId === 'building-models') {
-            me.setBuidlingModelsVisibility('public', visibility);
-        } else {
-            me.map.setLayoutProperty(layerId, 'visibility', visibility);
+        if (model.has(layerId)) {
+            model.set(layerId, visibility);
+            if (tile3d.values().some(v => v === 'visible')) {
+                value = 'none';
+            }
+        } else if (tile3d.has(layerId)) {
+            tile3d.set(layerId, visibility);
+            me.updateLayerVisibility();
         }
+        me.map.setLayoutProperty(layerId, 'visibility', value);
         return me;
     }
 
@@ -904,6 +918,15 @@ export default class extends Evented {
 
         me.styleOpacities = helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect');
 
+        // layerVisibility stores the visibility of model layers (including fill-extrusion layers) and
+        // tile-3d layers, and is used to control the display of each group on an exclusive basis.
+        me.layerVisibility = {model: new Map(), tile3d: new Map()};
+        for (const {id, type} of map.getStyle().layers) {
+            if (type === 'model' || type === 'fill-extrusion') {
+                me.layerVisibility.model.set(id, 'visible');
+            }
+        }
+
         const datalist = helpers.createElement('datalist', {id: 'stations'}, document.body);
         const stationTitleLookup = me.stationTitleLookup = new Map();
 
@@ -1130,7 +1153,7 @@ export default class extends Evented {
 
                 if (Math.floor((now - minDelay) / refreshInterval) !== Math.floor(me.lastRefresh / refreshInterval)) {
                     // Hide building models when the clock speed is high as changing lights impacts performance
-                    me.setBuidlingModelsVisibility('internal', clock.speed <= 30 ? 'visible' : 'none');
+                    me.setLayerVisibility('building-models', clock.speed <= 30 ? 'visible' : 'none');
 
                     helpersMapbox.setSunlight(map, now);
                     if (me.searchMode === 'none' && me.clockMode === 'playback' && !me.removing) {
@@ -2836,13 +2859,14 @@ export default class extends Evented {
         me.trafficLayer.setMode(viewMode, searchMode);
     }
 
-    setBuidlingModelsVisibility(key, visibility) {
+    updateLayerVisibility() {
         const me = this,
-            buidlingModelsVisibility = me.buidlingModelsVisibility;
+            layerVisibility = me.layerVisibility,
+            hasTile3D = layerVisibility.tile3d.values().some(v => v === 'visible');
 
-        buidlingModelsVisibility.set(key, visibility);
-        me.map.setLayoutProperty('building-models', 'visibility',
-            buidlingModelsVisibility.values().every(v => v === 'visible') ? 'visible' : 'none');
+        for (const [id, visibility] of layerVisibility.model.entries()) {
+            me.map.setLayoutProperty(id, 'visibility', hasTile3D ? 'none' : visibility);
+        }
     }
 
     _setSearchMode(mode) {
