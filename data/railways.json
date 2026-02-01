@@ -1603,6 +1603,30 @@
 	"carComposition": 3,
 	"dynamic": true
 }, {
+	"id": "JR-East.Karasuyama",
+	"title": {
+		"ja": "烏山線",
+		"en": "Karasuyama Line",
+		"ko": "닛가라스야마 선",
+		"zh-Hans": "乌山线",
+		"zh-Hant": "烏山線"
+	},
+	"stations": [
+		"JR-East.Karasuyama.Hoshakuji",
+		"JR-East.Karasuyama.ShimotsukeHanaoka",
+		"JR-East.Karasuyama.Niita",
+		"JR-East.Karasuyama.Konoyama",
+		"JR-East.Karasuyama.Ogane",
+		"JR-East.Karasuyama.Kobana",
+		"JR-East.Karasuyama.Taki",
+		"JR-East.Karasuyama.Karasuyama"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#339966",
+	"carComposition": 2,
+	"dynamic": true
+}, {
 	"id": "JR-Central.Tokaido",
 	"title": {
 		"ja": "東海道線",
