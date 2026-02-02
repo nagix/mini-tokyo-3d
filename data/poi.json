@@ -945,7 +945,7 @@
 	},
 	"uptime": [{
 		"open": "04:35",
-		"close": "24:45"
+		"close": "00:45"
 	}],
 	"facilities": ["stairs", "escalator"]
 }, {
@@ -5012,10 +5012,6 @@
 		"zh-Hans": "出口A10",
 		"zh-Hant": "出口A10"
 	},
-	"uptime": [{
-		"open": "00:00",
-		"close": "00:00"
-	}],
 	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Shinjuku.A11",
@@ -5098,8 +5094,8 @@
 		"zh-Hant": "出口A15 (電梯B)"
 	},
 	"uptime": [{
-		"open": "06:00",
-		"close": "23:00"
+		"open": "00:00",
+		"close": "00:00"
 	}],
 	"facilities": ["stairs", "elevator"]
 }, {
@@ -5233,6 +5229,10 @@
 		"zh-Hans": "出口B13",
 		"zh-Hant": "出口B13"
 	},
+	"uptime": [{
+		"open": "00:00",
+		"close": "00:00"
+	}],
 	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Shinjuku.B14",
@@ -5247,6 +5247,10 @@
 		"zh-Hans": "出口B14",
 		"zh-Hant": "出口B14"
 	},
+	"uptime": [{
+		"open": "00:00",
+		"close": "00:00"
+	}],
 	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Shinjuku.B15",
@@ -5262,8 +5266,8 @@
 		"zh-Hant": "出口B15"
 	},
 	"uptime": [{
-		"open": "06:00",
-		"close": "23:00"
+		"open": "00:00",
+		"close": "00:00"
 	}],
 	"facilities": ["stairs", "escalator", "elevator"]
 }, {
@@ -7022,10 +7026,6 @@
 		"zh-Hans": "出口C9",
 		"zh-Hant": "出口C9"
 	},
-	"uptime": [{
-		"open": "00:00",
-		"close": "00:00"
-	}],
 	"facilities": ["stairs"]
 }, {
 	"id": "TokyoMetro.Otemachi.C10",
@@ -13066,6 +13066,24 @@
 	},
 	"facilities": ["stairs"]
 }, {
+	"id": "TokyoMetro.KitaAyase.6",
+	"coord": [139.8320393, 35.7775332],
+	"title": {
+		"en": "6"
+	},
+	"description": {
+		"ja": "出口6",
+		"en": "Exit 6",
+		"ko": "출구6",
+		"zh-Hans": "出口6",
+		"zh-Hant": "出口6"
+	},
+	"uptime": [{
+		"open": "05:00",
+		"close": "00:15"
+	}],
+	"facilities": ["stairs", "escalator", "elevator"]
+}, {
 	"id": "TokyoMetro.Wakoshi.South",
 	"coord": [139.6122891, 35.7883838],
 	"title": {
@@ -14642,11 +14660,7 @@
 		"zh-Hans": "出口6",
 		"zh-Hant": "出口6"
 	},
-	"uptime": [{
-		"open": "00:00",
-		"close": "00:00"
-	}],
-	"facilities": ["stairs"]
+	"facilities": ["stairs", "elevator"]
 }, {
 	"id": "TokyoMetro.GinzaItchome.7",
 	"coord": [139.7680892, 35.6742421],
@@ -17051,10 +17065,10 @@
 		"zh-Hant": "出口A1"
 	},
 	"uptime": [{
-		"open": "00:00",
-		"close": "00:00"
+		"open": "07:00",
+		"close": "21:00"
 	}],
-	"facilities": ["stairs"]
+	"facilities": ["stairs", "escalator", "elevator"]
 }, {
 	"id": "Toei.Mita.A2",
 	"coord": [139.7462279, 35.6461939],
@@ -17068,10 +17082,6 @@
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
 	},
-	"uptime": [{
-		"open": "00:00",
-		"close": "00:00"
-	}],
 	"facilities": ["stairs"]
 }, {
 	"id": "Toei.Mita.A3",
