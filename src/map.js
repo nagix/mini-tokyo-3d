@@ -795,6 +795,7 @@ export default class extends Evented {
                         },
                         'routeug': {
                             opacity: .0625,
+                            visible: false,
                             metadata: {
                                 'mt3d:opacity-effect': true,
                                 'mt3d:opacity': 0.125,
@@ -802,6 +803,7 @@ export default class extends Evented {
                             }
                         },
                         'routeog': {
+                            visible: false,
                             metadata: {
                                 'mt3d:opacity-effect': true,
                                 'mt3d:opacity': 1,
@@ -3464,7 +3466,6 @@ export default class extends Evented {
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
             helpersMapbox.setLayerProps(me.map, `${name}-${zoom}`, {
                 data: helpersGeojson.featureFilter(me.featureCollection, p => p.zoom === zoom && p.ids && p.ids[0] === id),
-                opacity: 1,
                 visible: true
             });
         }
