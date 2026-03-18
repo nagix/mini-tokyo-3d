@@ -2,7 +2,7 @@
 
 `mapboxgl` est l'objet avec toutes les classes, objets et propriétés inclus dans [Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/). Il est utilisé comme espace de noms pour l'API Mapbox.
 
-**Tapez** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 ## Propriétés
 

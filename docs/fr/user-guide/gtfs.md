@@ -2,7 +2,7 @@
 
 <img :src="$withBase('/images/gtfs.jpg')" style="width: 576px;">
 
-Mini Tokyo 3D prend en charge le [GTFS](https://gtfs.org) (General Transit Feed Spécification) et le GTFS Realtime. En spécifiant les sources de données, vous pouvez visualiser les véhicules circulant le long des itinéraires sur une carte en temps réel.
+Mini Tokyo 3D prend en charge le [GTFS](https://gtfs.org) (General Transit Feed Specification) et le GTFS Realtime. En spécifiant les sources de données, vous pouvez visualiser les véhicules circulant le long des itinéraires sur une carte en temps réel.
 
 Les véhicules de l'ensemble de données GTFS sont représentés sous forme de boîtes légèrement plus petites que les trains et avions Mini Tokyo 3D habituels. Les ensembles de données GTFS à afficher ne se limitent pas à la région de Tokyo, mais peuvent provenir de n'importe quelle région du monde. En d’autres termes, Mini Tokyo 3D peut être utilisé comme un simple visualiseur pour les ensembles de données GTFS.
 

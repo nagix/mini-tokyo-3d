@@ -1,12 +1,12 @@
 # Source de données
 
-L'objet `DataSource` est utilisé pour spécifier des sources de données [GTFS](https://gtfs.org) (General Transit Feed Spécification) et GTFS Realtime supplémentaires, définies sous forme de tableau dans l'option de constructeur [`Map`](./map.md) `dataSources`.
+L'objet `DataSource` est utilisé pour spécifier des sources de données [GTFS](https://gtfs.org) (General Transit Feed Specification) et GTFS Realtime supplémentaires, définies sous forme de tableau dans l'option de constructeur [`Map`](./map.md) `dataSources`.
 
 ::: warning
 Notez qu'il s'agit d'une fonctionnalité expérimentale en cours de développement et susceptible de changer.
 :::
 
-**Tapez** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 ## Propriétés
 
@@ -18,13 +18,13 @@ Une couleur utilisée pour afficher les itinéraires et les véhicules. Il est s
 
 Spécifie l'URL de [a GTFS dataset zip file](https://gtfs.org/documentation/schedule/reference/#dataset-publishing-general-practices). Un ensemble de données GTFS doit contenir au moins les fichiers suivants.
 
-- agence.txt
-- arrête.txt
+- agency.txt
+- stops.txt
 - routes.txt
-- voyages.txt
+- trips.txt
 - stop_times.txt
-- calendrier.txt ou calendrier_dates.txt
-- formes.txt
+- calendar.txt ou calendar_dates.txt
+- shapes.txt
 
 ### **`vehiclePositionUrl`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 

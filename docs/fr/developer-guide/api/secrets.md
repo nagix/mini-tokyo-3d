@@ -2,7 +2,7 @@
 
 L'objet `Secrets` est un objet qui stocke les jetons d'accès utilisés pour récupérer les données et est défini sur l'option du constructeur [`Map`](./map.md) `secrets`.
 
-**Tapez** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 ## Propriétés
 

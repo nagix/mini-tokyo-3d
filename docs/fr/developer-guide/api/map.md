@@ -31,7 +31,7 @@ Nom | Descriptif
 **`options.plugins`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`PluginInterface`](./plugin.md)`>` | Une gamme de plugins à ajouter. Chaque plugin doit implémenter [PluginInterface](./plugin.md).
 **`options.searchControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>par défaut : `true` | Si `true`, le bouton de recherche sera ajouté à la carte.
 **`options.secrets`**<br>[`Secrets`](./secrets.md) | Un objet pour stocker les jetons d'accès utilisés pour récupérer des données.
-**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | ID du train ou du vol à suivre, ou de la gare à sélectionner. L'ID du train est une chaîne au format `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. L'ID de frayeur est une chaîne au format `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` ou `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. La partie `'odpt.*:'` peut être omise. Pour plus de détails, consultez le [Public Transportation Open Data Center: API Specification](https://developer.odpt.org/en/documents).
+**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | ID du train ou du vol à suivre, ou de la gare à sélectionner. L'ID du train est une chaîne au format `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. L'ID de vol est une chaîne au format `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` ou `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. La partie `'odpt.*:'` peut être omise. Pour plus de détails, consultez le [Public Transportation Open Data Center: API Specification](https://developer.odpt.org/en/documents).
 **`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>par défaut : `'position'` | Le mode de suivi initial. `'position'`, `'back'`, `'topback'`, `'front'`, `'topfront'`, `'helicopter'`, `'drone'` et `'bird'` sont pris en charge.
 **`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>par défaut : `14` | Le niveau de zoom initial de la carte. S’il n’est pas spécifié, il sera par défaut `14`.
 
@@ -394,7 +394,7 @@ Définit le pas (inclinaison) de la carte. Équivalent à `jumpTo({pitch: pitch}
 
 ### **`setSelection(id)`**
 
-Définit l'ID du train ou du vol que vous souhaitez suivre, ou de la gare à sélectionner. L'ID du train est une chaîne au format `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. L'ID de peur est une chaîne au format `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` ou `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. La partie `'odpt.*:'` peut être omise. Pour plus de détails, consultez le [Public Transportation Open Data Center: API Specification](https://developer.odpt.org/en/documents).
+Définit l'ID du train ou du vol que vous souhaitez suivre, ou de la gare à sélectionner. L'ID du train est une chaîne au format `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. L'ID de vol est une chaîne au format `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` ou `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. La partie `'odpt.*:'` peut être omise. Pour plus de détails, consultez le [Public Transportation Open Data Center: API Specification](https://developer.odpt.org/en/documents).
 
 #### Paramètres
 
@@ -454,7 +454,7 @@ Définit le niveau de zoom de la carte. Équivalent à `jumpTo({zoom: zoom})`.
 
 Déclenché lorsque l'utilisateur annule une interaction de « zoom sur la boîte » ou lorsque le cadre de délimitation n'atteint pas le seuil de taille minimale. Voir [BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
 
-**Tapez** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent)
+**Type** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent)
 
 ---
 
@@ -462,7 +462,7 @@ Déclenché lorsque l'utilisateur annule une interaction de « zoom sur la boît
 
 Déclenché lorsqu'une interaction "box zoom" se termine. Voir [BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
 
-**Tapez** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent)
+**Type** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent)
 
 ---
 
@@ -470,7 +470,7 @@ Déclenché lorsqu'une interaction "box zoom" se termine. Voir [BoxZoomHandler](
 
 Déclenché lorsqu'une interaction "box zoom" démarre. Voir [BoxZoomHandler](https://docs.mapbox.com/mapbox-gl-js/api/handlers/#boxzoomhandler).
 
-**Tapez** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent)
+**Type** [`MapBoxZoomEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapboxzoomevent)
 
 ---
 
@@ -478,7 +478,7 @@ Déclenché lorsqu'une interaction "box zoom" démarre. Voir [BoxZoomHandler](ht
 
 Déclenché lorsqu'un dispositif de pointage (généralement une souris) est enfoncé et relâché au même point de la carte.
 
-**Tapez** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -486,7 +486,7 @@ Déclenché lorsqu'un dispositif de pointage (généralement une souris) est enf
 
 Déclenché lorsque le mode de l'horloge est modifié.
 
-**Tapez** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 #### Propriétés
 
@@ -498,7 +498,7 @@ Déclenché lorsque le mode de l'horloge est modifié.
 
 Lancé lorsque le bouton droit de la souris est cliqué ou que la touche du menu contextuel est enfoncée dans la carte.
 
-**Tapez** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -506,7 +506,7 @@ Lancé lorsque le bouton droit de la souris est cliqué ou que la touche du menu
 
 Déclenché lorsqu'un dispositif de pointage (généralement une souris) est enfoncé et relâché deux fois rapidement au même point de la carte.
 
-**Tapez** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -514,7 +514,7 @@ Déclenché lorsqu'un dispositif de pointage (généralement une souris) est enf
 
 Déclenché lorsqu'un suivi de train ou d'avion est annulé ou que des gares sont désélectionnées.
 
-**Tapez** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 #### Propriétés
 
@@ -550,7 +550,7 @@ Déclenché lorsqu'une interaction "glisser vers panoramique" démarre. Voir [Dr
 
 Déclenché lorsque le mode éco est modifié.
 
-**Tapez** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 #### Propriétés
 
@@ -560,7 +560,7 @@ Déclenché lorsque le mode éco est modifié.
 
 ### **`error`**Lancé lorsqu'une erreur se produit. Il s'agit du principal mécanisme de rapport d'erreurs de Mini Tokyo 3D. Nous utilisons un événement au lieu de `throw` pour mieux prendre en charge les opérations asynchrones. Si aucun écouteur n'est lié à l'événement `error`, l'erreur sera imprimée sur la console.
 
-**Tapez** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 #### Propriétés
 
@@ -572,7 +572,7 @@ Déclenché lorsque le mode éco est modifié.
 
 Lancé immédiatement après que toutes les ressources nécessaires ont été téléchargées et que le premier rendu visuellement complet de la carte a eu lieu.
 
-**Tapez** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 ---
 
@@ -580,7 +580,7 @@ Lancé immédiatement après que toutes les ressources nécessaires ont été t�
 
 Lancé lorsqu'un dispositif de pointage (généralement une souris) est enfoncé dans la carte.
 
-**Tapez** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -588,7 +588,7 @@ Lancé lorsqu'un dispositif de pointage (généralement une souris) est enfoncé
 
 Déclenché lorsqu'un dispositif de pointage (généralement une souris) est déplacé alors que le curseur se trouve à l'intérieur de la carte. Lorsque vous déplacez le curseur sur la carte, l'événement se déclenche chaque fois que le curseur change de position sur la carte.
 
-**Tapez** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -596,7 +596,7 @@ Déclenché lorsqu'un dispositif de pointage (généralement une souris) est dé
 
 Déclenché lorsqu'un dispositif de pointage (généralement une souris) est déplacé sur la carte. Lorsque vous déplacez le curseur sur une page Web contenant une carte, l'événement se déclenche à chaque fois qu'il entre dans la carte ou dans tout élément enfant.
 
-**Tapez** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -604,7 +604,7 @@ Déclenché lorsqu'un dispositif de pointage (généralement une souris) est dé
 
 Déclenché lorsqu'un dispositif de pointage (généralement une souris) est relâché sur la carte.
 
-**Tapez** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
+**Type** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapmouseevent)
 
 ---
 
@@ -690,7 +690,7 @@ Déclenché lorsqu'une interaction « glisser pour faire pivoter » démarre. Vo
 
 Déclenché lorsqu'un suivi de train ou d'avion est initié ou que des gares sont sélectionnées.
 
-**Tapez** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 #### Propriétés**`selection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`) : L'ID du train ou du vol dont le suivi est initié, ou le tableau des ID des gares sélectionnées. L'ID du train est une chaîne au format `'<operator ID>.<line ID>.<train number>'`. L'ID de vol est une chaîne au format `'<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'<operator ID>.<line ID>.<station ID>'`.
 
@@ -700,7 +700,7 @@ Déclenché lorsqu'un suivi de train ou d'avion est initié ou que des gares son
 
 Déclenché lorsqu'un événement [`touchcancel`](https://developer.mozilla.org/docs/Web/Events/touchcancel) se produit dans la carte.
 
-**Tapez** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
+**Type** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
 
 ---
 
@@ -708,7 +708,7 @@ Déclenché lorsqu'un événement [`touchcancel`](https://developer.mozilla.org/
 
 Déclenché lorsqu'un événement [`touchend`](https://developer.mozilla.org/docs/Web/Events/touchend) se produit dans la carte.
 
-**Tapez** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
+**Type** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
 
 ---
 
@@ -716,7 +716,7 @@ Déclenché lorsqu'un événement [`touchend`](https://developer.mozilla.org/doc
 
 Déclenché lorsqu'un événement [`touchmove`](https://developer.mozilla.org/docs/Web/Events/touchmove) se produit dans la carte.
 
-**Tapez** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
+**Type** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
 
 ---
 
@@ -724,7 +724,7 @@ Déclenché lorsqu'un événement [`touchmove`](https://developer.mozilla.org/do
 
 Déclenché lorsqu'un événement [`touchstart`](https://developer.mozilla.org/docs/Web/Events/touchstart) se produit dans la carte.
 
-**Tapez** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
+**Type** [`MapTouchEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#maptouchevent)
 
 ---
 
@@ -732,7 +732,7 @@ Déclenché lorsqu'un événement [`touchstart`](https://developer.mozilla.org/d
 
 Lancé lorsque le mode de suivi est modifié.
 
-**Tapez** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 #### Propriétés
 
@@ -748,7 +748,7 @@ Le mode de suivi `'heading'` est obsolète et revient à `'topback'`.
 
 Lancé lorsque le mode d'affichage est modifié.
 
-**Tapez** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 #### Propriétés
 
@@ -760,7 +760,7 @@ Lancé lorsque le mode d'affichage est modifié.
 
 Déclenché lorsqu'un événement [`wheel`](https://developer.mozilla.org/docs/Web/Events/wheel) se produit dans la carte.
 
-**Tapez** [`MapWheelEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapwheelevent)
+**Type** [`MapWheelEvent`](https://docs.mapbox.com/mapbox-gl-js/api/events/#mapwheelevent)
 
 ---
 

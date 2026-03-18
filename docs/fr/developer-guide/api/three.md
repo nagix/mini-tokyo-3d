@@ -1,8 +1,8 @@
-# TROIS
+# THREE
 
 `THREE` est l'objet avec toutes les classes, objets et propriétés inclus dans la bibliothèque principale [three.js](https://threejs.org/docs/) et [GLTFLoader](https://threejs.org/docs/#examples/en/loaders/GLTFLoader). Il est utilisé comme espace de noms pour la bibliothèque principale three.js.
 
-**Tapez** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 ## Propriétés
 
