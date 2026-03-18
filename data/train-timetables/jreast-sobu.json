@@ -327,7 +327,7 @@
 	}, {
 		"s": "JR-East.Sobu.Hyuga",
 		"a": "07:22",
-		"d": "07:22"
+		"d": "07:23"
 	}, {
 		"s": "JR-East.Sobu.Naruto",
 		"a": "07:28",
@@ -335,11 +335,11 @@
 	}, {
 		"s": "JR-East.Sobu.Matsuo",
 		"a": "07:34",
-		"d": "07:34"
+		"d": "07:35"
 	}, {
 		"s": "JR-East.Sobu.Yokoshiba",
 		"a": "07:39",
-		"d": "07:39"
+		"d": "07:40"
 	}, {
 		"s": "JR-East.Sobu.Iigura",
 		"a": "07:43",
@@ -917,15 +917,15 @@
 		"d": "09:30"
 	}, {
 		"s": "JR-East.Sobu.Sakura",
-		"a": "09:33",
-		"d": "09:34"
+		"a": "09:34",
+		"d": "09:35"
 	}, {
 		"s": "JR-East.Sobu.MinamiShisui",
-		"a": "09:38",
+		"a": "09:39",
 		"d": "09:39"
 	}, {
 		"s": "JR-East.Sobu.Enokido",
-		"a": "09:42",
+		"a": "09:43",
 		"d": "09:43"
 	}, {
 		"s": "JR-East.Sobu.Yachimata",
@@ -3881,6 +3881,9 @@
 	"ds": [
 		"JR-East.Sobu.Sakura"
 	],
+	"pt": [
+		"JR-East.SobuRapid.4011M.Weekday"
+	],
 	"tt": [{
 		"s": "JR-East.Sobu.Chiba",
 		"d": "21:20"
@@ -4481,7 +4484,7 @@
 		"JR-East.Sobu.Naruto"
 	],
 	"pt": [
-		"JR-East.SobuRapid.4743F.Weekday.1"
+		"JR-East.SobuRapid.4747F.Weekday.1"
 	],
 	"tt": [{
 		"s": "JR-East.Sobu.Sakura",
@@ -5018,7 +5021,7 @@
 	}, {
 		"s": "JR-East.Sobu.Naruto",
 		"a": "07:24",
-		"d": "07:28"
+		"d": "07:29"
 	}, {
 		"s": "JR-East.Sobu.Hyuga",
 		"a": "07:34",
@@ -5026,7 +5029,7 @@
 	}, {
 		"s": "JR-East.Sobu.Yachimata",
 		"a": "07:40",
-		"d": "07:40"
+		"d": "07:41"
 	}, {
 		"s": "JR-East.Sobu.Enokido",
 		"a": "07:44",
@@ -8284,7 +8287,7 @@
 		"JR-East.SobuRapid.Tokyo"
 	],
 	"nt": [
-		"JR-East.SobuRapid.5042F.Weekday.1"
+		"JR-East.SobuRapid.5046F.Weekday.1"
 	],
 	"tt": [{
 		"s": "JR-East.Sobu.Naruto",
@@ -8599,6 +8602,9 @@
 	"ds": [
 		"JR-East.SobuRapid.Tokyo"
 	],
+	"nt": [
+		"JR-East.SobuRapid.4004M.Weekday"
+	],
 	"tt": [{
 		"s": "JR-East.Sobu.Sakura",
 		"d": "06:52"
@@ -8630,6 +8636,9 @@
 	],
 	"ds": [
 		"JR-East.SobuRapid.Tokyo"
+	],
+	"nt": [
+		"JR-East.SobuRapid.4006M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Sobu.Sakura",
@@ -9450,7 +9459,7 @@
 	}, {
 		"s": "JR-East.Sobu.Hyuga",
 		"a": "07:22",
-		"d": "07:22"
+		"d": "07:23"
 	}, {
 		"s": "JR-East.Sobu.Naruto",
 		"a": "07:28",
@@ -9458,11 +9467,11 @@
 	}, {
 		"s": "JR-East.Sobu.Matsuo",
 		"a": "07:34",
-		"d": "07:34"
+		"d": "07:35"
 	}, {
 		"s": "JR-East.Sobu.Yokoshiba",
 		"a": "07:39",
-		"d": "07:39"
+		"d": "07:40"
 	}, {
 		"s": "JR-East.Sobu.Iigura",
 		"a": "07:43",
@@ -9849,26 +9858,26 @@
 	],
 	"tt": [{
 		"s": "JR-East.Sobu.Chiba",
-		"d": "08:21"
+		"d": "08:23"
 	}, {
 		"s": "JR-East.Sobu.HigashiChiba",
-		"a": "08:23",
-		"d": "08:24"
+		"a": "08:25",
+		"d": "08:26"
 	}, {
 		"s": "JR-East.Sobu.Tsuga",
-		"a": "08:27",
-		"d": "08:28"
+		"a": "08:29",
+		"d": "08:29"
 	}, {
 		"s": "JR-East.Sobu.Yotsukaido",
-		"a": "08:31",
-		"d": "08:31"
+		"a": "08:33",
+		"d": "08:38"
 	}, {
 		"s": "JR-East.Sobu.Monoi",
-		"a": "08:35",
-		"d": "08:35"
+		"a": "08:42",
+		"d": "08:42"
 	}, {
 		"s": "JR-East.Sobu.Sakura",
-		"a": "08:39"
+		"a": "08:46"
 	}]
 }, {
 	"id": "JR-East.Sobu.333M.SaturdayHoliday",
@@ -10040,15 +10049,15 @@
 		"d": "09:30"
 	}, {
 		"s": "JR-East.Sobu.Sakura",
-		"a": "09:33",
-		"d": "09:34"
+		"a": "09:34",
+		"d": "09:35"
 	}, {
 		"s": "JR-East.Sobu.MinamiShisui",
-		"a": "09:38",
+		"a": "09:39",
 		"d": "09:39"
 	}, {
 		"s": "JR-East.Sobu.Enokido",
-		"a": "09:42",
+		"a": "09:43",
 		"d": "09:43"
 	}, {
 		"s": "JR-East.Sobu.Yachimata",
@@ -14003,7 +14012,7 @@
 	}, {
 		"s": "JR-East.Sobu.Naruto",
 		"a": "07:24",
-		"d": "07:28"
+		"d": "07:29"
 	}, {
 		"s": "JR-East.Sobu.Hyuga",
 		"a": "07:34",
@@ -14011,7 +14020,7 @@
 	}, {
 		"s": "JR-East.Sobu.Yachimata",
 		"a": "07:40",
-		"d": "07:40"
+		"d": "07:41"
 	}, {
 		"s": "JR-East.Sobu.Enokido",
 		"a": "07:44",

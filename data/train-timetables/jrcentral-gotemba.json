@@ -20,11 +20,11 @@
 		"d": "06:08"
 	}, {
 		"s": "JR-Central.Gotemba.KamiOi",
-		"a": "06:12",
+		"a": "06:11",
 		"d": "06:13"
 	}, {
 		"s": "JR-Central.Gotemba.SagamiKaneko",
-		"a": "06:15",
+		"a": "06:16",
 		"d": "06:16"
 	}, {
 		"s": "JR-Central.Gotemba.Matsuda",
@@ -87,10 +87,10 @@
 		"a": "07:42"
 	}]
 }, {
-	"id": "JR-Central.Gotemba.2747M.Weekday",
-	"t": "JR-Central.Gotemba.2747M",
+	"id": "JR-Central.Gotemba.2751M.Weekday",
+	"t": "JR-Central.Gotemba.2751M",
 	"r": "JR-Central.Gotemba",
-	"n": "2747M",
+	"n": "2751M",
 	"y": "JR-Central.Local",
 	"d": "Outbound",
 	"os": [
@@ -344,14 +344,14 @@
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "09:21",
-		"d": "09:21"
+		"d": "09:22"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "09:24",
-		"d": "09:24"
+		"d": "09:25"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "09:28"
+		"a": "09:29"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2529M.Weekday",
@@ -606,6 +606,9 @@
 	"ds": [
 		"JR-Central.Gotemba.Numazu"
 	],
+	"nt": [
+		"JR-Central.Gotemba.2629M.Weekday"
+	],
 	"tt": [{
 		"s": "JR-Central.Gotemba.Kozu",
 		"d": "10:50"
@@ -723,19 +726,19 @@
 		"d": "13:14"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
-		"a": "13:18",
+		"a": "13:17",
 		"d": "13:18"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "13:21",
-		"d": "13:21"
+		"a": "13:20",
+		"d": "13:20"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "13:24",
-		"d": "13:24"
+		"a": "13:23",
+		"d": "13:23"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "13:28"
+		"a": "13:27"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2543G.Weekday",
@@ -837,6 +840,9 @@
 	],
 	"ds": [
 		"JR-Central.Gotemba.Numazu"
+	],
+	"nt": [
+		"JR-Central.Gotemba.2637G.Weekday"
 	],
 	"tt": [{
 		"s": "JR-Central.Gotemba.Kozu",
@@ -1048,14 +1054,14 @@
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "16:39",
-		"d": "16:41"
+		"d": "16:42"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "16:44",
-		"d": "16:45"
+		"a": "16:45",
+		"d": "16:46"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "16:49"
+		"a": "16:50"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2551M.Weekday",
@@ -1139,7 +1145,7 @@
 		"d": "17:35"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "17:38",
+		"a": "17:37",
 		"d": "17:38"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
@@ -1514,7 +1520,7 @@
 	}, {
 		"s": "JR-Central.Gotemba.MinamiGotemba",
 		"a": "19:34",
-		"d": "19:34"
+		"d": "19:35"
 	}, {
 		"s": "JR-Central.Gotemba.Fujioka",
 		"a": "19:37",
@@ -1525,23 +1531,23 @@
 		"d": "19:44"
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
-		"a": "19:48",
-		"d": "19:49"
+		"a": "19:49",
+		"d": "19:50"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
-		"a": "19:52",
-		"d": "19:53"
+		"a": "19:53",
+		"d": "19:54"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "19:56",
-		"d": "19:57"
+		"a": "19:57",
+		"d": "19:58"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "19:59",
-		"d": "20:00"
+		"a": "20:01",
+		"d": "20:02"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "20:04"
+		"a": "20:06"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2563G.Weekday",
@@ -1654,22 +1660,22 @@
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
 		"a": "20:47",
-		"d": "20:48"
+		"d": "20:47"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
-		"a": "20:51",
-		"d": "20:52"
+		"a": "20:50",
+		"d": "20:51"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "20:55",
-		"d": "20:56"
+		"a": "20:54",
+		"d": "20:55"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "20:58",
-		"d": "20:59"
+		"a": "20:57",
+		"d": "20:58"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "21:03"
+		"a": "21:02"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2567M.Weekday",
@@ -1886,10 +1892,10 @@
 	],
 	"tt": [{
 		"s": "JR-Central.Gotemba.Kozu",
-		"d": "21:48"
+		"d": "21:49"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoSoga",
-		"a": "21:52",
+		"a": "21:53",
 		"d": "21:53"
 	}, {
 		"s": "JR-Central.Gotemba.KamiOi",
@@ -1897,11 +1903,11 @@
 		"d": "21:58"
 	}, {
 		"s": "JR-Central.Gotemba.SagamiKaneko",
-		"a": "22:00",
+		"a": "22:01",
 		"d": "22:01"
 	}, {
 		"s": "JR-Central.Gotemba.Matsuda",
-		"a": "22:03",
+		"a": "22:04",
 		"d": "22:04"
 	}, {
 		"s": "JR-Central.Gotemba.HigashiYamakita",
@@ -2214,14 +2220,14 @@
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "06:58",
-		"d": "06:59"
+		"d": "07:00"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "07:02",
-		"d": "07:02"
+		"d": "07:03"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "07:07"
+		"a": "07:08"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2611M.Weekday",
@@ -2419,10 +2425,10 @@
 		"a": "09:03"
 	}]
 }, {
-	"id": "JR-Central.Gotemba.2621G.Weekday",
-	"t": "JR-Central.Gotemba.2621G",
+	"id": "JR-Central.Gotemba.2621M.Weekday",
+	"t": "JR-Central.Gotemba.2621M",
 	"r": "JR-Central.Gotemba",
-	"n": "2621G",
+	"n": "2621M",
 	"y": "JR-Central.Local",
 	"d": "Outbound",
 	"os": [
@@ -2601,14 +2607,14 @@
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "11:52",
-		"d": "11:57"
+		"d": "11:58"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "11:59",
-		"d": "12:00"
+		"a": "12:00",
+		"d": "12:01"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "12:04"
+		"a": "12:06"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2629M.Weekday",
@@ -2623,6 +2629,9 @@
 	"ds": [
 		"JR-Central.Gotemba.Numazu"
 	],
+	"pt": [
+		"JR-Central.Gotemba.2539M.Weekday"
+	],
 	"tt": [{
 		"s": "JR-Central.Gotemba.Gotemba",
 		"d": "11:57"
@@ -2632,31 +2641,31 @@
 		"d": "12:01"
 	}, {
 		"s": "JR-Central.Gotemba.Fujioka",
-		"a": "12:03",
+		"a": "12:04",
 		"d": "12:04"
 	}, {
 		"s": "JR-Central.Gotemba.Iwanami",
-		"a": "12:09",
-		"d": "12:10"
+		"a": "12:10",
+		"d": "12:11"
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
-		"a": "12:15",
-		"d": "12:16"
+		"a": "12:16",
+		"d": "12:17"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
-		"a": "12:19",
-		"d": "12:19"
+		"a": "12:20",
+		"d": "12:21"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "12:22",
-		"d": "12:25"
+		"a": "12:24",
+		"d": "12:27"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "12:28",
-		"d": "12:28"
+		"a": "12:30",
+		"d": "12:30"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "12:32"
+		"a": "12:35"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2631M.Weekday",
@@ -2697,14 +2706,14 @@
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "12:54",
-		"d": "12:56"
+		"d": "12:55"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "12:58",
 		"d": "12:59"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "13:04"
+		"a": "13:03"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2633M.Weekday",
@@ -2814,6 +2823,9 @@
 	],
 	"ds": [
 		"JR-Central.Gotemba.Numazu"
+	],
+	"pt": [
+		"JR-Central.Gotemba.2545G.Weekday"
 	],
 	"tt": [{
 		"s": "JR-Central.Gotemba.Gotemba",
@@ -3600,14 +3612,14 @@
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "09:17",
-		"d": "09:17"
+		"d": "09:18"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "09:21",
-		"d": "09:21"
+		"d": "09:22"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
-		"a": "09:24",
+		"a": "09:25",
 		"d": "09:25"
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
@@ -3735,7 +3747,7 @@
 		"d": "10:10"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "10:13",
+		"a": "10:14",
 		"d": "10:14"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
@@ -3780,14 +3792,14 @@
 	],
 	"tt": [{
 		"s": "JR-Central.Gotemba.Numazu",
-		"d": "10:49"
+		"d": "10:47"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "10:52",
-		"d": "10:53"
+		"a": "10:50",
+		"d": "10:51"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "10:56",
+		"a": "10:54",
 		"d": "10:57"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
@@ -3883,7 +3895,7 @@
 		"d": "11:27"
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
-		"a": "11:31",
+		"a": "11:30",
 		"d": "11:31"
 	}, {
 		"s": "JR-Central.Gotemba.Iwanami",
@@ -3936,10 +3948,10 @@
 	}, {
 		"s": "JR-Central.Gotemba.Iwanami",
 		"a": "12:10",
-		"d": "12:10"
+		"d": "12:11"
 	}, {
 		"s": "JR-Central.Gotemba.Fujioka",
-		"a": "12:15",
+		"a": "12:16",
 		"d": "12:16"
 	}, {
 		"s": "JR-Central.Gotemba.MinamiGotemba",
@@ -4008,22 +4020,22 @@
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "12:21",
-		"d": "12:21"
+		"d": "12:22"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "12:24",
-		"d": "12:25"
+		"a": "12:25",
+		"d": "12:26"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
 		"a": "12:28",
-		"d": "12:28"
+		"d": "12:29"
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
-		"a": "12:31",
+		"a": "12:32",
 		"d": "12:32"
 	}, {
 		"s": "JR-Central.Gotemba.Iwanami",
-		"a": "12:37",
+		"a": "12:38",
 		"d": "12:41"
 	}, {
 		"s": "JR-Central.Gotemba.Fujioka",
@@ -4456,7 +4468,7 @@
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "15:37",
-		"d": "15:37"
+		"d": "15:38"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "15:41",
@@ -4544,10 +4556,10 @@
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "16:03",
-		"d": "16:03"
+		"d": "16:04"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "16:06",
+		"a": "16:07",
 		"d": "16:08"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
@@ -4556,7 +4568,7 @@
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
 		"a": "16:14",
-		"d": "16:14"
+		"d": "16:15"
 	}, {
 		"s": "JR-Central.Gotemba.Iwanami",
 		"a": "16:20",
@@ -5014,15 +5026,15 @@
 		"d": "19:44"
 	}, {
 		"s": "JR-Central.Gotemba.Fujioka",
-		"a": "19:49",
+		"a": "19:50",
 		"d": "19:50"
 	}, {
 		"s": "JR-Central.Gotemba.MinamiGotemba",
-		"a": "19:52",
-		"d": "19:53"
+		"a": "19:53",
+		"d": "19:54"
 	}, {
 		"s": "JR-Central.Gotemba.Gotemba",
-		"a": "19:57",
+		"a": "19:58",
 		"d": "20:01"
 	}, {
 		"s": "JR-Central.Gotemba.Ashigara",
@@ -5087,18 +5099,18 @@
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "19:55",
-		"d": "19:57"
+		"d": "19:58"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
-		"a": "19:59",
-		"d": "20:00"
+		"a": "20:01",
+		"d": "20:01"
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
-		"a": "20:03",
-		"d": "20:04"
+		"a": "20:05",
+		"d": "20:05"
 	}, {
 		"s": "JR-Central.Gotemba.Iwanami",
-		"a": "20:10",
+		"a": "20:11",
 		"d": "20:14"
 	}, {
 		"s": "JR-Central.Gotemba.Fujioka",
@@ -5880,11 +5892,11 @@
 		"d": "06:08"
 	}, {
 		"s": "JR-Central.Gotemba.KamiOi",
-		"a": "06:12",
+		"a": "06:11",
 		"d": "06:13"
 	}, {
 		"s": "JR-Central.Gotemba.SagamiKaneko",
-		"a": "06:15",
+		"a": "06:16",
 		"d": "06:16"
 	}, {
 		"s": "JR-Central.Gotemba.Matsuda",
@@ -5947,10 +5959,10 @@
 		"a": "07:42"
 	}]
 }, {
-	"id": "JR-Central.Gotemba.2747M.SaturdayHoliday",
-	"t": "JR-Central.Gotemba.2747M",
+	"id": "JR-Central.Gotemba.2751M.SaturdayHoliday",
+	"t": "JR-Central.Gotemba.2751M",
 	"r": "JR-Central.Gotemba",
-	"n": "2747M",
+	"n": "2751M",
 	"y": "JR-Central.Local",
 	"d": "Outbound",
 	"os": [
@@ -6204,14 +6216,14 @@
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "09:21",
-		"d": "09:21"
+		"d": "09:22"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "09:24",
-		"d": "09:24"
+		"d": "09:25"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "09:28"
+		"a": "09:29"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2529M.SaturdayHoliday",
@@ -6492,14 +6504,14 @@
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "11:52",
-		"d": "11:57"
+		"d": "11:58"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "11:59",
-		"d": "12:00"
+		"a": "12:00",
+		"d": "12:01"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "12:04"
+		"a": "12:06"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.5539M.SaturdayHoliday",
@@ -6563,31 +6575,31 @@
 		"d": "12:01"
 	}, {
 		"s": "JR-Central.Gotemba.Fujioka",
-		"a": "12:03",
+		"a": "12:04",
 		"d": "12:04"
 	}, {
 		"s": "JR-Central.Gotemba.Iwanami",
-		"a": "12:09",
-		"d": "12:10"
+		"a": "12:10",
+		"d": "12:11"
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
-		"a": "12:15",
-		"d": "12:16"
+		"a": "12:16",
+		"d": "12:17"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
-		"a": "12:19",
-		"d": "12:19"
+		"a": "12:20",
+		"d": "12:21"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "12:22",
-		"d": "12:25"
+		"a": "12:24",
+		"d": "12:27"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "12:28",
-		"d": "12:28"
+		"a": "12:30",
+		"d": "12:30"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "12:32"
+		"a": "12:35"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2541G.SaturdayHoliday",
@@ -6663,19 +6675,19 @@
 		"d": "13:14"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
-		"a": "13:18",
+		"a": "13:17",
 		"d": "13:18"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "13:21",
-		"d": "13:21"
+		"a": "13:20",
+		"d": "13:20"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "13:24",
-		"d": "13:24"
+		"a": "13:23",
+		"d": "13:23"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "13:28"
+		"a": "13:27"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2543G.SaturdayHoliday",
@@ -6777,6 +6789,9 @@
 	],
 	"ds": [
 		"JR-Central.Gotemba.Numazu"
+	],
+	"nt": [
+		"JR-Central.Gotemba.2637G.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-Central.Gotemba.Kozu",
@@ -6988,14 +7003,14 @@
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "16:39",
-		"d": "16:41"
+		"d": "16:42"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "16:44",
-		"d": "16:45"
+		"a": "16:45",
+		"d": "16:46"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "16:49"
+		"a": "16:50"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2551M.SaturdayHoliday",
@@ -7079,7 +7094,7 @@
 		"d": "17:35"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "17:38",
+		"a": "17:37",
 		"d": "17:38"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
@@ -7454,7 +7469,7 @@
 	}, {
 		"s": "JR-Central.Gotemba.MinamiGotemba",
 		"a": "19:34",
-		"d": "19:34"
+		"d": "19:35"
 	}, {
 		"s": "JR-Central.Gotemba.Fujioka",
 		"a": "19:37",
@@ -7465,23 +7480,23 @@
 		"d": "19:44"
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
-		"a": "19:48",
-		"d": "19:49"
+		"a": "19:49",
+		"d": "19:50"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
-		"a": "19:52",
-		"d": "19:53"
+		"a": "19:53",
+		"d": "19:54"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "19:56",
-		"d": "19:57"
+		"a": "19:57",
+		"d": "19:58"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "19:59",
-		"d": "20:00"
+		"a": "20:01",
+		"d": "20:02"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "20:04"
+		"a": "20:06"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2563G.SaturdayHoliday",
@@ -7594,22 +7609,22 @@
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
 		"a": "20:47",
-		"d": "20:48"
+		"d": "20:47"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
-		"a": "20:51",
-		"d": "20:52"
+		"a": "20:50",
+		"d": "20:51"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "20:55",
-		"d": "20:56"
+		"a": "20:54",
+		"d": "20:55"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "20:58",
-		"d": "20:59"
+		"a": "20:57",
+		"d": "20:58"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "21:03"
+		"a": "21:02"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2567M.SaturdayHoliday",
@@ -7826,10 +7841,10 @@
 	],
 	"tt": [{
 		"s": "JR-Central.Gotemba.Kozu",
-		"d": "21:48"
+		"d": "21:49"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoSoga",
-		"a": "21:52",
+		"a": "21:53",
 		"d": "21:53"
 	}, {
 		"s": "JR-Central.Gotemba.KamiOi",
@@ -7837,11 +7852,11 @@
 		"d": "21:58"
 	}, {
 		"s": "JR-Central.Gotemba.SagamiKaneko",
-		"a": "22:00",
+		"a": "22:01",
 		"d": "22:01"
 	}, {
 		"s": "JR-Central.Gotemba.Matsuda",
-		"a": "22:03",
+		"a": "22:04",
 		"d": "22:04"
 	}, {
 		"s": "JR-Central.Gotemba.HigashiYamakita",
@@ -8154,14 +8169,14 @@
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "06:58",
-		"d": "06:59"
+		"d": "07:00"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "07:02",
-		"d": "07:02"
+		"d": "07:03"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "07:07"
+		"a": "07:08"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2611M.SaturdayHoliday",
@@ -8215,10 +8230,10 @@
 		"a": "05:57"
 	}]
 }, {
-	"id": "JR-Central.Gotemba.5613M.SaturdayHoliday",
-	"t": "JR-Central.Gotemba.5613M",
+	"id": "JR-Central.Gotemba.2613M.SaturdayHoliday",
+	"t": "JR-Central.Gotemba.2613M",
 	"r": "JR-Central.Gotemba",
-	"n": "5613M",
+	"n": "2613M",
 	"y": "JR-Central.Local",
 	"d": "Outbound",
 	"os": [
@@ -8359,10 +8374,10 @@
 		"a": "09:03"
 	}]
 }, {
-	"id": "JR-Central.Gotemba.2621G.SaturdayHoliday",
-	"t": "JR-Central.Gotemba.2621G",
+	"id": "JR-Central.Gotemba.2621M.SaturdayHoliday",
+	"t": "JR-Central.Gotemba.2621M",
 	"r": "JR-Central.Gotemba",
-	"n": "2621G",
+	"n": "2621M",
 	"y": "JR-Central.Local",
 	"d": "Outbound",
 	"os": [
@@ -8541,14 +8556,14 @@
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "12:54",
-		"d": "12:56"
+		"d": "12:55"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "12:58",
 		"d": "12:59"
 	}, {
 		"s": "JR-Central.Gotemba.Numazu",
-		"a": "13:04"
+		"a": "13:03"
 	}]
 }, {
 	"id": "JR-Central.Gotemba.2633M.SaturdayHoliday",
@@ -8658,6 +8673,9 @@
 	],
 	"ds": [
 		"JR-Central.Gotemba.Numazu"
+	],
+	"pt": [
+		"JR-Central.Gotemba.2545G.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-Central.Gotemba.Gotemba",
@@ -9063,10 +9081,10 @@
 		"a": "08:00"
 	}]
 }, {
-	"id": "JR-Central.Gotemba.5532M.SaturdayHoliday",
-	"t": "JR-Central.Gotemba.5532M",
+	"id": "JR-Central.Gotemba.2532M.SaturdayHoliday",
+	"t": "JR-Central.Gotemba.2532M",
 	"r": "JR-Central.Gotemba",
-	"n": "5532M",
+	"n": "2532M",
 	"y": "JR-Central.Local",
 	"d": "Inbound",
 	"os": [
@@ -9076,7 +9094,7 @@
 		"JR-Central.Gotemba.Kozu"
 	],
 	"pt": [
-		"JR-Central.Tokaido.5225M.SaturdayHoliday"
+		"JR-Central.Tokaido.2225M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-Central.Gotemba.Numazu",
@@ -9444,14 +9462,14 @@
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "09:17",
-		"d": "09:17"
+		"d": "09:18"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "09:21",
-		"d": "09:21"
+		"d": "09:22"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
-		"a": "09:24",
+		"a": "09:25",
 		"d": "09:25"
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
@@ -9579,7 +9597,7 @@
 		"d": "10:10"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "10:13",
+		"a": "10:14",
 		"d": "10:14"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
@@ -9624,14 +9642,14 @@
 	],
 	"tt": [{
 		"s": "JR-Central.Gotemba.Numazu",
-		"d": "10:49"
+		"d": "10:47"
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
-		"a": "10:52",
-		"d": "10:53"
+		"a": "10:50",
+		"d": "10:51"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "10:56",
+		"a": "10:54",
 		"d": "10:57"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
@@ -9727,7 +9745,7 @@
 		"d": "11:27"
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
-		"a": "11:31",
+		"a": "11:30",
 		"d": "11:31"
 	}, {
 		"s": "JR-Central.Gotemba.Iwanami",
@@ -9780,10 +9798,10 @@
 	}, {
 		"s": "JR-Central.Gotemba.Iwanami",
 		"a": "12:10",
-		"d": "12:10"
+		"d": "12:11"
 	}, {
 		"s": "JR-Central.Gotemba.Fujioka",
-		"a": "12:15",
+		"a": "12:16",
 		"d": "12:16"
 	}, {
 		"s": "JR-Central.Gotemba.MinamiGotemba",
@@ -9852,22 +9870,22 @@
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "12:21",
-		"d": "12:21"
+		"d": "12:22"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "12:24",
-		"d": "12:25"
+		"a": "12:25",
+		"d": "12:26"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
 		"a": "12:28",
-		"d": "12:28"
+		"d": "12:29"
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
-		"a": "12:31",
+		"a": "12:32",
 		"d": "12:32"
 	}, {
 		"s": "JR-Central.Gotemba.Iwanami",
-		"a": "12:37",
+		"a": "12:38",
 		"d": "12:41"
 	}, {
 		"s": "JR-Central.Gotemba.Fujioka",
@@ -10340,7 +10358,7 @@
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "15:37",
-		"d": "15:37"
+		"d": "15:38"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "15:41",
@@ -10428,10 +10446,10 @@
 	}, {
 		"s": "JR-Central.Gotemba.Ooka",
 		"a": "16:03",
-		"d": "16:03"
+		"d": "16:04"
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
-		"a": "16:06",
+		"a": "16:07",
 		"d": "16:08"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
@@ -10440,7 +10458,7 @@
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
 		"a": "16:14",
-		"d": "16:14"
+		"d": "16:15"
 	}, {
 		"s": "JR-Central.Gotemba.Iwanami",
 		"a": "16:20",
@@ -10898,15 +10916,15 @@
 		"d": "19:44"
 	}, {
 		"s": "JR-Central.Gotemba.Fujioka",
-		"a": "19:49",
+		"a": "19:50",
 		"d": "19:50"
 	}, {
 		"s": "JR-Central.Gotemba.MinamiGotemba",
-		"a": "19:52",
-		"d": "19:53"
+		"a": "19:53",
+		"d": "19:54"
 	}, {
 		"s": "JR-Central.Gotemba.Gotemba",
-		"a": "19:57",
+		"a": "19:58",
 		"d": "20:01"
 	}, {
 		"s": "JR-Central.Gotemba.Ashigara",
@@ -10971,18 +10989,18 @@
 	}, {
 		"s": "JR-Central.Gotemba.ShimoTogari",
 		"a": "19:55",
-		"d": "19:57"
+		"d": "19:58"
 	}, {
 		"s": "JR-Central.Gotemba.NagaizumiNameri",
-		"a": "19:59",
-		"d": "20:00"
+		"a": "20:01",
+		"d": "20:01"
 	}, {
 		"s": "JR-Central.Gotemba.Susono",
-		"a": "20:03",
-		"d": "20:04"
+		"a": "20:05",
+		"d": "20:05"
 	}, {
 		"s": "JR-Central.Gotemba.Iwanami",
-		"a": "20:10",
+		"a": "20:11",
 		"d": "20:14"
 	}, {
 		"s": "JR-Central.Gotemba.Fujioka",

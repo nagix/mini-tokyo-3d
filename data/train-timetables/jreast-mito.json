@@ -75,20 +75,20 @@
 		"a": "06:21"
 	}]
 }, {
-	"id": "JR-East.Mito.2723M.Weekday",
-	"t": "JR-East.Mito.2723M",
+	"id": "JR-East.Mito.723M.Weekday",
+	"t": "JR-East.Mito.723M",
 	"r": "JR-East.Mito",
-	"n": "2723M",
+	"n": "723M",
 	"y": "JR-East.Local",
 	"d": "Outbound",
 	"os": [
 		"JR-East.Mito.Oyama"
 	],
 	"ds": [
-		"JR-East.Joban.Takahagi"
+		"JR-East.Joban.Mito"
 	],
 	"nt": [
-		"JR-East.Joban.2723M.Weekday"
+		"JR-East.Joban.723M.Weekday"
 	],
 	"tt": [{
 		"s": "JR-East.Mito.Oyama",
@@ -302,14 +302,14 @@
 	}, {
 		"s": "JR-East.Mito.Kasama",
 		"a": "08:00",
-		"d": "08:03"
+		"d": "08:04"
 	}, {
 		"s": "JR-East.Mito.Shishido",
-		"a": "08:08",
+		"a": "08:09",
 		"d": "08:09"
 	}, {
 		"s": "JR-East.Mito.Tomobe",
-		"a": "08:12"
+		"a": "08:13"
 	}]
 }, {
 	"id": "JR-East.Mito.731M.Weekday",
@@ -520,7 +520,7 @@
 		"JR-East.Mito.Oyama"
 	],
 	"ds": [
-		"JR-East.Joban.Katsuta"
+		"JR-East.Joban.Mito"
 	],
 	"nt": [
 		"JR-East.Joban.737M.Weekday"
@@ -1178,30 +1178,30 @@
 	],
 	"tt": [{
 		"s": "JR-East.Mito.Oyama",
-		"d": "15:36"
+		"d": "15:38"
 	}, {
 		"s": "JR-East.Mito.Otabayashi",
-		"a": "15:41",
-		"d": "15:41"
-	}, {
-		"s": "JR-East.Mito.Yuki",
-		"a": "15:44",
+		"a": "15:43",
 		"d": "15:44"
 	}, {
+		"s": "JR-East.Mito.Yuki",
+		"a": "15:46",
+		"d": "15:46"
+	}, {
 		"s": "JR-East.Mito.HigashiYuki",
-		"a": "15:47",
-		"d": "15:47"
+		"a": "15:49",
+		"d": "15:49"
 	}, {
 		"s": "JR-East.Mito.Kawashima",
-		"a": "15:50",
-		"d": "15:51"
+		"a": "15:52",
+		"d": "15:52"
 	}, {
 		"s": "JR-East.Mito.Tamado",
-		"a": "15:53",
-		"d": "15:54"
+		"a": "15:55",
+		"d": "15:55"
 	}, {
 		"s": "JR-East.Mito.Shimodate",
-		"a": "15:58",
+		"a": "15:59",
 		"d": "16:00"
 	}, {
 		"s": "JR-East.Mito.Niihari",
@@ -1571,7 +1571,7 @@
 	}, {
 		"s": "JR-East.Mito.Otabayashi",
 		"a": "18:43",
-		"d": "18:43"
+		"d": "18:44"
 	}, {
 		"s": "JR-East.Mito.Yuki",
 		"a": "18:46",
@@ -1726,7 +1726,7 @@
 	}, {
 		"s": "JR-East.Mito.Haguro",
 		"a": "20:18",
-		"d": "20:18"
+		"d": "20:19"
 	}, {
 		"s": "JR-East.Mito.Fukuhara",
 		"a": "20:23",
@@ -1805,12 +1805,12 @@
 		"d": "21:04"
 	}, {
 		"s": "JR-East.Mito.Fukuhara",
-		"a": "21:08",
-		"d": "21:08"
+		"a": "21:09",
+		"d": "21:09"
 	}, {
 		"s": "JR-East.Mito.Inada",
 		"a": "21:12",
-		"d": "21:12"
+		"d": "21:13"
 	}, {
 		"s": "JR-East.Mito.Kasama",
 		"a": "21:16",
@@ -2070,30 +2070,30 @@
 	],
 	"tt": [{
 		"s": "JR-East.Mito.Oyama",
-		"d": "23:10"
+		"d": "23:12"
 	}, {
 		"s": "JR-East.Mito.Otabayashi",
-		"a": "23:15",
-		"d": "23:16"
+		"a": "23:16",
+		"d": "23:17"
 	}, {
 		"s": "JR-East.Mito.Yuki",
-		"a": "23:18",
-		"d": "23:18"
+		"a": "23:19",
+		"d": "23:20"
 	}, {
 		"s": "JR-East.Mito.HigashiYuki",
-		"a": "23:21",
-		"d": "23:21"
+		"a": "23:22",
+		"d": "23:23"
 	}, {
 		"s": "JR-East.Mito.Kawashima",
-		"a": "23:24",
-		"d": "23:24"
+		"a": "23:25",
+		"d": "23:26"
 	}, {
 		"s": "JR-East.Mito.Tamado",
-		"a": "23:27",
-		"d": "23:27"
+		"a": "23:28",
+		"d": "23:29"
 	}, {
 		"s": "JR-East.Mito.Shimodate",
-		"a": "23:31"
+		"a": "23:33"
 	}]
 }, {
 	"id": "JR-East.Mito.722M.Weekday",
@@ -2502,26 +2502,26 @@
 	],
 	"tt": [{
 		"s": "JR-East.Mito.Tomobe",
-		"d": "07:53"
+		"d": "07:55"
 	}, {
 		"s": "JR-East.Mito.Shishido",
-		"a": "07:55",
-		"d": "07:56"
+		"a": "07:57",
+		"d": "07:58"
 	}, {
 		"s": "JR-East.Mito.Kasama",
-		"a": "08:01",
-		"d": "08:02"
+		"a": "08:03",
+		"d": "08:04"
 	}, {
 		"s": "JR-East.Mito.Inada",
-		"a": "08:06",
-		"d": "08:06"
+		"a": "08:08",
+		"d": "08:08"
 	}, {
 		"s": "JR-East.Mito.Fukuhara",
-		"a": "08:10",
-		"d": "08:10"
+		"a": "08:12",
+		"d": "08:12"
 	}, {
 		"s": "JR-East.Mito.Haguro",
-		"a": "08:15",
+		"a": "08:17",
 		"d": "08:18"
 	}, {
 		"s": "JR-East.Mito.Iwase",
@@ -3660,7 +3660,7 @@
 	],
 	"tt": [{
 		"s": "JR-East.Mito.Tomobe",
-		"d": "19:49"
+		"d": "19:50"
 	}, {
 		"s": "JR-East.Mito.Shishido",
 		"a": "19:52",
@@ -3676,7 +3676,7 @@
 	}, {
 		"s": "JR-East.Mito.Fukuhara",
 		"a": "20:05",
-		"d": "20:05"
+		"d": "20:06"
 	}, {
 		"s": "JR-East.Mito.Haguro",
 		"a": "20:10",
@@ -3684,15 +3684,15 @@
 	}, {
 		"s": "JR-East.Mito.Iwase",
 		"a": "20:14",
-		"d": "20:14"
+		"d": "20:15"
 	}, {
 		"s": "JR-East.Mito.Yamato",
 		"a": "20:18",
-		"d": "20:18"
+		"d": "20:19"
 	}, {
 		"s": "JR-East.Mito.Niihari",
 		"a": "20:22",
-		"d": "20:22"
+		"d": "20:23"
 	}, {
 		"s": "JR-East.Mito.Shimodate",
 		"a": "20:28",
@@ -3739,42 +3739,42 @@
 	],
 	"tt": [{
 		"s": "JR-East.Mito.Tomobe",
-		"d": "20:42"
+		"d": "20:44"
 	}, {
 		"s": "JR-East.Mito.Shishido",
-		"a": "20:44",
-		"d": "20:45"
+		"a": "20:46",
+		"d": "20:46"
 	}, {
 		"s": "JR-East.Mito.Kasama",
-		"a": "20:50",
-		"d": "20:50"
+		"a": "20:51",
+		"d": "20:52"
 	}, {
 		"s": "JR-East.Mito.Inada",
-		"a": "20:54",
-		"d": "20:54"
+		"a": "20:55",
+		"d": "20:56"
 	}, {
 		"s": "JR-East.Mito.Fukuhara",
-		"a": "20:58",
-		"d": "20:58"
+		"a": "20:59",
+		"d": "21:00"
 	}, {
 		"s": "JR-East.Mito.Haguro",
-		"a": "21:02",
-		"d": "21:03"
+		"a": "21:04",
+		"d": "21:04"
 	}, {
 		"s": "JR-East.Mito.Iwase",
-		"a": "21:06",
-		"d": "21:07"
+		"a": "21:08",
+		"d": "21:08"
 	}, {
 		"s": "JR-East.Mito.Yamato",
-		"a": "21:10",
-		"d": "21:11"
+		"a": "21:12",
+		"d": "21:12"
 	}, {
 		"s": "JR-East.Mito.Niihari",
-		"a": "21:15",
-		"d": "21:16"
+		"a": "21:17",
+		"d": "21:18"
 	}, {
 		"s": "JR-East.Mito.Shimodate",
-		"a": "21:23",
+		"a": "21:24",
 		"d": "21:28"
 	}, {
 		"s": "JR-East.Mito.Tamado",
@@ -4331,20 +4331,20 @@
 		"a": "06:21"
 	}]
 }, {
-	"id": "JR-East.Mito.2723M.SaturdayHoliday",
-	"t": "JR-East.Mito.2723M",
+	"id": "JR-East.Mito.723M.SaturdayHoliday",
+	"t": "JR-East.Mito.723M",
 	"r": "JR-East.Mito",
-	"n": "2723M",
+	"n": "723M",
 	"y": "JR-East.Local",
 	"d": "Outbound",
 	"os": [
 		"JR-East.Mito.Oyama"
 	],
 	"ds": [
-		"JR-East.Joban.Takahagi"
+		"JR-East.Joban.Mito"
 	],
 	"nt": [
-		"JR-East.Joban.2723M.SaturdayHoliday"
+		"JR-East.Joban.723M.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "JR-East.Mito.Oyama",
@@ -4558,14 +4558,14 @@
 	}, {
 		"s": "JR-East.Mito.Kasama",
 		"a": "08:00",
-		"d": "08:03"
+		"d": "08:04"
 	}, {
 		"s": "JR-East.Mito.Shishido",
-		"a": "08:08",
+		"a": "08:09",
 		"d": "08:09"
 	}, {
 		"s": "JR-East.Mito.Tomobe",
-		"a": "08:12"
+		"a": "08:13"
 	}]
 }, {
 	"id": "JR-East.Mito.731M.SaturdayHoliday",
@@ -4776,7 +4776,7 @@
 		"JR-East.Mito.Oyama"
 	],
 	"ds": [
-		"JR-East.Joban.Katsuta"
+		"JR-East.Joban.Mito"
 	],
 	"nt": [
 		"JR-East.Joban.737M.SaturdayHoliday"
@@ -5434,30 +5434,30 @@
 	],
 	"tt": [{
 		"s": "JR-East.Mito.Oyama",
-		"d": "15:36"
+		"d": "15:38"
 	}, {
 		"s": "JR-East.Mito.Otabayashi",
-		"a": "15:41",
-		"d": "15:41"
-	}, {
-		"s": "JR-East.Mito.Yuki",
-		"a": "15:44",
+		"a": "15:43",
 		"d": "15:44"
 	}, {
+		"s": "JR-East.Mito.Yuki",
+		"a": "15:46",
+		"d": "15:46"
+	}, {
 		"s": "JR-East.Mito.HigashiYuki",
-		"a": "15:47",
-		"d": "15:47"
+		"a": "15:49",
+		"d": "15:49"
 	}, {
 		"s": "JR-East.Mito.Kawashima",
-		"a": "15:50",
-		"d": "15:51"
+		"a": "15:52",
+		"d": "15:52"
 	}, {
 		"s": "JR-East.Mito.Tamado",
-		"a": "15:53",
-		"d": "15:54"
+		"a": "15:55",
+		"d": "15:55"
 	}, {
 		"s": "JR-East.Mito.Shimodate",
-		"a": "15:58",
+		"a": "15:59",
 		"d": "16:00"
 	}, {
 		"s": "JR-East.Mito.Niihari",
@@ -5827,7 +5827,7 @@
 	}, {
 		"s": "JR-East.Mito.Otabayashi",
 		"a": "18:43",
-		"d": "18:43"
+		"d": "18:44"
 	}, {
 		"s": "JR-East.Mito.Yuki",
 		"a": "18:46",
@@ -5982,7 +5982,7 @@
 	}, {
 		"s": "JR-East.Mito.Haguro",
 		"a": "20:18",
-		"d": "20:18"
+		"d": "20:19"
 	}, {
 		"s": "JR-East.Mito.Fukuhara",
 		"a": "20:23",
@@ -6061,12 +6061,12 @@
 		"d": "21:04"
 	}, {
 		"s": "JR-East.Mito.Fukuhara",
-		"a": "21:08",
-		"d": "21:08"
+		"a": "21:09",
+		"d": "21:09"
 	}, {
 		"s": "JR-East.Mito.Inada",
 		"a": "21:12",
-		"d": "21:12"
+		"d": "21:13"
 	}, {
 		"s": "JR-East.Mito.Kasama",
 		"a": "21:16",
@@ -6326,30 +6326,30 @@
 	],
 	"tt": [{
 		"s": "JR-East.Mito.Oyama",
-		"d": "23:10"
+		"d": "23:12"
 	}, {
 		"s": "JR-East.Mito.Otabayashi",
-		"a": "23:15",
-		"d": "23:16"
+		"a": "23:16",
+		"d": "23:17"
 	}, {
 		"s": "JR-East.Mito.Yuki",
-		"a": "23:18",
-		"d": "23:18"
+		"a": "23:19",
+		"d": "23:20"
 	}, {
 		"s": "JR-East.Mito.HigashiYuki",
-		"a": "23:21",
-		"d": "23:21"
+		"a": "23:22",
+		"d": "23:23"
 	}, {
 		"s": "JR-East.Mito.Kawashima",
-		"a": "23:24",
-		"d": "23:24"
+		"a": "23:25",
+		"d": "23:26"
 	}, {
 		"s": "JR-East.Mito.Tamado",
-		"a": "23:27",
-		"d": "23:27"
+		"a": "23:28",
+		"d": "23:29"
 	}, {
 		"s": "JR-East.Mito.Shimodate",
-		"a": "23:31"
+		"a": "23:33"
 	}]
 }, {
 	"id": "JR-East.Mito.722M.SaturdayHoliday",
@@ -6758,26 +6758,26 @@
 	],
 	"tt": [{
 		"s": "JR-East.Mito.Tomobe",
-		"d": "07:53"
+		"d": "07:55"
 	}, {
 		"s": "JR-East.Mito.Shishido",
-		"a": "07:55",
-		"d": "07:56"
+		"a": "07:57",
+		"d": "07:58"
 	}, {
 		"s": "JR-East.Mito.Kasama",
-		"a": "08:01",
-		"d": "08:02"
+		"a": "08:03",
+		"d": "08:04"
 	}, {
 		"s": "JR-East.Mito.Inada",
-		"a": "08:06",
-		"d": "08:06"
+		"a": "08:08",
+		"d": "08:08"
 	}, {
 		"s": "JR-East.Mito.Fukuhara",
-		"a": "08:10",
-		"d": "08:10"
+		"a": "08:12",
+		"d": "08:12"
 	}, {
 		"s": "JR-East.Mito.Haguro",
-		"a": "08:15",
+		"a": "08:17",
 		"d": "08:18"
 	}, {
 		"s": "JR-East.Mito.Iwase",
@@ -7916,7 +7916,7 @@
 	],
 	"tt": [{
 		"s": "JR-East.Mito.Tomobe",
-		"d": "19:49"
+		"d": "19:50"
 	}, {
 		"s": "JR-East.Mito.Shishido",
 		"a": "19:52",
@@ -7932,7 +7932,7 @@
 	}, {
 		"s": "JR-East.Mito.Fukuhara",
 		"a": "20:05",
-		"d": "20:05"
+		"d": "20:06"
 	}, {
 		"s": "JR-East.Mito.Haguro",
 		"a": "20:10",
@@ -7940,15 +7940,15 @@
 	}, {
 		"s": "JR-East.Mito.Iwase",
 		"a": "20:14",
-		"d": "20:14"
+		"d": "20:15"
 	}, {
 		"s": "JR-East.Mito.Yamato",
 		"a": "20:18",
-		"d": "20:18"
+		"d": "20:19"
 	}, {
 		"s": "JR-East.Mito.Niihari",
 		"a": "20:22",
-		"d": "20:22"
+		"d": "20:23"
 	}, {
 		"s": "JR-East.Mito.Shimodate",
 		"a": "20:28",
@@ -7995,42 +7995,42 @@
 	],
 	"tt": [{
 		"s": "JR-East.Mito.Tomobe",
-		"d": "20:42"
+		"d": "20:44"
 	}, {
 		"s": "JR-East.Mito.Shishido",
-		"a": "20:44",
-		"d": "20:45"
+		"a": "20:46",
+		"d": "20:46"
 	}, {
 		"s": "JR-East.Mito.Kasama",
-		"a": "20:50",
-		"d": "20:50"
+		"a": "20:51",
+		"d": "20:52"
 	}, {
 		"s": "JR-East.Mito.Inada",
-		"a": "20:54",
-		"d": "20:54"
+		"a": "20:55",
+		"d": "20:56"
 	}, {
 		"s": "JR-East.Mito.Fukuhara",
-		"a": "20:58",
-		"d": "20:58"
+		"a": "20:59",
+		"d": "21:00"
 	}, {
 		"s": "JR-East.Mito.Haguro",
-		"a": "21:02",
-		"d": "21:03"
+		"a": "21:04",
+		"d": "21:04"
 	}, {
 		"s": "JR-East.Mito.Iwase",
-		"a": "21:06",
-		"d": "21:07"
+		"a": "21:08",
+		"d": "21:08"
 	}, {
 		"s": "JR-East.Mito.Yamato",
-		"a": "21:10",
-		"d": "21:11"
+		"a": "21:12",
+		"d": "21:12"
 	}, {
 		"s": "JR-East.Mito.Niihari",
-		"a": "21:15",
-		"d": "21:16"
+		"a": "21:17",
+		"d": "21:18"
 	}, {
 		"s": "JR-East.Mito.Shimodate",
-		"a": "21:23",
+		"a": "21:24",
 		"d": "21:28"
 	}, {
 		"s": "JR-East.Mito.Tamado",

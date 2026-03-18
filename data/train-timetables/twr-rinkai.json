@@ -1,4 +1,121 @@
 [{
+	"id": "TWR.Rinkai.1012F.Weekday",
+	"t": "TWR.Rinkai.1012F",
+	"r": "TWR.Rinkai",
+	"n": "1012F",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.1012F.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "11:38"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "11:41"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "11:44"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "11:46"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "11:50"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "11:52"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "11:54"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "11:57"
+	}]
+}, {
+	"id": "TWR.Rinkai.1016K.Weekday",
+	"t": "TWR.Rinkai.1016K",
+	"r": "TWR.Rinkai",
+	"n": "1016K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"TWR.Rinkai.Osaki"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "10:25"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "10:28"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "10:31"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "10:33"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "10:37"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "10:40"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "10:42"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "10:44"
+	}]
+}, {
+	"id": "TWR.Rinkai.1017K.Weekday",
+	"t": "TWR.Rinkai.1017K",
+	"r": "TWR.Rinkai",
+	"n": "1017K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"TWR.Rinkai.Osaki"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "10:47"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "10:50"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "10:52"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "10:55"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "10:59"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "11:01"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "11:04"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "11:07"
+	}]
+}, {
 	"id": "TWR.Rinkai.1026F.Weekday",
 	"t": "TWR.Rinkai.1026F",
 	"r": "TWR.Rinkai",
@@ -40,168 +157,10 @@
 		"a": "11:37"
 	}]
 }, {
-	"id": "TWR.Rinkai.1030F.Weekday",
-	"t": "TWR.Rinkai.1030F",
+	"id": "TWR.Rinkai.1032K.Weekday",
+	"t": "TWR.Rinkai.1032K",
 	"r": "TWR.Rinkai",
-	"n": "1030F",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.1030F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "12:00"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "12:03"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "12:06"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "12:08"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "12:12"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "12:15"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "12:17"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "12:19"
-	}]
-}, {
-	"id": "TWR.Rinkai.1038K.Weekday",
-	"t": "TWR.Rinkai.1038K",
-	"r": "TWR.Rinkai",
-	"n": "1038K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"TWR.Rinkai.Osaki"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "10:25"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "10:28"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "10:31"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "10:33"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "10:37"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "10:40"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "10:42"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "10:44"
-	}]
-}, {
-	"id": "TWR.Rinkai.1039K.Weekday",
-	"t": "TWR.Rinkai.1039K",
-	"r": "TWR.Rinkai",
-	"n": "1039K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"TWR.Rinkai.Osaki"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "10:47"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "10:50"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "10:52"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "10:55"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "10:59"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "11:01"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "11:04"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "11:07"
-	}]
-}, {
-	"id": "TWR.Rinkai.1052F.Weekday",
-	"t": "TWR.Rinkai.1052F",
-	"r": "TWR.Rinkai",
-	"n": "1052F",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.1052F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "11:38"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "11:41"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "11:44"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "11:46"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "11:50"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "11:52"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "11:54"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "11:57"
-	}]
-}, {
-	"id": "TWR.Rinkai.1054K.Weekday",
-	"t": "TWR.Rinkai.1054K",
-	"r": "TWR.Rinkai",
-	"n": "1054K",
+	"n": "1032K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -236,10 +195,10 @@
 		"a": "11:06"
 	}]
 }, {
-	"id": "TWR.Rinkai.1055K.Weekday",
-	"t": "TWR.Rinkai.1055K",
+	"id": "TWR.Rinkai.1033K.Weekday",
+	"t": "TWR.Rinkai.1033K",
 	"r": "TWR.Rinkai",
-	"n": "1055K",
+	"n": "1033K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -272,6 +231,47 @@
 	}, {
 		"s": "TWR.Rinkai.Osaki",
 		"a": "10:35"
+	}]
+}, {
+	"id": "TWR.Rinkai.1040F.Weekday",
+	"t": "TWR.Rinkai.1040F",
+	"r": "TWR.Rinkai",
+	"n": "1040F",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.1040F.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "12:00"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "12:03"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "12:06"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "12:08"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "12:12"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "12:15"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "12:17"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "12:19"
 	}]
 }, {
 	"id": "TWR.Rinkai.1060K.Weekday",
@@ -508,6 +508,123 @@
 		"a": "10:51"
 	}]
 }, {
+	"id": "TWR.Rinkai.1116K.Weekday",
+	"t": "TWR.Rinkai.1116K",
+	"r": "TWR.Rinkai",
+	"n": "1116K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"TWR.Rinkai.Osaki"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "11:12"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "11:15"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "11:18"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "11:20"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "11:24"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "11:27"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "11:29"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "11:31"
+	}]
+}, {
+	"id": "TWR.Rinkai.1117K.Weekday",
+	"t": "TWR.Rinkai.1117K",
+	"r": "TWR.Rinkai",
+	"n": "1117K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"TWR.Rinkai.Osaki"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "11:36"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "11:39"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "11:41"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "11:43"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "11:47"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "11:49"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "11:52"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "11:55"
+	}]
+}, {
+	"id": "TWR.Rinkai.1120F.Weekday",
+	"t": "TWR.Rinkai.1120F",
+	"r": "TWR.Rinkai",
+	"n": "1120F",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.1120F.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "13:02"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "13:05"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "13:08"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "13:10"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "13:14"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "13:17"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "13:19"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "13:21"
+	}]
+}, {
 	"id": "TWR.Rinkai.1127F.Weekday",
 	"t": "TWR.Rinkai.1127F",
 	"r": "TWR.Rinkai",
@@ -549,10 +666,10 @@
 		"a": "12:01"
 	}]
 }, {
-	"id": "TWR.Rinkai.1138K.Weekday",
-	"t": "TWR.Rinkai.1138K",
+	"id": "TWR.Rinkai.1132K.Weekday",
+	"t": "TWR.Rinkai.1132K",
 	"r": "TWR.Rinkai",
-	"n": "1138K",
+	"n": "1132K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -563,34 +680,34 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "11:12"
+		"d": "11:44"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "11:15"
+		"d": "11:47"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "11:18"
+		"d": "11:50"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "11:20"
+		"d": "11:52"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "11:24"
+		"d": "11:56"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "11:27"
+		"d": "11:59"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "11:29"
+		"d": "12:01"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "11:31"
+		"a": "12:03"
 	}]
 }, {
-	"id": "TWR.Rinkai.1139K.Weekday",
-	"t": "TWR.Rinkai.1139K",
+	"id": "TWR.Rinkai.1133K.Weekday",
+	"t": "TWR.Rinkai.1133K",
 	"r": "TWR.Rinkai",
-	"n": "1139K",
+	"n": "1133K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -601,34 +718,34 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "11:36"
+		"d": "11:11"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "11:39"
+		"d": "11:14"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "11:41"
+		"d": "11:16"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "11:43"
+		"d": "11:18"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "11:47"
+		"d": "11:22"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "11:49"
+		"d": "11:24"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "11:52"
+		"d": "11:27"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "11:55"
+		"a": "11:30"
 	}]
 }, {
-	"id": "TWR.Rinkai.1145F.Weekday",
-	"t": "TWR.Rinkai.1145F",
+	"id": "TWR.Rinkai.1139F.Weekday",
+	"t": "TWR.Rinkai.1139F",
 	"r": "TWR.Rinkai",
-	"n": "1145F",
+	"n": "1139F",
 	"y": "TWR.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -638,7 +755,7 @@
 		"JR-East.SaikyoKawagoe.Kawagoe"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.1145F.Weekday"
+		"JR-East.SaikyoKawagoe.1139F.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
@@ -664,47 +781,6 @@
 	}, {
 		"s": "TWR.Rinkai.Osaki",
 		"a": "11:21"
-	}]
-}, {
-	"id": "TWR.Rinkai.1146F.Weekday",
-	"t": "TWR.Rinkai.1146F",
-	"r": "TWR.Rinkai",
-	"n": "1146F",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.1146F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "13:02"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "13:05"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "13:08"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "13:10"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "13:14"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "13:17"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "13:19"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "13:21"
 	}]
 }, {
 	"id": "TWR.Rinkai.1148F.Weekday",
@@ -746,82 +822,6 @@
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
 		"a": "12:37"
-	}]
-}, {
-	"id": "TWR.Rinkai.1154K.Weekday",
-	"t": "TWR.Rinkai.1154K",
-	"r": "TWR.Rinkai",
-	"n": "1154K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"TWR.Rinkai.Osaki"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "11:44"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "11:47"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "11:50"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "11:52"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "11:56"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "11:59"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "12:01"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "12:03"
-	}]
-}, {
-	"id": "TWR.Rinkai.1155K.Weekday",
-	"t": "TWR.Rinkai.1155K",
-	"r": "TWR.Rinkai",
-	"n": "1155K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"TWR.Rinkai.Osaki"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "11:11"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "11:14"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "11:16"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "11:18"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "11:22"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "11:24"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "11:27"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "11:30"
 	}]
 }, {
 	"id": "TWR.Rinkai.1160K.Weekday",
@@ -1058,48 +1058,51 @@
 		"a": "11:39"
 	}]
 }, {
-	"id": "TWR.Rinkai.1231K.Weekday",
-	"t": "TWR.Rinkai.1231K",
+	"id": "TWR.Rinkai.1213F.Weekday",
+	"t": "TWR.Rinkai.1213F",
 	"r": "TWR.Rinkai",
-	"n": "1231K",
-	"y": "TWR.Local",
+	"n": "1213F",
+	"y": "TWR.Rapid",
 	"d": "Outbound",
 	"os": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"ds": [
-		"TWR.Rinkai.Osaki"
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.1213F.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "12:47"
+		"d": "12:02"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "12:49"
+		"d": "12:05"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "12:52"
+		"d": "12:07"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "12:54"
+		"d": "12:09"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "12:58"
+		"d": "12:13"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "13:00"
+		"d": "12:15"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "13:03"
+		"d": "12:18"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "13:06"
+		"a": "12:21"
 	}]
 }, {
-	"id": "TWR.Rinkai.1238K.Weekday",
-	"t": "TWR.Rinkai.1238K",
+	"id": "TWR.Rinkai.1216K.Weekday",
+	"t": "TWR.Rinkai.1216K",
 	"r": "TWR.Rinkai",
-	"n": "1238K",
+	"n": "1216K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -1134,10 +1137,10 @@
 		"a": "13:11"
 	}]
 }, {
-	"id": "TWR.Rinkai.1239K.Weekday",
-	"t": "TWR.Rinkai.1239K",
+	"id": "TWR.Rinkai.1217K.Weekday",
+	"t": "TWR.Rinkai.1217K",
 	"r": "TWR.Rinkai",
-	"n": "1239K",
+	"n": "1217K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -1172,10 +1175,51 @@
 		"a": "12:49"
 	}]
 }, {
-	"id": "TWR.Rinkai.1244F.Weekday",
-	"t": "TWR.Rinkai.1244F",
+	"id": "TWR.Rinkai.1233F.Weekday",
+	"t": "TWR.Rinkai.1233F",
 	"r": "TWR.Rinkai",
-	"n": "1244F",
+	"n": "1233F",
+	"y": "TWR.Rapid",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.1233F.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "12:20"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "12:23"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "12:25"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "12:27"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "12:31"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "12:33"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "12:36"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "12:39"
+	}]
+}, {
+	"id": "TWR.Rinkai.1238F.Weekday",
+	"t": "TWR.Rinkai.1238F",
+	"r": "TWR.Rinkai",
+	"n": "1238F",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -1185,7 +1229,7 @@
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.1244F.Weekday"
+		"JR-East.SaikyoKawagoe.1238F.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
@@ -1211,6 +1255,44 @@
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
 		"a": "14:19"
+	}]
+}, {
+	"id": "TWR.Rinkai.1241K.Weekday",
+	"t": "TWR.Rinkai.1241K",
+	"r": "TWR.Rinkai",
+	"n": "1241K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"TWR.Rinkai.Osaki"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "12:47"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "12:49"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "12:52"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "12:54"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "12:58"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "13:00"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "13:03"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "13:06"
 	}]
 }, {
 	"id": "TWR.Rinkai.1249F.Weekday",
@@ -1252,88 +1334,6 @@
 	}, {
 		"s": "TWR.Rinkai.Osaki",
 		"a": "12:59"
-	}]
-}, {
-	"id": "TWR.Rinkai.1253F.Weekday",
-	"t": "TWR.Rinkai.1253F",
-	"r": "TWR.Rinkai",
-	"n": "1253F",
-	"y": "TWR.Rapid",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.1253F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "12:02"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "12:05"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "12:07"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "12:09"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "12:13"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "12:15"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "12:18"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "12:21"
-	}]
-}, {
-	"id": "TWR.Rinkai.1255F.Weekday",
-	"t": "TWR.Rinkai.1255F",
-	"r": "TWR.Rinkai",
-	"n": "1255F",
-	"y": "TWR.Rapid",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.1255F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "12:20"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "12:23"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "12:25"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "12:27"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "12:31"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "12:33"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "12:36"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "12:39"
 	}]
 }, {
 	"id": "TWR.Rinkai.1260K.Weekday",
@@ -1570,6 +1570,199 @@
 		"a": "13:57"
 	}]
 }, {
+	"id": "TWR.Rinkai.1312F.Weekday",
+	"t": "TWR.Rinkai.1312F",
+	"r": "TWR.Rinkai",
+	"n": "1312F",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.1312F.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "15:00"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "15:03"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "15:06"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "15:08"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "15:12"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "15:14"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "15:16"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "15:19"
+	}]
+}, {
+	"id": "TWR.Rinkai.1316K.Weekday",
+	"t": "TWR.Rinkai.1316K",
+	"r": "TWR.Rinkai",
+	"n": "1316K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"TWR.Rinkai.Osaki"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "13:47"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "13:50"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "13:53"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "13:55"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "13:59"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "14:01"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "14:03"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "14:06"
+	}]
+}, {
+	"id": "TWR.Rinkai.1317K.Weekday",
+	"t": "TWR.Rinkai.1317K",
+	"r": "TWR.Rinkai",
+	"n": "1317K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"TWR.Rinkai.Osaki"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "13:14"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "13:16"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "13:19"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "13:21"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "13:25"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "13:27"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "13:30"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "13:33"
+	}]
+}, {
+	"id": "TWR.Rinkai.1320K.Weekday",
+	"t": "TWR.Rinkai.1320K",
+	"r": "TWR.Rinkai",
+	"n": "1320K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"TWR.Rinkai.Osaki"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "13:53"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "13:57"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "13:59"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "14:02"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "14:06"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "14:08"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "14:10"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "14:13"
+	}]
+}, {
+	"id": "TWR.Rinkai.1321K.Weekday",
+	"t": "TWR.Rinkai.1321K",
+	"r": "TWR.Rinkai",
+	"n": "1321K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"TWR.Rinkai.Osaki"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "13:29"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "13:32"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "13:34"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "13:36"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "13:40"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "13:42"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "13:45"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "13:48"
+	}]
+}, {
 	"id": "TWR.Rinkai.1326F.Weekday",
 	"t": "TWR.Rinkai.1326F",
 	"r": "TWR.Rinkai",
@@ -1611,10 +1804,10 @@
 		"a": "14:57"
 	}]
 }, {
-	"id": "TWR.Rinkai.1330K.Weekday",
-	"t": "TWR.Rinkai.1330K",
+	"id": "TWR.Rinkai.1340K.Weekday",
+	"t": "TWR.Rinkai.1340K",
 	"r": "TWR.Rinkai",
-	"n": "1330K",
+	"n": "1340K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -1649,10 +1842,10 @@
 		"a": "13:29"
 	}]
 }, {
-	"id": "TWR.Rinkai.1331K.Weekday",
-	"t": "TWR.Rinkai.1331K",
+	"id": "TWR.Rinkai.1341K.Weekday",
+	"t": "TWR.Rinkai.1341K",
 	"r": "TWR.Rinkai",
-	"n": "1331K",
+	"n": "1341K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -1685,199 +1878,6 @@
 	}, {
 		"s": "TWR.Rinkai.Osaki",
 		"a": "14:05"
-	}]
-}, {
-	"id": "TWR.Rinkai.1338K.Weekday",
-	"t": "TWR.Rinkai.1338K",
-	"r": "TWR.Rinkai",
-	"n": "1338K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"TWR.Rinkai.Osaki"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "13:47"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "13:50"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "13:53"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "13:55"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "13:59"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "14:01"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "14:03"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "14:06"
-	}]
-}, {
-	"id": "TWR.Rinkai.1339K.Weekday",
-	"t": "TWR.Rinkai.1339K",
-	"r": "TWR.Rinkai",
-	"n": "1339K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"TWR.Rinkai.Osaki"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "13:14"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "13:16"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "13:19"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "13:21"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "13:25"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "13:27"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "13:30"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "13:33"
-	}]
-}, {
-	"id": "TWR.Rinkai.1346K.Weekday",
-	"t": "TWR.Rinkai.1346K",
-	"r": "TWR.Rinkai",
-	"n": "1346K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"TWR.Rinkai.Osaki"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "13:53"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "13:57"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "13:59"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "14:02"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "14:06"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "14:08"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "14:10"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "14:13"
-	}]
-}, {
-	"id": "TWR.Rinkai.1347K.Weekday",
-	"t": "TWR.Rinkai.1347K",
-	"r": "TWR.Rinkai",
-	"n": "1347K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"TWR.Rinkai.Osaki"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "13:29"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "13:32"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "13:34"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "13:36"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "13:40"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "13:42"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "13:45"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "13:48"
-	}]
-}, {
-	"id": "TWR.Rinkai.1352F.Weekday",
-	"t": "TWR.Rinkai.1352F",
-	"r": "TWR.Rinkai",
-	"n": "1352F",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.1352F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "15:00"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "15:03"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "15:06"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "15:08"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "15:12"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "15:14"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "15:16"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "15:19"
 	}]
 }, {
 	"id": "TWR.Rinkai.1360K.Weekday",
@@ -2120,89 +2120,10 @@
 		"a": "14:37"
 	}]
 }, {
-	"id": "TWR.Rinkai.1430K.Weekday",
-	"t": "TWR.Rinkai.1430K",
+	"id": "TWR.Rinkai.1416K.Weekday",
+	"t": "TWR.Rinkai.1416K",
 	"r": "TWR.Rinkai",
-	"n": "1430K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"TWR.Rinkai.Osaki"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "14:10"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "14:13"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "14:16"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "14:18"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "14:22"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "14:25"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "14:27"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "14:29"
-	}]
-}, {
-	"id": "TWR.Rinkai.1431F.Weekday",
-	"t": "TWR.Rinkai.1431F",
-	"r": "TWR.Rinkai",
-	"n": "1431F",
-	"y": "TWR.Rapid",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.1431F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "14:43"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "14:46"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "14:48"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "14:50"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "14:54"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "14:56"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "14:59"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "15:02"
-	}]
-}, {
-	"id": "TWR.Rinkai.1438K.Weekday",
-	"t": "TWR.Rinkai.1438K",
-	"r": "TWR.Rinkai",
-	"n": "1438K",
+	"n": "1416K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -2237,10 +2158,10 @@
 		"a": "15:05"
 	}]
 }, {
-	"id": "TWR.Rinkai.1439K.Weekday",
-	"t": "TWR.Rinkai.1439K",
+	"id": "TWR.Rinkai.1417K.Weekday",
+	"t": "TWR.Rinkai.1417K",
 	"r": "TWR.Rinkai",
-	"n": "1439K",
+	"n": "1417K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -2275,10 +2196,92 @@
 		"a": "14:30"
 	}]
 }, {
-	"id": "TWR.Rinkai.1444K.Weekday",
-	"t": "TWR.Rinkai.1444K",
+	"id": "TWR.Rinkai.1421F.Weekday",
+	"t": "TWR.Rinkai.1421F",
 	"r": "TWR.Rinkai",
-	"n": "1444K",
+	"n": "1421F",
+	"y": "TWR.Rapid",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.1421F.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "14:20"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "14:23"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "14:25"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "14:28"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "14:31"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "14:34"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "14:37"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "14:40"
+	}]
+}, {
+	"id": "TWR.Rinkai.1432F.Weekday",
+	"t": "TWR.Rinkai.1432F",
+	"r": "TWR.Rinkai",
+	"n": "1432F",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.1432F.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "15:18"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "15:21"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "15:24"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "15:26"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "15:30"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "15:33"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "15:35"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "15:37"
+	}]
+}, {
+	"id": "TWR.Rinkai.1438K.Weekday",
+	"t": "TWR.Rinkai.1438K",
+	"r": "TWR.Rinkai",
+	"n": "1438K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -2313,10 +2316,10 @@
 		"a": "15:13"
 	}]
 }, {
-	"id": "TWR.Rinkai.1445K.Weekday",
-	"t": "TWR.Rinkai.1445K",
+	"id": "TWR.Rinkai.1439K.Weekday",
+	"t": "TWR.Rinkai.1439K",
 	"r": "TWR.Rinkai",
-	"n": "1445K",
+	"n": "1439K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -2351,10 +2354,48 @@
 		"a": "14:49"
 	}]
 }, {
-	"id": "TWR.Rinkai.1447F.Weekday",
-	"t": "TWR.Rinkai.1447F",
+	"id": "TWR.Rinkai.1440K.Weekday",
+	"t": "TWR.Rinkai.1440K",
 	"r": "TWR.Rinkai",
-	"n": "1447F",
+	"n": "1440K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"TWR.Rinkai.Osaki"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "14:10"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "14:13"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "14:16"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "14:18"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "14:22"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "14:25"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "14:27"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "14:29"
+	}]
+}, {
+	"id": "TWR.Rinkai.1441F.Weekday",
+	"t": "TWR.Rinkai.1441F",
+	"r": "TWR.Rinkai",
+	"n": "1441F",
 	"y": "TWR.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -2364,32 +2405,32 @@
 		"JR-East.SaikyoKawagoe.Kawagoe"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.1447F.Weekday"
+		"JR-East.SaikyoKawagoe.1441F.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "14:20"
+		"d": "14:43"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "14:23"
+		"d": "14:46"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "14:25"
+		"d": "14:48"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "14:28"
+		"d": "14:50"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "14:31"
+		"d": "14:54"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "14:34"
+		"d": "14:56"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "14:37"
+		"d": "14:59"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "14:40"
+		"a": "15:02"
 	}]
 }, {
 	"id": "TWR.Rinkai.1448F.Weekday",
@@ -2431,47 +2472,6 @@
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
 		"a": "16:01"
-	}]
-}, {
-	"id": "TWR.Rinkai.1454F.Weekday",
-	"t": "TWR.Rinkai.1454F",
-	"r": "TWR.Rinkai",
-	"n": "1454F",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.1454F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "15:18"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "15:21"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "15:24"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "15:26"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "15:30"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "15:33"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "15:35"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "15:37"
 	}]
 }, {
 	"id": "TWR.Rinkai.1460K.Weekday",
@@ -2670,6 +2670,158 @@
 		"a": "14:59"
 	}]
 }, {
+	"id": "TWR.Rinkai.1512K.Weekday",
+	"t": "TWR.Rinkai.1512K",
+	"r": "TWR.Rinkai",
+	"n": "1512K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"TWR.Rinkai.Osaki"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "15:49"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "15:52"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "15:55"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "15:57"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "16:01"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "16:04"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "16:06"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "16:08"
+	}]
+}, {
+	"id": "TWR.Rinkai.1513K.Weekday",
+	"t": "TWR.Rinkai.1513K",
+	"r": "TWR.Rinkai",
+	"n": "1513K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"TWR.Rinkai.Osaki"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "15:27"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "15:29"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "15:32"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "15:34"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "15:38"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "15:40"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "15:43"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "15:46"
+	}]
+}, {
+	"id": "TWR.Rinkai.1516K.Weekday",
+	"t": "TWR.Rinkai.1516K",
+	"r": "TWR.Rinkai",
+	"n": "1516K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"TWR.Rinkai.Osaki"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "15:34"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "15:37"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "15:40"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "15:42"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "15:46"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "15:49"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "15:51"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "15:53"
+	}]
+}, {
+	"id": "TWR.Rinkai.1517K.Weekday",
+	"t": "TWR.Rinkai.1517K",
+	"r": "TWR.Rinkai",
+	"n": "1517K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"TWR.Rinkai.Osaki"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "15:10"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "15:12"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "15:15"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "15:17"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "15:21"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "15:23"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "15:26"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "15:29"
+	}]
+}, {
 	"id": "TWR.Rinkai.1527F.Weekday",
 	"t": "TWR.Rinkai.1527F",
 	"r": "TWR.Rinkai",
@@ -2711,86 +2863,10 @@
 		"a": "15:21"
 	}]
 }, {
-	"id": "TWR.Rinkai.1538K.Weekday",
-	"t": "TWR.Rinkai.1538K",
+	"id": "TWR.Rinkai.1533F.Weekday",
+	"t": "TWR.Rinkai.1533F",
 	"r": "TWR.Rinkai",
-	"n": "1538K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"TWR.Rinkai.Osaki"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "15:34"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "15:37"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "15:40"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "15:42"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "15:46"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "15:49"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "15:51"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "15:53"
-	}]
-}, {
-	"id": "TWR.Rinkai.1539K.Weekday",
-	"t": "TWR.Rinkai.1539K",
-	"r": "TWR.Rinkai",
-	"n": "1539K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"TWR.Rinkai.Osaki"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "15:10"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "15:12"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "15:15"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "15:17"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "15:21"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "15:23"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "15:26"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "15:29"
-	}]
-}, {
-	"id": "TWR.Rinkai.1545F.Weekday",
-	"t": "TWR.Rinkai.1545F",
-	"r": "TWR.Rinkai",
-	"n": "1545F",
+	"n": "1533F",
 	"y": "TWR.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -2800,124 +2876,7 @@
 		"JR-East.SaikyoKawagoe.Kawagoe"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.1545F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "15:20"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "15:22"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "15:25"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "15:27"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "15:31"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "15:33"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "15:36"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "15:39"
-	}]
-}, {
-	"id": "TWR.Rinkai.1552K.Weekday",
-	"t": "TWR.Rinkai.1552K",
-	"r": "TWR.Rinkai",
-	"n": "1552K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"TWR.Rinkai.Osaki"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "15:49"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "15:52"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "15:55"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "15:57"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "16:01"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "16:04"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "16:06"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "16:08"
-	}]
-}, {
-	"id": "TWR.Rinkai.1553K.Weekday",
-	"t": "TWR.Rinkai.1553K",
-	"r": "TWR.Rinkai",
-	"n": "1553K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"TWR.Rinkai.Osaki"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "15:27"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "15:29"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "15:32"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "15:34"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "15:38"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "15:40"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "15:43"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "15:46"
-	}]
-}, {
-	"id": "TWR.Rinkai.1555F.Weekday",
-	"t": "TWR.Rinkai.1555F",
-	"r": "TWR.Rinkai",
-	"n": "1555F",
-	"y": "TWR.Rapid",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.1555F.Weekday"
+		"JR-East.SaikyoKawagoe.1533F.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
@@ -2943,6 +2902,47 @@
 	}, {
 		"s": "TWR.Rinkai.Osaki",
 		"a": "16:02"
+	}]
+}, {
+	"id": "TWR.Rinkai.1539F.Weekday",
+	"t": "TWR.Rinkai.1539F",
+	"r": "TWR.Rinkai",
+	"n": "1539F",
+	"y": "TWR.Rapid",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.1539F.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "15:20"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "15:22"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "15:25"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "15:27"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "15:31"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "15:33"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "15:36"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "15:39"
 	}]
 }, {
 	"id": "TWR.Rinkai.1560K.Weekday",
@@ -3220,6 +3220,129 @@
 		"a": "15:53"
 	}]
 }, {
+	"id": "TWR.Rinkai.1613K.Weekday",
+	"t": "TWR.Rinkai.1613K",
+	"r": "TWR.Rinkai",
+	"n": "1613K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.1613K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "16:29"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "16:32"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "16:34"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "16:37"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "16:40"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "16:43"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "16:46"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "16:49"
+	}]
+}, {
+	"id": "TWR.Rinkai.1617F.Weekday",
+	"t": "TWR.Rinkai.1617F",
+	"r": "TWR.Rinkai",
+	"n": "1617F",
+	"y": "TWR.Rapid",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.1617F.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "16:01"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "16:03"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "16:06"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "16:08"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "16:12"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "16:14"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "16:17"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "16:20"
+	}]
+}, {
+	"id": "TWR.Rinkai.1620F.Weekday",
+	"t": "TWR.Rinkai.1620F",
+	"r": "TWR.Rinkai",
+	"n": "1620F",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.1620F.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "17:21"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "17:24"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "17:27"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "17:29"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "17:33"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "17:36"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "17:38"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "17:40"
+	}]
+}, {
 	"id": "TWR.Rinkai.1626S.Weekday",
 	"t": "TWR.Rinkai.1626S",
 	"r": "TWR.Rinkai",
@@ -3261,47 +3384,6 @@
 		"a": "18:14"
 	}]
 }, {
-	"id": "TWR.Rinkai.1630F.Weekday",
-	"t": "TWR.Rinkai.1630F",
-	"r": "TWR.Rinkai",
-	"n": "1630F",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.1630F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "17:42"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "17:46"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "17:48"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "17:51"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "17:55"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "17:58"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "18:00"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "18:03"
-	}]
-}, {
 	"id": "TWR.Rinkai.1638T.Weekday",
 	"t": "TWR.Rinkai.1638T",
 	"r": "TWR.Rinkai",
@@ -3340,86 +3422,45 @@
 		"a": "17:16"
 	}]
 }, {
-	"id": "TWR.Rinkai.1639F.Weekday",
-	"t": "TWR.Rinkai.1639F",
+	"id": "TWR.Rinkai.1640F.Weekday",
+	"t": "TWR.Rinkai.1640F",
 	"r": "TWR.Rinkai",
-	"n": "1639F",
-	"y": "TWR.Rapid",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.1639F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "16:01"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "16:03"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "16:06"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "16:08"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "16:12"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "16:14"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "16:17"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "16:20"
-	}]
-}, {
-	"id": "TWR.Rinkai.1640K.Weekday",
-	"t": "TWR.Rinkai.1640K",
-	"r": "TWR.Rinkai",
-	"n": "1640K",
+	"n": "1640F",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.SaikyoKawagoe.Omiya"
+		"JR-East.SaikyoKawagoe.Kawagoe"
 	],
 	"ds": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.1640K.Weekday"
+		"JR-East.SaikyoKawagoe.1640F.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "17:28"
+		"d": "17:42"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "17:31"
+		"d": "17:46"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "17:34"
+		"d": "17:48"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "17:36"
+		"d": "17:51"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "17:40"
+		"d": "17:55"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "17:43"
+		"d": "17:58"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "17:45"
+		"d": "18:00"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "17:47"
+		"a": "18:03"
 	}]
 }, {
 	"id": "TWR.Rinkai.1640T.Weekday",
@@ -3458,47 +3499,6 @@
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
 		"a": "17:04"
-	}]
-}, {
-	"id": "TWR.Rinkai.1646F.Weekday",
-	"t": "TWR.Rinkai.1646F",
-	"r": "TWR.Rinkai",
-	"n": "1646F",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.1646F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "17:21"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "17:24"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "17:27"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "17:29"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "17:33"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "17:36"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "17:38"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "17:40"
 	}]
 }, {
 	"id": "TWR.Rinkai.1648K.Weekday",
@@ -3580,47 +3580,6 @@
 		"a": "17:14"
 	}]
 }, {
-	"id": "TWR.Rinkai.1653K.Weekday",
-	"t": "TWR.Rinkai.1653K",
-	"r": "TWR.Rinkai",
-	"n": "1653K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.1653K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "16:29"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "16:32"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "16:34"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "16:37"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "16:40"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "16:43"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "16:46"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "16:49"
-	}]
-}, {
 	"id": "TWR.Rinkai.1660K.Weekday",
 	"t": "TWR.Rinkai.1660K",
 	"r": "TWR.Rinkai",
@@ -3700,6 +3659,47 @@
 		"a": "17:07"
 	}]
 }, {
+	"id": "TWR.Rinkai.1662K.Weekday",
+	"t": "TWR.Rinkai.1662K",
+	"r": "TWR.Rinkai",
+	"n": "1662K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.1662K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "17:28"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "17:31"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "17:34"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "17:36"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "17:40"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "17:43"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "17:45"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "17:47"
+	}]
+}, {
 	"id": "TWR.Rinkai.1669K.Weekday",
 	"t": "TWR.Rinkai.1669K",
 	"r": "TWR.Rinkai",
@@ -3758,7 +3758,7 @@
 		"d": "16:23"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "16:26"
+		"d": "16:25"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
 		"d": "16:28"
@@ -3967,80 +3967,13 @@
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
-		"TWR.Rinkai.TokyoTeleport"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "17:03"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "17:06"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "17:08"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "17:11"
-	}]
-}, {
-	"id": "TWR.Rinkai.1705K.Weekday",
-	"t": "TWR.Rinkai.1705K",
-	"r": "TWR.Rinkai",
-	"n": "1705K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.1705K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "17:14"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "17:17"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "17:19"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "17:22"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "17:25"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "17:28"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "17:31"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "17:34"
-	}]
-}, {
-	"id": "TWR.Rinkai.1724K.Weekday",
-	"t": "TWR.Rinkai.1724K",
-	"r": "TWR.Rinkai",
-	"n": "1724K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
 		"JR-East.SaikyoKawagoe.Omiya"
 	],
 	"ds": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.1724K.Weekday"
+		"JR-East.SaikyoKawagoe.1704K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
@@ -4068,10 +4001,77 @@
 		"a": "18:47"
 	}]
 }, {
-	"id": "TWR.Rinkai.1738S.Weekday",
-	"t": "TWR.Rinkai.1738S",
+	"id": "TWR.Rinkai.1706K.Weekday",
+	"t": "TWR.Rinkai.1706K",
 	"r": "TWR.Rinkai",
-	"n": "1738S",
+	"n": "1706K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"TWR.Rinkai.TokyoTeleport"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "17:03"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "17:06"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "17:08"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "17:11"
+	}]
+}, {
+	"id": "TWR.Rinkai.1707K.Weekday",
+	"t": "TWR.Rinkai.1707K",
+	"r": "TWR.Rinkai",
+	"n": "1707K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.1707K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "17:14"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "17:17"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "17:19"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "17:22"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "17:25"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "17:28"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "17:31"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "17:34"
+	}]
+}, {
+	"id": "TWR.Rinkai.1716S.Weekday",
+	"t": "TWR.Rinkai.1716S",
+	"r": "TWR.Rinkai",
+	"n": "1716S",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -4081,7 +4081,7 @@
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.1738S.Weekday"
+		"JR-East.SaikyoKawagoe.1716S.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
@@ -4109,92 +4109,10 @@
 		"a": "19:15"
 	}]
 }, {
-	"id": "TWR.Rinkai.1741K.Weekday",
-	"t": "TWR.Rinkai.1741K",
+	"id": "TWR.Rinkai.1721K.Weekday",
+	"t": "TWR.Rinkai.1721K",
 	"r": "TWR.Rinkai",
-	"n": "1741K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.1741K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "17:55"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "17:58"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "18:00"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "18:03"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "18:06"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "18:09"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "18:12"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "18:15"
-	}]
-}, {
-	"id": "TWR.Rinkai.1744S.Weekday",
-	"t": "TWR.Rinkai.1744S",
-	"r": "TWR.Rinkai",
-	"n": "1744S",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.1744S.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "18:15"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "18:19"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "18:21"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "18:24"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "18:28"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "18:30"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "18:32"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "18:35"
-	}]
-}, {
-	"id": "TWR.Rinkai.1747K.Weekday",
-	"t": "TWR.Rinkai.1747K",
-	"r": "TWR.Rinkai",
-	"n": "1747K",
+	"n": "1721K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -4229,10 +4147,10 @@
 		"a": "18:08"
 	}]
 }, {
-	"id": "TWR.Rinkai.1754S.Weekday",
-	"t": "TWR.Rinkai.1754S",
+	"id": "TWR.Rinkai.1732S.Weekday",
+	"t": "TWR.Rinkai.1732S",
 	"r": "TWR.Rinkai",
-	"n": "1754S",
+	"n": "1732S",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -4242,7 +4160,7 @@
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.1754S.Weekday"
+		"JR-East.SaikyoKawagoe.1732S.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
@@ -4270,10 +4188,51 @@
 		"a": "18:54"
 	}]
 }, {
-	"id": "TWR.Rinkai.1762K.Weekday",
-	"t": "TWR.Rinkai.1762K",
+	"id": "TWR.Rinkai.1738S.Weekday",
+	"t": "TWR.Rinkai.1738S",
 	"r": "TWR.Rinkai",
-	"n": "1762K",
+	"n": "1738S",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.1738S.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "18:15"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "18:19"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "18:21"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "18:24"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "18:28"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "18:30"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "18:32"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "18:35"
+	}]
+}, {
+	"id": "TWR.Rinkai.1742K.Weekday",
+	"t": "TWR.Rinkai.1742K",
+	"r": "TWR.Rinkai",
+	"n": "1742K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -4283,7 +4242,7 @@
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.1762K.Weekday"
+		"JR-East.SaikyoKawagoe.1742K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
@@ -4311,6 +4270,47 @@
 		"a": "19:00"
 	}]
 }, {
+	"id": "TWR.Rinkai.1763K.Weekday",
+	"t": "TWR.Rinkai.1763K",
+	"r": "TWR.Rinkai",
+	"n": "1763K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.1763K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "17:55"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "17:58"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "18:00"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "18:03"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "18:06"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "18:09"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "18:12"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "18:15"
+	}]
+}, {
 	"id": "TWR.Rinkai.1765S.Weekday",
 	"t": "TWR.Rinkai.1765S",
 	"r": "TWR.Rinkai",
@@ -4328,19 +4328,19 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "17:03"
+		"d": "17:02"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
 		"d": "17:05"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "17:08"
+		"d": "17:07"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
 		"d": "17:10"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "17:14"
+		"d": "17:13"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
 		"d": "17:16"
@@ -4706,10 +4706,51 @@
 		"a": "17:27"
 	}]
 }, {
-	"id": "TWR.Rinkai.1804K.Weekday",
-	"t": "TWR.Rinkai.1804K",
+	"id": "TWR.Rinkai.1805K.Weekday",
+	"t": "TWR.Rinkai.1805K",
 	"r": "TWR.Rinkai",
-	"n": "1804K",
+	"n": "1805K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.1805K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "18:51"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "18:53"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "18:56"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "18:59"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "19:02"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "19:05"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "19:08"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "19:11"
+	}]
+}, {
+	"id": "TWR.Rinkai.1806K.Weekday",
+	"t": "TWR.Rinkai.1806K",
+	"r": "TWR.Rinkai",
+	"n": "1806K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -4719,7 +4760,7 @@
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.1804K.Weekday"
+		"JR-East.SaikyoKawagoe.1806K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
@@ -4788,10 +4829,89 @@
 		"a": "19:42"
 	}]
 }, {
-	"id": "TWR.Rinkai.1825K.Weekday",
-	"t": "TWR.Rinkai.1825K",
+	"id": "TWR.Rinkai.1812K.Weekday",
+	"t": "TWR.Rinkai.1812K",
 	"r": "TWR.Rinkai",
-	"n": "1825K",
+	"n": "1812K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.1812K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "19:08"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "19:11"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "19:14"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "19:16"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "19:20"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "19:23"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "19:25"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "19:27"
+	}]
+}, {
+	"id": "TWR.Rinkai.1820K.Weekday",
+	"t": "TWR.Rinkai.1820K",
+	"r": "TWR.Rinkai",
+	"n": "1820K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"TWR.Rinkai.Osaki"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "18:11"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "18:14"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "18:17"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "18:19"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "18:23"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "18:25"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "18:27"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "18:30"
+	}]
+}, {
+	"id": "TWR.Rinkai.1821K.Weekday",
+	"t": "TWR.Rinkai.1821K",
+	"r": "TWR.Rinkai",
+	"n": "1821K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -4801,32 +4921,32 @@
 		"JR-East.SaikyoKawagoe.Omiya"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.1825K.Weekday"
+		"JR-East.SaikyoKawagoe.1821K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "18:51"
+		"d": "18:33"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "18:53"
+		"d": "18:36"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "18:56"
+		"d": "18:38"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "18:59"
+		"d": "18:40"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "19:02"
+		"d": "18:44"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "19:05"
+		"d": "18:46"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "19:08"
+		"d": "18:50"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "19:11"
+		"a": "18:53"
 	}]
 }, {
 	"id": "TWR.Rinkai.1827S.Weekday",
@@ -4870,51 +4990,48 @@
 		"a": "18:38"
 	}]
 }, {
-	"id": "TWR.Rinkai.1831S.Weekday",
-	"t": "TWR.Rinkai.1831S",
+	"id": "TWR.Rinkai.1833K.Weekday",
+	"t": "TWR.Rinkai.1833K",
 	"r": "TWR.Rinkai",
-	"n": "1831S",
-	"y": "TWR.CommuterRapid",
+	"n": "1833K",
+	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.1831S.Weekday"
+		"TWR.Rinkai.Osaki"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "18:06"
+		"d": "18:59"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "18:09"
+		"d": "19:01"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "18:11"
+		"d": "19:04"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "18:13"
+		"d": "19:06"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "18:17"
+		"d": "19:10"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "18:20"
+		"d": "19:12"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "18:23"
+		"d": "19:15"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "18:26"
+		"a": "19:18"
 	}]
 }, {
-	"id": "TWR.Rinkai.1845K.Weekday",
-	"t": "TWR.Rinkai.1845K",
+	"id": "TWR.Rinkai.1839K.Weekday",
+	"t": "TWR.Rinkai.1839K",
 	"r": "TWR.Rinkai",
-	"n": "1845K",
+	"n": "1839K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -4949,83 +5066,45 @@
 		"a": "18:58"
 	}]
 }, {
-	"id": "TWR.Rinkai.1846K.Weekday",
-	"t": "TWR.Rinkai.1846K",
+	"id": "TWR.Rinkai.1841S.Weekday",
+	"t": "TWR.Rinkai.1841S",
 	"r": "TWR.Rinkai",
-	"n": "1846K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"TWR.Rinkai.Osaki"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "18:11"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "18:14"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "18:17"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "18:19"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "18:23"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "18:25"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "18:27"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "18:30"
-	}]
-}, {
-	"id": "TWR.Rinkai.1847K.Weekday",
-	"t": "TWR.Rinkai.1847K",
-	"r": "TWR.Rinkai",
-	"n": "1847K",
-	"y": "TWR.Local",
+	"n": "1841S",
+	"y": "TWR.CommuterRapid",
 	"d": "Outbound",
 	"os": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"ds": [
-		"JR-East.SaikyoKawagoe.Omiya"
+		"JR-East.SaikyoKawagoe.Kawagoe"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.1847K.Weekday"
+		"JR-East.SaikyoKawagoe.1841S.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "18:33"
+		"d": "18:06"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "18:36"
+		"d": "18:09"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "18:38"
+		"d": "18:11"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "18:40"
+		"d": "18:13"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "18:44"
+		"d": "18:17"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "18:46"
+		"d": "18:20"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "18:50"
+		"d": "18:23"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "18:53"
+		"a": "18:26"
 	}]
 }, {
 	"id": "TWR.Rinkai.1848K.Weekday",
@@ -5067,85 +5146,6 @@
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
 		"a": "20:47"
-	}]
-}, {
-	"id": "TWR.Rinkai.1852K.Weekday",
-	"t": "TWR.Rinkai.1852K",
-	"r": "TWR.Rinkai",
-	"n": "1852K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.1852K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "19:08"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "19:11"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "19:14"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "19:16"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "19:20"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "19:23"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "19:25"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "19:27"
-	}]
-}, {
-	"id": "TWR.Rinkai.1855K.Weekday",
-	"t": "TWR.Rinkai.1855K",
-	"r": "TWR.Rinkai",
-	"n": "1855K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"TWR.Rinkai.Osaki"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "18:59"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "19:01"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "19:04"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "19:06"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "19:10"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "19:12"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "19:15"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "19:18"
 	}]
 }, {
 	"id": "TWR.Rinkai.1860S.Weekday",
@@ -5546,171 +5546,10 @@
 		"a": "20:04"
 	}]
 }, {
-	"id": "TWR.Rinkai.1930S.Weekday",
-	"t": "TWR.Rinkai.1930S",
+	"id": "TWR.Rinkai.1913K.Weekday",
+	"t": "TWR.Rinkai.1913K",
 	"r": "TWR.Rinkai",
-	"n": "1930S",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.1930S.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "20:56"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "20:59"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "21:02"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "21:04"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "21:08"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "21:10"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "21:12"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "21:15"
-	}]
-}, {
-	"id": "TWR.Rinkai.1939K.Weekday",
-	"t": "TWR.Rinkai.1939K",
-	"r": "TWR.Rinkai",
-	"n": "1939K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.1939K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "19:18"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "19:21"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "19:23"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "19:25"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "19:29"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "19:31"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "19:34"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "19:37"
-	}]
-}, {
-	"id": "TWR.Rinkai.1944K.Weekday",
-	"t": "TWR.Rinkai.1944K",
-	"r": "TWR.Rinkai",
-	"n": "1944K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"TWR.Rinkai.Osaki"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "19:01"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "19:04"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "19:07"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "19:09"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "19:13"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "19:15"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "19:17"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "19:20"
-	}]
-}, {
-	"id": "TWR.Rinkai.1945S.Weekday",
-	"t": "TWR.Rinkai.1945S",
-	"r": "TWR.Rinkai",
-	"n": "1945S",
-	"y": "TWR.CommuterRapid",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.1945S.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "19:24"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "19:27"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "19:29"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "19:32"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "19:35"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "19:38"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "19:41"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "19:44"
-	}]
-}, {
-	"id": "TWR.Rinkai.1953K.Weekday",
-	"t": "TWR.Rinkai.1953K",
-	"r": "TWR.Rinkai",
-	"n": "1953K",
+	"n": "1913K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -5720,7 +5559,7 @@
 		"JR-East.SaikyoKawagoe.Akabane"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.1953K.Weekday"
+		"JR-East.SaikyoKawagoe.1913K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
@@ -5748,10 +5587,51 @@
 		"a": "19:50"
 	}]
 }, {
-	"id": "TWR.Rinkai.1954K.Weekday",
-	"t": "TWR.Rinkai.1954K",
+	"id": "TWR.Rinkai.1917K.Weekday",
+	"t": "TWR.Rinkai.1917K",
 	"r": "TWR.Rinkai",
-	"n": "1954K",
+	"n": "1917K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.1917K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "19:18"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "19:21"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "19:23"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "19:25"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "19:29"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "19:31"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "19:34"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "19:37"
+	}]
+}, {
+	"id": "TWR.Rinkai.1932K.Weekday",
+	"t": "TWR.Rinkai.1932K",
+	"r": "TWR.Rinkai",
+	"n": "1932K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -5786,10 +5666,10 @@
 		"a": "19:47"
 	}]
 }, {
-	"id": "TWR.Rinkai.1955K.Weekday",
-	"t": "TWR.Rinkai.1955K",
+	"id": "TWR.Rinkai.1933K.Weekday",
+	"t": "TWR.Rinkai.1933K",
 	"r": "TWR.Rinkai",
-	"n": "1955K",
+	"n": "1933K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -5799,7 +5679,7 @@
 		"JR-East.SaikyoKawagoe.Akabane"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.1955K.Weekday"
+		"JR-East.SaikyoKawagoe.1933K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
@@ -5825,6 +5705,167 @@
 	}, {
 		"s": "TWR.Rinkai.Osaki",
 		"a": "20:09"
+	}]
+}, {
+	"id": "TWR.Rinkai.1938K.Weekday",
+	"t": "TWR.Rinkai.1938K",
+	"r": "TWR.Rinkai",
+	"n": "1938K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"TWR.Rinkai.Osaki"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "19:01"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "19:04"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "19:07"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "19:09"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "19:13"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "19:15"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "19:17"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "19:20"
+	}]
+}, {
+	"id": "TWR.Rinkai.1939S.Weekday",
+	"t": "TWR.Rinkai.1939S",
+	"r": "TWR.Rinkai",
+	"n": "1939S",
+	"y": "TWR.CommuterRapid",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.1939S.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "19:24"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "19:27"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "19:29"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "19:32"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "19:35"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "19:38"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "19:41"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "19:44"
+	}]
+}, {
+	"id": "TWR.Rinkai.1940S.Weekday",
+	"t": "TWR.Rinkai.1940S",
+	"r": "TWR.Rinkai",
+	"n": "1940S",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.1940S.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "20:56"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "20:59"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "21:02"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "21:04"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "21:08"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "21:11"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "21:13"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "21:15"
+	}]
+}, {
+	"id": "TWR.Rinkai.1943S.Weekday",
+	"t": "TWR.Rinkai.1943S",
+	"r": "TWR.Rinkai",
+	"n": "1943S",
+	"y": "TWR.CommuterRapid",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.1943S.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "19:03"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "19:06"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "19:08"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "19:10"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "19:14"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "19:16"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "19:19"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "19:22"
 	}]
 }, {
 	"id": "TWR.Rinkai.1961K.Weekday",
@@ -5863,47 +5904,6 @@
 	}, {
 		"s": "TWR.Rinkai.Osaki",
 		"a": "20:15"
-	}]
-}, {
-	"id": "TWR.Rinkai.1963S.Weekday",
-	"t": "TWR.Rinkai.1963S",
-	"r": "TWR.Rinkai",
-	"n": "1963S",
-	"y": "TWR.CommuterRapid",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.1963S.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "19:03"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "19:06"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "19:08"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "19:10"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "19:14"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "19:16"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "19:19"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "19:22"
 	}]
 }, {
 	"id": "TWR.Rinkai.1968S.Weekday",
@@ -6184,10 +6184,51 @@
 		"a": "21:01"
 	}]
 }, {
-	"id": "TWR.Rinkai.2005K.Weekday",
-	"t": "TWR.Rinkai.2005K",
+	"id": "TWR.Rinkai.2004K.Weekday",
+	"t": "TWR.Rinkai.2004K",
 	"r": "TWR.Rinkai",
-	"n": "2005K",
+	"n": "2004K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.2004K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "21:27"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "21:30"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "21:33"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "21:35"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "21:39"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "21:41"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "21:43"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "21:46"
+	}]
+}, {
+	"id": "TWR.Rinkai.2007K.Weekday",
+	"t": "TWR.Rinkai.2007K",
+	"r": "TWR.Rinkai",
+	"n": "2007K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -6197,7 +6238,7 @@
 		"JR-East.SaikyoKawagoe.Akabane"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.2005K.Weekday"
+		"JR-East.SaikyoKawagoe.2007K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
@@ -6225,86 +6266,45 @@
 		"a": "20:31"
 	}]
 }, {
-	"id": "TWR.Rinkai.2020K.Weekday",
-	"t": "TWR.Rinkai.2020K",
+	"id": "TWR.Rinkai.2012K.Weekday",
+	"t": "TWR.Rinkai.2012K",
 	"r": "TWR.Rinkai",
-	"n": "2020K",
+	"n": "2012K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.SaikyoKawagoe.Omiya"
+		"JR-East.SaikyoKawagoe.Akabane"
 	],
 	"ds": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.2020K.Weekday"
+		"JR-East.SaikyoKawagoe.2012K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "21:43"
+		"d": "21:04"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "21:46"
+		"d": "21:07"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "21:49"
+		"d": "21:10"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "21:51"
+		"d": "21:12"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "21:55"
+		"d": "21:16"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "21:58"
+		"d": "21:18"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "22:00"
+		"d": "21:20"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "22:02"
-	}]
-}, {
-	"id": "TWR.Rinkai.2024K.Weekday",
-	"t": "TWR.Rinkai.2024K",
-	"r": "TWR.Rinkai",
-	"n": "2024K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.2024K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "21:27"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "21:30"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "21:33"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "21:35"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "21:39"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "21:41"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "21:43"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "21:46"
+		"a": "21:23"
 	}]
 }, {
 	"id": "TWR.Rinkai.2026S.Weekday",
@@ -6348,6 +6348,88 @@
 		"a": "21:34"
 	}]
 }, {
+	"id": "TWR.Rinkai.2042S.Weekday",
+	"t": "TWR.Rinkai.2042S",
+	"r": "TWR.Rinkai",
+	"n": "2042S",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.2042S.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "21:53"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "21:57"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "21:59"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "22:02"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "22:05"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "22:08"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "22:10"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "22:13"
+	}]
+}, {
+	"id": "TWR.Rinkai.2046K.Weekday",
+	"t": "TWR.Rinkai.2046K",
+	"r": "TWR.Rinkai",
+	"n": "2046K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.2046K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "21:43"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "21:46"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "21:49"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "21:51"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "21:55"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "21:58"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "22:00"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "22:02"
+	}]
+}, {
 	"id": "TWR.Rinkai.2049K.Weekday",
 	"t": "TWR.Rinkai.2049K",
 	"r": "TWR.Rinkai",
@@ -6384,47 +6466,6 @@
 	}, {
 		"s": "TWR.Rinkai.Osaki",
 		"a": "21:09"
-	}]
-}, {
-	"id": "TWR.Rinkai.2052K.Weekday",
-	"t": "TWR.Rinkai.2052K",
-	"r": "TWR.Rinkai",
-	"n": "2052K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Akabane"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.2052K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "21:04"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "21:07"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "21:10"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "21:12"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "21:16"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "21:18"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "21:20"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "21:23"
 	}]
 }, {
 	"id": "TWR.Rinkai.2060K.Weekday",
@@ -6504,47 +6545,6 @@
 	}, {
 		"s": "TWR.Rinkai.Osaki",
 		"a": "21:02"
-	}]
-}, {
-	"id": "TWR.Rinkai.2062S.Weekday",
-	"t": "TWR.Rinkai.2062S",
-	"r": "TWR.Rinkai",
-	"n": "2062S",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.2062S.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "21:53"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "21:57"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "21:59"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "22:02"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "22:05"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "22:08"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "22:10"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "22:13"
 	}]
 }, {
 	"id": "TWR.Rinkai.2064K.Weekday",
@@ -6866,6 +6866,47 @@
 		"a": "21:54"
 	}]
 }, {
+	"id": "TWR.Rinkai.2105K.Weekday",
+	"t": "TWR.Rinkai.2105K",
+	"r": "TWR.Rinkai",
+	"n": "2105K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Akabane"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.2105K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "21:51"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "21:54"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "21:56"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "21:58"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "22:02"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "22:04"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "22:07"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "22:10"
+	}]
+}, {
 	"id": "TWR.Rinkai.2110S.Weekday",
 	"t": "TWR.Rinkai.2110S",
 	"r": "TWR.Rinkai",
@@ -6907,10 +6948,10 @@
 		"a": "22:53"
 	}]
 }, {
-	"id": "TWR.Rinkai.2125K.Weekday",
-	"t": "TWR.Rinkai.2125K",
+	"id": "TWR.Rinkai.2113K.Weekday",
+	"t": "TWR.Rinkai.2113K",
 	"r": "TWR.Rinkai",
-	"n": "2125K",
+	"n": "2113K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -6920,32 +6961,73 @@
 		"JR-East.SaikyoKawagoe.Akabane"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.2125K.Weekday"
+		"JR-East.SaikyoKawagoe.2113K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "21:51"
+		"d": "21:34"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "21:54"
+		"d": "21:36"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "21:56"
+		"d": "21:39"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "21:58"
+		"d": "21:41"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "22:02"
+		"d": "21:45"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "22:04"
+		"d": "21:47"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "22:07"
+		"d": "21:50"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "22:10"
+		"a": "21:53"
+	}]
+}, {
+	"id": "TWR.Rinkai.2120K.Weekday",
+	"t": "TWR.Rinkai.2120K",
+	"r": "TWR.Rinkai",
+	"n": "2120K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.2120K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "22:44"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "22:47"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "22:50"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "22:52"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "22:56"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "22:59"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "23:01"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "23:03"
 	}]
 }, {
 	"id": "TWR.Rinkai.2127S.Weekday",
@@ -6989,51 +7071,10 @@
 		"a": "22:02"
 	}]
 }, {
-	"id": "TWR.Rinkai.2131S.Weekday",
-	"t": "TWR.Rinkai.2131S",
+	"id": "TWR.Rinkai.2138S.Weekday",
+	"t": "TWR.Rinkai.2138S",
 	"r": "TWR.Rinkai",
-	"n": "2131S",
-	"y": "TWR.CommuterRapid",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.2131S.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "21:24"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "21:26"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "21:29"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "21:31"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "21:35"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "21:37"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "21:40"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "21:43"
-	}]
-}, {
-	"id": "TWR.Rinkai.2144S.Weekday",
-	"t": "TWR.Rinkai.2144S",
-	"r": "TWR.Rinkai",
-	"n": "2144S",
+	"n": "2138S",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -7043,7 +7084,7 @@
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.2144S.Weekday"
+		"JR-East.SaikyoKawagoe.2138S.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
@@ -7071,45 +7112,45 @@
 		"a": "22:34"
 	}]
 }, {
-	"id": "TWR.Rinkai.2146K.Weekday",
-	"t": "TWR.Rinkai.2146K",
+	"id": "TWR.Rinkai.2141S.Weekday",
+	"t": "TWR.Rinkai.2141S",
 	"r": "TWR.Rinkai",
-	"n": "2146K",
-	"y": "TWR.Local",
-	"d": "Inbound",
+	"n": "2141S",
+	"y": "TWR.CommuterRapid",
+	"d": "Outbound",
 	"os": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"ds": [
 		"TWR.Rinkai.ShinKiba"
 	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.2146K.Weekday"
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.2141S.Weekday"
 	],
 	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "22:44"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "22:47"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "22:50"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "22:52"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "22:56"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "22:59"
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "21:24"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "23:01"
+		"d": "21:26"
 	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "23:03"
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "21:29"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "21:31"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "21:35"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "21:37"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "21:40"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "21:43"
 	}]
 }, {
 	"id": "TWR.Rinkai.2148K.Weekday",
@@ -7148,47 +7189,6 @@
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
 		"a": "21:38"
-	}]
-}, {
-	"id": "TWR.Rinkai.2153K.Weekday",
-	"t": "TWR.Rinkai.2153K",
-	"r": "TWR.Rinkai",
-	"n": "2153K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Akabane"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.2153K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "21:34"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "21:36"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "21:39"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "21:41"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "21:45"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "21:47"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "21:50"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "21:53"
 	}]
 }, {
 	"id": "TWR.Rinkai.2165K.Weekday",
@@ -7448,92 +7448,10 @@
 		"a": "22:03"
 	}]
 }, {
-	"id": "TWR.Rinkai.2200K.Weekday",
-	"t": "TWR.Rinkai.2200K",
+	"id": "TWR.Rinkai.2239K.Weekday",
+	"t": "TWR.Rinkai.2239K",
 	"r": "TWR.Rinkai",
-	"n": "2200K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.2200K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "22:58"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "23:01"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "23:04"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "23:06"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "23:10"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "23:13"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "23:15"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "23:17"
-	}]
-}, {
-	"id": "TWR.Rinkai.2221K.Weekday",
-	"t": "TWR.Rinkai.2221K",
-	"r": "TWR.Rinkai",
-	"n": "2221K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.2221K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "22:16"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "22:18"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "22:21"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "22:23"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "22:27"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "22:29"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "22:32"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "22:35"
-	}]
-}, {
-	"id": "TWR.Rinkai.2245K.Weekday",
-	"t": "TWR.Rinkai.2245K",
-	"r": "TWR.Rinkai",
-	"n": "2245K",
+	"n": "2239K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -7543,7 +7461,7 @@
 		"JR-East.SaikyoKawagoe.Kawagoe"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.2245K.Weekday"
+		"JR-East.SaikyoKawagoe.2239K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
@@ -7569,6 +7487,88 @@
 	}, {
 		"s": "TWR.Rinkai.Osaki",
 		"a": "23:00"
+	}]
+}, {
+	"id": "TWR.Rinkai.2243K.Weekday",
+	"t": "TWR.Rinkai.2243K",
+	"r": "TWR.Rinkai",
+	"n": "2243K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.2243K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "22:26"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "22:28"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "22:31"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "22:33"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "22:37"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "22:39"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "22:42"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "22:45"
+	}]
+}, {
+	"id": "TWR.Rinkai.2247K.Weekday",
+	"t": "TWR.Rinkai.2247K",
+	"r": "TWR.Rinkai",
+	"n": "2247K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.2247K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "22:16"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "22:18"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "22:21"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "22:23"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "22:27"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "22:29"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "22:32"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "22:35"
 	}]
 }, {
 	"id": "TWR.Rinkai.2249K.Weekday",
@@ -7612,45 +7612,45 @@
 		"a": "22:23"
 	}]
 }, {
-	"id": "TWR.Rinkai.2263K.Weekday",
-	"t": "TWR.Rinkai.2263K",
+	"id": "TWR.Rinkai.2270K.Weekday",
+	"t": "TWR.Rinkai.2270K",
 	"r": "TWR.Rinkai",
-	"n": "2263K",
+	"n": "2270K",
 	"y": "TWR.Local",
-	"d": "Outbound",
+	"d": "Inbound",
 	"os": [
-		"TWR.Rinkai.ShinKiba"
+		"JR-East.SaikyoKawagoe.Omiya"
 	],
 	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
+		"TWR.Rinkai.ShinKiba"
 	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.2263K.Weekday"
+	"pt": [
+		"JR-East.SaikyoKawagoe.2270K.Weekday"
 	],
 	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "22:26"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "22:28"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "22:31"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "22:33"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "22:37"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "22:39"
+		"s": "TWR.Rinkai.Osaki",
+		"d": "22:58"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "22:42"
+		"d": "23:01"
 	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "22:45"
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "23:04"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "23:06"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "23:10"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "23:13"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "23:15"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "23:17"
 	}]
 }, {
 	"id": "TWR.Rinkai.2283T.Weekday",
@@ -7761,10 +7761,51 @@
 		"a": "23:45"
 	}]
 }, {
-	"id": "TWR.Rinkai.2300K.Weekday",
-	"t": "TWR.Rinkai.2300K",
+	"id": "TWR.Rinkai.2321K.Weekday",
+	"t": "TWR.Rinkai.2321K",
 	"r": "TWR.Rinkai",
-	"n": "2300K",
+	"n": "2321K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.2321K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "23:14"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "23:17"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "23:19"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "23:22"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "23:25"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "23:28"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "23:31"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "23:34"
+	}]
+}, {
+	"id": "TWR.Rinkai.2370K.Weekday",
+	"t": "TWR.Rinkai.2370K",
+	"r": "TWR.Rinkai",
+	"n": "2370K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -7799,10 +7840,10 @@
 		"a": "00:06"
 	}]
 }, {
-	"id": "TWR.Rinkai.2301K.Weekday",
-	"t": "TWR.Rinkai.2301K",
+	"id": "TWR.Rinkai.2371K.Weekday",
+	"t": "TWR.Rinkai.2371K",
 	"r": "TWR.Rinkai",
-	"n": "2301K",
+	"n": "2371K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -7835,47 +7876,6 @@
 	}, {
 		"s": "TWR.Rinkai.Osaki",
 		"a": "23:42"
-	}]
-}, {
-	"id": "TWR.Rinkai.2347K.Weekday",
-	"t": "TWR.Rinkai.2347K",
-	"r": "TWR.Rinkai",
-	"n": "2347K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.2347K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "23:14"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "23:17"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "23:19"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "23:22"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "23:25"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "23:28"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "23:31"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "23:34"
 	}]
 }, {
 	"id": "TWR.Rinkai.2381T.Weekday",
@@ -8012,10 +8012,10 @@
 		"a": "00:29"
 	}]
 }, {
-	"id": "TWR.Rinkai.3039K.Weekday",
-	"t": "TWR.Rinkai.3039K",
+	"id": "TWR.Rinkai.3017K.Weekday",
+	"t": "TWR.Rinkai.3017K",
 	"r": "TWR.Rinkai",
-	"n": "3039K",
+	"n": "3017K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -8035,19 +8035,19 @@
 		"d": "10:07"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "10:09"
+		"d": "10:10"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
 		"d": "10:13"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "10:15"
+		"d": "10:16"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "10:18"
+		"d": "10:19"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "10:21"
+		"a": "10:22"
 	}]
 }, {
 	"id": "TWR.Rinkai.3061K.Weekday",
@@ -8088,10 +8088,10 @@
 		"a": "11:15"
 	}]
 }, {
-	"id": "TWR.Rinkai.3238K.Weekday",
-	"t": "TWR.Rinkai.3238K",
+	"id": "TWR.Rinkai.3216K.Weekday",
+	"t": "TWR.Rinkai.3216K",
 	"r": "TWR.Rinkai",
-	"n": "3238K",
+	"n": "3216K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -8376,34 +8376,116 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "05:49"
+		"d": "05:50"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "05:52"
+		"d": "05:53"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "05:54"
+		"d": "05:55"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "05:56"
+		"d": "05:57"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "06:00"
+		"d": "06:01"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "06:02"
+		"d": "06:03"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "06:05"
+		"d": "06:06"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "06:08"
+		"a": "06:09"
 	}]
 }, {
-	"id": "TWR.Rinkai.624S.Weekday",
-	"t": "TWR.Rinkai.624S",
+	"id": "TWR.Rinkai.604K.Weekday",
+	"t": "TWR.Rinkai.604K",
 	"r": "TWR.Rinkai",
-	"n": "624S",
+	"n": "604K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.604K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "07:58"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "08:01"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "08:04"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "08:06"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "08:10"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "08:13"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "08:15"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "08:18"
+	}]
+}, {
+	"id": "TWR.Rinkai.616K.Weekday",
+	"t": "TWR.Rinkai.616K",
+	"r": "TWR.Rinkai",
+	"n": "616K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Sashiogi"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.616K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "07:22"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "07:26"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "07:28"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "07:31"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "07:35"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "07:37"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "07:39"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "07:42"
+	}]
+}, {
+	"id": "TWR.Rinkai.618S.Weekday",
+	"t": "TWR.Rinkai.618S",
+	"r": "TWR.Rinkai",
+	"n": "618S",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -8413,32 +8495,73 @@
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.624S.Weekday"
+		"JR-East.SaikyoKawagoe.618S.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "07:57"
+		"d": "07:33"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:01"
+		"d": "07:37"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "08:03"
+		"d": "07:40"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "08:06"
+		"d": "07:42"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "08:10"
+		"d": "07:46"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:12"
+		"d": "07:48"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "08:14"
+		"d": "07:51"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "08:17"
+		"a": "07:53"
+	}]
+}, {
+	"id": "TWR.Rinkai.622S.Weekday",
+	"t": "TWR.Rinkai.622S",
+	"r": "TWR.Rinkai",
+	"n": "622S",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.622S.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "07:45"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "07:49"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "07:52"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "07:54"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "07:58"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "08:00"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "08:03"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "08:05"
 	}]
 }, {
 	"id": "TWR.Rinkai.626K.Weekday",
@@ -8473,7 +8596,7 @@
 		"d": "08:22"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:25"
+		"d": "08:24"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
 		"d": "08:27"
@@ -8642,110 +8765,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "07:45"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "07:49"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "07:52"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "07:54"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "07:58"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:00"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
 		"d": "08:03"
 	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "08:05"
-	}]
-}, {
-	"id": "TWR.Rinkai.644K.Weekday",
-	"t": "TWR.Rinkai.644K",
-	"r": "TWR.Rinkai",
-	"n": "644K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.644K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "07:23"
-	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "07:26"
+		"d": "08:07"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "07:29"
+		"d": "08:09"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "07:31"
+		"d": "08:12"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "07:35"
+		"d": "08:16"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "07:37"
+		"d": "08:18"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "07:39"
+		"d": "08:20"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "07:42"
-	}]
-}, {
-	"id": "TWR.Rinkai.650K.Weekday",
-	"t": "TWR.Rinkai.650K",
-	"r": "TWR.Rinkai",
-	"n": "650K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.650K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "07:33"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "07:37"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "07:40"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "07:42"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "07:46"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "07:48"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "07:51"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "07:53"
+		"a": "08:23"
 	}]
 }, {
 	"id": "TWR.Rinkai.654K.Weekday",
@@ -9148,10 +9189,10 @@
 		"a": "06:58"
 	}]
 }, {
-	"id": "TWR.Rinkai.700S.Weekday",
-	"t": "TWR.Rinkai.700S",
+	"id": "TWR.Rinkai.702S.Weekday",
+	"t": "TWR.Rinkai.702S",
 	"r": "TWR.Rinkai",
-	"n": "700S",
+	"n": "702S",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -9161,7 +9202,7 @@
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.700S.Weekday"
+		"JR-East.SaikyoKawagoe.702S.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
@@ -9189,10 +9230,10 @@
 		"a": "08:35"
 	}]
 }, {
-	"id": "TWR.Rinkai.704S.Weekday",
-	"t": "TWR.Rinkai.704S",
+	"id": "TWR.Rinkai.706S.Weekday",
+	"t": "TWR.Rinkai.706S",
 	"r": "TWR.Rinkai",
-	"n": "704S",
+	"n": "706S",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -9202,7 +9243,7 @@
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.704S.Weekday"
+		"JR-East.SaikyoKawagoe.706S.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
@@ -9230,45 +9271,45 @@
 		"a": "08:51"
 	}]
 }, {
-	"id": "TWR.Rinkai.706S.Weekday",
-	"t": "TWR.Rinkai.706S",
+	"id": "TWR.Rinkai.708K.Weekday",
+	"t": "TWR.Rinkai.708K",
 	"r": "TWR.Rinkai",
-	"n": "706S",
+	"n": "708K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
+		"JR-East.SaikyoKawagoe.Omiya"
 	],
 	"ds": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.706S.Weekday"
+		"JR-East.SaikyoKawagoe.708K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "08:45"
+		"d": "08:22"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:49"
+		"d": "08:26"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "08:52"
+		"d": "08:29"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "08:54"
+		"d": "08:31"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:00"
+		"d": "08:35"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:02"
+		"d": "08:37"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:04"
+		"d": "08:40"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "09:07"
+		"a": "08:42"
 	}]
 }, {
 	"id": "TWR.Rinkai.711K.Weekday",
@@ -9312,45 +9353,127 @@
 		"a": "07:37"
 	}]
 }, {
-	"id": "TWR.Rinkai.728K.Weekday",
-	"t": "TWR.Rinkai.728K",
+	"id": "TWR.Rinkai.712K.Weekday",
+	"t": "TWR.Rinkai.712K",
 	"r": "TWR.Rinkai",
-	"n": "728K",
+	"n": "712K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.SaikyoKawagoe.Sashiogi"
+		"JR-East.SaikyoKawagoe.Omiya"
 	],
 	"ds": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.728K.Weekday"
+		"JR-East.SaikyoKawagoe.712K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "08:22"
+		"d": "08:27"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:26"
+		"d": "08:30"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "08:29"
+		"d": "08:33"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "08:31"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
 		"d": "08:35"
 	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "08:39"
+	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:37"
+		"d": "08:42"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "08:40"
+		"d": "08:44"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "08:42"
+		"a": "08:47"
+	}]
+}, {
+	"id": "TWR.Rinkai.717K.Weekday",
+	"t": "TWR.Rinkai.717K",
+	"r": "TWR.Rinkai",
+	"n": "717K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.MusashiUrawa"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.717K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "07:46"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "07:48"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "07:51"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "07:53"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "07:57"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "07:59"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "08:02"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "08:05"
+	}]
+}, {
+	"id": "TWR.Rinkai.719K.Weekday",
+	"t": "TWR.Rinkai.719K",
+	"r": "TWR.Rinkai",
+	"n": "719K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.719K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "07:56"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "07:58"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "08:01"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "08:03"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "08:07"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "08:09"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "08:12"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "08:15"
 	}]
 }, {
 	"id": "TWR.Rinkai.730K.Weekday",
@@ -9411,28 +9534,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "08:51"
+		"d": "08:55"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:54"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "08:57"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
 		"d": "08:59"
 	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "09:01"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "09:04"
+	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:03"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:06"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
 		"d": "09:08"
 	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "09:10"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "09:12"
+	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "09:10"
+		"a": "09:15"
 	}]
 }, {
 	"id": "TWR.Rinkai.736S.Weekday",
@@ -9531,16 +9654,16 @@
 		"d": "07:52"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "07:55"
+		"d": "07:56"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
 		"d": "07:58"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "08:00"
+		"d": "08:01"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "08:04"
+		"d": "08:05"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
 		"d": "08:07"
@@ -9549,23 +9672,23 @@
 		"d": "08:09"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "08:11"
+		"a": "08:12"
 	}]
 }, {
-	"id": "TWR.Rinkai.739K.Weekday",
-	"t": "TWR.Rinkai.739K",
+	"id": "TWR.Rinkai.739F.Weekday",
+	"t": "TWR.Rinkai.739F",
 	"r": "TWR.Rinkai",
-	"n": "739K",
-	"y": "TWR.Local",
+	"n": "739F",
+	"y": "TWR.Rapid",
 	"d": "Outbound",
 	"os": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"ds": [
-		"JR-East.SaikyoKawagoe.MusashiUrawa"
+		"JR-East.SaikyoKawagoe.Kawagoe"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.739K.Weekday"
+		"JR-East.SaikyoKawagoe.739F.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
@@ -9610,13 +9733,13 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "08:41"
+		"d": "08:42"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
 		"d": "08:45"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "08:47"
+		"d": "08:48"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
 		"d": "08:50"
@@ -9625,136 +9748,13 @@
 		"d": "08:54"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:56"
+		"d": "08:57"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "08:58"
+		"d": "08:59"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
 		"a": "09:01"
-	}]
-}, {
-	"id": "TWR.Rinkai.745F.Weekday",
-	"t": "TWR.Rinkai.745F",
-	"r": "TWR.Rinkai",
-	"n": "745F",
-	"y": "TWR.Rapid",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.745F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "07:46"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "07:48"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "07:51"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "07:53"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "07:57"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "07:59"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:02"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "08:05"
-	}]
-}, {
-	"id": "TWR.Rinkai.751K.Weekday",
-	"t": "TWR.Rinkai.751K",
-	"r": "TWR.Rinkai",
-	"n": "751K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.751K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "07:56"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "07:58"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:01"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "08:03"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "08:07"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "08:09"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:12"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "08:15"
-	}]
-}, {
-	"id": "TWR.Rinkai.752K.Weekday",
-	"t": "TWR.Rinkai.752K",
-	"r": "TWR.Rinkai",
-	"n": "752K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.752K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "08:27"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:31"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "08:33"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "08:36"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "08:40"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:42"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "08:44"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "08:47"
 	}]
 }, {
 	"id": "TWR.Rinkai.755K.Weekday",
@@ -9767,20 +9767,20 @@
 		"TWR.Rinkai.ShinKiba"
 	],
 	"ds": [
-		"JR-East.SaikyoKawagoe.Akabane"
+		"JR-East.SaikyoKawagoe.Omiya"
 	],
 	"nt": [
 		"JR-East.SaikyoKawagoe.755K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "07:30"
+		"d": "07:29"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
 		"d": "07:32"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "07:35"
+		"d": "07:34"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
 		"d": "07:37"
@@ -9979,19 +9979,19 @@
 		"d": "07:15"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "07:17"
+		"d": "07:18"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
 		"d": "07:21"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "07:23"
+		"d": "07:24"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "07:26"
+		"d": "07:27"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "07:29"
+		"a": "07:30"
 	}]
 }, {
 	"id": "TWR.Rinkai.788T.Weekday",
@@ -10070,51 +10070,51 @@
 		"a": "07:43"
 	}]
 }, {
-	"id": "TWR.Rinkai.790K.Weekday",
-	"t": "TWR.Rinkai.790K",
+	"id": "TWR.Rinkai.790S.Weekday",
+	"t": "TWR.Rinkai.790S",
 	"r": "TWR.Rinkai",
-	"n": "790K",
+	"n": "790S",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.SaikyoKawagoe.Omiya"
+		"JR-East.SaikyoKawagoe.Kawagoe"
 	],
 	"ds": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.790K.Weekday"
+		"JR-East.SaikyoKawagoe.790S.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "08:03"
+		"d": "08:45"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:06"
+		"d": "08:49"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "08:09"
+		"d": "08:52"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "08:11"
+		"d": "08:54"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "08:15"
+		"d": "08:58"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:18"
+		"d": "09:01"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "08:20"
+		"d": "09:03"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "08:23"
+		"a": "09:05"
 	}]
 }, {
-	"id": "TWR.Rinkai.801K.Weekday",
-	"t": "TWR.Rinkai.801K",
+	"id": "TWR.Rinkai.803K.Weekday",
+	"t": "TWR.Rinkai.803K",
 	"r": "TWR.Rinkai",
-	"n": "801K",
+	"n": "803K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -10124,7 +10124,7 @@
 		"JR-East.SaikyoKawagoe.Akabane"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.801K.Weekday"
+		"JR-East.SaikyoKawagoe.803K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
@@ -10162,6 +10162,47 @@
 		"TWR.Rinkai.ShinKiba"
 	],
 	"ds": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.805K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "08:21"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "08:23"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "08:26"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "08:28"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "08:32"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "08:34"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "08:37"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "08:40"
+	}]
+}, {
+	"id": "TWR.Rinkai.807K.Weekday",
+	"t": "TWR.Rinkai.807K",
+	"r": "TWR.Rinkai",
+	"n": "807K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
 		"TWR.Rinkai.Osaki"
 	],
 	"tt": [{
@@ -10190,51 +10231,174 @@
 		"a": "09:16"
 	}]
 }, {
-	"id": "TWR.Rinkai.820K.Weekday",
-	"t": "TWR.Rinkai.820K",
+	"id": "TWR.Rinkai.809K.Weekday",
+	"t": "TWR.Rinkai.809K",
 	"r": "TWR.Rinkai",
-	"n": "820K",
+	"n": "809K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Ikebukuro"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.809K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "08:47"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "08:50"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "08:52"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "08:55"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "08:59"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "09:01"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "09:04"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "09:07"
+	}]
+}, {
+	"id": "TWR.Rinkai.813S.Weekday",
+	"t": "TWR.Rinkai.813S",
+	"r": "TWR.Rinkai",
+	"n": "813S",
+	"y": "TWR.CommuterRapid",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.813S.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "08:52"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "08:55"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "08:57"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "08:59"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "09:03"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "09:05"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "09:08"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "09:11"
+	}]
+}, {
+	"id": "TWR.Rinkai.816K.Weekday",
+	"t": "TWR.Rinkai.816K",
+	"r": "TWR.Rinkai",
+	"n": "816K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.SaikyoKawagoe.Omiya"
+		"JR-East.SaikyoKawagoe.MusashiUrawa"
 	],
 	"ds": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.820K.Weekday"
+		"JR-East.SaikyoKawagoe.816K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "09:24"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:27"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:30"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:33"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:36"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
 		"d": "09:39"
 	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "09:43"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "09:46"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "09:48"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "09:52"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "09:55"
+	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:41"
+		"d": "09:57"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "09:44"
+		"a": "09:59"
 	}]
 }, {
-	"id": "TWR.Rinkai.825K.Weekday",
-	"t": "TWR.Rinkai.825K",
+	"id": "TWR.Rinkai.820S.Weekday",
+	"t": "TWR.Rinkai.820S",
 	"r": "TWR.Rinkai",
-	"n": "825K",
+	"n": "820S",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.820S.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "09:32"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "09:35"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "09:38"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "09:40"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "09:44"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "09:47"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "09:49"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "09:51"
+	}]
+}, {
+	"id": "TWR.Rinkai.823K.Weekday",
+	"t": "TWR.Rinkai.823K",
+	"r": "TWR.Rinkai",
+	"n": "823K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -10244,32 +10408,32 @@
 		"JR-East.SaikyoKawagoe.Omiya"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.825K.Weekday"
+		"JR-East.SaikyoKawagoe.823K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "08:20"
+		"d": "08:08"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "08:23"
+		"d": "08:10"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:25"
+		"d": "08:13"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "08:28"
+		"d": "08:15"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "08:31"
+		"d": "08:19"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "08:34"
+		"d": "08:21"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:37"
+		"d": "08:24"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "08:40"
+		"a": "08:27"
 	}]
 }, {
 	"id": "TWR.Rinkai.827S.Weekday",
@@ -10313,88 +10477,6 @@
 		"a": "08:52"
 	}]
 }, {
-	"id": "TWR.Rinkai.829K.Weekday",
-	"t": "TWR.Rinkai.829K",
-	"r": "TWR.Rinkai",
-	"n": "829K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.829K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "08:47"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "08:50"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:52"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "08:55"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "08:59"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:01"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:04"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "09:07"
-	}]
-}, {
-	"id": "TWR.Rinkai.838K.Weekday",
-	"t": "TWR.Rinkai.838K",
-	"r": "TWR.Rinkai",
-	"n": "838K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.MusashiUrawa"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.838K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "09:39"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:43"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:46"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:48"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:52"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:54"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:57"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "09:59"
-	}]
-}, {
 	"id": "TWR.Rinkai.843K.Weekday",
 	"t": "TWR.Rinkai.843K",
 	"r": "TWR.Rinkai",
@@ -10405,76 +10487,73 @@
 		"TWR.Rinkai.ShinKiba"
 	],
 	"ds": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.843K.Weekday"
+		"TWR.Rinkai.Osaki"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "08:08"
+		"d": "08:26"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "08:10"
+		"d": "08:29"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:13"
+		"d": "08:31"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "08:15"
+		"d": "08:34"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "08:19"
+		"d": "08:38"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "08:21"
+		"d": "08:40"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:24"
+		"d": "08:43"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "08:27"
+		"a": "08:46"
 	}]
 }, {
-	"id": "TWR.Rinkai.846S.Weekday",
-	"t": "TWR.Rinkai.846S",
+	"id": "TWR.Rinkai.846K.Weekday",
+	"t": "TWR.Rinkai.846K",
 	"r": "TWR.Rinkai",
-	"n": "846S",
+	"n": "846K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
+		"JR-East.SaikyoKawagoe.Omiya"
 	],
 	"ds": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"pt": [
-		"JR-East.SaikyoKawagoe.846S.Weekday"
+		"JR-East.SaikyoKawagoe.846K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "09:32"
+		"d": "09:25"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:35"
+		"d": "09:29"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:38"
+		"d": "09:31"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:40"
+		"d": "09:34"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:44"
+		"d": "09:38"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:47"
+		"d": "09:40"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:49"
+		"d": "09:42"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "09:51"
+		"a": "09:45"
 	}]
 }, {
 	"id": "TWR.Rinkai.848K.Weekday",
@@ -10518,88 +10597,6 @@
 		"a": "09:19"
 	}]
 }, {
-	"id": "TWR.Rinkai.853S.Weekday",
-	"t": "TWR.Rinkai.853S",
-	"r": "TWR.Rinkai",
-	"n": "853S",
-	"y": "TWR.CommuterRapid",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.853S.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "08:52"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "08:55"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:57"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "08:59"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:03"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:05"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:08"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "09:11"
-	}]
-}, {
-	"id": "TWR.Rinkai.854K.Weekday",
-	"t": "TWR.Rinkai.854K",
-	"r": "TWR.Rinkai",
-	"n": "854K",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Akabane"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.854K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "08:55"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:59"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:02"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:04"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:08"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:11"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:13"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "09:15"
-	}]
-}, {
 	"id": "TWR.Rinkai.860S.Weekday",
 	"t": "TWR.Rinkai.860S",
 	"r": "TWR.Rinkai",
@@ -10639,6 +10636,47 @@
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
 		"a": "10:05"
+	}]
+}, {
+	"id": "TWR.Rinkai.862K.Weekday",
+	"t": "TWR.Rinkai.862K",
+	"r": "TWR.Rinkai",
+	"n": "862K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Akabane"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.862K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "08:51"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "08:54"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "08:57"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "08:59"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "09:03"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "09:06"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "09:08"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "09:10"
 	}]
 }, {
 	"id": "TWR.Rinkai.881K.Weekday",
@@ -10749,63 +10787,25 @@
 		"d": "08:19"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "08:21"
+		"d": "08:22"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "08:25"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "08:27"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:30"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "08:33"
-	}]
-}, {
-	"id": "TWR.Rinkai.891T.Weekday",
-	"t": "TWR.Rinkai.891T",
-	"r": "TWR.Rinkai",
-	"n": "891T",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"TWR.Rinkai.Osaki"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
 		"d": "08:26"
 	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "08:29"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "08:31"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "08:34"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "08:38"
-	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "08:40"
+		"d": "08:28"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "08:43"
+		"d": "08:31"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "08:46"
+		"a": "08:34"
 	}]
 }, {
-	"id": "TWR.Rinkai.904K.Weekday",
-	"t": "TWR.Rinkai.904K",
+	"id": "TWR.Rinkai.906K.Weekday",
+	"t": "TWR.Rinkai.906K",
 	"r": "TWR.Rinkai",
-	"n": "904K",
+	"n": "906K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -10831,7 +10831,7 @@
 		"d": "09:33"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:35"
+		"d": "09:36"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
 		"d": "09:38"
@@ -10840,10 +10840,10 @@
 		"a": "09:40"
 	}]
 }, {
-	"id": "TWR.Rinkai.905K.Weekday",
-	"t": "TWR.Rinkai.905K",
+	"id": "TWR.Rinkai.907K.Weekday",
+	"t": "TWR.Rinkai.907K",
 	"r": "TWR.Rinkai",
-	"n": "905K",
+	"n": "907K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -10866,92 +10866,10 @@
 		"a": "09:53"
 	}]
 }, {
-	"id": "TWR.Rinkai.907K.Weekday",
-	"t": "TWR.Rinkai.907K",
+	"id": "TWR.Rinkai.921F.Weekday",
+	"t": "TWR.Rinkai.921F",
 	"r": "TWR.Rinkai",
-	"n": "907K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Ikebukuro"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.907K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "09:10"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:12"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:15"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:17"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:21"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:23"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:26"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "09:29"
-	}]
-}, {
-	"id": "TWR.Rinkai.921K.Weekday",
-	"t": "TWR.Rinkai.921K",
-	"r": "TWR.Rinkai",
-	"n": "921K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.921K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "09:52"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:54"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:57"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:59"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "10:03"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "10:05"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "10:08"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "10:11"
-	}]
-}, {
-	"id": "TWR.Rinkai.931F.Weekday",
-	"t": "TWR.Rinkai.931F",
-	"r": "TWR.Rinkai",
-	"n": "931F",
+	"n": "921F",
 	"y": "TWR.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -10961,212 +10879,7 @@
 		"JR-East.SaikyoKawagoe.Kawagoe"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.931F.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "09:00"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:03"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:05"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:08"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:12"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:14"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:17"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "09:20"
-	}]
-}, {
-	"id": "TWR.Rinkai.933K.Weekday",
-	"t": "TWR.Rinkai.933K",
-	"r": "TWR.Rinkai",
-	"n": "933K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.933K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "09:16"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:18"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:21"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:23"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:27"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:29"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:32"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "09:35"
-	}]
-}, {
-	"id": "TWR.Rinkai.937K.Weekday",
-	"t": "TWR.Rinkai.937K",
-	"r": "TWR.Rinkai",
-	"n": "937K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.MusashiUrawa"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.937K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "09:34"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:36"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:39"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:41"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:45"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:47"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:50"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "09:53"
-	}]
-}, {
-	"id": "TWR.Rinkai.941K.Weekday",
-	"t": "TWR.Rinkai.941K",
-	"r": "TWR.Rinkai",
-	"n": "941K",
-	"y": "TWR.Local",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Omiya"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.941K.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.ShinKiba",
-		"d": "09:04"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:07"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:09"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:12"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:16"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:18"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:21"
-	}, {
-		"s": "TWR.Rinkai.Osaki",
-		"a": "09:24"
-	}]
-}, {
-	"id": "TWR.Rinkai.944S.Weekday",
-	"t": "TWR.Rinkai.944S",
-	"r": "TWR.Rinkai",
-	"n": "944S",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"pt": [
-		"JR-East.SaikyoKawagoe.944S.Weekday"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "10:37"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "10:41"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "10:43"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "10:46"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "10:49"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "10:52"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "10:54"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "10:57"
-	}]
-}, {
-	"id": "TWR.Rinkai.947F.Weekday",
-	"t": "TWR.Rinkai.947F",
-	"r": "TWR.Rinkai",
-	"n": "947F",
-	"y": "TWR.Rapid",
-	"d": "Outbound",
-	"os": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
-	],
-	"nt": [
-		"JR-East.SaikyoKawagoe.947F.Weekday"
+		"JR-East.SaikyoKawagoe.921F.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
@@ -11194,51 +10907,51 @@
 		"a": "10:15"
 	}]
 }, {
-	"id": "TWR.Rinkai.949F.Weekday",
-	"t": "TWR.Rinkai.949F",
+	"id": "TWR.Rinkai.931K.Weekday",
+	"t": "TWR.Rinkai.931K",
 	"r": "TWR.Rinkai",
-	"n": "949F",
-	"y": "TWR.Rapid",
+	"n": "931K",
+	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
 		"TWR.Rinkai.ShinKiba"
 	],
 	"ds": [
-		"JR-East.SaikyoKawagoe.Kawagoe"
+		"JR-East.SaikyoKawagoe.Ikebukuro"
 	],
 	"nt": [
-		"JR-East.SaikyoKawagoe.949F.Weekday"
+		"JR-East.SaikyoKawagoe.931K.Weekday"
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "09:25"
+		"d": "09:01"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:28"
+		"d": "09:03"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:30"
+		"d": "09:06"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:32"
+		"d": "09:08"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:36"
+		"d": "09:12"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:38"
+		"d": "09:14"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:41"
+		"d": "09:17"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "09:44"
+		"a": "09:20"
 	}]
 }, {
-	"id": "TWR.Rinkai.954K.Weekday",
-	"t": "TWR.Rinkai.954K",
+	"id": "TWR.Rinkai.932K.Weekday",
+	"t": "TWR.Rinkai.932K",
 	"r": "TWR.Rinkai",
-	"n": "954K",
+	"n": "932K",
 	"y": "TWR.Local",
 	"d": "Inbound",
 	"os": [
@@ -11273,10 +10986,10 @@
 		"a": "10:13"
 	}]
 }, {
-	"id": "TWR.Rinkai.955K.Weekday",
-	"t": "TWR.Rinkai.955K",
+	"id": "TWR.Rinkai.933K.Weekday",
+	"t": "TWR.Rinkai.933K",
 	"r": "TWR.Rinkai",
-	"n": "955K",
+	"n": "933K",
 	"y": "TWR.Local",
 	"d": "Outbound",
 	"os": [
@@ -11287,13 +11000,13 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "09:19"
+		"d": "09:20"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
 		"d": "09:22"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:24"
+		"d": "09:25"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
 		"d": "09:27"
@@ -11309,6 +11022,331 @@
 	}, {
 		"s": "TWR.Rinkai.Osaki",
 		"a": "09:39"
+	}]
+}, {
+	"id": "TWR.Rinkai.937K.Weekday",
+	"t": "TWR.Rinkai.937K",
+	"r": "TWR.Rinkai",
+	"n": "937K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.MusashiUrawa"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.937K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "09:34"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "09:37"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "09:39"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "09:41"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "09:45"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "09:47"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "09:50"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "09:53"
+	}]
+}, {
+	"id": "TWR.Rinkai.938S.Weekday",
+	"t": "TWR.Rinkai.938S",
+	"r": "TWR.Rinkai",
+	"n": "938S",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"pt": [
+		"JR-East.SaikyoKawagoe.938S.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "10:37"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "10:41"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "10:43"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "10:46"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "10:49"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "10:52"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "10:54"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "10:57"
+	}]
+}, {
+	"id": "TWR.Rinkai.941F.Weekday",
+	"t": "TWR.Rinkai.941F",
+	"r": "TWR.Rinkai",
+	"n": "941F",
+	"y": "TWR.Rapid",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.941F.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "09:07"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "09:09"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "09:12"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "09:15"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "09:18"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "09:21"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "09:24"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "09:27"
+	}]
+}, {
+	"id": "TWR.Rinkai.942K.Weekday",
+	"t": "TWR.Rinkai.942K",
+	"r": "TWR.Rinkai",
+	"n": "942K",
+	"y": "TWR.Local",
+	"d": "Inbound",
+	"os": [
+		"TWR.Rinkai.Osaki"
+	],
+	"ds": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.Osaki",
+		"d": "09:03"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "09:07"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "09:10"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "09:12"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "09:16"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "09:18"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "09:21"
+	}, {
+		"s": "TWR.Rinkai.ShinKiba",
+		"a": "09:23"
+	}]
+}, {
+	"id": "TWR.Rinkai.943K.Weekday",
+	"t": "TWR.Rinkai.943K",
+	"r": "TWR.Rinkai",
+	"n": "943K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.943K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "09:30"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "09:32"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "09:35"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "09:37"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "09:41"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "09:43"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "09:46"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "09:49"
+	}]
+}, {
+	"id": "TWR.Rinkai.947K.Weekday",
+	"t": "TWR.Rinkai.947K",
+	"r": "TWR.Rinkai",
+	"n": "947K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.947K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "09:52"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "09:55"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "09:57"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "09:59"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "10:03"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "10:05"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "10:08"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "10:11"
+	}]
+}, {
+	"id": "TWR.Rinkai.949F.Weekday",
+	"t": "TWR.Rinkai.949F",
+	"r": "TWR.Rinkai",
+	"n": "949F",
+	"y": "TWR.Rapid",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Kawagoe"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.949F.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "09:25"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "09:27"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "09:30"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "09:32"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "09:36"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "09:38"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "09:41"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "09:44"
+	}]
+}, {
+	"id": "TWR.Rinkai.963K.Weekday",
+	"t": "TWR.Rinkai.963K",
+	"r": "TWR.Rinkai",
+	"n": "963K",
+	"y": "TWR.Local",
+	"d": "Outbound",
+	"os": [
+		"TWR.Rinkai.ShinKiba"
+	],
+	"ds": [
+		"JR-East.SaikyoKawagoe.Omiya"
+	],
+	"nt": [
+		"JR-East.SaikyoKawagoe.963K.Weekday"
+	],
+	"tt": [{
+		"s": "TWR.Rinkai.ShinKiba",
+		"d": "09:16"
+	}, {
+		"s": "TWR.Rinkai.Shinonome",
+		"d": "09:18"
+	}, {
+		"s": "TWR.Rinkai.KokusaiTenjijo",
+		"d": "09:21"
+	}, {
+		"s": "TWR.Rinkai.TokyoTeleport",
+		"d": "09:23"
+	}, {
+		"s": "TWR.Rinkai.TennozuIsle",
+		"d": "09:27"
+	}, {
+		"s": "TWR.Rinkai.ShinagawaSeaside",
+		"d": "09:29"
+	}, {
+		"s": "TWR.Rinkai.Oimachi",
+		"d": "09:32"
+	}, {
+		"s": "TWR.Rinkai.Osaki",
+		"a": "09:35"
 	}]
 }, {
 	"id": "TWR.Rinkai.964K.Weekday",
@@ -11410,28 +11448,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "09:41"
+		"d": "09:42"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:43"
+		"d": "09:45"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:46"
+		"d": "09:47"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:48"
+		"d": "09:49"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:52"
+		"d": "09:53"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:54"
+		"d": "09:55"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:57"
+		"d": "09:58"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "10:00"
+		"a": "10:01"
 	}]
 }, {
 	"id": "TWR.Rinkai.984S.Weekday",
@@ -11466,10 +11504,10 @@
 		"d": "10:30"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "10:32"
+		"d": "10:33"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "10:34"
+		"d": "10:35"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
 		"a": "10:37"
@@ -11516,44 +11554,6 @@
 		"a": "10:26"
 	}]
 }, {
-	"id": "TWR.Rinkai.990T.Weekday",
-	"t": "TWR.Rinkai.990T",
-	"r": "TWR.Rinkai",
-	"n": "990T",
-	"y": "TWR.Local",
-	"d": "Inbound",
-	"os": [
-		"TWR.Rinkai.Osaki"
-	],
-	"ds": [
-		"TWR.Rinkai.ShinKiba"
-	],
-	"tt": [{
-		"s": "TWR.Rinkai.Osaki",
-		"d": "09:03"
-	}, {
-		"s": "TWR.Rinkai.Oimachi",
-		"d": "09:07"
-	}, {
-		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "09:10"
-	}, {
-		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "09:12"
-	}, {
-		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "09:16"
-	}, {
-		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:18"
-	}, {
-		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:21"
-	}, {
-		"s": "TWR.Rinkai.ShinKiba",
-		"a": "09:23"
-	}]
-}, {
 	"id": "TWR.Rinkai.991T.Weekday",
 	"t": "TWR.Rinkai.991T",
 	"r": "TWR.Rinkai",
@@ -11568,16 +11568,16 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "09:28"
+		"d": "09:11"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "09:31"
+		"d": "09:14"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "09:33"
+		"d": "09:16"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"a": "09:35"
+		"a": "09:18"
 	}]
 }, {
 	"id": "TWR.Rinkai.1000F.SaturdayHoliday",
@@ -12214,28 +12214,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "13:04"
+		"d": "13:03"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "13:08"
+		"d": "13:06"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "13:10"
+		"d": "13:09"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "13:13"
+		"d": "13:11"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "13:16"
+		"d": "13:15"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "13:19"
+		"d": "13:18"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "13:21"
+		"d": "13:20"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "13:24"
+		"a": "13:22"
 	}]
 }, {
 	"id": "TWR.Rinkai.1136F.SaturdayHoliday",
@@ -12992,19 +12992,19 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "13:37"
+		"d": "13:38"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
 		"d": "13:41"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "13:43"
+		"d": "13:44"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
 		"d": "13:46"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "13:49"
+		"d": "13:50"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
 		"d": "13:52"
@@ -13036,16 +13036,16 @@
 		"d": "13:17"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "13:21"
+		"d": "13:20"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
 		"d": "13:23"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "13:26"
+		"d": "13:25"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "13:30"
+		"d": "13:29"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
 		"d": "13:32"
@@ -13054,7 +13054,7 @@
 		"d": "13:34"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "13:37"
+		"a": "13:36"
 	}]
 }, {
 	"id": "TWR.Rinkai.1283F.SaturdayHoliday",
@@ -13349,28 +13349,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "13:30"
+		"d": "13:29"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "13:33"
+		"d": "13:32"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "13:35"
+		"d": "13:34"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "13:38"
+		"d": "13:37"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "13:42"
+		"d": "13:41"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "13:44"
+		"d": "13:43"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "13:47"
+		"d": "13:46"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "13:50"
+		"a": "13:49"
 	}]
 }, {
 	"id": "TWR.Rinkai.1336K.SaturdayHoliday",
@@ -13586,19 +13586,19 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "13:28"
+		"d": "13:27"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "13:31"
+		"d": "13:30"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "13:34"
+		"d": "13:33"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "13:36"
+		"d": "13:35"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "13:40"
+		"d": "13:39"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
 		"d": "13:42"
@@ -13607,7 +13607,7 @@
 		"d": "13:44"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "13:47"
+		"a": "13:46"
 	}]
 }, {
 	"id": "TWR.Rinkai.1381F.SaturdayHoliday",
@@ -13627,28 +13627,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "13:42"
+		"d": "13:39"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "13:44"
+		"d": "13:42"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "13:47"
+		"d": "13:44"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "13:49"
+		"d": "13:48"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "13:53"
+		"d": "13:52"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "13:55"
+		"d": "13:54"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "13:58"
+		"d": "13:57"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "14:01"
+		"a": "14:00"
 	}]
 }, {
 	"id": "TWR.Rinkai.1388T.SaturdayHoliday",
@@ -13665,28 +13665,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "13:11"
+		"d": "13:10"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "13:14"
+		"d": "13:13"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "13:17"
+		"d": "13:16"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "13:19"
+		"d": "13:18"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "13:23"
+		"d": "13:22"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "13:25"
+		"d": "13:24"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "13:27"
+		"d": "13:26"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "13:30"
+		"a": "13:29"
 	}]
 }, {
 	"id": "TWR.Rinkai.1389T.SaturdayHoliday",
@@ -13703,28 +13703,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "13:51"
+		"d": "13:48"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "13:54"
+		"d": "13:51"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "13:56"
+		"d": "13:53"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "13:59"
+		"d": "13:55"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "14:02"
+		"d": "13:59"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "14:05"
+		"d": "14:01"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "14:08"
+		"d": "14:04"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "14:11"
+		"a": "14:07"
 	}]
 }, {
 	"id": "TWR.Rinkai.1400F.SaturdayHoliday",
@@ -13981,13 +13981,13 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "14:01"
+		"d": "14:00"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "14:04"
+		"d": "14:03"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "14:06"
+		"d": "14:05"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
 		"d": "14:08"
@@ -18303,7 +18303,7 @@
 		"d": "21:11"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "21:14"
+		"d": "21:13"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
 		"d": "21:16"
@@ -19156,25 +19156,25 @@
 		"d": "06:03"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "06:06"
+		"d": "06:05"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
 		"d": "06:08"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "06:11"
+		"d": "06:10"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "06:15"
+		"d": "06:14"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "06:17"
+		"d": "06:16"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "06:20"
+		"d": "06:19"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "06:23"
+		"a": "06:22"
 	}]
 }, {
 	"id": "TWR.Rinkai.506F.SaturdayHoliday",
@@ -19194,28 +19194,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "06:59"
+		"d": "06:58"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "07:02"
+		"d": "07:01"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "07:05"
+		"d": "07:04"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "07:07"
+		"d": "07:06"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "07:11"
+		"d": "07:10"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "07:14"
+		"d": "07:12"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "07:16"
+		"d": "07:14"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "07:18"
+		"a": "07:17"
 	}]
 }, {
 	"id": "TWR.Rinkai.580T.SaturdayHoliday",
@@ -19474,25 +19474,25 @@
 		"d": "07:06"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "07:10"
+		"d": "07:09"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
 		"d": "07:12"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "07:15"
+		"d": "07:14"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
 		"d": "07:18"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "07:21"
+		"d": "07:20"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "07:23"
+		"d": "07:22"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "07:26"
+		"a": "07:25"
 	}]
 }, {
 	"id": "TWR.Rinkai.612F.SaturdayHoliday",
@@ -19550,28 +19550,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "06:28"
+		"d": "06:27"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "06:31"
+		"d": "06:30"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "06:34"
+		"d": "06:33"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "06:36"
+		"d": "06:35"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "06:40"
+		"d": "06:39"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "06:43"
+		"d": "06:42"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "06:45"
+		"d": "06:44"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "06:47"
+		"a": "06:46"
 	}]
 }, {
 	"id": "TWR.Rinkai.636T.SaturdayHoliday",
@@ -19588,19 +19588,19 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "06:48"
+		"d": "06:47"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
 		"d": "06:51"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "06:54"
+		"d": "06:53"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
 		"d": "06:56"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "07:00"
+		"d": "06:59"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
 		"d": "07:02"
@@ -19638,19 +19638,19 @@
 		"d": "06:56"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "06:58"
+		"d": "06:59"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
 		"d": "07:02"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "07:04"
+		"d": "07:05"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "07:07"
+		"d": "07:08"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "07:10"
+		"a": "07:11"
 	}]
 }, {
 	"id": "TWR.Rinkai.638K.SaturdayHoliday",
@@ -19667,16 +19667,16 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "06:23"
+		"d": "06:22"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "06:26"
+		"d": "06:25"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "06:28"
+		"d": "06:27"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "06:30"
+		"a": "06:29"
 	}]
 }, {
 	"id": "TWR.Rinkai.639K.SaturdayHoliday",
@@ -19696,19 +19696,19 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "06:33"
+		"d": "06:32"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "06:36"
+		"d": "06:35"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "06:38"
+		"d": "06:37"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
 		"d": "06:40"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "06:44"
+		"d": "06:43"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
 		"d": "06:46"
@@ -19857,28 +19857,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "06:36"
+		"d": "06:35"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "06:40"
+		"d": "06:38"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "06:42"
+		"d": "06:41"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "06:45"
+		"d": "06:43"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "06:49"
+		"d": "06:47"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "06:51"
+		"d": "06:50"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "06:53"
+		"d": "06:52"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "06:56"
+		"a": "06:54"
 	}]
 }, {
 	"id": "TWR.Rinkai.681F.SaturdayHoliday",
@@ -19939,25 +19939,25 @@
 		"d": "06:08"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "06:11"
+		"d": "06:10"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
 		"d": "06:13"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "06:16"
+		"d": "06:15"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "06:20"
+		"d": "06:19"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "06:22"
+		"d": "06:21"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "06:25"
+		"d": "06:24"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "06:28"
+		"a": "06:27"
 	}]
 }, {
 	"id": "TWR.Rinkai.682T.SaturdayHoliday",
@@ -19977,13 +19977,13 @@
 		"d": "06:04"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "06:08"
+		"d": "06:07"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
 		"d": "06:10"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "06:13"
+		"d": "06:12"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
 		"d": "06:16"
@@ -19995,7 +19995,7 @@
 		"d": "06:21"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "06:24"
+		"a": "06:23"
 	}]
 }, {
 	"id": "TWR.Rinkai.683K.SaturdayHoliday",
@@ -20053,28 +20053,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.Osaki",
-		"d": "06:17"
+		"d": "06:16"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "06:20"
+		"d": "06:19"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "06:23"
+		"d": "06:22"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "06:25"
+		"d": "06:24"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "06:29"
+		"d": "06:28"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "06:32"
+		"d": "06:31"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "06:34"
+		"d": "06:33"
 	}, {
 		"s": "TWR.Rinkai.ShinKiba",
-		"a": "06:36"
+		"a": "06:35"
 	}]
 }, {
 	"id": "TWR.Rinkai.685T.SaturdayHoliday",
@@ -20091,28 +20091,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "06:39"
+		"d": "06:38"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "06:42"
+		"d": "06:40"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "06:44"
+		"d": "06:43"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "06:46"
+		"d": "06:45"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "06:50"
+		"d": "06:49"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "06:52"
+		"d": "06:51"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "06:55"
+		"d": "06:54"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "06:58"
+		"a": "06:57"
 	}]
 }, {
 	"id": "TWR.Rinkai.686T.SaturdayHoliday",
@@ -20155,19 +20155,19 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "06:21"
+		"d": "06:20"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
 		"d": "06:23"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "06:26"
+		"d": "06:25"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
 		"d": "06:28"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "06:32"
+		"d": "06:31"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
 		"d": "06:34"
@@ -20298,28 +20298,28 @@
 	],
 	"tt": [{
 		"s": "TWR.Rinkai.ShinKiba",
-		"d": "07:23"
+		"d": "07:22"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
 		"d": "07:25"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
-		"d": "07:28"
+		"d": "07:27"
 	}, {
 		"s": "TWR.Rinkai.TokyoTeleport",
-		"d": "07:30"
+		"d": "07:29"
 	}, {
 		"s": "TWR.Rinkai.TennozuIsle",
-		"d": "07:34"
+		"d": "07:33"
 	}, {
 		"s": "TWR.Rinkai.ShinagawaSeaside",
-		"d": "07:36"
+		"d": "07:35"
 	}, {
 		"s": "TWR.Rinkai.Oimachi",
-		"d": "07:39"
+		"d": "07:38"
 	}, {
 		"s": "TWR.Rinkai.Osaki",
-		"a": "07:42"
+		"a": "07:41"
 	}]
 }, {
 	"id": "TWR.Rinkai.711K.SaturdayHoliday",
@@ -20342,7 +20342,7 @@
 		"d": "07:30"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "07:32"
+		"d": "07:33"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
 		"d": "07:35"
@@ -21147,7 +21147,7 @@
 		"d": "08:28"
 	}, {
 		"s": "TWR.Rinkai.Shinonome",
-		"d": "08:30"
+		"d": "08:31"
 	}, {
 		"s": "TWR.Rinkai.KokusaiTenjijo",
 		"d": "08:33"

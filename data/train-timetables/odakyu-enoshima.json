@@ -1122,7 +1122,7 @@
 		"d": "07:08"
 	}, {
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"a": "07:15"
+		"a": "07:16"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5125.Weekday",
@@ -1557,39 +1557,74 @@
 	}, {
 		"s": "Odakyu.Enoshima.Yamato",
 		"a": "07:44",
-		"d": "07:47"
+		"d": "07:45"
 	}, {
 		"s": "Odakyu.Enoshima.Sakuragaoka",
-		"a": "07:50",
-		"d": "07:50"
+		"a": "07:47",
+		"d": "07:47"
 	}, {
 		"s": "Odakyu.Enoshima.KozaShibuya",
-		"a": "07:52",
-		"d": "07:52"
+		"a": "07:49",
+		"d": "07:50"
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
-		"a": "07:54",
+		"a": "07:52",
 		"d": "07:55"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
-		"a": "07:57",
-		"d": "07:58"
+		"a": "07:58",
+		"d": "07:59"
 	}, {
 		"s": "Odakyu.Enoshima.MutsuaiNichidaiMae",
 		"a": "08:00",
-		"d": "08:00"
+		"d": "08:01"
 	}, {
 		"s": "Odakyu.Enoshima.Zengyo",
 		"a": "08:03",
-		"d": "08:03"
+		"d": "08:04"
 	}, {
 		"s": "Odakyu.Enoshima.FujisawaHommachi",
-		"a": "08:05",
+		"a": "08:06",
 		"d": "08:06"
 	}, {
 		"s": "Odakyu.Enoshima.Fujisawa",
 		"a": "08:09"
 	}]
+}, {
+	"id": "Odakyu.Enoshima.0501.Weekday",
+	"t": "Odakyu.Enoshima.0501",
+	"r": "Odakyu.Enoshima",
+	"n": "0501",
+	"y": "Odakyu.LimitedExpress",
+	"d": "Outbound",
+	"os": [
+		"Odakyu.Odawara.Shinjuku"
+	],
+	"ds": [
+		"Odakyu.Enoshima.Fujisawa"
+	],
+	"pt": [
+		"Odakyu.Odawara.0501.Weekday"
+	],
+	"tt": [{
+		"s": "Odakyu.Enoshima.SagamiOno",
+		"d": "07:40"
+	}, {
+		"s": "Odakyu.Enoshima.Yamato",
+		"a": "07:47",
+		"d": "07:49"
+	}, {
+		"s": "Odakyu.Enoshima.Fujisawa",
+		"a": "08:03"
+	}],
+	"nm": [{
+		"ja": "えのしま 1号",
+		"en": "Enoshima 1",
+		"ko": "에노시마 1",
+		"zh-Hans": "江之岛 1",
+		"zh-Hant": "江之島 1"
+	}],
+	"v": "60000"
 }, {
 	"id": "Odakyu.Enoshima.5135.Weekday",
 	"t": "Odakyu.Enoshima.5135",
@@ -1609,7 +1644,7 @@
 	}, {
 		"s": "Odakyu.Enoshima.HigashiRinkan",
 		"a": "07:44",
-		"d": "07:44"
+		"d": "07:45"
 	}, {
 		"s": "Odakyu.Enoshima.ChuoRinkan",
 		"a": "07:46",
@@ -1636,7 +1671,7 @@
 		"d": "08:02"
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
-		"a": "08:04",
+		"a": "08:05",
 		"d": "08:05"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
@@ -1644,11 +1679,11 @@
 		"d": "08:08"
 	}, {
 		"s": "Odakyu.Enoshima.MutsuaiNichidaiMae",
-		"a": "08:09",
+		"a": "08:10",
 		"d": "08:10"
 	}, {
 		"s": "Odakyu.Enoshima.Zengyo",
-		"a": "08:12",
+		"a": "08:13",
 		"d": "08:13"
 	}, {
 		"s": "Odakyu.Enoshima.FujisawaHommachi",
@@ -1683,7 +1718,7 @@
 		"d": "07:50"
 	}, {
 		"s": "Odakyu.Enoshima.MinamiRinkan",
-		"a": "07:51",
+		"a": "07:52",
 		"d": "07:52"
 	}, {
 		"s": "Odakyu.Enoshima.Yamato",
@@ -1692,14 +1727,14 @@
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
 		"a": "08:01",
-		"d": "08:02"
+		"d": "08:03"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
-		"a": "08:03",
-		"d": "08:04"
+		"a": "08:05",
+		"d": "08:05"
 	}, {
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"a": "08:12"
+		"a": "08:13"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5137.Weekday",
@@ -6412,10 +6447,10 @@
 		"a": "17:23"
 	}]
 }, {
-	"id": "Odakyu.Enoshima.0501.Weekday",
-	"t": "Odakyu.Enoshima.0501",
+	"id": "Odakyu.Enoshima.0503.Weekday",
+	"t": "Odakyu.Enoshima.0503",
 	"r": "Odakyu.Enoshima",
-	"n": "0501",
+	"n": "0503",
 	"y": "Odakyu.LimitedExpress",
 	"d": "Outbound",
 	"os": [
@@ -6425,7 +6460,7 @@
 		"Odakyu.Enoshima.KataseEnoshima"
 	],
 	"pt": [
-		"Odakyu.Odawara.0501.Weekday"
+		"Odakyu.Odawara.0503.Weekday"
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.SagamiOno",
@@ -6443,11 +6478,11 @@
 		"a": "17:27"
 	}],
 	"nm": [{
-		"ja": "えのしま 1号",
-		"en": "Enoshima 1",
-		"ko": "에노시마 1",
-		"zh-Hans": "江之岛 1",
-		"zh-Hant": "江之島 1"
+		"ja": "えのしま 3号",
+		"en": "Enoshima 3",
+		"ko": "에노시마 3",
+		"zh-Hans": "江之岛 3",
+		"zh-Hant": "江之島 3"
 	}],
 	"v": "30000"
 }, {
@@ -8018,23 +8053,23 @@
 	}, {
 		"s": "Odakyu.Enoshima.HigashiRinkan",
 		"a": "19:54",
-		"d": "19:54"
+		"d": "19:55"
 	}, {
 		"s": "Odakyu.Enoshima.ChuoRinkan",
 		"a": "19:56",
-		"d": "19:56"
+		"d": "19:57"
 	}, {
 		"s": "Odakyu.Enoshima.MinamiRinkan",
 		"a": "19:58",
-		"d": "19:58"
-	}, {
-		"s": "Odakyu.Enoshima.Tsuruma",
-		"a": "19:59",
 		"d": "19:59"
 	}, {
+		"s": "Odakyu.Enoshima.Tsuruma",
+		"a": "20:00",
+		"d": "20:00"
+	}, {
 		"s": "Odakyu.Enoshima.Yamato",
-		"a": "20:02",
-		"d": "20:06"
+		"a": "20:03",
+		"d": "20:07"
 	}, {
 		"s": "Odakyu.Enoshima.Sakuragaoka",
 		"a": "20:09",
@@ -8042,19 +8077,19 @@
 	}, {
 		"s": "Odakyu.Enoshima.KozaShibuya",
 		"a": "20:11",
-		"d": "20:11"
+		"d": "20:12"
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
-		"a": "20:13",
+		"a": "20:14",
 		"d": "20:14"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
 		"a": "20:16",
-		"d": "20:16"
+		"d": "20:17"
 	}, {
 		"s": "Odakyu.Enoshima.MutsuaiNichidaiMae",
 		"a": "20:18",
-		"d": "20:18"
+		"d": "20:19"
 	}, {
 		"s": "Odakyu.Enoshima.Zengyo",
 		"a": "20:21",
@@ -8959,38 +8994,38 @@
 	}, {
 		"s": "Odakyu.Enoshima.Yamato",
 		"a": "21:43",
-		"d": "21:46"
+		"d": "21:45"
 	}, {
 		"s": "Odakyu.Enoshima.Sakuragaoka",
-		"a": "21:48",
+		"a": "21:47",
 		"d": "21:48"
 	}, {
 		"s": "Odakyu.Enoshima.KozaShibuya",
 		"a": "21:50",
-		"d": "21:51"
+		"d": "21:50"
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
-		"a": "21:53",
+		"a": "21:52",
 		"d": "21:53"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
 		"a": "21:55",
-		"d": "21:56"
+		"d": "21:55"
 	}, {
 		"s": "Odakyu.Enoshima.MutsuaiNichidaiMae",
 		"a": "21:57",
-		"d": "21:58"
+		"d": "21:57"
 	}, {
 		"s": "Odakyu.Enoshima.Zengyo",
-		"a": "22:00",
+		"a": "21:59",
 		"d": "22:00"
 	}, {
 		"s": "Odakyu.Enoshima.FujisawaHommachi",
 		"a": "22:02",
-		"d": "22:03"
+		"d": "22:02"
 	}, {
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"a": "22:06"
+		"a": "22:05"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5303.Weekday",
@@ -9390,58 +9425,58 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.SagamiOno",
-		"d": "22:22"
+		"d": "22:23"
 	}, {
 		"s": "Odakyu.Enoshima.HigashiRinkan",
-		"a": "22:24",
-		"d": "22:24"
+		"a": "22:25",
+		"d": "22:25"
 	}, {
 		"s": "Odakyu.Enoshima.ChuoRinkan",
-		"a": "22:26",
-		"d": "22:26"
+		"a": "22:27",
+		"d": "22:27"
 	}, {
 		"s": "Odakyu.Enoshima.MinamiRinkan",
-		"a": "22:28",
-		"d": "22:28"
+		"a": "22:29",
+		"d": "22:29"
 	}, {
 		"s": "Odakyu.Enoshima.Tsuruma",
-		"a": "22:29",
-		"d": "22:30"
+		"a": "22:30",
+		"d": "22:31"
 	}, {
 		"s": "Odakyu.Enoshima.Yamato",
-		"a": "22:32",
+		"a": "22:33",
 		"d": "22:37"
 	}, {
 		"s": "Odakyu.Enoshima.Sakuragaoka",
-		"a": "22:39",
-		"d": "22:39"
+		"a": "22:40",
+		"d": "22:40"
 	}, {
 		"s": "Odakyu.Enoshima.KozaShibuya",
-		"a": "22:41",
+		"a": "22:42",
 		"d": "22:42"
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
 		"a": "22:44",
-		"d": "22:44"
+		"d": "22:45"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
-		"a": "22:46",
-		"d": "22:46"
+		"a": "22:47",
+		"d": "22:47"
 	}, {
 		"s": "Odakyu.Enoshima.MutsuaiNichidaiMae",
-		"a": "22:48",
-		"d": "22:48"
+		"a": "22:49",
+		"d": "22:49"
 	}, {
 		"s": "Odakyu.Enoshima.Zengyo",
-		"a": "22:51",
-		"d": "22:51"
+		"a": "22:52",
+		"d": "22:52"
 	}, {
 		"s": "Odakyu.Enoshima.FujisawaHommachi",
-		"a": "22:53",
-		"d": "22:53"
+		"a": "22:54",
+		"d": "22:54"
 	}, {
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"a": "22:56"
+		"a": "22:57"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.3583.Weekday",
@@ -9461,22 +9496,22 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.SagamiOno",
-		"d": "22:26"
+		"d": "22:27"
 	}, {
 		"s": "Odakyu.Enoshima.ChuoRinkan",
-		"a": "22:29",
-		"d": "22:30"
+		"a": "22:30",
+		"d": "22:31"
 	}, {
 		"s": "Odakyu.Enoshima.Yamato",
-		"a": "22:34",
-		"d": "22:34"
+		"a": "22:35",
+		"d": "22:35"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
-		"a": "22:40",
-		"d": "22:41"
+		"a": "22:41",
+		"d": "22:42"
 	}, {
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"a": "22:48"
+		"a": "22:49"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5313.Weekday",
@@ -9585,34 +9620,34 @@
 	}, {
 		"s": "Odakyu.Enoshima.Sakuragaoka",
 		"a": "23:07",
-		"d": "23:07"
+		"d": "23:08"
 	}, {
 		"s": "Odakyu.Enoshima.KozaShibuya",
-		"a": "23:09",
+		"a": "23:10",
 		"d": "23:10"
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
 		"a": "23:12",
-		"d": "23:12"
+		"d": "23:13"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
-		"a": "23:14",
+		"a": "23:15",
 		"d": "23:15"
 	}, {
 		"s": "Odakyu.Enoshima.MutsuaiNichidaiMae",
-		"a": "23:16",
+		"a": "23:17",
 		"d": "23:17"
 	}, {
 		"s": "Odakyu.Enoshima.Zengyo",
 		"a": "23:19",
-		"d": "23:19"
+		"d": "23:20"
 	}, {
 		"s": "Odakyu.Enoshima.FujisawaHommachi",
-		"a": "23:21",
-		"d": "23:21"
+		"a": "23:22",
+		"d": "23:22"
 	}, {
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"a": "23:24"
+		"a": "23:25"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.3585.Weekday",
@@ -9632,18 +9667,18 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.SagamiOno",
-		"d": "22:55"
+		"d": "22:56"
 	}, {
 		"s": "Odakyu.Enoshima.ChuoRinkan",
-		"a": "22:58",
+		"a": "22:59",
 		"d": "22:59"
 	}, {
 		"s": "Odakyu.Enoshima.Yamato",
-		"a": "23:02",
-		"d": "23:03"
+		"a": "23:03",
+		"d": "23:04"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
-		"a": "23:09",
+		"a": "23:10",
 		"d": "23:10"
 	}, {
 		"s": "Odakyu.Enoshima.Fujisawa",
@@ -10122,26 +10157,26 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.SagamiOno",
-		"d": "00:29"
+		"d": "00:30"
 	}, {
 		"s": "Odakyu.Enoshima.HigashiRinkan",
-		"a": "00:31",
-		"d": "00:32"
+		"a": "00:32",
+		"d": "00:33"
 	}, {
 		"s": "Odakyu.Enoshima.ChuoRinkan",
-		"a": "00:33",
-		"d": "00:34"
+		"a": "00:34",
+		"d": "00:35"
 	}, {
 		"s": "Odakyu.Enoshima.MinamiRinkan",
-		"a": "00:36",
-		"d": "00:36"
-	}, {
-		"s": "Odakyu.Enoshima.Tsuruma",
 		"a": "00:37",
 		"d": "00:37"
 	}, {
+		"s": "Odakyu.Enoshima.Tsuruma",
+		"a": "00:38",
+		"d": "00:38"
+	}, {
 		"s": "Odakyu.Enoshima.Yamato",
-		"a": "00:40"
+		"a": "00:41"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5701.Weekday",
@@ -10641,11 +10676,11 @@
 		"d": "09:03"
 	}, {
 		"s": "Odakyu.Enoshima.KugenumaKaigan",
-		"a": "09:04",
+		"a": "09:05",
 		"d": "09:05"
 	}, {
 		"s": "Odakyu.Enoshima.KataseEnoshima",
-		"a": "09:07"
+		"a": "09:08"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5737.Weekday",
@@ -10718,18 +10753,18 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"d": "09:36"
+		"d": "09:35"
 	}, {
 		"s": "Odakyu.Enoshima.HonKugenuma",
-		"a": "09:38",
-		"d": "09:38"
+		"a": "09:37",
+		"d": "09:37"
 	}, {
 		"s": "Odakyu.Enoshima.KugenumaKaigan",
-		"a": "09:39",
-		"d": "09:40"
+		"a": "09:38",
+		"d": "09:39"
 	}, {
 		"s": "Odakyu.Enoshima.KataseEnoshima",
-		"a": "09:42"
+		"a": "09:41"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5743.Weekday",
@@ -11754,18 +11789,18 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"d": "17:01"
+		"d": "17:00"
 	}, {
 		"s": "Odakyu.Enoshima.HonKugenuma",
-		"a": "17:03",
-		"d": "17:03"
+		"a": "17:02",
+		"d": "17:02"
 	}, {
 		"s": "Odakyu.Enoshima.KugenumaKaigan",
-		"a": "17:04",
-		"d": "17:05"
+		"a": "17:03",
+		"d": "17:04"
 	}, {
 		"s": "Odakyu.Enoshima.KataseEnoshima",
-		"a": "17:07"
+		"a": "17:06"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5817.Weekday",
@@ -11873,7 +11908,7 @@
 		"d": "17:51"
 	}, {
 		"s": "Odakyu.Enoshima.KugenumaKaigan",
-		"a": "17:53",
+		"a": "17:52",
 		"d": "17:53"
 	}, {
 		"s": "Odakyu.Enoshima.KataseEnoshima",
@@ -11929,11 +11964,11 @@
 		"d": "18:14"
 	}, {
 		"s": "Odakyu.Enoshima.KugenumaKaigan",
-		"a": "18:15",
+		"a": "18:16",
 		"d": "18:16"
 	}, {
 		"s": "Odakyu.Enoshima.KataseEnoshima",
-		"a": "18:18"
+		"a": "18:19"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5829.Weekday",
@@ -12062,18 +12097,18 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"d": "19:12"
+		"d": "19:13"
 	}, {
 		"s": "Odakyu.Enoshima.HonKugenuma",
-		"a": "19:14",
+		"a": "19:15",
 		"d": "19:15"
 	}, {
 		"s": "Odakyu.Enoshima.KugenumaKaigan",
-		"a": "19:16",
+		"a": "19:17",
 		"d": "19:17"
 	}, {
 		"s": "Odakyu.Enoshima.KataseEnoshima",
-		"a": "19:19"
+		"a": "19:20"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5839.Weekday",
@@ -12206,14 +12241,14 @@
 	}, {
 		"s": "Odakyu.Enoshima.HonKugenuma",
 		"a": "20:14",
-		"d": "20:15"
+		"d": "20:14"
 	}, {
 		"s": "Odakyu.Enoshima.KugenumaKaigan",
 		"a": "20:16",
-		"d": "20:17"
+		"d": "20:16"
 	}, {
 		"s": "Odakyu.Enoshima.KataseEnoshima",
-		"a": "20:19"
+		"a": "20:18"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5849.Weekday",
@@ -12342,18 +12377,18 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"d": "21:12"
+		"d": "21:13"
 	}, {
 		"s": "Odakyu.Enoshima.HonKugenuma",
-		"a": "21:14",
-		"d": "21:15"
+		"a": "21:15",
+		"d": "21:16"
 	}, {
 		"s": "Odakyu.Enoshima.KugenumaKaigan",
-		"a": "21:16",
+		"a": "21:17",
 		"d": "21:17"
 	}, {
 		"s": "Odakyu.Enoshima.KataseEnoshima",
-		"a": "21:19"
+		"a": "21:20"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5859.Weekday",
@@ -13581,15 +13616,15 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.KataseEnoshima",
-		"d": "09:11"
+		"d": "09:12"
 	}, {
 		"s": "Odakyu.Enoshima.KugenumaKaigan",
 		"a": "09:13",
-		"d": "09:13"
+		"d": "09:14"
 	}, {
 		"s": "Odakyu.Enoshima.HonKugenuma",
 		"a": "09:15",
-		"d": "09:15"
+		"d": "09:16"
 	}, {
 		"s": "Odakyu.Enoshima.Fujisawa",
 		"a": "09:18"
@@ -15266,15 +15301,15 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.KataseEnoshima",
-		"d": "20:23"
+		"d": "20:24"
 	}, {
 		"s": "Odakyu.Enoshima.KugenumaKaigan",
 		"a": "20:25",
-		"d": "20:25"
+		"d": "20:26"
 	}, {
 		"s": "Odakyu.Enoshima.HonKugenuma",
 		"a": "20:27",
-		"d": "20:27"
+		"d": "20:28"
 	}, {
 		"s": "Odakyu.Enoshima.Fujisawa",
 		"a": "20:30"
@@ -16060,7 +16095,7 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"d": "06:16"
+		"d": "06:15"
 	}, {
 		"s": "Odakyu.Enoshima.Yamato",
 		"a": "06:32",
@@ -16718,23 +16753,23 @@
 		"d": "07:15"
 	}, {
 		"s": "Odakyu.Enoshima.FujisawaHommachi",
-		"a": "07:18",
+		"a": "07:17",
 		"d": "07:18"
 	}, {
 		"s": "Odakyu.Enoshima.Zengyo",
-		"a": "07:20",
+		"a": "07:19",
 		"d": "07:20"
 	}, {
 		"s": "Odakyu.Enoshima.MutsuaiNichidaiMae",
-		"a": "07:23",
-		"d": "07:23"
+		"a": "07:22",
+		"d": "07:22"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
-		"a": "07:25",
-		"d": "07:25"
+		"a": "07:24",
+		"d": "07:24"
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
-		"a": "07:27",
+		"a": "07:26",
 		"d": "07:28"
 	}, {
 		"s": "Odakyu.Enoshima.KozaShibuya",
@@ -16944,7 +16979,7 @@
 	}, {
 		"s": "Odakyu.Enoshima.FujisawaHommachi",
 		"a": "07:38",
-		"d": "07:39"
+		"d": "07:38"
 	}, {
 		"s": "Odakyu.Enoshima.Zengyo",
 		"a": "07:40",
@@ -17193,7 +17228,7 @@
 		"d": "08:01"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
-		"a": "08:08",
+		"a": "08:07",
 		"d": "08:08"
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
@@ -17301,7 +17336,7 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"d": "08:10"
+		"d": "08:11"
 	}, {
 		"s": "Odakyu.Enoshima.Yamato",
 		"a": "08:27",
@@ -17404,7 +17439,7 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"d": "08:20"
+		"d": "08:21"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
 		"a": "08:27",
@@ -24568,23 +24603,23 @@
 		"d": "22:12"
 	}, {
 		"s": "Odakyu.Enoshima.FujisawaHommachi",
-		"a": "22:14",
-		"d": "22:14"
+		"a": "22:15",
+		"d": "22:15"
 	}, {
 		"s": "Odakyu.Enoshima.Zengyo",
-		"a": "22:16",
+		"a": "22:17",
 		"d": "22:17"
 	}, {
 		"s": "Odakyu.Enoshima.MutsuaiNichidaiMae",
 		"a": "22:19",
-		"d": "22:19"
+		"d": "22:20"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
 		"a": "22:21",
-		"d": "22:21"
+		"d": "22:22"
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
-		"a": "22:23",
+		"a": "22:24",
 		"d": "22:26"
 	}, {
 		"s": "Odakyu.Enoshima.KozaShibuya",
@@ -24954,7 +24989,7 @@
 		"d": "23:01"
 	}, {
 		"s": "Odakyu.Enoshima.FujisawaHommachi",
-		"a": "23:03",
+		"a": "23:04",
 		"d": "23:04"
 	}, {
 		"s": "Odakyu.Enoshima.Zengyo",
@@ -24962,15 +24997,15 @@
 		"d": "23:06"
 	}, {
 		"s": "Odakyu.Enoshima.MutsuaiNichidaiMae",
-		"a": "23:08",
+		"a": "23:09",
 		"d": "23:09"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
-		"a": "23:10",
+		"a": "23:11",
 		"d": "23:11"
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
-		"a": "23:13",
+		"a": "23:14",
 		"d": "23:18"
 	}, {
 		"s": "Odakyu.Enoshima.KozaShibuya",
@@ -25373,22 +25408,22 @@
 	}, {
 		"s": "Odakyu.Enoshima.Tsuruma",
 		"a": "00:31",
-		"d": "00:32"
+		"d": "00:31"
 	}, {
 		"s": "Odakyu.Enoshima.MinamiRinkan",
-		"a": "00:33",
+		"a": "00:32",
 		"d": "00:33"
 	}, {
 		"s": "Odakyu.Enoshima.ChuoRinkan",
-		"a": "00:35",
+		"a": "00:34",
 		"d": "00:35"
 	}, {
 		"s": "Odakyu.Enoshima.HigashiRinkan",
-		"a": "00:37",
+		"a": "00:36",
 		"d": "00:37"
 	}, {
 		"s": "Odakyu.Enoshima.SagamiOno",
-		"a": "00:40"
+		"a": "00:39"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5326.Weekday",
@@ -26123,54 +26158,54 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.SagamiOno",
-		"d": "06:09"
-	}, {
-		"s": "Odakyu.Enoshima.HigashiRinkan",
-		"a": "06:12",
 		"d": "06:12"
 	}, {
-		"s": "Odakyu.Enoshima.ChuoRinkan",
+		"s": "Odakyu.Enoshima.HigashiRinkan",
 		"a": "06:14",
 		"d": "06:14"
 	}, {
-		"s": "Odakyu.Enoshima.MinamiRinkan",
+		"s": "Odakyu.Enoshima.ChuoRinkan",
 		"a": "06:16",
 		"d": "06:16"
 	}, {
+		"s": "Odakyu.Enoshima.MinamiRinkan",
+		"a": "06:18",
+		"d": "06:18"
+	}, {
 		"s": "Odakyu.Enoshima.Tsuruma",
-		"a": "06:17",
-		"d": "06:17"
+		"a": "06:19",
+		"d": "06:19"
 	}, {
 		"s": "Odakyu.Enoshima.Yamato",
-		"a": "06:20",
-		"d": "06:21"
-	}, {
-		"s": "Odakyu.Enoshima.Sakuragaoka",
-		"a": "06:23",
+		"a": "06:22",
 		"d": "06:23"
 	}, {
-		"s": "Odakyu.Enoshima.KozaShibuya",
+		"s": "Odakyu.Enoshima.Sakuragaoka",
 		"a": "06:25",
-		"d": "06:26"
+		"d": "06:25"
+	}, {
+		"s": "Odakyu.Enoshima.KozaShibuya",
+		"a": "06:27",
+		"d": "06:27"
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
-		"a": "06:28",
-		"d": "06:29"
+		"a": "06:29",
+		"d": "06:30"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
-		"a": "06:31",
+		"a": "06:32",
 		"d": "06:32"
 	}, {
 		"s": "Odakyu.Enoshima.MutsuaiNichidaiMae",
-		"a": "06:33",
+		"a": "06:34",
 		"d": "06:34"
 	}, {
 		"s": "Odakyu.Enoshima.Zengyo",
-		"a": "06:36",
-		"d": "06:36"
+		"a": "06:37",
+		"d": "06:37"
 	}, {
 		"s": "Odakyu.Enoshima.FujisawaHommachi",
-		"a": "06:38",
+		"a": "06:39",
 		"d": "06:39"
 	}, {
 		"s": "Odakyu.Enoshima.Fujisawa",
@@ -34847,26 +34882,26 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.SagamiOno",
-		"d": "22:12"
+		"d": "22:09"
 	}, {
 		"s": "Odakyu.Enoshima.HigashiRinkan",
-		"a": "22:14",
-		"d": "22:15"
+		"a": "22:12",
+		"d": "22:12"
 	}, {
 		"s": "Odakyu.Enoshima.ChuoRinkan",
-		"a": "22:16",
-		"d": "22:17"
+		"a": "22:14",
+		"d": "22:14"
 	}, {
 		"s": "Odakyu.Enoshima.MinamiRinkan",
-		"a": "22:18",
-		"d": "22:19"
+		"a": "22:16",
+		"d": "22:16"
 	}, {
 		"s": "Odakyu.Enoshima.Tsuruma",
-		"a": "22:20",
-		"d": "22:20"
+		"a": "22:17",
+		"d": "22:17"
 	}, {
 		"s": "Odakyu.Enoshima.Yamato",
-		"a": "22:22",
+		"a": "22:20",
 		"d": "22:23"
 	}, {
 		"s": "Odakyu.Enoshima.Sakuragaoka",
@@ -35644,26 +35679,26 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.SagamiOno",
-		"d": "00:29"
+		"d": "00:30"
 	}, {
 		"s": "Odakyu.Enoshima.HigashiRinkan",
-		"a": "00:31",
-		"d": "00:32"
+		"a": "00:32",
+		"d": "00:33"
 	}, {
 		"s": "Odakyu.Enoshima.ChuoRinkan",
-		"a": "00:33",
-		"d": "00:34"
+		"a": "00:34",
+		"d": "00:35"
 	}, {
 		"s": "Odakyu.Enoshima.MinamiRinkan",
-		"a": "00:36",
-		"d": "00:36"
-	}, {
-		"s": "Odakyu.Enoshima.Tsuruma",
 		"a": "00:37",
 		"d": "00:37"
 	}, {
+		"s": "Odakyu.Enoshima.Tsuruma",
+		"a": "00:38",
+		"d": "00:38"
+	}, {
 		"s": "Odakyu.Enoshima.Yamato",
-		"a": "00:40"
+		"a": "00:41"
 	}]
 }, {
 	"id": "Odakyu.Enoshima.5701.SaturdayHoliday",
@@ -50675,22 +50710,22 @@
 	],
 	"tt": [{
 		"s": "Odakyu.Enoshima.Fujisawa",
-		"d": "23:16"
+		"d": "23:17"
 	}, {
 		"s": "Odakyu.Enoshima.FujisawaHommachi",
 		"a": "23:19",
-		"d": "23:19"
+		"d": "23:20"
 	}, {
 		"s": "Odakyu.Enoshima.Zengyo",
 		"a": "23:21",
-		"d": "23:21"
+		"d": "23:22"
 	}, {
 		"s": "Odakyu.Enoshima.MutsuaiNichidaiMae",
 		"a": "23:24",
 		"d": "23:24"
 	}, {
 		"s": "Odakyu.Enoshima.Shonandai",
-		"a": "23:25",
+		"a": "23:26",
 		"d": "23:26"
 	}, {
 		"s": "Odakyu.Enoshima.Chogo",
@@ -50703,7 +50738,7 @@
 	}, {
 		"s": "Odakyu.Enoshima.Sakuragaoka",
 		"a": "23:36",
-		"d": "23:36"
+		"d": "23:37"
 	}, {
 		"s": "Odakyu.Enoshima.Yamato",
 		"a": "23:39",

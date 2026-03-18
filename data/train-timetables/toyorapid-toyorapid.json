@@ -611,62 +611,11 @@
 		"a": "07:37"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A657S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A657S",
+	"id": "ToyoRapid.ToyoRapid.A625S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A625S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A657S",
+	"n": "A625S",
 	"y": "ToyoRapid.Local",
-	"d": "Outbound",
-	"os": [
-		"TokyoMetro.Tozai.Toyocho"
-	],
-	"ds": [
-		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
-	],
-	"pt": [
-		"TokyoMetro.Tozai.A657S.Weekday"
-	],
-	"tt": [{
-		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "07:23"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "07:26",
-		"d": "07:26"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "07:30",
-		"d": "07:30"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "07:32",
-		"d": "07:33"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "07:35",
-		"d": "07:35"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "07:37",
-		"d": "07:38"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "07:40",
-		"d": "07:41"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "07:42",
-		"d": "07:43"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "07:45"
-	}]
-}, {
-	"id": "ToyoRapid.ToyoRapid.A689SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A689SR",
-	"r": "ToyoRapid.ToyoRapid",
-	"n": "A689SR",
-	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Tozai.Nakano"
@@ -675,42 +624,93 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A689SR.Weekday"
+		"TokyoMetro.Tozai.A625S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "07:30"
+		"d": "07:25"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "07:33",
-		"d": "07:34"
+		"a": "07:28",
+		"d": "07:28"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
+		"a": "07:32",
+		"d": "07:32"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"a": "07:34",
+		"d": "07:35"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
 		"a": "07:37",
 		"d": "07:37"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "07:40",
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "07:39",
+		"d": "07:39"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "07:42",
+		"d": "07:42"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "07:44",
+		"d": "07:44"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
+		"a": "07:46"
+	}]
+}, {
+	"id": "ToyoRapid.ToyoRapid.A685SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A685SR",
+	"r": "ToyoRapid.ToyoRapid",
+	"n": "A685SR",
+	"y": "ToyoRapid.Rapid",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ChuoSobuLocal.Mitaka"
+	],
+	"ds": [
+		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
+	],
+	"pt": [
+		"TokyoMetro.Tozai.A685SR.Weekday"
+	],
+	"tt": [{
+		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
+		"d": "07:32"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
+		"a": "07:35",
+		"d": "07:36"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Hasama",
+		"a": "07:39",
 		"d": "07:40"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "07:42",
-		"d": "07:43"
+		"d": "07:42"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
 		"a": "07:44",
 		"d": "07:45"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "07:47",
-		"d": "07:48"
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "07:46",
+		"d": "07:47"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "07:49",
 		"d": "07:50"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "07:51",
+		"d": "07:52"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "07:52"
+		"a": "07:54"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A761S.Weekday",
@@ -883,38 +883,38 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "07:55"
+		"d": "07:56"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "07:57",
-		"d": "07:58"
+		"a": "07:58",
+		"d": "07:59"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "08:01",
-		"d": "08:02"
+		"a": "08:02",
+		"d": "08:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "08:04",
-		"d": "08:04"
+		"a": "08:05",
+		"d": "08:05"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "08:06",
-		"d": "08:07"
+		"a": "08:07",
+		"d": "08:08"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "08:08",
-		"d": "08:09"
+		"a": "08:09",
+		"d": "08:10"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "08:11",
-		"d": "08:12"
+		"a": "08:12",
+		"d": "08:13"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "08:13",
-		"d": "08:14"
+		"a": "08:14",
+		"d": "08:15"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "08:16"
+		"a": "08:17"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A641S.Weekday",
@@ -1138,38 +1138,38 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "08:29"
+		"d": "08:31"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "08:32",
-		"d": "08:32"
+		"a": "08:34",
+		"d": "08:34"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "08:36",
-		"d": "08:36"
+		"a": "08:38",
+		"d": "08:38"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "08:38",
-		"d": "08:39"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "08:41",
+		"a": "08:40",
 		"d": "08:41"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
 		"a": "08:43",
 		"d": "08:43"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "08:46",
-		"d": "08:46"
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "08:45",
+		"d": "08:45"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "08:48",
 		"d": "08:48"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "08:50",
+		"d": "08:50"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "08:50"
+		"a": "08:53"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A719SR.Weekday",
@@ -1291,38 +1291,38 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "08:52"
+		"d": "08:51"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "08:55",
-		"d": "08:55"
+		"a": "08:54",
+		"d": "08:54"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "08:59",
-		"d": "08:59"
+		"a": "08:58",
+		"d": "08:58"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "09:01",
-		"d": "09:02"
+		"a": "09:00",
+		"d": "09:01"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "09:04",
-		"d": "09:04"
+		"a": "09:03",
+		"d": "09:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "09:06",
-		"d": "09:06"
+		"a": "09:05",
+		"d": "09:05"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "09:09",
-		"d": "09:09"
+		"a": "09:08",
+		"d": "09:08"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "09:11",
-		"d": "09:11"
+		"a": "09:10",
+		"d": "09:10"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "09:14"
+		"a": "09:13"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A852TR.Weekday",
@@ -1432,23 +1432,23 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "09:09"
+		"d": "09:10"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
 		"a": "09:12",
-		"d": "09:12"
+		"d": "09:13"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "09:16",
-		"d": "09:16"
+		"d": "09:17"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "09:19",
-		"d": "09:19"
+		"d": "09:20"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
 		"a": "09:21",
-		"d": "09:21"
+		"d": "09:22"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "09:23",
@@ -1456,11 +1456,11 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "09:26",
-		"d": "09:26"
+		"d": "09:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
 		"a": "09:28",
-		"d": "09:28"
+		"d": "09:29"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
 		"a": "09:31"
@@ -1658,10 +1658,10 @@
 		"a": "09:53"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A851SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A851SR",
+	"id": "ToyoRapid.ToyoRapid.A855SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A855SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A851SR",
+	"n": "A855SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -1671,7 +1671,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A851SR.Weekday"
+		"TokyoMetro.Tozai.A855SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -1777,44 +1777,44 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "10:03"
+		"d": "10:04"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "10:06",
-		"d": "10:06"
+		"a": "10:07",
+		"d": "10:07"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "10:10",
-		"d": "10:10"
+		"a": "10:11",
+		"d": "10:11"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "10:13",
-		"d": "10:13"
+		"a": "10:14",
+		"d": "10:14"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "10:15",
-		"d": "10:15"
+		"a": "10:16",
+		"d": "10:16"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "10:17",
-		"d": "10:18"
+		"a": "10:18",
+		"d": "10:19"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "10:20",
-		"d": "10:20"
+		"a": "10:21",
+		"d": "10:21"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "10:22",
-		"d": "10:22"
+		"a": "10:23",
+		"d": "10:23"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "10:25"
+		"a": "10:26"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A957SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A957SR",
+	"id": "ToyoRapid.ToyoRapid.A925SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A925SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A957SR",
+	"n": "A925SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -1824,7 +1824,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A957SR.Weekday"
+		"TokyoMetro.Tozai.A925SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -1832,11 +1832,11 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
 		"a": "10:12",
-		"d": "10:12"
+		"d": "10:13"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "10:16",
-		"d": "10:16"
+		"d": "10:17"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "10:19",
@@ -1844,7 +1844,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
 		"a": "10:21",
-		"d": "10:21"
+		"d": "10:22"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "10:23",
@@ -1852,11 +1852,11 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "10:26",
-		"d": "10:26"
+		"d": "10:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
 		"a": "10:28",
-		"d": "10:28"
+		"d": "10:29"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
 		"a": "10:31"
@@ -1913,10 +1913,10 @@
 		"a": "10:42"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A947SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A947SR",
+	"id": "ToyoRapid.ToyoRapid.A995SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A995SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A947SR",
+	"n": "A995SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -1926,7 +1926,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A947SR.Weekday"
+		"TokyoMetro.Tozai.A995SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -1964,10 +1964,10 @@
 		"a": "10:52"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A995SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A995SR",
+	"id": "ToyoRapid.ToyoRapid.A965SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A965SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A995SR",
+	"n": "A965SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -1977,7 +1977,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A995SR.Weekday"
+		"TokyoMetro.Tozai.A965SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -2321,10 +2321,10 @@
 		"a": "12:21"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1151SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1151SR",
+	"id": "ToyoRapid.ToyoRapid.A1155SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1155SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1151SR",
+	"n": "A1155SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -2334,7 +2334,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1151SR.Weekday"
+		"TokyoMetro.Tozai.A1155SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -2474,10 +2474,10 @@
 		"a": "13:06"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1247SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1247SR",
+	"id": "ToyoRapid.ToyoRapid.A1295SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1295SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1247SR",
+	"n": "A1295SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -2487,7 +2487,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1247SR.Weekday"
+		"TokyoMetro.Tozai.A1295SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -2525,10 +2525,10 @@
 		"a": "13:21"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1295SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1295SR",
+	"id": "ToyoRapid.ToyoRapid.A1265SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1265SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1295SR",
+	"n": "A1265SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -2538,7 +2538,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1295SR.Weekday"
+		"TokyoMetro.Tozai.A1265SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -2831,10 +2831,10 @@
 		"a": "14:51"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1351SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1351SR",
+	"id": "ToyoRapid.ToyoRapid.A1355SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1355SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1351SR",
+	"n": "A1355SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -2844,7 +2844,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1351SR.Weekday"
+		"TokyoMetro.Tozai.A1355SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -2984,10 +2984,10 @@
 		"a": "15:36"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1447SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1447SR",
+	"id": "ToyoRapid.ToyoRapid.A1495SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1495SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1447SR",
+	"n": "A1495SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -2997,7 +2997,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1447SR.Weekday"
+		"TokyoMetro.Tozai.A1495SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -3035,10 +3035,10 @@
 		"a": "15:51"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1495SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1495SR",
+	"id": "ToyoRapid.ToyoRapid.A1465SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1465SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1495SR",
+	"n": "A1465SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -3048,7 +3048,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1495SR.Weekday"
+		"TokyoMetro.Tozai.A1465SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -3188,20 +3188,20 @@
 		"a": "16:21"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1489S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1489S",
+	"id": "ToyoRapid.ToyoRapid.A1583S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1583S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1489S",
+	"n": "A1583S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
-		"JR-East.ChuoSobuLocal.Mitaka"
+		"TokyoMetro.Tozai.Nakano"
 	],
 	"ds": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1489S.Weekday"
+		"TokyoMetro.Tozai.A1583S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -3290,10 +3290,10 @@
 		"a": "16:36"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1563S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1563S",
+	"id": "ToyoRapid.ToyoRapid.A1519S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1519S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1563S",
+	"n": "A1519S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -3303,7 +3303,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1563S.Weekday"
+		"TokyoMetro.Tozai.A1519S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -3361,51 +3361,51 @@
 		"d": "16:29"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "16:32",
+		"a": "16:31",
 		"d": "16:32"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "16:36",
+		"a": "16:35",
 		"d": "16:36"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "16:39",
-		"d": "16:39"
+		"a": "16:38",
+		"d": "16:38"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "16:41",
+		"a": "16:40",
 		"d": "16:41"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "16:43",
-		"d": "16:44"
+		"a": "16:42",
+		"d": "16:43"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "16:46",
+		"a": "16:45",
 		"d": "16:46"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "16:48",
+		"a": "16:47",
 		"d": "16:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "16:51"
+		"a": "16:50"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1513S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1513S",
+	"id": "ToyoRapid.ToyoRapid.A1527S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1527S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1513S",
+	"n": "A1527S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
-		"JR-East.ChuoSobuLocal.Mitaka"
+		"TokyoMetro.Tozai.Nakano"
 	],
 	"ds": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1513S.Weekday"
+		"TokyoMetro.Tozai.A1527S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -3596,10 +3596,10 @@
 		"a": "17:31"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1679SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1679SR",
+	"id": "ToyoRapid.ToyoRapid.A1659SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1659SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1679SR",
+	"n": "A1659SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -3609,42 +3609,42 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1679SR.Weekday"
+		"TokyoMetro.Tozai.A1659SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "17:20"
+		"d": "17:21"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "17:22",
-		"d": "17:23"
+		"a": "17:24",
+		"d": "17:25"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "17:26",
-		"d": "17:27"
+		"a": "17:28",
+		"d": "17:28"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "17:29",
-		"d": "17:30"
+		"a": "17:31",
+		"d": "17:31"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "17:31",
-		"d": "17:32"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "17:33",
 		"d": "17:34"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "17:36",
-		"d": "17:37"
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "17:35",
+		"d": "17:36"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "17:38",
 		"d": "17:39"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "17:40",
+		"d": "17:41"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "17:41"
+		"a": "17:43"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A1615SR.Weekday",
@@ -3667,35 +3667,35 @@
 		"d": "17:34"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "17:37",
+		"a": "17:36",
 		"d": "17:37"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "17:41",
+		"a": "17:40",
 		"d": "17:41"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "17:44",
-		"d": "17:44"
+		"a": "17:43",
+		"d": "17:43"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "17:46",
+		"a": "17:45",
 		"d": "17:46"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "17:48",
-		"d": "17:49"
+		"a": "17:47",
+		"d": "17:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "17:51",
+		"a": "17:50",
 		"d": "17:51"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "17:53",
+		"a": "17:52",
 		"d": "17:53"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "17:56"
+		"a": "17:55"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A1660T.Weekday",
@@ -3715,45 +3715,45 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "17:44"
+		"d": "17:42"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "17:47",
-		"d": "17:47"
+		"a": "17:45",
+		"d": "17:45"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "17:51",
-		"d": "17:51"
+		"a": "17:49",
+		"d": "17:49"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "17:53",
-		"d": "17:54"
+		"a": "17:51",
+		"d": "17:52"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "17:54",
+		"d": "17:54"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "17:56",
 		"d": "17:56"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "17:58",
-		"d": "17:58"
-	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "17:59",
+		"d": "17:59"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
 		"a": "18:01",
 		"d": "18:01"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "18:03",
-		"d": "18:03"
-	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "18:06"
+		"a": "18:03"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1637S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1637S",
+	"id": "ToyoRapid.ToyoRapid.A1737SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1737SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1637S",
-	"y": "ToyoRapid.Local",
+	"n": "A1737SR",
+	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Tozai.Nakano"
@@ -3762,49 +3762,49 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1637S.Weekday"
+		"TokyoMetro.Tozai.A1737SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "17:54"
+		"d": "17:50"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "17:56",
-		"d": "17:57"
+		"a": "17:53",
+		"d": "17:53"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "18:00",
-		"d": "18:01"
+		"a": "17:57",
+		"d": "17:57"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "18:03",
-		"d": "18:03"
+		"a": "17:59",
+		"d": "18:00"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "18:05",
-		"d": "18:06"
+		"a": "18:02",
+		"d": "18:02"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "18:07",
-		"d": "18:08"
+		"a": "18:04",
+		"d": "18:04"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "18:10",
-		"d": "18:11"
+		"a": "18:07",
+		"d": "18:07"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "18:12",
-		"d": "18:13"
+		"a": "18:09",
+		"d": "18:09"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "18:15"
+		"a": "18:11"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1619S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1619S",
+	"id": "ToyoRapid.ToyoRapid.A1657SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1657SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1619S",
-	"y": "ToyoRapid.Local",
+	"n": "A1657SR",
+	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
 		"JR-East.ChuoSobuLocal.Mitaka"
@@ -3813,48 +3813,48 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1619S.Weekday"
+		"TokyoMetro.Tozai.A1657SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "18:03"
+		"d": "18:00"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "18:06",
-		"d": "18:06"
+		"a": "18:03",
+		"d": "18:04"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
+		"a": "18:07",
+		"d": "18:07"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "18:10",
 		"d": "18:10"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
 		"a": "18:12",
 		"d": "18:13"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "18:15",
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "18:14",
 		"d": "18:15"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "18:17",
-		"d": "18:17"
-	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "18:20",
-		"d": "18:20"
+		"a": "18:17",
+		"d": "18:18"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "18:22",
-		"d": "18:22"
+		"a": "18:19",
+		"d": "18:20"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "18:25"
+		"a": "18:22"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1735S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1735S",
+	"id": "ToyoRapid.ToyoRapid.A1741S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1741S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1735S",
+	"n": "A1741S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -3864,7 +3864,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1735S.Weekday"
+		"TokyoMetro.Tozai.A1741S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -3902,10 +3902,10 @@
 		"a": "18:33"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1785S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1785S",
+	"id": "ToyoRapid.ToyoRapid.A1713S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1713S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1785S",
+	"n": "A1713S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -3915,42 +3915,42 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1785S.Weekday"
+		"TokyoMetro.Tozai.A1713S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
 		"d": "18:16"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "18:19",
+		"a": "18:18",
 		"d": "18:19"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "18:23",
+		"a": "18:22",
 		"d": "18:23"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "18:26",
+		"a": "18:25",
 		"d": "18:26"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "18:28",
-		"d": "18:29"
+		"a": "18:27",
+		"d": "18:28"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "18:30",
-		"d": "18:32"
+		"a": "18:29",
+		"d": "18:30"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "18:35",
-		"d": "18:35"
+		"a": "18:32",
+		"d": "18:33"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "18:37",
-		"d": "18:37"
+		"a": "18:34",
+		"d": "18:35"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "18:40"
+		"a": "18:37"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A1758T.Weekday",
@@ -4004,10 +4004,10 @@
 		"a": "18:44"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1747SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1747SR",
+	"id": "ToyoRapid.ToyoRapid.A1795SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1795SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1747SR",
+	"n": "A1795SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -4017,7 +4017,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1747SR.Weekday"
+		"TokyoMetro.Tozai.A1795SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -4055,20 +4055,20 @@
 		"a": "18:51"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1767S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1767S",
+	"id": "ToyoRapid.ToyoRapid.A1735S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1735S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1767S",
+	"n": "A1735S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
-		"JR-East.ChuoSobuLocal.Mitaka"
+		"TokyoMetro.Tozai.Nakano"
 	],
 	"ds": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1767S.Weekday"
+		"TokyoMetro.Tozai.A1735S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -4083,12 +4083,12 @@
 		"d": "18:42"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "18:44",
+		"a": "18:45",
 		"d": "18:45"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
 		"a": "18:47",
-		"d": "18:47"
+		"d": "18:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "18:49",
@@ -4096,7 +4096,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "18:52",
-		"d": "18:52"
+		"d": "18:53"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
 		"a": "18:54",
@@ -4123,89 +4123,89 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "18:39"
+		"d": "18:40"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "18:41",
-		"d": "18:42"
+		"a": "18:43",
+		"d": "18:44"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "18:45",
-		"d": "18:46"
+		"a": "18:47",
+		"d": "18:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "18:48",
-		"d": "18:49"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "18:51",
+		"a": "18:50",
 		"d": "18:51"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "18:53",
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "18:52",
 		"d": "18:53"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "18:56",
-		"d": "18:56"
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "18:54",
+		"d": "18:55"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "18:58",
 		"d": "18:58"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "19:00",
+		"d": "19:00"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "19:01"
+		"a": "19:02"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1775S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1775S",
+	"id": "ToyoRapid.ToyoRapid.A1747S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1747S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1775S",
+	"n": "A1747S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
-		"JR-East.ChuoSobuLocal.Mitaka"
+		"TokyoMetro.Tozai.Nakano"
 	],
 	"ds": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1775S.Weekday"
+		"TokyoMetro.Tozai.A1747S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "18:44"
+		"d": "18:49"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "18:47",
-		"d": "18:47"
+		"a": "18:52",
+		"d": "18:52"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "18:51",
-		"d": "18:51"
+		"a": "18:56",
+		"d": "18:56"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "18:54",
-		"d": "18:54"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "18:56",
-		"d": "18:57"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "18:58",
+		"a": "18:59",
 		"d": "18:59"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
 		"a": "19:01",
 		"d": "19:02"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "19:03",
 		"d": "19:04"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "19:06",
+		"d": "19:07"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "19:08",
+		"d": "19:09"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "19:06"
+		"a": "19:11"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A1766T.Weekday",
@@ -4310,10 +4310,10 @@
 		"a": "19:21"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1733S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1733S",
+	"id": "ToyoRapid.ToyoRapid.A1745S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1745S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1733S",
+	"n": "A1745S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -4323,49 +4323,49 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1733S.Weekday"
+		"TokyoMetro.Tozai.A1745S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "19:04"
+		"d": "19:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
 		"a": "19:06",
-		"d": "19:07"
+		"d": "19:06"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "19:10",
-		"d": "19:11"
+		"d": "19:10"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "19:13",
-		"d": "19:14"
+		"d": "19:13"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "19:16",
+		"a": "19:15",
 		"d": "19:16"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "19:18",
+		"a": "19:17",
 		"d": "19:18"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "19:21",
+		"a": "19:20",
 		"d": "19:21"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "19:23",
+		"a": "19:22",
 		"d": "19:23"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "19:26"
+		"a": "19:25"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1856T.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1856T",
+	"id": "ToyoRapid.ToyoRapid.A1856TR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1856TR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1856T",
-	"y": "ToyoRapid.Local",
+	"n": "A1856TR",
+	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Tozai.Nakano"
@@ -4374,49 +4374,49 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1856T.Weekday"
+		"TokyoMetro.Tozai.A1856TR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "19:11"
+		"d": "19:09"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "19:14",
-		"d": "19:14"
+		"a": "19:12",
+		"d": "19:13"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "19:18",
-		"d": "19:18"
+		"a": "19:16",
+		"d": "19:17"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "19:21",
-		"d": "19:21"
+		"a": "19:19",
+		"d": "19:19"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "19:21",
+		"d": "19:22"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "19:23",
 		"d": "19:24"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "19:25",
-		"d": "19:26"
-	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "19:28",
-		"d": "19:29"
+		"a": "19:26",
+		"d": "19:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "19:30",
-		"d": "19:31"
+		"a": "19:29",
+		"d": "19:29"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "19:33"
+		"a": "19:31"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1891S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1891S",
+	"id": "ToyoRapid.ToyoRapid.A1827SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1827SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1891S",
-	"y": "ToyoRapid.Local",
+	"n": "A1827SR",
+	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
 		"TokyoMetro.Tozai.Nakano"
@@ -4425,48 +4425,48 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1891S.Weekday"
+		"TokyoMetro.Tozai.A1827SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "19:21"
+		"d": "19:18"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "19:24",
-		"d": "19:24"
+		"a": "19:21",
+		"d": "19:21"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
+		"a": "19:25",
+		"d": "19:25"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "19:28",
 		"d": "19:28"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
 		"a": "19:30",
 		"d": "19:31"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "19:33",
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "19:32",
 		"d": "19:33"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "19:35",
 		"d": "19:36"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "19:38",
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "19:37",
 		"d": "19:38"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "19:40",
-		"d": "19:41"
-	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "19:43"
+		"a": "19:40"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1863SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1863SR",
+	"id": "ToyoRapid.ToyoRapid.A1849SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1849SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1863SR",
+	"n": "A1849SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -4476,7 +4476,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1863SR.Weekday"
+		"TokyoMetro.Tozai.A1849SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -4514,11 +4514,11 @@
 		"a": "19:50"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1857S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1857S",
+	"id": "ToyoRapid.ToyoRapid.A1861SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1861SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1857S",
-	"y": "ToyoRapid.Local",
+	"n": "A1861SR",
+	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
 		"JR-East.ChuoSobuLocal.Mitaka"
@@ -4527,42 +4527,42 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1857S.Weekday"
+		"TokyoMetro.Tozai.A1861SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "19:32"
+		"d": "19:34"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "19:35",
-		"d": "19:35"
+		"a": "19:36",
+		"d": "19:37"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "19:39",
-		"d": "19:39"
+		"a": "19:40",
+		"d": "19:41"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "19:42",
-		"d": "19:42"
+		"a": "19:43",
+		"d": "19:44"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "19:44",
-		"d": "19:45"
+		"a": "19:46",
+		"d": "19:46"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "19:46",
-		"d": "19:47"
+		"a": "19:48",
+		"d": "19:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "19:49",
-		"d": "19:50"
+		"a": "19:51",
+		"d": "19:51"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "19:51",
-		"d": "19:52"
+		"a": "19:53",
+		"d": "19:53"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "19:54"
+		"a": "19:56"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A1854T.Weekday",
@@ -4616,10 +4616,10 @@
 		"a": "19:59"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1883S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1883S",
+	"id": "ToyoRapid.ToyoRapid.A1885S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1885S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1883S",
+	"n": "A1885S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -4629,7 +4629,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1883S.Weekday"
+		"TokyoMetro.Tozai.A1885S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -4667,10 +4667,10 @@
 		"a": "20:04"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1813SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1813SR",
+	"id": "ToyoRapid.ToyoRapid.A1881SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1881SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1813SR",
+	"n": "A1881SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -4680,99 +4680,48 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1813SR.Weekday"
+		"TokyoMetro.Tozai.A1881SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "19:47"
+		"d": "19:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
 		"a": "19:50",
-		"d": "19:50"
+		"d": "19:51"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "19:54",
-		"d": "19:54"
+		"d": "19:55"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "19:56",
-		"d": "19:57"
+		"a": "19:57",
+		"d": "19:58"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "19:59",
-		"d": "19:59"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "20:01",
-		"d": "20:02"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "20:04",
-		"d": "20:05"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "20:06",
-		"d": "20:07"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "20:09"
-	}]
-}, {
-	"id": "ToyoRapid.ToyoRapid.A1979SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1979SR",
-	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1979SR",
-	"y": "ToyoRapid.Rapid",
-	"d": "Outbound",
-	"os": [
-		"TokyoMetro.Tozai.Nakano"
-	],
-	"ds": [
-		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
-	],
-	"pt": [
-		"TokyoMetro.Tozai.A1979SR.Weekday"
-	],
-	"tt": [{
-		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "19:57"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
 		"a": "20:00",
 		"d": "20:00"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "20:04",
-		"d": "20:04"
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "20:02",
+		"d": "20:02"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "20:05",
+		"d": "20:05"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
 		"a": "20:07",
 		"d": "20:07"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "20:09",
-		"d": "20:10"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "20:11",
-		"d": "20:12"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "20:14",
-		"d": "20:15"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "20:16",
-		"d": "20:17"
-	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "20:19"
+		"a": "20:10"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1951S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1951S",
+	"id": "ToyoRapid.ToyoRapid.A1877S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1877S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1951S",
+	"n": "A1877S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -4782,48 +4731,99 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1951S.Weekday"
+		"TokyoMetro.Tozai.A1877S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "20:02"
+		"d": "19:55"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "20:05",
-		"d": "20:06"
+		"a": "19:58",
+		"d": "19:59"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
+		"a": "20:02",
+		"d": "20:03"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"a": "20:05",
+		"d": "20:05"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "20:07",
+		"d": "20:08"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "20:09",
 		"d": "20:10"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "20:12",
 		"d": "20:13"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "20:14",
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "20:15",
 		"d": "20:15"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
+		"a": "20:17"
+	}]
+}, {
+	"id": "ToyoRapid.ToyoRapid.A1863SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1863SR",
+	"r": "ToyoRapid.ToyoRapid",
+	"n": "A1863SR",
+	"y": "ToyoRapid.Rapid",
+	"d": "Outbound",
+	"os": [
+		"JR-East.ChuoSobuLocal.Mitaka"
+	],
+	"ds": [
+		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
+	],
+	"pt": [
+		"TokyoMetro.Tozai.A1863SR.Weekday"
+	],
+	"tt": [{
+		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
+		"d": "20:01"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
+		"a": "20:03",
+		"d": "20:04"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Hasama",
+		"a": "20:07",
+		"d": "20:08"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"a": "20:10",
+		"d": "20:11"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "20:13",
+		"d": "20:13"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "20:16",
-		"d": "20:17"
+		"a": "20:15",
+		"d": "20:15"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "20:18",
+		"d": "20:18"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
 		"a": "20:20",
 		"d": "20:20"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "20:22",
-		"d": "20:22"
-	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "20:24"
+		"a": "20:23"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1929SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1929SR",
+	"id": "ToyoRapid.ToyoRapid.A1955SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1955SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1929SR",
+	"n": "A1955SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -4833,7 +4833,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1929SR.Weekday"
+		"TokyoMetro.Tozai.A1955SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -4871,61 +4871,61 @@
 		"a": "20:32"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1977S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1977S",
+	"id": "ToyoRapid.ToyoRapid.A1917S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1917S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1977S",
+	"n": "A1917S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
-		"TokyoMetro.Tozai.Nakano"
+		"JR-East.ChuoSobuLocal.Mitaka"
 	],
 	"ds": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1977S.Weekday"
+		"TokyoMetro.Tozai.A1917S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "20:14"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "20:16",
 		"d": "20:17"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "20:20",
-		"d": "20:21"
+		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
+		"a": "20:19",
+		"d": "20:20"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "20:23",
 		"d": "20:24"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "20:26",
-		"d": "20:26"
+		"d": "20:27"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "20:29",
+		"d": "20:29"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "20:28",
-		"d": "20:28"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "20:31",
 		"d": "20:31"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "20:34",
+		"d": "20:34"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "20:33",
-		"d": "20:33"
+		"a": "20:36",
+		"d": "20:36"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "20:36"
+		"a": "20:39"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1931SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1931SR",
+	"id": "ToyoRapid.ToyoRapid.A1929SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1929SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1931SR",
+	"n": "A1929SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -4935,18 +4935,18 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1931SR.Weekday"
+		"TokyoMetro.Tozai.A1929SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
 		"d": "20:20"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "20:22",
+		"a": "20:23",
 		"d": "20:23"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "20:26",
+		"a": "20:27",
 		"d": "20:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
@@ -4959,15 +4959,15 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "20:34",
-		"d": "20:34"
+		"d": "20:35"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "20:37",
-		"d": "20:37"
+		"d": "20:38"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
 		"a": "20:39",
-		"d": "20:39"
+		"d": "20:40"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
 		"a": "20:42"
@@ -4980,7 +4980,7 @@
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
-		"JR-East.ChuoSobuLocal.Mitaka"
+		"TokyoMetro.Tozai.Nakano"
 	],
 	"ds": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
@@ -4990,38 +4990,38 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "20:25"
+		"d": "20:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "20:28",
-		"d": "20:29"
+		"a": "20:30",
+		"d": "20:30"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "20:32",
-		"d": "20:33"
+		"a": "20:34",
+		"d": "20:34"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "20:35",
-		"d": "20:35"
+		"a": "20:37",
+		"d": "20:37"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "20:37",
-		"d": "20:38"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "20:39",
 		"d": "20:40"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "20:42",
-		"d": "20:43"
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "20:41",
+		"d": "20:42"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "20:45",
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "20:44",
 		"d": "20:45"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "20:46",
+		"d": "20:47"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "20:47"
+		"a": "20:49"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A1915SR.Weekday",
@@ -5061,18 +5061,18 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "20:48",
-		"d": "20:50"
+		"d": "20:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "20:52",
-		"d": "20:53"
+		"a": "20:51",
+		"d": "20:51"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "20:54",
-		"d": "20:55"
+		"a": "20:53",
+		"d": "20:53"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "20:57"
+		"a": "20:56"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A1960T.Weekday",
@@ -5126,20 +5126,20 @@
 		"a": "21:01"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1961SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A1961SR",
+	"id": "ToyoRapid.ToyoRapid.A1913SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A1913SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1961SR",
+	"n": "A1913SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
-		"JR-East.ChuoSobuLocal.Mitaka"
+		"TokyoMetro.Tozai.Nakano"
 	],
 	"ds": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1961SR.Weekday"
+		"TokyoMetro.Tozai.A1913SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -5197,11 +5197,11 @@
 		"d": "21:00"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "21:02",
+		"a": "21:03",
 		"d": "21:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "21:06",
+		"a": "21:07",
 		"d": "21:07"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
@@ -5209,19 +5209,19 @@
 		"d": "21:10"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "21:11",
+		"a": "21:12",
 		"d": "21:12"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "21:13",
+		"a": "21:14",
 		"d": "21:14"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "21:16",
+		"a": "21:17",
 		"d": "21:17"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "21:18",
+		"a": "21:19",
 		"d": "21:19"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -5330,10 +5330,10 @@
 		"a": "21:35"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2075SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2075SR",
+	"id": "ToyoRapid.ToyoRapid.A2047SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2047SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2075SR",
+	"n": "A2047SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -5343,7 +5343,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2075SR.Weekday"
+		"TokyoMetro.Tozai.A2047SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -5381,10 +5381,10 @@
 		"a": "21:43"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2033SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2033SR",
+	"id": "ToyoRapid.ToyoRapid.A2045SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2045SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2033SR",
+	"n": "A2045SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -5394,7 +5394,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2033SR.Weekday"
+		"TokyoMetro.Tozai.A2045SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -5449,7 +5449,7 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "21:40"
+		"d": "21:39"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
 		"a": "21:42",
@@ -5483,10 +5483,10 @@
 		"a": "22:01"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2056TR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2056TR",
+	"id": "ToyoRapid.ToyoRapid.A2156TR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2156TR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2056TR",
+	"n": "A2156TR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -5496,7 +5496,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2056TR.Weekday"
+		"TokyoMetro.Tozai.A2156TR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -5534,10 +5534,10 @@
 		"a": "22:09"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2149SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2149SR",
+	"id": "ToyoRapid.ToyoRapid.A2159SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2159SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2149SR",
+	"n": "A2159SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -5547,7 +5547,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2149SR.Weekday"
+		"TokyoMetro.Tozai.A2159SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -5585,10 +5585,10 @@
 		"a": "22:21"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2183SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2183SR",
+	"id": "ToyoRapid.ToyoRapid.A2185SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2185SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2183SR",
+	"n": "A2185SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -5598,7 +5598,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2183SR.Weekday"
+		"TokyoMetro.Tozai.A2185SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -5636,10 +5636,10 @@
 		"a": "22:31"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2179SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2179SR",
+	"id": "ToyoRapid.ToyoRapid.A2177SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2177SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2179SR",
+	"n": "A2177SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -5649,7 +5649,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2179SR.Weekday"
+		"TokyoMetro.Tozai.A2177SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -5687,10 +5687,10 @@
 		"a": "22:43"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2119SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2119SR",
+	"id": "ToyoRapid.ToyoRapid.A2157SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2157SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2119SR",
+	"n": "A2157SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -5700,7 +5700,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2119SR.Weekday"
+		"TokyoMetro.Tozai.A2157SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -5738,10 +5738,10 @@
 		"a": "22:56"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2185SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2185SR",
+	"id": "ToyoRapid.ToyoRapid.A2175SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2175SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2185SR",
+	"n": "A2175SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -5751,7 +5751,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2185SR.Weekday"
+		"TokyoMetro.Tozai.A2175SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -5789,10 +5789,10 @@
 		"a": "23:09"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2247SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2247SR",
+	"id": "ToyoRapid.ToyoRapid.A2267SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2267SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2247SR",
+	"n": "A2267SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -5802,7 +5802,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2247SR.Weekday"
+		"TokyoMetro.Tozai.A2267SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -5840,10 +5840,10 @@
 		"a": "23:20"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2231S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2231S",
+	"id": "ToyoRapid.ToyoRapid.A2229S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2229S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2231S",
+	"n": "A2229S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -5853,7 +5853,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2231S.Weekday"
+		"TokyoMetro.Tozai.A2229S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -5891,10 +5891,10 @@
 		"a": "23:27"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2267SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2267SR",
+	"id": "ToyoRapid.ToyoRapid.A2235SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2235SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2267SR",
+	"n": "A2235SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -5904,7 +5904,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2267SR.Weekday"
+		"TokyoMetro.Tozai.A2235SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -6095,10 +6095,10 @@
 		"a": "00:08"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2325SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2325SR",
+	"id": "ToyoRapid.ToyoRapid.A2323SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2323SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2325SR",
+	"n": "A2323SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -6108,7 +6108,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2325SR.Weekday"
+		"TokyoMetro.Tozai.A2323SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -6197,10 +6197,10 @@
 		"a": "00:27"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2363S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2363S",
+	"id": "ToyoRapid.ToyoRapid.A2349S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2349S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2363S",
+	"n": "A2349S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -6210,7 +6210,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2363S.Weekday"
+		"TokyoMetro.Tozai.A2349S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -6248,10 +6248,10 @@
 		"a": "00:38"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2349S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.A2349S",
+	"id": "ToyoRapid.ToyoRapid.A2359S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.A2359S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2349S",
+	"n": "A2359S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -6261,7 +6261,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2349S.Weekday"
+		"TokyoMetro.Tozai.A2359S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -7081,7 +7081,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"ds": [
-		"JR-East.ChuoSobuLocal.Mitaka"
+		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
 		"TokyoMetro.Tozai.B615SR.Weekday"
@@ -7632,11 +7632,11 @@
 		"a": "07:41"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B751S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B751S",
+	"id": "ToyoRapid.ToyoRapid.B751SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B751SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B751S",
-	"y": "ToyoRapid.Local",
+	"n": "B751SR",
+	"y": "ToyoRapid.CommuterRapid",
 	"d": "Inbound",
 	"os": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
@@ -7645,42 +7645,42 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B751S.Weekday"
+		"TokyoMetro.Tozai.B751SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "07:24"
+		"d": "07:25"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
 		"a": "07:26",
-		"d": "07:26"
+		"d": "07:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "07:28",
-		"d": "07:28"
+		"d": "07:29"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "07:31",
 		"d": "07:32"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "07:33",
+		"a": "07:34",
 		"d": "07:34"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "07:36",
-		"d": "07:36"
+		"d": "07:37"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "07:39",
-		"d": "07:39"
+		"d": "07:40"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
 		"a": "07:43",
-		"d": "07:43"
+		"d": "07:44"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "07:46"
+		"a": "07:47"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B733S.Weekday",
@@ -7700,38 +7700,38 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "07:30"
+		"d": "07:31"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "07:31",
-		"d": "07:32"
+		"a": "07:32",
+		"d": "07:33"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "07:33",
-		"d": "07:34"
+		"a": "07:34",
+		"d": "07:35"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "07:36",
-		"d": "07:37"
+		"a": "07:37",
+		"d": "07:38"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "07:39",
-		"d": "07:39"
+		"a": "07:40",
+		"d": "07:40"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "07:41",
-		"d": "07:42"
+		"a": "07:42",
+		"d": "07:43"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "07:44",
-		"d": "07:45"
+		"a": "07:45",
+		"d": "07:46"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "07:48",
-		"d": "07:49"
+		"a": "07:49",
+		"d": "07:50"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "07:52"
+		"a": "07:53"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B760TR.Weekday",
@@ -7836,112 +7836,112 @@
 		"a": "08:04"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B797S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B797S",
+	"id": "ToyoRapid.ToyoRapid.B797SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B797SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B797S",
-	"y": "ToyoRapid.Local",
+	"n": "B797SR",
+	"y": "ToyoRapid.CommuterRapid",
 	"d": "Inbound",
 	"os": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"ds": [
-		"TokyoMetro.Tozai.Nakano"
+		"JR-East.ChuoSobuLocal.Mitaka"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B797S.Weekday"
+		"TokyoMetro.Tozai.B797SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "07:48"
+		"d": "07:46"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "07:49",
-		"d": "07:50"
+		"a": "07:48",
+		"d": "07:49"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "07:51",
-		"d": "07:52"
+		"a": "07:50",
+		"d": "07:51"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "07:54",
-		"d": "07:55"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "07:57",
-		"d": "07:57"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "07:59",
-		"d": "08:00"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "08:02",
-		"d": "08:03"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "08:06",
-		"d": "08:07"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "08:10"
-	}]
-}, {
-	"id": "ToyoRapid.ToyoRapid.B757S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B757S",
-	"r": "ToyoRapid.ToyoRapid",
-	"n": "B757S",
-	"y": "ToyoRapid.Local",
-	"d": "Inbound",
-	"os": [
-		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
-	],
-	"ds": [
-		"TokyoMetro.Tozai.Nakano"
-	],
-	"nt": [
-		"TokyoMetro.Tozai.B757S.Weekday"
-	],
-	"tt": [{
-		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "07:52"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "07:54",
+		"a": "07:53",
 		"d": "07:54"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "07:56",
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "07:55",
 		"d": "07:56"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "07:59",
-		"d": "08:00"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "08:01",
-		"d": "08:02"
-	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "08:04",
-		"d": "08:04"
+		"a": "07:58",
+		"d": "07:59"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "08:07",
-		"d": "08:07"
+		"a": "08:01",
+		"d": "08:01"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "08:11",
-		"d": "08:11"
+		"a": "08:05",
+		"d": "08:05"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "08:14"
+		"a": "08:08"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B789S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B789S",
+	"id": "ToyoRapid.ToyoRapid.B725S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B725S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B789S",
+	"n": "B725S",
+	"y": "ToyoRapid.Local",
+	"d": "Inbound",
+	"os": [
+		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
+	],
+	"ds": [
+		"TokyoMetro.Tozai.Nakano"
+	],
+	"nt": [
+		"TokyoMetro.Tozai.B725S.Weekday"
+	],
+	"tt": [{
+		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
+		"d": "07:51"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "07:53",
+		"d": "07:53"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "07:55",
+		"d": "07:55"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "07:58",
+		"d": "07:59"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "08:00",
+		"d": "08:01"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"a": "08:03",
+		"d": "08:03"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Hasama",
+		"a": "08:06",
+		"d": "08:06"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
+		"a": "08:10",
+		"d": "08:10"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
+		"a": "08:13"
+	}]
+}, {
+	"id": "ToyoRapid.ToyoRapid.B785S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B785S",
+	"r": "ToyoRapid.ToyoRapid",
+	"n": "B785S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -7951,7 +7951,7 @@
 		"JR-East.ChuoSobuLocal.Mitaka"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B789S.Weekday"
+		"TokyoMetro.Tozai.B785S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -8142,55 +8142,55 @@
 		"a": "08:39"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B863S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B863S",
+	"id": "ToyoRapid.ToyoRapid.B863SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B863SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B863S",
-	"y": "ToyoRapid.Local",
+	"n": "B863SR",
+	"y": "ToyoRapid.CommuterRapid",
 	"d": "Inbound",
 	"os": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"ds": [
-		"JR-East.ChuoSobuLocal.Mitaka"
+		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B863S.Weekday"
+		"TokyoMetro.Tozai.B863SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "08:22"
+		"d": "08:25"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "08:24",
-		"d": "08:24"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "08:26",
 		"d": "08:27"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "08:29",
-		"d": "08:30"
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "08:28",
+		"d": "08:29"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "08:31",
 		"d": "08:32"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "08:34",
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "08:33",
 		"d": "08:34"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "08:37",
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"a": "08:36",
 		"d": "08:37"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.Hasama",
+		"a": "08:39",
+		"d": "08:39"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "08:41",
-		"d": "08:41"
+		"a": "08:43",
+		"d": "08:43"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "08:44"
+		"a": "08:46"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B841SR.Weekday",
@@ -8723,11 +8723,11 @@
 		"d": "10:01"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "10:03",
+		"a": "10:02",
 		"d": "10:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "10:05",
+		"a": "10:04",
 		"d": "10:05"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -8740,7 +8740,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "10:12",
-		"d": "10:13"
+		"d": "10:12"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "10:15",
@@ -8754,10 +8754,10 @@
 		"a": "10:22"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1051SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1051SR",
+	"id": "ToyoRapid.ToyoRapid.B1055SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1055SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1051SR",
+	"n": "B1055SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -8767,18 +8767,18 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1051SR.Weekday"
+		"TokyoMetro.Tozai.B1055SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
 		"d": "10:16"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "10:18",
+		"a": "10:17",
 		"d": "10:18"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "10:20",
+		"a": "10:19",
 		"d": "10:20"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -8791,7 +8791,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "10:27",
-		"d": "10:28"
+		"d": "10:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "10:30",
@@ -8825,11 +8825,11 @@
 		"d": "10:31"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "10:33",
+		"a": "10:32",
 		"d": "10:33"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "10:35",
+		"a": "10:34",
 		"d": "10:35"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -8842,7 +8842,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "10:42",
-		"d": "10:43"
+		"d": "10:42"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "10:45",
@@ -8856,10 +8856,10 @@
 		"a": "10:52"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1057S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1057S",
+	"id": "ToyoRapid.ToyoRapid.B1025S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1025S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1057S",
+	"n": "B1025S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -8869,7 +8869,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1057S.Weekday"
+		"TokyoMetro.Tozai.B1025S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -8927,15 +8927,15 @@
 		"d": "10:46"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "10:48",
+		"a": "10:47",
 		"d": "10:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "10:50",
+		"a": "10:49",
 		"d": "10:50"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "10:53",
+		"a": "10:52",
 		"d": "10:53"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
@@ -8944,7 +8944,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "10:57",
-		"d": "10:58"
+		"d": "10:57"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "11:00",
@@ -8956,57 +8956,6 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
 		"a": "11:07"
-	}]
-}, {
-	"id": "ToyoRapid.ToyoRapid.B1147SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1147SR",
-	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1147SR",
-	"y": "ToyoRapid.Rapid",
-	"d": "Inbound",
-	"os": [
-		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
-	],
-	"ds": [
-		"TokyoMetro.Tozai.Nakano"
-	],
-	"nt": [
-		"TokyoMetro.Tozai.B1147SR.Weekday"
-	],
-	"tt": [{
-		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "11:01"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "11:03",
-		"d": "11:03"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "11:05",
-		"d": "11:05"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "11:07",
-		"d": "11:08"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "11:10",
-		"d": "11:10"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "11:12",
-		"d": "11:13"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "11:15",
-		"d": "11:15"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "11:19",
-		"d": "11:19"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "11:22"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B1195SR.Weekday",
@@ -9026,14 +8975,65 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
+		"d": "11:01"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "11:02",
+		"d": "11:03"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "11:04",
+		"d": "11:05"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "11:07",
+		"d": "11:08"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "11:10",
+		"d": "11:10"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"a": "11:12",
+		"d": "11:12"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Hasama",
+		"a": "11:15",
+		"d": "11:15"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
+		"a": "11:19",
+		"d": "11:19"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
+		"a": "11:22"
+	}]
+}, {
+	"id": "ToyoRapid.ToyoRapid.B1165SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1165SR",
+	"r": "ToyoRapid.ToyoRapid",
+	"n": "B1165SR",
+	"y": "ToyoRapid.Rapid",
+	"d": "Inbound",
+	"os": [
+		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
+	],
+	"ds": [
+		"TokyoMetro.Tozai.Nakano"
+	],
+	"nt": [
+		"TokyoMetro.Tozai.B1165SR.Weekday"
+	],
+	"tt": [{
+		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
 		"d": "11:16"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "11:18",
+		"a": "11:17",
 		"d": "11:18"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "11:20",
+		"a": "11:19",
 		"d": "11:20"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9046,7 +9046,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "11:27",
-		"d": "11:28"
+		"d": "11:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "11:30",
@@ -9080,11 +9080,11 @@
 		"d": "11:31"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "11:33",
+		"a": "11:32",
 		"d": "11:33"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "11:35",
+		"a": "11:34",
 		"d": "11:35"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9097,7 +9097,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "11:42",
-		"d": "11:43"
+		"d": "11:42"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "11:45",
@@ -9131,11 +9131,11 @@
 		"d": "11:46"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "11:48",
+		"a": "11:47",
 		"d": "11:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "11:50",
+		"a": "11:49",
 		"d": "11:50"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9148,7 +9148,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "11:57",
-		"d": "11:58"
+		"d": "11:57"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "12:00",
@@ -9182,11 +9182,11 @@
 		"d": "12:01"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "12:03",
+		"a": "12:02",
 		"d": "12:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "12:05",
+		"a": "12:04",
 		"d": "12:05"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9199,7 +9199,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "12:12",
-		"d": "12:13"
+		"d": "12:12"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "12:15",
@@ -9233,11 +9233,11 @@
 		"d": "12:16"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "12:18",
+		"a": "12:17",
 		"d": "12:18"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "12:20",
+		"a": "12:19",
 		"d": "12:20"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9250,7 +9250,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "12:27",
-		"d": "12:28"
+		"d": "12:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "12:30",
@@ -9284,11 +9284,11 @@
 		"d": "12:31"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "12:33",
+		"a": "12:32",
 		"d": "12:33"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "12:35",
+		"a": "12:34",
 		"d": "12:35"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9301,7 +9301,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "12:42",
-		"d": "12:43"
+		"d": "12:42"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "12:45",
@@ -9315,10 +9315,10 @@
 		"a": "12:52"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1251SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1251SR",
+	"id": "ToyoRapid.ToyoRapid.B1255SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1255SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1251SR",
+	"n": "B1255SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -9328,18 +9328,18 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1251SR.Weekday"
+		"TokyoMetro.Tozai.B1255SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
 		"d": "12:46"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "12:48",
+		"a": "12:47",
 		"d": "12:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "12:50",
+		"a": "12:49",
 		"d": "12:50"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9352,7 +9352,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "12:57",
-		"d": "12:58"
+		"d": "12:57"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "13:00",
@@ -9386,11 +9386,11 @@
 		"d": "13:01"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "13:03",
+		"a": "13:02",
 		"d": "13:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "13:05",
+		"a": "13:04",
 		"d": "13:05"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9403,7 +9403,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "13:12",
-		"d": "13:13"
+		"d": "13:12"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "13:15",
@@ -9437,11 +9437,11 @@
 		"d": "13:16"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "13:18",
+		"a": "13:17",
 		"d": "13:18"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "13:20",
+		"a": "13:19",
 		"d": "13:20"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9454,7 +9454,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "13:27",
-		"d": "13:28"
+		"d": "13:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "13:30",
@@ -9466,57 +9466,6 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
 		"a": "13:37"
-	}]
-}, {
-	"id": "ToyoRapid.ToyoRapid.B1347SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1347SR",
-	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1347SR",
-	"y": "ToyoRapid.Rapid",
-	"d": "Inbound",
-	"os": [
-		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
-	],
-	"ds": [
-		"TokyoMetro.Tozai.Nakano"
-	],
-	"nt": [
-		"TokyoMetro.Tozai.B1347SR.Weekday"
-	],
-	"tt": [{
-		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "13:31"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "13:33",
-		"d": "13:33"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "13:35",
-		"d": "13:35"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "13:37",
-		"d": "13:38"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "13:40",
-		"d": "13:40"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "13:42",
-		"d": "13:43"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "13:45",
-		"d": "13:45"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "13:49",
-		"d": "13:49"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "13:52"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B1395SR.Weekday",
@@ -9536,14 +9485,65 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
+		"d": "13:31"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "13:32",
+		"d": "13:33"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "13:34",
+		"d": "13:35"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "13:37",
+		"d": "13:38"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "13:40",
+		"d": "13:40"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"a": "13:42",
+		"d": "13:42"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Hasama",
+		"a": "13:45",
+		"d": "13:45"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
+		"a": "13:49",
+		"d": "13:49"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
+		"a": "13:52"
+	}]
+}, {
+	"id": "ToyoRapid.ToyoRapid.B1365SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1365SR",
+	"r": "ToyoRapid.ToyoRapid",
+	"n": "B1365SR",
+	"y": "ToyoRapid.Rapid",
+	"d": "Inbound",
+	"os": [
+		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
+	],
+	"ds": [
+		"TokyoMetro.Tozai.Nakano"
+	],
+	"nt": [
+		"TokyoMetro.Tozai.B1365SR.Weekday"
+	],
+	"tt": [{
+		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
 		"d": "13:46"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "13:48",
+		"a": "13:47",
 		"d": "13:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "13:50",
+		"a": "13:49",
 		"d": "13:50"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9556,7 +9556,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "13:57",
-		"d": "13:58"
+		"d": "13:57"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "14:00",
@@ -9590,11 +9590,11 @@
 		"d": "14:01"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "14:03",
+		"a": "14:02",
 		"d": "14:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "14:05",
+		"a": "14:04",
 		"d": "14:05"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9607,7 +9607,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "14:12",
-		"d": "14:13"
+		"d": "14:12"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "14:15",
@@ -9641,11 +9641,11 @@
 		"d": "14:16"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "14:18",
+		"a": "14:17",
 		"d": "14:18"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "14:20",
+		"a": "14:19",
 		"d": "14:20"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9658,7 +9658,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "14:27",
-		"d": "14:28"
+		"d": "14:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "14:30",
@@ -9692,11 +9692,11 @@
 		"d": "14:31"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "14:33",
+		"a": "14:32",
 		"d": "14:33"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "14:35",
+		"a": "14:34",
 		"d": "14:35"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9709,7 +9709,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "14:42",
-		"d": "14:43"
+		"d": "14:42"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "14:45",
@@ -9743,11 +9743,11 @@
 		"d": "14:46"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "14:48",
+		"a": "14:47",
 		"d": "14:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "14:50",
+		"a": "14:49",
 		"d": "14:50"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9760,7 +9760,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "14:57",
-		"d": "14:58"
+		"d": "14:57"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "15:00",
@@ -9794,11 +9794,11 @@
 		"d": "15:01"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "15:03",
+		"a": "15:02",
 		"d": "15:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "15:05",
+		"a": "15:04",
 		"d": "15:05"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9811,7 +9811,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "15:12",
-		"d": "15:13"
+		"d": "15:12"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "15:15",
@@ -9825,10 +9825,10 @@
 		"a": "15:22"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1551SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1551SR",
+	"id": "ToyoRapid.ToyoRapid.B1555SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1555SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1551SR",
+	"n": "B1555SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -9838,18 +9838,18 @@
 		"JR-East.ChuoSobuLocal.Mitaka"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1551SR.Weekday"
+		"TokyoMetro.Tozai.B1555SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
 		"d": "15:16"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "15:18",
+		"a": "15:17",
 		"d": "15:18"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "15:20",
+		"a": "15:19",
 		"d": "15:20"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9862,7 +9862,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "15:27",
-		"d": "15:28"
+		"d": "15:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "15:30",
@@ -9896,11 +9896,11 @@
 		"d": "15:31"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "15:33",
+		"a": "15:32",
 		"d": "15:33"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "15:35",
+		"a": "15:34",
 		"d": "15:35"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
@@ -9913,7 +9913,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "15:42",
-		"d": "15:43"
+		"d": "15:42"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "15:45",
@@ -9944,38 +9944,38 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "15:38"
+		"d": "15:39"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "15:40",
-		"d": "15:40"
+		"a": "15:41",
+		"d": "15:41"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "15:42",
-		"d": "15:42"
+		"a": "15:43",
+		"d": "15:43"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "15:45",
-		"d": "15:45"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "15:47",
+		"a": "15:46",
 		"d": "15:47"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "15:48",
+		"d": "15:48"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "15:49",
-		"d": "15:50"
+		"a": "15:50",
+		"d": "15:51"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "15:52",
-		"d": "15:52"
+		"a": "15:53",
+		"d": "15:54"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "15:56",
-		"d": "15:56"
+		"a": "15:57",
+		"d": "15:58"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "15:59"
+		"a": "16:00"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B1537SR.Weekday",
@@ -9995,44 +9995,44 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "15:45"
+		"d": "15:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "15:46",
-		"d": "15:47"
+		"a": "15:50",
+		"d": "15:50"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "15:48",
-		"d": "15:49"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "15:51",
+		"a": "15:52",
 		"d": "15:52"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "15:53",
-		"d": "15:54"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "15:56",
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "15:55",
 		"d": "15:56"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "15:59",
-		"d": "15:59"
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "15:57",
+		"d": "15:57"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"a": "15:59",
+		"d": "16:00"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "16:02",
 		"d": "16:03"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
+		"a": "16:06",
+		"d": "16:07"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "16:06"
+		"a": "16:09"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1547SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1547SR",
+	"id": "ToyoRapid.ToyoRapid.B1595SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1595SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1547SR",
+	"n": "B1595SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -10042,7 +10042,7 @@
 		"JR-East.ChuoSobuLocal.Mitaka"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1547SR.Weekday"
+		"TokyoMetro.Tozai.B1595SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -10131,10 +10131,10 @@
 		"a": "16:23"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1695SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1695SR",
+	"id": "ToyoRapid.ToyoRapid.B1665SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1665SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1695SR",
+	"n": "B1665SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -10144,7 +10144,7 @@
 		"JR-East.ChuoSobuLocal.Mitaka"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1695SR.Weekday"
+		"TokyoMetro.Tozai.B1665SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -10284,10 +10284,10 @@
 		"a": "16:51"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1689S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1689S",
+	"id": "ToyoRapid.ToyoRapid.B1683S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1683S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1689S",
+	"n": "B1683S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -10297,7 +10297,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1689S.Weekday"
+		"TokyoMetro.Tozai.B1683S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -10386,62 +10386,11 @@
 		"a": "17:06"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1663S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1663S",
+	"id": "ToyoRapid.ToyoRapid.B1652T.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1652T",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1663S",
+	"n": "B1652T",
 	"y": "ToyoRapid.Local",
-	"d": "Inbound",
-	"os": [
-		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
-	],
-	"ds": [
-		"JR-East.ChuoSobuLocal.Mitaka"
-	],
-	"nt": [
-		"TokyoMetro.Tozai.B1663S.Weekday"
-	],
-	"tt": [{
-		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "16:50"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "16:52",
-		"d": "16:52"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "16:54",
-		"d": "16:54"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "16:57",
-		"d": "16:57"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "16:59",
-		"d": "16:59"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "17:01",
-		"d": "17:02"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "17:04",
-		"d": "17:04"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "17:08",
-		"d": "17:08"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "17:11"
-	}]
-}, {
-	"id": "ToyoRapid.ToyoRapid.B1652TR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1652TR",
-	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1652TR",
-	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
@@ -10450,48 +10399,48 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1652TR.Weekday"
+		"TokyoMetro.Tozai.B1652T.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "16:57"
+		"d": "16:54"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "16:59",
-		"d": "16:59"
+		"a": "16:56",
+		"d": "16:56"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "16:58",
+		"d": "16:58"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "17:01",
 		"d": "17:01"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "17:04",
-		"d": "17:04"
-	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "17:06",
-		"d": "17:06"
+		"a": "17:03",
+		"d": "17:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "17:08",
-		"d": "17:09"
+		"a": "17:05",
+		"d": "17:06"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "17:11",
-		"d": "17:11"
+		"a": "17:08",
+		"d": "17:08"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "17:15",
-		"d": "17:15"
+		"a": "17:12",
+		"d": "17:12"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "17:18"
+		"a": "17:15"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1713S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1713S",
+	"id": "ToyoRapid.ToyoRapid.B1719S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1719S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1713S",
+	"n": "B1719S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -10501,42 +10450,93 @@
 		"JR-East.ChuoSobuLocal.Mitaka"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1713S.Weekday"
+		"TokyoMetro.Tozai.B1719S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "17:05"
+		"d": "17:02"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "17:07",
-		"d": "17:07"
+		"a": "17:04",
+		"d": "17:04"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "17:09",
-		"d": "17:09"
+		"a": "17:06",
+		"d": "17:06"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "17:12",
-		"d": "17:13"
+		"a": "17:08",
+		"d": "17:09"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "17:14",
-		"d": "17:15"
+		"a": "17:11",
+		"d": "17:11"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"a": "17:13",
+		"d": "17:14"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Hasama",
+		"a": "17:16",
+		"d": "17:16"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
+		"a": "17:20",
+		"d": "17:20"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
+		"a": "17:23"
+	}]
+}, {
+	"id": "ToyoRapid.ToyoRapid.B1727S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1727S",
+	"r": "ToyoRapid.ToyoRapid",
+	"n": "B1727S",
+	"y": "ToyoRapid.Local",
+	"d": "Inbound",
+	"os": [
+		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
+	],
+	"ds": [
+		"TokyoMetro.Tozai.Nakano"
+	],
+	"nt": [
+		"TokyoMetro.Tozai.B1727S.Weekday"
+	],
+	"tt": [{
+		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
+		"d": "17:10"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "17:11",
+		"d": "17:12"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "17:13",
+		"d": "17:14"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "17:16",
 		"d": "17:17"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "17:19",
-		"d": "17:20"
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "17:18",
+		"d": "17:19"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"a": "17:21",
+		"d": "17:21"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "17:23",
 		"d": "17:24"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
+		"a": "17:27",
+		"d": "17:28"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "17:27"
+		"a": "17:31"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B1754T.Weekday",
@@ -10692,10 +10692,10 @@
 		"a": "17:57"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1779S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1779S",
+	"id": "ToyoRapid.ToyoRapid.B1759S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1759S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1779S",
+	"n": "B1759S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -10705,42 +10705,42 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1779S.Weekday"
+		"TokyoMetro.Tozai.B1759S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "17:47"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "17:49",
 		"d": "17:49"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "17:51",
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "17:50",
 		"d": "17:51"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "17:54",
-		"d": "17:54"
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "17:52",
+		"d": "17:53"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "17:56",
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "17:55",
 		"d": "17:56"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
 		"a": "17:58",
-		"d": "17:59"
+		"d": "17:58"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"a": "18:00",
+		"d": "18:00"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "18:01",
-		"d": "18:01"
+		"a": "18:03",
+		"d": "18:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "18:05",
-		"d": "18:05"
+		"a": "18:07",
+		"d": "18:07"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "18:08"
+		"a": "18:10"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B1815SR.Weekday",
@@ -10763,31 +10763,31 @@
 		"d": "18:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "18:04",
+		"a": "18:05",
 		"d": "18:05"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "18:06",
+		"a": "18:07",
 		"d": "18:07"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "18:09",
+		"a": "18:10",
 		"d": "18:10"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "18:11",
+		"a": "18:12",
 		"d": "18:12"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "18:14",
-		"d": "18:14"
+		"d": "18:15"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "18:17",
 		"d": "18:17"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "18:20",
+		"a": "18:21",
 		"d": "18:21"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -10896,10 +10896,10 @@
 		"a": "18:46"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1819SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1819SR",
+	"id": "ToyoRapid.ToyoRapid.B1857SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1857SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1819SR",
+	"n": "B1857SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -10909,7 +10909,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1819SR.Weekday"
+		"TokyoMetro.Tozai.B1857SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -10947,10 +10947,10 @@
 		"a": "18:52"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1835S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1835S",
+	"id": "ToyoRapid.ToyoRapid.B1841S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1841S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1835S",
+	"n": "B1841S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -10960,7 +10960,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1835S.Weekday"
+		"TokyoMetro.Tozai.B1841S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -10998,10 +10998,10 @@
 		"a": "18:58"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1885SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1885SR",
+	"id": "ToyoRapid.ToyoRapid.B1813SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1813SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1885SR",
+	"n": "B1813SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -11011,7 +11011,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1885SR.Weekday"
+		"TokyoMetro.Tozai.B1813SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -11100,10 +11100,10 @@
 		"a": "19:13"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1847SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1847SR",
+	"id": "ToyoRapid.ToyoRapid.B1895SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1895SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1847SR",
+	"n": "B1895SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -11113,7 +11113,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1847SR.Weekday"
+		"TokyoMetro.Tozai.B1895SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -11151,10 +11151,10 @@
 		"a": "19:17"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1967S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1967S",
+	"id": "ToyoRapid.ToyoRapid.B1935S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1935S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1967S",
+	"n": "B1935S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -11164,7 +11164,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1967S.Weekday"
+		"TokyoMetro.Tozai.B1935S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -11253,10 +11253,10 @@
 		"a": "19:30"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1975S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1975S",
+	"id": "ToyoRapid.ToyoRapid.B1947S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1947S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1975S",
+	"n": "B1947S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -11266,7 +11266,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1975S.Weekday"
+		"TokyoMetro.Tozai.B1947S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -11406,10 +11406,10 @@
 		"a": "19:47"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1933SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1933SR",
+	"id": "ToyoRapid.ToyoRapid.B1945SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1945SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1933SR",
+	"n": "B1945SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -11419,7 +11419,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1933SR.Weekday"
+		"TokyoMetro.Tozai.B1945SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -11508,10 +11508,10 @@
 		"a": "20:01"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1991SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1991SR",
+	"id": "ToyoRapid.ToyoRapid.B1927SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1927SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1991SR",
+	"n": "B1927SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -11521,19 +11521,19 @@
 		"JR-East.ChuoSobuLocal.Mitaka"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1991SR.Weekday"
+		"TokyoMetro.Tozai.B1927SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "19:48"
+		"d": "19:47"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
 		"a": "19:49",
-		"d": "19:50"
+		"d": "19:49"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "19:51",
-		"d": "19:52"
+		"d": "19:51"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "19:54",
@@ -11541,10 +11541,10 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
 		"a": "19:56",
-		"d": "19:57"
+		"d": "19:56"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "19:59",
+		"a": "19:58",
 		"d": "19:59"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
@@ -11556,13 +11556,13 @@
 		"d": "20:06"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "20:09"
+		"a": "20:08"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B1963S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B1963S",
+	"id": "ToyoRapid.ToyoRapid.B1949S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B1949S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B1963S",
+	"n": "B1949S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -11572,7 +11572,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B1963S.Weekday"
+		"TokyoMetro.Tozai.B1949S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -11610,10 +11610,10 @@
 		"a": "20:17"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2057SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2057SR",
+	"id": "ToyoRapid.ToyoRapid.B2061SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2061SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2057SR",
+	"n": "B2061SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -11623,7 +11623,7 @@
 		"JR-East.ChuoSobuLocal.Mitaka"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2057SR.Weekday"
+		"TokyoMetro.Tozai.B2061SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -11650,7 +11650,7 @@
 		"d": "20:11"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "20:13",
+		"a": "20:14",
 		"d": "20:14"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
@@ -11712,10 +11712,10 @@
 		"a": "20:26"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2083SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2083SR",
+	"id": "ToyoRapid.ToyoRapid.B2085SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2085SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2083SR",
+	"n": "B2085SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -11725,7 +11725,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2083SR.Weekday"
+		"TokyoMetro.Tozai.B2085SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -11763,10 +11763,10 @@
 		"a": "20:33"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2013S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2013S",
+	"id": "ToyoRapid.ToyoRapid.B2081S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2081S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2013S",
+	"n": "B2081S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -11776,7 +11776,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2013S.Weekday"
+		"TokyoMetro.Tozai.B2081S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -11814,10 +11814,10 @@
 		"a": "20:37"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2079SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2079SR",
+	"id": "ToyoRapid.ToyoRapid.B2077SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2077SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2079SR",
+	"n": "B2077SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -11827,7 +11827,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2079SR.Weekday"
+		"TokyoMetro.Tozai.B2077SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -11865,10 +11865,10 @@
 		"a": "20:46"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2051S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2051S",
+	"id": "ToyoRapid.ToyoRapid.B2063S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2063S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2051S",
+	"n": "B2063S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -11878,7 +11878,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2051S.Weekday"
+		"TokyoMetro.Tozai.B2063S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -11916,10 +11916,10 @@
 		"a": "20:54"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2029SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2029SR",
+	"id": "ToyoRapid.ToyoRapid.B2055SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2055SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2029SR",
+	"n": "B2055SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -11929,7 +11929,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2029SR.Weekday"
+		"TokyoMetro.Tozai.B2055SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -11967,10 +11967,10 @@
 		"a": "21:00"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2031S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2031S",
+	"id": "ToyoRapid.ToyoRapid.B2029S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2029S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2031S",
+	"n": "B2029S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -11980,42 +11980,42 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2031S.Weekday"
+		"TokyoMetro.Tozai.B2029S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "20:48"
+		"d": "20:46"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "20:49",
-		"d": "20:50"
+		"a": "20:48",
+		"d": "20:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "20:51",
-		"d": "20:52"
+		"a": "20:50",
+		"d": "20:50"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "20:54",
-		"d": "20:55"
+		"a": "20:53",
+		"d": "20:54"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "20:56",
-		"d": "20:57"
+		"a": "20:55",
+		"d": "20:56"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "20:59",
-		"d": "20:59"
+		"a": "20:57",
+		"d": "20:58"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "21:02",
-		"d": "21:02"
+		"a": "21:00",
+		"d": "21:01"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "21:05",
-		"d": "21:06"
+		"a": "21:04",
+		"d": "21:05"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "21:09"
+		"a": "21:08"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B2039SR.Weekday",
@@ -12171,10 +12171,10 @@
 		"a": "21:31"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2161S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2161S",
+	"id": "ToyoRapid.ToyoRapid.B2113S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2113S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2161S",
+	"n": "B2113S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -12184,42 +12184,42 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2161S.Weekday"
+		"TokyoMetro.Tozai.B2113S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "21:20"
+		"d": "21:19"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "21:22",
-		"d": "21:22"
+		"a": "21:20",
+		"d": "21:21"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "21:24",
-		"d": "21:24"
+		"a": "21:22",
+		"d": "21:23"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "21:25",
+		"d": "21:26"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
 		"a": "21:27",
 		"d": "21:28"
 	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "21:29",
-		"d": "21:29"
-	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "21:31",
-		"d": "21:32"
+		"a": "21:30",
+		"d": "21:30"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "21:34",
-		"d": "21:35"
+		"a": "21:33",
+		"d": "21:33"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "21:38",
-		"d": "21:39"
+		"a": "21:36",
+		"d": "21:37"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "21:41"
+		"a": "21:40"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B2169SR.Weekday",
@@ -12324,10 +12324,10 @@
 		"a": "21:56"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2175SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2175SR",
+	"id": "ToyoRapid.ToyoRapid.B2147SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2147SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2175SR",
+	"n": "B2147SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -12337,7 +12337,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2175SR.Weekday"
+		"TokyoMetro.Tozai.B2147SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -12426,10 +12426,10 @@
 		"a": "22:15"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2233SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2233SR",
+	"id": "ToyoRapid.ToyoRapid.B2245SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2245SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2233SR",
+	"n": "B2245SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -12439,7 +12439,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2233SR.Weekday"
+		"TokyoMetro.Tozai.B2245SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -12528,10 +12528,10 @@
 		"a": "22:36"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2249SR.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2249SR",
+	"id": "ToyoRapid.ToyoRapid.B2259SR.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2259SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2249SR",
+	"n": "B2259SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -12541,7 +12541,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2249SR.Weekday"
+		"TokyoMetro.Tozai.B2259SR.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -12579,10 +12579,10 @@
 		"a": "22:51"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2283S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2283S",
+	"id": "ToyoRapid.ToyoRapid.B2285S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2285S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2283S",
+	"n": "B2285S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -12592,7 +12592,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2283S.Weekday"
+		"TokyoMetro.Tozai.B2285S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -12630,10 +12630,10 @@
 		"a": "23:04"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2279S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2279S",
+	"id": "ToyoRapid.ToyoRapid.B2277S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2277S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2279S",
+	"n": "B2277S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -12643,7 +12643,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2279S.Weekday"
+		"TokyoMetro.Tozai.B2277S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -12681,10 +12681,10 @@
 		"a": "23:16"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2319S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2319S",
+	"id": "ToyoRapid.ToyoRapid.B2357S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2357S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2319S",
+	"n": "B2357S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -12694,7 +12694,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2319S.Weekday"
+		"TokyoMetro.Tozai.B2357S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -12732,10 +12732,10 @@
 		"a": "23:27"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2385S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2385S",
+	"id": "ToyoRapid.ToyoRapid.B2375S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2375S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2385S",
+	"n": "B2375S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -12745,7 +12745,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2385S.Weekday"
+		"TokyoMetro.Tozai.B2375S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -12783,10 +12783,10 @@
 		"a": "23:39"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2331S.Weekday",
-	"t": "ToyoRapid.ToyoRapid.B2331S",
+	"id": "ToyoRapid.ToyoRapid.B2329S.Weekday",
+	"t": "ToyoRapid.ToyoRapid.B2329S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2331S",
+	"n": "B2329S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -12796,7 +12796,7 @@
 		"TokyoMetro.Tozai.Toyocho"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2331S.Weekday"
+		"TokyoMetro.Tozai.B2329S.Weekday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -13357,18 +13357,18 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "07:28",
-		"d": "07:30"
+		"d": "07:28"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "07:32",
-		"d": "07:32"
+		"a": "07:31",
+		"d": "07:31"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "07:34",
-		"d": "07:34"
+		"a": "07:33",
+		"d": "07:33"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "07:37"
+		"a": "07:35"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A637S.SaturdayHoliday",
@@ -13391,11 +13391,11 @@
 		"d": "07:22"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "07:24",
+		"a": "07:25",
 		"d": "07:25"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "07:28",
+		"a": "07:29",
 		"d": "07:29"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
@@ -13403,19 +13403,19 @@
 		"d": "07:32"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "07:33",
+		"a": "07:34",
 		"d": "07:34"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "07:35",
+		"a": "07:36",
 		"d": "07:36"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "07:38",
+		"a": "07:39",
 		"d": "07:39"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "07:40",
+		"a": "07:41",
 		"d": "07:41"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -13501,7 +13501,7 @@
 		"d": "07:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "07:51",
+		"a": "07:50",
 		"d": "07:51"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
@@ -13510,7 +13510,7 @@
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "07:55",
-		"d": "07:56"
+		"d": "07:55"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
 		"a": "07:58",
@@ -13521,7 +13521,7 @@
 		"d": "08:00"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "08:03"
+		"a": "08:02"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A750T.SaturdayHoliday",
@@ -14003,11 +14003,11 @@
 		"d": "09:27"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "09:29",
+		"a": "09:30",
 		"d": "09:30"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "09:33",
+		"a": "09:34",
 		"d": "09:34"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
@@ -14015,11 +14015,11 @@
 		"d": "09:37"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "09:38",
+		"a": "09:39",
 		"d": "09:39"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "09:40",
+		"a": "09:41",
 		"d": "09:41"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
@@ -16071,7 +16071,7 @@
 		"d": "19:34"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "19:36"
+		"a": "19:37"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A1852TR.SaturdayHoliday",
@@ -16125,10 +16125,10 @@
 		"a": "19:51"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1943SR.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A1943SR",
+	"id": "ToyoRapid.ToyoRapid.A1954TR.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A1954TR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1943SR",
+	"n": "A1954TR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -16138,7 +16138,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1943SR.SaturdayHoliday"
+		"TokyoMetro.Tozai.A1954TR.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -16176,61 +16176,61 @@
 		"a": "20:07"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1954T.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A1954T",
+	"id": "ToyoRapid.ToyoRapid.A1843S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A1843S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1954T",
+	"n": "A1843S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
-		"TokyoMetro.Tozai.Nakano"
+		"JR-East.ChuoSobuLocal.Mitaka"
 	],
 	"ds": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1954T.SaturdayHoliday"
+		"TokyoMetro.Tozai.A1843S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"d": "19:58"
+		"d": "19:55"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "20:01",
-		"d": "20:02"
+		"a": "19:58",
+		"d": "19:58"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "20:05",
-		"d": "20:05"
+		"a": "20:02",
+		"d": "20:02"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "20:08",
-		"d": "20:08"
+		"a": "20:04",
+		"d": "20:05"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "20:10",
-		"d": "20:11"
+		"a": "20:07",
+		"d": "20:07"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "20:12",
-		"d": "20:13"
+		"a": "20:09",
+		"d": "20:09"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "20:15",
-		"d": "20:16"
+		"a": "20:12",
+		"d": "20:12"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "20:17",
-		"d": "20:18"
+		"a": "20:14",
+		"d": "20:14"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "20:20"
+		"a": "20:16"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1945SR.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A1945SR",
+	"id": "ToyoRapid.ToyoRapid.A1947SR.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A1947SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1945SR",
+	"n": "A1947SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -16240,7 +16240,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1945SR.SaturdayHoliday"
+		"TokyoMetro.Tozai.A1947SR.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -16329,10 +16329,10 @@
 		"a": "20:40"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A1917SR.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A1917SR",
+	"id": "ToyoRapid.ToyoRapid.A1935SR.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A1935SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A1917SR",
+	"n": "A1935SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -16342,7 +16342,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A1917SR.SaturdayHoliday"
+		"TokyoMetro.Tozai.A1935SR.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -16533,10 +16533,10 @@
 		"a": "21:22"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2029S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A2029S",
+	"id": "ToyoRapid.ToyoRapid.A2037S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A2037S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2029S",
+	"n": "A2037S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -16546,7 +16546,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2029S.SaturdayHoliday"
+		"TokyoMetro.Tozai.A2037S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -16584,10 +16584,10 @@
 		"a": "21:29"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2058TR.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A2058TR",
+	"id": "ToyoRapid.ToyoRapid.A2013SR.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A2013SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2058TR",
+	"n": "A2013SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -16597,7 +16597,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2058TR.SaturdayHoliday"
+		"TokyoMetro.Tozai.A2013SR.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -16635,10 +16635,10 @@
 		"a": "21:39"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2037S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A2037S",
+	"id": "ToyoRapid.ToyoRapid.A2045S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A2045S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2037S",
+	"n": "A2045S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -16648,7 +16648,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2037S.SaturdayHoliday"
+		"TokyoMetro.Tozai.A2045S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -16737,10 +16737,10 @@
 		"a": "22:00"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2135SR.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A2135SR",
+	"id": "ToyoRapid.ToyoRapid.A2129SR.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A2129SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2135SR",
+	"n": "A2129SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Outbound",
 	"os": [
@@ -16750,7 +16750,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2135SR.SaturdayHoliday"
+		"TokyoMetro.Tozai.A2129SR.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -16788,10 +16788,10 @@
 		"a": "22:08"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2061S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A2061S",
+	"id": "ToyoRapid.ToyoRapid.A2027S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A2027S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2061S",
+	"n": "A2027S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -16801,7 +16801,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2061S.SaturdayHoliday"
+		"TokyoMetro.Tozai.A2027S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -17043,10 +17043,10 @@
 		"a": "22:56"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2145S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A2145S",
+	"id": "ToyoRapid.ToyoRapid.A2147S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A2147S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2145S",
+	"n": "A2147S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -17056,7 +17056,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2145S.SaturdayHoliday"
+		"TokyoMetro.Tozai.A2147S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -17094,10 +17094,10 @@
 		"a": "23:03"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2247S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A2247S",
+	"id": "ToyoRapid.ToyoRapid.A2217S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A2217S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2247S",
+	"n": "A2217S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -17107,7 +17107,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2247S.SaturdayHoliday"
+		"TokyoMetro.Tozai.A2217S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -17145,10 +17145,10 @@
 		"a": "23:17"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2213S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A2213S",
+	"id": "ToyoRapid.ToyoRapid.A2258T.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A2258T",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2213S",
+	"n": "A2258T",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -17158,7 +17158,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2213S.SaturdayHoliday"
+		"TokyoMetro.Tozai.A2258T.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -17196,10 +17196,10 @@
 		"a": "23:32"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2217S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A2217S",
+	"id": "ToyoRapid.ToyoRapid.A2235S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A2235S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2217S",
+	"n": "A2235S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -17209,7 +17209,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2217S.SaturdayHoliday"
+		"TokyoMetro.Tozai.A2235S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -17298,10 +17298,10 @@
 		"a": "23:56"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2229S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A2229S",
+	"id": "ToyoRapid.ToyoRapid.A2237S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A2237S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2229S",
+	"n": "A2237S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -17311,7 +17311,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2229S.SaturdayHoliday"
+		"TokyoMetro.Tozai.A2237S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -17349,10 +17349,10 @@
 		"a": "00:11"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2358T.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A2358T",
+	"id": "ToyoRapid.ToyoRapid.A2313S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A2313S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2358T",
+	"n": "A2313S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -17362,7 +17362,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2358T.SaturdayHoliday"
+		"TokyoMetro.Tozai.A2313S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -17451,10 +17451,10 @@
 		"a": "00:41"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.A2335S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.A2335S",
+	"id": "ToyoRapid.ToyoRapid.A2329S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.A2329S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "A2335S",
+	"n": "A2329S",
 	"y": "ToyoRapid.Local",
 	"d": "Outbound",
 	"os": [
@@ -17464,7 +17464,7 @@
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"pt": [
-		"TokyoMetro.Tozai.A2335S.SaturdayHoliday"
+		"TokyoMetro.Tozai.A2329S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
@@ -17684,18 +17684,18 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"d": "07:21"
+		"d": "07:20"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "07:23",
+		"a": "07:22",
 		"d": "07:23"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "07:25",
+		"a": "07:24",
 		"d": "07:25"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "07:28"
+		"a": "07:27"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A756T.SaturdayHoliday",
@@ -17712,18 +17712,18 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"d": "07:50"
+		"d": "07:59"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "07:52",
-		"d": "07:53"
+		"a": "08:02",
+		"d": "08:02"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "07:54",
-		"d": "07:55"
+		"a": "08:04",
+		"d": "08:04"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"a": "07:57"
+		"a": "08:07"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.A858T.SaturdayHoliday",
@@ -18536,38 +18536,38 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "07:42"
+		"d": "07:41"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "07:44",
-		"d": "07:44"
+		"a": "07:42",
+		"d": "07:43"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "07:46",
-		"d": "07:46"
+		"a": "07:44",
+		"d": "07:45"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "07:49",
-		"d": "07:49"
+		"a": "07:47",
+		"d": "07:48"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "07:51",
-		"d": "07:51"
+		"a": "07:49",
+		"d": "07:50"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "07:53",
-		"d": "07:54"
+		"a": "07:52",
+		"d": "07:52"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "07:56",
-		"d": "07:56"
+		"a": "07:54",
+		"d": "07:55"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "08:00",
-		"d": "08:00"
+		"a": "07:58",
+		"d": "07:59"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "08:03"
+		"a": "08:02"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B737S.SaturdayHoliday",
@@ -18672,10 +18672,10 @@
 		"a": "08:18"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B856T.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.B856T",
+	"id": "ToyoRapid.ToyoRapid.B853S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.B853S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B856T",
+	"n": "B853S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -18685,93 +18685,93 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B856T.SaturdayHoliday"
+		"TokyoMetro.Tozai.B853S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "08:06"
+		"d": "08:07"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "08:07",
-		"d": "08:08"
+		"a": "08:08",
+		"d": "08:09"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "08:09",
-		"d": "08:10"
+		"a": "08:10",
+		"d": "08:11"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "08:12",
-		"d": "08:13"
+		"a": "08:13",
+		"d": "08:14"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "08:14",
-		"d": "08:15"
+		"a": "08:15",
+		"d": "08:16"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "08:17",
-		"d": "08:17"
+		"a": "08:18",
+		"d": "08:18"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "08:19",
-		"d": "08:20"
+		"a": "08:20",
+		"d": "08:21"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "08:23",
-		"d": "08:24"
+		"a": "08:24",
+		"d": "08:25"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "08:27"
+		"a": "08:28"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B853SR.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.B853SR",
+	"id": "ToyoRapid.ToyoRapid.B856TR.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.B856TR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B853SR",
+	"n": "B856TR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
 		"ToyoRapid.ToyoRapid.ToyoKatsutadai"
 	],
 	"ds": [
-		"JR-East.ChuoSobuLocal.Mitaka"
+		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B853SR.SaturdayHoliday"
+		"TokyoMetro.Tozai.B856TR.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "08:12"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "08:14",
-		"d": "08:14"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "08:16",
 		"d": "08:16"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.Murakami",
+		"a": "08:18",
+		"d": "08:18"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
+		"a": "08:20",
+		"d": "08:20"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "08:19",
-		"d": "08:19"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "08:21",
-		"d": "08:21"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
 		"a": "08:23",
 		"d": "08:24"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
+		"a": "08:25",
+		"d": "08:25"
+	}, {
+		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
+		"a": "08:27",
+		"d": "08:28"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.Hasama",
-		"a": "08:26",
-		"d": "08:26"
+		"a": "08:30",
+		"d": "08:31"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "08:30",
-		"d": "08:30"
+		"a": "08:34",
+		"d": "08:35"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "08:33"
+		"a": "08:37"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B850T.SaturdayHoliday",
@@ -19159,7 +19159,7 @@
 		"d": "09:35"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
-		"a": "09:38",
+		"a": "09:37",
 		"d": "09:38"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
@@ -21086,38 +21086,38 @@
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
-		"d": "19:00"
+		"d": "19:03"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.Murakami",
-		"a": "19:01",
-		"d": "19:02"
+		"a": "19:04",
+		"d": "19:05"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.YachiyoChuo",
-		"a": "19:03",
-		"d": "19:04"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
 		"a": "19:06",
 		"d": "19:07"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.YachiyoMidorigaoka",
+		"a": "19:09",
+		"d": "19:10"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.FunabashiNichidaimae",
-		"a": "19:08",
-		"d": "19:09"
+		"a": "19:11",
+		"d": "19:12"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.KitaNarashino",
-		"a": "19:11",
-		"d": "19:11"
-	}, {
-		"s": "ToyoRapid.ToyoRapid.Hasama",
 		"a": "19:14",
 		"d": "19:14"
 	}, {
+		"s": "ToyoRapid.ToyoRapid.Hasama",
+		"a": "19:17",
+		"d": "19:17"
+	}, {
 		"s": "ToyoRapid.ToyoRapid.HigashiKaijin",
-		"a": "19:18",
-		"d": "19:18"
+		"a": "19:20",
+		"d": "19:21"
 	}, {
 		"s": "ToyoRapid.ToyoRapid.NishiFunabashi",
-		"a": "19:21"
+		"a": "19:24"
 	}]
 }, {
 	"id": "ToyoRapid.ToyoRapid.B1941SR.SaturdayHoliday",
@@ -21426,10 +21426,10 @@
 		"a": "20:42"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2045SR.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.B2045SR",
+	"id": "ToyoRapid.ToyoRapid.B2047SR.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.B2047SR",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2045SR",
+	"n": "B2047SR",
 	"y": "ToyoRapid.Rapid",
 	"d": "Inbound",
 	"os": [
@@ -21439,7 +21439,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2045SR.SaturdayHoliday"
+		"TokyoMetro.Tozai.B2047SR.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -21528,10 +21528,10 @@
 		"a": "21:08"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2117S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.B2117S",
+	"id": "ToyoRapid.ToyoRapid.B2135S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.B2135S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2117S",
+	"n": "B2135S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -21541,7 +21541,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2117S.SaturdayHoliday"
+		"TokyoMetro.Tozai.B2135S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -21681,10 +21681,10 @@
 		"a": "21:48"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2129S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.B2129S",
+	"id": "ToyoRapid.ToyoRapid.B2137S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.B2137S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2129S",
+	"n": "B2137S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -21694,7 +21694,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2129S.SaturdayHoliday"
+		"TokyoMetro.Tozai.B2137S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -21732,10 +21732,10 @@
 		"a": "21:55"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2158T.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.B2158T",
+	"id": "ToyoRapid.ToyoRapid.B2113S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.B2113S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2158T",
+	"n": "B2113S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -21745,7 +21745,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2158T.SaturdayHoliday"
+		"TokyoMetro.Tozai.B2113S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -21783,10 +21783,10 @@
 		"a": "22:10"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2137S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.B2137S",
+	"id": "ToyoRapid.ToyoRapid.B2145S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.B2145S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2137S",
+	"n": "B2145S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -21796,7 +21796,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2137S.SaturdayHoliday"
+		"TokyoMetro.Tozai.B2145S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -21885,10 +21885,10 @@
 		"a": "22:33"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2235S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.B2235S",
+	"id": "ToyoRapid.ToyoRapid.B2229S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.B2229S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2235S",
+	"n": "B2229S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -21898,7 +21898,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2235S.SaturdayHoliday"
+		"TokyoMetro.Tozai.B2229S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -21936,10 +21936,10 @@
 		"a": "22:42"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2261S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.B2261S",
+	"id": "ToyoRapid.ToyoRapid.B2227S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.B2227S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2261S",
+	"n": "B2227S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -21949,7 +21949,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2261S.SaturdayHoliday"
+		"TokyoMetro.Tozai.B2227S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -22140,10 +22140,10 @@
 		"a": "23:26"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2345S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.B2345S",
+	"id": "ToyoRapid.ToyoRapid.B2347S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.B2347S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2345S",
+	"n": "B2347S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -22153,7 +22153,7 @@
 		"TokyoMetro.Tozai.Nakano"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2345S.SaturdayHoliday"
+		"TokyoMetro.Tozai.B2347S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
@@ -22191,10 +22191,10 @@
 		"a": "23:39"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2313S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.B2313S",
+	"id": "ToyoRapid.ToyoRapid.B2358T.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.B2358T",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2313S",
+	"n": "B2358T",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -22219,10 +22219,10 @@
 		"a": "23:44"
 	}]
 }, {
-	"id": "ToyoRapid.ToyoRapid.B2317S.SaturdayHoliday",
-	"t": "ToyoRapid.ToyoRapid.B2317S",
+	"id": "ToyoRapid.ToyoRapid.B2335S.SaturdayHoliday",
+	"t": "ToyoRapid.ToyoRapid.B2335S",
 	"r": "ToyoRapid.ToyoRapid",
-	"n": "B2317S",
+	"n": "B2335S",
 	"y": "ToyoRapid.Local",
 	"d": "Inbound",
 	"os": [
@@ -22232,7 +22232,7 @@
 		"TokyoMetro.Tozai.Toyocho"
 	],
 	"nt": [
-		"TokyoMetro.Tozai.B2317S.SaturdayHoliday"
+		"TokyoMetro.Tozai.B2335S.SaturdayHoliday"
 	],
 	"tt": [{
 		"s": "ToyoRapid.ToyoRapid.ToyoKatsutadai",
