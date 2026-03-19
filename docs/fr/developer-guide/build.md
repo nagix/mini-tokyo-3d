@@ -29,7 +29,7 @@ git clone https://github.com/nagix/mini-tokyo-3d.git
 
 ### 2. Construire
 
-Accédez au répertoire supérieur de Mini Tokyo 3D.
+Accédez au répertoire principal de Mini Tokyo 3D.
 
 ```bash
 cd mini-tokyo-3d
@@ -51,7 +51,7 @@ Une fois la construction terminée avec succès, le répertoire `dist` sera cré
 
 ## Déploiement sur un site Web
 
-Vous avez besoin de jetons d'accès pour que les sources de données déploient et utilisent les fichiers créés sur votre site Web. Voir [Préparation à l'utilisation](./integration.md#preparation-for-use) pour obtenir des jetons d'accès pour le centre de données ouvert des transports publics et Mapbox.
+Vous avez besoin de jetons d'accès pour déployer et utiliser les fichiers créés sur votre site Web. Voir [Préparation à l'utilisation](./integration.md#preparation-a-l-utilisation) pour obtenir des jetons d'accès pour le centre de données ouvert des transports publics et Mapbox.
 
 Le `index.html` dans le répertoire `build` concerne la page Web sur [https://minitokyo3d.com](http://minitokyo3d.com). Dans `index.html`, ajoutez les propriétés `accessToken` et `secrets` à l'objet transmis au constructeur `Map` et spécifiez le jeton d'accès Mapbox pour le `accessToken` et le jeton d'accès pour le centre de données ouvert des transports publics pour le `secrets`.
 

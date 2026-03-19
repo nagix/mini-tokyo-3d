@@ -4,7 +4,7 @@ Mini Tokyo 3D v3.0.0 introduit quelques changements majeurs. Afin d’améliorer
 
 ## Migration vers la v3.0.0
 
-### Modifications radicales
+### Changements majeurs
 
 #### Exportation de l'espace de noms `mt3d` au lieu de la classe `MiniTokyo3D`
 
@@ -18,7 +18,7 @@ const options = {
 const map = new mt3d.Map(options);
 ```
 
-Voir [How to Integrate Mini Tokyo 3D](./integration.md) pour plus de détails.
+Voir [Comment intégrer Mini Tokyo 3D](./integration.md) pour plus de détails.
 
 #### Le framework de plugins est repensé et tous les plugins sont fournis séparément
 
@@ -32,7 +32,7 @@ const options = {
 const map = new mt3d.Map(options);
 ```
 
-Voir [Adding Plugins](./integration.md#adding-plugins) pour plus de détails.
+Voir [Ajout de plugins](./integration.md#ajout-de-plugins) pour plus de détails.
 
 #### Utilisation de `accessToken` au lieu de `secrets.mapbox` pour les options du constructeur `Map`
 
@@ -46,4 +46,4 @@ const options = {
 const map = new mt3d.Map(options);
 ```
 
-Voir [How to Integrate Mini Tokyo 3D](./integration.md) pour plus de détails.
+Voir [Comment intégrer Mini Tokyo 3D](./integration.md) pour plus de détails.

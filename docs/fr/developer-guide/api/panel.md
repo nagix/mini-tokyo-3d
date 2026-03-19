@@ -1,8 +1,8 @@
-# Panneau
+# Panel
 
 Crée un composant de panneau.
 
-Prolonge [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object).
+Hérite de [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object).
 
 ```js
 new Panel(options: Object)
@@ -12,7 +12,7 @@ new Panel(options: Object)
 
 ### **`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
 
-Nom | Descriptif
+Nom | Description
 :-- | :--
 **`options.modal`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | Si `true`, le panneau sera modal et se fermera si l'utilisateur clique à l'extérieur.
 

@@ -44,4 +44,6 @@ Le réseau ferroviaire de Tokyo est l'un des plus complexes au monde. Mini Tokyo
 
 ## Recherche pratique d'itinéraire en temps réel
 
-<img :src="$withBase('/images/route-search.jpg')" style="width: 563px;">Mini Tokyo 3D est équipé d'une fonction de recherche d'itinéraire unique qui utilise des informations sur les retards en temps réel. Il affiche plusieurs itinéraires de voyage candidats en fonction des retards des trains sur une carte 3D facile à comprendre grâce à un fonctionnement intuitif avec prise en charge des gestes sur les appareils mobiles.
+<img :src="$withBase('/images/route-search.jpg')" style="width: 563px;">
+
+Mini Tokyo 3D est équipé d'une fonction de recherche d'itinéraire unique qui utilise des informations sur les retards en temps réel. Il affiche plusieurs itinéraires de voyage candidats en fonction des retards des trains sur une carte 3D facile à comprendre grâce à un fonctionnement intuitif avec prise en charge des gestes sur les appareils mobiles.

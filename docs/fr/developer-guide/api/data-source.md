@@ -1,4 +1,4 @@
-# Source de données
+# DataSource
 
 L'objet `DataSource` est utilisé pour spécifier des sources de données [GTFS](https://gtfs.org) (General Transit Feed Specification) et GTFS Realtime supplémentaires, définies sous forme de tableau dans l'option de constructeur [`Map`](./map.md) `dataSources`.
 

@@ -1,8 +1,8 @@
-# Marqueur
+# Marker
 
 Crée un composant marqueur.
 
-Prolonge [Evented](https://docs.mapbox.com/mapbox-gl-js/api/events/#evented).
+Hérite de [Evented](https://docs.mapbox.com/mapbox-gl-js/api/events/#evented).
 
 ```js
 new Marker(options: Object)
@@ -12,7 +12,7 @@ new Marker(options: Object)
 
 ### **`options`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
 
-Nom | Descriptif
+Nom | Description
 :-- | :--
 **`options.element`**<br>[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element) | Élément DOM à utiliser comme marqueur. La valeur par défaut est un marqueur SVG bleu clair en forme de gouttelette.
 **`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | Le niveau de zoom minimum pour le marqueur. À des niveaux de zoom inférieurs au minZoom, le marqueur sera masqué. La valeur peut être n’importe quel nombre compris entre `0` et `24` (inclus). Si aucun minZoom n'est fourni, le marqueur sera visible à tous les niveaux de zoom.

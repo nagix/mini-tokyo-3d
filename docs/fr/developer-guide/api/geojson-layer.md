@@ -16,15 +16,15 @@ Un identifiant de couche unique.
 
 ### **`maxzoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))
 
-Le niveau de zoom maximum pour le calque. À des niveaux de zoom égaux ou supérieurs au zoom maximum, le calque sera masqué. La valeur peut être n'importe quel nombre compris entre `0` et `24` (inclus). Si aucun zoom maximum n'est fourni, le calque sera visible à tous les niveaux de zoom.
+Le niveau de zoom maximum pour la couche. À des niveaux de zoom égaux ou supérieurs au zoom maximum, la couche sera masqué. La valeur peut être n'importe quel nombre compris entre `0` et `24` (inclus). Si aucun zoom maximum n'est fourni, la couche sera visible à tous les niveaux de zoom.
 
 ### **`minzoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))
 
-Le niveau de zoom minimum pour le calque. À des niveaux de zoom inférieurs au minzoom, le calque sera masqué. La valeur peut être n’importe quel nombre compris entre `0` et `24` (inclus). Si aucun minzoom n'est fourni, le calque sera visible à tous les niveaux de zoom.
+Le niveau de zoom minimum pour la couche. À des niveaux de zoom inférieurs au minzoom, la couche sera masqué. La valeur peut être n’importe quel nombre compris entre `0` et `24` (inclus). Si aucun minzoom n'est fourni, la couche sera visible à tous les niveaux de zoom.
 
 ### **`type`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
-Le type du calque. Doit être `'geojson'`.
+Le type de la couche. Doit être `'geojson'`.
 
 ## Exemple
 

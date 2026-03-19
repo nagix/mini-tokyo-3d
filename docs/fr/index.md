@@ -1,9 +1,9 @@
 ---
 home: true
-heroImage: images/hero.jpg
+heroImage: /images/hero.jpg
 tagline: Une carte numérique 3D en temps réel du système de transports publics de Tokyo
 actionText: Aperçu →
-actionLink: /user-guide/overview.md
+actionLink: /fr/user-guide/overview.md
 features:
 - title: Tout en temps réel
   details: Les trains et les avions circulent selon les horaires réels et les informations de retard en temps réel

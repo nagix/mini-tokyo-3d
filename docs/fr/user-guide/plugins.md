@@ -1,6 +1,6 @@
-#Plugins
+# Plugins
 
-Une variété de plugins sont disponibles pour afficher des informations supplémentaires sur la carte 3D. Les informations fournies par chaque plugin sont affichées sous forme de couche sur la carte et peuvent être activées et désactivées dans le panneau [Layer Display Settings](./configuration.md#layer-display-settings).
+Une variété de plugins sont disponibles pour afficher des informations supplémentaires sur la carte 3D. Les informations fournies par chaque plugin sont affichées sous forme de couche sur la carte et peuvent être activées et désactivées dans le panneau [Paramètres d'affichage des calques](./configuration.md#parametres-d-affichage-des-calques).
 
 ## Plugin de précipitations
 
@@ -48,7 +48,9 @@ Actuellement, le plugin prend en charge l'affichage pour Toei Bus, Yokohama Muni
 
 ## Plugin pour les Jeux Olympiques de Tokyo 2020
 
-<img :src="$withBase('/images/olympics.jpg')" style="width: 580px;">Ce plugin affiche des informations sur le calendrier des compétitions et les sites des Jeux Olympiques de Tokyo 2020, qui se sont déroulés du 23 juillet au 8 août 2021. Juste en dessous de l'affichage de l'heure dans le coin supérieur gauche de l'écran, un compte à rebours jusqu'à la cérémonie d'ouverture si elle a lieu avant l'événement, ou une indication du jour où l'on se trouve pendant l'événement sera affiché. De plus, des pictogrammes des compétitions apparaîtront sur la carte aux emplacements des sites de compétition, et lorsqu'ils seront cliqués ou appuyés, ils zoomeront sur cet endroit et afficheront les détails du calendrier des compétitions pour ce site. De plus, près de la station Kokuritsu-kyogijo, un modèle 3D élaboré du stade olympique construit pour les Jeux olympiques de Tokyo 2020 est exposé.
+<img :src="$withBase('/images/olympics.jpg')" style="width: 580px;">
+
+Ce plugin affiche des informations sur le calendrier des compétitions et les sites des Jeux Olympiques de Tokyo 2020, qui se sont déroulés du 23 juillet au 8 août 2021. Juste en dessous de l'affichage de l'heure dans le coin supérieur gauche de l'écran, un compte à rebours jusqu'à la cérémonie d'ouverture si elle a lieu avant l'événement, ou une indication du jour où l'on se trouve pendant l'événement sera affiché. De plus, des pictogrammes des compétitions apparaîtront sur la carte aux emplacements des sites de compétition, et lorsqu'ils seront cliqués ou appuyés, ils zoomeront sur cet endroit et afficheront les détails du calendrier des compétitions pour ce site. De plus, près de la station Kokuritsu-kyogijo, un modèle 3D élaboré du stade olympique construit pour les Jeux olympiques de Tokyo 2020 est exposé.
 
 Pour plus d’informations, veuillez visiter [Mini Tokyo 3D Tokyo 2020 Olympics Plugin GitHub Repository](https://github.com/nagix/mt3d-plugin-olympics2020).
 

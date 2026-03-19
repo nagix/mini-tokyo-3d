@@ -1,8 +1,8 @@
-# Pop-up
+# Popup
 
 Un composant contextuel.
 
-Prolonge [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object).
+Hérite de [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object).
 
 ```js
 new Popup()

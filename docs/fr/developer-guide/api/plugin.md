@@ -1,4 +1,4 @@
-# Interface de plugin
+# PluginInterface
 
 Interface pour les plugins personnalisés ajoutés à la carte. Il s'agit d'une spécification à modéliser par les implémenteurs : il ne s'agit pas d'une méthode ou d'une classe exportée.
 
@@ -18,7 +18,7 @@ Si `false`, le plugin sera désactivé lors de son ajout à la carte. S’il n�
 
 ### **`iconStyle`** ([`Object`](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration))
 
-Le style en ligne de l’élément icône qui apparaît dans le panneau des calques. Toutes les propriétés de style contenues dans [CSSStyleDeclaration](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration) sont prises en charge.
+Le style en ligne de l’élément icône qui apparaît dans le panneau des couches. Toutes les propriétés de style contenues dans [CSSStyleDeclaration](https://developer.mozilla.org/docs/Web/API/CSSStyleDeclaration) sont prises en charge.
 
 ### **`id`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
@@ -28,7 +28,7 @@ Un identifiant de plugin unique.
 
 Le nom du plugin. La clé de chaque propriété indique le code de la langue et sa valeur indique le nom dans cette langue. Si la langue utilisée dans un navigateur n'est pas incluse dans les propriétés, elle revient à l'anglais.
 
-Nom | Descriptif
+Nom | Description
 :-- | :--
 **`name.de`** | Nom en allemand
 **`name.en`** | Nom en anglais
@@ -80,11 +80,13 @@ Méthode facultative appelée lorsque le plugin a été supprimé de la Map. Cel
 
 #### Paramètres
 
-**`map`** ([`Map`](./map.md)) La carte Mini Tokyo 3D de ce plugin vient d'être supprimée.
+**`map`** ([`Map`](./map.md)) La carte Mini Tokyo 3D dont ce plugin vient d'être supprimé.
 
 ---
 
-### **`onVisibilityChanged(visible)`**Méthode facultative appelée lorsque la visibilité du plugin a été modifiée, par exemple lorsque le mode d'affichage de la carte est modifié. Cela donne au plugin la possibilité de modifier la visibilité des éléments d'affichage.
+### **`onVisibilityChanged(visible)`**
+
+Méthode facultative appelée lorsque la visibilité du plugin a été modifiée, par exemple lorsque le mode d'affichage de la carte est modifié. Cela donne au plugin la possibilité de modifier la visibilité des éléments d'affichage.
 
 #### Paramètres
 

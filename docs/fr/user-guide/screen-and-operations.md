@@ -4,9 +4,9 @@
 
 <img :src="$withBase('/images/screen.jpg')" style="width: 659px;">
 
-1. **Date et heure** : voir [Date et heure](#date-and-time)
-2. **Bouton de recherche** : voir [Recherche de stations](#station-search)
-3. **Boutons de navigation** : voir [Zoom avant/arrière](#zooming-in-out) et [Rotation et inclinaison](#rotation-and-tilting)
+1. **Date et heure** : voir [Date et heure](#date-et-heure)
+2. **Bouton de recherche** : voir [Recherche de stations](#recherche-de-stations)
+3. **Boutons de navigation** : voir [Zoom avant/arrière](#zoom-avant-arriere) et [Rotation et inclinaison](#rotation-et-inclinaison)
 4. **Boutons de changement de mode d'affichage** : voir [Modes d'affichage](./display-modes.md)
 5. **Boutons de configuration** : Voir [Configuration](./configuration.md)
 
@@ -40,9 +40,9 @@ Cliquez ou appuyez sur le bouton de l'icône de la boussole et le relèvement se
 
 <img :src="$withBase('/images/clock.jpg')" style="width: 147.5px;">
 
-La date et l'heure actuelles sont affichées en haut à gauche de l'écran. C'est pratique pour accéder depuis l'étranger car l'heure standard du Japon est toujours affichée. Lorsque [le mode Lecture](./display-modes.md#playback-mode) est activé, des boutons supplémentaires apparaissent sous l'heure actuelle pour modifier l'heure et la vitesse à laquelle l'heure progresse.
+La date et l'heure actuelles sont affichées en haut à gauche de l'écran. C'est pratique pour accéder depuis l'étranger car l'heure standard du Japon est toujours affichée. Lorsque [le mode Lecture](./display-modes.md#mode-de-lecture) est activé, des boutons supplémentaires apparaissent sous l'heure actuelle pour modifier l'heure et la vitesse à laquelle l'heure progresse.
 
-Voir [ici](./display-modes.md#playback-mode) pour plus de détails sur le mode de lecture.
+Voir [ici](./display-modes.md#mode-de-lecture) pour plus de détails sur le mode de lecture.
 
 ## Affichage d'informations détaillées sur les trains et les avions
 
@@ -58,19 +58,21 @@ Placez le pointeur de la souris ou appuyez sur la station pour afficher des info
 
 ## Suivi des trains et des avions
 
-<img :src="$withBase('/images/tracking.jpg')" style="width: 400px;">Cliquer ou appuyer sur un train ou un avion activera le mode de suivi et l'écran se déplacera automatiquement en suivant le mouvement du train ou de l'avion. Il existe huit points de vue en mode suivi : « Position uniquement », « Arrière », « Haut-arrière », « Avant », « Haut-avant », « Hélicoptère », « Drone » et « Oiseau », vous permettant de profiter du paysage le long de la voie ferrée depuis votre point de vue préféré. Lorsque le mode de suivi est activé, les opérations de panoramique de la carte, de zoom avant/arrière, de rotation et d'inclinaison sont désactivées (le zoom avant/arrière, la rotation et l'inclinaison sont activés uniquement pour le point de vue « Position uniquement »). Cliquer ou appuyer sur une carte sans trains ni avions désactive le mode de suivi.
+<img :src="$withBase('/images/tracking.jpg')" style="width: 400px;">
+
+Cliquer ou appuyer sur un train ou un avion activera le mode de suivi et l'écran se déplacera automatiquement en suivant le mouvement du train ou de l'avion. Il existe huit points de vue en mode suivi : « Position uniquement », « Arrière », « Haut-arrière », « Avant », « Haut-avant », « Hélicoptère », « Drone » et « Oiseau », vous permettant de profiter du paysage le long de la voie ferrée depuis votre point de vue préféré. Lorsque le mode de suivi est activé, les opérations de panoramique de la carte, de zoom avant/arrière, de rotation et d'inclinaison sont désactivées (le zoom avant/arrière, la rotation et l'inclinaison sont activés uniquement pour le point de vue « Position uniquement »). Cliquer ou appuyer sur une carte sans trains ni avions désactive le mode de suivi.
 
 Lorsque le mode de suivi est activé, l'horaire et la position actuelle du train suivi sont affichés en bas de l'écran. Pour les trains en correspondance avec d'autres lignes, les horaires de ces lignes sont également indiqués. L'horaire peut être défilé en utilisant la molette de la souris, en faisant glisser la barre de défilement ou en faisant glisser votre doigt. Cliquez ou appuyez sur l'icône « ∨ » dans le coin supérieur droit de l'horaire pour masquer l'horaire en bas de l'écran, et cliquez ou appuyez sur l'icône « ∧ » pour l'afficher à nouveau.
 
-De plus, lorsque le mode de suivi est activé, certains appareils affichent le [bouton de partage](./screen-and-operations.md#sharing-trains-and-flights) pour partager le train ou le vol suivi.
+De plus, lorsque le mode de suivi est activé, certains appareils affichent le [bouton de partage](./screen-and-operations.md#partager-des-trains-et-des-vols) pour partager le train ou le vol suivi.
 
-Le point de vue en mode suivi peut être modifié dans le panneau Paramètres du mode suivi. Voir [ici](./configuration.md#tracking-mode-settings) pour plus de détails.
+Le point de vue en mode suivi peut être modifié dans le panneau Paramètres du mode suivi. Voir [ici](./configuration.md#parametres-du-mode-de-suivi) pour plus de détails.
 
 ## Partager des trains et des vols
 
 <img :src="$withBase('/images/share-button.jpg')" style="width: 211px;">
 
-Lorsque [le mode Suivi](./screen-and-operations.md#tracking-trains-and-airplanes) est activé, le bouton « Partager ce train » ou « Partager ce vol » apparaîtra en haut de l'écran. En cliquant ou en appuyant sur le bouton, un menu supplémentaire apparaîtra, en fonction de l'appareil que vous utilisez, et vous pourrez envoyer les URL de suivi des trains ou des vols et des messages facultatifs via des applications de messagerie, des e-mails ou des applications de réseaux sociaux. Lorsque le destinataire des informations ouvrira l'URL dans son navigateur, Mini Tokyo 3D sera lancé et il pourra suivre le même train ou vol.
+Lorsque [le mode Suivi](./screen-and-operations.md#suivi-des-trains-et-des-avions) est activé, le bouton « Partager ce train » ou « Partager ce vol » apparaîtra en haut de l'écran. En cliquant ou en appuyant sur le bouton, un menu supplémentaire apparaîtra, en fonction de l'appareil que vous utilisez, et vous pourrez envoyer les URL de suivi des trains ou des vols et des messages facultatifs via des applications de messagerie, des e-mails ou des applications de réseaux sociaux. Lorsque le destinataire des informations ouvrira l'URL dans son navigateur, Mini Tokyo 3D sera lancé et il pourra suivre le même train ou vol.
 
 Cette fonctionnalité est disponible dans tous les navigateurs sauf Firefox.
 
@@ -78,13 +80,13 @@ Cette fonctionnalité est disponible dans tous les navigateurs sauf Firefox.
 
 <img :src="$withBase('/images/delay-marker.jpg')" style="width: 185px;">
 
-Lorsque [le mode Lecture](./display-modes.md#playback-mode) est désactivé, des sphères orange s'affichent autour des trains en retard de plus d'une minute. Il est facile de voir quelles sections de la carte présentent un retard.
+Lorsque [le mode Lecture](./display-modes.md#mode-de-lecture) est désactivé, des sphères orange s'affichent autour des trains en retard de plus d'une minute. Il est facile de voir quelles sections de la carte présentent un retard.
 
 ## Recherche de stations
 
 <img :src="$withBase('/images/search-icon.jpg')" style="width: 270px;">
 
-Cliquez ou appuyez sur le bouton icône en forme de loupe pour ouvrir le champ de saisie du nom de la station. Entrez le nom de la station et appuyez sur la touche Entrée, ou cliquez ou appuyez sur le bouton icône en forme de loupe pour vous déplacer vers l'emplacement de la station sur la carte et avoir la station [sélectionnée](#selecting-stations).
+Cliquez ou appuyez sur le bouton icône en forme de loupe pour ouvrir le champ de saisie du nom de la station. Entrez le nom de la station et appuyez sur la touche Entrée, ou cliquez ou appuyez sur le bouton icône en forme de loupe pour vous déplacer vers l'emplacement de la station sur la carte et avoir la station [sélectionnée](#selection-des-stations).
 
 Lorsque vous saisissez une partie du nom de la station, une liste de candidats s'affichera et vous pourrez en sélectionner un dans la liste pour compléter votre saisie. Dans les environnements japonais, coréen et chinois, vous pouvez également effectuer une recherche par nom anglais.
 
@@ -92,9 +94,11 @@ Lorsque vous saisissez une partie du nom de la station, une liste de candidats s
 
 <img :src="$withBase('/images/station-selection.jpg')" style="width: 400px;">
 
-Lorsque vous cliquez ou appuyez sur une station, la station est sélectionnée, vous vous déplacez sur la carte pour que la station soit centrée sur l'écran et la carte autour de la station est agrandie. Lorsqu'une station est sélectionnée, les [train departure board](#displaying-train-departure-board), [route search](#route-search) et [station exit information](#displaying-station-exit-information) s'affichent en bas de l'écran. Vous pouvez changer l'affichage de chaque information en cliquant sur le bouton bascule situé sous le nom de la station. Cliquez ou appuyez sur l'icône « ∨ » à droite du nom de la station pour masquer les informations en bas de l'écran, et cliquez ou appuyez sur l'icône « ∧ » pour l'afficher à nouveau. Cliquer ou appuyer sur la carte là où aucune station n’existe désélectionnera la station.
+Lorsque vous cliquez ou appuyez sur une station, la station est sélectionnée, vous vous déplacez sur la carte pour que la station soit centrée sur l'écran et la carte autour de la station est agrandie. Lorsqu'une station est sélectionnée, les [affichage du tableau de départ du train](#affichage-du-tableau-de-depart-du-train), [recherche d'itinéraire](#recherche-d-itineraire) et [affichage des informations de sortie de station](#affichage-des-informations-de-sortie-de-station) s'affichent en bas de l'écran. Vous pouvez changer l'affichage de chaque information en cliquant sur le bouton bascule situé sous le nom de la station. Cliquez ou appuyez sur l'icône « ∨ » à droite du nom de la station pour masquer les informations en bas de l'écran, et cliquez ou appuyez sur l'icône « ∧ » pour l'afficher à nouveau. Cliquer ou appuyer sur la carte là où aucune station n’existe désélectionnera la station.
 
-## Affichage du tableau de départ du train<img :src="$withBase('/images/station-departures.jpg')" style="width: 400px;">
+## Affichage du tableau de départ du train
+
+<img :src="$withBase('/images/station-departures.jpg')" style="width: 400px;">
 
 Une fois une gare sélectionnée, cliquez ou appuyez sur le bouton bascule « Départs » sous le nom de la gare en bas de l'écran pour afficher le panneau de départ du train. Le tableau de départ des trains comprend l'heure de départ, le type de train, la destination et le temps de retard du premier et du prochain train dans chaque direction sur les lignes de correspondance de la gare. Si un train est en retard, l'heure de départ et le temps de retard sont surlignés en orange.
 
