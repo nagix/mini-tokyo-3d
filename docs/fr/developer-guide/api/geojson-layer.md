@@ -1,6 +1,6 @@
 # GeoJsonLayerInterface
 
-Interface pour les couches qui restituent les données [GeoJSON](http://geojson.org). Il s'agit d'une spécification à modéliser par les implémenteurs : il ne s'agit pas d'une méthode ou d'une classe exportée.
+Interface pour les couches qui restituent les données [GeoJSON](http://geojson.org). Il s'agit d'une spécification à modéliser par les implémenteurs : il ne s'agit pas d'une méthode ou d'une classe exportée.
 
 Les couches GeoJSON sont rendues à l'aide de [GeoJsonLayer](https://deck.gl/docs/api-reference/layers/geojson-layer) dans [deck.gl](https://deck.gl). Il permet à un développeur de superposer des polygones, des polylignes et des points (y compris des cercles, des icônes et des textes) sur une carte en spécifiant les données GeoJSON et les options de rendu. Ces couches peuvent être ajoutées à la carte en utilisant [Map#addLayer](./map.md#addlayer-layer).
 

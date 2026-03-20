@@ -1,6 +1,6 @@
 # ThreeLayerInterface
 
-Interface pour les couches three.js personnalisées. Il s'agit d'une spécification à modéliser par les implémenteurs : il ne s'agit pas d'une méthode ou d'une classe exportée.
+Interface pour les couches three.js personnalisées. Il s'agit d'une spécification à modéliser par les implémenteurs : il ne s'agit pas d'une méthode ou d'une classe exportée.
 
 Une couche three.js personnalisée contient une scène [three.js](https://threejs.org/docs/). Il permet à un développeur de restituer les objets three.js directement dans le contexte GL de la carte à l'aide de la caméra de la carte. Ces couches peuvent être ajoutées à la carte en utilisant [Map#addLayer](./map.md#addlayer-layer).
 

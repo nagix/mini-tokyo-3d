@@ -1,6 +1,6 @@
 # Tile3DLayerInterface
 
-Interface pour les couches qui restituent les données de tuiles 3D formatées selon le [3D Tiles Specification](https://www.opengeospatial.org/standards/3DTiles). Il s'agit d'une spécification à modéliser par les implémenteurs : il ne s'agit pas d'une méthode ou d'une classe exportée.
+Interface pour les couches qui restituent les données de tuiles 3D formatées selon le [3D Tiles Specification](https://www.opengeospatial.org/standards/3DTiles). Il s'agit d'une spécification à modéliser par les implémenteurs : il ne s'agit pas d'une méthode ou d'une classe exportée.
 
 Les couches de tuiles 3D sont rendues à l'aide de [Tile3DLayer](https://deck.gl/docs/api-reference/geo-layers/tile-3d-layer) dans [deck.gl](https://deck.gl). Il permet à un développeur de superposer la photogrammétrie, les bâtiments 3D, le BIM/CAD et les nuages ​​de points sur une carte en spécifiant les données des tuiles 3D et les options de rendu. Ces couches peuvent être ajoutées à la carte en utilisant [Map#addLayer](./map.md#addlayer-layer).
 

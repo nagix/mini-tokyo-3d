@@ -28,7 +28,7 @@ Ajoute le panneau à une carte.
 
 #### Retours
 
-[`Panel`](./panel.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Panel`](./panel.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
 
 ---
 
@@ -38,7 +38,7 @@ Vérifie si un panneau est ouvert.
 
 #### Retours
 
-[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean) : `true` si le panneau est ouvert, `false` s'il est fermé.
+[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean) : `true` si le panneau est ouvert, `false` s'il est fermé.
 
 ---
 
@@ -48,7 +48,7 @@ Supprime le panneau d'une carte.
 
 #### Retours
 
-[`Panel`](./panel.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Panel`](./panel.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
 
 ---
 
@@ -62,7 +62,7 @@ Définit les boutons sur le titre du panneau.
 
 #### Retours
 
-[`Panel`](./panel.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Panel`](./panel.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
 
 ---
 
@@ -78,7 +78,7 @@ Cette méthode n'effectue pas de filtrage ou de nettoyage HTML et doit être uti
 
 #### Retours
 
-[`Panel`](./panel.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Panel`](./panel.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
 
 ---
 
@@ -92,4 +92,4 @@ Définit le titre du panneau sur une chaîne de texte.
 
 #### Retours
 
-[`Panel`](./panel.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Panel`](./panel.md) : se renvoie lui-même pour permettre le chaînage de méthodes.

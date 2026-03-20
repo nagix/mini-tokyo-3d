@@ -1,8 +1,8 @@
 # DataSource
 
-L'objet `DataSource` est utilisé pour spécifier des sources de données [GTFS](https://gtfs.org) (General Transit Feed Specification) et GTFS Realtime supplémentaires, définies sous forme de tableau dans l'option de constructeur [`Map`](./map.md) `dataSources`.
+L'objet `DataSource` est utilisé pour spécifier des sources de données [GTFS](https://gtfs.org/fr/) (General Transit Feed Specification) et GTFS Realtime supplémentaires, définies sous forme de tableau dans l'option de constructeur [`Map`](./map.md) `dataSources`.
 
-::: warning
+::: warning Avertissement
 Notez qu'il s'agit d'une fonctionnalité expérimentale en cours de développement et susceptible de changer.
 :::
 
@@ -16,7 +16,7 @@ Une couleur utilisée pour afficher les itinéraires et les véhicules. Il est s
 
 ### **`gtfsUrl`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
 
-Spécifie l'URL de [a GTFS dataset zip file](https://gtfs.org/documentation/schedule/reference/#dataset-publishing-general-practices). Un ensemble de données GTFS doit contenir au moins les fichiers suivants.
+Spécifie l'URL de [a GTFS dataset zip file](https://gtfs.org/fr/documentation/schedule/reference/#publication-des-jeux-de-donnees-et-pratiques-generales). Un ensemble de données GTFS doit contenir au moins les fichiers suivants.
 
 - agency.txt
 - stops.txt
@@ -28,4 +28,4 @@ Spécifie l'URL de [a GTFS dataset zip file](https://gtfs.org/documentation/sche
 
 ### **`vehiclePositionUrl`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
-Spécifie l'URL de [a GTFS Realtime VehiclePosition feed](https://gtfs.org/documentation/realtime/reference/#message-vehicleposition). En cas d'omission, les véhicules circuleront selon les horaires.
+Spécifie l'URL de [a GTFS Realtime VehiclePosition feed](https://gtfs.org/fr/documentation/realtime/reference/#message-vehicleposition). En cas d'omission, les véhicules circuleront selon les horaires.

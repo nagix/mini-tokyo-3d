@@ -10,7 +10,7 @@ L'objet `Secrets` est un objet qui stocke les jetons d'accès utilisés pour ré
 
 Jeton d'accès pour le [Open Data Challenge for Public Transportation 2024](https://challenge2024.odpt.org/index-e.html). S’il n’est pas spécifié, le jeton par défaut sera utilisé.
 
-::: warning
+::: warning Avertissement
 En raison de la fin de l'Open Data Challenge for Public Transportation 2024, ce paramètre n'est plus utilisé à partir de la version 4.0.
 :::
 
@@ -18,7 +18,7 @@ En raison de la fin de l'Open Data Challenge for Public Transportation 2024, ce 
 
 Jeton d'accès pour le [Open Data Challenge for Public Transportation 2025](https://challenge2025.odpt.org/index-e.html). S’il n’est pas spécifié, le jeton par défaut sera utilisé.
 
-::: warning
+::: warning Avertissement
 En raison de la fin de l'Open Data Challenge for Public Transportation 2025, ce paramètre n'est plus utilisé à partir de la version 4.0.
 :::
 
@@ -30,6 +30,6 @@ Jeton d'accès pour le [Public Transportation Open Data Center](https://www.odpt
 
 Jeton d'accès pour le [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/). S’il n’est pas spécifié, le jeton par défaut sera utilisé.
 
-::: warning
+::: warning Avertissement
 En raison de la fin de l'Open Data Challenge for Public Transportation à Tokyo, ce paramètre n'est plus utilisé à partir de la version 3.1.
 :::

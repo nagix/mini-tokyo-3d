@@ -10,6 +10,10 @@ module.exports = {
     '/ja/': {
       lang: 'ja-JP',
       description: '東京の公共交通のリアルタイム3Dデジタルマップ'
+    },
+    '/fr/': {
+      lang: 'fr-FR',
+      description: 'Une carte numérique 3D en temps réel du système de transports publics de Tokyo'
     }
   },
   head: [
@@ -147,6 +151,77 @@ module.exports = {
             },
             {
               title: 'API リファレンス',
+              collapsable: false,
+              children: [
+                'api/',
+                'api/data-source',
+                'api/geojson-layer',
+                'api/map',
+                'api/mapboxgl',
+                'api/marker',
+                'api/panel',
+                'api/plugin',
+                'api/popup',
+                'api/secrets',
+                'api/three',
+                'api/three-layer',
+                'api/tile-3d-layer'
+              ]
+            }
+          ]
+        }
+      },
+      '/fr/': {
+        label: 'Français',
+        selectText: 'Langues',
+        lastUpdated: 'Dernière mise à jour',
+        nav: [
+          {
+            text: 'Guide d\'utilisation',
+            link: '/fr/user-guide/',
+          },
+          {
+            text: 'Guide de développement',
+            link: '/fr/developer-guide/'
+          },
+          {
+            text: 'Démo en direct',
+            link: 'https://minitokyo3d.com'
+          }
+        ],
+        sidebar: {
+          '/fr/user-guide/': [
+            {
+              title: 'Guide d\'utilisation',
+              collapsable: false,
+              children: [
+                '',
+                'overview',
+                'screen-and-operations',
+                'display-modes',
+                'configuration',
+                'plugins',
+                'gtfs',
+                'about-data',
+                'supported-browsers',
+                'development-information',
+                'contact'
+              ]
+            }
+          ],
+          '/fr/developer-guide/': [
+            {
+              title: 'Guide de développement',
+              collapsable: false,
+              children: [
+                '',
+                'integration',
+                'build',
+                'migration'
+              ]
+            },
+            {
+              title: 'Référence API',
               collapsable: false,
               children: [
                 'api/',

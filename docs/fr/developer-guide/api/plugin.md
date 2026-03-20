@@ -1,6 +1,6 @@
 # PluginInterface
 
-Interface pour les plugins personnalisés ajoutés à la carte. Il s'agit d'une spécification à modéliser par les implémenteurs : il ne s'agit pas d'une méthode ou d'une classe exportée.
+Interface pour les plugins personnalisés ajoutés à la carte. Il s'agit d'une spécification à modéliser par les implémenteurs : il ne s'agit pas d'une méthode ou d'une classe exportée.
 
 Les développeurs peuvent implémenter des méthodes de rappel pour personnaliser la carte Mini Tokyo 3D. Afin d'ajouter des plugins, les objets qui implémentent cette interface doivent être définis sur l'option du constructeur [`Map`](./map.md) `plugins`.
 

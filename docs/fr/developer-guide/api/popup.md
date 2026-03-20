@@ -20,7 +20,7 @@ Ajoute la fenêtre contextuelle à une carte.
 
 #### Retours
 
-[`Popup`](./popup.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Popup`](./popup.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
 
 ---
 
@@ -30,7 +30,7 @@ Supprime la fenêtre contextuelle de la carte à laquelle elle a été ajoutée.
 
 #### Retours
 
-[`Popup`](./popup.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Popup`](./popup.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
 
 ---
 
@@ -46,7 +46,7 @@ Cette méthode n'effectue pas de filtrage ou de nettoyage HTML et doit être uti
 
 #### Retours
 
-[`Popup`](./popup.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Popup`](./popup.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
 
 ---
 
@@ -60,4 +60,4 @@ Définit l'emplacement géographique de l'ancre de la popup et y déplace la pop
 
 #### Retours
 
-[`Popup`](./popup.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Popup`](./popup.md) : se renvoie lui-même pour permettre le chaînage de méthodes.

@@ -2,9 +2,9 @@
 
 <img :src="$withBase('/images/screenshot1.jpg')">
 
-Mini Tokyo 3D est une carte 3D en temps réel des transports publics de Tokyo. Les trains en circulation et les avions qui arrivent ou partent sont représentés sur une carte 3D réaliste avec une animation fluide. Il s’agit d’un « jumeau numérique » qui ressemble exactement au monde réel du monde numérique.
+Mini Tokyo 3D est une carte 3D en temps réel des transports publics de Tokyo. Les trains en circulation et les avions qui arrivent ou partent sont représentés sur une carte 3D réaliste avec une animation fluide. Il s’agit d’un « jumeau numérique » qui ressemble exactement au monde réel du monde numérique.
 
-Les utilisateurs peuvent se déplacer librement sur la carte 3D et zoomer sur les endroits qu'ils souhaitent voir pour connaître le « maintenant » de Tokyo. Il peut être utilisé de diverses manières, par exemple rechercher l'itinéraire de transfert comme carte d'itinéraire, vérifier la ville de destination et la météo avant de sortir, simplement surveiller le chemin le long de la voie ferrée en suivant automatiquement un train et en jugeant si vous devez vous précipiter pour ne pas manquer le dernier train depuis la position actuelle du train.
+Les utilisateurs peuvent se déplacer librement sur la carte 3D et zoomer sur les endroits qu'ils souhaitent voir pour connaître le « maintenant » de Tokyo. Il peut être utilisé de diverses manières, par exemple rechercher l'itinéraire de transfert comme carte d'itinéraire, vérifier la ville de destination et la météo avant de sortir, simplement surveiller le chemin le long de la voie ferrée en suivant automatiquement un train et en jugeant si vous devez vous précipiter pour ne pas manquer le dernier train depuis la position actuelle du train.
 
 Mini Tokyo 3D est une application Web que vous pouvez exécuter dans n'importe quel navigateur Web, quel que soit l'appareil, tel que les PC, les smartphones, les tablettes et les décodeurs. Veuillez utiliser l'URL suivante pour y accéder.
 

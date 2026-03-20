@@ -11,7 +11,7 @@ Pour plus d’informations, consultez [three.js docs](https://threejs.org/docs/)
 ## Exemple
 
 ```js
-// A callback in ThreeLayerInterface
+// Un callback dans ThreeLayerInterface
 onAdd(map, context) {
 	const {x, y, z} = map.getModelPosition([139.7143859, 35.6778094]);
 	const scale = map.getModelScale();

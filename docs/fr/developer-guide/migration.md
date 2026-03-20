@@ -13,7 +13,7 @@ Au lieu de la classe `MiniTokyo3D` traditionnelle, transmettez les options du co
 ```js
 const options = {
   container: 'mini-tokyo-3d',
-  accessToken: '<Mapbox access token>'
+  accessToken: '<jeton d’accès Mapbox>'
 };
 const map = new mt3d.Map(options);
 ```
@@ -41,7 +41,7 @@ Un jeton d'accès Mapbox, précédemment spécifié dans l'option `secrets.mapbo
 ```js
 const options = {
   /* ... */
-  accessToken: '<Mapbox access token>'
+  accessToken: '<jeton d’accès Mapbox>'
 };
 const map = new mt3d.Map(options);
 ```

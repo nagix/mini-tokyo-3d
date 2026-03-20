@@ -29,7 +29,7 @@ Attache le `Marker` à un objet `Map`.
 
 #### Retours
 
-[`Marker`](./marker.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Marker`](./marker.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
 
 ---
 
@@ -39,7 +39,7 @@ Supprime le marqueur d'une carte.
 
 #### Retours
 
-[`Marker`](./marker.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Marker`](./marker.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
 
 ---
 
@@ -53,7 +53,7 @@ Définit l'état d'activité du marqueur. L'état actif fait référence à l'é
 
 #### Retours
 
-[`Marker`](./marker.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Marker`](./marker.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
 
 ---
 
@@ -67,7 +67,7 @@ Définit la position géographique du marqueur et le déplace.
 
 #### Retours
 
-[`Marker`](./marker.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Marker`](./marker.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
 
 ---
 
@@ -81,7 +81,7 @@ Définit l'état de visibilité du marqueur.
 
 #### Retours
 
-[`Marker`](./marker.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+[`Marker`](./marker.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
 
 ## Événements
 

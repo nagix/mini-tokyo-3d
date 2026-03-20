@@ -6,7 +6,7 @@ Si vous souhaitez essayer les dernières fonctionnalités avant leur publication
 
 Les logiciels suivants sont requis.
 
-- La dernière version de [Node.js](https://nodejs.org)
+- La dernière version de [Node.js](https://nodejs.org/fr/)
 - La dernière version de [Git](https://git-scm.com) si vous clonez le référentiel
 
 ## Instructions de construction
@@ -51,22 +51,22 @@ Une fois la construction terminée avec succès, le répertoire `dist` sera cré
 
 ## Déploiement sur un site Web
 
-Vous avez besoin de jetons d'accès pour déployer et utiliser les fichiers créés sur votre site Web. Voir [Préparation à l'utilisation](./integration.md#preparation-a-l-utilisation) pour obtenir des jetons d'accès pour le centre de données ouvert des transports publics et Mapbox.
+Vous avez besoin de jetons d'accès pour déployer et utiliser les fichiers créés sur votre site Web. Voir [Préparation à l'utilisation](./integration.md#preparation-a-l-utilisation) pour obtenir des jetons d'accès pour Public Transportation Open Data Center et Mapbox.
 
-Le `index.html` dans le répertoire `build` concerne la page Web sur [https://minitokyo3d.com](http://minitokyo3d.com). Dans `index.html`, ajoutez les propriétés `accessToken` et `secrets` à l'objet transmis au constructeur `Map` et spécifiez le jeton d'accès Mapbox pour le `accessToken` et le jeton d'accès pour le centre de données ouvert des transports publics pour le `secrets`.
+Le `index.html` dans le répertoire `build` concerne la page Web sur [https://minitokyo3d.com](http://minitokyo3d.com). Dans `index.html`, ajoutez les propriétés `accessToken` et `secrets` à l'objet transmis au constructeur `Map` et spécifiez le jeton d'accès Mapbox pour le `accessToken` et le jeton d'accès pour Public Transportation Open Data Center pour le `secrets`.
 
 ```js
 map = new mt3d.Map({
   /* ... */
-  accessToken: '<Mapbox access token>',
+  accessToken: '<jeton d’accès Mapbox>',
   secrets: {
-    odpt: '<access token for Public Transportation Open Data Center>'
+    odpt: '<jeton d’accès pour Public Transportation Open Data Center>'
   }
 });
 ```
 
 Ensuite, modifiez-le pour votre site Web et placez tous les fichiers du répertoire `build` dans le répertoire public de votre serveur Web.
 
-::: warning
+::: warning Avertissement
 Étant donné que `index.html` utilise également Mini Tokyo 3D [plugins](../user-guide/plugins.md), vous devez créer séparément les fichiers JavaScript pour chaque plugin et les placer dans le répertoire `build`.
 :::
