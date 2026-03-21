@@ -30,11 +30,11 @@ Mini Tokyo 3D utilise les mêmes couleurs de lignes que celles utilisées dans l
 
 Plus de 2 200 trains circulent en même temps aux heures de pointe, mais grâce à la structure des données et à la logique de traitement optimisées, une animation de fonctionnement très fluide est réalisée même sur les smartphones. Une animation fluide de 60 images par seconde est utilisée partout, y compris le mouvement des points de vue, la commutation entre les vues aériennes et souterraines et les fondus entrants et sortants des trains et des avions.
 
-## Prise en charge de 4 langues
+## Prise en charge multilingue
 
 <img :src="$withBase('/images/multilanguage.jpg')" style="width: 219px;">
 
-En plus du japonais, Mini Tokyo 3D prend en charge l'anglais, le chinois (simplifié et traditionnel) et le coréen, qui sont populaires auprès des touristes visitant le Japon. Non seulement les textes de l'interface utilisateur, mais également les noms de chemins de fer, de gares, de types de trains, de noms d'aéroports et de compagnies aériennes sont également multilingues. Pour les textes de l'interface utilisateur, le thaï, le népalais, le portugais (Brésil), le français, l'espagnol et l'allemand sont également pris en charge.
+En plus du japonais, Mini Tokyo 3D prend en charge l'anglais, le français, le chinois (simplifié et traditionnel) et le coréen, qui sont populaires auprès des touristes visitant le Japon. Non seulement les textes de l'interface utilisateur, mais également les noms de chemins de fer, de gares, de types de trains, de noms d'aéroports et de compagnies aériennes sont également multilingues. Pour les textes de l'interface utilisateur, le thaï, le népalais, le portugais (Brésil), l'espagnol et l'allemand sont également pris en charge.
 
 ## Basculer les vues entre les vues aériennes et souterraines
 

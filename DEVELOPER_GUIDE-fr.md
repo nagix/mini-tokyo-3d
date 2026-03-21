@@ -1,3 +1,3 @@
-# Mini Tokyo 3D Guide de Développement
+# Guide de développement de Mini Tokyo 3D
 
-Le guide de développement a été déplacé vers [Mini Tokyo 3D Developer Guide](https://minitokyo3d.com/docs/master/fr/developer-guide/).
+Le guide de développement a été déplacé vers [Guide de développement de Mini Tokyo 3D](https://minitokyo3d.com/docs/master/fr/developer-guide/).

@@ -30,11 +30,11 @@ Mini Tokyo 3D is using the same line colors used in official route maps and guid
 
 Over 2,200 trains run at the same time during the rush hour, but with the optimized data structure and processing logic, a very smooth operation animation is realized even on smartphones. Smooth animation of 60 frames per second is used everywhere, including viewpoint movement, switching between overground and underground views, and fading in and out of trains and airplanes.
 
-## Support for 4 Languages
+## Multilingual Support
 
 <img :src="$withBase('/images/multilanguage.jpg')" style="width: 219px;">
 
-In addition to Japanese, Mini Tokyo 3D supports English, Chinese (Simplified and Traditional) and Korean, which are popular with tourists visiting Japan. Not only the user interface texts but also railway names, station names, train types, airport names and airline names are also multilingualized. For the user interface texts, Thai, Nepali, Portuguese (Brazil), French, Spanish and German are also supported.
+In addition to Japanese, Mini Tokyo 3D supports English, French, Chinese (Simplified and Traditional) and Korean, which are popular with tourists visiting Japan. Not only the user interface texts but also railway names, station names, train types, airport names and airline names are also multilingualized. For the user interface texts, Thai, Nepali, Portuguese (Brazil), Spanish and German are also supported.
 
 ## Switching Views Between Overground and Underground
 

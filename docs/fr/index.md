@@ -11,8 +11,8 @@ features:
   details: Utilise les mêmes couleurs de lignes que les plans officiels, avec des décalages adaptés au niveau de zoom
 - title: Opérabilité et performances
   details: Plus de 2 200 trains circulent simultanément avec une animation très fluide, même sur smartphone
-- title: Prise en charge de 4 langues
-  details: En plus du japonais, Mini Tokyo 3D prend en charge l'anglais, le chinois (simplifié et traditionnel) et le coréen
+- title: Prise en charge de multilingue
+  details: En plus du japonais, Mini Tokyo 3D prend en charge l'anglais, le français, le chinois (simplifié et traditionnel) et le coréen
 - title: Vues aériennes et souterraines
   details: Facilite la lecture grâce au basculement entre réseaux ferroviaires aériens et souterrains
 - title: Recherche d'itinéraire en temps réel

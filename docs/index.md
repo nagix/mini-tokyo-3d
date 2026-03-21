@@ -11,8 +11,8 @@ features:
   details: Using the same line colors used in official route maps with appropriate offsets according to the zoom level
 - title: Operability and Performance
   details: Over 2,200 trains run at the same time with a very smooth animation even on smartphones
-- title: Support for 4 Languages
-  details: In addition to Japanese, Mini Tokyo 3D supports English, Chinese (Simplified and Traditional) and Korean
+- title: Multilingual support
+  details: In addition to Japanese, Mini Tokyo 3D supports English, French, Chinese (Simplified and Traditional) and Korean
 - title: Over & Under Ground Views
   details: Ease of viewing by switching between the overground and underground railway networks
 - title: Real-time Route Search
