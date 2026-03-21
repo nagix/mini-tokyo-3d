@@ -14,7 +14,7 @@ Notez qu'il s'agit d'une fonctionnalité expérimentale en cours de développeme
 
 Une couleur utilisée pour afficher les itinéraires et les véhicules. Il est spécifié par un code couleur hexadécimal commençant par `#`.
 
-### **`gtfsUrl`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
+### **`gtfsUrl`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
 Spécifie l'URL de [a GTFS dataset zip file](https://gtfs.org/fr/documentation/schedule/reference/#publication-des-jeux-de-donnees-et-pratiques-generales). Un ensemble de données GTFS doit contenir au moins les fichiers suivants.
 

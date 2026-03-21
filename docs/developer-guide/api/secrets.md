@@ -22,7 +22,7 @@ Access token for the [Open Data Challenge for Public Transportation 2025](https:
 Due to the end of the Open Data Challenge for Public Transportation 2025, this parameter is no longer used from the version 4.0 onwards.
 :::
 
-### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
+### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
 Access token for the [Public Transportation Open Data Center](https://www.odpt.org/en/). If not specified, the default token will be used.
 

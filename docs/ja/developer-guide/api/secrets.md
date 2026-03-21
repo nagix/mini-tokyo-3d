@@ -22,7 +22,7 @@
 公共交通オープンデータチャレンジ2025の終了に伴い、バージョン 4.0 以降はこのパラメータは使用されません。
 :::
 
-### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
+### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
 [公共交通オープンデータセンター](https://www.odpt.org)のアクセストークンです。未指定の場合は、デフォルトのトークンが使われます。
 

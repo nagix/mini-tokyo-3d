@@ -14,7 +14,7 @@
 
 路線および車両の表示に使用する色です。`#` から始まる16進数のカラーコードで指定します。
 
-### **`gtfsUrl`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
+### **`gtfsUrl`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
 [GTFS データセットの zip ファイル](https://gtfs.org/ja/documentation/schedule/reference/#_10)の URL を指定します。GTFS データセットには少なくとも次のファイルが含まれている必要があります。
 

@@ -22,7 +22,7 @@ Jeton d'accès pour le [Open Data Challenge for Public Transportation 2025](http
 En raison de la fin de l'Open Data Challenge for Public Transportation 2025, ce paramètre n'est plus utilisé à partir de la version 4.0.
 :::
 
-### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
+### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
 Jeton d'accès pour le [Public Transportation Open Data Center](https://www.odpt.org/en/). S’il n’est pas spécifié, le jeton par défaut sera utilisé.
 

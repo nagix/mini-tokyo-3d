@@ -602,6 +602,14 @@ new Map(options: Object)
 
 ---
 
+### **`mouseout`**
+
+ポインティングデバイス（通常はマウス）がマップのキャンバスから外れたときに発生します。
+
+**型** [`MapMouseEvent`](https://docs.mapbox.com/mapbox-gl-js/ja/api/events/#mapmouseevent)
+
+---
+
 ### **`mouseover`**
 
 ポインティングデバイス（通常はマウス）がマップ内で移動したときに発生します。マップを含む Web ページ上でカーソルを移動すると、カーソルがマップまたは子要素に入るたびにイベントが発生します。

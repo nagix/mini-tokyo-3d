@@ -20,7 +20,7 @@ https://minitokyo3d.com/?gtfsurl=<URL>&gtfsvpurl=<URL>&gtfscolor=<color code>
 
 Query parameter | Description | Example
 -- | -- | --
-`gtfsurl` | The URL of a [GTFS dataset zip file](https://gtfs.org/documentation/schedule/reference/#_10) (URL encoding required) | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Ffiles%2FToei%2Fdata%2FToeiBus-GTFS.zip`
+`gtfsurl` | The URL of a [GTFS dataset zip file](https://gtfs.org/documentation/schedule/reference/#dataset-publishing-general-practices) (URL encoding required) | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Ffiles%2FToei%2Fdata%2FToeiBus-GTFS.zip`
 `gtfsvpurl` | The URL of a [VehiclePosition feed of GTFS Realtime](https://gtfs.org/documentation/realtime/reference/#message-vehicleposition) (URL encoding required). If omitted, vehicles will operate according to the timetables | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Fgtfs%2Frealtime%2FToeiBus`
 `gtfscolor` | A color used to display routes and vehicles. Hexadecimal color code (no leading `#`) | `9FC105`
 

@@ -14,7 +14,7 @@ Note that this is an experimental feature which is under development and is pron
 
 A color used to display routes and vehicles. It is specified by a hexadecimal color code starting with `#`.
 
-### **`gtfsUrl`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))
+### **`gtfsUrl`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
 Specifies the URL of [a GTFS dataset zip file](https://gtfs.org/documentation/schedule/reference/#dataset-publishing-general-practices). A GTFS dataset must contain at least the following files.
 
