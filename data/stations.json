@@ -10028,6 +10028,114 @@
 		"zh-Hant": "烏山"
 	}
 }, {
+	"id": "JR-East.Shinetsu.Takasaki",
+	"railway": "JR-East.Shinetsu",
+	"coord": [139.01264, 36.32204],
+	"title": {
+		"ja": "高崎",
+		"en": "Takasaki",
+		"fr": "Takasaki",
+		"ko": "다카사키",
+		"zh-Hans": "高崎",
+		"zh-Hant": "高崎"
+	}
+}, {
+	"id": "JR-East.Shinetsu.KitaTakasaki",
+	"railway": "JR-East.Shinetsu",
+	"coord": [139.0013003, 36.3386912],
+	"title": {
+		"ja": "北高崎",
+		"en": "Kita-Takasaki",
+		"fr": "Kita-Takasaki",
+		"ko": "기타타카사키",
+		"zh-Hans": "北高崎",
+		"zh-Hant": "北高崎"
+	}
+}, {
+	"id": "JR-East.Shinetsu.GummaYawata",
+	"railway": "JR-East.Shinetsu",
+	"coord": [138.9574688, 36.3377009],
+	"title": {
+		"ja": "群馬八幡",
+		"en": "Gumma-Yawata",
+		"fr": "Gumma-Yawata",
+		"ko": "군마야와타",
+		"zh-Hans": "群马八幡",
+		"zh-Hant": "群馬八幡"
+	}
+}, {
+	"id": "JR-East.Shinetsu.Annaka",
+	"railway": "JR-East.Shinetsu",
+	"coord": [138.9145889, 36.3316945],
+	"title": {
+		"ja": "安中",
+		"en": "Annaka",
+		"fr": "Annaka",
+		"ko": "안나카",
+		"zh-Hans": "安中",
+		"zh-Hant": "安中"
+	}
+}, {
+	"id": "JR-East.Shinetsu.Isobe",
+	"railway": "JR-East.Shinetsu",
+	"coord": [138.8497966, 36.2983921],
+	"title": {
+		"ja": "磯部",
+		"en": "Isobe",
+		"fr": "Isobe",
+		"ko": "이소베",
+		"zh-Hans": "矶部",
+		"zh-Hant": "磯部",
+		"ja-Wiki": "磯部駅 (群馬県)"
+	}
+}, {
+	"id": "JR-East.Shinetsu.Matsuida",
+	"railway": "JR-East.Shinetsu",
+	"coord": [138.797336, 36.3094214],
+	"title": {
+		"ja": "松井田",
+		"en": "Matsuida",
+		"fr": "Matsuida",
+		"ko": "마쓰이다",
+		"zh-Hans": "松井田",
+		"zh-Hant": "松井田"
+	}
+}, {
+	"id": "JR-East.Shinetsu.NishiMatsuida",
+	"railway": "JR-East.Shinetsu",
+	"coord": [138.7863809, 36.3162627],
+	"title": {
+		"ja": "西松井田",
+		"en": "Nishi-Matsuida",
+		"fr": "Nishi-Matsuida",
+		"ko": "니시마쓰이다",
+		"zh-Hans": "西松井田",
+		"zh-Hant": "西松井田"
+	}
+}, {
+	"id": "JR-East.Shinetsu.Yokokawa",
+	"railway": "JR-East.Shinetsu",
+	"coord": [138.7372548, 36.336178],
+	"title": {
+		"ja": "横川",
+		"en": "Yokokawa",
+		"fr": "Yokokawa",
+		"ko": "요코카와",
+		"zh-Hans": "横川",
+		"zh-Hant": "橫川",
+		"ja-Wiki": "横川駅 (群馬県)"
+	}
+}, {
+	"id": "JR-East.Shinetsu.Nagano",
+	"title": {
+		"ja": "長野",
+		"en": "Nagano",
+		"fr": "Nagano",
+		"ko": "나가노",
+		"zh-Hans": "长野",
+		"zh-Hant": "長野"
+	}
+}, {
 	"id": "JR-Central.Tokaido.Atami",
 	"railway": "JR-Central.Tokaido",
 	"coord": [139.07768, 35.10356],
@@ -33402,16 +33510,6 @@
 		"ko": "마쓰모토",
 		"zh-Hans": "松本",
 		"zh-Hant": "松本"
-	}
-}, {
-	"id": "JR-East.Shinetsu.Nagano",
-	"title": {
-		"ja": "長野",
-		"en": "Nagano",
-		"fr": "Nagano",
-		"ko": "나가노",
-		"zh-Hans": "长野",
-		"zh-Hant": "長野"
 	}
 }, {
 	"id": "JR-East.Oito.Hakuba",

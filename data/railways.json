@@ -1685,6 +1685,31 @@
 	"carComposition": 2,
 	"dynamic": true
 }, {
+	"id": "JR-East.Shinetsu",
+	"title": {
+		"ja": "信越本線",
+		"en": "Shinetsu Line",
+		"fr": "Ligne Shinetsu",
+		"ko": "신에쓰 본선",
+		"zh-Hans": "信越本线",
+		"zh-Hant": "信越本線"
+	},
+	"stations": [
+		"JR-East.Shinetsu.Takasaki",
+		"JR-East.Shinetsu.KitaTakasaki",
+		"JR-East.Shinetsu.GummaYawata",
+		"JR-East.Shinetsu.Annaka",
+		"JR-East.Shinetsu.Isobe",
+		"JR-East.Shinetsu.Matsuida",
+		"JR-East.Shinetsu.NishiMatsuida",
+		"JR-East.Shinetsu.Yokokawa"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#9ACD32",
+	"carComposition": 4,
+	"dynamic": true
+}, {
 	"id": "JR-Central.Tokaido",
 	"title": {
 		"ja": "東海道線",
