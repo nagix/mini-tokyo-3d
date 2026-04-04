@@ -1710,6 +1710,41 @@
 	"carComposition": 4,
 	"dynamic": true
 }, {
+	"id": "JR-East.Agatsuma",
+	"title": {
+		"ja": "吾妻線",
+		"en": "Agatsuma Line",
+		"fr": "Ligne Agatsuma",
+		"ko": "아가쓰마 선",
+		"zh-Hans": "吾妻线",
+		"zh-Hant": "吾妻線"
+	},
+	"stations": [
+		"JR-East.Agatsuma.Shibukawa",
+		"JR-East.Agatsuma.Kanashima",
+		"JR-East.Agatsuma.Ubashima",
+		"JR-East.Agatsuma.Onogami",
+		"JR-East.Agatsuma.OnogamiOnsen",
+		"JR-East.Agatsuma.Ichishiro",
+		"JR-East.Agatsuma.Nakanojo",
+		"JR-East.Agatsuma.GunmaHaramachi",
+		"JR-East.Agatsuma.Gobara",
+		"JR-East.Agatsuma.Yagura",
+		"JR-East.Agatsuma.Iwashima",
+		"JR-East.Agatsuma.KawarayuOnsen",
+		"JR-East.Agatsuma.Naganoharakusatsuguchi",
+		"JR-East.Agatsuma.GunmaOtsu",
+		"JR-East.Agatsuma.Haneo",
+		"JR-East.Agatsuma.Fukurogura",
+		"JR-East.Agatsuma.ManzaKazawaguchi",
+		"JR-East.Agatsuma.Omae"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#0F5474",
+	"carComposition": 4,
+	"dynamic": true
+}, {
 	"id": "JR-Central.Tokaido",
 	"title": {
 		"ja": "東海道線",
