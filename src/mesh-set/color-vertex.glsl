@@ -35,3 +35,8 @@ vInstanceColor = color0;
 #endif
 
 vInstanceOpacity = opacity0;
+
+#ifdef CAR
+vLocalNormalZ = normal.z;
+vUv2 = uv;
+#endif
