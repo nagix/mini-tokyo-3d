@@ -7,7 +7,7 @@ export function loadJSON(url) {
         if (url.startsWith('https')) {
             https.get(url, {
                 headers: {
-                    'User-Agent': 'MiniTokyo3DLoader/0.0'
+                    'User-Agent': 'MiniTokyo3DLoader/0.0 (https://minitokyo3d.com) loader/0.0'
                 }
             }, res => {
                 let body = '';
