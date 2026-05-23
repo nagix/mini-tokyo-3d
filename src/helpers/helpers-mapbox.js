@@ -1,6 +1,6 @@
 import {LngLat, LngLatBounds} from 'mapbox-gl';
 import {parseCSSColor} from 'csscolorparser';
-import {lerp, luminance, valueOrDefault} from './helpers';
+import {includes, lerp, luminance, valueOrDefault} from './helpers';
 import SunCalc from 'suncalc';
 
 const HOUR = 3600000;
@@ -295,24 +295,17 @@ export function getStyleOpacities(map, metadataKey) {
             return;
         }
 
-        const key = `${type}-opacity`,
+        const key = `${type.replace('symbol', 'icon')}-opacity`,
             prop = propMapping[id] || valueOrDefault(map.getPaintProperty(id, key), 1);
 
         if (!isNaN(prop)) {
             opacities.push({id, key, opacity: prop, metadata});
-        } else if (prop.stops) {
+        } else if (includes(['match', 'step', 'interpolate'], prop[0])) {
             const opacity = [];
 
-            prop.stops.forEach((item, index) => {
-                opacity.push({index, value: item[1]});
-            });
-            opacities.push({id, key, opacity, metadata});
-        } else if (prop[0] === 'case' || prop[0] === 'interpolate') {
-            const opacity = [];
-
-            prop.forEach((item, index) => {
-                if ((index % 2 === 0 || index === prop.length - 1) && !isNaN(item)) {
-                    opacity.push({index, value: item});
+            prop.forEach((value, index) => {
+                if ((index % 2 === (prop[0] === 'match' ? 1 : 0) || index === prop.length - 1) && !isNaN(value)) {
+                    opacity.push({index, value});
                 }
             });
             opacities.push({id, key, opacity, metadata});
@@ -343,13 +336,7 @@ export function setStyleOpacities(map, styleOpacities, factorKey) {
             if (Array.isArray(opacity)) {
                 prop = map.getPaintProperty(id, key);
                 for (const {index, value} of opacity) {
-                    const scaledOpacity = value * factor;
-
-                    if (prop.stops) {
-                        prop.stops[index][1] = scaledOpacity;
-                    } else {
-                        prop[index] = scaledOpacity;
-                    }
+                    prop[index] = value * factor;
                 }
             } else {
                 prop = opacity * factor;

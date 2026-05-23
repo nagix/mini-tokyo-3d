@@ -23,7 +23,7 @@ export default [
     {
         languageOptions: {
             sourceType: 'module',
-            ecmaVersion: 2018,
+            ecmaVersion: 2020,
             globals: {
                 ...globals.browser
             }
@@ -90,6 +90,7 @@ export default [
     {
         rules: {
             'import-x/no-commonjs': 'error',
+            'import-x/default': 'off',
             'import-x/no-duplicates': 'error'
         }
     },
