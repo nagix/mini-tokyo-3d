@@ -5139,6 +5139,43 @@
 	"color": "#0054A6",
 	"carComposition": 3
 }, {
+	"id": "Joshin.Joshin",
+	"title": {
+		"ja": "上信線",
+		"en": "Joshin line",
+		"fr": "Ligne Joshin",
+		"ko": "조신 선",
+		"zh-Hans": "上信线",
+		"zh-Hant": "上信線"
+	},
+	"stations": [
+		"Joshin.Joshin.Takasaki",
+		"Joshin.Joshin.MinamiTakasaki",
+		"Joshin.Joshin.Sanonowatashi",
+		"Joshin.Joshin.Negoya",
+		"Joshin.Joshin.TakasakiShokaDaigakumae",
+		"Joshin.Joshin.Yamana",
+		"Joshin.Joshin.NishiYamana",
+		"Joshin.Joshin.Maniwa",
+		"Joshin.Joshin.Yoshii",
+		"Joshin.Joshin.NishiYoshii",
+		"Joshin.Joshin.JoshuNiiya",
+		"Joshin.Joshin.JoshuFukushima",
+		"Joshin.Joshin.HigashiTomioka",
+		"Joshin.Joshin.JoshuTomioka",
+		"Joshin.Joshin.NishiTomioka",
+		"Joshin.Joshin.JoshuNanokaichi",
+		"Joshin.Joshin.JoshuIchinomiya",
+		"Joshin.Joshin.Kanohara",
+		"Joshin.Joshin.Nanjai",
+		"Joshin.Joshin.Sendaira",
+		"Joshin.Joshin.Shimonita"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#004998",
+	"carComposition": 2
+}, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {
 		"ja": "ゆりかもめ",
