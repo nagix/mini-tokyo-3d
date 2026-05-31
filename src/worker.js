@@ -301,6 +301,9 @@ class StopTimeReader {
             me.stopSequenceIndex = fileds.indexOf('stop_sequence');
             me.stopHeadsignIndex = fileds.indexOf('stop_headsign');
         } else {
+            const departureOffset = getTimeOffset(fileds[me.departureTimeIndex]);
+            if (!Number.isFinite(departureOffset)) return;
+
             const id = fileds[me.tripIdIndex];
             let stopTimes;
 
@@ -311,7 +314,7 @@ class StopTimeReader {
                 lookup.set(id, stopTimes);
             }
             stopTimes.push([
-                getTimeOffset(fileds[me.departureTimeIndex]),
+                departureOffset,
                 fileds[me.stopIdIndex],
                 +fileds[me.stopSequenceIndex],
                 fileds[me.stopHeadsignIndex]
