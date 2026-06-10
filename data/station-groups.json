@@ -315,6 +315,8 @@
 	"JR-East.Chuo.Hachioji",
 	"JR-East.MusashinoKunitachiBranch.Hachioji",
 	"JR-East.Yokohama.Hachioji"
+], [
+	"Keio.Keio.KeioHachioji"
 ]], [[
 	"JR-East.ChuoRapid.Takao",
 	"JR-East.Chuo.Takao"
@@ -351,13 +353,15 @@
 ]], [[
 	"JR-East.ChuoSobuLocal.Tsudanuma",
 	"JR-East.SobuRapid.Tsudanuma"
+], [
+	"Keisei.Matsudo.ShinTsudanuma"
 ]], [[
-	"Keisei.Main.KeiseiFunabashi"
-], [
-	"JR-East.ChuoSobuLocal.Funabashi",
-	"JR-East.SobuRapid.Funabashi"
-], [
 	"Tobu.TobuUrbanPark.Funabashi"
+], [
+	"JR-East.SobuRapid.Funabashi",
+	"JR-East.ChuoSobuLocal.Funabashi"
+], [
+	"Keisei.Main.KeiseiFunabashi"
 ]], [[
 	"JR-East.ChuoSobuLocal.NishiFunabashi",
 	"TokyoMetro.Tozai.NishiFunabashi",
@@ -423,9 +427,12 @@
 ], [
 	"Toei.Oedo.HigashiNakano"
 ]], [[
-	"JR-East.Tokaido.Kawasaki",
+	"JR-East.Nambu.Kawasaki",
 	"JR-East.KeihinTohokuNegishi.Kawasaki",
-	"JR-East.Nambu.Kawasaki"
+	"JR-East.Tokaido.Kawasaki"
+], [
+	"Keikyu.Main.KeikyuKawasaki",
+	"Keikyu.Daishi.KeikyuKawasaki"
 ]], [[
 	"Sotetsu.Main.Yokohama"
 ], [
@@ -579,12 +586,16 @@
 	"Tokyu.Ikegami.Kamata",
 	"Tokyu.TokyuTamagawa.Kamata"
 ]], [[
+	"JR-East.Tsurumi.Tsurumi"
+], [
 	"JR-East.KeihinTohokuNegishi.Tsurumi"
 ], [
-	"JR-East.Tsurumi.Tsurumi"
+	"Keikyu.Main.KeikyuTsurumi"
 ]], [[
 	"JR-East.KeihinTohokuNegishi.HigashiKanagawa",
 	"JR-East.Yokohama.HigashiKanagawa"
+], [
+	"Keikyu.Main.KeikyuHigashikanagawa"
 ]], [[
 	"JR-East.KeihinTohokuNegishi.Sakuragicho"
 ], [
@@ -594,9 +605,11 @@
 ], [
 	"YokohamaMunicipal.Blue.Kannai"
 ]], [[
+	"YokohamaSeaside.KanazawaSeaside.ShinSugita"
+], [
 	"JR-East.KeihinTohokuNegishi.ShinSugita"
 ], [
-	"YokohamaSeaside.KanazawaSeaside.ShinSugita"
+	"Keikyu.Main.Sugita"
 ]], [[
 	"JR-East.JobanRapid.MinamiSenju"
 ], [
@@ -703,6 +716,9 @@
 	"JR-East.Narita.Narita",
 	"JR-East.NaritaAirportBranch.Narita",
 	"JR-East.SobuRapid.Narita"
+], [
+	"Keisei.Main.KeiseiNarita",
+	"Keisei.HigashiNarita.KeiseiNarita"
 ]], [[
 	"JR-East.NaritaAirportBranch.NaritaAirportTerminal2and3",
 	"JR-East.SobuRapid.NaritaAirportTerminal2and3"
@@ -783,6 +799,10 @@
 	"JR-East.Yokosuka.Kamakura"
 ], [
 	"Enoden.Enoden.Kamakura"
+]], [[
+	"JR-East.Yokosuka.Zushi"
+], [
+	"Keikyu.Zushi.ZushiHayama"
 ]], [[
 	"JR-East.Yokosuka.Kurihama"
 ], [
@@ -1061,13 +1081,13 @@
 ], [
 	"TokyoMetro.Hibiya.ToranomonHills"
 ]], [[
-	"TokyoMetro.Yurakucho.GinzaItchome"
-], [
-	"TokyoMetro.Ginza.Ginza"
+	"TokyoMetro.Marunouchi.Ginza"
 ], [
 	"TokyoMetro.Hibiya.Ginza"
 ], [
-	"TokyoMetro.Marunouchi.Ginza"
+	"TokyoMetro.Ginza.Ginza"
+], [
+	"TokyoMetro.Yurakucho.GinzaItchome"
 ]], [[
 	"TokyoMetro.Ginza.Nihombashi"
 ], [
@@ -1142,11 +1162,11 @@
 ], [
 	"TokyoMetro.Tozai.Kayabacho"
 ]], [[
-	"TokyoMetro.Hanzomon.Suitengumae"
+	"Toei.Asakusa.Ningyocho"
 ], [
 	"TokyoMetro.Hibiya.Ningyocho"
 ], [
-	"Toei.Asakusa.Ningyocho"
+	"TokyoMetro.Hanzomon.Suitengumae"
 ]], [[
 	"TokyoMetro.Hibiya.Minowa"
 ], [
@@ -1357,9 +1377,6 @@
 	"Keikyu.Main.KeikyuKamata",
 	"Keikyu.Airport.KeikyuKamata"
 ]], [[
-	"Keikyu.Main.KeikyuKawasaki",
-	"Keikyu.Daishi.KeikyuKawasaki"
-]], [[
 	"YokohamaSeaside.KanazawaSeaside.KanazawaHakkei"
 ], [
 	"Keikyu.Main.KanazawaHakkei",
@@ -1385,6 +1402,10 @@
 ], [
 	"TokyoMonorail.HanedaAirport.HanedaAirportTerminal2"
 ]], [[
+	"Keisei.Main.KeiseiSekiya"
+], [
+	"Tobu.TobuSkytree.Ushida"
+]], [[
 	"Keisei.Oshiage.Aoto",
 	"Keisei.Main.Aoto",
 	"Keisei.NaritaSkyAccess.Aoto"
@@ -1407,9 +1428,6 @@
 ], [
 	"Yamaman.Yukarigaoka.Yukarigaoka.1",
 	"Yamaman.Yukarigaoka.Yukarigaoka"
-]], [[
-	"Keisei.Main.KeiseiNarita",
-	"Keisei.HigashiNarita.KeiseiNarita"
 ]], [[
 	"Keisei.HigashiNarita.HigashiNarita",
 	"Shibayama.Shibayama.HigashiNarita"
