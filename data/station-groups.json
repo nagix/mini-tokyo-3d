@@ -39,6 +39,12 @@
 	"TokyoMetro.Fukutoshin.Shibuya",
 	"Tokyu.Toyoko.Shibuya"
 ]], [[
+	"JR-East.Yamanote.Harajuku"
+], [
+	"TokyoMetro.Chiyoda.MeijiJingumae"
+], [
+	"TokyoMetro.Fukutoshin.MeijiJingumae"
+]], [[
 	"JR-East.Yamanote.Yoyogi",
 	"JR-East.ChuoSobuLocal.Yoyogi"
 ], [
@@ -136,6 +142,12 @@
 ]], [[
 	"JR-East.KeihinTohokuNegishi.Okachimachi",
 	"JR-East.Yamanote.Okachimachi"
+], [
+	"TokyoMetro.Ginza.UenoHirokoji"
+], [
+	"Toei.Oedo.UenoOkachimachi"
+], [
+	"TokyoMetro.Hibiya.NakaOkachimachi"
 ]], [[
 	"JR-East.ChuoSobuLocal.Akihabara"
 ], [
@@ -145,6 +157,8 @@
 	"MIR.TsukubaExpress.Akihabara"
 ], [
 	"TokyoMetro.Hibiya.Akihabara"
+], [
+	"Toei.Shinjuku.Iwamotocho"
 ]], [[
 	"JR-East.KeihinTohokuNegishi.Kanda",
 	"JR-East.Yamanote.Kanda",
@@ -197,12 +211,23 @@
 	"JR-East.Yamanote.Hamamatsucho"
 ], [
 	"TokyoMonorail.HanedaAirport.Hamamatsucho"
+], [
+	"Toei.Asakusa.Daimon"
+], [
+	"Toei.Oedo.Daimon"
 ]], [[
 	"JR-East.KeihinTohokuNegishi.Tamachi",
 	"JR-East.Yamanote.Tamachi"
+], [
+	"Toei.Asakusa.Mita"
+], [
+	"Toei.Mita.Mita"
 ]], [[
 	"JR-East.KeihinTohokuNegishi.TakanawaGateway",
 	"JR-East.Yamanote.TakanawaGateway"
+], [
+	"Toei.Asakusa.Sengakuji",
+	"Keikyu.Main.Sengakuji"
 ]], [[
 	"JR-East.Yokosuka.Shinagawa",
 	"JR-East.YamanoteFreight.Shinagawa",
@@ -327,6 +352,8 @@
 	"JR-East.ChuoSobuLocal.Tsudanuma",
 	"JR-East.SobuRapid.Tsudanuma"
 ]], [[
+	"Keisei.Main.KeiseiFunabashi"
+], [
 	"JR-East.ChuoSobuLocal.Funabashi",
 	"JR-East.SobuRapid.Funabashi"
 ], [
@@ -343,6 +370,8 @@
 	"JR-East.ChuoSobuLocal.MotoYawata"
 ], [
 	"Toei.Shinjuku.Motoyawata"
+], [
+	"Keisei.Main.KeiseiYawata"
 ]], [[
 	"JR-East.ChuoSobuLocal.Ichikawa",
 	"JR-East.SobuRapid.Ichikawa"
@@ -809,6 +838,10 @@
 ], [
 	"ChibaMonorail.Line1.ChibaMinato"
 ]], [[
+	"JR-East.SaikyoKawagoe.Itabashi"
+], [
+	"Toei.Mita.ShinItabashi"
+]], [[
 	"JR-East.SaikyoKawagoe.MusashiUrawa"
 ], [
 	"JR-East.Musashino.MusashiUrawa",
@@ -843,6 +876,10 @@
 	"JR-East.Nambu.Noborito"
 ], [
 	"Odakyu.Odawara.Noborito"
+]], [[
+	"JR-East.Nambu.Inadazutsumi"
+], [
+	"Keio.Sagamihara.KeioInadazutsumi"
 ]], [[
 	"JR-East.Nambu.Fuchuhommachi",
 	"JR-East.Musashino.Fuchuhommachi"
@@ -1024,6 +1061,8 @@
 ], [
 	"TokyoMetro.Hibiya.ToranomonHills"
 ]], [[
+	"TokyoMetro.Yurakucho.GinzaItchome"
+], [
 	"TokyoMetro.Ginza.Ginza"
 ], [
 	"TokyoMetro.Hibiya.Ginza"
@@ -1035,12 +1074,6 @@
 	"TokyoMetro.Tozai.Nihombashi"
 ], [
 	"Toei.Asakusa.Nihombashi"
-]], [[
-	"TokyoMetro.Ginza.UenoHirokoji"
-], [
-	"Toei.Oedo.UenoOkachimachi"
-], [
-	"TokyoMetro.Hibiya.NakaOkachimachi"
 ]], [[
 	"Tobu.TobuSkytree.Asakusa"
 ], [
@@ -1101,10 +1134,16 @@
 ], [
 	"Toei.Asakusa.HigashiGinza"
 ]], [[
+	"TokyoMetro.Hibiya.Tsukiji"
+], [
+	"TokyoMetro.Yurakucho.Shintomicho"
+]], [[
 	"TokyoMetro.Hibiya.Kayabacho"
 ], [
 	"TokyoMetro.Tozai.Kayabacho"
 ]], [[
+	"TokyoMetro.Hanzomon.Suitengumae"
+], [
 	"TokyoMetro.Hibiya.Ningyocho"
 ], [
 	"Toei.Asakusa.Ningyocho"
@@ -1122,10 +1161,6 @@
 	"TokyoMetro.Tozai.MonzenNakacho"
 ], [
 	"Toei.Oedo.MonzenNakacho"
-]], [[
-	"TokyoMetro.Chiyoda.MeijiJingumae"
-], [
-	"TokyoMetro.Fukutoshin.MeijiJingumae"
 ]], [[
 	"TokyoMetro.Chiyoda.Machiya"
 ], [
@@ -1214,20 +1249,13 @@
 ], [
 	"Toei.Oedo.HigashiShinjuku"
 ]], [[
-	"Toei.Asakusa.Sengakuji",
-	"Keikyu.Main.Sengakuji"
-]], [[
 	"Toei.Asakusa.Nakanobu"
 ], [
 	"Tokyu.Oimachi.Nakanobu"
 ]], [[
-	"Toei.Asakusa.Mita"
+	"Toei.Asakusa.Togoshi"
 ], [
-	"Toei.Mita.Mita"
-]], [[
-	"Toei.Asakusa.Daimon"
-], [
-	"Toei.Oedo.Daimon"
+	"Tokyu.Ikegami.TogoshiGinza"
 ]], [[
 	"Toei.Asakusa.Kuramae"
 ], [
