@@ -670,7 +670,8 @@ export default class extends Panel {
             bearing: mbox.getBearing(),
             pitch: mbox.getPitch(),
             offset: [0, -mbox.transform.height / 12],
-            padding: {top: 20, bottom: 20, left: 10, right: 50},
+            padding: {top: 20, bottom: 20, left: 10, right: 60},
+            retainPadding: false,
             linear: true,
             maxZoom: 18
         });
