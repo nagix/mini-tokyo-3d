@@ -85442,37 +85442,6 @@
 	}],
 	"v": "E353"
 }, {
-	"id": "JR-East.ChuoSobuLocal.9044M.SaturdayHoliday",
-	"t": "JR-East.ChuoSobuLocal.9044M",
-	"r": "JR-East.ChuoSobuLocal",
-	"n": "9044M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Westbound",
-	"os": [
-		"JR-East.Uchibo.Tateyama"
-	],
-	"ds": [
-		"JR-East.ChuoSobuLocal.Shinjuku"
-	],
-	"pt": [
-		"JR-East.SobuRapid.9044M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.ChuoSobuLocal.Kinshicho",
-		"d": "16:55"
-	}, {
-		"s": "JR-East.ChuoSobuLocal.Shinjuku",
-		"a": "17:12"
-	}],
-	"nm": [{
-		"ja": "新宿さざなみ 2号",
-		"en": "Shinjuku Sazanami 2",
-		"ko": "신주쿠 사자나미 2",
-		"zh-Hans": "新宿细波 2",
-		"zh-Hant": "新宿細波 2"
-	}],
-	"v": "E257-500"
-}, {
 	"id": "JR-East.ChuoSobuLocal.9048M.SaturdayHoliday",
 	"t": "JR-East.ChuoSobuLocal.9048M",
 	"r": "JR-East.ChuoSobuLocal",
@@ -113449,37 +113418,6 @@
 		"ko": "신주쿠 사자나미 1",
 		"zh-Hans": "新宿细波 1",
 		"zh-Hant": "新宿細波 1"
-	}],
-	"v": "E257-500"
-}, {
-	"id": "JR-East.ChuoSobuLocal.9045M.SaturdayHoliday",
-	"t": "JR-East.ChuoSobuLocal.9045M",
-	"r": "JR-East.ChuoSobuLocal",
-	"n": "9045M",
-	"y": "JR-East.LimitedExpress",
-	"d": "Eastbound",
-	"os": [
-		"JR-East.ChuoSobuLocal.Shinjuku"
-	],
-	"ds": [
-		"JR-East.Uchibo.Tateyama"
-	],
-	"nt": [
-		"JR-East.SobuRapid.9045M.SaturdayHoliday"
-	],
-	"tt": [{
-		"s": "JR-East.ChuoSobuLocal.Shinjuku",
-		"d": "09:08"
-	}, {
-		"s": "JR-East.ChuoSobuLocal.Kinshicho",
-		"a": "09:24"
-	}],
-	"nm": [{
-		"ja": "新宿さざなみ 3号",
-		"en": "Shinjuku Sazanami 3",
-		"ko": "신주쿠 사자나미 3",
-		"zh-Hans": "新宿细波 3",
-		"zh-Hant": "新宿細波 3"
 	}],
 	"v": "E257-500"
 }, {
