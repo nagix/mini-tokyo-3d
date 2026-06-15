@@ -5215,6 +5215,39 @@
 	"color": "#004998",
 	"carComposition": 2
 }, {
+	"id": "WataraseKeikoku.WataraseKeikoku",
+	"title": {
+		"ja": "わたらせ渓谷線",
+		"en": "Watarase Keikoku Line",
+		"fr": "Ligne Watarase Keikoku",
+		"ko": "와타라세 계곡선",
+		"zh-Hans": "渡良濑溪谷线",
+		"zh-Hant": "渡良瀨溪谷線"
+	},
+	"stations": [
+		"WataraseKeikoku.WataraseKeikoku.Kiryu",
+		"WataraseKeikoku.WataraseKeikoku.ShimoShinden",
+		"WataraseKeikoku.WataraseKeikoku.Aioi",
+		"WataraseKeikoku.WataraseKeikoku.UndoKoen",
+		"WataraseKeikoku.WataraseKeikoku.Omama",
+		"WataraseKeikoku.WataraseKeikoku.KamiKambai",
+		"WataraseKeikoku.WataraseKeikoku.Motojuku",
+		"WataraseKeikoku.WataraseKeikoku.Mizunuma",
+		"WataraseKeikoku.WataraseKeikoku.Hanawa",
+		"WataraseKeikoku.WataraseKeikoku.Nakano",
+		"WataraseKeikoku.WataraseKeikoku.Konaka",
+		"WataraseKeikoku.WataraseKeikoku.Godo",
+		"WataraseKeikoku.WataraseKeikoku.Sori",
+		"WataraseKeikoku.WataraseKeikoku.Haramuko",
+		"WataraseKeikoku.WataraseKeikoku.Tsudo",
+		"WataraseKeikoku.WataraseKeikoku.Ashio",
+		"WataraseKeikoku.WataraseKeikoku.Mato"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#5D1B28",
+	"carComposition": 1
+}, {
 	"id": "Yurikamome.Yurikamome",
 	"title": {
 		"ja": "ゆりかもめ",
