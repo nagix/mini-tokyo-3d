@@ -1636,6 +1636,66 @@
 	"carComposition": 5,
 	"dynamic": true
 }, {
+	"id": "JR-East.Suigun",
+	"title": {
+		"ja": "水郡線",
+		"en": "Suigun Line",
+		"fr": "Ligne Suigun",
+		"ko": "스이군 선",
+		"zh-Hans": "水郡线",
+		"zh-Hant": "水郡線"
+	},
+	"stations": [
+		"JR-East.Suigun.Mito",
+		"JR-East.Suigun.HitachiAoyagi",
+		"JR-East.Suigun.HitachiTsuda",
+		"JR-East.Suigun.Godai",
+		"JR-East.Suigun.ShimoSugaya",
+		"JR-East.Suigun.NakaSugaya",
+		"JR-East.Suigun.KamiSugaya",
+		"JR-East.Suigun.HitachiKonosu",
+		"JR-East.Suigun.Urizura",
+		"JR-East.Suigun.Shizu",
+		"JR-East.Suigun.HitachiOmiya",
+		"JR-East.Suigun.Tamagawamura",
+		"JR-East.Suigun.Nogamihara",
+		"JR-East.Suigun.Yamagatajuku",
+		"JR-East.Suigun.NakaFunyu",
+		"JR-East.Suigun.ShimoOgawa",
+		"JR-East.Suigun.Saigane",
+		"JR-East.Suigun.KamiOgawa",
+		"JR-East.Suigun.Fukuroda",
+		"JR-East.Suigun.HitachiDaigo"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#368C44",
+	"carComposition": 4,
+	"dynamic": true
+}, {
+	"id": "JR-East.SuigunBranch",
+	"title": {
+		"ja": "水郡線常陸太田支線",
+		"en": "Suigun Branch Line",
+		"fr": "Branche de la ligne Suigun",
+		"ko": "닛스이군 선 히타치오타 지선",
+		"zh-Hans": "水郡线常陆太田支线",
+		"zh-Hant": "水郡線常陸太田支線"
+	},
+	"stations": [
+		"JR-East.SuigunBranch.KamiSugaya",
+		"JR-East.SuigunBranch.MinamiSakaide",
+		"JR-East.SuigunBranch.Nukada",
+		"JR-East.SuigunBranch.Kawai",
+		"JR-East.SuigunBranch.Yagawara",
+		"JR-East.SuigunBranch.HitachiOta"
+	],
+	"ascending": "Outbound",
+	"descending": "Inbound",
+	"color": "#368C44",
+	"carComposition": 4,
+	"dynamic": true
+}, {
 	"id": "JR-East.Nikko",
 	"title": {
 		"ja": "日光線",
