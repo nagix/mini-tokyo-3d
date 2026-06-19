@@ -730,7 +730,7 @@ export default class extends Evented {
                 'sky-atmosphere-sun-intensity': 20
             }
         }, 'background');
-        helpersMapbox.setSunlight(map, clock.getTime());
+        helpersMapbox.setSunlight(map, clock.getTime(), me.viewMode === 'ground' ? 1 : 0);
 
         map.setLayoutProperty('poi', 'text-field', [
             'coalesce',
@@ -1157,7 +1157,7 @@ export default class extends Evented {
                     // Hide building models when the clock speed is high as changing lights impacts performance
                     me.setLayerVisibility('building-models', clock.speed <= 30 ? 'visible' : 'none');
 
-                    helpersMapbox.setSunlight(map, now);
+                    helpersMapbox.setSunlight(map, now, me.viewMode === 'ground' ? 1 : 0);
                     if (me.searchMode === 'none' && me.clockMode === 'playback' && !me.removing) {
                         me.refreshTrains();
                         me.refreshFlights();
@@ -2852,12 +2852,13 @@ export default class extends Evented {
 
     refreshMap() {
         const me = this,
-            {viewMode, searchMode} = me,
+            {map, viewMode, searchMode} = me,
             isUndergroundMode = viewMode === 'underground',
             isNotSearchResultMode = searchMode === 'none' || searchMode === 'edit',
             factorKey = `mt3d:opacity${isUndergroundMode ? '-underground' : ''}`;
 
-        helpersMapbox.setStyleOpacities(me.map, me.styleOpacities, isNotSearchResultMode ? factorKey : [`${factorKey}-route`, factorKey]);
+        helpersMapbox.setStyleOpacities(map, me.styleOpacities, isNotSearchResultMode ? factorKey : [`${factorKey}-route`, factorKey]);
+        helpersMapbox.setSunlight(map, me.clock.getTime(), isUndergroundMode ? 0 : 1);
         me.setLayerVisibility('hd-area', isUndergroundMode ? 'none' : 'visible');
         me.setLayerVisibility('hd-bridge-area', isUndergroundMode ? 'none' : 'visible');
         me.trafficLayer.setMode(viewMode, searchMode);

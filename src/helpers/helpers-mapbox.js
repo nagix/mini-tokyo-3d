@@ -85,8 +85,9 @@ export function getSunlightColor(map, time) {
  * @param {mapboxgl.Map} map - Mapbox's Map object
  * @param {number} time - The number of milliseconds elapsed since January 1,
  *     1970 00:00:00 UTC
+ * @param {number} shadowIntensity - Determines the shadow strength
  */
-export function setSunlight(map, time) {
+export function setSunlight(map, time, shadowIntensity) {
     const center = map.getCenter(),
         {sunrise, sunset} = SunCalc.getTimes(time, center.lat, center.lng),
         sunriseTime = sunrise.getTime(),
@@ -235,7 +236,7 @@ export function setSunlight(map, time) {
             color: `rgb(${directional.r}, ${directional.g}, ${directional.b})`,
             intensity: directional.i,
             'cast-shadows': true,
-            'shadow-intensity': directional.w
+            'shadow-intensity': directional.w * shadowIntensity
         }
     }]);
 
