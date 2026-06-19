@@ -42,12 +42,12 @@ class AgencyReader {
 
     read(line) {
         const me = this,
-            fileds = csvToArray(line);
+            fields = csvToArray(line);
 
         if (me.agencyNameIndex === undefined) {
-            me.agencyNameIndex = fileds.indexOf('agency_name');
+            me.agencyNameIndex = fields.indexOf('agency_name');
         } else {
-            me.agencyName = fileds[me.agencyNameIndex];
+            me.agencyName = fields[me.agencyNameIndex];
         }
     }
 
@@ -69,16 +69,16 @@ class CalendarReader {
 
     read(line) {
         const me = this,
-            fileds = csvToArray(line);
+            fields = csvToArray(line);
 
         if (me.serviceIdIndex === undefined) {
-            me.serviceIdIndex = fileds.indexOf('service_id');
-            me.dayIndex = fileds.indexOf(me.day);
-            me.startDateIndex = fileds.indexOf('start_date');
-            me.endDateIndex = fileds.indexOf('end_date');
+            me.serviceIdIndex = fields.indexOf('service_id');
+            me.dayIndex = fields.indexOf(me.day);
+            me.startDateIndex = fields.indexOf('start_date');
+            me.endDateIndex = fields.indexOf('end_date');
         } else {
-            if (me.date >= fileds[me.startDateIndex] && me.date <= fileds[me.endDateIndex] && fileds[me.dayIndex] === '1') {
-                me.services.add(fileds[me.serviceIdIndex]);
+            if (me.date >= fields[me.startDateIndex] && me.date <= fields[me.endDateIndex] && fields[me.dayIndex] === '1') {
+                me.services.add(fields[me.serviceIdIndex]);
             }
         }
     }
@@ -101,17 +101,17 @@ class CalendarDateReader {
 
     read(line) {
         const me = this,
-            fileds = csvToArray(line);
+            fields = csvToArray(line);
 
         if (me.serviceIdIndex === undefined) {
-            me.serviceIdIndex = fileds.indexOf('service_id');
-            me.dateIndex = fileds.indexOf('date');
-            me.exceptionTypeIndex = fileds.indexOf('exception_type');
+            me.serviceIdIndex = fields.indexOf('service_id');
+            me.dateIndex = fields.indexOf('date');
+            me.exceptionTypeIndex = fields.indexOf('exception_type');
         } else {
-            const id = fileds[me.serviceIdIndex];
+            const id = fields[me.serviceIdIndex];
 
-            if (me.date === fileds[me.dateIndex]) {
-                if (fileds[me.exceptionTypeIndex] === '1') {
+            if (me.date === fields[me.dateIndex]) {
+                if (fields[me.exceptionTypeIndex] === '1') {
                     me.additions.add(id);
                 } else {
                     me.deletions.add(id);
@@ -134,14 +134,14 @@ class FeedInfoReader {
 
     read(line) {
         const me = this,
-            fileds = csvToArray(line);
+            fields = csvToArray(line);
 
         if (me.feedLangIndex === undefined) {
-            me.feedLangIndex = fileds.indexOf('feed_lang');
-            me.feedVersionIndex = fileds.indexOf('feed_version');
+            me.feedLangIndex = fields.indexOf('feed_lang');
+            me.feedVersionIndex = fields.indexOf('feed_version');
         } else {
-            me.feedLang = fileds[me.feedLangIndex];
-            me.feedVersion = fileds[me.feedVersionIndex];
+            me.feedLang = fields[me.feedLangIndex];
+            me.feedVersion = fields[me.feedVersionIndex];
         }
     }
 
@@ -164,22 +164,22 @@ class RouteReader {
 
     read(line) {
         const me = this,
-            fileds = csvToArray(line);
+            fields = csvToArray(line);
 
         if (me.routeIdIndex === undefined) {
-            me.routeIdIndex = fileds.indexOf('route_id');
-            me.routeShortNameIndex = fileds.indexOf('route_short_name');
-            me.routeLongNameIndex = fileds.indexOf('route_long_name');
-            me.routeColorIndex = fileds.indexOf('route_color');
-            me.routeTextColorIndex = fileds.indexOf('route_text_color');
+            me.routeIdIndex = fields.indexOf('route_id');
+            me.routeShortNameIndex = fields.indexOf('route_short_name');
+            me.routeLongNameIndex = fields.indexOf('route_long_name');
+            me.routeColorIndex = fields.indexOf('route_color');
+            me.routeTextColorIndex = fields.indexOf('route_text_color');
         } else {
-            const color = fileds[me.routeColorIndex],
-                textColor = fileds[me.routeTextColorIndex];
+            const color = fields[me.routeColorIndex],
+                textColor = fields[me.routeTextColorIndex];
 
             me.array.push({
-                id: fileds[me.routeIdIndex],
-                shortName: fileds[me.routeShortNameIndex],
-                longName: fileds[me.routeLongNameIndex],
+                id: fields[me.routeIdIndex],
+                shortName: fields[me.routeShortNameIndex],
+                longName: fields[me.routeLongNameIndex],
                 color: color ? `#${color}` : undefined,
                 textColor: textColor ? `#${textColor}` : undefined
             });
@@ -203,17 +203,17 @@ class ShapeReader {
 
     read(line) {
         const me = this,
-            fileds = csvToArray(line),
+            fields = csvToArray(line),
             lookup = me.lookup;
 
         if (me.shapeIdIndex === undefined) {
-            me.shapeIdIndex = fileds.indexOf('shape_id');
-            me.shapePtLatIdIndex = fileds.indexOf('shape_pt_lat');
-            me.shapePtLonIdIndex = fileds.indexOf('shape_pt_lon');
-            me.shapePtSequenceIndex = fileds.indexOf('shape_pt_sequence');
+            me.shapeIdIndex = fields.indexOf('shape_id');
+            me.shapePtLatIdIndex = fields.indexOf('shape_pt_lat');
+            me.shapePtLonIdIndex = fields.indexOf('shape_pt_lon');
+            me.shapePtSequenceIndex = fields.indexOf('shape_pt_sequence');
         // Some GTFS have empty lines
-        } else if (fileds.length > 1) {
-            const id = fileds[me.shapeIdIndex];
+        } else if (fields.length > 1) {
+            const id = fields[me.shapeIdIndex];
             let coords;
 
             if (lookup.has(id)) {
@@ -223,9 +223,9 @@ class ShapeReader {
                 lookup.set(id, coords);
             }
             coords.push([
-                +fileds[me.shapePtLonIdIndex],
-                +fileds[me.shapePtLatIdIndex],
-                +fileds[me.shapePtSequenceIndex]
+                +fields[me.shapePtLonIdIndex],
+                +fields[me.shapePtLatIdIndex],
+                +fields[me.shapePtSequenceIndex]
             ]);
         }
     }
@@ -261,18 +261,18 @@ class StopReader {
 
     read(line) {
         const me = this,
-            fileds = csvToArray(line);
+            fields = csvToArray(line);
 
         if (me.stopIdIndex === undefined) {
-            me.stopIdIndex = fileds.indexOf('stop_id');
-            me.stopNameIndex = fileds.indexOf('stop_name');
-            me.stopLatIndex = fileds.indexOf('stop_lat');
-            me.stopLonIndex = fileds.indexOf('stop_lon');
+            me.stopIdIndex = fields.indexOf('stop_id');
+            me.stopNameIndex = fields.indexOf('stop_name');
+            me.stopLatIndex = fields.indexOf('stop_lat');
+            me.stopLonIndex = fields.indexOf('stop_lon');
         } else {
             me.array.push({
-                id: fileds[me.stopIdIndex],
-                name: fileds[me.stopNameIndex],
-                coord: [+fileds[me.stopLonIndex], +fileds[me.stopLatIndex]]
+                id: fields[me.stopIdIndex],
+                name: fields[me.stopNameIndex],
+                coord: [+fields[me.stopLonIndex], +fields[me.stopLatIndex]]
             });
         }
     }
@@ -291,20 +291,20 @@ class StopTimeReader {
 
     read(line) {
         const me = this,
-            fileds = csvToArray(line),
+            fields = csvToArray(line),
             lookup = me.lookup;
 
         if (me.tripIdIndex === undefined) {
-            me.tripIdIndex = fileds.indexOf('trip_id');
-            me.departureTimeIndex = fileds.indexOf('departure_time');
-            me.stopIdIndex = fileds.indexOf('stop_id');
-            me.stopSequenceIndex = fileds.indexOf('stop_sequence');
-            me.stopHeadsignIndex = fileds.indexOf('stop_headsign');
+            me.tripIdIndex = fields.indexOf('trip_id');
+            me.departureTimeIndex = fields.indexOf('departure_time');
+            me.stopIdIndex = fields.indexOf('stop_id');
+            me.stopSequenceIndex = fields.indexOf('stop_sequence');
+            me.stopHeadsignIndex = fields.indexOf('stop_headsign');
         } else {
-            const departureOffset = getTimeOffset(fileds[me.departureTimeIndex]);
+            const departureOffset = getTimeOffset(fields[me.departureTimeIndex]);
             if (!Number.isFinite(departureOffset)) return;
 
-            const id = fileds[me.tripIdIndex];
+            const id = fields[me.tripIdIndex];
             let stopTimes;
 
             if (lookup.has(id)) {
@@ -315,9 +315,9 @@ class StopTimeReader {
             }
             stopTimes.push([
                 departureOffset,
-                fileds[me.stopIdIndex],
-                +fileds[me.stopSequenceIndex],
-                fileds[me.stopHeadsignIndex]
+                fields[me.stopIdIndex],
+                +fields[me.stopSequenceIndex],
+                fields[me.stopHeadsignIndex]
             ]);
         }
     }
@@ -350,18 +350,18 @@ class TranslationReader {
 
     read(line) {
         const me = this,
-            fileds = csvToArray(line),
+            fields = csvToArray(line),
             lookup = me.lookup;
 
         if (me.tableNameIndex === undefined) {
-            me.tableNameIndex = fileds.indexOf('table_name');
-            me.fieldNameIndex = fileds.indexOf('field_name');
-            me.recordIdIndex = fileds.indexOf('record_id');
-            me.fieldValueIndex = fileds.indexOf('field_value');
-            me.languageIndex = fileds.indexOf('language');
-            me.translationIndex = fileds.indexOf('translation');
+            me.tableNameIndex = fields.indexOf('table_name');
+            me.fieldNameIndex = fields.indexOf('field_name');
+            me.recordIdIndex = fields.indexOf('record_id');
+            me.fieldValueIndex = fields.indexOf('field_value');
+            me.languageIndex = fields.indexOf('language');
+            me.translationIndex = fields.indexOf('translation');
         } else {
-            const lang = fileds[me.languageIndex];
+            const lang = fields[me.languageIndex];
             let subLookup;
 
             if (lookup.has(lang)) {
@@ -370,7 +370,7 @@ class TranslationReader {
                 subLookup = new Map();
                 lookup.set(lang, subLookup);
             }
-            subLookup.set(`${fileds[me.tableNameIndex]}.${fileds[me.fieldNameIndex]}.${fileds[me.recordIdIndex] || fileds[me.fieldValueIndex]}`, fileds[me.translationIndex]);
+            subLookup.set(`${fields[me.tableNameIndex]}.${fields[me.fieldNameIndex]}.${fields[me.recordIdIndex] || fields[me.fieldValueIndex]}`, fields[me.translationIndex]);
         }
     }
 
@@ -405,21 +405,21 @@ class TripReader {
 
     read(line) {
         const me = this,
-            fileds = csvToArray(line);
+            fields = csvToArray(line);
 
         if (me.tripIdIndex === undefined) {
-            me.tripIdIndex = fileds.indexOf('trip_id');
-            me.serviceIdIndex = fileds.indexOf('service_id');
-            me.routeIdIndex = fileds.indexOf('route_id');
-            me.shapeIdIndex = fileds.indexOf('shape_id');
-            me.headsignIndex = fileds.indexOf('trip_headsign');
+            me.tripIdIndex = fields.indexOf('trip_id');
+            me.serviceIdIndex = fields.indexOf('service_id');
+            me.routeIdIndex = fields.indexOf('route_id');
+            me.shapeIdIndex = fields.indexOf('shape_id');
+            me.headsignIndex = fields.indexOf('trip_headsign');
         } else {
             me.array.push({
-                id: fileds[me.tripIdIndex],
-                service: fileds[me.serviceIdIndex],
-                route: fileds[me.routeIdIndex],
-                shape: fileds[me.shapeIdIndex],
-                headsign: fileds[me.headsignIndex]
+                id: fields[me.tripIdIndex],
+                service: fields[me.serviceIdIndex],
+                route: fields[me.routeIdIndex],
+                shape: fields[me.shapeIdIndex],
+                headsign: fields[me.headsignIndex]
             });
         }
     }
