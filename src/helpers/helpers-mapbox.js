@@ -86,8 +86,10 @@ export function getSunlightColor(map, time) {
  * @param {number} time - The number of milliseconds elapsed since January 1,
  *     1970 00:00:00 UTC
  * @param {number} shadowIntensity - Determines the shadow strength
+ * @param {boolean} shadowOnly - If true, only the shadow intensity is updated
+ *     while the brightness-affecting properties are left unchanged
  */
-export function setSunlight(map, time, shadowIntensity) {
+export function setSunlight(map, time, shadowIntensity, shadowOnly) {
     const center = map.getCenter(),
         {sunrise, sunset} = SunCalc.getTimes(time, center.lat, center.lng),
         sunriseTime = sunrise.getTime(),
@@ -221,24 +223,43 @@ export function setSunlight(map, time, shadowIntensity) {
         };
     }
 
-    map.setLights([{
-        id: 'ambient',
-        type: 'ambient',
-        properties: {
-            color: `rgb(${ambient.r}, ${ambient.g}, ${ambient.b})`,
-            intensity: ambient.i
+    const shadowIntensityValue = directional.w * shadowIntensity;
+
+    if (shadowOnly) {
+        // Mode toggle (underground/ground): the brightness-affecting values (color, intensity
+        // and direction) are unchanged, so update shadow-intensity alone. Changing the brightness
+        // here would force a re-evaluation/re-upload of all model layer instances and freeze the
+        // main thread.
+        const lights = map.getLights();
+
+        for (const light of lights) {
+            if (light.type === 'directional') {
+                light.properties = Object.assign({}, light.properties, {
+                    'shadow-intensity': shadowIntensityValue
+                });
+            }
         }
-    }, {
-        id: 'directional',
-        type: 'directional',
-        properties: {
-            direction: ['literal', [sun.azimuth, sun.altitude]],
-            color: `rgb(${directional.r}, ${directional.g}, ${directional.b})`,
-            intensity: directional.i,
-            'cast-shadows': true,
-            'shadow-intensity': directional.w * shadowIntensity
-        }
-    }]);
+        map.setLights(lights);
+    } else {
+        map.setLights([{
+            id: 'ambient',
+            type: 'ambient',
+            properties: {
+                color: `rgb(${ambient.r}, ${ambient.g}, ${ambient.b})`,
+                intensity: ambient.i
+            }
+        }, {
+            id: 'directional',
+            type: 'directional',
+            properties: {
+                direction: ['literal', [sun.azimuth, sun.altitude]],
+                color: `rgb(${directional.r}, ${directional.g}, ${directional.b})`,
+                intensity: directional.i,
+                'cast-shadows': true,
+                'shadow-intensity': shadowIntensityValue
+            }
+        }]);
+    }
 
     map.setPaintProperty('sky', 'sky-atmosphere-sun', [sunAzimuth, sunAltitude]);
 }
