@@ -3,8 +3,8 @@ import {featureCollection, lineString, point} from '@turf/helpers';
 import union from '@turf/union';
 import * as Comlink from 'comlink';
 import {DecodeUTF8, Unzip, UnzipInflate} from 'fflate';
-import geobuf from 'geobuf';
-import Pbf from 'pbf';
+import * as geobuf from 'geobuf';
+import {PbfWriter} from 'pbf';
 import {includes, mergeMaps, normalizeLang} from './helpers/helpers';
 import {updateDistances} from './helpers/helpers-geojson';
 import {encode} from './helpers/helpers-gtfs';
@@ -629,7 +629,7 @@ function loadGtfs(source, date, day, lang) {
                 trips: getTrips(results.trips, results.calendar, results.calendar_dates, results.stop_times, translations)
             };
 
-        return [geobuf.encode(featureCollection, new Pbf()), encode(result, new Pbf())];
+        return [geobuf.encode(featureCollection, new PbfWriter()), encode(result, new PbfWriter())];
     });
 }
 

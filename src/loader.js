@@ -1,7 +1,7 @@
 import * as Comlink from 'comlink';
-import geobuf from 'geobuf';
+import * as geobuf from 'geobuf';
 import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
-import Pbf from 'pbf';
+import {PbfReader} from 'pbf';
 import configs from './configs';
 import {isString, loadJSON, removePrefix} from './helpers/helpers';
 import {decode} from './helpers/helpers-gtfs';
@@ -247,8 +247,8 @@ export function loadBusData(source, clock, lang) {
             proxy[Comlink.releaseProxy]();
             worker.terminate();
             resolve(Object.assign({
-                featureCollection: geobuf.decode(new Pbf(data[0]))
-            }, decode(new Pbf(data[1]))));
+                featureCollection: geobuf.decode(new PbfReader(data[0]))
+            }, decode(new PbfReader(data[1]))));
         }));
     });
 }
