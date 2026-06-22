@@ -1,7 +1,9 @@
 import {AmbientLight, DirectionalLight, LightingEffect} from '@deck.gl/core';
 import {Tile3DLayer} from '@deck.gl/geo-layers';
 import {MapboxLayer} from '@deck.gl/mapbox';
-import SunCalc from 'suncalc';
+import * as SunCalc from 'suncalc';
+
+const DEGREE_TO_RADIAN = Math.PI / 180;
 
 export default class {
 
@@ -53,8 +55,8 @@ export default class {
                 lightColor = [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)],
                 center = map.getCenter(),
                 sunPos = SunCalc.getPosition(now, center.lat, center.lng),
-                azimuth = Math.PI + sunPos.azimuth,
-                altitude = -sunPos.altitude;
+                azimuth = sunPos.azimuth * DEGREE_TO_RADIAN,
+                altitude = -sunPos.altitude * DEGREE_TO_RADIAN;
 
             ambientLight.color = lightColor;
             directionalLight.color = lightColor;

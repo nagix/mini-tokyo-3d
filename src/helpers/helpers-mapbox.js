@@ -1,11 +1,26 @@
 import {LngLat, LngLatBounds} from 'mapbox-gl';
 import {parseCSSColor} from 'csscolorparser';
 import {includes, lerp, luminance, valueOrDefault} from './helpers';
-import SunCalc from 'suncalc';
+import * as SunCalc from 'suncalc';
 
 const HOUR = 3600000;
-const RADIAN_TO_DEGREE = 180 / Math.PI;
 const BG_LAYER_IDS = ['background', 'background-underground'];
+
+/**
+ * Returns the sunrise and sunset times for the local solar day that contains
+ * the given time. SunCalc 2.x anchors getTimes to the UTC calendar day, so the
+ * returned times would otherwise jump by a day at 00:00 UTC. Shifting the input
+ * by the longitude offset (15 degrees per hour) selects the local solar day, as
+ * SunCalc 1.x did internally, moving the unavoidable day boundary to local solar
+ * midnight.
+ * @param {LngLat} center - The location to compute the times for
+ * @param {number} time - The number of milliseconds elapsed since January 1,
+ *     1970 00:00:00 UTC
+ * @returns {Object} Object with sunrise and sunset Date objects
+ */
+function getSunTimes(center, time) {
+    return SunCalc.getTimes(time + center.lng / 15 * HOUR, center.lat, center.lng);
+}
 
 /**
  * Returns the smallest bounding box that contains all the given points
@@ -40,7 +55,7 @@ export function setLayerProps(map, id, props) {
  */
 export function getSunlightColor(map, time) {
     const center = map.getCenter(),
-        {sunrise, sunset} = SunCalc.getTimes(time, center.lat, center.lng),
+        {sunrise, sunset} = getSunTimes(center, time),
         sunriseTime = sunrise.getTime(),
         sunsetTime = sunset.getTime();
     let t, r, g, b;
@@ -91,12 +106,12 @@ export function getSunlightColor(map, time) {
  */
 export function setSunlight(map, time, shadowIntensity, shadowOnly) {
     const center = map.getCenter(),
-        {sunrise, sunset} = SunCalc.getTimes(time, center.lat, center.lng),
+        {sunrise, sunset} = getSunTimes(center, time),
         sunriseTime = sunrise.getTime(),
         sunsetTime = sunset.getTime(),
         {azimuth, altitude} = SunCalc.getPosition(time, center.lat, center.lng),
-        sunAzimuth = 180 + azimuth * RADIAN_TO_DEGREE,
-        sunAltitude = 90 - altitude * RADIAN_TO_DEGREE;
+        sunAzimuth = azimuth,
+        sunAltitude = 90 - altitude;
     let t, ambient, directional, sun;
 
     if (time >= sunriseTime - HOUR / 2 && time < sunriseTime) {
@@ -118,7 +133,7 @@ export function setSunlight(map, time, shadowIntensity, shadowOnly) {
             w: .5
         };
         sun = {
-            azimuth: lerp(210, 180 + sunrisePosition.azimuth * RADIAN_TO_DEGREE, t),
+            azimuth: lerp(210, sunrisePosition.azimuth, t),
             altitude: 20
         };
     } else if (time >= sunriseTime && time < sunriseTime + HOUR) {
@@ -199,7 +214,7 @@ export function setSunlight(map, time, shadowIntensity, shadowOnly) {
             w: .5
         };
         sun = {
-            azimuth: lerp(180 + sunsetPosition.azimuth * RADIAN_TO_DEGREE, 210, t),
+            azimuth: lerp(sunsetPosition.azimuth, 210, t),
             altitude: 20
         };
     } else {
