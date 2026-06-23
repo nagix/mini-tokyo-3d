@@ -84,6 +84,11 @@ export default class {
         me.mbox = mbox;
         me.camera = new PerspectiveCamera(MathUtils.radToDeg(_fov), width / height);
 
+        // The view matrix is set directly in _render(), so prevent the renderer
+        // from recomputing matrixWorld/matrixWorldInverse from the camera's
+        // position/quaternion/scale (see _render() for details).
+        me.camera.matrixWorldAutoUpdate = false;
+
         mbox.on('resize', me._onResize);
 
         if (me.implementation.lightColor === undefined) {
@@ -135,8 +140,20 @@ export default class {
 
         camera.projectionMatrix.makePerspective(
             -halfWidth, halfWidth, halfHeight, -halfHeight, nearZ, farZ
-        ).clone().invert().multiply(m).multiply(l).invert()
-            .decompose(camera.position, camera.quaternion, camera.scale);
+        );
+        camera.projectionMatrixInverse.copy(camera.projectionMatrix).invert();
+
+        // Set the view matrix directly so that projectionMatrix * matrixWorldInverse
+        // reproduces Mapbox's view-projection matrix (m * l). Previously this was done
+        // by decomposing the camera world matrix into position/quaternion/scale and
+        // letting the renderer rebuild matrixWorldInverse from them. Since three.js
+        // r183, Camera.updateMatrixWorld() strips the scale component from
+        // matrixWorldInverse ("exclude scale from view matrix to be glTF conform"), but
+        // here the decomposed scale is non-identity and essential, so the projection
+        // broke and every object became invisible. matrixWorldAutoUpdate is disabled in
+        // _onAdd() so the renderer keeps the matrices set here.
+        camera.matrixWorldInverse.copy(camera.projectionMatrixInverse).multiply(m).multiply(l);
+        camera.matrixWorld.copy(camera.matrixWorldInverse).invert();
 
         const rad = MathUtils.degToRad(mbox.getBearing() + 30);
         light.position.set(-Math.sin(rad), -Math.cos(rad), SQRT3).normalize();
