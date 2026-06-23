@@ -14,7 +14,7 @@ export default class {
             object = me._object,
             type = object instanceof Train ? 'train' : 'flight',
             container = me._container = createElement('div', {
-                className: 'share-panel'
+                className: 'share-panel closed'
             }, map.container),
             button = me._button = createElement('button', {
                 className: 'share-button',
@@ -35,6 +35,10 @@ export default class {
 
         me._map = map;
 
+        requestAnimationFrame(() => {
+            container.classList.remove('closed');
+        });
+
         return me;
     }
 
@@ -42,9 +46,13 @@ export default class {
         const me = this,
             container = me._container;
 
-        container.parentNode.removeChild(container);
-        delete me._container;
-        delete me._map;
+        container.classList.add('closed');
+
+        setTimeout(() => {
+            container.parentNode.removeChild(container);
+            delete me._container;
+            delete me._map;
+        }, 300);
 
         return me;
     }
