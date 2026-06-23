@@ -12,9 +12,6 @@
         opacity: 1;
     }
 }
-.ball-pulse > div:nth-child(0) {
-    animation: scale 0.75s -0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
-}
 .ball-pulse > div:nth-child(1) {
     animation: scale 0.75s -0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
 }

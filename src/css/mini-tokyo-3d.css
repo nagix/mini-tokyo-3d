@@ -9,9 +9,7 @@
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     cursor: default;
     -webkit-touch-callout: none;
-    -moz-user-select: none;
     -webkit-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     touch-action: none;
     overflow: hidden;
@@ -32,7 +30,7 @@
     background-color: #eee;
     opacity: .9;
     transition: opacity 1s linear;
-    box-sizing: initial;
+    box-sizing: content-box;
 }
 .mini-tokyo-3d #loading-error {
     position: absolute;
@@ -226,7 +224,7 @@
 .mini-tokyo-3d .share-button:hover {
     background-color: rgba(51, 51, 51, 0.7);
 }
-.mini-tokyo-3d .share-button:before {
+.mini-tokyo-3d .share-button::before {
     content: "";
     display: block;
     background: no-repeat center/20px 20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/share-nodes.svg', fill: #fff);
@@ -289,7 +287,7 @@
     overscroll-behavior: contain;
     line-height: 130%;
 }
-.mini-tokyo-3d #panel-content{
+.mini-tokyo-3d #panel-content {
     position: relative;
     padding: 0 10px;
     overflow: hidden;
@@ -524,7 +522,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(.5, .5);
-    box-sizing: initial;
+    box-sizing: content-box;
     position: absolute;
 }
 .mini-tokyo-3d .direction-row {
@@ -872,10 +870,10 @@
     background-color: rgba(102, 102, 102, 0.7);
 }
 .mini-tokyo-3d .popup-ad-cars .mapboxgl-popup-content {
-     padding: 5px 10px;
-     font-weight: bold;
- }
- .mini-tokyo-3d .popup-exit .mapboxgl-popup-content {
+    padding: 5px 10px;
+    font-weight: bold;
+}
+.mini-tokyo-3d .popup-exit .mapboxgl-popup-content {
     padding: 5px 10px;
 }
 .mini-tokyo-3d .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
@@ -993,7 +991,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(.5, .5);
-    box-sizing: initial;
+    box-sizing: content-box;
     position: absolute;
 }
 .mini-tokyo-3d .thumbnail-image {
@@ -1032,7 +1030,7 @@
     background: no-repeat center/13px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/xmark.svg', fill: #fff);
     cursor: pointer;
 }
-.mini-tokyo-3d .about-panel #panel-body{
+.mini-tokyo-3d .about-panel #panel-body {
     font-size: 12px;
     line-height: 20px;
 }
