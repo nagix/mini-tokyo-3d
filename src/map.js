@@ -3177,6 +3177,10 @@ export default class extends Evented {
                 }
                 map.flyTo({center, zoom: 15.5});
 
+                if (navigator.share) {
+                    me.sharePanel = new SharePanel({object});
+                    me.sharePanel.addTo(me);
+                }
                 me.detailPanel = new StationPanel({object: stations});
                 me.detailPanel.addTo(me);
 

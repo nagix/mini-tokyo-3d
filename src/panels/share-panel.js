@@ -12,20 +12,22 @@ export default class {
         const me = this,
             dict = map.dict,
             object = me._object,
+            isStation = object.type === 'station',
             type = object instanceof Train ? 'train' : 'flight',
+            id = isStation ? getStationId(object) : object.id,
             container = me._container = createElement('div', {
                 className: 'share-panel closed'
             }, map.container),
             button = me._button = createElement('button', {
                 className: 'share-button',
-                innerHTML: dict['share-this'].replace('$1', dict[type])
+                innerHTML: isStation ? dict['share-station'] : dict['share-this'].replace('$1', dict[type])
             }, container);
 
         button.onclick = () => {
             window.navigator.share({
-                title: dict['my'].replace('$1', dict[type]),
-                text: dict['on-this'].replace('$1', dict[type]),
-                url: `${configs.shareUrl}?selection=${object.id}`
+                title: isStation ? dict['my-station'] : dict['my'].replace('$1', dict[type]),
+                text: isStation ? dict['on-station'] : dict['on-this'].replace('$1', dict[type]),
+                url: `${configs.shareUrl}?selection=${id}`
             }).then(() => {
                 showNotification(map.container, dict['shared']);
             }).catch(() => {
@@ -57,4 +59,13 @@ export default class {
         return me;
     }
 
+}
+
+function getStationId(object) {
+    const underground = object.layer === 'underground',
+        station = object.stations.find(({altitude}) =>
+            underground ? altitude < 0 : !(altitude < 0)
+        );
+
+    return (station || object.stations[0]).id;
 }
