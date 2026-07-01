@@ -9,7 +9,7 @@ import Dataset from './dataset';
 import {Airport, Bus, Flight, FlightStatus, GTFSRoute, GTFSStop, GTFSTrip, Operator, POI, RailDirection, Railway, Station, Train, TrainTimetables, TrainType, TrainVehicleType} from './data-classes';
 import extend from './extend';
 import * as helpers from './helpers/helpers';
-import {pickObject} from './helpers/helpers-deck';
+import {pickObject, resetCursor} from './helpers/helpers-deck';
 import * as helpersGeojson from './helpers/helpers-geojson';
 import * as helpersMapbox from './helpers/helpers-mapbox';
 import {GeoJsonLayer, ThreeLayer, Tile3DLayer, TrafficLayer} from './layers';
@@ -815,8 +815,7 @@ export default class extends Evented {
             }
         }
 
-        // Workaround for deck.gl #3522
-        map.__deck.props.getCursor = () => map.getCanvas().style.cursor;
+        resetCursor(map.__deck);
 
         map.addSource('odpt', {
             type: 'geojson',
@@ -2999,7 +2998,7 @@ export default class extends Evented {
             if (mode === 'ground') {
                 object = map.queryRenderedFeatures(point, {layers: [`stations-og-${layerZoom}`]})[0];
             } else {
-                object = pickObject(map, `stations-ug-${layerZoom}`, point);
+                object = pickObject(map.__deck, `stations-ug-${layerZoom}`, point);
             }
             if (object) {
                 return me.stationGroupLookup.get(object.properties.group);
