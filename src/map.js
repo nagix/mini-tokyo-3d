@@ -2964,12 +2964,22 @@ export default class extends Evented {
     }
 
     /**
-     * Returns the light color based on the current date and time.
-     * In the playback mode, the time in the simulation clock is used.
-     * @returns {Object} Color object
+     * Returns the directional light currently set on the map.
+     * @returns {Object} Object with the color ([r, g, b], each 0-255), the
+     *     intensity (relative luminance of the color, 0-1) and the direction
+     *     ([azimuthal, polar] in degrees) of the directional light
      */
-    getLightColor() {
-        return helpersMapbox.getSunlightColor(this.map, this.clock.getTime());
+    getDirectionalLight() {
+        return helpersMapbox.getDirectionalLight(this.map);
+    }
+
+    /**
+     * Returns the ambient light currently set on the map.
+     * @returns {Object} Object with the color ([r, g, b], each 0-255) and the
+     *     intensity (relative luminance of the color, 0-1) of the ambient light
+     */
+    getAmbientLight() {
+        return helpersMapbox.getAmbientLight(this.map);
     }
 
     pickObject(point) {

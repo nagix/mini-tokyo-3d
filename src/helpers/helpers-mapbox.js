@@ -47,52 +47,56 @@ export function setLayerProps(map, id, props) {
 }
 
 /**
- * Returns the sunlight color at a specific time.
+ * Returns the light of the given type currently set on the map.
  * @param {mapboxgl.Map} map - Mapbox's Map object
- * @param {number} time - The number of milliseconds elapsed since January 1,
- *     1970 00:00:00 UTC
- * @returns {Object} Color object
+ * @param {string} type - The light type ('ambient' or 'directional')
+ * @returns {Object} Object with the following properties:
+ *     - color: The light color ([r, g, b], each 0-255)
+ *     - intensity: The relative luminance of the color (0-1, 0 is black and
+ *       1 is white)
+ *     - direction: Only for a directional light. The direction to the light
+ *       source as [azimuthal, polar] in degrees, where the azimuthal angle is
+ *       0-360 (north-based clockwise; 0 = N, 90 = E, 180 = S, 270 = W) and the
+ *       polar angle is 0-90 (0 = straight above, 90 = at the horizon)
  */
-export function getSunlightColor(map, time) {
-    const center = map.getCenter(),
-        {sunrise, sunset} = getSunTimes(center, time),
-        sunriseTime = sunrise.getTime(),
-        sunsetTime = sunset.getTime();
-    let t, r, g, b;
+function getLight(map, type) {
+    const {properties} = map.getLights().filter(light => light.type === type)[0],
+        [r, g, b] = parseCSSColor(properties.color),
+        direction = properties.direction,
+        result = {
+            color: [r, g, b],
+            intensity: .2126 * r / 255 + .7152 * g / 255 + .0722 * b / 255
+        };
 
-    if (time >= sunriseTime - HOUR && time < sunriseTime) {
-        // Night to sunrise
-        t = (time - sunriseTime) / HOUR + 1;
-        r = lerp(.4, .8, t);
-        g = lerp(.4, .9, t);
-        b = lerp(.5, 1, t);
-    } else if (time >= sunriseTime && time < sunriseTime + HOUR) {
-        // Sunrise to day
-        t = (time - sunriseTime) / HOUR;
-        r = lerp(.8, 1, t);
-        g = lerp(.9, 1, t);
-        b = 1;
-    } else if (time >= sunriseTime + HOUR && time < sunsetTime - HOUR) {
-        // Day
-        r = g = b = 1;
-    } else if (time >= sunsetTime - HOUR && time < sunsetTime) {
-        // Day to sunset
-        t = (time - sunsetTime) / HOUR + 1;
-        r = 1;
-        g = lerp(1, .9, t);
-        b = lerp(1, .8, t);
-    } else if (time >= sunsetTime && time < sunsetTime + HOUR) {
-        // Sunset to night
-        t = (time - sunsetTime) / HOUR;
-        r = lerp(1, .4, t);
-        g = lerp(.9, .4, t);
-        b = lerp(.8, .5, t);
-    } else {
-        // Night
-        r = g = .4;
-        b = .5;
+    if (direction) {
+        // direction may be wrapped in a ['literal', [azimuthal, polar]] expression
+        result.direction = Array.isArray(direction[1]) ? direction[1] : direction;
     }
-    return {r, g, b};
+
+    return result;
+}
+
+/**
+ * Returns the directional light currently set on the map.
+ * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @returns {Object} Object with the color ([r, g, b], each 0-255), the
+ *     intensity (relative luminance of the color, 0-1) and the direction
+ *     ([azimuthal, polar] in degrees) of the directional light. See getLight
+ *     for the details of each property.
+ */
+export function getDirectionalLight(map) {
+    return getLight(map, 'directional');
+}
+
+/**
+ * Returns the ambient light currently set on the map.
+ * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @returns {Object} Object with the color ([r, g, b], each 0-255) and the
+ *     intensity (relative luminance of the color, 0-1) of the ambient light.
+ *     See getLight for the details of each property.
+ */
+export function getAmbientLight(map) {
+    return getLight(map, 'ambient');
 }
 
 /**

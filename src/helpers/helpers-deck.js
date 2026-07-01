@@ -1,3 +1,5 @@
+import {AmbientLight, DirectionalLight, LightingEffect} from '@deck.gl/core';
+
 export function pickObject(map, id, point) {
     const deck = map.__deck;
 
@@ -8,4 +10,11 @@ export function pickObject(map, id, point) {
             return info.object;
         }
     }
+}
+
+export function setLights(deck, ambient, directional) {
+    const ambientLight = new AmbientLight(ambient),
+        directionalLight = new DirectionalLight(directional);
+
+    deck.setProps({effects: [new LightingEffect({ambientLight, directionalLight})]});
 }

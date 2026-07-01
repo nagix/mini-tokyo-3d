@@ -39,5 +39,12 @@ mat3 rotateZ( float angle ) {
     );
 }
 
+// Decodes an sRGB color (0-1) to the renderer's linear working color space.
+// The instance colors are stored as sRGB bytes, so they must be linearized
+// before lighting now that the renderer encodes its output back to sRGB.
+vec3 decodeSRGB( vec3 color ) {
+    return mix( color / 12.92, pow( ( color + 0.055 ) / 1.055, vec3( 2.4 ) ), step( 0.04045, color ) );
+}
+
 varying vec3 vInstanceColor;
 varying float vInstanceOpacity;

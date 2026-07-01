@@ -34,4 +34,6 @@ vInstanceColor = groupIndex < 2.0 ? color0 : color1;
 vInstanceColor = color0;
 #endif
 
+vInstanceColor = decodeSRGB( vInstanceColor );
+
 vInstanceOpacity = opacity0;

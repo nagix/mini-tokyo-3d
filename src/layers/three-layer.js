@@ -1,7 +1,18 @@
-import {AmbientLight, Color, DirectionalLight, LinearSRGBColorSpace, MathUtils, Matrix4, Mesh, PerspectiveCamera, Scene, Vector3, WebGLRenderer} from 'three';
-import {valueOrDefault} from '../helpers/helpers';
+import {AmbientLight, DirectionalLight, MathUtils, Matrix4, Mesh, PerspectiveCamera, Scene, SRGBColorSpace, Vector3, WebGLRenderer} from 'three';
 
 const SQRT3 = Math.sqrt(3);
+
+// Base light intensities for this layer, applied at full luminance. They are
+// scaled by the relative luminance (0-1) of the corresponding Mapbox light so
+// that the lights dim and brighten together with the map.
+const DIRECTIONAL_INTENSITY = 3.8,
+    AMBIENT_INTENSITY = 0.4;
+
+// Sets a THREE.Color from an [r, g, b] color with 0-255 sRGB components,
+// decoding it to the renderer's linear working color space.
+function setSRGBColor(target, [r, g, b]) {
+    target.setRGB(r / 255, g / 255, b / 255, SRGBColorSpace);
+}
 
 export default class {
 
@@ -68,11 +79,10 @@ export default class {
                 context: gl
             }),
             scene = me.scene = new Scene(),
-            lightColor = valueOrDefault(me.implementation.lightColor, new Color().copy(me.map.getLightColor())),
-            light = me.light = new DirectionalLight(lightColor, .8 * Math.PI),
-            ambientLight = me.ambientLight = new AmbientLight(lightColor, .4 * Math.PI);
+            lightColor = me.implementation.lightColor,
+            light = me.light = new DirectionalLight(lightColor, DIRECTIONAL_INTENSITY),
+            ambientLight = me.ambientLight = new AmbientLight(lightColor, AMBIENT_INTENSITY);
 
-        renderer.outputColorSpace = LinearSRGBColorSpace;
         renderer.autoClear = false;
 
         scene.add(light);
@@ -102,15 +112,24 @@ export default class {
             now = map.clock.getTime();
 
         if (Math.floor(now / 60000) !== Math.floor(me.lastRefresh / 60000)) {
-            const lightColor = map.getLightColor();
-
-            me.light.color.copy(lightColor);
-            me.ambientLight.color.copy(lightColor);
+            me._updateLights();
             me.lastRefresh = now;
         }
         if (me.mbox) {
             requestAnimationFrame(me._tick);
         }
+    }
+
+    _updateLights() {
+        const me = this,
+            map = me.map,
+            directional = map.getDirectionalLight(),
+            ambient = map.getAmbientLight();
+
+        setSRGBColor(me.light.color, directional.color);
+        me.light.intensity = directional.intensity * DIRECTIONAL_INTENSITY;
+        setSRGBColor(me.ambientLight.color, ambient.color);
+        me.ambientLight.intensity = ambient.intensity * AMBIENT_INTENSITY;
     }
 
     _onRemove(mbox) {
