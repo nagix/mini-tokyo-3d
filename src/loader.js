@@ -58,16 +58,23 @@ function adjustTrainID(id, type, destination) {
 }
 
 /**
+ * Loads the dictionary for the given language.
+ * @param {string} lang - IETF language tag for the dictionary
+ * @returns {Promise} Promise that resolves to the dictionary object
+ */
+export function loadDictionary(lang) {
+    return loadJSON(`assets/dictionary-${lang}.json`);
+}
+
+/**
  * Load all the static data.
  * @param {string} dataUrl - Data URL
- * @param {string} lang - IETF language tag for dictionary
  * @param {Promise} clockPromise - Promise for the Clock object representing the
  *     current time
- * @returns {Object} Loaded data
+ * @returns {Promise} Promise that resolves to the loaded data
  */
-export function loadStaticData(dataUrl, lang, clockPromise) {
+export function loadStaticData(dataUrl, clockPromise) {
     return Promise.all([
-        loadJSON(`assets/dictionary-${lang}.json`),
         ...[
             'railways.json.gz',
             'stations.json.gz',
@@ -85,18 +92,17 @@ export function loadStaticData(dataUrl, lang, clockPromise) {
             ...getExtraTimetableFileNames(clock)
         ].map(fileName => `${dataUrl}/${fileName}`).map(loadJSON)))
     ]).then(data => ({
-        dict: data[0],
-        railwayData: data[1],
-        stationData: data[2],
-        featureCollection: data[3],
-        railDirectionData: data[4],
-        trainTypeData: data[5],
-        trainVehicleData: data[6],
-        operatorData: data[7],
-        airportData: data[8],
-        flightStatusData: data[9],
-        poiData: data[10],
-        timetableData: [].concat(...data[11])
+        railwayData: data[0],
+        stationData: data[1],
+        featureCollection: data[2],
+        railDirectionData: data[3],
+        trainTypeData: data[4],
+        trainVehicleData: data[5],
+        operatorData: data[6],
+        airportData: data[7],
+        flightStatusData: data[8],
+        poiData: data[9],
+        timetableData: [].concat(...data[10])
     }));
 }
 
@@ -104,7 +110,7 @@ export function loadStaticData(dataUrl, lang, clockPromise) {
  * Load the timetable data.
  * @param {string} dataUrl - Data URL
  * @param {Clock} clock - Clock object representing the current time
- * @returns {Object} Loaded timetable data
+ * @returns {Promise} Promise that resolves to the loaded timetable data
  */
 export function loadTimetableData(dataUrl, clock) {
     return Promise.all([
@@ -116,7 +122,7 @@ export function loadTimetableData(dataUrl, clock) {
 /**
  * Load the dynamic data for trains.
  * @param {Object} secrets - Secrets object
- * @returns {Object} Loaded data
+ * @returns {Promise} Promise that resolves to the loaded data
  */
 export function loadDynamicTrainData(secrets) {
     const trainData = new Map(),
@@ -212,7 +218,7 @@ export function loadDynamicTrainData(secrets) {
 
 /**
  * Load the dynamic data for flights.
- * @returns {Object} Loaded data
+ * @returns {Promise} Promise that resolves to the loaded data
  */
 export function loadDynamicFlightData() {
     return Promise.all([

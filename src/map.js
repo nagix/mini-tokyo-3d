@@ -13,7 +13,7 @@ import {pickObject, resetCursor} from './helpers/helpers-deck';
 import * as helpersGeojson from './helpers/helpers-geojson';
 import * as helpersMapbox from './helpers/helpers-mapbox';
 import {GeoJsonLayer, ThreeLayer, Tile3DLayer, TrafficLayer} from './layers';
-import {loadBusData, loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
+import {loadBusData, loadDictionary, loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
 import {AboutPanel, BusPanel, LayerPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
 import nearestCloserPointOnLine from './turf/nearest-closer-point-on-line';
@@ -156,7 +156,13 @@ export default class extends Evented {
                 .then(offset => me.clock.setTimezoneOffset(offset));
 
         Promise.all([
-            loadStaticData(me.dataUrl, me.lang, clockPromise)
+            loadDictionary(me.lang)
+                .then(dict => (me.dict = dict))
+                .catch(error => {
+                    showErrorMessage(me.container);
+                    throw error;
+                }),
+            loadStaticData(me.dataUrl, clockPromise)
                 .then(me.initData.bind(me))
                 .catch(error => {
                     showErrorMessage(me.container);
@@ -609,7 +615,6 @@ export default class extends Evented {
             featureLookup = me.featureLookup = new Map(),
             stationGroupLookup = me.stationGroupLookup = new Map();
 
-        me.dict = data.dict;
         me.featureCollection = data.featureCollection;
 
         me.stations = new Dataset(Station);
