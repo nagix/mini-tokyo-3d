@@ -6,27 +6,6 @@ import configs from './configs';
 import {isString, loadJSON, removePrefix} from './helpers/helpers';
 import {decode} from './helpers/helpers-gtfs';
 
-const RAILWAYS_FOR_TRAINS = {
-    odpt: [
-        'Toei.Asakusa',
-        'Toei.Mita',
-        'Toei.Shinjuku',
-        'Toei.Oedo',
-        'Toei.Arakawa'
-    ]
-};
-
-const OPERATORS_FOR_TRAININFORMATION = {
-    odpt: [
-        'TWR',
-        'TokyoMetro',
-        'Toei',
-        'YokohamaMunicipal',
-        'MIR',
-        'TamaMonorail'
-    ]
-};
-
 const RAILWAY_SOBURAPID = 'JR-East.SobuRapid';
 
 const TRAINTYPE_JREAST_LIMITEDEXPRESS = 'JR-East.LimitedExpress';
@@ -120,93 +99,84 @@ export function loadTimetableData(dataUrl, clock) {
 }
 
 /**
- * Load the dynamic data for trains.
- * @param {Object} secrets - Secrets object
+ * Returns true if the given data source has expired and should no longer be
+ * loaded, based on its expiresAt (an ISO 8601 string). A data source without
+ * expiresAt never expires.
+ * @param {Object} source - The data source object
+ * @returns {boolean} True if the data source has expired
+ */
+export function isExpired(source) {
+    return source.expiresAt !== undefined && Date.now() >= new Date(source.expiresAt).getTime();
+}
+
+/**
+ * Load the dynamic data for trains from the given data sources.
+ * @param {Array<Object>} dataSources - Array of data source objects. Sources
+ *     providing a trainUrl and/or trainInfoUrl are used. The parse format of
+ *     each object is detected from its '@type' ('odpt:Train' /
+ *     'odpt:TrainInformation' means raw ODPT format, otherwise the pre-normalized
+ *     Mini Tokyo 3D format). The results are merged in array order, so later
+ *     sources override earlier ones.
  * @returns {Promise} Promise that resolves to the loaded data
  */
-export function loadDynamicTrainData(secrets) {
+export function loadDynamicTrainData(dataSources) {
     const trainData = new Map(),
         trainInfoData = [],
-        urls = [];
+        sources = dataSources.filter(source => (source.trainUrl || source.trainInfoUrl) && !isExpired(source)),
+        setTrain = train => {
+            const existing = trainData.get(train.id);
 
-    for (const source of Object.keys(RAILWAYS_FOR_TRAINS)) {
-        const url = configs.apiUrl[source],
-            key = secrets[source];
-
-        if (source === 'odpt') {
-            const railways = RAILWAYS_FOR_TRAINS[source]
-                .map((railway) => `odpt.Railway:${railway}`)
-                .join(',');
-
-            urls.push(`${url}odpt:Train?odpt:railway=${railways}&acl:consumerKey=${key}`);
-        }
-    }
-
-    urls.push(configs.tidUrl);
-
-    for (const source of Object.keys(OPERATORS_FOR_TRAININFORMATION)) {
-        const url = configs.apiUrl[source],
-            key = secrets[source];
-
-        if (source === 'odpt') {
-            const operators = OPERATORS_FOR_TRAININFORMATION[source]
-                .map(operator => `odpt.Operator:${operator}`)
-                .join(',');
-
-            urls.push(`${url}odpt:TrainInformation?odpt:operator=${operators}&acl:consumerKey=${key}`);
-        }
-    }
-
-    urls.push(configs.trainInfoUrl);
-
-    return Promise.all(urls.map(loadJSON)).then(data => {
-        // Train data from ODPT
-        for (const train of data.shift()) {
-            const trainType = removePrefix(train['odpt:trainType']),
-                destinationStation = removePrefix(train['odpt:destinationStation']),
-                id = adjustTrainID(removePrefix(train['owl:sameAs']), trainType, destinationStation);
-
-            trainData.set(id, {
-                id,
-                o: removePrefix(train['odpt:operator']),
-                r: removePrefix(train['odpt:railway']),
-                y: trainType,
-                n: train['odpt:trainNumber'],
-                os: removePrefix(train['odpt:originStation']),
-                d: removePrefix(train['odpt:railDirection']),
-                ds: destinationStation,
-                ts: removePrefix(train['odpt:toStation']),
-                fs: removePrefix(train['odpt:fromStation']),
-                delay: (train['odpt:delay'] || 0) * 1000,
-                carComposition: train['odpt:carComposition'],
-                date: train['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2')
-            });
-        }
-
-        // Train data from others
-        for (const train of data.shift()) {
-            const id = train.id;
-
-            if (trainData.has(id)) {
-                Object.assign(trainData.get(id), train);
+            if (existing) {
+                Object.assign(existing, train);
             } else {
-                trainData.set(id, train);
+                trainData.set(train.id, train);
             }
-        }
+        };
 
-        // Train information data from ODPT
-        for (const trainInfo of data.shift()) {
-            trainInfoData.push({
-                operator: removePrefix(trainInfo['odpt:operator']),
-                railway: removePrefix(trainInfo['odpt:railway']),
-                status: trainInfo['odpt:trainInformationStatus'],
-                text: trainInfo['odpt:trainInformationText']
-            });
-        }
+    return Promise.all(sources.map(({trainUrl, trainInfoUrl}) => Promise.all([
+        trainUrl ? loadJSON(trainUrl) : [],
+        trainInfoUrl ? loadJSON(trainInfoUrl) : []
+    ]).then(([trains, trainInfos]) => ({trains, trainInfos})))).then(results => {
+        for (const {trains, trainInfos} of results) {
+            for (const train of trains) {
+                if (train['@type'] === 'odpt:Train') {
+                    // Raw ODPT format
+                    const trainType = removePrefix(train['odpt:trainType']),
+                        destinationStation = removePrefix(train['odpt:destinationStation']),
+                        id = adjustTrainID(removePrefix(train['owl:sameAs']), trainType, destinationStation);
 
-        // Train information data from others
-        for (const trainInfo of data.shift()) {
-            trainInfoData.push(trainInfo);
+                    setTrain({
+                        id,
+                        o: removePrefix(train['odpt:operator']),
+                        r: removePrefix(train['odpt:railway']),
+                        y: trainType,
+                        n: train['odpt:trainNumber'],
+                        os: removePrefix(train['odpt:originStation']),
+                        d: removePrefix(train['odpt:railDirection']),
+                        ds: destinationStation,
+                        ts: removePrefix(train['odpt:toStation']),
+                        fs: removePrefix(train['odpt:fromStation']),
+                        delay: (train['odpt:delay'] || 0) * 1000,
+                        carComposition: train['odpt:carComposition'],
+                        date: train['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2')
+                    });
+                } else {
+                    // Pre-normalized Mini Tokyo 3D format
+                    setTrain(train);
+                }
+            }
+            for (const trainInfo of trainInfos) {
+                if (trainInfo['@type'] === 'odpt:TrainInformation') {
+                    trainInfoData.push({
+                        operator: removePrefix(trainInfo['odpt:operator']),
+                        railway: removePrefix(trainInfo['odpt:railway']),
+                        status: trainInfo['odpt:trainInformationStatus'],
+                        text: trainInfo['odpt:trainInformationText']
+                    });
+                } else {
+                    trainInfoData.push(trainInfo);
+                }
+            }
         }
 
         return {
@@ -217,17 +187,41 @@ export function loadDynamicTrainData(secrets) {
 }
 
 /**
- * Load the dynamic data for flights.
+ * Load the dynamic data for flights from the given data sources.
+ * @param {Array<Object>} dataSources - Array of data source objects. Sources
+ *     providing a flightUrl and/or atisUrl are used. Flight data is merged in
+ *     array order, so later sources override earlier ones.
  * @returns {Promise} Promise that resolves to the loaded data
  */
-export function loadDynamicFlightData() {
-    return Promise.all([
-        configs.atisUrl,
-        configs.flightUrl
-    ].map(loadJSON)).then(data => ({
-        atisData: data[0],
-        flightData: data[1]
-    }));
+export function loadDynamicFlightData(dataSources) {
+    const sources = dataSources.filter(source => (source.flightUrl || source.atisUrl) && !isExpired(source)),
+        flightData = new Map();
+    let atisData;
+
+    return Promise.all(sources.map(({flightUrl, atisUrl}) => Promise.all([
+        atisUrl ? loadJSON(atisUrl) : undefined,
+        flightUrl ? loadJSON(flightUrl) : []
+    ]).then(([atis, flights]) => ({atis, flights})))).then(results => {
+        for (const {atis, flights} of results) {
+            if (atis) {
+                atisData = atis;
+            }
+            for (const flight of flights) {
+                const existing = flightData.get(flight.id);
+
+                if (existing) {
+                    Object.assign(existing, flight);
+                } else {
+                    flightData.set(flight.id, flight);
+                }
+            }
+        }
+
+        return {
+            atisData,
+            flightData: Array.from(flightData.values())
+        };
+    });
 }
 
 export function loadBusData(source, clock, lang) {
@@ -265,12 +259,21 @@ export function loadDynamicBusData(url) {
         .then(data => GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(new Uint8Array(data)));
 }
 
+/**
+ * Appends the consumer key to an ODPT-compatible API URL based on its host.
+ * The host is looked up in configs.odptHosts to find the corresponding secrets
+ * key. URLs on unknown hosts, non-string values and URLs that already carry a
+ * consumer key are returned unchanged.
+ * @param {string} url - The URL to update
+ * @param {Object} secrets - Secrets object keyed by the names in configs.odptHosts
+ * @returns {string} The updated URL
+ */
 export function updateOdptUrl(url, secrets) {
-    if (!isString(url)) {
-        return;
+    if (!isString(url) || url.match(/acl:consumerKey/)) {
+        return url;
     }
-    if (url.startsWith('https://api.odpt.org/') && !url.match(/acl:consumerKey/)) {
-        return `${url}${url.match(/\?/) ? '&' : '?'}acl:consumerKey=${secrets.odpt}`;
-    }
-    return url;
+
+    const key = secrets && secrets[configs.odptHosts[new URL(url).host]];
+
+    return key ? `${url}${url.match(/\?/) ? '&' : '?'}acl:consumerKey=${key}` : url;
 }

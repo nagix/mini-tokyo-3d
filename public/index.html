@@ -61,15 +61,17 @@
 		if (matchHash[5]) {
 			options.pitch = +matchHash[5];
 		}
+
+		const map = new mt3d.Map(options);
+
 		if (matchGtfsUrl && matchGtfsColor) {
-			options.dataSources = [{
+			map.addDataSource({
+				id: 'gtfs',
 				gtfsUrl: decodeURIComponent(matchGtfsUrl[1]),
 				vehiclePositionUrl: matchVehiclePositionUrl ? decodeURIComponent(matchVehiclePositionUrl[1]) : undefined,
 				color: `#${decodeURIComponent(matchGtfsColor[1])}`
-			}];
+			});
 		}
-
-		const map = new mt3d.Map(options);
 	</script>
 </body>
 </html>

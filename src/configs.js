@@ -1,3 +1,27 @@
+// ODPT-compatible API base URL used to build the default data sources
+const ODPT_API_URL = 'https://api.odpt.org/api/v4/';
+
+// mini-tokyo aggregator endpoints used to build the default data sources
+const TID_URL = 'https://mini-tokyo.appspot.com/tid';
+const TRAIN_INFO_URL = 'https://mini-tokyo.appspot.com/traininfo';
+const ATIS_URL = 'https://mini-tokyo.appspot.com/atisinfo';
+const FLIGHT_URL = 'https://mini-tokyo.appspot.com/flight';
+
+// Operators whose train positions are fetched directly from ODPT
+const ODPT_OPERATORS_FOR_TRAIN = [
+    'Toei'
+];
+
+// Operators whose train information is fetched directly from ODPT
+const ODPT_OPERATORS_FOR_TRAININFORMATION = [
+    'TWR',
+    'TokyoMetro',
+    'Toei',
+    'YokohamaMunicipal',
+    'MIR',
+    'TamaMonorail'
+];
+
 const configs = {
 
     // Standing duration at origin and destination in milliseconds
@@ -125,31 +149,27 @@ const configs = {
     // Default clock mode
     defaultEcoMode: 'normal',
 
-    // API URL
-    apiUrl: {
-
-        // ODPT URL
-        odpt: 'https://api.odpt.org/api/v4/'
-
+    // ODPT-compatible API hosts and the secrets key each one uses
+    odptHosts: {
+        'api.odpt.org': 'odpt',
+        'api-challenge.odpt.org': 'challenge'
     },
-
-    // TID URL
-    tidUrl: 'https://mini-tokyo.appspot.com/tid',
-
-    // Train information URL
-    trainInfoUrl: 'https://mini-tokyo.appspot.com/traininfo',
-
-    // ATIS URL
-    atisUrl: 'https://mini-tokyo.appspot.com/atisinfo',
-
-    // Flight URL
-    flightUrl: 'https://mini-tokyo.appspot.com/flight',
 
     // Default data URL
     dataUrl: 'https://minitokyo3d.com/data',
 
     // Default data sources
-    dataSources: [],
+    dataSources: [{
+        id: 'odpt',
+        trainUrl: `${ODPT_API_URL}odpt:Train?odpt:operator=${ODPT_OPERATORS_FOR_TRAIN.map(operator => `odpt.Operator:${operator}`).join(',')}`,
+        trainInfoUrl: `${ODPT_API_URL}odpt:TrainInformation?odpt:operator=${ODPT_OPERATORS_FOR_TRAININFORMATION.map(operator => `odpt.Operator:${operator}`).join(',')}`
+    }, {
+        id: 'mt3d',
+        trainUrl: TID_URL,
+        trainInfoUrl: TRAIN_INFO_URL,
+        flightUrl: FLIGHT_URL,
+        atisUrl: ATIS_URL
+    }],
 
     // Route search URL
     searchUrl: 'https://search.minitokyo3d.com/api/v1/routes',

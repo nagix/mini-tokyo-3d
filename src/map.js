@@ -13,7 +13,7 @@ import {pickObject, resetCursor} from './helpers/helpers-deck';
 import * as helpersGeojson from './helpers/helpers-geojson';
 import * as helpersMapbox from './helpers/helpers-mapbox';
 import {GeoJsonLayer, ThreeLayer, Tile3DLayer, TrafficLayer} from './layers';
-import {loadBusData, loadDictionary, loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
+import {isExpired, loadBusData, loadDictionary, loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
 import {AboutPanel, BusPanel, LayerPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
 import nearestCloserPointOnLine from './turf/nearest-closer-point-on-line';
@@ -86,11 +86,7 @@ export default class extends Evented {
 
         me.lang = helpers.getLang(options.lang);
         me.dataUrl = options.dataUrl;
-        me.dataSources = options.dataSources.map(({gtfsUrl, vehiclePositionUrl, color}) => ({
-            gtfsUrl: updateOdptUrl(gtfsUrl, options.secrets),
-            vehiclePositionUrl: updateOdptUrl(vehiclePositionUrl, options.secrets),
-            color
-        }));
+        me.dataSources = options.dataSources.map(source => normalizeDataSource(source, options.secrets));
         me.container = typeof options.container === 'string' ?
             document.getElementById(options.container) : options.container;
         me.secrets = options.secrets;
@@ -155,6 +151,16 @@ export default class extends Evented {
             helpersMapbox.fetchTimezoneOffset(options.center, options.accessToken)
                 .then(offset => me.clock.setTimezoneOffset(offset));
 
+        // Resolves once the clock's timezone is ready. Bus data loading waits for
+        // this rather than the 'initialized' event, so it can run in parallel
+        // with map initialization.
+        me.clockPromise = clockPromise;
+        me.gtfs = new Map();
+        // IDs of GTFS sources whose data is currently being loaded. Tracked
+        // separately from me.gtfs (which is only populated once loading finishes)
+        // so overlapping refreshBusData calls don't load the same source twice.
+        me.gtfsLoading = new Set();
+
         Promise.all([
             loadDictionary(me.lang)
                 .then(dict => (me.dict = dict))
@@ -173,10 +179,7 @@ export default class extends Evented {
             })
         ]).then(me.initialize.bind(me));
 
-        clockPromise.then(() => {
-            me.gtfs = new Map();
-            me.refreshBusData();
-        });
+        me.refreshBusData();
     }
 
     /**
@@ -599,15 +602,65 @@ export default class extends Evented {
         return helpersMapbox.hasDarkBackground(this.map);
     }
 
-    setDataSources(dataSources) {
+    /**
+     * Adds a data source to the map. If a data source with the same ID already
+     * exists, it is replaced.
+     * @param {Object} source - The data source to add. See the Map constructor
+     *     for the object structure
+     * @returns {Map} Returns itself to allow for method chaining
+     */
+    addDataSource(source) {
+        const me = this,
+            dataSource = normalizeDataSource(source, me.secrets),
+            index = me.dataSources.findIndex(({id}) => id === dataSource.id);
+
+        if (index >= 0) {
+            me.dataSources[index] = dataSource;
+        } else {
+            me.dataSources.push(dataSource);
+        }
+        me.refreshDataSource(dataSource);
+        return me;
+    }
+
+    /**
+     * Removes the data source with the given ID from the map.
+     * @param {string} id - ID of the data source to remove
+     * @returns {Map} Returns itself to allow for method chaining
+     */
+    removeDataSource(id) {
+        const me = this,
+            index = me.dataSources.findIndex(source => source.id === id);
+
+        if (index >= 0) {
+            const [removed] = me.dataSources.splice(index, 1);
+
+            me.refreshDataSource(removed);
+        }
+        return me;
+    }
+
+    /**
+     * Reloads the dynamic data affected by the given data source, based on which
+     * URLs it carries. GTFS bus data is refreshed immediately; train and flight
+     * data are refreshed only once the map has been initialized, otherwise they
+     * are picked up on the next real-time update.
+     * @param {Object} source - The data source that was added or removed
+     */
+    refreshDataSource(source) {
         const me = this;
 
-        me.dataSources = dataSources.map(({gtfsUrl, vehiclePositionUrl, color}) => ({
-            gtfsUrl: updateOdptUrl(gtfsUrl, me.secrets),
-            vehiclePositionUrl: updateOdptUrl(vehiclePositionUrl, me.secrets),
-            color
-        }));
-        me.refreshBusData();
+        if (source.gtfsUrl) {
+            me.refreshBusData();
+        }
+        if (me.initialized) {
+            if (source.trainUrl || source.trainInfoUrl) {
+                me.refreshRealtimeTrainData();
+            }
+            if (source.flightUrl || source.atisUrl) {
+                me.refreshRealtimeFlightData();
+            }
+        }
     }
 
     initData(data) {
@@ -2145,7 +2198,8 @@ export default class extends Evented {
     refreshBusData(replace) {
         const me = this,
             map = me.map,
-            sourceIds = new Set(me.dataSources.map(({gtfsUrl}) => gtfsUrl)),
+            gtfsSources = me.dataSources.filter(source => source.gtfsUrl && !isExpired(source)),
+            sourceIds = new Set(gtfsSources.map(({id}) => id)),
             deleteGtfs = ({id, activeBusLookup, layerIds, routeGroupIndex, colorGroupIndex}) => {
                 const styleOpacities = me.styleOpacities,
                     promises = [];
@@ -2176,14 +2230,15 @@ export default class extends Evented {
             }
         }
 
-        for (const source of me.dataSources) {
-            const id = source.gtfsUrl;
+        for (const source of gtfsSources) {
+            const id = source.id;
 
-            if (me.gtfs.has(id) && !replace) {
+            if (me.gtfsLoading.has(id) || (me.gtfs.has(id) && !replace)) {
                 continue;
             }
 
-            loadBusData(source, me.clock, me.lang).then(data => {
+            me.gtfsLoading.add(id);
+            me.clockPromise.then(() => loadBusData(source, me.clock, me.lang)).then(data => {
                 return me.initialized ? data : new Promise(resolve => {
                     me.once('initialized', () => resolve(data));
                 });
@@ -2378,6 +2433,10 @@ export default class extends Evented {
                         me.refreshRealtimeBusData(id);
                     }
                 }
+
+                me.gtfsLoading.delete(id);
+            }).catch(() => {
+                me.gtfsLoading.delete(id);
             });
         }
 
@@ -2387,7 +2446,7 @@ export default class extends Evented {
     refreshRealtimeTrainData() {
         const me = this;
 
-        loadDynamicTrainData(me.secrets).then(({trainData, trainInfoData}) => {
+        loadDynamicTrainData(me.dataSources).then(({trainData, trainInfoData}) => {
             const {activeTrainLookup, standbyTrainLookup, realtimeTrains, dataReferences} = me,
                 now = me.clock.getTimeOffset();
 
@@ -2503,7 +2562,11 @@ export default class extends Evented {
     refreshRealtimeFlightData() {
         const me = this;
 
-        loadDynamicFlightData(me.secrets).then(({atisData, flightData}) => {
+        loadDynamicFlightData(me.dataSources).then(({atisData, flightData}) => {
+            if (!atisData) {
+                return;
+            }
+
             const flightLookup = me.flightLookup,
                 {landing, departure} = atisData,
                 pattern = [landing.join('/'), departure.join('/')].join(' '),
@@ -3638,6 +3701,24 @@ export default class extends Evented {
             }
         }
     }
+}
+
+// Normalizes a data source, appending consumer keys to its URLs based on the
+// host (see updateOdptUrl). What a source loads is determined by which URLs it
+// carries: trainUrl/trainInfoUrl (trains), flightUrl/atisUrl (flights) and
+// gtfsUrl/vehiclePositionUrl/color (GTFS bus).
+function normalizeDataSource(source, secrets) {
+    return {
+        id: source.id,
+        trainUrl: updateOdptUrl(source.trainUrl, secrets),
+        trainInfoUrl: updateOdptUrl(source.trainInfoUrl, secrets),
+        flightUrl: updateOdptUrl(source.flightUrl, secrets),
+        atisUrl: updateOdptUrl(source.atisUrl, secrets),
+        gtfsUrl: updateOdptUrl(source.gtfsUrl, secrets),
+        vehiclePositionUrl: updateOdptUrl(source.vehiclePositionUrl, secrets),
+        color: source.color,
+        expiresAt: source.expiresAt
+    };
 }
 
 function initContainer(container) {
