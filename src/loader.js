@@ -74,7 +74,7 @@ export function loadDictionary(lang) {
  * @returns {Promise} Promise that resolves to the loaded data
  */
 export function loadStaticData(dataUrl, clockPromise) {
-    return Promise.all([
+    return Promise.all(!dataUrl ? [...Array(11)].map(() => []) : [
         ...[
             'railways.json.gz',
             'stations.json.gz',
@@ -113,7 +113,7 @@ export function loadStaticData(dataUrl, clockPromise) {
  * @returns {Promise} Promise that resolves to the loaded timetable data
  */
 export function loadTimetableData(dataUrl, clock) {
-    return Promise.all([
+    return Promise.all(!dataUrl ? [[]] : [
         getTimetableFileName(clock),
         ...getExtraTimetableFileNames(clock)
     ].map(fileName => `${dataUrl}/${fileName}`).map(loadJSON)).then(data => [].concat(...data));
