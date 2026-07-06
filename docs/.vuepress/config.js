@@ -1,4 +1,17 @@
+const path = require('path');
+
 module.exports = {
+  // webpack-dev-server 3's client uses the html-entities v1 API (AllHtmlEntities),
+  // but eslint-plugin-jsdoc hoists html-entities v2 to the top level, which the
+  // dev client bundle would otherwise pick up. Alias html-entities to the v1 copy
+  // bundled with webpack-dev-server so the dev client works.
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'html-entities$': path.resolve(__dirname, '../../node_modules/webpack-dev-server/node_modules/html-entities')
+      }
+    }
+  },
   dest: 'build/docs/master',
   title: 'Mini Tokyo 3D',
   base: '/docs/master/',
