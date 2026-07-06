@@ -6,6 +6,10 @@ The `Secrets` object is an object that stores the access tokens used to retrieve
 
 ## Properties
 
+### **`challenge`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
+
+Access token for the [Open Data Challenge for Public Transportation](https://challenge2026.odpt.org/index-e.html) API hosted at `api-challenge.odpt.org`. It is appended as a consumer key to [data source](./data-source.md) URLs on that host. If not specified, the default token will be used.
+
 ### **`challenge2024`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
 Access token for the [Open Data Challenge for Public Transportation 2024](https://challenge2024.odpt.org/index-e.html). If not specified, the default token will be used.
@@ -24,7 +28,7 @@ Due to the end of the Open Data Challenge for Public Transportation 2025, this p
 
 ### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
-Access token for the [Public Transportation Open Data Center](https://www.odpt.org/en/). If not specified, the default token will be used.
+Access token for the [Public Transportation Open Data Center](https://www.odpt.org/en/) API hosted at `api.odpt.org`. It is appended as a consumer key to [data source](./data-source.md) URLs on that host. If not specified, the default token will be used.
 
 ### **`tokyochallenge`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 

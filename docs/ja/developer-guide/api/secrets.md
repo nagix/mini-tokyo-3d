@@ -6,6 +6,10 @@
 
 ## プロパティ
 
+### **`challenge`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
+
+`api-challenge.odpt.org` でホストされている[公共交通オープンデータチャレンジ](https://challenge2026.odpt.org) API のアクセストークンです。そのホストの[データソース](./data-source.md) URL に利用者キーとして付与されます。未指定の場合は、デフォルトのトークンが使われます。
+
 ### **`challenge2024`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
 [公共交通オープンデータチャレンジ2024](https://challenge2024.odpt.org)のアクセストークンです。未指定の場合は、デフォルトのトークンが使われます。
@@ -24,7 +28,7 @@
 
 ### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
-[公共交通オープンデータセンター](https://www.odpt.org)のアクセストークンです。未指定の場合は、デフォルトのトークンが使われます。
+`api.odpt.org` でホストされている[公共交通オープンデータセンター](https://www.odpt.org) API のアクセストークンです。そのホストの[データソース](./data-source.md) URL に利用者キーとして付与されます。未指定の場合は、デフォルトのトークンが使われます。
 
 ### **`tokyochallenge`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 

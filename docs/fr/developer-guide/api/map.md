@@ -20,7 +20,7 @@ Nom | Description
 **`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>par défaut : `true` | Si `true`, l'affichage de la date et de l'heure sera ajouté à la carte.
 **`options.configControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>par défaut : `true` | Si `true`, les boutons de configuration seront ajoutés à la carte.
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Le `id` de l'élément HTML dans lequel Mini Tokyo 3D restituera la carte. L'élément spécifié ne doit avoir aucun enfant.
-**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>`<br>par défaut : `[]` | Un tableau de sources de données supplémentaires pour Mini Tokyo 3D. Notez qu'il s'agit d'une fonctionnalité expérimentale en cours de développement et susceptible de changer.
+**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>` | Un tableau de sources de données de trains, de vols et de bus pour Mini Tokyo 3D. S'il n'est pas spécifié, les sources de données de trains et de vols ODPT et Mini Tokyo 3D intégrées sont utilisées. Notez qu'il s'agit d'une fonctionnalité expérimentale en cours de développement et susceptible de changer.
 **`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | URL des données 3D de Mini Tokyo. S’il n’est pas spécifié, `'https://minitokyo3d.com/data'` sera utilisé.
 **`options.ecoFrameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>par défaut : `1` | Fréquence d'images pour les animations de train et d'avion (images par seconde) lorsque le mode Eco est activé. Spécifiez sur une échelle de 1 à 60. Des valeurs inférieures entraînent des animations moins fluides et une utilisation moindre des ressources du processeur, réduisant ainsi la consommation de la batterie sur les appareils mobiles. S’il n’est pas spécifié, il sera par défaut `1`.
 **`options.ecoMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>par défaut : `'normal'` | Le mode éco initial. `'normal'` et `'eco'` sont pris en charge.
@@ -32,11 +32,25 @@ Nom | Description
 **`options.plugins`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`PluginInterface`](./plugin.md)`>` | Une liste de plugins à ajouter. Chaque plugin doit implémenter [PluginInterface](./plugin.md).
 **`options.searchControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>par défaut : `true` | Si `true`, le bouton de recherche sera ajouté à la carte.
 **`options.secrets`**<br>[`Secrets`](./secrets.md) | Un objet pour stocker les jetons d'accès utilisés pour récupérer des données.
-**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | ID du train ou du vol à suivre, ou de la gare à sélectionner. L'ID du train est une chaîne au format `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. L'ID de vol est une chaîne au format `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` ou `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. La partie `'odpt.*:'` peut être omise. Pour plus de détails, consultez le [Public Transportation Open Data Center: API Specification](https://developer.odpt.org/documents).
+**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | ID du train ou du vol à suivre, ou de la gare à sélectionner. L'ID du train est une chaîne au format `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. L'ID de vol est une chaîne au format `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` ou `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. La partie `'odpt.*:'` peut être omise. Pour plus de détails, consultez le [Public Transportation Open Data Center: API Specification](https://developer.odpt.org).
 **`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>par défaut : `'position'` | Le mode de suivi initial. `'position'`, `'back'`, `'topback'`, `'front'`, `'topfront'`, `'helicopter'`, `'drone'` et `'bird'` sont pris en charge.
 **`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>par défaut : `14` | Le niveau de zoom initial de la carte. S’il n’est pas spécifié, il sera par défaut `14`.
 
 ## Membres de l'instance
+
+### **`addDataSource(source)`**
+
+Ajoute une source de données à la carte. Si une source de données ayant le même ID existe déjà, elle est remplacée.
+
+#### Paramètres
+
+**`source`** ([`DataSource`](./data-source.md)) La source de données à ajouter.
+
+#### Retours
+
+[`Map`](./map.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+
+---
 
 ### **`addLayer(layer)`**
 
@@ -294,6 +308,20 @@ Ajoute un écouteur qui ne sera appelé qu'une seule fois à un type d'événeme
 
 ---
 
+### **`removeDataSource(id)`**
+
+Supprime la source de données avec l'ID donné de la carte.
+
+#### Paramètres
+
+**`id`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) ID de la source de données à supprimer.
+
+#### Retours
+
+[`Map`](./map.md) : se renvoie lui-même pour permettre le chaînage de méthodes.
+
+---
+
 ### **`removeLayer(id)`**
 
 Supprime la couche avec l'ID donné de la carte.
@@ -398,7 +426,7 @@ Définit l'inclinaison de la carte. Équivalent à `jumpTo({pitch: pitch})`.
 
 ### **`setSelection(id)`**
 
-Définit l'ID du train ou du vol que vous souhaitez suivre, ou de la gare à sélectionner. L'ID du train est une chaîne au format `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. L'ID de vol est une chaîne au format `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` ou `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. La partie `'odpt.*:'` peut être omise. Pour plus de détails, consultez le [Public Transportation Open Data Center: API Specification](https://developer.odpt.org/documents).
+Définit l'ID du train ou du vol que vous souhaitez suivre, ou de la gare à sélectionner. L'ID du train est une chaîne au format `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. L'ID de vol est une chaîne au format `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` ou `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. La partie `'odpt.*:'` peut être omise. Pour plus de détails, consultez le [Public Transportation Open Data Center: API Specification](https://developer.odpt.org).
 
 #### Paramètres
 

@@ -20,7 +20,7 @@ Name | Description
 **`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the date and time display will be added to the map.
 **`options.configControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the configuration buttons will be added to the map.
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | The `id` of the HTML element in which Mini Tokyo 3D will render the map. The specified element must have no children.
-**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>`<br>default: `[]` | An array of additional data sources for Mini Tokyo 3D. Note that this is an experimental feature which is under development and is prone to change.
+**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>` | An array of train, flight and bus data sources for Mini Tokyo 3D. If not specified, the built-in ODPT and Mini Tokyo 3D train and flight data sources are used. Note that this is an experimental feature which is under development and is prone to change.
 **`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D data URL. If not specified, `'https://minitokyo3d.com/data'` will be used.
 **`options.ecoFrameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1` | Frame rate for train and airplane animations (frames per second) when Eco Mode is on. Specify on a scale of 1 to 60. Lower values result in less smooth animations and lower CPU resource usage, thus reducing battery consumption on mobile devices. If not specified, it will default to `1`.
 **`options.ecoMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'normal'` | The initial eco mode. `'normal'` and `'eco'` are supported.
@@ -32,11 +32,25 @@ Name | Description
 **`options.plugins`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`PluginInterface`](./plugin.md)`>` | An array of plugins to add. Each plugin must implement [PluginInterface](./plugin.md).
 **`options.searchControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the search button will be added to the map.
 **`options.secrets`**<br>[`Secrets`](./secrets.md) | An object to store the access tokens used to retrieve data.
-**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | ID of the train or flight to be tracked, or the station to be selected. The train ID is a string in the form of `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. The flight ID is a string in the form of `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` or `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. The `'odpt.*:'` part can be omitted. For details, see the [Public Transportation Open Data Center: API Specification](https://developer.odpt.org/documents).
+**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | ID of the train or flight to be tracked, or the station to be selected. The train ID is a string in the form of `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. The flight ID is a string in the form of `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` or `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. The `'odpt.*:'` part can be omitted. For details, see the [Public Transportation Open Data Center: API Specification](https://developer.odpt.org).
 **`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'position'` | The initial tracking mode. `'position'`, `'back'`, `'topback'`, `'front'`, `'topfront'`, `'helicopter'`, `'drone'` and `'bird'` are supported.
 **`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `14` | The initial zoom level of the map. If not specified, it will default to `14`.
 
 ## Instance Members
+
+### **`addDataSource(source)`**
+
+Adds a data source to the map. If a data source with the same ID already exists, it is replaced.
+
+#### Parameters
+
+**`source`** ([`DataSource`](./data-source.md)) The data source to add.
+
+#### Returns
+
+[`Map`](./map.md): Returns itself to allow for method chaining.
+
+---
 
 ### **`addLayer(layer)`**
 
@@ -294,6 +308,20 @@ Adds a listener that will be called only once to a specified event type.
 
 ---
 
+### **`removeDataSource(id)`**
+
+Removes the data source with the given ID from the map.
+
+#### Parameters
+
+**`id`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) ID of the data source to remove.
+
+#### Returns
+
+[`Map`](./map.md): Returns itself to allow for method chaining.
+
+---
+
 ### **`removeLayer(id)`**
 
 Removes the layer with the given ID from the map.
@@ -400,7 +428,7 @@ Sets the map's pitch (tilt). Equivalent to `jumpTo({pitch: pitch})`.
 
 ### **`setSelection(id)`**
 
-Sets the ID of the train or flight you want to track, or the station to select. The train ID is a string in the form of `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. The flight ID is a string in the form of `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` or `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. The `'odpt.*:'` part can be omitted. For details, see the [Public Transportation Open Data Center: API Specification](https://developer.odpt.org/documents).
+Sets the ID of the train or flight you want to track, or the station to select. The train ID is a string in the form of `'odpt.Train:<operator ID>.<railway ID>.<train number>'`. The flight ID is a string in the form of `'odpt.FlightInformationArrival:<operator ID>.<airport ID>.<flight number>'` or `'odpt.FlightInformationDeparture:<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'odpt.Station:<operator ID>.<railway ID>.<station ID>'`. The `'odpt.*:'` part can be omitted. For details, see the [Public Transportation Open Data Center: API Specification](https://developer.odpt.org).
 
 #### Parameters
 

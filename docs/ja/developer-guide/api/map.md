@@ -20,7 +20,7 @@ new Map(options: Object)
 **`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、時刻表示をマップに追加する
 **`options.configControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、設定ボタンをマップに追加する
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D がマップを表示する HTML 要素の `id`。指定された要素は、子要素を含んではならない
-**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>`<br>デフォルト: `[]` | Mini Tokyo 3D の追加のデータソースの配列。これは開発中の実験的な機能であり、変更される可能性があることに注意してください。
+**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>` | Mini Tokyo 3D の列車・フライト・バスのデータソースの配列。未指定の場合は、組み込みの ODPT および Mini Tokyo 3D の列車・フライトデータソースが使われます。これは開発中の実験的な機能であり、変更される可能性があることに注意してください。
 **`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D のデータ URL。未指定の場合は、`'https://minitokyo3d.com/data'` が使われる
 **`options.ecoFrameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1` | エコモードがオンの場合の、列車や旅客機のアニメーションのフレームレート（1秒あたりのフレーム数）。1〜60 の間で指定する。数値を小さくすると、アニメーションの滑らかさが減少する一方で CPU リソースの使用も下がるため、モバイルデバイスでのバッテリー消費を抑えることができる。未指定の場合は、`1` に設定される
 **`options.ecoMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>デフォルト: `'normal'` | 初期のエコモードを指定する。`'normal'` または `'eco'` がサポートされている
@@ -32,11 +32,25 @@ new Map(options: Object)
 **`options.plugins`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`PluginInterface`](./plugin.md)`>` | 追加するプラグインの配列。各プラグインは [PluginInterface](./plugin.md) を実装する必要がある
 **`options.searchControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、検索ボタンをマップに追加する
 **`options.secrets`**<br>[`Secrets`](./secrets.md) | データ取得に使用するアクセストークンを格納するオブジェクト
-**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | 追跡する列車またはフライトの ID、あるいは選択する駅の ID。列車 ID は`'odpt.Train:<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'odpt.FlightInformationArrival:<事業者ID>.<空港ID>.<フライト番号>'`または`'odpt.FlightInformationDeparture:<事業者ID>.<空港ID>.<フライト番号>'`、駅 ID は`'odpt.Station:<事業者ID>.<路線ID>.<駅ID>'`の形式で表される文字列。`'odpt.*:'`の部分は省略可。詳細は[公共交通オープンデータセンター API 仕様](https://developer.odpt.org/documents)を参照のこと
+**`options.selection`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | 追跡する列車またはフライトの ID、あるいは選択する駅の ID。列車 ID は`'odpt.Train:<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'odpt.FlightInformationArrival:<事業者ID>.<空港ID>.<フライト番号>'`または`'odpt.FlightInformationDeparture:<事業者ID>.<空港ID>.<フライト番号>'`、駅 ID は`'odpt.Station:<事業者ID>.<路線ID>.<駅ID>'`の形式で表される文字列。`'odpt.*:'`の部分は省略可。詳細は[公共交通オープンデータセンター API 仕様](https://developer.odpt.org)を参照のこと
 **`options.trackingMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>デフォルト: `'position'` | 初期の追跡モードを指定する。`'position'`, `'back'`, `'topback'`, `'front'`, `'topfront'`, `'helicopter'`, `'drone'`, `'bird'` がサポートされている
 **`options.zoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `14` | 初期のマップのズームレベル。未指定の場合は、`14` に設定される
 
 ## インスタンスメンバ
+
+### **`addDataSource(source)`**
+
+マップにデータソースを追加します。同じ ID のデータソースが既に存在する場合は置き換えられます。
+
+#### パラメータ
+
+**`source`** ([`DataSource`](./data-source.md)) 追加するデータソース
+
+#### 返り値
+
+[`Map`](./map.md): メソッドチェーンを可能にするために自分自身を返す
+
+---
 
 ### **`addLayer(layer)`**
 
@@ -294,6 +308,20 @@ new Map(options: Object)
 
 ---
 
+### **`removeDataSource(id)`**
+
+指定された ID のデータソースをマップから削除します。
+
+#### パラメータ
+
+**`id`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) 削除するデータソースの ID
+
+#### 返り値
+
+[`Map`](./map.md): メソッドチェーンを可能にするために自分自身を返す
+
+---
+
 ### **`removeLayer(id)`**
 
 指定された ID のレイヤーをマップから削除します。
@@ -400,7 +428,7 @@ new Map(options: Object)
 
 ### **`setSelection(id)`**
 
-追跡する列車またはフライトの ID を設定します。列車 ID は`'odpt.Train:<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'odpt.FlightInformationArrival:<事業者ID>.<空港ID>.<フライト番号>'`または`'odpt.FlightInformationDeparture:<事業者ID>.<空港ID>.<フライト番号>'`、駅 ID は`'odpt.Station:<事業者ID>.<路線ID>.<駅ID>'`の形式で表される文字列です。`'odpt.*:'`の部分は省略可能です。詳細は[公共交通オープンデータセンター API 仕様](https://developer.odpt.org/documents)を参照してください。
+追跡する列車またはフライトの ID を設定します。列車 ID は`'odpt.Train:<事業者ID>.<路線ID>.<列車番号>'`、フライト ID は`'odpt.FlightInformationArrival:<事業者ID>.<空港ID>.<フライト番号>'`または`'odpt.FlightInformationDeparture:<事業者ID>.<空港ID>.<フライト番号>'`、駅 ID は`'odpt.Station:<事業者ID>.<路線ID>.<駅ID>'`の形式で表される文字列です。`'odpt.*:'`の部分は省略可能です。詳細は[公共交通オープンデータセンター API 仕様](https://developer.odpt.org)を参照してください。
 
 #### パラメータ
 
