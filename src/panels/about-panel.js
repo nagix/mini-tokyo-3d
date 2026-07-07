@@ -29,17 +29,12 @@ export default class extends Panel {
                 `<div class="card-title">${dict['static-update']}</div>`,
                 `<div class="card-body">${configs.lastStaticUpdate}</div>`,
                 `<div class="card-title">${dict['dynamic-update']}</div>`,
-                '<div class="card-body">',
-                lastDynamicUpdate['Toei'] || 'N/A',
-                ` (${dict['toei']})<br>`,
-                lastDynamicUpdate['HND-JAT'] || 'N/A',
-                ` (${dict['hnd-jat']})<br>`,
-                lastDynamicUpdate['HND-TIAT'] || 'N/A',
-                ` (${dict['hnd-tiat']})<br>`,
-                lastDynamicUpdate['NAA'] || 'N/A',
-                ` (${dict['naa']})<br>`,
-                gtfsArray.filter(({date}) => date).map(({date, agency}) => `${date} (${agency})`).join('<br>'),
-                '</div>',
+                `<div class="card-body">${[
+                    ...Object.entries(lastDynamicUpdate)
+                        .filter(([key, date]) => date && dict[key.toLowerCase()])
+                        .map(([key, date]) => `${date} (${dict[key.toLowerCase()]})`),
+                    ...gtfsArray.filter(({date}) => date).map(({date, agency}) => `${date} (${agency})`)
+                ].join('<br>')}</div>`,
                 gtfsArray.length > 0 ? [
                     `<div class="card-title">${dict['gtfs-feed-version']}</div>`,
                     '<div class="card-body">',

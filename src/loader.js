@@ -161,7 +161,10 @@ export function loadDynamicTrainData(dataSources) {
                         date: train['dc:date'].replace(/([\d\-])T([\d:]+).*/, '$1 $2')
                     });
                 } else {
-                    // Pre-normalized Mini Tokyo 3D format
+                    // Pre-normalized Mini Tokyo 3D format. Drop the date so that
+                    // train positions from an mt3d source are excluded from the
+                    // "last dynamic update" display.
+                    delete train.date;
                     setTrain(train);
                 }
             }

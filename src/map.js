@@ -2474,7 +2474,9 @@ export default class extends Evented {
                 const {id, r, n, y, d, os, ds, ts, fs, v, ad, delay, carComposition} = trainRef,
                     aliasId = id.replace('.Marunouchi.', '.MarunouchiBranch.');
 
-                me.lastDynamicUpdate[trainRef.o] = trainRef.date;
+                if (trainRef.date > (me.lastDynamicUpdate[trainRef.o] || '')) {
+                    me.lastDynamicUpdate[trainRef.o] = trainRef.date;
+                }
                 realtimeTrains.add(trainRef.id);
 
                 // Retry lookup replacing Marunouchi line with MarunouchiBranch line
@@ -2753,7 +2755,9 @@ export default class extends Evented {
                 const queue = flightQueue[flight.runway] = flightQueue[flight.runway] || [];
                 queue.push(flight);
 
-                me.lastDynamicUpdate[flightRef.o] = flightRef.date;
+                if (flightRef.date > (me.lastDynamicUpdate[flightRef.o] || '')) {
+                    me.lastDynamicUpdate[flightRef.o] = flightRef.date;
+                }
             }
 
             for (const key of Object.keys(flightQueue)) {
