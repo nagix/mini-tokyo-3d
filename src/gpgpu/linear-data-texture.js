@@ -34,7 +34,7 @@ export default class extends DataTexture {
             // Create a new texture
             const [size, textureType, chunkSize] = args,
                 {TypedArray, format, type, unit} = PROPS[textureType],
-                chunkCount = Math.ceil(size / chunkSize),
+                chunkCount = Math.ceil(size / chunkSize) || 1,
                 array = new TypedArray(chunkSize * chunkCount * unit);
 
             super(array, chunkSize, chunkCount, format, type);
@@ -48,7 +48,7 @@ export default class extends DataTexture {
                 {data, width: chunkSize} = image,
                 {size: currentSize, TypedArray, unit} = userData,
                 size = currentSize + increase,
-                chunkCount = Math.ceil(size / chunkSize);
+                chunkCount = Math.ceil(size / chunkSize) || 1;
             let array;
 
             if (chunkCount === image.height) {
@@ -69,7 +69,7 @@ export default class extends DataTexture {
                 {data, width: chunkSize} = image,
                 {size: currentSize, TypedArray, unit} = userData,
                 size = currentSize - decrease,
-                chunkCount = Math.ceil(size / chunkSize);
+                chunkCount = Math.ceil(size / chunkSize) || 1;
             let array;
 
             if (chunkCount === image.height) {
