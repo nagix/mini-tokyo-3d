@@ -1,5 +1,6 @@
 // ODPT-compatible API base URL used to build the default data sources
 const ODPT_API_URL = 'https://api.odpt.org/api/v4/';
+const CHALLENGE_API_URL = 'https://api-challenge.odpt.org/api/v4/';
 
 // mini-tokyo aggregator endpoints used to build the default data sources
 const TID_URL = 'https://mini-tokyo.appspot.com/tid';
@@ -11,6 +12,10 @@ const FLIGHT_URL = 'https://mini-tokyo.appspot.com/flight';
 const ODPT_OPERATORS_FOR_TRAIN = [
     'Toei'
 ];
+const CHALLENGE_OPERATORS_FOR_TRAIN = [
+    'Keikyu',
+    'Tobu'
+];
 
 // Operators whose train information is fetched directly from ODPT
 const ODPT_OPERATORS_FOR_TRAININFORMATION = [
@@ -20,6 +25,14 @@ const ODPT_OPERATORS_FOR_TRAININFORMATION = [
     'YokohamaMunicipal',
     'MIR',
     'TamaMonorail'
+];
+const CHALLENGE_OPERATORS_FOR_TRAININFORMATION = [
+    'jre-is',
+    'Tokyu',
+    'Keikyu',
+    'Tobu',
+    'Seibu',
+    'Keio'
 ];
 
 const configs = {
@@ -163,6 +176,12 @@ const configs = {
         id: 'odpt',
         trainUrl: `${ODPT_API_URL}odpt:Train?odpt:operator=${ODPT_OPERATORS_FOR_TRAIN.map(operator => `odpt.Operator:${operator}`).join(',')}`,
         trainInfoUrl: `${ODPT_API_URL}odpt:TrainInformation?odpt:operator=${ODPT_OPERATORS_FOR_TRAININFORMATION.map(operator => `odpt.Operator:${operator}`).join(',')}`
+    }, {
+        id: 'challenge',
+        trainUrl: `${CHALLENGE_API_URL}odpt:Train?odpt:operator=${CHALLENGE_OPERATORS_FOR_TRAIN.map(operator => `odpt.Operator:${operator}`).join(',')}`,
+        trainInfoUrl: `${CHALLENGE_API_URL}odpt:TrainInformation?odpt:operator=${CHALLENGE_OPERATORS_FOR_TRAININFORMATION.map(operator => `odpt.Operator:${operator}`).join(',')}`,
+        expiresAt: '2027-03-13T00:00:00+09:00'
+
     }, {
         id: 'mt3d',
         trainUrl: TID_URL,

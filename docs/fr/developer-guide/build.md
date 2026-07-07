@@ -51,16 +51,17 @@ Une fois la construction terminée avec succès, le répertoire `dist` sera cré
 
 ## Déploiement sur un site Web
 
-Vous avez besoin de jetons d'accès pour déployer et utiliser les fichiers créés sur votre site Web. Voir [Préparation à l'utilisation](./integration.md#preparation-a-l-utilisation) pour obtenir des jetons d'accès pour Public Transportation Open Data Center et Mapbox.
+Vous avez besoin de jetons d'accès pour déployer et utiliser les fichiers créés sur votre site Web. Voir [Préparation à l'utilisation](./integration.md#preparation-a-l-utilisation) pour obtenir des jetons d'accès pour Public Transportation Open Data Center, Open Data Challenge for Public Transportation 2026 et Mapbox.
 
-Le `index.html` dans le répertoire `build` concerne la page Web sur [https://minitokyo3d.com](http://minitokyo3d.com). Dans `index.html`, ajoutez les propriétés `accessToken` et `secrets` à l'objet transmis au constructeur `Map` et spécifiez le jeton d'accès Mapbox pour le `accessToken` et le jeton d'accès pour Public Transportation Open Data Center pour le `secrets`.
+Le `index.html` dans le répertoire `build` concerne la page Web sur [https://minitokyo3d.com](http://minitokyo3d.com). Dans `index.html`, ajoutez les propriétés `accessToken` et `secrets` à l'objet transmis au constructeur `Map` et spécifiez le jeton d'accès Mapbox pour le `accessToken` et les jetons d'accès pour Public Transportation Open Data Center et Open Data Challenge for Public Transportation 2026 pour le `secrets`.
 
 ```js
 map = new mt3d.Map({
   /* ... */
   accessToken: '<jeton d’accès Mapbox>',
   secrets: {
-    odpt: '<jeton d’accès pour Public Transportation Open Data Center>'
+    odpt: '<jeton d’accès pour Public Transportation Open Data Center>',
+    challenge: '<jeton d’accès pour Open Data Challenge for Public Transportation 2026>'
   }
 });
 ```

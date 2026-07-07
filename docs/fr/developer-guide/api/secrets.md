@@ -10,30 +10,6 @@ L'objet `Secrets` est un objet qui stocke les jetons d'accès utilisés pour ré
 
 Jeton d'accès pour l'API [Open Data Challenge for Public Transportation](https://challenge2026.odpt.org/index-e.html) hébergée sur `api-challenge.odpt.org`. Il est ajouté comme clé de consommateur aux URL des [sources de données](./data-source.md) sur cet hôte. S’il n’est pas spécifié, le jeton par défaut sera utilisé.
 
-### **`challenge2024`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
-
-Jeton d'accès pour le [Open Data Challenge for Public Transportation 2024](https://challenge2024.odpt.org/index-e.html). S’il n’est pas spécifié, le jeton par défaut sera utilisé.
-
-::: warning Avertissement
-En raison de la fin de l'Open Data Challenge for Public Transportation 2024, ce paramètre n'est plus utilisé à partir de la version 4.0.
-:::
-
-### **`challenge2025`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
-
-Jeton d'accès pour le [Open Data Challenge for Public Transportation 2025](https://challenge2025.odpt.org/index-e.html). S’il n’est pas spécifié, le jeton par défaut sera utilisé.
-
-::: warning Avertissement
-En raison de la fin de l'Open Data Challenge for Public Transportation 2025, ce paramètre n'est plus utilisé à partir de la version 4.0.
-:::
-
 ### **`odpt`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
 Jeton d'accès pour l'API [Public Transportation Open Data Center](https://www.odpt.org/en/) hébergée sur `api.odpt.org`. Il est ajouté comme clé de consommateur aux URL des [sources de données](./data-source.md) sur cet hôte. S’il n’est pas spécifié, le jeton par défaut sera utilisé.
-
-### **`tokyochallenge`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
-
-Jeton d'accès pour le [Open Data Challenge for Public Transportation in Tokyo](https://tokyochallenge.odpt.org/en/). S’il n’est pas spécifié, le jeton par défaut sera utilisé.
-
-::: warning Avertissement
-En raison de la fin de l'Open Data Challenge for Public Transportation à Tokyo, ce paramètre n'est plus utilisé à partir de la version 3.1.
-:::

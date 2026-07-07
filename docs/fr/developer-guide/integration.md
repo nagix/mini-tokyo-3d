@@ -11,6 +11,7 @@ Mini Tokyo 3D utilise les sources de données suivantes et nécessite un jeton d
 Source de données | URL d'inscription | Format du jeton d'accès
 :-- | :-- | :--
 [Public Transportation Open Data Center](https://www.odpt.org/en/) | [Lien](https://developer.odpt.org/signup) | Une chaîne de chiffres et de lettres minuscules
+Public Transportation Open Data Center<br>([Open Data Challenge for Public Transportation 2026](https://challenge2026.odpt.org/index-e.html)) | [Lien](https://developer.odpt.org/signup) | Une chaîne de chiffres et de lettres minuscules
 [Mapbox](https://www.mapbox.com) | [Lien](https://account.mapbox.com/auth/signup/) | Chaîne alphanumérique contenant un point commençant par `pk.`
 
 ### Obtenir un jeton d'accès pour Public Transportation Open Data Center
@@ -20,6 +21,16 @@ Mini Tokyo 3D utilise les données des trains et des avions du [Public Transport
 1. Inscrivez-vous en tant que développeur en saisissant vos informations d'utilisateur sur la [page d’inscription du site développeur](https://developer.odpt.org/signup). La réception de votre e-mail de confirmation d'inscription peut prendre quelques jours.
 2. Après vous être connecté avec votre compte de développeur, sélectionnez « Jeton d'accès pour le centre ODPT » dans le menu « Connecté » dans le coin supérieur droit de l'écran.
 3. Une liste des jetons d'accès pour ODPT Center s'affichera. Seul le token « DefaultApplication » sera affiché juste après la création du compte. Cliquez sur « Ajouter ».
+4. Saisissez un nom d'application dans le champ « Nom » et cliquez sur le bouton « Mettre à jour ».
+5. Le jeton nouvellement créé apparaîtra dans la liste des jetons d'accès.
+
+### Obtenir un jeton d'accès pour Open Data Challenge for Public Transportation 2026
+
+Le Public Transportation Open Data Center distribue également des données supplémentaires sur les trains et les avions pour l'[Open Data Challenge for Public Transportation 2026](https://challenge2026.odpt.org/index-e.html), qui peuvent être obtenues avec un jeton d'accès dédié. Vous devez participer au challenge pour obtenir votre jeton d'accès dédié, mais les données sont disponibles gratuitement.
+
+1. Suivez les instructions sur le [site développeur](https://developer.odpt.org) du Public Transportation Open Data Center pour participer au challenge.
+2. Sélectionnez « Jeton d'accès pour Challenge 2026 » dans le menu « Connecté » dans le coin supérieur droit de l'écran.
+3. Une liste des jetons d'accès pour Challenge 2026 s'affichera. Seul le token « Challenge2026DefaultApplication » sera affiché juste après la participation. Cliquez sur « Ajouter ».
 4. Saisissez un nom d'application dans le champ « Nom » et cliquez sur le bouton « Mettre à jour ».
 5. Le jeton nouvellement créé apparaîtra dans la liste des jetons d'accès.
 
@@ -48,7 +59,7 @@ Tout d'abord, utilisez le lien jsDelivr CDN pour charger la feuille de style Min
 </head>
 ```
 
-Dans l'élément `<body>` du même fichier HTML, ajoutez un élément HTML avec un `id` (un élément `<div>` dans l'exemple ci-dessous) et écrivez du code JavaScript pour créer une instance Map dans l'élément `<script>`. Spécifiez le `id` de l'élément HTML à `container` de l'objet `options` transmis au constructeur. De plus, spécifiez le jeton d'accès Mapbox obtenu à l'étape ci-dessus à `accessToken` et le jeton d'accès pour Public Transportation Open Data Center à `secrets`.
+Dans l'élément `<body>` du même fichier HTML, ajoutez un élément HTML avec un `id` (un élément `<div>` dans l'exemple ci-dessous) et écrivez du code JavaScript pour créer une instance Map dans l'élément `<script>`. Spécifiez le `id` de l'élément HTML à `container` de l'objet `options` transmis au constructeur. De plus, spécifiez le jeton d'accès Mapbox obtenu à l'étape ci-dessus à `accessToken` et les jetons d'accès pour Public Transportation Open Data Center et Open Data Challenge for Public Transportation 2026 à `secrets`.
 
 ```html
 <body>
@@ -59,7 +70,8 @@ Dans l'élément `<body>` du même fichier HTML, ajoutez un élément HTML avec 
       container: 'mini-tokyo-3d',
       accessToken: '<jeton d’accès Mapbox>',
       secrets: {
-        odpt: '<jeton d’accès pour Public Transportation Open Data Center>'
+        odpt: '<jeton d’accès pour Public Transportation Open Data Center>',
+        challenge: '<jeton d’accès pour Open Data Challenge for Public Transportation 2026>'
       }
     };
     const map = new mt3d.Map(options);
@@ -89,14 +101,15 @@ Pour charger le module dans le style ES6, vous devez inclure ce qui suit au déb
 import {Map} from 'mini-tokyo-3d';
 ```
 
-Dans le code de votre application, vous devez initialiser l'objet Map comme suit. `container` de l'objet `options` représente l'ID de l'élément HTML dans lequel Mini Tokyo 3D restituera la carte. Vous devez également spécifier le jeton d'accès Mapbox obtenu à l'étape ci-dessus à `accessToken`, et le jeton d'accès pour Public Transportation Open Data Center à `secrets`.
+Dans le code de votre application, vous devez initialiser l'objet Map comme suit. `container` de l'objet `options` représente l'ID de l'élément HTML dans lequel Mini Tokyo 3D restituera la carte. Vous devez également spécifier le jeton d'accès Mapbox obtenu à l'étape ci-dessus à `accessToken`, et les jetons d'accès pour Public Transportation Open Data Center et Open Data Challenge for Public Transportation 2026 à `secrets`.
 
 ```js
 const options = {
   container: '<ID de l’élément conteneur>',
   accessToken: '<jeton d’accès Mapbox>',
   secrets: {
-    odpt: '<jeton d’accès pour Public Transportation Open Data Center>'
+    odpt: '<jeton d’accès pour Public Transportation Open Data Center>',
+    challenge: '<jeton d’accès pour Open Data Challenge for Public Transportation 2026>'
   }
 };
 const map = new Map(options);
