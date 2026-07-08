@@ -32,9 +32,13 @@ export function setLights(deck, ambient, directional) {
 }
 
 /**
- * Resets the map cursor to inherit from the container. Workaround for deck.gl #3522.
+ * Makes the deck.gl canvas follow the map cursor. Workaround for deck.gl #3522.
+ * Instead of returning a static 'inherit' as suggested in #3522, it reads the
+ * current cursor style from the deck canvas so that cursor shapes changed
+ * dynamically (e.g. while hovering over an object) are reflected; 'inherit'
+ * cannot pick up those dynamic changes.
  * @param {Deck} deck - deck.gl's Deck instance
  */
 export function resetCursor(deck) {
-    deck.setProps({getCursor: () => 'inherit'});
+    deck.setProps({getCursor: () => deck.getCanvas().style.cursor});
 }
