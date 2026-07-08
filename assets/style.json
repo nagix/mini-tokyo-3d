@@ -1382,131 +1382,6 @@
             }
         },
         {
-            "id": "building-underground",
-            "type": "fill",
-            "source": "composite",
-            "source-layer": "building",
-            "minzoom": 14.5,
-            "filter": [
-                "all",
-                [
-                    "match",
-                    [
-                        "get",
-                        "type"
-                    ],
-                    [
-                        "underground_mall",
-                        "subway"
-                    ],
-                    true,
-                    false
-                ],
-                [
-                    "==",
-                    [
-                        "get",
-                        "underground"
-                    ],
-                    "true"
-                ],
-                [
-                    "==",
-                    [
-                        "geometry-type"
-                    ],
-                    "Polygon"
-                ]
-            ],
-            "paint": {
-                "fill-color": "hsla(268, 67%, 67%, 0.25)",
-                "fill-outline-color": "hsl(35, 8%, 80%)",
-                "fill-opacity": [
-                    "interpolate",
-                    [
-                        "linear"
-                    ],
-                    [
-                        "zoom"
-                    ],
-                    14.5,
-                    0,
-                    15,
-                    1
-                ]
-            },
-            "metadata": {
-                "mt3d:opacity-effect": true,
-                "mt3d:opacity": 1,
-                "mt3d:opacity-route": 0.1,
-                "mt3d:opacity-underground": 0.0625,
-                "mt3d:opacity-underground-route": 0.025
-            }
-        },
-        {
-            "id": "building-underground-underground",
-            "type": "fill",
-            "source": "composite",
-            "source-layer": "building",
-            "minzoom": 14.5,
-            "filter": [
-                "all",
-                [
-                    "match",
-                    [
-                        "get",
-                        "type"
-                    ],
-                    [
-                        "underground_mall",
-                        "subway"
-                    ],
-                    true,
-                    false
-                ],
-                [
-                    "==",
-                    [
-                        "get",
-                        "underground"
-                    ],
-                    "true"
-                ],
-                [
-                    "==",
-                    [
-                        "geometry-type"
-                    ],
-                    "Polygon"
-                ]
-            ],
-            "paint": {
-                "fill-emissive-strength": 1,
-                "fill-color": "hsla(268, 67%, 67%, 0.5)",
-                "fill-outline-color": "hsl(35, 8%, 80%)",
-                "fill-opacity": [
-                    "interpolate",
-                    [
-                        "linear"
-                    ],
-                    [
-                        "zoom"
-                    ],
-                    14.5,
-                    0,
-                    15,
-                    0
-                ],
-                "fill-antialias": true
-            },
-            "metadata": {
-                "mt3d:opacity-effect": true,
-                "mt3d:opacity": 0,
-                "mt3d:opacity-underground": 1,
-                "mt3d:opacity-underground-route": 0.1
-            }
-        },
-        {
             "id": "tunnel-path-case",
             "type": "line",
             "source": "composite",
@@ -2376,7 +2251,7 @@
                 ]
             ],
             "layout": {
-               "line-cap": "round",
+                "line-cap": "round",
                 "line-join": "round"
             },
             "paint": {
@@ -2836,7 +2711,7 @@
                     "LineString"
                 ]
             ],
-           "paint": {
+            "paint": {
                 "line-emissive-strength": 0.1,
                 "line-width": [
                     "interpolate",
@@ -3148,7 +3023,7 @@
                 ]
             ],
             "layout": {
-               "line-join": "round"
+                "line-join": "round"
             },
             "paint": {
                 "line-emissive-strength": 0.05,
@@ -9163,16 +9038,37 @@
                 ]
             },
             "filter": [
-                "match",
+                "all",
                 [
-                    "get",
-                    "class"
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "colored_surface"
+                    ],
+                    true,
+                    false
                 ],
                 [
-                    "colored_surface"
-                ],
-                true,
-                false
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
             ],
             "type": "fill",
             "source": "composite",
@@ -9227,24 +9123,45 @@
                 "fill-elevation-reference": "hd-road-markup"
             },
             "filter": [
-                "match",
+                "all",
                 [
-                    "get",
-                    "class"
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "road_island",
+                        "road_island_green"
+                    ],
+                    true,
+                    false
                 ],
                 [
-                    "road_island",
-                    "road_island_green"
-                ],
-                true,
-                false
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
             ],
             "type": "fill",
             "source": "composite",
             "id": "hd-islands-area",
             "paint": {
                 "fill-emissive-strength": 0,
-                "fill-color": "hsl(12, 19%, 95%)",
+                "fill-color": "hsl(30, 53%, 96%)",
                 "fill-opacity": [
                     "interpolate",
                     [
@@ -9468,16 +9385,38 @@
                 ]
             },
             "filter": [
-                "match",
+                "all",
                 [
-                    "get",
-                    "class"
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "road",
+                        "bridge"
+                    ],
+                    true,
+                    false
                 ],
                 [
-                    "road"
-                ],
-                true,
-                false
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
             ],
             "type": "fill",
             "source": "composite",
@@ -9509,6 +9448,4168 @@
                 "mt3d:opacity-route": 0.1,
                 "mt3d:opacity-underground": 0.0625,
                 "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "fill-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "hatched_area"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "fill",
+            "source": "composite",
+            "id": "hd-hatched-area",
+            "paint": {
+                "fill-emissive-strength": 0.1,
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "fill-pattern": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "image",
+                        "hatched-pattern-1",
+                        {
+                            "params": {
+                                "color-1": [
+                                    "match",
+                                    [
+                                        "get",
+                                        "color"
+                                    ],
+                                    [
+                                        "yellow"
+                                    ],
+                                    "hsl(50, 75%, 75%)",
+                                    "hsl(0, 0%, 100%)"
+                                ]
+                            }
+                        }
+                    ],
+                    18,
+                    [
+                        "image",
+                        "hatched-pattern-2",
+                        {
+                            "params": {
+                                "color-1": [
+                                    "match",
+                                    [
+                                        "get",
+                                        "color"
+                                    ],
+                                    [
+                                        "yellow"
+                                    ],
+                                    "hsl(50, 75%, 75%)",
+                                    "hsl(0, 0%, 100%)"
+                                ]
+                            }
+                        }
+                    ],
+                    19,
+                    [
+                        "image",
+                        "hatched-pattern-3",
+                        {
+                            "params": {
+                                "color-1": [
+                                    "match",
+                                    [
+                                        "get",
+                                        "color"
+                                    ],
+                                    [
+                                        "yellow"
+                                    ],
+                                    "hsl(50, 75%, 75%)",
+                                    "hsl(0, 0%, 100%)"
+                                ]
+                            }
+                        }
+                    ],
+                    20,
+                    [
+                        "image",
+                        "hatched-pattern-4",
+                        {
+                            "params": {
+                                "color-1": [
+                                    "match",
+                                    [
+                                        "get",
+                                        "color"
+                                    ],
+                                    [
+                                        "yellow"
+                                    ],
+                                    "hsl(50, 75%, 75%)",
+                                    "hsl(0, 0%, 100%)"
+                                ]
+                            }
+                        }
+                    ],
+                    21,
+                    [
+                        "image",
+                        "hatched-pattern-5",
+                        {
+                            "params": {
+                                "color-1": [
+                                    "match",
+                                    [
+                                        "get",
+                                        "color"
+                                    ],
+                                    [
+                                        "yellow"
+                                    ],
+                                    "hsl(50, 75%, 75%)",
+                                    "hsl(0, 0%, 100%)"
+                                ]
+                            }
+                        }
+                    ]
+                ],
+                "fill-antialias": false
+            },
+            "source-layer": "hd_road_polygon",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-cap": "round",
+                "line-join": "round",
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    "lanes"
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "solid",
+                        "short_dash_solid",
+                        "dashed_solid",
+                        "solid_half_arrow",
+                        "half_arrow_solid",
+                        "arrow_solid"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-solid",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "color"
+                    ],
+                    [
+                        "yellow"
+                    ],
+                    "hsl(50, 75%, 75%)",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    2,
+                    19,
+                    4,
+                    22,
+                    12
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-cap": "round",
+                "line-join": "round",
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    "lanes"
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "hatched_line"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-hatched",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "color"
+                    ],
+                    [
+                        "yellow"
+                    ],
+                    "hsl(50, 75%, 75%)",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    2,
+                    19,
+                    4,
+                    22,
+                    12
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    "lanes"
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "double"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-double",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "color"
+                    ],
+                    [
+                        "yellow"
+                    ],
+                    "hsl(50, 75%, 75%)",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    2,
+                    19,
+                    4,
+                    22,
+                    12
+                ],
+                "line-gap-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    1,
+                    19,
+                    2,
+                    22,
+                    6
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-elevation-reference": "hd-road-markup",
+                "line-cap": "round",
+                "line-join": "round"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    "lanes"
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "double_dashed_point"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-double-dashed-point",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "color"
+                    ],
+                    [
+                        "yellow"
+                    ],
+                    "hsl(50, 75%, 75%)",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    1.5,
+                    19,
+                    3,
+                    22,
+                    9
+                ],
+                "line-dasharray": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "literal",
+                        [
+                            1.19,
+                            9.5,
+                            1.19,
+                            9.5,
+                            1.19,
+                            9.5,
+                            1.19,
+                            35.62
+                        ]
+                    ],
+                    16,
+                    [
+                        "literal",
+                        [
+                            1.19,
+                            9.5,
+                            1.19,
+                            9.5,
+                            1.19,
+                            9.5,
+                            1.19,
+                            35.62
+                        ]
+                    ],
+                    17,
+                    [
+                        "literal",
+                        [
+                            0.95,
+                            7.6,
+                            0.95,
+                            7.6,
+                            0.95,
+                            7.6,
+                            0.95,
+                            28.49
+                        ]
+                    ],
+                    18,
+                    [
+                        "literal",
+                        [
+                            1,
+                            8,
+                            1,
+                            8,
+                            1,
+                            8,
+                            1,
+                            30
+                        ]
+                    ],
+                    19,
+                    [
+                        "literal",
+                        [
+                            1,
+                            8,
+                            1,
+                            8,
+                            1,
+                            8,
+                            1,
+                            30
+                        ]
+                    ],
+                    20,
+                    [
+                        "literal",
+                        [
+                            1.41,
+                            11.26,
+                            1.41,
+                            11.26,
+                            1.41,
+                            11.26,
+                            1.41,
+                            42.21
+                        ]
+                    ],
+                    21,
+                    [
+                        "literal",
+                        [
+                            1.95,
+                            15.59,
+                            1.95,
+                            15.59,
+                            1.95,
+                            15.59,
+                            1.95,
+                            58.47
+                        ]
+                    ],
+                    22,
+                    [
+                        "literal",
+                        [
+                            2.67,
+                            21.33,
+                            2.67,
+                            21.33,
+                            2.67,
+                            21.33,
+                            2.67,
+                            80
+                        ]
+                    ]
+                ],
+                "line-gap-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    1,
+                    19,
+                    2,
+                    22,
+                    6
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    "lanes"
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "dashed",
+                        "long_dashed",
+                        "arrow_dashed",
+                        "double_short_dash"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-dashed",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "color"
+                    ],
+                    [
+                        "yellow"
+                    ],
+                    "hsl(50, 75%, 75%)",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    1.5,
+                    19,
+                    3,
+                    22,
+                    9
+                ],
+                "line-dasharray": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "literal",
+                        [
+                            15.84,
+                            15.84
+                        ]
+                    ],
+                    16,
+                    [
+                        "literal",
+                        [
+                            15.84,
+                            15.84
+                        ]
+                    ],
+                    17,
+                    [
+                        "literal",
+                        [
+                            12.67,
+                            12.67
+                        ]
+                    ],
+                    18,
+                    [
+                        "literal",
+                        [
+                            13.34,
+                            13.34
+                        ]
+                    ],
+                    19,
+                    [
+                        "literal",
+                        [
+                            13.34,
+                            13.34
+                        ]
+                    ],
+                    20,
+                    [
+                        "literal",
+                        [
+                            18.77,
+                            18.77
+                        ]
+                    ],
+                    21,
+                    [
+                        "literal",
+                        [
+                            26,
+                            26
+                        ]
+                    ],
+                    22,
+                    [
+                        "literal",
+                        [
+                            35.57,
+                            35.57
+                        ]
+                    ]
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-elevation-reference": "hd-road-markup",
+                "line-cap": "round"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    "lanes"
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "dashed_point"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-dashed-point",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "color"
+                    ],
+                    [
+                        "yellow"
+                    ],
+                    "hsl(50, 75%, 75%)",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    1.5,
+                    19,
+                    3,
+                    22,
+                    9
+                ],
+                "line-dasharray": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "literal",
+                        [
+                            1.19,
+                            9.5,
+                            1.19,
+                            9.5,
+                            1.19,
+                            9.5,
+                            1.19,
+                            35.62
+                        ]
+                    ],
+                    16,
+                    [
+                        "literal",
+                        [
+                            1.19,
+                            9.5,
+                            1.19,
+                            9.5,
+                            1.19,
+                            9.5,
+                            1.19,
+                            35.62
+                        ]
+                    ],
+                    17,
+                    [
+                        "literal",
+                        [
+                            0.95,
+                            7.6,
+                            0.95,
+                            7.6,
+                            0.95,
+                            7.6,
+                            0.95,
+                            28.49
+                        ]
+                    ],
+                    18,
+                    [
+                        "literal",
+                        [
+                            1,
+                            8,
+                            1,
+                            8,
+                            1,
+                            8,
+                            1,
+                            30
+                        ]
+                    ],
+                    19,
+                    [
+                        "literal",
+                        [
+                            1,
+                            8,
+                            1,
+                            8,
+                            1,
+                            8,
+                            1,
+                            30
+                        ]
+                    ],
+                    20,
+                    [
+                        "literal",
+                        [
+                            1.41,
+                            11.26,
+                            1.41,
+                            11.26,
+                            1.41,
+                            11.26,
+                            1.41,
+                            42.21
+                        ]
+                    ],
+                    21,
+                    [
+                        "literal",
+                        [
+                            1.95,
+                            15.59,
+                            1.95,
+                            15.59,
+                            1.95,
+                            15.59,
+                            1.95,
+                            58.47
+                        ]
+                    ],
+                    22,
+                    [
+                        "literal",
+                        [
+                            2.67,
+                            21.33,
+                            2.67,
+                            21.33,
+                            2.67,
+                            21.33,
+                            2.67,
+                            80
+                        ]
+                    ]
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    "lanes"
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "short_dash"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-short-dashed",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "color"
+                    ],
+                    [
+                        "yellow"
+                    ],
+                    "hsl(50, 75%, 75%)",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    1.5,
+                    19,
+                    3,
+                    22,
+                    9
+                ],
+                "line-dasharray": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "literal",
+                        [
+                            5.94,
+                            5.94
+                        ]
+                    ],
+                    16,
+                    [
+                        "literal",
+                        [
+                            5.94,
+                            5.94
+                        ]
+                    ],
+                    17,
+                    [
+                        "literal",
+                        [
+                            4.75,
+                            4.75
+                        ]
+                    ],
+                    18,
+                    [
+                        "literal",
+                        [
+                            5,
+                            5
+                        ]
+                    ],
+                    19,
+                    [
+                        "literal",
+                        [
+                            5,
+                            5
+                        ]
+                    ],
+                    20,
+                    [
+                        "literal",
+                        [
+                            7.04,
+                            7.04
+                        ]
+                    ],
+                    21,
+                    [
+                        "literal",
+                        [
+                            9.74,
+                            9.74
+                        ]
+                    ],
+                    22,
+                    [
+                        "literal",
+                        [
+                            13.33,
+                            13.33
+                        ]
+                    ]
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    "lanes"
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "double_short_dash_yellow",
+                        "dashed_solid_yellow",
+                        "double_short_dash",
+                        "dashed_solid",
+                        "short_dash_solid"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-double-short-dashed",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "color"
+                    ],
+                    [
+                        "yellow"
+                    ],
+                    "hsl(50, 75%, 75%)",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-gap-width": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    [
+                        "match",
+                        [
+                            "get",
+                            "type"
+                        ],
+                        [
+                            "double_short_dash_yellow",
+                            "double_short_dash",
+                            "short_dash_solid"
+                        ],
+                        1,
+                        0
+                    ],
+                    18,
+                    [
+                        "match",
+                        [
+                            "get",
+                            "type"
+                        ],
+                        [
+                            "double_short_dash_yellow",
+                            "double_short_dash",
+                            "short_dash_solid"
+                        ],
+                        3,
+                        0
+                    ],
+                    19,
+                    [
+                        "match",
+                        [
+                            "get",
+                            "type"
+                        ],
+                        [
+                            "double_short_dash_yellow",
+                            "double_short_dash",
+                            "short_dash_solid"
+                        ],
+                        5,
+                        0
+                    ],
+                    22,
+                    [
+                        "match",
+                        [
+                            "get",
+                            "type"
+                        ],
+                        [
+                            "double_short_dash_yellow",
+                            "double_short_dash",
+                            "short_dash_solid"
+                        ],
+                        20,
+                        0
+                    ]
+                ],
+                "line-dasharray": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "literal",
+                        [
+                            2.38,
+                            2.38
+                        ]
+                    ],
+                    16,
+                    [
+                        "literal",
+                        [
+                            2.38,
+                            2.38
+                        ]
+                    ],
+                    17,
+                    [
+                        "literal",
+                        [
+                            1.9,
+                            1.9
+                        ]
+                    ],
+                    18,
+                    [
+                        "literal",
+                        [
+                            2,
+                            2
+                        ]
+                    ],
+                    19,
+                    [
+                        "literal",
+                        [
+                            2,
+                            2
+                        ]
+                    ],
+                    20,
+                    [
+                        "literal",
+                        [
+                            2.45,
+                            2.45
+                        ]
+                    ],
+                    21,
+                    [
+                        "literal",
+                        [
+                            3.1,
+                            3.1
+                        ]
+                    ],
+                    22,
+                    [
+                        "literal",
+                        [
+                            4,
+                            4
+                        ]
+                    ]
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    1.5,
+                    19,
+                    3,
+                    22,
+                    12
+                ],
+                "line-offset": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    [
+                        "match",
+                        [
+                            "get",
+                            "type"
+                        ],
+                        [
+                            "dashed_solid",
+                            "dashed_solid_yellow"
+                        ],
+                        1,
+                        0
+                    ],
+                    18,
+                    [
+                        "match",
+                        [
+                            "get",
+                            "type"
+                        ],
+                        [
+                            "dashed_solid",
+                            "dashed_solid_yellow"
+                        ],
+                        -3,
+                        0
+                    ],
+                    19,
+                    [
+                        "match",
+                        [
+                            "get",
+                            "type"
+                        ],
+                        [
+                            "dashed_solid",
+                            "dashed_solid_yellow"
+                        ],
+                        -5,
+                        0
+                    ],
+                    22,
+                    [
+                        "match",
+                        [
+                            "get",
+                            "type"
+                        ],
+                        [
+                            "dashed_solid",
+                            "dashed_solid_yellow"
+                        ],
+                        -20,
+                        0
+                    ]
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    "lanes"
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "arrowed_line"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-arrowed-line-jp",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-pattern": "arrow_solid_short_jp",
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    16,
+                    0,
+                    18,
+                    5,
+                    19,
+                    10,
+                    22,
+                    40
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    "lanes"
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "arrowed_line_long"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-arrowed-line-long-jp",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-pattern": "arrow_solid_long_jp",
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    16,
+                    0,
+                    18,
+                    5,
+                    19,
+                    10,
+                    22,
+                    40
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    "lanes"
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "solid_half_arrow",
+                        "arrow_solid",
+                        "arrow_dashed"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-half-arrow-solid-left-jp",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-pattern": [
+                    "image",
+                    "half_arrow_solid_left_jp",
+                    {
+                        "params": {
+                            "color-1": "hsl(0, 0%, 100%)"
+                        }
+                    }
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    1,
+                    19,
+                    4,
+                    22,
+                    22
+                ],
+                "line-offset": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    2,
+                    19,
+                    3.5,
+                    22,
+                    11.5
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "==",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    "lanes"
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "arrow_solid",
+                        "arrow_dashed"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-half-arrow-solid-right-jp",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-pattern": [
+                    "image",
+                    "half_arrow_solid_right_jp",
+                    {
+                        "params": {
+                            "color-1": "hsl(0, 0%, 100%)"
+                        }
+                    }
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    1,
+                    19,
+                    4,
+                    22,
+                    22
+                ],
+                "line-offset": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    18,
+                    -2,
+                    19,
+                    -3.5,
+                    22,
+                    -11.5
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-join": "round",
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "crossing"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "solid"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-solid-crossings",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "solid_crossing_yellow"
+                    ],
+                    "hsl(50, 75%, 75%)",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    16,
+                    0,
+                    18,
+                    2,
+                    19,
+                    4,
+                    22,
+                    20
+                ],
+                "line-gap-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    16,
+                    0,
+                    18,
+                    8,
+                    19,
+                    16,
+                    22,
+                    120
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-join": "round",
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "crossing"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "dashed"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-dashed-crossing",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": "hsl(0, 0%, 100%)",
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    16,
+                    [
+                        "coalesce",
+                        [
+                            "get",
+                            ""
+                        ],
+                        0
+                    ],
+                    18,
+                    2,
+                    19,
+                    4,
+                    22,
+                    20
+                ],
+                "line-dasharray": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "literal",
+                        [
+                            1,
+                            0.5
+                        ]
+                    ],
+                    17,
+                    [
+                        "literal",
+                        [
+                            1.25,
+                            0.62
+                        ]
+                    ],
+                    18,
+                    [
+                        "literal",
+                        [
+                            1,
+                            0.5
+                        ]
+                    ],
+                    19,
+                    [
+                        "literal",
+                        [
+                            1,
+                            0.5
+                        ]
+                    ],
+                    20,
+                    [
+                        "literal",
+                        [
+                            1.09,
+                            0.54
+                        ]
+                    ],
+                    21,
+                    [
+                        "literal",
+                        [
+                            1.29,
+                            0.64
+                        ]
+                    ],
+                    22,
+                    [
+                        "literal",
+                        [
+                            1.6,
+                            0.8
+                        ]
+                    ]
+                ],
+                "line-gap-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    0,
+                    1,
+                    16,
+                    1,
+                    18,
+                    10,
+                    22,
+                    160
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "crossing"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "zebra"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-zebra-crossings",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "zebra_crossing_yellow"
+                    ],
+                    "hsl(50, 75%, 75%)",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        2
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    16,
+                    0,
+                    18,
+                    15,
+                    19,
+                    30,
+                    22,
+                    230
+                ],
+                "line-dasharray": [
+                    0.12,
+                    0.15
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-join": "round",
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "stopline"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "solid"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-stopline",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": "hsl(0, 0%, 100%)",
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    16,
+                    [
+                        "coalesce",
+                        [
+                            "get",
+                            ""
+                        ],
+                        0
+                    ],
+                    18,
+                    4,
+                    19,
+                    6,
+                    22,
+                    18
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-join": "round",
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "stopline"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "double"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-double-stopline",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": "hsl(0, 0%, 100%)",
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    16,
+                    0,
+                    18,
+                    4,
+                    19,
+                    6,
+                    22,
+                    18
+                ],
+                "line-gap-width": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    16,
+                    0,
+                    18,
+                    2,
+                    19,
+                    3,
+                    22,
+                    9
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-join": "round",
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "stopline"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "dashed"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-dashed-stopline",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": "hsl(0, 0%, 100%)",
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    16,
+                    0,
+                    18,
+                    4,
+                    19,
+                    8,
+                    22,
+                    40
+                ],
+                "line-dasharray": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    [
+                        "literal",
+                        [
+                            1,
+                            0.5
+                        ]
+                    ],
+                    17,
+                    [
+                        "literal",
+                        [
+                            1.25,
+                            0.62
+                        ]
+                    ],
+                    18,
+                    [
+                        "literal",
+                        [
+                            1,
+                            0.5
+                        ]
+                    ],
+                    19,
+                    [
+                        "literal",
+                        [
+                            1,
+                            0.5
+                        ]
+                    ],
+                    20,
+                    [
+                        "literal",
+                        [
+                            1.09,
+                            0.54
+                        ]
+                    ],
+                    21,
+                    [
+                        "literal",
+                        [
+                            1.29,
+                            0.64
+                        ]
+                    ],
+                    22,
+                    [
+                        "literal",
+                        [
+                            1.6,
+                            0.8
+                        ]
+                    ]
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-join": "round",
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "stopline"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "triangular"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-triangular-stopline",
+            "paint": {
+                "line-pattern": [
+                    "image",
+                    "triangular-pattern",
+                    "triangular-pattern-dark"
+                ],
+                "line-emissive-strength": 0.1,
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        2
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    16,
+                    0,
+                    18,
+                    6,
+                    19,
+                    10,
+                    22,
+                    40
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "line-join": "round",
+                "line-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "stopline"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "line_type"
+                    ],
+                    [
+                        "cycle"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "line",
+            "source": "composite",
+            "id": "hd-cycle-stopline",
+            "paint": {
+                "line-emissive-strength": 0.1,
+                "line-color": "hsl(0, 0%, 100%)",
+                "line-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    1
+                ],
+                "line-width": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    16,
+                    0,
+                    18,
+                    2,
+                    19,
+                    4,
+                    22,
+                    12
+                ]
+            },
+            "source-layer": "hd_road_line",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 17,
+            "layout": {
+                "symbol-elevation-reference": "hd-road-markup",
+                "icon-rotate": [
+                    "to-number",
+                    [
+                        "get",
+                        "angle"
+                    ]
+                ],
+                "icon-padding": 0,
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.2
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    17,
+                    0.1,
+                    18,
+                    0.15,
+                    22,
+                    1
+                ],
+                "icon-rotation-alignment": "map",
+                "icon-allow-overlap": true,
+                "icon-image": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    "right",
+                    [
+                        "image",
+                        "right",
+                        "right-dark"
+                    ],
+                    "left",
+                    [
+                        "image",
+                        "left",
+                        "left-dark"
+                    ],
+                    "straight",
+                    [
+                        "image",
+                        "straight",
+                        "straight-dark"
+                    ],
+                    "straight_right",
+                    [
+                        "image",
+                        "straight_right",
+                        "straight_right-dark"
+                    ],
+                    "straight_left",
+                    [
+                        "image",
+                        "straight_left",
+                        "straight_left-dark"
+                    ],
+                    "merge_to_right",
+                    [
+                        "image",
+                        "merge_to_right",
+                        "merge_to_right-dark"
+                    ],
+                    "merge_to_left",
+                    [
+                        "image",
+                        "merge_to_left",
+                        "merge_to_left-dark"
+                    ],
+                    "slight_right",
+                    [
+                        "image",
+                        "slight_right",
+                        "slight_right-dark"
+                    ],
+                    "slight_left",
+                    [
+                        "image",
+                        "slight_left",
+                        "slight_left-dark"
+                    ],
+                    "left_right",
+                    [
+                        "image",
+                        "left_and_right",
+                        "left_and_right-dark"
+                    ],
+                    [
+                        "u_turn",
+                        "road_arrow_u_turn"
+                    ],
+                    [
+                        "image",
+                        "road_arrow_u_turn",
+                        "road_arrow_u_turn-dark"
+                    ],
+                    [
+                        "road_arrow_u_turn_right"
+                    ],
+                    [
+                        "image",
+                        "road_arrow_u_turn_right",
+                        "road_arrow_u_turn_right-dark"
+                    ],
+                    "straight_left_right",
+                    [
+                        "image",
+                        "straight_left_right",
+                        "straight_left_right-dark"
+                    ],
+                    "car_pool_road_marking",
+                    [
+                        "image",
+                        "carpool_road_marking",
+                        "carpool_road_marking-dark"
+                    ],
+                    "slight_left_right",
+                    [
+                        "image",
+                        "slight_left_right",
+                        "slight_left_right-dark"
+                    ],
+                    "slight_left_left",
+                    [
+                        "image",
+                        "slight_left_left",
+                        "slight_left_left-dark"
+                    ],
+                    "left_slight_left_straight",
+                    [
+                        "image",
+                        "left_slight_left_straight",
+                        "left_slight_left_straight-dark"
+                    ],
+                    "right_slight_left_straight",
+                    [
+                        "image",
+                        "right_slight_left_straight",
+                        "right_slight_left_straight-dark"
+                    ],
+                    "slight_right_right",
+                    [
+                        "image",
+                        "slight_right_right",
+                        "slight_right_right-dark"
+                    ],
+                    "slight_right_left",
+                    [
+                        "image",
+                        "slight_right_left",
+                        "slight_right_left-dark"
+                    ],
+                    "sharp_right_right",
+                    [
+                        "image",
+                        "sharp_right_right",
+                        "sharp_right_right-dark"
+                    ],
+                    ""
+                ]
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "road_marking"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "left",
+                        "right",
+                        "straight",
+                        "straight_left",
+                        "straight_right",
+                        "left_right",
+                        "straight_left_right",
+                        "slight_left",
+                        "slight_right",
+                        "merge_to_left",
+                        "merge_to_right",
+                        "u_turn",
+                        "road_arrow_u_turn",
+                        "road_arrow_u_turn_right",
+                        "car_pool_road_marking",
+                        "slight_left_right",
+                        "slight_left_left",
+                        "left_slight_left_straight",
+                        "right_slight_left_straight",
+                        "slight_right_right",
+                        "slight_right_left",
+                        "sharp_right_right"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "symbol",
+            "source": "composite",
+            "id": "hd-rm-turnlane-arrow",
+            "paint": {
+                "icon-emissive-strength": 0.1,
+                "icon-image-cross-fade": 0
+            },
+            "source-layer": "hd_road_point",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 18,
+            "layout": {
+                "symbol-elevation-reference": "hd-road-markup",
+                "icon-rotate": [
+                    "to-number",
+                    [
+                        "get",
+                        "angle"
+                    ]
+                ],
+                "icon-padding": 0,
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    18,
+                    0.1,
+                    22,
+                    1
+                ],
+                "icon-rotation-alignment": "map",
+                "icon-allow-overlap": true,
+                "icon-image": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    "cycle_straight_left",
+                    [
+                        "image",
+                        "cycle_straight_left",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    "cycle_left",
+                    [
+                        "image",
+                        "cycle_left",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    "cycle_straight",
+                    [
+                        "image",
+                        "cycle_straight",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    "cycle_left_right",
+                    [
+                        "image",
+                        "cycle_left_right",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    "cycle_right",
+                    [
+                        "image",
+                        "cycle_right",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    "cycle_straight_right",
+                    [
+                        "image",
+                        "cycle_straight_right",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    ""
+                ]
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "road_marking"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "cycle_straight_left",
+                        "cycle_left",
+                        "cycle_straight",
+                        "cycle_left_right",
+                        "cycle_right",
+                        "cycle_straight_right"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "symbol",
+            "source": "composite",
+            "id": "hd-rm-cycle-arrow",
+            "paint": {
+                "icon-emissive-strength": 0.1,
+                "icon-image-cross-fade": 0
+            },
+            "source-layer": "hd_road_point",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 18,
+            "layout": {
+                "symbol-elevation-reference": "hd-road-markup",
+                "icon-rotate": [
+                    "to-number",
+                    [
+                        "get",
+                        "angle"
+                    ]
+                ],
+                "icon-padding": 0,
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    18,
+                    0.1,
+                    22,
+                    1
+                ],
+                "icon-rotation-alignment": "map",
+                "icon-allow-overlap": true,
+                "icon-image": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    "bicycle_lane_road_marking",
+                    [
+                        "image",
+                        "bicycle_lane_road_marking",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "road_word_stop"
+                    ],
+                    [
+                        "image",
+                        "road_word_stop",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "road_word_taxi"
+                    ],
+                    [
+                        "image",
+                        "road_word_taxi",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "bus_lane_road_marking"
+                    ],
+                    [
+                        "image",
+                        "road_word_bus",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "bus_lane_road_marking_long"
+                    ],
+                    [
+                        "image",
+                        "bus_lane_road_marking_long",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    ""
+                ]
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "country"
+                    ],
+                    [
+                        "US",
+                        "JP"
+                    ],
+                    false,
+                    true
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "road_marking"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "bicycle_lane_road_marking",
+                        "bus_lane_road_marking",
+                        "road_word_taxi",
+                        "road_word_stop",
+                        "bus_lane_road_marking_long"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "symbol",
+            "source": "composite",
+            "id": "hd-rm-others-generic",
+            "paint": {
+                "icon-emissive-strength": 0.1,
+                "icon-image-cross-fade": 0
+            },
+            "source-layer": "hd_road_point",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 18,
+            "layout": {
+                "symbol-elevation-reference": "hd-road-markup",
+                "icon-rotate": [
+                    "to-number",
+                    [
+                        "get",
+                        "angle"
+                    ]
+                ],
+                "icon-padding": 0,
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    18,
+                    0.1,
+                    22,
+                    1
+                ],
+                "icon-rotation-alignment": "map",
+                "icon-allow-overlap": true,
+                "icon-image": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    "bicycle_lane_road_marking",
+                    [
+                        "image",
+                        "bicycle_lane_road_marking_us",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "road_word_stop"
+                    ],
+                    [
+                        "image",
+                        "road_word_stop_us",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "road_bump"
+                    ],
+                    [
+                        "image",
+                        "road_word_bump_us",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "road_word_express"
+                    ],
+                    [
+                        "image",
+                        "road_word_express_us",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "road_word_taxi"
+                    ],
+                    [
+                        "image",
+                        "road_word_taxi_us",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "bus_lane_road_marking"
+                    ],
+                    [
+                        "image",
+                        "road_word_bus_us",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "bus_lane_road_marking_long"
+                    ],
+                    [
+                        "image",
+                        "bus_lane_road_marking_long_us",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    ""
+                ]
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "country"
+                    ],
+                    [
+                        "US"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "road_marking"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "bicycle_lane_road_marking",
+                        "bus_lane_road_marking",
+                        "road_word_taxi",
+                        "road_word_stop",
+                        "bus_lane_road_marking_long",
+                        "road_word_express",
+                        "road_bump"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "symbol",
+            "source": "composite",
+            "id": "hd-rm-others-us",
+            "paint": {
+                "icon-emissive-strength": 0.1,
+                "icon-image-cross-fade": 0
+            },
+            "source-layer": "hd_road_point",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 18,
+            "layout": {
+                "symbol-elevation-reference": "hd-road-markup",
+                "icon-rotate": [
+                    "to-number",
+                    [
+                        "get",
+                        "angle"
+                    ]
+                ],
+                "icon-padding": 0,
+                "icon-size": [
+                    "interpolate",
+                    [
+                        "exponential",
+                        1.5
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    18,
+                    0.1,
+                    22,
+                    1
+                ],
+                "icon-rotation-alignment": "map",
+                "icon-allow-overlap": true,
+                "icon-image": [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    "bicycle_lane_road_marking",
+                    [
+                        "image",
+                        "bicycle_lane_road_marking_jp",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    "bicycle_road_marking",
+                    [
+                        "image",
+                        "bicycle_road_marking_jp",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "cycle_straight_triple"
+                    ],
+                    [
+                        "image",
+                        "cycle_straight_triple_jp",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "kanji_road_marking"
+                    ],
+                    [
+                        "image",
+                        "kanji_road_marking_jp",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "bus_lane_road_marking"
+                    ],
+                    [
+                        "image",
+                        "bus_lane_road_marking_jp",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    [
+                        "bus_lane_road_marking_long"
+                    ],
+                    [
+                        "image",
+                        "bus_lane_road_marking_long_jp",
+                        {
+                            "params": {
+                                "color-1": "hsl(0, 0%, 100%)"
+                            }
+                        }
+                    ],
+                    ""
+                ]
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "country"
+                    ],
+                    [
+                        "JP"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "road_marking"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "bicycle_lane_road_marking",
+                        "bicycle_road_marking",
+                        "cycle_straight_triple",
+                        "kanji_road_marking",
+                        "bus_lane_road_marking_long",
+                        "bus_lane_road_marking"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "symbol",
+            "source": "composite",
+            "id": "hd-rm-others-jp",
+            "paint": {
+                "icon-emissive-strength": 0.1,
+                "icon-image-cross-fade": 0
+            },
+            "source-layer": "hd_road_point",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "id": "building-underground",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "building",
+            "minzoom": 14.5,
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "underground_mall",
+                        "subway"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "==",
+                    [
+                        "get",
+                        "underground"
+                    ],
+                    "true"
+                ],
+                [
+                    "==",
+                    [
+                        "geometry-type"
+                    ],
+                    "Polygon"
+                ]
+            ],
+            "paint": {
+                "fill-color": "hsla(268, 67%, 67%, 0.2)",
+                "fill-outline-color": "hsl(35, 8%, 80%)",
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    14.5,
+                    0,
+                    15,
+                    1
+                ]
+            },
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "id": "building-underground-underground",
+            "type": "fill",
+            "source": "composite",
+            "source-layer": "building",
+            "minzoom": 14.5,
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "type"
+                    ],
+                    [
+                        "underground_mall",
+                        "subway"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "==",
+                    [
+                        "get",
+                        "underground"
+                    ],
+                    "true"
+                ],
+                [
+                    "==",
+                    [
+                        "geometry-type"
+                    ],
+                    "Polygon"
+                ]
+            ],
+            "paint": {
+                "fill-emissive-strength": 1,
+                "fill-color": "hsla(268, 67%, 67%, 0.5)",
+                "fill-outline-color": "hsl(35, 8%, 80%)",
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    14.5,
+                    0,
+                    15,
+                    0
+                ],
+                "fill-antialias": true
+            },
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 0,
+                "mt3d:opacity-underground": 1,
+                "mt3d:opacity-underground-route": 0.1
             }
         },
         {
@@ -9947,6 +14048,153 @@
         },
         {
             "minzoom": 14,
+            "layout":
+            {
+                "fill-elevation-reference": "hd-road-markup",
+                "fill-sort-key": [
+                    "get",
+                    "z_index"
+                ]
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "colored_surface"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
+                ]
+            ],
+            "type": "fill",
+            "source": "composite",
+            "id": "hd-elevated-сolored-area",
+            "paint": {
+                "fill-emissive-strength": 0.1,
+                "fill-color": [
+                    "match",
+                    [
+                        "get",
+                        "color"
+                    ],
+                    "red",
+                    "hsl(0, 80%, 92%)",
+                    "blue",
+                    "hsl(210, 80%, 92%)",
+                    "green",
+                    "hsl(140, 40%, 92%)",
+                    "yellow",
+                    "hsl(50, 75%, 75%)",
+                    "white",
+                    "hsl(0, 0%, 100%)",
+                    "hsla(0, 0%, 100%, 0)"
+                ],
+                "fill-antialias": true,
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    14,
+                    0,
+                    15,
+                    0.85
+                ]
+            },
+            "source-layer": "hd_road_polygon",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 15,
+            "layout": {
+                "fill-elevation-reference": "hd-road-markup"
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "road_island",
+                        "road_island_green"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
+                ]
+            ],
+            "type": "fill",
+            "source": "composite",
+            "id": "hd-elevated-islands-area",
+            "paint": {
+                "fill-emissive-strength": 0,
+                "fill-color": "hsl(30, 53%, 70%)",
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    15,
+                    0,
+                    15.5,
+                    0.85
+                ],
+                "fill-antialias": false
+            },
+            "source-layer": "hd_road_polygon",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 14,
             "layout": {
                 "fill-elevation-reference": "hd-road-base",
                 "fill-construct-bridge-guard-rail": [
@@ -9960,20 +14208,36 @@
                 ]
             },
             "filter": [
-                "match",
+                "all",
                 [
-                    "get",
-                    "class"
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "road",
+                        "bridge"
+                    ],
+                    true,
+                    false
                 ],
                 [
-                    "bridge"
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
                 ],
-                true,
-                false
+                [
+                    "has",
+                    "3d_elevation_id"
+                ]
             ],
             "type": "fill",
             "source": "composite",
-            "id": "hd-bridge-area",
+            "id": "hd-elevated-area",
             "paint": {
                 "fill-emissive-strength": 0.1,
                 "fill-color": "hsl(214, 31%, 92%)",
@@ -10009,20 +14273,35 @@
                 "fill-elevation-reference": "hd-road-markup"
             },
             "filter": [
-                "match",
+                "all",
                 [
-                    "get",
-                    "class"
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "hatched_area"
+                    ],
+                    true,
+                    false
                 ],
                 [
-                    "hatched_area"
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
                 ],
-                true,
-                false
+                [
+                    "has",
+                    "3d_elevation_id"
+                ]
             ],
             "type": "fill",
             "source": "composite",
-            "id": "hd-hatched-area",
+            "id": "hd-elevated-hatched-area",
             "paint": {
                 "fill-emissive-strength": 0.1,
                 "fill-opacity": [
@@ -10036,7 +14315,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "fill-pattern": [
                     "step",
@@ -10192,11 +14471,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-solid",
+            "id": "hd-elevated-solid",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": [
@@ -10222,7 +14513,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -10280,11 +14571,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-hatched",
+            "id": "hd-elevated-hatched",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": [
@@ -10310,7 +14613,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -10366,11 +14669,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-double",
+            "id": "hd-elevated-double",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": [
@@ -10396,7 +14711,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -10472,11 +14787,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-double-dashed-point",
+            "id": "hd-elevated-double-dashed-point",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": [
@@ -10502,7 +14829,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -10696,11 +15023,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-dashed",
+            "id": "hd-elevated-dashed",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": [
@@ -10726,7 +15065,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -10852,11 +15191,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-dashed-point",
+            "id": "hd-elevated-dashed-point",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": [
@@ -10882,7 +15233,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -11055,11 +15406,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-short-dashed",
+            "id": "hd-elevated-short-dashed",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": [
@@ -11085,7 +15448,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -11214,11 +15577,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-double-short-dashed",
+            "id": "hd-elevated-double-short-dashed",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": [
@@ -11244,7 +15619,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-gap-width": [
                     "interpolate",
@@ -11503,11 +15878,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-arrowed-line-jp",
+            "id": "hd-elevated-arrowed-line-jp",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-opacity": [
@@ -11521,7 +15908,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-pattern": "arrow_solid_short_jp",
                 "line-width": [
@@ -11578,11 +15965,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-arrowed-line-long-jp",
+            "id": "hd-elevated-arrowed-line-long-jp",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-opacity": [
@@ -11596,7 +15995,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-pattern": "arrow_solid_long_jp",
                 "line-width": [
@@ -11655,11 +16054,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-half-arrow-solid-left-jp",
+            "id": "hd-elevated-half-arrow-solid-left-jp",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-opacity": [
@@ -11673,7 +16084,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-pattern": [
                     "image",
@@ -11757,11 +16168,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-half-arrow-solid-right-jp",
+            "id": "hd-elevated-half-arrow-solid-right-jp",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-opacity": [
@@ -11775,7 +16198,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-pattern": [
                     "image",
@@ -11863,11 +16286,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-solid-crossings",
+            "id": "hd-elevated-solid-crossings",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": [
@@ -11893,7 +16328,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -11972,11 +16407,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-dashed-crossing",
+            "id": "hd-elevated-dashed-crossing",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": "hsl(0, 0%, 100%)",
@@ -11991,7 +16438,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -12137,11 +16584,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-zebra-crossings",
+            "id": "hd-elevated-zebra-crossings",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": [
@@ -12167,7 +16626,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -12232,11 +16691,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-stopline",
+            "id": "hd-elevated-stopline",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": "hsl(0, 0%, 100%)",
@@ -12251,7 +16722,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -12319,11 +16790,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-double-stopline",
+            "id": "hd-elevated-double-stopline",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": "hsl(0, 0%, 100%)",
@@ -12338,7 +16821,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -12416,11 +16899,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-dashed-stopline",
+            "id": "hd-elevated-dashed-stopline",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": "hsl(0, 0%, 100%)",
@@ -12435,7 +16930,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -12557,11 +17052,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-triangular-stopline",
+            "id": "hd-elevated-triangular-stopline",
             "paint": {
                 "line-pattern": [
                     "image",
@@ -12580,7 +17087,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -12641,11 +17148,23 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "line",
             "source": "composite",
-            "id": "hd-cycle-stopline",
+            "id": "hd-elevated-cycle-stopline",
             "paint": {
                 "line-emissive-strength": 0.1,
                 "line-color": "hsl(0, 0%, 100%)",
@@ -12660,7 +17179,7 @@
                     15,
                     0,
                     15.5,
-                    1
+                    0.85
                 ],
                 "line-width": [
                     "interpolate",
@@ -12906,14 +17425,27 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "symbol",
             "source": "composite",
-            "id": "hd-rm-turnlane-arrow",
+            "id": "hd-elevated-rm-turnlane-arrow",
             "paint": {
                 "icon-emissive-strength": 0.1,
-                "icon-image-cross-fade": 0
+                "icon-image-cross-fade": 0,
+                "icon-opacity": 0.85
             },
             "source-layer": "hd_road_point",
             "metadata": {
@@ -13051,14 +17583,27 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "symbol",
             "source": "composite",
-            "id": "hd-rm-cycle-arrow",
+            "id": "hd-elevated-rm-cycle-arrow",
             "paint": {
                 "icon-emissive-strength": 0.1,
-                "icon-image-cross-fade": 0
+                "icon-image-cross-fade": 0,
+                "icon-opacity": 0.85
             },
             "source-layer": "hd_road_point",
             "metadata": {
@@ -13206,14 +17751,27 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "symbol",
             "source": "composite",
-            "id": "hd-rm-others-generic",
+            "id": "hd-elevated-rm-others-generic",
             "paint": {
                 "icon-emissive-strength": 0.1,
-                "icon-image-cross-fade": 0
+                "icon-image-cross-fade": 0,
+                "icon-opacity": 0.85
             },
             "source-layer": "hd_road_point",
             "metadata": {
@@ -13386,14 +17944,27 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "symbol",
             "source": "composite",
-            "id": "hd-rm-others-us",
+            "id": "hd-elevated-rm-others-us",
             "paint": {
                 "icon-emissive-strength": 0.1,
-                "icon-image-cross-fade": 0
+                "icon-image-cross-fade": 0,
+                "icon-opacity": 0.85
             },
             "source-layer": "hd_road_point",
             "metadata": {
@@ -13551,14 +18122,27 @@
                     ],
                     true,
                     false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
                 ]
             ],
             "type": "symbol",
             "source": "composite",
-            "id": "hd-rm-others-jp",
+            "id": "hd-elevated-rm-others-jp",
             "paint": {
                 "icon-emissive-strength": 0.1,
-                "icon-image-cross-fade": 0
+                "icon-image-cross-fade": 0,
+                "icon-opacity": 0.85
             },
             "source-layer": "hd_road_point",
             "metadata": {

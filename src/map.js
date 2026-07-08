@@ -2931,7 +2931,7 @@ export default class extends Evented {
         helpersMapbox.setStyleOpacities(map, me.styleOpacities, isNotSearchResultMode ? factorKey : [`${factorKey}-route`, factorKey]);
         helpersMapbox.setSunlight(map, me.clock.getTime(), isUndergroundMode ? 0 : 1, true);
         me.setLayerVisibility('hd-area', isUndergroundMode ? 'none' : 'visible');
-        me.setLayerVisibility('hd-bridge-area', isUndergroundMode ? 'none' : 'visible');
+        me.setLayerVisibility('hd-elevated-area', isUndergroundMode ? 'none' : 'visible');
         me.trafficLayer.setMode(viewMode, searchMode);
     }
 
