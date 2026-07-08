@@ -2021,7 +2021,7 @@
                     22,
                     80
                 ],
-                "line-color": "hsl(295, 11%, 95%)",
+                "line-color": "hsla(295, 11%, 95%, 0.3)",
                 "line-dasharray": [
                     10,
                     0
@@ -2104,7 +2104,7 @@
                     22,
                     80
                 ],
-                "line-color": "hsl(295, 11%, 95%)"
+                "line-color": "hsla(295, 11%, 95%, 0.3)"
             },
             "metadata": {
                 "mt3d:opacity-effect": true,
@@ -2171,7 +2171,7 @@
                     22,
                     80
                 ],
-                "line-color": "hsl(295, 11%, 95%)",
+                "line-color": "hsla(295, 11%, 95%, 0.3)",
                 "line-dasharray": [
                     "step",
                     [
@@ -2279,7 +2279,7 @@
                     22,
                     80
                 ],
-                "line-color": "hsl(295, 11%, 95%)"
+                "line-color": "hsla(295, 11%, 95%, 0.3)"
             },
             "metadata": {
                 "mt3d:opacity-effect": true,
@@ -2346,7 +2346,7 @@
                     22,
                     200
                 ],
-                "line-color": "hsla(214, 31%, 98%, 0.8)",
+                "line-color": "hsla(214, 31%, 98%, 0.3)",
                 "line-dasharray": [
                     "step",
                     [
@@ -2643,7 +2643,7 @@
                         100
                     ]
                 ],
-                "line-color": "hsla(214, 31%, 98%, 0.8)",
+                "line-color": "hsla(214, 31%, 98%, 0.3)",
                 "line-emissive-strength": 0.1
             },
             "metadata": {
@@ -2773,7 +2773,7 @@
                     15,
                     0,
                     16,
-                    0.5
+                    0.3
                 ],
                 "line-translate": [
                     0,
@@ -9029,6 +9029,86 @@
         },
         {
             "minzoom": 14,
+            "layout": {
+                "fill-elevation-reference": "hd-road-base",
+                "fill-construct-bridge-guard-rail": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    false,
+                    16,
+                    true
+                ]
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "road",
+                        "bridge"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    "!",
+                    [
+                        "all",
+                        [
+                            ">",
+                            [
+                                "get",
+                                "level"
+                            ],
+                            0
+                        ],
+                        [
+                            "has",
+                            "3d_elevation_id"
+                        ]
+                    ]
+                ]
+            ],
+            "type": "fill",
+            "source": "composite",
+            "id": "hd-area",
+            "paint": {
+                "fill-emissive-strength": 0.1,
+                "fill-color": "hsl(214, 31%, 92%)",
+                "fill-antialias": true,
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    14,
+                    0,
+                    15,
+                    1
+                ],
+                "fill-bridge-guard-rail-color": "hsl(30, 53%, 96%)",
+                "fill-tunnel-structure-color": "hsl(30, 53%, 96%)"
+            },
+            "source-layer": "hd_road_polygon",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 14,
             "layout":
             {
                 "fill-elevation-reference": "hd-road-markup",
@@ -9161,7 +9241,7 @@
             "id": "hd-islands-area",
             "paint": {
                 "fill-emissive-strength": 0,
-                "fill-color": "hsl(30, 53%, 96%)",
+                "fill-color": "hsl(20, 20%, 98%)",
                 "fill-opacity": [
                     "interpolate",
                     [
@@ -9225,7 +9305,7 @@
                     14,
                     0,
                     15,
-                    0.6
+                    0.3
                 ]
             },
             "source-layer": "hd_road_polygon",
@@ -9360,86 +9440,6 @@
                     15,
                     1
                 ]
-            },
-            "source-layer": "hd_road_polygon",
-            "metadata": {
-                "mt3d:opacity-effect": true,
-                "mt3d:opacity": 1,
-                "mt3d:opacity-route": 0.1,
-                "mt3d:opacity-underground": 0.0625,
-                "mt3d:opacity-underground-route": 0.025
-            }
-        },
-        {
-            "minzoom": 14,
-            "layout": {
-                "fill-elevation-reference": "hd-road-base",
-                "fill-construct-bridge-guard-rail": [
-                    "step",
-                    [
-                        "zoom"
-                    ],
-                    false,
-                    16,
-                    true
-                ]
-            },
-            "filter": [
-                "all",
-                [
-                    "match",
-                    [
-                        "get",
-                        "class"
-                    ],
-                    [
-                        "road",
-                        "bridge"
-                    ],
-                    true,
-                    false
-                ],
-                [
-                    "!",
-                    [
-                        "all",
-                        [
-                            ">",
-                            [
-                                "get",
-                                "level"
-                            ],
-                            0
-                        ],
-                        [
-                            "has",
-                            "3d_elevation_id"
-                        ]
-                    ]
-                ]
-            ],
-            "type": "fill",
-            "source": "composite",
-            "id": "hd-area",
-            "paint": {
-                "fill-emissive-strength": 0.1,
-                "fill-color": "hsl(214, 31%, 92%)",
-                "fill-antialias": true,
-                "fill-opacity": [
-                    "interpolate",
-                    [
-                        "linear"
-                    ],
-                    [
-                        "zoom"
-                    ],
-                    14,
-                    0,
-                    15,
-                    1
-                ],
-                "fill-bridge-guard-rail-color": "hsl(30, 53%, 96%)",
-                "fill-tunnel-structure-color": "hsl(30, 53%, 96%)"
             },
             "source-layer": "hd_road_polygon",
             "metadata": {
@@ -14048,6 +14048,80 @@
         },
         {
             "minzoom": 14,
+            "layout": {
+                "fill-elevation-reference": "hd-road-base",
+                "fill-construct-bridge-guard-rail": [
+                    "step",
+                    [
+                        "zoom"
+                    ],
+                    false,
+                    16,
+                    true
+                ]
+            },
+            "filter": [
+                "all",
+                [
+                    "match",
+                    [
+                        "get",
+                        "class"
+                    ],
+                    [
+                        "road",
+                        "bridge"
+                    ],
+                    true,
+                    false
+                ],
+                [
+                    ">",
+                    [
+                        "get",
+                        "level"
+                    ],
+                    0
+                ],
+                [
+                    "has",
+                    "3d_elevation_id"
+                ]
+            ],
+            "type": "fill",
+            "source": "composite",
+            "id": "hd-elevated-area",
+            "paint": {
+                "fill-emissive-strength": 0.1,
+                "fill-color": "hsl(214, 31%, 92%)",
+                "fill-antialias": true,
+                "fill-opacity": [
+                    "interpolate",
+                    [
+                        "linear"
+                    ],
+                    [
+                        "zoom"
+                    ],
+                    14,
+                    0,
+                    15,
+                    0.85
+                ],
+                "fill-bridge-guard-rail-color": "hsl(30, 53%, 96%)",
+                "fill-tunnel-structure-color": "hsl(30, 53%, 96%)"
+            },
+            "source-layer": "hd_road_polygon",
+            "metadata": {
+                "mt3d:opacity-effect": true,
+                "mt3d:opacity": 1,
+                "mt3d:opacity-route": 0.1,
+                "mt3d:opacity-underground": 0.0625,
+                "mt3d:opacity-underground-route": 0.025
+            }
+        },
+        {
+            "minzoom": 14,
             "layout":
             {
                 "fill-elevation-reference": "hd-road-markup",
@@ -14168,7 +14242,7 @@
             "id": "hd-elevated-islands-area",
             "paint": {
                 "fill-emissive-strength": 0,
-                "fill-color": "hsl(30, 53%, 70%)",
+                "fill-color": "hsl(20, 20%, 98%)",
                 "fill-opacity": [
                     "interpolate",
                     [
@@ -14183,80 +14257,6 @@
                     0.85
                 ],
                 "fill-antialias": false
-            },
-            "source-layer": "hd_road_polygon",
-            "metadata": {
-                "mt3d:opacity-effect": true,
-                "mt3d:opacity": 1,
-                "mt3d:opacity-route": 0.1,
-                "mt3d:opacity-underground": 0.0625,
-                "mt3d:opacity-underground-route": 0.025
-            }
-        },
-        {
-            "minzoom": 14,
-            "layout": {
-                "fill-elevation-reference": "hd-road-base",
-                "fill-construct-bridge-guard-rail": [
-                    "step",
-                    [
-                        "zoom"
-                    ],
-                    false,
-                    16,
-                    true
-                ]
-            },
-            "filter": [
-                "all",
-                [
-                    "match",
-                    [
-                        "get",
-                        "class"
-                    ],
-                    [
-                        "road",
-                        "bridge"
-                    ],
-                    true,
-                    false
-                ],
-                [
-                    ">",
-                    [
-                        "get",
-                        "level"
-                    ],
-                    0
-                ],
-                [
-                    "has",
-                    "3d_elevation_id"
-                ]
-            ],
-            "type": "fill",
-            "source": "composite",
-            "id": "hd-elevated-area",
-            "paint": {
-                "fill-emissive-strength": 0.1,
-                "fill-color": "hsl(214, 31%, 92%)",
-                "fill-antialias": true,
-                "fill-opacity": [
-                    "interpolate",
-                    [
-                        "linear"
-                    ],
-                    [
-                        "zoom"
-                    ],
-                    14,
-                    0,
-                    15,
-                    0.85
-                ],
-                "fill-bridge-guard-rail-color": "hsl(30, 53%, 96%)",
-                "fill-tunnel-structure-color": "hsl(30, 53%, 96%)"
             },
             "source-layer": "hd_road_polygon",
             "metadata": {
