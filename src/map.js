@@ -175,7 +175,12 @@ export default class extends Evented {
                     throw error;
                 }),
             new Promise(resolve => {
-                me.map.once('styledata', resolve);
+                me.map.once('styledata', () => {
+                    clockPromise.then(clock =>
+                        helpersMapbox.setSunlight(me.map, clock.getTime(), me.viewMode === 'ground' ? 1 : 0)
+                    );
+                    resolve();
+                });
             })
         ]).then(me.initialize.bind(me));
 
@@ -766,29 +771,6 @@ export default class extends Evented {
         // me.objectUnit = Math.max(getObjectScale(initialZoom) * .19, .02);
 
         me.trafficLayer = new TrafficLayer({id: 'traffic'});
-
-        // To move to the style file in v4.0
-        map.addLayer({
-            id: 'sky',
-            type: 'sky',
-            paint: {
-                'sky-opacity': [
-                    'interpolate',
-                    ['linear'],
-                    ['zoom'],
-                    0,
-                    0,
-                    5,
-                    0.3,
-                    8,
-                    1
-                ],
-                'sky-type': 'atmosphere',
-                'sky-atmosphere-color': 'hsl(220, 100%, 70%)',
-                'sky-atmosphere-sun-intensity': 20
-            }
-        }, 'background');
-        helpersMapbox.setSunlight(map, clock.getTime(), me.viewMode === 'ground' ? 1 : 0);
 
         map.setLayoutProperty('poi', 'text-field', [
             'coalesce',

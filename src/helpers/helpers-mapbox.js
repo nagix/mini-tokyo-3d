@@ -279,8 +279,36 @@ export function setSunlight(map, time, shadowIntensity, shadowOnly) {
             }
         }]);
     }
-
-    map.setPaintProperty('sky', 'sky-atmosphere-sun', [sunAzimuth, sunAltitude]);
+    if (map.getLayer('sky')) {
+        map.setPaintProperty('sky', 'sky-atmosphere-sun', [sunAzimuth, sunAltitude]);
+    } else {
+        // The 'sky' layer type will be phased out in a future release of Mapbox GL JS
+        // (see https://docs.mapbox.com/style-spec/reference/layers/#sky). To avoid
+        // future compatibility problems, it is added here in code rather than declared
+        // in the style file, and created together with the initial sun position so the
+        // sky is correct from the first frame.
+        map.addLayer({
+            id: 'sky',
+            type: 'sky',
+            paint: {
+                'sky-opacity': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    0,
+                    0,
+                    5,
+                    0.3,
+                    8,
+                    1
+                ],
+                'sky-type': 'atmosphere',
+                'sky-atmosphere-color': 'hsl(220, 100%, 70%)',
+                'sky-atmosphere-sun-intensity': 20,
+                'sky-atmosphere-sun': [sunAzimuth, sunAltitude]
+            }
+        }, 'background');
+    }
 }
 
 /**
