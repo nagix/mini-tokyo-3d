@@ -133,8 +133,8 @@ export function setSunlight(map, time, shadowIntensity, shadowOnly) {
             r: 74,
             g: 74,
             b: 74,
-            i: lerp(.5, .6, t),
-            w: .5
+            i: lerp(.5, 1, t),
+            w: 0
         };
         sun = {
             azimuth: lerp(210, sunrisePosition.azimuth, t),
@@ -214,8 +214,8 @@ export function setSunlight(map, time, shadowIntensity, shadowOnly) {
             r: 74,
             g: 74,
             b: 74,
-            i: lerp(.6, .5, t),
-            w: .5
+            i: lerp(1, .5, t),
+            w: 0
         };
         sun = {
             azimuth: lerp(sunsetPosition.azimuth, 210, t),
@@ -234,7 +234,7 @@ export function setSunlight(map, time, shadowIntensity, shadowOnly) {
             g: 74,
             b: 74,
             i: .5,
-            w: .5
+            w: 0
         };
         sun = {
             azimuth: 210,
