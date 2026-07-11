@@ -1,10 +1,27 @@
 import {LngLat, LngLatBounds} from 'mapbox-gl';
 import {parseCSSColor} from 'csscolorparser';
-import {includes, lerp, luminance, valueOrDefault} from './helpers';
+import {clamp, includes, lerp, luminance, valueOrDefault} from './helpers';
 import * as SunCalc from 'suncalc';
 
 const HOUR = 3600000;
 const BG_LAYER_IDS = ['background', 'background-underground'];
+
+// Fog near/far as positions on a scale where 0 is the ground point at the screen
+// center and FOG_FAR_PLANE is the far clipping plane (the horizon).
+const FOG_NEAR = 1,
+    FOG_FAR = 10,
+    FOG_FAR_PLANE = 20;
+
+// Fog color as a function of the scene brightness, mirroring the high-zoom
+// (>= zoom 7) color ramp of the map style's fog so that the layer fog changes
+// color with the time of day together with the map. Each stop is the style's
+// hsla() value converted to [r, g, b, a] (r, g, b in 0-255 sRGB, a in 0-1). The
+// alpha lets the original texture show through when the fog is fully applied.
+const FOG_COLOR_STOPS = [
+    {brightness: 0.01, color: [6, 14, 25, 0.9]}, // hsla(213, 63%, 6%, 0.9) - night
+    {brightness: 0.2, color: [237, 204, 171, 0.7]}, // hsla(30, 65%, 80%, 0.7) - twilight
+    {brightness: 0.4, color: [247, 251, 253, 0.9]} // hsla(200, 60%, 98%, 0.9) - day
+];
 
 /**
  * Returns the sunrise and sunset times for the local solar day that contains
@@ -97,6 +114,60 @@ export function getDirectionalLight(map) {
  */
 export function getAmbientLight(map) {
     return getLight(map, 'ambient');
+}
+
+/**
+ * Returns the perceived brightness of the lights currently set on the map. This
+ * is the same value the map style exposes as ['measure-light', 'brightness'],
+ * derived from the ambient and directional lights.
+ * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @returns {number} The brightness (0-1), or 0 if it cannot be measured
+ */
+export function getBrightness(map) {
+    return map.style.getBrightness() || 0;
+}
+
+/**
+ * Returns the fog color for the map's current brightness, interpolated across the
+ * same color ramp the map style's fog uses.
+ * @param {mapboxgl.Map} map - Mapbox's Map object
+ * @returns {Array<number>} The fog color as [r, g, b, a] (r, g, b in 0-255 sRGB,
+ *     a in 0-1)
+ */
+export function getFogColor(map) {
+    const brightness = getBrightness(map),
+        stops = FOG_COLOR_STOPS;
+
+    for (let i = 1; i < stops.length; i++) {
+        const to = stops[i];
+
+        if (brightness <= to.brightness || i === stops.length - 1) {
+            const from = stops[i - 1],
+                t = clamp((brightness - from.brightness) / (to.brightness - from.brightness), 0, 1);
+
+            return [
+                lerp(from.color[0], to.color[0], t),
+                lerp(from.color[1], to.color[1], t),
+                lerp(from.color[2], to.color[2], t),
+                lerp(from.color[3], to.color[3], t)
+            ];
+        }
+    }
+}
+
+/**
+ * Returns the fog near/far distances for a camera, mapping the shared FOG_NEAR /
+ * FOG_FAR positions from the [0 = screen center, FOG_FAR_PLANE = far clipping
+ * plane] scale to actual distances.
+ * @param {number} center - The distance to the ground at the screen center
+ * @param {number} farPlane - The distance to the far clipping plane (the horizon)
+ * @returns {Array<number>} The fog distances as [near, far], in the same units as
+ *     the arguments
+ */
+export function getFogNearFar(center, farPlane) {
+    const unit = (farPlane - center) / FOG_FAR_PLANE;
+
+    return [center + FOG_NEAR * unit, center + FOG_FAR * unit];
 }
 
 /**

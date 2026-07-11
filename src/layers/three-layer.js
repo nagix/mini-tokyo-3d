@@ -1,4 +1,5 @@
-import {AmbientLight, DirectionalLight, MathUtils, Matrix4, Mesh, PerspectiveCamera, Scene, SRGBColorSpace, Vector3, WebGLRenderer} from 'three';
+import {AmbientLight, DirectionalLight, Fog, MathUtils, Matrix4, Mesh, PerspectiveCamera, Scene, SRGBColorSpace, Vector3, WebGLRenderer} from 'three';
+import {getAmbientLight, getDirectionalLight, getFogColor, getFogNearFar} from '../helpers/helpers-mapbox';
 
 const SQRT3 = Math.sqrt(3);
 
@@ -20,7 +21,6 @@ export default class {
         const me = this;
 
         me.implementation = implementation;
-        me._tick = me._tick.bind(me);
         me._onResize = me._onResize.bind(me);
     }
 
@@ -87,6 +87,7 @@ export default class {
 
         scene.add(light);
         scene.add(ambientLight);
+        scene.fog = new Fog(0x000000);
 
         // This is needed to avoid a black screen with empty scene
         scene.add(new Mesh());
@@ -100,36 +101,6 @@ export default class {
         me.camera.matrixWorldAutoUpdate = false;
 
         mbox.on('resize', me._onResize);
-
-        if (me.implementation.lightColor === undefined) {
-            me._tick();
-        }
-    }
-
-    _tick() {
-        const me = this,
-            map = me.map,
-            now = map.clock.getTime();
-
-        if (Math.floor(now / 60000) !== Math.floor(me.lastRefresh / 60000)) {
-            me._updateLights();
-            me.lastRefresh = now;
-        }
-        if (me.mbox) {
-            requestAnimationFrame(me._tick);
-        }
-    }
-
-    _updateLights() {
-        const me = this,
-            map = me.map,
-            directional = map.getDirectionalLight(),
-            ambient = map.getAmbientLight();
-
-        setSRGBColor(me.light.color, directional.color);
-        me.light.intensity = directional.intensity * DIRECTIONAL_INTENSITY;
-        setSRGBColor(me.ambientLight.color, ambient.color);
-        me.ambientLight.intensity = ambient.intensity * AMBIENT_INTENSITY;
     }
 
     _onRemove(mbox) {
@@ -141,7 +112,8 @@ export default class {
 
     _render(gl, matrix) {
         // These parameters are copied from mapbox-gl/src/geo/transform.js
-        const {modelOrigin, mbox, renderer, camera, light, scene} = this,
+        const me = this,
+            {modelOrigin, mbox, renderer, camera, light, scene} = me,
             {_fov, _camera, _horizonShift, pixelsPerMeter, worldSize, _pitch, width, height} = mbox.transform,
             halfFov = _fov / 2,
             cameraToSeaLevelDistance = _camera.position[2] * worldSize / Math.cos(_pitch),
@@ -177,8 +149,40 @@ export default class {
         const rad = MathUtils.degToRad(mbox.getBearing() + 30);
         light.position.set(-Math.sin(rad), -Math.cos(rad), SQRT3).normalize();
 
+        me._updateLights();
+
+        // Anchor the fog to the screen-center (cameraToSeaLevelDistance) and far
+        // plane (farZ) depths, so distant geometry fades into the fog color like
+        // the map.
+        setSRGBColor(scene.fog.color, getFogColor(mbox));
+        [scene.fog.near, scene.fog.far] = getFogNearFar(cameraToSeaLevelDistance, farZ);
+
         renderer.resetState();
         renderer.render(scene, camera);
+    }
+
+    _updateLights() {
+        const me = this;
+
+        if (me.implementation.lightColor !== undefined) {
+            return;
+        }
+
+        const now = me.map.clock.getTime();
+
+        if (Math.floor(now / 60000) === Math.floor(me.lastLightRefresh / 60000)) {
+            return;
+        }
+        me.lastLightRefresh = now;
+
+        const {mbox, light, ambientLight} = me,
+            directional = getDirectionalLight(mbox),
+            ambient = getAmbientLight(mbox);
+
+        setSRGBColor(light.color, directional.color);
+        light.intensity = directional.intensity * DIRECTIONAL_INTENSITY;
+        setSRGBColor(ambientLight.color, ambient.color);
+        ambientLight.intensity = ambient.intensity * AMBIENT_INTENSITY;
     }
 
     _onResize(event) {

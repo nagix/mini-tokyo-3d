@@ -3017,22 +3017,11 @@ export default class extends Evented {
     }
 
     /**
-     * Returns the directional light currently set on the map.
-     * @returns {Object} Object with the color ([r, g, b], each 0-255), the
-     *     intensity (relative luminance of the color, 0-1) and the direction
-     *     ([azimuthal, polar] in degrees) of the directional light
+     * Returns the perceived brightness of the lights currently set on the map.
+     * @returns {number} The brightness (0-1)
      */
-    getDirectionalLight() {
-        return helpersMapbox.getDirectionalLight(this.map);
-    }
-
-    /**
-     * Returns the ambient light currently set on the map.
-     * @returns {Object} Object with the color ([r, g, b], each 0-255) and the
-     *     intensity (relative luminance of the color, 0-1) of the ambient light
-     */
-    getAmbientLight() {
-        return helpersMapbox.getAmbientLight(this.map);
+    getBrightness() {
+        return helpersMapbox.getBrightness(this.map);
     }
 
     pickObject(point) {
