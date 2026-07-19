@@ -5,6 +5,7 @@ import * as SunCalc from 'suncalc';
 
 const HOUR = 3600000;
 const BG_LAYER_IDS = ['background', 'background-underground'];
+const RADIAN_TO_DEGREE = 180 / Math.PI;
 
 // Fog near/far as positions on a scale where 0 is the ground point at the screen
 // center and FOG_FAR_PLANE is the far clipping plane (the horizon).
@@ -64,7 +65,9 @@ export function setLayerProps(map, id, props) {
 }
 
 /**
- * Returns the light of the given type currently set on the map.
+ * Returns the light of the given type as currently rendered on the map. It reads
+ * the evaluated (possibly transitioning) light values, not the target ones set by
+ * setLights, so it reflects what is actually on screen mid-transition.
  * @param {mapboxgl.Map} map - Mapbox's Map object
  * @param {string} type - The light type ('ambient' or 'directional')
  * @returns {Object} Object with the following properties:
@@ -77,24 +80,34 @@ export function setLayerProps(map, id, props) {
  *       polar angle is 0-90 (0 = straight above, 90 = at the horizon)
  */
 function getLight(map, type) {
-    const {properties} = map.getLights().filter(light => light.type === type)[0],
-        [r, g, b] = parseCSSColor(properties.color),
-        direction = properties.direction,
+    const {properties} = map.style[`${type}Light`],
+        [r, g, b] = parseCSSColor(properties.get('color').toString()),
         result = {
             color: [r, g, b],
             intensity: .2126 * r / 255 + .7152 * g / 255 + .0722 * b / 255
         };
 
-    if (direction) {
-        // direction may be wrapped in a ['literal', [azimuthal, polar]] expression
-        result.direction = Array.isArray(direction[1]) ? direction[1] : direction;
+    if (type === 'directional') {
+        // The evaluated direction is a Cartesian unit vector, so convert it back to
+        // [azimuthal, polar] in degrees (the inverse of Mapbox's spherical-to-Cartesian
+        // conversion) to reflect the value actually rendered, including mid-transition.
+        const {x, y, z} = properties.get('direction'),
+            radial = Math.sqrt(x * x + y * y + z * z),
+            polar = radial > 0 ? Math.acos(z / radial) * RADIAN_TO_DEGREE : 0;
+        let azimuthal = x !== 0 || y !== 0 ? Math.atan2(-y, -x) * RADIAN_TO_DEGREE + 90 : 0;
+
+        if (azimuthal < 0) {
+            azimuthal += 360;
+        }
+        result.direction = [azimuthal, polar];
     }
 
     return result;
 }
 
 /**
- * Returns the directional light currently set on the map.
+ * Returns the directional light as currently rendered on the map (evaluated,
+ * possibly mid-transition).
  * @param {mapboxgl.Map} map - Mapbox's Map object
  * @returns {Object} Object with the color ([r, g, b], each 0-255), the
  *     intensity (relative luminance of the color, 0-1) and the direction
@@ -106,7 +119,8 @@ export function getDirectionalLight(map) {
 }
 
 /**
- * Returns the ambient light currently set on the map.
+ * Returns the ambient light as currently rendered on the map (evaluated,
+ * possibly mid-transition).
  * @param {mapboxgl.Map} map - Mapbox's Map object
  * @returns {Object} Object with the color ([r, g, b], each 0-255) and the
  *     intensity (relative luminance of the color, 0-1) of the ambient light.
@@ -117,9 +131,10 @@ export function getAmbientLight(map) {
 }
 
 /**
- * Returns the perceived brightness of the lights currently set on the map. This
- * is the same value the map style exposes as ['measure-light', 'brightness'],
- * derived from the ambient and directional lights.
+ * Returns the perceived brightness of the lights as currently rendered on the
+ * map (evaluated, possibly mid-transition). This is the same value the map style
+ * exposes as ['measure-light', 'brightness'], derived from the ambient and
+ * directional lights.
  * @param {mapboxgl.Map} map - Mapbox's Map object
  * @returns {number} The brightness (0-1), or 0 if it cannot be measured
  */
