@@ -182,14 +182,38 @@ export function getFogNearFar(center, farPlane) {
 export function setSunlight(map, time, shadowIntensity, shadowOnly) {
     const center = map.getCenter(),
         {sunrise, sunset} = getSunTimes(center, time),
-        sunriseTime = sunrise.getTime(),
-        sunsetTime = sunset.getTime(),
+        // At high latitudes there may be no sunrise/sunset (polar day/night), in
+        // which case SunCalc returns null; fall back to NaN so the branches below
+        // are skipped and the polar day/night case is handled explicitly.
+        sunriseTime = sunrise ? sunrise.getTime() : NaN,
+        sunsetTime = sunset ? sunset.getTime() : NaN,
         {azimuth, altitude} = SunCalc.getPosition(time, center.lat, center.lng),
         sunAzimuth = azimuth,
         sunAltitude = 90 - altitude;
     let t, ambient, directional, sun;
 
-    if (time >= sunriseTime - HOUR / 2 && time < sunriseTime) {
+    if ((isNaN(sunriseTime) || isNaN(sunsetTime)) && altitude > 0) {
+        // Polar day: the sun stays above the horizon all day (no sunrise/sunset),
+        // so use daytime lighting. Polar night (sun below the horizon) falls through
+        // to the Night branch below.
+        ambient = {
+            r: 255,
+            g: 255,
+            b: 255,
+            i: .7
+        };
+        directional = {
+            r: 255,
+            g: 255,
+            b: 255,
+            i: .3,
+            w: 1
+        };
+        sun = {
+            azimuth: sunAzimuth,
+            altitude: sunAltitude
+        };
+    } else if (time >= sunriseTime - HOUR / 2 && time < sunriseTime) {
         // Night to sunrise
         const sunrisePosition = SunCalc.getPosition(sunriseTime, center.lat, center.lng);
 
