@@ -7,6 +7,11 @@ const HOUR = 3600000;
 const BG_LAYER_IDS = ['background', 'background-underground'];
 const RADIAN_TO_DEGREE = 180 / Math.PI;
 
+// The map center must move at least this many degrees in latitude or longitude
+// before the sun-position-dependent lighting is refreshed, so it tracks large
+// pans without updating on every move.
+const SUNLIGHT_REFRESH_DEGREES = 1;
+
 // Fog near/far as positions on a scale where 0 is the ground point at the screen
 // center and FOG_FAR_PLANE is the far clipping plane (the horizon).
 const FOG_NEAR = 1,
@@ -143,6 +148,20 @@ export function getBrightness(map) {
 }
 
 /**
+ * Returns true if the map center has moved far enough from the last recorded
+ * center that the sun-position-dependent lighting should be refreshed. A missing
+ * last center returns true.
+ * @param {LngLat} center - The current map center
+ * @param {LngLat} last - The map center at the last lighting refresh
+ * @returns {boolean} True if the center has moved beyond the threshold
+ */
+export function hasCenterMoved(center, last) {
+    return !last ||
+        Math.abs(center.lat - last.lat) >= SUNLIGHT_REFRESH_DEGREES ||
+        Math.abs(center.lng - last.lng) >= SUNLIGHT_REFRESH_DEGREES;
+}
+
+/**
  * Returns the fog color for the map's current brightness, interpolated across the
  * same color ramp the map style's fog uses.
  * @param {mapboxgl.Map} map - Mapbox's Map object
@@ -193,8 +212,12 @@ export function getFogNearFar(center, farPlane) {
  * @param {number} shadowIntensity - Determines the shadow strength
  * @param {boolean} shadowOnly - If true, only the shadow intensity is updated
  *     while the brightness-affecting properties are left unchanged
+ * @param {boolean} transition - If true, the light animates to the new values
+ *     using the default transition. Otherwise it snaps instantly (the default),
+ *     which suits continuous changes (move, realtime, time-lapse); a transition is
+ *     only wanted when jumping to a specific time via the clock panel.
  */
-export function setSunlight(map, time, shadowIntensity, shadowOnly) {
+export function setSunlight(map, time, shadowIntensity, shadowOnly, transition) {
     const center = map.getCenter(),
         {sunrise, sunset} = getSunTimes(center, time),
         // At high latitudes there may be no sunrise/sunset (polar day/night), in
@@ -370,6 +393,13 @@ export function setSunlight(map, time, shadowIntensity, shadowOnly) {
         }
         map.setLights(lights);
     } else {
+        // setLights captures the global style transition synchronously, so drive the
+        // snap/animate through it - 0 to snap continuous changes, the default duration
+        // to animate a jump - and restore it right after so nothing else is affected.
+        const styleTransition = map.style.transition,
+            duration = styleTransition.duration;
+
+        styleTransition.duration = transition ? duration : 0;
         map.setLights([{
             id: 'ambient',
             type: 'ambient',
@@ -388,6 +418,7 @@ export function setSunlight(map, time, shadowIntensity, shadowOnly) {
                 'shadow-intensity': shadowIntensityValue
             }
         }]);
+        styleTransition.duration = duration;
     }
     if (map.getLayer('sky')) {
         map.setPaintProperty('sky', 'sky-atmosphere-sun', [sunAzimuth, sunAltitude]);

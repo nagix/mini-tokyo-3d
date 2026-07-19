@@ -176,9 +176,14 @@ export default class extends Evented {
                 }),
             new Promise(resolve => {
                 me.map.once('styledata', () => {
-                    clockPromise.then(clock =>
-                        helpersMapbox.setSunlight(me.map, clock.getTime(), me.viewMode === 'ground' ? 1 : 0)
-                    );
+                    clockPromise.then(clock => {
+                        const now = clock.getTime();
+
+                        helpersMapbox.setSunlight(me.map, now, me.viewMode === 'ground' ? 1 : 0);
+                        me.lastSunlightCenter = me.map.getCenter();
+                        me.lastSunlightTime = now;
+                        me.lastSunlightRefresh = Date.now();
+                    });
                     resolve();
                 });
             })
@@ -1192,11 +1197,9 @@ export default class extends Evented {
                 }
                 me.lastFrameRefresh = Date.now();
 
-                if (Math.floor((now - minDelay) / refreshInterval) !== Math.floor(me.lastRefresh / refreshInterval)) {
-                    // Hide building models when the clock speed is high as changing lights impacts performance
-                    me.setLayerVisibility('building-models', clock.speed <= 30 ? 'visible' : 'none');
+                const clockRefresh = Math.floor((now - minDelay) / refreshInterval) !== Math.floor(me.lastRefresh / refreshInterval);
 
-                    helpersMapbox.setSunlight(map, now, me.viewMode === 'ground' ? 1 : 0);
+                if (clockRefresh) {
                     if (me.searchMode === 'none' && me.clockMode === 'playback' && !me.removing) {
                         me.refreshTrains();
                         me.refreshFlights();
@@ -1206,6 +1209,47 @@ export default class extends Evented {
                         }
                     }
                     me.lastRefresh = now - minDelay;
+                }
+
+                // Refresh the sun-position-dependent lighting when the clock advances
+                // or the map pans far enough, but no more than about once per second
+                // of real time: each refresh re-evaluates the lighting of every model
+                // instance, so fast playback would otherwise trigger it many times a
+                // second. The sun barely moves in a second, so the visual cost is nil.
+                const center = map.getCenter(),
+                    elapsed = Date.now() - me.lastSunlightRefresh,
+                    moved = helpersMapbox.hasCenterMoved(center, me.lastSunlightCenter);
+
+                if ((clockRefresh || moved) && elapsed >= 1000) {
+                    // Animate on a large pan (a one-step change in the sun position) or
+                    // when the clock advances beyond what continuous playback over the
+                    // elapsed real time would explain (a clock-panel jump, mode switch,
+                    // etc.). Continuous playback matches speed * elapsed, so the 2x
+                    // margin keeps it snapping at any speed.
+                    const transition = moved || Math.abs(now - me.lastSunlightTime) >= clock.speed * elapsed * 2;
+
+                    helpersMapbox.setSunlight(map, now, me.viewMode === 'ground' ? 1 : 0, false, transition);
+                    me.lastSunlightCenter = center;
+                    me.lastSunlightTime = now;
+                    me.lastSunlightRefresh = Date.now();
+                }
+
+                // Fire 'light' whenever the rendered light actually changes (the frame
+                // after an instant change, and every frame of a transition), so the
+                // layers and plugins track it. A cheap signature (brightness + sun
+                // direction) avoids firing when nothing changed.
+                const directional = helpersMapbox.getDirectionalLight(map),
+                    brightness = helpersMapbox.getBrightness(map),
+                    signature = `${brightness} ${directional.direction[0]} ${directional.direction[1]}`;
+
+                if (signature !== me.lastLightSignature) {
+                    me.lastLightSignature = signature;
+                    me.fire({
+                        type: 'light',
+                        directional,
+                        ambient: helpersMapbox.getAmbientLight(map),
+                        brightness
+                    });
                 }
 
                 if (Math.floor((now - minDelay) / realtimeCheckInterval) !== Math.floor(me.lastRealtimeCheck / realtimeCheckInterval)) {

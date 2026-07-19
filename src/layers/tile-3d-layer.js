@@ -48,6 +48,7 @@ export default class {
 
     constructor(implementation) {
         this.implementation = implementation;
+        this._updateLights = this._updateLights.bind(this);
     }
 
     onAdd(map, beforeId) {
@@ -80,17 +81,29 @@ export default class {
         delete options.maxzoom;
 
         const mapboxLayer = me.mapboxLayer = new MapboxLayer(options),
-            render = mapboxLayer.render.bind(mapboxLayer);
+            render = mapboxLayer.render.bind(mapboxLayer),
+            onRemove = mapboxLayer.onRemove.bind(mapboxLayer);
 
         mapboxLayer.render = (...args) => {
             me._render();
             return render(...args);
+        };
+        mapboxLayer.onRemove = (...args) => {
+            if (lightColor === undefined) {
+                map.off('light', me._updateLights);
+            }
+            return onRemove(...args);
         };
 
         mbox.addLayer(mapboxLayer, beforeId || 'poi');
         mbox.setLayerZoomRange(implementation.id, implementation.minzoom, implementation.maxzoom);
 
         setLights(mbox.__deck, ambientLight, directionalLight);
+
+        if (lightColor === undefined) {
+            map.on('light', me._updateLights);
+            me._updateLights({directional: getDirectionalLight(mbox), ambient: getAmbientLight(mbox)});
+        }
     }
 
     _render() {
@@ -98,9 +111,8 @@ export default class {
             mbox = me.map.map,
             fog = me.fog;
 
-        me._updateLights();
-
-        // Update the fog every frame (the extension reads me.fog on every draw).
+        // The lights are updated on the map's 'light' event; only the fog is
+        // refreshed per frame here (the extension reads me.fog on every draw).
         // getBrightness reads a cached value the map keeps current, so the color
         // follows the time of day within a frame; near/far are anchored to the
         // screen-center and far-plane depths, so the fog tracks zoom and pitch.
@@ -108,26 +120,11 @@ export default class {
         [fog.near, fog.far] = getFogNearFar(getCenterDistance(mbox), getFarDistance(mbox));
     }
 
-    _updateLights() {
-        const me = this;
-
-        if (me.implementation.lightColor !== undefined) {
-            return;
-        }
-
-        const now = me.map.clock.getTime();
-
-        // Refreshing the lights re-evaluates the model layers, so do it at most
-        // once per clock minute.
-        if (Math.floor(now / 60000) === Math.floor(me.lastLightRefresh / 60000)) {
-            return;
-        }
-        me.lastLightRefresh = now;
-
-        const mbox = me.map.map,
-            directional = getDirectionalLight(mbox),
-            ambient = getAmbientLight(mbox),
-            [azimuthal, polar] = directional.direction,
+    // Applies the given directional and ambient light (from the map's 'light' event
+    // payload) to the deck.gl instance. Called on the event and once on add; only
+    // used when lightColor is undefined.
+    _updateLights({directional, ambient}) {
+        const [azimuthal, polar] = directional.direction,
             azimuth = azimuthal * DEGREE_TO_RADIAN,
             altitude = polar * DEGREE_TO_RADIAN,
             ambientLight = {
@@ -144,7 +141,7 @@ export default class {
                 ]
             };
 
-        setLights(mbox.__deck, ambientLight, directionalLight);
+        setLights(this.map.map.__deck, ambientLight, directionalLight);
     }
 
 }

@@ -22,6 +22,7 @@ export default class {
 
         me.implementation = implementation;
         me._onResize = me._onResize.bind(me);
+        me._updateLights = me._updateLights.bind(me);
     }
 
     onAdd(map, beforeId) {
@@ -101,12 +102,20 @@ export default class {
         me.camera.matrixWorldAutoUpdate = false;
 
         mbox.on('resize', me._onResize);
+
+        if (lightColor === undefined) {
+            me.map.on('light', me._updateLights);
+            me._updateLights({directional: getDirectionalLight(mbox), ambient: getAmbientLight(mbox)});
+        }
     }
 
     _onRemove(mbox) {
         const me = this;
 
         mbox.off('resize', me._onResize);
+        if (me.implementation.lightColor === undefined) {
+            me.map.off('light', me._updateLights);
+        }
         delete me.mbox;
     }
 
@@ -149,11 +158,10 @@ export default class {
         const rad = MathUtils.degToRad(mbox.getBearing() + 30);
         light.position.set(-Math.sin(rad), -Math.cos(rad), SQRT3).normalize();
 
-        me._updateLights();
-
-        // Anchor the fog to the screen-center (cameraToSeaLevelDistance) and far
-        // plane (farZ) depths, so distant geometry fades into the fog color like
-        // the map.
+        // The light color/intensity is updated on the map's 'light' event; only the
+        // fog is refreshed per frame here. Anchor the fog to the screen-center
+        // (cameraToSeaLevelDistance) and far plane (farZ) depths, so distant
+        // geometry fades into the fog color like the map.
         setSRGBColor(scene.fog.color, getFogColor(mbox));
         [scene.fog.near, scene.fog.far] = getFogNearFar(cameraToSeaLevelDistance, farZ);
 
@@ -161,23 +169,11 @@ export default class {
         renderer.render(scene, camera);
     }
 
-    _updateLights() {
-        const me = this;
-
-        if (me.implementation.lightColor !== undefined) {
-            return;
-        }
-
-        const now = me.map.clock.getTime();
-
-        if (Math.floor(now / 60000) === Math.floor(me.lastLightRefresh / 60000)) {
-            return;
-        }
-        me.lastLightRefresh = now;
-
-        const {mbox, light, ambientLight} = me,
-            directional = getDirectionalLight(mbox),
-            ambient = getAmbientLight(mbox);
+    // Applies the given directional and ambient light (from the map's 'light' event
+    // payload). Called on the event and once on add; only used when lightColor is
+    // undefined.
+    _updateLights({directional, ambient}) {
+        const {light, ambientLight} = this;
 
         setSRGBColor(light.color, directional.color);
         light.intensity = directional.intensity * DIRECTIONAL_INTENSITY;
