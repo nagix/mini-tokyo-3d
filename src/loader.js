@@ -3,7 +3,7 @@ import * as geobuf from 'geobuf';
 import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
 import {PbfReader} from 'pbf';
 import configs from './configs';
-import {isString, loadJSON, removePrefix} from './helpers/helpers';
+import {isString, loadJSON, removePrefix, resolveAssetUrl} from './helpers/helpers';
 import {decode} from './helpers/helpers-gtfs';
 
 const RAILWAY_SOBURAPID = 'JR-East.SobuRapid';
@@ -42,7 +42,7 @@ function adjustTrainID(id, type, destination) {
  * @returns {Promise} Promise that resolves to the dictionary object
  */
 export function loadDictionary(lang) {
-    return loadJSON(`assets/dictionary-${lang}.json`);
+    return loadJSON(resolveAssetUrl(`assets/dictionary-${lang}.json`));
 }
 
 /**

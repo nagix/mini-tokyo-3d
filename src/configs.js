@@ -181,7 +181,6 @@ const configs = {
         trainUrl: `${CHALLENGE_API_URL}odpt:Train?odpt:operator=${CHALLENGE_OPERATORS_FOR_TRAIN.map(operator => `odpt.Operator:${operator}`).join(',')}`,
         trainInfoUrl: `${CHALLENGE_API_URL}odpt:TrainInformation?odpt:operator=${CHALLENGE_OPERATORS_FOR_TRAININFORMATION.map(operator => `odpt.Operator:${operator}`).join(',')}`,
         expiresAt: '2027-03-13T00:00:00+09:00'
-
     }, {
         id: 'mt3d',
         trainUrl: TID_URL,

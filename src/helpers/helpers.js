@@ -14,6 +14,13 @@ export function isTouchDevice() {
     return touchDevice;
 }
 
+// Resolves a path relative to the location of the Mini Tokyo 3D bundle (via
+// import.meta.url) rather than the hosting page, so the bundled assets are
+// loaded from wherever the script itself is served (e.g. a CDN).
+export function resolveAssetUrl(path) {
+    return new URL(path, import.meta.url).href;
+}
+
 export function loadJSON(url) {
     return fetch(url).then(response => {
         if (url.endsWith('.gz')) {

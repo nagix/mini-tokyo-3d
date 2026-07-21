@@ -125,7 +125,7 @@ export default class extends Evented {
         options.container = initContainer(me.container);
 
         // This style overrides the option
-        options.style = 'assets/style.json';
+        options.style = helpers.resolveAssetUrl('assets/style.json');
 
         // The custom attribution will be appended only if ConfigControl is visible
         if (!options.configControl) {
