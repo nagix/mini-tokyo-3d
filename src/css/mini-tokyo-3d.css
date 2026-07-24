@@ -613,12 +613,12 @@
     vertical-align: top;
 }
 .mini-tokyo-3d .exit-elevator-icon {
-    background: no-repeat center right/20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/elevator.svg', fill: #fff);
+    background: no-repeat center right/20px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/elevator.svg', fill: #fff, viewBox: -16 -32 544 544);
     width: 23px;
 }
 .mini-tokyo-3d .exit-elevator-small-icon {
     display: inline-block;
-    background: no-repeat center left/16px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/elevator.svg', fill: #fff);
+    background: no-repeat center left/16px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/elevator.svg', fill: #fff, viewBox: -16 -32 544 544);
     width: 18px;
     height: 20px;
     vertical-align: top;
@@ -1102,7 +1102,7 @@
 }
 .mini-tokyo-3d #position-tracking-mode .tracking-mode-icon {
     background-size: 32px;
-    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/crosshairs.svg', fill: #fff);
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/crosshairs.svg', fill: #fff, viewBox: 0 -16 576 544);
 }
 .mini-tokyo-3d #back-tracking-mode .tracking-mode-icon {
     background-size: 32px;
@@ -1113,8 +1113,8 @@
     background-image: svg-load('../svg/up.svg', fill: #fff);
 }
 .mini-tokyo-3d #front-tracking-mode .tracking-mode-icon {
-    background-size: 32px;
-    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/train.svg', fill: #fff);
+    background-size: 24px;
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/train.svg', fill: #fff, viewBox: 0 0 384 544);
 }
 .mini-tokyo-3d #topfront-tracking-mode .tracking-mode-icon {
     background-size: 32px;
@@ -1130,7 +1130,7 @@
 }
 .mini-tokyo-3d #bird-tracking-mode .tracking-mode-icon {
     background-size: 32px;
-    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/dove.svg', fill: #fff);
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/dove.svg', fill: #fff, viewBox: 0 -18 512 530);
 }
 .mini-tokyo-3d .tracking-mode-icon-enabled {
     margin: 0 10px 0 0;
