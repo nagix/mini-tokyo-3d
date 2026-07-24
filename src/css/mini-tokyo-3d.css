@@ -1082,6 +1082,9 @@
     border-width: 2px;
     border-color: #33B5E5;
 }
+.mini-tokyo-3d .layer-icon:hover {
+    background-color: rgba(51, 51, 51, 0.7);
+}
 .mini-tokyo-3d .tracking-mode-row {
     height: 60px;
 }
@@ -1136,6 +1139,9 @@
     margin: 0 10px 0 0;
     border-width: 2px;
     border-color: #33B5E5;
+}
+.mini-tokyo-3d .tracking-mode-icon:hover {
+    background-color: rgba(51, 51, 51, 0.7);
 }
 .mini-tokyo-3d .panel.closed {
     height: 0;
