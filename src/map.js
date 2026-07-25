@@ -3061,11 +3061,21 @@ export default class extends Evented {
     }
 
     /**
-     * Returns the perceived brightness of the lights currently set on the map.
-     * @returns {number} The brightness (0-1)
+     * Returns the lights currently set on the map. The returned object has the
+     * same shape as the payload of the {@link Map#event:light} event.
+     * @returns {Object} The current lights, with the following properties:
+     *     - directional: The directional light ({color, intensity, direction})
+     *     - ambient: The ambient light ({color, intensity})
+     *     - brightness: The perceived brightness (0-1)
      */
-    getBrightness() {
-        return helpersMapbox.getBrightness(this.map);
+    getLight() {
+        const map = this.map;
+
+        return {
+            directional: helpersMapbox.getDirectionalLight(map),
+            ambient: helpersMapbox.getAmbientLight(map),
+            brightness: helpersMapbox.getBrightness(map)
+        };
     }
 
     pickObject(point) {
