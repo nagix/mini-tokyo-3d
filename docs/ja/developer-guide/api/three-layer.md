@@ -14,7 +14,7 @@
 
 ### **`lightColor`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | [`Color`](https://threejs.org/docs/#api/en/math/Color) | [`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
-ライトの色です。16進数のカラー、three.js の [Color](https://threejs.org/docs/#api/en/math/Color) インスタンス、または CSS 形式の文字列を指定できます。指定しない場合は、現在の日時に基づいた動的なライトの色が使用されます。
+ライトの色です。16進数のカラー、three.js の [Color](https://threejs.org/docs/#api/en/math/Color) インスタンス、または CSS 形式の文字列を指定できます。指定しない場合は、現在の日時に基づいた動的なライトの色が使用されます。現在の動的なライトは、[`light`](./map.md#light) イベントまたは [`Map#getLight`](./map.md#getlight) で取得できます。
 
 ### **`maxzoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))
 
@@ -38,7 +38,7 @@
 
 **`map`** ([`Map`](./map.md)) このレイヤーが追加された Mini Tokyo 3D の Map
 
-**`context`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) このレイヤーに含まれる three.js のレンダラー、シーン、カメラオブジェクトです。
+**`context`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) このレイヤーに含まれる three.js のレンダラー、シーン、カメラオブジェクト
 
 名前 | 説明
 :-- | :--
@@ -56,7 +56,7 @@
 
 **`map`** ([`Map`](./map.md)) このレイヤーが削除された Mini Tokyo 3D の Map
 
-**`context`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) このレイヤーに含まれる three.js のレンダラー、シーン、カメラオブジェクトです。
+**`context`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) このレイヤーに含まれる three.js のレンダラー、シーン、カメラオブジェクト
 
 名前 | 説明
 :-- | :--

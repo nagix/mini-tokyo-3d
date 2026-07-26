@@ -16,7 +16,7 @@
 
 ### **`lightColor`** ([`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>`)
 
-ライトの色です。赤、緑、青の各成分を表す配列で、それぞれの値は `0` から `255` の間の任意の数値です。指定しない場合は、現在の日時に基づいた動的なライトの色が使用されます。
+ライトの色です。赤、緑、青の各成分を表す配列で、それぞれの値は `0` から `255` の間の任意の数値です。指定しない場合は、現在の日時に基づいた動的なライトの色が使用されます。現在の動的なライトは、[`light`](./map.md#light) イベントまたは [`Map#getLight`](./map.md#getlight) で取得できます。
 
 ### **`maxzoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))
 

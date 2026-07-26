@@ -20,8 +20,8 @@ Nom | Description
 **`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>par défaut : `true` | Si `true`, l'affichage de la date et de l'heure sera ajouté à la carte.
 **`options.configControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>par défaut : `true` | Si `true`, les boutons de configuration seront ajoutés à la carte.
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Le `id` de l'élément HTML dans lequel Mini Tokyo 3D restituera la carte. L'élément spécifié ne doit avoir aucun enfant.
-**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>` | Un tableau de sources de données de trains, de vols et de bus pour Mini Tokyo 3D. S'il n'est pas spécifié, les sources de données de trains et de vols ODPT et Mini Tokyo 3D intégrées sont utilisées. Notez qu'il s'agit d'une fonctionnalité expérimentale en cours de développement et susceptible de changer.
-**`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | URL des données 3D de Mini Tokyo. S’il n’est pas spécifié, `'https://minitokyo3d.com/data'` sera utilisé.
+**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>` | Un tableau de sources de données de trains, de vols et de bus pour Mini Tokyo 3D. S'il n'est pas spécifié, les sources de données de trains et de vols ODPT et Mini Tokyo 3D intégrées sont utilisées. Fournir cette option remplace les sources intégrées ; pour les conserver, incluez-les explicitement ou ajoutez les vôtres à l'exécution avec [`Map#addDataSource`](./map.md#adddatasource-source). Chaque source requiert un [`id`](./data-source.md#id-string) unique.
+**`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | URL des données de Mini Tokyo 3D. S’il n’est pas spécifié, `'https://minitokyo3d.com/data'` sera utilisé.
 **`options.ecoFrameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>par défaut : `1` | Fréquence d'images pour les animations de train et d'avion (images par seconde) lorsque le mode Eco est activé. Spécifiez sur une échelle de 1 à 60. Des valeurs inférieures entraînent des animations moins fluides et une utilisation moindre des ressources du processeur, réduisant ainsi la consommation de la batterie sur les appareils mobiles. S’il n’est pas spécifié, il sera par défaut `1`.
 **`options.ecoMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>par défaut : `'normal'` | Le mode éco initial. `'normal'` et `'eco'` sont pris en charge.
 **`options.fullscreenControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>par défaut : `true` | Si `true`, le bouton plein écran sera ajouté à la carte.
@@ -146,6 +146,16 @@ Renvoie le mode éco actuel.
 
 ---
 
+### **`getLight()`**
+
+Renvoie les lumières actuellement définies sur la carte. L'objet renvoyé a la même forme que la charge utile de l'événement [`light`](#light).
+
+#### Retours
+
+[`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) : les lumières actuelles. Voir l'événement [`light`](#light) pour les propriétés de l'objet.
+
+---
+
 ### **`getMapboxMap()`**
 
 Renvoie l'objet [`Map`](https://docs.mapbox.com/mapbox-gl-js/api/map/) de Mapbox utilisé dans la carte.
@@ -158,7 +168,7 @@ Renvoie l'objet [`Map`](https://docs.mapbox.com/mapbox-gl-js/api/map/) de Mapbox
 
 ### **`getModelPosition(lnglat, altitude)`**
 
-Projette un `LngLat` sur un `MercatorCoordinate` et renvoie les coordonnées Mercator traduites avec la gare de Tokyo comme origine.
+Projette un `LngLat` sur un `MercatorCoordinate` et renvoie les coordonnées Mercator traduites avec le centre initial de la carte (`options.center`) comme origine.
 
 #### Paramètres
 
@@ -168,13 +178,13 @@ Projette un `LngLat` sur un `MercatorCoordinate` et renvoie les coordonnées Mer
 
 #### Retours
 
-{x : [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), y : [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), z : [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)} : Coordonnées Mercator traduites avec la gare de Tokyo comme origine.
+{x : [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), y : [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), z : [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)} : Coordonnées Mercator traduites avec le centre initial de la carte (`options.center`) comme origine.
 
 ---
 
 ### **`getModelScale()`**
 
-Renvoie l'échelle à transformer en `MercatorCoordinate` à partir de coordonnées en unités du monde réel à l'aide de mètres. Cela fournit la distance de 1 mètre en unités `MercatorCoordinate` à la gare de Tokyo.
+Renvoie l'échelle à transformer en `MercatorCoordinate` à partir de coordonnées en unités du monde réel à l'aide de mètres. Cela fournit la distance de 1 mètre en unités `MercatorCoordinate` au centre initial de la carte (`options.center`).
 
 #### Retours
 
@@ -198,7 +208,7 @@ Renvoie l'ID du train ou du vol suivi, ou le tableau des ID des gares sélection
 
 #### Retours
 
-[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>` : l'identifiant du train ou du vol suivi, ou le tableau des identifiants des gares sélectionnées. L'ID du train est une chaîne au format `'<operator ID>.<line ID>.<train number>'`. L'ID de vol est une chaîne au format `'<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'<operator ID>.<line ID>.<station ID>'`.
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>` : l'identifiant du train ou du vol suivi, ou le tableau des identifiants des gares sélectionnées. L'ID du train est une chaîne au format `'<operator ID>.<railway ID>.<train number>'`. L'ID de vol est une chaîne au format `'<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'<operator ID>.<railway ID>.<station ID>'`.
 
 ---
 
@@ -552,7 +562,7 @@ Déclenché lorsqu'un suivi de train ou d'avion est annulé ou que des gares son
 
 #### Propriétés
 
-**`deselection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`) : L'ID du train ou du vol dont le suivi est annulé, ou le tableau des ID des gares désélectionnées. L'ID du train est une chaîne au format `'<operator ID>.<line ID>.<train number>'`. L'ID de vol est une chaîne au format `'<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'<operator ID>.<line ID>.<station ID>'`.
+**`deselection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`) : L'ID du train ou du vol dont le suivi est annulé, ou le tableau des ID des gares désélectionnées. L'ID du train est une chaîne au format `'<operator ID>.<railway ID>.<train number>'`. L'ID de vol est une chaîne au format `'<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'<operator ID>.<railway ID>.<station ID>'`.
 
 ---
 
@@ -601,6 +611,33 @@ Déclenché lorsqu'une erreur se produit. Il s'agit du principal mécanisme de r
 #### Propriétés
 
 **`message`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)) : message d'erreur.
+
+---
+
+### **`light`**
+
+Déclenché lorsque les lumières définies sur la carte changent, par exemple lorsque l'heure de la journée ou le mode d'affichage change. Utile pour synchroniser des couches ou des plugins personnalisés avec l'éclairage de la carte.
+
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+#### Propriétés
+
+**`directional`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) : la lumière directionnelle.
+
+Nom | Description
+:-- | :--
+**`directional.color`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>` | la couleur RVB sous la forme `[r, g, b]`, chacune comprise entre 0 et 255.
+**`directional.intensity`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | la luminance relative de la couleur (0-1).
+**`directional.direction`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>` | la direction sous la forme `[azimuthal, polar]` en degrés. L'angle azimutal (0-360) est mesuré dans le sens horaire à partir du nord (0 = nord, 90 = est) ; l'angle polaire (0-90) est mesuré depuis le zénith (0 = la verticale, 90 = l'horizon).
+
+**`ambient`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)) : la lumière ambiante.
+
+Nom | Description
+:-- | :--
+**`ambient.color`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>` | la couleur RVB sous la forme `[r, g, b]`, chacune comprise entre 0 et 255.
+**`ambient.intensity`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | la luminance relative de la couleur (0-1).
+
+**`brightness`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)) : la luminosité perçue des lumières (0-1).
 
 ---
 
@@ -738,7 +775,7 @@ Déclenché lorsqu'un suivi de train ou d'avion est initié ou que des gares son
 
 #### Propriétés
 
-**`selection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`) : L'ID du train ou du vol dont le suivi est initié, ou le tableau des ID des gares sélectionnées. L'ID du train est une chaîne au format `'<operator ID>.<line ID>.<train number>'`. L'ID de vol est une chaîne au format `'<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'<operator ID>.<line ID>.<station ID>'`.
+**`selection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`) : L'ID du train ou du vol dont le suivi est initié, ou le tableau des ID des gares sélectionnées. L'ID du train est une chaîne au format `'<operator ID>.<railway ID>.<train number>'`. L'ID de vol est une chaîne au format `'<operator ID>.<airport ID>.<flight number>'`. L'ID de la station est une chaîne au format `'<operator ID>.<railway ID>.<station ID>'`.
 
 ---
 

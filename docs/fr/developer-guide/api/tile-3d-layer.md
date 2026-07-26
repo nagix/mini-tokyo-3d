@@ -16,7 +16,7 @@ Un identifiant de couche unique.
 
 ### **`lightColor`** ([`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>`)
 
-Une couleur de lumières. Il s'agit d'un tableau de composants rouges, verts et bleus, chacun portant un nombre compris entre `0` et `255`. Si elle n’est pas spécifiée, la couleur de lumière dynamique basée sur la date et l’heure actuelles sera utilisée.
+Une couleur de lumières. Il s'agit d'un tableau de composants rouges, verts et bleus, chacun portant un nombre compris entre `0` et `255`. Si elle n’est pas spécifiée, la couleur de lumière dynamique basée sur la date et l’heure actuelles sera utilisée. La lumière dynamique actuelle peut être obtenue avec l'événement [`light`](./map.md#light) ou [`Map#getLight`](./map.md#getlight).
 
 ### **`maxzoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))
 

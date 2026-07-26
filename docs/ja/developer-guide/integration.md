@@ -4,7 +4,7 @@ Mini Tokyo 3D を Web ページに埋め込んで利用する、もしくは API
 
 ## 使用の準備
 
-Mini Tokyo 3D は ES2018 に対応した主要ブラウザで動作します。Internet Explorer には非対応です。
+Mini Tokyo 3D は ES2020 に対応した主要ブラウザで動作します。Internet Explorer には非対応です。
 
 Mini Tokyo 3D は次のデータソースを使用しており、実行時にそれぞれのデータソースに対するアクセストークンが必要です。下記の手順に従って、アクセストークンを入手してください。
 
@@ -114,6 +114,8 @@ const options = {
 };
 const map = new Map(options);
 ```
+
+Mini Tokyo 3D は、マップスタイル（`style.json`）とローカライズ辞書（`dictionary-<lang>.json`）を、読み込まれたスクリプトと同じ場所にある `assets` フォルダから読み込みます（`import.meta.url` で解決）。前節のように jsDelivr CDN を使う場合、これらのファイルは CDN から自動的に配信されます。Mini Tokyo 3D を自分のアプリケーションにバンドルする場合は、`mini-tokyo-3d/dist/assets` に含まれる `assets` フォルダを出力バンドルと同じ場所に配置してください（例: ビルド出力ディレクトリにコピーする）。
 
 ## プラグインの追加
 

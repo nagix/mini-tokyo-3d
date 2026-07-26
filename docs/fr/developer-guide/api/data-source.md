@@ -2,13 +2,11 @@
 
 L'objet `DataSource` est utilisé pour spécifier une source de données de trains, de vols ou de bus. Ce qu'une source de données charge est déterminé par les propriétés d'URL qu'elle porte. Les sources de données peuvent être définies sous forme de tableau dans l'option du constructeur [`Map`](./map.md) `dataSources`, ou ajoutées et supprimées à l'exécution avec [`Map#addDataSource`](./map.md#adddatasource-source) et [`Map#removeDataSource`](./map.md#removedatasource-id).
 
-::: warning Avertissement
-Notez qu'il s'agit d'une fonctionnalité expérimentale en cours de développement et susceptible de changer.
-:::
-
 Pour les données de trains (`trainUrl` et `trainInfoUrl`), le format de chaque objet est détecté automatiquement à partir de son `@type` : les objets dont le `@type` est `'odpt:Train'` ou `'odpt:TrainInformation'` sont analysés au format brut [ODPT](https://www.odpt.org/en/), sinon au format Mini Tokyo 3D pré-normalisé. Lorsque plusieurs sources de données contiennent le même train, vol ou information sur les trains, les sources qui apparaissent plus tard dans le tableau remplacent les précédentes.
 
 Pour une URL dont l'hôte est enregistré comme hôte compatible ODPT, le jeton d'accès correspondant dans [`Secrets`](./secrets.md) est automatiquement ajouté comme clé de consommateur.
+
+En raison de la politique de même origine, les URL chargées par une source de données doivent être soit sur la même origine que Mini Tokyo 3D lui-même, soit servies avec une configuration CORS (partage des ressources entre origines) appropriée.
 
 **Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 

@@ -6,10 +6,6 @@ Mini Tokyo 3D prend en charge le [GTFS](https://gtfs.org/fr/) (General Transit F
 
 Les véhicules de l'ensemble de données GTFS sont représentés sous forme de boîtes légèrement plus petites que les trains et avions Mini Tokyo 3D habituels. Les ensembles de données GTFS à afficher ne se limitent pas à la région de Tokyo, mais peuvent provenir de n'importe quelle région du monde. En d’autres termes, Mini Tokyo 3D peut être utilisé comme un simple visualiseur pour les ensembles de données GTFS.
 
-::: warning Avertissement
-Notez qu'il s'agit d'une fonctionnalité expérimentale en cours de développement et susceptible de changer.
-:::
-
 ## Spécification des sources de données
 
 Pour spécifier un ensemble de données GTFS spécifique et un flux GTFS Realtime VehiclePosition, ajoutez un `?` suivi de paires clé/valeur (paramètres de requête) à l'URL pour accéder à Mini Tokyo 3D. Si vous spécifiez une URL de données comme `gtfsurl` ou `gtfsvpurl` qui est hébergée par le Public Transportation Open Data Center et commence par `https://api.odpt.org/`, le paramètre `acl:consumerKey` spécifiant un jeton d'accès n'est pas requis.
@@ -23,6 +19,10 @@ Paramètre de requête | Description | Exemple
 `gtfsurl` | L'URL d'un [GTFS dataset zip file](https://gtfs.org/fr/documentation/schedule/reference/#publication-des-jeux-de-donnees-et-pratiques-generales) (encodage d'URL requis) | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Ffiles%2FToei%2Fdata%2FToeiBus-GTFS.zip`
 `gtfsvpurl` | L'URL d'un [VehiclePosition feed of GTFS Realtime](https://gtfs.org/fr/documentation/realtime/reference/#message-vehicleposition) (encodage d'URL requis). En cas d'omission, les véhicules circuleront selon les horaires | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Fgtfs%2Frealtime%2FToeiBus`
 `gtfscolor` | Une couleur utilisée pour afficher les itinéraires et les véhicules. Code couleur hexadécimal (sans interligne `#`) | `9FC105`
+
+En raison de la politique de même origine, les URL spécifiées par `gtfsurl` et `gtfsvpurl` doivent être soit sur la même origine que Mini Tokyo 3D lui-même, soit servies avec une configuration CORS (partage des ressources entre origines) appropriée.
+
+Lorsqu'un jeu de données GTFS est spécifié de cette manière, Mini Tokyo 3D affiche uniquement ce jeu de données au lieu des données de transport par défaut de Tokyo, et l'horloge affiche l'heure dans le fuseau horaire local du jeu de données (tiré de son `agency_timezone` GTFS).
 
 Étant donné qu'un jeu de données GTFS à afficher ne couvre pas nécessairement la zone autour de Tokyo, il est utile de spécifier `#` suivi de plusieurs éléments séparés par `/` (hachage) pour rendre la position et l'orientation initiales de la carte adaptées à l'affichage du jeu de données. Le hachage doit être placé après les paramètres de requête ci-dessus.
 
@@ -43,6 +43,8 @@ https://minitokyo3d.com/?<paramètres de requête>#<zoom>/<lat>/<lon>/<relèveme
 <img :src="$withBase('/images/vehicle-details.jpg')" style="width: 251px;">
 
 Placez le pointeur de la souris ou appuyez sur le véhicule pour afficher des informations détaillées le concernant. Les informations détaillées incluent le nom de l'opérateur, le numéro de l'itinéraire, la destination, le numéro du véhicule, l'arrêt précédent et l'arrêt suivant.
+
+Une icône d'onde radio affichée à droite du nom de l'opérateur indique que le véhicule reflète les informations de localisation en temps réel.
 
 ## Suivi des véhicules
 

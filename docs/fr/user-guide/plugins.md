@@ -1,6 +1,6 @@
 # Plugins
 
-Une variété de plugins sont disponibles pour afficher des informations supplémentaires sur la carte 3D. Les informations fournies par chaque plugin sont affichées sous forme de couche sur la carte et peuvent être activées et désactivées dans le panneau [Paramètres d'affichage des calques](./configuration.md#parametres-d-affichage-des-calques).
+Une variété de plugins sont disponibles pour afficher des informations supplémentaires sur la carte 3D. Les informations fournies par chaque plugin sont affichées sous forme de couche sur la carte et peuvent être activées et désactivées dans le panneau [Paramètres d'affichage des couches](./configuration.md#parametres-d-affichage-des-couches).
 
 ## Plugin de précipitations
 
@@ -34,7 +34,7 @@ Un modèle de ville 3D de Tokyo fourni par [Project PLATEAU](https://www.mlit.go
 
 Pour plus d’informations, veuillez visiter le [dépôt GitHub du Mini Tokyo 3D PLATEAU Plugin](https://github.com/nagix/mt3d-plugin-plateau).
 
-##Plugin GTFS
+## Plugin GTFS
 
 <img :src="$withBase('/images/gtfs-plugin.jpg')" style="width: 580px;">
 

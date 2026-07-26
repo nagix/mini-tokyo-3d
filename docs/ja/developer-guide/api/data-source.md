@@ -2,13 +2,11 @@
 
 `DataSource` オブジェクトは、列車・フライト・バスのデータソースを指定するためのオブジェクトです。何を読み込むかは、そのデータソースが持つ URL プロパティによって決まります。[`Map`](./map.md) のコンストラクタオプション `dataSources` に配列として指定するか、実行時に [`Map#addDataSource`](./map.md#adddatasource-source) および [`Map#removeDataSource`](./map.md#removedatasource-id) で追加・削除できます。
 
-::: warning 注意
-これは開発中の実験的な機能であり、変更される可能性があることに注意してください。
-:::
-
 列車データ（`trainUrl` および `trainInfoUrl`）では、各オブジェクトの形式は `@type` から自動判定されます。`@type` が `'odpt:Train'` または `'odpt:TrainInformation'` のオブジェクトは生の [ODPT](https://www.odpt.org/) 形式として、それ以外は正規化済みの Mini Tokyo 3D 形式としてパースされます。複数のデータソースに同一の列車・フライト・運行情報が含まれる場合、配列の後方にあるソースが前方のソースを上書きします。
 
 ホストが ODPT 互換ホストとして登録されている URL には、[`Secrets`](./secrets.md) の対応するアクセストークンが利用者キーとして自動的に付与されます。
+
+同一オリジンポリシーの制約により、データソースが読み込む URL は、Mini Tokyo 3D 本体と同じオリジンの URL とするか、適切な CORS（オリジン間リソース共有）設定がなされた URL を指定する必要があります。
 
 **型** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 

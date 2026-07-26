@@ -14,7 +14,7 @@ Un identifiant de couche unique.
 
 ### **`lightColor`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | [`Color`](https://threejs.org/docs/#api/en/math/Color) | [`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
-Une couleur de lumières. Il peut s'agir d'une couleur hexadécimale, d'une instance three.js [Color](https://threejs.org/docs/#api/en/math/Color) ou d'une chaîne de style CSS. Si elle n’est pas spécifiée, la couleur de lumière dynamique basée sur la date et l’heure actuelles sera utilisée.
+Une couleur de lumières. Il peut s'agir d'une couleur hexadécimale, d'une instance three.js [Color](https://threejs.org/docs/#api/en/math/Color) ou d'une chaîne de style CSS. Si elle n’est pas spécifiée, la couleur de lumière dynamique basée sur la date et l’heure actuelles sera utilisée. La lumière dynamique actuelle peut être obtenue avec l'événement [`light`](./map.md#light) ou [`Map#getLight`](./map.md#getlight).
 
 ### **`maxzoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))
 

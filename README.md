@@ -86,24 +86,20 @@ The data for this visualization are sourced from the [Public Transportation Open
 
 First, get access tokens for the public transportation data and map tiles by signing up at the [Public Transportation Open Data Center](https://developer.odpt.org/signup) and [Mapbox](https://account.mapbox.com/auth/signup/). At the Public Transportation Open Data Center, you need to get both tokens for ODPT Center and Challenge 2026.
 
-The latest version of Node.js is required. Move to the root directory of the application, run the following commands, then the script, dataset and static web page will be generated in the `build` directory.
+The latest version of Node.js is required. Move to the root directory of the application and install the dependencies.
 ```bash
 npm install
+```
+
+Provide the access tokens through environment variables and run the build. The script, dataset and static web page will be generated in the `build` directory.
+```bash
+MAPBOX_ACCESS_TOKEN=<Mapbox access token> \
+MT3D_SECRET_ODPT=<access token for Public Transportation Open Data Center> \
+MT3D_SECRET_CHALLENGE=<access token for Open Data Challenge for Public Transportation 2026> \
 npm run build-all
 ```
 
-Finally, pass your Mapbox access token as `accessToken` and tokens for ODPT Center and Challenge 2026 as `secrets` property to a `Map` constructor in `index.html`.
-
-```js
-map = new mt3d.Map({
-    /* ... */
-    accessToken: 'pk.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxxxxxxxxxxxx',
-    secrets: {
-        odpt: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-        challenge: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-    }
-});
-```
+Finally, place all the files in the `build` directory on your web server.
 
 See the [Developer Guides](#developer-guides) for more details.
 

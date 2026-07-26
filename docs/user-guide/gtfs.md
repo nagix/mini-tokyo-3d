@@ -4,11 +4,7 @@
 
 Mini Tokyo 3D supports the [GTFS](https://gtfs.org) (General Transit Feed Specification) and the GTFS Realtime. By specifying data sources, you can view vehicles moving along routes on a map in real-time.
 
-Vehicles of the GTFS dataset are represented as slightly smaller boxes than the usual Mini Tokyo 3D trains and aircrafts. GTFS datasets to display are not limited to the Tokyo area, but can be from any region of the world. In other words, Mini Tokyo 3D can be used as a simple viewer for GTFS datasets.
-
-::: warning
-Note that this is an experimental feature which is under development and is prone to change.
-:::
+Vehicles of the GTFS dataset are represented as slightly smaller boxes than the usual Mini Tokyo 3D trains and airplanes. GTFS datasets to display are not limited to the Tokyo area, but can be from any region of the world. In other words, Mini Tokyo 3D can be used as a simple viewer for GTFS datasets.
 
 ## Specifying data sources
 
@@ -23,6 +19,10 @@ Query parameter | Description | Example
 `gtfsurl` | The URL of a [GTFS dataset zip file](https://gtfs.org/documentation/schedule/reference/#dataset-publishing-general-practices) (URL encoding required) | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Ffiles%2FToei%2Fdata%2FToeiBus-GTFS.zip`
 `gtfsvpurl` | The URL of a [VehiclePosition feed of GTFS Realtime](https://gtfs.org/documentation/realtime/reference/#message-vehicleposition) (URL encoding required). If omitted, vehicles will operate according to the timetables | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Fgtfs%2Frealtime%2FToeiBus`
 `gtfscolor` | A color used to display routes and vehicles. Hexadecimal color code (no leading `#`) | `9FC105`
+
+Due to the same-origin policy, the URLs specified by `gtfsurl` and `gtfsvpurl` must be either on the same origin as Mini Tokyo 3D itself, or served with appropriate CORS (Cross-Origin Resource Sharing) settings.
+
+When a GTFS dataset is specified this way, Mini Tokyo 3D displays only that dataset instead of the default Tokyo transit data, and the clock shows the time in the dataset's local time zone (taken from its GTFS `agency_timezone`).
 
 Since a GTFS dataset to display does not necessarily cover the area around Tokyo, it is useful to specify `#` followed by multiple elements separated by `/` (hash) to make the initial position and orientation of the map suitable for displaying the dataset. The hash should be placed after the query parameters above.
 
@@ -43,6 +43,8 @@ Hash element | Description | Example
 <img :src="$withBase('/images/vehicle-details.jpg')" style="width: 251px;">
 
 Place the mouse pointer or tap on the vehicle to display detailed information about it. Detailed information includes operator name, route number, destination, vehicle number, previous stop and next stop.
+
+A radio wave icon displayed to the right of the operator name indicates that the vehicle reflects real-time location information.
 
 ## Tracking Vehicles
 

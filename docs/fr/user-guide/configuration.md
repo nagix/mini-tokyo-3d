@@ -6,7 +6,7 @@
 
 Cliquez ou appuyez sur le bouton de l'icône de la couche pour afficher le panneau Paramètres d'affichage de la couche. Dans le panneau Paramètres d'affichage des couches, vous pouvez activer/désactiver la couche superposée à la carte. En incorporant le [Plugins](./plugins.md), la couche Précipitations, la couche Feux d'artifice, la couche Caméras en direct, la couche PLATEAU, la couche GTFS et la couche Jeux olympiques de Tokyo 2020 seront affichées dans la liste. Cliquez ou appuyez sur le bouton « x » dans le coin supérieur droit du panneau ou à l'extérieur du panneau pour fermer le panneau.
 
-Cliquez ou appuyez sur l'icône de chaque calque pour activer ou désactiver l'affichage des calques (le cadre extérieur de l'icône est affiché en bleu clair lorsqu'il est activé). Voir [ici](./plugins.md) pour en savoir plus sur les fonctions de chaque couche.
+Cliquez ou appuyez sur l'icône de chaque couche pour activer ou désactiver l'affichage des couches (le cadre extérieur de l'icône est affiché en bleu clair lorsqu'il est activé). Voir [ici](./plugins.md) pour en savoir plus sur les fonctions de chaque couche.
 
 ## Paramètres du mode de suivi
 

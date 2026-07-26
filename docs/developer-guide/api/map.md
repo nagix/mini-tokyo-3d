@@ -20,7 +20,7 @@ Name | Description
 **`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the date and time display will be added to the map.
 **`options.configControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>default: `true` | If `true`, the configuration buttons will be added to the map.
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | The `id` of the HTML element in which Mini Tokyo 3D will render the map. The specified element must have no children.
-**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>` | An array of train, flight and bus data sources for Mini Tokyo 3D. If not specified, the built-in ODPT and Mini Tokyo 3D train and flight data sources are used. Note that this is an experimental feature which is under development and is prone to change.
+**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>` | An array of train, flight and bus data sources for Mini Tokyo 3D. If not specified, the built-in ODPT and Mini Tokyo 3D train and flight data sources are used. Providing this option replaces the built-in sources; to keep them, include them explicitly or add yours at runtime with [`Map#addDataSource`](./map.md#adddatasource-source). Each source requires a unique [`id`](./data-source.md#id-string).
 **`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D data URL. If not specified, `'https://minitokyo3d.com/data'` will be used.
 **`options.ecoFrameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>default: `1` | Frame rate for train and airplane animations (frames per second) when Eco Mode is on. Specify on a scale of 1 to 60. Lower values result in less smooth animations and lower CPU resource usage, thus reducing battery consumption on mobile devices. If not specified, it will default to `1`.
 **`options.ecoMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>default: `'normal'` | The initial eco mode. `'normal'` and `'eco'` are supported.
@@ -146,6 +146,16 @@ Returns the current eco mode.
 
 ---
 
+### **`getLight()`**
+
+Returns the lights currently set on the map. The returned object has the same shape as the payload of the [`light`](#light) event.
+
+#### Returns
+
+[`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object): The current lights. See the [`light`](#light) event for the properties of the object.
+
+---
+
 ### **`getMapboxMap()`**
 
 Returns the Mapbox's [`Map`](https://docs.mapbox.com/mapbox-gl-js/api/map/) object used in the map.
@@ -158,7 +168,7 @@ Returns the Mapbox's [`Map`](https://docs.mapbox.com/mapbox-gl-js/api/map/) obje
 
 ### **`getModelPosition(lnglat, altitude)`**
 
-Projects a `LngLat` to a `MercatorCoordinate`, and returns the translated mercator coordinates with Tokyo Station as the origin.
+Projects a `LngLat` to a `MercatorCoordinate`, and returns the translated mercator coordinates with the map's initial center (`options.center`) as the origin.
 
 #### Parameters
 
@@ -168,13 +178,13 @@ Projects a `LngLat` to a `MercatorCoordinate`, and returns the translated mercat
 
 #### Returns
 
-{x: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), y: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), z: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}: The translated mercator coordinates with Tokyo Station as the origin.
+{x: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), y: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), z: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}: The translated mercator coordinates with the map's initial center (`options.center`) as the origin.
 
 ---
 
 ### **`getModelScale()`**
 
-Returns the scale to transform into `MercatorCoordinate` from coordinates in real world units using meters. This provides the distance of 1 meter in `MercatorCoordinate` units at Tokyo Station.
+Returns the scale to transform into `MercatorCoordinate` from coordinates in real world units using meters. This provides the distance of 1 meter in `MercatorCoordinate` units at the map's initial center (`options.center`).
 
 #### Returns
 
@@ -198,7 +208,7 @@ Returns the ID of the train or flight being tracked, or the array of the IDs of 
 
 #### Returns
 
-[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`: The ID of the train or flight being tracked, or the array of the IDs of the selected stations. The train ID is a string in the form of `'<operator ID>.<line ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'<operator ID>.<line ID>.<station ID>'`.
+[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`: The ID of the train or flight being tracked, or the array of the IDs of the selected stations. The train ID is a string in the form of `'<operator ID>.<railway ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'<operator ID>.<railway ID>.<station ID>'`.
 
 ---
 
@@ -554,7 +564,7 @@ Fired when a train or airplane tracking is canceled, or stations are deselected.
 
 #### Properties
 
-**`deselection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`): The ID of the train or flight whose tracking is canceled, or the array of the IDs of the deselected stations. The train ID is a string in the form of `'<operator ID>.<line ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'<operator ID>.<line ID>.<station ID>'`.
+**`deselection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`): The ID of the train or flight whose tracking is canceled, or the array of the IDs of the deselected stations. The train ID is a string in the form of `'<operator ID>.<railway ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'<operator ID>.<railway ID>.<station ID>'`.
 
 ---
 
@@ -603,6 +613,33 @@ Fired when an error occurs. This is Mini Tokyo 3D's primary error reporting mech
 #### Properties
 
 **`message`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): Error message.
+
+---
+
+### **`light`**
+
+Fired when the lights set on the map change, such as when the time of day or the view mode changes. This is useful for keeping custom layers or plugins in sync with the map's lighting.
+
+**Type** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+#### Properties
+
+**`directional`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)): The directional light.
+
+Name | Description
+:-- | :--
+**`directional.color`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>` | The RGB color as `[r, g, b]`, each in the range 0-255.
+**`directional.intensity`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The relative luminance of the color (0-1).
+**`directional.direction`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>` | The direction as `[azimuthal, polar]` in degrees. The azimuthal angle ranges 0-360, measured clockwise from north (0 = north, 90 = east); the polar angle ranges 0-90, measured from the zenith (0 = straight up, 90 = the horizon).
+
+**`ambient`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)): The ambient light.
+
+Name | Description
+:-- | :--
+**`ambient.color`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>` | The RGB color as `[r, g, b]`, each in the range 0-255.
+**`ambient.intensity`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The relative luminance of the color (0-1).
+
+**`brightness`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)): The perceived brightness of the lights (0-1).
 
 ---
 
@@ -740,7 +777,7 @@ Fired when a train or airplane tracking is initiated, or stations are selected.
 
 #### Properties
 
-**`selection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`): The ID of the train or flight whose tracking is initiated, or the array of the IDs of the selected stations. The train ID is a string in the form of `'<operator ID>.<line ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'<operator ID>.<line ID>.<station ID>'`.
+**`selection`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)`>`): The ID of the train or flight whose tracking is initiated, or the array of the IDs of the selected stations. The train ID is a string in the form of `'<operator ID>.<railway ID>.<train number>'`. The flight ID is a string in the form of `'<operator ID>.<airport ID>.<flight number>'`. The station ID is a string in the form of `'<operator ID>.<railway ID>.<station ID>'`.
 
 ---
 

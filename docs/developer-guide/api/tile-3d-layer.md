@@ -16,7 +16,7 @@ A unique layer id.
 
 ### **`lightColor`** ([`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>`)
 
-A color of the lights. It is an array of red, green, and blue components, each with any number between `0` and `255`. If not specified, the dynamic light color based on the current date and time will be used.
+A color of the lights. It is an array of red, green, and blue components, each with any number between `0` and `255`. If not specified, the dynamic light color based on the current date and time will be used. The current dynamic light can be obtained with the [`light`](./map.md#light) event or [`Map#getLight`](./map.md#getlight).
 
 ### **`maxzoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))
 

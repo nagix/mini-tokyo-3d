@@ -38,9 +38,9 @@ Click or tap the compass icon button and the bearing will be reset to true north
 
 ## Date and Time
 
-<img :src="$withBase('/images/clock.jpg')" style="width: 147.5px;">
+<img :src="$withBase('/images/clock.jpg')" style="width: 141px;">
 
-The current date and time is displayed at the top left of the screen. It is convenient when accessing from overseas because Japan standard time is always displayed. When [Playback Mode](./display-modes.md#playback-mode) is on, additional buttons appear below the current time to change the time and the speed at which the time progresses.
+The current date and time is displayed at the top left of the screen. It shows the current time in the time zone of the transit data being displayed; for the default data this is Japan Standard Time, which is convenient when accessing from overseas, and when a [GTFS dataset](./gtfs.md) is displayed it is the local time of that dataset. When [Playback Mode](./display-modes.md#playback-mode) is on, additional buttons appear below the current time to change the time and the speed at which the time progresses.
 
 See [here](./display-modes.md#playback-mode) for details on Playback Mode.
 
@@ -64,15 +64,15 @@ Clicking or tapping on a train or airplane will turn on Tracking Mode and the sc
 
 When Tracking Mode is on, the timetable and current position of the train being tracked is displayed at the bottom of the screen. For the train connecting to other lines, the timetables of those lines are also shown. The timetable can be scrolled by using the mouse wheel, dragging the scroll bar, or dragging your finger. Click or tap on the “∨” icon in the upper right corner of the timetable to hide the timetable at the bottom of the screen, and click or tap on the “∧” icon to display it again.
 
-Also, when Tracking Mode is on, some devices will display the [share button](./screen-and-operations.md#sharing-trains-and-flights) to share the train or flight being tracked.
+Also, when Tracking Mode is on, some devices will display the [share button](./screen-and-operations.md#sharing-trains-flights-and-stations) to share the train or flight being tracked.
 
 The viewpoint in Tracking Mode can be changed in the Tracking Mode Settings panel. See [here](./configuration.md#tracking-mode-settings) for more details.
 
-## Sharing Trains and Flights
+## Sharing Trains, Flights and Stations
 
 <img :src="$withBase('/images/share-button.jpg')" style="width: 211px;">
 
-When [Tracking Mode](./screen-and-operations.md#tracking-trains-and-airplanes) is on, the “Share this train” or “Share this flight” button will appear at the top of the screen. Clicking or tapping the button will bring up an additional menu, depending on the device you are using, and you can send the tracking URLs for the trains or flight and optional messages through messaging apps, email or social networking apps. When the recipient of the information opens the URL in their browser, Mini Tokyo 3D will be launched, and they will be able to track the same train or flight.
+When [Tracking Mode](./screen-and-operations.md#tracking-trains-and-airplanes) is on, the “Share this train” or “Share this flight” button will appear at the top of the screen. Likewise, when a station is [selected](./screen-and-operations.md#selecting-stations), the “Share this station” button will appear. Clicking or tapping the button will bring up an additional menu, depending on the device you are using, and you can send the tracking URL for the train, flight or station and an optional message through messaging apps, email or social networking apps. When the recipient of the information opens the URL in their browser, Mini Tokyo 3D will be launched, and they will be able to track the same train or flight, or view the same station.
 
 This feature is available in all browsers except Firefox.
 
@@ -96,6 +96,8 @@ When you enter a part of the station name, a list of candidates will be displaye
 
 When you click or tap on a station, the station is selected, you will move on the map so that the station is centered on the screen, and the map around the station is enlarged. When a station is selected, the [train departure board](#displaying-train-departure-board), [route search](#route-search), and [station exit information](#displaying-station-exit-information) are displayed at the bottom of the screen. You can switch the display of each information by clicking the toggle button below the station name. Click or tap on the “∨” icon to the right of the station name to hide the information at the bottom of the screen, and click or tap on the “∧” icon to display it again. Clicking or tapping on the map where no station exists will deselect the station.
 
+Also, when a station is selected, some devices will display the [share button](./screen-and-operations.md#sharing-trains-flights-and-stations) to share the selected station.
+
 ## Displaying Train Departure Board
 
 <img :src="$withBase('/images/station-departures.jpg')" style="width: 400px;">
@@ -113,7 +115,7 @@ When you enter a part of the station name, a list of candidates will be displaye
 Trains, airplanes and layers will be temporarily hidden when the criteria entry panel or search result panel is displayed.
 
 ::: warning
-As of the version 4.0 (beta 3), there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
+As of the version 4.0 (RC 1), there are some limitations: you can only specify the time of departure, and you can only search for the train of the day.
 :::
 
 ## Displaying Station Exit Information
@@ -132,5 +134,5 @@ Icon | Description
 <img :src="$withBase('/images/elevator-icon.jpg')" style="width: 28px; vertical-align: top;">|Elevator
 
 ::: warning
-As of the version 4.0 (beta 3), only subway lines and underground stations are supported for displaying station exit information.
+As of the version 4.0 (RC 1), only subway lines and underground stations are supported for displaying station exit information.
 :::

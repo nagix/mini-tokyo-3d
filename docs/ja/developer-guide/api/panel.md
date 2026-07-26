@@ -14,7 +14,7 @@ new Panel(options: Object)
 
 名前 | 説明
 :-- | :--
-**`options.modal`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | `true`の場合、パネルはモーダルになり、ユーザーが外側をクリックすると閉じます。
+**`options.modal`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | `true`の場合、パネルはモーダルになり、ユーザーが外側をクリックすると閉じる
 
 ## インスタンスメンバ
 

@@ -14,7 +14,7 @@ A unique layer id.
 
 ### **`lightColor`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | [`Color`](https://threejs.org/docs/#api/en/math/Color) | [`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
-A color of the lights. It can be a hexadecimal color, a three.js [Color](https://threejs.org/docs/#api/en/math/Color) instance or a CSS-style string. If not specified, the dynamic light color based on the current date and time will be used.
+A color of the lights. It can be a hexadecimal color, a three.js [Color](https://threejs.org/docs/#api/en/math/Color) instance or a CSS-style string. If not specified, the dynamic light color based on the current date and time will be used. The current dynamic light can be obtained with the [`light`](./map.md#light) event or [`Map#getLight`](./map.md#getlight).
 
 ### **`maxzoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))
 

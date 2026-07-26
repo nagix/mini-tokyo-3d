@@ -38,7 +38,7 @@ For more information, please visit [Mini Tokyo 3D PLATEAU Plugin GitHub Reposito
 
 <img :src="$withBase('/images/gtfs-plugin.jpg')" style="width: 580px;">
 
-This plugin displays transit routes and vehicles on the the Mini Tokyo 3D map based on [GTFS](https://gtfs.org) datasets and GTFS Realtime feeds. As with trains and aircrafts, hovering the mouse pointer over a vehicle or tapping it will display detailed information about the vehicle. Clicking or tapping on a vehicle toggles the tracking mode on, and the screen automatically moves to follow the vehicle's movement. Due to the relatively heavy load and large memory requirements, use on a high performance device is recommended.
+This plugin displays transit routes and vehicles on the Mini Tokyo 3D map based on [GTFS](https://gtfs.org) datasets and GTFS Realtime feeds. As with trains and airplanes, hovering the mouse pointer over a vehicle or tapping it will display detailed information about the vehicle. Clicking or tapping on a vehicle toggles the tracking mode on, and the screen automatically moves to follow the vehicle's movement. Due to the relatively heavy load and large memory requirements, use on a high performance device is recommended.
 
 For more information, please visit [Mini Tokyo 3D GTFS Plugin GitHub Repository](https://github.com/nagix/mt3d-plugin-gtfs).
 

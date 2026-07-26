@@ -38,9 +38,9 @@ Cliquez ou appuyez sur le bouton de l'icône de la boussole et le relèvement se
 
 ## Date et heure
 
-<img :src="$withBase('/images/clock.jpg')" style="width: 147.5px;">
+<img :src="$withBase('/images/clock.jpg')" style="width: 141px;">
 
-La date et l'heure actuelles sont affichées en haut à gauche de l'écran. C'est pratique pour accéder depuis l'étranger car l'heure standard du Japon est toujours affichée. Lorsque [le mode Lecture](./display-modes.md#mode-de-lecture) est activé, des boutons supplémentaires apparaissent sous l'heure actuelle pour modifier l'heure et la vitesse à laquelle l'heure progresse.
+La date et l'heure actuelles sont affichées en haut à gauche de l'écran. L'heure est affichée dans le fuseau horaire des données de transport affichées ; pour les données par défaut, il s'agit de l'heure standard du Japon, ce qui est pratique pour accéder depuis l'étranger, et lorsqu'un [ensemble de données GTFS](./gtfs.md) est affiché, il s'agit de l'heure locale de cet ensemble de données. Lorsque [le mode Lecture](./display-modes.md#mode-de-lecture) est activé, des boutons supplémentaires apparaissent sous l'heure actuelle pour modifier l'heure et la vitesse à laquelle l'heure progresse.
 
 Voir [ici](./display-modes.md#mode-de-lecture) pour plus de détails sur le mode de lecture.
 
@@ -64,15 +64,15 @@ Cliquer ou appuyer sur un train ou un avion activera le mode de suivi et l'écra
 
 Lorsque le mode de suivi est activé, l'horaire et la position actuelle du train suivi sont affichés en bas de l'écran. Pour les trains en correspondance avec d'autres lignes, les horaires de ces lignes sont également indiqués. L'horaire peut être défilé en utilisant la molette de la souris, en faisant glisser la barre de défilement ou en faisant glisser votre doigt. Cliquez ou appuyez sur l'icône « ∨ » dans le coin supérieur droit de l'horaire pour masquer l'horaire en bas de l'écran, et cliquez ou appuyez sur l'icône « ∧ » pour l'afficher à nouveau.
 
-De plus, lorsque le mode de suivi est activé, certains appareils affichent le [bouton de partage](./screen-and-operations.md#partager-des-trains-et-des-vols) pour partager le train ou le vol suivi.
+De plus, lorsque le mode de suivi est activé, certains appareils affichent le [bouton de partage](./screen-and-operations.md#partager-des-trains-des-vols-et-des-gares) pour partager le train ou le vol suivi.
 
 Le point de vue en mode suivi peut être modifié dans le panneau Paramètres du mode suivi. Voir [ici](./configuration.md#parametres-du-mode-de-suivi) pour plus de détails.
 
-## Partager des trains et des vols
+## Partager des trains, des vols et des gares
 
 <img :src="$withBase('/images/share-button.jpg')" style="width: 211px;">
 
-Lorsque [le mode Suivi](./screen-and-operations.md#suivi-des-trains-et-des-avions) est activé, le bouton « Partager ce train » ou « Partager ce vol » apparaîtra en haut de l'écran. En cliquant ou en appuyant sur le bouton, un menu supplémentaire apparaîtra, en fonction de l'appareil que vous utilisez, et vous pourrez envoyer les URL de suivi des trains ou des vols et des messages facultatifs via des applications de messagerie, des e-mails ou des applications de réseaux sociaux. Lorsque le destinataire des informations ouvrira l'URL dans son navigateur, Mini Tokyo 3D sera lancé et il pourra suivre le même train ou vol.
+Lorsque [le mode Suivi](./screen-and-operations.md#suivi-des-trains-et-des-avions) est activé, le bouton « Partager ce train » ou « Partager ce vol » apparaîtra en haut de l'écran. De même, lorsqu'une gare est [sélectionnée](./screen-and-operations.md#selection-des-stations), le bouton « Partager cette gare » apparaîtra. En cliquant ou en appuyant sur le bouton, un menu supplémentaire apparaîtra, en fonction de l'appareil que vous utilisez, et vous pourrez envoyer l'URL de suivi du train, du vol ou de la gare et un message facultatif via des applications de messagerie, des e-mails ou des applications de réseaux sociaux. Lorsque le destinataire des informations ouvrira l'URL dans son navigateur, Mini Tokyo 3D sera lancé et il pourra suivre le même train ou vol, ou afficher la même gare.
 
 Cette fonctionnalité est disponible dans tous les navigateurs sauf Firefox.
 
@@ -96,6 +96,8 @@ Lorsque vous saisissez une partie du nom de la station, une liste de candidats s
 
 Lorsque vous cliquez ou appuyez sur une station, la station est sélectionnée, vous vous déplacez sur la carte pour que la station soit centrée sur l'écran et la carte autour de la station est agrandie. Lorsqu'une station est sélectionnée, les [affichage du tableau de départ du train](#affichage-du-tableau-de-depart-du-train), [recherche d'itinéraire](#recherche-d-itineraire) et [affichage des informations de sortie de station](#affichage-des-informations-de-sortie-de-station) s'affichent en bas de l'écran. Vous pouvez changer l'affichage de chaque information en cliquant sur le bouton bascule situé sous le nom de la station. Cliquez ou appuyez sur l'icône « ∨ » à droite du nom de la station pour masquer les informations en bas de l'écran, et cliquez ou appuyez sur l'icône « ∧ » pour l'afficher à nouveau. Cliquer ou appuyer sur la carte là où aucune station n’existe désélectionnera la station.
 
+De plus, lorsqu'une gare est sélectionnée, certains appareils affichent le [bouton de partage](./screen-and-operations.md#partager-des-trains-des-vols-et-des-gares) pour partager la gare sélectionnée.
+
 ## Affichage du tableau de départ du train
 
 <img :src="$withBase('/images/station-departures.jpg')" style="width: 400px;">
@@ -113,7 +115,7 @@ Lorsque vous saisissez une partie du nom de la station, une liste de candidats s
 Les trains, les avions et les couches seront temporairement masqués lorsque le panneau de saisie des critères ou le panneau des résultats de recherche sera affiché.
 
 ::: warning Avertissement
-Depuis la version 4.0 (beta 2), il y a quelques limitations : vous pouvez uniquement préciser l'heure de départ, et vous pouvez uniquement rechercher le train du jour.
+Depuis la version 4.0 (RC 1), il y a quelques limitations : vous pouvez uniquement préciser l'heure de départ, et vous pouvez uniquement rechercher le train du jour.
 :::
 
 ## Affichage des informations de sortie de station
@@ -132,5 +134,5 @@ Icône | Description
 <img :src="$withBase('/images/elevator-icon.jpg')" style="width: 28px; vertical-align: top;">|Ascenseur
 
 ::: warning Avertissement
-Depuis la version 4.0 (bêta 2), seules les lignes et stations de métro sont prises en charge pour l'affichage des informations de sortie des stations.
+Depuis la version 4.0 (RC 1), seules les lignes et stations de métro sont prises en charge pour l'affichage des informations de sortie des stations.
 :::

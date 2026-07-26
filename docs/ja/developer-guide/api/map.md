@@ -17,10 +17,10 @@ new Map(options: Object)
 **`options.accessToken`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [Mapbox](https://www.mapbox.com) のアクセストークン。未指定の場合はマップのロード時にエラーが起きるため、必ず自分の Web サイト専用のアクセストークンを入手して指定する
 **`options.bearing`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `0` | 初期のマップの方角。真北から反時計回りの角度で指定する。未指定の場合は、`0` に設定される
 **`options.center`**<br>[`LngLatLike`](https://docs.mapbox.com/mapbox-gl-js/ja/api/geography/#lnglatlike)<br>デフォルト: `[139.7670, 35.6814]` | 初期のマップ中心点の座標。未指定の場合は、東京駅付近（`[139.7670, 35.6814]`）に設定される。注: Mini Tokyo 3D では、GeoJSON と同様に経度、緯度の順で座標を指定する
-**`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、時刻表示をマップに追加する
+**`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、日時表示をマップに追加する
 **`options.configControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>デフォルト: `true` | `true` の場合、設定ボタンをマップに追加する
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D がマップを表示する HTML 要素の `id`。指定された要素は、子要素を含んではならない
-**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>` | Mini Tokyo 3D の列車・フライト・バスのデータソースの配列。未指定の場合は、組み込みの ODPT および Mini Tokyo 3D の列車・フライトデータソースが使われます。これは開発中の実験的な機能であり、変更される可能性があることに注意してください。
+**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>` | Mini Tokyo 3D の列車・フライト・バスのデータソースの配列。未指定の場合は、組み込みの ODPT および Mini Tokyo 3D の列車・フライトデータソースが使われる。このオプションを指定すると組み込みソースは置き換えられる。残すには明示的に含めるか、実行時に [`Map#addDataSource`](./map.md#adddatasource-source) で追加する。各ソースには一意の [`id`](./data-source.md#id-string) が必要
 **`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D のデータ URL。未指定の場合は、`'https://minitokyo3d.com/data'` が使われる
 **`options.ecoFrameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>デフォルト: `1` | エコモードがオンの場合の、列車や旅客機のアニメーションのフレームレート（1秒あたりのフレーム数）。1〜60 の間で指定する。数値を小さくすると、アニメーションの滑らかさが減少する一方で CPU リソースの使用も下がるため、モバイルデバイスでのバッテリー消費を抑えることができる。未指定の場合は、`1` に設定される
 **`options.ecoMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>デフォルト: `'normal'` | 初期のエコモードを指定する。`'normal'` または `'eco'` がサポートされている
@@ -146,6 +146,16 @@ new Map(options: Object)
 
 ---
 
+### **`getLight()`**
+
+マップに現在設定されているライトを返します。返されるオブジェクトは [`light`](#light) イベントのペイロードと同じ形式です。
+
+#### 返り値
+
+[`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object): 現在のライト。オブジェクトのプロパティは [`light`](#light) イベントを参照のこと
+
+---
+
 ### **`getMapboxMap()`**
 
 マップ内で使われている Mapbox の [`Map`](https://docs.mapbox.com/mapbox-gl-js/ja/api/map/) オブジェクトを返します。
@@ -158,7 +168,7 @@ new Map(options: Object)
 
 ### **`getModelPosition(lnglat, altitude)`**
 
-`LngLat` を `MercatorCoordinate` に投影し、東京駅を原点とした変換後のメルカトル座標を返します。
+`LngLat` を `MercatorCoordinate` に投影し、初期のマップ中心点（`options.center`）を原点とした変換後のメルカトル座標を返します。
 
 #### パラメータ
 
@@ -168,13 +178,13 @@ new Map(options: Object)
 
 #### 返り値
 
-{x: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), y: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), z: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}: 東京駅を原点とした変換後のメルカトル座標
+{x: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), y: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), z: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}: 初期のマップ中心点（`options.center`）を原点とした変換後のメルカトル座標
 
 ---
 
 ### **`getModelScale()`**
 
-メートル単位の現実世界の座標系から `MercatorCoordinate` に変換する際のスケールを返します。これにより、東京駅における `MercatorCoordinate` 単位での1メートルの距離が得られます。
+メートル単位の現実世界の座標系から `MercatorCoordinate` に変換する際のスケールを返します。これにより、初期のマップ中心点（`options.center`）における `MercatorCoordinate` 単位での1メートルの距離が得られます。
 
 #### 返り値
 
@@ -548,7 +558,7 @@ new Map(options: Object)
 
 ### **`deselection`**
 
-列車または航空機の追跡が解除された時や、駅の選択が解除された時に発生します。
+列車またはフライトの追跡が解除された時や、駅の選択が解除された時に発生します。
 
 **型** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
@@ -603,6 +613,33 @@ new Map(options: Object)
 #### プロパティ
 
 **`message`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): エラーメッセージ
+
+---
+
+### **`light`**
+
+マップに設定されているライトが変化したとき（時刻や表示モードの変更など）に発生します。カスタムレイヤーやプラグインをマップの照明に同期させるのに便利です。
+
+**型** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+#### プロパティ
+
+**`directional`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)): 指向性ライト
+
+名前 | 説明
+:-- | :--
+**`directional.color`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>` | RGB カラー `[r, g, b]`（各 0〜255）
+**`directional.intensity`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 色の相対輝度（0〜1）
+**`directional.direction`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>` | 方向 `[方位角, 天頂角]`（度）。方位角は北を 0 とした時計回りで 0〜360（0＝北、90＝東）、天頂角は真上（天頂）からの角度で 0〜90（0 が真上、90 が地平線）
+
+**`ambient`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)): 環境光
+
+名前 | 説明
+:-- | :--
+**`ambient.color`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>` | RGB カラー `[r, g, b]`（各 0〜255）
+**`ambient.intensity`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 色の相対輝度（0〜1）
+
+**`brightness`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)): ライトの体感的な明るさ（0〜1）
 
 ---
 
@@ -734,7 +771,7 @@ new Map(options: Object)
 
 ### **`selection`**
 
-列車または航空機の追跡が開始された時、あるいは駅が選択された時に発生します。
+列車またはフライトの追跡が開始された時、あるいは駅が選択された時に発生します。
 
 **型** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
 

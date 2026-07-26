@@ -4,7 +4,7 @@ Embedding Mini Tokyo 3D into a web page, or using the APIs to customize it, is v
 
 ## Preparation for Use
 
-Mini Tokyo 3D works on all major browsers that support ES2018. Internet Explorer is not supported.
+Mini Tokyo 3D works on all major browsers that support ES2020. Internet Explorer is not supported.
 
 Mini Tokyo 3D uses the following data sources and requires an access token for each of them at run time. Follow the instructions below to obtain access tokens.
 
@@ -114,6 +114,8 @@ const options = {
 };
 const map = new Map(options);
 ```
+
+Mini Tokyo 3D loads its map style (`style.json`) and localization dictionaries (`dictionary-<lang>.json`) from an `assets` folder located next to the loaded script (resolved via `import.meta.url`). When you use the jsDelivr CDN as shown in the previous section, these files are served automatically from the CDN. When you bundle Mini Tokyo 3D into your own application, make the `assets` folder shipped in `mini-tokyo-3d/dist/assets` available next to your output bundle, for example by copying it into your build output directory.
 
 ## Adding Plugins
 
