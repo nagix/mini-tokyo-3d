@@ -316,9 +316,9 @@ export function setSunlight(map, time, shadowIntensity, shadowOnly, transition) 
         // Day to sunset
         t = (time - sunsetTime) / HOUR + 1;
         ambient = {
-            r: lerp(255, 204, t),
-            g: lerp(255, 179, t),
-            b: lerp(255, 153, t),
+            r: lerp(255, 235, t),
+            g: lerp(255, 197, t),
+            b: lerp(255, 173, t),
             i: lerp(.7, .65, t)
         };
         directional = {
@@ -338,9 +338,9 @@ export function setSunlight(map, time, shadowIntensity, shadowOnly, transition) 
 
         t = (time - sunsetTime) / (HOUR / 2);
         ambient = {
-            r: lerp(204, 0, t),
-            g: lerp(179, 22, t),
-            b: lerp(153, 56, t),
+            r: lerp(235, 0, t),
+            g: lerp(197, 22, t),
+            b: lerp(173, 56, t),
             i: lerp(.65, .5, t)
         };
         directional = {
