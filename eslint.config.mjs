@@ -2,8 +2,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import jsdoc from 'eslint-plugin-jsdoc';
 import config from 'eslint-config-mourner';
-import {createNodeResolver, importX} from 'eslint-plugin-import-x';
-import globals from 'globals';
+import {importX} from 'eslint-plugin-import-x';
 import {globalIgnores} from 'eslint/config';
 import {includeIgnoreFile} from '@eslint/compat';
 
@@ -23,10 +22,7 @@ export default [
     {
         languageOptions: {
             sourceType: 'module',
-            ecmaVersion: 2020,
-            globals: {
-                ...globals.browser
-            }
+            ecmaVersion: 2020
         },
 
         settings: {
@@ -59,13 +55,10 @@ export default [
                 groups: [['&', '|', '^', '~', '<<', '>>', '>>>'], ['&&', '||']]
             }],
 
-            'prefer-arrow-callback': 'error',
-
             'prefer-const': ['error', {
                 destructuring: 'all'
             }],
 
-            'prefer-template': 'error',
             'no-useless-escape': 'off',
 
             'no-restricted-syntax': ['error',
@@ -80,7 +73,7 @@ export default [
                     message: 'Nullish coalescing is not allowed.'
                 }, {
                     selector: 'ChainExpression',
-                    message: 'Optional chaining is now allowed.'
+                    message: 'Optional chaining is not allowed.'
                 }
             ]
         }
@@ -91,6 +84,7 @@ export default [
         rules: {
             'import-x/no-commonjs': 'error',
             'import-x/default': 'off',
+            'import-x/no-named-as-default': 'off',
             'import-x/no-duplicates': 'error'
         }
     },
@@ -148,4 +142,12 @@ export default [
             'jsdoc/require-returns-type': 'error'
         }
     },
+
+    // VuePress configuration files use CommonJS
+    {
+        files: ['docs/.vuepress/**'],
+        rules: {
+            'import-x/no-commonjs': 'off'
+        }
+    }
 ];

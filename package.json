@@ -71,7 +71,7 @@
     "build-all": "run-s build build-pages build-data docs",
     "docs": "vuepress build docs --no-cache",
     "docs:dev": "vuepress dev docs --no-cache",
-    "lint": "eslint --cache src"
+    "lint": "eslint --cache ."
   },
   "files": [
     "build/",
