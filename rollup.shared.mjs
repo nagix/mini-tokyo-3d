@@ -4,13 +4,7 @@ import {createFilter} from '@rollup/pluginutils';
 
 export const onwarn = (warning, defaultHandler) => {
     const {code, message} = warning;
-    if (code === 'CIRCULAR_DEPENDENCY' && /@(deck|loaders|luma)\.gl/.test(message)) {
-        return;
-    }
-    if ((code === 'MISSING_EXPORT' || code === 'EVAL') && message.includes('@loaders.gl')) {
-        return;
-    }
-    if ((code === 'CIRCULAR_DEPENDENCY' || code === 'EVAL') && message.includes('protobufjs')) {
+    if (code === 'CIRCULAR_DEPENDENCY' && /@(deck|loaders|luma)\.gl|protobufjs/.test(message)) {
         return;
     }
     defaultHandler(warning);
@@ -67,10 +61,5 @@ export const patches = ({nodeEnv, workerFile}) => [
         'import { isImageFormatSupported }': 'import { getSupportedImageFormats }',
         'import GLTFScenegraph': 'let supportedImageFormats;\ngetSupportedImageFormats().then(formats => {\n  supportedImageFormats = formats;\n});\nimport GLTFScenegraph',
         'isImageFormatSupported': '(mimeType => supportedImageFormats.has(mimeType))'
-    }),
-    replace({
-        preventAssignment: true,
-        delimiters: ['\\b', ''],
-        'catch {': 'catch (e) {'
     })
 ];

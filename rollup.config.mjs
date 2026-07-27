@@ -55,9 +55,8 @@ export default [{
 }, {
     input: 'src/index.js',
     output: {
-        name: 'mt3d',
-        file: `dist/${pkg.name}.js`,
-        format: 'umd',
+        file: `dist/${pkg.name}.cjs`,
+        format: 'cjs',
         indent: false,
         sourcemap: true,
         banner
@@ -77,7 +76,7 @@ export default [{
             extract: `${pkg.name}.css`
         }),
         commonjs(),
-        ...patches({nodeEnv: 'development', workerFile}),
+        ...patches({nodeEnv: 'production', workerFile}),
         image(),
         glsl()
     ],
@@ -128,6 +127,7 @@ export default [{
         file: pkg.module,
         format: 'esm',
         indent: false,
+        sourcemap: true,
         banner
     },
     plugins: [
