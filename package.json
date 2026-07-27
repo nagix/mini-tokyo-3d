@@ -65,10 +65,13 @@
     "vuepress-plugin-flexsearch": "^0.3.0"
   },
   "scripts": {
-    "build": "rollup -c; mkdir -p dist/assets; cp assets/dictionary-*.json assets/style.json dist/assets",
-    "build-pages": "rm -rf build; mkdir build; cp -r .npmignore public/* dist/mini-tokyo-3d.min.* dist/assets build",
-    "build-data": "rm -rf build/data; mkdir -p build/data; node dist/loader",
-    "build-all": "run-s build build-pages build-data docs",
+    "clean": "node scripts/clean.mjs dist dev build",
+    "bundle": "rollup -c",
+    "copy-assets": "node scripts/copy-assets.mjs",
+    "build": "node scripts/clean.mjs dist && run-s bundle copy-assets",
+    "build-pages": "node scripts/build-pages.mjs",
+    "build-data": "node scripts/build-data.mjs",
+    "build-all": "node scripts/clean.mjs build && run-s build build-pages build-data docs",
     "docs": "vuepress build docs --no-cache",
     "docs:dev": "vuepress dev docs --no-cache",
     "lint": "eslint --cache ."
