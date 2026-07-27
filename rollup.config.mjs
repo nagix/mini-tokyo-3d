@@ -1,60 +1,23 @@
 import fs from 'node:fs';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import replace from '@rollup/plugin-replace';
 import image from '@rollup/plugin-image';
 import terser from '@rollup/plugin-terser';
 import postcss from 'rollup-plugin-postcss';
-import {visualizer} from "rollup-plugin-visualizer";
+import {visualizer} from 'rollup-plugin-visualizer';
 import cssimport from 'postcss-import';
 import inlinesvg from 'postcss-inline-svg';
 import strip from '@rollup/plugin-strip';
-import {createFilter} from '@rollup/pluginutils';
+import {onwarn, glsl, patches} from './rollup.shared.mjs';
 
 const pkg = JSON.parse(fs.readFileSync('package.json'));
+const workerFile = `dist/${pkg.name}-worker.js`;
 const banner = `/*!
  * Mini Tokyo 3D v${pkg.version}
  * ${pkg.homepage}
  * (c) 2019-${new Date().getFullYear()} ${pkg.author}
  * Released under the ${pkg.license} license
  */`;
-
-const onwarn = (warning, defaultHandler) => {
-    const {code, message} = warning;
-    if (code === 'CIRCULAR_DEPENDENCY' && /@(deck|loaders|luma)\.gl/.test(message)) {
-        return;
-    }
-    if ((code === 'MISSING_EXPORT' || code === 'EVAL') && message.includes('@loaders.gl')) {
-        return;
-    }
-    if ((code === 'CIRCULAR_DEPENDENCY' || code === 'EVAL') && message.includes('protobufjs')) {
-        return;
-    }
-    defaultHandler(warning);
-};
-
-const glsl = () => {
-    const filter = createFilter('**/*.glsl');
-    return {
-        name: 'glsl',
-        transform: (code, id) => {
-            if (!filter(id)) {
-                return;
-            }
-            code = code.trim()
-                .replace(/\s*\/\/[^\n]*\n/g, '\n')
-                .replace(/\n+/g, '\n')
-                .replace(/\n\s+/g, '\n')
-                .replace(/\s?([+-\/*=,])\s?/g, '$1')
-                .replace(/([;,\{\}])\n(?=[^#])/g, '$1');
-
-            return {
-                code: `export default ${JSON.stringify(code)};`,
-                map: {mappings: ''}
-            };
-        }
-    };
-};
 
 export default [{
     input: 'src/loader/index.js',
@@ -72,7 +35,7 @@ export default [{
 }, {
     input: 'src/worker.js',
     output: {
-        file: `dist/${pkg.name}-worker.js`,
+        file: workerFile,
         format: 'umd',
         indent: false
     },
@@ -114,36 +77,7 @@ export default [{
             extract: `${pkg.name}.css`
         }),
         commonjs(),
-        replace({
-            preventAssignment: true,
-            'process.env.NODE_ENV': '\'development\'',
-            'log.error': '(() => () => {})',
-            'Math.min(1.01*o,l)': 'Math.max(l,(e._camera.position[2]*e.worldSize+1000*e.pixelsPerMeter)/Math.cos(e._pitch))',
-            'WORKER_STRING': () => fs.readFileSync(`dist/${pkg.name}-worker.js`, {encoding: 'utf8'}).replace(/(?=`|\${|\\)/g, '\\')
-        }),
-        replace({
-            preventAssignment: true,
-            include: '**/web-mercator-viewport.js',
-            'farZMultiplier': 'farZMultiplier,\n        unitsPerMeter: scale * unitsPerMeter(latitude) / height'
-        }),
-        replace({
-            preventAssignment: true,
-            include: '**/web-mercator-utils.js',
-            'farZMultiplier = 1': 'farZMultiplier = 1,\n    unitsPerMeter',
-            'Math.min(furthestDistance * farZMultiplier, horizonDistance)': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians))'
-        }),
-        replace({
-            preventAssignment: true,
-            include: '**/EXT_texture_webp.js',
-            'import { isImageFormatSupported }': 'import { getSupportedImageFormats }',
-            'import GLTFScenegraph': 'let supportedImageFormats;\ngetSupportedImageFormats().then(formats => {\n  supportedImageFormats = formats;\n});\nimport GLTFScenegraph',
-            'isImageFormatSupported': '(mimeType => supportedImageFormats.has(mimeType))'
-        }),
-        replace({
-            preventAssignment: true,
-            delimiters: ['\\b', ''],
-            'catch {': 'catch (e) {'
-        }),
+        ...patches({nodeEnv: 'development', workerFile}),
         image(),
         glsl()
     ],
@@ -174,36 +108,7 @@ export default [{
             minimize: true
         }),
         commonjs(),
-        replace({
-            preventAssignment: true,
-            'process.env.NODE_ENV': '\'production\'',
-            'log.error': '(() => () => {})',
-            'Math.min(1.01*o,l)': 'Math.max(l,(e._camera.position[2]*e.worldSize+1000*e.pixelsPerMeter)/Math.cos(e._pitch))',
-            'WORKER_STRING': () => fs.readFileSync(`dist/${pkg.name}-worker.js`, {encoding: 'utf8'}).replace(/(?=`|\${|\\)/g, '\\')
-        }),
-        replace({
-            preventAssignment: true,
-            include: '**/web-mercator-viewport.js',
-            'farZMultiplier': 'farZMultiplier,\n        unitsPerMeter: scale * unitsPerMeter(latitude) / height'
-        }),
-        replace({
-            preventAssignment: true,
-            include: '**/web-mercator-utils.js',
-            'farZMultiplier = 1': 'farZMultiplier = 1,\n    unitsPerMeter',
-            'Math.min(furthestDistance * farZMultiplier, horizonDistance)': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians))'
-        }),
-        replace({
-            preventAssignment: true,
-            include: '**/EXT_texture_webp.js',
-            'import { isImageFormatSupported }': 'import { getSupportedImageFormats }',
-            'import GLTFScenegraph': 'let supportedImageFormats;\ngetSupportedImageFormats().then(formats => {\n  supportedImageFormats = formats;\n});\nimport GLTFScenegraph',
-            'isImageFormatSupported': '(mimeType => supportedImageFormats.has(mimeType))'
-        }),
-        replace({
-            preventAssignment: true,
-            delimiters: ['\\b', ''],
-            'catch {': 'catch (e) {'
-        }),
+        ...patches({nodeEnv: 'production', workerFile}),
         image(),
         glsl(),
         terser({
@@ -239,36 +144,7 @@ export default [{
             ]
         }),
         commonjs(),
-        replace({
-            preventAssignment: true,
-            'process.env.NODE_ENV': '\'production\'',
-            'log.error': '(() => () => {})',
-            'Math.min(1.01*o,l)': 'Math.max(l,(e._camera.position[2]*e.worldSize+1000*e.pixelsPerMeter)/Math.cos(e._pitch))',
-            'WORKER_STRING': () => fs.readFileSync(`dist/${pkg.name}-worker.js`, {encoding: 'utf8'}).replace(/(?=`|\${|\\)/g, '\\')
-        }),
-        replace({
-            preventAssignment: true,
-            include: '**/web-mercator-viewport.js',
-            'farZMultiplier': 'farZMultiplier,\n        unitsPerMeter: scale * unitsPerMeter(latitude) / height'
-        }),
-        replace({
-            preventAssignment: true,
-            include: '**/web-mercator-utils.js',
-            'farZMultiplier = 1': 'farZMultiplier = 1,\n    unitsPerMeter',
-            'Math.min(furthestDistance * farZMultiplier, horizonDistance)': 'Math.max(horizonDistance, cameraToSeaLevelDistance + 1000 * unitsPerMeter / Math.cos(pitchRadians))'
-        }),
-        replace({
-            preventAssignment: true,
-            include: '**/EXT_texture_webp.js',
-            'import { isImageFormatSupported }': 'import { getSupportedImageFormats }',
-            'import GLTFScenegraph': 'let supportedImageFormats;\ngetSupportedImageFormats().then(formats => {\n  supportedImageFormats = formats;\n});\nimport GLTFScenegraph',
-            'isImageFormatSupported': '(mimeType => supportedImageFormats.has(mimeType))'
-        }),
-        replace({
-            preventAssignment: true,
-            delimiters: ['\\b', ''],
-            'catch {': 'catch (e) {'
-        }),
+        ...patches({nodeEnv: 'production', workerFile}),
         image(),
         glsl()
     ],
