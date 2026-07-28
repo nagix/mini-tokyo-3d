@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja_JP" style="overscroll-behavior: none;">
 <head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7NP0LHFG11"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-		gtag('config', 'G-7NP0LHFG11');
+		gtag('config', 'G-XXXXXXXXXX');
 	</script>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="mini-tokyo-3d.min.css" />
@@ -23,11 +23,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@nagix" />
 	<script src="mini-tokyo-3d.min.js"></script>
-	<script src="mt3d-plugin-precipitation.min.js"></script>
-	<script src="mt3d-plugin-fireworks.min.js"></script>
-	<script src="mt3d-plugin-livecam.min.js"></script>
-	<script src="mt3d-plugin-plateau.min.js"></script>
-	<script src="mt3d-plugin-gtfs.min.js"></script>
+	<!-- plugins -->
 </head>
 <body style="width: 100%; height: 100%; margin: 0; padding: 0; position: absolute;">
 	<div id="map" style="width: 100%; height: 100%;"></div>
@@ -40,7 +36,7 @@
 			matchHash = location.hash.match(/[^\d\.\-]*([\d\.\-]*)\/?([\d\.\-]*)\/?([\d\.\-]*)\/?([\d\.\-]*)\/?([\d\.\-]*)/),
 			options = {
 				container: 'map',
-				plugins: [mt3dPrecipitation(), mt3dFireworks(), mt3dLivecam(), mt3dPlateau({enabled: false}), mt3dGtfs({enabled: false})]
+				plugins: []
 			};
 
 		if (matchLang) {

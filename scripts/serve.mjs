@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
@@ -12,6 +13,10 @@ import {plugins} from './plugins.mjs';
 //   /<plugin>.*.map      -> the plugin's source map, next to that file
 //   everything else      -> ./dev
 
+// Load environment variables from .env.development (higher priority) then .env.
+dotenv.config({path: '.env.development'});
+dotenv.config();
+
 const port = Number(process.argv[2]) || 9966;
 const serveDev = serveStatic('dev');
 const serveAssets = serveStatic('assets');
@@ -21,8 +26,9 @@ const files = new Map();
 for (const plugin of plugins) {
     const source = process.env[plugin.env];
     if (source) {
-        files.set(`/${plugin.file}`, {path: source, type: 'text/javascript'});
-        files.set(`/${path.basename(source)}.map`, {path: `${source}.map`, type: 'application/json'});
+        const file = path.basename(source);
+        files.set(`/${file}`, {path: source, type: 'text/javascript'});
+        files.set(`/${file}.map`, {path: `${source}.map`, type: 'application/json'});
     }
 }
 

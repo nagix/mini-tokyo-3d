@@ -12,7 +12,9 @@ fs.mkdirSync(dest, {recursive: true});
 copyEntry('.npmignore');
 
 for (const entry of fs.readdirSync('public')) {
-    copyEntry(path.join('public', entry));
+    if (entry !== 'index.html') {
+        copyEntry(path.join('public', entry));
+    }
 }
 
 for (const entry of fs.readdirSync('dist')) {
