@@ -39,6 +39,7 @@
 				plugins: []
 			};
 
+		// overrides
 		if (matchLang) {
 			options.lang = decodeURIComponent(matchLang[1]);
 		}
@@ -57,17 +58,19 @@
 		if (matchHash[5]) {
 			options.pitch = +matchHash[5];
 		}
-
-		const map = new mt3d.Map(options);
-
 		if (matchGtfsUrl && matchGtfsColor) {
-			map.addDataSource({
+			// Show only the specified GTFS feed (which may be outside Japan) and let
+			// its agency_timezone drive the clock, instead of the default Tokyo data.
+			options.dataUrl = '';
+			options.dataSources = [{
 				id: 'gtfs',
 				gtfsUrl: decodeURIComponent(matchGtfsUrl[1]),
 				vehiclePositionUrl: matchVehiclePositionUrl ? decodeURIComponent(matchVehiclePositionUrl[1]) : undefined,
 				color: `#${decodeURIComponent(matchGtfsColor[1])}`
-			});
+			}];
 		}
+
+		const map = new mt3d.Map(options);
 	</script>
 </body>
 </html>

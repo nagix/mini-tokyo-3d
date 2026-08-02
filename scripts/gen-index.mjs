@@ -85,7 +85,9 @@ html = replaceOnce(html, /([ \t]*)<!-- plugins -->\r?\n/, (_match, indent) =>
     included.map(plugin => `${indent}<script src="${plugin.file}"></script>\n`).join(''), 'plugins marker');
 html = replaceOnce(html, /plugins: \[[^\]]*\]/, `plugins: [${included.map(plugin => plugin.factory).join(', ')}]`, 'plugins list');
 
-// Inject local overrides right before the map is created.
+// Inject build-time overrides at the marker, which sits after the options object
+// but before the URL query parameters are applied, so a runtime override (e.g.
+// gtfsurl clearing dataUrl) takes precedence over the build-time value.
 const overrides = [];
 if (token) {
     overrides.push(`options.accessToken = ${JSON.stringify(token)};`);
@@ -103,8 +105,8 @@ if (secrets.length) {
 if (dataUrl) {
     overrides.push(`options.dataUrl = ${JSON.stringify(dataUrl)};`);
 }
-html = replaceOnce(html, /([ \t]*)(const map = new mt3d\.Map\(options\);)/, (_match, indent, statement) =>
-    `${overrides.map(line => `${indent}${line}\n`).join('')}${indent}${statement}`, 'map initialization');
+html = replaceOnce(html, /([ \t]*)\/\/ overrides\r?\n/, (_match, indent) =>
+    overrides.map(line => `${indent}${line}\n`).join(''), 'overrides marker');
 
 fs.writeFileSync(dest, html);
 console.log(`Generated ${dest} (plugins: ${included.map(plugin => plugin.file).join(', ') || 'none'})`);
