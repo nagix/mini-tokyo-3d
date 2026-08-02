@@ -2,11 +2,43 @@ import JapaneseHolidays from 'japanese-holidays';
 import configs from './configs';
 import {valueOrDefault} from './helpers/helpers';
 
+// Cache of time zone offsets keyed by "<timeZone>:<UTC hour>". Offsets only
+// change at DST boundaries (on hour boundaries), so bucketing by the hour keeps
+// the animation loop off the relatively expensive Intl path on virtually every
+// call while staying accurate.
+const offsetCache = new Map();
+
+/**
+ * Returns the offset, in minutes, of the given IANA time zone at the given time.
+ * Uses the same sign convention as Date#getTimezoneOffset (negative east of UTC)
+ * and is DST-aware because it is evaluated at the specified instant.
+ * @param {string} timeZone - IANA time zone name
+ * @param {number} time - The number of milliseconds since the Unix Epoch
+ * @returns {number} The offset in minutes
+ */
+function getTimezoneOffset(timeZone, time) {
+    const key = `${timeZone}:${Math.floor(time / 3600000)}`;
+    let offset = offsetCache.get(key);
+
+    if (offset === undefined) {
+        const date = new Date(time),
+            utcDate = new Date(date.toLocaleString('en-US', {timeZone: 'UTC'})),
+            tzDate = new Date(date.toLocaleString('en-US', {timeZone}));
+
+        offset = (utcDate.getTime() - tzDate.getTime()) / 60000;
+        if (offsetCache.size >= 100) {
+            offsetCache.clear();
+        }
+        offsetCache.set(key, offset);
+    }
+    return offset;
+}
+
 export default class {
 
-    constructor(date, speed, offset = -540) {
+    constructor(date, speed, timezone = configs.defaultTimezone) {
         this.reset()
-            .setTimezoneOffset(offset)
+            .setTimezone(timezone)
             .setDate(date)
             .setSpeed(speed);
     }
@@ -49,7 +81,7 @@ export default class {
         const prevBaseTime = me.baseTime,
 
             // Adjust the date back to local time
-            offset = -me.getLocalTimezoneOffset(),
+            offset = -me.getLocalTimezoneOffset(date.getTime()),
 
             baseTime = me.baseTime = date.getTime() + offset - Date.now() * me.speed;
 
@@ -57,11 +89,25 @@ export default class {
         return me;
     }
 
-    setTimezoneOffset(offset) {
+    /**
+     * Sets the target time zone of the clock.
+     * @param {string} timezone - IANA time zone name (e.g. "Asia/Tokyo"). Invalid
+     *     names are ignored and the current time zone is kept.
+     * @returns {Clock} Returns itself to allow for method chaining
+     */
+    setTimezone(timezone) {
         const me = this;
 
-        me.timezoneOffset = offset;
+        try {
+            me.timezone = new Intl.DateTimeFormat('en-US', {timeZone: timezone}).resolvedOptions().timeZone;
+        } catch (error) {
+            // Keep the current time zone if the given name is invalid
+        }
         return me;
+    }
+
+    getTimezone() {
+        return this.timezone;
     }
 
     /**
@@ -74,11 +120,10 @@ export default class {
      */
     getDate(time) {
         const me = this,
+            t = valueOrDefault(time, me.getTime());
 
-            // Adjust the date from local time
-            offset = me.getLocalTimezoneOffset();
-
-        return new Date(valueOrDefault(time, me.getTime()) + offset);
+        // Adjust the date from local time
+        return new Date(t + me.getLocalTimezoneOffset(t));
     }
 
     /**
@@ -100,12 +145,13 @@ export default class {
             hours = +timeStrings[0],
             minutes = +timeStrings[1],
 
-            // Adjust the date back to local time
             // Special handling of time between midnight and 3am
-            offset = -me.getLocalTimezoneOffset() +
-                ((date.getHours() < 3 ? -1 : 0) + (hours < 3 ? 1 : 0)) * 86400000;
+            dayOffset = ((date.getHours() < 3 ? -1 : 0) + (hours < 3 ? 1 : 0)) * 86400000,
 
-        return date.setHours(hours, minutes, 0, 0) + offset + configs.minDelay;
+            localTime = date.setHours(hours, minutes, 0, 0);
+
+        // Adjust the date back to local time
+        return localTime - me.getLocalTimezoneOffset(localTime) + dayOffset + configs.minDelay;
     }
 
     /**
@@ -163,17 +209,15 @@ export default class {
         return me.baseHighResTime + performance.now() * me.speed;
     }
 
-    getTimezoneOffset() {
-        return this.timezoneOffset;
-    }
-
     /**
-     * Returns the difference, in minutes, between the date in the local time zone
-     * and the same date in the target time zone.
-     * @returns {number} The difference in minutes
+     * Returns the difference, in milliseconds, between the date in the local time zone
+     * and the same date in the target time zone at the given time.
+     * @param {number} time - The number of milliseconds since the Unix Epoch. Defaults
+     *     to the current clock time.
+     * @returns {number} The difference in milliseconds
      */
-    getLocalTimezoneOffset() {
-        return (new Date().getTimezoneOffset() - this.timezoneOffset) * 60000;
+    getLocalTimezoneOffset(time = this.getTime()) {
+        return (new Date(time).getTimezoneOffset() - getTimezoneOffset(this.timezone, time)) * 60000;
     }
 
     getCalendar() {

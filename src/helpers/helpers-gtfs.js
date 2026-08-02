@@ -35,6 +35,7 @@ export function encode(data, pbf) {
         }, trip);
     }
     pbf.writeStringField(5, data.version);
+    if (data.timezone) pbf.writeStringField(6, data.timezone);
     return pbf.finish();
 }
 
@@ -64,5 +65,6 @@ export function decode(pbf) {
             else if (tag === 7) obj.headsigns.push(pbf.readString());
         }, {departureTimes: [], stops: [], stopSequences: [], headsigns: []}, pbf.readVarint() + pbf.pos));
         if (tag === 5) obj.version = pbf.readString();
+        if (tag === 6) obj.timezone = pbf.readString();
     }, {stops: [], routes: [], trips: []});
 }

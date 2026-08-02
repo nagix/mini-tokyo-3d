@@ -144,17 +144,13 @@ export default class extends Evented {
             });
         });
 
-        const clockPromise = options.center === configs.defaultCenter ?
-            new Promise(resolve => {
-                resolve(me.clock);
-            }) :
-            helpersMapbox.fetchTimezoneOffset(options.center, options.accessToken)
-                .then(offset => me.clock.setTimezoneOffset(offset));
+        // The clock runs in the default time zone (configs.defaultTimezone) unless
+        // one is determined from GTFS data (see refreshBusData). me.timezone holds
+        // the established zone once known: the default when the map loads the fixed
+        // mini-tokyo-3d data, or the first GTFS feed's agency_timezone when no such
+        // data is loaded.
+        me.timezone = me.dataUrl ? me.clock.getTimezone() : undefined;
 
-        // Resolves once the clock's timezone is ready. Bus data loading waits for
-        // this rather than the 'initialized' event, so it can run in parallel
-        // with map initialization.
-        me.clockPromise = clockPromise;
         me.gtfs = new Map();
         // IDs of GTFS sources whose data is currently being loaded. Tracked
         // separately from me.gtfs (which is only populated once loading finishes)
@@ -168,7 +164,7 @@ export default class extends Evented {
                     showErrorMessage(me.container);
                     throw error;
                 }),
-            loadStaticData(me.dataUrl, clockPromise)
+            loadStaticData(me.dataUrl, me.clock)
                 .then(me.initData.bind(me))
                 .catch(error => {
                     showErrorMessage(me.container);
@@ -176,15 +172,20 @@ export default class extends Evented {
                 }),
             new Promise(resolve => {
                 me.map.once('styledata', () => {
-                    clockPromise.then(clock => {
-                        const now = clock.getTime();
+                    // Defer by a microtask: 'styledata' fires in the middle of a style
+                    // update, and setting the lights synchronously here would be wiped
+                    // by the rest of that update. Running after it lets the lights
+                    // stick, so they are correct from the first frame and still present
+                    // when initialize() enables plugins that read them via getLight().
+                    Promise.resolve().then(() => {
+                        const now = me.clock.getTime();
 
                         helpersMapbox.setSunlight(me.map, now, me.viewMode === 'ground' ? 1 : 0);
                         me.lastSunlightCenter = me.map.getCenter();
                         me.lastSunlightTime = now;
                         me.lastSunlightRefresh = Date.now();
+                        resolve();
                     });
-                    resolve();
                 });
             })
         ]).then(me.initialize.bind(me));
@@ -2264,15 +2265,34 @@ export default class extends Evented {
             }
 
             me.gtfsLoading.add(id);
-            me.clockPromise.then(() => loadBusData(source, me.clock, me.lang)).then(data => {
+            // The absolute time is passed (not the clock, which may not yet know
+            // its time zone); the service date is derived in the worker from the
+            // feed's agency_timezone.
+            loadBusData(source, me.clock.getTime(), me.lang).then(data => {
                 return me.initialized ? data : new Promise(resolve => {
                     me.once('initialized', () => resolve(data));
                 });
             }).then(data => {
                 return me.gtfs.has(id) ? deleteGtfs(me.gtfs.get(id)).then(() => data) : data;
             }).then(data => {
-                const {agency, featureCollection, version} = data,
-                    featureLookup = new Map(),
+                const {agency, timezone, featureCollection, version} = data;
+
+                // Establish the map's time zone from the first GTFS feed when it is
+                // not already fixed (by loading the mini-tokyo-3d data), and set the
+                // clock before the data is registered so the animation loop reads the
+                // correct offset. A feed whose agency_timezone differs from the
+                // established zone can't be rendered correctly by the single clock,
+                // so it is dropped.
+                if (me.timezone === undefined) {
+                    me.timezone = timezone;
+                    me.clock.setTimezone(timezone);
+                } else if (timezone !== me.timezone) {
+                    console.warn(`Mini Tokyo 3D: GTFS source "${id}" uses time zone "${timezone}", which differs from the map's time zone "${me.timezone}"; skipping it.`);
+                    me.gtfsLoading.delete(id);
+                    return;
+                }
+
+                const featureLookup = new Map(),
                     layerIds = new Set(),
                     routeData = [];
 

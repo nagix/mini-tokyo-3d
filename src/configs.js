@@ -159,7 +159,11 @@ const configs = {
     // Default clock mode
     defaultClockMode: 'realtime',
 
-    // Default clock mode
+    // Default time zone (IANA name) used by the clock and as the fallback for GTFS
+    // feeds that don't specify a valid agency_timezone
+    defaultTimezone: 'Asia/Tokyo',
+
+    // Default eco mode
     defaultEcoMode: 'normal',
 
     // ODPT-compatible API hosts and the secrets key each one uses

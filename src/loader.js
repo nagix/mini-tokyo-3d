@@ -48,11 +48,10 @@ export function loadDictionary(lang) {
 /**
  * Load all the static data.
  * @param {string} dataUrl - Data URL
- * @param {Promise} clockPromise - Promise for the Clock object representing the
- *     current time
+ * @param {Clock} clock - Clock object representing the current time
  * @returns {Promise} Promise that resolves to the loaded data
  */
-export function loadStaticData(dataUrl, clockPromise) {
+export function loadStaticData(dataUrl, clock) {
     return Promise.all(!dataUrl ? [...Array(11)].map(() => []) : [
         ...[
             'railways.json.gz',
@@ -66,10 +65,10 @@ export function loadStaticData(dataUrl, clockPromise) {
             'flight-statuses.json.gz',
             'poi.json.gz'
         ].map(fileName => `${dataUrl}/${fileName}`).map(loadJSON),
-        clockPromise.then(clock => Promise.all([
+        Promise.all([
             getTimetableFileName(clock),
             ...getExtraTimetableFileNames(clock)
-        ].map(fileName => `${dataUrl}/${fileName}`).map(loadJSON)))
+        ].map(fileName => `${dataUrl}/${fileName}`).map(loadJSON))
     ]).then(data => ({
         railwayData: data[0],
         stationData: data[1],
@@ -227,26 +226,15 @@ export function loadDynamicFlightData(dataSources) {
     });
 }
 
-export function loadBusData(source, clock, lang) {
+export function loadBusData(source, now, lang) {
     const workerUrl = URL.createObjectURL(new Blob([`WORKER_STRING`], {type: 'text/javascript'})),
         worker = new Worker(workerUrl),
-        proxy = Comlink.wrap(worker),
-        date = clock.getDate(),
-        hours = date.getHours();
+        proxy = Comlink.wrap(worker);
 
-    if (hours < 3) {
-        date.setHours(hours - 24);
-    }
-
-    const year = date.getFullYear(),
-        month = `0${date.getMonth() + 1}`.slice(-2),
-        day = `0${date.getDate()}`.slice(-2),
-        dayOfWeek = date.getDay(),
-        dateString = `${year}${month}${day}`,
-        dayString = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][dayOfWeek];
-
+    // The service date is derived inside the worker from the feed's own
+    // agency_timezone (see worker.js), so only the absolute time is passed here.
     return new Promise(resolve => {
-        proxy.load(source, dateString, dayString, lang, Comlink.proxy(data => {
+        proxy.load(source, now, lang, Comlink.proxy(data => {
             proxy[Comlink.releaseProxy]();
             worker.terminate();
             resolve(Object.assign({

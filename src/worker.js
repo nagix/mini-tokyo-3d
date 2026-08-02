@@ -5,6 +5,7 @@ import * as Comlink from 'comlink';
 import {DecodeUTF8, Unzip, UnzipInflate} from 'fflate';
 import * as geobuf from 'geobuf';
 import {PbfWriter} from 'pbf';
+import configs from './configs';
 import {includes, mergeMaps, normalizeLang} from './helpers/helpers';
 import {updateDistances} from './helpers/helpers-geojson';
 import {encode} from './helpers/helpers-gtfs';
@@ -46,25 +47,36 @@ class AgencyReader {
 
         if (me.agencyNameIndex === undefined) {
             me.agencyNameIndex = fields.indexOf('agency_name');
+            me.agencyTimezoneIndex = fields.indexOf('agency_timezone');
         } else {
-            me.agencyName = fields[me.agencyNameIndex];
+            const name = fields[me.agencyNameIndex],
+                timezone = fields[me.agencyTimezoneIndex];
+
+            // Use the first agency's time zone; a single feed is expected to use
+            // a single time zone (GTFS requires all agencies to match).
+            if (me.name === undefined) {
+                me.name = name;
+                me.timezone = timezone;
+            } else if (timezone && timezone !== me.timezone) {
+                console.warn(`Mini Tokyo 3D: GTFS agency "${name}" uses agency_timezone "${timezone}", which differs from "${me.timezone}"; using "${me.timezone}".`);
+            }
         }
     }
 
     get result() {
-        return this.agencyName;
+        const me = this;
+
+        return {name: me.name, timezone: me.timezone};
     }
 
 }
 
+const DAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+
 class CalendarReader {
 
-    constructor({date, day}) {
-        const me = this;
-
-        me.date = date;
-        me.day = day;
-        me.services = new Set();
+    constructor() {
+        this.rows = [];
     }
 
     read(line) {
@@ -73,30 +85,29 @@ class CalendarReader {
 
         if (me.serviceIdIndex === undefined) {
             me.serviceIdIndex = fields.indexOf('service_id');
-            me.dayIndex = fields.indexOf(me.day);
+            me.dayIndexes = DAYS.map(day => fields.indexOf(day));
             me.startDateIndex = fields.indexOf('start_date');
             me.endDateIndex = fields.indexOf('end_date');
         } else {
-            if (me.date >= fields[me.startDateIndex] && me.date <= fields[me.endDateIndex] && fields[me.dayIndex] === '1') {
-                me.services.add(fields[me.serviceIdIndex]);
-            }
+            me.rows.push({
+                service: fields[me.serviceIdIndex],
+                days: me.dayIndexes.map(index => fields[index]),
+                start: fields[me.startDateIndex],
+                end: fields[me.endDateIndex]
+            });
         }
     }
 
     get result() {
-        return this.services;
+        return this.rows;
     }
 
 }
 
 class CalendarDateReader {
 
-    constructor({date}) {
-        const me = this;
-
-        me.date = date;
-        me.additions = new Set();
-        me.deletions = new Set();
+    constructor() {
+        this.rows = [];
     }
 
     read(line) {
@@ -108,20 +119,16 @@ class CalendarDateReader {
             me.dateIndex = fields.indexOf('date');
             me.exceptionTypeIndex = fields.indexOf('exception_type');
         } else {
-            const id = fields[me.serviceIdIndex];
-
-            if (me.date === fields[me.dateIndex]) {
-                if (fields[me.exceptionTypeIndex] === '1') {
-                    me.additions.add(id);
-                } else {
-                    me.deletions.add(id);
-                }
-            }
+            me.rows.push({
+                service: fields[me.serviceIdIndex],
+                date: fields[me.dateIndex],
+                type: fields[me.exceptionTypeIndex]
+            });
         }
     }
 
     get result() {
-        return [this.additions, this.deletions];
+        return this.rows;
     }
 
 }
@@ -562,7 +569,62 @@ function getTrips(trips, services = new Set(), serviceExceptions = [new Set(), n
     return result;
 }
 
-function loadGtfs(source, date, day, lang) {
+// Validates and normalizes an IANA time zone name, falling back to the default
+// when it is missing or invalid (agency_timezone is required by GTFS, so this
+// only guards against broken feeds).
+function getTimezone(name) {
+    if (name) {
+        try {
+            return new Intl.DateTimeFormat('en-US', {timeZone: name}).resolvedOptions().timeZone;
+        } catch (error) {
+            // fall through to the default
+        }
+    }
+    return configs.defaultTimezone;
+}
+
+// Computes the service date (YYYYMMDD) and day of week for the given instant in
+// the given time zone, rolling the day back before 3am so late-night services
+// are attributed to the previous day.
+function getServiceDate(now, timeZone) {
+    const date = new Date(new Date(now).toLocaleString('en-US', {timeZone})),
+        hours = date.getHours();
+
+    if (hours < 3) {
+        date.setHours(hours - 24);
+    }
+
+    const year = date.getFullYear(),
+        month = `0${date.getMonth() + 1}`.slice(-2),
+        day = `0${date.getDate()}`.slice(-2);
+
+    return {date: `${year}${month}${day}`, day: date.getDay()};
+}
+
+function getServices(rows = [], date, day) {
+    const services = new Set();
+
+    for (const row of rows) {
+        if (date >= row.start && date <= row.end && row.days[day] === '1') {
+            services.add(row.service);
+        }
+    }
+    return services;
+}
+
+function getServiceExceptions(rows = [], date) {
+    const additions = new Set(),
+        deletions = new Set();
+
+    for (const row of rows) {
+        if (row.date === date) {
+            (row.type === '1' ? additions : deletions).add(row.service);
+        }
+    }
+    return [additions, deletions];
+}
+
+function loadGtfs(source, now, lang) {
     return new Promise((resolve, reject) => {
         fetch(source.gtfsUrl).then(response => {
             const results = {},
@@ -572,7 +634,7 @@ function loadGtfs(source, date, day, lang) {
 
                     if (includes(gtfsFiles, key)) {
                         let stringBuffer = '';
-                        const gtfsReader = new gtfsReaders[key]({date, day, lang, color: source.color}),
+                        const gtfsReader = new gtfsReaders[key]({lang, color: source.color}),
                             utfDecode = new DecodeUTF8((data, final) => {
                                 const lines = data.split(/\r?\n/);
 
@@ -619,14 +681,20 @@ function loadGtfs(source, date, day, lang) {
             });
         });
     }).then(results => {
-        const translations = results.feed_info && results.feed_info.needTranslation && results.translations,
+        const agency = results.agency || {},
+            timezone = getTimezone(agency.timezone),
+            {date, day} = getServiceDate(now, timezone),
+            services = getServices(results.calendar, date, day),
+            serviceExceptions = getServiceExceptions(results.calendar_dates, date),
+            translations = results.feed_info && results.feed_info.needTranslation && results.translations,
             featureCollection = getFeatureCollection(results.shapes, results.stops, translations),
             result = {
-                agency: results.agency,
+                agency: agency.name,
+                timezone,
                 version: results.feed_info ? results.feed_info.version : 'N/A',
                 stops: getStops(results.stops, translations),
                 routes: getRoutes(results.routes, results.trips, translations),
-                trips: getTrips(results.trips, results.calendar, results.calendar_dates, results.stop_times, translations)
+                trips: getTrips(results.trips, services, serviceExceptions, results.stop_times, translations)
             };
 
         return [geobuf.encode(featureCollection, new PbfWriter()), encode(result, new PbfWriter())];
@@ -634,7 +702,7 @@ function loadGtfs(source, date, day, lang) {
 }
 
 Comlink.expose({
-    load: (source, date, day, lang, callback) => loadGtfs(source, date, day, lang).then(data =>
+    load: (source, now, lang, callback) => loadGtfs(source, now, lang).then(data =>
         callback(Comlink.transfer(data, data.map(({buffer}) => buffer)))
     )
 });
