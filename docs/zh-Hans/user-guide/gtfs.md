@@ -6,10 +6,6 @@ Mini Tokyo 3D 支持 [GTFS](https://gtfs.org)（General Transit Feed Specificati
 
 GTFS 数据集中的车辆会显示为比 Mini Tokyo 3D 常规列车和飞机略小的方块。可显示的 GTFS 数据集不限于东京地区，可以来自世界任何地区。也就是说，Mini Tokyo 3D 可以用作简易的 GTFS 数据集查看器。
 
-::: warning 注意
-这是一项仍在开发中的实验性功能，可能随时发生变化。
-:::
-
 ## 指定数据源
 
 要指定某个 GTFS 数据集和 GTFS Realtime VehiclePosition 数据源，请在 Mini Tokyo 3D 的访问网址后添加 `?`，再附上键值对（查询参数）。如果通过 `gtfsurl` 或 `gtfsvpurl` 指定的数据网址由公共交通开放数据中心托管，且以 `https://api.odpt.org/` 开头，则不需要用于指定访问令牌的 `acl:consumerKey` 参数。
@@ -23,6 +19,10 @@ https://minitokyo3d.com/?gtfsurl=<URL>&gtfsvpurl=<URL>&gtfscolor=<颜色代码>
 `gtfsurl` | [GTFS 数据集 ZIP 文件](https://gtfs.org/documentation/schedule/reference/#dataset-publishing-general-practices)的网址（需要进行 URL 编码） | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Ffiles%2FToei%2Fdata%2FToeiBus-GTFS.zip`
 `gtfsvpurl` | [GTFS Realtime VehiclePosition 数据源](https://gtfs.org/documentation/realtime/reference/#message-vehicleposition)的网址（需要进行 URL 编码）。省略时，车辆会按照时刻表运行 | `https%3A%2F%2Fapi-public.odpt.org%2Fapi%2Fv4%2Fgtfs%2Frealtime%2FToeiBus`
 `gtfscolor` | 用于显示线路和车辆的颜色。使用十六进制颜色代码（不带开头的 `#`） | `9FC105`
+
+由于同源策略的限制，`gtfsurl` 和 `gtfsvpurl` 所指定的网址必须与 Mini Tokyo 3D 本身位于同一来源（origin），或在提供时配置了适当的 CORS（跨源资源共享）设置。
+
+以这种方式指定 GTFS 数据集时，Mini Tokyo 3D 仅显示该数据集，而不加载默认的东京交通数据，时钟也会使用该数据集的本地时区（取自其 GTFS 的 `agency_timezone`）来显示时间。
 
 要显示的 GTFS 数据集未必覆盖东京周边，因此可以在上述查询参数之后添加 `#`，再以 `/` 分隔多个元素（hash），将地图的初始位置和朝向设置为适合显示该数据集的状态。
 
@@ -43,6 +43,8 @@ Hash 元素 | 说明 | 示例
 <img :src="$withBase('/images/vehicle-details.jpg')" style="width: 251px;">
 
 将鼠标指针悬停在车辆上或轻触车辆，可查看其详细信息，包括运营商名称、线路编号、目的地、车辆编号、上一站和下一站。
+
+运营商名称右侧显示的无线电波图标表示该车辆采用了实时位置信息。
 
 ## 跟踪车辆
 

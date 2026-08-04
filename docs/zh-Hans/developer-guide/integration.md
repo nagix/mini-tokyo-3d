@@ -4,7 +4,7 @@
 
 ## 使用前的准备
 
-Mini Tokyo 3D 可在所有支持 ES2018 的主流浏览器中运行。不支持 Internet Explorer。
+Mini Tokyo 3D 可在所有支持 ES2020 的主流浏览器中运行。不支持 Internet Explorer。
 
 Mini Tokyo 3D 在运行时会使用以下数据源，并要求为每个数据源提供访问令牌。请按照下方说明获取访问令牌。
 
@@ -114,6 +114,8 @@ const options = {
 };
 const map = new Map(options);
 ```
+
+Mini Tokyo 3D 会从所加载脚本旁边的 `assets` 文件夹（通过 `import.meta.url` 解析）加载地图样式（`style.json`）和本地化词典（`dictionary-<lang>.json`）。按上一节所示使用 jsDelivr CDN 时，这些文件会自动由 CDN 提供。将 Mini Tokyo 3D 打包到自己的应用中时，请让 `mini-tokyo-3d/dist/assets` 中随附的 `assets` 文件夹位于输出 bundle 旁边，例如将其复制到构建输出目录中。
 
 ## 添加插件
 

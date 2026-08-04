@@ -14,7 +14,7 @@
 
 ### **`lightColor`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | [`Color`](https://threejs.org/docs/#api/en/math/Color) | [`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))
 
-光源颜色。可以是十六进制颜色、three.js [Color](https://threejs.org/docs/#api/en/math/Color) 实例或 CSS 样式字符串。省略时使用根据当前日期和时间计算的动态光源颜色。
+光源颜色。可以是十六进制颜色、three.js [Color](https://threejs.org/docs/#api/en/math/Color) 实例或 CSS 样式字符串。省略时使用根据当前日期和时间计算的动态光源颜色。可以通过 [`light`](./map.md#light) 事件或 [`Map#getLight`](./map.md#getlight) 获取当前的动态光源。
 
 ### **`maxzoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))
 

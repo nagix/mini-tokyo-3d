@@ -20,7 +20,7 @@ new Map(options: Object)
 **`options.clockControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>默认值： `true` | 为 `true` 时，在地图上添加日期和时间显示。
 **`options.configControl`**<br>[`boolean`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)<br>默认值： `true` | 为 `true` 时，在地图上添加设置按钮。
 **`options.container`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D 用于渲染地图的 HTML 元素 `id`。指定的元素不能包含子元素。
-**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>` | Mini Tokyo 3D 的列车、航班和巴士数据源数组。省略时使用内置的 ODPT 与 Mini Tokyo 3D 列车和航班数据源。注意，这是一项仍在开发中的实验性功能，可能随时发生变化。
+**`options.dataSources`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`DataSource`](./data-source.md)`>` | Mini Tokyo 3D 的列车、航班和巴士数据源数组。省略时使用内置的 ODPT 与 Mini Tokyo 3D 列车和航班数据源。提供此选项会替换内置数据源；如需保留它们，请明确将其包含在内，或在运行时通过 [`Map#addDataSource`](./map.md#adddatasource-source) 添加自己的数据源。每个数据源都必须具有唯一的 [`id`](./data-source.md#id-string)。
 **`options.dataUrl`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | Mini Tokyo 3D 数据网址。省略时使用 `'https://minitokyo3d.com/data'`。
 **`options.ecoFrameRate`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>默认值： `1` | 省电模式开启时列车和飞机动画的帧率（帧/秒）。可指定 1 至 60。值越低，动画越不流畅，但 CPU 资源占用也越低，从而减少移动设备耗电。省略时默认为 `1`。
 **`options.ecoMode`**<br>[`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)<br>默认值： `'normal'` | 初始省电模式。支持 `'normal'` 和 `'eco'`。
@@ -146,6 +146,16 @@ new Map(options: Object)
 
 ---
 
+### **`getLight()`**
+
+返回地图当前设置的光源。返回对象的结构与 [`light`](#light) 事件的载荷相同。
+
+#### 返回值
+
+[`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object): 当前光源。对象属性请参阅 [`light`](#light) 事件。
+
+---
+
 ### **`getMapboxMap()`**
 
 返回地图中使用的 Mapbox [`Map`](https://docs.mapbox.com/mapbox-gl-js/api/map/) 对象。
@@ -158,7 +168,7 @@ new Map(options: Object)
 
 ### **`getModelPosition(lnglat, altitude)`**
 
-将 `LngLat` 投影为 `MercatorCoordinate`，并返回以东京站为原点平移后的墨卡托坐标。
+将 `LngLat` 投影为 `MercatorCoordinate`，并返回以地图初始中心（`options.center`）为原点平移后的墨卡托坐标。
 
 #### 参数
 
@@ -168,13 +178,13 @@ new Map(options: Object)
 
 #### 返回值
 
-{x: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), y: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), z: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}: 以东京站为原点平移后的墨卡托坐标。
+{x: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), y: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number), z: [`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}: 以地图初始中心（`options.center`）为原点平移后的墨卡托坐标。
 
 ---
 
 ### **`getModelScale()`**
 
-返回从以米为单位的现实世界坐标转换到 `MercatorCoordinate` 的比例。该值表示东京站位置的 1 米对应多少 `MercatorCoordinate` 单位。
+返回从以米为单位的现实世界坐标转换到 `MercatorCoordinate` 的比例。该值表示地图初始中心（`options.center`）位置的 1 米对应多少 `MercatorCoordinate` 单位。
 
 #### 返回值
 
@@ -603,6 +613,33 @@ new Map(options: Object)
 #### 属性
 
 **`message`** ([`string`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)): 错误消息。
+
+---
+
+### **`light`**
+
+地图上设置的光源发生变化时触发，例如一天中的时间或视图模式改变时。该事件可用于使自定义图层或插件与地图光照保持同步。
+
+**类型** [`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+#### 属性
+
+**`directional`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)): 平行光。
+
+名称 | 说明
+:-- | :--
+**`directional.color`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>` | RGB 颜色，格式为 `[r, g, b]`，每个值的范围为 0–255。
+**`directional.intensity`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 颜色的相对亮度（0–1）。
+**`directional.direction`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>` | 方向，以度为单位，格式为 `[方位角, 极角]`。方位角范围为 0–360，从正北方向顺时针测量（0 = 北，90 = 东）；极角范围为 0–90，从天顶开始测量（0 = 正上方，90 = 地平线）。
+
+**`ambient`** ([`Object`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)): 环境光。
+
+名称 | 说明
+:-- | :--
+**`ambient.color`**<br>[`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>` | RGB 颜色，格式为 `[r, g, b]`，每个值的范围为 0–255。
+**`ambient.intensity`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 颜色的相对亮度（0–1）。
+
+**`brightness`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)): 光源的感知亮度（0–1）。
 
 ---
 

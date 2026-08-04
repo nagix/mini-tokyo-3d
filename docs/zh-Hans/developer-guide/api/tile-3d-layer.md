@@ -16,7 +16,7 @@
 
 ### **`lightColor`** ([`Array`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)`<`[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)`>`)
 
-光源颜色。它是由红、绿、蓝分量组成的数组，每个分量可以是 `0` 至 `255` 之间的任意数字。省略时使用根据当前日期和时间计算的动态光源颜色。
+光源颜色。它是由红、绿、蓝分量组成的数组，每个分量可以是 `0` 至 `255` 之间的任意数字。省略时使用根据当前日期和时间计算的动态光源颜色。可以通过 [`light`](./map.md#light) 事件或 [`Map#getLight`](./map.md#getlight) 获取当前的动态光源。
 
 ### **`maxzoom`** ([`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))
 

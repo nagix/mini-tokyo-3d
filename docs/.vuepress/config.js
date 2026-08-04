@@ -266,7 +266,7 @@ module.exports = {
                 nav: [
                     {
                         text: '用户指南',
-                        link: '/zh-Hans/user-guide/',
+                        link: '/zh-Hans/user-guide/'
                     },
                     {
                         text: '开发者指南',
