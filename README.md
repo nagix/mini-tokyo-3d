@@ -24,12 +24,14 @@ See a [Live Demo](https://minitokyo3d.com).
 - [User Guide (English)](https://minitokyo3d.com/docs/master/)
 - [User Guide (Japanese)](https://minitokyo3d.com/docs/master/ja/)
 - [User Guide (French)](https://minitokyo3d.com/docs/master/fr/)
+- [User Guide (Simplified Chinese)](https://minitokyo3d.com/docs/master/zh-Hans/)
 
 ## Developer Guides
 
 - [Developer Guide (English)](https://minitokyo3d.com/docs/master/developer-guide/)
 - [Developer Guide (Japanese)](https://minitokyo3d.com/docs/master/ja/developer-guide/)
 - [Developer Guide (French)](https://minitokyo3d.com/docs/master/fr/developer-guide/)
+- [Developer Guide (Simplified Chinese)](https://minitokyo3d.com/docs/master/zh-Hans/developer-guide/)
 
 ## Cheat Sheet
 
@@ -67,7 +69,7 @@ Language | User Interface | Map Labels | Stations, Railways, Airlines, etc. | Us
 English | Yes | Yes | Yes | Yes
 Japanese | Yes | Yes | Yes | Yes
 French | Yes | Yes | Yes | Yes
-Chinese (Simplified) | Yes | Yes | Yes | -
+Chinese (Simplified) | Yes | Yes | Yes | Yes
 Chinese (Traditional) | Yes | Yes | Yes | -
 Korean | Yes | Yes | Yes | -
 Thai | Yes | - | - | -

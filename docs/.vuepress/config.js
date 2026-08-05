@@ -27,6 +27,10 @@ module.exports = {
         '/fr/': {
             lang: 'fr-FR',
             description: 'Une carte numérique 3D en temps réel du système de transports publics de Tokyo'
+        },
+        '/zh-Hans/': {
+            lang: 'zh-CN',
+            description: '东京公共交通系统的实时 3D 数字地图'
         }
     },
     head: [
@@ -235,6 +239,77 @@ module.exports = {
                         },
                         {
                             title: 'Référence API',
+                            collapsable: false,
+                            children: [
+                                'api/',
+                                'api/data-source',
+                                'api/geojson-layer',
+                                'api/map',
+                                'api/mapboxgl',
+                                'api/marker',
+                                'api/panel',
+                                'api/plugin',
+                                'api/popup',
+                                'api/secrets',
+                                'api/three',
+                                'api/three-layer',
+                                'api/tile-3d-layer'
+                            ]
+                        }
+                    ]
+                }
+            },
+            '/zh-Hans/': {
+                label: '简体中文',
+                selectText: '语言',
+                lastUpdated: '最后更新',
+                nav: [
+                    {
+                        text: '用户指南',
+                        link: '/zh-Hans/user-guide/'
+                    },
+                    {
+                        text: '开发者指南',
+                        link: '/zh-Hans/developer-guide/'
+                    },
+                    {
+                        text: '在线演示',
+                        link: 'https://minitokyo3d.com'
+                    }
+                ],
+                sidebar: {
+                    '/zh-Hans/user-guide/': [
+                        {
+                            title: '用户指南',
+                            collapsable: false,
+                            children: [
+                                '',
+                                'overview',
+                                'screen-and-operations',
+                                'display-modes',
+                                'configuration',
+                                'plugins',
+                                'gtfs',
+                                'about-data',
+                                'supported-browsers',
+                                'development-information',
+                                'contact'
+                            ]
+                        }
+                    ],
+                    '/zh-Hans/developer-guide/': [
+                        {
+                            title: '开发者指南',
+                            collapsable: false,
+                            children: [
+                                '',
+                                'integration',
+                                'build',
+                                'migration'
+                            ]
+                        },
+                        {
+                            title: 'API 参考',
                             collapsable: false,
                             children: [
                                 'api/',
