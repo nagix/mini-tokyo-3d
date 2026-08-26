@@ -1,4 +1,4 @@
-import {AdditiveBlending, BackSide, BoxGeometry, Mesh, MeshLambertMaterial, MultiplyBlending, ShaderMaterial, SphereGeometry} from 'three';
+import {AdditiveBlending, BoxGeometry, Mesh, MeshLambertMaterial, MultiplyBlending, ShaderMaterial, SphereGeometry} from 'three';
 import {blink} from '../helpers/helpers';
 import AircraftGeometry from './aircraft-geometry.js';
 import CarGeometry from './car-geometry.js';
@@ -26,8 +26,6 @@ export default class {
             type === 'CAR' ? new CarGeometry(.88, 1.76, .88) :
             type === 'AIRCRAFT' ? new AircraftGeometry(.88, 2.64, .88, .1) :
             new BoxGeometry(.6, 1.2, .6);
-        const baseOutlineGeometry =
-            type === 'CAR' ? new BoxGeometry(.88, 1.76, .88) : undefined;
 
         const uniforms = me.uniforms = {
             zoom: {value: parameters.zoom},
@@ -77,7 +75,7 @@ export default class {
         pickingMesh.matrixAutoUpdate = false;
         pickingMesh.frustumCulled = false;
 
-        const outlineGeometry = me.outlineGeometry = new InstancedGeometry(baseOutlineGeometry || baseGeometry, 2);
+        const outlineGeometry = me.outlineGeometry = new InstancedGeometry(baseGeometry, 2);
         const outlineMaterial = me.outlineMaterial = new ShaderMaterial({
             uniforms: Object.assign({}, uniforms, {
                 marked: {value: -1},
@@ -88,7 +86,8 @@ export default class {
             fragmentShader: outlineFragmentShader,
             defines: {[type]: true},
             transparent: true,
-            side: BackSide
+            depthTest: false,
+            depthWrite: false
         });
 
         const outlineMesh = me.outlineMesh = new Mesh(outlineGeometry, outlineMaterial);
@@ -98,9 +97,6 @@ export default class {
         outlineMesh.frustumCulled = false;
 
         baseGeometry.dispose();
-        if (baseOutlineGeometry) {
-            baseOutlineGeometry.dispose();
-        }
 
         if (type === 'CAR') {
             const sphereGeometry = new SphereGeometry(1.8, 32, 32);

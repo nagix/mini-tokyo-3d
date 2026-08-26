@@ -1,11 +1,12 @@
 import animation from '../animation';
 import configs from '../configs';
 import ComputeRenderer from '../gpgpu/compute-renderer';
+import GlowPipeline from './glow/glow-pipeline';
 import {lerp} from '../helpers/helpers';
 import {hasDarkBackground} from '../helpers/helpers-mapbox';
 import MeshSet from '../mesh-set';
 import {Point} from 'mapbox-gl';
-import {Color, Scene, WebGLRenderTarget, Vector3} from 'three';
+import {Color, Scene, Vector3, WebGLRenderTarget} from 'three';
 
 const MAX_UG_CARS = 1000;
 const MAX_OG_CARS = 2500;
@@ -21,8 +22,13 @@ export default class {
         me.type = 'three';
         me.lightColor = 'white';
         me.objects = new Map();
+        me.glowPipeline = new GlowPipeline();
 
         me.onCameraChanged = me.onCameraChanged.bind(me);
+    }
+
+    getGlowPipeline() {
+        return this.glowPipeline;
     }
 
     onAdd(map, context) {
@@ -54,10 +60,10 @@ export default class {
         scene.add(ugCarMeshSet.getDelayMarkerMesh());
         scene.add(ogCarMeshSet.getDelayMarkerMesh());
 
-        scene.add(ugCarMeshSet.getOutlineMesh());
-        scene.add(ogCarMeshSet.getOutlineMesh());
-        scene.add(aircraftMeshSet.getOutlineMesh());
-        scene.add(busMeshSet.getOutlineMesh());
+        me.glowPipeline.add(ugCarMeshSet.getOutlineMesh());
+        me.glowPipeline.add(ogCarMeshSet.getOutlineMesh());
+        me.glowPipeline.add(aircraftMeshSet.getOutlineMesh());
+        me.glowPipeline.add(busMeshSet.getOutlineMesh());
 
         const ugPickingScene = me.ugPickingScene = new Scene();
 
@@ -87,7 +93,14 @@ export default class {
     }
 
     onRemove(map) {
-        const me = this;
+        const me = this,
+            glowPipeline = me.glowPipeline;
+
+        glowPipeline.remove(me.ugCarMeshSet.getOutlineMesh());
+        glowPipeline.remove(me.ogCarMeshSet.getOutlineMesh());
+        glowPipeline.remove(me.aircraftMeshSet.getOutlineMesh());
+        glowPipeline.remove(me.busMeshSet.getOutlineMesh());
+        glowPipeline.dispose();
 
         me.computeRenderer.dispose();
 
@@ -123,6 +136,21 @@ export default class {
             me.busMeshSet.setInstanceIDs(busInstanceIDs);
             delete me.needsUpdateInstances;
         }
+    }
+
+    render(map, context) {
+        const {renderer, scene, camera} = context;
+
+        renderer.render(scene, camera);
+
+        // The glow mask/blur pipeline is shared infrastructure (see GlowPipeline),
+        // but it has to run through this renderer specifically: the outline
+        // meshes it draws sample GPU-compute textures (vehicle positions) that
+        // only have valid data in the renderer that computed them via
+        // prerender() above, which is this one.
+        this.glowPipeline.renderMaskAndBlur(renderer, camera);
+
+        renderer.resetState();
     }
 
     onCameraChanged() {
