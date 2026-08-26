@@ -65,8 +65,6 @@ void main() {
     vec3 position0 = position * scale0;
     #endif
 
-    position0 = position0 + 0.1 * scale0 * sign( position );
-
     #ifdef BUS
     vec3 transformed = rotateZ( rotationZ ) * position0 + translation + vec3( 0.0, 0.0, 0.3 * scale0 );
     #else

@@ -12,7 +12,7 @@ import * as helpers from './helpers/helpers';
 import {disableAutoHover, pickObject, resetCursor} from './helpers/helpers-deck';
 import * as helpersGeojson from './helpers/helpers-geojson';
 import * as helpersMapbox from './helpers/helpers-mapbox';
-import {GeoJsonLayer, ThreeLayer, Tile3DLayer, TrafficLayer, ZoomWidthScaleExtension} from './layers';
+import {GeoJsonLayer, GlowCompositeLayer, ThreeLayer, Tile3DLayer, TrafficLayer, ZoomWidthScaleExtension} from './layers';
 import {isExpired, loadBusData, loadDictionary, loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
 import {AboutPanel, BusPanel, LayerPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
@@ -942,6 +942,9 @@ export default class extends Evented {
         }
 
         me.addLayer(me.trafficLayer, 'trees');
+        // Defaults to beforeId 'poi', which is after the building/model layers -
+        // it must stay there so the glow isn't covered by them (see GlowCompositeLayer).
+        me.addLayer(new GlowCompositeLayer('traffic-glow', {glowPipeline: me.trafficLayer.getGlowPipeline()}));
 
         const routeData = [],
             colorData = [];
