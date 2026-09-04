@@ -73,3 +73,13 @@ export function getCenterCoord(geojson) {
 export function emptyFeatureCollection() {
     return featureCollection([]);
 }
+
+/**
+ * Takes an array of GeoJSON features, possibly containing falsy entries, and
+ * returns a FeatureCollection of the truthy ones.
+ * @param {Array} features - Array of GeoJSON features
+ * @returns {Object} FeatureCollection
+ */
+export function featureCollectionOf(features) {
+    return featureCollection(features.filter(Boolean));
+}
