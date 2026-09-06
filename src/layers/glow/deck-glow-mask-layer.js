@@ -4,7 +4,8 @@ import {DeckRenderer, LayerManager, WebMercatorViewport} from '@deck.gl/core';
 // instead of hand-copied so this can't silently drift from the real
 // implementation (e.g. its terrain-camera-centering branch).
 import {getViewState} from '@deck.gl/mapbox/dist/esm/deck-utils.js';
-import {cssToDeviceRatio, Framebuffer, instrumentGLContext, Texture2D} from '@luma.gl/core';
+import {cssToDeviceRatio, Framebuffer, instrumentGLContext, Renderbuffer, Texture2D} from '@luma.gl/core';
+import {blit} from '@luma.gl/webgl';
 import GlowCompositeLayer from './glow-composite-layer';
 import glowVertexShader from './glow-composite-vertex.glsl';
 import glowBlurFragmentShader from './glow-blur-fragment.glsl';
@@ -15,6 +16,7 @@ import glowBlurFragmentShader from './glow-blur-fragment.glsl';
 const GLOW_RESOLUTION_SCALE = 0.5;
 const GLOW_BLUR_RADIUS = 1.5;
 const GLOW_BLUR_ITERATIONS = 2;
+const GLOW_MASK_SAMPLES = 4;
 
 function compileShader(gl, type, source) {
     const shader = gl.createShader(type);
@@ -164,6 +166,24 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
                 [gl.COLOR_ATTACHMENT0]: me.maskTexture
             }
         });
+
+        // The mask is the only one of these three targets with an actual
+        // geometric edge to smooth (the blur targets below are filled by a
+        // full-screen quad with no edges of their own) - drawn multisampled
+        // here, then resolved (blit()) into maskFramebuffer/maskTexture right
+        // after, so everything downstream (the blur passes, the composite
+        // step) keeps reading the same plain texture as before.
+        const samples = Math.min(GLOW_MASK_SAMPLES, gl.getParameter(gl.MAX_SAMPLES));
+
+        me.maskMSRenderbuffer = new Renderbuffer(gl, {format: gl.RGBA8, width, height, samples});
+        me.maskMSFramebuffer = new Framebuffer(gl, {
+            width,
+            height,
+            attachments: {
+                [gl.COLOR_ATTACHMENT0]: me.maskMSRenderbuffer
+            }
+        });
+
         me.blurTextureA = createTexture(gl, width, height);
         me.blurFramebufferA = new Framebuffer(gl, {
             width,
@@ -217,6 +237,8 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
         me.deckRenderer.finalize();
         me.maskFramebuffer.delete();
         me.maskTexture.delete();
+        me.maskMSFramebuffer.delete();
+        me.maskMSRenderbuffer.delete();
         me.blurFramebufferA.delete();
         me.blurTextureA.delete();
         me.blurFramebufferB.delete();
@@ -247,7 +269,7 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
         const {viewport, devicePixelRatio} = buildViewport(me.map, gl);
 
         me.deckRenderer.renderLayers({
-            target: me.maskFramebuffer,
+            target: me.maskMSFramebuffer,
             layers: me.layerManager.getLayers(),
             viewports: [viewport],
             onViewportActive: me.layerManager.activateViewport,
@@ -256,6 +278,7 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
             clearCanvas: true,
             moduleParameters: {devicePixelRatio}
         });
+        blit(me.maskMSFramebuffer, me.maskFramebuffer);
 
         gl.useProgram(blurProgram);
         gl.bindBuffer(gl.ARRAY_BUFFER, me.quadBuffer);
@@ -313,6 +336,7 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
             return;
         }
         me.maskFramebuffer.resize({width, height});
+        me.maskMSFramebuffer.resize({width, height});
         me.blurFramebufferA.resize({width, height});
         me.blurFramebufferB.resize({width, height});
     }

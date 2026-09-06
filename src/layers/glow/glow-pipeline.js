@@ -50,7 +50,10 @@ export default class GlowPipeline {
 
         quadScene.add(quadMesh);
 
-        me.glowRenderTarget = new WebGLRenderTarget(1, 1, {depthBuffer: false, stencilBuffer: false});
+        // samples: only the mask itself has a hard geometric edge to smooth -
+        // the blur targets below are filled by a full-screen quad with no edges
+        // of their own, so MSAA there would be pure overhead.
+        me.glowRenderTarget = new WebGLRenderTarget(1, 1, {depthBuffer: false, stencilBuffer: false, samples: 4});
         me.blurRenderTargetA = new WebGLRenderTarget(1, 1, {depthBuffer: false, stencilBuffer: false});
         me.blurRenderTargetB = new WebGLRenderTarget(1, 1, {depthBuffer: false, stencilBuffer: false});
     }
