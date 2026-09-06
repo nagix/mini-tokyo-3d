@@ -1,5 +1,12 @@
 import {LayerExtension} from '@deck.gl/core';
 
+// Matches the native 'stations-outline'/'railways-og-*' style layers' own
+// interpolate expression: constant screen-space stroke width within the
+// normal [12, 19] zoom range, shrinking below zoom 12 and growing above
+// zoom 19. Shared by every other layer whose stroke needs to track that same
+// width (see map.js and station-glow-layer.js).
+export const STROKE_WIDTH_SCALE_STOPS = [9, 0.125, 12, 1, 19, 1, 22, 8];
+
 // DECKGL_FILTER_SIZE is a deck.gl shaderlib hook run right after a layer
 // computes its own screen-space size (see @deck.gl/core's shaderlib
 // SHADER_HOOKS).

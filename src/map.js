@@ -12,7 +12,7 @@ import * as helpers from './helpers/helpers';
 import {disableAutoHover, pickObject, resetCursor} from './helpers/helpers-deck';
 import * as helpersGeojson from './helpers/helpers-geojson';
 import * as helpersMapbox from './helpers/helpers-mapbox';
-import {GeoJsonLayer, GlowCompositeLayer, ThreeLayer, Tile3DLayer, TrafficLayer, ZoomWidthScaleExtension} from './layers';
+import {GeoJsonLayer, GlowCompositeLayer, STROKE_WIDTH_SCALE_STOPS, StationGlowLayer, ThreeLayer, Tile3DLayer, TrafficLayer, ZoomWidthScaleExtension} from './layers';
 import {isExpired, loadBusData, loadDictionary, loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
 import {AboutPanel, BusPanel, LayerPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
@@ -25,12 +25,6 @@ const RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
 const AIRLINES_FOR_ANA_CODE_SHARE = ['ADO', 'SFJ', 'SNJ'];
 
 const DEGREE_TO_RADIAN = Math.PI / 180;
-
-// Matches the native 'stations-outline'/'railways-og-*' style layers' own
-// interpolate expression: constant screen-space stroke width within the
-// normal [12, 19] zoom range, shrinking below zoom 12 and growing above
-// zoom 19 - see ZoomWidthScaleExtension.
-const STROKE_WIDTH_SCALE_STOPS = [9, 0.125, 12, 1, 19, 1, 22, 8];
 
 // Replace NavigationControl._updateZoomButtons to support disabling the control
 const _updateZoomButtons = NavigationControl.prototype._updateZoomButtons;
@@ -783,6 +777,7 @@ export default class extends Evented {
         // me.objectUnit = Math.max(getObjectScale(initialZoom) * .19, .02);
 
         me.trafficLayer = new TrafficLayer({id: 'traffic'});
+        me.stationGlow = new StationGlowLayer('station-glow');
 
         map.setLayoutProperty('poi', 'text-field', [
             'coalesce',
@@ -800,16 +795,6 @@ export default class extends Evented {
                 minzoom: zoom <= 13 ? 0 : zoom,
                 maxzoom: zoom >= 18 ? 24 : zoom + 1
             };
-
-            for (const key of ['marked', 'selected']) {
-                me.addLayer(Object.assign({}, commonProps, {
-                    id: `stations-${key}-${zoom}`,
-                    getLineWidth: 12,
-                    getLineColor: [255, 255, 255],
-                    getFillColor: [255, 255, 255],
-                    visible: false
-                }), 'trees');
-            }
 
             for (const key2 of ['ug', 'routeug', 'routeog']) {
                 for (const key1 of ['railways', 'stations']) {
@@ -943,7 +928,12 @@ export default class extends Evented {
 
         me.addLayer(me.trafficLayer, 'trees');
         // Defaults to beforeId 'poi', which is after the building/model layers -
-        // it must stay there so the glow isn't covered by them (see GlowCompositeLayer).
+        // both need to stay there so their composited glow isn't covered by
+        // them (see GlowCompositeLayer). stationGlow's own mask+blur pass has
+        // no such constraint (fully offscreen) - it only follows here because
+        // its composite step is inlined into the same render() call (see
+        // DeckGlowMaskLayer).
+        me.addLayer(me.stationGlow);
         me.addLayer(new GlowCompositeLayer('traffic-glow', {glowPipeline: me.trafficLayer.getGlowPipeline()}));
 
         const routeData = [],
@@ -1156,6 +1146,16 @@ export default class extends Evented {
                 for (const key of ['railways', 'stations', 'stations-outline']) {
                     me.setLayerVisibility(`${key}-og-${prevLayerZoom}`, 'none');
                     me.setLayerVisibility(`${key}-og-${layerZoom}`, 'visible');
+                }
+
+                // The station glow's feature is a single zoom bucket's
+                // footprint (see getStationFeature), so it needs re-fetching
+                // whenever that bucket changes while a station is marked/tracked.
+                if (isStation(me.markedObject)) {
+                    me.addStationOutline(me.markedObject, 'stations-marked');
+                }
+                if (isStation(me.trackedObject)) {
+                    me.addStationOutline(me.trackedObject, 'stations-selected');
                 }
 
                 for (const {id} of me.gtfs.values()) {
@@ -3606,35 +3606,52 @@ export default class extends Evented {
         }
     }
 
+    // Station footprint features are duplicated per zoom bucket, and unlike the
+    // stroke width these are actually different (generalized/enlarged) shapes
+    // at low zoom, not just a rendering-only LOD - so the glow has to use the
+    // same bucket as everything else currently on screen (me.layerZoom, as
+    // updatePopup() does), not a fixed one, and gets rebuilt when it changes
+    // (see the 'zoom' handler above).
+    getStationFeature(group) {
+        const me = this,
+            featureLookup = me.featureLookup,
+            feature = featureLookup.get(`${group}.${me.layerZoom}`);
+
+        if (feature) {
+            return feature;
+        }
+        for (const zoom of [13, 14, 15, 16, 17, 18]) {
+            const fallback = featureLookup.get(`${group}.${zoom}`);
+
+            if (fallback) {
+                return fallback;
+            }
+        }
+    }
+
+    // A ground/underground pair of connected stations (e.g. Tokyo station's
+    // og and ug parts) is generated as two separate features sharing the
+    // same properties.ids[0] (see loader/features.js), but two different
+    // properties.group values ('<ids[0]>.og' vs '<ids[0]>.ug') - fetching
+    // both and combining them into one FeatureCollection is what makes
+    // marking either side highlight both.
     addStationOutline(object, name) {
         const me = this,
-            id = object.stations[0].id;
+            feature = me.getStationFeature(object.id),
+            otherGroup = object.id.replace(/.g$/, object.layer === 'ground' ? 'ug' : 'og'),
+            otherFeature = otherGroup === object.id ? undefined : me.getStationFeature(otherGroup);
 
-        for (const zoom of [13, 14, 15, 16, 17, 18]) {
-            helpersMapbox.setLayerProps(me.map, `${name}-${zoom}`, {
-                data: helpersGeojson.featureFilter(me.featureCollection, p => p.zoom === zoom && p.ids && p.ids[0] === id),
-                visible: true
-            });
+        if (feature || otherFeature) {
+            me.stationGlow.show(helpersGeojson.featureCollectionOf([feature, otherFeature]), name);
         }
     }
 
     removeStationOutline(name) {
-        for (const zoom of [13, 14, 15, 16, 17, 18]) {
-            helpersMapbox.setLayerProps(this.map, `${name}-${zoom}`, {
-                visible: false
-            });
-        }
+        this.stationGlow.hide(name);
     }
 
     refreshStationOutline() {
-        const opacity = helpers.blink();
-
-        for (const zoom of [13, 14, 15, 16, 17, 18]) {
-            helpersMapbox.setLayerProps(this.map, `stations-selected-${zoom}`, {
-                opacity,
-                visible: true
-            });
-        }
+        this.stationGlow.setOpacity('stations-selected', helpers.blink());
     }
 
     setSectionData(train, index, final) {
