@@ -16,6 +16,7 @@ Name | Description
 :-- | :--
 **`options.element`**<br>[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element) | DOM element to use as a marker. The default is a light blue, droplet-shaped SVG marker.
 **`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | The minimum zoom level for the marker. At zoom levels less than the minZoom, the marker will be hidden. The value can be any number between `0` and `24` (inclusive). If no minZoom is provided, the marker will be visible at all zoom levels.
+**`options.offset`**<br>[`PointLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#pointlike) | The offset in pixels to apply relative to the element's center. Negative values indicate left and up.
 
 ## Instance Members
 

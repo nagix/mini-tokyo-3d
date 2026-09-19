@@ -16,6 +16,7 @@ new Marker(options: Object)
 :-- | :--
 **`options.element`**<br>[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element) | 用作标记的 DOM 元素。默认为浅蓝色水滴形 SVG 标记。
 **`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | 标记的最小缩放级别。缩放级别小于 `minZoom` 时，标记会隐藏。取值可以是 `0` 至 `24`（含）之间的任意数字。未提供 `minZoom` 时，标记在所有缩放级别下均可见。
+**`options.offset`**<br>[`PointLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#pointlike) | 相对于元素中心应用的像素偏移量。负值表示向左和向上。
 
 ## 实例成员
 

@@ -16,6 +16,7 @@ Nom | Description
 :-- | :--
 **`options.element`**<br>[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element) | Élément DOM à utiliser comme marqueur. La valeur par défaut est un marqueur SVG bleu clair en forme de gouttelette.
 **`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | Le niveau de zoom minimum pour le marqueur. À des niveaux de zoom inférieurs au minZoom, le marqueur sera masqué. La valeur peut être n’importe quel nombre compris entre `0` et `24` (inclus). Si aucun minZoom n'est fourni, le marqueur sera visible à tous les niveaux de zoom.
+**`options.offset`**<br>[`PointLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#pointlike) | Le décalage en pixels à appliquer par rapport au centre de l'élément. Les valeurs négatives indiquent la gauche et le haut.
 
 ## Membres de l'instance
 

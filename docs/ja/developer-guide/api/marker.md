@@ -16,6 +16,7 @@ new Marker(options: Object)
 :-- | :--
 **`options.element`**<br>[`HTMLElement`](https://developer.mozilla.org/docs/Web/HTML/Element) | マーカーとして使用する DOM エレメント。デフォルトは、水色のしずく型の SVG マーカー
 **`options.minZoom`**<br>[`number`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) | マーカーの最小のズームレベル。minZoom 未満のズームレベルでは、マーカーは非表示になる。値は `0` から `24`（これを含む）の間の任意の数値。minZoom が指定されていない場合は、マーカーはすべてのズームレベルで表示される
+**`options.offset`**<br>[`PointLike`](https://docs.mapbox.com/mapbox-gl-js/api/geography/#pointlike) | 要素の中心を基準に適用するピクセル単位のオフセット。負の値は左方向・上方向を示す
 
 ## インスタンスメンバ
 

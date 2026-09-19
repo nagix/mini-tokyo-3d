@@ -21,7 +21,7 @@ export default class extends Evented {
         element.style.pointerEvents = 'none';
 
         me._element = element.appendChild(child);
-        me._marker = new Marker({element});
+        me._marker = new Marker({element, offset: options.offset});
         me._minZoom = options.minZoom || 0;
         me._visible = false;
         me._added = false;
