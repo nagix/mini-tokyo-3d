@@ -1,6 +1,7 @@
 import {featureEach} from '@turf/meta';
 import {Evented, FullscreenControl, LngLat, Map as Mapbox, MercatorCoordinate, NavigationControl} from 'mapbox-gl';
 import AnimatedPopup from 'mapbox-gl-animated-popup';
+import ActiveObjectLookup from './active-object-lookup';
 import animation from './animation';
 import Clock from './clock';
 import configs from './configs';
@@ -751,11 +752,11 @@ export default class extends Evented {
         me.airports = new Dataset(Airport, data.airportData);
         me.flightStatuses = new Dataset(FlightStatus, data.flightStatusData);
 
-        me.activeTrainLookup = new Map();
+        me.activeTrainLookup = new ActiveObjectLookup();
         me.standbyTrainLookup = new Map();
         me.realtimeTrains = new Set();
         me.adTrains = new Set();
-        me.activeFlightLookup = new Map();
+        me.activeFlightLookup = new ActiveObjectLookup();
         me.flightLookup = new Map();
     }
 
@@ -1210,6 +1211,18 @@ export default class extends Evented {
                 }
                 me.lastFrameRefresh = Date.now();
 
+                // Fire section-end callbacks scheduled by trainRepeat/flightStart/
+                // busRepeat (see ActiveObjectLookup) - runs after the stopAll() check
+                // above so a long-hidden tab doesn't fire callbacks for objects that
+                // are about to be wiped anyway.
+                const highResNow = clock.getHighResTime();
+
+                me.activeTrainLookup.processDue(highResNow);
+                me.activeFlightLookup.processDue(highResNow);
+                for (const gtfs of me.gtfs.values()) {
+                    gtfs.activeBusLookup.processDue(highResNow);
+                }
+
                 const clockRefresh = Math.floor((now - minDelay) / refreshInterval) !== Math.floor(me.lastRefresh / refreshInterval);
 
                 if (clockRefresh) {
@@ -1565,26 +1578,20 @@ export default class extends Evented {
             }
             me.trafficLayer.updateObject(train, actualDepartureTime, duration, accelerationTime, acceleration / distance, accelerationTime, acceleration / distance);
 
-            train.animationID = animation.start({
-                complete: () => {
-                    me.trainRepeat(train, timetable ? train.timetableIndex + 1 : undefined);
-                },
-                duration: actualDepartureTime + duration - now,
-                clock
+            me.activeTrainLookup.schedule(train.id, clock.getHighResTime() + (actualDepartureTime + duration - now), () => {
+                me.trainRepeat(train, timetable ? train.timetableIndex + 1 : undefined);
             });
         } else {
-            train.animationID = animation.start({
-                complete: () => {
-                    if (final) {
-                        me.stopTrain(train);
-                    } else {
-                        me.trainRepeat(train);
-                    }
-                },
-                duration: timetable ?
-                    Math.max(train.departureTime - now, minStandingDuration) :
-                    final ? minStandingDuration : configs.realtimeCheckInterval,
-                clock
+            const waitDuration = timetable ?
+                Math.max(train.departureTime - now, minStandingDuration) :
+                final ? minStandingDuration : configs.realtimeCheckInterval;
+
+            me.activeTrainLookup.schedule(train.id, clock.getHighResTime() + waitDuration, () => {
+                if (final) {
+                    me.stopTrain(train);
+                } else {
+                    me.trainRepeat(train);
+                }
             });
         }
     }
@@ -1629,12 +1636,8 @@ export default class extends Evented {
 
         me.trafficLayer.updateObject(flight, flight.start, duration, accelerationTime, acceleration / distance, decelerationTime, deceleration / distance);
 
-        flight.animationID = animation.start({
-            complete: () => {
-                me.stopFlight(flight);
-            },
-            duration: flight.end - now,
-            clock
+        me.activeFlightLookup.schedule(id, clock.getHighResTime() + (flight.end - now), () => {
+            me.stopFlight(flight);
         });
     }
 
@@ -1746,26 +1749,20 @@ export default class extends Evented {
             }
             me.trafficLayer.updateObject(bus, actualDepartureTime, duration, accelerationTime, busAcceleration / distance, accelerationTime, busAcceleration / distance);
 
-            bus.animationID = animation.start({
-                complete: () => {
-                    me.busRepeat(bus, bus.stop === undefined ? bus.sectionIndex + 1 : undefined);
-                },
-                duration: actualDepartureTime + duration - now,
-                clock
+            me.gtfs.get(bus.gtfsId).activeBusLookup.schedule(bus.trip.id, clock.getHighResTime() + (actualDepartureTime + duration - now), () => {
+                me.busRepeat(bus, bus.stop === undefined ? bus.sectionIndex + 1 : undefined);
             });
         } else {
-            bus.animationID = animation.start({
-                complete: () => {
-                    if (final) {
-                        me.stopBus(bus);
-                    } else {
-                        me.busRepeat(bus);
-                    }
-                },
-                duration: bus.stop === undefined ?
-                    Math.max(bus.nextDepartureTime - now, minBusStandingDuration) :
-                    final ? minBusStandingDuration : configs.realtimeCheckInterval,
-                clock
+            const waitDuration = bus.stop === undefined ?
+                Math.max(bus.nextDepartureTime - now, minBusStandingDuration) :
+                final ? minBusStandingDuration : configs.realtimeCheckInterval;
+
+            me.gtfs.get(bus.gtfsId).activeBusLookup.schedule(bus.trip.id, clock.getHighResTime() + waitDuration, () => {
+                if (final) {
+                    me.stopBus(bus);
+                } else {
+                    me.busRepeat(bus);
+                }
             });
         }
     }
@@ -2146,7 +2143,6 @@ export default class extends Evented {
     stopTrain(train) {
         const me = this;
 
-        animation.stop(train.animationID);
         me.hideAdTrainPopup(train);
         if (train === me.markedObject) {
             me.markObject();
@@ -2161,7 +2157,6 @@ export default class extends Evented {
     stopFlight(flight) {
         const me = this;
 
-        animation.stop(flight.animationID);
         if (flight === me.markedObject) {
             me.markObject();
         }
@@ -2175,7 +2170,6 @@ export default class extends Evented {
     stopBus(bus) {
         const me = this;
 
-        animation.stop(bus.animationID);
         if (bus === me.markedObject) {
             me.markObject();
         }
@@ -2325,7 +2319,7 @@ export default class extends Evented {
                     routes: new Dataset(GTFSRoute, data.routes),
                     trips: new Dataset(GTFSTrip, data.trips),
                     layerIds,
-                    activeBusLookup: new Map(),
+                    activeBusLookup: new ActiveObjectLookup(),
                     realtimeBuses: new Set(),
                     vehiclePositionUrl: source.vehiclePositionUrl,
                     color: source.color,

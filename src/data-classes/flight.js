@@ -19,7 +19,6 @@ export default class {
         bearing;
         _t;
         standing;
-        animationID;
     */
 
     constructor(params, refs) {
