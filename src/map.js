@@ -998,7 +998,7 @@ export default class extends Evented {
         // tile-3d layers, and is used to control the display of each group on an exclusive basis.
         me.layerVisibility = {model: new Map(), tile3d: new Map()};
         for (const {id, type} of map.getStyle().layers) {
-            if (type === 'model' || type === 'fill-extrusion' || id.startsWith('hd-')) {
+            if (helpers.includes(['model', 'fill-extrusion', 'building'], type) || id.startsWith('hd-')) {
                 me.layerVisibility.model.set(id, 'visible');
             }
         }
