@@ -787,6 +787,18 @@ export default class extends Evented {
             ['get', 'name']
         ]);
 
+        // Kept only as an anchor: plugins built against pre-glow versions
+        // (e.g. mt3d-plugin-plateau) insert their own layers with beforeId
+        // 'stations-marked-13', which used to be the deepest of the
+        // railway/station layers below 'trees' before the marked/selected
+        // highlight moved to StationGlowLayer. Remove once those plugins
+        // adopt a dedicated anchor layer in the next major version.
+        me.addLayer({
+            id: 'stations-marked-13',
+            type: 'background',
+            layout: {visibility: 'none'}
+        }, 'trees');
+
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
             const commonProps = {
                 type: 'geojson',
