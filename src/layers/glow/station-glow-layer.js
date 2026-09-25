@@ -1,4 +1,3 @@
-import {GeoJsonLayer} from '@deck.gl/layers';
 import DeckGlowMaskLayer from './deck-glow-mask-layer';
 import ZoomWidthScaleExtension, {STROKE_WIDTH_SCALE_STOPS} from '../extensions/zoom-width-scale-extension';
 
@@ -58,7 +57,7 @@ export default class StationGlowLayer extends DeckGlowMaskLayer {
 
         for (const [name, state] of me.states) {
             if (state.feature) {
-                layers.push(new GeoJsonLayer({
+                layers.push(me._buildGeoJsonLayer({
                     id: name,
                     data: state.feature,
                     filled: true,

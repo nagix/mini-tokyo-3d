@@ -1,4 +1,5 @@
 import {DeckRenderer, LayerManager, WebMercatorViewport} from '@deck.gl/core';
+import {GeoJsonLayer} from '@deck.gl/layers';
 // getViewState isn't part of @deck.gl/mapbox's public exports (see index.js),
 // but is a plain named export of this internal module - imported directly
 // instead of hand-copied so this can't silently drift from the real
@@ -6,6 +7,7 @@ import {DeckRenderer, LayerManager, WebMercatorViewport} from '@deck.gl/core';
 import {getViewState} from '@deck.gl/mapbox/dist/esm/deck-utils.js';
 import {cssToDeviceRatio, Framebuffer, instrumentGLContext, Renderbuffer, Texture2D} from '@luma.gl/core';
 import {blit} from '@luma.gl/webgl';
+import {gammaDecode} from '../../helpers/helpers';
 import GlowCompositeLayer from './glow-composite-layer';
 import glowVertexShader from './glow-composite-vertex.glsl';
 import glowBlurFragmentShader from './glow-blur-fragment.glsl';
@@ -326,6 +328,15 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
     // .handle) through the exact same code path, via this tiny shim.
     getGlowTextures() {
         return this._glowTextures;
+    }
+
+    // Subclasses build their mask geometry through this instead of calling
+    // `new GeoJsonLayer()` directly, so opacity is always gamma-decoded (see
+    // helpers.gammaDecode()) before reaching deck.gl.
+    _buildGeoJsonLayer(options) {
+        return new GeoJsonLayer(Object.assign({}, options, {
+            opacity: options.opacity !== undefined ? gammaDecode(options.opacity) : undefined
+        }));
     }
 
     _resize() {
