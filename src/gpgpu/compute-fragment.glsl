@@ -142,6 +142,12 @@ void main() {
     rotateZ = fadingOut ? prevRotateZ : rotateZ;
     rotateX = fadingOut ? prevRotateX : rotateX;
 
+    // Flip rotation for trains running in reverse direction
+    if ( ! fadingOut && sectionDistance > nextSectionDistance ) {
+        rotateZ += 3.141592653589793;
+    }
+
+
     outPosition0 = vec4( position, float( colorID ) );
     outPosition1 = vec4( rotateZ, rotateX, opacityAnimationStartTime, opacity );
 }
