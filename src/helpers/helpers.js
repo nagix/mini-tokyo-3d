@@ -55,6 +55,18 @@ export function clamp(value, lower, upper) {
     return Math.min(Math.max(value, lower), upper);
 }
 
+// deck.gl gamma-encodes its own opacity prop before using it as a shader
+// alpha multiplier (Layer#_drawLayer()), unlike mapbox's native
+// paint-property opacity, which stays linear - gammaDecode() cancels that out
+// so the same opacity value looks the same regardless of which one it's for.
+export function gammaEncode(value) {
+    return Math.pow(value, 1 / 2.2);
+}
+
+export function gammaDecode(value) {
+    return Math.pow(value, 2.2);
+}
+
 export function includes(array, value) {
     let i, ilen;
 

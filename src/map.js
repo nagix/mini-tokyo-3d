@@ -831,22 +831,22 @@ export default class extends Evented {
                         }
                     }[key1], {
                         'ug': {
-                            opacity: .0625,
+                            opacity: helpers.gammaDecode(.25),
                             pickable: key1 === 'stations',
                             metadata: {
                                 'mt3d:opacity-effect': true,
-                                'mt3d:opacity': 0.0625,
-                                'mt3d:opacity-route': 0.005,
+                                'mt3d:opacity': 0.25,
+                                'mt3d:opacity-route': 0.1,
                                 'mt3d:opacity-underground': 1,
-                                'mt3d:opacity-underground-route': 0.005
+                                'mt3d:opacity-underground-route': 0.1
                             }
                         },
                         'routeug': {
-                            opacity: .0625,
+                            opacity: helpers.gammaDecode(.25),
                             visible: false,
                             metadata: {
                                 'mt3d:opacity-effect': true,
-                                'mt3d:opacity': 0.125,
+                                'mt3d:opacity': 0.25,
                                 'mt3d:opacity-underground': 1
                             }
                         },
@@ -986,7 +986,7 @@ export default class extends Evented {
             getLineColor: d => helpers.colorToRGBArray(d.properties.color),
             lineWidthUnits: 'pixels',
             lineWidthScale: 1,
-            opacity: .0625,
+            opacity: helpers.gammaDecode(.25),
             transitions: {opacity: configs.transitionDuration},
             parameters: {depthTest: false}
         });

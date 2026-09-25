@@ -1,6 +1,6 @@
 import {LngLatBounds} from 'mapbox-gl';
 import {parseCSSColor} from 'csscolorparser';
-import {clamp, includes, lerp, luminance, valueOrDefault} from './helpers';
+import {clamp, gammaDecode, gammaEncode, includes, lerp, luminance, valueOrDefault} from './helpers';
 import * as SunCalc from 'suncalc';
 
 const HOUR = 3600000;
@@ -554,14 +554,16 @@ export function setStyleOpacities(map, styleOpacities, factorKey) {
             map.setPaintProperty(id, key, prop);
         } else {
             const start = performance.now(),
-                current = valueOrDefault(map.getLayer(id).props.opacity, 1);
+                // Undoes the gammaDecode() below so a lerp interrupted
+                // mid-transition still starts from the right place.
+                current = gammaEncode(valueOrDefault(map.getLayer(id).props.opacity, 1));
 
             // Workaround for deck.gl's transitions property which doesn't work as extected
             (function repeat() {
                 const elapsed = performance.now() - start;
 
                 setLayerProps(map, id, {
-                    opacity: lerp(current, factor, Math.min(elapsed / duration, 1))
+                    opacity: gammaDecode(lerp(current, factor, Math.min(elapsed / duration, 1)))
                 });
                 if (elapsed < duration) {
                     requestAnimationFrame(repeat);
