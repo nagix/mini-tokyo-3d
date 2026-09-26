@@ -6,6 +6,7 @@ import {GeoJsonLayer} from '@deck.gl/layers';
 // implementation (e.g. its terrain-camera-centering branch).
 import {getViewState} from '@deck.gl/mapbox/dist/esm/deck-utils.js';
 import {cssToDeviceRatio, Framebuffer, instrumentGLContext, Renderbuffer, Texture2D} from '@luma.gl/core';
+import GL from '@luma.gl/constants';
 import {blit} from '@luma.gl/webgl';
 import {gammaDecode} from '../../helpers/helpers';
 import GlowCompositeLayer from './glow-composite-layer';
@@ -332,10 +333,14 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
 
     // Subclasses build their mask geometry through this instead of calling
     // `new GeoJsonLayer()` directly, so opacity is always gamma-decoded (see
-    // helpers.gammaDecode()) before reaching deck.gl.
+    // helpers.gammaDecode()) before reaching deck.gl. MAX blending avoids a
+    // fill/stroke overlap (same color, same fractional opacity) compositing
+    // to a higher alpha than either alone, which would otherwise show up as
+    // a spurious inner glow ring once blurred.
     _buildGeoJsonLayer(options) {
         return new GeoJsonLayer(Object.assign({}, options, {
-            opacity: options.opacity !== undefined ? gammaDecode(options.opacity) : undefined
+            opacity: options.opacity !== undefined ? gammaDecode(options.opacity) : undefined,
+            parameters: Object.assign({blendEquation: GL.MAX, blendFunc: [GL.ONE, GL.ONE]}, options.parameters)
         }));
     }
 
