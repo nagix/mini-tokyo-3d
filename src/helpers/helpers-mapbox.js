@@ -1,4 +1,5 @@
 import {LngLatBounds} from 'mapbox-gl';
+import {MapboxLayer} from '@deck.gl/mapbox';
 import {parseCSSColor} from 'csscolorparser';
 import {clamp, gammaDecode, gammaEncode, includes, lerp, luminance, valueOrDefault} from './helpers';
 import * as SunCalc from 'suncalc';
@@ -550,18 +551,21 @@ export function setStyleOpacities(map, styleOpacities, factorKey) {
             }
             map.setPaintProperty(id, key, prop);
         } else {
-            const start = performance.now(),
-                // Undoes the gammaDecode() below so a lerp interrupted
-                // mid-transition still starts from the right place.
-                current = gammaEncode(valueOrDefault(map.getLayer(id).props.opacity, 1));
+            // Only real deck.gl layers gamma-encode opacity internally; others interpret it linearly.
+            const layer = map.getLayer(id),
+                isDeckGL = layer instanceof MapboxLayer,
+                encode = isDeckGL ? gammaEncode : value => value,
+                decode = isDeckGL ? gammaDecode : value => value,
+                getOpacity = () => (isDeckGL ? layer.props.opacity : layer.getOpacity()),
+                setOpacity = value => (isDeckGL ? layer.setProps({opacity: value}) : layer.setOpacity(value)),
+                start = performance.now(),
+                current = encode(valueOrDefault(getOpacity(), 1));
 
             // Workaround for deck.gl's transitions property which doesn't work as extected
             (function repeat() {
                 const elapsed = performance.now() - start;
 
-                setLayerProps(map, id, {
-                    opacity: gammaDecode(lerp(current, factor, Math.min(elapsed / duration, 1)))
-                });
+                setOpacity(decode(lerp(current, factor, Math.min(elapsed / duration, 1))));
                 if (elapsed < duration) {
                     requestAnimationFrame(repeat);
                 }

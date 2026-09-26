@@ -25,12 +25,31 @@ export default class GlowCompositeLayer {
         me.renderingMode = '2d';
         me.glowPipeline = options.glowPipeline;
         me.glowColor = options.glowColor || [1, 1, 1];
-        me.glowStrength = options.glowStrength !== undefined ? options.glowStrength : 1;
+        me.baseGlowStrength = options.glowStrength !== undefined ? options.glowStrength : 1;
+        me.opacity = 1;
+    }
+
+    // opacity is the ground/underground-switch factor driven by
+    // helpers-mapbox's setStyleOpacities(); see render() for how it combines
+    // with baseGlowStrength.
+    setOpacity(opacity) {
+        const me = this;
+
+        me.opacity = opacity;
+        if (me.map) {
+            me.map.triggerRepaint();
+        }
+    }
+
+    getOpacity() {
+        return this.opacity;
     }
 
     onAdd(map, gl) {
         const me = this,
             program = me.program = gl.createProgram();
+
+        me.map = map;
 
         gl.attachShader(program, compileShader(gl, gl.VERTEX_SHADER, glowCompositeVertexShader));
         gl.attachShader(program, compileShader(gl, gl.FRAGMENT_SHADER, glowCompositeFragmentShader));
@@ -76,7 +95,7 @@ export default class GlowCompositeLayer {
         gl.uniform1i(me.blurredLocation, 1);
 
         gl.uniform3fv(me.colorLocation, me.glowColor);
-        gl.uniform1f(me.strengthLocation, me.glowStrength);
+        gl.uniform1f(me.strengthLocation, me.baseGlowStrength * me.opacity);
 
         gl.bindBuffer(gl.ARRAY_BUFFER, me.buffer);
         gl.enableVertexAttribArray(me.positionLocation);

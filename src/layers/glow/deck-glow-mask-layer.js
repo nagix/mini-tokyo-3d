@@ -144,7 +144,6 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
 
         super.onAdd(map, gl);
 
-        me.map = map;
         me.gl = gl;
 
         // cssToDeviceRatio(gl) (used by buildViewport()) reads

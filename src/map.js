@@ -3657,7 +3657,7 @@ export default class extends Evented {
     }
 
     refreshStationOutline() {
-        this.stationGlow.setOpacity('stations-selected', helpers.blink());
+        this.stationGlow.setIntensity('stations-selected', helpers.blink());
     }
 
     setSectionData(train, index, final) {

@@ -17,7 +17,7 @@ export default class StationGlowLayer extends DeckGlowMaskLayer {
         me.states = new Map();
 
         for (const name of ['stations-marked', 'stations-selected']) {
-            me.states.set(name, {feature: null, opacity: 0});
+            me.states.set(name, {feature: null, intensity: 0});
         }
     }
 
@@ -33,22 +33,27 @@ export default class StationGlowLayer extends DeckGlowMaskLayer {
             state = me.states.get(name);
 
         state.feature = feature;
-        state.opacity = 1;
+        state.intensity = 1;
         me._updateLayers();
     }
 
     hide(name) {
-        const state = this.states.get(name);
+        const me = this,
+            state = me.states.get(name);
 
         state.feature = null;
-        this._updateLayers();
+        me._updateLayers();
     }
 
-    setOpacity(name, opacity) {
-        const state = this.states.get(name);
+    setIntensity(name, intensity) {
+        const me = this,
+            state = me.states.get(name);
 
-        state.opacity = opacity;
-        this._updateLayers();
+        state.intensity = intensity;
+        me._updateLayers();
+        if (me.map) {
+            me.map.triggerRepaint();
+        }
     }
 
     _updateLayers() {
@@ -69,7 +74,7 @@ export default class StationGlowLayer extends DeckGlowMaskLayer {
                     // Keeps getLineWidth tracking the native 'stations-outline'
                     // layer's own zoom-dependent stroke width (see map.js).
                     extensions: [new ZoomWidthScaleExtension(STROKE_WIDTH_SCALE_STOPS)],
-                    opacity: state.opacity,
+                    opacity: state.intensity,
                     // This mask has one flat, ground-level feature at a time -
                     // no z-fighting to resolve, and depth testing is one more
                     // variable (buffer state, near/far mismatch) that could be
