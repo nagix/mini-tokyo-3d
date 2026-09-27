@@ -13,7 +13,7 @@ import * as helpers from './helpers/helpers';
 import {disableAutoHover, pickObject, resetCursor} from './helpers/helpers-deck';
 import * as helpersGeojson from './helpers/helpers-geojson';
 import * as helpersMapbox from './helpers/helpers-mapbox';
-import {GeoJsonLayer, GlowCompositeLayer, STROKE_WIDTH_SCALE_STOPS, StationGlowLayer, ThreeLayer, Tile3DLayer, TrafficLayer, ZoomWidthScaleExtension} from './layers';
+import {GeoJsonLayer, GlowCompositeLayer, RailwayStatusGlowLayer, STROKE_WIDTH_SCALE_STOPS, StationGlowLayer, ThreeLayer, Tile3DLayer, TrafficLayer, ZoomWidthScaleExtension} from './layers';
 import {isExpired, loadBusData, loadDictionary, loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
 import {AboutPanel, BusPanel, LayerPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
@@ -26,6 +26,30 @@ const RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
 const AIRLINES_FOR_ANA_CODE_SHARE = ['ADO', 'SFJ', 'SNJ'];
 
 const DEGREE_TO_RADIAN = Math.PI / 180;
+
+const RAILWAY_STATUS_GLOW_COLORS = {
+    delay: [0.9529, 0.6745, 0.2784],
+    suspended: [0.9176, 0.2549, 0.2118]
+};
+
+// Same ground/underground opacity split as railways-ug-13/railways-og-13 -
+// the glow should fade the same way the railway line it highlights does.
+const RAILWAY_STATUS_GLOW_OPACITY_METADATA = {
+    ug: {
+        'mt3d:opacity-effect': true,
+        'mt3d:opacity': 0.25,
+        'mt3d:opacity-route': 0.1,
+        'mt3d:opacity-underground': 1,
+        'mt3d:opacity-underground-route': 0.1
+    },
+    og: {
+        'mt3d:opacity-effect': true,
+        'mt3d:opacity': 1,
+        'mt3d:opacity-route': 0.1,
+        'mt3d:opacity-underground': 0.25,
+        'mt3d:opacity-underground-route': 0.1
+    }
+};
 
 // Replace NavigationControl._updateZoomButtons to support disabling the control
 const _updateZoomButtons = NavigationControl.prototype._updateZoomButtons;
@@ -521,6 +545,12 @@ export default class extends Evented {
             me.updateLayerVisibility();
         } else {
             me.map.addLayer(layer, beforeId || 'poi');
+            // Mapbox doesn't carry a custom layer's own metadata through to
+            // the style layer it wraps - copy it over so helpers-mapbox's
+            // getStyleOpacities() can pick this layer up.
+            if (layer.metadata) {
+                me.map.style.getOwnLayer(layer.id).metadata = layer.metadata;
+            }
         }
         return me;
     }
@@ -780,6 +810,22 @@ export default class extends Evented {
         me.trafficLayer = new TrafficLayer({id: 'traffic'});
         me.stationGlow = new StationGlowLayer('station-glow');
 
+        const railwayStatusGlowOptions = (altitude, kind) => ({
+            glowColor: RAILWAY_STATUS_GLOW_COLORS[kind],
+            metadata: RAILWAY_STATUS_GLOW_OPACITY_METADATA[altitude]
+        });
+
+        me.railwayStatusGlow = {
+            ug: {
+                delay: new RailwayStatusGlowLayer('railway-status-glow-ug-delay', railwayStatusGlowOptions('ug', 'delay')),
+                suspended: new RailwayStatusGlowLayer('railway-status-glow-ug-suspended', railwayStatusGlowOptions('ug', 'suspended'))
+            },
+            og: {
+                delay: new RailwayStatusGlowLayer('railway-status-glow-og-delay', railwayStatusGlowOptions('og', 'delay')),
+                suspended: new RailwayStatusGlowLayer('railway-status-glow-og-suspended', railwayStatusGlowOptions('og', 'suspended'))
+            }
+        };
+
         map.setLayoutProperty('poi', 'text-field', [
             'coalesce',
             ['get', `name_${lang}`],
@@ -948,6 +994,17 @@ export default class extends Evented {
         // DeckGlowMaskLayer).
         me.addLayer(me.stationGlow);
         me.addLayer(new GlowCompositeLayer('traffic-glow', {glowPipeline: me.trafficLayer.getGlowPipeline()}));
+
+        // Unlike stationGlow/traffic-glow above, these must stay behind the
+        // actual railway lines so they read as a highlight along the track
+        // rather than covering it - inserting before the same beforeId here
+        // pushes earlier insertions back, so this ends up behind the entire
+        // zoom-bucket group regardless of the current zoom. Suspended is
+        // added after delay so it wins where a section is reported as both.
+        me.addLayer(me.railwayStatusGlow.ug.delay, 'railways-ug-13');
+        me.addLayer(me.railwayStatusGlow.ug.suspended, 'railways-ug-13');
+        me.addLayer(me.railwayStatusGlow.og.delay, 'railways-og-13');
+        me.addLayer(me.railwayStatusGlow.og.suspended, 'railways-og-13');
 
         const routeData = [],
             colorData = [];
@@ -1171,6 +1228,10 @@ export default class extends Evented {
                     me.addStationOutline(me.trackedObject, 'stations-selected');
                 }
 
+                // Same reason as the station glow above - the railway-status
+                // glow's section features are also a single zoom bucket's.
+                me.refreshRailwayStatusGlow();
+
                 for (const {id} of me.gtfs.values()) {
                     for (const key of ['busstops', 'busstops-outline']) {
                         if (prevLayerZoom >= 14) {
@@ -1340,6 +1401,14 @@ export default class extends Evented {
                         if (me.trackedObject) {
                             me.refreshStationOutline();
                         }
+                    }
+
+                    if (me._railwayStatusGlowSuspendedActive) {
+                        const intensity = helpers.blink(),
+                            {ug, og} = me.railwayStatusGlow;
+
+                        ug.suspended.setIntensity(intensity);
+                        og.suspended.setIntensity(intensity);
                     }
 
                     map.triggerRepaint();
@@ -2220,11 +2289,80 @@ export default class extends Evented {
     }
 
     resetRailwayStatus() {
+        const {railwayStatusGlow} = this;
+
         for (const railway of this.railways.getAll()) {
             delete railway.status;
             delete railway.text;
             delete railway.suspended;
+            delete railway.ranges;
         }
+        for (const altitude of ['ug', 'og']) {
+            for (const kind of ['delay', 'suspended']) {
+                railwayStatusGlow[altitude][kind].hide();
+            }
+        }
+        this._railwayStatusGlowSuspendedActive = false;
+    }
+
+    // Sections are keyed the same way switchRoute() (station-panel.js) keys
+    // route-highlight sections - '<railwayId>.<index>' - but ranges has no
+    // direction of its own (from is always the lower station index), so this
+    // needs none of switchRoute's ascending/descending branching.
+    refreshRailwayStatusGlow() {
+        const me = this,
+            zoom = me.layerZoom,
+            sectionIds = {
+                ug: {delay: [], suspended: []},
+                og: {delay: [], suspended: []}
+            };
+
+        for (const railway of me.railways.getAll()) {
+            const {id: railwayId, ranges} = railway;
+
+            if (!ranges) {
+                continue;
+            }
+
+            const stationIds = railway.stations.map(({id}) => id);
+
+            for (const {from, to, kind} of ranges) {
+                const start = stationIds.indexOf(from),
+                    // Skip past "from" itself, so a loop line's from===to
+                    // whole-line range resolves to its closing occurrence.
+                    end = stationIds.indexOf(to, start + 1);
+
+                if (start === -1 || end === -1) {
+                    continue;
+                }
+                for (let i = start + 1; i <= end; i++) {
+                    const section = `${railwayId}.${i}`;
+
+                    sectionIds.ug[kind].push(section);
+                    sectionIds.og[kind].push(section);
+                }
+            }
+        }
+
+        for (const altitude of ['ug', 'og']) {
+            for (const kind of ['delay', 'suspended']) {
+                const ids = sectionIds[altitude][kind],
+                    layer = me.railwayStatusGlow[altitude][kind];
+
+                if (ids.length) {
+                    layer.show(helpersGeojson.featureFilter(me.featureCollection, p =>
+                        p.zoom === zoom &&
+                        (altitude === 'ug' ? p.altitude < 0 : p.altitude === 0) &&
+                        helpers.includes(ids, p.section)
+                    ));
+                } else {
+                    layer.hide();
+                }
+            }
+        }
+
+        me._railwayStatusGlowSuspendedActive =
+            sectionIds.ug.suspended.length !== 0 || sectionIds.og.suspended.length !== 0;
     }
 
     refreshTrainTimetableData() {
@@ -2529,7 +2667,15 @@ export default class extends Evented {
                 if (trainInfoRef.suspended) {
                     railway.suspended = true;
                 }
+
+                // ODPT doesn't carry this - only a pre-normalized Mini Tokyo 3D
+                // source can populate it (see loadDynamicTrainData).
+                if (railway && trainInfoRef.ranges) {
+                    railway.ranges = trainInfoRef.ranges;
+                }
             }
+
+            me.refreshRailwayStatusGlow();
 
             standbyTrainLookup.clear();
             realtimeTrains.clear();

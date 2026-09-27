@@ -6,6 +6,7 @@ export default class {
         status;
         text;
         suspended;
+        ranges;
     */
 
     constructor(params, refs) {

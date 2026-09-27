@@ -1,5 +1,6 @@
 export {default as GeoJsonLayer} from './geojson-layer';
 export {default as GlowCompositeLayer} from './glow/glow-composite-layer';
+export {default as RailwayStatusGlowLayer} from './glow/railway-status-glow-layer';
 export {default as StationGlowLayer} from './glow/station-glow-layer';
 export {default as ThreeLayer} from './three-layer';
 export {default as Tile3DLayer} from './tile-3d-layer';

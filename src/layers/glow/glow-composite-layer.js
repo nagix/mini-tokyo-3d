@@ -27,6 +27,7 @@ export default class GlowCompositeLayer {
         me.glowColor = options.glowColor || [1, 1, 1];
         me.baseGlowStrength = options.glowStrength !== undefined ? options.glowStrength : 1;
         me.opacity = 1;
+        me.metadata = options.metadata;
     }
 
     // opacity is the ground/underground-switch factor driven by

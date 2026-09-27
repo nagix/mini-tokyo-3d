@@ -139,6 +139,17 @@ function buildViewport(mapboxMap, gl) {
 // DeckRenderer alone carry none of that.
 export default class DeckGlowMaskLayer extends GlowCompositeLayer {
 
+    // options.hasGlowSource lets a subclass blur a *different*,
+    // independently-drawable layer set (glowSourceLayerManager below) instead
+    // of the mask itself, while the mask stays what's subtracted out of it -
+    // e.g. RailwayStatusGlowLayer draws the real track width into the mask
+    // but a wider copy into the glow source, so its own shape never overshoots
+    // the actual track while the halo blurred from it still reads clearly.
+    constructor(id, options = {}) {
+        super(id, options);
+        this.hasGlowSource = !!options.hasGlowSource;
+    }
+
     onAdd(map, gl) {
         const me = this;
 
@@ -185,6 +196,22 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
                 [gl.COLOR_ATTACHMENT0]: me.maskMSRenderbuffer
             }
         });
+
+        if (me.hasGlowSource) {
+            // No MSAA here (unlike maskFramebuffer above): this target is
+            // always heavily blurred before it's used for anything, so
+            // multisampling its own rasterization edges wouldn't be visible
+            // in the result.
+            me.glowSourceTexture = createTexture(gl, width, height);
+            me.glowSourceFramebuffer = new Framebuffer(gl, {
+                width,
+                height,
+                attachments: {
+                    [gl.COLOR_ATTACHMENT0]: me.glowSourceTexture
+                }
+            });
+            me.glowSourceLayerManager = new LayerManager(gl, {});
+        }
 
         me.blurTextureA = createTexture(gl, width, height);
         me.blurFramebufferA = new Framebuffer(gl, {
@@ -236,6 +263,11 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
 
         map.off('resize', me._onResize);
         me.layerManager.finalize();
+        if (me.hasGlowSource) {
+            me.glowSourceLayerManager.finalize();
+            me.glowSourceFramebuffer.delete();
+            me.glowSourceTexture.delete();
+        }
         me.deckRenderer.finalize();
         me.maskFramebuffer.delete();
         me.maskTexture.delete();
@@ -253,10 +285,13 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
 
     render(gl) {
         const me = this,
-            {maskTexture, blurTextureA, blurFramebufferA, blurTextureB, blurFramebufferB, blurProgram} = me;
+            {maskTexture, blurTextureA, blurFramebufferA, blurTextureB, blurFramebufferB, blurProgram, hasGlowSource} = me;
 
         me._resize();
         me.layerManager.updateLayers();
+        if (hasGlowSource) {
+            me.glowSourceLayerManager.updateLayers();
+        }
 
         // Defensive: mapbox's own canvas context may have alpha writes masked
         // off (common when a context is created to avoid alpha-compositing
@@ -264,6 +299,15 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
         // main map.__deck instance, other custom layers) could have left the
         // viewport/scissor state pointed elsewhere. Reset before drawing so
         // deckRenderer's draw calls aren't silently clipped or masked.
+        //
+        // gl.clearColor is likewise global, un-scoped GL state: the
+        // clearCanvas: true below clears with whatever it's currently set to,
+        // not necessarily transparent. Mapbox sets it once per frame to the
+        // sky/fog clear color and never resets it, so a layer positioned
+        // early in the style can inherit an opaque color here - which,
+        // reaching GlowCompositeLayer's blurred-minus-original alpha
+        // subtraction, makes the glow disappear.
+        gl.clearColor(0, 0, 0, 0);
         gl.colorMask(true, true, true, true);
         gl.disable(gl.SCISSOR_TEST);
         gl.viewport(0, 0, me.maskFramebuffer.width, me.maskFramebuffer.height);
@@ -282,6 +326,26 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
         });
         blit(me.maskMSFramebuffer, me.maskFramebuffer);
 
+        // A wider stand-in for the mask, blurred below instead of it - the
+        // mask itself (already resolved above) is still what the composite
+        // step subtracts out.
+        let blurSourceTexture = maskTexture;
+
+        if (hasGlowSource) {
+            gl.viewport(0, 0, me.glowSourceFramebuffer.width, me.glowSourceFramebuffer.height);
+            me.deckRenderer.renderLayers({
+                target: me.glowSourceFramebuffer,
+                layers: me.glowSourceLayerManager.getLayers(),
+                viewports: [viewport],
+                onViewportActive: me.glowSourceLayerManager.activateViewport,
+                views: {},
+                pass: 'screen',
+                clearCanvas: true,
+                moduleParameters: {devicePixelRatio}
+            });
+            blurSourceTexture = me.glowSourceTexture;
+        }
+
         gl.useProgram(blurProgram);
         gl.bindBuffer(gl.ARRAY_BUFFER, me.quadBuffer);
         gl.enableVertexAttribArray(me.blurPositionLocation);
@@ -291,7 +355,7 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
         gl.uniform1i(me.blurDiffuseLocation, 0);
         gl.activeTexture(gl.TEXTURE0);
 
-        let readTexture = maskTexture;
+        let readTexture = blurSourceTexture;
 
         for (let i = 0; i < GLOW_BLUR_ITERATIONS; i++) {
             gl.bindFramebuffer(gl.FRAMEBUFFER, blurFramebufferA.handle);
@@ -352,6 +416,9 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
         }
         me.maskFramebuffer.resize({width, height});
         me.maskMSFramebuffer.resize({width, height});
+        if (me.hasGlowSource) {
+            me.glowSourceFramebuffer.resize({width, height});
+        }
         me.blurFramebufferA.resize({width, height});
         me.blurFramebufferB.resize({width, height});
     }
