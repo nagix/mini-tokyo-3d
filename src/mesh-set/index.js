@@ -1,4 +1,4 @@
-import {AdditiveBlending, BoxGeometry, Mesh, MeshLambertMaterial, MultiplyBlending, ShaderMaterial, SphereGeometry} from 'three';
+import {AdditiveBlending, BoxGeometry, CustomBlending, MaxEquation, Mesh, MeshLambertMaterial, MultiplyBlending, OneFactor, ShaderMaterial, SphereGeometry} from 'three';
 import {blink} from '../helpers/helpers';
 import AircraftGeometry from './aircraft-geometry.js';
 import CarGeometry from './car-geometry.js';
@@ -87,7 +87,12 @@ export default class {
             defines: {[type]: true},
             transparent: true,
             depthTest: false,
-            depthWrite: false
+            depthWrite: false,
+            // MAX blending avoids overlapping outlines compositing to a higher alpha than either alone.
+            blending: CustomBlending,
+            blendEquation: MaxEquation,
+            blendSrc: OneFactor,
+            blendDst: OneFactor
         });
 
         const outlineMesh = me.outlineMesh = new Mesh(outlineGeometry, outlineMaterial);
