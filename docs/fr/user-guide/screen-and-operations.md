@@ -115,7 +115,7 @@ Lorsque vous saisissez une partie du nom de la station, une liste de candidats s
 Les trains, les avions et les couches seront temporairement masqués lorsque le panneau de saisie des critères ou le panneau des résultats de recherche sera affiché.
 
 ::: warning Avertissement
-Depuis la version 4.0, il y a quelques limitations : vous pouvez uniquement préciser l'heure de départ, et vous pouvez uniquement rechercher le train du jour.
+Depuis la version 4.1, il y a quelques limitations : vous pouvez uniquement préciser l'heure de départ, et vous pouvez uniquement rechercher le train du jour.
 :::
 
 ## Affichage des informations de sortie de station
@@ -134,5 +134,5 @@ Icône | Description
 <img :src="$withBase('/images/elevator-icon.jpg')" style="width: 28px; vertical-align: top;">|Ascenseur
 
 ::: warning Avertissement
-Depuis la version 4.0, seules les lignes et stations de métro sont prises en charge pour l'affichage des informations de sortie des stations.
+Depuis la version 4.1, seules les lignes et stations de métro sont prises en charge pour l'affichage des informations de sortie des stations.
 :::

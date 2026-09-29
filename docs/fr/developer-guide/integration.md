@@ -4,7 +4,7 @@ Intégrer Mini Tokyo 3D dans une page Web ou utiliser les API pour la personnali
 
 ## Préparation à l'utilisation
 
-Mini Tokyo 3D fonctionne sur tous les principaux navigateurs prenant en charge ES2020. Internet Explorer n'est pas pris en charge.
+Mini Tokyo 3D fonctionne sur tous les principaux navigateurs prenant en charge ES2021. Internet Explorer n'est pas pris en charge.
 
 Mini Tokyo 3D utilise les sources de données suivantes et nécessite un jeton d'accès pour chacune d'elles au moment de l'exécution. Suivez les instructions ci-dessous pour obtenir des jetons d'accès.
 

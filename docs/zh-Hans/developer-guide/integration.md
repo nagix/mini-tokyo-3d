@@ -4,7 +4,7 @@
 
 ## 使用前的准备
 
-Mini Tokyo 3D 可在所有支持 ES2020 的主流浏览器中运行。不支持 Internet Explorer。
+Mini Tokyo 3D 可在所有支持 ES2021 的主流浏览器中运行。不支持 Internet Explorer。
 
 Mini Tokyo 3D 在运行时会使用以下数据源，并要求为每个数据源提供访问令牌。请按照下方说明获取访问令牌。
 

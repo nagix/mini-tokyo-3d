@@ -14,7 +14,7 @@ Pour plus d’informations, veuillez visiter le [dépôt GitHub du Mini Tokyo 3D
 
 <img :src="$withBase('/images/fireworks.jpg')" style="width: 580px;">
 
-Ce plugin affiche des animations de feux d'artifice sur une carte. Vous pouvez regarder une animation 3D du lancement de feux d'artifice à un endroit spécifique de la carte, à une date et une heure programmées. Le jour où les festivals de feux d'artifice doivent avoir lieu, une liste des festivals apparaîtra sur le côté gauche de l'écran, et cliquer ou appuyer sur un élément vous amènera à l'endroit où le festival doit avoir lieu.
+Ce plugin affiche des animations de feux d'artifice sur une carte. Vous pouvez regarder une animation 3D du lancement de feux d'artifice à un endroit spécifique de la carte, à une date et une heure programmées. Le jour où les festivals de feux d'artifice doivent avoir lieu, une liste des festivals apparaîtra sur le côté gauche de l'écran, et cliquer ou appuyer sur un élément vous amènera à l'endroit où le festival doit avoir lieu. De plus, pendant qu'un festival de feux d'artifice est en cours, déplacer le pointeur de la souris à proximité du lieu met en surbrillance la zone de lancement. Cliquer ou appuyer à l'intérieur de la zone permet de lancer des feux d'artifice.
 
 Pour plus d’informations, veuillez visiter le [dépôt GitHub du Mini Tokyo 3D Fireworks Plugin](https://github.com/nagix/mt3d-plugin-fireworks).
 

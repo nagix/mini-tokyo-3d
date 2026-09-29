@@ -4,7 +4,7 @@ Embedding Mini Tokyo 3D into a web page, or using the APIs to customize it, is v
 
 ## Preparation for Use
 
-Mini Tokyo 3D works on all major browsers that support ES2020. Internet Explorer is not supported.
+Mini Tokyo 3D works on all major browsers that support ES2021. Internet Explorer is not supported.
 
 Mini Tokyo 3D uses the following data sources and requires an access token for each of them at run time. Follow the instructions below to obtain access tokens.
 

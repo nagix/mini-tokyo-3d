@@ -4,7 +4,7 @@ Mini Tokyo 3D を Web ページに埋め込んで利用する、もしくは API
 
 ## 使用の準備
 
-Mini Tokyo 3D は ES2020 に対応した主要ブラウザで動作します。Internet Explorer には非対応です。
+Mini Tokyo 3D は ES2021 に対応した主要ブラウザで動作します。Internet Explorer には非対応です。
 
 Mini Tokyo 3D は次のデータソースを使用しており、実行時にそれぞれのデータソースに対するアクセストークンが必要です。下記の手順に従って、アクセストークンを入手してください。
 
