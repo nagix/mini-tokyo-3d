@@ -22,7 +22,7 @@ export default [
     {
         languageOptions: {
             sourceType: 'module',
-            ecmaVersion: 2020
+            ecmaVersion: 2021
         },
 
         settings: {

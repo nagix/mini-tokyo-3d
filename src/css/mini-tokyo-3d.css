@@ -827,6 +827,7 @@
     border-radius: inherit;
 }
 .mini-tokyo-3d .mapboxgl-ctrl-search {
+    position: relative;
     transition: width 300ms ease;
 }
 .mini-tokyo-3d .mapboxgl-ctrl-search.expanded {
