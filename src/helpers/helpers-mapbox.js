@@ -31,18 +31,15 @@ const FOG_COLOR_STOPS = [
 
 /**
  * Returns the sunrise and sunset times for the local solar day that contains
- * the given time. SunCalc 2.x anchors getTimes to the UTC calendar day, so the
- * returned times would otherwise jump by a day at 00:00 UTC. Shifting the input
- * by the longitude offset (15 degrees per hour) selects the local solar day, as
- * SunCalc 1.x did internally, moving the unavoidable day boundary to local solar
- * midnight.
+ * the given time. SunCalc anchors getTimes to the local solar day (via the
+ * given longitude) internally, so the input time is passed through as-is.
  * @param {LngLat} center - The location to compute the times for
  * @param {number} time - The number of milliseconds elapsed since January 1,
  *     1970 00:00:00 UTC
  * @returns {Object} Object with sunrise and sunset Date objects
  */
 function getSunTimes(center, time) {
-    return SunCalc.getTimes(time + center.lng / 15 * HOUR, center.lat, center.lng);
+    return SunCalc.getTimes(time, center.lat, center.lng);
 }
 
 /**
