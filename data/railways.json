@@ -918,7 +918,8 @@
 	"ascending": "JR-East.Kaihimmakuhari",
 	"descending": "JR-East.NishiFunabashi",
 	"color": "#F15A22",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "JR-East.KeiyoFutamataBranch",
 	"title": {
@@ -944,7 +945,8 @@
 	"ascending": "JR-East.NishiFunabashi",
 	"descending": "JR-East.Tokyo",
 	"color": "#F15A22",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "JR-East.SaikyoKawagoe",
 	"title": {
@@ -1919,7 +1921,8 @@
 	"descending": "TokyoMetro.Shibuya",
 	"altitude": -1,
 	"color": "#FF9500",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "TokyoMetro.Marunouchi",
 	"title": {
@@ -1961,7 +1964,8 @@
 	"descending": "TokyoMetro.Ogikubo",
 	"altitude": -1,
 	"color": "#F62E36",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "TokyoMetro.MarunouchiBranch",
 	"title": {
@@ -1982,7 +1986,8 @@
 	"descending": "TokyoMetro.Honancho",
 	"altitude": -1,
 	"color": "#F62E36",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "TokyoMetro.Hibiya",
 	"title": {
@@ -2022,7 +2027,8 @@
 	"descending": "TokyoMetro.NakaMeguro",
 	"altitude": -1,
 	"color": "#B5B5AC",
-	"carComposition": 7
+	"carComposition": 7,
+	"dynamic": true
 }, {
 	"id": "TokyoMetro.Tozai",
 	"title": {
@@ -2062,7 +2068,8 @@
 	"descending": "TokyoMetro.Nakano",
 	"altitude": -1,
 	"color": "#009BBF",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "TokyoMetro.Chiyoda",
 	"title": {
@@ -2101,7 +2108,8 @@
 	"descending": "TokyoMetro.YoyogiUehara",
 	"altitude": -1,
 	"color": "#00BB85",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "TokyoMetro.Yurakucho",
 	"title": {
@@ -2142,7 +2150,8 @@
 	"descending": "TokyoMetro.Wakoshi",
 	"altitude": -1,
 	"color": "#C1A470",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "TokyoMetro.Hanzomon",
 	"title": {
@@ -2173,7 +2182,8 @@
 	"descending": "TokyoMetro.Shibuya",
 	"altitude": -1,
 	"color": "#8F76D6",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "TokyoMetro.Namboku",
 	"title": {
@@ -2209,7 +2219,8 @@
 	"descending": "TokyoMetro.Meguro",
 	"altitude": -1,
 	"color": "#00AC9B",
-	"carComposition": 8
+	"carComposition": 8,
+	"dynamic": true
 }, {
 	"id": "TokyoMetro.Fukutoshin",
 	"title": {
@@ -2242,7 +2253,8 @@
 	"descending": "TokyoMetro.Wakoshi",
 	"altitude": -1,
 	"color": "#9C5E31",
-	"carComposition": 10
+	"carComposition": 10,
+	"dynamic": true
 }, {
 	"id": "Toei.Asakusa",
 	"title": {
@@ -4279,8 +4291,7 @@
 	"ascending": "Outbound",
 	"descending": "Inbound",
 	"color": "#20A288",
-	"carComposition": 10,
-	"dynamic": true
+	"carComposition": 10
 }, {
 	"id": "Tokyu.Toyoko",
 	"title": {
@@ -4317,8 +4328,7 @@
 	"ascending": "Outbound",
 	"descending": "Inbound",
 	"color": "#DA0442",
-	"carComposition": 10,
-	"dynamic": true
+	"carComposition": 10
 }, {
 	"id": "Tokyu.Meguro",
 	"title": {
@@ -4347,8 +4357,7 @@
 	"ascending": "Outbound",
 	"descending": "Inbound",
 	"color": "#009CD2",
-	"carComposition": 8,
-	"dynamic": true
+	"carComposition": 8
 }, {
 	"id": "Tokyu.TokyuShinYokohama",
 	"title": {
@@ -4367,8 +4376,7 @@
 	"ascending": "Outbound",
 	"descending": "Inbound",
 	"color": "#5D4D8D",
-	"carComposition": 10,
-	"dynamic": true
+	"carComposition": 10
 }, {
 	"id": "Tokyu.Oimachi",
 	"title": {
@@ -4402,8 +4410,7 @@
 	"ascending": "Outbound",
 	"descending": "Inbound",
 	"color": "#F18C43",
-	"carComposition": 5,
-	"dynamic": true
+	"carComposition": 5
 }, {
 	"id": "Tokyu.Ikegami",
 	"title": {
@@ -4666,7 +4673,8 @@
 	"ascending": "Outbound",
 	"descending": "Inbound",
 	"color": "#000084",
-	"carComposition": 6
+	"carComposition": 6,
+	"dynamic": true
 }, {
 	"id": "ToyoRapid.ToyoRapid",
 	"title": {
