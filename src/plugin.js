@@ -24,6 +24,14 @@ export default class {
         if (implementation.onAdd) {
             implementation.onAdd(map);
         }
+        // Registered here, before enable() - onEnabled() can refresh the
+        // module synchronously (e.g. on its first interval tick), which
+        // would otherwise run before Map ever learns the module exists.
+        const notificationModule = me.getNotificationModule();
+
+        if (notificationModule && map.notificationCtrl) {
+            map.notificationCtrl.add(notificationModule);
+        }
         if (valueOrDefault(implementation.enabled, true)) {
             me.enable();
         }
@@ -33,11 +41,17 @@ export default class {
 
     remove() {
         const me = this,
-            implementation = me.implementation;
+            {map, implementation} = me;
 
         me.disable();
+
+        const notificationModule = me.getNotificationModule();
+
+        if (notificationModule && map.notificationCtrl) {
+            map.notificationCtrl.remove(notificationModule.id);
+        }
         if (implementation.onRemove) {
-            implementation.onRemove(me.map);
+            implementation.onRemove(map);
         }
         delete me.map;
 
@@ -103,6 +117,10 @@ export default class {
 
     getIconStyle() {
         return this.implementation.iconStyle;
+    }
+
+    getNotificationModule() {
+        return this.implementation.notificationModule;
     }
 
     isEnabled() {
