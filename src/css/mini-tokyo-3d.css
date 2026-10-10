@@ -196,6 +196,153 @@
 .mini-tokyo-3d #clock-speed {
     padding: 0 6px;
 }
+.mini-tokyo-3d .notification-ctrl {
+    width: max-content;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    pointer-events: auto;
+}
+.mini-tokyo-3d .notification-ctrl.selected {
+    padding-bottom: 9px;
+}
+.mini-tokyo-3d .notification-buttons {
+    display: flex;
+    gap: 10px;
+    padding: 0 10px;
+    margin-bottom: 0;
+}
+.mini-tokyo-3d .notification-ctrl.selected .notification-buttons {
+    margin-bottom: 9px;
+}
+.mini-tokyo-3d .notification-item {
+    width: 39px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-size: 9px;
+    line-height: 11px;
+}
+.mini-tokyo-3d .notification-button {
+    position: relative;
+    width: 39px;
+    height: 39px;
+    margin-bottom: 4px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #777;
+    background-color: transparent;
+    cursor: pointer;
+}
+.mini-tokyo-3d .notification-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: no-repeat center/19px 19px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/bell.svg', fill: #fff);
+}
+.mini-tokyo-3d .notification-button-selected {
+    box-shadow: 0 0 0 2px #33B5E5;
+}
+.mini-tokyo-3d .notification-label {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+.mini-tokyo-3d .notification-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 3px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #EA4136;
+    color: #fff;
+    font-size: 10px;
+    line-height: 16px;
+    text-align: center;
+}
+.mini-tokyo-3d .notification-body {
+    display: none;
+}
+.mini-tokyo-3d .notification-ctrl.selected .notification-body {
+    display: block;
+    height: calc(100% - 63px);
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+.mini-tokyo-3d .notification-module {
+    padding: 1px 10px;
+    overflow: hidden;
+}
+.mini-tokyo-3d .traininfo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.mini-tokyo-3d .traininfo-event {
+    width: 100%;
+    height: 39px;
+    padding: 0 6px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #777;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+}
+.mini-tokyo-3d .traininfo-event:hover {
+    background-color: rgba(51, 51, 51, 0.7);
+}
+.mini-tokyo-3d .traininfo-icon {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    margin-right: 6px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+}
+.mini-tokyo-3d .traininfo-icon-delay {
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/triangle-exclamation.svg', fill: #fff);
+}
+.mini-tokyo-3d .traininfo-icon-suspended {
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/ban.svg', fill: #fff);
+}
+.mini-tokyo-3d .traininfo-band {
+    width: 6px;
+    height: 28px;
+    flex: none;
+    margin-right: 6px;
+}
+.mini-tokyo-3d .traininfo-event-label {
+    flex: 1;
+    min-width: 0;
+    height: 28px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: left;
+}
+.mini-tokyo-3d .traininfo-event-title,
+.mini-tokyo-3d .traininfo-event-text {
+    overflow: hidden;
+    white-space: nowrap;
+}
+.mini-tokyo-3d .traininfo-marquee {
+    display: inline-block;
+    white-space: nowrap;
+}
 .mini-tokyo-3d .share-panel {
     position: absolute;
     z-index: 3;

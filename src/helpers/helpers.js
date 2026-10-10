@@ -220,6 +220,19 @@ export function colorToRGBArray(color) {
 }
 
 /**
+ * Recolors an SVG data URI (e.g. one imported from `@fortawesome/fontawesome-free`
+ * via `@rollup/plugin-image`) by overwriting its fill/stroke color.
+ * @param {string} url - The SVG data URI to recolor
+ * @param {string} color - The replacement color
+ * @returns {string} The recolored SVG data URI
+ */
+export function addColor(url, color) {
+    const encodedColor = color.replace('#', '%23');
+
+    return url.replace(/fill='.*?'/, `fill='${encodedColor}' stroke='${encodedColor}'`);
+}
+
+/**
  * Creates an element with the specified attributes and appends it to a container.
  * @param {string} tagName - A string that specifies the type of element to be created
  * @param {Object} attributes - The attributes to set

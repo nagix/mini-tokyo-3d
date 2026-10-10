@@ -5,7 +5,7 @@ import ActiveObjectLookup from './active-object-lookup';
 import animation from './animation';
 import Clock from './clock';
 import configs from './configs';
-import {ClockControl, MapboxGLButtonControl, SearchControl} from './controls';
+import {ClockControl, MapboxGLButtonControl, NotificationControl, SearchControl, TrainInfoModule} from './controls';
 import Dataset from './dataset';
 import {Airport, Bus, Flight, FlightStatus, GTFSRoute, GTFSStop, GTFSTrip, Operator, POI, RailDirection, Railway, Station, Train, TrainTimetables, TrainType, TrainVehicleType} from './data-classes';
 import extend from './extend';
@@ -99,6 +99,7 @@ export default class extends Evented {
             dataUrl: configs.dataUrl,
             dataSources: configs.dataSources,
             clockControl: true,
+            notificationControl: true,
             searchControl: true,
             navigationControl: true,
             fullscreenControl: true,
@@ -119,6 +120,7 @@ export default class extends Evented {
         me.exitPopups = [];
 
         me.clockControl = options.clockControl;
+        me.notificationControl = options.notificationControl;
         me.searchControl = options.searchControl;
         me.navigationControl = options.navigationControl;
         me.fullscreenControl = options.fullscreenControl;
@@ -1180,6 +1182,13 @@ export default class extends Evented {
 
             control.on('change', me.onClockChange.bind(me));
             map.addControl(control);
+        }
+
+        if (me.notificationControl) {
+            const trainInfoModule = me.trainInfoModule = new TrainInfoModule({lang, dict, railways: me.railways, map: me}),
+                notificationCtrl = me.notificationCtrl = new NotificationControl({modules: [trainInfoModule]});
+
+            map.addControl(notificationCtrl);
         }
 
         map.on('mousemove', e => {
@@ -2676,6 +2685,9 @@ export default class extends Evented {
             }
 
             me.refreshRailwayStatusGlow();
+            if (me.trainInfoModule) {
+                me.notificationCtrl.refresh(me.trainInfoModule.id);
+            }
 
             standbyTrainLookup.clear();
             realtimeTrains.clear();
@@ -3214,6 +3226,9 @@ export default class extends Evented {
         }
         if (mode === 'playback') {
             me.resetRailwayStatus();
+            if (me.trainInfoModule) {
+                me.notificationCtrl.refresh(me.trainInfoModule.id);
+            }
         }
         me.fire({type: 'clockmode', mode});
     }
