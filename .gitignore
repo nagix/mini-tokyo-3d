@@ -1,0 +1,12 @@
+/build
+/dist
+/dev
+/node_modules
+/package-lock.json
+/stats.html
+secrets
+.env
+.env.*
+!.env.example
+.DS_Store
+.eslintcache
