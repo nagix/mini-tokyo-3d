@@ -154,6 +154,7 @@ export default class {
 
         const mbox = me._map.map;
 
+        me._map.trackObject();
         me._map.setViewMode(railway.altitude < 0 ? 'underground' : 'ground');
         mbox.fitBounds(getBounds(coords), {
             bearing: mbox.getBearing(),
