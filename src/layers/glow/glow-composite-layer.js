@@ -1,13 +1,6 @@
+import {compileShader, linkProgram} from '../../helpers/helpers-webgl';
 import glowCompositeVertexShader from './glow-composite-vertex.glsl';
 import glowCompositeFragmentShader from './glow-composite-fragment.glsl';
-
-function compileShader(gl, type, source) {
-    const shader = gl.createShader(type);
-
-    gl.shaderSource(shader, source);
-    gl.compileShader(shader);
-    return shader;
-}
 
 // GlowPipeline renders into its glow textures from within the 3D layer stack,
 // underneath the building layers, so it can't composite them onto the map
@@ -48,13 +41,11 @@ export default class GlowCompositeLayer {
 
     onAdd(map, gl) {
         const me = this,
-            program = me.program = gl.createProgram();
+            vertexShader = compileShader(gl, gl.VERTEX_SHADER, glowCompositeVertexShader, 'GlowCompositeLayer'),
+            fragmentShader = compileShader(gl, gl.FRAGMENT_SHADER, glowCompositeFragmentShader, 'GlowCompositeLayer'),
+            program = me.program = linkProgram(gl, vertexShader, fragmentShader, 'GlowCompositeLayer');
 
         me.map = map;
-
-        gl.attachShader(program, compileShader(gl, gl.VERTEX_SHADER, glowCompositeVertexShader));
-        gl.attachShader(program, compileShader(gl, gl.FRAGMENT_SHADER, glowCompositeFragmentShader));
-        gl.linkProgram(program);
 
         me.positionLocation = gl.getAttribLocation(program, 'position');
         me.originalLocation = gl.getUniformLocation(program, 'tOriginal');

@@ -19,6 +19,47 @@
  * @returns {Promise} A promise that resolves once the context is ready (or
  *     the wait times out)
  */
+/**
+ * Compiles a shader, logging an error (and still returning the shader) if
+ * compilation fails.
+ * @param {WebGLRenderingContext|WebGL2RenderingContext} gl - The WebGL context
+ * @param {number} type - gl.VERTEX_SHADER or gl.FRAGMENT_SHADER
+ * @param {string} source - The shader source
+ * @param {string} label - Name used to identify the caller in the error log
+ * @returns {WebGLShader} The compiled shader
+ */
+export function compileShader(gl, type, source, label) {
+    const shader = gl.createShader(type);
+
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        console.error(`${label}: shader compile error`, gl.getShaderInfoLog(shader));
+    }
+    return shader;
+}
+
+/**
+ * Links a program from the given shaders, logging an error (and still
+ * returning the program) if linking fails.
+ * @param {WebGLRenderingContext|WebGL2RenderingContext} gl - The WebGL context
+ * @param {WebGLShader} vertexShader - The vertex shader
+ * @param {WebGLShader} fragmentShader - The fragment shader
+ * @param {string} label - Name used to identify the caller in the error log
+ * @returns {WebGLProgram} The linked program
+ */
+export function linkProgram(gl, vertexShader, fragmentShader, label) {
+    const program = gl.createProgram();
+
+    gl.attachShader(program, vertexShader);
+    gl.attachShader(program, fragmentShader);
+    gl.linkProgram(program);
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+        console.error(`${label}: program link error`, gl.getProgramInfoLog(program));
+    }
+    return program;
+}
+
 export function waitUntilGpuReady(gl) {
     if (!gl.fenceSync) {
         return new Promise(resolve => requestAnimationFrame(resolve));

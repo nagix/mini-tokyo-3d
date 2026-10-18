@@ -9,6 +9,7 @@ import {cssToDeviceRatio, Framebuffer, instrumentGLContext, Renderbuffer, Textur
 import GL from '@luma.gl/constants';
 import {blit} from '@luma.gl/webgl';
 import {gammaDecode} from '../../helpers/helpers';
+import {compileShader, linkProgram} from '../../helpers/helpers-webgl';
 import GlowCompositeLayer from './glow-composite-layer';
 import glowVertexShader from './glow-composite-vertex.glsl';
 import glowBlurFragmentShader from './glow-blur-fragment.glsl';
@@ -20,29 +21,6 @@ const GLOW_RESOLUTION_SCALE = 0.5;
 const GLOW_BLUR_RADIUS = 1.5;
 const GLOW_BLUR_ITERATIONS = 2;
 const GLOW_MASK_SAMPLES = 4;
-
-function compileShader(gl, type, source) {
-    const shader = gl.createShader(type);
-
-    gl.shaderSource(shader, source);
-    gl.compileShader(shader);
-    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-        console.error('DeckGlowMaskLayer: shader compile error', gl.getShaderInfoLog(shader));
-    }
-    return shader;
-}
-
-function linkProgram(gl, vertexShader, fragmentShader) {
-    const program = gl.createProgram();
-
-    gl.attachShader(program, vertexShader);
-    gl.attachShader(program, fragmentShader);
-    gl.linkProgram(program);
-    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-        console.error('DeckGlowMaskLayer: program link error', gl.getProgramInfoLog(program));
-    }
-    return program;
-}
 
 function createTexture(gl, width, height) {
     return new Texture2D(gl, {
@@ -229,9 +207,9 @@ export default class DeckGlowMaskLayer extends GlowCompositeLayer {
         // glow-blur-fragment.glsl has no precision qualifier because three.js
         // (GlowPipeline's use of it) always prepends one - required here since
         // this is a plain WebGL program, not a three.js ShaderMaterial.
-        const vertexShader = compileShader(gl, gl.VERTEX_SHADER, glowVertexShader),
-            fragmentShader = compileShader(gl, gl.FRAGMENT_SHADER, `precision mediump float;\n${glowBlurFragmentShader}`),
-            blurProgram = me.blurProgram = linkProgram(gl, vertexShader, fragmentShader);
+        const vertexShader = compileShader(gl, gl.VERTEX_SHADER, glowVertexShader, 'DeckGlowMaskLayer'),
+            fragmentShader = compileShader(gl, gl.FRAGMENT_SHADER, `precision mediump float;\n${glowBlurFragmentShader}`, 'DeckGlowMaskLayer'),
+            blurProgram = me.blurProgram = linkProgram(gl, vertexShader, fragmentShader, 'DeckGlowMaskLayer');
 
         me.blurPositionLocation = gl.getAttribLocation(blurProgram, 'position');
         me.blurDiffuseLocation = gl.getUniformLocation(blurProgram, 'tDiffuse');
