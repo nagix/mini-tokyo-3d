@@ -13,6 +13,7 @@ import * as helpers from './helpers/helpers';
 import {disableAutoHover, pickObject, resetCursor} from './helpers/helpers-deck';
 import * as helpersGeojson from './helpers/helpers-geojson';
 import * as helpersMapbox from './helpers/helpers-mapbox';
+import * as helpersWebgl from './helpers/helpers-webgl';
 import {GeoJsonLayer, GlowCompositeLayer, RailwayStatusGlowLayer, STROKE_WIDTH_SCALE_STOPS, StationGlowLayer, ThreeLayer, Tile3DLayer, TrafficLayer, ZoomWidthScaleExtension} from './layers';
 import {isExpired, loadBusData, loadDictionary, loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
 import {AboutPanel, BusPanel, LayerPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
@@ -214,6 +215,12 @@ export default class extends Evented {
                         resolve();
                     });
                 });
+            }),
+            // See helpers-webgl.js#waitUntilGpuReady for why this is needed.
+            helpers.waitUntilVisible().then(() => {
+                const gl = me.map.getCanvas().getContext('webgl2') || me.map.getCanvas().getContext('webgl');
+
+                return gl ? helpersWebgl.waitUntilGpuReady(gl) : undefined;
             })
         ]).then(me.initialize.bind(me));
 

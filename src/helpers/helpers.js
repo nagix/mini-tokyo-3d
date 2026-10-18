@@ -181,6 +181,25 @@ export function blink() {
 }
 
 /**
+ * Returns a Promise that resolves once document.visibilityState is no
+ * longer 'hidden', resolving immediately if it already isn't.
+ * @returns {Promise} A Promise that resolves once the document is visible
+ */
+export function waitUntilVisible() {
+    if (document.visibilityState !== 'hidden') {
+        return Promise.resolve();
+    }
+    return new Promise(resolve => {
+        document.addEventListener('visibilitychange', function onVisible() {
+            if (document.visibilityState !== 'hidden') {
+                document.removeEventListener('visibilitychange', onVisible);
+                resolve();
+            }
+        });
+    });
+}
+
+/**
  * Measure the actual frame rate asynchronously
  * @returns {Promise} A Promise that resolves to the measured frame rate value
  */
