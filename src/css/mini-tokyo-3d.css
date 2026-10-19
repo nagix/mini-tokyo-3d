@@ -1207,6 +1207,30 @@
     margin-bottom: 10px;
     padding: 0 4px;
 }
+.mini-tokyo-3d .acd-details {
+    margin-bottom: 10px;
+}
+.mini-tokyo-3d .acd-details .card-body {
+    margin-bottom: 0;
+}
+.mini-tokyo-3d .acd-details summary.card-title {
+    cursor: pointer;
+}
+.mini-tokyo-3d .acd-details summary.card-title::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    margin-bottom: -2px;
+    background: no-repeat center/12px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/plus-square.svg', fill: #fff);
+}
+.mini-tokyo-3d .acd-details[open] summary.card-title::before {
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/minus-square.svg', fill: #fff);
+}
+.mini-tokyo-3d .acd-details summary.card-title::-webkit-details-marker {
+    display: none;
+}
 .mini-tokyo-3d .layer-row {
     height: 60px;
 }

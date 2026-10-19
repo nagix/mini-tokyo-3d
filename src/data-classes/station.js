@@ -8,7 +8,7 @@ export default class {
 
     update(params, refs) {
         const me = this,
-            {railway, coord, utitle, thumbnail, exit, altitude, alternate, ascending, descending, group} = params;
+            {railway, coord, utitle, thumbnail, thumbnailCredit, exit, altitude, alternate, ascending, descending, group} = params;
 
         /**
          * Station ID.
@@ -52,6 +52,15 @@ export default class {
              * @type {string}
              */
             me.thumbnail = thumbnail;
+        }
+
+        if (thumbnailCredit) {
+            /**
+             * Credit for the thumbnail image: the artist's name (and profile URL,
+             * if any) and the license name and URL.
+             * @type {Object}
+             */
+            me.thumbnailCredit = thumbnailCredit;
         }
 
         if (exit) {
