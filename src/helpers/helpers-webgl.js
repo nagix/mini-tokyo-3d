@@ -62,7 +62,9 @@ export function linkProgram(gl, vertexShader, fragmentShader, label) {
 
 export function waitUntilGpuReady(gl) {
     if (!gl.fenceSync) {
-        return new Promise(resolve => requestAnimationFrame(resolve));
+        return new Promise(resolve => {
+            requestAnimationFrame(resolve);
+        });
     }
 
     return new Promise(resolve => {
