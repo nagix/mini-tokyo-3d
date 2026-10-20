@@ -14218,12 +14218,6 @@
 		"zh-Hans": "出口3 (电梯r)",
 		"zh-Hant": "出口3 (電梯r)"
 	},
-	"uptime": [
-		{
-			"open": "00:00",
-			"close": "00:00"
-		}
-	],
 	"facilities": [
 		"stairs",
 		"escalator",
@@ -18422,8 +18416,8 @@
 	},
 	"uptime": [
 		{
-			"open": "07:00",
-			"close": "22:00"
+			"open": "00:00",
+			"close": "00:00"
 		}
 	],
 	"facilities": [
@@ -21803,6 +21797,12 @@
 		"zh-Hans": "出口A2",
 		"zh-Hant": "出口A2"
 	},
+	"uptime": [
+		{
+			"open": "00:00",
+			"close": "00:00"
+		}
+	],
 	"facilities": [
 		"stairs"
 	]
@@ -22744,21 +22744,38 @@
 		"elevator"
 	]
 }, {
-	"id": "Toei.Shibakoen.A1",
+	"id": "Toei.Shibakoen.A1a",
 	"coord": [139.7496946, 35.6523697],
 	"title": {
-		"en": "A1"
+		"en": "A1a"
 	},
 	"description": {
-		"ja": "出口A1",
-		"en": "Exit A1",
-		"fr": "Sortie A1",
-		"ko": "출구A1",
-		"zh-Hans": "出口A1",
-		"zh-Hant": "出口A1"
+		"ja": "出口A1a",
+		"en": "Exit A1a",
+		"fr": "Sortie A1a",
+		"ko": "출구A1a",
+		"zh-Hans": "出口A1a",
+		"zh-Hant": "出口A1a"
 	},
 	"facilities": [
 		"stairs"
+	]
+}, {
+	"id": "Toei.Shibakoen.A1b",
+	"coord": [139.7498298, 35.6525001],
+	"title": {
+		"en": "A1b"
+	},
+	"description": {
+		"ja": "出口A1b",
+		"en": "Exit A1b",
+		"fr": "Sortie A1b",
+		"ko": "출구A1b",
+		"zh-Hans": "出口A1b",
+		"zh-Hant": "出口A1b"
+	},
+	"facilities": [
+		"escalator"
 	]
 }, {
 	"id": "Toei.Shibakoen.A2",
@@ -23508,6 +23525,12 @@
 		"zh-Hans": "出口A6",
 		"zh-Hant": "出口A6"
 	},
+	"uptime": [
+		{
+			"open": "00:00",
+			"close": "00:00"
+		}
+	],
 	"facilities": [
 		"stairs"
 	]
@@ -29215,7 +29238,8 @@
 	},
 	"facilities": [
 		"stairs",
-		"escalator"
+		"escalator",
+		"elevator"
 	]
 }, {
 	"id": "YokohamaMunicipal.Shonandai.A",
