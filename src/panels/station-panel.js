@@ -317,7 +317,7 @@ export default class extends Panel {
     updateContent() {
         const me = this,
             {_map: map, _container: container, _exits: exits, _departures: departures} = me,
-            {dict, clock, container: mapContainer} = map,
+            {dict, clock} = map,
             now = clock.getTimeOffset(),
             calendar = clock.getCalendar(),
             exitsElement = container.querySelector('#station-exits');
@@ -401,17 +401,17 @@ export default class extends Panel {
                 map.map.flyTo({center: poi.coord, zoom: 19, pitch: 30});
             });
             element.addEventListener('mouseenter', () => {
-                const popup = mapContainer.querySelector(`#exit-${i}`);
+                const popup = map.exitPopups[i];
 
-                if (popup) {
-                    popup.classList.add('highlighted');
+                if (popup instanceof AnimatedPopup) {
+                    popup.addClassName('highlighted');
                 }
             });
             element.addEventListener('mouseleave', () => {
-                const popup = mapContainer.querySelector(`#exit-${i}`);
+                const popup = map.exitPopups[i];
 
-                if (popup) {
-                    popup.classList.remove('highlighted');
+                if (popup instanceof AnimatedPopup) {
+                    popup.removeClassName('highlighted');
                 }
             });
         }
