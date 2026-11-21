@@ -11,7 +11,7 @@ export default class {
 
     constructor(params, refs) {
         const me = this,
-            {dynamic, altitude} = params;
+            {dynamic, altitude, thumbnail, thumbnailCredit} = params;
 
         /**
          * Railway ID.
@@ -69,6 +69,23 @@ export default class {
              * @type {boolean}
              */
             me.dynamic = dynamic;
+        }
+
+        if (thumbnail) {
+            /**
+             * Thumbnail image URL of the railway.
+             * @type {string}
+             */
+            me.thumbnail = thumbnail;
+        }
+
+        if (thumbnailCredit) {
+            /**
+             * Credit for the thumbnail image: the artist's name (and profile URL,
+             * if any) and the license name and URL.
+             * @type {Object}
+             */
+            me.thumbnailCredit = thumbnailCredit;
         }
     }
 
