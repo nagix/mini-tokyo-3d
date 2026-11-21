@@ -5,11 +5,13 @@ import {AmbientLight, DirectionalLight, LightingEffect} from '@deck.gl/core';
  * @param {Deck} deck - deck.gl's Deck instance
  * @param {string} id - The ID of the layer to pick from
  * @param {Object} point - The screen point to pick at, with x and y in pixels
+ * @param {number} [radius] - Extra pixels around the point to search, for a
+ *     thin target (e.g. a railway line) that's otherwise hard to hit exactly
  * @returns {Object} The picked object, or undefined if nothing was picked
  */
-export function pickObject(deck, id, point) {
+export function pickObject(deck, id, point, radius) {
     if (deck.deckPicker) {
-        const info = deck.pickObject({x: point.x, y: point.y, layerIds: [id]});
+        const info = deck.pickObject({x: point.x, y: point.y, layerIds: [id], radius});
 
         if (info) {
             return info.object;

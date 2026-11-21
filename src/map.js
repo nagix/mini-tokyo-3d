@@ -14,9 +14,9 @@ import {disableAutoHover, pickObject, resetCursor} from './helpers/helpers-deck'
 import * as helpersGeojson from './helpers/helpers-geojson';
 import * as helpersMapbox from './helpers/helpers-mapbox';
 import * as helpersWebgl from './helpers/helpers-webgl';
-import {GeoJsonLayer, GlowCompositeLayer, RailwayStatusGlowLayer, STROKE_WIDTH_SCALE_STOPS, StationGlowLayer, ThreeLayer, Tile3DLayer, TrafficLayer, ZoomWidthScaleExtension} from './layers';
+import {GeoJsonLayer, GlowCompositeLayer, RailwayGlowLayer, RailwayStatusGlowLayer, STROKE_WIDTH_SCALE_STOPS, StationGlowLayer, ThreeLayer, Tile3DLayer, TrafficLayer, ZoomWidthScaleExtension} from './layers';
 import {isExpired, loadBusData, loadDictionary, loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
-import {AboutPanel, BusPanel, LayerPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
+import {AboutPanel, BusPanel, LayerPanel, RailwayPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
 import nearestCloserPointOnLine from './turf/nearest-closer-point-on-line';
 
@@ -27,6 +27,11 @@ const RAILWAY_NAMBOKU = 'TokyoMetro.Namboku',
 const AIRLINES_FOR_ANA_CODE_SHARE = ['ADO', 'SFJ', 'SNJ'];
 
 const DEGREE_TO_RADIAN = Math.PI / 180;
+
+// Extra pixels around the pointer to search when picking a railway line -
+// unlike a station's filled footprint, a line is thin enough that an exact
+// hit is unreliable.
+const RAILWAY_PICK_RADIUS = 5;
 
 const RAILWAY_STATUS_GLOW_COLORS = {
     delay: [0.9529, 0.6745, 0.2784],
@@ -818,6 +823,7 @@ export default class extends Evented {
 
         me.trafficLayer = new TrafficLayer({id: 'traffic'});
         me.stationGlow = new StationGlowLayer('station-glow');
+        me.railwayGlow = new RailwayGlowLayer('railway-glow');
 
         const railwayStatusGlowOptions = (altitude, kind) => ({
             glowColor: RAILWAY_STATUS_GLOW_COLORS[kind],
@@ -887,7 +893,7 @@ export default class extends Evented {
                     }[key1], {
                         'ug': {
                             opacity: helpers.gammaDecode(.25),
-                            pickable: key1 === 'stations',
+                            pickable: true,
                             metadata: {
                                 'mt3d:opacity-effect': true,
                                 'mt3d:opacity': 0.25,
@@ -1002,6 +1008,7 @@ export default class extends Evented {
         // its composite step is inlined into the same render() call (see
         // DeckGlowMaskLayer).
         me.addLayer(me.stationGlow);
+        me.addLayer(me.railwayGlow);
         me.addLayer(new GlowCompositeLayer('traffic-glow', {glowPipeline: me.trafficLayer.getGlowPipeline()}));
 
         // Unlike stationGlow/traffic-glow above, these must stay behind the
@@ -1216,7 +1223,7 @@ export default class extends Evented {
         });
 
         map.on('mousemove', e => {
-            me.markObject(me.pickObject(e.point));
+            me.markObject(me.pickObject(e.point), {lngLat: e.lngLat});
         });
 
         map.on('mouseout', e => {
@@ -1236,7 +1243,7 @@ export default class extends Evented {
 
             pendingTapPoint = undefined;
 
-            me.markObject(object);
+            me.markObject(object, {lngLat: e.lngLat});
             me.trackObject(object);
 
             // For development
@@ -1269,6 +1276,14 @@ export default class extends Evented {
                 }
                 if (isStation(me.trackedObject)) {
                     me.addStationOutline(me.trackedObject, 'stations-selected');
+                }
+
+                // Same reason as the station glow above.
+                if (isRailway(me.markedObject)) {
+                    me.addRailwayOutline(me.markedObject, 'railways-marked');
+                }
+                if (isRailway(me.trackedObject)) {
+                    me.addRailwayOutline(me.trackedObject, 'railways-selected');
                 }
 
                 // Same reason as the station glow above - the railway-status
@@ -1399,7 +1414,7 @@ export default class extends Evented {
                         me.refreshRealtimeTrainData();
                         me.refreshRealtimeFlightData();
                         me.refreshRealtimeBusData();
-                        if (isStation(me.trackedObject)) {
+                        if (isStation(me.trackedObject) || isRailway(me.trackedObject)) {
                             me.detailPanel.updateContent();
                         }
                     }
@@ -1440,10 +1455,10 @@ export default class extends Evented {
                         me.updateObjectPosition(train);
                     }
 
-                    if (!isVehicle(me.trackedObject)) {
-                        if (me.trackedObject) {
-                            me.refreshStationOutline();
-                        }
+                    if (isStation(me.trackedObject)) {
+                        me.refreshStationOutline();
+                    } else if (isRailway(me.trackedObject)) {
+                        me.refreshRailwayOutline();
                     }
 
                     if (me._railwayStatusGlowSuspendedActive) {
@@ -3335,13 +3350,31 @@ export default class extends Evented {
                 return me.stationGroupLookup.get(object.properties.group);
             }
         }
+        for (const mode of modes) {
+            if (mode === 'ground') {
+                object = map.queryRenderedFeatures([
+                    [point.x - RAILWAY_PICK_RADIUS, point.y - RAILWAY_PICK_RADIUS],
+                    [point.x + RAILWAY_PICK_RADIUS, point.y + RAILWAY_PICK_RADIUS]
+                ], {layers: [`railways-og-${layerZoom}`]})[0];
+            } else {
+                object = pickObject(map.__deck, `railways-ug-${layerZoom}`, point, RAILWAY_PICK_RADIUS);
+            }
+            if (object) {
+                return me.railways.get(object.properties.section.replace(/\.\d+$/, ''));
+            }
+        }
     }
 
-    markObject(object) {
+    markObject(object, {lngLat} = {}) {
         const me = this,
             {markedObject, trafficLayer, map, popup} = me;
 
         if (isEqualObject(markedObject, object)) {
+            // A railway has no single anchor point, so its popup follows the pointer.
+            if (isRailway(object) && lngLat) {
+                me._markedLngLat = lngLat;
+                popup.setLngLat(lngLat);
+            }
             return;
         }
 
@@ -3352,6 +3385,8 @@ export default class extends Evented {
                 if (markedObject.type === 'bus') {
                     me.updateBusTripHighlight(markedObject);
                 }
+            } else if (isRailway(markedObject)) {
+                me.removeRailwayOutline('railways-marked');
             } else {
                 me.removeStationOutline('stations-marked');
             }
@@ -3369,6 +3404,9 @@ export default class extends Evented {
                 if (object.type === 'bus') {
                     me.updateBusTripHighlight(object);
                 }
+            } else if (isRailway(object)) {
+                me._markedLngLat = lngLat;
+                me.addRailwayOutline(object, 'railways-marked');
             } else {
                 me.addStationOutline(object, 'stations-marked');
             }
@@ -3407,7 +3445,7 @@ export default class extends Evented {
         }
 
         if (isEqualObject(trackedObject, object)) {
-            if ((isVehicle(object) || isStation(object)) && detailPanel) {
+            if ((isVehicle(object) || isStation(object) || isRailway(object)) && detailPanel) {
                 detailPanel.reset();
             }
             return;
@@ -3443,6 +3481,9 @@ export default class extends Evented {
                 me.fire({type: 'deselection', deselection: trackedObject.stations.map(({id}) => id)});
                 me._setSearchMode('none');
                 me.hideStationExits();
+            } else if (isRailway(trackedObject)) {
+                me.removeRailwayOutline('railways-selected');
+                me.fire({type: 'deselection', deselection: trackedObject.id});
             } else {
                 me.fire(Object.assign({type: 'deselection'}, trackedObject));
             }
@@ -3526,6 +3567,25 @@ export default class extends Evented {
 
                 me.addStationOutline(object, 'stations-selected');
                 me.fire({type: 'selection', selection: object.stations.map(({id}) => id)});
+            } else if (isRailway(object)) {
+                const coords = object.stoppingStations.map(({coord}) => coord),
+                    bounds = helpersMapbox.getBounds(coords);
+
+                lastCameraParams.center = bounds.getCenter();
+                me._setViewMode(object.altitude < 0 ? 'underground' : 'ground');
+                map.fitBounds(bounds, {
+                    bearing: map.getBearing(),
+                    pitch: map.getPitch(),
+                    padding: {top: 20, bottom: 20, left: 10, right: 60},
+                    linear: true,
+                    maxZoom: 16
+                });
+
+                me.detailPanel = new RailwayPanel({object});
+                me.detailPanel.addTo(me);
+
+                me.addRailwayOutline(object, 'railways-selected');
+                me.fire({type: 'selection', selection: object.id});
             } else {
                 me.fire(Object.assign({type: 'selection'}, object));
             }
@@ -3696,6 +3756,24 @@ export default class extends Evented {
                     me.getBusDescription(markedObject)
                 );
             }
+        } else if (isRailway(markedObject)) {
+            popup.setLngLat(me._markedLngLat);
+            if (setHTML) {
+                const color = markedObject.color;
+
+                popup.setHTML([
+                    '<div class="thumbnail-image-container">',
+                    '<div class="ball-pulse"><div></div><div></div><div></div></div>',
+                    markedObject.thumbnail ?
+                        `<div class="thumbnail-image" style="background-image: url(\'${markedObject.thumbnail}\');"></div>` : '',
+                    '</div>',
+                    '<div class="railway-list">',
+                    (Array.isArray(color) ? color.slice(0, 3) : [color])
+                        .map(c => `<div class="line-strip" style="background-color: ${c};"></div>`).join(''),
+                    `<span class="railway-popup-title">${me.getLocalizedRailwayTitle(markedObject)}</span>`,
+                    '</div>'
+                ].join(''));
+            }
         } else {
             const object = me.featureLookup.get(`${markedObject.id}.${me.layerZoom}`),
                 coord = helpersGeojson.getCenterCoord(object),
@@ -3853,6 +3931,43 @@ export default class extends Evented {
 
     refreshStationOutline() {
         this.stationGlow.setIntensity('stations-selected', helpers.blink());
+    }
+
+    // Combines the railway's own section geometry with its stopping
+    // stations' footprints. A section is kept only when both stations it
+    // connects (properties.section: `${railwayId}.${index}`) are stopping
+    // stations, excluding e.g. the Odakyu-only through-service segment
+    // beyond Chiyoda line's Yoyogi-Uehara.
+    addRailwayOutline(railway, name) {
+        const me = this,
+            zoom = me.layerZoom,
+            stoppingStations = new Set(railway.stoppingStations),
+            lineFeature = helpersGeojson.featureFilter(me.featureCollection, p => {
+                if (p.zoom !== zoom || !p.section || p.section.replace(/\.\d+$/, '') !== railway.id) {
+                    return false;
+                }
+
+                const index = Number(p.section.slice(railway.id.length + 1)),
+                    prev = railway.stations[index - 1],
+                    next = railway.stations[index];
+
+                return !!prev && !!next && stoppingStations.has(prev) && stoppingStations.has(next);
+            }),
+            stationFeatures = railway.stoppingStations
+                .map(({group}) => group && me.getStationFeature(group));
+
+        me.railwayGlow.show(
+            helpersGeojson.featureCollectionOf([...lineFeature.features, ...stationFeatures]),
+            name
+        );
+    }
+
+    removeRailwayOutline(name) {
+        this.railwayGlow.hide(name);
+    }
+
+    refreshRailwayOutline() {
+        this.railwayGlow.setIntensity('railways-selected', helpers.blink());
     }
 
     setSectionData(train, index, final) {
@@ -4125,6 +4240,10 @@ function isVehicle(object) {
 
 function isStation(object) {
     return object && object.type === 'station';
+}
+
+function isRailway(object) {
+    return object instanceof Railway;
 }
 
 function isEqualObject(a, b) {

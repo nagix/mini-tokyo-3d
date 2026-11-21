@@ -676,6 +676,64 @@
     box-sizing: content-box;
     position: absolute;
 }
+.mini-tokyo-3d .railway-panel.collapsed {
+    height: 56px;
+}
+.mini-tokyo-3d .railway-panel #panel-header {
+    height: 36px;
+    line-height: 36px;
+    overflow: visible;
+}
+.mini-tokyo-3d .railway-panel #panel-body {
+    height: calc(100% - 56px);
+}
+.mini-tokyo-3d .railway-panel #railway-mark {
+    left: 10px;
+}
+.mini-tokyo-3d .railway-status-item {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.mini-tokyo-3d .railway-status-icon {
+    width: 22px;
+    height: 22px;
+    flex: none;
+    margin-right: 6px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px 22px;
+}
+.mini-tokyo-3d .railway-status-icon-delay {
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/triangle-exclamation.svg', fill: #fff);
+}
+.mini-tokyo-3d .railway-status-icon-suspended {
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/ban.svg', fill: #fff);
+}
+.mini-tokyo-3d .railway-status-icon-info {
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/circle-info.svg', fill: #fff);
+}
+.mini-tokyo-3d .railway-status-label {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+.mini-tokyo-3d .railway-status-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.mini-tokyo-3d .railway-panel #railway-traintypes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+.mini-tokyo-3d .railway-panel #railway-traintypes .train-type-label {
+    flex: none;
+    white-space: nowrap;
+}
 .mini-tokyo-3d .direction-row {
     width: 100%;
     margin: 4px 0;
@@ -1116,7 +1174,7 @@
 .mini-tokyo-3d .bus-route-label {
     padding: 2px 2px 1px 2px;
     border-radius: 3px;
-    color: #333;
+    color: #000;
     background-color: #fff;
 }
 .mini-tokyo-3d .realtime-icon {
@@ -1161,6 +1219,9 @@
     height: 18px;
     margin-right: 8px;
     display: inline-block;
+}
+.mini-tokyo-3d .railway-popup-title {
+    font-weight: bold;
 }
 .mini-tokyo-3d .modal-panel-background {
     width: 100%;
