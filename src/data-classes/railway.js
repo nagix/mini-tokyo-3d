@@ -32,6 +32,27 @@ export default class {
         me.stations = params.stations.map(id => refs.stations.getOrAdd(id));
 
         /**
+         * Train types operating on this railway: id, color (falls back to
+         * the railway's own color if omitted), stops (stations it stops at)
+         * and through (stations it passes without stopping) - both subsets
+         * of me.stations.
+         * @type {Array<Object>}
+         */
+        me.trainTypes = params.trainTypes.map(({id, color, stops, through}) => ({
+            id,
+            color: color || params.color,
+            stops: stops.map(sid => refs.stations.getOrAdd(sid)),
+            through: (through || []).map(sid => refs.stations.getOrAdd(sid))
+        }));
+
+        /**
+         * Subset of me.stations that at least one train type stops at.
+         * @type {Array<Station>}
+         */
+        me.stoppingStations = me.stations.filter(station =>
+            me.trainTypes.some(({stops}) => stops.includes(station)));
+
+        /**
          * Ascending rail direction.
          * @type {RailDirection}
          */
