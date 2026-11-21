@@ -27,21 +27,24 @@ export default class extends Panel {
 
         if (!me._thumbnailCreditsHTML) {
             const map = me._map,
-                stationsByThumbnail = new Map();
+                groupsByThumbnail = new Map(),
+                collect = (items, getTitle) => {
+                    for (const item of items) {
+                        if (item.thumbnailCredit) {
+                            const group = groupsByThumbnail.get(item.thumbnail) ||
+                                {credit: item.thumbnailCredit, titles: new Set()};
 
-            for (const station of map.stations.getAll()) {
-                if (station.thumbnailCredit) {
-                    const group = stationsByThumbnail.get(station.thumbnail) || [];
+                            group.titles.add(getTitle(item));
+                            groupsByThumbnail.set(item.thumbnail, group);
+                        }
+                    }
+                };
 
-                    group.push(station);
-                    stationsByThumbnail.set(station.thumbnail, group);
-                }
-            }
+            collect(map.stations.getAll(), station => map.getLocalizedStationTitle(station));
+            collect(map.railways.getAll(), railway => map.getLocalizedRailwayTitle(railway));
 
-            me._thumbnailCreditsHTML = [...stationsByThumbnail.values()].map((stations) => {
-                const {artist, license, licenseUrl} = stations[0].thumbnailCredit,
-                    title = [...new Set(stations.map(station => map.getLocalizedStationTitle(station)))]
-                        .join(map.dict['and']),
+            me._thumbnailCreditsHTML = [...groupsByThumbnail.values()].map(({credit: {artist, license, licenseUrl}, titles}) => {
+                const title = [...titles].join(map.dict['and']),
                     credit = [
                         artist && (artist.url ? `<a href="${artist.url}" target="_blank">${artist.name}</a>` : artist.name),
                         license && (licenseUrl ? `<a href="${licenseUrl}" target="_blank">${license}</a>` : license)
