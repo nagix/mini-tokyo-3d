@@ -3432,7 +3432,7 @@ export default class extends Evented {
         map.triggerRepaint();
     }
 
-    trackObject(object) {
+    trackObject(object, {ranges} = {}) {
         const me = this,
             {searchMode, lang, map, trackedObject, trafficLayer, lastCameraParams, sharePanel, detailPanel} = me;
 
@@ -3568,7 +3568,24 @@ export default class extends Evented {
                 me.addStationOutline(object, 'stations-selected');
                 me.fire({type: 'selection', selection: object.stations.map(({id}) => id)});
             } else if (isRailway(object)) {
-                const coords = object.stoppingStations.map(({coord}) => coord),
+                const stationIds = object.stations.map(({id}) => id),
+                    rangeCoords = [];
+
+                for (const {from, to} of ranges || []) {
+                    const start = stationIds.indexOf(from),
+                        // Skip past "from" itself, so a loop line's
+                        // from===to whole-line range resolves to its
+                        // closing occurrence.
+                        end = stationIds.indexOf(to, start + 1);
+
+                    if (start !== -1 && end !== -1) {
+                        for (let i = start; i <= end; i++) {
+                            rangeCoords.push(object.stations[i].coord);
+                        }
+                    }
+                }
+
+                const coords = rangeCoords.length ? rangeCoords : object.stoppingStations.map(({coord}) => coord),
                     bounds = helpersMapbox.getBounds(coords);
 
                 lastCameraParams.center = bounds.getCenter();

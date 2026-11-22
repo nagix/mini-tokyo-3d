@@ -1,5 +1,4 @@
 import {addColor, createElement} from '../helpers/helpers';
-import {getBounds} from '../helpers/helpers-mapbox';
 import triangleExclamationSvg from '@fortawesome/fontawesome-free/svgs/solid/triangle-exclamation.svg';
 
 // Marquee scroll speed for a title/text line that overflows its box, and how
@@ -130,46 +129,6 @@ export default class {
         ].join('');
     }
 
-    // Fits the map view to the stations spanned by every one of the
-    // railway's ranges, mirroring StationPanel#switchRoute's own
-    // getBounds()/fitBounds() use for a selected route.
-    _focusRailway(railway) {
-        const me = this,
-            stationIds = railway.stations.map(({id}) => id),
-            coords = [];
-
-        for (const {from, to} of railway.ranges) {
-            const start = stationIds.indexOf(from),
-                // Skip past "from" itself, so a loop line's from===to
-                // whole-line range resolves to its closing occurrence.
-                end = stationIds.indexOf(to, start + 1);
-
-            if (start === -1 || end === -1) {
-                continue;
-            }
-            for (let i = start; i <= end; i++) {
-                coords.push(railway.stations[i].coord);
-            }
-        }
-
-        if (coords.length === 0) {
-            return;
-        }
-
-        const mbox = me._map.map;
-
-        me._map.trackObject();
-        me._map.setViewMode(railway.altitude < 0 ? 'underground' : 'ground');
-        mbox.fitBounds(getBounds(coords), {
-            bearing: mbox.getBearing(),
-            pitch: mbox.getPitch(),
-            padding: {top: 20, bottom: 20, left: 10, right: 60},
-            retainPadding: false,
-            linear: true,
-            maxZoom: 18
-        });
-    }
-
     _clearItems() {
         const me = this;
 
@@ -222,7 +181,7 @@ export default class {
                     innerHTML: me._itemContent(railway)
                 });
                 element.addEventListener('click', () => {
-                    me._focusRailway(railway);
+                    me._map.trackObject(railway, {ranges: railway.ranges});
                     me._deselect();
                 });
                 me._items.set(id, {signature, element});
