@@ -40,8 +40,10 @@ export default class {
     //     into container (a persistent element - never recreated).
     //   refresh() - called on every NotificationControl#refresh(), to update
     //     the module's own content, height, visible and count.
-    //   onSelect()/onDeselect() - optional, called when this module becomes
-    //     (or stops being) the selected one.
+    //   onSelect(deselect)/onDeselect() - optional, called when this module
+    //     becomes (or stops being) the selected one. deselect() lets the
+    //     module collapse itself in response to its own content, e.g. a list
+    //     item's click.
     add(module) {
         const me = this;
 
@@ -164,7 +166,13 @@ export default class {
         me._element.style.width = `${module.width}px`;
         me._updateHeight();
         if (typeof module.onSelect === 'function') {
-            module.onSelect();
+            // Guarded so a stale reference the module held onto past its own
+            // onDeselect() can't deselect a different module that took its place.
+            module.onSelect(() => {
+                if (me._selected === id) {
+                    me._deselect();
+                }
+            });
         }
     }
 

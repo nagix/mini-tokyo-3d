@@ -48,15 +48,19 @@ export default class {
         me._style = createElement('style', {}, container);
     }
 
-    onSelect() {
+    onSelect(deselect) {
         const me = this;
 
         me._selected = true;
+        me._deselect = deselect;
         me._setupMarquee();
     }
 
     onDeselect() {
-        this._selected = false;
+        const me = this;
+
+        me._selected = false;
+        delete me._deselect;
     }
 
     // Measures each title/text line's overflow now that it's actually laid
@@ -217,7 +221,10 @@ export default class {
                     className: 'traininfo-event',
                     innerHTML: me._itemContent(railway)
                 });
-                element.addEventListener('click', () => me._focusRailway(railway));
+                element.addEventListener('click', () => {
+                    me._focusRailway(railway);
+                    me._deselect();
+                });
                 me._items.set(id, {signature, element});
                 changed = true;
             }
