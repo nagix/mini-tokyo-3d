@@ -1,37 +1,20 @@
-# Mini Tokyo 3D
+# Mini Helsinki 3D, fork of Mini Tokyo 3D
 
-A real-time 3D digital map of Tokyo's public transport system.
+A real-time 3D digital map of Helsinki's public transport system.
 
-![Screenshot](https://minitokyo3d.com/images/screenshot1.jpg)
-
-![Screenshot](https://minitokyo3d.com/images/screenshot2.jpg)
-
-![Screenshot](https://minitokyo3d.com/images/screenshot3.jpg)
-
-See a [Live Demo](https://minitokyo3d.com).
+![Screenshot](helsinki-v1.png)
 
 ## Demo Videos
 
-- [Demo Video (2025, English)](https://youtu.be/9Cks5UQU0vY)
-- [Demo Video (2025, Japanese)](https://youtu.be/8FC2adzAUIA)
-- [Demo Video (2021, English)](https://youtu.be/CGkHDAj8rGY)
-- [Demo Video (2021, Japanese)](https://youtu.be/C9AA3bDcHk8)
-- [Demo Video (2019, English)](https://youtu.be/sxFEwj0sBJk)
-- [Demo Video (2019, Japanese)](https://youtu.be/_3N651UnxDA)
+Upcoming
 
 ## User Guides
 
 - [User Guide (English)](https://minitokyo3d.com/docs/master/)
-- [User Guide (Japanese)](https://minitokyo3d.com/docs/master/ja/)
-- [User Guide (French)](https://minitokyo3d.com/docs/master/fr/)
-- [User Guide (Simplified Chinese)](https://minitokyo3d.com/docs/master/zh-Hans/)
 
 ## Developer Guides
 
 - [Developer Guide (English)](https://minitokyo3d.com/docs/master/developer-guide/)
-- [Developer Guide (Japanese)](https://minitokyo3d.com/docs/master/ja/developer-guide/)
-- [Developer Guide (French)](https://minitokyo3d.com/docs/master/fr/developer-guide/)
-- [Developer Guide (Simplified Chinese)](https://minitokyo3d.com/docs/master/zh-Hans/developer-guide/)
 
 ## Cheat Sheet
 
@@ -77,16 +60,58 @@ Nepali | Yes | - | - | -
 Portuguese (Brazil) | Yes | - | - | -
 Spanish | Yes | - | - | -
 German | Yes | - | - | -
+Finnish | Yes | - | - | -
 
 If you want to contribute, please start with translating the UI messages in the `dictionary-<ISO 639-1 code>.json` file in the [`data`](https://github.com/nagix/mini-tokyo-3d/tree/master/data) directory. Then, if you have extra energy, add the title of each item in your language to [`airports.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/airports.json), [`flight-statuses.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/flight-statuses.json), [`operators.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/operators.json), [`poi.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/poi.json), [`rail-directions.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/rail-directions.json), [`railways.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/railways.json), [`stations.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/stations.json), [`train-types.json`](https://github.com/nagix/mini-tokyo-3d/blob/master/data/train-types.json) in the [`data`](https://github.com/nagix/mini-tokyo-3d/tree/master/data) directory.
 
-## About Data
 
-The data for this visualization are sourced from the [Public Transportation Open Data Center](https://www.odpt.org), which includes station information and train timetables as well as real-time data such as train location information and status information of multiple railway lines in the Greater Tokyo area.
+## Mini Helsinki 3D profile
+
+This fork includes an optional Helsinki profile that renders static HSL route geometry and Digitraffic maritime ports without loading the Tokyo static or realtime datasets.
+
+The data for this visualization are sourced from HSL (Helsinki Region Transport, https://www.hsl.fi/en/hsl/open-data) and Fintraffic (Finnish national transit data, https://www.fintraffic.fi/en/digitalservices/data-services). Station information and timetables are not yet implemented.
+
+Place the extracted HSL GTFS files in `helsinki/hsl`, then generate the compact
+route and stop dataset:
+
+```bash
+npm run build-helsinki-data
+```
+
+Set `MT3D_PROFILE=helsinki` in `.env` (and provide `MAPBOX_ACCESS_TOKEN`), then
+start development mode:
+
+```bash
+npm run dev
+```
+
+For a production build, run:
+
+```bash
+npm run build
+npm run build-helsinki-data
+MT3D_PROFILE=helsinki npm run build-pages
+```
+
+On Windows PowerShell, set the profile for the page-build process with
+`$env:MT3D_PROFILE = "helsinki"` before running `npm run build-pages`. The
+generated page and `build/data/hsl-routes.json` must be deployed together. The
+dataset contains route geometry and stop points but intentionally excludes
+`stop_times.txt` and schedules.
+
+`npm run build-helsinki-data` also requests
+`/api/port-call/v2/ports/FIHEL` from Digitraffic and writes
+`build/data/helsinki-ports.json`. Deploy this file beside the HSL dataset. Port
+areas without coordinates are omitted. The map shows a summary halo around
+each port area and lists its active berths when the ship symbol is clicked;
+Digitraffic does not provide berth-footprint polygons, so the halos are not
+official berth boundaries. Ship symbols and halos fade in progressively: large
+ports from zoom 10.5, medium ports from 11.5, smaller ports from 12.5, and areas
+without active berths from 13.5.
 
 ## How to Build
 
-First, get access tokens for the public transportation data and map tiles by signing up at the [Public Transportation Open Data Center](https://developer.odpt.org/signup) and [Mapbox](https://account.mapbox.com/auth/signup/). At the Public Transportation Open Data Center, you need to get both tokens for ODPT Center and Challenge 2026.
+First, get access token for [Mapbox](https://account.mapbox.com/auth/signup/).
 
 The latest version of Node.js is required. Move to the root directory of the application and install the dependencies.
 ```bash
@@ -96,8 +121,6 @@ npm install
 Provide the access tokens through environment variables and run the build. The script, dataset and static web page will be generated in the `build` directory.
 ```bash
 MAPBOX_ACCESS_TOKEN=<Mapbox access token> \
-MT3D_SECRET_ODPT=<access token for Public Transportation Open Data Center> \
-MT3D_SECRET_CHALLENGE=<access token for Open Data Challenge for Public Transportation 2026> \
 npm run build-all
 ```
 
@@ -107,11 +130,4 @@ See the [Developer Guides](#developer-guides) for more details.
 
 ## License
 
-Mini Tokyo 3D is available under the [MIT license](https://opensource.org/licenses/MIT).
-
-## Supporting Mini Tokyo 3D
-
-Your support, large or small, helps keep this project strong!
-
-- [Monthly donation through GitHub Sponsors](https://github.com/sponsors/nagix)
-- [One-time donation through PayPal](https://www.paypal.me/akusanagi)
+Mini Helsinki 3D is fork of Mini Tokyo 3D, which is available under the [MIT license](https://opensource.org/licenses/MIT).

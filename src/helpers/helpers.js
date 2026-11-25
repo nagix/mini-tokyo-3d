@@ -92,6 +92,15 @@ export function normalize(value) {
     return value.normalize("NFD").replace(/\(.*\)|<.*>|〈.*〉|[\u0300-\u036F]/g, '');
 }
 
+export function escapeHTML(value = '') {
+    return `${value}`
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 export function valueOrDefault(value, defaultValue) {
     return value === undefined ? defaultValue : value;
 }

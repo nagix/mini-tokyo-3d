@@ -38,6 +38,18 @@ const RAILWAY_STATUS_GLOW_COLORS = {
     suspended: [0.9176, 0.2549, 0.2118]
 };
 
+const PORT_ICON = `data:image/svg+xml;charset=utf-8,${encodeURIComponent([
+    '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">',
+    '<circle cx="32" cy="32" r="30" fill="#0074bf" stroke="#fff" stroke-width="4"/>',
+    '<path fill="#fff" d="M16 34h32l-5 10H23z"/>',
+    '<path fill="#fff" d="M25 33V21h14v12zM30 15h5v7h-5z"/>',
+    '<path fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" d="M22 22h20"/>',
+    '<path fill="#fff" d="M10 46c5 0 5 4 10 4s5-4 12-4 5 4 10 4 5-4 12-4v7H10z"/>',
+    '</svg>'
+].join(''))}`;
+
+const PORT_ICON_ZOOM_TIERS = [10.5, 11.5, 12.5, 13.5];
+
 // Same ground/underground opacity split as railways-ug-13/railways-og-13 -
 // the glow should fade the same way the railway line it highlights does.
 const RAILWAY_STATUS_GLOW_OPACITY_METADATA = {
@@ -104,6 +116,8 @@ export default class extends Evented {
             pitch: configs.defaultPitch,
             dataUrl: configs.dataUrl,
             dataSources: configs.dataSources,
+            timezone: configs.defaultTimezone,
+            appAttribution: configs.customAttribution,
             clockControl: true,
             notificationControl: true,
             searchControl: true,
@@ -126,13 +140,14 @@ export default class extends Evented {
         me.exitPopups = [];
 
         me.clockControl = options.clockControl;
+        me.clock24Hour = options.clock24Hour;
         me.notificationControl = options.notificationControl;
         me.searchControl = options.searchControl;
         me.navigationControl = options.navigationControl;
         me.fullscreenControl = options.fullscreenControl;
         me.modeControl = options.modeControl;
         me.configControl = options.configControl;
-        me.clock = new Clock();
+        me.clock = new Clock(undefined, undefined, options.timezone);
         me.plugins = (options.plugins || []).map(plugin => new Plugin(plugin));
 
         me.searchMode = 'none';
@@ -162,10 +177,14 @@ export default class extends Evented {
 
         // The custom attribution will be appended only if ConfigControl is visible
         if (!options.configControl) {
-            options.customAttribution = helpers.flat([options.customAttribution, configs.customAttribution]);
+            options.customAttribution = helpers.flat([
+                options.customAttribution,
+                options.appAttribution
+            ]).filter(Boolean);
         }
 
         me.map = new Mapbox(options);
+        openAttributionLinksInNewTabs(me.container);
 
         for (const event of configs.events) {
             me.map.on(event, me.fire.bind(me));
@@ -177,14 +196,17 @@ export default class extends Evented {
             });
         });
 
-        // The clock runs in the default time zone (configs.defaultTimezone) unless
-        // one is determined from GTFS data (see refreshBusData). me.timezone holds
-        // the established zone once known: the default when the map loads the fixed
-        // mini-tokyo-3d data, or the first GTFS feed's agency_timezone when no such
-        // data is loaded.
-        me.timezone = me.dataUrl ? me.clock.getTimezone() : undefined;
+        // The clock starts in the profile time zone. A GTFS-only profile without
+        // a configured static route source can instead establish it from the
+        // first feed's agency_timezone (see refreshBusData).
+        me.timezone = me.dataUrl || me.dataSources.some(source => source.routeUrl) ?
+            me.clock.getTimezone() : undefined;
 
         me.gtfs = new Map();
+        me.staticRoutes = new Map();
+        me.staticRoutesLoading = new Set();
+        me.portSources = new Map();
+        me.portSourcesLoading = new Set();
         // IDs of GTFS sources whose data is currently being loaded. Tracked
         // separately from me.gtfs (which is only populated once loading finishes)
         // so overlapping refreshBusData calls don't load the same source twice.
@@ -230,6 +252,8 @@ export default class extends Evented {
         ]).then(me.initialize.bind(me));
 
         me.refreshBusData();
+        me.refreshStaticRouteData();
+        me.refreshPortData();
     }
 
     /**
@@ -708,6 +732,12 @@ export default class extends Evented {
 
         if (source.gtfsUrl) {
             me.refreshBusData();
+        }
+        if (source.routeUrl) {
+            me.refreshStaticRouteData();
+        }
+        if (source.portUrl) {
+            me.refreshPortData();
         }
         if (me.initialized) {
             if (source.trainUrl || source.trainInfoUrl) {
@@ -1192,7 +1222,12 @@ export default class extends Evented {
         }
 
         if (me.clockControl) {
-            const control = me.clockCtrl = new ClockControl({lang, dict, clock});
+            const control = me.clockCtrl = new ClockControl({
+                lang,
+                dict,
+                clock,
+                hour12: me.clock24Hour ? false : undefined
+            });
 
             control.on('change', me.onClockChange.bind(me));
             map.addControl(control);
@@ -2703,6 +2738,372 @@ export default class extends Evented {
         me.updateBusRouteVisibility();
     }
 
+    refreshStaticRouteData() {
+        const me = this,
+            map = me.map,
+            sources = me.dataSources.filter(source => source.routeUrl && !isExpired(source)),
+            sourceIds = new Set(sources.map(({id}) => id));
+
+        for (const [id, entry] of me.staticRoutes) {
+            if (!sourceIds.has(id)) {
+                for (const layerId of entry.layerIds) {
+                    map.removeLayer(layerId);
+                }
+                map.removeSource(entry.sourceId);
+                me.styleOpacities = me.styleOpacities.filter(({id: layerId}) =>
+                    !entry.layerIds.includes(layerId)
+                );
+                me.staticRoutes.delete(id);
+            }
+        }
+
+        for (const source of sources) {
+            if (me.staticRoutesLoading.has(source.id) || me.staticRoutes.has(source.id)) {
+                continue;
+            }
+
+            me.staticRoutesLoading.add(source.id);
+            helpers.loadJSON(source.routeUrl).then(data => {
+                if (me.initialized) {
+                    return data;
+                }
+                return new Promise(resolve => {
+                    me.once('initialized', () => resolve(data));
+                });
+            }).then(data => {
+                if (me.staticRoutes.has(source.id) || !sourceIds.has(source.id)) {
+                    me.staticRoutesLoading.delete(source.id);
+                    return;
+                }
+                const sourceId = `${source.id}-routes`;
+
+                map.addSource(sourceId, {
+                    type: 'geojson',
+                    data,
+                    promoteId: 'id'
+                });
+                me.addLayer({
+                    id: sourceId,
+                    type: 'line',
+                    source: sourceId,
+                    filter: ['==', ['geometry-type'], 'LineString'],
+                    layout: {
+                        'line-cap': 'round',
+                        'line-join': 'round'
+                    },
+                    paint: {
+                        'line-color': ['coalesce', ['get', 'color'], '#007AC9'],
+                        'line-width': [
+                            'interpolate',
+                            ['exponential', 2],
+                            ['zoom'],
+                            8, ['case', ['any',
+                                ['boolean', ['feature-state', 'hover'], false],
+                                ['boolean', ['feature-state', 'selected'], false]
+                            ], 3, 1],
+                            12, ['case', ['any',
+                                ['boolean', ['feature-state', 'hover'], false],
+                                ['boolean', ['feature-state', 'selected'], false]
+                            ], 5, 2],
+                            16, ['case', ['any',
+                                ['boolean', ['feature-state', 'hover'], false],
+                                ['boolean', ['feature-state', 'selected'], false]
+                            ], 8, 4],
+                            22, ['case', ['any',
+                                ['boolean', ['feature-state', 'hover'], false],
+                                ['boolean', ['feature-state', 'selected'], false]
+                            ], 20, 12]
+                        ],
+                        'line-opacity': 0.9,
+                        'line-emissive-strength': 1
+                    },
+                    metadata: {
+                        'mt3d:opacity-effect': true,
+                        'mt3d:opacity': 1,
+                        'mt3d:opacity-route': 0.35,
+                        'mt3d:opacity-underground': 0.25,
+                        'mt3d:opacity-underground-route': 0.1
+                    }
+                }, 'trees');
+                const stopLayerId = `${sourceId}-stops`,
+                    stopLabelLayerId = `${sourceId}-stop-labels`;
+
+                me.addLayer({
+                    id: stopLayerId,
+                    type: 'circle',
+                    source: sourceId,
+                    filter: ['==', ['geometry-type'], 'Point'],
+                    minzoom: 13,
+                    paint: {
+                        'circle-color': '#ffffff',
+                        'circle-stroke-color': '#333333',
+                        'circle-stroke-width': 1.5,
+                        'circle-radius': [
+                            'interpolate',
+                            ['exponential', 2],
+                            ['zoom'],
+                            13, 2,
+                            16, 4,
+                            22, 10
+                        ],
+                        'circle-opacity': 0.9,
+                        'circle-emissive-strength': 1
+                    },
+                    metadata: {
+                        'mt3d:opacity-effect': true,
+                        'mt3d:opacity': 1,
+                        'mt3d:opacity-route': 0.35,
+                        'mt3d:opacity-underground': 0.25,
+                        'mt3d:opacity-underground-route': 0.1
+                    }
+                }, 'trees');
+                me.addLayer({
+                    id: stopLabelLayerId,
+                    type: 'symbol',
+                    source: sourceId,
+                    filter: ['==', ['geometry-type'], 'Point'],
+                    minzoom: 15,
+                    layout: {
+                        'text-field': ['get', 'name'],
+                        'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+                        'text-size': 12,
+                        'text-offset': [0, 1.2],
+                        'text-anchor': 'top',
+                        'text-allow-overlap': false
+                    },
+                    paint: {
+                        'text-color': '#333333',
+                        'text-halo-color': '#ffffff',
+                        'text-halo-width': 1
+                    }
+                }, 'trees');
+                for (const item of helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect')) {
+                    if (!me.styleOpacities.some(({id}) => id === item.id)) {
+                        me.styleOpacities.push(item);
+                    }
+                }
+                me.staticRoutes.set(source.id, {
+                    sourceId,
+                    layerIds: [sourceId, stopLayerId, stopLabelLayerId]
+                });
+                me.staticRoutesLoading.delete(source.id);
+            }).catch(error => {
+                me.staticRoutesLoading.delete(source.id);
+                console.error(`Mini Tokyo 3D: failed to load route source "${source.id}".`, error);
+                showErrorMessage(me.container);
+            });
+        }
+    }
+
+    refreshPortData() {
+        const me = this,
+            map = me.map,
+            sources = me.dataSources.filter(source => source.portUrl && !isExpired(source)),
+            sourceIds = new Set(sources.map(({id}) => id));
+
+        for (const [id, entry] of me.portSources) {
+            if (!sourceIds.has(id)) {
+                for (const layerId of entry.layerIds) {
+                    map.removeLayer(layerId);
+                }
+                map.removeSource(entry.sourceId);
+                for (const layerId of entry.symbolLayerIds) {
+                    map.off('click', layerId, entry.onClick);
+                    map.off('mouseenter', layerId, entry.onMouseEnter);
+                    map.off('mouseleave', layerId, entry.onMouseLeave);
+                }
+                if (entry.popup) {
+                    entry.popup.remove();
+                }
+                me.portSources.delete(id);
+            }
+        }
+        for (const source of sources) {
+            if (me.portSourcesLoading.has(source.id) || me.portSources.has(source.id)) {
+                continue;
+            }
+            me.portSourcesLoading.add(source.id);
+            Promise.all([
+                helpers.loadJSON(source.portUrl),
+                me.initialized ? Promise.resolve() : new Promise(resolve => {
+                    me.once('initialized', resolve);
+                })
+            ]).then(([data]) => {
+                const sourceId = `${source.id}-ports`;
+
+                return loadPortIcon(map).then(() => {
+                    if (!sourceIds.has(source.id) || me.portSources.has(source.id)) {
+                        return;
+                    }
+                    map.addSource(sourceId, {
+                        type: 'geojson',
+                        data,
+                        promoteId: 'id'
+                    });
+                    const areaLayerIds = [],
+                        symbolLayerIds = [];
+
+                    for (const revealZoom of PORT_ICON_ZOOM_TIERS) {
+                        const areaLayerId = `${sourceId}-berth-areas-${revealZoom}`,
+                            symbolLayerId = `${sourceId}-symbols-${revealZoom}`;
+
+                        me.addLayer({
+                            id: areaLayerId,
+                            type: 'circle',
+                            source: sourceId,
+                            filter: ['==', ['get', 'revealZoom'], revealZoom],
+                            minzoom: revealZoom,
+                            paint: {
+                                'circle-radius': [
+                                    'interpolate',
+                                    ['linear'],
+                                    ['zoom'],
+                                    revealZoom, [
+                                        'case',
+                                        ['>', ['get', 'berthCount'], 20], 14,
+                                        ['>', ['get', 'berthCount'], 5], 11,
+                                        8
+                                    ],
+                                    18, [
+                                        'case',
+                                        ['>', ['get', 'berthCount'], 20], 48,
+                                        ['>', ['get', 'berthCount'], 5], 36,
+                                        26
+                                    ]
+                                ],
+                                'circle-color': '#0074bf',
+                                'circle-opacity': [
+                                    'interpolate',
+                                    ['linear'],
+                                    ['zoom'],
+                                    revealZoom, 0,
+                                    revealZoom + 0.75, 0.14
+                                ],
+                                'circle-stroke-color': '#00b9e4',
+                                'circle-stroke-width': 2,
+                                'circle-stroke-opacity': [
+                                    'interpolate',
+                                    ['linear'],
+                                    ['zoom'],
+                                    revealZoom, 0,
+                                    revealZoom + 0.75, 0.65
+                                ],
+                                'circle-emissive-strength': 1
+                            }
+                        }, 'trees');
+                        me.addLayer({
+                            id: symbolLayerId,
+                            type: 'symbol',
+                            source: sourceId,
+                            filter: ['==', ['get', 'revealZoom'], revealZoom],
+                            minzoom: revealZoom,
+                            layout: {
+                                'icon-image': 'port-ship',
+                                'icon-size': [
+                                    'interpolate',
+                                    ['linear'],
+                                    ['zoom'],
+                                    10, 0.4,
+                                    13, 0.5,
+                                    18, 0.75
+                                ],
+                                'icon-allow-overlap': true,
+                                'text-field': [
+                                    'format',
+                                    ['get', 'name'],
+                                    {'text-font': ['literal', ['Open Sans Bold', 'Arial Unicode MS Bold']]},
+                                    '\n',
+                                    {},
+                                    ['concat', ['to-string', ['get', 'berthCount']], ' laituria'],
+                                    {
+                                        'text-font': ['literal', ['Open Sans Regular', 'Arial Unicode MS Regular']],
+                                        'font-scale': 0.85
+                                    }
+                                ],
+                                'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+                                'text-size': 12,
+                                'text-offset': [0, 1.7],
+                                'text-anchor': 'top',
+                                'text-optional': true
+                            },
+                            paint: {
+                                'icon-opacity': [
+                                    'interpolate',
+                                    ['linear'],
+                                    ['zoom'],
+                                    revealZoom, 0,
+                                    revealZoom + 0.75, 1
+                                ],
+                                'text-opacity': [
+                                    'interpolate',
+                                    ['linear'],
+                                    ['zoom'],
+                                    revealZoom, 0,
+                                    revealZoom + 0.75, 1
+                                ],
+                                'text-color': '#ffffff',
+                                'text-halo-color': '#003f66',
+                                'text-halo-width': 1.5
+                            }
+                        }, 'trees');
+                        areaLayerIds.push(areaLayerId);
+                        symbolLayerIds.push(symbolLayerId);
+                    }
+                    const onMouseEnter = () => {
+                            map.getCanvas().style.cursor = 'pointer';
+                        },
+                        onMouseLeave = () => {
+                            map.getCanvas().style.cursor = '';
+                        },
+                        popup = new AnimatedPopup({
+                            className: 'popup-port',
+                            closeButton: true,
+                            closeOnClick: true,
+                            maxWidth: '320px'
+                        }),
+                        onClick = event => {
+                            const feature = event.features[0],
+                                properties = feature.properties,
+                                berths = (properties.berths || '').split('|').filter(Boolean),
+                                list = berths.length ?
+                                    `<ul>${berths.map(berth => `<li>${helpers.escapeHTML(berth)}</li>`).join('')}</ul>` :
+                                    '<p>Ei laituritietoja.</p>';
+
+                            popup
+                                .setLngLat(feature.geometry.coordinates)
+                                .setHTML([
+                                    `<strong>${helpers.escapeHTML(properties.name)}</strong>`,
+                                    `<p>${properties.berthCount} aktiivista laituripaikkaa</p>`,
+                                    list
+                                ].join(''))
+                                .addTo(map);
+                        };
+
+                    for (const layerId of symbolLayerIds) {
+                        map.on('click', layerId, onClick);
+                        map.on('mouseenter', layerId, onMouseEnter);
+                        map.on('mouseleave', layerId, onMouseLeave);
+                    }
+                    me.portSources.set(source.id, {
+                        sourceId,
+                        symbolLayerIds,
+                        layerIds: [...areaLayerIds, ...symbolLayerIds],
+                        popup,
+                        onClick,
+                        onMouseEnter,
+                        onMouseLeave
+                    });
+                });
+            }).then(() => {
+                me.portSourcesLoading.delete(source.id);
+            }).catch(error => {
+                me.portSourcesLoading.delete(source.id);
+                console.error(`Mini Tokyo 3D: failed to load port source "${source.id}".`, error);
+                showErrorMessage(me.container);
+            });
+        }
+    }
+
     refreshRealtimeTrainData() {
         const me = this;
 
@@ -3363,6 +3764,20 @@ export default class extends Evented {
                 return me.railways.get(object.properties.section.replace(/\.\d+$/, ''));
             }
         }
+        for (const {sourceId} of me.staticRoutes.values()) {
+            object = map.queryRenderedFeatures([
+                [point.x - RAILWAY_PICK_RADIUS, point.y - RAILWAY_PICK_RADIUS],
+                [point.x + RAILWAY_PICK_RADIUS, point.y + RAILWAY_PICK_RADIUS]
+            ], {layers: [sourceId]})[0];
+            if (object) {
+                return {
+                    id: object.properties.id,
+                    type: 'static-route',
+                    sourceId,
+                    properties: object.properties
+                };
+            }
+        }
     }
 
     markObject(object, {lngLat} = {}) {
@@ -3370,8 +3785,8 @@ export default class extends Evented {
             {markedObject, trafficLayer, map, popup} = me;
 
         if (isEqualObject(markedObject, object)) {
-            // A railway has no single anchor point, so its popup follows the pointer.
-            if (isRailway(object) && lngLat) {
+            // Lines have no single anchor point, so their popup follows the pointer.
+            if ((isRailway(object) || isStaticRoute(object)) && lngLat) {
                 me._markedLngLat = lngLat;
                 popup.setLngLat(lngLat);
             }
@@ -3387,6 +3802,8 @@ export default class extends Evented {
                 }
             } else if (isRailway(markedObject)) {
                 me.removeRailwayOutline('railways-marked');
+            } else if (isStaticRoute(markedObject)) {
+                me.setStaticRouteState(markedObject, 'hover', false);
             } else {
                 me.removeStationOutline('stations-marked');
             }
@@ -3407,6 +3824,9 @@ export default class extends Evented {
             } else if (isRailway(object)) {
                 me._markedLngLat = lngLat;
                 me.addRailwayOutline(object, 'railways-marked');
+            } else if (isStaticRoute(object)) {
+                me._markedLngLat = lngLat;
+                me.setStaticRouteState(object, 'hover', true);
             } else {
                 me.addStationOutline(object, 'stations-marked');
             }
@@ -3483,6 +3903,9 @@ export default class extends Evented {
                 me.hideStationExits();
             } else if (isRailway(trackedObject)) {
                 me.removeRailwayOutline('railways-selected');
+                me.fire({type: 'deselection', deselection: trackedObject.id});
+            } else if (isStaticRoute(trackedObject)) {
+                me.setStaticRouteState(trackedObject, 'selected', false);
                 me.fire({type: 'deselection', deselection: trackedObject.id});
             } else {
                 me.fire(Object.assign({type: 'deselection'}, trackedObject));
@@ -3602,6 +4025,9 @@ export default class extends Evented {
                 me.detailPanel.addTo(me);
 
                 me.addRailwayOutline(object, 'railways-selected');
+                me.fire({type: 'selection', selection: object.id});
+            } else if (isStaticRoute(object)) {
+                me.setStaticRouteState(object, 'selected', true);
                 me.fire({type: 'selection', selection: object.id});
             } else {
                 me.fire(Object.assign({type: 'selection'}, object));
@@ -3762,7 +4188,20 @@ export default class extends Evented {
             {markedObject, map, popup} = me,
             {setHTML, addToMap} = options || {};
 
-        if (isVehicle(markedObject)) {
+        if (isStaticRoute(markedObject)) {
+            popup.setLngLat(me._markedLngLat);
+            if (setHTML) {
+                const {shortName, longName, color} = markedObject.properties;
+
+                popup.setHTML([
+                    '<div class="railway-list">',
+                    `<div class="line-strip" style="background-color: ${color};"></div>`,
+                    `<span class="railway-popup-title">${helpers.escapeHTML(shortName || longName)}</span>`,
+                    shortName && longName ? `<br>${helpers.escapeHTML(longName)}` : '',
+                    '</div>'
+                ].join(''));
+            }
+        } else if (isVehicle(markedObject)) {
             const bearing = markedObject === me.trackedObject ? map.getBearing() : undefined;
 
             popup.setLngLat(me.adjustCoord(markedObject.coord, markedObject.altitude, bearing));
@@ -3828,6 +4267,13 @@ export default class extends Evented {
         if (addToMap) {
             popup.addTo(map);
         }
+    }
+
+    setStaticRouteState(route, key, value) {
+        this.map.setFeatureState({
+            source: route.sourceId,
+            id: route.id
+        }, {[key]: value});
     }
 
     updateBusRouteVisibility() {
@@ -4118,7 +4564,8 @@ export default class extends Evented {
 // Normalizes a data source, appending consumer keys to its URLs based on the
 // host (see updateOdptUrl). What a source loads is determined by which URLs it
 // carries: trainUrl/trainInfoUrl (trains), flightUrl/atisUrl (flights) and
-// gtfsUrl/vehiclePositionUrl/color (GTFS bus).
+// routeUrl (static route geometry) and gtfsUrl/vehiclePositionUrl/color
+// (GTFS bus).
 function normalizeDataSource(source, secrets) {
     return {
         id: source.id,
@@ -4126,6 +4573,8 @@ function normalizeDataSource(source, secrets) {
         trainInfoUrl: updateOdptUrl(source.trainInfoUrl, secrets),
         flightUrl: updateOdptUrl(source.flightUrl, secrets),
         atisUrl: updateOdptUrl(source.atisUrl, secrets),
+        routeUrl: source.routeUrl,
+        portUrl: source.portUrl,
         gtfsUrl: updateOdptUrl(source.gtfsUrl, secrets),
         vehiclePositionUrl: updateOdptUrl(source.vehiclePositionUrl, secrets),
         color: source.color,
@@ -4148,6 +4597,24 @@ function initContainer(container) {
     }, container);
     container.classList.add('mini-tokyo-3d');
     return map;
+}
+
+function openAttributionLinksInNewTabs(container) {
+    const updateLinks = () => {
+        for (const link of container.querySelectorAll('.mapboxgl-ctrl-attrib a')) {
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+        }
+    };
+    const observer = new MutationObserver(updateLinks);
+
+    observer.observe(container, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['href']
+    });
+    updateLinks();
 }
 
 function showLoader(container) {
@@ -4263,11 +4730,36 @@ function isRailway(object) {
     return object instanceof Railway;
 }
 
+function isStaticRoute(object) {
+    return object && object.type === 'static-route';
+}
+
+function loadPortIcon(map) {
+    if (map.hasImage('port-ship')) {
+        return Promise.resolve();
+    }
+    return new Promise((resolve, reject) => {
+        const image = new Image();
+
+        image.onload = () => {
+            if (!map.hasImage('port-ship')) {
+                map.addImage('port-ship', image);
+            }
+            resolve();
+        };
+        image.onerror = reject;
+        image.src = PORT_ICON;
+    });
+}
+
 function isEqualObject(a, b) {
     if (a === b) {
         return true;
     }
     if (a && a.properties && b && b.properties && a.properties.ids === b.properties.ids) {
+        return true;
+    }
+    if (isStaticRoute(a) && isStaticRoute(b) && a.id === b.id && a.sourceId === b.sourceId) {
         return true;
     }
     return false;

@@ -200,7 +200,7 @@ const configs = {
     lastStaticUpdate: '2026-09-24 08:00:00',
 
     // String to show in an Mapbox's AttributionControl
-    customAttribution: '<a href="https://github.com/nagix/mini-tokyo-3d">© Akihiko Kusanagi</a>',
+    customAttribution: '<a href="https://github.com/nagix/mini-tokyo-3d" target="_blank" rel="noopener noreferrer">© Akihiko Kusanagi</a>',
 
     // Copyright string
     copyright: '© 2019-2026 Akihiko Kusanagi',
@@ -247,7 +247,7 @@ const configs = {
     ],
 
     // Supported languages
-    langs: ['de', 'en', 'es', 'fr', 'ja', 'ko', 'ne', 'pt-BR', 'th', 'zh-Hans', 'zh-Hant']
+    langs: ['de', 'en', 'es', 'fi', 'fr', 'ja', 'ko', 'ne', 'pt-BR', 'th', 'zh-Hans', 'zh-Hant']
 
 };
 

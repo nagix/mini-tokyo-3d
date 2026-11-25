@@ -44,6 +44,10 @@ const isFile = p => {
 
 const token = process.env.MAPBOX_ACCESS_TOKEN;
 const dataUrl = process.env.MT3D_DATA_URL;
+const profile = process.env.MT3D_PROFILE || 'tokyo';
+if (!['tokyo', 'helsinki'].includes(profile)) {
+    throw new Error(`gen-index: unsupported MT3D_PROFILE "${profile}"`);
+}
 if (dev && !token) {
     console.warn('MAPBOX_ACCESS_TOKEN is not set; the base map will not be displayed.');
 }
@@ -54,6 +58,19 @@ if (dev && dataUrl && !/^https?:/i.test(dataUrl) && !fs.existsSync('build/data')
 fs.mkdirSync(destDir, {recursive: true});
 
 let html = fs.readFileSync(source, 'utf8');
+
+if (profile === 'helsinki') {
+    html = html
+        .replace('<html lang="ja_JP"', '<html lang="fi"')
+        .replace('<title>Mini Tokyo 3D</title>', '<title>Mini Helsinki 3D</title>')
+        .replace(/Mini Tokyo 3D/g, 'Mini Helsinki 3D')
+        .replace(/Tokyo's public transport system/g, "Helsinki's public transport system")
+        .replace(/ This data visualization was produced by Akihiko Kusanagi\./g, '')
+        .replace('<meta property="og:locale" content="ja_JP" />', '<meta property="og:locale" content="fi_FI" />')
+        .replace(/[ \t]*<meta property="og:image" content="https:\/\/minitokyo3d\.com\/images\/screenshot1\.jpg" \/>\r?\n/, '')
+        .replace(/"https:\/\/minitokyo3d\.com"/g, '"https://github.com/kinotus/mini-helsinki-3d"')
+        .replace('<meta name="twitter:site" content="@nagix" />', '');
+}
 
 // Google Analytics: fill in the measurement id, or strip the tag when unset.
 if (process.env.MT3D_GA_ID) {
@@ -105,8 +122,24 @@ if (secrets.length) {
 if (dataUrl) {
     overrides.push(`options.dataUrl = ${JSON.stringify(dataUrl)};`);
 }
+if (profile === 'helsinki') {
+    overrides.push("options.center = [24.9384, 60.1699];");
+    overrides.push('options.zoom = 10.5;');
+    overrides.push('options.pitch = 50;');
+    overrides.push("options.lang = 'fi';");
+    overrides.push("options.timezone = 'Europe/Helsinki';");
+    overrides.push("options.appAttribution = '<a href=\"https://github.com/kinotus/mini-helsinki-3d\" target=\"_blank\" rel=\"noopener noreferrer\">Mini Helsinki 3D</a> · <a href=\"https://www.hsl.fi/\" target=\"_blank\" rel=\"noopener noreferrer\">HSL</a> · <a href=\"https://www.digitraffic.fi/\" target=\"_blank\" rel=\"noopener noreferrer\">Digitraffic</a>';");
+    overrides.push("options.dataUrl = '';");
+    overrides.push("options.dataSources = [{id: 'hsl', routeUrl: 'data/hsl-routes.json'}, {id: 'digitraffic', portUrl: 'data/helsinki-ports.json'}];");
+    overrides.push('options.clockControl = true;');
+    overrides.push('options.clock24Hour = true;');
+    overrides.push('options.searchControl = false;');
+    overrides.push('options.modeControl = false;');
+    overrides.push('options.notificationControl = false;');
+    overrides.push('options.configControl = false;');
+}
 html = replaceOnce(html, /([ \t]*)\/\/ overrides\r?\n/, (_match, indent) =>
     overrides.map(line => `${indent}${line}\n`).join(''), 'overrides marker');
 
 fs.writeFileSync(dest, html);
-console.log(`Generated ${dest} (plugins: ${included.map(plugin => plugin.file).join(', ') || 'none'})`);
+console.log(`Generated ${dest} (profile: ${profile}, plugins: ${included.map(plugin => plugin.file).join(', ') || 'none'})`);

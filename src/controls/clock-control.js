@@ -28,6 +28,7 @@ export default class extends Evented {
         me._lang = options.lang;
         me._dict = options.dict;
         me._clock = options.clock;
+        me._hour12 = options.hour12;
         me._mode = options.mode || 'realtime';
     }
 
@@ -217,7 +218,15 @@ export default class extends Evented {
                 dateString = dateString.replace(/\(.+\)/, '(祝)');
             }
             element.querySelector('#date').innerHTML = dateString;
-            element.querySelector('#time').innerHTML = date.toLocaleTimeString(lang);
+            const timeOptions = {};
+
+            if (me._hour12 !== undefined) {
+                timeOptions.hour = '2-digit';
+                timeOptions.minute = '2-digit';
+                timeOptions.second = '2-digit';
+                timeOptions.hour12 = me._hour12;
+            }
+            element.querySelector('#time').innerHTML = date.toLocaleTimeString(lang, timeOptions);
         } else {
             const tempDate = me._tempDate;
 

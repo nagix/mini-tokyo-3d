@@ -1076,6 +1076,14 @@
 .mini-tokyo-3d .popup-touch .mapboxgl-popup-content {
     pointer-events: auto;
 }
+.mini-tokyo-3d .popup-port .mapboxgl-popup-content {
+    max-height: 320px;
+    overflow-y: auto;
+    pointer-events: auto;
+}
+.mini-tokyo-3d .popup-port ul {
+    margin: 8px 0 0 16px;
+}
 .mini-tokyo-3d .highlighted .mapboxgl-popup-content {
     background-color: rgba(102, 102, 102, 0.7);
 }
