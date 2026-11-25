@@ -37,3 +37,8 @@ vInstanceColor = color0;
 vInstanceColor = decodeSRGB( vInstanceColor );
 
 vInstanceOpacity = opacity0;
+
+#ifdef CAR
+vLocalNormalZ = normal.z;
+vUv2 = uv;
+#endif
