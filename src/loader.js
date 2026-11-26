@@ -244,11 +244,25 @@ export function loadBusData(source, now, lang) {
     });
 }
 
-export function loadDynamicBusData(url) {
+export function loadGtfsRealtimeData(url) {
     return fetch(url)
-        .then(response => response.arrayBuffer())
-        .then(data => GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(new Uint8Array(data)));
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`GTFS-RT request failed with ${response.status} ${response.statusText}`);
+            }
+            return response.arrayBuffer();
+        })
+        .then(data => {
+            const message = GtfsRealtimeBindings.transit_realtime.FeedMessage.decode(new Uint8Array(data));
+
+            if (!message.header || !message.header.gtfsRealtimeVersion) {
+                throw new Error('GTFS-RT response is missing a valid header');
+            }
+            return message;
+        });
 }
+
+export const loadDynamicBusData = loadGtfsRealtimeData;
 
 /**
  * Appends the consumer key to an ODPT-compatible API URL based on its host.
@@ -260,7 +274,7 @@ export function loadDynamicBusData(url) {
  * @returns {string} The updated URL
  */
 export function updateOdptUrl(url, secrets) {
-    if (!isString(url) || url.match(/acl:consumerKey/)) {
+    if (!isString(url) || url.match(/acl:consumerKey/) || !/^https?:/i.test(url)) {
         return url;
     }
 

@@ -13,10 +13,12 @@ import * as helpers from './helpers/helpers';
 import {disableAutoHover, pickObject, resetCursor} from './helpers/helpers-deck';
 import * as helpersGeojson from './helpers/helpers-geojson';
 import * as helpersMapbox from './helpers/helpers-mapbox';
+import {getTransitMinZoom} from './helpers/helpers-transit.mjs';
+import {normalizeServiceAlerts, normalizeVehiclePositions, resolveHslTrip} from './helpers/helpers-hsl-rt.mjs';
 import * as helpersWebgl from './helpers/helpers-webgl';
 import {GeoJsonLayer, GlowCompositeLayer, RailwayGlowLayer, RailwayStatusGlowLayer, STROKE_WIDTH_SCALE_STOPS, StationGlowLayer, ThreeLayer, Tile3DLayer, TrafficLayer, ZoomWidthScaleExtension} from './layers';
-import {isExpired, loadBusData, loadDictionary, loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
-import {AboutPanel, BusPanel, LayerPanel, RailwayPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
+import {isExpired, loadBusData, loadDictionary, loadDynamicBusData, loadDynamicFlightData, loadDynamicTrainData, loadGtfsRealtimeData, loadStaticData, loadTimetableData, updateOdptUrl} from './loader';
+import {AboutPanel, BusPanel, LayerPanel, RailwayPanel, ServiceAlertsPanel, SharePanel, StationPanel, TrackingModePanel, TrainPanel} from './panels';
 import Plugin from './plugin';
 import nearestCloserPointOnLine from './turf/nearest-closer-point-on-line';
 
@@ -49,6 +51,13 @@ const PORT_ICON = `data:image/svg+xml;charset=utf-8,${encodeURIComponent([
 ].join(''))}`;
 
 const PORT_ICON_ZOOM_TIERS = [10.5, 11.5, 12.5, 13.5];
+const PORT_SYMBOL_ELEVATION = 50;
+const VEHICLE_ICON = `data:image/svg+xml;charset=utf-8,${encodeURIComponent([
+    '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">',
+    '<path fill="#ffffff" d="M24 4L42 42 24 34 6 42z"/>',
+    '<path fill="#222222" d="M24 11L35 34 24 29 13 34z"/>',
+    '</svg>'
+].join(''))}`;
 
 // Same ground/underground opacity split as railways-ug-13/railways-og-13 -
 // the glow should fade the same way the railway line it highlights does.
@@ -114,6 +123,7 @@ export default class extends Evented {
             zoom: configs.defaultZoom,
             bearing: configs.defaultBearing,
             pitch: configs.defaultPitch,
+            transitMinZoom: configs.transitMinZoom,
             dataUrl: configs.dataUrl,
             dataSources: configs.dataSources,
             timezone: configs.defaultTimezone,
@@ -166,6 +176,7 @@ export default class extends Evented {
         me.ecoFrameRate = options.ecoFrameRate;
 
         me.lastDynamicUpdate = {};
+        me.transitMinZoom = options.transitMinZoom;
         me.lastRepaint = 0;
         me.frameRateFactor = 1;
 
@@ -207,6 +218,11 @@ export default class extends Evented {
         me.staticRoutesLoading = new Set();
         me.portSources = new Map();
         me.portSourcesLoading = new Set();
+        me.serviceAlerts = new Map();
+        me.realtimeFeeds = new Map();
+        me.realtimeVehicleData = new Map();
+        me.tripIndexLoading = new Map();
+        me.alertFeatureIds = new Map();
         // IDs of GTFS sources whose data is currently being loaded. Tracked
         // separately from me.gtfs (which is only populated once loading finishes)
         // so overlapping refreshBusData calls don't load the same source twice.
@@ -254,6 +270,7 @@ export default class extends Evented {
         me.refreshBusData();
         me.refreshStaticRouteData();
         me.refreshPortData();
+        me.refreshRealtimeData();
     }
 
     /**
@@ -739,6 +756,9 @@ export default class extends Evented {
         if (source.portUrl) {
             me.refreshPortData();
         }
+        if (source.serviceAlertUrl || source.vehiclePositionUrl) {
+            me.refreshRealtimeData();
+        }
         if (me.initialized) {
             if (source.trainUrl || source.trainInfoUrl) {
                 me.refreshRealtimeTrainData();
@@ -1221,6 +1241,22 @@ export default class extends Evented {
             }]));
         }
 
+        if (me.dataSources.some(source => source.serviceAlertUrl)) {
+            me.serviceAlertsPanel = new ServiceAlertsPanel();
+            me.serviceAlertsControl = new MapboxGLButtonControl([{
+                className: 'mapboxgl-ctrl-alerts',
+                title: dict['service-alerts'],
+                eventHandler() {
+                    if (me.serviceAlertsPanel.isOpen()) {
+                        me.serviceAlertsPanel.remove();
+                    } else {
+                        me.serviceAlertsPanel.addTo(me);
+                    }
+                }
+            }]);
+            map.addControl(me.serviceAlertsControl);
+        }
+
         if (me.clockControl) {
             const control = me.clockCtrl = new ClockControl({
                 lang,
@@ -1455,6 +1491,7 @@ export default class extends Evented {
                     }
                     me.lastRealtimeCheck = now - minDelay;
                 }
+                me.refreshRealtimeData();
 
                 if ((me.ecoMode === 'normal' && map._loaded) || Date.now() - me.lastRepaint >= 1000 / me.ecoFrameRate) {
                     let changed;
@@ -1512,6 +1549,7 @@ export default class extends Evented {
 
         me.initialized = true;
         me.fire({type: 'initialized'});
+        me.refreshRealtimeData();
     }
 
     _jumpTo(options) {
@@ -2283,6 +2321,28 @@ export default class extends Evented {
         ].join('');
     }
 
+    getRealtimeVehicleDescription(vehicle) {
+        const me = this,
+            dict = me.dict,
+            properties = vehicle.properties,
+            routeLabel = properties.routeLabel,
+            routeName = properties.routeName,
+            schedule = properties.scheduleRelationship,
+            labels = [
+                `<div class="desc-header">`,
+                `<div style="background-color: ${helpers.escapeHTML(properties.color || '#007AC9')};"></div>`,
+                `<div><strong>${helpers.escapeHTML(dict['realtime-vehicle'])}</strong><br>`,
+                routeLabel ? ` <span class="bus-route-label" style="background-color: ${helpers.escapeHTML(properties.color || '#007AC9')};">${helpers.escapeHTML(routeLabel)}</span> ` : '',
+                helpers.escapeHTML(routeName || ''),
+                '</div></div>',
+                properties.vehicleId ? `<strong>${helpers.escapeHTML(dict['realtime-vehicle-id'])}:</strong> ${helpers.escapeHTML(properties.vehicleId)}<br>` : '',
+                schedule !== undefined ? `<strong>${helpers.escapeHTML(dict['status'])}:</strong> ${helpers.escapeHTML(schedule)}<br>` : '',
+                properties.occupancyStatus !== undefined ? `<strong>${helpers.escapeHTML(dict['occupancy'])}:</strong> ${helpers.escapeHTML(properties.occupancyStatus)}<br>` : ''
+            ];
+
+        return labels.join('');
+    }
+
     /**
      * Check if any of connecting trains is active
      * @param {Object} train - train to check
@@ -2776,20 +2836,58 @@ export default class extends Evented {
                     return;
                 }
                 const sourceId = `${source.id}-routes`;
+                const routeFeatureLookup = new Map();
+                const routeFeatures = new Map();
+                const stopFeatures = new Map();
+
+                for (const feature of data.features) {
+                    const properties = feature.properties;
+
+                    if (properties.featureType === 'route') {
+                        properties.minZoom = getTransitMinZoom(
+                            properties.routeType,
+                            me.transitMinZoom
+                        );
+                        routeFeatureLookup.set(properties.id, feature);
+                        if (!routeFeatures.has(properties.routeId)) {
+                            routeFeatures.set(properties.routeId, []);
+                        }
+                        routeFeatures.get(properties.routeId).push(feature);
+                    } else if (properties.featureType === 'stop') {
+                        properties.minZoom = getTransitMinZoom(
+                            properties.vehicleType,
+                            me.transitMinZoom,
+                            true
+                        );
+                        stopFeatures.set(properties.stopId, feature);
+                    }
+                }
 
                 map.addSource(sourceId, {
                     type: 'geojson',
                     data,
-                    promoteId: 'id'
+                    promoteId: 'id',
+                    lineMetrics: true
                 });
                 me.addLayer({
                     id: sourceId,
                     type: 'line',
                     source: sourceId,
-                    filter: ['==', ['geometry-type'], 'LineString'],
+                    filter: [
+                        'all',
+                        ['==', ['geometry-type'], 'LineString'],
+                        ['>=', ['zoom'], ['get', 'minZoom']]
+                    ],
                     layout: {
                         'line-cap': 'round',
-                        'line-join': 'round'
+                        'line-join': 'round',
+                        'line-elevation-reference': 'ground',
+                        'line-z-offset': [
+                            'case',
+                            ['==', ['get', 'routeType'], 1],
+                            -20,
+                            0
+                        ]
                     },
                     paint: {
                         'line-color': ['coalesce', ['get', 'color'], '#007AC9'],
@@ -2832,7 +2930,11 @@ export default class extends Evented {
                     id: stopLayerId,
                     type: 'circle',
                     source: sourceId,
-                    filter: ['==', ['geometry-type'], 'Point'],
+                    filter: [
+                        'all',
+                        ['==', ['geometry-type'], 'Point'],
+                        ['>=', ['zoom'], ['get', 'minZoom']]
+                    ],
                     minzoom: 13,
                     paint: {
                         'circle-color': '#ffffff',
@@ -2861,7 +2963,11 @@ export default class extends Evented {
                     id: stopLabelLayerId,
                     type: 'symbol',
                     source: sourceId,
-                    filter: ['==', ['geometry-type'], 'Point'],
+                    filter: [
+                        'all',
+                        ['==', ['geometry-type'], 'Point'],
+                        ['>=', ['zoom'], ['get', 'minZoom']]
+                    ],
                     minzoom: 15,
                     layout: {
                         'text-field': ['get', 'name'],
@@ -2869,14 +2975,87 @@ export default class extends Evented {
                         'text-size': 12,
                         'text-offset': [0, 1.2],
                         'text-anchor': 'top',
-                        'text-allow-overlap': false
+                        'text-allow-overlap': false,
+                        'text-ignore-placement': true
                     },
                     paint: {
                         'text-color': '#333333',
                         'text-halo-color': '#ffffff',
-                        'text-halo-width': 1
+                        'text-halo-width': 2
                     }
                 }, 'trees');
+                const alertRouteLayerId = `${sourceId}-alerts`,
+                    alertStopLayerId = `${sourceId}-stop-alerts`;
+
+                me.addLayer({
+                    id: alertRouteLayerId,
+                    type: 'line',
+                    source: sourceId,
+                    filter: [
+                        'all',
+                        ['==', ['geometry-type'], 'LineString'],
+                        ['>=', ['zoom'], ['get', 'minZoom']]
+                    ],
+                    layout: {
+                        'line-cap': 'round',
+                        'line-join': 'round',
+                        'line-elevation-reference': 'ground',
+                        'line-z-offset': [
+                            'case',
+                            ['==', ['get', 'routeType'], 1],
+                            -20,
+                            0
+                        ]
+                    },
+                    paint: {
+                        'line-color': '#f59e0b',
+                        'line-width': [
+                            'interpolate',
+                            ['exponential', 2],
+                            ['zoom'],
+                            8, 4,
+                            12, 7,
+                            16, 11,
+                            22, 28
+                        ],
+                        'line-opacity': [
+                            'case',
+                            ['boolean', ['feature-state', 'alert'], false],
+                            .9,
+                            0
+                        ],
+                        'line-emissive-strength': 1
+                    }
+                }, sourceId);
+                me.addLayer({
+                    id: alertStopLayerId,
+                    type: 'circle',
+                    source: sourceId,
+                    filter: [
+                        'all',
+                        ['==', ['geometry-type'], 'Point'],
+                        ['>=', ['zoom'], ['get', 'minZoom']]
+                    ],
+                    minzoom: 12,
+                    paint: {
+                        'circle-color': 'rgba(245, 158, 11, 0)',
+                        'circle-stroke-color': '#f59e0b',
+                        'circle-stroke-width': [
+                            'case',
+                            ['boolean', ['feature-state', 'alert'], false],
+                            4,
+                            0
+                        ],
+                        'circle-radius': [
+                            'interpolate',
+                            ['exponential', 2],
+                            ['zoom'],
+                            12, 6,
+                            16, 10,
+                            22, 18
+                        ]
+                    }
+                }, stopLayerId);
                 for (const item of helpersMapbox.getStyleOpacities(map, 'mt3d:opacity-effect')) {
                     if (!me.styleOpacities.some(({id}) => id === item.id)) {
                         me.styleOpacities.push(item);
@@ -2884,9 +3063,24 @@ export default class extends Evented {
                 }
                 me.staticRoutes.set(source.id, {
                     sourceId,
-                    layerIds: [sourceId, stopLayerId, stopLabelLayerId]
+                    routeFeatureLookup,
+                    routeFeatures,
+                    stopFeatures,
+                    layerIds: [
+                        sourceId,
+                        stopLayerId,
+                        stopLabelLayerId,
+                        alertRouteLayerId,
+                        alertStopLayerId
+                    ]
                 });
                 me.staticRoutesLoading.delete(source.id);
+                me.updateVisualizationLayerOrder();
+                for (const source of me.dataSources) {
+                    if (source.serviceAlertUrl) {
+                        me.applyServiceAlertState(source.id);
+                    }
+                }
             }).catch(error => {
                 me.staticRoutesLoading.delete(source.id);
                 console.error(`Mini Tokyo 3D: failed to load route source "${source.id}".`, error);
@@ -2912,6 +3106,7 @@ export default class extends Evented {
                     map.off('mouseenter', layerId, entry.onMouseEnter);
                     map.off('mouseleave', layerId, entry.onMouseLeave);
                 }
+                map.off('move', entry.updatePopupOffset);
                 if (entry.popup) {
                     entry.popup.remove();
                 }
@@ -2999,6 +3194,8 @@ export default class extends Evented {
                             minzoom: revealZoom,
                             layout: {
                                 'icon-image': 'port-ship',
+                                'symbol-z-elevate': true,
+                                'symbol-elevation-reference': 'ground',
                                 'icon-size': [
                                     'interpolate',
                                     ['linear'],
@@ -3043,7 +3240,8 @@ export default class extends Evented {
                                 ],
                                 'text-color': '#ffffff',
                                 'text-halo-color': '#003f66',
-                                'text-halo-width': 1.5
+                                'text-halo-width': 1.5,
+                                'symbol-z-offset': PORT_SYMBOL_ELEVATION
                             }
                         }, 'trees');
                         areaLayerIds.push(areaLayerId);
@@ -3061,6 +3259,16 @@ export default class extends Evented {
                             closeOnClick: true,
                             maxWidth: '320px'
                         }),
+                        popupState = {coordinate: null},
+                        updatePopupOffset = () => {
+                            if (!popupState.coordinate || !popup.isOpen()) {
+                                return;
+                            }
+                            const ground = map.project(popupState.coordinate),
+                                elevated = map.project(popupState.coordinate, PORT_SYMBOL_ELEVATION);
+
+                            popup.setOffset([elevated.x - ground.x, elevated.y - ground.y]);
+                        },
                         onClick = event => {
                             const feature = event.features[0],
                                 properties = feature.properties,
@@ -3071,14 +3279,18 @@ export default class extends Evented {
 
                             popup
                                 .setLngLat(feature.geometry.coordinates)
+                                .setOffset([0, 0])
                                 .setHTML([
                                     `<strong>${helpers.escapeHTML(properties.name)}</strong>`,
                                     `<p>${properties.berthCount} aktiivista laituripaikkaa</p>`,
                                     list
                                 ].join(''))
                                 .addTo(map);
+                            popupState.coordinate = feature.geometry.coordinates;
+                            updatePopupOffset();
                         };
 
+                    map.on('move', updatePopupOffset);
                     for (const layerId of symbolLayerIds) {
                         map.on('click', layerId, onClick);
                         map.on('mouseenter', layerId, onMouseEnter);
@@ -3091,8 +3303,10 @@ export default class extends Evented {
                         popup,
                         onClick,
                         onMouseEnter,
-                        onMouseLeave
+                        onMouseLeave,
+                        updatePopupOffset
                     });
+                    me.updateVisualizationLayerOrder();
                 });
             }).then(() => {
                 me.portSourcesLoading.delete(source.id);
@@ -3101,6 +3315,456 @@ export default class extends Evented {
                 console.error(`Mini Tokyo 3D: failed to load port source "${source.id}".`, error);
                 showErrorMessage(me.container);
             });
+        }
+    }
+
+    refreshRealtimeData() {
+        const me = this;
+        const activeSourceIds = new Set(me.dataSources.map(source => source.id));
+
+        for (const [key, state] of me.realtimeFeeds) {
+            const sourceId = key.split(':')[0];
+
+            if (!activeSourceIds.has(sourceId)) {
+                if (key.endsWith(':vehicle-positions')) {
+                    const entry = me.realtimeVehicleData.get(sourceId);
+
+                    if (entry && me.map.getSource(entry.sourceId)) {
+                        if (me.map.getLayer(entry.sourceId)) {
+                            me.map.removeLayer(entry.sourceId);
+                        }
+                        if (me.map.getLayer(`${entry.sourceId}-halo`)) {
+                            me.map.removeLayer(`${entry.sourceId}-halo`);
+                        }
+                        me.map.removeSource(entry.sourceId);
+                    }
+                    me.realtimeVehicleData.delete(sourceId);
+                }
+                if (key.endsWith(':service-alerts')) {
+                    for (const [id, alert] of me.serviceAlerts) {
+                        if (alert.sourceId === sourceId) {
+                            me.serviceAlerts.delete(id);
+                        }
+                    }
+                    me.applyServiceAlertState(sourceId);
+                    me.alertFeatureIds.delete(sourceId);
+                }
+                state.loading = false;
+                me.realtimeFeeds.delete(key);
+            }
+        }
+
+        if (!me.initialized || me.removing || me.clockMode !== 'realtime' ||
+            document.hidden || me.searchMode !== 'none') {
+            return;
+        }
+        const now = Date.now();
+
+        for (const source of me.dataSources) {
+            if (source.serviceAlertUrl) {
+                const key = `${source.id}:service-alerts`,
+                    state = me.realtimeFeeds.get(key) || {
+                        interval: 300000,
+                        retryInterval: 30000,
+                        nextRefresh: 0
+                    };
+
+                me.realtimeFeeds.set(key, state);
+                if (!state.loading && now >= (state.nextRefresh || 0)) {
+                    me.refreshServiceAlerts(source, key, state);
+                } else if (state.timestamp &&
+                    now - state.timestamp * 1000 > state.interval * 2) {
+                    state.stale = true;
+                }
+            }
+            if (source.vehiclePositionUrl) {
+                const key = `${source.id}:vehicle-positions`,
+                    state = me.realtimeFeeds.get(key) || {
+                        interval: 5000,
+                        retryInterval: 10000,
+                        nextRefresh: 0
+                    };
+
+                me.realtimeFeeds.set(key, state);
+                if (!state.loading && now >= (state.nextRefresh || 0)) {
+                    me.refreshRealtimeVehicles(source, key, state);
+                } else if (state.timestamp &&
+                    now - state.timestamp * 1000 > state.interval * 3) {
+                    state.stale = true;
+                }
+            }
+        }
+    }
+
+    refreshServiceAlerts(source, key, state) {
+        const me = this;
+
+        state.loading = true;
+        loadGtfsRealtimeData(source.serviceAlertUrl).then(message => {
+            const timestamp = Number(message.header.timestamp);
+
+            if (state.timestamp !== undefined && timestamp < state.timestamp) {
+                state.nextRefresh = Date.now() + state.interval;
+                return;
+            }
+            state.timestamp = timestamp;
+            state.stale = false;
+            state.error = undefined;
+            for (const [id, alert] of me.serviceAlerts) {
+                if (alert.sourceId === source.id) {
+                    me.serviceAlerts.delete(id);
+                }
+            }
+            for (const alert of normalizeServiceAlerts(message, me.lang)) {
+                me.serviceAlerts.set(`${source.id}:${alert.id}`, Object.assign(alert, {
+                    sourceId: source.id
+                }));
+            }
+            me.lastDynamicUpdate[key] = me.clock.getString(timestamp * 1000);
+            me.applyServiceAlertState(source.id);
+            me.updateServiceAlertsControl();
+            if (me.serviceAlertsPanel) {
+                me.serviceAlertsPanel.updateContent();
+            }
+            if (me.aboutPanel) {
+                me.aboutPanel.updateContent();
+            }
+            state.nextRefresh = Date.now() + state.interval;
+        }).catch(error => {
+            state.error = error.message;
+            state.stale = true;
+            state.nextRefresh = Date.now() + state.retryInterval;
+            console.warn(`Mini Tokyo 3D: failed to refresh HSL service alerts.`, error);
+            if (me.serviceAlertsPanel) {
+                me.serviceAlertsPanel.updateContent();
+            }
+        }).finally(() => {
+            state.loading = false;
+        });
+    }
+
+    applyServiceAlertState(sourceId) {
+        const me = this,
+            routeIds = new Set(),
+            stopIds = new Set(),
+            activeFeatures = new Map();
+
+        for (const alert of me.serviceAlerts.values()) {
+            if (alert.sourceId !== sourceId) {
+                continue;
+            }
+            for (const selector of alert.selectors) {
+                if (selector.routeId) {
+                    routeIds.add(selector.routeId);
+                }
+                if (selector.stopId) {
+                    stopIds.add(selector.stopId);
+                }
+            }
+        }
+        const routeSource = me.staticRoutes.get(sourceId);
+
+        if (!routeSource) {
+            return;
+        }
+        for (const routeId of routeIds) {
+            for (const feature of routeSource.routeFeatures.get(routeId) || []) {
+                activeFeatures.set(feature.properties.id, true);
+            }
+        }
+        for (const stopId of stopIds) {
+            const feature = routeSource.stopFeatures.get(stopId);
+
+            if (feature) {
+                activeFeatures.set(feature.properties.id, true);
+            }
+        }
+        for (const id of me.alertFeatureIds.get(sourceId) || []) {
+            if (!activeFeatures.has(id)) {
+                me.map.removeFeatureState({source: routeSource.sourceId, id}, 'alert');
+            }
+        }
+        for (const id of activeFeatures.keys()) {
+            me.map.setFeatureState({source: routeSource.sourceId, id}, {alert: true});
+        }
+        me.alertFeatureIds.set(sourceId, new Set(activeFeatures.keys()));
+    }
+
+    updateServiceAlertsControl() {
+        const me = this,
+            control = me.serviceAlertsControl;
+
+        if (!control || !control._buttons) {
+            return;
+        }
+        control._buttons[0].classList.toggle('active', me.serviceAlerts.size > 0);
+        control._buttons[0].setAttribute('aria-label',
+            `${me.dict['service-alerts']} (${me.serviceAlerts.size})`);
+    }
+
+    updateVisualizationLayerOrder() {
+        const me = this,
+            layerIds = [];
+
+        for (const entry of me.staticRoutes.values()) {
+            layerIds.push(
+                entry.sourceId,
+                `${entry.sourceId}-alerts`,
+                `${entry.sourceId}-stops`,
+                `${entry.sourceId}-stop-alerts`
+            );
+        }
+        for (const entry of me.portSources.values()) {
+            layerIds.push(...entry.layerIds.filter(id => id.includes('-berth-areas-')));
+        }
+        for (const entry of me.realtimeVehicleData.values()) {
+            layerIds.push(`${entry.sourceId}-halo`, entry.sourceId);
+        }
+        for (const entry of me.portSources.values()) {
+            layerIds.push(...entry.symbolLayerIds);
+        }
+        for (const entry of me.staticRoutes.values()) {
+            layerIds.push(`${entry.sourceId}-stop-labels`);
+        }
+        for (const id of layerIds) {
+            if (me.map.getLayer(id)) {
+                me.map.moveLayer(id);
+            }
+        }
+    }
+
+    getTripIndex(source) {
+        const me = this;
+
+        if (!source.tripIndexUrl) {
+            return Promise.reject(new Error(`Realtime source "${source.id}" is missing tripIndexUrl`));
+        }
+        if (!me.tripIndexLoading.has(source.id)) {
+            me.tripIndexLoading.set(source.id, helpers.loadJSON(source.tripIndexUrl));
+        }
+        return me.tripIndexLoading.get(source.id);
+    }
+
+    ensureRealtimeVehicleLayer(source) {
+        const me = this,
+            sourceId = `${source.id}-vehicles`;
+
+        if (me.realtimeVehicleData.has(source.id)) {
+            return Promise.resolve(sourceId);
+        }
+        const empty = {
+            type: 'FeatureCollection',
+            features: []
+        };
+
+        me.map.addSource(sourceId, {
+            type: 'geojson',
+            data: empty,
+            promoteId: 'id'
+        });
+        me.realtimeVehicleData.set(source.id, {
+            sourceId,
+            features: empty
+        });
+        return loadRealtimeVehicleIcon(me.map).then(() => {
+            me.addLayer({
+                id: `${sourceId}-halo`,
+                type: 'circle',
+                source: sourceId,
+                filter: ['>=', ['zoom'], ['get', 'minZoom']],
+                minzoom: 9,
+                paint: {
+                    'circle-color': ['get', 'color'],
+                    'circle-stroke-color': '#ffffff',
+                    'circle-stroke-width': [
+                        'case',
+                        ['any',
+                            ['boolean', ['feature-state', 'hover'], false],
+                            ['boolean', ['feature-state', 'selected'], false]
+                        ],
+                        4,
+                        2
+                    ],
+                    'circle-radius': [
+                        'interpolate',
+                        ['exponential', 2],
+                        ['zoom'],
+                        9, 5,
+                        13, 8,
+                        18, 12
+                    ],
+                    'circle-emissive-strength': 1
+                }
+            }, 'trees');
+            me.addLayer({
+                id: sourceId,
+                type: 'symbol',
+                source: sourceId,
+                filter: ['>=', ['zoom'], ['get', 'minZoom']],
+                minzoom: 9,
+                layout: {
+                    'icon-image': 'realtime-vehicle',
+                    'icon-rotate': ['get', 'bearing'],
+                    'icon-rotation-alignment': 'map',
+                    'icon-size': [
+                        'interpolate',
+                        ['exponential', 2],
+                        ['zoom'],
+                        9, .3,
+                        13, .45,
+                        18, .8
+                    ],
+                    'text-field': ['get', 'routeLabel'],
+                    'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+                    'text-size': 10,
+                    'text-offset': [0, 1.8],
+                    'text-optional': true
+                },
+                paint: {
+                    'text-color': '#ffffff',
+                    'text-halo-color': '#111111',
+                    'text-halo-width': 1.5,
+                    'icon-opacity': [
+                        'case',
+                        ['boolean', ['feature-state', 'stale'], false],
+                        .45,
+                        1
+                    ]
+                }
+            }, 'trees');
+            return sourceId;
+        }).catch(error => {
+            me.realtimeVehicleData.delete(source.id);
+            for (const layerId of [sourceId, `${sourceId}-halo`]) {
+                if (me.map.getLayer(layerId)) {
+                    me.map.removeLayer(layerId);
+                }
+            }
+            if (me.map.getSource(sourceId)) {
+                me.map.removeSource(sourceId);
+            }
+            throw error;
+        });
+    }
+
+    refreshRealtimeVehicles(source, key, state) {
+        const me = this;
+
+        state.loading = true;
+        Promise.all([
+            me.getTripIndex(source),
+            loadGtfsRealtimeData(source.vehiclePositionUrl),
+            me.ensureRealtimeVehicleLayer(source)
+        ]).then(([index, message, sourceId]) => {
+            const timestamp = Number(message.header.timestamp);
+
+            if (state.timestamp !== undefined && timestamp < state.timestamp) {
+                state.nextRefresh = Date.now() + state.interval;
+                return;
+            }
+            const routeSource = me.staticRoutes.get(source.id),
+                positions = normalizeVehiclePositions(message),
+                features = [],
+                unmatched = {
+                    trip: 0,
+                    route: 0,
+                    bounds: 0
+                };
+
+            for (const position of positions) {
+                if (position.longitude < 22 || position.longitude > 28 ||
+                    position.latitude < 58 || position.latitude > 63) {
+                    unmatched.bounds++;
+                    continue;
+                }
+                const trip = resolveHslTrip(index, position),
+                    routeFeature = trip && routeSource &&
+                        routeSource.routeFeatureLookup.get(`${trip.routeId}.${trip.shapeId}`);
+
+                if (!trip) {
+                    unmatched.trip++;
+                    continue;
+                }
+                if (!routeFeature) {
+                    unmatched.route++;
+                    continue;
+                }
+                features.push({
+                    type: 'Feature',
+                    id: position.id,
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [position.longitude, position.latitude]
+                    },
+                    properties: {
+                        id: position.id,
+                        featureType: 'vehicle',
+                        sourceId,
+                        routeId: trip.routeId,
+                        routeLabel: routeFeature.properties.shortName || trip.routeId,
+                        routeName: routeFeature.properties.longName || '',
+                        routeType: routeFeature.properties.routeType,
+                        minZoom: routeFeature.properties.minZoom,
+                        color: routeFeature.properties.color,
+                        shapeId: trip.shapeId,
+                        bearing: position.bearing,
+                        speed: position.speed,
+                        stopId: position.stopId,
+                        currentStopSequence: position.currentStopSequence,
+                        currentStatus: position.currentStatus,
+                        occupancyStatus: position.occupancyStatus,
+                        vehicleId: position.vehicleId || position.label ||
+                            position.licensePlate || position.id,
+                        scheduleRelationship: position.scheduleRelationship,
+                        timestamp
+                    }
+                });
+            }
+            const featureCollection = {
+                type: 'FeatureCollection',
+                features
+            };
+
+            me.map.getSource(sourceId).setData(featureCollection);
+            me.realtimeVehicleData.get(source.id).features = featureCollection;
+            me.updateVisualizationLayerOrder();
+            me.setRealtimeVehiclesStale(source.id, false);
+            state.timestamp = timestamp;
+            state.stale = false;
+            state.error = undefined;
+            state.matched = features.length;
+            state.unmatched = unmatched;
+            state.nextRefresh = Date.now() + state.interval;
+            me.lastDynamicUpdate[key] = me.clock.getString(timestamp * 1000);
+            if (unmatched.trip || unmatched.route || unmatched.bounds) {
+                console.warn(`Mini Tokyo 3D: unmatched HSL vehicle positions.`, unmatched);
+            }
+            if (me.aboutPanel) {
+                me.aboutPanel.updateContent();
+            }
+        }).catch(error => {
+            state.error = error.message;
+            state.stale = true;
+            state.nextRefresh = Date.now() + state.retryInterval;
+            console.warn(`Mini Tokyo 3D: failed to refresh HSL vehicle positions.`, error);
+            me.setRealtimeVehiclesStale(source.id, true);
+        }).finally(() => {
+            state.loading = false;
+        });
+    }
+
+    setRealtimeVehiclesStale(sourceId, stale) {
+        const me = this,
+            entry = me.realtimeVehicleData.get(sourceId);
+
+        if (!entry || !me.map.getSource(entry.sourceId)) {
+            return;
+        }
+        for (const feature of entry.features.features) {
+            me.map.setFeatureState({
+                source: entry.sourceId,
+                id: feature.id
+            }, {stale});
         }
     }
 
@@ -3764,6 +4428,21 @@ export default class extends Evented {
                 return me.railways.get(object.properties.section.replace(/\.\d+$/, ''));
             }
         }
+        for (const {sourceId} of me.realtimeVehicleData.values()) {
+            object = map.queryRenderedFeatures([
+                [point.x - RAILWAY_PICK_RADIUS, point.y - RAILWAY_PICK_RADIUS],
+                [point.x + RAILWAY_PICK_RADIUS, point.y + RAILWAY_PICK_RADIUS]
+            ], {layers: [sourceId]})[0];
+            if (object) {
+                return {
+                    id: object.properties.id,
+                    type: 'realtime-vehicle',
+                    coord: object.geometry.coordinates,
+                    sourceId,
+                    properties: object.properties
+                };
+            }
+        }
         for (const {sourceId} of me.staticRoutes.values()) {
             object = map.queryRenderedFeatures([
                 [point.x - RAILWAY_PICK_RADIUS, point.y - RAILWAY_PICK_RADIUS],
@@ -3802,7 +4481,7 @@ export default class extends Evented {
                 }
             } else if (isRailway(markedObject)) {
                 me.removeRailwayOutline('railways-marked');
-            } else if (isStaticRoute(markedObject)) {
+            } else if (isStaticRoute(markedObject) || isRealtimeVehicle(markedObject)) {
                 me.setStaticRouteState(markedObject, 'hover', false);
             } else {
                 me.removeStationOutline('stations-marked');
@@ -3824,7 +4503,7 @@ export default class extends Evented {
             } else if (isRailway(object)) {
                 me._markedLngLat = lngLat;
                 me.addRailwayOutline(object, 'railways-marked');
-            } else if (isStaticRoute(object)) {
+            } else if (isStaticRoute(object) || isRealtimeVehicle(object)) {
                 me._markedLngLat = lngLat;
                 me.setStaticRouteState(object, 'hover', true);
             } else {
@@ -3905,6 +4584,9 @@ export default class extends Evented {
                 me.removeRailwayOutline('railways-selected');
                 me.fire({type: 'deselection', deselection: trackedObject.id});
             } else if (isStaticRoute(trackedObject)) {
+                me.setStaticRouteState(trackedObject, 'selected', false);
+                me.fire({type: 'deselection', deselection: trackedObject.id});
+            } else if (isRealtimeVehicle(trackedObject)) {
                 me.setStaticRouteState(trackedObject, 'selected', false);
                 me.fire({type: 'deselection', deselection: trackedObject.id});
             } else {
@@ -4027,6 +4709,9 @@ export default class extends Evented {
                 me.addRailwayOutline(object, 'railways-selected');
                 me.fire({type: 'selection', selection: object.id});
             } else if (isStaticRoute(object)) {
+                me.setStaticRouteState(object, 'selected', true);
+                me.fire({type: 'selection', selection: object.id});
+            } else if (isRealtimeVehicle(object)) {
                 me.setStaticRouteState(object, 'selected', true);
                 me.fire({type: 'selection', selection: object.id});
             } else {
@@ -4200,6 +4885,11 @@ export default class extends Evented {
                     shortName && longName ? `<br>${helpers.escapeHTML(longName)}` : '',
                     '</div>'
                 ].join(''));
+            }
+        } else if (isRealtimeVehicle(markedObject)) {
+            popup.setLngLat(markedObject.coord);
+            if (setHTML) {
+                popup.setHTML(me.getRealtimeVehicleDescription(markedObject));
             }
         } else if (isVehicle(markedObject)) {
             const bearing = markedObject === me.trackedObject ? map.getBearing() : undefined;
@@ -4575,8 +5265,10 @@ function normalizeDataSource(source, secrets) {
         atisUrl: updateOdptUrl(source.atisUrl, secrets),
         routeUrl: source.routeUrl,
         portUrl: source.portUrl,
+        serviceAlertUrl: updateOdptUrl(source.serviceAlertUrl, secrets),
         gtfsUrl: updateOdptUrl(source.gtfsUrl, secrets),
         vehiclePositionUrl: updateOdptUrl(source.vehiclePositionUrl, secrets),
+        tripIndexUrl: source.tripIndexUrl,
         color: source.color,
         expiresAt: source.expiresAt
     };
@@ -4734,6 +5426,10 @@ function isStaticRoute(object) {
     return object && object.type === 'static-route';
 }
 
+function isRealtimeVehicle(object) {
+    return object && object.type === 'realtime-vehicle';
+}
+
 function loadPortIcon(map) {
     if (map.hasImage('port-ship')) {
         return Promise.resolve();
@@ -4752,6 +5448,24 @@ function loadPortIcon(map) {
     });
 }
 
+function loadRealtimeVehicleIcon(map) {
+    if (map.hasImage('realtime-vehicle')) {
+        return Promise.resolve();
+    }
+    return new Promise((resolve, reject) => {
+        const image = new Image();
+
+        image.onload = () => {
+            if (!map.hasImage('realtime-vehicle')) {
+                map.addImage('realtime-vehicle', image);
+            }
+            resolve();
+        };
+        image.onerror = reject;
+        image.src = VEHICLE_ICON;
+    });
+}
+
 function isEqualObject(a, b) {
     if (a === b) {
         return true;
@@ -4760,6 +5474,9 @@ function isEqualObject(a, b) {
         return true;
     }
     if (isStaticRoute(a) && isStaticRoute(b) && a.id === b.id && a.sourceId === b.sourceId) {
+        return true;
+    }
+    if (isRealtimeVehicle(a) && isRealtimeVehicle(b) && a.id === b.id && a.sourceId === b.sourceId) {
         return true;
     }
     return false;

@@ -1068,6 +1068,35 @@
 .mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-about .mapboxgl-ctrl-icon {
     background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/circle-info.svg', fill: #333);
 }
+.mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-alerts .mapboxgl-ctrl-icon {
+    background: no-repeat center/21px svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/triangle-exclamation.svg', fill: #333);
+}
+.mini-tokyo-3d .mapboxgl-ctrl button.mapboxgl-ctrl-alerts.active .mapboxgl-ctrl-icon {
+    background-image: svg-load('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/triangle-exclamation.svg', fill: #d97706);
+}
+.mini-tokyo-3d .service-alerts-panel .service-alert {
+    margin: 0 0 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, .25);
+}
+.mini-tokyo-3d .service-alerts-panel .service-alert:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+.mini-tokyo-3d .service-alerts-panel h4 {
+    margin: 0 0 6px;
+    line-height: 1.35;
+}
+.mini-tokyo-3d .service-alerts-panel p {
+    margin: 0 0 6px;
+}
+.mini-tokyo-3d .service-alerts-panel .service-alert-scope {
+    color: #ddd;
+    font-size: 85%;
+}
+.mini-tokyo-3d .service-alerts-panel a {
+    color: #9dd9ff;
+}
 .mini-tokyo-3d .mapboxgl-popup-content {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.7);

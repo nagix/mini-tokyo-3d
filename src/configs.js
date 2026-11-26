@@ -163,6 +163,15 @@ const configs = {
     // feeds that don't specify a valid agency_timezone
     defaultTimezone: 'Asia/Tokyo',
 
+    // Minimum zoom levels for transit modes in profiles that opt into the policy.
+    transitMinZoom: {
+        rail: 0,
+        metro: 0,
+        ferry: 0,
+        tram: 0,
+        bus: 0
+    },
+
     // Default eco mode
     defaultEcoMode: 'normal',
 

@@ -21,6 +21,10 @@ const port = Number(process.argv[2]) || 9966;
 const serveDev = serveStatic('dev');
 const serveAssets = serveStatic('assets');
 const serveData = serveStatic('build/data');
+const hslRealtimeUrls = new Map([
+    ['/api/hsl/service-alerts', 'https://realtime.hsl.fi/realtime/service-alerts/v2/hsl'],
+    ['/api/hsl/vehicle-positions', 'https://realtime.hsl.fi/realtime/vehicle-positions/v2/hsl']
+]);
 
 const files = new Map();
 for (const plugin of plugins) {
@@ -38,8 +42,25 @@ http.createServer((req, res) => {
         res.statusCode = err && err.statusCode ? err.statusCode : 404;
         res.end();
     };
-    const file = files.get(url);
-    if (file) {
+    const realtimeUrl = hslRealtimeUrls.get(url),
+        file = files.get(url);
+
+    if (realtimeUrl) {
+        fetch(realtimeUrl, {
+            headers: {
+                'user-agent': 'Mini Helsinki 3D development server'
+            }
+        }).then(async response => {
+            res.statusCode = response.status;
+            res.setHeader('Content-Type', response.headers.get('content-type') || 'application/octet-stream');
+            res.setHeader('Cache-Control', 'no-store');
+            res.end(Buffer.from(await response.arrayBuffer()));
+        }).catch(error => {
+            console.error(`HSL realtime proxy failed for ${url}.`, error);
+            res.statusCode = 502;
+            res.end();
+        });
+    } else if (file) {
         res.setHeader('Content-Type', file.type);
         fs.createReadStream(file.path).on('error', () => done()).pipe(res);
     } else if (url.startsWith('/assets/')) {

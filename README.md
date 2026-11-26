@@ -67,23 +67,37 @@ If you want to contribute, please start with translating the UI messages in the 
 
 ## Mini Helsinki 3D profile
 
-This fork includes an optional Helsinki profile that renders static HSL route geometry and Digitraffic maritime ports without loading the Tokyo static or realtime datasets.
+This fork includes an optional Helsinki profile that renders static HSL route
+geometry, HSL GTFS-RT service alerts and vehicle positions, and Digitraffic
+maritime ports without loading the Tokyo static or realtime datasets.
 
 The data for this visualization are sourced from HSL (Helsinki Region Transport, https://www.hsl.fi/en/hsl/open-data) and Fintraffic (Finnish national transit data, https://www.fintraffic.fi/en/digitalservices/data-services). Station information and timetables are not yet implemented.
 
 Place the extracted HSL GTFS files in `helsinki/hsl`, then generate the compact
-route and stop dataset:
+route, stop, and realtime trip-matching datasets:
 
 ```bash
 npm run build-helsinki-data
 ```
 
-Set `MT3D_PROFILE=helsinki` in `.env` (and provide `MAPBOX_ACCESS_TOKEN`), then
-start development mode:
+Create or update `.env` in the project root:
+
+```dotenv
+MT3D_PROFILE=helsinki
+MAPBOX_ACCESS_TOKEN=<Mapbox access token>
+```
+
+Then start development mode from the VS Code integrated terminal:
 
 ```bash
 npm run dev
 ```
+
+When the terminal reports that the dev server is running, open
+`http://localhost:9966/` in a browser. To keep the preview inside VS Code, press
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>, run **Simple Browser: Show**,
+and enter that URL. The development server rebuilds the bundle when source
+files change; reload the browser or Simple Browser to see the update.
 
 For a production build, run:
 
@@ -95,9 +109,27 @@ MT3D_PROFILE=helsinki npm run build-pages
 
 On Windows PowerShell, set the profile for the page-build process with
 `$env:MT3D_PROFILE = "helsinki"` before running `npm run build-pages`. The
-generated page and `build/data/hsl-routes.json` must be deployed together. The
-dataset contains route geometry and stop points but intentionally excludes
-`stop_times.txt` and schedules.
+generated page, `build/data/hsl-routes.json`, and
+`build/data/hsl-realtime-index.json.gz` must be deployed together. The route
+dataset contains route geometry and stop points. The compressed trip index
+contains only the composite-key, service-date, shape, and timepoint data needed
+to match HSL GTFS-RT vehicle positions; the original `stop_times.txt` is not
+sent to browsers.
+
+The Helsinki profile polls the documented HSL GTFS-RT v2 service-alert and
+vehicle-position endpoints. Service alerts update every five minutes and appear
+from the warning control; vehicle positions update every five seconds and keep
+the last valid snapshot visible when a feed is temporarily unavailable. The HSL
+feeds do not provide browser CORS headers, so the development server proxies
+`/api/hsl/service-alerts` and `/api/hsl/vehicle-positions`. Deployments must
+provide the same reverse-proxy paths, or set `MT3D_HSL_RT_BASE_URL` when
+generating the page to point at a compatible same-origin proxy.
+
+Transit modes appear progressively: regional rail and metro are shown from
+zoom 7.5-8, ferries from 9.5, trams from 11, and buses from 12. The same
+thresholds apply to realtime vehicles. Metro geometry is offset 20 m below
+ground, port symbols are elevated 50 m, stop names are kept above 3D buildings,
+and realtime vehicle symbols are layered above transit lines.
 
 `npm run build-helsinki-data` also requests
 `/api/port-call/v2/ports/FIHEL` from Digitraffic and writes

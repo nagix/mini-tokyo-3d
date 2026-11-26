@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import readline from 'node:readline';
+import {getStopTransitMode, getTransitMode} from '../src/helpers/helpers-transit.mjs';
 
 const inputDir = path.resolve(process.argv[2] || 'helsinki/hsl');
 const outputFile = path.resolve(process.argv[3] || 'build/data/hsl-routes.json');
@@ -208,6 +209,7 @@ async function main() {
                     shortName: route.shortName,
                     longName: route.longName,
                     routeType: route.type,
+                    routeMode: getTransitMode(route.type),
                     colorToken,
                     color: HSL_TRANSPORTATION_COLORS[colorToken] ||
                         HSL_TRANSPORTATION_COLORS['color-transportation-external-500']
@@ -237,7 +239,8 @@ async function main() {
                 stopCode: row.stop_code,
                 name: row.stop_name,
                 locationType: Number(row.location_type),
-                vehicleType: Number(row.vehicle_type)
+                vehicleType: Number(row.vehicle_type),
+                routeMode: getStopTransitMode(row.vehicle_type)
             }
         });
         stopCount++;
