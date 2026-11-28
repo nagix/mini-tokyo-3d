@@ -52,3 +52,19 @@ export function getTransitMinZoom(routeType, thresholds, stop = false) {
 
     return thresholds && thresholds[mode] !== undefined ? thresholds[mode] : 0;
 }
+
+export function getRouteMinZoom(routeType, thresholds) {
+    const mode = getTransitMode(routeType);
+    const minZoom = thresholds && thresholds[mode] !== undefined ? thresholds[mode] : 0;
+
+    return mode === 'bus' ? Math.max(0, minZoom - 2) : minZoom;
+}
+
+export function getRealtimeVehicleMinZoom(routeType, thresholds) {
+    const mode = getTransitMode(routeType);
+
+    if (mode === 'bus') {
+        return 11.5;
+    }
+    return thresholds && thresholds[mode] !== undefined ? thresholds[mode] : 0;
+}

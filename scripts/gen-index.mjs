@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import fs from 'node:fs';
 import path from 'node:path';
+import {coordEach} from '@turf/meta';
 import {plugins} from './plugins.mjs';
 
 // Generates the entry HTML from the production page (public/index.html).
@@ -124,21 +125,35 @@ if (dataUrl) {
     overrides.push(`options.dataUrl = ${JSON.stringify(dataUrl)};`);
 }
 if (profile === 'helsinki') {
+    const bounds = [Infinity, Infinity, -Infinity, -Infinity];
+    coordEach(JSON.parse(fs.readFileSync('data-raw/map-bounds.geojson', 'utf8')), ([lng, lat]) => {
+        bounds[0] = Math.min(bounds[0], lng);
+        bounds[1] = Math.min(bounds[1], lat);
+        bounds[2] = Math.max(bounds[2], lng);
+        bounds[3] = Math.max(bounds[3], lat);
+    });
+    if (!bounds.every(Number.isFinite) || bounds[0] >= bounds[2] || bounds[1] >= bounds[3]) {
+        throw new Error('gen-index: data-raw/map-bounds.geojson must define a non-empty map area');
+    }
+    overrides.push("options.profile = 'helsinki';");
     overrides.push("options.center = [24.9384, 60.1699];");
     overrides.push('options.zoom = 10.5;');
+    overrides.push('options.minZoom = 10;');
+    overrides.push(`options.maxBounds = ${JSON.stringify([[bounds[0], bounds[1]], [bounds[2], bounds[3]]])};`);
+    overrides.push('options.renderWorldCopies = false;');
     overrides.push('options.pitch = 50;');
     overrides.push("options.lang = 'fi';");
     overrides.push("options.timezone = 'Europe/Helsinki';");
     overrides.push("options.transitMinZoom = {rail: 7.5, metro: 8, ferry: 9.5, tram: 11, bus: 12};");
-    overrides.push("options.appAttribution = '<a href=\"https://github.com/kinotus/mini-helsinki-3d\" target=\"_blank\" rel=\"noopener noreferrer\">Mini Helsinki 3D</a> · <a href=\"https://www.hsl.fi/\" target=\"_blank\" rel=\"noopener noreferrer\">HSL</a> · <a href=\"https://www.digitraffic.fi/\" target=\"_blank\" rel=\"noopener noreferrer\">Digitraffic</a>';");
+    overrides.push("options.appAttribution = '<a href=\"https://github.com/kinotus/mini-helsinki-3d\" target=\"_blank\" rel=\"noopener noreferrer\">Mini Helsinki 3D</a> · <a href=\"https://www.digitraffic.fi/\" target=\"_blank\" rel=\"noopener noreferrer\">Digitraffic</a>';");
     overrides.push("options.dataUrl = '';");
-    overrides.push(`options.dataSources = [{id: 'hsl', routeUrl: 'data/hsl-routes.json', serviceAlertUrl: ${JSON.stringify(`${realtimeBaseUrl}/service-alerts`)}, vehiclePositionUrl: ${JSON.stringify(`${realtimeBaseUrl}/vehicle-positions`)}, tripIndexUrl: 'data/hsl-realtime-index.json.gz'}, {id: 'digitraffic', portUrl: 'data/helsinki-ports.json'}];`);
+    overrides.push(`options.dataSources = [{id: 'hsl', routeUrl: 'data/hsl-routes.json', timetableUrl: 'data/hsl-timetable.json.gz', serviceAlertUrl: ${JSON.stringify(`${realtimeBaseUrl}/service-alerts`)}, vehiclePositionUrl: ${JSON.stringify(`${realtimeBaseUrl}/vehicle-positions`)}, tripIndexUrl: 'data/hsl-realtime-index.json.gz'}, {id: 'digitraffic', portUrl: 'data/helsinki-ports.json'}];`);
     overrides.push('options.clockControl = true;');
     overrides.push('options.clock24Hour = true;');
-    overrides.push('options.searchControl = false;');
+    overrides.push('options.searchControl = true;');
     overrides.push('options.modeControl = false;');
     overrides.push('options.notificationControl = false;');
-    overrides.push('options.configControl = false;');
+    overrides.push('options.configControl = true;');
 }
 html = replaceOnce(html, /([ \t]*)\/\/ overrides\r?\n/, (_match, indent) =>
     overrides.map(line => `${indent}${line}\n`).join(''), 'overrides marker');

@@ -8,7 +8,7 @@ import {PbfWriter} from 'pbf';
 import configs from './configs';
 import {includes, mergeMaps, normalizeLang} from './helpers/helpers';
 import {updateDistances} from './helpers/helpers-geojson';
-import {encode} from './helpers/helpers-gtfs';
+import {encode, getStopBundleKey} from './helpers/helpers-gtfs';
 
 // Bus stop group size at zoom 14 in kilometers
 const BUS_STOP_SIZE = .02;       // 20m
@@ -278,10 +278,12 @@ class StopReader {
             me.stopNameIndex = fields.indexOf('stop_name');
             me.stopLatIndex = fields.indexOf('stop_lat');
             me.stopLonIndex = fields.indexOf('stop_lon');
+            me.stopParentStationIndex = fields.indexOf('parent_station');
         } else {
             me.array.push({
                 id: fields[me.stopIdIndex],
                 name: fields[me.stopNameIndex],
+                parentStation: fields[me.stopParentStationIndex].trim(),
                 coord: [+fields[me.stopLonIndex], +fields[me.stopLatIndex]]
             });
         }
@@ -289,6 +291,30 @@ class StopReader {
 
     get result() {
         return this.array;
+    }
+
+}
+
+class StopAreaReader {
+
+    constructor() {
+        this.lookup = new Map();
+    }
+
+    read(line) {
+        const me = this,
+            fields = csvToArray(line);
+
+        if (me.areaIdIndex === undefined) {
+            me.areaIdIndex = fields.indexOf('area_id');
+            me.stopIdIndex = fields.indexOf('stop_id');
+        } else {
+            me.lookup.set(fields[me.stopIdIndex], fields[me.areaIdIndex]);
+        }
+    }
+
+    get result() {
+        return this.lookup;
     }
 
 }
@@ -449,17 +475,22 @@ const gtfsReaders = {
     'shapes': ShapeReader,
     'stops': StopReader,
     'stop_times': StopTimeReader,
+    'stop_areas': StopAreaReader,
     'translations': TranslationReader,
     'trips': TripReader
 };
 
 const gtfsFiles = Object.keys(gtfsReaders);
 
-function getFeatureCollection(shapes, stops, translations) {
+function getFeatureCollection(shapes, stops, translations, stopAreas) {
     const features = shapes,
         stopGroups = new Map();
 
-    for (const {id, name, coord} of stops) {
+    for (const stop of stops) {
+        const {id, name, coord, parentStation} = stop,
+            areaId = stopAreas && stopAreas.get(id),
+            bundleKey = getStopBundleKey({id, name, parentStation, areaId});
+
         features.push(point(coord, {
             type: 2,
             name: translations ?
@@ -467,10 +498,10 @@ function getFeatureCollection(shapes, stops, translations) {
                 name
         }));
 
-        if (stopGroups.has(name)) {
-            stopGroups.get(name).push(coord);
+        if (stopGroups.has(bundleKey)) {
+            stopGroups.get(bundleKey).push(coord);
         } else {
-            stopGroups.set(name, [coord]);
+            stopGroups.set(bundleKey, [coord]);
         }
     }
 
@@ -697,7 +728,7 @@ function loadGtfs(source, now, lang) {
             services = getServices(results.calendar, date, day),
             serviceExceptions = getServiceExceptions(results.calendar_dates, date),
             translations = results.feed_info && results.feed_info.needTranslation && results.translations,
-            featureCollection = getFeatureCollection(results.shapes, results.stops, translations),
+            featureCollection = getFeatureCollection(results.shapes, results.stops, translations, results.stop_areas),
             result = {
                 agency: agency.name,
                 timezone,

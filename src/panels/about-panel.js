@@ -64,6 +64,35 @@ export default class extends Panel {
         const me = this;
 
         if (me.isOpen()) {
+            const map = me._map;
+
+            if (map.isHelsinkiProfile()) {
+                const updates = Object.entries(map.lastDynamicUpdate)
+                    .map(([key, date]) => `${date} (${key})`)
+                    .filter(Boolean);
+
+                me.setHTML([
+                    map.dict['description'].replace(/<h3>.*<\/h3>/, ''),
+                    '<div class="card-title">Lähteet</div>',
+                    '<div class="card-body">',
+                    '<a href="https://www.hsl.fi/" target="_blank" rel="noopener noreferrer">HSL</a>',
+                    ' · ',
+                    '<a href="https://www.digitraffic.fi/" target="_blank" rel="noopener noreferrer">Digitraffic</a>',
+                    ' · ',
+                    '<a href="https://github.com/kinotus/mini-helsinki-3d" target="_blank" rel="noopener noreferrer">Mini Helsinki 3D</a>',
+                    '</div>',
+                    `<div class="card-title">${map.dict['static-update']}</div>`,
+                    '<div class="card-body">HSL GTFS -lähde</div>',
+                    `<div class="card-title">${map.dict['dynamic-update']}</div>`,
+                    `<div class="card-body">${updates.length ? updates.join('<br>') : 'Ei päivitystietoja'}</div>`,
+                    '<div class="card-title">Lisenssit</div>',
+                    '<div class="card-body">',
+                    '<a href="https://github.com/nagix/mini-tokyo-3d/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">Mini Tokyo 3D - MIT License</a>',
+                    '</div>'
+                ].join(''));
+                return me;
+            }
+
             const {dict, gtfs, lastDynamicUpdate} = me._map,
                 gtfsArray = [...gtfs.values()],
                 creditsOpen = !!me._creditsOpen;

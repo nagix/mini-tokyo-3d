@@ -416,12 +416,414 @@ geometries, the berth area is a visual summary anchored to each port-area
 point, not an official footprint. Port symbols and summaries fade in by
 berth-count tier at zoom levels 10.5, 11.5, 12.5, and 13.5.
 
+### 9. Restore Helsinki station search, configuration controls, and timetable UI
+
+**9.1 and 9.2 COMPLETED. 9.3 timetable data loading is COMPLETED; live
+trip-update reconciliation remains Step 10.**
+
+Enable the original Mini Tokyo 3D interaction surfaces only where they can be
+backed by Helsinki data. Keep all Helsinki data and providers isolated from the
+Tokyo profile, and do not expose a control until its required data and behavior
+are available.
+
+#### 9.1 Add localized Helsinki station and route search
+
+- Extend the generated HSL stop dataset with the stable identifiers, localized
+  names, coordinates, location types, parent-station relationships, route
+  memberships, and accessibility fields needed by the map's station search and
+  selection model.
+- Normalize platform stops into their parent station where one exists, while
+  retaining the individual stop points for map display and route membership.
+  The search index must include only Helsinki-region records from the selected
+  HSL feed; it must never fall back to Tokyo station data.
+- Restore the search control in the Helsinki profile after autocomplete,
+  diacritics, duplicate names, and keyboard/touch selection have been handled.
+  Selecting a result should center or track the corresponding Helsinki station
+  and open its local station details.
+- Add Helsinki route search with a profile-specific route-planning API or a
+  locally derived graph selected in a separate data-provider spike. Keep the
+  Tokyo `searchUrl` disabled in Helsinki mode and do not enable journey results
+  until origin, destination, time, mode filters, walking links, transfers, and
+  localized errors have defined behavior.
+- Update the current URL-selection/share format only when a Helsinki station or
+  route result can be restored reliably on page load.
+
+#### 9.2 Restore configuration controls
+
+- Re-enable the configuration button group in the Helsinki profile only after
+  each panel has Helsinki-specific content and fallback states.
+- Add a layer panel that lists the actually loaded Helsinki layers: HSL route
+  types, stop names, realtime vehicles, service alerts, 3D buildings, and
+  Digitraffic ports. Toggles must affect the matching source, rendering layers,
+  and hit targets together.
+- Restore tracking-mode settings for HSL vehicle and station tracking. Persist
+  supported settings using the existing map configuration mechanism, and hide
+  options that depend on Tokyo railway data.
+- Replace or localize the About panel with Mini Helsinki 3D attribution,
+  HSL/Fintraffic/Digitraffic data-source notices, the static-data timestamp,
+  and links to the Helsinki repository and relevant licenses.
+- Preserve the existing standalone service-alert control; the configuration
+  panel must complement rather than duplicate it.
+
+#### 9.3 Add detailed station information and timetables
+
+- Preprocess a bounded Helsinki schedule dataset from HSL `routes.txt`,
+  `trips.txt`, `stop_times.txt`, `calendar.txt`, `calendar_dates.txt`, and
+  `stops.txt`. Generate compact service-date, trip, stop-sequence, and
+  departure records; do not ship the full extracted GTFS feed.
+- Reuse the trip index introduced for realtime matching where possible, but
+  keep browser payloads profile-configured and separate from the current
+  realtime-position index. Document the expected size, update cadence, and
+  static-feed validity range.
+- Adapt the existing station panel for HSL stop/station records. Show localized
+  station names, served route numbers and modes, facilities when supported by
+  the source, service alerts, and departures in both directions.
+- Expand departure rows into trip and stop-by-stop timetable details. Apply
+  HSL calendars and exception dates in `Europe/Helsinki`, including services
+  that depart after midnight and services that belong to the previous HSL
+  operating day.
+- Define the timetable UI's trip-update boundary while implementing the static
+  schedule, but leave live departure adjustments, skipped stops, and
+  cancellations to Step 10. The static panel must continue to work without
+  trip updates.
+- Keep timetable-based playback disabled until there is enough schedule and
+  shape data to produce deterministic Helsinki vehicle motion; enabling the
+  station panel or timetable display alone must not imply playback is ready.
+
+**Acceptance criteria**
+
+- Helsinki search returns only localized HSL stations and routes, with no
+  Tokyo result or request to the Tokyo route-search service.
+- Selecting a search result focuses the correct station and opens station
+  details; duplicate platform/stop names resolve deterministically.
+- Route search either returns valid Helsinki journeys through the selected
+  provider or remains explicitly unavailable rather than producing partial or
+  misleading results.
+- Helsinki layer selection, tracking settings, and About controls are visible
+  and operate on the data layers and metadata exposed by the profile.
+- A selected station shows its routes, service alerts, and schedule-derived
+  departures, including after-midnight services and calendar exceptions.
+- Timetable details agree with the HSL static feed and retain stable identifiers
+  that can be reconciled with matching GTFS-RT trip updates in Step 10.
+- Helsinki mode sends stop, route, schedule, and journey requests only to
+  approved Helsinki providers; the original Tokyo profile retains its existing
+  controls and data sources.
+
 Use Helsinki City sources as the primary geospatial references:
 
 - https://www.hel.fi/fi/paatoksenteko-ja-hallinto/tietoa-helsingista/kartat-ja-paikkatieto/paikkatiedot-tehokayttoon/avoimet-paikkatiedot
 - https://kartta.hel.fi/paikkatietohakemisto/pth/
 - https://hsldevcom.github.io/gtfs_rt/
 
+### 10. Add world-relative rain and snow particles, DEMO IMPLEMENTED
+
+Implement precipitation as a viewport particle effect, not as a map overlay.
+Keep the first version self-contained and deterministic so it can be validated
+visually without depending on a weather service. Put the implementation in a
+separate `plugins/mt3d-plugin-helsinki-precipitation` package and load it through the
+existing `MT3D_PLUGIN_PRECIPITATION` integration point.
+
+#### 10.1 Implement the plugin shell
+
+- Export a factory returning an object implementing `PluginInterface`.
+- Give the plugin a stable `id`, localized name, and layer-panel icon.
+- Limit the default visibility to realtime clock mode and ground view mode.
+- Add the particle renderer in `onEnabled()` and remove its resources in
+  `onDisabled()` and `onRemove()`.
+- Hide, resume, and dispose particles through `onVisibilityChanged()` and the
+  normal plugin lifecycle.
+- Use Three.js classes exposed by the host application's `mt3d.THREE` export
+  so the plugin does not bundle or instantiate a second Three.js version.
+- Keep `MT3D_PLUGIN_PRECIPITATION` unset by default. Helsinki deployments can
+  explicitly enable the plugin after it has passed visual and performance
+  checks.
+
+#### 10.2 Add a deterministic demo provider
+
+- Introduce a small provider interface that returns precipitation type,
+  density, fall speed, and wind without requiring network access.
+- Use fixed demo presets for light rain, heavy rain, and snow.
+- Keep the demo provider independent from map sources and layer rendering.
+- Make the provider replaceable so a later FMI-backed provider can return the
+  same values without changing the particle renderer.
+- Do not add weather endpoints, API keys, radar tiles, raster layers, or map
+  overlays in the first version.
+
+#### 10.3 Render particles in world-relative space
+
+- Render rain as thin streaks with faster downward motion.
+- Render snow as larger soft particles with slower downward motion and subtle
+  horizontal drift.
+- Store particle positions and velocities in the map's world coordinate
+  system. Gravity must always act along the world's vertical axis, independent
+  of camera bearing and pitch.
+- Derive the visible simulation volume from the current camera for culling and
+  recycling only. The volume may follow the camera, but particle coordinates
+  and motion must not inherit the camera orientation.
+- Preserve surviving particles at their existing world coordinates when the
+  camera changes. Do not shift particles with the map center or transform the
+  root object by the camera matrix.
+- Bound the volume with the current frustum and a nearby depth range, using the
+  host's scaled camera matrices. Immediately fill uncovered regions throughout
+  the current view after pan, zoom, bearing, pitch, or viewport-size changes.
+- Recycle particles after they leave the active world-space volume rather than
+  reallocating geometry during animation. During steady animation, intersect
+  the reverse world-space fall path with the volume and wrap particles to its
+  upstream boundary. This boundary is not necessarily the screen's top edge.
+- Orient rain streak endpoints along the world-space fall velocity. Use
+  billboarded sprites for snow, with no camera-relative gravity component.
+- In a straight-down view (Mapbox pitch 0), gravity remains world-z rather than
+  becoming a sideways streak. Perspective may produce radial screen motion
+  away from the view center; wind adds horizontal world-space drift.
+- Add top-down and camera-rotation visual tests to verify this behavior.
+- Use one batched geometry/draw call per effect where practical.
+- Scale particle count for the device pixel ratio and viewport size, with
+  conservative mobile and accessibility limits.
+- Tune a stylized world-space fall rate so particles visibly move even at
+  regional zoom, where one real-world meter occupies very few screen pixels.
+- Suppress or dim the effect in underground mode and during map states where
+  the plugin framework marks it hidden.
+- React to the host map's `light` event so rain and snow remain visible in
+  daylight, twilight, and night without creating a flat full-screen tint.
+
+#### 10.4 Expose development controls
+
+- Support URL or development-only configuration for precipitation type and
+  preset, with sensible defaults for ordinary deployments.
+- Allow light rain, heavy rain, and snow to be selected without rebuilding the
+  plugin.
+- Avoid exposing unfinished weather controls in the Helsinki production UI.
+  The production control can remain the existing layer-panel toggle.
+
+#### 10.5 Verify and prepare for live data
+
+- Test enable, disable, visibility changes, plugin removal, repeated map
+  initialization, and high-DPI resizing.
+- Measure frame time and memory use during camera movement and zoom changes.
+- Verify rain and snow velocity remains constant in world space while camera
+  bearing and pitch change, especially at the top-down view limit.
+- Verify particles continue moving visibly at regional zoom levels after
+  accounting for perspective depth and Mercator scale, and that changing only
+  pitch does not translate the particle field.
+- Regression-test visible density and coverage in every viewport quadrant
+  after pan, zoom, bearing, and pitch changes, as well as a minute of continuous
+  snowfall. Measure projected movement rather than asserting speed constants.
+- Use elapsed animation time even at low frame rates; cap only long pauses,
+  rather than silently slowing the effect on every frame exceeding 50 ms.
+- Verify that no precipitation tiles, map sources, or map layers are added.
+- Confirm that the original Tokyo profile remains unchanged when the plugin
+  variable is unset.
+- Only after the static effect is stable, evaluate FMI open radar or forecast
+  data as a sampled density/type provider. Radar values may influence particle
+  parameters but must never be rendered as a precipitation overlay.
+
+**Acceptance criteria**
+
+- Rain or snow is visible as animated particles in the 3D viewport.
+- The simulation is world-relative: gravity follows the world's vertical axis,
+  while only particle-density/culling volume follows the camera.
+- Looking straight down does not make snow or rain fall sideways. Wind may move
+  particles horizontally, but gravity does not rotate with the camera.
+- The plugin makes no network requests and uses no external weather source in
+  demo mode.
+- The map has no additional raster, vector, image, or precipitation overlay
+  layer from this plugin.
+- Enabling, disabling, hiding, removing, and recreating the plugin releases
+  animation and GPU resources without errors or visible duplication.
+- Particle rendering stays within the agreed frame-time and memory budget on
+  desktop and mobile test devices.
+
+**Camera-movement correction**
+
+The old screen-top respawn strip depleted the viewport after camera movement.
+Ground-center shifting also moved particles that should have stayed in world
+space. Both mechanisms have been replaced by bounded-frustum replenishment and
+world-velocity upstream recycling. Nine automated checks now cover camera
+changes, steady snowfall, surviving world coordinates, elapsed-time updates,
+resize/removal/recreation, and the existing demo/state behavior. Device-specific
+performance and accessibility acceptance still require testing.
+
+
+## HSL tariff-zone overlay feature plan
+
+**Status: planned; initial release covers A-D.** Add E when authoritative HSL
+geometry becomes available, using the same source and toggle.
+
+### Scope and source data
+
+- Add one Helsinki-only layer-panel entry, **HSL-maksuvyohykkeet** (display
+  with Finnish diacritics in the UI), off by default. One toggle controls all
+  zone boundaries and letters together; do not add separate A-E toggles.
+- Use the supplied
+  `data-raw/xn--HSL_n_maksuvyhykkeet-gbc.geojson`, rather than downloading data
+  at runtime. Inspection found a 193,803-byte FeatureCollection containing
+  `Zone` values A, B, C, and D: three Polygons and one MultiPolygon with two
+  components. The CRS is CRS84, with WGS84 longitude/latitude coordinates.
+- The supplied file contains no E geometry. The agreed first release renders
+  A-D only; do not invent E, infer it from a bounding box, or display an
+  unlocated E label. Keep processing compatible with an authoritative E
+  feature in a future replacement dataset.
+- Record the dataset URL and the verified license in the generated metadata
+  and relevant source notices. The source page is
+  [HSL tariff zones](https://public-transport-hslhrt.opendata.arcgis.com/datasets/hsln-maksuvy%C3%B6hykkeet/explore).
+  Confirm the license and dataset currency before deployment. Map
+  attribution is handled separately in
+  [HSL data attribution in the map](#hsl-data-attribution-in-the-map).
+
+### 1. Generate a small display asset
+
+- Add `scripts/build-helsinki-zones.mjs` and a `build-helsinki-zones` npm
+  command; include it in `build-helsinki-data`.
+- Read the local file, validate Polygon/MultiPolygon geometry, closed rings,
+  finite longitude/latitude coordinates, and unique uppercase zone IDs A-E.
+  Reject malformed input explicitly and report the zones actually present.
+  Report missing E as an expected limitation of this initial source.
+- Preserve boundaries and holes without geometry simplification initially;
+  remove unused ArcGIS attributes and the legacy CRS member from the output.
+- One label per polygon part: every Polygon, and every component of a
+  MultiPolygon, gets its own label. With the current data this gives five
+  labels: A, B, C, and two D labels (one per D part). All labels of a zone
+  show the same letter.
+- Compute initial label anchors at build time, not in the browser. Use an
+  interior visual-center algorithm such as Mapbox polylabel on each part,
+  respecting holes. A simple centroid can fall outside a crescent-shaped
+  zone or inside a hole. Prefer the established polylabel package over a
+  custom algorithm; add the dependency only if existing helpers cannot
+  provide interior placement. Retain WGS84 output coordinates.
+
+### 1b. Editable label-position file
+
+- Keep label positions in a version-controlled, hand-editable GeoJSON file,
+  `data-raw/hsl-zone-labels.geojson`: a FeatureCollection of Point features
+  with properties `id` (stable, e.g. `A-1`, `D-1`, `D-2`), `zone`, `part`
+  (component index), and `source` (`computed` or `manual`). Users can open it
+  in QGIS, geojson.io, or a text editor and move points.
+- Assign part numbers deterministically: order a zone's components by area,
+  largest first, so `D-1` is the main part and `D-2` the smaller part.
+  Write the file with stable formatting (sorted by `id`, fixed coordinate
+  precision, one feature per line or pretty-printed) for readable diffs.
+- Script behavior:
+  - If the file does not exist, create it from computed anchors with
+    `source: computed`.
+  - If it exists, never overwrite existing points. Keep every edited
+    position as-is, add computed points only for new zone parts, and report
+    stale entries whose zone/part no longer exists (fail rather than drop
+    them silently).
+  - Provide an explicit `--reset-labels` flag (optionally for one `id`) to
+    regenerate computed positions; never reset implicitly.
+  - Users moving a point may set `source: manual`; the script treats both
+    values the same, but `manual` documents intentional edits.
+- Validate the edited file: valid GeoJSON Points, finite WGS84 coordinates,
+  unique IDs, known zones/parts. Warn (do not fail) when a point lies outside
+  its own zone part, since manual placement is intentional but likely a
+  mistake.
+- Generate `build/data/hsl-zones.json` as one GeoJSON FeatureCollection
+  containing the boundary features (one per zone) and the label points
+  copied from the editable file, with `zone` and `featureType`
+  (`zone-boundary` or `zone-label`). The browser never computes anchors.
+- Document the edit workflow in the Helsinki build instructions: edit
+  `data-raw/hsl-zone-labels.geojson`, rerun `npm run build-helsinki-zones`,
+  and reload the map.
+
+### 2. Integrate with the Helsinki source lifecycle
+
+- In `scripts/gen-index.mjs`, add `zoneUrl: 'data/hsl-zones.json'` to the
+  Helsinki HSL source. Preserve `zoneUrl` in `normalizeDataSource` in
+  `src/map.js`; leave Tokyo configuration unchanged.
+- Add zone-source loading and cleanup alongside the static route/port
+  lifecycle, including initialization and data-source addition/removal.
+  Register one Mapbox GeoJSON source with two rendering layers: boundaries
+  and labels. No realtime polling, popup, picking, or filled polygon is needed.
+- Initialize the `zones` visibility category explicitly to `none`; the current
+  visibility getter defaults unknown categories to `visible`.
+- Extend `getHelsinkiLayerVisibility`/`setHelsinkiLayerVisibility` integration
+  and the Helsinki category list in `src/panels/layer-panel.js`. Apply the
+  current toggle state when asynchronous loading completes, so an early
+  toggle is not overwritten.
+- Reuse existing JSON loading and explicit console/UI error reporting.
+  Failed loads must not leave partial sources/layers or look successful.
+  Removal and recreation must not duplicate layers or reset the user's
+  in-session toggle choice. Do not introduce new cross-session persistence.
+
+### 3. Render boundaries and zone letters
+
+- Boundaries: an unfilled Mapbox `line` layer filtered to boundary features,
+  dark grey `#4a4a4a`, approximately 1.5 pixels wide, with full opacity.
+  Show all available zone outlines while enabled, including at zoom 14+.
+- Labels: a `symbol` layer filtered to label features; `text-field` reads
+  `zone`, using the existing bold font stack, a centered anchor, approximately
+  32-pixel letters, dark grey text, and a 2-pixel white text halo.
+- Keep letters upright and readable in pitched views using viewport-aligned
+  text. Use overlap/placement settings that preserve every label point
+  (including both D labels) without displacing its geographic anchor.
+- Use a zoom-driven `text-opacity` expression: fully visible through zoom 13,
+  linearly fading from 13 to 14, and zero at zoom 14 and higher. This interprets
+  "closer to the ground" as closer zoom, not camera pitch or physical altitude.
+  Do not fade boundaries or change the toggle state as labels fade.
+- Extend `updateVisualizationLayerOrder` so zone lines are below transit
+  overlays and zone letters are above boundaries/buildings but below
+  realtime vehicles and stop labels. Preserve this order when other sources
+  finish loading; do not rely only on initial insertion order.
+
+### 4. Verification and documentation
+
+- Add focused Node tests for preprocessing: the supplied data produces A-D
+  boundaries and exactly five labels, computed anchors inside their
+  corresponding parts, and two labels (`D-1`, `D-2`) for multipart D. Cover
+  holes, malformed coordinates, duplicate/unsupported zone IDs, and accepting
+  a future valid E feature.
+- Test the editable label file: first run creates it; a rerun preserves a
+  manually moved point byte-for-byte in the output; a new part is added
+  without touching existing points; stale entries fail; `--reset-labels`
+  restores computed positions; a point outside its part produces a warning.
+- Test default-off visibility, toggling both render layers together, toggling
+  before loading completes, source cleanup/recreation, and load failures.
+- Evaluate the actual opacity expression at zoom 13, 13.5, 14, and above:
+  expected values are 1, 0.5, 0, and 0. Confirm boundaries remain visible.
+- Visually check A-D at regional zoom, the white rims against light/dark
+  backgrounds, both D anchors, pitched views, and zoom 13-14 transitions.
+  Move one label in the editable file, rebuild, and confirm the new position.
+  Confirm existing route/stop/vehicle selection remains unaffected.
+- Run the targeted zone tests, ESLint on changed implementation files, the
+  Helsinki data build, and the application bundle build. Verify development
+  and deployment both serve the generated asset. Smoke-test Tokyo mode for
+  no new zone requests or UI entries.
+- Update the directly related Helsinki build instructions, layer-control
+  documentation, and About/source attribution during implementation.
+
+**Acceptance criteria**
+
+- One Helsinki tariff-zone toggle is initially off and controls every boundary
+  and label together.
+- Enabled A-D boundaries are dark grey and have no polygon fill; each zone
+  part has one uppercase, white-rimmed letter (five with current data,
+  including two D labels).
+- Label positions come from `data-raw/hsl-zone-labels.geojson`; manual edits
+  survive rebuilds and are only reset with an explicit flag.
+- Labels fade smoothly to complete invisibility by zoom 14 and remain hidden
+  at closer zooms; enabled boundaries do not disappear.
+- Missing E is documented, not fabricated; adding valid authoritative E
+  geometry requires no additional toggle or zone-specific rendering code.
+- Loading errors are visible, lifecycle operations are clean, and existing
+  Helsinki/Tokyo behavior is preserved.
+
+## HSL data attribution in the map
+
+**Status: implemented.** The Helsinki profile adds HSL data attribution to the Mapbox map attribution
+field, i.e. the map's `customAttribution` option, which Mapbox renders in its
+attribution control (the "ⓘ"/attribution text in the map corner). This is
+independent of the tariff-zone feature.
+
+- Use the HSL wording required by the verified license (HSL open data is
+  generally CC BY 4.0, e.g. "© Helsingin seudun liikenne HSL, CC BY 4.0").
+  Link to the license and HSL's open-data page.
+- The HSL credit is independent of `appAttribution` and `configControl`.
+  When replacing the static HSL feed, update the delivery date in `src/map.js`
+  from the new GTFS `feed_info.txt` (`feed_version`).
+- Keep the attribution Helsinki-only; Tokyo attribution stays unchanged.
+- Verify the credit appears in the Mapbox attribution field on desktop and
+  in the compact (mobile) attribution control, alongside the existing
+  Mapbox/OpenStreetMap credits, and that links open in a new tab.
 
 ## Verification strategy
 
@@ -450,6 +852,9 @@ For each phase, run the smallest relevant checks and retain the results:
 7. After stops, add the compact trip index and implement service alerts first.
 8. Implement HSL vehicle positions with composite trip-key matching after alert
    lifecycle and UI behavior are stable.
-9. Improve transit elevation, layer ordering, and route-type zoom visibility.
+9. Restore Helsinki station/route search, configuration controls, detailed
+   station information, and timetable panels.
 10. Add trip updates and other realtime maritime sources only after the first
    two HSL feeds are verified.
+11. Build the static demo particle plugin, verify lifecycle and rendering
+    performance, and only then investigate an optional FMI-backed provider.

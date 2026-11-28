@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import readline from 'node:readline';
+import {getStopBundleKey, getStopMunicipality} from '../src/helpers/helpers-gtfs.js';
 import {getStopTransitMode, getTransitMode} from '../src/helpers/helpers-transit.mjs';
 
 const inputDir = path.resolve(process.argv[2] || 'helsinki/hsl');
@@ -84,7 +85,7 @@ async function readRows(fileName, onRow) {
         const values = parseCsvLine(line);
 
         if (!headers) {
-            headers = values;
+            headers = values.map(header => header.replace(/^\uFEFF/, '').trim());
             continue;
         }
         if (!line) {
@@ -107,7 +108,19 @@ function requireInput(fileName) {
     }
 }
 
-for (const file of ['routes.txt', 'trips.txt', 'shapes.txt', 'stops.txt']) {
+function normalizeStopBundleName(name) {
+    return String(name || '').trim().replace(/\s*\([Mm]\)\s*$/, '').trim();
+}
+
+for (const file of [
+    'routes.txt',
+    'trips.txt',
+    'shapes.txt',
+    'stops.txt',
+    'stop_times.txt',
+    'stop_areas.txt',
+    'translations.txt'
+]) {
     requireInput(file);
 }
 
@@ -115,8 +128,14 @@ async function main() {
     const routes = new Map();
     const shapeRoutes = new Map();
     const shapeCoordinates = new Map();
+    const stops = new Map();
+    const stopAreas = new Map();
+    const tripRoutes = new Map();
+    const stopRoutes = new Map();
+    const stopNamesSv = new Map();
     let stopCount = 0;
     let duplicateRelations = 0;
+    let tripRouteMatchCount = 0;
 
     await readRows('routes.txt', row => {
         routes.set(row.route_id, {
@@ -129,6 +148,7 @@ async function main() {
     });
 
     await readRows('trips.txt', row => {
+        tripRoutes.set(row.trip_id, row.route_id);
         if (!row.shape_id || !row.route_id) {
             return;
         }
@@ -143,6 +163,37 @@ async function main() {
         } else {
             routeIds.add(row.route_id);
         }
+    });
+
+    await readRows('translations.txt', row => {
+        if (row.table_name === 'stops' &&
+            row.field_name === 'stop_name' &&
+            row.language === 'sv') {
+            stopNamesSv.set(row.field_value, row.translation);
+        }
+    });
+
+    await readRows('stop_areas.txt', row => {
+        if (!row.area_id || !row.stop_id) {
+            return;
+        }
+        if (!stopAreas.has(row.area_id)) {
+            stopAreas.set(row.area_id, new Set());
+        }
+        stopAreas.get(row.area_id).add(row.stop_id);
+    });
+
+    await readRows('stop_times.txt', row => {
+        const routeId = tripRoutes.get(row.trip_id);
+
+        if (!routeId || !row.stop_id) {
+            return;
+        }
+        tripRouteMatchCount++;
+        if (!stopRoutes.has(row.stop_id)) {
+            stopRoutes.set(row.stop_id, new Set());
+        }
+        stopRoutes.get(row.stop_id).add(routeId);
     });
 
     await readRows('shapes.txt', (row, rowNumber) => {
@@ -226,25 +277,156 @@ async function main() {
             longitude < -180 || longitude > 180 || latitude < -90 || latitude > 90) {
             throw new Error(`Invalid coordinate in stops.txt at line ${rowNumber}`);
         }
+        stops.set(row.stop_id, {
+            id: row.stop_id,
+            code: row.stop_code,
+            platformCode: (row.platform_code || '').trim(),
+            name: row.stop_name,
+            nameSv: stopNamesSv.get(row.stop_name) || row.stop_name,
+            coord: [longitude, latitude],
+            locationType: Number(row.location_type),
+            vehicleType: Number(row.vehicle_type),
+            parentStation: (row.parent_station || '').trim(),
+            areaId: null,
+            routeIds: new Set(stopRoutes.get(row.stop_id) || [])
+        });
+    });
+
+    for (const [areaId, stopIds] of stopAreas) {
+        for (const stopId of stopIds) {
+            const stop = stops.get(stopId);
+
+            if (stop) {
+                stop.areaId = areaId;
+            }
+        }
+    }
+
+    for (const [areaId, stopIds] of stopAreas) {
+        const areaStops = Array.from(stopIds)
+            .map(stopId => stops.get(stopId))
+            .filter(Boolean);
+
+        if (!areaStops.length) {
+            continue;
+        }
+        const routeIds = new Set();
+
+        for (const stop of areaStops) {
+            for (const routeId of stop.routeIds) {
+                routeIds.add(routeId);
+            }
+        }
+        for (const stop of areaStops) {
+            stop.routeIds = new Set(routeIds);
+        }
+    }
+
+    const stationLookup = new Map();
+
+    for (const stop of stops.values()) {
+        const routeMode = getStopTransitMode(stop.vehicleType);
+        const bundleName = normalizeStopBundleName(stop.name);
+        const stationId = `bundle:${getStopBundleKey({
+            id: stop.id,
+            name: bundleName,
+            routeMode,
+            parentStation: stop.parentStation,
+            areaId: stop.areaId
+        })}`;
+
+        if (!stationLookup.has(stationId)) {
+            const municipality = getStopMunicipality(stop.id, stop.code);
+            stationLookup.set(stationId, {
+                id: stationId,
+                name: bundleName,
+                nameSv: normalizeStopBundleName(stop.nameSv),
+                routeMode,
+                municipality,
+                stopIds: [],
+                routeIds: new Set(),
+                coords: []
+            });
+        }
+        const station = stationLookup.get(stationId);
+
+        station.stopIds.push(stop.id);
+        station.coords.push(stop.coord);
+        for (const routeId of stop.routeIds) {
+            station.routeIds.add(routeId);
+        }
+    }
+
+    const stations = Array.from(stationLookup.values()).map(station => {
+        const longitude = station.coords.reduce((sum, coord) => sum + coord[0], 0) /
+            station.coords.length;
+        const latitude = station.coords.reduce((sum, coord) => sum + coord[1], 0) /
+            station.coords.length;
+
+        return {
+            id: station.id,
+            name: station.name,
+            nameSv: station.nameSv,
+            coord: [longitude, latitude],
+            routeMode: station.routeMode,
+            municipality: station.municipality,
+            stopIds: station.stopIds,
+            routeIds: Array.from(station.routeIds).sort()
+        };
+    });
+
+    for (const station of stations) {
         features.push({
             type: 'Feature',
             geometry: {
                 type: 'Point',
-                coordinates: [longitude, latitude]
+                coordinates: station.coord
             },
             properties: {
-                id: `stop.${row.stop_id}`,
+                id: `bundle.${station.id}`,
+                featureType: 'bundle',
+                bundleId: station.id,
+                name: station.name,
+                nameSv: station.nameSv,
+                routeMode: station.routeMode,
+                stopIds: station.stopIds,
+                routeIds: station.routeIds
+            }
+        });
+    }
+
+    for (const stop of stops.values()) {
+        const routeMode = getStopTransitMode(stop.vehicleType);
+        const stationId = `bundle:${getStopBundleKey({
+            id: stop.id,
+            name: normalizeStopBundleName(stop.name),
+            routeMode,
+            parentStation: stop.parentStation,
+            areaId: stop.areaId
+        })}`;
+        features.push({
+            type: 'Feature',
+            geometry: {
+                type: 'Point',
+                coordinates: stop.coord
+            },
+            properties: {
+                id: `stop.${stop.id}`,
                 featureType: 'stop',
-                stopId: row.stop_id,
-                stopCode: row.stop_code,
-                name: row.stop_name,
-                locationType: Number(row.location_type),
-                vehicleType: Number(row.vehicle_type),
-                routeMode: getStopTransitMode(row.vehicle_type)
+                stopId: stop.id,
+                stationId,
+                stopCode: stop.code,
+                platformCode: stop.platformCode,
+                name: stop.name,
+                nameSv: stop.nameSv,
+                locationType: stop.locationType,
+                vehicleType: stop.vehicleType,
+                routeIds: Array.from(stop.routeIds).sort(),
+                routeMode: getStopTransitMode(stop.vehicleType)
             }
         });
         stopCount++;
-    });
+    }
 
     if (missingRoutes.size || missingShapes.size || shortShapes.size) {
         throw new Error([
@@ -257,7 +439,8 @@ async function main() {
 
     const featureCollection = {
         type: 'FeatureCollection',
-        features
+        features,
+        stations
     };
 
     fs.mkdirSync(path.dirname(outputFile), {recursive: true});
@@ -267,6 +450,8 @@ async function main() {
     console.log(`Routes: ${routes.size}`);
     console.log(`Route/shape features: ${features.filter(feature => feature.geometry.type === 'LineString').length}`);
     console.log(`Stops: ${stopCount}`);
+    console.log(`Search stations: ${stations.length}`);
+    console.log(`Trip/stop matches: ${tripRouteMatchCount}`);
     console.log(`Unique shapes: ${shapeCoordinates.size}`);
     console.log(`Duplicate trip relationships ignored: ${duplicateRelations}`);
 }

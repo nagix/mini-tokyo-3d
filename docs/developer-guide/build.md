@@ -66,6 +66,15 @@ The following optional environment variables are also available.
 - `MT3D_PLUGIN_<NAME>`: The path to a built [plugin](../user-guide/plugins.md) file to load on the page. `<NAME>` is one of `PRECIPITATION`, `FIREWORKS`, `LIVECAM`, `PLATEAU` or `GTFS`. Build each plugin in its own repository and point the variable at the resulting file.
 - `MT3D_DATA_URL`: The URL the map loads its data from. If it is not set, the map loads the remote data; to test data generated locally instead, run `npm run build-data` first, then set `MT3D_DATA_URL` to `data`. The dev server serves the generated `build/data` directory at the `data` path, and the page loads it from there.
 
+The Helsinki demo precipitation plugin is included in this repository. Run
+`npm run build-helsinki-precipitation`, then point
+`MT3D_PLUGIN_PRECIPITATION` at
+`plugins/mt3d-plugin-helsinki-precipitation/dist/mt3d-plugin-helsinki-precipitation.js`.
+It renders world-relative rain or snow particles, replenishing the current
+viewport as the camera moves, without requesting weather data.
+The development URL parameters `precipitation=rain|snow` and
+`precipitation-preset=light|heavy` select a demo preset.
+
 ```bash
 MAPBOX_ACCESS_TOKEN=<Mapbox access token> \
 MT3D_PLUGIN_PRECIPITATION=../mt3d-plugin-precipitation/dist/mt3d-plugin-precipitation.js \

@@ -33,18 +33,19 @@ export default class extends Panel {
     addTo(map) {
         const me = this,
             dict = map.dict,
-            trackingMode = map.getTrackingMode();
+            trackingMode = map.getTrackingMode(),
+            modes = map.isHelsinkiProfile() ? ['position'] : trackingModes;
 
         super.addTo(map)
             .setTitle(dict['tracking-modes'])
-            .setHTML(trackingModes.map(mode => [
+            .setHTML(modes.map(mode => [
                 `<div id="${mode}-tracking-mode" class="tracking-mode-row">`,
                 '<div class="tracking-mode-icon"></div>',
                 `<div>${dict[mode]}</div>`,
                 '</div>'
             ].join('')).join(''));
 
-        for (const mode of trackingModes) {
+        for (const mode of modes) {
             const element = me._container.querySelector(`#${mode}-tracking-mode .tracking-mode-icon`);
 
             if (mode === trackingMode || (mode === 'topback' && trackingMode === 'heading')) {

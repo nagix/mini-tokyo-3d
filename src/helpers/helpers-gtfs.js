@@ -68,3 +68,75 @@ export function decode(pbf) {
         if (tag === 6) obj.timezone = pbf.readString();
     }, {stops: [], routes: [], trips: []});
 }
+
+export function getStopBundleKey(stop) {
+    const name = stop.name,
+        areaId = stop.areaId && stop.areaId.trim(),
+        parentStation = stop.parentStation && stop.parentStation.trim(),
+        id = stop.id,
+        routeMode = stop.routeMode;
+    const scope = routeMode ? `mode:${routeMode}:` : '';
+
+    if (areaId) {
+        return `${scope}${name}\u0000area:${areaId}`;
+    }
+    if (parentStation && parentStation !== '0') {
+        return `${scope}${name}\u0000parent:${parentStation}`;
+    }
+    return `${scope}${name}\u0000stop:${id}`;
+}
+
+export function getStopMunicipality(stopId, stopCode) {
+    const code = String(stopCode || '').trim();
+    const codeMunicipality = [
+        [/^Ke/i, {fi: 'Kerava', sv: 'Kervo'}],
+        [/^Ki/i, {fi: 'Kirkkonummi', sv: 'Kyrkslätt'}],
+        [/^Ka/i, {fi: 'Kauniainen', sv: 'Grankulla'}],
+        [/^V/i, {fi: 'Vantaa', sv: 'Vanda'}],
+        [/^E/i, {fi: 'Espoo', sv: 'Esbo'}],
+        [/^H/i, {fi: 'Helsinki', sv: 'Helsingfors'}],
+        [/^Tu/i, {fi: 'Tuusula', sv: 'Tusby'}],
+        [/^Nu/i, {fi: 'Nurmijärvi', sv: 'Nurmijärvi'}],
+        [/^Si/i, {fi: 'Siuntio', sv: 'Sjundeå'}]
+    ];
+    for (const [pattern, municipality] of codeMunicipality) {
+        if (pattern.test(code)) {
+            return municipality;
+        }
+    }
+
+    const id = String(stopId || '');
+    if (!/^\d{7}$/.test(id)) {
+        return undefined;
+    }
+
+    const prefix = Number(id.substring(0, 2));
+    if (prefix >= 10 && prefix <= 19) {
+        return {fi: 'Helsinki', sv: 'Helsingfors'};
+    }
+    if (prefix >= 20 && prefix <= 29) {
+        return {fi: 'Espoo', sv: 'Esbo'};
+    }
+    if (prefix >= 30 && prefix <= 39) {
+        return {fi: 'Kauniainen', sv: 'Grankulla'};
+    }
+    if (prefix >= 40 && prefix <= 49) {
+        return {fi: 'Vantaa', sv: 'Vanda'};
+    }
+    if (prefix >= 50 && prefix <= 59) {
+        return {fi: 'Kerava', sv: 'Kervo'};
+    }
+    if (prefix >= 60 && prefix <= 69) {
+        return {fi: 'Kirkkonummi', sv: 'Kyrkslätt'};
+    }
+    if (prefix >= 70 && prefix <= 79) {
+        return {fi: 'Tuusula', sv: 'Tusby'};
+    }
+    if (prefix >= 80 && prefix <= 89) {
+        return {fi: 'Nurmijärvi', sv: 'Nurmijärvi'};
+    }
+    if (prefix >= 90 && prefix <= 99) {
+        return {fi: 'Siuntio', sv: 'Sjundeå'};
+    }
+    return undefined;
+}

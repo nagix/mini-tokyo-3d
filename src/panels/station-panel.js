@@ -2,12 +2,54 @@ import AnimatedPopup from 'mapbox-gl-animated-popup';
 import Swiper from 'swiper';
 import {Pagination} from 'swiper/modules';
 import configs from '../configs';
-import {createElement, getTimeOffset, getTimeString, includes, loadJSON} from '../helpers/helpers';
+import {createElement, escapeHTML, getTimeOffset, getTimeString, includes, loadJSON} from '../helpers/helpers';
 import {emptyFeatureCollection, featureFilter} from '../helpers/helpers-geojson';
 import {getBounds, setLayerProps} from '../helpers/helpers-mapbox';
+import {getHslDepartures} from '../helpers/helpers-hsl-timetable.mjs';
 import Panel from './panel';
 
 const MODE_CLASSES = ['station-departure', 'station-to', 'station-from', 'station-exits', 'station-searching', 'station-routes', 'station-noroute'];
+let hslTimetablePromise;
+
+function getReittiopasStopUrl(stopId) {
+    return `https://reittiopas.hsl.fi/pysakit/${encodeURIComponent(`HSL:${stopId}`)}`;
+}
+
+function getHslStopCode(map, stopId) {
+    for (const {stopFeatures} of map.staticRoutes ? map.staticRoutes.values() : []) {
+        const feature = stopFeatures && stopFeatures.get(stopId);
+
+        if (feature) {
+            return feature.properties.stopCode;
+        }
+    }
+}
+
+function getReittiopasLinksHTML(map, stations) {
+    const stopIds = Array.from(new Set(
+        [].concat(...stations.map(station => station.stopIds || []))
+    ));
+
+    if (!stopIds.length) {
+        return '';
+    }
+    const link = (stopId, label) => [
+        `<a href="${escapeHTML(getReittiopasStopUrl(stopId))}" target="_blank" rel="noopener noreferrer">`,
+        escapeHTML(label),
+        '</a>'
+    ].join('');
+
+    return [
+        '<div class="hsl-station-links">',
+        stopIds.length === 1 ?
+            link(stopIds[0], 'HSL Reittiopas ↗') :
+            [
+                'HSL Reittiopas ↗ ',
+                stopIds.map(stopId => link(stopId, getHslStopCode(map, stopId) || stopId)).join(' · ')
+            ].join(''),
+        '</div>'
+    ].join('');
+}
 
 export default class extends Panel {
 
@@ -31,6 +73,56 @@ export default class extends Panel {
             currDate = date.getDate(),
             currHours = date.getHours(),
             currMinutes = date.getMinutes();
+
+        if (stations.every(station => station.hsl)) {
+            const routeIds = Array.from(new Set(
+                [].concat(...stations.map(station => station.routeIds || []))
+            )).sort();
+            const names = stations.map(station =>
+                map.getLocalizedStationTitle(station)
+            ).filter((name, index, names) => names.indexOf(name) === index);
+            const date = clock.getDate();
+            const dateString = [
+                date.getFullYear(),
+                `0${date.getMonth() + 1}`.slice(-2),
+                `0${date.getDate()}`.slice(-2)
+            ].join('-');
+
+            me._hsl = true;
+            super.addTo(map)
+                .setTitle(names.join(dict['and']))
+                .setHTML([
+                    '<div class="hsl-station-date">',
+                    `<label for="hsl-timetable-date">Päivä</label>`,
+                    `<input id="hsl-timetable-date" type="date" value="${dateString}">`,
+                    '</div>',
+                    routeIds.length ?
+                        `<div class="hsl-station-routes">${routeIds.join(' · ')}</div>` :
+                        '',
+                    getReittiopasLinksHTML(map, stations),
+                    '<div id="hsl-timetable-list">Loading timetables...</div>'
+                ].join(''));
+
+            const closeButton = createElement('button', {
+                className: 'close-button',
+                type: 'button',
+                title: dict['close'] || 'Close',
+                onclick: event => {
+                    event.stopPropagation();
+                    map.trackObject();
+                }
+            });
+            closeButton.setAttribute('aria-label', dict['close'] || 'Close');
+            me.setButtons([closeButton]);
+            me._container.classList.add('hsl-timetable-panel');
+
+            const dateInput = me._container.querySelector('#hsl-timetable-date');
+            dateInput.addEventListener('change', () => {
+                me.updateHslTimetable(dateInput.value);
+            });
+            me.updateHslTimetable(dateString);
+            return me;
+        }
 
         for (const station of stations) {
             const title = map.getLocalizedStationTitle(station),
@@ -294,10 +386,125 @@ export default class extends Panel {
         return me;
     }
 
+    updateHslTimetable(dateString) {
+        const me = this,
+            container = me._container,
+            map = me._map,
+            list = container && container.querySelector('#hsl-timetable-list');
+
+        if (!me._hsl || !list || !map.timetableUrl) {
+            if (list) {
+                list.innerHTML = '<div>Pysäkin aikataulutietoja ei ole saatavilla.</div>';
+            }
+            return;
+        }
+        list.innerHTML = '<div>Loading timetables...</div>';
+        hslTimetablePromise = hslTimetablePromise || loadJSON(map.timetableUrl);
+        hslTimetablePromise.then(data => {
+            if (!me.isOpen()) {
+                return;
+            }
+            const station = me._options.object[0];
+            const stationId = station.id.replace(/^hsl\./, '');
+            const clockDate = map.clock.getDate();
+            const clockDateString = [
+                clockDate.getFullYear(),
+                `0${clockDate.getMonth() + 1}`.slice(-2),
+                `0${clockDate.getDate()}`.slice(-2)
+            ].join('-');
+            const nowMinutes = dateString === clockDateString ?
+                clockDate.getHours() * 60 + clockDate.getMinutes() :
+                0;
+            const stopIds = new Set(station.stopIds || []);
+            const stationNames = new Set([
+                station.title && station.title.fi,
+                station.title && station.title.sv,
+                station.title && station.title.en
+            ].filter(Boolean));
+            const matchingIds = new Set([stationId]);
+
+            for (const [id, timetableStation] of Object.entries(data.stations)) {
+                const matchesStop = (timetableStation.x || [])
+                    .some(stopId => stopIds.has(stopId));
+                const matchesName = stationNames.has(timetableStation.n) ||
+                    stationNames.has(timetableStation.ns);
+                if (matchesStop || matchesName) {
+                    matchingIds.add(id);
+                }
+            }
+            const unique = new Map();
+
+            for (const id of matchingIds) {
+                for (const departure of getHslDepartures(data, id, dateString, 40, nowMinutes)) {
+                    const key = `${departure.t}|${departure.r}|${departure.d}|${departure.h}`;
+                    if (!unique.has(key)) {
+                        unique.set(key, departure);
+                    }
+                }
+            }
+            const departures = [...unique.values()]
+                .sort((a, b) => (a.sortTime || 0) - (b.sortTime || 0) ||
+                    String(a.r).localeCompare(String(b.r)))
+                .slice(0, 40);
+
+            if (!departures.length) {
+                list.innerHTML = '<div>Ei lähtöjä valitulle päivälle.</div>';
+                return;
+            }
+            const currentTime = [
+                `0${clockDate.getHours()}`.slice(-2),
+                `0${clockDate.getMinutes()}`.slice(-2)
+            ].join(':');
+            const markerIndex = dateString === clockDateString ?
+                departures.findIndex(departure => departure.sortTime >= nowMinutes) :
+                -1;
+            const rows = departures.map((departure, index) => [
+                markerIndex === index ? [
+                    '<div class="hsl-timetable-now-marker">',
+                    '<div class="hsl-timetable-now-time">',
+                    escapeHTML(currentTime),
+                    '</div>',
+                    '<div class="hsl-timetable-now-line"></div>',
+                    '</div>'
+                ].join('') : '',
+                `<div class="hsl-timetable-row${dateString === clockDateString &&
+                    departure.sortTime < nowMinutes ? ' hsl-timetable-past' : ''}">`,
+                '<div class="hsl-timetable-time">',
+                escapeHTML(departure.displayTime),
+                '</div>',
+                '<div class="hsl-timetable-route">',
+                `<strong>${escapeHTML(departure.rn || departure.r)}</strong>`,
+                departure.h ? `<br>${escapeHTML(departure.h)}` : '',
+                '</div>',
+                '</div>'
+            ].join(''));
+
+            if (markerIndex === -1 && dateString === clockDateString) {
+                rows.push([
+                    '<div class="hsl-timetable-now-marker">',
+                    '<div class="hsl-timetable-now-time">',
+                    escapeHTML(currentTime),
+                    '</div>',
+                    '<div class="hsl-timetable-now-line"></div>',
+                    '</div>'
+                ].join(''));
+            }
+            list.innerHTML = rows.join('');
+        }).catch(error => {
+            console.error('Mini Helsinki 3D: failed to load timetable data.', error);
+            list.innerHTML = '<div>Pysäkin aikatauluja ei voitu ladata.</div>';
+        });
+    }
+
     reset() {
         const me = this,
             {_map: map, _container: container, _swiper: swiper} = me,
             classList = container.classList;
+
+        if (me._hsl) {
+            map.trackObject();
+            return;
+        }
 
         if (swiper) {
             swiper.destroy();
@@ -322,7 +529,7 @@ export default class extends Panel {
             calendar = clock.getCalendar(),
             exitsElement = container.querySelector('#station-exits');
 
-        if (!me.isOpen()) {
+        if (me._hsl || !me.isOpen()) {
             return;
         }
 
@@ -706,6 +913,10 @@ export default class extends Panel {
         const me = this,
             mbox = me._map.map;
 
+        if (me._hsl) {
+            return;
+        }
+
         for (const zoom of [13, 14, 15, 16, 17, 18]) {
             for (const key2 of ['routeug', 'routeog']) {
                 for (const key1 of ['railways', 'stations']) {
@@ -726,10 +937,10 @@ export default class extends Panel {
         }
     }
 
-    remove() {
+    remove(options) {
         this.hideRoute();
 
-        return super.remove();
+        return super.remove(options);
     }
 
 }

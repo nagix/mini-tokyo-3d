@@ -9,8 +9,15 @@ import {
 import {
     getStopTransitMode,
     getTransitMinZoom,
+    getRouteMinZoom,
+    getRealtimeVehicleMinZoom,
     getTransitMode
 } from '../src/helpers/helpers-transit.mjs';
+import {
+    getHslDepartures,
+    isHslServiceActive,
+    parseHslTime
+} from '../src/helpers/helpers-hsl-timetable.mjs';
 
 test('service alerts prefer Finnish and only return active entities', () => {
     const message = {
@@ -135,4 +142,74 @@ test('transit modes use a shared zoom policy', () => {
     assert.equal(getTransitMinZoom(1, thresholds), 8);
     assert.equal(getTransitMinZoom(701, thresholds), 12);
     assert.equal(getTransitMinZoom(109, thresholds, true), 7.5);
+    assert.equal(getRouteMinZoom(701, thresholds), 10);
+    assert.equal(getTransitMinZoom(701, thresholds, true), 12);
+    assert.equal(getRouteMinZoom(109, thresholds), 7.5);
+    assert.equal(getRealtimeVehicleMinZoom(701, thresholds), 11.5);
+    assert.equal(getRealtimeVehicleMinZoom(109, thresholds), 7.5);
+});
+
+test('HSL timetable calendar and after-midnight departures are resolved', () => {
+    const weekday = {
+        start: '20261124',
+        end: '20261220',
+        days: [1, 1, 1, 1, 1, 0, 0],
+        add: ['20261128'],
+        remove: ['20261126']
+    };
+
+    assert.equal(isHslServiceActive(weekday, '20261125'), true);
+    assert.equal(isHslServiceActive(weekday, '20261126'), false);
+    assert.equal(isHslServiceActive(weekday, '20261128'), true);
+    assert.equal(parseHslTime('25:05'), 1505);
+
+    const data = {
+        services: {weekday},
+        stations: {
+            'area:1': {
+                d: [
+                    {r: '1001', rn: '1', d: 0, h: 'Käpylä', t: '05:37:00', s: ['weekday']},
+                    {r: '1001', rn: '1', d: 0, h: 'Käpylä', t: '25:05:00', s: ['weekday']}
+                ]
+            }
+        }
+    };
+    const departures = getHslDepartures(data, 'area:1', '2026-11-25');
+
+    assert.deepEqual(departures.map(({displayTime}) => displayTime),
+        ['01:05', '05:37']);
+});
+
+test('HSL timetable starts 10 minutes before the selected time and limits rows', () => {
+    const weekday = {
+        start: '20261124',
+        end: '20261220',
+        days: [1, 1, 1, 1, 1, 1, 1],
+        add: [],
+        remove: []
+    };
+    const times = Array.from({length: 45}, (_, index) =>
+        `${`0${Math.floor((599 + index) / 60)}`.slice(-2)}:${`0${(599 + index) % 60}`.slice(-2)}:00`
+    );
+    const data = {
+        services: {weekday},
+        stations: {
+            'area:1': {
+                d: times.map((time, index) => ({
+                    r: String(index),
+                    rn: String(index),
+                    d: 0,
+                    h: '',
+                    t: time,
+                    s: ['weekday']
+                }))
+            }
+        }
+    };
+
+    const departures = getHslDepartures(data, 'area:1', '2026-11-25', 40, 10 * 60);
+
+    assert.equal(departures.length, 40);
+    assert.equal(departures[0].displayTime, '09:59');
+    assert.equal(departures[39].displayTime, '10:38');
 });

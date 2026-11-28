@@ -13,7 +13,8 @@ import * as helpers from './helpers/helpers';
 import {disableAutoHover, pickObject, resetCursor} from './helpers/helpers-deck';
 import * as helpersGeojson from './helpers/helpers-geojson';
 import * as helpersMapbox from './helpers/helpers-mapbox';
-import {getTransitMinZoom} from './helpers/helpers-transit.mjs';
+import {getStopMunicipality} from './helpers/helpers-gtfs';
+import {getRealtimeVehicleMinZoom, getRouteMinZoom, getTransitMinZoom} from './helpers/helpers-transit.mjs';
 import {normalizeServiceAlerts, normalizeVehiclePositions, resolveHslTrip} from './helpers/helpers-hsl-rt.mjs';
 import * as helpersWebgl from './helpers/helpers-webgl';
 import {GeoJsonLayer, GlowCompositeLayer, RailwayGlowLayer, RailwayStatusGlowLayer, STROKE_WIDTH_SCALE_STOPS, StationGlowLayer, ThreeLayer, Tile3DLayer, TrafficLayer, ZoomWidthScaleExtension} from './layers';
@@ -137,12 +138,25 @@ export default class extends Evented {
             configControl: true,
             trackingMode: configs.defaultTrackingMode,
             ecoMode: configs.defaultEcoMode,
-            ecoFrameRate: configs.defaultEcoFrameRate
+            ecoFrameRate: configs.defaultEcoFrameRate,
+            profile: 'tokyo'
         }, options);
 
         me.lang = helpers.getLang(options.lang);
+        me.profile = options.profile;
+        me.helsinkiLayerVisibility = new Map([
+            ['routes', 'visible'],
+            ['stops', 'visible'],
+            ['alerts', 'none'],
+            ['vehicles', 'visible'],
+            ['ports', 'visible'],
+            ['buildings', 'visible']
+        ]);
         me.dataUrl = options.dataUrl;
         me.dataSources = options.dataSources.map(source => normalizeDataSource(source, options.secrets));
+        me.timetableUrl = me.dataSources
+            .map(source => source.timetableUrl)
+            .find(Boolean);
         me.container = typeof options.container === 'string' ?
             document.getElementById(options.container) : options.container;
         me.secrets = options.secrets;
@@ -186,11 +200,11 @@ export default class extends Evented {
         // This style overrides the option
         options.style = helpers.resolveAssetUrl('assets/style.json');
 
-        // The custom attribution will be appended only if ConfigControl is visible
-        if (!options.configControl) {
+        if (me.isHelsinkiProfile() || !options.configControl) {
             options.customAttribution = helpers.flat([
                 options.customAttribution,
-                options.appAttribution
+                me.isHelsinkiProfile() && '<a href="https://www.hsl.fi/en/hsl/open-data" target="_blank" rel="noopener noreferrer">© Helsingin seudun liikenne HSL 2026-11-25</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>',
+                !options.configControl && options.appAttribution
             ]).filter(Boolean);
         }
 
@@ -648,7 +662,56 @@ export default class extends Evented {
             tile3d.set(layerId, visibility);
             me.updateLayerVisibility();
         }
-        me.map.setLayoutProperty(layerId, 'visibility', value);
+        if (me.map.getLayer(layerId)) {
+            me.map.setLayoutProperty(layerId, 'visibility', value);
+        }
+        return me;
+    }
+
+    isHelsinkiProfile() {
+        return this.profile === 'helsinki';
+    }
+
+    getHelsinkiLayerVisibility(category) {
+        return this.helsinkiLayerVisibility.get(category) || 'visible';
+    }
+
+    setHelsinkiLayerVisibility(category, visibility) {
+        const me = this;
+
+        me.helsinkiLayerVisibility.set(category, visibility);
+        if (category === 'routes') {
+            for (const entry of me.staticRoutes.values()) {
+                me.setLayerVisibility(entry.sourceId, visibility);
+            }
+        } else if (category === 'stops') {
+            for (const entry of me.staticRoutes.values()) {
+                me.setLayerVisibility(`${entry.sourceId}-stops`, visibility);
+                me.setLayerVisibility(`${entry.sourceId}-stop-labels`, visibility);
+                me.setLayerVisibility(`${entry.sourceId}-bundles`, visibility);
+                me.setLayerVisibility(`${entry.sourceId}-bundle-labels`, visibility);
+            }
+        } else if (category === 'alerts') {
+            for (const entry of me.staticRoutes.values()) {
+                me.setLayerVisibility(`${entry.sourceId}-alerts`, visibility);
+                me.setLayerVisibility(`${entry.sourceId}-stop-alerts`, visibility);
+            }
+        } else if (category === 'vehicles') {
+            for (const entry of me.realtimeVehicleData.values()) {
+                me.setLayerVisibility(`${entry.sourceId}-halo`, visibility);
+                me.setLayerVisibility(entry.sourceId, visibility);
+            }
+        } else if (category === 'ports') {
+            for (const entry of me.portSources.values()) {
+                for (const layerId of entry.layerIds) {
+                    me.setLayerVisibility(layerId, visibility);
+                }
+            }
+        } else if (category === 'buildings') {
+            for (const layerId of me.layerVisibility.model.keys()) {
+                me.setLayerVisibility(layerId, visibility);
+            }
+        }
         return me;
     }
 
@@ -1128,6 +1191,10 @@ export default class extends Evented {
 
         const datalist = helpers.createElement('datalist', {id: 'stations'}, document.body);
         const stationTitleLookup = me.stationTitleLookup = new Map();
+        const stationSuggestions = [];
+        const stationSuggestionLookup = me.stationSuggestionLookup = new Map();
+        me.stationSuggestions = stationSuggestions;
+        me.stationSearchDatalist = datalist;
 
         for (const l of [lang, 'en']) {
             for (const railway of me.railways.getAll()) {
@@ -1139,6 +1206,11 @@ export default class extends Evented {
                     if (!stationTitleLookup.has(key)) {
                         helpers.createElement('option', {value: stationTitle}, datalist);
                         stationTitleLookup.set(key, station);
+                        const suggestionKey = `\u0000${stationTitle}`;
+                        if (!stationSuggestionLookup.has(suggestionKey)) {
+                            stationSuggestionLookup.set(suggestionKey, true);
+                            stationSuggestions.push({value: stationTitle, result: station});
+                        }
                     }
                 }
             }
@@ -1149,12 +1221,16 @@ export default class extends Evented {
                 title: me.dict['search'],
                 placeholder: me.dict['station-name'],
                 list: 'stations',
-                eventHandler: ({value}) => {
-                    const station = me.stationTitleLookup.get(value.toUpperCase());
+                suggestions: stationSuggestions,
+                eventHandler: ({value, result: selectedResult}) => {
+                    const key = helpers.normalize(value).toUpperCase();
+                    const result = selectedResult || me.stationTitleLookup.get(key);
 
-                    if (station && station.coord) {
+                    if (result && result.coord) {
                         me.markObject();
-                        me.trackObject(me.stationGroupLookup.get(station.group));
+                        me.trackObject(result.type === 'station' || isStaticRoute(result) ?
+                            result :
+                            me.stationGroupLookup.get(result.group));
                         return true;
                     }
                 }
@@ -1343,10 +1419,14 @@ export default class extends Evented {
                 // footprint (see getStationFeature), so it needs re-fetching
                 // whenever that bucket changes while a station is marked/tracked.
                 if (isStation(me.markedObject)) {
-                    me.addStationOutline(me.markedObject, 'stations-marked');
+                    if (!me.markedObject.hsl) {
+                        me.addStationOutline(me.markedObject, 'stations-marked');
+                    }
                 }
                 if (isStation(me.trackedObject)) {
-                    me.addStationOutline(me.trackedObject, 'stations-selected');
+                    if (!me.trackedObject.hsl) {
+                        me.addStationOutline(me.trackedObject, 'stations-selected');
+                    }
                 }
 
                 // Same reason as the station glow above.
@@ -2839,12 +2919,13 @@ export default class extends Evented {
                 const routeFeatureLookup = new Map();
                 const routeFeatures = new Map();
                 const stopFeatures = new Map();
+                const hslStationLookup = new Map();
 
                 for (const feature of data.features) {
                     const properties = feature.properties;
 
                     if (properties.featureType === 'route') {
-                        properties.minZoom = getTransitMinZoom(
+                        properties.minZoom = getRouteMinZoom(
                             properties.routeType,
                             me.transitMinZoom
                         );
@@ -2853,6 +2934,11 @@ export default class extends Evented {
                             routeFeatures.set(properties.routeId, []);
                         }
                         routeFeatures.get(properties.routeId).push(feature);
+                    } else if (properties.featureType === 'bundle') {
+                        properties.minZoom = me.transitMinZoom &&
+                            me.transitMinZoom[properties.routeMode] !== undefined ?
+                            me.transitMinZoom[properties.routeMode] : 0;
+                        hslStationLookup.set(properties.bundleId, properties.bundleId);
                     } else if (properties.featureType === 'stop') {
                         properties.minZoom = getTransitMinZoom(
                             properties.vehicleType,
@@ -2860,6 +2946,97 @@ export default class extends Evented {
                             true
                         );
                         stopFeatures.set(properties.stopId, feature);
+                        hslStationLookup.set(properties.stopId, properties.stationId);
+                    }
+                }
+
+                if (Array.isArray(data.stations)) {
+                    for (const stationData of data.stations) {
+                        const nameFi = stationData.name || stationData.nameSv ||
+                            stationData.stopIds[0];
+                        const nameSv = stationData.nameSv || nameFi;
+                        const title = helpers.normalize(`${nameFi}${nameFi === nameSv ? '' : ` / ${nameSv}`}`);
+                        const station = {
+                            id: `hsl.${stationData.id}`,
+                            type: 'station',
+                            hsl: true,
+                            layer: 'ground',
+                            coord: stationData.coord,
+                            stations: [{
+                                id: `hsl.${stationData.id}`,
+                                hsl: true,
+                                title: {
+                                    fi: nameFi,
+                                    sv: nameSv,
+                                    en: nameFi
+                                },
+                                coord: stationData.coord,
+                                stopIds: stationData.stopIds,
+                                routeIds: stationData.routeIds,
+                                routeMode: stationData.routeMode
+                            }]
+                        };
+
+                        hslStationLookup.set(stationData.id, station);
+                        for (const stopId of stationData.stopIds) {
+                            hslStationLookup.set(stopId, station);
+                        }
+
+                        const keys = new Set([
+                            nameFi,
+                            nameSv,
+                            nameFi !== nameSv ? title : undefined
+                        ].filter(Boolean));
+                        const municipality = stationData.municipality ||
+                            getStopMunicipality(stationData.stopIds[0]);
+                        const city = municipality ? municipality[me.lang] || municipality.fi : undefined;
+
+                        for (const name of keys) {
+                            const key = helpers.normalize(name).toUpperCase();
+                            me.stationTitleLookup.set(key, station);
+                            helpers.createElement('option', {value: name}, me.stationSearchDatalist);
+                            const suggestionKey = `${city || ''}\u0000${name}`;
+                            if (!me.stationSuggestionLookup.has(suggestionKey)) {
+                                me.stationSuggestionLookup.set(suggestionKey, true);
+                                me.stationSuggestions.push({value: name, city, result: station});
+                            }
+                        }
+                    }
+                }
+
+                for (const [routeId, features] of routeFeatures) {
+                    const representative = features[0].properties;
+                    const names = new Set([
+                        representative.shortName,
+                        representative.longName
+                    ].filter(Boolean));
+
+                    for (const name of names) {
+                        const key = helpers.normalize(name).toUpperCase();
+                        const featureIds = features.map(feature => feature.properties.id);
+                        const coordinates = features.flatMap(feature =>
+                            feature.geometry.coordinates
+                        );
+                        const lngs = coordinates.map(coord => coord[0]);
+                        const lats = coordinates.map(coord => coord[1]);
+                        const route = {
+                            id: routeId,
+                            type: 'static-route',
+                            sourceId,
+                            featureIds,
+                            coord: [
+                                (Math.min(...lngs) + Math.max(...lngs)) / 2,
+                                (Math.min(...lats) + Math.max(...lats)) / 2
+                            ],
+                            bounds: [
+                                [Math.min(...lngs), Math.min(...lats)],
+                                [Math.max(...lngs), Math.max(...lats)]
+                            ],
+                            properties: representative
+                        };
+
+                        me.stationTitleLookup.set(key, route);
+                        helpers.createElement('option', {value: name}, me.stationSearchDatalist);
                     }
                 }
 
@@ -2924,8 +3101,79 @@ export default class extends Evented {
                     }
                 }, 'trees');
                 const stopLayerId = `${sourceId}-stops`,
-                    stopLabelLayerId = `${sourceId}-stop-labels`;
+                    stopLabelLayerId = `${sourceId}-stop-labels`,
+                    bundleLayerId = `${sourceId}-bundles`,
+                    bundleLabelLayerId = `${sourceId}-bundle-labels`;
 
+                me.addLayer({
+                    id: bundleLayerId,
+                    type: 'circle',
+                    source: sourceId,
+                    filter: [
+                        'all',
+                        ['==', ['geometry-type'], 'Point'],
+                        ['==', ['get', 'featureType'], 'bundle'],
+                        ['>=', ['zoom'], ['get', 'minZoom']]
+                    ],
+                    minzoom: 10,
+                    maxzoom: 16,
+                    paint: {
+                        'circle-color': '#ffffff',
+                        'circle-stroke-color': '#333333',
+                        'circle-stroke-width': 1.5,
+                        'circle-radius': [
+                            'interpolate',
+                            ['exponential', 2],
+                            ['zoom'],
+                            8, 3,
+                            13, 5,
+                            22, 12
+                        ],
+                        'circle-opacity': 0.95,
+                        'circle-emissive-strength': 1
+                    },
+                    metadata: {
+                        'mt3d:opacity-effect': true,
+                        'mt3d:opacity': 1,
+                        'mt3d:opacity-route': 0.35,
+                        'mt3d:opacity-underground': 0.25,
+                        'mt3d:opacity-underground-route': 0.1
+                    }
+                }, 'trees');
+                me.addLayer({
+                    id: bundleLabelLayerId,
+                    type: 'symbol',
+                    source: sourceId,
+                    filter: [
+                        'all',
+                        ['==', ['geometry-type'], 'Point'],
+                        ['==', ['get', 'featureType'], 'bundle'],
+                        ['>=', ['zoom'], ['get', 'minZoom']]
+                    ],
+                    minzoom: 14,
+                    maxzoom: 16,
+                    layout: {
+                        'text-field': ['get', 'name'],
+                        'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+                        'text-size': 12,
+                        'text-offset': [0, 1.2],
+                        'text-anchor': 'top',
+                        'text-allow-overlap': false,
+                        'text-ignore-placement': true
+                    },
+                    paint: {
+                        'text-color': '#333333',
+                        'text-halo-color': '#ffffff',
+                        'text-halo-width': 2,
+                        'text-opacity': [
+                            'interpolate',
+                            ['linear'],
+                            ['zoom'],
+                            15.5, 1,
+                            16, 0
+                        ]
+                    }
+                }, 'trees');
                 me.addLayer({
                     id: stopLayerId,
                     type: 'circle',
@@ -2933,6 +3181,7 @@ export default class extends Evented {
                     filter: [
                         'all',
                         ['==', ['geometry-type'], 'Point'],
+                        ['==', ['get', 'featureType'], 'stop'],
                         ['>=', ['zoom'], ['get', 'minZoom']]
                     ],
                     minzoom: 13,
@@ -2966,11 +3215,19 @@ export default class extends Evented {
                     filter: [
                         'all',
                         ['==', ['geometry-type'], 'Point'],
+                        ['==', ['get', 'featureType'], 'stop'],
                         ['>=', ['zoom'], ['get', 'minZoom']]
                     ],
-                    minzoom: 15,
+                    minzoom: 16,
                     layout: {
-                        'text-field': ['get', 'name'],
+                        'text-field': [
+                            'case',
+                            ['!=', ['coalesce', ['get', 'platformCode'], ''], ''],
+                            ['get', 'platformCode'],
+                            ['!=', ['coalesce', ['get', 'stopCode'], ''], ''],
+                            ['get', 'stopCode'],
+                            ['get', 'name']
+                        ],
                         'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
                         'text-size': 12,
                         'text-offset': [0, 1.2],
@@ -3066,14 +3323,21 @@ export default class extends Evented {
                     routeFeatureLookup,
                     routeFeatures,
                     stopFeatures,
+                    hslStationLookup,
                     layerIds: [
                         sourceId,
+                        bundleLayerId,
+                        bundleLabelLayerId,
                         stopLayerId,
                         stopLabelLayerId,
                         alertRouteLayerId,
                         alertStopLayerId
                     ]
                 });
+                if (me.isHelsinkiProfile()) {
+                    me.setHelsinkiLayerVisibility('alerts',
+                        me.getHelsinkiLayerVisibility('alerts'));
+                }
                 me.staticRoutesLoading.delete(source.id);
                 me.updateVisualizationLayerOrder();
                 for (const source of me.dataSources) {
@@ -3510,6 +3774,8 @@ export default class extends Evented {
             layerIds.push(
                 entry.sourceId,
                 `${entry.sourceId}-alerts`,
+                `${entry.sourceId}-bundles`,
+                `${entry.sourceId}-bundle-labels`,
                 `${entry.sourceId}-stops`,
                 `${entry.sourceId}-stop-alerts`
             );
@@ -3704,7 +3970,10 @@ export default class extends Evented {
                         routeLabel: routeFeature.properties.shortName || trip.routeId,
                         routeName: routeFeature.properties.longName || '',
                         routeType: routeFeature.properties.routeType,
-                        minZoom: routeFeature.properties.minZoom,
+                        minZoom: getRealtimeVehicleMinZoom(
+                            routeFeature.properties.routeType,
+                            me.transitMinZoom
+                        ),
                         color: routeFeature.properties.color,
                         shapeId: trip.shapeId,
                         bearing: position.bearing,
@@ -4443,7 +4712,26 @@ export default class extends Evented {
                 };
             }
         }
-        for (const {sourceId} of me.staticRoutes.values()) {
+        for (const {sourceId, hslStationLookup} of me.staticRoutes.values()) {
+            object = map.queryRenderedFeatures([
+                [point.x - RAILWAY_PICK_RADIUS, point.y - RAILWAY_PICK_RADIUS],
+                [point.x + RAILWAY_PICK_RADIUS, point.y + RAILWAY_PICK_RADIUS]
+            ], {layers: [
+                `${sourceId}-bundles`,
+                `${sourceId}-bundle-labels`,
+                `${sourceId}-stops`,
+                `${sourceId}-stop-labels`
+            ]})[0];
+            if (object) {
+                const stationId = object.properties.bundleId ||
+                    object.properties.stationId ||
+                    object.properties.stopId;
+                const station = hslStationLookup && hslStationLookup.get(stationId);
+
+                if (station) {
+                    return station;
+                }
+            }
             object = map.queryRenderedFeatures([
                 [point.x - RAILWAY_PICK_RADIUS, point.y - RAILWAY_PICK_RADIUS],
                 [point.x + RAILWAY_PICK_RADIUS, point.y + RAILWAY_PICK_RADIUS]
@@ -4483,7 +4771,7 @@ export default class extends Evented {
                 me.removeRailwayOutline('railways-marked');
             } else if (isStaticRoute(markedObject) || isRealtimeVehicle(markedObject)) {
                 me.setStaticRouteState(markedObject, 'hover', false);
-            } else {
+            } else if (!isHslStation(markedObject)) {
                 me.removeStationOutline('stations-marked');
             }
             if (popup && popup.isOpen()) {
@@ -4506,7 +4794,7 @@ export default class extends Evented {
             } else if (isStaticRoute(object) || isRealtimeVehicle(object)) {
                 me._markedLngLat = lngLat;
                 me.setStaticRouteState(object, 'hover', true);
-            } else {
+            } else if (!isHslStation(object)) {
                 me.addStationOutline(object, 'stations-marked');
             }
 
@@ -4545,7 +4833,11 @@ export default class extends Evented {
 
         if (isEqualObject(trackedObject, object)) {
             if ((isVehicle(object) || isStation(object) || isRailway(object)) && detailPanel) {
-                detailPanel.reset();
+                if (isHslStation(object)) {
+                    me.trackObject();
+                } else {
+                    detailPanel.reset();
+                }
             }
             return;
         }
@@ -4576,7 +4868,9 @@ export default class extends Evented {
                 }
                 me.fire({type: 'deselection', deselection: trackedObject.id});
             } else if (isStation(trackedObject)) {
-                me.removeStationOutline('stations-selected');
+                if (!trackedObject.hsl) {
+                    me.removeStationOutline('stations-selected');
+                }
                 me.fire({type: 'deselection', deselection: trackedObject.stations.map(({id}) => id)});
                 me._setSearchMode('none');
                 me.hideStationExits();
@@ -4599,7 +4893,8 @@ export default class extends Evented {
                 delete me.sharePanel;
             }
             if (detailPanel) {
-                detailPanel.remove();
+                detailPanel.remove(isHslStation(trackedObject) ?
+                    {immediate: true} : undefined);
                 delete me.detailPanel;
             }
         }
@@ -4670,7 +4965,9 @@ export default class extends Evented {
                 me.detailPanel = new StationPanel({object: stations});
                 me.detailPanel.addTo(me);
 
-                me.addStationOutline(object, 'stations-selected');
+                if (!object.hsl) {
+                    me.addStationOutline(object, 'stations-selected');
+                }
                 me.fire({type: 'selection', selection: object.stations.map(({id}) => id)});
             } else if (isRailway(object)) {
                 const stationIds = object.stations.map(({id}) => id),
@@ -4710,6 +5007,12 @@ export default class extends Evented {
                 me.fire({type: 'selection', selection: object.id});
             } else if (isStaticRoute(object)) {
                 me.setStaticRouteState(object, 'selected', true);
+                if (object.bounds) {
+                    me.map.fitBounds(object.bounds, {
+                        padding: {top: 40, bottom: 40, left: 40, right: 60},
+                        maxZoom: 14
+                    });
+                }
                 me.fire({type: 'selection', selection: object.id});
             } else if (isRealtimeVehicle(object)) {
                 me.setStaticRouteState(object, 'selected', true);
@@ -4891,6 +5194,20 @@ export default class extends Evented {
             if (setHTML) {
                 popup.setHTML(me.getRealtimeVehicleDescription(markedObject));
             }
+        } else if (isHslStation(markedObject)) {
+            popup.setLngLat(markedObject.coord);
+            if (setHTML) {
+                const station = markedObject.stations[0];
+                const title = me.getLocalizedStationTitle(station);
+                const routeIds = station.routeIds || [];
+
+                popup.setHTML([
+                    `<strong>${helpers.escapeHTML(title)}</strong>`,
+                    routeIds.length ?
+                        `<br>${routeIds.map(id => helpers.escapeHTML(id)).join(', ')}` :
+                        ''
+                ].join(''));
+            }
         } else if (isVehicle(markedObject)) {
             const bearing = markedObject === me.trackedObject ? map.getBearing() : undefined;
 
@@ -4960,10 +5277,14 @@ export default class extends Evented {
     }
 
     setStaticRouteState(route, key, value) {
-        this.map.setFeatureState({
-            source: route.sourceId,
-            id: route.id
-        }, {[key]: value});
+        const ids = route.featureIds || [route.id];
+
+        for (const id of ids) {
+            this.map.setFeatureState({
+                source: route.sourceId,
+                id
+            }, {[key]: value});
+        }
     }
 
     updateBusRouteVisibility() {
@@ -5069,7 +5390,12 @@ export default class extends Evented {
     // marking either side highlight both.
     addStationOutline(object, name) {
         const me = this,
-            feature = me.getStationFeature(object.id),
+            hsl = isHslStation(object);
+
+        if (hsl) {
+            return;
+        }
+        const feature = me.getStationFeature(object.id),
             otherGroup = object.id.replace(/.g$/, object.layer === 'ground' ? 'ug' : 'og'),
             otherFeature = otherGroup === object.id ? undefined : me.getStationFeature(otherGroup);
 
@@ -5264,6 +5590,7 @@ function normalizeDataSource(source, secrets) {
         flightUrl: updateOdptUrl(source.flightUrl, secrets),
         atisUrl: updateOdptUrl(source.atisUrl, secrets),
         routeUrl: source.routeUrl,
+        timetableUrl: source.timetableUrl,
         portUrl: source.portUrl,
         serviceAlertUrl: updateOdptUrl(source.serviceAlertUrl, secrets),
         gtfsUrl: updateOdptUrl(source.gtfsUrl, secrets),
@@ -5418,6 +5745,10 @@ function isStation(object) {
     return object && object.type === 'station';
 }
 
+function isHslStation(object) {
+    return isStation(object) && object.hsl;
+}
+
 function isRailway(object) {
     return object instanceof Railway;
 }
@@ -5468,6 +5799,9 @@ function loadRealtimeVehicleIcon(map) {
 
 function isEqualObject(a, b) {
     if (a === b) {
+        return true;
+    }
+    if (isHslStation(a) && isHslStation(b) && a.id === b.id) {
         return true;
     }
     if (a && a.properties && b && b.properties && a.properties.ids === b.properties.ids) {

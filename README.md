@@ -71,6 +71,14 @@ This fork includes an optional Helsinki profile that renders static HSL route
 geometry, HSL GTFS-RT service alerts and vehicle positions, and Digitraffic
 maritime ports without loading the Tokyo static or realtime datasets.
 
+Navigation is restricted to the rectangular extent of
+[`data-raw/map-bounds.geojson`](data-raw/map-bounds.geojson), with a minimum zoom
+of 10 (users can zoom closer, but not farther out). The limits apply to panning,
+zoom controls, and camera movements. After editing the bounds file, run
+`node scripts/gen-index.mjs` for development or rebuild the production pages
+with `npm run build-pages`. The bounds are embedded in the generated page;
+the raw GeoJSON does not need to be deployed.
+
 The data for this visualization are sourced from HSL (Helsinki Region Transport, https://www.hsl.fi/en/hsl/open-data) and Fintraffic (Finnish national transit data, https://www.fintraffic.fi/en/digitalservices/data-services). Station information and timetables are not yet implemented.
 
 Place the extracted HSL GTFS files in `helsinki/hsl`, then generate the compact
@@ -109,12 +117,15 @@ MT3D_PROFILE=helsinki npm run build-pages
 
 On Windows PowerShell, set the profile for the page-build process with
 `$env:MT3D_PROFILE = "helsinki"` before running `npm run build-pages`. The
-generated page, `build/data/hsl-routes.json`, and
-`build/data/hsl-realtime-index.json.gz` must be deployed together. The route
+generated page, `build/data/hsl-routes.json`,
+`build/data/hsl-realtime-index.json.gz`, and
+`build/data/hsl-timetable.json.gz` must be deployed together. The route
 dataset contains route geometry and stop points. The compressed trip index
 contains only the composite-key, service-date, shape, and timepoint data needed
 to match HSL GTFS-RT vehicle positions; the original `stop_times.txt` is not
 sent to browsers.
+The same build command also generates `build/data/hsl-timetable.json.gz`, a
+compact station-departure index with HSL calendar and exception dates.
 
 The Helsinki profile polls the documented HSL GTFS-RT v2 service-alert and
 vehicle-position endpoints. Service alerts update every five minutes and appear

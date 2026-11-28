@@ -152,20 +152,36 @@ export default class {
      * Removes the panel from a map.
      * @returns {Panel} Returns itself to allow for method chaining
      */
-    remove() {
+    remove(options) {
         const me = this,
-            options = me._options,
+            panelOptions = me._options,
             background = me._background,
-            container = me._container;
+            container = me._container,
+            immediate = options && options.immediate;
 
-        if (options.modal) {
+        if (!container) {
+            return me;
+        }
+
+        if (panelOptions.modal) {
             background.classList.add('closed');
         }
         container.style.removeProperty('height');
         container.classList.add('closed');
 
+        if (immediate) {
+            if (panelOptions.modal) {
+                background.parentNode.removeChild(background);
+                delete me._background;
+            }
+            container.parentNode.removeChild(container);
+            delete me._container;
+            delete me._map;
+            return me;
+        }
+
         setTimeout(() => {
-            if (options.modal) {
+            if (panelOptions.modal) {
                 background.parentNode.removeChild(background);
                 delete me._background;
             }
